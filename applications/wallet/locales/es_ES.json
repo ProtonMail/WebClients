@@ -3817,6 +3817,10 @@
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
       ],
+      "${ options }-day file version history": [
+        "Historial de versiones de archivos de ${ options } día",
+        "Historial de ${ options } días de las versiones de los archivos"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Acceso de por vida a las funciones ${ PASS_APP_NAME } y SimpleLogin"
       ],
@@ -5576,6 +5580,9 @@
       ],
       "${ feature } is now active": [
         "La funcionalidad ${ feature } ya está activada."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Cuenta restringida"

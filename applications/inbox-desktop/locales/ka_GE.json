@@ -4,7 +4,21 @@
     "language": "ka_GE"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Open external url": [
+        "გარე URL-ის გახსნა"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "პროტოკოლი ${ parsedProtocol } ნებადართული არ არის. გსურთ გახსნათ გარე URL?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "„Restart and profile now“ დაუყოვნებლივ გადატვირთავს აპს და აღრიცხავს გაშვების პროფილს.\n\n„Profile on next launch“ აღრიცხავს პროფილს აპის შემდეგი გახსნისას. გამოიყენეთ ეს პარამეტრი ხელახალი ჩატვირთვის შემდეგ გაშვების სიჩქარის გასაზომად."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }-ის შესახებ"
       ],
@@ -23,6 +37,9 @@
       "Close Window": [
         "ფანჯრის დახურვა"
       ],
+      "Collect startup performance data": [
+        "სტარტაპის მუშაობის მონაცემების შეგროვება"
+      ],
       "Copy": [
         "კოპირება"
       ],
@@ -35,8 +52,20 @@
       "Disable": [
         "გათიშვა"
       ],
+      "Disable Hardware Acceleration": [
+        "აპარატურული აჩქარების გამორთვა"
+      ],
       "Enable": [
         "ჩართვა"
+      ],
+      "Enable diagnostic logs": [
+        "დიაგნოსტიკური ჟურნალების ჩართვა"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "დიაგნოსტიკური ჟურნალების ჩართვა Chromium ძრავიდან."
+      ],
+      "Enable Hardware Acceleration": [
+        "აპარატურული აჩქარების ჩართვა"
       ],
       "Force Reload": [
         "ნაძალადევი გადატვირთვა"
@@ -77,6 +106,9 @@
       "Restart and profile now": [
         "ახლა გადატვირთვა და პროფილირება"
       ],
+      "Restart with logging": [
+        "გადატვირთვა ჟურნალირებით"
+      ],
       "Select All": [
         "ყველას მონიშვნა"
       ],
@@ -98,6 +130,15 @@
       "Stop Speaking": [
         "ლაპარაკის დასრულება"
       ],
+      "Switch to ${ appName }": [
+        "გადართვა ${ appName }-ზე"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "ეს ჟურნალები გვეხმარება პრობლემების დიაგნოსტირებაში. ცვლილების გამოსაყენებლად აპი გადაიტვირთება."
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "ეს გაზომავს, თუ რამდენი დრო სჭირდება აპს მუშაობის დასაწყებად და ანგარიშს შეინახავს თქვენს ჟურნალების საქაღალდეში."
+      ],
       "Toggle Full Screen": [
         "სრულ ეკრანზე გადართვა"
       ],
@@ -106,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }-ის წაშლა"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "როდესაც აპარატურული აჩქარება ჩართულია, აპი გამოსახულების რენდერინგისთვის იყენებს თქვენი მოწყობილობის გამოყოფილ გრაფიკულ აპარატურას. ამან ზოგიერთ სისტემაში შეიძლება გამოიწვიოს თავსებადობის პრობლემები."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "აპარატურული აჩქარების გარეშე, აპი გრაფიკული ბარათის ნაცვლად იყენებს პროგრამულ რენდერინგს. თქვენ შეიძლება შენიშნოთ უფრო ნელი ანიმაციები და CPU-ს უფრო მაღალი დატვირთვა."
       ],
       "Zoom": [
         "გადიდება"
@@ -118,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "აპარატურული აჩქარების გამორთვა"
+      ],
+      "Enable Hardware Acceleration": [
+        "აპარატურული აჩქარების ჩართვა"
+      ],
       "Services": [
         "სერვისები"
       ]
@@ -174,6 +227,9 @@
     "Error dialog": {
       "${ MAIL_APP_NAME } - Unexpected error": [
         "${ MAIL_APP_NAME } - მოულოდნელი შეცდომა"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "შეცდომის გამო, ${ MAIL_APP_NAME } აპი დაიხურება. სცადეთ მისი ხელახლა გაშვება და თუ პრობლემა კვლავ განმეორდა, დაგვიკავშირდით. შეცდომის შესახებ ინფორმაცია შეგიძლიათ იხილოთ აპლიკაციის ჟურნალში."
       ]
     },
     "error screen": {

@@ -341,6 +341,9 @@
       "Deselect all": [
         "Odznacz wszystkie"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Wyłącz funkcję automatycznego dodawania linków ${ MEET_APP_NAME }"
+      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -406,6 +409,9 @@
       ],
       "Expand video conferencing widget": [
         "Rozwiń widżet wideokonferencji"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Odkryj ${ MEET_SHORT_APP_NAME }"
       ],
       "Explore other plans": [
         "Pokaż inne plany"
@@ -932,6 +938,9 @@
       "Try another method": [
         "Użyj innej metody"
       ],
+      "Turn off auto-add": [
+        "Wyłącz autouzupełnianie"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1112,6 +1121,12 @@
       ],
       "${ price } per user": [
         "${ price } za użytkownika"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencja AI ${ LUMO_APP_NAME }",
+        "${ seats } licencje AI ${ LUMO_APP_NAME }",
+        "${ seats } licencji AI ${ LUMO_APP_NAME }",
+        "${ seats } licencji AI ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } licencja",
@@ -1488,14 +1503,119 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Aktywowano"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adres jest już używany przez użytkownika spoza Twojej organizacji. Skontaktuj się ze wsparciem klienta, aby rozwiązać ten problem"
+      ],
+      "All": [
+        "Wszystkie"
+      ],
+      "Calendar": [
+        "Kalendarz"
+      ],
+      "Configure migration": [
+        "Skonfiguruj migrację"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status migracji danych z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Wiadomości"
+      ],
+      "Errors": [
+        "Błędy"
+      ],
+      "Estimated size": [
+        "Szacowany rozmiar"
+      ],
+      "Find out what can be migrated.": [
+        "Dowiedz się, co można zmigrować."
+      ],
+      "Has errors": [
+        "Zawiera błędy"
+      ],
+      "In progress": [
+        "W toku"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Nie znaleziono adresu członka. Skontaktuj się ze wsparciem klienta, aby rozwiązać ten problem"
+      ],
+      "Migrate": [
+        "Przenieś"
+      ],
+      "Migrated": [
+        "Zmigrowano"
+      ],
       "Migration status": [
         "Status migracji"
+      ],
+      "Missing organization private key": [
+        "Brak klucza prywatnego organizacji"
+      ],
+      "Missing organization public key": [
+        "Brak klucza publicznego organizacji"
+      ],
+      "No users to display": [
+        "Brak użytkowników do wyświetlenia"
+      ],
+      "Not activated": [
+        "Nieaktywowany"
       ],
       "Organization does not have enough seats available": [
         "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
       ],
       "Organization does not have enough storage available": [
         "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
+      ],
+      "Pending": [
+        "Oczekujące"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wybierz dokładnie to, co chcesz przenieść. Zmiany zostaną zastosowane u wszystkich użytkowników organizacji."
+      ],
+      "Select users to migrate": [
+        "Wybierz użytkowników do migracji"
+      ],
+      "Size": [
+        "Rozmiar"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tego użytkownika nie można zmigrować ze względu na niezgodność platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Aby zmigrować tego użytkownika, włącz jego konto w konsoli administracyjnej Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Aby zmigrować tego użytkownika, włącz jego konto w sekcji ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Aby zmigrować tego użytkownika, włącz jego adres w sekcji ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Aby zmigrować tego użytkownika, musi on zaakceptować zaproszenie do dołączenia do ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Aby zmigrować tego użytkownika, cofnij jego archiwizację w konsoli administracyjnej Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Aby zmigrować tego użytkownika, cofnij jego zawieszenie w konsoli administracyjnej Google Workspace."
+      ],
+      "User": [
+        "Użytkownik"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Użytkownicy, którzy zalogowali się na swoje konto ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Co migrujesz?"
       ],
       "You": [
         "Ty"
@@ -3473,6 +3593,9 @@
       "120m": [
         "120 min"
       ],
+      "15 minutes": [
+        "15 minut"
+      ],
       "30 minutes": [
         "30 minut"
       ],
@@ -3809,6 +3932,9 @@
       "Failed to update secret passphrase": [
         "Nie udało się zaktualizować hasła"
       ],
+      "Failed to update settings": [
+        "Nie udało się zaktualizować ustawień"
+      ],
       "First name is too long": [
         "Imię jest zbyt długie"
       ],
@@ -3913,6 +4039,9 @@
       ],
       "No contacts found to import": [
         "Brak kontaktów do zaimportowania"
+      ],
+      "No drive found to import": [
+        "Nie znaleziono dysku do zaimportowania"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Brak wiadomości do zaimportowania. Konto nie posiada skrzynki odbiorczej"
@@ -4175,6 +4304,9 @@
       "Unexpected error, we can't import the contacts": [
         "Wystąpił nieoczekiwany błąd. Nie możemy zaimportować kontaktów"
       ],
+      "Unexpected error, we can't import the files": [
+        "Nieoczekiwany błąd, nie możemy zaimportować plików"
+      ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
       ],
@@ -4211,11 +4343,17 @@
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców",
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców"
       ],
+      "You cannot enter the organizer's email": [
+        "Nie możesz wpisać adresu e-mail organizatora"
+      ],
       "You have reached the maximum number of calendars.": [
         "Osiągnięto maksymalną liczbę kalendarzy."
       ],
       "You have reached the number of contacts limit for your account": [
         "Osiągnięto limit liczby kontaktów na koncie"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Wykorzystano wszystkie adresy w Twoim planie. Ulepsz swój plan, aby dodać nowy adres, lub wyłącz jeden z adresów na swoim koncie."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
@@ -5369,6 +5507,12 @@
       "${ storage } storage": [
         "${ storage } przestrzeni dyskowej"
       ],
+      "${ total } user found": [
+        "Znaleziono ${ total } użytkownika",
+        "Znaleziono ${ total } użytkowników",
+        "Znaleziono ${ total } użytkowników",
+        "Znaleziono ${ total } użytkowników"
+      ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
         "Zaktualizowano ${ updated } kontakty.",
@@ -5557,6 +5701,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "E-mail kontaktowy do rezerwacji: ${ selectedCalendar.Email }"
       ],
       "Booking page deleted": [
         "Strona rezerwacji została usunięta"
@@ -5834,6 +5981,9 @@
       "Failed to update meeting schedule": [
         "Nie udało się zaktualizować harmonogramu spotkania"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Tylko pliki (bez zdjęć, ${ DOCS_APP_NAME } lub ${ SHEETS_APP_NAME }) – łącznie do 100 GB, 100 000 plików i 50 GB na plik"
+      ],
       "finance": [
         "finanse"
       ],
@@ -5869,6 +6019,9 @@
       ],
       "Host": [
         "Organizator"
+      ],
+      "How far in advance can someone book?": [
+        "Z jakim wyprzedzeniem można dokonać rezerwacji?"
       ],
       "How long should an appointment last?": [
         "Jak długo powinno trwać spotkanie?"
@@ -6035,6 +6188,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Wiadomości wysyłane na wszystkie adresy e-mail będą kierowane do skrzynki odbiorczej."
       ],
+      "Min. 2 hours before": [
+        "Min. 2 godziny wcześniej"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 godzin wcześniej"
+      ],
       "Monitor accounts": [
         "Monitoring kont"
       ],
@@ -6089,6 +6248,9 @@
       "Not connected": [
         "Nie połączono"
       ],
+      "Not on the same day": [
+        "Nie w tym samym dniu"
+      ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
       ],
@@ -6124,6 +6286,9 @@
       ],
       "Other accounts": [
         "Inne konta"
+      ],
+      "Other location": [
+        "Inna lokalizacja"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Pokaż użytkownikom organizacji, kiedy jestem zajęty. Szczegóły wydarzeń nie zostaną udostępnione."
@@ -6518,6 +6683,9 @@
       "Warning": [
         "Ostrzeżenie"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Automatycznie dodaliśmy link do ${ MEET_APP_NAME }"
+      ],
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
       ],
@@ -6565,6 +6733,9 @@
       ],
       "Where will the appointment take place?": [
         "Gdzie odbędzie się spotkanie?"
+      ],
+      "Which calendars should block bookings?": [
+        "Które kalendarze powinny blokować rezerwacje?"
       ],
       "Which event would you like to delete?": [
         "Które wydarzenie chcesz usunąć?"
@@ -7057,6 +7228,9 @@
       "Add image URL": [
         "Dodaj adres URL zdjęcia"
       ],
+      "Add notice period": [
+        "Dodaj okres uprzedzenia"
+      ],
       "Add to group": [
         "Dodaj do grupy"
       ],
@@ -7128,6 +7302,9 @@
       ],
       "Category": [
         "Kategoria"
+      ],
+      "Check additional calendars for availability": [
+        "Sprawdź dostępność w dodatkowych kalendarzach"
       ],
       "City": [
         "Miasto"
@@ -7252,6 +7429,12 @@
       "Every": [
         "Co"
       ],
+      "Exact host matching": [
+        "Dopasowanie dokładnego hosta"
+      ],
+      "Exact URL matching": [
+        "Dopasowanie dokładnego adresu URL"
+      ],
       "Expires": [
         "Wygasa"
       ],
@@ -7366,6 +7549,9 @@
       "Navigation": [
         "Nawigacja"
       ],
+      "Never fill on this exact URL": [
+        "Nigdy nie uzupełniaj na tym dokładnym adresie URL"
+      ],
       "New password": [
         "Nowe hasło"
       ],
@@ -7392,6 +7578,9 @@
       ],
       "Organizer": [
         "Organizator"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domena nadrzędna i subdomeny (domyślnie)"
       ],
       "participant": [
         "uczestnik",
@@ -7453,6 +7642,9 @@
       "Region": [
         "Województwo"
       ],
+      "Regular expression": [
+        "Wyrażenie regularne"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Usuń wideokonferencję ${ MEET_APP_NAME }"
       ],
@@ -7474,6 +7666,9 @@
       "Secondary time zone": [
         "Dodatkowa strefa czasowa"
       ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Bezpiecznie udostępniaj części swojego harmonogramu za pomocą strony rezerwacji, którą możesz wysłać każdemu."
+      ],
       "Show others when I'm busy": [
         "Pokaż, kiedy jestem zajęty"
       ],
@@ -7488,6 +7683,9 @@
       ],
       "Start date": [
         "Data rozpoczęcia"
+      ],
+      "Starts with": [
+        "Zaczyna się od"
       ],
       "State": [
         "Stan"
@@ -7536,6 +7734,9 @@
       ],
       "URL": [
         "Adres URL"
+      ],
+      "URL wildcard pattern": [
+        "Wzorzec adresu URL ze znakami wieloznacznymi"
       ],
       "Username": [
         "Nazwa użytkownika"
@@ -7986,11 +8187,29 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Reguła dopasowania „Zaczyna się od”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Zasada dopasowania dokładnej (pod)domeny"
+      ],
+      "Exact URL matching rule": [
+        "Reguła dopasowania dokładnego adresu URL"
+      ],
       "Fw:": [
         "Fw:"
       ],
+      "Never fill with this exact URL": [
+        "Nigdy nie uzupełniaj tym dokładnym adresem URL"
+      ],
       "Re:": [
         "Re:"
+      ],
+      "Regular expression rule": [
+        "Reguła wyrażenia regularnego"
+      ],
+      "Wildcard pattern matching rule": [
+        "Reguła dopasowania wzorca ze znakiem wieloznacznym"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Twoja darmowa wersja próbna zakończyła się. ${ nonAutoRenewalAction }"
@@ -8362,6 +8581,12 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options } päivän tiedostoversiohistoria"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Dożywotni ${ PASS_APP_NAME } + SimpleLogin"
@@ -10314,6 +10539,9 @@
       "Search for name or email": [
         "Szukaj nazwy lub adresu e-mail"
       ],
+      "Search for users or addresses": [
+        "Szukaj użytkowników lub adresów"
+      ],
       "Search parent folder": [
         "Przeszukaj folder nadrzędny"
       ],
@@ -10550,11 +10778,26 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } za polecenie"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Jeśli anulujesz przed tą datą,** po zakończeniu okresu próbnego Twój plan zostanie **obniżony** do ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Jeśli nie dokonasz subskrypcji,** Twój plan zostanie **obniżony** do ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Jeśli nie anulujesz subskrypcji,** rozpocznie się pełny plan i otrzymasz **${ referrerRewardAmount }** w środkach."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Jeśli dokonasz subskrypcji przed tą datą,** otrzymasz **${ referrerRewardAmount }** w środkach."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Po tej dacie Twoje konto zostanie obniżone do **${ BRAND_NAME } Free**. Jeśli zmienisz zdanie, możesz **reaktywować subskrypcję**, aby zachować dostęp do funkcji premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Zyskaj do ${ maxRewardAmount } w ramach środków. Otrzymasz ${ referrerRewardAmount }, gdy osoba zaproszona przez Ciebie zasubskrybuje plan ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Korzystaj z planu **${ planTitle }** za darmo do dnia **${ textDate }**."
       ],
       "Friend joined": [
         "Znajomy dołączył",
@@ -10574,6 +10817,9 @@
       "Invited friends": [
         "Zaproszeni znajomi"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ostatnia szansa, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**."
+      ],
       "More sharing options": [
         "Więcej opcji udostępniania"
       ],
@@ -10588,6 +10834,15 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Możesz otrzymać do **${ maxRewardAmount }** w środkach."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Pozostał Ci **${ daysRemaining } dzień**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**.",
+        "Pozostały Ci **${ daysRemaining } dni**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**.",
+        "Pozostało Ci **${ daysRemaining } dni**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**.",
+        "Pozostało Ci **${ daysRemaining } dni**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**."
+      ],
+      "your subscription": [
+        "twoja subskrypcja"
       ]
     },
     "Reload event button tooltip": {
@@ -11835,6 +12090,9 @@
       "Answer sent and event deleted": [
         "Odpowiedź została wysłana. Wydarzenie zostało usunięte"
       ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Automatyczne dodawanie linków do ${ MEET_APP_NAME } zostało wyłączone"
+      ],
       "Billing details updated": [
         "Szczegóły płatności zostały zaktualizowane"
       ],
@@ -12202,6 +12460,9 @@
       ],
       "${ feature } is now active": [
         "Funkcja ${ feature } jest aktywna"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asystent pisania ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Odzyskiwanie konta"
@@ -12887,6 +13148,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Użyj ${ VPN_SHORT_APP_NAME } dla prywatności danych"
       ],
+      "Users and addresses": [
+        "Użytkownicy i adresy"
+      ],
       "Verification failed": [
         "Weryfikacja nie powiodła się"
       ],
@@ -12978,6 +13242,9 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "Akcje"
+      ],
       "Created": [
         "Utworzono"
       ],
@@ -13133,6 +13400,11 @@
         "Użytkownik musi mieć adres, aby żądać dostępu do danych"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Będziesz mieć możliwość przypisywania stanowisk, gdy tylko użytkownik zaakceptuje zaproszenie."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
@@ -13271,6 +13543,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Opcja ${ modeLabelStong } zapewnia potężną kontrolę, ale pojedynczy błąd może sprawić, że autouzupełnianie dopasuje i uzupełni dane na fałszywych lub wyłudzających informacje stronach internetowych."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Czy na pewno chcesz trwale usunąć kontakt?",

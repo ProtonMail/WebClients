@@ -36,6 +36,12 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "Accept invitation": [
+        "Прийняти запрошення"
+      ],
+      "Accept invitation to document": [
+        "Прийняти запрошення до документа"
+      ],
       "Actions": [
         "Дії"
       ],
@@ -84,6 +90,9 @@
       "Apply": [
         "Застосувати"
       ],
+      "Ask me next time": [
+        "Запитати мене наступного разу"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "До групи можна додати не більше ${ maxContacts } контакту",
         "До групи можна додати не більше ${ maxContacts } контактів",
@@ -122,6 +131,9 @@
       ],
       "Change password": [
         "Змінити пароль"
+      ],
+      "Change sort order": [
+        "Змінити порядок сортування"
       ],
       "characters": [
         "символів"
@@ -168,6 +180,12 @@
       "Collapse": [
         "Згорнути"
       ],
+      "Collapse list": [
+        "Згорнути список"
+      ],
+      "Collapse list of pending invitations": [
+        "Згорнути список запрошень, що очікують на розгляд"
+      ],
       "Compose": [
         "Написати"
       ],
@@ -213,6 +231,9 @@
       "Copy alias “${ name }”": [
         "Копіювати псевдонім «${ name }»"
       ],
+      "Copy as markdown": [
+        "Копіювати як markdown"
+      ],
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
@@ -240,8 +261,14 @@
       "Create and copy alias": [
         "Створити й копіювати псевдонім"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Створити новий ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "Створити нову теку"
+      ],
+      "Create new password": [
+        "Створити новий пароль"
       ],
       "Customize": [
         "Налаштувати"
@@ -251,6 +278,9 @@
       ],
       "Decline invitation": [
         "Відхилити запрошення"
+      ],
+      "Decline invitation to document": [
+        "Відхилити запрошення до документа"
       ],
       "Decline invite": [
         "Відхилити запрошення"
@@ -276,6 +306,9 @@
       "Delete contact group": [
         "Видалити групу контактів"
       ],
+      "Delete older revisions": [
+        "Видалити старіші версії"
+      ],
       "Delete permanently": [
         "Видалити остаточно"
       ],
@@ -300,8 +333,17 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Завантажте програми ${ DRIVE_APP_NAME }"
       ],
+      "Download a copy (as docx)": [
+        "Завантажити копію (як docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Завантажити копію (як xlsx)"
+      ],
       "Download anyway": [
         "Усе одно завантажити"
+      ],
+      "Download debug information": [
+        "Завантажити інформацію для налагодження"
       ],
       "Download logs": [
         "Завантажити журнали"
@@ -336,14 +378,29 @@
       "Expand": [
         "Розгорнути"
       ],
+      "Explore other plans": [
+        "Ознайомитися з іншими тарифними планами"
+      ],
       "Export": [
         "Експортувати"
       ],
       "Export contact group": [
         "Експортувати групу контактів"
       ],
+      "Export editor state for version": [
+        "Експортувати стан редактора для версії"
+      ],
       "Export selection as .vcf": [
         "Експортувати вибране як .vcf"
+      ],
+      "Export this version (as docx)": [
+        "Експортувати цю версію (як docx)"
+      ],
+      "Export this version (as xlsx)": [
+        "Експортувати цю версію (як xlsx)"
+      ],
+      "Export YJS state for version": [
+        "Експортувати стан YJS для версії"
       ],
       "Forgot password?": [
         "Не пам’ятаю пароль?"
@@ -537,6 +594,9 @@
       "OK": [
         "Застосувати"
       ],
+      "Okay": [
+        "Гаразд"
+      ],
       "Open": [
         "Відкрити"
       ],
@@ -594,6 +654,9 @@
       "Reload": [
         "Перезавантажити"
       ],
+      "Reload spreadsheet": [
+        "Перезавантажити електронну таблицю"
+      ],
       "Remove": [
         "Вилучити"
       ],
@@ -622,6 +685,9 @@
         "Замінити файл"
       ],
       "Report a problem": [
+        "Повідомити про проблему"
+      ],
+      "Report issue": [
         "Повідомити про проблему"
       ],
       "Request a call": [
@@ -654,17 +720,32 @@
       "Restore this version?": [
         "Відновити цю версію?"
       ],
+      "Restoring...": [
+        "Відновлення..."
+      ],
       "Save": [
         "Зберегти"
       ],
       "Save changes": [
         "Зберегти зміни"
       ],
+      "Save preferences": [
+        "Зберегти параметри"
+      ],
       "Search": [
         "Пошук"
       ],
       "Search countries": [
         "Пошук країн"
+      ],
+      "Search recent documents": [
+        "Шукати нещодавні документи"
+      ],
+      "Search recent spreadsheets": [
+        "Шукати нещодавні електронні таблиці"
+      ],
+      "Search recents": [
+        "Шукати нещодавні"
       ],
       "See how": [
         "Дізнатися"
@@ -753,11 +834,23 @@
       "Submit": [
         "Відправити"
       ],
+      "Subscribe now": [
+        "Підписатися зараз"
+      ],
+      "Switch accounts": [
+        "Перемкнути облікові записи"
+      ],
       "Switch or add account": [
         "Змінити або додати обліковий запис"
       ],
       "Take out of trash": [
         "Вийняти зі смітника"
+      ],
+      "Toggle debug mode": [
+        "Перемкнути режим налагодження"
+      ],
+      "Trashing...": [
+        "Переміщення до Смітника..."
       ],
       "Trust": [
         "Довіряти"
@@ -767,6 +860,9 @@
       ],
       "Try another method": [
         "Спробувати інший спосіб"
+      ],
+      "Try Workspace": [
+        "Спробувати Workspace"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Увімкніть ${ DARK_WEB_MONITORING_NAME }"
@@ -837,11 +933,20 @@
       "View": [
         "Переглянути"
       ],
+      "View ${ pendingCount } invitation": [
+        "Переглянути ${ pendingCount } запрошення",
+        "Переглянути всі ${ pendingCount } запрошення",
+        "Переглянути всі ${ pendingCount } запрошень",
+        "Переглянути всі ${ pendingCount } запрошень"
+      ],
       "View all reports": [
         "Переглянути всі звіти"
       ],
       "View invoice": [
         "Переглянути рахунок"
+      ],
+      "View only": [
+        "Лише перегляд"
       ],
       "Web page (.html)": [
         "Вебсторінка (.html)"
@@ -1158,6 +1263,125 @@
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Спеціально розроблений NetShield захищає ваші пристрої та прискорює перегляд вебсторінок, блокуючи рекламу, вистежувачі та зловмисні програми."
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Активовано"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адреса вже використовується користувачем поза межами вашої організації. Будь ласка, зверніться до клієнтської підтримки, щоб вирішити це"
+      ],
+      "All": [
+        "Усі"
+      ],
+      "Calendar": [
+        "Календар"
+      ],
+      "Configure migration": [
+        "Налаштувати міграцію"
+      ],
+      "Contacts": [
+        "Контакти"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Статус міграції даних з Google Workspace до ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Електронна пошта"
+      ],
+      "Errors": [
+        "Помилки"
+      ],
+      "Estimated size": [
+        "Оціночний розмір"
+      ],
+      "Find out what can be migrated.": [
+        "Дізнайтеся, що можна мігрувати."
+      ],
+      "Has errors": [
+        "Містить помилки"
+      ],
+      "In progress": [
+        "У процесі"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адресу учасника не знайдено. Будь ласка, зверніться до клієнтської підтримки, щоб вирішити це"
+      ],
+      "Migrate": [
+        "Мігрувати"
+      ],
+      "Migrated": [
+        "Мігровано"
+      ],
+      "Migration status": [
+        "Статус міграції"
+      ],
+      "Missing organization private key": [
+        "Відсутній приватний ключ організації"
+      ],
+      "Missing organization public key": [
+        "Відсутній відкритий ключ організації"
+      ],
+      "No users to display": [
+        "Немає користувачів для відображення"
+      ],
+      "Not activated": [
+        "Не активовано"
+      ],
+      "Organization does not have enough seats available": [
+        "В організації недостатньо вільних місць"
+      ],
+      "Organization does not have enough storage available": [
+        "В організації недостатньо вільного обсягу сховища"
+      ],
+      "Pending": [
+        "У черзі"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Виберіть саме те, що ви хочете мігрувати. Це буде застосовано до всіх користувачів організації."
+      ],
+      "Select users to migrate": [
+        "Виберіть користувачів для міграції"
+      ],
+      "Size": [
+        "Розмір"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Цього користувача неможливо мігрувати через несумісність платформ."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Щоб мігрувати цього користувача, увімкніть його обліковий запис у консолі адміністратора Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Щоб мігрувати цього користувача, увімкніть його обліковий запис у розділі ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Щоб мігрувати цього користувача, увімкніть його адресу в розділі ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Щоб мігрувати цього користувача, він має прийняти запрошення приєднатися до ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Щоб мігрувати цього користувача, розархівуйте його в консолі адміністратора Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Щоб мігрувати цього користувача, розблокуйте його в консолі адміністратора Google Workspace."
+      ],
+      "User": [
+        "Користувач"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Користувачі, які ввійшли у свій обліковий запис ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Що ви мігруєте?"
+      ],
+      "You": [
+        "Ви"
       ]
     },
     "Browser": {
@@ -2997,11 +3221,23 @@
       "Failed to fetch sharing info": [
         "Не вдалося отримати інформацію про спільний доступ"
       ],
+      "Failed to load 'My files' folder": [
+        "Не вдалося завантажити папку «Мої файли»"
+      ],
+      "Failed to load recent documents": [
+        "Не вдалося завантажити нещодавні документи"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Не вдалося завантажити дані передплати. Будь ласка, спробуйте ще раз пізніше."
       ],
       "Failed to open to contact": [
         "Не вдалося відкрити контакт"
+      ],
+      "Failed to remove older revisions": [
+        "Не вдалося вилучити старіші версії"
+      ],
+      "Failed to rename document": [
+        "Не вдалося перейменувати документ"
       ],
       "Failed to rename document. Please try again later.": [
         "Не вдалося перейменувати документ. Спробуйте пізніше."
@@ -3098,6 +3334,9 @@
       ],
       "No contacts found to import": [
         "Не знайдено контактів для імпортування"
+      ],
+      "No drive found to import": [
+        "Не знайдено диска для імпортування"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
@@ -3228,6 +3467,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
+      "Some trashed documents could not be loaded": [
+        "Не вдалося завантажити деякі документи зі Смітника"
+      ],
       "Something went wrong while fetching available domains": [
         "Під час отримання доступних доменів сталася помилка"
       ],
@@ -3294,6 +3536,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашому зовнішньому обліковому записі надто багато тек. Будь ласка, налаштуйте імпорт для видалення деяких тек."
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Сталася помилка під час обробки оновлень документа. Будь ласка, перезавантажте сторінку та спробуйте знову."
+      ],
       "There was an error when exporting the contacts vCards": [
         "При експортуванні vCards для контактів виникла помилка"
       ],
@@ -3321,11 +3566,17 @@
       "Try using only letters, numerals, and _.-": [
         "Спробуйте використовувати лише літери, цифри та символи _.-"
       ],
+      "Unable to import file": [
+        "Не вдалося імпортувати файл"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Не вдалося завантажити панель керування VPN. Перевірте з'єднання та спробуйте знову."
       ],
       "Unexpected error, we can't import the contacts": [
         "Неочікувана помилка, неможливо імпортувати контакти"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Неочікувана помилка, не вдалося імпортувати файли"
       ],
       "Unknown error": [
         "Невідома помилка"
@@ -3351,6 +3602,12 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "У нас виникли проблеми зі збереженням останніх редагувань. Оновіть сторінку."
       ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "У нас виникли проблеми із синхронізацією вашого документа. Оновіть сторінку."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Не вдалося імпортувати цей файл у ${ SHEETS_APP_NAME }. Спробуйте скопіювати та вставити вміст у новий ${ SHEETS_APP_NAME }."
+      ],
       "We couldn’t send a verification code using this method.": [
         "Не вдалося надіслати код підтвердження за допомогою цього способу."
       ],
@@ -3368,6 +3625,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Ви досягли ліміту кількості контактів для вашого облікового запису"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Ви використали всі адреси у вашому тарифному плані. Будь ласка, покращіть свій тарифний план, щоб додати нову адресу, або вимкніть адресу у вашому обліковому записі."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
@@ -4323,6 +4583,9 @@
         "${ contactsLength } контактів",
         "${ contactsLength } контактів"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Файли ${ DOCS_APP_NAME } не можна завантажити безпосередньо, і вони не будуть включені в це завантаження. Ви можете завантажити інші файли, натиснувши «Продовжити завантаження»."
+      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } дозволяє співпрацювати в режимі реального часу з використанням наскрізного шифрування для повної приватності. Щоб розпочати редагування, створіть копію, або запросіть доступ у власника."
       ],
@@ -4346,6 +4609,9 @@
         "${ planName } завершиться за ${ daysLeft } дні.",
         "${ planName } завершиться за ${ daysLeft } днів.",
         "${ planName } завершиться за ${ daysLeft } дня(ів)."
+      ],
+      "${ planName } expires today.": [
+        "Термін дії ${ planName } закінчується сьогодні."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знайдено ${ providerFoldersNumLocalized } теку",
@@ -4382,6 +4648,12 @@
         "${ selectedFoldersCountLocalized } вибрані мітки",
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
+      ],
+      "${ total } user found": [
+        "Знайдено ${ total } користувача",
+        "Знайдено ${ total } користувачі",
+        "Знайдено ${ total } користувачів",
+        "Знайдено ${ total } користувачів"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
@@ -4446,6 +4718,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN — це безпечний тунель між вашим пристроєм та інтернетом. Він приховує ваше розташування та дії від вашого інтернет-провайдера (ISP) і вебсайтів, які ви відвідуєте."
       ],
+      "Accept/decline": [
+        "Прийняти/відхилити"
+      ],
       "Ad targeting": [
         "Націлювання реклами"
       ],
@@ -4454,6 +4729,9 @@
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Рекламодавці відстежують ваш перегляд вебсторінок для показу цільової реклами. ${ VPN_APP_NAME } блокує вистежувачі та рекламу, роблячи ваше з'єднання швидшим та покращуючи вашу роботу онлайн."
+      ],
+      "All": [
+        "Усі"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Усі (${ totalFoldersCount } тека)",
@@ -4499,6 +4777,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Принаймні ${ BETTER_PASSWORD_LENGTH } символів"
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
         "Після закінчення пробного періоду ${ boldCancelDate } вас буде переведено на тарифний план ${ boldProtonFree }. Усі облікові записи користувачів буде вилучено з вашої організації."
@@ -4572,6 +4853,9 @@
       "Continue": [
         "Продовжити"
       ],
+      "Converting document...": [
+        "Перетворення документа..."
+      ],
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
       ],
@@ -4602,6 +4886,12 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
+      "Create an end-to-end encrypted document.": [
+        "Створити документ із наскрізним зашифруванням."
+      ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Створюйте наскрізно зашифровані документи та електронні таблиці."
+      ],
       "Create in": [
         "Створити у"
       ],
@@ -4617,11 +4907,17 @@
       "Creating link to folder": [
         "Створення посилання на теку"
       ],
+      "Creating new document...": [
+        "Створення нового документа..."
+      ],
       "Current plan": [
         "Поточний план"
       ],
       "Current version": [
         "Поточна версія"
+      ],
+      "Decrypting your document": [
+        "Розшифрування вашого документа"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Цифровий підпис перевірено. Цей файл безпечно вивантажено користувачем ${ emailAddress }."
@@ -4643,6 +4939,9 @@
       ],
       "Document owner has the password": [
         "Власник документа має пароль"
+      ],
+      "Documents": [
+        "Документи"
       ],
       "Downgrade": [
         "Перейти на нижчий тарифний план"
@@ -4713,6 +5012,12 @@
       "Enter your own password (as trusted contact).": [
         "Введіть власний пароль (як довірена особа)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Помилка перетворення документа: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Помилка завантаження документа: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Помилка синхронізації"
       ],
@@ -4749,6 +5054,9 @@
       "File will not be updated": [
         "Файл не буде оновлено"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Лише файли (без фотографій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }) — загалом до 100 ГБ, 100 000 файлів та 50 ГБ на файл"
+      ],
       "finance": [
         "фінанси"
       ],
@@ -4776,11 +5084,26 @@
       "Geoblocking": [
         "Геоблокування"
       ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Отримайте професійну електронну пошту @your-company.com, 1 ТБ безпечного сховища на кожного користувача, довші відеодзвінки та багато іншого з ${ BRAND_NAME } Workspace."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Отримувати оновлення електронною поштою щодо коментарів і пропозицій, доданих до ваших документів."
+      ],
+      "Get Notified About Comments": [
+        "Отримувати сповіщення про коментарі"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Уряди та ISP можуть відстежувати ваші дії онлайн. Завдяки приховуванню вашої справжньої IP-адреси та шифруванню дій ваш перегляд стає приватним."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Допоможіть нам покращити роботу, повідомивши про проблему. Якщо ви не проти поділитися вмістом електронної таблиці, додайте інформацію для налагодження нижче до свого звіту."
+      ],
       "here": [
         "тут"
+      ],
+      "Hide table of contents": [
+        "Сховати зміст"
       ],
       "High Priority": [
         "Високий пріоритет"
@@ -4830,6 +5153,9 @@
       "Important note": [
         "Важлива інформація"
       ],
+      "Importing ODS files is currently in beta": [
+        "Імпортування файлів ODS наразі перебуває в бета-версії"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
@@ -4856,6 +5182,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Схоже, що ви нещодавно намагалися завантажити ${ uploadName }. Якщо не вдалося завантажити, ${ replaceFile }. Якщо завантаження досі триває, заміна файлу скасує поточне завантаження."
+      ],
+      "It's better to have:": [
+        "Бажано мати:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Найкраще використовувати VPN постійно. Але ось випадки, коли загрози кібербезпеці можуть бути найвищими:"
@@ -4923,6 +5252,9 @@
       "Low Priority": [
         "Низький пріоритет"
       ],
+      "Making a copy...": [
+        "Створення копії..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символ",
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символи",
@@ -4956,11 +5288,17 @@
       "No contacts added yet": [
         "Контактів ще не додано"
       ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "В URL-адресі не вказано документ. Поверніться в ${ DRIVE_APP_NAME } і виберіть документ."
+      ],
       "No email address": [
         "Немає адреси е-пошти"
       ],
       "No group found": [
         "Групу не знайдено"
+      ],
+      "No recent documents match your search.": [
+        "Немає нещодавніх документів, що відповідають вашому пошуку."
       ],
       "No results found": [
         "Результатів не знайдено"
@@ -4994,6 +5332,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Лише люди з посиланням та паролем можуть отримати доступ до цієї теки."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ой! Ця електронна таблиця не може зберегти ваші останні зміни, тому ми призупинили редагування, щоб запобігти втраті вашої роботи."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Відкрийте посібник, щоб переглянути рекомендовані дії та корисні посилання."
@@ -5094,6 +5435,15 @@
       "Public documents are not yet enabled for your organization.": [
         "Публічні документи ще не ввімкнені для вашої організації."
       ],
+      "Read-only": [
+        "Лише для читання"
+      ],
+      "Recent documents": [
+        "Нещодавні документи"
+      ],
+      "Recent spreadsheets": [
+        "Нещодавні електронні таблиці"
+      ],
       "Recents": [
         "Нещодавні"
       ],
@@ -5163,6 +5513,9 @@
       "Shared on": [
         "Поширено"
       ],
+      "Show table of contents": [
+        "Показати зміст"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
       ],
@@ -5183,6 +5536,9 @@
       ],
       "Something went wrong": [
         "Виникла проблема"
+      ],
+      "Spreadsheets": [
+        "Електронні таблиці"
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Залишайтеся на зв'язку без зайвих зусиль, увімкнувши такі налаштування VPN:"
@@ -5208,6 +5564,9 @@
       "Surveillance": [
         "Стеження"
       ],
+      "Symbols (#$&)": [
+        "Символи (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
@@ -5220,6 +5579,12 @@
       "The Beginning": [
         "Початок"
       ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Цифровий підпис було частково перевірено. Цей файл було вивантажено через загальнодоступне посилання для спільного доступу користувачем без облікового запису ${ BRAND_NAME }, тому його особисті дані неможливо перевірити."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Цифровий підпис було частково перевірено. Цю папку було вивантажено через загальнодоступне посилання для спільного доступу користувачем без облікового запису ${ BRAND_NAME }, тому його особисті дані неможливо перевірити."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
       ],
@@ -5229,14 +5594,35 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Власник цієї адреси вимкнув наскрізне шифрування. Щоб мати можливість надсилати зашифровані листи на цю адресу, він повинен повторно ввімкнути шифрування."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Схоже, введена вами URL-адреса була скопійована зі Slack неправильно. Під час копіювання довгих посилань зі Slack клацніть правою кнопкою миші на посилання, а потім виберіть «Копіювати посилання», а не копіюйте урізаний текст URL-адреси безпосередньо."
+      ],
+      "There are no documents in the trash.": [
+        "У Смітнику немає документів."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Ця дія видалить посилання і відкличе доступ для всіх користувачів."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Цю адресу вимкнено. Щоб мати змогу надсилати на цю адресу, власник повинен спочатку активувати адресу."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Цей документ став занадто великим для редагування. Ви можете вилучити старіші версії, щоб продовжити редагування."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Цей документ став занадто великим, тому останні зміни не вдалося зберегти. Завантажте копію, щоб зберегти свою роботу."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Цей документ має велику активність. Деякі функції можуть бути тимчасово недоступними."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Цей документ має багато активних співавторів. Редагування в реальному часі тимчасово недоступне. Оновіть сторінку, щоб переглянути останні оновлення."
+      ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "Цей документ може не існувати, або у нас виникли проблеми з його завантаженням. Перезавантажте сторінку та спробуйте ще раз."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "Цей документ може не існувати або ви не маєте дозволу на його перегляд. Ви можете спробувати перезавантажити сторінку, щоб перевірити, чи проблема не зникла, або звернутися до власника для отримання доступу."
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Це назва або псевдонім вашої організації, які бачитимуть ваші користувачі. Ви можете змінити її будь-коли."
@@ -5286,6 +5672,9 @@
       "This will upload a new version of the folder": [
         "Це вивантажить нову версію теки"
       ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Щоб завантажити файли ${ DOCS_APP_NAME }, відкрийте їх у ${ DOCS_APP_NAME } та виконайте експорт."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
@@ -5334,6 +5723,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "На жаль, схоже що неможливо розшифрувати файл або його вміст."
       ],
+      "Update recent documents": [
+        "Оновити нещодавні документи"
+      ],
       "Upgrade anytime to bring over the rest": [
         "Покращте тарифний план у будь-який час, щоб перенести решту"
       ],
@@ -5348,6 +5740,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
+      ],
+      "Uppercase and lowercase letters": [
+        "Великі та малі літери"
       ],
       "User activated": [
         "Користувач активований"
@@ -5475,6 +5870,12 @@
       "You cannot undo this action.": [
         "Цю дію не можна скасувати."
       ],
+      "You don't have access": [
+        "У вас немає доступу"
+      ],
+      "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Можливо, ви не маєте необхідних дозволів для перегляду його з вибраного облікового запису. Спробуйте інший обліковий запис або зверніться до власника для отримання доступу."
+      ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Для можливості переходу на тарифний план нижчого рівня ви повинні вилучити будь-яких додаткових користувачів ${ MAIL_APP_NAME }, адреси та власні домени."
       ],
@@ -5546,6 +5947,9 @@
       ],
       "Your email address was exposed:": [
         "Вашу адресу електронної пошти було викрито:"
+      ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Ваша адреса електронної пошти буде видимою як власник посилання на сторінці спільного доступу"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
@@ -5747,6 +6151,9 @@
       "Anyone on the Internet with the link": [
         "Будь-хто в Інтернеті, хто має посилання"
       ],
+      "Anyone on the Internet with the link can edit": [
+        "Кожен в Інтернеті, хто має посилання, може змінити"
+      ],
       "Anyone on the Internet with the link can view": [
         "Переглядати можуть всі, хто має посилання"
       ],
@@ -5894,11 +6301,20 @@
       "Emails (last month)": [
         "Е-пошта (останній місяць)"
       ],
+      "Enable email notifications": [
+        "Увімкнути сповіщення електронною поштою"
+      ],
       "Encrypt emails": [
         "Шифрувати листи"
       ],
       "Erase this link and remove everyone with access": [
         "Стерти це посилання і вилучити доступ для всіх"
+      ],
+      "Exact host matching": [
+        "Точна відповідність хоста"
+      ],
+      "Exact URL matching": [
+        "Точна відповідність URL-адреси"
       ],
       "Expiry": [
         "Термін дії"
@@ -5947,6 +6363,9 @@
       ],
       "Include application logs in bug report": [
         "Додати журнали програми до звіту про помилку"
+      ],
+      "Include document name in notification": [
+        "Включати назву документа в сповіщення"
       ],
       "Include message and file name in invite email": [
         "Додайте повідомлення та ім'я файлу до листа-запрошення"
@@ -6008,11 +6427,17 @@
       "Move to Inbox": [
         "Перемістити до вхідних"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Має містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
+      ],
       "My files": [
         "Мої файли"
       ],
       "Navigation": [
         "Навігація"
+      ],
+      "Never fill on this exact URL": [
+        "Ніколи не заповнювати на цій точній URL-адресі"
       ],
       "New password": [
         "Новий пароль"
@@ -6034,6 +6459,9 @@
       ],
       "Optional": [
         "Необов'язково"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Основний домен і піддомени (типовий)"
       ],
       "Password": [
         "Пароль"
@@ -6074,6 +6502,9 @@
       "Region": [
         "Область"
       ],
+      "Regular expression": [
+        "Регулярний вираз"
+      ],
       "Replace existing file": [
         "Замінити наявний файл"
       ],
@@ -6110,6 +6541,9 @@
       "Skip folder": [
         "Пропустити теку"
       ],
+      "Starts with": [
+        "Починається з"
+      ],
       "Stop sharing": [
         "Припинити спільний доступ"
       ],
@@ -6118,6 +6552,9 @@
       ],
       "Strong": [
         "Надійний"
+      ],
+      "Strong password": [
+        "Надійний пароль"
       ],
       "Sync with system": [
         "Синхронізувати з системою"
@@ -6134,8 +6571,14 @@
       "Trash": [
         "Смітник"
       ],
+      "Unknown user": [
+        "Невідомий користувач"
+      ],
       "Upload picture": [
         "Завантажити зображення"
+      ],
+      "URL wildcard pattern": [
+        "Шаблон URL-адреси із символом підставлення"
       ],
       "Username": [
         "Ім'я користувача"
@@ -6148,6 +6591,9 @@
       ],
       "Vulnerable": [
         "Вразливий"
+      ],
+      "Vulnerable password": [
+        "Вразливий пароль"
       ],
       "Weak": [
         "Слабкий"
@@ -6490,6 +6936,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Правило відповідності 'Починається з'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правило точної відповідності (під) домену"
+      ],
+      "Exact URL matching rule": [
+        "Правило точної відповідності URL-адреси"
+      ],
+      "Never fill with this exact URL": [
+        "Ніколи не заповнювати з цією точковою URL-адресою"
+      ],
+      "Regular expression rule": [
+        "Правило регулярного виразу"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правило відповідності шаблону із символом підставлення"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш безплатний пробний період закінчився. ${ nonAutoRenewalAction }"
       ],
@@ -7873,6 +8337,12 @@
       "Device renamed": [
         "Пристрій перейменовано"
       ],
+      "Document moved to trash": [
+        "Документ переміщено до Смітника"
+      ],
+      "Document restored from trash": [
+        "Документ відновлено зі Смітника"
+      ],
       "External invitation removed from the share": [
         "Зовнішнє запрошення вилучено зі спільного доступу"
       ],
@@ -7893,6 +8363,9 @@
       ],
       "Failed to reject share invitation": [
         "Не вдалося відхилити запрошення, яким поділилися"
+      ],
+      "Failed to rename document": [
+        "Не вдалося перейменувати документ"
       ],
       "Failed to upload files: ${ err }": [
         "Не вдалося вивантажити файли: ${ err }"
@@ -7942,6 +8415,9 @@
       "Public link update access failed ": [
         "Не вдалося отримати доступ до публічного посилання "
       ],
+      "Recent documents updated": [
+        "Нещодавні документи оновлено"
+      ],
       "Root folder failed to be loaded": [
         "Не вдалося завантажити кореневу теку"
       ],
@@ -7957,17 +8433,29 @@
       "Share invitation declined": [
         "Запрошення, яким поділилися, відхилено"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "На жаль, нам не вдалося видалити папку, оскільки вона не порожня.",
+        "На жаль, нам не вдалося видалити папки, оскільки вони не порожні.",
+        "На жаль, нам не вдалося видалити папки, оскільки вони не порожні.",
+        "На жаль, нам не вдалося видалити папки, оскільки вони не порожні."
+      ],
       "Stopping the sharing of this item has failed": [
         "Не вдалося зупинити поширення елемента"
       ],
       "Subfolder failed to be loaded": [
         "Не вдалося завантажити підтеку"
       ],
+      "The document failed to be created": [
+        "Не вдалося створити документ"
+      ],
       "The link to your item failed to be deleted": [
         "Не вдалося видалити посилання на ваш елемент"
       ],
       "The link to your item was deleted": [
         "Посилання на ваш елемент було видалено"
+      ],
+      "The spreadsheet failed to be created": [
+        "Не вдалося створити електронну таблицю"
       ],
       "Trash failed to be emptied": [
         "Не вдалося спорожнити смітник"
@@ -8461,6 +8949,9 @@
       "Search for name or email": [
         "Пошук за іменем чи е-поштою"
       ],
+      "Search for users or addresses": [
+        "Шукати користувачів або адреси"
+      ],
       "Search parent folder": [
         "Пошук у теці верхнього рівня"
       ],
@@ -8658,8 +9149,14 @@
       ]
     },
     "Recent documents table header": {
+      "Created by": [
+        "Створено"
+      ],
       "Deleted": [
         "Видалено"
+      ],
+      "Earlier": [
+        "Раніше"
       ],
       "Location": [
         "Розташування"
@@ -8670,11 +9167,20 @@
       "Name": [
         "Назва"
       ],
+      "Previous 30 days": [
+        "Попередні 30 днів"
+      ],
+      "Previous 7 days": [
+        "Попередні 7 днів"
+      ],
       "Search results": [
         "Результати пошуку"
       ],
       "Today": [
         "Сьогодні"
+      ],
+      "Viewed": [
+        "Переглянуто"
       ],
       "Yesterday": [
         "Учора"
@@ -8684,11 +9190,26 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } за реферала"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Якщо ви скасуєте передплату до цієї дати,** ваш тарифний план буде **змінено на нижчий** до ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } після закінчення пробного періоду."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Якщо ви не підпишетеся,** ваш тарифний план буде **змінено на нижчий** — ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Якщо ви не скасуєте передплату,** розпочнеться дія вашого повного тарифного плану, і ви отримаєте **${ referrerRewardAmount }** кредиту."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Якщо ви підпишетеся до цієї дати,** ви отримаєте **${ referrerRewardAmount }** кредиту."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Після цієї дати ваш обліковий запис буде переведено на нижчий тарифний план **${ BRAND_NAME } Free**. Якщо ви зміните свою думку, ви зможете **відновити передплату**, щоб зберегти доступ до преміумфункцій."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Заробляйте до ${ maxRewardAmount } кредитами. Ви отримаєте ${ referrerRewardAmount }, коли запрошена вами особа підпишеться на тарифний план ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Користуйтеся тарифним планом **${ planTitle }** безплатно до **${ textDate }**."
       ],
       "Friend joined": [
         "Друг приєднався",
@@ -8708,6 +9229,9 @@
       "Invited friends": [
         "Запрошені друзі"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Остання можливість ознайомитися з усіма потужними функціями, які пропонує **${ planTitle }**."
+      ],
       "More sharing options": [
         "Інші варіанти поширення"
       ],
@@ -8722,6 +9246,15 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Ви можете отримати до **${ maxRewardAmount }** кредитами."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "У вас залишився **${ daysRemaining } день**, щоб ознайомитися з усіма потужними функціями, які пропонує **${ planTitle }**.",
+        "У вас залишилося **${ daysRemaining } дні**, щоб ознайомитися з усіма потужними функціями, які пропонує **${ planTitle }**.",
+        "У bosses залишилося **${ daysRemaining } днів**, щоб ознайомитися з усіма потужними функціями, які пропонує **${ planTitle }**.",
+        "У вас залишилося **${ daysRemaining } дня**, щоб ознайомитися з усіма потужними функціями, які пропонує **${ planTitle }**."
+      ],
+      "your subscription": [
+        "ваша передплата"
       ]
     },
     "Safety review": {
@@ -9031,8 +9564,62 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Значення, розділені комами (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "Нова електронна таблиця"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Значення, розділені табуляцією (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Створення нової електронної таблиці..."
+      ],
+      "Detect automatically": [
+        "Визначати автоматично"
+      ],
+      "Insert as new sheet": [
+        "Вставити як новий аркуш"
+      ],
+      "Replace current sheet": [
+        "Замінити поточний аркуш"
+      ],
+      "Replace data at selected cell": [
+        "Замінити дані у вибраній клітинці"
+      ],
+      "Replace spreadsheet": [
+        "Замінити електронну таблицю"
+      ],
+      "Select a file to import": [
+        "Виберіть файл для імпортування"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Вашу поточну електронну таблицю, включно з усіма аркушами в ній, буде замінено цією версією."
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Перетворювати текст на числа, дати та формули"
+      ],
+      "Destination": [
+        "Місце призначення"
+      ],
+      "Format": [
+        "Формат"
+      ],
+      "Separator type": [
+        "Тип розділювача"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Імпортувати дані"
       ]
     },
     "Signing preference for emails": {
@@ -9044,6 +9631,12 @@
       ]
     },
     "Sort menu options": {
+      "Created by": [
+        "Автор"
+      ],
+      "Last viewed first": [
+        "Останні переглянуті спочатку"
+      ],
       "Location": [
         "Розташування"
       ],
@@ -9801,6 +10394,9 @@
         "${ emailsCount } адрес е-пошти",
         "${ emailsCount } адреси е-пошти"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Помічник з написання ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Відновлення облікового запису"
       ],
@@ -9990,6 +10586,12 @@
       "Docs": [
         "Документи"
       ],
+      "Document Size Limit Exceeded": [
+        "Перевищено ліміт розміру документа"
+      ],
+      "Document Size Limit Reached": [
+        "Досягнуто ліміту розміру документа"
+      ],
       "Document verification failed": [
         "Не вдалось перевірити документ"
       ],
@@ -10032,6 +10634,9 @@
       "Edit image": [
         "Змінити зображення"
       ],
+      "Editing paused": [
+        "Редагування призупинено"
+      ],
       "Email addresses": [
         "Адреси е-пошти"
       ],
@@ -10065,6 +10670,9 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Отримайте **${ referralInfo.uiData.refereeRewardAmount }** кредитами з ${ planTitle }"
       ],
+      "Get more from your VPN": [
+        "Отримайте більше від вашого VPN"
+      ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Отримайте більше місця у сховищі з ${ MAIL_APP_NAME } Plus"
       ],
@@ -10088,6 +10696,9 @@
       ],
       "How does it work?": [
         "Як це працює?"
+      ],
+      "How your free trial works": [
+        "Як працює безплатний пробний період"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -10221,6 +10832,9 @@
       "Re-signing contacts": [
         "Повторне підписання контактів"
       ],
+      "Read-only": [
+        "Лише для читання"
+      ],
       "Recommended actions": [
         "Рекомендовані дії"
       ],
@@ -10344,6 +10958,9 @@
       "Untitled document ${ date }": [
         "Документ без назви ${ date }"
       ],
+      "Untitled spreadsheet ${ date }": [
+        "Електронна таблиця без назви ${ date }"
+      ],
       "Upgrade to ${ planName }": [
         "Покращити до ${ planName }"
       ],
@@ -10364,6 +10981,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
+      ],
+      "Users and addresses": [
+        "Користувачі та адреси"
       ],
       "Verify your password": [
         "Підтвердьте свій пароль"
@@ -10404,16 +11024,31 @@
       "Your document cannot be loaded": [
         "Ваш документ не може бути завантаженим"
       ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "Ваше завантаження містить файл ${ DOCS_APP_NAME }"
+      ],
       "Your exposed information": [
         "Ваша викрита інформація"
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "Дії"
+      ],
       "Created": [
         "Створено"
       ],
       "Expires": [
         "Термін дії"
+      ],
+      "Fingerprint": [
+        "Цифровий відбиток"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тип"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10535,6 +11170,11 @@
       ],
       "The user must have an address to request data access": [
         "Користувач повинен мати адресу для запиту доступу до даних"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Ви зможете призначати ролі після того, як користувач прийме запрошення."
       ]
     },
     "Validation": {
@@ -10682,6 +11322,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
       ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } надає потужний контроль, але одна помилка може призвести до того, що автозаповнення збігатиметься і заповнюватиме дані на шахрайських або фішингових вебсайтах."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Ви дійсно хочете остаточно видалити ${ count } контакт?",
         "Ви дійсно хочете остаточно видалити ${ count } контакти?",
@@ -10732,6 +11375,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Цей імпорт може перевищити обсяг сховища, який зараз доступний для вашого облікового запису ${ BRAND_NAME }. Розгляньте можливість налаштування вашого імпортування."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "Це замінить усі дані в електронній таблиці"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, зараз ми не в мережі. Будь ласка, заповніть форму внизу, щоб описати вашу проблему. Ми розглянемо її та зв'яжемося з вами, коли будемо знову в мережі."

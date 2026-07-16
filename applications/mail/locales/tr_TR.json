@@ -1520,8 +1520,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1735,7 +1734,7 @@
         "Kategorileri özelleştir"
       ],
       "Got it": [
-        "Anlaşıldı"
+        "Anladım"
       ],
       "Next": [
         "Sonraki"
@@ -2290,6 +2289,27 @@
       ],
       "Status": [
         "Durum"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının askıya alınma durumunu kaldırın."
       ],
       "User": [
         "Kullanıcı"
@@ -4195,16 +4215,16 @@
         "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
       ],
       "A blue dot appears when a category has unread messages since your last visit.": [
-        "Bir kategoride son ziyaretinizden bu yana okunmamış iletiler olduğunda mavi bir nokta belirir."
+        "Son bakmanızdan bu yana okunmamış iletileri olan kategorilerde mavi bir nokta görüntülenir."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME } üzerine klasörler ve dosyalar ekleyerek bunları görüntülemeleri veya düzenlemeleri için ekip arkadaşarınızı davet edin."
       ],
       "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
-        "Ayarlar bölümünden istediğiniz zaman kategori ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ve ayarlarınızı değiştirebilirsiniz."
+        "Kategorileri istediğiniz zaman ayarlar bölümünden ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ve ayarlarını değiştirebilirsiniz."
       ],
       "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
-        "Ayarlar bölümünden istediğiniz zaman kategoriler ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ya da tamamen kapatabilirsiniz."
+        "Kategorileri istediğiniz zaman ayarlar bölümünden ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ya da tümüyle kapatabilirsiniz."
       ],
       "Also included": [
         "Ayrıca şunlar da bulunur"
@@ -4316,7 +4336,7 @@
         "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
       ],
       "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Bir e-postaya sağ tıklayın ve “Şuraya taşı” seçeneğini seçin ya da e-postayı başka bir kategoriye sürükleyip bırakın. Benzer e-postalar bundan sonra otomatik olarak o kategoride sıralanacaktır."
+        "Bir e-postaya sağ tıklayın ve “Şuraya taşı” seçeneğini seçin ya da e-postayı sürükleyip başka bir kategoriye bırakın. Bundan sonra benzer e-postalar otomatik olarak oraya taşınır."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Gmail iletilerini doğrudan ${ MAIL_APP_NAME } üzerinden gönderin ve alın. ${ addressesSettingsLink } bölümünden adresinizi bağlayın."
@@ -5419,7 +5439,7 @@
         "KDV numarası ${ prefixes } ile başlamalıdır"
       ],
       "We couldn’t send a verification code using this method.": [
-        "Bu yöntemle doğrulama kodunu gönderemedik."
+        "Doğrulama kodu bu yöntemle gönderilemedi."
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
@@ -16399,6 +16419,9 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } üzerinden güvenle Gmail kullanın"
+      ],
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
       ],
       "Verification error": [
         "Doğrulama sorunu"

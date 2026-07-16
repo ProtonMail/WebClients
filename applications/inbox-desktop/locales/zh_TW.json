@@ -4,7 +4,30 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "取消"
+      ],
+      "Open external url": [
+        "開啟外部網址"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "不允許使用 ${ parsedProtocol } 協定。您確定要開啟此外部網址嗎？"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "「立即重新啟動並進行效能分析」將會立即重新啟動應用程式並擷取啟動分析資料。\n\n「下次啟動時分析」將在您下次開啟應用程式時進行效能分析。可用此功能來評估重新開機後的啟動速度。"
+      ],
+      "About ${ MAIL_APP_NAME }": [
+        "關於 ${ MAIL_APP_NAME }"
+      ],
+      "Actual Size": [
+        "實際大小"
+      ],
+      "Cancel": [
+        "取消"
+      ],
       "Check spelling while typing": [
         "打字時檢查拼寫"
       ],
@@ -13,6 +36,9 @@
       ],
       "Close Window": [
         "關閉視窗"
+      ],
+      "Collect startup performance data": [
+        "收集啟動效能數據"
       ],
       "Copy": [
         "複製"
@@ -23,8 +49,29 @@
       "Delete": [
         "刪除"
       ],
+      "Disable": [
+        "停用"
+      ],
+      "Disable Hardware Acceleration": [
+        "停用硬體加速"
+      ],
+      "Enable": [
+        "啟用"
+      ],
+      "Enable diagnostic logs": [
+        "啟用診斷日誌"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "啟用來自 Chromium 引擎的診斷日誌。"
+      ],
+      "Enable Hardware Acceleration": [
+        "啟用硬體加速"
+      ],
       "Force Reload": [
         "強制重新載入"
+      ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "隱藏 ${ MAIL_APP_NAME }"
       ],
       "Hide Others": [
         "隱藏其他"
@@ -38,14 +85,29 @@
       "Paste and Match Style": [
         "貼上並符合樣式"
       ],
+      "Profile app startup": [
+        "分析應用程式啟動效能"
+      ],
+      "Profile on next launch": [
+        "下次啟動時分析"
+      ],
       "Quit": [
         "退出"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "退出 ${ MAIL_APP_NAME }"
       ],
       "Redo": [
         "復原"
       ],
       "Reload": [
         "重新載入"
+      ],
+      "Restart and profile now": [
+        "立即重新啟動並進行效能分析"
+      ],
+      "Restart with logging": [
+        "重新啟動並記錄日誌"
       ],
       "Select All": [
         "全選"
@@ -59,17 +121,38 @@
       "Speech": [
         "語音"
       ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "在登入時啟動 ${ MAIL_APP_NAME }"
+      ],
       "Start Speaking": [
         "開始語音"
       ],
       "Stop Speaking": [
         "停止說話"
       ],
+      "Switch to ${ appName }": [
+        "切換至 ${ appName }"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "這些日誌可協助我們診斷問題。應用程式將會重新啟動以套用變更。"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "這將測量應用程式啟動所需的時間，並將報告儲存至您的日誌資料夾。"
+      ],
       "Toggle Full Screen": [
         "切換全螢幕"
       ],
       "Undo": [
         "復原"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "解除安裝 ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "啟用硬體加速時，應用程式會使用您裝置的專用圖形硬體進行算圖。這可能會在某些系統上導致相容性問題。"
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "停用硬體加速時，應用程式會使用軟體算圖，而非您的顯示卡。您可能會感覺到動畫變慢且 CPU 使用率增加。"
       ],
       "Zoom": [
         "縮放"
@@ -82,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "停用硬體加速"
+      ],
+      "Enable Hardware Acceleration": [
+        "啟用硬體加速"
+      ],
       "Services": [
         "服務"
       ]
@@ -135,9 +224,20 @@
         "復原"
       ]
     },
+    "Error dialog": {
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - 發生非預期錯誤"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "由於發生錯誤，${ MAIL_APP_NAME } 應用程式將會關閉。請嘗試再次執行，若問題仍然存在，請與我們聯絡。有關此錯誤的詳細資訊，可以在應用程式日誌中找到。"
+      ]
+    },
     "error screen": {
       "Cannot establish connection": [
         "無法建立連線"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "請檢查您的網路連線或網路設定。如果問題持續，請聯絡客戶支援服務。"
       ],
       "Try again": [
         "重試"

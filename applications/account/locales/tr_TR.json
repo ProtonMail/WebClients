@@ -327,6 +327,9 @@
       "Compare plans": [
         "Tarifeleri karşılaştır"
       ],
+      "Configure new device profile": [
+        "Yeni aygıt profilini yapılandır"
+      ],
       "Configure SAML": [
         "SAML yapılandırması"
       ],
@@ -407,9 +410,6 @@
       ],
       "Continue with this password": [
         "Bu parolayı kullanmayı sürdür"
-      ],
-      "Copy": [
-        "Kopyala"
       ],
       "Copy address": [
         "Adresi kopyala"
@@ -512,6 +512,9 @@
       ],
       "Delete and confirm": [
         "Sil ve onayla"
+      ],
+      "Delete device profile": [
+        "Aygıt profilini sil"
       ],
       "Delete filter “${ Name }”": [
         "“${ Name }” süzgecini sil"
@@ -825,6 +828,9 @@
       "Generate": [
         "Oluştur"
       ],
+      "Generate device profile": [
+        "Aygıt profili oluştur"
+      ],
       "Generate key": [
         "Anahtar oluştur"
       ],
@@ -963,9 +969,6 @@
       "Hide": [
         "Gizle"
       ],
-      "Hide ${ LUMO_SHORT_APP_NAME }": [
-        "${ LUMO_SHORT_APP_NAME } uygulamasını gizle"
-      ],
       "Hide more benefits": [
         "Diğer faydaları gizle"
       ],
@@ -1022,6 +1025,9 @@
       ],
       "Insert link": [
         "Bağlantı ekle"
+      ],
+      "Instructions": [
+        "Talimatlar"
       ],
       "Invite": [
         "Davet et"
@@ -1102,7 +1108,7 @@
         "İletişim ayarları yönetimi"
       ],
       "Manage company": [
-        "Şirketi yönet"
+        "Kuruluş yönetimi"
       ],
       "Manage folders": [
         "Klasör yönetimi"
@@ -1518,9 +1524,6 @@
       "Select time zone": [
         "Saat dilimini seçin"
       ],
-      "Send": [
-        "Gönder"
-      ],
       "send auto-reply email": [
         "otomatik yanıt e-postası gönder"
       ],
@@ -1683,9 +1686,6 @@
       "Stay": [
         "Kal"
       ],
-      "Stop": [
-        "Durdur"
-      ],
       "Stop using single sign-on": [
         "Tek oturum açma kullanmayı bırak"
       ],
@@ -1748,9 +1748,6 @@
       ],
       "Underline": [
         "Altı çizili"
-      ],
-      "Undo": [
-        "Geri al"
       ],
       "Undo import": [
         "İçe aktarmayı geri al"
@@ -2204,11 +2201,6 @@
       ],
       "User admin:": [
         "Kullanıcı yöneticisi:"
-      ]
-    },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Bir rol, kuruluşunuzun üyelerine atayabileceğiniz bir izin grubudur."
       ]
     },
     "Alert": {
@@ -3006,11 +2998,11 @@
         "Bilinmeyen bir sorun çıktı. Lütfen sayfayı yenileyip yeniden deneyin"
       ],
       "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "${ withoutString } ve ${ notMigratedOthers } olmadan devam etmek istediğinizden emin misiniz?",
-        "${ withoutString } ve ${ notMigratedOthers } olmadan devam etmek istediğinizden emin misiniz?"
+        "${ withoutString } ve ${ notMigratedOthers } olmadan ilerlemek istediğinize emin misiniz?",
+        "${ withoutString } ve ${ notMigratedOthers } olmadan ilerlemek istediğinize emin misiniz?"
       ],
       "Are you sure you want to continue without ${ withoutString }?": [
-        "${ withoutString } olmadan devam etmek istediğinizden emin misiniz?"
+        "${ withoutString } olmadan ilerlemek istediğinize emin misiniz?"
       ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "İlerlemek istediğinize emin misiniz? Aktarım işlemi tamamlanmadan önce hesaplarını doğrulamamış olan kullanıcıların ${ BRAND_NAME } kuruluş yöneticisinden parola sıfırlama isteğinde bulunmaları gerekecek."
@@ -3061,7 +3053,7 @@
         "Google Workspace üzerinden ${ BRAND_NAME } üzerine veri aktarımı durumu"
       ],
       "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Mevcut tüm MX kayıtlarını silin ardından aşağıdaki kodları kopyalayıp alan adı barındırıcınızın DNS bölümüne yapıştırın."
+        "Var olan tüm MX kayıtlarını silin, ardından aşağıdaki kodları kopyalayıp etki alanı hizmeti sağlayıcınızın DNS bölümüne yapıştırın."
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM her e-postaya bir dijital imza ekler. Böylece alıcılar iletinin gerçekten sizin etki alanınızdan geldiğini ve aktarım sırasında değiştirilmediğini doğrulayabilir. Bu imza olmadan iletiler daha az güvenilir olarak değerlendirilebilir."
@@ -3197,7 +3189,7 @@
         "Kuruluşun herkese açık anahtarı bulunamadı"
       ],
       "More details": [
-        "Daha fazla ayrıntı"
+        "Diğer ayrıntılar"
       ],
       "Need help?": [
         "Yardım mı gerekiyor?"
@@ -3298,11 +3290,32 @@
       "Status": [
         "Durum"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
+      ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Kuruluşunuzun verilerini ${ BRAND_NAME } üzerine taşımak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Easy Switch uygulamasını kurun. Kurulum sonrasında ilerlemek için buraya dönün."
       ],
       "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Geçiş işlemini tamamlamak için yalnızca ${ BRAND_NAME } MX kayıtlarını koruduğunuzdan emin olun."
+        "Aktarımı tamamlamak için yalnızca ${ BRAND_NAME } MX kayıtlarını tuttuğunuzdan emin olun."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının askıya alınma durumunu kaldırın."
       ],
       "Update records for receiving": [
         "Almak için kayıtları güncelleyin"
@@ -3372,7 +3385,7 @@
         "Geçerli tarifenizde en fazla ${ maxMembers } kullanıcı olabilir. Daha fazla kullanıcı aktarmak için aboneliğinize yeni koltuklar ekleyin."
       ],
       "Your domain configuration still includes another provider's MX codes.": [
-        "Etki alanı yapılandırmanızda hâlâ başka bir sağlayıcının MX kayıtları yer almakta."
+        "Etki alanı yapılandırmanızda başka bir hizmet sağlayıcının MX kayıtları da bulunuyor."
       ]
     },
     "breadcrumb": {
@@ -7228,6 +7241,9 @@
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
       ],
+      "Could not generate the device profile. Please try again.": [
+        "Aygıt profili oluşturulamadı. Lütfen tekrar deneyin."
+      ],
       "Could not open created vault": [
         "Oluşturulan kasa açılamadı"
       ],
@@ -7818,7 +7834,7 @@
         "Oturumunuz açılamadı"
       ],
       "We couldn’t send a verification code using this method.": [
-        "Bu yöntemle doğrulama kodunu gönderemedik."
+        "Doğrulama kodu bu yöntemle gönderilemedi."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamasını durdurduk. İmzalamayı sürdürmek için aşağıdaki yönergeleri izleyin."
@@ -8392,7 +8408,7 @@
         "Yeni bir kullanıcı oluşturmadan önce özel bir etki alanı yapılandırmanız gerekir."
       ],
       "You will lose access to all premium features included with ${ planName }.": [
-        "${ planName } paketinde yer alan tüm premium özelliklere erişiminiz sona erecek"
+        "${ planName } tarifesindeki tüm ücretli özelliklere erişiminizi kaybedeceksiniz."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "**${ invite.InviterEmail }** tarafından hesabınızı bu grup tarifesiyle ilişkilendirmeye davet edildiniz."
@@ -10311,8 +10327,14 @@
       "All data and settings are preserved": [
         "Tüm veriler ve ayarlar korunacak"
       ],
+      "All devices with this device profile deployed": [
+        "Bu aygıt profiline sahip tüm aygıtlara dağıtıldı"
+      ],
       "All inactive members deleted": [
         "Etkin olmayan tüm üyeler silindi"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Tüm internet trafiği her zaman şifrelenmiş ve güvenlidir"
       ],
       "All keys successfully reactivated": [
         "Tüm anahtarlar yeniden kullanıma alındı"
@@ -10565,10 +10587,10 @@
         "Beta"
       ],
       "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
-        "İlk 6 ay boyunca ${ monthlyDiscountedPriceElement } olarak faturalandırılır, ${ monthlyRenewalPriceElement } olarak yenilenir."
+        "İlk 6 ay için ${ monthlyDiscountedPriceElement } olarak faturalanır, ${ monthlyRenewalPriceElement } ile yenilenir."
       ],
       "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
-        "İlk 12 ay boyunca ${ yearlyDiscountedPriceElement } olarak faturalandırılır, ${ yearlyRenewalPriceElement } olarak yenilenir."
+        "İlk 12 ay için ${ yearlyDiscountedPriceElement } olarak faturalanır, ${ yearlyRenewalPriceElement } ile yenilenir."
       ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
@@ -10633,6 +10655,9 @@
       "Choose an Entity ID to continue.": [
         "İlerlemek için bir varlık kimliği seçin"
       ],
+      "Choose one:": [
+        "Birini seçin:"
+      ],
       "Choose your service to connect with": [
         "Bağlamak istediğiniz hizmeti seçin"
       ],
@@ -10668,6 +10693,9 @@
       ],
       "Compromised": [
         "Ele geçirilmiş"
+      ],
+      "Configure Always-on VPN": [
+        "Her zaman açık VPN'i yapılandır"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Kuruluşunuz için bir kimlik hizmeti sağlayıcı (IdP) kullanarak SAML kimlik doğrulamasını yapılandırın. Bu işlem, tüm kuruluş için SAML özelliğini kullanıma alır."
@@ -10848,6 +10876,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Erişim izni, ayarlarınıza bağlı olarak hemen ya da belirlenen **bekleme süresinin** sonunda verilebilir."
       ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "${ regoLink } dosyasını MDM dosya dağıtımınız aracılığıyla doğrudan dağıtın"
+      ],
+      "Deploy across all your managed devices": [
+        "Yönetilen tüm aygıtlarınıza dağıtın"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Bunu MDM’niz (Jamf, Intune…) aracılığıyla veya her bir aygıtta manuel olarak dağıtın."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Her zaman açık VPN aygıt profili yüklenmiş cihazlar ${ VPN_APP_NAME } bağlantısı aktif olmadıkça internete erişemez."
+      ],
       "Did you know?": [
         "Biliyor muydunuz?"
       ],
@@ -10924,6 +10964,12 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
       ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "${ ps1Link } dosyasını indirin ve aygıt profilini otomatik olarak yüklemek için her bir cihazda sistem kullanıcısı olarak çalıştırın."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "${ removeScriptLink } dosyasını indirin ve profili otomatik olarak silmek için her aygıtta sistem kullanıcısı olarak çalıştırın."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } indir"
       ],
@@ -10996,6 +11042,9 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "${ nameDeleted } etiketi ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Çalışanlar VPN bağlantısı olmadan internete giremezler"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Plus sunucularına ve özelliklerine erişiminizi sürdürmek için otomatik yenilemeyi açın."
       ],
@@ -11047,6 +11096,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Aygıt profili algıladığı anda uygulama otomatik olarak başlar."
+      ],
       "Enhance your network security": [
         "Ağ güvenliğinizi artırın"
       ],
@@ -11055,6 +11107,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
+      ],
+      "Ensure your organization is always protected": [
+        "Kuruluşunuzun her zaman güvende olduğundan emin olun"
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "${ BRAND_NAME } hesabınızı açmayı tamamlamak ve ${ VPN_APP_NAME } uygulamasını tüm aygıtlarınızda kullanmak için bir parola yazın."
@@ -11233,6 +11288,9 @@
       "Gateways": [
         "Ağ geçitleri"
       ],
+      "Generate the device profile and download a configuration file.": [
+        "Aygıt profilini oluşturun ve yapılandırma dosyasını indirin."
+      ],
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Yeni kurtarma ifadesi oluşturduğunuzda geçerli kurtarma ifadeniz kullanımdan kaldırılır."
       ],
@@ -11304,9 +11362,6 @@
       ],
       "here": [
         "buraya"
-      ],
-      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
-        "Merhaba! İstediğin süzgeci tarif edebilirsen ben de Sieve betiğini yazabilirim. Ayrıca düzenleyicide zaten bulunan bir şeyi de düzenleyebilirim."
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Uzak içeriği bir vekil sunucu aracılığıyla yükleyerek tanımlayıcı bilgileri gizler. İçeriği ek dosya olarak kaydetme seçeneği."
@@ -11732,7 +11787,7 @@
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
       ],
       "Manage groups in your identity provider": [
-        "Kimlik sağlayıcınızdaki grupları yönetin"
+        "Kimlik hizmeti sağlayıcınızdaki grupları yönetin"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
@@ -11911,11 +11966,17 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Hesabınıza erişme izni verildiğinde **Kurtarma** ayarlarınıza erişebilir ve sizin adınıza **${ ACCOUNT_APP_NAME } parolanızı değiştirebilir.**"
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Dağıtım başarıyla tamamlandıktan sonra aygıtların bu ilkeyi algılaması ve uygulamaya koyması birkaç saate kadar sürebilir."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Burada yalnızca büyük harf ve noktalama işaretleri (nokta, tire ve alt çizgi) değişimi yapılabilir. Farklı bir adres kullanmak istiyorsanız yeni bir adres ekleyin."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Yalnızca kuruluşunuzun lisanslı kullanıcıları aygıt profili yüklenmiş aygıtlarda ${ VPN_APP_NAME } uygulaması için kimlik doğrulaması yapabilir."
       ],
       "Only sign in on devices you trust": [
         "Yalnızca güvendiğiniz aygıtlarda oturum açın"
@@ -11938,6 +11999,9 @@
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Eklenti için Safari ayarlarını açın ve site izinlerinin ${ BRAND_NAME } etki alanı için açık olduğunu doğrulayın"
       ],
+      "Optional configuration": [
+        "İsteğe bağlı yapılandırma"
+      ],
       "or ${ selectFileButton }": [
         "ya da ${ selectFileButton }un"
       ],
@@ -11951,6 +12015,9 @@
       ],
       "or discover other features:": [
         "veya diğer özellikleri keşfedin:"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Ya da ${ ps1Link } komutunu MDM betiği aracılığıyla çalıştırın"
       ],
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
@@ -12263,6 +12330,9 @@
       "Restore": [
         "Geri yükle"
       ],
+      "Restrict logins to your organization": [
+        "Kuruluşunuzun oturum açma işlemlerini kısıtlayın"
+      ],
       "Review past periods and export the data for reporting or client invoicing.": [
         "Geçmiş dönemleri gözden geçirin ve raporlama veya müşteri faturalaması için verileri dışa aktarın."
       ],
@@ -12530,6 +12600,9 @@
       "support team": [
         "destek ekibi"
       ],
+      "Supported platforms": [
+        "Desteklenen platformlar"
+      ],
       "Swiss based": [
         "İsviçre merkezli"
       ],
@@ -12677,9 +12750,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Bu kimlik doğrulama bilgileri resmi ${ VPN_APP_NAME } uygulamalarımızda oturum açmak için kullanılamaz. ${ learnMore }"
-      ],
-      "Thinking…": [
-        "Düşünüyor…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
@@ -12858,6 +12928,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Parola sıfırlandıktan sonra erişilmesi engellenen verilerinizin şifresini çözmek ve bunları görüntülemek için bir kurtarma yöntemi belirleyin."
       ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Her zaman açık VPN özelliğini etkinleştirmek için aygıt profilinin her aygıtta ${ policiesPath } konumuna ulaşması gerekir — ${ VPN_APP_NAME } istemcisi bu konumu algılar ve profili otomatik olarak uygular."
+      ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Kuantum sonrası korumayı etkinleştirmek için yeni kuantum sonrası şifreleme anahtarlarınızı oluşturmanız gerekecek."
       ],
@@ -12896,6 +12969,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Hesabınıza ve verilerinize yeniden erişmek için hesabınızın 12 sözcükten oluşan kurtarma ifadesini yazın."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Her zaman açık VPN kaldırmak için tüm aygıtlarda ${ policiesPath } dizininden ${ profileFile } dosyasını silin. ${ VPN_APP_NAME } istemcisi dosyanın silindiğini algılar algılamaz profili uygulamayı durdurur."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "İnternet bağlantınızı güvenli kılmak için aygıtınıza ${ VPN_APP_NAME } uygulamasını indirip kurun ve bir sunucuya bağlanın."
@@ -13047,6 +13123,9 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "SMTP kullanıcı adı olarak seçilmiş dış hizmetin e-posta adresini ve SMTP parolası olarak oluşturulan kodu kullanın."
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "MDM'nizi kullanarak dosyayı silin veya MDM'nizin betiği aracılığıyla ${ removeScriptLink } komutunu çalıştırın. Dosya dağıtımını veya betik çalıştırmayı destekleyen herhangi bir MDM bu işlem için kullanılabilir."
+      ],
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
@@ -13058,6 +13137,9 @@
       ],
       "Users": [
         "Kullanıcılar"
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Farklı bir MDM mi kullanıyorsunuz? Dosya dağıtımını veya PowerShell betiğinin çalıştırılmasını destekleyen herhangi bir MDM bu iş için uygundur. Daha fazla bilgi için MDM’nizin kullanım kılavuzuna bakın."
       ],
       "Vault created": [
         "Kasa oluşturuldu"
@@ -13393,7 +13475,7 @@
         "Şimdi hesaba bir yönetici olarak erişebilir ve yönetebilirsiniz."
       ],
       "You can now access and manage the company as an administrator.": [
-        "Artık yönetici olarak şirkete erişebilir ve onu yönetebilirsiniz."
+        "Artık kuruluşa yönetici olarak erişebilir ve yönetebilirsiniz."
       ],
       "You can now close this tab.": [
         "Artık bu sekmeyi kapatabilirsiniz."
@@ -13603,6 +13685,9 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Hesabınız bu fırsata göre güncellendi"
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Her Zaman Açık VPN aygıt profiliniz dağıtıma hazır."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
@@ -14517,7 +14602,10 @@
         "Uygulama parolası"
       ],
       "App Settings": [
-        "Uygulama Ayarları"
+        "Uygulama ayarları"
+      ],
+      "Applies:": [
+        "Uygulanır:"
       ],
       "Apply filter to existing emails": [
         "Süzgeci var olan e-postalara uygula"
@@ -14832,9 +14920,6 @@
       "Date": [
         "Tarih"
       ],
-      "Date format": [
-        "Tarih biçimi"
-      ],
       "Days of the week": [
         "Haftanın günleri"
       ],
@@ -14981,6 +15066,9 @@
       ],
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
+      ],
+      "Enforce Always-on VPN": [
+        "Her zaman açık VPN'i zorla"
       ],
       "Enter code": [
         "Kodu yazın"
@@ -15227,6 +15315,9 @@
       ],
       "Lock app after inactivity": [
         "Uygulama şu süreyle etkileşim olmadığında kilitlensin"
+      ],
+      "Login restrictions": [
+        "Oturum açma kısıtlamaları"
       ],
       "Logo": [
         "Logo"
@@ -18507,9 +18598,6 @@
       "An external address cannot be default": [
         "Bir dış adres varsayılan olamaz"
       ],
-      "Copied to clipboard": [
-        "Panoya kopyalandı"
-      ],
       "Downloaded 2FA recovery codes": [
         "İki adımlı doğrulama kodları indirildi"
       ],
@@ -18557,9 +18645,6 @@
       ],
       "Reminder has been sent": [
         "Anımsatıcı gönderildi"
-      ],
-      "Sieve script inserted": [
-        "Sieve betiği eklendi"
       ],
       "The key has been deleted.": [
         "Anahtar silindi."
@@ -20216,9 +20301,6 @@
       ],
       "Cortex Inc.": [
         "Cortex Inc."
-      ],
-      "Describe the filter you want…": [
-        "İstediğiniz süzgeci açıklayın…"
       ],
       "domain.com": [
         "etkialani.com"
@@ -23724,6 +23806,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Lütfen aboneliğiniz iptal edilirken bekleyin"
+      ],
+      "Disabled": [
+        "Devre dışı"
+      ],
+      "Enabled": [
+        "Etkinleştirildi"
+      ],
+      "No restrictions": [
+        "Kısıtlama yok"
+      ],
+      "Restricted to members of your organization": [
+        "Kuruluşunuzun üyeleriyle sınırlıdır"
       ]
     },
     "Status": {
@@ -24515,6 +24609,9 @@
       "Compare the key differences that matter for your business.": [
         "Kuruluşunuz için önemli olan temel farklılıkları karşılaştırın."
       ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "VPN bağlantısı aktif olmadığı sürece internet erişimini engelleyerek kuruluşunuz genelinde VPN kullanımını zorunlu kılın."
+      ],
       "Free forever": [
         "Sonsuza kadar ücretsiz"
       ],
@@ -24525,7 +24622,7 @@
         "6 ay boyunca tam erişimle %50 kazanın"
       ],
       "Save 50% for one year, and keep full access": [
-        "Bir yıl boyunca %50 tasarruf edin ve tam erişim hakkınızı koruyun"
+        "Bir yıl boyunca tam erişimle %50 kazanın"
       ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "${ MAIL_APP_NAME } karşılaştırması ile bağımsızlığımızın neden fark yarattığını görün."
@@ -25306,6 +25403,12 @@
       "Also in your plan": [
         "Ayrıca tarifenizde şunlar bulunur"
       ],
+      "Always-on VPN": [
+        "Her zaman açık VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Her zaman açık VPN aygıt profili"
+      ],
       "Amount": [
         "Tutar"
       ],
@@ -25441,8 +25544,14 @@
       "Check your default mail application": [
         "Varsayılan e-posta uygulamanızı denetleyin"
       ],
+      "Choose a deployment method": [
+        "Dağıtım yöntemi seçin"
+      ],
       "Choose a provider": [
         "Bir hizmet sağlayıcı seçin"
+      ],
+      "Choose a removal method": [
+        "Kaldırma yöntemi seçin"
       ],
       "Choose an account": [
         "Bir hesap seçin"
@@ -25470,6 +25579,9 @@
       ],
       "Composing": [
         "İleti oluşturma"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Her zaman açık VPN aygıt profilini yapılandır"
       ],
       "Confirm": [
         "Onayla"
@@ -25573,6 +25685,9 @@
       ],
       "Created": [
         "Oluşturulma"
+      ],
+      "Created!": [
+        "Oluşturuldu!"
       ],
       "Creating user accounts": [
         "Kullanıcı hesapları ekleniyor"
@@ -25706,6 +25821,15 @@
       ],
       "Deny access to user?": [
         "Kullanıcının erişme izni reddedilsin mi?"
+      ],
+      "Deploy device profile to your devices": [
+        "Aygıt profilini aygıtlarınıza dağıtın"
+      ],
+      "Deploy via MDM": [
+        "MDM aracılığıyla dağıt"
+      ],
+      "Deploy via PowerShell": [
+        "PowerShell aracılığıyla dağıt"
       ],
       "Description": [
         "Açıklama"
@@ -26077,9 +26201,6 @@
       "Help center": [
         "Yardım merkezi"
       ],
-      "Help from ${ LUMO_SHORT_APP_NAME }": [
-        "${ LUMO_SHORT_APP_NAME } uygulamasından yardım"
-      ],
       "Help us improve": [
         "Kendimizi geliştirmemize yardımcı olun"
       ],
@@ -26214,7 +26335,7 @@
         "Kuruluşunuzu öne çıkarın"
       ],
       "Manage company": [
-        "Şirketi yönet"
+        "Kuruluş yönetimi"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Dosyaları Windows, Mac, Android ve iOS aygıtları arasında yönetin."
@@ -26474,6 +26595,9 @@
       "Remove all members?": [
         "Tüm üyeler kaldırılsın mı?"
       ],
+      "Remove Always-on VPN device profile": [
+        "Her zaman açık VPN aygıt profilini kaldır"
+      ],
       "Remove calendar": [
         "Takvimi kaldır"
       ],
@@ -26500,6 +26624,9 @@
       ],
       "Remove user?": [
         "Kullanıcı kaldırılsın mı?"
+      ],
+      "Remove via MDM": [
+        "MDM aracılığıyla kaldır"
       ],
       "Rename the gateway": [
         "Ağ geçidini yeniden adlandır"
@@ -26539,9 +26666,6 @@
       ],
       "Revoke certificate?": [
         "Sertifika geçersiz kılınsın mı?"
-      ],
-      "Roles and permissions": [
-        "Roller ve izinler"
       ],
       "Same inbox, shorter email address": [
         "Aynı gelen kutusu, daha kısa e-posta adresi"
@@ -27281,6 +27405,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Kuruluşunuzdaki tüm kullanıcıları kapsar. Yalnızca Her zaman açık VPN aygıt profilinin dağıtıldığı aygıtlarda uygulanır."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "${ MAIL_APP_NAME } özel e-posta etki alanları ve sınırsız hide-my-email takma adı, ${ VPN_SHORT_APP_NAME } ile 120 üzerinde ülkedeki sunuculara erişim, ${ PASS_SHORT_APP_NAME } hazır iki adımlı doğrulama, güvenli paylaşım gibi özellikler ve diğer şeyler."

@@ -5,6 +5,15 @@
   },
   "contexts": {
     "Action": {
+      "Animate code change": [
+        "Анимировать смену кода"
+      ],
+      "Automatic backups": [
+        "Автоматическое резервное копирование"
+      ],
+      "Backup and reset": [
+        "Резервное копирование и сброс"
+      ],
       "Cancel": [
         "Отменить"
       ],
@@ -14,22 +23,542 @@
       "Confirm": [
         "Подтвердить"
       ],
+      "Confirm reset": [
+        "Подтвердить сброс"
+      ],
+      "Copy ${ issuer } (${ name })": [
+        "Скопировать ${ issuer } (${ name })"
+      ],
       "Create": [
         "Создать"
       ],
       "Dismiss": [
         "Отклонить"
       ],
+      "Export data without password": [
+        "Экспортировать данные без пароля"
+      ],
+      "Hide codes": [
+        "Скрыть коды"
+      ],
       "Refresh the page": [
         "Обновить страницу"
       ],
+      "Reload app": [
+        "Перезапустить приложение"
+      ],
       "Try again": [
         "Попробовать снова"
+      ],
+      "Use this password": [
+        "Использовать этот пароль"
       ]
     },
     "authenticator-2025:Action": {
+      "Change folder": [
+        "Изменить папку"
+      ],
+      "Clear search": [
+        "Очистить поиск"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
+      "Confirm": [
+        "Подтвердить"
+      ],
+      "Continue anyway": [
+        "Все равно продолжить"
+      ],
+      "Continue anyways": [
+        "Всё равно продолжить"
+      ],
+      "Create a free account": [
+        "Создать бесплатный аккаунт"
+      ],
+      "Create a new vault": [
+        "Создать новое хранилище"
+      ],
+      "Create new code": [
+        "Создать новый код"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Edit": [
+        "Изменить"
+      ],
+      "Got it": [
+        "Понятно"
+      ],
+      "How to update ${ AUTHENTICATOR_APP_NAME } on Linux": [
+        "Как обновить ${ AUTHENTICATOR_APP_NAME } на Linux"
+      ],
+      "How to use ${ AUTHENTICATOR_SHORT_APP_NAME }": [
+        "Как использовать ${ AUTHENTICATOR_SHORT_APP_NAME }"
+      ],
+      "Import": [
+        "Импортировать"
+      ],
+      "Import codes": [
+        "Импортировать коды"
+      ],
+      "Need more help?": [
+        "Нужна дополнительная помощь?"
+      ],
+      "Open settings": [
+        "Открыть настройки"
+      ],
+      "Please try again or reset to create a new one.": [
+        "Пожалуйста, попробуйте еще раз или выполните сброс, чтобы создать новый."
+      ],
+      "Please try again.": [
+        "Пожалуйста, попробуйте еще раз."
+      ],
+      "Remove previous backups": [
+        "Удалить предыдущие резервные копии"
+      ],
+      "Report an issue": [
+        "Сообщить о проблеме"
+      ],
+      "Reset": [
+        "Сбросить"
+      ],
+      "Save code": [
+        "Сохранить код"
+      ],
+      "Search": [
+        "Искать"
+      ],
+      "Secure now": [
+        "Защитить сейчас"
+      ],
       "Sign in": [
         "Войти"
+      ],
+      "Sync between devices": [
+        "Синхронизация между устройствами"
+      ],
+      "Try again": [
+        "Повторить попытку"
+      ],
+      "Unlock": [
+        "Разблокировать"
+      ],
+      "Unlock with biometrics": [
+        "Разблокировать с помощью биометрии"
+      ],
+      "Update and relaunch": [
+        "Обновить и перезапустить"
+      ]
+    },
+    "authenticator-2025:Description": {
+      "You will need this password to unlock ${ AUTHENTICATOR_APP_NAME } every time it restarts.": [
+        "Вам понадобится этот пароль для разблокировки ${ AUTHENTICATOR_APP_NAME } при каждом перезапуске."
+      ],
+      "Your import file is protected by a password. Please enter the password to proceed.": [
+        "Ваш файл импорта защищен паролем. Пожалуйста, введите пароль для продолжения."
+      ]
+    },
+    "authenticator-2025:Error": {
+      "An unknown error occured. Please contact us to resolve this issue.": [
+        "Произошла неизвестная ошибка. Пожалуйста, свяжитесь с нами, чтобы решить эту проблему."
+      ],
+      "Authentication canceled": [
+        "Аутентификация отменена"
+      ],
+      "Biometric authentication failure (Code: ${ code })": [
+        "Ошибка биометрической аутентификации (Код: ${ code })"
+      ],
+      "Cannot generate secure storage key. You can try to create a password app lock instead": [
+        "Не удается создать ключ защищенного хранения. Вместо этого вы можете попробовать настроить пароль для блокировки приложения"
+      ],
+      "Cannot use this folder. Please pick a folder in your user's home directory (${ home })": [
+        "Не удается использовать эту папку. Пожалуйста, выберите папку в вашей домашней директории пользователя (${ home })"
+      ],
+      "Codes from file \"${ filename }\" could not be imported": [
+        "Не удалось импортировать коды из файла \"${ filename }\""
+      ],
+      "Failed database migration. If the issue persists, please contact customer support.": [
+        "Ошибка миграции базы данных. Если проблема повторится, обратитесь в службу поддержки клиентов."
+      ],
+      "Failed to create export": [
+        "Не удалось создать экспорт"
+      ],
+      "Failed to import due to wrong password. Please try again.": [
+        "Не удалось импортировать из-за неверного пароля. Пожалуйста, попробуйте еще раз."
+      ],
+      "Failed to reorder items": [
+        "Не удалось изменить порядок элементов"
+      ],
+      "Migration failed after updating ${ AUTHENTICATOR_APP_NAME }. You can try again, or backup your data and reset the app to continue.": [
+        "Миграция не удалась после обновления ${ AUTHENTICATOR_APP_NAME }. Вы можете попробовать еще раз или создать резервную копию своих данных и сбросить приложение, чтобы продолжить."
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
+      ],
+      "The app couldn’t access your storage key.": [
+        "Приложение не смогло получить доступ к вашему ключу хранения."
+      ],
+      "Unable to access your secure storage key due to a system issue.": [
+        "Не удалось получить доступ к ключу защищенного хранения из-за системной проблемы."
+      ],
+      "We couldn't create your secure storage key due to a system limitation.": [
+        "Мы не смогли создать ваш ключ защищенного хранения из-за системного ограничения."
+      ],
+      "We couldn't generate your secure storage key.": [
+        "Нам не удалось создать ваш ключ защищенного хранения."
+      ],
+      "Your storage key appears to be damaged and can't be read.": [
+        "Похоже, ваш ключ хранения поврежден и не может быть прочитан."
+      ],
+      "Your storage key is missing and needs to be recreated.": [
+        "Ваш ключ хранения отсутствует и должен быть создан заново."
+      ]
+    },
+    "authenticator-2025:Import": {
+      "${ count } item was skipped. HOTP isn’t currently supported.": [
+        "${ count } элемент был пропущен. HOTP в настоящее время не поддерживается.",
+        "${ count } элемента были пропущены. HOTP в настоящее время не поддерживается.",
+        "${ count } элементов были пропущены. HOTP в настоящее время не поддерживается.",
+        "${ count } элемента было пропущено. HOTP в настоящее время не поддерживается."
+      ],
+      "Imported ${ totalImports } code": [
+        "Импортирован ${ totalImports } код",
+        "Импортировано ${ totalImports } кода",
+        "Импортировано ${ totalImports } кодов",
+        "Импортировано ${ totalImports } кода"
+      ]
+    },
+    "authenticator-2025:Info": {
+      "Backup files will not be erased.": [
+        "Файлы резервной копии не будут стерты."
+      ],
+      "Choose ${ plainTextBold }, this will create a txt file that you can use here.": [
+        "Выберите ${ plainTextBold }, это создаст текстовый файл, который вы сможете использовать здесь."
+      ],
+      "Choose ${ zipTextBold }, this will create a zip file that you can use here.": [
+        "Выберите ${ zipTextBold }, это создаст zip-файл, который вы сможете использовать здесь."
+      ],
+      "Code added": [
+        "Код добавлен"
+      ],
+      "Code added but could not be synced": [
+        "Код добавлен, но не может быть синхронизирован"
+      ],
+      "Code deleted": [
+        "Код удален"
+      ],
+      "Code edited": [
+        "Код изменен"
+      ],
+      "Code edited but could not be synced": [
+        "Код изменен, но не может быть синхронизирован"
+      ],
+      "Code reordered but could not be synced": [
+        "Порядок кодов изменен, но изменения не удалось синхронизировать"
+      ],
+      "Export created": [
+        "Экспорт создан"
+      ],
+      "Failed syncing local items to remote": [
+        "Не удалось синхронизировать локальные элементы с удаленными"
+      ],
+      "Failed to add code.": [
+        "Не удалось добавить код."
+      ],
+      "Failed to edit code": [
+        "Не удалось изменить код"
+      ],
+      "Failed updating remote items": [
+        "Не удалось обновить удаленные элементы"
+      ],
+      "Importing codes from ${ paths.length } files...": [
+        "Импорт кодов из ${ paths.length } файлов..."
+      ],
+      "Importing codes...": [
+        "Импорт кодов..."
+      ],
+      "Last backup: ${ lastBackupDateDisplay }.": [
+        "Последняя резервная копия: ${ lastBackupDateDisplay }."
+      ],
+      "Lock updated": [
+        "Блокировка обновлена"
+      ],
+      "New version ${ latestVersion.version } is available": [
+        "Доступна новая версия ${ latestVersion.version }"
+      ],
+      "One-time code copied": [
+        "Одноразовый код скопирован"
+      ],
+      "Only the last ${ BACKUP_MAX_AMOUNT } daily backups are kept.": [
+        "Хранятся только последние ежедневные резервные копии в количестве ${ BACKUP_MAX_AMOUNT }."
+      ],
+      "Plain text": [
+        "Простой текст"
+      ],
+      "Please go to ${ settingsPath }.": [
+        "Пожалуйста, перейдите в ${ settingsPath }."
+      ],
+      "Please import your data manually for now.": [
+        "Пожалуйста, импортируйте ваши данные вручную на данный момент."
+      ],
+      "Settings > 2FAS Backup > Export": [
+        "Настройки > Резервная копия 2FAS > Экспортировать"
+      ],
+      "Settings > Data > Export codes": [
+        "Настройки > Данные > Экспортировать коды"
+      ],
+      "Settings > Export": [
+        "Настройки > Экспортировать"
+      ],
+      "Settings > Import & Export > Export": [
+        "Настройки > Импорт и экспорт > Экспортировать"
+      ],
+      "Settings > Transfer accounts > Export accounts": [
+        "Настройки > Перенос аккаунтов > Экспортировать аккаунты"
+      ],
+      "Settings > Transfer accounts > Export accounts to file": [
+        "Настройки > Перенос аккаунтов > Экспортировать аккаунты в файл"
+      ],
+      "Sync disabled": [
+        "Синхронизация отключена"
+      ],
+      "Sync enabled": [
+        "Синхронизация включена"
+      ],
+      "This will create a 2fas file that you can use here.": [
+        "Это создаст файл 2fas, который вы сможете использовать здесь."
+      ],
+      "This will create a Json file that you can use here.": [
+        "Это создаст файл JSON, который вы сможете использовать здесь."
+      ],
+      "This will create one or more QR codes that you can use here.": [
+        "Это создаст один или несколько QR-кодов, которые вы сможете использовать здесь."
+      ],
+      "Unfortunately, Authy doesn’t currently support exporting data from their app. Consider contacting Authy to request this feature.": [
+        "К сожалению, в настоящее время Authy не поддерживает экспорт данных из своего приложения. Обратитесь в службу поддержки Authy с просьбой добавить эту функцию."
+      ],
+      "Unfortunately, Microsoft Authenticator doesn’t currently support exporting data from their app. Consider contacting Microsoft to request this feature.": [
+        "К сожалению, Microsoft Authenticator в настоящее время не поддерживает экспорт данных из своего приложения. Обратитесь в Microsoft с просьбой добавить эту функцию."
+      ],
+      "ZIP": [
+        "ZIP"
+      ]
+    },
+    "authenticator-2025:Label": {
+      "30 seconds": [
+        "30 секунд"
+      ],
+      "60 seconds": [
+        "60 секунд"
+      ],
+      "Account: ${ user.Email }": [
+        "Аккаунт: ${ user.Email }"
+      ],
+      "Add": [
+        "Добавить"
+      ],
+      "Advanced options": [
+        "Расширенные параметры"
+      ],
+      "Algorithm": [
+        "Алгоритм"
+      ],
+      "App lock": [
+        "Блокировка приложения"
+      ],
+      "Appearance": [
+        "Внешний вид"
+      ],
+      "Automatic": [
+        "Автоматически"
+      ],
+      "Backup folder": [
+        "Папка резервной копии"
+      ],
+      "Backups": [
+        "Резервные копии"
+      ],
+      "Biometrics": [
+        "Биометрия"
+      ],
+      "Boxed": [
+        "В рамке"
+      ],
+      "Dark": [
+        "Темная"
+      ],
+      "Digit style": [
+        "Стиль цифр"
+      ],
+      "Digits": [
+        "Цифры"
+      ],
+      "Discover ${ BRAND_NAME }": [
+        "Узнать больше о ${ BRAND_NAME }"
+      ],
+      "Enabled, temporarily offline": [
+        "Включено, временно в автономном режиме"
+      ],
+      "Enter your password:": [
+        "Введите ваш пароль:"
+      ],
+      "Export": [
+        "Экспортировать"
+      ],
+      "Import": [
+        "Импортировать"
+      ],
+      "Issuer": [
+        "Эмитент"
+      ],
+      "Light": [
+        "Светлая"
+      ],
+      "Loading account data...": [
+        "Загрузка данных аккаунта..."
+      ],
+      "Manage your data": [
+        "Управление данными"
+      ],
+      "None": [
+        "Нет"
+      ],
+      "Once deleted, this code cannot be recovered.": [
+        "После удаления этот код невозможно будет восстановить."
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Plain": [
+        "Простой"
+      ],
+      "Secret": [
+        "Секретный ключ"
+      ],
+      "Secret key": [
+        "Секретный ключ"
+      ],
+      "Security": [
+        "Безопасность"
+      ],
+      "Support": [
+        "Поддержка"
+      ],
+      "Theme": [
+        "Тема"
+      ],
+      "Time interval": [
+        "Временной интервал"
+      ],
+      "Title": [
+        "Название"
+      ],
+      "Title, account, or label": [
+        "Название, аккаунт или ярлык"
+      ],
+      "Type": [
+        "Тип"
+      ],
+      "View logs": [
+        "Просмотр журналов"
+      ]
+    },
+    "authenticator-2025:Reason": {
+      "disable lock": [
+        "отключить блокировку"
+      ],
+      "enable lock": [
+        "включить блокировку"
+      ]
+    },
+    "authenticator-2025:Title": {
+      "Confirm password": [
+        "Подтвердите пароль"
+      ],
+      "Create password": [
+        "Создать пароль"
+      ],
+      "Delete \"${ displayName }\"": [
+        "Удалить \"${ displayName }\""
+      ],
+      "Edit code": [
+        "Изменить код"
+      ],
+      "Encrypted backup is now available": [
+        "Зашифрованная резервная копия теперь доступна"
+      ],
+      "Import codes from ${ provider }": [
+        "Импортировать коды из ${ provider }"
+      ],
+      "Log in": [
+        "Войти"
+      ],
+      "New code": [
+        "Новый код"
+      ],
+      "No export available": [
+        "Нет доступного экспорта"
+      ],
+      "Protected file": [
+        "Защищенный файл"
+      ],
+      "Settings": [
+        "Настройки"
+      ],
+      "Sign up": [
+        "Зарегистрироваться"
+      ],
+      "Storage key issue": [
+        "Проблема с ключом хранения"
+      ],
+      "Unlock ${ AUTHENTICATOR_APP_NAME }": [
+        "Разблокировать ${ AUTHENTICATOR_APP_NAME }"
+      ]
+    },
+    "authenticator-2025:Warning": {
+      "Automatic backup was disabled due to missing backup folder (${ backupDirectory })": [
+        "Автоматическое резервное копирование отключено из-за отсутствия папки резервного копирования (${ backupDirectory })"
+      ],
+      "For enhanced security, un-encrypted automatic backup has been disabled. You can re-enable it in the Settings.": [
+        "Для повышения безопасности незашифрованное автоматическое резервное копирование было отключено. Вы можете снова включить его в Настройках."
+      ],
+      "If you continue without setting up a secure storage key, your data will still be encrypted locally, but the key will be saved less securely.": [
+        "Если вы продолжите без настройки ключа защищенного хранения, ваши данные все равно будут зашифрованы локально, но ключ будет сохранен менее безопасно."
+      ],
+      "Nothing to import.": [
+        "Нечего импортировать."
+      ],
+      "Resetting your storage key will erase any local data that hasn’t been synced.": [
+        "Сброс ключа хранения приведет к удалению всех локальных данных, которые не были синхронизированы."
+      ],
+      "Wrong password. You have ${ remainingCount } attempt left, after that, your data will be erased.": [
+        "Неверный пароль. У вас осталась ${ remainingCount } попытка, после чего ваши данные будут стерты.",
+        "Неверный пароль. У вас осталось ${ remainingCount } попытки, после чего ваши данные будут стерты.",
+        "Неверный пароль. У вас осталось ${ remainingCount } попыток, после чего ваши данные будут стерты.",
+        "Неверный пароль. У вас осталось ${ remainingCount } попытки, после чего ваши данные будут стерты."
+      ],
+      "You have ${ backupsCount } previous backup on your device that can be removed.": [
+        "У вас есть ${ backupsCount } предыдущая резервная копия на устройстве, которую можно удалить.",
+        "У вас есть ${ backupsCount } предыдущие резервные копии на устройстве, которые можно удалить.",
+        "У вас есть ${ backupsCount } предыдущих резервных копий на устройстве, которые можно удалить.",
+        "У вас есть ${ backupsCount } предыдущей резервной копии на устройстве, которую можно удалить."
+      ],
+      "You have ${ remainingCount } attempt left - after that, your data will be erased.": [
+        "У вас осталась ${ remainingCount } попытка — после этого ваши данные будут стерты.",
+        "У вас осталось ${ remainingCount } попытки — после этого ваши данные будут стерты.",
+        "У вас осталось ${ remainingCount } попыток — после этого ваши данные будут стерты.",
+        "У вас осталось ${ remainingCount } попытки — после этого ваши данные будут стерты."
+      ],
+      "You have entered a wrong password.": [
+        "Вы ввели неверный пароль."
+      ],
+      "Your data will be erased after 10 failed attempts.": [
+        "Ваши данные будут стерты после 10 неудачных попыток."
+      ],
+      "Your local data is encrypted on-disk, but the encryption key is not securely stored on your system. For better protection, set up secure storage or create an app password.": [
+        "Ваши локальные данные зашифрованы на диске, но ключ шифрования хранится на вашей системе небезопасно. Для лучшей защиты настройте защищенное хранение или создайте пароль приложения."
       ]
     },
     "Error": {
@@ -52,6 +581,9 @@
       ]
     },
     "Info": {
+      "A ${ BRAND_NAME } account is required to enable end-to-end encrypted sync between devices.": [
+        "Для включения сквозной шифрованной синхронизации между устройствами требуется аккаунт ${ BRAND_NAME }."
+      ],
       "Identity confirmed": [
         "Личные данные подтверждены"
       ],
@@ -66,6 +598,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Более чем просто менеджер паролей, ${ PASS_APP_NAME } защищает ваш пароль и ваш личный адрес электронной почты с помощью псевдонимов электронной почты. Работая на технологии, лежащей в основе ${ MAIL_APP_NAME }, ваши данные защищены конечным шифрованием и доступны только вам."
+      ],
+      "Protect your accounts with an extra layer of security.": [
+        "Защитите свои аккаунты дополнительным уровнем безопасности."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -120,16 +655,59 @@
       "Hide password": [
         "Скрыть пароль"
       ],
+      "Next": [
+        "Далее"
+      ],
+      "No entries matching your search": [
+        "Нет записей, соответствующих вашему поиску"
+      ],
       "Reveal password": [
         "Показать пароль"
       ]
     },
     "Placeholder": {
+      "Confirm password": [
+        "Подтвердите пароль"
+      ],
       "Password": [
         "Пароль"
       ]
     },
+    "Title": {
+      "Confirm password": [
+        "Подтвердите пароль"
+      ],
+      "Device sync": [
+        "Синхронизация устройств"
+      ],
+      "No codes yet": [
+        "Кодов пока нет"
+      ],
+      "Set backup password": [
+        "Установить резервный пароль"
+      ],
+      "Set export password": [
+        "Установить пароль экспорта"
+      ]
+    },
+    "Validation": {
+      "Secret cannot be empty": [
+        "Секретный ключ не может быть пустым"
+      ],
+      "Title cannot be empty": [
+        "Название не может быть пустым"
+      ]
+    },
     "Warning": {
+      "Database cannot be backed up.": [
+        "Не удается создать резервную копию базы данных."
+      ],
+      "No backup location selected.": [
+        "Местоположение резервной копии не выбрано."
+      ],
+      "This will create an unencrypted backup and reset the application to resolve the migration failure. You will need to import your data from the backup file after the reset completes. Delete the backup file once finished.": [
+        "Это создаст незашифрованную резервную копию и сбросит приложение для устранения ошибки миграции. Вам потребуется импортировать данные из файла резервной копии после завершения сброса. Удалите файл резервной копии по окончании."
+      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Не могу войти в ${ PASS_APP_NAME }. ${ additionalMessage }"
       ]

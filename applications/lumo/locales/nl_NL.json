@@ -946,6 +946,9 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Bestand toevoegen aan ${ DRIVE_APP_NAME }"
       ],
+      "Add memory": [
+        "Geheugen toevoegen"
+      ],
       "Add to active": [
         "Toevoegen aan actief"
       ],
@@ -970,8 +973,17 @@
       "Clear auto-generated": [
         "Automatisch gegenereerd wissen"
       ],
+      "click to hide me": [
+        "klik om me te verbergen"
+      ],
+      "click to let me out": [
+        "klik om me naar buiten te laten"
+      ],
       "Close": [
         "Sluit"
+      ],
+      "Collapse ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } inklappen"
       ],
       "Continue": [
         "Doorgaan"
@@ -1012,11 +1024,17 @@
       "I like this response": [
         "Ik vind dit antwoord leuk"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } out": [
+        "Laat ${ LUMO_SHORT_APP_NAME } naar buiten"
+      ],
       "Light": [
         "Licht"
       ],
       "Manage files": [
         "Beheer bestanden"
+      ],
+      "More options": [
+        "Meer opties"
       ],
       "New chat": [
         "Nieuwe chat"
@@ -1074,6 +1092,9 @@
       ],
       "Turn off and delete": [
         "Schakel uit en verwijder"
+      ],
+      "Turn off memory": [
+        "Geheugen uitschakelen"
       ],
       "Turn on memory": [
         "Schakel het geheugen in"
@@ -1159,17 +1180,35 @@
       "1 TB cloud storage": [
         "1 TB cloudopslag"
       ],
+      "Administrative tools": [
+        "Administratieve tools"
+      ],
       "And much more": [
         "En nog veel meer"
       ],
       "Everything in Business": [
         "Alles in Business"
       ],
+      "More image generations": [
+        "Meer afbeeldingen genereren"
+      ],
+      "More Max model usage": [
+        "Meer gebruik van het Max-model"
+      ],
+      "More messages & chat history": [
+        "Meer berichten en chatgeschiedenis"
+      ],
       "Password manager": [
         "Wachtwoordbeheerder"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Dankzij zero-access-versleuteling kunnen uw opgeslagen gesprekken alleen op uw apparaat worden gedecodeerd en gelezen. Noch ${ BRAND_NAME }, noch iemand anders kan ze zien."
+      ],
+      "Unlimited Custom Lumos": [
+        "Onbeperkt aantal aangepaste Lumos"
+      ],
+      "Unlimited Projects": [
+        "Onbeperkt aantal projecten"
       ],
       "Video meetings": [
         "Videovergaderingen"
@@ -1353,6 +1392,9 @@
       "More thorough answers, but can take longer": [
         "Grondigere antwoorden, maar kan langer duren"
       ],
+      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
+        "Verwijder uw projecten, chats en opgeslagen herinneringen permanent. Dit is onomkeerbaar."
+      ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Projectchats worden volledig geïsoleerd gehouden. Ze vertrouwen op hun eigen instructies en bestanden en negeren uw globale herinneringen volledig."
       ],
@@ -1382,6 +1424,11 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Als u het geheugen uitschakelt, worden alle ${ memories.length } opgeslagen herinneringen permanent verwijderd. U kunt het geheugen later inschakelen, maar de verwijderde herinneringen kunnen niet worden hersteld."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Deletes all saved memories and turns off the memory feature.": [
+        "Verwijdert alle opgeslagen herinneringen en schakelt de geheugenfunctie uit."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1877,6 +1924,9 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Genereer een workflow-grafiek en implementatiecode voor het volgende doel. Doeltaal voor code:"
       ],
+      "Generate them from your recent chats, or add one with + above.": [
+        "Genereer ze op basis van uw recente chats, of voeg er een toe met + hierboven."
+      ],
       "Generating…": [
         "Genereren…"
       ],
@@ -2056,6 +2106,12 @@
       ],
       "There was an error processing this file.": [
         "Er is een fout opgetreden bij het verwerken van dit bestand."
+      ],
+      "These files are no longer referred to in this conversation.": [
+        "Er wordt in dit gesprek niet langer naar deze bestanden verwezen."
+      ],
+      "These files are referred to in the conversation.": [
+        "Er wordt naar deze bestanden verwezen in het gesprek."
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Deze bestanden hoorden bij samengevatte berichten en worden niet langer naar het model verzonden."
@@ -2488,8 +2544,17 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
+      "${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "${ LUMO_SHORT_APP_NAME } Pro": [
+        "${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Business": [
         "Business"
+      ],
+      "Personal": [
+        "Persoonlijk"
       ],
       "Plus": [
         "Plus"
@@ -2898,6 +2963,9 @@
       "Elevate your business AI experience": [
         "Verbeter uw zakelijke AI-ervaring"
       ],
+      "From only": [
+        "Vanaf slechts"
+      ],
       "Get": [
         "Krijg"
       ],
@@ -2909,6 +2977,18 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Neem ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Neem ${ LUMO_SHORT_APP_NAME } Pro"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Upgrade naar ${ LUMO_SHORT_APP_NAME } Pro"
       ]
     },
     "collider_2025: Warning": {
@@ -9376,6 +9456,9 @@
     "Subtitle": {
       "per month, billed annually": [
         "per maand, jaarlijks gefactureerd"
+      ],
+      "per user/month, billed annually": [
+        "per gebruiker/maand, jaarlijks gefactureerd"
       ]
     },
     "Success": {
@@ -9480,6 +9563,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } is nu actief"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
       ],
       "Account restricted": [
         "Account beperkt"
@@ -9613,6 +9699,9 @@
       "Payment verification": [
         "Betalingsverificatie"
       ],
+      "Plan type": [
+        "Type abonnement"
+      ],
       "Processing...": [
         "Wordt verwerkt..."
       ],
@@ -9735,6 +9824,11 @@
       ],
       "The user must have an address to request data access": [
         "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
       ]
     },
     "Validation": {

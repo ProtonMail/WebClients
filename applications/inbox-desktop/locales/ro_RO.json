@@ -4,6 +4,17 @@
     "language": "ro_RO"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Anulare"
+      ],
+      "Open external url": [
+        "Deschidere URL extern"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Protocolul ${ parsedProtocol } nu este permis. Doriți să deschideți adresa URL externă?"
+      ]
+    },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
         "„Repornire și analizare acum” va reporni aplicația imediat și va captura un profil de pornire.\n\n„Analizare la următoarea pornire” va crea profilul data viitoare când deschideți aplicația. Folosiți aceasta pentru a măsura viteza de pornire după o repornire."

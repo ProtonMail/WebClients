@@ -296,6 +296,9 @@
       "Create new contact": [
         "Створити новий контакт"
       ],
+      "Create new password": [
+        "Створити новий пароль"
+      ],
       "Current plan": [
         "Поточний тарифний план"
       ],
@@ -337,6 +340,9 @@
       ],
       "Deselect all": [
         "Скасувати вибір"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Вимкнути функцію автоматичного додавання посилань на ${ MEET_APP_NAME }"
       ],
       "Discard": [
         "Відхилити"
@@ -403,6 +409,12 @@
       ],
       "Expand video conferencing widget": [
         "Розгорнути віджет відеоконференцій"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Дослідити ${ MEET_SHORT_APP_NAME }"
+      ],
+      "Explore other plans": [
+        "Ознайомитися з іншими тарифними планами"
       ],
       "Export": [
         "Експортувати"
@@ -896,6 +908,9 @@
       "Submit": [
         "Відправити"
       ],
+      "Subscribe now": [
+        "Підписатися зараз"
+      ],
       "Switch or add account": [
         "Змінити або додати обліковий запис"
       ],
@@ -922,6 +937,9 @@
       ],
       "Try another method": [
         "Спробувати інший спосіб"
+      ],
+      "Turn off auto-add": [
+        "Вимкнути автоматичне додавання"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Увімкніть ${ DARK_WEB_MONITORING_NAME }"
@@ -1482,6 +1500,125 @@
       ],
       "Yearly": [
         "Щороку"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Активовано"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адреса вже використовується користувачем поза межами вашої організації. Будь ласка, зверніться до клієнтської підтримки, щоб вирішити це"
+      ],
+      "All": [
+        "Усі"
+      ],
+      "Calendar": [
+        "Календар"
+      ],
+      "Configure migration": [
+        "Налаштувати міграцію"
+      ],
+      "Contacts": [
+        "Контакти"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Статус міграції даних з Google Workspace до ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Електронна пошта"
+      ],
+      "Errors": [
+        "Помилки"
+      ],
+      "Estimated size": [
+        "Оціночний розмір"
+      ],
+      "Find out what can be migrated.": [
+        "Дізнайтеся, що можна мігрувати."
+      ],
+      "Has errors": [
+        "Містить помилки"
+      ],
+      "In progress": [
+        "У процесі"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адресу учасника не знайдено. Будь ласка, зверніться до клієнтської підтримки, щоб вирішити це"
+      ],
+      "Migrate": [
+        "Мігрувати"
+      ],
+      "Migrated": [
+        "Мігровано"
+      ],
+      "Migration status": [
+        "Статус міграції"
+      ],
+      "Missing organization private key": [
+        "Відсутній приватний ключ організації"
+      ],
+      "Missing organization public key": [
+        "Відсутній відкритий ключ організації"
+      ],
+      "No users to display": [
+        "Немає користувачів для відображення"
+      ],
+      "Not activated": [
+        "Не активовано"
+      ],
+      "Organization does not have enough seats available": [
+        "В організації недостатньо вільних місць"
+      ],
+      "Organization does not have enough storage available": [
+        "В організації недостатньо вільного обсягу сховища"
+      ],
+      "Pending": [
+        "У черзі"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Виберіть саме те, що ви хочете мігрувати. Це буде застосовано до всіх користувачів організації."
+      ],
+      "Select users to migrate": [
+        "Виберіть користувачів для міграції"
+      ],
+      "Size": [
+        "Розмір"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Цього користувача неможливо мігрувати через несумісність платформ."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Щоб мігрувати цього користувача, увімкніть його обліковий запис у консолі адміністратора Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Щоб мігрувати цього користувача, увімкніть його обліковий запис у розділі ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Щоб мігрувати цього користувача, увімкніть його адресу в розділі ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Щоб мігрувати цього користувача, він має прийняти запрошення приєднатися до ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Щоб мігрувати цього користувача, розархівуйте його в консолі адміністратора Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Щоб мігрувати цього користувача, розблокуйте його в консолі адміністратора Google Workspace."
+      ],
+      "User": [
+        "Користувач"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Користувачі, які ввійшли у свій обліковий запис ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Що ви мігруєте?"
+      ],
+      "You": [
+        "Ви"
       ]
     },
     "Browser": {
@@ -3456,6 +3593,9 @@
       "120m": [
         "120 хв"
       ],
+      "15 minutes": [
+        "15 хвилин"
+      ],
       "30 minutes": [
         "30 хвилин"
       ],
@@ -3762,6 +3902,9 @@
       "Failed loading group members": [
         "Не вдалося завантажити учасників групи"
       ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Не вдалося додати наявну відеоконференцію ${ MEET_APP_NAME }"
+      ],
       "Failed to create ${ MEET_APP_NAME } video conference": [
         "Не вдалося створити відеоконференцію ${ MEET_APP_NAME }"
       ],
@@ -3788,6 +3931,9 @@
       ],
       "Failed to update secret passphrase": [
         "Не вдалося оновити таємну парольну фразу"
+      ],
+      "Failed to update settings": [
+        "Не вдалося оновити налаштування"
       ],
       "First name is too long": [
         "Ім'я занадто довге"
@@ -3893,6 +4039,9 @@
       ],
       "No contacts found to import": [
         "Не знайдено контактів для імпортування"
+      ],
+      "No drive found to import": [
+        "Не знайдено диска для імпортування"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
@@ -4155,6 +4304,9 @@
       "Unexpected error, we can't import the contacts": [
         "Неочікувана помилка, неможливо імпортувати контакти"
       ],
+      "Unexpected error, we can't import the files": [
+        "Неочікувана помилка, не вдалося імпортувати файли"
+      ],
       "Unknown error": [
         "Невідома помилка"
       ],
@@ -4191,11 +4343,17 @@
         "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам",
         "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам"
       ],
+      "You cannot enter the organizer's email": [
+        "Ви не можете вводити електронну пошту організатора"
+      ],
       "You have reached the maximum number of calendars.": [
         "Ви досягли максимальної кількості календарів."
       ],
       "You have reached the number of contacts limit for your account": [
         "Ви досягли ліміту кількості контактів для вашого облікового запису"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Ви використали всі адреси у вашому тарифному плані. Будь ласка, покращіть свій тарифний план, щоб додати нову адресу, або вимкніть адресу у вашому обліковому записі."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
@@ -5304,6 +5462,9 @@
         "${ planName } завершиться за ${ daysLeft } днів.",
         "${ planName } завершиться за ${ daysLeft } дня(ів)."
       ],
+      "${ planName } expires today.": [
+        "Термін дії ${ planName } закінчується сьогодні."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис за допомогою спеціального моніторингу підозрілої активності."
       ],
@@ -5345,6 +5506,12 @@
       ],
       "${ storage } storage": [
         "${ storage } сховища"
+      ],
+      "${ total } user found": [
+        "Знайдено ${ total } користувача",
+        "Знайдено ${ total } користувачі",
+        "Знайдено ${ total } користувачів",
+        "Знайдено ${ total } користувачів"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
@@ -5511,6 +5678,9 @@
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Попросіть свого адміністратора покращити тарифний план або вилучіть сторінку з бічної панелі «Сторінки бронювання»."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Принаймні ${ BETTER_PASSWORD_LENGTH } символів"
+      ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
         "Після закінчення пробного періоду ${ boldCancelDate } вас буде переведено на тарифний план ${ boldProtonFree }. Усі облікові записи користувачів буде вилучено з вашої організації."
       ],
@@ -5531,6 +5701,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Платіжний цикл: ${ text }"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Електронна пошта для бронювання: ${ selectedCalendar.Email }"
       ],
       "Booking page deleted": [
         "Сторінку бронювання видалено"
@@ -5805,6 +5978,12 @@
       "Failed to update meeting password": [
         "Не вдалося оновити пароль зустрічі"
       ],
+      "Failed to update meeting schedule": [
+        "Не вдалося оновити розклад зустрічі"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Лише файли (без фотографій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }) — загалом до 100 ГБ, 100 000 файлів та 50 ГБ на файл"
+      ],
       "finance": [
         "фінанси"
       ],
@@ -5840,6 +6019,9 @@
       ],
       "Host": [
         "Організатор"
+      ],
+      "How far in advance can someone book?": [
+        "За скільки часу можна здійснювати бронювання?"
       ],
       "How long should an appointment last?": [
         "Скільки має тривати зустріч?"
@@ -5922,6 +6104,9 @@
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
       ],
+      "It's better to have:": [
+        "Бажано мати:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Найкраще використовувати VPN постійно. Але ось випадки, коли загрози кібербезпеці можуть бути найвищими:"
       ],
@@ -6003,6 +6188,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Повідомлення на всі ваші адреси електронної пошти потраплятимуть у вашу поштову скриньку."
       ],
+      "Min. 2 hours before": [
+        "Мін. 2 години до"
+      ],
+      "Min. 48 hours before": [
+        "Мін. 48 годин до"
+      ],
       "Monitor accounts": [
         "Моніторинг облікових записів"
       ],
@@ -6057,6 +6248,9 @@
       "Not connected": [
         "Не під’єднано"
       ],
+      "Not on the same day": [
+        "Не в той самий день"
+      ],
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
       ],
@@ -6092,6 +6286,9 @@
       ],
       "Other accounts": [
         "Інші облікові записи"
+      ],
+      "Other location": [
+        "Інше розташування"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Інші користувачі вашої організації бачитимуть вашу зайнятість. Подробиці подій не поширюються."
@@ -6300,6 +6497,9 @@
       "Surveillance": [
         "Стеження"
       ],
+      "Symbols (#$&)": [
+        "Символи (#$&)"
+      ],
       "Take control of your digital life": [
         "Візьміть під контроль своє цифрове життя"
       ],
@@ -6453,6 +6653,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Покращте тарифний план, щоб зберегти переваги ${ planTitle }."
       ],
+      "Uppercase and lowercase letters": [
+        "Великі та малі літери"
+      ],
       "User activated": [
         "Користувач активований"
       ],
@@ -6479,6 +6682,9 @@
       ],
       "Warning": [
         "Попередження"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Ми автоматично додали посилання на ${ MEET_APP_NAME }"
       ],
       "We couldn’t process your payment.": [
         "Не вдається обробити ваш платіж."
@@ -6527,6 +6733,9 @@
       ],
       "Where will the appointment take place?": [
         "Де відбудеться зустріч?"
+      ],
+      "Which calendars should block bookings?": [
+        "Які календарі мають блокувати бронювання?"
       ],
       "Which event would you like to delete?": [
         "Яку подію ви бажаєте видалити?"
@@ -7019,6 +7228,9 @@
       "Add image URL": [
         "Введіть URL-адресу зображення"
       ],
+      "Add notice period": [
+        "Додати період попередження"
+      ],
       "Add to group": [
         "Додати до групи"
       ],
@@ -7090,6 +7302,9 @@
       ],
       "Category": [
         "Категорія"
+      ],
+      "Check additional calendars for availability": [
+        "Перевірити доступність в інших календарях"
       ],
       "City": [
         "Місто"
@@ -7214,6 +7429,12 @@
       "Every": [
         "Кожні"
       ],
+      "Exact host matching": [
+        "Точна відповідність хоста"
+      ],
+      "Exact URL matching": [
+        "Точна відповідність URL-адреси"
+      ],
       "Expires": [
         "Термін дії"
       ],
@@ -7319,11 +7540,17 @@
       "Move to Inbox": [
         "Перемістити до вхідних"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Має містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
+      ],
       "Name": [
         "Назва"
       ],
       "Navigation": [
         "Навігація"
+      ],
+      "Never fill on this exact URL": [
+        "Ніколи не заповнювати на цій точній URL-адресі"
       ],
       "New password": [
         "Новий пароль"
@@ -7354,6 +7581,9 @@
       ],
       "Organizer": [
         "Організатор"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Основний домен і піддомени (типовий)"
       ],
       "participant": [
         "учасник",
@@ -7415,6 +7645,9 @@
       "Region": [
         "Область"
       ],
+      "Regular expression": [
+        "Регулярний вираз"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Вилучити відеоконференцію ${ MEET_APP_NAME }"
       ],
@@ -7436,6 +7669,9 @@
       "Secondary time zone": [
         "Додатковий часовий пояс"
       ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Безпечно поділіться частиною свого розкладу через сторінку бронювання, яку можна надіслати будь-кому."
+      ],
       "Show others when I'm busy": [
         "Показувати іншим мою зайнятість"
       ],
@@ -7451,6 +7687,9 @@
       "Start date": [
         "Дата початку"
       ],
+      "Starts with": [
+        "Починається з"
+      ],
       "State": [
         "Стан"
       ],
@@ -7459,6 +7698,9 @@
       ],
       "Strong": [
         "Надійний"
+      ],
+      "Strong password": [
+        "Надійний пароль"
       ],
       "Subscription options": [
         "Опції передплати"
@@ -7496,6 +7738,9 @@
       "URL": [
         "URL-адреса"
       ],
+      "URL wildcard pattern": [
+        "Шаблон URL-адреси із символом підставлення"
+      ],
       "Username": [
         "Ім'я користувача"
       ],
@@ -7510,6 +7755,9 @@
       ],
       "Vulnerable": [
         "Вразливий"
+      ],
+      "Vulnerable password": [
+        "Вразливий пароль"
       ],
       "Weak": [
         "Слабкий"
@@ -7942,11 +8190,29 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Правило відповідності 'Починається з'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правило точної відповідності (під) домену"
+      ],
+      "Exact URL matching rule": [
+        "Правило точної відповідності URL-адреси"
+      ],
       "Fw:": [
         "Fw:"
       ],
+      "Never fill with this exact URL": [
+        "Ніколи не заповнювати з цією точковою URL-адресою"
+      ],
       "Re:": [
         "Re:"
+      ],
+      "Regular expression rule": [
+        "Правило регулярного виразу"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правило відповідності шаблону із символом підставлення"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш безплатний пробний період закінчився. ${ nonAutoRenewalAction }"
@@ -10276,6 +10542,9 @@
       "Search for name or email": [
         "Пошук за іменем чи е-поштою"
       ],
+      "Search for users or addresses": [
+        "Шукати користувачів або адреси"
+      ],
       "Search parent folder": [
         "Пошук у теці верхнього рівня"
       ],
@@ -10512,11 +10781,26 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } за реферала"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Якщо ви скасуєте передплату до цієї дати,** ваш тарифний план буде **змінено на нижчий** до ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } після закінчення пробного періоду."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Якщо ви не підпишетеся,** ваш тарифний план буде **змінено на нижчий** — ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Якщо ви не скасуєте передплату,** розпочнеться дія вашого повного тарифного плану, і ви отримаєте **${ referrerRewardAmount }** кредиту."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Якщо ви підпишетеся до цієї дати,** ви отримаєте **${ referrerRewardAmount }** кредиту."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Після цієї дати ваш обліковий запис буде переведено на нижчий тарифний план **${ BRAND_NAME } Free**. Якщо ви зміните свою думку, ви зможете **відновити передплату**, щоб зберегти доступ до преміумфункцій."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Заробляйте до ${ maxRewardAmount } кредитами. Ви отримаєте ${ referrerRewardAmount }, коли запрошена вами особа підпишеться на тарифний план ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Користуйтеся тарифним планом **${ planTitle }** безплатно до **${ textDate }**."
       ],
       "Friend joined": [
         "Друг приєднався",
@@ -10536,6 +10820,9 @@
       "Invited friends": [
         "Запрошені друзі"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Остання можливість ознайомитися з усіма потужними функціями, які пропонує **${ planTitle }**."
+      ],
       "More sharing options": [
         "Інші варіанти поширення"
       ],
@@ -10550,6 +10837,15 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Ви можете отримати до **${ maxRewardAmount }** кредитами."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "У вас залишився **${ daysRemaining } день**, щоб ознайомитися з усіма потужними функціями, які пропонує **${ planTitle }**.",
+        "У вас залишилося **${ daysRemaining } дні**, щоб ознайомитися з усіма потужними функціями, які пропонує **${ planTitle }**.",
+        "У bosses залишилося **${ daysRemaining } днів**, щоб ознайомитися з усіма потужними функціями, які пропонує **${ planTitle }**.",
+        "У вас залишилося **${ daysRemaining } дня**, щоб ознайомитися з усіма потужними функціями, які пропонує **${ planTitle }**."
+      ],
+      "your subscription": [
+        "ваша передплата"
       ]
     },
     "Reload event button tooltip": {
@@ -11797,6 +12093,9 @@
       "Answer sent and event deleted": [
         "Відповідь надіслано, а подію видалено"
       ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Автоматичне додавання посилань на ${ MEET_APP_NAME } вимкнено"
+      ],
       "Billing details updated": [
         "Платіжні подробиці оновлено"
       ],
@@ -12165,6 +12464,9 @@
       "${ feature } is now active": [
         "Функція ${ feature } тепер активна"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Помічник з написання ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Відновлення облікового запису"
       ],
@@ -12480,6 +12782,9 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Отримайте **${ referralInfo.uiData.refereeRewardAmount }** кредитами з ${ planTitle }"
       ],
+      "Get more from your VPN": [
+        "Отримайте більше від вашого VPN"
+      ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Отримайте більше місця у сховищі з ${ MAIL_APP_NAME } Plus"
       ],
@@ -12515,6 +12820,9 @@
       ],
       "How does it work?": [
         "Як це працює?"
+      ],
+      "How your free trial works": [
+        "Як працює безплатний пробний період"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -12843,6 +13151,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ],
+      "Users and addresses": [
+        "Користувачі та адреси"
+      ],
       "Verification failed": [
         "Не вдалося виконати перевірку"
       ],
@@ -12934,11 +13245,23 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "Дії"
+      ],
       "Created": [
         "Створено"
       ],
       "Expires": [
         "Термін дії"
+      ],
+      "Fingerprint": [
+        "Цифровий відбиток"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тип"
       ]
     },
     "Title; create calendar modal": {
@@ -13080,6 +13403,11 @@
         "Користувач повинен мати адресу для запиту доступу до даних"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Ви зможете призначати ролі після того, як користувач прийме запрошення."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
@@ -13218,6 +13546,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } надає потужний контроль, але одна помилка може призвести до того, що автозаповнення збігатиметься і заповнюватиме дані на шахрайських або фішингових вебсайтах."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Ви дійсно хочете остаточно видалити ${ count } контакт?",

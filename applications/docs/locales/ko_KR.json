@@ -90,6 +90,9 @@
       "Apply": [
         "적용"
       ],
+      "Ask me next time": [
+        "다음에 묻기"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
       ],
@@ -330,6 +333,9 @@
       "Download anyway": [
         "무시하고 다운로드"
       ],
+      "Download debug information": [
+        "디버그 정보 다운로드"
+      ],
       "Download logs": [
         "다운로드 로그"
       ],
@@ -372,11 +378,20 @@
       "Export contact group": [
         "연락처 그룹 내보내기"
       ],
+      "Export editor state for version": [
+        "이 버전의 에디터 상태 내보내기"
+      ],
       "Export selection as .vcf": [
         "선택한 항목을 .vcf로 내보내기"
       ],
+      "Export this version (as docx)": [
+        "이 버전 내보내기(docx 형식)"
+      ],
       "Export this version (as xlsx)": [
         "이 버전을 xlsx로 내보내기"
+      ],
+      "Export YJS state for version": [
+        "이 버전의 YJS 상태 내보내기"
       ],
       "Forgot password?": [
         "비밀번호를 잊어버리셨나요?"
@@ -630,6 +645,9 @@
       "Reload": [
         "새로고침"
       ],
+      "Reload spreadsheet": [
+        "스프레드시트 새로고침"
+      ],
       "Remove": [
         "삭제"
       ],
@@ -659,6 +677,9 @@
       ],
       "Report a problem": [
         "문제 신고"
+      ],
+      "Report issue": [
+        "문제 보고"
       ],
       "Request a call": [
         "콜 요청"
@@ -698,6 +719,9 @@
       ],
       "Save changes": [
         "변경 사항 저장"
+      ],
+      "Save preferences": [
+        "설정 저장"
       ],
       "Search": [
         "검색"
@@ -827,6 +851,9 @@
       ],
       "Try another method": [
         "다른 방법 시도"
+      ],
+      "Try Workspace": [
+        "Workspace 체험하기"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
@@ -1194,6 +1221,15 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "활성화됨"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "해당 주소는 조직 외부의 사용자가 이미 사용하고 있습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
+      ],
+      "All": [
+        "전체"
+      ],
       "Calendar": [
         "캘린더"
       ],
@@ -1203,8 +1239,20 @@
       "Contacts": [
         "연락처"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace에서 ${ BRAND_NAME }으로의 데이터 이전 상태"
+      ],
+      "Emails": [
+        "이메일"
+      ],
+      "Errors": [
+        "오류"
+      ],
       "Estimated size": [
         "예상 용량"
+      ],
+      "Find out what can be migrated.": [
+        "이전 가능한 항목을 확인해 보세요."
       ],
       "Has errors": [
         "오류 있음"
@@ -1212,8 +1260,26 @@
       "In progress": [
         "진행 중"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "구성원 주소를 찾을 수 없습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
+      ],
+      "Migrate": [
+        "이전"
+      ],
+      "Migrated": [
+        "이전 완료"
+      ],
       "Migration status": [
         "마이그레이션 상태"
+      ],
+      "Missing organization private key": [
+        "조직 비밀 키 누락"
+      ],
+      "Missing organization public key": [
+        "조직 공개 키 누락"
+      ],
+      "No users to display": [
+        "표시할 사용자가 없습니다"
       ],
       "Not activated": [
         "활성화되지 않음"
@@ -1227,14 +1293,50 @@
       "Pending": [
         "보류 중"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "이전하고자 하는 항목을 정확히 선택하세요. 모든 조직 사용자에게 적용됩니다."
+      ],
+      "Select users to migrate": [
+        "이전할 사용자 선택"
+      ],
+      "Size": [
+        "크기"
+      ],
       "Status": [
         "상태"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 아카이브 취소해야 합니다."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 정지 취소해야 합니다."
       ],
       "User": [
         "사용자"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } 계정에 접근한 사용자"
+      ],
       "What are you migrating?": [
         "무엇을 이전하시나요?"
+      ],
+      "You": [
+        "나"
       ]
     },
     "Browser": {
@@ -3053,6 +3155,12 @@
       "Failed to fetch sharing info": [
         "공유 정보 가져오기 실패"
       ],
+      "Failed to load 'My files' folder": [
+        "'내 파일' 폴더를 불러오지 못했습니다"
+      ],
+      "Failed to load recent documents": [
+        "최근 문서를 불러오지 못했습니다"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
       ],
@@ -3061,6 +3169,9 @@
       ],
       "Failed to remove older revisions": [
         "오래된 버전을 제거하는 데 실패했습니다."
+      ],
+      "Failed to rename document": [
+        "문서 이름 변경 실패"
       ],
       "Failed to rename document. Please try again later.": [
         "문서 이름 변경 실패. 다시 시도하세요."
@@ -3154,6 +3265,9 @@
       ],
       "No contacts found to import": [
         "불러올 연락처를 찾을 수 없음"
+      ],
+      "No drive found to import": [
+        "불러올 드라이브가 없습니다"
       ],
       "No emails found to import - the account does not have an inbox": [
         "불러올 이메일을 찾을 수 없음 - 계정에 받은 편지가 없습니다"
@@ -3272,6 +3386,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
+      "Some trashed documents could not be loaded": [
+        "휴지통에 있는 일부 문서를 불러올 수 없습니다"
+      ],
       "Something went wrong while fetching available domains": [
         "사용가능한 도메인을 가져오는 동안 문제가 발생했습니다."
       ],
@@ -3376,6 +3493,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "예상치 못한 오류가 발생하여, 연락처를 가져올 수 없습니다."
+      ],
+      "Unexpected error, we can't import the files": [
+        "예상치 못한 오류가 발생하여, 파일을 가져올 수 없습니다."
       ],
       "Unknown error": [
         "알 수 없는 오류"
@@ -4535,6 +4655,9 @@
       "Continue": [
         "계속"
       ],
+      "Converting document...": [
+        "문서 변환 중..."
+      ],
       "Copied to clipboard": [
         "클립보드로 복사함"
       ],
@@ -4582,6 +4705,9 @@
       ],
       "Creating link to folder": [
         "폴더 링크를 만드는 중"
+      ],
+      "Creating new document...": [
+        "새 문서 생성 중..."
       ],
       "Current plan": [
         "현재 플랜"
@@ -4685,6 +4811,12 @@
       "Enter your own password (as trusted contact).": [
         "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
+      "Error converting document: ${ errorMessage }": [
+        "문서 변환 오류: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "문서 불러오기 오류: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "동기화 오류"
       ],
@@ -4721,6 +4853,9 @@
       "File will not be updated": [
         "파일이 업로드되지 않습니다"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "파일 전용 (사진 불가, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }) - 최대 총 100 GB, 100,000개 파일 및 파일 당 50 GB)"
+      ],
       "finance": [
         "금융정보"
       ],
@@ -4748,11 +4883,26 @@
       "Geoblocking": [
         "차단된 콘텐츠"
       ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "${ BRAND_NAME } Workspace를 통해 사용자당 1 TB의 안전한 저장공간, 프로페셔널한 @your-company.com 이메일, 더 긴 영상 통화 등을 이용해 보세요."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "문서에 추가된 댓글 및 제안 사항에 대한 이메일 업데이트를 받아보세요."
+      ],
+      "Get Notified About Comments": [
+        "댓글 알림 받기"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "문제를 보고하여 서비스 개선에 도움을 주세요. 스프레드시트 콘텐츠를 공유해도 괜찮으시다면, 아래의 디버그 정보를 보고서에 첨부해 주세요."
+      ],
       "here": [
         "여기"
+      ],
+      "Hide table of contents": [
+        "목차 숨기기"
       ],
       "High Priority": [
         "중요도 높음"
@@ -4898,6 +5048,9 @@
       "Low Priority": [
         "중요도 낮음"
       ],
+      "Making a copy...": [
+        "복사본을 만드는 중..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "최대 ${ MAX_SHARED_URL_PASSWORD_LENGTH }자"
       ],
@@ -4927,6 +5080,9 @@
       ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "URL에 제공된 문서가 없습니다. ${ DRIVE_APP_NAME }로 돌아가서 문서를 선택하세요."
       ],
       "No email address": [
         "이메일 주소 없음"
@@ -4969,6 +5125,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "링크와 비밀번호를 가지고 있는 사람만 이 폴더에 접근할 수 있습니다."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "이런! 이 스프레드시트에 사용자의 최신 편집 내용을 저장할 수 없어, 작업 내용을 잃지 않도록 편집을 일시정지했습니다."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "권장 조치 및 유용한 링크들이 포함된 가이드를 열어보세요."
@@ -5144,6 +5303,9 @@
       "Shared on": [
         "다음에서 공유됨:"
       ],
+      "Show table of contents": [
+        "목차 보기"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "네트워크 오류로 인해 서명을 확인할 수 없습니다. 나중에 다시 시도하세요."
       ],
@@ -5218,6 +5380,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "입력하신 URL은 Slack에서 잘못 복사된 것으로 보입니다. Slack에서 긴 링크를 복사할 때는 잘린 URL 텍스트를 직접 복사하지 마시고, 링크를 마우스 오른쪽 버튼으로 클릭한 후 \"링크 복사\"를 선택해 주세요."
       ],
       "There are no documents in the trash.": [
         "휴지통 내에 문서가 존재하지 않습니다."
@@ -5902,11 +6067,20 @@
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
+      "Enable email notifications": [
+        "이메일 알림 활성화"
+      ],
       "Encrypt emails": [
         "이메일 암호화"
       ],
       "Erase this link and remove everyone with access": [
         "이 링크를 지우고 모두의 접근권한을 제거합니다"
+      ],
+      "Exact host matching": [
+        "정확한 호스트 일치"
+      ],
+      "Exact URL matching": [
+        "정확한 URL 일치"
       ],
       "Expiry": [
         "만료"
@@ -5955,6 +6129,9 @@
       ],
       "Include application logs in bug report": [
         "버그 신고에 애플리케이션 로그 포함"
+      ],
+      "Include document name in notification": [
+        "알림에 문서 이름 포함"
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
@@ -6025,6 +6202,9 @@
       "Navigation": [
         "내비게이션"
       ],
+      "Never fill on this exact URL": [
+        "이 정확한 URL에서 자동완성 사용 안 함"
+      ],
       "New password": [
         "새 비밀번호"
       ],
@@ -6045,6 +6225,9 @@
       ],
       "Optional": [
         "선택 사항"
+      ],
+      "Parent domain and subdomains (default)": [
+        "상위 도메인 및 하위 도메인(기본값)"
       ],
       "Password": [
         "비밀번호"
@@ -6085,6 +6268,9 @@
       "Region": [
         "시/도"
       ],
+      "Regular expression": [
+        "정규식"
+      ],
       "Replace existing file": [
         "기존 파일 대체"
       ],
@@ -6121,6 +6307,9 @@
       "Skip folder": [
         "폴더 건너뛰기"
       ],
+      "Starts with": [
+        "다음으로 시작"
+      ],
       "Stop sharing": [
         "공유 중지"
       ],
@@ -6148,8 +6337,14 @@
       "Trash": [
         "휴지통"
       ],
+      "Unknown user": [
+        "알 수 없는 사용자"
+      ],
       "Upload picture": [
         "사진 업로드"
+      ],
+      "URL wildcard pattern": [
+        "URL 와일드카드 패턴"
       ],
       "Username": [
         "사용자 이름"
@@ -6474,6 +6669,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "'다음으로 시작' 일치 규칙"
+      ],
+      "Exact (sub) domain matching rule": [
+        "정확한 (하위) 도메인 일치 규칙"
+      ],
+      "Exact URL matching rule": [
+        "정확한 URL 일치 규칙"
+      ],
+      "Never fill with this exact URL": [
+        "이 정확한 URL에서는 자동완성 안 함"
+      ],
+      "Regular expression rule": [
+        "정규식 규칙"
+      ],
+      "Wildcard pattern matching rule": [
+        "와일드카드 패턴 일치 규칙"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "무료 체험이 종료되었습니다. ${ nonAutoRenewalAction }"
       ],
@@ -7737,6 +7950,12 @@
       "Device renamed": [
         "기기 이름 변경됨"
       ],
+      "Document moved to trash": [
+        "문서가 휴지통으로 이동되었습니다"
+      ],
+      "Document restored from trash": [
+        "문서가 휴지통에서 복원되었습니다"
+      ],
       "External invitation removed from the share": [
         "이 공유에서 외부 초대 삭제됨"
       ],
@@ -7757,6 +7976,9 @@
       ],
       "Failed to reject share invitation": [
         "초대장 공유 거절 실패"
+      ],
+      "Failed to rename document": [
+        "문서 이름 변경 실패"
       ],
       "Failed to upload files: ${ err }": [
         "파일 업로드 실패: ${ err }"
@@ -8882,6 +9104,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "새 스프레드시트 생성 중..."
+      ],
       "Detect automatically": [
         "자동 감지"
       ],
@@ -9611,6 +9836,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount }개 이메일 주소"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
       "Account recovery": [
         "계정 복구"
       ],
@@ -9838,6 +10066,9 @@
       ],
       "Edit image": [
         "이미지 편집"
+      ],
+      "Editing paused": [
+        "편집 일시정지됨"
       ],
       "Email addresses": [
         "이메일 주소"
@@ -10181,6 +10412,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "데이터 개인정보 보호를 위해 ${ VPN_SHORT_APP_NAME } 사용하기"
       ],
+      "Users and addresses": [
+        "사용자 및 주소"
+      ],
       "Verify your password": [
         "비밀번호 확인"
       ],
@@ -10368,6 +10602,11 @@
         "데이터 접근을 요청하려면 사용자가 주소를 소유해야 합니다."
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
@@ -10470,6 +10709,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }은 강력한 제어 기능을 제공하지만, 단 하나의 오류로도 사기 또는 피싱 웹사이트에서 자동완성이 일치하여 데이터가 입력될 수 있습니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"

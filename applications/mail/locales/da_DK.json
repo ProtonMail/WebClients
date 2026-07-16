@@ -1520,8 +1520,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -2290,6 +2289,27 @@
       ],
       "Status": [
         "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For at migrere denne bruger skal vedkommende acceptere sin invitation til at tilmelde sig ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du fjerne vedkommende fra arkivet i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du ophæve suspenderingen af vedkommende i din Google Workspace Admin Console."
       ],
       "User": [
         "Bruger"
@@ -4195,13 +4215,13 @@
         "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
       ],
       "A blue dot appears when a category has unread messages since your last visit.": [
-        "Der vises en blå prik, når en kategori har ulæste beskeder siden Deres seneste besøg."
+        "Der vises en blå prik, når en kategori har ulæste beskeder siden dit seneste besøg."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Tilføj mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til at se eller redigere."
       ],
       "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
-        "Tilføj eller fjern kategorier, administrer notifikationer og tilpas Deres konfiguration når som helst i indstillinger."
+        "Tilføj eller fjern kategorier, administrer notifikationer og tilpas din konfiguration når som helst i indstillinger."
       ],
       "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
         "Tilføj eller fjern kategorier, administrer notifikationer, eller slå dem helt fra – når som helst i indstillinger."
@@ -9906,6 +9926,12 @@
       "Encrypt emails": [
         "Kryptér e-mails"
       ],
+      "Exact host matching": [
+        "Nøjagtigt værtsmatch"
+      ],
+      "Exact URL matching": [
+        "Nøjagtig URL-matching"
+      ],
       "Expires": [
         "Udløber"
       ],
@@ -10113,6 +10139,9 @@
       "Navigation": [
         "Navigation"
       ],
+      "Never fill on this exact URL": [
+        "Udfyld aldrig på denne nøjagtige URL"
+      ],
       "New password": [
         "Ny adgangskode"
       ],
@@ -10163,6 +10192,9 @@
       ],
       "Original link": [
         "Oprindeligt link"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domæne og underdomæner (standard)"
       ],
       "Participants": [
         "Deltagere"
@@ -10242,6 +10274,9 @@
       "Region": [
         "Region"
       ],
+      "Regular expression": [
+        "Regulært udtryk"
+      ],
       "Remember my choice": [
         "Husk mit valg"
       ],
@@ -10301,6 +10336,9 @@
       ],
       "Start date": [
         "Startdato"
+      ],
+      "Starts with": [
+        "Begynder med"
       ],
       "State": [
         "Stat"
@@ -10388,6 +10426,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ],
       "Username": [
         "Brugernavn"
@@ -10991,14 +11032,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Matchende regel for \"Begynder med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Nøjagtig (under) domænematchregel"
+      ],
+      "Exact URL matching rule": [
+        "Nøjagtig URL-matchende regel"
+      ],
       "Fw:": [
         "Vs:"
+      ],
+      "Never fill with this exact URL": [
+        "Udfyld aldrig med denne nøjagtige URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, skrev ${ senderString }:"
       ],
       "Re:": [
         "Sv:"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært udtryk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for jokertegnmønstermatch"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er udløbet. ${ nonAutoRenewalAction }"
@@ -16079,7 +16138,7 @@
         "Betalingsbekræftelse"
       ],
       "Personalize your Categories": [
-        "Gør Deres kategorier personlige"
+        "Gør dine kategorier personlige"
       ],
       "Phone numbers": [
         "Telefonnumre"
@@ -16361,6 +16420,9 @@
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Brug Gmail sikkert i ${ MAIL_APP_NAME }"
       ],
+      "Users and addresses": [
+        "Brugere og adresser"
+      ],
       "Verification error": [
         "Bekræftelsesfejl"
       ],
@@ -16417,7 +16479,7 @@
         "Du kan nu oprette ubegrænsede mængder af mapper og etiketter"
       ],
       "You're in control": [
-        "De har kontrollen"
+        "Du har kontrollen"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"
@@ -16728,6 +16790,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",

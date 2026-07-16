@@ -1226,6 +1226,10 @@
         "${ n } mensahe bawat araw",
         "${ n } na mensahe bawat araw"
       ],
+      "${ options }-day file version history": [
+        "history ng bersyon ng file para sa ${ options } araw",
+        "history ng bersyon ng file na ${ options } na araw"
+      ],
       "${ size } attachment size": [
         "${ size } na laki ng attachment"
       ],

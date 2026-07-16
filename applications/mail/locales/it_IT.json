@@ -1520,8 +1520,7 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
+        "Affida chiave"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -2204,6 +2203,15 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Attivato"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "L'indirizzo è già utilizzato da un utente esterno alla tua organizzazione. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "All": [
+        "Tutti"
+      ],
       "Calendar": [
         "Calendario"
       ],
@@ -2216,11 +2224,50 @@
       "Contacts": [
         "Contatti"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stato della migrazione dei dati da Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Email"
+      ],
+      "Errors": [
+        "Errori"
+      ],
       "Estimated size": [
         "Dimensioni Stimate"
       ],
+      "Find out what can be migrated.": [
+        "Scopri cosa può essere migrato."
+      ],
+      "Has errors": [
+        "Presenta errori"
+      ],
+      "In progress": [
+        "In corso"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Indirizzo del membro non trovato. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "Migrate": [
+        "Migra"
+      ],
+      "Migrated": [
+        "Migrato"
+      ],
       "Migration status": [
         "Stato della migrazione"
+      ],
+      "Missing organization private key": [
+        "Chiave privata dell'organizzazione mancante"
+      ],
+      "Missing organization public key": [
+        "Chiave pubblica dell'organizzazione mancante"
+      ],
+      "No users to display": [
+        "Nessun utente da mostrare"
+      ],
+      "Not activated": [
+        "Non attivato"
       ],
       "Organization does not have enough seats available": [
         "L'organizzazione non dispone di licenze sufficienti"
@@ -2228,11 +2275,53 @@
       "Organization does not have enough storage available": [
         "L'organizzazione non dispone di spazio di archiviazione sufficiente"
       ],
+      "Pending": [
+        "In attesa"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleziona esattamente cosa desideri migrare. Si applicherà a tutti gli utenti dell'organizzazione."
+      ],
+      "Select users to migrate": [
+        "Seleziona gli utenti da migrare"
+      ],
+      "Size": [
+        "Dimensione"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Impossibile migrare questo utente a causa di incompatibilità della piattaforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, attiva il suo account nella tua Console di amministrazione di Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrare questo utente, attiva il suo account in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrare questo utente, attiva il suo indirizzo in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrare questo utente, è necessario che accetti l'invito a unirti a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, ripristinalo dall'archivio nella tua Console di amministrazione di Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, riattivalo nella tua Console di amministrazione di Google Workspace."
+      ],
       "User": [
         "Utente"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utenti che hanno effettuato l'accesso al proprio account ${ BRAND_NAME }"
+      ],
       "What are you migrating?": [
         "Cosa stai migrando?"
+      ],
+      "You": [
+        "Tu"
       ]
     },
     "Browser": {
@@ -2365,6 +2454,11 @@
       ],
       "Take a tour": [
         "Fai un tour"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "I duplicati provenienti da importazioni precedenti saranno ignorati. Annulla o importa i messaggi più vecchi nelle impostazioni di ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -4332,6 +4426,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Metteremo in pausa le importazioni all'80% dell'archiviazione per riservare spazio per i nuovi messaggi."
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "In futuro importeremo le tue vecchie email e sincronizzeremo i nuovi messaggi da Gmail"
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Abbiamo iniziato a importare le tue email da Gmail. Ti faremo sapere quando avremo finito."
       ],
@@ -4991,6 +5088,9 @@
       "No contacts found to import": [
         "Nessun contatto trovato da importare"
       ],
+      "No drive found to import": [
+        "Nessun drive trovato da importare"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Nessuna email trovata da importare - l'account non ha una cartella di posta ricevuta"
       ],
@@ -5316,6 +5416,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Errore imprevisto. Non possiamo importare i contatti."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Errore imprevisto, non possiamo importare i file"
       ],
       "Unknown error": [
         "Errore sconosciuto"
@@ -6608,6 +6711,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ providerName }": [
+        "Importa da ${ providerName }"
+      ],
       "More import options": [
         "Altre opzioni di importazione"
       ]
@@ -7549,6 +7655,9 @@
       "file attached": [
         "file allegato",
         "file allegati"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo file (no foto, ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME }) - fino a un totale di 100 GB, 100.000 file e 50 GB per file"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "I filtri funzionano su tutte le email, incluse le email in arrivo e quelle inviate. Ogni filtro deve contenere almeno un nome, una condizione e un'azione."
@@ -9817,6 +9926,12 @@
       "Encrypt emails": [
         "Email crittografate"
       ],
+      "Exact host matching": [
+        "Corrispondenza esatta dell'host"
+      ],
+      "Exact URL matching": [
+        "Corrispondenza URL esatta"
+      ],
       "Expires": [
         "Scadenza"
       ],
@@ -9909,6 +10024,9 @@
       ],
       "Import to:": [
         "Importa in:"
+      ],
+      "Import your emails": [
+        "Importa le tue email"
       ],
       "Include application logs in bug report": [
         "Includi i log dell'applicazione nella segnalazione di bug"
@@ -10021,6 +10139,9 @@
       "Navigation": [
         "Navigazione"
       ],
+      "Never fill on this exact URL": [
+        "Non compilare mai su questo URL esatto"
+      ],
       "New password": [
         "Nuova password"
       ],
@@ -10071,6 +10192,9 @@
       ],
       "Original link": [
         "Link originale"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principale e sottodomini (predefinito)"
       ],
       "Participants": [
         "Partecipanti"
@@ -10150,6 +10274,9 @@
       "Region": [
         "Regione"
       ],
+      "Regular expression": [
+        "Espressione regolare"
+      ],
       "Remember my choice": [
         "Ricorda la mia selezione"
       ],
@@ -10209,6 +10336,9 @@
       ],
       "Start date": [
         "Data di inizio"
+      ],
+      "Starts with": [
+        "Inizia con"
       ],
       "State": [
         "Stato"
@@ -10296,6 +10426,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "Modello di carattere jolly dell'URL"
       ],
       "Username": [
         "Nome utente"
@@ -10899,14 +11032,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regola di corrispondenza \"Inizia con\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regola di corrispondenza esatta del (sotto) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regola di corrispondenza URL esatta"
+      ],
       "Fw:": [
         "I:"
+      ],
+      "Never fill with this exact URL": [
+        "Non compilare mai con questo URL esatto"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } ha scritto:"
       ],
       "Re:": [
         "R:"
+      ],
+      "Regular expression rule": [
+        "Regola dell'espressione regolare"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regola di corrispondenza del modello di caratteri jolly"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "La tua prova gratuita termina tra ${ nonAutoRenewalAction }."
@@ -11222,6 +11373,10 @@
       "${ n } VPN connection": [
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
+      ],
+      "${ options }-day file version history": [
+        "Cronologia delle versioni dei file di ${ options } giorno",
+        "Cronologia delle versioni dei file di ${ options } giorni"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin a vita"
@@ -13051,6 +13206,9 @@
       ],
       "Search for name or email": [
         "Cerca nome o email"
+      ],
+      "Search for users or addresses": [
+        "Cerca utenti o indirizzi"
       ],
       "Search messages": [
         "Cerca nei messaggi"
@@ -15282,6 +15440,9 @@
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ numMessages } message": [
         "${ numMessages } messaggio",
         "${ numMessages } messaggi"
@@ -16259,6 +16420,9 @@
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Usa Gmail in sicurezza in ${ MAIL_APP_NAME }"
       ],
+      "Users and addresses": [
+        "Utenti e indirizzi"
+      ],
       "Verification error": [
         "Errore di verifica"
       ],
@@ -16517,6 +16681,11 @@
         "Il tuo carattere predefinito sarà simile al seguente:"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
@@ -16621,6 +16790,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un controllo potente, ma un singolo errore può far sì che il riempimento automatico corrisponda e inserisca dati su siti web fraudolenti o di phishing."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Sei sicuro di voler eliminare definitivamente ${ count } contatto?",

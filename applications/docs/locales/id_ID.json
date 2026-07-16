@@ -90,6 +90,9 @@
       "Apply": [
         "Terapkan"
       ],
+      "Ask me next time": [
+        "Tanyakan saya lain kali"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Hanya ${ maxContacts } kontak yang dapat disisipkan dalam satu grup kontak"
       ],
@@ -330,6 +333,9 @@
       "Download anyway": [
         "Tetap unduh"
       ],
+      "Download debug information": [
+        "Unduh informasi debug"
+      ],
       "Download logs": [
         "Unduh log"
       ],
@@ -372,11 +378,20 @@
       "Export contact group": [
         "Ekspor grup kontak"
       ],
+      "Export editor state for version": [
+        "Ekspor status editor untuk versi"
+      ],
       "Export selection as .vcf": [
         "Ekspor pilihan sebagai .vcf"
       ],
+      "Export this version (as docx)": [
+        "Ekspor versi ini (sebagai docx)"
+      ],
       "Export this version (as xlsx)": [
         "Ekspor versi ini (sebagai xlsx)"
+      ],
+      "Export YJS state for version": [
+        "Ekspor status YJS untuk versi"
       ],
       "Forgot password?": [
         "Lupa kata sandi?"
@@ -630,6 +645,9 @@
       "Reload": [
         "Muat ulang"
       ],
+      "Reload spreadsheet": [
+        "Muat ulang spreadsheet"
+      ],
       "Remove": [
         "Hapus"
       ],
@@ -659,6 +677,9 @@
       ],
       "Report a problem": [
         "Laporkan masalah"
+      ],
+      "Report issue": [
+        "Laporkan isu"
       ],
       "Request a call": [
         "Minta telepon"
@@ -698,6 +719,9 @@
       ],
       "Save changes": [
         "Simpan perubahan"
+      ],
+      "Save preferences": [
+        "Simpan preferensi"
       ],
       "Search": [
         "Cari"
@@ -827,6 +851,9 @@
       ],
       "Try another method": [
         "Coba metode lain"
+      ],
+      "Try Workspace": [
+        "Coba Workspace"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktfkan ${ DARK_WEB_MONITORING_NAME }"
@@ -1194,6 +1221,15 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Diaktifkan"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Alamat sudah digunakan oleh pengguna di luar organisasi. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
+      ],
+      "All": [
+        "Semua"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -1203,14 +1239,50 @@
       "Contacts": [
         "Kontak"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status migrasi data dari Google Workspace ke ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Email"
+      ],
+      "Errors": [
+        "Kesalahan"
+      ],
       "Estimated size": [
         "Perkiraan ukuran"
+      ],
+      "Find out what can be migrated.": [
+        "Cari tahu apa saja yang dapat dimigrasikan."
+      ],
+      "Has errors": [
+        "Ada kesalahan"
       ],
       "In progress": [
         "Sedang berlangsung"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Alamat anggota tidak ditemukan. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
+      ],
+      "Migrate": [
+        "Migrasi"
+      ],
+      "Migrated": [
+        "Dimigrasikan"
+      ],
       "Migration status": [
         "Status migrasi"
+      ],
+      "Missing organization private key": [
+        "Kunci pribadi organisasi hilang"
+      ],
+      "Missing organization public key": [
+        "Kunci publik organisasi hilang"
+      ],
+      "No users to display": [
+        "Tidak ada pengguna untuk ditampilkan"
+      ],
+      "Not activated": [
+        "Belum diaktifkan"
       ],
       "Organization does not have enough seats available": [
         "Organisasi tidak memiliki jumlah kuota yang memadai"
@@ -1218,14 +1290,53 @@
       "Organization does not have enough storage available": [
         "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
       ],
+      "Pending": [
+        "Tertunda"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Pilih apa yang ingin dimigrasikan. Ini akan berlaku untuk semua pengguna organisasi."
+      ],
+      "Select users to migrate": [
+        "Pilih pengguna untuk dimigrasikan"
+      ],
+      "Size": [
+        "Ukuran"
+      ],
       "Status": [
         "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Pengguna ini tidak dapat dimigrasikan karena ketidakcocokan platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, aktifkan akunnya di Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Untuk memigrasikan pengguna ini, aktifkan akunnya di bawah ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Untuk memigrasikan pengguna ini, aktifkan alamatnya di bawah ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Untuk memigrasikan pengguna ini, pengguna tersebut harus menerima undangan untuk bergabung dengan ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, batalkan pengarsipannya di Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, batalkan penangguhannya di Google Workspace Admin Console."
       ],
       "User": [
         "Pengguna"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Pengguna yang telah mengakses akun ${ BRAND_NAME }"
+      ],
       "What are you migrating?": [
         "Apa yang ingin Anda migrasikan?"
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "Browser": {
@@ -3044,6 +3155,12 @@
       "Failed to fetch sharing info": [
         "Gagal mengambil info berbagi"
       ],
+      "Failed to load 'My files' folder": [
+        "Gagal memuat folder 'File saya'"
+      ],
+      "Failed to load recent documents": [
+        "Gagal memuat dokumen terbaru"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Gagal memuat data langganan. Silakan coba lagi nanti."
       ],
@@ -3052,6 +3169,9 @@
       ],
       "Failed to remove older revisions": [
         "Gagal menghapus revisi lama"
+      ],
+      "Failed to rename document": [
+        "Gagal mengubah nama dokumen"
       ],
       "Failed to rename document. Please try again later.": [
         "Gagal mengganti nama dokumen. Silakan coba lagi nanti."
@@ -3145,6 +3265,9 @@
       ],
       "No contacts found to import": [
         "Tidak ada kontak yang dapat diimpor"
+      ],
+      "No drive found to import": [
+        "Tidak ada drive yang ditemukan untuk diimpor"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Tidak ada email yang ditemukan untuk diimpor - akun ini tidak memiliki kotak masuk"
@@ -3263,6 +3386,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
+      "Some trashed documents could not be loaded": [
+        "Beberapa dokumen yang dibuang ke tempat sampah tidak dapat dimuat"
+      ],
       "Something went wrong while fetching available domains": [
         "Terjadi kesalahan saat mengambil domain yang tersedia"
       ],
@@ -3368,6 +3494,9 @@
       "Unexpected error, we can't import the contacts": [
         "Terjadi kesalahan tak terduga, kami tidak dapat mengimpor kontak"
       ],
+      "Unexpected error, we can't import the files": [
+        "Terjadi kesalahan tak terduga, tidak dapat mengimpor file"
+      ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
@@ -3412,6 +3541,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak untuk akun Anda"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Semua alamat dalam paket telah digunakan. Harap tingkatkan paket untuk menambah alamat baru atau nonaktifkan alamat di akun Anda."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
@@ -4340,6 +4472,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
+      "${ total } user found": [
+        "${ total } pengguna ditemukan"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
@@ -4520,6 +4655,9 @@
       "Continue": [
         "Lanjutkan"
       ],
+      "Converting document...": [
+        "Mengonversi dokumen..."
+      ],
       "Copied to clipboard": [
         "Disalin ke papan klip"
       ],
@@ -4568,11 +4706,17 @@
       "Creating link to folder": [
         "Membuat tautan ke folder"
       ],
+      "Creating new document...": [
+        "Membuat dokumen baru..."
+      ],
       "Current plan": [
         "Paket saat ini"
       ],
       "Current version": [
         "Versi saat ini"
+      ],
+      "Decrypting your document": [
+        "Mendekripsi dokumen"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Tanda tangan digital berhasil diverifikasi. Berkas ini diunggah secara aman oleh ${ emailAddress }."
@@ -4667,6 +4811,12 @@
       "Enter your own password (as trusted contact).": [
         "Masukkan kata sandi Anda (selaku kontak tepercaya)"
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Kesalahan mengonversi dokumen: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Kesalahan memuat dokumen: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Kesalahan Sinkronisasi"
       ],
@@ -4703,6 +4853,9 @@
       "File will not be updated": [
         "File tidak akan diperbarui"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Hanya file (tanpa foto, ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME }) - hingga total 100 GB, 100.000 file, dan 50 GB per file"
+      ],
       "finance": [
         "keuangan"
       ],
@@ -4730,11 +4883,26 @@
       "Geoblocking": [
         "Pemblokiran wilayah"
       ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Dapatkan email @your-company.com profesional, penyimpanan aman sebesar 1 TB per pengguna, panggilan video yang lebih lama, dan lainnya dengan ${ BRAND_NAME } Workspace."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Dapatkan pembaruan email untuk komentar dan saran yang ditambahkan ke dokumen."
+      ],
+      "Get Notified About Comments": [
+        "Dapatkan Notifikasi Seputar Komentar"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Pemerintah dan ISP dapat memonitor aktivitas daring Anda. Dengan menyembunyikan IP asli Anda dan mengenkripsi aktivitas Anda, penjelajahan Anda menjadi pribadi."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Bantu kami meningkatkan pengalaman ini dengan melaporkan isu. Jika bersedia membagikan konten spreadsheet, lampirkan informasi debug di bawah ini ke laporan Anda."
+      ],
       "here": [
         "di sini"
+      ],
+      "Hide table of contents": [
+        "Sembunyikan daftar isi"
       ],
       "High Priority": [
         "Prioritas Tinggi"
@@ -4880,6 +5048,9 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
+      "Making a copy...": [
+        "Membuat salinan..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimal ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
       ],
@@ -4909,6 +5080,9 @@
       ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Tidak ada dokumen yang disertakan dalam URL. Kembali ke ${ DRIVE_APP_NAME } dan pilih dokumen."
       ],
       "No email address": [
         "Tidak ada alamat email"
@@ -4951,6 +5125,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Hanya orang dengan tautan dan kata sandi yang dapat mengakses folder ini."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ups! Spreadsheet ini tidak dapat menyimpan edit terbaru Anda, sehingga pengeditan dijeda untuk mencegah hilangnya hasil kerja Anda."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Buka panduan ini untuk memperoleh tindakan yang disarankan dan tautan yang dapat berguna."
@@ -5126,6 +5303,9 @@
       "Shared on": [
         "Dibagikan pada"
       ],
+      "Show table of contents": [
+        "Tampilkan daftar isi"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Tanda tangan tidak dapat divalidasi karena kesalahan jaringan. Silakan coba lagi nanti."
       ],
@@ -5201,6 +5381,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim email terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "URL yang dimasukkan sepertinya tidak disalin dari Slack dengan benar. Saat menyalin tautan panjang dari Slack, klik kanan tautan tersebut, lalu pilih \"Salin tautan\" alih-alih langsung menyalin teks URL yang terpotong."
+      ],
       "There are no documents in the trash.": [
         "Tidak ada dokumen di sampah."
       ],
@@ -5218,6 +5401,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dokumen ini memiliki banyak aktivitas. Beberapa fitur mungkin tidak tersedia untuk sementara waktu."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Dokumen ini memiliki banyak kolaborator aktif. Pengeditan waktu nyata untuk sementara tidak tersedia. Muat ulang untuk melihat pembaruan terbaru."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Dokumen ini mungkin tidak ada, atau kami mengalami masalah saat memuatnya. Silakan muat ulang halaman dan coba lagi."
@@ -5881,11 +6067,20 @@
       "Emails (last month)": [
         "Email (sebulan terakhir)"
       ],
+      "Enable email notifications": [
+        "Aktifkan notifikasi email"
+      ],
       "Encrypt emails": [
         "Enkripsi email"
       ],
       "Erase this link and remove everyone with access": [
         "Hapus tautan ini dan hapus semua orang yang dapat mengakses"
+      ],
+      "Exact host matching": [
+        "Pencocokan host persis"
+      ],
+      "Exact URL matching": [
+        "Pencocokan URL persis"
       ],
       "Expiry": [
         "Kedaluwarsa"
@@ -5934,6 +6129,9 @@
       ],
       "Include application logs in bug report": [
         "Sertakan log aplikasi dalam laporan bug"
+      ],
+      "Include document name in notification": [
+        "Sertakan nama dokumen dalam notifikasi"
       ],
       "Include message and file name in invite email": [
         "Sertakan pesan dan nama file dalam email undangan"
@@ -6004,6 +6202,9 @@
       "Navigation": [
         "Navigasi"
       ],
+      "Never fill on this exact URL": [
+        "Jangan pernah isi pada URL persis ini"
+      ],
       "New password": [
         "Kata sandi baru"
       ],
@@ -6024,6 +6225,9 @@
       ],
       "Optional": [
         "Opsional"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domain induk dan subdomain (bawaan)"
       ],
       "Password": [
         "Kata sandi"
@@ -6064,6 +6268,9 @@
       "Region": [
         "Provinsi"
       ],
+      "Regular expression": [
+        "Ekspresi reguler"
+      ],
       "Replace existing file": [
         "Gantikan file yang telah ada"
       ],
@@ -6100,6 +6307,9 @@
       "Skip folder": [
         "Lewati folder"
       ],
+      "Starts with": [
+        "Mulai dengan"
+      ],
       "Stop sharing": [
         "Berhenti berbagi"
       ],
@@ -6127,8 +6337,14 @@
       "Trash": [
         "Sampah"
       ],
+      "Unknown user": [
+        "Pengguna tidak dikenal"
+      ],
       "Upload picture": [
         "Unggah gambar"
+      ],
+      "URL wildcard pattern": [
+        "Pola wildcard URL"
       ],
       "Username": [
         "Nama pengguna"
@@ -6453,6 +6669,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Aturan pencocokan 'Mulai dengan'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Aturan pencocokan domain (sub) persis"
+      ],
+      "Exact URL matching rule": [
+        "Aturan pencocokan URL persis"
+      ],
+      "Never fill with this exact URL": [
+        "Jangan pernah isi dengan URL persis ini"
+      ],
+      "Regular expression rule": [
+        "Aturan ekspresi reguler"
+      ],
+      "Wildcard pattern matching rule": [
+        "Aturan pencocokan pola wildcard"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Uji coba gratis Anda telah berakhir. ${ nonAutoRenewalAction }"
       ],
@@ -7773,6 +8007,12 @@
       "Device renamed": [
         "Nama perangkat diubah"
       ],
+      "Document moved to trash": [
+        "Dokumen dipindahkan ke tempat sampah"
+      ],
+      "Document restored from trash": [
+        "Dokumen dipulihkan dari sampah"
+      ],
       "External invitation removed from the share": [
         "Undangan eksternal dihapus dari pembagian"
       ],
@@ -7793,6 +8033,9 @@
       ],
       "Failed to reject share invitation": [
         "Undangan untuk berbagi gagal ditolak"
+      ],
+      "Failed to rename document": [
+        "Gagal mengubah nama dokumen"
       ],
       "Failed to upload files: ${ err }": [
         "Gagal mengunggah file: ${ err }"
@@ -8339,6 +8582,9 @@
       ],
       "Search for name or email": [
         "Cari nama atau email"
+      ],
+      "Search for users or addresses": [
+        "Cari pengguna atau alamat"
       ],
       "Search parent folder": [
         "Cari pada folder induk"
@@ -8901,16 +9147,57 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Nilai Dipisahkan Koma (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "Spreadsheet baru"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Nilai Dipisahkan Tab (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Membuat spreadsheet baru..."
+      ],
+      "Detect automatically": [
+        "Deteksi otomatis"
+      ],
+      "Insert as new sheet": [
+        "Sisipkan sebagai lembar baru"
+      ],
+      "Replace current sheet": [
+        "Ganti lembar saat ini"
+      ],
+      "Replace data at selected cell": [
+        "Ganti data pada sel yang dipilih"
+      ],
+      "Replace spreadsheet": [
+        "Ganti spreadsheet"
+      ],
+      "Select a file to import": [
+        "Pilih file untuk diimpor"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Spreadsheet saat ini, termasuk semua lembar di dalamnya, akan diganti dengan versi ini."
       ]
     },
     "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Konversikan teks menjadi angka, tanggal, dan rumus"
+      ],
       "Destination": [
         "Tujuan"
       ],
       "Format": [
         "Format"
+      ],
+      "Separator type": [
+        "Jenis pemisah"
       ]
     },
     "sheets_2025:Title": {
@@ -9606,6 +9893,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount } alamat email"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asisten penulisan ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Pemulihan akun"
       ],
@@ -9833,6 +10123,9 @@
       ],
       "Edit image": [
         "Sunting gambar"
+      ],
+      "Editing paused": [
+        "Pengeditan dijeda"
       ],
       "Email addresses": [
         "Alamat email"
@@ -10176,6 +10469,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gunakan ${ VPN_SHORT_APP_NAME } untuk privasi data"
       ],
+      "Users and addresses": [
+        "Pengguna dan alamat"
+      ],
       "Verify your password": [
         "Verifikasi kata sandi Anda"
       ],
@@ -10363,6 +10659,11 @@
         "Pengguna harus memiliki alamat untuk meminta pengaksesan data"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Anda akan dapat menetapkan peran setelah pengguna menerima undangan."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
@@ -10466,6 +10767,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } memberikan kendali yang kuat, tetapi satu kesalahan saja dapat menyebabkan isi otomatis mencocokkan dan mengisi data pada situs web penipuan atau phishing."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
@@ -10513,6 +10817,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Impor ini dapat melebihi kapasitas penyimpanan yang tersedia pada akun ${ BRAND_NAME } Anda saat ini. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "Tindakan ini akan mengganti semua data di spreadsheet"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sayangnya, saat ini kami sedang tidak daring. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali daring."

@@ -335,6 +335,9 @@
       "Deselect all": [
         "सब चुने में से हटाएं"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "स्वचालित रूप से ${ MEET_APP_NAME } लिंक जोड़ने की खासियत अक्षम करें"
+      ],
       "Discard": [
         "रद्द करें"
       ],
@@ -400,6 +403,12 @@
       ],
       "Expand video conferencing widget": [
         "वीडियो कॉन्फ्रेंसिंग विडजेट का विस्तार करें"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "${ MEET_SHORT_APP_NAME } एक्सप्लोर करें"
+      ],
+      "Explore other plans": [
+        "अन्य प्लैन एक्सप्लोर करें"
       ],
       "Export": [
         "निर्यात करें"
@@ -893,6 +902,9 @@
       "Submit": [
         "जमा करें"
       ],
+      "Subscribe now": [
+        "अभी सब्सक्राइब करें"
+      ],
       "Switch or add account": [
         "खाता बदलें अथवा जोड़ें"
       ],
@@ -919,6 +931,9 @@
       ],
       "Try another method": [
         "दूसरा तरीका आजमाएं"
+      ],
+      "Turn off auto-add": [
+        "स्वचालित रूप से जोड़ना बंद करें"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } चालू करें"
@@ -1453,6 +1468,125 @@
       ],
       "Yearly": [
         "हर साल"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "सक्रिय"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "पता पहले से ही आपके संगठन के बाहर के उपयोगकर्ता द्वारा उपयोग किया जा रहा है। कृपया इसे हल करने के लिए ग्राहक सहायता से संपर्क करें"
+      ],
+      "All": [
+        "सभी"
+      ],
+      "Calendar": [
+        "कैलेंडर"
+      ],
+      "Configure migration": [
+        "माइग्रेशन कॉन्फ़िगर करें"
+      ],
+      "Contacts": [
+        "संपर्क"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace से ${ BRAND_NAME } तक डेटा माइग्रेशन की स्थिति"
+      ],
+      "Emails": [
+        "ईमेल"
+      ],
+      "Errors": [
+        "त्रुटियाँ"
+      ],
+      "Estimated size": [
+        "अनुमानित साइज़"
+      ],
+      "Find out what can be migrated.": [
+        "पता लगाएं कि क्या माइग्रेट किया जा सकता है।"
+      ],
+      "Has errors": [
+        "त्रुटियां हैं"
+      ],
+      "In progress": [
+        "प्रगति पर"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "सदस्य का पता नहीं मिला। कृपया इसे हल करने के लिए ग्राहक सहायता से संपर्क करें"
+      ],
+      "Migrate": [
+        "माइग्रेट करें"
+      ],
+      "Migrated": [
+        "माइग्रेट किया गया"
+      ],
+      "Migration status": [
+        "माइग्रेशन स्थिति"
+      ],
+      "Missing organization private key": [
+        "अनुपस्थित संगठन निजी चाबी"
+      ],
+      "Missing organization public key": [
+        "अनुपस्थित संगठन सार्वजनिक चाबी"
+      ],
+      "No users to display": [
+        "प्रदर्शित करने के लिए कोई उपयोगकर्ता नहीं"
+      ],
+      "Not activated": [
+        "सक्रिय नहीं"
+      ],
+      "Organization does not have enough seats available": [
+        "संगठन के पास पर्याप्त सीटें उपलब्ध नहीं हैं"
+      ],
+      "Organization does not have enough storage available": [
+        "संगठन के पास पर्याप्त स्टोरेज उपलब्ध नहीं है"
+      ],
+      "Pending": [
+        "लंबित"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "ठीक से चुनें कि आप क्या माइग्रेट करना चाहते हैं। यह सभी संगठन उपयोगकर्ताओं पर लागू होगा।"
+      ],
+      "Select users to migrate": [
+        "माइग्रेट करने के लिए उपयोगकर्ताओं का चयन करें"
+      ],
+      "Size": [
+        "साइज़"
+      ],
+      "Status": [
+        "स्थिति"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "प्लैटफॉर्म की विसंगतियों के कारण इस उपयोगकर्ता को माइग्रेट नहीं किया जा सकता है।"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, अपने Google Workspace एडमिन कंसोल में उनका खाता सक्षम करें।"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका खाता सक्षम करें।"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका पता सक्षम करें।"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें ${ BRAND_NAME } में शामिल होने का अपना न्योता स्वीकार करना होगा।"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें अपने Google Workspace एडमिन कंसोल में अनआर्काइव करें।"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें अपने Google Workspace एडमिन कंसोल में अनसस्पेंड करें।"
+      ],
+      "User": [
+        "उपयोगकर्ता"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "वे उपयोगकर्ता जिन्होंने अपने ${ BRAND_NAME } खाते को एक्सेस किया है"
+      ],
+      "What are you migrating?": [
+        "आप क्या माइग्रेट कर रहे हैं?"
+      ],
+      "You": [
+        "आप"
       ]
     },
     "Browser": {
@@ -3403,6 +3537,9 @@
       "120m": [
         "120 मिनट"
       ],
+      "15 minutes": [
+        "15 मिनट"
+      ],
       "30 minutes": [
         "30 मिनट"
       ],
@@ -3697,6 +3834,9 @@
       "Failed loading group members": [
         "ग्रुप के सदस्यों को लोड करने में विफल"
       ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "मौजूदा ${ MEET_APP_NAME } वीडियो कॉन्फ्रेंस जोड़ने में विफल"
+      ],
       "Failed to create ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } वीडियो कॉन्फ्रेंस बनाने में विफल"
       ],
@@ -3723,6 +3863,9 @@
       ],
       "Failed to update secret passphrase": [
         "गुप्त पासफ्रेज़ अपडेट करने में विफल"
+      ],
+      "Failed to update settings": [
+        "सेटिंग अपडेट करने में विफल"
       ],
       "First name is too long": [
         "पहला नाम बहुत लंबा है"
@@ -3826,6 +3969,9 @@
       ],
       "No contacts found to import": [
         "आयात के लिए कोई सम्पर्क न मिले"
+      ],
+      "No drive found to import": [
+        "आयात करने के लिए कोई ड्राइव नहीं मिली"
       ],
       "No emails found to import - the account does not have an inbox": [
         "आयात के लिए कोई ईमेल ना मिला - खाते में इंबॉक्स नहीं है"
@@ -4080,6 +4226,9 @@
       "Unexpected error, we can't import the contacts": [
         "अनपेक्षित एरर, हम संपर्क आयात नहीं कर सकते"
       ],
+      "Unexpected error, we can't import the files": [
+        "अनपेक्षित एरर, हम फ़ाइलें आयात नहीं कर सकते"
+      ],
       "Unknown error": [
         "अज्ञात त्रुटि"
       ],
@@ -4114,11 +4263,17 @@
         "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
         "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते"
       ],
+      "You cannot enter the organizer's email": [
+        "आप आयोजक का ईमेल दर्ज नहीं कर सकते"
+      ],
       "You have reached the maximum number of calendars.": [
         "आप कैलेंडर के नंबर के लिमिट पे पहुंच चुके है।"
       ],
       "You have reached the number of contacts limit for your account": [
         "आप अपने खाता के लिए संपर्कों की संख्या की सीमा तक पहुँच गए हैं"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "आपने अपने प्लैन के सभी पतों का उपयोग कर लिया है। कृपया नया पता जोड़ने के लिए अपना प्लैन अपग्रेड करें या अपने खाते में किसी पते को अक्षम करें।"
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
@@ -5169,6 +5324,10 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } को कम से कम 1 विशेष सर्वर ${ serverPricePerMonth } की आवश्यकता है"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } की समय सीमा ${ daysLeft } दिन में खत्म होने वाली है।",
+        "${ planName } की समय सीमा ${ daysLeft } दिनों में खत्म होने वाली है।"
+      ],
       "${ planName } expires today.": [
         "${ planName } आज समाप्त हो रहा है।"
       ],
@@ -5201,6 +5360,10 @@
       ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
+      ],
+      "${ total } user found": [
+        "${ total } उपयोगकर्ता मिला",
+        "${ total } उपयोगकर्ता मिले"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } संपर्क सफलतापूर्वक अपडेट किया गया।",
@@ -5378,6 +5541,9 @@
       ],
       "Billing cycle: ${ text }": [
         "बिल चक्र: ${ text }"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "बुकिंग संपर्क ईमेल: ${ selectedCalendar.Email }"
       ],
       "Booking page deleted": [
         "बुकिंग पेज मिटा दिया गया"
@@ -5644,6 +5810,12 @@
       "Failed to update meeting password": [
         "मीटिंग पासवर्ड अपडेट करने में विफल"
       ],
+      "Failed to update meeting schedule": [
+        "मीटिंग शेड्यूल अपडेट करने में विफल"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "केवल फ़ाइलें (कोई फोटो नहीं, ${ DOCS_APP_NAME } या ${ SHEETS_APP_NAME } नहीं) - कुल 100 जीबी तक, 1,00,000 फ़ाइलें, और प्रति फ़ाइल 50 जीबी"
+      ],
       "finance": [
         "वित्त"
       ],
@@ -5679,6 +5851,9 @@
       ],
       "Host": [
         "होस्ट"
+      ],
+      "How far in advance can someone book?": [
+        "कोई व्यक्ति कितने समय पहले बुक कर सकता है?"
       ],
       "How long should an appointment last?": [
         "एक अपॉइंटमेंट कितने समय का होना चाहिए?"
@@ -5843,6 +6018,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "आपके सभी ईमेल पतों पर भेजे गए संदेश आपके इंबॉक्स में जाएंगे।"
       ],
+      "Min. 2 hours before": [
+        "कम से कम 2 घंटे पहले"
+      ],
+      "Min. 48 hours before": [
+        "कम से कम 48 घंटे पहले"
+      ],
       "Monitor accounts": [
         "खातों पर नज़र रखें"
       ],
@@ -5897,6 +6078,9 @@
       "Not connected": [
         "कनेक्ट नहीं है"
       ],
+      "Not on the same day": [
+        "उसी दिन नहीं"
+      ],
       "Number of dedicated servers in the organization": [
         "संगठन में विशेष सर्वरों की संख्या"
       ],
@@ -5932,6 +6116,9 @@
       ],
       "Other accounts": [
         "अन्य खाते"
+      ],
+      "Other location": [
+        "अन्य स्थान"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "आपके संगठन के अन्य उपयोगकर्ता आपके व्यस्त स्लॉट देख सकेंगे। कोई ईवेंट विवरण साझा नहीं किया जाता है।"
@@ -6320,6 +6507,9 @@
       "Warning": [
         "चेतावनी"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "हमने स्वचालित रूप से एक ${ MEET_APP_NAME } लिंक जोड़ दिया है"
+      ],
       "We couldn’t process your payment.": [
         "आपका भुगतान प्रॉसेस नहीं कर सके।"
       ],
@@ -6367,6 +6557,9 @@
       ],
       "Where will the appointment take place?": [
         "अपॉइंटमेंट कहाँ आयोजित किया जाएगा?"
+      ],
+      "Which calendars should block bookings?": [
+        "किन कैलेंडरों को बुकिंग ब्लॉक करनी चाहिए?"
       ],
       "Which event would you like to delete?": [
         "आप किस इवेंट को मिटाना चाहते हैं?"
@@ -6841,6 +7034,9 @@
       "Add image URL": [
         "छवि URL जोड़ें"
       ],
+      "Add notice period": [
+        "नोटिस की अवधि जोड़ें"
+      ],
       "Add to group": [
         "समूह में जोड़ें"
       ],
@@ -6912,6 +7108,9 @@
       ],
       "Category": [
         "कैटेगरी"
+      ],
+      "Check additional calendars for availability": [
+        "उपलब्धता के लिए अतिरिक्त कैलेंडर जांचें"
       ],
       "City": [
         "शहर"
@@ -7036,6 +7235,12 @@
       "Every": [
         "हर"
       ],
+      "Exact host matching": [
+        "सटीक होस्ट मिलान"
+      ],
+      "Exact URL matching": [
+        "सटीक URL मिलान"
+      ],
       "Expires": [
         "समय खत्म"
       ],
@@ -7150,6 +7355,9 @@
       "Navigation": [
         "नेविगेशन"
       ],
+      "Never fill on this exact URL": [
+        "इस सटीक URL पर कभी न भरें"
+      ],
       "New password": [
         "नया पासवर्ड"
       ],
@@ -7179,6 +7387,9 @@
       ],
       "Organizer": [
         "आयोजक"
+      ],
+      "Parent domain and subdomains (default)": [
+        "मुख्य डोमेन और सबडोमेन (डिफॉल्ट)"
       ],
       "participant": [
         "प्रतिभागी",
@@ -7238,6 +7449,9 @@
       "Region": [
         "क्षेत्र"
       ],
+      "Regular expression": [
+        "नियमित अभिव्यक्ति"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } वीडियो कॉन्फ्रेंस हटाएं"
       ],
@@ -7259,6 +7473,9 @@
       "Secondary time zone": [
         "दूसरा समय क्षेत्र"
       ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "एक बुकिंग पेज के ज़रिए अपने शेड्यूल के हिस्सों को सुरक्षित रूप से शेयर करें जिसे आप किसी को भी भेज सकते हैं।"
+      ],
       "Show others when I'm busy": [
         "मैं कब व्यस्त हूँ ये दुसरो को दिखाएँ"
       ],
@@ -7273,6 +7490,9 @@
       ],
       "Start date": [
         "आरंभ करने की तिथि"
+      ],
+      "Starts with": [
+        "शुरू होता है"
       ],
       "State": [
         "राज्य"
@@ -7321,6 +7541,9 @@
       ],
       "URL": [
         "यूआरएल"
+      ],
+      "URL wildcard pattern": [
+        "URL वाइल्डकार्ड पैटर्न"
       ],
       "Username": [
         "उपयोगकर्ता का नाम"
@@ -7747,11 +7970,29 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "'शुरू होता है' मिलान नियम"
+      ],
+      "Exact (sub) domain matching rule": [
+        "सटीक (उप) डोमेन मिलान नियम"
+      ],
+      "Exact URL matching rule": [
+        "सटीक URL मिलान नियम"
+      ],
       "Fw:": [
         "फॉरवर्ड:"
       ],
+      "Never fill with this exact URL": [
+        "इस सटीक URL से कभी न भरें"
+      ],
       "Re:": [
         "जवाब:"
+      ],
+      "Regular expression rule": [
+        "नियमित अभिव्यक्ति नियम"
+      ],
+      "Wildcard pattern matching rule": [
+        "वाइल्डकार्ड पैटर्न मिलान नियम"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "आपका मुफ्त ट्रायल समाप्त हो गया है। ${ nonAutoRenewalAction }"
@@ -8089,6 +8330,10 @@
       "${ n } VPN connection": [
         "${ n } VPN कनेक्शन",
         "${ n } VPN कनेक्शन"
+      ],
+      "${ options }-day file version history": [
+        "${ options } दिन का फ़ाइल संस्करण इतिहास",
+        "${ options } दिनों का फ़ाइल संस्करण इतिहास"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin लाइफटाइम"
@@ -9949,6 +10194,9 @@
       "Search for name or email": [
         "नाम या ईमेल खोजें"
       ],
+      "Search for users or addresses": [
+        "उपयोगकर्ताओं या पतों की खोज करें"
+      ],
       "Search parent folder": [
         "मुख्य फोल्डर खोजें"
       ],
@@ -10177,11 +10425,26 @@
       "${ referrerRewardAmount } per referral": [
         "प्रति रेफरल ${ referrerRewardAmount }"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**यदि आप इस तिथि से पहले रद्द करते हैं,** तो ट्रायल समाप्त होने पर आपको ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } पर **डाउनग्रेड** कर दिया जाएगा।"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**यदि आप सब्सक्राइब नहीं करते हैं,** तो आपको ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } पर **डाउनग्रेड** कर दिया जाएगा।"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**यदि आप रद्द नहीं करते हैं,** तो आपका पूरा प्लैन शुरू हो जाएगा और आपको क्रेडिट में **${ referrerRewardAmount }** मिलेंगे।"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**यदि आप इस तिथि से पहले सब्सक्राइब करते हैं,** तो आपको क्रेडिट में **${ referrerRewardAmount }** मिलेंगे।"
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "उस तारीख के बाद, आपका खाता डाउनग्रेड करके **${ BRAND_NAME } Free** कर दिया जाएगा। यदि आप अपना विचार बदलते हैं, तो प्रीमियम खासियतों तक पहुंच बनाए रखने के लिए आप अपनी **सदस्यता को फिर से सक्रिय कर सकते हैं**।"
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "क्रेडिट में ${ maxRewardAmount } तक अर्जित करें। जब आपके द्वारा आमंत्रित व्यक्ति ${ BRAND_NAME } प्लैन को सब्सक्राइब करता है तो आपको ${ referrerRewardAmount } मिलेंगे।"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ textDate }** तक मुफ़्त में **${ planTitle }** का आनंद लें।"
       ],
       "Friend joined": [
         "मित्र शामिल हुआ",
@@ -10197,6 +10460,9 @@
       "Invited friends": [
         "आमंत्रित मित्र"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "उन सभी शक्तिशाली खासियत को एक्सप्लोर करने का आखिरी मौका जो **${ planTitle }** प्रदान करता है।"
+      ],
       "More sharing options": [
         "अधिक शेयरिंग विकल्प"
       ],
@@ -10211,6 +10477,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "आप क्रेडिट में **${ maxRewardAmount }** तक प्राप्त कर सकते हैं।"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }** की सभी बेहतरीन खासियतों को देखने के लिए आपके पास **${ daysRemaining } दिन बाकी** है।",
+        "**${ planTitle }** की सभी बेहतरीन खासियतों को देखने के लिए आपके पास **${ daysRemaining } दिन बाकी** हैं।"
+      ],
+      "your subscription": [
+        "आपकी सदस्यता"
       ]
     },
     "Reload event button tooltip": {
@@ -11394,6 +11667,9 @@
       "Answer sent and event deleted": [
         "जवाब भेजा और इवेंट मिटाया गया"
       ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "स्वचालित रूप से ${ MEET_APP_NAME } लिंक जोड़ना अक्षम किया गया"
+      ],
       "Billing details updated": [
         "बिलिंग विवरण अपडेट हुआ"
       ],
@@ -11736,6 +12012,9 @@
       "${ feature } is now active": [
         "${ feature } अब सक्रिय है"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } लेखन सहायक"
+      ],
       "Account recovery": [
         "खाता पुनर्प्राप्ति"
       ],
@@ -11949,6 +12228,9 @@
       "Deleting contacts": [
         "संपर्क हट रहे है"
       ],
+      "Desktop": [
+        "डेस्कटॉप"
+      ],
       "Discard changes?": [
         "बदलाव रद्द करें?"
       ],
@@ -12080,6 +12362,9 @@
       ],
       "How does it work?": [
         "यह कैसे काम करता है?"
+      ],
+      "How your free trial works": [
+        "आपका मुफ्त ट्रायल कैसे काम करता है"
       ],
       "Human verification": [
         "मानव सत्यापन"
@@ -12406,6 +12691,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "डेटा निजता के लिए ${ VPN_SHORT_APP_NAME } का उपयोग करें"
       ],
+      "Users and addresses": [
+        "उपयोगकर्ता और ई-मेल पते"
+      ],
       "Verification failed": [
         "सत्यापन असफल"
       ],
@@ -12497,11 +12785,23 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "क्रियाएं"
+      ],
       "Created": [
         "बनाया गया"
       ],
       "Expires": [
         "समय समाप्त"
+      ],
+      "Fingerprint": [
+        "फिंगरप्रिंट"
+      ],
+      "Status": [
+        "स्थिति"
+      ],
+      "Type": [
+        "टाइप"
       ]
     },
     "Title; create calendar modal": {
@@ -12643,6 +12943,11 @@
         "डाटा एक्सेस का अनुरोध करने के लिए उपयोगकर्ता के पास एक पता होना चाहिए"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "उपयोगकर्ता द्वारा आमंत्रण स्वीकार करने के बाद आप भूमिकाएं सौंप सकेंगे।"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
@@ -12755,6 +13060,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, आपके सबसे हाल के संदेशों से शुरू करते हुए, जितना हो सके उतना डाटा ट्रांसफर करेगा।"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } शक्तिशाली नियंत्रण प्रदान करता है, लेकिन एक छोटी सी एरर के कारण ऑटोफिल धोखाधड़ी या फ़िशिंग वेबसाइटों पर डेटा का मिलान और उसे भर सकता है।"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "क्या आप वाकई ${ count } संपर्क को स्थायी रूप से हटाना चाहते हैं?",

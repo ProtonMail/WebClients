@@ -206,6 +206,9 @@
       "Compare plans": [
         "Comparare planuri"
       ],
+      "Configure new device profile": [
+        "Configurare profil de dispozitiv nou"
+      ],
       "Configure SAML": [
         "Configurare SAML"
       ],
@@ -313,6 +316,9 @@
       ],
       "Delete account": [
         "Ștergere cont"
+      ],
+      "Delete device profile": [
+        "Ștergere profil dispozitiv"
       ],
       "Delete Gateway": [
         "Ștergere poartă de acces"
@@ -503,6 +509,9 @@
       "Forgot password?": [
         "Ați uitat parola?"
       ],
+      "Generate device profile": [
+        "Generare profil dispozitiv"
+      ],
       "Generate new recovery phrase": [
         "Generare frază de recuperare"
       ],
@@ -619,6 +628,9 @@
       ],
       "Increase": [
         "Mărire"
+      ],
+      "Instructions": [
+        "Instrucțiuni"
       ],
       "Invite": [
         "Invitare"
@@ -1552,11 +1564,6 @@
         "Administrator utilizatori:"
       ]
     },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Un rol este un grup de permisiuni pe care îl puteți atribui membrilor organizației."
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Renunțând acum, unele contacte nu vor fi importate."
@@ -2098,6 +2105,27 @@
       ],
       "Status": [
         "Stare"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Acest utilizator nu poate fi migrat din cauza unor incompatibilități de platformă."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, activați-i contul în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i contul la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i adresa la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pentru a migra acest utilizator, acesta trebuie să accepte invitația de a se alătura la ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, dezarhivați-l în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, deblocați-l în consola de administrare din Google Workspace."
       ],
       "User": [
         "Utilizator"
@@ -4381,6 +4409,9 @@
       ],
       "Company name or personal name is required": [
         "Numele companiei sau numele personal este necesar."
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Nu s-a putut genera profilul dispozitivului. Reîncercați."
       ],
       "Couldn't load invoices. Please try again later.": [
         "Nu s-au putut încărca facturile. Reîncercați mai târziu."
@@ -6788,8 +6819,14 @@
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
+      "All devices with this device profile deployed": [
+        "Toate dispozitivele cu acest profil de dispozitiv implementat"
+      ],
       "All inactive members deleted": [
         "Toți membrii inactivi au fost șterși."
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Tot traficul de pe internet este criptat și securizat."
       ],
       "All keys successfully reactivated": [
         "Toate cheile au fost reactivate"
@@ -6976,6 +7013,9 @@
       "Choose an Entity ID to continue.": [
         "Alegeți un ID de entitate pentru a continua."
       ],
+      "Choose one:": [
+        "Alegeți una:"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
@@ -6996,6 +7036,9 @@
       ],
       "Compromised": [
         "Compromisă"
+      ],
+      "Configure Always-on VPN": [
+        "Configurare VPN activ permanent"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configurați autentificarea SAML pentru organizația proprie printr-un furnizor de identitate (IdP). Acest lucru va activa SAML pentru întreaga organizație."
@@ -7133,6 +7176,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "În funcție de setările actuale, aceștia pot primi acces imediat sau după o **perioadă de așteptare** desemnată."
       ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "Implementați ${ regoLink } direct prin implementarea MDM personală pentru fișiere"
+      ],
+      "Deploy across all your managed devices": [
+        "Implementați-l pe toate dispozitivele gestionate"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Implementați-l prin MDM-ul personal(Jamf, Intune…) sau manual pe fiecare dispozitiv."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Dispozitivele care au implementat un profil VPN activ permanent nu pot accesa internetul decât dacă este activă o conexiune ${ VPN_APP_NAME }."
+      ],
       "Did you know?": [
         "Știați că?"
       ],
@@ -7204,6 +7259,12 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
       ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "Descărcați ${ ps1Link } și rulați-l pe fiecare dispozitiv ca utilizator de sistem pentru a plasa automat profilul dispozitivului."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Descărcați ${ removeScriptLink } și rulați-l pe fiecare dispozitiv ca utilizator de sistem pentru a șterge automat profilul."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Descărcare ${ VPN_APP_NAME }"
       ],
@@ -7258,6 +7319,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Mesajele mutate în folderele «Gunoi» și «Nedorite» care au stat mai mult de 30 de zile acolo vor fi șterse automat."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Angajații nu se pot conecta la internet fără o conexiune VPN"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Activați reînnoirea automată pentru a vă păstra accesul la serverele și funcțiile Plus."
       ],
@@ -7294,11 +7358,17 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Aplicarea începe automat imediat ce dispozitivul detectează profilul."
+      ],
       "Enhance your network security": [
         "Îmbunătățiți-vă securitatea rețelei"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
+      ],
+      "Ensure your organization is always protected": [
+        "Asigurați-vă că organizația vă este mereu protejată"
       ],
       "Enter code": [
         "Introduceți codul"
@@ -7419,6 +7489,9 @@
       ],
       "Gateways": [
         "Porți de acces"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Generați profilul dispozitivului și descărcați un fișier de configurare."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generarea unei fraze de recuperare o va dezactiva pe cea veche."
@@ -7904,8 +7977,14 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "După ce a fost acordat accesul la cont, aceștia vă pot accesa setările de **Recuperare** și vă **schimbe parola ${ ACCOUNT_APP_NAME }**."
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "După implementarea cu succes, poate dura până la câteva ore pentru ca dispozitivele să detecteze și să aplice politica."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Doar scrierea cu majuscule și semnele de punctuație (puncte, cratime și sublinieri) pot fi modificate aici. Pentru a utiliza o adresă diferită, adăugați una nouă."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Doar utilizatorii licențiați ai organizației pot autentifica ${ VPN_APP_NAME } pe dispozitivele care au implementat profilul de dispozitiv."
       ],
       "Open source": [
         "Cod sursă public"
@@ -7915,6 +7994,9 @@
       ],
       "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
         "Deschideți sesiunea activă în navigaorul web și accesați **Setări → Toate setările → Recuperare → Setări de resetare parolă.**"
+      ],
+      "Optional configuration": [
+        "Configurare opțională"
       ],
       "or ${ selectFileButton }": [
         "sau ${ selectFileButton }"
@@ -7931,6 +8013,9 @@
       ],
       "or discover other features:": [
         "sau descoperiți alte funcții:"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Sau rulați ${ ps1Link } prin executarea scriptului MDM personal."
       ],
       "Or select a particular server:": [
         "Sau selectați un server anume:"
@@ -8173,6 +8258,9 @@
       "Restore": [
         "Restaurare"
       ],
+      "Restrict logins to your organization": [
+        "Restricționare conectări pentru organizație"
+      ],
       "SAML configuration saved": [
         "Configurare SAML salvată."
       ],
@@ -8362,6 +8450,9 @@
       ],
       "support team": [
         "echipa de asistență"
+      ],
+      "Supported platforms": [
+        "Platforme suportate"
       ],
       "Swiss based": [
         "Situat în Elveția"
@@ -8602,6 +8693,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pentru a decripta și vedea datele blocate după resetarea parolei, selectați o metodă de recuperare."
       ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Pentru a activa funcția VPN activ permanent, profilul dispozitivului trebuie să ajungă la ${ policiesPath } pe fiecare dispozitiv — clientul ${ VPN_APP_NAME } îl detectează acolo și impune automat profilul."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
@@ -8625,6 +8719,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Pentru a vă recăpăta accesul la cont și date, introduceți fraza de recuperare din 12 cuvinte asociată contului."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Pentru a elimina funcția VPN activ permanent, ștergeți ${ profileFile } din ${ policiesPath } pe fiecare dispozitiv. Clientul ${ VPN_APP_NAME } oprește aplicarea profilului imediat ce detectează că fișierul a dispărut."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ${ VPN_APP_NAME } pentru dispozitivul utilizat și conectați-vă la un server."
@@ -8743,6 +8840,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilizați următoarele date atunci când vă conectați la serverele ${ VPN_APP_NAME } fără aplicație. Exemplu de utilizare include: Tunnelblick pe macOS, OpenVPN pe GNU/Linux."
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Folosiți propriul MDM pentru a șterge fișierul sau rulați ${ removeScriptLink } prin execuția scriptului MDM. Va funcționa orice MDM care acceptă implementarea fișierelor sau rularea scripturilor."
+      ],
       "User activated": [
         "Utilizator activat"
       ],
@@ -8754,6 +8854,9 @@
       ],
       "Users": [
         "Utilizatori"
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Folosiți un alt MDM? Orice MDM care acceptă implementarea fișierelor sau executarea de scripturi PowerShell va funcționa. Consultați documentația MDM-ului personal pentru informații suplimentare."
       ],
       "Vault created": [
         "Seiful s-a creat."
@@ -9170,6 +9273,9 @@
       "Your account was successfully updated with this promotion": [
         "Contul a fost modificat cu planul din această promoție."
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Profilul dispozitivului VPN activ permanent este gata de implementare."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
@@ -9549,6 +9655,9 @@
       "App password": [
         "Parola aplicației"
       ],
+      "Applies:": [
+        "Se aplică:"
+      ],
       "Apply policy to": [
         "Aplicare regulă la"
       ],
@@ -9812,6 +9921,9 @@
       "End-to-end encryption": [
         "Criptare bilaterală"
       ],
+      "Enforce Always-on VPN": [
+        "Forțare VPN activ permanent"
+      ],
       "Enter code": [
         "Introduceți codul"
       ],
@@ -9955,6 +10067,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
+      ],
+      "Login restrictions": [
+        "Restricții de conectare"
       ],
       "Logo": [
         "Logo"
@@ -15448,6 +15563,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Vi se anulează abonamentul, așteptați."
+      ],
+      "Disabled": [
+        "Dezactivat"
+      ],
+      "Enabled": [
+        "Activat"
+      ],
+      "No restrictions": [
+        "Fără restricții"
+      ],
+      "Restricted to members of your organization": [
+        "Restricționat membrilor organizației"
       ]
     },
     "Status": {
@@ -16123,6 +16250,9 @@
       "Compare the key differences that matter for your business.": [
         "Comparați diferențele cheie care contează pentru afacerea proprie."
       ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Impuneți utilizarea VPN în întreaga organizație blocând accesul la internet, cu excepția cazului în care este activă o conexiune VPN."
+      ],
       "Save 50% for 6 months, and keep full access": [
         "Economisiți 50% pentru 6 luni și păstrați accesul complet"
       ],
@@ -16707,6 +16837,12 @@
       "Also in your plan": [
         "Disponibil și în planul actual"
       ],
+      "Always-on VPN": [
+        "VPN activ permanent"
+      ],
+      "Always-on VPN device profile": [
+        "Profil VPN activ permanent"
+      ],
       "Amount": [
         "Suma"
       ],
@@ -16806,8 +16942,14 @@
       "Change second password": [
         "Modificare parolă secundară"
       ],
+      "Choose a deployment method": [
+        "Alegeți o metodă de implementare"
+      ],
       "Choose a provider": [
         "Alegeți un furnizor"
+      ],
+      "Choose a removal method": [
+        "Alegeți o metodă de eliminare"
       ],
       "Choose user affiliations": [
         "Alegeți afilierea utilizatorilor"
@@ -16820,6 +16962,9 @@
       ],
       "Collaborate on documents": [
         "Colaborați la documente"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Configurare profil dispozitiv VPN activ permanent"
       ],
       "Confirm": [
         "Confirmare"
@@ -16907,6 +17052,9 @@
       "Created": [
         "Creat"
       ],
+      "Created!": [
+        "S-a creat!"
+      ],
       "Creating user accounts": [
         "Se creează conturile de utilizator"
       ],
@@ -16986,6 +17134,15 @@
       ],
       "Deny access to user?": [
         "Refuzați accesul utilizatorului?"
+      ],
+      "Deploy device profile to your devices": [
+        "Implementați profilul dispozitivului pe dispozitivele personale"
+      ],
+      "Deploy via MDM": [
+        "Implementare prin MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Implementare prin PowerShell"
       ],
       "Description": [
         "Descriere"
@@ -17435,6 +17592,9 @@
       "Remove all members?": [
         "Eliminați toți membrii?"
       ],
+      "Remove Always-on VPN device profile": [
+        "Eliminare profil dispozitiv VPN activ permanent"
+      ],
       "Remove device?": [
         "Eliminați dispozitivul?"
       ],
@@ -17458,6 +17618,9 @@
       ],
       "Remove user?": [
         "Eliminare utilizator?"
+      ],
+      "Remove via MDM": [
+        "Eliminare prin MDM"
       ],
       "Rename the gateway": [
         "Redenumire poartă de acces"
@@ -17491,9 +17654,6 @@
       ],
       "Revoke certificate?": [
         "Anulați certificatul?"
-      ],
-      "Roles and permissions": [
-        "Roluri și permisiuni"
       ],
       "SAML authentication": [
         "Autentificare SAML"
@@ -17981,6 +18141,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Include toți utilizatorii din organizație. Se aplică numai pe dispozitivele pe care a fost implementat profilul de dispozitiv VPN activ permanent."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Include domenii de e-mail personale și aliasuri nelimitate de tip „hide-my-email” în ${ MAIL_APP_NAME }, acces la servere în peste 120 de țări în ${ VPN_SHORT_APP_NAME }, A2F încorporată, partajare securizată în ${ PASS_SHORT_APP_NAME } și multe altele."

@@ -553,6 +553,12 @@
       "Regenerate": [
         "재생성"
       ],
+      "Regex invalid": [
+        "유효하지 않은 정규식"
+      ],
+      "Regex unsafe": [
+        "정규식 안전하지 않음"
+      ],
       "Reject": [
         "거절"
       ],
@@ -950,6 +956,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } 파일을 분석할 수 없습니다. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "데스크톱 잠금 해제 확인이 이미 진행 중입니다."
+      ],
       "A domain ownership must be verified first.": [
         "도메인 소유권 인증이 우선 필요합니다."
       ],
@@ -979,6 +988,21 @@
       ],
       "Authentication failure: ${ message }": [
         "인증 실패: ${ message }"
+      ],
+      "Biometric authentication failed.": [
+        "생체 인증에 실패했습니다."
+      ],
+      "Biometric lock credentials do not match.": [
+        "생체 인식 잠금 자격 증명이 일치하지 않습니다."
+      ],
+      "Biometric lock credentials not found.": [
+        "생체 인식 잠금 자격 증명을 찾을 수 없습니다."
+      ],
+      "Biometric lock is not configured.": [
+        "생체 인식 잠금이 설정되지 않았습니다."
+      ],
+      "Biometric lock setup failed.": [
+        "생체 인식 잠금 설정에 실패했습니다."
       ],
       "Cannot create alias (${ error }).": [
         "별칭을 생성할 수 없습니다 (${ error })."
@@ -1054,6 +1078,9 @@
       ],
       "Emptying trash failed": [
         "휴지통 비우기 실패"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "${ PASS_APP_NAME } 데스크톱 앱과의 암호화된 통신에 실패했습니다."
       ],
       "Encrypted JSON not supported": [
         "암호화된 JSON이 지원되지 않습니다."
@@ -1319,6 +1346,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "무언가가 잘못되었습니다. ${ PASS_APP_NAME } 확장을 다시 로드하세요. 문제가 기록되었습니다."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 제시간에 응답하지 않았습니다."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "${ PASS_APP_NAME } 데스크톱 앱이 잠겨 있어 잠금을 해제해야 합니다."
       ],
@@ -1328,11 +1358,20 @@
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "${ PASS_APP_NAME } 데스크톱 앱이 응답하지 않습니다. 실행 중인가요?"
       ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 다른 계정으로 로그인되어 있습니다."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } 데스크톱 앱에 로그인해야 합니다."
+      ],
       "The URL is in the list": [
         "URL이 리스트에 있습니다."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "안전한 링크 삭제 중 문제가 발생했습니다. 몇 분 후 다시 시도하십시오."
+      ],
+      "This domain is already managed by your organization": [
+        "이 도메인은 사용자의 조직에 의해 이미 관리되고 있습니다"
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "이는 오랜 시간 ${ PASS_SHORT_APP_NAME }를 사용하지 않았거나 Safari 내역을 삭제하면 발생할 수 있습니다."
@@ -1589,6 +1628,9 @@
       "(Empty)": [
         "(비어 있음)"
       ],
+      "2FA code copied to clipboard": [
+        "2단계 인증 코드가 클립보드에 복사되었습니다"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7일 동안 프리미엄 기능을 무료로 사용하실 수 있습니다. ${ BRAND_NAME } 첫 주 사용에 한합니다."
       ],
@@ -1639,6 +1681,9 @@
       ],
       "Admin": [
         "관리자"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "로그인 정보를 자동 완성한 후, 해당 2단계 인증 코드가 클립보드에 복사됩니다."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "확인 후, ${ PASS_APP_NAME }에 대한 권한 부여 요청을 수락해야 합니다."
@@ -2148,7 +2193,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2191,6 +2236,9 @@
       ],
       "No network connection": [
         "네트워크가 연결되어 있지 않습니다."
+      ],
+      "No vaults available.": [
+        "사용 가능한 보관함이 없습니다."
       ],
       "None": [
         "없음"
@@ -2410,6 +2458,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "저장된 자격 증명을 빠르게 자동 완성합니다."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "필드(제목이 가장 먼저, 그 다음 사용자 이름 또는 이메일, 웹사이트, 메모 순) 및 일치 정밀도(일치함, 시작 단어 일치, 포함함)순으로 정렬됩니다."
       ],
       "Read item": [
         "항목 읽기"
@@ -2639,6 +2690,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "이 작업은 **${ date }**에 사용자의 ${ BRAND_NAME } 계정에 로그인 시도한 기기 **${ name }**을(를) 거부합니다."
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "단축키를 설정하려면 Firefox에서 about:addons로 이동하여 \"Manage Extension Shortcuts\"를 선택하세요"
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "이메일을 계속 수신 받으려면 아래의 별칭들을 다른 메일함으로 이동하세요:"
       ],
@@ -2651,6 +2705,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "불러온 데이터를 검토하려면 브라우저 툴바의 ${ PASS_APP_NAME } 아이콘을 클릭하세요."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "생체 인식 잠금 해제를 설정하려면 ${ PASS_APP_NAME }에 새로운 브라우저 권한이 필요합니다. 이를 수락하면 확장이 다시 로드됩니다. 그 후에 이 페이지를 다시 열어주세요."
+      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "확장을 새로고침 및 재설치하고 브라우저와 ${ PASS_SHORT_APP_NAME }를 최신 버전으로 유지하세요."
       ],
@@ -2662,6 +2719,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "무제한 hide-my-email 별칭 및 향상된 별칭 관리"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "패스키에 접근하려면 ${ PASS_APP_NAME }를 잠금 해제하세요"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "이 패스키를 저장하려면 ${ PASS_APP_NAME }를 잠금 해제하세요"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "생체인증으로 ${ PASS_SHORT_APP_NAME } 잠금해제"
@@ -3072,6 +3135,9 @@
       "Authenticate with passkeys": [
         "패스키로 인증"
       ],
+      "Auto-copy 2FA code": [
+        "2단계 인증 코드 자동 복사"
+      ],
       "Auto-lock after": [
         "자동 잠금 시간"
       ],
@@ -3095,6 +3161,9 @@
       ],
       "Bank Name": [
         "은행명"
+      ],
+      "Basic": [
+        "기본"
       ],
       "Basic Auth autofill": [
         "기본 인증 자동 완성"
@@ -3125,6 +3194,9 @@
       ],
       "Catch-All": [
         "Catch-All"
+      ],
+      "Check": [
+        "확인"
       ],
       "Checkbox": [
         "체크박스"
@@ -3284,6 +3356,12 @@
       ],
       "Enter email or username": [
         "이메일 및 사용자 이름 입력"
+      ],
+      "Exact host matching": [
+        "정확한 호스트 일치"
+      ],
+      "Exact URL matching": [
+        "정확한 URL 일치"
       ],
       "Expiration date": [
         "만료 시간"
@@ -3576,6 +3654,9 @@
       "Never": [
         "안 함"
       ],
+      "Never fill on this exact URL": [
+        "이 정확한 URL에서 자동완성 사용 안 함"
+      ],
       "New email": [
         "새로운 이메일"
       ],
@@ -3632,6 +3713,9 @@
       ],
       "Owner": [
         "소유자"
+      ],
+      "Parent domain and subdomains (default)": [
+        "상위 도메인 및 하위 도메인(기본값)"
       ],
       "Passkey": [
         "패스키"
@@ -3744,6 +3828,12 @@
       "Reddit handle": [
         "Reddit 핸들"
       ],
+      "Regular expression": [
+        "정규식"
+      ],
+      "Relevant": [
+        "관련성 높은 순"
+      ],
       "Remove link": [
         "링크 삭제"
       ],
@@ -3851,6 +3941,9 @@
       ],
       "SSN": [
         "주민등록번호"
+      ],
+      "Starts with": [
+        "다음으로 시작"
       ],
       "State or province": [
         "시/도"
@@ -3966,6 +4059,9 @@
       "Update": [
         "업데이트"
       ],
+      "URL wildcard pattern": [
+        "URL 와일드카드 패턴"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "${ PASS_APP_NAME }를 브라우저의 기본 패스워드 관리자로 사용하기"
       ],
@@ -4070,6 +4166,24 @@
     "Message": {
       "${ count } item": [
         "${ count }개 항목"
+      ],
+      "'Starts with' matching rule": [
+        "'다음으로 시작' 일치 규칙"
+      ],
+      "Exact (sub) domain matching rule": [
+        "정확한 (하위) 도메인 일치 규칙"
+      ],
+      "Exact URL matching rule": [
+        "정확한 URL 일치 규칙"
+      ],
+      "Never fill with this exact URL": [
+        "이 정확한 URL에서는 자동완성 안 함"
+      ],
+      "Regular expression rule": [
+        "정규식 규칙"
+      ],
+      "Wildcard pattern matching rule": [
+        "와일드카드 패턴 일치 규칙"
       ],
       "You can drag and drop the selected item to another vault": [
         "항목을 선택하고 드래그 앤 드롭하여 다른 금고로 이동시킬 수 있습니다."
@@ -4222,6 +4336,12 @@
       "The file you are trying to import is empty": [
         "불러오기 시도 중인 파일이 비어 있습니다."
       ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "현재 플랜에서 이 기능이 지원되지 않습니다. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "현재 플랜에서 이 기능이 지원되지 않습니다. 접근 권한을 얻으려면 관리자에게 문의하세요."
+      ],
       "Total files: ": [
         "총 파일 수: "
       ],
@@ -4363,6 +4483,23 @@
       ],
       "Used on ${ url }": [
         "${ url }(애)서 사용됨"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "현재 규칙이 URL과 일치하는지 확인하려면 URL을 입력하십시오"
+      ],
+      "The rule is matching this URL": [
+        "규칙이 이 URL과 일치합니다"
+      ],
+      "The rule is NOT matching this URL": [
+        "규칙이 이 URL과 일치하지 않습니다"
+      ],
+      "This URL will be blocked from autofill": [
+        "이 URL은 자동완성이 차단됩니다"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "이 URL은 자동완성이 차단되지 않습니다"
       ]
     },
     "Security Center - Info": {
@@ -4567,6 +4704,9 @@
       "Add mailbox": [
         "메일함 추가"
       ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "로그인이 추천되는 위치를 변경하려면 자동완성 동작을 조정하세요."
+      ],
       "Agent setup instructions": [
         "에이전트 설정 지침"
       ],
@@ -4596,6 +4736,9 @@
       ],
       "Breaches detected for": [
         "침해 사례가 다음에서 감지됨:"
+      ],
+      "Browser permission required": [
+        "브라우저 권한 필요"
       ],
       "Cancel changing your email?": [
         "이메일 변경을 취소할까요?"
@@ -4776,6 +4919,9 @@
       ],
       "Last modified": [
         "마지막 수정"
+      ],
+      "Learn more": [
+        "더 알아보기"
       ],
       "Leave this item?": [
         "이 항목에서 나갈까요?"
@@ -4987,6 +5133,9 @@
       "Sync your aliases from SimpleLogin": [
         "SimpleLogin에서 별칭 동기화"
       ],
+      "Test a URL against this rule": [
+        "이 규칙에 대해 URL 테스트"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }를 설치해 주셔서 감사합니다."
       ],
@@ -5007,6 +5156,9 @@
       ],
       "Update available": [
         "사용 가능한 업데이트가 있습니다"
+      ],
+      "URL matching": [
+        "URL 일치"
       ],
       "Use my email": [
         "내 이메일 주소 사용하기"
@@ -5118,6 +5270,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } 비밀번호가 필요합니다"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }은 강력한 제어 기능을 제공하지만, 단 하나의 오류로도 사기 또는 피싱 웹사이트에서 자동완성이 일치하여 데이터가 입력될 수 있습니다."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } 오프라인 모드 비활성화됨."
@@ -5319,6 +5474,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "데이터 침해에 대한 이 이메일 주소가 더 이상 모니터링되지 않습니다."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "\"${ neverModeDescriptionStrong }\"으로 인해 이 항목은 자동완성 추천을 받을 수 없습니다. 이 항목이 자동완성되기를 원하면 다른 URL을 추가하세요."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "이 항목이 현재 공유 중입니다. 휴지통에 항목을 이동하면 다른 사용자들과의 접근 권한도 상실됩니다."

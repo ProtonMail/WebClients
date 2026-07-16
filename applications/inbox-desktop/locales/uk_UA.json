@@ -4,12 +4,29 @@
     "language": "uk_UA"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Скасувати"
+      ],
+      "Open external url": [
+        "Відкрити зовнішню URL-адресу"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Протокол ${ parsedProtocol } не дозволений. Бажаєте відкрити зовнішню URL-адресу?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "«Перезапустити та профілювати зараз» негайно перезапустить програму та створить профіль запуску.\n\n«Профілювати під час наступного запуску» створить профіль під час наступного відкриття програми. Використовуйте цей варіант, щоб виміряти швидкість запуску після перезавантаження."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Про ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Реальний розмір"
+      ],
+      "Cancel": [
+        "Скасувати"
       ],
       "Check spelling while typing": [
         "Перевіряти правопис під час введення тексту"
@@ -20,6 +37,9 @@
       "Close Window": [
         "Закрити вікно"
       ],
+      "Collect startup performance data": [
+        "Збирати дані про продуктивність запуску"
+      ],
       "Copy": [
         "Копіювати"
       ],
@@ -28,6 +48,24 @@
       ],
       "Delete": [
         "Видалити"
+      ],
+      "Disable": [
+        "Вимкнути"
+      ],
+      "Disable Hardware Acceleration": [
+        "Вимкнути апаратне прискорення"
+      ],
+      "Enable": [
+        "Увімкнути"
+      ],
+      "Enable diagnostic logs": [
+        "Увімкнути діагностичні журнали"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Увімкнути діагностичні журнали з рушія Chromium."
+      ],
+      "Enable Hardware Acceleration": [
+        "Увімкнути апаратне прискорення"
       ],
       "Force Reload": [
         "Примусове перезавантаження"
@@ -47,6 +85,12 @@
       "Paste and Match Style": [
         "Вставити та підібрати стиль"
       ],
+      "Profile app startup": [
+        "Профілювати запуск програми"
+      ],
+      "Profile on next launch": [
+        "Профілювати під час наступного запуску"
+      ],
       "Quit": [
         "Вийти"
       ],
@@ -58,6 +102,12 @@
       ],
       "Reload": [
         "Перезавантажити"
+      ],
+      "Restart and profile now": [
+        "Перезапустити та профілювати зараз"
+      ],
+      "Restart with logging": [
+        "Перезапустити із веденням журналу"
       ],
       "Select All": [
         "Вибрати все"
@@ -80,6 +130,15 @@
       "Stop Speaking": [
         "Зупинити озвучування"
       ],
+      "Switch to ${ appName }": [
+        "Перемкнутися на ${ appName }"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "Ці журнали допомагають нам діагностувати проблеми. Програма перезапуститься, щоб застосувати зміни."
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Це дозволить виміряти, скільки часу потрібно для запуску програми, і зберегти звіт у вашій папці журналів."
+      ],
       "Toggle Full Screen": [
         "Перемкнути на весь екран"
       ],
@@ -88,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Видалити ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Коли апаратне прискорення увімкнено, програма використовує для рендерингу виділене графічне обладнання вашого пристрою. Це може спричинити проблеми із сумісністю на деяких системах."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Без апаратного прискорення програма використовує програмний рендеринг замість вашої відеокарти. Ви можете помітити повільнішу анімацію та більше навантаження на процесор."
       ],
       "Zoom": [
         "Масштаб"
@@ -100,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Вимкнути апаратне прискорення"
+      ],
+      "Enable Hardware Acceleration": [
+        "Увімкнути апаратне прискорення"
+      ],
       "Services": [
         "Служби"
       ]
@@ -151,6 +222,14 @@
       ],
       "Undo": [
         "Скасувати"
+      ]
+    },
+    "Error dialog": {
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } — непередбачена помилка"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Через помилку програма ${ MAIL_APP_NAME } буде закрита. Спробуйте запустити її знову і, якщо проблема не зникне, зв'яжіться з нами. Інформацію про помилку можна знайти в журналі програми."
       ]
     },
     "error screen": {

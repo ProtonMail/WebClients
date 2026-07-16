@@ -187,6 +187,9 @@
       "Copy forwarding address": [
         "Salin alamat penerusan"
       ],
+      "Copy instructions": [
+        "Salin instruksi"
+      ],
       "Copy link": [
         "Salin tautan"
       ],
@@ -204,6 +207,9 @@
       ],
       "Copy to clipboard": [
         "Salin ke papan klip"
+      ],
+      "Copy token": [
+        "Salin token"
       ],
       "Copy username": [
         "Salin nama pengguna"
@@ -240,6 +246,9 @@
       ],
       "Create note": [
         "Buat catatan"
+      ],
+      "Create token": [
+        "Buat token"
       ],
       "Create vault": [
         "Buat brankas"
@@ -297,6 +306,9 @@
       ],
       "Do not show again when I press": [
         "Jangan tampilkan lagi saat saya menekan"
+      ],
+      "Don't show this again": [
+        "Jangan tampilkan ini lagi"
       ],
       "Download this CSV template": [
         "Unduh template CSV ini"
@@ -439,6 +451,9 @@
       "Manage access": [
         "Kelola akses"
       ],
+      "Manage vault access": [
+        "Kelola akses brankas"
+      ],
       "Manually sync your data": [
         "Sinkronkan data Anda secara manual"
       ],
@@ -474,6 +489,9 @@
       ],
       "Multiple select": [
         "Pilih beberapa file"
+      ],
+      "New token": [
+        "Token baru"
       ],
       "Next month": [
         "Bulan selanjutnya"
@@ -528,6 +546,12 @@
       ],
       "Regenerate": [
         "Buat ulang"
+      ],
+      "Regex invalid": [
+        "Regex tidak valid"
+      ],
+      "Regex unsafe": [
+        "Regex tidak aman"
       ],
       "Reject": [
         "Tolak"
@@ -652,6 +676,9 @@
       "Skip": [
         "Lewati"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Seseorang membagikan item kepada Anda di ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Urutkan item brankas"
       ],
@@ -727,6 +754,9 @@
       "Via secure link": [
         "Melalui tautan aman"
       ],
+      "View agent activity": [
+        "Lihat aktivitas agen"
+      ],
       "View details": [
         "Lihat rincian"
       ],
@@ -750,6 +780,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Pengelola kata sandi Anda belum tersedia? Minta sekarang."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivitas"
+      ],
+      "Activity details could not be loaded.": [
+        "Rincian aktivitas tidak dapat dimuat."
+      ],
+      "Folder": [
+        "Folder"
+      ],
+      "Item": [
+        "Item"
+      ],
+      "Reason": [
+        "Alasan"
+      ],
+      "Vault": [
+        "Brankas"
       ]
     },
     "Browser": {
@@ -882,6 +932,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Berkas ${ provider } tidak dapat diurai. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Pemeriksaan pembukaan kunci desktop sedang berlangsung."
+      ],
       "A domain ownership must be verified first.": [
         "Kepemilikan domain harus diverifikasi terlebih dahulu."
       ],
@@ -911,6 +964,21 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentikasi gagal. Konfirmasikan kata sandi kedua Anda untuk melanjutkan ekspor"
+      ],
+      "Biometric authentication failed.": [
+        "Autentikasi biometrik gagal."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Kredensial kunci biometrik tidak cocok."
+      ],
+      "Biometric lock credentials not found.": [
+        "Kredensial kunci biometrik tidak ditemukan."
+      ],
+      "Biometric lock is not configured.": [
+        "Kunci biometrik tidak dikonfigurasi."
+      ],
+      "Biometric lock setup failed.": [
+        "Pengaturan kunci biometrik gagal."
       ],
       "Cannot send invitation at the moment": [
         "Undangan tidak dapat dikirim untuk saat ini"
@@ -948,6 +1016,9 @@
       "Could not validate addresses at the moment.": [
         "Alamat tidak dapat divalidasi pada saat ini."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Tidak dapat memuat instruksi pengaturan agen. Silakan salin token di bawah ini, token tidak akan ditampilkan lagi."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "File CSV tidak memiliki header yang seharusnya ada: ${ missingHeaders }"
       ],
@@ -981,11 +1052,17 @@
       "Emptying trash failed": [
         "Sampah gagal dikosongkan"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Komunikasi terenkripsi dengan aplikasi desktop ${ PASS_APP_NAME } gagal."
+      ],
       "Encrypted JSON not supported": [
         "JSON terenkripsi tidak didukung"
       ],
       "Error reporting problem": [
         "Terjadi masalah saat melaporkan kesalahan"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Masa kedaluwarsa harus antara 1 jam dan 1 tahun"
       ],
       "Failed loading group members": [
         "Gagal memuat anggota grup"
@@ -1008,6 +1085,9 @@
       "Failed to change mailbox": [
         "Gagal mengubah kotak surat"
       ],
+      "Failed to create access token": [
+        "Gagal membuat token akses"
+      ],
       "Failed to create domain": [
         "Domain gagal dibuat"
       ],
@@ -1016,6 +1096,9 @@
       ],
       "Failed to create the contact": [
         "Gagal membuat kontak"
+      ],
+      "Failed to delete access token": [
+        "Gagal menghapus token akses"
       ],
       "Failed to delete domain": [
         "Domain gagal dihapus"
@@ -1035,6 +1118,9 @@
       "Failed to edit user's access.": [
         "Akses pengguna gagal diedit."
       ],
+      "Failed to load access tokens": [
+        "Gagal memuat token akses"
+      ],
       "Failed to load breaches for this address": [
         "Gagal memuat pembobolan untuk alamat ini"
       ],
@@ -1046,6 +1132,9 @@
       ],
       "Failed to load item history": [
         "Riwayat item gagal dimuat"
+      ],
+      "Failed to load token actions": [
+        "Gagal memuat tindakan token"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Gagal memindahkan semua item dari \"${ payload.content.name }\""
@@ -1077,6 +1166,12 @@
       "Failed to set default mailbox": [
         "Gagal menetapkan kotak surat bawaan"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Gagal menjalankan agen SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Gagal menghentikan agen SSH: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Gagal menyinkronkan alias"
       ],
@@ -1103,6 +1198,9 @@
       ],
       "Failed to update random prefix generation setting.": [
         "Pengaturan pembuatan awalan acak gagal diperbarui"
+      ],
+      "Failed to update vault access": [
+        "Gagal memperbarui akses brankas"
       ],
       "Failed to verify domain": [
         "Domain gagal diverifikasi"
@@ -1158,6 +1256,9 @@
       "Name is required": [
         "Nama wajib diisi"
       ],
+      "Name must be 191 characters or fewer": [
+        "Nama harus berupa 191 karakter atau kurang"
+      ],
       "Network error": [
         "Kesalahan jaringan"
       ],
@@ -1203,6 +1304,24 @@
       "Something went wrong. Please sign in again.": [
         "Telah terjadi kesalahan. Silakan masuk lagi."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Aplikasi desktop ${ PASS_APP_NAME } tidak merespons tepat waktu."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplikasi desktop ${ PASS_APP_NAME } terkunci, aplikasi harus dibuka kuncinya."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Aplikasi desktop ${ PASS_APP_NAME } belum terinstal."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Aplikasi desktop ${ PASS_APP_NAME } tidak merespons, apakah aplikasi berjalan?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplikasi desktop ${ PASS_APP_NAME } masuk dengan akun yang berbeda."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Aplikasi desktop ${ PASS_APP_NAME } harus masuk log."
+      ],
       "The session has expired. Please sign in again.": [
         "Masa berlaku sesi telah habis. Silakan masuk lagi."
       ],
@@ -1214,6 +1333,9 @@
       ],
       "Trashing item failed": [
         "Item gagal dibuang"
+      ],
+      "Try reaching out to the link owner.": [
+        "Cobalah untuk menghubungi pemilik tautan."
       ],
       "Unable to generate an OTP code for this item": [
         "Tidak dapat membuat kode OTP untuk item ini"
@@ -1377,6 +1499,12 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } diteruskan"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } ingin membagikan suatu item dengan grup yang dikelola."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } ingin membagikan item dengan grup ${ name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } ingin membagikan suatu item dengan Anda."
       ],
@@ -1401,6 +1529,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } hanya akan mengimpor login, catatan, kartu kredit, dan identitas."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } akan menggunakan kunci SSH yang disimpan di dalam brankas."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Mode luring ${ PASS_SHORT_APP_NAME } diaktifkan."
       ],
@@ -1418,6 +1549,9 @@
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } pembobolan terdeteksi"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } dipilih"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
@@ -1451,6 +1585,15 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Akses ke ${ PASS_APP_NAME } akan memerlukan sidik jari atau PIN perangkat Anda."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Token akses \"${ action.token.Name }\" sudah kedaluwarsa. Jika dihapus, token ini tidak akan ditampilkan lagi."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Token akses \"${ action.token.Name }\" akan segera berhenti berfungsi. Tindakan ini tidak dapat diurungkan."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Token akses, yang digunakan bersama dengan ${ passCliLink }, memungkinkan otomatisasi CI/CD atau memberikan agen AI akses terarah yang diperlukan untuk menjalankan tugasnya."
       ],
       "Add your custom email address to monitor:": [
         "Tambahkan alamat email khusus Anda untuk dimonitor:"
@@ -1506,6 +1649,9 @@
       "All trashed items successfully restored": [
         "Semua item yang dibuang berhasil dipulihkan"
       ],
+      "An item previously shared with you was removed.": [
+        "Item yang sebelumnya dibagikan telah dihapus."
+      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Apakah Anda yakin ingin menghapus ${ emailJSX } dari kotak surat Anda?"
       ],
@@ -1524,6 +1670,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Sebelum mengekspor data Anda dengan format ini, silakan buka pengaturan Safari -> tab \"Umum\" -> nonaktifkan pilihan \"Buka file aman setelah mengunduh\". Hal ini akan mencegah Safari untuk secara tidak sengaja mengekstrak file yang diekspor."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Antara 60 (1 jam) dan 525600 (1 tahun)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kunci biometrik berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
       ],
@@ -1532,6 +1681,9 @@
       ],
       "Breaches detected": [
         "Pembobolan terdeteksi"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Bawa kata sandi yang sudah ada ke ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Bawa domain Anda sendiri dan Anda tidak perlu membeli solusi hosting email lain."
@@ -1584,14 +1736,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Disalin ke papan klip (kedaluwarsa dalam ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Salin markdown di bawah ini dan kirimkan ke agen AI. Ini satu-satunya saat token akan ditampilkan."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Salin token ini sekarang. Demi alasan keamanan, token tidak akan ditampilkan lagi."
+      ],
       "Coupon successfully applied!": [
         "Kupon berhasil diterapkan!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Buat token untuk mengintegrasikan ${ PASS_APP_NAME } dengan skrip dan alat."
       ],
       "Create contact illustration": [
         "Buat ilustrasi kontak"
       ],
+      "Created ${ createdDate }": [
+        "Dibuat ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Dibuat ${ time }."
+      ],
+      "Created item": [
+        "Item yang dibuat"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV menyediakan format yang praktis untuk melihat data Anda. Namun, karena kesederhanaannya, sebagian data tidak akan disertakan (kolom kustom, kunci sandi...). Untuk ekspor lengkap, kami menyarankan menggunakan format lain."
@@ -1604,6 +1771,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Nama tampilan default untuk alias yang dibuat dengan ${ domainDisplay } kecuali jika ditimpa dengan nama tampilan alias."
+      ],
+      "Deleted item": [
+        "Item dihapus"
       ],
       "Deleted items will be moved here first": [
         "Item yang dihapus akan dipindahkan ke sini terlebih dahulu"
@@ -1625,6 +1795,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domain: ${ domainPath } atau @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Unduh pass-cli dari ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Lepaskan file di sini untuk mengunggah"
@@ -1674,6 +1847,9 @@
       "Enabling biometrics lock failed": [
         "Gagal mengaktifkan penguncian biometrik"
       ],
+      "Enabling desktop auto-lock": [
+        "Mengaktifkan kunci otomatis desktop"
+      ],
       "Enabling offline mode...": [
         "Mengaktifkan mode luring..."
       ],
@@ -1698,14 +1874,23 @@
       "Enter your PIN code": [
         "Masukkan kode PIN Anda"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Setiap tindakan yang telah dilakukan token agen ini, yang terbaru ditampilkan pertama."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Setiap kali alias Anda menerima email dari seseorang, kontak baru akan dibuat secara otomatis."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Kedaluwarsa pada ${ formattedDate }"
       ],
       "Expires in": [
         "Kedaluwarsa dalam"
       ],
       "Expires in ${ remainingTime }": [
         "Kedaluwarsa dalam ${ remainingTime }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Kedaluwarsa pada ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Mengekspor data Anda..."
@@ -1742,6 +1927,9 @@
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Kata sandi yang dihasilkan akan disimpan selama ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu."
+      ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Dapatkan pengalaman ${ PASS_APP_NAME } yang maksimal dengan membuat brankas untuk setiap tim atau proyek."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Dapatkan alias tak terbatas, nikmati fitur eksklusif, dan dukung kami dengan berlangganan Pass Plus."
@@ -1787,6 +1975,9 @@
       ],
       "Invite successfully resent": [
         "Undangan berhasil dikirim ulang"
+      ],
+      "invites the group ${ name } to access items in": [
+        "mengundang grup ${ name } untuk mengakses item di"
       ],
       "invites you to access items in": [
         "mengundang Anda untuk mengakses item pada"
@@ -1851,6 +2042,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "Memuat ${ PASS_APP_NAME }"
       ],
+      "Log out of any existing session:": [
+        "Keluar dari sesi yang ada:"
+      ],
       "Logging you out...": [
         "Mengeluarkan Anda dari akun..."
       ],
@@ -1877,6 +2071,9 @@
       ],
       "Move ${ count } item": [
         "Pindahkan ${ count } item"
+      ],
+      "Moved item to trash": [
+        "Item dipindahkan ke sampah"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
@@ -1905,14 +2102,26 @@
       "New": [
         "Baru"
       ],
+      "No activity recorded yet.": [
+        "Belum ada aktivitas yang direkam."
+      ],
       "No breaches detected": [
         "Tidak ada pembobolan yang terdeteksi"
       ],
       "No network connection": [
         "Tidak ada koneksi jaringan"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Tidak ada kunci SSH yang ditemukan di ${ PASS_SHORT_APP_NAME }. Buat item kunci SSH untuk digunakan dengan agen."
+      ],
+      "No vaults available.": [
+        "Tidak ada brankas yang tersedia."
+      ],
       "None": [
         "Tidak ada"
+      ],
+      "None selected": [
+        "Tidak ada yang dipilih"
       ],
       "Not recommended": [
         "Tidak disarankan"
@@ -1925,6 +2134,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Akses daring ke ${ PASS_APP_NAME } akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 upaya percobaan yang gagal."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Hanya token yang kedaluwarsa dalam 30 hari terakhir yang ditampilkan. Token yang lebih lama otomatis dihapus."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Buka pengaturan Safari Anda untuk ekstensi dan pastikan izin situs telah diaktifkan untuk domain ${ BRAND_NAME }"
@@ -2094,6 +2306,15 @@
       "Press Enter to copy": [
         "Tekan Enter untuk menyalin"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Dilindungi oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Diurutkan berdasarkan kolom (judul pertama, lalu nama pengguna atau email, situs web, catatan) dan ketepatan pencocokan (persis, diawali dengan, berisi)."
+      ],
+      "Read item": [
+        "Baca item"
+      ],
       "Reconnect": [
         "Hubungkan ulang"
       ],
@@ -2127,6 +2348,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Mengatur ulang riwayat akan menghapus seluruh versi item lawas secara permanen dan tidak dapat diurungkan."
       ],
+      "Restored item from trash": [
+        "Item dipulihkan dari sampah"
+      ],
       "Restoring items from trash": [
         "Memulihkan item dari sampah"
       ],
@@ -2141,6 +2365,9 @@
       ],
       "Select destination vault": [
         "Pilih brankas tujuan"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Pilih brankas yang dapat dibaca oleh \"${ token.Name }\"."
       ],
       "Select vault to share": [
         "Pilih brankas untuk dibagikan"
@@ -2217,8 +2444,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Ketuk ikon ${ gearIcon } untuk menyesuaikan alias sesuai keinginan Anda."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Uji token dengan masuk dan mencantumkan daftar brankas:"
+      ],
       "Thank you, the problem has been reported": [
         "Terima kasih, masalah ini telah dilaporkan"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agen akan diharuskan memberikan alasan untuk setiap tindakan yang dilakukannya, dan setiap tindakan akan dicatat dalam log audit yang dapat ditinjau. Setelah pembuatan token, akan ada instruksi untuk disalin-tempel ke agen AI."
       ],
       "The display name when sending an email from this alias.": [
         "Nama tampilan saat mengirim email dari alias ini."
@@ -2238,6 +2471,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "${ totalIgnored } item berikut tidak dapat diimpor:"
       ],
+      "The group is invited to a vault.": [
+        "Grup diundang ke brankas."
+      ],
       "The secure link has been removed": [
         "Tautan aman telah dihapus"
       ],
@@ -2247,11 +2483,17 @@
       "The user did not accept the invitation yet.": [
         "Pengguna belum menerima undangan tersebut."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Kemudian dapat membuka ${ url } untuk menyalin instruksi untuk dikirimkan ke agen AI."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ekspor ini tidak dienkripsi, dan siapa pun yang memiliki akses ke file hasil ekspor dapat melihat kata sandi Anda. Demi keamanan, harap hapus file tersebut setelah selesai digunakan."
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Fitur ini saat ini bersifat eksperimental di Linux. Pastikan sistem Anda mutakhir."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Fitur ini mengharuskan aplikasi desktop ${ PASS_APP_NAME } terinstal dan berjalan selama pengaturan."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Item ini tidak sedang dibagikan dengan siapa pun. Undang pengguna lain ke item ini untuk saling berbagi item bersama."
@@ -2277,6 +2519,9 @@
       "This setting is enforced by your organization": [
         "Pengaturan ini diwajibkan oleh organisasi Anda"
       ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Token ini mendapatkan akses baca saja ke brankas yang dipilih. Token ini dapat membaca item, tetapi tidak dapat mengedit, membagikan brankas, atau mengundang orang lain. Setelan ini dapat diubah nanti."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Brankas ini sedang tidak dibagikan dengan siapa pun. Undang orang untuk membagikannya dengan orang lain."
       ],
@@ -2300,6 +2545,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Untuk meninjau data Anda yang telah diimpor, klik ikon ${ PASS_APP_NAME } pada bilah toolbar peramban Anda."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Untuk menyiapkan buka kunci biometrik, ${ PASS_APP_NAME } memerlukan izin peramban baru. Setelah disetujui, ekstensi akan dimuat ulang. Silakan buka kembali halaman ini setelahnya."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Dipercaya oleh lebih dari 50.000 pengguna bisnis dan 100 juta akun di seluruh dunia."
@@ -2337,11 +2585,17 @@
       "Unverified": [
         "Tidak terverifikasi"
       ],
+      "Updated item": [
+        "Item yang diperbarui"
+      ],
       "Updating vault organization...": [
         "Memperbarui organisasi brankas..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Tingkatkan Sekarang untuk Memperoleh Fitur Premium"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Tingkatkan ke ${ PASS_APP_NAME } Plus untuk membuat token akses dan menggunakan ${ PASS_APP_NAME } secara terprogram."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Tingkatkan ke paket berbayar untuk membuat banyak brankas."
@@ -2363,6 +2617,12 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Brankas \"${ payload.share.content.name }\" berhasil diperbarui"
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Brankas \"${ share.content.name }\" telah dihapus."
+      ],
+      "Vault access granted": [
+        "Akses brankas diberikan"
       ],
       "Vault organization successfully updated": [
         "Organisasi brankas berhasil diperbarui"
@@ -2406,6 +2666,15 @@
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Anda kini dapat menggunakan kata sandi ${ BRAND_NAME } Anda untuk mengakses ${ PASS_SHORT_APP_NAME } secara luring"
       ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Kini dapat menggunakan kata sandi cadangan untuk mengakses ${ PASS_SHORT_APP_NAME } secara luring"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Kini dapat menggunakan kata sandi tambahan untuk mengakses ${ PASS_SHORT_APP_NAME } secara luring"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Kini dapat menggunakan kata sandi kedua untuk mengakses ${ PASS_SHORT_APP_NAME } secara luring"
+      ],
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
       ],
@@ -2436,8 +2705,20 @@
       "You may close this tab.": [
         "Anda dapat menutup tab ini."
       ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Mungkin perlu memberikan izin aksesibilitas kepada ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Anda butuh brankas dengan izin pengeditan sebelum Anda dapat mengimpor item."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Tidak memiliki akses lagi ke beberapa brankas atau item karena akses grup ${ groupName } telah dihapus."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Kini memiliki akses ke \"Item ${ itemName }\" karena grup ${ groupName } telah diberikan akses."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Kini memiliki akses ke \"Brankas ${ vaultName }\" karena grup ${ groupName } telah diberikan akses."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Anda akan dapat menyesuaikan pengaturan domain Anda (alias email catch-all, nama tampilan alias bawaan, dll...) setelah memverifikasi domain Anda."
@@ -2545,11 +2826,23 @@
       "${ years } year": [
         "${ years } tahun"
       ],
+      "1 day": [
+        "1 hari"
+      ],
       "1 hour": [
         "1 jam"
       ],
       "1 minute": [
         "1 menit"
+      ],
+      "1 month": [
+        "1 bulan"
+      ],
+      "1 week": [
+        "1 minggu"
+      ],
+      "1 year": [
+        "1 tahun"
       ],
       "10 minutes": [
         "10 menit"
@@ -2592,6 +2885,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Access tokens": [
+        "Token akses"
       ],
       "Account": [
         "Akun"
@@ -2665,6 +2961,9 @@
       "Bank Name": [
         "Nama Bank"
       ],
+      "Basic": [
+        "Dasar"
+      ],
       "Beta Access": [
         "Akses Beta"
       ],
@@ -2697,6 +2996,9 @@
       ],
       "Catch-All": [
         "Catch-All"
+      ],
+      "Check": [
+        "Periksa"
       ],
       "Checkbox": [
         "Kotak centang"
@@ -2776,6 +3078,12 @@
       "Crypto Wallet": [
         "Dompet Kripto"
       ],
+      "Custom": [
+        "Khusus"
+      ],
+      "Custom expiration (minutes)": [
+        "Masa kedaluwarsa khusus (menit)"
+      ],
       "Custom Items": [
         "Item khusus"
       ],
@@ -2848,11 +3156,20 @@
       "Enter email or username": [
         "Masukkan email atau nama pengguna"
       ],
+      "Exact host matching": [
+        "Pencocokan host persis"
+      ],
+      "Exact URL matching": [
+        "Pencocokan URL persis"
+      ],
       "Expiration date": [
         "Tanggal kedaluwarsa"
       ],
       "Expired": [
         "Kedaluwarsa"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Token kedaluwarsa (${ expired.length })"
       ],
       "Expires in": [
         "Kedaluwarsa dalam"
@@ -3160,6 +3477,9 @@
       "Never": [
         "Tidak pernah"
       ],
+      "Never fill on this exact URL": [
+        "Jangan pernah isi pada URL persis ini"
+      ],
       "New email": [
         "Email baru"
       ],
@@ -3219,6 +3539,9 @@
       ],
       "Owner": [
         "Pemilik"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domain induk dan subdomain (bawaan)"
       ],
       "Passkey": [
         "Kunci sandi"
@@ -3321,6 +3644,12 @@
       ],
       "Reddit handle": [
         "ID pengguna Reddit"
+      ],
+      "Regular expression": [
+        "Ekspresi reguler"
+      ],
+      "Relevant": [
+        "Relevan"
       ],
       "Remove link": [
         "Hapus tautan"
@@ -3436,6 +3765,9 @@
       "SSN": [
         "NIK (Nomor Induk Kependudukan)"
       ],
+      "Starts with": [
+        "Mulai dengan"
+      ],
       "State or province": [
         "Negara bagian atau provinsi"
       ],
@@ -3483,6 +3815,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Item ini dapat diakses hingga ${ date } atau hingga batas jumlah tampilannya tercapai."
       ],
       "Tier/Level": [
         "Tingkat/Level"
@@ -3559,6 +3894,15 @@
       "Update": [
         "Perbarui"
       ],
+      "URL wildcard pattern": [
+        "Pola wildcard URL"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Gunakan ${ PASS_APP_NAME } sebagai agen SSH"
+      ],
+      "Use for AI agent": [
+        "Gunakan untuk agen AI"
+      ],
       "Used in": [
         "Digunakan pada"
       ],
@@ -3570,6 +3914,9 @@
       ],
       "Value:": [
         "Nilai:"
+      ],
+      "Vault access": [
+        "Akses brankas"
       ],
       "Vault ID": [
         "ID Brankas"
@@ -3672,6 +4019,24 @@
       "${ count } item": [
         "${ count } item"
       ],
+      "'Starts with' matching rule": [
+        "Aturan pencocokan 'Mulai dengan'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Aturan pencocokan domain (sub) persis"
+      ],
+      "Exact URL matching rule": [
+        "Aturan pencocokan URL persis"
+      ],
+      "Never fill with this exact URL": [
+        "Jangan pernah isi dengan URL persis ini"
+      ],
+      "Regular expression rule": [
+        "Aturan ekspresi reguler"
+      ],
+      "Wildcard pattern matching rule": [
+        "Aturan pencocokan pola wildcard"
+      ],
       "You can drag and drop the selected item to another vault": [
         "Anda dapat menyeret dan melepas item yang dipilih ke brankas lain"
       ],
@@ -3693,6 +4058,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } telah diaktifkan"
+      ],
+      "Access token deleted": [
+        "Token akses dihapus"
       ]
     },
     "Option": {
@@ -3812,6 +4180,12 @@
       "The file you are trying to import is empty": [
         "File yang ingin Anda impor kosong"
       ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Fitur ini tidak didukung dalam paket Anda. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Fitur ini tidak didukung dalam paket Anda. Hubungi admin untuk mendapatkan akses."
+      ],
       "Total files: ": [
         "Jumlah file: "
       ],
@@ -3871,6 +4245,9 @@
       ],
       "Coupon": [
         "Kupon"
+      ],
+      "e.g. 60": [
+        "mis. 60"
       ],
       "e.g. My automation script": [
         "mis. Skrip otomatisasi saya"
@@ -3957,6 +4334,23 @@
         "Digunakan pada ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Masukkan URL untuk memeriksa apakah aturan saat ini cocok dengan URL tersebut"
+      ],
+      "The rule is matching this URL": [
+        "Aturan cocok dengan URL ini"
+      ],
+      "The rule is NOT matching this URL": [
+        "Aturan TIDAK cocok dengan URL ini"
+      ],
+      "This URL will be blocked from autofill": [
+        "URL ini akan diblokir dari isi otomatis"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "URL ini TIDAK akan diblokir dari isi otomatis"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
@@ -4032,6 +4426,20 @@
         "Tidak diketahui"
       ]
     },
+    "Status": {
+      "Active": [
+        "Aktif"
+      ],
+      "Agent": [
+        "Agen"
+      ],
+      "Expired": [
+        "Kedaluwarsa"
+      ],
+      "Expiring soon": [
+        "Segera kedaluwarsa"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Sinkronisasi alias berhasil diaktifkan. Alias SimpleLogin mungkin memerlukan waktu untuk tersinkronisasi."
@@ -4093,6 +4501,12 @@
       "Random prefix generation successfully enabled": [
         "Pembuatan awalan acak berhasil diaktifkan"
       ],
+      "SSH agent successfully started": [
+        "Agen SSH berhasil dijalankan"
+      ],
+      "SSH agent successfully stopped": [
+        "Agen SSH berhasil dihentikan"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Brankas tidak dapat mengandung lebih dari ${ targetMaxMembers } pengguna."
       ],
@@ -4118,6 +4532,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Token akses memerlukan ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Perlindungan akun"
       ],
@@ -4127,11 +4544,20 @@
       "Activity": [
         "Aktivitas"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivitas untuk \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Tambahkan domain khusus"
       ],
       "Add mailbox": [
         "Tambahkan kotak surat"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Sesuaikan perilaku isi otomatis untuk mengubah lokasi saran masuk diberikan."
+      ],
+      "Agent setup instructions": [
+        "Instruksi pengaturan agen"
       ],
       "Alias contacts": [
         "Kontak alias"
@@ -4156,6 +4582,9 @@
       ],
       "Breaches detected for": [
         "Pembobolan terdeteksi untuk"
+      ],
+      "Browser permission required": [
+        "Izin peramban diperlukan"
       ],
       "Cancel changing your email?": [
         "Batalkan mengubah email Anda?"
@@ -4190,6 +4619,9 @@
       "Create contact": [
         "Buat kontak"
       ],
+      "Create new access token": [
+        "Buat token akses baru"
+      ],
       "Create PIN code": [
         "Buat kode PIN"
       ],
@@ -4219,6 +4651,9 @@
       ],
       "Delete ${ deletedItemsCount } item?": [
         "Hapus ${ deletedItemsCount } item?"
+      ],
+      "Delete access token?": [
+        "Hapus token akses?"
       ],
       "Delete domain": [
         "Hapus domain"
@@ -4319,6 +4754,9 @@
       "Last modified": [
         "Terakhir diubah"
       ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
       "Leave this item?": [
         "Tinggalkan item ini?"
       ],
@@ -4333,6 +4771,9 @@
       ],
       "Mailbox": [
         "Kotak surat"
+      ],
+      "Manage vault access": [
+        "Kelola akses brankas"
       ],
       "Mark as resolved?": [
         "Tandai terselesaikan?"
@@ -4366,6 +4807,9 @@
       ],
       "Next": [
         "Selanjutnya"
+      ],
+      "No access tokens yet": [
+        "Belum ada token akses"
       ],
       "No excluded items": [
         "Tidak ada item yang dikecualikan"
@@ -4508,6 +4952,9 @@
       "SPF (Optional)": [
         "SPF (Opsional)"
       ],
+      "SSH Agent": [
+        "Agen SSH"
+      ],
       "Status": [
         "Status"
       ],
@@ -4526,6 +4973,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sinkronkan alias Anda dari SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Uji URL terhadap aturan ini"
+      ],
       "Transfer ownership": [
         "Transfer kepemilikan"
       ],
@@ -4541,8 +4991,14 @@
       "Update available": [
         "Pembaruan tersedia"
       ],
+      "URL matching": [
+        "Pencocokan URL"
+      ],
       "Vault": [
         "Brankas"
+      ],
+      "Vault shared with a group you administer": [
+        "Brankas dibagikan dengan grup yang dikelola"
       ],
       "Vault shared with you": [
         "Vault dibagikan kepada Anda"
@@ -4580,6 +5036,9 @@
       "Your exposed information": [
         "Informasi Anda yang terpapar"
       ],
+      "Your new access token": [
+        "Token akses baru Anda"
+      ],
       "Your vault is empty": [
         "Brankas Anda kosong"
       ],
@@ -4606,6 +5065,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Kecuali kata sandi ini didekripsi, kata sandi yang terenkripsi akan tetap aman bahkan apabila terpapar."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Dapatkan ${ planName }"
       ]
     },
     "Validation": {
@@ -4642,6 +5106,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Kata sandi ${ BRAND_NAME } wajib diisi"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } memberikan kendali yang kuat, tetapi satu kesalahan saja dapat menyebabkan isi otomatis mencocokkan dan mengisi data pada situs web penipuan atau phishing."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Mode luring ${ PASS_SHORT_APP_NAME } dinonaktifkan."
@@ -4838,6 +5305,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Terjadi kesalahan saat memulai ${ PASS_APP_NAME }. Silakan coba segarkan atau muat ulang ekstensi."
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Agen SSH memerlukan penggunaan kunci SSH, yang tidak tersedia dalam paket Anda."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Awalan alias tidak boleh melebihi 40 karakter"
       ],
@@ -4846,6 +5316,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Alamat email ini tidak akan lagi dipantau untuk pembobolan data."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Item ini tidak dapat disarankan untuk isi otomatis karena \"${ neverModeDescriptionStrong }\". Tambahkan URL lain jika ingin item ini diisi otomatis."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Item ini sedang dibagikan. Menghapus item ini akan menghilangkan akses untuk semua pengguna lain."

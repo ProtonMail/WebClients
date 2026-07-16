@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Account statement": {
+      "Account statement successfully generated": [
+        "Выписка по аккаунту успешно создана"
+      ],
       "Download": [
         "Скачать"
       ],
       "Download transactions": [
         "Скачать транзакции"
+      ],
+      "Export format": [
+        "Формат экспорта"
+      ],
+      "Export your transactions for tax reporting or personal record-keeping. Choose your preferred format and download your file instantly.": [
+        "Экспортируйте свои транзакции для налоговой отчетности или личного учета. Выберите предпочтительный формат и мгновенно скачайте файл."
       ]
     },
     "Action": {
@@ -93,6 +102,12 @@
       ],
       "Copy address": [
         "Копировать адрес"
+      ],
+      "Copy descriptor": [
+        "Копировать дескриптор"
+      ],
+      "Copy public key (${ prefix })": [
+        "Копировать открытый ключ (${ prefix })"
       ],
       "Copy version number to clipboard": [
         "Скопировать номер версии в буфер обмена"
@@ -645,6 +660,9 @@
       ],
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } заключил партнёрство с ${ rampLink }, ${ banxaLink } и ${ moonpayLink }, тремя зарегистрированными услугами криптоактивов, чтобы облегчить покупку BTC. Укажите свой регион, чтобы увидеть доступных провайдеров и способы оплаты."
+      ],
+      "2% bank transfer fee": [
+        "Комиссия 2% за банковский перевод"
       ],
       "4% credit card fee": [
         "Комиссия 4 % за кредитную карту"
@@ -2505,6 +2523,26 @@
         "Изображение не выбрано"
       ]
     },
+    "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Дескриптор скопирован в буфер обмена"
+      ],
+      "I want the ${ prefix } instead": [
+        "Вместо этого я хочу использовать ${ prefix }"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Импортируйте этот дескриптор в другое программное обеспечение кошелька, чтобы отслеживать свой баланс и создавать адреса для получения без раскрытия закрытых ключей."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Открытый ключ (${ prefix }) скопирован в буфер обмена"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Прежде чем продолжить, убедитесь, что первые несколько сгенерированных адресов совпадают с адресами в ${ WALLET_APP_NAME }."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Вместо этого мы настоятельно рекомендуем использовать дескриптор, указанный выше, так как он содержит всю необходимую информацию для правильной генерации адреса. Форматы xpub, ypub и zpub не входят в стандарт BIP и должны использоваться с осторожностью."
+      ]
+    },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
         "Семейная группа не найдена. Попробуйте еще раз."
@@ -3205,6 +3243,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ваш аккаунт в настоящее время настроен на применение механизма обратного начисления налога. Это не поддерживается для выбранного тарифа. Чтобы продолжить, либо удалите номер НДС из платежного адреса, либо выберите другой тариф."
+      ],
+      "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
+        "Оформление заказа открылось в новой вкладке. Пожалуйста, завершите оплату там и вернитесь на эту страницу после завершения."
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
@@ -5625,6 +5666,9 @@
       "Cancel": [
         "Отменить"
       ],
+      "Cannot use QR Code scanner. Please check browser compatibility": [
+        "Невозможно использовать сканер QR-кода. Пожалуйста, проверьте совместимость браузера"
+      ],
       "Confirm and import": [
         "Подтвердить и импортировать"
       ],
@@ -5642,6 +5686,9 @@
       ],
       "Paper wallet funds was successfully imported": [
         "Средства с бумажного кошелька были успешно импортированы"
+      ],
+      "Please grant camera permission to use QR Code scanner": [
+        "Пожалуйста, предоставьте разрешение на доступ к камере, чтобы использовать сканер QR-кода"
       ],
       "You receive": [
         "Вы получаете"
@@ -5670,6 +5717,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } теперь активна"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Помощник по написанию текстов ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Аккаунт ограничен"
@@ -5956,6 +6006,11 @@
       ],
       "The user must have an address to request data access": [
         "Пользователь должен иметь адрес, чтобы запросить доступ к данным"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы сможете назначать должности, как только пользователь примет приглашение."
       ]
     },
     "Validation": {

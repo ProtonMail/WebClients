@@ -1528,10 +1528,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufany klucz",
-        "Zaufane klucze",
-        "Zaufanych kluczy",
-        "Zaufane klucze"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1822,6 +1819,12 @@
       ],
       "${ price } per user": [
         "${ price } za użytkownika"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencja AI ${ LUMO_APP_NAME }",
+        "${ seats } licencje AI ${ LUMO_APP_NAME }",
+        "${ seats } licencji AI ${ LUMO_APP_NAME }",
+        "${ seats } licencji AI ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } licencja",
@@ -2234,17 +2237,122 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Aktywowano"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adres jest już używany przez użytkownika spoza Twojej organizacji. Skontaktuj się ze wsparciem klienta, aby rozwiązać ten problem"
+      ],
+      "All": [
+        "Wszystkie"
+      ],
+      "Calendar": [
+        "Kalendarz"
+      ],
+      "Configure migration": [
+        "Skonfiguruj migrację"
+      ],
       "Contact your administrator to start a migration.": [
         "Skontaktuj się ze swoim administratorem, aby rozpocząć migrację."
       ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status migracji danych z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Wiadomości"
+      ],
+      "Errors": [
+        "Błędy"
+      ],
+      "Estimated size": [
+        "Szacowany rozmiar"
+      ],
+      "Find out what can be migrated.": [
+        "Dowiedz się, co można zmigrować."
+      ],
+      "Has errors": [
+        "Zawiera błędy"
+      ],
+      "In progress": [
+        "W toku"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Nie znaleziono adresu członka. Skontaktuj się ze wsparciem klienta, aby rozwiązać ten problem"
+      ],
+      "Migrate": [
+        "Przenieś"
+      ],
+      "Migrated": [
+        "Zmigrowano"
+      ],
       "Migration status": [
         "Status migracji"
+      ],
+      "Missing organization private key": [
+        "Brak klucza prywatnego organizacji"
+      ],
+      "Missing organization public key": [
+        "Brak klucza publicznego organizacji"
+      ],
+      "No users to display": [
+        "Brak użytkowników do wyświetlenia"
+      ],
+      "Not activated": [
+        "Nieaktywowany"
       ],
       "Organization does not have enough seats available": [
         "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
       ],
       "Organization does not have enough storage available": [
         "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
+      ],
+      "Pending": [
+        "Oczekujące"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wybierz dokładnie to, co chcesz przenieść. Zmiany zostaną zastosowane u wszystkich użytkowników organizacji."
+      ],
+      "Select users to migrate": [
+        "Wybierz użytkowników do migracji"
+      ],
+      "Size": [
+        "Rozmiar"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tego użytkownika nie można zmigrować ze względu na niezgodność platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Aby zmigrować tego użytkownika, włącz jego konto w konsoli administracyjnej Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Aby zmigrować tego użytkownika, włącz jego konto w sekcji ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Aby zmigrować tego użytkownika, włącz jego adres w sekcji ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Aby zmigrować tego użytkownika, musi on zaakceptować zaproszenie do dołączenia do ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Aby zmigrować tego użytkownika, cofnij jego archiwizację w konsoli administracyjnej Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Aby zmigrować tego użytkownika, cofnij jego zawieszenie w konsoli administracyjnej Google Workspace."
+      ],
+      "User": [
+        "Użytkownik"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Użytkownicy, którzy zalogowali się na swoje konto ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Co migrujesz?"
       ],
       "You": [
         "Ty"
@@ -2380,6 +2488,11 @@
       ],
       "Take a tour": [
         "Otwórz przewodnik"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplikaty z poprzednich importów zostaną pominięte. Cofnij operację lub zaimportuj starsze wiadomości w ustawieniach ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -4367,6 +4480,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Wstrzymamy importowanie przy 80% zapełnienia przestrzeni dyskowej, aby zarezerwować miejsce na nowe wiadomości."
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Zaimportujemy Twoje stare wiadomości i od tej pory będziemy synchronizować nowe z konta Gmail"
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Rozpoczęliśmy importowanie Twoich wiadomości z Gmaila. Damy Ci znać, gdy się zakończy."
       ],
@@ -5048,6 +5164,9 @@
       "No contacts found to import": [
         "Brak kontaktów do zaimportowania"
       ],
+      "No drive found to import": [
+        "Nie znaleziono dysku do zaimportowania"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Brak wiadomości do zaimportowania. Konto nie posiada skrzynki odbiorczej"
       ],
@@ -5384,6 +5503,9 @@
       "Unexpected error, we can't import the contacts": [
         "Wystąpił nieoczekiwany błąd. Nie możemy zaimportować kontaktów"
       ],
+      "Unexpected error, we can't import the files": [
+        "Nieoczekiwany błąd, nie możemy zaimportować plików"
+      ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
       ],
@@ -5431,6 +5553,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Osiągnięto limit liczby kontaktów na koncie"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Wykorzystano wszystkie adresy w Twoim planie. Ulepsz swój plan, aby dodać nowy adres, lub wyłącz jeden z adresów na swoim koncie."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
@@ -6714,6 +6839,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ providerName }": [
+        "Importuj z ${ providerName }"
+      ],
       "More import options": [
         "Więcej opcji importu"
       ]
@@ -7050,6 +7178,12 @@
         "${ total } wiadomości",
         "${ total } wiadomości",
         "${ total } wiadomości"
+      ],
+      "${ total } user found": [
+        "Znaleziono ${ total } użytkownika",
+        "Znaleziono ${ total } użytkowników",
+        "Znaleziono ${ total } użytkowników",
+        "Znaleziono ${ total } użytkowników"
       ],
       "${ trackersCount } email tracker blocked": [
         "Zablokowano ${ trackersCount } element śledzący",
@@ -7773,6 +7907,9 @@
         "załączniki",
         "załączników",
         "załączników"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Tylko pliki (bez zdjęć, ${ DOCS_APP_NAME } lub ${ SHEETS_APP_NAME }) – łącznie do 100 GB, 100 000 plików i 50 GB na plik"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę, warunek i akcję."
@@ -10119,6 +10256,12 @@
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
       ],
+      "Exact host matching": [
+        "Dopasowanie dokładnego hosta"
+      ],
+      "Exact URL matching": [
+        "Dopasowanie dokładnego adresu URL"
+      ],
       "Expires": [
         "Wygasa"
       ],
@@ -10211,6 +10354,9 @@
       ],
       "Import to:": [
         "Importuj do:"
+      ],
+      "Import your emails": [
+        "Importuj swoje wiadomości"
       ],
       "Include application logs in bug report": [
         "Dołącz logi aplikacji do raportu błędu"
@@ -10323,6 +10469,9 @@
       "Navigation": [
         "Nawigacja"
       ],
+      "Never fill on this exact URL": [
+        "Nigdy nie uzupełniaj na tym dokładnym adresie URL"
+      ],
       "New password": [
         "Nowe hasło"
       ],
@@ -10373,6 +10522,9 @@
       ],
       "Original link": [
         "Oryginalny link"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domena nadrzędna i subdomeny (domyślnie)"
       ],
       "Participants": [
         "Uczestnicy"
@@ -10452,6 +10604,9 @@
       "Region": [
         "Województwo"
       ],
+      "Regular expression": [
+        "Wyrażenie regularne"
+      ],
       "Remember my choice": [
         "Zapamiętaj wybór"
       ],
@@ -10511,6 +10666,9 @@
       ],
       "Start date": [
         "Data rozpoczęcia"
+      ],
+      "Starts with": [
+        "Zaczyna się od"
       ],
       "State": [
         "Stan"
@@ -10598,6 +10756,9 @@
       ],
       "URL": [
         "Adres URL"
+      ],
+      "URL wildcard pattern": [
+        "Wzorzec adresu URL ze znakami wieloznacznymi"
       ],
       "Username": [
         "Nazwa użytkownika"
@@ -11225,14 +11386,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Reguła dopasowania „Zaczyna się od”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Zasada dopasowania dokładnej (pod)domeny"
+      ],
+      "Exact URL matching rule": [
+        "Reguła dopasowania dokładnego adresu URL"
+      ],
       "Fw:": [
         "Fw:"
+      ],
+      "Never fill with this exact URL": [
+        "Nigdy nie uzupełniaj tym dokładnym adresem URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } napisał(a):"
       ],
       "Re:": [
         "Re:"
+      ],
+      "Regular expression rule": [
+        "Reguła wyrażenia regularnego"
+      ],
+      "Wildcard pattern matching rule": [
+        "Reguła dopasowania wzorca ze znakiem wieloznacznym"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Twoja darmowa wersja próbna zakończyła się. ${ nonAutoRenewalAction }"
@@ -11582,6 +11761,12 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options } päivän tiedostoversiohistoria"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Dożywotni ${ PASS_APP_NAME } + SimpleLogin"
@@ -13454,6 +13639,9 @@
       "Search for name or email": [
         "Szukaj nazwy lub adresu e-mail"
       ],
+      "Search for users or addresses": [
+        "Szukaj użytkowników lub adresów"
+      ],
       "Search messages": [
         "Szukaj wiadomości"
       ],
@@ -13762,11 +13950,26 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } za polecenie"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Jeśli anulujesz przed tą datą,** po zakończeniu okresu próbnego Twój plan zostanie **obniżony** do ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Jeśli nie dokonasz subskrypcji,** Twój plan zostanie **obniżony** do ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Jeśli nie anulujesz subskrypcji,** rozpocznie się pełny plan i otrzymasz **${ referrerRewardAmount }** w środkach."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Jeśli dokonasz subskrypcji przed tą datą,** otrzymasz **${ referrerRewardAmount }** w środkach."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Po tej dacie Twoje konto zostanie obniżone do **${ BRAND_NAME } Free**. Jeśli zmienisz zdanie, możesz **reaktywować subskrypcję**, aby zachować dostęp do funkcji premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Zyskaj do ${ maxRewardAmount } w ramach środków. Otrzymasz ${ referrerRewardAmount }, gdy osoba zaproszona przez Ciebie zasubskrybuje plan ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Korzystaj z planu **${ planTitle }** za darmo do dnia **${ textDate }**."
       ],
       "Friend joined": [
         "Znajomy dołączył",
@@ -13786,6 +13989,9 @@
       "Invited friends": [
         "Zaproszeni znajomi"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ostatnia szansa, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**."
+      ],
       "More sharing options": [
         "Więcej opcji udostępniania"
       ],
@@ -13800,6 +14006,15 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Możesz otrzymać do **${ maxRewardAmount }** w środkach."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Pozostał Ci **${ daysRemaining } dzień**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**.",
+        "Pozostały Ci **${ daysRemaining } dni**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**.",
+        "Pozostało Ci **${ daysRemaining } dni**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**.",
+        "Pozostało Ci **${ daysRemaining } dni**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**."
+      ],
+      "your subscription": [
+        "twoja subskrypcja"
       ]
     },
     "Remaining days before the message expire": {
@@ -15823,6 +16038,9 @@
       "${ feature } is now active": [
         "Funkcja ${ feature } jest aktywna"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asystent pisania ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ numMessages } message": [
         "${ numMessages } wiadomość",
         "${ numMessages } wiadomości",
@@ -15984,6 +16202,9 @@
       ],
       "Confirm recipient address?": [
         "Potwierdzasz adres odbiorcy?"
+      ],
+      "Connect a Gmail address": [
+        "Połącz adres Gmail"
       ],
       "Connect apps and devices": [
         "Połącz aplikacje i urządzenia"
@@ -16594,6 +16815,9 @@
       "Referral": [
         "Polecenia"
       ],
+      "Remove forwarding address": [
+        "Usuń adres przekierowania"
+      ],
       "Remove from list?": [
         "Usunąć z listy?"
       ],
@@ -16816,6 +17040,9 @@
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Korzystaj z Gmaila w bezpieczny sposób poprzez ${ MAIL_APP_NAME }"
       ],
+      "Users and addresses": [
+        "Użytkownicy i adresy"
+      ],
       "Verification error": [
         "Błąd weryfikacji"
       ],
@@ -16908,6 +17135,9 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "Akcje"
+      ],
       "Created": [
         "Utworzono"
       ],
@@ -17073,6 +17303,11 @@
         "Domyślna czcionka będzie wyglądać tak:"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Będziesz mieć możliwość przypisywania stanowisk, gdy tylko użytkownik zaakceptuje zaproszenie."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
@@ -17203,6 +17438,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Opcja ${ modeLabelStong } zapewnia potężną kontrolę, ale pojedynczy błąd może sprawić, że autouzupełnianie dopasuje i uzupełni dane na fałszywych lub wyłudzających informacje stronach internetowych."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Czy na pewno chcesz trwale usunąć kontakt?",

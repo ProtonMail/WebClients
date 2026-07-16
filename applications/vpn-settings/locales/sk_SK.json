@@ -1562,11 +1562,6 @@
         "Správca používateľov:"
       ]
     },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Pozícia je skupina povolení, ktoré môžete prideliť členom vašej organizácie."
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Pokiaľ teraz odídete, niektoré kontakty nebudú importované"
@@ -2115,6 +2110,27 @@
       ],
       "Status": [
         "Stav"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohto používateľa nie je možné migrovať z dôvodu nekompatibility platforiem."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho adresu v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Ak chcete migrovať tohto používateľa, musí prijať pozvánku do služby ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho archiváciu v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho pozastavenie v konzole správcu Google Workspace."
       ],
       "User": [
         "Používateľ"
@@ -16380,6 +16396,9 @@
       "Save 50% for 6 months, and keep full access": [
         "Ušetrite 50 % na 6 mesiacov a zachovajte si plný prístup"
       ],
+      "Save 50% for one year, and keep full access": [
+        "Ušetrite 50 % na jeden rok a zachovajte si plný prístup"
+      ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Zistite, ako si vedie ${ MAIL_APP_NAME }, a prečo je naša nezávislosť taká dôležitá."
       ],
@@ -17753,9 +17772,6 @@
       ],
       "Revoke certificate?": [
         "Zrušiť certifikát?"
-      ],
-      "Roles and permissions": [
-        "Pozície a oprávnenia"
       ],
       "SAML authentication": [
         "SAML overenie"

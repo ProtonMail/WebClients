@@ -1320,6 +1320,27 @@
       "Status": [
         "Κατάσταση"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην Κονσόλα διαχειριστή του Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην ενότητα ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τη διεύθυνσή του στην περιοχή ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του στην Κονσόλα διαχειριστή Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στην Κονσόλα διαχειριστή του Google Workspace."
+      ],
       "User": [
         "Χρήστης"
       ],
@@ -3180,8 +3201,8 @@
       "Failed to resend invitation": [
         "Αποτυχία επαναποστολής πρόσκλησης"
       ],
-      "Failed to trash document.": [
-        "Αποτυχία διαγραφής εγγράφου."
+      "Failed to trash document": [
+        "Αποτυχία διαγραφής εγγράφου"
       ],
       "Failed to unshare node": [
         "Αποτυχία κατάργησης κοινοχρησίας κόμβου"
@@ -4947,6 +4968,9 @@
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Βοηθήστε μας να βελτιώσουμε αυτήν την εμπειρία αναφέροντας το πρόβλημα. Εάν αισθάνεστε άνετα να κοινοποιείτε περιεχόμενο υπολογιστικού φύλλου, επισυνάψτε τις παρακάτω πληροφορίες εντοπισμού σφαλμάτων στην αναφορά σας."
       ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Βοηθήστε μας να βελτιώσουμε αυτήν την εμπειρία αναφέροντας το πρόβλημα. Παρακαλούμε επισυνάψτε τις παρακάτω πληροφορίες εντοπισμού σφαλμάτων στην αναφορά σας."
+      ],
       "here": [
         "εδώ"
       ],
@@ -5619,6 +5643,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Εντοπίσαμε ότι αντιμετωπίσατε προβλήματα κατά το άνοιγμα ενός εγγράφου στο παρελθόν."
       ],
       "Week": [
         "Εβδομάδα"
@@ -7975,6 +8002,9 @@
       "\"${ newName }\" renamed successfully": [
         "Επιτυχής μετονομασία σε \"${ newName }\""
       ],
+      "\"Document deleted permanently": [
+        "\"Το έγγραφο διαγράφηκε οριστικά"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } αντικείμενο απέτυχε να αποκρυπτογραφηθεί",
         "${ count } αντικείμενα απέτυχαν να αποκρυπτογραφηθούν"
@@ -8061,9 +8091,6 @@
       "Device renamed": [
         "Η συσκευή μετονομάστηκε"
       ],
-      "Document failed to be restored from trash": [
-        "Η επαναφορά του εγγράφου από τον κάδο απορριμμάτων απέτυχε"
-      ],
       "Document moved to trash": [
         "Το έγγραφο μετακινήθηκε στα διαγραμμένα"
       ],
@@ -8079,6 +8106,9 @@
       "Failed to accept share invitation": [
         "Αποτυχία αποδοχής πρόσκλησης κοινής χρήσης"
       ],
+      "Failed to delete document": [
+        "Αποτυχία διαγραφής εγγράφου"
+      ],
       "Failed to download files: ${ err }": [
         "Αποτυχία λήψης αρχείων: ${ err }"
       ],
@@ -8093,6 +8123,12 @@
       ],
       "Failed to rename document": [
         "Αποτυχία μετονομασίας εγγράφου"
+      ],
+      "Failed to restore document": [
+        "Αποτυχία επαναφοράς εγγράφου"
+      ],
+      "Failed to trash document": [
+        "Αποτυχία διαγραφής εγγράφου"
       ],
       "Failed to upload files: ${ err }": [
         "Αποτυχία μεταφόρτωσης αρχείων: ${ err }"
@@ -10425,6 +10461,9 @@
       "Private browsing vs VPN": [
         "Ιδιωτική περιήγηση έναντι VPN"
       ],
+      "Problems Detected": [
+        "Προβλήματα που Eντοπίστηκαν"
+      ],
       "Public link": [
         "Δημόσιος σύνδεσμος"
       ],
@@ -10586,6 +10625,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Χρησιμοποιήστε το ${ VPN_SHORT_APP_NAME } για την προστασία των προσωπικών δεδομένων σας"
+      ],
+      "Users and addresses": [
+        "Χρήστες και διευθύνσεις"
       ],
       "Verify your password": [
         "Επαληθεύστε τον κωδικό πρόσβασής σας"

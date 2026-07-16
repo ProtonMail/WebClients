@@ -1590,6 +1590,15 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "有効化済み"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "アドレスはすでに組織外のユーザーによって使用されています。解決するにはカスタマーサポートまでご連絡ください"
+      ],
+      "All": [
+        "すべて"
+      ],
       "Calendar": [
         "カレンダー"
       ],
@@ -1599,11 +1608,50 @@
       "Contacts": [
         "連絡先"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspaceから${ BRAND_NAME }へのデータ移行ステータス"
+      ],
+      "Emails": [
+        "メール"
+      ],
+      "Errors": [
+        "エラー"
+      ],
       "Estimated size": [
         "推定サイズ"
       ],
+      "Find out what can be migrated.": [
+        "移行可能なデータを確認する。"
+      ],
+      "Has errors": [
+        "エラーあり"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "メンバーアドレスが見つかりません。解決するにはカスタマーサポートまでご連絡ください"
+      ],
+      "Migrate": [
+        "移行"
+      ],
+      "Migrated": [
+        "移行済み"
+      ],
       "Migration status": [
         "移行ステータス"
+      ],
+      "Missing organization private key": [
+        "組織の秘密鍵がありません"
+      ],
+      "Missing organization public key": [
+        "組織の公開鍵がありません"
+      ],
+      "No users to display": [
+        "表示するユーザーがいません"
+      ],
+      "Not activated": [
+        "未有効化"
       ],
       "Organization does not have enough seats available": [
         "組織には十分なシートがありません"
@@ -1611,11 +1659,53 @@
       "Organization does not have enough storage available": [
         "組織には十分なストレージがありません"
       ],
+      "Pending": [
+        "保留中"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "移行したい内容を正確に選択してください。これはすべての組織ユーザーに適用されます。"
+      ],
+      "Select users to migrate": [
+        "移行するユーザーの選択"
+      ],
+      "Size": [
+        "サイズ"
+      ],
+      "Status": [
+        "ステータス"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "プラットフォームの互換性がないため、このユーザーは移行できません。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "このユーザーを移行するには、Google Workspace管理者管理コンソールでお客様のアカウントを有効にしてください。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "このユーザーを移行するには、${ usersAddressesLink }でお客様のアカウントを有効にしてください。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "このユーザーを移行するには、${ usersAddressesLink }でお客様のアドレスを有効にしてください。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "このユーザーを移行するには、対象のユーザーが${ BRAND_NAME }への招待を承諾する必要があります。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "このユーザーを移行するには、Google Workspace管理者管理コンソールでユーザーのアーカイブを解除してください。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "このユーザーを移行するには、Google Workspace管理者管理コンソールでユーザーの一時停止を解除してください。"
+      ],
       "User": [
         "ユーザー"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME }アカウントにアクセスしたユーザー"
+      ],
       "What are you migrating?": [
         "何を移行しますか？"
+      ],
+      "You": [
+        "お客様本人"
       ]
     },
     "Browser": {
@@ -3640,6 +3730,9 @@
       "No contacts found to import": [
         "インポートする連絡先が見つかりません"
       ],
+      "No drive found to import": [
+        "インポートするドライブが見つかりません"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "インポートするメールがありません - アカウントに受信箱がありません"
       ],
@@ -3885,6 +3978,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "予期しないエラーにより、連絡先をインポートできません"
+      ],
+      "Unexpected error, we can't import the files": [
+        "予期しないエラーが発生したため、ファイルをインポートできません"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "不明な競合解決戦略: ${ strategy }"
@@ -5518,6 +5614,9 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "他のユーザーがあなたと共有したファイルやフォルダがここに表示されます。"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "ファイルのみ（写真、${ DOCS_APP_NAME }、${ SHEETS_APP_NAME }を除く） - 合計最大 100 GB、100,000 ファイルまで、1 ファイルあたり 50 GB まで"
       ],
       "finance": [
         "ファイナンス"
@@ -7258,6 +7357,12 @@
       "Environment compatible": [
         "互換性のある環境"
       ],
+      "Exact host matching": [
+        "正確なホスト一致"
+      ],
+      "Exact URL matching": [
+        "正確なURL一致"
+      ],
       "Expired": [
         "有効期限切れ"
       ],
@@ -7423,6 +7528,9 @@
       "Never expires": [
         "有効期限なし"
       ],
+      "Never fill on this exact URL": [
+        "この正確なURLには絶対に入力しない"
+      ],
       "New password": [
         "新しいパスワード"
       ],
@@ -7455,6 +7563,9 @@
       ],
       "Outdated version": [
         "古いバージョン"
+      ],
+      "Parent domain and subdomains (default)": [
+        "親ドメインとサブドメイン（デフォルト）"
       ],
       "Password": [
         "パスワード"
@@ -7509,6 +7620,9 @@
       ],
       "Region": [
         "都道府県"
+      ],
+      "Regular expression": [
+        "正規表現"
       ],
       "Replace existing folder or file": [
         "既存のフォルダまたはファイルを置き換え"
@@ -7585,6 +7699,9 @@
       "Start date": [
         "開始日"
       ],
+      "Starts with": [
+        "前方一致"
+      ],
       "State": [
         "州"
       ],
@@ -7650,6 +7767,9 @@
       ],
       "Uploaded by": [
         "アップロード元"
+      ],
+      "URL wildcard pattern": [
+        "URLワイルドカードパターン"
       ],
       "User opted in": [
         "ユーザーがオプトインしました"
@@ -8040,6 +8160,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "「前方一致」の一致ルール"
+      ],
+      "Exact (sub) domain matching rule": [
+        "正確な（サブ）ドメイン一致ルール"
+      ],
+      "Exact URL matching rule": [
+        "正確なURL一致ルール"
+      ],
+      "Never fill with this exact URL": [
+        "この正確なURLには絶対に入力しない"
+      ],
+      "Regular expression rule": [
+        "正規表現ルール"
+      ],
+      "Wildcard pattern matching rule": [
+        "ワイルドカードパターン一致ルール"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "お客様の無料トライアルは終了しました。${ nonAutoRenewalAction }"
       ],
@@ -10361,6 +10499,9 @@
       "Search for name or email": [
         "名前またはメールアドレスで検索"
       ],
+      "Search for users or addresses": [
+        "ユーザーまたはアドレスを検索"
+      ],
       "Search parent folder": [
         "親フォルダーを検索"
       ],
@@ -11978,6 +12119,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } 件の無料アップロード"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } ライティングアシスタント"
+      ],
       "Account recovery": [
         "アカウントの回復"
       ],
@@ -12854,6 +12998,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "データプライバシーのために ${ VPN_SHORT_APP_NAME } を使用する"
       ],
+      "Users and addresses": [
+        "ユーザーとアドレス"
+      ],
       "Verification failed": [
         "検証に失敗しました"
       ],
@@ -13138,6 +13285,11 @@
         "Drive for Businessを入手"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "ユーザーが招待を承認すると、役割を割り当てることができるようになります。"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "パスワードは ${ MIN_PASSWORD_LENGTH } 文字以上必要です"
@@ -13240,6 +13392,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }は強力な制御を提供しますが、誤りが1つあるだけで自動入力が一致し、詐欺サイトやフィッシングサイトにデータが入力されてしまう可能性があります。"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } 件の連絡先を完全に削除してよろしいですか？"

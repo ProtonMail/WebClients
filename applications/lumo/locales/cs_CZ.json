@@ -982,6 +982,9 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Přidat soubor do ${ DRIVE_APP_NAME }"
       ],
+      "Add memory": [
+        "Přidat vzpomínku"
+      ],
       "Add to active": [
         "Přidat k aktivním"
       ],
@@ -1006,8 +1009,17 @@
       "Clear auto-generated": [
         "Smazat automaticky vygenerované"
       ],
+      "click to hide me": [
+        "kliknutím mě skryjete"
+      ],
+      "click to let me out": [
+        "kliknutím mě pustíte ven"
+      ],
       "Close": [
         "Zavřít"
+      ],
+      "Collapse ${ LUMO_SHORT_APP_NAME }": [
+        "Sbalit ${ LUMO_SHORT_APP_NAME }"
       ],
       "Continue": [
         "Pokračovat"
@@ -1048,11 +1060,17 @@
       "I like this response": [
         "Odpověď se mi líbí"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } out": [
+        "Pustit ${ LUMO_SHORT_APP_NAME } ven"
+      ],
       "Light": [
         "Světlý"
       ],
       "Manage files": [
         "Spravovat soubory"
+      ],
+      "More options": [
+        "Další možnosti"
       ],
       "New chat": [
         "Nová konverzace"
@@ -1110,6 +1128,9 @@
       ],
       "Turn off and delete": [
         "Vypnout a smazat"
+      ],
+      "Turn off memory": [
+        "Vypnout paměť"
       ],
       "Turn on memory": [
         "Zapnout paměť"
@@ -1197,17 +1218,35 @@
       "1 TB cloud storage": [
         "1 TB cloudového úložiště"
       ],
+      "Administrative tools": [
+        "Administrativní nástroje"
+      ],
       "And much more": [
         "A mnohem více"
       ],
       "Everything in Business": [
         "Vše z tarifu Business"
       ],
+      "More image generations": [
+        "Více vygenerovaných obrázků"
+      ],
+      "More Max model usage": [
+        "Častější využití modelu Max"
+      ],
+      "More messages & chat history": [
+        "Více zpráv a historie chatu"
+      ],
       "Password manager": [
         "Správce hesel"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Díky šifrování s nulovým přístupem lze vaše uložené konverzace dešifrovat a číst pouze na vašem zařízení. Ani ${ BRAND_NAME }, ani nikdo jiný je nemůže vidět."
+      ],
+      "Unlimited Custom Lumos": [
+        "Neomezený počet vlastních asistentů Lumo"
+      ],
+      "Unlimited Projects": [
+        "Neomezený počet projektů"
       ],
       "Video meetings": [
         "Video schůzky"
@@ -1393,6 +1432,9 @@
       "More thorough answers, but can take longer": [
         "Důkladnější odpovědi, které však mohou trvat déle"
       ],
+      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
+        "Trvale smažte své projekty, chaty a uložené vzpomínky. Tento úkon nelze vrátit zpět."
+      ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Chaty v rámci projektů jsou udržovány zcela izolované. Spoléhají na vlastní instrukce a soubory a vaše globální vzpomínky zcela ignorují."
       ],
@@ -1422,6 +1464,11 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Vypnutím paměti trvale smažete všech ${ memories.length } uložených vzpomínek. Paměť můžete později znovu zapnout, ale smazané vzpomínky již nebude možné obnovit."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Deletes all saved memories and turns off the memory feature.": [
+        "Smaže všechny uložené vzpomínky a vypne funkci paměti."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1925,6 +1972,9 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Vytvořte graf pracovního postupu a implementační kód pro následující úkol. Cílový jazyk kódu:"
       ],
+      "Generate them from your recent chats, or add one with + above.": [
+        "Vygenerujte je ze svých nedávných chatů nebo přidejte novou pomocí tlačítka + výše."
+      ],
       "Generating…": [
         "Generování…"
       ],
@@ -2104,6 +2154,12 @@
       ],
       "There was an error processing this file.": [
         "Došlo k chybě při zpracování tohoto souboru."
+      ],
+      "These files are no longer referred to in this conversation.": [
+        "Na tyto soubory se již v této konverzaci neodkazuje."
+      ],
+      "These files are referred to in the conversation.": [
+        "Na tyto soubory se v konverzaci odkazuje."
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Tyto soubory patřily ke shrnutým zprávám a již se neodesílají modelu."
@@ -2536,8 +2592,17 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
+      "${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "${ LUMO_SHORT_APP_NAME } Pro": [
+        "${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Business": [
         "Business"
+      ],
+      "Personal": [
+        "Osobní"
       ],
       "Plus": [
         "Plus"
@@ -2950,6 +3015,9 @@
       "Elevate your business AI experience": [
         "Posuňte své firemní využívání AI na vyšší úroveň"
       ],
+      "From only": [
+        "Již od"
+      ],
       "Get": [
         "Získejte"
       ],
@@ -2961,6 +3029,18 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Získejte ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Získat ${ LUMO_SHORT_APP_NAME } Pro"
+      ],
+      "Upgrade": [
+        "Upgradovat"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Upgradovat na ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Upgradovat na ${ LUMO_SHORT_APP_NAME } Pro"
       ]
     },
     "collider_2025: Warning": {
@@ -9578,6 +9658,9 @@
     "Subtitle": {
       "per month, billed annually": [
         "za měsíc, účtováno ročně"
+      ],
+      "per user/month, billed annually": [
+        "na uživatele/měsíc, účtováno ročně"
       ]
     },
     "Success": {
@@ -9682,6 +9765,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } je nyní aktivní"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent psaní ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Účet omezen"
@@ -9815,6 +9901,9 @@
       "Payment verification": [
         "Ověřování platby"
       ],
+      "Plan type": [
+        "Typ plánu"
+      ],
       "Processing...": [
         "Zpracovávání..."
       ],
@@ -9937,6 +10026,11 @@
       ],
       "The user must have an address to request data access": [
         "Uživatel musí mít adresu, aby mohlo být požádáno o přístup k datům"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Jakmile uživatel přijme pozvánku, budete mu moci přiřadit role."
       ]
     },
     "Validation": {

@@ -4,12 +4,29 @@
     "language": "ru_RU"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Отменить"
+      ],
+      "Open external url": [
+        "Открыть внешний URL"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Протокол ${ parsedProtocol } не разрешен. Вы хотите открыть внешний URL?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "Параметр «Перезапустить и профилировать» немедленно перезапустит приложение и запишет профиль запуска.\n\nПараметр «Профилировать при следующем запуске» запишет профиль при следующем открытии приложения. Используйте его, чтобы измерить скорость запуска после перезагрузки."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "О ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Исходный размер"
+      ],
+      "Cancel": [
+        "Отмена"
       ],
       "Check spelling while typing": [
         "Проверять правописание при наборе текста"
@@ -20,6 +37,9 @@
       "Close Window": [
         "Закрыть окно"
       ],
+      "Collect startup performance data": [
+        "Сбор данных о производительности при запуске"
+      ],
       "Copy": [
         "Копировать"
       ],
@@ -28,6 +48,24 @@
       ],
       "Delete": [
         "Удалить"
+      ],
+      "Disable": [
+        "Отключить"
+      ],
+      "Disable Hardware Acceleration": [
+        "Отключить аппаратное ускорение"
+      ],
+      "Enable": [
+        "Включить"
+      ],
+      "Enable diagnostic logs": [
+        "Включить диагностические журналы"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Включить диагностические журналы движка Chromium."
+      ],
+      "Enable Hardware Acceleration": [
+        "Включить аппаратное ускорение"
       ],
       "Force Reload": [
         "Принудительная перезагрузка"
@@ -47,6 +85,12 @@
       "Paste and Match Style": [
         "Вставить и подобрать стиль"
       ],
+      "Profile app startup": [
+        "Профилировать запуск приложения"
+      ],
+      "Profile on next launch": [
+        "Профилировать при следующем запуске"
+      ],
       "Quit": [
         "Выйти"
       ],
@@ -58,6 +102,12 @@
       ],
       "Reload": [
         "Перезагрузить"
+      ],
+      "Restart and profile now": [
+        "Перезапустить и профилировать"
+      ],
+      "Restart with logging": [
+        "Перезапустить с ведением журнала"
       ],
       "Select All": [
         "Выбрать всё"
@@ -80,6 +130,15 @@
       "Stop Speaking": [
         "Закончить говорить"
       ],
+      "Switch to ${ appName }": [
+        "Переключиться на ${ appName }"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "Эти журналы помогают нам диагностировать проблемы. Приложение будет перезапущено для применения изменений."
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Это позволит измерить, сколько времени требуется приложению для запуска, и сохранить отчет в папку журналов."
+      ],
       "Toggle Full Screen": [
         "Переключить в полноэкранный режим"
       ],
@@ -88,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Удалить ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Когда аппаратное ускорение включено, приложение использует для рендеринга выделенный графический процессор вашего устройства. Это может вызвать проблемы с совместимостью на некоторых системах."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Без аппаратного ускорения приложение использует программный рендеринг вместо видеокарты. Вы можете заметить более медленную анимацию и повышенную нагрузку на процессор."
       ],
       "Zoom": [
         "Приблизить"
@@ -100,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Отключить аппаратное ускорение"
+      ],
+      "Enable Hardware Acceleration": [
+        "Включить аппаратное ускорение"
+      ],
       "Services": [
         "Службы"
       ]
@@ -151,6 +222,14 @@
       ],
       "Undo": [
         "Отменить"
+      ]
+    },
+    "Error dialog": {
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } — непредвиденная ошибка"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Из-за ошибки приложение ${ MAIL_APP_NAME } будет закрыто. Попробуйте запустить его снова. Если проблема не будет устранена, свяжитесь с нами. Информацию об ошибке можно найти в журнале приложения."
       ]
     },
     "error screen": {

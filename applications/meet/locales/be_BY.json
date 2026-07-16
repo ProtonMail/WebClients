@@ -420,6 +420,9 @@
       "Open link": [
         "Адкрыць спасылку"
       ],
+      "Participants join after you approve them": [
+        "Удзельнікі далучаюцца пасля таго, як вы іх ухваліце"
+      ],
       "Participants join the call directly": [
         "Удзельнікі далучаюцца да званка наўпрост"
       ],
@@ -665,6 +668,12 @@
       ],
       "Waiting room": [
         "Пакой чакання"
+      ],
+      "Waiting room disabled": [
+        "Пакой чакання адключаны"
+      ],
+      "Waiting room enabled": [
+        "Пакой чакання ўключаны"
       ]
     },
     "Alt": {
@@ -734,6 +743,9 @@
       "Rotate camera": [
         "Павярнуць камеру"
       ],
+      "Save my name on this device": [
+        "Захаваць маё імя на гэтай прыладзе"
+      ],
       "Screen share": [
         "Абагулены экран"
       ],
@@ -775,6 +787,9 @@
       ],
       "Video settings": [
         "Налады відэа"
+      ],
+      "Waiting room": [
+        "Пакой чакання"
       ]
     },
     "Apps dropdown": {
@@ -2190,6 +2205,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Пашыраны рэжым: наладзьце кожную канстанту размыцця для наступнай версіі, а пасля націсніце «ужыць», каб перабудаваць папярэдні прагляд. Прымусовыя значэнні маюць прыярытэт над значэннямі з файла і Unleash."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Ананімны ${ particle } ${ participantNumber }"
       ],
@@ -2216,6 +2234,9 @@
       ],
       "Camera permission denied": [
         "Доступ да камеры забаронены"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Змены падрыхтаваны. Націсніце «ужыць», каб перабудаваць папярэдні прагляд з новымі канстантамі."
       ],
       "Chat with everyone": [
         "Чат з усімі"
@@ -2424,6 +2445,9 @@
       "Loading…": [
         "Загрузка..."
       ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Зацыкліце загружанае відэа або трансляцыю з вашай камеры ў рэальным часе, каб параўнаць дзве версіі размыцця фону побач."
+      ],
       "Lower participant's hand": [
         "Апусціць руку ўдзельніка"
       ],
@@ -2592,6 +2616,9 @@
       "Record your meetings": [
         "Запісвайце свае сустрэчы"
       ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Запісвайце неапрацаванае відэа з камеры і выніковае размыццё фону побач. Спыненне запісу спампоўвае абодва кліпы."
+      ],
       "Recording": [
         "Запіс"
       ],
@@ -2681,6 +2708,9 @@
       ],
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "Спасылка на сустрэчу, якую вы спрабуеце адкрыць не існуе або тэрмін яе дзеяння скончыўся. Пераканайцеся, што спасылка з'яўляецца правільнай або пачніце новую бяспечную сустрэчу."
+      ],
+      "This conversation started before you joined.": [
+        "Гэтая размова пачалася да таго, як вы далучыліся."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Гэты чат зашыфраваны скразным метадам з часовымі паведамленнямі, якія знікаюць у канцы званка."
@@ -2864,6 +2894,9 @@
       "Advanced mode": [
         "Пашыраны рэжым"
       ],
+      "Anyone with the link can join": [
+        "Любы чалавек са спасылкай можа далучыцца"
+      ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
       ],
@@ -3014,6 +3047,9 @@
       "Participant controls": [
         "Элементы кіравання ўдзельнікамі"
       ],
+      "Participants join after you approve them": [
+        "Удзельнікі далучаюцца пасля таго, як вы іх ухваліце"
+      ],
       "Passphrase": [
         "Парольная фраза"
       ],
@@ -3040,6 +3076,9 @@
       ],
       "Reveal password": [
         "Паказаць пароль"
+      ],
+      "Save my name on this device": [
+        "Захаваць маё імя на гэтай прыладзе"
       ],
       "Schedule meeting": [
         "Запланаваць сустрэчу"
@@ -3556,6 +3595,9 @@
       ],
       "Reconnection Testing": [
         "Тэсціраванне перападключэння"
+      ],
+      "Record raw vs blurred camera": [
+        "Запіс відэа з камеры без размыцця і з размыццём"
       ],
       "Record this meeting": [
         "Запісаць гэту сустрэчу"

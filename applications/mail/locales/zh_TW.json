@@ -432,6 +432,9 @@
       "Delete permanently": [
         "永久刪除"
       ],
+      "Deleting folder": [
+        "正在刪除資料夾"
+      ],
       "Deleting label": [
         "刪除標籤"
       ],
@@ -569,6 +572,9 @@
       ],
       "Explore ${ VPN_APP_NAME }": [
         "探索 ${ VPN_APP_NAME }"
+      ],
+      "Explore other plans": [
+        "探索其他方案"
       ],
       "Export": [
         "匯出"
@@ -1341,6 +1347,9 @@
       "Set up a custom domain": [
         "設置個自訂域名"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "設定從 Gmail 自動轉寄"
+      ],
       "Set up email forwarding": [
         "設定電子郵件轉發"
       ],
@@ -1457,6 +1466,9 @@
       ],
       "Submit": [
         "送出"
+      ],
+      "Subscribe now": [
+        "立即訂閱"
       ],
       "Switch or add account": [
         "切換或是添加帳號"
@@ -2174,17 +2186,125 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "已啟用"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "您組織外部的使用者已在使用此位址。請聯絡客戶支援服務以解決此問題"
+      ],
+      "All": [
+        "全部"
+      ],
+      "Calendar": [
+        "行事曆"
+      ],
+      "Configure migration": [
+        "設定轉移"
+      ],
       "Contact your administrator to start a migration.": [
         "聯絡您的管理員以開始遷移。"
       ],
+      "Contacts": [
+        "聯絡人"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "從 Google Workspace 到 ${ BRAND_NAME } 的資料移轉狀態"
+      ],
+      "Emails": [
+        "電子郵件"
+      ],
+      "Errors": [
+        "錯誤"
+      ],
+      "Estimated size": [
+        "預估大小"
+      ],
+      "Find out what can be migrated.": [
+        "了解可以遷移哪些內容。"
+      ],
+      "Has errors": [
+        "有錯誤"
+      ],
+      "In progress": [
+        "進行中"
+      ],
       "Member address not found. Please contact customer support to resolve this": [
         "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Migrate": [
+        "移轉"
+      ],
+      "Migrated": [
+        "已遷移"
+      ],
+      "Migration status": [
+        "轉移狀態"
       ],
       "Missing organization private key": [
         "缺少組織私有密鑰"
       ],
       "Missing organization public key": [
         "缺少組織公用密鑰"
+      ],
+      "No users to display": [
+        "沒有可顯示的使用者"
+      ],
+      "Not activated": [
+        "未啟用"
+      ],
+      "Organization does not have enough seats available": [
+        "組織沒有足夠的可用座席"
+      ],
+      "Organization does not have enough storage available": [
+        "組織沒有足夠的可用儲存空間"
+      ],
+      "Pending": [
+        "擱置中"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "選取您確切想移轉的項目。這將套用至所有組織使用者。"
+      ],
+      "Select users to migrate": [
+        "選取要遷移的使用者"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由於平台不相容，無法遷移此使用者。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中啟用他們的帳號。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的帳號。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的位址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "若要遷移此使用者，他們需要接受加入 ${ BRAND_NAME } 的邀請。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中將其取消封存。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中取消停用他們。"
+      ],
+      "User": [
+        "使用者"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "已存取其 ${ BRAND_NAME } 帳號的使用者"
+      ],
+      "What are you migrating?": [
+        "您要轉移什麼？"
+      ],
+      "You": [
+        "您"
       ]
     },
     "Browser": {
@@ -2317,6 +2437,11 @@
       ],
       "Take a tour": [
         "瀏覽"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "來自先前匯入的重複項目將被略過。可在 ${ PRODUCT_NAMES.EASY_SWITCH } 設定中復原或匯入較舊的訊息。"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4274,6 +4399,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "我們將暫停匯入於 80% 的儲存空間以為新訊息保留空間。"
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "我們將會匯入您舊的電子郵件，並同步此後來自 Gmail 的新訊息"
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "我們已匯入來自於 Gmail 的電子郵件。完成時我們將讓您知道。"
       ],
@@ -4811,6 +4939,9 @@
       "Failed to load subscription data. Please try again later.": [
         "無法載入訂閱資料。請稍後再試。"
       ],
+      "Failed to load the STL preview": [
+        "無法載入 STL 預覽"
+      ],
       "Failed to open to contact": [
         "無法開啟聯絡人"
       ],
@@ -4919,6 +5050,9 @@
       "No contacts found to import": [
         "沒有找到聯絡人可以匯入"
       ],
+      "No drive found to import": [
+        "找不到可匯入的雲端硬碟"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "沒有找到電子郵件可以匯入 - 該帳號沒有收件匣"
       ],
@@ -4966,6 +5100,9 @@
       ],
       "Payment process not supported": [
         "不支援此付款程序"
+      ],
+      "Permissions request failed.": [
+        "權限請求失敗。"
       ],
       "Please activate your search again": [
         "請再次啟用搜尋"
@@ -5237,6 +5374,9 @@
       "Unexpected error, we can't import the contacts": [
         "未知錯誤，無法匯入聯絡人"
       ],
+      "Unexpected error, we can't import the files": [
+        "發生非預期錯誤，我們無法匯入檔案"
+      ],
       "Unknown error": [
         "未知錯誤"
       ],
@@ -5278,6 +5418,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "您已使用方案中的所有位址。請升級您的方案以新增新位址，或在您的帳號中停用某個位址。"
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
@@ -6504,6 +6647,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ providerName }": [
+        "從 ${ providerName } 匯入"
+      ],
       "More import options": [
         "更多匯入選項"
       ]
@@ -6681,6 +6827,9 @@
       ],
       "${ planName } expires in ${ daysLeft } day.": [
         "${ planName } 過其於 ${ daysLeft } 天。"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } 今日過期。"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }透過監控可疑活動以保護您的帳戶。"
@@ -7380,6 +7529,9 @@
       ],
       "file attached": [
         "已附加檔案"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "僅限檔案（不含相片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }）- 總計最高 100 GB、100,000 個檔案，且單一檔案最高 50 GB"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
@@ -9609,6 +9761,12 @@
       "Encrypt emails": [
         "加密電郵"
       ],
+      "Exact host matching": [
+        "精確的主機比對"
+      ],
+      "Exact URL matching": [
+        "精確的 URL 比對"
+      ],
       "Expires": [
         "有效期限"
       ],
@@ -9701,6 +9859,9 @@
       ],
       "Import to:": [
         "匯入到："
+      ],
+      "Import your emails": [
+        "匯入您的電子郵件"
       ],
       "Include application logs in bug report": [
         "在錯誤報告中納入應用程式日誌"
@@ -9804,11 +9965,17 @@
       "Moved to Trash": [
         "已丟進垃圾桶"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "必須具有至少 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
       "Name": [
         "名稱"
       ],
       "Navigation": [
         "巡覽"
+      ],
+      "Never fill on this exact URL": [
+        "絕不在此精確的 URL 填入"
       ],
       "New password": [
         "新密碼"
@@ -9860,6 +10027,9 @@
       ],
       "Original link": [
         "原始鏈接"
+      ],
+      "Parent domain and subdomains (default)": [
+        "上層網域和子網域 (預設)"
       ],
       "Participants": [
         "參與者"
@@ -9939,6 +10109,9 @@
       "Region": [
         "地區"
       ],
+      "Regular expression": [
+        "正規表示式"
+      ],
       "Remember my choice": [
         "記憶我的設定選擇"
       ],
@@ -9998,6 +10171,9 @@
       ],
       "Start date": [
         "開始日期"
+      ],
+      "Starts with": [
+        "開頭為"
       ],
       "State": [
         "州"
@@ -10085,6 +10261,9 @@
       ],
       "URL": [
         "網址"
+      ],
+      "URL wildcard pattern": [
+        "URL 萬用字元模式"
       ],
       "Username": [
         "使用者名稱"
@@ -10676,14 +10855,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "「開頭為」相符規則"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精確的 (子) 網域比對規則"
+      ],
+      "Exact URL matching rule": [
+        "精確的 URL 比對規則"
+      ],
       "Fw:": [
         "轉寄:"
+      ],
+      "Never fill with this exact URL": [
+        "絕不填入此精確的 URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "在 ${ date }，${ senderString } 寫道："
       ],
       "Re:": [
         "回复："
+      ],
+      "Regular expression rule": [
+        "正規表示式規則"
+      ],
+      "Wildcard pattern matching rule": [
+        "萬用字元模式比對規則"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "您的免費試用已結束。 ${ nonAutoRenewalAction }"
@@ -12794,6 +12991,9 @@
       "Search for name or email": [
         "搜尋名稱或電郵"
       ],
+      "Search for users or addresses": [
+        "搜尋使用者或位址"
+      ],
       "Search messages": [
         "搜尋訊息"
       ],
@@ -13090,11 +13290,26 @@
       "${ referrerRewardAmount } per referral": [
         "每個推薦 ${ referrerRewardAmount }"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**如果您在此日期前取消，**試用結束時您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**如果您不訂閱，**您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您不取消，**您的完整方案將會開始，且您將獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您在此日期前訂閱，**您將會獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "於那日之後，您的帳號將被降級至 **${ BRAND_NAME } 免費 **。若您改變主意，您可 ** 重建訂閱 ** 以存取至頂級質子版的功能。"
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "賺取至多 ${ maxRewardAmount } 額度。您將於邀請者訂閱至 ${ BRAND_NAME } 方案獲得 ${ referrerRewardAmount }。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "免費使用 **${ planTitle }** 直至 **${ textDate }**。"
       ],
       "Friend joined": [
         "已加入的親友"
@@ -13107,6 +13322,9 @@
       ],
       "Invited friends": [
         "邀請好友"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "最後機會探索 **${ planTitle }** 提供的所有強大功能。"
       ],
       "More sharing options": [
         "更多分享選項"
@@ -13122,6 +13340,12 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "您將取得至多 **${ maxRewardAmount }** 額度。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "您還有 **${ daysRemaining } 天**的時間來探索 **${ planTitle }** 提供的所有強大功能。"
+      ],
+      "your subscription": [
+        "您的訂閱"
       ]
     },
     "Remaining days before the message expire": {
@@ -14116,11 +14340,17 @@
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
         "${ planName }提供您的團隊提升生產力，整理，管控們的收件匣，計畫，及更多所需工具。"
       ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } 超越基本功能，協助您更高效、更有條理，並掌控您的收件匣、電子郵件身分等。"
+      ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
         "${ planName }協助確保您的家庭成員及他們的資料於線上時為被保護的"
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } 提供您 ${ planMaxSpace } 儲存空間用於電子郵件、其附件、行事曆、密碼與檔案。您還有資格獲得年度儲存空間獎勵。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } 為您的檔案和相片提供 ${ planMaxSpace } 儲存空間。您也有資格獲得年度儲存空間獎勵。"
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } 提供每位使用者 ${ planMaxSpace } 儲存空間用於電子郵件、其附件、行事曆與檔案。您還有資格獲得年度儲存空間獎勵。"
@@ -14175,6 +14405,9 @@
       ],
       "Catch-all email address": [
         "跟上電子郵件地址"
+      ],
+      "Comprehensive privacy and security": [
+        "全方位的隱私與安全"
       ],
       "Desktop app and email client support (via IMAP)": [
         "桌面應用程式和電子郵件用戶端支援(透過 IMAP)"
@@ -14272,6 +14505,9 @@
       "Sync files on devices": [
         "於裝置同步"
       ],
+      "The best of ${ BRAND_NAME }": [
+        "${ BRAND_NAME } 的精華"
+      ],
       "Unblocking internet access in Iran": [
         "解除於伊朗的網路存取權"
       ],
@@ -14301,6 +14537,9 @@
       ],
       "Watch the interview": [
         "瀏覽訪談"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "當您取消 ${ planName } 時您將放棄的權益"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "在您取消${ planName }訂購，您將會被降級至${ BRAND_NAME }Free，這僅提供最多1GB的Mail儲存量和最多5GB的Drive儲存量。您也會失去之前任何額外給予您的儲存量。"
@@ -14902,6 +15141,9 @@
       "${ feature } is now active": [
         "${ feature }現在為起用狀態"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
       "${ numMessages } message": [
         "${ numMessages } 封郵件"
       ],
@@ -15054,6 +15296,9 @@
       ],
       "Confirm recipient address?": [
         "確認收件人電郵位址？"
+      ],
+      "Connect a Gmail address": [
+        "連線 Gmail 位址"
       ],
       "Connect apps and devices": [
         "連線應用程式和裝置"
@@ -15316,6 +15561,9 @@
       "How to update your email address": [
         "如何更新電子郵件地址"
       ],
+      "How your free trial works": [
+        "您的免費試用如何運作"
+      ],
       "Human verification": [
         "真人身分驗證"
       ],
@@ -15484,6 +15732,9 @@
       "Moving a snoozed message": [
         "移動已延後程的訊息"
       ],
+      "Multiple accounts, 1 private inbox": [
+        "多個帳號，1 個私有收件匣"
+      ],
       "Need more aliases?": [
         "需要更多別名?"
       ],
@@ -15636,6 +15887,9 @@
       ],
       "Referral": [
         "推薦人"
+      ],
+      "Remove forwarding address": [
+        "移除轉寄位址"
       ],
       "Remove from list?": [
         "從清單中移除?"
@@ -15856,6 +16110,9 @@
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "於 ${ MAIL_APP_NAME } 安全地使用 Gmail。"
       ],
+      "Users and addresses": [
+        "使用者及電郵位址"
+      ],
       "Verification error": [
         "驗證錯誤"
       ],
@@ -15945,11 +16202,23 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "動作"
+      ],
       "Created": [
         "已創建"
       ],
       "Expires": [
         "到期日"
+      ],
+      "Fingerprint": [
+        "指紋"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "Type": [
+        "類型"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16101,6 +16370,11 @@
         "您的預設字體看起來是："
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "一旦使用者接受邀請，您便能分配角色。"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
@@ -16192,6 +16466,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了強大的控制，但單個錯誤可能會導致自動填入在欺詐性或網路釣魚網站上比對並填入資料。"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您確定要永久刪除 ${ count } 位聯絡人嗎？"

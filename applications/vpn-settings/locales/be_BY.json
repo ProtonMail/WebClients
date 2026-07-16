@@ -1562,11 +1562,6 @@
         "Адміністратар карыстальніка:"
       ]
     },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Роля - гэта група дазволаў, якія вы можаце прызначыць удзельнікам сваёй арганізацыі."
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Калі выйсці цяпер, некаторыя кантакты не будуць імпартаваны"
@@ -2115,6 +2110,27 @@
       ],
       "Status": [
         "Статус"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у кансолі адміністратара Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго адрас у ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Каб перанесці гэтага карыстальніка, яму неабходна прыняць запрашэнне далучыцца да ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, разгархівуйце яго ў кансолі адміністратара Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, разблакіруйце яго ў кансолі адміністратара Google Workspace."
       ],
       "User": [
         "Карыстальнік"
@@ -6887,6 +6903,9 @@
       "All inactive members deleted": [
         "Усе неактыўныя ўдзельнікі выдалены"
       ],
+      "All internet traffic is always encrypted and secure": [
+        "Увесь трафік інтэрнэту заўсёды з'яўляецца зашыфраваным і бяспечным"
+      ],
       "All keys successfully reactivated": [
         "Усе ключы паспяхова паўторна актываваны"
       ],
@@ -8038,6 +8057,9 @@
       ],
       "or discover other features:": [
         "або пазнаёмцеся з іншымі функцыямі:"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Або выканайце ${ ps1Link } праз свой выканальны сцэнарый"
       ],
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
@@ -9295,6 +9317,9 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Ваш уліковы запіс паспяхова абноўлены з дапамогай гэтай рэкламнай акцыі"
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Ваш профіль прылады пастаяннай VPN гатовы для разгортвання."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
@@ -16380,6 +16405,9 @@
       "Save 50% for 6 months, and keep full access": [
         "Зэканомце 50% пры аплаце за 6 месяцаў і пакіньце поўны доступ"
       ],
+      "Save 50% for one year, and keep full access": [
+        "Зэканомце 50% на адзін год і захавайце поўны доступ"
+      ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Паглядзіце, як ${ MAIL_APP_NAME } выглядае ў параўнанні з іншымі кліентамі электроннай пошты, і чаму наша незалежнасць мае значэнне."
       ],
@@ -17753,9 +17781,6 @@
       ],
       "Revoke certificate?": [
         "Адклікаць сертыфікат?"
-      ],
-      "Roles and permissions": [
-        "Ролі і дазволы"
       ],
       "SAML authentication": [
         "Аўтэнтыфікацыя SAML"

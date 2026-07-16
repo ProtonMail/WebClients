@@ -1323,6 +1323,27 @@
       "Status": [
         "Estat"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
       "User": [
         "Usuari"
       ],
@@ -3183,8 +3204,8 @@
       "Failed to resend invitation": [
         "No s'ha pogut tornar a enviar la invitació"
       ],
-      "Failed to trash document.": [
-        "No s'ha pogut enviar el document a la paperera."
+      "Failed to trash document": [
+        "No s'ha pogut enviar el document a la paperera"
       ],
       "Failed to unshare node": [
         "No s'ha pogut deixar de compartir el node"
@@ -4950,6 +4971,9 @@
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Ajudeu-nos a millorar aquesta experiència informant del problema. Si us sentiu còmode compartint el contingut del full de càlcul, adjunteu la informació de depuració següent al vostre informe."
       ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Ajudeu-nos a millorar aquesta experiència informant de la incidència. Adjunteu la informació de depuració de més avall al vostre informe."
+      ],
       "here": [
         "aquí"
       ],
@@ -5622,6 +5646,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Hem detectat que anteriorment heu tingut problemes per obrir un document."
       ],
       "Week": [
         "Setmana"
@@ -8035,6 +8062,9 @@
       "\"${ newName }\" renamed successfully": [
         "S'ha canviat el nom de \"${ newName }\""
       ],
+      "\"Document deleted permanently": [
+        "\"S'ha eliminat el document permanentment"
+      ],
       "${ count } item failed to be decrypted": [
         "No s'ha pogut desxifrar ${ count } element.",
         "No s'han pogut desxifrar ${ count } elements."
@@ -8121,9 +8151,6 @@
       "Device renamed": [
         "S'ha canviat el nom del dispositiu"
       ],
-      "Document failed to be restored from trash": [
-        "No s'ha pogut restaurar el document de la paperera"
-      ],
       "Document moved to trash": [
         "S'ha enviat el document a la paperera"
       ],
@@ -8139,6 +8166,9 @@
       "Failed to accept share invitation": [
         "No s'ha pogut acceptar la invitació per a compartir"
       ],
+      "Failed to delete document": [
+        "No s'ha pogut eliminar el document"
+      ],
       "Failed to download files: ${ err }": [
         "No s'han pogut descarregar els fitxers: ${ err }"
       ],
@@ -8153,6 +8183,12 @@
       ],
       "Failed to rename document": [
         "No s'ha pogut canviar el nom del document"
+      ],
+      "Failed to restore document": [
+        "No s'ha pogut restaurar el document"
+      ],
+      "Failed to trash document": [
+        "No s'ha pogut enviar el document a la paperera"
       ],
       "Failed to upload files: ${ err }": [
         "Error carregant fitxers: ${ err }"
@@ -10485,6 +10521,9 @@
       "Private browsing vs VPN": [
         "Navegació privada i VPN"
       ],
+      "Problems Detected": [
+        "S'han detectat problemes"
+      ],
       "Public link": [
         "Enllaç públic"
       ],
@@ -10646,6 +10685,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilitzeu ${ VPN_SHORT_APP_NAME } per a la privacitat de les dades"
+      ],
+      "Users and addresses": [
+        "Usuaris i adreces"
       ],
       "Verify your password": [
         "Verifiqueu la vostra contrasenya"

@@ -161,7 +161,7 @@
         "Erişime izin ver"
       ],
       "Anyone with the link can join immediately": [
-        "Bağlantıya sahip olan herkes hemen katılabilir"
+        "Bağlantıyı bilen herkes hemen katılabilir"
       ],
       "Applied": [
         "Uygulandı"
@@ -278,7 +278,7 @@
         "Yok say"
       ],
       "Dismiss new messages": [
-        "Yeni mesajları yoksay"
+        "Yeni iletiler yok sayılsın"
       ],
       "Done": [
         "Tamam"
@@ -419,7 +419,7 @@
         "Bağlantıyı aç"
       ],
       "Participants join after you approve them": [
-        "Katılımcılar sizin onayınızı aldıktan sonra gruba katılırlar"
+        "Katılımcıların katılması için onay vermeniz gerekir"
       ],
       "Participants join the call directly": [
         "Katılımcılar görüşmeye doğrudan katılır"
@@ -523,7 +523,7 @@
         "Şifrelenmiş bir ileti gönderin"
       ],
       "Send reply": [
-        "Yanıt gönder"
+        "Yanıtı gönder"
       ],
       "Settings": [
         "Ayarlar"
@@ -649,7 +649,7 @@
         "Kurtarma kodunu kullanın"
       ],
       "Use waiting room with a paid plan": [
-        "Ücretli tarifeyle bekleme odasını kullanın"
+        "Bekleme odası özelliğini ücretli bir tarife ile kullanabilirsiniz"
       ],
       "Verify": [
         "Doğrula"
@@ -664,10 +664,10 @@
         "Bekleme odası"
       ],
       "Waiting room disabled": [
-        "Bekleme odası devre dışı"
+        "Bekleme odası kapalı"
       ],
       "Waiting room enabled": [
-        "Bekleme odası etkinleştirildi"
+        "Bekleme odası açık"
       ]
     },
     "Alt": {
@@ -1800,6 +1800,9 @@
       ]
     },
     "Error": {
+      "Background blur initialization failed. Please toggle your camera or background blur again": [
+        "Arka plan bulanıklığı başlatma işlemi başarısız oldu. Lütfen kameranızı veya arka plan bulanıklığı özelliğini tekrar etkinleştirin/devre dışı bırakın"
+      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
@@ -1942,7 +1945,7 @@
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
       "We couldn’t send a verification code using this method.": [
-        "Bu yöntemle doğrulama kodunu gönderemedik."
+        "Doğrulama kodu bu yöntemle gönderilemedi."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Tarayıcınızın depolama alanı doldu. Bu ana kadar olan kayıt kaydedildi."
@@ -2198,6 +2201,9 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
+      "Background blur initializing": [
+        "Arka plan bulanıklığı başlatılıyor"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
@@ -2342,6 +2348,9 @@
       "Failed to update meeting schedule": [
         "Görüşme zamanlaması güncellenemedi"
       ],
+      "Failed to update meeting waiting room status": [
+        "Görüşme bekleme odasının durumu güncellenemedi"
+      ],
       "Free meeting": [
         "Serbest görüşme"
       ],
@@ -2466,7 +2475,7 @@
         "Üye"
       ],
       "Message actions": [
-        "Mesaj işlemleri"
+        "İleti işlemleri"
       ],
       "Message from ${ participantName }": [
         "${ participantName } kişisinden ileti"
@@ -2532,7 +2541,7 @@
         "Bir hoparlör bulunamadı"
       ],
       "Not sent, check your connection.": [
-        "Gönderilmedi, bağlantınızı kontrol edin."
+        "Gönderilmedi, bağlantınızı denetleyin."
       ],
       "Only meetings you created appear here": [
         "Burada yalnızca sizin oluşturduğunuz görüşmeler görüntülenir"
@@ -2688,7 +2697,7 @@
         "Açmaya çalıştığınız görüşme bağlantısı bulunamadı veya süresi dolmuş olabilir. Bağlantının doğru olduğundan emin olun ya da bunun yerine yeni bir güvenli görüşme başlatın."
       ],
       "This conversation started before you joined.": [
-        "Bu sohbet sen katılmadan önce başlamıştı."
+        "Bu görüşme siz katılmadan önce başlamıştı."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Bu şifrelenmiş sohbette, çağrı sonunda kaybolacak olan süreli iletiler kullanılıyor."
@@ -2871,7 +2880,7 @@
         "Gelişmiş kip"
       ],
       "Anyone with the link can join": [
-        "Bağlantıya sahip olan herkes katılabilir"
+        "Bağlantıyı bilen herkes katılabilir"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -3024,7 +3033,7 @@
         "Katılımcı denetimleri"
       ],
       "Participants join after you approve them": [
-        "Katılımcılar sizin onayınızı aldıktan sonra gruba katılırlar"
+        "Katılımcıların katılması için onay vermeniz gerekir"
       ],
       "Passphrase": [
         "Parola ifadesi"

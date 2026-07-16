@@ -1474,6 +1474,9 @@
       "Activated": [
         "Aktiviert"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu klären"
+      ],
       "All": [
         "Alle"
       ],
@@ -1497,6 +1500,9 @@
       ],
       "Estimated size": [
         "Geschätzte Größe"
+      ],
+      "Find out what can be migrated.": [
+        "Finde heraus, was migriert werden kann."
       ],
       "Has errors": [
         "Hat Fehler"
@@ -1548,6 +1554,27 @@
       ],
       "Status": [
         "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer kann aufgrund von Plattform-Inkompatibilitäten nicht migriert werden."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere seine Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Benutzer zu migrieren, muss er deine Einladung annehmen, ${ BRAND_NAME } beizutreten."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, dearchiviere ihn in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, hebe seine Sperrung in deiner Google Workspace Admin-Konsole auf."
       ],
       "User": [
         "Benutzer"
@@ -3943,6 +3970,9 @@
       "No contacts found to import": [
         "Keine Kontakte zum Importieren vorhanden"
       ],
+      "No drive found to import": [
+        "Es wurde kein Drive zum Importieren gefunden"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
@@ -4195,6 +4225,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Unerwarteter Fehler, wir können die Kontakte nicht importieren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -7202,6 +7235,12 @@
       "Every": [
         "Jede"
       ],
+      "Exact host matching": [
+        "Genaue Host-Übereinstimmung"
+      ],
+      "Exact URL matching": [
+        "Genaue URL-Übereinstimmung"
+      ],
       "Expires": [
         "Gültig bis"
       ],
@@ -7316,6 +7355,9 @@
       "Navigation": [
         "Navigation"
       ],
+      "Never fill on this exact URL": [
+        "Niemals auf dieser genauen URL ausfüllen"
+      ],
       "New password": [
         "Neues Passwort"
       ],
@@ -7345,6 +7387,9 @@
       ],
       "Organizer": [
         "Organisator"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Übergeordnete Domain und Subdomains (Standard)"
       ],
       "participant": [
         "Teilnehmer",
@@ -7404,6 +7449,9 @@
       "Region": [
         "Region"
       ],
+      "Regular expression": [
+        "Regulärer Ausdruck"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME }-Videokonferenz entfernen"
       ],
@@ -7442,6 +7490,9 @@
       ],
       "Start date": [
         "Anfangsdatum"
+      ],
+      "Starts with": [
+        "Beginnt mit"
       ],
       "State": [
         "Bundesland"
@@ -7490,6 +7541,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "URL-Platzhalter-Muster"
       ],
       "Username": [
         "Benutzername"
@@ -7916,11 +7970,29 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "„Beginnt mit“-Übereinstimmungsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Genaue (Sub-) Domain-Übereinstimmungsregel"
+      ],
+      "Exact URL matching rule": [
+        "Genaue URL-Übereinstimmungsregel"
+      ],
       "Fw:": [
         "WG:"
       ],
+      "Never fill with this exact URL": [
+        "Niemals mit dieser genauen URL ausfüllen"
+      ],
       "Re:": [
         "AW:"
+      ],
+      "Regular expression rule": [
+        "Reguläre-Ausdruck-Regel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Platzhalter-Übereinstimmungsregel"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Deine kostenlose Testversion ist abgelaufen. ${ nonAutoRenewalAction }"
@@ -12619,6 +12691,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Nutze ${ VPN_SHORT_APP_NAME } für Daten-Privatsphäre"
       ],
+      "Users and addresses": [
+        "Benutzer und E-Mail-Adressen"
+      ],
       "Verification failed": [
         "Verifizierung fehlgeschlagen"
       ],
@@ -12985,6 +13060,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } bietet eine leistungsstarke Kontrolle, aber ein einziger Fehler kann dazu führen, dass das automatische Ausfüllen auf betrügerischen oder Phishing-Websites übereinstimmt und Daten ausfüllt."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Möchtest du wirklich ${ count } Kontakt dauerhaft löschen?",

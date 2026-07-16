@@ -553,6 +553,12 @@
       "Regenerate": [
         "Regenerar"
       ],
+      "Regex invalid": [
+        "Regex no válida"
+      ],
+      "Regex unsafe": [
+        "Regex insegura"
+      ],
       "Reject": [
         "Rechazar"
       ],
@@ -952,6 +958,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No se ha podido analizar el archivo de ${ provider }. ${ errorDetail }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Ya hay una comprobación de desbloqueo de escritorio en curso."
       ],
       "A domain ownership must be verified first.": [
         "Primero se debe verificar la propiedad de un dominio."
@@ -2211,8 +2220,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2478,6 +2486,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Rellena automáticamente y rápidamente tus credenciales guardadas."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Clasificado por campo (primero el título, luego el nombre de usuario o correo electrónico, el sitio web y las notas) y por la precisión de la coincidencia (exacta, empieza por, contiene)."
       ],
       "Read item": [
         "Leer elemento"
@@ -3198,6 +3209,9 @@
       "Bank Name": [
         "Nombre del banco"
       ],
+      "Basic": [
+        "Básico"
+      ],
       "Basic Auth autofill": [
         "Relleno automático básico de identificadores"
       ],
@@ -3227,6 +3241,9 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Check": [
+        "Verificar"
       ],
       "Checkbox": [
         "Casilla de verificación"
@@ -3386,6 +3403,12 @@
       ],
       "Enter email or username": [
         "Ingresar un correo o un nombre de usuario"
+      ],
+      "Exact host matching": [
+        "Coincidencia exacta de host"
+      ],
+      "Exact URL matching": [
+        "Coincidencia exacta de URL"
       ],
       "Expiration date": [
         "Fecha de expiración"
@@ -3678,6 +3701,9 @@
       "Never": [
         "Nunca"
       ],
+      "Never fill on this exact URL": [
+        "No rellenar nunca en esta URL exacta"
+      ],
       "New email": [
         "Nuevo correo electrónico"
       ],
@@ -3734,6 +3760,9 @@
       ],
       "Owner": [
         "Propietario"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
       ],
       "Passkey": [
         "Clave de acceso"
@@ -3846,6 +3875,12 @@
       "Reddit handle": [
         "Nombre de usuario de Reddit"
       ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
+      "Relevant": [
+        "Relevancia"
+      ],
       "Remove link": [
         "Eliminar el enlace"
       ],
@@ -3954,6 +3989,9 @@
       "SSN": [
         "Número de la Seguridad Social"
       ],
+      "Starts with": [
+        "Comienza con"
+      ],
       "State or province": [
         "Estado o provincia"
       ],
@@ -4007,6 +4045,9 @@
       ],
       "Today": [
         "Hoy"
+      ],
+      "Token name": [
+        "Nombre del token"
       ],
       "Total imported items: ": [
         "Número total de elementos importados: "
@@ -4064,6 +4105,9 @@
       ],
       "Update": [
         "Actualizar"
+      ],
+      "URL wildcard pattern": [
+        "Patrón de comodín de URL"
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Usa ${ PASS_APP_NAME } como tu gestor de contraseñas por defecto para tu navegador"
@@ -4170,6 +4214,24 @@
       "${ count } item": [
         "${ count } elemento",
         "${ count } elementos"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidencia 'Comienza con'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia exacta de (sub) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia exacta de URL"
+      ],
+      "Never fill with this exact URL": [
+        "No rellenar nunca con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón de comodín"
       ],
       "You can drag and drop the selected item to another vault": [
         "Puedes arrastrar y soltar el elemento seleccionado en otra caja fuerte.",
@@ -4473,6 +4535,23 @@
         "Utilizado en ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ingresa una URL para verificar si tu regla actual coincide con la URL"
+      ],
+      "The rule is matching this URL": [
+        "La regla coincide con esta URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regla NO coincide con esta URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Esta URL se bloqueará del relleno automático"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Esta URL NO se bloqueará del relleno automático"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
@@ -4676,6 +4755,9 @@
       ],
       "Add mailbox": [
         "Añadir un buzón"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajusta el comportamiento del relleno automático para cambiar dónde se sugieren los inicios de sesión."
       ],
       "Agent setup instructions": [
         "Instrucciones de configuración del agente"
@@ -4891,6 +4973,9 @@
       "Last modified": [
         "Última modificación"
       ],
+      "Learn more": [
+        "Más información"
+      ],
       "Leave this item?": [
         "¿Deseas dejar este elemento?"
       ],
@@ -5105,6 +5190,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sincroniza tus alias desde SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Probar una URL con esta regla"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Gracias por instalar ${ PASS_APP_NAME }"
       ],
@@ -5125,6 +5213,9 @@
       ],
       "Update available": [
         "Actualización disponible"
+      ],
+      "URL matching": [
+        "Coincidencia de URL"
       ],
       "Use my email": [
         "Usar mi correo"
@@ -5238,6 +5329,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Se necesita la contraseña de ${ BRAND_NAME }."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ofrece un control potente, pero un solo error puede hacer que el relleno automático coincida y rellene datos en sitios web fraudulentos o de suplantación de identidad."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Modo sin conexión de ${ PASS_SHORT_APP_NAME } desactivado."
@@ -5442,6 +5536,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Esta dirección de correo ya no será monitoreada para vulneraciones de datos."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Este elemento no se puede sugerir para el relleno automático debido a la regla \"${ neverModeDescriptionStrong }\". Agrega otra URL si quieres que este elemento se rellene automáticamente."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Este elemento está compartido actualmente. Si lo eliminas, se eliminará el acceso para todos los demás usuarios."

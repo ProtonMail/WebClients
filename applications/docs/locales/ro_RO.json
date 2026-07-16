@@ -1335,6 +1335,27 @@
       "Status": [
         "Stare"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Acest utilizator nu poate fi migrat din cauza unor incompatibilități de platformă."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, activați-i contul în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i contul la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i adresa la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pentru a migra acest utilizator, acesta trebuie să accepte invitația de a se alătura la ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, dezarhivați-l în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, deblocați-l în consola de administrare din Google Workspace."
+      ],
       "User": [
         "Utilizator"
       ],
@@ -3202,7 +3223,7 @@
       "Failed to resend invitation": [
         "Eșuare retrimitere invitație."
       ],
-      "Failed to trash document.": [
+      "Failed to trash document": [
         "Documentul nu a putut fi mutat în gunoi."
       ],
       "Failed to unshare node": [
@@ -5014,6 +5035,9 @@
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Ajutați-ne să îmbunătățim această experiență raportând problema. Dacă nu vă deranjează să partajați conținutul din foaia de calcul, atașați informațiile de depanare de mai jos la raport."
       ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Ajutați-ne să îmbunătățim această experiență raportând problema. Atașați informațiile de depanare de mai jos la raportul trimis."
+      ],
       "here": [
         "aici"
       ],
@@ -5690,6 +5714,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Am detectat că ați întâmpinat anterior probleme la deschiderea unui document."
       ],
       "Week": [
         "Săptămâna"
@@ -8093,6 +8120,9 @@
       "\"${ newName }\" renamed successfully": [
         "„${ newName }” a fost redenumit."
       ],
+      "\"Document deleted permanently": [
+        "Documentul a fost șters permanent."
+      ],
       "${ count } item failed to be decrypted": [
         "Nu s-a putut decripta un articol.",
         "Nu s-au putut decripta ${ count } articole.",
@@ -8190,9 +8220,6 @@
       "Device renamed": [
         "Dispozitivul a fost redenumit."
       ],
-      "Document failed to be restored from trash": [
-        "Documentul nu a putut fi restaurat din gunoi."
-      ],
       "Document moved to trash": [
         "Documentul a fost mutat în gunoi."
       ],
@@ -8208,6 +8235,9 @@
       "Failed to accept share invitation": [
         "Eșuare acceptare invitație partajată"
       ],
+      "Failed to delete document": [
+        "Ștergerea documentului a eșuat."
+      ],
       "Failed to download files: ${ err }": [
         "Nu s-a reușit descărcarea fișierelor: ${ err }"
       ],
@@ -8222,6 +8252,12 @@
       ],
       "Failed to rename document": [
         "Redenumirea documentului a eșuat."
+      ],
+      "Failed to restore document": [
+        "Restaurarea documentului a eșuat."
+      ],
+      "Failed to trash document": [
+        "Documentul nu a putut fi mutat în gunoi."
       ],
       "Failed to upload files: ${ err }": [
         "Nu s-a reușit încărcarea fișierelor: ${ err }"
@@ -10615,6 +10651,9 @@
       "Private browsing vs VPN": [
         "Navigare privată versus un VPN"
       ],
+      "Problems Detected": [
+        "Probleme detectate"
+      ],
       "Public link": [
         "Legătură web publică"
       ],
@@ -10776,6 +10815,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
+      ],
+      "Users and addresses": [
+        "Utilizatori și adrese"
       ],
       "Verify your password": [
         "Verificați-vă parola"
