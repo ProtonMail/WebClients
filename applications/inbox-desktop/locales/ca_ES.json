@@ -4,6 +4,17 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Cancel·la"
+      ],
+      "Open external url": [
+        "Obrir l'enllaç extern"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "El protocol ${ parsedProtocol } no està permès. Voleu obrir l'URL extern?"
+      ]
+    },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
         "\"Reinicieu i analitzeu el rendiment ara\" reiniciarà l'aplicació immediatament i capturarà un perfil d'inici.\n\n\"Analitzeu el rendiment en el pròxim llançament\" farà l'anàlisi la pròxima vegada que obriu l'aplicació. Utilitzeu-ho per a mesurar la velocitat d'inici després d'una reinicialització."

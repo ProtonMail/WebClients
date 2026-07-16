@@ -662,6 +662,12 @@
       ],
       "Waiting room": [
         "Sala de espera"
+      ],
+      "Waiting room disabled": [
+        "Sala de espera desativada"
+      ],
+      "Waiting room enabled": [
+        "Sala de espera ativada"
       ]
     },
     "Alt": {
@@ -731,6 +737,9 @@
       "Rotate camera": [
         "Girar câmera"
       ],
+      "Save my name on this device": [
+        "Salvar meu nome neste dispositivo"
+      ],
       "Screen share": [
         "Compartilhamento de tela"
       ],
@@ -772,6 +781,9 @@
       ],
       "Video settings": [
         "Configurações de vídeo"
+      ],
+      "Waiting room": [
+        "Sala de espera"
       ]
     },
     "Apps dropdown": {
@@ -1788,6 +1800,9 @@
       ]
     },
     "Error": {
+      "Background blur initialization failed. Please toggle your camera or background blur again": [
+        "Falha na inicialização do desfoque de fundo. Por favor, ative/desative a câmera ou o desfoque de fundo novamente"
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
       ],
@@ -1931,6 +1946,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Não conseguimos enviar um código de verificação usando este método."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "O seu navegador ficou sem espaço de armazenamento. Nós salvamos a gravação até este ponto."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "O seu relógio parece estar dessincronizado. Verifique a hora do sistema e tente novamente."
@@ -2168,6 +2186,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telefone apenas pode ser usado para verificar uma conta da ${ BRAND_NAME }"
       ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Modo avançado: ajuste cada constante de desfoque para a próxima versão e depois clique em Aplicar para recriar a pré-visualização. As substituições têm precedência sobre os valores de arquivos e do Unleash."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anônimo ${ particle } ${ participantNumber }"
       ],
@@ -2179,6 +2200,9 @@
       ],
       "Attention required": [
         "Atenção necessária"
+      ],
+      "Background blur initializing": [
+        "Inicializando o desfoque de fundo"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
@@ -2194,6 +2218,9 @@
       ],
       "Camera permission denied": [
         "Permissão da câmera negada"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "As alterações foram preparadas. Aplique para recriar a pré-visualização com as novas constantes."
       ],
       "Chat with everyone": [
         "Conversar com todo mundo"
@@ -2309,6 +2336,9 @@
       "Everyone has been disconnected from the call.": [
         "Todos foram desconectados da chamada."
       ],
+      "Failed to apply background blur": [
+        "Falha ao aplicar desfoque de fundo"
+      ],
       "Failed to update meeting name": [
         "Não foi possível atualizar o nome da reunião"
       ],
@@ -2317,6 +2347,9 @@
       ],
       "Failed to update meeting schedule": [
         "Não foi possível atualizar o agendamento da reunião"
+      ],
+      "Failed to update meeting waiting room status": [
+        "Falha ao atualizar o status da sala de espera da reunião"
       ],
       "Free meeting": [
         "Reunião gratuita"
@@ -2398,6 +2431,9 @@
       ],
       "Loading…": [
         "Carregando…"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Reproduza em loop um vídeo enviado ou sua câmera ao vivo com as duas versões de desfoque de fundo lado a lado."
       ],
       "Lower participant's hand": [
         "Baixar a mão do participante"
@@ -2504,6 +2540,9 @@
       "No speaker detected": [
         "Nenhum alto-falante detectado"
       ],
+      "Not sent, check your connection.": [
+        "Não enviado, verifique sua conexão."
+      ],
       "Only meetings you created appear here": [
         "Somente reuniões que você criou aparecem aqui"
       ],
@@ -2563,6 +2602,9 @@
       ],
       "Record your meetings": [
         "Gravar suas reuniões"
+      ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Grave a transmissão bruta da sua câmera e o desfoque de fundo de produção lado a lado. Parar faz o download de ambos os clipes."
       ],
       "Recording": [
         "Gravando"
@@ -2653,6 +2695,9 @@
       ],
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "O link da reunião que você tentou abrir não existe ou pode ter expirado. Verifique se o link está correto ou, em vez disso, inicie uma nova reunião segura."
+      ],
+      "This conversation started before you joined.": [
+        "Esta conversa começou antes de você entrar."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Este é um bate-papo com criptografia de ponta a ponta e mensagens efêmeras, que desaparecem ao final da chamada."
@@ -2834,6 +2879,9 @@
       "Advanced mode": [
         "Modo avançado"
       ],
+      "Anyone with the link can join": [
+        "Qualquer pessoa com o link pode participar"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -2984,6 +3032,9 @@
       "Participant controls": [
         "Controles de participantes"
       ],
+      "Participants join after you approve them": [
+        "Os participantes entram depois de você aprová-los"
+      ],
       "Passphrase": [
         "Frase secreta"
       ],
@@ -3010,6 +3061,9 @@
       ],
       "Reveal password": [
         "Mostrar senha"
+      ],
+      "Save my name on this device": [
+        "Salvar meu nome neste dispositivo"
       ],
       "Schedule meeting": [
         "Agendar reunião"
@@ -3402,6 +3456,9 @@
       "Chat": [
         "Bate-papo"
       ],
+      "Constants": [
+        "Constantes"
+      ],
       "Couldn't prepare the recording": [
         "Não foi possível preparar a gravação"
       ],
@@ -3519,6 +3576,9 @@
       ],
       "Reconnection Testing": [
         "Teste de reconexão"
+      ],
+      "Record raw vs blurred camera": [
+        "Gravar câmera bruta vs desfocada"
       ],
       "Record this meeting": [
         "Gravar esta reunião"

@@ -196,6 +196,9 @@
       "Copy forwarding address": [
         "Sao chép địa chỉ chuyển tiếp"
       ],
+      "Copy instructions": [
+        "Sao chép hướng dẫn"
+      ],
       "Copy link": [
         "Sao chép liên kết"
       ],
@@ -213,6 +216,9 @@
       ],
       "Copy to clipboard": [
         "Sao chép vào bảng tạm"
+      ],
+      "Copy token": [
+        "Sao chép mã thông báo"
       ],
       "Copy username": [
         "Sao chép tên người dùng"
@@ -249,6 +255,9 @@
       ],
       "Create note": [
         "Tạo ghi chú"
+      ],
+      "Create token": [
+        "Tạo mã thông báo"
       ],
       "Create vault": [
         "Tạo kho"
@@ -309,6 +318,12 @@
       ],
       "Do not show again when I press": [
         "Không hiển thị lại khi nhấn"
+      ],
+      "Do not show this again": [
+        "Không hiển thị lại"
+      ],
+      "Don't show this again": [
+        "Không hiển thị lại"
       ],
       "Done": [
         "Xong"
@@ -457,6 +472,9 @@
       "Manage access": [
         "Quản lý quyền truy cập"
       ],
+      "Manage vault access": [
+        "Quản lý quyền truy cập kho"
+      ],
       "Manually sync your data": [
         "Đồng bộ dữ liệu thủ công"
       ],
@@ -492,6 +510,9 @@
       ],
       "Multiple select": [
         "Lựa chọn nhiều nội dung"
+      ],
+      "New token": [
+        "Mã thông báo mới"
       ],
       "Next": [
         "Tiếp theo"
@@ -555,6 +576,12 @@
       ],
       "Regenerate": [
         "Tạo lại"
+      ],
+      "Regex invalid": [
+        "Regex không hợp lệ"
+      ],
+      "Regex unsafe": [
+        "Regex không an toàn"
       ],
       "Reject": [
         "Từ chối"
@@ -757,6 +784,9 @@
       "Via secure link": [
         "Tạo liên kết bảo mật"
       ],
+      "View agent activity": [
+        "Xem hoạt động của trợ lý"
+      ],
       "View details": [
         "Xem chi tiết"
       ],
@@ -780,6 +810,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Trình quản lý mật khẩu không có ở đây? Hãy yêu cầu."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Hoạt động"
+      ],
+      "Activity details could not be loaded.": [
+        "Không thể tải chi tiết hoạt động."
+      ],
+      "Folder": [
+        "Thư mục"
+      ],
+      "Item": [
+        "Mục"
+      ],
+      "Reason": [
+        "Lý do"
+      ],
+      "Vault": [
+        "Kho"
       ]
     },
     "App menu": {
@@ -935,6 +985,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Không thể phân tích cú pháp tệp ${ provider }. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Quá trình kiểm tra mở khóa trên máy tính đang diễn ra."
+      ],
       "A domain ownership must be verified first.": [
         "Quyền sở hữu miền phải được xác minh trước."
       ],
@@ -964,6 +1017,21 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Không xác thực được. Xác nhận mật khẩu thứ hai để tiếp tục xuất dữ liệu"
+      ],
+      "Biometric authentication failed.": [
+        "Xác thực sinh trắc học thất bại."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Thông tin đăng nhập khóa sinh trắc học không khớp."
+      ],
+      "Biometric lock credentials not found.": [
+        "Không tìm thấy thông tin đăng nhập khóa sinh trắc học."
+      ],
+      "Biometric lock is not configured.": [
+        "Khóa sinh trắc học chưa được cấu hình."
+      ],
+      "Biometric lock setup failed.": [
+        "Thiết lập khóa sinh trắc học thất bại."
       ],
       "Cannot send invitation at the moment": [
         "Hiện tại không thể gửi lời mời"
@@ -1001,6 +1069,9 @@
       "Could not validate addresses at the moment.": [
         "Không thể xác thực các địa chỉ ngay lúc này."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Không thể tải hướng dẫn thiết lập trợ lý. Vui lòng sao chép mã thông báo bên dưới, mã này sẽ không được hiển thị lại."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Tệp CSV bị thiếu tiêu đề mong đợi: ${ missingHeaders }"
       ],
@@ -1034,11 +1105,17 @@
       "Emptying trash failed": [
         "Không dọn sạch được thùng rác"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Giao tiếp được mã hóa với ứng dụng máy tính ${ PASS_APP_NAME } thất bại."
+      ],
       "Encrypted JSON not supported": [
         "Tệp JSON đã mã hóa không được hỗ trợ"
       ],
       "Error reporting problem": [
         "Lỗi khi báo cáo vấn đề"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Thời gian hết hạn phải từ 1 giờ đến 1 năm"
       ],
       "Failed loading group members": [
         "Không tải được các thành viên nhóm"
@@ -1061,6 +1138,9 @@
       "Failed to change mailbox": [
         "Không thay đổi được hộp thư"
       ],
+      "Failed to create access token": [
+        "Tạo mã thông báo truy cập thất bại"
+      ],
       "Failed to create domain": [
         "Không tạo được miền"
       ],
@@ -1069,6 +1149,9 @@
       ],
       "Failed to create the contact": [
         "Không tạo được liên hệ"
+      ],
+      "Failed to delete access token": [
+        "Xóa mã thông báo truy cập thất bại"
       ],
       "Failed to delete domain": [
         "Không xóa được miền"
@@ -1088,6 +1171,9 @@
       "Failed to edit user's access.": [
         "Lỗi khi chỉnh sửa quyền truy cập của người dùng."
       ],
+      "Failed to load access tokens": [
+        "Không tải được các mã thông báo truy cập"
+      ],
       "Failed to load breaches for this address": [
         "Không tải được các vi phạm cho địa chỉ này"
       ],
@@ -1099,6 +1185,9 @@
       ],
       "Failed to load item history": [
         "Không tải được lịch sử mục"
+      ],
+      "Failed to load token actions": [
+        "Không tải được các hành động của mã thông báo"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Không di chuyển được mọi mục từ \"${ payload.content.name }\""
@@ -1130,6 +1219,12 @@
       "Failed to set default mailbox": [
         "Không thể đặt hộp thư mặc định"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Khởi động tác nhân SSH thất bại: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Dừng tác nhân SSH thất bại: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Đồng bộ biệt danh không thành công"
       ],
@@ -1156,6 +1251,9 @@
       ],
       "Failed to update random prefix generation setting.": [
         "Không thể cập nhật cài đặt tạo tiền tố ngẫu nhiên."
+      ],
+      "Failed to update vault access": [
+        "Cập nhật quyền truy cập kho thất bại"
       ],
       "Failed to verify domain": [
         "Không thể xác minh miền"
@@ -1211,6 +1309,9 @@
       "Name is required": [
         "Bắt buộc phải điền tên"
       ],
+      "Name must be 191 characters or fewer": [
+        "Tên phải từ 191 ký tự trở xuống"
+      ],
       "Network error": [
         "Lỗi mạng"
       ],
@@ -1255,6 +1356,24 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Đã xảy ra lỗi. Vui lòng đăng nhập lại."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Ứng dụng máy tính ${ PASS_APP_NAME } không phản hồi kịp thời."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Ứng dụng ${ PASS_APP_NAME } trên máy tính đang bị khóa, phải được mở khóa."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Ứng dụng ${ PASS_APP_NAME } trên máy tính chưa được cài đặt."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Ứng dụng ${ PASS_APP_NAME } trên máy tính không phản hồi, ứng dụng có đang chạy không?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Ứng dụng máy tính ${ PASS_APP_NAME } được đăng nhập bằng một tài khoản khác."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Ứng dụng máy tính ${ PASS_APP_NAME } cần phải được đăng nhập."
       ],
       "The session has expired. Please sign in again.": [
         "Phiên đã hết hạn. Vui lòng đăng nhập lại."
@@ -1458,6 +1577,12 @@
       "${ forwardedEmailsCount } forwarded": [
         "Đã chuyển tiếp ${ forwardedEmailsCount }"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } muốn chia sẻ một mục với nhóm quản trị."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } muốn chia sẻ một mục với nhóm ${ name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } muốn chia sẻ một mục với bạn."
       ],
@@ -1482,6 +1607,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } sẽ chỉ nhập các đăng nhập, ghi chú, thẻ tín dụng và danh tính."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } sẽ sử dụng khóa SSH được lưu trong các kho."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Đã kích hoạt chế độ ngoại tuyến ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1499,6 +1627,9 @@
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } rò rỉ đã dược phát hiện"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "Đã chọn ${ selectedShareIds.size }"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } thành viên)"
@@ -1532,6 +1663,15 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Truy cập vào ${ PASS_APP_NAME } sẽ cần vân tay hoặc mã PIN thiết bị."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Mã thông báo truy cập \"${ action.token.Name }\" đã hết hạn. Nếu bị xóa, mã này sẽ không còn hiển thị."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Mã thông báo truy cập \"${ action.token.Name }\" sẽ ngừng hoạt động ngay lập tức. Hành động này không thể hoàn tác."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Mã thông báo truy cập, được sử dụng cùng với ${ passCliLink }, cho phép tự động hóa CI/CD hoặc cấp cho trợ lý AI quyền truy cập trong phạm vi cần thiết để thực hiện công việc."
       ],
       "Add your custom email address to monitor:": [
         "Thêm địa chỉ email tùy chỉnh để giám sát:"
@@ -1587,6 +1727,9 @@
       "All trashed items successfully restored": [
         "Đã khôi phục thành công mọi mục trong thùng rác"
       ],
+      "An item previously shared with you was removed.": [
+        "Một mục đã được chia sẻ trước đây đã bị xóa."
+      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Chắc chắn muốn xóa ${ emailJSX } khỏi các hộp thư của mình không?"
       ],
@@ -1605,6 +1748,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Trước khi trích xuất dữ liệu với định dạng này, vui lòng mở tùy chỉnh Safari -> \"Tổng quan\" -> vô hiệu hóa tùy chọn \"Mở các tập tin an toàn sau khi tải về\". Điều này sẽ giúp trình duyệt Safari tránh khỏi trích xuất sai tập tin."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Từ 60 (1 giờ) đến 525600 (1 năm)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Khóa sinh trắc học đã đăng ký thành công. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
       ],
@@ -1613,6 +1759,9 @@
       ],
       "Breaches detected": [
         "Phát hiện vi phạm"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Đưa các mật khẩu hiện có vào ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Sử dụng miền riêng và bạn không cần phải mua thêm giải pháp lưu trữ email nào nữa."
@@ -1665,14 +1814,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Đã sao chép vào bảng tạm (hết hạn sau ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Sao chép đoạn mã markdown bên dưới và gửi cho trợ lý AI. Đây là lần duy nhất mã thông báo này được hiển thị."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Sao chép mã thông báo này ngay. Vì lý do bảo mật, mã này sẽ không được hiển thị lại."
+      ],
       "Coupon successfully applied!": [
         "Áp dụng phiếu mua hàng thành công!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Tạo một mã thông báo để tích hợp ${ PASS_APP_NAME } với các tập lệnh và công cụ."
       ],
       "Create contact illustration": [
         "Minh họa tạo liên hệ"
       ],
+      "Created ${ createdDate }": [
+        "Đã tạo ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Đã tạo ${ time }."
+      ],
+      "Created item": [
+        "Mục đã tạo"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV cung cấp định dạng thuận tiện để xem dữ liệu. Tuy nhiên do tính đơn giản, một số dữ liệu sẽ không được bao gồm (trường tùy chỉnh, mã khóa...). Để xuất đầy đủ, nên sử dụng định dạng khác."
@@ -1685,6 +1849,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Tên hiển thị mặc định cho các biệt danh được tạo với ${ domainDisplay } trừ khi bị ghi đè bởi tên hiển thị của biệt danh."
+      ],
+      "Deleted item": [
+        "Mục đã xóa"
       ],
       "Deleted items will be moved here first": [
         "Các mục bị xóa sẽ chuyển đến đây trước"
@@ -1706,6 +1873,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Miền: ${ domainPath } hoặc @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Tải xuống pass-cli từ ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Thả tệp vào đây để tải lên"
@@ -1752,6 +1922,9 @@
       "Enabling biometrics lock failed": [
         "Bật khóa sinh trắc học thất bại"
       ],
+      "Enabling desktop auto-lock": [
+        "Kích hoạt tự động khóa máy tính"
+      ],
       "Enabling offline mode...": [
         "Đang kích hoạt chế độ ngoại tuyến..."
       ],
@@ -1776,14 +1949,23 @@
       "Enter your PIN code": [
         "Nhập mã PIN"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Mọi hành động mã thông báo trợ lý này đã thực hiện, mới nhất trước tiên."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Mỗi khi biệt danh nhận được email từ ai đó, một liên hệ mới sẽ được tạo tự động."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Đã hết hạn vào ${ formattedDate }"
       ],
       "Expires in": [
         "Hết hạn trong"
       ],
       "Expires in ${ remainingTime }": [
         "Hết hạn trong ${ remainingTime }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Hết hạn vào ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Đang xuất dữ liệu..."
@@ -1803,6 +1985,9 @@
       "finance": [
         "tài chính"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Tìm \"OpenSSH Authentication Agent\", nhấp chuột phải chọn Properties."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Làm theo các bước sau để nhập dữ liệu bằng tệp CSV chung:"
       ],
@@ -1821,6 +2006,9 @@
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Các mật khẩu đã tạo sẽ được lưu trữ trong ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần."
       ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Tận dụng tối đa ${ PASS_APP_NAME } bằng cách tạo một kho cho mỗi nhóm hoặc dự án."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Nhận không giới hạn biệt danh, tận hưởng các tính năng độc quyền, vầ hỗ trợ chúng tôi bằng việc đăng ký gói Pass Plus."
       ],
@@ -1838,6 +2026,9 @@
       ],
       "Identity confirmed": [
         "Danh tính đã được xác nhận"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Nếu không có kế hoạch sử dụng tác nhân SSH trên một tài khoản trả phí khác, hãy nhớ vô hiệu hóa cài đặt này trước khi chuyển sang tài khoản đó."
       ],
       "Import the CSV file below.": [
         "Nhập tệp CSV vào bên dưới."
@@ -1868,6 +2059,9 @@
       ],
       "Invite successfully resent": [
         "Đã gửi lại lời mời thành công"
+      ],
+      "invites the group ${ name } to access items in": [
+        "mời nhóm ${ name } truy cập các mục trong"
       ],
       "invites you to access items in": [
         "mời bạn truy cập mục trong"
@@ -1935,11 +2129,17 @@
       "Loading ${ PASS_APP_NAME }": [
         "Đang tải ${ PASS_APP_NAME }"
       ],
+      "Log out of any existing session:": [
+        "Đăng xuất khỏi mọi phiên hiện có:"
+      ],
       "Logging you out...": [
         "Đang đăng xuất bạn..."
       ],
       "Low Priority": [
         "Ưu tiên thấp"
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Đảm bảo duy trì hoạt động của ${ PASS_APP_NAME } (có thể thu nhỏ) để tác nhân SSH luôn hoạt động. Khóa SSH có cụm mật khẩu hiện không được hỗ trợ."
       ],
       "Manager": [
         "Người quản lý"
@@ -1961,6 +2161,9 @@
       ],
       "Move ${ count } item": [
         "Di chuyển ${ count } mục"
+      ],
+      "Moved item to trash": [
+        "Đã chuyển mục vào Thùng rác"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
@@ -1992,14 +2195,26 @@
       "New version ${ latestVersion } is available.": [
         "Đã có phiên bản mới ${ latestVersion }."
       ],
+      "No activity recorded yet.": [
+        "Chưa ghi nhận hoạt động nào."
+      ],
       "No breaches detected": [
         "Không có vi phạm dữ liệu nào"
       ],
       "No network connection": [
         "Không có kết nối mạng"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Không tìm thấy khóa SSH nào trong ${ PASS_SHORT_APP_NAME }. Hãy tạo các mục khóa SSH để sử dụng với tác nhân."
+      ],
+      "No vaults available.": [
+        "Không có kho nào khả dụng."
+      ],
       "None": [
         "Không có"
+      ],
+      "None selected": [
+        "Chưa chọn mục nào"
       ],
       "Not recommended": [
         "Không được khuyến nghị"
@@ -2012,6 +2227,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Truy cập trực tuyến vào ${ PASS_APP_NAME } sẽ cần mã PIN. Sẽ bị đăng xuất sau 3 lần thử thất bại."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Chỉ hiển thị các mã thông báo đã hết hạn trong 30 ngày qua. Các mã thông báo cũ hơn sẽ tự động bị xóa."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Mở \"Services\" (có thể sử dụng thanh tìm kiếm của Windows hoặc nhấn tổ hợp phím Win+R và nhập services.msc)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Mở cài đặt Safari cho phần mở rộng và xác minh quyền trang web đã được kích hoạt cho các miền ${ BRAND_NAME }"
@@ -2036,6 +2257,9 @@
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Mật khẩu cũ hơn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần sẽ bị tự động xóa trong lịch sử."
+      ],
+      "Paste the following command in your terminal:": [
+        "Dán lệnh sau vào terminal:"
       ],
       "Paused": [
         "Đã ngừng"
@@ -2181,6 +2405,15 @@
       "Press Enter to copy": [
         "Nhấn Enter để sao chép"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Được bảo vệ bởi ${ PROTON_SENTINEL_LINK }, chương trình bảo vệ tài khoản nâng cao"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Xếp hạng theo trường (tiêu đề trước, sau đó là tên người dùng hoặc email, trang web, ghi chú) và độ chính xác khớp (khớp hoàn toàn, bắt đầu bằng, chứa)."
+      ],
+      "Read item": [
+        "Đọc mục"
+      ],
       "Reconnect": [
         "Kết nối lại"
       ],
@@ -2214,6 +2447,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Việc đặt lại lịch sử sẽ xóa vĩnh viễn tất cả các phiên bản mục trước đây và không thể hoàn tác."
       ],
+      "Restored item from trash": [
+        "Đã khôi phục mục từ Thùng rác"
+      ],
       "Restoring items from trash": [
         "Khôi phục mục từ thùng rác"
       ],
@@ -2228,6 +2464,9 @@
       ],
       "Select destination vault": [
         "Chọn kho đến"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Chọn các kho mà \"${ token.Name }\" có thể đọc."
       ],
       "Select vault to share": [
         "Chọn kho để chia sẻ"
@@ -2252,6 +2491,9 @@
       ],
       "Session timed out": [
         "Phiên hết hạn"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Đặt \"Startup type\" thành Disabled, nhấp OK."
       ],
       "Set by your organization": [
         "Được thiết lập bới tổ chức"
@@ -2304,8 +2546,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Chạm vào biểu tượng ${ gearIcon } để tùy chỉnh biệt danh theo ý muốn."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Kiểm tra mã thông báo bằng cách đăng nhập và liệt kê các kho:"
+      ],
       "Thank you, the problem has been reported": [
         "Cảm ơn bạn, vấn đề này đã được báo cáo"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Trợ lý sẽ được yêu cầu cung cấp lý do cho mỗi hành động thực hiện và mỗi hành động sẽ được ghi lại trong nhật ký kiểm tra có thể xem lại. Sau khi tạo mã thông báo, sẽ có hướng dẫn sao chép-dán vào trợ lý AI."
       ],
       "The changelog can be found ${ changelogLink }.": [
         "Các thay đổi có thể được tìm thấy tại ${ changelogLink }."
@@ -2328,6 +2576,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "Không thể nhập ${ totalIgnored } mục sau đây:"
       ],
+      "The group is invited to a vault.": [
+        "Nhóm được mời vào một kho."
+      ],
       "The secure link has been removed": [
         "Liên kết bảo mật đã bị xóa"
       ],
@@ -2337,11 +2588,17 @@
       "The user did not accept the invitation yet.": [
         "Người dùng hiện chưa chấp nhận lời mời."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Sau đó, có thể truy cập ${ url } để sao chép hướng dẫn gửi cho trợ lý AI."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tệp xuất này sẽ không đã mã hóa và tất cả những người có thể truy cập vào file xuất này sẽ thấy được mật khẩu. Vì lý do an toàn, vui lòng xóa file này khi bạn đã sử dụng xong."
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Tính năng này hiện đang thử nghiệm trên Linux. Vui lòng đảm bảo hệ thống đã được cập nhật."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Tính năng này yêu cầu ứng dụng ${ PASS_APP_NAME } trên máy tính phải được cài đặt và đang chạy trong quá trình thiết lập."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Mục này hiện chưa được chia sẻ với ai. Mời mọi người để chia sẻ mục này với những người khác."
@@ -2367,6 +2624,9 @@
       "This setting is enforced by your organization": [
         "Cài đặt này do tổ chức quy định"
       ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Mã thông báo này có quyền chỉ đọc đối với các kho được chọn. Nó có thể đọc các mục nhưng không thể chỉnh sửa chúng, chia sẻ kho hoặc mời người khác. Có thể thay đổi điều này sau."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Kho này hiện chưa được chia sẻ với ai. Để chia sẻ, hãy mời thêm người."
       ],
@@ -2375,6 +2635,9 @@
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Thao tác này sẽ từ chối thiết bị **${ name }** đã cố gắng đăng nhập vào tài khoản ${ BRAND_NAME } vào **${ date }**."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Mẹo: thêm lệnh này vào tệp .bashrc hoặc .zshrc để tự động chạy khi mở terminal."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Để tiếp tục nhận email, hãy chuyển các biệt danh này sang hộp thư khác:"
@@ -2387,6 +2650,12 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Để xem lại dữ liệu đã nhập, hãy nhấp vào biểu tượng ${ PASS_APP_NAME } trên thanh công cụ trình duyệt."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Để thiết lập mở khóa bằng sinh trắc học, ${ PASS_APP_NAME } yêu cầu quyền trình duyệt mới. Sau khi chấp nhận, phần mở rộng sẽ tải lại. Vui lòng mở lại trang này sau đó."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Để sử dụng tác nhân SSH ${ PASS_APP_NAME } trên Windows, dịch vụ OpenSSH phải được vô hiệu hóa."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Được tin dùng bởi hơn 50.000 người dùng doanh nghiệp và 100 triệu tài khoản trên toàn thế giới."
@@ -2421,11 +2690,17 @@
       "Unverified": [
         "Chưa xác minh"
       ],
+      "Updated item": [
+        "Mục đã cập nhật"
+      ],
       "Updating vault organization...": [
         "Đang cập nhật tổ chức kho..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Nâng cấp bây giờ để mở khóa các tính năng cao cấp"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Nâng cấp lên ${ PASS_APP_NAME } Plus để tạo mã thông báo truy cập và sử dụng ${ PASS_APP_NAME } bằng lập trình."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Nâng cấp lên gói trả phí để tạo nhiều kho."
@@ -2447,6 +2722,12 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Đã cập nhật thành công kho \"${ payload.share.content.name }\""
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Kho \"${ share.content.name }\" đã bị xóa."
+      ],
+      "Vault access granted": [
+        "Đã cấp quyền truy cập kho"
       ],
       "Vault organization successfully updated": [
         "Đã cập nhật tổ chức kho thành công"
@@ -2490,6 +2771,15 @@
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Có thể sử dụng mật khẩu ${ BRAND_NAME } để truy cập ${ PASS_SHORT_APP_NAME } ngoại tuyến"
       ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Hiện có thể sử dụng mật khẩu sao lưu để truy cập ${ PASS_SHORT_APP_NAME } ngoại tuyến"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Hiện có thể sử dụng mật khẩu bổ sung để truy cập ${ PASS_SHORT_APP_NAME } ngoại tuyến"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Hiện có thể sử dụng mật khẩu thứ hai để truy cập ${ PASS_SHORT_APP_NAME } ngoại tuyến"
+      ],
       "You cannot change the mailboxes for this alias.": [
         "Không thể đổi hộp thư cho biệt danh này."
       ],
@@ -2520,8 +2810,20 @@
       "You may close this tab.": [
         "Có thể đóng tab này."
       ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Có thể cần cấp quyền trợ năng cho ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Cần một kho có quyền chỉnh sửa trước khi có thể nhập các mục."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Không còn quyền truy cập vào một số kho hoặc mục nữa vì quyền truy cập của nhóm ${ groupName } đã bị xóa."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Hiện đã có quyền truy cập vào \"Mục ${ itemName }\" vì nhóm ${ groupName } đã được cấp quyền truy cập."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Hiện đã có quyền truy cập vào \"Kho ${ vaultName }\" vì nhóm ${ groupName } đã được cấp quyền truy cập."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Có thể tùy chỉnh cài đặt miền (biệt danh email nhận tất cả, tên hiển thị mặc định cho biệt danh, v.v.) sau khi xác minh miền."
@@ -2638,11 +2940,23 @@
       "${ years } year": [
         "${ years } năm"
       ],
+      "1 day": [
+        "1 ngày"
+      ],
       "1 hour": [
         "1 giờ"
       ],
       "1 minute": [
         "1 phút"
+      ],
+      "1 month": [
+        "1 tháng"
+      ],
+      "1 week": [
+        "1 tuần"
+      ],
+      "1 year": [
+        "1 năm"
       ],
       "10 minutes": [
         "10 phút"
@@ -2685,6 +2999,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Access tokens": [
+        "Mã thông báo truy cập"
       ],
       "Account": [
         "Tài khoản"
@@ -2758,6 +3075,9 @@
       "Bank Name": [
         "Tên ngân hàng"
       ],
+      "Basic": [
+        "Cơ bản"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Ngoài việc lưu trữ thông tin đăng nhập, ${ PASS_APP_NAME } bảo vệ danh tính bằng tính năng biệt danh email tích hợp. Bất cứ khi nào đăng ký tài khoản trực tuyến mới, ${ PASS_APP_NAME } có thể tự động tạo một biệt danh để bảo vệ địa chỉ email thực. "
       ],
@@ -2790,6 +3110,9 @@
       ],
       "Catch-All": [
         "Nhận tất cả"
+      ],
+      "Check": [
+        "Kiểm tra"
       ],
       "Checkbox": [
         "Hộp kiểm"
@@ -2872,6 +3195,12 @@
       "Crypto Wallet": [
         "Ví tiền điện tử"
       ],
+      "Custom": [
+        "Tùy chỉnh"
+      ],
+      "Custom expiration (minutes)": [
+        "Thời gian hết hạn tùy chỉnh (phút)"
+      ],
       "Custom Items": [
         "Mục tùy chỉnh"
       ],
@@ -2947,6 +3276,12 @@
       "Enter email or username": [
         "Nhập email hoặc tên người dùng"
       ],
+      "Exact host matching": [
+        "Khớp máy chủ chính xác"
+      ],
+      "Exact URL matching": [
+        "Khớp URL chính xác"
+      ],
       "Experimental": [
         "Thử nghiệm"
       ],
@@ -2955,6 +3290,9 @@
       ],
       "Expired": [
         "Đã hết hạn"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Mã thông báo đã hết hạn (${ expired.length })"
       ],
       "Expires in": [
         "Hết hạn sau"
@@ -3271,6 +3609,9 @@
       "Never": [
         "Không bao giờ"
       ],
+      "Never fill on this exact URL": [
+        "Không bao giờ điền trên URL chính xác này"
+      ],
       "New": [
         "Mới"
       ],
@@ -3333,6 +3674,9 @@
       ],
       "Owner": [
         "Chủ sở hữu"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Miền gốc và miền phụ (mặc định)"
       ],
       "Passkey": [
         "Mã khóa"
@@ -3444,6 +3788,12 @@
       ],
       "Reddit handle": [
         "Tên tài khoản Reddit"
+      ],
+      "Regular expression": [
+        "Biểu thức chính quy"
+      ],
+      "Relevant": [
+        "Liên quan nhất"
       ],
       "Remove link": [
         "Xóa liên kết"
@@ -3570,6 +3920,9 @@
       ],
       "SSN": [
         "Số BHXH"
+      ],
+      "Starts with": [
+        "Bắt đầu với"
       ],
       "State or province": [
         "Tỉnh thành"
@@ -3700,6 +4053,15 @@
       "Update": [
         "Cập nhật"
       ],
+      "URL wildcard pattern": [
+        "Mẫu ký tự đại diện URL"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Sử dụng ${ PASS_APP_NAME } làm tác nhân SSH"
+      ],
+      "Use for AI agent": [
+        "Dùng cho trợ lý AI"
+      ],
       "Used in": [
         "Sử dụng trong"
       ],
@@ -3714,6 +4076,9 @@
       ],
       "Value:": [
         "Giá trị:"
+      ],
+      "Vault access": [
+        "Truy cập kho"
       ],
       "Vault ID": [
         "ID kho"
@@ -3830,6 +4195,24 @@
       "${ count } item": [
         "${ count } mục"
       ],
+      "'Starts with' matching rule": [
+        "Quy tắc khớp 'Bắt đầu với'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Quy tắc khớp chính xác miền (phụ)"
+      ],
+      "Exact URL matching rule": [
+        "Quy tắc khớp URL chính xác"
+      ],
+      "Never fill with this exact URL": [
+        "Không bao giờ điền với URL chính xác này"
+      ],
+      "Regular expression rule": [
+        "Quy tắc biểu thức chính quy"
+      ],
+      "Wildcard pattern matching rule": [
+        "Quy tắc khớp mẫu ký tự đại diện"
+      ],
       "You can drag and drop the selected item to another vault": [
         "Có thể kéo và thả các mục đã chọn sang kho khác"
       ],
@@ -3851,6 +4234,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } đã được kích hoạt"
+      ],
+      "Access token deleted": [
+        "Đã xóa mã thông báo truy cập"
       ]
     },
     "Option": {
@@ -3970,6 +4356,12 @@
       "The file you are trying to import is empty": [
         "Tệp đang cố gắng nhập là tệp trống"
       ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Tính năng này không được hỗ trợ trong gói đang dùng. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Tính năng này không được hỗ trợ trong gói đang dùng. Liên hệ quản trị viên để có quyền truy cập."
+      ],
       "Total files: ": [
         "Tổng số tệp: "
       ],
@@ -4029,6 +4421,9 @@
       ],
       "Coupon": [
         "Phiếu mua hàng"
+      ],
+      "e.g. 60": [
+        "ví dụ: 60"
       ],
       "e.g. My automation script": [
         "Ví dụ: Tập lệnh tự động hóa của tôi"
@@ -4115,6 +4510,23 @@
         "Sử dụng cho ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Nhập một URL để kiểm tra xem quy tắc hiện tại có khớp với URL đó không"
+      ],
+      "The rule is matching this URL": [
+        "Quy tắc này khớp với URL này"
+      ],
+      "The rule is NOT matching this URL": [
+        "Quy tắc này KHÔNG khớp với URL này"
+      ],
+      "This URL will be blocked from autofill": [
+        "URL này sẽ bị chặn tự động điền"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "URL này sẽ KHÔNG bị chặn tự động điền"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Phát hiện rò rỉ tiềm ẩn liên quan đến ${ name } và ${ remainingCount } rò rỉ khác. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết. ${ link }"
@@ -4190,6 +4602,20 @@
         "Không xác định"
       ]
     },
+    "Status": {
+      "Active": [
+        "Đang hoạt động"
+      ],
+      "Agent": [
+        "Trợ lý"
+      ],
+      "Expired": [
+        "Đã hết hạn"
+      ],
+      "Expiring soon": [
+        "Sắp hết hạn"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Đã kích hoạt đồng bộ biệt danh thành công. Có thể mất một lúc để đồng bộ biệt danh SimpleLogin."
@@ -4251,6 +4677,12 @@
       "Random prefix generation successfully enabled": [
         "Đã kích hoạt tạo tiền tố ngẫu nhiên thành công"
       ],
+      "SSH agent successfully started": [
+        "Đã khởi động tác nhân SSH thành công"
+      ],
+      "SSH agent successfully stopped": [
+        "Đã dừng tác nhân SSH thành công"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "kho không thể có hơn ${ targetMaxMembers } thành viên."
       ],
@@ -4276,6 +4708,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "Quản lý ${ PASS_SHORT_APP_NAME }"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Mã thông báo truy cập yêu cầu gói ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Bảo vệ tài khoản"
       ],
@@ -4285,11 +4720,20 @@
       "Activity": [
         "Hoạt động"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Hoạt động của \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Thêm miền tùy chỉnh"
       ],
       "Add mailbox": [
         "Thêm hộp thư"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Điều chỉnh hành vi tự động điền để thay đổi vị trí gợi ý đăng nhập."
+      ],
+      "Agent setup instructions": [
+        "Hướng dẫn thiết lập trợ lý"
       ],
       "Alias contacts": [
         "Liên hệ biệt danh"
@@ -4314,6 +4758,9 @@
       ],
       "Breaches detected for": [
         "Phát hiện vi phạm đối với"
+      ],
+      "Browser permission required": [
+        "Yêu cầu quyền trình duyệt"
       ],
       "Cancel changing your email?": [
         "Hủy thay đổi email?"
@@ -4348,6 +4795,9 @@
       "Create contact": [
         "Tạo liên hệ"
       ],
+      "Create new access token": [
+        "Tạo mã thông báo truy cập mới"
+      ],
       "Create PIN code": [
         "Tạo mã PIN"
       ],
@@ -4377,6 +4827,9 @@
       ],
       "Delete ${ deletedItemsCount } item?": [
         "Xóa ${ deletedItemsCount } mục?"
+      ],
+      "Delete access token?": [
+        "Xóa mã thông báo truy cập?"
       ],
       "Delete domain": [
         "Xóa miền"
@@ -4477,6 +4930,9 @@
       "Last modified": [
         "Chỉnh sửa đổi lần cuối"
       ],
+      "Learn more": [
+        "Tìm hiểu thêm"
+      ],
       "Leave this item?": [
         "Rời khỏi mục này?"
       ],
@@ -4491,6 +4947,9 @@
       ],
       "Mailbox": [
         "Hộp thư"
+      ],
+      "Manage vault access": [
+        "Quản lý quyền truy cập kho"
       ],
       "Mark as resolved?": [
         "Đánh dấu là đã xử lý?"
@@ -4524,6 +4983,9 @@
       ],
       "Next": [
         "Tiếp theo"
+      ],
+      "No access tokens yet": [
+        "Chưa có mã thông báo truy cập nào"
       ],
       "No excluded items": [
         "Không có mục bị loại trừ"
@@ -4627,6 +5089,9 @@
       "Review and share": [
         "Xem lại và chia sẻ"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Ảnh chụp màn hình dịch vụ OpenSSH trên Windows"
+      ],
       "Secure your data": [
         "Bảo vệ dữ liệu của bạn"
       ],
@@ -4648,6 +5113,9 @@
       "Settings": [
         "Cài đặt"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Thiết lập Tác nhân SSH ${ PASS_APP_NAME }"
+      ],
       "Setup offline mode": [
         "Thiết lập chế độ ngoại tuyến"
       ],
@@ -4665,6 +5133,9 @@
       ],
       "SPF (Optional)": [
         "SPF (Tùy chọn)"
+      ],
+      "SSH Agent": [
+        "Tác nhân SSH"
       ],
       "Status": [
         "Trạng thái"
@@ -4684,6 +5155,9 @@
       "Sync your aliases from SimpleLogin": [
         "Đồng bộ biệt danh từ SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Kiểm tra một URL với quy tắc này"
+      ],
       "Transfer ownership": [
         "Chuyển quyền sở hữu"
       ],
@@ -4699,8 +5173,14 @@
       "Update available": [
         "Có bản cập nhật"
       ],
+      "URL matching": [
+        "Khớp URL"
+      ],
       "Vault": [
         "kho"
+      ],
+      "Vault shared with a group you administer": [
+        "Kho được chia sẻ với nhóm quản trị"
       ],
       "Vault shared with you": [
         "kho được chia sẽ với bạn"
@@ -4738,6 +5218,9 @@
       "Your exposed information": [
         "Thông tin bị lộ"
       ],
+      "Your new access token": [
+        "Mã thông báo truy cập mới"
+      ],
       "Your vault is empty": [
         "Kho trống"
       ],
@@ -4764,6 +5247,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Trừ khi được giải mã, mật khẩu đã mã hóa vẫn an toàn ngay cả khi bị lộ."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Đăng ký ${ planName }"
       ]
     },
     "Validation": {
@@ -4800,6 +5288,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Đã yêu cầu mật khẩu ${ BRAND_NAME }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } cung cấp khả năng kiểm soát mạnh mẽ, nhưng một lỗi nhỏ có thể khiến tính năng tự động điền khớp và điền dữ liệu trên các trang web giả mạo hoặc lừa đảo."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Đã vô hiệu hóa chế độ ngoại tuyến ${ PASS_SHORT_APP_NAME }."
@@ -4999,6 +5490,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Có lỗi xảy ra khi mở ${ PASS_APP_NAME }. Hãy thử tải lại trình mở rộng"
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Tác nhân SSH yêu cầu sử dụng khóa SSH, tính năng không khả dụng trong gói đang dùng."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Tiền tố biệt danh không thể dài hơn 40 ký tự"
       ],
@@ -5007,6 +5501,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Địa chỉ email này sẽ không còn được giám sát các vi phạm dữ liệu nữa."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Không thể gợi ý mục này để tự động điền do \"${ neverModeDescriptionStrong }\". Thêm một URL khác nếu muốn mục này tự động điền."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Mục này hiện đang được chia sẻ. Việc xóa mục này sẽ xóa quyền truy cập của tất cả người dùng khác."

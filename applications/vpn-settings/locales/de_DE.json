@@ -1542,11 +1542,6 @@
         "Benutzeradministrator:"
       ]
     },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Eine Rolle ist eine Gruppe von Berechtigungen, die du den Mitgliedern deiner Organisation zuweisen kannst."
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Wenn du jetzt beendest, können einige Kontakte nicht importiert werden."
@@ -2001,6 +1996,9 @@
       "Activated": [
         "Aktiviert"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu klären"
+      ],
       "All": [
         "Alle"
       ],
@@ -2024,6 +2022,9 @@
       ],
       "Estimated size": [
         "Geschätzte Größe"
+      ],
+      "Find out what can be migrated.": [
+        "Finde heraus, was migriert werden kann."
       ],
       "Has errors": [
         "Hat Fehler"
@@ -2075,6 +2076,27 @@
       ],
       "Status": [
         "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer kann aufgrund von Plattform-Inkompatibilitäten nicht migriert werden."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere seine Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Benutzer zu migrieren, muss er deine Einladung annehmen, ${ BRAND_NAME } beizutreten."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, dearchiviere ihn in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, hebe seine Sperrung in deiner Google Workspace Admin-Konsole auf."
       ],
       "User": [
         "Benutzer"
@@ -4518,6 +4540,9 @@
       "No contacts found to import": [
         "Keine Kontakte zum Importieren vorhanden"
       ],
+      "No drive found to import": [
+        "Es wurde kein Drive zum Importieren gefunden"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
@@ -4796,6 +4821,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Unerwarteter Fehler, wir können die Kontakte nicht importieren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -7655,6 +7683,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Stelle sicher, dass du ${ addARecoveryMethod }, damit du wieder Zugriff auf dein Konto erhältst, wenn du dein Passwort vergessen hast."
       ],
+      "Manage groups in your identity provider": [
+        "Gruppen bei deinem Identitätsanbieter verwalten"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Verwalte, auf welche ${ BRAND_NAME }-Anwendungen die Mitglieder deiner Organisation zugreifen können. Wenn deaktiviert, haben nur Administratoren Zugriff."
       ],
@@ -9758,6 +9789,9 @@
       ],
       "Import to:": [
         "Importieren nach:"
+      ],
+      "Import your emails": [
+        "Deine E-Mails importieren"
       ],
       "Include application logs in bug report": [
         "Anwendungsprotokolle im Fehlerbericht einschließen"
@@ -15854,6 +15888,9 @@
       "Save 50% for 6 months, and keep full access": [
         "Spare 6 Monate lang 50 % und behalte den vollen Zugriff"
       ],
+      "Save 50% for one year, and keep full access": [
+        "Spare ein Jahr lang 50 % und behalte den vollen Zugriff"
+      ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Erfahre, wie ${ MAIL_APP_NAME } im Vergleich abschneidet, und warum unsere Unabhängigkeit den Unterschied ausmacht."
       ],
@@ -17205,9 +17242,6 @@
       ],
       "Revoke certificate?": [
         "Zertifikat widerrufen?"
-      ],
-      "Roles and permissions": [
-        "Rollen und Berechtigungen"
       ],
       "SAML authentication": [
         "SAML-Authentifizierung"

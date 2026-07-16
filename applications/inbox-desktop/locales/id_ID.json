@@ -4,7 +4,21 @@
     "language": "id_ID"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Batal"
+      ],
+      "Open external url": [
+        "Buka URL eksternal"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Protokol ${ parsedProtocol } tidak diizinkan. Apakah Anda ingin membuka URL eksternal?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Mulai ulang dan buat profil sekarang\" akan segera memulai ulang aplikasi dan merekam profil awal.\n\n\"Buat profil saat peluncuran berikutnya\" akan membuat profil saat aplikasi dibuka kembali. Gunakan ini untuk mengukur kecepatan startup setelah boot ulang."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Tentang ${ MAIL_APP_NAME }"
       ],
@@ -23,6 +37,9 @@
       "Close Window": [
         "Tutup Jendela"
       ],
+      "Collect startup performance data": [
+        "Kumpulkan data performa startup"
+      ],
       "Copy": [
         "Salin"
       ],
@@ -31,6 +48,24 @@
       ],
       "Delete": [
         "Hapus"
+      ],
+      "Disable": [
+        "Nonaktifkan"
+      ],
+      "Disable Hardware Acceleration": [
+        "Nonaktifkan Akselerasi Perangkat Keras"
+      ],
+      "Enable": [
+        "Aktifkan"
+      ],
+      "Enable diagnostic logs": [
+        "Aktifkan log diagnostik"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Aktifkan log diagnostik dari mesin Chromium."
+      ],
+      "Enable Hardware Acceleration": [
+        "Aktifkan Akselerasi Perangkat Keras"
       ],
       "Force Reload": [
         "Paksa Muat Ulang"
@@ -50,6 +85,12 @@
       "Paste and Match Style": [
         "Tempel dan Samakan Gaya Tulisan"
       ],
+      "Profile app startup": [
+        "Buat profil saat aplikasi dimulai"
+      ],
+      "Profile on next launch": [
+        "Buat profil saat peluncuran berikutnya"
+      ],
       "Quit": [
         "Keluar"
       ],
@@ -61,6 +102,12 @@
       ],
       "Reload": [
         "Muat ulang"
+      ],
+      "Restart and profile now": [
+        "Mulai ulang dan buat profil sekarang"
+      ],
+      "Restart with logging": [
+        "Mulai ulang dengan logging"
       ],
       "Select All": [
         "Pilih Semua"
@@ -83,6 +130,15 @@
       "Stop Speaking": [
         "Berhenti Berbicara"
       ],
+      "Switch to ${ appName }": [
+        "Beralih ke ${ appName }"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "Log ini membantu mendiagnosis masalah. Aplikasi akan memulai ulang untuk menerapkan perubahan."
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Ini akan mengukur berapa lama waktu yang dibutuhkan aplikasi untuk memulai dan menyimpan laporan ke folder log Anda."
+      ],
       "Toggle Full Screen": [
         "Aktif/Nonaktifkan Layar Penuh"
       ],
@@ -91,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Copot pemasangan ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Saat akselerasi perangkat keras diaktifkan, aplikasi menggunakan perangkat keras grafis khusus perangkat untuk rendering. Hal ini dapat menyebabkan masalah kompatibilitas pada beberapa sistem."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Tanpa akselerasi perangkat keras, aplikasi menggunakan rendering perangkat lunak alih-alih kartu grafis. Animasi mungkin terasa lebih lambat dan penggunaan CPU lebih tinggi."
       ],
       "Zoom": [
         "Perbesar"
@@ -103,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Nonaktifkan Akselerasi Perangkat Keras"
+      ],
+      "Enable Hardware Acceleration": [
+        "Aktifkan Akselerasi Perangkat Keras"
+      ],
       "Services": [
         "Layanan"
       ]
@@ -154,6 +222,14 @@
       ],
       "Undo": [
         "Urungkan"
+      ]
+    },
+    "Error dialog": {
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - Kesalahan tidak terduga"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Karena adanya kesalahan, aplikasi ${ MAIL_APP_NAME } akan ditutup. Coba jalankan lagi dan, jika masalah berlanjut, hubungi kami. Informasi mengenai kesalahan tersebut dapat ditemukan di log aplikasi."
       ]
     },
     "error screen": {

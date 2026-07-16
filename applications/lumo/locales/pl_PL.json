@@ -472,6 +472,12 @@
       "${ price } per user": [
         "${ price } za użytkownika"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencja AI ${ LUMO_APP_NAME }",
+        "${ seats } licencje AI ${ LUMO_APP_NAME }",
+        "${ seats } licencji AI ${ LUMO_APP_NAME }",
+        "${ seats } licencji AI ${ LUMO_APP_NAME }"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } licencja",
         "${ seats } ${ LUMO_APP_NAME } licencje",
@@ -976,6 +982,9 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Dodaj plik do aplikacji ${ DRIVE_APP_NAME }"
       ],
+      "Add memory": [
+        "Dodaj wspomnienie"
+      ],
       "Add to active": [
         "Dodaj do aktywnych"
       ],
@@ -1000,8 +1009,17 @@
       "Clear auto-generated": [
         "Wyczyść automatycznie wygenerowane"
       ],
+      "click to hide me": [
+        "kliknij, aby mnie ukryć"
+      ],
+      "click to let me out": [
+        "kliknij, aby mnie wypuścić"
+      ],
       "Close": [
         "Zamknij"
+      ],
+      "Collapse ${ LUMO_SHORT_APP_NAME }": [
+        "Zwiń ${ LUMO_SHORT_APP_NAME }"
       ],
       "Continue": [
         "Kontynuuj"
@@ -1042,11 +1060,17 @@
       "I like this response": [
         "Lubię tę odpowiedź"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } out": [
+        "Wypuść ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Light": [
         "Jasny"
       ],
       "Manage files": [
         "Zarządzaj plikami"
+      ],
+      "More options": [
+        "Więcej opcji"
       ],
       "New chat": [
         "Nowy czat"
@@ -1104,6 +1128,9 @@
       ],
       "Turn off and delete": [
         "Wyłącz i usuń"
+      ],
+      "Turn off memory": [
+        "Wyłącz pamięć"
       ],
       "Turn on memory": [
         "Włącz pamięć"
@@ -1191,17 +1218,35 @@
       "1 TB cloud storage": [
         "1 TB przestrzeni dyskowej w chmurze"
       ],
+      "Administrative tools": [
+        "Narzędzia administracyjne"
+      ],
       "And much more": [
         "I wiele więcej"
       ],
       "Everything in Business": [
         "Wszystko w pakiecie Business"
       ],
+      "More image generations": [
+        "Więcej wygenerowanych obrazów"
+      ],
+      "More Max model usage": [
+        "Częstsze korzystanie z modelu Max"
+      ],
+      "More messages & chat history": [
+        "Więcej wiadomości i historii czatów"
+      ],
       "Password manager": [
         "Menadżer haseł"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Dzięki szyfrowaniu po stronie klienta Twoje zapisane wątki mogą być dekodowane i odczytywane tylko na Twoim urządzeniu. Ani ${ BRAND_NAME }, ani nikt inny nie może ich zobaczyć."
+      ],
+      "Unlimited Custom Lumos": [
+        "Nieograniczona liczba niestandardowych modeli Lumo"
+      ],
+      "Unlimited Projects": [
+        "Nieograniczona liczba projektów"
       ],
       "Video meetings": [
         "Spotkania wideo"
@@ -1387,6 +1432,9 @@
       "More thorough answers, but can take longer": [
         "Bardziej szczegółowe odpowiedzi, ale mogą potrwać dłużej"
       ],
+      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
+        "Trwale usuń swoje projekty, czaty i zapisane wspomnienia. Tej operacji nie można cofnąć."
+      ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Czaty projektowe są całkowicie odizolowane. Opierają się na własnych instrukcjach i plikach oraz całkowicie ignorują Twoje globalne wspomnienia."
       ],
@@ -1416,6 +1464,11 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Wyłączenie pamięci trwale usunie wszystkie ${ memories.length } zapisane wspomnienia. Możesz włączyć pamięć później, ale usuniętych wspomnień nie będzie można odzyskać."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Deletes all saved memories and turns off the memory feature.": [
+        "Usuwa wszystkie zapisane wspomnienia i wyłącza funkcję pamięci."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1919,6 +1972,9 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Wygeneruj graf przepływu pracy oraz kod implementacji dla następującego celu. Język docelowy dla kodu:"
       ],
+      "Generate them from your recent chats, or add one with + above.": [
+        "Wygeneruj je z ostatnich czatów lub dodaj nowe, klikając + powyżej."
+      ],
       "Generating…": [
         "Generowanie…"
       ],
@@ -2098,6 +2154,12 @@
       ],
       "There was an error processing this file.": [
         "Wystąpił błąd podczas przetwarzania tego pliku."
+      ],
+      "These files are no longer referred to in this conversation.": [
+        "Te pliki nie są już przywoływane w tym wątku."
+      ],
+      "These files are referred to in the conversation.": [
+        "Te pliki są przywoływane w tym wątku."
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Te pliki należały do podsumowanych wiadomości i nie są już wysyłane do modelu."
@@ -2530,8 +2592,17 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
+      "${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "${ LUMO_SHORT_APP_NAME } Pro": [
+        "${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Business": [
         "Business"
+      ],
+      "Personal": [
+        "Osobiste"
       ],
       "Plus": [
         "Plus"
@@ -2944,6 +3015,9 @@
       "Elevate your business AI experience": [
         "Przenieś swoje biznesowe doświadczenia z AI na wyższy poziom"
       ],
+      "From only": [
+        "Już od"
+      ],
       "Get": [
         "Zdobądź"
       ],
@@ -2955,6 +3029,18 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Zyskaj ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Wybierz plan ${ LUMO_SHORT_APP_NAME } Pro"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Ulepsz plan do wersji ${ LUMO_SHORT_APP_NAME } Pro"
       ]
     },
     "collider_2025: Warning": {
@@ -7648,6 +7734,12 @@
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
       ],
+      "${ options }-day file version history": [
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options } päivän tiedostoversiohistoria"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Dożywotni ${ PASS_APP_NAME } + SimpleLogin"
       ],
@@ -9563,6 +9655,14 @@
         "Zaoszczędź ${ priceString }"
       ]
     },
+    "Subtitle": {
+      "per month, billed annually": [
+        "miesięcznie, rozliczane rocznie"
+      ],
+      "per user/month, billed annually": [
+        "za użytkownika / miesiąc, rozliczane rocznie"
+      ]
+    },
     "Success": {
       "Billing details updated": [
         "Szczegóły płatności zostały zaktualizowane"
@@ -9665,6 +9765,9 @@
       ],
       "${ feature } is now active": [
         "Funkcja ${ feature } jest aktywna"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asystent pisania ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Konto zostało ograniczone"
@@ -9798,6 +9901,9 @@
       "Payment verification": [
         "Weryfikacja płatności"
       ],
+      "Plan type": [
+        "Typ planu"
+      ],
       "Processing...": [
         "Przetwarzanie..."
       ],
@@ -9920,6 +10026,11 @@
       ],
       "The user must have an address to request data access": [
         "Użytkownik musi mieć adres, aby żądać dostępu do danych"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Będziesz mieć możliwość przypisywania stanowisk, gdy tylko użytkownik zaakceptuje zaproszenie."
       ]
     },
     "Validation": {

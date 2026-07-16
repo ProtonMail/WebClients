@@ -206,6 +206,9 @@
       "Compare plans": [
         "Comparez les abonnements"
       ],
+      "Configure new device profile": [
+        "Configurer un nouveau profil d’appareil"
+      ],
       "Configure SAML": [
         "Configurer SAML"
       ],
@@ -313,6 +316,9 @@
       ],
       "Delete account": [
         "Supprimer le compte"
+      ],
+      "Delete device profile": [
+        "Supprimer le profil d’appareil"
       ],
       "Delete Gateway": [
         "Supprimer la passerelle"
@@ -503,6 +509,9 @@
       "Forgot password?": [
         "Mot de passe oublié ?"
       ],
+      "Generate device profile": [
+        "Générer le profil d’appareil"
+      ],
       "Generate new recovery phrase": [
         "Générer une nouvelle phrase de récupération"
       ],
@@ -619,6 +628,9 @@
       ],
       "Increase": [
         "Augmenter"
+      ],
+      "Instructions": [
+        "Instructions"
       ],
       "Invite": [
         "Inviter"
@@ -1542,11 +1554,6 @@
         "Administrateur des utilisateurs :"
       ]
     },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Un rôle est un groupe de permissions que vous pouvez attribuer aux membres de votre organisation."
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Si vous quittez maintenant, certains contacts ne seront peut-être pas importés."
@@ -2081,6 +2088,27 @@
       ],
       "Status": [
         "État"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son adresse sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pour migrer cet utilisateur, celui-ci doit accepter son invitation à rejoindre ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, réactivez-le dans votre console d'administration Google Workspace."
       ],
       "User": [
         "Utilisateur"
@@ -4352,6 +4380,9 @@
       ],
       "Company name or personal name is required": [
         "Le nom de l'entreprise ou le nom personnel est requis."
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Impossible de générer le profil de l'appareil. Veuillez réessayer."
       ],
       "Couldn't load invoices. Please try again later.": [
         "Les factures n'ont pas pu être chargées. Veuillez réessayer plus tard."
@@ -6692,8 +6723,14 @@
         "Tous (${ totalFoldersCount } label)",
         "Tous (${ totalFoldersCount } labels)"
       ],
+      "All devices with this device profile deployed": [
+        "Tous les appareils sur lesquels ce profil d’appareil est déployé"
+      ],
       "All inactive members deleted": [
         "Tous les membres inactifs ont été supprimés."
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Tout le trafic Internet est toujours chiffré et sécurisé"
       ],
       "All keys successfully reactivated": [
         "Toutes les clés ont été réactivées."
@@ -6879,6 +6916,9 @@
       "Choose an Entity ID to continue.": [
         "Choisissez l'identifiant de l'entité pour continuer."
       ],
+      "Choose one:": [
+        "Choisir une option :"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
       ],
@@ -6899,6 +6939,9 @@
       ],
       "Compromised": [
         "Compromise"
+      ],
+      "Configure Always-on VPN": [
+        "Configurer le VPN permanent"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configurez l'authentification SAML pour votre organisation via un fournisseur d'identité (IdP). Cela permettra d'activer SAML pour l'ensemble de l'organisation."
@@ -7031,6 +7074,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Selon vos paramètres, ils peuvent recevoir l’accès immédiatement, ou après une **période d’attente** désignée."
       ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "Déployez ${ regoLink } directement via le déploiement de fichiers de votre MDM"
+      ],
+      "Deploy across all your managed devices": [
+        "Déployer sur tous vos appareils gérés"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Déployez-le via votre MDM (Jamf, Intune…) ou manuellement sur chaque appareil."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Les appareils dotés d’un profil d’appareil VPN permanent ne peuvent accéder à Internet que lorsqu’une connexion ${ VPN_APP_NAME } est active."
+      ],
       "Did you know?": [
         "Le saviez-vous ?"
       ],
@@ -7101,6 +7156,12 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passer à un abonnement inférieur mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
       ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "Téléchargez ${ ps1Link } et exécutez-le sur chaque appareil en tant qu’utilisateur système afin de placer automatiquement le profil d’appareil."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Téléchargez ${ removeScriptLink } et exécutez-le sur chaque appareil en tant qu’utilisateur système afin de supprimer automatiquement le profil."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Télécharger ${ VPN_APP_NAME }"
       ],
@@ -7155,6 +7216,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Les e-mails déplacés vers le dossier Corbeille ou Indésirables/spam de plus de 30 jours seront supprimés automatiquement."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Les employés ne peuvent pas se connecter à Internet sans une connexion VPN"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Activez le renouvellement automatique pour conserver l'accès aux fonctionnalités et serveurs Plus."
       ],
@@ -7191,11 +7255,17 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "L'URL des points de terminaison reçue de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "L’application de la stratégie commence automatiquement dès que l’appareil détecte le profil."
+      ],
       "Enhance your network security": [
         "Améliorez la sécurité de votre réseau."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assurez une communication entièrement privée et chiffrée. Obtenez dès maintenant votre adresse e-mail ${ BRAND_NAME } gratuite."
+      ],
+      "Ensure your organization is always protected": [
+        "Assurez-vous que votre organisation est toujours protégée"
       ],
       "Enter code": [
         "Saisissez le code"
@@ -7316,6 +7386,9 @@
       ],
       "Gateways": [
         "Passerelles"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Générez le profil d’appareil et téléchargez un fichier de configuration."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La génération d’une nouvelle phrase de récupération désactivera l’ancienne."
@@ -7799,8 +7872,14 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Une fois l'accès à votre compte accordé, ils peuvent accéder à vos paramètres de **Récupération** et **changer votre mot de passe ${ ACCOUNT_APP_NAME } ** pour vous."
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Une fois le déploiement réussi, les appareils peuvent prendre jusqu’à quelques heures pour détecter et appliquer la stratégie."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Seules les majuscules et la ponctuation (points, traits d'union et underscores/tirets du bas) peuvent être modifiées ici. Pour utiliser une adresse différente, ajoutez-en une nouvelle."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Seuls les utilisateurs disposant d’une licence dans votre organisation peuvent s’authentifier auprès de ${ VPN_APP_NAME } sur les appareils sur lesquels le profil d’appareil est déployé."
       ],
       "Open source": [
         "Open source"
@@ -7810,6 +7889,9 @@
       ],
       "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
         "Ouvrez votre session active dans le navigateur, et accédez à **Paramètres → Tous les paramètres → Récupération → Paramètres de réinitialisation du mot de passe.**"
+      ],
+      "Optional configuration": [
+        "Configuration facultative"
       ],
       "or ${ selectFileButton }": [
         "ou ${ selectFileButton }"
@@ -7824,6 +7906,9 @@
       ],
       "or discover other features:": [
         "ou découvrez de nouvelles fonctionnalités :"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Ou exécutez ${ ps1Link } à l’aide de l’exécution de scripts de votre solution MDM"
       ],
       "Or select a particular server:": [
         "Ou sélectionnez un serveur spécifique :"
@@ -8064,6 +8149,9 @@
       "Restore": [
         "Restauration"
       ],
+      "Restrict logins to your organization": [
+        "Limitez les connexions à votre organisation"
+      ],
       "SAML configuration saved": [
         "La configuration SAML a été enregistrée."
       ],
@@ -8251,6 +8339,9 @@
       ],
       "support team": [
         "équipe support"
+      ],
+      "Supported platforms": [
+        "Plateformes supportées"
       ],
       "Swiss based": [
         "Basé en Suisse"
@@ -8487,6 +8578,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pour déchiffrer et afficher vos données verrouillées après une réinitialisation du mot de passe, sélectionnez une méthode de récupération."
       ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Pour activer le VPN permanent, le profil d’appareil doit atteindre ${ policiesPath } sur chaque appareil, le client ${ VPN_APP_NAME } le détecte à cet emplacement et applique automatiquement le profil."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
@@ -8510,6 +8604,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Pour retrouver l'accès à votre compte et à vos données, saisissez la phrase de récupération de 12 mots associée à votre compte."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Pour supprimer le VPN permanent, supprimez ${ profileFile } de ${ policiesPath } sur chaque appareil. Le client ${ VPN_APP_NAME } cesse d’appliquer le profil dès qu’il détecte que le fichier a été supprimé."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur."
@@ -8628,6 +8725,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilisez les identifiants suivants lorsque vous vous connectez à des serveurs ${ VPN_APP_NAME } sans application. Quelques exemples de cas d'utilisation : Tunnelblick sur macOS, OpenVPN sur GNU/Linux."
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Utilisez votre solution MDM pour supprimer le fichier, ou exécutez ${ removeScriptLink } à l’aide de la fonctionnalité d’exécution de scripts de votre solution MDM. Toute solution MDM prenant en charge le déploiement de fichiers ou l’exécution de scripts est compatible."
+      ],
       "User activated": [
         "L'utilisateur a été activé."
       ],
@@ -8639,6 +8739,9 @@
       ],
       "Users": [
         "Utilisateurs"
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Vous utilisez un autre MDM ? Toute solution MDM prenant en charge le déploiement de fichiers ou l’exécution de scripts PowerShell fonctionnera. Consultez la documentation de votre MDM pour plus d’informations."
       ],
       "Vault created": [
         "Le coffre-fort a été créé."
@@ -9044,6 +9147,9 @@
       "Your account was successfully updated with this promotion": [
         "Votre compte a été mis à jour avec cette promotion."
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Le profil d'appareil de votre VPN permanent est prêt à être déployé."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
       ],
@@ -9416,6 +9522,9 @@
       "App password": [
         "Mot de passe de l'application"
       ],
+      "Applies:": [
+        "S'applique à :"
+      ],
       "Apply policy to": [
         "Appliquez la politique à"
       ],
@@ -9678,6 +9787,9 @@
       "End-to-end encryption": [
         "Chiffrement de bout en bout"
       ],
+      "Enforce Always-on VPN": [
+        "Imposer le VPN permanent"
+      ],
       "Enter code": [
         "Saisissez le code"
       ],
@@ -9821,6 +9933,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Niveau pour le blocage par filtrage NetShield"
+      ],
+      "Login restrictions": [
+        "Restrictions de connexion"
       ],
       "Logo": [
         "Logo"
@@ -15221,6 +15336,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "L'annulation de votre abonnement est en cours. Veuillez patienter."
+      ],
+      "Disabled": [
+        "Désactivé"
+      ],
+      "Enabled": [
+        "Activé"
+      ],
+      "No restrictions": [
+        "Aucune restriction"
+      ],
+      "Restricted to members of your organization": [
+        "Limité aux membres de votre organisation"
       ]
     },
     "Status": {
@@ -15872,6 +15999,9 @@
       "Compare the key differences that matter for your business.": [
         "Comparez les différences clés qui importent pour votre entreprise."
       ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Imposez l’utilisation du VPN dans votre organisation en bloquant l’accès à Internet lorsque aucune connexion VPN n’est active."
+      ],
       "Save 50% for 6 months, and keep full access": [
         "Économisez 50% pendant 6 mois, et gardez un accès complet"
       ],
@@ -16449,6 +16579,12 @@
       "Also in your plan": [
         "Également dans votre abonnement"
       ],
+      "Always-on VPN": [
+        "VPN permanent"
+      ],
+      "Always-on VPN device profile": [
+        "Profil d’appareil VPN permanent"
+      ],
       "Amount": [
         "Montant"
       ],
@@ -16548,8 +16684,14 @@
       "Change second password": [
         "Changer le second mot de passe"
       ],
+      "Choose a deployment method": [
+        "Choisissez une méthode de déploiement"
+      ],
       "Choose a provider": [
         "Choisissez un fournisseur"
+      ],
+      "Choose a removal method": [
+        "Choisissez une méthode de suppression"
       ],
       "Choose user affiliations": [
         "Choisir les affiliations de l'utilisateur"
@@ -16562,6 +16704,9 @@
       ],
       "Collaborate on documents": [
         "Collaborer sur des documents"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Configurer le profil d’appareil VPN permanent"
       ],
       "Confirm": [
         "Confirmer"
@@ -16648,6 +16793,9 @@
       "Created": [
         "Création"
       ],
+      "Created!": [
+        "Créé !"
+      ],
       "Creating user accounts": [
         "Création de comptes utilisateurs"
       ],
@@ -16726,6 +16874,15 @@
       ],
       "Deny access to user?": [
         "Voulez-vous refuser l'accès à l'utilisateur ?"
+      ],
+      "Deploy device profile to your devices": [
+        "Déployez le profil d’appareil sur vos appareils"
+      ],
+      "Deploy via MDM": [
+        "Déployer via un MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Déployer via PowerShell"
       ],
       "Description": [
         "Description"
@@ -17173,6 +17330,9 @@
       "Remove all members?": [
         "Retirer tous les membres ?"
       ],
+      "Remove Always-on VPN device profile": [
+        "Supprimer le profil d’appareil VPN permanent"
+      ],
       "Remove device?": [
         "Retirer l'appareil ?"
       ],
@@ -17196,6 +17356,9 @@
       ],
       "Remove user?": [
         "Retirer l'utilisateur ?"
+      ],
+      "Remove via MDM": [
+        "Retirer via MDM"
       ],
       "Rename the gateway": [
         "Modifier le nom de la passerelle"
@@ -17229,9 +17392,6 @@
       ],
       "Revoke certificate?": [
         "Révoquer le certificat ?"
-      ],
-      "Roles and permissions": [
-        "Rôles et permissions"
       ],
       "SAML authentication": [
         "Authentification SAML"
@@ -17718,6 +17878,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "S’applique à tous les utilisateurs de votre organisation. Est appliqué uniquement sur les appareils où le profil d’appareil VPN permanent a été déployé."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Inclut des domaines de messagerie personnalisés et des alias hide-my-email illimités dans ${ MAIL_APP_NAME }, un accès à des serveurs dans 120+ pays dans ${ VPN_SHORT_APP_NAME }, l'authentification à deux facteurs intégrée et le partage sécurisé dans ${ PASS_SHORT_APP_NAME }, et bien plus encore."

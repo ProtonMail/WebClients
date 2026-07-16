@@ -1800,6 +1800,9 @@
       ]
     },
     "Error": {
+      "Background blur initialization failed. Please toggle your camera or background blur again": [
+        "L'initialisation du flou d'arrière-plan n'a pas abouti. Veuillez réactiver ou désactiver à nouveau votre caméra ou le flou d'arrière-plan."
+      ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
@@ -2198,6 +2201,9 @@
       "Attention required": [
         "Attention requise"
       ],
+      "Background blur initializing": [
+        "Initialisation en cours du flou d'arrière-plan"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
@@ -2341,6 +2347,9 @@
       ],
       "Failed to update meeting schedule": [
         "La mise à jour de la réunion n'a pas abouti."
+      ],
+      "Failed to update meeting waiting room status": [
+        "Impossible de mettre à jour l'état de la salle d'attente de la réunion"
       ],
       "Free meeting": [
         "Réunion gratuite"

@@ -90,6 +90,9 @@
       "Apply": [
         "გადატარება"
       ],
+      "Ask me next time": [
+        "მკითხე შემდეგ ჯერზე"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
@@ -333,6 +336,9 @@
       "Download anyway": [
         "მაინც გადმოწერა"
       ],
+      "Download debug information": [
+        "გამართვის ინფორმაციის ჩამოტვირთვა"
+      ],
       "Download logs": [
         "ჟურნალის გადმოწერა"
       ],
@@ -375,11 +381,20 @@
       "Export contact group": [
         "კონტაქტების ჯგუფის გატანა"
       ],
+      "Export editor state for version": [
+        "რედაქტორის მდგომარეობის გატანა ვერსიისთვის"
+      ],
       "Export selection as .vcf": [
         "მონიშნულის გატანა .vcf ფაილში"
       ],
+      "Export this version (as docx)": [
+        "ამ ვერსიის ექსპორტი (როგორც docx)"
+      ],
       "Export this version (as xlsx)": [
         "ამ ვერსიის გატანა (xlsx ფაილში)"
+      ],
+      "Export YJS state for version": [
+        "YJS-ის მდგომარეობის გატანა ვერსიისთვის"
       ],
       "Forgot password?": [
         "დაგავიწყდათ პაროლი?"
@@ -633,6 +648,9 @@
       "Reload": [
         "თავიდან ჩატვირთვა"
       ],
+      "Reload spreadsheet": [
+        "ელექტრონული ცხრილის ხელახლა ჩატვირთვა"
+      ],
       "Remove": [
         "წაშლა"
       ],
@@ -662,6 +680,9 @@
       ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
+      ],
+      "Report issue": [
+        "შეტყობინება პრობლემის შესახებ"
       ],
       "Request a call": [
         "ზარის შეკვეთა"
@@ -701,6 +722,9 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
+      ],
+      "Save preferences": [
+        "პარამეტრების შენახვა"
       ],
       "Search": [
         "ძებნა"
@@ -830,6 +854,9 @@
       ],
       "Try another method": [
         "სხვა მეთოდის ცდა"
+      ],
+      "Try Workspace": [
+        "სცადეთ Workspace"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
@@ -1212,6 +1239,9 @@
       "Activated": [
         "აქტიურია"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "მისამართს უკვე იყენებს მომხმარებელი თქვენი ორგანიზაციის გარეთ. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
+      ],
       "All": [
         "ყველა"
       ],
@@ -1224,6 +1254,9 @@
       "Contacts": [
         "კონტაქტები"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "მონაცემთა მიგრაციის სტატუსი Google Workspace-დან ${ BRAND_NAME }-ში"
+      ],
       "Emails": [
         "ელფოსტები"
       ],
@@ -1233,11 +1266,17 @@
       "Estimated size": [
         "სავარაუდო ზომა"
       ],
+      "Find out what can be migrated.": [
+        "გაიგეთ, რისი მიგრაციაა შესაძლებელი."
+      ],
       "Has errors": [
         "აქვს შეცდომები"
       ],
       "In progress": [
         "მიმდინარეობს"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "წევრის მისამართი ვერ მოიძებნა. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
       ],
       "Migrate": [
         "მიგრაცია"
@@ -1248,6 +1287,18 @@
       "Migration status": [
         "მიგრაციის სტატუსი"
       ],
+      "Missing organization private key": [
+        "ორგანიზაციის პირადი გასაღები აკლია"
+      ],
+      "Missing organization public key": [
+        "ორგანიზაციის საჯარო გასაღები აკლია"
+      ],
+      "No users to display": [
+        "საჩვენებელი მომხმარებლები არ არის"
+      ],
+      "Not activated": [
+        "არ არის გააქტიურებული"
+      ],
       "Organization does not have enough seats available": [
         "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
       ],
@@ -1257,14 +1308,44 @@
       "Pending": [
         "რიგში"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "აირჩიეთ ზუსტად ის, რისი მიგრაციაც გსურთ. ეს გავრცელდება ორგანიზაციის ყველა მომხმარებელზე."
+      ],
+      "Select users to migrate": [
+        "აირჩიეთ მომხმარებლები მიგრაციისთვის"
+      ],
       "Size": [
         "ზომა"
       ],
       "Status": [
         "სტატუსი"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "პლატფორმების შეუთავსებლობის გამო ამ მომხმარებლის მიგრაცია შეუძლებელია."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში აქ: ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი მისამართი აქ: ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, მან უნდა მიიღოს მოწვევა ${ BRAND_NAME }-ში გასაწევრიანებლად."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ამოიღეთ იგი არქივიდან თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, მოუხსენით მას შეჩერება თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
       "User": [
         "მომხმარებელი"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "მომხმარებლები, რომლებმაც მიიღეს წვდომა თავიანთ ${ BRAND_NAME } ანგარიშზე"
       ],
       "What are you migrating?": [
         "რის მიგრაციას ახდენთ?"
@@ -3096,6 +3177,12 @@
       "Failed to fetch sharing info": [
         "გაზიარების ინფორმაციის მოთხოვნის შეცდომა"
       ],
+      "Failed to load 'My files' folder": [
+        "საქაღალდის „ჩემი ფაილები“ ჩატვირთვა ვერ მოხერხდა"
+      ],
+      "Failed to load recent documents": [
+        "ბოლო დოკუმენტების ჩატვირთვა ვერ მოხერხდა"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "გამოწერის მონაცემების ჩატვირთვა ვერ მოხერხდა. გთხოვთ, მოგვიანებით სცადოთ."
       ],
@@ -3104,6 +3191,9 @@
       ],
       "Failed to remove older revisions": [
         "ძველი ვერსიების წაშლა ჩავარდა"
+      ],
+      "Failed to rename document": [
+        "დოკუმენტისთვის სახელის გადარქმევა ვერ მოხერხდა"
       ],
       "Failed to rename document. Please try again later.": [
         "დოკუმენტის სახელის გადარქმევა ჩავარდა. მოგვიანებით სცადეთ."
@@ -3198,6 +3288,9 @@
       ],
       "No contacts found to import": [
         "შემოსატანი კონტაქტები ვერ ვიპოვე"
+      ],
+      "No drive found to import": [
+        "შემოსატანი დისკი ვერ მოიძებნა"
       ],
       "No emails found to import - the account does not have an inbox": [
         "შემოსატანი ელფოსტების გარეშე - ანგარიშს საფოსტო ყუთი არ გააჩნია"
@@ -3320,6 +3413,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
       ],
+      "Some trashed documents could not be loaded": [
+        "ზოგიერთი სანაგვეში გადატანილი დოკუმენტის ჩატვირთვა ვერ მოხერხდა"
+      ],
       "Something went wrong while fetching available domains": [
         "ხელმისაწვდომი დომენების მიღებისას შეცდომა მოხდა"
       ],
@@ -3425,6 +3521,9 @@
       "Unexpected error, we can't import the contacts": [
         "მოულოდნელი შეცდომა. კონტაქტები ვერ შემოვიტანე"
       ],
+      "Unexpected error, we can't import the files": [
+        "მოულოდნელი შეცდომა, ფაილების შემოტანა ვერ ხერხდება"
+      ],
       "Unknown error": [
         "უცნობი შეცდომა"
       ],
@@ -3452,6 +3551,9 @@
       "We are having trouble syncing your document. Please refresh the page.": [
         "თქვენი დოკუმენტის სინქრონიზაციის პრობლემა. განაახლეთ გვერდი."
       ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "ჩვენ ვერ შევძელით ამ ფაილის იმპორტი ${ SHEETS_APP_NAME }-ში. შეგიძლიათ სცადოთ შიგთავსის კოპირება და ჩასმა ახალ ${ SHEETS_APP_NAME }-ში."
+      ],
       "We couldn’t send a verification code using this method.": [
         "ამ მეთოდით დამოწმების კოდი ვერ გავაგზავნეთ."
       ],
@@ -3467,6 +3569,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "თქვენ გამოიყენეთ თქვენს პაკეტში არსებული ყველა მისამართი. გთხოვთ განაახლოთ თქვენი პაკეტი ახალი მისამართის დასამატებლად ან გამორთოთ მისამართი თქვენს ანგარიშში."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
@@ -4376,6 +4481,9 @@
         "${ contactsLength } კონტაქტი",
         "${ contactsLength } კონტაქტი"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } ფაილების ჩამოტვირთვა პირდაპირ შეუძლებელია და ისინი არ იქნება გათვალისწინებული ამ ჩამოტვირთვაში. სხვა ფაილების ჩამოტვირთვა შეგიძლიათ ღილაკზე „გაგრძელება ჩამოტვირთვის“ დაწკაპუნებით."
+      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } საშუალებას გაძლევთ, რეალურ დროში იმუშაოთ სხვასთან ერთად გამჭოლი დაშიფვრით, სრული კონფიდენციალობისთვის. შექმენით ასლი, რომ დაიწყოთ ჩასწორება, ან სთხოვთ მფლობელს, ჩასწორების უფლება მოგცეთ."
       ],
@@ -4613,6 +4721,9 @@
       "Continue": [
         "გაგრძელება"
       ],
+      "Converting document...": [
+        "დოკუმენტის გადაყვანა..."
+      ],
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -4662,11 +4773,17 @@
       "Creating link to folder": [
         "საქაღალდემდე ბმულის შექმნა"
       ],
+      "Creating new document...": [
+        "ახალი დოკუმენტის შექმნა..."
+      ],
       "Current plan": [
         "მიმდინარე ტარიფი"
       ],
       "Current version": [
         "მიმდინარე ვერსია"
+      ],
+      "Decrypting your document": [
+        "თქვენი დოკუმენტის გაშიფვრა"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ციფრული ხელმოწერა შემოწმებულია. ეს ფაილი დაცულად ატვირთა ${ emailAddress }-მა."
@@ -4761,6 +4878,12 @@
       "Enter your own password (as trusted contact).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "დოკუმენტის გადაყვანის შეცდომა: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "დოკუმენტის ჩატვირთვის შეცდომა: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "სინქრონიზაციის შეცდომა"
       ],
@@ -4797,6 +4920,9 @@
       "File will not be updated": [
         "ფაილი არ განახლდება"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "მხოლოდ ფაილები (ფოტოების, ${ DOCS_APP_NAME }-ის ან ${ SHEETS_APP_NAME }-ის გარეშე) — ჯამში 100 გბ-მდე, 100 000 ფაილი, და 50 გბ თითოეულ ფაილზე"
+      ],
       "finance": [
         "ფინანსები"
       ],
@@ -4824,11 +4950,26 @@
       "Geoblocking": [
         "გეოდაბლოკვა"
       ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "მიიღეთ პროფესიონალური ელფოსტა @your-company.com, 1 ტბ უსაფრთხო საცავი თითოეულ მომხმარებელზე, უფრო ხანგრძლივი ვიდეოზარები და სხვა ${ BRAND_NAME } Workspace-ის საშუალებით."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "მიიღეთ განახლებები ელფოსტაზე თქვენს დოკუმენტებში დამატებული კომენტარებისა და შემოთავაზებების შესახებ."
+      ],
+      "Get Notified About Comments": [
+        "მიიღეთ შეტყობინებები კომენტარების შესახებ"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "მთავრობებსა და ISP-ებს შეუძლიათ თქვენი ონლაინ აქტივობის მონიტორინგი. თქვენი რეალური IP-ის დამალვით და თქვენი აქტივობის დაშიფვრით, თქვენი ვებ-სერფინგი ხდება პირადი."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "დაგვეხმარეთ ამ გამოცდილების გაუმჯობესებაში პრობლემის შესახებ შეტყობინებით. თუ არ გაწუხებთ ელექტრონული ცხრილის შიგთავსის გაზიარება, თქვენს ანგარიშს თან დაურთეთ ქვემოთ მოცემული გამართვის ინფორმაცია."
+      ],
       "here": [
         "აქ"
+      ],
+      "Hide table of contents": [
+        "სარჩევის დამალვა"
       ],
       "High Priority": [
         "მაღალი პრიორიტეტი"
@@ -4975,6 +5116,9 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
+      "Making a copy...": [
+        "ასლი იქმნება..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო"
@@ -5005,6 +5149,9 @@
       ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "URL-ში დოკუმენტი მითითებული არ არის. დაბრუნდით ${ DRIVE_APP_NAME }-ში და აირჩიეთ დოკუმენტი."
       ],
       "No email address": [
         "ელ-ფოსტის მისამართის გარეშე"
@@ -5047,6 +5194,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "ამ საქაღლდესთნ წვდომა, მხოლოდ, მას აქვს, ვისაც ეს ბმული და მისი პაროლი გააჩნია."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "უი! ამ ელექტრონულ ცხრილს არ შეუძლია თქვენი ბოლო რედაქტირებების შენახვა, ამიტომ ჩვენ შევაჩერეთ რედაქტირება, რათა თავიდან აგეცილებინათ თქვენი ნამუშევრის დაკარგვა."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "გახსენით დამხმარე რეკომენდებული ქმედებებისა და სასარგებლო ბმულებისთვის."
@@ -5223,6 +5373,9 @@
       "Shared on": [
         "გაზიარებულია"
       ],
+      "Show table of contents": [
+        "სარჩევის ჩვენება"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ხელმოწერა ვერ დადასტურდება ქსელის შეცდომის გამო, გთხოვთ, სცადეთ მოგვიანებით."
       ],
@@ -5284,6 +5437,12 @@
       "The Beginning": [
         "დასაწყისი"
       ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "ციფრული ხელმოწერა ნაწილობრივ დამოწმებულია. ეს ფაილი აიტვირთა საჯაროდ ხელმისაწვდომი გაზიარების ბმულით მომხმარებლის მიერ, რომელსაც არ აქვს ${ BRAND_NAME } ანგარიში, ამიტომ მისი იდენტობის დადასტურება ვერ ხერხდება."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "ციფრული ხელმოწერა ნაწილობრივ დამოწმებულია. ეს საქაღალდე აიტვირთა საჯაროდ ხელმისაწვდომი გაზიარების ბმულით მომხმარებლის მიერ, რომელსაც არ აქვს ${ BRAND_NAME } ანგარიში, ამიტომ მისი იდენტობის დადასტურება ვერ ხერხდება."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "გაჟონილი ინფორმაცია მესამე პირების მიერ იქნა გავრცელებული. თქვენი ${ BRAND_NAME }-ის ანგარიშის ინფორმაცია დაცულად და დაშიფრულად რჩება. ${ learnMoreLink }"
       ],
@@ -5292,6 +5451,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "როგორც ჩანს, თქვენ მიერ შეყვანილი URL არასწორად იქნა დაკოპირებული Slack-იდან. Slack-იდან გრძელი ბმულების კოპირებისას, დააწკაპუნეთ ბმულზე მარჯვენა ღილაკით და აირჩიეთ „ბმულის კოპირება“, ნაცვლად წაკვეთილი URL ტექსტის პირდაპირ კოპირებისა."
       ],
       "There are no documents in the trash.": [
         "ნაგვის ყუთში დოკუმენტები არაა."
@@ -5305,8 +5467,14 @@
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "ეს დოკუმენტი ძალიან დიდი გახდა ჩასასწორებლად. ჩასწორების გასაგრძელებლად, შეგიძლიათ, ძველი ვერსიები წაშალოთ."
       ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "ეს დოკუმენტი ძალიან გაიზარდა და თქვენი ბოლო ცვლილებები ვერ შეინახა. ჩამოტვირთეთ ასლი თქვენი ნამუშევრის შესანარჩუნებლად."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "ამ დოკუმენტში ძალიან ბევრი აქტივობაა. ზოგიერთი ფუნქცია, შეიძლება, დროებით ხელმიუწვდომელი იყოს."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "ამ დოკუმენტს ბევრი აქტიური თანამშრომელი ჰყავს. რეალურ დროში რედაქტირება დროებით მიუწვდომელია. განაახლეთ უახლესი ცვლილებების სანახავად."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "შეიძლება, ეს დოკუმენტი არ არსებობს, ან მისი ჩატვირთვის პრობლემა ჩვენს მხარესაა. ჩატვირთეთ თავიდან გვერდი და თავიდან სცადეთ."
@@ -5977,11 +6145,20 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
+      "Enable email notifications": [
+        "ელფოსტის შეტყობინებების ჩართვა"
+      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
       "Erase this link and remove everyone with access": [
         "ამ ბმულის წაშლა და წვდომის მქონეების მოცილება"
+      ],
+      "Exact host matching": [
+        "ზუსტი ჰოსტის შესაბამისობა"
+      ],
+      "Exact URL matching": [
+        "ზუსტი URL შესაბამისობა"
       ],
       "Expiry": [
         "ვადა"
@@ -6030,6 +6207,9 @@
       ],
       "Include application logs in bug report": [
         "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
+      ],
+      "Include document name in notification": [
+        "დოკუმენტის სახელის შეტანა შეტყობინებაში"
       ],
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
@@ -6100,6 +6280,9 @@
       "Navigation": [
         "ნავიგაცია"
       ],
+      "Never fill on this exact URL": [
+        "არასოდეს შეავსო ამ ზუსტ URL-ზე"
+      ],
       "New password": [
         "ახალი პაროლი"
       ],
@@ -6120,6 +6303,9 @@
       ],
       "Optional": [
         "არასავალდებულო"
+      ],
+      "Parent domain and subdomains (default)": [
+        "მშობელი დომენი და ქვედომენები (ნაგულისხმევი)"
       ],
       "Password": [
         "პაროლი"
@@ -6160,6 +6346,9 @@
       "Region": [
         "რაიონი"
       ],
+      "Regular expression": [
+        "რეგულარული გამოსახულება"
+      ],
       "Replace existing file": [
         "არსებული ფაილის ჩანაცვლება"
       ],
@@ -6196,6 +6385,9 @@
       "Skip folder": [
         "საქაღალდის გამოტოვება"
       ],
+      "Starts with": [
+        "იწყება"
+      ],
       "Stop sharing": [
         "გაზიარების შეწყვეტა"
       ],
@@ -6223,8 +6415,14 @@
       "Trash": [
         "სანაგვე ყუთი"
       ],
+      "Unknown user": [
+        "უცნობი მომხმარებელი"
+      ],
       "Upload picture": [
         "სურათის ატვრთვა"
+      ],
+      "URL wildcard pattern": [
+        "URL wildcard შაბლონი"
       ],
       "Username": [
         "მომხმარებლის სახელი"
@@ -6560,6 +6758,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "\"იწყება\" შესაბამისობის წესი"
+      ],
+      "Exact (sub) domain matching rule": [
+        "ზუსტი (ქვე) დომენის შესაბამისობის წესი"
+      ],
+      "Exact URL matching rule": [
+        "ზუსტი URL შესაბამისობის წესი"
+      ],
+      "Never fill with this exact URL": [
+        "არასოდეს შეავსო ამ ზუსტი URL-ით"
+      ],
+      "Regular expression rule": [
+        "რეგულარული გამოსახულების წესი"
+      ],
+      "Wildcard pattern matching rule": [
+        "Wildcard შაბლონის შესაბამისობის წესი"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "თქვენი უფასო სატესტო ვერსია დასრულდა. ${ nonAutoRenewalAction }"
       ],
@@ -6906,6 +7122,10 @@
       "${ n } VPN connection": [
         "${ n } VPN კავშირი",
         "${ n } VPN კავშირი"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-დღიანი ფაილის ვერსიების ისტორია",
+        "${ options }-დღიანი ფაილის ვერსიის ისტორია"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin სამუდამოდ"
@@ -7859,6 +8079,12 @@
       "Device renamed": [
         "მოწყობილობის სახელი შეიცვალა"
       ],
+      "Document moved to trash": [
+        "დოკუმენტი გადატანილია ნაგავში"
+      ],
+      "Document restored from trash": [
+        "დოკუმენტი აღდგენილია ნაგვიდან"
+      ],
       "External invitation removed from the share": [
         "ზიარიდან გარე მოსაწვევი წაშლილია"
       ],
@@ -7879,6 +8105,9 @@
       ],
       "Failed to reject share invitation": [
         "ზიარის მოსაწვეის უარყოფა ჩავარდა"
+      ],
+      "Failed to rename document": [
+        "დოკუმენტისთვის სახელის გადარქმევა ვერ მოხერხდა"
       ],
       "Failed to upload files: ${ err }": [
         "ფაილების ატვირთვის შეცდომა: ${ err }"
@@ -8438,6 +8667,9 @@
       "Search for name or email": [
         "სახელის ან ელფოსტის ძებნა"
       ],
+      "Search for users or addresses": [
+        "მოძებნეთ მომხმარებლები ან მისამართები"
+      ],
       "Search parent folder": [
         "მშობელ საქაღალდეში ძებნა"
       ],
@@ -8670,8 +8902,14 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } თითო რეფერალისთვის"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**თუ ამ თარიღამდე გააუქმებთ,** საცდელი პერიოდის დასრულებისას თქვენი პაკეტი **დაქვეითდება** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } პაკეტამდე."
+      ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**თუ არ გამოიწერთ,** თქვენი ანგარიში **დაქვეითდება** პაკეტამდე ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**თუ არ გააუქმებთ,** ამოქმედდება თქვენი სრული პაკეტი და მიიღებთ **${ referrerRewardAmount }** კრედიტის სახით."
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**თუ ამ თარიღამდე გამოიწერთ,** თქვენ მიიღებთ **${ referrerRewardAmount }** კრედიტს."
@@ -8716,6 +8954,10 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "შეგიძლიათ, გქონდეთ **${ maxRewardAmount }**-მდე კრედიტი."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "თქვენ დაგრჩათ **${ daysRemaining } დღე**, რათა აღმოაჩინოთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ.",
+        "თქვენ დაგრჩათ **${ daysRemaining } დღე**, რათა აღმოაჩინოთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ."
       ],
       "your subscription": [
         "თქვენი გამოწერა"
@@ -9006,6 +9248,9 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "მძიმით გამოყოფილი მნიშვნელობები (.csv)"
+      ],
       "Microsoft Excel (.xlsx)": [
         "Microsoft Excel (.xlsx)"
       ],
@@ -9017,6 +9262,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "ახალი ელექტრონული ცხრილის შექმნა..."
+      ],
       "Detect automatically": [
         "ავტომატურად ამოცნობა"
       ],
@@ -9026,14 +9274,23 @@
       "Replace current sheet": [
         "მიმდინარე ფურცლის ჩანაცვლება"
       ],
+      "Replace data at selected cell": [
+        "მონაცემების ჩანაცვლება მონიშნულ უჯრაში"
+      ],
       "Replace spreadsheet": [
         "ელცხრილის ჩანაცვლება"
       ],
       "Select a file to import": [
         "აირჩიეთ შემოსატანი ფაილი"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "თქვენი მიმდინარე ელექტრონული ცხრილი, მასში შემავალი ყველა ფურცლის ჩათვლით, ჩანაცვლდება ამ ვერსიით."
       ]
     },
     "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "გადაიყვანეთ ტექსტი რიცხვებში, თარიღებში და ფორმულებში"
+      ],
       "Destination": [
         "დანიშნულება"
       ],
@@ -9765,6 +10022,9 @@
         "${ emailsCount } ელფოსტის მისამართი",
         "${ emailsCount } ელფოსტის მისამართი"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } წერის დამხმარე"
+      ],
       "Account recovery": [
         "ანგარიშის აღდგენა"
       ],
@@ -9995,6 +10255,9 @@
       ],
       "Edit image": [
         "გამოსახულების ჩასწორება"
+      ],
+      "Editing paused": [
+        "რედაქტირება შეჩერებულია"
       ],
       "Email addresses": [
         "ელფოსტის მისამართები"
@@ -10339,6 +10602,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "გამოიყენეთ ${ VPN_SHORT_APP_NAME } მონაცემთა კონფიდენციალობისთვის"
       ],
+      "Users and addresses": [
+        "მომხმარებლები და მისამართები"
+      ],
       "Verify your password": [
         "დაადასტურეთ თქვენი პაროლი"
       ],
@@ -10526,6 +10792,11 @@
         "მომხმარებელს მონაცემებზე წვდომის მოსათხოვად მისამართი უნდა გააჩნდეს"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "თქვენ შეძლებთ როლების მინიჭებას მას შემდეგ, რაც მომხმარებელი მიიღებს მოწვევას."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
@@ -10642,6 +10913,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }-ი გადაიტანს იმდენ მონაცემს, უკანასკნელი შეტყობინებებით დაწყებული, რამდენიც ეს შესაძლებელი იქნება."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } უზრუნველყოფს ძლიერ კონტროლს, მაგრამ ერთმა შეცდომამაც კი შეიძლება გამოიწვიოს ავტოშევსების ამოქმედება და მონაცემების შევსება თაღლითურ ან ფიშინგის ვებსაიტებზე."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "დარწმუნებული ბრძანდებთ, რომ გნებავთ, სამუდამოდ წაშალოთ ${ count } კონტაქტი?",

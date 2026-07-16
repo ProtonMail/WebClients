@@ -2519,6 +2519,9 @@
       "Public key (${ prefix }) copied to clipboard": [
         "Offentlig nyckel (${ prefix }) kopierad till urklipp"
       ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Verifiera att de första härledda adresserna matchar dem i ${ WALLET_APP_NAME } innan du fortsätter."
+      ],
       "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
         "Vi rekommenderar starkt att använda beskrivaren ovan istället, då den innehåller all nödvändig information för att säkerställa korrekt adressgenerering. xpub, ypub och zpub ingår inte i standard BIP:er och bör endast användas med försiktighet."
       ]

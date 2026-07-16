@@ -1320,6 +1320,27 @@
       "Status": [
         "Durum"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının askıya alınma durumunu kaldırın."
+      ],
       "User": [
         "Kullanıcı"
       ],
@@ -3180,8 +3201,8 @@
       "Failed to resend invitation": [
         "Davet yeniden gönderilemedi"
       ],
-      "Failed to trash document.": [
-        "Belge çöp kutusuna atılamadı."
+      "Failed to trash document": [
+        "Belge çöp kutusuna atılamadı"
       ],
       "Failed to unshare node": [
         "Nokta paylaşımı kaldırılamadı"
@@ -3537,7 +3558,7 @@
         "Bu dosya ${ SHEETS_APP_NAME } uygulaması içine aktarılamadı. İçeriği kopyalayıp yeni bir ${ SHEETS_APP_NAME } uygulamasında yapıştırabilirsiniz."
       ],
       "We couldn’t send a verification code using this method.": [
-        "Bu yöntemle doğrulama kodunu gönderemedik."
+        "Doğrulama kodu bu yöntemle gönderilemedi."
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
@@ -4947,6 +4968,9 @@
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Elektronik tablo içeriğini paylaşmakta bir sakınca görmüyorsanız, aşağıdaki hata ayıklama bilgilerini bildiriminize ekleyin."
       ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Lütfen raporunuza aşağıdaki hata ayıklama bilgilerini ekleyin."
+      ],
       "here": [
         "buraya"
       ],
@@ -5619,6 +5643,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Daha önce bir belgeyi açarken sorun yaşadığınızı tespit ettik."
       ],
       "Week": [
         "Hafta"
@@ -7975,6 +8002,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" yeniden adlandırıldı"
       ],
+      "\"Document deleted permanently": [
+        "\"Belge kalıcı olarak silindi"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } ögenin şifresi çözülemedi",
         "${ count } ögenin şifresi çözülemedi"
@@ -8061,14 +8091,11 @@
       "Device renamed": [
         "Aygıt yeniden adlandırıldı"
       ],
-      "Document failed to be restored from trash": [
-        "Belge çöp kutusundan geri yüklenemedi"
-      ],
       "Document moved to trash": [
-        "Belge çöp kutusuna taşındı"
+        "Belge çöpe atıldı"
       ],
       "Document restored from trash": [
-        "Belge çöp kutusundan geri yüklendi"
+        "Belge çöpten çıkarıldı"
       ],
       "External invitation removed from the share": [
         "Paylaşımdan dış davet kaldırıldı"
@@ -8078,6 +8105,9 @@
       ],
       "Failed to accept share invitation": [
         "Paylaşma daveti kabul edilemedi"
+      ],
+      "Failed to delete document": [
+        "Belge silinemedi"
       ],
       "Failed to download files: ${ err }": [
         "Dosyalar indirilemedi: ${ err }"
@@ -8093,6 +8123,12 @@
       ],
       "Failed to rename document": [
         "Belge yeniden adlandırılamadı"
+      ],
+      "Failed to restore document": [
+        "Belge geri yüklenemedi"
+      ],
+      "Failed to trash document": [
+        "Belge çöp kutusuna atılamadı"
       ],
       "Failed to upload files: ${ err }": [
         "Dosyalar yüklenemedi: ${ err }"
@@ -10425,6 +10461,9 @@
       "Private browsing vs VPN": [
         "Gizli gezinme ile VPN karşılaştırması"
       ],
+      "Problems Detected": [
+        "Tespit Edilen Sorunlar"
+      ],
       "Public link": [
         "Herkese açık bağlantı"
       ],
@@ -10586,6 +10625,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Veri gizliliği için ${ VPN_SHORT_APP_NAME } kullanın"
+      ],
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
       ],
       "Verify your password": [
         "Parolanızı doğrulayın"

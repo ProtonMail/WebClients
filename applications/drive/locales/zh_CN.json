@@ -1674,6 +1674,27 @@
       "Status": [
         "状态"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由于平台不兼容，无法迁移此用户。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中启用其账户。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其账户。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其地址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "要迁移此用户，该用户需要接受加入 ${ BRAND_NAME } 的邀请。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中取消归档该用户。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中取消暂停该用户。"
+      ],
       "User": [
         "用户"
       ],
@@ -7750,9 +7771,6 @@
       "URL wildcard pattern": [
         "URL 通配符模式"
       ],
-      "User opted in": [
-        "用户已选择加入"
-      ],
       "Username": [
         "用户名"
       ],
@@ -12976,6 +12994,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 保护隐私"
+      ],
+      "Users and addresses": [
+        "用户和地址"
       ],
       "Verification failed": [
         "验证失败"

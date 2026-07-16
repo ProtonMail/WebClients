@@ -1800,6 +1800,9 @@
       ]
     },
     "Error": {
+      "Background blur initialization failed. Please toggle your camera or background blur again": [
+        "Ha fallat la inicialització del desenfocament del fons. Torneu a activar la càmera o el desenfocament del fons"
+      ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
@@ -2198,6 +2201,9 @@
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
+      "Background blur initializing": [
+        "S'està inicialitzant el desenfocament del fons"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
@@ -2341,6 +2347,9 @@
       ],
       "Failed to update meeting schedule": [
         "No s'ha pogut actualitzar la programació de la reunió"
+      ],
+      "Failed to update meeting waiting room status": [
+        "S'ha produït un error en actualitzar l'estat de la sala d'espera de la reunió"
       ],
       "Free meeting": [
         "Reunió gratuïta"
