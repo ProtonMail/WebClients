@@ -90,6 +90,9 @@
       "Apply": [
         "Toteuta"
       ],
+      "Ask me next time": [
+        "Kysy seuraavalla kerralla"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
@@ -332,6 +335,9 @@
       ],
       "Download anyway": [
         "Lataa silti"
+      ],
+      "Download debug information": [
+        "Lataa vianselvitystiedot"
       ],
       "Download logs": [
         "Lataa lokitiedot"
@@ -642,6 +648,9 @@
       "Reload": [
         "Päivitä"
       ],
+      "Reload spreadsheet": [
+        "Lataa laskentataulukko uudelleen"
+      ],
       "Remove": [
         "Poista"
       ],
@@ -670,6 +679,9 @@
         "Korvaa tiedosto"
       ],
       "Report a problem": [
+        "Ilmoita ongelmasta"
+      ],
+      "Report issue": [
         "Ilmoita ongelmasta"
       ],
       "Request a call": [
@@ -711,6 +723,9 @@
       "Save changes": [
         "Tallenna muutokset"
       ],
+      "Save preferences": [
+        "Tallenna asetukset"
+      ],
       "Search": [
         "Hae"
       ],
@@ -719,6 +734,12 @@
       ],
       "Search recent documents": [
         "Etsi viimeaikaisista dokumenteista"
+      ],
+      "Search recent spreadsheets": [
+        "Etsi viimeaikaisista laskentataulukoista"
+      ],
+      "Search recents": [
+        "Etsi viimeaikaisista"
       ],
       "See how": [
         "Katso miten"
@@ -819,6 +840,9 @@
       "Take out of trash": [
         "Tyhjennä roskat"
       ],
+      "Toggle debug mode": [
+        "Vaihda vianselvitystilaa"
+      ],
       "Trashing...": [
         "Siirretään roskakoriin..."
       ],
@@ -830,6 +854,9 @@
       ],
       "Try another method": [
         "Kokeile toista tapaa"
+      ],
+      "Try Workspace": [
+        "Kokeile Workspacea"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
@@ -909,6 +936,9 @@
       ],
       "View invoice": [
         "Näytä lasku"
+      ],
+      "View only": [
+        "Vain tarkastelu"
       ],
       "Web page (.html)": [
         "Verkkosivu (.html)"
@@ -1206,6 +1236,12 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Aktivoitu"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Osoite on jo organisaationne ulkopuolisen käyttäjän käytössä. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
+      ],
       "All": [
         "Kaikki"
       ],
@@ -1218,8 +1254,20 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Tietojen siirron tila kohteesta Google Workspace kohteeseen ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Sähköpostit"
+      ],
+      "Errors": [
+        "Virheet"
+      ],
       "Estimated size": [
         "Arvioitu koko"
+      ],
+      "Find out what can be migrated.": [
+        "Ota selvää, mitä voidaan siirtää."
       ],
       "Has errors": [
         "Virheitä"
@@ -1227,8 +1275,29 @@
       "In progress": [
         "Käynnissä"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Jäsenen osoitetta ei löytynyt. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
+      ],
+      "Migrate": [
+        "Siirrä"
+      ],
+      "Migrated": [
+        "Siirretty"
+      ],
       "Migration status": [
         "Siirron tila"
+      ],
+      "Missing organization private key": [
+        "Organisaation yksityinen avain puuttuu"
+      ],
+      "Missing organization public key": [
+        "Organisaation julkinen avain puuttuu"
+      ],
+      "No users to display": [
+        "Ei näytettäviä käyttäjiä"
+      ],
+      "Not activated": [
+        "Ei aktivoitu"
       ],
       "Organization does not have enough seats available": [
         "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
@@ -1236,14 +1305,47 @@
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
       ],
+      "Pending": [
+        "Odottaa"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Valitse tarkalleen, mitä haluat siirtää. Tämä koskee kaikkia organisaation käyttäjiä."
+      ],
+      "Select users to migrate": [
+        "Valitse siirrettävät käyttäjät"
+      ],
       "Size": [
         "Koko"
       ],
       "Status": [
         "Tila"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tätä käyttäjää ei voida siirtää alustojen yhteensopimattomuuden vuoksi."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Siirtääksesi tämän käyttäjän, ota hänen tilinsä käyttöön Google Workspace -hallintakonsolissa."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Voit siirtää tämän käyttäjän ottamalla hänen tilinsä käyttöön kohdassa ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Siirtääksesi tämän käyttäjän, ota hänen osoitteensa käyttöön kohdassa ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Jotta tämä käyttäjä voidaan siirtää, hänen on hyväksyttävä kutsunsa liittyä ${ BRAND_NAME }:iin."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Voit siirtää tämän käyttäjän poistamalla hänet arkistosta Google Workspace -hallintakonsolissa."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Voit siirtää tämän käyttäjän poistamalla hänen jäädytyksensä Google Workspace -hallintakonsolissa."
+      ],
       "User": [
         "Käyttäjä"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Käyttäjät, jotka ovat käyttäneet ${ BRAND_NAME }-tiliään"
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
@@ -3099,9 +3201,6 @@
       "Failed to resend invitation": [
         "Kutsun uudelleenlähettäminen epäonnistui"
       ],
-      "Failed to trash document.": [
-        "Dokumentin siirtäminen roskakoriin epäonnistui."
-      ],
       "Failed to unshare node": [
         "Solmun jaon poistaminen epäonnistui"
       ],
@@ -3189,6 +3288,9 @@
       ],
       "No contacts found to import": [
         "Tuotavia yhteystietoja ei löytynyt"
+      ],
+      "No drive found to import": [
+        "Tuotavaa asemaa ei löytynyt"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Tuotavia viestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
@@ -3311,6 +3413,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
       ],
+      "Some trashed documents could not be loaded": [
+        "Joitakin roskakorissa olevia dokumentteja ei voitu ladata"
+      ],
       "Something went wrong while fetching available domains": [
         "Jotain meni vikaan haettaessa käytettävissä olevia verkkotunnuksia"
       ],
@@ -3416,6 +3521,9 @@
       "Unexpected error, we can't import the contacts": [
         "Odottamaton virhe, yhteystietojen tuonti ei onnistu"
       ],
+      "Unexpected error, we can't import the files": [
+        "Odottamaton virhe, tiedostojen tuonti ei onnistu"
+      ],
       "Unknown error": [
         "Tuntematon virhe"
       ],
@@ -3439,6 +3547,9 @@
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Ongelmia tallennettaessa viimeisimpiä muokkauksia. Päivitä sivu."
+      ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "Dokumenttinne synkronoinnissa on ongelmia. Päivittäkää sivu."
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Emme voineet tuoda tätä tiedostoa kohteeseen ${ SHEETS_APP_NAME }. Voit yrittää kopioida ja liittää sisällön uuteen ${ SHEETS_APP_NAME }-tiedostoon."
@@ -4610,6 +4721,9 @@
       "Continue": [
         "Jatka"
       ],
+      "Converting document...": [
+        "Muunnetaan dokumenttia..."
+      ],
       "Copied to clipboard": [
         "Kopioitu leikepöydälle"
       ],
@@ -4658,6 +4772,9 @@
       ],
       "Creating link to folder": [
         "Luodaan linkkiä kansioon"
+      ],
+      "Creating new document...": [
+        "Luodaan uutta dokumenttia..."
       ],
       "Current plan": [
         "Nykyinen tilaus"
@@ -4761,6 +4878,12 @@
       "Enter your own password (as trusted contact).": [
         "Syöttäkää oma salasananne (luotettuna yhteystietona)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Virhe muunnettaessa dokumenttia: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Virhe ladattaessa dokumenttia: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Synkronointivirhe"
       ],
@@ -4797,6 +4920,9 @@
       "File will not be updated": [
         "Tiedostoa ei tallenneta"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Vain tiedostot (ei valokuvia, ${ DOCS_APP_NAME }- tai ${ SHEETS_APP_NAME }-tiedostoja) – yhteensä enintään 100 Gt, 100 000 tiedostoa ja 50 Gt tiedostoa kohden"
+      ],
       "finance": [
         "rahoitus"
       ],
@@ -4824,11 +4950,23 @@
       "Geoblocking": [
         "Geoblokkaus"
       ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Hanki ammattimainen @yrityksesi.com-sähköposti, 1 Tt suojattua tallennustilaa käyttäjää kohden, pidemmät videopuhelut ja paljon muuta ${ BRAND_NAME } Workspace -palvelun avulla."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Saakaa sähköpostipäivityksiä dokumentteihinne lisätyistä kommenteista ja ehdotuksista."
+      ],
+      "Get Notified About Comments": [
+        "Saa ilmoituksia kommenteista"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hallitukset ja Internet-palveluntarjoajat voivat valvoa verkkotoimintaasi. Piilottamalla oikean IP-osoitteensi ja salaamalla toimintasi, selaamisesi muuttuu yksityiseksi."
       ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Auta meitä parantamaan käyttökokemusta ilmoittamalla ongelmasta. Jos voit jakaa taulukon sisällön, liitä ilmoitukseesi alla olevat vianmääritystiedot."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Auta meitä parantamaan käyttökokemusta ilmoittamalla ongelmasta. Liitä ilmoitukseesi alla olevat vianmääritystiedot."
       ],
       "here": [
         "tässä"
@@ -4981,6 +5119,9 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
+      "Making a copy...": [
+        "Luodaan kopiota..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkki",
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkkiä"
@@ -5011,6 +5152,9 @@
       ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "URL-osoitteessa ei annettu dokumenttia. Palatkaa sovellukseen ${ DRIVE_APP_NAME } ja valitkaa dokumentti."
       ],
       "No email address": [
         "Ei sähköpostiosoitetta"
@@ -5157,6 +5301,12 @@
       "Read-only": [
         "Vain luku"
       ],
+      "Recent documents": [
+        "Viimeaikaiset dokumentit"
+      ],
+      "Recent spreadsheets": [
+        "Viimeaikaiset laskentataulukot"
+      ],
       "Recents": [
         "Viimeisimmät"
       ],
@@ -5290,6 +5440,9 @@
       "The Beginning": [
         "Aloitus"
       ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Sähköinen allekirjoitus on vahvistettu osittain. Tämä tiedosto on lähetetty julkisella jakolinkillä sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME } -tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
+      ],
       "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Sähköinen allekirjoitus on vahvistettu osittain. Tämä kansio on lähetetty julkisella jakolinkillä sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME } -tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
       ],
@@ -5302,6 +5455,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Syöttämänne URL-osoite vaikuttaa olevan kopioitu Slackista virheellisesti. Kun kopioitte pitkiä linkkejä Slackista, napsauttakaa linkkiä hiiren kakkospainikkeella ja valitkaa sitten \"Kopioi linkki\" sen sijaan, että kopioisitte typistetyn URL-tekstin suoraan."
+      ],
       "There are no documents in the trash.": [
         "Roskakorissa ei ole dokumentteja."
       ],
@@ -5311,8 +5467,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Tämä dokumentti on kasvanut liian suureksi muokattavaksi. Voitte poistaa vanhempia versioita jatkaaksenne muokkausta."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Tämä dokumentti on kasvanut liian suureksi, eikä viimeisimpiä muutoksianne voitu tallentaa. Ladatkaa kopio säilyttääksenne työnne."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Tässä dokumentissa on paljon toimintaa. Jotkin ominaisuudet saattavat olla tilapäisesti poissa käytöstä."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Tällä dokumentilla on useita aktiivisia yhteismuokkaajia. Reaaliaikainen muokkaus ei ole tilapäisesti käytettävissä. Päivittäkää sivu nähdäksenne uusimmat päivitykset."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Tätä dokumenttia ei ehkä ole olemassa, tai meillä on ongelmia sen lataamisessa. Lataa sivu uudelleen ja yritä uudelleen."
@@ -5475,6 +5640,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Uusi vahvistuskoodi lähetetään kohteeseen ${ strong }"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Olemme havainneet, että sinulla on aiemmin ollut ongelmia asiakirjan avaamisessa."
       ],
       "Week": [
         "Viikko"
@@ -5983,6 +6151,9 @@
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
+      "Enable email notifications": [
+        "Ota sähköposti-ilmoitukset käyttöön"
+      ],
       "Encrypt emails": [
         "Salaa viestit"
       ],
@@ -6042,6 +6213,9 @@
       ],
       "Include application logs in bug report": [
         "Sisällytä sovelluslokit vikailmoitukseen"
+      ],
+      "Include document name in notification": [
+        "Sisällytä dokumentin nimi ilmoitukseen"
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
@@ -7911,9 +8085,6 @@
       "Device renamed": [
         "Laite nimettiin uudelleen"
       ],
-      "Document failed to be restored from trash": [
-        "Asiakirjan palauttaminen roskakorista epäonnistui"
-      ],
       "Document moved to trash": [
         "Dokumentti siirrettiin roskakoriin"
       ],
@@ -7980,6 +8151,9 @@
       ],
       "Public link access updated": [
         "Julkisen linkin käyttöoikeus päivitetty"
+      ],
+      "Public link update access failed ": [
+        "Julkisen linkin muokkausoikeuden päivitys epäonnistui "
       ],
       "Recent documents updated": [
         "Viimeaikaiset dokumentit päivitettiin"
@@ -8499,6 +8673,9 @@
       "Search for name or email": [
         "Etsi nimeä tai sähköpostiosoitetta"
       ],
+      "Search for users or addresses": [
+        "Etsi käyttäjiä tai osoitteita"
+      ],
       "Search parent folder": [
         "Etsi yläkansiosta"
       ],
@@ -8731,6 +8908,12 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } suosittelua kohden"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Jos peruutat ennen tätä päivämäärää,** tilauksesi **alennetaan** tasolle ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, kun kokeilu päättyy."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Jos et tilaa,** tilauksesi **alennetaan** tasolle ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "**Jos et peruuta,** täysi tilauksesi alkaa ja saat **${ referrerRewardAmount }** krediitteinä."
       ],
@@ -8742,6 +8925,9 @@
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ansaitse jopa ${ maxRewardAmount } krediitteinä. Saat ${ referrerRewardAmount }, kun kutsumasi henkilö hankkii ${ BRAND_NAME } -tilauksen."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Nauti tilauksesta **${ planTitle }** maksutta päivään **${ textDate }** asti."
       ],
       "Friend joined": [
         "Kaveri liittyi",
@@ -8756,6 +8942,9 @@
       ],
       "Invited friends": [
         "Kutsu kavereita"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Viimeinen mahdollisuus tutustua kaikkiin niihin tehokkaisiin ominaisuuksiin, joita tilauksella **${ planTitle }** on tarjota."
       ],
       "More sharing options": [
         "Lisää jakamisvaihtoehtoja"
@@ -9065,16 +9254,57 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Pilkuilla erotetut arvot (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "Uusi laskentataulukko"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Sarkaimilla erotetut arvot (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Luodaan uutta laskentataulukkoa..."
+      ],
+      "Detect automatically": [
+        "Tunnista automaattisesti"
+      ],
+      "Insert as new sheet": [
+        "Lisää uutena taulukkona"
+      ],
+      "Replace current sheet": [
+        "Korvaa nykyinen taulukko"
+      ],
+      "Replace data at selected cell": [
+        "Korvaa tiedot valitussa solussa"
+      ],
+      "Replace spreadsheet": [
+        "Korvaa laskentataulukko"
+      ],
+      "Select a file to import": [
+        "Valitse tuotava tiedosto"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Nykyinen laskentataulukkonne ja kaikki sen sisältämät taulukot korvataan tällä versiolla."
       ]
     },
     "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Muunna teksti numeroiksi, päivämääriksi ja kaavoiksi"
+      ],
       "Destination": [
         "Kohde"
       ],
       "Format": [
         "Muoto"
+      ],
+      "Separator type": [
+        "Erottimen tyyppi"
       ]
     },
     "sheets_2025:Title": {
@@ -9798,6 +10028,9 @@
         "${ emailsCount } sähköpostiosoite",
         "${ emailsCount } sähköpostiosoitetta"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Kirjoitusavustaja ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Tilin palautus"
       ],
@@ -9981,6 +10214,12 @@
       "Docs": [
         "Docs"
       ],
+      "Document Size Limit Exceeded": [
+        "Dokumentin kokorajoitus ylitetty"
+      ],
+      "Document Size Limit Reached": [
+        "Dokumentin kokorajoitus saavutettu"
+      ],
       "Document verification failed": [
         "Dokumentin vahvistus epäonnistui"
       ],
@@ -10022,6 +10261,9 @@
       ],
       "Edit image": [
         "Muokkaa kuvaa"
+      ],
+      "Editing paused": [
+        "Muokkaus keskeytetty"
       ],
       "Email addresses": [
         "Sähköpostiosoitteet"
@@ -10204,6 +10446,9 @@
       "Private browsing vs VPN": [
         "Yksityinen selaus vs VPN"
       ],
+      "Problems Detected": [
+        "Ongelmia havaittu"
+      ],
       "Public link": [
         "Julkinen linkki"
       ],
@@ -10365,6 +10610,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Käytä ${ VPN_SHORT_APP_NAME }:ää tietosuojaa varten"
+      ],
+      "Users and addresses": [
+        "Käyttäjät ja osoitteet"
       ],
       "Verify your password": [
         "Vahvista salasananne"

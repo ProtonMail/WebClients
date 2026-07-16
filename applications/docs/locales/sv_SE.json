@@ -381,6 +381,9 @@
       "Export contact group": [
         "Exportera kontaktgrupp"
       ],
+      "Export editor state for version": [
+        "Exportera redigeringsläge för version"
+      ],
       "Export selection as .vcf": [
         "Exportera val som .vcf"
       ],
@@ -389,6 +392,9 @@
       ],
       "Export this version (as xlsx)": [
         "Exportera denna version (som xlsx)"
+      ],
+      "Export YJS state for version": [
+        "Exportera YJS-läge för version"
       ],
       "Forgot password?": [
         "Glömt lösenord?"
@@ -1248,6 +1254,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status för datamigrering från Google Workspace till ${ BRAND_NAME }"
+      ],
       "Emails": [
         "E-post"
       ],
@@ -1311,8 +1320,32 @@
       "Status": [
         "Status"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denna användare kan inte migreras på grund av plattformsinkompatibilitet."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, aktivera deras konto i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "För att migrera denna användare måste de acceptera sin inbjudan att gå med i ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, återställ dem från arkivet i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, häv avstängningen för dem i din Google Workspace Admin Console."
+      ],
       "User": [
         "Användare"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Användare som har använt sitt ${ BRAND_NAME }-konto"
       ],
       "What are you migrating?": [
         "Vad migrerar du?"
@@ -3168,9 +3201,6 @@
       "Failed to resend invitation": [
         "Misslyckades att skicka inbjudan igen"
       ],
-      "Failed to trash document.": [
-        "Misslyckades att slänga dokument."
-      ],
       "Failed to unshare node": [
         "Misslyckades att sluta dela nod"
       ],
@@ -3258,6 +3288,9 @@
       ],
       "No contacts found to import": [
         "Inga kontakter hittades att importera"
+      ],
+      "No drive found to import": [
+        "Ingen drive hittades att importera"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Inga e-postmeddelanden hittades att importera - kontot har ingen inkorg"
@@ -4887,6 +4920,9 @@
       "File will not be updated": [
         "Fil kommer inte att uppdateras"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Endast filer (inga foton, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – totalt upp till 100 GB, 100 000 filer och 50 GB per fil"
+      ],
       "finance": [
         "finans"
       ],
@@ -4925,6 +4961,9 @@
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter och internetleverantörer kan övervaka din aktivitet på nätet. Genom att dölja din riktiga IP och kryptera din aktivitet blir din surfning privat."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Hjälp oss att förbättra denna upplevelse genom att rapportera problemet. Om du känner dig bekväm med att dela kalkylbladets innehåll kan du bifoga felsökningsinformationen nedan till din rapport."
       ],
       "here": [
         "här"
@@ -5155,6 +5194,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Endast personer med länken och lösenordet kan komma åt denna mapp."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Hoppsan! Det här kalkylbladet kan inte spara dina senaste redigeringar, så vi har pausat redigeringen för att förhindra att du förlorar ditt arbete."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Öppna guiden för rekommenderade åtgärder och användbara länkar."
@@ -5430,6 +5472,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Detta dokument har mycket aktivitet. Vissa funktioner kan vara tillfälligt otillgängliga."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Det här dokumentet har många aktiva medarbetare. Realtidsredigering är tillfälligt otillgänglig. Uppdatera för att visa de senaste uppdateringarna."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Detta dokument kanske inte finns eller så har vi problem med att ladda det. Ladda om sidan och försök igen."
@@ -6109,6 +6154,9 @@
       "Erase this link and remove everyone with access": [
         "Radera denna länk och ta bort alla med åtkomst"
       ],
+      "Exact host matching": [
+        "Exakt värdmatchning"
+      ],
       "Exact URL matching": [
         "Exakt URL-matchning"
       ],
@@ -6372,6 +6420,9 @@
       ],
       "Upload picture": [
         "Ladda upp bild"
+      ],
+      "URL wildcard pattern": [
+        "Jokerteckenmönster för URL"
       ],
       "Username": [
         "Användarnamn"
@@ -6707,8 +6758,23 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Matchningsregel för \"Börjar med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Matchningsregel för exakt (under)domän"
+      ],
+      "Exact URL matching rule": [
+        "Matchningsregel för exakt URL"
+      ],
       "Never fill with this exact URL": [
         "Fyll aldrig med denna exakta URL"
+      ],
+      "Regular expression rule": [
+        "Regel för reguljärt uttryck"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchningsregel för jokerteckenmönster"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis provperiod har slutat. ${ nonAutoRenewalAction }"
@@ -7984,6 +8050,9 @@
       "\"${ newName }\" renamed successfully": [
         "“${ newName }“ namnändrades utan problem"
       ],
+      "\"Document deleted permanently": [
+        "”Dokument borttaget permanent"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } objekt kunde inte dekrypteras",
         "${ count } objekt kunde inte dekrypteras"
@@ -8070,9 +8139,6 @@
       "Device renamed": [
         "Enhet omdöpt"
       ],
-      "Document failed to be restored from trash": [
-        "Dokument misslyckades att återställas från papperskorg"
-      ],
       "Document moved to trash": [
         "Dokument flyttat till papperskorg"
       ],
@@ -8088,6 +8154,9 @@
       "Failed to accept share invitation": [
         "Misslyckades att acceptera delningsinbjudan"
       ],
+      "Failed to delete document": [
+        "Misslyckades att ta bort dokument"
+      ],
       "Failed to download files: ${ err }": [
         "Misslyckades att ladda ner filer: ${ err }"
       ],
@@ -8099,6 +8168,12 @@
       ],
       "Failed to reject share invitation": [
         "Misslyckades att avvisa delningsinbjudan"
+      ],
+      "Failed to rename document": [
+        "Misslyckades att byta namn på dokument"
+      ],
+      "Failed to restore document": [
+        "Misslyckades att återställa dokument"
       ],
       "Failed to upload files: ${ err }": [
         "Misslyckades att ladda upp filer: ${ err }"
@@ -10199,6 +10274,12 @@
       "Docs": [
         "Docs"
       ],
+      "Document Size Limit Exceeded": [
+        "Gränsen för dokumentstorlek har överskridits"
+      ],
+      "Document Size Limit Reached": [
+        "Gränsen för dokumentstorlek har nåtts"
+      ],
       "Document verification failed": [
         "Dokumentverifiering misslyckades"
       ],
@@ -10587,6 +10668,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
+      "Users and addresses": [
+        "Användare och adresser"
+      ],
       "Verify your password": [
         "Verifiera ditt lösenord"
       ],
@@ -10895,6 +10979,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ger kraftfull kontroll, men ett enda fel kan göra att autofyll matchar och fyller i data på bedrägliga webbplatser eller nätfiske-webbplatser."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Är du säker på att du vill ta bort ${ count } kontakt?",
