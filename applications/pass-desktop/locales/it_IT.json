@@ -196,6 +196,9 @@
       "Copy forwarding address": [
         "Copia l'indirizzo d'inoltro"
       ],
+      "Copy instructions": [
+        "Copia istruzioni"
+      ],
       "Copy link": [
         "Copia link"
       ],
@@ -213,6 +216,9 @@
       ],
       "Copy to clipboard": [
         "Copia negli appunti"
+      ],
+      "Copy token": [
+        "Copia token"
       ],
       "Copy username": [
         "Copia il nome utente"
@@ -249,6 +255,9 @@
       ],
       "Create note": [
         "Crea nota"
+      ],
+      "Create token": [
+        "Crea token"
       ],
       "Create vault": [
         "Crea cassaforte"
@@ -309,6 +318,12 @@
       ],
       "Do not show again when I press": [
         "Non mostrare più quando premo\n\n"
+      ],
+      "Do not show this again": [
+        "Non mostrare più"
+      ],
+      "Don't show this again": [
+        "Non mostrare più"
       ],
       "Done": [
         "Fatto"
@@ -457,6 +472,9 @@
       "Manage access": [
         "Gestisci accesso"
       ],
+      "Manage vault access": [
+        "Gestisci l'accesso alla cassaforte"
+      ],
       "Manually sync your data": [
         "Sincronizza manualmente i tuoi dati"
       ],
@@ -492,6 +510,9 @@
       ],
       "Multiple select": [
         "Selezione multipla"
+      ],
+      "New token": [
+        "Nuovo token"
       ],
       "Next": [
         "Avanti"
@@ -555,6 +576,12 @@
       ],
       "Regenerate": [
         "Genera di nuovo"
+      ],
+      "Regex invalid": [
+        "Regex non valida"
+      ],
+      "Regex unsafe": [
+        "Regex non sicura"
       ],
       "Reject": [
         "Rifiuta"
@@ -759,6 +786,9 @@
       "Via secure link": [
         "Tramite link sicuro"
       ],
+      "View agent activity": [
+        "Visualizza l'attività dell'agente"
+      ],
       "View details": [
         "Visualizza i dettagli"
       ],
@@ -782,6 +812,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Attività"
+      ],
+      "Activity details could not be loaded.": [
+        "Impossibile caricare i dettagli dell'attività."
+      ],
+      "Folder": [
+        "Cartella"
+      ],
+      "Item": [
+        "Elemento"
+      ],
+      "Reason": [
+        "Motivo"
+      ],
+      "Vault": [
+        "Cassaforte"
       ]
     },
     "App menu": {
@@ -938,6 +988,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Impossibile analizzare il file di ${ provider }. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Una verifica di sblocco del desktop è già in corso."
+      ],
       "A domain ownership must be verified first.": [
         "La proprietà di un dominio deve essere prima verificata."
       ],
@@ -967,6 +1020,21 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autenticazione non riuscita. Conferma la tua password secondaria per procedere con l'esportazione"
+      ],
+      "Biometric authentication failed.": [
+        "Autenticazione biometrica non riuscita."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Le credenziali di blocco biometrico non corrispondono."
+      ],
+      "Biometric lock credentials not found.": [
+        "Credenziali di blocco biometrico non trovate."
+      ],
+      "Biometric lock is not configured.": [
+        "Il blocco biometrico non è configurato."
+      ],
+      "Biometric lock setup failed.": [
+        "Configurazione del blocco biometrico non riuscita."
       ],
       "Cannot send invitation at the moment": [
         "Impossibile spedire l'invito al momento",
@@ -1005,6 +1073,9 @@
       "Could not validate addresses at the moment.": [
         "Impossibile verificare gli indirizzi al momento."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Impossibile caricare le istruzioni di configurazione dell'agente. Copia il token qui sotto, non verrà più mostrato."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Il file CSV non contiene le seguenti intestazioni previste: ${ missingHeaders }"
       ],
@@ -1039,6 +1110,9 @@
       "Emptying trash failed": [
         "Svuotamento del cestino non riuscito"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La comunicazione crittografata con l'app desktop ${ PASS_APP_NAME } non è riuscita."
+      ],
       "Encrypted JSON not supported": [
         "JSON crittografato non supportato"
       ],
@@ -1069,6 +1143,9 @@
       "Failed to change mailbox": [
         "Impossibile cambiare la casella mail"
       ],
+      "Failed to create access token": [
+        "Impossibile creare il token di accesso"
+      ],
       "Failed to create domain": [
         "Creazione del dominio fallita"
       ],
@@ -1077,6 +1154,9 @@
       ],
       "Failed to create the contact": [
         "Creazione del contatto fallita"
+      ],
+      "Failed to delete access token": [
+        "Impossibile eliminare il token di accesso"
       ],
       "Failed to delete domain": [
         "Eliminazione dominio fallita"
@@ -1096,6 +1176,9 @@
       "Failed to edit user's access.": [
         "Modifica dell'accesso dell'utente non riuscita."
       ],
+      "Failed to load access tokens": [
+        "Impossibile caricare i token di accesso"
+      ],
       "Failed to load breaches for this address": [
         "Impossibile caricare le violazioni di dati per questo indirizzo"
       ],
@@ -1107,6 +1190,9 @@
       ],
       "Failed to load item history": [
         "Caricamento della cronologia dell'elemento non riuscito"
+      ],
+      "Failed to load token actions": [
+        "Impossibile caricare le azioni del token"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" non riuscito"
@@ -1138,6 +1224,12 @@
       "Failed to set default mailbox": [
         "Impossibile impostare la casella di posta predefinita"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Impossibile avviare l'agente SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Impossibile arrestare l'agente SSH: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Impossibile sincronizzare gli alias"
       ],
@@ -1164,6 +1256,9 @@
       ],
       "Failed to update random prefix generation setting.": [
         "Impossibile aggiornare l'impostazione di generazione casuale del prefisso."
+      ],
+      "Failed to update vault access": [
+        "Impossibile aggiornare l'accesso alla cassaforte"
       ],
       "Failed to verify domain": [
         "Impossibile verificare il dominio"
@@ -1219,6 +1314,9 @@
       "Name is required": [
         "Il nome è obbligatorio"
       ],
+      "Name must be 191 characters or fewer": [
+        "Il nome deve contenere al massimo 191 caratteri"
+      ],
       "Network error": [
         "Errore di rete"
       ],
@@ -1263,6 +1361,24 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Qualcosa è andato storto. Accedi di nuovo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'app desktop ${ PASS_APP_NAME } non ha risposto in tempo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "L'app desktop di ${ PASS_APP_NAME } è bloccata, devi sbloccarla."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "L'app desktop di ${ PASS_APP_NAME } non è installata."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "L'app desktop di ${ PASS_APP_NAME } non risponde, è in esecuzione?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "L'app desktop ${ PASS_APP_NAME } ha effettuato l'accesso con un account diverso."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'app desktop ${ PASS_APP_NAME } dovrebbe aver effettuato l'accesso."
       ],
       "The session has expired. Please sign in again.": [
         "La sessione è scaduta. Effettua di nuovo il login."
@@ -1480,6 +1596,9 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } vuole condividere un elemento con un gruppo che amministri."
       ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } vuole condividere un elemento con il gruppo ${ name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vuole condividere un elemento con te."
       ],
@@ -1506,6 +1625,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importerà solo login, note, carte di credito e identità."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } utilizzerà le chiavi SSH salvate nelle tue casseforti."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Modalità offline di ${ PASS_SHORT_APP_NAME } abilitata."
       ],
@@ -1526,6 +1648,9 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } violazione di dati rilevata",
         "${ row.breachCount } violazioni di dati rilevate"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } selezionati"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
@@ -1560,6 +1685,15 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà l'impronta digitale o il PIN del dispositivo."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Il token di accesso \"${ action.token.Name }\" è già scaduto. Se lo elimini, non verrà più mostrato."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Il token di accesso \"${ action.token.Name }\" smetterà di funzionare immediatamente. Questa azione non può essere annullata."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "I token di accesso, usati insieme a ${ passCliLink }, ti consentono di automatizzare CI/CD o di dare al tuo agente AI un accesso limitato a ciò di cui ha bisogno per eseguire il suo lavoro."
       ],
       "Add your custom email address to monitor:": [
         "Aggiungi il tuo indirizzo email personalizzato da monitorare:"
@@ -1636,6 +1770,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Prima di esportare i tuoi dati con questo formato, apri le impostazioni di Safari -> scheda \"Generale\" -> disabilita l'opzione \"Apri file sicuri dopo il download\". Questo impedirà a Safari di estrarre in modo errato il file esportato."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Tra 60 (1 ora) e 525600 (1 anno)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blocco con biometria impostato correttamente. Utilizzalo per sbloccare ${ PASS_APP_NAME }"
       ],
@@ -1644,6 +1781,9 @@
       ],
       "Breaches detected": [
         "Violazioni di dati rilevate"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Trasferisci le tue password già esistenti su ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Porta il tuo dominio e non dovrai acquistare l'ennesima soluzione di hosting di posta elettronica."
@@ -1696,14 +1836,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Copiato negli appunti (scade tra ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copia il markdown qui sotto e invialo al tuo agente AI. Questa è l'unica volta in cui il token verrà mostrato."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copia questo token ora. Per motivi di sicurezza, non verrà più mostrato."
+      ],
       "Coupon successfully applied!": [
         "Coupon applicato correttamente!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Crea un token per integrare ${ PASS_APP_NAME } con i tuoi script e strumenti."
       ],
       "Create contact illustration": [
         "Crea un'illustrazione del contatto"
       ],
+      "Created ${ createdDate }": [
+        "Creato il ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Creato ${ time }."
+      ],
+      "Created item": [
+        "Elemento creato"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV è un formato comodo per visualizzare i tuoi dati. Tuttavia, a causa della sua semplicità, alcuni dati non verranno inclusi (campi personalizzati, passkey, ecc.). Per un'esportazione completa, ti consigliamo di utilizzare un altro formato."
@@ -1716,6 +1871,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Nome visualizzato predefinito per gli alias creati con ${ domainDisplay } a meno che non venga sovrascritto dal nome visualizzato dell'alias."
+      ],
+      "Deleted item": [
+        "Elemento eliminato"
       ],
       "Deleted items will be moved here first": [
         "Gli elementi eliminati verranno spostati prima qui"
@@ -1737,6 +1895,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Dominio: ${ domainPath } o @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Scarica pass-cli da ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Trascina qui i file da caricare."
@@ -1783,6 +1944,9 @@
       "Enabling biometrics lock failed": [
         "Impossibile abilitare il blocco con biometria"
       ],
+      "Enabling desktop auto-lock": [
+        "Attivazione del blocco automatico desktop"
+      ],
       "Enabling offline mode...": [
         "Abilitazione della modalità offline..."
       ],
@@ -1806,6 +1970,9 @@
       ],
       "Enter your PIN code": [
         "Inserisci il tuo PIN"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Ogni azione eseguita da questo token agente, a partire dalla più recente."
       ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Ogni volta che il tuo alias riceve un'email da qualcuno, viene creato automaticamente un contatto."
@@ -1840,6 +2007,9 @@
       "finance": [
         "dati finanziari"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Trova \"Agente di autenticazione OpenSSH\", fai clic con il tasto destro su Proprietà."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Segui quei passaggi per importare i tuoi dati con un file CSV generico:"
       ],
@@ -1860,6 +2030,9 @@
         "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana.",
         "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimane."
       ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Ottieni il massimo da ${ PASS_APP_NAME } creando una cassaforte per ogni team o progetto."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Ottieni alias illimitati, approfitta di funzionalità esclusive e supportaci abbonandoti a Pass Plus."
       ],
@@ -1877,6 +2050,9 @@
       ],
       "Identity confirmed": [
         "Identità confermata"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Se non hai intenzione di utilizzare l'agente SSH su un altro account a pagamento, ricordati di disattivare questa impostazione prima di passare a quell'account."
       ],
       "Import the CSV file below.": [
         "Importa il file CSV qui sotto."
@@ -1907,6 +2083,9 @@
       ],
       "Invite successfully resent": [
         "Invito reinviato con successo"
+      ],
+      "invites the group ${ name } to access items in": [
+        "invita il gruppo ${ name } ad accedere agli elementi in"
       ],
       "invites you to access items in": [
         "ti invita ad accedere agli elementi in"
@@ -1975,11 +2154,17 @@
       "Loading ${ PASS_APP_NAME }": [
         "Caricamento di ${ PASS_APP_NAME } in corso"
       ],
+      "Log out of any existing session:": [
+        "Disconnettiti da qualsiasi sessione esistente:"
+      ],
       "Logging you out...": [
         "Disconnessione in corso"
       ],
       "Low Priority": [
         "Priorità bassa"
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Assicurati di mantenere ${ PASS_APP_NAME } in esecuzione (può essere ridotto a icona) affinché l'agente SSH rimanga attivo. Le chiavi SSH con frase d'accesso non sono attualmente supportate."
       ],
       "Manager": [
         "Gestore"
@@ -2002,6 +2187,9 @@
       "Move ${ count } item": [
         "Sposta ${ count } elemento",
         "Sposta ${ count } elementi"
+      ],
+      "Moved item to trash": [
+        "Elemento spostato nel cestino"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
@@ -2034,14 +2222,26 @@
       "New version ${ latestVersion } is available.": [
         "La nuova versione ${ latestVersion } è disponibile."
       ],
+      "No activity recorded yet.": [
+        "Nessuna attività registrata."
+      ],
       "No breaches detected": [
         "Nessuna violazione di dati rilevata"
       ],
       "No network connection": [
         "Nessuna connessione alla rete"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Nessuna chiave SSH trovata in ${ PASS_SHORT_APP_NAME }. Crea elementi chiave SSH da utilizzare con l'agente."
+      ],
+      "No vaults available.": [
+        "Nessuna cassaforte disponibile."
+      ],
       "None": [
         "Nessuno"
+      ],
+      "None selected": [
+        "Nessuno selezionato"
       ],
       "Not recommended": [
         "Sconsigliato"
@@ -2054,6 +2254,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accesso online a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la sessione. Verrai disconnesso dopo 3 tentativi falliti."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Vengono mostrati solo i token scaduti negli ultimi 30 giorni. I token più vecchi vengono eliminati automaticamente."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Apri \"Servizi\" (puoi utilizzare la barra di ricerca di Windows o premere Win+R e inserire services.msc)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Apri le tue impostazioni di Safari per l'estensione e verifica che i permessi del sito siano attivati per i domini di ${ BRAND_NAME }"
@@ -2079,6 +2285,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana vengono eliminate automaticamente dalla cronologia.",
         "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimane vengono eliminate automaticamente dalla cronologia."
+      ],
+      "Paste the following command in your terminal:": [
+        "Incolla il seguente comando nel tuo terminale:"
       ],
       "Paused": [
         "In pausa"
@@ -2224,6 +2433,15 @@
       "Press Enter to copy": [
         "Premi Invio per copiare"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protetto da ${ PROTON_SENTINEL_LINK }, il nostro programma avanzato di protezione dell'account"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Ordinati per campo (prima il titolo, poi il nome utente o l'email, il sito web, le note) e per precisione di corrispondenza (esatta, inizia con, contiene)."
+      ],
+      "Read item": [
+        "Leggi elemento"
+      ],
       "Reconnect": [
         "Riconnetti"
       ],
@@ -2257,6 +2475,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "La reimpostazione della cronologia eliminerà definitivamente tutte le versioni precedenti degli elementi e non potrà essere annullata."
       ],
+      "Restored item from trash": [
+        "Elemento ripristinato dal cestino"
+      ],
       "Restoring items from trash": [
         "Ripristino degli elementi dal cestino"
       ],
@@ -2271,6 +2492,9 @@
       ],
       "Select destination vault": [
         "Seleziona la cassaforte di destinazione"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Seleziona le casseforti che \"${ token.Name }\" può leggere."
       ],
       "Select vault to share": [
         "Seleziona una cassaforte da condividere"
@@ -2295,6 +2519,9 @@
       ],
       "Session timed out": [
         "Sessione scaduta"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Imposta \"Tipo di avvio\" su Disabilitato, fai clic su OK."
       ],
       "Set by your organization": [
         "Impostato dalla tua organizzazione"
@@ -2347,8 +2574,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Tocca l'icona ${ gearIcon } per personalizzare l'alias come preferisci."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Metti alla prova il token accedendo ed elencando le casseforti:"
+      ],
       "Thank you, the problem has been reported": [
         "Grazie, il problema è stato segnalato"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "All'agente verrà richiesto di fornire un motivo per ogni azione che esegue, e ogni azione verrà registrata in un registro di controllo che potrai rivedere. Dopo la creazione del token, riceverai le istruzioni da copiare e incollare nel tuo agente AI."
       ],
       "The changelog can be found ${ changelogLink }.": [
         "Il registro delle modifiche può essere trovato ${ changelogLink }."
@@ -2384,11 +2617,17 @@
       "The user did not accept the invitation yet.": [
         "L'utente non ha ancora accettato l'invito."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Poi potrai andare su ${ url } per copiare le istruzioni da inviare al tuo agente AI."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Questa esportazione non sarà crittografata e chiunque abbia accesso al file esportato potrà vedere le tue password. Per la tua sicurezza, ricordati di cancellarlo una volta che hai terminato di utilizzarlo."
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Questa funzionalità è attualmente sperimentale su Linux. Assicurati che il tuo sistema sia aggiornato."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Questa funzionalità richiede che l'app desktop di ${ PASS_APP_NAME } sia installata e in esecuzione durante la configurazione."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Questo elemento non è attualmente condiviso con nessuno. Per condividerlo con qualcuno, invita delle persone."
@@ -2414,6 +2653,9 @@
       "This setting is enforced by your organization": [
         "Questa impostazione viene applicata dalla tua organizzazione"
       ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Questo token ottiene l'accesso in sola lettura alle casseforti che selezioni. Può leggere gli elementi, ma non può modificarli, condividere casseforti o invitare altri. Puoi cambiarlo in seguito."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Questa cassaforte non è attualmente condivisa con nessuno. Per condividerla con qualcuno, invita delle persone."
       ],
@@ -2422,6 +2664,9 @@
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Il dispositivo **${ name }** che ha tentato di accedere al tuo account ${ BRAND_NAME } il **${ date }** rifiuterà."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Suggerimento: aggiungilo al tuo file .bashrc o .zshrc in modo che venga eseguito automaticamente all'apertura del terminale."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Per continuare a ricevere email trasferisci questi alias in una casella di posta diversa:"
@@ -2434,6 +2679,12 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Per controllare i tuoi dati importati, clicca sull'icona di ${ PASS_APP_NAME } nella barra degli strumenti del tuo browser."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Per configurare lo sblocco biometrico, ${ PASS_APP_NAME } richiede una nuova autorizzazione del browser. Dopo averla accettata, l'estensione si ricaricherà. Riapri questa pagina in seguito."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Per utilizzare l'agente SSH di ${ PASS_APP_NAME } su Windows, il servizio OpenSSH deve essere disattivato."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Scelto da oltre 50.000 utenti business e 100 milioni di account in tutto il mondo."
@@ -2468,11 +2719,17 @@
       "Unverified": [
         "Non verificato"
       ],
+      "Updated item": [
+        "Elemento aggiornato"
+      ],
       "Updating vault organization...": [
         "Aggiornamento dell’organizzazione della cassaforte in corso..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Effettua ora l'upgrade per sbloccare le funzionalità premium"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Effettua l'upgrade a ${ PASS_APP_NAME } Plus per creare token di accesso e utilizzare ${ PASS_APP_NAME } in modo programmatico."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Effettua l'aggiornamento a un piano a pagamento per poter creare casseforti multiple."
@@ -2497,6 +2754,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "La cassaforte \"${ share.content.name }\" è stata rimossa."
+      ],
+      "Vault access granted": [
+        "Accesso alla cassaforte consentito"
       ],
       "Vault organization successfully updated": [
         "Organizzazione del vault aggiornata con successo"
@@ -2542,6 +2802,15 @@
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ora puoi utilizzare la password dell'account ${ BRAND_NAME } per accedere a ${ PASS_SHORT_APP_NAME } offline"
       ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ora puoi utilizzare la tua password di backup per accedere a ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ora puoi utilizzare la tua password aggiuntiva per accedere a ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ora puoi utilizzare la tua seconda password per accedere a ${ PASS_SHORT_APP_NAME } offline"
+      ],
       "You cannot change the mailboxes for this alias.": [
         "Non puoi cambiare le caselle di posta associate a questo alias."
       ],
@@ -2573,6 +2842,9 @@
       ],
       "You may close this tab.": [
         "Puoi chiudere questa scheda."
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Potresti dover concedere l'autorizzazione di accessibilità a ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Hai bisogno di una cassaforte con permessi per modificare prima che tu possa importare oggetti."
@@ -2775,6 +3047,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Token di accesso"
+      ],
       "Account": [
         "Account"
       ],
@@ -2847,6 +3122,9 @@
       "Bank Name": [
         "Nome banca"
       ],
+      "Basic": [
+        "Base"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Oltre a memorizzare i tuoi dati di accesso, ${ PASS_APP_NAME } protegge la tua identità con una funzione di alias email integrata. Ogni volta che crei un nuovo account online, ${ PASS_APP_NAME } può creare automaticamente un alias per mantenere protetto il tuo indirizzo email effettivo. "
       ],
@@ -2879,6 +3157,9 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Check": [
+        "Verifica"
       ],
       "Checkbox": [
         "Checkbox"
@@ -3045,6 +3326,12 @@
       "Enter email or username": [
         "Inserisci email o nome utente"
       ],
+      "Exact host matching": [
+        "Corrispondenza esatta dell'host"
+      ],
+      "Exact URL matching": [
+        "Corrispondenza URL esatta"
+      ],
       "Experimental": [
         "Sperimentale"
       ],
@@ -3053,6 +3340,9 @@
       ],
       "Expired": [
         "Scaduto"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Token scaduti (${ expired.length })"
       ],
       "Expires in": [
         "Scade tra"
@@ -3369,6 +3659,9 @@
       "Never": [
         "Mai"
       ],
+      "Never fill on this exact URL": [
+        "Non compilare mai su questo URL esatto"
+      ],
       "New": [
         "Nuovo"
       ],
@@ -3431,6 +3724,9 @@
       ],
       "Owner": [
         "Proprietario"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principale e sottodomini (predefinito)"
       ],
       "Passkey": [
         "Passkey"
@@ -3542,6 +3838,12 @@
       ],
       "Reddit handle": [
         "Nome utente Reddit"
+      ],
+      "Regular expression": [
+        "Espressione regolare"
+      ],
+      "Relevant": [
+        "Rilevanti"
       ],
       "Remove link": [
         "Rimuovi il link"
@@ -3668,6 +3970,9 @@
       ],
       "SSN": [
         "Codice fiscale"
+      ],
+      "Starts with": [
+        "Inizia con"
       ],
       "State or province": [
         "Regione"
@@ -3798,6 +4103,15 @@
       "Update": [
         "Aggiorna"
       ],
+      "URL wildcard pattern": [
+        "Modello di carattere jolly dell'URL"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Usa ${ PASS_APP_NAME } come agente SSH"
+      ],
+      "Use for AI agent": [
+        "Usa per agente AI"
+      ],
       "Used in": [
         "Utilizzato in"
       ],
@@ -3812,6 +4126,9 @@
       ],
       "Value:": [
         "Valore:"
+      ],
+      "Vault access": [
+        "Accesso alla cassaforte"
       ],
       "Vault ID": [
         "ID cassaforte"
@@ -3929,6 +4246,24 @@
         "${ count } elemento",
         "${ count } elementi"
       ],
+      "'Starts with' matching rule": [
+        "Regola di corrispondenza \"Inizia con\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regola di corrispondenza esatta del (sotto) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regola di corrispondenza URL esatta"
+      ],
+      "Never fill with this exact URL": [
+        "Non compilare mai con questo URL esatto"
+      ],
+      "Regular expression rule": [
+        "Regola dell'espressione regolare"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regola di corrispondenza del modello di caratteri jolly"
+      ],
       "You can drag and drop the selected item to another vault": [
         "Puoi trascinare e rilasciare l'elemento selezionato in un altra cassaforte",
         "Puoi trascinare e rilasciare gli elementi selezionati in un altra cassaforte"
@@ -3951,6 +4286,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } è stato abilitato"
+      ],
+      "Access token deleted": [
+        "Token di accesso eliminato"
       ]
     },
     "Option": {
@@ -4071,6 +4409,12 @@
       "The file you are trying to import is empty": [
         "Il file che stai tentando di importare è vuoto"
       ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Questa funzionalità non è supportata nel tuo piano. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Questa funzionalità non è supportata nel tuo piano. Contatta il tuo amministratore per ottenere l'accesso."
+      ],
       "Total files: ": [
         "File totali: "
       ],
@@ -4130,6 +4474,9 @@
       ],
       "Coupon": [
         "Coupon"
+      ],
+      "e.g. 60": [
+        "es. 60"
       ],
       "e.g. My automation script": [
         "ad es. Il mio script di automazione"
@@ -4216,6 +4563,23 @@
         "Usato su ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Inserisci un URL da controllare per verificare se la tua regola corrente corrisponde all'URL"
+      ],
+      "The rule is matching this URL": [
+        "La regola corrisponde a questo URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regola NON corrisponde a questo URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Questo URL sarà bloccato dal riempimento automatico"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Questo URL NON sarà bloccato dal riempimento automatico"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Sono state rilevate potenziali fughe di dati di ${ name } e altre ${ remainingCount }. Attiva ${ DARK_WEB_MONITORING_NAME } per visualizzare i dettagli. ${ link }"
@@ -4291,6 +4655,20 @@
         "Sconosciuto"
       ]
     },
+    "Status": {
+      "Active": [
+        "Attivo"
+      ],
+      "Agent": [
+        "Agente"
+      ],
+      "Expired": [
+        "Scaduto"
+      ],
+      "Expiring soon": [
+        "In scadenza"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Sincronizzazione degli alias abilitata correttamente. La sincronizzazione degli alias SimpleLogin potrebbe richiedere del tempo"
@@ -4353,6 +4731,12 @@
       "Random prefix generation successfully enabled": [
         "Generazione casuale del prefisso abilitata con successo"
       ],
+      "SSH agent successfully started": [
+        "Agente SSH avviato con successo"
+      ],
+      "SSH agent successfully stopped": [
+        "Agente SSH arrestato con successo"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Le casseforti non possono contenere più di ${ targetMaxMembers } utente.",
         "Le casseforti non possono contenere più di ${ targetMaxMembers } utenti."
@@ -4379,6 +4763,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "I token di accesso richiedono ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Protezione dell'account"
       ],
@@ -4388,11 +4775,20 @@
       "Activity": [
         "Attività"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Attività per \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Aggiungi dominio personalizzato"
       ],
       "Add mailbox": [
         "Aggiungi casella email"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Regola i comportamenti del riempimento automatico per modificare i punti in cui vengono suggeriti i login."
+      ],
+      "Agent setup instructions": [
+        "Istruzioni di configurazione dell'agente"
       ],
       "Alias contacts": [
         "Contatti alias"
@@ -4417,6 +4813,9 @@
       ],
       "Breaches detected for": [
         "Violazioni di dati rilevate per"
+      ],
+      "Browser permission required": [
+        "Autorizzazione del browser necessaria"
       ],
       "Cancel changing your email?": [
         "Vuoi annullare la modifica della tua email?"
@@ -4451,6 +4850,9 @@
       "Create contact": [
         "Crea contatto"
       ],
+      "Create new access token": [
+        "Crea un nuovo token di accesso"
+      ],
       "Create PIN code": [
         "Creare codice PIN"
       ],
@@ -4481,6 +4883,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "Eliminare ${ deletedItemsCount } elemento?",
         "Eliminare ${ deletedItemsCount } elementi?"
+      ],
+      "Delete access token?": [
+        "Eliminare il token di accesso?"
       ],
       "Delete domain": [
         "Elimina il dominio"
@@ -4581,6 +4986,9 @@
       "Last modified": [
         "Ultima modifica"
       ],
+      "Learn more": [
+        "Scopri di più"
+      ],
       "Leave this item?": [
         "Lasciare questo elemento?"
       ],
@@ -4595,6 +5003,9 @@
       ],
       "Mailbox": [
         "Casella di posta"
+      ],
+      "Manage vault access": [
+        "Gestisci l'accesso alla cassaforte"
       ],
       "Mark as resolved?": [
         "Vuoi segnare come risolto?"
@@ -4630,6 +5041,9 @@
       ],
       "Next": [
         "Successivo"
+      ],
+      "No access tokens yet": [
+        "Ancora nessun token di accesso"
       ],
       "No excluded items": [
         "Nessun elemento escluso"
@@ -4735,6 +5149,9 @@
       "Review and share": [
         "Controlla e condividi"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Screenshot del servizio OpenSSH su Windows"
+      ],
       "Secure your data": [
         "Proteggi i tuoi dati"
       ],
@@ -4756,6 +5173,9 @@
       "Settings": [
         "Impostazioni"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Configurazione agente SSH ${ PASS_APP_NAME }"
+      ],
       "Setup offline mode": [
         "Imposta la modalità offline"
       ],
@@ -4773,6 +5193,9 @@
       ],
       "SPF (Optional)": [
         "SPF (Opzionale)"
+      ],
+      "SSH Agent": [
+        "Agente SSH"
       ],
       "Status": [
         "Stato"
@@ -4792,6 +5215,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sincronizza i tuoi alias da SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Verifica un URL rispetto a questa regola"
+      ],
       "Transfer ownership": [
         "Trasferisci proprietà"
       ],
@@ -4806,6 +5232,9 @@
       ],
       "Update available": [
         "Aggiornamento disponibile"
+      ],
+      "URL matching": [
+        "Corrispondenza URL"
       ],
       "Vault": [
         "Cassaforte"
@@ -4848,6 +5277,9 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
+      ],
+      "Your new access token": [
+        "Il tuo nuovo token di accesso"
       ],
       "Your vault is empty": [
         "La tua cassaforte è vuota."
@@ -4918,6 +5350,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "È richiesta la password di ${ BRAND_NAME }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un controllo potente, ma un singolo errore può far sì che il riempimento automatico corrisponda e inserisca dati su siti web fraudolenti o di phishing."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Modalità offline di ${ PASS_SHORT_APP_NAME } disabilitata."
@@ -5120,6 +5555,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Qualcosa è andato storto durante l'avvio di ${ PASS_APP_NAME }. Prova a ricaricare la pagina o a riavviare l'estensione"
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "L'agente SSH richiede l'uso di chiavi SSH, che non sono disponibili nel tuo piano."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Il prefisso alias non può essere più lungo di 40 caratteri"
       ],
@@ -5128,6 +5566,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Questo indirizzo email non sarà più monitorato per eventuali violazioni di dati."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Questo elemento non può essere suggerito per il riempimento automatico a causa di \"${ neverModeDescriptionStrong }\". Aggiungi un altro URL se desideri che questo elemento venga compilato automaticamente."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Questo elemento è attualmente condiviso. L'eliminazione rimuoverà l'accesso per tutti gli altri utenti."

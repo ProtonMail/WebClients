@@ -319,6 +319,9 @@
       "Do not show again when I press": [
         "No volver a mostrar cuando pulse"
       ],
+      "Do not show this again": [
+        "No volver a mostrar esto"
+      ],
       "Don't show this again": [
         "No mostrar esto de nuevo"
       ],
@@ -573,6 +576,12 @@
       ],
       "Regenerate": [
         "Regenerar"
+      ],
+      "Regex invalid": [
+        "Regex no válida"
+      ],
+      "Regex unsafe": [
+        "Regex insegura"
       ],
       "Reject": [
         "Rechazar"
@@ -979,6 +988,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No se ha podido analizar el archivo de ${ provider }. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Ya hay una comprobación de desbloqueo de escritorio en curso."
+      ],
       "A domain ownership must be verified first.": [
         "Primero se debe verificar la propiedad de un dominio."
       ],
@@ -1211,6 +1223,12 @@
       ],
       "Failed to set default mailbox": [
         "No se ha podido establecer el buzón por defecto."
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Error al iniciar el agente SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Error al detener el agente SSH: ${ errorMessage }"
       ],
       "Failed to sync aliases": [
         "Error al sincronizar los alias"
@@ -1607,6 +1625,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas, tarjetas de crédito e identidades."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } usará las claves SSH guardadas en tus cajas fuertes."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Modo sin conexión de ${ PASS_SHORT_APP_NAME } activado."
       ],
@@ -1986,6 +2007,9 @@
       "finance": [
         "finanzas"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Busca \"Agente de autenticación OpenSSH\", haz clic derecho y selecciona Propiedades."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Sigue estos pasos para importar tus datos con un archivo CSV genérico:"
       ],
@@ -2026,6 +2050,9 @@
       ],
       "Identity confirmed": [
         "Se ha confirmado la identidad."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Si no tienes planeado usar el agente SSH en otra cuenta de pago, recuerda desactivar este ajuste antes de cambiar a esa cuenta."
       ],
       "Import the CSV file below.": [
         "Importa el archivo CSV a continuación."
@@ -2136,6 +2163,9 @@
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Asegúrate de mantener ${ PASS_APP_NAME } en ejecución (puede estar minimizado) para que el agente SSH permanezca activo. Actualmente no se admiten claves SSH con frase de contraseña."
+      ],
       "Manager": [
         "Gestor"
       ],
@@ -2201,6 +2231,9 @@
       "No network connection": [
         "No hay conexión a la red."
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "No se han encontrado claves SSH en ${ PASS_SHORT_APP_NAME }. Crea elementos de clave SSH para usarlos con el agente."
+      ],
       "No vaults available.": [
         "No hay cajas fuertes disponibles."
       ],
@@ -2224,6 +2257,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Solo se muestran los tokens que expiraron en los últimos 30 días. Los tokens más antiguos se eliminan automáticamente."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Abre \"Servicios\" (puedes usar la barra de búsqueda de Windows o presionar Win+R e ingresar services.msc)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Abre los ajustes de Safari para la extensión y verifica que los permisos del sitio están activados para los dominios de ${ BRAND_NAME }"
@@ -2249,6 +2285,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana se eliminarán automáticamente del historial.",
         "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas se eliminarán automáticamente del historial."
+      ],
+      "Paste the following command in your terminal:": [
+        "Pega el siguiente comando en tu terminal:"
       ],
       "Paused": [
         "En pausa"
@@ -2397,6 +2436,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa avanzado de protección de la cuenta"
       ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Clasificado por campo (primero el título, luego el nombre de usuario o correo electrónico, el sitio web y las notas) y por la precisión de la coincidencia (exacta, empieza por, contiene)."
+      ],
       "Read item": [
         "Leer elemento"
       ],
@@ -2477,6 +2519,9 @@
       ],
       "Session timed out": [
         "El tiempo de la sesión ha expirado."
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Establece \"Tipo de inicio\" en Deshabilitado y haz clic en Aceptar."
       ],
       "Set by your organization": [
         "Configurado por tu organización"
@@ -2620,6 +2665,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Esto rechazará el dispositivo **${ name }** que ha intentado iniciar sesión en tu cuenta ${ BRAND_NAME } el **${ date }**."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Consejo: agrégalo a tu archivo .bashrc o .zshrc para que se ejecute automáticamente cuando abras la terminal."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Para seguir recibiendo correos electrónicos, transfiere estos alias a otro buzón:"
       ],
@@ -2634,6 +2682,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Para configurar el desbloqueo biométrico, ${ PASS_APP_NAME } necesita un nuevo permiso del navegador. Tras aceptarlo, la extensión se recarga. Vuelve a abrir esta página después."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Para usar el agente SSH de ${ PASS_APP_NAME } en Windows, el servicio OpenSSH debe estar desactivado."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Con la confianza de más de 50,000 empresas y 100 millones de cuentas en todo el mundo."
@@ -3071,6 +3122,9 @@
       "Bank Name": [
         "Nombre del banco"
       ],
+      "Basic": [
+        "Básico"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Además de almacenar tus inicios de sesión, ${ PASS_APP_NAME } protege tu identidad con una función de alias de correo electrónico integrada. Cada vez que te registres para obtener una cuenta nueva en línea, ${ PASS_APP_NAME } puede crear automáticamente un alias para mantener protegida tu dirección de correo real. "
       ],
@@ -3103,6 +3157,9 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Check": [
+        "Verificar"
       ],
       "Checkbox": [
         "Casilla de verificación"
@@ -3268,6 +3325,12 @@
       ],
       "Enter email or username": [
         "Ingresar un correo o un nombre de usuario"
+      ],
+      "Exact host matching": [
+        "Coincidencia exacta de host"
+      ],
+      "Exact URL matching": [
+        "Coincidencia exacta de URL"
       ],
       "Experimental": [
         "Experimental"
@@ -3596,6 +3659,9 @@
       "Never": [
         "Nunca"
       ],
+      "Never fill on this exact URL": [
+        "No rellenar nunca en esta URL exacta"
+      ],
       "New": [
         "Nuevo"
       ],
@@ -3658,6 +3724,9 @@
       ],
       "Owner": [
         "Propietario"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
       ],
       "Passkey": [
         "Clave de acceso"
@@ -3769,6 +3838,12 @@
       ],
       "Reddit handle": [
         "Nombre de usuario de Reddit"
+      ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
+      "Relevant": [
+        "Relevancia"
       ],
       "Remove link": [
         "Eliminar el enlace"
@@ -3896,6 +3971,9 @@
       "SSN": [
         "Número de la Seguridad Social"
       ],
+      "Starts with": [
+        "Comienza con"
+      ],
       "State or province": [
         "Estado o provincia"
       ],
@@ -3959,6 +4037,9 @@
       "Today": [
         "Hoy"
       ],
+      "Token name": [
+        "Nombre del token"
+      ],
       "Total imported items: ": [
         "Número total de elementos importados: "
       ],
@@ -4021,6 +4102,12 @@
       ],
       "Update": [
         "Actualizar"
+      ],
+      "URL wildcard pattern": [
+        "Patrón de comodín de URL"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Usar ${ PASS_APP_NAME } como agente SSH"
       ],
       "Use for AI agent": [
         "Usar para el agente de IA"
@@ -4158,6 +4245,24 @@
       "${ count } item": [
         "${ count } elemento",
         "${ count } elementos"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidencia 'Comienza con'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia exacta de (sub) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia exacta de URL"
+      ],
+      "Never fill with this exact URL": [
+        "No rellenar nunca con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón de comodín"
       ],
       "You can drag and drop the selected item to another vault": [
         "Puedes arrastrar y soltar el elemento seleccionado en otra caja fuerte.",
@@ -4458,6 +4563,23 @@
         "Utilizado en ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ingresa una URL para verificar si tu regla actual coincide con la URL"
+      ],
+      "The rule is matching this URL": [
+        "La regla coincide con esta URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regla NO coincide con esta URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Esta URL se bloqueará del relleno automático"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Esta URL NO se bloqueará del relleno automático"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
@@ -4609,6 +4731,12 @@
       "Random prefix generation successfully enabled": [
         "Se ha activado la generación aleatoria de prefijos."
       ],
+      "SSH agent successfully started": [
+        "Agente SSH iniciado con éxito"
+      ],
+      "SSH agent successfully stopped": [
+        "Agente SSH detenido con éxito"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Las cajas fuertes no pueden contener más de ${ targetMaxMembers } usuario.",
         "Las cajas fuertes no pueden contener más de ${ targetMaxMembers } usuarios."
@@ -4655,6 +4783,9 @@
       ],
       "Add mailbox": [
         "Añadir un buzón"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajusta el comportamiento del relleno automático para cambiar dónde se sugieren los inicios de sesión."
       ],
       "Agent setup instructions": [
         "Instrucciones de configuración del agente"
@@ -4855,6 +4986,9 @@
       "Last modified": [
         "Última modificación"
       ],
+      "Learn more": [
+        "Más información"
+      ],
       "Leave this item?": [
         "¿Deseas dejar este elemento?"
       ],
@@ -5015,6 +5149,9 @@
       "Review and share": [
         "Revisar y compartir"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Captura de pantalla del servicio OpenSSH en Windows"
+      ],
       "Secure your data": [
         "Asegura tus datos"
       ],
@@ -5036,6 +5173,9 @@
       "Settings": [
         "Configuración"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Configuración del Agente SSH de ${ PASS_APP_NAME }"
+      ],
       "Setup offline mode": [
         "Configurar modo sin conexión"
       ],
@@ -5053,6 +5193,9 @@
       ],
       "SPF (Optional)": [
         "SPF (opcional)"
+      ],
+      "SSH Agent": [
+        "Agente SSH"
       ],
       "Status": [
         "Estado"
@@ -5072,6 +5215,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sincroniza tus alias desde SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Probar una URL con esta regla"
+      ],
       "Transfer ownership": [
         "Transferir la propiedad"
       ],
@@ -5086,6 +5232,9 @@
       ],
       "Update available": [
         "Actualización disponible"
+      ],
+      "URL matching": [
+        "Coincidencia de URL"
       ],
       "Vault": [
         "Caja fuerte"
@@ -5201,6 +5350,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Se necesita la contraseña de ${ BRAND_NAME }."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ofrece un control potente, pero un solo error puede hacer que el relleno automático coincida y rellene datos en sitios web fraudulentos o de suplantación de identidad."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Modo sin conexión de ${ PASS_SHORT_APP_NAME } desactivado."
@@ -5403,6 +5555,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Se ha producido un error al iniciar ${ PASS_APP_NAME }. Intenta refrescar o recargar la extensión."
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "El agente SSH requiere el uso de claves SSH, lo cual no está disponible en tu plan."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "El prefijo del alias no puede tener más de 40 caracteres."
       ],
@@ -5411,6 +5566,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Esta dirección de correo ya no será monitoreada para vulneraciones de datos."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Este elemento no se puede sugerir para el relleno automático debido a la regla \"${ neverModeDescriptionStrong }\". Agrega otra URL si quieres que este elemento se rellene automáticamente."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Este elemento está compartido actualmente. Si lo eliminas, se eliminará el acceso para todos los demás usuarios."
