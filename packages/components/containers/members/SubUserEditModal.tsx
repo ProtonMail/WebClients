@@ -297,7 +297,7 @@ const SubUserEditModal = ({
             />
 
             <div className="flex flex-column gap-2 mb-4">
-                {allowPrivateMemberConfiguration && canTogglePrivate && (
+                {(allowPrivateMemberConfiguration || Boolean(initialModel.private)) && canTogglePrivate && (
                     <>
                         <MemberToggleContainer
                             toggle={
