@@ -307,6 +307,13 @@ export const MessageChainComponent = ({
     conversationId,
 }: MessageChainComponentProps) => {
     const newMessageRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        return () => {
+            messageChainRef.current = null;
+        };
+    }, [conversationId, messageChainRef]);
+
     const { userHasScrolledUp, scrollToBottom } = useAutoScroll(
         messageChainRef,
         messageChain,

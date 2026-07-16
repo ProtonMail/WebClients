@@ -1,10 +1,10 @@
 import lumoGhostAvatarDark from '@proton/styles/assets/img/lumo/lumo-ghost-avatar-dark.svg';
 import lumoGhostAvatar from '@proton/styles/assets/img/lumo/lumo-ghost-avatar.svg';
 
-import { LazyLottie } from '../../LazyLottie';
 import type { ToolCallName } from '../../../lib/toolCall/types';
-import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useLumoTheme } from '../../../providers';
+import { useGhostChat } from '../../../providers/GhostChatProvider';
+import { LazyLottie } from '../../LazyLottie';
 
 import './LumoAvatar.scss';
 
@@ -59,17 +59,22 @@ const darkMap = {
         ),
 };
 
+type LumoAvatarAnimationKey = keyof typeof lightMap;
+
 const useThemeLumoAvatarAnimation = (isGenerating: boolean, toolCallName?: ToolCallName) => {
     const { isGhostChatMode } = useGhostChat();
     const { isDarkLumoTheme } = useLumoTheme();
 
-    const getAnimationDataToImport = () => {
+    const getAnimationSelection = (): {
+        getAnimationData: (() => Promise<{ default: object }>) | null;
+        animationKey: string | null;
+    } => {
         // Ghost‑chat mode: static avatar when not generating
         if (isGhostChatMode && !isGenerating) {
-            return null;
+            return { getAnimationData: null, animationKey: null };
         }
 
-        let key: keyof typeof lightMap;
+        let key: LumoAvatarAnimationKey;
 
         if (isGenerating) {
             if (isGhostChatMode) {
@@ -83,20 +88,31 @@ const useThemeLumoAvatarAnimation = (isGenerating: boolean, toolCallName?: ToolC
             key = 'idle';
         }
 
-        return (isDarkLumoTheme ? darkMap[key] : lightMap[key]) ?? null;
+        const themePrefix = isDarkLumoTheme ? 'dark' : 'light';
+
+        return {
+            getAnimationData: (isDarkLumoTheme ? darkMap[key] : lightMap[key]) ?? null,
+            animationKey: `${themePrefix}-${key}`,
+        };
     };
 
-    /* getAnimationData returns a stable function */
-    return { getAnimationData: getAnimationDataToImport(), isDarkLumoTheme };
+    return getAnimationSelection();
 };
 
 const LumoAvatar = ({ isGenerating, toolCallName }: LumoAvatarProps) => {
-    const { getAnimationData, isDarkLumoTheme } = useThemeLumoAvatarAnimation(isGenerating, toolCallName);
+    const { isDarkLumoTheme } = useLumoTheme();
+    const { getAnimationData, animationKey } = useThemeLumoAvatarAnimation(isGenerating, toolCallName);
 
     return (
         <div className="self-start shrink-0 relative no-print">
-            {getAnimationData ? (
-                <LazyLottie alt="" getAnimationData={getAnimationData} loop={true} className="lumo-avatar" />
+            {getAnimationData && animationKey ? (
+                <LazyLottie
+                    key={animationKey}
+                    alt=""
+                    getAnimationData={getAnimationData}
+                    loop={true}
+                    className="lumo-avatar"
+                />
             ) : (
                 <img
                     src={isDarkLumoTheme ? lumoGhostAvatarDark : lumoGhostAvatar}

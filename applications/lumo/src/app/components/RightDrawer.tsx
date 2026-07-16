@@ -1,3 +1,5 @@
+import { useLayoutEffect, useRef } from 'react';
+
 import { clsx } from 'clsx';
 
 import { useRightPanel } from '../providers/RightPanelProvider';
@@ -19,6 +21,15 @@ interface RightDrawerProps {
  */
 export const RightDrawer = ({ className, isFullscreen, onClose }: RightDrawerProps) => {
     const { registerContentEl, isOverlay } = useRightPanel();
+    const contentRef = useRef<HTMLDivElement>(null);
+
+    // Register the content element in a layout effect instead of a ref callback.
+    // Ref callbacks run during commit and can trigger provider setState while a
+    // consumer such as ConversationComponent is still rendering.
+    useLayoutEffect(() => {
+        registerContentEl(contentRef.current);
+        return () => registerContentEl(null);
+    }, [registerContentEl]);
 
     return (
         <>
@@ -42,10 +53,7 @@ export const RightDrawer = ({ className, isFullscreen, onClose }: RightDrawerPro
                         <DrawerToggleButton />
                     </div>
                 </div> */}
-                <div
-                    ref={registerContentEl}
-                    className="right-drawer-content flex flex-column flex-1 overflow-auto w-full"
-                />
+                <div ref={contentRef} className="right-drawer-content flex flex-column flex-1 overflow-auto w-full" />
             </aside>
         </>
     );

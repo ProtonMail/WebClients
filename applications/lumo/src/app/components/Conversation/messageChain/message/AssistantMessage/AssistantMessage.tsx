@@ -205,6 +205,7 @@ const AssistantMessage = ({
     const [currentLink, setCurrentLink] = useState<string>('');
     const markdownContainerRef = useRef<HTMLDivElement>(null);
     const retryButtonRef = useRef<HTMLButtonElement>(null);
+
     const showNextPromptSuggestionEnabled = useFlag('LumoShowNextPromptSuggestions');
 
     // Get blocks for interleaved rendering

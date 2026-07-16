@@ -36,15 +36,16 @@ import './GalleryView.scss';
 
 type GalleryTab = 'create' | 'gallery';
 
+const getGalleryEmptyAnimation = () =>
+    import(
+        /* webpackChunkName: "lumo-gallery-empty-animation" */
+        '../../components/Animations/lumo-image.json'
+    );
+
 const GalleryEmpty = () => {
     return (
         <div className="gallery-empty">
-            <LazyLottie
-                getAnimationData={() => import('../../components/Animations/lumo-image.json')}
-                loop
-                autoplay
-                className="gallery-empty__lottie"
-            />
+            <LazyLottie getAnimationData={getGalleryEmptyAnimation} loop autoplay className="gallery-empty__lottie" />
             <div className="gallery-empty-container flex flex-column items-center justify-center gap-2 mt-4 text-center">
                 <p className="text-lg color-norm text-semibold m-0">
                     {c('collider_2025:Title').t`Your image gallery is empty`}
