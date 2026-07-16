@@ -17,7 +17,13 @@ function createExtentedQuery(params: {
     labelIds?: string[];
     hasAttachments?: boolean;
 }): Expression {
-    let exp = createBasicQuery(params.keywords);
+    let exp = undefined;
+    try {
+        exp = Expression.parse(params.keywords);
+    } catch {
+        exp = createBasicQuery(params.keywords);
+    }
+
     if (params.sender !== undefined) {
         exp = exp.and(Expression.attr('sender', Func.Equals, TermValue.text(params.sender)));
     }
