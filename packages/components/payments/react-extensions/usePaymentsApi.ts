@@ -46,7 +46,6 @@ import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { getPlanName, isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { enrichMockCouponDiscountBreakdown } from '@proton/payments/ui/coupon-config/mock-coupon-discount-breakdown';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -326,8 +325,6 @@ export const usePaymentsApi = (
                     ...result,
                     requestData: data,
                 };
-
-                enrichMockCouponDiscountBreakdown(enrichedCheckResponse, data);
 
                 return enrichedCheckResponse;
             } catch (error: any) {
