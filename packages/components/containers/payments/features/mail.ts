@@ -6,6 +6,8 @@ import { BRAND_NAME, CALENDAR_APP_NAME, DARK_WEB_MONITORING_NAME, MAIL_APP_NAME 
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience } from '@proton/shared/lib/interfaces';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -425,6 +427,8 @@ export const getShortDomain = (included: boolean): PlanCardFeatureDefinition => 
 };
 
 export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
+    const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
+
     return [
         {
             name: 'addresses',
@@ -1129,8 +1133,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS]: null,
                 [PLANS.PASS_LIFETIME]: null,
                 [PLANS.PASS_FAMILY]: null,
-                [PLANS.FAMILY]: getProtonScribe(true),
-                [PLANS.DUO]: getProtonScribe(true),
+                [PLANS.FAMILY]: scribeToLumo ? null : getProtonScribe(true),
+                [PLANS.DUO]: scribeToLumo ? null : getProtonScribe(true),
                 [PLANS.MAIL_PRO]: null,
                 [PLANS.MAIL_BUSINESS]: null,
                 [PLANS.BUNDLE_PRO]: null,

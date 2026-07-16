@@ -59,6 +59,8 @@ import {
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -556,6 +558,8 @@ const getDuoUpsell = ({ plansMap, freePlan, openSubscriptionModal, app, ...rest 
         return null;
     }
 
+    const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
+
     const features: MaybeUpsellFeature[] = [
         getStorageFeature(duoPlan.MaxSpace, { duo: true, freePlan }),
         getUsersFeature(DUO_MAX_USERS),
@@ -565,7 +569,7 @@ const getDuoUpsell = ({ plansMap, freePlan, openSubscriptionModal, app, ...rest 
         getHighSpeedVPNConnectionsFeature(),
         getProtonPassFeature(),
         getSentinel(true),
-        getProtonScribe(true),
+        ...(scribeToLumo ? [] : [getProtonScribe(true)]),
     ];
 
     return getUpsell({
@@ -599,6 +603,8 @@ const getFamilyUpsell = ({
         return null;
     }
 
+    const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
+
     const features: MaybeUpsellFeature[] = [
         getStorageFeature(familyPlan.MaxSpace, { family: true, freePlan }),
         getUsersFeature(FAMILY_MAX_USERS),
@@ -608,7 +614,7 @@ const getFamilyUpsell = ({
         getHighSpeedVPNConnectionsFeature(),
         getProtonPassFeature(),
         getSentinel(true),
-        getProtonScribe(true),
+        ...(scribeToLumo ? [] : [getProtonScribe(true)]),
     ];
 
     return getUpsell({
