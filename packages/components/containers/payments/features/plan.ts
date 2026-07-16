@@ -14,6 +14,8 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getPlusServers } from '@proton/shared/lib/vpn/features';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import isTruthy from '@proton/utils/isTruthy';
 import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
@@ -625,6 +627,8 @@ export const getVisionaryPlan = ({ plan, freePlan }: { plan: Plan; freePlan: Fre
 };
 
 export const getFamilyPlan = ({ freePlan, plan }: { freePlan: FreePlanDefault; plan: Plan }): ShortPlan => {
+    const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
+
     return {
         plan: PLANS.FAMILY,
         title: plan.Title,
@@ -647,12 +651,14 @@ export const getFamilyPlan = ({ freePlan, plan }: { freePlan: FreePlanDefault; p
             getPassAppFeature(),
             getSupport('priority'),
             getSMTPToken(true),
-            getProtonScribe(true),
+            ...(scribeToLumo ? [] : [getProtonScribe(true)]),
         ],
     };
 };
 
 export const getDuoPlan = ({ freePlan, plan }: { freePlan: FreePlanDefault; plan: Plan }): ShortPlan => {
+    const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
+
     return {
         plan: PLANS.DUO,
         title: plan.Title,
@@ -675,7 +681,7 @@ export const getDuoPlan = ({ freePlan, plan }: { freePlan: FreePlanDefault; plan
             getPassAppFeature(),
             getSupport('priority'),
             getSMTPToken(true),
-            getProtonScribe(true),
+            ...(scribeToLumo ? [] : [getProtonScribe(true)]),
         ],
     };
 };
