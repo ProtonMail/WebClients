@@ -307,6 +307,9 @@
       "Do not show again when I press": [
         "눌렀을 때 다시 보이지 않기"
       ],
+      "Don't show this again": [
+        "다시 보지 않기"
+      ],
       "Download this CSV template": [
         "CSV 양식 다운로드"
       ],
@@ -544,6 +547,12 @@
       "Regenerate": [
         "재생성"
       ],
+      "Regex invalid": [
+        "유효하지 않은 정규식"
+      ],
+      "Regex unsafe": [
+        "정규식 안전하지 않음"
+      ],
       "Reject": [
         "거절"
       ],
@@ -666,6 +675,9 @@
       ],
       "Skip": [
         "건너뛰기"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }에서 사용자와 타인이 항목을 공유하고 있습니다."
       ],
       "Sort vault items": [
         "금고 항목 정렬"
@@ -920,6 +932,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } 파일을 분석할 수 없습니다. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "데스크톱 잠금 해제 확인이 이미 진행 중입니다."
+      ],
       "A domain ownership must be verified first.": [
         "도메인 소유권 인증이 우선 필요합니다."
       ],
@@ -949,6 +964,21 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "인증 실패. 이 내보내기 작업을 완료하기 위해서는 추가 비밀번호를 입력하세요."
+      ],
+      "Biometric authentication failed.": [
+        "생체 인증에 실패했습니다."
+      ],
+      "Biometric lock credentials do not match.": [
+        "생체 인식 잠금 자격 증명이 일치하지 않습니다."
+      ],
+      "Biometric lock credentials not found.": [
+        "생체 인식 잠금 자격 증명을 찾을 수 없습니다."
+      ],
+      "Biometric lock is not configured.": [
+        "생체 인식 잠금이 설정되지 않았습니다."
+      ],
+      "Biometric lock setup failed.": [
+        "생체 인식 잠금 설정에 실패했습니다."
       ],
       "Cannot send invitation at the moment": [
         "현재 초대를 전송할 수 없습니다."
@@ -1021,6 +1051,9 @@
       ],
       "Emptying trash failed": [
         "휴지통 비우기 실패"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "${ PASS_APP_NAME } 데스크톱 앱과의 암호화된 통신에 실패했습니다."
       ],
       "Encrypted JSON not supported": [
         "암호화된 JSON이 지원되지 않습니다."
@@ -1132,6 +1165,12 @@
       ],
       "Failed to set default mailbox": [
         "기본 메일함 설정 오류"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSH 에이전트 시작 실패: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSH 에이전트 중지 실패: ${ errorMessage }"
       ],
       "Failed to sync aliases": [
         "별칭 동기화 실패"
@@ -1265,6 +1304,9 @@
       "Something went wrong. Please sign in again.": [
         "문제가 발생했습니다. 다시 로그인해 주세요."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 제시간에 응답하지 않았습니다."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "${ PASS_APP_NAME } 데스크톱 앱이 잠겨 있어 잠금을 해제해야 합니다."
       ],
@@ -1273,6 +1315,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "${ PASS_APP_NAME } 데스크톱 앱이 응답하지 않습니다. 실행 중인가요?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 다른 계정으로 로그인되어 있습니다."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } 데스크톱 앱에 로그인해야 합니다."
       ],
       "The session has expired. Please sign in again.": [
         "세션이 만료되었습니다. 다시 로그인해 주세요."
@@ -1285,6 +1333,9 @@
       ],
       "Trashing item failed": [
         "항목을 휴지통으로 이동하는데 실패"
+      ],
+      "Try reaching out to the link owner.": [
+        "이 링크 소유자에게 연락을 시도하세요.."
       ],
       "Unable to generate an OTP code for this item": [
         "해당 항목으로 OTP 코드를 생성할 수 없습니다"
@@ -1477,6 +1528,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME }가 오직 로그인, 메모, 신용 카드 및 신원 정보에 한해 불러옵니다."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME }이 보관함에 저장된 SSH 키를 사용합니다."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } 오프라인 모드 활성화됨."
@@ -2025,7 +2079,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시키면 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2056,6 +2110,12 @@
       ],
       "No network connection": [
         "네트워크가 연결되어 있지 않습니다."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "${ PASS_SHORT_APP_NAME }에서 SSH 키를 찾을 수 없습니다. 에이전트와 사용할 SSH 키 항목을 생성하세요."
+      ],
+      "No vaults available.": [
+        "사용 가능한 보관함이 없습니다."
       ],
       "None": [
         "없음"
@@ -2248,6 +2308,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "향상된 계정 보안 프로그램인 ${ PROTON_SENTINEL_LINK }로 계정 보호 중"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "필드(제목이 가장 먼저, 그 다음 사용자 이름 또는 이메일, 웹사이트, 메모 순) 및 일치 정밀도(일치함, 시작 단어 일치, 포함함)순으로 정렬됩니다."
       ],
       "Read item": [
         "항목 읽기"
@@ -2482,6 +2545,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "불러온 데이터를 검토하려면 브라우저 툴바의 ${ PASS_APP_NAME } 아이콘을 클릭하세요."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "생체 인식 잠금 해제를 설정하려면 ${ PASS_APP_NAME }에 새로운 브라우저 권한이 필요합니다. 이를 수락하면 확장이 다시 로드됩니다. 그 후에 이 페이지를 다시 열어주세요."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "전 세계 50,000명 이상의 비즈니스 사용자와 1억 개의 계정이 신뢰합니다."
@@ -2895,6 +2961,9 @@
       "Bank Name": [
         "은행명"
       ],
+      "Basic": [
+        "기본"
+      ],
       "Beta Access": [
         "베타 참여"
       ],
@@ -2927,6 +2996,9 @@
       ],
       "Catch-All": [
         "Catch-All"
+      ],
+      "Check": [
+        "확인"
       ],
       "Checkbox": [
         "체크박스"
@@ -3083,6 +3155,12 @@
       ],
       "Enter email or username": [
         "이메일 및 사용자 이름 입력"
+      ],
+      "Exact host matching": [
+        "정확한 호스트 일치"
+      ],
+      "Exact URL matching": [
+        "정확한 URL 일치"
       ],
       "Expiration date": [
         "만료 시간"
@@ -3399,6 +3477,9 @@
       "Never": [
         "안 함"
       ],
+      "Never fill on this exact URL": [
+        "이 정확한 URL에서 자동완성 사용 안 함"
+      ],
       "New email": [
         "새로운 이메일"
       ],
@@ -3458,6 +3539,9 @@
       ],
       "Owner": [
         "소유자"
+      ],
+      "Parent domain and subdomains (default)": [
+        "상위 도메인 및 하위 도메인(기본값)"
       ],
       "Passkey": [
         "패스키"
@@ -3560,6 +3644,12 @@
       ],
       "Reddit handle": [
         "Reddit 핸들"
+      ],
+      "Regular expression": [
+        "정규식"
+      ],
+      "Relevant": [
+        "관련성 높은 순"
       ],
       "Remove link": [
         "링크 삭제"
@@ -3675,6 +3765,9 @@
       "SSN": [
         "주민등록번호"
       ],
+      "Starts with": [
+        "다음으로 시작"
+      ],
       "State or province": [
         "시/도"
       ],
@@ -3722,6 +3815,9 @@
       ],
       "Theme": [
         "테마"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "이 항목은 ${ date }이 되거나 보기 제한에 도달하기 전까지 접근가능합니다."
       ],
       "Tier/Level": [
         "티어/레벨"
@@ -3797,6 +3893,12 @@
       ],
       "Update": [
         "업데이트"
+      ],
+      "URL wildcard pattern": [
+        "URL 와일드카드 패턴"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "${ PASS_APP_NAME }을 SSH 에이전트로 사용"
       ],
       "Use for AI agent": [
         "AI 에이전트에 사용"
@@ -3916,6 +4018,24 @@
     "Message": {
       "${ count } item": [
         "${ count }개 항목"
+      ],
+      "'Starts with' matching rule": [
+        "'다음으로 시작' 일치 규칙"
+      ],
+      "Exact (sub) domain matching rule": [
+        "정확한 (하위) 도메인 일치 규칙"
+      ],
+      "Exact URL matching rule": [
+        "정확한 URL 일치 규칙"
+      ],
+      "Never fill with this exact URL": [
+        "이 정확한 URL에서는 자동완성 안 함"
+      ],
+      "Regular expression rule": [
+        "정규식 규칙"
+      ],
+      "Wildcard pattern matching rule": [
+        "와일드카드 패턴 일치 규칙"
       ],
       "You can drag and drop the selected item to another vault": [
         "항목을 선택하고 드래그 앤 드롭하여 다른 금고로 이동시킬 수 있습니다."
@@ -4059,6 +4179,12 @@
       ],
       "The file you are trying to import is empty": [
         "불러오기 시도 중인 파일이 비어 있습니다."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "현재 플랜에서 이 기능이 지원되지 않습니다. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "현재 플랜에서 이 기능이 지원되지 않습니다. 접근 권한을 얻으려면 관리자에게 문의하세요."
       ],
       "Total files: ": [
         "총 파일 수: "
@@ -4206,6 +4332,23 @@
       ],
       "Used on ${ url }": [
         "${ url }(애)서 사용됨"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "현재 규칙이 URL과 일치하는지 확인하려면 URL을 입력하십시오"
+      ],
+      "The rule is matching this URL": [
+        "규칙이 이 URL과 일치합니다"
+      ],
+      "The rule is NOT matching this URL": [
+        "규칙이 이 URL과 일치하지 않습니다"
+      ],
+      "This URL will be blocked from autofill": [
+        "이 URL은 자동완성이 차단됩니다"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "이 URL은 자동완성이 차단되지 않습니다"
       ]
     },
     "Security Center - Info": {
@@ -4358,6 +4501,12 @@
       "Random prefix generation successfully enabled": [
         "무작위 접두사 생성이 성공적으로 활성화되었습니다"
       ],
+      "SSH agent successfully started": [
+        "SSH 에이전트가 성공적으로 시작되었습니다"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH 에이전트가 성공적으로 중지되었습니다"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "금고에 ${ targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
       ],
@@ -4404,6 +4553,9 @@
       "Add mailbox": [
         "메일함 추가"
       ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "로그인이 추천되는 위치를 변경하려면 자동완성 동작을 조정하세요."
+      ],
       "Agent setup instructions": [
         "에이전트 설정 지침"
       ],
@@ -4430,6 +4582,9 @@
       ],
       "Breaches detected for": [
         "침해 사례가 다음에서 감지됨:"
+      ],
+      "Browser permission required": [
+        "브라우저 권한 필요"
       ],
       "Cancel changing your email?": [
         "이메일 변경을 취소할까요?"
@@ -4598,6 +4753,9 @@
       ],
       "Last modified": [
         "마지막 수정"
+      ],
+      "Learn more": [
+        "더 알아보기"
       ],
       "Leave this item?": [
         "이 항목에서 나갈까요?"
@@ -4794,6 +4952,9 @@
       "SPF (Optional)": [
         "SPF (선택 사항)"
       ],
+      "SSH Agent": [
+        "SSH 에이전트"
+      ],
       "Status": [
         "상태"
       ],
@@ -4812,6 +4973,9 @@
       "Sync your aliases from SimpleLogin": [
         "SimpleLogin에서 별칭 동기화"
       ],
+      "Test a URL against this rule": [
+        "이 규칙에 대해 URL 테스트"
+      ],
       "Transfer ownership": [
         "소유권 이전"
       ],
@@ -4826,6 +4990,9 @@
       ],
       "Update available": [
         "사용 가능한 업데이트가 있습니다"
+      ],
+      "URL matching": [
+        "URL 일치"
       ],
       "Vault": [
         "금고"
@@ -4900,6 +5067,11 @@
         "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."
       ]
     },
+    "Upsell": {
+      "Get ${ planName }": [
+        "${ planName } 사용하기"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "도메인 URL이 유효하지 않습니다"
@@ -4934,6 +5106,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } 비밀번호가 필요합니다"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }은 강력한 제어 기능을 제공하지만, 단 하나의 오류로도 사기 또는 피싱 웹사이트에서 자동완성이 일치하여 데이터가 입력될 수 있습니다."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } 오프라인 모드 비활성화됨."
@@ -5130,6 +5305,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "${ PASS_APP_NAME }를 시작하는데 문제가 발생했습니다. 새로고침 하거나 확장 프로그램을 다시 로드해 보세요."
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH 에이전트를 사용하려면 SSH 키를 사용해야 하지만, 현재 플랜에서 지원되지 않는 기능입니다."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "별칭 접두사는 40자를 초과할 수 없습니다"
       ],
@@ -5138,6 +5316,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "데이터 침해에 대한 이 이메일 주소가 더 이상 모니터링되지 않습니다."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "\"${ neverModeDescriptionStrong }\"으로 인해 이 항목은 자동완성 추천을 받을 수 없습니다. 이 항목이 자동완성되기를 원하면 다른 URL을 추가하세요."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "이 항목이 현재 공유 중입니다. 휴지통에 항목을 이동하면 다른 사용자들과의 접근 권한도 상실됩니다."
