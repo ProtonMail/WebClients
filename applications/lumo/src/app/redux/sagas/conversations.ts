@@ -25,11 +25,14 @@ import {
     getSpaceDek,
     type SerializedConversation,
     type Space,
+    type SpaceId,
 } from '../../types';
-import {selectConversationById, selectRemoteIdFromLocal, selectSpaceByConversationId} from '../selectors';
+import {selectConversationById, selectConversationsBySpaceId, selectRemoteIdFromLocal, selectSpaceByConversationId, selectSpaceById} from '../selectors';
 import {
     addConversation,
     deleteConversation,
+    type ExpireConversationsRequest,
+    locallyDeleteConversationFromLocalRequest,
     locallyDeleteConversationFromRemoteRequest,
     locallyRefreshConversationFromRemoteRequest,
     pullConversationFailure,
@@ -46,9 +49,11 @@ import {
 } from '../slices/core/conversations';
 import {addIdMapEntry} from '../slices/core/idmap';
 import {locallyRefreshMessageFromRemoteRequest} from '../slices/core/messages';
+import {locallyDeleteSpaceFromLocalRequest} from '../slices/core/spaces';
 import type {LumoState} from '../store';
 import {waitForMapping} from './idmap';
 import {MAX_CONVERSATIONS_PER_SPACE} from '../../constants/limits';
+import {getConversationsEligibleForDeletion} from '../../layouts/sidepanel/helpers';
 import {addResourceLimitError} from '../slices/meta/errors';
 import {callWithRetry, ClientError, isClientError, isLimitReachedError, RETRY_PUSH_EVERY_MS} from './index';
 import {considerRequestingFullMessage} from './messages';
@@ -473,5 +478,51 @@ export function* processPullConversationResult({ payload }: { payload: GetConver
             yield put(locallyRefreshMessageFromRemoteRequest(remoteMessage));
             yield fork(considerRequestingFullMessage, { payload: remoteMessage });
         }
+    }
+}
+
+export function* expireConversations({
+    payload: { hasLumoPlus },
+}: {
+    payload: ExpireConversationsRequest;
+}): SagaIterator<any> {
+    if (hasLumoPlus) {
+        return;
+    }
+
+    const isGhostChatMode: boolean = yield select((state: LumoState) => state.ghostChat?.isGhostChatMode || false);
+    if (isGhostChatMode) {
+        return;
+    }
+
+    const conversations: Conversation[] = yield select((state: LumoState) => Object.values(state.conversations));
+    const eligible = getConversationsEligibleForDeletion(conversations.filter((conversation) => !conversation.ghost));
+
+    if (eligible.length === 0) {
+        return;
+    }
+
+    console.log(`Saga triggered: expireConversations (${eligible.length} conversations)`);
+
+    const deletedSpaceIds = new Set<SpaceId>();
+
+    for (const conversation of eligible) {
+        const space: Space | undefined = yield select(selectSpaceById(conversation.spaceId));
+        const conversationsInSpace: Record<ConversationId, Conversation> = yield select(
+            selectConversationsBySpaceId(conversation.spaceId)
+        );
+        const deleteConversationOnly = space?.isProject === true || Object.keys(conversationsInSpace).length > 1;
+
+        if (deleteConversationOnly) {
+            yield put(locallyDeleteConversationFromLocalRequest(conversation.id));
+            continue;
+        }
+
+        if (deletedSpaceIds.has(conversation.spaceId)) {
+            continue;
+        }
+
+        deletedSpaceIds.add(conversation.spaceId);
+        yield put(locallyDeleteSpaceFromLocalRequest(conversation.spaceId));
     }
 }

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
+import { subDays } from 'date-fns';
 import { c } from 'ttag';
 
+import { FREE_USER_CHAT_DELETION_GRACE_DAYS, FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { useLumoDispatch } from '../../redux/hooks';
 import { addConversation } from '../../redux/slices/core/conversations';
@@ -18,6 +20,8 @@ export const RenderingTab = () => {
         const now = new Date();
         const testSpaceId = newSpaceId();
         const spaceKey = generateSpaceKeyBase64();
+        const deletionWarningDaysAgo = FREE_USER_CHAT_RETENTION_DAYS + FREE_USER_CHAT_DELETION_GRACE_DAYS - 1;
+        const deletionWarningDate = subDays(now, deletionWarningDaysAgo);
 
         const testSpace: Space = {
             id: testSpaceId,
@@ -86,6 +90,15 @@ export const RenderingTab = () => {
                 starred: false,
                 status: ConversationStatus.COMPLETED,
             },
+            {
+                id: newSpaceId(),
+                spaceId: testSpaceId,
+                title: '[Debug] To be deleted tomorrow',
+                createdAt: deletionWarningDate.toISOString(),
+                updatedAt: deletionWarningDate.toISOString(),
+                starred: false,
+                status: ConversationStatus.COMPLETED,
+            },
         ];
 
         testConversations.forEach((conv) => {
@@ -93,7 +106,7 @@ export const RenderingTab = () => {
         });
 
         alert(
-            `Created ${testConversations.length} test conversations!\n\nCheck the sidebar to see age buckets. Free users only see their ${10} most recent chats.`
+            `Created ${testConversations.length} test conversations!\n\nOpen "[Debug] To be deleted tomorrow" as a free user to preview the deletion banner. Other chats cover age buckets in the sidebar.`
         );
     };
 

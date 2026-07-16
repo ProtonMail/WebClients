@@ -11,12 +11,10 @@ import {
     selectSpaceById,
 } from '../redux/selectors';
 import { locallyDeleteConversationFromLocalRequest } from '../redux/slices/core/conversations';
-import { locallyDeleteSpaceFromLocalRequest, pushSpaceRequest } from '../redux/slices/core/spaces';
+import { locallyDeleteSpaceFromLocalRequest } from '../redux/slices/core/spaces';
 import type { Conversation } from '../types';
 import { sendConversationDeleteEvent } from '../util/telemetry';
-import { useDriveFolderIndexing } from './useDriveFolderIndexing';
 import { useLumoNavigate } from './useLumoNavigate';
-import { useSearchService } from './useSearchService';
 
 interface UseConversationDeleteProps {
     conversation: Conversation;
@@ -28,8 +26,6 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
     const navigate = useLumoNavigate();
     const { createNotification } = useNotifications();
     const confirmDeleteModal = useModalStateObject();
-    const { removeIndexedFoldersBySpace } = useDriveFolderIndexing();
-    const searchService = useSearchService();
     const space = useLumoSelector(selectSpaceById(spaceId));
     const conversationsInSpace = useLumoSelector(selectConversationsBySpaceId(spaceId));
     const hasGeneratedImages = useLumoSelector(selectConversationHasGeneratedImages(conversationId));
@@ -48,14 +44,7 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
             if (deleteConversationOnly) {
                 dispatch(locallyDeleteConversationFromLocalRequest(conversationId));
             } else {
-                await removeIndexedFoldersBySpace(spaceId);
-
-                if (searchService) {
-                    searchService.removeDocumentsBySpace(spaceId);
-                }
-
                 dispatch(locallyDeleteSpaceFromLocalRequest(spaceId));
-                dispatch(pushSpaceRequest({ id: spaceId }));
             }
 
             createNotification({ text: c('Success').jt`Conversation deleted` });
@@ -74,8 +63,6 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
         createNotification,
         confirmDeleteModal,
         navigate,
-        removeIndexedFoldersBySpace,
-        searchService,
     ]);
 
     return {

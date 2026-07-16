@@ -6,9 +6,13 @@ import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import {
+    getConversationDeletionBannerDescription,
+    getConversationDeletionBannerTitle,
+    getConversationDeletionDaysRemaining,
     getConversationExpirationBannerTitle,
     getConversationExpirationUrgency,
     getConversationRetentionDaysRemaining,
+    isConversationInDeletionGracePeriod,
 } from '../../layouts/sidepanel/helpers';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationById } from '../../redux/selectors';
@@ -23,8 +27,8 @@ interface Props {
     conversationId?: ConversationId;
 }
 
-const getDismissStorageKey = (conversationId: ConversationId, daysRemaining: number) =>
-    `lumo-chat-expiration-banner-${conversationId}-${daysRemaining}`;
+const getDismissStorageKey = (conversationId: ConversationId, bannerKey: string) =>
+    `lumo-chat-expiration-banner-${conversationId}-${bannerKey}`;
 
 const isBannerDismissed = (key: string) => sessionStorage.getItem(key) === '1';
 
@@ -54,9 +58,35 @@ const getExpirationBannerDescription = (
     return c('collider_2025: Info').t`Free accounts keep chat history for 7 days from when a chat was created.`;
 };
 
+const getDeletionBannerDescription = (
+    canShowTalkToAdminLumoUpsell: boolean,
+    upsellConfig: ReturnType<typeof useLumoPlusUpsellButtonConfig>
+): React.ReactNode => {
+    if (canShowTalkToAdminLumoUpsell) {
+        return c('collider_2025: Info')
+            .t`This chat is past the free retention window and will be permanently deleted. Talk to your admin to keep it.`;
+    }
+
+    if (upsellConfig) {
+        return (
+            <span>
+                {getConversationDeletionBannerDescription()}{' '}
+                <InlineUpsell
+                    path={upsellConfig.path}
+                    onUpgrade={upsellConfig.onUpgrade}
+                    callToActionText={upsellConfig.getChatCTAContent()}
+                    className={upsellConfig.className}
+                />
+            </span>
+        );
+    }
+
+    return getConversationDeletionBannerDescription();
+};
+
 /**
  * Inline banner shown above the composer when a free user's conversation is
- * within the chat history retention window.
+ * approaching expiration or in the deletion grace period.
  */
 export const ComposerExpirationBanner = ({ conversationId }: Props) => {
     const { hasLumoPlus, canShowTalkToAdminLumoUpsell } = useLumoPlan();
@@ -71,6 +101,19 @@ export const ComposerExpirationBanner = ({ conversationId }: Props) => {
             return null;
         }
 
+        const deletionDaysRemaining = getConversationDeletionDaysRemaining(conversation);
+        const inDeletionGracePeriod = isConversationInDeletionGracePeriod(conversation);
+
+        if (inDeletionGracePeriod || (deletionDaysRemaining >= 0 && deletionDaysRemaining <= 1)) {
+            return {
+                dismissKey: getDismissStorageKey(conversationId, `deletion-${deletionDaysRemaining}`),
+                title: getConversationDeletionBannerTitle(deletionDaysRemaining),
+                descriptionType: 'deletion' as const,
+                severity: 'warning' as const,
+                urgency: 'urgent' as const,
+            };
+        }
+
         const urgency = getConversationExpirationUrgency(conversation);
 
         if (!urgency) {
@@ -80,9 +123,10 @@ export const ComposerExpirationBanner = ({ conversationId }: Props) => {
         const daysRemaining = getConversationRetentionDaysRemaining(conversation);
 
         return {
-            dismissKey: getDismissStorageKey(conversationId, daysRemaining),
+            dismissKey: getDismissStorageKey(conversationId, `retention-${daysRemaining}`),
             daysRemaining,
             title: getConversationExpirationBannerTitle(daysRemaining),
+            descriptionType: 'retention' as const,
             severity: urgency === 'urgent' ? ('warning' as const) : ('info' as const),
             urgency,
         };
@@ -106,7 +150,10 @@ export const ComposerExpirationBanner = ({ conversationId }: Props) => {
         return null;
     }
 
-    const description = getExpirationBannerDescription(canShowTalkToAdminLumoUpsell, upsellConfig);
+    const description =
+        banner.descriptionType === 'deletion'
+            ? getDeletionBannerDescription(canShowTalkToAdminLumoUpsell, upsellConfig)
+            : getExpirationBannerDescription(canShowTalkToAdminLumoUpsell, upsellConfig);
 
     return (
         <ComposerNotificationCard
