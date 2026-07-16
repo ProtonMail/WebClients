@@ -9,7 +9,7 @@ interface CreateNewDocumentButtonProps {
 export const CreateNewDocumentButton = ({ onClick }: CreateNewDocumentButtonProps) => {
     return (
         <ToolbarButton
-            icon={<MimeIcon name="proton-doc" />}
+            icon={<MimeIcon name="proton-doc" alt={c('Action').t`New document`} />}
             title={c('Action').t`New document`}
             onClick={onClick}
             data-testid="toolbar-new-document"

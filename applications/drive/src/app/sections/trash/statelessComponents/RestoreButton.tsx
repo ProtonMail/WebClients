@@ -8,13 +8,12 @@ import type { CommonButtonProps } from '../../commonButtons/types';
 
 export const RestoreButton = ({ buttonType, onClick, close }: CommonButtonProps) => {
     const title = c('Action').t`Restore from trash`;
-    const icon = 'arrow-rotate-right';
 
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
                 title={title}
-                icon={<IcArrowRotateRight />}
+                icon={<IcArrowRotateRight alt={title} />}
                 onClick={onClick}
                 data-testid="toolbar-restore"
             />
@@ -23,7 +22,13 @@ export const RestoreButton = ({ buttonType, onClick, close }: CommonButtonProps)
 
     if (buttonType === 'contextMenu') {
         return (
-            <ContextMenuButton name={title} icon={icon} testId="context-menu-restore" action={onClick} close={close} />
+            <ContextMenuButton
+                name={title}
+                icon={<IcArrowRotateRight />}
+                testId="context-menu-restore"
+                action={onClick}
+                close={close}
+            />
         );
     }
 };

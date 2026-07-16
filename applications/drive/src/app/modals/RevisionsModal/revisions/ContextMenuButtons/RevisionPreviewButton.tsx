@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { Revision } from '@proton/drive';
+import { IcEye } from '@proton/icons/icons/IcEye';
 
 import { ContextMenuButton } from '../../../../statelessComponents/ContextMenu';
 import type { RevisionsProviderState } from '../../useRevisionsModalState';
@@ -12,10 +13,11 @@ interface Props {
 }
 
 export const RevisionPreviewButton = ({ revision, openRevisionPreview, close }: Props) => {
+    const title = c('Action').t`Preview`;
     return (
         <ContextMenuButton
-            name={c('Action').t`Preview`}
-            icon="eye"
+            name={title}
+            icon={<IcEye />}
             testId="context-menu-preview"
             action={() => openRevisionPreview(revision)}
             close={close}

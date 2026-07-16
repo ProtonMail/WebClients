@@ -8,10 +8,12 @@ interface Props {
 }
 
 export const ShareToolbarButton = ({ onClick }: Props) => {
+    const title = c('Action').t`Share`;
+
     return (
         <ToolbarButton
-            title={c('Action').t`Share`}
-            icon={<IcUserPlus alt={c('Action').t`Share`} />}
+            title={title}
+            icon={<IcUserPlus alt={title} />}
             onClick={onClick}
             data-testid="toolbar-share-via-link"
         />
