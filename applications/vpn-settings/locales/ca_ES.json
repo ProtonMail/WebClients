@@ -206,6 +206,9 @@
       "Compare plans": [
         "Compara els plans"
       ],
+      "Configure new device profile": [
+        "Configureu un perfil de dispositiu nou"
+      ],
       "Configure SAML": [
         "Configura SAML"
       ],
@@ -313,6 +316,9 @@
       ],
       "Delete account": [
         "Elimina el compte"
+      ],
+      "Delete device profile": [
+        "Eliminar el perfil de dispositiu"
       ],
       "Delete Gateway": [
         "Elimina la passarel·la"
@@ -503,6 +509,9 @@
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
       ],
+      "Generate device profile": [
+        "Generar el perfil de dispositiu"
+      ],
       "Generate new recovery phrase": [
         "Genera una nova frase de recuperació "
       ],
@@ -619,6 +628,9 @@
       ],
       "Increase": [
         "Incrementa"
+      ],
+      "Instructions": [
+        "Instruccions"
       ],
       "Invite": [
         "Invita"
@@ -1542,11 +1554,6 @@
         "Administrador/a d'usuaris:"
       ]
     },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Un càrrec és un conjunt de permisos que podeu assignar als membres de la vostra organització."
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Si sortiu ara, alguns contactes potser no es poden importar"
@@ -2081,6 +2088,27 @@
       ],
       "Status": [
         "Estat"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
       ],
       "User": [
         "Usuari"
@@ -4352,6 +4380,9 @@
       ],
       "Company name or personal name is required": [
         "S'ha de proporcionar el nom de l'empresa o el de la persona"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "No s'ha pogut generar el perfil de dispositiu. Torneu-ho a provar."
       ],
       "Couldn't load invoices. Please try again later.": [
         "No s'han pogut carregar les factures. Torneu a provar més tard."
@@ -6692,8 +6723,14 @@
         "Tot (${ totalFoldersCount } etiqueta)",
         "Tot (${ totalFoldersCount } etiquetes)"
       ],
+      "All devices with this device profile deployed": [
+        "S'han desplegat tots els dispositius amb aquest perfil"
+      ],
       "All inactive members deleted": [
         "S'han suprimit tots els membres inactius."
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Tot el trànsit d'internet està sempre xifrat i és segur"
       ],
       "All keys successfully reactivated": [
         "S'han reactivat totes les claus."
@@ -6876,6 +6913,9 @@
       "Choose an Entity ID to continue.": [
         "Trieu un ID d'entitat per continuar."
       ],
+      "Choose one:": [
+        "Trieu-ne una:"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
@@ -6896,6 +6936,9 @@
       ],
       "Compromised": [
         "En perill"
+      ],
+      "Configure Always-on VPN": [
+        "Configureu la VPN sempre activa"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configureu l'autenticació SAML per a l'organització a través d'un proveïdor d'identitat (IdP). Això activarà SAML per a tota l'organització."
@@ -7028,6 +7071,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Depenent de les vostres preferències, podran rebre accés immediatament o després d'un **període d'espera** designat."
       ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "Desplegueu ${ regoLink } directament mitjançant el desplegament de fitxers del vostre MDM"
+      ],
+      "Deploy across all your managed devices": [
+        "Desplegueu-ho a tots els dispositius que gestioneu"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Desplegueu-ho mitjançant el vostre MDM (Jamf, Intune…) o de manera manual a cada dispositiu."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Els dispositius que tenen desplegat el perfil de dispositiu de la VPN sempre activa no poden accedir a internet tret que hi hagi una connexió activa a ${ VPN_APP_NAME }."
+      ],
       "Did you know?": [
         "Ho sabíeu?"
       ],
@@ -7098,6 +7153,12 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
       ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "Descarregueu ${ ps1Link } i executeu-lo a cada dispositiu com a usuari del sistema per col·locar automàticament el perfil de dispositiu."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Descarregueu ${ removeScriptLink } i executeu-lo a cada dispositiu com a usuari del sistema per eliminar el perfil automàticament."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Descarregueu ${ VPN_APP_NAME }"
       ],
@@ -7152,6 +7213,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Els correus electrònics moguts a la paperera i el correu brossa fa més de 30 dies se suprimiran automàticament."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Els empleats no poden connectar-se a internet sense una connexió VPN"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Activeu la renovació automàtica per mantenir l'accés als servidors i funcions Plus."
       ],
@@ -7188,11 +7252,17 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "S'ha rebut l'URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.com/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "L'aplicació forçosa s'inicia automàticament tan aviat com el dispositiu detecta el perfil."
+      ],
       "Enhance your network security": [
         "Milloreu la seguretat de la vostra xarxa"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
+      ],
+      "Ensure your organization is always protected": [
+        "Assegureu-vos que la vostra organització estigui sempre protegida"
       ],
       "Enter code": [
         "Introduir el codi"
@@ -7313,6 +7383,9 @@
       ],
       "Gateways": [
         "Passarel·les"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Genereu el perfil de dispositiu i descarregueu un fitxer de configuració."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generació d’una nova frase de recuperació desactivarà l'antiga."
@@ -7796,8 +7869,14 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Un cop concedit l'accés al vostre compte, podran anar a la vostra configuració de **Recuperació** i canviar-vos la **contrasenya de ${ ACCOUNT_APP_NAME }**."
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Un cop s'hagi desplegat correctament, els dispositius poden trigar fins a unes quantes hores a detectar i aplicar la política."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Només podeu canviar les majúscules i la puntuació (punts, guionets i guions baixos). Per utilitzar una adreça diferent, afegiu-ne una de nova."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Només els usuaris de la vostra organització amb llicència poden autenticar ${ VPN_APP_NAME } en els dispositius que tenen desplegat el perfil de dispositiu."
       ],
       "Open source": [
         "Codi obert"
@@ -7807,6 +7886,9 @@
       ],
       "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
         "Obriu la sessió activa al navegador i aneu a **Preferències → Totes les preferències → Recuperació → Configuració del restabliment de contrasenya.**"
+      ],
+      "Optional configuration": [
+        "Configuració opcional"
       ],
       "or ${ selectFileButton }": [
         "o ${ selectFileButton }"
@@ -7821,6 +7903,9 @@
       ],
       "or discover other features:": [
         "o descobriu altres característiques:"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "O executeu ${ ps1Link } mitjançant l'execució de scripts del vostre MDM"
       ],
       "Or select a particular server:": [
         "O seleccioneu un servidor concret:"
@@ -8061,6 +8146,9 @@
       "Restore": [
         "Restaura"
       ],
+      "Restrict logins to your organization": [
+        "Restringiu els inicis de sessió a la vostra organització"
+      ],
       "SAML configuration saved": [
         "S'ha desat la configuració SAML."
       ],
@@ -8248,6 +8336,9 @@
       ],
       "support team": [
         "equip de suport"
+      ],
+      "Supported platforms": [
+        "Plataformes compatibles"
       ],
       "Swiss based": [
         "Amb seu a Suïssa"
@@ -8484,6 +8575,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per a desxifrar i veure les dades bloquejades després d'un restabliment de contrasenya, seleccioneu un mètode de recuperació."
       ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Per habilitar la VPN sempre activa, cal que el perfil de dispositiu arribi a ${ policiesPath } a cada dispositiu; el client de ${ VPN_APP_NAME } el detectarà allà i aplicarà el perfil de manera forçosa automàticament."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
@@ -8507,6 +8601,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Per recuperar l'accés al vostre compte i a les vostres dades, introduïu la frase de recuperació de 12 paraules associada al vostre compte."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Per suprimir la VPN sempre activa, elimineu ${ profileFile } de ${ policiesPath } a cada dispositiu. El client de ${ VPN_APP_NAME } deixarà d'aplicar el perfil de manera forçosa així que detecti que el fitxer ha desaparegut."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Per protegir la vostra connexió a internet, descarregueu i instal·leu l'aplicació de ${ VPN_APP_NAME } per al vostre dispositiu i connecteu a un servidor."
@@ -8625,6 +8722,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilitzeu les següents credencials quan us connecteu a servidors ${ VPN_APP_NAME } sense aplicació. Exemple d'utilització: Tunnelblick a macOS, OpenVPN a GNU/Linux."
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Utilitzeu el vostre MDM per suprimir el fitxer, o executeu ${ removeScriptLink } mitjançant l'execució de scripts del MDM. Qualsevol MDM que admeti el desplegament de fitxers o l'execució de scripts funcionarà."
+      ],
       "User activated": [
         "S'ha activat l'usuari."
       ],
@@ -8636,6 +8736,9 @@
       ],
       "Users": [
         "Usuaris"
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Utilitzeu un MDM diferent? Qualsevol MDM que admeti el desplegament de fitxers o l'execució de seqüències de PowerShell funcionarà. Consulteu la documentació del vostre MDM per obtenir més informació."
       ],
       "Vault created": [
         "S'ha creat la caixa forta."
@@ -9041,6 +9144,9 @@
       "Your account was successfully updated with this promotion": [
         "S'ha actualitzat el vostre compte amb aquesta promoció"
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "El vostre perfil de dispositiu de la VPN sempre activa ja està a punt per desplegar-se."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
       ],
@@ -9413,6 +9519,9 @@
       "App password": [
         "Contrasenya de l'aplicació"
       ],
+      "Applies:": [
+        "S'aplica a:"
+      ],
       "Apply policy to": [
         "Apliqueu la política a"
       ],
@@ -9675,6 +9784,9 @@
       "End-to-end encryption": [
         "Xifratge d'extrem a extrem"
       ],
+      "Enforce Always-on VPN": [
+        "Forceu la VPN sempre activa"
+      ],
       "Enter code": [
         "Introduïu el codi"
       ],
@@ -9818,6 +9930,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivell de filtratge del bloquejador NetShield"
+      ],
+      "Login restrictions": [
+        "Restriccions d'inici de sessió"
       ],
       "Logo": [
         "Logo"
@@ -15218,6 +15333,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Espereu, s'està cancel·lant la vostra subscripció"
+      ],
+      "Disabled": [
+        "Deshabilitat"
+      ],
+      "Enabled": [
+        "Habilitat"
+      ],
+      "No restrictions": [
+        "Sense restriccions"
+      ],
+      "Restricted to members of your organization": [
+        "Restringit als membres de la vostra organització"
       ]
     },
     "Status": {
@@ -15869,6 +15996,9 @@
       "Compare the key differences that matter for your business.": [
         "Compareu les diferències clau que són importants per la vostra empresa."
       ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Forceu l'ús de la VPN a tota la vostra organització bloquejant l'accés a internet tret que hi hagi una connexió VPN activa."
+      ],
       "Save 50% for 6 months, and keep full access": [
         "Estalvieu el 50% durant sis mesos i mantingueu l'accés complet"
       ],
@@ -16446,6 +16576,12 @@
       "Also in your plan": [
         "També al vostre pla"
       ],
+      "Always-on VPN": [
+        "VPN sempre activa"
+      ],
+      "Always-on VPN device profile": [
+        "Perfil de dispositiu de la VPN sempre activa"
+      ],
       "Amount": [
         "Quantitat"
       ],
@@ -16545,8 +16681,14 @@
       "Change second password": [
         "Canvia la segona contrasenya"
       ],
+      "Choose a deployment method": [
+        "Trieu un mètode de desplegament"
+      ],
       "Choose a provider": [
         "Escolliu un proveïdor"
+      ],
+      "Choose a removal method": [
+        "Trieu un mètode d'eliminació"
       ],
       "Choose user affiliations": [
         "Trieu les afiliacions de l'usuari"
@@ -16559,6 +16701,9 @@
       ],
       "Collaborate on documents": [
         "Col·laboració en documents"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Configureu el perfil de dispositiu de la VPN sempre activa"
       ],
       "Confirm": [
         "Confirma"
@@ -16645,6 +16790,9 @@
       "Created": [
         "Creat"
       ],
+      "Created!": [
+        "S'ha creat!"
+      ],
       "Creating user accounts": [
         "Creació de comptes d'usuari"
       ],
@@ -16723,6 +16871,15 @@
       ],
       "Deny access to user?": [
         "Voleu denegar l'accés a l'usuari?"
+      ],
+      "Deploy device profile to your devices": [
+        "Desplegueu el perfil de dispositiu als vostres dispositius"
+      ],
+      "Deploy via MDM": [
+        "Desplegar-ho mitjançant MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Desplegar-ho mitjançant PowerShell"
       ],
       "Description": [
         "Descripció"
@@ -17170,6 +17327,9 @@
       "Remove all members?": [
         "Voleu suprimir tots els membres?"
       ],
+      "Remove Always-on VPN device profile": [
+        "Esborreu el perfil de dispositiu de la VPN sempre activa"
+      ],
       "Remove device?": [
         "Voleu esborrar el dispositiu?"
       ],
@@ -17193,6 +17353,9 @@
       ],
       "Remove user?": [
         "Voleu esborrar l'usuari?"
+      ],
+      "Remove via MDM": [
+        "Esborrar-ho mitjançant MDM"
       ],
       "Rename the gateway": [
         "Canvia el nom de la passarel·la"
@@ -17226,9 +17389,6 @@
       ],
       "Revoke certificate?": [
         "Voleu revocar el certificat?"
-      ],
-      "Roles and permissions": [
-        "Càrrecs i permisos"
       ],
       "SAML authentication": [
         "Autenticació SAML"
@@ -17715,6 +17875,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Inclou tots els usuaris de la vostra organització. S'aplica de manera forçosa només en els dispositius on s'ha desplegat el perfil de dispositiu de la VPN sempre activa."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Inclou dominis de correu personalitzats i àlies de hide-my-email il·limitats a ${ MAIL_APP_NAME }, accés a servidors en més de 120 països a ${ VPN_SHORT_APP_NAME }, autenticació de doble factor (2FA) integrada i compartició segura a ${ PASS_SHORT_APP_NAME }, i molt més."
