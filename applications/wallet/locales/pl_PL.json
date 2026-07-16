@@ -103,6 +103,12 @@
       "Copy address": [
         "Kopiuj adres"
       ],
+      "Copy descriptor": [
+        "Kopiuj deskryptor"
+      ],
+      "Copy public key (${ prefix })": [
+        "Kopiuj klucz publiczny (${ prefix })"
+      ],
       "Copy version number to clipboard": [
         "Kopiuj numer wersji do schowka"
       ],
@@ -462,6 +468,12 @@
       "${ price } per user": [
         "${ price } za użytkownika"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencja AI ${ LUMO_APP_NAME }",
+        "${ seats } licencje AI ${ LUMO_APP_NAME }",
+        "${ seats } licencji AI ${ LUMO_APP_NAME }",
+        "${ seats } licencji AI ${ LUMO_APP_NAME }"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } licencja",
         "${ seats } ${ LUMO_APP_NAME } licencje",
@@ -657,6 +669,9 @@
       ],
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } współpracuje z ${ rampLink }, ${ banxaLink } i ${ moonpayLink }, trzema zarejestrowanymi platformami kryptowalutowymi, aby ułatwić zakup BTC. Wybierz swój region, aby zobaczyć dostępnych dostawców i metody płatności."
+      ],
+      "2% bank transfer fee": [
+        "Opłata za przelew bankowy w wysokości 2%"
       ],
       "4% credit card fee": [
         "Opłata za kartę kredytową w wysokości 4%"
@@ -2517,6 +2532,26 @@
         "Nie wybrano obrazu"
       ]
     },
+    "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Deskryptor skopiowano do schowka"
+      ],
+      "I want the ${ prefix } instead": [
+        "Zamiast tego chcę ${ prefix }"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Zaimportuj ten deskryptor do innego portfela, aby monitorować swoje saldo i generować adresy odbiorcze bez ujawniania swoich kluczy prywatnych."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Klucz publiczny (${ prefix }) skopiowano do schowka"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Zanim przejdziesz dalej, upewnij się, że kilka pierwszych wygenerowanych adresów zgadza się z adresami wyświetlanymi w aplikacji ${ WALLET_APP_NAME }."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Zdecydowanie zalecamy korzystanie z powyższego deskryptora, ponieważ zawiera on wszystkie niezbędne informacje gwarantujące prawidłowe generowanie adresów. Formaty xpub, ypub i zpub nie są częścią standardów BIP i należy ich używać z zachowaniem ostrożności."
+      ]
+    },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
         "Grupa rodziny nie została rozpoznana. Spróbuj ponownie."
@@ -3224,6 +3259,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Twoje konto jest obecnie skonfigurowane tak, aby stosować mechanizm odwrotnego obciążenia. Nie jest to obsługiwane w przypadku wybranego planu. Aby kontynuować, usuń numer VAT z adresu rozliczeniowego lub wybierz inny plan."
       ],
+      "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
+        "Strona płatności została otwarta w nowej karcie. Dokonaj tam płatności, a po zakończeniu wróć na tę stronę."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
       ],
@@ -3876,6 +3914,12 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options } päivän tiedostoversiohistoria"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Dożywotni ${ PASS_APP_NAME } + SimpleLogin"
@@ -5701,6 +5745,9 @@
       "${ feature } is now active": [
         "Funkcja ${ feature } jest aktywna"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asystent pisania ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account restricted": [
         "Konto zostało ograniczone"
       ],
@@ -5986,6 +6033,11 @@
       ],
       "The user must have an address to request data access": [
         "Użytkownik musi mieć adres, aby żądać dostępu do danych"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Będziesz mieć możliwość przypisywania stanowisk, gdy tylko użytkownik zaakceptuje zaproszenie."
       ]
     },
     "Validation": {

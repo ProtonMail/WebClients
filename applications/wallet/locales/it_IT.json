@@ -3817,6 +3817,10 @@
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
       ],
+      "${ options }-day file version history": [
+        "Cronologia delle versioni dei file di ${ options } giorno",
+        "Cronologia delle versioni dei file di ${ options } giorni"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin a vita"
       ],
@@ -5577,6 +5581,9 @@
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account restricted": [
         "Account limitato"
       ],
@@ -5862,6 +5869,11 @@
       ],
       "The user must have an address to request data access": [
         "L'utente deve avere un indirizzo per richiedere l'accesso ai dati"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
       ]
     },
     "Validation": {

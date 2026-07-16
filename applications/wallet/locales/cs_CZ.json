@@ -5745,6 +5745,9 @@
       "${ feature } is now active": [
         "${ feature } je nyní aktivní"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent psaní ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account restricted": [
         "Účet omezen"
       ],
@@ -6030,6 +6033,11 @@
       ],
       "The user must have an address to request data access": [
         "Uživatel musí mít adresu, aby mohlo být požádáno o přístup k datům"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Jakmile uživatel přijme pozvánku, budete mu moci přiřadit role."
       ]
     },
     "Validation": {
