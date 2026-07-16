@@ -12,6 +12,7 @@ import {
     Alert3ds,
     type Breakpoints,
     CurrencySelector,
+    Price,
     SkeletonLoader,
     Toggle,
     useConfig,
@@ -19,6 +20,7 @@ import {
     useModalState,
 } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
+import { useVpn2024SignupExperiment } from '@proton/components/containers/payments/subscription/helpers/useVpn2024SignupExperiment';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
@@ -56,6 +58,7 @@ import type {
     EstimationChangeAction,
     EstimationChangePayload,
 } from '@proton/payments/telemetry/shared-checkout-telemetry';
+import { reportVpn2024SignupAddPass } from '@proton/payments/telemetry/signup-experiment-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { PayButton } from '@proton/payments/ui/components/PayButton';
@@ -102,10 +105,11 @@ import PaymentSummary from './PaymentSummary';
 import RightPlanSummary from './RightPlanSummary';
 import SignIntoLink from './SignIntoLink';
 import VPNPassUpsellToggle from './VPNPassUpsellButton';
+import { VpnPassBundleUpsell } from './VpnPassBundleUpsell';
 import swissFlag from './flag.svg';
 import { getPlanInformation } from './getPlanInformation';
 import type { getUpsellShortPlan } from './helper';
-import { getBillingCycleText, getOffText } from './helper';
+import { getBillingCycleText, getOffText, getVpnPassBundleUpsellMonthlyPrice } from './helper';
 import type { Measure, VPNSignupModel } from './interface';
 import type { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
@@ -206,6 +210,7 @@ const Step1 = ({
         hideFreePlan,
         currency: currencyUrlParam,
         email: defaultEmail,
+        vpn2024SignupExperimentVariant,
     } = signupParameters;
 
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
@@ -229,10 +234,11 @@ const Step1 = ({
     const { getAvailableCurrencies } = useCurrencies();
 
     const { plansMap } = model;
-    const initialLoading = model.loadingDependencies;
+    const isLoadingModelDeps = model.loadingDependencies;
+    const isLoading = loadingSignup || loadingPaymentDetails;
 
     useEffect(() => {
-        if (initialLoading) {
+        if (isLoadingModelDeps) {
             return;
         }
 
@@ -240,7 +246,7 @@ const Step1 = ({
             step: 'plan_username_payment',
             flow: isB2bPlan ? 'b2b' : 'b2c',
         });
-    }, [initialLoading]);
+    }, [isLoadingModelDeps]);
 
     const hasBeenCountedRef = useRef<HasBeenCountedState>({
         plan: false,
@@ -328,7 +334,7 @@ const Step1 = ({
     const disablePayButton = Object.keys(model.optimistic).length > 0 || loadingPaymentDetails;
 
     const validatePayment = () => {
-        if (loadingSignup || loadingPaymentDetails || disablePayButton) {
+        if (isLoading || disablePayButton) {
             return false;
         }
         return true;
@@ -433,7 +439,7 @@ const Step1 = ({
     };
 
     const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
-        if (model.loadingDependencies) {
+        if (isLoadingModelDeps) {
             return;
         }
 
@@ -752,7 +758,7 @@ const Step1 = ({
         viewportWidth['>=large'] &&
             [PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE, PLANS.BUNDLE].includes(selectedPlan.Name as any) && {
                 left: <IcServers size={6} className={iconColorClassName} />,
-                text: model.loadingDependencies ? (
+                text: isLoadingModelDeps ? (
                     <>
                         <SkeletonLoader width="5em" />
                     </>
@@ -769,7 +775,7 @@ const Step1 = ({
     const padding = 'sm:p-11';
 
     const planInformation = getPlanInformation({
-        loading: model.loadingDependencies,
+        loading: isLoadingModelDeps,
         selectedPlan: options.plan,
     });
 
@@ -819,7 +825,7 @@ const Step1 = ({
     })();
 
     const handleUpsellVPNPassBundle = () => {
-        if (loadingSignup || loadingPaymentDetails) {
+        if (isLoading) {
             return;
         }
         if (
@@ -971,7 +977,7 @@ const Step1 = ({
             planIDs: options.planIDs,
         });
         if (!subscriptionMapping) {
-            if (model.loadingDependencies) {
+            if (isLoadingModelDeps) {
                 return (
                     <div className="p-2 flex gap-1 items-center">
                         <Toggle checked={false} id="toggle-upsell-plan" className="mx-1" />
@@ -1000,7 +1006,7 @@ const Step1 = ({
                     id="toggle-upsell-plan"
                     className="mx-1"
                     onChange={(event) => {
-                        if (loadingSignup || loadingPaymentDetails) {
+                        if (isLoading) {
                             return;
                         }
                         if (event.target.checked && upsellToCycle) {
@@ -1031,7 +1037,7 @@ const Step1 = ({
     const showCycleAndSelectors =
         !hasSelectedFree && (mode === 'pricing' || mode === 'vpn-pass-promotion') && checkoutMappingPlanIDs;
 
-    const currencySelector = model.loadingDependencies ? null : (
+    const currencySelector = isLoadingModelDeps ? null : (
         <CurrencySelector
             currencies={getAvailableCurrencies({
                 paymentStatus: model.paymentStatus,
@@ -1047,7 +1053,7 @@ const Step1 = ({
         />
     );
 
-    const loadingPaymentsForm = model.loadingDependencies;
+    const loadingPaymentsForm = isLoadingModelDeps;
 
     const title = (() => {
         if (mode === 'vpn-pass-promotion') {
@@ -1078,7 +1084,7 @@ const Step1 = ({
             options={options}
             measure={measure}
             details={undefined}
-            disabled={model.loadingDependencies}
+            disabled={isLoadingModelDeps}
         />
     );
 
@@ -1101,7 +1107,7 @@ const Step1 = ({
                 return model.mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
                     ? getPlanInformation({
                           selectedPlan: plansMap[PLANS.VPN2024],
-                          loading: model.loadingDependencies,
+                          loading: isLoadingModelDeps,
                       }) || planInformation
                     : planInformation;
             })()}
@@ -1167,9 +1173,35 @@ const Step1 = ({
     );
 
     const isVpnPassBundleBusinessPlan = selectedPlan.Name === PLANS.VPN_PASS_BUNDLE_BUSINESS;
+
+    const { displayPassAsFakeAddon, isVPNPassBundle: isVpnPassBundle } = useVpn2024SignupExperiment(
+        vpn2024SignupExperimentVariant,
+        options.planIDs
+    );
+
+    // Avoid collision with another offer targeting VPN_PASS_BUNDLE using specific coupons
+    const canDisplayVpnPassBundle = displayPassAsFakeAddon && model.mode !== 'vpn-pass-promotion';
+
     const checkoutHeaderText = isVpnPassBundleBusinessPlan
         ? c('Header').t`Checkout`
         : c('Header').t`Select your payment method:`;
+
+    const bundlePlanPrice = getVpnPassBundleUpsellMonthlyPrice({
+        cycle: options.cycle,
+        currency: options.currency,
+        plansMap,
+        subscriptionDataCycleMapping: model.subscriptionDataCycleMapping,
+    });
+
+    const bundlePlanPriceInline: ReactElement = (
+        <Price
+            key={`${PLANS.VPN_PASS_BUNDLE}-1`}
+            currency={options.currency}
+            suffix={c('Suffix for price').t`per month`}
+        >
+            {bundlePlanPrice}
+        </Price>
+    );
 
     return (
         <Layout
@@ -1237,7 +1269,7 @@ const Step1 = ({
                             <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                                 <CycleSelector
                                     mode={mode}
-                                    loading={model.loadingDependencies}
+                                    loading={isLoadingModelDeps}
                                     onGetTheDeal={({ cycle, planIDs }) => {
                                         handleUpdate('plan');
                                         setToggleUpsell(undefined);
@@ -1421,6 +1453,22 @@ const Step1 = ({
                         )}
                     </div>
                 </Box>
+                {canDisplayVpnPassBundle && (
+                    <VpnPassBundleUpsell
+                        padding={padding}
+                        isVpnPassBundle={isVpnPassBundle}
+                        bundlePlanPriceInline={bundlePlanPriceInline}
+                        isLoadingModelDeps={isLoadingModelDeps}
+                        onToggle={(isVpnPassBundle) => {
+                            if (!isVpnPassBundle) {
+                                reportVpn2024SignupAddPass();
+                            }
+                            void handleOptimistic({
+                                planIDs: { [isVpnPassBundle ? PLANS.VPN2024 : PLANS.VPN_PASS_BUNDLE]: 1 },
+                            });
+                        }}
+                    />
+                )}
                 {!hasSelectedFree && (
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
@@ -1497,7 +1545,7 @@ const Step1 = ({
                                             }
 
                                             const sharedClasses = 'mb-2';
-                                            if (model.loadingDependencies) {
+                                            if (isLoadingModelDeps) {
                                                 return (
                                                     <SkeletonLoader
                                                         height="2.5rem"

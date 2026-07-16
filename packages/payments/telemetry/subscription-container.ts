@@ -4,8 +4,6 @@
  * Events specific to the subscription modification modal.
  * These events use fixed names (no context prefix) as they're only used
  * in the subscription modification flow for existing users.
- *
- * @see confluence.md for complete event documentation
  */
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
