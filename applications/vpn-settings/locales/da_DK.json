@@ -1542,11 +1542,6 @@
         "Brugeradmin:"
       ]
     },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "En rolle er en gruppe tilladelser, som du kan tildele medlemmerne af din organisation."
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ved at afslutte nu vil nogle kontakter måske ikke blive importeret"
@@ -2081,6 +2076,27 @@
       ],
       "Status": [
         "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For at migrere denne bruger skal vedkommende acceptere sin invitation til at tilmelde sig ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du fjerne vedkommende fra arkivet i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du ophæve suspenderingen af vedkommende i din Google Workspace Admin Console."
       ],
       "User": [
         "Bruger"
@@ -15872,6 +15888,9 @@
       "Save 50% for 6 months, and keep full access": [
         "Spar 50% i 6 måneder, og behold fuld adgang"
       ],
+      "Save 50% for one year, and keep full access": [
+        "Spar 50 % i et år, og behold fuld adgang"
+      ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Se hvordan ${ MAIL_APP_NAME } rangerer sig, og hvorfor vores uafhængighed gør en forskel."
       ],
@@ -17223,9 +17242,6 @@
       ],
       "Revoke certificate?": [
         "Tilbagekald certifikat?"
-      ],
-      "Roles and permissions": [
-        "Roller og tilladelser"
       ],
       "SAML authentication": [
         "SAML-godkendelse"
