@@ -4,13 +4,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 
 import { useLumoTheme } from '../../../providers';
+import DropdownMenu from '../../DropdownMenu';
 import { useArtifactContext } from './ArtifactContext';
+import type { ArtifactRegistry } from './artifactRegistry';
 import type { ParsedArtifact, StreamingArtifact } from './parseArtifacts';
 import { getFileExtension } from './parseArtifacts';
 
@@ -163,6 +167,13 @@ const StreamingPreview = ({ streaming }: StreamingPreviewProps) => {
 // Shared panel header
 // ---------------------------------------------------------------------------
 
+interface ArtifactSwitcherEntry {
+    id: string;
+    title: string;
+    type: 'code' | 'document';
+    hasUnseenRevision: boolean;
+}
+
 interface PanelHeaderProps {
     type?: 'code' | 'document';
     language?: string;
@@ -174,6 +185,12 @@ interface PanelHeaderProps {
     copySuccess?: boolean;
     onDownload?: () => void;
     onClose: () => void;
+    versionIndex?: number;
+    versionCount?: number;
+    onPrevVersion?: () => void;
+    onNextVersion?: () => void;
+    switcherEntries?: ArtifactSwitcherEntry[];
+    onSelectArtifact?: (id: string) => void;
 }
 
 const PanelHeader = ({
@@ -187,6 +204,12 @@ const PanelHeader = ({
     copySuccess,
     onDownload,
     onClose,
+    versionIndex,
+    versionCount,
+    onPrevVersion,
+    onNextVersion,
+    switcherEntries,
+    onSelectArtifact,
 }: PanelHeaderProps) => (
     <div className="artifact-panel-header flex flex-row items-center gap-2 px-3 py-2 border-bottom border-weak shrink-0 w-full">
         {type ? (
@@ -212,6 +235,35 @@ const PanelHeader = ({
                 />
             )}
         </span>
+        {!isStreaming && versionCount !== undefined && versionCount > 1 && versionIndex !== undefined && (
+            <div className="flex flex-row items-center gap-1 shrink-0">
+                <Button
+                    icon
+                    shape="ghost"
+                    size="small"
+                    onClick={onPrevVersion}
+                    disabled={versionIndex === 0}
+                    className="artifact-btn"
+                    title={c('collider_2025:Action').t`Previous version`}
+                >
+                    <IcChevronLeft size={4} className="color-hint" />
+                </Button>
+                <span className="text-xs color-hint shrink-0 text-nowrap">
+                    {c('collider_2025:Info').t`v${versionIndex + 1} of ${versionCount}`}
+                </span>
+                <Button
+                    icon
+                    shape="ghost"
+                    size="small"
+                    onClick={onNextVersion}
+                    disabled={versionIndex === versionCount - 1}
+                    className="artifact-btn"
+                    title={c('collider_2025:Action').t`Next version`}
+                >
+                    <IcChevronRight size={4} className="color-hint" />
+                </Button>
+            </div>
+        )}
         <div className="flex flex-row items-center gap-1 shrink-0">
             {/* {!isStreaming && type === 'code' && (
                 <Button
@@ -225,6 +277,27 @@ const PanelHeader = ({
                     {c('collider_2025:Action').t`1:1`}
                 </Button>
             )} */}
+            {!isStreaming && switcherEntries && switcherEntries.length > 1 && onSelectArtifact && (
+                <DropdownMenu
+                    onToggle={() => {}}
+                    visibleOnHover={false}
+                    options={switcherEntries.map((entry) => ({
+                        label: entry.title,
+                        value: entry.id,
+                        icon: (
+                            <span className="relative flex">
+                                {entry.type === 'code' ? <IcCode size={4} /> : <IcFileLines size={4} />}
+                                {entry.hasUnseenRevision && (
+                                    <span className="artifact-unseen-dot absolute rounded-full bg-danger" />
+                                )}
+                            </span>
+                        ),
+                        onClick: () => {
+                            onSelectArtifact(entry.id);
+                        },
+                    }))}
+                />
+            )}
             {!isStreaming && (
                 <>
                     <Button
@@ -271,8 +344,36 @@ const PanelHeader = ({
 // Panel root
 // ---------------------------------------------------------------------------
 
+function buildSwitcherEntries(
+    registry: ArtifactRegistry,
+    hasUnseenRevision: (id: string) => boolean
+): ArtifactSwitcherEntry[] {
+    return Object.values(registry)
+        .sort((a, b) => {
+            const aLatest = a.versions[a.versions.length - 1]?.createdAt ?? '';
+            const bLatest = b.versions[b.versions.length - 1]?.createdAt ?? '';
+            return bLatest.localeCompare(aLatest);
+        })
+        .map((entry) => ({
+            id: entry.id,
+            title: entry.title,
+            type: entry.type,
+            hasUnseenRevision: hasUnseenRevision(entry.id),
+        }));
+}
+
 const ArtifactPanel = () => {
-    const { selectedArtifact, streamingArtifact, closePanel } = useArtifactContext();
+    const {
+        registry,
+        selectedArtifact,
+        selectedId,
+        selectedVersionIndex,
+        openArtifact,
+        goToVersion,
+        hasUnseenRevision,
+        streamingArtifact,
+        closePanel,
+    } = useArtifactContext();
     const [showLineNumbers, setShowLineNumbers] = useState(false);
     const [copySuccess, setCopySuccess] = useState(false);
 
@@ -299,6 +400,8 @@ const ArtifactPanel = () => {
 
     // --- Complete state ---
     const artifact = selectedArtifact!;
+    const versionCount = selectedId ? registry[selectedId]?.versions.length : undefined;
+    const switcherEntries = buildSwitcherEntries(registry, hasUnseenRevision);
 
     const handleCopy = () => {
         void navigator.clipboard.writeText(artifact.content).then(() => {
@@ -336,6 +439,16 @@ const ArtifactPanel = () => {
                 copySuccess={copySuccess}
                 onDownload={handleDownload}
                 onClose={closePanel}
+                versionIndex={selectedVersionIndex}
+                versionCount={versionCount}
+                onPrevVersion={() => {
+                    goToVersion(selectedVersionIndex - 1);
+                }}
+                onNextVersion={() => {
+                    goToVersion(selectedVersionIndex + 1);
+                }}
+                switcherEntries={switcherEntries}
+                onSelectArtifact={openArtifact}
             />
             <div className="flex flex-column flex-1 overflow-hidden w-full">
                 <ArtifactContent artifact={artifact} showLineNumbers={showLineNumbers} />
