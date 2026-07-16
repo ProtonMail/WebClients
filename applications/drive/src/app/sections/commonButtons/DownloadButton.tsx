@@ -23,7 +23,6 @@ type Props = ContextMenuProps | ToolbarProps;
 
 export const DownloadButton = ({ buttonType, onClick, close, withScan = false }: Props) => {
     const title = withScan ? c('Action').t`Scan and Download` : c('Action').t`Download`;
-    const icon = 'arrow-down-line';
 
     if (buttonType === 'toolbar') {
         return (
@@ -40,7 +39,7 @@ export const DownloadButton = ({ buttonType, onClick, close, withScan = false }:
         return (
             <ContextMenuButton
                 name={title}
-                icon={icon}
+                icon={<IcArrowDownLine />}
                 testId={`context-menu-download${withScan ? '-scan' : ''}`}
                 action={onClick}
                 close={close}

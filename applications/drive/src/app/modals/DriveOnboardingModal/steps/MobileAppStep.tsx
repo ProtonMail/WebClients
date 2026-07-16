@@ -2,6 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { IcImage } from '@proton/icons/icons/IcImage';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '@proton/shared/lib/drive/urls';
 import { isAndroid, isIos, isMobile } from '@proton/shared/lib/helpers/browser';
@@ -35,11 +37,11 @@ export const MobileAppStep = () => {
                         text: c('Onboarding Info').t`Scan the QR code to install the mobile app`,
                     },
                     {
-                        icon: 'image',
+                        icon: <IcImage />,
                         text: c('Onboarding Info').t`Backup your photos and memories`,
                     },
                     {
-                        icon: 'mobile',
+                        icon: <IcMobile />,
                         text: c('Onboarding Info').t`Access your files on the go`,
                     },
                 ]}

@@ -7,12 +7,14 @@ import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';
 
 export const CreateNewFolderButton = ({ type, close, onClick }: ActionButtonProps) => {
+    const title = c('Action').t`New folder`;
+
     if (type === 'toolbar') {
         return (
             <ToolbarButton
                 data-testid="toolbar-new-folder"
-                icon={<IcFolderPlus alt={c('Action').t`Create new folder`} />}
-                title={c('Action').t`Create new folder`}
+                icon={<IcFolderPlus alt={title} />}
+                title={title}
                 onClick={onClick}
             />
         );
@@ -22,8 +24,8 @@ export const CreateNewFolderButton = ({ type, close, onClick }: ActionButtonProp
         return (
             <ContextMenuButton
                 testId="context-menu-new-folder"
-                icon="folder-plus"
-                name={c('Action').t`New folder`}
+                icon={<IcFolderPlus />}
+                name={title}
                 action={onClick}
                 close={close}
             />

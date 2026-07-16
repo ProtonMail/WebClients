@@ -8,7 +8,6 @@ import type { ActionButtonProps } from './types';
 
 export const RenameActionButton = ({ onClick, type, close }: ActionButtonProps) => {
     const title = c('Action').t`Rename`;
-    const icon = 'pen-square' as const;
 
     if (type === 'toolbar') {
         return (
@@ -22,7 +21,13 @@ export const RenameActionButton = ({ onClick, type, close }: ActionButtonProps) 
     }
     if (type === 'context') {
         return (
-            <ContextMenuButton name={title} icon={icon} testId="context-menu-rename" action={onClick} close={close} />
+            <ContextMenuButton
+                name={title}
+                icon={<IcPenSquare />}
+                testId="context-menu-rename"
+                action={onClick}
+                close={close}
+            />
         );
     }
 };

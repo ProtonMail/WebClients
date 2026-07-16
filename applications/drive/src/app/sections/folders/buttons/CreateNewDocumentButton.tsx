@@ -12,7 +12,7 @@ export const CreateNewDocumentButton = ({ type, close, onClick }: ActionButtonPr
         return (
             <ToolbarButton
                 data-testid="toolbar-new-document"
-                icon={<MimeIcon name="proton-doc" />}
+                icon={<MimeIcon name="proton-doc" alt={title} />}
                 title={title}
                 onClick={onClick}
             />

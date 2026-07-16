@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { generateNodeUid } from '@proton/drive/index';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import type { useDetailsModal } from '../../../../../modals/DetailsModal/';
 import type { useFilesDetailsModal } from '../../../../../modals/FilesDetailsModal';
@@ -14,10 +15,12 @@ interface Props {
 }
 
 const DetailsButton = ({ selectedBrowserItems, showDetailsModal, showFilesDetailsModal, close }: Props) => {
+    const title = c('Action').t`Details`;
+
     return (
         <ContextMenuButton
-            name={c('Action').t`Details`}
-            icon="info-circle"
+            name={title}
+            icon={<IcInfoCircle />}
             testId="context-menu-details"
             action={() => {
                 if (selectedBrowserItems.length === 1) {

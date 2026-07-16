@@ -38,7 +38,7 @@ export const MoveButton = ({ buttonType, close, onClick }: Props) => {
         return (
             <ContextMenuButton
                 name={title}
-                icon={'arrows-cross'}
+                icon={<IcArrowsCross />}
                 testId="context-menu-move"
                 action={onClick}
                 close={() => close?.()}

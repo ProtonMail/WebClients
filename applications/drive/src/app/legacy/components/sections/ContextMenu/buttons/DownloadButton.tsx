@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { generateNodeUid } from '@proton/drive';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import type { LinkDownload } from '../../../../../legacy/store';
@@ -19,6 +20,8 @@ interface Props {
 
 const DownloadButton = ({ selectedBrowserItems, close }: Props) => {
     const dm = DownloadManager.getInstance();
+    const title = c('Action').t`Download`;
+
     const onClick = async () => {
         // Document downloads are handled in two ways:
         //  1. single files are redirected to the Docs app using `downloadDocument`
@@ -39,8 +42,8 @@ const DownloadButton = ({ selectedBrowserItems, close }: Props) => {
 
     return (
         <ContextMenuButton
-            name={c('Action').t`Download`}
-            icon="arrow-down-line"
+            name={title}
+            icon={<IcArrowDownLine />}
             testId="context-menu-download"
             action={onClick}
             close={close}

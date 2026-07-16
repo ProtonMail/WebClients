@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { IcFile } from '@proton/icons/icons/IcFile';
+
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface Props {
@@ -8,15 +10,8 @@ interface Props {
 }
 
 const CreateNewFileButton = ({ close, action }: Props) => {
-    return (
-        <ContextMenuButton
-            testId="toolbar-new-file"
-            icon="file"
-            name={c('Action').t`Create new text file`}
-            action={action}
-            close={close}
-        />
-    );
+    const title = c('Action').t`Create new text file`;
+    return <ContextMenuButton testId="toolbar-new-file" icon={<IcFile />} name={title} action={action} close={close} />;
 };
 
 export default CreateNewFileButton;
