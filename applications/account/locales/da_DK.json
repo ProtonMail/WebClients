@@ -408,9 +408,6 @@
       "Continue with this password": [
         "Fortsæt med denne adgangskode"
       ],
-      "Copy": [
-        "Kopiér"
-      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -962,9 +959,6 @@
       ],
       "Hide": [
         "Skjul"
-      ],
-      "Hide ${ LUMO_SHORT_APP_NAME }": [
-        "Skjul ${ LUMO_SHORT_APP_NAME }"
       ],
       "Hide more benefits": [
         "Skjul flere fordele"
@@ -1518,9 +1512,6 @@
       "Select time zone": [
         "Vælg tidszone"
       ],
-      "Send": [
-        "Send"
-      ],
       "send auto-reply email": [
         "send e-mail med auto-svar"
       ],
@@ -1683,9 +1674,6 @@
       "Stay": [
         "Bliv her"
       ],
-      "Stop": [
-        "Stop"
-      ],
       "Stop using single sign-on": [
         "Stop med at bruge enkeltlogon"
       ],
@@ -1748,9 +1736,6 @@
       ],
       "Underline": [
         "Understreg"
-      ],
-      "Undo": [
-        "Fortryd"
       ],
       "Undo import": [
         "Annuller import"
@@ -2204,11 +2189,6 @@
       ],
       "User admin:": [
         "Brugeradmin:"
-      ]
-    },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "En rolle er en gruppe tilladelser, som du kan tildele medlemmerne af din organisation."
       ]
     },
     "Alert": {
@@ -3298,11 +3278,32 @@
       "Status": [
         "Status"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+      ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Installer ${ BRAND_NAME } Easy Switch fra Google Workspace Marketplace for at overføre din organisations data til ${ BRAND_NAME }. Kom tilbage her efter det er installeret for at fortsætte."
       ],
       "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
         "For at fuldføre migreringen skal du sørge for, at du kun beholder ${ BRAND_NAME } MX-koder."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For at migrere denne bruger skal vedkommende acceptere sin invitation til at tilmelde sig ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du fjerne vedkommende fra arkivet i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du ophæve suspenderingen af vedkommende i din Google Workspace Admin Console."
       ],
       "Update records for receiving": [
         "Opdater records for modtagelse"
@@ -11308,9 +11309,6 @@
       "here": [
         "her"
       ],
-      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
-        "Hej! Beskriv det filter, du ønsker, så skriver jeg Sieve-scriptet. Jeg kan også justere det, der allerede er i editoren."
-      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skjuler identifikationsoplysninger ved at indlæse eksternt indhold via en proxy. Mulighed for at gemme indhold som vedhæftede filer."
       ],
@@ -12680,9 +12678,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
-      ],
-      "Thinking…": [
-        "Tænker…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -14835,9 +14830,6 @@
       "Date": [
         "Dato"
       ],
-      "Date format": [
-        "Datoformat"
-      ],
       "Days of the week": [
         "Ugedage"
       ],
@@ -15023,6 +15015,12 @@
       ],
       "Event notifications": [
         "Begivenhedsnotifikationer"
+      ],
+      "Exact host matching": [
+        "Nøjagtigt værtsmatch"
+      ],
+      "Exact URL matching": [
+        "Nøjagtig URL-matching"
       ],
       "Exclude Spam/Trash from All mail": [
         "Ekskluder spam/papirkurv fra Alle e-mails"
@@ -15321,6 +15319,9 @@
       "Navigation": [
         "Navigation"
       ],
+      "Never fill on this exact URL": [
+        "Udfyld aldrig på denne nøjagtige URL"
+      ],
       "New display name": [
         "Nyt vist navn"
       ],
@@ -15428,6 +15429,9 @@
       ],
       "Other amount": [
         "Andet beløb"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domæne og underdomæner (standard)"
       ],
       "Passkeys": [
         "Adgangsnøgler"
@@ -15548,6 +15552,9 @@
       ],
       "Recovery phrase": [
         "Gendannelsessætning"
+      ],
+      "Regular expression": [
+        "Regulært udtryk"
       ],
       "Remove": [
         "Fjern"
@@ -15727,6 +15734,9 @@
       "Start weekday": [
         "Første ugedag"
       ],
+      "Starts with": [
+        "Begynder med"
+      ],
       "State": [
         "Stat"
       ],
@@ -15852,6 +15862,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ],
       "Use another payment method": [
         "Benyt en anden betalingsmetode"
@@ -16922,6 +16935,9 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Matchende regel for \"Begynder med\""
+      ],
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Alle filterhandlinger vil blive anvendt på alle beskeder i din ${ MAIL_APP_NAME }-konto. Ingen autosvar-e-mails vil blive sendt."
       ],
@@ -16931,6 +16947,18 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Forbind dit brugerdomæne til ${ BRAND_NAME } for at oprette brugerdefinerede e-mailadresser (f.eks. dig@ditfirma.com). Vores guide leder dig gennem processen."
       ],
+      "Exact (sub) domain matching rule": [
+        "Nøjagtig (under) domænematchregel"
+      ],
+      "Exact URL matching rule": [
+        "Nøjagtig URL-matchende regel"
+      ],
+      "Never fill with this exact URL": [
+        "Udfyld aldrig med denne nøjagtige URL"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært udtryk"
+      ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Se ${ PASS_APP_NAME }-aktivitet i hele din organisation."
       ],
@@ -16939,6 +16967,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Se brugerlogin-, gendannelses- og sikkerhedshændelser."
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for jokertegnmønstermatch"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er udløbet. ${ nonAutoRenewalAction }"
@@ -18471,9 +18502,6 @@
       "An external address cannot be default": [
         "En ekstern adresse kan ikke være standard"
       ],
-      "Copied to clipboard": [
-        "Kopieret til udklipsholder"
-      ],
       "Downloaded 2FA recovery codes": [
         "Hentede 2FA-gendannelseskoder"
       ],
@@ -18521,9 +18549,6 @@
       ],
       "Reminder has been sent": [
         "En påmindelse er blevet sendt."
-      ],
-      "Sieve script inserted": [
-        "Sieve-script indsat"
       ],
       "The key has been deleted.": [
         "Nøglen er blevet slettet."
@@ -20180,9 +20205,6 @@
       ],
       "Cortex Inc.": [
         "Cortex Inc."
-      ],
-      "Describe the filter you want…": [
-        "Beskriv det filter du ønsker..."
       ],
       "domain.com": [
         "domæne.dk"
@@ -24488,6 +24510,9 @@
       "Save 50% for 6 months, and keep full access": [
         "Spar 50% i 6 måneder, og behold fuld adgang"
       ],
+      "Save 50% for one year, and keep full access": [
+        "Spar 50 % i et år, og behold fuld adgang"
+      ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Se hvordan ${ MAIL_APP_NAME } rangerer sig, og hvorfor vores uafhængighed gør en forskel."
       ],
@@ -26038,9 +26063,6 @@
       "Help center": [
         "Hjælp-center"
       ],
-      "Help from ${ LUMO_SHORT_APP_NAME }": [
-        "Få hjælp fra ${ LUMO_SHORT_APP_NAME }"
-      ],
       "Help us improve": [
         "Hjælp os med at blive bedre"
       ],
@@ -26500,9 +26522,6 @@
       ],
       "Revoke certificate?": [
         "Tilbagekald certifikat?"
-      ],
-      "Roles and permissions": [
-        "Roller og tilladelser"
       ],
       "Same inbox, shorter email address": [
         "Samme indbakke, kortere e-mailadresse"
@@ -28202,6 +28221,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
       ],
       "Are you sure you want to remove your notification email?": [
         "Er du sikker på at du vil fjerne din notifikations-e-mail?"
