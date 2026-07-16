@@ -18,8 +18,6 @@
  * // Subscription modal specific
  * checkoutTelemetry.subscriptionContainer.reportChangeStep({ ... });
  *
- * @see confluence.md - Complete event documentation for data analysts
- * @see README.internal.md - Integration guide for developers
  */
 import {
     reportAddLumo,
