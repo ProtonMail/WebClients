@@ -94,15 +94,15 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
     };
 }
 
-const ARTIFACT_INSTRUCTION = `When your response contains content that is more useful as a standalone artifact than as part of the conversation, output it inside an artifact tag. Never include the artifact tag in the conversation title. 
+const ARTIFACT_INSTRUCTION = `When your response contains content that is more useful as a standalone artifact than as part of the conversation, output it inside an artifact tag. Never include the artifact tag in the conversation title.
 
 Use this format:
 
-<artifact type="code" language="LANGUAGE" title="TITLE">
+<artifact id="ID" type="code" language="LANGUAGE" title="TITLE">
 ...content...
 </artifact>
 
-<artifact type="document" title="TITLE">
+<artifact id="ID" type="document" title="TITLE">
 ...content...
 </artifact>
 
@@ -118,9 +118,16 @@ Do NOT use an artifact for:
 
 
 Tag attribute rules:
+- id: required; a short lowercase-kebab-case slug (2-4 words, e.g. "report-outline") that stably identifies this artifact
 - type: "code" or "document"
 - language: required for code; lowercase common name (python, javascript, typescript, bash, sql, etc.). Omit for document artifacts.
 - title: 2-5 words, title case, describing the content
+
+Revision rules:
+- If you are revising or continuing content you already produced as an artifact earlier in this conversation, reuse that artifact's exact id
+- Only use a new id when the content is genuinely new, unrelated artifact
+- When revising, always output the complete updated content inside the tag — never a diff or partial update
+- If the user's message references an artifact by its id, reuse that same id in your response
 
 Placement rules:
 - ALWAYS write your explanation or intro first, then the artifact. The artifacts should always be included last in the message. Disclaimers or notes should be included before the artifacts.

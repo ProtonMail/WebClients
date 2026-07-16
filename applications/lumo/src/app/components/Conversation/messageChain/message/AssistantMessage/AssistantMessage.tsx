@@ -267,7 +267,7 @@ const AssistantMessage = ({
         });
     }, [blocks, hasArtifacts, isFinishedGenerating]);
 
-    const { setSelectedArtifact, setStreamingArtifact } = useArtifactContext();
+    const { selectedId, openArtifact, setStreamingArtifact } = useArtifactContext();
 
     // Push the in-progress artifact into context so the panel can show a live preview.
     // Only the actively-generating last message drives this; clear it for all other messages.
@@ -279,13 +279,18 @@ const AssistantMessage = ({
         }
     }, [isLastMessage, isGenerating, isFinishedGenerating, streamingArtifact, setStreamingArtifact]);
 
-    // When generation completes, promote the first artifact to selectedArtifact (full rendering)
+    // When generation completes, promote the first artifact into the panel — but only if
+    // nothing else is open, or it's a revision of what's already open. Don't steal focus
+    // from an unrelated artifact the user is actively reading.
     useEffect(() => {
         if (isLastMessage && isFinishedGenerating && completeArtifacts.length > 0 && completeArtifacts[0]) {
+            const artifact = completeArtifacts[0];
             setStreamingArtifact(null);
-            setSelectedArtifact(completeArtifacts[0]);
+            if (selectedId === null || selectedId === artifact.id) {
+                openArtifact(artifact.id);
+            }
         }
-    }, [isLastMessage, isFinishedGenerating, completeArtifacts, setSelectedArtifact, setStreamingArtifact]);
+    }, [isLastMessage, isFinishedGenerating, completeArtifacts, selectedId, openArtifact, setStreamingArtifact]);
 
     // Extract search results for legacy sources button
     const searchResults = useMemo(() => extractSearchResults(blocks), [blocks]);
