@@ -206,6 +206,9 @@
       "Compare plans": [
         "Σύγκριση πλάνων"
       ],
+      "Configure new device profile": [
+        "Ρύθμιση παραμέτρων νέου προφίλ συσκευής"
+      ],
       "Configure SAML": [
         "Διαμόρφωση SAML"
       ],
@@ -313,6 +316,9 @@
       ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
+      ],
+      "Delete device profile": [
+        "Διαγραφή προφίλ συσκευής"
       ],
       "Delete Gateway": [
         "Διαγραφή Πύλης"
@@ -503,6 +509,9 @@
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
+      "Generate device profile": [
+        "Δημιουργία προφίλ συσκευής"
+      ],
       "Generate new recovery phrase": [
         "Παραγωγή νέας φράσης ανάκτησης"
       ],
@@ -619,6 +628,9 @@
       ],
       "Increase": [
         "Αύξηση"
+      ],
+      "Instructions": [
+        "Οδηγίες"
       ],
       "Invite": [
         "Πρόσκληση"
@@ -1542,11 +1554,6 @@
         "Διαχειριστής χρηστών:"
       ]
     },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Ένας ρόλος είναι μια ομάδα δικαιωμάτων που μπορείτε να εκχωρήσετε στα μέλη του οργανισμού σας."
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Φεύγοντας τώρα, κάποιες επαφές ενδέχεται να μην εισαχθούν"
@@ -2081,6 +2088,27 @@
       ],
       "Status": [
         "Κατάσταση"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην Κονσόλα διαχειριστή του Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην ενότητα ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τη διεύθυνσή του στην περιοχή ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του στην Κονσόλα διαχειριστή Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στην Κονσόλα διαχειριστή του Google Workspace."
       ],
       "User": [
         "Χρήστης"
@@ -4352,6 +4380,9 @@
       ],
       "Company name or personal name is required": [
         "Απαιτείται το όνομα της εταιρείας ή το προσωπικό όνομα"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Δεν ήταν δυνατή η δημιουργία του προφίλ συσκευής. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Couldn't load invoices. Please try again later.": [
         "Δεν ήταν δυνατή η φόρτωση των τιμολογίων. Παρακαλούμε προσπαθήστε ξανά αργότερα."
@@ -6692,8 +6723,14 @@
         "Όλες (${ totalFoldersCount } ετικέτα)",
         "Όλες (${ totalFoldersCount } ετικέτες)"
       ],
+      "All devices with this device profile deployed": [
+        "Όλες οι συσκευές με αυτό το προφίλ συσκευής αναπτύχθηκαν"
+      ],
       "All inactive members deleted": [
         "Όλα τα ανενεργά μέλη διαγράφηκαν"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Όλη η διαδικτυακή κίνηση είναι πάντα κρυπτογραφημένη και ασφαλής"
       ],
       "All keys successfully reactivated": [
         "Όλα τα κλειδιά ενεργοποιήθηκαν εκ νέου επιτυχώς"
@@ -6879,6 +6916,9 @@
       "Choose an Entity ID to continue.": [
         "Επιλέξτε ένα Entity ID για να συνεχίσετε."
       ],
+      "Choose one:": [
+        "Επιλέξτε ένα:"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
       ],
@@ -6899,6 +6939,9 @@
       ],
       "Compromised": [
         "Εκτεθειμένο"
+      ],
+      "Configure Always-on VPN": [
+        "Ρύθμιση παραμέτρων Always-on VPN"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Ρυθμίστε τις παραμέτρους ελέγχου ταυτότητας SAML για τον οργανισμό σας μέσω μιας υπηρεσίας παροχής ταυτότητας (IdP). Αυτό θα ενεργοποιήσει το SAML για ολόκληρο τον οργανισμό."
@@ -7031,6 +7074,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Ανάλογα με τις ρυθμίσεις σας, ενδέχεται να λάβουν πρόσβαση αμέσως ή μετά από μια καθορισμένη **περίοδο αναμονής**."
       ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "Αναπτύξτε το ${ regoLink } απευθείας μέσω της ανάπτυξης αρχείων MDM"
+      ],
+      "Deploy across all your managed devices": [
+        "Ανάπτυξη σε όλες τις διαχειριζόμενες συσκευές σας"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Αναπτύξτε το μέσω του MDM σας (Jamf, Intune…) ή χειροκίνητα σε κάθε συσκευή."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Οι συσκευές που έχουν εγκατεστημένο το προφίλ συσκευής VPN Always-on δεν μπορούν να συνδεθούν στο διαδίκτυο, εκτός εάν είναι ενεργή μια σύνδεση ${ VPN_APP_NAME }."
+      ],
       "Did you know?": [
         "Το γνωρίζατε;"
       ],
@@ -7101,6 +7156,12 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
       ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "Κατεβάστε το ${ ps1Link } και εκτελέστε το σε κάθε συσκευή ως χρήστης συστήματος για να τοποθετήσετε αυτόματα το προφίλ της συσκευής."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Κατεβάστε το ${ removeScriptLink } και εκτελέστε το σε κάθε συσκευή ως χρήστης συστήματος για να διαγράψετε αυτόματα το προφίλ."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Λήψη ${ VPN_APP_NAME }"
       ],
@@ -7155,6 +7216,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που μεταφέρθηκαν στον Κάδο απορριμμάτων και στα Ανεπιθύμητα πριν από περισσότερες από 30 ημέρες θα διαγραφούν αυτόματα."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Οι εργαζόμενοι δεν μπορούν να συνδεθούν στο διαδίκτυο χωρίς σύνδεση VPN"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Ενεργοποιήστε την αυτόματη ανανέωση για να διατηρήσετε την πρόσβαση στους διακομιστές και τις δυνατότητες του Plus."
       ],
@@ -7191,11 +7255,17 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Διεύθυνση URL τελικού σημείου που λάβατε από τον πάροχο ταυτότητάς σας (π.χ. https://idp.example.com/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Η επιβολή ξεκινά αυτόματα μόλις η συσκευή εντοπίσει το προφίλ."
+      ],
       "Enhance your network security": [
         "Βελτιώστε την ασφάλεια του δικτύου σας"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Διασφαλίστε πλήρως ιδιωτική και κρυπτογραφημένη επικοινωνία. Αποκτήστε επίσης τώρα τη δωρεάν ${ BRAND_NAME } ηλεκτρονική διεύθυνση σας."
+      ],
+      "Ensure your organization is always protected": [
+        "Βεβαιωθείτε ότι ο οργανισμός σας είναι πάντα προστατευμένος"
       ],
       "Enter code": [
         "Εισαγάγετε κωδικό"
@@ -7316,6 +7386,9 @@
       ],
       "Gateways": [
         "Πύλες"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Δημιουργήστε το προφίλ της συσκευής και κατεβάστε ένα αρχείο διαμόρφωσης."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Η παραγωγή μιας νέας φράσης ανάκτησης θα απενεργοποιήσει την παλιά σας."
@@ -7799,8 +7872,14 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Μόλις τους παραχωρηθεί πρόσβαση στον λογαριασμό σας, μπορούν να έχουν πρόσβαση στις ρυθμίσεις **Ανάκτησης** και **να αλλάξουν τον κωδικό πρόσβασής σας ${ ACCOUNT_APP_NAME }** για εσάς."
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Μόλις αναπτυχθεί με επιτυχία, ενδέχεται να χρειαστούν έως και μερικές ώρες για να εντοπίσουν και να επιβάλουν οι συσκευές την πολιτική."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Μόνο η χρήση κεφαλαίων και η στίξη (τελικές στιγμές, παύλες και υπογράμμιση) μπορούν να αλλάξουν εδώ. Για να χρησιμοποιήσετε διαφορετική διεύθυνση, προσθέστε μια νέα."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Μόνο οι χρήστες με άδεια χρήσης του οργανισμού σας μπορούν να πιστοποιήσουν την ταυτότητα του ${ VPN_APP_NAME } σε συσκευές που έχουν αναπτύξει το προφίλ συσκευής."
       ],
       "Open source": [
         "Ανοιχτού κώδικα"
@@ -7810,6 +7889,9 @@
       ],
       "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
         "Ανοίξτε την ενεργή σας συνεδρία στο πρόγραμμα περιήγησης και μεταβείτε στις **Ρυθμίσεις → Όλες οι ρυθμίσεις → Ανάκτηση → Ρυθμίσεις επαναφοράς κωδικού πρόσβασης.**"
+      ],
+      "Optional configuration": [
+        "Προαιρετική διαμόρφωση"
       ],
       "or ${ selectFileButton }": [
         "ή ${ selectFileButton }"
@@ -7824,6 +7906,9 @@
       ],
       "or discover other features:": [
         "ή ανακαλύψτε άλλες δυνατότητες:"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Ή εκτελέστε το ${ ps1Link } μέσω της εκτέλεσης του σεναρίου MDM"
       ],
       "Or select a particular server:": [
         "Ή επιλέξτε συγκεκριμένο διακομιστή:"
@@ -8064,6 +8149,9 @@
       "Restore": [
         "Επαναφορά"
       ],
+      "Restrict logins to your organization": [
+        "Περιορίστε τις συνδέσεις στον οργανισμό σας"
+      ],
       "SAML configuration saved": [
         "Αποθηκεύτηκε η διαμόρφωση SAML"
       ],
@@ -8251,6 +8339,9 @@
       ],
       "support team": [
         "ομάδα υποστήριξης"
+      ],
+      "Supported platforms": [
+        "Υποστηριζόμενες πλατφόρμες"
       ],
       "Swiss based": [
         "Με έδρα στην Ελβετία"
@@ -8487,6 +8578,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Για αποκρυπτογράφηση και προβολή των κλειδωμένων δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης, επιλέξτε μια μέθοδο ανάκτησης."
       ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Για να ενεργοποιηθεί το Always-on VPN, το προφίλ της συσκευής πρέπει να φτάσει στο ${ policiesPath } σε κάθε συσκευή — ο υπολογιστής-πελάτης ${ VPN_APP_NAME } το εντοπίζει εκεί και επιβάλλει αυτόματα το προφίλ."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
@@ -8510,6 +8604,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Για να ανακτήσετε την πρόσβαση στον λογαριασμό και τα δεδομένα σας, εισαγάγετε τη φράση ανάκτησης 12 λέξεων που σχετίζεται με τον λογαριασμό σας."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Για να καταργήσετε το Always-on VPN, διαγράψτε το ${ profileFile } από το ${ policiesPath } σε κάθε συσκευή. Ο πελάτης ${ VPN_APP_NAME } σταματά την επιβολή του προφίλ μόλις εντοπίσει ότι το αρχείο έχει εξαφανιστεί."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Για διασφάλιση της σύνδεσής σας στο διαδίκτυο, κατεβάστε και εγκαταστήστε την εφαρμογή ${ VPN_APP_NAME } για τη συσκευή σας, και συνδεθείτε σε έναν διακομιστή."
@@ -8628,6 +8725,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια όταν συνδέεστε σε διακομιστές ${ VPN_APP_NAME } χωρίς εφαρμογή. Παραδείγματα περιπτώσεων χρήσης περιλαμβάνουν: Tunnelblick σε macOS, OpenVPN σε GNU/Linux."
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Χρησιμοποιήστε το MDM σας για να διαγράψετε το αρχείο ή εκτελέστε την εντολή ${ removeScriptLink } μέσω της εκτέλεσης σεναρίου του MDM σας. Οποιοδήποτε MDM που υποστηρίζει την ανάπτυξη αρχείων ή την εκτέλεση σεναρίων θα λειτουργήσει."
+      ],
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
@@ -8639,6 +8739,9 @@
       ],
       "Users": [
         "Χρήστες"
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Χρησιμοποιείτε διαφορετικό MDM; Οποιοδήποτε MDM που υποστηρίζει την ανάπτυξη αρχείων ή την εκτέλεση σεναρίων PowerShell θα λειτουργήσει. Ανατρέξτε στην τεκμηρίωση του MDM σας για περισσότερες πληροφορίες."
       ],
       "Vault created": [
         "Η κρύπτη δημιουργήθηκε"
@@ -9044,6 +9147,9 @@
       "Your account was successfully updated with this promotion": [
         "Ο λογαριασμός σας ενημερώθηκε με επιτυχία με αυτήν την προσφορά"
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Το προφίλ της συσκευής σας Always-on VPN είναι έτοιμο για ανάπτυξη."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
       ],
@@ -9416,6 +9522,9 @@
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
       ],
+      "Applies:": [
+        "Ισχύει για:"
+      ],
       "Apply policy to": [
         "Εφαρμογή πολιτικής σε"
       ],
@@ -9678,6 +9787,9 @@
       "End-to-end encryption": [
         "Διατερματική κρυπτογράφηση"
       ],
+      "Enforce Always-on VPN": [
+        "Επιβολή Always-on VPN"
+      ],
       "Enter code": [
         "Εισαγωγή κωδικού"
       ],
@@ -9821,6 +9933,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
+      ],
+      "Login restrictions": [
+        "Περιορισμοί σύνδεσης"
       ],
       "Logo": [
         "Λογότυπο"
@@ -15218,6 +15333,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
+      ],
+      "Disabled": [
+        "Απενεργοποιημένο"
+      ],
+      "Enabled": [
+        "Ενεργοποιημένο"
+      ],
+      "No restrictions": [
+        "Χωρίς περιορισμούς"
+      ],
+      "Restricted to members of your organization": [
+        "Περιορίζεται σε μέλη του οργανισμού σας"
       ]
     },
     "Status": {
@@ -15869,6 +15996,9 @@
       "Compare the key differences that matter for your business.": [
         "Συγκρίνετε τις βασικές διαφορές που έχουν σημασία για την επιχείρησή σας."
       ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Επιβάλετε τη χρήση VPN σε ολόκληρο τον οργανισμό σας αποκλείοντας την πρόσβαση στο διαδίκτυο, εκτός εάν υπάρχει ενεργή σύνδεση VPN."
+      ],
       "Save 50% for 6 months, and keep full access": [
         "Κερδίστε 50% για 6 μήνες και διατηρήστε πλήρη πρόσβαση"
       ],
@@ -16446,6 +16576,12 @@
       "Also in your plan": [
         "Επιπλέον στο πλάνο σας"
       ],
+      "Always-on VPN": [
+        "Πάντα-ενεργό VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Προφίλ συσκευής Always-on VPN"
+      ],
       "Amount": [
         "Ποσό"
       ],
@@ -16545,8 +16681,14 @@
       "Change second password": [
         "Αλλαγή δεύτερου κωδικού πρόσβασης"
       ],
+      "Choose a deployment method": [
+        "Επιλέξτε μια μέθοδο ανάπτυξης"
+      ],
       "Choose a provider": [
         "Επιλέξτε έναν πάροχο"
+      ],
+      "Choose a removal method": [
+        "Επιλέξτε μια μέθοδο αφαίρεσης"
       ],
       "Choose user affiliations": [
         "Επιλέξτε συνεργασίες χρηστών"
@@ -16559,6 +16701,9 @@
       ],
       "Collaborate on documents": [
         "Συνεργαστείτε σε έγγραφα"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Ρύθμιση παραμέτρων Always-on VPN προφίλ συσκευής"
       ],
       "Confirm": [
         "Επιβεβαίωση"
@@ -16645,6 +16790,9 @@
       "Created": [
         "Δημιουργήθηκε"
       ],
+      "Created!": [
+        "Δημιουργήθηκε!"
+      ],
       "Creating user accounts": [
         "Δημιουργία λογαριασμών χρηστών"
       ],
@@ -16723,6 +16871,15 @@
       ],
       "Deny access to user?": [
         "Άρνηση πρόσβασης στο χρήστη;"
+      ],
+      "Deploy device profile to your devices": [
+        "Ανάπτυξη προφίλ συσκευής στις συσκευές σας"
+      ],
+      "Deploy via MDM": [
+        "Ανάπτυξη μέσω MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Ανάπτυξη μέσω PowerShell"
       ],
       "Description": [
         "Περιγραφή"
@@ -17170,6 +17327,9 @@
       "Remove all members?": [
         "Κατάργηση όλων των μελών;"
       ],
+      "Remove Always-on VPN device profile": [
+        "Αφαίρεση Always-on VPN προφίλ συσκευής"
+      ],
       "Remove device?": [
         "Διαγραφή συσκευής;"
       ],
@@ -17193,6 +17353,9 @@
       ],
       "Remove user?": [
         "Κατάργηση χρήστη;"
+      ],
+      "Remove via MDM": [
+        "Κατάργηση μέσω MDM"
       ],
       "Rename the gateway": [
         "Μετονομασία της πύλης"
@@ -17226,9 +17389,6 @@
       ],
       "Revoke certificate?": [
         "Ανάκληση πιστοποιητικού;"
-      ],
-      "Roles and permissions": [
-        "Ρόλοι και δικαιώματα"
       ],
       "SAML authentication": [
         "Ταυτοποίηση SAML"
@@ -17715,6 +17875,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Περιλαμβάνει όλους τους χρήστες στον οργανισμό σας. Επιβάλλεται μόνο σε συσκευές όπου έχει αναπτυχθεί το προφίλ συσκευής Always-on VPN."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Περιλαμβάνει προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου και απεριόριστες ψευδώνυμες διευθύνσεις hide-my-email στο ${ MAIL_APP_NAME }, πρόσβαση σε διακομιστές σε πάνω από 120 χώρες στο ${ VPN_SHORT_APP_NAME }, ενσωματωμένο 2FA και ασφαλή κοινή χρήση στο ${ PASS_SHORT_APP_NAME }, και άλλα."
