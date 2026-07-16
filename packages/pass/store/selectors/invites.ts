@@ -2,7 +2,6 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
 import type { InviteState } from '@proton/pass/store/reducers';
-import { selectGroups } from '@proton/pass/store/selectors/groups';
 import { selectFeatureFlag, selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
 import type { Invite, Maybe, MaybeNull } from '@proton/pass/types';
@@ -25,9 +24,4 @@ export const selectMostRecentInvite = createSelector(
 export const selectLoadGroupInvites = createSelector(
     [selectPassPlan, selectFeatureFlag(PassFeature.PassGroupInvitesV1)],
     (plan, enabled): boolean => enabled && isBusinessPlan(plan)
-);
-
-export const selectLegacyGroupInvites = createSelector(
-    [selectLoadGroupInvites, selectGroups],
-    (load, groups): boolean => load && !!groups?.length
 );
