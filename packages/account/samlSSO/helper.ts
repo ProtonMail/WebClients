@@ -7,7 +7,7 @@ export const getSSODomainsSet = ({ domains, ssoConfigs }: { domains?: Domain[]; 
     }, {});
     return (ssoConfigs || []).reduce<Set<string>>((acc, ssoConfig) => {
         const domain = domainsMap[ssoConfig.DomainID];
-        if (!domain) {
+        if (!domain || !ssoConfig.Enabled) {
             return acc;
         }
         acc.add(domain.DomainName.toLowerCase());
