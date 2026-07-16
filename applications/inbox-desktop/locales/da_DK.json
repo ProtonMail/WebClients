@@ -4,6 +4,17 @@
     "language": "da_DK"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Annullér"
+      ],
+      "Open external url": [
+        "Åbn eksternt link"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Protokollen ${ parsedProtocol } er ikke tilladt. Vil du åbne den eksterne URL?"
+      ]
+    },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
         "\"Genstart og profilér nu\" vil genstarte appen med det samme og registrere en opstartsprofil.\n\n\"Profilér ved næste opstart\" vil profilere næste gang, du åbner appen. Brug dette til at måle opstartshastigheden efter en genstart."
