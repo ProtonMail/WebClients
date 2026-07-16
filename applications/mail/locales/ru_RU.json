@@ -441,6 +441,9 @@
       "Delete permanently": [
         "Удалить безвозвратно"
       ],
+      "Deleting folder": [
+        "Удаление папки"
+      ],
       "Deleting label": [
         "Удаление ярлыка"
       ],
@@ -578,6 +581,9 @@
       ],
       "Explore ${ VPN_APP_NAME }": [
         "Ознакомиться с ${ VPN_APP_NAME }"
+      ],
+      "Explore other plans": [
+        "Изучить другие тарифы"
       ],
       "Export": [
         "Экспорт"
@@ -1473,6 +1479,9 @@
       "Submit": [
         "Отправить"
       ],
+      "Subscribe now": [
+        "Подписаться сейчас"
+      ],
       "Switch or add account": [
         "Переключить или добавить аккаунт"
       ],
@@ -1519,10 +1528,7 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверенный ключ",
-        "Доверенных ключа",
-        "Доверенных ключей",
-        "Доверенных ключей"
+        "Доверять ключу"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -2222,8 +2228,125 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Активировано"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адрес уже используется пользователем вне вашей организации. Пожалуйста, обратитесь в службу поддержки клиентов для решения этой проблемы"
+      ],
+      "All": [
+        "Все"
+      ],
+      "Calendar": [
+        "Календарь"
+      ],
+      "Configure migration": [
+        "Настроить миграцию"
+      ],
       "Contact your administrator to start a migration.": [
         "Свяжитесь с вашим администратором, чтобы начать миграцию."
+      ],
+      "Contacts": [
+        "Контакты"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Статус миграции данных из Google Workspace в ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Электронные письма"
+      ],
+      "Errors": [
+        "Ошибки"
+      ],
+      "Estimated size": [
+        "Оценочный размер"
+      ],
+      "Find out what can be migrated.": [
+        "Узнайте, что можно перенести."
+      ],
+      "Has errors": [
+        "Есть ошибки"
+      ],
+      "In progress": [
+        "В процессе"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрес участника не найден. Пожалуйста, обратитесь в службу поддержки клиентов для решения этой проблемы"
+      ],
+      "Migrate": [
+        "Перенести"
+      ],
+      "Migrated": [
+        "Перенесено"
+      ],
+      "Migration status": [
+        "Статус переноса"
+      ],
+      "Missing organization private key": [
+        "Отсутствует закрытый ключ организации"
+      ],
+      "Missing organization public key": [
+        "Отсутствует открытый ключ организации"
+      ],
+      "No users to display": [
+        "Нет пользователей для отображения"
+      ],
+      "Not activated": [
+        "Не активировано"
+      ],
+      "Organization does not have enough seats available": [
+        "У организации недостаточно доступных лицензий"
+      ],
+      "Organization does not have enough storage available": [
+        "У организации недостаточно доступного места для хранения"
+      ],
+      "Pending": [
+        "В ожидании"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Выберите именно то, что вы хотите перенести. Это применится ко всем пользователям организации."
+      ],
+      "Select users to migrate": [
+        "Выберите пользователей для миграции"
+      ],
+      "Size": [
+        "Размер"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Этого пользователя невозможно перенести из-за несовместимости платформ."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Чтобы перенести этого пользователя, включите его аккаунт в консоли администратора Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Чтобы перенести этого пользователя, включите его аккаунт в разделе ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Чтобы перенести этого пользователя, включите его адрес в разделе ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Чтобы перенести этого пользователя, ему необходимо принять приглашение присоединиться к ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Чтобы перенести этого пользователя, разархивируйте его в консоли администратора Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Чтобы перенести этого пользователя, разблокируйте его в консоли администратора Google Workspace."
+      ],
+      "User": [
+        "Пользователь"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Пользователи, вошедшие в свой аккаунт ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Что вы переносите?"
+      ],
+      "You": [
+        "Вы"
       ]
     },
     "Browser": {
@@ -2356,6 +2479,11 @@
       ],
       "Take a tour": [
         "Ознакомительный тур"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Дубликаты из предыдущих импортов будут пропущены. Вы можете отменить импорт или импортировать более старые сообщения в настройках ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -4343,6 +4471,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Мы приостановим импорт при заполнении хранилища на 80%, чтобы зарезервировать место для новых сообщений."
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "В дальнейшем мы импортируем ваши старые электронные письма и синхронизируем новые сообщения из Gmail"
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Мы начали импорт ваших писем из Gmail. Мы сообщим вам, когда он завершится."
       ],
@@ -5024,6 +5155,9 @@
       "No contacts found to import": [
         "Не найдено контактов для импорта"
       ],
+      "No drive found to import": [
+        "Не найдено хранилище для импорта"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Не найдено писем для импорта, у аккаунта нет папки Входящие"
       ],
@@ -5077,6 +5211,9 @@
       ],
       "Payment process not supported": [
         "Процесс оплаты не поддерживается"
+      ],
+      "Permissions request failed.": [
+        "Не удалось запросить разрешения."
       ],
       "Please activate your search again": [
         "Активируйте поиск снова"
@@ -5357,6 +5494,9 @@
       "Unexpected error, we can't import the contacts": [
         "Неожиданная ошибка, мы не можем импортировать контакты"
       ],
+      "Unexpected error, we can't import the files": [
+        "Непредвиденная ошибка, мы не можем импортировать файлы"
+      ],
       "Unknown error": [
         "Неизвестная ошибка"
       ],
@@ -5404,6 +5544,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Вы достигли лимита контактов для вашего аккаунта"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Вы израсходовали все адреса, предусмотренные вашим тарифом. Пожалуйста, улучшите ваш тариф, чтобы добавить новый адрес, или отключите какой-либо адрес в вашем аккаунте."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
@@ -6687,6 +6830,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ providerName }": [
+        "Импортировать из ${ providerName }"
+      ],
       "More import options": [
         "Другие варианты импортировать"
       ]
@@ -7023,6 +7169,12 @@
         "${ total } сообщения",
         "${ total } сообщений",
         "${ total } сообщений"
+      ],
+      "${ total } user found": [
+        "Найден ${ total } пользователь",
+        "Найдено ${ total } пользователя",
+        "Найдено ${ total } пользователей",
+        "Найдено ${ total } пользователя"
       ],
       "${ trackersCount } email tracker blocked": [
         "Заблокирован ${ trackersCount } трекер в электронной почте",
@@ -7740,6 +7892,9 @@
         "файла прикреплено",
         "файлов прикреплено",
         "файлов прикреплено"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Только файлы (без фото, ${ DOCS_APP_NAME } или ${ SHEETS_APP_NAME }) — в общей сложности до 100 ГБ, 100 000 файлов и 50 ГБ на один файл"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фильтры применяются ко всем письмам: как ко входящим, так и к отправленным. В каждом фильтре должно быть как минимум имя, условие и действие."
@@ -10083,6 +10238,12 @@
       "Encrypt emails": [
         "Шифровать письма"
       ],
+      "Exact host matching": [
+        "Точное соответствие хоста"
+      ],
+      "Exact URL matching": [
+        "Точное соответствие URL"
+      ],
       "Expires": [
         "Срок действия"
       ],
@@ -10175,6 +10336,9 @@
       ],
       "Import to:": [
         "Импортировать в:"
+      ],
+      "Import your emails": [
+        "Импортировать ваши электронные письма"
       ],
       "Include application logs in bug report": [
         "Включить журналы приложения в отчет об ошибке"
@@ -10287,6 +10451,9 @@
       "Navigation": [
         "Навигация"
       ],
+      "Never fill on this exact URL": [
+        "Никогда не заполнять на этом точном URL"
+      ],
       "New password": [
         "Новый пароль"
       ],
@@ -10337,6 +10504,9 @@
       ],
       "Original link": [
         "Оригинальная ссылка"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Родительский домен и поддомены (по умолчанию)"
       ],
       "Participants": [
         "Участники"
@@ -10416,6 +10586,9 @@
       "Region": [
         "Регион"
       ],
+      "Regular expression": [
+        "Регулярное выражение"
+      ],
       "Remember my choice": [
         "Запомнить мой выбор"
       ],
@@ -10475,6 +10648,9 @@
       ],
       "Start date": [
         "Дата начала"
+      ],
+      "Starts with": [
+        "Начинается с"
       ],
       "State": [
         "Состояние"
@@ -10562,6 +10738,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "Шаблон URL с подстановочными знаками"
       ],
       "Username": [
         "Имя пользователя"
@@ -11186,14 +11365,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Правило соответствия «Начинается с»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правило точного соответствия (под) домена"
+      ],
+      "Exact URL matching rule": [
+        "Правило точного соответствия URL"
+      ],
       "Fw:": [
         "Переслано:"
+      ],
+      "Never fill with this exact URL": [
+        "Никогда не заполнять с этим точным URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } написал:"
       ],
       "Re:": [
         "Ответ:"
+      ],
+      "Regular expression rule": [
+        "Правило регулярного выражения"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правило соответствия шаблону с подстановочными знаками"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бесплатный пробный период завершился. ${ nonAutoRenewalAction }"
@@ -13415,6 +13612,9 @@
       "Search for name or email": [
         "Поиск имени или электронной почты"
       ],
+      "Search for users or addresses": [
+        "Искать пользователей или адреса"
+      ],
       "Search messages": [
         "Поиск сообщений"
       ],
@@ -13723,11 +13923,26 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } за рекомендацию"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Если вы отмените подписку до этой даты,** по окончании пробного периода вы будете **переведены на более дешевую версию** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Если вы не оформите подписку,** вы будете **переведены на более дешевую версию** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Если вы не отмените подписку,** начнется действие вашего полного тарифа, и вы получите **${ referrerRewardAmount }** на остаток на счете."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Если вы подпишетесь до этой даты,** вы получите **${ referrerRewardAmount }** на остаток на счете."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "После этой даты ваш аккаунт будет переведен на более дешевую версию **${ BRAND_NAME } Free**. Если вы передумаете, вы сможете **возобновить подписку**, чтобы сохранить доступ к платным функциям."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Получите до ${ maxRewardAmount } в качестве остатка на счете. Вы получите ${ referrerRewardAmount }, когда приглашенный вами пользователь оформит подписку на тариф ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Пользуйтесь тарифом **${ planTitle }** бесплатно до **${ textDate }**."
       ],
       "Friend joined": [
         "Друг присоединился",
@@ -13747,6 +13962,9 @@
       "Invited friends": [
         "Приглашенные друзья"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Последний шанс оценить все мощные функции, которые предлагает тариф **${ planTitle }**."
+      ],
       "More sharing options": [
         "Больше вариантов для обмена"
       ],
@@ -13761,6 +13979,15 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можете получить до **${ maxRewardAmount }** в качестве остатка на счете."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "У вас остался **${ daysRemaining } день**, чтобы оценить все мощные функции, которые предлагает тариф **${ planTitle }**.",
+        "У вас осталось **${ daysRemaining } дня**, чтобы оценить все мощные функции, которые предлагает тариф **${ planTitle }**.",
+        "У вас осталось **${ daysRemaining } дней**, чтобы оценить все мощные функции, которые предлагает тариф **${ planTitle }**.",
+        "У вас осталось **${ daysRemaining } дня**, чтобы оценить все мощные функции, которые предлагает тариф **${ planTitle }**."
+      ],
+      "your subscription": [
+        "ваша подписка"
       ]
     },
     "Remaining days before the message expire": {
@@ -15784,6 +16011,9 @@
       "${ feature } is now active": [
         "${ feature } теперь активна"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Помощник по написанию текстов ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ numMessages } message": [
         "${ numMessages } сообщение",
         "${ numMessages } сообщения",
@@ -15945,6 +16175,9 @@
       ],
       "Confirm recipient address?": [
         "Подтвердить адрес получателя?"
+      ],
+      "Connect a Gmail address": [
+        "Подключить адрес Gmail"
       ],
       "Connect apps and devices": [
         "Подключить приложения и устройства"
@@ -16222,6 +16455,9 @@
       "How to update your email address": [
         "Как обновить адрес электронной почты"
       ],
+      "How your free trial works": [
+        "Как работает бесплатный пробный период"
+      ],
       "Human verification": [
         "Проверка \"Я не робот\""
       ],
@@ -16396,6 +16632,9 @@
       "Moving a snoozed message": [
         "Перемещение отложенного сообщения"
       ],
+      "Multiple accounts, 1 private inbox": [
+        "Несколько аккаунтов, 1 конфиденциальный почтовый ящик"
+      ],
       "Need more aliases?": [
         "Нужно больше псевдонимов?"
       ],
@@ -16548,6 +16787,9 @@
       ],
       "Referral": [
         "Реферальная программа"
+      ],
+      "Remove forwarding address": [
+        "Удалить адрес для пересылки"
       ],
       "Remove from list?": [
         "Удалить из списка?"
@@ -16771,6 +17013,9 @@
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Безопасно используйте Gmail в ${ MAIL_APP_NAME }"
       ],
+      "Users and addresses": [
+        "Пользователи и адреса"
+      ],
       "Verification error": [
         "Ошибка подтверждения"
       ],
@@ -16863,11 +17108,23 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "Действия"
+      ],
       "Created": [
         "Создано"
       ],
       "Expires": [
         "Истекает"
+      ],
+      "Fingerprint": [
+        "Отпечаток ключа"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тип"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17019,6 +17276,11 @@
         "Ваш шрифт по умолчанию будет выглядеть следующим образом:"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы сможете назначать должности, как только пользователь примет приглашение."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
@@ -17149,6 +17411,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Режим «${ modeLabelStong }» обеспечивает мощный контроль, но одна ошибка может привести к тому, что автозаполнение сработает и заполнит данные на мошеннических или фишинговых сайтах."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы уверены, что хотите навсегда удалить ${ count } контакт?",
