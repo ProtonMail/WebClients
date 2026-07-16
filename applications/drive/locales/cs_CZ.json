@@ -1644,6 +1644,15 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Aktivováno"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu již používá uživatel mimo vaši organizaci. Pro vyřešení kontaktujte prosím zákaznickou podporu"
+      ],
+      "All": [
+        "Vše"
+      ],
       "Calendar": [
         "Kalendář"
       ],
@@ -1653,8 +1662,20 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stav migrace dat z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-maily"
+      ],
+      "Errors": [
+        "Chyby"
+      ],
       "Estimated size": [
         "Odhadovaná velikost"
+      ],
+      "Find out what can be migrated.": [
+        "Zjistěte, co lze migrovat."
       ],
       "Has errors": [
         "Má chyby"
@@ -1662,8 +1683,29 @@
       "In progress": [
         "Probíhá"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebyla nalezena. Pro vyřešení kontaktujte prosím zákaznickou podporu"
+      ],
+      "Migrate": [
+        "Migrovat"
+      ],
+      "Migrated": [
+        "Migrováno"
+      ],
       "Migration status": [
         "Stav migrace"
+      ],
+      "Missing organization private key": [
+        "Chybí soukromý klíč organizace"
+      ],
+      "Missing organization public key": [
+        "Chybí veřejný klíč organizace"
+      ],
+      "No users to display": [
+        "Žádní uživatelé k zobrazení"
+      ],
+      "Not activated": [
+        "Neaktivováno"
       ],
       "Organization does not have enough seats available": [
         "Organizace nemá dostatek volných licencí"
@@ -1671,14 +1713,53 @@
       "Organization does not have enough storage available": [
         "Organizace nemá dostatečně velké úložiště"
       ],
+      "Pending": [
+        "Čekající"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte přesně to, co chcete migrovat. Bude to použito pro všechny uživatele organizace."
+      ],
+      "Select users to migrate": [
+        "Vyberte uživatele k migraci"
+      ],
+      "Size": [
+        "Velikost"
+      ],
       "Status": [
         "Stav"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohoto uživatele nelze migrovat z důvodu nekompatibility platformy."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v administrátorské konzoli Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v sekci ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v sekci ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Chcete-li tohoto uživatele migrovat, musí nejprve přijmout pozvánku k připojení ke službě ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, zrušte jeho archivaci v administrátorské konzoli Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, zrušte jeho pozastavení v administrátorské konzoli Google Workspace."
       ],
       "User": [
         "Uživatel"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Uživatelé, kteří přistoupili ke svému účtu ${ BRAND_NAME }"
+      ],
       "What are you migrating?": [
         "Co migrujete?"
+      ],
+      "You": [
+        "Vy"
       ]
     },
     "Browser": {
@@ -3727,6 +3808,9 @@
       "No contacts found to import": [
         "Nebyly nalezeny žádné kontakty k importu"
       ],
+      "No drive found to import": [
+        "Nebyl nalezen žádný disk k importu"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
@@ -3984,6 +4068,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Neočekávaná chyba, kontakty nelze importovat"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočekávaná chyba, soubory nelze importovat"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Neznámá strategie řešení konfliktů: ${ strategy }"
@@ -5779,6 +5866,9 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Zde se zobrazí soubory a složky, které s vámi sdíleli ostatní"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Pouze soubory (žádné fotky, ${ DOCS_APP_NAME } nebo ${ SHEETS_APP_NAME }) – celkem do 100 GB, 100 000 souborů a 50 GB na soubor"
       ],
       "finance": [
         "finance"
@@ -7594,6 +7684,12 @@
       "Environment compatible": [
         "Šetrné k životnímu prostředí"
       ],
+      "Exact host matching": [
+        "Shoda přesného hostitele"
+      ],
+      "Exact URL matching": [
+        "Shoda přesné URL"
+      ],
       "Expired": [
         "Vypršelo"
       ],
@@ -7759,6 +7855,9 @@
       "Never expires": [
         "Platnost nikdy nevyprší"
       ],
+      "Never fill on this exact URL": [
+        "Nikdy nevyplňovat na této přesné URL"
+      ],
       "New password": [
         "Nové heslo"
       ],
@@ -7791,6 +7890,9 @@
       ],
       "Outdated version": [
         "Stará verze"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadřazená doména a subdomény (výchozí)"
       ],
       "Password": [
         "Heslo"
@@ -7845,6 +7947,9 @@
       ],
       "Region": [
         "Kraj"
+      ],
+      "Regular expression": [
+        "Regulární výraz"
       ],
       "Replace existing folder or file": [
         "Nahradit existující složku nebo soubor"
@@ -7921,6 +8026,9 @@
       "Start date": [
         "Datum zahájení"
       ],
+      "Starts with": [
+        "Začíná na"
+      ],
       "State": [
         "Stát"
       ],
@@ -7986,6 +8094,9 @@
       ],
       "Uploaded by": [
         "Nahrál(a)"
+      ],
+      "URL wildcard pattern": [
+        "Vzor URL se zástupnými znaky"
       ],
       "User opted in": [
         "Uživatel se přihlásil"
@@ -8412,6 +8523,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Pravidlo shody „Začíná na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo pro shodu přesné (sub)domény"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo shody přesné URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevyplňovat s touto přesnou URL"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárního výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo shody se vzorem se zástupnými znaky"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Bezplatná zkušební verze skončila. ${ nonAutoRenewalAction }"
       ],
@@ -10913,6 +11042,9 @@
       "Search for name or email": [
         "Vyhledat jméno nebo e-mail"
       ],
+      "Search for users or addresses": [
+        "Hledat uživatele nebo adresy"
+      ],
       "Search parent folder": [
         "Prohledat nadřazenou složku"
       ],
@@ -12668,6 +12800,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } z bezplatných nahrání."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent psaní ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Obnovení účtu"
       ],
@@ -13568,6 +13703,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Použít ${ VPN_SHORT_APP_NAME } pro ochranu soukromí"
       ],
+      "Users and addresses": [
+        "Uživatelé a adresy"
+      ],
       "Verification failed": [
         "Ověření selhalo"
       ],
@@ -13852,6 +13990,11 @@
         "Získat Drive for Business"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Jakmile uživatel přijme pozvánku, budete mu moci přiřadit role."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
@@ -13996,6 +14139,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Pravidlo ${ modeLabelStong } poskytuje silnou kontrolu, ale jediná chyba může způsobit, že automatické vyplňování porovná a vyplní údaje na podvodných nebo phishingových webech."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Jste si jistí, že chcete trvale smazat ${ count } kontakt?",
