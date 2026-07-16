@@ -556,6 +556,9 @@
       "Regex invalid": [
         "Regex ogiltigt"
       ],
+      "Regex unsafe": [
+        "Regex osäker"
+      ],
       "Reject": [
         "Avvisa"
       ],
@@ -956,6 +959,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunde inte analyseras. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "En kontroll av skrivbordsupplåsning pågår redan."
+      ],
       "A domain ownership must be verified first.": [
         "Ett domänägarskap behöver verifieras först."
       ],
@@ -988,6 +994,12 @@
       ],
       "Biometric authentication failed.": [
         "Biometrisk autentisering misslyckades."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometriska inloggningsuppgifter för lås matchar inte."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometriska inloggningsuppgifter för lås hittades inte."
       ],
       "Biometric lock is not configured.": [
         "Biometriskt lås är inte konfigurerat."
@@ -1035,6 +1047,9 @@
       "Could not validate addresses at the moment.": [
         "Kunde inte validera adresser just nu."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Kunde inte ladda instruktioner för agentkonfiguration. Kopiera token nedan, den kommer inte att visas igen."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-fil saknar förväntade rubriker: ${ missingHeaders }"
       ],
@@ -1077,6 +1092,9 @@
       ],
       "Error reporting problem": [
         "Gick inte rapportera problem"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Utgångstiden måste vara mellan 1 timme och 1 år"
       ],
       "Failed loading group members": [
         "Misslyckades att ladda gruppmedlemmar"
@@ -1146,6 +1164,9 @@
       ],
       "Failed to load item history": [
         "Misslyckades att ladda objekthistorik"
+      ],
+      "Failed to load token actions": [
+        "Misslyckades att ladda token-åtgärder"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
@@ -1233,6 +1254,9 @@
       ],
       "Importing items failed": [
         "Misslyckades att importera objekt"
+      ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "För att fortsätta kräver ${ PASS_APP_NAME } dessa tilläggsbehörigheter: ${ permissionsJSX }"
       ],
       "Inactive secure links could not be removed.": [
         "Inaktiva säkra länkar kunde inte tas bort."
@@ -1341,6 +1365,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "${ PASS_APP_NAME }-appen för stationär dator är inloggad med ett annat konto."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Skrivbordsappen ${ PASS_APP_NAME } bör vara inloggad."
       ],
       "The URL is in the list": [
         "URL:en finns i listan"
@@ -1666,6 +1693,9 @@
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "Åtkomsttoken “${ action.token.Name }“ kommer att sluta fungera omedelbart. Denna åtgärd kan inte ångras."
       ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Åtkomsttoken, som används tillsammans med ${ passCliLink }, gör att du kan automatisera CI/CD eller ge din AI-agent begränsad åtkomst till vad den behöver för att köra sitt jobb."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Kom åt dina lösenord när du är på språng med våra mobilappar."
       ],
@@ -1674,6 +1704,12 @@
       ],
       "Admin": [
         "Admin"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Efter att ha autofyllt en inloggning kopieras dess 2FA-kod till urklippet."
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Efter att du har bekräftat behöver du acceptera en begäran om behörighet för ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Efter att ha lyckats importera dina data kan du ta bort CSV-filen som innehåller dina lösenord för säkerhet."
@@ -1734,6 +1770,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Automatisk låsning inaktiverat."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Autofyll HTTP basic auth-dialogrutor med sparade inloggningsuppgifter."
       ],
       "automatically": [
         "automatiskt"
@@ -1821,6 +1860,9 @@
       ],
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Kopierat till urklipp (löper ut om ${ timeoutDurationHumanReadable })"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Kopiera markdown-texten nedan och skicka den till din AI-agent. Det här är den enda gången din token visas."
       ],
       "Copy this token now. For security reasons, it won't be shown again.": [
         "Kopiera denna token nu. Av säkerhetsskäl kommer den inte att visas igen."
@@ -1965,6 +2007,9 @@
       ],
       "Enter your PIN code": [
         "Ange din PIN-kod"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Varje åtgärd som denna agent-token har utfört, med den senaste först."
       ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Varje gång ditt alias tar emot ett e-postmeddelande från någon skapas en ny kontakt automatiskt."
@@ -2175,8 +2220,7 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2189,6 +2233,9 @@
       ],
       "Moving items to trash": [
         "Flyttar objekt till papperskorg"
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Gå till din webbläsares inställningar för tillägg och aktivera platsbehörigheter för ${ PASS_SHORT_APP_NAME }."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Behöver du skicka e-post till någon men vill inte att de ska se din e-postadress? Ställ in ett kontaktalias."
@@ -2413,6 +2460,9 @@
       "Please keep your browser open so the clipboard can be automatically cleared.": [
         "Håll din webbläsare öppen så urklippet kan rensas automatiskt."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Se till att det tidigare aktiva fönstret är där du vill skriva automatiskt och att din markör var fokuserad på inloggningsfältet."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Observera att när aliaset väl har tagits bort kan det inte återställas. Kanske vill du inaktivera aliaset istället?"
       ],
@@ -2436,6 +2486,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Fyll snabbt i dina sparade inloggningsuppgifter automatiskt."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Sorterat efter fält (titel först, sedan användarnamn eller e-post, webbplats, anteckningar) och matchningsprecision (exakt, börjar med, innehåller)."
       ],
       "Read item": [
         "Läs objekt"
@@ -2578,8 +2631,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Tryck på ikonen ${ gearIcon } för att anpassa aliaset som du vill."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Testa din token genom att logga in och lista valv:"
+      ],
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agenten kommer att behöva ange ett skäl för varje åtgärd den utför, och varje åtgärd kommer att registreras i en granskningslogg som du kan granska. Efter att du har skapat din token får du instruktioner att kopiera och klistra in i din AI-agent."
       ],
       "The display name when sending an email from this alias.": [
         "Visningsnamnet när du skickar ett e-postmeddelande från detta alias."
@@ -2648,6 +2707,9 @@
       "This setting is enforced by your organization": [
         "Denna inställning tvingas av din organisation"
       ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Denna token får skrivskyddad åtkomst till de valv du väljer. Den kan läsa objekt, men kan inte redigera dem, dela valv eller bjuda in andra. Du kan ändra detta senare."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Detta valv delas för närvarande inte med någon. Bjud in människor att dela det med andra."
       ],
@@ -2656,6 +2718,9 @@
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Detta kommer avvisa enheten **${ name }** som försökte logga in på ditt ${ BRAND_NAME }-konto den **${ date }**."
+      ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "För att konfigurera genvägar går du till about:addons i Firefox och väljer \"Hantera genvägar för tillägg\""
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "För att fortsätta ta emot e-post, överför dessa alias till en annan brevlåda:"
@@ -2669,6 +2734,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "För att granska dina importerade data, klicka på ${ PASS_APP_NAME }-ikonen i din webbläsares verktygsfält."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "För att konfigurera upplåsning med biometri kräver ${ PASS_APP_NAME } en ny webbläsarbehörighet. När du har accepterat den kommer tillägget att laddas om. Öppna den här sidan igen efteråt."
+      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Prova ladda om eller installera om utökningen och se till att din webbläsare och ${ PASS_SHORT_APP_NAME } är uppdaterade."
       ],
@@ -2680,6 +2748,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Obegränsade hide-my-email-alias och avancerad aliashantering"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Lås upp ${ PASS_APP_NAME } för att få åtkomst till dina passnycklar"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Lås upp ${ PASS_APP_NAME } för att spara denna passnyckel"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med biometri"
@@ -2843,6 +2917,9 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "Du behöver ett valv med redigeringsbehörighet innan du kan importera objekt."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Du har inte längre åtkomst till vissa valv eller objekt eftersom din grupp ${ groupName }s åtkomst togs bort."
       ],
       "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
         "Du har nu åtkomst till “Objekt ${ itemName }“ eftersom din grupp ${ groupName } har beviljats åtkomst."
@@ -3135,6 +3212,9 @@
       "Basic": [
         "Grundläggande"
       ],
+      "Basic Auth autofill": [
+        "Autofyll för basic auth"
+      ],
       "Biometrics": [
         "Biometri"
       ],
@@ -3323,6 +3403,9 @@
       ],
       "Enter email or username": [
         "Ange e-post eller användarnamn"
+      ],
+      "Exact host matching": [
+        "Exakt värdmatchning"
       ],
       "Exact URL matching": [
         "Exakt URL-matchning"
@@ -3786,6 +3869,9 @@
       "Recent": [
         "Senaste"
       ],
+      "Record Number": [
+        "Postnummer"
+      ],
       "Reddit handle": [
         "Reddit-användarnamn"
       ],
@@ -4020,6 +4106,9 @@
       "Update": [
         "Uppdatera"
       ],
+      "URL wildcard pattern": [
+        "Jokerteckenmönster för URL"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Använd ${ PASS_APP_NAME } som din webbläsares lösenordshanterare som standard"
       ],
@@ -4126,8 +4215,23 @@
         "${ count } objekt",
         "${ count } objekt"
       ],
+      "'Starts with' matching rule": [
+        "Matchningsregel för \"Börjar med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Matchningsregel för exakt (under)domän"
+      ],
+      "Exact URL matching rule": [
+        "Matchningsregel för exakt URL"
+      ],
       "Never fill with this exact URL": [
         "Fyll aldrig med denna exakta URL"
+      ],
+      "Regular expression rule": [
+        "Regel för reguljärt uttryck"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchningsregel för jokerteckenmönster"
       ],
       "You can drag and drop the selected item to another vault": [
         "Du kan dra och släppa det valda objektet till ett annat valv",
@@ -4652,6 +4756,12 @@
       "Add mailbox": [
         "Lägg till brevlåda"
       ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Justera beteenden för autofyll för att ändra var inloggningar föreslås."
+      ],
+      "Agent setup instructions": [
+        "Instruktioner för att konfigurera agent"
+      ],
       "Alias contacts": [
         "Aliaskontakter"
       ],
@@ -4678,6 +4788,9 @@
       ],
       "Breaches detected for": [
         "Intrång upptäckta för"
+      ],
+      "Browser permission required": [
+        "Webbläsarbehörighet krävs"
       ],
       "Cancel changing your email?": [
         "Avbryt ändring av din e-post?"
@@ -4918,6 +5031,9 @@
       ],
       "Next": [
         "Nästa"
+      ],
+      "No access tokens yet": [
+        "Inga åtkomsttoken än"
       ],
       "No excluded items": [
         "Inga exkluderade objekt"
@@ -5214,6 +5330,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-lösenord är obligatoriskt"
       ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ger kraftfull kontroll, men ett enda fel kan göra att autofyll matchar och fyller i data på bedrägliga webbplatser eller nätfiske-webbplatser."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } offlineläge inaktiverat."
       ],
@@ -5417,6 +5536,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Denna e-postadress kommer inte längre att övervakas för dataintrång."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Detta objekt kan inte föreslås för autofyll på grund av \"${ neverModeDescriptionStrong }\". Lägg till en till URL om du vill att detta objekt ska autofyllas."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Detta objekt delas för närvarande. Att ta bort det kommer ta bort åtkomst för alla andra användare."
