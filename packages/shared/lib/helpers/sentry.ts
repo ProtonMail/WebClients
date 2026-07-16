@@ -394,7 +394,7 @@ export enum SentryCalendarInitiatives {
 }
 
 export enum SentryRealtimeInitiatives {
-    SDK_SWITCH = 'sdk-switch',
+    SDK_SWITCH = 'realtime-sdk-switch',
 }
 
 export type SentryInitiative =
