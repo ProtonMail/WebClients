@@ -248,37 +248,17 @@ export type CheckoutCouponDiscountBreakdown = ReturnType<typeof getCouponDiscoun
  */
 export const getCouponDiscountBreakdownInfo = ({
     checkResult,
-    planIDs,
     planName,
     cycle,
 }: {
     checkResult: SubscriptionEstimation;
-    planIDs: PlanIDs;
     planName: PLANS | null;
     cycle: CYCLE;
 }) => {
-    const couponDiscountBreakdown = checkResult.Coupon?.CouponDiscountBreakdown;
-    const couponDiscount = checkResult.CouponDiscount;
+    const couponDiscountBreakdown = checkResult.CouponDiscountBreakdown;
 
-    if (
-        !couponDiscountBreakdown ||
-        couponDiscountBreakdown.length === 0 ||
-        couponDiscount === undefined ||
-        couponDiscount === null
-    ) {
+    if (!couponDiscountBreakdown || couponDiscountBreakdown.length === 0) {
         return undefined;
-    }
-
-    // This overall block ensures that the breakdown follows the logical contract. It can be helpful while we don't have
-    // a proper backend implementation and rely on the frontend-side mocks. We need to re-evaluate if we still need
-    // these checks when the backend is ready.
-    {
-        const everyNameBelongsToRequest = couponDiscountBreakdown.every(({ Name }) => planIDs[Name] !== undefined);
-        const everyAmountNonPositive = couponDiscountBreakdown.every(({ Amount }) => Amount <= 0);
-
-        if (!everyNameBelongsToRequest || !everyAmountNonPositive) {
-            return undefined;
-        }
     }
 
     const basePlanPerCycleDiscount = couponDiscountBreakdown
@@ -394,7 +374,7 @@ export const getCheckoutUi = ({
     const viewPricePerMonth = isPricePerMember ? oneMemberPerMonth : withDiscountPerMonth;
     const monthlySuffix = isPricePerMember ? c('Suffix').t`/user per month` : c('Suffix').t`/month`;
 
-    const couponDiscountBreakdown = getCouponDiscountBreakdownInfo({ checkResult, planIDs, planName, cycle });
+    const couponDiscountBreakdown = getCouponDiscountBreakdownInfo({ checkResult, planName, cycle });
 
     return {
         regularAmountPerCycleOptimistic: amountOptimistic,

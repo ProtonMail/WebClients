@@ -4,7 +4,6 @@ import type { PlansMap } from '../../../core/plan/interface';
 import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import { getStaticCouponConfig } from '../../coupon-config/get-static-coupon-config';
 import type { CouponConfig } from '../../coupon-config/interface';
-import { enrichMockCouponDiscountBreakdown } from '../../coupon-config/mock-coupon-discount-breakdown';
 import { getHeadlessCheckout } from '../get-headless-checkout';
 import { defaultApp as app, makeAddon, makeCheckResult, makePlan, makePricing } from './test-helpers';
 
@@ -107,11 +106,11 @@ describe('createMembersItem', () => {
                 Code: 'SALE',
                 Description: '',
                 MaximumRedemptionsPerUser: null,
-                CouponDiscountBreakdown: [
-                    { Name: PLANS.BUNDLE_PRO_2024, Amount: -1200 },
-                    { Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024, Amount: -240 },
-                ],
             },
+            CouponDiscountBreakdown: [
+                { Name: PLANS.BUNDLE_PRO_2024, Amount: -1200 },
+                { Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024, Amount: -240 },
+            ],
         });
 
         const result = getHeadlessCheckout({
@@ -178,11 +177,8 @@ describe('createMembersItem', () => {
                 MaximumRedemptionsPerUser: 1,
             },
             requestData: data,
+            CouponDiscountBreakdown: [{ Name: PLANS.DUO, Amount: -3600 }],
         });
-
-        // The hidden coupon has no mock breakdown, so the whole discount is attributed to the base plan.
-        enrichMockCouponDiscountBreakdown(checkResult, data);
-        expect(checkResult.Coupon?.CouponDiscountBreakdown).toEqual([{ Name: PLANS.DUO, Amount: -3600 }]);
 
         const result = getHeadlessCheckout({
             planIDs,

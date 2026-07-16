@@ -1,5 +1,5 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
-import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
+import { PLANS_MAP, getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
 import {
     getCheckoutUi,
@@ -10,7 +10,7 @@ import {
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
 import { InvalidCouponError, WrongBillingAddressError } from './errors';
 import type { PlanIDs } from './interface';
-import type { Plan, PlansMap } from './plan/interface';
+import type { Plan } from './plan/interface';
 import { SubscriptionMode } from './subscription/constants';
 import type { CouponDiscountBreakdownBE, SubscriptionEstimation } from './subscription/interface';
 
@@ -1353,37 +1353,6 @@ describe('getInformedOptimisticSubscriptionEstimation', () => {
 });
 
 describe('getCheckoutUi couponDiscountBreakdown', () => {
-    const bundlePlan: Partial<Plan> = {
-        Name: PLANS.BUNDLE,
-        Title: 'Proton Unlimited',
-        Pricing: {
-            [CYCLE.MONTHLY]: 1299,
-            [CYCLE.YEARLY]: 11988,
-        },
-        DefaultPricing: {
-            [CYCLE.MONTHLY]: 1299,
-            [CYCLE.YEARLY]: 11988,
-        },
-    };
-
-    const lumoBundleAddon: Partial<Plan> = {
-        Name: ADDON_NAMES.LUMO_BUNDLE,
-        Pricing: {
-            [CYCLE.MONTHLY]: 999,
-            [CYCLE.YEARLY]: 11988,
-        },
-        DefaultPricing: {
-            [CYCLE.MONTHLY]: 999,
-            [CYCLE.YEARLY]: 11988,
-        },
-    };
-
-    const planIDs: PlanIDs = { [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 };
-    const plansMap: PlansMap = {
-        [PLANS.BUNDLE]: getPlan(bundlePlan),
-        [ADDON_NAMES.LUMO_BUNDLE]: getAddon(lumoBundleAddon),
-    };
-
     const baseCheckResult: SubscriptionEstimation = {
         Amount: 23976,
         AmountDue: 17376,
@@ -1396,7 +1365,7 @@ describe('getCheckoutUi couponDiscountBreakdown', () => {
         RenewCycle: null,
         PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
         requestData: {
-            Plans: planIDs,
+            Plans: { [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 },
             Currency: 'EUR',
             Cycle: CYCLE.YEARLY,
         },
@@ -1404,48 +1373,23 @@ describe('getCheckoutUi couponDiscountBreakdown', () => {
 
     const withBreakdown = (CouponDiscountBreakdown: CouponDiscountBreakdownBE) =>
         getCheckoutUi({
-            planIDs,
-            plansMap,
-            checkResult: { ...baseCheckResult, Coupon: { ...baseCheckResult.Coupon!, CouponDiscountBreakdown } },
+            planIDs: { [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 },
+            plansMap: getTestPlansMap('EUR'),
+            checkResult: { ...baseCheckResult, CouponDiscountBreakdown },
         });
 
     it('is undefined when no breakdown is present', () => {
         expect(
-            getCheckoutUi({ planIDs, plansMap, checkResult: baseCheckResult }).couponDiscountBreakdown
+            getCheckoutUi({
+                planIDs: { [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 },
+                plansMap: getTestPlansMap('EUR'),
+                checkResult: baseCheckResult,
+            }).couponDiscountBreakdown
         ).toBeUndefined();
     });
 
     it('is undefined for an empty breakdown', () => {
         expect(withBreakdown([]).couponDiscountBreakdown).toBeUndefined();
-    });
-
-    it('falls back to undefined when an entry is not part of the request', () => {
-        expect(
-            withBreakdown([
-                { Name: PLANS.BUNDLE, Amount: -4200 },
-                { Name: PLANS.MAIL, Amount: -2400 },
-            ]).couponDiscountBreakdown
-        ).toBeUndefined();
-    });
-
-    it('falls back to undefined when an amount has the wrong sign', () => {
-        const result = getCheckoutUi({
-            planIDs,
-            plansMap,
-            checkResult: {
-                ...baseCheckResult,
-                CouponDiscount: -1800,
-                Coupon: {
-                    ...baseCheckResult.Coupon!,
-                    CouponDiscountBreakdown: [
-                        { Name: PLANS.BUNDLE, Amount: -4200 },
-                        { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: 2400 },
-                    ],
-                },
-            },
-        });
-
-        expect(result.couponDiscountBreakdown).toBeUndefined();
     });
 
     it('does not alter any other field when a breakdown is present', () => {
@@ -1456,7 +1400,11 @@ describe('getCheckoutUi couponDiscountBreakdown', () => {
             ...rest
         }: ReturnType<typeof getCheckoutUi>) => rest;
 
-        const withoutBreakdown = getCheckoutUi({ planIDs, plansMap, checkResult: baseCheckResult });
+        const withoutBreakdown = getCheckoutUi({
+            planIDs: { [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 },
+            plansMap: getTestPlansMap('EUR'),
+            checkResult: baseCheckResult,
+        });
         const withBreakdownPresent = withBreakdown([
             { Name: PLANS.BUNDLE, Amount: -4200 },
             { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: -2400 },
@@ -1504,9 +1452,8 @@ describe('getCouponDiscountBreakdownInfo', () => {
             checkResult: {
                 ...baseCheckResult,
                 CouponDiscount,
-                Coupon: { ...baseCheckResult.Coupon!, CouponDiscountBreakdown },
+                CouponDiscountBreakdown,
             },
-            planIDs,
             planName,
             cycle,
         });
@@ -1515,7 +1462,6 @@ describe('getCouponDiscountBreakdownInfo', () => {
         expect(
             getCouponDiscountBreakdownInfo({
                 checkResult: baseCheckResult,
-                planIDs,
                 planName: PLANS.BUNDLE,
                 cycle: CYCLE.YEARLY,
             })
@@ -1524,47 +1470,6 @@ describe('getCouponDiscountBreakdownInfo', () => {
 
     it('returns undefined for an empty breakdown', () => {
         expect(callWith({ CouponDiscountBreakdown: [] })).toBeUndefined();
-    });
-
-    it('returns undefined when CouponDiscount is missing even though a breakdown is present', () => {
-        const { CouponDiscount, ...checkResultWithoutDiscount } = baseCheckResult;
-
-        expect(
-            getCouponDiscountBreakdownInfo({
-                checkResult: {
-                    ...checkResultWithoutDiscount,
-                    Coupon: {
-                        ...baseCheckResult.Coupon!,
-                        CouponDiscountBreakdown: [{ Name: PLANS.BUNDLE, Amount: -4200 }],
-                    },
-                },
-                planIDs,
-                planName: PLANS.BUNDLE,
-                cycle: CYCLE.YEARLY,
-            })
-        ).toBeUndefined();
-    });
-
-    it('returns undefined when an entry is not part of the request', () => {
-        expect(
-            callWith({
-                CouponDiscountBreakdown: [
-                    { Name: PLANS.BUNDLE, Amount: -4200 },
-                    { Name: PLANS.MAIL, Amount: -2400 },
-                ],
-            })
-        ).toBeUndefined();
-    });
-
-    it('returns undefined when an amount has the wrong sign', () => {
-        expect(
-            callWith({
-                CouponDiscountBreakdown: [
-                    { Name: PLANS.BUNDLE, Amount: -4200 },
-                    { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: 2400 },
-                ],
-            })
-        ).toBeUndefined();
     });
 
     it('computes per-cycle and per-month discounts for the base plan and addons', () => {
