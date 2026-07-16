@@ -1555,6 +1555,27 @@
       "Status": [
         "Estat"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
       "User": [
         "Usuari"
       ],
@@ -5791,6 +5812,9 @@
       ],
       "Failed to update meeting schedule": [
         "No s'ha pogut actualitzar la programació de la reunió"
+      ],
+      "Failed to update meeting waiting room status": [
+        "S'ha produït un error en actualitzar l'estat de la sala d'espera de la reunió"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Només fitxers (ni fotos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }): fins a un total de 100 GB, 100.000 fitxers i 50 GB per fitxer"
@@ -12669,6 +12693,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilitzeu ${ VPN_SHORT_APP_NAME } per a la privacitat de les dades"
+      ],
+      "Users and addresses": [
+        "Usuaris i adreces"
       ],
       "Verification failed": [
         "No s'ha pogut completar la verificació."
