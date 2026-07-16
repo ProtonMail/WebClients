@@ -140,7 +140,9 @@ export class IndexReader {
                     }
                     abortSignal.throwIfAborted();
                 }
-                resultCallback(hits);
+                if (hits.length !== 0) {
+                    resultCallback(hits);
+                }
             } finally {
                 search.free();
             }
