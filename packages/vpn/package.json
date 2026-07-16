@@ -21,7 +21,8 @@
         "./components/AlwaysOn": "./src/components/AlwaysOn/AlwaysOn.tsx",
         "./definitions/routes": "./src/definitions/routes.ts",
         "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts",
-        "./contexts/navigation": "./src/contexts/NavigationContext.tsx"
+        "./contexts/navigation": "./src/contexts/NavigationContext.tsx",
+        "./routes/organization": "./src/routes/organization/index.tsx"
     },
     "main": "./src/index.ts",
     "scripts": {
