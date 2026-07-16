@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import { useRightPanel } from '../providers/RightPanelProvider';
@@ -33,11 +33,9 @@ export const RightPanelSlot = ({ children }: Props) => {
 export const RightPanelSlotWithHeader = ({ children, title, actionButton }: RightPanelSlotWithHeaderProps) => {
     const { contentEl, setHeaderContent } = useRightPanel();
 
-    useEffect(() => {
-        // Set header content when component mounts or props change
+    useLayoutEffect(() => {
         setHeaderContent(title || null, actionButton || null);
 
-        // Clear header content when component unmounts
         return () => {
             setHeaderContent(null, null);
         };
