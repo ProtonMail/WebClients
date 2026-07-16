@@ -5,12 +5,14 @@ import { c } from 'ttag';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-
 import { copyDomToClipboard, isFirefox } from '@proton/shared/lib/helpers/browser';
-import {LumoIcon} from "../../../../LumoIcon/LumoIcon.tsx";
+
+import { LumoIcon } from '../../../../LumoIcon/LumoIcon.tsx';
 
 interface Props extends Omit<ButtonProps, 'value'> {
-    containerRef: React.MutableRefObject<HTMLDivElement | null>;
+    /** Copy plain text directly — avoids cloning the live syntax-highlighter DOM tree. */
+    textToCopy?: string;
+    containerRef?: React.MutableRefObject<HTMLDivElement | null>;
     onSuccess?: () => void;
 }
 
@@ -55,7 +57,17 @@ const copyToClipboard = async (element: HTMLDivElement): Promise<boolean> => {
     }
 };
 
-const LumoCopyButton = ({ children, onSuccess, containerRef, ...rest }: Props) => {
+const copyPlainText = async (text: string): Promise<boolean> => {
+    try {
+        await navigator.clipboard.writeText(text);
+        return true;
+    } catch (err) {
+        console.error('Failed to copy text to clipboard', err);
+        return false;
+    }
+};
+
+const LumoCopyButton = ({ children, onSuccess, containerRef, textToCopy, ...rest }: Props) => {
     const [isCopying, setIsCopying] = useState(false);
 
     const prepareElementForCopy = useCallback((element: HTMLDivElement): HTMLDivElement => {
@@ -91,13 +103,21 @@ const LumoCopyButton = ({ children, onSuccess, containerRef, ...rest }: Props) =
         async (e: React.MouseEvent<HTMLButtonElement>) => {
             e.stopPropagation();
 
-            const element = containerRef.current;
-            if (!element) return;
-
             setIsCopying(true);
             try {
-                const clonedElement = prepareElementForCopy(element);
-                const success = await copyToClipboard(clonedElement);
+                let success = false;
+
+                if (textToCopy !== undefined) {
+                    success = await copyPlainText(textToCopy);
+                } else {
+                    const element = containerRef?.current;
+                    if (!element) {
+                        return;
+                    }
+
+                    const clonedElement = prepareElementForCopy(element);
+                    success = await copyToClipboard(clonedElement);
+                }
 
                 if (success) {
                     onSuccess?.();
@@ -106,7 +126,7 @@ const LumoCopyButton = ({ children, onSuccess, containerRef, ...rest }: Props) =
                 setIsCopying(false);
             }
         },
-        [containerRef, onSuccess, prepareElementForCopy]
+        [containerRef, onSuccess, prepareElementForCopy, textToCopy]
     );
 
     const copyLabel = c('Label').t`Copy`;
@@ -123,10 +143,7 @@ const LumoCopyButton = ({ children, onSuccess, containerRef, ...rest }: Props) =
                 {...rest}
                 onClick={handleClick}
             >
-                <LumoIcon
-                    name="Copy"
-                    size={16}
-                />
+                <LumoIcon name="Copy" size={16} />
             </Button>
         </Tooltip>
     );

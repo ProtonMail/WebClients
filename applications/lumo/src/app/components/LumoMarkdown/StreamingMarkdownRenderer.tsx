@@ -50,16 +50,25 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
         const [displayContent, setDisplayContent] = useState(content || '');
         const contentRef = useRef(content);
         const frameRef = useRef<number>();
+        const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
         const lastUpdateRef = useRef<number>(0);
 
-        // Lock isStreaming to its initial value to prevent re-render when streaming state changes
-        // This prevents the "unmount old tree → content disappears → scroll jumps → mount new tree" issue
+        // Lock isStreaming while tokens are arriving to avoid remount flicker, but unlock once
+        // generation finishes so ProgressiveMarkdownRenderer can finalize cached blocks.
         const lockedIsStreamingRef = useRef<boolean | null>(null);
         if (lockedIsStreamingRef.current === null && content && content.length > 50) {
-            // Lock to current state once we have meaningful content
             lockedIsStreamingRef.current = isStreaming;
         }
+        if (lockedIsStreamingRef.current === true && !isStreaming) {
+            lockedIsStreamingRef.current = false;
+        }
         const effectiveIsStreaming = lockedIsStreamingRef.current ?? isStreaming;
+
+        useEffect(() => {
+            return () => {
+                lockedIsStreamingRef.current = null;
+            };
+        }, []);
 
         // Update content with throttling during streaming
         useEffect(() => {
@@ -84,7 +93,7 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
                 frameRef.current = requestAnimationFrame(() => {
                     const remaining = STREAMING_UPDATE_INTERVAL_MS - (Date.now() - lastUpdateRef.current);
                     if (remaining > 0) {
-                        setTimeout(() => {
+                        timeoutRef.current = setTimeout(() => {
                             setDisplayContent(contentRef.current || '');
                             lastUpdateRef.current = Date.now();
                         }, remaining);
@@ -102,6 +111,11 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
             return () => {
                 if (frameRef.current) {
                     cancelAnimationFrame(frameRef.current);
+                    frameRef.current = undefined;
+                }
+                if (timeoutRef.current) {
+                    clearTimeout(timeoutRef.current);
+                    timeoutRef.current = undefined;
                 }
             };
         }, [content, effectiveIsStreaming]);
@@ -120,13 +134,11 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
         );
     },
     (prevProps, nextProps) => {
-        // Custom comparison to prevent unnecessary re-renders
         const contentChanged = prevProps.content !== nextProps.content;
+        const streamingEnded = prevProps.isStreaming && !nextProps.isStreaming;
 
-        // Only re-render if content changed
-        // Note: We ignore isStreaming changes because we use effectiveIsStreaming internally
-        // which is locked after initial render. This prevents flickering cursor on stream end.
-        return !contentChanged; // If props are equal, skip re-render (return true means skip)
+        // Re-render when content changes or when streaming finishes so cached blocks can finalize.
+        return !contentChanged && !streamingEnded;
     }
 );
 
