@@ -6,8 +6,6 @@
  *
  * Event naming: `{context}_{event_type}` (e.g., `v2_signup_payment`, `subscription_modification_init`)
  *
- * @see confluence.md for complete event documentation for data analysts
- * @see README.internal.md for frontend developer integration guide
  */
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -153,8 +151,6 @@ export function reportAddPass({ context }: { context: PaymentTelemetryContext })
  * - `verification_failure` - Verification failed
  * - `payment_declined` - Payment processor rejected the charge
  * - `payment_success` - Payment successful, subscription modified
- *
- * @see confluence.md for detailed stage descriptions
  */
 export type PaymentStage =
     | 'attempt'
