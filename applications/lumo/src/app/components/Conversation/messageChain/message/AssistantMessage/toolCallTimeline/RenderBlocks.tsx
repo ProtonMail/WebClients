@@ -373,7 +373,7 @@ export const RenderBlocks = ({
                     if (hasFinanceCards && isWaitingForFinanceRender) pastUnreadyFinanceCard = true;
 
                     return (
-                        <div key={idx}>
+                        <div key="thinking-steps">
                             <ThinkingPath
                                 steps={item.steps}
                                 message={message}
@@ -413,16 +413,17 @@ export const RenderBlocks = ({
                 if (pastUnreadyFinanceCard) return null;
 
                 const isLastTextBlock = item === textBlocks[textBlocks.length - 1];
+                const textBlockKey = `text-${blocks.indexOf(item.block)}`;
                 return (
                     <StreamingMarkdownRenderer
-                        key={idx}
+                        key={textBlockKey}
                         message={message}
                         content={preprocessContent(item.block.content)}
                         isStreaming={isGenerating && isLastMessage && isLastTextBlock}
                         handleLinkClick={handleLinkClick}
                         toolCallResults={null}
                         sourcesContainerRef={sourcesContainerRef}
-                        messageContentContainerRef={messageContentContainerRef}
+                        messageContentContainerRef={isLastTextBlock ? messageContentContainerRef : undefined}
                     />
                 );
             })}

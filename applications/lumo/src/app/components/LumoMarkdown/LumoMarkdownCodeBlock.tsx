@@ -1,4 +1,4 @@
-import { Suspense, lazy, useRef } from 'react';
+import { Suspense, lazy } from 'react';
 
 import { clsx } from 'clsx';
 
@@ -25,7 +25,6 @@ export interface LumoMarkdownCodeBlockProps {
 export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockProps) => {
     const { theme } = useLumoTheme();
     const { isSmallScreen } = useIsLumoSmallScreen();
-    const codeBlockRef = useRef<HTMLDivElement>(null);
     const { showCopyNotification } = useCopyNotification();
 
     const copyButtonClassName = clsx(
@@ -34,7 +33,7 @@ export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockP
     );
 
     return (
-        <div ref={codeBlockRef} className="message-container code-container w-full min-w-0">
+        <div className="message-container code-container w-full min-w-0">
             <div className="group-hover-opacity-container lumo-code-block">
                 <Suspense
                     fallback={
@@ -43,14 +42,14 @@ export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockP
                                 {code}
                             </pre>
                             <div className={copyButtonClassName}>
-                                <LumoCopyButton containerRef={codeBlockRef} onSuccess={showCopyNotification} />
+                                <LumoCopyButton textToCopy={code} onSuccess={showCopyNotification} />
                             </div>
                         </>
                     }
                 >
                     <LumoMarkdownCodeBlockHighlighter code={code} language={language} theme={theme} />
                     <div className={copyButtonClassName}>
-                        <LumoCopyButton containerRef={codeBlockRef} onSuccess={showCopyNotification} />
+                        <LumoCopyButton textToCopy={code} onSuccess={showCopyNotification} />
                     </div>
                 </Suspense>
             </div>
