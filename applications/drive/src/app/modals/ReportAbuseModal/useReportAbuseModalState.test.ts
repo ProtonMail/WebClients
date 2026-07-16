@@ -109,4 +109,47 @@ describe('useReportAbuseModalState', () => {
             expect(result.current.prefilled).toEqual(prefilled);
         }
     });
+
+    describe('invitations', () => {
+        const invitation = {
+            uid: 'invitation-uid',
+            name: 'invited-file.pdf',
+            size: 2048,
+            mediaType: 'application/pdf',
+            type: NodeType.File,
+        };
+
+        it('uses the passed-in invitation data instead of fetching the node', () => {
+            const props = buildProps({ invitation });
+            const { result } = renderHook(() => useReportAbuseModalState(props), { wrapper: Wrapper });
+
+            expect(result.current.loaded).toBe(true);
+            if (result.current.loaded) {
+                expect(result.current.name).toBe(invitation.name);
+                expect(result.current.size).toBe(invitation.size);
+                expect(result.current.mediaType).toBe(invitation.mediaType);
+                expect(result.current.type).toBe(invitation.type);
+            }
+            expect(props.drive.getNode).not.toHaveBeenCalled();
+        });
+
+        it('calls the API with the invitation uid on submit', async () => {
+            const props = buildProps({ invitation });
+            const { result } = renderHook(() => useReportAbuseModalState(props), { wrapper: Wrapper });
+
+            await act(async () => {
+                if (result.current.loaded) {
+                    await result.current.handleSubmit({ category: AbuseCategory.Spam });
+                }
+            });
+
+            expect(props.drive.reportAbuse).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    nodeUid: 'node-uid',
+                    invitationUid: invitation.uid,
+                    bonaFide: true,
+                })
+            );
+        });
+    });
 });

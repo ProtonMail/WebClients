@@ -36,6 +36,7 @@ export const createMockNodeEntity = (overrides: Partial<NodeEntity> = {}): NodeE
                 value: 'content-author',
             },
             storageSize: 1024,
+            isImported: false,
         },
     },
     folder: undefined,
