@@ -4,7 +4,7 @@ import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 
 import useConfig from '../useConfig';
 
-const useIsSecurityCheckupAvailable = () => {
+const useIsSafetyReviewAvailable = () => {
     const [user] = useUser();
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const { APP_NAME } = useConfig();
@@ -14,4 +14,4 @@ const useIsSecurityCheckupAvailable = () => {
     return APP_NAME !== APPS.PROTONVPN_SETTINGS && isSecurityCheckupAvailable;
 };
 
-export default useIsSecurityCheckupAvailable;
+export default useIsSafetyReviewAvailable;

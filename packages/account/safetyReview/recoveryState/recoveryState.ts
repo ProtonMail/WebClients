@@ -6,6 +6,8 @@ import { selectAccountRecovery } from '@proton/account/recovery/accountRecovery'
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
+import { getSafetyReviewRecoveryState } from '@proton/account/safetyReview/telemetry/getSafetyReviewRecoveryState';
+import { type SafetyReviewCohort, getCohort } from '@proton/account/safetyReview/telemetry/utils/getCohort';
 import { selectUser } from '@proton/account/user';
 import { selectUserSettings } from '@proton/account/userSettings';
 
@@ -70,6 +72,7 @@ export type RecoveryStateResult = {
     recoveryActionItems: RecoveryActionItem[];
     recoveryScore: RecoveryScore;
     loading: boolean;
+    cohort: SafetyReviewCohort | undefined;
 };
 
 export const selectRecoveryState = createSelector(
@@ -283,11 +286,23 @@ export const selectRecoveryState = createSelector(
             recoveryFileData.loading ||
             accountRecoveryData.loading;
 
+        const cohort = loading
+            ? undefined
+            : getCohort(
+                  getSafetyReviewRecoveryState({
+                      accountRecovery: accountRecoveryData,
+                      mnemonicData,
+                      recoveryFileData,
+                      outgoingDelegatedAccess,
+                  })
+              );
+
         return {
             loading,
             recoveryScore,
             recoveryItems,
             recoveryActionItems,
+            cohort,
         };
     }
 );

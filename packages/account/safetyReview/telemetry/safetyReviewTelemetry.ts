@@ -1,8 +1,6 @@
 import { TelemetryAccountSecurityCheckupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
-import type { SecurityCheckupSource } from '@proton/shared/lib/interfaces/securityCheckup';
-import type { SecurityCheckupCohortType } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 
 import type { SafetyReviewCohort } from './utils/getCohort';
 import type { SafetyReviewSource } from './utils/getSource';
@@ -14,8 +12,8 @@ export const sendSafetyReviewPageLoadTelemetryReport = ({
     variant,
 }: {
     api: Api;
-    initialCohort: SecurityCheckupCohortType | SafetyReviewCohort;
-    source: SecurityCheckupSource | SafetyReviewSource | undefined;
+    initialCohort: SafetyReviewCohort;
+    source: SafetyReviewSource | undefined;
     variant: 'A' | 'B';
 }) => {
     void sendTelemetryReport({
@@ -39,7 +37,7 @@ export const getSafetyReviewCohortChangeTelemetry = ({
     variant,
 }: {
     api: Api;
-    initialCohort: SecurityCheckupCohortType | SafetyReviewCohort;
+    initialCohort: SafetyReviewCohort;
     variant: 'A' | 'B';
 }) => {
     const commonProps = {
@@ -77,18 +75,6 @@ export const getSafetyReviewCohortChangeTelemetry = ({
             void sendTelemetryReport({
                 ...commonProps,
                 event: TelemetryAccountSecurityCheckupEvents.accountRecoveryEnabled,
-            });
-        },
-        sendCompleteRecoverySentinel: () => {
-            void sendTelemetryReport({
-                ...commonProps,
-                event: TelemetryAccountSecurityCheckupEvents.completeRecoverySentinel,
-            });
-        },
-        sendSentinelRecommendations: () => {
-            void sendTelemetryReport({
-                ...commonProps,
-                event: TelemetryAccountSecurityCheckupEvents.sentinelRecommendations,
             });
         },
     };
