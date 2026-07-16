@@ -543,8 +543,14 @@ export class SearchService {
             }));
 
         if (docCandidates.length > 0) {
-            // Use BM25 to rank documents by relevance
-            const rankedDocs = this.bm25Index.rankDocuments(query, docCandidates, 50, 0.1);
+            let rankedDocs: ReturnType<BM25Index['rankDocuments']> = [];
+
+            try {
+                // Use BM25 to rank documents by relevance
+                rankedDocs = this.bm25Index.rankDocuments(query, docCandidates, 50, 0.1);
+            } catch (error) {
+                console.warn('[SearchService] Document ranking failed, skipping file results:', error);
+            }
 
             for (const { document: candidate, score } of rankedDocs) {
                 const doc = candidate.doc as DriveDocument;
