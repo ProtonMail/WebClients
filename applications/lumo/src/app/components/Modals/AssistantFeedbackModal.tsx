@@ -23,7 +23,7 @@ import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { stripUnshareableAttachmentContent } from '../../lib/imageAttachment';
+import { stripAttachmentMarkdown } from '../../lib/imageAttachment';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectMessageById } from '../../redux/selectors';
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
@@ -196,8 +196,8 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
         };
 
         if (shareContentEnabled) {
-            setSharePrompt(stripUnshareableAttachmentContent(parentMessage?.content ?? ''));
-            setShareResponse(stripUnshareableAttachmentContent(message?.content ?? ''));
+            setSharePrompt(stripAttachmentMarkdown(parentMessage?.content ?? ''));
+            setShareResponse(stripAttachmentMarkdown(message?.content ?? ''));
             setFeedbackStep('preview');
             return;
         }
@@ -217,8 +217,8 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             ModelID: servingModelID,
             Body: body || '',
             Component: 'Lumo',
-            Prompt: stripUnshareableAttachmentContent(sharePrompt),
-            ModelOutput: stripUnshareableAttachmentContent(shareResponse),
+            Prompt: stripAttachmentMarkdown(sharePrompt),
+            ModelOutput: stripAttachmentMarkdown(shareResponse),
         });
     };
 

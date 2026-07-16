@@ -1,7 +1,12 @@
 import { type ConversationContext, formatPersonalization } from '../components/Conversation/helper';
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
-import { createImageAttachment, generateImageMarkdown, lumoImageMarker } from '../lib/imageAttachment';
+import {
+    createImageAttachment,
+    generateImageMarkdown,
+    lumoImageMarker,
+    stripAttachmentMarkdown,
+} from '../lib/imageAttachment';
 import { getMessageBlocks } from '../messageHelpers';
 import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
 import {
@@ -115,7 +120,7 @@ export function prepareTurns(
                 // Text block becomes a turn with the message's role
                 const textTurn: Turn = {
                     role: message.role,
-                    content: block.content,
+                    content: sanitizeContent(message.role, block.content),
                 };
                 turns.push(textTurn);
             } else if (block.type === 'tool_call') {
@@ -201,6 +206,10 @@ export function prepareTurns(
     }
 
     return turns;
+}
+
+function sanitizeContent(role: Role, content: string): string {
+    return role === Role.Assistant ? stripAttachmentMarkdown(content) : content;
 }
 
 function removeEmptyAssistantTurns(turns: Turn[]) {

@@ -95,7 +95,7 @@ const ATTACHMENT_IMAGE_MARKDOWN = /!\[[^\]]*\]\(attachment:[^)]+\)/g;
  * Removes image attachment placeholders from content shared via feedback.
  * The referenced binary/image data is never included in feedback payloads.
  */
-export function stripUnshareableAttachmentContent(content: string): string {
+export function stripAttachmentMarkdown(content: string): string {
     return content
         .replace(ATTACHMENT_IMAGE_MARKDOWN, '')
         .replace(/\n{3,}/g, '\n\n')
