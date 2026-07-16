@@ -4142,7 +4142,7 @@
         "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
       ],
       "No drive found to import": [
-        "Es wurde kein Laufwerk zum Importieren gefunden"
+        "Es wurde kein Drive zum Importieren gefunden"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "Nicht genügend Speicherplatz in deinem ${ DRIVE_APP_NAME }"
@@ -4152,6 +4152,9 @@
       ],
       "Folder not found": [
         "Ordner nicht gefunden"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
       ]
     },
     "error": {
@@ -8296,6 +8299,27 @@
       ],
       "Indexing": [
         "Indizierung"
+      ],
+      "Exact host matching": [
+        "Genaue Host-Übereinstimmung"
+      ],
+      "Exact URL matching": [
+        "Genaue URL-Übereinstimmung"
+      ],
+      "Never fill on this exact URL": [
+        "Niemals auf dieser genauen URL ausfüllen"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Übergeordnete Domain und Subdomains (Standard)"
+      ],
+      "Regular expression": [
+        "Regulärer Ausdruck"
+      ],
+      "Starts with": [
+        "Beginnt mit"
+      ],
+      "URL wildcard pattern": [
+        "URL-Platzhalter-Muster"
       ]
     },
     "Label for contact group color": {
@@ -8625,6 +8649,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Deine kostenlose Testversion ist beendet. Der Zugriff auf dein Konto wird in Kürze deaktiviert. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "„Beginnt mit“-Übereinstimmungsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Genaue (Sub-) Domain-Übereinstimmungsregel"
+      ],
+      "Exact URL matching rule": [
+        "Genaue URL-Übereinstimmungsregel"
+      ],
+      "Never fill with this exact URL": [
+        "Niemals mit dieser genauen URL ausfüllen"
+      ],
+      "Regular expression rule": [
+        "Reguläre-Ausdruck-Regel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Platzhalter-Übereinstimmungsregel"
       ]
     },
     "Message display when a new app version is available": {
@@ -13996,6 +14038,9 @@
       ],
       "Upload empty file?": [
         "Leere Datei hochladen?"
+      ],
+      "Users and addresses": [
+        "Benutzer und E-Mail-Adressen"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14324,6 +14369,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deine Testversion endet am ${ textDate }. Dir werden keine Kosten berechnet, wenn du vor dem ${ textDate } kündigst. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } bietet eine leistungsstarke Kontrolle, aber ein einziger Fehler kann dazu führen, dass das automatische Ausfüllen auf betrügerischen oder Phishing-Websites übereinstimmt und Daten ausfüllt."
       ]
     },
     "Provider option": {
@@ -14462,6 +14510,33 @@
       ],
       "No users to display": [
         "Keine Benutzer vorhanden"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu klären"
+      ],
+      "Find out what can be migrated.": [
+        "Finde heraus, was migriert werden kann."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer kann aufgrund von Plattform-Inkompatibilitäten nicht migriert werden."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere seine Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Benutzer zu migrieren, muss er deine Einladung annehmen, ${ BRAND_NAME } beizutreten."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, dearchiviere ihn in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, hebe seine Sperrung in deiner Google Workspace Admin-Konsole auf."
       ]
     },
     "q2campaign2026: Action": {

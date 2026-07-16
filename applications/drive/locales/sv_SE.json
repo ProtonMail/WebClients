@@ -1317,6 +1317,9 @@
       ],
       "Skip": [
         "Hoppa över"
+      ],
+      "Re-indexing in progress": [
+        "Omindexering pågår"
       ]
     },
     "Action: Docs": {
@@ -4143,6 +4146,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Odekrypterbart namn"
+      ],
+      "No drive found to import": [
+        "Ingen drive hittades att importera"
+      ],
+      "Something went wrong during folder listing": [
+        "Något gick fel när mappen skulle listas"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Okrypterbar enhet"
       ]
     },
     "error": {
@@ -7362,6 +7377,51 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace ger ditt team möjlighet att samarbeta effektivt utan att någonsin riskera ditt företags data."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } upptäckte att det lokala sökindexet är skadat och inte längre kan användas. Bygg om indexet för att återställa sökfunktionen."
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } poster"
+      ],
+      "Data integrity check failed": [
+        "Kontroll av dataintegritet misslyckades"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Endast filer (inga foton, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – totalt upp till 100 GB, 100 000 filer och 50 GB per fil"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Jag bekräftar härmed på heder och samvete att informationen och uttalandena i rapporten är korrekta och fullständiga."
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indexeringen stötte på ett oväntat tillstånd och kan inte fortsätta. Bygg om indexet för att återställa."
+      ],
+      "No populator states found.": [
+        "Inga populator-tillstånd hittades."
+      ],
+      "One encrypted suite. Full business protection.": [
+        "En krypterad svit. Fullt företagsskydd."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "För att aktivera en verkligt privat sökfunktion behöver vi indexera dina filer lokalt. Du kan fortfarande använda ${ DRIVE_APP_NAME } som vanligt - vi meddelar dig när indexeringen är klar."
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Vi kunde inte verifiera att ${ nameAuthor } laddade upp ${ nodeName }. Följande kan ha blivit manipulerat: filernas ordning. Öppna endast om du litar på det."
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Välkommen till ${ DRIVE_APP_NAME }, under de första 10 minuterna räknas inte filer som du laddar upp mot din kvot för lagringsutrymme."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du kommer inte att kunna dela \"${ fileName }\" efter att du har ändrat behörighet till visare. Endast ägaren kan ändra din behörighet igen."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Din webbläsare fick slut på utrymme vid indexering av filer för sökning. Frigör lagringsutrymme och bygg sedan om indexet."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Dina filer håller på att omindexeras. Du kan fortsätta söka - resultaten kan dock vara ofullständiga tills det är klart. Vi meddelar dig när det är färdigt."
       ]
     },
     "info": {
@@ -8245,6 +8305,18 @@
       ],
       "Parent domain and subdomains (default)": [
         "Överordnad domän och underdomäner (standard)"
+      ],
+      "Applications in a business setting": [
+        "Applikationer i en affärsmiljö"
+      ],
+      "Exact host matching": [
+        "Exakt värdmatchning"
+      ],
+      "Non-consensual intimate imagery": [
+        "Icke-konsensuella intima bilder"
+      ],
+      "URL wildcard pattern": [
+        "Jokerteckenmönster för URL"
       ]
     },
     "Label for contact group color": {
@@ -8574,6 +8646,21 @@
       ],
       "Never fill with this exact URL": [
         "Fyll aldrig med denna exakta URL"
+      ],
+      "'Starts with' matching rule": [
+        "Matchningsregel för \"Börjar med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Matchningsregel för exakt (under)domän"
+      ],
+      "Exact URL matching rule": [
+        "Matchningsregel för exakt URL"
+      ],
+      "Regular expression rule": [
+        "Regel för reguljärt uttryck"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchningsregel för jokerteckenmönster"
       ]
     },
     "Message display when a new app version is available": {
@@ -10519,6 +10606,12 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Du har precis fått lite gratis data och säkrat dina filer med end-to-end-kryptering – på rekordtid!"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Filer som laddas upp under denna tid kommer inte att räknas av mot din gräns för lagringsutrymme."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Filer som laddas upp nu räknas inte av mot din gräns för lagringsutrymme"
       ]
     },
     "Onboarding Trial": {
@@ -13939,6 +14032,15 @@
       ],
       "Upload empty file?": [
         "Ladda upp tom fil?"
+      ],
+      "Change access to viewer?": [
+        "Ändra behörighet till visare?"
+      ],
+      "Index populators": [
+        "Index-populatorer"
+      ],
+      "Users and addresses": [
+        "Användare och adresser"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14042,6 +14144,9 @@
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nyckel version 6"
+      ],
+      "Change shared item settings": [
+        "Ändra inställningar för delat objekt"
       ]
     },
     "tooltip": {
@@ -14264,6 +14369,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ger kraftfull kontroll, men ett enda fel kan göra att autofyll matchar och fyller i data på bedrägliga webbplatser eller nätfiske-webbplatser."
       ]
     },
     "Provider option": {
@@ -14295,7 +14403,7 @@
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
       ],
       "${ MEET_APP_NAME } seats": [
-        "{count, plural, one {# användarplats} other {# användarplatser}} för ${ MEET_APP_NAME }"
+        "${ MEET_APP_NAME }-användarplatser"
       ]
     },
     "Notitication": {
@@ -14393,6 +14501,33 @@
       ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status för datamigrering från Google Workspace till ${ BRAND_NAME }"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denna användare kan inte migreras på grund av plattformsinkompatibilitet."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, aktivera deras konto i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "För att migrera denna användare måste de acceptera sin inbjudan att gå med i ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, återställ dem från arkivet i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, häv avstängningen för dem i din Google Workspace Admin Console."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Användare som har använt sitt ${ BRAND_NAME }-konto"
       ]
     },
     "q2campaign2026: Action": {

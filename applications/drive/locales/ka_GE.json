@@ -1292,6 +1292,31 @@
       ],
       "Skip": [
         "გამოტოვება"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "დამატება ალბომში „${ name }“ (${ photoCount } ფოტო)",
+        "დამატება ალბომში „${ name }“ (${ photoCount } ფოტო)"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "უკან დაბრუნება ალბომში „${ ellipsedAlbumName }“"
+      ],
+      "Re-indexing in progress": [
+        "მიმდინარეობს ხელახალი ინდექსირება"
+      ],
+      "Rebuild index": [
+        "ინდექსის ხელახლა შექმნა"
+      ],
+      "Report abuse": [
+        "კანონდარღვევის შეტყობინება"
+      ],
+      "Save photo to your gallery": [
+        "შეინახეთ ფოტო თქვენს გალერეაში"
+      ],
+      "Search is unavailable": [
+        "ძიება მიუწვდომელია"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "სცადეთ ${ BRAND_NAME } Workspace"
       ]
     },
     "Action: Docs": {
@@ -4083,6 +4108,37 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "დღგ-ის ნომერი უნდა იწყებოდეს ${ prefixes }-ით"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } ელემენტის გადატანა ჩავარდა",
+        "${ failureItems.length } ელემენტის გადატანა ჩავარდა"
+      ],
+      "Failed to change permissions settings": [
+        "ნებართვების პარამეტრების შეცვლა ჩავარდა"
+      ],
+      "Folder not found": [
+        "საქაღალდე ვერ მოიძებნა"
+      ],
+      "No drive found to import": [
+        "შემოსატანი დისკი ვერ მოიძებნა"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "ძიებისას რაღაც შეცდომა მოხდა. გთხოვთ, სცადოთ მოგვიანებით."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "ძიებისას რაღაც შეცდომა მოხდა: არ არის საკმარისი საცავის ადგილი."
+      ],
+      "Unexpected error, we can't import the files": [
+        "მოულოდნელი შეცდომა, ფაილების შემოტანა ვერ ხერხდება"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "ამ მეთოდით დამოწმების კოდი ვერ გავაგზავნეთ."
+      ],
+      "We were not able to load the file history": [
+        "ჩვენ ვერ შევძელით ფაილის ისტორიის ჩატვირთვა"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "თქვენ გამოიყენეთ თქვენს პაკეტში არსებული ყველა მისამართი. გთხოვთ განაახლოთ თქვენი პაკეტი ახალი მისამართის დასამატებლად ან გამორთოთ მისამართი თქვენს ანგარიშში."
       ]
     },
     "error": {
@@ -7068,6 +7124,256 @@
       ],
       "Preparing…": [
         "მომზადება…"
+      ],
+      "${ albums } album": [
+        "${ albums } ალბომი",
+        "${ albums } ალბომი"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace აძლიერებს თქვენს გუნდს, რათა ითანამშრომლოთ ეფექტურად თქვენი კომპანიის მონაცემების საფრთხის წინაშე დაყენების გარეშე."
+      ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME }-ის და ${ SHEETS_APP_NAME }-ის ფაილების პირდაპირ ჩამოტვირთვა შეუძლებელია და ისინი არ ჩაირთვება ამ ჩამოტვირთვაში. სხვა ფაილების ჩამოტვირთვა შეგიძლიათ ღილაკზე „ჩამოტვირთვის გაგრძელება“ დაწკაპუნებით."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME }-მა აღმოაჩინა, რომ ლოკალური ძიების ინდექსი დაზიანებულია და მისი გამოყენება ვეღარ ხერხდება. ძიების აღსადგენად თავიდან შექმენით ინდექსი."
+      ],
+      "${ files } file": [
+        "${ files } ფაილი",
+        "${ files } ფაილი"
+      ],
+      "${ folders } folder": [
+        "${ folders } საქაღალდე",
+        "${ folders } საქაღალდე"
+      ],
+      "${ photos } photo": [
+        "${ photos } ფოტო",
+        "${ photos } ფოტო"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } ჩანაწერი"
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "ხელმისაწვდომია ${ DRIVE_APP_NAME }-ის ახალი ვერსია. გთხოვთ, გადატვირთოთ გვერდი, რათა განაგრძოთ ძიების გამოყენება."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "უსაფრთხო კავშირი აუცილებელია დისტანციურად მუშაობისას. VPN იცავს კომპანიის მონაცემებს კიბერსაფრთხეებისგან და ინარჩუნებს თქვენს სამუშაოს პირადად."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN შიფრავს თქვენს კავშირს და მალავს თქვენს IP მისამართს, რაც მნიშვნელოვნად ართულებს ნებისმიერისთვის თქვენი ვებ-სერფინგის თვალყურის დევნებას ან მონიტორინგს."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN მალავს თქვენს IP მისამართს და შიფრავს თქვენი ვებ-სერფინგის აქტივობას, რაც ვებსაიტებს, რეკლამის განმთავსებლებსა და ISP-ებს დროთა განმავლობაში თქვენი თვალთვალის შესაძლებლობას ართულებს."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN არის უსაფრთხო გვირაბი თქვენს მოწყობილობასა და ინტერნეტს შორის. ის მალავს თქვენს მდებარეობასა და აქტივობას თქვენი ინტერნეტ პროვაიდერისაგან (ISP) და იმ ვებსაიტებისგან, რომლებსაც სტუმრობთ."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "რეკლამის განმთავსებლები თვალს ადევნებენ თქვენს ვებ-სერფინგს მიზნობრივი რეკლამების საჩვენებლად. ${ VPN_APP_NAME } ბლოკავს ტრეკერებსა და რეკლამებს, რაც აჩქარებს თქვენს კავშირს და აუმჯობესებს თქვენს ონლაინ გამოცდილებას."
+      ],
+      "Album": [
+        "ალბომი"
+      ],
+      "Clears browser data related to the search.": [
+        "ასუფთავებს ბრაუზერის მონაცემებს, რომლებიც დაკავშირებულია ძიებასთან."
+      ],
+      "Could not scan file for malware": [
+        "ვერ მოხერხდა ფაილის სკანირება მავნე პროგრამებზე"
+      ],
+      "Do you still want to upload it?": [
+        "მაინც გსურთ მისი ატვირთვა?",
+        "მაინც გსურთ მათი ატვირთვა?"
+      ],
+      "File could not be scanned": [
+        "ფაილის სკანირება ვერ მოხერხდა"
+      ],
+      "File flagged as potentially malicious": [
+        "ფაილი მონიშნულია, როგორც პოტენციურად მავნე"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "მხოლოდ ფაილები (ფოტოების, ${ DOCS_APP_NAME }-ის ან ${ SHEETS_APP_NAME }-ის გარეშე) — ჯამში 100 გბ-მდე, 100 000 ფაილი, და 50 გბ თითოეულ ფაილზე"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "მთავრობებსა და ISP-ებს შეუძლიათ თქვენი ონლაინ აქტივობის მონიტორინგი. თქვენი რეალური IP-ის დამალვით და თქვენი აქტივობის დაშიფვრით, თქვენი ვებ-სერფინგი ხდება პირადი."
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "მე ამით კეთილსინდისიერად ვადასტურებ, რომ ანგარიშში მოცემული ინფორმაცია და განცხადებები სწორი და სრულია."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "თუ საკუთარ თავს ამოშლით, დაკარგავთ წვდომას ელემენტზე „${ fileName }“ და ვეღარ შეძლებთ მის გახსნას, სანამ მფლობელი მას კვლავ არ გაგიზიარებთ."
+      ],
+      "Indexed ${ first }": [
+        "დაინდექსებულია ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "დაინდექსებულია ${ first } და ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "დაინდექსებულია ${ first }, ${ second } და ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "დაინდექსებულია ${ first }, ${ second }, ${ third } და ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "ინდექსირება მოულოდნელ მდგომარეობას წააწყდა და ვერ გაგრძელდება. აღსადგენად თავიდან შექმენით ინდექსი."
+      ],
+      "Indexing in progress": [
+        "მიმდინარეობს ინდექსირება"
+      ],
+      "Invitation confirmed": [
+        "მოწვევა დადასტურებულია"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "საჯარო WiFi ქსელების უმეტესობა უსაფრთხოა, მაგრამ ზოგიერთს აკლია დაცვა, რაც კიბერსაფრთხეების წინაშე გაყენებთ. VPN შიფრავს თქვენს ტრაფიკს და გიცავთ თქვენ."
+      ],
+      "Move ${ dragCount } item": [
+        "${ dragCount } ელემენტის გადატანა",
+        "${ dragCount } ელემენტის გადატანა"
+      ],
+      "Move ${ fileCount } file": [
+        "${ fileCount } ფაილის გადატანა",
+        "${ fileCount } ფაილის გადატანა"
+      ],
+      "Move ${ folderCount } folder": [
+        "${ folderCount } საქაღალდის გადატანა",
+        "${ folderCount } საქაღალდის გადატანა"
+      ],
+      "No populator states found.": [
+        "შემვსები მდგომარეობები ვერ მოიძებნა."
+      ],
+      "Not enough storage space": [
+        "არ არის საკმარისი საცავის ადგილი"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "ერთი დაშიფრული ნაკრები. სრული ბიზნეს-დაცვა."
+      ],
+      "Photo saved to your Drive": [
+        "ფოტო შენახულია თქვენს დისკზე",
+        "ფოტოები შენახულია თქვენს დისკზე"
+      ],
+      "Preparing download": [
+        "ჩამოტვირთვის მომზადება"
+      ],
+      "Re-indexing in progress": [
+        "მიმდინარეობს ხელახალი ინდექსირება"
+      ],
+      "Search data is corrupted": [
+        "ძიების მონაცემები დაზიანებულია"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "ძიება ჩართულია. ახლა შეგიძლიათ დახუროთ ეს დიალოგური ფანჯარა და მოძებნოთ ფაილები და საქაღალდეები."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "ძიებისას დაფიქსირდა შიდა შეცდომა. აღსადგენად თავიდან შექმენით ინდექსი."
+      ],
+      "Search engine error": [
+        "საძიებო სისტემის შეცდომა"
+      ],
+      "Search is in an invalid state": [
+        "ძიება არასწორ მდგომარეობაშია"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "ძიება მზადაა. თქვენი ფაილები დაინდექსებულია."
+      ],
+      "Search module is not available.": [
+        "ძიების მოდული მიუწვდომელია."
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "ზოგიერთი მთავრობა ბლოკავს ან ზღუდავს წვდომას გარკვეულ ვებსაიტებზე. VPN გეხმარებათ ცენზურის გვერდის ავლით, თანაც ინარჩუნებს თქვენს აქტივობასა და იდენტობას პირადად."
+      ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "ამ ალბომის ზოგიერთი ფოტო არ არის შენახული თქვენს ქრონიკაში. ამ ალბომის წაშლა სამუდამოდ წაშლის ამ ფოტოებს."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "ზოგიერთი ვებსაიტი და სტრიმინგის სერვისი ბლოკავს კონტენტს რეგიონის მიხედვით. VPN საშუალებას გაძლევთ გვერდი აუაროთ ამ შეზღუდვებს და თავისუფლად მიიღოთ წვდომა ინტერნეტთან."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "საძიებო სისტემაში დაფიქსირდა შიდა შეცდომა. აღსადგენად თავიდან შექმენით ინდექსი."
+      ],
+      "This file appears to be empty:": [
+        "ეს ფაილი ცარიელი ჩანს:",
+        "ეს ფაილები ცარიელი ჩანს:"
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "ეს ელემენტი არ არის შენახული თქვენს ფოტოების ბიბლიოთეკაში. თუ მას ამ ალბომიდან ამოშლით, მასზე წვდომას სამუდამოდ დაკარგავთ.",
+        "ზოგიერთი არჩეული ელემენტი არ არის შენახული თქვენს ფოტოების ბიბლიოთეკაში. თუ მათ ამ ალბომიდან ამოშლით, მათზე წვდომას სამუდამოდ დაკარგავთ."
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "ეს ნიშნავს, რომ თქვენი ISP და ვებსაიტები, რომლებსაც სტუმრობთ, ვერ დააკავშირებენ თქვენს პერსონალურ ინფორმაციას თქვენს ონლაინ აქტივობასთან."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "ეს უნიკალური კოდი შეიძლება გამოყენებულ იქნას ვებსაიტებისა და ISP-ების (ინტერნეტ პროვაიდერების) მიერ თქვენი მდებარეობისა და ბრაუზინგის ისტორიის თქვენს მოწყობილობასთან დასაკავშირებლად"
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "ეს გააუქმებს ყველა დარჩენილ ატვირთვასა და ჩამოტვირთვას. გაუქმებული ატვირთვები არ შეინახება ${ DRIVE_APP_NAME }-ში."
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "ამ ფაილების ჩამოსატვირთად, გახსენით ისინი ${ DOCS_APP_NAME }-ში ან ${ SHEETS_APP_NAME }-ში და მოახდინეთ მათი ექსპორტი."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "სრულყოფილი ძიების ჩასართავად, საჭიროა თქვენი ფაილების ლოკალური ინდექსირება. თქვენ კვლავ შეგიძლიათ ჩვეულებრივ გამოიყენოთ ${ DRIVE_APP_NAME } — ჩვენ შეგატყობინებთ, როდესაც ინდექსირება დასრულდება."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "თქვენს დასაცავად, ${ DRIVE_APP_NAME }-ს შეუძლია დაასკანიროს თქვენი ფაილები კონფიდენციალურობის დაცვით და დაბლოკოს მავნე ფაილები. თუმცა, მაინც უმჯობესია ფაილები მხოლოდ სანდო წყაროებიდან ჩამოტვირთოთ "
+      ],
+      "Unsupported file type for Photos": [
+        "ფაილის მხარდაუჭერელი ტიპი ფოტოებისთვის"
+      ],
+      "Upgrade to get more storage space": [
+        "განაახლეთ მეტი საცავის ადგილის მისაღებად"
+      ],
+      "Uploaded - file is empty": [
+        "ატვირთულია — ფაილი ცარიელია"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "ჩვენ ვერ შევძელით ამ ფოტოს შენახვა თქვენს დისკზე",
+        "ჩვენ ვერ შევძელით რამდენიმე ფოტოს შენახვა თქვენს დისკზე"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "ჩვენ ვერ შევძელით იმის შემოწმება, რომ ${ nameAuthor }-მა ატვირთა ${ nodeName }. შესაძლოა შემდეგი იყოს შეცვლილი: ფაილის მონაცემთა რიგი. გახსენით მხოლოდ იმ შემთხვევაში, თუ ენდობით მას."
+      ],
+      "We were not able to add this photo to your album": [
+        "ჩვენ ვერ შევძელით ამ ფოტოს დამატება თქვენს ალბომში",
+        "ჩვენ ვერ შევძელით ზოგიერთი ფოტოს დამატება თქვენს ალბომში"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "კეთილი იყოს თქვენი მობრძანება ${ DRIVE_APP_NAME }-ში. პირველი 10 წუთის განმავლობაში ნებისმიერი ფაილი, რომელსაც ატვირთავთ, არ ჩაითვლება თქვენი საცავის ლიმიტში."
+      ],
+      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
+        "როდესაც ამოშლით მოწყობილობას „${ deviceName }“ სინქრონიზებული მოწყობილობებიდან, ამ მოწყობილობიდან „ჩემს კომპიუტერებში“ დამატებული ყველა საქაღალდე სამუდამოდ წაიშლება ${ DRIVE_APP_NAME }-დან."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "თქვენ ამჟამად შესული ხართ როგორც ${ username } ${ organizationName }-სთვის."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "ამ საქაღალდეში ფაილების დასაკოპირებლად ნებართვა არ გაქვთ."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "წვდომის მნახველზე შეცვლის შემდეგ ვეღარ შეძლებთ „${ fileName }“-ის გაზიარებას. თქვენი წვდომის კვლავ შეცვლა მხოლოდ მფლობელს შეუძლია."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "თქვენ აპირებთ უარყოთ მოწვევა ალბომში „${ invitationName }“ გასაწევრიანებლად. თუ გააგრძელებთ, მასზე წვდომას ვერ შეძლებთ, სანამ მფლობელი ხელახლა არ მოგიწვევთ. დარწმუნებული ხართ, რომ გსურთ გაგრძელება?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "თქვენ აპირებთ უარყოთ მოწვევა საქაღალდეში „${ invitationName }“ გასაწევრიანებლად. თუ გააგრძელებთ, მასზე წვდომას ვერ შეძლებთ, სანამ მფლობელი ხელახლა არ მოგიწვევთ. დარწმუნებული ხართ, რომ გსურთ გაგრძელება?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "თქვენ აპირებთ უარყოთ მოწვევა ელემენტთან „${ invitationName }“ გასაერთიანებლად. თუ გააგრძელებთ, მასზე წვდომას ვერ შეძლებთ, სანამ მფლობელი ხელახლა არ მოგიწვევთ. დარწმუნებული ხართ, რომ გსურთ გაგრძელება?"
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "თქვენს ბრაუზერში ადგილი ამოიწურა ძიებისთვის ფაილების ინდექსირებისას. გაათავისუფლეთ საცავი, შემდეგ კი თავიდან შექმენით ინდექსი."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "მიმდინარეობს თქვენი ფაილების ხელახალი ინდექსირება. შეგიძლიათ გააგრძელოთ ძებნა — შედეგები შესაძლოა არასრული იყოს დასრულებამდე. ჩვენ შეგატყობინებთ, როდესაც ეს დასრულდება."
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "თქვენი უფასო საცდელი ვერსია წარმატებით გადაკეთდა ${ cycle }-თვიან გამოწერად. განახლების თარიღია ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "თქვენი უფასო საცდელი ვერსია წარმატებით გადაკეთდა ყოველთვიურ გამოწერად. განახლების თარიღია ${ nextBillingDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "თქვენ კვლავ შეძლებთ საკუთარი ანგარიშის მონაცემების ნახვას, მაგრამ მომხმარებლის ყველა ანგარიში ამოიშლება თქვენი ორგანიზაციიდან."
       ]
     },
     "info": {
@@ -7888,6 +8194,81 @@
       ],
       "Main reason for cancelling": [
         "გაუქმების მთავარი მიზეზი"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } ჩამოტვირთვა"
+      ],
+      "Created ${ created }": [
+        "შექმნილია ${ created }"
+      ],
+      "Deleted ${ deleted }": [
+        "წაშლილია ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "მოწყობილობა #${ position }"
+      ],
+      "Device: ${ name }": [
+        "მოწყობილობა: ${ name }"
+      ],
+      "Environment compatible": [
+        "გარემო თავსებადია"
+      ],
+      "Exact host matching": [
+        "ზუსტი ჰოსტის შესაბამისობა"
+      ],
+      "Exact URL matching": [
+        "ზუსტი URL შესაბამისობა"
+      ],
+      "Expired on ${ formatted }": [
+        "ვადა ამოიწურა ${ formatted }"
+      ],
+      "Expires ${ formatted }": [
+        "ვადა იწურება ${ formatted }"
+      ],
+      "Indexing": [
+        "მიმდინარეობს ინდექსირება"
+      ],
+      "Item #${ position }": [
+        "ელემენტი #${ position }"
+      ],
+      "Location: ${ item.location }": [
+        "მდებარეობა: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "შეცვლილია ${ modified }"
+      ],
+      "Never expires": [
+        "ვადა არასდროს ეწურება"
+      ],
+      "Never fill on this exact URL": [
+        "არასოდეს შეავსო ამ ზუსტ URL-ზე"
+      ],
+      "Non-consensual intimate imagery": [
+        "არანებაყოფლობითი ინტიმური გამოსახულება"
+      ],
+      "Parent domain and subdomains (default)": [
+        "მშობელი დომენი და ქვედომენები (ნაგულისხმევი)"
+      ],
+      "Pending invitation": [
+        "მომლოდინე მოწვევა"
+      ],
+      "Regular expression": [
+        "რეგულარული გამოსახულება"
+      ],
+      "Shared by ${ sharedBy }": [
+        "გაზიარებულია ${ sharedBy }-ის მიერ"
+      ],
+      "Shared by Public link": [
+        "გაზიარებულია საჯარო ბმულით"
+      ],
+      "Shared on ${ sharedOn }": [
+        "გააზიარეს ${ sharedOn }"
+      ],
+      "Starts with": [
+        "იწყება"
+      ],
+      "URL wildcard pattern": [
+        "URL wildcard შაბლონი"
       ]
     },
     "Label for contact group color": {
@@ -8217,6 +8598,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "თქვენს უფასო სატესტო ვერსიას ვადა გაუვიდა. მალე ანგარიშთან წვდომა გაგეთიშებათ. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "\"იწყება\" შესაბამისობის წესი"
+      ],
+      "Exact (sub) domain matching rule": [
+        "ზუსტი (ქვე) დომენის შესაბამისობის წესი"
+      ],
+      "Exact URL matching rule": [
+        "ზუსტი URL შესაბამისობის წესი"
+      ],
+      "Never fill with this exact URL": [
+        "არასოდეს შეავსო ამ ზუსტი URL-ით"
+      ],
+      "Regular expression rule": [
+        "რეგულარული გამოსახულების წესი"
+      ],
+      "Wildcard pattern matching rule": [
+        "Wildcard შაბლონის შესაბამისობის წესი"
       ]
     },
     "Message display when a new app version is available": {
@@ -8968,6 +9367,10 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN რეკლამების ბლოკერით და მავნე პროგრამებისგან დაცვით"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-დღიანი ფაილის ვერსიების ისტორია",
+        "${ options }-დღიანი ფაილის ვერსიის ისტორია"
       ]
     },
     "new_plans: feature highlight": {
@@ -9721,6 +10124,81 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "თქვენი ${ BRAND_NAME } მისამართი მზადაა გამოსაყენებლად"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "„${ ellipsedName }“ კოპირებულია"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ წარმატებით შეიქმნა"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "„${ ellipsedName }“ წაშლილია"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "„${ ellipsedName }“ სამუდამოდ წაიშალა ნაგვიდან"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "„${ ellipsedName }“-ის შექმნა ჩავარდა"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "„${ ellipsedName }“-ის წაშლა ჩავარდა"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "„${ ellipsedName }“-ის ნაგვიდან სამუდამოდ წაშლა ჩავარდა"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "„${ ellipsedName }“-ის გადატანა ჩავარდა"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "„${ ellipsedName }“-ის ნაგვიდან აღდგენა ჩავარდა"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "„${ ellipsedName }“ გადატანილია"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "„${ ellipsedName }“ აღდგენილია ნაგვიდან"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "„${ ellipsedName }“ წარმატებით გადატანილ იქნა"
+      ],
+      "\"${ fileName }\" shared": [
+        "„${ fileName }“ გაზიარებულია"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } ფოტო დაემატა ალბომში „${ albumName }“",
+        "${ addedUids.length } ფოტო დაემატა ალბომში „${ albumName }“"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } ელემენტის წაშლა ჩავარდა",
+        "${ errors.length } ელემენტის წაშლა ჩავარდა"
+      ],
+      "${ numberOfItems } item copied": [
+        "კოპირებულია ${ numberOfItems } ელემენტი",
+        "კოპირებულია ${ numberOfItems } ელემენტი"
+      ],
+      "${ numberOfItems } item moved": [
+        "გადატანილია ${ numberOfItems } ელემენტი",
+        "გადატანილია ${ numberOfItems } ელემენტი"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } ფოტო ამოიშალა ალბომიდან „${ albumName }“",
+        "${ removed } ფოტო ამოიშალა ალბომიდან „${ albumName }“"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "„${ ellipsedName }“-ის ასლი გადატანილია ნაგავში"
+      ],
+      "Failed to load sharing details": [
+        "გაზიარების დეტალების ჩატვირთვა ჩავარდა"
+      ],
+      "Selected item was successfully removed from your list": [
+        "არჩეული ელემენტი წარმატებით ამოიშალა თქვენი სიიდან",
+        "არჩეული ელემენტები წარმატებით ამოიშალა თქვენი სიიდან"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "პარამეტრი განახლდა. რედაქტორებს შეუძლიათ ნებართვების შეცვლა და გაზიარება."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "პარამეტრი განახლდა. რედაქტორებს არ შეუძლიათ ნებართვების შეცვლა ან გაზიარება."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10660,6 +11138,9 @@
       ],
       "Anything you'd like us to know": [
         "არის რამე, რაც გსურთ, რომ ვიცოდეთ"
+      ],
+      "Search for users or addresses": [
+        "მოძებნეთ მომხმარებლები ან მისამართები"
       ]
     },
     "Placeholder for contact group name": {
@@ -10808,6 +11289,16 @@
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "მიიღეთ ${ maxRewardAmount }-მდე კრედიტის სახით. თქვენ მიიღებთ ${ referrerRewardAmount }-ს, როდესაც პირი, რომელსაც თქვენ იწვევთ, გამოიწერს ${ BRAND_NAME }-ის პაკეტს."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**თუ ამ თარიღამდე გააუქმებთ,** საცდელი პერიოდის დასრულებისას თქვენი პაკეტი **დაქვეითდება** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } პაკეტამდე."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**თუ არ გააუქმებთ,** ამოქმედდება თქვენი სრული პაკეტი და მიიღებთ **${ referrerRewardAmount }** კრედიტის სახით."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "თქვენ დაგრჩათ **${ daysRemaining } დღე**, რათა აღმოაჩინოთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ.",
+        "თქვენ დაგრჩათ **${ daysRemaining } დღე**, რათა აღმოაჩინოთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ."
       ]
     },
     "Safety review": {
@@ -10957,6 +11448,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "გაქვთ ${ timeRemaining.inHours } საათი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inHours } საათი თქვენი პაროლის გადასატვირთად."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი თქვენი პაროლის გადასატვირთად."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "გაქვთ ${ timeRemaining.inSeconds } წამი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inSeconds } წამი თქვენი პაროლის გადასატვირთად."
       ]
     },
     "session_recovery:available:link": {
@@ -11806,6 +12309,12 @@
       "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
         "ვიდეოშეხვედრები, ${ PAID_PREMIUM_MAX_PARTICIPANTS } მონაწილემდე",
         "ვიდეოშეხვედრები, ${ PAID_PREMIUM_MAX_PARTICIPANTS } მონაწილემდე"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } გაძლევთ წვდომას ყველა პრემიუმ ფუნქციაზე ${ BRAND_NAME }-ის ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME } პროდუქტებიდან. კონფიდენციალურობა ჩაშენებულია, ასე რომ შეგიძლიათ მშვიდად განაგრძოთ მუშაობა იმის ცოდნით, რომ თქვენი მონაცემები და იდენტობა უსაფრთხოდაა."
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "მომხმარებელთა გამოწერები ${ BRAND_NAME }-ის შემოსავლის ერთადერთი წყაროა. თქვენი მხარდაჭერა გვეხმარება დამოუკიდებლობის შენარჩუნებაში, ხელს უწყობს ჩვენს მისიას ონლაინ კონფიდენციალურობისთვის და ეხმარება თავისუფლებისთვის მებრძოლ აქტივისტებსა და ორგანიზაციებს."
       ]
     },
     "subscription reminder": {
@@ -13234,6 +13743,72 @@
       ],
       "You are all set": [
         "ყველაფერი მზადაა"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } წერის დამხმარე"
+      ],
+      "Change access to viewer?": [
+        "შეიცვალოს წვდომა მნახველზე?"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "ციფრული ხელმოწერა ნაწილობრივ დადასტურებულია. ეს ფაილი შეიქმნა საჯაროდ ხელმისაწვდომი გაზიარების ბმულის გამოყენებით იმ მომხმარებლის მიერ, რომელსაც არ აქვს ${ BRAND_NAME }-ის ანგარიში, ამიტომ მისი იდენტობის დადასტურება ვერ ხერხდება."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "ციფრული ხელმოწერა ნაწილობრივ დადასტურებულია. ეს ფაილი აიტვირთა საჯაროდ ხელმისაწვდომი გაზიარების ბმულის გამოყენებით იმ მომხმარებლის მიერ, რომელსაც არ აქვს ${ BRAND_NAME }-ის ანგარიში, ამიტომ მისი იდენტობის დადასტურება ვერ ხერხდება."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "ციფრული ხელმოწერა ნაწილობრივ დადასტურებულია. ეს საქაღალდე შეიქმნა საჯაროდ ხელმისაწვდომი გაზიარების ბმულის გამოყენებით იმ მომხმარებლის მიერ, რომელსაც არ აქვს ${ BRAND_NAME }-ის ანგარიში, ამიტომ მისი იდენტობის დადასტურება ვერ ხერხდება."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "ციფრული ხელმოწერა ნაწილობრივ დადასტურებულია. ეს საქაღალდე აიტვირთა საჯაროდ ხელმისაწვდომი გაზიარების ბმულის გამოყენებით იმ მომხმარებლის მიერ, რომელსაც არ აქვს ${ BRAND_NAME }-ის ანგარიში, ამიტომ მისი იდენტობის დადასტურება ვერ ხერხდება."
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "ციფრული ხელმოწერა დადასტურებულია. ეს ფაილი უსაფრთხოდ შეიქმნა ${ author }-ის მიერ."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "ციფრული ხელმოწერა დადასტურებულია. ეს ფაილი უსაფრთხოდ აიტვირთა ${ author }-ის მიერ."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "ციფრული ხელმოწერა დადასტურებულია. ეს საქაღალდე უსაფრთხოდ შეიქმნა ${ author }-ის მიერ."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "ციფრული ხელმოწერა დადასტურებულია. ეს საქაღალდე უსაფრთხოდ აიტვირთა ${ author }-ის მიერ."
+      ],
+      "Index populators": [
+        "ინდექსის შემვსებები"
+      ],
+      "Out of storage space": [
+        "საცავის ადგილი ამოიწურა"
+      ],
+      "Share \"${ fileName }\"": [
+        "გააზიარეთ „${ fileName }“"
+      ],
+      "Upload empty file?": [
+        "ატვირთოთ ცარიელი ფაილი?"
+      ],
+      "Users and addresses": [
+        "მომხმარებლები და მისამართები"
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "ჩვენ ვერ შევძელით იმის შემოწმება, რომ ${ author }-მა შექმნა ეს ფაილი."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "ჩვენ ვერ შევძელით იმის შემოწმება, რომ ${ author }-მა შექმნა ეს საქაღალდე."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "ჩვენ ვერ შევძელით იმის შემოწმება, რომ ${ author }-მა ატვირთა ეს ფაილი."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "ჩვენ ვერ შევძელით იმის შემოწმება, რომ ${ author }-მა ატვირთა ეს საქაღალდე."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "ჩვენ ვერ შევძელით იმის დადასტურება, რომ ფაილის შინაარსი ატვირთულია ${ claimedContentAuthor }-ის მიერ. მიზეზი: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "ჩვენ ვერ შევძელით იმის დადასტურება, რომ სახელი შეიქმნა ან შეიცვალა ${ claimedNameAuthor }-ის მიერ. მიზეზი: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "ჩვენ ვერ შევძელით იმის დადასტურება, რომ კვანძი შეიქმნა ${ claimedKeyAuthor }-ის მიერ. მიზეზი: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13334,6 +13909,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "ხელოვნური ინტელექტის მყისიერი დახმარება, ადამიანი ექსპერტი მუდამ მზადყოფნაშია!"
+      ],
+      "Change shared item settings": [
+        "გაზიარებული ელემენტის პარამეტრების შეცვლა"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP გასაღები"
       ]
     },
     "tooltip": {
@@ -13556,6 +14137,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } უზრუნველყოფს ძლიერ კონტროლს, მაგრამ ერთმა შეცდომამაც კი შეიძლება გამოიწვიოს ავტოშევსების ამოქმედება და მონაცემების შევსება თაღლითურ ან ფიშინგის ვებსაიტებზე."
       ]
     },
     "Provider option": {
@@ -13641,6 +14225,60 @@
       ],
       "Pending": [
         "რიგში"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "მისამართს უკვე იყენებს მომხმარებელი თქვენი ორგანიზაციის გარეთ. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "მონაცემთა მიგრაციის სტატუსი Google Workspace-დან ${ BRAND_NAME }-ში"
+      ],
+      "Find out what can be migrated.": [
+        "გაიგეთ, რისი მიგრაციაა შესაძლებელი."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "წევრის მისამართი ვერ მოიძებნა. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
+      ],
+      "Missing organization private key": [
+        "ორგანიზაციის პირადი გასაღები აკლია"
+      ],
+      "Missing organization public key": [
+        "ორგანიზაციის საჯარო გასაღები აკლია"
+      ],
+      "No users to display": [
+        "საჩვენებელი მომხმარებლები არ არის"
+      ],
+      "Not activated": [
+        "არ არის გააქტიურებული"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "აირჩიეთ ზუსტად ის, რისი მიგრაციაც გსურთ. ეს გავრცელდება ორგანიზაციის ყველა მომხმარებელზე."
+      ],
+      "Select users to migrate": [
+        "აირჩიეთ მომხმარებლები მიგრაციისთვის"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "პლატფორმების შეუთავსებლობის გამო ამ მომხმარებლის მიგრაცია შეუძლებელია."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში აქ: ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი მისამართი აქ: ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, მან უნდა მიიღოს მოწვევა ${ BRAND_NAME }-ში გასაწევრიანებლად."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ამოიღეთ იგი არქივიდან თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, მოუხსენით მას შეჩერება თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "მომხმარებლები, რომლებმაც მიიღეს წვდომა თავიანთ ${ BRAND_NAME } ანგარიშზე"
       ]
     },
     "q2campaign2026: Action": {
@@ -13790,6 +14428,22 @@
       ],
       "Type": [
         "ტიპი"
+      ],
+      "Created": [
+        "შექმნილია"
+      ],
+      "Expires": [
+        "ვადა"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "ალბომს სახელი წარმატებით გადაერქვა"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "თქვენ შეძლებთ როლების მინიჭებას მას შემდეგ, რაც მომხმარებელი მიიღებს მოწვევას."
       ]
     }
   }

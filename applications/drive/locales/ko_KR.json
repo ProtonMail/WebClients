@@ -1307,6 +1307,9 @@
       ],
       "Rebuild index": [
         "색인 재구축"
+      ],
+      "Save photo to your gallery": [
+        "내 갤러리에 사진 저장"
       ]
     },
     "Action: Docs": {
@@ -4117,6 +4120,12 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "해당 방법으로 인증 코드를 전송할 수 없습니다."
+      ],
+      "No drive found to import": [
+        "불러올 드라이브가 없습니다"
+      ],
+      "Unexpected error, we can't import the files": [
+        "예상치 못한 오류가 발생하여, 파일을 가져올 수 없습니다."
       ]
     },
     "error": {
@@ -7279,6 +7288,27 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME }에서 로컬 검색 인덱스가 손상되어 더 이상 사용할 수 없음을 감지했습니다. 검색을 복원하려면 인덱스를 재구축하십시오."
+      ],
+      "Data integrity check failed": [
+        "데이터 무결성 검사 실패"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "파일 전용 (사진 불가, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }) - 최대 총 100 GB, 100,000개 파일 및 파일 당 50 GB)"
+      ],
+      "Invitation confirmed": [
+        "초대 확인됨"
+      ],
+      "No populator states found.": [
+        "인구 통계 상태를 찾을 수 없습니다."
+      ],
+      "Search is in an invalid state": [
+        "검색이 잘못된 상태입니다"
+      ],
+      "Upgrade to get more storage space": [
+        "더 많은 저장 공간을 확보하려면 업그레이드하세요"
       ]
     },
     "info": {
@@ -8141,6 +8171,33 @@
       ],
       "Shared by Public link": [
         "공개 링크로 공유됨"
+      ],
+      "Exact host matching": [
+        "정확한 호스트 일치"
+      ],
+      "Exact URL matching": [
+        "정확한 URL 일치"
+      ],
+      "Item #${ position }": [
+        "항목 #${ position }"
+      ],
+      "Never fill on this exact URL": [
+        "이 정확한 URL에서 자동완성 사용 안 함"
+      ],
+      "Parent domain and subdomains (default)": [
+        "상위 도메인 및 하위 도메인(기본값)"
+      ],
+      "Regular expression": [
+        "정규식"
+      ],
+      "Shared on ${ sharedOn }": [
+        "${ sharedOn }에 공유됨"
+      ],
+      "Starts with": [
+        "다음으로 시작"
+      ],
+      "URL wildcard pattern": [
+        "URL 와일드카드 패턴"
       ]
     },
     "Label for contact group color": {
@@ -8460,6 +8517,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "무료 체험이 종료되었습니다. 계정 접근이 곧 비활성화 됩니다. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "'다음으로 시작' 일치 규칙"
+      ],
+      "Exact (sub) domain matching rule": [
+        "정확한 (하위) 도메인 일치 규칙"
+      ],
+      "Exact URL matching rule": [
+        "정확한 URL 일치 규칙"
+      ],
+      "Never fill with this exact URL": [
+        "이 정확한 URL에서는 자동완성 안 함"
+      ],
+      "Regular expression rule": [
+        "정규식 규칙"
+      ],
+      "Wildcard pattern matching rule": [
+        "와일드카드 패턴 일치 규칙"
       ]
     },
     "Message display when a new app version is available": {
@@ -9975,6 +10050,12 @@
       ],
       "Failed to load sharing details": [
         "공유 상세 정보를 불러올 수 없음"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" 항목이 휴지통에서 영구적으로 삭제되었습니다"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" 항목이 이동되었습니다"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13636,6 +13717,15 @@
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "${ claimedNameAuthor }님이 해당 이름이 생성되거나 수정되었는지 확인할 수 없습니다. 원인: ${ node.nameAuthor.error.error }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Index populators": [
+        "인덱스 구성기"
+      ],
+      "Users and addresses": [
+        "사용자 및 주소"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13949,6 +14039,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }은 강력한 제어 기능을 제공하지만, 단 하나의 오류로도 사기 또는 피싱 웹사이트에서 자동완성이 일치하여 데이터가 입력될 수 있습니다."
       ]
     },
     "Provider option": {
@@ -14032,6 +14125,81 @@
       ],
       "Pending": [
         "보류 중"
+      ],
+      "Activated": [
+        "활성화됨"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "해당 주소는 조직 외부의 사용자가 이미 사용하고 있습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
+      ],
+      "All": [
+        "전체"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace에서 ${ BRAND_NAME }으로의 데이터 이전 상태"
+      ],
+      "Emails": [
+        "이메일"
+      ],
+      "Errors": [
+        "오류"
+      ],
+      "Find out what can be migrated.": [
+        "이전 가능한 항목을 확인해 보세요."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "구성원 주소를 찾을 수 없습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
+      ],
+      "Migrate": [
+        "이전"
+      ],
+      "Migrated": [
+        "이전 완료"
+      ],
+      "Missing organization private key": [
+        "조직 비밀 키 누락"
+      ],
+      "Missing organization public key": [
+        "조직 공개 키 누락"
+      ],
+      "No users to display": [
+        "표시할 사용자가 없습니다"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "이전하고자 하는 항목을 정확히 선택하세요. 모든 조직 사용자에게 적용됩니다."
+      ],
+      "Select users to migrate": [
+        "이전할 사용자 선택"
+      ],
+      "Size": [
+        "크기"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 아카이브 취소해야 합니다."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 정지 취소해야 합니다."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } 계정에 접근한 사용자"
+      ],
+      "You": [
+        "나"
       ]
     },
     "q2campaign2026: Action": {
@@ -14134,6 +14302,11 @@
     "Notitication": {
       "Album renamed successfully": [
         "앨범의 이름이 성공적으로 변경되었습니다"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
       ]
     }
   }

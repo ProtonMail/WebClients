@@ -1314,6 +1314,12 @@
       ],
       "Skip": [
         "Overslaan"
+      ],
+      "Re-indexing in progress": [
+        "Bezig met opnieuw indexeren"
+      ],
+      "Report abuse": [
+        "Misbruik melden"
       ]
     },
     "Action: Docs": {
@@ -4143,6 +4149,15 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "BTW-nummer moet beginnen met ${ prefixes }"
+      ],
+      "No drive found to import": [
+        "Geen drive gevonden om te importeren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Onverwachte fout, we kunnen de bestanden niet importeren"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
       ]
     },
     "error": {
@@ -7370,6 +7385,35 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "We konden niet verifiëren dat ${ nameAuthor }, ${ nodeName } heeft geüpload. Het volgende kan onrechtmatig zijn bewerkt: volgorde van de bestandsgegevens. Open alleen als u het vertrouwt."
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Do you still want to upload it?": [
+        "Wilt u het nog steeds uploaden?",
+        "Wilt u ze nog steeds uploaden?"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Ik bevestig hierbij, te goeder trouw, dat de informatie en verklaringen in dit rapport juist en volledig zijn."
+      ],
+      "Re-indexing in progress": [
+        "Bezig met opnieuw indexeren"
+      ],
+      "This file appears to be empty:": [
+        "Dit bestand lijkt leeg te zijn:",
+        "Deze bestanden lijken leeg te zijn:"
+      ],
+      "Uploaded - file is empty": [
+        "Geüpload - bestand is leeg"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Uw bestanden worden opnieuw geïndexeerd. U kunt blijven zoeken - de resultaten kunnen onvolledig zijn totdat het proces is voltooid. We laten u weten wanneer het klaar is."
       ]
     },
     "info": {
@@ -8241,6 +8285,30 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Exact host matching": [
+        "Exacte hostovereenkomst"
+      ],
+      "Exact URL matching": [
+        "Exacte URL-overeenkomst"
+      ],
+      "Indexing": [
+        "Indexeren"
+      ],
+      "Never fill on this exact URL": [
+        "Nooit invullen op deze exacte URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Bovenliggende domein en subdomeinen (standaard)"
+      ],
+      "Regular expression": [
+        "Reguliere expressie"
+      ],
+      "Starts with": [
+        "Begint met"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertekenpatroon"
       ]
     },
     "Label for contact group color": {
@@ -8570,6 +8638,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "'Begint met'-matchregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Exacte (sub)domein matchregel"
+      ],
+      "Exact URL matching rule": [
+        "Exacte URL-matchregel"
+      ],
+      "Never fill with this exact URL": [
+        "Nooit invullen met deze exacte URL"
+      ],
+      "Regular expression rule": [
+        "Reguliere expressieregel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchregel met jokertekenpatroon"
       ]
     },
     "Message display when a new app version is available": {
@@ -13878,6 +13964,15 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "We konden niet bevestigen dat de node is aangemaakt door ${ claimedKeyAuthor }. De reden is: ${ node.keyAuthor.error.error }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
+      ],
+      "Upload empty file?": [
+        "Leeg bestand uploaden?"
+      ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13981,6 +14076,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Directe AI-ondersteuning, menselijke expert binnen handbereik!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versie 6 OpenPGP-sleutel"
       ]
     },
     "tooltip": {
@@ -14203,6 +14301,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ]
     },
     "Provider option": {
@@ -14352,6 +14453,27 @@
       ],
       "Find out what can be migrated.": [
         "Ontdek wat er gemigreerd kan worden."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
       ]
     },
     "q2campaign2026: Action": {
@@ -14443,6 +14565,17 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Expires": [
+        "Verloopt"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
       ]
     }
   }
