@@ -553,6 +553,12 @@
       "Regenerate": [
         "Gerar novamente"
       ],
+      "Regex invalid": [
+        "Regex inválido"
+      ],
+      "Regex unsafe": [
+        "Regex inseguro"
+      ],
       "Reject": [
         "Rejeitar"
       ],
@@ -800,6 +806,9 @@
       "Activity": [
         "Atividade"
       ],
+      "Activity details could not be loaded.": [
+        "Não foi possível carregar os detalhes da atividade."
+      ],
       "Folder": [
         "Pasta"
       ],
@@ -1038,6 +1047,9 @@
       "Could not validate addresses at the moment.": [
         "Não foi possível validar endereços agora."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Não foi possível carregar as instruções de configuração do agente. Copie o token abaixo, pois ele não será exibido novamente."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "O arquivo CSV está faltando cabeçalhos esperados: ${ missingHeaders }"
       ],
@@ -1152,6 +1164,9 @@
       ],
       "Failed to load item history": [
         "Falha ao carregar o histórico do item"
+      ],
+      "Failed to load token actions": [
+        "Falha ao carregar as ações do token"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Falha ao mover todos os itens de \"${ payload.content.name }\""
@@ -1671,6 +1686,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "O acesso a ${ PASS_APP_NAME } exigirá sua impressão digital ou o PIN do dispositivo."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "O token de acesso \"${ action.token.Name }\" já está expirado. Se for excluído, ele não será mais mostrado."
       ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "O token de acesso “${ action.token.Name }” deixará de funcionar imediatamente. Esta ação não pode ser revertida."
@@ -2202,8 +2220,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2270,6 +2287,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Apenas os tokens que expiraram nos últimos 30 dias são mostrados. Os tokens mais antigos são excluídos automaticamente."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Abrir ${ PASS_APP_NAME } em uma janela maior"
@@ -2467,6 +2487,9 @@
       "Quickly autofill your saved credentials.": [
         "Preencha rapidamente suas credenciais salvas."
       ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Classificado por campo (título primeiro, depois nome de usuário ou e-mail, site, notas) e precisão de correspondência (exata, começa com, contém)."
+      ],
       "Read item": [
         "Ler item"
       ],
@@ -2648,6 +2671,9 @@
       "The user did not accept the invitation yet.": [
         "O usuário não aceitou o convite ainda."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Depois você pode acessar ${ url } para copiar as instruções para enviar ao seu agente de IA."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
       ],
@@ -2707,6 +2733,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Para revisar seus dados importados, clique no ícone do ${ PASS_APP_NAME } na barra de ferramentas de seu navegador."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Para configurar o desbloqueio por biometria, o ${ PASS_APP_NAME } precisa de uma nova permissão do navegador. Após você aceitá-la, a extensão será recarregada. Abra novamente esta página depois disso."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Tente recarregar ou reinstalar a extensão e verifique se o navegador e o ${ PASS_SHORT_APP_NAME } estão atualizados."
@@ -3213,6 +3242,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Check": [
+        "Verificar"
+      ],
       "Checkbox": [
         "Caixa de seleção"
       ],
@@ -3371,6 +3403,12 @@
       ],
       "Enter email or username": [
         "Digite o e-mail ou nome de usuário"
+      ],
+      "Exact host matching": [
+        "Correspondência exata de host"
+      ],
+      "Exact URL matching": [
+        "Correspondência de URL exata"
       ],
       "Expiration date": [
         "Data de expiração"
@@ -3663,6 +3701,9 @@
       "Never": [
         "Nunca"
       ],
+      "Never fill on this exact URL": [
+        "Nunca preencher nesta URL exata"
+      ],
       "New email": [
         "Novo e-mail"
       ],
@@ -3719,6 +3760,9 @@
       ],
       "Owner": [
         "Proprietário"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domínio pai e subdomínios (padrão)"
       ],
       "Passkey": [
         "Chave de acesso"
@@ -4062,6 +4106,9 @@
       "Update": [
         "Atualizar"
       ],
+      "URL wildcard pattern": [
+        "Padrão de URL com caractere curinga"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Use o ${ PASS_APP_NAME } como seu gerenciador de senhas padrão do seu navegador"
       ],
@@ -4168,8 +4215,23 @@
         "${ count } item",
         "${ count } itens"
       ],
+      "'Starts with' matching rule": [
+        "Regra de correspondência \"Começa com\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regra de correspondência exata de (sub) domínio"
+      ],
+      "Exact URL matching rule": [
+        "Regra de correspondência de URL exata"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca preencher com esta URL exata"
+      ],
       "Regular expression rule": [
         "Regra de expressão regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regra de correspondência com padrão curinga"
       ],
       "You can drag and drop the selected item to another vault": [
         "Você pode arrastar e soltar o item selecionado para outro cofre",
@@ -4473,6 +4535,23 @@
         "Usado no ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Insira uma URL para verificar se a sua regra atual corresponde a ela"
+      ],
+      "The rule is matching this URL": [
+        "A regra corresponde a esta URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "A regra NÃO corresponde a esta URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Esta URL será bloqueada no preenchimento automático"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Esta URL NÃO será bloqueada no preenchimento automático"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } e ${ remainingCount } outros potenciais vazamentos foram detectados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
@@ -4676,6 +4755,9 @@
       ],
       "Add mailbox": [
         "Adicionar caixa de correio"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajuste os comportamentos do preenchimento automático para alterar onde os inícios de sessão são sugeridos."
       ],
       "Agent setup instructions": [
         "Intruções de confirmação de agente"
@@ -5108,6 +5190,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sincronizar seus aliases com SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Testar uma URL com esta regra"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Agradecemos a você por instalar o ${ PASS_APP_NAME }"
       ],
@@ -5244,6 +5329,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "A senha da ${ BRAND_NAME } é obrigatória"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "O modo ${ modeLabelStong } oferece um controle avançado, mas um único erro pode fazer com que o preenchimento automático corresponda e preencha dados em sites fraudulentos ou de phishing."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Modo off-line do ${ PASS_SHORT_APP_NAME } está desativado."
@@ -5448,6 +5536,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Este endereço de e-mail não será mais monitorado para violações de dados."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Este item não pode ser sugerido para preenchimento automático devido à regra \"${ neverModeDescriptionStrong }\". Adicione outra URL se você quiser o preenchimento automático para este item."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Esse item está atualmente compartilhado. Eliminá-lo removerá o acesso de todos os outros usuários."
