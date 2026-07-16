@@ -1,4 +1,4 @@
-import type * as Comlink from 'comlink';
+import * as Comlink from 'comlink';
 import isDeepEqual from 'lodash/isEqual';
 
 import type { ESItem, NormalizedSearchParams } from '@proton/encrypted-search/models';
@@ -19,9 +19,6 @@ export class Search {
 
     private unfilteredResults?: SearchResult[];
     private filteredResults?: SearchResult[];
-
-    private idsQueue: string[][] = [];
-    private queueRunning = false;
 
     constructor(
         private params: NormalizedSearchParams,
@@ -64,44 +61,6 @@ export class Search {
         });
     }
 
-    private enqueueIDs(idQueue: string[]) {
-        if (idQueue.length === 0) {
-            return;
-        }
-
-        this.idsQueue.push(idQueue);
-        if (this.queueRunning) {
-            return;
-        }
-
-        this.queueRunning = true;
-        this.processQueue()
-            .catch((err) => {
-                this.onError.notify(err as Error);
-            })
-            .finally(() => {
-                this.queueRunning = false;
-            });
-    }
-
-    private async processQueue() {
-        const oldStore = await this.openESReader();
-        try {
-            while (this.idsQueue.length !== 0) {
-                // Can we get rid of the bang?
-                const ids = this.idsQueue.shift()!;
-
-                performance.mark('search-read-messages-start');
-                const storeMessages = await oldStore.readMessages(ids);
-                this.unfilteredResults?.push(...storeMessages);
-                performance.measure('search-read-messages', 'search-read-messages-start');
-                this.applyFilters();
-            }
-        } finally {
-            oldStore.close();
-        }
-    }
-
     /**
      * Run a search against the content-search-v2 index and return the matching messages
      * as elements, ready to be handed to the encrypted-search results callback. The hit
@@ -109,17 +68,39 @@ export class Search {
      * which V2 seeds from and therefore always exists alongside it.
      */
     private async execute(): Promise<void> {
-        const worker = await this.workerPromise;
-        // index does not exist yet, for now just show empty results
-        if (!worker) {
-            this.unfilteredResults = [];
+        const promises: Promise<void>[] = [];
+        const oldStore = await this.openESReader();
+
+        const fetchMessagesForIDs = async (ids: string[]) => {
+            performance.mark('search-read-messages-start');
+            const storeMessages = await oldStore.readMessages(ids);
+            this.unfilteredResults = this.unfilteredResults
+                ? this.unfilteredResults.concat(storeMessages)
+                : storeMessages;
+            performance.measure('search-read-messages', 'search-read-messages-start');
             this.applyFilters();
-            return;
+        };
+
+        try {
+            const worker = await this.workerPromise;
+            // index does not exist yet, for now just show empty results
+            if (!worker) {
+                this.unfilteredResults = [];
+                this.applyFilters();
+                return;
+            }
+            performance.mark('search-worker-start');
+            await worker.search(
+                this.params,
+                Comlink.proxy((ids) => {
+                    promises.push(fetchMessagesForIDs(ids));
+                })
+            );
+
+            await Promise.all(promises);
+        } finally {
+            oldStore.close();
         }
-        performance.mark('search-worker-start');
-        await worker.search(this.params, (results) => {
-            this.enqueueIDs(results);
-        });
     }
 
     private applyFilters() {
