@@ -35,6 +35,7 @@ function createNode(
                 state: RevisionState.Active,
                 creationTime: new Date(),
                 storageSize: 0,
+                isImported: false,
             };
             activeRevision = { ok: true, value: revision };
         }

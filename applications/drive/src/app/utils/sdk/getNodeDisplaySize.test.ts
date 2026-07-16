@@ -15,6 +15,7 @@ describe('getNodeDisplaySize', () => {
         creationTime: new Date('2023-01-01'),
         contentAuthor: mockAuthor,
         storageSize: 2048,
+        isImported: false,
         claimedSize: 1500,
         claimedModificationTime: new Date('2023-01-01'),
         claimedDigests: { sha1: 'abc123', sha1Verified: false },
