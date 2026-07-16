@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectProvisionalAttachments } from '../../../redux/selectors';
 import type { Attachment, SpaceId } from '../../../types';
+import { filterStaleDriveAttachments } from './fileMentionHelpers';
 import type { FileItem } from './useFileMentionAutocomplete';
 
 export const EMPTY_FILES: FileItem[] = [];
@@ -62,7 +63,8 @@ function computeFileList(
 
 export function useFileInventory(
     spaceId: SpaceId | undefined,
-    driveFiles: { id: string; name: string }[]
+    driveFiles: { id: string; name: string }[],
+    isDriveLinkedProject: boolean = false
 ): FileItem[] {
     const allAttachments = useLumoSelector(selectAttachments);
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
@@ -77,6 +79,8 @@ export function useFileInventory(
 
     return useMemo(() => {
         const files = computeFileList(spaceAttachments, driveFiles, allAttachments, provisionalAttachments);
-        return files.length === 0 ? EMPTY_FILES : files;
-    }, [spaceAttachments, driveFiles, allAttachments, provisionalAttachments]);
+        const liveDriveFileIds = new Set(driveFiles.map((file) => file.id));
+        const filtered = filterStaleDriveAttachments(files, liveDriveFileIds, isDriveLinkedProject);
+        return filtered.length === 0 ? EMPTY_FILES : filtered;
+    }, [spaceAttachments, driveFiles, allAttachments, provisionalAttachments, isDriveLinkedProject]);
 }

@@ -6,7 +6,9 @@ import type { DriveSDKFunctions } from './useFileMentionAutocomplete';
 export function useDriveFileLoader(
     linkedDriveFolder: { folderId: string } | undefined,
     driveSDK: DriveSDKFunctions | undefined,
-    onRefresh?: () => void
+    onRefresh?: () => void,
+    /** Bumps when the search index changes — triggers a fresh Drive folder listing. */
+    driveIndexRevision: number = 0
 ): {
     driveFiles: { id: string; name: string }[];
     refreshDriveFiles: () => Promise<void>;
@@ -26,7 +28,7 @@ export function useDriveFileLoader(
             if (!driveSDK) return [];
 
             try {
-                const children = await driveSDK.browseFolderChildren(folderId);
+                const children = await driveSDK.browseFolderChildren(folderId, true);
                 const allFiles: { id: string; name: string; path: string }[] = [];
 
                 for (const child of children) {
@@ -66,6 +68,12 @@ export function useDriveFileLoader(
         if (!linkedDriveFolder || driveFilesLoadedRef.current || !driveSDK) return;
         void refreshDriveFiles();
     }, [linkedDriveFolder, driveSDK, refreshDriveFiles]);
+
+    // Re-list Drive files when the search index changes (e.g. file deleted on Drive).
+    useEffect(() => {
+        if (!linkedDriveFolder || !driveSDK || driveIndexRevision === 0) return;
+        void refreshDriveFiles();
+    }, [driveIndexRevision, linkedDriveFolder, driveSDK, refreshDriveFiles]);
 
     return { driveFiles, refreshDriveFiles };
 }

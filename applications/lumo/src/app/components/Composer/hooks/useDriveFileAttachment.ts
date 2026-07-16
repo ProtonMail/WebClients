@@ -5,9 +5,8 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 
-import { useFileProcessing } from '../../../hooks';
-import { getApproximateTokenCount } from '../../../llm/tokenizer';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
+import { getApproximateTokenCount } from '../../../llm/tokenizer';
 import { useLumoDispatch } from '../../../redux/hooks';
 import { upsertAttachment } from '../../../redux/slices/core/attachments';
 import { SearchService } from '../../../services/search/searchService';
@@ -24,7 +23,6 @@ export function useDriveFileAttachment(
 } {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
-    const fileProcessingService = useFileProcessing();
     const isGuest = useIsGuest();
 
     const attach = useCallback(
@@ -40,14 +38,14 @@ export function useDriveFileAttachment(
                 uploadedAt: new Date().toISOString(),
                 rawBytes: 0,
                 processing: true,
+                driveNodeId: file.id,
+                conversationContext: true,
             };
 
             try {
                 const isImage = getProcessingCategory(mimeType, file.name) === 'image';
 
                 if (isImage) {
-                    // Images are passed as raw bytes directly to the LLM — no text extraction needed.
-                    // Bypassing the processing pipeline avoids unnecessary thumbnail generation.
                     console.log('[FileMention] Downloading image from Drive (raw):', file.name);
                     const fileData = await driveSDK.downloadFile(file.id);
                     const data = new Uint8Array(fileData);
@@ -59,121 +57,55 @@ export function useDriveFileAttachment(
                     return;
                 }
 
-                // Non-image files: check search index cache before downloading
-                let content: string | null = null;
-                let fileSize = 0;
-
+                // Non-image Drive files: resolve text content from the search index.
                 if (userId && !isGuest) {
                     const searchService = SearchService.get(userId);
-                    const indexedDoc = searchService.getDocumentById(file.id);
-                    if (indexedDoc && indexedDoc.content) {
-                        console.log('[FileMention] Using cached content from search index for:', file.name);
-                        content = indexedDoc.content;
-                        fileSize = indexedDoc.size;
-                    }
-                }
-
-                if (!content) {
-                    console.log('[FileMention] Downloading file from Drive:', file.name);
-                    const fileData = await driveSDK.downloadFile(file.id);
-                    const data = new Uint8Array(fileData);
-                    fileSize = data.byteLength;
-
-                    const fileBlob = new Blob([data], { type: mimeType });
-                    const driveFile = new File([fileBlob], file.name, {
-                        type: mimeType,
-                        lastModified: Date.now(),
-                    });
-
-                    const result = await fileProcessingService.processFile(driveFile);
-
-                    if (result.type === 'text') {
-                        content = result.content;
-                    } else if (result.type === 'error') {
-                        if (result.unsupported) {
-                            dispatch(
-                                upsertAttachment({
-                                    ...provisionalBase,
-                                    error: true,
-                                    errorMessage: 'File format not supported',
-                                    processing: false,
-                                })
-                            );
-                            createNotification({
-                                text: c('collider_2025:Error').t`File format not supported: ${file.name}`,
-                                type: 'error',
-                            });
-                        } else {
-                            dispatch(
-                                upsertAttachment({
-                                    ...provisionalBase,
-                                    error: true,
-                                    errorMessage: result.message,
-                                    processing: false,
-                                })
-                            );
-                            createNotification({
-                                text: c('collider_2025:Error').t`Failed to process file: ${file.name}`,
-                                type: 'error',
-                            });
-                        }
+                    await searchService.ensureManifestReady();
+                    const doc = searchService.retrieveDocumentForMention(file.name, undefined, file.name, file.id);
+                    if (doc?.content) {
+                        console.log('[FileMention] Resolved content from search index for:', file.name);
+                        dispatch(
+                            upsertAttachment({
+                                ...provisionalBase,
+                                rawBytes: doc.size || new TextEncoder().encode(doc.content).length,
+                                markdown: doc.content,
+                                tokenCount: getApproximateTokenCount(doc.content),
+                                processing: false,
+                                ...(doc.isChunk && {
+                                    isChunk: doc.isChunk,
+                                    chunkTitle: doc.chunkTitle,
+                                }),
+                            })
+                        );
                         return;
                     }
-                }
-
-                if (content) {
-                    const filename = `Filename: ${file.name}`;
-                    const header = 'File contents:';
-                    const beginMarker = '----- BEGIN FILE CONTENTS -----';
-                    const endMarker = '----- END FILE CONTENTS -----';
-                    const fullContext = [filename, header, beginMarker, content.trim(), endMarker].join('\n');
-                    const tokenCount = getApproximateTokenCount(fullContext);
-
-                    dispatch(
-                        upsertAttachment({
-                            ...provisionalBase,
-                            rawBytes: fileSize,
-                            markdown: content,
-                            truncated: false,
-                            tokenCount,
-                            processing: false,
-                        })
-                    );
-                }
-            } catch (error) {
-                console.error('Failed to download/process Drive file:', error);
-
-                const isIntegrityError =
-                    error instanceof Error &&
-                    (error.message.includes('Data integrity check failed') ||
-                        error.message.includes('IntegrityError') ||
-                        error.name === 'IntegrityError');
-
-                const errorMessage = isIntegrityError
-                    ? c('collider_2025:Error').t`File download failed due to integrity check. Please try again.`
-                    : error instanceof Error
-                      ? error.message
-                      : 'Failed to process file';
-
-                if (isIntegrityError) {
-                    createNotification({
-                        text: c('collider_2025:Error')
-                            .t`Failed to download "${file.name}": Data integrity check failed. Please try again.`,
-                        type: 'error',
-                    });
                 }
 
                 dispatch(
                     upsertAttachment({
                         ...provisionalBase,
+                        processing: true,
+                    })
+                );
+                createNotification({
+                    text: c('collider_2025:Info')
+                        .t`"${file.name}" is still being indexed. Content will be loaded when you send.`,
+                    type: 'info',
+                });
+            } catch (error) {
+                console.error('Failed to resolve Drive file from search index:', error);
+
+                dispatch(
+                    upsertAttachment({
+                        ...provisionalBase,
                         error: true,
-                        errorMessage,
+                        errorMessage: error instanceof Error ? error.message : 'Failed to process file',
                         processing: false,
                     })
                 );
             }
         },
-        [driveSDK, userId, isGuest, dispatch, createNotification, fileProcessingService]
+        [driveSDK, userId, isGuest, dispatch, createNotification]
     );
 
     return { attach };

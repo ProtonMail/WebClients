@@ -1,4 +1,4 @@
-import { Suspense, lazy, useCallback, useEffect } from 'react';
+import { Suspense, lazy, useCallback, useEffect, useRef } from 'react';
 import { useParams, useRouteMatch } from 'react-router-dom';
 
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
@@ -19,6 +19,7 @@ import {
     selectConversationById,
     selectConversations,
     selectMessagesByConversationId,
+    selectMessageAttachmentIds,
     selectProvisionalAttachments,
     selectSpaceByConversationId,
 } from '../../redux/selectors';
@@ -45,6 +46,10 @@ const ConversationPageComponentInner = () => {
     const { setConversationId } = useConversation();
     const isGuest = useIsGuest();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
+    const messageAttachmentIds = useLumoSelector(selectMessageAttachmentIds);
+    const messageAttachmentIdsRef = useRef(messageAttachmentIds);
+    messageAttachmentIdsRef.current = messageAttachmentIds;
+    const prevConversationIdRef = useRef<ConversationId | undefined>();
     // Extract query parameters from URL (will be cleared after reading)
     const initialQuery = useQueryParam('q');
     const prefillQuery = useQueryParam('prefill');
@@ -105,13 +110,14 @@ const ConversationPageComponentInner = () => {
         setConversationId(curConversationId);
 
         // Clear context filters and provisional attachments when switching conversations
-        // to prevent them from previous conversations affecting the current one
-        // Only clear if we're switching to a different conversation (not initial load)
-        if (curConversationId) {
+        // to prevent them from previous conversations affecting the current one.
+        // Only run when the conversation ID actually changes — not on message updates.
+        if (curConversationId && prevConversationIdRef.current !== curConversationId) {
             dispatch(resetAllContextFilters());
-            dispatch(clearProvisionalAttachments());
+            dispatch(clearProvisionalAttachments({ preserveIds: messageAttachmentIdsRef.current }));
         }
 
+        prevConversationIdRef.current = curConversationId;
         return () => setConversationId(undefined);
     }, [curConversationId, dispatch]);
 

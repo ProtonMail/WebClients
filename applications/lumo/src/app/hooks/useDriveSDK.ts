@@ -55,7 +55,11 @@ export interface EventSubscription {
 
 export interface DriveSDKMethods {
     browseFolderChildren: (folderUid?: string, forceRefresh?: boolean) => Promise<DriveNode[]>;
-    downloadFile: (nodeUid: string, onProgress?: (progress: number) => void) => Promise<ArrayBuffer>;
+    downloadFile: (
+        nodeUid: string,
+        onProgress?: (progress: number) => void,
+        forceRefresh?: boolean
+    ) => Promise<ArrayBuffer>;
     uploadFile: (folderUid: string, file: File, onProgress?: (progress: number) => void) => Promise<string>;
     createFolder: (parentFolderUid: string, folderName: string) => Promise<string>;
     navigateToFolder: (folderUid: string) => void;
@@ -245,7 +249,11 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
     );
 
     const downloadFile = useCallback(
-        async (nodeUid: string, onProgress?: (progress: number) => void): Promise<ArrayBuffer> => {
+        async (
+            nodeUid: string,
+            onProgress?: (progress: number) => void,
+            forceRefresh?: boolean
+        ): Promise<ArrayBuffer> => {
             // Prevent Drive API calls for guest users
             if (isGuest) {
                 throw new Error('Drive is not available for guest users');
@@ -260,6 +268,12 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
                     ...prev,
                     downloadProgress: { ...prev.downloadProgress, [nodeUid]: 0 },
                 }));
+
+                // Clear cache before download so desktop sync updates aren't served stale
+                if (forceRefresh && clearCache) {
+                    console.log('[DriveSDK] Force refresh download - clearing cache');
+                    await clearCache();
+                }
 
                 const downloader = await drive.getFileDownloader(nodeUid);
                 const claimedSize = downloader.getClaimedSizeInBytes() || 0;
@@ -330,7 +344,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
                 throw error;
             }
         },
-        [drive, isGuest]
+        [drive, isGuest, clearCache]
     );
 
     const uploadFile = useCallback(

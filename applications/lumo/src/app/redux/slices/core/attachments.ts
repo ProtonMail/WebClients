@@ -48,7 +48,14 @@ export const upsertAttachment = createAction<Attachment>('lumo/attachment/upsert
 export const deleteAttachment = createAction<AttachmentId>('lumo/attachment/delete');
 export const deleteAllAttachments = createAction('lumo/attachment/deleteAll');
 export const deleteAttachmentsBySpaceId = createAction<SpaceId>('lumo/attachment/deleteBySpaceId');
-export const clearProvisionalAttachments = createAction('lumo/attachment/clearProvisional');
+export type ClearProvisionalAttachmentsPayload = {
+    /** Attachment IDs to keep even when they lack a spaceId (e.g. sent @mention files). */
+    preserveIds?: AttachmentId[];
+};
+
+export const clearProvisionalAttachments = createAction<ClearProvisionalAttachmentsPayload | undefined>(
+    'lumo/attachment/clearProvisional'
+);
 export const addAttachment = createAction<Attachment>('lumo/attachment/add');
 
 // High-level Redux-saga requests and events.
@@ -135,11 +142,15 @@ const attachmentsReducer = createReducer<AttachmentMap>(EMPTY_ATTACHMENT_MAP, (b
                 }
             });
         })
-        .addCase(clearProvisionalAttachments, (state) => {
+        .addCase(clearProvisionalAttachments, (state, action) => {
             console.log('Action triggered: clearProvisionalAttachments');
-            // Remove all attachments that don't have a spaceId (provisional attachments)
+            const preserveIds = new Set(action.payload?.preserveIds ?? []);
+            // Remove composer provisionals (no spaceId) unless they are bound to a sent message.
             const provisionalIds = Object.entries(state)
-                .filter(([_, attachment]) => !attachment.spaceId)
+                .filter(
+                    ([id, attachment]) =>
+                        !attachment.spaceId && !attachment.conversationContext && !preserveIds.has(id)
+                )
                 .map(([id]) => id);
             provisionalIds.forEach((id) => {
                 delete state[id];
