@@ -1226,6 +1226,10 @@
         "${ n } messaggio al giorno",
         "${ n } messaggi al giorno"
       ],
+      "${ options }-day file version history": [
+        "Cronologia delle versioni dei file di ${ options } giorno",
+        "Cronologia delle versioni dei file di ${ options } giorni"
+      ],
       "${ size } attachment size": [
         "Dimensioni allegato ${ size }"
       ],
