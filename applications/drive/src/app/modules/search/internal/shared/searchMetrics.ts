@@ -4,8 +4,8 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Logger } from './Logger';
 import {
     type PermanentErrorKind,
-    TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS,
-    TRANSIENT_REPORT_THROTTLE_MS,
+    SENTRY_REPORT_BURST_MAX_ATTEMPTS,
+    SENTRY_REPORT_BURST_WINDOW_MS,
     type TransientErrorKind,
     classifyError,
     sendErrorReportForSearch,
@@ -30,32 +30,38 @@ export type SearchPermanentErrorKind = PermanentErrorKind;
 export type SearchTransientErrorKind = TransientErrorKind;
 
 export type SearchEnvironmentIncompatibilityReason =
-    | 'safari_too_old'
-    | 'shared_worker_unsupported'
-    | 'indexed_db_unsupported'
-    | 'indexed_db_probe_failed'
-    | 'mobile';
+    'safari_too_old' | 'shared_worker_unsupported' | 'indexed_db_unsupported' | 'indexed_db_probe_failed' | 'mobile';
 
 export type SearchOptInKind = 'manual' | 'legacy_auto_upgrade';
 
 export type SearchWorkerHealthErrorKind = 'heartbeat-timeout' | 'heartbeat-error' | 'reconnect-failure';
 
-// Per-task-UID Sentry-report bursts. Each burst allows up to MAX_REPORTED_ATTEMPTS
-// reports; after TRANSIENT_REPORT_THROTTLE_MS from the burst start, a new burst opens
-// so ongoing problems remain visible without flooding. The bucket is also cleared
-// when the task succeeds (see `markIndexerTaskSucceeded`), mirroring the queue's
-// per-UID retry counter so a recovered task gets a fresh reporting budget.
+// Sentry-report burst tracker shared by the two throttles below: each burst allows up to
+// SENTRY_REPORT_BURST_MAX_ATTEMPTS reports; after SENTRY_REPORT_BURST_WINDOW_MS from the burst
+// start, a new burst opens so ongoing problems remain visible without flooding.
+function shouldReportToSentry(bursts: Map<string, { count: number; windowStartedAt: number }>, key: string): boolean {
+    const now = Date.now();
+    const existing = bursts.get(key);
+    const burst =
+        !existing || now - existing.windowStartedAt >= SENTRY_REPORT_BURST_WINDOW_MS
+            ? { count: 1, windowStartedAt: now }
+            : { count: existing.count + 1, windowStartedAt: existing.windowStartedAt };
+    bursts.set(key, burst);
+    return burst.count <= SENTRY_REPORT_BURST_MAX_ATTEMPTS;
+}
+
+// Structure to store the burst of transient errors.
 const transientReportBursts = new Map<string, { count: number; windowStartedAt: number }>();
 
 function shouldReportTransientToSentry(taskUid: string): boolean {
-    const now = Date.now();
-    const existing = transientReportBursts.get(taskUid);
-    const burst =
-        !existing || now - existing.windowStartedAt >= TRANSIENT_REPORT_THROTTLE_MS
-            ? { count: 1, windowStartedAt: now }
-            : { count: existing.count + 1, windowStartedAt: existing.windowStartedAt };
-    transientReportBursts.set(taskUid, burst);
-    return burst.count <= TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS;
+    return shouldReportToSentry(transientReportBursts, taskUid);
+}
+
+// Structure to store the burst of broken node errors (and associated quarantine operations).
+const quarantineReportBursts = new Map<string, { count: number; windowStartedAt: number }>();
+
+function shouldReportQuarantineToSentry(populatorUid: string): boolean {
+    return shouldReportToSentry(quarantineReportBursts, populatorUid);
 }
 
 export const searchMetrics = {
@@ -227,10 +233,42 @@ export const searchMetrics = {
     },
 
     /**
+     * A node was skipped during indexing after a node-scoped failure and recorded in the repair
+     * table for later re-processing.
+     */
+    markNodeQuarantined({
+        populatorUid,
+        operation,
+        error,
+    }: {
+        populatorUid: string;
+        operation: string;
+        error: unknown;
+    }): void {
+        // TODO(DRVWEB-5567): Add grafana metric.
+
+        if (shouldReportQuarantineToSentry(populatorUid)) {
+            sendErrorReportForSearch('Adding node to repair table', error, {
+                tags: { label: 'search-repair-node' },
+                extra: { operation },
+            });
+        } else {
+            Logger.error(`${populatorUid}: quarantined node (${operation}) [Sentry-throttled]`, error);
+        }
+    },
+
+    /**
+     * A previously-quarantined node was reprocessed successfully and removed from the repair table.
+     */
+    markNodeRepaired(): void {
+        // TODO(DRVWEB-5567): Add grafana metric.
+    },
+
+    /**
      * Report other search error.
      */
     markSearchOtherError({ error }: { error: unknown }): void {
-        // TODO(DRVWEB-5567): Add grafana metric inrement.
+        // TODO(DRVWEB-5567): Add grafana metric.
 
         sendErrorReportForSearch('Search unknown error', error, {
             tags: { label: 'search-other-errors' },
@@ -249,13 +287,14 @@ export function startSearchTimer(): () => number {
 }
 
 /**
- * Test-only: clear the in-module transient-error throttle state so tests don't
- * inherit Sentry-bucket counters from previous test cases. Production code never
- * needs this — entries are bounded by the number of distinct task UIDs and the
- * SharedWorker is recreated on browser reload.
+ * Test-only: clear the in-module transient-error and node-quarantine throttle state so tests
+ * don't inherit Sentry-bucket counters from previous test cases. Production code never needs
+ * this - entries are bounded by the number of distinct task/populator UIDs and the SharedWorker
+ * is recreated on browser reload.
  */
 export function resetTransientReportBurstsForTests(): void {
     transientReportBursts.clear();
+    quarantineReportBursts.clear();
 }
 
 /**

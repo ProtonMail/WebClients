@@ -33,6 +33,10 @@ export interface TaskContext {
      * Index populators currently registered in the IndexerTaskQueue.
      */
     readonly activeIndexPopulators: readonly ActiveIndexPopulator[];
+    /**
+     * Resolve a full IndexPopulator by its uid, or undefined if it isn't registered this session.
+     */
+    readonly getIndexPopulator: (uid: string) => IndexPopulator | undefined;
 }
 
 export abstract class BaseTask {

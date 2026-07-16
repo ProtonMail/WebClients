@@ -8,6 +8,7 @@ export class FakeSdkDriveClient implements SdkDriveClient {
     private tree = new Map<string, NodeEntity[]>();
     private iterateError: Error | undefined;
     private failNextIterateFolders = new Map<string, Error>();
+    private getNodeErrors = new Map<string, Error>();
 
     setNode(nodeUid: string, node: NodeEntity): void {
         this.nodes.set(nodeUid, node);
@@ -30,7 +31,21 @@ export class FakeSdkDriveClient implements SdkDriveClient {
         this.failNextIterateFolders.set(folderUid, error);
     }
 
+    /** Make getNode(uid) throw the given error until cleared (e.g. a node-scoped decryption failure). */
+    setGetNodeError(nodeUid: string, error: Error): void {
+        this.getNodeErrors.set(nodeUid, error);
+    }
+
+    /** Clear a forced getNode failure so the node can be fetched again. */
+    clearGetNodeError(nodeUid: string): void {
+        this.getNodeErrors.delete(nodeUid);
+    }
+
     async getNode(nodeUid: string): Promise<NodeEntity> {
+        const forcedError = this.getNodeErrors.get(nodeUid);
+        if (forcedError) {
+            throw forcedError;
+        }
         const node = this.nodes.get(nodeUid);
         if (node === undefined) {
             throw new Error(`FakeSdkDriveClient: node "${nodeUid}" not set. Call setNode() first.`);

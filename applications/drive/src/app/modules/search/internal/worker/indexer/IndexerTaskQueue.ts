@@ -28,6 +28,7 @@ import { CleanUpStaleIndexEntryTask } from './tasks/CleanUpTasks/CleanUpStaleInd
 import { IncrementalUpdateTask } from './tasks/CoreTasks/IncrementalUpdateTask';
 import { IndexPopulatorTask } from './tasks/CoreTasks/IndexPopulatorTask';
 import { PersistDataTask } from './tasks/CoreTasks/PersistDataTask';
+import { RepairFailedNodesTask } from './tasks/CoreTasks/RepairFailedNodesTask';
 
 export type IndexerState = {
     isIndexing: boolean;
@@ -311,6 +312,7 @@ export class IndexerTaskQueue {
             },
             notifyIndexingProgress: () => this.notifyIndexingProgress(),
             activeIndexPopulators: [...this.populators.values()],
+            getIndexPopulator: (uid: string) => this.populators.get(uid),
         };
 
         const uid = task.getUid();
@@ -372,7 +374,11 @@ export class IndexerTaskQueue {
 
         return {
             bootstrapTasks: [new IndexPopulatorTask(myFilesPopulator)],
-            postBootstrapTasks: [new CleanUpStaleIndexEntryTask(), new CleanUpStaleBlobsTask()],
+            postBootstrapTasks: [
+                new CleanUpStaleIndexEntryTask(),
+                new CleanUpStaleBlobsTask(),
+                new RepairFailedNodesTask(),
+            ],
         };
     }
 

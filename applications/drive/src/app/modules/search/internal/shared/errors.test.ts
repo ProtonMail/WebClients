@@ -5,7 +5,7 @@ import {
     ServerError as SdkServerError,
 } from '@proton/drive';
 
-import { InvalidIndexerState, SearchLibraryError, classifyError } from './errors';
+import { InvalidIndexerState, SearchLibraryError, classifyError, isRepairableError } from './errors';
 
 describe('classifyError', () => {
     describe('permanent beats transient', () => {
@@ -112,5 +112,31 @@ describe('classifyError', () => {
             expect(classifyError(42)).toEqual({ kind: 'transient', reason: 'unknown' });
             expect(classifyError({ random: 'object' })).toEqual({ kind: 'transient', reason: 'unknown' });
         });
+    });
+});
+
+describe('isRepairableError', () => {
+    it('treats abort as not repairable', () => {
+        expect(isRepairableError(new DOMException('aborted', 'AbortError'))).toBe(false);
+        expect(isRepairableError(new SdkAbortError('aborted'))).toBe(false);
+    });
+
+    it('treats permanent errors as not repairable', () => {
+        expect(isRepairableError(new DOMException('', 'QuotaExceededError'))).toBe(false);
+        expect(isRepairableError(new DOMException('', 'VersionError'))).toBe(false);
+        expect(isRepairableError(new InvalidIndexerState('bad'))).toBe(false);
+        expect(isRepairableError(new SearchLibraryError('wasm crash', null))).toBe(false);
+    });
+
+    it('treats known transient network-family errors as not repairable', () => {
+        expect(isRepairableError(new SdkRateLimitedError('429'))).toBe(false);
+        expect(isRepairableError(new SdkServerError('5xx'))).toBe(false);
+        expect(isRepairableError(new SdkConnectionError('connection'))).toBe(false);
+    });
+
+    it('treats unknown deterministic errors as node-scoped (repairable)', () => {
+        expect(isRepairableError(new Error('decryption failed'))).toBe(true);
+        expect(isRepairableError('string')).toBe(true);
+        expect(isRepairableError({ random: 'object' })).toBe(true);
     });
 });

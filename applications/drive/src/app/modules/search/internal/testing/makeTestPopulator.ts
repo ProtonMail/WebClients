@@ -12,5 +12,6 @@ export const makeTestPopulator = (
         indexKind: 'main',
         indexPopulatorKind: id,
         processIncrementalUpdates: jest.fn(async (events: unknown[]) => events.length),
+        repairNode: jest.fn(async () => {}),
         ...overrides,
     }) as unknown as IndexPopulator;
