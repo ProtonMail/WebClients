@@ -2274,10 +2274,7 @@
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -3798,6 +3795,9 @@
       "Never": [
         "Ніколі"
       ],
+      "Never fill on this exact URL": [
+        "Ніколі не запаўняць на гэтым дакладным URL-адрасе"
+      ],
       "New email": [
         "Новы ліст"
       ],
@@ -4320,8 +4320,14 @@
       "Exact URL matching rule": [
         "Правіла дакладнага супадзення URL-адраса"
       ],
+      "Never fill with this exact URL": [
+        "Ніколі не запаўняць з гэтага дакладнага URL-адраса"
+      ],
       "Regular expression rule": [
         "Правіла рэгулярнага выразу"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правіла супастаўлення па шаблоне з падстаноўчымі знакамі"
       ],
       "You can drag and drop the selected item to another vault": [
         "Вы можаце перацягнуць выбраны элемент у іншае сховішча",
@@ -4635,6 +4641,9 @@
       ],
       "The rule is matching this URL": [
         "Правіла адпавядае гэтаму URL-адрасу"
+      ],
+      "The rule is NOT matching this URL": [
+        "Правіла НЕ адпавядае гэтаму URL-адрасу"
       ],
       "This URL will be blocked from autofill": [
         "Гэты URL-адрас будзе заблакіраваны для аўтазапаўнення"
@@ -5438,6 +5447,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Патрабуецца ўвесці пароль ${ BRAND_NAME }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } забяспечвае магутны кантроль, але адна памылка можа прывесці да таго, што аўтазапаўненне спрацуе і запоўніць даныя на махлярскіх або фішынгавых вэб-сайтах."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Пазасеткавы рэжым у ${ PASS_SHORT_APP_NAME } выключаны."

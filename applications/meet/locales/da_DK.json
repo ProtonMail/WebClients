@@ -43,6 +43,9 @@
       "${ name } says: ${ message }": [
         "${ name } siger: ${ message }"
       ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
       "A participant joined the meeting": [
         "En deltager tilsluttede sig mødet"
       ],
@@ -135,6 +138,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } ny",
+        "${ newMessageCount } nye"
+      ],
       "Add account": [
         "Tilføj konto"
       ],
@@ -197,6 +204,9 @@
       ],
       "Close preview": [
         "Luk forhåndsvisning"
+      ],
+      "Close reply composer": [
+        "Luk skrivevindue til svar"
       ],
       "Close this banner": [
         "Luk dette banner"
@@ -266,6 +276,9 @@
       ],
       "Dismiss": [
         "Afvis"
+      ],
+      "Dismiss new messages": [
+        "Afvis nye beskeder"
       ],
       "Done": [
         "Udført"
@@ -509,6 +522,9 @@
       "Send an encrypted message": [
         "Send en krypteret besked"
       ],
+      "Send reply": [
+        "Send svar"
+      ],
       "Settings": [
         "Indstillinger"
       ],
@@ -646,6 +662,12 @@
       ],
       "Waiting room": [
         "Venteværelse"
+      ],
+      "Waiting room disabled": [
+        "Venteværelse deaktiveret"
+      ],
+      "Waiting room enabled": [
+        "Venteværelse aktiveret"
       ]
     },
     "Alt": {
@@ -715,6 +737,9 @@
       "Rotate camera": [
         "Rotér kamera"
       ],
+      "Save my name on this device": [
+        "Gem mit navn på denne enhed"
+      ],
       "Screen share": [
         "Skærmdeling"
       ],
@@ -756,6 +781,9 @@
       ],
       "Video settings": [
         "Videoindstillinger"
+      ],
+      "Waiting room": [
+        "Venteværelse"
       ]
     },
     "Apps dropdown": {
@@ -2132,6 +2160,10 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } reagerede med ${ emoji }"
       ],
+      "${ replyCount } reply": [
+        "${ replyCount } svar",
+        "${ replyCount } svar"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } af op til ${ maxParticipants } deltagere"
       ],
@@ -2144,6 +2176,9 @@
       ],
       "-Removed dangerous URL-": [
         "-Fjernede farlig URL-"
+      ],
+      "1 reply draft": [
+        "1 kladde til svar"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
@@ -2307,6 +2342,9 @@
       "Failed to update meeting schedule": [
         "Kunne ikke opdatere mødeplanen"
       ],
+      "Failed to update meeting waiting room status": [
+        "Kunne ikke opdatere status for møde-venteværelset"
+      ],
       "Free meeting": [
         "Gratis møde"
       ],
@@ -2430,6 +2468,9 @@
       "Member": [
         "Medlem"
       ],
+      "Message actions": [
+        "Beskedhandlinger"
+      ],
       "Message from ${ participantName }": [
         "Besked fra ${ participantName }"
       ],
@@ -2456,6 +2497,9 @@
       ],
       "New host": [
         "Ny vært"
+      ],
+      "New reply": [
+        "Nyt svar"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Ingen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } registreret."
@@ -2489,6 +2533,9 @@
       ],
       "No speaker detected": [
         "Ingen højttaler registreret"
+      ],
+      "Not sent, check your connection.": [
+        "Ikke sendt, tjek din forbindelse."
       ],
       "Only meetings you created appear here": [
         "Kun møder oprettet af dig vises her"
@@ -2643,6 +2690,9 @@
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "Mødelinket, som du prøvede at åbne, eksisterer ikke eller er udløbet. Bekræft at linket er korrekt, eller start et nyt sikkert møde i stedet."
       ],
+      "This conversation started before you joined.": [
+        "Denne samtale startede, før du tilsluttede dig."
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Denne chat er end-to-end krypteret, og beskeder forsvinder når opkaldet afsluttes."
       ],
@@ -2717,6 +2767,9 @@
       ],
       "Video effects": [
         "Videoeffekter"
+      ],
+      "View ": [
+        "Vis "
       ],
       "Warning": [
         "Advarsel"
@@ -2819,6 +2872,9 @@
       ],
       "Advanced mode": [
         "Avanceret tilstand"
+      ],
+      "Anyone with the link can join": [
+        "Alle med linket kan deltage"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
@@ -2970,6 +3026,9 @@
       "Participant controls": [
         "Deltagerkontroller"
       ],
+      "Participants join after you approve them": [
+        "Deltagere tilslutter sig efter, at De har godkendt dem"
+      ],
       "Passphrase": [
         "Adgangssætning"
       ],
@@ -2988,11 +3047,17 @@
       "Repeat event": [
         "Gentag begivenhed"
       ],
+      "Reply": [
+        "Besvar"
+      ],
       "Return to dashboard": [
         "Tilbage til kontrolpanel"
       ],
       "Reveal password": [
         "Vis adgangskode"
+      ],
+      "Save my name on this device": [
+        "Gem mit navn på denne enhed"
       ],
       "Schedule meeting": [
         "Planlæg møde"

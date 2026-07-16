@@ -4,6 +4,17 @@
     "language": "be_BY"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Open external url": [
+        "Адкрыць знешні URL-адрас"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Пратакол ${ parsedProtocol } недапушчальны. Хочаце адкрыць знешні URL-адрас?"
+      ]
+    },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
         "\"Перазапусціць і прафіляваць адразу\" неадкладна перазапускае праграму і пачынае прафіляваць праграму.\n\n\"Прафіляваць пры наступным запуску\" пачынае прафіляваць праграму пры наступным запуску. Выкарыстоўвайце гэту функцыю для вымярэння хуткасці запуску пасля перазагрузкі."

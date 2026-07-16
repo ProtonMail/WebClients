@@ -90,6 +90,9 @@
       "Apply": [
         "Применить"
       ],
+      "Ask me next time": [
+        "Спросить в следующий раз"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "В группе может быть не больше ${ maxContacts } контакта",
         "В группе может быть не больше ${ maxContacts } контактов",
@@ -258,6 +261,9 @@
       "Create and copy alias": [
         "Создать и скопировать псевдоним"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Создать новый ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "Создать новую папку"
       ],
@@ -300,6 +306,9 @@
       "Delete contact group": [
         "Удалить группу контактов"
       ],
+      "Delete older revisions": [
+        "Удалить старые версии"
+      ],
       "Delete permanently": [
         "Удалить безвозвратно"
       ],
@@ -324,8 +333,17 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Скачать приложения ${ DRIVE_APP_NAME }"
       ],
+      "Download a copy (as docx)": [
+        "Скачать копию (в формате docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Скачать копию (в формате xlsx)"
+      ],
       "Download anyway": [
         "Все равно скачать"
+      ],
+      "Download debug information": [
+        "Скачать информацию для отладки"
       ],
       "Download logs": [
         "Скачать журналы"
@@ -360,14 +378,29 @@
       "Expand": [
         "Развернуть"
       ],
+      "Explore other plans": [
+        "Изучить другие тарифы"
+      ],
       "Export": [
         "Экспорт"
       ],
       "Export contact group": [
         "Экспорт группы контактов"
       ],
+      "Export editor state for version": [
+        "Экспортировать состояние редактора для версии"
+      ],
       "Export selection as .vcf": [
         "Экспортировать выбор как .vcf"
+      ],
+      "Export this version (as docx)": [
+        "Экспортировать эту версию (в формате docx)"
+      ],
+      "Export this version (as xlsx)": [
+        "Экспортировать эту версию (в формате xlsx)"
+      ],
+      "Export YJS state for version": [
+        "Экспортировать состояние YJS для версии"
       ],
       "Forgot password?": [
         "Забыли пароль?"
@@ -561,6 +594,9 @@
       "OK": [
         "OK"
       ],
+      "Okay": [
+        "Хорошо"
+      ],
       "Open": [
         "Открыть"
       ],
@@ -618,6 +654,9 @@
       "Reload": [
         "Перезагрузить"
       ],
+      "Reload spreadsheet": [
+        "Перезагрузить электронную таблицу"
+      ],
       "Remove": [
         "Удалить"
       ],
@@ -646,6 +685,9 @@
         "Заменить файл"
       ],
       "Report a problem": [
+        "Сообщить о проблеме"
+      ],
+      "Report issue": [
         "Сообщить о проблеме"
       ],
       "Request a call": [
@@ -687,6 +729,9 @@
       "Save changes": [
         "Сохранить изменения"
       ],
+      "Save preferences": [
+        "Сохранить настройки"
+      ],
       "Search": [
         "Поиск"
       ],
@@ -695,6 +740,12 @@
       ],
       "Search recent documents": [
         "Поиск недавних документов"
+      ],
+      "Search recent spreadsheets": [
+        "Искать в недавних электронных таблицах"
+      ],
+      "Search recents": [
+        "Искать в недавних"
       ],
       "See how": [
         "Посмотреть, как"
@@ -783,6 +834,9 @@
       "Submit": [
         "Отправить"
       ],
+      "Subscribe now": [
+        "Подписаться сейчас"
+      ],
       "Switch accounts": [
         "Переключить аккаунты"
       ],
@@ -791,6 +845,9 @@
       ],
       "Take out of trash": [
         "Извлечь из Корзины"
+      ],
+      "Toggle debug mode": [
+        "Переключить режим отладки"
       ],
       "Trashing...": [
         "Перемещение в Корзину..."
@@ -803,6 +860,9 @@
       ],
       "Try another method": [
         "Попробуйте другой способ"
+      ],
+      "Try Workspace": [
+        "Попробовать Workspace"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"
@@ -873,11 +933,20 @@
       "View": [
         "Посмотреть"
       ],
+      "View ${ pendingCount } invitation": [
+        "Просмотреть ${ pendingCount } приглашение",
+        "Посмотреть все приглашения: ${ pendingCount }",
+        "Посмотреть все приглашения: ${ pendingCount }",
+        "Посмотреть все приглашения: ${ pendingCount }"
+      ],
       "View all reports": [
         "Просмотреть все отчеты"
       ],
       "View invoice": [
         "Посмотреть счет"
+      ],
+      "View only": [
+        "Только просмотр"
       ],
       "Web page (.html)": [
         "Веб-страница (.html)"
@@ -1194,6 +1263,125 @@
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Специально разработанная функция NetShield защищает ваши устройства и ускоряет работу в интернете, блокируя рекламу, трекеры и вредоносные программы."
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Активировано"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адрес уже используется пользователем вне вашей организации. Пожалуйста, обратитесь в службу поддержки клиентов для решения этой проблемы"
+      ],
+      "All": [
+        "Все"
+      ],
+      "Calendar": [
+        "Календарь"
+      ],
+      "Configure migration": [
+        "Настроить миграцию"
+      ],
+      "Contacts": [
+        "Контакты"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Статус миграции данных из Google Workspace в ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Электронные письма"
+      ],
+      "Errors": [
+        "Ошибки"
+      ],
+      "Estimated size": [
+        "Оценочный размер"
+      ],
+      "Find out what can be migrated.": [
+        "Узнайте, что можно перенести."
+      ],
+      "Has errors": [
+        "Есть ошибки"
+      ],
+      "In progress": [
+        "В процессе"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрес участника не найден. Пожалуйста, обратитесь в службу поддержки клиентов для решения этой проблемы"
+      ],
+      "Migrate": [
+        "Перенести"
+      ],
+      "Migrated": [
+        "Перенесено"
+      ],
+      "Migration status": [
+        "Статус переноса"
+      ],
+      "Missing organization private key": [
+        "Отсутствует закрытый ключ организации"
+      ],
+      "Missing organization public key": [
+        "Отсутствует открытый ключ организации"
+      ],
+      "No users to display": [
+        "Нет пользователей для отображения"
+      ],
+      "Not activated": [
+        "Не активировано"
+      ],
+      "Organization does not have enough seats available": [
+        "У организации недостаточно доступных лицензий"
+      ],
+      "Organization does not have enough storage available": [
+        "У организации недостаточно доступного места для хранения"
+      ],
+      "Pending": [
+        "В ожидании"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Выберите именно то, что вы хотите перенести. Это применится ко всем пользователям организации."
+      ],
+      "Select users to migrate": [
+        "Выберите пользователей для миграции"
+      ],
+      "Size": [
+        "Размер"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Этого пользователя невозможно перенести из-за несовместимости платформ."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Чтобы перенести этого пользователя, включите его аккаунт в консоли администратора Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Чтобы перенести этого пользователя, включите его аккаунт в разделе ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Чтобы перенести этого пользователя, включите его адрес в разделе ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Чтобы перенести этого пользователя, ему необходимо принять приглашение присоединиться к ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Чтобы перенести этого пользователя, разархивируйте его в консоли администратора Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Чтобы перенести этого пользователя, разблокируйте его в консоли администратора Google Workspace."
+      ],
+      "User": [
+        "Пользователь"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Пользователи, вошедшие в свой аккаунт ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Что вы переносите?"
+      ],
+      "You": [
+        "Вы"
       ]
     },
     "Browser": {
@@ -3033,11 +3221,23 @@
       "Failed to fetch sharing info": [
         "Не удалось загрузить информацию об общем доступе"
       ],
+      "Failed to load 'My files' folder": [
+        "Не удалось загрузить папку «Мои файлы»"
+      ],
+      "Failed to load recent documents": [
+        "Не удалось загрузить недавние документы"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Не удалось загрузить данные о подписке. Повторите попытку позже."
       ],
       "Failed to open to contact": [
         "Не удалось открыть контакт"
+      ],
+      "Failed to remove older revisions": [
+        "Не удалось удалить старые версии"
+      ],
+      "Failed to rename document": [
+        "Не удалось переименовать документ"
       ],
       "Failed to rename document. Please try again later.": [
         "Не удалось переименовать документ. Повторите попытку позже."
@@ -3134,6 +3334,9 @@
       ],
       "No contacts found to import": [
         "Не найдено контактов для импорта"
+      ],
+      "No drive found to import": [
+        "Не найдено хранилище для импорта"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не найдено писем для импорта, у аккаунта нет папки Входящие"
@@ -3264,6 +3467,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
       ],
+      "Some trashed documents could not be loaded": [
+        "Не удалось загрузить некоторые удаленные документы"
+      ],
       "Something went wrong while fetching available domains": [
         "Что-то пошло не так при получении доступных доменов"
       ],
@@ -3330,6 +3536,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "В вашей внешнем аккаунте слишком много папок. Пожалуйста, настройте импорт, чтобы удалить некоторые папки."
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Произошла ошибка при обработке обновлений документа. Пожалуйста, перезагрузите страницу и попробуйте еще раз."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Произошла ошибка при экспорте визитных карточек контактов"
       ],
@@ -3357,11 +3566,17 @@
       "Try using only letters, numerals, and _.-": [
         "Попробуйте, используя только буквы, цифры и _.-"
       ],
+      "Unable to import file": [
+        "Невозможно импортировать файл"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Не удалось загрузить панель управления VPN. Проверьте ваше подключение и попробуйте снова."
       ],
       "Unexpected error, we can't import the contacts": [
         "Неожиданная ошибка, мы не можем импортировать контакты"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Непредвиденная ошибка, мы не можем импортировать файлы"
       ],
       "Unknown error": [
         "Неизвестная ошибка"
@@ -3387,6 +3602,12 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "У нас возникли проблемы при сохранении последних изменений. Попробуйте обновить страницу."
       ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "Возникли проблемы при синхронизации документа. Пожалуйста, обновите страницу."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Не удалось импортировать этот файл в ${ SHEETS_APP_NAME }. Вы можете попробовать скопировать и вставить его содержимое в новый ${ SHEETS_APP_NAME }."
+      ],
       "We couldn’t send a verification code using this method.": [
         "Нам не удалось отправить код подтверждения этим способом."
       ],
@@ -3404,6 +3625,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Вы достигли лимита контактов для вашего аккаунта"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Вы израсходовали все адреса, предусмотренные вашим тарифом. Пожалуйста, улучшите ваш тариф, чтобы добавить новый адрес, или отключите какой-либо адрес в вашем аккаунте."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
@@ -4425,6 +4649,12 @@
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
       ],
+      "${ total } user found": [
+        "Найден ${ total } пользователь",
+        "Найдено ${ total } пользователя",
+        "Найдено ${ total } пользователей",
+        "Найдено ${ total } пользователя"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
         "${ updated } контакта успешно обновлено.",
@@ -4499,6 +4729,9 @@
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Рекламодатели отслеживают ваш просмотр веб-страниц, чтобы показывать целевую рекламу. ${ VPN_APP_NAME } блокирует трекеры и рекламу, делая ваше подключение быстрее и улучшая работу в Интернете."
+      ],
+      "All": [
+        "Все"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Всё (${ totalFoldersCount } папка)",
@@ -4620,6 +4853,9 @@
       "Continue": [
         "Продолжить"
       ],
+      "Converting document...": [
+        "Преобразование документа..."
+      ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
       ],
@@ -4653,6 +4889,9 @@
       "Create an end-to-end encrypted document.": [
         "Создайте документ, зашифрованный сквозным методом."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Создавайте защищенные сквозным шифрованием документы и электронные таблицы."
+      ],
       "Create in": [
         "Создать в"
       ],
@@ -4668,11 +4907,17 @@
       "Creating link to folder": [
         "Создание ссылки на папку"
       ],
+      "Creating new document...": [
+        "Создание нового документа..."
+      ],
       "Current plan": [
         "Текущий тариф"
       ],
       "Current version": [
         "Текущая версия"
+      ],
+      "Decrypting your document": [
+        "Расшифровка вашего документа"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ЭЦП проверена. Этот файл был безопасно загружен ${ emailAddress }."
@@ -4694,6 +4939,9 @@
       ],
       "Document owner has the password": [
         "Пароль находится у владельца документа"
+      ],
+      "Documents": [
+        "Документы"
       ],
       "Downgrade": [
         "Перейти на более дешёвую версию"
@@ -4764,6 +5012,12 @@
       "Enter your own password (as trusted contact).": [
         "Введите собственный пароль (как доверенный контакт)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Ошибка преобразования документа: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Ошибка загрузки документа: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Ошибка синхронизации"
       ],
@@ -4800,6 +5054,9 @@
       "File will not be updated": [
         "Файл не будет обновлен"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Только файлы (без фото, ${ DOCS_APP_NAME } или ${ SHEETS_APP_NAME }) — в общей сложности до 100 ГБ, 100 000 файлов и 50 ГБ на один файл"
+      ],
       "finance": [
         "финансы"
       ],
@@ -4827,11 +5084,26 @@
       "Geoblocking": [
         "Геоблокировка"
       ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Получите профессиональную почту @your-company.com, 1 ТБ защищенного хранилища на каждого пользователя, более длительные видеозвонки и многое другое с ${ BRAND_NAME } Workspace."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Получать по электронной почте уведомления о комментариях и предложениях, добавленных в ваши документы."
+      ],
+      "Get Notified About Comments": [
+        "Получать уведомления о комментариях"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Правительства и интернет-провайдеры могут отслеживать ваши действия в Интернете. Скрывая свой реальный адрес IP и шифруя свои действия, ваш просмотр веб-страниц становится приватным."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Помогите нам стать лучше, сообщив об этой проблеме. Если вы не против поделиться содержимым электронной таблицы, прикрепите к сообщению информацию для отладки."
+      ],
       "here": [
         "здесь"
+      ],
+      "Hide table of contents": [
+        "Скрыть оглавление"
       ],
       "High Priority": [
         "Высокий приоритет"
@@ -4880,6 +5152,9 @@
       ],
       "Important note": [
         "Важное примечание"
+      ],
+      "Importing ODS files is currently in beta": [
+        "Импорт файлов ODS в настоящее время находится на стадии бета-тестирования"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
@@ -4977,6 +5252,9 @@
       "Low Priority": [
         "Низкий приоритет"
       ],
+      "Making a copy...": [
+        "Создание копии..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символ",
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символа",
@@ -5009,6 +5287,9 @@
       ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "В URL не указан документ. Вернитесь в ${ DRIVE_APP_NAME } и выберите документ."
       ],
       "No email address": [
         "Нет адреса электронной почты"
@@ -5051,6 +5332,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Только люди со ссылкой и паролем могут получить доступ к этой папке."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ой! Не удается сохранить последние изменения в этой электронной таблице, поэтому мы приостановили редактирование, чтобы вы не потеряли свою работу."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Откройте руководство, чтобы узнать о рекомендуемых действиях и полезных ссылках."
@@ -5151,6 +5435,15 @@
       "Public documents are not yet enabled for your organization.": [
         "Публичные документы еще не включены для вашей организации."
       ],
+      "Read-only": [
+        "Только для чтения"
+      ],
+      "Recent documents": [
+        "Недавние документы"
+      ],
+      "Recent spreadsheets": [
+        "Недавние электронные таблицы"
+      ],
       "Recents": [
         "Недавние"
       ],
@@ -5220,6 +5513,9 @@
       "Shared on": [
         "Совместное использование"
       ],
+      "Show table of contents": [
+        "Показать оглавление"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
       ],
@@ -5240,6 +5536,9 @@
       ],
       "Something went wrong": [
         "Что-то пошло не так"
+      ],
+      "Spreadsheets": [
+        "Электронные таблицы"
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Оставайтесь на связи без усилий, включив следующие настройки VPN:"
@@ -5295,6 +5594,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Владелец этого адреса отключил сквозное шифрование. Чтобы иметь возможность отправлять зашифрованные письма на этот адрес, владелец должен повторно включить сквозное шифрование."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Похоже, введенный вами URL был некорректно скопирован из Slack. При копировании длинных ссылок из Slack нажмите правой кнопкой мыши на ссылку и выберите «Копировать ссылку», вместо того чтобы копировать усеченный текст URL напрямую."
+      ],
       "There are no documents in the trash.": [
         "В Корзине документов нет."
       ],
@@ -5304,8 +5606,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы была возможность отправки на него, владелец адреса должен его включить."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Этот документ стал слишком большим для редактирования. Вы можете удалить старые версии, чтобы продолжить редактирование."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Этот документ стал слишком большим, и ваши последние изменения не удалось сохранить. Скачайте копию, чтобы сохранить свою работу."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "В этом документе много активности. Некоторые функции могут быть временно недоступны."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "У этого документа много активных соавторов. Редактирование в реальном времени временно недоступно. Обновите страницу, чтобы просмотреть последние изменения."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Этот документ может не существовать, или у нас возникли проблемы с его загрузкой. Перезагрузите страницу и попробуйте снова."
@@ -5987,11 +6298,20 @@
       "Emails (last month)": [
         "Письма (последний месяц)"
       ],
+      "Enable email notifications": [
+        "Включить уведомления по электронной почте"
+      ],
       "Encrypt emails": [
         "Шифровать письма"
       ],
       "Erase this link and remove everyone with access": [
         "Стереть эту ссылку и удалить всех, кто имеет к ней доступ"
+      ],
+      "Exact host matching": [
+        "Точное соответствие хоста"
+      ],
+      "Exact URL matching": [
+        "Точное соответствие URL"
       ],
       "Expiry": [
         "Срок действия"
@@ -6040,6 +6360,9 @@
       ],
       "Include application logs in bug report": [
         "Включить журналы приложения в отчет об ошибке"
+      ],
+      "Include document name in notification": [
+        "Включить название документа в уведомление"
       ],
       "Include message and file name in invite email": [
         "Включите сообщение и имя файла в приглашение по электронной почте"
@@ -6110,6 +6433,9 @@
       "Navigation": [
         "Навигация"
       ],
+      "Never fill on this exact URL": [
+        "Никогда не заполнять на этом точном URL"
+      ],
       "New password": [
         "Новый пароль"
       ],
@@ -6130,6 +6456,9 @@
       ],
       "Optional": [
         "Необязательно"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Родительский домен и поддомены (по умолчанию)"
       ],
       "Password": [
         "Пароль"
@@ -6170,6 +6499,9 @@
       "Region": [
         "Регион"
       ],
+      "Regular expression": [
+        "Регулярное выражение"
+      ],
       "Replace existing file": [
         "Заменить существующий файл"
       ],
@@ -6206,6 +6538,9 @@
       "Skip folder": [
         "Пропустить папку"
       ],
+      "Starts with": [
+        "Начинается с"
+      ],
       "Stop sharing": [
         "Прекратить доступ"
       ],
@@ -6233,8 +6568,14 @@
       "Trash": [
         "Корзина"
       ],
+      "Unknown user": [
+        "Неизвестный пользователь"
+      ],
       "Upload picture": [
         "Загрузить изображение"
+      ],
+      "URL wildcard pattern": [
+        "Шаблон URL с подстановочными знаками"
       ],
       "Username": [
         "Имя пользователя"
@@ -6592,6 +6933,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Правило соответствия «Начинается с»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правило точного соответствия (под) домена"
+      ],
+      "Exact URL matching rule": [
+        "Правило точного соответствия URL"
+      ],
+      "Never fill with this exact URL": [
+        "Никогда не заполнять с этим точным URL"
+      ],
+      "Regular expression rule": [
+        "Правило регулярного выражения"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правило соответствия шаблону с подстановочными знаками"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бесплатный пробный период завершился. ${ nonAutoRenewalAction }"
       ],
@@ -7969,6 +8328,12 @@
       "Device renamed": [
         "Устройство переименовано"
       ],
+      "Document moved to trash": [
+        "Документ перемещен в корзину"
+      ],
+      "Document restored from trash": [
+        "Документ восстановлен из корзины"
+      ],
       "External invitation removed from the share": [
         "Внешнее приглашение удалено из общего доступа"
       ],
@@ -7989,6 +8354,9 @@
       ],
       "Failed to reject share invitation": [
         "Не удалось отклонить приглашение на использование общего ресурса"
+      ],
+      "Failed to rename document": [
+        "Не удалось переименовать документ"
       ],
       "Failed to upload files: ${ err }": [
         "Не удалось загрузить файлы: ${ err }"
@@ -8076,6 +8444,9 @@
       ],
       "The link to your item was deleted": [
         "Ссылка на ваш элемент удалена"
+      ],
+      "The spreadsheet failed to be created": [
+        "Не удалось создать электронную таблицу"
       ],
       "Trash failed to be emptied": [
         "Не удалось очистить корзину"
@@ -8569,6 +8940,9 @@
       "Search for name or email": [
         "Поиск имени или электронной почты"
       ],
+      "Search for users or addresses": [
+        "Искать пользователей или адреса"
+      ],
       "Search parent folder": [
         "Искать родительскую папку"
       ],
@@ -8807,11 +9181,26 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } за рекомендацию"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Если вы отмените подписку до этой даты,** по окончании пробного периода вы будете **переведены на более дешевую версию** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Если вы не оформите подписку,** вы будете **переведены на более дешевую версию** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Если вы не отмените подписку,** начнется действие вашего полного тарифа, и вы получите **${ referrerRewardAmount }** на остаток на счете."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Если вы подпишетесь до этой даты,** вы получите **${ referrerRewardAmount }** на остаток на счете."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "После этой даты ваш аккаунт будет переведен на более дешевую версию **${ BRAND_NAME } Free**. Если вы передумаете, вы сможете **возобновить подписку**, чтобы сохранить доступ к платным функциям."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Получите до ${ maxRewardAmount } в качестве остатка на счете. Вы получите ${ referrerRewardAmount }, когда приглашенный вами пользователь оформит подписку на тариф ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Пользуйтесь тарифом **${ planTitle }** бесплатно до **${ textDate }**."
       ],
       "Friend joined": [
         "Друг присоединился",
@@ -8831,6 +9220,9 @@
       "Invited friends": [
         "Приглашенные друзья"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Последний шанс оценить все мощные функции, которые предлагает тариф **${ planTitle }**."
+      ],
       "More sharing options": [
         "Больше вариантов для обмена"
       ],
@@ -8845,6 +9237,15 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можете получить до **${ maxRewardAmount }** в качестве остатка на счете."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "У вас остался **${ daysRemaining } день**, чтобы оценить все мощные функции, которые предлагает тариф **${ planTitle }**.",
+        "У вас осталось **${ daysRemaining } дня**, чтобы оценить все мощные функции, которые предлагает тариф **${ planTitle }**.",
+        "У вас осталось **${ daysRemaining } дней**, чтобы оценить все мощные функции, которые предлагает тариф **${ planTitle }**.",
+        "У вас осталось **${ daysRemaining } дня**, чтобы оценить все мощные функции, которые предлагает тариф **${ planTitle }**."
+      ],
+      "your subscription": [
+        "ваша подписка"
       ]
     },
     "Safety review": {
@@ -9154,8 +9555,62 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Значения, разделенные запятыми (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "Новая электронная таблица"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Значения, разделённые табуляцией (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Создание новой электронной таблицы..."
+      ],
+      "Detect automatically": [
+        "Определить автоматически"
+      ],
+      "Insert as new sheet": [
+        "Вставить как новый лист"
+      ],
+      "Replace current sheet": [
+        "Заменить текущий лист"
+      ],
+      "Replace data at selected cell": [
+        "Заменить данные в выбранной ячейке"
+      ],
+      "Replace spreadsheet": [
+        "Заменить электронную таблицу"
+      ],
+      "Select a file to import": [
+        "Выберите файл для импорта"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Ваша текущая электронная таблица, включая все входящие в нее листы, будет заменена этой версией."
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Преобразовывать текст в числа, даты и формулы"
+      ],
+      "Destination": [
+        "Место назначения"
+      ],
+      "Format": [
+        "Формат"
+      ],
+      "Separator type": [
+        "Тип разделителя"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Импортировать данные"
       ]
     },
     "Signing preference for emails": {
@@ -9930,6 +10385,9 @@
         "${ emailsCount } адресов электронной почты",
         "${ emailsCount } адресов электронной почты"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Помощник по написанию текстов ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Восстановление аккаунта"
       ],
@@ -10119,6 +10577,12 @@
       "Docs": [
         "Docs"
       ],
+      "Document Size Limit Exceeded": [
+        "Превышен лимит размера документа"
+      ],
+      "Document Size Limit Reached": [
+        "Достигнут лимит размера документа"
+      ],
       "Document verification failed": [
         "Проверка пользователя не удалась"
       ],
@@ -10160,6 +10624,9 @@
       ],
       "Edit image": [
         "Изменение изображения"
+      ],
+      "Editing paused": [
+        "Редактирование приостановлено"
       ],
       "Email addresses": [
         "Адреса электронной почты"
@@ -10220,6 +10687,9 @@
       ],
       "How does it work?": [
         "Как это работает?"
+      ],
+      "How your free trial works": [
+        "Как работает бесплатный пробный период"
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
@@ -10352,6 +10822,9 @@
       ],
       "Re-signing contacts": [
         "Переподписание контактов"
+      ],
+      "Read-only": [
+        "Только для чтения"
       ],
       "Recommended actions": [
         "Рекомендуемые действия"
@@ -10500,6 +10973,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Используйте ${ VPN_SHORT_APP_NAME } для обеспечения конфиденциальности данных"
       ],
+      "Users and addresses": [
+        "Пользователи и адреса"
+      ],
       "Verify your password": [
         "Подтвердите ваш пароль"
       ],
@@ -10547,11 +11023,23 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "Действия"
+      ],
       "Created": [
         "Создано"
       ],
       "Expires": [
         "Истекает"
+      ],
+      "Fingerprint": [
+        "Отпечаток ключа"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тип"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10673,6 +11161,11 @@
       ],
       "The user must have an address to request data access": [
         "Пользователь должен иметь адрес, чтобы запросить доступ к данным"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы сможете назначать должности, как только пользователь примет приглашение."
       ]
     },
     "Validation": {
@@ -10820,6 +11313,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
       ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Режим «${ modeLabelStong }» обеспечивает мощный контроль, но одна ошибка может привести к тому, что автозаполнение сработает и заполнит данные на мошеннических или фишинговых сайтах."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы уверены, что хотите навсегда удалить ${ count } контакт?",
         "Вы уверены, что хотите навсегда удалить ${ count } контакта?",
@@ -10870,6 +11366,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Объём импортируемого материала может вызвать переполнение хранилища, доступного в настоящее время для Вашего аккаунта ${ BRAND_NAME }. Рассмотрите возможность настройки импорта."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "Это действие заменит все данные в электронной таблице"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."

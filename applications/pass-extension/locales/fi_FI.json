@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } Androidille"
+      ],
       "${ PASS_SHORT_APP_NAME } for iOS": [
         "${ PASS_SHORT_APP_NAME } iOS:lle"
       ],
@@ -84,6 +87,9 @@
       ],
       "Advanced options": [
         "Lisävalinnat"
+      ],
+      "Allow access": [
+        "Salli käyttö"
       ],
       "and": [
         "ja"
@@ -181,8 +187,14 @@
       "Copy email": [
         "Kopioi sähköpostiosoite"
       ],
+      "Copy expiration date": [
+        "Kopioi voimassaolon päättymispäivämäärä"
+      ],
       "Copy forwarding address": [
         "Kopioi välitysosoite"
+      ],
+      "Copy instructions": [
+        "Kopioi ohjeet"
       ],
       "Copy link": [
         "Kopioi linkki"
@@ -201,6 +213,9 @@
       ],
       "Copy to clipboard": [
         "Kopioi leikepöydälle"
+      ],
+      "Copy token": [
+        "Kopioi tunniste"
       ],
       "Copy username": [
         "Kopioi käyttäjätunnus"
@@ -237,6 +252,9 @@
       ],
       "Create note": [
         "Luo muistiinpano"
+      ],
+      "Create token": [
+        "Luo tunniste"
       ],
       "Create vault": [
         "Luo holvi"
@@ -294,6 +312,9 @@
       ],
       "Do not show again": [
         "Älä näytä uudelleen"
+      ],
+      "Do not show again when I press": [
+        "Älä näytä uudelleen, kun painan"
       ],
       "Do not show on this website": [
         "Älä näytä tällä verkkosivustolla"
@@ -430,11 +451,17 @@
       "Make editor": [
         "Määritä muokkaajaksi"
       ],
+      "Make manager": [
+        "Määritä vastuuhenkilöksi"
+      ],
       "Make viewer": [
         "Määritä tarkastelijaksi"
       ],
       "Manage access": [
         "Hallitse käyttöoikeuksia"
+      ],
+      "Manage vault access": [
+        "Hallitse holvin käyttöoikeuksia"
       ],
       "Manually sync your data": [
         "Synkronoi tietosi"
@@ -471,6 +498,9 @@
       ],
       "Multiple select": [
         "Monivalinta"
+      ],
+      "New token": [
+        "Uusi tunniste"
       ],
       "Next month": [
         "Seuraava kuukausi"
@@ -741,6 +771,9 @@
       "Via secure link": [
         "Suojatun linkin välityksellä"
       ],
+      "View agent activity": [
+        "Näytä agentin toiminta"
+      ],
       "View app logs": [
         "Tarkastele sovelluksen lokitietoja"
       ],
@@ -770,6 +803,12 @@
       ]
     },
     "Activity": {
+      "Activity": [
+        "Toiminta"
+      ],
+      "Activity details could not be loaded.": [
+        "Toiminnan tietoja ei voitu ladata."
+      ],
       "Folder": [
         "Kansio"
       ],
@@ -801,6 +840,11 @@
         "Laajenna"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Haluatteko, että leikepöytänne tyhjennetään automaattisesti ajan ${ timeoutDurationHumanReadable } kuluttua?"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } sisältyy maksullisiin tilauksiin. Ota se heti käyttöön päivittämällä tilauksesi."
@@ -818,6 +862,9 @@
       "Add the following CNAME DNS records to your domain.": [
         "Lisää seuraava CNAME DNS -tietue verkkotunnukseesi."
       ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Lisää seuraava MX DNS-tietue verkkotunnukseesi. Huomaa, että kohdeosoitteiden lopussa on piste (.). Jos verkkotunnuksen rekisterinpitäjäsi ei salli tätä lopussa olevaa pistettä, poista se lisätessäsi DNS-tietuetta."
+      ],
       "Add the following TXT DNS record to your domain.": [
         "Lisää seuraava TXT DNS -tietue verkkotunnukseesi."
       ],
@@ -829,6 +876,12 @@
       ],
       "Create unique passwords": [
         "Luo ainutlaatuisia salasanoja"
+      ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } on sähköpostin tunnistautumismenetelmä, joka on suunniteltu estämään sähköpostien väärentäminen. DKIM:n määrittäminen on erittäin suositeltavaa, jotta vähennetään sähköpostiesi päätymistä vastaanottajan roskapostikansioon."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } on suunniteltu suojaamaan verkkotunnusta luvattomalta käytöltä, joka tunnetaan yleisesti sähköpostien väärentämisenä. SPF- ja DKIM-menetelmiin perustuva DMARC-käytäntö kertoo vastaanottavalle sähköpostipalvelimelle, mitä tehdä, jos kumpikaan näistä tunnistautumismenetelmistä ei mene läpi."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Vastaanota ilmoituksia, jos sähköpostiosoitteesi, salasanasi tai muita henkilökohtaisia tietojasi on vuotanut."
@@ -854,6 +907,15 @@
       "Set up 2FA for more security": [
         "Vahvista suojausta määrittämällä kaksivaiheinen tunnistautuminen"
       ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Jotkut DNS-rekisterinpitäjät saattavat vaatia koko tietueen sijainnin. Käytä tässä tapauksessa sen sijaan arvoa ${ domain } verkkotunnuksen arvona."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Jotkut verkkotunnuksen rekisterinpitäjät (esim. Namecheap, Cloudflare) saattavat myös käyttää @-merkkiä juuriverkkotunnukselle."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } on sähköpostin tunnistautumismenetelmä, joka on suunniteltu havaitsemaan väärennetyt lähettäjän osoitteet sähköpostin toimituksen aikana. SPF:n määrittäminen on erittäin suositeltavaa, jotta vähennetään sähköpostiesi päätymistä vastaanottajan roskapostikansioon."
+      ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Aloita sähköpostiosoitettasi ja Hide-my-email-aliaksiasi käyttävien tilien tietomurtovalvonta."
       ],
@@ -863,11 +925,17 @@
       "These items remain at risk": [
         "Nämä kohteet pysyvät vaarassa"
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Nämä holvit eivät ole käytettävissä, eikä niiden sisältö ole haun tai automaattitäytön käytettävissä."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tämä tili on vaarassa. Käy vaihtamassa salasanasi palvelun tiliasetuksista."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Palvelu mahdollistaa kaksivaiheisen tunnistautumisen. Paranna tilin suojausta ottamalla se käyttöön."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Vahvistaaksesi verkkotunnuksen omistajuuden, lisää seuraava TXT-tietue. Jotkut verkkotunnuksen rekisterinpitäjät (esim. Namecheap, Cloudflare) saattavat käyttää @-merkkiä juuriverkkotunnukselle."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Avaa edistyneet suojausominaisuudet ja yksityiskohtaiset lokit verkkonäkyvyytesi suojaamiseksi."
@@ -917,6 +985,9 @@
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Tunnistautuminen epäonnistui. Vahvista lisäsalasanasi jatkaaksesi vientiä"
+      ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Tunnistautuminen epäonnistui. Vahvistakaa toinen salasananne jatkaaksenne vientiä"
       ],
       "Authentication failure: ${ message }": [
         "Tunnistautumisvirhe: ${ message }"
@@ -975,6 +1046,9 @@
       ],
       "Could not validate addresses at the moment.": [
         "Osoitteita ei voitu juuri nyt vahvistaa."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Agentin asennusohjeiden lataaminen epäonnistui. Kopioikaa alla oleva tunniste, sitä ei näytetä uudelleen."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-tiedostosta puuttuu odotettuja otsikoita: ${ missingHeaders }"
@@ -1043,6 +1117,9 @@
       "Failed to change mailbox": [
         "Postilaatikon vaihtaminen epäonnistui"
       ],
+      "Failed to create access token": [
+        "Käyttötunnisteen luominen epäonnistui"
+      ],
       "Failed to create domain": [
         "Verkkotunnuksen luominen epäonnistui"
       ],
@@ -1051,6 +1128,9 @@
       ],
       "Failed to create the contact": [
         "Yhteystiedon luominen epäonnistui"
+      ],
+      "Failed to delete access token": [
+        "Käyttötunnisteen poistaminen epäonnistui"
       ],
       "Failed to delete domain": [
         "Verkkotunnuksen poistaminen epäonnistui"
@@ -1070,6 +1150,9 @@
       "Failed to edit user's access.": [
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
       ],
+      "Failed to load access tokens": [
+        "Käyttötunnisteiden lataaminen epäonnistui"
+      ],
       "Failed to load breaches for this address": [
         "Tähän osoitteeseen liittyvien tietomurtojen lataus epäonnistui"
       ],
@@ -1081,6 +1164,9 @@
       ],
       "Failed to load item history": [
         "Kohteen historian lataus epäonnistui"
+      ],
+      "Failed to load token actions": [
+        "Tunnistetoimintojen lataaminen epäonnistui"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kaikkia sijainnin \"${ payload.content.name }\" kohteita ei voitu siirtää"
@@ -1139,6 +1225,9 @@
       "Failed to update random prefix generation setting.": [
         "Satunnaisen etuliitteen muodostamisasetusten päivitys epäonnistui."
       ],
+      "Failed to update vault access": [
+        "Holvin käyttöoikeuksien päivittäminen epäonnistui"
+      ],
       "Failed to verify domain": [
         "Verkkotunnuksen vahvistaminen epäonnistui"
       ],
@@ -1160,8 +1249,14 @@
       "File does not match expected format": [
         "Tiedosto ei vastaa odotettua muotoa"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Holvin \"${ vaultData.name }\" tuonti epäonnistui: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Kohteiden tuonti epäonnistui"
+      ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Jatkaakseen ${ PASS_APP_NAME } vaatii nämä laajennuksen käyttöoikeudet: ${ permissionsJSX }"
       ],
       "Inactive secure links could not be removed.": [
         "Käytöstä poistuneita suojattuja linkkejä ei voitu poistaa."
@@ -1199,11 +1294,20 @@
       "Name is required": [
         "Nimi vaaditaan"
       ],
+      "Name must be 191 characters or fewer": [
+        "Nimen on oltava enintään 191 merkkiä pitkä"
+      ],
       "Network error": [
         "Verkkovirhe"
       ],
       "Passphrase is incorrect": [
         "Salalause on virheellinen"
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Pääsy verkkosivustolle estetty kohteissa ${ domainsJSX }."
+      ],
+      "Permission denied for website access.": [
+        "Pääsy verkkosivustolle estetty."
       ],
       "PIN codes do not match": [
         "PIN-koodit eivät täsmää"
@@ -1228,6 +1332,9 @@
       ],
       "Secure link could not be opened.": [
         "Suojattua linkkiä ei voitu avata."
+      ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Palvelimiin ei saada yhteyttä. Yrittäkää avata ${ PASS_SHORT_APP_NAME } muutaman minuutin kuluttua uudelleen."
       ],
       "Settings update failed": [
         "Asetusten tallennus epäonnistui"
@@ -1342,6 +1449,9 @@
       ],
       "Wrong second password": [
         "Toinen salasana on väärin"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Olette tällä hetkellä yhteydettömässä tilassa. Palauttakaa yhteys avataksenne sovelluksen ${ PASS_SHORT_APP_NAME }."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Selaimellasi on ongelmia ${ PASS_APP_NAME }in aktivoinnissa."
@@ -1527,6 +1637,9 @@
         "${ row.breachCount } tietomurto on havaittu",
         "${ row.breachCount } tietomurtoa on havaittu"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } valittu"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } päivä jäljellä",
         "${ trialDaysLeft } päivää jäljellä"
@@ -1556,6 +1669,9 @@
       "Access successfully confirmed": [
         "Käyttöoikeus vahvistettiin"
       ],
+      "access to ${ domains }.": [
+        "pääsy kohteisiin ${ domains }."
+      ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }in avaus vaatii aina ${ BRAND_NAME }-salasanasi."
       ],
@@ -1565,11 +1681,20 @@
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "${ PASS_APP_NAME }in avaus vaatii aina lisäsalasanasi."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Pääsy palveluun ${ PASS_APP_NAME } vaatii aina toisen salasananne"
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }:n käyttäminen vaatii sormenjälkesi tai laitteen PIN-koodin"
       ],
       "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
         "Käyttötunnus \"${ action.token.Name }\" on jo vanhentunut. Jos se poistetaan, sitä ei enää näytetä."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Käyttötunniste \"${ action.token.Name }\" lakkaa toimimasta välittömästi. Tätä toimintoa ei voi kumota."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Käyttötunnisteet yhdessä ${ passCliLink } -työkalun kanssa mahdollistavat CI/CD-prosessien automatisoinnin tai rajatun pääsyn myöntämisen tekoälyagentillenne sen tehtävän suorittamiseen."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
@@ -1588,6 +1713,12 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
+      ],
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias on poistettu käytöstä onnistuneesti. Ette enää vastaanota osoitteeseen ${ item.aliasEmail } lähetettyjä sähköposteja"
+      ],
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias otettu käyttöön onnistuneesti. Voitte nyt vastaanottaa osoitteeseen ${ item.aliasEmail } lähetettyjä sähköposteja"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Aliastesi synkronointi ${ BRAND_NAME }in ja SimpleLoginin välillä on käytössä."
@@ -1640,6 +1771,9 @@
       "Auto-lock successfully disabled.": [
         "Automaattilukitus poistettiin käytöstä."
       ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Automaattitäytä HTTP-perustodennuksen valintaikkunat tallennetuilla kirjautumistiedoilla."
+      ],
       "automatically": [
         "automaattisesti"
       ],
@@ -1654,6 +1788,9 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Ennen kuin viet tietosi tässä muodossa, avaa Safarin asetukset -> \"Yleiset\" -välilehti -> poista asetus \"Avaa turvalliset tiedostot lataamisen jälkeen\" käytöstä. Tämä estää Safaria purkamasta vietyjä tiedostoja virheellisesti."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Väliltä 60 (1 tunti) ja 525600 (1 vuosi)"
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Biometrinen avaus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in sillä."
@@ -1721,14 +1858,32 @@
       "Copied to clipboard": [
         "Kopioitu leikepöydälle"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Kopioitu leikepöydälle (vanhenee ajassa ${ timeoutDurationHumanReadable })"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Kopioikaa alla oleva markdown ja lähettäkää se tekoälyagentillenne. Tämä on ainoa kerta, kun tunniste näytetään."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Kopioikaa tämä tunniste nyt. Turvallisuussyistä sitä ei näytetä uudelleen."
+      ],
       "Coupon successfully applied!": [
         "Etukoodi käytettiin!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Luokaa tunniste integroidaksenne ${ PASS_APP_NAME } -palvelun skripteihinne ja työkaluihinne."
       ],
       "Create contact illustration": [
         "Kuvitus yhteystiedon luomisesta"
       ],
+      "Created ${ createdDate }": [
+        "Luotu ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Luotu: ${ time }."
+      ],
+      "Created item": [
+        "Luotu kohde"
       ],
       "Creating alias...": [
         "Luodaan aliasta..."
@@ -1744,6 +1899,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Oletusnäyttönimi aliaksille, jotka on luotu verkkotunnuksella ${ domainDisplay }, ellei aliaksen näyttönimi korvaa sitä."
+      ],
+      "Deleted item": [
+        "Poistettu kohde"
       ],
       "Deleted items will be moved here first": [
         "Poistetut kohteet siirretään ensin tänne"
@@ -1768,6 +1926,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Verkkotunnus: ${ domainPath } tai @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Ladakaa pass-cli osoitteesta ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
@@ -1847,6 +2008,9 @@
       "Enter your PIN code": [
         "Syötä PIN-koodisi"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Jokainen tämän agenttitunnisteen suorittama toiminto, uusin ensin."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Uusi yhteystieto luodaan automaattisesti joka kerta, kun aliaksesi vastaanottaa sähköpostia."
       ],
@@ -1870,6 +2034,9 @@
       ],
       "Extra password successfully removed": [
         "Lisäsalasana poistettiin"
+      ],
+      "Failed updating your vault organization": [
+        "Holvin organisaation päivitys epäonnistui"
       ],
       "Fill in the CSV with your data": [
         "Täytä CSV omilla tiedoillasi"
@@ -2015,6 +2182,9 @@
       "Loading...": [
         "Ladataan..."
       ],
+      "Log out of any existing session:": [
+        "Kirjautukaa ulos mahdollisista nykyisistä istunnoista:"
+      ],
       "Logging you out...": [
         "Sinua kirjataan ulos..."
       ],
@@ -2043,12 +2213,14 @@
         "Siirrä ${ count } kohde",
         "Siirrä ${ count } kohdetta"
       ],
+      "Moved item to trash": [
+        "Kohde siirretty roskakoriin"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2062,6 +2234,9 @@
       "Moving items to trash": [
         "Kohteita siirretään roskakoriin"
       ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Siirtykää selaimenne laajennusasetuksiin ja ottakaa sivuston käyttöoikeudet käyttöön sovellukselle ${ PASS_SHORT_APP_NAME }."
+      ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Haluatko lähettää sähköpostia jollekulle, muttet halua heidän näkevän sähköpostiosoitettasi? Määritä yhteystietoalias."
       ],
@@ -2070,6 +2245,9 @@
       ],
       "New": [
         "Uusi"
+      ],
+      "No activity recorded yet.": [
+        "Toimintaa ei ole vielä tallennettu."
       ],
       "No breaches detected": [
         "Tietomurtoja ei ole havaittu"
@@ -2086,8 +2264,14 @@
       "No network connection": [
         "Verkkoyhteyttä ei ole"
       ],
+      "No vaults available.": [
+        "Holveja ei ole saatavilla."
+      ],
       "None": [
         "Ei mitään"
+      ],
+      "None selected": [
+        "Ei valittuna"
       ],
       "Not configured": [
         "Ei määritetty"
@@ -2112,6 +2296,9 @@
       ],
       "Open the ${ PASS_APP_NAME } popup": [
         "Avaa ${ PASS_APP_NAME } -ponnahdusikkuna"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Avatkaa Safarin asetukset, etsikää ${ PASS_APP_NAME }, siirtykää kohtaan \"Käyttöoikeudet\" ja ottakaa sivuston käyttöoikeudet käyttöön."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
@@ -2228,8 +2415,23 @@
       "Please confirm your second password": [
         "Vahvista toinen salasanasi"
       ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Vahvistakaa toinen salasananne, jotta voitte ottaa automaattilukituksen käyttöön biometrisillä tunnisteilla."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Vahvistakaa toinen salasananne käyttääksenne automaattilukitusta salasanallanne."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Vahvistakaa toinen salasananne ottaaksenne yhteydettömän tilan käyttöön"
+      ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista toinen salasanasi viedäksesi ${ PASS_APP_NAME }-tietosi"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Vahvistakaa toinen salasananne poistaaksenne nykyisen lukituksenne rekisteröinnin."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Vahvistakaa toinen salasananne päivittääksenne automaattilukituksen ajan."
       ],
       "Please consider leaving a review.": [
         "Harkitse arvostelun kirjoittamista."
@@ -2249,8 +2451,17 @@
       "Please follow the steps below to set up your domain.": [
         "Seuraa alla olevia ohjeita verkkotunnuksesi määrittämiseksi."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Pitäkää ${ PASS_APP_NAME } auki, jotta leikepöytä voidaan tyhjentää automaattisesti."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Pidä tämä ikkuna auki, kun tietojasi tuodaan. Tämä prosessi voi kestää muutaman minuutin."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Pitäkää selain auki, jotta leikepöytä voidaan tyhjentää automaattisesti."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Varmistakaa, että aiemmin aktiivinen ikkuna on se, johon haluatte automaattisen kirjoituksen tapahtuvan, ja että kohdistimenne oli asetettu kirjautumiskenttään."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Huomioi, että et voi palauttaa poistettua aliasta. Haluatko sen sijaan poistaa sen käytöstä?"
@@ -2264,6 +2475,9 @@
       "Press Enter to copy": [
         "Kopioi painamalla Enter-näppäintä"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Suojana on ${ PROTON_SENTINEL_LINK }, edistynyt tilinsuojausohjelmamme"
+      ],
       "Quickly autofill your 2FA tokens.": [
         "Automaattitäytä vahvistuskoodisi nopeasti."
       ],
@@ -2275,6 +2489,9 @@
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "Järjestys kentän (ensin otsikko, sitten käyttäjätunnus tai sähköpostiosoite, verkkosivusto, muistiinpanot) ja vastaavuustarkkuuden (tarkka, alkaa merkeillä, sisältää) mukaan."
+      ],
+      "Read item": [
+        "Lue kohde"
       ],
       "Reconnect": [
         "Uudelleenyhdistä"
@@ -2309,11 +2526,20 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Historian nollaus poistaa kaikki aiemmat tiedostoversiot pysyvästi, eikä sitä voi perua."
       ],
+      "Restored item from trash": [
+        "Kohde palautettu roskakorista"
+      ],
       "Restoring items from trash": [
         "Kohteita palautetaan roskakorista"
       ],
       "Restoring trashed items...": [
         "Palautetaan kohteita roskakorista..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Napsauttakaa laajennuksen kuvaketta hiiren kakkospainikkeella ja valitkaa \"Hallitse laajennusta\". Siirtykää kohtaan \"Käyttöoikeudet ja tiedot\" ja ottakaa sivuston käyttöoikeudet käyttöön."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Napsauttakaa laajennuksen kuvaketta hiiren kakkospainikkeella ja valitkaa \"Hallitse laajennusta\". Siirtykää kohtaan \"Sivuston käyttöoikeudet\" ja ottakaa sivuston käyttöoikeudet käyttöön."
       ],
       "Save login": [
         "Tallenna kirjautumistieto"
@@ -2329,6 +2555,9 @@
       ],
       "Select destination vault": [
         "Valitse kohdeholvi"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Valitkaa holvit, joita tunniste \"${ token.Name }\" voi lukea."
       ],
       "Select where you want your imported vaults to be saved.": [
         "Valitse, mihin haluat tallentaa tuodut holvin."
@@ -2356,6 +2585,9 @@
       ],
       "Settings successfully updated": [
         "Asetukset tallennettiin"
+      ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Jaa aliakset muiden kanssa lisäämällä heidän saapuneet-kansionsa välityspostilaatikoksi."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Jaa kirjautumistietosi ja suojatut muistiinpanosi jopa 10 henkilölle"
@@ -2399,8 +2631,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Napauta kuvaketta ${ gearIcon } mukauttaaksesi aliasta haluamallasi tavalla."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Testatkaa tunniste kirjautumalla sisään ja listaamalla holvit:"
+      ],
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agentin on ilmoitettava syy jokaiseen suorittamaansa toimintoon, ja jokainen toiminto tallennetaan lokiin, jonka voitte tarkistaa. Tunnisteen luomisen jälkeen saatte ohjeet kopioitavaksi ja liitettäväksi tekoälyagenttiinne."
       ],
       "The display name when sending an email from this alias.": [
         "Näyttönimi, kun lähetät sähköpostia tästä aliaksesta."
@@ -2432,6 +2670,9 @@
       ],
       "The user did not accept the invitation yet.": [
         "Käyttäjä ei ole vielä hyväksynyt kutsua."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Sitten voitte siirtyä osoitteeseen ${ url } kopioitavaksi ohjeet, jotka lähetetään tekoälyagentillenne."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Vientitiedosto on salaamaton, eli kuka tahansa sen käsittelijä voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
@@ -2466,6 +2707,9 @@
       "This setting is enforced by your organization": [
         "Tämä asetus on organisaatiosi pakottama"
       ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Tämä tunniste saa vain lukuoikeuden valitsemiinne holveihin. Se voi lukea kohteita, mutta ei voi muokata niitä, jakaa holveja tai kutsua muita. Voitte muuttaa tätä myöhemmin."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Holvia ei ole tällä hetkellä jaettu kenellekään. Jaa se muille lähettämällä kutsuja."
       ],
@@ -2489,6 +2733,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin ${ PASS_APP_NAME }-kuvaketta."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Biometrisen lukituksen avaamisen määrittämiseksi ${ PASS_APP_NAME } vaatii uuden selaimen käyttöoikeuden. Kun hyväksytte sen, laajennus latautuu uudelleen. Avatkaa tämä sivu sen jälkeen uudelleen."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Kokeile auttaako laajennuksen uudelleenlataus tai -asennus ja varmista, että selaimesi ja ${ PASS_SHORT_APP_NAME } ovat ajan tasalla."
@@ -2520,6 +2767,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Avaa ${ PASS_SHORT_APP_NAME } lisäsalasanallasi"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Avatkaa ${ PASS_SHORT_APP_NAME } toisella salasanallanne"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Avaa se PIN-koodillasi päästäksesi asetuksiin."
       ],
@@ -2532,11 +2782,20 @@
       "Update login": [
         "Päivitä kirjautumistieto"
       ],
+      "Updated item": [
+        "Päivitetty kohde"
+      ],
+      "Updating vault organization...": [
+        "Päivitetään holvin organisaatiota..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Päivitä ${ PASS_APP_NAME }-tilauksesi"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Päivitä tilauksesi nyt avataksesi Premium-ominaisuudet"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Päivittäkää ${ PASS_APP_NAME } Plus -versioon luodaksenne käyttötunnisteita ja käyttääksenne ${ PASS_APP_NAME } -palvelua ohjelmallisesti."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Päivitä maksulliseen tilaukseen luodaksesi useita holveja."
@@ -2561,6 +2820,12 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Holvi \"${ share.content.name }\" poistettiin."
+      ],
+      "Vault access granted": [
+        "Holvin käyttöoikeus myönnetty"
+      ],
+      "Vault organization successfully updated": [
+        "Holvin organisaatio on päivitetty onnistuneesti"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Holvin jakaminen: ${ vaultMembersCount } jäsen",
@@ -2650,6 +2915,9 @@
       "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "Saatat joutua myöntämään käyttöoikeusluvan ${ PASS_APP_NAME } -sovellukselle."
       ],
+      "You need a vault with edit permission before you can import items.": [
+        "Tarvitsette holvin muokkausoikeuden, ennen kuin voitte tuoda kohteita."
+      ],
       "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
         "Sinulla ei ole enää pääsyä joihinkin holveihin tai kohteisiin, koska ryhmäsi ${ groupName } käyttöoikeudet on poistettu."
       ],
@@ -2676,6 +2944,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Et enää saa ilmoitusta tähän sähköpostiosoitteeseen liittyvistä tietomurroista."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Teillä ei ole enää pääsyä jakamiseen, 2FA-tunnistautumiseen ja muihin erityisominaisuuksiin sovelluksessa ${ PASS_APP_NAME }"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Et voi enää käyttää jakamista, 2FA:ta, maksukortteja ja muita ${ PASS_APP_NAME }in edistyneitä ominaisuuksia"
@@ -2845,6 +3116,9 @@
       "A-Z": [
         "A-Ö"
       ],
+      "Access tokens": [
+        "Käyttötunnisteet"
+      ],
       "Account": [
         "Tili"
       ],
@@ -2896,6 +3170,9 @@
       "Always show username field": [
         "Näytä käyttäjätunnuskenttä aina"
       ],
+      "API Credential": [
+        "API-kirjautumistiedot"
+      ],
       "API Key": [
         "API-avain"
       ],
@@ -2934,6 +3211,9 @@
       ],
       "Basic": [
         "Perus"
+      ],
+      "Basic Auth autofill": [
+        "Perustodennuksen automaattitäyttö"
       ],
       "Biometrics": [
         "Biometria"
@@ -3358,11 +3638,20 @@
       "Make all editors": [
         "Määritä kaikki muokkaajiksi"
       ],
+      "Make all managers": [
+        "Määritä kaikki vastuuhenkilöiksi"
+      ],
       "Make all viewers": [
         "Määritä kaikki tarkastelijoiksi"
       ],
       "max views reached": [
         "avausrajoitus on saavutettu"
+      ],
+      "Medical Conditions": [
+        "Terveydentilat"
+      ],
+      "Medical Record": [
+        "Potilaskertomus"
       ],
       "Medications": [
         "Lääkitykset"
@@ -3532,6 +3821,9 @@
       "PIN code": [
         "PIN-koodi"
       ],
+      "Points Balance": [
+        "Pistesaldo"
+      ],
       "Port": [
         "Portti"
       ],
@@ -3600,6 +3892,9 @@
       ],
       "Reveal password": [
         "Näytä salasana"
+      ],
+      "Reward Program": [
+        "Kanta-asiakasohjelma"
       ],
       "Routing Number": [
         "Reititysnumero"
@@ -3751,6 +4046,9 @@
       "Today": [
         "Tänään"
       ],
+      "Token name": [
+        "Tunnisteen nimi"
+      ],
       "Total imported items: ": [
         "Kohteita tuotiin yhteensä: "
       ],
@@ -3814,6 +4112,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Käytä ${ PASS_APP_NAME }ia selaimesi oletusarvoisena salasanahallintana"
       ],
+      "Use for AI agent": [
+        "Käytä tekoälyagentille"
+      ],
       "Used in": [
         "Käyttökohteet"
       ],
@@ -3828,6 +4129,9 @@
       ],
       "Value:": [
         "Arvo:"
+      ],
+      "Vault access": [
+        "Holvin käyttöoikeus"
       ],
       "Vault ID": [
         "Holvin ID"
@@ -3951,6 +4255,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } otettiin käyttöön"
+      ],
+      "Access token deleted": [
+        "Käyttötunniste poistettu"
       ]
     },
     "Onboarding": {
@@ -4043,6 +4350,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Jos käytössä, kaikki tiedostosi ladataan viennin yhteydessä. Tämä voi kestää jonkin aikaa Internet-yhteydestäsi riippuen."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Jos tietosi sisältävät tiedostoliitteitä, niitä ei tuoda."
+      ],
       "Include file attachments": [
         "Sisällytä liitetiedostot"
       ],
@@ -4088,6 +4398,9 @@
       "Total imported files: ": [
         "Tuotuja tiedostoja yhteensä: "
       ],
+      "Upgrade to support file attachments": [
+        "Päivitä tukeaksesi tiedostoliitteitä"
+      ],
       "Upload files from your device.": [
         "Lähetä tiedostoja laitteeltasi."
       ],
@@ -4096,6 +4409,11 @@
       ],
       "You may close this window after saving the file.": [
         "Voit sulkea tämän ikkunan tiedoston tallentamisen jälkeen."
+      ]
+    },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Vaatii luvan selaimeltanne"
       ]
     },
     "Placeholder": {
@@ -4310,8 +4628,17 @@
       ]
     },
     "Status": {
+      "Active": [
+        "Aktiivinen"
+      ],
       "Agent": [
         "Agentti"
+      ],
+      "Expired": [
+        "Vanhentunut"
+      ],
+      "Expiring soon": [
+        "Vanhenee pian"
       ]
     },
     "Success": {
@@ -4408,6 +4735,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Käyttötunnisteet edellyttävät ${ PASS_APP_NAME } Plus -tilausta"
+      ],
       "Account protection": [
         "Tilin suojaus"
       ],
@@ -4417,6 +4747,9 @@
       "Activity": [
         "Toiminta"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Tunnisteen \"${ token.Name }\" toiminta"
+      ],
       "Add custom domain": [
         "Lisää oma verkkotunnus"
       ],
@@ -4425,6 +4758,9 @@
       ],
       "Adjust autofill behaviors to change where logins are suggested.": [
         "Säädä automaattisen täytön asetuksia, jotta voit muuttaa sitä, missä kirjautumistietoja ehdotetaan."
+      ],
+      "Agent setup instructions": [
+        "Agentin asennusohjeet"
       ],
       "Alias contacts": [
         "Aliasyhteystiedot"
@@ -4452,6 +4788,9 @@
       ],
       "Breaches detected for": [
         "Havaittua tietomurtoa osoitteelle"
+      ],
+      "Browser permission required": [
+        "Selaimen käyttöoikeus tarvitaan"
       ],
       "Cancel changing your email?": [
         "Perutaanko sähköpostiosoitteesi vaihtaminen?"
@@ -4483,6 +4822,9 @@
       "Create contact": [
         "Luo yhteystieto"
       ],
+      "Create new access token": [
+        "Luo uusi käyttötunniste"
+      ],
       "Create PIN code": [
         "Luo PIN-koodi"
       ],
@@ -4513,6 +4855,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "Poistetaanko ${ deletedItemsCount } kohde?",
         "Poistetaanko ${ deletedItemsCount } kohdetta?"
+      ],
+      "Delete access token?": [
+        "Poistetaanko käyttötunniste?"
       ],
       "Delete domain": [
         "Poista verkkotunnus"
@@ -4649,6 +4994,9 @@
       "Mailbox": [
         "Postilaatikko"
       ],
+      "Manage vault access": [
+        "Hallitse holvin käyttöoikeuksia"
+      ],
       "Mark as resolved?": [
         "Merkitäänkö ratkaistuksi?"
       ],
@@ -4683,6 +5031,9 @@
       ],
       "Next": [
         "Seuraava"
+      ],
+      "No access tokens yet": [
+        "Ei vielä käyttötunnisteita"
       ],
       "No excluded items": [
         "Poissuljettuja kohteita ei ole"
@@ -4731,6 +5082,9 @@
       ],
       "Pending access to the shared data": [
         "Odotetaan käyttöoikeutta jaettuihin tietoihin"
+      ],
+      "Perform autotype?": [
+        "Suoritetaanko automaattinen kirjoitus?"
       ],
       "Permanently remove all items?": [
         "Poistetaanko kaikki kohteet pysyvästi?"
@@ -4908,6 +5262,9 @@
       "Your exposed information": [
         "Paljastuneet tietosi"
       ],
+      "Your new access token": [
+        "Uusi käyttötunnisteenne"
+      ],
       "Your vault is empty": [
         "Holvisi on tyhjä"
       ],
@@ -5071,8 +5428,14 @@
       "Extra password should have at least 8 characters": [
         "Lisäsalasanan täytyy sisältää vähintään 8 merkkiä"
       ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automaattinen kirjoitus epäonnistui. Varmistakaa, että sovelluksella ${ PASS_APP_NAME } on tarvittavat oikeudet ja yrittäkää uudelleen (${ error })."
+      ],
       "Failed to load breaches.": [
         "Tietomurtojen lataus epäonnistui."
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Myöntäkää leikepöydän käyttöoikeus ottaaksenne käyttöön kopioitujen salasanojen ja tietojen automaattisen tyhjennyksen."
       ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
@@ -5206,6 +5569,9 @@
       ],
       "Verification code is required": [
         "Vahvistuskoodi vaaditaan"
+      ],
+      "You have reached the limit of members who can access this item.": [
+        "Olette saavuttaneet niiden jäsenten enimmäismäärän, jotka voivat käyttää tätä kohdetta."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Holvin käyttöoikeuden omaavien jäsenten enimmäismäärä on saavutettu."

@@ -5581,6 +5581,9 @@
       "${ feature } is now active": [
         "${ feature } is nu actief"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
+      ],
       "Account restricted": [
         "Account beperkt"
       ],
@@ -5866,6 +5869,11 @@
       ],
       "The user must have an address to request data access": [
         "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
       ]
     },
     "Validation": {

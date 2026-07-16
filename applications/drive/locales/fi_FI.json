@@ -1608,6 +1608,12 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Aktivoitu"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Osoite on jo organisaationne ulkopuolisen käyttäjän käytössä. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
+      ],
       "All": [
         "Kaikki"
       ],
@@ -1620,8 +1626,20 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Tietojen siirron tila kohteesta Google Workspace kohteeseen ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Sähköpostit"
+      ],
+      "Errors": [
+        "Virheet"
+      ],
       "Estimated size": [
         "Arvioitu koko"
+      ],
+      "Find out what can be migrated.": [
+        "Ota selvää, mitä voidaan siirtää."
       ],
       "Has errors": [
         "Virheitä"
@@ -1629,8 +1647,29 @@
       "In progress": [
         "Käynnissä"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Jäsenen osoitetta ei löytynyt. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
+      ],
+      "Migrate": [
+        "Siirrä"
+      ],
+      "Migrated": [
+        "Siirretty"
+      ],
       "Migration status": [
         "Siirron tila"
+      ],
+      "Missing organization private key": [
+        "Organisaation yksityinen avain puuttuu"
+      ],
+      "Missing organization public key": [
+        "Organisaation julkinen avain puuttuu"
+      ],
+      "No users to display": [
+        "Ei näytettäviä käyttäjiä"
+      ],
+      "Not activated": [
+        "Ei aktivoitu"
       ],
       "Organization does not have enough seats available": [
         "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
@@ -1638,14 +1677,47 @@
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
       ],
+      "Pending": [
+        "Odottaa"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Valitse tarkalleen, mitä haluat siirtää. Tämä koskee kaikkia organisaation käyttäjiä."
+      ],
+      "Select users to migrate": [
+        "Valitse siirrettävät käyttäjät"
+      ],
       "Size": [
         "Koko"
       ],
       "Status": [
         "Tila"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tätä käyttäjää ei voida siirtää alustojen yhteensopimattomuuden vuoksi."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Siirtääksesi tämän käyttäjän, ota hänen tilinsä käyttöön Google Workspace -hallintakonsolissa."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Voit siirtää tämän käyttäjän ottamalla hänen tilinsä käyttöön kohdassa ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Siirtääksesi tämän käyttäjän, ota hänen osoitteensa käyttöön kohdassa ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Jotta tämä käyttäjä voidaan siirtää, hänen on hyväksyttävä kutsunsa liittyä ${ BRAND_NAME }:iin."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Voit siirtää tämän käyttäjän poistamalla hänet arkistosta Google Workspace -hallintakonsolissa."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Voit siirtää tämän käyttäjän poistamalla hänen jäädytyksensä Google Workspace -hallintakonsolissa."
+      ],
       "User": [
         "Käyttäjä"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Käyttäjät, jotka ovat käyttäneet ${ BRAND_NAME }-tiliään"
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
@@ -3684,6 +3756,9 @@
       "No contacts found to import": [
         "Tuotavia yhteystietoja ei löytynyt"
       ],
+      "No drive found to import": [
+        "Tuotavaa asemaa ei löytynyt"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Tuotavia viestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
       ],
@@ -3933,6 +4008,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Odottamaton virhe, yhteystietojen tuonti ei onnistu"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Odottamaton virhe, tiedostojen tuonti ei onnistu"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Tuntematon konfliktistrategia: ${ strategy }"
@@ -5620,6 +5698,9 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Muiden sinulle jakamat tiedostot ja kansiot näkyvät tässä"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Vain tiedostot (ei valokuvia, ${ DOCS_APP_NAME }- tai ${ SHEETS_APP_NAME }-tiedostoja) – yhteensä enintään 100 Gt, 100 000 tiedostoa ja 50 Gt tiedostoa kohden"
       ],
       "finance": [
         "rahoitus"
@@ -10599,6 +10680,9 @@
       "Search for name or email": [
         "Etsi nimeä tai sähköpostiosoitetta"
       ],
+      "Search for users or addresses": [
+        "Etsi käyttäjiä tai osoitteita"
+      ],
       "Search parent folder": [
         "Etsi yläkansiosta"
       ],
@@ -10822,6 +10906,12 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } suosittelua kohden"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Jos peruutat ennen tätä päivämäärää,** tilauksesi **alennetaan** tasolle ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, kun kokeilu päättyy."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Jos et tilaa,** tilauksesi **alennetaan** tasolle ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "**Jos et peruuta,** täysi tilauksesi alkaa ja saat **${ referrerRewardAmount }** krediitteinä."
       ],
@@ -10833,6 +10923,9 @@
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ansaitse jopa ${ maxRewardAmount } krediitteinä. Saat ${ referrerRewardAmount }, kun kutsumasi henkilö hankkii ${ BRAND_NAME } -tilauksen."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Nauti tilauksesta **${ planTitle }** maksutta päivään **${ textDate }** asti."
       ],
       "Friend joined": [
         "Kaveri liittyi",
@@ -10847,6 +10940,9 @@
       ],
       "Invited friends": [
         "Kutsu kavereita"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Viimeinen mahdollisuus tutustua kaikkiin niihin tehokkaisiin ominaisuuksiin, joita tilauksella **${ planTitle }** on tarjota."
       ],
       "More sharing options": [
         "Lisää jakamisvaihtoehtoja"
@@ -12250,6 +12346,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } ilmaisia latauksia."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Kirjoitusavustaja ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Tilin palautus"
       ],
@@ -13133,6 +13232,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Käytä ${ VPN_SHORT_APP_NAME }:ää tietosuojaa varten"
+      ],
+      "Users and addresses": [
+        "Käyttäjät ja osoitteet"
       ],
       "Verification failed": [
         "Vahvistus epäonnistui"

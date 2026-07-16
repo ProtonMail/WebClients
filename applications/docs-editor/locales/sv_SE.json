@@ -221,6 +221,9 @@
       "Subscript": [
         "Nedsänkt text"
       ],
+      "Superscript": [
+        "Upphöjd"
+      ],
       "Table options": [
         "Tabellalternativ"
       ],
@@ -444,6 +447,9 @@
       ],
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Det uppstod ett fel vid bearbetning av uppdateringar av dokumentet. Ladda om sidan och försök igen."
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Detta kalkylblad har upptäckt en inkonsekvens i den lokala synkroniseringen. Redigering har inaktiverats för att förhindra dataförlust. Skicka in en felrapport och ladda ner och bifoga felsökningsinformationen nedan om du kan tänka dig att dela innehållet."
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Detta kalkylblad är inkompatibelt med den nuvarande klientversionen. Försök att ladda om klienten. Om felet kvarstår, kontakta support."
@@ -706,6 +712,16 @@
         "Temafärger"
       ]
     },
+    "sheets_2025:Formula bar": {
+      "Formula bar": [
+        "Formelfält"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "Områdesväljare"
+      ]
+    },
     "sheets_2025:Range selector menu": {
       "Add new": [
         "Lägg till nytt"
@@ -853,6 +869,12 @@
       "Delete": [
         "Ta bort"
       ],
+      "Delete cells and shift cells left": [
+        "Ta bort celler och flytta celler åt vänster"
+      ],
+      "Delete cells and shift cells up": [
+        "Ta bort celler och flytta celler uppåt"
+      ],
       "Delete column": [
         "Ta bort kolumn"
       ],
@@ -877,6 +899,9 @@
       "Formula only": [
         "Endast formel"
       ],
+      "Freeze up to column": [
+        "Lås fram till kolumn"
+      ],
       "Freeze up to row": [
         "Lås upp till rad"
       ],
@@ -885,6 +910,12 @@
       ],
       "Hide row": [
         "Dölj rad"
+      ],
+      "Insert cells and shift cells down": [
+        "Infoga celler och flytta celler nedåt"
+      ],
+      "Insert cells and shift cells right": [
+        "Infoga celler och flytta celler åt höger"
       ],
       "Insert link": [
         "Infoga länk"
@@ -915,6 +946,9 @@
       ],
       "Period": [
         "Period"
+      ],
+      "Pipe": [
+        "Vertikalstreck"
       ],
       "Remove filter": [
         "Ta bort filter"
@@ -948,6 +982,15 @@
       ],
       "Table": [
         "Tabell"
+      ],
+      "Transposed": [
+        "Transponerad"
+      ],
+      "Unfreeze columns": [
+        "Frigör kolumner"
+      ],
+      "Unfreeze rows": [
+        "Frigör rader"
       ],
       "Values only": [
         "Endast värden"
@@ -1146,6 +1189,9 @@
       ],
       "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
         "Vi arbetar på att erbjuda denna funktion till dig snart. För närvarande kan kalkylblad endast redigeras på stationär dator"
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Din skärm är för liten för att redigera detta kalkylblad. Du är i visningsläge. För att göra ändringar öppnar du kalkylbladet på en större skärm eller förstorar ditt webbläsarfönster."
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1171,6 +1217,9 @@
       ],
       "Merge vertically": [
         "Sammanfoga vertikalt"
+      ],
+      "Unmerge": [
+        "Dela upp"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu": {
@@ -1349,6 +1398,9 @@
       ],
       "Underline": [
         "Understreck"
+      ],
+      "Wrapping": [
+        "Radbrytning"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
@@ -1374,6 +1426,12 @@
     "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
       "Clip": [
         "Klipp"
+      ],
+      "Overflow": [
+        "Spill över"
+      ],
+      "Wrap": [
+        "Radbryt"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
@@ -1397,6 +1455,12 @@
       ],
       "Image": [
         "Bild"
+      ],
+      "Insert cells and shift down": [
+        "Infoga celler och flytta ner"
+      ],
+      "Insert cells and shift right": [
+        "Infoga celler och flytta åt höger"
       ],
       "Link": [
         "Länk"
@@ -1463,6 +1527,9 @@
       "Freeze": [
         "Frys"
       ],
+      "Gridlines": [
+        "Rutnät"
+      ],
       "Show": [
         "Visa"
       ],
@@ -1489,6 +1556,12 @@
     "sheets_2025:Spreadsheet editor number formats menu": {
       "$ US Dollar": [
         "$ US-dollar"
+      ],
+      "Accounting": [
+        "Redovisning"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ kinesisk yuan"
       ],
       "Currency": [
         "Valuta"
@@ -1658,6 +1731,9 @@
       "More formats": [
         "Fler format"
       ],
+      "Paint format": [
+        "Hämta format"
+      ],
       "Redo": [
         "Gör om"
       ],
@@ -1673,11 +1749,17 @@
       "Text color": [
         "Textfärg"
       ],
+      "Text wrapping": [
+        "Radbrytning"
+      ],
       "Underline": [
         "Understreck"
       ],
       "Undo": [
         "Ångra"
+      ],
+      "Unmerge cells": [
+        "Dela upp celler"
       ],
       "Vertical align": [
         "Vertikal justering"
@@ -1788,11 +1870,23 @@
       "Average": [
         "Genomsnittlig"
       ],
+      "Count": [
+        "Antal"
+      ],
+      "Customize Status Bar": [
+        "Anpassa statusfältet"
+      ],
       "Max": [
         "Max"
       ],
       "Min": [
         "Min"
+      ],
+      "Numerical count": [
+        "Numeriskt antal"
+      ],
+      "Sum": [
+        "Summa"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
@@ -1865,6 +1959,9 @@
       "Number": [
         "Nummer"
       ],
+      "Overflow": [
+        "Spill över"
+      ],
       "Preview": [
         "Förhandsgranska"
       ],
@@ -1886,6 +1983,9 @@
       "Underline": [
         "Understreck"
       ],
+      "Unmerge": [
+        "Dela upp"
+      ],
       "Use 1000 Separator (,)": [
         "Använd 1000-avgränsare (,)"
       ],
@@ -1903,6 +2003,9 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Chart data range": [
+        "Diagramdataintervall"
+      ],
       "Chart editor": [
         "Diagramredigerare"
       ],
@@ -1914,6 +2017,9 @@
       ],
       "Enter title": [
         "Ange rubrik"
+      ],
+      "Horizontal (category) axis labels": [
+        "Etiketter för horisontell axel (kategori)"
       ],
       "Horizontal axis title": [
         "Horisontell axelrubrik"
@@ -1995,6 +2101,9 @@
       "Mid point": [
         "Mittpunkt"
       ],
+      "Min point": [
+        "Minimipunkt"
+      ],
       "Min value": [
         "Minsta värde"
       ],
@@ -2058,6 +2167,9 @@
       ],
       "Positive": [
         "Positiv"
+      ],
+      "Sample": [
+        "Exempel"
       ],
       "Text": [
         "Text"
@@ -2160,6 +2272,12 @@
       ]
     },
     "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Alternerande kolumner"
+      ],
+      "Banded rows": [
+        "Alternerande rader"
+      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -2178,6 +2296,9 @@
       "Show filter button": [
         "Visa filterknapp"
       ],
+      "Table data range": [
+        "Tabelldataintervall"
+      ],
       "Table title": [
         "Tabellrubrik"
       ]
@@ -2194,6 +2315,9 @@
       ],
       "Language not supported": [
         "Språk stöds inte"
+      ],
+      "Outline": [
+        "Disposition"
       ]
     },
     "Warning": {

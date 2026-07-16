@@ -170,6 +170,9 @@
       "Outdent": [
         "내어쓰기"
       ],
+      "Page break": [
+        "페이지 나누기"
+      ],
       "Quote": [
         "인용"
       ],
@@ -214,6 +217,12 @@
       ],
       "Submit": [
         "제출"
+      ],
+      "Subscript": [
+        "아래 첨자"
+      ],
+      "Superscript": [
+        "위 첨자"
       ],
       "Table options": [
         "테이블 옵션"
@@ -439,6 +448,9 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "문서 업데이트 처리 중 오류가 발생했습니다. 페이지 새로고침 후 다시 시도해 주세요."
       ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "이 스프레드시트에서 로컬 동기화 불일치가 감지되었습니다. 데이터 손실을 방지하기 위해 편집이 비활성화되었습니다. 문제를 신고해 주시기 바라며, 내용을 공유해도 괜찮으시다면 아래에서 디버그 정보를 다운로드하여 포함해 주세요."
+      ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "이 스프레드시트는 현재 클라이언트 버전과 호환되지 않습니다. 클라이언트를 다시 로드해 보세요. 오류가 지속되면 지원팀에 문의해 주세요."
       ],
@@ -644,6 +656,9 @@
       "More options": [
         "옵션 더보기"
       ],
+      "Page break": [
+        "페이지 나누기"
+      ],
       "Replace": [
         "대체"
       ],
@@ -694,6 +709,16 @@
       ],
       "Theme colors": [
         "테마 색상"
+      ]
+    },
+    "sheets_2025:Formula bar": {
+      "Formula bar": [
+        "수식 입력줄"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "범위 선택기"
       ]
     },
     "sheets_2025:Range selector menu": {
@@ -991,6 +1016,151 @@
       ],
       "right": [
         "(오른쪽)"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "적용"
+      ],
+      "Cancel": [
+        "취소"
+      ],
+      "Custom date and time formats": [
+        "사용자 지정 날짜 및 시간 서식"
+      ],
+      "Format": [
+        "서식"
+      ],
+      "Sample": [
+        "샘플"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "오전/오후"
+      ],
+      "Date": [
+        "날짜"
+      ],
+      "Day": [
+        "일"
+      ],
+      "Day as abbreviation": [
+        "요일 약어"
+      ],
+      "Day as full name": [
+        "요일 전체 이름"
+      ],
+      "Day with leading zero": [
+        "앞자리 0을 포함한 일"
+      ],
+      "Day without leading zero": [
+        "앞자리 0이 없는 일"
+      ],
+      "Delete": [
+        "삭제"
+      ],
+      "Duration": [
+        "기간"
+      ],
+      "Elapsed hours": [
+        "경과 시간"
+      ],
+      "Elapsed hours with leading zero": [
+        "앞자리 0을 포함한 경과 시간"
+      ],
+      "Elapsed hours without leading zero": [
+        "앞자리 0이 없는 경과 시간"
+      ],
+      "Elapsed minutes": [
+        "경과 분"
+      ],
+      "Elapsed minutes with leading zero": [
+        "앞자리 0을 포함한 경과 분"
+      ],
+      "Elapsed minutes without leading zero": [
+        "앞자리 0이 없는 경과 분"
+      ],
+      "Elapsed seconds": [
+        "경과 초"
+      ],
+      "Elapsed seconds with leading zero": [
+        "앞자리 0을 포함한 경과 초"
+      ],
+      "Elapsed seconds without leading zero": [
+        "앞자리 0이 없는 경과 초"
+      ],
+      "First letter of the month": [
+        "월의 첫 글자"
+      ],
+      "Full": [
+        "전체"
+      ],
+      "Full numeric year": [
+        "네 자리 숫자 연도"
+      ],
+      "Hour": [
+        "시간"
+      ],
+      "Hour with leading zero": [
+        "앞자리 0을 포함한 시간"
+      ],
+      "Hour without leading zero": [
+        "앞자리 0이 없는 시간"
+      ],
+      "Millisecond": [
+        "밀리초"
+      ],
+      "Minute": [
+        "분"
+      ],
+      "Minute with leading zero": [
+        "앞자리 0을 포함한 분"
+      ],
+      "Minute without leading zero": [
+        "앞자리 0이 없는 분"
+      ],
+      "Month": [
+        "월"
+      ],
+      "Month as abbreviation": [
+        "월 약어"
+      ],
+      "Month as full name": [
+        "월 전체 이름"
+      ],
+      "Month with leading zero": [
+        "앞자리 0을 포함한 월"
+      ],
+      "Month without leading zero": [
+        "앞자리 0이 없는 월"
+      ],
+      "Precision to 1/10 of a second": [
+        "1/10초 단위 정밀도"
+      ],
+      "Precision to 1/100 of a second": [
+        "1/100초 단위 정밀도"
+      ],
+      "Precision to 1/1000 of a second": [
+        "1/1000초 단위 정밀도"
+      ],
+      "Second": [
+        "초"
+      ],
+      "Second with leading zero": [
+        "앞자리 0을 포함한 초"
+      ],
+      "Second without leading zero": [
+        "앞자리 0이 없는 초"
+      ],
+      "Time": [
+        "시간"
+      ],
+      "Two digit year": [
+        "두 자리 숫자 연도"
+      ],
+      "Year": [
+        "연도"
       ]
     },
     "sheets_2025:Spreadsheet delete sheet dialog": {
@@ -1397,6 +1567,12 @@
       "Custom currency": [
         "사용자 지정 통화"
       ],
+      "Custom date and time": [
+        "사용자 지정 날짜 및 시간"
+      ],
+      "Custom number": [
+        "사용자 지정 숫자"
+      ],
       "Date": [
         "날짜"
       ],
@@ -1685,6 +1861,29 @@
         "행 높이"
       ]
     },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "평균"
+      ],
+      "Count": [
+        "개수"
+      ],
+      "Customize Status Bar": [
+        "상태 표시줄 사용자 지정"
+      ],
+      "Max": [
+        "최대값"
+      ],
+      "Min": [
+        "최소값"
+      ],
+      "Numerical count": [
+        "숫자 개수"
+      ],
+      "Sum": [
+        "합계"
+      ]
+    },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
       "Alignment": [
         "정렬"
@@ -1939,6 +2138,41 @@
         "사용자 지정 통화"
       ]
     },
+    "sheets_2025:Spreadsheet sidebar custom number format dialog": {
+      "Apply": [
+        "적용"
+      ],
+      "Apply to create a custom number format": [
+        "사용자 지정 숫자 서식을 생성하려면 적용하기"
+      ],
+      "Cancel": [
+        "취소"
+      ],
+      "Custom number format": [
+        "사용자 지정 숫자 서식"
+      ],
+      "Custom number formats": [
+        "사용자 지정 숫자 서식"
+      ],
+      "Format": [
+        "서식"
+      ],
+      "Negative": [
+        "음수"
+      ],
+      "Positive": [
+        "양수"
+      ],
+      "Sample": [
+        "샘플"
+      ],
+      "Text": [
+        "텍스트"
+      ],
+      "Zero": [
+        "영"
+      ]
+    },
     "sheets_2025:Spreadsheet sidebar data validation dialog": {
       "Add another named range": [
         "다른 이름이 지정된 범위 추가"
@@ -2076,6 +2310,9 @@
       ],
       "Language not supported": [
         "이 언어는 지원하지 않습니다"
+      ],
+      "Outline": [
+        "개요"
       ]
     },
     "Warning": {

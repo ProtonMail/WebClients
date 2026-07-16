@@ -1350,6 +1350,27 @@
       "Status": [
         "Stav"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohto používateľa nie je možné migrovať z dôvodu nekompatibility platforiem."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho adresu v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Ak chcete migrovať tohto používateľa, musí prijať pozvánku do služby ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho archiváciu v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho pozastavenie v konzole správcu Google Workspace."
+      ],
       "User": [
         "Používateľ"
       ],
@@ -3223,9 +3244,6 @@
       ],
       "Failed to resend invitation": [
         "Opätovné odoslanie pozvánky zlyhalo"
-      ],
-      "Failed to trash document.": [
-        "Odstránenie dokumentu do koša zlyhalo."
       ],
       "Failed to unshare node": [
         "Nepodarilo sa zrušiť zdieľanie uzla"
@@ -8319,9 +8337,6 @@
       "Device renamed": [
         "Zariadenie premenované"
       ],
-      "Document failed to be restored from trash": [
-        "Obnova dokumentu z koša zlyhala"
-      ],
       "Document moved to trash": [
         "Dokument bol presunutý do koša"
       ],
@@ -8348,6 +8363,9 @@
       ],
       "Failed to reject share invitation": [
         "Odmietnutie pozvania na zdieľanie zlyhalo"
+      ],
+      "Failed to rename document": [
+        "Premenovanie dokumentu zlyhalo"
       ],
       "Failed to upload files: ${ err }": [
         "Nepodarilo sa nahrať súbory: ${ err }"
@@ -10963,6 +10981,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Používajte ${ VPN_SHORT_APP_NAME } na ochranu osobných údajov"
+      ],
+      "Users and addresses": [
+        "Používatelia a adresy"
       ],
       "Verify your password": [
         "Overte svoje heslo"

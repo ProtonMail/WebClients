@@ -1323,6 +1323,27 @@
       "Status": [
         "Estado"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuario no se puede migrar debido a incompatibilidades de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, active su cuenta en su consola de administración de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, active su cuenta en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, active su dirección en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar a este usuario, este debe aceptar su invitación para unirse a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, desarchívelo en su consola de administración de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, reactive su cuenta suspendida en su consola de administración de Google Workspace."
+      ],
       "User": [
         "Usuario"
       ],
@@ -3182,9 +3203,6 @@
       ],
       "Failed to resend invitation": [
         "Error al reenviar la invitación"
-      ],
-      "Failed to trash document.": [
-        "Error al enviar el documento a la papelera."
       ],
       "Failed to unshare node": [
         "Error al dejar de compartir el nodo"
@@ -8121,9 +8139,6 @@
       "Device renamed": [
         "Dispositivo renombrado"
       ],
-      "Document failed to be restored from trash": [
-        "Error al restaurar el documento de la papelera"
-      ],
       "Document moved to trash": [
         "Documento movido a la papelera"
       ],
@@ -8150,6 +8165,9 @@
       ],
       "Failed to reject share invitation": [
         "Ocurrió un error al rechazar la invitación compartida"
+      ],
+      "Failed to rename document": [
+        "Error al cambiar el nombre del documento"
       ],
       "Failed to upload files: ${ err }": [
         "Error al cargar los archivos: ${ err }"
@@ -10643,6 +10661,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Use ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
+      ],
+      "Users and addresses": [
+        "Usuarios y direcciones"
       ],
       "Verify your password": [
         "Verificar contraseña"

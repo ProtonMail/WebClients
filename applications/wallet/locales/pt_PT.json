@@ -103,6 +103,9 @@
       "Copy address": [
         "Copiar o endereço"
       ],
+      "Copy descriptor": [
+        "Copiar descritor"
+      ],
       "Copy public key (${ prefix })": [
         "Copiar chave pública (${ prefix })"
       ],
@@ -648,6 +651,9 @@
       ],
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "O ${ WALLET_APP_NAME } estabeleceu uma parceria com a ${ rampLink }, a ${ banxaLink } e a ${ moonpayLink }, três serviços de ativos criptográficos registados, para facilitar a compra de BTC. Introduza a sua região para ver os fornecedores e métodos de pagamento disponíveis."
+      ],
+      "2% bank transfer fee": [
+        "Taxa de transferência bancária de 2%"
       ],
       "4% credit card fee": [
         "4% de taxa de cartão de crédito"
@@ -2501,8 +2507,20 @@
       ]
     },
     "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Descritor copiado para a área de transferência"
+      ],
       "I want the ${ prefix } instead": [
         "Eu quero o prefixo ${ prefix } em vez disso"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importe este descritor para outro software de carteira para monitorizar o seu saldo e gerar endereços de receção sem expor as suas chaves privadas."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Chave pública (${ prefix }) copiada para a área de transferência"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Verifique se os primeiros endereços derivados correspondem aos que constam na ${ WALLET_APP_NAME } antes de prosseguir."
       ],
       "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
         "Recomendamos vivamente a utilização do descritor acima, uma vez que contém todas as informações necessárias para garantir a geração correta do endereço. xpub, ypub e zpub não fazem parte dos BIPs padrão e devem ser utilizados com precaução."
@@ -5563,6 +5581,9 @@
       "${ feature } is now active": [
         "A funcionalidade ${ feature } agora está ativa."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account restricted": [
         "Conta restrita"
       ],
@@ -5848,6 +5869,11 @@
       ],
       "The user must have an address to request data access": [
         "O utilizador deve ter um endereço para solicitar acesso aos dados."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Poderá atribuir cargos assim que o utilizador aceitar o convite."
       ]
     },
     "Validation": {

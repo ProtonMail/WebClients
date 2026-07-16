@@ -4,9 +4,143 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(opent in nieuw tabblad)"
+      ],
+      "camera off": [
+        "camera uit"
+      ],
+      "camera on": [
+        "camera aan"
+      ],
+      "Meeting controls": [
+        "Vergaderingbeheer"
+      ],
+      "microphone muted": [
+        "microfoon gedempt"
+      ],
+      "microphone on": [
+        "microfoon aan"
+      ]
+    },
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } neemt deel aan de vergadering"
+      ],
+      "${ name } left the meeting": [
+        "${ name } heeft de vergadering verlaten"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } heeft de hand omlaag gedaan"
+      ],
+      "${ name } raised their hand": [
+        "${ name } heeft de hand opgestoken"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } reageerde met ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } zegt: ${ message }"
+      ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Een deelnemer is aan de vergadering toegevoegd"
+      ],
+      "A participant left the meeting": [
+        "Een deelnemer heeft de vergadering verlaten"
+      ],
+      "A participant lowered their hand": [
+        "Een deelnemer heeft de hand omlaag gedaan"
+      ],
+      "A participant raised their hand": [
+        "Een deelnemer heeft de hand opgestoken"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Een deelnemer reageerde met ${ emoji }"
+      ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "Verbonden via TURN-relaymodus vanwege netwerkbeperkingen. Dit kan de latentie verhogen en de gesprekskwaliteit beïnvloeden."
+      ],
+      "Connection lost. Reconnecting…": [
+        "Verbinding verbroken. Opnieuw verbinden…"
+      ],
+      "New chat message: ${ message }": [
+        "Nieuw chatbericht: ${ message }"
+      ],
+      "Now starting recording": [
+        "Opname wordt nu gestart"
+      ],
+      "Reconnected to the meeting": [
+        "Opnieuw verbonden met de vergadering"
+      ],
+      "Recording saved": [
+        "Opname opgeslagen"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Opname gestart. Door in de vergadering te blijven, erkent u en stemt u ermee in dat u wordt opgenomen."
+      ],
+      "Recording stopped": [
+        "Opname gestopt"
+      ],
+      "Screen share started": [
+        "Scherm delen gestart"
+      ],
+      "Screen share started by ${ name }": [
+        "Scherm delen gestart door ${ name }"
+      ],
+      "Screen share stopped": [
+        "Scherm delen gestopt"
+      ],
+      "Screen share stopped by ${ name }": [
+        "Scherm delen gestopt door ${ name }"
+      ],
+      "The meeting will close in 1 minute": [
+        "De vergadering sluit over 1 minuut"
+      ],
+      "The meeting will close in 15 seconds": [
+        "De vergadering sluit over 15 seconden"
+      ],
+      "The meeting will close in 30 seconds": [
+        "De vergadering sluit over 30 seconden"
+      ],
+      "The meeting will end in 1 minute": [
+        "De vergadering eindigt over 1 minuut"
+      ],
+      "The meeting will end in 10 minutes": [
+        "De vergadering eindigt over 10 minutes"
+      ],
+      "The meeting will end in 15 seconds": [
+        "De vergadering eindigt over 15 seconden"
+      ],
+      "The meeting will end in 5 minutes": [
+        "De vergadering eindigt over 5 minuten"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Deze vergadering wordt opgenomen. Door deel te nemen, erkent u en stemt u ermee in dat u wordt opgenomen."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "U bent de enige deelnemer. De vergadering sluit over 2 minuten tenzij er iemand deelneemt."
+      ],
+      "You have been disconnected from the meeting": [
+        "Uw verbinding met de vergadering is verbroken"
+      ],
+      "You have been muted by the host": [
+        "U bent gedempt door de host"
+      ],
+      "Your camera has been turned off by the host": [
+        "Uw camera is uitgeschakeld door de host"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
+      ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } nieuwe",
+        "${ newMessageCount } nieuwe"
       ],
       "Add account": [
         "Account toevoegen"
@@ -14,8 +148,29 @@
       "Add another account": [
         "Voeg een account toe"
       ],
+      "Admit": [
+        "Toelaten"
+      ],
+      "Admit ${ participantName }": [
+        "${ participantName } toelaten"
+      ],
+      "Admit all": [
+        "Iedereen toelaten"
+      ],
       "Allow access": [
         "Toegang verlenen"
+      ],
+      "Anyone with the link can join immediately": [
+        "Iedereen met de koppeling kan direct deelnemen"
+      ],
+      "Applied": [
+        "Toegepast"
+      ],
+      "Apply changes": [
+        "Wijzigingen toepassen"
+      ],
+      "Approve participants before they can join": [
+        "Deelnemers goedkeuren voordat ze kunnen deelnemen"
       ],
       "Assign ${ selectedParticipantName } as host": [
         "Wijs ${ selectedParticipantName } aan als host"
@@ -47,6 +202,12 @@
       "Close": [
         "Sluiten"
       ],
+      "Close preview": [
+        "Voorbeeld sluiten"
+      ],
+      "Close reply composer": [
+        "Antwoordvenster sluiten"
+      ],
       "Close this banner": [
         "Sluit deze banner"
       ],
@@ -64,6 +225,9 @@
       ],
       "Copy address": [
         "Adres kopiëren"
+      ],
+      "Copy invitation link": [
+        "Uitnodigingskoppeling kopiëren"
       ],
       "Copy link": [
         "Link kopiëren"
@@ -92,17 +256,29 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Deny": [
+        "Weigeren"
+      ],
+      "Deny ${ participantName }": [
+        "${ participantName } weigeren"
+      ],
       "Disable ${ participantName }'s video": [
         "Video van ${ participantName } uitschakelen"
       ],
       "Disable camera": [
         "Camera uitschakelen"
       ],
+      "Disable waiting room": [
+        "Wachtruimte uitschakelen"
+      ],
       "Discard": [
         "Verwijderen"
       ],
       "Dismiss": [
         "Negeren"
+      ],
+      "Dismiss new messages": [
+        "Nieuwe berichten negeren"
       ],
       "Done": [
         "Klaar"
@@ -122,6 +298,9 @@
       "Download participant report": [
         "Deelnemersrapport downloaden"
       ],
+      "Download recording": [
+        "Opname downloaden"
+      ],
       "Download room level report": [
         "Rapport van deze ruimte downloaden"
       ],
@@ -140,6 +319,9 @@
       "Enable camera": [
         "Camera inschakelen"
       ],
+      "Enable waiting room": [
+        "Wachtruimte inschakelen"
+      ],
       "End meeting": [
         "Beëindig vergadering"
       ],
@@ -148,6 +330,9 @@
       ],
       "Forgot password?": [
         "Wachtwoord vergeten?"
+      ],
+      "Full size": [
+        "Volledige grootte"
       ],
       "Generate a new meeting link.": [
         "Genereer een nieuwe link naar de vergadering"
@@ -163,6 +348,9 @@
       ],
       "Help and resources": [
         "Hulp en bronnen"
+      ],
+      "Hide options": [
+        "Opties verbergen"
       ],
       "Hide participants": [
         "Deelnemers verbergen"
@@ -203,6 +391,9 @@
       "Lower hand": [
         "Hand laten zakken"
       ],
+      "Minimize preview": [
+        "Voorbeeld minimaliseren"
+      ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
@@ -227,6 +418,12 @@
       "Open link": [
         "Link openen"
       ],
+      "Participants join after you approve them": [
+        "Deelnemers nemen deel nadat u ze heeft goedgekeurd"
+      ],
+      "Participants join the call directly": [
+        "Deelnemers nemen rechtstreeks deel aan het gesprek"
+      ],
       "Pause": [
         "Onderbreken"
       ],
@@ -242,8 +439,15 @@
       "React with ${ emoji }": [
         "Reageren met ${ emoji }"
       ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Reageren met ${ emoji }, ${ identities.length } reactie",
+        "Reageren met ${ emoji }, ${ identities.length } reacties"
+      ],
       "Receive video": [
         "Ontvang video"
+      ],
+      "Record": [
+        "Opnemen"
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
@@ -259,6 +463,10 @@
       ],
       "Rejoin meeting": [
         "Opnieuw deelnemen aan vergadering"
+      ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Reactie ${ emoji } verwijderen, ${ identities.length } reactie",
+        "Reactie ${ emoji } verwijderen, ${ identities.length } reacties"
       ],
       "Reply": [
         "Antwoord"
@@ -277,6 +485,9 @@
       ],
       "Resend code": [
         "Verstuur code opnieuw"
+      ],
+      "Reset to defaults": [
+        "Terugzetten naar standaardwaarden"
       ],
       "Resume": [
         "Hervatten"
@@ -311,8 +522,14 @@
       "Send an encrypted message": [
         "Stuur een versleuteld bericht"
       ],
+      "Send reply": [
+        "Antwoord verzenden"
+      ],
       "Settings": [
         "Instellingen"
+      ],
+      "Show duration": [
+        "Tijdsduur tonen"
       ],
       "Show floating thumbnail during screensharing": [
         "Zwevende miniatuur tonen tijdens het delen van het scherm"
@@ -341,6 +558,9 @@
       "Skip": [
         "Overslaan"
       ],
+      "Skip to main content": [
+        "Direct naar hoofdinhoud"
+      ],
       "Start an instant meeting": [
         "Start een directe vergadering"
       ],
@@ -358,6 +578,9 @@
       ],
       "Start your own meeting": [
         "Start uw eigen vergadering"
+      ],
+      "Starting…": [
+        "Starten…"
       ],
       "Stay in meeting": [
         "Blijf in de vergadering"
@@ -404,6 +627,15 @@
       "Upgrade now": [
         "Nu upgraden"
       ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Upgrade uw abonnement om de wachtruimte te gebruiken in uw volgende vergadering."
+      ],
+      "Upload another video": [
+        "Nog een video uploaden"
+      ],
+      "Upload video": [
+        "Video uploaden"
+      ],
       "Use authentication code": [
         "Authenticatiecode gebruiken"
       ],
@@ -416,6 +648,9 @@
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
+      "Use waiting room with a paid plan": [
+        "Wachtruimte gebruiken met een betaald abonnement"
+      ],
       "Verify": [
         "Verifiëren"
       ],
@@ -424,6 +659,15 @@
       ],
       "View invoice": [
         "Factuur bekijken"
+      ],
+      "Waiting room": [
+        "Wachtruimte"
+      ],
+      "Waiting room disabled": [
+        "Wachtruimte uitgeschakeld"
+      ],
+      "Waiting room enabled": [
+        "Wachtruimte ingeschakeld"
       ]
     },
     "Alt": {
@@ -454,6 +698,9 @@
       "Go to dashboard": [
         "Ga naar dashboard"
       ],
+      "Hide self view": [
+        "Eigen weergave verbergen"
+      ],
       "Leave Meeting": [
         "Vergadering verlaten"
       ],
@@ -465,6 +712,12 @@
       ],
       "Meeting details": [
         "Vergaderingsgegevens"
+      ],
+      "More options": [
+        "Meer opties"
+      ],
+      "Noise cancellation": [
+        "Ruisonderdrukking"
       ],
       "Open chat message search": [
         "Open zoekfunctie voor chatberichten"
@@ -484,11 +737,20 @@
       "Rotate camera": [
         "Camera roteren"
       ],
+      "Save my name on this device": [
+        "Mijn naam opslaan op dit apparaat"
+      ],
       "Screen share": [
         "Scherm delen"
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Show duration": [
+        "Tijdsduur tonen"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Zwevende miniatuur tonen tijdens het delen van het scherm"
       ],
       "Show passphrase": [
         "Toon wachtwoord"
@@ -514,13 +776,57 @@
       "Toggle settings": [
         "Instellingen openen/sluiten"
       ],
+      "Turn off incoming video": [
+        "Binnenkomende video uitschakelen"
+      ],
       "Video settings": [
         "Video-instellingen"
+      ],
+      "Waiting room": [
+        "Wachtruimte"
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applicaties"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "Host toewijzen"
+      ],
+      "Audio settings": [
+        "Audio-instellingen"
+      ],
+      "Chat": [
+        "Chat"
+      ],
+      "Chat messages": [
+        "Chatberichten"
+      ],
+      "Device settings": [
+        "Apparaatinstellingen"
+      ],
+      "Meeting details": [
+        "Vergaderingsgegevens"
+      ],
+      "Meeting rooms": [
+        "Vergaderruimtes"
+      ],
+      "Participants": [
+        "Deelnemers"
+      ],
+      "Participants list": [
+        "Deelnemerslijst"
+      ],
+      "Primary navigation": [
+        "Primaire navigatie"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Video settings": [
+        "Video-instellingen"
       ]
     },
     "Badge": {
@@ -1475,6 +1781,12 @@
       ],
       "Rotating group encryption key for best security": [
         "Roterende groep encryptie sleutel voor optimale beveiliging"
+      ],
+      "Try a different name.": [
+        "Probeer een andere naam."
+      ],
+      "You'll see people here when they join the meeting.": [
+        "U ziet hier mensen wanneer ze deelnemen aan de vergadering."
       ]
     },
     "Display name": {
@@ -1488,6 +1800,9 @@
       ]
     },
     "Error": {
+      "Background blur initialization failed. Please toggle your camera or background blur again": [
+        "Initialisatie van achtergrondonscherpte is mislukt. Schakel uw camera of achtergrondvervaging opnieuw in"
+      ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
@@ -1533,6 +1848,9 @@
       "Failed to join meeting. Please try again later.": [
         "Deelnemen aan de vergadering is mislukt. Probeer het later opnieuw."
       ],
+      "Failed to join meeting. Please try again.": [
+        "Deelnemen aan de vergadering mislukt. Probeer het opnieuw."
+      ],
       "Failed to lock meeting": [
         "Vergrendelen van vergadering is mislukt"
       ],
@@ -1547,6 +1865,9 @@
       ],
       "Failed to send reaction. Please try again.": [
         "Het is niet gelukt om een reactie te verzenden. Probeer het opnieuw."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "Vergadering starten mislukt. Probeer het opnieuw."
       ],
       "Failed to start recording": [
         "Kon opname niet starten"
@@ -1625,6 +1946,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "We konden via deze methode geen verificatiecode verzenden."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "De opslagruimte van uw browser is vol. We hebben de opname tot dit punt opgeslagen."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "De klok van uw apparaat lijkt niet gesynchroniseerd te zijn. Controleer de systeemtijd en probeer het opnieuw."
@@ -1821,6 +2145,12 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } heeft WebRTC nodig om te functioneren. Update uw browser of apparaat naar een versie die WebRTC ondersteunt, probeer een andere browser, of schakel extensies uit die deze mogelijk blokkeren."
       ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } en ${ otherParticipantsCount } anderen zijn aan het opnemen"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } is aan het opnemen"
+      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (u) is aan het presenteren"
       ],
@@ -1832,6 +2162,10 @@
       ],
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } reageerde met ${ emoji }"
+      ],
+      "${ replyCount } reply": [
+        "${ replyCount } antwoord",
+        "${ replyCount } antwoorden"
       ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } van maximaal ${ maxParticipants } deelnemers"
@@ -1846,8 +2180,14 @@
       "-Removed dangerous URL-": [
         "-Gevaarlijke URL verwijderd-"
       ],
+      "1 reply draft": [
+        "1 conceptantwoord"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
+      ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Geavanceerde modus: stem elke vervagingsconstante af voor de volgende versie en klik vervolgens op Toepassen om het voorbeeld opnieuw op te bouwen. Overschrijvingen hebben voorrang op bestand- en Unleash-waarden."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anoniem ${ particle } ${ participantNumber }"
@@ -1860,6 +2200,9 @@
       ],
       "Attention required": [
         "Aandacht vereist"
+      ],
+      "Background blur initializing": [
+        "Initialisatie van achtergrondonscherpte"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
@@ -1875,6 +2218,9 @@
       ],
       "Camera permission denied": [
         "Cameratoegang geweigerd"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Wijzigingen zijn klaargezet. Toepassen om het voorbeeld opnieuw op te bouwen met de nieuwe constanten."
       ],
       "Chat with everyone": [
         "Chat met iedereen"
@@ -1905,6 +2251,12 @@
       ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
+      ],
+      "Could not access the camera.": [
+        "Kon geen toegang krijgen tot de camera."
+      ],
+      "Could not start recording.": [
+        "Kon de opname niet starten."
       ],
       "Country code": [
         "Landcode"
@@ -1984,6 +2336,9 @@
       "Everyone has been disconnected from the call.": [
         "De verbinding met iedereen is verbroken."
       ],
+      "Failed to apply background blur": [
+        "Toepassen van achtergrondvervaging mislukt"
+      ],
       "Failed to update meeting name": [
         "Naam vergadering bijwerken mislukt"
       ],
@@ -1992,6 +2347,9 @@
       ],
       "Failed to update meeting schedule": [
         "Bijwerken vergaderingsschema mislukt"
+      ],
+      "Failed to update meeting waiting room status": [
+        "Kan de wachtkamerstatus van de vergadering niet updaten"
       ],
       "Free meeting": [
         "Gratis vergadering"
@@ -2065,11 +2423,17 @@
       "Loading meetings...": [
         "Vergaderingen laden..."
       ],
+      "Loading recordings…": [
+        "Opnames laden…"
+      ],
       "Loading...": [
         "Laden..."
       ],
       "Loading…": [
         "Laden…"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Speel een geüploade video of uw live camera af via beide versies van achtergrondvervaging naast elkaar."
       ],
       "Lower participant's hand": [
         "Hand deelnemers laten zakken"
@@ -2110,6 +2474,12 @@
       "Member": [
         "Lid"
       ],
+      "Message actions": [
+        "Berichtacties"
+      ],
+      "Message from ${ participantName }": [
+        "Bericht van ${ participantName }"
+      ],
       "microphone": [
         "microfoon"
       ],
@@ -2133,6 +2503,9 @@
       ],
       "New host": [
         "Nieuwe host"
+      ],
+      "New reply": [
+        "Nieuw antwoord"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Geen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } gedetecteerd."
@@ -2167,6 +2540,9 @@
       "No speaker detected": [
         "Geen luidspreker gedetecteerd"
       ],
+      "Not sent, check your connection.": [
+        "Niet verzonden, controleer uw verbinding."
+      ],
       "Only meetings you created appear here": [
         "Alleen vergaderingen die u hebt aangemaakt, worden hier weergegeven"
       ],
@@ -2178,6 +2554,9 @@
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Onze end-to-end versleutelde vergaderingen beschermen uw privacy en maken echt vrije meningsuiting mogelijk."
+      ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Pagina ${ displayPage } van ${ totalPages }"
       ],
       "Participant": [
         "Deelnemer"
@@ -2209,6 +2588,12 @@
       "privacy": [
         "privacy"
       ],
+      "Quick reactions": [
+        "Snelle reacties"
+      ],
+      "Reactions": [
+        "Reacties"
+      ],
       "Reconnected successfully": [
         "Succesvol opnieuw verbonden"
       ],
@@ -2218,8 +2603,17 @@
       "Record your meetings": [
         "Neem uw vergaderingen op"
       ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Neem uw ruwe camerabeeld en de productie-achtergrondvervaging naast elkaar op. Stoppen downloadt beide clips."
+      ],
+      "Recording": [
+        "Opname"
+      ],
       "Recording deleted": [
         "Opname verwijderd"
+      ],
+      "Recording in progress": [
+        "Bezig met opnemen"
       ],
       "Recording will begin and attendees will be notified.": [
         "Opname wordt gestart en deelnemers worden hiervan op de hoogte gesteld."
@@ -2281,6 +2675,9 @@
       "Start recording": [
         "Opname starten"
       ],
+      "Starting camera…": [
+        "Camera starten…"
+      ],
       "Stop sharing your screen": [
         "Stop met het delen van uw scherm"
       ],
@@ -2298,6 +2695,9 @@
       ],
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "De vergaderingslink die u probeerde te openen, bestaat niet of is mogelijk verlopen. Zorg ervoor dat de link correct is, of start in plaats daarvan een nieuwe beveiligde vergadering."
+      ],
+      "This conversation started before you joined.": [
+        "Dit gesprek is gestart voordat u deelnam."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Dit is een begin-tot-eind versleutelde chat met vergankelijke berichten, die verdwijnen aan het einde van het gesprek."
@@ -2373,6 +2773,9 @@
       ],
       "Video effects": [
         "Video-effecten"
+      ],
+      "View ": [
+        "Bekijken "
       ],
       "Warning": [
         "Waarschuwing"
@@ -2473,6 +2876,12 @@
       "Add to calendar": [
         "Voeg toe aan de agenda"
       ],
+      "Advanced mode": [
+        "Geavanceerde modus"
+      ],
+      "Anyone with the link can join": [
+        "Iedereen met de koppeling kan deelnemen"
+      ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
@@ -2481,6 +2890,9 @@
       ],
       "Authenticator app": [
         "Authenticatie app"
+      ],
+      "Blurred (next)": [
+        "Vervagen (volgende)"
       ],
       "Browser": [
         "Browser"
@@ -2506,8 +2918,14 @@
       "Copy invite link": [
         "Kopieer uitnodigingslink"
       ],
+      "Create meeting options": [
+        "Opties voor aanmaken vergadering"
+      ],
       "Created": [
         "Aangemaakt"
+      ],
+      "Current": [
+        "Huidig"
       ],
       "Delete": [
         "Verwijderen"
@@ -2526,6 +2944,12 @@
       ],
       "Email address": [
         "E-mailadres"
+      ],
+      "Emoji picker": [
+        "Emoji-kiezer"
+      ],
+      "Emoji reactions": [
+        "Emoji-reacties"
       ],
       "Enabled": [
         "Ingeschakeld"
@@ -2566,11 +2990,17 @@
       "Last used": [
         "Laatst gebruikt"
       ],
+      "Leave meeting options": [
+        "Opties voor verlaten vergadering"
+      ],
       "Manage recordings": [
         "Beheer opnames"
       ],
       "Meeting ID": [
         "Vergaderingsnummer"
+      ],
+      "Meeting link": [
+        "Vergaderingkoppeling"
       ],
       "Message": [
         "Bericht"
@@ -2599,6 +3029,12 @@
       "Outlook Calendar": [
         "Outlook agenda"
       ],
+      "Participant controls": [
+        "Deelnemersbeheer"
+      ],
+      "Participants join after you approve them": [
+        "Deelnemers nemen deel nadat u ze heeft goedgekeurd"
+      ],
       "Passphrase": [
         "Wachtzin"
       ],
@@ -2608,11 +3044,17 @@
       "Phone number": [
         "Telefoonnummer"
       ],
+      "Raw": [
+        "Ruw"
+      ],
       "Remember my name on this device": [
         "Onthoud mijn naam op dit apparaat"
       ],
       "Repeat event": [
         "Afspraak herhalen"
+      ],
+      "Reply": [
+        "Beantwoorden"
       ],
       "Return to dashboard": [
         "Terug naar dashboard"
@@ -2620,8 +3062,14 @@
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Save my name on this device": [
+        "Mijn naam opslaan op dit apparaat"
+      ],
       "Schedule meeting": [
         "Plan vergadering"
+      ],
+      "Screen share": [
+        "Scherm delen"
       ],
       "Selected Camera": [
         "Selecteer camera"
@@ -2640,6 +3088,12 @@
       ],
       "Track SID": [
         "Track SID"
+      ],
+      "Use live camera feed": [
+        "Live camerabeeld gebruiken"
+      ],
+      "Use simple selfie segmentation": [
+        "Eenvoudige selfie-segmentatie gebruiken"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -2960,6 +3414,9 @@
       "Activity events": [
         "Activiteitsafspraken"
       ],
+      "All participants": [
+        "Alle deelnemers"
+      ],
       "Allow camera ": [
         "Camera toestaan "
       ],
@@ -2987,6 +3444,9 @@
       "Available Speakers": [
         "Beschikbare luidsprekers"
       ],
+      "Background blur comparison": [
+        "Vergelijking achtergrondvervaging"
+      ],
       "Camera and microphone are blocked": [
         "Camera en microfoon zijn geblokkeerd."
       ],
@@ -2995,6 +3455,12 @@
       ],
       "Chat": [
         "Chat"
+      ],
+      "Constants": [
+        "Constanten"
+      ],
+      "Couldn't prepare the recording": [
+        "Kon de opname niet voorbereiden"
       ],
       "Create new room": [
         "Maak nieuwe ruimte aan"
@@ -3084,6 +3550,9 @@
       "Minicalendar": [
         "Mini-agenda"
       ],
+      "No one is waiting": [
+        "Er is niemand aan het wachten"
+      ],
       "No results found": [
         "Geen resultaten"
       ],
@@ -3099,11 +3568,17 @@
       "Personal meeting room": [
         "Persoonlijke vergaderruimte"
       ],
+      "Preparing your recording…": [
+        "Uw opname voorbereiden…"
+      ],
       "Publications": [
         "Publicaties"
       ],
       "Reconnection Testing": [
         "Testen opnieuw verbinden"
+      ],
+      "Record raw vs blurred camera": [
+        "Ruwe vs. vervaagde camera opnemen"
       ],
       "Record this meeting": [
         "Neem deze vergadering op"
@@ -3165,11 +3640,17 @@
       "Video": [
         "Video"
       ],
+      "Waiting room": [
+        "Wachtruimte"
+      ],
       "What went wrong?": [
         "Wat ging er mis?"
       ],
       "Your feedback has been submitted": [
         "Uw feedback is verzonden"
+      ],
+      "Your recording is ready": [
+        "Uw opname is gereed"
       ]
     },
     "Today icon tooltip in mini calendar": {

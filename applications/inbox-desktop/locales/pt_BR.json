@@ -4,7 +4,21 @@
     "language": "pt_BR"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Open external url": [
+        "Abrir URL externa"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "O protocolo ${ parsedProtocol } não é permitido. Você deseja abrir a URL externa?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Reiniciar e analisar perfil agora\" reiniciará o aplicativo imediatamente e capturará um perfil de inicialização.\n\n\"Analisar perfil na próxima inicialização\" analisará o perfil na próxima vez que você abrir o aplicativo. Use isso para medir a velocidade de inicialização após uma reinicialização."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Sobre o ${ MAIL_APP_NAME }"
       ],
@@ -133,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Desinstalar ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Quando a aceleração de hardware está ativada, o aplicativo usa o hardware de vídeo dedicado do seu dispositivo para renderização. Isso pode causar problemas de compatibilidade em alguns sistemas."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Sem a aceleração de hardware, o aplicativo usa renderização de software em vez da sua placa de vídeo. Você pode notar animações mais lentas e maior uso de CPU."
       ],
       "Zoom": [
         "Ampliar"

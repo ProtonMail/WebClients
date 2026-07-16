@@ -36,6 +36,12 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "Accept invitation": [
+        "接受邀請"
+      ],
+      "Accept invitation to document": [
+        "接受文件邀請"
+      ],
       "Actions": [
         "動作"
       ],
@@ -84,6 +90,9 @@
       "Apply": [
         "套用"
       ],
+      "Ask me next time": [
+        "下次詢問我"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "每個聯絡人群組至多允許 ${ maxContacts } 個聯絡人"
       ],
@@ -120,8 +129,14 @@
       "Change password": [
         "變更密碼"
       ],
+      "Change sort order": [
+        "變更排序順序"
+      ],
       "characters": [
         "個字元"
+      ],
+      "characters out of": [
+        "個字元，總計"
       ],
       "Chat with us": [
         "與我們往來對話"
@@ -164,6 +179,9 @@
       ],
       "Collapse list": [
         "收合清單"
+      ],
+      "Collapse list of pending invitations": [
+        "收合待處理邀請列表"
       ],
       "Compose": [
         "撰寫郵件"
@@ -240,6 +258,9 @@
       "Create and copy alias": [
         "建立及複製別名"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "建立新的 ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "創建新資料夾"
       ],
@@ -254,6 +275,9 @@
       ],
       "Decline invitation": [
         "婉拒邀請"
+      ],
+      "Decline invitation to document": [
+        "拒絕文件邀請"
       ],
       "Decline invite": [
         "婉拒邀請"
@@ -300,8 +324,17 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "下載 ${ DRIVE_APP_NAME } 應用程式"
       ],
+      "Download a copy (as docx)": [
+        "下載副本 (為 docx 格式)"
+      ],
+      "Download a copy (as xlsx)": [
+        "下載副本 (為 xlsx 格式)"
+      ],
       "Download anyway": [
         "仍要下載"
+      ],
+      "Download debug information": [
+        "下載偵錯資訊"
       ],
       "Download logs": [
         "下載日誌"
@@ -336,14 +369,29 @@
       "Expand": [
         "展開"
       ],
+      "Explore other plans": [
+        "探索其他方案"
+      ],
       "Export": [
         "匯出"
       ],
       "Export contact group": [
         "匯出聯絡人群組"
       ],
+      "Export editor state for version": [
+        "匯出版本的編輯器狀態"
+      ],
       "Export selection as .vcf": [
         "以.vcf匯出選項"
+      ],
+      "Export this version (as docx)": [
+        "匯出此版本 (為 docx 格式)"
+      ],
+      "Export this version (as xlsx)": [
+        "匯出此版本 (為 xlsx 格式)"
+      ],
+      "Export YJS state for version": [
+        "匯出版本的 YJS 狀態"
       ],
       "Forgot password?": [
         "忘記密碼?"
@@ -449,6 +497,9 @@
       ],
       "Load image": [
         "載入圖像"
+      ],
+      "Make a copy": [
+        "建立副本"
       ],
       "Manage addresses": [
         "管理電郵位址"
@@ -594,6 +645,9 @@
       "Reload": [
         "重新載入"
       ],
+      "Reload spreadsheet": [
+        "重新載入試算表"
+      ],
       "Remove": [
         "移除"
       ],
@@ -605,6 +659,9 @@
       ],
       "Remove button": [
         "移除按鈕"
+      ],
+      "Remove file": [
+        "移除檔案"
       ],
       "Remove my access": [
         "移除我的存取權限"
@@ -619,6 +676,9 @@
         "取代檔案"
       ],
       "Report a problem": [
+        "回報問題"
+      ],
+      "Report issue": [
         "回報問題"
       ],
       "Request a call": [
@@ -651,17 +711,29 @@
       "Restore this version?": [
         "還原此版本?"
       ],
+      "Restoring...": [
+        "正在還原……"
+      ],
       "Save": [
         "儲存"
       ],
       "Save changes": [
         "儲存變更"
       ],
+      "Save preferences": [
+        "儲存偏好設定"
+      ],
       "Search": [
         "搜尋"
       ],
       "Search countries": [
         "搜尋國家與地區"
+      ],
+      "Search recent documents": [
+        "搜尋最近的文件"
+      ],
+      "Search recent spreadsheets": [
+        "搜尋最近的試算表"
       ],
       "Search recents": [
         "搜尋最近項目"
@@ -753,11 +825,17 @@
       "Submit": [
         "送出"
       ],
+      "Subscribe now": [
+        "立即訂閱"
+      ],
       "Switch accounts": [
         "切換帳號"
       ],
       "Switch or add account": [
         "切換或是添加帳號"
+      ],
+      "Take out of trash": [
+        "移出垃圾桶"
       ],
       "Toggle debug mode": [
         "切換成偵錯模式"
@@ -773,6 +851,9 @@
       ],
       "Try another method": [
         "嘗試其它驗證方式"
+      ],
+      "Try Workspace": [
+        "試用 Workspace"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
@@ -843,6 +924,9 @@
       "View": [
         "檢視"
       ],
+      "View ${ pendingCount } invitation": [
+        "檢視所有 ${ pendingCount } 個邀請"
+      ],
       "View all reports": [
         "瀏覽全部報告"
       ],
@@ -860,6 +944,9 @@
       ],
       "words": [
         "文字"
+      ],
+      "words out of": [
+        "字，總計"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
@@ -1134,14 +1221,122 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "已啟用"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "您組織外部的使用者已在使用此位址。請聯絡客戶支援服務以解決此問題"
+      ],
+      "All": [
+        "全部"
+      ],
+      "Calendar": [
+        "行事曆"
+      ],
+      "Configure migration": [
+        "設定轉移"
+      ],
+      "Contacts": [
+        "聯絡人"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "從 Google Workspace 到 ${ BRAND_NAME } 的資料移轉狀態"
+      ],
+      "Emails": [
+        "電子郵件"
+      ],
+      "Errors": [
+        "錯誤"
+      ],
+      "Estimated size": [
+        "預估大小"
+      ],
+      "Find out what can be migrated.": [
+        "了解可以遷移哪些內容。"
+      ],
+      "Has errors": [
+        "有錯誤"
+      ],
+      "In progress": [
+        "進行中"
+      ],
       "Member address not found. Please contact customer support to resolve this": [
         "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Migrate": [
+        "移轉"
+      ],
+      "Migrated": [
+        "已遷移"
+      ],
+      "Migration status": [
+        "轉移狀態"
       ],
       "Missing organization private key": [
         "缺少組織私有密鑰"
       ],
       "Missing organization public key": [
         "缺少組織公用密鑰"
+      ],
+      "No users to display": [
+        "沒有可顯示的使用者"
+      ],
+      "Not activated": [
+        "未啟用"
+      ],
+      "Organization does not have enough seats available": [
+        "組織沒有足夠的可用座席"
+      ],
+      "Organization does not have enough storage available": [
+        "組織沒有足夠的可用儲存空間"
+      ],
+      "Pending": [
+        "擱置中"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "選取您確切想移轉的項目。這將套用至所有組織使用者。"
+      ],
+      "Select users to migrate": [
+        "選取要遷移的使用者"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由於平台不相容，無法遷移此使用者。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中啟用他們的帳號。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的帳號。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的位址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "若要遷移此使用者，他們需要接受加入 ${ BRAND_NAME } 的邀請。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中將其取消封存。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中取消停用他們。"
+      ],
+      "User": [
+        "使用者"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "已存取其 ${ BRAND_NAME } 帳號的使用者"
+      ],
+      "What are you migrating?": [
+        "您要轉移什麼？"
+      ],
+      "You": [
+        "您"
       ]
     },
     "Browser": {
@@ -2960,11 +3155,23 @@
       "Failed to fetch sharing info": [
         "擷取共享資訊失敗"
       ],
+      "Failed to load 'My files' folder": [
+        "無法載入「我的檔案」資料夾"
+      ],
+      "Failed to load recent documents": [
+        "無法載入最近的文件"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "無法載入訂閱資料。請稍後再試。"
       ],
       "Failed to open to contact": [
         "無法開啟聯絡人"
+      ],
+      "Failed to remove older revisions": [
+        "未能成功移除較舊修訂版本"
+      ],
+      "Failed to rename document": [
+        "無法重新命名文件"
       ],
       "Failed to rename document. Please try again later.": [
         "無法重新命名文件，請稍後重試。"
@@ -3058,6 +3265,9 @@
       ],
       "No contacts found to import": [
         "沒有找到聯絡人可以匯入"
+      ],
+      "No drive found to import": [
+        "找不到可匯入的雲端硬碟"
       ],
       "No emails found to import - the account does not have an inbox": [
         "沒有找到電子郵件可以匯入 - 該帳號沒有收件匣"
@@ -3176,6 +3386,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
       ],
+      "Some trashed documents could not be loaded": [
+        "部分垃圾桶中的文件無法載入"
+      ],
       "Something went wrong while fetching available domains": [
         "擷取可用網域時發生錯誤"
       ],
@@ -3242,6 +3455,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待匯入的外部帳號裡資料夾過多，請自訂匯入內容並刪除部份資料夾。"
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "處理文件的更新時發生錯誤。請重新載入頁面並再試一次。"
+      ],
       "There was an error when exporting the contacts vCards": [
         "匯出聯絡人 vCard 時發生錯誤"
       ],
@@ -3269,11 +3485,17 @@
       "Try using only letters, numerals, and _.-": [
         "嘗試僅使用字母、數字與 _.-"
       ],
+      "Unable to import file": [
+        "無法匯入檔案"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "無法載入 VPN 儀表板。請檢查您的連線，然後重試。"
       ],
       "Unexpected error, we can't import the contacts": [
         "未知錯誤，無法匯入聯絡人"
+      ],
+      "Unexpected error, we can't import the files": [
+        "發生非預期錯誤，我們無法匯入檔案"
       ],
       "Unknown error": [
         "未知錯誤"
@@ -3299,6 +3521,12 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "我們在儲存最近的編輯時遇到問題，請重新整理頁面。"
       ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "我們在同步您的文件時遇到問題。請重新整理網頁。"
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "我們無法將此檔案匯入 ${ SHEETS_APP_NAME }。您可以嘗試將內容複製並貼到新的 ${ SHEETS_APP_NAME } 中。"
+      ],
       "We couldn’t send a verification code using this method.": [
         "我們無法使用此方法傳送驗證碼。"
       ],
@@ -3313,6 +3541,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "您已使用方案中的所有位址。請升級您的方案以新增新位址，或在您的帳號中停用某個位址。"
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
@@ -4160,6 +4391,9 @@
       "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
         "文件 ${ documentTitle } 已被移動到垃圾桶。它將會待在那兒直到你還原或永久刪除它。"
       ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "「${ documentTitle }」目前在垃圾桶中，並會一直保留在該處，直到您將其永久刪除。"
+      ],
       "${ addressCount } email address": [
         "${ addressCount } 個電郵位址"
       ],
@@ -4199,6 +4433,9 @@
       "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME }檔案無法直接下載也不會包含於此次下載。您可透過點擊'繼續下載'下載其他檔案。"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } 讓您能以端對端加密進行即時協作，以確保完整的隱私。建立副本以開始編輯，或向擁有者要求編輯存取權限。"
+      ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } 在"
       ],
@@ -4213,6 +4450,9 @@
       ],
       "${ planName } expires in ${ daysLeft } day.": [
         "${ planName } 過其於 ${ daysLeft } 天。"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } 今日過期。"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
@@ -4288,6 +4528,9 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN 是您裝置與網際網路之間的安全通道。它能隱藏您的位置與活動，讓 ISP 及您造訪的網站無法追蹤。"
+      ],
+      "Accept/decline": [
+        "接受/拒絕"
       ],
       "Ad targeting": [
         "廣告目標鎖定"
@@ -4412,6 +4655,9 @@
       "Continue": [
         "繼續"
       ],
+      "Converting document...": [
+        "正在轉換文件……"
+      ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
       ],
@@ -4439,6 +4685,12 @@
       "Create a new contact group": [
         "創建新聯絡人群組"
       ],
+      "Create an end-to-end encrypted document.": [
+        "建立端對端加密的文件。"
+      ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "建立端對端加密的文件和試算表。"
+      ],
       "Create in": [
         "創建在"
       ],
@@ -4454,11 +4706,17 @@
       "Creating link to folder": [
         "正在創建資料夾連結"
       ],
+      "Creating new document...": [
+        "正在建立新文件……"
+      ],
       "Current plan": [
         "當前方案"
       ],
       "Current version": [
         "目前版本"
+      ],
+      "Decrypting your document": [
+        "正在解密您的文件"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "數碼簽署已通過驗證。此檔案由 ${ emailAddress } 安全上載。"
@@ -4553,8 +4811,17 @@
       "Enter your own password (as trusted contact).": [
         "輸入您自己的密碼（作為受信任聯絡人）。"
       ],
+      "Error converting document: ${ errorMessage }": [
+        "轉換文件時發生錯誤：${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "載入文件時發生錯誤：${ errorDetail }"
+      ],
       "Error Syncing": [
         "同步失敗"
+      ],
+      "Every change you make is automatically and securely saved to Drive.": [
+        "您所做的每項變更都會自動且安全地儲存到磁碟。"
       ],
       "Everything in ${ planOrAppName }": [
         "全部都在 ${ planOrAppName }"
@@ -4571,6 +4838,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "開啟安全連結失敗。原因：${ error }"
       ],
+      "Failing signatures will be re-signed by you": [
+        "驗證失敗的簽名將由您重新簽名"
+      ],
       "File \"${ name }\" was deleted during download": [
         "檔案 \"${ name }\" 在下載過程中被刪除"
       ],
@@ -4582,6 +4852,9 @@
       ],
       "File will not be updated": [
         "將不會上傳檔案"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "僅限檔案（不含相片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }）- 總計最高 100 GB、100,000 個檔案，且單一檔案最高 50 GB"
       ],
       "finance": [
         "金融"
@@ -4610,11 +4883,26 @@
       "Geoblocking": [
         "地理封鎖"
       ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "使用 ${ BRAND_NAME } Workspace 取得專業的 @your-company.com 電子郵件、每位使用者 1 TB 的安全儲存空間、更長的視訊通話等服務。"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "當您的文件有新的註解和建議時，以電子郵件接收更新。"
+      ],
+      "Get Notified About Comments": [
+        "取得有關註解的通知"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府和 ISP 可以監控您的線上活動。透過隱藏您的真實 IP 並加密您的活動，您的瀏覽將變得私密。"
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "回報此問題以協助我們改進此體驗。如果您不介意分享試算表內容，請在您的報告中附加下方的偵錯資訊。"
+      ],
       "here": [
         "這裡"
+      ],
+      "Hide table of contents": [
+        "隱藏目錄"
       ],
       "High Priority": [
         "首要優先順序"
@@ -4660,6 +4948,9 @@
       ],
       "Important note": [
         "重要提示"
+      ],
+      "Importing ODS files is currently in beta": [
+        "匯入 ODS 檔案目前處於測試階段"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -4751,8 +5042,14 @@
       "Loading...": [
         "載入中‧‧‧"
       ],
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
+        "您似乎處於離線狀態。離線時無法編輯此文件。請檢查您裝置的連線狀態。"
+      ],
       "Low Priority": [
         "較低優先順序"
+      ],
+      "Making a copy...": [
+        "正在建立副本……"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "最多 ${ MAX_SHARED_URL_PASSWORD_LENGTH } 個字元"
@@ -4783,6 +5080,9 @@
       ],
       "No contacts added yet": [
         "仍未加入任何通訊錄"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "網址中未提供文件。請返回 ${ DRIVE_APP_NAME } 並選取一個文件。"
       ],
       "No email address": [
         "沒有電郵位址"
@@ -4825,6 +5125,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "糟糕！此試算表無法儲存您最近的編輯，因此我們已暫停編輯以防止您遺失工作內容。"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "開啟指南，以查看建議的動作和實用連結。"
@@ -4871,6 +5174,9 @@
       "Please enter the password to decrypt and view content.": [
         "請輸入密碼以解密並檢視內容。"
       ],
+      "Please export a copy of your current changes from the main menu and reload the page.": [
+        "請從主選單中匯出您目前變更的副本，並重新載入此網頁。"
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "請注意：指派到此群組中的電子郵件位址不會被刪除。"
       ],
@@ -4916,11 +5222,17 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "私密瀏覽（或「無痕」模式）僅適用於在您的裝置上隱藏您的活動。它會阻止您的瀏覽器儲存歷程記錄和 Cookie，但並不會讓您變得隱形。您的 ISP、網路管理員以及您訪問的網站仍然可以看到您在線上進行的操作。"
       ],
+      "Public documents are not yet enabled for your organization.": [
+        "您的組織尚未啟用公開文件功能。"
+      ],
       "Read-only": [
         "唯讀"
       ],
       "Recent documents": [
         "最近使用的文件"
+      ],
+      "Recent spreadsheets": [
+        "最近的試算表"
       ],
       "Recents": [
         "最近"
@@ -4936,6 +5248,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
+      ],
+      "Restored version to": [
+        "已將版本還原至"
       ],
       "Save Document as PDF": [
         "另存為 PDF"
@@ -4988,6 +5303,9 @@
       "Shared on": [
         "已共享於"
       ],
+      "Show table of contents": [
+        "顯示目錄"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "因為網路錯誤，所以無法驗證簽章，請稍後再試。"
       ],
@@ -4996,6 +5314,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
+      ],
+      "Some edits are taking longer to sync than expected.": [
+        "部分編輯同步所需的時間比預期長。"
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "部分政府會封鎖或限制存取特定網站。VPN 有助於繞過審查，同時保持您的活動和身分私密。"
@@ -5039,6 +5360,9 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "帳號可能換了新的金鑰，不然下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
       ],
+      "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
+        "無法驗證此文件中編輯的作者身分。您要將此文件標記為已驗證嗎？您可以選擇「忽略」以稍後再做決定。"
+      ],
       "The Beginning": [
         "序章"
       ],
@@ -5057,11 +5381,35 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "這個收件者已停用端到端加密。若要傳送加密郵件給這個收件者，該收件者必須重新啟用端到端加密。"
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "您輸入的網址似乎是從 Slack 錯誤複製。從 Slack 複製長連結時，請右鍵點擊連結並選擇「複製連結」，而不是直接複製截斷的網址文字。"
+      ],
+      "There are no documents in the trash.": [
+        "垃圾桶中沒有任何文件。"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "此項目將刪除連結並撤銷全部使用者的存取權。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
+      ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "此文件已變得太大，無法進行編輯。您可以移除較舊的修訂版本以繼續編輯。"
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "此文件已變得太大，無法儲存您最近的變更。請下載副本以保留您的工作。"
+      ],
+      "This document has lots of activity. Some features may be temporarily unavailable.": [
+        "此文件的活動非常頻繁。部分功能可能會暫時無法使用。"
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "此文件有許多作用中的協作者。即時編輯功能暫時無法使用。請重新整理以檢視最新更新。"
+      ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "此文件可能不存在，或我們在載入時遇到問題。請重新載入網頁並重試。"
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "此文件可能不存在，或者您可能沒有檢視的權限。您可以嘗試重新載入網頁以確認問題是否仍然存在，或聯絡擁有者以取得存取權限。"
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "此是貴組織使用者可看見的名稱或暱稱。您可隨時時修正它。"
@@ -5080,6 +5428,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "這表示您的 ISP 和您造訪的網站無法將您的個人資訊與您的線上活動連線。"
+      ],
+      "This message will be presented again later": [
+        "此訊息稍後將會再次顯示"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "此唯一代碼可供網站和 ISP（網際網路服務供應商）使用，用以將您的位置和瀏覽歷程記錄與您的裝置進行連結"
@@ -5159,6 +5510,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "不幸的是，該檔案或其部份資料似乎無法解密。"
       ],
+      "Update recent documents": [
+        "更新最近的文件"
+      ],
       "Upgrade anytime to bring over the rest": [
         "隨時升級以匯入其餘內容"
       ],
@@ -5222,6 +5576,12 @@
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "當列印視窗開啟，選擇印表機為「另存新檔為PDF」，然後點擊儲存。"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "當對話方塊開啟時，將「目的地」變更為「儲存為 PDF」，然後按下「儲存」。"
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "當對話方塊開啟時，選取左下角的「PDF」，然後按下「儲存」。"
+      ],
       "When working remotely": [
         "當遠端工作時"
       ],
@@ -5261,6 +5621,9 @@
       "You are currently signed in as ${ username }.": [
         "您目前已登入為 ${ username }。"
       ],
+      "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
+        "您目前正在以唯讀模式檢視此文件。請聯絡擁有者以要求編輯和註解的存取權限。"
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您已使用超出 ${ downgradedPlanName } 方案的空間，請刪除一些檔案來釋放空間方可降級。"
       ],
@@ -5287,6 +5650,9 @@
       ],
       "You cannot undo this action.": [
         "此操作無法復原。"
+      ],
+      "You don't have access": [
+        "您沒有存取權限"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "您可能沒有足夠的權限使用您選取的帳號進行檢視。請嘗試使用其他帳號或聯絡擁有者以取得存取權。"
@@ -5339,8 +5705,17 @@
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "您的瀏覽器將開啟列印視窗，可以將文件會出為PDF。"
       ],
+      "Your changes are being synced to Drive. Please do not close the web page.": [
+        "您的變更正在同步至磁碟。請勿關閉此網頁。"
+      ],
+      "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
+        "您的變更未能成功同步。磁碟將會自動嘗試儲存這些變更。請勿關閉此網頁。"
+      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "您目前的瀏覽器不支援下載大型檔案，因為服務工作者功能無法使用。下載大型檔案可能會使瀏覽器凍結或沒有回應。請改用其中一個${ recommendedBrowser }的最新版本，然後再試一次。"
+      ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "您目前的文件將會被此版本取代。註解和建議將會從文件中移除，但仍可在註解歷程紀錄中存取。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
@@ -5692,11 +6067,20 @@
       "Emails (last month)": [
         "電子郵件（上個月）"
       ],
+      "Enable email notifications": [
+        "啟用電子郵件通知"
+      ],
       "Encrypt emails": [
         "加密電郵"
       ],
       "Erase this link and remove everyone with access": [
         "刪除連結並移除所有有權限者"
+      ],
+      "Exact host matching": [
+        "精確的主機比對"
+      ],
+      "Exact URL matching": [
+        "精確的 URL 比對"
       ],
       "Expiry": [
         "到期時間"
@@ -5745,6 +6129,9 @@
       ],
       "Include application logs in bug report": [
         "在錯誤報告中納入應用程式日誌"
+      ],
+      "Include document name in notification": [
+        "在通知中包含文件名稱"
       ],
       "Include message and file name in invite email": [
         "在邀請電子郵件中包含訊息與檔案名稱"
@@ -5806,11 +6193,17 @@
       "Move to Inbox": [
         "移動到收件匣"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "必須具有至少 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
       "My files": [
         "我的檔案"
       ],
       "Navigation": [
         "巡覽"
+      ],
+      "Never fill on this exact URL": [
+        "絕不在此精確的 URL 填入"
       ],
       "New password": [
         "新密碼"
@@ -5832,6 +6225,9 @@
       ],
       "Optional": [
         "自由列席"
+      ],
+      "Parent domain and subdomains (default)": [
+        "上層網域和子網域 (預設)"
       ],
       "Password": [
         "密碼"
@@ -5872,6 +6268,9 @@
       "Region": [
         "地區"
       ],
+      "Regular expression": [
+        "正規表示式"
+      ],
       "Replace existing file": [
         "取代已存在的檔案"
       ],
@@ -5908,6 +6307,9 @@
       "Skip folder": [
         "略過資料夾"
       ],
+      "Starts with": [
+        "開頭為"
+      ],
       "Stop sharing": [
         "停止共用"
       ],
@@ -5935,8 +6337,14 @@
       "Trash": [
         "垃圾桶"
       ],
+      "Unknown user": [
+        "未知的使用者"
+      ],
       "Upload picture": [
         "上載圖像"
+      ],
+      "URL wildcard pattern": [
+        "URL 萬用字元模式"
       ],
       "Username": [
         "使用者名稱"
@@ -6261,6 +6669,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "「開頭為」相符規則"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精確的 (子) 網域比對規則"
+      ],
+      "Exact URL matching rule": [
+        "精確的 URL 比對規則"
+      ],
+      "Never fill with this exact URL": [
+        "絕不填入此精確的 URL"
+      ],
+      "Regular expression rule": [
+        "正規表示式規則"
+      ],
+      "Wildcard pattern matching rule": [
+        "萬用字元模式比對規則"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "您的免費試用已結束。 ${ nonAutoRenewalAction }"
       ],
@@ -7524,6 +7950,12 @@
       "Device renamed": [
         "裝置已重新命名"
       ],
+      "Document moved to trash": [
+        "文件已移至垃圾桶"
+      ],
+      "Document restored from trash": [
+        "已從垃圾桶還原文件"
+      ],
       "External invitation removed from the share": [
         "內部邀請函已從共享移除"
       ],
@@ -7544,6 +7976,9 @@
       ],
       "Failed to reject share invitation": [
         "失敗拒絕加入邀請"
+      ],
+      "Failed to rename document": [
+        "無法重新命名文件"
       ],
       "Failed to upload files: ${ err }": [
         "上載檔案失敗：${ err }"
@@ -7581,6 +8016,9 @@
       "Public link update access failed ": [
         "公開網址更新存取權失敗 "
       ],
+      "Recent documents updated": [
+        "最近的文件已更新"
+      ],
       "Root folder failed to be loaded": [
         "根資料夾載入失敗"
       ],
@@ -7599,6 +8037,9 @@
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "抱歉，我們因為其非空白無法刪除此資料夾。"
       ],
+      "Stopping the sharing of this item has failed": [
+        "停止共享此項目失敗"
+      ],
       "Subfolder failed to be loaded": [
         "子資料夾載入失敗"
       ],
@@ -7610,6 +8051,9 @@
       ],
       "The link to your item was deleted": [
         "指向您的項目的連結已刪除"
+      ],
+      "The spreadsheet failed to be created": [
+        "試算表建立失敗"
       ],
       "Trash failed to be emptied": [
         "無法清空垃圾桶"
@@ -8082,6 +8526,9 @@
       "Search for name or email": [
         "搜尋名稱或電郵"
       ],
+      "Search for users or addresses": [
+        "搜尋使用者或位址"
+      ],
       "Search parent folder": [
         "搜尋資料夾主目錄"
       ],
@@ -8276,6 +8723,9 @@
       "Deleted": [
         "已刪除"
       ],
+      "Earlier": [
+        "更早以前"
+      ],
       "Location": [
         "位置"
       ],
@@ -8297,6 +8747,9 @@
       "Today": [
         "今日"
       ],
+      "Viewed": [
+        "已檢視"
+      ],
       "Yesterday": [
         "昨天"
       ]
@@ -8305,11 +8758,26 @@
       "${ referrerRewardAmount } per referral": [
         "每個推薦 ${ referrerRewardAmount }"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**如果您在此日期前取消，**試用結束時您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**如果您不訂閱，**您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您不取消，**您的完整方案將會開始，且您將獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您在此日期前訂閱，**您將會獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "於那日之後，您的帳號將被降級至 **${ BRAND_NAME } 免費 **。若您改變主意，您可 ** 重建訂閱 ** 以存取至頂級質子版的功能。"
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "賺取至多 ${ maxRewardAmount } 額度。您將於邀請者訂閱至 ${ BRAND_NAME } 方案獲得 ${ referrerRewardAmount }。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "免費使用 **${ planTitle }** 直至 **${ textDate }**。"
       ],
       "Friend joined": [
         "已加入的親友"
@@ -8322,6 +8790,9 @@
       ],
       "Invited friends": [
         "邀請好友"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "最後機會探索 **${ planTitle }** 提供的所有強大功能。"
       ],
       "More sharing options": [
         "更多分享選項"
@@ -8337,6 +8808,12 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "您將取得至多 **${ maxRewardAmount }** 額度。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "您還有 **${ daysRemaining } 天**的時間來探索 **${ planTitle }** 提供的所有強大功能。"
+      ],
+      "your subscription": [
+        "您的訂閱"
       ]
     },
     "Safety review": {
@@ -8613,8 +9090,62 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "逗號分隔值檔案 (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "新增工作表"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "定位字元分隔值 (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "正在建立新試算表……"
+      ],
+      "Detect automatically": [
+        "自動偵測"
+      ],
+      "Insert as new sheet": [
+        "插入為新工作表"
+      ],
+      "Replace current sheet": [
+        "取代目前工作表"
+      ],
+      "Replace data at selected cell": [
+        "取代所選儲存格處的資料"
+      ],
+      "Replace spreadsheet": [
+        "取代試算表"
+      ],
+      "Select a file to import": [
+        "選取要匯入的檔案"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "您目前的試算表，包含其中的所有工作表，將會被此版本取代。"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "將文字轉換為數字、日期和公式"
+      ],
+      "Destination": [
+        "目的地"
+      ],
+      "Format": [
+        "格式"
+      ],
+      "Separator type": [
+        "分隔符號類型"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "匯入資料"
       ]
     },
     "Signing preference for emails": {
@@ -8626,6 +9157,12 @@
       ]
     },
     "Sort menu options": {
+      "Created by": [
+        "建立者為"
+      ],
+      "Last viewed first": [
+        "最晚檢視優先"
+      ],
       "Location": [
         "路徑"
       ],
@@ -8855,6 +9392,9 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "一個至此項目的連結已儲存至您的雲端磁碟。您可於\"與共享的區域\"存區它。"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "若要編輯此文件，請建立一份您可以修改的副本。"
       ]
     },
     "sso": {
@@ -9296,6 +9836,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
       "Account recovery": [
         "帳號救援"
       ],
@@ -9476,6 +10019,12 @@
       "Docs": [
         "Docs"
       ],
+      "Document Size Limit Exceeded": [
+        "超出文件大小限制"
+      ],
+      "Document Size Limit Reached": [
+        "已達文件大小限制"
+      ],
       "Document verification failed": [
         "文件驗證失敗"
       ],
@@ -9517,6 +10066,9 @@
       ],
       "Edit image": [
         "編輯圖像"
+      ],
+      "Editing paused": [
+        "編輯已暫停"
       ],
       "Email addresses": [
         "電郵位址"
@@ -9578,6 +10130,9 @@
       "How does it work?": [
         "那是如何運作的？"
       ],
+      "How your free trial works": [
+        "您的免費試用如何運作"
+      ],
       "Human verification": [
         "真人身分驗證"
       ],
@@ -9610,6 +10165,9 @@
       ],
       "Link confirmation": [
         "外部連結確認"
+      ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "建立副本至您的 ${ DRIVE_APP_NAME }"
       ],
       "Make a secure connection your default": [
         "將安全連線設為您的預設設定"
@@ -9818,6 +10376,9 @@
       "The link expired": [
         "連結已逾期"
       ],
+      "This document is password protected": [
+        "此文件受密碼保護"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -9826,6 +10387,9 @@
       ],
       "Untitled document ${ date }": [
         "未命名文件 ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "未命名試算表 ${ date }"
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
@@ -9847,6 +10411,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
+      "Users and addresses": [
+        "使用者及電郵位址"
       ],
       "Verify your password": [
         "驗證您的密碼"
@@ -9884,6 +10451,9 @@
       "Your account is protected": [
         "你的帳號已被保護"
       ],
+      "Your document cannot be loaded": [
+        "無法載入您的文件"
+      ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "您下載包含${ DOCS_APP_NAME }檔案"
       ],
@@ -9892,11 +10462,23 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "動作"
+      ],
       "Created": [
         "已創建"
       ],
       "Expires": [
         "到期日"
+      ],
+      "Fingerprint": [
+        "指紋"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "Type": [
+        "類型"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10020,6 +10602,11 @@
         "使用者必須擁有位址才能請求資料存取"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "一旦使用者接受邀請，您便能分配角色。"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
@@ -10123,6 +10710,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
       ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了強大的控制，但單個錯誤可能會導致自動填入在欺詐性或網路釣魚網站上比對並填入資料。"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您確定要永久刪除 ${ count } 位聯絡人嗎？"
       ],
@@ -10170,6 +10760,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "此匯入可能超出您的 ${ BRAND_NAME } 帳號中目前可用的儲存空間。請考慮自訂您的匯入。"
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "這將取代試算表中的所有資料"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"

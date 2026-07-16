@@ -90,6 +90,9 @@
       "Apply": [
         "Übernehmen"
       ],
+      "Ask me next time": [
+        "Nächstes Mal fragen"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
         "Pro Kontaktgruppe sind maximal ${ maxContacts } Kontakte erlaubt."
@@ -720,6 +723,9 @@
       "Save changes": [
         "Änderungen speichern"
       ],
+      "Save preferences": [
+        "Einstellungen speichern"
+      ],
       "Search": [
         "Suchen"
       ],
@@ -1233,6 +1239,9 @@
       "Activated": [
         "Aktiviert"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu klären"
+      ],
       "All": [
         "Alle"
       ],
@@ -1256,6 +1265,9 @@
       ],
       "Estimated size": [
         "Geschätzte Größe"
+      ],
+      "Find out what can be migrated.": [
+        "Finde heraus, was migriert werden kann."
       ],
       "Has errors": [
         "Hat Fehler"
@@ -1307,6 +1319,27 @@
       ],
       "Status": [
         "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer kann aufgrund von Plattform-Inkompatibilitäten nicht migriert werden."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere seine Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Benutzer zu migrieren, muss er deine Einladung annehmen, ${ BRAND_NAME } beizutreten."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, dearchiviere ihn in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, hebe seine Sperrung in deiner Google Workspace Admin-Konsole auf."
       ],
       "User": [
         "Benutzer"
@@ -3168,9 +3201,6 @@
       "Failed to resend invitation": [
         "Fehler beim erneuten Senden der Einladung"
       ],
-      "Failed to trash document.": [
-        "Dokument konnte nicht in den Papierkorb verschoben werden"
-      ],
       "Failed to unshare node": [
         "Fehler beim Zurücknehmen des freigegebenen Knotens"
       ],
@@ -3258,6 +3288,9 @@
       ],
       "No contacts found to import": [
         "Keine Kontakte zum Importieren vorhanden"
+      ],
+      "No drive found to import": [
+        "Es wurde kein Drive zum Importieren gefunden"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
@@ -3487,6 +3520,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Unerwarteter Fehler, wir können die Kontakte nicht importieren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -4685,6 +4721,9 @@
       "Continue": [
         "Fortfahren"
       ],
+      "Converting document...": [
+        "Dokument wird umgewandelt..."
+      ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
       ],
@@ -4733,6 +4772,9 @@
       ],
       "Creating link to folder": [
         "Link zum Ordner wird erstellt"
+      ],
+      "Creating new document...": [
+        "Neues Dokument wird erstellt..."
       ],
       "Current plan": [
         "Aktuelles Abonnement"
@@ -4836,6 +4878,12 @@
       "Enter your own password (as trusted contact).": [
         "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Fehler beim Umwandeln des Dokuments: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fehler beim Laden des Dokuments: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Fehler beim Synchronisieren"
       ],
@@ -4904,6 +4952,12 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Mit ${ BRAND_NAME } Workspace erhältst du eine professionelle E-Mail-Adresse mit der Endung @deine-firma.com, 1 TB sicheren Speicherplatz pro Benutzer, längere Videoanrufe und vieles mehr."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "E-Mail-Benachrichtigungen für Kommentare und Vorschläge erhalten, die zu deinen Dokumenten hinzugefügt wurden."
+      ],
+      "Get Notified About Comments": [
+        "Benachrichtigungen über Kommentare erhalten"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
@@ -5062,6 +5116,9 @@
       "Low Priority": [
         "Niedrige Priorität"
       ],
+      "Making a copy...": [
+        "Kopie wird erstellt..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen",
         "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen"
@@ -5092,6 +5149,9 @@
       ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Kein Dokument in der URL angegeben. Zu ${ DRIVE_APP_NAME } zurückkehren und ein Dokument auswählen."
       ],
       "No email address": [
         "Keine E-Mail-Adresse"
@@ -5391,6 +5451,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Der Inhaber dieser E-Mail-Adresse hat die Ende-zu-Ende-Verschlüsselung deaktiviert. Um verschlüsselte E-Mails an diese Adresse senden zu können, muss der Besitzer die Ende-zu-Ende-Verschlüsselung wieder aktivieren."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Die von dir eingegebene URL scheint fehlerhaft von Slack kopiert worden zu sein. Wenn du lange Links von Slack kopierst, klicke mit der rechten Maustaste auf den Link und wähle dann „Link kopieren“ anstatt den abgeschnittenen URL-Text direkt zu kopieren."
       ],
       "There are no documents in the trash.": [
         "Es befinden sich keine Dokumente im Papierkorb."
@@ -6082,11 +6145,20 @@
       "Emails (last month)": [
         "E-Mails (letzter Monat)"
       ],
+      "Enable email notifications": [
+        "E-Mail-Benachrichtigungen aktivieren"
+      ],
       "Encrypt emails": [
         "E-Mails verschlüsseln"
       ],
       "Erase this link and remove everyone with access": [
         "Diesen Link löschen und jeden mit Zugriff entfernen"
+      ],
+      "Exact host matching": [
+        "Genaue Host-Übereinstimmung"
+      ],
+      "Exact URL matching": [
+        "Genaue URL-Übereinstimmung"
       ],
       "Expiry": [
         "Ablauf"
@@ -6135,6 +6207,9 @@
       ],
       "Include application logs in bug report": [
         "Anwendungsprotokolle im Fehlerbericht einschließen"
+      ],
+      "Include document name in notification": [
+        "Dokumentname in der Benachrichtigung einbeziehen"
       ],
       "Include message and file name in invite email": [
         "Nachricht und Dateiname in die Einladungs-E-Mail einfügen"
@@ -6205,6 +6280,9 @@
       "Navigation": [
         "Navigation"
       ],
+      "Never fill on this exact URL": [
+        "Niemals auf dieser genauen URL ausfüllen"
+      ],
       "New password": [
         "Neues Passwort"
       ],
@@ -6225,6 +6303,9 @@
       ],
       "Optional": [
         "Optional"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Übergeordnete Domain und Subdomains (Standard)"
       ],
       "Password": [
         "Passwort"
@@ -6265,6 +6346,9 @@
       "Region": [
         "Region"
       ],
+      "Regular expression": [
+        "Regulärer Ausdruck"
+      ],
       "Replace existing file": [
         "Vorhandene Datei ersetzen"
       ],
@@ -6301,6 +6385,9 @@
       "Skip folder": [
         "Ordner überspringen"
       ],
+      "Starts with": [
+        "Beginnt mit"
+      ],
       "Stop sharing": [
         "Freigabe beenden"
       ],
@@ -6333,6 +6420,9 @@
       ],
       "Upload picture": [
         "Bild hochladen"
+      ],
+      "URL wildcard pattern": [
+        "URL-Platzhalter-Muster"
       ],
       "Username": [
         "Benutzername"
@@ -6668,6 +6758,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "„Beginnt mit“-Übereinstimmungsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Genaue (Sub-) Domain-Übereinstimmungsregel"
+      ],
+      "Exact URL matching rule": [
+        "Genaue URL-Übereinstimmungsregel"
+      ],
+      "Never fill with this exact URL": [
+        "Niemals mit dieser genauen URL ausfüllen"
+      ],
+      "Regular expression rule": [
+        "Reguläre-Ausdruck-Regel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Platzhalter-Übereinstimmungsregel"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Deine kostenlose Testversion ist abgelaufen. ${ nonAutoRenewalAction }"
       ],
@@ -8028,9 +8136,6 @@
       "Device renamed": [
         "Gerät umbenannt"
       ],
-      "Document failed to be restored from trash": [
-        "Dokument konnte nicht aus dem Papierkorb wiederhergestellt werden"
-      ],
       "Document moved to trash": [
         "Dokument in den Papierkorb verschoben"
       ],
@@ -8057,6 +8162,9 @@
       ],
       "Failed to reject share invitation": [
         "Ablehnung der Einladung zur gemeinsamen Nutzung fehlgeschlagen"
+      ],
+      "Failed to rename document": [
+        "Das Umbenennen des Dokuments ist fehlgeschlagen"
       ],
       "Failed to upload files: ${ err }": [
         "Upload der Dateien fehlgeschlagen: ${ err }"
@@ -9211,6 +9319,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Neue Tabelle wird erstellt..."
+      ],
       "Detect automatically": [
         "Automatisch erkennen"
       ],
@@ -10548,6 +10659,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Nutze ${ VPN_SHORT_APP_NAME } für Daten-Privatsphäre"
       ],
+      "Users and addresses": [
+        "Benutzer und E-Mail-Adressen"
+      ],
       "Verify your password": [
         "Passwort bestätigen"
       ],
@@ -10856,6 +10970,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } bietet eine leistungsstarke Kontrolle, aber ein einziger Fehler kann dazu führen, dass das automatische Ausfüllen auf betrügerischen oder Phishing-Websites übereinstimmt und Daten ausfüllt."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Möchtest du wirklich ${ count } Kontakt dauerhaft löschen?",

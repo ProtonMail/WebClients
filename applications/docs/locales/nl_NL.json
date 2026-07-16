@@ -90,6 +90,9 @@
       "Apply": [
         "Toepassen"
       ],
+      "Ask me next time": [
+        "Vraag het mij de volgende keer"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
         "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
@@ -333,6 +336,9 @@
       "Download anyway": [
         "Toch downloaden"
       ],
+      "Download debug information": [
+        "Foutopsporingsinformatie downloaden"
+      ],
       "Download logs": [
         "Logboeken downloaden"
       ],
@@ -375,11 +381,20 @@
       "Export contact group": [
         "Exporteer contactgroep"
       ],
+      "Export editor state for version": [
+        "Editorstatus exporteren voor versie"
+      ],
       "Export selection as .vcf": [
         "Exporteer selectie als .vcf"
       ],
+      "Export this version (as docx)": [
+        "Exporteer deze versie (als docx)"
+      ],
       "Export this version (as xlsx)": [
         "Exporteer deze versie (als xlsx)"
+      ],
+      "Export YJS state for version": [
+        "YJS-status exporteren voor versie"
       ],
       "Forgot password?": [
         "Wachtwoord vergeten?"
@@ -633,6 +648,9 @@
       "Reload": [
         "Opnieuw laden"
       ],
+      "Reload spreadsheet": [
+        "Spreadsheet opnieuw laden"
+      ],
       "Remove": [
         "Verwijderen"
       ],
@@ -662,6 +680,9 @@
       ],
       "Report a problem": [
         "Meld een probleem"
+      ],
+      "Report issue": [
+        "Probleem melden"
       ],
       "Request a call": [
         "Telefoongesprek aanvragen"
@@ -701,6 +722,9 @@
       ],
       "Save changes": [
         "Wijzigingen opslaan"
+      ],
+      "Save preferences": [
+        "Voorkeuren opslaan"
       ],
       "Search": [
         "Zoeken"
@@ -1295,6 +1319,27 @@
       ],
       "Status": [
         "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
       ],
       "User": [
         "Gebruiker"
@@ -3147,11 +3192,17 @@
       "Failed to remove older revisions": [
         "Oudere revisies kunnen niet worden verwijderd"
       ],
+      "Failed to rename document": [
+        "Kan document niet hernoemen"
+      ],
       "Failed to rename document. Please try again later.": [
         "Hernoemen van document mislukt. Probeer het later opnieuw."
       ],
       "Failed to resend invitation": [
         "Opnieuw verzenden van de uitnodiging is mislukt"
+      ],
+      "Failed to trash document": [
+        "Kan document niet in de prullenbak plaatsen"
       ],
       "Failed to unshare node": [
         "Deling van de node kon niet ongedaan worden gemaakt."
@@ -3240,6 +3291,9 @@
       ],
       "No contacts found to import": [
         "Geen contacten gevonden om te importeren"
+      ],
+      "No drive found to import": [
+        "Geen drive gevonden om te importeren"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
@@ -3469,6 +3523,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Onverwachte fout, we kunnen de contacten niet importeren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Onverwachte fout, we kunnen de bestanden niet importeren"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -4667,6 +4724,9 @@
       "Continue": [
         "Ga verder"
       ],
+      "Converting document...": [
+        "Document converteren..."
+      ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
@@ -4715,6 +4775,9 @@
       ],
       "Creating link to folder": [
         "Link naar map maken"
+      ],
+      "Creating new document...": [
+        "Nieuw document wordt aangemaakt..."
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -4818,6 +4881,12 @@
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Fout bij het converteren van het document: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fout bij het laden van document: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Synchronisatiefout"
       ],
@@ -4854,6 +4923,9 @@
       "File will not be updated": [
         "Het bestand zal niet worden bijgewerkt"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
+      ],
       "finance": [
         "financiën"
       ],
@@ -4884,11 +4956,23 @@
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Ontvang een professionele @uw-bedrijf.com e-mail, 1 TB beveiligde opslag per gebruiker, langere videogesprekken en meer met ${ BRAND_NAME } Workspace."
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ontvang e-mailupdates voor opmerkingen en suggesties die aan uw documenten zijn toegevoegd."
+      ],
+      "Get Notified About Comments": [
+        "Krijg een melding bij opmerkingen"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Help ons deze ervaring te verbeteren door het probleem te melden. Als u er geen problemen mee heeft om de inhoud van de spreadsheet te delen, voeg dan de onderstaande foutopsporingsinformatie toe aan uw melding."
+      ],
       "here": [
         "hier"
+      ],
+      "Hide table of contents": [
+        "Inhoudsopgave verbergen"
       ],
       "High Priority": [
         "Hoge Prioriteit"
@@ -5035,6 +5119,9 @@
       "Low Priority": [
         "Lage Prioriteit"
       ],
+      "Making a copy...": [
+        "Een kopie maken..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
@@ -5065,6 +5152,9 @@
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Geen document opgegeven in URL. Keer terug naar ${ DRIVE_APP_NAME } en selecteer een document."
       ],
       "No email address": [
         "Geen e-mailadres"
@@ -5107,6 +5197,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot deze map."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Oeps! Deze spreadsheet kan uw meest recente bewerkingen niet opslaan. Daarom hebben we het bewerken onderbroken om te voorkomen dat u uw werk verliest."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Open de handleiding voor aanbevolen acties en nuttige koppelingen."
@@ -5283,6 +5376,9 @@
       "Shared on": [
         "Gedeeld op"
       ],
+      "Show table of contents": [
+        "Inhoudsopgave tonen"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
       ],
@@ -5358,6 +5454,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "De URL die u heeft ingevoerd, lijkt onjuist uit Slack te zijn gekopieerd. Wanneer u lange koppelingen uit Slack kopieert, klikt u met de rechtermuisknop op de koppeling en kiest u \"Koppeling kopiëren\" in plaats van de ingekorte URL-tekst rechtstreeks te kopiëren."
       ],
       "There are no documents in the trash.": [
         "Er zijn geen documenten in de prullenbak."
@@ -6049,11 +6148,20 @@
       "Emails (last month)": [
         "E-mails (laatste maand)"
       ],
+      "Enable email notifications": [
+        "E-mailmeldingen inschakelen"
+      ],
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
       "Erase this link and remove everyone with access": [
         "Wis deze link en verwijder iedereen met toegang"
+      ],
+      "Exact host matching": [
+        "Exacte hostovereenkomst"
+      ],
+      "Exact URL matching": [
+        "Exacte URL-overeenkomst"
       ],
       "Expiry": [
         "Vervaldatum"
@@ -6102,6 +6210,9 @@
       ],
       "Include application logs in bug report": [
         "Applicatie logs toevoegen aan het foutenrapport"
+      ],
+      "Include document name in notification": [
+        "Neem de documentnaam op in de melding"
       ],
       "Include message and file name in invite email": [
         "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
@@ -6172,6 +6283,9 @@
       "Navigation": [
         "Navigatie"
       ],
+      "Never fill on this exact URL": [
+        "Nooit invullen op deze exacte URL"
+      ],
       "New password": [
         "Nieuw wachtwoord"
       ],
@@ -6192,6 +6306,9 @@
       ],
       "Optional": [
         "Optioneel"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Bovenliggende domein en subdomeinen (standaard)"
       ],
       "Password": [
         "Wachtwoord"
@@ -6232,6 +6349,9 @@
       "Region": [
         "Regio/Provincie"
       ],
+      "Regular expression": [
+        "Reguliere expressie"
+      ],
       "Replace existing file": [
         "Bestaand bestand vervangen"
       ],
@@ -6268,6 +6388,9 @@
       "Skip folder": [
         "Sla map over"
       ],
+      "Starts with": [
+        "Begint met"
+      ],
       "Stop sharing": [
         "Delen stoppen"
       ],
@@ -6295,8 +6418,14 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Unknown user": [
+        "Onbekende gebruiker"
+      ],
       "Upload picture": [
         "Afbeelding uploaden"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertekenpatroon"
       ],
       "Username": [
         "Gebruikersnaam"
@@ -6632,6 +6761,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "'Begint met'-matchregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Exacte (sub)domein matchregel"
+      ],
+      "Exact URL matching rule": [
+        "Exacte URL-matchregel"
+      ],
+      "Never fill with this exact URL": [
+        "Nooit invullen met deze exacte URL"
+      ],
+      "Regular expression rule": [
+        "Reguliere expressieregel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchregel met jokertekenpatroon"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Uw gratis proefversie is beëindigd. ${ nonAutoRenewalAction }"
       ],
@@ -7849,6 +7996,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" succesvol hernoemd"
       ],
+      "\"Document deleted permanently": [
+        "\"Document definitief verwijderd"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } item kon niet worden ontsleuteld",
         "${ count } items konden niet worden ontsleuteld"
@@ -7935,6 +8085,12 @@
       "Device renamed": [
         "Apparaat hernoemd"
       ],
+      "Document moved to trash": [
+        "Document verplaatst naar prullenbak"
+      ],
+      "Document restored from trash": [
+        "Document hersteld uit prullenbak"
+      ],
       "External invitation removed from the share": [
         "Externe uitnodiging is verwijderd uit de share"
       ],
@@ -7943,6 +8099,9 @@
       ],
       "Failed to accept share invitation": [
         "Accepteren van uitnodiging mislukt"
+      ],
+      "Failed to delete document": [
+        "Verwijderen van document mislukt"
       ],
       "Failed to download files: ${ err }": [
         "Bestanden downloaden mislukt: ${ err }"
@@ -7955,6 +8114,15 @@
       ],
       "Failed to reject share invitation": [
         "Weigeren van deel-uitnodiging mislukt"
+      ],
+      "Failed to rename document": [
+        "Kan document niet hernoemen"
+      ],
+      "Failed to restore document": [
+        "Herstellen van document mislukt"
+      ],
+      "Failed to trash document": [
+        "Kan document niet in de prullenbak plaatsen"
       ],
       "Failed to upload files: ${ err }": [
         "Het uploaden van bestanden is mislukt: ${ err }"
@@ -9109,6 +9277,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Nieuwe spreadsheet maken..."
+      ],
       "Detect automatically": [
         "Automatisch detecteren"
       ],
@@ -9866,6 +10037,9 @@
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
+      ],
       "Account recovery": [
         "Accountherstel"
       ],
@@ -10096,6 +10270,9 @@
       ],
       "Edit image": [
         "Afbeelding bewerken"
+      ],
+      "Editing paused": [
+        "Bewerken onderbroken"
       ],
       "Email addresses": [
         "E-mailadressen"
@@ -10440,6 +10617,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
       ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
+      ],
       "Verify your password": [
         "Controleer uw wachtwoord"
       ],
@@ -10627,6 +10807,11 @@
         "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
@@ -10743,6 +10928,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",

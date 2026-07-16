@@ -1692,6 +1692,27 @@
       "Status": [
         "Status"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For at migrere denne bruger skal vedkommende acceptere sin invitation til at tilmelde sig ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du fjerne vedkommende fra arkivet i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du ophæve suspenderingen af vedkommende i din Google Workspace Admin Console."
+      ],
       "User": [
         "Bruger"
       ],
@@ -5495,6 +5516,9 @@
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
+      "Data integrity check failed": [
+        "Dataintegritetskontrol mislykkedes"
+      ],
       "Dec": [
         "Dec"
       ],
@@ -7445,6 +7469,12 @@
       "Environment compatible": [
         "Kompatibel til miljøet"
       ],
+      "Exact host matching": [
+        "Nøjagtigt værtsmatch"
+      ],
+      "Exact URL matching": [
+        "Nøjagtig URL-matching"
+      ],
       "Expired": [
         "Udløbet"
       ],
@@ -7610,6 +7640,9 @@
       "Never expires": [
         "Udløber aldrig"
       ],
+      "Never fill on this exact URL": [
+        "Udfyld aldrig på denne nøjagtige URL"
+      ],
       "New password": [
         "Ny adgangskode"
       ],
@@ -7642,6 +7675,9 @@
       ],
       "Outdated version": [
         "Forældet version"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domæne og underdomæner (standard)"
       ],
       "Password": [
         "Adgangskode"
@@ -7696,6 +7732,9 @@
       ],
       "Region": [
         "Region"
+      ],
+      "Regular expression": [
+        "Regulært udtryk"
       ],
       "Replace existing folder or file": [
         "Erstat eksisterende mappe eller fil"
@@ -7772,6 +7811,9 @@
       "Start date": [
         "Startdato"
       ],
+      "Starts with": [
+        "Begynder med"
+      ],
       "State": [
         "Stat"
       ],
@@ -7837,6 +7879,9 @@
       ],
       "Uploaded by": [
         "Uploadet af"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ],
       "User opted in": [
         "Brugeren tilmeldte sig"
@@ -8239,6 +8284,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Matchende regel for \"Begynder med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Nøjagtig (under) domænematchregel"
+      ],
+      "Exact URL matching rule": [
+        "Nøjagtig URL-matchende regel"
+      ],
+      "Never fill with this exact URL": [
+        "Udfyld aldrig med denne nøjagtige URL"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært udtryk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for jokertegnmønstermatch"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er udløbet. ${ nonAutoRenewalAction }"
       ],
@@ -13173,6 +13236,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
       ],
+      "Users and addresses": [
+        "Brugere og adresser"
+      ],
       "Verification failed": [
         "Bekræftelse mislykkedes"
       ],
@@ -13578,6 +13644,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",

@@ -547,6 +547,12 @@
       "Regenerate": [
         "Regenerar"
       ],
+      "Regex invalid": [
+        "Regex no válida"
+      ],
+      "Regex unsafe": [
+        "Regex insegura"
+      ],
       "Reject": [
         "Rechazar"
       ],
@@ -669,6 +675,9 @@
       ],
       "Skip": [
         "Omitir"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Alguien ha compartido un elemento contigo en ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ordenar los elementos de la caja fuerte"
@@ -926,6 +935,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No se ha podido analizar el archivo de ${ provider }. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Ya hay una comprobación de desbloqueo de escritorio en curso."
+      ],
       "A domain ownership must be verified first.": [
         "Primero se debe verificar la propiedad de un dominio."
       ],
@@ -1159,6 +1171,12 @@
       "Failed to set default mailbox": [
         "No se ha podido establecer el buzón por defecto."
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Error al iniciar el agente SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Error al detener el agente SSH: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Error al sincronizar los alias"
       ],
@@ -1320,6 +1338,9 @@
       ],
       "Trashing item failed": [
         "Error al eliminar el elemento"
+      ],
+      "Try reaching out to the link owner.": [
+        "Intenta comunicarte con el propietario del enlace."
       ],
       "Unable to generate an OTP code for this item": [
         "No se puede generar un código OTP para este elemento."
@@ -1525,6 +1546,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas, tarjetas de crédito e identidades."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } usará las claves SSH guardadas en tus cajas fuertes."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Modo sin conexión de ${ PASS_SHORT_APP_NAME } activado."
@@ -2081,7 +2105,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2112,6 +2137,9 @@
       ],
       "No network connection": [
         "No hay conexión a la red."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "No se han encontrado claves SSH en ${ PASS_SHORT_APP_NAME }. Crea elementos de clave SSH para usarlos con el agente."
       ],
       "No vaults available.": [
         "No hay cajas fuertes disponibles."
@@ -2308,6 +2336,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa avanzado de protección de la cuenta"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Clasificado por campo (primero el título, luego el nombre de usuario o correo electrónico, el sitio web y las notas) y por la precisión de la coincidencia (exacta, empieza por, contiene)."
       ],
       "Read item": [
         "Leer elemento"
@@ -2977,6 +3008,9 @@
       "Bank Name": [
         "Nombre del banco"
       ],
+      "Basic": [
+        "Básico"
+      ],
       "Beta Access": [
         "Acceso beta"
       ],
@@ -3009,6 +3043,9 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Check": [
+        "Verificar"
       ],
       "Checkbox": [
         "Casilla de verificación"
@@ -3165,6 +3202,12 @@
       ],
       "Enter email or username": [
         "Ingresar un correo o un nombre de usuario"
+      ],
+      "Exact host matching": [
+        "Coincidencia exacta de host"
+      ],
+      "Exact URL matching": [
+        "Coincidencia exacta de URL"
       ],
       "Expiration date": [
         "Fecha de expiración"
@@ -3481,6 +3524,9 @@
       "Never": [
         "Nunca"
       ],
+      "Never fill on this exact URL": [
+        "No rellenar nunca en esta URL exacta"
+      ],
       "New email": [
         "Nuevo correo electrónico"
       ],
@@ -3540,6 +3586,9 @@
       ],
       "Owner": [
         "Propietario"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
       ],
       "Passkey": [
         "Clave de acceso"
@@ -3642,6 +3691,12 @@
       ],
       "Reddit handle": [
         "Nombre de usuario de Reddit"
+      ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
+      "Relevant": [
+        "Relevancia"
       ],
       "Remove link": [
         "Eliminar el enlace"
@@ -3757,6 +3812,9 @@
       "SSN": [
         "Número de la Seguridad Social"
       ],
+      "Starts with": [
+        "Comienza con"
+      ],
       "State or province": [
         "Estado o provincia"
       ],
@@ -3805,6 +3863,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Este elemento es accesible hasta el ${ date } o hasta que se alcance el límite de vistas."
+      ],
       "Tier/Level": [
         "Nivel"
       ],
@@ -3816,6 +3877,9 @@
       ],
       "Today": [
         "Hoy"
+      ],
+      "Token name": [
+        "Nombre del token"
       ],
       "Total imported items: ": [
         "Número total de elementos importados: "
@@ -3876,6 +3940,12 @@
       ],
       "Update": [
         "Actualizar"
+      ],
+      "URL wildcard pattern": [
+        "Patrón de comodín de URL"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Usar ${ PASS_APP_NAME } como agente SSH"
       ],
       "Use for AI agent": [
         "Usar para el agente de IA"
@@ -3996,6 +4066,24 @@
       "${ count } item": [
         "${ count } elemento",
         "${ count } elementos"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidencia 'Comienza con'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia exacta de (sub) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia exacta de URL"
+      ],
+      "Never fill with this exact URL": [
+        "No rellenar nunca con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón de comodín"
       ],
       "You can drag and drop the selected item to another vault": [
         "Puedes arrastrar y soltar el elemento seleccionado en otra caja fuerte.",
@@ -4296,6 +4384,23 @@
         "Utilizado en ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ingresa una URL para verificar si tu regla actual coincide con la URL"
+      ],
+      "The rule is matching this URL": [
+        "La regla coincide con esta URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regla NO coincide con esta URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Esta URL se bloqueará del relleno automático"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Esta URL NO se bloqueará del relleno automático"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
@@ -4447,6 +4552,12 @@
       "Random prefix generation successfully enabled": [
         "Se ha activado la generación aleatoria de prefijos."
       ],
+      "SSH agent successfully started": [
+        "Agente SSH iniciado con éxito"
+      ],
+      "SSH agent successfully stopped": [
+        "Agente SSH detenido con éxito"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Las cajas fuertes no pueden contener más de ${ targetMaxMembers } usuario.",
         "Las cajas fuertes no pueden contener más de ${ targetMaxMembers } usuarios."
@@ -4493,6 +4604,9 @@
       ],
       "Add mailbox": [
         "Añadir un buzón"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajusta el comportamiento del relleno automático para cambiar dónde se sugieren los inicios de sesión."
       ],
       "Agent setup instructions": [
         "Instrucciones de configuración del agente"
@@ -4693,6 +4807,9 @@
       "Last modified": [
         "Última modificación"
       ],
+      "Learn more": [
+        "Más información"
+      ],
       "Leave this item?": [
         "¿Deseas dejar este elemento?"
       ],
@@ -4892,6 +5009,9 @@
       "SPF (Optional)": [
         "SPF (opcional)"
       ],
+      "SSH Agent": [
+        "Agente SSH"
+      ],
       "Status": [
         "Estado"
       ],
@@ -4910,6 +5030,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sincroniza tus alias desde SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Probar una URL con esta regla"
+      ],
       "Transfer ownership": [
         "Transferir la propiedad"
       ],
@@ -4924,6 +5047,9 @@
       ],
       "Update available": [
         "Actualización disponible"
+      ],
+      "URL matching": [
+        "Coincidencia de URL"
       ],
       "Vault": [
         "Caja fuerte"
@@ -5039,6 +5165,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Se necesita la contraseña de ${ BRAND_NAME }."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ofrece un control potente, pero un solo error puede hacer que el relleno automático coincida y rellene datos en sitios web fraudulentos o de suplantación de identidad."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Modo sin conexión de ${ PASS_SHORT_APP_NAME } desactivado."
@@ -5238,6 +5367,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Se ha producido un error al iniciar ${ PASS_APP_NAME }. Intenta refrescar o recargar la extensión."
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "El agente SSH requiere el uso de claves SSH, lo cual no está disponible en tu plan."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "El prefijo del alias no puede tener más de 40 caracteres."
       ],
@@ -5246,6 +5378,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Esta dirección de correo ya no será monitoreada para vulneraciones de datos."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Este elemento no se puede sugerir para el relleno automático debido a la regla \"${ neverModeDescriptionStrong }\". Agrega otra URL si quieres que este elemento se rellene automáticamente."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Este elemento está compartido actualmente. Si lo eliminas, se eliminará el acceso para todos los demás usuarios."

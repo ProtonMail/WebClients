@@ -43,6 +43,9 @@
       "${ name } says: ${ message }": [
         "${ name } sagt: ${ message }"
       ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
       "A participant joined the meeting": [
         "Ein Teilnehmer ist dem Meeting beigetreten"
       ],
@@ -135,6 +138,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } neu",
+        "${ newMessageCount } neu"
+      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -155,6 +162,12 @@
       ],
       "Anyone with the link can join immediately": [
         "Jeder mit dem Link, kann sofort beitreten"
+      ],
+      "Applied": [
+        "Angewendet"
+      ],
+      "Apply changes": [
+        "Änderungen anwenden"
       ],
       "Approve participants before they can join": [
         "Teilnehmer genehmigen, bevor sie beitreten können"
@@ -191,6 +204,9 @@
       ],
       "Close preview": [
         "Vorschau schließen"
+      ],
+      "Close reply composer": [
+        "Antwort-Editor schließen"
       ],
       "Close this banner": [
         "Dieses Banner schließen"
@@ -261,6 +277,9 @@
       "Dismiss": [
         "Verwerfen"
       ],
+      "Dismiss new messages": [
+        "Neue Nachrichten verwerfen"
+      ],
       "Done": [
         "Fertig"
       ],
@@ -311,6 +330,9 @@
       ],
       "Forgot password?": [
         "Passwort vergessen?"
+      ],
+      "Full size": [
+        "Vollbild"
       ],
       "Generate a new meeting link.": [
         "Neuen Meeting-Link generieren."
@@ -424,6 +446,9 @@
       "Receive video": [
         "Video empfangen"
       ],
+      "Record": [
+        "Aufnehmen"
+      ],
       "Refer a friend": [
         "Wirb einen Freund"
       ],
@@ -461,6 +486,9 @@
       "Resend code": [
         "Code erneut senden"
       ],
+      "Reset to defaults": [
+        "Auf Standards zurücksetzen"
+      ],
       "Resume": [
         "Fortsetzen"
       ],
@@ -493,6 +521,9 @@
       ],
       "Send an encrypted message": [
         "Eine verschlüsselte Nachricht senden"
+      ],
+      "Send reply": [
+        "Antwort senden"
       ],
       "Settings": [
         "Einstellungen"
@@ -548,6 +579,9 @@
       "Start your own meeting": [
         "Eigenes Meeting starten"
       ],
+      "Starting…": [
+        "Wird gestartet…"
+      ],
       "Stay in meeting": [
         "Im Meeting bleiben"
       ],
@@ -596,6 +630,12 @@
       "Upgrade your plan to use waiting room in your next meeting.": [
         "Dein Abonnement upgraden, um bei deinem nächsten Meeting den Wartebereich nutzen zu können."
       ],
+      "Upload another video": [
+        "Anderes Video hochladen"
+      ],
+      "Upload video": [
+        "Video hochladen"
+      ],
       "Use authentication code": [
         "Authentifizierungscode verwenden"
       ],
@@ -622,6 +662,12 @@
       ],
       "Waiting room": [
         "Wartebereich"
+      ],
+      "Waiting room disabled": [
+        "Wartebereich deaktiviert"
+      ],
+      "Waiting room enabled": [
+        "Wartebereich aktiviert"
       ]
     },
     "Alt": {
@@ -691,6 +737,9 @@
       "Rotate camera": [
         "Kamera drehen"
       ],
+      "Save my name on this device": [
+        "Meinen Namen auf diesem Gerät speichern"
+      ],
       "Screen share": [
         "Bildschirmfreigabe"
       ],
@@ -732,6 +781,9 @@
       ],
       "Video settings": [
         "Videoeinstellungen"
+      ],
+      "Waiting room": [
+        "Wartebereich"
       ]
     },
     "Apps dropdown": {
@@ -2108,6 +2160,10 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } hat mit ${ emoji } reagiert"
       ],
+      "${ replyCount } reply": [
+        "${ replyCount } Antwort",
+        "${ replyCount } Antworten"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } von bis zu ${ maxParticipants } Teilnehmern"
       ],
@@ -2121,8 +2177,14 @@
       "-Removed dangerous URL-": [
         "-Gefährliche URL entfernt-"
       ],
+      "1 reply draft": [
+        "1 Antwortentwurf"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
+      ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Erweiterter Modus: Passe jede Unschärfe-Konstante für die nächste Version an und wende sie dann an, um die Vorschau neu zu erstellen. Überschreibungen haben Vorrang vor Datei- und Unleash-Werten."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
@@ -2150,6 +2212,9 @@
       ],
       "Camera permission denied": [
         "Kamerazugriff verweigert"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Änderungen wurden zwischengespeichert. Wende sie an, um die Vorschau mit den neuen Konstanten neu zu erstellen."
       ],
       "Chat with everyone": [
         "Mit allen chatten"
@@ -2180,6 +2245,12 @@
       ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
+      ],
+      "Could not access the camera.": [
+        "Es konnte nicht auf die Kamera zugegriffen werden."
+      ],
+      "Could not start recording.": [
+        "Aufnahme konnte nicht gestartet werden."
       ],
       "Country code": [
         "Ländercode"
@@ -2258,6 +2329,9 @@
       ],
       "Everyone has been disconnected from the call.": [
         "Alle wurden vom Anfruf getrennt."
+      ],
+      "Failed to apply background blur": [
+        "Hintergrundunschärfe konnte nicht angewendet werden"
       ],
       "Failed to update meeting name": [
         "Fehler beim Aktualisieren der Besprechungsbezeichnung"
@@ -2349,6 +2423,9 @@
       "Loading…": [
         "Wird geladen …"
       ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Lasse ein hochgeladenes Video oder deine Live-Kamera nebeneinander durch beide Versionen der Hintergrundunschärfe laufen."
+      ],
       "Lower participant's hand": [
         "Hand des Teilnehmers senken"
       ],
@@ -2388,6 +2465,9 @@
       "Member": [
         "Mitglied"
       ],
+      "Message actions": [
+        "Nachrichtenaktionen"
+      ],
       "Message from ${ participantName }": [
         "Nachricht von ${ participantName }"
       ],
@@ -2414,6 +2494,9 @@
       ],
       "New host": [
         "Neuer Organisator"
+      ],
+      "New reply": [
+        "Neue Antwort"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Kein ${ microphoneLinkButton }${ andString }${ cameraLinkButton } erkannt."
@@ -2447,6 +2530,9 @@
       ],
       "No speaker detected": [
         "Kein Lautsprecher erkannt"
+      ],
+      "Not sent, check your connection.": [
+        "Nicht gesendet, überprüfe deine Verbindung."
       ],
       "Only meetings you created appear here": [
         "Nur Meetings, die du erstellt hast, werden hier angezeigt"
@@ -2507,6 +2593,9 @@
       ],
       "Record your meetings": [
         "Meetings aufzeichnen"
+      ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Nimm deinen rohen Kamera-Feed und die produktive Hintergrundunschärfe nebeneinander auf. Das Beenden lädt beide Clips herunter."
       ],
       "Recording": [
         "Aufnahme"
@@ -2577,6 +2666,9 @@
       "Start recording": [
         "Aufzeichnung starten"
       ],
+      "Starting camera…": [
+        "Kamera wird gestartet…"
+      ],
       "Stop sharing your screen": [
         "Bildschirmfreigabe beenden"
       ],
@@ -2594,6 +2686,9 @@
       ],
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "Der Link zur Besprechung, den du öffnen wolltest, existiert nicht oder ist möglicherweise abgelaufen. Überprüfe, ob der Link korrekt ist, oder starte stattdessen eine neue sichere Besprechung."
+      ],
+      "This conversation started before you joined.": [
+        "Diese Unterhaltung begann, bevor du beigetreten bist."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Dies ist ein Ende-zu-Ende-verschlüsselter Chat mit temporären Nachrichten, die am Ende des Anrufs verschwinden."
@@ -2669,6 +2764,9 @@
       ],
       "Video effects": [
         "Videoeffekte"
+      ],
+      "View ": [
+        "Anzeigen "
       ],
       "Warning": [
         "Warnung"
@@ -2769,6 +2867,12 @@
       "Add to calendar": [
         "Zum Kalender hinzufügen"
       ],
+      "Advanced mode": [
+        "Erweiterter Modus"
+      ],
+      "Anyone with the link can join": [
+        "Jeder mit dem Link kann beitreten"
+      ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
@@ -2777,6 +2881,9 @@
       ],
       "Authenticator app": [
         "Authentifizierungs-App"
+      ],
+      "Blurred (next)": [
+        "Unscharf (nächste)"
       ],
       "Browser": [
         "Browser"
@@ -2807,6 +2914,9 @@
       ],
       "Created": [
         "Erstellt"
+      ],
+      "Current": [
+        "Aktuell"
       ],
       "Delete": [
         "Löschen"
@@ -2913,6 +3023,9 @@
       "Participant controls": [
         "Teilnehmersteuerung"
       ],
+      "Participants join after you approve them": [
+        "Teilnehmer treten bei, nachdem du sie genehmigt hast"
+      ],
       "Passphrase": [
         "Passphrase"
       ],
@@ -2922,17 +3035,26 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Raw": [
+        "Roh"
+      ],
       "Remember my name on this device": [
         "Meinen Namen auf diesem Gerät merken"
       ],
       "Repeat event": [
         "Termin wiederholen"
       ],
+      "Reply": [
+        "Antworten"
+      ],
       "Return to dashboard": [
         "Zurück zum Dashboard"
       ],
       "Reveal password": [
         "Passwort anzeigen"
+      ],
+      "Save my name on this device": [
+        "Meinen Namen auf diesem Gerät speichern"
       ],
       "Schedule meeting": [
         "Meeting planen"
@@ -2957,6 +3079,12 @@
       ],
       "Track SID": [
         "SID nachverfolgen"
+      ],
+      "Use live camera feed": [
+        "Live-Kamera-Feed verwenden"
+      ],
+      "Use simple selfie segmentation": [
+        "Einfache Selfie-Segmentierung verwenden"
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -3307,6 +3435,9 @@
       "Available Speakers": [
         "Verfügbare Lautsprecher"
       ],
+      "Background blur comparison": [
+        "Hintergrundunschärfe-Vergleich"
+      ],
       "Camera and microphone are blocked": [
         "Kamera und Mikrofon sind gesperrt"
       ],
@@ -3315,6 +3446,9 @@
       ],
       "Chat": [
         "Chat"
+      ],
+      "Constants": [
+        "Konstanten"
       ],
       "Couldn't prepare the recording": [
         "Die Aufnahme konnte nicht vorbereitet werden"
@@ -3433,6 +3567,9 @@
       ],
       "Reconnection Testing": [
         "Wiederherstellung der Verbindung prüfen"
+      ],
+      "Record raw vs blurred camera": [
+        "Kamera roh vs. unscharf aufnehmen"
       ],
       "Record this meeting": [
         "Dieses Meeting aufzeichnen"

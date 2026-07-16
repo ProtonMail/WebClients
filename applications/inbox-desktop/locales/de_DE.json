@@ -4,6 +4,17 @@
     "language": "de_DE"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Open external url": [
+        "Externe URL öffnen"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Das Protokoll ${ parsedProtocol } ist nicht erlaubt. Möchtest du die externe URL öffnen?"
+      ]
+    },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
         "„Jetzt neu starten und Profil erstellen“ startet die App sofort neu und erstellt ein Startprofil.\n\n„Profil beim nächsten Start erstellen“ erstellt das Profil beim nächsten Öffnen der App. Verwenden Sie diese Option, um die Startgeschwindigkeit nach einem Neustart zu messen."
