@@ -74,6 +74,16 @@ export class FakeMainThreadBridge {
         this.fakeDriveClient.failNextIterateForFolder(folderUid, error);
     }
 
+    /** Force getNode(uid) to throw the given error until cleared (e.g. a decryption failure). */
+    setGetNodeError(nodeUid: string, error: Error): void {
+        this.fakeDriveClient.setGetNodeError(nodeUid, error);
+    }
+
+    /** Clear a forced getNode failure so the node can be fetched again. */
+    clearGetNodeError(nodeUid: string): void {
+        this.fakeDriveClient.clearGetNodeError(nodeUid);
+    }
+
     /** Push a tree event to a subscribed scope. */
     emitEvent(scopeId: TreeEventScopeId, event: DriveEvent): void {
         this.fakeSearchClient.emitEvent(scopeId, event);
