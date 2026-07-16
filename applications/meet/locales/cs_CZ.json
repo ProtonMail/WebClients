@@ -4,9 +4,145 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(otevře se na nové záložce)"
+      ],
+      "camera off": [
+        "kamera vypnuta"
+      ],
+      "camera on": [
+        "kamera zapnuta"
+      ],
+      "Meeting controls": [
+        "Ovládací prvky schůzky"
+      ],
+      "microphone muted": [
+        "mikrofon ztlumen"
+      ],
+      "microphone on": [
+        "mikrofon zapnut"
+      ]
+    },
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "Uživatel ${ name } se připojil ke schůzce"
+      ],
+      "${ name } left the meeting": [
+        "Uživatel ${ name } opustil schůzku"
+      ],
+      "${ name } lowered their hand": [
+        "Uživatel ${ name } dal ruku dolů"
+      ],
+      "${ name } raised their hand": [
+        "Uživatel ${ name } se přihlásil o slovo"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "Uživatel ${ name } reagoval s ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } říká: ${ message }"
+      ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Účastník se připojil ke schůzce"
+      ],
+      "A participant left the meeting": [
+        "Účastník opustil schůzku"
+      ],
+      "A participant lowered their hand": [
+        "Účastník dal ruku dolů"
+      ],
+      "A participant raised their hand": [
+        "Účastník zvedl ruku"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Účastník reagoval emoji ${ emoji }"
+      ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "Připojeno přes režim přenosu TURN z důvodu síťových omezení. To může zvýšit latenci a ovlivnit kvalitu hovoru."
+      ],
+      "Connection lost. Reconnecting…": [
+        "Připojení ztraceno. Probíhá opětovné připojování…"
+      ],
+      "New chat message: ${ message }": [
+        "Nová chatová zpráva: ${ message }"
+      ],
+      "Now starting recording": [
+        "Nyní se spouští nahrávání"
+      ],
+      "Reconnected to the meeting": [
+        "Opětovně připojeno ke schůzce"
+      ],
+      "Recording saved": [
+        "Nahrávka byla uložena"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Nahrávání bylo zahájeno. Pokračováním ve schůzce berete na vědomí a souhlasíte s nahráváním."
+      ],
+      "Recording stopped": [
+        "Nahrávání zastaveno"
+      ],
+      "Screen share started": [
+        "Sdílení obrazovky bylo zahájeno"
+      ],
+      "Screen share started by ${ name }": [
+        "Sdílení obrazovky zahájeno uživatelem ${ name }"
+      ],
+      "Screen share stopped": [
+        "Sdílení obrazovky bylo zastaveno"
+      ],
+      "Screen share stopped by ${ name }": [
+        "Sdílení obrazovky zastaveno uživatelem ${ name }"
+      ],
+      "The meeting will close in 1 minute": [
+        "Schůzka se zavře za 1 minutu"
+      ],
+      "The meeting will close in 15 seconds": [
+        "Schůzka se zavře za 15 sekund"
+      ],
+      "The meeting will close in 30 seconds": [
+        "Schůzka se zavře za 30 sekund"
+      ],
+      "The meeting will end in 1 minute": [
+        "Schůzka skončí za 1 minutu"
+      ],
+      "The meeting will end in 10 minutes": [
+        "Schůzka skončí za 10 minut"
+      ],
+      "The meeting will end in 15 seconds": [
+        "Schůzka skončí za 15 sekund"
+      ],
+      "The meeting will end in 5 minutes": [
+        "Schůzka skončí za 5 minut"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Tato schůzka je nahrávána. Připojením berete na vědomí a souhlasíte s nahráváním hovoru."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Jste jediným účastníkem. Pokud se nikdo nepřipojí, schůzka se za 2 minuty zavře."
+      ],
+      "You have been disconnected from the meeting": [
+        "Byl jste odpojen ze schůzky"
+      ],
+      "You have been muted by the host": [
+        "Byl jste ztlumen hostitelem"
+      ],
+      "Your camera has been turned off by the host": [
+        "Vaše kamera byla vypnuta hostitelem"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
+      ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } nová",
+        "${ newMessageCount } nové",
+        "${ newMessageCount } nových",
+        "${ newMessageCount } nových"
       ],
       "Add account": [
         "Přidat účet"
@@ -14,8 +150,29 @@
       "Add another account": [
         "Přidat další účet"
       ],
+      "Admit": [
+        "Pustit"
+      ],
+      "Admit ${ participantName }": [
+        "Pustit uživatele ${ participantName }"
+      ],
+      "Admit all": [
+        "Pustit všechny"
+      ],
       "Allow access": [
         "Povolit přístup"
+      ],
+      "Anyone with the link can join immediately": [
+        "Kdokoli s odkazem se může připojit okamžitě"
+      ],
+      "Applied": [
+        "Použito"
+      ],
+      "Apply changes": [
+        "Použít změny"
+      ],
+      "Approve participants before they can join": [
+        "Schválit účastníky předtím, než se budou moci připojit"
       ],
       "Assign ${ selectedParticipantName } as host": [
         "Přiřadit ${ selectedParticipantName } jako hostitele"
@@ -47,6 +204,12 @@
       "Close": [
         "Zavřít"
       ],
+      "Close preview": [
+        "Zavřít náhled"
+      ],
+      "Close reply composer": [
+        "Zavřít editor odpovědi"
+      ],
       "Close this banner": [
         "Zavřít tento banner"
       ],
@@ -64,6 +227,9 @@
       ],
       "Copy address": [
         "Kopírovat adresu"
+      ],
+      "Copy invitation link": [
+        "Kopírovat odkaz na pozvánku"
       ],
       "Copy link": [
         "Kopírovat odkaz"
@@ -92,17 +258,29 @@
       "Delete": [
         "Smazat"
       ],
+      "Deny": [
+        "Zamítnout"
+      ],
+      "Deny ${ participantName }": [
+        "Zamítnout uživatele ${ participantName }"
+      ],
       "Disable ${ participantName }'s video": [
         "Deaktivovat video uživatele ${ participantName }"
       ],
       "Disable camera": [
         "Deaktivovat kameru"
       ],
+      "Disable waiting room": [
+        "Deaktivovat čekárnu"
+      ],
       "Discard": [
         "Zahodit"
       ],
       "Dismiss": [
         "Skrýt"
+      ],
+      "Dismiss new messages": [
+        "Odmítnout nové zprávy"
       ],
       "Done": [
         "Hotovo"
@@ -122,6 +300,9 @@
       "Download participant report": [
         "Stáhnout hlášení o účasti"
       ],
+      "Download recording": [
+        "Stáhnout nahrávku"
+      ],
       "Download room level report": [
         "Stáhnout hlášení na úrovni místnosti"
       ],
@@ -140,6 +321,9 @@
       "Enable camera": [
         "Povolit kameru"
       ],
+      "Enable waiting room": [
+        "Aktivovat čekárnu"
+      ],
       "End meeting": [
         "Ukončit schůzku"
       ],
@@ -148,6 +332,9 @@
       ],
       "Forgot password?": [
         "Zapomenuté heslo?"
+      ],
+      "Full size": [
+        "Plná velikost"
       ],
       "Generate a new meeting link.": [
         "Vytvořit nový odkaz na schůzku."
@@ -163,6 +350,9 @@
       ],
       "Help and resources": [
         "Nápověda a zdroje"
+      ],
+      "Hide options": [
+        "Skrýt možnosti"
       ],
       "Hide participants": [
         "Skrýt účastníky"
@@ -203,6 +393,9 @@
       "Lower hand": [
         "Dát ruku dolů"
       ],
+      "Minimize preview": [
+        "Minimalizovat náhled"
+      ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
@@ -227,6 +420,12 @@
       "Open link": [
         "Otevřít odkaz"
       ],
+      "Participants join after you approve them": [
+        "Účastníci se připojí poté, co je schválíte"
+      ],
+      "Participants join the call directly": [
+        "Účastníci se k hovoru připojí přímo"
+      ],
       "Pause": [
         "Pozastavit"
       ],
@@ -242,8 +441,17 @@
       "React with ${ emoji }": [
         "Reagovat pomocí ${ emoji }"
       ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Reagovat pomocí ${ emoji }, ${ identities.length } reakce",
+        "Reagovat pomocí ${ emoji }, ${ identities.length } reakce",
+        "Reagovat pomocí ${ emoji }, ${ identities.length } reakcí",
+        "Reagovat pomocí ${ emoji }, ${ identities.length } reakcí"
+      ],
       "Receive video": [
         "Přijmout video"
+      ],
+      "Record": [
+        "Nahrávat"
       ],
       "Refer a friend": [
         "Doporučit přátelům"
@@ -259,6 +467,12 @@
       ],
       "Rejoin meeting": [
         "Znovu se připojit ke schůzce"
+      ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Odebrat reakci ${ emoji }, ${ identities.length } reakce",
+        "Odebrat reakci ${ emoji }, ${ identities.length } reakce",
+        "Odebrat reakci ${ emoji }, ${ identities.length } reakcí",
+        "Odebrat reakci ${ emoji }, ${ identities.length } reakcí"
       ],
       "Reply": [
         "Odpovědět"
@@ -278,11 +492,17 @@
       "Resend code": [
         "Znovu odeslat kód"
       ],
+      "Reset to defaults": [
+        "Resetovat na výchozí"
+      ],
       "Resume": [
         "Pokračovat"
       ],
       "Retry": [
         "Opakovat"
+      ],
+      "Return to dashboard": [
+        "Zpět na ovládací panel"
       ],
       "Room": [
         "Místnost"
@@ -308,8 +528,14 @@
       "Send an encrypted message": [
         "Poslat šifrovanou zprávu"
       ],
+      "Send reply": [
+        "Odeslat odpověď"
+      ],
       "Settings": [
         "Nastavení"
+      ],
+      "Show duration": [
+        "Zobrazit délku"
       ],
       "Show floating thumbnail during screensharing": [
         "Zobrazit plovoucí náhled při sdílení obrazovky"
@@ -338,11 +564,17 @@
       "Skip": [
         "Přeskočit"
       ],
+      "Skip to main content": [
+        "Přeskočit na hlavní obsah"
+      ],
       "Start an instant meeting": [
         "Zahájit okamžitou schůzku"
       ],
       "Start meeting": [
         "Zahájit schůzku"
+      ],
+      "Start new meeting": [
+        "Zahájit novou schůzku"
       ],
       "Start recording": [
         "Spustit nahrávání"
@@ -352,6 +584,9 @@
       ],
       "Start your own meeting": [
         "Zahajte vlastní schůzku"
+      ],
+      "Starting…": [
+        "Spouštění…"
       ],
       "Stay in meeting": [
         "Zůstat na schůzce"
@@ -398,6 +633,15 @@
       "Upgrade now": [
         "Navýšit nyní"
       ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Upgradujte svůj plán, abyste mohli používat čekárnu při příští schůzce."
+      ],
+      "Upload another video": [
+        "Nahrát jiné video"
+      ],
+      "Upload video": [
+        "Nahrát video"
+      ],
       "Use authentication code": [
         "Použít ověřovací kód"
       ],
@@ -410,6 +654,9 @@
       "Use recovery code": [
         "Použít kód pro obnovení"
       ],
+      "Use waiting room with a paid plan": [
+        "Používejte čekárnu s placeným plánem"
+      ],
       "Verify": [
         "Ověřit"
       ],
@@ -418,6 +665,15 @@
       ],
       "View invoice": [
         "Zobrazit fakturu"
+      ],
+      "Waiting room": [
+        "Čekárna"
+      ],
+      "Waiting room disabled": [
+        "Čekárna deaktivována"
+      ],
+      "Waiting room enabled": [
+        "Čekárna aktivována"
       ]
     },
     "Alt": {
@@ -448,14 +704,26 @@
       "Go to dashboard": [
         "Přejít na ovládací panel"
       ],
+      "Hide self view": [
+        "Skrýt vlastní zobrazení"
+      ],
       "Leave Meeting": [
         "Opustit schůzku"
       ],
       "Lock meeting": [
         "Zamknout schůzku"
       ],
+      "Lower hand": [
+        "Dát ruku dolů"
+      ],
       "Meeting details": [
         "Detaily schůzky"
+      ],
+      "More options": [
+        "Více možností"
+      ],
+      "Noise cancellation": [
+        "Potlačení šumu"
       ],
       "Open chat message search": [
         "Otevřít vyhledávání zpráv konverzace"
@@ -469,14 +737,26 @@
       "Participants": [
         "Účastníci"
       ],
+      "Raise hand": [
+        "Zvednout ruku"
+      ],
       "Rotate camera": [
         "Otočit fotoaparát"
+      ],
+      "Save my name on this device": [
+        "Uložit mé jméno na tomto zařízení"
       ],
       "Screen share": [
         "Sdílení obrazovky"
       ],
       "Settings": [
         "Nastavení"
+      ],
+      "Show duration": [
+        "Zobrazit délku"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Zobrazit plovoucí miniaturu během sdílení obrazovky"
       ],
       "Show passphrase": [
         "Zobrazit heslo"
@@ -502,13 +782,57 @@
       "Toggle settings": [
         "Přepnout nastavení"
       ],
+      "Turn off incoming video": [
+        "Vypnout příchozí video"
+      ],
       "Video settings": [
         "Nastavení videa"
+      ],
+      "Waiting room": [
+        "Čekárna"
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikace ${ BRAND_NAME }"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "Přiřadit hostitele"
+      ],
+      "Audio settings": [
+        "Nastavení zvuku"
+      ],
+      "Chat": [
+        "Chat"
+      ],
+      "Chat messages": [
+        "Zprávy chatu"
+      ],
+      "Device settings": [
+        "Nastavení zařízení"
+      ],
+      "Meeting details": [
+        "Podrobnosti o schůzce"
+      ],
+      "Meeting rooms": [
+        "Místnosti schůzek"
+      ],
+      "Participants": [
+        "Účastníci"
+      ],
+      "Participants list": [
+        "Seznam účastníků"
+      ],
+      "Primary navigation": [
+        "Primární navigace"
+      ],
+      "Settings": [
+        "Nastavení"
+      ],
+      "Video settings": [
+        "Nastavení videa"
       ]
     },
     "Badge": {
@@ -1463,6 +1787,12 @@
       ],
       "Rotating group encryption key for best security": [
         "Obměňování šifrovacího klíče skupiny pro nejlepší zabezpečení"
+      ],
+      "Try a different name.": [
+        "Zkuste jiné jméno."
+      ],
+      "You'll see people here when they join the meeting.": [
+        "Až se lidé připojí ke schůzce, uvidíte je zde."
       ]
     },
     "Display name": {
@@ -1506,14 +1836,23 @@
       "Failed to delete event": [
         "Nepodařilo se smazat událost"
       ],
+      "Failed to delete recording": [
+        "Smazání nahrávky selhalo"
+      ],
       "Failed to delete room": [
         "Nepodařilo se odstranit místnost"
+      ],
+      "Failed to download recording": [
+        "Stažení nahrávky selhalo"
       ],
       "Failed to edit room name": [
         "Úprava názvu místnosti selhala"
       ],
       "Failed to join meeting. Please try again later.": [
         "Připojení ke schůzce selhalo. Zkuste to prosím později."
+      ],
+      "Failed to join meeting. Please try again.": [
+        "Nepodařilo se připojit ke schůzce. Zkuste to prosím znovu."
       ],
       "Failed to lock meeting": [
         "Uzamknutí schůzky selhalo"
@@ -1529,6 +1868,9 @@
       ],
       "Failed to send reaction. Please try again.": [
         "Nepodařilo se odeslat reakci. Zkuste to prosím znovu."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "Nepodařilo se zahájit schůzku. Zkuste to prosím znovu."
       ],
       "Failed to start recording": [
         "Spuštění nahrávání selhalo"
@@ -1607,6 +1949,12 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Pomocí této metody se nám nepodařilo odeslat ověřovací kód."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "Ve vašem prohlížeči došlo místo v úložném prostoru. Nahrávku jsme uložili do tohoto okamžiku."
+      ],
+      "Your device's clock appears to be out of sync. Please check your system time and try again.": [
+        "Hodiny vašeho zařízení jsou pravděpodobně nesynchronizované. Zkontrolujte prosím systémový čas a zkuste to znovu."
       ]
     },
     "Error message": {
@@ -1800,6 +2148,15 @@
       "${ maxParticipants } participant limit reached": [
         "Dosažen limit ${ maxParticipants } účastníků"
       ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "${ MEET_APP_NAME } potřebuje přístup, aby vás ostatní během hovoru viděli a slyšeli. Kameru nebo mikrofon můžete kdykoli vypnout."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } potřebuje přístup ke kameře, aby vás ostatní během hovoru viděli. Můžete ji kdykoli vypnout."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } potřebuje přístup k mikrofonu, aby vás ostatní během hovoru slyšeli. Můžete jej kdykoli vypnout."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } potřebuje ke spuštění WebRTC. Prosím, aktualizujte svůj prohlížeč nebo zařízení na verzi, která podporuje WebRTC, zkuste jiný prohlížeč, nebo deaktivujte všechna rozšíření, která by jej mohla blokovat."
       ],
@@ -1821,6 +2178,12 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } reagoval(a) ${ emoji }"
       ],
+      "${ replyCount } reply": [
+        "${ replyCount } odpověď",
+        "${ replyCount } odpovědi",
+        "${ replyCount } odpovědí",
+        "${ replyCount } odpovědí"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } z maximálně ${ maxParticipants } účastníků"
       ],
@@ -1836,8 +2199,14 @@
       "-Removed dangerous URL-": [
         "-Nebezpečná adresa URL byla odebrána-"
       ],
+      "1 reply draft": [
+        "1 rozepsaná odpověď"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
+      ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Pokročilý režim: vylaďte každou konstantu rozostření pro příští verzi a poté klikněte na Použít pro opětovné sestavení náhledu. Přepsané hodnoty mají přednost před hodnotami ze souboru a Unleash."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonymní ${ particle } ${ participantNumber }"
@@ -1862,6 +2231,12 @@
       ],
       "camera": [
         "fotoaparát"
+      ],
+      "Camera permission denied": [
+        "Oprávnění ke kameře bylo zamítnuto"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Změny jsou připraveny. Použijte je pro opětovné sestavení náhledu s novými konstantami."
       ],
       "Chat with everyone": [
         "Chatujte se všemi"
@@ -1892,6 +2267,12 @@
       ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
+      ],
+      "Could not access the camera.": [
+        "Nepodařilo se získat přístup ke kameře."
+      ],
+      "Could not start recording.": [
+        "Nepodařilo se spustit nahrávání."
       ],
       "Country code": [
         "Kód země"
@@ -1967,6 +2348,12 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "Všichni byli z hovoru odpojeni."
+      ],
+      "Failed to apply background blur": [
+        "Nepodařilo se použít rozostření pozadí"
       ],
       "Failed to update meeting name": [
         "Aktualizace názvu schůzky selhala"
@@ -2049,8 +2436,17 @@
       "Loading meetings...": [
         "Načítání schůzek…"
       ],
+      "Loading recordings…": [
+        "Načítání nahrávek…"
+      ],
       "Loading...": [
         "Načítání..."
+      ],
+      "Loading…": [
+        "Načítání…"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Pusťte ve smyčce nahrané video nebo vaši živou kameru přes obě verze rozostření pozadí vedle sebe."
       ],
       "Lower participant's hand": [
         "Dát ruku účastníka dolů"
@@ -2079,6 +2475,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Firefox nepodporuje nahrávání schůzek."
       ],
+      "Meeting time is up": [
+        "Čas schůzky vypršel"
+      ],
       "Meeting unlocked. Participants can join again.": [
         "Schůzka odemčena. Účastníci se mohou znovu připojit."
       ],
@@ -2088,11 +2487,23 @@
       "Member": [
         "Člen"
       ],
+      "Message actions": [
+        "Akce se zprávou"
+      ],
+      "Message from ${ participantName }": [
+        "Zpráva od ${ participantName }"
+      ],
       "microphone": [
         "mikrofon"
       ],
       "Microphone effects": [
         "Efekty mikrofonu"
+      ],
+      "Microphone permission denied": [
+        "Oprávnění k mikrofonu bylo zamítnuto"
+      ],
+      "Mute microphone": [
+        "Ztlumit mikrofon"
       ],
       "My meetings": [
         "Moje schůzky"
@@ -2105,6 +2516,9 @@
       ],
       "New host": [
         "Nový hostitel"
+      ],
+      "New reply": [
+        "Nová odpověď"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Nerozpoznán žádný ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
@@ -2124,6 +2538,9 @@
       "No publications": [
         "Žádné publikace"
       ],
+      "No recordings found on this device.": [
+        "Na tomto zařízení nebyly nalezeny žádné nahrávky."
+      ],
       "No remote participants": [
         "Žádní vzdálení účastníci"
       ],
@@ -2136,6 +2553,9 @@
       "No speaker detected": [
         "Nenalezen žádný reproduktor"
       ],
+      "Not sent, check your connection.": [
+        "Neodesláno, zkontrolujte své připojení."
+      ],
       "Only meetings you created appear here": [
         "Zde se zobrazí pouze schůzky, které jste vytvořili"
       ],
@@ -2147,6 +2567,9 @@
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Naše schůzky s koncovým šifrováním chrání soukromí a umožňují skutečně svobodné vyjádření."
+      ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Stránka ${ displayPage } z ${ totalPages }"
       ],
       "Participant": [
         "Účastník"
@@ -2178,6 +2601,12 @@
       "privacy": [
         "soukromí"
       ],
+      "Quick reactions": [
+        "Rychlé reakce"
+      ],
+      "Reactions": [
+        "Reakce"
+      ],
       "Reconnected successfully": [
         "Úspěšně znovu připojeno"
       ],
@@ -2187,14 +2616,23 @@
       "Record your meetings": [
         "Nahrávejte své schůzky"
       ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Nahrajte svůj surový obraz z kamery a produkční rozostření pozadí vedle sebe. Zastavením se stáhnou oba klipy."
+      ],
       "Recording": [
         "Nahrávání"
+      ],
+      "Recording deleted": [
+        "Nahrávka byla smazána"
       ],
       "Recording in progress": [
         "Probíhá nahrávání"
       ],
       "Recording will begin and attendees will be notified.": [
         "Záznam bude zahájen a účastníci budou o tom informováni."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Nahrávky jsou uloženy místně ve vašem prohlížeči. Stáhněte si ty, které si chcete ponechat. Po 30 dnech budou automaticky smazány."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
@@ -2250,6 +2688,9 @@
       "Start recording": [
         "Spustit nahrávání"
       ],
+      "Starting camera…": [
+        "Spouštění kamery…"
+      ],
       "Stop sharing your screen": [
         "Ukončit sdílení obrazovky"
       ],
@@ -2265,6 +2706,12 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Pořadatel vás z této schůzky odebral. Pokud se jedná o chybu, požádejte ho o novou pozvánku."
       ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Odkaz na schůzku, který jste se pokusili otevřít, neexistuje nebo vypršel. Ujistěte se, že je odkaz správný, nebo místo toho zahajte novou zabezpečenou schůzku."
+      ],
+      "This conversation started before you joined.": [
+        "Tato konverzace začala předtím, než jste se připojili."
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Jedná se o chat s koncovým šifrováním a dočasnými zprávami, které zmizí po skončení hovoru."
       ],
@@ -2277,8 +2724,14 @@
       "This meeting is password protected": [
         "Tato schůzka je chráněna heslem"
       ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Tato schůzka dosáhla časového limitu bezplatného plánu. Upgradujte svůj plán, abyste v budoucích hovorech prodloužili délku schůzek."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Tato schůzka byla zahájena v desktopové aplikaci ${ MEET_APP_NAME }."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Tato nahrávka bude trvale smazána z tohoto zařízení. Tuto akci nelze vrátit zpět."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Toto ukončí schůzku pro všechny a zastaví sdílení vaší obrazovky."
@@ -2322,6 +2775,9 @@
       "Unlock ${ unlimitedMeeting } and premium features": [
         "Odemkněte ${ unlimitedMeeting } a prémiové funkce"
       ],
+      "Unmute microphone": [
+        "Zapnout mikrofon"
+      ],
       "Upgrade to record your meetings locally.": [
         "Navyšte si účet a nahrávejte své schůzky lokálně."
       ],
@@ -2330,6 +2786,9 @@
       ],
       "Video effects": [
         "Efekty videa"
+      ],
+      "View ": [
+        "Zobrazit "
       ],
       "Warning": [
         "Varování"
@@ -2432,6 +2891,12 @@
       "Add to calendar": [
         "Přidat do kalendáře"
       ],
+      "Advanced mode": [
+        "Pokročilý režim"
+      ],
+      "Anyone with the link can join": [
+        "Připojit se může kdokoli s odkazem"
+      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -2440,6 +2905,9 @@
       ],
       "Authenticator app": [
         "Ověřovací aplikace"
+      ],
+      "Blurred (next)": [
+        "Rozostřené (další)"
       ],
       "Browser": [
         "Prohlížeč"
@@ -2465,8 +2933,14 @@
       "Copy invite link": [
         "Kopírovat odkaz pozvánky"
       ],
+      "Create meeting options": [
+        "Možnosti vytvoření schůzky"
+      ],
       "Created": [
         "Vytvořeno"
+      ],
+      "Current": [
+        "Aktuální"
       ],
       "Delete": [
         "Odstranit"
@@ -2485,6 +2959,12 @@
       ],
       "Email address": [
         "E-mailová adresa"
+      ],
+      "Emoji picker": [
+        "Výběr emoji"
+      ],
+      "Emoji reactions": [
+        "Reakce emoji"
       ],
       "Enabled": [
         "Povoleno"
@@ -2525,8 +3005,17 @@
       "Last used": [
         "Naposledy použito"
       ],
+      "Leave meeting options": [
+        "Možnosti opuštění schůzky"
+      ],
+      "Manage recordings": [
+        "Spravovat nahrávky"
+      ],
       "Meeting ID": [
         "ID schůzky"
+      ],
+      "Meeting link": [
+        "Odkaz na schůzku"
       ],
       "Message": [
         "Zpráva"
@@ -2555,6 +3044,12 @@
       "Outlook Calendar": [
         "Outlook kalendář"
       ],
+      "Participant controls": [
+        "Ovládací prvky účastníka"
+      ],
+      "Participants join after you approve them": [
+        "Účastníci se připojí poté, co je schválíte"
+      ],
       "Passphrase": [
         "Heslo"
       ],
@@ -2564,17 +3059,32 @@
       "Phone number": [
         "Telefonní číslo"
       ],
+      "Raw": [
+        "Nezpracované"
+      ],
       "Remember my name on this device": [
         "Pamatovat mé jméno na tomto zařízení"
       ],
       "Repeat event": [
         "Opakovat událost"
       ],
+      "Reply": [
+        "Odpovědět"
+      ],
+      "Return to dashboard": [
+        "Zpět na ovládací panel"
+      ],
       "Reveal password": [
         "Zobrazit heslo"
       ],
+      "Save my name on this device": [
+        "Uložit mé jméno na tomto zařízení"
+      ],
       "Schedule meeting": [
         "Naplánovat schůzku"
+      ],
+      "Screen share": [
+        "Sdílení obrazovky"
       ],
       "Selected Camera": [
         "Vybraná kamera"
@@ -2593,6 +3103,12 @@
       ],
       "Track SID": [
         "Sledovat SID"
+      ],
+      "Use live camera feed": [
+        "Použít živý přenos z kamery"
+      ],
+      "Use simple selfie segmentation": [
+        "Použít jednoduchou segmentaci selfie"
       ],
       "Verification code": [
         "Ověřovací kód"
@@ -2895,8 +3411,14 @@
       "Actions": [
         "Akce"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Name": [
         "Název"
+      ],
+      "Size": [
+        "Velikost"
       ]
     },
     "Title": {
@@ -2908,6 +3430,18 @@
       ],
       "Activity events": [
         "Události aktivity"
+      ],
+      "All participants": [
+        "Všichni účastníci"
+      ],
+      "Allow camera ": [
+        "Povolit kameru "
+      ],
+      "Allow camera and microphone": [
+        "Povolit kameru a mikrofon"
+      ],
+      "Allow microphone": [
+        "Povolit mikrofon"
       ],
       "Are you sure?": [
         "Jste si jisti?"
@@ -2927,6 +3461,9 @@
       "Available Speakers": [
         "Dostupné reproduktory"
       ],
+      "Background blur comparison": [
+        "Porovnání rozostření pozadí"
+      ],
       "Camera and microphone are blocked": [
         "Kamera a mikrofon jsou zablokovány"
       ],
@@ -2936,6 +3473,12 @@
       "Chat": [
         "Konverzace"
       ],
+      "Constants": [
+        "Konstanty"
+      ],
+      "Couldn't prepare the recording": [
+        "Nepodařilo se připravit nahrávku"
+      ],
       "Create new room": [
         "Vytvořit novou místnost"
       ],
@@ -2944,6 +3487,9 @@
       ],
       "Debug Overlay": [
         "Okno ladění"
+      ],
+      "Delete recording?": [
+        "Smazat nahrávku?"
       ],
       "Enter your password": [
         "Zadejte své heslo"
@@ -2968,6 +3514,9 @@
       ],
       "Info": [
         "Informace"
+      ],
+      "Invalid meeting link": [
+        "Neplatný odkaz na schůzku"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
@@ -3020,6 +3569,9 @@
       "Minicalendar": [
         "Minikalendář"
       ],
+      "No one is waiting": [
+        "Nikdo nečeká"
+      ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
@@ -3035,14 +3587,23 @@
       "Personal meeting room": [
         "Osobní zasedací místnost"
       ],
+      "Preparing your recording…": [
+        "Připravuje se nahrávka…"
+      ],
       "Publications": [
         "Publikace"
       ],
       "Reconnection Testing": [
         "Testování opětovného připojení"
       ],
+      "Record raw vs blurred camera": [
+        "Nahrát surovou vs. rozostřenou kameru"
+      ],
       "Record this meeting": [
         "Nahrát tuto schůzku"
+      ],
+      "Recordings": [
+        "Nahrávky"
       ],
       "Remote Participants": [
         "Vzdálení účastníci"
@@ -3098,11 +3659,17 @@
       "Video": [
         "Video"
       ],
+      "Waiting room": [
+        "Čekárna"
+      ],
       "What went wrong?": [
         "Kde se stala chyba?"
       ],
       "Your feedback has been submitted": [
         "Vaše zpětná vazba byla odeslána"
+      ],
+      "Your recording is ready": [
+        "Vaše nahrávka je připravena"
       ]
     },
     "Today icon tooltip in mini calendar": {
