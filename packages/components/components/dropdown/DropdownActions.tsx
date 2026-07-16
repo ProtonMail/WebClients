@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import type { Props as DropdownMenuButtonProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
@@ -12,6 +12,7 @@ import Info from '@proton/components/components/link/Info';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
+import DropdownActionsIcon from './DropdownActionsIcon';
 import DropdownMenu from './DropdownMenu';
 import SimpleDropdown from './SimpleDropdown';
 
@@ -82,31 +83,16 @@ const DropdownActions = ({
 
     if (iconName) {
         return (
-            <SimpleDropdown
-                as={Button}
-                icon
+            <DropdownActionsIcon
+                list={list}
                 size={size}
                 autoFocus={autoFocus}
-                originalPlacement="bottom-end"
                 disabled={disabled}
                 loading={loading}
-                className={clsx(['shrink-0', className])}
-                title={c('Title').t`Open actions dropdown`}
-                data-testid="dropdownActions:dropdown"
-                content={<Icon name={iconName} alt={c('Title').t`Open actions dropdown`} />}
-                hasCaret={false}
+                className={className}
+                iconElement={<Icon name={iconName} alt={c('Title').t`Open actions dropdown`} />}
                 {...restButtonProps}
-            >
-                <DropdownMenu>
-                    {list.map(({ text, tooltip, label, key, ...restProps }) => {
-                        return (
-                            <DropdownMenuButton className="text-left" aria-label={label} key={key} {...restProps}>
-                                {wrapTooltip(text, tooltip)}
-                            </DropdownMenuButton>
-                        );
-                    })}
-                </DropdownMenu>
-            </SimpleDropdown>
+            />
         );
     }
 
