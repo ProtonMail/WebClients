@@ -25,10 +25,20 @@ type Drive = {
         | ProtonDrivePhotosClient['reportAbuse'];
 };
 
+type NodeAbuseData = {
+    name: string;
+    size: number | undefined;
+    mediaType: string | undefined;
+    type: NodeType;
+};
+
+type InvitationAbuseData = NodeAbuseData & { uid: string };
+
 export type UseReportAbuseModalProps = ModalStateProps & {
     drive: Drive;
     nodeUid: string;
     revisionUid?: string;
+    invitation?: InvitationAbuseData;
     prefilled?: AbuseReportPrefill;
 };
 
@@ -68,6 +78,7 @@ export const CATEGORIES_WITH_EMAIL_VERIFICATION: AbuseCategory[] = [AbuseCategor
 export const useReportAbuseModalState = ({
     nodeUid,
     revisionUid,
+    invitation,
     drive,
     prefilled,
     onClose,
@@ -75,17 +86,15 @@ export const useReportAbuseModalState = ({
     open,
 }: UseReportAbuseModalProps): ReportAbuseModalViewProps => {
     const { createNotification } = useNotifications();
-    const [nodeData, setNodeData] = useState<
-        | {
-              name: string;
-              size: number | undefined;
-              mediaType: string | undefined;
-              type: NodeType;
-          }
-        | undefined
-    >(undefined);
+    const [nodeData, setNodeData] = useState<NodeAbuseData | undefined>(invitation);
 
     useEffect(() => {
+        // Node of the invitations can't be fetched from the API, so the caller must pass the data instead.
+        if (invitation) {
+            setNodeData(invitation);
+            return;
+        }
+
         const fetchNodeData = async () => {
             try {
                 const node = await drive.getNode(nodeUid);
@@ -100,9 +109,8 @@ export const useReportAbuseModalState = ({
                 onExit();
             }
         };
-
         void fetchNodeData();
-    }, [nodeUid, drive, onExit]);
+    }, [invitation, nodeUid, drive, onExit]);
 
     if (!nodeData) {
         return {
@@ -118,6 +126,7 @@ export const useReportAbuseModalState = ({
                 reporterMessage: formData.comment,
                 nodeUid,
                 revisionUid,
+                invitationUid: invitation?.uid,
                 bonaFide: true,
             });
             createNotification({ text: c('Info').t`Report has been sent` });

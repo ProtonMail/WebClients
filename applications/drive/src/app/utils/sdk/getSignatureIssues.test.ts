@@ -28,6 +28,7 @@ describe('getSignatureIssues', () => {
         state: RevisionState.Active,
         creationTime: baseDate,
         storageSize: 100,
+        isImported: false,
     };
 
     it('should return no signature issues when all signatures are valid', () => {
