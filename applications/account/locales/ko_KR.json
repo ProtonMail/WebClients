@@ -1910,6 +1910,15 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Delete device profile": [
+        "기기 프로파일 삭제"
+      ],
+      "Generate device profile": [
+        "기기 프로파일 생성"
+      ],
+      "Instructions": [
+        "지침"
       ]
     },
     "action": {
@@ -7812,6 +7821,9 @@
       ],
       "Zero keys reactivated": [
         "제로 키 재활성화됨"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "기기 프로파일 생성에 실패했습니다. 다시 시도하세요."
       ]
     },
     "error": {
@@ -13571,6 +13583,66 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "All devices with this device profile deployed": [
+        "해당 기기 프로파일로 배포된 모든 장치"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "모든 인터넷 트래픽이 암호화되고 안전한 상태로 유지됩니다"
+      ],
+      "Choose one:": [
+        "하나 선택:"
+      ],
+      "Configure Always-on VPN": [
+        "VPN 항상 켜기 구성"
+      ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "MDM 파일 배포로 즉시 ${ regoLink } 배포를 시작하세요"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "MDM (Jamf, Intune...)으로 배포하거나 각각의 기기에 수동으로 배포하세요."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "${ VPN_APP_NAME } 연결이 활성 상태인 경우에는 VPN 항상 켜기가 배포된 기기에서 인터넷에 접근할 수 없습니다."
+      ],
+      "Employees can't go online without a VPN connection": [
+        "VPN 없이는 직원이 온라인에 접속할 수 없습니다."
+      ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "기기가 프로파일을 감지하면 곧바로 자동으로 강제화됩니다."
+      ],
+      "Ensure your organization is always protected": [
+        "조직의 보호 상태를 유지하세요"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "기기 프로파일 생성 후 구성 파일을 다운로드하세요."
+      ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "한 번 성공적으로 배포되면, 기기 감지와 정책 적용에 몇 시간이 걸릴 수 있습니다."
+      ],
+      "Optional configuration": [
+        "옵션 구성"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "또는 MDM 스크립트 구성을 통해 ${ ps1Link }을(를) 실행하세요."
+      ],
+      "Restrict logins to your organization": [
+        "조직의 로그인 제한"
+      ],
+      "Supported platforms": [
+        "지원되는 플랫폼"
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "VPN 항상 켜기를 활성화하려면 모든 기기에서 ${ policiesPath }에 접근하도록 기기 프로파일이 필요합니다. ${ VPN_APP_NAME } 클라이언트가 감지 후 프로파일을 자동으로 설치합니다."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "MDM 스크립트 구성을 통해 ${ removeScriptLink }을(를) 실행하거나 MDM을 통해 파일을 지우십시오. 파일 배포나 스크립트 실행을 지원하는 MDM 환경에서만 지원합니다."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "다른 MDM을 사용하시나요? 파일 배포를 지원하거나 PowerShell 스크립트 구성을 지원하는 MDM에서는 모두 작동합니다. 자세한 정보는 사용자의 MDM 사용 백서를 참조하십시오."
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "VPN 항상 켜기 프로파일이 베포될 준비가 완료되었습니다."
       ]
     },
     "info": {
@@ -15837,6 +15909,15 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Applies:": [
+        "적용 대상:"
+      ],
+      "Enforce Always-on VPN": [
+        "VPN 항상 켜기 강제화"
+      ],
+      "Login restrictions": [
+        "로그인 제한"
       ]
     },
     "label": {
@@ -23423,6 +23504,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "구독을 취소하고 있습니다. 기다려 주세요"
+      ],
+      "Disabled": [
+        "비활성화됨"
+      ],
+      "Enabled": [
+        "활성화됨"
+      ],
+      "No restrictions": [
+        "제한 없음"
+      ],
+      "Restricted to members of your organization": [
+        "조직의 로그인 제한됨"
       ]
     },
     "Status": {
@@ -26700,6 +26793,39 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "Always-on VPN": [
+        "VPN 항상 켜기"
+      ],
+      "Always-on VPN device profile": [
+        "VPN 항상 켜기 기기 프로파일"
+      ],
+      "Choose a deployment method": [
+        "배포 수단 선택"
+      ],
+      "Choose a removal method": [
+        "삭제 방법 선택"
+      ],
+      "Configure Always-on VPN device profile": [
+        "VPN 항상 켜기 기기 프로파일 구성"
+      ],
+      "Created!": [
+        "생성 완료!"
+      ],
+      "Deploy device profile to your devices": [
+        "장치에 기기 프로파일 배포"
+      ],
+      "Deploy via MDM": [
+        "MDM으로 배포"
+      ],
+      "Deploy via PowerShell": [
+        "PowerShell로 배포"
+      ],
+      "Remove Always-on VPN device profile": [
+        "VPN 항상 켜기 기기 프로파일 삭제"
+      ],
+      "Remove via MDM": [
+        "MDM으로 삭제"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27108,6 +27234,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "사용자의 외부 계정이 24시간 대역폭 제한에 도달했습니다. ${ BRAND_NAME }이 불러오기를 계속하도록 시도할 것입니다."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "조직 내의 모든 사용자에게 포함됩니다. VPN 항상 켜기 기기 프로파일이 배포된 환경에서만 강제화할 수 있습니다."
       ]
     },
     "tooltip": {
