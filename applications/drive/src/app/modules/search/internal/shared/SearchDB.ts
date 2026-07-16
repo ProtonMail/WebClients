@@ -2,9 +2,10 @@ import type { DBSchema, IDBPDatabase } from 'idb';
 import { openDB } from 'idb';
 
 import type { BFSVisitorState } from '../worker/indexer/utils/resumableTreeVisitor/ResumableFolderBFSVisitor';
+import { computeBackoff } from './errors';
 import type { IndexKind, IndexingProgress, TreeEventScopeId } from './types';
 
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 
 const dbName = (userId: string) => `search:${userId}`;
 
@@ -28,6 +29,38 @@ export interface IndexPopulatorState {
     subtreeReindexEpoch?: number;
 }
 
+/** The index operation a repair entry must replay when its node is reprocessed:
+ * index = re-fetch + upsert + re-index subtree for a folder
+ * remove = remove node + descendants
+ */
+export type RepairOperation = 'index' | 'remove';
+
+/**
+ * A node whose indexing failed with a non-systemic (node-scoped) error and was skipped so the
+ * rest of the batch could proceed. Recorded in the `repairEntries` store, keyed by
+ * `[indexKind, nodeUid]` so a later event for the same node coalesces (last write wins).
+ * Retried independently by RepairFailedNodesTask once `nextAttemptAt` has elapsed.
+ */
+export interface RepairNodeEntry {
+    nodeUid: string;
+    indexKind: IndexKind;
+    // The populator that owns this node. Combined with treeEventScopeId it resolves the
+    // IndexPopulator instance whose repairNode replays this entry (see RepairFailedNodesTask).
+    indexPopulatorKind: string;
+    treeEventScopeId: TreeEventScopeId;
+
+    operation: RepairOperation;
+    // Needed by an 'index' replay to resolve the node's parentPath.
+    parentNodeUid?: string;
+    attempts: number;
+    firstFailedAt: number;
+    lastAttemptAt: number;
+    // Backoff gate: a repair run only picks entries whose nextAttemptAt <= now.
+    nextAttemptAt: number;
+    // Last failure message, diagnostics only.
+    lastError?: string;
+}
+
 interface SearchDBSchema extends DBSchema {
     indexBlobs: {
         key: [string, string]; // [indexKind, blobName]
@@ -49,6 +82,10 @@ interface SearchDBSchema extends DBSchema {
         key: string;
         value: BFSVisitorState;
         indexes: { by_updated_at: number };
+    };
+    repairEntries: {
+        key: [string, string]; // [indexKind, nodeUid]
+        value: RepairNodeEntry;
     };
 }
 
@@ -83,6 +120,9 @@ export class SearchDB {
                 if (oldVersion < 2) {
                     const treeStore = database.createObjectStore('treeVisitorStates', { keyPath: 'id' });
                     treeStore.createIndex('by_updated_at', 'updatedAt');
+                }
+                if (oldVersion < 3) {
+                    database.createObjectStore('repairEntries');
                 }
             },
         });
@@ -232,6 +272,76 @@ export class SearchDB {
         await tx.done;
     }
 
+    putRepairEntry(entry: RepairNodeEntry): Promise<[string, string]> {
+        return this.db.put('repairEntries', entry, [entry.indexKind, entry.nodeUid]);
+    }
+
+    getAllRepairEntries(): Promise<RepairNodeEntry[]> {
+        return this.db.getAll('repairEntries');
+    }
+
+    deleteRepairEntry(key: [string, string]): Promise<void> {
+        return this.db.delete('repairEntries', key);
+    }
+
+    /** Get UIDs currently quarantined. */
+    async getQuarantinedNodeUids(indexKind: IndexKind, treeEventScopeId: TreeEventScopeId): Promise<Set<string>> {
+        const entries = await this.getAllRepairEntries();
+        const uids = new Set<string>();
+        for (const entry of entries) {
+            if (entry.indexKind === indexKind && entry.treeEventScopeId === treeEventScopeId) {
+                uids.add(entry.nodeUid);
+            }
+        }
+        return uids;
+    }
+
+    /**
+     * Record or supersede a quarantined node.
+     */
+    recordRepairNode(params: {
+        nodeUid: string;
+        indexKind: IndexKind;
+        indexPopulatorKind: string;
+        treeEventScopeId: TreeEventScopeId;
+        operation: RepairOperation;
+        parentNodeUid?: string;
+        lastError?: string;
+    }): Promise<[string, string]> {
+        const now = Date.now();
+        return this.putRepairEntry({
+            ...params,
+            attempts: 0,
+            firstFailedAt: now,
+            lastAttemptAt: now,
+            nextAttemptAt: now,
+        });
+    }
+
+    /** Remove a repair entry once its node has been reprocessed successfully. */
+    clearRepairNode(indexKind: IndexKind, nodeUid: string): Promise<void> {
+        return this.deleteRepairEntry([indexKind, nodeUid]);
+    }
+
+    /** Every quarantined node due for a repair attempt (nextAttemptAt <= now), across all populators. */
+    async getAllDueRepairNodes(now: number): Promise<RepairNodeEntry[]> {
+        const entries = await this.getAllRepairEntries();
+        return entries.filter((entry) => entry.nextAttemptAt <= now);
+    }
+
+    /** Persist a failed repair attempt: bump attempts and push out the next attempt with backoff. */
+    recordFailedRepairAttempt(entry: RepairNodeEntry, lastError: string): Promise<[string, string]> {
+        const attempts = entry.attempts + 1;
+        const now = Date.now();
+        return this.putRepairEntry({
+            ...entry,
+            attempts,
+            lastAttemptAt: now,
+            nextAttemptAt: now + computeBackoff(attempts),
+            lastError,
+        });
+    }
+
     // Clear index blobs, subscriptions and populator states so the indexer rebuilds from scratch.
     // Used when the encryption key is regenerated (e.g. after key rotation).
     async clearIndex(): Promise<void> {
@@ -240,6 +350,7 @@ export class SearchDB {
         await this.db.clear('indexPopulatorStates');
         await this.db.delete('userSettings', 'hasSearchableIndex');
         await this.db.clear('treeVisitorStates');
+        await this.db.clear('repairEntries');
     }
 
     /**

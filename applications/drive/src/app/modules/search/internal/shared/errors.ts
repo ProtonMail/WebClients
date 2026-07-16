@@ -316,14 +316,39 @@ export function classifyError(e: unknown): ErrorDecision {
     return { kind: 'transient', reason: 'unknown' };
 }
 
-/** Max number of attempts reported to Sentry per burst before silencing further retries to avoid spam. */
-export const TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS = 5;
+/**
+ * A repairable error IS the node's fault and is safe to quarantine to the repair table and retry:
+ * `classifyError`'s transient-`unknown` bucket (decryption, entry mapping, parent-path resolution,
+ * other deterministic per-node failures) is node-scoped and safe to quarantine + skip.
+ *
+ * Everything else is systemic and must NOT be quarantined:
+ * - abort (queue is stopping),
+ * - known transient network-family reasons (offline / network / server / rate-limited) - the whole
+ *   batch should be retried, not the node skipped,
+ * - permanent errors (quota / corrupted DB / invalid state / WASM engine) - the queue stops.
+ */
+export function isRepairableError(e: unknown): boolean {
+    if (isAbortError(e)) {
+        return false;
+    }
+    const decision = classifyError(e);
+    if (decision.kind === 'permanent') {
+        return false;
+    }
+    return decision.reason === 'unknown';
+}
 
 /**
- * Window after which a new burst of reports is allowed for the same transient reason.
+ * Max number of Sentry reports per burst before silencing further ones to avoid spam. Shared by
+ * every per-key burst throttle in searchMetrics (transient task errors, node quarantine, ...).
+ */
+export const SENTRY_REPORT_BURST_MAX_ATTEMPTS = 5;
+
+/**
+ * Window after which a new burst of reports is allowed for the same key.
  * Keeps ongoing issues visible without flooding Sentry.
  */
-export const TRANSIENT_REPORT_THROTTLE_MS = 600_000; // 10 minutes
+export const SENTRY_REPORT_BURST_WINDOW_MS = 600_000; // 10 minutes
 
 /** Default retry delay applied to rate-limited errors. */
 export const DEFAULT_RETRY_AFTER_IN_MS = 600_000; // 10 minutes

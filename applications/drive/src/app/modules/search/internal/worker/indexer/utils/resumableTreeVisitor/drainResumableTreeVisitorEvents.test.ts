@@ -6,6 +6,7 @@ import 'fake-indexeddb/auto';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { SearchDB } from '../../../../shared/SearchDB';
+import { SearchLibraryError } from '../../../../shared/errors';
 import type { TreeEventScopeId } from '../../../../shared/types';
 import { FakeMainThreadBridge } from '../../../../testing/FakeMainThreadBridge';
 import { findDocumentsByTag } from '../../../../testing/indexHelpers';
@@ -84,6 +85,54 @@ describe('drainResumableTreeVisitorEvents', () => {
         for (const uid of ['a', 'b', 'c']) {
             expect(await findDocumentsByTag(instance.indexReader, 'nodeUid', uid)).toHaveLength(1);
         }
+    });
+
+    it('quarantines a node-scoped mapping failure via onNodeError and keeps indexing the rest', async () => {
+        const ctx = buildCtx();
+        const onNodeError = jest.fn(async (_node: NodeEntity, _error: unknown) => {});
+        // toEntry throws a node-scoped (unknown) error for 'b' only.
+        const failingToEntry: ResumableWalkHandlers['toEntry'] = (node, parentPath, generation) => {
+            if (node.uid === 'b') {
+                throw new Error('cannot map node b');
+            }
+            return toEntry(node, parentPath, generation);
+        };
+
+        await drainResumableTreeVisitorEvents(
+            fromArray([nodeEvent('a'), nodeEvent('b'), nodeEvent('c')]),
+            IndexKind.MAIN,
+            ctx,
+            {
+                toEntry: failingToEntry,
+                persistCheckpoint: jest.fn(async () => {}),
+                onNodeError,
+            }
+        );
+
+        expect(onNodeError).toHaveBeenCalledTimes(1);
+        expect(onNodeError.mock.calls[0][0]).toMatchObject({ uid: 'b' });
+
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        expect(await findDocumentsByTag(instance.indexReader, 'nodeUid', 'a')).toHaveLength(1);
+        expect(await findDocumentsByTag(instance.indexReader, 'nodeUid', 'b')).toHaveLength(0);
+        expect(await findDocumentsByTag(instance.indexReader, 'nodeUid', 'c')).toHaveLength(1);
+    });
+
+    it('propagates a systemic (SearchLibraryError) mapping failure instead of quarantining', async () => {
+        const ctx = buildCtx();
+        const onNodeError = jest.fn(async (_node: NodeEntity, _error: unknown) => {});
+        const failingToEntry: ResumableWalkHandlers['toEntry'] = () => {
+            throw new SearchLibraryError('wasm exploded', null);
+        };
+
+        await expect(
+            drainResumableTreeVisitorEvents(fromArray([nodeEvent('a')]), IndexKind.MAIN, ctx, {
+                toEntry: failingToEntry,
+                persistCheckpoint: jest.fn(async () => {}),
+                onNodeError,
+            })
+        ).rejects.toThrow('wasm exploded');
+        expect(onNodeError).not.toHaveBeenCalled();
     });
 
     it('commits pending nodes before persisting the checkpoint at a (forced) boundary', async () => {

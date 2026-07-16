@@ -349,6 +349,39 @@ async function retryWhileWriterBusy(fn: () => Promise<void>, maxIterations = 50)
     throw new Error('retryWhileWriterBusy: timed out');
 }
 
+// Poll the persisted repair table while advancing fake timers, until an entry for `nodeUid` appears.
+async function advanceUntilRepairEntry(nodeUid: string, maxIterations = 1000): Promise<void> {
+    const db = await SearchDB.open(USER_ID);
+    try {
+        for (let i = 0; i < maxIterations; i++) {
+            const entries = await db.getAllRepairEntries();
+            if (entries.some((e) => e.nodeUid === nodeUid)) {
+                return;
+            }
+            await jest.advanceTimersByTimeAsync(200);
+        }
+    } finally {
+        db.close();
+    }
+    throw new Error(`advanceUntilRepairEntry('${nodeUid}') timed out`);
+}
+
+// Poll the repair table until it is empty (an entry was cleared after a successful repair).
+async function advanceUntilRepairTableEmpty(maxIterations = 100): Promise<void> {
+    const db = await SearchDB.open(USER_ID);
+    try {
+        for (let i = 0; i < maxIterations; i++) {
+            if ((await db.getAllRepairEntries()).length === 0) {
+                return;
+            }
+            await jest.advanceTimersByTimeAsync(100);
+        }
+    } finally {
+        db.close();
+    }
+    throw new Error('advanceUntilRepairTableEmpty timed out');
+}
+
 // Verify that non-trashed reports are found and trashed ones are not.
 async function verifyThatUserCanSearchIndexProperly(api: SharedWorkerAPI) {
     const ids = (await search(api, 'report')).map((r) => r.nodeUid).sort();
@@ -1108,6 +1141,45 @@ describe('SharedWorkerAPI integration', () => {
                 'report-q2',
             ]);
         }, 15_000);
+    });
+
+    describe('Scenario: repair table heals a quarantined node on next startup', () => {
+        it('re-indexes a node that failed during an incremental update, once it can be fetched again', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // A new file is created under Projects, but it can't be decrypted yet: getNode throws a
+            // node-scoped decryption error. The node and its parent chain are registered so the only
+            // failure is the (recoverable) decryption of report-q3 itself.
+            bridge.setNode('root-uid', folderWithParent('root-uid', 'My Files'));
+            bridge.setNode('folder-projects', folderWithParent('folder-projects', 'Projects', 'root-uid'));
+            bridge.setNode('report-q3', fileWithParent('report-q3', 'report-q3.pdf', 'folder-projects'));
+            bridge.setGetNodeError('report-q3', new Error('failed to decrypt node report-q3'));
+
+            bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeCreated, 'report-q3', 'folder-projects'));
+
+            // The incremental update quarantines report-q3 and advances past it; it isn't searchable.
+            await advanceUntilRepairEntry('report-q3');
+            expect((await search(api, 'report')).map((r) => r.nodeUid)).not.toContain('report-q3');
+
+            // Decryption recovers, then a warm restart (same DB) runs the bootstrap repair pass.
+            bridge.clearGetNodeError('report-q3');
+            api.disconnectClient(CLIENT_A);
+            state.checkpoint();
+            api = new SharedWorkerAPI();
+
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Initial indexing is skipped (already done), so report-q3 can only reappear via the
+            // repair table task enqueued at bootstrap replaying the quarantined entry.
+            state.expectNeverInitialIndexingSinceCheckpoint();
+            const results = await advanceUntilSearch(api, 'report', (r) => r.some((x) => x.nodeUid === 'report-q3'));
+            expect(results.map((r) => r.nodeUid).sort()).toEqual(['old-report', 'report-q1', 'report-q2', 'report-q3']);
+
+            // The entry is cleared once the node is successfully re-indexed.
+            await advanceUntilRepairTableEmpty();
+        }, 20_000);
     });
 
     // TODO: Add version upgrade scenario

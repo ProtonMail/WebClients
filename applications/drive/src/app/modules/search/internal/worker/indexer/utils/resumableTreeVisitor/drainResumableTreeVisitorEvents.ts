@@ -1,6 +1,7 @@
 import type { NodeEntity } from '@proton/drive';
 
 import { Logger } from '../../../../shared/Logger';
+import { isRepairableError } from '../../../../shared/errors';
 import type { IndexKind } from '../../../index/IndexRegistry';
 import type { IndexEntry } from '../../indexEntry';
 import type { TaskContext } from '../../tasks/BaseTask';
@@ -19,6 +20,9 @@ export interface ResumableWalkHandlers {
     // Persist the resume checkpoint (+ any progress) — called after the drain has committed the
     // blobs up to it, so the checkpoint never leads the durable state.
     persistCheckpoint: (checkpoint: BFSVisitorCheckpoint) => Promise<void>;
+    // handle a node-scoped failure (e.g. decryption failure) by quarantining it so the walk
+    // continues.
+    onNodeError?: (node: NodeEntity, error: unknown) => Promise<void>;
 }
 
 /**
@@ -57,7 +61,16 @@ export async function drainResumableTreeVisitorEvents(
             ctx.signal.throwIfAborted();
 
             if (event.type === 'node') {
-                session.insert(handlers.toEntry(event.node, event.parentPath, event.generation));
+                try {
+                    session.insert(handlers.toEntry(event.node, event.parentPath, event.generation));
+                } catch (e) {
+                    if (!isRepairableError(e) || !handlers.onNodeError) {
+                        // Systemic failures still abort the walk.
+                        throw e;
+                    }
+                    await handlers.onNodeError(event.node, e);
+                    continue;
+                }
                 ctx.notifyIndexingProgress();
                 if (++pendingInserts >= COMMIT_EVERY_N_ENTRIES) {
                     await commit();
