@@ -10,12 +10,12 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 
-import successImg from '../../app/containers/securityCheckup/assets/method-success.svg';
 import type { ProduceDesktopForkParameters } from '../content/actions/desktopForkInterface';
 import Content from './Content';
 import Layout from './Layout';
 import Main from './Main';
 import Text from './Text';
+import successImg from './assets/method-success.svg';
 
 export type AuthDesktopState = {
     app: APP_NAMES;
