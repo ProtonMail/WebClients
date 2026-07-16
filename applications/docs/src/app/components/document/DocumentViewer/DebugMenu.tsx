@@ -129,6 +129,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
   const [showUpdateReplayTool, setShowUpdateReplayTool] = useState(false)
 
   const patchesFileInputRef = useRef<HTMLInputElement>(null)
+  const spreadsheetStateFileInputRef = useRef<HTMLInputElement>(null)
 
   if (!isOpen) {
     return (
@@ -228,6 +229,35 @@ export function DebugMenu({ docController, editorController, documentState, docu
               <Button size="small" onClick={() => editorController.downloadSpreadsheetPatches()}>
                 Download stored patches
               </Button>
+              <input
+                ref={patchesFileInputRef}
+                type="file"
+                className="sr-only"
+                onChange={async function handlePatchesFile(event) {
+                  const file = event.target.files?.[0]
+                  if (!file) {
+                    return
+                  }
+                  const fileReader = new FileReader()
+                  fileReader.onload = async (event) => {
+                    const spreadsheetState = JSON.parse(event.target?.result as string)
+                    await editorController.replaceLocalSpreadsheetState(spreadsheetState, false)
+                  }
+                  fileReader.readAsText(file)
+                }}
+              />
+              <Button
+                size="small"
+                onClick={() => {
+                  const fileInput = patchesFileInputRef.current
+                  if (!fileInput) {
+                    return
+                  }
+                  fileInput.click()
+                }}
+              >
+                Apply spreadsheet state from file
+              </Button>
             </>
           )}
           <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
@@ -313,7 +343,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
                     Generate patches from state
                   </Button>
                   <input
-                    ref={patchesFileInputRef}
+                    ref={spreadsheetStateFileInputRef}
                     type="file"
                     className="sr-only"
                     onChange={async function handlePatchesFile(event) {
@@ -332,7 +362,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
                   <Button
                     size="small"
                     onClick={() => {
-                      const fileInput = patchesFileInputRef.current
+                      const fileInput = spreadsheetStateFileInputRef.current
                       if (!fileInput) {
                         return
                       }
