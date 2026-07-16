@@ -295,7 +295,9 @@ const AddressActions = ({
             {renderDisableAddress && (
                 <DisableAddressModal email={address.Email} onDisable={handleDisable} {...disableAddressProps} />
             )}
-            {renderDisconnectBYOEModal && <DisconnectBYOEModal address={address} {...disconnectBYOEProps} />}
+            {renderDisconnectBYOEModal && (
+                <DisconnectBYOEModal address={address} member={member} {...disconnectBYOEProps} />
+            )}
             {renderReachedLimitForwardingModal && <ReachedLimitForwardingModal {...reachedLimitForwardingModalProps} />}
             {renderUpsellForwardingModal && (
                 <UpsellForwardingModal hasAccessToBYOE={hasAccessToBYOE} modalProps={upsellForwardingModalProps} />
