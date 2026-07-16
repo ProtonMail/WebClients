@@ -43,6 +43,7 @@ describe('getContentPreviewMethod', () => {
                 state: RevisionState.Active,
                 creationTime: baseDate,
                 storageSize: 100,
+                isImported: false,
                 claimedSize: 100,
                 claimedModificationTime: baseDate,
                 claimedDigests: {
