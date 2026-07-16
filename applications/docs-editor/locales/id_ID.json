@@ -170,6 +170,9 @@
       "Outdent": [
         "Kurangi indentasi"
       ],
+      "Page break": [
+        "Pemisah halaman"
+      ],
       "Quote": [
         "Kutip"
       ],
@@ -214,6 +217,12 @@
       ],
       "Submit": [
         "Kirim"
+      ],
+      "Subscript": [
+        "Subskrip"
+      ],
+      "Superscript": [
+        "Superskrip"
       ],
       "Table options": [
         "Opsi tabel"
@@ -439,6 +448,12 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Terjadi kesalahan saat memproses pembaruan pada dokumen. Silakan muat ulang halaman dan coba lagi."
       ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Spreadsheet ini mendeteksi inkonsistensi sinkronisasi lokal. Pengeditan telah dinonaktifkan untuk mencegah hilangnya data. Silakan kirimkan laporan dan jika bersedia membagikan isinya, unduh dan sertakan informasi debug di bawah ini."
+      ],
+      "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
+        "Spreadsheet ini tidak kompatibel dengan versi klien saat ini. Silakan coba memuat ulang klien. Jika kesalahan masih berlanjut, silakan hubungi dukungan."
+      ],
       "Tried to import Sheet data into Lexical": [
         "Mencoba mengimpor data Lembar kerja ke Lexical"
       ],
@@ -641,6 +656,9 @@
       "More options": [
         "Opsi lainnya"
       ],
+      "Page break": [
+        "Pemisah halaman"
+      ],
       "Replace": [
         "Ganti"
       ],
@@ -671,6 +689,14 @@
         "Teks"
       ]
     },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Semua lembar"
+      ],
+      "New sheet": [
+        "Lembar baru"
+      ]
+    },
     "sheets_2025:Color picker": {
       "Recent colors": [
         "Warna terkini"
@@ -678,8 +704,21 @@
       "Reset": [
         "Atur ulang"
       ],
+      "Standard colors": [
+        "Warna standar"
+      ],
       "Theme colors": [
         "Warna tema"
+      ]
+    },
+    "sheets_2025:Formula bar": {
+      "Formula bar": [
+        "Bilah rumus"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "Pemilih rentang"
       ]
     },
     "sheets_2025:Range selector menu": {
@@ -703,8 +742,17 @@
       "Delete": [
         "Hapus"
       ],
+      "Duplicate": [
+        "Gandakan"
+      ],
       "Hide sheet": [
         "Sembunyikan lembar"
+      ],
+      "Move left": [
+        "Pindahkan ke kiri"
+      ],
+      "Move right": [
+        "Format saja"
       ],
       "Rename": [
         "Ubah nama"
@@ -725,6 +773,9 @@
       ],
       "Double": [
         "Ganda"
+      ],
+      "Horizontal borders": [
+        "Batas horizontal"
       ],
       "Inner borders": [
         "Batas dalam"
@@ -752,6 +803,9 @@
       ],
       "Top border": [
         "Batas atas"
+      ],
+      "Vertical borders": [
+        "Batas vertikal"
       ]
     },
     "sheets_2025:Spreadsheet cell tooltip": {
@@ -769,32 +823,86 @@
       "AI Quick Edit": [
         "Penyuntingan Cepat AI"
       ],
+      "Auto fit to data": [
+        "Paskan otomatis ke data"
+      ],
+      "Cell value": [
+        "Nilai sel"
+      ],
       "Clear": [
         "Bersihkan"
       ],
       "Clear content": [
         "Bersihkan konten"
       ],
+      "Clear formatting": [
+        "Bersihkan pemformatan"
+      ],
       "Comma": [
         "Koma"
+      ],
+      "Conditional format": [
+        "Format bersyarat"
+      ],
+      "Convert to range": [
+        "Konversikan ke rentang"
+      ],
+      "Convert to table": [
+        "Kolom bergaris"
       ],
       "Copy": [
         "Salin"
       ],
+      "Create a filter": [
+        "Buat filter"
+      ],
       "Custom": [
         "Kustom"
+      ],
+      "Data validation": [
+        "Tampilkan data di baris dan kolom tersembunyi"
+      ],
+      "Define named range": [
+        "Tentukan rentang bernama"
       ],
       "Delete": [
         "Hapus"
       ],
+      "Delete cells and shift cells left": [
+        "Sisipkan baris tabel"
+      ],
+      "Delete cells and shift cells up": [
+        "Hapus sel dan geser sel ke atas"
+      ],
       "Delete column": [
         "Hapus kolom"
+      ],
+      "Delete row": [
+        "Hapus baris"
+      ],
+      "Delete table column": [
+        "Hapus kolom tabel"
+      ],
+      "Delete table row": [
+        "Hapus baris tabel"
+      ],
+      "Edit table": [
+        "Edit tabel"
       ],
       "Filter": [
         "Filter"
       ],
+      "Formatting only": [
+        "Hanya pemformatan"
+      ],
       "Formula only": [
         "Hanya rumus"
+      ],
+      "Freeze up to column": [
+        "Bersihkan pemformatan"
+      ],
+      "Freeze up to row": [
+        "Bekukan hingga baris"
       ],
       "Hide column": [
         "Sembunyikan kolom"
@@ -802,11 +910,32 @@
       "Hide row": [
         "Sembunyikan baris"
       ],
+      "Insert cells and shift cells down": [
+        "Sisipkan sel dan geser sel ke bawah"
+      ],
+      "Insert cells and shift cells right": [
+        "Ukuran fon"
+      ],
       "Insert link": [
         "Sisipkan tautan"
       ],
       "Insert note": [
         "Sisipkan catatan"
+      ],
+      "Insert table column to the left": [
+        "Sisipkan kolom tabel ke kiri"
+      ],
+      "Insert table column to the right": [
+        "Sisipkan kolom tabel ke kanan"
+      ],
+      "Insert table row": [
+        "Sisipkan baris tabel"
+      ],
+      "Link only": [
+        "Hanya tautan"
+      ],
+      "More cell actions": [
+        "Tindakan sel lainnya"
       ],
       "Paste": [
         "Tempel"
@@ -829,8 +958,23 @@
       "Resize row": [
         "Ubah ukuran baris"
       ],
+      "Semicolon": [
+        "Titik koma"
+      ],
       "Sort": [
         "Urutkan"
+      ],
+      "Sort range A → Z": [
+        "Urutkan rentang A → Z"
+      ],
+      "Sort range Z → A": [
+        "Pilih jenis penggabungan"
+      ],
+      "Sort sheet A to Z": [
+        "Edit tabel"
+      ],
+      "Sort sheet Z to A": [
+        "Urutkan lembar Z ke A"
       ],
       "Space": [
         "Spasi"
@@ -841,6 +985,9 @@
       "Transposed": [
         "Dipindahkan"
       ],
+      "Unfreeze columns": [
+        "Tambah rentang bernama"
+      ],
       "Unfreeze rows": [
         "Buka bekuan baris"
       ],
@@ -849,6 +996,12 @@
       ]
     },
     "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } kolom"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } baris"
+      ],
       "above": [
         "di atas"
       ],
@@ -865,7 +1018,155 @@
         "kanan"
       ]
     },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Terapkan"
+      ],
+      "Cancel": [
+        "Batal"
+      ],
+      "Custom date and time formats": [
+        "Format tanggal dan waktu khusus"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Sample": [
+        "Sampel"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "AM/PM"
+      ],
+      "Date": [
+        "Tanggal"
+      ],
+      "Day": [
+        "Hari"
+      ],
+      "Day as abbreviation": [
+        "Hari sebagai singkatan"
+      ],
+      "Day as full name": [
+        "Hari sebagai nama lengkap"
+      ],
+      "Day with leading zero": [
+        "Hari dengan nol di depan"
+      ],
+      "Day without leading zero": [
+        "Hari tanpa nol di depan"
+      ],
+      "Delete": [
+        "Hapus"
+      ],
+      "Duration": [
+        "Durasi"
+      ],
+      "Elapsed hours": [
+        "Jam yang telah berlalu"
+      ],
+      "Elapsed hours with leading zero": [
+        "Jam yang telah berlalu dengan nol di depan"
+      ],
+      "Elapsed hours without leading zero": [
+        "Jam yang telah berlalu tanpa nol di depan"
+      ],
+      "Elapsed minutes": [
+        "Menit yang telah berlalu"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Menit yang telah berlalu dengan nol di depan"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Menit yang telah berlalu tanpa nol di depan"
+      ],
+      "Elapsed seconds": [
+        "Detik yang telah berlalu"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Detik yang telah berlalu dengan nol di depan"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Detik yang telah berlalu tanpa nol di depan"
+      ],
+      "First letter of the month": [
+        "Huruf pertama dari bulan"
+      ],
+      "Full": [
+        "Penuh"
+      ],
+      "Full numeric year": [
+        "Tahun numerik penuh"
+      ],
+      "Hour": [
+        "Jam"
+      ],
+      "Hour with leading zero": [
+        "Jam dengan nol di depan"
+      ],
+      "Hour without leading zero": [
+        "Jam tanpa nol di depan"
+      ],
+      "Millisecond": [
+        "Milidetik"
+      ],
+      "Minute": [
+        "Menit"
+      ],
+      "Minute with leading zero": [
+        "Menit dengan nol di depan"
+      ],
+      "Minute without leading zero": [
+        "Menit tanpa nol di depan"
+      ],
+      "Month": [
+        "Bulan"
+      ],
+      "Month as abbreviation": [
+        "Bulan sebagai singkatan"
+      ],
+      "Month as full name": [
+        "Bulan sebagai nama lengkap"
+      ],
+      "Month with leading zero": [
+        "Bulan dengan nol di depan"
+      ],
+      "Month without leading zero": [
+        "Bulan tanpa nol di depan"
+      ],
+      "Precision to 1/10 of a second": [
+        "Presisi hingga 1/10 detik"
+      ],
+      "Precision to 1/100 of a second": [
+        "Presisi hingga 1/100 detik"
+      ],
+      "Precision to 1/1000 of a second": [
+        "Presisi hingga 1/1000 detik"
+      ],
+      "Second": [
+        "Detik"
+      ],
+      "Second with leading zero": [
+        "Detik dengan nol di depan"
+      ],
+      "Second without leading zero": [
+        "Detik tanpa nol di depan"
+      ],
+      "Time": [
+        "Waktu"
+      ],
+      "Two digit year": [
+        "Dua digit tahun"
+      ],
+      "Year": [
+        "Tahun"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Apakah Anda yakin ingin menghapus ${ sheetName }?"
+      ],
       "Cancel": [
         "Batal"
       ],
@@ -876,25 +1177,63 @@
         "Hapus lembar"
       ]
     },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Pengeditan Seluler Segera Hadir"
+      ],
+      "Screen too small for editing": [
+        "Layar terlalu kecil untuk mengedit"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Fitur ini sedang disiapkan untuk Anda segera. Untuk saat ini, lembar hanya dapat diedit di desktop"
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Layar terlalu kecil untuk mengedit spreadsheet ini. Saat ini Anda berada dalam mode lihat saja. Untuk membuat perubahan, silakan buka spreadsheet ini di layar yang lebih besar atau maksimalkan jendela peramban."
+      ]
+    },
     "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Sisipkan kolom tabel ke kiri"
+      ],
+      "Cannot delete all rows": [
+        "Tidak dapat menghapus semua baris"
+      ],
       "Find in sheet": [
         "Cari di lembar"
       ]
     },
     "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Gabungkan semua"
+      ],
       "Merge cells": [
         "Gabungkan sel"
+      ],
+      "Merge horizontally": [
+        "Gabungkan secara horizontal"
+      ],
+      "Merge vertically": [
+        "Gabungkan secara vertikal"
       ],
       "Unmerge": [
         "Pisahkan"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Buat filter"
+      ],
+      "Data validation": [
+        "Validasi data"
+      ],
       "Protect range": [
         "Lindungi rentang"
       ],
       "Remove filter": [
         "Hapus filter"
+      ],
+      "Sort sheet": [
+        "Urutkan lembar"
       ],
       "Unlock range": [
         "Buka rentang"
@@ -906,6 +1245,9 @@
       ],
       "(Z to A)": [
         "(Z ke A)"
+      ],
+      "column ${ columnLetter }": [
+        "kolom ${ columnLetter }"
       ],
       "Sort sheet by": [
         "Urutkan lembar berdasarkan"
@@ -921,8 +1263,14 @@
       "Find": [
         "Cari"
       ],
+      "Formatting only": [
+        "Format saja"
+      ],
       "Formula only": [
         "Hanya rumus"
+      ],
+      "Link only": [
+        "Hanya tautan"
       ],
       "Paste": [
         "Tempel"
@@ -933,6 +1281,9 @@
       "Redo": [
         "Ulangi"
       ],
+      "Transposed": [
+        "Ditransposisikan"
+      ],
       "Undo": [
         "Urungkan"
       ],
@@ -941,6 +1292,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Nilai yang Dipisahkan Koma (.csv)"
+      ],
       "Download": [
         "Unduh"
       ],
@@ -956,6 +1310,9 @@
       "Make a copy": [
         "Buat salinan"
       ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "Move to folder": [
         "Pindahkan ke folder"
       ],
@@ -968,6 +1325,12 @@
       "New spreadsheet": [
         "Lembar kerja baru"
       ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Buka ${ DRIVE_APP_NAME }"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "Spreadsheet OpenDocument (.ods) (Beta)"
+      ],
       "Print": [
         "Cetak"
       ],
@@ -976,6 +1339,15 @@
       ],
       "Settings": [
         "Pengaturan"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tab Separated Values (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "Aktifkan mode debug"
+      ],
+      "View recent spreadsheets": [
+        "Lihat spreadsheet terkini"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -994,6 +1366,12 @@
       "Clear content": [
         "Bersihkan konten"
       ],
+      "Clear formatting": [
+        "Bersihkan pemformatan"
+      ],
+      "Conditional formatting": [
+        "Tindakan ini memengaruhi detail pemformatan seperti fungsi, tanggal, dan mata uang"
+      ],
       "Font size": [
         "Ukuran fon"
       ],
@@ -1006,11 +1384,17 @@
       "Strikethrough": [
         "Coretan"
       ],
+      "Table formatting": [
+        "Pemformatan tabel"
+      ],
       "Text": [
         "Teks"
       ],
       "Theme": [
         "Tema"
+      ],
+      "Underline": [
+        "Garis bawah"
       ],
       "Wrapping": [
         "Pembungkusan"
@@ -1069,6 +1453,12 @@
       "Image": [
         "Gambar"
       ],
+      "Insert cells and shift down": [
+        "Sisipkan sel dan geser ke bawah"
+      ],
+      "Insert cells and shift right": [
+        "Masukkan rumus"
+      ],
       "Link": [
         "Tautan"
       ],
@@ -1083,6 +1473,12 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } kolom"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } baris"
+      ],
       "above": [
         "atas"
       ],
@@ -1126,6 +1522,9 @@
       "Freeze": [
         "Bekukan"
       ],
+      "Gridlines": [
+        "Tautan disalin ke papan klip"
+      ],
       "Show": [
         "Tampilan"
       ],
@@ -1134,6 +1533,12 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "kolom ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "baris ${ rowNumber }"
+      ],
       "Up to": [
         "Hingga"
       ]
@@ -1150,14 +1555,35 @@
       "Accounting": [
         "Akuntansi"
       ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Yuan Tiongkok"
+      ],
       "Currency": [
         "Mata uang"
+      ],
+      "Currency rounded": [
+        "Mata uang dibulatkan"
+      ],
+      "Custom currency": [
+        "Mata uang khusus"
+      ],
+      "Custom date and time": [
+        "Tanggal dan waktu khusus"
+      ],
+      "Custom number": [
+        "Angka khusus"
       ],
       "Date": [
         "Tanggal"
       ],
+      "Date time": [
+        "Tanggal waktu"
+      ],
       "Duration": [
         "Durasi"
+      ],
+      "Financial": [
+        "Keuangan"
       ],
       "General": [
         "Umum"
@@ -1173,6 +1599,9 @@
       ],
       "Percent": [
         "Persen"
+      ],
+      "Plain text": [
+        "Teks biasa"
       ],
       "Scientific": [
         "Ilmiah"
@@ -1199,6 +1628,9 @@
       ],
       "Go to next": [
         "Berikutnya"
+      ],
+      "Go to previous": [
+        "Ke sebelumnya"
       ]
     },
     "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
@@ -1210,6 +1642,15 @@
       ],
       "Locale": [
         "Lokal"
+      ],
+      "Save and reload": [
+        "Pilih rentang"
+      ],
+      "Settings for this spreadsheet": [
+        "Perataan vertikal"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Hal ini memengaruhi rincian pemformatan seperti fungsi, tanggal, dan mata uang"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
@@ -1219,14 +1660,53 @@
       "Border": [
         "Batas"
       ],
+      "Clear formatting": [
+        "Bersihkan pemformatan"
+      ],
+      "Create a filter": [
+        "Buat filter"
+      ],
+      "Decrease decimal places": [
+        "Turunkan tempat desimal"
+      ],
+      "Decrease font size": [
+        "Perkecil ukuran fon"
+      ],
+      "Default (${ defaultFont })": [
+        "Bawaan (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Warna isi"
+      ],
       "Find": [
         "Cari"
       ],
       "Font": [
         "Fon"
       ],
+      "Font size": [
+        "Buat filter"
+      ],
+      "Format as currency": [
+        "Format sebagai mata uang"
+      ],
+      "Format as percent": [
+        "Format sebagai persen"
+      ],
+      "Horizontal align": [
+        "Perataan horizontal"
+      ],
+      "Increase decimal places": [
+        "Tingkatkan tempat desimal"
+      ],
+      "Increase font size": [
+        "Edit tabel"
+      ],
       "Insert chart": [
         "Sisipkan grafik"
+      ],
+      "Insert function": [
+        "Sisipkan fungsi"
       ],
       "Insert link": [
         "Sisipkan tautan"
@@ -1255,6 +1735,9 @@
       "Remove filter": [
         "Hapus filter"
       ],
+      "Select merge type": [
+        "Pilih jenis penggabungan"
+      ],
       "Strikethrough": [
         "Coretan"
       ],
@@ -1264,11 +1747,17 @@
       "Text wrapping": [
         "Pembungkusan teks"
       ],
+      "Underline": [
+        "Garis bawah"
+      ],
       "Undo": [
         "Urungkan"
       ],
       "Unmerge cells": [
         "Pisahkan sel"
+      ],
+      "Vertical align": [
+        "Perataan vertikal"
       ],
       "Zoom": [
         "Perbesar"
@@ -1287,11 +1776,35 @@
       "Copy": [
         "Salin"
       ],
+      "Delete table column": [
+        "Hapus kolom tabel"
+      ],
       "Enter value": [
         "Masukkan nilai"
       ],
+      "Filter by condition": [
+        "Filter berdasarkan kondisi"
+      ],
+      "Filter by value": [
+        "Filter berdasarkan nilai"
+      ],
+      "Insert 1 table column left": [
+        "Sisipkan 1 kolom tabel di kiri"
+      ],
+      "Insert 1 table column right": [
+        "Sisipkan 1 kolom tabel di kanan"
+      ],
       "Paste": [
         "Tempel"
+      ],
+      "Select all": [
+        "Pilih semua"
+      ],
+      "Sort A → Z": [
+        "Urutkan A → Z"
+      ],
+      "Sort Z → A": [
+        "Urutkan Z → A"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -1303,9 +1816,21 @@
       ],
       "Insert link": [
         "Sisipkan tautan"
+      ],
+      "Paste link": [
+        "Tempelkan tautan"
       ]
     },
     "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Salin tautan"
+      ],
+      "Edit link": [
+        "Edit tautan"
+      ],
+      "Link copied to clipboard": [
+        "Keuangan"
+      ],
       "Link removed": [
         "Tautan dihapus"
       ],
@@ -1336,7 +1861,33 @@
         "tinggi baris"
       ]
     },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Rata-rata"
+      ],
+      "Count": [
+        "Jumlah"
+      ],
+      "Customize Status Bar": [
+        "Sesuaikan Bilah Status"
+      ],
+      "Max": [
+        "Maks"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Jumlah numerik"
+      ],
+      "Sum": [
+        "Jumlah total"
+      ]
+    },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Perataan"
+      ],
       "Bold": [
         "Tebal"
       ],
@@ -1349,11 +1900,20 @@
       "Cancel": [
         "Batal"
       ],
+      "Choose Category": [
+        "Pilih Kategori"
+      ],
       "Color": [
         "Warna"
       ],
+      "Currency Symbol": [
+        "Simbol Mata Uang"
+      ],
       "Custom": [
         "Kustom"
+      ],
+      "Decimal places": [
+        "Tempat desimal"
       ],
       "Effects": [
         "Efek"
@@ -1370,6 +1930,9 @@
       "General": [
         "Umum"
       ],
+      "Horizontal Alignment": [
+        "Perataan Horizontal"
+      ],
       "Indent": [
         "Indentasi"
       ],
@@ -1378,6 +1941,15 @@
       ],
       "Merge": [
         "Gabung"
+      ],
+      "Merge all": [
+        "Gabungkan semua"
+      ],
+      "Merge horizontally": [
+        "Hapus kolom tabel"
+      ],
+      "Merge vertically": [
+        "Gabungkan secara vertikal"
       ],
       "Number": [
         "Angka"
@@ -1397,19 +1969,37 @@
       "Text control": [
         "Kontrol teks"
       ],
+      "Thousands separator": [
+        "Pemisah ribuan"
+      ],
       "Type": [
         "Jenis"
       ],
+      "Underline": [
+        "Garis bawah"
+      ],
       "Unmerge": [
         "Pisahkan"
+      ],
+      "Use 1000 Separator (,)": [
+        "Gunakan Pemisah 1000 (,)"
+      ],
+      "Vertical Alignment": [
+        "Perataan Vertikal"
       ]
     },
     "sheets_2025:Spreadsheet sidebar chart editor dialog": {
       "Add": [
         "Tambah"
       ],
+      "Aggregate": [
+        "Agregat"
+      ],
       "Cancel": [
         "Batal"
+      ],
+      "Chart data range": [
+        "Rentang data grafik"
       ],
       "Chart editor": [
         "Penyunting grafik"
@@ -1423,6 +2013,12 @@
       "Enter title": [
         "Masukkan judul"
       ],
+      "Horizontal (category) axis labels": [
+        "Label sumbu horizontal (kategori)"
+      ],
+      "Horizontal axis title": [
+        "Judul sumbu horizontal"
+      ],
       "Name": [
         "Nama"
       ],
@@ -1432,16 +2028,34 @@
       "Save": [
         "Simpan"
       ],
+      "Select a range": [
+        "Pilih rentang"
+      ],
       "Series": [
         "Seri"
       ],
+      "Show data in hidden rows and columns": [
+        "Edit tautan"
+      ],
       "Value": [
         "Nilai"
+      ],
+      "Vertical axis title": [
+        "Judul sumbu vertikal"
       ]
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Tambah rentang lainnya"
+      ],
+      "Add another rule": [
+        "Tambah aturan lainnya"
+      ],
       "Add rule": [
         "Tambah aturan"
+      ],
+      "Apply to range": [
+        "Terapkan pada rentang"
       ],
       "Cancel": [
         "Batal"
@@ -1452,8 +2066,17 @@
       "Color scale": [
         "Skala warna"
       ],
+      "Conditional formatting": [
+        "Pemformatan bersyarat"
+      ],
       "Delete range": [
         "Hapus rentang"
+      ],
+      "Delete rule": [
+        "Hapus aturan"
+      ],
+      "Enter a formula": [
+        "Masukkan rumus"
       ],
       "Enter value": [
         "Masukkan nilai"
@@ -1463,6 +2086,21 @@
       ],
       "Format style": [
         "Gaya format"
+      ],
+      "Max point": [
+        "Tempelkan tautan"
+      ],
+      "Max value": [
+        "Nilai maks"
+      ],
+      "Mid point": [
+        "Titik tengah"
+      ],
+      "Min point": [
+        "Garis bawah"
+      ],
+      "Min value": [
+        "Geser ke kiri"
       ],
       "None": [
         "Tidak ada"
@@ -1476,6 +2114,9 @@
       "Save": [
         "Simpan"
       ],
+      "Select a range": [
+        "Pilih rentang"
+      ],
       "Single color": [
         "Satu warna"
       ]
@@ -1484,16 +2125,81 @@
       "Apply": [
         "Terapkan"
       ],
-      "Cancel": [
-        "Batal"
-      ]
-    },
-    "sheets_2025:Spreadsheet sidebar data validation dialog": {
-      "Allow blanks": [
-        "Izinkan kosong"
+      "Apply to create a custom currency": [
+        "Terapkan untuk membuat mata uang khusus"
       ],
       "Cancel": [
         "Batal"
+      ],
+      "Currency symbol": [
+        "Simbol mata uang"
+      ],
+      "Custom currencies": [
+        "Mata uang khusus"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom number format dialog": {
+      "Apply": [
+        "Terapkan"
+      ],
+      "Apply to create a custom number format": [
+        "Terapkan untuk membuat format angka khusus"
+      ],
+      "Cancel": [
+        "Batal"
+      ],
+      "Custom number format": [
+        "Format angka khusus"
+      ],
+      "Custom number formats": [
+        "Format angka khusus"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Negative": [
+        "Negatif"
+      ],
+      "Positive": [
+        "Positif"
+      ],
+      "Sample": [
+        "Sampel"
+      ],
+      "Text": [
+        "Teks"
+      ],
+      "Zero": [
+        "Nol"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Pemformatan bersyarat"
+      ],
+      "Add another range": [
+        "Tambah rentang lainnya"
+      ],
+      "Add named range": [
+        "Lembar baru"
+      ],
+      "Allow blanks": [
+        "Izinkan kosong"
+      ],
+      "Apply to range": [
+        "Terapkan pada rentang"
+      ],
+      "Cancel": [
+        "Batal"
+      ],
+      "Data validation": [
+        "Validasi data"
+      ],
+      "Delete data validation rule": [
+        "Hapus aturan validasi data"
+      ],
+      "Enter a formula": [
+        "Masukkan rumus"
       ],
       "Enter value": [
         "Masukkan nilai"
@@ -1503,6 +2209,12 @@
       ],
       "Save": [
         "Simpan"
+      ],
+      "Select a range": [
+        "Pilih rentang"
+      ],
+      "Validation rules": [
+        "Aturan validasi"
       ]
     },
     "sheets_2025:Spreadsheet sidebar dialog": {
@@ -1511,11 +2223,32 @@
       ]
     },
     "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Tambah rentang bernama lainnya"
+      ],
+      "Add named range": [
+        "Tambah rentang bernama"
+      ],
+      "Apply to range": [
+        "Terapkan ke rentang"
+      ],
       "Cancel": [
         "Batal"
       ],
+      "Delete named range": [
+        "Hapus rentang bernama"
+      ],
+      "Enter a formula": [
+        "Masukkan rumus"
+      ],
+      "Enter text or formula": [
+        "Masukkan teks atau rumus"
+      ],
       "Name": [
         "Nama"
+      ],
+      "Name should not contain spaces": [
+        "Nama tidak boleh mengandung spasi"
       ],
       "Named Ranges": [
         "Rentang Bernama"
@@ -1526,22 +2259,40 @@
       "Save": [
         "Simpan"
       ],
+      "Text or formula": [
+        "Teks atau rumus"
+      ],
       "Type": [
         "Jenis"
       ]
     },
     "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Kolom berselang-seling"
+      ],
       "Banded rows": [
         "Baris bergaris"
       ],
       "Cancel": [
         "Batal"
       ],
+      "Edit table": [
+        "Edit tabel"
+      ],
       "More settings": [
         "Pengaturan lainnya"
       ],
       "Save": [
         "Simpan"
+      ],
+      "Select a range": [
+        "Pilih rentang"
+      ],
+      "Show filter button": [
+        "Tampilkan tombol filter"
+      ],
+      "Table data range": [
+        "Rentang data tabel"
       ],
       "Table title": [
         "Judul tabel"
@@ -1559,6 +2310,9 @@
       ],
       "Language not supported": [
         "Bahasa tidak didukung"
+      ],
+      "Outline": [
+        "Kerangka"
       ]
     },
     "Warning": {
