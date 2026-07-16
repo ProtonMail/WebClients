@@ -363,7 +363,11 @@ const SingleSignupContainer = ({
 
             const subscriptionDataCycleMappingPromise = getPlanCardSubscriptionData({
                 ...sharedOptions,
-                planIDs: [planIDs, !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined].filter(isTruthy),
+                planIDs: [
+                    planIDs,
+                    !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined,
+                    !planIDs[PLANS.VPN_PASS_BUNDLE] ? { [PLANS.VPN_PASS_BUNDLE]: 1 } : undefined,
+                ].filter(isTruthy),
                 cycles: unique([cycle, ...filteredCycleData.cycles]),
                 coupon,
             });
