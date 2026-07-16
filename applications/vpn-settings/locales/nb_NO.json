@@ -1542,11 +1542,6 @@
         "Brukeradministrator:"
       ]
     },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "En rolle er en gruppe med tillatelser som du kan tildele medlemmene i organisasjonen din."
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ved å forlate nå kan det hende at enkelte kontakter ikke blir importert."
@@ -2081,6 +2076,27 @@
       ],
       "Status": [
         "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne brukeren kan ikke migreres på grunn av plattformuforenlighet."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "For å migrere denne brukeren må du aktivere kontoen deres i Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For å migrere denne brukeren må du aktivere kontoen deres under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For å migrere denne brukeren må du aktivere adressen deres under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For å migrere denne brukeren må de godta invitasjonen sin til å bli med i ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "For å migrere denne brukeren må du oppheve arkiveringen av dem i Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "For å migrere denne brukeren må du oppheve suspensjonen av dem i Google Workspace Admin Console."
       ],
       "User": [
         "Bruker"
@@ -6411,8 +6427,8 @@
         "${ number } byer"
       ],
       "${ number } server": [
-        "${ number } tjener",
-        "${ number } tjenere"
+        "${ number } server",
+        "${ number } servere"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } opplastet fil er ikke en gyldig privat nøkkel. Verifiser og prøv på nytt.",
@@ -8164,8 +8180,8 @@
         "Delt ${ vaultLink } oppdatert"
       ],
       "Shared server country (${ countriesCount })": [
-        "Land for delt tjener (${ countriesCount })",
-        "Land for delte tjenere (${ countriesCount })"
+        "Land for delt server (${ countriesCount })",
+        "Land for delte servere (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Delt hvelv slettet"
@@ -8924,12 +8940,12 @@
         "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
       ],
       "You have ${ availableCount } new server available.": [
-        "Du har ${ availableCount } ny tjener tilgjengelig.",
-        "Du har ${ availableCount } nye tjenere tilgjengelig."
+        "Du har ${ availableCount } ny server tilgjengelig.",
+        "Du har ${ availableCount } nye servere tilgjengelig."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "Du har ${ unassignedAvailableCount } nylig brukt tjener tilgjengelig. For å tildele denne tjeneren til et annet land, må du vente til deaktiveringen er fullført.",
-        "Du har ${ unassignedAvailableCount } nylig brukte tjenere tilgjengelig. For å tildele disse tjenerene til et annet land, må du vente til deaktiveringen er fullført."
+        "Du har ${ unassignedAvailableCount } nylig brukt server tilgjengelig. For å tildele denne serveren til et annet land, må du vente til deaktiveringen er fullført.",
+        "Du har ${ unassignedAvailableCount } nylig brukte servere tilgjengelig. For å tildele disse serverene til et annet land, må du vente til deaktiveringen er fullført."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et prøveabonnement på ${ planTitle }. Hvis du vil fortsette abonnementet etter prøveperioden, må du legge til en betalingsmåte."
@@ -15872,6 +15888,9 @@
       "Save 50% for 6 months, and keep full access": [
         "Spar 50 % i 6 måneder, og behold full tilgang"
       ],
+      "Save 50% for one year, and keep full access": [
+        "Spar 50 % i ett år, og behold full tilgang"
+      ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Se hvordan ${ MAIL_APP_NAME } er sammenlignet, og hvorfor vår uavhengighet utgjør en forskjell."
       ],
@@ -16380,8 +16399,8 @@
         "Aktivitetsovervåking"
       ],
       "Add ${ totalServerCount } server?": [
-        "Legge til ${ totalServerCount } tjener?",
-        "Legge til ${ totalServerCount } tjenere?"
+        "Legge til ${ totalServerCount } server?",
+        "Legge til ${ totalServerCount } servere?"
       ],
       "Add address": [
         "Legg til adresse"
@@ -16712,8 +16731,8 @@
         "Slette organisasjonens logo?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "Slett tjeneren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dag).",
-        "Slett tjeneren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dager)."
+        "Slett serveren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dag).",
+        "Slett serveren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dager)."
       ],
       "Delete user?": [
         "Slett bruker?"
@@ -17223,9 +17242,6 @@
       ],
       "Revoke certificate?": [
         "Oppheve sertifikatet?"
-      ],
-      "Roles and permissions": [
-        "Roller og tillatelser"
       ],
       "SAML authentication": [
         "SAML-autentisering"

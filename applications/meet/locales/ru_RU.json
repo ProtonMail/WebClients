@@ -4,15 +4,175 @@
     "language": "ru_RU"
   },
   "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(открывается в новой вкладке)"
+      ],
+      "camera off": [
+        "камера выключена"
+      ],
+      "camera on": [
+        "камера включена"
+      ],
+      "Meeting controls": [
+        "Элементы управления встречей"
+      ],
+      "microphone muted": [
+        "микрофон выключен"
+      ],
+      "microphone on": [
+        "микрофон включен"
+      ]
+    },
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } присоединился к встрече"
+      ],
+      "${ name } left the meeting": [
+        "${ name } покинул встречу"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } опустил руку"
+      ],
+      "${ name } raised their hand": [
+        "${ name } поднял руку"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } отреагировал: ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } говорит: ${ message }"
+      ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Участник присоединился к встрече"
+      ],
+      "A participant left the meeting": [
+        "Участник покинул встречу"
+      ],
+      "A participant lowered their hand": [
+        "Участник опустил руку"
+      ],
+      "A participant raised their hand": [
+        "Участник поднял руку"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Участник отреагировал: ${ emoji }"
+      ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "Подключено через режим ретрансляции TURN из-за ограничений сети. Это может увеличить задержку и повлиять на качество звонка."
+      ],
+      "Connection lost. Reconnecting…": [
+        "Подключение прервано. Переподключение…"
+      ],
+      "New chat message: ${ message }": [
+        "Новое сообщение в чате: ${ message }"
+      ],
+      "Now starting recording": [
+        "Запуск записи"
+      ],
+      "Reconnected to the meeting": [
+        "Подключение к встрече восстановлено"
+      ],
+      "Recording saved": [
+        "Запись сохранена"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Запись начата. Продолжая участие во встрече, вы подтверждаете свое согласие на запись."
+      ],
+      "Recording stopped": [
+        "Запись остановлена"
+      ],
+      "Screen share started": [
+        "Демонстрация экрана запущена"
+      ],
+      "Screen share started by ${ name }": [
+        "Демонстрацию экрана запустил пользователь ${ name }"
+      ],
+      "Screen share stopped": [
+        "Демонстрация экрана остановлена"
+      ],
+      "Screen share stopped by ${ name }": [
+        "Демонстрация экрана остановлена пользователем ${ name }"
+      ],
+      "The meeting will close in 1 minute": [
+        "Встреча завершится через 1 минуту"
+      ],
+      "The meeting will close in 15 seconds": [
+        "Встреча завершится через 15 секунд"
+      ],
+      "The meeting will close in 30 seconds": [
+        "Встреча завершится через 30 секунд"
+      ],
+      "The meeting will end in 1 minute": [
+        "Встреча завершится через 1 минуту"
+      ],
+      "The meeting will end in 10 minutes": [
+        "Встреча завершится через 10 минут"
+      ],
+      "The meeting will end in 15 seconds": [
+        "Встреча завершится через 15 секунд"
+      ],
+      "The meeting will end in 5 minutes": [
+        "Встреча завершится через 5 минут"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Эта встреча записывается. Присоединяясь, вы подтверждаете свое согласие на запись."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Вы единственный участник. Встреча завершится через 2 минуты, если никто не присоединится."
+      ],
+      "You have been disconnected from the meeting": [
+        "Вы были отключены от встречи"
+      ],
+      "You have been muted by the host": [
+        "Ваш микрофон был выключен организатором"
+      ],
+      "Your camera has been turned off by the host": [
+        "Ваша камера была выключена организатором"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
+      ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } новое",
+        "${ newMessageCount } новых",
+        "${ newMessageCount } новых",
+        "${ newMessageCount } новых"
       ],
       "Add account": [
         "Добавить аккаунт"
       ],
       "Add another account": [
         "Добавить другой аккаунт"
+      ],
+      "Admit": [
+        "Допустить"
+      ],
+      "Admit ${ participantName }": [
+        "Допустить ${ participantName }"
+      ],
+      "Admit all": [
+        "Допустить всех"
+      ],
+      "Allow access": [
+        "Разрешить доступ"
+      ],
+      "Anyone with the link can join immediately": [
+        "Любой пользователь со ссылкой может присоединиться сразу"
+      ],
+      "Applied": [
+        "Применено"
+      ],
+      "Apply changes": [
+        "Применить изменения"
+      ],
+      "Approve participants before they can join": [
+        "Одобрять участников перед тем, как они смогут присоединиться"
       ],
       "Assign ${ selectedParticipantName } as host": [
         "Назначить ${ selectedParticipantName } организатором"
@@ -44,6 +204,12 @@
       "Close": [
         "Закрыть"
       ],
+      "Close preview": [
+        "Закрыть предпросмотр"
+      ],
+      "Close reply composer": [
+        "Закрыть редактор ответа"
+      ],
       "Close this banner": [
         "Закрыть этот баннер"
       ],
@@ -53,11 +219,17 @@
       "Continue without camera": [
         "Продолжить без камеры"
       ],
+      "Continue without mic and camera": [
+        "Продолжить без микрофона и камеры"
+      ],
       "Continue without microphone": [
         "Продолжить без микрофона"
       ],
       "Copy address": [
         "Копировать адрес"
+      ],
+      "Copy invitation link": [
+        "Скопировать ссылку-приглашение"
       ],
       "Copy link": [
         "Копировать ссылку"
@@ -67,6 +239,9 @@
       ],
       "Copy meeting link": [
         "Скопировать ссылку на встречу"
+      ],
+      "Copy room link": [
+        "Скопировать ссылку на комнату"
       ],
       "Create a free account": [
         "Создать бесплатный аккаунт"
@@ -83,11 +258,20 @@
       "Delete": [
         "Удалить"
       ],
+      "Deny": [
+        "Отклонить"
+      ],
+      "Deny ${ participantName }": [
+        "Отклонить ${ participantName }"
+      ],
       "Disable ${ participantName }'s video": [
         "Отключить видео ${ participantName }"
       ],
       "Disable camera": [
         "Отключить камеру"
+      ],
+      "Disable waiting room": [
+        "Отключить зал ожидания"
       ],
       "Discard": [
         "Сбросить"
@@ -95,11 +279,17 @@
       "Dismiss": [
         "Отклонить"
       ],
+      "Dismiss new messages": [
+        "Скрыть новые сообщения"
+      ],
       "Done": [
         "Готово"
       ],
       "Download": [
         "Скачать"
+      ],
+      "Download app": [
+        "Скачать приложение"
       ],
       "Download local participant report": [
         "Скачать отчет о локальном участнике"
@@ -109,6 +299,9 @@
       ],
       "Download participant report": [
         "Скачать отчёт об участнике"
+      ],
+      "Download recording": [
+        "Скачать запись"
       ],
       "Download room level report": [
         "Скачать отчёт на уровне комнаты"
@@ -128,6 +321,9 @@
       "Enable camera": [
         "Включить камеру"
       ],
+      "Enable waiting room": [
+        "Включить зал ожидания"
+      ],
       "End meeting": [
         "Завершить встречу"
       ],
@@ -136,6 +332,12 @@
       ],
       "Forgot password?": [
         "Забыли пароль?"
+      ],
+      "Full size": [
+        "Полный размер"
+      ],
+      "Generate a new meeting link.": [
+        "Создать новую ссылку на встречу."
       ],
       "Get Meet Professional": [
         "Перейти на Meet Professional"
@@ -148,6 +350,9 @@
       ],
       "Help and resources": [
         "Помощь и информация"
+      ],
+      "Hide options": [
+        "Скрыть параметры"
       ],
       "Hide participants": [
         "Скрыть участников"
@@ -167,6 +372,9 @@
       "Join meeting": [
         "Присоединиться к встрече"
       ],
+      "Join with a link": [
+        "Войти по ссылке"
+      ],
       "Kick out": [
         "Удалить"
       ],
@@ -184,6 +392,9 @@
       ],
       "Lower hand": [
         "Опустить руку"
+      ],
+      "Minimize preview": [
+        "Свернуть предпросмотр"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
@@ -209,6 +420,12 @@
       "Open link": [
         "Открыть ссылку"
       ],
+      "Participants join after you approve them": [
+        "Участники присоединяются после вашего одобрения"
+      ],
+      "Participants join the call directly": [
+        "Участники присоединяются к звонку напрямую"
+      ],
       "Pause": [
         "Пауза"
       ],
@@ -224,8 +441,17 @@
       "React with ${ emoji }": [
         "Отреагировать с помощью ${ emoji }"
       ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Отреагировать с помощью ${ emoji }, ${ identities.length } реакция",
+        "Отреагировать с помощью ${ emoji }, ${ identities.length } реакции",
+        "Отреагировать с помощью ${ emoji }, ${ identities.length } реакций",
+        "Отреагировать с помощью ${ emoji }, ${ identities.length } реакции"
+      ],
       "Receive video": [
         "Получать видео"
+      ],
+      "Record": [
+        "Записать"
       ],
       "Refer a friend": [
         "Порекомендуйте другу"
@@ -233,11 +459,20 @@
       "Refresh audio and video tracks": [
         "Обновить аудио- и видеодорожки"
       ],
+      "Refresh screen share track": [
+        "Обновить дорожку демонстрации экрана"
+      ],
       "Refresh the page": [
         "Обновить страницу"
       ],
       "Rejoin meeting": [
         "Снова присоединиться к встрече"
+      ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Удалить реакцию ${ emoji }, ${ identities.length } реакция",
+        "Удалить реакцию ${ emoji }, ${ identities.length } реакции",
+        "Удалить реакцию ${ emoji }, ${ identities.length } реакций",
+        "Удалить реакцию ${ emoji }, ${ identities.length } реакции"
       ],
       "Reply": [
         "Ответить"
@@ -257,11 +492,17 @@
       "Resend code": [
         "Повторно отправить код"
       ],
+      "Reset to defaults": [
+        "Сбросить по умолчанию"
+      ],
       "Resume": [
         "Возобновить"
       ],
       "Retry": [
         "Повторить"
+      ],
+      "Return to dashboard": [
+        "Вернуться на панель управления"
       ],
       "Room": [
         "Комната"
@@ -287,8 +528,17 @@
       "Send an encrypted message": [
         "Отправить зашифрованное сообщение"
       ],
+      "Send reply": [
+        "Отправить ответ"
+      ],
       "Settings": [
         "Настройки"
+      ],
+      "Show duration": [
+        "Показать длительность"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Показывать плавающий значок при демонстрации экрана"
       ],
       "Show options": [
         "Показать параметры"
@@ -308,14 +558,23 @@
       "Sign out of all accounts": [
         "Выйти из всех учётных записей"
       ],
+      "Simulate reconnection": [
+        "Симулировать переподключение"
+      ],
       "Skip": [
         "Пропустить"
+      ],
+      "Skip to main content": [
+        "Перейти к основному содержимому"
       ],
       "Start an instant meeting": [
         "Начать быструю встречу"
       ],
       "Start meeting": [
         "Начать встречу"
+      ],
+      "Start new meeting": [
+        "Начать новую встречу"
       ],
       "Start recording": [
         "Начать запись"
@@ -325,6 +584,9 @@
       ],
       "Start your own meeting": [
         "Начать свою встречу"
+      ],
+      "Starting…": [
+        "Запуск…"
       ],
       "Stay in meeting": [
         "Остаться на встрече"
@@ -338,6 +600,9 @@
       "Stop recording": [
         "Остановить запись"
       ],
+      "Stop recording and download video": [
+        "Остановить запись и скачать видео"
+      ],
       "Stop Recording Track Stats": [
         "Остановить запись статистики трека"
       ],
@@ -349,6 +614,9 @@
       ],
       "Tap to unblock audio playback": [
         "Нажмите, чтобы разблокировать воспроизведение аудио"
+      ],
+      "The current link will stop working.": [
+        "Текущая ссылка перестанет работать."
       ],
       "Try again": [
         "Попробовать снова"
@@ -365,6 +633,15 @@
       "Upgrade now": [
         "Улучшить сейчас"
       ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Улучшите тарифный план, чтобы использовать зал ожидания на следующей встрече."
+      ],
+      "Upload another video": [
+        "Загрузить другое видео"
+      ],
+      "Upload video": [
+        "Загрузить видео"
+      ],
       "Use authentication code": [
         "Использовать код аутентификации"
       ],
@@ -377,6 +654,9 @@
       "Use recovery code": [
         "Использовать код восстановлени"
       ],
+      "Use waiting room with a paid plan": [
+        "Использовать зал ожидания с платным тарифом"
+      ],
       "Verify": [
         "Подтвердить"
       ],
@@ -385,6 +665,15 @@
       ],
       "View invoice": [
         "Посмотреть счет"
+      ],
+      "Waiting room": [
+        "Зал ожидания"
+      ],
+      "Waiting room disabled": [
+        "Зал ожидания отключен"
+      ],
+      "Waiting room enabled": [
+        "Зал ожидания включен"
       ]
     },
     "Alt": {
@@ -415,14 +704,26 @@
       "Go to dashboard": [
         "Перейти в панель управления"
       ],
+      "Hide self view": [
+        "Скрыть свое видео"
+      ],
       "Leave Meeting": [
         "Покинуть встречу"
       ],
       "Lock meeting": [
         "Заблокировать встречу"
       ],
+      "Lower hand": [
+        "Опустить руку"
+      ],
       "Meeting details": [
         "Детали встречи"
+      ],
+      "More options": [
+        "Дополнительные параметры"
+      ],
+      "Noise cancellation": [
+        "Шумоподавление"
       ],
       "Open chat message search": [
         "Открыть поиск сообщений в чате"
@@ -436,8 +737,14 @@
       "Participants": [
         "Участники"
       ],
+      "Raise hand": [
+        "Поднять руку"
+      ],
       "Rotate camera": [
         "Повернуть камеру"
+      ],
+      "Save my name on this device": [
+        "Сохранить мое имя на этом устройстве"
       ],
       "Screen share": [
         "Поделиться экраном"
@@ -445,8 +752,17 @@
       "Settings": [
         "Настройки"
       ],
+      "Show duration": [
+        "Показать длительность"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Показывать плавающий значок при демонстрации экрана"
+      ],
       "Show passphrase": [
         "Показать кодовую фразу"
+      ],
+      "Stop recording and download.": [
+        "Остановить запись и скачать."
       ],
       "Toggle chat": [
         "Показать/скрыть чат"
@@ -466,13 +782,57 @@
       "Toggle settings": [
         "Показать/скрыть настройки"
       ],
+      "Turn off incoming video": [
+        "Отключить входящее видео"
+      ],
       "Video settings": [
         "Настройки видео"
+      ],
+      "Waiting room": [
+        "Зал ожидания"
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Приложения ${ BRAND_NAME }"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "Назначить организатора"
+      ],
+      "Audio settings": [
+        "Настройки аудио"
+      ],
+      "Chat": [
+        "Чат"
+      ],
+      "Chat messages": [
+        "Сообщения чата"
+      ],
+      "Device settings": [
+        "Настройки устройства"
+      ],
+      "Meeting details": [
+        "Информация о встрече"
+      ],
+      "Meeting rooms": [
+        "Комнаты для встреч"
+      ],
+      "Participants": [
+        "Участники"
+      ],
+      "Participants list": [
+        "Список участников"
+      ],
+      "Primary navigation": [
+        "Основная навигация"
+      ],
+      "Settings": [
+        "Настройки"
+      ],
+      "Video settings": [
+        "Настройки видео"
       ]
     },
     "Badge": {
@@ -1422,8 +1782,22 @@
       ]
     },
     "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "Шифрование с помощью Messaging Layer Security (MLS)"
+      ],
       "Rotating group encryption key for best security": [
         "Обновление группового ключа шифрования для максимальной безопасности"
+      ],
+      "Try a different name.": [
+        "Попробуйте другое имя."
+      ],
+      "You'll see people here when they join the meeting.": [
+        "Вы увидите людей здесь, когда они присоединятся к встрече."
+      ]
+    },
+    "Display name": {
+      "Loading…": [
+        "Загрузка…"
       ]
     },
     "emergency_access": {
@@ -1462,14 +1836,23 @@
       "Failed to delete event": [
         "Не удалось удалить событие"
       ],
+      "Failed to delete recording": [
+        "Не удалось удалить запись"
+      ],
       "Failed to delete room": [
         "Не удалось удалить комнату"
+      ],
+      "Failed to download recording": [
+        "Не удалось скачать запись"
       ],
       "Failed to edit room name": [
         "Не удалось изменить название комнаты"
       ],
       "Failed to join meeting. Please try again later.": [
         "Не удалось присоединиться к встрече. Повторите попытку позже."
+      ],
+      "Failed to join meeting. Please try again.": [
+        "Не удалось присоединиться к встрече. Пожалуйста, попробуйте еще раз."
       ],
       "Failed to lock meeting": [
         "Не удалось заблокировать встречу"
@@ -1485,6 +1868,9 @@
       ],
       "Failed to send reaction. Please try again.": [
         "Не удалось отправить реакцию. Попробуйте еще раз."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "Не удалось начать встречу. Пожалуйста, попробуйте еще раз."
       ],
       "Failed to start recording": [
         "Не удалось начать запись"
@@ -1534,6 +1920,9 @@
       "The meeting password is incorrect": [
         "Неверный пароль встречи"
       ],
+      "The meeting password is invalid": [
+        "Пароль встречи недействителен"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Длина этого поля превысила максимальные ${ maximumLength } символов."
       ],
@@ -1560,6 +1949,12 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Нам не удалось отправить код подтверждения этим способом."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "В вашем браузере закончилось место для хранения. Мы сохранили запись до этого момента."
+      ],
+      "Your device's clock appears to be out of sync. Please check your system time and try again.": [
+        "Похоже, часы вашего устройства не синхронизированы. Пожалуйста, проверьте системное время и попробуйте снова."
       ]
     },
     "Error message": {
@@ -1713,12 +2108,20 @@
         "Службы"
       ]
     },
+    "Header": {
+      "Protect your conversations with end-to-end encryption": [
+        "Защитите свои разговоры с помощью сквозного шифрования"
+      ]
+    },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
         "${ createAnActionAction } или ${ signInAction }, чтобы получить доступ к своей личной комнате и создавать новые комнаты"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "${ createAnActionAction } или ${ signInAction }, чтобы планировать встречи"
+      ],
+      "Talk in total ${ privacyWord }": [
+        "Общайтесь в полной ${ privacyWord }"
       ]
     },
     "Human verification method": {
@@ -1745,8 +2148,23 @@
       "${ maxParticipants } participant limit reached": [
         "Достигнут лимит в ${ maxParticipants } участн."
       ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "Приложению ${ MEET_APP_NAME } нужен доступ, чтобы другие могли видеть и слышать вас во время звонка. Вы можете выключить камеру или микрофон в любое время."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "Приложению ${ MEET_APP_NAME } нужен доступ к камере, чтобы другие могли видеть вас во время звонка. Вы можете выключить ее в любое время."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "Приложению ${ MEET_APP_NAME } нужен доступ к микрофону, чтобы другие могли слышать вас во время звонка. Вы можете выключить его в любое время."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "Для работы ${ MEET_APP_NAME } требуется WebRTC. Обновите браузер или устройство до версии с поддержкой WebRTC, попробуйте другой браузер или отключите любые расширения, которые могут блокировать его работу."
+      ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } и еще ${ otherParticipantsCount } записывают встречу"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } записывает встречу"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (вы) ведёте показ"
@@ -1754,20 +2172,50 @@
       "${ presenterName } is presenting": [
         "${ presenterName } ведет показ"
       ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } и другие отреагировали: ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames } отреагировали: ${ emoji }"
+      ],
+      "${ replyCount } reply": [
+        "${ replyCount } ответ",
+        "${ replyCount } ответа",
+        "${ replyCount } ответов",
+        "${ replyCount } ответов"
+      ],
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "${ totalParticipantCount } из максимум ${ maxParticipants } участников"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } участник",
+        "${ totalParticipantCount } участника",
+        "${ totalParticipantCount } участников",
+        "${ totalParticipantCount } участника"
+      ],
       "(You)": [
         "(Вы)"
       ],
       "-Removed dangerous URL-": [
         "-Удален опасный URL-"
       ],
+      "1 reply draft": [
+        "1 черновик ответа"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
+      ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Расширенный режим: настройте каждую константу размытия для следующей версии, затем примените, чтобы перестроить предпросмотр. Переопределения имеют приоритет над значениями из файла и Unleash."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Анонимный ${ particle } ${ participantNumber }"
       ],
       "Are you sure you want to leave?": [
         "Вы уверены, что хотите выйти?"
+      ],
+      "Are you sure you want to stop recording?": [
+        "Вы уверены, что хотите остановить запись?"
       ],
       "Attention required": [
         "Требуется внимание"
@@ -1778,8 +2226,17 @@
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
         "Продолжая участие во встрече, вы признаете и соглашаетесь на то, что вас будут записывать."
       ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "Присоединяясь, вы соглашаетесь с нашими ${ termsLink } и ${ privacyLink }."
+      ],
       "camera": [
         "камера"
+      ],
+      "Camera permission denied": [
+        "В разрешении на использование камеры отказано"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Изменения подготовлены. Примените их, чтобы перестроить предпросмотр с новыми константами."
       ],
       "Chat with everyone": [
         "Чат со всеми"
@@ -1802,8 +2259,20 @@
       "Connection interrupted. Reconnecting...": [
         "Подключение прервано. Переподключение..."
       ],
+      "Connection issue detected. Attempting to recover…": [
+        "Обнаружена проблема с подключением. Попытка восстановления…"
+      ],
+      "Connection lost. Reconnecting…": [
+        "Подключение прервано. Переподключение…"
+      ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
+      ],
+      "Could not access the camera.": [
+        "Не удалось получить доступ к камере."
+      ],
+      "Could not start recording.": [
+        "Не удалось начать запись."
       ],
       "Country code": [
         "Код страны"
@@ -1826,6 +2295,9 @@
       "Default - ${ systemDefault.label }": [
         "По умолчанию — ${ systemDefault.label }"
       ],
+      "Default - System Default": [
+        "По умолчанию — системные настройки"
+      ],
       "Delete event": [
         "Удалить событие"
       ],
@@ -1843,6 +2315,12 @@
       ],
       "Edit email address": [
         "Изменить адрес электронной почты"
+      ],
+      "End Meeting for everyone?": [
+        "Завершить встречу для всех?"
+      ],
+      "End the meeting for everyone?": [
+        "Завершить встречу для всех?"
       ],
       "End-to-end encryption is active for audio and video.": [
         "Для аудио и видео активно сквозное шифрование."
@@ -1870,6 +2348,12 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Введите собственный пароль (как доверенный контакт)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "Все участники были отключены от звонка."
+      ],
+      "Failed to apply background blur": [
+        "Не удалось применить размытие фона"
       ],
       "Failed to update meeting name": [
         "Не удалось обновить название встречи"
@@ -1925,6 +2409,12 @@
       "Learn more": [
         "Узнать больше"
       ],
+      "Leave meeting and stop sharing?": [
+        "Выйти из встречи и прекратить демонстрацию экрана?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Выход из встречи остановит демонстрацию вашего экрана."
+      ],
       "Left ${ roomNameLabel }": [
         "Вышел(-ла) из ${ roomNameLabel }"
       ],
@@ -1946,8 +2436,20 @@
       "Loading meetings...": [
         "Загрузка встреч..."
       ],
+      "Loading recordings…": [
+        "Загрузка записей…"
+      ],
       "Loading...": [
         "Загрузка..."
+      ],
+      "Loading…": [
+        "Загрузка…"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Воспроизводите загруженное видео или трансляцию с камеры в режиме сравнения двух версий размытия фона."
+      ],
+      "Lower participant's hand": [
+        "Опустить руку участника"
       ],
       "Meet without restrictions": [
         "Общайтесь без ограничений"
@@ -1970,6 +2472,12 @@
       "Meeting locked. No new participants can join.": [
         "Встреча заблокирована. Новые участники не могут присоединиться."
       ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Запись встреч не поддерживается в Firefox."
+      ],
+      "Meeting time is up": [
+        "Время встречи истекло"
+      ],
       "Meeting unlocked. Participants can join again.": [
         "Встреча разблокирована. Участники снова могут присоединяться."
       ],
@@ -1979,11 +2487,23 @@
       "Member": [
         "Член"
       ],
+      "Message actions": [
+        "Действия с сообщением"
+      ],
+      "Message from ${ participantName }": [
+        "Сообщение от ${ participantName }"
+      ],
       "microphone": [
         "микрофон"
       ],
       "Microphone effects": [
         "Эффекты микрофона"
+      ],
+      "Microphone permission denied": [
+        "В разрешении на использование микрофона отказано"
+      ],
+      "Mute microphone": [
+        "Выключить микрофон"
       ],
       "My meetings": [
         "Мои встречи"
@@ -1996,6 +2516,12 @@
       ],
       "New host": [
         "Новый организатор"
+      ],
+      "New reply": [
+        "Новый ответ"
+      ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "Не обнаружено ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
       ],
       "No camera detected": [
         "Камера не обнаружена"
@@ -2012,6 +2538,9 @@
       "No publications": [
         "Нет публикаций"
       ],
+      "No recordings found on this device.": [
+        "На этом устройстве не найдено записей."
+      ],
       "No remote participants": [
         "Нет удалённых участников"
       ],
@@ -2024,6 +2553,9 @@
       "No speaker detected": [
         "Динамик не обнаружен"
       ],
+      "Not sent, check your connection.": [
+        "Не отправлено, проверьте подключение."
+      ],
       "Only meetings you created appear here": [
         "Здесь отображаются только созданные вами встречи"
       ],
@@ -2035,6 +2567,12 @@
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Наши встречи, зашифрованные сквозным методом, защищают вашу конфиденциальность и дают возможность по-настоящему свободно выражать свои мысли."
+      ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Страница ${ displayPage } из ${ totalPages }"
+      ],
+      "Participant": [
+        "Участник"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Вставьте ссылку ${ MEET_APP_NAME }, чтобы присоединиться к безопасной встрече"
@@ -2057,17 +2595,53 @@
       "Premium meeting": [
         "Платная встреча"
       ],
+      "Presenting": [
+        "Выступает"
+      ],
+      "privacy": [
+        "конфиденциальности"
+      ],
+      "Quick reactions": [
+        "Быстрые реакции"
+      ],
+      "Reactions": [
+        "Реакции"
+      ],
       "Reconnected successfully": [
         "Успешно переподключено"
       ],
       "Reconnecting to meeting...": [
         "Переподключение к встрече..."
       ],
+      "Record your meetings": [
+        "Записывайте ваши встречи"
+      ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Запишите оригинальный поток с камеры и рабочую версию размытия фона бок о бок. Остановка записи скачивает оба клипа."
+      ],
+      "Recording": [
+        "Запись"
+      ],
+      "Recording deleted": [
+        "Запись удалена"
+      ],
+      "Recording in progress": [
+        "Идет запись"
+      ],
+      "Recording will begin and attendees will be notified.": [
+        "Запись начнется, и участники получат уведомление."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Записи хранятся локально в вашем браузере. Скачайте те, которые хотите сохранить, они автоматически удаляются через 30 дней."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
       ],
       "Refresh audio and video tracks": [
         "Обновить аудио- и видеодорожки"
+      ],
+      "Refresh screen share track": [
+        "Обновить дорожку демонстрации экрана"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
@@ -2108,6 +2682,15 @@
       "Sort by": [
         "Сортировать по"
       ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "Выбор динамика недоступен в этом браузере. Используйте системные настройки, чтобы выбрать другой динамик."
+      ],
+      "Start recording": [
+        "Начать запись"
+      ],
+      "Starting camera…": [
+        "Запуск камеры…"
+      ],
       "Stop sharing your screen": [
         "Остановить демонстрацию экрана"
       ],
@@ -2123,6 +2706,15 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Организатор удалил вас из этой встречи. Если это произошло по ошибке, попросите организатора пригласить вас снова."
       ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Ссылка на встречу, которую вы пытались открыть, не существует или устарела. Убедитесь, что ссылка верна, или начните новую безопасную встречу."
+      ],
+      "This conversation started before you joined.": [
+        "Эта цепочка писем началась до того, как вы присоединились."
+      ],
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "Это чат со сквозным шифрованием и эфемерными сообщениями, которые исчезают после окончания звонка."
+      ],
       "This meeting is being recorded": [
         "Эта встреча записывается"
       ],
@@ -2132,8 +2724,17 @@
       "This meeting is password protected": [
         "Эта встреча защищена паролем"
       ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Эта встреча достигла лимита времени бесплатного тарифа. Улучшите тариф, чтобы увеличить длительность встреч в будущих звонках."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Эта встреча была открыта в приложении ${ MEET_APP_NAME } для ПК."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Эта запись будет навсегда удалена с этого устройства. Это действие нельзя отменить."
+      ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Это завершит встречу для всех участников и остановит демонстрацию вашего экрана."
       ],
       "This will end the meeting for all participants.": [
         "Это завершит встречу для всех участников."
@@ -2141,8 +2742,23 @@
       "This will sign you out of all accounts currently logged in.": [
         "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
       ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "Чтобы создать комнату, вам понадобится **бесплатный аккаунт ${ BRAND_NAME }**, чтобы мы могли сохранить комнату. Это займет всего несколько секунд."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "Чтобы запланировать событие, вам понадобится **бесплатный аккаунт ${ BRAND_NAME }**, чтобы мы могли сохранить событие. Это займет всего несколько секунд."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "Чтобы использовать личную комнату для встреч, вам понадобится **бесплатный аккаунт ${ BRAND_NAME }**. Это займет всего несколько секунд."
+      ],
+      "Today — ${ absoluteDate }": [
+        "Сегодня — ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Завтра — ${ absoluteDate }"
       ],
       "Turn off camera": [
         "Выключить камеру"
@@ -2150,17 +2766,29 @@
       "Turn on camera": [
         "Включить камеру"
       ],
+      "Unable to reconnect to the meeting. Please rejoin or leave.": [
+        "Не удалось восстановить подключение к встрече. Пожалуйста, переподключитесь или покиньте ее."
+      ],
       "unlimited meeting": [
         "неограниченные встречи"
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "Разблокируйте ${ unlimitedMeeting } и платные функции"
       ],
+      "Unmute microphone": [
+        "Включить микрофон"
+      ],
+      "Upgrade to record your meetings locally.": [
+        "Улучшите тариф, чтобы записывать встречи локально."
+      ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Оформите подписку, чтобы убрать ограничение в 1 час и пропустить обратный отсчёт. Проводите встречи до 24 часов."
       ],
       "Video effects": [
         "Эффекты видео"
+      ],
+      "View ": [
+        "Просмотреть "
       ],
       "Warning": [
         "Предупреждение"
@@ -2183,6 +2811,9 @@
       "Would you like to receive a new verification code?": [
         "Хотите ли вы получить новый код подтверждения?"
       ],
+      "Yesterday — ${ absoluteDate }": [
+        "Вчера — ${ absoluteDate }"
+      ],
       "You are almost there": [
         "Вы почти у цели"
       ],
@@ -2195,8 +2826,17 @@
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Вы по-прежнему можете выключить микрофон и камеру в любой момент во время встречи"
       ],
+      "You left the meeting": [
+        "Вы покинули встречу"
+      ],
+      "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
+        "Для использования этой функции вам необходим платный тариф ${ MEET_SHORT_APP_NAME } или Workspace. Обратитесь к администратору вашей организации, чтобы улучшить тариф."
+      ],
       "You were removed from the meeting": [
         "Вас удалили из встречи"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Вы выйдете из встречи. Остальные продолжат участие."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Вас пригласили к защищённой встрече. Подтвердите своё имя и нажмите ниже, чтобы войти."
@@ -2206,6 +2846,18 @@
       ],
       "Your always available meeting room": [
         "Ваша всегда доступная комната для встреч"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Ваш браузер заблокировал доступ к камере и микрофону. Чтобы включить их, обновите настройки браузера и переподключитесь к звонку."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Ваш браузер заблокировал доступ к камере. Чтобы включить ее, обновите настройки браузера и переподключитесь к звонку."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Ваш браузер заблокировал доступ к микрофону. Чтобы включить его, обновите настройки браузера и переподключитесь к звонку."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Ваш браузер заблокировал доступ к демонстрации экрана. Чтобы включить ее, обновите настройки браузера и переподключитесь к звонку."
       ],
       "Your browser or device isn’t supported": [
         "Ваш браузер или устройство не поддерживается"
@@ -2239,6 +2891,12 @@
       "Add to calendar": [
         "Добавить в календарь"
       ],
+      "Advanced mode": [
+        "Расширенный режим"
+      ],
+      "Anyone with the link can join": [
+        "Присоединиться может любой, у кого есть ссылка"
+      ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
@@ -2247,6 +2905,9 @@
       ],
       "Authenticator app": [
         "Приложение-аутентификатор"
+      ],
+      "Blurred (next)": [
+        "С размытием (след.)"
       ],
       "Browser": [
         "Браузер"
@@ -2272,8 +2933,14 @@
       "Copy invite link": [
         "Скопировать ссылку-приглашение"
       ],
+      "Create meeting options": [
+        "Настройки создания встречи"
+      ],
       "Created": [
         "Создано"
+      ],
+      "Current": [
+        "Текущий"
       ],
       "Delete": [
         "Удалить"
@@ -2292,6 +2959,12 @@
       ],
       "Email address": [
         "Адрес эл. почты"
+      ],
+      "Emoji picker": [
+        "Выбор эмодзи"
+      ],
+      "Emoji reactions": [
+        "Реакции эмодзи"
       ],
       "Enabled": [
         "Включены"
@@ -2332,8 +3005,20 @@
       "Last used": [
         "В последний раз использовано"
       ],
+      "Leave meeting options": [
+        "Параметры выхода из встречи"
+      ],
+      "Manage recordings": [
+        "Управление записями"
+      ],
       "Meeting ID": [
         "ID встречи"
+      ],
+      "Meeting link": [
+        "Ссылка на встречу"
+      ],
+      "Message": [
+        "Сообщение"
       ],
       "Microphone Active": [
         "Микрофон активен"
@@ -2347,6 +3032,9 @@
       "Name": [
         "Имя"
       ],
+      "Next": [
+        "Далее"
+      ],
       "Operating system": [
         "Операционная система"
       ],
@@ -2355,6 +3043,12 @@
       ],
       "Outlook Calendar": [
         "Календарь Outlook"
+      ],
+      "Participant controls": [
+        "Элементы управления участниками"
+      ],
+      "Participants join after you approve them": [
+        "Участники присоединяются после того, как вы их одобрите"
       ],
       "Passphrase": [
         "Кодовая фраза"
@@ -2365,17 +3059,32 @@
       "Phone number": [
         "Номер телефона"
       ],
+      "Raw": [
+        "Оригинал"
+      ],
       "Remember my name on this device": [
         "Запомнить мое имя на этом устройстве"
       ],
       "Repeat event": [
         "Повторять событие"
       ],
+      "Reply": [
+        "Ответить"
+      ],
+      "Return to dashboard": [
+        "Вернуться на панель управления"
+      ],
       "Reveal password": [
         "Показать пароль"
       ],
+      "Save my name on this device": [
+        "Сохранить мое имя на этом устройстве"
+      ],
       "Schedule meeting": [
         "Запланировать встречу"
+      ],
+      "Screen share": [
+        "Демонстрация экрана"
       ],
       "Selected Camera": [
         "Выбранная камера"
@@ -2394,6 +3103,12 @@
       ],
       "Track SID": [
         "SID трека"
+      ],
+      "Use live camera feed": [
+        "Использовать трансляцию с камеры"
+      ],
+      "Use simple selfie segmentation": [
+        "Использовать простую сегментацию селфи"
       ],
       "Verification code": [
         "Код подтверждения"
@@ -2426,6 +3141,9 @@
       ],
       "Sign in": [
         "Войти"
+      ],
+      "terms and conditions": [
+        "правилами и условиями"
       ],
       "What’s this?": [
         "Что это такое?"
@@ -2515,8 +3233,14 @@
       "Others couldn't hear me": [
         "Другие меня не слышали"
       ],
+      "Others couldn't see my video": [
+        "Другие не видели мое видео"
+      ],
       "The presentation was blurry": [
         "Изображение презентации было размытым"
+      ],
+      "Video quality was poor": [
+        "Качество видео было плохим"
       ]
     },
     "Placeholder": {
@@ -2541,6 +3265,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "Название встречи, например, синхронизация команды, обновление по проекту и т. д."
+      ],
       "Password": [
         "Пароль"
       ],
@@ -2549,6 +3276,9 @@
       ],
       "Reply...": [
         "Ответить..."
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "Название комнаты, например, синхронизация команды, обновление по проекту и т. д."
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Запланировать в ${ CALENDAR_APP_NAME }"
@@ -2620,6 +3350,9 @@
       ]
     },
     "Sort option": {
+      "Alphabetical (A–Z)": [
+        "По алфавиту (А–Я)"
+      ],
       "Newly created": [
         "Недавно созданные"
       ],
@@ -2678,8 +3411,14 @@
       "Actions": [
         "Действия"
       ],
+      "Date": [
+        "Дата"
+      ],
       "Name": [
         "Имя"
+      ],
+      "Size": [
+        "Размер"
       ]
     },
     "Title": {
@@ -2691,6 +3430,18 @@
       ],
       "Activity events": [
         "События активности"
+      ],
+      "All participants": [
+        "Все участники"
+      ],
+      "Allow camera ": [
+        "Разрешить доступ к камере "
+      ],
+      "Allow camera and microphone": [
+        "Разрешить доступ к камере и микрофону"
+      ],
+      "Allow microphone": [
+        "Разрешить доступ к микрофону"
       ],
       "Are you sure?": [
         "Вы уверены?"
@@ -2710,8 +3461,23 @@
       "Available Speakers": [
         "Доступные динамики"
       ],
+      "Background blur comparison": [
+        "Сравнение размытия фона"
+      ],
+      "Camera and microphone are blocked": [
+        "Камера и микрофон заблокированы"
+      ],
+      "Camera is blocked": [
+        "Камера заблокирована"
+      ],
       "Chat": [
         "Чат"
+      ],
+      "Constants": [
+        "Константы"
+      ],
+      "Couldn't prepare the recording": [
+        "Не удалось подготовить запись"
       ],
       "Create new room": [
         "Создать новую комнату"
@@ -2721,6 +3487,9 @@
       ],
       "Debug Overlay": [
         "Оверлей отладки"
+      ],
+      "Delete recording?": [
+        "Удалить запись?"
       ],
       "Enter your password": [
         "Введите пароль"
@@ -2746,6 +3515,9 @@
       "Info": [
         "Информация"
       ],
+      "Invalid meeting link": [
+        "Недействительная ссылка на встречу"
+      ],
       "Invalid verification code": [
         "Неверный проверочный код"
       ],
@@ -2767,8 +3539,14 @@
         "Подключение к встрече с еще ${ participantCount } участниками…",
         "Подключение к встрече с еще ${ participantCount } участниками…"
       ],
+      "Launching Meeting...": [
+        "Запуск встречи..."
+      ],
       "Local Participant": [
         "Локальный участник"
+      ],
+      "Meeting": [
+        "Встреча"
       ],
       "Meeting created": [
         "Встреча создана"
@@ -2785,8 +3563,14 @@
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
+      "Microphone is blocked": [
+        "Микрофон заблокирован"
+      ],
       "Minicalendar": [
         "Миникалендарь"
+      ],
+      "No one is waiting": [
+        "Никто не ожидает"
       ],
       "No results found": [
         "Результатов не найдено"
@@ -2803,8 +3587,23 @@
       "Personal meeting room": [
         "Личная комната для встреч"
       ],
+      "Preparing your recording…": [
+        "Подготовка вашей записи…"
+      ],
       "Publications": [
         "Публикации"
+      ],
+      "Reconnection Testing": [
+        "Тестирование переподключения"
+      ],
+      "Record raw vs blurred camera": [
+        "Запись камеры: оригинал против размытого"
+      ],
+      "Record this meeting": [
+        "Записать эту встречу"
+      ],
+      "Recordings": [
+        "Записи"
       ],
       "Remote Participants": [
         "Удаленные участники"
@@ -2818,8 +3617,14 @@
       "Schedule a meeting": [
         "Запланировать встречу"
       ],
+      "Screen share is blocked": [
+        "Демонстрация экрана заблокирована"
+      ],
       "Secure meeting": [
         "Безопасная встреча"
+      ],
+      "Security": [
+        "Безопасность"
       ],
       "Security code": [
         "Код безопасности"
@@ -2832,6 +3637,9 @@
       ],
       "Starting meeting as the first participant…": [
         "Встреча начинается, вы — первый участник…"
+      ],
+      "Stop recording": [
+        "Остановить запись"
       ],
       "Talk confidentially": [
         "Общайтесь конфиденциально"
@@ -2851,11 +3659,17 @@
       "Video": [
         "Видео"
       ],
+      "Waiting room": [
+        "Зал ожидания"
+      ],
       "What went wrong?": [
         "Что пошло не так?"
       ],
       "Your feedback has been submitted": [
         "Отзыв отправлен"
+      ],
+      "Your recording is ready": [
+        "Ваша запись готова"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -2867,11 +3681,17 @@
       "Background blur is not supported on your browser": [
         "Размытие фона не поддерживается в вашем браузере"
       ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Создать новую ссылку на встречу. Текущая ссылка перестанет работать."
+      ],
       "Instant AI assistance, human expert on hand!": [
         "Мгновенная помощь ИИ, специалист всегда на связи!"
       ],
       "Recurring meeting": [
         "Повторяющаяся встреча"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "Вы можете создавать новую ссылку на встречу один раз в день."
       ]
     },
     "Validation": {

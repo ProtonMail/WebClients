@@ -4,7 +4,21 @@
     "language": "sv_SE"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Open external url": [
+        "Öppna extern URL"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Protokollet ${ parsedProtocol } är inte tillåtet. Vill du öppna den externa URL-en?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Starta om och profilera nu\" kommer att starta om appen omedelbart och samla in en startup-profil.\n\n\"Profilera vid nästa start\" kommer att profilera nästa gång du öppnar appen. Använd detta för att mäta startup-hastigheten efter en omstart."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Om ${ MAIL_APP_NAME }"
       ],
@@ -22,6 +36,9 @@
       ],
       "Close Window": [
         "Stäng fönster"
+      ],
+      "Collect startup performance data": [
+        "Samla in prestandadata för startup"
       ],
       "Copy": [
         "Kopiera"
@@ -67,6 +84,9 @@
       ],
       "Paste and Match Style": [
         "Klistra in och matcha stil"
+      ],
+      "Profile app startup": [
+        "Profilera app-startup"
       ],
       "Profile on next launch": [
         "Profil vid nästa start"
@@ -127,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Avinstallera ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "När hårdvaruacceleration är aktiverad använder appen din enhets dedikerade grafikhårdvara för rendering. Detta kan orsaka kompatibilitetsproblem på vissa system."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Utan hårdvaruacceleration använder appen mjukvarurendering istället för ditt grafikkort. Du kan märka långsammare animationer och högre CPU-användning."
       ],
       "Zoom": [
         "Zooma"

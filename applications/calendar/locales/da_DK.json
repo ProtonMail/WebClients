@@ -1555,6 +1555,27 @@
       "Status": [
         "Status"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For at migrere denne bruger skal vedkommende acceptere sin invitation til at tilmelde sig ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du fjerne vedkommende fra arkivet i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du ophæve suspenderingen af vedkommende i din Google Workspace Admin Console."
+      ],
       "User": [
         "Bruger"
       ],
@@ -5792,6 +5813,9 @@
       "Failed to update meeting schedule": [
         "Kunne ikke opdatere mødeplanen"
       ],
+      "Failed to update meeting waiting room status": [
+        "Kunne ikke opdatere status for møde-venteværelset"
+      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Kun filer (ingen fotos, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
       ],
@@ -7214,6 +7238,12 @@
       "Every": [
         "Hver"
       ],
+      "Exact host matching": [
+        "Nøjagtigt værtsmatch"
+      ],
+      "Exact URL matching": [
+        "Nøjagtig URL-matching"
+      ],
       "Expires": [
         "Udløber"
       ],
@@ -7328,6 +7358,9 @@
       "Navigation": [
         "Navigation"
       ],
+      "Never fill on this exact URL": [
+        "Udfyld aldrig på denne nøjagtige URL"
+      ],
       "New password": [
         "Ny adgangskode"
       ],
@@ -7357,6 +7390,9 @@
       ],
       "Organizer": [
         "Arrangør"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domæne og underdomæner (standard)"
       ],
       "participant": [
         "deltager",
@@ -7416,6 +7452,9 @@
       "Region": [
         "Region"
       ],
+      "Regular expression": [
+        "Regulært udtryk"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Fjern ${ MEET_APP_NAME } videokonference"
       ],
@@ -7454,6 +7493,9 @@
       ],
       "Start date": [
         "Startdato"
+      ],
+      "Starts with": [
+        "Begynder med"
       ],
       "State": [
         "Stat"
@@ -7502,6 +7544,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ],
       "Username": [
         "Brugernavn"
@@ -7928,11 +7973,29 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Matchende regel for \"Begynder med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Nøjagtig (under) domænematchregel"
+      ],
+      "Exact URL matching rule": [
+        "Nøjagtig URL-matchende regel"
+      ],
       "Fw:": [
         "Vs:"
       ],
+      "Never fill with this exact URL": [
+        "Udfyld aldrig med denne nøjagtige URL"
+      ],
       "Re:": [
         "Sv:"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært udtryk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for jokertegnmønstermatch"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er udløbet. ${ nonAutoRenewalAction }"
@@ -12631,6 +12694,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
       ],
+      "Users and addresses": [
+        "Brugere og adresser"
+      ],
       "Verification failed": [
         "Bekræftelse mislykkedes"
       ],
@@ -12997,6 +13063,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",

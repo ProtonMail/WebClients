@@ -4,6 +4,17 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "İptal"
+      ],
+      "Open external url": [
+        "Dış adresi aç"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "${ parsedProtocol } iletişim kuralına izin verilmiyor. Dış adresi açmak istiyor musunuz?"
+      ]
+    },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
         "\"Yeniden başlat ve profil çıkar\" seçeneği uygulamayı hemen yeniden başlatır ve bir başlangıç profili çıkarır.\n\n\"Bir sonraki açılışta profil çıkar\" seçeneği ise uygulamayı bir sonraki açışınızda profil çıkarır. Bunu aygıtı yeniden başlattıktan sonraki açılış hızını ölçmek için kullanın."

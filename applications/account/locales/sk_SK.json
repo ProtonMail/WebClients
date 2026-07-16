@@ -408,9 +408,6 @@
       "Continue with this password": [
         "Pokračovať s týmto heslom"
       ],
-      "Copy": [
-        "Kopírovať"
-      ],
       "Copy address": [
         "Kopírovať adresu"
       ],
@@ -962,9 +959,6 @@
       ],
       "Hide": [
         "Skryť"
-      ],
-      "Hide ${ LUMO_SHORT_APP_NAME }": [
-        "Skryť ${ LUMO_SHORT_APP_NAME }"
       ],
       "Hide more benefits": [
         "Skryť viac výhod"
@@ -1518,9 +1512,6 @@
       "Select time zone": [
         "Vyberte časové pásmo"
       ],
-      "Send": [
-        "Odoslať"
-      ],
       "send auto-reply email": [
         "odoslať automatickú odpoveď"
       ],
@@ -1683,9 +1674,6 @@
       "Stay": [
         "Zostať"
       ],
-      "Stop": [
-        "Zastaviť"
-      ],
       "Stop using single sign-on": [
         "Ukončiť používanie jednotného prihlásenia"
       ],
@@ -1748,9 +1736,6 @@
       ],
       "Underline": [
         "Podčiarknuť"
-      ],
-      "Undo": [
-        "Vrátiť späť"
       ],
       "Undo import": [
         "Zrušiť import"
@@ -2224,11 +2209,6 @@
       ],
       "User admin:": [
         "Správca používateľov:"
-      ]
-    },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Pozícia je skupina povolení, ktoré môžete prideliť členom vašej organizácie."
       ]
     },
     "Alert": {
@@ -3342,11 +3322,32 @@
       "Status": [
         "Stav"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohto používateľa nie je možné migrovať z dôvodu nekompatibility platforiem."
+      ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Ak chcete preniesť dáta vašej organizácie do ${ BRAND_NAME }, nainštalujte si aplikáciu ${ BRAND_NAME } Easy Switch z obchodu Google Workspace Marketplace. Po inštalácii sa vráťte sem a pokračujte."
       ],
       "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
         "Aby ste migráciu dokončili, uistite sa, že ponecháte iba MX záznamy pre ${ BRAND_NAME }."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho adresu v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Ak chcete migrovať tohto používateľa, musí prijať pozvánku do služby ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho archiváciu v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho pozastavenie v konzole správcu Google Workspace."
       ],
       "Update records for receiving": [
         "Aktualizovať záznamy o príjme"
@@ -11555,9 +11556,6 @@
       "here": [
         "tu"
       ],
-      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
-        "Ahoj! Opíšte mi, aký filter potrebujete, a ja napíšem skript pre Sieve. Môžem tiež vylepšiť čokoľvek, čo už je v editore."
-      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skryje identifikačné informácie načítaním vzdialeného obsahu cez proxy server. Možnosť ukladať obsah ako prílohy."
       ],
@@ -12955,9 +12953,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Tieto prihlasovacie údaje nie je možné použiť na prihlásenie do našich oficiálnych aplikácií ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
-      "Thinking…": [
-        "Premýšľam…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet bol zablokovaný kvôli možnému porušeniu pravidiel."
@@ -15149,9 +15144,6 @@
       ],
       "Date": [
         "Dátum"
-      ],
-      "Date format": [
-        "Formát dátumu"
       ],
       "Days of the week": [
         "Dni v týždni"
@@ -18925,9 +18917,6 @@
       "An external address cannot be default": [
         "Externá adresa nemôže byť predvolená"
       ],
-      "Copied to clipboard": [
-        "Skopírované do schránky"
-      ],
       "Downloaded 2FA recovery codes": [
         "Stiahnuté obnovovacie kódy 2FA"
       ],
@@ -18975,9 +18964,6 @@
       ],
       "Reminder has been sent": [
         "Pripomienka bola odoslaná"
-      ],
-      "Sieve script inserted": [
-        "Sieve skript bol vložený"
       ],
       "The key has been deleted.": [
         "Kľúč bol vymazaný."
@@ -20666,9 +20652,6 @@
       ],
       "Cortex Inc.": [
         "Cortex Inc."
-      ],
-      "Describe the filter you want…": [
-        "Popíšte filter, ktorý požadujete…"
       ],
       "domain.com": [
         "domena.sk"
@@ -25136,6 +25119,9 @@
       "Save 50% for 6 months, and keep full access": [
         "Ušetrite 50 % na 6 mesiacov a zachovajte si plný prístup"
       ],
+      "Save 50% for one year, and keep full access": [
+        "Ušetrite 50 % na jeden rok a zachovajte si plný prístup"
+      ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Zistite, ako si vedie ${ MAIL_APP_NAME }, a prečo je naša nezávislosť taká dôležitá."
       ],
@@ -26718,9 +26704,6 @@
       "Help center": [
         "Centrum pomoci"
       ],
-      "Help from ${ LUMO_SHORT_APP_NAME }": [
-        "Pomoc od ${ LUMO_SHORT_APP_NAME }"
-      ],
       "Help us improve": [
         "Pomôž nám zlepšiť sa"
       ],
@@ -27182,9 +27165,6 @@
       ],
       "Revoke certificate?": [
         "Zrušiť certifikát?"
-      ],
-      "Roles and permissions": [
-        "Pozície a oprávnenia"
       ],
       "Same inbox, shorter email address": [
         "Rovnaká schránka, kratšia emailová adresa"

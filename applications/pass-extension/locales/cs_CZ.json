@@ -193,6 +193,9 @@
       "Copy forwarding address": [
         "Kopírovat adresu přeposílání"
       ],
+      "Copy instructions": [
+        "Kopírovat instrukce"
+      ],
       "Copy link": [
         "Kopírovat odkaz"
       ],
@@ -210,6 +213,9 @@
       ],
       "Copy to clipboard": [
         "Zkopírovat do schránky"
+      ],
+      "Copy token": [
+        "Kopírovat token"
       ],
       "Copy username": [
         "Zkopírovat uživatelské jméno"
@@ -246,6 +252,9 @@
       ],
       "Create note": [
         "Vytvořit poznámku"
+      ],
+      "Create token": [
+        "Vytvořit token"
       ],
       "Create vault": [
         "Vytvořit trezor"
@@ -451,6 +460,9 @@
       "Manage access": [
         "Spravovat přístup"
       ],
+      "Manage vault access": [
+        "Spravovat přístup do trezoru"
+      ],
       "Manually sync your data": [
         "Manuálně synchronizovat"
       ],
@@ -486,6 +498,9 @@
       ],
       "Multiple select": [
         "Vícenásobný výběr"
+      ],
+      "New token": [
+        "Nový token"
       ],
       "Next month": [
         "Další měsíc"
@@ -537,6 +552,12 @@
       ],
       "Regenerate": [
         "Znovu vygenerovat"
+      ],
+      "Regex invalid": [
+        "Neplatný regulární výraz"
+      ],
+      "Regex unsafe": [
+        "Regulární výraz není bezpečný"
       ],
       "Reject": [
         "Odmítnout"
@@ -754,6 +775,9 @@
       "Via secure link": [
         "Přes bezpečný odkaz"
       ],
+      "View agent activity": [
+        "Zobrazit aktivitu agenta"
+      ],
       "View app logs": [
         "Prohlédnout logy aplikace"
       ],
@@ -780,6 +804,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Váš správce hesel zde není? Požádejte o něj."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivita"
+      ],
+      "Activity details could not be loaded.": [
+        "Detaily aktivity se nepodařilo načíst."
+      ],
+      "Folder": [
+        "Složka"
+      ],
+      "Item": [
+        "Položka"
+      ],
+      "Reason": [
+        "Důvod"
+      ],
+      "Vault": [
+        "Trezor"
       ]
     },
     "Browser": {
@@ -1011,6 +1055,9 @@
       "Could not validate addresses at the moment.": [
         "V daném okamžiku se nepodařilo ověřit adresy."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Nepodařilo se načíst instrukce k nastavení agenta. Zkopírujte prosím token níže, znovu se již nezobrazí."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "V souboru CSV chybí očekávané hlavičky: ${ missingHeaders }"
       ],
@@ -1056,6 +1103,9 @@
       "Error reporting problem": [
         "Chyba při hlášení problému"
       ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Vypršení platnosti musí být mezi 1 hodinou a 1 rokem"
+      ],
       "Failed loading group members": [
         "Načtení členů skupiny selhalo"
       ],
@@ -1077,6 +1127,9 @@
       "Failed to change mailbox": [
         "Změna e-mailové schránky selhala"
       ],
+      "Failed to create access token": [
+        "Vytvoření přístupového tokenu selhalo"
+      ],
       "Failed to create domain": [
         "Vytvoření domény selhalo"
       ],
@@ -1085,6 +1138,9 @@
       ],
       "Failed to create the contact": [
         "Vytvoření kontaktu selhalo"
+      ],
+      "Failed to delete access token": [
+        "Smazání přístupového tokenu selhalo"
       ],
       "Failed to delete domain": [
         "Smazání domény selhalo"
@@ -1104,6 +1160,9 @@
       "Failed to edit user's access.": [
         "Úprava uživatelského přístupu selhala."
       ],
+      "Failed to load access tokens": [
+        "Nepodařilo se načíst přístupové tokeny"
+      ],
       "Failed to load breaches for this address": [
         "Načtení úniků informací pro tuto adresu selhalo"
       ],
@@ -1115,6 +1174,9 @@
       ],
       "Failed to load item history": [
         "Načítání historie položky selhalo."
+      ],
+      "Failed to load token actions": [
+        "Načtení akcí tokenu selhalo"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Přesunutí všech položek z \"${ payload.content.name }\" selhalo"
@@ -1172,6 +1234,9 @@
       ],
       "Failed to update random prefix generation setting.": [
         "Aktualizace nastavení generování náhodných předpon selhala."
+      ],
+      "Failed to update vault access": [
+        "Aktualizace přístupu do trezoru selhala"
       ],
       "Failed to verify domain": [
         "Ověření domény selhalo"
@@ -1238,6 +1303,9 @@
       ],
       "Name is required": [
         "Název je povinný"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Název musí mít 191 znaků nebo méně"
       ],
       "Network error": [
         "Chyba sítě"
@@ -1611,6 +1679,9 @@
         "Zjištěno ${ row.breachCount } úniků informací",
         "Zjištěno ${ row.breachCount } úniků informací"
       ],
+      "${ selectedShareIds.size } selected": [
+        "Vybráno: ${ selectedShareIds.size }"
+      ],
       "${ trialDaysLeft } day left": [
         "Zbývá ${ trialDaysLeft } den",
         "Zbývají ${ trialDaysLeft } dny",
@@ -1625,6 +1696,9 @@
       ],
       "(Empty)": [
         "(Prázdné)"
+      ],
+      "2FA code copied to clipboard": [
+        "Kód 2FA byl zkopírován do schránky"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dnů na vyzkoušení prémiových funkcí zdarma. Pouze během prvního týdne používání ${ BRAND_NAME }."
@@ -1659,6 +1733,15 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Přístup k ${ PASS_APP_NAME } bude vyžadovat váš otisk prstu nebo PIN zařízení."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Přístupový token „${ action.token.Name }“ již vypršel. Pokud jej smažete, nebude se již zobrazovat."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Přístupový token „${ action.token.Name }“ okamžitě přestane fungovat. Tuto akci nelze vzít zpět."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Přístupové tokeny, používané společně s nástrojem ${ passCliLink }, vám umožňují automatizovat CI/CD nebo poskytnout vašemu AI agentovi omezený přístup k tomu, co potřebuje ke spuštění své úlohy."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Pomocí našich mobilních aplikací přistupujte ke svým heslům i na cestách."
       ],
@@ -1667,6 +1750,9 @@
       ],
       "Admin": [
         "Správce"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Po automatickém vyplnění přihlašovacích údajů se kód 2FA zkopíruje do schránky."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "Po potvrzení bude potřeba váš souhlas s udělením oprávnění ${ PASS_APP_NAME }."
@@ -1749,6 +1835,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Před exportem dat v tomto formátu otevřete nastavení Safari -> záložku \"Obecné\" -> vypněte možnost \"Bezpečné soubory po stažení otevírat\". Tím zabráníte tomu, aby Safari nesprávně extrahoval exportovaný soubor."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Mezi 60 (1 hodina) a 525600 (1 rok)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Zamykání pomocí biometrie bylo úspěšně registrováno. Použijte ji k odemknutí ${ PASS_APP_NAME }"
       ],
@@ -1818,14 +1907,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Zkopírováno do schránky (vyprší za ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Zkopírujte níže uvedený markdown a odešlete jej svému AI agentovi. Toto je jediný okamžik, kdy bude token zobrazen."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Zkopírujte tento token nyní. Z bezpečnostních důvodů se již znovu nezobrazí."
+      ],
       "Coupon successfully applied!": [
         "Kupón úspěšně použit!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Vytvořte token pro integraci ${ PASS_APP_NAME } do svých skriptů a nástrojů."
       ],
       "Create contact illustration": [
         "Zobrazení vytvoření kontaktu"
       ],
+      "Created ${ createdDate }": [
+        "Vytvořeno ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Vytvořena ${ time }."
+      ],
+      "Created item": [
+        "Vytvořená položka"
       ],
       "Creating alias...": [
         "Vytváření aliasu..."
@@ -1841,6 +1945,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Výchozí zobrazované jméno pro aliasy vytvořené pomocí ${ domainDisplay }, pokud není přepsáno zobrazovaným jménem aliasu."
+      ],
+      "Deleted item": [
+        "Smazaná položka"
       ],
       "Deleted items will be moved here first": [
         "Smazané položky budou nejprve přesunuty sem"
@@ -1865,6 +1972,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Doména: ${ domainPath } nebo @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Stáhněte si pass-cli z ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
@@ -1944,14 +2054,23 @@
       "Enter your PIN code": [
         "Zadejte PIN kód"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Každá akce, kterou tento token agenta provedl, od nejnovější."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Pokaždé, když váš alias od někoho obdrží e-mail, automaticky se vytvoří nový kontakt."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Platnost vypršela dne ${ formattedDate }"
       ],
       "Expires in": [
         "Vyprší za"
       ],
       "Expires in ${ remainingTime }": [
         "Vyprší za ${ remainingTime }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Platnost vyprší dne ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Exportování vašich dat..."
@@ -2115,6 +2234,9 @@
       "Loading...": [
         "Načítání..."
       ],
+      "Log out of any existing session:": [
+        "Odhlaste se z jakékoli stávající relace:"
+      ],
       "Logging you out...": [
         "Odhlašování..."
       ],
@@ -2145,14 +2267,14 @@
         "Přesunout ${ count } položek",
         "Přesunout ${ count } položek"
       ],
+      "Moved item to trash": [
+        "Položka byla přesunuta do koše"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2178,6 +2300,9 @@
       "New": [
         "Nově"
       ],
+      "No activity recorded yet.": [
+        "Zatím nebyla zaznamenána žádná aktivita."
+      ],
       "No breaches detected": [
         "Žádné úniky informací nebyly zjištěny"
       ],
@@ -2193,8 +2318,14 @@
       "No network connection": [
         "Bez připojení k síti"
       ],
+      "No vaults available.": [
+        "Žádné trezory nejsou k dispozici."
+      ],
       "None": [
         "Nic"
+      ],
+      "None selected": [
+        "Nic není vybráno"
       ],
       "Not configured": [
         "Není nastaveno"
@@ -2210,6 +2341,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online přístup k ${ PASS_APP_NAME } bude vyžadovat PIN kód. Budete odhlášeni po 3 neúspěšných pokusech."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Zobrazují se pouze tokeny, které vypršely v posledních 30 dnech. Starší tokeny jsou automaticky smazány."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Otevřete ${ PASS_APP_NAME } ve větším okně"
@@ -2397,6 +2531,9 @@
       "Press Enter to copy": [
         "Pro kopírování stiskněte Enter"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Chráněno naším pokročilým programem na ochranu účtů ${ PROTON_SENTINEL_LINK }"
+      ],
       "Quickly autofill your 2FA tokens.": [
         "Rychlé vyplnění vašich tokenů 2FA."
       ],
@@ -2405,6 +2542,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Rychlé automatické vyplnění vašich uložených přihlašovacích údajů."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Seřazeno podle pole (nejprve název, poté uživatelské jméno nebo e-mail, web, poznámky) a přesnosti shody (přesná, začíná na, obsahuje)."
+      ],
+      "Read item": [
+        "Přečíst položku"
       ],
       "Reconnect": [
         "Znovu připojit"
@@ -2439,6 +2582,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Resetování historie trvale smaže všechny předchozí verze položky a nelze to vrátit zpět."
       ],
+      "Restored item from trash": [
+        "Položka byla obnovena z koše"
+      ],
       "Restoring items from trash": [
         "Obnovují se položky z koše"
       ],
@@ -2465,6 +2611,9 @@
       ],
       "Select destination vault": [
         "Vyberte cílový trezor"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Vyberte trezory, které může „${ token.Name }“ číst."
       ],
       "Select where you want your imported vaults to be saved.": [
         "Vyberte, kam chcete importované trezory uložit."
@@ -2538,8 +2687,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Klepněte na ikonu ${ gearIcon } a přizpůsobte si alias podle svých představ."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Otestujte token přihlášením a vypsáním trezorů:"
+      ],
       "Thank you, the problem has been reported": [
         "Děkujeme, problém byl nahlášen"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Od agenta bude vyžadováno, aby uvedl důvod pro každou provedenou akci, a každá akce bude zaznamenána v protokolu auditu, který můžete zkontrolovat. Po vytvoření tokenu obdržíte instrukce, které můžete zkopírovat a vložit do svého AI agenta."
       ],
       "The display name when sending an email from this alias.": [
         "Zobrazované jméno při odesílání e-mailu z tohoto aliasu."
@@ -2574,6 +2729,9 @@
       "The user did not accept the invitation yet.": [
         "Uživatel zatím pozvánku nepřijal."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Poté můžete přejít na ${ url } a zkopírovat instrukce k odeslání vašemu AI agentovi."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nešifrovaný a kdokoli s přístupem k exportovanému souboru bude moci zobrazit vaše hesla. Z bezpečnostních důvodů jej po ukončení používání odstraňte."
       ],
@@ -2607,6 +2765,9 @@
       "This setting is enforced by your organization": [
         "Toto nastavení je vynuceno vaší organizací"
       ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Tento token získá přístup pouze pro čtení k trezorům, které vyberete. Může položky číst, ale nemůže je upravovat, sdílet trezory ani zvát ostatní. Toto nastavení můžete později změnit."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tento trezor není v současné době s nikým sdílen. Pozvěte ostatní, se kterými chcete trezor sdílet."
       ],
@@ -2630,6 +2791,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Chcete-li si prohlédnout importovaná data, klikněte na ikonu ${ PASS_APP_NAME } v panelu nástrojů svého prohlížeče."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "K nastavení odemykání biometrikou vyžaduje ${ PASS_APP_NAME } nové oprávnění prohlížeče. Jakmile jej přijmete, rozšíření se znovu načte. Poté tuto stránku znovu otevřete."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Zkuste znovu načíst nebo přeinstalovat rozšíření a zkontrolujte, zda jsou váš prohlížeč a ${ PASS_SHORT_APP_NAME } aktuální."
@@ -2676,6 +2840,9 @@
       "Update login": [
         "Aktualizovat přihlášení"
       ],
+      "Updated item": [
+        "Aktualizovaná položka"
+      ],
       "Updating vault organization...": [
         "Aktualizace organizace trezorů..."
       ],
@@ -2684,6 +2851,9 @@
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Přejděte nyní na vyšší tarif pro odemčení prémiových funkcí"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Upgradujte na ${ PASS_APP_NAME } Plus pro vytváření přístupových tokenů a programové používání ${ PASS_APP_NAME }."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Chcete-li vytvořit více trezorů, přejděte na placený tarif."
@@ -2708,6 +2878,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Trezor \"${ share.content.name }\" byl odebrán."
+      ],
+      "Vault access granted": [
+        "Přístup do trezoru povolen"
       ],
       "Vault organization successfully updated": [
         "Organizace trezoru úspěšně aktualizována"
@@ -2974,11 +3147,23 @@
         "${ years } let",
         "${ years } let"
       ],
+      "1 day": [
+        "1 den"
+      ],
       "1 hour": [
         "1 hodina"
       ],
       "1 minute": [
         "1 minuta"
+      ],
+      "1 month": [
+        "1 měsíc"
+      ],
+      "1 week": [
+        "1 týden"
+      ],
+      "1 year": [
+        "1 rok"
       ],
       "10 minutes": [
         "10 minut"
@@ -3024,6 +3209,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Access tokens": [
+        "Přístupové tokeny"
       ],
       "Account": [
         "Účet"
@@ -3088,6 +3276,9 @@
       "Authenticate with passkeys": [
         "Ověření pomocí přístupových klíčů"
       ],
+      "Auto-copy 2FA code": [
+        "Automaticky kopírovat kód 2FA"
+      ],
       "Auto-lock after": [
         "Automaticky zamknout po"
       ],
@@ -3111,6 +3302,9 @@
       ],
       "Bank Name": [
         "Název banky"
+      ],
+      "Basic": [
+        "Základní"
       ],
       "Basic Auth autofill": [
         "Automatické vyplňování Basic Auth"
@@ -3141,6 +3335,9 @@
       ],
       "Catch-All": [
         "Doménový koš"
+      ],
+      "Check": [
+        "Zkontrolovat"
       ],
       "Checkbox": [
         "Zaškrtávací pole"
@@ -3220,6 +3417,12 @@
       "Crypto Wallet": [
         "Peněženka kryptoměny"
       ],
+      "Custom": [
+        "Vlastní"
+      ],
+      "Custom expiration (minutes)": [
+        "Vlastní vypršení platnosti (minuty)"
+      ],
       "Custom Items": [
         "Vlastní položky"
       ],
@@ -3295,11 +3498,20 @@
       "Enter email or username": [
         "Zadejte e-mail nebo uživatelské jméno"
       ],
+      "Exact host matching": [
+        "Shoda přesného hostitele"
+      ],
+      "Exact URL matching": [
+        "Shoda přesné URL"
+      ],
       "Expiration date": [
         "Konec platnosti"
       ],
       "Expired": [
         "Vypršelo"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Expirované tokeny (${ expired.length })"
       ],
       "Expires in": [
         "Vyprší za"
@@ -3583,6 +3795,9 @@
       "Never": [
         "Nikdy"
       ],
+      "Never fill on this exact URL": [
+        "Nikdy nevyplňovat na této přesné URL"
+      ],
       "New email": [
         "Nový e-mail"
       ],
@@ -3639,6 +3854,9 @@
       ],
       "Owner": [
         "Vlastník"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadřazená doména a subdomény (výchozí)"
       ],
       "Passkey": [
         "Přístupový klíč"
@@ -3751,6 +3969,12 @@
       "Reddit handle": [
         "Uživatelské jméno Reddit"
       ],
+      "Regular expression": [
+        "Regulární výraz"
+      ],
+      "Relevant": [
+        "Relevantní"
+      ],
       "Remove link": [
         "Odebrat odkaz"
       ],
@@ -3858,6 +4082,9 @@
       ],
       "SSN": [
         "ČSZ"
+      ],
+      "Starts with": [
+        "Začíná na"
       ],
       "State or province": [
         "Stát nebo provincie"
@@ -3973,8 +4200,14 @@
       "Update": [
         "Aktualizovat"
       ],
+      "URL wildcard pattern": [
+        "Vzor URL se zástupnými znaky"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Použijte ${ PASS_APP_NAME } jako výchozí správce hesel v prohlížeči"
+      ],
+      "Use for AI agent": [
+        "Použít pro AI agenta"
       ],
       "Used in": [
         "Používá se v"
@@ -3990,6 +4223,9 @@
       ],
       "Value:": [
         "Hodnota:"
+      ],
+      "Vault access": [
+        "Přístup k trezoru"
       ],
       "Vault ID": [
         "ID trezoru"
@@ -4075,6 +4311,24 @@
         "${ count } položek",
         "${ count } položek"
       ],
+      "'Starts with' matching rule": [
+        "Pravidlo shody „Začíná na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo pro shodu přesné (sub)domény"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo shody přesné URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevyplňovat s touto přesnou URL"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárního výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo shody se vzorem se zástupnými znaky"
+      ],
       "You can drag and drop the selected item to another vault": [
         "Vybranou položku můžete přetáhnout do jiného trezoru",
         "Vybrané položky můžete přetáhnout do jiného trezoru",
@@ -4099,6 +4353,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } byl povolen"
+      ],
+      "Access token deleted": [
+        "Přístupový token byl smazán"
       ]
     },
     "Onboarding": {
@@ -4229,6 +4486,12 @@
       "The file you are trying to import is empty": [
         "Soubor, který se snažíte importovat, je prázdný"
       ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Tato funkce není ve vašem plánu podporována. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Tato funkce není ve vašem plánu podporována. Chcete-li získat přístup, kontaktujte svého správce."
+      ],
       "Total files: ": [
         "Celkový počet souborů: "
       ],
@@ -4283,6 +4546,9 @@
       ],
       "Coupon": [
         "Kupón"
+      ],
+      "e.g. 60": [
+        "např. 60"
       ],
       "e.g. My automation script": [
         "např. můj automatizační skript"
@@ -4369,6 +4635,23 @@
         "Použito na ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Zadejte URL pro kontrolu, zda vaše aktuální pravidlo odpovídá této URL"
+      ],
+      "The rule is matching this URL": [
+        "Pravidlo odpovídá této URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Pravidlo neodpovídá této URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Tato URL bude blokována pro automatické vyplňování"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Tato URL NEBUDE blokována pro automatické vyplňování"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } a ${ remainingCount } další zjištěné potenciální úniky. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
@@ -4442,6 +4725,20 @@
       ],
       "Unknown": [
         "Neznámý"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Aktivní"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Platnost vypršela"
+      ],
+      "Expiring soon": [
+        "Platnost brzy vyprší"
       ]
     },
     "Success": {
@@ -4542,6 +4839,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Přístupové tokeny vyžadují ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Ochrana účtu"
       ],
@@ -4551,11 +4851,20 @@
       "Activity": [
         "Aktivita"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivita pro „${ token.Name }“"
+      ],
       "Add custom domain": [
         "Přidat vlastní doménu"
       ],
       "Add mailbox": [
         "Přidat e-mailovou schránku"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Upravte chování automatického vyplňování a změňte, kde se budou navrhovat přihlášení."
+      ],
+      "Agent setup instructions": [
+        "Instrukce k nastavení agenta"
       ],
       "Alias contacts": [
         "Kontakty aliasu"
@@ -4583,6 +4892,9 @@
       ],
       "Breaches detected for": [
         "Zjištěny úniky informací pro"
+      ],
+      "Browser permission required": [
+        "Je vyžadováno oprávnění prohlížeče"
       ],
       "Cancel changing your email?": [
         "Zrušit změnu vašeho e-mailu?"
@@ -4613,6 +4925,9 @@
       ],
       "Create contact": [
         "Vytvořit kontakt"
+      ],
+      "Create new access token": [
+        "Vytvořit nový přístupový token"
       ],
       "Create PIN code": [
         "Vytvořit PIN kód"
@@ -4646,6 +4961,9 @@
         "Smazat ${ deletedItemsCount } položky?",
         "Smazat ${ deletedItemsCount } položek?",
         "Smazat ${ deletedItemsCount } položek?"
+      ],
+      "Delete access token?": [
+        "Smazat přístupový token?"
       ],
       "Delete domain": [
         "Smazat doménu"
@@ -4761,6 +5079,9 @@
       "Last modified": [
         "Naposledy změněno"
       ],
+      "Learn more": [
+        "Více informací"
+      ],
       "Leave this item?": [
         "Opustit tuto položku?"
       ],
@@ -4778,6 +5099,9 @@
       ],
       "Mailbox": [
         "E-mailová schránka"
+      ],
+      "Manage vault access": [
+        "Spravovat přístup do trezoru"
       ],
       "Mark as resolved?": [
         "Označit jako vyřešené?"
@@ -4817,6 +5141,9 @@
       ],
       "Next": [
         "Další"
+      ],
+      "No access tokens yet": [
+        "Zatím žádné přístupové tokeny"
       ],
       "No excluded items": [
         "Žádné vyloučené položky"
@@ -4977,6 +5304,9 @@
       "Sync your aliases from SimpleLogin": [
         "Synchronizujte své aliasy ze SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Otestovat URL proti tomuto pravidlu"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Děkujeme, že jste si nainstalovali ${ PASS_APP_NAME }"
       ],
@@ -4997,6 +5327,9 @@
       ],
       "Update available": [
         "Aktualizace k dispozici"
+      ],
+      "URL matching": [
+        "Shoda URL"
       ],
       "Use my email": [
         "Použít můj e-mail"
@@ -5042,6 +5375,9 @@
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
+      ],
+      "Your new access token": [
+        "Váš nový přístupový token"
       ],
       "Your vault is empty": [
         "Váš trezor je prázdný"
@@ -5111,6 +5447,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Je vyžadováno heslo ${ BRAND_NAME }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Pravidlo ${ modeLabelStong } poskytuje silnou kontrolu, ale jediná chyba může způsobit, že automatické vyplňování porovná a vyplní údaje na podvodných nebo phishingových webech."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Offline režim ${ PASS_SHORT_APP_NAME } deaktivován."
@@ -5321,6 +5660,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Tato e-mailová adresa již nebude sledována v únicích informací."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Tuto položku nelze navrhnout pro automatické vyplňování kvůli pravidlu „${ neverModeDescriptionStrong }“. Pokud chcete tuto položku automaticky vyplňovat, přidejte další URL."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Tato položka je v současné době sdílena. Jejím smazáním se zruší přístup pro všechny ostatní uživatele."

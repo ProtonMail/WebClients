@@ -5,8 +5,20 @@
   },
   "contexts": {
     "Account statement": {
+      "Account statement successfully generated": [
+        "成功產生帳號對帳單"
+      ],
       "Download": [
         "下載"
+      ],
+      "Download transactions": [
+        "下載交易"
+      ],
+      "Export format": [
+        "匯出格式"
+      ],
+      "Export your transactions for tax reporting or personal record-keeping. Choose your preferred format and download your file instantly.": [
+        "匯出您的交易以進行稅務申報或個人記錄保存。選擇您偏好的格式並立即下載您的檔案。"
       ]
     },
     "Action": {
@@ -90,6 +102,12 @@
       ],
       "Copy address": [
         "複製電子郵件地址"
+      ],
+      "Copy descriptor": [
+        "複製描述元"
+      ],
+      "Copy public key (${ prefix })": [
+        "複製公開金鑰 (${ prefix })"
       ],
       "Copy version number to clipboard": [
         "複製版本號碼至剪貼簿"
@@ -186,6 +204,9 @@
       ],
       "Increase": [
         "加"
+      ],
+      "Input passphrase": [
+        "輸入助記詞"
       ],
       "Keep my subscription": [
         "保持訂閱"
@@ -331,6 +352,9 @@
       "Show more benefits": [
         "顯示更多好處"
       ],
+      "Show QRCode": [
+        "顯示 QR碼"
+      ],
       "Sign message": [
         "簽署訊息"
       ],
@@ -473,14 +497,35 @@
       ]
     },
     "Address list": {
+      "Address copied": [
+        "地址已複製"
+      ],
+      "Change address": [
+        "找零地址"
+      ],
+      "Index": [
+        "索引"
+      ],
+      "Not used": [
+        "未使用"
+      ],
       "Page ${ pageNumber }": [
         "第 ${ pageNumber } 頁"
+      ],
+      "Receive address": [
+        "接收地址"
       ],
       "Search exact address": [
         "搜尋精確地址"
       ],
+      "Search for exact address": [
+        "搜尋精確位址"
+      ],
       "Status": [
         "狀態"
+      ],
+      "Toggle keychain": [
+        "切換鑰匙圈"
       ],
       "Used": [
         "已使用"
@@ -533,6 +578,11 @@
         "保留訂購授權"
       ]
     },
+    "Balance": {
+      "Loading balance": [
+        "正在載入餘額"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "進階版密碼管理器"
@@ -581,15 +631,32 @@
         "每年"
       ]
     },
+    "BIP 21 error": {
+      "Invalid QR code, we only support BIP 21 URI.": [
+        "無效的 QR Code，我們僅支援 BIP 21 URI。"
+      ]
+    },
     "bitcoin buy": {
+      "${ serviceFeePercentage }% Azteco service fee": [
+        "${ serviceFeePercentage }% Azteco 服務費用"
+      ],
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } 與 ${ rampLink }、${ banxaLink } 和 ${ moonpayLink } 這三間註冊的加密資產服務機構合作，以方便購買 BTC。請輸入您所在的地區以查看可用的服務商和繳款方式。"
       ],
       "2% bank transfer fee": [
         "2% 銀行轉帳手續費"
       ],
+      "4% credit card fee": [
+        "4% 信用卡費用"
+      ],
       "Amount": [
         "金額"
+      ],
+      "An error occurred while confirming this quote, please select another provider and try again.": [
+        "確認此報價時發生錯誤，請選取另一個提供商並再試一次。"
+      ],
+      "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
+        "作為付費使用者，您可在 Azteco 服務費上省下 ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol }！"
       ],
       "Bank transfer": [
         "銀行轉帳"
@@ -605,6 +672,12 @@
       ],
       "Buy": [
         "購買"
+      ],
+      "Buy Azteco vouchers": [
+        "購買 Azteco 憑證"
+      ],
+      "Buying BTC through ${ WALLET_APP_NAME } is currently unavailable to UK residents due to FCA regulations.": [
+        "由於 FCA 法規限制，目前不向英國居民提供透過 ${ WALLET_APP_NAME } 購買 BTC 的服務。"
       ],
       "Choose a country": [
         "選擇國家"
@@ -645,6 +718,9 @@
       "Payment details": [
         "繳款詳細資訊"
       ],
+      "Please enter your region to see the available BTC providers and payment methods. Any purchased BTC will be sent to a BTC address of this wallet account.": [
+        "請輸入您的地區以檢視可用的 BTC 提供商和付款方式。購買的任何 BTC 都將傳送到此錢包帳號的 BTC 地址。"
+      ],
       "Ramp Network": [
         "Ramp 網路"
       ],
@@ -660,8 +736,17 @@
       "Send": [
         "送出"
       ],
+      "This quote is valid for the next 5 minutes": [
+        "此報價在接下來的 5 分鐘內有效"
+      ],
+      "Upgrade to Visionary plan to reduce Azteco service fee to 3%": [
+        "升級至 Visionary 方案以將 Azteco 服務費用降至 3%"
+      ],
       "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
         "您也可以在 ${ binanceLink }、${ coinbaseLink } 或 ${ krakenLink } 等交易所購買 BTC，然後將 BTC 傳送到您的接收地址。"
+      ],
+      "You got 25% off": [
+        "您獲得了 25% 的折扣"
       ],
       "You pay": [
         "您支付"
@@ -676,21 +761,78 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "${ quote.provider } 結帳"
+      ],
+      "No quote available for the requested amount": [
+        "所請求的金額無可用報價"
+      ],
+      "The selected currency is not supported in your country or the requested amount is too low": [
+        "您所在的國家/地區不支援選取的貨幣，或者請求的金額過低"
       ]
     },
     "Bitcoin Script Type": {
+      "Legacy": [
+        "Legacy"
+      ],
+      "Legacy Segwit": [
+        "Legacy Segwit"
+      ],
+      "Native Segwit": [
+        "Native Segwit"
+      ],
       "Taproot": [
         "Taproot"
       ]
     },
     "Bitcoin Script Type Description": {
+      "Latest format with enhanced privacy but not as widely adopted. Address starts with \"bc1p\".": [
+        "最新的格式，具有增強的隱私，但尚未被廣泛採用。地址以「bc1p」開頭。"
+      ],
+      "Lower fees and compatible with older systems. Address starts with \"3\".": [
+        "費用較低且與舊系統相容。地址以「3」開頭。"
+      ],
       "Original format. Most widely supported but higher fees. Address starts with \"1\".": [
         "原始格式。支援最廣泛，但手續費較高。地址以「1」開頭。"
+      ],
+      "Recommended format with lowest fees. Address starts with \"bc1q\".": [
+        "推薦格式，費用最低。地址以「bc1q」開頭。"
       ]
     },
     "Bitcoin send": {
+      "Add recipient": [
+        "新增收件者"
+      ],
+      "Invitation could not be sent to recipient. Please check details and try again.": [
+        "無法將邀請傳送給收件者。請檢查詳細資料並重試。"
+      ],
+      "Invitation could not be sent. Please check details and try again.": [
+        "無法傳送邀請。請檢查詳細資料並重試。"
+      ],
       "Invitation sent": [
         "邀請函已寄送"
+      ],
+      "Invitation sent to the recipient": [
+        "邀請已傳送給收件者"
+      ],
+      "No wallet found": [
+        "找不到錢包"
+      ],
+      "Open QR code reader": [
+        "開啟二維碼閱讀器"
+      ],
+      "Recipient email or BTC address": [
+        "收件者電子郵件或 BTC 地址"
+      ],
+      "Send invite email": [
+        "傳送邀請電子郵件"
+      ],
+      "Send invite to ${ email }": [
+        "傳送邀請給 ${ email }"
+      ],
+      "This email is not using a ${ WALLET_APP_NAME } yet. Invite them to create their own wallet for easier transactions.": [
+        "此電子郵件尚未使用 ${ WALLET_APP_NAME }。邀請他們建立自己的錢包以簡化交易。"
+      ],
+      "This user may not have a ${ WALLET_APP_NAME } integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.": [
+        "此使用者可能尚未將 ${ WALLET_APP_NAME } 與其電子郵件整合。給他們傳送一封電子郵件，告訴他們您想向他們傳送比特幣。"
       ],
       "To": [
         "收件者"
@@ -704,9 +846,23 @@
         "Electrum"
       ]
     },
+    "Bitcoin Signing Type Description": {
+      "Electrum is a compatibility signature format": [
+        "Electrum 是一種相容性簽名格式"
+      ],
+      "Trezor is the standard signature format according to BIP 137": [
+        "Trezor 是符合 BIP 137 的標準簽名格式"
+      ]
+    },
     "Bitcoin Unit": {
       "BTC": [
         "BTC"
+      ],
+      "mBTC": [
+        "mBTC"
+      ],
+      "Sats": [
+        "Sats"
       ]
     },
     "Browser": {
@@ -821,6 +977,43 @@
       ],
       "Take a tour": [
         "瀏覽"
+      ]
+    },
+    "Buy confirm": {
+      "Buy more bitcoin": [
+        "購買更多比特幣"
+      ],
+      "For any issues with the purchasing process, please contact ${ support }.": [
+        "若在購買過程遇到任何問題，請聯絡 ${ support }。"
+      ],
+      "For any issues with the purchasing process, please contact the partner’s support team.": [
+        "若在購買過程遇到任何問題，請聯絡合作夥伴的支援團隊。"
+      ],
+      "Purchase completed": [
+        "購買已完成"
+      ],
+      "Purchase finished": [
+        "購買完成"
+      ],
+      "Thank you for purchasing an Azteco voucher.\nWe will now redeem your voucher and Azteco will send the BTC to your wallet.\nWe will also send you an email with the purchase details.": [
+        "感謝您購買 Azteco 憑證。\n我們現在將兌換您的憑證，Azteco 將會把 BTC 傳送至您的錢包。\n我們也會向您傳送一封包含購買詳細資料的電子郵件。"
+      ],
+      "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
+        "感謝您嘗試透過我們的合作夥伴進行購買。\n您可透過合作夥伴傳送給您的確認電子郵件，追蹤訂單的狀態。\n若交易失敗，您可以再試一次，或選擇其他合作夥伴。"
+      ]
+    },
+    "Buy in progress": {
+      "Buy more bitcoin": [
+        "購買更多比特幣"
+      ],
+      "For any issues with the purchasing process, please contact ${ support }.": [
+        "若在購買過程遇到任何問題，請聯絡 ${ support }。"
+      ],
+      "Purchase in progress": [
+        "購買進行中"
+      ],
+      "Thank you for your purchase attempt for an Azteco voucher.\nAs soon as we receive your payment, we will create and redeem the voucher based on BTC price at that time.\nThen Azteco will send the BTC to your wallet.": [
+        "感謝您嘗試購買 Azteco 憑證。\n我們一收到您的付款，就會根據當時的 BTC 價格建立並兌換該憑證。\n隨後 Azteco 會將 BTC 傳送至您的錢包。"
       ]
     },
     "Cancellation upsell": {
@@ -1965,11 +2158,44 @@
       ]
     },
     "Discover": {
+      "${ WALLET_APP_NAME } launch": [
+        "${ WALLET_APP_NAME } 推出"
+      ],
       "${ WALLET_APP_NAME } security model": [
         "${ WALLET_APP_NAME } 安全模型"
       ],
+      "Bitcoin guide for newcomers": [
+        "新手 Bitcoin 指南"
+      ],
+      "Bitcoin is an innovative payment network that leverages peer-to-peer transactions to remove the need for a central bank. Bitcoin has revolutionized the core principles of value exchange by showing that a network of fully independent nodes can operate payments in a trustless and secure way.": [
+        "Bitcoin 是一種創新的支付網路，它利用點對點交易來消除對中央銀行的需求。Bitcoin 通過展示完全獨立的節點網路可以以無信任且安全的方式進行支付，從而徹底改變了價值交換的核心原則。"
+      ],
       "Bitcoin via Email": [
         "透過電子郵件的比特幣"
+      ],
+      "Bitcoin via Email is a unique feature in ${ WALLET_APP_NAME } that makes sending bitcoin as easy as sending an email. Any ${ WALLET_APP_NAME } user can frictionlessly receive bitcoin with their email.": [
+        "Bitcoin (透過電子郵件) 是 ${ WALLET_APP_NAME } 中的一項獨特功能，它使傳送比特幣變得像傳送電子郵件一樣簡單。任何 ${ WALLET_APP_NAME } 使用者都可以無摩擦地透過其電子郵件接收比特幣。"
+      ],
+      "Discover": [
+        "探索"
+      ],
+      "How to protect your ${ WALLET_APP_NAME }": [
+        "如何保護您的 ${ WALLET_APP_NAME }"
+      ],
+      "We explain why ${ WALLET_APP_NAME } was created and what benefits it can bring to the ${ BRAND_NAME } community.": [
+        "我們解釋了為什麼要建立 ${ WALLET_APP_NAME } 以及它可以為 ${ BRAND_NAME } 社群帶來什麼好處。"
+      ],
+      "We review how to secure your wallets and Bitcoin, including important recovery methods in case you ever forget your password.": [
+        "我們回顧了如何保護您的錢包和 Bitcoin，包括在您忘記密碼時的重要復原方法。"
+      ],
+      "We review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.": [
+        "我們為新手回顧了 Bitcoin 的一些重要歷史與功能。我們還探討了 Bitcoin 如何實現財務主權與自由。最後，我們探討了 Bitcoin 面臨的挑戰及其未來的潛力。"
+      ],
+      "We review the key features and security architecture that make ${ WALLET_APP_NAME } a private and secure wallet that is as easy to use as email.": [
+        "我們回顧了使 ${ WALLET_APP_NAME } 成為像電子郵件一樣易於使用的私有且安全錢包的關鍵功能與安全架構。"
+      ],
+      "What is Bitcoin?": [
+        "什麼是 Bitcoin？"
       ]
     },
     "Downgrade account reason": {
@@ -2267,6 +2493,26 @@
         "沒有選擇圖像"
       ]
     },
+    "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "描述元已複製到剪貼簿"
+      ],
+      "I want the ${ prefix } instead": [
+        "我想要改用 ${ prefix }"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "將此描述元匯入其他錢包軟體以監控您的餘額並產生接收位址，而無需暴露您的私有金鑰。"
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "公開金鑰 (${ prefix }) 已複製到剪貼簿"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "在繼續之前，請先驗證前幾個衍生位址是否與 ${ WALLET_APP_NAME } 中的位址相符。"
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "我們強烈建議改用上方的描述元，因為它包含確保正確產生位址所需的所有資訊。xpub、ypub 和 zpub 不屬於標準 BIP，應謹慎使用。"
+      ]
+    },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
         "家庭群組未能識別。請再試一次。"
@@ -2395,6 +2641,12 @@
       ]
     },
     "Gateway disclaimer": {
+      "${ WALLET_APP_NAME } support": [
+        "${ WALLET_APP_NAME } 支援"
+      ],
+      "As soon as your payment is received, ${ WALLET_APP_NAME } will redeem the voucher according to the market price of BTC and network fee at that time.\nThe redeemed BTC will then be sent by ${ azteco } to your wallet.\nFor any questions related to Azteco bitcoin vouchers, please contact ${ support }.": [
+        "一收到您的付款，${ WALLET_APP_NAME } 就會根據當時的 BTC 市場價格和網路費用兌換該憑證。\n兌換後的 BTC 隨後將由 ${ azteco } 傳送到您的錢包。\n若有任何關於 Azteco 比特幣憑證的問題，請聯絡 ${ support }。"
+      ],
       "Confirm": [
         "確認"
       ],
@@ -2409,6 +2661,12 @@
       ],
       "Not now": [
         "現在不要"
+      ],
+      "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
+        "您即將離開 ${ WALLET_APP_NAME } 前往 ${ providerName } (${ websiteLink })。\n與卡片支付、銀行轉帳和任何其他法定貨幣交易相關的服務由 ${ providerName } 提供，\n這是一個獨立的第三方平台。繼續並向 ${ providerName } 採購服務，\n即表示您承認您已閱讀並同意 ${ providerName } 的服務條款 (${ termOfUseLink })\n以及隱私權和 Cookie 政策 (${ privacyAndCookiesPolicyLink })。\n如有任何與 ${ providerName } 服務相關的問題，請透過 ${ supportEmailLink } 聯繫 ${ providerName }"
+      ],
+      "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
+        "您現在將使用 ${ WALLET_APP_NAME } 購買 Azteco 比特幣憑證。這與禮品卡類似，是獲取 BTC 最簡單、最私密的方式之一。"
       ]
     },
     "Group": {
@@ -2794,6 +3052,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "驗證過程將開新瀏覽器索引標籤。請停用任何使用中的彈出視窗攔截程式。"
       ],
+      "This address is for Bitcoin via Email": [
+        "此位址用於 Bitcoin (透過電子郵件)"
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "此是貴組織使用者可看見的名稱或暱稱。您可隨時時修正它。"
       ],
@@ -2919,6 +3180,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "您的帳號目前設定為套用反向收費機制。所選方案不支援此功能。若要繼續，請從帳單位址移除 VAT 號碼，或選取其他方案。"
+      ],
+      "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
+        "您的結帳頁面已在新索引標籤中開啟。請在該頁面完成付款，完成後返回此頁面。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
@@ -3153,6 +3417,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Show QRCode": [
+        "顯示 QR碼"
+      ],
       "Sign message": [
         "簽署訊息"
       ],
@@ -3298,13 +3565,22 @@
       "Loading": [
         "載入中"
       ],
+      "Loading data": [
+        "正在載入資料"
+      ],
       "Loading message": [
         "正在載入郵件"
+      ],
+      "Loading send from label": [
+        "正在載入「傳送自」標籤"
       ]
     },
     "Loading": {
       "Amount": [
         "金額"
+      ],
+      "Secondary amount": [
+        "次要金額"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4762,9 +5038,39 @@
         "Yahoo"
       ]
     },
+    "QRCode Reader": {
+      "Could not find an available camera on your device": [
+        "在您的裝置上找不到可用的相機"
+      ],
+      "Could not run QR code reader": [
+        "無法執行二維碼閱讀器"
+      ],
+      "You need to grant camera permission to be able to activate QRCode scanner": [
+        "您需要授予相機權限才能啟用二維碼掃描器"
+      ]
+    },
+    "QRCode reader": {
+      "Loading QRCode reader": [
+        "正在載入二維碼閱讀器"
+      ]
+    },
+    "Receive bitcoin": {
+      "Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.": [
+        "下方是上次產生的 Bitcoin 地址。為了獲得更好的隱私，請為每筆交易使用不同的地址。"
+      ],
+      "Receive Bitcoin": [
+        "接收 Bitcoin"
+      ]
+    },
     "Recipient details": {
+      "Bitcoin address copied to clipboard": [
+        "Bitcoin 地址已複製到剪貼簿"
+      ],
       "BTC address": [
         "比特幣位址"
+      ],
+      "External recipient": [
+        "外部收件者"
       ]
     },
     "Safety review": {
@@ -4834,11 +5140,35 @@
       "Advanced settings": [
         "進階設定"
       ],
+      "Copy signature": [
+        "複製簽名"
+      ],
+      "Enter or paste the message you want to sign.": [
+        "輸入或貼上您想要簽署的訊息。"
+      ],
+      "Generate signature": [
+        "產生簽名"
+      ],
       "Message": [
         "訊息"
       ],
+      "Message signed": [
+        "訊息已簽署"
+      ],
+      "Sign a message": [
+        "簽署訊息"
+      ],
       "Signature": [
         "簽名檔"
+      ],
+      "Signing type": [
+        "簽署類型"
+      ],
+      "This signature verifies your ownership of this Bitcoin address without revealing your private key.": [
+        "此簽名可驗證您對此 Bitcoin 位址的所有權，且不會洩露您的私有金鑰。"
+      ],
+      "We default to Electrum signing method because it's the easiest and most common method requested by banks. BIP 137 is used for signing transactions offline and is more advanced.": [
+        "我們預設使用 Electrum 簽署方法，因為這是銀行要求最簡單且最常見的方法。BIP 137 用於離線簽署交易，且更為進階。"
       ]
     },
     "specialoffer: Deal details": {
@@ -5084,6 +5414,9 @@
       "Problem reported": [
         "以回報問題"
       ],
+      "Signature copied to clipboard": [
+        "簽名已複製到剪貼簿"
+      ],
       "Verification successful": [
         "驗證成功"
       ],
@@ -5114,14 +5447,38 @@
       "Cancel": [
         "取消"
       ],
+      "Cannot use QR Code scanner. Please check browser compatibility": [
+        "無法使用 QR Code 掃描器。請檢查瀏覽器相容性"
+      ],
+      "Confirm and import": [
+        "確認並匯入"
+      ],
       "Continue": [
         "下一步"
+      ],
+      "Import paper wallet": [
+        "匯入紙錢包"
       ],
       "Invalid private key": [
         "無效的私鑰"
       ],
+      "No funds available": [
+        "無可用資金"
+      ],
+      "Paper wallet funds was successfully imported": [
+        "已成功匯入紙錢包資金"
+      ],
+      "Please grant camera permission to use QR Code scanner": [
+        "請授權相機權限以使用 QR Code 掃描器"
+      ],
       "You receive": [
         "您收到"
+      ],
+      "Your paper wallet has no funds available": [
+        "您的紙錢包中無可用資金"
+      ],
+      "Your paper wallet is not valid. Please check your private key and try again": [
+        "您的紙錢包無效。請檢查您的私有金鑰並再試一次"
       ]
     },
     "Tab subscription modal": {
@@ -5141,6 +5498,9 @@
       ],
       "${ feature } is now active": [
         "${ feature }現在為起用狀態"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ],
       "Account restricted": [
         "帳號已受限制"
@@ -5234,6 +5594,9 @@
       ],
       "Gift": [
         "禮物"
+      ],
+      "Go to settings and recovery keys": [
+        "前往設定和復原金鑰"
       ],
       "Help and feedback": [
         "尋求協助與反映意見"
@@ -5375,14 +5738,41 @@
       "Add a name so you can remember who it was from.": [
         "新增名稱，以便您記住款項來源。"
       ],
+      "Add their email address or leave empty": [
+        "新增他們的電子郵件地址或留空"
+      ],
+      "Add their email address to save as contact": [
+        "新增他們的電子郵件地址以儲存為聯絡人"
+      ],
       "Email address": [
         "電子郵件位址"
       ],
       "Email address is invalid": [
         "電子郵件位址無效"
       ],
+      "Give a name to this sender": [
+        "為此寄件者命名"
+      ],
       "Name": [
         "名稱"
+      ],
+      "Not a Bitcoin via Email transaction.": [
+        "不屬於 Bitcoin (透過電子郵件) 的交易。"
+      ],
+      "Save as a contact": [
+        "儲存為聯絡人"
+      ],
+      "Save sender": [
+        "儲存寄件者"
+      ],
+      "Transaction sender could not be updated": [
+        "無法更新交易寄件者"
+      ],
+      "Transaction sender has been updated successfully": [
+        "交易寄件者已成功更新"
+      ],
+      "Unknown sender": [
+        "未知的寄件者"
       ]
     },
     "unprivatization": {
@@ -5397,6 +5787,11 @@
       ],
       "The user must have an address to request data access": [
         "使用者必須擁有位址才能請求資料存取"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "一旦使用者接受邀請，您便能分配角色。"
       ]
     },
     "Validation": {
@@ -5447,22 +5842,64 @@
       ]
     },
     "Wallet": {
+      "An error occurred whilst syncing your wallet. Please try again.": [
+        "同步您的錢包時發生錯誤。請再試一次。"
+      ],
       "Close": [
         "關閉"
       ],
       "Continue": [
         "下一步"
+      ],
+      "Could not fetch wallets data": [
+        "無法擷取錢包資料"
+      ],
+      "Syncing new data": [
+        "正在同步新資料"
+      ],
+      "Your browser or device software does not support ${ WALLET_APP_NAME }. Please update your browser or device. Alternatively, you can use one of our mobile apps.": [
+        "您的瀏覽器或裝置軟體不支援 ${ WALLET_APP_NAME }。請更新您的瀏覽器或裝置。或者，您也可以使用我們的其中一款行動應用程式。"
       ]
     },
     "Wallet Account": {
+      "Account index": [
+        "帳號索引"
+      ],
+      "Add wallet account": [
+        "新增錢包帳號"
+      ],
       "Address type": [
         "位址類型"
       ],
       "Cancel": [
         "取消"
       ],
+      "Create multiple wallet accounts to separate your financial activities for better privacy and organization.": [
+        "建立多個錢包帳號以分開您的財務活動，實現更好的隱私和管理。"
+      ],
+      "Create wallet account": [
+        "建立錢包帳號"
+      ],
+      "Custom account index": [
+        "自訂帳號索引"
+      ],
+      "Custom index": [
+        "自訂索引"
+      ],
+      "Error adding account to wallet. Please try again.": [
+        "將帳號新增到錢包時發生錯誤。請再試一次。"
+      ],
+      "If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.": [
+        "如果您想透過多個電子郵件地址使用 Bitcoin (透過電子郵件) 接收比特幣，您需要為每個電子郵件建立一個錢包帳號。"
+      ],
       "Name": [
         "名稱"
+      ],
+      "Savings for holiday": [
+        "度假儲蓄"
+      ],
+      "Your account was successfully created": [
+        "您的帳號已成功建立"
       ]
     },
     "Wallet account": {
@@ -5474,16 +5911,48 @@
       ],
       "Advanced settings": [
         "進階設定"
+      ],
+      "Signing method": [
+        "簽署方法"
+      ],
+      "This account is already created": [
+        "此帳號已建立"
+      ],
+      "We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.": [
+        "我們預設使用原生隔離見證 (Native Segwit)，其網路費用最低。您可以變更此設定，以便從其他僅支援其他類型地址的服務中接收比特幣。"
+      ],
+      "We default to the next unused index. You can change this to recover or to skip a previous account.": [
+        "我們預設使用下一個未使用的索引。您可以變更此設定以進行復原或略過先前的帳號。"
       ]
     },
     "Wallet buy": {
       "Missing bitcoin address. Please refresh and try again or contact support": [
         "比特幣地址遺失。請重新整理後再試一次，或聯繫支援服務。"
+      ],
+      "Missing country. Please refresh and try again or contact support": [
+        "缺少國家/地區資訊。請重新整理並重試，或聯繫支援部門"
+      ],
+      "Missing quote. Please refresh and try again or contact support": [
+        "缺少報價。請重新整理並重試，或聯繫支援部門"
+      ]
+    },
+    "wallet dashboard": {
+      "You need to have a positive bitcoin balance with sufficient funds to transact": [
+        "您需要有足夠資金的非零比特幣餘額才能進行交易"
       ]
     },
     "Wallet dashboard": {
+      "24h change": [
+        "24 小時變化"
+      ],
+      "All accounts": [
+        "所有帳號"
+      ],
       "Buy": [
         "購買"
+      ],
+      "Current price": [
+        "目前價格"
       ],
       "Receive": [
         "接收"
@@ -5492,17 +5961,76 @@
         "傳送"
       ]
     },
+    "Wallet deletion": {
+      "Are you sure you want to delete \"${ wallet.Wallet.Name }\"": [
+        "您確定要刪除「${ wallet.Wallet.Name }」"
+      ],
+      "Are you sure you want to delete this wallet": [
+        "您確定要刪除此錢包"
+      ]
+    },
     "Wallet discover": {
+      "Backup this wallet's seed phrase": [
+        "備份此錢包的種子短語"
+      ],
+      "Backup your ${ BRAND_NAME } account data": [
+        "備份您的 ${ BRAND_NAME } 帳號資料"
+      ],
+      "Discover": [
+        "探索"
+      ],
       "Secure your wallet": [
         "確保您的 wallet 安全"
+      ],
+      "Set up 2FA to secure your account": [
+        "設定雙重驗證以保護您的帳號"
       ]
     },
     "Wallet header": {
       "Secure your wallet": [
         "確保您的 wallet 安全"
       ],
+      "The passphrase is incorrect. Please try again.": [
+        "助記詞不正確。請再試一次。"
+      ],
+      "This wallet needs a passphrase to be used.": [
+        "此錢包需要助記詞才能使用。"
+      ],
       "Upgrade": [
         "升級"
+      ],
+      "View change addresses": [
+        "檢視找零地址"
+      ],
+      "View receive addresses": [
+        "檢視接收地址"
+      ],
+      "We are having trouble opening your wallet. Please refresh the page or try again later.": [
+        "我們在開啟您的錢包時遇到問題。請重新整理網頁或稍後再試。"
+      ]
+    },
+    "Wallet import": {
+      "A wallet with same fingerprint already exists": [
+        "已存在具有相同指紋的錢包"
+      ]
+    },
+    "Wallet info": {
+      "This fee incentivizes Bitcoin miners to include your transaction in the blockchain. None of the fee goes to ${ BRAND_NAME }.": [
+        "這筆費用會激勵 Bitcoin 礦工將您的交易納入區塊鏈中。該筆費用完全不會支付給 ${ BRAND_NAME }。"
+      ]
+    },
+    "Wallet information": {
+      "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
+        "錢包助記詞是您建立的額外密碼，用於為您的加密貨幣錢包增添安全性。它與您的種子短語協同工作。請安全儲存它，因為丟失它可能會讓您無法存取錢包。"
+      ],
+      "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "錢包種子短語是由您的錢包產生、包含 12 到 24 個單字的序列。它可作為主金鑰，讓您能復原您的資金。請安全保管，切勿與他人共享，因其可用於存取您的資金。"
+      ],
+      "What’s a wallet passphrase?": [
+        "什麼是錢包助記詞？"
+      ],
+      "What’s a wallet seed phrase?": [
+        "什麼是錢包種子短語？"
       ]
     },
     "Wallet invite": {
@@ -5521,14 +6049,57 @@
       "Invitation sent to ${ email }": [
         "邀請函以發送至 ${ email }"
       ],
+      "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "邀請您的親友加入 ${ WALLET_APP_NAME }，以便大家都能使用 Bitcoin (透過電子郵件) 進行傳送。"
+      ],
+      "Invites": [
+        "邀請"
+      ],
       "Not now": [
         "現在不要"
       ],
       "Please let them know to check their email and follow the instruction to set up their ${ WALLET_APP_NAME } with Bitcoin via Email.": [
         "請通知他們檢查電子郵件，並按照指示透過電子郵件設定他們的 ${ WALLET_APP_NAME } 與 Bitcon。"
       ],
+      "Send invite email now": [
+        "立即傳送邀請電子郵件"
+      ],
       "Thank you for supporting ${ WALLET_APP_NAME }!": [
         "感謝支持 ${ WALLET_APP_NAME }！"
+      ],
+      "This email can receive Bitcoin via Email": [
+        "此電子郵件可以透過 Bitcoin (透過電子郵件) 接收比特幣"
+      ],
+      "Warning: the recipient will not be able to send Bitcoin via Email to this email.": [
+        "警告：收件者將無法使用 Bitcoin (透過電子郵件) 傳送比特幣至此電子郵件。"
+      ],
+      "You need to select an email to send from": [
+        "您需要選取用來傳送的電子郵件"
+      ],
+      "Your email (visible to recipient)": [
+        "您的電子郵件 (對收件者可見)"
+      ],
+      "Your friend's email": [
+        "您朋友的電子郵件"
+      ]
+    },
+    "Wallet invites": {
+      "Invite your friends": [
+        "邀請您的好友"
+      ]
+    },
+    "Wallet passphrase": {
+      "Fingerprint doesn't match stored one": [
+        "指紋與已儲存的指紋不相符"
+      ],
+      "My wallet passphrase": [
+        "我的錢包助記詞"
+      ],
+      "To use this wallet, you need to input the passphrase": [
+        "若要使用此錢包，您需要輸入助記詞"
+      ],
+      "Wallet passphrase": [
+        "錢包助記詞"
       ]
     },
     "Wallet preference": {
@@ -5541,11 +6112,29 @@
       "Cancel": [
         "取消"
       ],
+      "Clear browser storage": [
+        "清除瀏覽器儲存空間"
+      ],
+      "Copy seed phrase": [
+        "複製種子短語"
+      ],
       "Create email": [
         "建立電子郵件"
       ],
+      "Create email address": [
+        "建立電子郵件地址"
+      ],
       "Delete account": [
         "刪除帳號"
+      ],
+      "Delete wallet": [
+        "刪除錢包"
+      ],
+      "Delete wallet now": [
+        "立即刪除錢包"
+      ],
+      "Display name (optional)": [
+        "顯示名稱 (選填)"
       ],
       "Email": [
         "電子信箱"
@@ -5553,8 +6142,23 @@
       "Email address": [
         "電子郵件位址"
       ],
+      "Email address created": [
+        "電子郵件地址已建立"
+      ],
       "Email address is invalid": [
         "電子郵件位址無效"
+      ],
+      "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, we recommend using this primary BTC account without enabling Receive Bitcoin via Email and transacting with your other BTC accounts with Receive Bitcoin via Email enabled. This will improve your blockchain privacy by keeping BTC in this account separate from any BTC that you receive automatically.": [
+        "對於大多數人來說，這並不重要，因為他們是從信任的人那裡接收 BTC。但是，如果您對此感到擔憂，我們建議您使用此主 BTC 帳號，而不啟用「接收 Bitcoin (透過電子郵件)」，並在使用已啟用「接收 Bitcoin (透過電子郵件)」的其他 BTC 帳號進行交易。這將透過將此帳號中的 BTC 與您自動接收的任何 BTC 分開，從而提高您的區塊鏈隱私。"
+      ],
+      "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, you can create a new BTC account so that the new BTC you receive is separated from your existing BTC.": [
+        "對於大多數人來說，這並不重要，因為他們是從信任的人那裡接收 BTC。但是，如果您對此感到擔憂，您可以建立一個新的 BTC 帳號，以便您接收的新 BTC 與您現有的 BTC 分開。"
+      ],
+      "My super account": [
+        "我的超級帳號"
+      ],
+      "My super wallet": [
+        "我的超級錢包"
       ],
       "Name": [
         "名稱"
@@ -5562,32 +6166,118 @@
       "Not now": [
         "現在不要"
       ],
+      "Show public key (XPUB)": [
+        "顯示公開金鑰 (XPUB)"
+      ],
+      "The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.": [
+        "Bitcoin 區塊鏈是公開的，這意味著每筆交易都是公開可見的。然而，Bitcoin 地址是假名的，這意味著寄件者和收件者的身份通常是未知的。"
+      ],
+      "View more": [
+        "檢視更多"
+      ],
+      "View wallet seed phrase": [
+        "檢視錢包種子短語"
+      ],
+      "Wallet preferences": [
+        "錢包偏好設定"
+      ],
       "When you receive Bitcoin via Email, the sender knows one of your Bitcoin addresses as well as your email. Due to Bitcoin's public blockchain, it is theoretically possible for a malicious sender to discover the existence of other BTC that you have if you send BTC from this account.": [
         "當您透過電子郵件接收 Bitcoin 時，發送者不僅會知道您的電子郵件地址，也會知道您的 Bitcoin 地址。由於 Bitcoin 的區塊鏈是公開透明的，理論上，如果您從這個帳戶發送比特幣，惡意的發送者將有可能追查到您擁有的其他 Bitcoin。"
       ]
     },
     "Wallet preferences": {
+      "creating a new BTC account": [
+        "建立新的 BTC 帳號"
+      ],
+      "Default currency": [
+        "預設貨幣"
+      ],
+      "For better privacy, we recommend ${ walletAccountCreation } for receiving Bitcoin via Email. ${ learnMore }.": [
+        "為了獲得更好的隱私，我們建議使用 ${ walletAccountCreation } 來接收 Bitcoin (透過電子郵件)。${ learnMore }。"
+      ],
       "Learn more": [
         "了解更多"
+      ],
+      "Local currency": [
+        "本地貨幣"
+      ],
+      "Receive Bitcoin via Email": [
+        "接收 Bitcoin (透過電子郵件)"
+      ],
+      "Select your currency": [
+        "選取您的貨幣"
       ]
     },
     "Wallet Receive": {
+      "Bitcoin address": [
+        "Bitcoin 地址"
+      ],
       "For better privacy, generate a new address for each transaction.": [
         "為了獲得更好的隱私，請為每筆交易產生一個新地址。"
       ],
+      "Generate new address": [
+        "產生新位址"
+      ],
+      "Import paper wallet": [
+        "匯入紙錢包"
+      ],
       "More options": [
         "更多選項"
+      ],
+      "Receive to": [
+        "接收至"
+      ],
+      "To prevent a large gap, generating new addresses has been disabled. You can either use this address or a previously generated one": [
+        "為防止產生過大間隙，已停用產生新位址功能。您可以使用此位址或先前已產生的位址"
+      ],
+      "To prevent a large gap, you should either use this address or a previously generated one": [
+        "為防止產生過大間隙，您應使用此位址或先前已產生的位址"
+      ]
+    },
+    "Wallet receive": {
+      "Address generation in progress": [
+        "正在產生地址"
+      ],
+      "Copy Bitcoin address": [
+        "複製 Bitcoin 地址"
       ]
     },
     "Wallet send": {
+      "${ price } available": [
+        "${ price } 可用"
+      ],
+      "10+ hours": [
+        "10 小時以上"
+      ],
       "Add a message": [
         "新增訊息"
       ],
       "Add a note": [
         "新增備註"
       ],
+      "Add private note to myself": [
+        "為自己新增私密備註"
+      ],
+      "Address is neither a valid bitcoin or email address": [
+        "地址既不是有效的 Bitcoin 地址，也不是有效的電子郵件地址"
+      ],
       "Anonymous sender": [
         "匿名發送者"
+      ],
+      "Bitcoin address signature could not be verified": [
+        "無法驗證 Bitcoin 地址簽名"
+      ],
+      "Boost transaction": [
+        "加速交易"
+      ],
+      "Boost transaction priority": [
+        "加速交易優先級"
+      ],
+      "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
+        "藉由提高網路費用，您可以優先提高您的交易速度，協助其更快速地完成處理與確認。"
+      ],
+      "Cannot use QRCode scanner. Please check browser compatibility": [
+        "無法使用二維碼掃描器。請檢查瀏覽器相容性"
       ],
       "Confirm": [
         "確認"
@@ -5595,11 +6285,32 @@
       "Confirm and send": [
         "確認並發送"
       ],
+      "Confirmation speed: ${ label }": [
+        "確認速度：${ label }"
+      ],
+      "Could not create PSBT": [
+        "無法建立 PSBT"
+      ],
+      "Could not speed up transaction. Please sync your wallet and try again": [
+        "無法加速交易。請同步您的錢包並重試"
+      ],
+      "Current fee": [
+        "目前費用"
+      ],
       "Edit": [
         "編輯"
       ],
+      "Edit recipients": [
+        "編輯收件者"
+      ],
+      "Fast": [
+        "快速"
+      ],
       "High priority": [
         "首要優先順序"
+      ],
+      "How much are you sending?": [
+        "您要傳送多少金額？"
       ],
       "Low": [
         "低"
@@ -5607,17 +6318,41 @@
       "Low priority": [
         "較低優先順序"
       ],
+      "Max recipients per transaction limit reached (${ MAX_RECIPIENTS_PER_TRANSACTIONS })": [
+        "已達到每筆交易的收件者上限數量 (${ MAX_RECIPIENTS_PER_TRANSACTIONS })"
+      ],
       "Median priority": [
         "中等優先順序"
+      ],
+      "Message to recipient (optional)": [
+        "給收件者的訊息 (選填)"
+      ],
+      "Network fees": [
+        "網路費用"
+      ],
+      "New network fee": [
+        "新的網路費用"
       ],
       "Normal": [
         "標準"
       ],
+      "One of recipient's amount is below minimum value": [
+        "其中一位收件者的金額低於最低限制金額"
+      ],
+      "Please grant camera permission to use QRCode scanner": [
+        "請授予相機權限以使用二維碼掃描器"
+      ],
       "Please setup an email address in your account settings in order to send messages": [
         "請在您的帳戶設定中設定電子郵件地址，以便傳送訊息。"
       ],
+      "Recent recipients": [
+        "最近的收件者"
+      ],
       "Recipient": [
         "收件者"
+      ],
+      "Recipient has no bitcoin address available": [
+        "收件者沒有可用的 Bitcoin 地址"
       ],
       "Recipients": [
         "接收者"
@@ -5628,33 +6363,184 @@
       "Review": [
         "檢閱"
       ],
+      "Send all": [
+        "全部傳送"
+      ],
+      "The transaction could not be sent. Please try again later": [
+        "無法傳送交易。請稍後再試"
+      ],
+      "Transaction was successfully boosted": [
+        "交易已成功加速"
+      ],
+      "Transaction was successfully sent": [
+        "交易已成功傳送"
+      ],
+      "Try adding an email address to start sending Bitcoin!": [
+        "嘗試新增電子郵件地址以開始傳送 Bitcoin！"
+      ],
+      "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "在等待的同時，邀請您的家人和朋友加入 ${ WALLET_APP_NAME }，這樣您們就可以透過電子郵件傳送 Bitcoin。"
+      ],
+      "Who are you sending Bitcoin to?": [
+        "您要將 Bitcoin 傳送給誰？"
+      ],
+      "You are sending": [
+        "您正在傳送"
+      ],
+      "You do not have enough BTC in this account to fund the transaction and the required network fee of ${ feesToReserveElement }.": [
+        "您在此帳號中的 BTC 不足，無法支付交易及所需的網路費用 ${ feesToReserveElement }。"
+      ],
+      "You do not have enough funds. Please choose a lower network fee and try again": [
+        "您的資金不足。請選擇較低的網路費用並重試"
+      ],
+      "Your Bitcoin is on its way!": [
+        "您的 Bitcoin 正在路上！"
+      ],
+      "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
+        "您的交易已廣播至 Bitcoin 網路。網路可能需要大約一個小時來確認該筆交易。"
+      ],
       "~${ minutes } minute": [
         "~${ minutes } 分鐘"
       ]
     },
+    "Wallet Send": {
+      "Could not broadcast transaction. Please sync your wallet and try again": [
+        "無法廣播交易。請同步您的錢包並重試"
+      ],
+      "Could not sign transaction": [
+        "無法簽名交易"
+      ],
+      "You must send at least ${ constrainedMinElement } to each recipient": [
+        "您必須向每位收件者傳送至少 ${ constrainedMinElement }"
+      ]
+    },
     "Wallet Settings": {
+      "Account name changed": [
+        "帳號名稱已變更"
+      ],
+      "Account was deleted": [
+        "帳號已刪除"
+      ],
+      "An error occurred while modifying with your Bitcoin via Email address. Please check details and try again.": [
+        "修改您的 Bitcoin (透過電子郵件) 地址時發生錯誤。請檢查詳細資料並重試。"
+      ],
       "Bitcoin via Email": [
         "透過電子郵件的比特幣"
+      ],
+      "Browser storage cleared. Please refresh the page": [
+        "已清除瀏覽器儲存空間。請重新整理網頁"
+      ],
+      "Could not fill the pool after email address addition": [
+        "新增電子郵件地址後無法填入資金池"
+      ],
+      "Could not fill the pool after email address replacement": [
+        "更換電子郵件地址後無法填入資金池"
       ],
       "Create new email address": [
         "創建新的電子郵件地址"
       ],
+      "Email address could not be added. Please try again.": [
+        "無法新增電子郵件地址。請再試一次。"
+      ],
+      "Email address could not be removed. Please try again.": [
+        "無法移除電子郵件地址。請再試一次。"
+      ],
+      "Email address has been added": [
+        "電子郵件地址已新增"
+      ],
+      "Email address has been removed": [
+        "電子郵件地址已移除"
+      ],
+      "Email address has been replaced": [
+        "電子郵件地址已更換"
+      ],
+      "Fiat currency could not be updated. Please try again.": [
+        "無法更新法定貨幣。請再試一次。"
+      ],
+      "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
+        "將電子郵件連結到此錢包帳號，以便其他 ${ WALLET_APP_NAME } 使用者可以輕鬆地將比特幣傳送到您的電子郵件。"
+      ],
+      "New fiat currency applied": [
+        "已套用新的法定貨幣"
+      ],
+      "Preferred bitcoin unit could not be changed. Please try again.": [
+        "無法變更偏好的比特幣單位。請再試一次。"
+      ],
       "Preferred bitcoin unit was changed": [
         "偏好的比特幣單位已變更"
+      ],
+      "Select an available email or create a new email address.": [
+        "選取可用的電子郵件或建立新的電子郵件地址。"
+      ],
+      "Select this address": [
+        "選取此地址"
+      ],
+      "Wallet account could not be deleted. Please try again.": [
+        "無法刪除錢包帳號。請再試一次。"
+      ],
+      "Wallet account name could not be changed. Please try again.": [
+        "無法變更錢包帳號名稱。請再試一次。"
+      ],
+      "Wallet could not be deleted. Please try again.": [
+        "無法刪除錢包。請再試一次。"
+      ],
+      "Wallet name changed": [
+        "錢包名稱已變更"
+      ],
+      "Wallet name could not be changed. Please try again.": [
+        "無法變更錢包名稱。請再試一次。"
+      ],
+      "Wallet was deleted": [
+        "錢包已刪除"
+      ]
+    },
+    "Wallet settings": {
+      "Bitcoin unit": [
+        "Bitcoin 單位"
       ]
     },
     "Wallet setup": {
+      "A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.": [
+        "助記詞的作用就像第二個密碼。之後無法更改或新增。請安全備份它，以便在每次登入時解鎖您的錢包。"
+      ],
       "Add a passphrase": [
         "新增密碼片語"
+      ],
+      "Add a passphrase (optional)": [
+        "新增助記詞 (選填)"
       ],
       "Bitcoin via Email": [
         "透過電子郵件的比特幣"
       ],
+      "Choose a name and default currency.": [
+        "選擇名稱和預設貨幣。"
+      ],
       "Confirm": [
         "確認"
       ],
+      "Confirm Passphrase": [
+        "確認助記詞"
+      ],
+      "Create new wallet": [
+        "建立新錢包"
+      ],
+      "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet at a later stage using the seed phrase.": [
+        "刪除此錢包將從 ${ BRAND_NAME } 的伺服器中移除其所有資料。您可以在稍後階段使用種子短語復原錢包。"
+      ],
+      "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet by reactivating the keys used during wallet creation in your account.": [
+        "刪除此錢包將從 ${ BRAND_NAME } 的伺服器中移除其所有資料。您可以在帳號中重新啟用建立錢包時所使用的金鑰，藉此復原錢包。"
+      ],
       "Done": [
         "完成"
+      ],
+      "Email address could not be linked to wallet account. Please try again.": [
+        "電子郵件地址無法連結到錢包帳號。請再試一次。"
+      ],
+      "Error creating your wallet account. Please try again.": [
+        "建立您的錢包帳號時發生錯誤。請再試一次。"
+      ],
+      "Give a name to this wallet": [
+        "為此錢包命名"
       ],
       "Import": [
         "匯入"
@@ -5662,11 +6548,20 @@
       "Import wallet": [
         "匯入錢包"
       ],
+      "Invite a friend": [
+        "邀請好友"
+      ],
       "Learn more": [
         "了解更多"
       ],
+      "My wallet had a passphrase": [
+        "我的錢包有助記詞"
+      ],
       "Name": [
         "名稱"
+      ],
+      "Never give them to anyone else. ${ BRAND_NAME } will never ask you for them. Write them down carefully and hide it in a safe place.": [
+        "切勿將它們交給任何人。${ BRAND_NAME } 絕不會向您索取它們。請仔細寫下並隱藏在安全的地方。"
       ],
       "Not now": [
         "現在不要"
@@ -5674,16 +6569,91 @@
       "Passphrase": [
         "驗證驗密語"
       ],
+      "Pick a default currency so we can display the value of your Bitcoin transactions using the latest market data at transaction time.": [
+        "選擇預設貨幣，以便我們在交易時使用最新的市場數據顯示您的 Bitcoin 交易價值。"
+      ],
+      "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
+        "在刪除之前，請將您的比特幣轉移到另一個錢包。刪除此錢包將從 ${ BRAND_NAME } 的伺服器中移除其所有資料。您可以在稍後階段使用種子短語復原此錢包。"
+      ],
+      "Primary account": [
+        "主帳號"
+      ],
+      "Seed phrase (12 to 24 words, separated by space)": [
+        "種子短語 (12 到 24 個單字，以空格分隔)"
+      ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "這 12 個單詞只應在萬不得已的情況下（例如您無法存取您的 ${ BRAND_NAME } 帳戶時），才用於恢復此錢包的資產。"
       ],
+      "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
+        "此錢包已無法解密。若要重新解密，您需要在帳號中復原建立錢包時所使用的金鑰。或者，您也可以將其移除，以釋出一個錢包空間。"
+      ],
+      "This wallet seems to still have assets.": [
+        "此錢包似乎仍有資產。"
+      ],
       "Transfer your paper wallet funds to your account. Paste your private key or scan your QR code.": [
         "將您的紙錢包資金轉移到您的帳戶。請貼上您的私鑰或掃描您的 QR 碼。"
+      ],
+      "View wallet seed phrase": [
+        "檢視錢包種子短語"
+      ],
+      "Wallet could not be created. Please try again.": [
+        "無法建立錢包。請再試一次。"
+      ],
+      "Wallet seed phrase": [
+        "錢包種子短語"
+      ],
+      "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
+        "錢包種子短語總和檢查碼無效。我們僅接受 BIP39 種子短語，不支援 Electrum 種子短語。"
+      ],
+      "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
+        "錢包種子短語包含未知單字：${ word }。我們僅支援 BIP39 英文單字清單。"
+      ],
+      "Wallet seed phrase encode the private key that controls your digital assets.": [
+        "錢包種子短語會編碼控制您數位資產的私有金鑰。"
+      ],
+      "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
+        "錢包種子短語熵無效。其長度應介於 128 到 256 位元之間。"
+      ],
+      "Wallet seed phrase is incorrect. Please check it and try again.": [
+        "錢包種子短語不正確。請檢查後再試一次。"
+      ],
+      "Wallet seed phrase language is not supported.": [
+        "不支援該錢包種子短語語言。"
+      ],
+      "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
+        "錢包種子短語長度無效。長度應介於 12 到 24 個單字之間。"
+      ],
+      "Wallet setup": [
+        "錢包設定"
+      ],
+      "What's a wallet passphrase?": [
+        "什麼是錢包助記詞？"
+      ],
+      "What's a wallet seed phrase?": [
+        "什麼是錢包種子短語？"
+      ],
+      "You can use the seed phrase to import your wallet on any wallet app.": [
+        "您可以使用種子短語在任何錢包應用程式上匯入您的錢包。"
+      ],
+      "Your keys, your coins.": [
+        "自己的私鑰，自己的金幣。"
+      ],
+      "Your private key": [
+        "您的私有金鑰"
       ]
     },
     "Wallet Sidebar": {
       "Contact Support": [
         "聯絡客服支援團隊"
+      ],
+      "Create a new wallet": [
+        "建立新錢包"
+      ],
+      "Discover": [
+        "探索"
+      ],
+      "Expand user settings": [
+        "展開使用者設定"
       ],
       "Import wallet": [
         "匯入錢包"
@@ -5700,6 +6670,9 @@
       "Upgrade": [
         "升級"
       ],
+      "User settings": [
+        "使用者設定"
+      ],
       "Wallets": [
         "錢包"
       ]
@@ -5709,9 +6682,34 @@
         "加入帳號"
       ]
     },
+    "Wallet Terms and Conditions": {
+      "This is a self-custodial Bitcoin wallet, meaning any BTC you buy or receive will be fully controlled by you. Not even ${ BRAND_NAME } can seize your assets.": [
+        "這是一個自託管的 Bitcoin 錢包，這意味著您購買或接收的任何 BTC 都將完全由您控制。即使是 ${ BRAND_NAME } 也無法扣押您的資產。"
+      ],
+      "To avoid losing assets due to forgetting your password or other access issues, back up your ${ BRAND_NAME } recovery phrase and wallet seed phrase.": [
+        "為避免因忘記密碼或其他存取問題而丟失資產，請備份您的 ${ BRAND_NAME } 復原短語和錢包種子短語。"
+      ],
+      "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
+        "我們已為您建立了兩個 BTC 帳號。一個主帳號，以及第二個用於透過 Bitcoin (透過電子郵件)（在 ${ emailEl }）接收來自其他 ${ WALLET_APP_NAME } 使用者的比特幣的帳號。"
+      ]
+    },
+    "Wallet terms and conditions": {
+      "Error with Terms and Conditions acceptance. Please try again.": [
+        "接受條款及細則時發生錯誤。請再試一次。"
+      ],
+      "Terms and conditions were accepted": [
+        "條款及細則已接受"
+      ]
+    },
     "Wallet transaction": {
+      "${ address } (me)": [
+        "${ address } (我)"
+      ],
       "+ Add": [
         "+ 新增"
+      ],
+      "Add bitcoins to your wallet": [
+        "將比特幣新增到您的錢包"
       ],
       "Add note": [
         "新增備註"
@@ -5725,8 +6723,14 @@
       "Bitcoin via Email": [
         "透過電子郵件的比特幣"
       ],
+      "Boost priority": [
+        "加速優先級"
+      ],
       "Buy": [
         "購買"
+      ],
+      "Confirmed": [
+        "已確認"
       ],
       "Date": [
         "日期"
@@ -5743,11 +6747,32 @@
       "Loading": [
         "載入中..."
       ],
+      "Loading balance": [
+        "正在載入餘額"
+      ],
+      "Message to recipient": [
+        "給收件者的訊息"
+      ],
+      "Network fee": [
+        "網路費用"
+      ],
       "Note": [
         "備注"
       ],
+      "Note to self": [
+        "個人備註"
+      ],
+      "Private note to myself": [
+        "個人私密備註"
+      ],
       "Receive": [
         "接收"
+      ],
+      "Save note": [
+        "儲存備註"
+      ],
+      "Start your journey": [
+        "開始您的旅程"
       ],
       "Status": [
         "狀態"
@@ -5758,8 +6783,37 @@
       "To: ${ senderOrRecipientName }": [
         "收件人：${ senderOrRecipientName }"
       ],
+      "Total (Amount + fee)": [
+        "總計 (金額 + 費用)"
+      ],
+      "Total (sent amount + fee)": [
+        "總計 (傳送金額 + 費用)"
+      ],
+      "Transaction note": [
+        "交易備註"
+      ],
       "Unknown": [
         "未知"
+      ],
+      "View more": [
+        "檢視更多"
+      ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
+        "我們目前在計算網路費用時遇到困難。請稍後再試。如果問題仍然存在，請聯繫我們的支援團隊以尋求協助。"
+      ],
+      "You received": [
+        "您已收到"
+      ],
+      "You sent": [
+        "您已傳送"
+      ]
+    },
+    "Wallet Transaction": {
+      "Could not update transaction label": [
+        "無法更新交易標籤"
+      ],
+      "Transaction label successfully updated": [
+        "交易標籤已成功更新"
       ]
     },
     "Wallet Transaction List": {
@@ -5776,16 +6830,60 @@
       ]
     },
     "Wallet transactions list": {
+      "Ascending order": [
+        "遞增排序"
+      ],
+      "Descending order": [
+        "遞減排序"
+      ],
       "Sync": [
         "同步"
+      ],
+      "Syncing in progress. Please wait": [
+        "同步正在處理中。請稍候"
       ]
     },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "繼續代表您同意我們的${ termsAndConditionsLink }"
       ],
+      "Upgrade to support financial freedom": [
+        "升級以支持財務自由"
+      ],
       "Upgrade your privacy": [
         "升級您的隱私"
+      ],
+      "You have reached your limit": [
+        "您已達到限制"
+      ]
+    },
+    "Wallet upgrade": {
+      "Account limit reached": [
+        "已達到帳號數量上限"
+      ],
+      "Contact your administrator to upgrade": [
+        "聯繫您的管理員以進行升級"
+      ],
+      "Expand your address limit": [
+        "擴充您的位址上限"
+      ],
+      "Wallet limit reached": [
+        "已達到錢包數量上限"
+      ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "您已達到目前方案所支援的帳號最大數量。"
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "您已達到目前方案所支援的帳號最大數量。請升級以建立更多。您的支援對於我們爭取保護財務隱私與自由也至關重要。"
+      ],
+      "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "您已達到目前方案所支援的電子郵件地址最大數量。請升級以建立更多。您的支援對於我們爭取保護財務隱私與自由也至關重要。"
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "您已達到目前方案所支援的錢包最大數量。"
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "您已達到目前方案支援的錢包數量上限。請升級以建立更多錢包。您的支援對於我們爭取保護財務隱私與自由的鬥爭也至關重要。"
       ]
     },
     "Wallet Welcome": {

@@ -4,6 +4,17 @@
     "language": "el_GR"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Open external url": [
+        "Άνοιγμα εξωτερικής διεύθυνσης URL"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Το πρωτόκολλο ${ parsedProtocol } δεν επιτρέπεται. Θέλετε να ανοίξετε την εξωτερική διεύθυνση URL;"
+      ]
+    },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
         "Το \"Επανεκκίνηση και προφίλ τώρα\" θα επανεκκινήσει την εφαρμογή αμέσως και θα καταγράψει ένα προφίλ εκκίνησης.\n\nΤο \"Προφίλ στην επόμενη εκκίνηση\" θα καταγράψει προφίλ την επόμενη φορά που θα ανοίξετε την εφαρμογή. Χρησιμοποιήστε αυτό για να μετρήσετε την ταχύτητα εκκίνησης μετά από επανεκκίνηση."

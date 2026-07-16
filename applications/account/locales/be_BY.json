@@ -408,9 +408,6 @@
       "Continue with this password": [
         "Працягнуць з гэтым паролем"
       ],
-      "Copy": [
-        "Скапіяваць"
-      ],
       "Copy address": [
         "Скапіяваць адрас"
       ],
@@ -962,9 +959,6 @@
       ],
       "Hide": [
         "Схаваць"
-      ],
-      "Hide ${ LUMO_SHORT_APP_NAME }": [
-        "Схаваць ${ LUMO_SHORT_APP_NAME }"
       ],
       "Hide more benefits": [
         "Схаваць больш пераваг"
@@ -1518,9 +1512,6 @@
       "Select time zone": [
         "Выберыце часавы пояс"
       ],
-      "Send": [
-        "Адправіць"
-      ],
       "send auto-reply email": [
         "адправіць ліст з аўтаматычным адказам"
       ],
@@ -1683,9 +1674,6 @@
       "Stay": [
         "Застацца"
       ],
-      "Stop": [
-        "Спыніць"
-      ],
       "Stop using single sign-on": [
         "Спыніць выкарыстанне адзінага ўваходу"
       ],
@@ -1748,9 +1736,6 @@
       ],
       "Underline": [
         "Падкрэслены"
-      ],
-      "Undo": [
-        "Адрабіць"
       ],
       "Undo import": [
         "Адрабіць імпартаванне"
@@ -2224,11 +2209,6 @@
       ],
       "User admin:": [
         "Адміністратар карыстальніка:"
-      ]
-    },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Роля - гэта група дазволаў, якія вы можаце прызначыць удзельнікам сваёй арганізацыі."
       ]
     },
     "Alert": {
@@ -3039,6 +3019,12 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "Адбылася невядомая памылка. Абнавіце старонку і паспрабуйце яшчэ раз"
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншага?",
+        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншых?",
+        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншых?",
+        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншых?"
+      ],
       "Are you sure you want to continue without ${ withoutString }?": [
         "Вы сапраўды хочаце працягнуць без ${ withoutString }?"
       ],
@@ -3336,11 +3322,32 @@
       "Status": [
         "Статус"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
+      ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Усталюйце ${ BRAND_NAME } Easy Switch з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі ў ${ BRAND_NAME }. Вярніцеся сюды зноў для працягу, калі праграма будзе ўсталявана."
       ],
       "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
         "Пакіньце сабе толькі коды ${ BRAND_NAME } MX, каб завяршыць перанос."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у кансолі адміністратара Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго адрас у ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Каб перанесці гэтага карыстальніка, яму неабходна прыняць запрашэнне далучыцца да ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, разгархівуйце яго ў кансолі адміністратара Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, разблакіруйце яго ў кансолі адміністратара Google Workspace."
       ],
       "Update records for receiving": [
         "Абнавіце запісы для атрымання"
@@ -10544,6 +10551,9 @@
       "All inactive members deleted": [
         "Усе неактыўныя ўдзельнікі выдалены"
       ],
+      "All internet traffic is always encrypted and secure": [
+        "Увесь трафік інтэрнэту заўсёды з'яўляецца зашыфраваным і бяспечным"
+      ],
       "All keys successfully reactivated": [
         "Усе ключы паспяхова паўторна актываваны"
       ],
@@ -11549,9 +11559,6 @@
       "here": [
         "тут"
       ],
-      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
-        "Вітаю! Апішы фільтр, якія хочаш атрымаць і я напішу сцэнарый на мове Sieve. Я таксама магу падправіць тое, што ўжо ёсць у рэдактары."
-      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Хавае ідэнтыфікацыйную інфармацыю шляхам загрузкі аддаленага змесціва праз проксі. Магчымасць захавання змесціва ў якасці далучэнняў."
       ],
@@ -12205,6 +12212,9 @@
       ],
       "or discover other features:": [
         "або пазнаёмцеся з іншымі функцыямі:"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Або выканайце ${ ps1Link } праз свой выканальны сцэнарый"
       ],
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
@@ -12949,9 +12959,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Гэтыя ўліковыя даныя не могуць быць выкарыстаны для ўваходу ў нашы афіцыйныя праграмы ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
-      "Thinking…": [
-        "Думаю…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена з прычыны патэнцыйнага парушэння ўмоў выкарыстання."
@@ -13897,6 +13904,9 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Ваш уліковы запіс паспяхова абноўлены з дапамогай гэтай рэкламнай акцыі"
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Ваш профіль прылады пастаяннай VPN гатовы для разгортвання."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
@@ -15144,9 +15154,6 @@
       "Date": [
         "Дата"
       ],
-      "Date format": [
-        "Фармат даты"
-      ],
       "Days of the week": [
         "Дні тыдня"
       ],
@@ -15635,6 +15642,9 @@
       ],
       "Navigation": [
         "Навігацыя"
+      ],
+      "Never fill on this exact URL": [
+        "Ніколі не запаўняць на гэтым дакладным URL-адрасе"
       ],
       "New display name": [
         "Новае бачнае імя"
@@ -17301,6 +17311,9 @@
       "Exact URL matching rule": [
         "Правіла дакладнага супадзення URL-адраса"
       ],
+      "Never fill with this exact URL": [
+        "Ніколі не запаўняць з гэтага дакладнага URL-адраса"
+      ],
       "Regular expression rule": [
         "Правіла рэгулярнага выразу"
       ],
@@ -17312,6 +17325,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Паглядзець падзеі ўваходу, аднаўлення і бяспекі карыстальніка."
+      ],
+      "Wildcard pattern matching rule": [
+        "Правіла супастаўлення па шаблоне з падстаноўчымі знакамі"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
@@ -18910,9 +18926,6 @@
       "An external address cannot be default": [
         "Знешні адрас не можа быць прадвызначаным"
       ],
-      "Copied to clipboard": [
-        "Скапіявана ў буфер абмену"
-      ],
       "Downloaded 2FA recovery codes": [
         "Спампаваныя коды аднаўлення 2ФА"
       ],
@@ -18960,9 +18973,6 @@
       ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
-      ],
-      "Sieve script inserted": [
-        "Сцэнарый Sieve устаўлены"
       ],
       "The key has been deleted.": [
         "Ключ быў выдалены."
@@ -20651,9 +20661,6 @@
       ],
       "Cortex Inc.": [
         "Cortex Inc."
-      ],
-      "Describe the filter you want…": [
-        "Апішыце патрэбны вам фільтр…"
       ],
       "domain.com": [
         "domain.com"
@@ -25121,6 +25128,9 @@
       "Save 50% for 6 months, and keep full access": [
         "Зэканомце 50% пры аплаце за 6 месяцаў і пакіньце поўны доступ"
       ],
+      "Save 50% for one year, and keep full access": [
+        "Зэканомце 50% на адзін год і захавайце поўны доступ"
+      ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Паглядзіце, як ${ MAIL_APP_NAME } выглядае ў параўнанні з іншымі кліентамі электроннай пошты, і чаму наша незалежнасць мае значэнне."
       ],
@@ -26703,9 +26713,6 @@
       "Help center": [
         "Даведачны цэнтр"
       ],
-      "Help from ${ LUMO_SHORT_APP_NAME }": [
-        "Дапамога ад ${ LUMO_SHORT_APP_NAME }"
-      ],
       "Help us improve": [
         "Дапамажыце палепшыць наш сэрвіс"
       ],
@@ -27167,9 +27174,6 @@
       ],
       "Revoke certificate?": [
         "Адклікаць сертыфікат?"
-      ],
-      "Roles and permissions": [
-        "Ролі і дазволы"
       ],
       "Same inbox, shorter email address": [
         "Тая ж паштовая скрыня, карацейшы адрас электроннай пошты"
@@ -28902,6 +28906,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } забяспечвае магутны кантроль, але адна памылка можа прывесці да таго, што аўтазапаўненне спрацуе і запоўніць даныя на махлярскіх або фішынгавых вэб-сайтах."
       ],
       "Are you sure you want to remove your notification email?": [
         "Вы сапраўды хочаце выдаліць сваю электронную пошту для апавяшчэнняў?"

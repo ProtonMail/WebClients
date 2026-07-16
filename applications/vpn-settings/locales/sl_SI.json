@@ -1286,11 +1286,6 @@
         "skrbnik"
       ]
     },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Vloga je skupina dovoljenj, ki jih lahko dodelite članom vaše organizacije."
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Če prekinete zdaj, nekateri stiki morda ne bodo uvoženi"
@@ -1664,6 +1659,27 @@
       ],
       "Status": [
         "Stanje"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tega uporabnika ni mogoče prenesti zaradi nezdružljivosti platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Če želite tega uporabnika prenesti, morajo sprejeti njihovo povabilo k pridružitvi ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga odstranite iz arhiva v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
       ]
     },
     "Browser": {
@@ -13174,6 +13190,11 @@
         "Iztekajoče"
       ]
     },
+    "Subtitle": {
+      "Save 50% for one year, and keep full access": [
+        "Prihranite 50 % v enem letu in ohranite neomejen dostop"
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "Račun je izbrisan. Odjavljanje ..."
@@ -14278,9 +14299,6 @@
       ],
       "Reverse charge not supported": [
         "Shema obrnjene davčne obveznosti"
-      ],
-      "Roles and permissions": [
-        "Vloge in dovoljenja"
       ],
       "SAML authentication": [
         "SAML avtentikacija"

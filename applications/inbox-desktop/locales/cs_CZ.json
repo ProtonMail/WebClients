@@ -4,7 +4,21 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Open external url": [
+        "Otevřít externí URL adresu"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Protokol ${ parsedProtocol } není povolen. Chcete otevřít externí URL adresu?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "Možnost „Restartovat a profilovat nyní“ okamžitě restartuje aplikaci a zachytí profil start-upu.\n\nMožnost „Profilovat při příštím spuštění“ provede profilování při příštím otevření aplikace. Tuto možnost použijte k měření rychlosti start-upu po restartování systému."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "O ${ MAIL_APP_NAME }"
       ],
@@ -35,11 +49,23 @@
       "Delete": [
         "Smazat"
       ],
+      "Disable": [
+        "Deaktivovat"
+      ],
+      "Disable Hardware Acceleration": [
+        "Deaktivovat hardwarovou akceleraci"
+      ],
+      "Enable": [
+        "Aktivovat"
+      ],
       "Enable diagnostic logs": [
         "Aktivovat diagnostické logy"
       ],
       "Enable diagnostic logs from the Chromium engine.": [
         "Aktivujte diagnostické logy jádra Chromium."
+      ],
+      "Enable Hardware Acceleration": [
+        "Aktivovat hardwarovou akceleraci"
       ],
       "Force Reload": [
         "Vynutit obnovení"
@@ -59,6 +85,12 @@
       "Paste and Match Style": [
         "Vložit a přizpůsobit styl"
       ],
+      "Profile app startup": [
+        "Profilovat start aplikace"
+      ],
+      "Profile on next launch": [
+        "Profilovat při příštím spuštění"
+      ],
       "Quit": [
         "Ukončit"
       ],
@@ -70,6 +102,9 @@
       ],
       "Reload": [
         "Znovu načíst"
+      ],
+      "Restart and profile now": [
+        "Restartovat a profilovat nyní"
       ],
       "Restart with logging": [
         "Restartovat s logováním"
@@ -95,6 +130,9 @@
       "Stop Speaking": [
         "Přestaňte mluvit"
       ],
+      "Switch to ${ appName }": [
+        "Přepnout na ${ appName }"
+      ],
       "These logs help us diagnose issues. The app will restart to apply the change.": [
         "Tyto logy nám pomáhají diagnostikovat problémy. Aplikace se restartuje, aby se změna projevila."
       ],
@@ -110,6 +148,12 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Odinstalovat ${ MAIL_APP_NAME }"
       ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Pokud je hardwarová akcelerace aktivována, aplikace využívá k vykreslování vyhrazený grafický hardware vašeho zařízení. Na některých systémech to může způsobovat problémy s kompatibilitou."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Bez hardwarové akcelerace využívá aplikace místo grafické karty softwarové vykreslování. Můžete zaznamenat pomalejší animace a vyšší využití CPU."
+      ],
       "Zoom": [
         "Přiblížit"
       ],
@@ -121,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Deaktivovat hardwarovou akceleraci"
+      ],
+      "Enable Hardware Acceleration": [
+        "Aktivovat hardwarovou akceleraci"
+      ],
       "Services": [
         "Služby"
       ]

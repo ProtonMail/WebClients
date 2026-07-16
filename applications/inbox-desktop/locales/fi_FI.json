@@ -4,7 +4,24 @@
     "language": "fi_FI"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Open external url": [
+        "Avaa ulkoinen linkki"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Protokollaa ${ parsedProtocol } ei sallita. Haluatko avata ulkoisen URL-osoitteen?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "”Käynnistä uudelleen ja profiloi nyt” käynnistää sovelluksen uudelleen välittömästi ja tallentaa käynnistysprofiilin.\n\n”Profiloi seuraavassa käynnistyksessä” profiloi sovelluksen, kun avaatte sen seuraavan kerran. Käyttäkää tätä mitataksenne käynnistysnopeutta tietokoneen uudelleenkäynnistyksen jälkeen."
+      ],
+      "About ${ MAIL_APP_NAME }": [
+        "Tietoja sovelluksesta ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Todellinen koko"
       ],
@@ -20,6 +37,9 @@
       "Close Window": [
         "Sulje ikkuna"
       ],
+      "Collect startup performance data": [
+        "Kerää käynnistyksen suorituskykytietoja"
+      ],
       "Copy": [
         "Kopioi"
       ],
@@ -29,11 +49,23 @@
       "Delete": [
         "Poista"
       ],
+      "Disable": [
+        "Poista käytöstä"
+      ],
+      "Disable Hardware Acceleration": [
+        "Poista laitteistokiihdytys käytöstä"
+      ],
+      "Enable": [
+        "Ota käyttöön"
+      ],
       "Enable diagnostic logs": [
         "Ota diagnostiikkalokit käyttöön"
       ],
       "Enable diagnostic logs from the Chromium engine.": [
         "Ota käyttöön Chromium-moottorin diagnostiikkalokit."
+      ],
+      "Enable Hardware Acceleration": [
+        "Ota laitteistokiihdytys käyttöön"
       ],
       "Force Reload": [
         "Pakota uudelleenlataus"
@@ -50,6 +82,15 @@
       "Paste": [
         "Liitä"
       ],
+      "Paste and Match Style": [
+        "Liitä ja sovita tyyli"
+      ],
+      "Profile app startup": [
+        "Profiloi sovelluksen käynnistys"
+      ],
+      "Profile on next launch": [
+        "Profiloi seuraavassa käynnistyksessä"
+      ],
       "Quit": [
         "Lopeta"
       ],
@@ -61,6 +102,9 @@
       ],
       "Reload": [
         "Lataa uudelleen"
+      ],
+      "Restart and profile now": [
+        "Käynnistä uudelleen ja profiloi nyt"
       ],
       "Restart with logging": [
         "Käynnistä uudelleen lokien kanssa"
@@ -92,6 +136,12 @@
       "These logs help us diagnose issues. The app will restart to apply the change.": [
         "Nämä lokit auttavat meitä diagnosoimaan ongelmia. Sovellus käynnistyy uudelleen muutoksen käyttöönottamiseksi."
       ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Tämä mittaa, kuinka kauan sovelluksen käynnistyminen kestää, ja tallentaa raportin lokikansioonne."
+      ],
+      "Toggle Full Screen": [
+        "Koko näyttö päälle / pois"
+      ],
       "Undo": [
         "Kumoa"
       ],
@@ -115,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Poista laitteistokiihdytys käytöstä"
+      ],
+      "Enable Hardware Acceleration": [
+        "Ota laitteistokiihdytys käyttöön"
+      ],
       "Services": [
         "Palvelut"
       ]
@@ -149,8 +205,14 @@
       "Cut": [
         "Leikkaa"
       ],
+      "Look Up “${ text }”": [
+        "Hae sanaa ”${ text }”"
+      ],
       "Paste": [
         "Liitä"
+      ],
+      "Paste and Match Style": [
+        "Liitä ja sovita tyyli"
       ],
       "Redo": [
         "Tee uudelleen"

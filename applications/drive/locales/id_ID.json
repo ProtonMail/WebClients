@@ -1590,6 +1590,15 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Diaktifkan"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Alamat sudah digunakan oleh pengguna di luar organisasi. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
+      ],
+      "All": [
+        "Semua"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -1599,14 +1608,50 @@
       "Contacts": [
         "Kontak"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status migrasi data dari Google Workspace ke ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Email"
+      ],
+      "Errors": [
+        "Kesalahan"
+      ],
       "Estimated size": [
         "Perkiraan ukuran"
+      ],
+      "Find out what can be migrated.": [
+        "Cari tahu apa saja yang dapat dimigrasikan."
+      ],
+      "Has errors": [
+        "Ada kesalahan"
       ],
       "In progress": [
         "Sedang berlangsung"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Alamat anggota tidak ditemukan. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
+      ],
+      "Migrate": [
+        "Migrasi"
+      ],
+      "Migrated": [
+        "Dimigrasikan"
+      ],
       "Migration status": [
         "Status migrasi"
+      ],
+      "Missing organization private key": [
+        "Kunci pribadi organisasi hilang"
+      ],
+      "Missing organization public key": [
+        "Kunci publik organisasi hilang"
+      ],
+      "No users to display": [
+        "Tidak ada pengguna untuk ditampilkan"
+      ],
+      "Not activated": [
+        "Belum diaktifkan"
       ],
       "Organization does not have enough seats available": [
         "Organisasi tidak memiliki jumlah kuota yang memadai"
@@ -1614,14 +1659,53 @@
       "Organization does not have enough storage available": [
         "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
       ],
+      "Pending": [
+        "Tertunda"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Pilih apa yang ingin dimigrasikan. Ini akan berlaku untuk semua pengguna organisasi."
+      ],
+      "Select users to migrate": [
+        "Pilih pengguna untuk dimigrasikan"
+      ],
+      "Size": [
+        "Ukuran"
+      ],
       "Status": [
         "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Pengguna ini tidak dapat dimigrasikan karena ketidakcocokan platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, aktifkan akunnya di Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Untuk memigrasikan pengguna ini, aktifkan akunnya di bawah ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Untuk memigrasikan pengguna ini, aktifkan alamatnya di bawah ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Untuk memigrasikan pengguna ini, pengguna tersebut harus menerima undangan untuk bergabung dengan ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, batalkan pengarsipannya di Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, batalkan penangguhannya di Google Workspace Admin Console."
       ],
       "User": [
         "Pengguna"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Pengguna yang telah mengakses akun ${ BRAND_NAME }"
+      ],
       "What are you migrating?": [
         "Apa yang ingin Anda migrasikan?"
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "Browser": {
@@ -3646,6 +3730,9 @@
       "No contacts found to import": [
         "Tidak ada kontak yang dapat diimpor"
       ],
+      "No drive found to import": [
+        "Tidak ada drive yang ditemukan untuk diimpor"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Tidak ada email yang ditemukan untuk diimpor - akun ini tidak memiliki kotak masuk"
       ],
@@ -3892,6 +3979,9 @@
       "Unexpected error, we can't import the contacts": [
         "Terjadi kesalahan tak terduga, kami tidak dapat mengimpor kontak"
       ],
+      "Unexpected error, we can't import the files": [
+        "Terjadi kesalahan tak terduga, tidak dapat mengimpor file"
+      ],
       "Unknown conflict strategy: ${ strategy }": [
         "Strategi konflik tidak dikenal: ${ strategy }"
       ],
@@ -3969,6 +4059,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak untuk akun Anda"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Semua alamat dalam paket telah digunakan. Harap tingkatkan paket untuk menambah alamat baru atau nonaktifkan alamat di akun Anda."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
@@ -5012,6 +5105,9 @@
       "${ storage } storage": [
         "Penyimpanan ${ storage }"
       ],
+      "${ total } user found": [
+        "${ total } pengguna ditemukan"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
@@ -5518,6 +5614,9 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "File dan folder yang pengguna lain bagikan kepada Anda akan muncul di sini"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Hanya file (tanpa foto, ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME }) - hingga total 100 GB, 100.000 file, dan 50 GB per file"
       ],
       "finance": [
         "keuangan"
@@ -7258,6 +7357,12 @@
       "Environment compatible": [
         "Lingkungan kompatibel"
       ],
+      "Exact host matching": [
+        "Pencocokan host persis"
+      ],
+      "Exact URL matching": [
+        "Pencocokan URL persis"
+      ],
       "Expired": [
         "Kedaluwarsa"
       ],
@@ -7423,6 +7528,9 @@
       "Never expires": [
         "Tidak pernah kedaluwarsa"
       ],
+      "Never fill on this exact URL": [
+        "Jangan pernah isi pada URL persis ini"
+      ],
       "New password": [
         "Kata sandi baru"
       ],
@@ -7455,6 +7563,9 @@
       ],
       "Outdated version": [
         "Versi usang"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domain induk dan subdomain (bawaan)"
       ],
       "Password": [
         "Kata sandi"
@@ -7509,6 +7620,9 @@
       ],
       "Region": [
         "Provinsi"
+      ],
+      "Regular expression": [
+        "Ekspresi reguler"
       ],
       "Replace existing folder or file": [
         "Ganti folder atau file yang telah ada"
@@ -7585,6 +7699,9 @@
       "Start date": [
         "Tanggal mulai"
       ],
+      "Starts with": [
+        "Mulai dengan"
+      ],
       "State": [
         "Negara bagian/provinsi"
       ],
@@ -7650,6 +7767,9 @@
       ],
       "Uploaded by": [
         "Diunggah oleh"
+      ],
+      "URL wildcard pattern": [
+        "Pola wildcard URL"
       ],
       "User opted in": [
         "Pengguna menyetujui"
@@ -8040,6 +8160,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Aturan pencocokan 'Mulai dengan'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Aturan pencocokan domain (sub) persis"
+      ],
+      "Exact URL matching rule": [
+        "Aturan pencocokan URL persis"
+      ],
+      "Never fill with this exact URL": [
+        "Jangan pernah isi dengan URL persis ini"
+      ],
+      "Regular expression rule": [
+        "Aturan ekspresi reguler"
+      ],
+      "Wildcard pattern matching rule": [
+        "Aturan pencocokan pola wildcard"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Uji coba gratis Anda telah berakhir. ${ nonAutoRenewalAction }"
       ],
@@ -10418,6 +10556,9 @@
       "Search for name or email": [
         "Cari nama atau email"
       ],
+      "Search for users or addresses": [
+        "Cari pengguna atau alamat"
+      ],
       "Search parent folder": [
         "Cari pada folder induk"
       ],
@@ -12035,6 +12176,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } unggahan gratis."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asisten penulisan ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Pemulihan akun"
       ],
@@ -12911,6 +13055,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gunakan ${ VPN_SHORT_APP_NAME } untuk privasi data"
       ],
+      "Users and addresses": [
+        "Pengguna dan alamat"
+      ],
       "Verification failed": [
         "Verifikasi gagal"
       ],
@@ -13195,6 +13342,11 @@
         "Dapatkan Drive for Business"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Anda akan dapat menetapkan peran setelah pengguna menerima undangan."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
@@ -13297,6 +13449,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } memberikan kendali yang kuat, tetapi satu kesalahan saja dapat menyebabkan isi otomatis mencocokkan dan mengisi data pada situs web penipuan atau phishing."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Yakin ingin mengapus ${ count } kontak secara permanen?"

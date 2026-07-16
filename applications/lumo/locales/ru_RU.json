@@ -973,6 +973,9 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Добавить файл в ${ DRIVE_APP_NAME }"
       ],
+      "Add memory": [
+        "Добавить воспоминание"
+      ],
       "Add to active": [
         "Добавить в активные"
       ],
@@ -997,8 +1000,17 @@
       "Clear auto-generated": [
         "Очистить автоматически созданные"
       ],
+      "click to hide me": [
+        "нажмите, чтобы скрыть меня"
+      ],
+      "click to let me out": [
+        "нажмите, чтобы выпустить меня"
+      ],
       "Close": [
         "Закрыть"
+      ],
+      "Collapse ${ LUMO_SHORT_APP_NAME }": [
+        "Свернуть ${ LUMO_SHORT_APP_NAME }"
       ],
       "Continue": [
         "Продолжить"
@@ -1039,11 +1051,17 @@
       "I like this response": [
         "Мне нравится этот ответ"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } out": [
+        "Выпустить ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Light": [
         "Светлая"
       ],
       "Manage files": [
         "Управление файлами"
+      ],
+      "More options": [
+        "Дополнительные параметры"
       ],
       "New chat": [
         "Новый чат"
@@ -1101,6 +1119,9 @@
       ],
       "Turn off and delete": [
         "Отключить и удалить"
+      ],
+      "Turn off memory": [
+        "Выключить память"
       ],
       "Turn on memory": [
         "Включить воспоминания"
@@ -1188,17 +1209,35 @@
       "1 TB cloud storage": [
         "1 ТБ в облачном хранилище"
       ],
+      "Administrative tools": [
+        "Инструменты администрирования"
+      ],
       "And much more": [
         "И многое другое"
       ],
       "Everything in Business": [
         "Всё из тарифа Business"
       ],
+      "More image generations": [
+        "Больше возможностей генерации изображений"
+      ],
+      "More Max model usage": [
+        "Больше лимитов на использование моделей Max"
+      ],
+      "More messages & chat history": [
+        "Больше сообщений и история переписки"
+      ],
       "Password manager": [
         "Менеджер паролей"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Благодаря шифрованию с нулевым доступом, ваши сохраненные беседы могут быть расшифрованы и прочитаны только на вашем устройстве. Ни ${ BRAND_NAME }, ни кто-либо другой не может их видеть."
+      ],
+      "Unlimited Custom Lumos": [
+        "Неограниченное количество пользовательских Lumos"
+      ],
+      "Unlimited Projects": [
+        "Неограниченное количество проектов"
       ],
       "Video meetings": [
         "Видеовстречи"
@@ -1384,6 +1423,9 @@
       "More thorough answers, but can take longer": [
         "Более подробные ответы, но это может занять больше времени"
       ],
+      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
+        "Безвозвратно удалить ваши проекты, чаты и сохраненные воспоминания. Это действие необратимо."
+      ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Чаты проектов полностью изолированы. Они используют собственные инструкции и файлы и полностью игнорируют ваши глобальные воспоминания."
       ],
@@ -1413,6 +1455,11 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Отключение воспоминаний безвозвратно удалит все сохраненные воспоминания (${ memories.length }). Вы сможете включить воспоминания позже, но удаленные данные восстановить не удастся."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Deletes all saved memories and turns off the memory feature.": [
+        "Удаляет все сохраненные воспоминания и отключает функцию памяти."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1916,6 +1963,9 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Создайте граф рабочего процесса и код реализации для следующей цели. Язык программирования для кода:"
       ],
+      "Generate them from your recent chats, or add one with + above.": [
+        "Создайте их на основе недавних чатов или добавьте воспоминание вручную с помощью кнопки «+» выше."
+      ],
       "Generating…": [
         "Генерация…"
       ],
@@ -2095,6 +2145,12 @@
       ],
       "There was an error processing this file.": [
         "При обработке этого файла произошла ошибка."
+      ],
+      "These files are no longer referred to in this conversation.": [
+        "На эти файлы больше не ссылаются в этой цепочке писем."
+      ],
+      "These files are referred to in the conversation.": [
+        "На эти файлы ссылаются в цепочке писем."
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Эти файлы относились к обобщенным сообщениям и больше не отправляются в модель."
@@ -2527,8 +2583,17 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
+      "${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "${ LUMO_SHORT_APP_NAME } Pro": [
+        "${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Business": [
         "Business"
+      ],
+      "Personal": [
+        "Личный"
       ],
       "Plus": [
         "Plus"
@@ -2941,6 +3006,9 @@
       "Elevate your business AI experience": [
         "Выйдите на новый уровень работы с ИИ для бизнеса"
       ],
+      "From only": [
+        "Всего от"
+      ],
       "Get": [
         "Получить"
       ],
@@ -2952,6 +3020,18 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Получить ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Получить ${ LUMO_SHORT_APP_NAME } Pro"
+      ],
+      "Upgrade": [
+        "Перейти на новый тариф"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Улучшить до ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Улучшить до ${ LUMO_SHORT_APP_NAME } Pro"
       ]
     },
     "collider_2025: Warning": {
@@ -9548,6 +9628,14 @@
         "Сэкономьте ${ priceString }"
       ]
     },
+    "Subtitle": {
+      "per month, billed annually": [
+        "в месяц, оплата за год"
+      ],
+      "per user/month, billed annually": [
+        "за пользователя в месяц при ежегодной оплате"
+      ]
+    },
     "Success": {
       "Billing details updated": [
         "Информация о платеже обновлена"
@@ -9650,6 +9738,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } теперь активна"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Помощник по написанию текстов ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Аккаунт ограничен"
@@ -9783,6 +9874,9 @@
       "Payment verification": [
         "Проверка платежа"
       ],
+      "Plan type": [
+        "Тип тарифа"
+      ],
       "Processing...": [
         "Обработка…"
       ],
@@ -9905,6 +9999,11 @@
       ],
       "The user must have an address to request data access": [
         "Пользователь должен иметь адрес, чтобы запросить доступ к данным"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы сможете назначать должности, как только пользователь примет приглашение."
       ]
     },
     "Validation": {

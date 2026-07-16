@@ -1323,6 +1323,27 @@
       "Status": [
         "État"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son adresse sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pour migrer cet utilisateur, celui-ci doit accepter son invitation à rejoindre ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, réactivez-le dans votre console d'administration Google Workspace."
+      ],
       "User": [
         "Utilisateur"
       ],
@@ -3183,8 +3204,8 @@
       "Failed to resend invitation": [
         "Le renvoi de l'invitation n'a pas abouti."
       ],
-      "Failed to trash document.": [
-        "Le document n'a pas pu être mis à la corbeille."
+      "Failed to trash document": [
+        "Le document n'a pas pu être mis à la corbeille"
       ],
       "Failed to unshare node": [
         "La désactivation du partage du nœud n'a pas abouti."
@@ -4950,6 +4971,9 @@
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Aidez-nous à améliorer cette expérience en signalant le problème. Si vous souhaitez partager le contenu de votre feuille de calcul, veuillez joindre les informations de débogage ci-dessous à votre rapport."
       ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Aidez-nous à améliorer cette expérience en signalant le problème. Veuillez joindre les informations de débogage ci-dessous à votre rapport."
+      ],
       "here": [
         "ici"
       ],
@@ -5622,6 +5646,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Nous avons constaté que vous aviez déjà rencontré des problèmes lors de l'ouverture d'un document."
       ],
       "Week": [
         "Semaine"
@@ -8121,9 +8148,6 @@
       "Device renamed": [
         "L'appareil a été renommé."
       ],
-      "Document failed to be restored from trash": [
-        "Le document n'a pas pu être restauré depuis la corbeille."
-      ],
       "Document moved to trash": [
         "Le document a été mis à la corbeille."
       ],
@@ -8139,6 +8163,9 @@
       "Failed to accept share invitation": [
         "L'invitation au partage n'a pas pu être acceptée."
       ],
+      "Failed to delete document": [
+        "Impossible de supprimer le document"
+      ],
       "Failed to download files: ${ err }": [
         "Les fichiers n'ont pas pu être téléchargés : ${ err }"
       ],
@@ -8153,6 +8180,12 @@
       ],
       "Failed to rename document": [
         "Le document n'a pas pu être renommé."
+      ],
+      "Failed to restore document": [
+        "Le document n'a pas pu être restauré."
+      ],
+      "Failed to trash document": [
+        "Le document n'a pas pu être mis à la corbeille"
       ],
       "Failed to upload files: ${ err }": [
         "Les fichiers n'ont pas pu être chargés : ${ err }"
@@ -10485,6 +10518,9 @@
       "Private browsing vs VPN": [
         "Navigation privée versus VPN"
       ],
+      "Problems Detected": [
+        "Problèmes détectés"
+      ],
       "Public link": [
         "Lien public"
       ],
@@ -10646,6 +10682,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilisez ${ VPN_SHORT_APP_NAME } pour la confidentialité des données"
+      ],
+      "Users and addresses": [
+        "Utilisateurs et adresses"
       ],
       "Verify your password": [
         "Vérifiez votre mot de passe"

@@ -1240,6 +1240,11 @@
         "${ n } poruke po danu",
         "${ n } poruka po danu"
       ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna povijest verzija datoteka",
+        "povijest verzija datoteke od ${ options } dana",
+        "Historial de versiones de archivos de ${ options } días"
+      ],
       "${ size } attachment size": [
         "Veličina privitka: ${ size }"
       ],
@@ -1406,6 +1411,9 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Stvorite više adresa e-pošte za svoje mrežne identitete, npr. JohnShopper@${ domain } za račune za kupovinu, JohnNews@${ domain2 } za pretplatu na vijesti"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Prostor za pohranu dijeli se između aplikacija ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
