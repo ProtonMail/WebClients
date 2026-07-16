@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } для Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } для iOS"
+      ],
       "Accept": [
         "Принять"
       ],
@@ -81,6 +87,9 @@
       ],
       "Advanced options": [
         "Расширенные настройки"
+      ],
+      "Allow access": [
+        "Разрешить доступ"
       ],
       "and": [
         "и"
@@ -148,6 +157,9 @@
       "Close navigation": [
         "Закрыть панель навигации"
       ],
+      "Configure": [
+        "Настроить"
+      ],
       "Confirm": [
         "Подтвердить"
       ],
@@ -169,17 +181,44 @@
       "Copy and close": [
         "Скопировать и закрыть"
       ],
+      "Copy card number": [
+        "Скопировать номер карты"
+      ],
+      "Copy email": [
+        "Скопировать эл. почту"
+      ],
+      "Copy expiration date": [
+        "Скопировать срок действия"
+      ],
       "Copy forwarding address": [
         "Копировать адрес пересылки"
+      ],
+      "Copy instructions": [
+        "Скопировать инструкции"
       ],
       "Copy link": [
         "Копировать ссылку"
       ],
+      "Copy name on card": [
+        "Скопировать имя на карте"
+      ],
+      "Copy note content": [
+        "Скопировать текст заметки"
+      ],
       "Copy password": [
         "Скопировать пароль"
       ],
+      "Copy security code": [
+        "Скопировать код безопасности"
+      ],
       "Copy to clipboard": [
         "Скопировать в буфер обмена"
+      ],
+      "Copy token": [
+        "Скопировать токен"
+      ],
+      "Copy username": [
+        "Скопировать имя пользователя"
       ],
       "Create": [
         "Создать"
@@ -213,6 +252,9 @@
       ],
       "Create note": [
         "Создать заметку"
+      ],
+      "Create token": [
+        "Создать токен"
       ],
       "Create vault": [
         "Создать хранилище"
@@ -268,6 +310,12 @@
       "Dismiss": [
         "Отклонить"
       ],
+      "Do not show again": [
+        "Больше не показывать"
+      ],
+      "Do not show again when I press": [
+        "Больше не показывать при нажатии"
+      ],
       "Do not show on this website": [
         "Не показывать на этом веб-сайте"
       ],
@@ -321,6 +369,9 @@
       ],
       "Generating secure link...": [
         "Создание защищенной ссылки..."
+      ],
+      "Get mobile and desktop apps": [
+        "Скачать мобильные и десктопные приложения"
       ],
       "Get mobile apps": [
         "Получить мобильные приложения"
@@ -409,6 +460,9 @@
       "Manage access": [
         "Управление доступом"
       ],
+      "Manage vault access": [
+        "Управлять доступом к хранилищу"
+      ],
       "Manually sync your data": [
         "Синхронизировать ваши данные вручную"
       ],
@@ -445,6 +499,9 @@
       "Multiple select": [
         "Множественный выбор"
       ],
+      "New token": [
+        "Новый токен"
+      ],
       "Next month": [
         "Следующий месяц"
       ],
@@ -462,6 +519,9 @@
       ],
       "Open navigation": [
         "Открыть панель навигации"
+      ],
+      "Organize vaults": [
+        "Управление хранилищами"
       ],
       "Pass Monitor": [
         "Pass Monitor"
@@ -484,11 +544,20 @@
       "Reactivate now": [
         "Восстановить подписку"
       ],
+      "Read More": [
+        "Подробнее"
+      ],
       "Refresh the page": [
         "Обновить страницу"
       ],
       "Regenerate": [
         "Перегенерировать"
+      ],
+      "Regex invalid": [
+        "Некорректное регул. выражение"
+      ],
+      "Regex unsafe": [
+        "Небезопасное регулярное выражение"
       ],
       "Reject": [
         "Отказать"
@@ -607,6 +676,9 @@
       "Show advanced options": [
         "Показать дополнительные параметры"
       ],
+      "Show Less": [
+        "Свернуть"
+      ],
       "Sign back in": [
         "Войти обратно"
       ],
@@ -703,6 +775,9 @@
       "Via secure link": [
         "Через защищенную ссылку"
       ],
+      "View agent activity": [
+        "Просмотреть активность агента"
+      ],
       "View app logs": [
         "Просмотр журналов приложений"
       ],
@@ -731,6 +806,26 @@
         "Вашего менеджера паролей здесь нет? Запросите его."
       ]
     },
+    "Activity": {
+      "Activity": [
+        "Активность"
+      ],
+      "Activity details could not be loaded.": [
+        "Не удалось загрузить подробности активности."
+      ],
+      "Folder": [
+        "Папка"
+      ],
+      "Item": [
+        "Элемент"
+      ],
+      "Reason": [
+        "Причина"
+      ],
+      "Vault": [
+        "Хранилище"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } для ПК"
@@ -747,6 +842,11 @@
       ],
       "Expand": [
         "Развернуть"
+      ]
+    },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Вы хотите, чтобы буфер обмена автоматически очищался через ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -831,6 +931,9 @@
       "These items remain at risk": [
         "Эти элементы остаются под угрозой"
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Эти хранилища будут недоступны, а их содержимое станет недоступно для поиска или автозаполнения."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Этот аккаунт уязвим, посетите службу и смените пароль."
       ],
@@ -862,6 +965,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } не может быть обработан. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Проверка разблокировки на компьютере уже выполняется."
+      ],
       "A domain ownership must be verified first.": [
         "Сначала необходимо проверить владение доменом."
       ],
@@ -891,6 +997,21 @@
       ],
       "Authentication failure: ${ message }": [
         "Сбой аутентификации: ${ message }"
+      ],
+      "Biometric authentication failed.": [
+        "Биометрическая аутентификация не удалась."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Учетные данные биометрической блокировки не совпадают."
+      ],
+      "Biometric lock credentials not found.": [
+        "Учетные данные биометрической блокировки не найдены."
+      ],
+      "Biometric lock is not configured.": [
+        "Биометрическая блокировка не настроена."
+      ],
+      "Biometric lock setup failed.": [
+        "Настройка биометрической блокировки не удалась."
       ],
       "Cannot create alias (${ error }).": [
         "Не могу создать псевдоним (${ error })."
@@ -934,6 +1055,9 @@
       "Could not validate addresses at the moment.": [
         "Не удалось проверить адреса в данный момент."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Не удалось загрузить инструкции по настройке агента. Скопируйте токен ниже, он больше не будет показан."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "В файле CSV отсутствуют ожидаемые заголовки: ${ missingHeaders }"
       ],
@@ -970,11 +1094,17 @@
       "Emptying trash failed": [
         "Ошибка при шифровании корзины"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Ошибка зашифрованного соединения с десктопным приложением ${ PASS_APP_NAME }."
+      ],
       "Encrypted JSON not supported": [
         "Зашифрованный JSON не поддерживается"
       ],
       "Error reporting problem": [
         "Ошибка при сообщении о проблеме"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Срок действия должен быть от 1 часа до 1 года"
       ],
       "Failed loading group members": [
         "Ошибка при загрузке членов группы"
@@ -997,6 +1127,9 @@
       "Failed to change mailbox": [
         "Не удалось изменить почтовый ящик"
       ],
+      "Failed to create access token": [
+        "Не удалось создать токен доступа"
+      ],
       "Failed to create domain": [
         "Не удалось создать домен"
       ],
@@ -1005,6 +1138,9 @@
       ],
       "Failed to create the contact": [
         "Не удалось создать контакт"
+      ],
+      "Failed to delete access token": [
+        "Не удалось удалить токен доступа"
       ],
       "Failed to delete domain": [
         "Не удалось удалить домен"
@@ -1024,6 +1160,9 @@
       "Failed to edit user's access.": [
         "Не удалось изменить доступ пользователя."
       ],
+      "Failed to load access tokens": [
+        "Не удалось загрузить токены доступа"
+      ],
       "Failed to load breaches for this address": [
         "Не удалось загрузить утечки для этого адреса"
       ],
@@ -1035,6 +1174,9 @@
       ],
       "Failed to load item history": [
         "Не удалось загрузить историю элементов"
+      ],
+      "Failed to load token actions": [
+        "Не удалось загрузить действия токена"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Сбой при перемещении всех элементов из \"${ payload.content.name }\""
@@ -1093,6 +1235,9 @@
       "Failed to update random prefix generation setting.": [
         "Не удалось обновить настройки генерации случайных префиксов."
       ],
+      "Failed to update vault access": [
+        "Не удалось обновить доступ к хранилищу"
+      ],
       "Failed to verify domain": [
         "Не удалось проверить домен"
       ],
@@ -1114,8 +1259,14 @@
       "File does not match expected format": [
         "Файл не соответствует ожидаемому формату"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Не удалось выполнить импорт для хранилища «${ vaultData.name }»: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Сбой импорта элементов"
+      ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Для продолжения приложению ${ PASS_APP_NAME } требуются следующие разрешения расширения: ${ permissionsJSX }"
       ],
       "Inactive secure links could not be removed.": [
         "Не удалось удалить неактивные защитные ссылки."
@@ -1153,11 +1304,20 @@
       "Name is required": [
         "Требуется имя"
       ],
+      "Name must be 191 characters or fewer": [
+        "Имя должно содержать не более 191 символа"
+      ],
       "Network error": [
         "Ошибка сети"
       ],
       "Passphrase is incorrect": [
         "Неверная парольная фраза"
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Отказано в разрешении на доступ к веб-сайту ${ domainsJSX }."
+      ],
+      "Permission denied for website access.": [
+        "В доступе к веб-сайту отказано."
       ],
       "PIN codes do not match": [
         "PIN-коды не совпадают"
@@ -1183,6 +1343,9 @@
       "Secure link could not be opened.": [
         "Не удалось открыть защищенную ссылку."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Серверы недоступны. Пожалуйста, попробуйте разблокировать ${ PASS_SHORT_APP_NAME } через несколько минут."
+      ],
       "Settings update failed": [
         "Ошибка при обновлении настроек"
       ],
@@ -1198,11 +1361,32 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Что-то пошло не так. Пожалуйста, перезагрузите расширение ${ PASS_APP_NAME }. Эта проблема была зарегистрирована"
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Десктопное приложение ${ PASS_APP_NAME } не ответило вовремя."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Десктопное приложение ${ PASS_APP_NAME } заблокировано, его необходимо разблокировать."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Десктопное приложение ${ PASS_APP_NAME } не установлено."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Десктопное приложение ${ PASS_APP_NAME } не отвечает. Оно запущено?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "В десктопном приложении ${ PASS_APP_NAME } выполнен вход в другой аккаунт."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "В десктопном приложении ${ PASS_APP_NAME } должен быть выполнен вход."
+      ],
       "The URL is in the list": [
         "Этот URL уже в списке"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Произошла ошибка при удалении защищенной ссылки. Повторите попытку через несколько минут."
+      ],
+      "This domain is already managed by your organization": [
+        "Этот домен уже управляется вашей организацией"
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Это может произойти после того, как вы долгое время не использовали ${ PASS_SHORT_APP_NAME } или очистили историю Safari."
@@ -1243,6 +1427,9 @@
       "Unsupported 1Password file format": [
         "Неподдерживаемый формат файла 1Password"
       ],
+      "Unsupported Bitwarden file format": [
+        "Неподдерживаемый формат файла Bitwarden"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Сбой при обновлении хранилища \"${ payload.content.name }\""
       ],
@@ -1272,6 +1459,9 @@
       ],
       "Wrong second password": [
         "Неверный второй пароль"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Вы сейчас не в сети. Пожалуйста, возобновите подключение, чтобы разблокировать ${ PASS_SHORT_APP_NAME }."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Ваш браузер испытывает трудности с активацией ${ PASS_APP_NAME }."
@@ -1405,6 +1595,12 @@
         "${ forwardedEmailsCount } пересланы",
         "${ forwardedEmailsCount } пересланы"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "Пользователь ${ inviterEmail } хочет поделиться элементом с группой, которой вы управляете."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "Пользователь ${ inviterEmail } хочет поделиться элементом с группой ${ name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } хочет поделиться с вами элементом."
       ],
@@ -1453,6 +1649,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } предложит сохранить passkey."
       ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "В настоящее время ${ PASS_SHORT_APP_NAME } работает офлайн. Откройте расширение, чтобы разблокировать."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Офлайн-режим ${ PASS_SHORT_APP_NAME } включен."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } приглашение успешно отправлено",
         "${ payload.count } приглашения успешно отправлены",
@@ -1477,6 +1679,9 @@
         "Обнаружены ${ row.breachCount } утечек",
         "Обнаружены ${ row.breachCount } утечек"
       ],
+      "${ selectedShareIds.size } selected": [
+        "Выбрано: ${ selectedShareIds.size }"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } день остался",
         "${ trialDaysLeft } дня осталось",
@@ -1491,6 +1696,9 @@
       ],
       "(Empty)": [
         "(Пусто)"
+      ],
+      "2FA code copied to clipboard": [
+        "Код 2FA скопирован в буфер обмена"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 дней, чтобы попробовать платные функции бесплатно. Только в течение первой недели использования ${ BRAND_NAME }."
@@ -1507,6 +1715,9 @@
       "Access successfully confirmed": [
         "Доступ успешно подтверждён"
       ],
+      "access to ${ domains }.": [
+        "доступ к ${ domains }."
+      ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Для доступа к ${ PASS_APP_NAME } всегда потребуется ваш пароль ${ BRAND_NAME }."
       ],
@@ -1522,6 +1733,15 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступа к ${ PASS_APP_NAME } потребуется ваш отпечаток пальца или PIN-код устройства."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Срок действия токена доступа \"${ action.token.Name }\" уже истек. В случае удаления он больше не будет отображаться."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Токен доступа «${ action.token.Name }» немедленно прекратит работу. Это действие нельзя отменить."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Токены доступа, используемые совместно с ${ passCliLink }, позволяют автоматизировать CI/CD или предоставить вашему ИИ-агенту ограниченный доступ к тому, что ему необходимо для выполнения работы."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Получайте доступ к своим паролям на ходу с нашими мобильными приложениями."
       ],
@@ -1530,6 +1750,12 @@
       ],
       "Admin": [
         "Админ"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "После автозаполнения логина его код 2FA копируется в буфер обмена."
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "После подтверждения вам потребуется принять запрос на разрешение для ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "После успешного импорта данных вы можете удалить файл CSV, содержащий ваши пароли, для безопасности."
@@ -1576,6 +1802,9 @@
       "All trashed items successfully restored": [
         "Все элементы из корзины успешно восстановлены"
       ],
+      "An item previously shared with you was removed.": [
+        "Элемент, которым с вами ранее поделились, был удален."
+      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Вы уверены, что хотите удалить ${ emailJSX } из своих почтовых ящиков?"
       ],
@@ -1588,17 +1817,26 @@
       "Auto-lock successfully disabled.": [
         "Автоблокировка успешно отключена."
       ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Автозаполнение диалоговых окон базовой аутентификации HTTP сохраненными учетными данными."
+      ],
       "automatically": [
         "автоматически"
       ],
       "Automatically copy the generated password to the clipboard": [
         "Автоматически копировать сгенерированный пароль в буфер обмена"
       ],
+      "Automatically fill in your saved payment information.": [
+        "Автоматически заполняйте сохраненные платежные данные."
+      ],
       "Autosaved on ${ url }": [
         "Автосохранено на ${ url }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Прежде чем экспортировать данные в этом формате, откройте настройки Safari -> вкладку \"Общие\" -> отключите опцию \"Открывать безопасные файлы после загрузки\". Это предотвратит неправильное извлечение Safari экспортированного файла."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "От 60 (1 час) до 525600 (1 год)"
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Блокировка биометрических данных успешно зарегистрирована. Используйте ее для разблокировки ${ PASS_APP_NAME }"
@@ -1666,14 +1904,32 @@
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Скопировано в буфер обмена (истекает через ${ timeoutDurationHumanReadable })"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Скопируйте разметку ниже и отправьте ее своему ИИ-агенту. Токен показывается в первый и последний раз."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Скопируйте этот токен сейчас. Из соображений безопасности он больше не будет показан."
+      ],
       "Coupon successfully applied!": [
         "Купон успешно применен!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Создайте токен для интеграции ${ PASS_APP_NAME } со своими скриптами и инструментами."
       ],
       "Create contact illustration": [
         "Создайте иллюстрацию контакта"
       ],
+      "Created ${ createdDate }": [
+        "Создано: ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Создан ${ time }."
+      ],
+      "Created item": [
+        "Создан элемент"
       ],
       "Creating alias...": [
         "Создание псевдонима..."
@@ -1690,6 +1946,9 @@
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Отображаемое имя по умолчанию для псевдонимов, созданных с помощью ${ domainDisplay }, если оно не перезаписано отображаемым именем псевдонима."
       ],
+      "Deleted item": [
+        "Элемент удален"
+      ],
       "Deleted items will be moved here first": [
         "Удаленные элементы будут сначала перемещены сюда"
       ],
@@ -1705,11 +1964,17 @@
       "Disabling auto-lock failed": [
         "Не удалось отключить автоматическую блокировку"
       ],
+      "Discover ${ PASS_APP_NAME } video": [
+        "Посмотреть видео о ${ PASS_APP_NAME }"
+      ],
       "DNS changes could take up to 24 hours to update.": [
         "Обновление DNS может занять до 24 часов."
       ],
       "Domain: ${ domainPath } or @": [
         "Домен: ${ domainPath } или @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Скачайте pass-cli по ссылке ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
@@ -1753,11 +2018,17 @@
       "Enable auto-locking to secure your data": [
         "Включите автоматическую блокировку для защиты ваших данных"
       ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Включите офлайн-режим, чтобы иметь возможность получить доступ к своим данным в ${ PASS_SHORT_APP_NAME } в случае потери интернет-соединения или недоступности серверов ${ BRAND_NAME }."
+      ],
       "Enabling biometrics auto-lock": [
         "Включение автоматической блокировки биометрических данных"
       ],
       "Enabling biometrics lock failed": [
         "Включение блокировки биометрических данных не удалось"
+      ],
+      "Enabling desktop auto-lock": [
+        "Включение автоблокировки на десктопе"
       ],
       "Enabling offline mode...": [
         "Включение режима офлайн..."
@@ -1783,14 +2054,23 @@
       "Enter your PIN code": [
         "Введите свой PIN-код"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Каждое действие, выполненное этим токеном агента, начиная с самых новых."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Каждый раз, когда ваш псевдоним получает письмо от кого-то, новый контакт создается автоматически."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Срок действия истек ${ formattedDate }"
       ],
       "Expires in": [
         "Истекает через"
       ],
       "Expires in ${ remainingTime }": [
         "Истекает через ${ remainingTime }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Истекает ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Экспорт ваших данных..."
@@ -1800,6 +2080,9 @@
       ],
       "Extra password successfully removed": [
         "Дополнительный пароль успешно удален"
+      ],
+      "Failed updating your vault organization": [
+        "Не удалось обновить организацию вашего хранилища"
       ],
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
@@ -1879,6 +2162,9 @@
       "Invite successfully resent": [
         "Приглашение успешно переотправлено"
       ],
+      "invites the group ${ name } to access items in": [
+        "приглашает группу ${ name } получить доступ к элементам в"
+      ],
       "invites you to access items in": [
         "приглашает вас получить доступ к элементам в"
       ],
@@ -1948,6 +2234,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Log out of any existing session:": [
+        "Выйдите из любого существующего сеанса:"
+      ],
       "Logging you out...": [
         "Выполняется выход из системы..."
       ],
@@ -1978,13 +2267,13 @@
         "Переместить ${ count } элементов",
         "Переместить ${ count } элементов"
       ],
+      "Moved item to trash": [
+        "Элемент перемещен в Корзину"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
         "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
@@ -1999,6 +2288,9 @@
       "Moving items to trash": [
         "Перемещение элементов в Корзину"
       ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Перейдите в настройки расширений вашего браузера и включите разрешения сайтов для ${ PASS_SHORT_APP_NAME }."
+      ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Вам нужно отправить кому-то письмо, но вы не хотите, чтобы он видел ваш адрес электронной почты? Создайте псевдоним для контакта."
       ],
@@ -2008,8 +2300,14 @@
       "New": [
         "Новый"
       ],
+      "No activity recorded yet.": [
+        "Активность пока не зарегистрирована."
+      ],
       "No breaches detected": [
         "Утечки не обнаружены"
+      ],
+      "No credit cards found": [
+        "Кредитные карты не найдены"
       ],
       "No identity item found": [
         "Элемент личных данных не найден"
@@ -2020,8 +2318,17 @@
       "No network connection": [
         "Нет подключения к сети"
       ],
+      "No vaults available.": [
+        "Нет доступных хранилищ."
+      ],
       "None": [
         "Ничего"
+      ],
+      "None selected": [
+        "Ничего не выбрано"
+      ],
+      "Not configured": [
+        "Не настроено"
       ],
       "Not recommended": [
         "Не рекомендуется"
@@ -2034,6 +2341,18 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для онлайн-доступа к ${ PASS_APP_NAME } потребуется PIN-код. Вы выйдете из системы после 3 неудачных попыток."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Отображаются только токены, срок действия которых истек за последние 30 дней. Более старые токены удаляются автоматически."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Открыть ${ PASS_APP_NAME } в увеличенном окне"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Открыть всплывающее окно ${ PASS_APP_NAME }"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Откройте настройки Safari, найдите ${ PASS_APP_NAME }, перейдите в раздел «Разрешения» и включите разрешения для сайтов."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
@@ -2188,8 +2507,17 @@
       "Please follow the steps below to set up your domain.": [
         "Следуйте инструкциям ниже, чтобы настроить домен."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Пожалуйста, держите приложение ${ PASS_APP_NAME } открытым, чтобы буфер обмена мог очищаться автоматически."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Не закрывайте это окно, пока импортируются ваши данные. Этот процесс может занять несколько минут."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Пожалуйста, держите браузер открытым, чтобы буфер обмена мог очищаться автоматически."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Пожалуйста, убедитесь, что ранее активное окно — это то место, куда вы хотите применить автонабор, а курсор находится в поле ввода имени пользователя."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Обратите внимание, что после удаления псевдоним не может быть восстановлен. Возможно, вы хотите отключить псевдоним вместо этого?"
@@ -2203,6 +2531,9 @@
       "Press Enter to copy": [
         "Нажмите Ввод чтобы скопировать"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Защищено ${ PROTON_SENTINEL_LINK }, нашей передовой программой защиты аккаунтов"
+      ],
       "Quickly autofill your 2FA tokens.": [
         "Быстрое автозаполнение ваших токенов двухфакторной идентификации."
       ],
@@ -2211,6 +2542,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Быстрое автоматическое заполнение сохраненных учетных данных."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Сортировка по полям (сначала название, затем имя пользователя или эл. почта, веб-сайт, заметки) и по точности совпадения (точное соответствие, начинается с, содержит)."
+      ],
+      "Read item": [
+        "Прочесть элемент"
       ],
       "Reconnect": [
         "Возобновить соединение"
@@ -2245,11 +2582,20 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Сброс истории приведет к окончательному удалению всех прошлых версий элементов и не может быть отменен."
       ],
+      "Restored item from trash": [
+        "Элемент восстановлен из Корзины"
+      ],
       "Restoring items from trash": [
         "Восстановление элементов из Корзины"
       ],
       "Restoring trashed items...": [
         "Восстановление элементов из корзины..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Нажмите правой кнопкой мыши на иконку расширения и выберите «Управление расширением». Перейдите в раздел «Разрешения и данные» и включите разрешения для сайтов."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Нажмите правой кнопкой мыши на иконку расширения и выберите «Управление расширением». Перейдите в раздел «Доступ к сайтам» и включите разрешения для сайтов."
       ],
       "Save login": [
         "Сохранить логин"
@@ -2266,6 +2612,9 @@
       "Select destination vault": [
         "Выберите целевое хранилище:"
       ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Выберите хранилища, которые «${ token.Name }» может читать."
+      ],
       "Select where you want your imported vaults to be saved.": [
         "Выберите куда вы хотите сохранить импортированные хранилища."
       ],
@@ -2277,6 +2626,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Выбранные элементы успешно восстановлены из корзины"
+      ],
+      "Servers are unreachable": [
+        "Серверы недоступны"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -2335,8 +2687,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Коснитесь значка ${ gearIcon }, чтобы настроить псевдоним так, как вы хотите."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Протестируйте токен, выполнив вход и выведя список хранилищ:"
+      ],
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Агент должен будет указывать причину для каждого выполняемого им действия, и каждое действие будет записываться в журнал аудита, который вы сможете просмотреть. После создания токена вы получите инструкции для копирования и вставки в своего ИИ-агента."
       ],
       "The display name when sending an email from this alias.": [
         "Отображаемое имя при отправке электронной почты с этого псевдонима."
@@ -2359,6 +2717,9 @@
         "Следующие ${ totalIgnored } элементов не могут быть импортированы:",
         "Следующие ${ totalIgnored } элементов не могут быть импортированы:"
       ],
+      "The group is invited to a vault.": [
+        "Группа приглашена в хранилище."
+      ],
       "The secure link has been removed": [
         "Защищенная ссылка удалена"
       ],
@@ -2368,8 +2729,17 @@
       "The user did not accept the invitation yet.": [
         "Пользователь ещё не принял приглашение."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Затем вы можете перейти на страницу ${ url }, чтобы скопировать инструкции для отправки вашему ИИ-агенту."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Экспорт не будет зашифрован, и кто угодно, кто получит доступ к вашему экспортированному файлу, сможет увидеть ваши пароли. Для безопасности, пожалуйста, удалите его после использования."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Эта функция в настоящее время является экспериментальной на Linux. Пожалуйста, убедитесь, что ваша система обновлена."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Для работы этой функции требуется, чтобы десктопное приложение ${ PASS_APP_NAME } было установлено и запущено во время настройки."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "В настоящее время этот элемент ни с кем совместно не используется. Предложите людям поделиться им с другими."
@@ -2395,6 +2765,9 @@
       "This setting is enforced by your organization": [
         "Этот параметр устанавливается вашей организацией"
       ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Этот токен получает доступ только для чтения к выбранным вами хранилищам. Он может читать элементы, но не может редактировать их, делиться хранилищами или приглашать других. Вы можете изменить это позже."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Это хранилище в данный момент не является общим с кем-либо. Пригласите людей, чтобы поделиться им с другими."
       ],
@@ -2403,6 +2776,9 @@
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Это отклонит устройство **${ name }**, которое пыталось войти в ваш аккаунт ${ BRAND_NAME } **${ date }**."
+      ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Чтобы настроить сочетания клавиш, перейдите по адресу about:addons в Firefox и выберите «Управление сочетаниями клавиш расширения»"
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Чтобы продолжать получать электронные письма, перенесите эти псевдонимы в другой почтовый ящик:"
@@ -2416,6 +2792,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Чтобы просмотреть ваши импортированные данные, нажмите на значок ${ PASS_APP_NAME } на панели инструментов вашего браузера."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Чтобы настроить разблокировку по биометрии, для ${ PASS_APP_NAME } требуется новое разрешение браузера. После того как вы примете его, расширение перезагрузится. Пожалуйста, откройте эту страницу заново после этого."
+      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Попробуйте перезагрузить или переустановить расширение и убедитесь, что ваш браузер и ${ PASS_SHORT_APP_NAME } являются обновленными."
       ],
@@ -2427,6 +2806,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Неограниченное количество псевдонимов hide-my-email и расширенное управление псевдонимами"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Разблокируйте ${ PASS_APP_NAME }, чтобы получить доступ к своим ключам доступа"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Разблокируйте ${ PASS_APP_NAME }, чтобы сохранить этот ключ доступа"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Разблокировать ${ PASS_SHORT_APP_NAME } с помощью биометрических данных"
@@ -2455,11 +2840,20 @@
       "Update login": [
         "Обновить логин"
       ],
+      "Updated item": [
+        "Элемент обновлен"
+      ],
+      "Updating vault organization...": [
+        "Обновление организации хранилища..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Улучшить ${ PASS_APP_NAME }"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Улучшите сейчас, чтобы получить платне функции"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Улучшите тарифный план до ${ PASS_APP_NAME } Plus, чтобы создавать токены доступа и использовать ${ PASS_APP_NAME } программно."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Перейдите на платный план, чтобы создать несколько хранилищ."
@@ -2481,6 +2875,15 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Хранилище \"${ payload.share.content.name }\" успешно обновлено"
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Хранилище «${ share.content.name }» было удалено."
+      ],
+      "Vault access granted": [
+        "Доступ к хранилищу предоставлен"
+      ],
+      "Vault organization successfully updated": [
+        "Организация хранилища успешно обновлена"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Совместное использование хранилища ${ vaultMembersCount } пользователем",
@@ -2515,6 +2918,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "При создании или изменении имени пользователя в ${ PASS_APP_NAME } ввод 'имени пользователя' всегда будет виден."
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Когда режим включен, вы по-прежнему можете получить доступ к своим данным в ${ PASS_SHORT_APP_NAME } при потере интернет-соединения или недоступности серверов ${ BRAND_NAME }."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "При отправке письма с этого псевдонима в письме в качестве отправителя будет указан ${ emailSender }."
       ],
@@ -2526,6 +2932,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Теперь вы можете использовать свой пароль ${ BRAND_NAME } для доступа к ${ PASS_SHORT_APP_NAME } в офлайновом режиме."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Теперь вы можете использовать свой резервный пароль, чтобы получить доступ к ${ PASS_SHORT_APP_NAME } в режиме офлайн"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Теперь вы можете использовать свой дополнительный пароль, чтобы получить доступ к ${ PASS_SHORT_APP_NAME } в режиме офлайн"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Теперь вы можете использовать свой второй пароль, чтобы получить доступ к ${ PASS_SHORT_APP_NAME } в режиме офлайн"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Вы не можете изменить почтовые ящики для этого псевдонима."
@@ -2563,8 +2978,20 @@
       "You may close this tab.": [
         "Вы можете закрыть эту вкладку."
       ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Возможно, вам потребуется предоставить разрешение на специальные возможности для ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Чтобы импортировать элементы, необходимо иметь хранилище с правами изменения."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Вы больше не имеете доступа к некоторым хранилищам или элементам, поскольку доступ вашей группы ${ groupName } был удален."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Теперь вы имеете доступ к «Item ${ itemName }», поскольку вашей группе ${ groupName } был предоставлен доступ."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Теперь вы имеете доступ к «Vault ${ vaultName }», поскольку вашей группе ${ groupName } был предоставлен доступ."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "После проверки домена вы сможете настроить параметры домена (универсальные почтовые псевдонимы, отображаемое имя по умолчанию для псевдонимов и т. д.)."
@@ -2583,6 +3010,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Вы больше не будете получать уведомления об утечках данных на этот адрес электронной почты."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Вы больше не будете иметь доступ к общему доступу, 2FA и другим дополнительным функциям в ${ PASS_APP_NAME }"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Общий доступ, двухфакторная аутентификация, кредитная карта и другие расширенные функции в ${ PASS_APP_NAME } будут больше недоступны"
@@ -2613,6 +3043,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2709,11 +3147,23 @@
         "${ years } лет",
         "${ years } лет"
       ],
+      "1 day": [
+        "1 день"
+      ],
       "1 hour": [
         "1 час"
       ],
       "1 minute": [
         "1 минута"
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "1 week": [
+        "1 неделя"
+      ],
+      "1 year": [
+        "1 год"
       ],
       "10 minutes": [
         "10 минут"
@@ -2760,8 +3210,14 @@
       "A-Z": [
         "А-Я"
       ],
+      "Access tokens": [
+        "Токены доступа"
+      ],
       "Account": [
         "Аккаунт"
+      ],
+      "Account Number": [
+        "Номер счёта"
       ],
       "Account Type": [
         "Тип аккаунта"
@@ -2820,6 +3276,9 @@
       "Authenticate with passkeys": [
         "Аутентифицироваться с паролем"
       ],
+      "Auto-copy 2FA code": [
+        "Автокопирование кода 2FA"
+      ],
       "Auto-lock after": [
         "Автоматическая блокировка через"
       ],
@@ -2843,6 +3302,12 @@
       ],
       "Bank Name": [
         "Название банка"
+      ],
+      "Basic": [
+        "Базовые"
+      ],
+      "Basic Auth autofill": [
+        "Автозаполнение Basic Auth"
       ],
       "Biometrics": [
         "Биометрия"
@@ -2870,6 +3335,12 @@
       ],
       "Catch-All": [
         "Прием всей почты домена"
+      ],
+      "Check": [
+        "Проверить"
+      ],
+      "Checkbox": [
+        "Флажок"
       ],
       "City": [
         "Город"
@@ -2940,8 +3411,17 @@
       "Created at": [
         "Создано"
       ],
+      "Credit-card autofill": [
+        "Автозаполнение кредитных карт"
+      ],
       "Crypto Wallet": [
         "Криптокошелёк"
+      ],
+      "Custom": [
+        "Свой вариант"
+      ],
+      "Custom expiration (minutes)": [
+        "Пользовательский срок действия (в минутах)"
       ],
       "Custom Items": [
         "Пользовательские элементы"
@@ -3018,14 +3498,26 @@
       "Enter email or username": [
         "Введите адрес электронной почты или имя пользователя"
       ],
+      "Exact host matching": [
+        "Точное соответствие хоста"
+      ],
+      "Exact URL matching": [
+        "Точное соответствие URL"
+      ],
       "Expiration date": [
         "Срок действия"
       ],
       "Expired": [
         "Истекло"
       ],
+      "Expired tokens (${ expired.length })": [
+        "Токены с истекшим сроком действия (${ expired.length })"
+      ],
       "Expires in": [
         "Истекает через"
+      ],
+      "Expiry Date": [
+        "Срок действия"
       ],
       "Export": [
         "Экспорт"
@@ -3087,6 +3579,9 @@
       "Hide password": [
         "Скрыть пароль"
       ],
+      "Holder Name": [
+        "Имя владельца"
+      ],
       "Hospital": [
         "Больница"
       ],
@@ -3147,6 +3642,15 @@
       "IP Address": [
         "IP-адрес"
       ],
+      "Issuing Authority": [
+        "Орган выдачи"
+      ],
+      "Issuing Country": [
+        "Страна выдачи"
+      ],
+      "Issuing State/Country": [
+        "Страна/штат выдачи"
+      ],
       "Item ID": [
         "ID элемента"
       ],
@@ -3170,6 +3674,9 @@
       ],
       "Language": [
         "Язык"
+      ],
+      "Larger window": [
+        "Увеличить окно"
       ],
       "Last 2 weeks": [
         "Последние 2 недели"
@@ -3234,14 +3741,29 @@
       "max views reached": [
         "достигнуто максимальное количество просмотров"
       ],
+      "Medical Conditions": [
+        "Заболевания"
+      ],
       "Medical Record": [
         "Медицинская документация"
+      ],
+      "Medications": [
+        "Лекарственные препараты"
+      ],
+      "Member ID": [
+        "ID участника"
+      ],
+      "Member Name": [
+        "Имя участника"
       ],
       "Members": [
         "Участники"
       ],
       "Membership": [
         "Членство"
+      ],
+      "Membership ID": [
+        "ID участника"
       ],
       "Middle name": [
         "Отчество"
@@ -3258,6 +3780,9 @@
       "Name": [
         "Имя"
       ],
+      "Name (SSID)": [
+        "Имя (SSID)"
+      ],
       "Name on card": [
         "Имя на карте"
       ],
@@ -3269,6 +3794,9 @@
       ],
       "Never": [
         "Никогда"
+      ],
+      "Never fill on this exact URL": [
+        "Никогда не заполнять на этом точном URL"
       ],
       "New email": [
         "Новое письмо"
@@ -3327,6 +3855,9 @@
       "Owner": [
         "Владелец"
       ],
+      "Parent domain and subdomains (default)": [
+        "Родительский домен и поддомены (по умолчанию)"
+      ],
       "Passkey": [
         "Ключ доступа"
       ],
@@ -3384,6 +3915,9 @@
       "PIN code": [
         "PIN-код"
       ],
+      "Points Balance": [
+        "Баланс баллов"
+      ],
       "Port": [
         "Порт"
       ],
@@ -3429,8 +3963,17 @@
       "Recent": [
         "Недавние"
       ],
+      "Record Number": [
+        "Номер записи"
+      ],
       "Reddit handle": [
         "Имя на Reddit"
+      ],
+      "Regular expression": [
+        "Регулярное выражение"
+      ],
+      "Relevant": [
+        "По соответствию"
       ],
       "Remove link": [
         "Удалить ссылку"
@@ -3447,11 +3990,17 @@
       "Reward Program": [
         "Программа вознаграждения"
       ],
+      "Routing Number": [
+        "Маршрутный номер"
+      ],
       "Save passkeys": [
         "Сохранить passkeys"
       ],
       "Second password": [
         "Второй пароль"
+      ],
+      "Secret": [
+        "Секрет"
       ],
       "Secure links": [
         "Защищенные ссылки"
@@ -3464,6 +4013,9 @@
       ],
       "See member and permission overview": [
         "Просмотр всех участников и их прав доступа"
+      ],
+      "Seed Phrase": [
+        "Сид-фраза"
       ],
       "Select a domain": [
         "Выбрать домен"
@@ -3491,6 +4043,9 @@
       ],
       "Share": [
         "Поделиться"
+      ],
+      "Share ID": [
+        "Поделиться ID"
       ],
       "Shared": [
         "В общем доступе"
@@ -3528,6 +4083,9 @@
       "SSN": [
         "ССН"
       ],
+      "Starts with": [
+        "Начинается с"
+      ],
       "State or province": [
         "Штат или провинция"
       ],
@@ -3549,6 +4107,9 @@
       "Support": [
         "Поддержка"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Синхронизировать псевдонимы с SimpleLogin"
       ],
@@ -3567,11 +4128,20 @@
       "Theme": [
         "Тема"
       ],
+      "Tier/Level": [
+        "Уровень/статус"
+      ],
+      "Tier/Status": [
+        "Уровень/Статус"
+      ],
       "Title": [
         "Заголовок"
       ],
       "Today": [
         "Сегодня"
+      ],
+      "Token name": [
+        "Имя токена"
       ],
       "Total imported items: ": [
         "Всего импортировано элементов: "
@@ -3603,6 +4173,9 @@
       "Unnamed Credit Card": [
         "Безымянная кредитная карта"
       ],
+      "Unnamed custom item": [
+        "Пользовательский элемент без имени"
+      ],
       "Unnamed identity": [
         "Личные данные без имени"
       ],
@@ -3611,6 +4184,12 @@
       ],
       "Unnamed note": [
         "Заметка без названия"
+      ],
+      "Unnamed SSH key": [
+        "SSH-ключ без имени"
+      ],
+      "Unnamed WiFi item": [
+        "Элемент WiFi без имени"
       ],
       "Unspecified": [
         "Не указано"
@@ -3621,8 +4200,14 @@
       "Update": [
         "Обновить"
       ],
+      "URL wildcard pattern": [
+        "Шаблон URL с подстановочными знаками"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Используйте ${ PASS_APP_NAME } в качестве менеджера паролей по умолчанию в вашем браузере"
+      ],
+      "Use for AI agent": [
+        "Использовать для ИИ-агента"
       ],
       "Used in": [
         "Используется в"
@@ -3638,6 +4223,9 @@
       ],
       "Value:": [
         "Значение:"
+      ],
+      "Vault access": [
+        "Доступ к хранилищу"
       ],
       "Vault ID": [
         "ID хранилища"
@@ -3723,6 +4311,24 @@
         "${ count } элементов",
         "${ count } элементов"
       ],
+      "'Starts with' matching rule": [
+        "Правило соответствия «Начинается с»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правило точного соответствия (под) домена"
+      ],
+      "Exact URL matching rule": [
+        "Правило точного соответствия URL"
+      ],
+      "Never fill with this exact URL": [
+        "Никогда не заполнять с этим точным URL"
+      ],
+      "Regular expression rule": [
+        "Правило регулярного выражения"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правило соответствия шаблону с подстановочными знаками"
+      ],
       "You can drag and drop the selected item to another vault": [
         "Вы можете перетащить выбранный элемент в другое хранилище",
         "Вы можете перетащить выбранные элементы в другое хранилище",
@@ -3747,6 +4353,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } был включен"
+      ],
+      "Access token deleted": [
+        "Токен доступа удален"
       ]
     },
     "Onboarding": {
@@ -3877,6 +4486,12 @@
       "The file you are trying to import is empty": [
         "Файл, который вы пытаетесь импортировать, пуст"
       ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Эта функция не поддерживается в вашем тарифном плане. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Эта функция не поддерживается в вашем тарифном плане. Обратитесь к администратору, чтобы получить доступ."
+      ],
       "Total files: ": [
         "Всего файлов: "
       ],
@@ -3894,6 +4509,11 @@
       ],
       "You may close this window after saving the file.": [
         "Вы можете закрыть это окно после сохранения файла."
+      ]
+    },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Потребуется разрешение от вашего браузера"
       ]
     },
     "Placeholder": {
@@ -3926,6 +4546,9 @@
       ],
       "Coupon": [
         "Купон"
+      ],
+      "e.g. 60": [
+        "например, 60"
       ],
       "e.g. My automation script": [
         "например, Мой скрипт автоматизации"
@@ -3963,6 +4586,9 @@
       "my-domain.com": [
         "moy-domen.com"
       ],
+      "Name displayed in emails": [
+        "Имя, отображаемое в электронных письмах"
+      ],
       "Note from SimpleLogin": [
         "Заметка из SimpleLogin"
       ],
@@ -3996,6 +4622,9 @@
       "Select a suffix": [
         "Выберите суффикс"
       ],
+      "Select option": [
+        "Выберите вариант"
+      ],
       "Unknown origin": [
         "Неизвестное происхождение"
       ],
@@ -4004,6 +4633,23 @@
       ],
       "Used on ${ url }": [
         "Использовать на ${ url }"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Введите URL для проверки соответствия вашему текущему правилу"
+      ],
+      "The rule is matching this URL": [
+        "Правило соответствует этому URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Правило НЕ соответствует этому URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Этот URL будет заблокирован для автозаполнения"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Этот URL НЕ будет заблокирован для автозаполнения"
       ]
     },
     "Security Center - Info": {
@@ -4079,6 +4725,20 @@
       ],
       "Unknown": [
         "Неизвестное"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Активен"
+      ],
+      "Agent": [
+        "Агент"
+      ],
+      "Expired": [
+        "Срок действия истек"
+      ],
+      "Expiring soon": [
+        "Скоро истекает"
       ]
     },
     "Success": {
@@ -4179,6 +4839,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "Монитор ${ PASS_SHORT_APP_NAME }"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Для использования токенов доступа требуется тариф ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Защита аккаунта"
       ],
@@ -4188,11 +4851,20 @@
       "Activity": [
         "Активность"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Активность для «${ token.Name }»"
+      ],
       "Add custom domain": [
         "Добавить пользовательский домен"
       ],
       "Add mailbox": [
         "Добавить почтовый ящик"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Настройте поведение автозаполнения, чтобы изменить места, где предлагаются логины."
+      ],
+      "Agent setup instructions": [
+        "Инструкции по настройке агента"
       ],
       "Alias contacts": [
         "Контакты псевдонима"
@@ -4221,6 +4893,9 @@
       "Breaches detected for": [
         "Обнаружены утечки для"
       ],
+      "Browser permission required": [
+        "Требуется разрешение браузера"
+      ],
       "Cancel changing your email?": [
         "Отменить изменение электронной почты?"
       ],
@@ -4229,6 +4904,9 @@
       ],
       "Change your lock method": [
         "Измените способ блокировки"
+      ],
+      "Clear clipboard": [
+        "Очистить буфер обмена"
       ],
       "Confirm extra password": [
         "Подтвердить дополнительный пароль"
@@ -4247,6 +4925,9 @@
       ],
       "Create contact": [
         "Создать контакт"
+      ],
+      "Create new access token": [
+        "Создать новый токен доступа"
       ],
       "Create PIN code": [
         "Создать PIN-код"
@@ -4280,6 +4961,9 @@
         "Удалить ${ deletedItemsCount } элемента?",
         "Удалить ${ deletedItemsCount } элементов?",
         "Удалить ${ deletedItemsCount } элементов?"
+      ],
+      "Delete access token?": [
+        "Удалить токен доступа?"
       ],
       "Delete domain": [
         "Удалить домен"
@@ -4356,6 +5040,9 @@
       "Grant permissions": [
         "Предоставить разрешения"
       ],
+      "Hidden vaults": [
+        "Скрытые хранилища"
+      ],
       "Hide my email": [
         "Скрыть мою почту"
       ],
@@ -4392,6 +5079,9 @@
       "Last modified": [
         "Дата последнего изменения"
       ],
+      "Learn more": [
+        "Подробнее"
+      ],
       "Leave this item?": [
         "Покинуть этот элемент?"
       ],
@@ -4409,6 +5099,9 @@
       ],
       "Mailbox": [
         "Почтовый ящик"
+      ],
+      "Manage vault access": [
+        "Управлять доступом к хранилищу"
       ],
       "Mark as resolved?": [
         "Отметить как устраненную?"
@@ -4449,6 +5142,9 @@
       "Next": [
         "Далее"
       ],
+      "No access tokens yet": [
+        "Токенов доступа пока нет"
+      ],
       "No excluded items": [
         "Нет исключенных элементов"
       ],
@@ -4473,6 +5169,9 @@
       "Open pagination": [
         "Открыть нумерацию страниц"
       ],
+      "Organize vaults": [
+        "Управление хранилищами"
+      ],
       "Our welcome gift to you": [
         "Our welcome gift to you"
       ],
@@ -4493,6 +5192,9 @@
       ],
       "Pending access to the shared data": [
         "Pending access to the shared data"
+      ],
+      "Perform autotype?": [
+        "Выполнить автонабор?"
       ],
       "Permanently remove all items?": [
         "Безвозвратно удалить все элементы?"
@@ -4602,6 +5304,9 @@
       "Sync your aliases from SimpleLogin": [
         "Синхронизировать псевдонимы с SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Протестировать URL на соответствие этому правилу"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Спасибо за установку ${ PASS_APP_NAME }"
       ],
@@ -4623,14 +5328,23 @@
       "Update available": [
         "Доступно обновление"
       ],
+      "URL matching": [
+        "Соответствие URL"
+      ],
       "Use my email": [
         "Использовать мою эл. почту"
       ],
       "Vault": [
         "Хранилище"
       ],
+      "Vault shared with a group you administer": [
+        "Хранилище предоставлено группе под вашим управлением"
+      ],
       "Vault shared with you": [
         "Хранилище, предоставленное вам"
+      ],
+      "Visible vaults": [
+        "Видимые хранилища"
       ],
       "Want to learn more?": [
         "Хотите узнать больше?"
@@ -4662,6 +5376,9 @@
       "Your exposed information": [
         "Ваша раскрытая информация"
       ],
+      "Your new access token": [
+        "Ваш новый токен доступа"
+      ],
       "Your vault is empty": [
         "Ваше хранилище пусто"
       ],
@@ -4673,6 +5390,11 @@
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонима.",
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов.",
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "копия"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4725,6 +5447,12 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Необходим пароль ${ BRAND_NAME }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Режим «${ modeLabelStong }» обеспечивает мощный контроль, но одна ошибка может привести к тому, что автозаполнение сработает и заполнит данные на мошеннических или фишинговых сайтах."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Офлайн-режим ${ PASS_SHORT_APP_NAME } выключен."
       ],
       "2 consecutive dots are not allowed": [
         "2 точки подряд не допускаются"
@@ -4822,8 +5550,14 @@
       "Extra password should have at least 8 characters": [
         "Дополнительный пароль должен содержать не менее 8 символов"
       ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Не удалось выполнить автозаполнение. Убедитесь, что у приложения ${ PASS_APP_NAME } есть необходимые разрешения, и попробуйте еще раз (${ error })."
+      ],
       "Failed to load breaches.": [
         "Не удалось загрузить утечки."
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Разрешите доступ к буферу обмена, чтобы включить автоматическую очистку скопированных паролей и данных."
       ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
@@ -4926,6 +5660,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Этот адрес электронной почты больше не будет отслеживаться на предмет утечек."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Этот элемент не может быть предложен для автозаполнения из-за правила «${ neverModeDescriptionStrong }». Добавьте другой URL, если хотите, чтобы для этого элемента работало автозаполнение."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "В настоящее время этот элемент совместно используется. При его удалении доступ к нему будет закрыт для всех остальных пользователей."
