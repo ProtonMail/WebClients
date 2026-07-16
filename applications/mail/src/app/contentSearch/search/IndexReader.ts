@@ -1,15 +1,18 @@
 import type { IDBPDatabase } from 'idb';
 
-import type { Entry, ExportEvent, Expression, QueryEvent } from '@proton/proton-foundation-search';
-import { ExportEventKind, QueryEventKind, SerDes } from '@proton/proton-foundation-search';
+import type { Entry, ExportEvent, Expression } from '@proton/proton-foundation-search';
+import { ExportEventKind, SerDes } from '@proton/proton-foundation-search';
 
 import { BlobCache } from '../cache/BlobCache';
+import type { OpenBlobTransaction } from '../crypto/EncryptedBlobTransaction';
 import { EncryptedBlobTransaction } from '../crypto/EncryptedBlobTransaction';
 import type { Database } from '../db/schema';
 import { createMailSearchEngine } from '../engine/create';
 import { isLoadEvent } from '../utils/eventTypeGuards';
+import { SearchLoop } from './SearchLoop';
 import { createLocalSearchQueryOptions } from './queryOptions';
 
+const SMALLISH_CARDINALITY = 10;
 const BUCKET_SIZE_SECONDS = 60n * 60n * 24n;
 
 export class IndexReader {
@@ -70,33 +73,6 @@ export class IndexReader {
         }
     }
 
-    private async getQueryCardinality(txn: EncryptedBlobTransaction, exp: Expression) {
-        const queryOptions = createLocalSearchQueryOptions();
-        const search = this.engine.query().withStructuredExpression(exp).withOptions(queryOptions).search();
-
-        let span: { low: bigint; high: bigint } | null = null;
-
-        try {
-            let event: QueryEvent | undefined;
-            while ((event = search.next())) {
-                if (isLoadEvent(event)) {
-                    await txn.handleLoadEvent(event);
-                } else if (event.kind() === QueryEventKind.Cardinality) {
-                    const cardinality = event.cardinality()!;
-                    const range = cardinality.range();
-                    span = { low: range.low, high: range.high };
-                    range.free();
-                    cardinality.free();
-                    break;
-                }
-            }
-        } catch (e) {
-            console.log(e);
-        }
-
-        return span;
-    }
-
     async search(
         exp: Expression,
         resultCallback: (results: string[]) => void,
@@ -106,53 +82,56 @@ export class IndexReader {
         const blobCache = new BlobCache();
         const txn = await EncryptedBlobTransaction.start(blobCache, this.db, this.indexKey);
 
-        const expression = exp.clone();
-        const range = await this.getQueryCardinality(txn, expression);
-
-        if (!range?.high || !range?.low) {
-            // run regular search
-            // const queryOptions = createLocalSearchQueryOptions();
-            return;
-        }
-
-        let start = range.high;
-
-        while (start - BUCKET_SIZE_SECONDS >= range.low) {
-            performance.mark('search-bucket-start');
-            const queryOptions = createLocalSearchQueryOptions();
-            queryOptions.setRangeLookup(start - BUCKET_SIZE_SECONDS, start);
-
-            const expression = exp.clone();
-            const search = this.engine.query().withStructuredExpression(expression).withOptions(queryOptions).search();
-            try {
-                const hits: string[] = [];
-                let event: QueryEvent | undefined;
-                while ((event = search.next())) {
-                    abortSignal.throwIfAborted();
-                    if (isLoadEvent(event)) {
-                        performance.mark('search-foundation-read-blob');
-                        await txn.handleLoadEvent(event);
-                    } else if (event.kind() === QueryEventKind.Found) {
-                        const id = event.found()?.identifier();
-                        if (id) {
-                            hits.push(id);
-                        }
-                    }
-                    abortSignal.throwIfAborted();
-                }
-                if (hits.length !== 0) {
+        try {
+            const searchLoop = new SearchLoop(this.engine, txn, exp.clone(), createLocalSearchQueryOptions());
+            const { cardinality, hits } = await searchLoop.runUntilCardinality(abortSignal);
+            if (hits) {
+                resultCallback(hits);
+            } else if (cardinality) {
+                if (cardinality.estimate().atMost <= SMALLISH_CARDINALITY) {
+                    const hits = await searchLoop.continueAfterCardinality(abortSignal);
                     resultCallback(hits);
+                } else {
+                    const r = cardinality.range();
+                    const range = { high: r.high, low: r.low };
+                    searchLoop.dispose();
+                    await this.runBucketedSearch(range, txn, exp, resultCallback, abortSignal);
                 }
-            } finally {
-                search.free();
             }
-            start -= BUCKET_SIZE_SECONDS;
-            performance.measure('search-bucket', 'search-bucket-start');
+        } finally {
+            exp.free();
+            blobCache.free();
         }
 
-        blobCache.free();
         await txn.verify(this.db.transaction('config'));
         performance.measure('search-foundation', 'search-foundation-start');
+    }
+
+    private async runBucketedSearch(
+        range: { high: bigint; low: bigint },
+        txn: OpenBlobTransaction,
+        exp: Expression,
+        resultCallback: (results: string[]) => void,
+        abortSignal: AbortSignal
+    ) {
+        let start = range.high;
+        let anyBucketHadHits = false;
+        while (start - BUCKET_SIZE_SECONDS >= range.low) {
+            const searchLoop = new SearchLoop(this.engine, txn, exp.clone(), createLocalSearchQueryOptions());
+            const hits = await searchLoop.runBucketedSearch(
+                { low: start - BUCKET_SIZE_SECONDS, high: start },
+                abortSignal
+            );
+            if (hits.length > 0) {
+                anyBucketHadHits = true;
+                resultCallback(hits);
+            }
+            start -= BUCKET_SIZE_SECONDS;
+        }
+
+        if (!anyBucketHadHits) {
+            resultCallback([]);
+        }
     }
 
     close() {
