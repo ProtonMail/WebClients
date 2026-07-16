@@ -16,15 +16,21 @@ export class Search {
     public readonly onResults = createListeners<[SearchResult[]]>();
     public readonly onError = createListeners<[Error]>();
     public readonly onDisposed = createListeners<[]>();
+    public readonly done: Promise<void>;
 
     private unfilteredResults?: SearchResult[];
     private filteredResults?: SearchResult[];
+    private resolveDone?: (value: void | PromiseLike<void>) => void;
 
     constructor(
         private params: NormalizedSearchParams,
         private workerPromise: Promise<Comlink.Remote<SearchWorker> | undefined>,
         private openESReader: () => Promise<EncryptedSearchReader>
-    ) {}
+    ) {
+        this.done = new Promise((resolve) => {
+            this.resolveDone = resolve;
+        });
+    }
 
     containsMessage(id: string): boolean {
         return !!this.filteredResults?.some((m) => m.ID === id);
@@ -56,9 +62,13 @@ export class Search {
 
     /** @internal called by SearchService */
     public start() {
-        this.execute().catch((err) => {
-            this.onError.notify(err as Error);
-        });
+        this.execute()
+            .catch((err) => {
+                this.onError.notify(err as Error);
+            })
+            .finally(() => {
+                this.resolveDone?.();
+            });
     }
 
     /**
