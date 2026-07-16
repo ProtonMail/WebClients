@@ -773,8 +773,9 @@ export type AttachmentPub = {
     // Chunk-related fields for large documents split into sections
     isChunk?: boolean; // Whether this attachment represents a section of a larger document
     chunkTitle?: string; // Section title or context for this chunk
-    // Project file retrieved via RAG (uploaded to project, not to this message)
-    isUploadedProjectFile?: boolean;
+    // Ephemeral attachment bound to a sent message (e.g. @mentioned Drive file).
+    // Kept in Redux after send so follow-up turns can resolve file content.
+    conversationContext?: boolean;
 };
 
 // This is represents the sensitive data in its decrypted form.
@@ -821,7 +822,7 @@ export function isAttachmentPub(value: any): value is AttachmentPub {
         (value.relevanceScore === undefined || typeof value.relevanceScore === 'number') &&
         (value.isChunk === undefined || typeof value.isChunk === 'boolean') &&
         (value.chunkTitle === undefined || typeof value.chunkTitle === 'string') &&
-        (value.isUploadedProjectFile === undefined || typeof value.isUploadedProjectFile === 'boolean')
+        (value.conversationContext === undefined || typeof value.conversationContext === 'boolean')
     );
 }
 

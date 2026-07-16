@@ -30,7 +30,7 @@ export interface ComposerEditorAreaProps {
     isAutocompleteActiveRef?: React.MutableRefObject<boolean>;
     placeholder?: string;
     // Optional Drive SDK functions - only provided for authenticated users
-    browseFolderChildren?: (folderId?: string) => Promise<DriveNode[]>;
+    browseFolderChildren?: (folderId?: string, forceRefresh?: boolean) => Promise<DriveNode[]>;
     downloadFile?: (nodeId: string) => Promise<ArrayBuffer>;
     userId?: string;
 }
@@ -66,8 +66,8 @@ export const ComposerEditorArea = ({
     const driveSDK: DriveSDKFunctions | undefined = useMemo(() => {
         if (browseFolderChildren && downloadFile) {
             return {
-                browseFolderChildren: async (folderId?: string) => {
-                    const nodes = await browseFolderChildren(folderId);
+                browseFolderChildren: async (folderId?: string, forceRefresh?: boolean) => {
+                    const nodes = await browseFolderChildren(folderId, forceRefresh);
                     return nodes.map((node) => ({
                         id: node.nodeUid,
                         name: node.name,

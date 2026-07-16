@@ -108,8 +108,20 @@ export const selectSpaceByConversationId =
 
 export const selectProvisionalAttachments = (state: LumoState) =>
     listify(state.attachments)
-        .filter((a: Attachment) => !a.spaceId)
+        .filter((a: Attachment) => !a.spaceId && !a.conversationContext)
         .toSorted(sortByDate('asc', 'uploadedAt'));
+
+/** All attachment IDs referenced by messages — must survive composer provisional cleanup. */
+export const selectMessageAttachmentIds = createSelector(
+    (state: LumoState) => state.messages,
+    (messages): AttachmentId[] => {
+        const ids = new Set<AttachmentId>();
+        for (const message of Object.values(messages)) {
+            message.attachments?.forEach((att) => ids.add(att.id));
+        }
+        return [...ids];
+    }
+);
 
 export const selectLocalIdFromRemote =
     (type: ResourceType, remoteId: RemoteId) =>
