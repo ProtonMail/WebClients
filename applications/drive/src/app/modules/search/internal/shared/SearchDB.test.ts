@@ -1,9 +1,25 @@
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import type { RepairNodeEntry } from './SearchDB';
 import { SearchDB } from './SearchDB';
 import type { TreeEventScopeId } from './types';
 import { IndexKind } from './types';
+
+const makeRepairEntry = (overrides: Partial<RepairNodeEntry> = {}): RepairNodeEntry => ({
+    nodeUid: 'node-1',
+    indexKind: IndexKind.MAIN,
+    indexPopulatorKind: 'pop-1',
+    treeEventScopeId: 'scope-1' as TreeEventScopeId,
+    operation: 'index',
+    parentNodeUid: 'parent-1',
+    attempts: 0,
+    firstFailedAt: 1000,
+    lastAttemptAt: 1000,
+    nextAttemptAt: 1000,
+    lastError: 'boom',
+    ...overrides,
+});
 
 const identity = async <T>(d: T) => d;
 
@@ -301,11 +317,117 @@ describe('SearchDB', () => {
         });
     });
 
+    describe('repairEntries', () => {
+        it('stores and retrieves a repair entry', async () => {
+            const entry = makeRepairEntry();
+            await db.putRepairEntry(entry);
+            expect(await db.getAllRepairEntries()).toEqual([entry]);
+        });
+
+        it('coalesces by [indexKind, nodeUid] (last write wins)', async () => {
+            await db.putRepairEntry(makeRepairEntry({ operation: 'index', attempts: 3 }));
+            await db.putRepairEntry(makeRepairEntry({ operation: 'remove', attempts: 0 }));
+            const all = await db.getAllRepairEntries();
+            expect(all).toHaveLength(1);
+            expect(all[0].operation).toBe('remove');
+            expect(all[0].attempts).toBe(0);
+        });
+
+        it('deletes a repair entry', async () => {
+            await db.putRepairEntry(makeRepairEntry({ nodeUid: 'node-1' }));
+            await db.putRepairEntry(makeRepairEntry({ nodeUid: 'node-2' }));
+            await db.deleteRepairEntry([IndexKind.MAIN, 'node-1']);
+            const remaining = await db.getAllRepairEntries();
+            expect(remaining.map((e) => e.nodeUid)).toEqual(['node-2']);
+        });
+
+        const SCOPE = 'scope-1' as TreeEventScopeId;
+        const OTHER_SCOPE = 'scope-2' as TreeEventScopeId;
+
+        it('recordRepairNode resets attempts/timestamps and is due immediately', async () => {
+            await db.recordRepairNode({
+                nodeUid: 'node-1',
+                indexKind: IndexKind.MAIN,
+                indexPopulatorKind: 'pop-1',
+                treeEventScopeId: SCOPE,
+                operation: 'index',
+                parentNodeUid: 'parent-1',
+                lastError: 'boom',
+            });
+            const [entry] = await db.getAllRepairEntries();
+            expect(entry.attempts).toBe(0);
+            expect(entry.nextAttemptAt).toBeLessThanOrEqual(Date.now());
+            expect(entry.firstFailedAt).toBe(entry.lastAttemptAt);
+        });
+
+        it("getQuarantinedNodeUids returns only this populator's uids", async () => {
+            await db.recordRepairNode({
+                nodeUid: 'mine',
+                indexKind: IndexKind.MAIN,
+                indexPopulatorKind: 'pop-1',
+                treeEventScopeId: SCOPE,
+                operation: 'index',
+            });
+            await db.recordRepairNode({
+                nodeUid: 'other',
+                indexKind: IndexKind.MAIN,
+                indexPopulatorKind: 'pop-1',
+                treeEventScopeId: OTHER_SCOPE,
+                operation: 'index',
+            });
+            expect(await db.getQuarantinedNodeUids(IndexKind.MAIN, SCOPE)).toEqual(new Set(['mine']));
+        });
+
+        it('clearRepairNode removes the entry', async () => {
+            await db.recordRepairNode({
+                nodeUid: 'node-1',
+                indexKind: IndexKind.MAIN,
+                indexPopulatorKind: 'pop-1',
+                treeEventScopeId: SCOPE,
+                operation: 'index',
+            });
+            await db.clearRepairNode(IndexKind.MAIN, 'node-1');
+            expect(await db.getAllRepairEntries()).toHaveLength(0);
+        });
+
+        it('getAllDueRepairNodes returns every entry with nextAttemptAt <= now, across scopes', async () => {
+            const now = 10_000;
+            await db.putRepairEntry(
+                makeRepairEntry({ nodeUid: 'due', treeEventScopeId: SCOPE, nextAttemptAt: now - 1 })
+            );
+            await db.putRepairEntry(
+                makeRepairEntry({ nodeUid: 'not-due', treeEventScopeId: SCOPE, nextAttemptAt: now + 1 })
+            );
+            await db.putRepairEntry(
+                makeRepairEntry({ nodeUid: 'other-scope', treeEventScopeId: OTHER_SCOPE, nextAttemptAt: now - 1 })
+            );
+
+            const due = await db.getAllDueRepairNodes(now);
+            expect(due.map((e) => e.nodeUid).sort()).toEqual(['due', 'other-scope']);
+        });
+
+        it('recordFailedRepairAttempt bumps attempts and pushes out the next attempt', async () => {
+            await db.putRepairEntry(makeRepairEntry({ nodeUid: 'node-1', attempts: 1, nextAttemptAt: 0 }));
+            const [before] = await db.getAllRepairEntries();
+            await db.recordFailedRepairAttempt(before, 'still broken');
+            const [after] = await db.getAllRepairEntries();
+            expect(after.attempts).toBe(2);
+            expect(after.nextAttemptAt).toBeGreaterThan(Date.now());
+            expect(after.lastError).toBe('still broken');
+        });
+    });
+
     describe('clearIndex', () => {
         it('clears isSearchable', async () => {
             await db.markSearchableIndex();
             await db.clearIndex();
             expect(await db.isSearchable()).toBe(false);
+        });
+
+        it('clears repair entries', async () => {
+            await db.putRepairEntry(makeRepairEntry());
+            await db.clearIndex();
+            expect(await db.getAllRepairEntries()).toHaveLength(0);
         });
 
         it('preserves optIn and crypto key', async () => {

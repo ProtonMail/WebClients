@@ -5,8 +5,8 @@ import { NodeType } from '@proton/drive';
 import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../shared/Logger';
-import type { SearchDB } from '../../../shared/SearchDB';
-import { SearchLibraryError } from '../../../shared/errors';
+import type { RepairNodeEntry, RepairOperation, SearchDB } from '../../../shared/SearchDB';
+import { SearchLibraryError, isRepairableError } from '../../../shared/errors';
 import type { TreeEventScopeId } from '../../../shared/types';
 import type { IndexReader } from '../../index/IndexReader';
 import type { IndexKind } from '../../index/IndexRegistry';
@@ -123,6 +123,14 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
                 await options.visitor.saveCheckpoint(ctx.db, checkpoint);
                 await this.saveProgress(ctx.db);
             },
+            // A node-scoped failure (e.g. entry mapping) is quarantined and skipped so the walk
+            // continues; it will be reprocessed by RepairFailedNodesTask.
+            onNodeError: (node, error) =>
+                this.recordRepairEntry(
+                    { nodeUid: node.uid, parentNodeUid: node.parentUid, operation: 'index' },
+                    error,
+                    ctx
+                ),
         });
         await options.finalize();
     }
@@ -139,6 +147,11 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
     async processIncrementalUpdates(events: DriveEvent[], ctx: TaskContext): Promise<number> {
         Logger.info(`${this.getUid()}: processing ${events.length} incremental events`);
 
+        // UIDs currently quarantined in the repair table (usually empty). Loaded once so a later
+        // successful mutation for a previously-broken node can clear its entry without a blind
+        // DB write per event.
+        const quarantinedUids = await ctx.db.getQuarantinedNodeUids(this.indexKind, this.treeEventScopeId);
+
         let processed = 0;
 
         for (const event of events) {
@@ -146,12 +159,30 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
                 case 'node_created':
                 case 'node_updated':
                 case 'node_deleted':
-                    // Throws on failure — remaining events (including the failing one) will be
-                    // retried in the next incremental update. The update might be stuck on this
-                    // event but we have no choice since DriveEvents must be processed in order.
-                    // A folder update re-indexes its subtree inline (see handleNodeUpdated), so the
-                    // batch continues in order — no deferral needed.
-                    await this.processNodeMutation(event, ctx);
+                    try {
+                        await this.processNodeMutation(event, ctx);
+                        // Self-heal: the node processed cleanly, so drop any stale repair entry.
+                        if (quarantinedUids.has(event.nodeUid)) {
+                            // Clear repaired node from repair table
+                            await ctx.db.clearRepairNode(this.indexKind, event.nodeUid);
+
+                            // Update local book-keeping.
+                            quarantinedUids.delete(event.nodeUid);
+
+                            ctx.searchMetrics.markNodeRepaired();
+                        }
+                    } catch (e) {
+                        // A non-repairable failure is not the node's fault (abort, network, quota, etc):
+                        // re-throw.
+                        if (!isRepairableError(e)) {
+                            throw e;
+                        }
+
+                        // Node-scoped failure (decryption, parent-path, mapping, ...): quarantine and
+                        // skip so the cursor advances instead of wedging on this event forever.
+                        await this.quarantineNode(event, e, ctx);
+                        quarantinedUids.add(event.nodeUid);
+                    }
                     break;
 
                 case 'fast_forward':
@@ -204,6 +235,70 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
         return processed;
     }
 
+    /**
+     * Quarantine a node-scoped failure so the rest of the batch proceeds and the node is retried
+     * independently later.
+     */
+    private async recordRepairEntry(
+        params: { nodeUid: string; parentNodeUid?: string; operation: RepairOperation },
+        error: unknown,
+        ctx: TaskContext
+    ): Promise<void> {
+        await ctx.db.recordRepairNode({
+            nodeUid: params.nodeUid,
+            indexKind: this.indexKind,
+            indexPopulatorKind: this.indexPopulatorKind,
+            treeEventScopeId: this.treeEventScopeId,
+            operation: params.operation,
+            parentNodeUid: params.parentNodeUid,
+            lastError: error instanceof Error ? error.message : String(error),
+        });
+        Logger.error(`${this.getUid()}: quarantined node ${params.nodeUid} (${params.operation}) for repair`, error);
+        ctx.searchMetrics.markNodeQuarantined({
+            populatorUid: this.getUid(),
+            operation: params.operation,
+            error,
+        });
+    }
+
+    /** Quarantine a node whose incremental event failed with a node-scoped error. */
+    private quarantineNode(event: NodeEvent, error: unknown, ctx: TaskContext): Promise<void> {
+        const repairOperation = event.type === 'node_deleted' ? 'remove' : 'index';
+        return this.recordRepairEntry(
+            {
+                nodeUid: event.nodeUid,
+                parentNodeUid: event.parentNodeUid,
+                operation: repairOperation,
+            },
+            error,
+            ctx
+        );
+    }
+
+    /**
+     * Replay a single quarantined node's pending operation.
+     */
+    async repairNode(entry: RepairNodeEntry, ctx: TaskContext): Promise<void> {
+        Logger.info(`${this.getUid()}: repairNode ${entry.operation} for node ${entry.nodeUid}`);
+        if (entry.operation === 'remove') {
+            await this.removeNodeAndDescendants(entry.nodeUid, ctx, true /* deleteDescendants */);
+            return;
+        }
+
+        // iterateNodes (unlike getNode) reports a missing node as an empty result instead of
+        // throwing. The node may have been deleted while quarantined; treat that as resolved (the
+        // 'remove' outcome the node would have gotten via its own event) instead of retrying
+        // forever against a node that will never come back.
+        const [node] = await ctx.bridge.driveSdk.iterateNodes([entry.nodeUid]);
+        if (!node) {
+            await this.removeNodeAndDescendants(entry.nodeUid, ctx, true /* deleteDescendants */);
+            return;
+        }
+
+        const generation = await this.getGeneration(ctx.db);
+        await this.reconcileNode(node, entry.parentNodeUid, Boolean(node.trashTime), ctx, generation);
+    }
+
     async processNodeMutation(event: NodeEvent, ctx: TaskContext): Promise<void> {
         Logger.info(`${this.getUid()}: processNodeMutation ${event.type} for node ${event.nodeUid}`);
         const generation = await this.getGeneration(ctx.db);
@@ -247,11 +342,25 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
         generation: number
     ): Promise<void> {
         const maybeNode = await ctx.bridge.driveSdk.getNode(event.nodeUid);
-        this.maybeWarnForUndecryptableNodeName(maybeNode, event.nodeUid);
+        await this.reconcileNode(maybeNode, event.parentNodeUid, event.isTrashed, ctx, generation);
+    }
 
-        const parentPathResult = await this.resolveParentPath(event.parentNodeUid, ctx);
+    /**
+     * Bring the index in sync with a single node's current state: remove its stale entry (and, when
+     * applicable, its descendants), re-insert its updated entry, and re-index its subtree.
+     */
+    private async reconcileNode(
+        node: NodeEntity,
+        parentNodeUid: string | undefined,
+        isTrashed: boolean,
+        ctx: TaskContext,
+        generation: number
+    ): Promise<void> {
+        this.maybeWarnForUndecryptableNodeName(node, node.uid);
+
+        const parentPathResult = await this.resolveParentPath(parentNodeUid, ctx);
         if (!parentPathResult.ok) {
-            Logger.info(`${this.getUid()}: dropping node_updated for ${event.nodeUid}, could not resolve parentPath`);
+            Logger.info(`${this.getUid()}: dropping reconcile for ${node.uid}, could not resolve parentPath`);
             throw parentPathResult.error;
         }
 
@@ -262,23 +371,23 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
         // ones that cannot have changed descendants (rename, share toggle, revision/metadata -
         // descendant paths are UID-based, so a rename never affects them). Classify the diff and
         // only re-walk when it's structural (moved, or child set changed); skip otherwise.
-        const willReindexSubtree = !event.isTrashed && maybeNode.type === NodeType.Folder;
+        const willReindexSubtree = !isTrashed && node.type === NodeType.Folder;
 
         // Remove the node, and for a trashed folder its now-stale descendant subtree. A non-trashed
         // folder's descendants are handled by the subtree re-index below (kept searchable meanwhile);
         // files never have descendants, so nothing extra to remove there.
-        const deleteDescendants = !willReindexSubtree && maybeNode.type === NodeType.Folder;
-        await this.removeNodeAndDescendants(event.nodeUid, ctx, deleteDescendants);
+        const deleteDescendants = !willReindexSubtree && node.type === NodeType.Folder;
+        await this.removeNodeAndDescendants(node.uid, ctx, deleteDescendants);
 
         // Re-insert the node's own updated entry. The subtree walk below only writes descendants,
         // so the anchor (the node itself) must always be upserted here.
-        const entry = this.createEntryForNode(maybeNode, parentPathResult.parentPath, generation);
+        const entry = this.createEntryForNode(node, parentPathResult.parentPath, generation);
         await this.upsertNode(entry, ctx);
 
         if (willReindexSubtree) {
             // A non-trashed folder: also re-index its subtree (adds new children, sweeps obsolete).
-            const subtreeParentPath = `${parentPathResult.parentPath}/${event.nodeUid}`;
-            await this.reindexSubtree(event.nodeUid, subtreeParentPath, ctx);
+            const subtreeParentPath = `${parentPathResult.parentPath}/${node.uid}`;
+            await this.reindexSubtree(node.uid, subtreeParentPath, ctx);
         }
     }
 
@@ -411,17 +520,26 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
      * run's epoch. Those are exactly the descendants the SDK no longer reports (removed in a bulk
      * folder change, moved out, etc.); the backend sends no per-child events, so the epoch is the
      * only signal.
+     *
+     * Quarantined descendants are exempt: a node that failed to re-index this run keeps its stale
+     * (lower-epoch) entry but was still reported by the SDK, so sweeping it would drop it from search
+     * until the repair task replays it. Its stale entry stays searchable meanwhile; repair re-stamps
+     * it.
      */
     private async sweepObsoleteDescendants(nodeUid: string, epoch: number, ctx: TaskContext): Promise<void> {
         const { indexWriter, indexReader } = await ctx.indexRegistry.get(this.indexKind, ctx.db);
+
+        const quarantinedUids = await ctx.db.getQuarantinedNodeUids(this.indexKind, this.treeEventScopeId);
 
         const staleExpr = this.descendantsPathExpr(nodeUid).and(
             Expression.attr('reindexEpoch', Func.LessThan, TermValue.int(BigInt(epoch)))
         );
 
-        // Collect all stale uids first.
         const staleIds: string[] = [];
         for await (const result of indexReader.execute((q) => q.withStructuredExpression(staleExpr))) {
+            if (quarantinedUids.has(result.identifier)) {
+                continue;
+            }
             staleIds.push(result.identifier);
         }
 

@@ -1,7 +1,11 @@
-import type { NodeEntity } from '@protontech/drive-sdk';
+import type { NodeEntity, NodeEvent } from '@protontech/drive-sdk';
+import { IDBFactory } from 'fake-indexeddb';
+import 'fake-indexeddb/auto';
 
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
+import { SearchDB } from '../../../shared/SearchDB';
+import { SearchLibraryError } from '../../../shared/errors';
 import type { TreeEventScopeId } from '../../../shared/types';
 import { FakeMainThreadBridge } from '../../../testing/FakeMainThreadBridge';
 import { makeTaskContext } from '../../../testing/makeTaskContext';
@@ -226,5 +230,128 @@ describe('NodeTreeIndexPopulator integration', () => {
         // UIDs sorted alphabetically: bad-node < file-ok
         expect(entries[0].documentId).toBe('bad-node');
         expect(entries[1].documentId).toBe('file-ok');
+    });
+});
+
+// Stubs processNodeMutation so the quarantine/self-heal logic in processIncrementalUpdates can be
+// exercised without the real index engine. `failures` maps a node UID to the error to throw for it.
+class StubMutationPopulator extends NodeTreeIndexPopulator {
+    readonly processedUids: string[] = [];
+
+    constructor(private readonly failures: Map<string, unknown>) {
+        super(SCOPE_ID, IndexKind.MAIN, 'test-populator', 1);
+    }
+
+    protected async getRootNodeUid(): Promise<string> {
+        return 'root';
+    }
+
+    async processNodeMutation(event: NodeEvent): Promise<void> {
+        const failure = this.failures.get(event.nodeUid);
+        if (failure) {
+            throw failure;
+        }
+        this.processedUids.push(event.nodeUid);
+    }
+}
+
+// `type` is a string enum on the SDK NodeEvent union that isn't re-exported as a value, so build
+// via a cast - matching the makeNodeEvent helper in IndexPopulator.test.ts.
+const nodeCreated = (nodeUid: string, eventId: string): NodeEvent =>
+    ({
+        type: 'node_created',
+        nodeUid,
+        parentNodeUid: 'root',
+        isTrashed: false,
+        isShared: false,
+        treeEventScopeId: SCOPE_ID,
+        eventId,
+    }) as unknown as NodeEvent;
+
+const nodeDeleted = (nodeUid: string, eventId: string): NodeEvent =>
+    ({
+        type: 'node_deleted',
+        nodeUid,
+        parentNodeUid: 'root',
+        treeEventScopeId: SCOPE_ID,
+        eventId,
+    }) as unknown as NodeEvent;
+
+describe('NodeTreeIndexPopulator incremental quarantine', () => {
+    let db: SearchDB;
+    let bridge: FakeMainThreadBridge;
+
+    beforeEach(async () => {
+        indexedDB = new IDBFactory();
+        db = await SearchDB.open('test-user');
+        bridge = new FakeMainThreadBridge();
+    });
+
+    it('quarantines a node-scoped failure, advances the cursor, and keeps processing later events', async () => {
+        const populator = new StubMutationPopulator(new Map([['b', new Error('decrypt failed')]]));
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db });
+
+        const processed = await populator.processIncrementalUpdates(
+            [nodeCreated('a', 'e1'), nodeCreated('b', 'e2'), nodeCreated('c', 'e3')],
+            ctx
+        );
+
+        // All three events consumed (cursor advances past the broken one) - only a and c indexed.
+        expect(processed).toBe(3);
+        expect(populator.processedUids).toEqual(['a', 'c']);
+
+        const repairs = await db.getAllRepairEntries();
+        expect(repairs).toHaveLength(1);
+        expect(repairs[0]).toMatchObject({ nodeUid: 'b', operation: 'index', parentNodeUid: 'root' });
+        expect(repairs[0].lastError).toContain('decrypt failed');
+    });
+
+    it('records a node_deleted failure with operation "remove"', async () => {
+        const populator = new StubMutationPopulator(new Map([['x', new Error('boom')]]));
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db });
+
+        await populator.processIncrementalUpdates([nodeDeleted('x', 'e1')], ctx);
+
+        const repairs = await db.getAllRepairEntries();
+        expect(repairs[0]).toMatchObject({ nodeUid: 'x', operation: 'remove' });
+    });
+
+    it('re-throws a systemic failure and does not quarantine (cursor stays stuck at the prefix)', async () => {
+        const populator = new StubMutationPopulator(new Map([['b', new SearchLibraryError('wasm exploded', null)]]));
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db });
+
+        await expect(
+            populator.processIncrementalUpdates(
+                [nodeCreated('a', 'e1'), nodeCreated('b', 'e2'), nodeCreated('c', 'e3')],
+                ctx
+            )
+        ).rejects.toThrow('wasm exploded');
+
+        expect(populator.processedUids).toEqual(['a']);
+        expect(await db.getAllRepairEntries()).toHaveLength(0);
+    });
+
+    it('clears a repair entry when a previously-quarantined node later processes successfully', async () => {
+        await db.putRepairEntry({
+            nodeUid: 'b',
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: 'test-populator',
+            treeEventScopeId: SCOPE_ID,
+            operation: 'index',
+            parentNodeUid: 'root',
+            attempts: 2,
+            firstFailedAt: 1,
+            lastAttemptAt: 1,
+            nextAttemptAt: 1,
+        });
+
+        const populator = new StubMutationPopulator(new Map());
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db });
+
+        const processed = await populator.processIncrementalUpdates([nodeCreated('b', 'e1')], ctx);
+
+        expect(processed).toBe(1);
+        expect(populator.processedUids).toEqual(['b']);
+        expect(await db.getAllRepairEntries()).toHaveLength(0);
     });
 });

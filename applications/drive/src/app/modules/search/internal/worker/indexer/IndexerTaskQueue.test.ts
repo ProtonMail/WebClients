@@ -10,9 +10,9 @@ import { SearchDB } from '../../shared/SearchDB';
 import {
     DEFAULT_RETRY_AFTER_IN_MS,
     InvalidIndexerState,
+    SENTRY_REPORT_BURST_MAX_ATTEMPTS,
+    SENTRY_REPORT_BURST_WINDOW_MS,
     SearchLibraryError,
-    TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS,
-    TRANSIENT_REPORT_THROTTLE_MS,
     sendErrorReportForSearch,
 } from '../../shared/errors';
 import { resetTransientReportBurstsForTests } from '../../shared/searchMetrics';
@@ -874,23 +874,23 @@ describe('IndexerTaskQueue', () => {
             // Backoff schedule (no jitter): 1s, 2s, 5s, 10s, 30s, 60s, 60s, ...
             // Run plenty of retries while staying inside the throttle window so the
             // burst caps at MAX_REPORTED_ATTEMPTS and further retries stay silent.
-            await fakeAdvance(TRANSIENT_REPORT_THROTTLE_MS - 1);
+            await fakeAdvance(SENTRY_REPORT_BURST_WINDOW_MS - 1);
 
             const reportsInWindow = errorReportMock.mock.calls.filter(([msg]) =>
                 String(msg).includes('transient error')
             );
-            expect(reportsInWindow).toHaveLength(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+            expect(reportsInWindow).toHaveLength(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
             // Stable message (no attempt number) so Sentry groups them.
             expect(reportsInWindow.every(([msg]) => msg === 'Search transient error (unknown)')).toBe(true);
 
             // Cross the throttle window - a new burst should be allowed.
-            await fakeAdvance(TRANSIENT_REPORT_THROTTLE_MS);
+            await fakeAdvance(SENTRY_REPORT_BURST_WINDOW_MS);
 
             const reportsAfterWindow = errorReportMock.mock.calls.filter(([msg]) =>
                 String(msg).includes('transient error')
             );
-            expect(reportsAfterWindow.length).toBeGreaterThan(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
-            expect(reportsAfterWindow.length).toBeLessThanOrEqual(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS * 2);
+            expect(reportsAfterWindow.length).toBeGreaterThan(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
+            expect(reportsAfterWindow.length).toBeLessThanOrEqual(SENTRY_REPORT_BURST_MAX_ATTEMPTS * 2);
             expect(reportsAfterWindow.every(([msg]) => msg === 'Search transient error (unknown)')).toBe(true);
         } finally {
             queue?.stop();
