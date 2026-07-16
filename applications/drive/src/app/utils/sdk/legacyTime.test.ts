@@ -44,6 +44,7 @@ describe('legacyTime utilities', () => {
         creationTime: new Date('2023-01-01T06:00:00.000Z'),
         contentAuthor: mockAuthor,
         storageSize: 1024,
+        isImported: false,
         claimedSize: 1000,
         claimedModificationTime,
         claimedDigests: { sha1: 'abc123', sha1Verified: false },
@@ -85,6 +86,7 @@ describe('legacyTime utilities', () => {
                 totalStorageSize: 0,
                 folder: {
                     claimedModificationTime: undefined,
+                    isImported: false,
                 },
             });
 
