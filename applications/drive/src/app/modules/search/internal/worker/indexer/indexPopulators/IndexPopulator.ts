@@ -1,6 +1,6 @@
 import type { DriveEvent } from '@protontech/drive-sdk';
 
-import type { IndexPopulatorState, SearchDB } from '../../../shared/SearchDB';
+import type { IndexPopulatorState, RepairNodeEntry, SearchDB } from '../../../shared/SearchDB';
 import type { IndexPopulatorStatus, IndexingProgress, TreeEventScopeId } from '../../../shared/types';
 import type { IndexKind } from '../../index/IndexRegistry';
 import type { TaskContext } from '../tasks/BaseTask';
@@ -158,4 +158,11 @@ export abstract class IndexPopulator {
      * knowledge of the data source's change model.
      */
     abstract processIncrementalUpdates(events: DriveEvent[], ctx: TaskContext): Promise<number>;
+
+    /**
+     * Replay a single quarantined node's pending index operation (see {@link RepairNodeEntry}).
+     * Throws on failure; RepairFailedNodesTask decides retry vs. re-throw. Implemented by the
+     * concrete populator, which owns the node → index mapping.
+     */
+    abstract repairNode(entry: RepairNodeEntry, ctx: TaskContext): Promise<void>;
 }

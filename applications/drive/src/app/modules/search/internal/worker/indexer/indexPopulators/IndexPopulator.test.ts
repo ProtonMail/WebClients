@@ -5,6 +5,7 @@ import 'fake-indexeddb/auto';
 
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
+import type { RepairNodeEntry } from '../../../shared/SearchDB';
 import { SearchDB } from '../../../shared/SearchDB';
 import type { TreeEventScopeId } from '../../../shared/types';
 import { FakeMainThreadBridge } from '../../../testing/FakeMainThreadBridge';
@@ -1300,6 +1301,86 @@ describe('IndexPopulator', () => {
             await populator.processNodeMutation(event, ctx);
 
             await expectIndexed('bad-name');
+        });
+    });
+
+    // =========================================================================
+    // repairNode (replay of a quarantined node)
+    // =========================================================================
+    describe('repairNode', () => {
+        const makeRepairEntry = (overrides: Partial<RepairNodeEntry>): RepairNodeEntry => ({
+            nodeUid: 'node-1',
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: 'test-pop',
+            treeEventScopeId: SCOPE_ID,
+            operation: 'index',
+            attempts: 0,
+            firstFailedAt: 0,
+            lastAttemptAt: 0,
+            nextAttemptAt: 0,
+            ...overrides,
+        });
+
+        it("'index' re-fetches the node and upserts it", async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'repaired-file',
+                makeMaybeNode({ uid: 'repaired-file', name: 'fixed.txt', type: 'file' as NodeType, parentUid: 'root' })
+            );
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            await populator.repairNode(makeRepairEntry({ nodeUid: 'repaired-file', parentNodeUid: 'root' }), ctx);
+
+            await expectIndexed('repaired-file');
+        });
+
+        it("'index' resolves cleanly instead of retrying forever when the node was deleted while quarantined", async () => {
+            // The node is never registered, simulating that it was deleted before repair ran.
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            await expect(
+                populator.repairNode(
+                    makeRepairEntry({ nodeUid: 'gone', operation: 'index', parentNodeUid: 'root' }),
+                    ctx
+                )
+            ).resolves.toBeUndefined();
+
+            await expectIndexed('gone', 0);
+        });
+
+        it("'remove' removes the node and its descendants", async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'folder-a',
+                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
+            );
+            bridge.setNode(
+                'child',
+                makeMaybeNode({ uid: 'child', name: 'c.txt', type: 'file' as NodeType, parentUid: 'folder-a' })
+            );
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            // Index the folder and a descendant first.
+            await populator.processNodeMutation(
+                makeNodeEvent('node_created', 'folder-a', { parentNodeUid: 'root' }),
+                ctx
+            );
+            await populator.processNodeMutation(
+                makeNodeEvent('node_created', 'child', { parentNodeUid: 'folder-a' }),
+                ctx
+            );
+            await expectIndexed('folder-a');
+            await expectIndexed('child');
+
+            await populator.repairNode(makeRepairEntry({ nodeUid: 'folder-a', operation: 'remove' }), ctx);
+
+            await expectIndexed('folder-a', 0);
+            await expectIndexed('child', 0);
         });
     });
 });

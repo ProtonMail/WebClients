@@ -38,6 +38,7 @@ export function makeTaskContext(overrides?: Partial<TaskContext>): TaskContext {
         enqueueDelayed: jest.fn(),
         notifyIndexingProgress: jest.fn(),
         activeIndexPopulators: [],
+        getIndexPopulator: jest.fn().mockReturnValue(undefined),
         ...overrides,
     };
 }
