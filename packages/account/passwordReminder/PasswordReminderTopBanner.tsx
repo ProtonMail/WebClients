@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -12,11 +14,18 @@ import { usePasswordReminderTelemetry } from './passwordReminderTelemetry';
 
 const PasswordReminderTopBanner = () => {
     const dispatch = useDispatch();
-    const { sendDismiss } = usePasswordReminderTelemetry();
+    const { sendBannerDisplay, sendDismiss } = usePasswordReminderTelemetry();
 
     const [passwordReminderModalProps, setPasswordReminderModalOpen, renderPasswordReminderModal] = useModalState();
 
     const { showReminders } = usePasswordReminder();
+
+    useEffect(() => {
+        if (showReminders) {
+            sendBannerDisplay('top_banner');
+        }
+    }, [showReminders]);
+
     if (!showReminders) {
         return null;
     }

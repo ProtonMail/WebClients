@@ -251,6 +251,7 @@ export enum TelemetryRecoverySettingsEvents {
 }
 
 export enum TelemetryPasswordReminderEvents {
+    banner_display = 'banner_display',
     open = 'open',
     success = 'success',
     wrong_password = 'wrong_password',
