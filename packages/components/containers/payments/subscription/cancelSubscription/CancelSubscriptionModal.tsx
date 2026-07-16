@@ -52,8 +52,10 @@ export const CancelSubscriptionModal = ({
             onClose={handleKeepSubscription}
             {...rest}
         >
-            <p>{c('Info')
-                .jt`If you cancel, your ${planTitle} subscription will not be renewed when it expires on ${expiryDate}.`}</p>
+            <p>
+                {c('Info')
+                    .jt`If you cancel, your ${planTitle} subscription will not be renewed when it expires on ${expiryDate}.`}
+            </p>
             <p>{c('Info').t`You will lose access to ${planTitle} features on this date.`}</p>
         </Prompt>
     );
