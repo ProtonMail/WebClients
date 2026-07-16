@@ -4,7 +4,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { findAgentById } from '../../features/agents/registry';
-import { collectContextAttachmentIds, retrieveDocumentContextForProject } from '../../lib/rag';
+import { collectContextAttachmentIds, planRagAttachmentStorage, retrieveDocumentContextForProject } from '../../lib/rag';
 import { type ContextFilter, ENABLE_U2L_ENCRYPTION, prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { clearPendingAgent } from '../../redux/slices/composerActions';
@@ -45,6 +45,12 @@ import {
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
 import { parseFileReferences } from '../../util/fileReferences';
+import {
+    referencedFileNamesWithContent,
+    refreshAttachmentFromSearchIndex,
+    resolveReferencedFilesForSend,
+} from '../../util/resolveProjectFiles';
+import { SearchService } from '../../services/search/searchService';
 import { runGenerationWithCompaction } from './compactionFlow';
 
 const createLumoErrorHandler =
@@ -53,6 +59,20 @@ const createLumoErrorHandler =
         const errorMessage = getErrorTypeFromMessage(message.type);
         return createGenerationError(errorMessage, cId, message);
     };
+
+function storeRagAttachments(
+    dispatch: AppDispatch,
+    attachments: Attachment[],
+    existingAttachments: AttachmentMap
+): void {
+    const { toUpsert, toPushIds } = planRagAttachmentStorage(attachments, existingAttachments);
+    for (const attachment of toUpsert) {
+        dispatch(upsertAttachment(attachment));
+    }
+    for (const id of toPushIds) {
+        dispatch(pushAttachmentRequest({ id }));
+    }
+}
 
 export type ApplicationContext = {
     api: Api;
@@ -197,19 +217,65 @@ export function sendMessage({
         const [date1, date2] = createDatePair();
         const { conversationId, spaceId } = dispatch(ensureConversation(c, ui, date1));
 
+        // Resolve @mentioned files from the live search index (covers text-only @mentions
+        // and paths that bypass handleSendAction, e.g. project detail view).
+        let messageAttachments = [...m.attachments];
+        const userId = state.user?.value?.ID;
+        const conversationAttachments = c.messageChain.flatMap((message) => {
+            return (message.attachments ?? [])
+                .map((shallow) => state.attachments?.[shallow.id] ?? shallow)
+                .filter((att): att is Attachment => Boolean(att));
+        });
+        if (userId && spaceId) {
+            const searchService = SearchService.get(userId);
+            await searchService.ensureManifestReady();
+            messageAttachments = messageAttachments.map((att) =>
+                refreshAttachmentFromSearchIndex(att, searchService, spaceId, m.content)
+            );
+            const resolvedAttachments = await resolveReferencedFilesForSend(
+                m.content,
+                messageAttachments,
+                userId,
+                spaceId,
+                conversationAttachments
+            );
+            if (resolvedAttachments.length > 0) {
+                messageAttachments = [...messageAttachments, ...resolvedAttachments];
+                for (const attachment of resolvedAttachments) {
+                    dispatch(
+                        upsertAttachment({
+                            ...attachment,
+                            conversationContext: true,
+                        })
+                    );
+                }
+            }
+            for (const attachment of messageAttachments) {
+                if (attachment.markdown && attachment.conversationContext) {
+                    dispatch(upsertAttachment(attachment));
+                }
+            }
+        }
+
         // m.attachments contains directly-uploaded files (provisional) plus in-memory
         // mention-resolved attachments built in handleSendAction. Mentioned files are
         // identifiable by filename matching an @reference in the content — they should
         // NOT be assigned to the space (they are ephemeral context, not project uploads).
         const fileReferences = parseFileReferences(m.content);
-        const referencedFileNames = new Set(fileReferences.map((ref) => ref.fileName.toLowerCase()));
-        const uploadedAttachments = m.attachments.filter((att) => !referencedFileNames.has(att.filename.toLowerCase()));
+        const referencedFileNames = referencedFileNamesWithContent(
+            m.content,
+            messageAttachments,
+            conversationAttachments
+        );
+        const uploadedAttachments = messageAttachments.filter(
+            (att) => !fileReferences.some((ref) => ref.fileName.toLowerCase() === att.filename.toLowerCase())
+        );
 
         // Create the new messages (user and assistant)
         const lastMessage = c.messageChain.at(-1);
         let { userMessage, assistantMessage } = createMessagePair(
             m.content,
-            m.attachments,
+            messageAttachments,
             conversationId,
             lastMessage,
             date1,
@@ -266,8 +332,7 @@ export function sendMessage({
 
         const allAttachments = state.attachments;
 
-        // Get user ID for RAG retrieval
-        const userId = state.user?.value?.ID;
+        // Get user ID for RAG retrieval (already resolved above for @mentions)
 
         const generateTitle = c.messageChain.length === 0;
         const linearChain = newMessageChain;
@@ -289,9 +354,7 @@ export function sendMessage({
             const lastUserMessage = linearChain.filter((m) => m.role === Role.User).pop();
             const userQuery = lastUserMessage?.content || '';
 
-            // Retrieve relevant documents from the project's indexed Drive folder (RAG)
-            // Pass allAttachments so we can filter out already-retrieved documents
-            // Pass referencedFileNames to exclude files that were explicitly @mentioned
+            // Retrieve relevant documents from the project search index (RAG)
             const ragResult = await retrieveDocumentContextForProject(
                 userQuery,
                 spaceId,
@@ -305,20 +368,7 @@ export function sendMessage({
             // If we have RAG attachments, store them and add to the user message
             let updatedLinearChain = linearChain;
             if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
-                // Store each attachment in Redux
-                // Skip uploaded project files (they're already in Redux)
-                // Don't persist auto-retrieved Drive files to server
-                for (const attachment of ragResult.attachments) {
-                    if (attachment.isUploadedProjectFile) {
-                        // Skip - uploaded files are already in Redux
-                        console.log(`[RAG] Skipping upsert for uploaded project file: ${attachment.filename}`);
-                        continue;
-                    }
-                    dispatch(upsertAttachment(attachment));
-                    if (!attachment.autoRetrieved) {
-                        dispatch(pushAttachmentRequest({ id: attachment.id }));
-                    }
-                }
+                storeRagAttachments(dispatch, ragResult.attachments, allAttachments || {});
 
                 // Create shallow attachment refs for the message
                 const existingAttachments = lastUserMessage.attachments || [];
@@ -367,12 +417,17 @@ export function sendMessage({
             // prepareTurns can expand them into proper file-content turns that the API reads.
             // On the first message c.allConversationAttachments only contains provisional composer
             // files; the RAG results are not yet loaded from Redux, so without this they are dropped.
-            const updatedC: ConversationContext = ragResult?.attachments?.length
-                ? {
-                      ...c,
-                      allConversationAttachments: [...c.allConversationAttachments, ...ragResult.attachments],
-                  }
-                : c;
+            const updatedC: ConversationContext = (() => {
+                const existingIds = new Set(c.allConversationAttachments.map((a) => a.id));
+                const newMessageAttachments = messageAttachments.filter((a) => !existingIds.has(a.id));
+                const merged = [...c.allConversationAttachments, ...newMessageAttachments];
+                if (ragResult?.attachments?.length) {
+                    const ragIds = new Set(merged.map((a) => a.id));
+                    const newRag = ragResult.attachments.filter((a) => !ragIds.has(a.id));
+                    return { ...c, allConversationAttachments: [...merged, ...newRag] };
+                }
+                return { ...c, allConversationAttachments: merged };
+            })();
 
             // Memories are user-level personalization for general chats only; project chats
             // get their own explicit instructions and should not be influenced by global memory.
@@ -498,20 +553,7 @@ export function regenerateMessage({
             // If we have RAG attachments, store them and add to the user message
             let updatedMessagesWithContext = messagesWithContext;
             if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
-                // Store each attachment in Redux
-                // Skip uploaded project files (they're already in Redux)
-                // Don't persist auto-retrieved Drive files to server
-                for (const attachment of ragResult.attachments) {
-                    if (attachment.isUploadedProjectFile) {
-                        // Skip - uploaded files are already in Redux
-                        console.log(`[RAG] Skipping upsert for uploaded project file: ${attachment.filename}`);
-                        continue;
-                    }
-                    dispatch(upsertAttachment(attachment));
-                    if (!attachment.autoRetrieved) {
-                        dispatch(pushAttachmentRequest({ id: attachment.id }));
-                    }
-                }
+                storeRagAttachments(dispatch, ragResult.attachments, allAttachments);
 
                 // Create shallow attachment refs for the message
                 const existingAttachments = lastUserMessage.attachments || [];
@@ -692,9 +734,7 @@ export function retrySendMessage({
         const lastUserMessage = linearChain.filter((m) => m.role === Role.User).pop();
         const userQuery = lastUserMessage?.content || '';
 
-        // Retrieve relevant documents from the project's indexed Drive folder (RAG)
-        // Pass allAttachments so we can filter out already-retrieved documents
-        // Pass referencedFileNames to exclude files that were explicitly @mentioned
+        // Retrieve relevant documents from the project search index (RAG)
         const ragResult = await retrieveDocumentContextForProject(
             userQuery,
             c.spaceId,
@@ -708,18 +748,7 @@ export function retrySendMessage({
         // If we have RAG attachments, store them and add to the user message
         let updatedLinearChain = linearChain;
         if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
-            // Store each attachment in Redux
-            // Skip uploaded project files (they're already in Redux)
-            // Don't persist auto-retrieved Drive files to server
-            for (const attachment of ragResult.attachments) {
-                if (attachment.isUploadedProjectFile) {
-                    continue;
-                }
-                dispatch(upsertAttachment(attachment));
-                if (!attachment.autoRetrieved) {
-                    dispatch(pushAttachmentRequest({ id: attachment.id }));
-                }
-            }
+            storeRagAttachments(dispatch, ragResult.attachments, p.allAttachments || {});
 
             // Create shallow attachment refs for the message
             const existingAttachments = lastUserMessage.attachments || [];
