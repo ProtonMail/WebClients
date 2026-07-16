@@ -4,12 +4,29 @@
     "language": "hi_IN"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "रद्द करें"
+      ],
+      "Open external url": [
+        "बाहरी यूआरएल खोलें"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "प्रोटोकॉल ${ parsedProtocol } की अनुमति नहीं है। क्या आप बाहरी यूआरएल खोलना चाहते हैं?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"अभी वापिस शुरु करें और प्रोफाइल करें\" ऐप को तुरंत वापिस शुरु करें कर देगा और एक स्टार्टअप प्रोफाइल कैप्चर करेगा।\n\n\"अगली बार लॉन्च होने पर प्रोफाइल करें\" अगली बार जब आप ऐप खोलेंगे तो प्रोफाइल करेगा। रीबूट के बाद स्टार्टअप स्पीड मापने के लिए इसका उपयोग करें।"
+      ],
       "About ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } के बारे में"
       ],
       "Actual Size": [
         "वास्तविक साइज़"
+      ],
+      "Cancel": [
+        "रद्द करें"
       ],
       "Check spelling while typing": [
         "टाइप करते समय वर्तनी जांचें"
@@ -20,6 +37,9 @@
       "Close Window": [
         "विंडो बंद करें"
       ],
+      "Collect startup performance data": [
+        "स्टार्टअप परफॉर्मेंस डेटा एकत्र करें"
+      ],
       "Copy": [
         "कॉपी करें"
       ],
@@ -28,6 +48,24 @@
       ],
       "Delete": [
         "मिटा दें"
+      ],
+      "Disable": [
+        "अक्षम करें"
+      ],
+      "Disable Hardware Acceleration": [
+        "हार्डवेयर एक्सिलरेशन अक्षम करें"
+      ],
+      "Enable": [
+        "सक्षम करें"
+      ],
+      "Enable diagnostic logs": [
+        "डायग्नोस्टिक लॉग सक्षम करें"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Chromium इंजन से डायग्नोस्टिक लॉग सक्षम करें।"
+      ],
+      "Enable Hardware Acceleration": [
+        "हार्डवेयर एक्सिलरेशन सक्षम करें"
       ],
       "Force Reload": [
         "जबर्दस्ती पुनः लोड करें"
@@ -47,6 +85,12 @@
       "Paste and Match Style": [
         "पेस्ट करें और स्टाइल मैच करें"
       ],
+      "Profile app startup": [
+        "प्रोफाइल ऐप स्टार्टअप"
+      ],
+      "Profile on next launch": [
+        "अगली बार लॉन्च होने पर प्रोफाइल करें"
+      ],
       "Quit": [
         "बंद करें"
       ],
@@ -58,6 +102,12 @@
       ],
       "Reload": [
         "रिलोड"
+      ],
+      "Restart and profile now": [
+        "अभी वापिस शुरु करें और प्रोफाइल करें"
+      ],
+      "Restart with logging": [
+        "लॉगिंग के साथ वापिस शुरु करें"
       ],
       "Select All": [
         "सब चुनें"
@@ -80,6 +130,15 @@
       "Stop Speaking": [
         "कृपया बोलना बंद करे"
       ],
+      "Switch to ${ appName }": [
+        "${ appName } पर स्विच करें"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "ये लॉग समस्याओं का निदान करने में हमारी सहायता करते हैं। बदलाव को लागू करने के लिए ऐप वापिस शुरु करें होगा।"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "यह मापेगा कि ऐप शुरू होने में कितना समय लेता है और आपके लॉग फोल्डर में एक रिपोर्ट सहेजता है।"
+      ],
       "Toggle Full Screen": [
         "पूरी स्क्रीन स्विच करें"
       ],
@@ -88,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } अनइंस्टाल करें"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "जब हार्डवेयर एक्सिलरेशन सक्षम होता है, तो ऐप रेंडरिंग के लिए आपके डिवाइस के समर्पित ग्राफिक्स हार्डवेयर का उपयोग करता है। इससे कुछ सिस्टम पर अनुकूलता संबंधी समस्याएं हो सकती हैं।"
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "हार्डवेयर एक्सिलरेशन के बिना, ऐप आपके ग्राफिक्स कार्ड के बजाय सॉफ्टवेयर रेंडरिंग का उपयोग करता है। आपको धीमी एनिमेशन और अधिक CPU उपयोग का अनुभव हो सकता है।"
       ],
       "Zoom": [
         "बड़ा करें"
@@ -100,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "हार्डवेयर एक्सिलरेशन अक्षम करें"
+      ],
+      "Enable Hardware Acceleration": [
+        "हार्डवेयर एक्सिलरेशन सक्षम करें"
+      ],
       "Services": [
         "सेवाएं"
       ]
@@ -151,6 +222,14 @@
       ],
       "Undo": [
         "पूर्ववत् करें"
+      ]
+    },
+    "Error dialog": {
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - अप्रत्याशित एरर"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "एक एरर के कारण, ${ MAIL_APP_NAME } ऐप बंद हो जाएगा। इसे दोबारा चलाने का प्रयास करें और यदि समस्या बनी रहती है, तो हमसे संपर्क करें। एरर के बारे में जानकारी एप्लीकेशन लॉग में पाई जा सकती है।"
       ]
     },
     "error screen": {

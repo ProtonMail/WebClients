@@ -4,12 +4,29 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Open external url": [
+        "外部URLを開く"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "プロトコル ${ parsedProtocol } は許可されていません。外部URLを開きますか？"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "「今すぐ再起動してプロファイルを作成」を選択すると、アプリをすぐに再起動して起動プロファイルをキャプチャします。\n\n「次回起動時にプロファイルを作成」を選択すると、次にアプリを開いたときにプロファイルを作成します。再起動後の起動時間を測定する場合にこちらを使用してください。"
+      ],
       "About ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } について"
       ],
       "Actual Size": [
         "実際のサイズ"
+      ],
+      "Cancel": [
+        "キャンセル"
       ],
       "Check spelling while typing": [
         "入力中にスペルチェックを行う"
@@ -20,6 +37,9 @@
       "Close Window": [
         "ウインドウを閉じる"
       ],
+      "Collect startup performance data": [
+        "スタートアップパフォーマンスデータの収集"
+      ],
       "Copy": [
         "コピー"
       ],
@@ -28,6 +48,24 @@
       ],
       "Delete": [
         "削除"
+      ],
+      "Disable": [
+        "無効化"
+      ],
+      "Disable Hardware Acceleration": [
+        "ハードウェアアクセラレーションを無効化"
+      ],
+      "Enable": [
+        "有効"
+      ],
+      "Enable diagnostic logs": [
+        "診断ログを有効にする"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Chromiumエンジンからの診断ログを有効にします。"
+      ],
+      "Enable Hardware Acceleration": [
+        "ハードウェアアクセラレーションを有効にする"
       ],
       "Force Reload": [
         "強制再読み込み"
@@ -47,6 +85,12 @@
       "Paste and Match Style": [
         "書式を統一して貼り付け"
       ],
+      "Profile app startup": [
+        "アプリの起動プロファイルを作成"
+      ],
+      "Profile on next launch": [
+        "次回起動時にプロファイルを作成"
+      ],
       "Quit": [
         "終了"
       ],
@@ -58,6 +102,12 @@
       ],
       "Reload": [
         "再読み込み"
+      ],
+      "Restart and profile now": [
+        "今すぐ再起動してプロファイルを作成"
+      ],
+      "Restart with logging": [
+        "ロギングを有効にして再起動"
       ],
       "Select All": [
         "すべて選択"
@@ -80,6 +130,15 @@
       "Stop Speaking": [
         "読み上げを停止"
       ],
+      "Switch to ${ appName }": [
+        "${ appName }に切り替える"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "これらのログは、問題を診断するのに役立ちます。変更を適用するため、アプリが再起動します。"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "これにより、アプリの起動にかかる時間が測定され、ログフォルダーにレポートが保存されます。"
+      ],
       "Toggle Full Screen": [
         "フルスクリーンに切り替え"
       ],
@@ -88,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }をアンインストール"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "ハードウェアアクセラレーションが有効な場合、アプリはレンダリングにデバイス専用のグラフィックスハードウェアを使用します。これにより、一部のシステムで互換性の問題が発生する可能性があります。"
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "ハードウェアアクセラレーションが無効な場合、アプリはグラフィックスカードの代わりにソフトウェアレンダリングを使用します。アニメーションが遅くなったり、CPU使用率が高くなったりすることがあります。"
       ],
       "Zoom": [
         "Zoom"
@@ -100,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "ハードウェアアクセラレーションを無効化"
+      ],
+      "Enable Hardware Acceleration": [
+        "ハードウェアアクセラレーションを有効にする"
+      ],
       "Services": [
         "サービス"
       ]
@@ -151,6 +222,14 @@
       ],
       "Undo": [
         "取り消し"
+      ]
+    },
+    "Error dialog": {
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - 予期しないエラー"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "エラーが発生したため、${ MAIL_APP_NAME }アプリは終了します。もう一度実行してみてください。問題が解決しない場合は、お問い合わせください。エラーに関する情報は、アプリケーションログに記録されています。"
       ]
     },
     "error screen": {

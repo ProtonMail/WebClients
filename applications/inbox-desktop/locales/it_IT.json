@@ -4,12 +4,29 @@
     "language": "it_IT"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Annulla"
+      ],
+      "Open external url": [
+        "Apri url esterno"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Il protocollo ${ parsedProtocol } non è consentito. Vuoi aprire l'url esterno?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Riavvia e profila ora\" riavvierà l'app immediatamente e acquisirà un profilo di startup.\n\n\"Profila al prossimo avvio\" eseguirà la profilazione alla prossima apertura dell'app. Usa questa opzione per misurare la velocità di startup dopo un riavvio."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Informazioni su ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Dimensione attuale"
+      ],
+      "Cancel": [
+        "Annulla"
       ],
       "Check spelling while typing": [
         "Controlla l'ortografia durante la digitazione"
@@ -20,6 +37,9 @@
       "Close Window": [
         "Chiudi Finestra"
       ],
+      "Collect startup performance data": [
+        "Raccogli dati sulle prestazioni di startup"
+      ],
       "Copy": [
         "Copia"
       ],
@@ -28,6 +48,24 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Disable": [
+        "Disattiva"
+      ],
+      "Disable Hardware Acceleration": [
+        "Disattiva accelerazione hardware"
+      ],
+      "Enable": [
+        "Attiva"
+      ],
+      "Enable diagnostic logs": [
+        "Attiva log di diagnostica"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Attiva i log di diagnostica dal motore Chromium."
+      ],
+      "Enable Hardware Acceleration": [
+        "Attiva accelerazione hardware"
       ],
       "Force Reload": [
         "Forza la ricarica"
@@ -47,6 +85,12 @@
       "Paste and Match Style": [
         "Incolla e abbina stile"
       ],
+      "Profile app startup": [
+        "Profila startup dell'app"
+      ],
+      "Profile on next launch": [
+        "Profila al prossimo avvio"
+      ],
       "Quit": [
         "Chiudi"
       ],
@@ -58,6 +102,12 @@
       ],
       "Reload": [
         "Ricarica"
+      ],
+      "Restart and profile now": [
+        "Riavvia e profila ora"
+      ],
+      "Restart with logging": [
+        "Riavvia con logging"
       ],
       "Select All": [
         "Seleziona Tutto"
@@ -80,6 +130,15 @@
       "Stop Speaking": [
         "Interrompi riproduzione"
       ],
+      "Switch to ${ appName }": [
+        "Passa a ${ appName }"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "Questi log ci aiutano a diagnosticare i problemi. L'app si riavvierà per applicare la modifica."
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "In questo modo misurerai quanto tempo impiega l'app ad avviarsi e salverai un report nella tua cartella dei log."
+      ],
       "Toggle Full Screen": [
         "Attiva/disattiva schermo intero"
       ],
@@ -88,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Disinstalla ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Quando l'accelerazione hardware è attivata, l'app usa l'hardware grafico dedicato del tuo dispositivo per il rendering. Questo può causare problemi di compatibilità su alcuni sistemi."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Senza l'accelerazione hardware, l'app usa il rendering software invece della tua scheda grafica. Potresti notare animazioni più lente e un uso della CPU più elevato."
       ],
       "Zoom": [
         "Zoom"
@@ -100,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Disattiva accelerazione hardware"
+      ],
+      "Enable Hardware Acceleration": [
+        "Attiva accelerazione hardware"
+      ],
       "Services": [
         "Servizi"
       ]
@@ -151,6 +222,14 @@
       ],
       "Undo": [
         "Annulla"
+      ]
+    },
+    "Error dialog": {
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - Errore imprevisto"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "A causa di un errore, l'app ${ MAIL_APP_NAME } verrà chiusa. Prova a eseguirla di nuovo e, se il problema persiste, contattaci. Le informazioni sull'errore si trovano nel log dell'applicazione."
       ]
     },
     "error screen": {

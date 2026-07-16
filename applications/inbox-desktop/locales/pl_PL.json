@@ -4,7 +4,21 @@
     "language": "pl_PL"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Open external url": [
+        "Otwórz zewnętrzny adres URL"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Protokół ${ parsedProtocol } nie jest dozwolony. Czy chcesz otworzyć zewnętrzny adres URL?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "Opcja „Uruchom ponownie i profiluj teraz” natychmiast uruchomi ponownie aplikację i zarejestruje profil startowy.\n\nOpcja „Profiluj przy następnym uruchomieniu” utworzy profil podczas kolejnego otwarcia aplikacji. Użyj tej opcji, aby zmierzyć prędkość uruchamiania po restarcie systemu."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "O aplikacji ${ MAIL_APP_NAME }"
       ],
@@ -22,6 +36,9 @@
       ],
       "Close Window": [
         "Zamknij okno"
+      ],
+      "Collect startup performance data": [
+        "Zbieraj dane o wydajności startowej"
       ],
       "Copy": [
         "Kopiuj"
@@ -41,6 +58,15 @@
       "Enable": [
         "Włącz"
       ],
+      "Enable diagnostic logs": [
+        "Włącz logi diagnostyczne"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Włącz logi diagnostyczne z silnika Chromium."
+      ],
+      "Enable Hardware Acceleration": [
+        "Włącz przyspieszenie sprzętowe"
+      ],
       "Force Reload": [
         "Odśwież"
       ],
@@ -59,6 +85,12 @@
       "Paste and Match Style": [
         "Wklej jako zwykły tekst"
       ],
+      "Profile app startup": [
+        "Profiluj start aplikacji"
+      ],
+      "Profile on next launch": [
+        "Profiluj przy następnym uruchomieniu"
+      ],
       "Quit": [
         "Zakończ"
       ],
@@ -70,6 +102,12 @@
       ],
       "Reload": [
         "Odśwież"
+      ],
+      "Restart and profile now": [
+        "Uruchom ponownie i profiluj teraz"
+      ],
+      "Restart with logging": [
+        "Uruchom ponownie z rejestrowaniem logów"
       ],
       "Select All": [
         "Zaznacz wszystko"
@@ -92,6 +130,15 @@
       "Stop Speaking": [
         "Przestań mówić"
       ],
+      "Switch to ${ appName }": [
+        "Przełącz na ${ appName }"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "Te logi pomagają nam diagnozować problemy. Aplikacja zostanie uruchomiona ponownie, aby zastosować zmianę."
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "To zmierzy, jak długo aplikacja się uruchamia, i zapisze raport w Twoim folderze z logami."
+      ],
       "Toggle Full Screen": [
         "Pełny ekran"
       ],
@@ -100,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Odinstaluj ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Gdy przyspieszenie sprzętowe jest włączone, aplikacja używa dedykowanej karty graficznej Twojego urządzenia do renderowania obrazu. Może to powodować problemy ze zgodnością na niektórych systemach."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Bez przyspieszenia sprzętowego aplikacja korzysta z renderowania programowego zamiast karty graficznej. Możesz zauważyć wolniejsze animacje i większe zużycie procesora."
       ],
       "Zoom": [
         "Powiększenie"
@@ -112,6 +165,9 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Wyłącz przyspieszenie sprzętowe"
+      ],
       "Enable Hardware Acceleration": [
         "Włącz przyśpieszenie sprzętowe"
       ],
@@ -166,6 +222,14 @@
       ],
       "Undo": [
         "Cofnij"
+      ]
+    },
+    "Error dialog": {
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } – nieoczekiwany błąd"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Z powodu błędu aplikacja ${ MAIL_APP_NAME } zostanie zamknięta. Spróbuj uruchomić ją ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami. Informacje o błędzie można znaleźć w logach aplikacji."
       ]
     },
     "error screen": {
