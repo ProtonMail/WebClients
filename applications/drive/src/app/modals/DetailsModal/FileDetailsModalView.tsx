@@ -12,6 +12,7 @@ import {
 } from '@proton/components';
 import { InfoIconTooltip } from '@proton/drive/components/InfoIconTooltip';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { PRODUCT_NAMES } from '@proton/shared/lib/constants';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -159,6 +160,13 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                                 dataTestId="drive:file-digest"
                             />
                         </>
+                    )}
+                    {details.isImported !== undefined && (
+                        <TextRow
+                            label={c('Title').t`Imported by ${PRODUCT_NAMES.EASY_SWITCH}`}
+                            text={details.isImported ? c('Info').t`Yes` : c('Info').t`No`}
+                            dataTestId="drive:is-imported"
+                        />
                     )}
                     <TextRow label={c('Title').t`UID`} text={<div className="text-break">{details.uid}</div>} />
                     <TextRow

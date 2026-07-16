@@ -37,6 +37,7 @@ export type FileDetails = {
     uploadedTime: Date;
     claimedModifiedTime?: Date;
     isShared?: boolean;
+    isImported?: boolean;
     numberOfDownloads?: number | string;
     file?: {
         mediaType?: string;
@@ -113,6 +114,7 @@ export function useFileDetailsModalState({
                     uploadedTime: node.creationTime,
                     claimedModifiedTime: activeRevision?.claimedModificationTime,
                     isShared: node.directRole === MemberRole.Admin ? node.isShared : undefined,
+                    isImported: node.type === NodeType.File ? activeRevision?.isImported : node.folder?.isImported,
                     numberOfDownloads,
                     file:
                         node.type === NodeType.File
