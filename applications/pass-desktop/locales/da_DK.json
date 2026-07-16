@@ -577,6 +577,12 @@
       "Regenerate": [
         "Regenerér"
       ],
+      "Regex invalid": [
+        "Regex ugyldig"
+      ],
+      "Regex unsafe": [
+        "Regex usikker"
+      ],
       "Reject": [
         "Afvis"
       ],
@@ -3116,6 +3122,9 @@
       "Bank Name": [
         "Banknavn"
       ],
+      "Basic": [
+        "Grundlæggende"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Ud over at gemme dine logins beskytter ${ PASS_APP_NAME } din identitet med en integreret e-mailaliasfunktion. Når du tilmelder dig en ny onlinekonto, kan ${ PASS_APP_NAME } automatisk oprette et alias for at beskytte din faktiske e-mailadresse. "
       ],
@@ -3148,6 +3157,9 @@
       ],
       "Catch-All": [
         "Catch-All"
+      ],
+      "Check": [
+        "Kontroller"
       ],
       "Checkbox": [
         "Afkrydsningsfelt"
@@ -3313,6 +3325,12 @@
       ],
       "Enter email or username": [
         "Indtast e-mail eller brugernavn"
+      ],
+      "Exact host matching": [
+        "Nøjagtigt værtsmatch"
+      ],
+      "Exact URL matching": [
+        "Nøjagtig URL-matching"
       ],
       "Experimental": [
         "Eksperimentel"
@@ -3641,6 +3659,9 @@
       "Never": [
         "Aldrig"
       ],
+      "Never fill on this exact URL": [
+        "Udfyld aldrig på denne nøjagtige URL"
+      ],
       "New": [
         "Ny"
       ],
@@ -3703,6 +3724,9 @@
       ],
       "Owner": [
         "Indehaver"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domæne og underdomæner (standard)"
       ],
       "Passkey": [
         "Adgangsnøgle"
@@ -3814,6 +3838,9 @@
       ],
       "Reddit handle": [
         "Reddit-brugernavn"
+      ],
+      "Regular expression": [
+        "Regulært udtryk"
       ],
       "Relevant": [
         "Relevant"
@@ -3944,6 +3971,9 @@
       "SSN": [
         "CPR"
       ],
+      "Starts with": [
+        "Begynder med"
+      ],
       "State or province": [
         "Landsdel eller provins"
       ],
@@ -4072,6 +4102,9 @@
       ],
       "Update": [
         "Opdatér"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ],
       "Use ${ PASS_APP_NAME } as SSH agent": [
         "Brug ${ PASS_APP_NAME } som SSH-agent"
@@ -4212,6 +4245,24 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elementer"
+      ],
+      "'Starts with' matching rule": [
+        "Matchende regel for \"Begynder med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Nøjagtig (under) domænematchregel"
+      ],
+      "Exact URL matching rule": [
+        "Nøjagtig URL-matchende regel"
+      ],
+      "Never fill with this exact URL": [
+        "Udfyld aldrig med denne nøjagtige URL"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært udtryk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for jokertegnmønstermatch"
       ],
       "You can drag and drop the selected item to another vault": [
         "Du kan trække og slippe det valgte element til en anden boks",
@@ -4512,6 +4563,23 @@
         "Brugt på ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Indtast en URL for at kontrollere, om Deres nuværende regel matcher URL'en"
+      ],
+      "The rule is matching this URL": [
+        "Reglen matcher denne URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Reglen matcher IKKE denne URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Denne URL vil blive blokeret fra autofyld"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Denne URL vil IKKE blive blokeret fra autofyld"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
@@ -4716,6 +4784,9 @@
       "Add mailbox": [
         "Tilføj postkasse"
       ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Juster adfærden for autofyld for at ændre, hvor logins foreslås."
+      ],
       "Agent setup instructions": [
         "Instruktioner til opsætning af agent"
       ],
@@ -4914,6 +4985,9 @@
       ],
       "Last modified": [
         "Sidst ændret"
+      ],
+      "Learn more": [
+        "Få mere at vide"
       ],
       "Leave this item?": [
         "Forlad dette element?"
@@ -5141,6 +5215,9 @@
       "Sync your aliases from SimpleLogin": [
         "Synkroniser dine aliasser fra SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Test en URL i forhold til denne regel"
+      ],
       "Transfer ownership": [
         "Overfør ejerskab"
       ],
@@ -5155,6 +5232,9 @@
       ],
       "Update available": [
         "Opdatering tilgængelig"
+      ],
+      "URL matching": [
+        "URL-matching"
       ],
       "Vault": [
         "Boks"
@@ -5270,6 +5350,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Adgangskoden til ${ BRAND_NAME } kræves"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } offline-tilstand er deaktiveret."
@@ -5483,6 +5566,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Denne e-mailadresse vil ikke længere blive monitoreret for databrud."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Dette element kan ikke foreslås til autofyld på grund af \"${ neverModeDescriptionStrong }\". Tilføj en anden URL, hvis De ønsker, at dette element skal autofyldes."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Dette element er i øjeblikket delt. Hvis du sletter det, fjernes adgangen for alle andre brugere."

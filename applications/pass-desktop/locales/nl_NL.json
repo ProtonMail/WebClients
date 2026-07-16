@@ -319,6 +319,9 @@
       "Do not show again when I press": [
         "Niet meer tonen wanneer ik druk op"
       ],
+      "Do not show this again": [
+        "Dit niet meer tonen"
+      ],
       "Don't show this again": [
         "Laat dit niet meer zien"
       ],
@@ -573,6 +576,12 @@
       ],
       "Regenerate": [
         "Opnieuw genereren"
+      ],
+      "Regex invalid": [
+        "Regex ongeldig"
+      ],
+      "Regex unsafe": [
+        "Regex onveilig"
       ],
       "Reject": [
         "Afwijzen"
@@ -1215,6 +1224,12 @@
       "Failed to set default mailbox": [
         "Fout bij het instellen van de standaard mailbox"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Kan SSH-agent niet starten: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Kan SSH-agent niet stoppen: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Fout bij het synchroniseren van aliassen"
       ],
@@ -1610,6 +1625,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } zal alleen logins importeren, creditcards en identiteiten."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } zal de SSH-sleutels gebruiken die in uw kluizen zijn opgeslagen."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } offline modus ingeschakeld."
       ],
@@ -1989,6 +2007,9 @@
       "finance": [
         "financiën"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Zoek \"OpenSSH Authentication Agent\", klik met de rechtermuisknop op Eigenschappen."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Volg deze stappen om uw gegevens te importeren met een algemeen CSV-bestand:"
       ],
@@ -2029,6 +2050,9 @@
       ],
       "Identity confirmed": [
         "Identiteit bevestigd"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Als u niet van plan bent de SSH-agent op een ander betaald account te gebruiken, vergeet dan niet om deze instelling uit te schakelen voordat u naar dat account overschakelt."
       ],
       "Import the CSV file below.": [
         "Importeer het CSV-bestand hieronder."
@@ -2139,6 +2163,9 @@
       "Low Priority": [
         "Lage Prioriteit"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Zorg ervoor dat u ${ PASS_APP_NAME } actief houdt (kan worden geminimaliseerd) om de SSH-agent actief te houden. SSH-sleutels met een wachtwoordzin worden momenteel niet ondersteund."
+      ],
       "Manager": [
         "Beheerder"
       ],
@@ -2204,6 +2231,9 @@
       "No network connection": [
         "Geen netwerkverbinding"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Geen SSH-sleutels gevonden in ${ PASS_SHORT_APP_NAME }. Maak SSH-sleutelitems aan om te gebruiken met de agent."
+      ],
       "No vaults available.": [
         "Geen kluizen beschikbaar."
       ],
@@ -2227,6 +2257,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Alleen tokens die in de afgelopen 30 dagen zijn verlopen, worden weergegeven. Oudere tokens worden automatisch verwijderd."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Open \"Services\" (u kunt de Windows-zoekbalk gebruiken of op Win+R drukken en services.msc invoeren)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Open uw Safari-instellingen voor de extensie en controleer of site toelatingen zijn ingeschakeld voor ${ BRAND_NAME }-domeinen"
@@ -2252,6 +2285,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week worden automatisch uit de geschiedenis verwijderd.",
         "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } weken worden automatisch uit de geschiedenis verwijderd."
+      ],
+      "Paste the following command in your terminal:": [
+        "Plak de volgende opdracht in uw terminal:"
       ],
       "Paused": [
         "Gepauzeerd"
@@ -2400,6 +2436,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beschermd door ${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
       ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Gerangschikt op veld (eerst titel, daarna gebruikersnaam of e-mail, website, notities) en overeenkomstprecisie (exact, begint met, bevat)."
+      ],
       "Read item": [
         "Item lezen"
       ],
@@ -2480,6 +2519,9 @@
       ],
       "Session timed out": [
         "Sessie verlopen"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Stel \"Opstarttype\" in op Uitgeschakeld, klik op OK."
       ],
       "Set by your organization": [
         "Ingesteld door uw organisatie"
@@ -2623,6 +2665,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dit zal het apparaat **${ name }** afwijzen, die proberen in te loggen op uw ${ BRAND_NAME } account op **${ date }**."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Tip: voeg het toe aan uw .bashrc- of .zshrc-bestand zodat het automatisch wordt uitgevoerd wanneer u de terminal opent."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Om e-mails te blijven ontvangen, zet deze aliassen over naar een ander postvak:"
       ],
@@ -2637,6 +2682,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Om biometrische ontgrendeling in te stellen, heeft ${ PASS_APP_NAME } nieuwe browserrechten nodig. Nadat u deze heeft geaccepteerd, wordt de extensie opnieuw geladen. Open deze pagina daarna opnieuw."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Om de SSH-agent van ${ PASS_APP_NAME } op Windows te gebruiken, moet de OpenSSH-service worden uitgeschakeld."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Vertrouwd door meer dan 50 000 zakelijke gebruikers en 100 miljoen accounts over de hele wereld."
@@ -3074,6 +3122,9 @@
       "Bank Name": [
         "Naam bank"
       ],
+      "Basic": [
+        "Basis"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Naast het opslaan van uw logins beschermt ${ PASS_APP_NAME } uw identiteit met een geïntegreerde email alias-functie. Wanneer u zich registreert voor een nieuw online account, kan ${ PASS_APP_NAME } automatisch een alias maken om uw werkelijke e-mailadres te beschermen. "
       ],
@@ -3106,6 +3157,9 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Check": [
+        "Controleren"
       ],
       "Checkbox": [
         "Selectievakje"
@@ -3271,6 +3325,12 @@
       ],
       "Enter email or username": [
         "Voer e-mail of gebruikersnaam in"
+      ],
+      "Exact host matching": [
+        "Exacte hostovereenkomst"
+      ],
+      "Exact URL matching": [
+        "Exacte URL-overeenkomst"
       ],
       "Experimental": [
         "Experimenteel"
@@ -3599,6 +3659,9 @@
       "Never": [
         "Nooit"
       ],
+      "Never fill on this exact URL": [
+        "Nooit invullen op deze exacte URL"
+      ],
       "New": [
         "Nieuw"
       ],
@@ -3661,6 +3724,9 @@
       ],
       "Owner": [
         "Eigenaar"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Bovenliggende domein en subdomeinen (standaard)"
       ],
       "Passkey": [
         "Toegangssleutel"
@@ -3772,6 +3838,12 @@
       ],
       "Reddit handle": [
         "Reddit-gebruikersnaam"
+      ],
+      "Regular expression": [
+        "Reguliere expressie"
+      ],
+      "Relevant": [
+        "Relevant"
       ],
       "Remove link": [
         "Link verwijderen"
@@ -3898,6 +3970,9 @@
       ],
       "SSN": [
         "SSN"
+      ],
+      "Starts with": [
+        "Begint met"
       ],
       "State or province": [
         "Provincie"
@@ -4027,6 +4102,12 @@
       ],
       "Update": [
         "Update"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertekenpatroon"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Gebruik ${ PASS_APP_NAME } als SSH-agent"
       ],
       "Use for AI agent": [
         "Gebruik voor AI-agent"
@@ -4164,6 +4245,24 @@
       "${ count } item": [
         "${ count } item",
         "${ count } items"
+      ],
+      "'Starts with' matching rule": [
+        "'Begint met'-matchregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Exacte (sub)domein matchregel"
+      ],
+      "Exact URL matching rule": [
+        "Exacte URL-matchregel"
+      ],
+      "Never fill with this exact URL": [
+        "Nooit invullen met deze exacte URL"
+      ],
+      "Regular expression rule": [
+        "Reguliere expressieregel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchregel met jokertekenpatroon"
       ],
       "You can drag and drop the selected item to another vault": [
         "U kunt het geselecteerde item slepen en neerzetten naar een andere kluis",
@@ -4464,6 +4563,23 @@
         "Gebruikt op ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Voer een URL in om te controleren of uw huidige regel overeenkomt met de URL"
+      ],
+      "The rule is matching this URL": [
+        "De regel komt overeen met deze URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "De regel komt NIET overeen met deze URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Deze URL zal worden geblokkeerd voor automatisch aanvullen"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Deze URL zal NIET worden geblokkeerd voor automatisch aanvullen"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } en ${ remainingCount } ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
@@ -4615,6 +4731,12 @@
       "Random prefix generation successfully enabled": [
         "Willekeurige prefix genereren succesvol ingeschakeld"
       ],
+      "SSH agent successfully started": [
+        "SSH-agent succesvol gestart"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-agent succesvol gestopt"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Kluizen kunnen niet meer dan ${ targetMaxMembers } gebruiker bevatten.",
         "Kluizen kunnen niet meer dan ${ targetMaxMembers } gebruikers bevatten."
@@ -4661,6 +4783,9 @@
       ],
       "Add mailbox": [
         "Postvak toevoegen"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Pas het gedrag van automatisch aanvullen aan om te wijzigen waar inloggegevens worden voorgesteld."
       ],
       "Agent setup instructions": [
         "Installatie-instructies voor agenten"
@@ -4861,6 +4986,9 @@
       "Last modified": [
         "Laatst gewijzigd"
       ],
+      "Learn more": [
+        "Meer informatie"
+      ],
       "Leave this item?": [
         "Dit item verlaten?"
       ],
@@ -5021,6 +5149,9 @@
       "Review and share": [
         "Beoordelen en delen"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Schermafbeelding van OpenSSH-service op Windows"
+      ],
       "Secure your data": [
         "Beveilig uw gegevens"
       ],
@@ -5042,6 +5173,9 @@
       "Settings": [
         "Instellingen"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Setup van ${ PASS_APP_NAME }-SSH-agent"
+      ],
       "Setup offline mode": [
         "Offline modus instellen"
       ],
@@ -5059,6 +5193,9 @@
       ],
       "SPF (Optional)": [
         "SPF (optioneel)"
+      ],
+      "SSH Agent": [
+        "SSH-agent"
       ],
       "Status": [
         "Status"
@@ -5078,6 +5215,9 @@
       "Sync your aliases from SimpleLogin": [
         "Synchroniseer uw aliassen van SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Test een URL met deze regel"
+      ],
       "Transfer ownership": [
         "Eigendom overdragen"
       ],
@@ -5092,6 +5232,9 @@
       ],
       "Update available": [
         "Update beschikbaar"
+      ],
+      "URL matching": [
+        "URL-overeenkomst"
       ],
       "Vault": [
         "Kluis"
@@ -5207,6 +5350,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-wachtwoord is vereist"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } offline modus uitgeschakeld."
@@ -5409,6 +5555,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Er is iets misgegaan bij het starten van ${ PASS_APP_NAME }. Probeer de extensie te vernieuwen of opnieuw te laden"
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "De SSH-agent vereist het gebruik van SSH-sleutels, wat niet beschikbaar is in uw abonnement."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Het aliasvoorvoegsel mag niet langer zijn dan 40 tekens"
       ],
@@ -5417,6 +5566,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Dit e-mailadres zal niet langer worden gemonitord op datalekken."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Dit item kan niet worden voorgesteld voor automatisch aanvullen vanwege de \"${ neverModeDescriptionStrong }\". Voeg een andere URL toe als u wilt dat dit item automatisch wordt ingevuld."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Dit item wordt momenteel gedeeld. Als u het verwijdert, wordt de toegang voor alle andere gebruikers uitgeschakeld."
