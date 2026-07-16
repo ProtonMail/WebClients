@@ -8,7 +8,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setInvalidMeetingLinkModalOpen, setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
@@ -52,6 +51,9 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
 import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
+import { useMeetingCleanup } from '../../hooks/protonMeetContainer/useMeetingCleanup';
+import { useMeetingErrorContext } from '../../hooks/protonMeetContainer/useMeetingErrorContext';
+import { useReconnection } from '../../hooks/protonMeetContainer/useReconnection';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
 import { logJoinStats } from '../../hooks/telemetry/meetingTelemetry';
@@ -63,7 +65,6 @@ import { isConnectionTimeoutError, useLiveKitConnection } from '../../hooks/useL
 import { useMlsSession } from '../../hooks/useMlsSession';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
-import { useReconnection } from '../../hooks/useReconnection';
 import { useSafariWebsocketVisibilityHandler } from '../../hooks/useSafariWebsocketVisibilityHandler';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { useWakeLock } from '../../hooks/useWakeLock';
@@ -118,31 +119,9 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
 
     const { initializeDevices } = useMediaManagementContext();
 
-    const { reportMeetError, clearSentryReportErrorCounts } = useMeetErrorReporting();
+    const { meetingLinkNameRef, withMeetingLinkNameTag, reportMeetError, clearSentryReportErrorCounts } =
+        useMeetingErrorContext();
     const { createNotification } = useNotifications();
-    const meetingLinkNameRef = useRef<string>('');
-    const withMeetingLinkNameTag = useCallback((options?: unknown) => {
-        const meetingLinkName = meetingLinkNameRef.current;
-        if (!meetingLinkName) {
-            return options;
-        }
-
-        const tags = { meetingLinkName };
-        if (typeof options === 'string') {
-            return { context: { error: options }, tags };
-        } else if (options && typeof options === 'object') {
-            const optionsWithTags = options as { tags?: Record<string, string> };
-            return {
-                ...optionsWithTags,
-                tags: {
-                    ...(optionsWithTags.tags ?? {}),
-                    ...tags,
-                },
-            };
-        }
-        // option is not an expected type, return the tags
-        return { tags };
-    }, []);
 
     const {
         connectWithStunFallbackToTurnRelay,
@@ -294,6 +273,17 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         lastEpochRef.current = null;
     }, [isMeetSeamlessKeyRotationEnabled, keyRotationScheduler, keyProvider, lastEpochRef, mlsSetupDone]);
 
+    const { cleanupMeeting } = useMeetingCleanup({
+        instantMeetingRef,
+        meetingLinkNameRef,
+        meetingInfoRef,
+        decryptionKeyRef,
+        disallowHealthCheck,
+        cleanupMlsState,
+        stopPiP,
+        setJoinedRoom,
+    });
+
     useSafariWebsocketVisibilityHandler({
         joinedRoom,
     });
@@ -333,6 +323,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         disallowHealthCheck,
         initializeDevices,
         getParticipants,
+        resetParticipantNameMap,
         reportMeetError,
         withMeetingLinkNameTag,
         setJoinedRoom,
@@ -957,45 +948,14 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
     };
 
     const handleLeave = () => {
-        instantMeetingRef.current = false;
-        meetingLinkNameRef.current = '';
-        void room.disconnect();
-        resetParticipantNameMap();
-        meetingInfoRef.current = null;
-        decryptionKeyRef.current = null;
-        void meetCoreClient.leaveMeeting();
-        void stopPiP();
-        disallowHealthCheck();
-        cleanupMlsState();
-
-        setJoinedRoom(false);
-
-        // Clear loader states on leave
+        cleanupMeeting({ disconnect: true });
         clearLoaderState();
-
         clearSentryReportErrorCounts();
         prepareUpsell();
     };
 
     const handleUngracefulLeave = () => {
-        instantMeetingRef.current = false;
-        meetingLinkNameRef.current = '';
-
-        // Best effort because it is ungraceful
-        try {
-            void room.disconnect();
-            void meetCoreClient.leaveMeeting();
-            void stopPiP();
-        } catch {
-        } finally {
-            resetParticipantNameMap();
-            meetingInfoRef.current = null;
-            decryptionKeyRef.current = null;
-        }
-
-        disallowHealthCheck();
-        cleanupMlsState();
-        setJoinedRoom(false);
+        cleanupMeeting({ disconnect: true });
     };
 
     const handleEndMeeting = async () => {
@@ -1005,16 +965,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
             reportMeetError('Unable to end meeting for all', withMeetingLinkNameTag(err));
         }
 
-        // Always perform cleanup regardless of endMeeting success/failure
-        instantMeetingRef.current = false;
-        meetingLinkNameRef.current = '';
-        resetParticipantNameMap();
-        meetingInfoRef.current = null;
-        decryptionKeyRef.current = null;
-        disallowHealthCheck();
-        cleanupMlsState();
-
-        setJoinedRoom(false);
+        cleanupMeeting();
     };
 
     const handleMeetingExpired = async () => {
