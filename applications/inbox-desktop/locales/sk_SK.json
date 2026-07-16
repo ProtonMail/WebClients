@@ -4,6 +4,17 @@
     "language": "sk_SK"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Zrušiť"
+      ],
+      "Open external url": [
+        "Otvoriť externú URL"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Protokol ${ parsedProtocol } nie je povolený. Chcete otvoriť externú URL?"
+      ]
+    },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
         "\"Reštartovať a profilovať teraz\" reštartue aplikáciu okamžite a zachytí profil pri spustení.\n\n„Vytvoriť profil pri ďalšom spustení“ vytvorí profil pri ďalšom otvorení aplikácie. Použite túto možnosť na meranie rýchlosti spustenia po reštarte."

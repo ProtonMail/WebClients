@@ -4,6 +4,17 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Open external url": [
+        "Externe URL openen"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Het protocol ${ parsedProtocol } is niet toegestaan. Wilt u de externe URL openen?"
+      ]
+    },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
         "\"Herstarten en direct profileren\" start de app onmiddellijk opnieuw op en maakt een profiel van het opstarten aan.\n\n\"Profileer bij volgende lancering\" profileert de volgende keer dat u de app opent. Gebruik dit om de opstartsnelheid na een herstart te meten."
@@ -136,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Deinstalleer ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Wanneer hardwareversnelling is ingeschakeld, gebruikt de app de gereserveerde grafische hardware van uw apparaat voor de weergave. Dit kan op sommige systemen compatibiliteitsproblemen veroorzaken."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Zonder hardwareversnelling gebruikt de app software-rendering in plaats van uw grafische kaart. U kunt tragere animaties en een hoger CPU-verbruik opmerken."
       ],
       "Zoom": [
         "Inzoomen"

@@ -4,12 +4,29 @@
     "language": "hr_HR"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Poništi"
+      ],
+      "Open external url": [
+        "Otvori vanjski URL"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "Protokol ${ parsedProtocol } nije dopušten. Želite li otvoriti vanjski URL?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "„Ponovno pokreni i profilaj sada” odmah će ponovno pokrenuti aplikaciju i snimiti profil pokretanja.\n\n„Profilaj pri sljedećem pokretanju” profilat će aplikaciju sljedeći put kada je otvorite. Koristite ovo za mjerenje brzine pokretanja nakon ponovnog pokretanja sustava."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "O aplikaciji ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Stvarna veličina"
+      ],
+      "Cancel": [
+        "Poništi"
       ],
       "Check spelling while typing": [
         "Provjeravaj pravopis tijekom tipkanja"
@@ -20,6 +37,9 @@
       "Close Window": [
         "Zatvori prozor"
       ],
+      "Collect startup performance data": [
+        "Prikupi podatke o performansama pokretanja"
+      ],
       "Copy": [
         "Kopiraj"
       ],
@@ -28,6 +48,24 @@
       ],
       "Delete": [
         "Izbriši"
+      ],
+      "Disable": [
+        "Onemogući"
+      ],
+      "Disable Hardware Acceleration": [
+        "Onemogući hardversko ubrzanje"
+      ],
+      "Enable": [
+        "Omogući"
+      ],
+      "Enable diagnostic logs": [
+        "Omogući dijagnostičke zapisnike"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Omogući dijagnostičke zapisnike iz Chromium motora."
+      ],
+      "Enable Hardware Acceleration": [
+        "Omogući hardversko ubrzanje"
       ],
       "Force Reload": [
         "Prisilno ponovno učitaj"
@@ -47,6 +85,12 @@
       "Paste and Match Style": [
         "Zalijepi i uskladi stil"
       ],
+      "Profile app startup": [
+        "Profilaj pokretanje aplikacije"
+      ],
+      "Profile on next launch": [
+        "Profilaj pri sljedećem pokretanju"
+      ],
       "Quit": [
         "Zatvori"
       ],
@@ -58,6 +102,12 @@
       ],
       "Reload": [
         "Ponovno učitaj"
+      ],
+      "Restart and profile now": [
+        "Ponovno pokreni i profilaj sada"
+      ],
+      "Restart with logging": [
+        "Ponovno pokreni uz bilježenje zapisnika"
       ],
       "Select All": [
         "Odaberi sve"
@@ -80,6 +130,15 @@
       "Stop Speaking": [
         "Prekini govoriti"
       ],
+      "Switch to ${ appName }": [
+        "Prebaci na aplikaciju ${ appName }"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "Ovi zapisnici pomažu nam u dijagnosticiranju problema. Aplikacija će se ponovno pokrenuti kako bi se primijenila promjena."
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Ovo će izmjeriti koliko je aplikaciji potrebno da se pokrene i spremiti izvješće u vašu mapu sa zapisnicima."
+      ],
       "Toggle Full Screen": [
         "Uključi/isključi prikaz preko cijelog zaslona"
       ],
@@ -88,6 +147,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Deinstaliraj ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Kada je hardversko ubrzanje omogućeno, aplikacija koristi namjenski grafički hardver vašeg uređaja za iscrtavanje. To može uzrokovati probleme s kompatibilnošću na nekim sustavima."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Bez hardverskog ubrzanja, aplikacija koristi softversko iscrtavanje umjesto vaše grafičke kartice. Možda ćete primijetiti sporije animacije i veće opterećenje procesora."
       ],
       "Zoom": [
         "Povećaj"
@@ -100,6 +165,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Onemogući hardversko ubrzanje"
+      ],
+      "Enable Hardware Acceleration": [
+        "Omogući hardversko ubrzanje"
+      ],
       "Services": [
         "Usluge"
       ]
@@ -151,6 +222,14 @@
       ],
       "Undo": [
         "Poništi"
+      ]
+    },
+    "Error dialog": {
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } – Neočekivana pogreška"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Zbog pogreške će se aplikacija ${ MAIL_APP_NAME } zatvoriti. Pokušajte ju ponovno pokrenuti, a ako se problem nastavi, obratite nam se. Informacije o pogrešci mogu se pronaći u zapisnicima aplikacije."
       ]
     },
     "error screen": {

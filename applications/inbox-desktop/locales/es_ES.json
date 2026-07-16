@@ -4,7 +4,21 @@
     "language": "es_ES"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Open external url": [
+        "Abrir URL externa"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "El protocolo ${ parsedProtocol } no está permitido. ¿Quieres abrir la URL externa?"
+      ]
+    },
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Reiniciar y perfilar ahora\" reiniciará la aplicación de inmediato y registrará un perfil de inicio.\n\n\"Perfilar en el próximo inicio\" realizará el perfil la próxima vez que abras la aplicación. Usa esto para medir la velocidad de inicio después de un reinicio."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Acerca de ${ MAIL_APP_NAME }"
       ],
@@ -71,6 +85,12 @@
       "Paste and Match Style": [
         "Pegar y adaptar al estilo"
       ],
+      "Profile app startup": [
+        "Perfilar el inicio de la aplicación"
+      ],
+      "Profile on next launch": [
+        "Perfilar en el próximo inicio"
+      ],
       "Quit": [
         "Salir"
       ],
@@ -82,6 +102,9 @@
       ],
       "Reload": [
         "Recargar"
+      ],
+      "Restart and profile now": [
+        "Reiniciar y perfilar ahora"
       ],
       "Restart with logging": [
         "Reiniciar con registro"

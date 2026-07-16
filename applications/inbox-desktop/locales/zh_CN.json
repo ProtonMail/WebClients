@@ -4,6 +4,17 @@
     "language": "zh_CN"
   },
   "contexts": {
+    "Action": {
+      "Cancel": [
+        "取消"
+      ],
+      "Open external url": [
+        "打开外部网址"
+      ],
+      "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
+        "不允许使用协议 ${ parsedProtocol }。是否要打开外部网址？"
+      ]
+    },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
         "“立即重启并分析”将立即重启应用并捕获启动过程的分析数据。\n\n“下次启动时分析”将在您下次打开应用时进行分析，该选项用于测量重启设备后的启动速度。"
