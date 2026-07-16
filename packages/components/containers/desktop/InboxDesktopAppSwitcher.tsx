@@ -44,6 +44,11 @@ function InboxDesktopDefaultAppSwitcher({ appToLinkTo: currentApp }: Props) {
         void invokeInboxDesktopIPC({ type: 'changeView', payload: target });
     };
 
+    // INDA-703: revert once 1.14.0 is released.
+    if (isAppAccount) {
+        return <div className="m-4"></div>;
+    }
+
     return (
         <SimpleDropdown
             type="button"
@@ -94,6 +99,11 @@ function InboxDesktopMacAppSwitcher({ appToLinkTo }: Props) {
     const handleClick = (target: CHANGE_VIEW_TARGET) => {
         void invokeInboxDesktopIPC({ type: 'changeView', payload: target });
     };
+
+    // INDA-703: revert once 1.14.0 is released.
+    if (isAppAccount) {
+        return <div className="m-4"></div>;
+    }
 
     return (
         <div className="flex flex-col gap-0.5">
