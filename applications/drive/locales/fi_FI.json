@@ -1308,6 +1308,18 @@
       ],
       "Skip": [
         "Ohita"
+      ],
+      "No sensitive data": [
+        "Ei arkaluonteisia tietoja"
+      ],
+      "Rebuild index": [
+        "Rakenna indeksi uudelleen"
+      ],
+      "Search is unavailable": [
+        "Haku ei ole käytettävissä"
+      ],
+      "Upgrade for 200GB": [
+        "Päivitä 200 Gt:n tilaukseen"
       ]
     },
     "Action: Docs": {
@@ -3143,6 +3155,9 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "On ikävä nähdä teidän lähtevän. Jos teillä on hetki aikaa, arvostaisimme kovasti, jos kertoisitte, miksi haluatte peruuttaa. Palautteenne auttaa meitä tekemään ${ BRAND_NAME } -palvelusta paremman kaikille."
+      ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Päivittäkää tilaukseen ${ planName }, jotta voitte jatkaa tiedostojen jakamista muokkausoikeudella"
       ]
     },
     "description": {
@@ -4066,6 +4081,63 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Emme pystyneet lähettämään vahvistuskoodia tällä menetelmällä."
+      ],
+      "Can't find any secure link": [
+        "Suojattua linkkiä ei löydy"
+      ],
+      "Can't retrieve device name": [
+        "Laitteen nimeä ei voida hakea"
+      ],
+      "Cannot find move target": [
+        "Siirtokohdetta ei löydy"
+      ],
+      "Data integrity check failed": [
+        "Tietojen eheyden tarkistus epäonnistui"
+      ],
+      "Diagnostics failed": [
+        "Diagnostiikka epäonnistui"
+      ],
+      "Error reading file": [
+        "Virhe tiedostoa luettaessa"
+      ],
+      "Expected structure attached": [
+        "Odotettu rakenne liitetty"
+      ],
+      "Failed to create public share node": [
+        "Julkisen jakosolmun luominen epäonnistui"
+      ],
+      "Failed to expand folder": [
+        "Kansion laajentaminen epäonnistui"
+      ],
+      "Failed to fetch node": [
+        "Solmun noutaminen epäonnistui"
+      ],
+      "Failed to get details, please try again later": [
+        "Tietojen hakeminen epäonnistui, yrittäkää myöhemmin uudelleen"
+      ],
+      "No drive found to import": [
+        "Tuotavaa asemaa ei löytynyt"
+      ],
+      "Something went wrong during folder listing": [
+        "Jotain meni vikaan kansiolistauksen aikana"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Odottamaton virhe, tiedostojen tuonti ei onnistu"
+      ],
+      "Unknown conflict strategy: ${ strategy }": [
+        "Tuntematon konfliktistrategia: ${ strategy }"
+      ],
+      "We were not able to load some items": [
+        "Emme voineet ladata joitakin kohteita"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Emme voineet ladata joitakin kutsujanne jaettuihin kohteisiin"
+      ],
+      "We were not able to load the file history": [
+        "Emme voineet ladata tiedostohistoriaa"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Laite, jonka salausta ei voi purkaa"
       ]
     },
     "error": {
@@ -7200,6 +7272,125 @@
       ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Vahvistan täten vilpittömästi, että raportissa annetut tiedot ja lausunnot ovat oikeita ja täydellisiä."
+      ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } / ${ items.length } siirtoa suoritettu"
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } havaitsi, että paikallinen hakuindeksi on vioittunut eikä sitä voida enää käyttää. Rakentakaa indeksi uudelleen haun palauttamiseksi."
+      ],
+      "Album": [
+        "Albumi"
+      ],
+      "Can't rename to same name": [
+        "Ei voi nimetä uudelleen samaksi nimeksi"
+      ],
+      "Can't write into folder": [
+        "Kansioon ei voida kirjoittaa"
+      ],
+      "Could not scan file for malware": [
+        "Tiedostoa ei voitu skannata haittaohjelmien varalta"
+      ],
+      "Do you still want to upload it?": [
+        "Haluatko silti ladata sen?",
+        "Haluatko silti ladata ne?"
+      ],
+      "File could not be scanned": [
+        "Tiedostoa ei voitu skannata"
+      ],
+      "File flagged as potentially malicious": [
+        "Tiedosto merkitty mahdollisesti haitalliseksi"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Vain tiedostot (ei valokuvia, ${ DOCS_APP_NAME }- tai ${ SHEETS_APP_NAME }-tiedostoja) – yhteensä enintään 100 Gt, 100 000 tiedostoa ja 50 Gt tiedostoa kohden"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Hakekaa lokit ja muut tiedot teknistä tukea ja vianetsintää varten"
+      ],
+      "In progress": [
+        "Käynnissä"
+      ],
+      "Indexed ${ first }": [
+        "Indeksoitu ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indeksoitu ${ first } ja ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indeksoitu ${ first }, ${ second } ja ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indeksoitu ${ first }, ${ second }, ${ third } ja ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indeksointi osui odottamattomaan tilaan eikä voi jatkua. Palauttakaa toiminta rakentamalla indeksi uudelleen."
+      ],
+      "Integrity issues found": [
+        "Eheysongelmia löytynyt"
+      ],
+      "Issues found": [
+        "Löytyi ongelmia"
+      ],
+      "No issue found": [
+        "Ongelmia ei löytynyt"
+      ],
+      "Not enough storage space": [
+        "Ei tarpeeksi tallennustilaa"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Kuva kopioitiin suoratoistoon ja merkittiin suosikiksi siellä."
+      ],
+      "Preparing download": [
+        "Valmistellaan latausta"
+      ],
+      "Preparing…": [
+        "Valmistellaan…"
+      ],
+      "Search data is corrupted": [
+        "Hakutiedot ovat vioittuneet"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Haussa tapahtui sisäinen virhe. Palauttakaa toiminta rakentamalla indeksi uudelleen."
+      ],
+      "Search engine error": [
+        "Hakukonevirhe"
+      ],
+      "Search error": [
+        "Hakuvirhe"
+      ],
+      "Search is in an invalid state": [
+        "Haku on virheellisessä tilassa"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Haku on valmis. Tiedostonne on indeksoitu."
+      ],
+      "Select a folder to make the copy in": [
+        "Valitkaa kansio, johon kopio tehdään"
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Hakukoneessa tapahtui sisäinen virhe. Palauttakaa toiminta rakentamalla indeksi uudelleen."
+      ],
+      "This file appears to be empty:": [
+        "Tämä tiedosto näyttää olevan tyhjä:",
+        "Nämä tiedostot näyttävät olevan tyhjiä:"
+      ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Tämä peruuttaa kaikki jäljellä olevat lähetykset. Peruutettuja tiedostoja ei tallenneta palveluun ${ DRIVE_APP_NAME }."
+      ],
+      "Uploaded - file is empty": [
+        "Ladattu - tiedosto on tyhjä"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Olette tällä hetkellä kirjautuneena käyttäjänä ${ username } organisaatiossa ${ organizationName }."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Selaimestanne loppui tila, kun tiedostoja indeksoitiin hakua varten. Vapauttakaa tallennustilaa ja rakentakaa sitten indeksi uudelleen."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ilmainen kokeilunne muunnettiin onnistuneesti kuukausitilaukseksi. Uusiutumispäivänne on ${ nextBillingDate }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Menetätte pääsyn tilaukseen ${ boldPlanTitle } ${ boldEndDate }."
       ]
     },
     "info": {
@@ -8026,6 +8217,75 @@
       ],
       "Indexing": [
         "Indeksoidaan"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } latausta"
+      ],
+      "Asset": [
+        "Tiedosto"
+      ],
+      "Created ${ created }": [
+        "Luotu ${ created }"
+      ],
+      "Deleted ${ deleted }": [
+        "Poistettu ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "Laite #${ position }"
+      ],
+      "Exact host matching": [
+        "Tarkka isäntänimien vastaavuus"
+      ],
+      "Exact URL matching": [
+        "Tarkka URL-vastaavuus"
+      ],
+      "Expired on ${ formatted }": [
+        "Vanhentui ${ formatted }"
+      ],
+      "Expires ${ formatted }": [
+        "Vanhentuu ${ formatted }"
+      ],
+      "File transfer overview": [
+        "Tiedostonsiirron yleiskatsaus"
+      ],
+      "Item #${ position }": [
+        "Kohde #${ position }"
+      ],
+      "Location: ${ item.location }": [
+        "Sijainti: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "Muokattu ${ modified }"
+      ],
+      "Never expires": [
+        "Ei vanhene koskaan"
+      ],
+      "Never fill on this exact URL": [
+        "Älä koskaan täytä juuri tätä URL-osoitetta"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Pääverkkotunnus ja aliverkkotunnukset (oletus)"
+      ],
+      "Pending invitation": [
+        "Odottava kutsu"
+      ],
+      "Regular expression": [
+        "Säännöllinen lauseke"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Jakanut ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Jaettu julkisella linkillä"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Jaettu ${ sharedOn }"
+      ],
+      "Starts with": [
+        "Alkaa"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokerimerkkimalli"
       ]
     },
     "Label for contact group color": {
@@ -8352,6 +8612,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ilmainen kokeilusi on päättynyt. Tilisi käyttöoikeus päättyy pian. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "”Alkaa” -vastaavuussääntö"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tarkka (ala)verkkotunnuksen vastaavuussääntö"
+      ],
+      "Exact URL matching rule": [
+        "Tarkka URL-vastaavuussääntö"
+      ],
+      "Never fill with this exact URL": [
+        "Älä koskaan syötä juuri tätä URL-osoitetta"
+      ],
+      "Regular expression rule": [
+        "Säännöllisen lausekkeen sääntö"
+      ],
+      "Wildcard pattern matching rule": [
+        "Jokerimerkkien vastaavuussääntö"
       ]
     },
     "Message display when a new app version is available": {
@@ -9915,6 +10193,16 @@
       ],
       "Failed to load sharing details": [
         "Jakotietojen lataaminen epäonnistui"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } kohteen siirto roskakoriin epäonnistui",
+        "${ errors.length } kohteen siirto roskakoriin epäonnistui"
+      ],
+      "Error while listing devices": [
+        "Virhe listattaessa laitteita"
+      ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "Tämä suojattu linkki on vanhentunut, muuttakaa vanhentumispäivää jakoasetuksista"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10003,6 +10291,15 @@
       ],
       "Your subscription renews soon": [
         "Tilauksesi uusiutuu pian"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Viimeinen tilaisuus saada 80 % alennusta ensimmäisestä kuukaudestanne tilauksesta ${ plan }."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Päivittäkää tuottavuutenne vain hintaan ${ pricingTitle } tilauksella ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Päivittäkää tallennustilanne vain hintaan ${ pricingTitle } tilauksella ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -10043,6 +10340,12 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "Huippunopeat VPN-yhteydet yli 110 maassa"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Tee yhteistyötä muiden kuin ${ BRAND_NAME } -käyttäjien kanssa"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Rajattomasti aliaksia henkilöllisyytenne suojaamiseksi"
       ]
     },
     "Onboarding": {
@@ -10199,6 +10502,18 @@
       ],
       "Work together": [
         "Työskentele yhdessä"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Tänä aikana lähetettyjä tiedostoja ei lasketa mukaan tallennustilarajaanne."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Nyt lähetettyjä tiedostoja ei lasketa mukaan tallennustilarajaanne"
+      ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Pitäkää vauhtia yllä lähettämällä lisää tiedostoja käyttämällä tilaukseenne sisältyvää tallennustilaa."
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Saitte juuri vähän ilmaista tallennustilaa ja suojasitte tiedostonne päästä päähän -salauksella – ennätysajassa!"
       ]
     },
     "Onboarding Trial": {
@@ -10237,6 +10552,15 @@
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Voitte käyttää ${ planTitle }-tilausta kokeilujakson päättymiseen saakka, eikä teitä veloiteta."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Voitte edelleen peruuttaa tilauksen 30 päivän kuluessa ja saada suhteutetun hyvityksen."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Täysi ${ planTitle } -tilauksenne alkaa ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Voitte käyttää tilausta ${ planTitle } kokeilun päättymiseen saakka veloituksetta."
       ]
     },
     "Option": {
@@ -10832,6 +11156,9 @@
       ],
       "Anything you'd like us to know": [
         "Haluatteko kertoa meille jotain muuta"
+      ],
+      "Search for users or addresses": [
+        "Etsi käyttäjiä tai osoitteita"
       ]
     },
     "Placeholder for contact group name": {
@@ -11074,6 +11401,18 @@
       ],
       "your subscription": [
         "tilauksesi"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Jos peruutat ennen tätä päivämäärää,** tilauksesi **alennetaan** tasolle ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, kun kokeilu päättyy."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Jos et tilaa,** tilauksesi **alennetaan** tasolle ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Nauti tilauksesta **${ planTitle }** maksutta päivään **${ textDate }** asti."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Viimeinen mahdollisuus tutustua kaikkiin niihin tehokkaisiin ominaisuuksiin, joita tilauksella **${ planTitle }** on tarjota."
       ]
     },
     "Safety review": {
@@ -11575,6 +11914,18 @@
       ],
       "Keep your passwords safe and organized in multiple vaults": [
         "Pidä salasanasi turvassa ja järjestettynä useissa holveissa"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Hankkikaa 500 Gt kaikkien tiedostojenne ja valokuvienne turvalliseen tallentamiseen"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Käyttäkää huippunopeita VPN-palvelimia yli 110 maassa"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Hankkikaa yksi tilaus, joka sisältää kaiken: hankkikaa ${ BRAND_NAME } Unlimited"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Suojatkaa tilinne uhilta Sentinelin avulla"
       ]
     },
     "specialoffer: Tooltip": {
@@ -12075,6 +12426,9 @@
       "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
         "Videokokoukset, enintään ${ PAID_PREMIUM_MAX_PARTICIPANTS } osallistuja",
         "Videokokoukset, enintään ${ PAID_PREMIUM_MAX_PARTICIPANTS } osallistujaa"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } antaa teille pääsyn kaikkiin premium-ominaisuuksiin palveluissa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }. Yksityisyys on sisäänrakennettu, joten voitte jatkaa toimintaanne tietäen, että tietonne ja henkilöllisyytenne ovat turvassa."
       ]
     },
     "subscription reminder": {
@@ -13527,6 +13881,39 @@
       ],
       "Verify your password": [
         "Vahvista salasananne"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Kirjoitusavustaja ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Sähköinen allekirjoitus on vahvistettu osittain. Tämä tiedosto on lähetetty julkisesti saatavilla olevan jakolinkin kautta sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME }-tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
+      ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Aloittakaa 10 minuutilla ilmaisia lähetyksiä, talon tarjoamana."
+      ],
+      "Need to share more files with edit access?": [
+        "Haluatteko jakaa useampia tiedostoja muokkausoikeudella?"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Päivittäkää tuottavuutenne hintaan ${ formattedPrice } tilauksella ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Päivittäkää tallennustilanne hintaan ${ formattedPrice } tilauksella ${ planName }"
+      ],
+      "Upload empty file?": [
+        "Ladataanko tyhjä tiedosto?"
+      ],
+      "Users and addresses": [
+        "Käyttäjät ja osoitteet"
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Emme pystyneet vahvistamaan, että anonyymi käyttäjä loi tämän kansion."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Emme pystyneet vahvistamaan, että anonyymi käyttäjä lähetti tämän kansion."
+      ],
+      "You’re off to a great start!": [
+        "Olette päässeet loistavaan alkuun!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13858,6 +14245,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } tarjoaa tehokkaat hallintamahdollisuudet, mutta yksikin virhe voi johtaa siihen, että automaattinen täyttö toistaa ja täyttää tietoja petos- tai tietojenkalastelusivustoilla."
       ]
     },
     "Provider option": {
@@ -13945,6 +14335,78 @@
       ],
       "Size": [
         "Koko"
+      ],
+      "Activated": [
+        "Aktivoitu"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Osoite on jo organisaationne ulkopuolisen käyttäjän käytössä. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Tietojen siirron tila kohteesta Google Workspace kohteeseen ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Sähköpostit"
+      ],
+      "Errors": [
+        "Virheet"
+      ],
+      "Find out what can be migrated.": [
+        "Ota selvää, mitä voidaan siirtää."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Jäsenen osoitetta ei löytynyt. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
+      ],
+      "Migrate": [
+        "Siirrä"
+      ],
+      "Migrated": [
+        "Siirretty"
+      ],
+      "Missing organization private key": [
+        "Organisaation yksityinen avain puuttuu"
+      ],
+      "Missing organization public key": [
+        "Organisaation julkinen avain puuttuu"
+      ],
+      "No users to display": [
+        "Ei näytettäviä käyttäjiä"
+      ],
+      "Not activated": [
+        "Ei aktivoitu"
+      ],
+      "Pending": [
+        "Odottaa"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Valitse tarkalleen, mitä haluat siirtää. Tämä koskee kaikkia organisaation käyttäjiä."
+      ],
+      "Select users to migrate": [
+        "Valitse siirrettävät käyttäjät"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tätä käyttäjää ei voida siirtää alustojen yhteensopimattomuuden vuoksi."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Siirtääksesi tämän käyttäjän, ota hänen tilinsä käyttöön Google Workspace -hallintakonsolissa."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Voit siirtää tämän käyttäjän ottamalla hänen tilinsä käyttöön kohdassa ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Siirtääksesi tämän käyttäjän, ota hänen osoitteensa käyttöön kohdassa ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Jotta tämä käyttäjä voidaan siirtää, hänen on hyväksyttävä kutsunsa liittyä ${ BRAND_NAME }:iin."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Voit siirtää tämän käyttäjän poistamalla hänet arkistosta Google Workspace -hallintakonsolissa."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Voit siirtää tämän käyttäjän poistamalla hänen jäädytyksensä Google Workspace -hallintakonsolissa."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Käyttäjät, jotka ovat käyttäneet ${ BRAND_NAME }-tiliään"
       ]
     },
     "q2campaign2026: Action": {

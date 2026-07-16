@@ -1271,6 +1271,52 @@
       ],
       "Skip": [
         "Salta"
+      ],
+      "Add storage": [
+        "Aggiungi spazio di archiviazione"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Aggiungi a \"${ name }\" (${ photoCount } foto)",
+        "Aggiungi a \"${ name }\" (${ photoCount } foto)"
+      ],
+      "Change my access": [
+        "Modifica il mio accesso"
+      ],
+      "Encrypted": [
+        "Crittografato"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Torna all'album \"${ ellipsedAlbumName }\""
+      ],
+      "List layout": [
+        "Layout a elenco"
+      ],
+      "Re-indexing in progress": [
+        "Re-indicizzazione in corso"
+      ],
+      "Rebuild index": [
+        "Ricostruisci indice"
+      ],
+      "Remove my access": [
+        "Rimuovi il mio accesso"
+      ],
+      "Report abuse": [
+        "Segnala abuso"
+      ],
+      "Save photo to your gallery": [
+        "Salva foto nella tua galleria"
+      ],
+      "Scan and Download": [
+        "Scansiona e scarica"
+      ],
+      "Search is unavailable": [
+        "La ricerca non è disponibile"
+      ],
+      "Shared": [
+        "Condiviso"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Prova ${ BRAND_NAME } Workspace"
       ]
     },
     "Action: Docs": {
@@ -4071,6 +4117,33 @@
       ],
       "Wrong billing address": [
         "Indirizzo di fatturazione errato"
+      ],
+      "Can't retrieve device name": [
+        "Impossibile recuperare il nome del dispositivo"
+      ],
+      "Cannot find move target": [
+        "Impossibile trovare la destinazione dello spostamento"
+      ],
+      "Data integrity check failed": [
+        "Controllo di integrità dei dati non riuscito"
+      ],
+      "Failed to change permissions settings": [
+        "Impossibile modificare le impostazioni dei permessi"
+      ],
+      "Folder not found": [
+        "Cartella non trovata"
+      ],
+      "No drive found to import": [
+        "Nessun drive trovato da importare"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Errore imprevisto, non possiamo importare i file"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Non è stato possibile inviare un codice di verifica con questo metodo."
+      ],
+      "We were not able to load the file history": [
+        "Non siamo riusciti a caricare la cronologia dei file"
       ]
     },
     "error": {
@@ -7135,6 +7208,195 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Il tuo account è attualmente configurato per applicare il regime di inversione contabile. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
+      ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } album"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace consente al tuo team di collaborare in modo efficiente senza mettere mai a rischio i dati della tua azienda."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } ha rilevato che l'indice di ricerca locale è corrotto e non può più essere utilizzato. Ricostruisci l'indice per ripristinare la ricerca."
+      ],
+      "${ files } file": [
+        "${ files } file",
+        "${ files } file"
+      ],
+      "${ folders } folder": [
+        "${ folders } cartella",
+        "${ folders } cartelle"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } foto"
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "È disponibile una nuova versione di ${ DRIVE_APP_NAME }. Ricarica per continuare a usare la ricerca."
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Can edit": [
+        "Può modificare"
+      ],
+      "Can edit and manage access": [
+        "Può modificare e gestire l'accesso"
+      ],
+      "Can view and edit": [
+        "Può visualizzare e modificare"
+      ],
+      "Can view only": [
+        "Può solo visualizzare"
+      ],
+      "Can't rename to same name": [
+        "Impossibile rinominare con lo stesso nome"
+      ],
+      "Can't write into folder": [
+        "Impossibile scrivere nella cartella"
+      ],
+      "Clear all search data": [
+        "Cancella tutti i dati di ricerca"
+      ],
+      "Clears browser data related to the search.": [
+        "Cancella i dati del browser relativi alla ricerca."
+      ],
+      "Could not scan file for malware": [
+        "Impossibile scansionare il file alla ricerca di malware"
+      ],
+      "Data integrity check failed": [
+        "Controllo di integrità dei dati non riuscito"
+      ],
+      "Do you still want to upload it?": [
+        "Vuoi comunque caricarlo?",
+        "Vuoi comunque caricarli?"
+      ],
+      "File could not be scanned": [
+        "Impossibile scansionare il file"
+      ],
+      "File flagged as potentially malicious": [
+        "File contrassegnato come potenzialmente dannoso"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo file (no foto, ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME }) - fino a un totale di 100 GB, 100.000 file e 50 GB per file"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Confermo con la presente, in buona fede, che le informazioni e le dichiarazioni contenute nella segnalazione sono corrette e complete."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Se ti rimuovi, perderai l'accesso a \"${ fileName }\" e non potrai aprirlo di nuovo a meno che il proprietario non lo condivida con te."
+      ],
+      "Indexed ${ first }": [
+        "Indicizzato ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indicizzati ${ first } e ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indicizzati ${ first }, ${ second } e ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indicizzati ${ first }, ${ second }, ${ third } e ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "L'indicizzazione ha riscontrato uno stato imprevisto e non può continuare. Ricostruisci l'indice per ripristinare."
+      ],
+      "Indexing in progress": [
+        "Indicizzazione in corso"
+      ],
+      "Not enough storage space": [
+        "Spazio di archiviazione insufficiente"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Un'unica suite crittografata. Protezione aziendale completa."
+      ],
+      "Photo saved to your Drive": [
+        "Foto salvata nel tuo Drive",
+        "Foto salvate nel tuo Drive"
+      ],
+      "Preparing": [
+        "Preparazione"
+      ],
+      "Preparing download": [
+        "Preparazione dello scaricamento"
+      ],
+      "Preparing…": [
+        "Preparazione…"
+      ],
+      "Re-indexing in progress": [
+        "Re-indicizzazione in corso"
+      ],
+      "Requested item doesn't exist anymore": [
+        "L'elemento richiesto non esiste più"
+      ],
+      "Search data is corrupted": [
+        "I dati di ricerca sono corrotti"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Ricerca abilitata. Ora puoi chiudere questa finestra di dialogo e cercare file e cartelle."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "La ricerca ha riscontrato un errore interno. Ricostruisci l'indice per ripristinare."
+      ],
+      "Search engine error": [
+        "Errore del motore di ricerca"
+      ],
+      "Search error": [
+        "Errore di ricerca"
+      ],
+      "Search is in an invalid state": [
+        "La ricerca si trova in uno stato non valido"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "La ricerca è pronta. I tuoi file sono stati indicizzati."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Il motore di ricerca ha riscontrato un errore interno. Ricostruisci l'indice per ripristinare."
+      ],
+      "This file appears to be empty:": [
+        "Questo file sembra essere vuoto:",
+        "Questi file sembrano essere vuoti:"
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Per attivare una vera ricerca, dobbiamo indicizzare i tuoi file localmente. Puoi comunque usare ${ DRIVE_APP_NAME } normalmente: ti faremo sapere quando l'indicizzazione sarà completata."
+      ],
+      "Unexpected download error": [
+        "Errore di scaricamento imprevisto"
+      ],
+      "Update required": [
+        "Aggiornamento richiesto"
+      ],
+      "Upgrade to get more storage space": [
+        "Effettua l'upgrade per ottenere più spazio di archiviazione"
+      ],
+      "Uploaded - file is empty": [
+        "Caricato: il file è vuoto"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Non siamo riusciti a salvare questa foto nel tuo Drive",
+        "Non siamo riusciti a salvare più foto nel tuo Drive"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Non siamo riusciti a verificare che ${ nameAuthor } abbia caricato ${ nodeName }. Potrebbe essere stato manomesso il seguente elemento: ordine dei dati del file. Apri solo se lo ritieni attendibile."
+      ],
+      "We were not able to add this photo to your album": [
+        "Non siamo riusciti ad aggiungere questa foto al tuo album",
+        "Non siamo riusciti ad aggiungere alcune foto al tuo album"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Al momento hai effettuato l'accesso come ${ username } per ${ organizationName }."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "Non hai l'autorizzazione per copiare file in questa cartella."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Non potrai più condividere \"${ fileName }\" dopo aver modificato l'accesso in visualizzatore. Solo il proprietario potrà modificare di nuovo il tuo accesso."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Il tuo browser ha esaurito lo spazio durante l'indicizzazione dei file per la ricerca. Libera spazio di archiviazione, poi ricostruisci l'indice."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "I tuoi file sono in fase di re-indicizzazione. Puoi continuare a cercare: i risultati potrebbero essere incompleti fino al termine del processo. Ti informeremo quando avrà finito."
       ]
     },
     "info": {
@@ -7937,6 +8199,99 @@
       ],
       "Skip feedback": [
         "Ignora feedback"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } download"
+      ],
+      "Access": [
+        "Accesso"
+      ],
+      "Allow editors to change permissions and share": [
+        "Consenti agli editor di modificare i permessi e condividere"
+      ],
+      "Asset": [
+        "Risorsa"
+      ],
+      "Created ${ created }": [
+        "Creato ${ created }"
+      ],
+      "Deleted ${ deleted }": [
+        "Eliminato il ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "Dispositivo n. ${ position }"
+      ],
+      "Device: ${ name }": [
+        "Dispositivo: ${ name }"
+      ],
+      "Disable this link on a specific date": [
+        "Disattiva questo link in una data specifica"
+      ],
+      "Exact host matching": [
+        "Corrispondenza esatta dell'host"
+      ],
+      "Exact URL matching": [
+        "Corrispondenza URL esatta"
+      ],
+      "Expired on ${ formatted }": [
+        "Scaduto il ${ formatted }"
+      ],
+      "Expires ${ formatted }": [
+        "Scade il ${ formatted }"
+      ],
+      "Expiry": [
+        "Scadenza"
+      ],
+      "Indexing": [
+        "Indicizzazione"
+      ],
+      "Item #${ position }": [
+        "Elemento n. ${ position }"
+      ],
+      "Location: ${ item.location }": [
+        "Posizione: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "Modificato il ${ modified }"
+      ],
+      "Never expires": [
+        "Non scade mai"
+      ],
+      "Never fill on this exact URL": [
+        "Non compilare mai su questo URL esatto"
+      ],
+      "Non-consensual intimate imagery": [
+        "Immagini intime non consensuali"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principale e sottodomini (predefinito)"
+      ],
+      "Pending invitation": [
+        "Invito in sospeso"
+      ],
+      "Regular expression": [
+        "Espressione regolare"
+      ],
+      "Require password": [
+        "Richiedi password"
+      ],
+      "Set a password to limit access via link": [
+        "Imposta una password per limitare l'accesso tramite link"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Condiviso da ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Condiviso tramite link pubblico"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Condiviso il ${ sharedOn }"
+      ],
+      "Starts with": [
+        "Inizia con"
+      ],
+      "URL wildcard pattern": [
+        "Modello di carattere jolly dell'URL"
       ]
     },
     "Label for contact group color": {
@@ -8266,6 +8621,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "La tua prova gratuita è terminata. L'accesso al tuo profilo sarà presto disabilitato. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regola di corrispondenza \"Inizia con\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regola di corrispondenza esatta del (sotto) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regola di corrispondenza URL esatta"
+      ],
+      "Never fill with this exact URL": [
+        "Non compilare mai con questo URL esatto"
+      ],
+      "Regular expression rule": [
+        "Regola dell'espressione regolare"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regola di corrispondenza del modello di caratteri jolly"
       ]
     },
     "Message display when a new app version is available": {
@@ -9065,6 +9438,10 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN con ad-blocker e protezione da malware"
+      ],
+      "${ options }-day file version history": [
+        "Cronologia delle versioni dei file di ${ options } giorno",
+        "Cronologia delle versioni dei file di ${ options } giorni"
       ]
     },
     "new_plans: feature highlight": {
@@ -9869,6 +10246,30 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Copia di \"${ ellipsedName }\" spostata nel cestino"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" condiviso"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto è stata aggiunta a \"${ albumName }\"",
+        "${ addedUids.length } foto sono state aggiunte a \"${ albumName }\""
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "Non è stato possibile eliminare ${ errors.length } elemento",
+        "Non è stato possibile eliminare ${ errors.length } elementi"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto è stata rimossa da \"${ albumName }\"",
+        "${ removed } foto sono state rimosse da \"${ albumName }\""
+      ],
+      "Failed to load sharing details": [
+        "Impossibile caricare i dettagli di condivisione"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Impostazione aggiornata. Gli editor possono modificare i permessi e condividere."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Impostazione aggiornata. Gli editor non possono modificare i permessi o condividere."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10259,6 +10660,9 @@
       ],
       "Verify thumbnails": [
         "Verifica delle miniature"
+      ],
+      "Expected structure": [
+        "Struttura attesa"
       ]
     },
     "Option group label": {
@@ -10819,6 +11223,9 @@
       ],
       "Select a provider": [
         "Seleziona un provider"
+      ],
+      "Search for users or addresses": [
+        "Cerca utenti o indirizzi"
       ]
     },
     "Placeholder for contact group name": {
@@ -11230,6 +11637,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Hai ${ timeRemaining.inDays } giorno rimanente per reimpostare la password.",
         "Hai ${ timeRemaining.inDays } giorni rimanenti per reimpostare la password."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Hai ${ timeRemaining.inHours } ora per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inHours } ore per reimpostare la tua password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Hai ${ timeRemaining.inMinutes } minuto per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inMinutes } minuti per reimpostare la tua password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Hai ${ timeRemaining.inSeconds } secondo per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inSeconds } secondi per reimpostare la tua password."
       ]
     },
     "session_recovery:available:link": {
@@ -11640,6 +12059,9 @@
       ],
       "pending": [
         "in sospeso"
+      ],
+      "user joined": [
+        "l'utente si è unito"
       ]
     },
     "Storage": {
@@ -13525,6 +13947,57 @@
       ],
       "Verify your password": [
         "Verifica la tua password"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Change access to viewer?": [
+        "Modificare l'accesso in visualizzatore?"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Firma digitale verificata. Questo file è stato creato in modo sicuro da ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Firma digitale verificata. Questo file è stato caricato in modo sicuro da ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Firma digitale verificata. Questa cartella è stata creata in modo sicuro da ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Firma digitale verificata. Questa cartella è stata caricata in modo sicuro da ${ author }."
+      ],
+      "Out of storage space": [
+        "Spazio di archiviazione esaurito"
+      ],
+      "Remove your access?": [
+        "Rimuovere il tuo accesso?"
+      ],
+      "Share \"${ fileName }\"": [
+        "Condividi \"${ fileName }\""
+      ],
+      "Upload empty file?": [
+        "Caricare il file vuoto?"
+      ],
+      "Users and addresses": [
+        "Utenti e indirizzi"
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Non siamo riusciti a verificare che ${ author } abbia creato questo file."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Non siamo riusciti a verificare che ${ author } abbia creato questa cartella."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Non siamo riusciti a verificare che ${ author } abbia caricato questo file."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Non siamo riusciti a verificare che ${ author } abbia caricato questa cartella."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Non siamo riusciti a confermare che il nome sia stato creato o modificato da ${ claimedNameAuthor }. Il motivo è: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Non siamo riusciti a confermare che il nodo sia stato creato da ${ claimedKeyAuthor }. Il motivo è: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13622,6 +14095,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Assistenza IA istantanea, esperto umano a tua disposizione!"
+      ],
+      "Change shared item settings": [
+        "Modifica le impostazioni dell'elemento condiviso"
+      ],
+      "Version 6 OpenPGP key": [
+        "Chiave OpenPGP versione 6"
       ]
     },
     "tooltip": {
@@ -13844,6 +14323,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un controllo potente, ma un singolo errore può far sì che il riempimento automatico corrisponda e inserisca dati su siti web fraudolenti o di phishing."
       ]
     },
     "meet_2025: Addon": {
@@ -13885,6 +14367,96 @@
       ],
       "What are you migrating?": [
         "Cosa stai migrando?"
+      ],
+      "Activated": [
+        "Attivato"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "L'indirizzo è già utilizzato da un utente esterno alla tua organizzazione. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "All": [
+        "Tutti"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stato della migrazione dei dati da Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Email"
+      ],
+      "Errors": [
+        "Errori"
+      ],
+      "Find out what can be migrated.": [
+        "Scopri cosa può essere migrato."
+      ],
+      "Has errors": [
+        "Presenta errori"
+      ],
+      "In progress": [
+        "In corso"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Indirizzo del membro non trovato. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "Migrate": [
+        "Migra"
+      ],
+      "Migrated": [
+        "Migrato"
+      ],
+      "Missing organization private key": [
+        "Chiave privata dell'organizzazione mancante"
+      ],
+      "Missing organization public key": [
+        "Chiave pubblica dell'organizzazione mancante"
+      ],
+      "No users to display": [
+        "Nessun utente da mostrare"
+      ],
+      "Not activated": [
+        "Non attivato"
+      ],
+      "Pending": [
+        "In attesa"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleziona esattamente cosa desideri migrare. Si applicherà a tutti gli utenti dell'organizzazione."
+      ],
+      "Select users to migrate": [
+        "Seleziona gli utenti da migrare"
+      ],
+      "Size": [
+        "Dimensione"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Impossibile migrare questo utente a causa di incompatibilità della piattaforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, attiva il suo account nella tua Console di amministrazione di Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrare questo utente, attiva il suo account in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrare questo utente, attiva il suo indirizzo in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrare questo utente, è necessario che accetti l'invito a unirti a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, ripristinalo dall'archivio nella tua Console di amministrazione di Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, riattivalo nella tua Console di amministrazione di Google Workspace."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utenti che hanno effettuato l'accesso al proprio account ${ BRAND_NAME }"
+      ],
+      "You": [
+        "Tu"
       ]
     },
     "q2campaign2026: Action": {
@@ -14015,6 +14587,22 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Created": [
+        "Data di creazione"
+      ],
+      "Expires": [
+        "Scadenza"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album rinominato con successo"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
       ]
     }
   }

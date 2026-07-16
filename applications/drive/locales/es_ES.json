@@ -4139,16 +4139,19 @@
         "Carpeta no encontrada."
       ],
       "No drive found to import": [
-        "No se ha encontrado ninguna unidad para importar"
+        "No se ha encontrado ningún Drive para importar"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "No hay suficiente espacio de almacenamiento en tu ${ DRIVE_APP_NAME }"
       ],
       "Unexpected error, we can't import the files": [
-        "Error inesperado, no se pueden importar los archivos"
+        "Error inesperado, no podemos importar los archivos"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Error al cargar los datos de la suscripción. Inténtalo de nuevo más tarde."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No hemos podido enviar un código de verificación con este método."
       ]
     },
     "error": {
@@ -7341,7 +7344,7 @@
         "No se pudo verificar que ${ nameAuthor } subiera ${ nodeName }. El orden de los datos del archivo podría haber sido manipulado. Ábrelo solo si confías en él."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
       ],
       "Each code can only be used once": [
         "Cada código solo se puede usar una vez"
@@ -7405,6 +7408,9 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Actualmente has iniciado sesión como ${ username } en ${ organizationName }."
+      ],
+      "Uploaded - file is empty": [
+        "Cargado - el archivo está vacío"
       ]
     },
     "info": {
@@ -8279,6 +8285,30 @@
       ],
       "Very Dissatisfied": [
         "Muy insatisfecho"
+      ],
+      "Exact host matching": [
+        "Coincidencia exacta de host"
+      ],
+      "Exact URL matching": [
+        "Coincidencia exacta de URL"
+      ],
+      "Indexing": [
+        "Indexando"
+      ],
+      "Never fill on this exact URL": [
+        "No rellenar nunca en esta URL exacta"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
+      ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
+      "Starts with": [
+        "Comienza con"
+      ],
+      "URL wildcard pattern": [
+        "Patrón de comodín de URL"
       ]
     },
     "Label for contact group color": {
@@ -8608,6 +8638,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será desactivado pronto. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidencia 'Comienza con'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia exacta de (sub) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia exacta de URL"
+      ],
+      "Never fill with this exact URL": [
+        "No rellenar nunca con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón de comodín"
       ]
     },
     "Message display when a new app version is available": {
@@ -9416,6 +9464,10 @@
       ],
       "Unlock streaming": [
         "Desbloquear streaming"
+      ],
+      "${ options }-day file version history": [
+        "Historial de versiones de archivos de ${ options } día",
+        "Historial de ${ options } días de las versiones de los archivos"
       ]
     },
     "new_plans: feature highlight": {
@@ -10240,6 +10292,10 @@
       ],
       "Failed to load sharing details": [
         "No se han podido cargar los detalles de uso compartido"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "No se pudo eliminar ${ errors.length } elemento",
+        "No se pudieron eliminar ${ errors.length } elementos"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13968,6 +14024,12 @@
       ],
       "We'd love to hear from you!": [
         "Nos encantaría saber tu opinión"
+      ],
+      "Upload empty file?": [
+        "¿Cargar archivo vacío?"
+      ],
+      "Users and addresses": [
+        "Usuarios y direcciones"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14074,6 +14136,9 @@
       ],
       "Instant assistance with AI and human experts.": [
         "Asistencia instantánea con IA y expertos humanos."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ]
     },
     "tooltip": {
@@ -14296,6 +14361,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Tu prueba terminará el ${ textDate }. No se te cobrará si cancelas antes del ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ofrece un control potente, pero un solo error puede hacer que el relleno automático coincida y rellene datos en sitios web fraudulentos o de suplantación de identidad."
       ]
     },
     "meet_2025: Addon": {
@@ -14435,6 +14503,27 @@
       ],
       "You": [
         "Tú"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuario no se puede migrar debido a incompatibilidades de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, activa su cuenta en tu consola de administración de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, activa su cuenta en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, activa su dirección en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar a este usuario, debe aceptar su invitación para unirse a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, desarchívalo en tu consola de administración de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, reactívalo en tu consola de administración de Google Workspace."
       ]
     },
     "Notitication": {
@@ -14533,6 +14622,15 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Huella digital"
+      ],
+      "Status": [
+        "Estado"
       ]
     },
     "user_modal": {

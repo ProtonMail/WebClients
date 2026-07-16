@@ -1310,6 +1310,30 @@
       ],
       "Skip": [
         "Přeskočit"
+      ],
+      "Add storage": [
+        "Přidat úložiště"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Zpět do alba „${ ellipsedAlbumName }“"
+      ],
+      "List layout": [
+        "Zobrazení seznamu"
+      ],
+      "Re-indexing in progress": [
+        "Probíhá opětovné indexování"
+      ],
+      "Rebuild index": [
+        "Znovu sestavit index"
+      ],
+      "Report abuse": [
+        "Nahlásit zneužití"
+      ],
+      "Search is unavailable": [
+        "Vyhledávání je nedostupné"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Vyzkoušet ${ BRAND_NAME } Workspace"
       ]
     },
     "Action: Docs": {
@@ -4180,6 +4204,18 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "DIČ musí začínat ${ prefixes }"
+      ],
+      "Folder not found": [
+        "Složka nebyla nalezena"
+      ],
+      "No drive found to import": [
+        "Nebyl nalezen žádný disk k importu"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočekávaná chyba, soubory nelze importovat"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Pomocí této metody se nám nepodařilo odeslat ověřovací kód."
       ]
     },
     "error": {
@@ -7490,6 +7526,117 @@
       ],
       "We'll remind you to verify your password again later": [
         "Později vám připomeneme, abyste si znovu ověřili své heslo"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "Prostředí ${ BRAND_NAME } Workspace umožňuje vašemu týmu efektivně spolupracovat, aniž by byla ohrožena data vaší společnosti."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "Služba ${ DRIVE_APP_NAME } zjistila, že lokální vyhledávací index je poškozen a nelze jej dále používat. Obnovte index pro obnovení vyhledávání."
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Could not scan file for malware": [
+        "Nepodařilo se zkontrolovat přítomnost malwaru v souboru"
+      ],
+      "Do you still want to upload it?": [
+        "Přesto jej chcete nahrát?",
+        "Přesto je chcete nahrát?",
+        "Přesto je chcete nahrát?",
+        "Přesto je chcete nahrát?"
+      ],
+      "File could not be scanned": [
+        "Soubor nebylo možné naskenovat"
+      ],
+      "File flagged as potentially malicious": [
+        "Soubor byl označen jako potenciálně škodlivý"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Pouze soubory (žádné fotky, ${ DOCS_APP_NAME } nebo ${ SHEETS_APP_NAME }) – celkem do 100 GB, 100 000 souborů a 50 GB na soubor"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Tímto prohlašuji v dobré víře, že informace a prohlášení obsažená v tomto oznámení jsou správná a úplná."
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indexování se dostalo do neočekávaného stavu a nemůže pokračovat. Obnovte index, abyste jej mohli obnovit."
+      ],
+      "Not enough storage space": [
+        "Nedostatek úložného prostoru"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Jeden šifrovaný balíček. Kompletní ochrana podnikání."
+      ],
+      "Photo saved to your Drive": [
+        "Fotka byla uložena na váš disk",
+        "Fotky byly uloženy na váš disk",
+        "Fotky byly uloženy na váš disk",
+        "Fotky byly uloženy na váš disk"
+      ],
+      "Preparing download": [
+        "Příprava stahování"
+      ],
+      "Preparing…": [
+        "Připravuje se…"
+      ],
+      "Re-indexing in progress": [
+        "Probíhá opětovné indexování"
+      ],
+      "Search data is corrupted": [
+        "Data vyhledávání jsou poškozena"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Při vyhledávání došlo k vnitřní chybě. Chcete-li situaci vyřešit, obnovte index."
+      ],
+      "Search engine error": [
+        "Chyba vyhledávače"
+      ],
+      "Search error": [
+        "Chyba vyhledávání"
+      ],
+      "Search is in an invalid state": [
+        "Vyhledávání je v neplatném stavu"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Vyhledávání je připraveno. Vaše soubory byly naindexovány."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Ve vyhledávači došlo k vnitřní chybě. Obnovte index, abyste jej mohli obnovit."
+      ],
+      "This file appears to be empty:": [
+        "Tento soubor se zdá být prázdný:",
+        "Tyto soubory se zdají být prázdné:",
+        "Tyto soubory se zdají být prázdné:",
+        "Tyto soubory se zdají být prázdné:"
+      ],
+      "Upgrade to get more storage space": [
+        "Upgradujte tarif a získejte více úložného prostoru"
+      ],
+      "Uploaded - file is empty": [
+        "Nahráno – soubor je prázdný"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Tuto fotku se nám nepodařilo uložit na váš disk",
+        "Tyto fotky se nám nepodařilo uložit na váš disk",
+        "Tyto fotky se nám nepodařilo uložit na váš disk",
+        "Tyto fotky se nám nepodařilo uložit na váš disk"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nemohli jsme ověřit, zda uživatel ${ nameAuthor } nahrál soubor ${ nodeName }. S následujícím obsahem mohlo být manipulováno: pořadí dat v souboru. Soubor otevřete pouze v případě, že mu důvěřujete."
+      ],
+      "We were not able to add this photo to your album": [
+        "Tuto fotku se nám nepodařilo přidat do vašeho alba",
+        "Některé fotky se nám nepodařilo přidat do vašeho alba",
+        "Některé fotky se nám nepodařilo přidat do vašeho alba",
+        "Některé fotky se nám nepodařilo přidat do vašeho alba"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Aktuálně jste přihlášeni jako ${ username } pro organizaci ${ organizationName }."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Vašemu prohlížeči došlo místo při indexování souborů pro vyhledávání. Uvolněte úložiště a poté index obnovte."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Vaše soubory se znovu indexují. Ve vyhledávání můžete pokračovat, ale výsledky mohou být neúplné, dokud proces neskončí. O dokončení vás budeme informovat."
       ]
     },
     "info": {
@@ -8322,6 +8469,81 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } stažení"
+      ],
+      "Asset": [
+        "Prvek"
+      ],
+      "Created ${ created }": [
+        "Vytvořeno ${ created }"
+      ],
+      "Deleted ${ deleted }": [
+        "Smazáno ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "Zařízení č. ${ position }"
+      ],
+      "Device: ${ name }": [
+        "Zařízení: ${ name }"
+      ],
+      "Exact host matching": [
+        "Shoda přesného hostitele"
+      ],
+      "Exact URL matching": [
+        "Shoda přesné URL"
+      ],
+      "Expired on ${ formatted }": [
+        "Platnost vypršela ${ formatted }"
+      ],
+      "Expires ${ formatted }": [
+        "Platnost vyprší ${ formatted }"
+      ],
+      "Indexing": [
+        "Indexování"
+      ],
+      "Item #${ position }": [
+        "Položka č. ${ position }"
+      ],
+      "Location: ${ item.location }": [
+        "Umístění: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "Změněno ${ modified }"
+      ],
+      "Never expires": [
+        "Platnost nikdy nevyprší"
+      ],
+      "Never fill on this exact URL": [
+        "Nikdy nevyplňovat na této přesné URL"
+      ],
+      "Non-consensual intimate imagery": [
+        "Intimní snímky bez souhlasu zobrazené osoby"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadřazená doména a subdomény (výchozí)"
+      ],
+      "Pending invitation": [
+        "Nevyřízená pozvánka"
+      ],
+      "Regular expression": [
+        "Regulární výraz"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Sdílí uživatel ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Sdíleno prostřednictvím veřejného odkazu"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Nasdíleno ${ sharedOn }"
+      ],
+      "Starts with": [
+        "Začíná na"
+      ],
+      "URL wildcard pattern": [
+        "Vzor URL se zástupnými znaky"
       ]
     },
     "Label for contact group color": {
@@ -8671,6 +8893,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Pravidlo shody „Začíná na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo pro shodu přesné (sub)domény"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo shody přesné URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevyplňovat s touto přesnou URL"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárního výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo shody se vzorem se zástupnými znaky"
       ]
     },
     "Message display when a new app version is available": {
@@ -10363,6 +10603,21 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Vaše adresa ${ BRAND_NAME } je připravena k použití"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "Do alba „${ albumName }“ byla přidána ${ addedUids.length } fotka",
+        "Do alba „${ albumName }“ byly přidány ${ addedUids.length } fotky",
+        "Do alba „${ albumName }“ bylo přidáno ${ addedUids.length } fotek",
+        "Do alba „${ albumName }“ bylo přidáno ${ addedUids.length } fotek"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "Z alba „${ albumName }“ byla odebrána ${ removed } fotka",
+        "Z alba „${ albumName }“ byly odebrány ${ removed } fotky",
+        "Z alba „${ albumName }“ bylo odebráno ${ removed } fotek",
+        "Z alba „${ albumName }“ bylo odebráno ${ removed } fotek"
+      ],
+      "Failed to load sharing details": [
+        "Nepodařilo se načíst podrobnosti o sdílení"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11330,6 +11585,9 @@
       ],
       "Optional feedback": [
         "Volitelná zpětná vazba"
+      ],
+      "Search for users or addresses": [
+        "Hledat uživatele nebo adresy"
       ]
     },
     "Placeholder for contact group name": {
@@ -14177,6 +14435,48 @@
       ],
       "Verify your password": [
         "Ověřte své heslo"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent psaní ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Digitální podpis ověřen. Tento soubor byl bezpečně vytvořen uživatelem ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Digitální podpis ověřen. Tato složka byla bezpečně vytvořena uživatelem ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Digitální podpis ověřen. Tato složka byla bezpečně nahrána uživatelem ${ author }."
+      ],
+      "Out of storage space": [
+        "Nedostatek úložného prostoru"
+      ],
+      "Upload empty file?": [
+        "Nahrát prázdný soubor?"
+      ],
+      "Users and addresses": [
+        "Uživatelé a adresy"
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Nepodařilo se nám ověřit, že uživatel ${ author } vytvořil tento soubor."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Nepodařilo se nám ověřit, že uživatel ${ author } vytvořil tuto složku."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Nepodařilo se nám ověřit, že uživatel ${ author } nahrál tento soubor."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Nepodařilo se nám ověřit, že uživatel ${ author } nahrál tuto složku."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Nepodařilo se nám potvrdit, že název byl vytvořen nebo upraven uživatelem ${ claimedNameAuthor }. Důvod: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Nepodařilo se nám potvrdit, že objekt byl vytvořen uživatelem ${ claimedKeyAuthor }. Důvod: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14280,6 +14580,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Okamžitá asistence AI, lidský expert po ruce!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Klíč OpenPGP verze 6"
       ]
     },
     "tooltip": {
@@ -14532,6 +14835,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše zkušební verze skončí ${ textDate }. Pokud ji zrušíte před ${ textDate }, nebudou vám účtovány žádné poplatky. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Pravidlo ${ modeLabelStong } poskytuje silnou kontrolu, ale jediná chyba může způsobit, že automatické vyplňování porovná a vyplní údaje na podvodných nebo phishingových webech."
       ]
     },
     "meet_2025: Addon": {
@@ -14625,6 +14931,87 @@
       ],
       "What are you migrating?": [
         "Co migrujete?"
+      ],
+      "Activated": [
+        "Aktivováno"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu již používá uživatel mimo vaši organizaci. Pro vyřešení kontaktujte prosím zákaznickou podporu"
+      ],
+      "All": [
+        "Vše"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stav migrace dat z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-maily"
+      ],
+      "Errors": [
+        "Chyby"
+      ],
+      "Find out what can be migrated.": [
+        "Zjistěte, co lze migrovat."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebyla nalezena. Pro vyřešení kontaktujte prosím zákaznickou podporu"
+      ],
+      "Migrate": [
+        "Migrovat"
+      ],
+      "Migrated": [
+        "Migrováno"
+      ],
+      "Missing organization private key": [
+        "Chybí soukromý klíč organizace"
+      ],
+      "Missing organization public key": [
+        "Chybí veřejný klíč organizace"
+      ],
+      "No users to display": [
+        "Žádní uživatelé k zobrazení"
+      ],
+      "Not activated": [
+        "Neaktivováno"
+      ],
+      "Pending": [
+        "Čekající"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte přesně to, co chcete migrovat. Bude to použito pro všechny uživatele organizace."
+      ],
+      "Select users to migrate": [
+        "Vyberte uživatele k migraci"
+      ],
+      "Size": [
+        "Velikost"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohoto uživatele nelze migrovat z důvodu nekompatibility platformy."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v administrátorské konzoli Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v sekci ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v sekci ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Chcete-li tohoto uživatele migrovat, musí nejprve přijmout pozvánku k připojení ke službě ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, zrušte jeho archivaci v administrátorské konzoli Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, zrušte jeho pozastavení v administrátorské konzoli Google Workspace."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Uživatelé, kteří přistoupili ke svému účtu ${ BRAND_NAME }"
+      ],
+      "You": [
+        "Vy"
       ]
     },
     "q2campaign2026: Action": {
@@ -14716,6 +15103,17 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Created": [
+        "Vytvořeno"
+      ],
+      "Expires": [
+        "Vyprší"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Jakmile uživatel přijme pozvánku, budete mu moci přiřadit role."
       ]
     }
   }

@@ -1247,6 +1247,69 @@
       ],
       "Skip": [
         "Lewati"
+      ],
+      "Add storage": [
+        "Tambah penyimpanan"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Tambahkan ke \"${ name }\" (${ photoCount } foto)"
+      ],
+      "Cancel downloads": [
+        "Batalkan unduhan"
+      ],
+      "Cancel transfers": [
+        "Batalkan transfer"
+      ],
+      "Change my access": [
+        "Ubah akses saya"
+      ],
+      "Download (${ nbSelected })": [
+        "Unduh (${ nbSelected })"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Kembali ke album \"${ ellipsedAlbumName }\""
+      ],
+      "List layout": [
+        "Tata letak daftar"
+      ],
+      "Re-index": [
+        "Indeks ulang"
+      ],
+      "Re-indexing in progress": [
+        "Pengindeksan ulang sedang berlangsung"
+      ],
+      "Rebuild index": [
+        "Bangun ulang indeks"
+      ],
+      "Refetch index": [
+        "Ambil ulang indeks"
+      ],
+      "Remove my access": [
+        "Hapus akses saya"
+      ],
+      "Report abuse": [
+        "Laporkan penyalahgunaan"
+      ],
+      "Save photo to your gallery": [
+        "Simpan foto ke galeri"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Pindai & Unduh (${ nbSelected })"
+      ],
+      "Scan and Download": [
+        "Pindai dan Unduh"
+      ],
+      "Search is unavailable": [
+        "Pencarian tidak tersedia"
+      ],
+      "Set password or expiration date": [
+        "Atur kata sandi atau tanggal kedalewarsa"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Berbagi terenkripsi secara end-to-end"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Coba ${ BRAND_NAME } Workspace"
       ]
     },
     "Actions": {
@@ -3947,6 +4010,54 @@
       ],
       "Wrong billing address": [
         "Alamat penagihan salah"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } item gagal dipindahkan"
+      ],
+      "Can't retrieve device name": [
+        "Tidak dapat mengambil nama perangkat"
+      ],
+      "Cannot find move target": [
+        "Tidak dapat menemukan target pemindahan"
+      ],
+      "Data integrity check failed": [
+        "Pemeriksaan integritas data gagal"
+      ],
+      "Failed to change permissions settings": [
+        "Gagal mengubah pengaturan izin"
+      ],
+      "Folder not found": [
+        "Folder tidak ditemukan"
+      ],
+      "No drive found to import": [
+        "Tidak ada drive yang ditemukan untuk diimpor"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Terjadi kesalahan pada pencarian. Harap coba lagi nanti."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Terjadi kesalahan pada pencarian: Ruang penyimpanan tidak cukup."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Terjadi kesalahan tak terduga, tidak dapat mengimpor file"
+      ],
+      "We cannot retrieve this item": [
+        "Tidak dapat mengambil item ini"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Tidak dapat mengirim kode verifikasi menggunakan metode ini."
+      ],
+      "We were not able to load some search results": [
+        "Gagal memuat beberapa hasil pencarian"
+      ],
+      "We were not able to load the file history": [
+        "Gagal memuat riwayat file"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "Maaf, tetapi unggahan gratis tidak tersedia saat ini."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Semua alamat dalam paket telah digunakan. Harap tingkatkan paket untuk menambah alamat baru atau nonaktifkan alamat di akun Anda."
       ]
     },
     "error": {
@@ -6877,6 +6988,231 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Tanggal penagihan berikutnya adalah ${ renewalTime }. Pembatalan dapat dilakukan kapan saja. Hubungi dukungan jika memerlukan perubahan paket segera."
+      ],
+      "${ albums } album": [
+        "${ albums } album"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace memberdayakan tim untuk berkolaborasi secara efisien tanpa membahayakan data perusahaan."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } mendeteksi bahwa indeks pencarian lokal rusak dan tidak dapat digunakan lagi. Bangun ulang indeks untuk memulihkan pencarian."
+      ],
+      "${ files } file": [
+        "${ files } file"
+      ],
+      "${ folders } folder": [
+        "${ folders } folder"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entri"
+      ],
+      "${ total } user found": [
+        "${ total } pengguna ditemukan"
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Versi baru ${ DRIVE_APP_NAME } telah tersedia. Harap muat ulang untuk terus menggunakan pencarian."
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Already in this folder": [
+        "Sudah ada di folder ini"
+      ],
+      "Can edit and manage access": [
+        "Dapat mengedit dan mengelola akses"
+      ],
+      "Can view and edit": [
+        "Dapat melihat dan mengedit"
+      ],
+      "Can't move a folder into itself": [
+        "Tidak dapat memindahkan folder ke dalam dirinya sendiri"
+      ],
+      "Can't rename to same name": [
+        "Tidak dapat mengubah nama menjadi nama yang sama"
+      ],
+      "Can't write into folder": [
+        "Tidak dapat menulis ke dalam folder"
+      ],
+      "Clear all search data": [
+        "Bersihkan semua data pencarian"
+      ],
+      "Clears browser data related to the search.": [
+        "Membersihkan data peramban yang terkait dengan pencarian."
+      ],
+      "Could not scan file for malware": [
+        "Tidak dapat memindai file dari malware"
+      ],
+      "Do you still want to upload it?": [
+        "Apakah masih ingin mengunggahnya?"
+      ],
+      "File could not be scanned": [
+        "File tidak dapat dipindai"
+      ],
+      "File flagged as potentially malicious": [
+        "File ditandai sebagai berpotensi berbahaya"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Hanya file (tanpa foto, ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME }) - hingga total 100 GB, 100.000 file, dan 50 GB per file"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Dengan ini menyatakan, dengan niat baik, bahwa informasi dan pernyataan yang tercantum dalam laporan ini adalah benar dan lengkap."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Jika menghapus diri sendiri, Anda akan kehilangan akses ke \"${ fileName }\" dan tidak akan dapat membukanya lagi kecuali pemilik membagikannya kembali kepada Anda."
+      ],
+      "Index is empty.": [
+        "Indeks kosong."
+      ],
+      "Indexed ${ first }": [
+        "Mengindeks ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Mengindeks ${ first } dan ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Mengindeks ${ first }, ${ second } dan ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Mengindeks ${ first }, ${ second }, ${ third } dan ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Pengindeksan mengalami keadaan yang tidak terduga dan tidak dapat dilanjutkan. Bangun ulang indeks untuk memulihkan."
+      ],
+      "Indexing in progress": [
+        "Pengindeksan sedang berlangsung"
+      ],
+      "Invitation confirmed": [
+        "Undangan dikonfirmasi"
+      ],
+      "Malware detected": [
+        "Malware terdeteksi"
+      ],
+      "Move ${ dragCount } item": [
+        "Pindahkan ${ dragCount } item"
+      ],
+      "Move ${ fileCount } file": [
+        "Pindahkan ${ fileCount } file"
+      ],
+      "Move ${ folderCount } folder": [
+        "Pindahkan ${ folderCount } folder"
+      ],
+      "No populator states found.": [
+        "Tidak ada status pengisi yang ditemukan."
+      ],
+      "Not enough storage space": [
+        "Ruang penyimpanan tidak cukup"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Satu rangkaian terenkripsi. Perlindungan bisnis penuh."
+      ],
+      "Photo saved to your Drive": [
+        "Foto disimpan ke Drive"
+      ],
+      "Preparing download": [
+        "Menyiapkan unduhan"
+      ],
+      "Preparing…": [
+        "Menyiapkan…"
+      ],
+      "Re-indexing in progress": [
+        "Pengindeksan ulang sedang berlangsung"
+      ],
+      "Requested item doesn't exist anymore": [
+        "Item yang diminta sudah tidak ada lagi"
+      ],
+      "Search data is corrupted": [
+        "Data pencarian rusak"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Pencarian diaktifkan. Sekarang dapat menutup dialog ini dan mencari file serta folder."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Pencarian mengalami kesalahan internal. Bangun ulang indeks untuk memulihkan."
+      ],
+      "Search engine error": [
+        "Kesalahan mesin pencari"
+      ],
+      "Search error": [
+        "Kesalahan pencarian"
+      ],
+      "Search is in an invalid state": [
+        "Pencarian berada dalam keadaan tidak valid"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Pencarian siap. File telah diindeks."
+      ],
+      "Search module is not available.": [
+        "Modul pencarian tidak tersedia."
+      ],
+      "Select a destination folder": [
+        "Pilih folder tujuan"
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Mesin pencari mengalami kesalahan internal. Bangun ulang indeks untuk memulihkan."
+      ],
+      "This file appears to be empty:": [
+        "File ini tampaknya kosong:"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Tindakan ini akan membatalkan semua unduhan yang tersisa."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Tindakan ini akan membatalkan semua unggahan dan unduhan yang tersisa. Unggahan yang dibatalkan tidak akan disimpan di ${ DRIVE_APP_NAME }."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Untuk mengaktifkan pencarian yang sesungguhnya, file perlu diindeks secara lokal. Tetap dapat menggunakan ${ DRIVE_APP_NAME } secara normal - pemberitahuan akan diberikan saat pengindeksan selesai."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Untuk membantu melindungi Anda, ${ DRIVE_APP_NAME } dapat memindai file dengan cara yang menjaga privasi dan memblokir file berbahaya. Namun, tetap disarankan untuk hanya mengunduh file dari sumber tepercaya. "
+      ],
+      "Unexpected download error": [
+        "Kesalahan unduhan tidak terduga"
+      ],
+      "Unsupported file type for Photos": [
+        "Tipe file tidak didukung untuk Foto"
+      ],
+      "Update required": [
+        "Pembaruan diperlukan"
+      ],
+      "Upgrade to get more storage space": [
+        "Tingkatkan untuk mendapatkan lebih banyak ruang penyimpanan"
+      ],
+      "Uploaded - file is empty": [
+        "Berhasil diunggah - file kosong"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Gagal menyimpan beberapa foto ke Drive"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Tidak dapat memverifikasi bahwa ${ nameAuthor } mengunggah ${ nodeName }. Urutan data file mungkin telah dimanipulasi. Hanya buka jika memercayainya."
+      ],
+      "We were not able to add this photo to your album": [
+        "Gagal menambahkan beberapa foto ke album"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Selamat datang di ${ DRIVE_APP_NAME }, untuk 10 menit pertama, file apa pun yang diunggah tidak akan dihitung dalam kuota penyimpanan."
+      ],
+      "Who has access": [
+        "Siapa yang memiliki akses"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Saat ini masuk sebagai ${ username } untuk ${ organizationName }."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "Tidak memiliki izin untuk menyalin file ke folder ini."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Tidak akan dapat membagikan \"${ fileName }\" setelah mengubah akses menjadi penampil. Hanya pemilik yang dapat mengubah akses kembali."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Peramban kehabisan ruang saat mengindeks file untuk pencarian. Kosongkan penyimpanan, lalu bangun ulang indeks."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "File sedang diindeks ulang. Pencarian dapat terus dilakukan - hasil mungkin tidak lengkap hingga proses selesai. Pemberitahuan akan diberikan setelah selesai."
       ]
     },
     "info": {
@@ -7649,6 +7985,120 @@
       ],
       "Skip feedback": [
         "Lewati masukan"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } unduhan"
+      ],
+      "Allow editors to change permissions and share": [
+        "Izinkan editor untuk mengubah izin dan membagikan"
+      ],
+      "Anyone on the Internet with the link": [
+        "Siapa saja di Internet yang memiliki tautan"
+      ],
+      "Asset": [
+        "Aset"
+      ],
+      "Created ${ created }": [
+        "Dibuat ${ created }"
+      ],
+      "Delete link and remove access for everyone": [
+        "Hapus tautan dan hapus akses untuk semua orang"
+      ],
+      "Deleted ${ deleted }": [
+        "Dihapus ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "Perangkat #${ position }"
+      ],
+      "Device: ${ name }": [
+        "Perangkat: ${ name }"
+      ],
+      "Disable this link on a specific date": [
+        "Nonaktifkan tautan ini pada tanggal tertentu"
+      ],
+      "Environment compatible": [
+        "Lingkungan kompatibel"
+      ],
+      "Exact host matching": [
+        "Pencocokan host persis"
+      ],
+      "Exact URL matching": [
+        "Pencocokan URL persis"
+      ],
+      "Expired on ${ formatted }": [
+        "Kedaluwarsa pada ${ formatted }"
+      ],
+      "Expires ${ formatted }": [
+        "Kedaluwarsa ${ formatted }"
+      ],
+      "Index kinds": [
+        "Jenis indeks"
+      ],
+      "Indexing": [
+        "Pengindeksan"
+      ],
+      "Item #${ position }": [
+        "Item #${ position }"
+      ],
+      "Location: ${ item.location }": [
+        "Lokasi: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "Diubah ${ modified }"
+      ],
+      "Never expires": [
+        "Tidak pernah kedaluwarsa"
+      ],
+      "Never fill on this exact URL": [
+        "Jangan pernah isi pada URL persis ini"
+      ],
+      "Non-consensual intimate imagery": [
+        "Citra intim nonkonsensual"
+      ],
+      "Not active": [
+        "Tidak aktif"
+      ],
+      "Outdated version": [
+        "Versi usang"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domain induk dan subdomain (bawaan)"
+      ],
+      "Pending invitation": [
+        "Undangan tertunda"
+      ],
+      "Regular expression": [
+        "Ekspresi reguler"
+      ],
+      "Require password": [
+        "Wajibkan kata sandi"
+      ],
+      "Searchable": [
+        "Dapat dicari"
+      ],
+      "Set a password to limit access via link": [
+        "Atur kata sandi untuk membatasi akses melalui tautan"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Dibagikan oleh ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Dibagikan oleh Tautan publik"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Dibagikan pada ${ sharedOn }"
+      ],
+      "Starts with": [
+        "Mulai dengan"
+      ],
+      "URL wildcard pattern": [
+        "Pola wildcard URL"
+      ],
+      "User opted in": [
+        "Pengguna menyetujui"
+      ],
+      "Visible columns:": [
+        "Kolom yang terlihat:"
       ]
     },
     "Label for contact group color": {
@@ -7968,6 +8418,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Aturan pencocokan 'Mulai dengan'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Aturan pencocokan domain (sub) persis"
+      ],
+      "Exact URL matching rule": [
+        "Aturan pencocokan URL persis"
+      ],
+      "Never fill with this exact URL": [
+        "Jangan pernah isi dengan URL persis ini"
+      ],
+      "Regular expression rule": [
+        "Aturan ekspresi reguler"
+      ],
+      "Wildcard pattern matching rule": [
+        "Aturan pencocokan pola wildcard"
       ]
     },
     "Message display when a new app version is available": {
@@ -9477,6 +9945,75 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Alamat ${ BRAND_NAME } Anda siap digunakan"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" disalin"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" berhasil dibuat"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" dihapus"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" dihapus secara permanen dari Sampah"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" gagal dibuat"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" gagal dihapus"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" gagal dihapus secara permanen dari Sampah"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" gagal dipindahkan"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" gagal dipulihkan dari Sampah"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" dipindahkan"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" dipulihkan dari Sampah"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" berhasil dipindahkan"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" dibagikan"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto telah ditambahkan ke \"${ albumName }\""
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } item gagal dihapus"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item disalin"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item dipindahkan"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto telah dihapus dari \"${ albumName }\""
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Salinan \"${ ellipsedName }\" dipindahkan ke Sampah"
+      ],
+      "Failed to load sharing details": [
+        "Gagal memuat rincian berbagi"
+      ],
+      "Selected item was successfully removed from your list": [
+        "Item terpilih berhasil dihapus dari daftar"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Pengaturan diperbarui. Editor dapat mengubah izin dan membagikan."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Pengaturan diperbarui. Editor tidak dapat mengubah izin atau membagikan."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9867,6 +10404,9 @@
       ],
       "Verify thumbnails": [
         "Verifikasi thumbnail"
+      ],
+      "Expected structure": [
+        "Struktur yang diharapkan"
       ]
     },
     "Option group label": {
@@ -10406,6 +10946,9 @@
       ],
       "Select a provider": [
         "Pilih penyedia"
+      ],
+      "Search for users or addresses": [
+        "Cari pengguna atau alamat"
       ]
     },
     "Placeholder for contact group name": {
@@ -10709,6 +11252,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tersisa ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tersisa ${ timeRemaining.inMinutes } menit untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tersisa ${ timeRemaining.inSeconds } detik untuk mengatur ulang kata sandi."
       ]
     },
     "session_recovery:available:link": {
@@ -11100,6 +11652,9 @@
       ],
       "pending": [
         "menunggu"
+      ],
+      "user joined": [
+        "pengguna bergabung"
       ]
     },
     "Storage": {
@@ -11641,6 +12196,9 @@
       ],
       "Your videos will appear here": [
         "Video Anda akan muncul di sini"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Dibagikan oleh ${ sharedBy }"
       ]
     },
     "Success": {
@@ -12930,6 +13488,78 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Langganan ${ planTitle } telah dimulai"
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } unggahan gratis."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asisten penulisan ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Cancel all downloads?": [
+        "Batalkan semua unduhan?"
+      ],
+      "Cancel all transfers?": [
+        "Batalkan semua transfer?"
+      ],
+      "Change access to viewer?": [
+        "Ubah akses menjadi penampil?"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Tanda tangan digital terverifikasi. File ini dibuat secara aman oleh ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Tanda tangan digital terverifikasi. File ini diunggah secara aman oleh ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Tanda tangan digital terverifikasi. Folder ini dibuat secara aman oleh ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Tanda tangan digital terverifikasi. Folder ini diunggah secara aman oleh ${ author }."
+      ],
+      "Found ${ resultCount } result": [
+        "Menemukan ${ resultCount } hasil"
+      ],
+      "Index populators": [
+        "Pengisi indeks"
+      ],
+      "Out of storage space": [
+        "Kehabisan ruang penyimpanan"
+      ],
+      "Public link settings": [
+        "Pengaturan tautan publik"
+      ],
+      "Remove your access?": [
+        "Hapus akses Anda?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Pengaturan untuk ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Bagikan \"${ fileName }\""
+      ],
+      "Upload empty file?": [
+        "Unggah file kosong?"
+      ],
+      "Users and addresses": [
+        "Pengguna dan alamat"
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Tidak dapat memverifikasi bahwa ${ author } membuat file ini."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Tidak dapat memverifikasi bahwa ${ author } membuat folder ini."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Tidak dapat memverifikasi bahwa ${ author } mengunggah file ini."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Tidak dapat memverifikasi bahwa ${ author } mengunggah folder ini."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Tidak dapat mengonfirmasi bahwa nama dibuat atau diubah oleh ${ claimedNameAuthor }. Alasannya: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Tidak dapat mengonfirmasi bahwa node dibuat oleh ${ claimedKeyAuthor }. Alasannya: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13030,6 +13660,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Bantuan AI instan, pakar manusia siap membantu!"
+      ],
+      "Change shared item settings": [
+        "Ubah pengaturan item yang dibagikan"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kunci OpenPGP Versi 6"
       ]
     },
     "tooltip": {
@@ -13237,6 +13873,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uji coba Anda akan berakhir pada ${ textDate }. Anda tidak akan dikenakan biaya apabila Anda membatalkan sebelum ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } memberikan kendali yang kuat, tetapi satu kesalahan saja dapat menyebabkan isi otomatis mencocokkan dan mengisi data pada situs web penipuan atau phishing."
       ]
     },
     "Provider option": {
@@ -13292,6 +13931,90 @@
       ],
       "What are you migrating?": [
         "Apa yang ingin Anda migrasikan?"
+      ],
+      "Activated": [
+        "Diaktifkan"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Alamat sudah digunakan oleh pengguna di luar organisasi. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
+      ],
+      "All": [
+        "Semua"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status migrasi data dari Google Workspace ke ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Email"
+      ],
+      "Errors": [
+        "Kesalahan"
+      ],
+      "Find out what can be migrated.": [
+        "Cari tahu apa saja yang dapat dimigrasikan."
+      ],
+      "Has errors": [
+        "Ada kesalahan"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Alamat anggota tidak ditemukan. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
+      ],
+      "Migrate": [
+        "Migrasi"
+      ],
+      "Migrated": [
+        "Dimigrasikan"
+      ],
+      "Missing organization private key": [
+        "Kunci pribadi organisasi hilang"
+      ],
+      "Missing organization public key": [
+        "Kunci publik organisasi hilang"
+      ],
+      "No users to display": [
+        "Tidak ada pengguna untuk ditampilkan"
+      ],
+      "Not activated": [
+        "Belum diaktifkan"
+      ],
+      "Pending": [
+        "Tertunda"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Pilih apa yang ingin dimigrasikan. Ini akan berlaku untuk semua pengguna organisasi."
+      ],
+      "Select users to migrate": [
+        "Pilih pengguna untuk dimigrasikan"
+      ],
+      "Size": [
+        "Ukuran"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Pengguna ini tidak dapat dimigrasikan karena ketidakcocokan platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, aktifkan akunnya di Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Untuk memigrasikan pengguna ini, aktifkan akunnya di bawah ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Untuk memigrasikan pengguna ini, aktifkan alamatnya di bawah ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Untuk memigrasikan pengguna ini, pengguna tersebut harus menerima undangan untuk bergabung dengan ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, batalkan pengarsipannya di Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, batalkan penangguhannya di Google Workspace Admin Console."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Pengguna yang telah mengakses akun ${ BRAND_NAME }"
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "q2campaign2026: Action": {
@@ -13483,6 +14206,27 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Buka di ${ DOCS_APP_NAME }"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Nama album berhasil diubah"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Anda akan dapat menetapkan peran setelah pengguna menerima undangan."
       ]
     }
   }

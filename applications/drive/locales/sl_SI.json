@@ -7001,6 +7001,9 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Trenutno ste prijavljeni kot ${ username } v (${ organizationName }."
+      ],
+      "Data integrity check failed": [
+        "Preverjanje celovitosti podatkov ni uspelo"
       ]
     },
     "info": {
@@ -12974,6 +12977,9 @@
       ],
       "We'd love to hear from you!": [
         "Radi bi vas slišali!"
+      ],
+      "Users and addresses": [
+        "Uporabniki in naslovi"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13348,6 +13354,27 @@
       ],
       "Status": [
         "Stanje"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tega uporabnika ni mogoče prenesti zaradi nezdružljivosti platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Če želite tega uporabnika prenesti, morajo sprejeti njihovo povabilo k pridružitvi ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga odstranite iz arhiva v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
       ]
     },
     "q2campaign2026: Action": {

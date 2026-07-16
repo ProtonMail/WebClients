@@ -7421,6 +7421,9 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Du er i øjeblikket logget ind som ${ username } i (${ organizationName }."
+      ],
+      "Data integrity check failed": [
+        "Dataintegritetskontrol mislykkedes"
       ]
     },
     "info": {
@@ -8295,6 +8298,27 @@
       ],
       "Indexing": [
         "Indekserer"
+      ],
+      "Exact host matching": [
+        "Nøjagtigt værtsmatch"
+      ],
+      "Exact URL matching": [
+        "Nøjagtig URL-matching"
+      ],
+      "Never fill on this exact URL": [
+        "Udfyld aldrig på denne nøjagtige URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domæne og underdomæner (standard)"
+      ],
+      "Regular expression": [
+        "Regulært udtryk"
+      ],
+      "Starts with": [
+        "Begynder med"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ]
     },
     "Label for contact group color": {
@@ -8624,6 +8648,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis prøveperiode er afsluttet. Adgang til din konto vil snart blive deaktiveret. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Matchende regel for \"Begynder med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Nøjagtig (under) domænematchregel"
+      ],
+      "Exact URL matching rule": [
+        "Nøjagtig URL-matchende regel"
+      ],
+      "Never fill with this exact URL": [
+        "Udfyld aldrig med denne nøjagtige URL"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært udtryk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for jokertegnmønstermatch"
       ]
     },
     "Message display when a new app version is available": {
@@ -13938,6 +13980,9 @@
       ],
       "Upload empty file?": [
         "Upload en tom fil?"
+      ],
+      "Users and addresses": [
+        "Brugere og adresser"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14266,6 +14311,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
       ]
     },
     "fido2: Error": {
@@ -14423,6 +14471,27 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For at migrere denne bruger skal vedkommende acceptere sin invitation til at tilmelde sig ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du fjerne vedkommende fra arkivet i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "For at migrere denne bruger skal du ophæve suspenderingen af vedkommende i din Google Workspace Admin Console."
       ]
     },
     "q2campaign2026: Action": {

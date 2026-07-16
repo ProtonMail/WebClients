@@ -1178,6 +1178,130 @@
       ],
       "Skip": [
         "Ignorar"
+      ],
+      "Add storage": [
+        "Adicionar armazenamento"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Adicionar a \"${ name }\" (${ photoCount } fotografia)",
+        "Adicionar a \"${ name }\" (${ photoCount } fotografias)"
+      ],
+      "Cancel downloads": [
+        "Cancelar transferências"
+      ],
+      "Cancel transfers": [
+        "Cancelar transferências"
+      ],
+      "Cancel uploads": [
+        "Cancelar carregamentos"
+      ],
+      "Change my access": [
+        "Alterar o meu acesso"
+      ],
+      "Create business account": [
+        "Criar conta empresarial"
+      ],
+      "Diagnostics": [
+        "Diagnósticos"
+      ],
+      "Download (${ nbSelected })": [
+        "Transferir (${ nbSelected })"
+      ],
+      "Download for Mac": [
+        "Transferir para Mac"
+      ],
+      "Download for macOS": [
+        "Transferir para macOS"
+      ],
+      "Download for Windows": [
+        "Transferir para Windows"
+      ],
+      "Download info": [
+        "Transferir informações"
+      ],
+      "Download results": [
+        "Transferir resultados"
+      ],
+      "Encrypted": [
+        "Encriptado"
+      ],
+      "Explore more": [
+        "Explore mais"
+      ],
+      "Full data": [
+        "Dados completos"
+      ],
+      "Get mobile and desktop apps": [
+        "Obter aplicações móveis e de computador"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Voltar ao álbum «${ ellipsedAlbumName }»"
+      ],
+      "List layout": [
+        "Esquema em lista"
+      ],
+      "No sensitive data": [
+        "Sem dados confidenciais"
+      ],
+      "Re-index": [
+        "Indexar novamente"
+      ],
+      "Re-indexing in progress": [
+        "Reindexação em curso"
+      ],
+      "Rebuild index": [
+        "Reconstruir índice"
+      ],
+      "Refetch index": [
+        "Procurar índice novamente"
+      ],
+      "Remove my access": [
+        "Remover o meu acesso"
+      ],
+      "Report abuse": [
+        "Reportar abuso"
+      ],
+      "Retry failed items": [
+        "Tentar novamente os itens que falharam"
+      ],
+      "Run diagnostics": [
+        "Executar diagnósticos"
+      ],
+      "Save photo to your gallery": [
+        "Guardar foto na sua galeria"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Digitalizar e transferir (${ nbSelected })"
+      ],
+      "Scan and Download": [
+        "Digitalizar e transferir"
+      ],
+      "Search is unavailable": [
+        "A pesquisa está indisponível"
+      ],
+      "Set password or expiration date": [
+        "Definir palavra-passe ou data de expiração"
+      ],
+      "Shared": [
+        "Partilhado"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "A partilha é encriptada de ponto a ponto"
+      ],
+      "Subscribe now": [
+        "Subscrever agora"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Experimente o ${ BRAND_NAME } Workspace"
+      ],
+      "Upgrade for 200GB": [
+        "Upgrade para 200GB"
+      ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
       ]
     },
     "Actions": {
@@ -3688,6 +3812,124 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome não desencriptável"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "Não foi possível mover ${ failureItems.length } item",
+        "Não foi possível mover ${ failureItems.length } itens"
+      ],
+      "Can't find any secure link": [
+        "Não foi possível encontrar nenhuma ligação segura"
+      ],
+      "Can't retrieve device name": [
+        "Não é possível obter o nome do dispositivo"
+      ],
+      "Cannot find move target": [
+        "Não é possível encontrar o destino do movimento"
+      ],
+      "Data integrity check failed": [
+        "Falha na verificação de integridade dos dados"
+      ],
+      "Diagnostics failed": [
+        "Falha nos diagnósticos"
+      ],
+      "Downloads of desktop apps are currently unavailable": [
+        "As transferências de aplicações para computador estão atualmente indisponíveis"
+      ],
+      "Error reading file": [
+        "Erro ao ler o ficheiro"
+      ],
+      "Expected structure attached": [
+        "Estrutura esperada anexada"
+      ],
+      "Failed to change permissions settings": [
+        "Falha ao alterar as definições de permissões"
+      ],
+      "Failed to expand folder": [
+        "Falha ao expandir a pasta"
+      ],
+      "Failed to get details, please try again later": [
+        "Erro ao obter os detalhes, tente novamente mais tarde"
+      ],
+      "Failed to load signature details, please try again later": [
+        "Falha ao carregar os detalhes da assinatura, tente novamente mais tarde"
+      ],
+      "Folder not found": [
+        "Pasta não encontrada"
+      ],
+      "Invalid JSON file": [
+        "Ficheiro JSON inválido"
+      ],
+      "No drive found to import": [
+        "Nenhuma unidade encontrada para importar"
+      ],
+      "No file to upload": [
+        "Nenhum ficheiro para carregar"
+      ],
+      "Something went wrong during folder listing": [
+        "Ocorreu um erro durante a listagem da pasta"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Ocorreu um erro com a pesquisa. Tente novamente mais tarde."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Ocorreu um erro com a pesquisa: Espaço de armazenamento insuficiente."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não conseguimos importar os ficheiros"
+      ],
+      "Unknown conflict strategy: ${ strategy }": [
+        "Estratégia de conflito desconhecida: ${ strategy }"
+      ],
+      "Unknown location": [
+        "Localização desconhecida"
+      ],
+      "Unknown number of downloads": [
+        "Número desconhecido de transferências"
+      ],
+      "Upload failed": [
+        "Falha ao carregar"
+      ],
+      "We cannot retrieve this item": [
+        "Não conseguimos obter este item"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação através deste método."
+      ],
+      "We were not able to load some invitations": [
+        "Não nos foi possível carregar alguns convites"
+      ],
+      "We were not able to load some items": [
+        "Não nos foi possível carregar alguns itens"
+      ],
+      "We were not able to load some items shared with you": [
+        "Não nos foi possível carregar alguns itens partilhados consigo"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Não nos foi possível carregar alguns dos seus convites para itens partilhados"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Não nos foi possível carregar algumas das suas ligações de partilha guardadas"
+      ],
+      "We were not able to load some of your shared items": [
+        "Não nos foi possível carregar alguns dos seus itens partilhados"
+      ],
+      "We were not able to load some search results": [
+        "Não nos foi possível carregar alguns resultados de pesquisa"
+      ],
+      "We were not able to load the file history": [
+        "Não nos foi possível carregar o histórico do ficheiro"
+      ],
+      "We were not able to load the folder contents": [
+        "Não nos foi possível carregar o conteúdo da pasta"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "Lamentamos, mas o carregamento gratuito não está disponível de momento."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Utilizou todos os endereços do seu plano. Atualize o seu plano para adicionar um novo endereço ou desative um endereço na sua conta."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositivo indecriptável"
       ]
     },
     "Error importing calendar": {
@@ -6564,6 +6806,334 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "A sua próxima data de faturação é ${ renewalTime }. Pode cancelar a qualquer momento. Por favor, contacte o apoio ao cliente se precisar de uma alteração imediata no plano."
+      ],
+      "${ albums } album": [
+        "${ albums } álbum",
+        "${ albums } álbuns"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "O ${ BRAND_NAME } Workspace permite à sua equipa colaborar de forma eficiente sem nunca colocar em risco os dados da sua empresa."
+      ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } de ${ items.length } transferências concluídas"
+      ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Os ficheiros do ${ DOCS_APP_NAME } e ${ SHEETS_APP_NAME } não podem ser transferidos diretamente e não serão incluídos nesta transferência. Pode transferir os outros ficheiros clicando em 'Continuar a transferir'."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "O ${ DRIVE_APP_NAME } detetou que o índice de pesquisa local está corrompido e já não pode ser utilizado. Reconstrua o índice para restaurar a pesquisa."
+      ],
+      "${ files } file": [
+        "${ files } ficheiro",
+        "${ files } ficheiros"
+      ],
+      "${ folders } folder": [
+        "${ folders } pasta",
+        "${ folders } pastas"
+      ],
+      "${ normalizedProgress }% completed": [
+        "${ normalizedProgress }% concluído"
+      ],
+      "${ photos } photo": [
+        "${ photos } fotografia",
+        "${ photos } fotografias"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entradas"
+      ],
+      "${ total } user found": [
+        "${ total } utilizador encontrado",
+        "${ total } utilizadores encontrados"
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Uma nova versão do ${ DRIVE_APP_NAME } está disponível. Recarregue para continuar a utilizar a pesquisa."
+      ],
+      "Album": [
+        "Álbum"
+      ],
+      "Already in this folder": [
+        "Já se encontra nesta pasta"
+      ],
+      "Already in your library": [
+        "Já se encontra na sua biblioteca"
+      ],
+      "Better in the app": [
+        "Melhor na aplicação"
+      ],
+      "Can edit": [
+        "Pode editar"
+      ],
+      "Can edit and manage access": [
+        "Pode editar e gerir o acesso"
+      ],
+      "Can view and edit": [
+        "Pode ver e editar"
+      ],
+      "Can view only": [
+        "Apenas pode ver"
+      ],
+      "Can't move a folder into itself": [
+        "Não é possível mover uma pasta para dentro de si própria"
+      ],
+      "Can't rename to same name": [
+        "Não é possível alterar o nome para o mesmo nome"
+      ],
+      "Can't write into folder": [
+        "Não é possível escrever na pasta"
+      ],
+      "Clear all search data": [
+        "Limpar todos os dados de pesquisa"
+      ],
+      "Clears browser data related to the search.": [
+        "Limpa os dados do navegador relacionados com a pesquisa."
+      ],
+      "Could not scan file for malware": [
+        "Não foi possível digitalizar o ficheiro para procurar malware"
+      ],
+      "Do you still want to upload it?": [
+        "Ainda o pretende carregar?",
+        "Ainda os pretende carregar?"
+      ],
+      "Done": [
+        "Concluído"
+      ],
+      "Download Failed": [
+        "Falha ao transferir"
+      ],
+      "File could not be scanned": [
+        "O ficheiro não pôde ser digitalizado"
+      ],
+      "File flagged as potentially malicious": [
+        "Ficheiro sinalizado como potencialmente malicioso"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) - até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Obtenha registos e outras informações para apoio ao cliente técnico e resolução de problemas"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Confirmo pela presente, de boa-fé, que as informações e declarações contidas no relatório são corretas e completas."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Se se remover, perderá o acesso a \"${ fileName }\" e não poderá abri-lo novamente, a menos que o proprietário o partilhe consigo."
+      ],
+      "In progress": [
+        "Em progresso"
+      ],
+      "Index is empty.": [
+        "O índice está vazio."
+      ],
+      "Indexed ${ first }": [
+        "Indexado ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexado ${ first } e ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexado ${ first }, ${ second } e ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexado ${ first }, ${ second }, ${ third } e ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "A indexação atingiu um estado inesperado e não pode continuar. Reconstrua o índice para recuperar."
+      ],
+      "Indexing in progress": [
+        "Indexação em progresso"
+      ],
+      "Integrity issues found": [
+        "Problemas de integridade encontrados"
+      ],
+      "Invitation confirmed": [
+        "Convite confirmado"
+      ],
+      "iOS and Android Apps": [
+        "Aplicações para iOS e Android"
+      ],
+      "Issues found": [
+        "Problemas encontrados"
+      ],
+      "Link copied": [
+        "Ligação copiada"
+      ],
+      "Malware detected": [
+        "Malware detetado"
+      ],
+      "Move ${ dragCount } item": [
+        "Mover ${ dragCount } item",
+        "Mover ${ dragCount } itens"
+      ],
+      "Move ${ fileCount } file": [
+        "Mover ${ fileCount } ficheiro",
+        "Mover ${ fileCount } ficheiros"
+      ],
+      "Move ${ folderCount } folder": [
+        "Mover ${ folderCount } pasta",
+        "Mover ${ folderCount } pastas"
+      ],
+      "No issue found": [
+        "Nenhum problema encontrado"
+      ],
+      "No populator states found.": [
+        "Não foram encontrados estados populadores."
+      ],
+      "Not enough storage space": [
+        "Espaço de armazenamento insuficiente"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Uma suite encriptada. Proteção total do negócio."
+      ],
+      "owner": [
+        "proprietário"
+      ],
+      "Photo saved to your Drive": [
+        "Foto guardada na sua unidade",
+        "Fotos guardadas na sua unidade"
+      ],
+      "Preparing": [
+        "A preparar"
+      ],
+      "Preparing download": [
+        "A preparar a transferência"
+      ],
+      "Preparing…": [
+        "A preparar…"
+      ],
+      "Re-indexing in progress": [
+        "Reindexação em curso"
+      ],
+      "Requested item doesn't exist anymore": [
+        "O item solicitado já não existe"
+      ],
+      "Running diagnostics...": [
+        "A executar diagnósticos..."
+      ],
+      "Scan to download": [
+        "Digitalizar para transferir"
+      ],
+      "Search data is corrupted": [
+        "Os dados de pesquisa estão corrompidos"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Pesquisa ativada. Pode agora fechar esta caixa de diálogo e pesquisar ficheiros e pastas."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "A pesquisa encontrou um erro interno. Reconstrua o índice para recuperar."
+      ],
+      "Search engine error": [
+        "Erro do motor de pesquisa"
+      ],
+      "Search error": [
+        "Erro de pesquisa"
+      ],
+      "Search is in an invalid state": [
+        "A pesquisa encontra-se num estado inválido"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "A pesquisa está pronta. Os seus ficheiros foram indexados."
+      ],
+      "Search module is not available.": [
+        "O módulo de pesquisa não está disponível."
+      ],
+      "Select a destination folder": [
+        "Selecione uma pasta de destino"
+      ],
+      "Select a folder to make the copy in": [
+        "Selecione uma pasta para fazer a cópia"
+      ],
+      "Some items failed": [
+        "Falha em alguns itens"
+      ],
+      "that": [
+        "que"
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "O motor de pesquisa encontrou um erro interno. Reconstrua o índice para recuperar."
+      ],
+      "This file appears to be empty:": [
+        "Este ficheiro parece estar vazio:",
+        "Estes ficheiros parecem estar vazios:"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Isto cancelará quaisquer transferências restantes."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Isto cancelará todos os carregamentos e transferências restantes. Os carregamentos cancelados não serão guardados no ${ DRIVE_APP_NAME }."
+      ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Isto cancelará todos os carregamentos restantes. Os ficheiros cancelados não serão guardados no ${ DRIVE_APP_NAME }."
+      ],
+      "This will replace the existing folder or file with the file": [
+        "Isto irá substituir a pasta ou o ficheiro existente pelo ficheiro"
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "Isto irá substituir a pasta ou o ficheiro existente pela pasta"
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Para transferir estes ficheiros, abra-os no ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME } e exporte-os."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Para ativar a pesquisa real, precisamos de indexar os seus ficheiros localmente. Pode continuar a utilizar o ${ DRIVE_APP_NAME } normalmente - informá-lo-emos quando a indexação estiver concluída."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Para ajudar a protegê-lo, o ${ DRIVE_APP_NAME } pode digitalizar os seus ficheiros de uma forma que preserve a privacidade e bloquear ficheiros maliciosos. No entanto, o melhor continua a ser transferir ficheiros apenas de fontes de confiança. "
+      ],
+      "Unexpected download error": [
+        "Erro de transferência inesperado"
+      ],
+      "Unsupported file type for Photos": [
+        "Tipo de ficheiro não suportado para Fotografias"
+      ],
+      "Update required": [
+        "Atualização obrigatória"
+      ],
+      "Upgrade to get more storage space": [
+        "Atualize para obter mais espaço de armazenamento"
+      ],
+      "Upload Failed": [
+        "Falha ao carregar"
+      ],
+      "Uploaded - file is empty": [
+        "Carregado - o ficheiro está vazio"
+      ],
+      "Waiting": [
+        "A aguardar"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Não conseguimos guardar esta foto na sua unidade",
+        "Não conseguimos guardar várias fotos na sua unidade"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Não conseguimos verificar se ${ nameAuthor } carregou ${ nodeName }. O seguinte pode ter sido adulterado: ordem dos dados do ficheiro. Abra apenas se for de confiança."
+      ],
+      "We were not able to add this photo to your album": [
+        "Não foi possível adicionar esta foto ao seu álbum",
+        "Não foi possível adicionar algumas fotos ao seu álbum"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Bem-vindo ao ${ DRIVE_APP_NAME }, durante os primeiros 10 minutos, quaisquer ficheiros que carregar não contam para a sua quota de armazenamento."
+      ],
+      "who": [
+        "quem"
+      ],
+      "Who has access": [
+        "Quem tem acesso"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Tem atualmente sessão iniciada como ${ username } em ${ organizationName }."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "Não tem permissão para copiar ficheiros para esta pasta."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Não poderá partilhar \"${ fileName }\" depois de alterar o acesso para visualizador. Apenas o proprietário pode alterar o seu acesso novamente."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "O seu navegador ficou sem espaço ao indexar ficheiros para a pesquisa. Liberte armazenamento e depois reconstrua o índice."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Os seus ficheiros estão a ser reindexados. Pode continuar a pesquisar - os resultados podem estar incompletos até terminar. Iremos avisá-lo quando terminar."
       ]
     },
     "info": {
@@ -7315,6 +7885,147 @@
       ],
       "Your password (trusted contact)": [
         "A sua palavra-passe (contacto de confiança)"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } transferências"
+      ],
+      "Access": [
+        "Acesso"
+      ],
+      "Active": [
+        "Ativo"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permitir que os editores alterem permissões e partilhem"
+      ],
+      "Anonymous": [
+        "Anónimo"
+      ],
+      "Anyone on the Internet with the link": [
+        "Qualquer pessoa na Internet com a ligação"
+      ],
+      "Applications in a business setting": [
+        "Aplicações num ambiente empresarial"
+      ],
+      "Asset": [
+        "Recurso"
+      ],
+      "can edit": [
+        "pode editar"
+      ],
+      "can view": [
+        "pode ver"
+      ],
+      "Created ${ created }": [
+        "Criado em ${ created }"
+      ],
+      "Delete link and remove access for everyone": [
+        "Eliminar ligação e remover o acesso para todos"
+      ],
+      "Deleted ${ deleted }": [
+        "Eliminado a ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "Dispositivo #${ position }"
+      ],
+      "Device: ${ name }": [
+        "Dispositivo: ${ name }"
+      ],
+      "Disable this link on a specific date": [
+        "Desativar esta ligação numa data específica"
+      ],
+      "Environment compatible": [
+        "Ambiente compatível"
+      ],
+      "Exact host matching": [
+        "Correspondência exata de anfitrião"
+      ],
+      "Exact URL matching": [
+        "Correspondência exata de URL"
+      ],
+      "Expired on ${ formatted }": [
+        "Expirou a ${ formatted }"
+      ],
+      "Expires ${ formatted }": [
+        "Expira a ${ formatted }"
+      ],
+      "Expiry": [
+        "Expiração"
+      ],
+      "File transfer overview": [
+        "Visão geral da transferência de ficheiros"
+      ],
+      "Index kinds": [
+        "Tipos de índice"
+      ],
+      "Indexing": [
+        "A indexar"
+      ],
+      "Item #${ position }": [
+        "Item n.º ${ position }"
+      ],
+      "Location: ${ item.location }": [
+        "Localização: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "Modificado a ${ modified }"
+      ],
+      "Never expires": [
+        "Nunca expira"
+      ],
+      "Never fill on this exact URL": [
+        "Nunca preencher neste URL exato"
+      ],
+      "Non-consensual intimate imagery": [
+        "Imagens íntimas não consensuais"
+      ],
+      "Not active": [
+        "Inativo"
+      ],
+      "Outdated version": [
+        "Versão desatualizada"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domínio principal e subdomínios (predefinição)"
+      ],
+      "Pending invitation": [
+        "Convite pendente"
+      ],
+      "Regular expression": [
+        "Expressão regular"
+      ],
+      "Replace existing folder or file": [
+        "Substituir pasta ou ficheiro existente"
+      ],
+      "Require password": [
+        "Requer palavra-passe"
+      ],
+      "Searchable": [
+        "Pesquisável"
+      ],
+      "Set a password to limit access via link": [
+        "Defina uma palavra-passe para limitar o acesso via ligação"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Partilhado por ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Partilhado através de ligação pública"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Partilhado a ${ sharedOn }"
+      ],
+      "Starts with": [
+        "Começa com"
+      ],
+      "URL wildcard pattern": [
+        "Padrão de URL com caráter universal"
+      ],
+      "User opted in": [
+        "Utilizador optou por participar"
+      ],
+      "Visible columns:": [
+        "Colunas visíveis:"
       ]
     },
     "Label for contact group color": {
@@ -7583,6 +8294,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "A sua avaliação gratuita terminou. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "Regra de correspondência 'Começa com'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regra de correspondência de (sub)domínio exato"
+      ],
+      "Exact URL matching rule": [
+        "Regra de correspondência de URL exato"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca preencher com este URL exato"
+      ],
+      "Regular expression rule": [
+        "Regra de expressão regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regra de correspondência de padrão de caráter universal"
       ]
     },
     "Message display when a new app version is available": {
@@ -9048,6 +9777,110 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "O seu endereço do ${ BRAND_NAME } está pronto a usar"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" copiado"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" criado com sucesso"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" eliminado"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" eliminado permanentemente do Lixo"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Não foi possível criar \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Não foi possível eliminar \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Não foi possível eliminar \"${ ellipsedName }\" permanentemente do Lixo"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "Não foi possível mover \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Não foi possível restaurar \"${ ellipsedName }\" do Lixo"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" movido"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" restaurado do Lixo"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" movido com sucesso"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" partilhado"
+      ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" eliminado permanentemente"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto foi adicionada a «${ albumName }»",
+        "${ addedUids.length } fotos foram adicionadas a «${ albumName }»"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "Não foi possível copiar ${ errors.length } item",
+        "Não foi possível copiar ${ errors.length } itens"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "Não foi possível eliminar ${ errors.length } item",
+        "Não foi possível eliminar ${ errors.length } itens"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "Não foi possível mover ${ errors.length } item para o Lixo",
+        "Não foi possível mover ${ errors.length } itens para o Lixo"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } item copiado movido para o Lixo",
+        "${ numberOfItems } itens copiados movidos para o Lixo"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item copiado",
+        "${ numberOfItems } itens copiados"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } item eliminado permanentemente",
+        "${ numberOfItems } itens eliminados permanentemente"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item movido",
+        "${ numberOfItems } itens movidos"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto foi removida de «${ albumName }»",
+        "${ removed } fotos foram removidas de «${ albumName }»"
+      ],
+      "All items deleted permanently from trash": [
+        "Todos os itens foram permanentemente eliminados do Lixo"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Cópia de \"${ ellipsedName }\" movida para o Lixo"
+      ],
+      "Failed to load sharing details": [
+        "Falha ao carregar os detalhes de partilha"
+      ],
+      "Selected item was not removed from your list": [
+        "O item selecionado não foi removido da sua lista",
+        "Os itens selecionados não puderam ser removidos da sua lista"
+      ],
+      "Selected item was successfully removed from your list": [
+        "O item selecionado foi removido com sucesso da sua lista",
+        "Os itens selecionados foram removidos com sucesso da sua lista"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Definição atualizada. Os editores podem alterar permissões e partilhar."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Definição atualizada. Os editores não podem alterar permissões ou partilhar."
+      ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "Esta ligação segura expirou, altere a data de expiração nas definições de partilha"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9136,6 +9969,15 @@
       ],
       "Don't show this again": [
         "Não mostrar novamente"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tempo limitado, válida para o seu primeiro mês"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Atualize a sua produtividade por apenas ${ pricingTitle } com ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Atualize o seu armazenamento por apenas ${ pricingTitle } com ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -9173,6 +10015,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Aliases ilimitados para proteger a sua identidade"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colabore com utilizadores que não usam ${ BRAND_NAME }"
+      ],
+      "Edit docs online": [
+        "Editar docs online"
+      ],
+      "File version history (over 1 week)": [
+        "Histórico de versões do ficheiro (mais de 1 semana)"
       ]
     },
     "Onboarding": {
@@ -9222,6 +10073,9 @@
       ],
       "Upload folder": [
         "Enviar pasta"
+      ],
+      "Upload more files": [
+        "Carregar mais ficheiros"
       ]
     },
     "Onboarding Info": {
@@ -9323,6 +10177,21 @@
       ],
       "Work together": [
         "Trabalhar em conjunto"
+      ],
+      "10 minutes": [
+        "10 minutos"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Os ficheiros carregados durante este período não contarão para o seu limite de armazenamento."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Os ficheiros carregados agora não contarão para o seu limite de armazenamento"
+      ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Mantenha o ritmo carregando mais ficheiros com o armazenamento incluído no seu plano."
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Acaba de conseguir alguns dados gratuitos e proteger os seus ficheiros com encriptação ponto a ponto － em tempo recorde!"
       ]
     },
     "Onboarding Trial": {
@@ -9387,6 +10256,24 @@
       ],
       "No parent folder": [
         "Nenhuma pasta principal"
+      ],
+      "Expected structure": [
+        "Estrutura esperada"
+      ],
+      "Only current location": [
+        "Apenas localização atual"
+      ],
+      "Only current location: ${ name }": [
+        "Apenas localização atual: ${ name }"
+      ],
+      "Select JSON file": [
+        "Selecionar ficheiro JSON"
+      ],
+      "Verify content": [
+        "Verificar conteúdo"
+      ],
+      "Verify thumbnails": [
+        "Verificar miniaturas"
       ]
     },
     "Option group label": {
@@ -9903,6 +10790,9 @@
       ],
       "Select a provider": [
         "Selecionar um provedor"
+      ],
+      "Search for users or addresses": [
+        "Pesquisar por utilizadores ou endereços"
       ]
     },
     "Placeholder for contact group name": {
@@ -10135,7 +11025,28 @@
         "Pode obter até **${ maxRewardAmount }** em crédito."
       ],
       "Invited friends": [
-        "{count, plural, one {Amigo convidado} other {Amigos convidados}}"
+        "Amigos convidados"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Se cancelar antes desta data,** a sua conta sofrerá uma **regressão** para o ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando a avaliação terminar."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Se não subscrever,** a sua conta sofrerá uma **regressão** para o ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Se não cancelar,** o seu plano completo começará e obterá **${ referrerRewardAmount }** em créditos."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Se subscrever antes desta data,** obterá **${ referrerRewardAmount }** em créditos."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Usufrua do **${ planTitle }** gratuitamente até **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Última oportunidade para explorar todas as poderosas funcionalidades que o **${ planTitle }** tem para oferecer."
+      ],
+      "your subscription": [
+        "a sua subscrição"
       ]
     },
     "Safety review": {
@@ -10285,6 +11196,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tem ${ timeRemaining.inHours } hora para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inHours } horas para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tem ${ timeRemaining.inMinutes } minuto para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inMinutes } minutos para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tem ${ timeRemaining.inSeconds } segundo para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inSeconds } segundos para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -11115,6 +12038,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "O ${ planName } dá-lhe acesso a todas as funcionalidades premium do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }. A privacidade é integrada para que possa continuar com o seu dia, sabendo que os seus dados e a sua identidade estão seguros."
       ]
     },
     "subscription reminder": {
@@ -11228,6 +12154,9 @@
       ],
       "Your videos will appear here": [
         "Os seus vídeos aparecerão aqui."
+      ],
+      "Shared by ${ sharedBy }": [
+        "Partilhado por ${ sharedBy }"
       ]
     },
     "Success": {
@@ -12404,6 +13333,178 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para fazer uma pré-visualização desta folha de cálculo, abra-a em ${ SHEETS_APP_NAME } ou faça a sua transferência."
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } de carregamentos gratuitos."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Advanced details": [
+        "Detalhes avançados"
+      ],
+      "Cancel all downloads?": [
+        "Cancelar todas as transferências?"
+      ],
+      "Cancel all transfers?": [
+        "Cancelar todas as transferências?"
+      ],
+      "Cancel all uploads?": [
+        "Cancelar todos os carregamentos?"
+      ],
+      "Change access to viewer?": [
+        "Alterar acesso para visualizador?"
+      ],
+      "Diagnostics": [
+        "Diagnósticos"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Assinatura digital parcialmente verificada. Este ficheiro foi criado com uma ligação de partilha acessível publicamente por um utilizador sem uma conta ${ BRAND_NAME }, pelo que a sua identidade não pode ser verificada."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Assinatura digital parcialmente verificada. Este ficheiro foi carregado com uma ligação de partilha acessível publicamente por um utilizador sem uma conta ${ BRAND_NAME }, pelo que a sua identidade não pode ser verificada."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Assinatura digital parcialmente verificada. Esta pasta foi criada com uma ligação de partilha acessível publicamente por um utilizador sem uma conta ${ BRAND_NAME }, pelo que a sua identidade não pode ser verificada."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Assinatura digital parcialmente verificada. Esta pasta foi carregada com uma ligação de partilha acessível publicamente por um utilizador sem uma conta ${ BRAND_NAME }, pelo que a sua identidade não pode ser verificada."
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Assinatura digital verificada. Este ficheiro foi criado de forma segura por ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Assinatura digital verificada. Este ficheiro foi carregado de forma segura por ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Assinatura digital verificada. Esta pasta foi criada de forma segura por ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Assinatura digital verificada. Esta pasta foi carregada de forma segura por ${ author }."
+      ],
+      "Download details": [
+        "Detalhes de transferência"
+      ],
+      "Found ${ resultCount } result": [
+        "Encontrado ${ resultCount } resultado",
+        "Encontrados ${ resultCount } resultados"
+      ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "Obtenha o ${ DRIVE_SHORT_APP_NAME } no seu telemóvel"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtenha as aplicações móvel e para computador"
+      ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Comece com 10 minutos de carregamentos gratuitos, por nossa conta."
+      ],
+      "Global": [
+        "Global"
+      ],
+      "How your free trial works": [
+        "Como funciona a sua avaliação gratuita"
+      ],
+      "Index populators": [
+        "Populadores de índice"
+      ],
+      "Last uploaded by": [
+        "Último carregamento por"
+      ],
+      "Make a copy": [
+        "Fazer uma cópia"
+      ],
+      "Media type": [
+        "Tipo de média"
+      ],
+      "Number of downloads": [
+        "Número de transferências"
+      ],
+      "Original size in bytes": [
+        "Tamanho original em bytes"
+      ],
+      "Out of storage space": [
+        "Sem espaço de armazenamento"
+      ],
+      "Public link": [
+        "Ligação pública"
+      ],
+      "Public link settings": [
+        "Definições da ligação pública"
+      ],
+      "Ready, set, upload.": [
+        "Preparar, apontar, carregar."
+      ],
+      "Remove your access?": [
+        "Remover o seu acesso?"
+      ],
+      "Search": [
+        "Pesquisar"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Definições para ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Partilhar \"${ fileName }\""
+      ],
+      "Size in bytes": [
+        "Tamanho em bytes"
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "Isto deve-se provavelmente ao facto de a conta ou endereço ter sido eliminado."
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Atualize a sua produtividade por ${ formattedPrice } com ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Atualize o seu armazenamento por ${ formattedPrice } com ${ planName }"
+      ],
+      "Upload empty file?": [
+        "Carregar ficheiro vazio?"
+      ],
+      "Users and addresses": [
+        "Utilizadores e endereços"
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Não conseguimos verificar se ${ author } criou este ficheiro."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Não conseguimos verificar se ${ author } criou esta pasta."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Não conseguimos verificar se ${ author } carregou este ficheiro."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Não conseguimos verificar se ${ author } carregou esta pasta."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Não conseguimos verificar se um utilizador anónimo criou este ficheiro."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Não conseguimos verificar se um utilizador anónimo criou esta pasta."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Não conseguimos verificar se um utilizador anónimo carregou este ficheiro."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Não conseguimos verificar se um utilizador anónimo carregou esta pasta."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Não nos foi possível confirmar que o conteúdo do ficheiro foi carregado por ${ claimedContentAuthor }. O motivo é: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Não conseguimos confirmar que o nome foi criado ou modificado por ${ claimedNameAuthor }. O motivo é: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Não conseguimos confirmar que o nó foi criado por ${ claimedKeyAuthor }. O motivo é: ${ node.keyAuthor.error.error }"
+      ],
+      "Welcome offer": [
+        "Oferta de boas-vindas"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "A sua transferência inclui ficheiros do ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }"
+      ],
+      "You’re off to a great start!": [
+        "Começou muito bem!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12501,6 +13602,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Assistência de IA instantânea, especialista humano à disposição!"
+      ],
+      "Change shared item settings": [
+        "Alterar definições do item partilhado"
+      ],
+      "Version 6 OpenPGP key": [
+        "Chave OpenPGP versão 6"
       ]
     },
     "tooltip": {
@@ -12718,6 +13825,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "O seu período experimental termina em ${ textDate }. Não lhe será cobrado qualquer valor se cancelar antes de ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "O \"${ modeLabelStong }\" oferece um controlo poderoso, mas um único erro pode fazer com que o preenchimento automático corresponda e preencha dados em sítios web fraudulentos ou de phishing."
       ]
     },
     "Autocomplete": {
@@ -13163,6 +14273,173 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas as funcionalidades premium do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Abrir no ${ DOCS_APP_NAME }"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Ativado"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "O endereço já está a ser utilizado por um utilizador fora da sua organização. Contacte o apoio ao cliente para resolver este problema"
+      ],
+      "All": [
+        "Todos"
+      ],
+      "Calendar": [
+        "Calendário"
+      ],
+      "Configure migration": [
+        "Configurar migração"
+      ],
+      "Contacts": [
+        "Contactos"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estado da migração de dados do Google Workspace para o ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Erros"
+      ],
+      "Estimated size": [
+        "Tamanho estimado"
+      ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
+      "Has errors": [
+        "Tem erros"
+      ],
+      "In progress": [
+        "Em progresso"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Endereço de membro não encontrado. Contacte o apoio ao cliente para resolver este problema"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "Migration status": [
+        "Estado da migração"
+      ],
+      "Missing organization private key": [
+        "Chave privada da organização em falta"
+      ],
+      "Missing organization public key": [
+        "Chave pública da organização em falta"
+      ],
+      "No users to display": [
+        "Nenhum utilizador para apresentar"
+      ],
+      "Not activated": [
+        "Não ativado"
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
+      ],
+      "Organization does not have enough storage available": [
+        "A organização não tem armazenamento suficiente disponível"
+      ],
+      "Pending": [
+        "Pendente"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecione exatamente o que gostaria de migrar. Isto aplicar-se-á a todos os utilizadores da organização."
+      ],
+      "Select users to migrate": [
+        "Selecionar utilizadores para migrar"
+      ],
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este utilizador não pode ser migrado devido a incompatibilidades de plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Para migrar este utilizador, ative a sua conta na sua Consola de Administração do Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar este utilizador, ative a sua conta sob ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar este utilizador, ative o seu endereço sob ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar este utilizador, este precisa de aceitar o seu convite para se juntar à ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Para migrar este utilizador, retire-o do arquivo na sua Consola de Administração do Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Para migrar este utilizador, reative-o na sua Consola de Administração do Google Workspace."
+      ],
+      "User": [
+        "Utilizador"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilizadores que acederam à sua conta do ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "O que está a migrar?"
+      ],
+      "You": [
+        "Você"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Nome do álbum alterado com sucesso"
+      ]
+    },
+    "Status": {
+      "pending": [
+        "pendente"
+      ],
+      "user joined": [
+        "utilizador aderiu"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Ações"
+      ],
+      "Created": [
+        "Criado"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Impressão digital"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Obter o Drive for Business"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Poderá atribuir cargos assim que o utilizador aceitar o convite."
       ]
     }
   }
