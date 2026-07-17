@@ -11,6 +11,7 @@ import {
 import { create, type StoreApi, type UseBoundStore } from 'zustand'
 import type { ProtonSheetsState } from './state'
 import { type ProtonSheetsUIState, useProtonSheetsUIState } from './ui-state'
+import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 
 export type ProtonSheetsUIStore = UseBoundStore<StoreApi<ProtonSheetsUIState>>
 export type ProtonSheetsUIStoreSetters = FunctionsOnly<ProtonSheetsUIState>
@@ -23,6 +24,7 @@ export type ProtonSheetsUIStoreProviderProps = {
   isReadonly: boolean
   isRevisionMode: boolean
   isViewOnlyMode: boolean
+  storeAction: (type: SheetsActionType, content: unknown) => void
   children: ReactNode
 }
 
@@ -34,9 +36,10 @@ export function ProtonSheetsUIStoreProvider({
   isReadonly,
   isRevisionMode,
   isViewOnlyMode,
+  storeAction,
   children,
 }: ProtonSheetsUIStoreProviderProps) {
-  const uiState = useProtonSheetsUIState(state, { isReadonly, isRevisionMode, isViewOnlyMode })
+  const uiState = useProtonSheetsUIState(state, { isReadonly, isRevisionMode, isViewOnlyMode, storeAction })
 
   // keep a ref to the latest ui state for use in the setters getter
   const uiStateRef = useRef(uiState)

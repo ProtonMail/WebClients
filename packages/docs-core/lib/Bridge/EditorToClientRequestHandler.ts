@@ -21,6 +21,7 @@ import type { CustomWindow } from '../Application/Window'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '../Database/SheetsDBSchema'
+import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 
 declare const window: CustomWindow
 
@@ -198,6 +199,10 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     type?: SheetsPatchesType,
   ): Promise<void> {
     return this.docOrchestrator.storeSpreadsheetPatches(patches, updateHash, type)
+  }
+
+  async storeSpreadsheetAction(type: SheetsActionType, content: unknown): Promise<void> {
+    return this.docOrchestrator.storeSpreadsheetAction(type, content)
   }
 
   async hasBasePatchesStored(): Promise<boolean> {
