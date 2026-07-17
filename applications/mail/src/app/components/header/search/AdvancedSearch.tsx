@@ -42,6 +42,7 @@ import AddressesInput from '../../composer/addresses/AddressesInput';
 import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';
 import LocationField from './AdvancedSearchFields/LocationField';
 import SearchField from './AdvancedSearchFields/SearchField';
+import { ContentSearchVersionToggle } from './ContentSearchVersionToggle';
 
 interface SearchModel {
     keyword: string;
@@ -279,6 +280,7 @@ const AdvancedSearch = ({
                         onChange={(nextLabelId) => updateModel({ ...model, labelID: nextLabelId })}
                     />
                 </div>
+                <ContentSearchVersionToggle />
                 <hr className="my-4" />
                 {showMore && (
                     <>
