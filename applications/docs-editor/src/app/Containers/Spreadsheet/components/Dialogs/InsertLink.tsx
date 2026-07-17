@@ -1,14 +1,66 @@
-import { InputFieldTwo } from '@proton/components'
-import { IcLink } from '@proton/icons/icons/IcLink'
 import { useUI } from '../../ui-store'
 import * as Ariakit from '@ariakit/react'
 import { createStringifier } from '../../stringifier'
 import { c } from 'ttag'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { type ComponentPropsWithoutRef, useCallback, useEffect, useId, useMemo, useState } from 'react'
 import clsx from 'clsx'
 import { Button } from '../shared/Button'
 
 const { s } = createStringifier(strings)
+
+function LinkIcon({ className, ...props }: ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 16 16" focusable="false" aria-hidden="true" {...props} className={clsx('h-4 w-4', className)}>
+      <path
+        fillRule="evenodd"
+        d="M9.023 2.027a3.5 3.5 0 0 1 4.95 4.95l-2.437 2.437a.5.5 0 1 1-.707-.707l2.437-2.437A2.5 2.5 0 1 0 9.73 2.734L7.293 5.171a.5.5 0 1 1-.707-.707l2.437-2.437Zm1.098 3.852a.5.5 0 0 1 0 .707l-3.535 3.535a.5.5 0 1 1-.708-.707L9.414 5.88a.5.5 0 0 1 .707 0ZM2.03 13.97a3.5 3.5 0 0 0 4.95 0l2.44-2.439a.5.5 0 1 0-.708-.707l-2.44 2.44a2.5 2.5 0 0 1-3.535-3.536l2.44-2.44a.5.5 0 0 0-.707-.707l-2.44 2.44a3.5 3.5 0 0 0 0 4.95Z"
+      />
+    </svg>
+  )
+}
+
+interface InsertLinkInputFieldProps extends Omit<ComponentPropsWithoutRef<'input'>, 'prefix'> {
+  label: string
+}
+
+function InsertLinkInputField({ label, className, ...props }: InsertLinkInputFieldProps) {
+  const id = useId()
+
+  return (
+    <div className="relative block w-full max-w-full cursor-default">
+      <label htmlFor={id} className="mb-1 flex flex-nowrap items-end justify-between gap-2 font-semibold">
+        <span className="cursor-pointer">{label}</span>
+      </label>
+      <div className="relative">
+        <div
+          className={clsx(
+            'relative flex flex-1 flex-nowrap items-stretch rounded-[--border-radius-md] border border-[--field-norm] bg-[--field-background-color] text-[--field-text-color]',
+            '[transition:0.15s_cubic-bezier(0.22,1,0.36,1),visibility_0s]',
+            'hover:border-[--field-hover] hover:bg-[--field-hover-background-color] hover:text-[--field-hover-text-color]',
+            'focus-within:border-[--focus-outline] focus-within:bg-[--field-focus-background-color] focus-within:text-[--field-focus-text-color] focus-within:shadow-[0_0_0_0.1875rem_var(--focus-ring)]',
+            className,
+          )}
+        >
+          <div className="ml-3 flex shrink-0 flex-nowrap items-center gap-2 text-[--text-weak]">
+            <LinkIcon />
+          </div>
+          <div className="flex flex-1">
+            <input
+              id={id}
+              autoComplete="off"
+              autoCapitalize="off"
+              autoCorrect="off"
+              spellCheck="false"
+              {...props}
+              className="bg-transparent min-h-[2.125rem] w-full appearance-none rounded-[--border-radius-md] !border-0 px-[0.75em] py-[0.4375em] ps-[0.5em] text-[inherit] !shadow-none ![outline:none] focus:!shadow-none focus:![outline:none] focus-visible:!shadow-none focus-visible:![outline:none]"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="mt-1 flex min-h-4 flex-nowrap items-start text-xs text-[--text-weak]" />
+    </div>
+  )
+}
 
 function InsertLinkPopover() {
   const [value, setValue] = useState('')
@@ -85,13 +137,11 @@ function InsertLinkPopover() {
       getAnchorRect={getAnchorRect}
       gutter={4}
     >
-      <InputFieldTwo
+      <InsertLinkInputField
         autoFocus
         className="text-sm"
-        inputClassName="focus-visible:outline-none focus-visible:shadow-none"
         label={s('Insert link')}
         placeholder={s('Paste link')}
-        prefix={<IcLink />}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
