@@ -4,9 +4,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
 import { selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
+import { useFlag } from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import { useMediaManagementContext } from '../../../contexts/MediaManagementProvider/MediaManagementContext';
+import { useCopyTextToClipboard } from '../../../hooks/useCopyTextToClipboard.ts';
 import { useIsLocalParticipantAdmin } from '../../../hooks/useIsLocalParticipantAdmin';
 import { EmptyList } from '../shared/EmptyList';
 import { ParticipantListContainer } from '../shared/ParticipantListContainer';
@@ -19,13 +23,16 @@ type Props = {
 };
 
 export const AllParticipantsTab = ({ participants, setIsScrolled }: Props) => {
+    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
     const activeSpeakers = useDebouncedActiveSpeakers();
     const { toggleVideo, isVideoEnabled } = useMediaManagementContext();
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
+    const meetingLink = useMeetSelector(selectMeetingLink);
+    const copyTextToClipboard = useCopyTextToClipboard();
 
     return (
-        <div className="flex flex-column flex-nowrap h-full relative pt-4">
+        <div className={clsx('flex flex-column flex-nowrap h-full relative', !isMeetWaitingRoomEnabled && 'pt-4')}>
             {participants.length === 0 ? (
                 <EmptyList
                     icon={<IcMagnifier size={7} />}
@@ -69,8 +76,13 @@ export const AllParticipantsTab = ({ participants, setIsScrolled }: Props) => {
                 </ParticipantListContainer>
             )}
             <div className="waiting-room-tab-footer absolute bottom-0 left-0 w-full p-4">
-                <Button className="secondary w-full rounded-full px-8 py-3">
-                    {c('Action').t`Copy invitation link`}
+                <Button
+                    className="secondary w-full rounded-full cursor-pointer px-8 py-3"
+                    onClick={() => {
+                        void copyTextToClipboard(meetingLink);
+                    }}
+                >
+                    {c('Action').t`Copy invite link`}
                 </Button>
             </div>
         </div>
