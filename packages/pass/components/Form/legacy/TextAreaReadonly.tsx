@@ -22,10 +22,14 @@ type ExpansionState = 'initial' | 'collapsed' | 'expanded';
 const isStateExpanded = (state: ExpansionState, defaultExpanded: boolean) =>
     state === 'expanded' || (state === 'initial' && defaultExpanded);
 
+const MIN_HEIGHT = EXTENSION_BUILD ? 120 : 240;
+/** Must match the `transition` duration on `.pass-textarea--animate`. */
+const ANIMATION_DURATION_MS = 300;
+
 /** Clamp to multiple of body's line-height to
  * prevent partial line cropping. */
 const getMaxHeight = () => {
-    const maxHeight = Math.max(window.innerHeight / 2, EXTENSION_BUILD ? 120 : 240);
+    const maxHeight = Math.max(window.innerHeight / 2, MIN_HEIGHT);
     const computedStyle = window.getComputedStyle(document.body);
     const lineHeight = parseFloat(computedStyle.lineHeight);
 
@@ -38,20 +42,32 @@ export const TextAreaReadonly: FC<Props> = ({ children, className, defaultExpand
     const [scrollHeight, setScrollHeight] = useState(0);
     const [expansionState, setExpansionState] = useState<ExpansionState>('initial');
     const [maxHeight, setMaxHeight] = useState(getMaxHeight);
+    /** Only true for the duration of a user-triggered expand/collapse
+     * transition — background `maxHeight` recomputes (from resize)
+     * must never carry the animate class, or a resize in progress
+     * restarts the CSS transition every debounce tick, producing a
+     * stuttering, multi-stage animation instead of a smooth one. */
+    const [isToggling, setIsToggling] = useState(false);
 
     const isExpanded = isStateExpanded(expansionState, defaultExpanded);
     const needsExpansion = scrollHeight > maxHeight;
-    const shouldAnimate = expansionState !== 'initial';
     const height = !needsExpansion || isExpanded ? scrollHeight : maxHeight;
 
     const toggleExpansion = useCallback<MouseEventHandler>(
         (evt) => {
             evt.preventDefault();
             evt.stopPropagation();
+            setIsToggling(true);
             setExpansionState((prev) => (isStateExpanded(prev, defaultExpanded) ? 'collapsed' : 'expanded'));
         },
         [defaultExpanded]
     );
+
+    useEffect(() => {
+        if (!isToggling) return;
+        const timeout = setTimeout(() => setIsToggling(false), ANIMATION_DURATION_MS);
+        return () => clearTimeout(timeout);
+    }, [isToggling]);
 
     const preventSelectionClick = useCallback<MouseEventHandler>((evt) => {
         if (ref.current) {
@@ -67,7 +83,10 @@ export const TextAreaReadonly: FC<Props> = ({ children, className, defaultExpand
     useEffect(() => {
         const onResize = debounce(() => setMaxHeight(getMaxHeight), 50);
         window.addEventListener('resize', onResize);
-        return () => window.removeEventListener('resize', onResize);
+        return () => {
+            onResize.cancel();
+            window.removeEventListener('resize', onResize);
+        };
     }, []);
 
     useLayoutEffect(() => {
@@ -87,7 +106,7 @@ export const TextAreaReadonly: FC<Props> = ({ children, className, defaultExpand
                 value={children}
                 className={clsx(
                     'w-full h-full text-pre-wrap resize-none h-custom pass-textarea--readonly overflow-hidden',
-                    shouldAnimate && 'pass-textarea--animate',
+                    isToggling && 'pass-textarea--animate',
                     className
                 )}
                 style={{ '--h-custom': `${height}px` }}
