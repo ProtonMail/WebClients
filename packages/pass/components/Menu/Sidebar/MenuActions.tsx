@@ -42,7 +42,7 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
     const orgEnabled = org?.settings.enabled ?? false;
     const orgAliasCreationDisabled = org?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
 
-    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
     const accessTokensEnabled = useFeatureFlag(PassFeature.PassAccessTokens);
     const accessTokensSpotlight = useSpotlightFor(SpotlightMessage.ACCESS_TOKENS_DISCOVERY);
