@@ -10412,6 +10412,7 @@ __metadata:
     react-window: "npm:^1.8.11"
     ts-jest: "npm:^29.4.11"
     typescript: "npm:^6.0.3"
+    uuid: "npm:^14.0.0"
     y-protocols: "npm:^1.0.6"
     yjs: "npm:^13.6.15"
   languageName: unknown
@@ -50793,7 +50794,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^11.1.0 || ^12 || ^13 || ^14.0.0, uuid@npm:^14.0.1":
+"uuid@npm:^11.1.0 || ^12 || ^13 || ^14.0.0, uuid@npm:^14.0.0, uuid@npm:^14.0.1":
   version: 14.0.1
   resolution: "uuid@npm:14.0.1"
   bin:

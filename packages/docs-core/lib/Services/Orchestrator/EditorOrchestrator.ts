@@ -26,6 +26,7 @@ import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
 import metrics from '@proton/metrics/index'
+import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,
@@ -272,6 +273,14 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     }
 
     return this.editor.storeSpreadsheetPatches(patches, updateHash, type)
+  }
+
+  async storeSpreadsheetAction(type: SheetsActionType, content: unknown): Promise<void> {
+    if (!this.editor) {
+      throw new Error('Editor not initialized')
+    }
+
+    return this.editor.storeSpreadsheetAction(type, content)
   }
 
   async hasBasePatches(): Promise<boolean> {

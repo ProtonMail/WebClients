@@ -22,9 +22,11 @@ import { PostApplicationError } from '../Application/ApplicationEvent'
 import { c } from 'ttag'
 import { downloadExport } from '../UseCase/ExportAndDownload'
 import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
-import type { SheetsStorageService } from '../Services/SheetsStorageService'
+import type { SheetsStorageService } from '../Services/SheetsStorage/SheetsStorageService'
 import { SheetsPatchesType } from '../Database/SheetsDBSchema'
 import { downloadUpdateTimeline } from '../utils/create-update-timeline'
+import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 
 export interface EditorControllerInterface {
   getCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<string | null>
@@ -53,11 +55,14 @@ export interface EditorControllerInterface {
   focusSpreadsheet(): void
   applyUpdate(update: Uint8Array<ArrayBuffer>): Promise<void>
   storeSpreadsheetPatches(patches: unknown, updateHash: string, type?: SheetsPatchesType): Promise<void>
+  storeSpreadsheetAction(type: SheetsActionType, content: unknown): Promise<void>
   hasBasePatches(): Promise<boolean>
   downloadSpreadsheetPatches(): Promise<void>
+  downloadSpreadsheetActions(): Promise<void>
   removeSpreadsheetPatches(): Promise<void>
   generateSpreadsheetPatches(): Promise<unknown>
   getSpreadsheetPatchesAsJsonFile(): Promise<Blob>
+  getSpreadsheetActionsAsJsonFile(): Promise<Blob>
   applyPatches(patches: unknown): Promise<void>
   setTableOfContentsVisible(visible: boolean): Promise<void>
   getBaseCommitAsZip(): Promise<Blob>
@@ -539,6 +544,24 @@ export class EditorController implements EditorControllerInterface {
     }
   }
 
+  async storeSpreadsheetAction(type: SheetsActionType, content: unknown): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to store spreadsheet action before editor invoker is initialized')
+    }
+    if (!this.sheetsStorageService) {
+      throw new Error('Sheets storage service not initialized')
+    }
+    const result = await this.sheetsStorageService.saveAction({
+      document: this.documentState.nodeMeta,
+      type,
+      content,
+      timestamp: Date.now(),
+    })
+    if (result.isFailed()) {
+      this.logger.error('Failed to store spreadsheet action', { error: result.getError() })
+    }
+  }
+
   async hasBasePatches(): Promise<boolean> {
     if (!this.editorInvoker) {
       throw new Error('Attempting to check if base patches exist before editor invoker is initialized')
@@ -562,7 +585,7 @@ export class EditorController implements EditorControllerInterface {
       document: this.documentState.nodeMeta,
     })
     if (patches.isFailed()) {
-      throw new Error('Failed to get patches')
+      throw new Error(patches.getError())
     }
 
     const stringifiedPatches = JSON.stringify(patches.getValue())
@@ -572,12 +595,25 @@ export class EditorController implements EditorControllerInterface {
 
   async downloadSpreadsheetPatches(): Promise<void> {
     const blob = await this.getSpreadsheetPatchesAsJsonFile()
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'spreadsheet-patches.json'
-    a.click()
-    URL.revokeObjectURL(url)
+    downloadFile(blob, 'spreadsheet-patches.json')
+  }
+
+  async getSpreadsheetActionsAsJsonFile(): Promise<Blob> {
+    if (!this.sheetsStorageService) {
+      throw new Error('Sheets storage service not initialized')
+    }
+    const actions = await this.sheetsStorageService.getDecryptedActions({
+      document: this.documentState.nodeMeta,
+    })
+    if (actions.isFailed()) {
+      throw new Error(actions.getError())
+    }
+    return new Blob([JSON.stringify(actions.getValue())], { type: 'application/json' })
+  }
+
+  async downloadSpreadsheetActions(): Promise<void> {
+    const blob = await this.getSpreadsheetActionsAsJsonFile()
+    downloadFile(blob, 'spreadsheet-actions.json')
   }
 
   async removeSpreadsheetPatches(): Promise<void> {
@@ -640,17 +676,10 @@ export class EditorController implements EditorControllerInterface {
   async downloadBaseCommit(): Promise<void> {
     const baseCommit = this.documentState.getProperty('baseCommit')
     if (!baseCommit) {
-      return
+      throw new Error('No base commit found')
     }
     const zipBlob = await this.getBaseCommitAsZip()
-    const zipUrl = URL.createObjectURL(zipBlob)
-    const zipLink = document.createElement('a')
-    zipLink.href = zipUrl
-    zipLink.download = 'all-updates-in-base-commit.zip'
-    document.body.appendChild(zipLink)
-    zipLink.click()
-    document.body.removeChild(zipLink)
-    URL.revokeObjectURL(zipUrl)
+    downloadFile(zipBlob, 'all-updates-in-base-commit.zip')
     const yDocJSON = await this.getYDocAsJSON()
     await downloadUpdateTimeline(baseCommit.messages, yDocJSON)
   }
