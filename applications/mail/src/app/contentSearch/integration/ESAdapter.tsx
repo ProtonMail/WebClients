@@ -1,21 +1,15 @@
-import type { MutableRefObject } from 'react';
+import isDeepEqual from 'lodash/isEqual';
 
-import { defaultESContext, defaultESStatus } from '@proton/encrypted-search/constants';
+import { defaultESContext } from '@proton/encrypted-search/constants';
 import { highlightJSX, insertMarks } from '@proton/encrypted-search/esHelpers';
-import type {
-    ESCallbacks,
-    ESEvent,
-    ESSetResultsList,
-    ESTimepoint,
-    EncryptedSearchFunctions,
-    NormalizedSearchParams,
-} from '@proton/encrypted-search/models';
+import type { ESCallbacks, ESEvent, ESSetResultsList, NormalizedSearchParams } from '@proton/encrypted-search/models';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 
 import type { IndexService } from '../indexation/IndexService';
 import type { Search } from '../search/Search';
 import type { SearchService } from '../search/SearchService';
+import type { FunctionsV1, FunctionsV2 } from './useContentSearch';
 
 /**
  * Coalesces rapid calls to at most one per animation frame, always delivering the latest arguments.
@@ -76,28 +70,15 @@ function errorBeforeFirstResults(search: Search): Promise<void> {
     });
 }
 
-type Functions = EncryptedSearchFunctions<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
-
 /**
  * Adapts the content-search-v2 index to the {@link EncryptedSearchFunctions} surface so it can be
  * swapped in behind the `ContentSearch` feature flag (see `useContentSearch` / `EncryptedSearchProvider`).
  */
-export class ESAdapter implements Functions {
+export class ESAdapter implements FunctionsV2 {
     private lastSearch?: Search;
     private coalescedResults?: FrameCoalescer<Parameters<ESSetResultsList<ESBaseMessage, ESMessageContent>>>;
 
-    progressRecorderRef: MutableRefObject<ESTimepoint> = { current: [0, 0] };
-
     esIndexingProgressState = defaultESContext.esIndexingProgressState;
-
-    // Report the index as present and enabled so search is actually attempted; the v2 index
-    // lifecycle is managed elsewhere, not by this adapter.
-    esStatus: Functions['esStatus'] = {
-        ...defaultESStatus,
-        dbExists: true,
-        esEnabled: true,
-        contentIndexingDone: true,
-    };
 
     constructor(
         private readonly searchService: SearchService,
@@ -105,7 +86,7 @@ export class ESAdapter implements Functions {
         /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
         public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>,
         /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
-        public esLibraryFunctionsV1: Functions
+        public esLibraryFunctionsV1: FunctionsV1
     ) {}
 
     async cacheIndexedDB() {
@@ -150,6 +131,27 @@ export class ESAdapter implements Functions {
             await errorBeforeFirstResults(this.lastSearch);
         }
         return true;
+    }
+
+    checkESStatusUpdates(previousStatus?: FunctionsV1['esStatus']): FunctionsV1['esStatus'] | undefined {
+        const v1Status = this.esLibraryFunctionsV1.esStatus;
+        if (isDeepEqual(v1Status, previousStatus)) {
+            return undefined;
+        }
+
+        if (v1Status.contentIndexingDone && !previousStatus?.contentIndexingDone) {
+            this.indexService.importFromEncryptedSearch().catch((error) => console.error(error));
+        }
+
+        return v1Status;
+    }
+
+    checkProgressUpdate(progress: [number, number]): [number, number] | undefined {
+        const v1Progress = this.esLibraryFunctionsV1.progressRecorderRef.current;
+        if (isDeepEqual(v1Progress, progress)) {
+            return undefined;
+        }
+        return v1Progress;
     }
 
     // Highlighting is purely keyword-driven (no index access), so it is ported verbatim from
