@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { useParticipants } from '@livekit/components-react';
+import { clsx } from 'clsx';
 import { RoomEvent } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -87,6 +88,7 @@ export const ParticipantList = () => {
             aria-label={c('Aria').t`Participants`}
             absoluteHeader={true}
             isScrolled={isScrolled}
+            paddingHeaderClassName={clsx(!isMeetWaitingRoomEnabled && 'side-bar-header-wrapper-no-nav')}
             paddingClassName="pt-4"
             header={
                 <ParticipantListHeader
