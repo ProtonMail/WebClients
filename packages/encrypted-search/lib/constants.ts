@@ -189,6 +189,7 @@ export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
     enableEncryptedSearch: async () => false,
     enableContentSearch: async () => {},
     handleEvent: async () => {},
+    waitForSyncing: async () => {},
     isSearchResult: () => false,
     esDelete: async () => {},
     shouldHighlight: () => false,
