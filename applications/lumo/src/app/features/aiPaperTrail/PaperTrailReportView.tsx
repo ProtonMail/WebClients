@@ -3,11 +3,20 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader, useModalStateObject } from '@proton/components';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
+import {
+    BRAND_NAME,
+    DRIVE_APP_NAME,
+    LUMO_SHORT_APP_NAME,
+    MAIL_APP_NAME,
+    PASS_APP_NAME,
+    VPN_APP_NAME,
+} from '@proton/shared/lib/constants';
+import lumoLogoWordmark from '@proton/styles/assets/img/lumo/lumo-logo-wordmark.svg';
+import ctaContainerBg from '@proton/styles/assets/img/lumo/trail/cta-container-bg.png';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
-import { type PaperTrailReport, deriveCardData, toHandle } from './reportTypes';
+import { getPaperTrailSectionIcon } from './getPaperTrailSectionIcon';
+import { type PaperTrailCardData, type PaperTrailReport, deriveCardData, toHandle } from './reportTypes';
 import { ShareableCard } from './shareCard/ShareableCard';
 
 import './PaperTrailReportView.scss';
@@ -61,6 +70,57 @@ const exposureLabel = (score: number): string => {
     return c('collider_2025:Label').t`Minimal`;
 };
 
+const formatRiskSeverity = (severity: PaperTrailReport['complianceRisks'][number]['severity']): string => {
+    if (severity === 'high') {
+        return c('collider_2025:Label').t`High`;
+    }
+    if (severity === 'medium') {
+        return c('collider_2025:Label').t`Medium`;
+    }
+    return c('collider_2025:Label').t`Low`;
+};
+
+const SharePreview = ({ cardData, onShare }: { cardData: PaperTrailCardData; onShare: () => void }) => (
+    <div className="pt-share">
+        <h2 className="pt-section-title">{c('collider_2025:Title').t`Share your score`}</h2>
+        <p className="pt-section-sub">
+            {c('collider_2025:Info')
+                .t`Your card shows exposure by life area only — no personal details.`}
+        </p>
+        <div className="pt-share__body">
+            <div className="pt-share__preview" aria-hidden="true">
+                <div className="pt-share__preview-head">
+                    <span className="pt-share__preview-brand">{LUMO_SHORT_APP_NAME}</span>
+                    <span className="pt-share__preview-title">{c('collider_2025:Title').t`AI Paper Trail`}</span>
+                </div>
+                <div className={`pt-share__preview-score ${exposureTone(cardData.exposureScore)}`}>
+                    <span className="pt-share__preview-value">{cardData.exposureScore}</span>
+                    <span className="pt-share__preview-grade">{cardData.grade}</span>
+                </div>
+                <ul className="pt-share__preview-bars">
+                    {cardData.areas.slice(0, 5).map((area) => (
+                        <li key={area.area} className="pt-share__preview-bar">
+                            <span className="pt-share__preview-area">{area.area}</span>
+                            <span className="pt-score__bar">
+                                <span
+                                    className={`pt-score__bar-fill ${exposureModifier(area.exposureScore)}`}
+                                    style={{ inlineSize: `${area.exposureScore}%` }}
+                                />
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div className="pt-share__actions">
+                <Button color="norm" size="large" pill onClick={onShare}>
+                    <LumoIcon name="Share" className="mr-2" />
+                    {c('collider_2025:Action').t`Create shareable card`}
+                </Button>
+            </div>
+        </div>
+    </div>
+);
+
 export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) => {
     const shareModal = useModalStateObject();
     const redFlagsModal = useModalStateObject();
@@ -69,7 +129,6 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
 
     const displayName = report.name || report.label;
     const handle = toHandle(report.name || report.label);
-    const tags = report.sections.map((section) => section.title).filter(Boolean);
 
     const risks = [
         {
@@ -150,276 +209,272 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
     ];
 
     return (
-        <div className="pt-profile">
-            {/* Header card */}
-            <div className="pt-card pt-card--header">
-                <div className="pt-header__cover">
-                    <span className="pt-header__cover-label">{c('collider_2025:Info').t`Profiled by Big Tech AI`}</span>
-                </div>
-                <div className="pt-header__avatar pt-header__avatar--default">
-                    <img src={lumoCatIcon} alt="" className="pt-header__avatar-lumo" />
-                </div>
-                <div className="pt-header__body">
-                    <h2 className="pt-header__name">
-                        {displayName}
-                        <span className="pt-header__verified" aria-label="verified" title="Profiled by Big Tech AI">
-                            ✓
-                        </span>
-                    </h2>
-                    {report.name && <p className="pt-header__role">{report.label}</p>}
-                    <p className="pt-header__handle">@{handle}</p>
-                    {report.summary && <p className="pt-header__headline">{report.summary}</p>}
-                    {report.quickFacts.length > 0 && (
-                        <dl className="pt-facts">
-                            {report.quickFacts.map((fact, i) => (
-                                <div key={i} className="pt-facts__item">
-                                    <dt className="pt-facts__label">{fact.label}</dt>
-                                    <dd className="pt-facts__value">{fact.value}</dd>
-                                </div>
-                            ))}
-                        </dl>
-                    )}
-                    {tags.length > 0 && (
-                        <div className="pt-header__tags">
-                            {tags.map((tag, i) => (
-                                <span key={i} className="pt-header__tag">
-                                    #{tag.replace(/\s+/g, '')}
-                                </span>
-                            ))}
-                        </div>
-                    )}
-                    <div className="pt-header__stats">
-                        <div className="pt-stat">
-                            <span className="pt-stat__value">{report.dataPointCount || 0}</span>
-                            <span className="pt-stat__label">{c('collider_2025:Info').t`data points`}</span>
-                        </div>
-                        <div className="pt-stat">
-                            <span className="pt-stat__value">{formatUsd(report.estimatedValueUsd)}</span>
-                            <span className="pt-stat__label">{c('collider_2025:Info').t`ad value`}</span>
-                        </div>
-                        {hasRedFlags ? (
-                            <button
-                                type="button"
-                                className="pt-stat pt-stat--action"
-                                onClick={() => redFlagsModal.openModal(true)}
-                            >
-                                <span className="pt-stat__value">{report.sensitiveCategories.length}</span>
-                                <span className="pt-stat__label">{c('collider_2025:Info').t`red flags`}</span>
-                            </button>
-                        ) : (
-                            <div className="pt-stat">
-                                <span className="pt-stat__value">{report.sensitiveCategories.length}</span>
-                                <span className="pt-stat__label">{c('collider_2025:Info').t`red flags`}</span>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
+        <div className="pt-report">
+            <header className="pt-report__hero">
+                <h1 className="pt-report__title">{c('collider_2025:Title').t`Meet your AI Paper Trail`}</h1>
+                <p className="pt-report__subtitle">
+                    {c('collider_2025:Info')
+                        .t`Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${LUMO_SHORT_APP_NAME} doesn't see your data.`}
+                </p>
+            </header>
 
-            <div className="pt-profile__columns">
-                {/* Exposure scorecard */}
-                {report.dataExposure.length > 0 && (
-                    <div className="pt-card">
-                        <div className="pt-card__head">
-                            <h2 className="pt-card__title">{c('collider_2025:Title').t`Exposure scorecard`}</h2>
-                            <div className="pt-score__overall">
-                                <span className={`pt-score__overall-value ${exposureTone(cardData.exposureScore)}`}>
-                                    {cardData.exposureScore}
-                                    <span className="pt-score__overall-max">/100</span>
-                                </span>
-                                <span className="pt-score__overall-grade">{cardData.grade}</span>
-                            </div>
-                        </div>
-                        <p className="pt-card__sub">
-                            {c('collider_2025:Info')
-                                .t`The fuller the bar, the more of that area Big Tech could reconstruct from your chats. Lower is better. Hover a row to see what gave it away.`}
-                        </p>
-                        <ul className="pt-score__list">
-                            {report.dataExposure.map((exposure, i) => {
-                                const exposureScore = Math.max(0, Math.min(100, exposure.score));
-                                const row = (
-                                    <span className="pt-score__row-inner">
-                                        <span className="pt-score__area">
-                                            {exposure.area}
-                                            {exposure.detail && (
-                                                <LumoIcon
-                                                    name="Info"
-                                                    width={14}
-                                                    height={14}
-                                                    className="pt-score__info"
-                                                />
-                                            )}
-                                        </span>
-                                        <span className="pt-score__bar">
-                                            <span
-                                                className={`pt-score__bar-fill ${exposureModifier(exposureScore)}`}
-                                                style={{ inlineSize: `${exposureScore}%` }}
-                                            />
-                                        </span>
-                                        <span className={`pt-score__value ${exposureTone(exposureScore)}`}>
-                                            {exposureLabel(exposureScore)}
-                                        </span>
-                                    </span>
-                                );
-                                return (
-                                    <li key={i} className="pt-score__row">
-                                        {exposure.detail ? (
-                                            <Tooltip title={exposure.detail} openDelay={80}>
-                                                {row}
-                                            </Tooltip>
-                                        ) : (
-                                            row
-                                        )}
-                                    </li>
-                                );
-                            })}
-                        </ul>
+            <section className="pt-card pt-card--profile">
+                <div className="pt-profile__head">
+                    <div>
+                        <h2 className="pt-profile__name">{displayName}</h2>
+                        {report.name && <p className="pt-profile__label">{report.label}</p>}
+                        <p className="pt-profile__handle">@{handle}</p>
                     </div>
+                    {report.summary && <p className="pt-profile__summary">{report.summary}</p>}
+                </div>
+
+                {report.quickFacts.length > 0 && (
+                    <dl className="pt-facts">
+                        {report.quickFacts.map((fact, i) => (
+                            <div key={i} className="pt-facts__item">
+                                <dt className="pt-facts__label">{fact.label}</dt>
+                                <dd className="pt-facts__value">{fact.value}</dd>
+                            </div>
+                        ))}
+                    </dl>
                 )}
 
-                {/* Most revealing */}
-                {report.revealingDataPoints.length > 0 && (
-                    <div className="pt-card">
-                        <div className="pt-card__head">
-                            <h2 className="pt-card__title">{c('collider_2025:Title').t`Most revealing`}</h2>
+                <div className="pt-profile__stats">
+                    <div className="pt-stat">
+                        <span className="pt-stat__value">{report.dataPointCount || 0}</span>
+                        <span className="pt-stat__label">{c('collider_2025:Info').t`data points`}</span>
+                    </div>
+                    <div className="pt-stat">
+                        <span className="pt-stat__value">{formatUsd(report.estimatedValueUsd)}</span>
+                        <span className="pt-stat__label">{c('collider_2025:Info').t`ad value`}</span>
+                    </div>
+                    {hasRedFlags ? (
+                        <button
+                            type="button"
+                            className="pt-stat pt-stat--action"
+                            onClick={() => redFlagsModal.openModal(true)}
+                        >
+                            <span className="pt-stat__value">{report.sensitiveCategories.length}</span>
+                            <span className="pt-stat__label">{c('collider_2025:Info').t`red flags`}</span>
+                        </button>
+                    ) : (
+                        <div className="pt-stat">
+                            <span className="pt-stat__value">{report.sensitiveCategories.length}</span>
+                            <span className="pt-stat__label">{c('collider_2025:Info').t`red flags`}</span>
                         </div>
-                        <ul className="pt-card__list">
-                            {report.revealingDataPoints.map((point, i) => (
-                                <li key={i}>{point}</li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
-            </div>
-
-            {/* What Big Tech inferred (full width, multi-column sections) */}
-            <div className="pt-card">
-                <div className="pt-card__head">
-                    <h2 className="pt-card__title">{c('collider_2025:Title').t`What Big Tech inferred`}</h2>
+                    )}
                 </div>
-                {report.valueRationale && <p className="pt-card__sub">{report.valueRationale}</p>}
-                <div className="pt-exp">
-                    {report.sections.map((section, i) => (
-                        <section key={`${section.title}-${i}`} className="pt-exp__group">
-                            <div className="pt-exp__head">
-                                <span className="pt-exp__icon" aria-hidden="true">
-                                    {section.emoji || '📌'}
-                                </span>
-                                <h3 className="pt-exp__title">{section.title}</h3>
-                            </div>
-                            <div className="pt-exp__findings">
-                                {section.findings.map((finding, j) => (
-                                    <div key={j} className="pt-exp__finding">
-                                        {finding.label && <span className="pt-exp__tag">{finding.label}</span>}
-                                        <span className="pt-exp__detail">{finding.detail}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-                    ))}
-                </div>
-            </div>
+            </section>
 
-            {/* Compliance blind spots (educational) */}
-            {report.complianceRisks.length > 0 && (
-                <div className="pt-card pt-card--compliance">
-                    <div className="pt-card__head">
-                        <h2 className="pt-card__title">{c('collider_2025:Title').t`Oversharing blind spots`}</h2>
-                    </div>
-                    <p className="pt-card__sub">
+            {report.dataExposure.length > 0 && (
+                <section className="pt-card pt-card--glance">
+                    <h2 className="pt-section-title">{c('collider_2025:Title').t`Report at a glance`}</h2>
+                    <p className="pt-section-sub">
                         {c('collider_2025:Info')
-                            .t`Heads up — some of what you pasted may cross common workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.`}
+                            .t`The fuller the bar, the more of that area Big Tech could reconstruct. Lower is better.`}
+                    </p>
+                    <div className="pt-glance">
+                        <div className="pt-glance__scorecard">
+                            <div className="pt-glance__overall">
+                                <span className={`pt-glance__score ${exposureTone(cardData.exposureScore)}`}>
+                                    {cardData.exposureScore}
+                                </span>
+                                <span className="pt-glance__score-max">/100</span>
+                                <span className="pt-glance__grade">{cardData.grade}</span>
+                            </div>
+                            <ul className="pt-score__list">
+                                {report.dataExposure.map((exposure, i) => {
+                                    const exposureScore = Math.max(0, Math.min(100, exposure.score));
+                                    const row = (
+                                        <span className="pt-score__row-inner">
+                                            <span className="pt-score__area">
+                                                {exposure.area}
+                                                {exposure.detail && (
+                                                    <LumoIcon
+                                                        name="Info"
+                                                        width={14}
+                                                        height={14}
+                                                        className="pt-score__info"
+                                                    />
+                                                )}
+                                            </span>
+                                            <span className="pt-score__bar">
+                                                <span
+                                                    className={`pt-score__bar-fill ${exposureModifier(exposureScore)}`}
+                                                    style={{ inlineSize: `${exposureScore}%` }}
+                                                />
+                                            </span>
+                                            <span className={`pt-score__value ${exposureTone(exposureScore)}`}>
+                                                {exposureLabel(exposureScore)}
+                                            </span>
+                                        </span>
+                                    );
+                                    return (
+                                        <li key={i} className="pt-score__row">
+                                            {exposure.detail ? (
+                                                <Tooltip title={exposure.detail} openDelay={80}>
+                                                    {row}
+                                                </Tooltip>
+                                            ) : (
+                                                row
+                                            )}
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </div>
+                        <div className="pt-glance__narrative">
+                            {report.valueRationale && <p className="pt-glance__text">{report.valueRationale}</p>}
+                            {report.revealingDataPoints.length > 0 && (
+                                <>
+                                    <h3 className="pt-glance__list-title">
+                                        {c('collider_2025:Title').t`Most revealing`}
+                                    </h3>
+                                    <ul className="pt-glance__highlights">
+                                        {report.revealingDataPoints.map((point, i) => (
+                                            <li key={i}>{point}</li>
+                                        ))}
+                                    </ul>
+                                </>
+                            )}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {report.sections.length > 0 && (
+                <section className="pt-card">
+                    <h2 className="pt-section-title">{c('collider_2025:Title').t`What we identified`}</h2>
+                    <p className="pt-section-sub">
+                        {c('collider_2025:Info')
+                            .t`Inferences drawn only from your prompts — grouped by life area.`}
+                    </p>
+                    <div className="pt-identified-groups">
+                        {report.sections.map((section, sectionIndex) => (
+                            <section
+                                key={`${section.title}-${sectionIndex}`}
+                                className="pt-identified-group"
+                                aria-labelledby={`pt-identified-${sectionIndex}`}
+                            >
+                                <div className="pt-identified-group__head">
+                                    <span className="pt-identified-group__icon" aria-hidden="true">
+                                        <LumoIcon name={getPaperTrailSectionIcon(section.title)} size={18} />
+                                    </span>
+                                    <h3 id={`pt-identified-${sectionIndex}`} className="pt-identified-group__title">
+                                        {section.title}
+                                    </h3>
+                                </div>
+                                <ul className="pt-identified">
+                                    {section.findings.map((finding, findingIndex) => (
+                                        <li key={findingIndex} className="pt-identified__item">
+                                            <div className="pt-identified__body">
+                                                {finding.label && (
+                                                    <span className="pt-identified__category">{finding.label}</span>
+                                                )}
+                                                <p className="pt-identified__detail">{finding.detail}</p>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            {report.complianceRisks.length > 0 && (
+                <section className="pt-panel pt-panel--compliance">
+                    <h2 className="pt-section-title">{c('collider_2025:Title').t`Oversharing blind spots`}</h2>
+                    <p className="pt-section-sub">
+                        {c('collider_2025:Info')
+                            .t`Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.`}
                     </p>
                     <ul className="pt-risks">
                         {report.complianceRisks.map((risk, i) => (
                             <li key={i} className="pt-risk">
-                                <div className="pt-risk__head">
-                                    <span className={`pt-risk__severity pt-risk__severity--${risk.severity}`}>
-                                        {risk.severity}
-                                    </span>
-                                    <span className="pt-risk__category">{risk.category}</span>
-                                </div>
+                                <span className={`pt-risk__severity pt-risk__severity--${risk.severity}`}>
+                                    {formatRiskSeverity(risk.severity)}
+                                </span>
+                                <h3 className="pt-risk__title">{risk.category}</h3>
                                 <p className="pt-risk__detail">{risk.detail}</p>
                                 {risk.guidance && (
-                                    <p className="pt-risk__guidance">
-                                        <span className="pt-risk__guidance-label">
-                                            {c('collider_2025:Label').t`Tip`}
-                                        </span>
-                                        {risk.guidance}
-                                    </p>
+                                    <div className="pt-risk__tip">
+                                        <div className="pt-risk__tip-head">
+                                            <LumoIcon name="Sparkles" size={14} className="pt-risk__tip-icon" />
+                                            <span className="pt-risk__tip-label">{c('collider_2025:Label').t`Tips`}</span>
+                                        </div>
+                                        <p className="pt-risk__tip-text">{risk.guidance}</p>
+                                    </div>
                                 )}
                             </li>
                         ))}
                     </ul>
-                </div>
+                </section>
             )}
 
-            <div className="pt-profile__pair">
-                {/* What they can do with this */}
-                <div className="pt-card">
-                    <div className="pt-card__head">
-                        <h2 className="pt-card__title">{c('collider_2025:Title').t`Why this matters`}</h2>
-                    </div>
-                    <p className="pt-card__sub">
-                        {c('collider_2025:Info')
-                            .t`This isn't just trivia. Here's what a profile like yours can actually be used for.`}
-                    </p>
-                    <ul className="pt-points">
-                        {risks.map((item, i) => (
-                            <li key={i} className="pt-point">
-                                <span className="pt-point__icon" aria-hidden="true">
-                                    {item.emoji}
-                                </span>
-                                <span className="pt-point__content">
-                                    <span className="pt-point__title">{item.title}</span>
-                                    <span className="pt-point__detail">{item.detail}</span>
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+            <section className="pt-panel pt-panel--warn">
+                <h2 className="pt-section-title">{c('collider_2025:Title').t`Why this matters`}</h2>
+                <p className="pt-section-sub">
+                    {c('collider_2025:Info')
+                        .t`This isn't just trivia. Here's what a profile like yours can actually be used for.`}
+                </p>
+                <ul className="pt-insights">
+                    {risks.map((item, i) => (
+                        <li key={i} className="pt-insight">
+                            <span className="pt-insight__emoji" aria-hidden="true">
+                                {item.emoji}
+                            </span>
+                            <div className="pt-insight__body">
+                                <h3 className="pt-insight__title">{item.title}</h3>
+                                <p className="pt-insight__detail">{item.detail}</p>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </section>
 
-                {/* How to stay private */}
-                <div className="pt-card pt-card--tips">
-                    <div className="pt-card__head">
-                        <h2 className="pt-card__title">{c('collider_2025:Title').t`How to stay private`}</h2>
-                    </div>
-                    <p className="pt-card__sub">
-                        {c('collider_2025:Info').t`A few habits go a long way to shrinking your paper trail.`}
-                    </p>
-                    <ul className="pt-points">
-                        {tips.map((item, i) => (
-                            <li key={i} className="pt-point">
-                                <span className="pt-point__icon pt-point__icon--good" aria-hidden="true">
-                                    {item.emoji}
-                                </span>
-                                <span className="pt-point__content">
-                                    <span className="pt-point__title">{item.title}</span>
-                                    <span className="pt-point__detail">{item.detail}</span>
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
+            <section className="pt-panel pt-panel--tips">
+                <h2 className="pt-section-title">{c('collider_2025:Title').t`How to stay private`}</h2>
+                <p className="pt-section-sub">
+                    {c('collider_2025:Info').t`A few habits go a long way to shrinking your paper trail.`}
+                </p>
+                <ul className="pt-insights">
+                    {tips.map((item, i) => (
+                        <li key={i} className="pt-insight">
+                            <span className="pt-insight__emoji" aria-hidden="true">
+                                {item.emoji}
+                            </span>
+                            <div className="pt-insight__body">
+                                <h3 className="pt-insight__title">{item.title}</h3>
+                                <p className="pt-insight__detail">{item.detail}</p>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </section>
 
-            {/* Actions + CTA */}
-            <div className="pt-card pt-card--cta">
-                <div className="pt-cta__actions">
-                    <Button color="norm" size="large" pill onClick={() => shareModal.openModal(true)}>
-                        <LumoIcon name="Share" className="mr-2" />
-                        {c('collider_2025:Action').t`Create shareable card`}
-                    </Button>
-                    <Button shape="ghost" size="large" pill onClick={onStartOver}>
-                        {c('collider_2025:Action').t`Analyse another export`}
-                    </Button>
-                </div>
-                <p className="pt-cta__title">{c('collider_2025:Title').t`You saw the profile?`}</p>
-                <p className="pt-cta__sub">{c('collider_2025:Info').t`Now protect the person behind it.`}</p>
-                <Button color="norm" size="large" pill className="mt-4" onClick={onTryLumo}>
-                    {c('collider_2025:Action').t`Try ${LUMO_SHORT_APP_NAME} free`}
+            <SharePreview cardData={cardData} onShare={() => shareModal.openModal(true)} />
+
+            <div className="pt-report__actions">
+                <Button shape="ghost" size="large" pill onClick={onStartOver}>
+                    {c('collider_2025:Action').t`Analyse another export`}
                 </Button>
             </div>
+
+            <div className="pt-report__cta-banner" style={{ backgroundImage: `url(${ctaContainerBg})` }}>
+                <img src={lumoLogoWordmark} alt={LUMO_SHORT_APP_NAME} className="pt-report__cta-wordmark" />
+                <p className="pt-report__cta-title">
+                    {c('collider_2025:Title').t`You saw the profile? Now protect the person behind it.`}
+                </p>
+                <Button color="norm" size="large" pill onClick={onTryLumo}>
+                    {c('collider_2025:Action').t`Try ${LUMO_SHORT_APP_NAME} for free`}
+                </Button>
+            </div>
+
+            <p className="pt-report__footer">
+                {c('collider_2025:Info')
+                    .t`Built by ${BRAND_NAME}, the privacy brand trusted by over 100M people and the team behind ${MAIL_APP_NAME}, ${VPN_APP_NAME}, ${DRIVE_APP_NAME}, and ${PASS_APP_NAME}.`}
+            </p>
 
             {shareModal.render && <ShareableCard data={cardData} {...shareModal.modalProps} />}
 
