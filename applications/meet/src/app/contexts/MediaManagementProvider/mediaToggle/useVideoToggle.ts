@@ -12,6 +12,7 @@ import {
     selectActiveCameraId,
     selectInitialCameraState,
     selectRealtimeDevices,
+    selectSelectedCameraId,
     selectUserCameraIntent,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -27,6 +28,7 @@ import type {
 } from '../../../processors/background-processor/types';
 import type { SwitchActiveDevice, ToggleVideoType } from '../../../types';
 import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../../../utils/backgroundBlurPersistance';
+import { isDummyVideoTrack, markVideoTrackDeviceBacked } from '../../../utils/dummyVideoTrack';
 import type { BlurInitializationState } from '../useBlurInitializationState';
 import { ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE } from './constants';
 
@@ -53,6 +55,7 @@ export const useVideoToggle = ({
 
     const dispatch = useMeetDispatch();
     const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
+    const selectedCameraDeviceId = useMeetSelector(selectSelectedCameraId);
     const initialCameraState = useMeetSelector(selectInitialCameraState);
     const userCameraIntent = useMeetSelector(selectUserCameraIntent);
     const store = useMeetStore();
@@ -153,6 +156,9 @@ export const useVideoToggle = ({
 
             const currentVideoTrack = getCurrentVideoTrack();
 
+            // When joining with camera off, a placeholder canvas track is published in place of the real camera
+            const isReplacingDummyTrack = isEnabled && !!currentVideoTrack && isDummyVideoTrack(currentVideoTrack);
+
             try {
                 if (currentVideoTrack) {
                     try {
@@ -172,7 +178,17 @@ export const useVideoToggle = ({
                     throwOnError: true,
                 });
 
-                await localParticipant.setCameraEnabled(isEnabled, facingModeDependentOptions);
+                if (isReplacingDummyTrack && currentVideoTrack) {
+                    const replacementOptions =
+                        customFacingMode || isMobile()
+                            ? { facingMode: customFacingMode ?? facingMode }
+                            : { deviceId: { exact: selectedCameraDeviceId || deviceId } };
+                    await currentVideoTrack.restartTrack(replacementOptions);
+                    await currentVideoTrack.unmute();
+                    markVideoTrackDeviceBacked(currentVideoTrack);
+                } else {
+                    await localParticipant.setCameraEnabled(isEnabled, facingModeDependentOptions);
+                }
 
                 const newVideoTrack = getCurrentVideoTrack();
 
