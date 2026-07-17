@@ -1,6 +1,7 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
+import { getRegexError } from '@proton/pass/lib/urls/safe-regex/safe-regex';
 import { isAutofillModeDataOfTypeUrl } from '@proton/pass/lib/urls/utils/autofill';
 import { sanitizeURL } from '@proton/pass/lib/urls/utils/sanitize';
 import type { UrlGroupValues } from '@proton/pass/types';
@@ -31,6 +32,10 @@ export const validateUrls = <V extends UrlGroupValues>({ urls }: V) => {
 
         if (isEmpty) return { url: c('Validation').t`URL cannot be empty` };
         if (isAutofillModeDataOfTypeUrl(mode) && !validURL) return { url: c('Validation').t`URL is invalid` };
+        if (mode === AutofillMode.RegularExpression) {
+            const regexError = getRegexError(url);
+            if (regexError) return { url: regexError };
+        }
         if ((duplicatesCount.get(`${safeUrl ?? ''}:${mode}`) ?? 0) > 1) {
             return { url: c('Validation').t`Duplicated URL` };
         }
