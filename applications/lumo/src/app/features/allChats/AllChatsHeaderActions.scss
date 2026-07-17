@@ -1,0 +1,97 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.all-chats-header-actions {
+	flex: 0 0 auto;
+	justify-content: flex-end;
+	margin-inline-start: auto;
+	min-inline-size: 0;
+}
+
+.all-chats-header-bar {
+	min-inline-size: 0;
+}
+
+.all-chats-header-search-slot {
+	display: none;
+	flex: 0 0 auto;
+	max-inline-size: 100%;
+	min-inline-size: 0;
+
+	@include im.media('>=large') {
+		display: flex;
+	}
+}
+
+.all-chats-header-search-slot-is-open {
+	flex: 1 1 auto;
+	min-inline-size: 12rem;
+}
+
+.all-chats-header-search-input {
+	background-color: var(--background-weak);
+	border: 1px solid transparent;
+	border-radius: 999px;
+	inline-size: 100%;
+	min-block-size: 40px;
+	transition: border-color 0.15s ease;
+
+	&:focus-within {
+		border-color: var(--border-norm);
+	}
+
+	.input-element {
+		background: transparent;
+		border: 0;
+		box-shadow: none;
+		font-size: 0.875rem;
+	}
+}
+
+.all-chats-search-toolbar {
+	@include im.media('>=large') {
+		display: none;
+	}
+}
+
+.all-chats-header-action-button {
+	background-color: var(--background-norm);
+	border: 1px solid var(--border-norm);
+	border-radius: 999px;
+	color: var(--text-norm);
+	font-size: 0.8125rem;
+	font-weight: 500;
+	gap: 6px;
+	min-block-size: 36px;
+	padding-inline: 12px;
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--background-weak);
+		color: var(--text-norm);
+	}
+}
+
+.all-chats-header-action-button-primary {
+	background-color: var(--primary-norm);
+	border-color: transparent;
+	color: var(--primary-contrast);
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--primary-norm);
+		color: var(--primary-contrast);
+		opacity: 0.92;
+	}
+}
+
+.all-chats-header-action-button:disabled {
+	opacity: 0.5;
+}
+
+.all-chats-header-action-button.is-active {
+	background-color: var(--background-weak);
+	border-color: var(--border-norm);
+}
