@@ -3,8 +3,8 @@ import { useCallback, useRef } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectLocalRecordingTime } from '@proton/meet/store/slices/recordingStatusSlice';
-import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/sortedParticipantsSlice';
 
 import { logRecordingStats } from '../../telemetry/meetingTelemetry';
 import type { RecordingStats } from '../../telemetry/types';

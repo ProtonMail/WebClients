@@ -5,11 +5,11 @@ import { describe, expect, it } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
-import type { MeetState } from '../rootReducer';
-import { chatAndReactionsReducer, raiseHand } from './chatAndReactionsSlice';
-import { setSelfView, settingsReducer } from './settings';
+import type { MeetState } from '../../rootReducer';
+import { chatAndReactionsReducer, raiseHand } from '../chatAndReactionsSlice';
+import { setSelfView, settingsReducer } from '../settings';
 import {
-    removeParticipant,
+    removeSortedParticipant,
     resetSortedParticipants,
     selectPageCount,
     selectPagedIdentities,
@@ -95,12 +95,12 @@ describe('sortedParticipantsSlice', () => {
             });
         });
 
-        describe('removeParticipant', () => {
+        describe('removeSortedParticipant', () => {
             it('should remove the specified participant', () => {
                 const store = createStore();
                 store.dispatch(setSortedParticipantIdentities(['local', 'A', 'B', 'C']));
 
-                store.dispatch(removeParticipant('B'));
+                store.dispatch(removeSortedParticipant('B'));
 
                 expect(store.getState().sortedParticipants.sortedParticipantIdentities).toEqual(['local', 'A', 'C']);
             });
@@ -111,7 +111,7 @@ describe('sortedParticipantsSlice', () => {
                 store.dispatch(setPageSize(4));
                 store.dispatch(setPage(1));
 
-                store.dispatch(removeParticipant('A'));
+                store.dispatch(removeSortedParticipant('A'));
 
                 const { page, sortedParticipantIdentities } = store.getState().sortedParticipants;
                 expect(page).toBe(1);
@@ -124,7 +124,7 @@ describe('sortedParticipantsSlice', () => {
                 store.dispatch(setPageSize(4));
                 store.dispatch(setPage(1));
 
-                store.dispatch(removeParticipant('A'));
+                store.dispatch(removeSortedParticipant('A'));
 
                 const { page, sortedParticipantIdentities } = store.getState().sortedParticipants;
                 expect(page).toBe(0);
@@ -137,7 +137,7 @@ describe('sortedParticipantsSlice', () => {
                 store.dispatch(setPageSize(4));
                 store.dispatch(setPage(1));
 
-                store.dispatch(removeParticipant('A'));
+                store.dispatch(removeSortedParticipant('A'));
 
                 const { page, sortedParticipantIdentities } = store.getState().sortedParticipants;
                 expect(page).toBe(0);
@@ -150,7 +150,7 @@ describe('sortedParticipantsSlice', () => {
                 store.dispatch(setPageSize(4));
                 store.dispatch(setPage(1));
 
-                store.dispatch(removeParticipant('A'));
+                store.dispatch(removeSortedParticipant('A'));
 
                 const { page, sortedParticipantIdentities } = store.getState().sortedParticipants;
                 expect(page).toBe(1);
@@ -161,7 +161,7 @@ describe('sortedParticipantsSlice', () => {
                 const store = createStore();
                 store.dispatch(setSortedParticipantIdentities(['local', 'A']));
 
-                store.dispatch(removeParticipant('Z'));
+                store.dispatch(removeSortedParticipant('Z'));
 
                 expect(store.getState().sortedParticipants.sortedParticipantIdentities).toEqual(['local', 'A']);
             });

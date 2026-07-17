@@ -17,7 +17,7 @@ const createMockState = (
         screenShareStatus: {
             participantScreenSharingIdentity: overrides.participantScreenSharingIdentity ?? null,
         },
-        sortedParticipants: {
+        participants: {
             localParticipantIdentity: overrides.localParticipantIdentity ?? 'local',
         },
     }) as unknown as MeetState;

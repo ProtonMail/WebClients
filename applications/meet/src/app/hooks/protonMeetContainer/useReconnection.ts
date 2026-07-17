@@ -3,6 +3,8 @@ import { type Dispatch, type MutableRefObject, type SetStateAction, useCallback,
 import { useRoomContext } from '@livekit/components-react';
 import type { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 
+import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
 import { encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -37,7 +39,6 @@ interface UseReconnectionParams {
     disallowHealthCheck: () => void;
     initializeDevices: InitializeDevices;
     getParticipants: (token: string) => Promise<void>;
-    resetParticipantNameMap: () => void;
     reportMeetError: (msg: string, options?: unknown) => void;
     withMeetingLinkNameTag: (options?: unknown) => unknown;
     setJoinedRoom: Dispatch<SetStateAction<boolean>>;
@@ -70,7 +71,6 @@ export const useReconnection = ({
     disallowHealthCheck,
     initializeDevices,
     getParticipants,
-    resetParticipantNameMap,
     reportMeetError,
     withMeetingLinkNameTag,
     setJoinedRoom,
@@ -82,6 +82,7 @@ export const useReconnection = ({
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
 
+    const dispatch = useMeetDispatch();
     const meetCoreClient = useMeetCoreClient();
     const room = useRoomContext();
 
@@ -173,7 +174,8 @@ export const useReconnection = ({
                     desiredCameraState: wasCameraEnabled,
                     desiredMicrophoneState: wasMicrophoneEnabled,
                 });
-                resetParticipantNameMap();
+
+                dispatch(resetParticipantMaps());
                 await getParticipants(meetingToken);
 
                 setIsReconnecting(false);
@@ -220,6 +222,7 @@ export const useReconnection = ({
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps
         [
+            dispatch,
             meetCoreClient,
             room,
             meetingPassword,
@@ -232,7 +235,6 @@ export const useReconnection = ({
             disallowHealthCheck,
             initializeDevices,
             getParticipants,
-            resetParticipantNameMap,
             isMeetSeamlessKeyRotationEnabled,
             isMeetClientMetricsLogEnabled,
             keyRotationScheduler,

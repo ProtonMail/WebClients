@@ -9,7 +9,11 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { getMeetingLink } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectPreviousMeetingLink, selectUpsellModalType, setUpsellModalType } from '@proton/meet/store/slices';
+import {
+    selectPreviousMeetingLink,
+    selectUpsellModalType,
+    setUpsellModalType,
+} from '@proton/meet/store/slices/meetAppStateSlice';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';

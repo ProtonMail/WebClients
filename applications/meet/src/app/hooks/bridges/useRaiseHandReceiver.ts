@@ -6,7 +6,7 @@ import type { Participant, RemoteParticipant } from 'livekit-client';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { lowerHand, raiseHand, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantsMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 

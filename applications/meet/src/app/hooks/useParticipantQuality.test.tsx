@@ -6,7 +6,7 @@ import { renderHook } from '@testing-library/react';
 import { VideoQuality } from 'livekit-client';
 import type { Mock } from 'vitest';
 
-import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
+import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices/meetingInfo';
 import {
     initialState as initialScreenShareStatusState,
     screenShareStatusReducer,

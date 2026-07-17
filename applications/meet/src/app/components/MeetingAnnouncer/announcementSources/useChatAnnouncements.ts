@@ -2,8 +2,10 @@ import { useEffect, useRef } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
-import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import {
+    selectLocalParticipantIdentity,
+    selectParticipantDecryptedNameMap,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 
 import { isRelevantThreadMessage } from '../../../utils/isRelevantThreadMessage';
 import { announcementMessages } from '../messages';

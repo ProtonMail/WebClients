@@ -6,11 +6,11 @@ import { RoomEvent } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
 import {
     selectIsLocalParticipantAdminOrHost,
-    selectSortedParticipantIdentities,
-} from '@proton/meet/store/slices/sortedParticipantsSlice';
+    selectParticipantDecryptedNameMap,
+} from '@proton/meet/store/slices/participants/participantsSlice';
+import { selectSortedParticipantIdentities } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';

@@ -5,7 +5,11 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import { getMeetingLink } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectPreviousMeetingLink, selectUpsellModalType, setUpsellModalType } from '@proton/meet/store/slices';
+import {
+    selectPreviousMeetingLink,
+    selectUpsellModalType,
+    setUpsellModalType,
+} from '@proton/meet/store/slices/meetAppStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
