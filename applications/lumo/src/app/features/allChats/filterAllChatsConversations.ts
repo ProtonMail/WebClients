@@ -3,9 +3,9 @@ import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import type { Conversation } from '../../types';
 import type { AllChatsRowDataMap } from './selectAllChatsRowData';
 
-export type AllChatsFilterValue = 'all' | 'favorites';
+export type AllChatsFilterValue = 'all' | 'favorites' | 'projects';
 
-export type AllChatsEmptyVariant = 'no-chats' | 'no-favorites' | 'no-results';
+export type AllChatsEmptyVariant = 'no-chats' | 'no-favorites' | 'no-projects' | 'no-results';
 
 interface FilterAllChatsConversationsInput {
     conversations: Conversation[];
@@ -40,6 +40,12 @@ export const filterAllChatsConversations = ({
         });
     }
 
+    if (filter === 'projects') {
+        items = items.filter((conversation) => {
+            return rowDataMap[conversation.id]?.isProject === true;
+        });
+    }
+
     if (normalizedQuery) {
         items = items.filter((conversation) => {
             const title = (conversation.title || '').toLowerCase();
@@ -60,6 +66,10 @@ export const getAllChatsEmptyVariant = (searchQuery: string, filter: AllChatsFil
 
     if (filter === 'favorites') {
         return 'no-favorites';
+    }
+
+    if (filter === 'projects') {
+        return 'no-projects';
     }
 
     return 'no-chats';

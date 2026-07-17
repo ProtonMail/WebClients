@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { shallowEqual } from 'react-redux';
 
 import { useVirtualizer } from '@tanstack/react-virtual';
@@ -7,24 +7,43 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
+import { Checkbox, useModalStateObject, useNotifications } from '@proton/components';
 
 import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
 import { LumoLink } from '../../components/Links/LumoLink';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { useConversationStar } from '../../hooks/useConversationStar';
+import { useDriveFolderIndexing } from '../../hooks/useDriveFolderIndexing';
+import { useLumoNavigate } from '../../hooks/useLumoNavigate';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
+import { useSearchService } from '../../hooks/useSearchService';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
-import { ChatHistorySortMenu } from '../../layouts/sidepanel/ChatHistorySortMenu';
 import { ConversationDeleteFlow } from '../../layouts/sidepanel/ConversationDeleteFlow';
 import { ConversationExpirationIndicator } from '../../layouts/sidepanel/ConversationExpirationIndicator';
 import { ConversationSidebarActions } from '../../layouts/sidepanel/ConversationSidebarActions';
 import { useConversation } from '../../providers/ConversationProvider';
-import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
-import { selectConversations } from '../../redux/selectors';
-import { changeConversationTitle, pushConversationRequest } from '../../redux/slices/core/conversations';
+import { useIsGuest } from '../../providers/IsGuestProvider';
+import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../redux/hooks';
+import {
+    selectAnyGeneratedImages,
+    selectConversations,
+    selectConversationsHaveGeneratedImages,
+} from '../../redux/selectors';
+import {
+    changeConversationTitle,
+    pushConversationRequest,
+    toggleConversationStarred,
+} from '../../redux/slices/core/conversations';
+import { deleteAllSpacesRequest, selectHasSpaces, selectSpaceMap } from '../../redux/slices/core/spaces';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
-import type { Conversation } from '../../types';
-import { sendConversationEditTitleEvent } from '../../util/telemetry';
+import type { Conversation, ConversationId } from '../../types';
+import { sendConversationDeleteEvent, sendConversationEditTitleEvent } from '../../util/telemetry';
+import { AllChatsHeaderBar } from './AllChatsHeaderBar';
+import {
+    deleteConversationsWithSemantics,
+    getConversationIdsAffectedByDelete,
+} from './deleteConversationsWithSemantics';
 import type { AllChatsEmptyVariant, AllChatsFilterValue } from './filterAllChatsConversations';
 import { filterAllChatsConversations, getAllChatsEmptyVariant } from './filterAllChatsConversations';
 import { formatChatRelativeDate } from './formatChatRelativeDate';
@@ -37,18 +56,41 @@ const ROW_HEIGHT = 68;
 
 type FilterValue = AllChatsFilterValue;
 
-const getSortFieldLabel = (sortField: ChatHistoryDateField): string => {
-    if (sortField === 'updatedAt') {
-        return c('collider_2025:Option').t`Recent activity`;
+const filterValidSelections = (
+    selectedIds: Set<ConversationId>,
+    validConversationIds: ConversationId[]
+): Set<ConversationId> => {
+    const validIds = new Set(validConversationIds);
+    const next = new Set<ConversationId>();
+
+    for (const id of selectedIds) {
+        if (validIds.has(id)) {
+            next.add(id);
+        }
     }
 
-    return c('collider_2025:Option').t`Date created`;
+    return next;
 };
 
-const allChatsSortOptions = [
-    { value: 'updatedAt' as const, label: c('collider_2025:Option').t`Recent activity` },
-    { value: 'createdAt' as const, label: c('collider_2025:Option').t`Date created` },
-];
+// interface AllChatsSearchToolbarProps {
+//     searchQuery: string;
+//     onSearchQueryChange: (value: string) => void;
+// }
+
+// const AllChatsSearchToolbar = ({ searchQuery, onSearchQueryChange }: AllChatsSearchToolbarProps) => {
+//     return (
+//         <div className="all-chats-search-toolbar all-chats-toolbar flex w-full px-2 md:px-4 py-3 shrink-0">
+//             <Input
+//                 className="all-chats-search flex-1 min-w-0"
+//                 value={searchQuery}
+//                 onValue={onSearchQueryChange}
+//                 placeholder={c('collider_2025:Placeholder').t`Search chats`}
+//                 aria-label={c('collider_2025:Button').t`Search chats`}
+//                 prefix={<LumoIcon name="Search" size={16} className="color-weak" />}
+//             />
+//         </div>
+//     );
+// };
 
 interface AllChatsEmptyStateProps {
     variant: AllChatsEmptyVariant;
@@ -61,6 +103,14 @@ const AllChatsEmptyState = ({ variant }: AllChatsEmptyStateProps) => {
                 icon: 'Star' as const,
                 heading: c('collider_2025:Title').t`No favorites yet`,
                 subline: c('collider_2025:Info').t`Star a chat to find it here quickly.`,
+            };
+        }
+
+        if (variant === 'no-projects') {
+            return {
+                icon: 'FolderOpen' as const,
+                heading: c('collider_2025:Title').t`No project chats yet`,
+                subline: c('collider_2025:Info').t`Chats from your projects will appear here.`,
             };
         }
 
@@ -90,271 +140,268 @@ const AllChatsEmptyState = ({ variant }: AllChatsEmptyStateProps) => {
     );
 };
 
-interface AllChatsToolbarProps {
-    searchQuery: string;
-    onSearchQueryChange: (value: string) => void;
-    filter: FilterValue;
-    onFilterChange: (value: FilterValue) => void;
+interface ConversationRowProps {
+    conversation: Conversation;
+    rowData: AllChatsRowData;
+    isActive: boolean;
+    isBulkSelected: boolean;
+    onToggleBulkSelect: (conversationId: ConversationId) => void;
     sortField: ChatHistoryDateField;
-    onSortFieldChange: (value: ChatHistoryDateField) => void;
 }
 
-const AllChatsToolbar = ({
-    searchQuery,
-    onSearchQueryChange,
-    filter,
-    onFilterChange,
-    sortField,
-    onSortFieldChange,
-}: AllChatsToolbarProps) => {
-    return (
-        <div className="all-chats-toolbar flex flex-column sm:flex-row sm:flex-nowrap items-center w-full px-2 md:px-4 py-3 shrink-0 items-stretch">
-            <Input
-                className="all-chats-search flex-none sm:flex-1 min-w-0"
-                value={searchQuery}
-                onValue={onSearchQueryChange}
-                placeholder={c('collider_2025:Placeholder').t`Search chats`}
-                aria-label={c('collider_2025:Button').t`Search chats`}
-                prefix={<LumoIcon name="Search" size={16} className="color-weak" />}
-            />
-            <div className="flex items-center gap-2 flex-nowrap justify-space-between">
-                {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
-                <div
-                    className="all-chats-segmented flex shrink-0"
-                    role="group"
-                    aria-label={c('collider_2025:Button').t`Filter chats`}
-                >
-                    <Button
-                        className={clsx('all-chats-segmented-button', filter === 'all' && 'is-active')}
-                        shape="ghost"
-                        size="small"
-                        aria-pressed={filter === 'all'}
-                        onClick={() => {
-                            onFilterChange('all');
-                        }}
-                    >
-                        {c('collider_2025:Option').t`All`}
-                    </Button>
-                    <Button
-                        className={clsx('all-chats-segmented-button', filter === 'favorites' && 'is-active')}
-                        shape="ghost"
-                        size="small"
-                        aria-pressed={filter === 'favorites'}
-                        onClick={() => {
-                            onFilterChange('favorites');
-                        }}
-                    >
-                        {c('collider_2025:Option').t`Favorites`}
-                    </Button>
+const ConversationRow = memo(
+    ({ conversation, rowData, isActive, isBulkSelected, onToggleBulkSelect, sortField }: ConversationRowProps) => {
+        const dispatch = useLumoDispatch();
+        const [isRenaming, setIsRenaming] = useState(false);
+        const [draftTitle, setDraftTitle] = useState(conversation.title);
+        const [deleteRequested, setDeleteRequested] = useState(false);
+        const renameInputRef = useRef<HTMLInputElement>(null);
+
+        const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } =
+            useConversationStar({
+                conversation,
+                location: 'sidebar',
+            });
+
+        const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
+        const timestamp = formatChatRelativeDate(conversation[sortField]);
+        const { preview } = rowData;
+
+        const startRenaming = useCallback(() => {
+            setDraftTitle(conversation.title);
+            setIsRenaming(true);
+            requestAnimationFrame(() => {
+                renameInputRef.current?.focus();
+                renameInputRef.current?.select();
+            });
+        }, [conversation.title]);
+
+        const cancelRenaming = useCallback(() => {
+            setDraftTitle(conversation.title);
+            setIsRenaming(false);
+        }, [conversation.title]);
+
+        const commitRename = useCallback(() => {
+            const nextTitle = draftTitle.trim() || c('collider_2025:Button').t`Untitled chat`;
+
+            if (nextTitle !== conversation.title) {
+                dispatch(
+                    changeConversationTitle({
+                        id: conversation.id,
+                        title: nextTitle,
+                        spaceId: conversation.spaceId,
+                        persist: true,
+                    })
+                );
+                dispatch(pushConversationRequest({ id: conversation.id }));
+                sendConversationEditTitleEvent('sidebar');
+            }
+
+            setDraftTitle(nextTitle);
+            setIsRenaming(false);
+        }, [conversation.id, conversation.spaceId, conversation.title, dispatch, draftTitle]);
+
+        const handleRenameKeyDown = useCallback(
+            (event: React.KeyboardEvent<HTMLInputElement>) => {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    commitRename();
+                } else if (event.key === 'Escape') {
+                    event.preventDefault();
+                    cancelRenaming();
+                }
+            },
+            [cancelRenaming, commitRename]
+        );
+
+        return (
+            <div
+                className={clsx(
+                    'all-chats-row group relative flex items-center gap-3 px-0 md:px-3 min-w-0 overflow-hidden',
+                    deleteRequested && 'all-chats-row-actions-pinned',
+                    isBulkSelected && 'all-chats-row-bulk-selected'
+                )}
+                style={{ height: `${ROW_HEIGHT}px` }}
+            >
+                {!isRenaming && (
+                    <LumoLink
+                        to={`/c/${conversation.id}`}
+                        className="all-chats-row-link absolute inset-0 button button-ghost-weak"
+                        aria-current={isActive ? 'page' : undefined}
+                    />
+                )}
+
+                <Checkbox
+                    checked={isBulkSelected}
+                    onChange={() => {
+                        onToggleBulkSelect(conversation.id);
+                    }}
+                    onClick={(event) => {
+                        event.stopPropagation();
+                    }}
+                    className="all-chats-row-select all-chats-row-interactive relative z-1 shrink-0"
+                    aria-label={c('collider_2025:Action').t`Select conversation`}
+                />
+
+                <div className="relative z-1 flex-1 min-w-0 pointer-events-none">
+                    {isRenaming ? (
+                        <Input
+                            ref={renameInputRef}
+                            className="all-chats-row-rename-input all-chats-row-interactive"
+                            value={draftTitle}
+                            onValue={setDraftTitle}
+                            onKeyDown={handleRenameKeyDown}
+                            onBlur={commitRename}
+                            aria-label={c('collider_2025:Action').t`Rename chat`}
+                        />
+                    ) : (
+                        <div className="all-chats-row-title flex items-center gap-3 min-w-0">
+                            <ConversationExpirationIndicator
+                                conversation={conversation}
+                                className="all-chats-row-interactive shrink-0"
+                            />
+                            <span className="all-chats-row-title-text text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
+                                {label}
+                            </span>
+                            {preview ? (
+                                <span className="all-chats-row-preview text-ellipsis overflow-hidden whitespace-nowrap flex-1 min-w-0">
+                                    {preview}
+                                </span>
+                            ) : null}
+                        </div>
+                    )}
                 </div>
 
-                <ChatHistorySortMenu
-                    sortField={sortField}
-                    onSortFieldChange={onSortFieldChange}
-                    options={allChatsSortOptions}
-                    buttonLabel={getSortFieldLabel(sortField)}
-                    buttonClassName="all-chats-sort-menu-button shrink-0"
+                {!isRenaming ? (
+                    <div className="all-chats-row-meta relative z-2 shrink-0 flex items-center justify-end self-stretch">
+                        <span className="all-chats-row-date">{timestamp}</span>
+                        <div className="all-chats-row-actions">
+                            <Button
+                                icon
+                                shape="ghost"
+                                size="small"
+                                className={clsx('all-chats-row-star shrink-0', isStarred && 'is-favorited')}
+                                aria-label={
+                                    isStarred
+                                        ? c('collider_2025:Action').t`Remove from favorites`
+                                        : c('collider_2025:Action').t`Add to favorites`
+                                }
+                                aria-pressed={!!isStarred}
+                                onClick={(event) => {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                    handleStarToggle();
+                                }}
+                            >
+                                <LumoIcon
+                                    name="Star"
+                                    size={16}
+                                    fill={isStarred ? 'currentColor' : 'none'}
+                                    strokeWidth={isStarred ? 0 : 2}
+                                />
+                            </Button>
+                            <Button
+                                icon
+                                className="shrink-0"
+                                shape="ghost"
+                                size="small"
+                                aria-label={c('collider_2025:Action').t`Delete chat`}
+                                onClick={(event) => {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                    setDeleteRequested(true);
+                                }}
+                            >
+                                <LumoIcon name="Trash2" size={15} />
+                            </Button>
+                            <ConversationSidebarActions
+                                conversation={conversation}
+                                onRename={startRenaming}
+                                visibleOnHover
+                            />
+                        </div>
+                    </div>
+                ) : null}
+
+                {deleteRequested ? (
+                    <ConversationDeleteFlow
+                        conversation={conversation}
+                        onClose={() => {
+                            setDeleteRequested(false);
+                        }}
+                    />
+                ) : null}
+
+                {showFavoritesUpsellModal ? <FavoritesUpsellPrompt {...favoritesUpsellModalProps} /> : null}
+            </div>
+        );
+    }
+);
+
+ConversationRow.displayName = 'ConversationRow';
+
+interface AllChatsHeaderProps {
+    conversationCount: number;
+    allSelected: boolean;
+    someSelected: boolean;
+    showSelectAll: boolean;
+    onToggleSelectAll: () => void;
+}
+
+const AllChatsHeader = ({
+    conversationCount,
+    allSelected,
+    someSelected,
+    showSelectAll,
+    onToggleSelectAll,
+}: AllChatsHeaderProps) => {
+    return (
+        <div className="all-chats-header flex items-center gap-3 mb-4 shrink-0 ml-2 sm:ml-5">
+            {showSelectAll ? (
+                <Checkbox
+                    checked={allSelected}
+                    indeterminate={someSelected}
+                    onChange={onToggleSelectAll}
+                    aria-label={
+                        allSelected
+                            ? c('collider_2025:Action').t`Deselect all`
+                            : c('collider_2025:Action').t`Select all`
+                    }
                 />
+            ) : null}
+            <div className="flex items-baseline gap-2 min-w-0">
+                <h1 className="main-text m-0">{c('collider_2025:Title').t`Chats`}</h1>
+                <span className="all-chats-count">{conversationCount}</span>
             </div>
         </div>
     );
 };
 
-interface ConversationRowProps {
-    conversation: Conversation;
-    rowData: AllChatsRowData;
-    isSelected: boolean;
-    sortField: ChatHistoryDateField;
-}
-
-const ConversationRow = memo(({ conversation, rowData, isSelected, sortField }: ConversationRowProps) => {
-    const dispatch = useLumoDispatch();
-    const [isRenaming, setIsRenaming] = useState(false);
-    const [draftTitle, setDraftTitle] = useState(conversation.title);
-    const [deleteRequested, setDeleteRequested] = useState(false);
-    const renameInputRef = useRef<HTMLInputElement>(null);
-
-    const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
-        conversation,
-        location: 'sidebar',
-    });
-
-    const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
-    const timestamp = formatChatRelativeDate(conversation[sortField]);
-    const { icon, preview } = rowData;
-
-    const startRenaming = useCallback(() => {
-        setDraftTitle(conversation.title);
-        setIsRenaming(true);
-        requestAnimationFrame(() => {
-            renameInputRef.current?.focus();
-            renameInputRef.current?.select();
-        });
-    }, [conversation.title]);
-
-    const cancelRenaming = useCallback(() => {
-        setDraftTitle(conversation.title);
-        setIsRenaming(false);
-    }, [conversation.title]);
-
-    const commitRename = useCallback(() => {
-        const nextTitle = draftTitle.trim() || c('collider_2025:Button').t`Untitled chat`;
-
-        if (nextTitle !== conversation.title) {
-            dispatch(
-                changeConversationTitle({
-                    id: conversation.id,
-                    title: nextTitle,
-                    spaceId: conversation.spaceId,
-                    persist: true,
-                })
-            );
-            dispatch(pushConversationRequest({ id: conversation.id }));
-            sendConversationEditTitleEvent('sidebar');
-        }
-
-        setDraftTitle(nextTitle);
-        setIsRenaming(false);
-    }, [conversation.id, conversation.spaceId, conversation.title, dispatch, draftTitle]);
-
-    const handleRenameKeyDown = useCallback(
-        (event: React.KeyboardEvent<HTMLInputElement>) => {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                commitRename();
-            } else if (event.key === 'Escape') {
-                event.preventDefault();
-                cancelRenaming();
-            }
-        },
-        [cancelRenaming, commitRename]
-    );
-
-    return (
-        <div
-            className={clsx(
-                'all-chats-row group relative flex items-center gap-3 px-0 md:px-3 min-w-0 overflow-hidden',
-                deleteRequested && 'all-chats-row-actions-pinned'
-            )}
-            style={{ height: `${ROW_HEIGHT}px` }}
-        >
-            {!isRenaming && (
-                <LumoLink
-                    to={`/c/${conversation.id}`}
-                    className="all-chats-row-link absolute inset-0 button button-ghost-weak"
-                    aria-current={isSelected ? 'page' : undefined}
-                />
-            )}
-
-            <div className="all-chats-row-tile relative z-1 shrink-0 flex items-center justify-center pointer-events-none">
-                <LumoIcon name={icon} size={18} />
-            </div>
-
-            <div className="relative z-1 flex-1 min-w-0 pointer-events-none">
-                {isRenaming ? (
-                    <Input
-                        ref={renameInputRef}
-                        className="all-chats-row-rename-input all-chats-row-interactive"
-                        value={draftTitle}
-                        onValue={setDraftTitle}
-                        onKeyDown={handleRenameKeyDown}
-                        onBlur={commitRename}
-                        aria-label={c('collider_2025:Action').t`Rename chat`}
-                    />
-                ) : (
-                    <div className="all-chats-row-title flex items-center gap-3 min-w-0">
-                        <ConversationExpirationIndicator
-                            conversation={conversation}
-                            className="all-chats-row-interactive shrink-0"
-                        />
-                        <span className="all-chats-row-title-text text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
-                            {label}
-                        </span>
-                        {preview ? (
-                            <span className="all-chats-row-preview text-ellipsis overflow-hidden whitespace-nowrap flex-1 min-w-0">
-                                {preview}
-                            </span>
-                        ) : null}
-                    </div>
-                )}
-            </div>
-
-            {!isRenaming ? (
-                <div className="all-chats-row-meta relative z-2 shrink-0 flex items-center justify-end self-stretch">
-                    <span className="all-chats-row-date">{timestamp}</span>
-                    <div className="all-chats-row-actions">
-                        <Button
-                            icon
-                            shape="ghost"
-                            size="small"
-                            className={clsx('all-chats-row-star shrink-0', isStarred && 'is-favorited')}
-                            aria-label={
-                                isStarred
-                                    ? c('collider_2025:Action').t`Remove from favorites`
-                                    : c('collider_2025:Action').t`Add to favorites`
-                            }
-                            aria-pressed={!!isStarred}
-                            onClick={(event) => {
-                                event.preventDefault();
-                                event.stopPropagation();
-                                handleStarToggle();
-                            }}
-                        >
-                            <LumoIcon
-                                name="Star"
-                                size={16}
-                                fill={isStarred ? 'currentColor' : 'none'}
-                                strokeWidth={isStarred ? 0 : 2}
-                            />
-                        </Button>
-                        <Button
-                            icon
-                            className="shrink-0"
-                            shape="ghost"
-                            size="small"
-                            aria-label={c('collider_2025:Action').t`Delete chat`}
-                            onClick={(event) => {
-                                event.preventDefault();
-                                event.stopPropagation();
-                                setDeleteRequested(true);
-                            }}
-                        >
-                            <LumoIcon name="Trash2" size={15} />
-                        </Button>
-                        <ConversationSidebarActions
-                            conversation={conversation}
-                            onRename={startRenaming}
-                            visibleOnHover
-                        />
-                    </div>
-                </div>
-            ) : null}
-
-            {deleteRequested ? (
-                <ConversationDeleteFlow
-                    conversation={conversation}
-                    onClose={() => {
-                        setDeleteRequested(false);
-                    }}
-                />
-            ) : null}
-
-            {showFavoritesUpsellModal ? <FavoritesUpsellPrompt {...favoritesUpsellModalProps} /> : null}
-        </div>
-    );
-});
-
-ConversationRow.displayName = 'ConversationRow';
-
 export const AllChatsView = () => {
+    const dispatch = useLumoDispatch();
+    const navigate = useLumoNavigate();
+    const { createNotification } = useNotifications();
     const conversationsMap = useLumoSelector(selectConversations, shallowEqual);
+    const spacesMap = useLumoSelector(selectSpaceMap, shallowEqual);
     const rowDataMap = useLumoSelector(selectAllChatsRowDataMap, shallowEqual);
     const { hasLumoPlus } = useLumoPlan();
     const { conversationId } = useConversation();
+    const isGuest = useIsGuest();
+    const favoritesUpsellModal = useModalStateObject();
+    const confirmDeleteModal = useModalStateObject();
+    const deleteAllModal = useModalStateObject();
+    const { removeIndexedFoldersBySpace } = useDriveFolderIndexing();
+    const searchService = useSearchService();
+    const hasSpaces = useLumoSelector(selectHasSpaces);
+    const hasAnyGeneratedImages = useLumoSelector(selectAnyGeneratedImages);
 
     const [filter, setFilter] = useState<FilterValue>('all');
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [sortField, setSortField] = useState<ChatHistoryDateField>('updatedAt');
+    const [selectedIds, setSelectedIds] = useState<Set<ConversationId>>(new Set());
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [isDeleteAllInProgress, setIsDeleteAllInProgress] = useState(false);
 
     const filteredConversations = useMemo<Conversation[]>(() => {
         return filterAllChatsConversations({
@@ -366,6 +413,210 @@ export const AllChatsView = () => {
             hasLumoPlus,
         });
     }, [conversationsMap, sortField, filter, hasLumoPlus, rowDataMap, searchQuery]);
+
+    const filteredConversationIds = useMemo(() => {
+        return filteredConversations.map((conversation) => {
+            return conversation.id;
+        });
+    }, [filteredConversations]);
+
+    useEffect(() => {
+        setSelectedIds((previousSelectedIds) => {
+            const nextSelectedIds = filterValidSelections(previousSelectedIds, filteredConversationIds);
+
+            if (nextSelectedIds.size === previousSelectedIds.size) {
+                return previousSelectedIds;
+            }
+
+            return nextSelectedIds;
+        });
+    }, [filteredConversationIds]);
+
+    useEffect(() => {
+        if (isDeleteAllInProgress && !hasSpaces) {
+            setIsDeleteAllInProgress(false);
+            deleteAllModal.openModal(false);
+            setSelectedIds(new Set());
+            createNotification({
+                type: 'success',
+                text: c('collider_2025: Success').t`All chats deleted successfully`,
+            });
+            navigate('/');
+        }
+    }, [createNotification, deleteAllModal, hasSpaces, isDeleteAllInProgress, navigate]);
+
+    const selectedCount = selectedIds.size;
+    const allSelected = filteredConversations.length > 0 && selectedCount === filteredConversations.length;
+    const someSelected = selectedCount > 0 && !allSelected;
+    const selectedConversationIds = useMemo(() => {
+        return Array.from(selectedIds);
+    }, [selectedIds]);
+    const hasGeneratedImages = useLumoMemoSelector(selectConversationsHaveGeneratedImages, [selectedConversationIds]);
+
+    const toggleSelectAll = useCallback(() => {
+        if (allSelected) {
+            setSelectedIds(new Set());
+        } else {
+            setSelectedIds(new Set(filteredConversationIds));
+        }
+    }, [allSelected, filteredConversationIds]);
+
+    const toggleSelectConversation = useCallback((conversationId: ConversationId) => {
+        setSelectedIds((previousSelectedIds) => {
+            const nextSelectedIds = new Set(previousSelectedIds);
+
+            if (nextSelectedIds.has(conversationId)) {
+                nextSelectedIds.delete(conversationId);
+            } else {
+                nextSelectedIds.add(conversationId);
+            }
+
+            return nextSelectedIds;
+        });
+    }, []);
+
+    const clearSelection = useCallback(() => {
+        setSelectedIds(new Set());
+    }, []);
+
+    const handleFilterChange = useCallback((value: FilterValue) => {
+        setFilter(value);
+    }, []);
+
+    const handleSearchQueryChange = useCallback((value: string) => {
+        setSearchQuery(value);
+
+        if (value.trim()) {
+            setIsSearchOpen(true);
+        }
+    }, []);
+
+    const handleBulkFavorite = useCallback(() => {
+        if (isGuest) {
+            favoritesUpsellModal.openModal(true);
+            return;
+        }
+
+        for (const id of selectedIds) {
+            const conversation = conversationsMap[id];
+
+            if (conversation && !conversation.starred) {
+                dispatch(toggleConversationStarred(id));
+                dispatch(pushConversationRequest({ id }));
+            }
+        }
+    }, [conversationsMap, dispatch, favoritesUpsellModal, isGuest, selectedIds]);
+
+    const requestBulkDelete = useCallback(() => {
+        if (selectedIds.size === 0) {
+            return;
+        }
+
+        confirmDeleteModal.openModal(true);
+    }, [confirmDeleteModal, selectedIds]);
+
+    const requestDeleteAll = useCallback(() => {
+        deleteAllModal.openModal(true);
+    }, [deleteAllModal]);
+
+    const handleConfirmDeleteAll = useCallback(() => {
+        setIsDeleteAllInProgress(true);
+        dispatch(deleteAllSpacesRequest());
+    }, [dispatch]);
+
+    const handleConfirmBulkDelete = useCallback(async () => {
+        if (selectedIds.size === 0) {
+            return;
+        }
+
+        const conversationIds = Array.from(selectedIds);
+        const affectedConversationIds = getConversationIdsAffectedByDelete(
+            conversationIds,
+            conversationsMap,
+            spacesMap
+        );
+
+        setIsDeleting(true);
+
+        try {
+            for (const _conversationId of conversationIds) {
+                sendConversationDeleteEvent();
+            }
+
+            await deleteConversationsWithSemantics({
+                conversationIds,
+                conversationsMap,
+                spacesMap,
+                dispatch,
+                removeIndexedFoldersBySpace,
+                removeSearchDocumentsBySpace: (spaceId) => {
+                    if (searchService) {
+                        searchService.removeDocumentsBySpace(spaceId);
+                    }
+                },
+            });
+
+            createNotification({ text: c('Success').jt`Conversation deleted` });
+            setSelectedIds(new Set());
+            confirmDeleteModal.openModal(false);
+
+            if (conversationId && affectedConversationIds.has(conversationId)) {
+                navigate('/');
+            }
+        } catch (error) {
+            createNotification({ text: <>{error}</>, type: 'error' });
+        } finally {
+            setIsDeleting(false);
+        }
+    }, [
+        confirmDeleteModal,
+        conversationId,
+        conversationsMap,
+        createNotification,
+        dispatch,
+        navigate,
+        removeIndexedFoldersBySpace,
+        searchService,
+        selectedIds,
+        spacesMap,
+    ]);
+
+    const layoutHeader = useMemo(() => {
+        return {
+            component: (
+                <AllChatsHeaderBar
+                    hasSelection={selectedCount > 0}
+                    searchQuery={searchQuery}
+                    onSearchQueryChange={handleSearchQueryChange}
+                    isSearchOpen={isSearchOpen}
+                    onSearchOpenChange={setIsSearchOpen}
+                    sortField={sortField}
+                    onSortFieldChange={setSortField}
+                    filter={filter}
+                    onFilterChange={handleFilterChange}
+                    onRequestDeleteAll={requestDeleteAll}
+                    isDeleteAllDisabled={isDeleteAllInProgress || !hasSpaces}
+                    onBulkDelete={requestBulkDelete}
+                    onBulkFavorite={handleBulkFavorite}
+                    onCancelSelection={clearSelection}
+                />
+            ),
+        };
+    }, [
+        clearSelection,
+        filter,
+        handleBulkFavorite,
+        handleFilterChange,
+        handleSearchQueryChange,
+        hasSpaces,
+        isDeleteAllInProgress,
+        isSearchOpen,
+        requestBulkDelete,
+        requestDeleteAll,
+        searchQuery,
+        selectedCount,
+        sortField,
+    ]);
 
     const parentRef = useRef<HTMLDivElement>(null);
 
@@ -383,26 +634,22 @@ export const AllChatsView = () => {
     const isEmpty = filteredConversations.length === 0;
 
     return (
-        <LumoLayoutWithDrawer drawer={{ disabled: true }}>
+        <LumoLayoutWithDrawer drawer={{ disabled: true }} header={layoutHeader}>
             <div className="all-chats-view flex flex-column flex-nowrap flex-1 px-4 md:px-10 min-h-0 py-4">
                 <div
-                    className="flex flex-column flex-1 w-full mx-auto min-h-0 max-w-custom"
-                    style={{ '--max-w-custom': '900px' } as React.CSSProperties}
+                    className="flex flex-column flex-1 w-full mx-auto min-h-0"
+                    // style={{ '--max-w-custom': '900px' } as React.CSSProperties}
                 >
-                    <div className="flex items-baseline gap-2 mb-4 shrink-0">
-                        <h1 className="main-text m-0">{c('collider_2025:Title').t`Chats`}</h1>
-                        <span className="all-chats-count">{filteredConversations.length}</span>
-                    </div>
+                    <AllChatsHeader
+                        conversationCount={filteredConversations.length}
+                        allSelected={allSelected}
+                        someSelected={someSelected}
+                        showSelectAll={!isEmpty}
+                        onToggleSelectAll={toggleSelectAll}
+                    />
 
                     <div className="all-chats-panel flex flex-column flex-1 min-h-0 overflow-hidden">
-                        <AllChatsToolbar
-                            searchQuery={searchQuery}
-                            onSearchQueryChange={setSearchQuery}
-                            filter={filter}
-                            onFilterChange={setFilter}
-                            sortField={sortField}
-                            onSortFieldChange={setSortField}
-                        />
+                        {/* <AllChatsSearchToolbar searchQuery={searchQuery} onSearchQueryChange={setSearchQuery} /> */}
 
                         <div ref={parentRef} className="flex-1 overflow-auto min-h-0 px-2 pb-2">
                             {isEmpty ? (
@@ -433,7 +680,9 @@ export const AllChatsView = () => {
                                                 <ConversationRow
                                                     conversation={conversation}
                                                     rowData={rowData}
-                                                    isSelected={conversation.id === conversationId}
+                                                    isActive={conversation.id === conversationId}
+                                                    isBulkSelected={selectedIds.has(conversation.id)}
+                                                    onToggleBulkSelect={toggleSelectConversation}
                                                     sortField={sortField}
                                                 />
                                             </div>
@@ -445,6 +694,28 @@ export const AllChatsView = () => {
                     </div>
                 </div>
             </div>
+
+            {favoritesUpsellModal.render && <FavoritesUpsellPrompt {...favoritesUpsellModal.modalProps} />}
+
+            {confirmDeleteModal.render && (
+                <ConfirmDeleteModal
+                    {...confirmDeleteModal.modalProps}
+                    handleDelete={handleConfirmBulkDelete}
+                    count={selectedCount}
+                    hasGeneratedImages={hasGeneratedImages}
+                    loading={isDeleting}
+                />
+            )}
+
+            {deleteAllModal.render && (
+                <ConfirmDeleteModal
+                    {...deleteAllModal.modalProps}
+                    handleDelete={handleConfirmDeleteAll}
+                    deleteAll={true}
+                    hasGeneratedImages={hasAnyGeneratedImages}
+                    loading={isDeleteAllInProgress}
+                />
+            )}
         </LumoLayoutWithDrawer>
     );
 };

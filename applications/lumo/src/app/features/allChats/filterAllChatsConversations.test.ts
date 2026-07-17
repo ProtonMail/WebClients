@@ -65,6 +65,28 @@ describe('filterAllChatsConversations', () => {
         expect(result.map((conversation) => conversation.id)).toEqual(['starred']);
     });
 
+    it('shows only project chats when filter is projects', () => {
+        const conversations = [createTestConversation(0, 'project-chat'), createTestConversation(0, 'regular-chat')];
+        const rowDataMap: AllChatsRowDataMap = {
+            'project-chat': {
+                preview: '',
+                hasImages: false,
+                icon: 'MessageCircle',
+                isProject: true,
+            },
+            'regular-chat': {
+                preview: '',
+                hasImages: false,
+                icon: 'MessageCircle',
+                isProject: false,
+            },
+        };
+
+        const result = filterConversations(conversations, { filter: 'projects', rowDataMap });
+
+        expect(result.map((conversation) => conversation.id)).toEqual(['project-chat']);
+    });
+
     it('matches search against title case-insensitively and trims whitespace', () => {
         const conversations = [
             createTestConversation(0, 'match', { title: 'My Budget Chat' }),
@@ -180,6 +202,10 @@ describe('getAllChatsEmptyVariant', () => {
 
     it('returns no-favorites when favorites filter is active and search is empty', () => {
         expect(getAllChatsEmptyVariant('', 'favorites')).toBe('no-favorites');
+    });
+
+    it('returns no-projects when projects filter is active and search is empty', () => {
+        expect(getAllChatsEmptyVariant('', 'projects')).toBe('no-projects');
     });
 
     it('returns no-chats when there is no search and filter is all', () => {

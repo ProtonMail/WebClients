@@ -6,7 +6,6 @@ im.$media-expressions: $media-expressions;
 .all-chats-view {
 	--all-chats-preview-color: #9294a0;
 	--all-chats-favorite-color: #f0a417;
-	--all-chats-tile-radius: 11px;
 	--all-chats-icon-background-color: var(--background-upsell-toggle);
 	--all-chats-icon-color: var(--interaction-norm-hover);
 }
@@ -99,12 +98,14 @@ im.$media-expressions: $media-expressions;
 	z-index: 2;
 }
 
-.all-chats-row-tile {
-	background-color: var(--all-chats-icon-background-color);
-	color: var(--all-chats-icon-color);
-	block-size: 40px;
-	border-radius: var(--all-chats-tile-radius);
-	inline-size: 40px;
+.all-chats-row-select {
+	display: none;
+}
+
+.all-chats-row:hover .all-chats-row-select,
+.all-chats-row:focus-within .all-chats-row-select,
+.all-chats-row-bulk-selected .all-chats-row-select {
+	display: flex;
 }
 
 .all-chats-row-title {
@@ -176,6 +177,10 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.all-chats-row-actions {
+		display: flex;
+	}
+
+	.all-chats-row-select {
 		display: flex;
 	}
 }

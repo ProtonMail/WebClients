@@ -8,6 +8,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 
 import { MenuDropdown } from '../../components/Composer/components/MenuDropdown';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import type { IconName } from '../../components/LumoIcon/LumoIcon';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 
 const SortMenuCheckmark = ({ visible }: { visible: boolean }) => {
@@ -62,6 +63,7 @@ interface ChatHistorySortMenuProps {
     buttonVariant?: 'icon' | 'labeled';
     dropdownClassName?: string;
     stopPropagation?: boolean;
+    leadingIcon?: IconName;
 }
 
 export const ChatHistorySortMenu = ({
@@ -73,6 +75,7 @@ export const ChatHistorySortMenu = ({
     buttonVariant = 'labeled',
     dropdownClassName,
     stopPropagation = false,
+    leadingIcon,
 }: ChatHistorySortMenuProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const anchorRef = useRef<HTMLButtonElement>(null);
@@ -101,8 +104,8 @@ export const ChatHistorySortMenu = ({
             <Button
                 ref={anchorRef}
                 icon={buttonVariant === 'icon'}
-                shape="ghost"
-                size="small"
+                shape="solid"
+                size="medium"
                 className={buttonClassName}
                 aria-label={buttonLabel}
                 title={buttonLabel}
@@ -111,6 +114,7 @@ export const ChatHistorySortMenu = ({
             >
                 {buttonVariant === 'labeled' ? (
                     <span className="flex items-center gap-1 text-semibold">
+                        {leadingIcon ? <LumoIcon name={leadingIcon} size={14} className="shrink-0" /> : null}
                         <span>{buttonLabel}</span>
                         <LumoIcon name="ChevronDown" width={12} height={12} className="color-weak shrink-0" />
                     </span>
