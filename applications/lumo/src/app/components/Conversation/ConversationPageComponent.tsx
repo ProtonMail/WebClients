@@ -74,6 +74,8 @@ const ConversationPageComponentInner = () => {
     const reduxLoadedFromIdb = useLumoSelector((state) => state.initialization.reduxLoadedFromIdb);
     const remoteWasSynced = conversations !== EMPTY_CONVERSATION_MAP && reduxLoadedFromIdb;
     const isGenerating = conversation?.status && conversation.status === ConversationStatus.GENERATING;
+    const pulledConversationIdRef = useRef<ConversationId | undefined>(undefined);
+    const pulledAfterGenerationRef = useRef(false);
 
     // FIXME: `isLoading` is always false because `messageMap` is never falsy (it can be `{}`, but that's not falsy)
     const isLoading = !isGuest && (!remoteWasSynced || (curConversationId && !messageMap));
@@ -121,6 +123,11 @@ const ConversationPageComponentInner = () => {
         return () => setConversationId(undefined);
     }, [curConversationId, dispatch]);
 
+    useEffect(() => {
+        pulledConversationIdRef.current = undefined;
+        pulledAfterGenerationRef.current = false;
+    }, [curConversationId]);
+
     // When browsing to a new conversation, we do two things:
     //   1. Check if this id really exists, if not navigate away asap
     //     - Otherwise, the user may post messages to a nonexistent conversation id
@@ -148,7 +155,7 @@ const ConversationPageComponentInner = () => {
                 }
 
                 console.log('new conversation effect: local existence check');
-                const conversationDoesNotExistLocally = remoteWasSynced && conversation === undefined;
+                const conversationDoesNotExistLocally = conversation === undefined;
                 if (conversationDoesNotExistLocally) {
                     console.log('conversation does not exist locally, going home');
                     navigate(`/`);
@@ -158,7 +165,23 @@ const ConversationPageComponentInner = () => {
                 // Don't refresh the conversation if the message is being generated. This would cause
                 // the message being generated (more up-to-date locally) to be replaced by an older remote copy.
                 console.log('new conversation effect: isGenerating check');
-                if (isGenerating) return;
+                if (isGenerating) {
+                    pulledAfterGenerationRef.current = false;
+                    return;
+                }
+
+                const isNewConversation = pulledConversationIdRef.current !== curConversationId;
+                const shouldPullAfterGeneration = !pulledAfterGenerationRef.current;
+
+                if (!isNewConversation && !shouldPullAfterGeneration) {
+                    return;
+                }
+
+                if (isNewConversation) {
+                    pulledConversationIdRef.current = curConversationId;
+                }
+
+                pulledAfterGenerationRef.current = true;
 
                 // Initiate bg sync, fetch messages.
                 // If successful, this will change the redux state and the component will be reloaded
