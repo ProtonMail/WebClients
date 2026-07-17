@@ -357,7 +357,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     }
 
     const hasSsoDomain = ssoDomains.length > 0;
-    const hasSsoConfig = samlSSO.configs.length > 0;
+    const hasSsoConfig = samlSSO.configs.some((config) => config.Enabled);
     const domain: Domain | undefined = ssoDomains.find(({ ID }) => ID === preferredDomainID) || ssoDomains[0];
     // Domain addons are not currently supported on vpn or pass b2b plans, so ignoring any addon upsell here.
     const canAddSsoDomain = customDomains.length !== organization.MaxDomains;
