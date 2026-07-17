@@ -1,0 +1,60 @@
+{
+    "name": "@proton/lumo-ui",
+    "description": "Product-agnostic Lumo design library — chat UI elements + shared confirm-card presentation",
+    "license": "GPL-3.0",
+    "author": "",
+    "sideEffects": [
+        "*.scss"
+    ],
+    "type": "module",
+    "exports": {
+        ".": "./index.ts",
+        "./LumoLogo": "./LumoLogo.tsx",
+        "./LumoThinking": "./LumoThinking.tsx",
+        "./LoadingBar": "./LoadingBar.tsx",
+        "./PromptInput": "./PromptInput.tsx",
+        "./Chip": "./Chip.tsx",
+        "./ServerToolChip": "./ServerToolChip.tsx",
+        "./ConfirmCardShell": "./ConfirmCardShell.tsx",
+        "./markdown": "./markdown.ts",
+        "./confirmCards/MoveItemsCard": "./confirmCards/MoveItemsCard.tsx",
+        "./confirmCards/DeleteItemsCard": "./confirmCards/DeleteItemsCard.tsx",
+        "./confirmCards/DiffCard": "./confirmCards/DiffCard.tsx",
+        "./primitives/Disclosure": "./primitives/Disclosure.tsx",
+        "./primitives/ItemCheckList": "./primitives/ItemCheckList.tsx",
+        "./lumo-ui.scss": "./lumo-ui.scss"
+    },
+    "main": "./index.ts",
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint --quiet",
+        "test": "jest",
+        "test:ci": "jest --coverage --runInBand --ci",
+        "test:watch": "jest --watch"
+    },
+    "dependencies": {
+        "@proton/atoms": "workspace:^",
+        "@proton/icons": "workspace:^",
+        "@proton/styles": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "markdown-it": "^14.3.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "ttag": "^1.8.12"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-env": "workspace:^",
+        "@proton/types": "workspace:^",
+        "@swc/jest": "^0.2.39",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^15.0.7",
+        "@types/jest": "^30.0.0",
+        "@types/markdown-it": "^13.0.9",
+        "@types/react": "^18.3.31",
+        "@types/react-dom": "^18.3.7",
+        "eslint": "^9.39.5",
+        "jest": "^30.4.2",
+        "typescript": "^6.0.2"
+    }
+}
