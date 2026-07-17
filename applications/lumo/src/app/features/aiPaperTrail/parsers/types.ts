@@ -1,9 +1,15 @@
 export type PaperTrailSource = 'chatgpt' | 'claude';
 
+export interface NormalizedUserPrompt {
+    text: string;
+    /** Epoch seconds, when available. */
+    createdAt?: number;
+}
+
 export interface NormalizedConversation {
     title: string;
     /** User-authored prompts only, in chronological order. Assistant replies are discarded. */
-    userPrompts: string[];
+    userPrompts: NormalizedUserPrompt[];
     /** Epoch seconds, when available. */
     createdAt?: number;
 }

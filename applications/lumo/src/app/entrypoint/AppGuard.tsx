@@ -6,23 +6,12 @@ import TextLoader from '@proton/components/components/loader/TextLoader';
 
 import { LUMO_APP_NAME } from '../constants';
 
-export const LUMO_ROUTES = {
-    PRIVATE_ROUTES_PREFIX: '/u/',
-    LOGIN_ROUTE: '/login',
-    GUEST: '/guest',
-    // Minimal, single-agent chatbot surface. Runs in guest mode so it loads almost instantly.
-    AGENT: '/agent',
-};
+import { LUMO_ROUTES, isPublicPathname } from './lumoRoutes';
+
+export { LUMO_ROUTES } from './lumoRoutes';
 
 const determineRouteType = (pathname: string): 'private' | 'public' => {
-    if (
-        pathname === LUMO_ROUTES.GUEST ||
-        pathname === LUMO_ROUTES.AGENT ||
-        pathname.startsWith(`${LUMO_ROUTES.AGENT}/`)
-    ) {
-        return 'public';
-    }
-    return 'private';
+    return isPublicPathname(pathname) ? 'public' : 'private';
 };
 
 const AuthApp = lazy(

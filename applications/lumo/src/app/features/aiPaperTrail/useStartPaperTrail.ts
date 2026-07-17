@@ -9,6 +9,7 @@ import { useLumoDispatch } from '../../redux/hooks';
 import { newAttachmentId } from '../../redux/slices/core/attachments';
 import { setGhostChatMode } from '../../redux/slices/ghostChat';
 import type { Attachment, ConversationId } from '../../types';
+import { addRecentPaperTrailFile } from '../../util/paperTrailRecentStorage';
 import { buildPaperTrailContext } from './buildPaperTrailContext';
 import { type NormalizedExport, parseExportFile } from './parsers';
 import { buildPaperTrailPrompt, getExportFilename } from './prompt';
@@ -64,6 +65,7 @@ export const useStartPaperTrail = (): StartResult => {
             }
 
             setStatus('generating');
+            addRecentPaperTrailFile(file.name);
 
             const context = buildPaperTrailContext(exportData);
 
@@ -101,6 +103,9 @@ export const useStartPaperTrail = (): StartResult => {
                         uiContext: {
                             enableExternalTools: false,
                             enableImageTools: false,
+                            enableReasoning: false,
+                            modelTier: 'lumo-lite',
+                            generateTitle: false,
                             enableSmoothing: ffSmoothRendering,
                             isGhostMode: true,
                         },
