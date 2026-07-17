@@ -780,6 +780,36 @@
       ],
       "Your password manager is not here? Request it.": [
         "Pengelola kata sandi Anda belum tersedia? Minta sekarang."
+      ],
+      "Copy instructions": [
+        "Salin instruksi"
+      ],
+      "Copy token": [
+        "Salin token"
+      ],
+      "Create token": [
+        "Buat token"
+      ],
+      "Do not show this again": [
+        "Jangan tampilkan ini lagi"
+      ],
+      "Don't show this again": [
+        "Jangan tampilkan ini lagi"
+      ],
+      "Manage vault access": [
+        "Kelola akses brankas"
+      ],
+      "New token": [
+        "Token baru"
+      ],
+      "Regex invalid": [
+        "Regex tidak valid"
+      ],
+      "Regex unsafe": [
+        "Regex tidak aman"
+      ],
+      "View agent activity": [
+        "Lihat aktivitas agen"
       ]
     },
     "App menu": {
@@ -1342,6 +1372,75 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kode PIN Anda telah dihapus oleh klien ${ PASS_APP_NAME } lainnya"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Pemeriksaan pembukaan kunci desktop sedang berlangsung."
+      ],
+      "Biometric authentication failed.": [
+        "Autentikasi biometrik gagal."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Kredensial kunci biometrik tidak cocok."
+      ],
+      "Biometric lock credentials not found.": [
+        "Kredensial kunci biometrik tidak ditemukan."
+      ],
+      "Biometric lock is not configured.": [
+        "Kunci biometrik tidak dikonfigurasi."
+      ],
+      "Biometric lock setup failed.": [
+        "Pengaturan kunci biometrik gagal."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Tidak dapat memuat instruksi pengaturan agen. Silakan salin token di bawah ini, token tidak akan ditampilkan lagi."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Komunikasi terenkripsi dengan aplikasi desktop ${ PASS_APP_NAME } gagal."
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Masa kedaluwarsa harus antara 1 jam dan 1 tahun"
+      ],
+      "Failed to create access token": [
+        "Gagal membuat token akses"
+      ],
+      "Failed to delete access token": [
+        "Gagal menghapus token akses"
+      ],
+      "Failed to load access tokens": [
+        "Gagal memuat token akses"
+      ],
+      "Failed to load token actions": [
+        "Gagal memuat tindakan token"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Gagal menjalankan agen SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Gagal menghentikan agen SSH: ${ errorMessage }"
+      ],
+      "Failed to update vault access": [
+        "Gagal memperbarui akses brankas"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Nama harus berupa 191 karakter atau kurang"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Aplikasi desktop ${ PASS_APP_NAME } tidak merespons tepat waktu."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplikasi desktop ${ PASS_APP_NAME } terkunci, aplikasi harus dibuka kuncinya."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Aplikasi desktop ${ PASS_APP_NAME } belum terinstal."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Aplikasi desktop ${ PASS_APP_NAME } tidak merespons, apakah aplikasi berjalan?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplikasi desktop ${ PASS_APP_NAME } masuk dengan akun yang berbeda."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Aplikasi desktop ${ PASS_APP_NAME } harus masuk log."
       ]
     },
     "Error message": {
@@ -2567,6 +2666,189 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasi Anda mewajibkan Anda mengamankan akses ke ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } ingin membagikan suatu item dengan grup yang dikelola."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } ingin membagikan item dengan grup ${ name }."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } akan menggunakan kunci SSH yang disimpan di dalam brankas."
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } dipilih"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Token akses \"${ action.token.Name }\" sudah kedaluwarsa. Jika dihapus, token ini tidak akan ditampilkan lagi."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Token akses \"${ action.token.Name }\" akan segera berhenti berfungsi. Tindakan ini tidak dapat diurungkan."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Token akses, yang digunakan bersama dengan ${ passCliLink }, memungkinkan otomatisasi CI/CD atau memberikan agen AI akses terarah yang diperlukan untuk menjalankan tugasnya."
+      ],
+      "An item previously shared with you was removed.": [
+        "Item yang sebelumnya dibagikan telah dihapus."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Antara 60 (1 jam) dan 525600 (1 tahun)"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Bawa kata sandi yang sudah ada ke ${ PASS_APP_NAME }."
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Salin markdown di bawah ini dan kirimkan ke agen AI. Ini satu-satunya saat token akan ditampilkan."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Salin token ini sekarang. Demi alasan keamanan, token tidak akan ditampilkan lagi."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Buat token untuk mengintegrasikan ${ PASS_APP_NAME } dengan skrip dan alat."
+      ],
+      "Created ${ createdDate }": [
+        "Dibuat ${ createdDate }"
+      ],
+      "Created item": [
+        "Item yang dibuat"
+      ],
+      "Deleted item": [
+        "Item dihapus"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Unduh pass-cli dari ${ passCliLink }."
+      ],
+      "Enabling desktop auto-lock": [
+        "Mengaktifkan kunci otomatis desktop"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Setiap tindakan yang telah dilakukan token agen ini, yang terbaru ditampilkan pertama."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Kedaluwarsa pada ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Kedaluwarsa pada ${ formattedDate }"
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Temukan \"Agen Autentikasi OpenSSH\", klik kanan Properti."
+      ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Dapatkan pengalaman ${ PASS_APP_NAME } yang maksimal dengan membuat brankas untuk setiap tim atau proyek."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Jika tidak berencana menggunakan agen SSH di akun berbayar lain, harap ingat untuk menonaktifkan pengaturan ini sebelum beralih ke akun tersebut."
+      ],
+      "invites the group ${ name } to access items in": [
+        "mengundang grup ${ name } untuk mengakses item di"
+      ],
+      "Log out of any existing session:": [
+        "Keluar dari sesi yang ada:"
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Pastikan untuk menjaga ${ PASS_APP_NAME } tetap berjalan (dapat diperkecil) agar agen SSH tetap aktif. Kunci SSH dengan frasa sandi saat ini belum didukung."
+      ],
+      "Moved item to trash": [
+        "Item dipindahkan ke sampah"
+      ],
+      "No activity recorded yet.": [
+        "Belum ada aktivitas yang direkam."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Tidak ada kunci SSH yang ditemukan di ${ PASS_SHORT_APP_NAME }. Buat item kunci SSH untuk digunakan dengan agen."
+      ],
+      "No vaults available.": [
+        "Tidak ada brankas yang tersedia."
+      ],
+      "None selected": [
+        "Tidak ada yang dipilih"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Hanya token yang kedaluwarsa dalam 30 hari terakhir yang ditampilkan. Token yang lebih lama otomatis dihapus."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Buka \"Layanan\" (bisa menggunakan bilah pencarian Windows atau tekan Win+R dan masukkan services.msc)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Tempel perintah berikut di terminal:"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Dilindungi oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Diurutkan berdasarkan kolom (judul pertama, lalu nama pengguna atau email, situs web, catatan) dan ketepatan pencocokan (persis, diawali dengan, berisi)."
+      ],
+      "Read item": [
+        "Baca item"
+      ],
+      "Restored item from trash": [
+        "Item dipulihkan dari sampah"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Pilih brankas yang dapat dibaca oleh \"${ token.Name }\"."
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Atur \"Jenis startup\" ke Dinonaktifkan, klik OK."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Uji token dengan masuk dan mencantumkan daftar brankas:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agen akan diharuskan memberikan alasan untuk setiap tindakan yang dilakukannya, dan setiap tindakan akan dicatat dalam log audit yang dapat ditinjau. Setelah pembuatan token, akan ada instruksi untuk disalin-tempel ke agen AI."
+      ],
+      "The group is invited to a vault.": [
+        "Grup diundang ke brankas."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Kemudian dapat membuka ${ url } untuk menyalin instruksi untuk dikirimkan ke agen AI."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Fitur ini mengharuskan aplikasi desktop ${ PASS_APP_NAME } terinstal dan berjalan selama pengaturan."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Token ini mendapatkan akses baca saja ke brankas yang dipilih. Token ini dapat membaca item, tetapi tidak dapat mengedit, membagikan brankas, atau mengundang orang lain. Setelan ini dapat diubah nanti."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Tip: tambahkan ke file .bashrc atau .zshrc agar dapat berjalan otomatis saat membuka terminal."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Untuk menyiapkan buka kunci biometrik, ${ PASS_APP_NAME } memerlukan izin peramban baru. Setelah disetujui, ekstensi akan dimuat ulang. Silakan buka kembali halaman ini setelahnya."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Untuk menggunakan agen SSH ${ PASS_APP_NAME } di Windows, layanan OpenSSH harus dinonaktifkan."
+      ],
+      "Updated item": [
+        "Item yang diperbarui"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Tingkatkan ke ${ PASS_APP_NAME } Plus untuk membuat token akses dan menggunakan ${ PASS_APP_NAME } secara terprogram."
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Brankas \"${ share.content.name }\" telah dihapus."
+      ],
+      "Vault access granted": [
+        "Akses brankas diberikan"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Kini dapat menggunakan kata sandi cadangan untuk mengakses ${ PASS_SHORT_APP_NAME } secara luring"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Kini dapat menggunakan kata sandi tambahan untuk mengakses ${ PASS_SHORT_APP_NAME } secara luring"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Kini dapat menggunakan kata sandi kedua untuk mengakses ${ PASS_SHORT_APP_NAME } secara luring"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Mungkin perlu memberikan izin aksesibilitas kepada ${ PASS_APP_NAME }."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Tidak memiliki akses lagi ke beberapa brankas atau item karena akses grup ${ groupName } telah dihapus."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Kini memiliki akses ke \"Item ${ itemName }\" karena grup ${ groupName } telah diberikan akses."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Kini memiliki akses ke \"Brankas ${ vaultName }\" karena grup ${ groupName } telah diberikan akses."
       ]
     },
     "Keyboard key": {
@@ -3792,6 +4074,69 @@
       ],
       "ZIP or Postal code": [
         "ZIP atau kode pos"
+      ],
+      "1 day": [
+        "1 hari"
+      ],
+      "1 month": [
+        "1 bulan"
+      ],
+      "1 week": [
+        "1 minggu"
+      ],
+      "1 year": [
+        "1 tahun"
+      ],
+      "Access tokens": [
+        "Token akses"
+      ],
+      "Basic": [
+        "Dasar"
+      ],
+      "Check": [
+        "Periksa"
+      ],
+      "Custom": [
+        "Khusus"
+      ],
+      "Custom expiration (minutes)": [
+        "Masa kedaluwarsa khusus (menit)"
+      ],
+      "Exact host matching": [
+        "Pencocokan host persis"
+      ],
+      "Exact URL matching": [
+        "Pencocokan URL persis"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Token kedaluwarsa (${ expired.length })"
+      ],
+      "Never fill on this exact URL": [
+        "Jangan pernah isi pada URL persis ini"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domain induk dan subdomain (bawaan)"
+      ],
+      "Regular expression": [
+        "Ekspresi reguler"
+      ],
+      "Relevant": [
+        "Relevan"
+      ],
+      "Starts with": [
+        "Mulai dengan"
+      ],
+      "URL wildcard pattern": [
+        "Pola wildcard URL"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Gunakan ${ PASS_APP_NAME } sebagai agen SSH"
+      ],
+      "Use for AI agent": [
+        "Gunakan untuk agen AI"
+      ],
+      "Vault access": [
+        "Akses brankas"
       ]
     },
     "Link": {
@@ -3838,6 +4183,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Anda memilih ${ semiboldText } dalam brankas ini."
+      ],
+      "'Starts with' matching rule": [
+        "Aturan pencocokan 'Mulai dengan'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Aturan pencocokan domain (sub) persis"
+      ],
+      "Exact URL matching rule": [
+        "Aturan pencocokan URL persis"
+      ],
+      "Never fill with this exact URL": [
+        "Jangan pernah isi dengan URL persis ini"
+      ],
+      "Regular expression rule": [
+        "Aturan ekspresi reguler"
+      ],
+      "Wildcard pattern matching rule": [
+        "Aturan pencocokan pola wildcard"
       ]
     },
     "new_plans: feature": {
@@ -3854,6 +4217,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } telah diaktifkan"
+      ],
+      "Access token deleted": [
+        "Token akses dihapus"
       ]
     },
     "Option": {
@@ -3987,6 +4353,12 @@
       ],
       "You can attach files to items for a better organization": [
         "Anda dapat melampirkan file ke item untuk pengelolaan yang lebih baik"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Fitur ini tidak didukung dalam paket Anda. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Fitur ini tidak didukung dalam paket Anda. Hubungi admin untuk mendapatkan akses."
       ]
     },
     "PassOnboardingOffer": {
@@ -4116,6 +4488,9 @@
       ],
       "Used on ${ url }": [
         "Digunakan pada ${ url }"
+      ],
+      "e.g. 60": [
+        "mis. 60"
       ]
     },
     "Security Center - Info": {
@@ -4259,6 +4634,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Email verifikasi dikirim. Silakan periksa kotak masuk Anda untuk memverifikasi kotak surat Anda"
+      ],
+      "SSH agent successfully started": [
+        "Agen SSH berhasil dijalankan"
+      ],
+      "SSH agent successfully stopped": [
+        "Agen SSH berhasil dihentikan"
       ]
     },
     "Theme": {
@@ -4749,6 +5130,57 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Anda akan menghapus ${ aliasCount } alias secara permanen."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Token akses memerlukan ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivitas untuk \"${ token.Name }\""
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Sesuaikan perilaku isi otomatis untuk mengubah lokasi saran masuk diberikan."
+      ],
+      "Agent setup instructions": [
+        "Instruksi pengaturan agen"
+      ],
+      "Browser permission required": [
+        "Izin peramban diperlukan"
+      ],
+      "Create new access token": [
+        "Buat token akses baru"
+      ],
+      "Delete access token?": [
+        "Hapus token akses?"
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
+      "Manage vault access": [
+        "Kelola akses brankas"
+      ],
+      "No access tokens yet": [
+        "Belum ada token akses"
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Tangkapan layar layanan OpenSSH di Windows"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Pengaturan Agen SSH ${ PASS_APP_NAME }"
+      ],
+      "SSH Agent": [
+        "Agen SSH"
+      ],
+      "Test a URL against this rule": [
+        "Uji URL terhadap aturan ini"
+      ],
+      "URL matching": [
+        "Pencocokan URL"
+      ],
+      "Vault shared with a group you administer": [
+        "Brankas dibagikan dengan grup yang dikelola"
+      ],
+      "Your new access token": [
+        "Token akses baru Anda"
       ]
     },
     "Title_cloned_item": {
@@ -5091,6 +5523,71 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Langganan Anda tidak mengizinkan Anda untuk membuat beberapa brankas. Semua item akan diimpor ke brankas pertama Anda. Untuk mengimpor ke beberapa brankas, tingkatkan langganan Anda."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } memberikan kendali yang kuat, tetapi satu kesalahan saja dapat menyebabkan isi otomatis mencocokkan dan mengisi data pada situs web penipuan atau phishing."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Agen SSH memerlukan penggunaan kunci SSH, yang tidak tersedia dalam paket Anda."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Item ini tidak dapat disarankan untuk isi otomatis karena \"${ neverModeDescriptionStrong }\". Tambahkan URL lain jika ingin item ini diisi otomatis."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivitas"
+      ],
+      "Activity details could not be loaded.": [
+        "Rincian aktivitas tidak dapat dimuat."
+      ],
+      "Folder": [
+        "Folder"
+      ],
+      "Item": [
+        "Item"
+      ],
+      "Reason": [
+        "Alasan"
+      ],
+      "Vault": [
+        "Brankas"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Masukkan URL untuk memeriksa apakah aturan saat ini cocok dengan URL tersebut"
+      ],
+      "The rule is matching this URL": [
+        "Aturan cocok dengan URL ini"
+      ],
+      "The rule is NOT matching this URL": [
+        "Aturan TIDAK cocok dengan URL ini"
+      ],
+      "This URL will be blocked from autofill": [
+        "URL ini akan diblokir dari isi otomatis"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "URL ini TIDAK akan diblokir dari isi otomatis"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Aktif"
+      ],
+      "Agent": [
+        "Agen"
+      ],
+      "Expired": [
+        "Kedaluwarsa"
+      ],
+      "Expiring soon": [
+        "Segera kedaluwarsa"
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Dapatkan ${ planName }"
       ]
     }
   }

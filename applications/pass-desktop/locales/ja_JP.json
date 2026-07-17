@@ -780,6 +780,36 @@
       ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
+      ],
+      "Copy instructions": [
+        "手順をコピー"
+      ],
+      "Copy token": [
+        "トークンをコピー"
+      ],
+      "Create token": [
+        "トークンを作成"
+      ],
+      "Do not show this again": [
+        "次回から表示しない"
+      ],
+      "Don't show this again": [
+        "次回から表示しない"
+      ],
+      "Manage vault access": [
+        "保管庫のアクセス権を管理"
+      ],
+      "New token": [
+        "新規トークン"
+      ],
+      "Regex invalid": [
+        "無効なRegex"
+      ],
+      "Regex unsafe": [
+        "Regexは安全ではありません"
+      ],
+      "View agent activity": [
+        "エージェントのアクティビティを表示"
       ]
     },
     "App menu": {
@@ -1342,6 +1372,75 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "あなたのPIN コードは他のクライアント${ PASS_APP_NAME }にって削除されました"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "デスクトップのロック解除チェックはすでに実行中です。"
+      ],
+      "Biometric authentication failed.": [
+        "生体認証に失敗しました。"
+      ],
+      "Biometric lock credentials do not match.": [
+        "生体認証ロックの認証情報が一致しません。"
+      ],
+      "Biometric lock credentials not found.": [
+        "生体認証ロックの認証情報が見つかりません。"
+      ],
+      "Biometric lock is not configured.": [
+        "生体認証ロックが設定されていません。"
+      ],
+      "Biometric lock setup failed.": [
+        "生体認証ロックのセットアップに失敗しました。"
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "エージェントのセットアップ手順を読み込めませんでした。以下のトークンをコピーしてください。このトークンは再表示されません。"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "${ PASS_APP_NAME }デスクトップアプリとの暗号化通信に失敗しました。"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "有効期限は1時間から1年の間である必要があります"
+      ],
+      "Failed to create access token": [
+        "アクセストークンの作成に失敗しました"
+      ],
+      "Failed to delete access token": [
+        "アクセストークンの削除に失敗しました"
+      ],
+      "Failed to load access tokens": [
+        "アクセストークンの読み込みに失敗しました"
+      ],
+      "Failed to load token actions": [
+        "トークンアクションの読み込みに失敗しました"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSHエージェントの起動に失敗しました：${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSHエージェントの停止に失敗しました：${ errorMessage }"
+      ],
+      "Failed to update vault access": [
+        "保管庫のアクセス権の更新に失敗しました"
+      ],
+      "Name must be 191 characters or fewer": [
+        "名前は191文字以下にする必要があります"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME }デスクトップアプリが制限時間内に応答しませんでした。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME }デスクトップアプリはロックされています。ロックを解除する必要があります。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME }デスクトップアプリがインストールされていません。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME }デスクトップアプリが応答していません。起動していますか？"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME }デスクトップアプリは、別のアカウントでサインインされています。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME }デスクトップアプリにログインする必要があります。"
       ]
     },
     "Error message": {
@@ -2573,6 +2672,183 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
+      ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail }様がお客様の管理するグループとアイテムを共有することを希望しています。"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } が、グループ「${ name }」とアイテムを共有したいと考えています。"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME }は、お客様の保管庫に保存されているSSH鍵を使用します。"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size }個を選択済み"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "アクセストークン「${ action.token.Name }」は直ちに使用できなくなります。この操作は取り消せません。"
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "アクセストークンは${ passCliLink }と併用することで、CI/CDを自動化したり、AIエージェントに業務の実行に必要なスコープ付きアクセス権を付与したりできます。"
+      ],
+      "An item previously shared with you was removed.": [
+        "以前お客様と共有されたアイテムが削除されました。"
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "60（1時間）から525600（1年）の間"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "既存のパスワードを${ PASS_APP_NAME }にインポートします。"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "以下のMarkdownをコピーして、AIエージェントに送信してください。トークンが表示されるのはこの時のみです。"
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "今すぐこのトークンをコピーしてください。セキュリティ上の理由から、再表示されません。"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "トークンを作成して、${ PASS_APP_NAME }をお使いのスクリプトやツールと統合します。"
+      ],
+      "Created ${ createdDate }": [
+        "作成日：${ createdDate }"
+      ],
+      "Created item": [
+        "作成されたアイテム"
+      ],
+      "Deleted item": [
+        "削除されたアイテム"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "${ passCliLink }からpass-cliをダウンロードします。"
+      ],
+      "Enabling desktop auto-lock": [
+        "デスクトップの自動ロックを有効にしています"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "このエージェントトークンが実行したすべてのアクション。最新のものが最初に表示されます。"
+      ],
+      "Expired on ${ formattedDate }": [
+        "${ formattedDate }に有効期限切れになりました"
+      ],
+      "Expires on ${ formattedDate }": [
+        "${ formattedDate }に有効期限切れ"
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "「OpenSSH Authentication Agent」を見つけ、右クリックして「プロパティ」を開きます。"
+      ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "チームやプロジェクトごとに保管庫を作成し、${ PASS_APP_NAME }を最大限に活用しましょう。"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "別の有料アカウントでSSHエージェントを使用する予定がない場合は、そのアカウントに切り替える前にこの設定を無効化にすることを忘れないでください。"
+      ],
+      "invites the group ${ name } to access items in": [
+        "グループ「${ name }」を招待して、以下にあるアイテムへのアクセスを許可します"
+      ],
+      "Log out of any existing session:": [
+        "既存のセッションからログアウトする："
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "SSHエージェントをアクティブに保つために、${ PASS_APP_NAME }を起動したままにしてください（最小化可能）。パスフレーズ付きのSSH鍵は現在サポートされていません。"
+      ],
+      "Moved item to trash": [
+        "アイテムをごみ箱に移動しました"
+      ],
+      "No activity recorded yet.": [
+        "アクティビティはまだ記録されていません。"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "${ PASS_SHORT_APP_NAME }内にSSH鍵が見つかりませんでした。エージェントで使用するSSH鍵アイテムを作成してください。"
+      ],
+      "No vaults available.": [
+        "利用可能な保管庫がありません。"
+      ],
+      "None selected": [
+        "選択なし"
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "「サービス」を開きます（Windowsの検索バーを使用するか、Win+Rキーを押してservices.mscと入力します）。"
+      ],
+      "Paste the following command in your terminal:": [
+        "ターミナルに次のコマンドを貼り付けます："
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "高度なアカウント保護プログラムである ${ PROTON_SENTINEL_LINK } によって保護されています"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "フィールド（最初にタイトル、次にユーザー名またはメール、ウェブサイト、メモ）および一致精度（完全一致、前方一致、部分一致）順にランク付けされます。"
+      ],
+      "Read item": [
+        "アイテムの読み取り"
+      ],
+      "Restored item from trash": [
+        "ごみ箱からアイテムを復元しました"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "「${ token.Name }」が読み取り可能な保管庫を選択してください。"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "「スタートアップの種類」を「無効」に設定し、「OK」をクリックします。"
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "ログインして保管庫を一覧表示し、トークンをテストします："
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "エージェントは実行するすべてのアクションに対して理由を提供する必要があり、各アクションは確認可能な監査ログに記録されます。トークンの作成後、AIエージェントにコピー＆ペーストするための手順が表示されます。"
+      ],
+      "The group is invited to a vault.": [
+        "グループが保管庫に招待されました。"
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "その後、${ url }にアクセスして手順をコピーし、AIエージェントに送信できます。"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "この機能を使用するには、セットアップ中に${ PASS_APP_NAME }デスクトップアプリがインストールされ、起動している必要があります。"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "このトークンは、選択した保管庫に対する読み取り専用のアクセス権を取得します。アイテムの読み取りはできますが、編集、保管庫の共有、他のユーザーの招待はできません。これは後で変更できます。"
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "ヒント：.bashrcまたは.zshrcファイルに追加すると、ターミナルを開いたときに自動的に実行されます。"
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "生体認証ロックを設定するには、${ PASS_APP_NAME }に新しいブラウザの権限が必要です。許可すると拡張機能がリロードされます。その後、このページを再度開いてください。"
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Windowsで${ PASS_APP_NAME }のSSHエージェントを使用するには、OpenSSHサービスを無効化する必要があります。"
+      ],
+      "Updated item": [
+        "更新されたアイテム"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "${ PASS_APP_NAME } Plusにアップグレードしてアクセストークンを作成し、${ PASS_APP_NAME }をプログラムでご利用ください。"
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "保管庫「${ share.content.name }」が削除されました。"
+      ],
+      "Vault access granted": [
+        "保管庫へのアクセスが許可されました"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "バックアップパスワードを使用して、${ PASS_SHORT_APP_NAME }にオフラインでアクセスできるようになりました"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "追加のパスワードを使用して、${ PASS_SHORT_APP_NAME }にオフラインでアクセスできるようになりました"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "セカンドパスワードを使用して、${ PASS_SHORT_APP_NAME }にオフラインでアクセスできるようになりました"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }にアクセシビリティ権限を付与する必要がある場合があります。"
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "グループ「${ groupName }」のアクセス権が削除されたため、一部の保管庫またはアイテムへのアクセス権がなくなりました。"
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "グループ「${ groupName }」にアクセス権が付与されたため、アイテム「${ itemName }」にアクセスできるようになりました。"
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "グループ「${ groupName }」にアクセス権が付与されたため、保管庫「${ vaultName }」にアクセスできるようになりました。"
       ]
     },
     "Keyboard key": {
@@ -3801,6 +4077,66 @@
       ],
       "ZIP or Postal code": [
         "郵便番号"
+      ],
+      "1 day": [
+        "1日"
+      ],
+      "1 month": [
+        "1ヶ月"
+      ],
+      "1 week": [
+        "1週間"
+      ],
+      "1 year": [
+        "1年"
+      ],
+      "Access tokens": [
+        "アクセストークン"
+      ],
+      "Basic": [
+        "基本"
+      ],
+      "Check": [
+        "チェック"
+      ],
+      "Custom": [
+        "カスタム"
+      ],
+      "Custom expiration (minutes)": [
+        "カスタム有効期限（分）"
+      ],
+      "Exact host matching": [
+        "正確なホスト一致"
+      ],
+      "Exact URL matching": [
+        "正確なURL一致"
+      ],
+      "Never fill on this exact URL": [
+        "この正確なURLには絶対に入力しない"
+      ],
+      "Parent domain and subdomains (default)": [
+        "親ドメインとサブドメイン（デフォルト）"
+      ],
+      "Regular expression": [
+        "正規表現"
+      ],
+      "Relevant": [
+        "関連度"
+      ],
+      "Starts with": [
+        "前方一致"
+      ],
+      "URL wildcard pattern": [
+        "URLワイルドカードパターン"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "${ PASS_APP_NAME }をSSHエージェントとして使用"
+      ],
+      "Use for AI agent": [
+        "AIエージェントに使用"
+      ],
+      "Vault access": [
+        "保管庫へのアクセス"
       ]
     },
     "Link": {
@@ -3847,6 +4183,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "この保管庫で${ semiboldText }を選択しました。"
+      ],
+      "'Starts with' matching rule": [
+        "「前方一致」の一致ルール"
+      ],
+      "Exact (sub) domain matching rule": [
+        "正確な（サブ）ドメイン一致ルール"
+      ],
+      "Exact URL matching rule": [
+        "正確なURL一致ルール"
+      ],
+      "Never fill with this exact URL": [
+        "この正確なURLには絶対に入力しない"
+      ],
+      "Regular expression rule": [
+        "正規表現ルール"
+      ],
+      "Wildcard pattern matching rule": [
+        "ワイルドカードパターン一致ルール"
       ]
     },
     "new_plans: feature": {
@@ -3863,6 +4217,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } が有効になりました"
+      ],
+      "Access token deleted": [
+        "アクセストークンが削除されました"
       ]
     },
     "Option": {
@@ -3996,6 +4353,12 @@
       ],
       "You can attach files to items for a better organization": [
         "アイテムにファイルを添付して整理できます"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "この機能はお客様のプランではサポートされていません。 ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "この機能はお客様のプランではサポートされていません。アクセス権を取得するには、管理者にお問い合わせください。"
       ]
     },
     "PassOnboardingOffer": {
@@ -4125,6 +4488,9 @@
       ],
       "Used on ${ url }": [
         "${ url } で使用されます"
+      ],
+      "e.g. 60": [
+        "例：60"
       ]
     },
     "Security Center - Info": {
@@ -4268,6 +4634,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "認証メールが送信されました。メールボックスを認証するには受信トレイを確認してください"
+      ],
+      "SSH agent successfully started": [
+        "SSHエージェントが正常に起動しました"
+      ],
+      "SSH agent successfully stopped": [
+        "SSHエージェントが正常に停止しました"
       ]
     },
     "Theme": {
@@ -4758,6 +5130,57 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount }個のエイリアスを完全に削除しようとしています。"
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "アクセストークンには${ PASS_APP_NAME } Plusが必要です"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "「${ token.Name }」のアクティビティ"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "自動入力の動作を調整して、ログイン情報の提案場所を変更します。"
+      ],
+      "Agent setup instructions": [
+        "エージェントのセットアップ手順"
+      ],
+      "Browser permission required": [
+        "ブラウザの権限が必要です"
+      ],
+      "Create new access token": [
+        "新規アクセストークンの作成"
+      ],
+      "Delete access token?": [
+        "アクセストークンを削除しますか？"
+      ],
+      "Learn more": [
+        "より詳しく"
+      ],
+      "Manage vault access": [
+        "保管庫のアクセス権を管理"
+      ],
+      "No access tokens yet": [
+        "アクセストークンがまだありません"
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Windows上のOpenSSHサービスのスクリーンショット"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "${ PASS_APP_NAME } SSHエージェントのセットアップ"
+      ],
+      "SSH Agent": [
+        "SSHエージェント"
+      ],
+      "Test a URL against this rule": [
+        "このルールに対してURLをテストする"
+      ],
+      "URL matching": [
+        "URL一致"
+      ],
+      "Vault shared with a group you administer": [
+        "お客様の管理するグループと共有中の保管庫"
+      ],
+      "Your new access token": [
+        "新しいアクセストークン"
       ]
     },
     "Title_cloned_item": {
@@ -5100,6 +5523,71 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "あなたのサブスクリプションでは、複数の保管庫を作成することはできません。すべてのアイテムは最初の保管庫にインポートされます。複数の保管庫にインポートするには、サブスクリプションをアップグレードしてください。"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }は強力な制御を提供しますが、誤りが1つあるだけで自動入力が一致し、詐欺サイトやフィッシングサイトにデータが入力されてしまう可能性があります。"
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSHエージェントにはSSH鍵の使用が必要ですが、これはお客様のプランではご利用いただけません。"
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "「${ neverModeDescriptionStrong }」が設定されているため、このアイテムは自動入力に提案されません。このアイテムを自動入力する場合は、別のURLを追加してください。"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "アクティビティ"
+      ],
+      "Activity details could not be loaded.": [
+        "アクティビティの詳細を読み込めませんでした。"
+      ],
+      "Folder": [
+        "フォルダー"
+      ],
+      "Item": [
+        "アイテム"
+      ],
+      "Reason": [
+        "理由"
+      ],
+      "Vault": [
+        "保管庫"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "現在のルールがURLに一致するかどうかを確認するには、URLを入力してください"
+      ],
+      "The rule is matching this URL": [
+        "ルールがこのURLと一致しています"
+      ],
+      "The rule is NOT matching this URL": [
+        "ルールがこのURLと一致していません"
+      ],
+      "This URL will be blocked from autofill": [
+        "このURLは自動入力がブロックされます"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "このURLは自動入力のブロック対象外となります"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "アクティブ"
+      ],
+      "Agent": [
+        "エージェント"
+      ],
+      "Expired": [
+        "有効期限切れ"
+      ],
+      "Expiring soon": [
+        "まもなく有効期限切れ"
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "${ planName }を入手"
       ]
     }
   }

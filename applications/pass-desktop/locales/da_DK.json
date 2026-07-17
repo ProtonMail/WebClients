@@ -806,6 +806,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Regex invalid": [
+        "Regex ugyldig"
+      ],
+      "Regex unsafe": [
+        "Regex usikker"
       ]
     },
     "Activity": {
@@ -4174,6 +4180,33 @@
       ],
       "Relevant": [
         "Relevant"
+      ],
+      "Basic": [
+        "Grundlæggende"
+      ],
+      "Check": [
+        "Kontroller"
+      ],
+      "Exact host matching": [
+        "Nøjagtigt værtsmatch"
+      ],
+      "Exact URL matching": [
+        "Nøjagtig URL-matching"
+      ],
+      "Never fill on this exact URL": [
+        "Udfyld aldrig på denne nøjagtige URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domæne og underdomæner (standard)"
+      ],
+      "Regular expression": [
+        "Regulært udtryk"
+      ],
+      "Starts with": [
+        "Begynder med"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ]
     },
     "Link": {
@@ -4222,6 +4255,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Du valgte ${ semiboldText } i denne boks."
+      ],
+      "'Starts with' matching rule": [
+        "Matchende regel for \"Begynder med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Nøjagtig (under) domænematchregel"
+      ],
+      "Exact URL matching rule": [
+        "Nøjagtig URL-matchende regel"
+      ],
+      "Never fill with this exact URL": [
+        "Udfyld aldrig med denne nøjagtige URL"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært udtryk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for jokertegnmønstermatch"
       ]
     },
     "new_plans: feature": {
@@ -5213,6 +5264,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Juster adfærden for autofyld for at ændre, hvor logins foreslås."
+      ],
+      "Learn more": [
+        "Få mere at vide"
+      ],
+      "Test a URL against this rule": [
+        "Test en URL i forhold til denne regel"
+      ],
+      "URL matching": [
+        "URL-matching"
       ]
     },
     "Title_cloned_item": {
@@ -5567,6 +5630,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Dette element kan ikke foreslås til autofyld på grund af \"${ neverModeDescriptionStrong }\". Tilføj en anden URL, hvis De ønsker, at dette element skal autofyldes."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Indtast en URL for at kontrollere, om Deres nuværende regel matcher URL'en"
+      ],
+      "The rule is matching this URL": [
+        "Reglen matcher denne URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Reglen matcher IKKE denne URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Denne URL vil blive blokeret fra autofyld"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Denne URL vil IKKE blive blokeret fra autofyld"
       ]
     }
   }

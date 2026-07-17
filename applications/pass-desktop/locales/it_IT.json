@@ -782,6 +782,36 @@
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
+      ],
+      "Copy instructions": [
+        "Copia istruzioni"
+      ],
+      "Copy token": [
+        "Copia token"
+      ],
+      "Create token": [
+        "Crea token"
+      ],
+      "Do not show this again": [
+        "Non mostrare più"
+      ],
+      "Don't show this again": [
+        "Non mostrare più"
+      ],
+      "Manage vault access": [
+        "Gestisci l'accesso alla cassaforte"
+      ],
+      "New token": [
+        "Nuovo token"
+      ],
+      "Regex invalid": [
+        "Regex non valida"
+      ],
+      "Regex unsafe": [
+        "Regex non sicura"
+      ],
+      "View agent activity": [
+        "Visualizza l'attività dell'agente"
       ]
     },
     "App menu": {
@@ -1350,6 +1380,72 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Il tuo codice PIN è stato rimosso da un altro client ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Una verifica di sblocco del desktop è già in corso."
+      ],
+      "Biometric authentication failed.": [
+        "Autenticazione biometrica non riuscita."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Le credenziali di blocco biometrico non corrispondono."
+      ],
+      "Biometric lock credentials not found.": [
+        "Credenziali di blocco biometrico non trovate."
+      ],
+      "Biometric lock is not configured.": [
+        "Il blocco biometrico non è configurato."
+      ],
+      "Biometric lock setup failed.": [
+        "Configurazione del blocco biometrico non riuscita."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Impossibile caricare le istruzioni di configurazione dell'agente. Copia il token qui sotto, non verrà più mostrato."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La comunicazione crittografata con l'app desktop ${ PASS_APP_NAME } non è riuscita."
+      ],
+      "Failed to create access token": [
+        "Impossibile creare il token di accesso"
+      ],
+      "Failed to delete access token": [
+        "Impossibile eliminare il token di accesso"
+      ],
+      "Failed to load access tokens": [
+        "Impossibile caricare i token di accesso"
+      ],
+      "Failed to load token actions": [
+        "Impossibile caricare le azioni del token"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Impossibile avviare l'agente SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Impossibile arrestare l'agente SSH: ${ errorMessage }"
+      ],
+      "Failed to update vault access": [
+        "Impossibile aggiornare l'accesso alla cassaforte"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Il nome deve contenere al massimo 191 caratteri"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'app desktop ${ PASS_APP_NAME } non ha risposto in tempo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "L'app desktop di ${ PASS_APP_NAME } è bloccata, devi sbloccarla."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "L'app desktop di ${ PASS_APP_NAME } non è installata."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "L'app desktop di ${ PASS_APP_NAME } non risponde, è in esecuzione?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "L'app desktop ${ PASS_APP_NAME } ha effettuato l'accesso con un account diverso."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'app desktop ${ PASS_APP_NAME } dovrebbe aver effettuato l'accesso."
       ]
     },
     "Error message": {
@@ -2630,6 +2726,162 @@
       "Moving an item to another vault will erase its secure links.": [
         "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
         "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } vuole condividere un elemento con il gruppo ${ name }."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } utilizzerà le chiavi SSH salvate nelle tue casseforti."
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } selezionati"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Il token di accesso \"${ action.token.Name }\" è già scaduto. Se lo elimini, non verrà più mostrato."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Il token di accesso \"${ action.token.Name }\" smetterà di funzionare immediatamente. Questa azione non può essere annullata."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "I token di accesso, usati insieme a ${ passCliLink }, ti consentono di automatizzare CI/CD o di dare al tuo agente AI un accesso limitato a ciò di cui ha bisogno per eseguire il suo lavoro."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Tra 60 (1 ora) e 525600 (1 anno)"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Trasferisci le tue password già esistenti su ${ PASS_APP_NAME }."
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copia il markdown qui sotto e invialo al tuo agente AI. Questa è l'unica volta in cui il token verrà mostrato."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copia questo token ora. Per motivi di sicurezza, non verrà più mostrato."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Crea un token per integrare ${ PASS_APP_NAME } con i tuoi script e strumenti."
+      ],
+      "Created ${ createdDate }": [
+        "Creato il ${ createdDate }"
+      ],
+      "Created item": [
+        "Elemento creato"
+      ],
+      "Deleted item": [
+        "Elemento eliminato"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Scarica pass-cli da ${ passCliLink }."
+      ],
+      "Enabling desktop auto-lock": [
+        "Attivazione del blocco automatico desktop"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Ogni azione eseguita da questo token agente, a partire dalla più recente."
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Trova \"Agente di autenticazione OpenSSH\", fai clic con il tasto destro su Proprietà."
+      ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Ottieni il massimo da ${ PASS_APP_NAME } creando una cassaforte per ogni team o progetto."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Se non hai intenzione di utilizzare l'agente SSH su un altro account a pagamento, ricordati di disattivare questa impostazione prima di passare a quell'account."
+      ],
+      "invites the group ${ name } to access items in": [
+        "invita il gruppo ${ name } ad accedere agli elementi in"
+      ],
+      "Log out of any existing session:": [
+        "Disconnettiti da qualsiasi sessione esistente:"
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Assicurati di mantenere ${ PASS_APP_NAME } in esecuzione (può essere ridotto a icona) affinché l'agente SSH rimanga attivo. Le chiavi SSH con frase d'accesso non sono attualmente supportate."
+      ],
+      "Moved item to trash": [
+        "Elemento spostato nel cestino"
+      ],
+      "No activity recorded yet.": [
+        "Nessuna attività registrata."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Nessuna chiave SSH trovata in ${ PASS_SHORT_APP_NAME }. Crea elementi chiave SSH da utilizzare con l'agente."
+      ],
+      "No vaults available.": [
+        "Nessuna cassaforte disponibile."
+      ],
+      "None selected": [
+        "Nessuno selezionato"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Vengono mostrati solo i token scaduti negli ultimi 30 giorni. I token più vecchi vengono eliminati automaticamente."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Apri \"Servizi\" (puoi utilizzare la barra di ricerca di Windows o premere Win+R e inserire services.msc)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Incolla il seguente comando nel tuo terminale:"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protetto da ${ PROTON_SENTINEL_LINK }, il nostro programma avanzato di protezione dell'account"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Ordinati per campo (prima il titolo, poi il nome utente o l'email, il sito web, le note) e per precisione di corrispondenza (esatta, inizia con, contiene)."
+      ],
+      "Read item": [
+        "Leggi elemento"
+      ],
+      "Restored item from trash": [
+        "Elemento ripristinato dal cestino"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Seleziona le casseforti che \"${ token.Name }\" può leggere."
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Imposta \"Tipo di avvio\" su Disabilitato, fai clic su OK."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Metti alla prova il token accedendo ed elencando le casseforti:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "All'agente verrà richiesto di fornire un motivo per ogni azione che esegue, e ogni azione verrà registrata in un registro di controllo che potrai rivedere. Dopo la creazione del token, riceverai le istruzioni da copiare e incollare nel tuo agente AI."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Poi potrai andare su ${ url } per copiare le istruzioni da inviare al tuo agente AI."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Questa funzionalità richiede che l'app desktop di ${ PASS_APP_NAME } sia installata e in esecuzione durante la configurazione."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Questo token ottiene l'accesso in sola lettura alle casseforti che selezioni. Può leggere gli elementi, ma non può modificarli, condividere casseforti o invitare altri. Puoi cambiarlo in seguito."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Suggerimento: aggiungilo al tuo file .bashrc o .zshrc in modo che venga eseguito automaticamente all'apertura del terminale."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Per configurare lo sblocco biometrico, ${ PASS_APP_NAME } richiede una nuova autorizzazione del browser. Dopo averla accettata, l'estensione si ricaricherà. Riapri questa pagina in seguito."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Per utilizzare l'agente SSH di ${ PASS_APP_NAME } su Windows, il servizio OpenSSH deve essere disattivato."
+      ],
+      "Updated item": [
+        "Elemento aggiornato"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Effettua l'upgrade a ${ PASS_APP_NAME } Plus per creare token di accesso e utilizzare ${ PASS_APP_NAME } in modo programmatico."
+      ],
+      "Vault access granted": [
+        "Accesso alla cassaforte consentito"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ora puoi utilizzare la tua password di backup per accedere a ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ora puoi utilizzare la tua password aggiuntiva per accedere a ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ora puoi utilizzare la tua seconda password per accedere a ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Potresti dover concedere l'autorizzazione di accessibilità a ${ PASS_APP_NAME }."
       ]
     },
     "Keyboard key": {
@@ -3887,6 +4139,51 @@
       ],
       "ZIP or Postal code": [
         "CAP"
+      ],
+      "Access tokens": [
+        "Token di accesso"
+      ],
+      "Basic": [
+        "Base"
+      ],
+      "Check": [
+        "Verifica"
+      ],
+      "Exact host matching": [
+        "Corrispondenza esatta dell'host"
+      ],
+      "Exact URL matching": [
+        "Corrispondenza URL esatta"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Token scaduti (${ expired.length })"
+      ],
+      "Never fill on this exact URL": [
+        "Non compilare mai su questo URL esatto"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principale e sottodomini (predefinito)"
+      ],
+      "Regular expression": [
+        "Espressione regolare"
+      ],
+      "Relevant": [
+        "Rilevanti"
+      ],
+      "Starts with": [
+        "Inizia con"
+      ],
+      "URL wildcard pattern": [
+        "Modello di carattere jolly dell'URL"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Usa ${ PASS_APP_NAME } come agente SSH"
+      ],
+      "Use for AI agent": [
+        "Usa per agente AI"
+      ],
+      "Vault access": [
+        "Accesso alla cassaforte"
       ]
     },
     "Link": {
@@ -3935,6 +4232,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Hai selezionato ${ semiboldText } in questa cassaforte."
+      ],
+      "'Starts with' matching rule": [
+        "Regola di corrispondenza \"Inizia con\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regola di corrispondenza esatta del (sotto) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regola di corrispondenza URL esatta"
+      ],
+      "Never fill with this exact URL": [
+        "Non compilare mai con questo URL esatto"
+      ],
+      "Regular expression rule": [
+        "Regola dell'espressione regolare"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regola di corrispondenza del modello di caratteri jolly"
       ]
     },
     "new_plans: feature": {
@@ -3951,6 +4266,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } è stato abilitato"
+      ],
+      "Access token deleted": [
+        "Token di accesso eliminato"
       ]
     },
     "Option": {
@@ -4085,6 +4403,12 @@
       ],
       "You can attach files to items for a better organization": [
         "Puoi allegare file agli elementi per una migliore organizzazione."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Questa funzionalità non è supportata nel tuo piano. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Questa funzionalità non è supportata nel tuo piano. Contatta il tuo amministratore per ottenere l'accesso."
       ]
     },
     "PassOnboardingOffer": {
@@ -4214,6 +4538,9 @@
       ],
       "Used on ${ url }": [
         "Usato su ${ url }"
+      ],
+      "e.g. 60": [
+        "es. 60"
       ]
     },
     "Security Center - Info": {
@@ -4359,6 +4686,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Email di verifica inviata. Controlla la tua casella di posta per verificare la tua casella di posta"
+      ],
+      "SSH agent successfully started": [
+        "Agente SSH avviato con successo"
+      ],
+      "SSH agent successfully stopped": [
+        "Agente SSH arrestato con successo"
       ]
     },
     "Theme": {
@@ -4858,6 +5191,54 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
         "Stai per eliminare definitivamente ${ aliasCount } alias."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "I token di accesso richiedono ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Attività per \"${ token.Name }\""
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Regola i comportamenti del riempimento automatico per modificare i punti in cui vengono suggeriti i login."
+      ],
+      "Agent setup instructions": [
+        "Istruzioni di configurazione dell'agente"
+      ],
+      "Browser permission required": [
+        "Autorizzazione del browser necessaria"
+      ],
+      "Create new access token": [
+        "Crea un nuovo token di accesso"
+      ],
+      "Delete access token?": [
+        "Eliminare il token di accesso?"
+      ],
+      "Learn more": [
+        "Scopri di più"
+      ],
+      "Manage vault access": [
+        "Gestisci l'accesso alla cassaforte"
+      ],
+      "No access tokens yet": [
+        "Ancora nessun token di accesso"
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Screenshot del servizio OpenSSH su Windows"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Configurazione agente SSH ${ PASS_APP_NAME }"
+      ],
+      "SSH Agent": [
+        "Agente SSH"
+      ],
+      "Test a URL against this rule": [
+        "Verifica un URL rispetto a questa regola"
+      ],
+      "URL matching": [
+        "Corrispondenza URL"
+      ],
+      "Your new access token": [
+        "Il tuo nuovo token di accesso"
       ]
     },
     "Title_cloned_item": {
@@ -5209,6 +5590,66 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Il tuo abbonamento non ti consente di creare più casseforti. Tutti gli elementi verranno importati nella tua prima cassaforte. Per importare in più casseforti, effettua l'upgrade del tuo abbonamento."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un controllo potente, ma un singolo errore può far sì che il riempimento automatico corrisponda e inserisca dati su siti web fraudolenti o di phishing."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "L'agente SSH richiede l'uso di chiavi SSH, che non sono disponibili nel tuo piano."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Questo elemento non può essere suggerito per il riempimento automatico a causa di \"${ neverModeDescriptionStrong }\". Aggiungi un altro URL se desideri che questo elemento venga compilato automaticamente."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Attività"
+      ],
+      "Activity details could not be loaded.": [
+        "Impossibile caricare i dettagli dell'attività."
+      ],
+      "Folder": [
+        "Cartella"
+      ],
+      "Item": [
+        "Elemento"
+      ],
+      "Reason": [
+        "Motivo"
+      ],
+      "Vault": [
+        "Cassaforte"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Inserisci un URL da controllare per verificare se la tua regola corrente corrisponde all'URL"
+      ],
+      "The rule is matching this URL": [
+        "La regola corrisponde a questo URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regola NON corrisponde a questo URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Questo URL sarà bloccato dal riempimento automatico"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Questo URL NON sarà bloccato dal riempimento automatico"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Attivo"
+      ],
+      "Agent": [
+        "Agente"
+      ],
+      "Expired": [
+        "Scaduto"
+      ],
+      "Expiring soon": [
+        "In scadenza"
       ]
     }
   }
