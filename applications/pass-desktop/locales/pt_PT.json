@@ -728,6 +728,90 @@
       ],
       "Your password manager is not here? Request it.": [
         "O seu gestor de palavras-passe não está aqui? Solicite-o."
+      ],
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } para Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } para iOS"
+      ],
+      "Allow access": [
+        "Permitir acesso"
+      ],
+      "Autotype": [
+        "Autopreencher"
+      ],
+      "Autotype in previous window": [
+        "Autopreencher na janela anterior"
+      ],
+      "Copy card number": [
+        "Copiar número do cartão"
+      ],
+      "Copy email": [
+        "Copiar e-mail"
+      ],
+      "Copy expiration date": [
+        "Copiar data de expiração"
+      ],
+      "Copy instructions": [
+        "Copiar instruções"
+      ],
+      "Copy name on card": [
+        "Copiar nome no cartão"
+      ],
+      "Copy note content": [
+        "Copiar conteúdo da nota"
+      ],
+      "Copy security code": [
+        "Copiar código de segurança"
+      ],
+      "Copy token": [
+        "Copiar token"
+      ],
+      "Copy username": [
+        "Copiar nome de utilizador"
+      ],
+      "Create token": [
+        "Criar token"
+      ],
+      "Cut": [
+        "Cortar"
+      ],
+      "Do not show again": [
+        "Não mostrar novamente"
+      ],
+      "Do not show again when I press": [
+        "Não mostrar novamente ao premir"
+      ],
+      "Do not show this again": [
+        "Não mostrar novamente"
+      ],
+      "Don't show this again": [
+        "Não mostrar novamente"
+      ],
+      "Get mobile and desktop apps": [
+        "Obter aplicações móveis e de computador"
+      ],
+      "Manage vault access": [
+        "Gerir o acesso ao cofre"
+      ],
+      "New token": [
+        "Novo token"
+      ],
+      "Organize vaults": [
+        "Organizar cofres"
+      ],
+      "Paste": [
+        "Colar"
+      ],
+      "Regex invalid": [
+        "Regex inválida"
+      ],
+      "Regex unsafe": [
+        "Regex insegura"
+      ],
+      "View agent activity": [
+        "Ver atividade do agente"
       ]
     },
     "App menu": {
@@ -865,6 +949,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "As suas informações pessoais foram divulgadas numa violação de dados de um serviço de terceiros."
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Estes cofres não estarão acessíveis e o seu conteúdo não estará disponível para Pesquisar ou para o Preenchimento automático."
       ]
     },
     "Email": {
@@ -1279,6 +1366,81 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "O Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Já está em curso uma verificação de desbloqueio do computador."
+      ],
+      "Biometric authentication failed.": [
+        "A autenticação biométrica falhou."
+      ],
+      "Biometric lock credentials do not match.": [
+        "As credenciais do bloqueio biométrico não coincidem."
+      ],
+      "Biometric lock credentials not found.": [
+        "As credenciais do bloqueio biométrico não foram encontradas."
+      ],
+      "Biometric lock is not configured.": [
+        "O bloqueio biométrico não está configurado."
+      ],
+      "Biometric lock setup failed.": [
+        "A configuração do bloqueio biométrico falhou."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Não foi possível carregar as instruções de configuração do agente. Copie o token abaixo, pois não será mostrado novamente."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "A comunicação encriptada com a aplicação de computador do ${ PASS_APP_NAME } falhou."
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "A expiração deve ser entre 1 hora e 1 ano"
+      ],
+      "Failed to create access token": [
+        "Falha ao criar o token de acesso"
+      ],
+      "Failed to delete access token": [
+        "Falha ao eliminar o token de acesso"
+      ],
+      "Failed to load access tokens": [
+        "Falha ao carregar os tokens de acesso"
+      ],
+      "Failed to load token actions": [
+        "Falha ao carregar as ações do token"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Falha ao iniciar o agente SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Falha ao parar o agente SSH: ${ errorMessage }"
+      ],
+      "Failed to update vault access": [
+        "Falha ao atualizar o acesso ao cofre"
+      ],
+      "Name must be 191 characters or fewer": [
+        "O nome deve ter 191 caracteres ou menos"
+      ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Os servidores estão inacessíveis. Tente desbloquear o ${ PASS_SHORT_APP_NAME } dentro de alguns minutos."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "A aplicação de computador do ${ PASS_APP_NAME } não respondeu a tempo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "A aplicação desktop ${ PASS_APP_NAME } está bloqueada, deve ser desbloqueada."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "A aplicação desktop ${ PASS_APP_NAME } não está instalada."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "A aplicação desktop ${ PASS_APP_NAME } não está a responder, está em execução?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "A aplicação de computador do ${ PASS_APP_NAME } tem sessão iniciada com uma conta diferente."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "A aplicação de computador do ${ PASS_APP_NAME } deve ter a sessão iniciada."
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Está atualmente offline. Restabeleça a conectividade para desbloquear o ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "Error message": {
@@ -2484,6 +2646,237 @@
       "Moving an item to another vault will erase its secure links.": [
         "Mover um item para outro cofre apagará as suas ligações seguras.",
         "Mover itens para outro cofre apagará as suas ligações seguras."
+      ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } deseja partilhar um item com um grupo que o utilizador administra."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "O utilizador ${ inviterEmail } quer partilhar um item com o grupo ${ name }."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "O ${ PASS_APP_NAME } utilizará as chaves SSH guardadas nos seus cofres."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Modo offline do ${ PASS_SHORT_APP_NAME } ativado."
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } selecionados"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "O token de acesso \"${ action.token.Name }\" já expirou. Se for eliminado, deixará de ser mostrado."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "O token de acesso \"${ action.token.Name }\" deixará de funcionar imediatamente. Esta ação não pode ser desfeita."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Os tokens de acesso, utilizados em conjunto com o ${ passCliLink }, permitem-lhe automatizar CI/CD ou conceder ao seu agente de IA um acesso delimitado ao que necessita para executar o seu trabalho."
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Após confirmar, terá de aceitar um pedido de permissão para o ${ PASS_APP_NAME }."
+      ],
+      "An item previously shared with you was removed.": [
+        "Um item anteriormente partilhado consigo foi removido."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Entre 60 (1 hora) e 525600 (1 ano)"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Traga as suas palavras-passe existentes para o ${ PASS_APP_NAME }."
+      ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Copiado para a área de transferência (expira em ${ timeoutDurationHumanReadable })"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copie o markdown abaixo e envie-o ao seu agente de IA. Esta é a única altura em que o token será mostrado."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copie este token agora. Por razões de segurança, não será mostrado novamente."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Crie um token para integrar o ${ PASS_APP_NAME } com os seus scripts e ferramentas."
+      ],
+      "Created ${ createdDate }": [
+        "Criado em ${ createdDate }"
+      ],
+      "Created item": [
+        "Item criado"
+      ],
+      "Deleted item": [
+        "Item eliminado"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Transfira o pass-cli a partir de ${ passCliLink }."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Ative o modo offline para aceder aos seus dados do ${ PASS_SHORT_APP_NAME } se perder a ligação à Internet ou se os servidores da ${ BRAND_NAME } estiverem inacessíveis."
+      ],
+      "Enabling desktop auto-lock": [
+        "A ativar o bloqueio automático desktop"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Cada ação que este token de agente realizou, a mais recente primeiro."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Expirou em ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Expira em ${ formattedDate }"
+      ],
+      "Failed updating your vault organization": [
+        "Falha ao atualizar a sua organização de cofres"
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Procure \"Agente de Autenticação OpenSSH\", clique com o botão direito do rato em Propriedades."
+      ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Aproveite ao máximo o ${ PASS_APP_NAME } criando um cofre para cada equipa ou projeto."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Se não planeia utilizar o agente SSH noutra conta paga, lembre-se de desativar esta definição antes de mudar para essa conta."
+      ],
+      "invites the group ${ name } to access items in": [
+        "convida o grupo ${ name } a aceder a itens em"
+      ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "O atalho de teclado só pode ser utilizado dentro da aplicação desktop ${ PASS_APP_NAME } e ao visualizar um item de início de sessão"
+      ],
+      "Log out of any existing session:": [
+        "Terminar sessão de qualquer sessão existente:"
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Certifique-se de que mantém o ${ PASS_APP_NAME } em execução (pode ser minimizado) para que o agente SSH permaneça ativo. As chaves SSH com frase-passe não são atualmente suportadas."
+      ],
+      "Moved item to trash": [
+        "Item movido para o lixo"
+      ],
+      "No activity recorded yet.": [
+        "Ainda sem atividade registada."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Nenhuma chave SSH encontrada no ${ PASS_SHORT_APP_NAME }. Crie itens de chave SSH para utilizar com o agente."
+      ],
+      "No vaults available.": [
+        "Nenhum cofre disponível."
+      ],
+      "None selected": [
+        "Nenhum selecionado"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Apenas os tokens que expiraram nos últimos 30 dias são mostrados. Os tokens mais antigos são eliminados automaticamente."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Abra os \"Serviços\" (pode utilizar a barra de pesquisa do Windows ou premir Win+R e introduzir services.msc)."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Abra as suas definições do Safari para a extensão e verifique se as permissões do sítio estão ativadas para os domínios da ${ BRAND_NAME }"
+      ],
+      "Paste the following command in your terminal:": [
+        "Cole o seguinte comando no seu terminal:"
+      ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Mantenha o ${ PASS_APP_NAME } aberto para que a área de transferência possa ser limpa automaticamente."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Mantenha o seu navegador aberto para que a área de transferência possa ser limpa automaticamente."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Certifique-se de que a janela anteriormente ativa é aquela onde deseja efetuar o preenchimento automático e de que o cursor estava focado no campo de início de sessão."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegido pelo ${ PROTON_SENTINEL_LINK }, o nosso programa avançado de proteção de conta"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Classificado por campo (primeiro o título, depois o nome de utilizador ou e-mail, sítio web, notas) e precisão de correspondência (exata, começa com, contém)."
+      ],
+      "Read item": [
+        "Ler item"
+      ],
+      "Restored item from trash": [
+        "Item restaurado do lixo"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Selecione os cofres que \"${ token.Name }\" pode ler."
+      ],
+      "Servers are unreachable": [
+        "Os servidores estão inacessíveis"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Defina o \"Tipo de arranque\" como Desativado, clique em OK."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Teste o token iniciando sessão e listando os cofres:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "O agente será obrigado a fornecer um motivo para cada ação que realizar, e cada ação será registada num registo de auditoria que poderá rever. Após a criação do token, obterá instruções para copiar e colar no seu agente de IA."
+      ],
+      "The group is invited to a vault.": [
+        "O grupo foi convidado para um cofre."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Depois, pode ir a ${ url } para copiar as instruções para enviar ao seu agente de IA."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Esta funcionalidade é atualmente experimental no Linux. Certifique-se de que o seu sistema está atualizado."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Esta funcionalidade requer que a aplicação desktop ${ PASS_APP_NAME } esteja instalada e em execução durante a configuração."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Este token obtém acesso de apenas leitura aos cofres que selecionar. Pode ler itens, mas não os pode editar, partilhar cofres ou convidar outras pessoas. Pode alterar isto mais tarde."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Dica: adicione-o ao seu ficheiro .bashrc ou .zshrc para que seja executado automaticamente ao abrir o terminal."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Para configurar o desbloqueio por biometria, o ${ PASS_APP_NAME } requer uma nova permissão do navegador. Após a aceitar, a extensão será recarregada. Volte a abrir esta página depois disso."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Para utilizar o agente SSH do ${ PASS_APP_NAME } no Windows, o serviço OpenSSH deve ser desativado."
+      ],
+      "Updated item": [
+        "Item atualizado"
+      ],
+      "Updating vault organization...": [
+        "A atualizar a organização de cofres..."
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Atualize para o ${ PASS_APP_NAME } Plus para criar tokens de acesso e utilizar o ${ PASS_APP_NAME } de forma programática."
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "O cofre \"${ share.content.name }\" foi removido."
+      ],
+      "Vault access granted": [
+        "Acesso ao cofre concedido"
+      ],
+      "Vault organization successfully updated": [
+        "Organização de cofres atualizada com sucesso"
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Quando ativado, ainda poderá aceder aos seus dados do ${ PASS_SHORT_APP_NAME } se perder a ligação à Internet ou se os servidores da ${ BRAND_NAME } estiverem inacessíveis."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Agora pode utilizar a sua palavra-passe de segurança para aceder ao ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Agora pode utilizar a sua palavra-passe adicional para aceder ao ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Agora pode utilizar a sua segunda palavra-passe para aceder ao ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Poderá ter de conceder permissão de acessibilidade ao ${ PASS_APP_NAME }."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Deixou de ter acesso a alguns cofres ou itens porque o acesso do seu grupo ${ groupName } foi removido."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Agora tem acesso ao \"Item ${ itemName }\" porque foi concedido acesso ao seu grupo ${ groupName }."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Agora tem acesso ao \"Cofre ${ vaultName }\" porque foi concedido acesso ao seu grupo ${ groupName }."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Deixará de ter acesso à partilha, 2FA e outras funcionalidades avançadas no ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -3685,6 +4078,90 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "1 day": [
+        "1 dia"
+      ],
+      "1 month": [
+        "1 mês"
+      ],
+      "1 week": [
+        "1 semana"
+      ],
+      "1 year": [
+        "1 ano"
+      ],
+      "Access tokens": [
+        "Tokens de acesso"
+      ],
+      "Basic": [
+        "Básico"
+      ],
+      "Check": [
+        "Verificar"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Custom expiration (minutes)": [
+        "Expiração personalizada (minutos)"
+      ],
+      "EMAIL": [
+        "E-MAIL"
+      ],
+      "Exact host matching": [
+        "Correspondência exata de anfitrião"
+      ],
+      "Exact URL matching": [
+        "Correspondência exata de URL"
+      ],
+      "Experimental": [
+        "Experimental"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Tokens expirados (${ expired.length })"
+      ],
+      "Keyboard shortcut:": [
+        "Atalhos de teclado:"
+      ],
+      "Larger window": [
+        "Janela maior"
+      ],
+      "Never fill on this exact URL": [
+        "Nunca preencher neste URL exato"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domínio principal e subdomínios (predefinição)"
+      ],
+      "PASSWORD": [
+        "PALAVRA-PASSE"
+      ],
+      "Regular expression": [
+        "Expressão regular"
+      ],
+      "Relevant": [
+        "Relevantes"
+      ],
+      "Starts with": [
+        "Começa com"
+      ],
+      "Token name": [
+        "Nome do token"
+      ],
+      "URL wildcard pattern": [
+        "Padrão de URL com caráter universal"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Utilizar o ${ PASS_APP_NAME } como agente SSH"
+      ],
+      "Use for AI agent": [
+        "Utilizar para agente de IA"
+      ],
+      "USERNAME": [
+        "NOME DE UTILIZADOR"
+      ],
+      "Vault access": [
+        "Acesso ao cofre"
       ]
     },
     "Link": {
@@ -3733,6 +4210,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Selecionou ${ semiboldText } neste cofre."
+      ],
+      "'Starts with' matching rule": [
+        "Regra de correspondência 'Começa com'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regra de correspondência de (sub)domínio exato"
+      ],
+      "Exact URL matching rule": [
+        "Regra de correspondência de URL exato"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca preencher com este URL exato"
+      ],
+      "Regular expression rule": [
+        "Regra de expressão regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regra de correspondência de padrão de caráter universal"
       ]
     },
     "new_plans: feature": {
@@ -3749,6 +4244,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } foi ativado"
+      ],
+      "Access token deleted": [
+        "Token de acesso eliminado"
       ]
     },
     "Option": {
@@ -3883,6 +4381,12 @@
       ],
       "You can attach files to items for a better organization": [
         "Pode anexar ficheiros aos itens para uma melhor organização."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Esta funcionalidade não é suportada no seu plano. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Esta funcionalidade não é suportada no seu plano. Contacte o seu administrador para obter acesso."
       ]
     },
     "PassOnboardingOffer": {
@@ -4007,6 +4511,9 @@
       ],
       "Used on ${ url }": [
         "Utilizado no ${ url }"
+      ],
+      "e.g. 60": [
+        "ex: 60"
       ]
     },
     "Security Center - Info": {
@@ -4152,6 +4659,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "O e-mail de verificação enviado. Verifique a sua caixa de entrada para verificar a sua caixa de correio."
+      ],
+      "SSH agent successfully started": [
+        "Agente SSH iniciado com sucesso"
+      ],
+      "SSH agent successfully stopped": [
+        "Agente SSH parado com sucesso"
       ]
     },
     "Theme": {
@@ -4630,6 +5143,75 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está prestes a eliminar permanentemente ${ aliasCount } alias.",
         "Está prestes a eliminar permanentemente ${ aliasCount } aliases."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Os tokens de acesso requerem o ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Atividade de \"${ token.Name }\""
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajuste os comportamentos de preenchimento automático para alterar onde os inícios de sessão são sugeridos."
+      ],
+      "Agent setup instructions": [
+        "Instruções de configuração do agente"
+      ],
+      "Browser permission required": [
+        "Permissão do navegador necessária"
+      ],
+      "Clear clipboard": [
+        "Limpar a área de transferência"
+      ],
+      "Create new access token": [
+        "Criar novo token de acesso"
+      ],
+      "Delete access token?": [
+        "Eliminar o token de acesso?"
+      ],
+      "Hidden vaults": [
+        "Cofres ocultos"
+      ],
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "Manage vault access": [
+        "Gerir o acesso ao cofre"
+      ],
+      "No access tokens yet": [
+        "Ainda sem tokens de acesso"
+      ],
+      "Organize vaults": [
+        "Organizar cofres"
+      ],
+      "Perform autotype?": [
+        "Efetuar preenchimento automático?"
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Captura de ecrã do serviço OpenSSH no Windows"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Configurar o Agente SSH do ${ PASS_APP_NAME }"
+      ],
+      "Setup offline mode": [
+        "Configurar o modo offline"
+      ],
+      "SSH Agent": [
+        "Agente SSH"
+      ],
+      "Test a URL against this rule": [
+        "Testar um URL contra esta regra"
+      ],
+      "URL matching": [
+        "Correspondência de URL"
+      ],
+      "Vault shared with a group you administer": [
+        "Cofre partilhado com um grupo que o utilizador administra"
+      ],
+      "Visible vaults": [
+        "Cofres visíveis"
+      ],
+      "Your new access token": [
+        "O seu novo token de acesso"
       ]
     },
     "Title_cloned_item": {
@@ -4967,6 +5549,104 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua subscrição não lhe permite criar vários cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar para vários cofres, melhore a sua subscrição."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "O \"${ modeLabelStong }\" oferece um controlo poderoso, mas um único erro pode fazer com que o preenchimento automático corresponda e preencha dados em sítios web fraudulentos ou de phishing."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Modo offline do ${ PASS_SHORT_APP_NAME } desativado."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Falha na escrita automática. Certifique-se de que o ${ PASS_APP_NAME } tem as permissões necessárias e tente novamente (${ error })."
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Conceda acesso à área de transferência para ativar a limpeza automática de dados e palavras-passe copiadas."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "O agente SSH requer a utilização de chaves SSH, o que não está disponível no seu plano."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Este item não pode ser sugerido para preenchimento automático devido à regra \"${ neverModeDescriptionStrong }\". Adicione outro URL se quiser que este item seja preenchido automaticamente."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Atividade"
+      ],
+      "Activity details could not be loaded.": [
+        "Não foi possível carregar os detalhes da atividade."
+      ],
+      "Folder": [
+        "Pasta"
+      ],
+      "Item": [
+        "Item"
+      ],
+      "Reason": [
+        "Motivo"
+      ],
+      "Vault": [
+        "Cofre"
+      ]
+    },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Deseja que a sua área de transferência seja limpa automaticamente após ${ timeoutDurationHumanReadable }?"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "INTRODUZIR"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "SEPARADOR"
+      ],
+      "V": [
+        "V"
+      ]
+    },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Exigirá uma permissão do seu navegador"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Introduza um URL para verificar se a sua regra atual corresponde ao URL"
+      ],
+      "The rule is matching this URL": [
+        "A regra corresponde a este URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "A regra NÃO corresponde a este URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Este URL será bloqueado do preenchimento automático"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Este URL NÃO será bloqueado do preenchimento automático"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Ativo"
+      ],
+      "Agent": [
+        "Agente"
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Expiring soon": [
+        "A expirar em breve"
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obter o ${ planName }"
       ]
     }
   }

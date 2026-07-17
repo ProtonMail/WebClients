@@ -786,6 +786,36 @@
       ],
       "Your password manager is not here? Request it.": [
         "Váš správce hesel zde není? Požádejte o něj."
+      ],
+      "Copy instructions": [
+        "Kopírovat instrukce"
+      ],
+      "Copy token": [
+        "Kopírovat token"
+      ],
+      "Create token": [
+        "Vytvořit token"
+      ],
+      "Do not show this again": [
+        "Příště nezobrazovat"
+      ],
+      "Don't show this again": [
+        "Příště nezobrazovat"
+      ],
+      "Manage vault access": [
+        "Spravovat přístup do trezoru"
+      ],
+      "New token": [
+        "Nový token"
+      ],
+      "Regex invalid": [
+        "Neplatný regulární výraz"
+      ],
+      "Regex unsafe": [
+        "Regulární výraz není bezpečný"
+      ],
+      "View agent activity": [
+        "Zobrazit aktivitu agenta"
       ]
     },
     "App menu": {
@@ -1396,6 +1426,36 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš kód PIN byl odstraněn jiným klientem ${ PASS_APP_NAME }"
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Nepodařilo se načíst instrukce k nastavení agenta. Zkopírujte prosím token níže, znovu se již nezobrazí."
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Vypršení platnosti musí být mezi 1 hodinou a 1 rokem"
+      ],
+      "Failed to create access token": [
+        "Vytvoření přístupového tokenu selhalo"
+      ],
+      "Failed to delete access token": [
+        "Smazání přístupového tokenu selhalo"
+      ],
+      "Failed to load access tokens": [
+        "Nepodařilo se načíst přístupové tokeny"
+      ],
+      "Failed to load token actions": [
+        "Načtení akcí tokenu selhalo"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Nepodařilo se spustit SSH agenta: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Nepodařilo se zastavit SSH agenta: ${ errorMessage }"
+      ],
+      "Failed to update vault access": [
+        "Aktualizace přístupu do trezoru selhala"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Název musí mít 191 znaků nebo méně"
       ]
     },
     "Error message": {
@@ -2104,7 +2164,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2753,6 +2816,138 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaše organizace vyžaduje, abyste zabezpečili svůj přístup k ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } bude používat SSH klíče uložené ve vašich trezorech."
+      ],
+      "${ selectedShareIds.size } selected": [
+        "Vybráno: ${ selectedShareIds.size }"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Přístupový token „${ action.token.Name }“ již vypršel. Pokud jej smažete, nebude se již zobrazovat."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Přístupový token „${ action.token.Name }“ okamžitě přestane fungovat. Tuto akci nelze vzít zpět."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Přístupové tokeny, používané společně s nástrojem ${ passCliLink }, vám umožňují automatizovat CI/CD nebo poskytnout vašemu AI agentovi omezený přístup k tomu, co potřebuje ke spuštění své úlohy."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Mezi 60 (1 hodina) a 525600 (1 rok)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Zkopírujte níže uvedený markdown a odešlete jej svému AI agentovi. Toto je jediný okamžik, kdy bude token zobrazen."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Zkopírujte tento token nyní. Z bezpečnostních důvodů se již znovu nezobrazí."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Vytvořte token pro integraci ${ PASS_APP_NAME } do svých skriptů a nástrojů."
+      ],
+      "Created ${ createdDate }": [
+        "Vytvořeno ${ createdDate }"
+      ],
+      "Created item": [
+        "Vytvořená položka"
+      ],
+      "Deleted item": [
+        "Smazaná položka"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Stáhněte si pass-cli z ${ passCliLink }."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Každá akce, kterou tento token agenta provedl, od nejnovější."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Platnost vypršela dne ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Platnost vyprší dne ${ formattedDate }"
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Najděte „OpenSSH Authentication Agent“, klikněte pravým tlačítkem a zvolte Vlastnosti."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Pokud neplánujete používat SSH agenta na jiném placeném účtu, nezapomeňte toto nastavení před přepnutím na daný účet deaktivovat."
+      ],
+      "Log out of any existing session:": [
+        "Odhlaste se z jakékoli stávající relace:"
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Ujistěte se, že ${ PASS_APP_NAME } zůstane spuštěný (může být minimalizován), aby byl SSH agent stále aktivní. SSH klíče s heslovou frází nejsou v současné době podporovány."
+      ],
+      "Moved item to trash": [
+        "Položka byla přesunuta do koše"
+      ],
+      "No activity recorded yet.": [
+        "Zatím nebyla zaznamenána žádná aktivita."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "V ${ PASS_SHORT_APP_NAME } nebyly nalezeny žádné SSH klíče. Vytvořte položky SSH klíčů, které chcete s agentem používat."
+      ],
+      "No vaults available.": [
+        "Žádné trezory nejsou k dispozici."
+      ],
+      "None selected": [
+        "Nic není vybráno"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Zobrazují se pouze tokeny, které vypršely v posledních 30 dnech. Starší tokeny jsou automaticky smazány."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Otevřete „Služby“ (můžete použít vyhledávací panel Windows nebo stisknout Win+R a zadat services.msc)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Vložte do svého terminálu následující příkaz:"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Chráněno naším pokročilým programem na ochranu účtů ${ PROTON_SENTINEL_LINK }"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Seřazeno podle pole (nejprve název, poté uživatelské jméno nebo e-mail, web, poznámky) a přesnosti shody (přesná, začíná na, obsahuje)."
+      ],
+      "Read item": [
+        "Přečíst položku"
+      ],
+      "Restored item from trash": [
+        "Položka byla obnovena z koše"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Vyberte trezory, které může „${ token.Name }“ číst."
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Nastavte „Typ spouštění“ na Zakázáno a klikněte na OK."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Otestujte token přihlášením a vypsáním trezorů:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Od agenta bude vyžadováno, aby uvedl důvod pro každou provedenou akci, a každá akce bude zaznamenána v protokolu auditu, který můžete zkontrolovat. Po vytvoření tokenu obdržíte instrukce, které můžete zkopírovat a vložit do svého AI agenta."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Poté můžete přejít na ${ url } a zkopírovat instrukce k odeslání vašemu AI agentovi."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Tento token získá přístup pouze pro čtení k trezorům, které vyberete. Může položky číst, ale nemůže je upravovat, sdílet trezory ani zvát ostatní. Toto nastavení můžete později změnit."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Tip: Přidejte jej do svého souboru .bashrc nebo .zshrc, aby se spouštěl automaticky při otevření terminálu."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "K nastavení odemykání biometrikou vyžaduje ${ PASS_APP_NAME } nové oprávnění prohlížeče. Jakmile jej přijmete, rozšíření se znovu načte. Poté tuto stránku znovu otevřete."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Chcete-li používat SSH agenta ${ PASS_APP_NAME } ve Windows, musí být služba OpenSSH deaktivována."
+      ],
+      "Updated item": [
+        "Aktualizovaná položka"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Upgradujte na ${ PASS_APP_NAME } Plus pro vytváření přístupových tokenů a programové používání ${ PASS_APP_NAME }."
+      ],
+      "Vault access granted": [
+        "Přístup do trezoru povolen"
       ]
     },
     "Keyboard key": {
@@ -4020,6 +4215,69 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "1 day": [
+        "1 den"
+      ],
+      "1 month": [
+        "1 měsíc"
+      ],
+      "1 week": [
+        "1 týden"
+      ],
+      "1 year": [
+        "1 rok"
+      ],
+      "Access tokens": [
+        "Přístupové tokeny"
+      ],
+      "Basic": [
+        "Základní"
+      ],
+      "Check": [
+        "Zkontrolovat"
+      ],
+      "Custom": [
+        "Vlastní"
+      ],
+      "Custom expiration (minutes)": [
+        "Vlastní vypršení platnosti (minuty)"
+      ],
+      "Exact host matching": [
+        "Shoda přesného hostitele"
+      ],
+      "Exact URL matching": [
+        "Shoda přesné URL"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Expirované tokeny (${ expired.length })"
+      ],
+      "Never fill on this exact URL": [
+        "Nikdy nevyplňovat na této přesné URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadřazená doména a subdomény (výchozí)"
+      ],
+      "Regular expression": [
+        "Regulární výraz"
+      ],
+      "Relevant": [
+        "Relevantní"
+      ],
+      "Starts with": [
+        "Začíná na"
+      ],
+      "URL wildcard pattern": [
+        "Vzor URL se zástupnými znaky"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Používat ${ PASS_APP_NAME } jako SSH agenta"
+      ],
+      "Use for AI agent": [
+        "Použít pro AI agenta"
+      ],
+      "Vault access": [
+        "Přístup k trezoru"
       ]
     },
     "Link": {
@@ -4072,6 +4330,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "V tomto trezoru jste vybrali ${ semiboldText }."
+      ],
+      "'Starts with' matching rule": [
+        "Pravidlo shody „Začíná na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo pro shodu přesné (sub)domény"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo shody přesné URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevyplňovat s touto přesnou URL"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárního výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo shody se vzorem se zástupnými znaky"
       ]
     },
     "new_plans: feature": {
@@ -4088,6 +4364,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } byl povolen"
+      ],
+      "Access token deleted": [
+        "Přístupový token byl smazán"
       ]
     },
     "Option": {
@@ -4224,6 +4503,12 @@
       ],
       "You can attach files to items for a better organization": [
         "Pro lepší organizaci můžete k položkám připojit soubory"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Tato funkce není ve vašem plánu podporována. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Tato funkce není ve vašem plánu podporována. Chcete-li získat přístup, kontaktujte svého správce."
       ]
     },
     "PassOnboardingOffer": {
@@ -4353,6 +4638,9 @@
       ],
       "Used on ${ url }": [
         "Použito na ${ url }"
+      ],
+      "e.g. 60": [
+        "např. 60"
       ]
     },
     "Security Center - Info": {
@@ -4502,6 +4790,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Ověřovací e-mail odeslán. Zkontrolujte prosím doručenou poštu a ověřte svou e-mailovou schránku."
+      ],
+      "SSH agent successfully started": [
+        "SSH agent byl úspěšně spuštěn"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH agent byl úspěšně zastaven"
       ]
     },
     "Theme": {
@@ -5013,6 +5307,54 @@
         "Chystáte se trvale smazat ${ aliasCount } aliasy.",
         "Chystáte se trvale smazat ${ aliasCount } aliasů.",
         "Chystáte se trvale smazat ${ aliasCount } aliasů."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Přístupové tokeny vyžadují ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivita pro „${ token.Name }“"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Upravte chování automatického vyplňování a změňte, kde se budou navrhovat přihlášení."
+      ],
+      "Agent setup instructions": [
+        "Instrukce k nastavení agenta"
+      ],
+      "Browser permission required": [
+        "Je vyžadováno oprávnění prohlížeče"
+      ],
+      "Create new access token": [
+        "Vytvořit nový přístupový token"
+      ],
+      "Delete access token?": [
+        "Smazat přístupový token?"
+      ],
+      "Learn more": [
+        "Více informací"
+      ],
+      "Manage vault access": [
+        "Spravovat přístup do trezoru"
+      ],
+      "No access tokens yet": [
+        "Zatím žádné přístupové tokeny"
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Snímek obrazovky služby OpenSSH v systému Windows"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Instalace SSH agenta ${ PASS_APP_NAME }"
+      ],
+      "SSH Agent": [
+        "SSH agent"
+      ],
+      "Test a URL against this rule": [
+        "Otestovat URL proti tomuto pravidlu"
+      ],
+      "URL matching": [
+        "Shoda URL"
+      ],
+      "Your new access token": [
+        "Váš nový přístupový token"
       ]
     },
     "Title_cloned_item": {
@@ -5372,6 +5714,66 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho prvního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Pravidlo ${ modeLabelStong } poskytuje silnou kontrolu, ale jediná chyba může způsobit, že automatické vyplňování porovná a vyplní údaje na podvodných nebo phishingových webech."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH agent vyžaduje použití SSH klíčů, což není ve vašem plánu k dispozici."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Tuto položku nelze navrhnout pro automatické vyplňování kvůli pravidlu „${ neverModeDescriptionStrong }“. Pokud chcete tuto položku automaticky vyplňovat, přidejte další URL."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivita"
+      ],
+      "Activity details could not be loaded.": [
+        "Detaily aktivity se nepodařilo načíst."
+      ],
+      "Folder": [
+        "Složka"
+      ],
+      "Item": [
+        "Položka"
+      ],
+      "Reason": [
+        "Důvod"
+      ],
+      "Vault": [
+        "Trezor"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Zadejte URL pro kontrolu, zda vaše aktuální pravidlo odpovídá této URL"
+      ],
+      "The rule is matching this URL": [
+        "Pravidlo odpovídá této URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Pravidlo neodpovídá této URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Tato URL bude blokována pro automatické vyplňování"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Tato URL NEBUDE blokována pro automatické vyplňování"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Aktivní"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Platnost vypršela"
+      ],
+      "Expiring soon": [
+        "Platnost brzy vyprší"
       ]
     }
   }
