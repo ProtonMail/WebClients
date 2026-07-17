@@ -31,6 +31,18 @@ describe('Escape', () => {
                 '(prefers-proton-disabled-Color-scheme: dark)'
             );
         });
+
+        it('Should neutralize position fixed obfuscated with a CSS hex escape', () => {
+            expect(escapeForbiddenStyle('position:\\66 ixed')).toBe('position: inherit');
+        });
+
+        it('Should neutralize position absolute obfuscated with a CSS hex escape', () => {
+            expect(escapeForbiddenStyle('position:\\61 bsolute')).toBe('position: relative');
+        });
+
+        it('Should neutralize position fixed obfuscated with an HTML entity', () => {
+            expect(escapeForbiddenStyle('position:&#x66;ixed')).toBe('position: inherit');
+        });
     });
 
     describe('recurringUnescapeCSSEncoding', () => {
@@ -84,11 +96,23 @@ describe('Escape', () => {
             expect(escapeURLinStyle(style)).toEqual('');
         });
 
-        it('should keep the same style', () => {
+        it('should return the decoded style when nothing url-like is escaped', () => {
             const style = `background
             ur&#x26;#x26;#x26;#x26;#x26;(https://proton.me/image.jpg);`;
 
-            expect(escapeURLinStyle(style)).toEqual(style);
+            // The escapes are decoded (ur&(...) is not a url()) and the resulting `&` is HTML-escaped.
+            expect(escapeURLinStyle(style)).toEqual(`background
+            ur&amp;(https://proton.me/image.jpg);`);
+        });
+
+        it('should neutralize a position:fixed obfuscated with a CSS hex escape through the full pipeline', () => {
+            const style = 'position:\\66 ixed;top:0;left:0;width:100%;height:100%';
+
+            const sanitized = escapeForbiddenStyle(escapeURLinStyle(style));
+
+            expect(sanitized).toContain('position: inherit');
+            expect(sanitized).not.toMatch(/position\s*:\s*fixed/i);
+            expect(sanitized).not.toContain('\\66');
         });
 
         it('should escape a malicious URL inside an @import statement', () => {
