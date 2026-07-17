@@ -47,6 +47,18 @@ const replaceOverlayPositionWithInherit = (styleTag: HTMLStyleElement) => {
 };
 
 /**
+ * The browser's CSSOM `cssText` serialization decodes CSS escapes (e.g. `\3c` -> `<`)
+ * without re-escaping them for the `<style>` rawtext context. When the reconstructed
+ * style is later serialized to a string (locateHead -> getIframeHtml -> doc.write),
+ * a smuggled `</style>` would terminate the element and inject live HTML (mXSS).
+ *
+ * Only `</` can close a `<style>` rawtext element, so we re-escape just that `<` back
+ * to a CSS hex escape. This renders identically to `<` inside CSS string values while
+ * preserving valid range media queries such as `@media (width > 600px)`.
+ */
+export const neutralizeStyleBreakout = (css: string) => css.replace(/<(?=\/)/g, '\\3c ');
+
+/**
  * Height-dependent media queries interfere with iframe height size calculations
  */
 const replaceHeightDependentMediaQueries = (styleTag: HTMLStyleElement) => {
@@ -89,7 +101,7 @@ const replaceHeightDependentMediaQueries = (styleTag: HTMLStyleElement) => {
     );
 
     if (result.replaceTextContent) {
-        styleTag.textContent = result.textContent;
+        styleTag.textContent = neutralizeStyleBreakout(result.textContent);
     }
 };
 
