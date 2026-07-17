@@ -4,6 +4,7 @@ import {
     MESSAGE_IFRAME_PRINT_HEADER_ID,
     MESSAGE_IFRAME_ROOT_ID,
 } from '@proton/mail-renderer/constants';
+import { neutralizeStyleBreakout } from '@proton/mail-renderer/helpers/transforms/transformStylesheet';
 import { locateHead } from '@proton/mail/helpers/locateHead';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
@@ -34,6 +35,20 @@ const getIframeHtml = ({
     iframeCSSStyles,
     iframeSVG,
 }: Options) => {
+    /**
+     * Defense-in-depth: `messageHead` is serialized to a string and written verbatim into
+     * the iframe document. `<style>` is a rawtext element, so a `</style>` inside a style's
+     * text content would terminate the element and inject live HTML (mXSS). Neutralize any
+     * such breakout on each head `<style>` before serialization. This is idempotent for
+     * properly sanitized styles (which keep CSS escapes) and does not affect legitimate
+     * closing tags, which live in the element structure rather than the text content.
+     */
+    messageDocument?.querySelectorAll('head style').forEach((styleTag) => {
+        if (styleTag.textContent) {
+            styleTag.textContent = neutralizeStyleBreakout(styleTag.textContent);
+        }
+    });
+
     const messageHead = locateHead(messageDocument) || '';
     const body = messageDocument?.querySelector('body');
     const bodyStyles = body?.getAttribute('style');
