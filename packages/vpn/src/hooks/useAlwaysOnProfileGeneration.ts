@@ -9,10 +9,6 @@ import { useAlwaysOnPolicyService } from '../contexts/AlwaysOnPolicyServiceConte
 import type { AlwaysOnPolicy } from '../types/AlwaysOn';
 import { useAlwaysOnPolicyTelemetry } from './useAlwaysOnPolicyTelemetry';
 
-export interface GenerateOptions {
-    restrictLogins: boolean;
-}
-
 type Step = 'form' | 'generating' | 'generated' | 'instructions';
 
 /** Minimum time the spinner stays on screen, so a near-instant API response doesn't flash it. */
@@ -52,17 +48,17 @@ export const useProfileGeneration = () => {
         }
     }, [step, sendInstructionsViewedReport]);
 
-    const generate = async (options: GenerateOptions) => {
+    const generate = async () => {
         setStep('generating');
         sendGenerateStartReport();
         try {
             const [policy] = await Promise.all([
-                service.updatePolicy({ EnforceAlwaysOn: true, RestrictLogins: options.restrictLogins }),
+                service.updatePolicy({ EnforceAlwaysOn: true }),
                 wait(GENERATING_DURATION_MS),
             ]);
             setCreatedPolicy(policy);
             setStep('generated');
-            sendGenerateSuccessReport(options.restrictLogins);
+            sendGenerateSuccessReport();
         } catch {
             createNotification({
                 type: 'error',

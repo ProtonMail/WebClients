@@ -21,7 +21,7 @@ export const InstructionsModal = ({ windows, rego, ...props }: Props) => (
             <InstructionsContent windows={windows} rego={rego} />
         </ModalTwoContent>
         <ModalTwoFooter>
-            <Button color="norm" shape="solid" onClick={props.onClose}>
+            <Button color="norm" shape="solid" className="ml-auto" onClick={props.onClose}>
                 {c('Action').t`Done`}
             </Button>
         </ModalTwoFooter>
