@@ -3,6 +3,7 @@ import type { Entry } from '@proton/proton-foundation-search';
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import { Logger } from '../shared/Logger';
 import { SearchDB } from '../shared/SearchDB';
+import { SEARCH_LIBRARY_BLOB_VERSION } from '../shared/config';
 import { SearchDBUserMismatchError } from '../shared/errors';
 import { type SearchMetrics, searchMetrics, startSearchTimer } from '../shared/searchMetrics';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
@@ -230,6 +231,7 @@ export class SharedWorkerAPI {
         }
 
         const { cryptoKey } = await SearchIndexKeyManager.getOrCreateKey(db, bridge);
+        await db.ensureCompatibleBlobVersion(SEARCH_LIBRARY_BLOB_VERSION);
 
         this.indexRegistry = new IndexRegistry(cryptoKey);
         return this.indexRegistry;
