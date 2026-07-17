@@ -1,3 +1,4 @@
+import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import type { NodeEntity, NodeEvent } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
@@ -8,10 +9,14 @@ import { SearchDB } from '../../../shared/SearchDB';
 import { SearchLibraryError } from '../../../shared/errors';
 import type { TreeEventScopeId } from '../../../shared/types';
 import { FakeMainThreadBridge } from '../../../testing/FakeMainThreadBridge';
+import { findDocumentsByTag } from '../../../testing/indexHelpers';
 import { makeTaskContext } from '../../../testing/makeTaskContext';
-import { IndexKind } from '../../index/IndexRegistry';
+import { setupRealSearchLibraryWasm } from '../../../testing/setupRealSearchLibraryWasm';
+import { IndexKind, IndexRegistry } from '../../index/IndexRegistry';
 import type { IndexEntry } from '../indexEntry';
 import { NodeTreeIndexPopulator } from './NodeTreeIndexPopulator';
+
+setupRealSearchLibraryWasm();
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
 
@@ -277,6 +282,17 @@ const nodeDeleted = (nodeUid: string, eventId: string): NodeEvent =>
         eventId,
     }) as unknown as NodeEvent;
 
+const nodeTrashed = (nodeUid: string, eventId: string): NodeEvent =>
+    ({
+        type: 'node_updated',
+        nodeUid,
+        parentNodeUid: undefined,
+        isTrashed: true,
+        isShared: false,
+        treeEventScopeId: SCOPE_ID,
+        eventId,
+    }) as unknown as NodeEvent;
+
 describe('NodeTreeIndexPopulator incremental quarantine', () => {
     let db: SearchDB;
     let bridge: FakeMainThreadBridge;
@@ -353,5 +369,91 @@ describe('NodeTreeIndexPopulator incremental quarantine', () => {
         expect(processed).toBe(1);
         expect(populator.processedUids).toEqual(['b']);
         expect(await db.getAllRepairEntries()).toHaveLength(0);
+    });
+});
+
+describe('NodeTreeIndexPopulator descendant removal', () => {
+    let db: SearchDB;
+    let bridge: FakeMainThreadBridge;
+    let indexRegistry: IndexRegistry;
+
+    beforeEach(async () => {
+        indexedDB = new IDBFactory();
+        db = await SearchDB.open('test-user');
+        bridge = new FakeMainThreadBridge();
+        indexRegistry = new IndexRegistry(await generateAndImportKey());
+    });
+
+    // Walks the tree from `rootUid` (mirrors the initial-indexing walk) and writes the resulting
+    // entries into a real index, so the descendant query below runs against actual WASM data.
+    async function indexTree(rootUid: string) {
+        const populator = new TestNodeTreePopulator(rootUid);
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db, indexRegistry });
+        const entries = await collectEntries(populator.visitAndProduceIndexEntries(ctx));
+
+        const { indexWriter } = await indexRegistry.get(IndexKind.MAIN, db);
+        const session = indexWriter.startWriteSession();
+        for (const entry of entries) {
+            session.insert(entry);
+        }
+        await session.commit();
+
+        return { populator, ctx };
+    }
+
+    async function allIndexedIds(): Promise<string[]> {
+        const { indexReader } = await indexRegistry.get(IndexKind.MAIN, db);
+        // Every entry from this populator carries this constant tag, so it's a stand-in for "match all".
+        return (await findDocumentsByTag(indexReader, 'indexPopulatorKind', 'test-populator')).map((r) => r.identifier);
+    }
+
+    it('node_deleted removes a nested descendant', async () => {
+        const folderUid = 'vol1~FolderA1';
+        const fileUid = 'vol1~FileA1';
+        // Sibling folder sharing the same volumeId prefix before the `~`, to prove the descendant
+        // query isn't dissolving into an over-broad match on that shared prefix.
+        const siblingFolderUid = 'vol1~FolderB1';
+        const siblingFileUid = 'vol1~FileB1';
+
+        bridge.setChildren('root', [
+            makeMaybeNode({ uid: folderUid, name: 'FolderA', type: 'folder' as any }),
+            makeMaybeNode({ uid: siblingFolderUid, name: 'FolderB', type: 'folder' as any }),
+        ]);
+        bridge.setChildren(folderUid, [makeMaybeNode({ uid: fileUid, name: 'a.txt', type: 'file' as any })]);
+        bridge.setChildren(siblingFolderUid, [
+            makeMaybeNode({ uid: siblingFileUid, name: 'b.txt', type: 'file' as any }),
+        ]);
+
+        const { populator, ctx } = await indexTree('root');
+        expect(await allIndexedIds()).toEqual(
+            expect.arrayContaining([folderUid, fileUid, siblingFolderUid, siblingFileUid])
+        );
+
+        await populator.processNodeMutation(nodeDeleted(folderUid, 'e1'), ctx);
+
+        const remaining = await allIndexedIds();
+        expect(remaining).not.toContain(folderUid);
+        expect(remaining).not.toContain(fileUid);
+        // The sibling subtree (same volumeId, different nodeUid) must survive untouched.
+        expect(remaining).toContain(siblingFolderUid);
+        expect(remaining).toContain(siblingFileUid);
+    });
+
+    it('node_updated on a trashed folder removes its descendants', async () => {
+        const folderUid = 'vol1~FolderC1';
+        const fileUid = 'vol1~FileC1';
+
+        bridge.setChildren('root', [makeMaybeNode({ uid: folderUid, name: 'FolderC', type: 'folder' as any })]);
+        bridge.setChildren(folderUid, [makeMaybeNode({ uid: fileUid, name: 'c.txt', type: 'file' as any })]);
+
+        const { populator, ctx } = await indexTree('root');
+        expect(await allIndexedIds()).toEqual(expect.arrayContaining([folderUid, fileUid]));
+
+        // The backend reports the folder itself as trashed; no per-descendant event is sent.
+        bridge.setNode(folderUid, makeMaybeNode({ uid: folderUid, name: 'FolderC', type: 'folder' as any }));
+        await populator.processNodeMutation(nodeTrashed(folderUid, 'e1'), ctx);
+
+        const remaining = await allIndexedIds();
+        expect(remaining).not.toContain(fileUid);
     });
 });

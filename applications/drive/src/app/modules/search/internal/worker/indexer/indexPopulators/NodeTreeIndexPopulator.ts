@@ -613,7 +613,14 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
     private descendantsPathExpr(nodeUid: string): Expression {
         return Expression.attr(
             'path',
-            Func.Matches,
+            // Func.Equals, not Func.Matches: the .d.ts claims they behave identically for tag
+            // attributes, but empirically they don't. Matches case-folds and tokenizes on
+            // non-alphanumeric characters, treating `~` as a token separator exactly like the
+            // path's `/`. A nodeUid is `{volumeId}~{nodeId}`, so under Matches that separator
+            // splits it into two independent fragments and loses case, letting the query miss
+            // its own node (case mismatch) or match a different node whose fragments happen to
+            // overlap after normalization. Equals compares the raw bytes, unsplit and case-exact.
+            Func.Equals,
             TermValue.wild()
                 .then('/' + nodeUid)
                 .wildcard()
