@@ -9,7 +9,7 @@ import { reportErrorToSentry } from '../../../../../Utils/errorMessage'
 import { CircleLoader } from '../../CircleLoader/CircleLoader'
 import { useApplication } from '../../../../ApplicationProvider'
 import { useUI } from '../../../ui-store'
-import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
+import { VersionNumber } from '../../VersionNumber/VersionNumber'
 
 const { s } = createStringifier(strings)
 
