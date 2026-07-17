@@ -31,18 +31,14 @@ export const useAlwaysOnPolicyTelemetry = () => {
         });
     }, [api]);
 
-    const sendGenerateSuccessReport = useCallback(
-        (restrictLogins: boolean) => {
-            void sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.vpnAlwaysOnPolicy,
-                event: TelemetryVpnAlwaysOnPolicyEvents.generateSuccess,
-                dimensions: { restrictLogins: String(restrictLogins) },
-                delay: false,
-            });
-        },
-        [api]
-    );
+    const sendGenerateSuccessReport = useCallback(() => {
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.vpnAlwaysOnPolicy,
+            event: TelemetryVpnAlwaysOnPolicyEvents.generateSuccess,
+            delay: false,
+        });
+    }, [api]);
 
     const sendGenerateFailureReport = useCallback(() => {
         void sendTelemetryReport({

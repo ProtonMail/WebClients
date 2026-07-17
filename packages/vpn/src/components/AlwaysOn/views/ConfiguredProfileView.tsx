@@ -70,11 +70,7 @@ export const ConfiguredProfileView = ({ policy, onShowInstructions, onReconfigur
                 <PolicyRow
                     icon={<IcPassword size={6} className="color-weak" />}
                     label={c('Label').t`Login restrictions`}
-                    value={
-                        policy.RestrictLogins
-                            ? c('State').t`Restricted to members of your organization`
-                            : c('State').t`No restrictions`
-                    }
+                    value={c('State').t`No restrictions`}
                 />
             </BorderedContainer>
         </Card>
