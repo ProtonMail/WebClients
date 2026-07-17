@@ -84,7 +84,7 @@ const SettingsTabsContent: FC<Props> = ({ pathname }) => {
     );
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname, tabs));
 
-    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
 
     const handleOnChange = (nextTab: number) => {
