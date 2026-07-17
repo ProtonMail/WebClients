@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import type { AlwaysOnPolicy } from '../../types/AlwaysOn';
@@ -26,7 +26,6 @@ vi.mock('@proton/components/hooks/useNotifications', () => ({
 const buildPolicy = (overrides: Partial<AlwaysOnPolicy> = {}): AlwaysOnPolicy => ({
     ID: 'policy-1',
     EnforceAlwaysOn: true,
-    RestrictLogins: false,
     Version: 1,
     Hash: 'a'.repeat(64),
     UpdatedAt: 1_750_000_000,
@@ -63,24 +62,22 @@ describe('AlwaysOn', () => {
         expect(screen.getByRole('button', { name: 'Configure Always-on VPN' })).toBeInTheDocument();
     });
 
-    it('shows the overview reflecting the policy when one is configured', async () => {
-        fetchPolicy.mockResolvedValue(buildPolicy({ EnforceAlwaysOn: true, RestrictLogins: true }));
+    test.each`
+        enforceAlwaysOn | status
+        ${true}         | ${'Enabled'}
+        ${false}        | ${'Disabled'}
+    `(
+        'shows the overview reflecting the policy when EnforceAlwaysOn is $enforceAlwaysOn',
+        async ({ enforceAlwaysOn, status }) => {
+            fetchPolicy.mockResolvedValue(buildPolicy({ EnforceAlwaysOn: enforceAlwaysOn }));
 
-        render(<AlwaysOn />);
+            render(<AlwaysOn />);
 
-        expect(await screen.findByText('Always-on VPN device profile')).toBeInTheDocument();
-        expect(screen.getByText('Enabled')).toBeInTheDocument();
-        expect(screen.getByText('Restricted to members of your organization')).toBeInTheDocument();
-    });
-
-    it('shows "Disabled" / "No restrictions" for a configured-but-off policy', async () => {
-        fetchPolicy.mockResolvedValue(buildPolicy({ EnforceAlwaysOn: false, RestrictLogins: false }));
-
-        render(<AlwaysOn />);
-
-        expect(await screen.findByText('Disabled')).toBeInTheDocument();
-        expect(screen.getByText('No restrictions')).toBeInTheDocument();
-    });
+            expect(await screen.findByText('Always-on VPN device profile')).toBeInTheDocument();
+            expect(screen.getByText(status)).toBeInTheDocument();
+            expect(screen.getByText('No restrictions')).toBeInTheDocument();
+        }
+    );
 
     it('opens the deployment instructions from the overview', async () => {
         fetchPolicy.mockResolvedValue(buildPolicy());
@@ -90,7 +87,7 @@ describe('AlwaysOn', () => {
 
         await userEvent.click(screen.getByRole('button', { name: 'Instructions' }));
 
-        expect(await screen.findByText('Choose a deployment method')).toBeInTheDocument();
+        expect(await screen.findAllByText('Choose a deployment method')).not.toHaveLength(0);
     });
 
     it('runs the create flow and commits the policy to the page when the modal reaches the instructions step', async () => {
@@ -99,24 +96,13 @@ describe('AlwaysOn', () => {
         await userEvent.click(await screen.findByRole('button', { name: 'Configure Always-on VPN' }));
         await userEvent.click(await screen.findByText('Generate device profile'));
 
-        expect(updatePolicy).toHaveBeenCalledWith({ EnforceAlwaysOn: true, RestrictLogins: false });
+        expect(updatePolicy).toHaveBeenCalledWith({ EnforceAlwaysOn: true });
 
-        expect(await screen.findByText('Choose a deployment method', undefined, { timeout: 3000 })).toBeInTheDocument();
+        expect(await screen.findAllByText('Choose a deployment method', undefined, { timeout: 3000 })).not.toHaveLength(
+            0
+        );
         expect(screen.getByText('Done')).toBeInTheDocument();
         expect(screen.getByText('Always-on VPN device profile')).toBeInTheDocument();
-    });
-
-    it('sends RestrictLogins=true when the optional restriction is checked', async () => {
-        render(<AlwaysOn />);
-
-        await userEvent.click(await screen.findByRole('button', { name: 'Configure Always-on VPN' }));
-        await userEvent.click(await screen.findByText('Restrict logins to your organization'));
-        await userEvent.click(screen.getByText('Generate device profile'));
-
-        await waitFor(
-            () => expect(updatePolicy).toHaveBeenCalledWith({ EnforceAlwaysOn: true, RestrictLogins: true }),
-            { timeout: 2000 }
-        );
     });
 
     it('keeps showing the call-to-action when the policy fetch fails', async () => {

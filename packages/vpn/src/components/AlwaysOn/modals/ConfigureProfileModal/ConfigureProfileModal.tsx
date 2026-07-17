@@ -22,7 +22,6 @@ interface Props extends ModalProps {
 const HEIGHT_TRANSITION = 'height 0.25s ease';
 
 export const ConfigureProfileModal = ({ onConfigured, ...props }: Props) => {
-    const [restrictLogins, setRestrictLogins] = useState(false);
     const { step, isForm, isCreated, isInstructions, createdPolicy, generate, reset } = useProfileGeneration();
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -54,7 +53,6 @@ export const ConfigureProfileModal = ({ onConfigured, ...props }: Props) => {
     const handleExit = () => {
         props.onExit?.();
         reset();
-        setRestrictLogins(false);
         prevHeightRef.current = null;
         setHeight(undefined);
     };
@@ -83,10 +81,7 @@ export const ConfigureProfileModal = ({ onConfigured, ...props }: Props) => {
                         ) : (
                             <div className="relative">
                                 <div {...inactiveOutsideForm}>
-                                    <ConfigurationForm
-                                        restrictLogins={restrictLogins}
-                                        onRestrictLoginsChange={setRestrictLogins}
-                                    />
+                                    <ConfigurationForm />
                                 </div>
                                 {isForm ? null : <LoadAndSuccessTransition created={isCreated} />}
                             </div>
@@ -104,12 +99,7 @@ export const ConfigureProfileModal = ({ onConfigured, ...props }: Props) => {
                         <Button {...inactiveOutsideForm} onClick={props.onClose}>
                             {c('Action').t`Cancel`}
                         </Button>
-                        <Button
-                            {...inactiveOutsideForm}
-                            color="norm"
-                            shape="solid"
-                            onClick={() => generate({ restrictLogins })}
-                        >
+                        <Button {...inactiveOutsideForm} color="norm" shape="solid" onClick={() => generate()}>
                             {c('Action').t`Generate device profile`}
                         </Button>
                     </>
