@@ -114,7 +114,7 @@ function Content({ isSearchReady, showProgress, indexingProgress, onClose }: Con
                     {isSearchReady
                         ? c('Info').t`Search enabled. You may now close this dialogue and search for files and folders.`
                         : c('Info')
-                              .t`To enable truly search, we need to index your files locally. You can still use ${DRIVE_APP_NAME} normally - we'll let you know when indexing is done.`}
+                              .t`To enable truly search, we need to index your files locally. You can still use ${DRIVE_APP_NAME} normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.`}
                 </p>
             </div>
             {showProgress && <IndexingProgressInfo progress={indexingProgress} isComplete={false} />}
