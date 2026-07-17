@@ -1104,6 +1104,56 @@ describe('SharedWorkerAPI integration', () => {
             expect(await search(api, 'vacation')).toHaveLength(0);
         }, 15_000);
 
+        it('deleting a folder removes all of its nested files and folders from the index', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Ids are shaped like real production node ids (mixed case, with a ~ in them) rather
+            // than the plain lowercase ids used elsewhere in this file, so this test actually
+            // covers ids that look like what Drive really sends.
+            const folderUid = 'vol1~FolderUploads';
+            const reportUid = 'vol1~UploadReport';
+            const invoiceUid = 'vol1~UploadInvoice';
+            const archiveFolderUid = 'vol1~FolderArchive';
+            const archivedNoteUid = 'vol1~ArchivedNote';
+
+            bridge.setNode('root-uid', folderWithParent('root-uid', 'My Files'));
+            bridge.setNode(folderUid, folderWithParent(folderUid, 'Uploads', 'root-uid'));
+            bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeCreated, folderUid, 'root-uid'));
+
+            // The folder holds two files and a nested subfolder with a file of its own, so removal
+            // has to reach more than one level deep, not just the folder's direct children.
+            bridge.setChildren(folderUid, [
+                file(reportUid, 'report.pdf'),
+                file(invoiceUid, 'invoice.pdf'),
+                folder(archiveFolderUid, 'Archive'),
+            ]);
+            bridge.setChildren(archiveFolderUid, [file(archivedNoteUid, 'note.txt')]);
+            bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeUpdated, folderUid, 'root-uid'));
+
+            const before = await advanceUntilExport(api, IndexKind.MAIN, (entries) =>
+                entries.some((e) => e.identifier === archivedNoteUid)
+            );
+            expect(before.map((e) => e.identifier)).toEqual(
+                expect.arrayContaining([folderUid, reportUid, invoiceUid, archiveFolderUid, archivedNoteUid])
+            );
+
+            // Now delete the folder - everything nested inside it should disappear too.
+            bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeDeleted, folderUid));
+
+            const after = await advanceUntilExport(
+                api,
+                IndexKind.MAIN,
+                (entries) => !entries.some((e) => e.identifier === folderUid)
+            );
+            const afterIds = after.map((e) => e.identifier);
+            expect(afterIds).not.toContain(folderUid);
+            expect(afterIds).not.toContain(reportUid);
+            expect(afterIds).not.toContain(invoiceUid);
+            expect(afterIds).not.toContain(archiveFolderUid);
+            expect(afterIds).not.toContain(archivedNoteUid);
+        }, 15_000);
+
         it('node_updated moves an entire subtree and re-paths every descendant', async () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
             await state.waitForSearchable();
