@@ -1,6 +1,5 @@
 import { CommentThread } from '../Models'
-import { CommentThreadType, CommentType, ServerTime } from '@proton/docs-shared'
-import { Result } from '@proton/docs-shared'
+import { CommentThreadType, CommentType, ServerTime, Result } from '@proton/docs-shared'
 import metrics from '@proton/metrics'
 import type { DecryptComment } from './DecryptComment'
 import type { DocsApi } from '../Api/DocsApi'
@@ -8,6 +7,8 @@ import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+
+const THREAD_LOAD_BATCH_SIZE = 5
 
 /**
  * Updates the local comment state by loading and decrypting all threads from the API for the document.
@@ -34,15 +35,28 @@ export class LoadThreads implements UseCaseInterface<void> {
 
     const response = result.getValue()
 
-    await Promise.all(
-      response.CommentThreads.map(async (threadID) => {
-        return this.loadThread({ threadID, entitlements: dto.entitlements, commentsState: dto.commentsState })
-      }),
-    )
+    await this.loadThreadsInBatches(response.CommentThreads, dto)
 
     dto.commentsState.sortThreadsAndNotify()
 
     return Result.ok()
+  }
+
+  private async loadThreadsInBatches(
+    threadIDs: string[],
+    dto: {
+      entitlements: PublicDocumentEntitlements | DocumentEntitlements
+      commentsState: LocalCommentsState
+    },
+  ): Promise<void> {
+    for (let i = 0; i < threadIDs.length; i += THREAD_LOAD_BATCH_SIZE) {
+      const batch = threadIDs.slice(i, i + THREAD_LOAD_BATCH_SIZE)
+      await Promise.all(
+        batch.map((threadID) =>
+          this.loadThread({ threadID, entitlements: dto.entitlements, commentsState: dto.commentsState }),
+        ),
+      )
+    }
   }
 
   private async loadThread(dto: {
