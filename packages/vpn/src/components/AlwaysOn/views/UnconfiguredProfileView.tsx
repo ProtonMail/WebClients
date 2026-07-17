@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
 import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
@@ -38,6 +39,8 @@ export const UnconfiguredProfileView = ({ onConfigure }: { onConfigure: () => vo
                             <span>{c('Info').t`Supported platforms`} </span>
                             <IcBrandWindows className="color-info" size={5} />
                             <span className="text-capitalize">{DESKTOP_PLATFORMS.WINDOWS}</span>
+                            <IcBrandApple size={5} />
+                            <span>{c('Info').t`macOS`}</span>
                         </div>
                     </div>
                 </div>

@@ -39,7 +39,7 @@ describe('useAlwaysOnPolicyTelemetry', () => {
         const { result } = renderHook(() => useAlwaysOnPolicyTelemetry());
 
         result.current.sendGenerateStartReport();
-        result.current.sendGenerateSuccessReport(true);
+        result.current.sendGenerateSuccessReport();
         result.current.sendGenerateFailureReport();
 
         expect(mockSendTelemetryReport).toHaveBeenNthCalledWith(1, {
@@ -52,7 +52,6 @@ describe('useAlwaysOnPolicyTelemetry', () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.vpnAlwaysOnPolicy,
             event: TelemetryVpnAlwaysOnPolicyEvents.generateSuccess,
-            dimensions: { restrictLogins: 'true' },
             delay: false,
         });
         expect(mockSendTelemetryReport).toHaveBeenNthCalledWith(3, {
