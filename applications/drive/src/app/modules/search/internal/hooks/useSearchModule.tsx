@@ -92,17 +92,16 @@ export const useSearchModule = (): UseSearchModuleReturn => {
     const [searchModuleState, setSearchModuleState] = useState<SearchModuleState | null>(null);
 
     useEffect(function initSearchModuleSingleton() {
-        const isSupported = SearchModule.isEnvironmentCompatible();
-        const isAvailable = isSupported && isFeatureFlagEnabled;
-
-        if (!isAvailable) {
-            return;
-        }
-
         let cancelled = false;
 
         async function init() {
             try {
+                const isSupported = await SearchModule.isEnvironmentCompatible();
+                const isAvailable = isSupported && isFeatureFlagEnabled;
+                if (!isAvailable || cancelled) {
+                    return;
+                }
+
                 const userId = brandSearchUserId(user.ID);
 
                 const module = await SearchModule.getOrCreate({

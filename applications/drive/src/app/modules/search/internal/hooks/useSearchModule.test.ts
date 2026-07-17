@@ -91,7 +91,7 @@ beforeEach(() => {
     globalThis.indexedDB = new IDBFactory();
     FakeBroadcastChannel.reset();
     resetSingleton();
-    jest.spyOn(SearchModule, 'isEnvironmentCompatible').mockReturnValue(true);
+    jest.spyOn(SearchModule, 'isEnvironmentCompatible').mockResolvedValue(true);
     setFeatureFlag(true);
 });
 
@@ -104,7 +104,7 @@ describe('useSearchModule', () => {
         });
 
         it('returns isAvailable: false when environment is incompatible', () => {
-            (SearchModule.isEnvironmentCompatible as jest.Mock).mockReturnValue(false);
+            (SearchModule.isEnvironmentCompatible as jest.Mock).mockResolvedValue(false);
             const { result } = renderHook(() => useSearchModule());
             expect(result.current.isAvailable).toBe(false);
         });
