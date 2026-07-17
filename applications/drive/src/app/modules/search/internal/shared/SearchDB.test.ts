@@ -315,6 +315,47 @@ describe('SearchDB', () => {
                 expect(await db.isSearchable()).toBe(true);
             });
         });
+
+        describe('searchLibraryBlobVersion', () => {
+            it('returns undefined by default', async () => {
+                expect(await db.getSearchLibraryBlobVersion()).toBeUndefined();
+            });
+
+            it('returns the stored version after setSearchLibraryBlobVersion', async () => {
+                await db.setSearchLibraryBlobVersion('2');
+                expect(await db.getSearchLibraryBlobVersion()).toBe('2');
+            });
+        });
+
+        describe('ensureCompatibleBlobVersion', () => {
+            it('does nothing when the version matches', async () => {
+                await db.setSearchLibraryBlobVersion('1');
+                await db.markSearchableIndex();
+                await db.ensureCompatibleBlobVersion('1');
+                expect(await db.isSearchable()).toBe(true);
+            });
+
+            it('does nothing on a brand new index with nothing stored yet', async () => {
+                await db.ensureCompatibleBlobVersion('1');
+                expect(await db.getSearchLibraryBlobVersion()).toBe('1');
+                expect(await db.isSearchable()).toBe(false);
+            });
+
+            it('clears the index when the version differs', async () => {
+                await db.setSearchLibraryBlobVersion('1');
+                await db.markSearchableIndex();
+                await db.ensureCompatibleBlobVersion('2');
+                expect(await db.getSearchLibraryBlobVersion()).toBe('2');
+                expect(await db.isSearchable()).toBe(false);
+            });
+
+            it('treats a pre-versioning index (nothing stored) as "1" and clears when current version differs', async () => {
+                await db.markSearchableIndex();
+                await db.ensureCompatibleBlobVersion('2');
+                expect(await db.getSearchLibraryBlobVersion()).toBe('2');
+                expect(await db.isSearchable()).toBe(false);
+            });
+        });
     });
 
     describe('repairEntries', () => {
