@@ -1,17 +1,21 @@
 import type { CacheConfig } from '@proton/drive-store/lib/CacheConfig'
-import type { IndexedDatabase } from '../Database/IndexedDB'
-import { SheetsPatchesType, type SheetsDatabaseSchema, type SheetsPatches } from '../Database/SheetsDBSchema'
-import type { EncryptionService } from './Encryption/EncryptionService'
-import type { EncryptionContext } from './Encryption/EncryptionContext'
+import type { IndexedDatabase } from '../../Database/IndexedDB'
+import type { SheetsAction, SheetsDatabaseSchema, SheetsPatches } from '../../Database/SheetsDBSchema'
+import { SheetsPatchesType } from '../../Database/SheetsDBSchema'
+import type { EncryptionService } from '../Encryption/EncryptionService'
+import type { EncryptionContext } from '../Encryption/EncryptionContext'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey'
 import type { AnyNodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import { nodeMetaUniqueId } from '@proton/drive-store/lib/NodeMeta'
 import { Result } from '@proton/docs-shared'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
+import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import { v4 as uuidv4 } from 'uuid'
 
 export class SheetsStorageService {
   private encryptionKey: Promise<CryptoKey>
+  private textEncoder = new TextEncoder()
 
   constructor(
     private cacheConfig: CacheConfig,
@@ -30,6 +34,16 @@ export class SheetsStorageService {
     }
   }
 
+  getBrowserId(): string {
+    const persisted = localStorage.getItem('sheets.browserId')
+    if (persisted) {
+      return persisted
+    }
+    const browserId = uuidv4()
+    localStorage.setItem('sheets.browserId', browserId)
+    return browserId
+  }
+
   async savePatches(dto: {
     document: AnyNodeMeta | undefined
     patches: object
@@ -43,7 +57,7 @@ export class SheetsStorageService {
       const encryptionKey = await this.encryptionKey
 
       const stringifiedPatches = JSON.stringify(dto.patches)
-      const uint8ArrayPatches = new TextEncoder().encode(stringifiedPatches)
+      const uint8ArrayPatches = this.textEncoder.encode(stringifiedPatches)
       const encryptedPatches = await this.encryptionService.encryptDataForLocalStorage(
         uint8ArrayPatches,
         this.cacheConfig.namespace,
@@ -59,6 +73,7 @@ export class SheetsStorageService {
         patches: encryptedPatches.getValue(),
         updateHash: dto.updateHash,
         type: dto.type,
+        browserId: this.getBrowserId(),
       }
 
       const result = await this.database.saveRecords('patches', [patches])
@@ -151,6 +166,83 @@ export class SheetsStorageService {
     } catch (error) {
       this.logger.error(`[SheetsStorageService] Failed to remove patches: ${error}`)
       return Result.fail(`Failed to remove patches: ${error}`)
+    }
+  }
+
+  async saveAction(dto: {
+    document: AnyNodeMeta | undefined
+    type: SheetsActionType
+    content: unknown
+    timestamp: number
+  }): Promise<Result<void>> {
+    try {
+      const nodeKey = this.buildKey(dto.document, 'nodeKey')
+      const encryptionKey = await this.encryptionKey
+
+      const stringifiedContent = JSON.stringify(dto.content)
+      const uint8ArrayContent = this.textEncoder.encode(stringifiedContent)
+      const encryptedContent = await this.encryptionService.encryptDataForLocalStorage(
+        uint8ArrayContent,
+        this.cacheConfig.namespace,
+        encryptionKey,
+      )
+      if (encryptedContent.isFailed()) {
+        return Result.fail(encryptedContent.getError())
+      }
+
+      const action: SheetsAction = {
+        nodeKey,
+        timestamp: dto.timestamp,
+        type: dto.type,
+        content: encryptedContent.getValue(),
+        browserId: this.getBrowserId(),
+      }
+      const result = await this.database.saveRecords('actions', [action])
+      if (result.isFailed()) {
+        return Result.fail(result.getError())
+      }
+      return Result.ok()
+    } catch (error) {
+      this.logger.error(`[SheetsStorageService] Failed to save action: ${error}`)
+      return Result.fail(`Failed to save action: ${error}`)
+    }
+  }
+
+  async getDecryptedActions(dto: {
+    document: AnyNodeMeta | undefined
+  }): Promise<Result<{ type: SheetsActionType; content: unknown; timestamp: number }[]>> {
+    try {
+      const nodeKey = this.buildKey(dto.document, 'nodeKey')
+      const recordsResult = await this.database.getRecordsByIndex('actions', 'nodeKey', nodeKey)
+      if (recordsResult.isFailed()) {
+        return Result.fail(recordsResult.getError())
+      }
+      const decryptedActionsArray: {
+        type: SheetsActionType
+        content: unknown
+        timestamp: number
+      }[] = []
+      const encryptionKey = await this.encryptionKey
+      for (const record of recordsResult.getValue()) {
+        const decryptedContent = await this.encryptionService.decryptDataForLocalStorage(
+          record.content,
+          this.cacheConfig.namespace,
+          encryptionKey,
+        )
+        if (decryptedContent.isFailed()) {
+          return Result.fail(decryptedContent.getError())
+        }
+        const decryptedContentString = uint8ArrayToUtf8String(decryptedContent.getValue())
+        decryptedActionsArray.push({
+          type: record.type,
+          content: JSON.parse(decryptedContentString),
+          timestamp: record.timestamp,
+        })
+      }
+      return Result.ok(decryptedActionsArray)
+    } catch (error) {
+      this.logger.error(`[SheetsStorageService] Failed to get decrypted actions: ${error}`)
+      return Result.fail(`Failed to get decrypted actions: ${error}`)
     }
   }
 }
