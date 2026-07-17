@@ -73,7 +73,15 @@
         align-items: center;
         justify-content: flex-start;
         text-align: center;
-        padding-block-start: 3.5rem;
+        max-inline-size: 44rem;
+        padding-block-start: 1rem;
+    }
+
+    &__loading-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-block-end: 2.5rem;
     }
 
     &__loader {
@@ -84,23 +92,35 @@
     &__status {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 0.75rem;
-        margin-block-end: 0.5rem;
+        margin-block: 0.5rem 0.75rem;
     }
 
     &__status-title {
-        font-family: var(--apt-display);
-        font-size: 1.5rem;
+        font-family: var(--apt-top);
+        font-size: 2rem;
         font-weight: 600;
+        line-height: 1.15;
         letter-spacing: -0.01em;
-        color: var(--apt-accent);
+        color: var(--apt-text);
+        margin: 0;
     }
 
-    &__status-step {
-        font-size: 0.98rem;
+    &__status-subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
         color: var(--apt-muted);
-        min-block-size: 1.5em;
-        margin-block: 0 2.75rem;
+        margin: 0;
+        max-inline-size: 24rem;
+    }
+
+    &__loading-footer {
+        margin-block-start: 3rem;
+        max-inline-size: 28rem;
+        font-size: 0.82rem;
+        line-height: 1.5;
+        color: var(--apt-muted);
     }
 
     &__lesson {
@@ -325,9 +345,7 @@
 
     &__recent-item {
         display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.85rem 1rem;
+        align-items: stretch;
         border-block-end: 1px solid var(--apt-border);
 
         &:last-child {
@@ -335,8 +353,53 @@
         }
     }
 
-    &__recent-icon {
+    &__recent-button {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex: 1;
+        min-inline-size: 0;
+        padding: 0.85rem 0.75rem 0.85rem 1rem;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        text-align: start;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+
+        &:hover:not(:disabled),
+        &:focus-visible:not(:disabled) {
+            background: rgba(109, 74, 255, 0.04);
+        }
+    }
+
+    &__recent-delete {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        inline-size: 2.75rem;
+        padding: 0;
+        border: 0;
+        border-inline-start: 1px solid var(--apt-border);
+        background: transparent;
         color: var(--apt-muted);
+        cursor: pointer;
+        transition:
+            background-color 0.15s ease,
+            color 0.15s ease;
+
+        &:hover,
+        &:focus-visible {
+            background: rgba(220, 53, 69, 0.06);
+            color: var(--signal-danger);
+        }
+    }
+
+    &__recent-logo {
+        inline-size: 1.25rem;
+        block-size: 1.25rem;
+        object-fit: contain;
     }
 
     &__recent-name {
@@ -542,7 +605,8 @@
             grid-template-columns: 1fr;
         }
 
-        &__title {
+        &__title,
+        &__status-title {
             font-size: 2.1rem;
         }
 

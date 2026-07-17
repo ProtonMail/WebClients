@@ -1,22 +1,47 @@
+import type { PaperTrailSource } from '../features/aiPaperTrail/parsers/types';
 import { readScopedLocalStorageJson, writeScopedLocalStorageJson } from './lumoScopedLocalStorage';
+import { deletePaperTrailReport, prunePaperTrailReports } from './paperTrailReportStorage';
 
 const RECENT_FILES_KEY = 'lumo-ai-paper-trail-recent';
 const MAX_RECENT_FILES = 5;
 
 export interface RecentPaperTrailFile {
-    filename: string;
+    id: string;
+    source: PaperTrailSource;
     uploadedAt: number;
 }
 
-export const getRecentPaperTrailFiles = (): RecentPaperTrailFile[] => {
-    return readScopedLocalStorageJson<RecentPaperTrailFile[]>(RECENT_FILES_KEY, []);
+const isRecentEntry = (entry: unknown): entry is RecentPaperTrailFile => {
+    if (!entry || typeof entry !== 'object') {
+        return false;
+    }
+    const record = entry as Record<string, unknown>;
+    return (
+        typeof record.id === 'string' &&
+        (record.source === 'chatgpt' || record.source === 'claude') &&
+        typeof record.uploadedAt === 'number'
+    );
 };
 
-export const addRecentPaperTrailFile = (filename: string): void => {
-    const existing = getRecentPaperTrailFiles().filter((entry) => entry.filename !== filename);
-    const updated: RecentPaperTrailFile[] = [{ filename, uploadedAt: Date.now() }, ...existing].slice(
+export const getRecentPaperTrailFiles = (): RecentPaperTrailFile[] => {
+    const stored = readScopedLocalStorageJson<unknown[]>(RECENT_FILES_KEY, []);
+    return stored.filter(isRecentEntry);
+};
+
+export const addRecentPaperTrailFile = (source: PaperTrailSource): string => {
+    const id = String(Date.now());
+    const existing = getRecentPaperTrailFiles();
+    const updated: RecentPaperTrailFile[] = [{ id, source, uploadedAt: Date.now() }, ...existing].slice(
         0,
         MAX_RECENT_FILES
     );
     writeScopedLocalStorageJson(RECENT_FILES_KEY, updated);
+    prunePaperTrailReports(updated.map((entry) => entry.id));
+    return id;
+};
+
+export const removeRecentPaperTrailFile = (id: string): void => {
+    const updated = getRecentPaperTrailFiles().filter((entry) => entry.id !== id);
+    writeScopedLocalStorageJson(RECENT_FILES_KEY, updated);
+    deletePaperTrailReport(id);
 };
