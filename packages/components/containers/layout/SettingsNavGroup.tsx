@@ -12,6 +12,7 @@ interface Props {
     subsections?: SubSectionConfig[];
     children: ReactNode;
     variant?: SettingsLayoutVariant;
+    header?: ReactNode;
 }
 
 /**
@@ -20,7 +21,7 @@ interface Props {
  * positionally using `getIsSubsectionAvailable`, mirroring `PrivateMainSettingsArea`.
  * Renders nothing if all children are unavailable.
  */
-const SettingsNavGroup = ({ title, description, subsections, children, variant }: Props) => {
+const SettingsNavGroup = ({ title, description, subsections, header, children, variant }: Props) => {
     const visibleChildren = Children.toArray(children).map((child, i) => {
         if (!isValidElement(child)) {
             return null;
@@ -46,6 +47,7 @@ const SettingsNavGroup = ({ title, description, subsections, children, variant }
                     variant !== SettingsLayoutVariant.Mobile && 'shadow-norm'
                 )}
             >
+                {header}
                 {visibleChildren}
             </div>
         </div>
