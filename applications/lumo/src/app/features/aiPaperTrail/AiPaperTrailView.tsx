@@ -5,8 +5,18 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
+import {
+    BRAND_NAME,
+    DRIVE_APP_NAME,
+    LUMO_SHORT_APP_NAME,
+    MAIL_APP_NAME,
+    PASS_APP_NAME,
+    VPN_APP_NAME,
+} from '@proton/shared/lib/constants';
+import lumoLogoWordmark from '@proton/styles/assets/img/lumo/lumo-logo-wordmark.svg';
+import ctaContainerBg from '@proton/styles/assets/img/lumo/trail/cta-container-bg.png';
+import claudeLogo from '@proton/styles/assets/img/lumo/trail/claude.svg';
+import chatgptLogo from '@proton/styles/assets/img/lumo/trail/chatgpt.svg';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
@@ -14,6 +24,10 @@ import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../red
 import { selectConversationById, selectMessagesByConversationId } from '../../redux/selectors';
 import { setGhostChatMode } from '../../redux/slices/ghostChat';
 import { ConversationStatus, type Message, Role } from '../../types';
+import { getRecentPaperTrailFiles, type RecentPaperTrailFile } from '../../util/paperTrailRecentStorage';
+import { PAPER_TRAIL_LIMITS } from './buildPaperTrailContext';
+import { PaperTrailHeader } from './PaperTrailHeader';
+import { PaperTrailLumoLogoAnimation } from './PaperTrailLumoLogoAnimation';
 import { PaperTrailReportView } from './PaperTrailReportView';
 import { parsePaperTrailReport } from './parsePaperTrailReport';
 import { useStartPaperTrail } from './useStartPaperTrail';
@@ -22,20 +36,93 @@ import './AiPaperTrailView.scss';
 
 const ACCEPTED = '.json,.zip,application/json,application/zip';
 
-const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => void; error?: string }) => {
+const formatRecentDate = (timestamp: number): string => {
+    return new Date(timestamp).toLocaleDateString(undefined, {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+    });
+};
+
+const ExportGuideCard = ({
+    logo,
+    title,
+    steps,
+    note,
+}: {
+    logo: string;
+    title: string;
+    steps: string[];
+    note: string;
+}) => (
+    <div className="ai-paper-trail__export-card">
+        <div className="ai-paper-trail__export-card-head">
+            <img src={logo} alt="" className="ai-paper-trail__export-logo" />
+            <h3 className="ai-paper-trail__export-title">{title}</h3>
+        </div>
+        <ol className="ai-paper-trail__export-steps">
+            {steps.map((step, index) => (
+                <li key={index} className="ai-paper-trail__export-step">
+                    <span className="ai-paper-trail__export-step-num">{index + 1}</span>
+                    <span>{step}</span>
+                </li>
+            ))}
+        </ol>
+        <p className="ai-paper-trail__export-note">{note}</p>
+    </div>
+);
+
+const RecentFilesSection = ({ files }: { files: RecentPaperTrailFile[] }) => {
+    if (files.length === 0) {
+        return null;
+    }
+
+    return (
+        <section className="ai-paper-trail__recent">
+            <div className="ai-paper-trail__recent-head">
+                <h2 className="ai-paper-trail__recent-title">{c('collider_2025:Title').t`Your recent files`}</h2>
+                <span className="ai-paper-trail__recent-label">{c('collider_2025:Label').t`Date`}</span>
+            </div>
+            <ul className="ai-paper-trail__recent-list">
+                {files.map((file) => (
+                    <li key={`${file.filename}-${file.uploadedAt}`} className="ai-paper-trail__recent-item">
+                        <LumoIcon name="FileText" size={16} className="ai-paper-trail__recent-icon shrink-0" />
+                        <span className="ai-paper-trail__recent-name">{file.filename}</span>
+                        <span className="ai-paper-trail__recent-date">{formatRecentDate(file.uploadedAt)}</span>
+                    </li>
+                ))}
+            </ul>
+        </section>
+    );
+};
+
+const UploadStage = ({
+    onFile,
+    error,
+    onStartChat,
+}: {
+    onFile: (file: File | undefined) => void;
+    error?: string;
+    onStartChat: () => void;
+}) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const [isDragging, setIsDragging] = useState(false);
+    const [recentFiles, setRecentFiles] = useState<RecentPaperTrailFile[]>([]);
+
+    useEffect(() => {
+        setRecentFiles(getRecentPaperTrailFiles());
+    }, []);
 
     const steps = [
         {
             title: c('collider_2025:Title').t`Export your data`,
             detail: c('collider_2025:Info')
-                .t`Download your data from ChatGPT (Settings → Data Controls → Export), or Claude (Settings → Privacy → Export data).`,
+                .t`Log in to your AI platform and request an export of your chat history, then download it to your device.`,
         },
         {
-            title: c('collider_2025:Title').t`Upload it privately`,
+            title: c('collider_2025:Title').t`Upload it securely`,
             detail: c('collider_2025:Info')
-                .t`Your file is analysed on the spot to build your report. Nothing is uploaded to our servers or stored.`,
+                .t`We extract your ${PAPER_TRAIL_LIMITS.maxPrompts} most recent prompts to keep processing fast. Nothing is uploaded to our servers or stored.`,
         },
         {
             title: c('collider_2025:Title').t`Get your AI Paper Trail`,
@@ -44,15 +131,36 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
         },
     ];
 
+    const chatGptSteps = [
+        c('collider_2025:Info').t`Sign in to your ChatGPT account at chatgpt.com`,
+        c('collider_2025:Info').t`Click your profile icon in the bottom-left corner`,
+        c('collider_2025:Info').t`Click Settings → Data controls`,
+        c('collider_2025:Info').t`Look for Export data`,
+        c('collider_2025:Info').t`Follow the prompts and confirm the export`,
+    ];
+
+    const claudeSteps = [
+        c('collider_2025:Info').t`Sign in to your Claude account at claude.ai`,
+        c('collider_2025:Info').t`Click your profile icon in the bottom-left corner`,
+        c('collider_2025:Info').t`Click Settings → Privacy`,
+        c('collider_2025:Info').t`Under your data, click Export data`,
+        c('collider_2025:Info').t`Follow the prompts to confirm the export`,
+    ];
+
     return (
         <div className="ai-paper-trail__inner ai-paper-trail__landing">
-            <span className="ai-paper-trail__eyebrow">{c('collider_2025:Title').t`AI Paper Trail`}</span>
-            <h1 className="ai-paper-trail__title">{c('collider_2025:Title')
-                .t`AI knows more about you than you think`}</h1>
-            <p className="ai-paper-trail__subtitle">
-                {c('collider_2025:Info')
-                    .t`Every conversation with AI leaves a paper trail. Your job. Your health. Your relationships. Even where you live. Upload your AI data and see what Big Tech could piece together from your words alone. But unlike them, we can't see it.`}
-            </p>
+            <div className="ai-paper-trail__hero">
+                <PaperTrailLumoLogoAnimation />
+                <span className="ai-paper-trail__subtitle text-bold pb-2">{c('collider_2025:Title').t`Generate your AI paper trail`}</span>
+                <h1 className="ai-paper-trail__title">
+                    {c('collider_2025:Title').t`See what Big Tech AI already knows about you`}
+                </h1>
+                <p className="ai-paper-trail__subtitle">
+                    {c('collider_2025:Info')
+                        .t`Every conversation with AI leaves a paper trail. Your job. Your health. Your relationships. Even where you live. Upload your AI data and see what Big Tech could piece together from your words alone. But unlike them, we can't see it.`}
+                </p>
+            </div>
+
             {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <div
                 className={clsx('ai-paper-trail__dropzone', isDragging && 'is-dragging')}
@@ -89,7 +197,8 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
                     <LumoIcon name="FileUp" size={32} className="ai-paper-trail__upload-icon" />
                     <span className="text-lg text-semibold">{c('collider_2025:Action').t`Upload your AI export`}</span>
                     <span className="ai-paper-trail__muted text-sm">
-                        {c('collider_2025:Info').t`Choose or drop .zip or conversations.json from Chat GPT or Claude.`}
+                        {c('collider_2025:Info')
+                            .t`Choose or drop your ChatGPT or Claude export (.zip or conversations.json). We analyze your ${PAPER_TRAIL_LIMITS.maxPrompts} most recent prompts.`}
                     </span>
                 </div>
             </div>
@@ -101,13 +210,15 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
                 </div>
             )}
 
-            <div className="ai-paper-trail__privacy flex flex-row flex-nowrap items-center gap-2 mt-6">
+            <div className="ai-paper-trail__privacy flex flex-row flex-nowrap items-center gap-2 mt-4">
                 <LumoIcon name="Lock" size={16} className="shrink-0" />
                 <span className="text-sm">
                     {c('collider_2025:Info')
-                        .t`Your file never leaves your device. It's read locally and is never stored.`}
+                        .t`Your export is encrypted on your device. Not even ${LUMO_SHORT_APP_NAME} can read it.`}
                 </span>
             </div>
+
+            <RecentFilesSection files={recentFiles} />
 
             <div className="ai-paper-trail__steps">
                 {steps.map((step, i) => (
@@ -119,9 +230,40 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
                 ))}
             </div>
 
-            <p className="ai-paper-trail__footnote">
+            <section className="ai-paper-trail__export-section">
+                <h2 className="ai-paper-trail__export-heading">{c('collider_2025:Title').t`How to export your data`}</h2>
+                <div className="ai-paper-trail__export-grid">
+                    <ExportGuideCard
+                        logo={chatgptLogo}
+                        title="ChatGPT"
+                        steps={chatGptSteps}
+                        note={c('collider_2025:Info')
+                            .t`OpenAI will email you a download link. It can take up to 24 hours.`}
+                    />
+                    <ExportGuideCard
+                        logo={claudeLogo}
+                        title="Claude"
+                        steps={claudeSteps}
+                        note={c('collider_2025:Info')
+                            .t`Anthropic will email you a download link when your export is ready.`}
+                    />
+                </div>
+            </section>
+
+            <div className="ai-paper-trail__cta-banner" style={{ backgroundImage: `url(${ctaContainerBg})` }}>
+                <img src={lumoLogoWordmark} alt={LUMO_SHORT_APP_NAME} className="ai-paper-trail__cta-wordmark" />
+                <p className="ai-paper-trail__cta-title">
+                    {c('collider_2025:Title')
+                        .t`Your conversations should belong to you. With ${LUMO_SHORT_APP_NAME}, they do.`}
+                </p>
+                <Button color="norm" size="large" pill onClick={onStartChat}>
+                    {c('collider_2025:Action').t`Try ${LUMO_SHORT_APP_NAME} for free`}
+                </Button>
+            </div>
+
+            <p className="ai-paper-trail__footer">
                 {c('collider_2025:Info')
-                    .t`This is exactly the kind of profiling ${LUMO_SHORT_APP_NAME} is built to stop. With ${LUMO_SHORT_APP_NAME}, your conversations are encrypted and never used to build a profile of you.`}
+                    .t`Built by ${BRAND_NAME}, the privacy brand trusted by over 100M people and the team behind ${MAIL_APP_NAME}, ${VPN_APP_NAME}, ${DRIVE_APP_NAME}, and ${PASS_APP_NAME}.`}
             </p>
         </div>
     );
@@ -275,7 +417,7 @@ export const AiPaperTrailView = () => {
         [start]
     );
 
-    const handleTryLumo = useCallback(() => {
+    const handleStartChat = useCallback(() => {
         dispatch(setGhostChatMode(false));
         navigate('/');
     }, [dispatch, navigate]);
@@ -300,11 +442,11 @@ export const AiPaperTrailView = () => {
 
     let content: JSX.Element;
     if (status === 'idle' || (status === 'error' && !conversationId)) {
-        content = <UploadStage onFile={handleFile} error={error} />;
+        content = <UploadStage onFile={handleFile} error={error} onStartChat={handleStartChat} />;
     } else if (!isFinished) {
         content = <LoadingStage />;
     } else if (report) {
-        content = <PaperTrailReportView report={report} onStartOver={reset} onTryLumo={handleTryLumo} />;
+        content = <PaperTrailReportView report={report} onStartOver={reset} onTryLumo={handleStartChat} />;
     } else {
         content = (
             <div className="ai-paper-trail__inner flex flex-column items-center gap-4 text-center">
@@ -321,9 +463,7 @@ export const AiPaperTrailView = () => {
 
     return (
         <div className="ai-paper-trail">
-            <div className="ai-paper-trail__brand">
-                <img src={lumoCatIcon} alt="" className="ai-paper-trail__brand-logo" />
-            </div>
+            <PaperTrailHeader onStartChat={handleStartChat} />
             {content}
         </div>
     );

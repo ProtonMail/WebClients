@@ -4,7 +4,10 @@ import type { NormalizedExport } from './parsers';
 const exportData: NormalizedExport = {
     source: 'chatgpt',
     conversations: [
-        { title: 'Money', userPrompts: ['How do I budget?', '   '] },
+        {
+            title: 'Money',
+            userPrompts: [{ text: 'How do I budget?' }, { text: '   ' }],
+        },
         { title: 'Empty', userPrompts: [] },
     ],
 };
@@ -22,21 +25,27 @@ describe('buildPaperTrailContext', () => {
     it('trims long prompts and flags truncation', () => {
         const long = 'a'.repeat(50);
         const { text, stats } = buildPaperTrailContext(
-            { source: 'claude', conversations: [{ title: 'T', userPrompts: [long] }] },
-            { maxCharsPerPrompt: 10, maxPrompts: 400, maxTotalChars: 120000 }
+            { source: 'claude', conversations: [{ title: 'T', userPrompts: [{ text: long }] }] },
+            { maxCharsPerPrompt: 10, maxPrompts: 200, maxTotalChars: 120000 }
         );
         expect(text).toContain('…');
         expect(text).not.toContain(long);
         expect(stats.truncated).toBe(false);
     });
 
-    it('caps the number of prompts', () => {
-        const prompts = Array.from({ length: 5 }, (_, i) => `prompt ${i}`);
-        const { stats } = buildPaperTrailContext(
+    it('caps the number of prompts using the most recent ones', () => {
+        const prompts = Array.from({ length: 5 }, (_, index) => ({
+            text: `prompt ${index}`,
+            createdAt: index + 1,
+        }));
+        const { text, stats } = buildPaperTrailContext(
             { source: 'chatgpt', conversations: [{ title: 'T', userPrompts: prompts }] },
             { maxCharsPerPrompt: 600, maxPrompts: 2, maxTotalChars: 120000 }
         );
         expect(stats.includedPromptCount).toBe(2);
         expect(stats.truncated).toBe(true);
+        expect(text).toContain('- prompt 4');
+        expect(text).toContain('- prompt 3');
+        expect(text).not.toContain('- prompt 2');
     });
 });
