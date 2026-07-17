@@ -271,6 +271,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
             {model.importerOrganizationId && reportUser && (
                 <ImportJournalModal
                     importerOrganizationId={model.importerOrganizationId}
+                    importedProducts={model.selectedProducts}
                     user={reportUser}
                     modalProps={{
                         open: true,

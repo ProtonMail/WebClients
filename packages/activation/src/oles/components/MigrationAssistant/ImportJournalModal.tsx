@@ -78,15 +78,15 @@ const ImportJournalSection: FC<{
 
 const ImportJournalModal: FC<{
     importerOrganizationId: string;
+    importedProducts: ApiImporterProduct[];
     user: UserWithExtendedErrors;
     modalProps: ModalStateProps;
-}> = ({ importerOrganizationId, user, modalProps }) => {
+}> = ({ importerOrganizationId, importedProducts, user, modalProps }) => {
     const api = useSilentApi();
     const { transferErrors } = user;
     const [productReports, setProductReports] = useState<ProductReports>();
 
     const fallbackError = c('BOSS').t`No error details available. Please contact customer support for more information`;
-    const importedProducts: ApiImporterProduct[] = ['Mail', 'Contacts', 'Calendar'];
 
     useEffect(() => {
         void (async () => {
