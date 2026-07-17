@@ -171,12 +171,14 @@ const AppearanceSettingsPanel = () => {
 
 /** General settings panel for authenticated users */
 const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
-    const { externalTools: isLumoToolingEnabled } = useLumoFlags();
+    const { externalTools: isLumoToolingEnabled, visualizationInstructions: isVisualizationInstructionsEnabled } =
+        useLumoFlags();
     const [user] = useUser();
     const userId = user?.ID;
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
     const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
+    const visualizationInstructionsEnabled = lumoUserSettings.isVisualizationInstructionsEnabled ?? true;
 
     // Index management state
     const conversations = useLumoSelector(selectConversations);
@@ -289,6 +291,27 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                             onChange={() => {
                                 updateSettings({
                                     automaticWebSearch: !automaticWebSearch,
+                                    _autoSave: true,
+                                });
+                            }}
+                        />
+                    }
+                />
+            )}
+
+            {isVisualizationInstructionsEnabled && (
+                <SettingsSectionItem
+                    icon="ChartLine"
+                    text={c('collider_2025: Title').t`Visualization mode`}
+                    subtext={c('collider_2025: Description')
+                        .t`Let ${LUMO_SHORT_APP_NAME} visualize data with charts`}
+                    button={
+                        <Toggle
+                            id="visualization-instructions-toggle"
+                            checked={visualizationInstructionsEnabled}
+                            onChange={() => {
+                                updateSettings({
+                                    isVisualizationInstructionsEnabled: !visualizationInstructionsEnabled,
                                     _autoSave: true,
                                 });
                             }}

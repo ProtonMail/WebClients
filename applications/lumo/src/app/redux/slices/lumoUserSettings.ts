@@ -75,6 +75,8 @@ export interface LumoUserSettings {
     memories?: Memory[];
     isMemoryEnabled?: boolean;
     isMemoryAutoSaveEnabled?: boolean;
+    /** When false, omit chart/KPI formatting instructions from the system prompt. */
+    isVisualizationInstructionsEnabled?: boolean;
     /** General-chat user prompts since the last background memory update. */
     memoryPromptsSinceAutoSave?: number;
     /** Preferred model tier for signed-in users (runtime may fall back when limits are hit). */
@@ -124,6 +126,7 @@ export const createInitialLumoUserSettings = (): LumoUserSettings => {
         memories: [],
         isMemoryEnabled: false,
         isMemoryAutoSaveEnabled: true,
+        isVisualizationInstructionsEnabled: true,
         memoryPromptsSinceAutoSave: 0,
     };
 };

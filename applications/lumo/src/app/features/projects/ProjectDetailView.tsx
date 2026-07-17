@@ -82,6 +82,7 @@ const ProjectDetailViewInner = () => {
         smoothRendering: ffSmoothRendering,
         externalTools: ffExternalTools,
         imageTools: ffImageTools,
+        visualizationInstructions: ffVisualizationInstructions,
     } = useLumoFlags();
 
     const space = useLumoSelector(selectSpaceById(projectId));
@@ -180,6 +181,7 @@ const ProjectDetailViewInner = () => {
                         },
                         settingsContext: {
                             personalization,
+                            isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                         },
                     })
                 );

@@ -1,0 +1,161 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.lumo-insight-card {
+    &__label {
+        color: var(--text-weak);
+        font-size: rem(10.5);
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        line-height: 1.3;
+        margin-bottom: rem(4);
+        text-transform: uppercase;
+    }
+
+    &__value {
+        color: var(--text-norm);
+        font-size: rem(26);
+        font-style: italic;
+        font-weight: 500;
+        line-height: 1.1;
+        margin-top: rem(4);
+    }
+
+    &__delta {
+        font-size: rem(12);
+        font-weight: 500;
+        margin-top: rem(8);
+
+        &--up {
+            color: #34c77b;
+        }
+
+        &--down {
+            color: #f26b4d;
+        }
+
+        &--flat {
+            color: var(--text-weak);
+        }
+    }
+
+    &__body {
+        color: var(--text-weak);
+        font-size: rem(13.5);
+        line-height: 1.6;
+        margin-top: rem(8);
+    }
+
+    &__divider {
+        background: var(--border-weak);
+        border: 0;
+        height: 1px;
+        margin: rem(12) 0;
+    }
+
+    &__tag {
+        background: var(--background-weak);
+        color: var(--text-norm);
+        font-size: rem(10);
+        font-weight: 500;
+        padding: rem(3) rem(9);
+    }
+
+    &--finding {
+        border-left: rem(3) solid #6d4aff;
+    }
+
+    &--finding-warning {
+        border-left-color: #f2b84b;
+    }
+
+    &--finding-critical {
+        border-left-color: #f26b4d;
+    }
+}
+
+.lumo-insight-card--skeleton {
+    .lumo-insight-card__shimmer {
+        animation: lumo-insight-card-shimmer 1.4s ease-in-out infinite;
+        background: linear-gradient(
+            90deg,
+            var(--background-weak) 0%,
+            var(--background-norm) 50%,
+            var(--background-weak) 100%
+        );
+        background-size: 200% 100%;
+        border-radius: var(--border-radius-sm);
+        color: transparent;
+        display: block;
+        min-height: rem(12);
+        user-select: none;
+    }
+
+    .lumo-insight-card__value.lumo-insight-card__shimmer {
+        min-height: rem(28);
+        width: 55%;
+    }
+
+    .lumo-insight-card__delta.lumo-insight-card__shimmer {
+        min-height: rem(14);
+        width: 40%;
+    }
+}
+
+@keyframes lumo-insight-card-shimmer {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.lumo-metric-card-row {
+    &--1 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    &--2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &--3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &--4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .lumo-insight-card-block {
+        margin-block: 0;
+    }
+
+    .lumo-insight-card--metric {
+        min-height: 100%;
+    }
+
+    .lumo-insight-card--metric .lumo-insight-card__delta {
+        margin-top: auto;
+    }
+
+    .lumo-insight-card--skeleton {
+        min-height: 100%;
+    }
+
+    @media (max-width: 900px) {
+        &--3,
+        &--4 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 560px) {
+        &--2,
+        &--3,
+        &--4 {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+}
