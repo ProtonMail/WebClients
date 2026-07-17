@@ -59,7 +59,7 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
         if (lockedIsStreamingRef.current === null && content && content.length > 50) {
             lockedIsStreamingRef.current = isStreaming;
         }
-        if (lockedIsStreamingRef.current === true && !isStreaming) {
+        if (!isStreaming && lockedIsStreamingRef.current === true) {
             lockedIsStreamingRef.current = false;
         }
         const effectiveIsStreaming = lockedIsStreamingRef.current ?? isStreaming;
@@ -137,7 +137,8 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
         const contentChanged = prevProps.content !== nextProps.content;
         const streamingEnded = prevProps.isStreaming && !nextProps.isStreaming;
 
-        // Re-render when content changes or when streaming finishes so cached blocks can finalize.
+        // Re-render when content changes or when streaming finishes so ProgressiveMarkdownRenderer
+        // can finalize complete blocks and render charts instead of loading placeholders.
         return !contentChanged && !streamingEnded;
     }
 );
