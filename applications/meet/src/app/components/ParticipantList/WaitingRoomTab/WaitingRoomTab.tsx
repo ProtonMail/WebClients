@@ -4,6 +4,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcMeetUsers } from '@proton/icons/icons/IcMeetUsers';
+import { useFlag } from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import { EmptyList } from '../shared/EmptyList';
 import { ParticipantListContainer } from '../shared/ParticipantListContainer';
@@ -38,10 +40,11 @@ const EmptyWaitingRoomList = ({ hasSearchQuery }: { hasSearchQuery: boolean }) =
 };
 
 export const WaitingRoomTab = ({ participants, setIsScrolled, hasSearchQuery }: Props) => {
+    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
     const isEmpty = participants.length === 0;
 
     return (
-        <div className="flex flex-column flex-nowrap h-full relative pt-4">
+        <div className={clsx('flex flex-column flex-nowrap h-full relative', !isMeetWaitingRoomEnabled && 'pt-4')}>
             {isEmpty ? (
                 <EmptyWaitingRoomList hasSearchQuery={hasSearchQuery} />
             ) : (
