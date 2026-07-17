@@ -12,8 +12,8 @@ import { isLoadEvent } from '../utils/eventTypeGuards';
 import { SearchLoop } from './SearchLoop';
 import { createLocalSearchQueryOptions } from './queryOptions';
 
-const SMALLISH_CARDINALITY = 10;
-const BUCKET_SIZE_SECONDS = 60n * 60n * 24n;
+const SMALLISH_CARDINALITY = 80;
+const BUCKET_SIZE_SECONDS = 60n * 60n * 24n * 90n;
 
 export class IndexReader {
     private readonly engine = createMailSearchEngine();
