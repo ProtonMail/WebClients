@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import type { ToolCallData } from '../../../../../../lib/toolCall/types';
+import type { ToolCallAnnouncement, ToolCallData } from '../../../../../../lib/toolCall/types';
 import type { Message } from '../../../../../../types';
 import { type IconName, LumoIcon } from '../../../../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/LazyMarkdownComponents';
@@ -19,7 +19,7 @@ import './ThinkingPath.scss';
 /**
  * Get icon name for tool call type.
  */
-function getToolCallIcon(toolCall: ToolCallData): IconName {
+function getToolCallIcon(toolCall: ToolCallData | ToolCallAnnouncement): IconName {
     switch (toolCall.name) {
         case 'web_search':
             return 'Globe';
@@ -43,27 +43,37 @@ function getToolCallIcon(toolCall: ToolCallData): IconName {
  * Get human-readable label for tool call with details.
  * Returns [presentTense, pastTense] tuple.
  */
-function getToolCallLabel(toolCall: ToolCallData): [string, string] {
+function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [string, string] {
     switch (toolCall.name) {
-        case 'web_search':
-            const query = toolCall.arguments.query;
-            return [`Searching the web for "${query}"...`, `Searched the web for "${query}"`];
-        case 'weather':
-            const location =
-                'city' in toolCall.arguments.location
-                    ? toolCall.arguments.location.city
-                    : `${toolCall.arguments.location.lat}, ${toolCall.arguments.location.lon}`;
-            return [`Checking the weather in ${location}...`, `Checked the weather in ${location}`];
-        case 'stock':
-            return [
-                `Looking up ${toolCall.arguments.symbol} stock prices...`,
-                `Looked up ${toolCall.arguments.symbol} stock prices`,
-            ];
-        case 'cryptocurrency':
-            return [
-                `Checking ${toolCall.arguments.symbol} cryptocurrency prices...`,
-                `Checked ${toolCall.arguments.symbol} cryptocurrency prices`,
-            ];
+        case 'web_search': {
+            const query = toolCall.arguments?.query;
+            return query
+                ? [`Searching the web for "${query}"...`, `Searched the web for "${query}"`]
+                : ['Searching the web...', 'Searched the web'];
+        }
+        case 'weather': {
+            const loc = toolCall.arguments?.location;
+            const location = loc
+                ? 'city' in loc
+                    ? loc.city
+                    : `${loc.lat}, ${loc.lon}`
+                : undefined;
+            return location
+                ? [`Checking the weather in ${location}...`, `Checked the weather in ${location}`]
+                : ['Checking the weather...', 'Checked the weather'];
+        }
+        case 'stock': {
+            const symbol = toolCall.arguments?.symbol;
+            return symbol
+                ? [`Looking up ${symbol} stock prices...`, `Looked up ${symbol} stock prices`]
+                : ['Looking up stock prices...', 'Looked up stock prices'];
+        }
+        case 'cryptocurrency': {
+            const symbol = toolCall.arguments?.symbol;
+            return symbol
+                ? [`Checking ${symbol} cryptocurrency prices...`, `Checked ${symbol} cryptocurrency prices`]
+                : ['Checking cryptocurrency prices...', 'Checked cryptocurrency prices'];
+        }
         case 'describe_image':
             return [
                 c('collider_2025:Reasoning').t`Looking at your image...`,
@@ -93,7 +103,7 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
 
 export type ThinkingStep =
     | { type: 'reasoning'; content: string; isActive: boolean; durationMs?: number }
-    | { type: 'tool_call'; toolCall: ToolCallData; result?: string; isActive: boolean };
+    | { type: 'tool_call'; toolCall: ToolCallData | ToolCallAnnouncement; result?: string; isActive: boolean };
 
 interface ThinkingPathProps {
     steps: ThinkingStep[];
@@ -359,7 +369,7 @@ const ToolCallStep = ({
     message,
     handleLinkClick,
 }: {
-    toolCall: ToolCallData;
+    toolCall: ToolCallData | ToolCallAnnouncement;
     result?: string;
     isActive: boolean;
     message: Message;

@@ -1,7 +1,6 @@
 import { Suspense, lazy, useCallback, useState } from 'react';
 
-import type { ToolCallData } from '../../../../../../lib/toolCall/types';
-import { tryParseToolCall } from '../../../../../../lib/toolCall/types';
+import { tryParseToolCallAnnouncement, tryParseToolCall } from '../../../../../../lib/toolCall/types';
 import type { ContentBlock, Message, ThinkingTimelineEvent, ToolCallBlock } from '../../../../../../types';
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMarkdownRenderer';
@@ -78,7 +77,7 @@ export function isToolCallInProgress(
 function createInProgressToolCallStep(content: string): ThinkingStep {
     return {
         type: 'tool_call',
-        toolCall: tryParseToolCall(content) ?? ({ name: 'pending_tool' } as unknown as ToolCallData),
+        toolCall: tryParseToolCall(content) ?? tryParseToolCallAnnouncement(content) ?? { name: 'pending_tool' },
         isActive: true,
     };
 }
@@ -311,7 +310,9 @@ export const RenderBlocks = ({
         .flatMap((s) => {
             const data = parseFinanceResult(s.result!);
             const symbol =
-                'arguments' in s.toolCall && 'symbol' in s.toolCall.arguments
+                'arguments' in s.toolCall &&
+                s.toolCall.arguments != null &&
+                'symbol' in (s.toolCall.arguments as object)
                     ? (s.toolCall.arguments as { symbol: string }).symbol
                     : s.toolCall.name;
             if (!data || seenSymbols.has(symbol)) return [];
