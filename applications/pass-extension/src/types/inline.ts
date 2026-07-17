@@ -2,6 +2,7 @@ import type { DropdownAction } from 'proton-pass-extension/app/content/constants
 import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { FrameAttributes, FrameField, FrameRelay } from 'proton-pass-extension/types/frames';
 
+import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import type { FrameId } from '@proton/pass/types/worker/runtime';
 
 export type Coords = { top: number; left: number };
@@ -28,6 +29,8 @@ export type DropdownOpenDTO = {
     field: FrameField;
     /** Origin URL of requesting frame */
     origin: string;
+    /** Autofill telemetry info resolved in the requesting frame's own document */
+    telemetry: AutofillPageTelemetryDimensions;
 };
 
 export type DropdownOpenedDTO = FrameRelay<Required<FrameField>, { passive: boolean }>;

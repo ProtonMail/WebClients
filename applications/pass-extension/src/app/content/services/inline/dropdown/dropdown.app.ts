@@ -11,6 +11,7 @@ import type { Coords } from 'proton-pass-extension/types/inline';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
+import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -33,7 +34,7 @@ export type DropdownActions = WithAutofillOrigin<
     | { action: DropdownAction.AUTOFILL_LOGIN; startsWith: string }
     | { action: DropdownAction.AUTOSUGGEST_ALIAS; prefix: string; aliasCreationDisabled: boolean }
     | ({ action: DropdownAction.AUTOSUGGEST_PASSWORD } & PasswordAutosuggestOptions)
->;
+> & { telemetry: AutofillPageTelemetryDimensions };
 
 export type DropdownRequest = {
     action: DropdownAction;
@@ -41,7 +42,10 @@ export type DropdownRequest = {
     autofocused: boolean;
     /** Indicates wether the initiator field was previously autofilled */
     autofilled: boolean;
-} & (InlineFieldTarget | InlineFrameTarget<{ coords: Coords; origin: string }>);
+} & (
+    | InlineFieldTarget
+    | InlineFrameTarget<{ coords: Coords; origin: string; telemetry: AutofillPageTelemetryDimensions }>
+);
 
 export interface DropdownApp extends InlineAppHandler<DropdownRequest> {
     /** Important Note: the anchor state is heavily used to infer

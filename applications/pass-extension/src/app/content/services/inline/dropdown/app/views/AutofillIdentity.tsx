@@ -57,7 +57,7 @@ export const AutofillIdentity: FC<Props> = ({ action, ...payload }) => {
         else setState(null);
     }, [visible]);
 
-    useTelemetryEvent(TelemetryEventName.AutofillDisplay, {}, { location: 'source' })([visible]);
+    useTelemetryEvent(TelemetryEventName.AutofillDisplay, {}, { location: 'source', ...payload.telemetry })([visible]);
 
     const dropdownItems = useMemo(
         () =>
