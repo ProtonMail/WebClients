@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { Suspense, lazy, useEffect, useMemo } from 'react';
 import Markdown from 'react-markdown';
 
 import rehypeKatex from 'rehype-katex';
@@ -14,11 +14,29 @@ import { parseInteger } from '../../util/number';
 import { convertRefTokensToSpans, normalizeBrTags } from '../../util/tokens';
 import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
 import { InlineImageComponent } from './InlineImageComponent';
+import { LumoMarkdownCardBlock } from './card/LumoMarkdownCardBlock';
+import { buildMarkdownRenderUnits } from './card/coalesceMetricCardBlocks';
+import { parseCardRowFence, parseCardRowSegmentCode } from './card/parseCardRowFence';
+import { looksLikeMetricCardPartial, isCardRowLanguage, shouldRenderAsCard, splitAroundOpenCardCodeFence } from './card/detectCardSpec';
+import { LumoMetricCardRow } from './card/LumoMetricCardRow';
+import { tryParseCardSpec } from './card/parseCardSpec';
+import { renderCardAwareSegment } from './card/renderCardSegments';
 import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
+import { LUMO_MARKDOWN_CARD_SHELL_CLASS, TRAILING_VEGA_CHART_KEY } from './lumoMarkdownCardShell';
 import { normalizeGfmTableSpacing } from './normalizeGfmTableSpacing';
 import { remarkLatexDelimiters } from './remarkLatexDelimiters';
+import { VegaChartLoading } from './vega/VegaChartLoading';
+import { extractCodeBlockText, getCodeBlockLanguage } from './vega/codeBlockUtils';
+import { shouldRenderAsVegaChart, splitAroundOpenVegaCodeFence } from './vega/detectVegaSpec';
+import {
+    blockContainsCompleteCodeFence,
+    parseMarkdownCodeFence,
+    splitMarkdownWithCompleteCodeFences,
+} from './vega/parseMarkdownCodeFence';
 
 import './LumoMarkdown.scss';
+
+const VegaLiteChart = lazy(() => import('./vega/VegaLiteChart').then((module) => ({ default: module.VegaLiteChart })));
 
 /**
  * Remark plugin that converts raw `<br>` HTML nodes into proper AST break nodes.
@@ -93,8 +111,8 @@ function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] 
     while (position < content.length) {
         const remaining = content.substring(position);
 
-        // 1. Check for complete code block
-        const codeMatch = remaining.match(/^```[\s\S]*?\n```(\n\n|$)/);
+        // 1. Check for complete code block (closing fence before blank line, prose, or EOF)
+        const codeMatch = remaining.match(/^```[\w-]*[ \t]*\n[\s\S]*?\n```(?=\s*(?:\n\n|\n(?=[^\n\s])|$))/);
         if (codeMatch) {
             const blockContent = codeMatch[0];
             blocks.push({
@@ -137,6 +155,27 @@ function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] 
             });
             position += blockContent.length;
             continue;
+        }
+
+        // 3b. While streaming, peel complete code fences even when prefixed by unfinished prose.
+        if (isStreaming) {
+            const embeddedCodeMatch = remaining.match(
+                /```[\w-]*[ \t]*\n[\s\S]*?\n```(?=\s*(?:\n\n|\n(?=[^\n\s])|$))/
+            );
+            const embeddedIndex = embeddedCodeMatch?.index ?? -1;
+
+            if (embeddedIndex > 0) {
+                const prefix = remaining.slice(0, embeddedIndex);
+                if (prefix.trim()) {
+                    blocks.push({
+                        type: 'incomplete',
+                        content: prefix,
+                        key: `streaming-prefix-${simpleHash(prefix)}`,
+                    });
+                }
+                position += embeddedIndex;
+                continue;
+            }
         }
 
         // 4. Everything else
@@ -272,12 +311,37 @@ const MarkdownBlock: React.FC<{
     ({ content, handleLinkClick, toolCallResults, sourcesContainerRef }) => {
         const CodeBlock = useMemo(() => {
             // eslint-disable-next-line react/display-name
-            return ({ node, inline, className, children, ...props }: any) => {
-                const match = /language-(\w+)/.exec(className || '');
-                const language = match ? match[1] : '';
-                const value = String(children).replace(/\n$/, '');
+            return ({ node, className, children, ...props }: any) => {
+                const language = getCodeBlockLanguage(className, node);
+                const value = extractCodeBlockText(children);
 
-                if (!inline && language) {
+                if (shouldRenderAsVegaChart(language, value)) {
+                    return (
+                        <Suspense fallback={<VegaChartLoading />}>
+                            <VegaLiteChart code={value} language={language || 'vega-lite'} />
+                        </Suspense>
+                    );
+                }
+
+                if (shouldRenderAsCard(language, value)) {
+                    if (isCardRowLanguage(language)) {
+                        const cardRow = parseCardRowSegmentCode(value);
+                        if (cardRow && cardRow.length > 0) {
+                            return <LumoMetricCardRow cards={cardRow} />;
+                        }
+                    }
+
+                    const cardSpec = tryParseCardSpec(value);
+                    if (cardSpec?.type === 'metric') {
+                        return (
+                            <LumoMetricCardRow cards={[{ code: value, language: language || 'card' }]} />
+                        );
+                    }
+
+                    return <LumoMarkdownCardBlock code={value} language={language || 'card'} />;
+                }
+
+                if (language) {
                     return <LumoMarkdownCodeBlock language={language} code={value} />;
                 }
 
@@ -292,6 +356,9 @@ const MarkdownBlock: React.FC<{
         // Custom components for markdown rendering
         const components = useMemo(
             () => ({
+                pre({ children }: { children?: React.ReactNode }) {
+                    return <>{children}</>;
+                },
                 code: CodeBlock,
                 a: (props: any) => {
                     const { href, children } = props;
@@ -413,22 +480,220 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
             return splitIntoBlocks(processedContent, isStreaming);
         }, [processedContent, isStreaming]);
 
+        const renderUnits = useMemo(() => buildMarkdownRenderUnits(blocks), [blocks]);
+
         const className = useMemo(() => {
             return isIos() || isIpad() || isSafari() ? '' : 'content-visibility-auto';
         }, [isIos(), isIpad(), isSafari()]);
         return (
             <div className="progressive-markdown-content markdown-rendering" ref={messageContentContainerRef}>
-                {blocks.map((block) => (
-                    <div key={block.key} className={className}>
-                        <MarkdownBlock
-                            content={block.content}
-                            handleLinkClick={handleLinkClick}
-                            toolCallResults={toolCallResults}
-                            sourcesContainerRef={sourcesContainerRef}
-                            message={message}
-                        />
-                    </div>
-                ))}
+                {renderUnits.map((unit, unitIndex) => {
+                    const isTrailingUnit = unitIndex === renderUnits.length - 1;
+                    if (unit.kind === 'metric-row') {
+                        return (
+                            <div key={unit.key}>
+                                <LumoMetricCardRow cards={unit.cards} pendingSlot={unit.pendingSlot} />
+                            </div>
+                        );
+                    }
+
+                    const block = unit.block;
+                    const singleFence = parseMarkdownCodeFence(block.content);
+                    const openVegaFence =
+                        block.type === 'incomplete' && isStreaming
+                            ? splitAroundOpenVegaCodeFence(block.content)
+                            : null;
+
+                    const openCardFence =
+                        block.type === 'incomplete' && isStreaming
+                            ? splitAroundOpenCardCodeFence(block.content)
+                            : null;
+
+                    if (openCardFence) {
+                        const isMetricStreaming = looksLikeMetricCardPartial(openCardFence.body);
+
+                        if (isMetricStreaming) {
+                            if (!openCardFence.prefix.trim()) {
+                                return null;
+                            }
+
+                            return (
+                                <div key={block.key} className={className}>
+                                    <MarkdownBlock
+                                        content={openCardFence.prefix}
+                                        handleLinkClick={handleLinkClick}
+                                        toolCallResults={toolCallResults}
+                                        sourcesContainerRef={sourcesContainerRef}
+                                        message={message}
+                                    />
+                                </div>
+                            );
+                        }
+
+                        return (
+                            <div key={block.key} className={className}>
+                                {openCardFence.prefix.trim() ? (
+                                    <MarkdownBlock
+                                        content={openCardFence.prefix}
+                                        handleLinkClick={handleLinkClick}
+                                        toolCallResults={toolCallResults}
+                                        sourcesContainerRef={sourcesContainerRef}
+                                        message={message}
+                                    />
+                                ) : null}
+                                <div className="lumo-insight-card-block w-full my-2 mb-3">
+                                    <div className={`${LUMO_MARKDOWN_CARD_SHELL_CLASS} lumo-insight-card p-4`}>
+                                        <div className="lumo-insight-card__label">
+                                            <span>Loading card…</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    }
+
+                    if (openVegaFence) {
+                        const wrapperKey = isTrailingUnit ? TRAILING_VEGA_CHART_KEY : block.key;
+
+                        return (
+                            <div key={wrapperKey} className={className}>
+                                {openVegaFence.prefix.trim() ? (
+                                    <MarkdownBlock
+                                        content={openVegaFence.prefix}
+                                        handleLinkClick={handleLinkClick}
+                                        toolCallResults={toolCallResults}
+                                        sourcesContainerRef={sourcesContainerRef}
+                                        message={message}
+                                    />
+                                ) : null}
+                                <Suspense fallback={<VegaChartLoading />}>
+                                    <VegaLiteChart
+                                        code={openVegaFence.body}
+                                        language={openVegaFence.language || 'vega-lite'}
+                                        deferRender
+                                    />
+                                </Suspense>
+                            </div>
+                        );
+                    }
+
+                    if (
+                        singleFence &&
+                        shouldRenderAsVegaChart(singleFence.language, singleFence.code)
+                    ) {
+                        const wrapperKey = isTrailingUnit ? TRAILING_VEGA_CHART_KEY : block.key;
+
+                        return (
+                            <div key={wrapperKey}>
+                                <Suspense fallback={<VegaChartLoading />}>
+                                    <VegaLiteChart
+                                        code={singleFence.code}
+                                        language={singleFence.language || 'vega-lite'}
+                                    />
+                                </Suspense>
+                            </div>
+                        );
+                    }
+
+                    if (
+                        singleFence &&
+                        shouldRenderAsCard(singleFence.language, singleFence.code)
+                    ) {
+                        const cardRow = parseCardRowFence(block.content);
+                        if (cardRow && cardRow.length > 0) {
+                            return (
+                                <div key={block.key}>
+                                    <LumoMetricCardRow cards={cardRow} />
+                                </div>
+                            );
+                        }
+
+                        if (tryParseCardSpec(singleFence.code)?.type === 'metric') {
+                            return (
+                                <div key={block.key}>
+                                    <LumoMetricCardRow
+                                        cards={[{ code: singleFence.code, language: singleFence.language || 'card' }]}
+                                    />
+                                </div>
+                            );
+                        }
+
+                        return (
+                            <div key={block.key}>
+                                <LumoMarkdownCardBlock
+                                    code={singleFence.code}
+                                    language={singleFence.language || 'card'}
+                                />
+                            </div>
+                        );
+                    }
+
+                    if (!block.content.trim()) {
+                        return null;
+                    }
+
+                    if (blockContainsCompleteCodeFence(block.content)) {
+                        const segments = splitMarkdownWithCompleteCodeFences(block.content);
+
+                        return (
+                            <div key={block.key}>
+                                {segments.map((segment, index) => {
+                                    if (segment.type === 'markdown') {
+                                        if (!segment.content.trim()) {
+                                            return null;
+                                        }
+
+                                        return (
+                                            <MarkdownBlock
+                                                key={`md-${index}`}
+                                                content={segment.content}
+                                                handleLinkClick={handleLinkClick}
+                                                toolCallResults={toolCallResults}
+                                                sourcesContainerRef={sourcesContainerRef}
+                                                message={message}
+                                            />
+                                        );
+                                    }
+
+                                    const renderedSegment = renderCardAwareSegment({
+                                        segment,
+                                        index,
+                                        keyPrefix: block.key,
+                                        renderVega: (codeSegment, codeIndex) => (
+                                            <Suspense key={`vega-${codeIndex}`} fallback={<VegaChartLoading />}>
+                                                <VegaLiteChart
+                                                    code={codeSegment.code}
+                                                    language={codeSegment.language || 'vega-lite'}
+                                                />
+                                            </Suspense>
+                                        ),
+                                        renderCode: (codeSegment, codeIndex) => (
+                                            <LumoMarkdownCodeBlock
+                                                key={`code-${codeIndex}`}
+                                                language={codeSegment.language || 'plaintext'}
+                                                code={codeSegment.code}
+                                            />
+                                        ),
+                                    });
+
+                                    return renderedSegment;
+                                })}
+                            </div>
+                        );
+                    }
+
+                    return (
+                        <div key={block.key} className={className}>
+                            <MarkdownBlock
+                                content={block.content}
+                                handleLinkClick={handleLinkClick}
+                                toolCallResults={toolCallResults}
+                                sourcesContainerRef={sourcesContainerRef}
+                                message={message}
+                            />
+                        </div>
+                    );
+                })}
             </div>
         );
     },

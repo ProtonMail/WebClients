@@ -14,6 +14,32 @@ describe('llm encryption configuration', () => {
 describe('prepareTurns — attachment content blocks', () => {
     const personalization = {} as PersonalizationSettings;
 
+    it('prepends visualization instructions when enabled', () => {
+        const message = {
+            id: 'msg-1',
+            role: Role.User,
+            content: 'hello',
+            conversationId: 'conv-1',
+        } as unknown as Message;
+
+        const turns = prepareTurns([message], personalization, undefined, undefined, undefined, undefined, true);
+        expect(turns[0]?.role).toBe(Role.System);
+        expect(turns[0]?.content).toContain('[Visualization]');
+        expect(turns[0]?.content).toContain('vega-lite');
+    });
+
+    it('omits visualization instructions when disabled', () => {
+        const message = {
+            id: 'msg-1',
+            role: Role.User,
+            content: 'hello',
+            conversationId: 'conv-1',
+        } as unknown as Message;
+
+        const turns = prepareTurns([message], personalization, undefined, undefined, undefined, undefined, false);
+        expect(turns.some((turn) => turn.content?.includes('[Visualization]'))).toBe(false);
+    });
+
     const makeUserMessage = (attachmentIds: string[]): Message =>
         ({
             id: 'msg-1',
