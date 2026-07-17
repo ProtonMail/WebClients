@@ -12,6 +12,7 @@ import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { getCookie } from '@proton/shared/lib/helpers/cookies'
 
 function getEditorUrl(systemMode: EditorSystemMode, documentType: DocumentType) {
   const url = new URL(BridgeOriginProvider.GetEditorOrigin())
@@ -71,6 +72,11 @@ export function EditorFrame({ onFrameReady, documentType = 'doc', systemMode, lo
   }, [iframe, onFrameReady])
 
   const handleContentWindowReady = useCallback((contentWindow: Window) => {
+    void OpenTracer.trace('boot_editor_frame_editor_content_window_ready_cookie_shell', {
+      cookieAtLoad: versionCookieAtLoad,
+      cookieLive: getCookie('Tag'),
+    })
+
     contentWindow.postMessage(
       {
         type: EDITOR_TAG_INFO_EVENT,
@@ -92,10 +98,19 @@ export function EditorFrame({ onFrameReady, documentType = 'doc', systemMode, lo
         return
       }
 
-      if (event.data === EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD) {
+      if (typeof event.data === 'object' && event.data?.type === EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD) {
         logger.info('Editor requested client reload')
-        void OpenTracer.trace('boot_editor_frame_editor_requested_client_reload')
-        window.location.reload()
+        void OpenTracer.trace('boot_editor_frame_editor_requested_client_reload', {
+          ...event.data,
+          cookieAtLoad: versionCookieAtLoad,
+          cookieLive: getCookie('Tag'),
+        })
+          .catch(() => {
+            logger.error('Error tracing editor requested client reload')
+          })
+          .finally(() => {
+            window.location.reload()
+          })
         return
       }
 
