@@ -4,8 +4,12 @@ import { createSelector, createSlice } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 import type { MeetState } from '../rootReducer';
-import { selectParticipantDecryptedNameMap } from './meetingInfo';
-import { selectLocalParticipantIdentity } from './sortedParticipantsSlice';
+import {
+    selectIsLocalParticipantAdminOrHost,
+    selectLocalParticipantIdentity,
+    selectParticipantDecryptedNameMap,
+} from './participants/participantsSlice';
+import { selectSubscriptionStatus } from './userSlice';
 
 export interface RecordingStatusState {
     localRecordingTime: number;
@@ -111,6 +115,12 @@ export const selectRecordingParticipantNames = createSelector(
             return participantDecryptedNameMap[identity];
         });
     }
+);
+
+export const selectHasRecordingPermissions = createSelector(
+    [selectSubscriptionStatus, selectIsLocalParticipantAdminOrHost],
+    (subscriptionStatus, isLocalParticipantAdminOrHost) =>
+        subscriptionStatus.isPaidUser && isLocalParticipantAdminOrHost
 );
 
 export const { addParticipantRecording, removeParticipantRecording } = slice.actions;
