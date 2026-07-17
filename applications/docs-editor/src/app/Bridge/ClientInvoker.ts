@@ -26,6 +26,7 @@ import type { ErrorInfo } from 'react'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
+import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 
 /** Allows the editor to invoke methods on the client */
 export class ClientInvoker implements EditorRequiresClientMethods {
@@ -232,5 +233,9 @@ export class ClientInvoker implements EditorRequiresClientMethods {
 
   async showYjsDriftDetectedErrorModal(driftLogDetails: Record<string, unknown>): Promise<void> {
     return this.invokeClientMethod('showYjsDriftDetectedErrorModal', [driftLogDetails])
+  }
+
+  async storeSpreadsheetAction(type: SheetsActionType, content: unknown): Promise<void> {
+    return this.invokeClientMethod('storeSpreadsheetAction', [type, content])
   }
 }

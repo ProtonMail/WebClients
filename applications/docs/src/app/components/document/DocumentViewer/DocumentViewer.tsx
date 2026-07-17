@@ -332,6 +332,14 @@ export function DocumentViewer({
       } catch (error) {
         console.error('Could not include spreadsheet patches in debug info', error)
       }
+      try {
+        if (tmpConvertNewDocTypeToOld(documentType) === 'sheet') {
+          const spreadsheetActions = await editorController.getSpreadsheetActionsAsJsonFile()
+          zip.file('spreadsheet-actions.json', spreadsheetActions)
+        }
+      } catch (error) {
+        console.error('Could not include spreadsheet actions in debug info', error)
+      }
 
       if (docController) {
         try {
