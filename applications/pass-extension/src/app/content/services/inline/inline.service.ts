@@ -31,7 +31,7 @@ export const createInlineService = ({
     const onDropdownToggle: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_TOGGLE> = ({ payload }) => {
         const { autofilled, autofocused, field } = payload;
         const { frameId, fieldId, formId } = field;
-        const { coords, action, origin } = payload;
+        const { coords, action, origin, telemetry } = payload;
 
         const root = registry.root;
         const rootRect = POPOVER_SUPPORTED ? { top: 0, left: 0 } : root.customElement.getBoundingClientRect();
@@ -49,6 +49,7 @@ export const createInlineService = ({
             formId,
             frameId,
             origin,
+            telemetry,
         });
     };
 

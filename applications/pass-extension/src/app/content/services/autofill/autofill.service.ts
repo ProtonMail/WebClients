@@ -6,6 +6,7 @@ import { autofillCCFields } from 'proton-pass-extension/app/content/services/aut
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
+import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
 import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import type { AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
@@ -149,7 +150,14 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         await first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.userIdentifier);
         for (const field of form.getFieldsFor(FieldType.PASSWORD_CURRENT)) await field.autofill(data.password);
 
-        sendContentScriptTelemetry(TelemetryEventName.AutofillTriggered, {}, { location: 'source' });
+        sendContentScriptTelemetry(
+            TelemetryEventName.AutofillTriggered,
+            {},
+            {
+                location: 'source',
+                ...getAutofillPageTelemetryDimensions(form.element),
+            }
+        );
     });
 
     const autofillPassword = autofillSequence(
