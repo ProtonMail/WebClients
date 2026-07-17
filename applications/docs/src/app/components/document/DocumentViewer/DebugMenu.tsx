@@ -258,6 +258,9 @@ export function DebugMenu({ docController, editorController, documentState, docu
               >
                 Apply spreadsheet state from file
               </Button>
+              <Button size="small" onClick={() => editorController.downloadSpreadsheetActions()}>
+                Download stored actions
+              </Button>
             </>
           )}
           <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>

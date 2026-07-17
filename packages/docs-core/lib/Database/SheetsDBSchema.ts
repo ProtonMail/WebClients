@@ -1,4 +1,11 @@
-export const CURRENT_SHEETS_DB_VERSION = 1
+import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+
+const SheetsDBVersions = {
+  InitialVersion: 1,
+  AddedActionsStore: 2,
+} as const
+
+export const CURRENT_SHEETS_DB_VERSION = SheetsDBVersions.AddedActionsStore
 export const SHEETS_DATABASE_NAME = 'proton-sheets'
 
 export enum SheetsPatchesType {
@@ -13,10 +20,20 @@ export interface SheetsPatches {
   patches: Uint8Array<ArrayBuffer>
   updateHash?: string
   type: SheetsPatchesType
+  browserId?: string
+}
+
+export interface SheetsAction {
+  nodeKey: string
+  timestamp: number
+  type: SheetsActionType
+  content: Uint8Array<ArrayBuffer>
+  browserId: string
 }
 
 export interface SheetsDatabaseSchema {
   patches: SheetsPatches
+  actions: SheetsAction
 }
 
 export const sheetsDBMigrations: ((db: IDBDatabase, oldVersion: number, newVersion: number) => void)[] = [
@@ -24,6 +41,10 @@ export const sheetsDBMigrations: ((db: IDBDatabase, oldVersion: number, newVersi
     const isFirstTimeSetup = oldVersion === 0
     if (isFirstTimeSetup) {
       const store = db.createObjectStore('patches', { keyPath: 'id', autoIncrement: true })
+      store.createIndex('nodeKey', 'nodeKey')
+    }
+    if (oldVersion < SheetsDBVersions.AddedActionsStore) {
+      const store = db.createObjectStore('actions', { keyPath: 'id', autoIncrement: true })
       store.createIndex('nodeKey', 'nodeKey')
     }
   },

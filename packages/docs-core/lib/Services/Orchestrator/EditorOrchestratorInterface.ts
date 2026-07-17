@@ -13,6 +13,7 @@ import type {
 } from '@proton/docs-shared'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
+import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 
 export interface EditorOrchestratorInterface {
   userAddress: string
@@ -56,6 +57,7 @@ export interface EditorOrchestratorInterface {
   checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean>
 
   storeSpreadsheetPatches(patches: unknown, updateHash: string, type?: SheetsPatchesType): Promise<void>
+  storeSpreadsheetAction(type: SheetsActionType, content: unknown): Promise<void>
   hasBasePatches(): Promise<boolean>
 
   reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void
