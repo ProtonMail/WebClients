@@ -11,7 +11,6 @@ export interface AlwaysOnPolicyArtifacts {
 export interface AlwaysOnPolicy {
     ID: string;
     EnforceAlwaysOn: boolean;
-    RestrictLogins: boolean;
     Version: number;
     Hash: string;
     UpdatedAt: number;
@@ -25,5 +24,4 @@ export interface AlwaysOnPolicyResponse extends AlwaysOnPolicy {
 
 export interface UpdateAlwaysOnPolicyData {
     EnforceAlwaysOn: boolean;
-    RestrictLogins: boolean;
 }
