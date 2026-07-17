@@ -1,4 +1,5 @@
 import safeRegexLib from 'safe-regex2';
+import { c } from 'ttag';
 
 import { EVASIONS, LOCATION_HREFS } from '@proton/pass/lib/urls/safe-regex/safe-regex.redos';
 import { RegexURL } from '@proton/pass/lib/urls/utils/utils';
@@ -70,6 +71,17 @@ export const checkRegex = (regex: string): RegexSafety => {
     }
     if (!safeRegexLib(regex)) return RegexSafety.Unsafe;
     return RegexSafety.Safe;
+};
+
+export const getRegexError = (regex: string): string | undefined => {
+    switch (checkRegex(regex)) {
+        case RegexSafety.Invalid:
+            return c('Error').t`Regex invalid`;
+        case RegexSafety.Unsafe:
+            return c('Error').t`Regex unsafe`;
+        default:
+            return undefined;
+    }
 };
 
 /**
