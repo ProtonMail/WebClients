@@ -10786,6 +10786,34 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/lumo-ui@workspace:packages/lumo-ui":
+  version: 0.0.0-use.local
+  resolution: "@proton/lumo-ui@workspace:packages/lumo-ui"
+  dependencies:
+    "@proton/atoms": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/icons": "workspace:^"
+    "@proton/jest-env": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/types": "workspace:^"
+    "@proton/utils": "workspace:^"
+    "@swc/jest": "npm:^0.2.39"
+    "@testing-library/jest-dom": "npm:^6.9.1"
+    "@testing-library/react": "npm:^15.0.7"
+    "@types/jest": "npm:^30.0.0"
+    "@types/markdown-it": "npm:^13.0.9"
+    "@types/react": "npm:^18.3.31"
+    "@types/react-dom": "npm:^18.3.7"
+    eslint: "npm:^9.39.5"
+    jest: "npm:^30.4.2"
+    markdown-it: "npm:^14.3.0"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    ttag: "npm:^1.8.12"
+    typescript: "npm:^6.0.2"
+  languageName: unknown
+  linkType: soft
+
 "@proton/mail-renderer@workspace:^, @proton/mail-renderer@workspace:packages/mail-renderer":
   version: 0.0.0-use.local
   resolution: "@proton/mail-renderer@workspace:packages/mail-renderer"
@@ -49793,7 +49821,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^6.0.3":
+"typescript@npm:^6.0.2, typescript@npm:^6.0.3":
   version: 6.0.3
   resolution: "typescript@npm:6.0.3"
   bin:
@@ -49833,7 +49861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^6.0.3#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^6.0.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^6.0.3#optional!builtin<compat/typescript>":
   version: 6.0.3
   resolution: "typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"
   bin:
