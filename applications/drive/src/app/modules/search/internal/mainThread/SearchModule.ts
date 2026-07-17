@@ -37,6 +37,33 @@ function recordEnvironmentIncompatibilityOnce(reason: SearchEnvironmentIncompati
     }
     environmentIncompatibilityRecorded = true;
     searchMetrics.markIncompatibilityEnvironment({ reason });
+
+    // Log once to the console so a user's report of a non-activated search experience
+    // can be traced back to the specific reason their environment was rejected.
+    Logger.info(`Search unavailable - environment incompatible, reason <${reason}>`);
+}
+
+const INDEXED_DB_PROBE_NAME = 'proton-drive-search-idb-probe';
+
+/**
+ * `indexedDB` can be defined but still unusable (e.g. storage is disabled by an admin policy
+ * or the user or an extension). Probe by creating and deleting a real dummy database rather
+ * than trusting the global's mere presence.
+ */
+async function isIndexedDBReallyAvailable(): Promise<boolean> {
+    try {
+        const db = await new Promise<IDBDatabase>((resolve, reject) => {
+            const request = indexedDB.open(INDEXED_DB_PROBE_NAME);
+            request.onsuccess = () => resolve(request.result);
+            request.onerror = () => reject(request.error);
+        });
+        db.close();
+        indexedDB.deleteDatabase(INDEXED_DB_PROBE_NAME);
+        return true;
+    } catch (e) {
+        Logger.error('Bad env: IndexedDB defined but not usable', e);
+        return false;
+    }
 }
 
 // All required dependencies to initialize and run the search module.
@@ -77,10 +104,6 @@ export class SearchModule {
     private searchDbPromise: Promise<SearchDB>;
 
     private constructor(context: SearchModuleContext) {
-        if (!SearchModule.isEnvironmentCompatible()) {
-            throw new InvalidSearchModuleState('Incompatible environment for SearchModule');
-        }
-
         if (SearchModule.instance) {
             throw new InvalidSearchModuleState('SearchModule singleton already exists');
         }
@@ -127,6 +150,10 @@ export class SearchModule {
         if (!SearchModule.creating) {
             SearchModule.creating = (async () => {
                 Logger.info('Creating search module singleton');
+
+                if (!(await SearchModule.isEnvironmentCompatible())) {
+                    throw new InvalidSearchModuleState('Incompatible environment for SearchModule');
+                }
 
                 SearchModule.instance = new SearchModule(context);
 
@@ -238,9 +265,8 @@ export class SearchModule {
 
     // TODO: Return a discriminated type instead of true/false to propagate the reason of uncomatibitly
     // TODO: Add some UI to explain better why search is not enabled.
-    static isEnvironmentCompatible(): boolean {
+    static async isEnvironmentCompatible(): Promise<boolean> {
         if (isMobile()) {
-            Logger.info('Bad env: Mobile detected');
             recordEnvironmentIncompatibilityOnce('mobile');
             return false;
         }
@@ -257,25 +283,25 @@ export class SearchModule {
         if (isSafari()) {
             const browser = getBrowser();
             if (!browser?.version || !new Version(browser.version).isGreaterThanOrEqual('17')) {
-                Logger.info('Bad env: Obsolete safari unsupported');
                 recordEnvironmentIncompatibilityOnce('safari_too_old');
                 return false;
             }
         }
 
         if (typeof SharedWorker === 'undefined') {
-            Logger.info('Bad env: SharedWorker unsupported');
             recordEnvironmentIncompatibilityOnce('shared_worker_unsupported');
             return false;
         }
 
         if (typeof indexedDB === 'undefined') {
-            Logger.info('Bad env: IndexedDB unsupported');
             recordEnvironmentIncompatibilityOnce('indexed_db_unsupported');
             return false;
         }
 
-        // TODO: Check for indexedDB real availability by creating/deleting a real dummy DB.
+        if (!(await isIndexedDBReallyAvailable())) {
+            recordEnvironmentIncompatibilityOnce('indexed_db_probe_failed');
+            return false;
+        }
 
         return true;
     }
