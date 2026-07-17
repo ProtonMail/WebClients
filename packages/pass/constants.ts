@@ -59,6 +59,7 @@ export enum AccountPath {
     ACCOUNT_PASSWORD_2FA = 'pass/account-password#two-fa',
     USERS = 'pass/users-addresses',
     POLICIES = 'pass/policies',
+    DASHBOARD = 'pass/dashboard',
 }
 
 export enum UpsellRefPrefix {

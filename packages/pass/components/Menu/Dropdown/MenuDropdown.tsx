@@ -52,7 +52,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
     const vaultActions = useVaultActions();
     const navigate = useNavigate();
 
-    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
     const navigateToAdminPanel = useNavigateToAccount(AccountPath.USERS);
     const canLock = useSelector(selectLockEnabled);
     const org = useOrganization();
