@@ -15,7 +15,7 @@ export {
     useDrivePublicSharingFlags,
     useContextShareHandler,
 } from './_shares';
-export { useUpload, useFileUploadInput, useFolderUploadInput, mimeTypeFromFile } from './_uploads';
+export { useUpload, mimeTypeFromFile } from './_uploads';
 export * from './_uploads/interface';
 export { useDownloadProvider as useDownload, useThumbnailsDownload, useDownloadScanFlag } from './_downloads';
 export * from './_downloads/interface';
