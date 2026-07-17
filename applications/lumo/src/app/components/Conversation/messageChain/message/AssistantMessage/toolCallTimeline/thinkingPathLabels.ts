@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import type { ToolCallData } from '../../../../../../lib/toolCall/types';
+import type { ToolCallAnnouncement, ToolCallData } from '../../../../../../lib/toolCall/types';
 
 type ThinkingStep =
     | { type: 'reasoning'; content: string; isActive: boolean; durationMs?: number }
-    | { type: 'tool_call'; toolCall: ToolCallData; result?: string; isActive: boolean };
+    | { type: 'tool_call'; toolCall: ToolCallData | ToolCallAnnouncement; result?: string; isActive: boolean };
 
 type ThinkingPhase =
     | 'reasoning'
@@ -33,7 +33,7 @@ function pickStable<T>(items: readonly T[], seed: string): T {
     return items[hashString(seed) % items.length];
 }
 
-function toolCallToPhase(toolCall: ToolCallData): ThinkingPhase {
+function toolCallToPhase(toolCall: ToolCallData | ToolCallAnnouncement): ThinkingPhase {
     switch (toolCall.name) {
         case 'web_search':
             return 'web_search';
