@@ -1171,6 +1171,111 @@
       ],
       "Zoom out": [
         "Zoom out"
+      ],
+      "Added ${ memberName } as group owner": [
+        "Naidagdag si ${ memberName } bilang may-ari ng pangkat"
+      ],
+      "Approve": [
+        "Aprubahan"
+      ],
+      "Back to sign in": [
+        "Bumalik sa mag-sign in"
+      ],
+      "Back to sign-in": [
+        "Bumalik sa sign-in"
+      ],
+      "Claim offer": [
+        "I-claim ang offer"
+      ],
+      "Close search": [
+        "Isara ang paghahanap"
+      ],
+      "Connect Gmail address": [
+        "Kumonekta ng Gmail address"
+      ],
+      "Contact Support Center": [
+        "Makipag-ugnayan sa Sentro ng Suporta"
+      ],
+      "Continue cancelling": [
+        "Ituloy ang pagkansela"
+      ],
+      "Continue to sign in": [
+        "Magpatuloy sa pag-sign in"
+      ],
+      "Delete gateway": [
+        "I-delete ang gateway"
+      ],
+      "Disable account monitor": [
+        "Huwag paganahin ang monitor ng account"
+      ],
+      "Edit invoice details": [
+        "I-edit ang mga detalye ng invoice"
+      ],
+      "Enter code": [
+        "Ilagay ang code"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Humingi ng tulong mula sa ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "I don't have my 2FA device": [
+        "Wala sa akin ang aking 2FA device"
+      ],
+      "I don't have my key": [
+        "Wala sa akin ang aking key"
+      ],
+      "I don't have my phrase": [
+        "Wala sa akin ang aking parirala"
+      ],
+      "I don’t have my backup codes": [
+        "Wala sa akin ang aking mga backup code"
+      ],
+      "Keep current plan": [
+        "Panatilihin ang kasalukuyang plano"
+      ],
+      "Learn about recovery options": [
+        "Alamin ang tungkol sa mga opsyon sa pag-recover"
+      ],
+      "Read the story": [
+        "Basahin ang kuwento"
+      ],
+      "Recover account": [
+        "I-recover ang account"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "Inalis si ${ memberName } bilang may-ari ng pangkat"
+      ],
+      "Return to sign-in": [
+        "Bumalik sa sign-in"
+      ],
+      "Review changes": [
+        "Suriin ang mga pagbabago"
+      ],
+      "Search groups": [
+        "Maghanap sa mga pangkat"
+      ],
+      "Send feedback": [
+        "Magpadala ng feedback"
+      ],
+      "Send new code": [
+        "Magpadala ng bagong code"
+      ],
+      "Share feedback": [
+        "I-share ang feedback"
+      ],
+      "Switch to free plan": [
+        "Lumipat sa libreng plano"
+      ],
+      "Try another way": [
+        "Subukan ang ibang paraan"
+      ],
+      "Verify another way": [
+        "I-verify sa ibang paraan"
+      ],
+      "Verify password": [
+        "I-verify ang password"
+      ],
+      "Watch the interview": [
+        "Panoorin ang panayam"
       ]
     },
     "action": {
@@ -1280,6 +1385,9 @@
       ],
       "Writing assistant seats": [
         "Mga seat para sa writing assistant"
+      ],
+      "Add-on": [
+        "Add-on"
       ]
     },
     "Address action": {
@@ -1865,6 +1973,96 @@
       ],
       "What are you migrating?": [
         "Ano ang iyong minamigrate?"
+      ],
+      "Activated": [
+        "Na-activate"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Ginagamit na ang address ng isang user sa labas ng organisasyon. Pakikontak ang suporta sa customer upang malutas ito"
+      ],
+      "All": [
+        "Lahat"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status ng migration ng data mula sa Google Workspace patungong ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Mga email"
+      ],
+      "Errors": [
+        "Mga error"
+      ],
+      "Find out what can be migrated.": [
+        "Alamin kung ano ang maaaring i-migrate."
+      ],
+      "Has errors": [
+        "May mga error"
+      ],
+      "In progress": [
+        "Isinasagawa"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Hindi nahanap ang address ng miyembro. Pakikontak ang suporta sa customer upang malutas ito"
+      ],
+      "Migrate": [
+        "I-migrate"
+      ],
+      "Migrated": [
+        "Na-migrate"
+      ],
+      "Missing organization private key": [
+        "Nawawala ang pribadong key ng organisasyon"
+      ],
+      "Missing organization public key": [
+        "Nawawala ang pampublikong key ng organisasyon"
+      ],
+      "No users to display": [
+        "Walang mga user na ipapakita"
+      ],
+      "Not activated": [
+        "Hindi na-activate"
+      ],
+      "Pending": [
+        "Nakabinbin"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Piliin nang eksakto kung ano ang gusto mong i-migrate. Ilalapat ito sa lahat ng user ng organisasyon."
+      ],
+      "Select users to migrate": [
+        "Piliin ang mga user na i-migrate"
+      ],
+      "Size": [
+        "Laki"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Hindi maaaring i-migrate ang user dahil sa mga hindi pagiging tugma ng platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Upang i-migrate ang user, paganahin ang account sa Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Upang i-migrate ang user, paganahin ang account sa ilalim ng ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Upang i-migrate ang user, paganahin ang address sa ilalim ng ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Upang i-migrate ang user, kailangang tanggapin ang imbitasyon na sumali sa ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Upang i-migrate ang user, i-unarchive ito sa Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Upang i-migrate ang user, i-unsuspend ito sa Google Workspace Admin Console."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Mga user na nag-access sa kanilang ${ BRAND_NAME } account"
+      ],
+      "You": [
+        "Ikaw"
       ]
     },
     "Browser": {
@@ -3206,6 +3404,9 @@
       ],
       "/user per month": [
         "/user bawat buwan"
+      ],
+      "/user /month": [
+        "/user /buwan"
       ]
     },
     "Default display name vcard": {
@@ -3261,6 +3462,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Sigurado ka bang gusto mong i-delete ang pangkat na ito?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Pakitandaan na kung i-delete mo ang pangkat na ${ displayGroupName }, permanenteng aalisin ito."
       ]
     },
     "Delinquent modal title": {
@@ -3462,6 +3666,54 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Suporta ng plano ang kabuuang ${ MAX_SYNC_PAID_USER } Gmail address",
         "Sinusuportahan ng plano ang kabuuang ${ MAX_SYNC_PAID_USER } Gmail address"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "Pinapanatiling ligtas ng ${ MAIL_APP_NAME } ang data ng iyong negosyo at hinahayaan kang magpadala ng naka-encrypt na email sa kahit sino."
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Magdagdag ng mga dagdag na address sa iyong account o gumamit ng mga hide-my-email alias upang panatilihing pribado ang iyong inbox."
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Bumuo ng tiwala at pagkilala sa brand gamit ang mga propesyonal na email address sa sarili mong domain."
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Kung paano nakuha ng aming team ng suporta sa customer ang aming VPN app nang direkta sa mga kamay ng mga tao."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Paano kami lumaban nang ma-block ang ${ BRAND_NAME } sa isang agresibong kampanya."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Paano namin sinuportahan ang mga lokal na aktibista noong nanganib ang privacy at malayang pagsasalita."
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Panatilihing ligtas ang iyong team habang on the go gamit ang aming mga app para sa web, iOS, Android, Windows, Mac, at Linux."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Maaaring malutas ang karamihan sa mga isyu sa loob ng ilang minuto gamit ang aming mga sunod-sunod na gabay."
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Tandaan na ang mga email na ipinadala sa address na ito, kahit mula sa ibang mga address ng ${ BRAND_NAME }, ay hindi na magiging end-to-end na naka-encrypt."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kapag na-disconnect at na-disable na, hindi ka na makakapagpadala o makakatanggap ng mga email gamit ang ${ address.Email } sa ${ BRAND_NAME }. Darating pa rin sa Gmail ang mga email na ipinadala sa address na ito, ngunit hindi sa ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kapag na-disconnect na, hindi ka na makakapagpadala o makakatanggap ng mga email gamit ang ${ address.Email } sa ${ BRAND_NAME }. Darating pa rin sa Gmail ang mga email na ipinadala sa address na ito, ngunit hindi sa ${ MAIL_APP_NAME }."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Kailangan pa rin ng tulong? Narito ang aming team ng suporta para sa iyo."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "I-import namin ang iyong mga lumang email at isi-sync ang mga bagong mensahe mula sa Gmail sa hinaharap"
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Maaari mong pamahalaan ang maramihang address ng ${ BRAND_NAME } mula sa isang account, nang hindi lumilipat. Tumutulong ang mga alias at tool sa pamamahala ng address para mapanatili ang lahat sa isang inbox."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Maaari mong i-merge ang mga address sa isang pangunahing ${ BRAND_NAME } account gamit ang aming gabay sa suporta."
+      ],
+      "You can reconnect this address at any time.": [
+        "Maaari mong i-reconnect ang address na ito anumang oras."
       ]
     },
     "description": {
@@ -3674,6 +3926,12 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
+      ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) o mas bago"
+      ],
+      "macOS Ventura": [
+        "macOS Ventura"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3915,6 +4173,33 @@
       ],
       "Trusted contact": [
         "Pinagkakatiwalaang contact"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Humingi ng tulong sa isang recovery contact. Makakatanggap sila ng email upang i-verify ang iyong kahilingan at i-unlock ang iyong data."
+      ],
+      "Contacts": [
+        "Mga Contact"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Makipag-ugnayan sa kanila ngayon upang malaman kung maaari silang tumulong, at upang personal na ipaalam sa kanila na ikaw ang sumusubok na i-unlock ang iyong data."
+      ],
+      "Recovery request sent": [
+        "Ipinadala na ang kahilingan sa pag-recover"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Alisin ang iyong mga recovery contact upang magpatuloy"
+      ],
+      "Select recovery contact ${ name }": [
+        "Piliin ang recovery contact na si ${ name }"
+      ],
+      "Start recovery": [
+        "Simulan ang pag-recover"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Upang huwag paganahin ang paraan ng pag-recover na ito, alisin ang lahat ng iyong recovery contact."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Tinulungan ka ng iyong recovery contact na i-recover ang data."
       ]
     },
     "Empty group name": {
@@ -4448,6 +4733,50 @@
       ],
       "Zero keys reactivated": [
         "Walang key na na-reactivate"
+      ],
+      "Code is incorrect or not valid anymore": [
+        "Mali ang code o hindi na valid"
+      ],
+      "Failed to update billing address": [
+        "Nabigong i-update ang billing address"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Maling recovery code. Pakisubukang muli."
+      ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Hindi valid na reset token. Pakisariwa ang pahina at subukang muli."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maximum na pinapayagan ay ${ displayMaxValue }"
+      ],
+      "No drive found to import": [
+        "Walang nakitang drive na mai-import"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Capitalization at bantas (mga tuldok, hyphen at underscore) lang ang maaaring baguhin para sa address na ito"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Maaaring idagdag ang mga pribadong user sa pangkat kapag nakapag-sign in na sila sa unang pagkakataon: ${ displayedNames }"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Hindi nakumpleto ang pagtatalaga ng tungkulin para sa ${ errors.length } miyembro",
+        "Hindi nakumpleto ang pagtatalaga ng tungkulin para sa ${ errors.length } na miyembro"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Hindi nakumpleto ang pagtatalaga ng tungkulin para sa ${ failedGroupCount } pangkat",
+        "Hindi nakumpleto ang pagtatalaga ng tungkulin para sa ${ failedGroupCount } na pangkat"
+      ],
+      "There was an error, please try again.": [
+        "Nagkaroon ng error, pakisubukang muli."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Hindi inaasahang error, hindi ma-import ang mga file"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Hindi maipadala ang verification code gamit ang paraang ito."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Nagamit mo na ang lahat ng address sa iyong plano. Mangyaring i-upgrade ang iyong plano upang magdagdag ng bagong address o huwag paganahin ang isang address sa iyong account."
       ]
     },
     "error": {
@@ -4628,6 +4957,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Hindi ma-load ang page na ito. Paki-refresh ang page o suriin ang koneksyon sa internet."
+      ],
+      "Enable account monitor to start loading event.": [
+        "Paganahin ang account monitor upang simulan ang pag-load ng kaganapan."
       ]
     },
     "Error notification": {
@@ -4873,6 +5205,9 @@
       ],
       "You can increase or reduce the storage for this user.": [
         "Maaaring dagdagan o bawasan ang storage para sa user na ito."
+      ],
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Italaga ang storage sa administrator account. Maaari mong ipamahagi ang storage para sa mga karagdagang user sa ibang pagkakataon."
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -5014,6 +5349,52 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Unlimited na mga hide-my-email alias"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "desktop app ng ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "Proteksyon ng account sa ${ PROTON_SENTINEL_NAME }"
+      ],
+      "15 GB storage": [
+        "15 GB na storage"
+      ],
+      "3 email domains": [
+        "3 domain ng email"
+      ],
+      "3 folders, labels and filters": [
+        "3 folder, label at filter"
+      ],
+      "500 GB storage": [
+        "500 GB na storage"
+      ],
+      "500 MB Mail storage": [
+        "500 MB na storage sa Mail"
+      ],
+      "500 MB storage": [
+        "500 MB na storage"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Koneksyon para sa hanggang ${ plusVpnConnections } device",
+        "Koneksyon para sa hanggang ${ plusVpnConnections } na device"
+      ],
+      "Premium features in Mail, Calendar, Drive, Pass and VPN": [
+        "Mga premium feature sa Mail, Calendar, Drive, Pass at VPN"
+      ],
+      "Priority support": [
+        "Prayoridad na suporta"
+      ],
+      "Schedule and snooze emails": [
+        "I-schedule at i-snooze ang mga email"
+      ],
+      "Short domain @pm.me": [
+        "Maikling domain @pm.me"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Walang limitasyong mga folder, label, at filter"
+      ],
+      "Use your own email domain": [
+        "Gamitin ang sarili mong domain ng email"
       ]
     },
     "Features": {
@@ -5136,6 +5517,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Handa nang gamitin ang two-factor authentication key."
+      ],
+      "Insert your security key into your device.": [
+        "Ipasok ang iyong security key sa iyong device."
       ]
     },
     "fido2: Label": {
@@ -8237,6 +8621,386 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Ang mga plano ng ${ BRAND_NAME } Business ay nagbibigay sa iyong pangkat ng lahat ng tool sa pakikipagtulungan na kailangan nila upang maging produktibo at organisado sa kanilang trabaho, habang pinangangalagaan ang iyong negosyo."
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "Ang ${ BRAND_NAME } ay independyenteng pinondohan at gumagana nang walang patalastas. Narito sa ibaba ang mga halimbawa kung paano ginamit ang kalayaang ito sa praktika."
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "Magpapadala ang ${ BRAND_NAME } ng verification code sa ${ phoneNumber }. Maaaring ilapat ang mga karaniwang rate ng mensahe."
+      ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "Magpapadala ang ${ BRAND_NAME } ng verification code sa recovery phone. Maaaring ilapat ang mga karaniwang rate ng mensahe."
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, ngunit maaaring i-recover gamit ang iyong ${ RecoveryContactsLink }:"
+      ],
+      "${ emails.length } member added to the group": [
+        "Idinagdag ang ${ emails.length } miyembro sa pangkat",
+        "Idinagdag ang ${ emails.length } na miyembro sa pangkat"
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "Kailangang tanggapin ng ${ invitedMemberCount } user ang kanilang imbitasyon upang magsimulang makatanggap ng mga email ng pangkat.",
+        "Kailangang tanggapin ng ${ invitedMemberCount } na user ang kanilang imbitasyon upang magsimulang makatanggap ng mga email ng pangkat."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "mga seat sa ${ MEET_APP_NAME }"
+      ],
+      "${ number } city": [
+        "${ number } na lungsod",
+        "${ number } na lungsod"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "Idinagdag ang ${ pendingAdminApprovalCount } bagong miyembro sa pamamagitan ng provider ng pagkakakilanlan at nakabinbin ang pagsusuri.",
+        "Idinagdag ang ${ pendingAdminApprovalCount } bagong miyembro sa pamamagitan ng provider ng pagkakakilanlan at nakabinbin ang pagsusuri."
+      ],
+      "${ total } user found": [
+        "${ total } user ang nakita",
+        "${ total } na user ang nakita"
+      ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(hal. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(hal. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(hal. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(hal. The Vergecast, Big Technology Podcast)"
+      ],
+      "(formerly Twitter)": [
+        "(dating Twitter)"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**Ide-disable nito ang 2-factor authentication.**"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Kailangan ng custom na domain para gumawa ng mga pangkat. Kung wala kang naka-set up na custom na domain, gawin muna ito sa ${ linkToDomainPage }."
+      ],
+      "Activity Monitor": [
+        "Monitor ng Aktibidad"
+      ],
+      "Add users by name or email to this group.": [
+        "Magdagdag ng mga user sa pamamagitan ng pangalan o email sa pangkat na ito."
+      ],
+      "Adding ${ total } gateway server": [
+        "Nagdadagdag ng ${ total } gateway server",
+        "Nagdadagdag ng ${ total } na gateway server"
+      ],
+      "AI chatbot": [
+        "AI chatbot"
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Isang email na may verification code ang ipinadala sa ${ emailAddress }. Kung hindi mo mahanap ang mensahe sa iyong inbox, pakisuyong suriin ang iyong spam folder."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Isang SMS na may verification code ang ipinadala sa ${ phoneNumber }."
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Hilingin sa kanila na mag-sign in sa kanilang ${ ACCOUNT_APP_NAME } sa browser, at pumunta sa **Mga setting → Lahat ng setting → Pag-recover → Emergency access → Mga taong nagtitiwala sa akin.**"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Bago magpadala ng bagong verification code, suriin ang iyong spam folder para sa ${ EmailOrPhoneNumber }."
+      ],
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Sisingilin sa halagang ${ monthlyDiscountedPriceElement } para sa unang 6 na buwan, awtomatikong magpapanibago sa halagang ${ monthlyRenewalPriceElement }."
+      ],
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Sisingilin sa halagang ${ yearlyDiscountedPriceElement } para sa unang 12 buwan, awtomatikong magpapanibago sa halagang ${ yearlyRenewalPriceElement }."
+      ],
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Sa pamamagitan ng pag-disable sa monitor ng account, iki-clear mo rin ang iyong buong kasaysayan. Sigurado ka bang gusto mong huwag paganahin ito?"
+      ],
+      "Can you access your active session?": [
+        "Maaari mo bang i-access ang iyong aktibong session?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Maaari mo bang i-access ang iyong aktibong session sa web sa ibang browser?"
+      ],
+      "Can you reach out to your contact?": [
+        "Maaari mo bang makipag-ugnayan sa iyong contact?"
+      ],
+      "Cancel": [
+        "Kanselahin"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "I-click ang **Humingi ng pag-reset ng password** at sundin ang mga senyas."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Makipag-ugnayan sa aming pangkat ng Suporta sa Customer upang huwag paganahin ang two-factor authentication para sa iyong account, o i-recover ang iyong account sa ibang paraan."
+      ],
+      "Couldn´t send feedback": [
+        "Hindi maipadala ang feedback"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Gumagawa ng gateway na may ${ total } na server",
+        "Gumagawa ng gateway na may ${ total } na mga server"
+      ],
+      "Data recoverable with recovery phrase": [
+        "Maaaring i-recover ang data gamit ang parirala ng pag-recover"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Depende sa iyong mga setting, maaari silang makatanggap ng access kaagad, o pagkatapos ng itinalagang **panahon ng paghihintay.**"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "I-download ang ${ VPN_APP_NAME }"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Dahil sa end-to-end na encryption, maaari mong i-reset ang iyong password, ngunit ${ DataLockedText } hanggang sa gumamit ka ng ${ DataRecoveryOptionsLink }:"
+      ],
+      "Editing requires permission": [
+        "Nangangailangan ng pahintulot ang pag-edit"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Ilagay ang 12-salitang parirala ng pag-recover na nauugnay sa iyong account."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Ilagay ang iyong parirala ng pag-recover upang i-verify ang iyong pagkakakilanlan at huwag paganahin ang two-factor authentication."
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Mga file lamang (walang larawan, ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME }) - hanggang 100 GB sa kabuuan, 100,000 file, at 50 GB bawat file"
+      ],
+      "Friends and family": [
+        "Mga kaibigan at pamilya"
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Mula roon, maaari silang humingi ng emergency access sa iyong account sa pamamagitan ng pag-click sa **Humingi ng access.**"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Hindi ma-delete ang gateway. Pakisubukang muli"
+      ],
+      "Gateway deleted": [
+        "Na-delete ang gateway"
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Makipag-ugnayan sa iyong mga emergency contact, para tingnan kung maaari silang makatulong. Pagkatapos humingi ng emergency access sa iyong account, magagawa nilang palitan ang iyong password para sa iyo **pagkatapos lumipas ang oras ng paghihintay para sa access**."
+      ],
+      "Get visibility into account access": [
+        "Magkaroon ng visibility sa access sa account"
+      ],
+      "Google or other search engine": [
+        "Google o iba pang search engine"
+      ],
+      "Group created": [
+        "Ginawa ang pangkat"
+      ],
+      "Group roles assigned": [
+        "Naitatalaga na ang mga tungkulin sa pangkat"
+      ],
+      "How to perform a signed-in reset": [
+        "Paano magsagawa ng signed-in na pag-reset"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Paano mapapalitan ng iyong emergency contact ang iyong password para sa iyo:"
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Kung maaari, kapag nag-sign in, gumamit ng device o browser kung saan ka nag-sign in dati."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Kung naka-sign in ka sa isang web app ng ${ BRAND_NAME } sa **ibang browser**, maaari kang magsagawa ng pag-reset ng password mula sa iyong aktibong session."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Kung mayroon kang mga emergency contact, makipag-ugnayan sa kanila, upang tingnan kung maaari silang makatulong. Pagkatapos humingi ng emergency access sa iyong account, magagawa nilang palitan ang iyong password para sa iyo **pagkatapos lumipas ang oras ng paghihintay para sa access.**"
+      ],
+      "Instagram": [
+        "Instagram"
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Invalid na code. ${ RequestNewCodeLink } at subukang muli."
+      ],
+      "Key sections reorganized for faster access.": [
+        "Inayos muli ang mga pangunahing seksyon para sa mas mabilis na access."
+      ],
+      "Manage groups in your identity provider": [
+        "Pamahalaan ang mga pangkat sa iyong provider ng pagkakakilanlan"
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Subaybayan ang aktibidad ng login, mag-detect ng hindi awtorisadong access at isara ang mga kakulangan sa seguridad at pagsunod. "
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Bagong pangkat na ginawa sa pamamagitan ng iyong identity provider at nakabinbin ang pagsusuri."
+      ],
+      "New sidebar": [
+        "Bagong sidebar"
+      ],
+      "New sidebar layout": [
+        "Bagong layout ng sidebar"
+      ],
+      "News or media article": [
+        "Artikulo sa balita o media"
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Kapag naibigay na ang access sa iyong account, maaari nilang i-access ang iyong mga setting sa **Pag-recover** at **palitan ang iyong password sa ${ ACCOUNT_APP_NAME }** para sa iyo."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Capitalization at bantas (mga tuldok, hyphen at underscore) lang ang maaaring baguhin dito. Upang gumamit ng ibang address, magdagdag ng bago."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Buksan ang iyong aktibong session sa browser, at pumunta sa **Mga setting → Lahat ng setting → Pag-recover → Mga setting ng pag-reset ng password.**"
+      ],
+      "Other": [
+        "Iba pa"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Pana-panahong humihiling sa iyo na i-verify ang iyong password sa ${ BRAND_NAME } upang matiyak na hindi mo ito malilimutan. Tatanungin ka nang mas madalang sa paglipas ng panahon."
+      ],
+      "Please specify...": [
+        "Pakitukoy..."
+      ],
+      "Podcast": [
+        "Podcast"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Mga pagsusuri sa produkto, ranggo, o gabay"
+      ],
+      "Professional": [
+        "Professional"
+      ],
+      "Protect this device too?": [
+        "Protektahan din ang device na ito?"
+      ],
+      "Reddit": [
+        "Reddit"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Ang pag-reset ng iyong password sa iyong aktibong session sa web ay titiyakin na **mananatiling accessible ang iyong naka-encrypt na data** pagkatapos mong palitan ang iyong password."
+      ],
+      "Select a group to view its members and settings.": [
+        "Pumili ng pangkat upang tingnan ang mga miyembro at setting nito."
+      ],
+      "Share your thoughts...": [
+        "I-share ang iyong mga saloobin..."
+      ],
+      "Sign-in complete": [
+        "Kumpleto ang pag-sign in"
+      ],
+      "Submit": [
+        "I-submit"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Magsisimula ang subscription sa ${ startsOnTime }"
+      ],
+      "Switch sidebars": [
+        "Magpalit ng mga sidebar"
+      ],
+      "Synced from identity provider": [
+        "Na-sync mula sa identity provider"
+      ],
+      "Thanks - your feedback was sent.": [
+        "Salamat - naipadala na ang iyong feedback."
+      ],
+      "Thanks for the feedback!": [
+        "Salamat sa feedback!"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Naantala ang proseso para sa ${ pausedCount } pangkat. I-click ang Ipagpatuloy upang ipagpatuloy ang pagtatalaga ng mga tungkulin.",
+        "Naantala ang proseso para sa ${ pausedCount } na pangkat. I-click ang Ipagpatuloy upang ipagpatuloy ang pagtatalaga ng mga tungkulin."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Maaaring ibigay ang referral credit hanggang 2 buwan pagkatapos matapos ang pagsubok ng iyong kaibigan, kung nag-subscribe lang ang iyong kaibigan sa isang plano."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Ang password na ito ay ginagamit para mag-login sa iyong account sa ${ BRAND_NAME }"
+      ],
+      "TikTok": [
+        "TikTok"
+      ],
+      "To continue to ${ product }": [
+        "Upang magpatuloy sa ${ product }"
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Upang makatulong na mapanatiling ligtas ang iyong account, nais naming tiyakin na ikaw talaga ang sumusubok na mag-sign in."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Upang muling makuha ang access sa iyong account at data, ilagay ang 12-salitang parirala ng pag-recover na nauugnay sa iyong account."
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Matatapos ang pagsubok sa ${ formattedPeriodEndDate }"
+      ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Subukang i-recover ang iyong account mula sa isang **device o browser kung saan ka nag-sign in dati**, dahil maaaring posible ito mula roon:"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Sa kasamaang palad, walang paraan ng pag-recover na magagamit para sa account na ito."
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Mag-upgrade upang i-unlock ang ${ monitorLink }."
+      ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Gumamit ng maramihang email address sa ${ MAIL_APP_NAME }. Magdagdag ng bagong address sa ${ BRAND_NAME } o kumonekta ng isa pang email account upang pamahalaan ang lahat mula sa isang inbox."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Na-detect namin na naka-sign in ka na sa isang web app ng ${ BRAND_NAME } sa **ibang browser**. Maaari kang magsagawa ng pag-reset ng password mula sa iyong aktibong session."
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Inirerekomenda namin ang pagdaragdag ng mga server sa iba't ibang lokasyon (isa bawat lungsod) upang i-maximize ang redundancy."
+      ],
+      "Web sessions detected:": [
+        "Natukoy na mga session sa web:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Gamit ang planong ${ boldProfessionalPlan }, maaari kang bumili ng ${ boldDedicatedServers } para sa iyong organisasyon, at i-set up ang ${ boldGateways } upang makontrol kung sinong mga user ang makaka-access sa mga ito."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Sa pamamagitan ng mga pangkat, maaari mong ipatupad ang mga patakaran sa seguridad ng kumpanya para sa access control at bawasan ang panganib ng pag-access sa hindi awtorisadong data."
+      ],
+      "X": [
+        "X"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Kasalukuyang naka-sign in bilang ${ username } para sa ${ organizationName }."
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "Maaari mo nang i-reset ang iyong password upang muling ma-access ang iyong account."
+      ],
+      "You can now sign in to your account again.": [
+        "Maaari ka nang mag-sign in muli sa iyong account."
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Maaari lamang magkaroon ng isang bukas na chat instance sa bawat pagkakataon. Pakisara ang mga nakaraang pag-uusap bago magsimula ng bago."
+      ],
+      "You do not have permission to create users.": [
+        "Wala kang pahintulot na gumawa ng mga user."
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Hindi ka hihingan ng one-time code o security key."
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Muli mong makukuha ang kumpleto o bahagyang access sa iyong naka-encrypt na data."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Matatanggap mo the credit reward 1 buwan pagkatapos matapos ang pagsubok ng iyong kaibigan."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Matatanggap mo ang credit reward 2 buwan pagkatapos matapos ang pagsubok ng iyong kaibigan."
+      ],
+      "You're now signed in on your TV.": [
+        "Naka-sign in ka na ngayon sa iyong TV."
+      ],
+      "Your ${ planDisplayName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Hindi lang pinapanatiling ligtas ng iyong planong ${ planDisplayName } ang data at komunikasyon ng iyong negosyo. Sinusuportahan nito ang iyong mga layunin sa pagsunod, ginagawang namumukod-tangi ang iyong negosyo, at pinapanatiling konektado ang iyong team."
+      ],
+      "Your encrypted data will be locked": [
+        "Mala-lock ang iyong naka-encrypt na data"
+      ],
+      "your encrypted data will be locked": [
+        "ang iyong naka-encrypt na data ay mala-lock"
+      ],
+      "Your feedback": [
+        "Iyong feedback"
+      ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Na-publish na ang iyong mga kamakailang pagbabago. Makikita ang mga ito ng mga user sa susunod na ilang oras."
+      ],
+      "YouTube": [
+        "YouTube"
       ]
     },
     "info": {
@@ -8334,6 +9098,12 @@
       ],
       "Sending invite...": [
         "Nagpapadala ng invite..."
+      ],
+      "Group Owner": [
+        "May-ari ng Pangkat"
+      ],
+      "Invited": [
+        "Inimbitahan"
       ]
     },
     "Invoice state display as badge": {
@@ -9227,6 +9997,136 @@
       ],
       "ZIP code": [
         "ZIP code"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop app": [
+        "Desktop app ng ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "desktop app ng ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } para sa Negosyo"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "Proteksyon ng account sa ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protection": [
+        "Proteksyon ng ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Automatic email forwarding": [
+        "Awtomatikong pag-forward ng email"
+      ],
+      "Block trackers and marketers": [
+        "I-block ang mga tracker at marketer"
+      ],
+      "Brand your workspace": [
+        "I-brand ang iyong workspace"
+      ],
+      "Catch-all email address": [
+        "Catch-all na email address"
+      ],
+      "Custom domain": [
+        "Custom na domain"
+      ],
+      "Custom email domain": [
+        "Custom na domain ng email",
+        "Mga custom na domain ng email"
+      ],
+      "Data harvesting": [
+        "Pag-harvest ng data"
+      ],
+      "Early access": [
+        "Maagang pag-access"
+      ],
+      "Email addresses": [
+        "Mga email address"
+      ],
+      "Email addresses per user": [
+        "Mga email address bawat user"
+      ],
+      "Email with @yourcompany.com domain": [
+        "Email na may @yourcompany.com domain"
+      ],
+      "End-to-end encryption": [
+        "End-to-end na encryption"
+      ],
+      "Enter code": [
+        "Ilagay ang code"
+      ],
+      "Enter name or email address": [
+        "Ilagay ang pangalan o email address"
+      ],
+      "Folders, labels, and filters": [
+        "Mga folder, label, at filter"
+      ],
+      "Free VPN included": [
+        "Kasama ang libreng VPN"
+      ],
+      "Import your emails": [
+        "I-import ang iyong mga email"
+      ],
+      "Invite people": [
+        "Mag-imbita ng mga tao"
+      ],
+      "Monthly": [
+        "Buwanan"
+      ],
+      "No": [
+        "Hindi"
+      ],
+      "Online productivity suite": [
+        "Online productivity suite"
+      ],
+      "Open-source code": [
+        "Open-source na code"
+      ],
+      "Password check-ins": [
+        "Mga check-in ng password"
+      ],
+      "Premium features included": [
+        "Kasamang mga premium feature"
+      ],
+      "Priority support": [
+        "Prayoridad na suporta"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protektado ng mga batas sa privacy ng Swiss"
+      ],
+      "See your team's availability": [
+        "Tingnan ang availability ng iyong team"
+      ],
+      "Select an identity provider to start": [
+        "Pumili ng identity provider upang magsimula"
+      ],
+      "Short domain @pm.me": [
+        "Maikling domain @pm.me"
+      ],
+      "Storage per user": [
+        "Storage bawat user"
+      ],
+      "Support for multiple users": [
+        "Suporta para sa maramihang user"
+      ],
+      "Third-party ads": [
+        "Mga ad ng third-party"
+      ],
+      "Use your own email domain": [
+        "Gamitin ang sarili mong domain ng email"
+      ],
+      "Version history": [
+        "History ng bersyon"
+      ],
+      "Yearly": [
+        "Taunan"
+      ],
+      "Yearly free storage bonus": [
+        "Taunang libreng bonus sa storage"
+      ],
+      "You don't have permissions": [
+        "Wala kang mga pahintulot"
+      ],
+      "Zero-access architecture": [
+        "Zero-access na arkitektura"
       ]
     },
     "label": {
@@ -9519,6 +10419,30 @@
       ],
       "What’s this?": [
         "Ano ito?"
+      ],
+      "activity monitor": [
+        "monitor ng aktibidad"
+      ],
+      "Contact support": [
+        "Makipag-ugnayan sa suporta"
+      ],
+      "contacts’ assistance": [
+        "tulong ng mga contact"
+      ],
+      "data recovery option": [
+        "opsyon sa pag-recover ng data"
+      ],
+      "Details": [
+        "Mga detalye"
+      ],
+      "Learn how": [
+        "Alamin kung paano"
+      ],
+      "Manage addresses": [
+        "Pamahalaan ang mga address"
+      ],
+      "Visit our support site": [
+        "Bisitahin ang aming site ng suporta"
       ]
     },
     "Link (Scribe)": {
@@ -9656,6 +10580,9 @@
       ],
       "Enable detailed events": [
         "Paganahin ang mga detalyadong kaganapan"
+      ],
+      "Account monitor": [
+        "Monitor ng account"
       ]
     },
     "lumo_signup_2025: Info": {
@@ -9713,6 +10640,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } na upuan",
         "${ seats } seat sa ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para sa ${ quantity } user)",
+        "${ MEET_APP_NAME } (para sa ${ quantity } na mga user)"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "mga seat sa ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -9771,6 +10705,33 @@
       "Video meetings, ${ n } participant": [
         "Mga video meeting, ${ n } na kalahok",
         "Mga video meeting, ${ n } na kalahok"
+      ],
+      "Cloud storage and file sharing": [
+        "Cloud storage at pagbabahagi ng file"
+      ],
+      "Data retention policies": [
+        "Mga patakaran sa pagpapanatili ng data"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor ng dokumento at spreadsheet"
+      ],
+      "Email writing assistant": [
+        "Assistant sa pagsulat ng email"
+      ],
+      "Includes Meet Professional": [
+        "Kabilang ang Meet Professional"
+      ],
+      "Password manager with team vaults": [
+        "Tagapamahala ng password na may mga team vault"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Pribadong AI Chat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Secure mail and calendar": [
+        "Secure na email at kalendaryo"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN na may ad-blocker at proteksyon sa malware"
       ]
     },
     "meet_2025: Info": {
@@ -9824,6 +10785,9 @@
       ],
       "Sign in": [
         "Mag-sign in"
+      ],
+      "Change backup password": [
+        "Palitan ang backup na password"
       ]
     },
     "Message": {
@@ -9844,6 +10808,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Natapos na ang iyong libreng pagsubok. Malapit nang ma-disable ang access sa account. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Ikonekta ang iyong custom na domain (hal. yourcompany.com) upang gumawa ng mga email address para sa ibang tao, pamahalaan ang ${ MAIL_APP_NAME } para sa isang negosyo, paaralan, o pangkat."
       ]
     },
     "Message display when a new app version is available": {
@@ -9854,6 +10821,27 @@
     "Metadata title": {
       "Find your ${ BRAND_NAME } Account username": [
         "Hanapin ang iyong username ng ${ BRAND_NAME } Account"
+      ],
+      "${ appName }: Sign-in": [
+        "${ appName }: Mag-sign in"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Mag-sign up"
+      ],
+      "Create a new ${ appName } account": [
+        "Gumawa ng bagong ${ appName } account"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Nakalimutan ang password ng ${ BRAND_NAME } Account? I-reset ito rito gamit ang recovery code, email, o SMS at bawiin ang access sa ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, at higit pa."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Nakalimutan ang username ng ${ BRAND_NAME } Account? Hanapin ito gamit ang recovery email o numero ng telepono at bawiin ang access sa ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, at higit pa."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "I-reset ang password ng ${ BRAND_NAME } Account"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Mag-sign in upang ma-access ang ${ appName } account"
       ]
     },
     "Modal title": {
@@ -10486,6 +11474,17 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Ini-scan ang dark web upang tingnan kung na-leak ang mga ${ BRAND_NAME } address o alias at agad na aalertuhan kung may makita."
+      ],
+      "${ options }-day file version history": [
+        "history ng bersyon ng file para sa ${ options } araw",
+        "history ng bersyon ng file na ${ options } na araw"
+      ],
+      "Advanced workspace security": [
+        "Advanced na seguridad sa workspace"
+      ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Mga server sa ${ VPN_SERVERS.paid.countries }+ bansa",
+        "Mga server sa ${ VPN_SERVERS.paid.countries }+ na bansa"
       ]
     },
     "new_plans: feature highlight": {
@@ -11011,6 +12010,27 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Lumahok sa mga survey upang mapabuti ang mga serbisyo ng ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } para sa Business communications"
+      ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 na email bawat taon. Mga paalala na panatilihing updated ang iyong mga paraan ng pag-recover."
+      ],
+      "Account email updates": [
+        "Mga update sa email ng account"
+      ],
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Ang pag-disable nito ay nangangahulugang hindi ka makakatanggap ng mga in-app na abiso tungkol sa mga promosyon, bagong feature, bagong serbisyo ng ${ BRAND_NAME }, at mga paalala."
+      ],
+      "Email communications": [
+        "Mga komunikasyon sa email"
+      ],
+      "Product email updates": [
+        "Mga update sa email ng produkto"
+      ],
+      "Recovery checklist": [
+        "Checklist ng pag-recover"
       ]
     },
     "Notification": {
@@ -12199,6 +13219,9 @@
       ],
       "ZIP code": [
         "ZIP code"
+      ],
+      "Search for users or addresses": [
+        "Maghanap ng mga user o address"
       ]
     },
     "placeholder": {
@@ -12432,6 +13455,9 @@
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Ang pag-verify ng email address ay nagpapataas ng seguridad ng account at nagbibigay ng karagdagang opsyon para sa pag-recover."
+      ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "I-verify ngayon ang recovery email address na ito: ${ emailData.value }"
       ]
     },
     "Recovery method": {
@@ -12466,6 +13492,9 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ang pag-verify ng numero ng telepono ay nagpapataas ng seguridad ng account at nagbibigay ng karagdagang opsyon para sa pag-recover."
+      ],
+      "Verify this recovery phone number now: ${ phoneData.value }": [
+        "I-verify ang recovery phone number na ito ngayon: ${ phoneData.value }"
       ]
     },
     "Referral": {
@@ -12523,6 +13552,18 @@
       ],
       "your subscription": [
         "ang iyong subscription"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Kung kakanselahin mo bago ang petsang ito,** **i-downgrade** ka sa ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } kapag natapos ang pagsubok."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Kung hindi ka mag-subscribe,** **i-downgrade** ka sa ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Magbigay ng ${ refereeRewardAmount }, kumuha ng ${ referrerRewardAmount }"
+      ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Gumagamit ako ng ${ BRAND_NAME } at naisip kong baka magustuhan mo ito. Isa itong secure na email, cloud storage, tagapamahala ng password, at VPN na pumoprotekta sa iyong privacy. Mag-sign up gamit ang link na ito upang makakuha ng ${ refereeRewardAmount } na bawas sa iyong susunod na subscription: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -13061,6 +14102,34 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "May ${ timeRemaining.inDays } araw upang i-reset ang password.",
         "May ${ timeRemaining.inDays } na araw upang i-reset ang password."
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } araw",
+        "${ timeRemaining.inDays } na araw"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } oras",
+        "${ timeRemaining.inHours } na oras"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Mag-e-expire ang pahintulot na ito sa loob ng ${ timeRemaining.inDays } araw",
+        "Mag-e-expire ang pahintulot na ito sa loob ng ${ timeRemaining.inDays } na araw"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Mag-e-expire ang pahintulot na ito sa loob ng ${ timeRemaining.inHours } oras",
+        "Mag-e-expire ang pahintulot na ito sa loob ng ${ timeRemaining.inHours } na oras"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "May ${ timeRemaining.inHours } oras upang i-reset ang password.",
+        "May ${ timeRemaining.inHours } na oras upang i-reset ang password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "May ${ timeRemaining.inMinutes } minuto upang i-reset ang password.",
+        "May ${ timeRemaining.inMinutes } na minuto upang i-reset ang password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "May ${ timeRemaining.inSeconds } segundo upang i-reset ang password.",
+        "May ${ timeRemaining.inSeconds } na segundo upang i-reset ang password."
       ]
     },
     "session_recovery:available:link": {
@@ -13162,6 +14231,14 @@
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
         "Maaari mong palitan ang iyong password sa loob ng ${ gracePeriodHoursRemaining } oras",
         "Maaari mong palitan ang iyong password sa loob ng ${ gracePeriodHoursRemaining } na oras"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } pang oras",
+        "${ gracePeriodHoursRemaining } pang oras"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Humiling ng pag-reset ng password (${ user.Email }). Maaaring palitan ang password sa loob ng ${ hoursRemaining } oras.",
+        "Hiningi ang pag-reset ng password (${ user.Email }). Maaaring baguhin ang password sa loob ng ${ hoursRemaining } na oras."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -13787,6 +14864,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Ide-delete ang iyong configuration ng SSO."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "Sumali ang ${ n } user sa iyong organisasyon sa pamamagitan ng provider ng pagkakakilanlan",
+        "Sumali ang ${ n } na user sa iyong organisasyon sa pamamagitan ng provider ng pagkakakilanlan"
+      ],
+      "${ n } user is inactive.": [
+        "Hindi aktibo ang ${ n } user.",
+        "Hindi aktibo ang ${ n } na user."
       ]
     },
     "sso: auth device state": {
@@ -13991,6 +15076,13 @@
       "VPN connection for ${ n } device per user": [
         "Koneksyon sa VPN para sa ${ n } device bawat user",
         "Koneksyon sa VPN para sa ${ n } na device bawat user"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe assistant sa pagsulat"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } para sa ${ count } user",
+        "${ productName } para sa ${ count } na mga user"
       ]
     },
     "Subscription change warning": {
@@ -14417,6 +15509,48 @@
     "Subtitle": {
       "View VPN session details for your organization.": [
         "Tingnan ang mga detalye ng session ng VPN para sa organisasyon."
+      ],
+      "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "Nag-aalok ang ${ DRIVE_PLUS_NAME } ng 1 TB na storage para sa iyong mga file at larawan. Eligible ka rin para sa mga taunang bonus sa storage."
+      ],
+      "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "Nag-aalok ang ${ DRIVE_PLUS_NAME } ng 200 GB na storage para sa iyong mga file at larawan. Eligible ka rin para sa mga taunang bonus sa storage."
+      ],
+      "${ planTitle } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "Binibigyan ka ng ${ planTitle } ng access sa lahat ng app at mga premium feature. Built-in ang privacy para makapagpatuloy ka, na nalalamang ligtas ang iyong data at pagkakakilanlan."
+      ],
+      "${ planTitle } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Ibinibigay sa iyo ng ${ planTitle } ang lahat ng app, lahat ng feature, maagang pag-access sa mga bagong release, at lahat ng kailangan mo para makontrol ang iyong data at ang seguridad nito."
+      ],
+      "${ planTitle } gives you unlimited privacy and more storage for up to 2 people.": [
+        "Nagbibigay ang ${ planTitle } sa iyo ng walang limitasyong privacy at higit pang storage para sa hanggang 2 tao."
+      ],
+      "${ planTitle } gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Ibinibigay ng ${ planTitle } sa iyong team ang lahat ng tool sa pakikipagtulungan na kailangan nila para maging produktibo at organisado sa kanilang trabaho, habang pinoprotektahan ang iyong negosyo."
+      ],
+      "${ planTitle } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their advanced features.": [
+        "Ibinibigay ng ${ planTitle } sa iyong team ang kailangan nila para maging mas produktibo at organisado sa kanilang trabaho na may access sa lahat ng app ng ${ BRAND_NAME } at mga advanced na feature ng mga ito."
+      ],
+      "${ planTitle } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "Ibinibigay ng ${ planTitle } sa iyong team ang kailangan nila para maging mas produktibo, organisado, at may kontrol sa kanilang inbox, iskedyul, at higit pa."
+      ],
+      "${ planTitle } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "Higit pa sa basics ang ${ planTitle } para tulungan kang maging mas produktibo, organisado, at may kontrol sa iyong inbox, pagkakakilanlan ng email, at higit pa."
+      ],
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "Tinutulungan ka ng ${ planTitle } na matiyak na ang bawat isa sa mga miyembro ng iyong pamilya — at ang kanilang data — ay protektado tuwing sila ay online."
+      ],
+      "Compare the key differences that matter for your business.": [
+        "Ihambing ang mga pangunahing pagkakaiba na mahalaga para sa iyong negosyo."
+      ],
+      "Save 50% for 6 months, and keep full access": [
+        "Makatipid ng 50% sa loob ng 6 na buwan, at panatilihin ang buong access"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Makatipid ng 50% sa loob ng isang taon, at panatilihin ang buong access"
+      ],
+      "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
+        "Tingnan kung paano maihahambing ang ${ MAIL_APP_NAME }, at kung bakit gumagawa ng pagkakaiba ang aming kalayaan."
       ]
     },
     "Success": {
@@ -14584,6 +15718,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Matatanggap mo ang iyong username sa pamamagitan ng SMS sa loob ng isang minuto kung naglagay ka ng valid na recovery phone number."
+      ],
+      "Password check-ins disabled": [
+        "Huwag paganahin ang mga check-in ng password"
+      ],
+      "Password check-ins enabled": [
+        "Paganahin ang mga check-in ng password"
       ]
     },
     "Success message": {
@@ -14650,6 +15790,9 @@
       ],
       "/user per month": [
         "/user bawat buwan"
+      ],
+      "/year": [
+        "/taon"
       ]
     },
     "Suffix for price": {
@@ -14758,6 +15901,24 @@
       ],
       "Light": [
         "Maliwanag"
+      ],
+      "Auto": [
+        "Auto"
+      ],
+      "Mode: Auto": [
+        "Mode: Auto"
+      ],
+      "Mode: Dark": [
+        "Mode: Dark"
+      ],
+      "Mode: Light": [
+        "Mode: Light"
+      ],
+      "Sync with system": [
+        "I-sync sa system"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Gamitin ang mga setting ng ${ BRAND_NAME }"
       ]
     },
     "Time unit": {
@@ -15881,6 +17042,189 @@
       ],
       "Your subscriptions": [
         "Mga subscription"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Katuwang sa pagsusulat ng ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ VPN_APP_NAME } clients": [
+        "Mga client ng ${ VPN_APP_NAME }"
+      ],
+      "Account": [
+        "Account"
+      ],
+      "Account monitor": [
+        "Monitor ng account"
+      ],
+      "Activate multi-user support": [
+        "I-activate ang suporta sa multi-user"
+      ],
+      "Already have multiple accounts?": [
+        "Mayroon nang maramihang account?"
+      ],
+      "Approve changes": [
+        "Aprubahan ang mga pagbabago"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Naka-sign in ka na ba sa ${ BRAND_NAME } sa isang browser?"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Sigurado ka bang gusto mong i-disconnect at huwag paganahin ang address na ito?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Humingi ng tulong sa iyong mga emergency contact"
+      ],
+      "Can you access your session in the browser?": [
+        "Maaari mo bang i-access ang iyong session sa browser?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Maaari ka bang makipag-ugnayan sa iyong mga emergency contact?"
+      ],
+      "Connected emails": [
+        "Mga konektadong email"
+      ],
+      "Couldn’t recover your account": [
+        "Hindi ma-recover ang iyong account"
+      ],
+      "Create group": [
+        "Gumawa ng pangkat"
+      ],
+      "Create new addresses easily": [
+        "Gumawa ng mga bagong address nang madali"
+      ],
+      "Disable account monitor?": [
+        "Huwag paganahin ang monitor ng account?"
+      ],
+      "Download apps": [
+        "I-download ang mga app"
+      ],
+      "Edit group": [
+        "I-edit ang pangkat"
+      ],
+      "Email subscriptions": [
+        "Mga email subscription"
+      ],
+      "Free plan": [
+        "Free plan"
+      ],
+      "Get direct support": [
+        "Kumuha ng direktang suporta"
+      ],
+      "Get help with an issue": [
+        "Humingi ng tulong para sa isang isyu"
+      ],
+      "Group role assignment paused": [
+        "Naka-pause ang pagtatalaga ng tungkulin sa pangkat"
+      ],
+      "Help us improve": [
+        "Tulungan kaming mapabuti"
+      ],
+      "Helping activists in Hong Kong": [
+        "Pagtulong sa mga aktibista sa Hong Kong"
+      ],
+      "How ${ MAIL_APP_NAME } is different": [
+        "Paano naiiba ang ${ MAIL_APP_NAME }"
+      ],
+      "How did you find out about us?": [
+        "Paano mo nalaman ang tungkol sa amin?"
+      ],
+      "Imports": [
+        "Mga i-import"
+      ],
+      "Lower your cost without losing features": [
+        "Babaan ang iyong gastos nang hindi nawawala ang mga feature"
+      ],
+      "Make your business stand out": [
+        "Gawing namumukod-tangi ang iyong negosyo"
+      ],
+      "Monitoring": [
+        "Pagsubaybay"
+      ],
+      "My account": [
+        "Aking account"
+      ],
+      "My VPN": [
+        "Aking VPN"
+      ],
+      "No events yet": [
+        "Wala pang mga kaganapan"
+      ],
+      "OpenVpn": [
+        "OpenVpn"
+      ],
+      "OpenVPN username": [
+        "Username sa OpenVPN"
+      ],
+      "Organization": [
+        "Organisasyon"
+      ],
+      "Organization and people": [
+        "Organisasyon at mga tao"
+      ],
+      "Our fight against censorship in Russia": [
+        "Ang aming laban laban sa censorship sa Russia"
+      ],
+      "Plans": [
+        "Mga plano"
+      ],
+      "Recover account": [
+        "I-recover ang account"
+      ],
+      "Remove email": [
+        "Alisin ang email"
+      ],
+      "Remove recovery phone number": [
+        "Alisin ang recovery phone number"
+      ],
+      "Request new code?": [
+        "Humingi ng bagong code?"
+      ],
+      "Security and compliance": [
+        "Seguridad at pagsunod"
+      ],
+      "Single-sign on (SSO)": [
+        "Single-sign on (SSO)"
+      ],
+      "Stay secure and connected anywhere": [
+        "Manatiling ligtas at konektado kahit saan"
+      ],
+      "Support your compliance objectives": [
+        "Suportahan ang iyong mga layunin sa pagsunod"
+      ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Mag-troubleshoot gamit ang ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Troubleshoot your issue": [
+        "I-troubleshoot ang iyong isyu"
+      ],
+      "Try changing your password in your active web session": [
+        "Subukang palitan ang iyong password sa iyong aktibong session sa web"
+      ],
+      "Two-factor authentication disabled": [
+        "Naka-disable ang two-factor authentication"
+      ],
+      "Unblocking internet access in Iran": [
+        "Pag-unblock ng access sa internet sa Iran"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "I-upgrade ang proteksyon ng network gamit ang mga dedicated server"
+      ],
+      "Use backup recovery code": [
+        "Gamitin ang backup recovery code"
+      ],
+      "Use one account for all your addresses": [
+        "Gumamit ng isang account para sa lahat ng iyong address"
+      ],
+      "Verify it’s you": [
+        "I-verify na ikaw ito"
+      ],
+      "VPN": [
+        "VPN"
+      ],
+      "What changes if you switch to the Free plan": [
+        "Anong mga pagbabago kung lilipat ka sa Free plan"
+      ],
+      "Your current plan": [
+        "Ang iyong kasalukuyang plano"
       ]
     },
     "Title for payment methods table": {
@@ -16093,6 +17437,15 @@
       ],
       "Your DKIM signing is working.": [
         "Gumagana ang pag-sign ng DKIM."
+      ],
+      "Early access to new apps and features.": [
+        "Maagang pag-access sa mga bagong app at feature."
+      ],
+      "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
+        "Kabilang ang mga custom na domain ng email at walang limitasyong hide-my-email alias sa ${ MAIL_APP_NAME }, access sa mga server sa 120+ na bansa sa ${ VPN_SHORT_APP_NAME }, built-in na 2FA at secure na pagbabahagi sa ${ PASS_SHORT_APP_NAME }, at higit pa."
+      ],
+      "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
+        "Kabilang ang propesyonal na email sa @yourdomain.com, cloud storage na may collaborative na pag-edit ng dokumento, pag-iskedyul at video conferencing, pamamahala ng password, isang secure na ${ VPN_SHORT_APP_NAME }, at higit pa."
       ]
     },
     "tooltip": {
@@ -16119,6 +17472,21 @@
       ],
       "Waiting for user to accept the invitation": [
         "Naghihintay na tanggapin ng user ang imbitasyon"
+      ],
+      "Resuming role assignment": [
+        "Ipinagpapatuloy ang pagtatalaga ng tungkulin"
+      ],
+      "Role assignment paused": [
+        "Naka-pause ang pagtatalaga ng tungkulin"
+      ],
+      "User is a group owner": [
+        "Ang user ay may-ari ng pangkat"
+      ],
+      "via ${ groupNames }": [
+        "sa pamamagitan ng ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Naghihintay ng pag-apruba ng admin"
       ]
     },
     "Tor out of date": {
@@ -16194,6 +17562,12 @@
       ],
       "Refund": [
         "Refund"
+      ],
+      "Prepayment": [
+        "Paunang Bayad"
+      ],
+      "Test credit": [
+        "Test credit"
       ]
     },
     "Unlimited offer": {
@@ -16273,6 +17647,21 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Upang makatuloy, kakailanganing hilingin ang pahintulot ng user na i-access ang kanilang data o i-reset ang kanilang password."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Hindi mapagana ang admin access para sa ${ n } user",
+        "Hindi mapagana ang admin access para sa ${ n } na user"
+      ],
+      "Review their account now.": [
+        "Suriin ang kanilang account ngayon.",
+        "Suriin ang kanilang mga account ngayon."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Na-update ang kanilang mga encryption key habang gumagawa kami ng mga pagbabago."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Maaari mong ligtas na alisin ang user na ito sa iyong organisasyon.",
+        "Maaari mong ligtas na alisin ang mga user na ito sa iyong organisasyon."
       ]
     },
     "Upsell": {
@@ -16314,6 +17703,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Mapoprotektahan mo ang hanggang ${ FAMILY_MAX_USERS } tao gamit ang ${ PLAN_NAMES[plan] }. Nagsisimula sa ${ priceString }/buwan kada account."
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } para sa Negosyo"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Lahat ng kailangan mo upang ligtas na makipagtulungan sa iisang subscription. Kumuha ng access sa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } at ${ LUMO_SHORT_APP_NAME } AI Assistant."
       ]
     },
     "upsell panel": {
@@ -16322,6 +17717,9 @@
       ],
       "Recommended": [
         "Inirerekomenda"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Makatipid ng ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {
@@ -16392,6 +17790,36 @@
       ],
       "Writing assistant": [
         "Writing assistant"
+      ],
+      "(via ${ groupName })": [
+        "(sa pamamagitan ng ${ groupName })"
+      ],
+      "(via group)": [
+        "(sa pamamagitan ng pangkat)"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Magdagdag ng mga delegated role sa isang user upang bigyan lamang sila ng mga partikular na pahintulot na kailangan nila, pinapanatiling hiwalay ang buong kapangyarihan ng admin at secure ang iyong kapaligiran."
+      ],
+      "General": [
+        "Pangkalahatan"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Pamahalaan ang lahat ng user, pangkat, seguridad, billing, at mga configuration ng system."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Pamahalaan ang mga user at pangkat, magtalaga ng mga tungkulin, at maglaan ng mga lisensya sa mga miyembro."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Namamahala sa mga setting ng seguridad at maaaring tingnan ang lahat ng log ng kaganapan at detalye ng user."
+      ],
+      "Roles and permissions": [
+        "Mga tungkulin at pahintulot"
+      ],
+      "Save": [
+        "I-save"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Magagawa mong magtalaga ng mga tungkulin kapag tinanggap na ng user ang imbitasyon."
       ]
     },
     "Users table: badge": {
@@ -16485,6 +17913,9 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Sa ${ planTitlePlusMaybeBrand }, makakakuha ka ng libreng access sa lahat ng serbisyo sa privacy ng ${ BRAND_NAME }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Panatilihing ligtas ang iyong mga file, larawan, at dokumento gamit ang ${ maxDriveSpace } cloud storage."
       ]
     },
     "VPN Gateways": {
@@ -16703,11 +18134,395 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Magtatapos ang pagsubok sa ${ textDate }. Hindi sisingilin kung kakanselahin bago ang ${ textDate }. ${ action }"
+      ],
+      "Are you sure you want to remove your notification email?": [
+        "Sigurado ka bang gusto mong alisin ang notification email?"
+      ],
+      "Are you sure you want to remove your recovery email?": [
+        "Sigurado ka bang gusto mong alisin ang recovery email?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Sigurado ka bang gusto mong alisin ang recovery phone number?"
+      ],
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Sa pag-alis ng phone number na ito, hindi mo na mai-recover ang account."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Ang mga server sa gateway na ito ay papasok sa 10 araw na panahon ng deactivation. Ang mga server na ito ay maaaring idagdag sa isang bagong Gateway, ngunit hindi maaaring baguhin ang kanilang bansa."
       ]
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Pagkatapos ng matagumpay na pag-verify, huwag alisin ang TXT record na ito dahil kailangan ito upang kumpirmahin na patuloy mong pagmamay-ari ang domain."
+      ]
+    },
+    "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 bagong tungkulin ng admin"
+      ],
+      "3 new admin roles": [
+        "3 bagong tungkulin ng admin"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "I-configure ang mga patakaran sa seguridad, pagpapanatili ng data, at imprastraktura ng VPN, at pamahalaan ang mga audit log."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "I-delegate ang pamamahala sa pamamagitan ng pag-assign ng mga partikular na tungkulin ng admin. Bigyan ang bawat admin ng access lang na kailangan nila. Sumusunod ito sa prinsipyo ng least privilege, na nagpoprotekta sa iyong organisasyon mula sa mga nakompromisong account at aksidenteng mga error."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "I-delegate ang pamamahala para sa maraming user nang sabay-sabay. Magtalaga ng mga partikular na tungkulin ng admin sa mga pangkat para sa awtomatikong mga pahintulot. Sumusunod ito sa prinsipyo ng least privilege upang makatipid ng oras sa onboarding at offboarding habang binabawasan ang mga error."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "I-delegate ang pamamahala gamit ang naaangkop na tungkulin ng admin."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Pamahalaan ang lahat ng user, pangkat, storage, seguridad, billing, mga audit log, at mga configuration ng system."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Pamahalaan ang mga user, pangkat, at storage para sa lahat ng miyembro, mag-assign ng mga tungkulin, at maglaan ng mga lisensya."
+      ],
+      "New: Control admin access for individual users": [
+        "Bago: Kontrolin ang access ng admin para sa mga indibidwal na user"
+      ],
+      "New: Control admin access for many users at once": [
+        "Bago: Kontrolin ang access ng admin para sa maraming user nang sabay-sabay"
+      ],
+      "Organization admin:": [
+        "Admin ng organisasyon:"
+      ],
+      "Security admin:": [
+        "Admin ng seguridad:"
+      ],
+      "User admin:": [
+        "Admin ng user:"
+      ]
+    },
+    "Badge": {
+      "Save ${ discountRate }%": [
+        "Makatipid ng ${ discountRate }%"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Lalaktawan ang mga duplicate mula sa mga nakaraang pag-import. I-undo o i-import ang mas lumang mga mensahe sa mga setting ng ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
+    "Confirm cancellation": {
+      "Access is restored once usage is back within limits.": [
+        "Ibabalik ang access kapag ang paggamit ay bumalik na sa mga limitasyon."
+      ],
+      "Back up photos from your devices": [
+        "I-back up ang mga larawan mula sa iyong mga device"
+      ],
+      "Cancel subscription": [
+        "Kanselahin ang subscription"
+      ],
+      "Confirm cancellation": [
+        "Kumpirmahin ang pagkansela"
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Kung lumampas ka sa mga limitasyon ng free plan, hindi mo magagawang:"
+      ],
+      "Keep current plan": [
+        "Panatilihin ang kasalukuyang plano"
+      ],
+      "Manage your calendar": [
+        "Pamahalaan ang iyong kalendaryo"
+      ],
+      "Receive new emails": [
+        "Makatanggap ng mga bagong email"
+      ],
+      "Send emails with attachments": [
+        "Magpadala ng mga email na may mga attachment"
+      ],
+      "Upload any new files": [
+        "I-upload ang anumang mga bagong file"
+      ],
+      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
+        "Kapag nagtapos ang iyong subscription sa ${ endDate }, lilipat ang iyong account sa Free plan. Kung ang iyong paggamit ay lumampas sa mga limitasyon ng Free plan, maaaring pansamantalang hindi magamit ang ilang feature."
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Pakitandaan na kung i-delete mo ang pangkat na ${ displayGroupName } (na may address na ${ displayGroupAddressEmail }), hindi ka na makakatanggap ng mga email gamit ang address nito."
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } para sa unang buwan. Magre-renew sa halagang ${ regularPrice }/buwan, kanselahin anumang oras."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Kunin ang VPN Plus sa halagang ${ offerPrice } lamang"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protektado ng mga batas sa privacy ng Swiss"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Espesyal na alok: Makatipid ng 90% sa aming premium na plano"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Magpatuloy nang libre"
+      ],
+      "Get the deal": [
+        "Kunin ang deal"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Ituloy ang pagkansela"
+      ],
+      "Keep current plan": [
+        "Panatilihin ang kasalukuyang plano"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Maraming isyu ang maaaring mabilis na malutas sa tulong ng aming mga gabay sa tulong. Kung kailangan mo ng higit pang suporta, narito ang aming team para tumulong."
+      ]
+    },
+    "Group detail label": {
+      "Group address:": [
+        "Address ng pangkat:"
+      ],
+      "Roles and permission:": [
+        "Tungkulin at pahintulot:"
+      ]
+    },
+    "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Magdagdag ng mga itinalagang tungkulin sa isang pangkat upang bigyan ang mga miyembro nito ng mga tiyak na pahintulot lamang na kailangan nila, na pinapanatiling hiwalay ang buong kapangyarihan ng admin at ligtas ang iyong kapaligiran."
+      ],
+      "General": [
+        "Pangkalahatan"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Pamahalaan ang mga user at pangkat, magtalaga ng mga tungkulin, at maglaan ng mga lisensya sa mga miyembro."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Namamahala sa mga setting ng seguridad and maaaring tingnan ang lahat ng log ng kaganapan at detalye ng user."
+      ],
+      "Roles and permissions": [
+        "Mga tungkulin at mga pahintulot"
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Idagdag ang ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Kumpidensyal na video conferencing para sa mga pag-uusap na mahalaga. ${ priceString } na lang ang karagdagang bayad bawat buwan."
+      ],
+      "Talk privately with ${ planName }": [
+        "Makipag-usap nang pribado gamit ang ${ planName }"
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Tingnan ang pinakabagong mga update sa produkto"
+      ],
+      "Continue cancelling": [
+        "Ituloy ang pagkansela"
+      ],
+      "Explore the latest news": [
+        "I-explore ang pinakabagong balita"
+      ],
+      "Keep current plan": [
+        "Panatilihin ang kasalukuyang plano"
+      ],
+      "Make your voice heard": [
+        "Iparinig ang iyong boses"
+      ],
+      "Request a feature": [
+        "Mag-request ng feature"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Mag-request ng feature o bumoto sa mga ideya mula sa ibang mga user sa aming forum ng feedback."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Tingnan kung paano nagbabago ang mga app ng ${ BRAND_NAME } kasama ang iyong feedback."
+      ],
+      "Submit your ideas": [
+        "Isumite ang iyong mga ideya"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Tumutulong ang iyong feedback para kami ay mapabuti. Nakatuklas ka man ng bug, may gustong bagong feature, o may naiisip na bagay na pwedeng gumana nang iba, gustong-gusto naming makarinig mula sa iyo."
+      ]
+    },
+    "Paragraph": {
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "Ang ${ BRAND_NAME } ay independyenteng pinopondohan at gumagana nang walang advertising. Sa ibaba ay mga halimbawa kung paano ginamit ang kalayaang ito sa praktika."
+      ]
+    },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Kung makalimutan mo ang iyong password, maaari mong mawalan ng access sa iyong naka-encrypt na data."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Tiyaking isasaulo o ligtas mong itatabi ang iyong password dahil ito ang susi upang i-decrypt ang iyong data."
+      ],
+      "Turn off check-ins": [
+        "I-turn off ang mga check-in"
+      ],
+      "Turn off password check-ins?": [
+        "I-turn off ang mga check-in ng password?"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "May-ari"
+      ],
+      "Security Admin": [
+        "Security Admin"
+      ],
+      "User Admin": [
+        "User Admin"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "I-configure ang mga patakaran sa seguridad, pagpapanatili ng data, at imprastraktura ng VPN, at pamahalaan ang mga audit log."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Pamahalaan ang lahat ng user, pangkat, seguridad, billing, at mga configuration ng system."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Pamahalaan ang mga user, pangkat, at storage para sa lahat ng miyembro, magtalaga ng mga tungkulin, at maglaan ng mga lisensya."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } bagong miyembro",
+        "${ memberCount } na bagong mga miyembro"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "Na-sync ang ${ numberOfPendingGroups } na pangkat",
+        "Na-sync ang ${ numberOfPendingGroups } na mga pangkat"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "Na-sync ang ${ numberOfPendingUsers } na user",
+        "Na-sync ang ${ numberOfPendingUsers } na mga user"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } na pangkat",
+        "${ pendingGroupsCount } na mga pangkat"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "Na-sync ang ${ pendingGroupsCount } na pangkat.",
+        "Na-sync ang ${ pendingGroupsCount } na mga pangkat."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } na user",
+        "${ pendingUsersCount } na mga user"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "Na-sync ang ${ pendingUsersCount } na user.",
+        "Na-sync ang ${ pendingUsersCount } na mga user."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "Na-sync ang ${ usersText } at ${ groupsText }."
+      ],
+      "Approve changes from your identity provider": [
+        "Aprubahan ang mga pagbabago mula sa iyong identity provider"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Kailangan ng huling pag-apruba upang bigyan ng access sa lahat ng serbisyo ng ${ BRAND_NAME }."
+      ],
+      "From your identity provider": [
+        "Mula sa iyong identity provider"
+      ],
+      "New": [
+        "Bago"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Kapag naaprubahan na, maaari nilang ma-access ang lahat ng serbisyo ng ${ BRAND_NAME } at magbahagi nang ligtas."
+      ],
+      "Private user": [
+        "Pribadong user"
+      ],
+      "Review users and groups before finishing setup": [
+        "Suriin ang mga user at pangkat bago tapusin ang pag-setup"
+      ],
+      "Updated": [
+        "Na-update"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Kailangang tanggapin ng mga user na nakatakda sa pribado ang imbitasyon para matapos ang pag-setup. Padadalhan namin sila ng imbitasyon kapag naaprubahan mo na."
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } araw",
+        "${ days } na araw"
+      ],
+      "${ hours } hour": [
+        "${ hours } oras",
+        "${ hours } na oras"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } na minuto"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } na segundo"
+      ]
+    },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Magtalaga ng mga delegated na tungkulin"
+      ],
+      "Assign roles": [
+        "Magtalaga ng mga tungkulin"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "I-click ang pangalan ng user upang pamahalaan ang kanilang tungkulin at mga pahintulot."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "I-click ang I-edit upang magtalaga ng mga tungkulin sa pangkat na ito at awtomatikong pamahalaan ang access ng miyembro."
+      ],
+      "New: Roles and permissions tab": [
+        "Bago: Tab ng mga tungkulin at mga pahintulot"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Buksan ang tab na ito upang magbigay ng mga partikular na pahintulot nang walang buong access sa admin."
+      ],
+      "User roles available": [
+        "Available ang mga tungkulin ng user"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Maaari nang magtalaga ng mga tungkulin sa mga indibidwal na user mula sa tab na ito."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... naghihintay"
+      ],
+      "completed": [
+        "nakumpleto"
+      ],
+      "finalizing": [
+        "tinatapos"
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Para sa personal na paggamit"
+      ],
+      "For professional use": [
+        "Para sa propesyonal na paggamit"
+      ]
+    },
+    "Temporary need": {
+      "Continue cancelling": [
+        "Ituloy ang pagkansela"
+      ],
+      "Keep current plan": [
+        "Panatilihin ang kasalukuyang plano"
+      ]
+    },
+    "Themes": {
+      "Themes": [
+        "Mga tema"
       ]
     }
   }

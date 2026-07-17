@@ -1276,6 +1276,18 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Configure new device profile": [
+        "Configurer un nouveau profil d’appareil"
+      ],
+      "Delete device profile": [
+        "Supprimer le profil d’appareil"
+      ],
+      "Generate device profile": [
+        "Générer le profil d’appareil"
+      ],
+      "Instructions": [
+        "Instructions"
       ]
     },
     "action": {
@@ -2093,6 +2105,27 @@
       ],
       "You": [
         "Vous"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son adresse sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pour migrer cet utilisateur, celui-ci doit accepter son invitation à rejoindre ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, réactivez-le dans votre console d'administration Google Workspace."
       ]
     },
     "Browser": {
@@ -4871,6 +4904,12 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Impossible de générer le profil de l'appareil. Veuillez réessayer."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
       ]
     },
     "error": {
@@ -9125,6 +9164,87 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "All devices with this device profile deployed": [
+        "Tous les appareils sur lesquels ce profil d’appareil est déployé"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Tout le trafic Internet est toujours chiffré et sécurisé"
+      ],
+      "Choose one:": [
+        "Choisir une option :"
+      ],
+      "Configure Always-on VPN": [
+        "Configurer le VPN permanent"
+      ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "Déployez ${ regoLink } directement via le déploiement de fichiers de votre MDM"
+      ],
+      "Deploy across all your managed devices": [
+        "Déployer sur tous vos appareils gérés"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Déployez-le via votre MDM (Jamf, Intune…) ou manuellement sur chaque appareil."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Les appareils dotés d’un profil d’appareil VPN permanent ne peuvent accéder à Internet que lorsqu’une connexion ${ VPN_APP_NAME } est active."
+      ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "Téléchargez ${ ps1Link } et exécutez-le sur chaque appareil en tant qu’utilisateur système afin de placer automatiquement le profil d’appareil."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Téléchargez ${ removeScriptLink } et exécutez-le sur chaque appareil en tant qu’utilisateur système afin de supprimer automatiquement le profil."
+      ],
+      "Employees can't go online without a VPN connection": [
+        "Les employés ne peuvent pas se connecter à Internet sans une connexion VPN"
+      ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "L’application de la stratégie commence automatiquement dès que l’appareil détecte le profil."
+      ],
+      "Ensure your organization is always protected": [
+        "Assurez-vous que votre organisation est toujours protégée"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Générez le profil d’appareil et téléchargez un fichier de configuration."
+      ],
+      "Manage groups in your identity provider": [
+        "Gérez les groupes dans votre fournisseur d'identité"
+      ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Une fois le déploiement réussi, les appareils peuvent prendre jusqu’à quelques heures pour détecter et appliquer la stratégie."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Seuls les utilisateurs disposant d’une licence dans votre organisation peuvent s’authentifier auprès de ${ VPN_APP_NAME } sur les appareils sur lesquels le profil d’appareil est déployé."
+      ],
+      "Optional configuration": [
+        "Configuration facultative"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Ou exécutez ${ ps1Link } à l’aide de l’exécution de scripts de votre solution MDM"
+      ],
+      "Restrict logins to your organization": [
+        "Limitez les connexions à votre organisation"
+      ],
+      "Supported platforms": [
+        "Plateformes supportées"
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Pour activer le VPN permanent, le profil d’appareil doit atteindre ${ policiesPath } sur chaque appareil, le client ${ VPN_APP_NAME } le détecte à cet emplacement et applique automatiquement le profil."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Pour supprimer le VPN permanent, supprimez ${ profileFile } de ${ policiesPath } sur chaque appareil. Le client ${ VPN_APP_NAME } cesse d’appliquer le profil dès qu’il détecte que le fichier a été supprimé."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Utilisez votre solution MDM pour supprimer le fichier, ou exécutez ${ removeScriptLink } à l’aide de la fonctionnalité d’exécution de scripts de votre solution MDM. Toute solution MDM prenant en charge le déploiement de fichiers ou l’exécution de scripts est compatible."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Vous utilisez un autre MDM ? Toute solution MDM prenant en charge le déploiement de fichiers ou l’exécution de scripts PowerShell fonctionnera. Consultez la documentation de votre MDM pour plus d’informations."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Vous êtes actuellement connecté en tant que ${ username } pour ${ organizationName }."
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Le profil d'appareil de votre VPN permanent est prêt à être déployé."
       ]
     },
     "info": {
@@ -10251,6 +10371,15 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Applies:": [
+        "S'applique à :"
+      ],
+      "Enforce Always-on VPN": [
+        "Imposer le VPN permanent"
+      ],
+      "Login restrictions": [
+        "Restrictions de connexion"
       ]
     },
     "label": {
@@ -15215,6 +15344,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "L'annulation de votre abonnement est en cours. Veuillez patienter."
+      ],
+      "Disabled": [
+        "Désactivé"
+      ],
+      "Enabled": [
+        "Activé"
+      ],
+      "No restrictions": [
+        "Aucune restriction"
+      ],
+      "Restricted to members of your organization": [
+        "Limité aux membres de votre organisation"
       ]
     },
     "Status": {
@@ -15877,6 +16018,12 @@
       ],
       "View VPN session details for your organization.": [
         "Affichez les informations de la session VPN pour votre organisation."
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Imposez l’utilisation du VPN dans votre organisation en bloquant l’accès à Internet lorsque aucune connexion VPN n’est active."
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Économisez 50 % pendant un an, et gardez un accès complet"
       ]
     },
     "Success": {
@@ -17575,6 +17722,39 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Always-on VPN": [
+        "VPN permanent"
+      ],
+      "Always-on VPN device profile": [
+        "Profil d’appareil VPN permanent"
+      ],
+      "Choose a deployment method": [
+        "Choisissez une méthode de déploiement"
+      ],
+      "Choose a removal method": [
+        "Choisissez une méthode de suppression"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Configurer le profil d’appareil VPN permanent"
+      ],
+      "Created!": [
+        "Créé !"
+      ],
+      "Deploy device profile to your devices": [
+        "Déployez le profil d’appareil sur vos appareils"
+      ],
+      "Deploy via MDM": [
+        "Déployer via un MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Déployer via PowerShell"
+      ],
+      "Remove Always-on VPN device profile": [
+        "Supprimer le profil d’appareil VPN permanent"
+      ],
+      "Remove via MDM": [
+        "Retirer via MDM"
       ]
     },
     "Title for payment methods table": {
@@ -17796,6 +17976,9 @@
       ],
       "Your DKIM signing is working.": [
         "Votre signature DKIM fonctionne."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "S’applique à tous les utilisateurs de votre organisation. Est appliqué uniquement sur les appareils où le profil d’appareil VPN permanent a été déployé."
       ]
     },
     "tooltip": {

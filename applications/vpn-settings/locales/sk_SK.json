@@ -2127,6 +2127,27 @@
       ],
       "You": [
         "Vy"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohto používateľa nie je možné migrovať z dôvodu nekompatibility platforiem."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho adresu v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Ak chcete migrovať tohto používateľa, musí prijať pozvánku do služby ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho archiváciu v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho pozastavenie v konzole správcu Google Workspace."
       ]
     },
     "Browser": {
@@ -4941,6 +4962,9 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
       ]
     },
     "error": {
@@ -9370,6 +9394,21 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } člen pridaný do skupiny",
+        "Do skupiny boli pridaní ${ emails.length } členovia",
+        "Do skupiny boli pridaní ${ emails.length } členovia",
+        "Do skupiny boli pridaní ${ emails.length } členovia"
+      ],
+      "Group created": [
+        "Skupina bola vytvorená"
+      ],
+      "Manage groups in your identity provider": [
+        "Skupiny spravujte vo vašom poskytovateľovi identít"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Momentálne ste prihlásený ako ${ username } v (${ organizationName }."
       ]
     },
     "info": {
@@ -16373,6 +16412,9 @@
       ],
       "View VPN session details for your organization.": [
         "Zobraziť podrobnosti o VPN relácii pre vašu organizáciu."
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Ušetrite 50 % na jeden rok a zachovajte si plný prístup"
       ]
     },
     "Success": {

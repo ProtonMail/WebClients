@@ -1276,6 +1276,18 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Configure new device profile": [
+        "Ρύθμιση παραμέτρων νέου προφίλ συσκευής"
+      ],
+      "Delete device profile": [
+        "Διαγραφή προφίλ συσκευής"
+      ],
+      "Generate device profile": [
+        "Δημιουργία προφίλ συσκευής"
+      ],
+      "Instructions": [
+        "Οδηγίες"
       ]
     },
     "action": {
@@ -2093,6 +2105,27 @@
       ],
       "You": [
         "Εσείς"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην Κονσόλα διαχειριστή του Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην ενότητα ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τη διεύθυνσή του στην περιοχή ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του στην Κονσόλα διαχειριστή Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στην Κονσόλα διαχειριστή του Google Workspace."
       ]
     },
     "Browser": {
@@ -2225,6 +2258,9 @@
       ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
+      ],
+      "Get 50% offer": [
+        "Επωφεληθείτε από προσφορά 50%"
       ]
     },
     "BYOE": {
@@ -4871,6 +4907,12 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Δεν ήταν δυνατή η δημιουργία του προφίλ συσκευής. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
       ]
     },
     "error": {
@@ -9125,6 +9167,111 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Πρόσβαση σε 20.000+ διακομιστές σε 145 χώρες"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Προσθέστε ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } μόνο με ${ bundlePlanPriceInline }"
+      ],
+      "All devices with this device profile deployed": [
+        "Όλες οι συσκευές με αυτό το προφίλ συσκευής αναπτύχθηκαν"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Όλη η διαδικτυακή κίνηση είναι πάντα κρυπτογραφημένη και ασφαλής"
+      ],
+      "Choose one:": [
+        "Επιλέξτε ένα:"
+      ],
+      "Configure Always-on VPN": [
+        "Ρύθμιση παραμέτρων Always-on VPN"
+      ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "Αναπτύξτε το ${ regoLink } απευθείας μέσω της ανάπτυξης αρχείων MDM"
+      ],
+      "Deploy across all your managed devices": [
+        "Ανάπτυξη σε όλες τις διαχειριζόμενες συσκευές σας"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Αναπτύξτε το μέσω του MDM σας (Jamf, Intune…) ή χειροκίνητα σε κάθε συσκευή."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Οι συσκευές που έχουν εγκατεστημένο το προφίλ συσκευής VPN Always-on δεν μπορούν να συνδεθούν στο διαδίκτυο, εκτός εάν είναι ενεργή μια σύνδεση ${ VPN_APP_NAME }."
+      ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "Κατεβάστε το ${ ps1Link } και εκτελέστε το σε κάθε συσκευή ως χρήστης συστήματος για να τοποθετήσετε αυτόματα το προφίλ της συσκευής."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Κατεβάστε το ${ removeScriptLink } και εκτελέστε το σε κάθε συσκευή ως χρήστης συστήματος για να διαγράψετε αυτόματα το προφίλ."
+      ],
+      "Employees can't go online without a VPN connection": [
+        "Οι εργαζόμενοι δεν μπορούν να συνδεθούν στο διαδίκτυο χωρίς σύνδεση VPN"
+      ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Η επιβολή ξεκινά αυτόματα μόλις η συσκευή εντοπίσει το προφίλ."
+      ],
+      "Ensure your organization is always protected": [
+        "Βεβαιωθείτε ότι ο οργανισμός σας είναι πάντα προστατευμένος"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Οι ταχύτερες ταχύτητες VPN έως και 10Gbps"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Δημιουργήστε το προφίλ της συσκευής και κατεβάστε ένα αρχείο διαμόρφωσης."
+      ],
+      "Have some more time to decide without interruption.": [
+        "Έχετε λίγο περισσότερο χρόνο να αποφασίσετε χωρίς διακοπή."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Αν ακυρώσετε τώρα, θα χάσετε την πρόσβαση στο ${ BRAND_NAME } ${ planTitle } στις ${ expiryDate }, συμπεριλαμβανομένων αυτών των λειτουργιών:"
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Διατηρήστε τους κωδικούς πρόσβασής σας ασφαλείς και συνδεθείτε άμεσα με την αυτόματη συμπλήρωση σε κάθε συσκευή."
+      ],
+      "Manage groups in your identity provider": [
+        "Διαχείριση ομάδων στον πάροχο ταυτοτήτων σας"
+      ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Μόλις αναπτυχθεί με επιτυχία, ενδέχεται να χρειαστούν έως και μερικές ώρες για να εντοπίσουν και να επιβάλουν οι συσκευές την πολιτική."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Μόνο οι χρήστες με άδεια χρήσης του οργανισμού σας μπορούν να πιστοποιήσουν την ταυτότητα του ${ VPN_APP_NAME } σε συσκευές που έχουν αναπτύξει το προφίλ συσκευής."
+      ],
+      "Optional configuration": [
+        "Προαιρετική διαμόρφωση"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Ή εκτελέστε το ${ ps1Link } μέσω της εκτέλεσης του σεναρίου MDM"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Premium προστασία απορρήτου σε όλες τις συσκευές σας"
+      ],
+      "Restrict logins to your organization": [
+        "Περιορίστε τις συνδέσεις στον οργανισμό σας"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Μείνετε στο πλάνο σας και κερδίστε έκπτωση 50% τον επόμενο μήνα"
+      ],
+      "Supported platforms": [
+        "Υποστηριζόμενες πλατφόρμες"
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Για να ενεργοποιηθεί το Always-on VPN, το προφίλ της συσκευής πρέπει να φτάσει στο ${ policiesPath } σε κάθε συσκευή — ο υπολογιστής-πελάτης ${ VPN_APP_NAME } το εντοπίζει εκεί και επιβάλλει αυτόματα το προφίλ."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Για να καταργήσετε το Always-on VPN, διαγράψτε το ${ profileFile } από το ${ policiesPath } σε κάθε συσκευή. Ο πελάτης ${ VPN_APP_NAME } σταματά την επιβολή του προφίλ μόλις εντοπίσει ότι το αρχείο έχει εξαφανιστεί."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Χρησιμοποιήστε το MDM σας για να διαγράψετε το αρχείο ή εκτελέστε την εντολή ${ removeScriptLink } μέσω της εκτέλεσης σεναρίου του MDM σας. Οποιοδήποτε MDM που υποστηρίζει την ανάπτυξη αρχείων ή την εκτέλεση σεναρίων θα λειτουργήσει."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Χρησιμοποιείτε διαφορετικό MDM; Οποιοδήποτε MDM που υποστηρίζει την ανάπτυξη αρχείων ή την εκτέλεση σεναρίων PowerShell θα λειτουργήσει. Ανατρέξτε στην τεκμηρίωση του MDM σας για περισσότερες πληροφορίες."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Αυτήν τη στιγμή είστε συνδεδεμένοι ως ${ username } για το ${ organizationName }."
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Το προφίλ της συσκευής σας Always-on VPN είναι έτοιμο για ανάπτυξη."
       ]
     },
     "info": {
@@ -10251,6 +10398,15 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Applies:": [
+        "Ισχύει για:"
+      ],
+      "Enforce Always-on VPN": [
+        "Επιβολή Always-on VPN"
+      ],
+      "Login restrictions": [
+        "Περιορισμοί σύνδεσης"
       ]
     },
     "label": {
@@ -15212,6 +15368,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
+      ],
+      "Disabled": [
+        "Απενεργοποιημένο"
+      ],
+      "Enabled": [
+        "Ενεργοποιημένο"
+      ],
+      "No restrictions": [
+        "Χωρίς περιορισμούς"
+      ],
+      "Restricted to members of your organization": [
+        "Περιορίζεται σε μέλη του οργανισμού σας"
       ]
     },
     "Status": {
@@ -15874,6 +16042,12 @@
       ],
       "View VPN session details for your organization.": [
         "Δείτε τις λεπτομέρειες της περιόδου λειτουργίας VPN για τον οργανισμό σας."
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Επιβάλετε τη χρήση VPN σε ολόκληρο τον οργανισμό σας αποκλείοντας την πρόσβαση στο διαδίκτυο, εκτός εάν υπάρχει ενεργή σύνδεση VPN."
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Κερδίστε 50% για ένα χρόνο και διατηρήστε πλήρη πρόσβαση"
       ]
     },
     "Success": {
@@ -17572,6 +17746,42 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Always-on VPN": [
+        "Πάντα-ενεργό VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Προφίλ συσκευής Always-on VPN"
+      ],
+      "Choose a deployment method": [
+        "Επιλέξτε μια μέθοδο ανάπτυξης"
+      ],
+      "Choose a removal method": [
+        "Επιλέξτε μια μέθοδο αφαίρεσης"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Ρύθμιση παραμέτρων Always-on VPN προφίλ συσκευής"
+      ],
+      "Created!": [
+        "Δημιουργήθηκε!"
+      ],
+      "Deploy device profile to your devices": [
+        "Ανάπτυξη προφίλ συσκευής στις συσκευές σας"
+      ],
+      "Deploy via MDM": [
+        "Ανάπτυξη μέσω MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Ανάπτυξη μέσω PowerShell"
+      ],
+      "Remove Always-on VPN device profile": [
+        "Αφαίρεση Always-on VPN προφίλ συσκευής"
+      ],
+      "Remove via MDM": [
+        "Κατάργηση μέσω MDM"
+      ],
+      "Stay for 50% off your next month": [
+        "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
       ]
     },
     "Title for payment methods table": {
@@ -17793,6 +18003,9 @@
       ],
       "Your DKIM signing is working.": [
         "Η υπογραφή σας DKIM λειτουργεί."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Περιλαμβάνει όλους τους χρήστες στον οργανισμό σας. Επιβάλλεται μόνο σε συσκευές όπου έχει αναπτυχθεί το προφίλ συσκευής Always-on VPN."
       ]
     },
     "tooltip": {

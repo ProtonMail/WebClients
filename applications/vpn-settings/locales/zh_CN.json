@@ -1632,7 +1632,7 @@
         "试用期间，最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 台专用服务器"
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
-        "您在试用期内最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
+        "试用期间，最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 Scribe 席位"
@@ -1641,7 +1641,7 @@
         "试用期间，您最多可以拥有 ${ TRIAL_MAX_USERS } 位用户。"
       ],
       "You cannot add custom domains during the trial period.": [
-        "您在试用期内无法添加自定义域名"
+        "试用期内无法添加自定义域名！"
       ],
       "You have reached the trial limit.": [
         "您已达到试用限制！"
@@ -1750,7 +1750,7 @@
         "1 个账户"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB 存储空间：您当前套餐的 40 倍"
+        "200 GB 存储空间：当前套餐的 40 倍"
       ],
       "6 user accounts": [
         "6 个账户"
@@ -2076,6 +2076,27 @@
       ],
       "You": [
         "您"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由于平台不兼容，无法迁移此用户。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中启用其账户。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其账户。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其地址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "要迁移此用户，该用户需要接受加入 ${ BRAND_NAME } 的邀请。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中取消归档该用户。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中取消暂停该用户。"
       ]
     },
     "Browser": {
@@ -2091,7 +2112,7 @@
         "应用程序问题"
       ],
       "Authenticator problem": [
-        "验证器问题"
+        "验证问题"
       ],
       "Bridge problem": [
         "Bridge 问题"
@@ -2318,7 +2339,7 @@
         "支持大文件上传"
       ],
       "Limited daily chats": [
-        "每日聊天次数有限"
+        "每日有限聊天次数"
       ],
       "Limited favorites": [
         "收藏数量有限"
@@ -3574,7 +3595,7 @@
         "轻松地将文件从桌面同步到云端，并从移动设备访问它们。"
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "发送到 ${ connectedAddressText } 的电子邮件现在将显示在 ${ MAIL_APP_NAME } 中。"
+        "发送至 ${ connectedAddressText } 的邮件现在会显示在 ${ MAIL_APP_NAME } 中。"
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "开启 ${ PROTON_SENTINEL_NAME } 即可使用这些功能"
@@ -3679,7 +3700,7 @@
         "如要关联多达 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址，请升级至 ${ planName }。"
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
-        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+        "若要继续在 ${ BRAND_NAME } 中收发 Gmail 邮件，请重新关联您的账户。"
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
@@ -3709,7 +3730,7 @@
         "我们无法再访问 ${ boldEmails }。"
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
-        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
+        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新邮件预留空间。"
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
         "我们将导入您的旧邮件，并同步后续来自 Gmail 的新邮件。"
@@ -3724,7 +3745,7 @@
         "您已有一个转发至 ${ MAIL_APP_NAME } 的 Gmail 地址。请在下方关联，以便直接从 ${ MAIL_APP_NAME } 收发邮件。"
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "您已有 Gmail 地址转发到 ${ MAIL_APP_NAME }。请在下方连接其中一个地址，以便直接从 ${ MAIL_APP_NAME } 收发电子邮件。"
+        "您已有一个转发至 ${ MAIL_APP_NAME } 的 Gmail 地址。请在下方关联，以便直接从 ${ MAIL_APP_NAME } 收发邮件。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
@@ -4025,7 +4046,7 @@
         "您当前套餐的所有高级功能"
       ],
       "Only": [
-        "仅"
+        "仅限"
       ]
     },
     "Duo offer: Link": {
@@ -4142,7 +4163,7 @@
         "标题："
       ],
       "You are invited to": [
-        "您被邀请至"
+        "您受邀参加"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4493,7 +4514,7 @@
         "未找到可导入的联系人"
       ],
       "No drive found to import": [
-        "未找到可导入的云端硬盘"
+        "未找到要导入的云端硬盘"
       ],
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
@@ -4836,6 +4857,9 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "我们无法通过此类方式发送验证码。"
       ]
     },
     "error": {
@@ -4843,7 +4867,7 @@
         "请使用已设置转发至 ${ MAIL_APP_NAME } 的 Gmail 地址登录"
       ],
       "Please sign in with the same Gmail address you originally connected": [
-        "请使用您最初连接时使用的相同 Gmail 地址登录"
+        "请使用您最初关联的同一 Gmail 地址登录"
       ]
     },
     "Error importing calendar": {
@@ -4903,7 +4927,7 @@
         "文件上传失败，尚未选择文件。"
       ],
       "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
-        "您的文件 ${ formattedFilename } 中的联系人数已超过 ${ maxContactString }。"
+        "文件 ${ formattedFilename } 中的联系人数已超过 ${ maxContactString }。"
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "文件 ${ formattedFilename } 中没有可导入的联系人。"
@@ -5008,7 +5032,7 @@
         "在浏览器中打开"
       ],
       "Please refresh the page or try again later.": [
-        "请刷新页面或稍后重试。"
+        "请刷新或稍后重试！"
       ],
       "Something went wrong": [
         "出错了"
@@ -5402,7 +5426,7 @@
         "邮箱地址"
       ],
       "Encrypted cloud storage for files, photos and documents": [
-        "用于文件、照片和文档的加密云存储空间"
+        "用于文件、照片和文档的加密云存储"
       ],
       "Fastest VPN servers": [
         "高速 VPN 服务器"
@@ -6771,7 +6795,7 @@
         "更改密码"
       ],
       "Choose a plan that works best for you.": [
-        "选择一个最适合您的套餐。"
+        "选择最适合您的套餐！"
       ],
       "Choose an Entity ID to continue.": [
         "选择一个实体 ID 以继续。"
@@ -7146,7 +7170,7 @@
         "一切尽在 ${ planOrAppName }"
       ],
       "Everything in ${ planOrAppName }, plus:": [
-        "包含 ${ planOrAppName } 所有功能，外加:"
+        "包含 ${ planOrAppName } 所有功能，外加："
       ],
       "Example: ${ spfExample }": [
         "示例：${ spfExample }"
@@ -8463,7 +8487,7 @@
         "随时升级或清理空间以迁移剩余内容"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "升级以保留您的 ${ planTitle } 权益。"
+        "升级以保留您的 ${ planTitle } 权益！"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "升级以解锁 ${ monitorLink }！"
@@ -8700,7 +8724,7 @@
         "您的账户已经是免费版了"
       ],
       "You are currently signed in as ${ username }.": [
-        "您当前登录身份为 ${ username }"
+        "您当前以 ${ username } 身份登录"
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "有 ${ ipAddresses } 台专用服务器可以使用，其中有 ${ ipCount } 台正在使用。"
@@ -8998,6 +9022,12 @@
       ],
       "Group created": [
         "群组已创建"
+      ],
+      "Manage groups in your identity provider": [
+        "在您的身份提供商中管理群组"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "您当前以 ${ username } 的身份登录 ${ organizationName }。"
       ]
     },
     "info": {
@@ -9200,7 +9230,7 @@
         "${ PROTON_SENTINEL_NAME } 保护"
       ],
       "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } 个字符"
+        "${ value.length } / ${ maxLength } 个字符"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
@@ -9521,7 +9551,7 @@
         "邮件（过去 3 个月）"
       ],
       "Emails (last 6 months)": [
-        "邮件（过去 6 个月）"
+        "邮件 (过去 6 个月)"
       ],
       "Emails (last month)": [
         "邮件（上个月）"
@@ -10621,7 +10651,7 @@
         "${ MEET_APP_NAME } (适用于 ${ quantity } 位用户)"
       ],
       "${ MEET_APP_NAME } license": [
-        "${ MEET_APP_NAME } 许可证"
+        "${ MEET_APP_NAME } 许可"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 席位"
@@ -10680,7 +10710,7 @@
         "会议录制"
       ],
       "One active meeting at a time": [
-        "同时只能进行一场活跃会议"
+        "同时只能进行一场会议"
       ],
       "Password manager with team vaults": [
         "具备团队保险库的密码管理器"
@@ -10695,7 +10725,7 @@
         "安全邮箱与日历"
       ],
       "Unlimited meetings per day": [
-        "每日不限会议次数"
+        "每日会议不限次数"
       ],
       "Up to ${ n } meeting per day": [
         "每天最多 ${ n } 场会议"
@@ -10715,7 +10745,7 @@
         "包含 ${ seats } 个席位"
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
-        "试用期间，您最多可以拥有 ${ TRIAL_MAX_MEET_SEATS } 个 ${ MEET_SHORT_APP_NAME } 席位。"
+        "试用期间，最多可拥有 ${ TRIAL_MAX_MEET_SEATS } 个 ${ MEET_SHORT_APP_NAME } 席位"
       ]
     },
     "Meet_launch": {
@@ -10793,7 +10823,7 @@
         "查看用户登录、恢复和安全事件。"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "您的免费体验期已结束。${ nonAutoRenewalAction }"
+        "您的免费试用已结束。${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免费体验期已结束，账户即将停用。${ action }"
@@ -12126,7 +12156,7 @@
         "${ pricingTitle } 优惠今天到期！"
       ],
       "Don't show this again": [
-        "不再显示此内容"
+        "不再显示"
       ],
       "Don’t show this again": [
         "不再显示此内容"
@@ -12616,7 +12646,7 @@
         "高级账户保护"
       ],
       "File attachments (up to 10GB)": [
-        "文件附件（最高 10GB）"
+        "文件附件 (最大 10 GB)"
       ],
       "Team policies": [
         "团队政策"
@@ -12772,7 +12802,7 @@
     },
     "Payments": {
       "${ formattedPrice } (excl. tax)": [
-        "${ formattedPrice }（不含税）"
+        "${ formattedPrice } (不含税)"
       ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% 税费：${ taxAmountElement }"
@@ -12865,7 +12895,7 @@
         "特惠价格仅在前 ${ subscriptionLength } 个月内有效"
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
-        "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
+        "特惠价格仅限首月有效，之后将以每月 ${ renewPriceStr } 续订，您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "特惠价格 ${ priceWithDiscount } 在 ${ couponRedemptions } 个月内有效，之后将以每月 ${ renewPriceStr } 续订，您可以随时取消。"
@@ -12955,7 +12985,7 @@
         "您先前套餐订阅未使用部分的抵扣金额"
       ],
       "Credits will be added to your balance": [
-        "积分将添加到您的账户余额"
+        "积分将添加到账户余额"
       ]
     },
     "Payments.Lifetime Subscription": {
@@ -13004,7 +13034,7 @@
         "续订价格取决于账单地区和 EIN！"
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
-        "续订价格取决于账单地区和增值税号。"
+        "续订价格取决于账单地区和增值税号！"
       ]
     },
     "Payments.Saved payment method details": {
@@ -15620,6 +15650,9 @@
       ],
       "View VPN session details for your organization.": [
         "查看您组织的 VPN 会话详情。"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "节省 50% 费用持续 1 年，并保留所有访问权限"
       ]
     },
     "Success": {
@@ -16624,7 +16657,7 @@
         "开通 ${ vpnPlus }，任意选择服务器"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
-        "配合${ planTitle }获得**${ referralInfo.uiData.refereeRewardAmount }**余额奖励。"
+        "订阅 ${ planTitle } 可获得 **${ referralInfo.uiData.refereeRewardAmount }** 积分奖励"
       ],
       "Get complete privacy coverage": [
         "获取更全面的隐私保护"
@@ -16741,7 +16774,7 @@
         "让您的企业脱颖而出"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
-        "将您的组织迁移到 ${ BRAND_NAME }"
+        "将您的组织迁移至 ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "迷你日历"
@@ -17128,7 +17161,7 @@
         "第三方应用与服务"
       ],
       "To preview this spreadsheet, download it.": [
-        "要预览此电子表格，请下载它"
+        "要预览此电子表格，请先下载"
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "要预览此电子表格，请在 ${ SHEETS_APP_NAME } 中打开或下载它。"

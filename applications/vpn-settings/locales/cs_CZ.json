@@ -1258,6 +1258,24 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Approve": [
+        "Schválit"
+      ],
+      "Back to sign-in": [
+        "Zpět k přihlášení"
+      ],
+      "Edit invoice details": [
+        "Upravit fakturační údaje"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Získat nápovědu od ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Review changes": [
+        "Zkontrolovat změny"
+      ],
+      "Verify password": [
+        "Ověřit heslo"
       ]
     },
     "action": {
@@ -1387,6 +1405,9 @@
       ],
       "Writing assistant seats": [
         "Licence asistenta psaní"
+      ],
+      "Add-on": [
+        "Doplněk"
       ]
     },
     "Address action": {
@@ -1530,6 +1551,15 @@
       ],
       "User admin:": [
         "Správce uživatelů:"
+      ],
+      "2 new admin roles": [
+        "2 nové role správce"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Delegujte správu pro mnoho uživatelů najednou. Přiřaďte skupinám konkrétní role správce pro automatická oprávnění. Tím se řídíte principem nejnižších privilegií, což vám ušetří čas při onboardingu a offboardingu a zároveň sníží počet chyb."
+      ],
+      "New: Control admin access for many users at once": [
+        "Novinka: Řízení přístupových práv správce pro mnoho uživatelů najednou"
       ]
     },
     "AdminRole_Info": {
@@ -2037,6 +2067,87 @@
       ],
       "What are you migrating?": [
         "Co migrujete?"
+      ],
+      "Activated": [
+        "Aktivováno"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu již používá uživatel mimo vaši organizaci. Pro vyřešení kontaktujte prosím zákaznickou podporu"
+      ],
+      "All": [
+        "Vše"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stav migrace dat z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-maily"
+      ],
+      "Errors": [
+        "Chyby"
+      ],
+      "Find out what can be migrated.": [
+        "Zjistěte, co lze migrovat."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebyla nalezena. Pro vyřešení kontaktujte prosím zákaznickou podporu"
+      ],
+      "Migrate": [
+        "Migrovat"
+      ],
+      "Migrated": [
+        "Migrováno"
+      ],
+      "Missing organization private key": [
+        "Chybí soukromý klíč organizace"
+      ],
+      "Missing organization public key": [
+        "Chybí veřejný klíč organizace"
+      ],
+      "No users to display": [
+        "Žádní uživatelé k zobrazení"
+      ],
+      "Not activated": [
+        "Neaktivováno"
+      ],
+      "Pending": [
+        "Čekající"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte přesně to, co chcete migrovat. Bude to použito pro všechny uživatele organizace."
+      ],
+      "Select users to migrate": [
+        "Vyberte uživatele k migraci"
+      ],
+      "Size": [
+        "Velikost"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohoto uživatele nelze migrovat z důvodu nekompatibility platformy."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v administrátorské konzoli Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v sekci ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v sekci ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Chcete-li tohoto uživatele migrovat, musí nejprve přijmout pozvánku k připojení ke službě ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, zrušte jeho archivaci v administrátorské konzoli Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, zrušte jeho pozastavení v administrátorské konzoli Google Workspace."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Uživatelé, kteří přistoupili ke svému účtu ${ BRAND_NAME }"
+      ],
+      "You": [
+        "Vy"
       ]
     },
     "Browser": {
@@ -3425,6 +3536,9 @@
       ],
       "/user per month": [
         "/uživatel měsíčně"
+      ],
+      "/user /month": [
+        "/uživatel /měsíc"
       ]
     },
     "Default display name vcard": {
@@ -3732,6 +3846,21 @@
         "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adresy Gmail",
         "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adres Gmail",
         "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adres Gmail"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Upozorňujeme, že e-maily odeslané na tuto adresu, a to i z jiných adres ${ BRAND_NAME }, již nebudou koncově šifrované."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Po odpojení a deaktivaci již nebudete moci ve službě ${ BRAND_NAME } odesílat ani přijímat e-maily jako ${ address.Email }. E-maily odeslané na tuto adresu budou stále doručovány do Gmailu, ale nikoli do aplikace ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Po odpojení již nebudete moci ve službě ${ BRAND_NAME } odesílat ani přijímat e-maily jako ${ address.Email }. E-maily odeslané na tuto adresu budou stále doručovány do Gmailu, ale nikoli do aplikace ${ MAIL_APP_NAME }."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Importujeme vaše staré e-maily a budeme nadále synchronizovat nové zprávy ze služby Gmail"
+      ],
+      "You can reconnect this address at any time.": [
+        "Tuto adresu můžete kdykoli znovu připojit."
       ]
     },
     "description": {
@@ -4239,6 +4368,9 @@
       ],
       "Your recovery contact has helped you recover data.": [
         "Váš kontakt pro obnovení vám pomohl obnovit data."
+      ],
+      "Start recovery": [
+        "Zahájit obnovení"
       ]
     },
     "Empty group name": {
@@ -4798,6 +4930,36 @@
       ],
       "Zero keys reactivated": [
         "Žádné klíče nebyly znovu aktivovány"
+      ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Neplatný token pro resetování. Obnovte prosím stránku a zkuste to znovu."
+      ],
+      "No drive found to import": [
+        "Nebyl nalezen žádný disk k importu"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "U této adresy lze měnit pouze velká a malá písmena a interpunkci (tečky, spojovníky a podtržítka)"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Přiřazení role nebylo možné dokončit u ${ errors.length } člena",
+        "Přiřazení role nebylo možné dokončit u ${ errors.length } členů",
+        "Přiřazení role nebylo možné dokončit u ${ errors.length } členů",
+        "Přiřazení role nebylo možné dokončit u ${ errors.length } členů"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Přiřazení role nebylo možné dokončit u ${ failedGroupCount } skupiny",
+        "Přiřazení role nebylo možné dokončit u ${ failedGroupCount } skupin",
+        "Přiřazení role nebylo možné dokončit u ${ failedGroupCount } skupin",
+        "Přiřazení role nebylo možné dokončit u ${ failedGroupCount } skupin"
+      ],
+      "There was an error, please try again.": [
+        "Došlo k chybě, zkuste to prosím znovu."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočekávaná chyba, soubory nelze importovat"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Pomocí této metody se nám nepodařilo odeslat ověřovací kód."
       ]
     },
     "error": {
@@ -5558,6 +5720,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Váš dvoufázový ověřovací klíč je připraven k použití."
+      ],
+      "Insert your security key into your device.": [
+        "Vložte bezpečnostní klíč do svého zařízení."
       ]
     },
     "fido2: Label": {
@@ -5756,6 +5921,9 @@
     "Group detail label": {
       "Group address:": [
         "Adresa skupiny:"
+      ],
+      "Roles and permission:": [
+        "Role a oprávnění:"
       ]
     },
     "Group member count": {
@@ -9138,6 +9306,87 @@
       ],
       "Zoom meeting": [
         "schůzku na Zoomu"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Firemní plány ${ BRAND_NAME } poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k tomu, aby byl produktivní a organizovaný ve své práci, a zároveň chrání vaši firmu."
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "Služba ${ BRAND_NAME } je financována nezávisle a funguje bez reklam. Níže uvádíme příklady toho, jak se tato nezávislost uplatňuje v praxi."
+      ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } člen byl přidán do skupiny",
+        "${ emails.length } členové byli přidáni do skupiny",
+        "${ emails.length } členů bylo přidáno do skupiny",
+        "${ emails.length } členů bylo přidáno do skupiny"
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } uživatel musí přijmout pozvánku, aby mohl začít přijímat skupinové e-maily.",
+        "${ invitedMemberCount } uživatelé musí přijmout pozvánku, aby mohli začít přijímat skupinové e-maily.",
+        "${ invitedMemberCount } uživatelů musí přijmout pozvánku, aby mohli začít přijímat skupinové e-maily.",
+        "${ invitedMemberCount } uživatelů musí přijmout pozvánku, aby mohli začít přijímat skupinové e-maily."
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nový člen byl přidán prostřednictvím vašeho poskytovatele identity a čeká na kontrolu.",
+        "${ pendingAdminApprovalCount } noví členové byli přidáni prostřednictvím vašeho poskytovatele identity a čekají na kontrolu.",
+        "${ pendingAdminApprovalCount } nových členů bylo přidáno prostřednictvím vašeho poskytovatele identity a čeká na kontrolu.",
+        "${ pendingAdminApprovalCount } nových členů bylo přidáno prostřednictvím vašeho poskytovatele identity a čeká na kontrolu."
+      ],
+      "Adding ${ total } gateway server": [
+        "Přidávání ${ total } serveru brány",
+        "Přidávání ${ total } serverů brány",
+        "Přidávání ${ total } serverů brány",
+        "Přidávání ${ total } serverů brány"
+      ],
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Účtováno ${ monthlyDiscountedPriceElement } po dobu prvních 6 měsíců, poté se obnovuje za ${ monthlyRenewalPriceElement }."
+      ],
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Účtováno ${ yearlyDiscountedPriceElement } po dobu prvních 12 měsíců, poté se obnovuje za ${ yearlyRenewalPriceElement }."
+      ],
+      "Creating gateway with ${ total } server": [
+        "Vytváření brány s ${ total } serverem",
+        "Vytváření brány se ${ total } servery",
+        "Vytváření brány s ${ total } servery",
+        "Vytváření brány s ${ total } servery"
+      ],
+      "Editing requires permission": [
+        "Úpravy vyžadují oprávnění"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Pouze soubory (žádné fotky, ${ DOCS_APP_NAME } nebo ${ SHEETS_APP_NAME }) – celkem do 100 GB, 100 000 souborů a 50 GB na soubor"
+      ],
+      "Group created": [
+        "Skupina byla vytvořena"
+      ],
+      "Group roles assigned": [
+        "Skupinové role byly přiřazeny"
+      ],
+      "Manage groups in your identity provider": [
+        "Spravujte skupiny ve vašem poskytovateli identity"
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Nová skupina vytvořená prostřednictvím vašeho poskytovatele identity čeká na kontrolu."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Zde lze měnit pouze velká a malá písmena a interpunkci (tečky, spojovníky a podtržítka). Chcete-li použít jinou adresu, přidejte novou."
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Pravidelně vás vyzývá k ověření hesla k ${ BRAND_NAME }, abyste ho nezapomněli. Postupem času se tyto výzvy budou zobrazovat méně často."
+      ],
+      "Synced from identity provider": [
+        "Synchronizováno z poskytovatele identity"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Proces byl přerušen u ${ pausedCount } skupiny. Kliknutím na Pokračovat obnovíte přiřazování rolí.",
+        "Proces byl přerušen u ${ pausedCount } skupin. Kliknutím na Pokračovat obnovíte přiřazování rolí.",
+        "Proces byl přerušen u ${ pausedCount } skupin. Kliknutím na Pokračovat obnovíte přiřazování rolí.",
+        "Proces byl přerušen u ${ pausedCount } skupin. Kliknutím na Pokračovat obnovíte přiřazování rolí."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Aktuálně jste přihlášeni jako ${ username } pro organizaci ${ organizationName }."
+      ],
+      "You do not have permission to create users.": [
+        "Nemáte oprávnění k vytváření uživatelů."
       ]
     },
     "info": {
@@ -9239,6 +9488,12 @@
       ],
       "Sending invite...": [
         "Odesílání pozvánky..."
+      ],
+      "Group Owner": [
+        "Vlastník skupiny"
+      ],
+      "Invited": [
+        "Pozván"
       ]
     },
     "Invoice state display as badge": {
@@ -10262,6 +10517,18 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Import your emails": [
+        "Importovat e-maily"
+      ],
+      "Password check-ins": [
+        "Ověřování hesla"
+      ],
+      "Select an identity provider to start": [
+        "Začněte výběrem poskytovatele identity"
+      ],
+      "You don't have permissions": [
+        "Nemáte oprávnění"
       ]
     },
     "label": {
@@ -10866,6 +11133,33 @@
         "Videokonference, ${ n } účastníci",
         "Videokonference, ${ n } účastníků",
         "Videokonference, ${ n } účastníků"
+      ],
+      "Cloud storage and file sharing": [
+        "Cloudové úložiště a sdílení souborů"
+      ],
+      "Data retention policies": [
+        "Zásady uchovávání dat"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor dokumentů a tabulek"
+      ],
+      "Email writing assistant": [
+        "Asistent pro psaní e-mailů"
+      ],
+      "Includes Meet Professional": [
+        "Zahrnuje Meet Professional"
+      ],
+      "Password manager with team vaults": [
+        "Správce hesel s týmovými trezory"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Soukromý chat s AI (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Secure mail and calendar": [
+        "Zabezpečená pošta a kalendář"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokátorem reklam a ochranou proti malware"
       ]
     },
     "meet_2025: Info": {
@@ -10932,6 +11226,9 @@
       ],
       "Sign in": [
         "Přihlásit se"
+      ],
+      "Change backup password": [
+        "Změnit záložní heslo"
       ]
     },
     "Message": {
@@ -11703,6 +12000,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Servery v ${ VPN_SERVERS.paid.countries }+ zemi",
+        "Servery v ${ VPN_SERVERS.paid.countries }+ zemích",
+        "Servery v ${ VPN_SERVERS.paid.countries }+ zemích",
+        "Servery v ${ VPN_SERVERS.paid.countries }+ zemích"
       ]
     },
     "new_plans: feature highlight": {
@@ -12243,6 +12546,24 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Účastněte se průzkumů ke zlepšení služeb ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } for Business komunikace"
+      ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1–4 e-maily ročně. Připomenutí, abyste udržovali své metody obnovení aktuální."
+      ],
+      "Account email updates": [
+        "E-mailové novinky o účtu"
+      ],
+      "Email communications": [
+        "E-mailová komunikace"
+      ],
+      "Product email updates": [
+        "E-mailové novinky o produktech"
+      ],
+      "Recovery checklist": [
+        "Kontrolní seznam obnovy"
       ]
     },
     "Notification": {
@@ -13456,6 +13777,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Search for users or addresses": [
+        "Hledat uživatele nebo adresy"
       ]
     },
     "placeholder": {
@@ -13798,6 +14122,12 @@
       ],
       "your subscription": [
         "vaše předplatné"
+      ],
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Darujte ${ refereeRewardAmount }, získejte ${ referrerRewardAmount }"
+      ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Používám službu ${ BRAND_NAME } a myslím, že by se vám mohla líbit. Nabízí zabezpečený e-mail, cloudové úložiště, správce hesel a VPN, které chrání vaše soukromí. Zaregistrujte se pomocí tohoto odkazu a získejte slevu ${ refereeRewardAmount } na své další předplatné: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -15174,6 +15504,18 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavení SSO bude smazáno."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } uživatel se připojil k vaší organizaci prostřednictvím vašeho poskytovatele identity",
+        "${ n } uživatelé se připojili k vaší organizaci prostřednictvím vašeho poskytovatele identity",
+        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím vašeho poskytovatele identity",
+        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím vašeho poskytovatele identity"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } uživatel je neaktivní.",
+        "${ n } uživatelé jsou neaktivní.",
+        "${ n } uživatelů je neaktivních.",
+        "${ n } uživatelů je neaktivních."
       ]
     },
     "sso: auth device state": {
@@ -15416,6 +15758,9 @@
         "VPN připojení pro ${ n } zařízení na uživatele",
         "VPN připojení pro ${ n } zařízení na uživatele",
         "VPN připojení pro ${ n } zařízení na uživatele"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
       ]
     },
     "Subscription change warning": {
@@ -15898,6 +16243,9 @@
       ],
       "View VPN session details for your organization.": [
         "Zobrazení detailů relace VPN pro vaši organizaci."
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Ušetřete 50 % na jeden rok a zachovejte si plný přístup"
       ]
     },
     "Success": {
@@ -16065,6 +16413,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Pokud jste zadali platné telefonní číslo pro obnovení, obdržíte do minuty své uživatelské jméno prostřednictvím SMS."
+      ],
+      "Password check-ins disabled": [
+        "Ověřování hesla deaktivováno"
+      ],
+      "Password check-ins enabled": [
+        "Ověřování hesla aktivováno"
       ]
     },
     "Success message": {
@@ -17588,6 +17942,24 @@
       ],
       "Your subscriptions": [
         "Vaše předplatné"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent psaní ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Approve changes": [
+        "Schválit změny"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Opravdu chcete tuto adresu odpojit a deaktivovat?"
+      ],
+      "Group role assignment paused": [
+        "Přiřazování skupinových rolí bylo pozastaveno"
+      ],
+      "OpenVpn": [
+        "OpenVpn"
+      ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Odstraňování problémů s ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Title for payment methods table": {
@@ -17806,6 +18178,9 @@
       ],
       "Your DKIM signing is working.": [
         "Váš DKIM podpis funguje."
+      ],
+      "Early access to new apps and features.": [
+        "Předběžný přístup k novým aplikacím a funkcím."
       ]
     },
     "tooltip": {
@@ -17832,6 +18207,21 @@
       ],
       "Waiting for user to accept the invitation": [
         "Čekání na přijetí pozvánky uživatelem"
+      ],
+      "Resuming role assignment": [
+        "Pokračování v přiřazování rolí"
+      ],
+      "Role assignment paused": [
+        "Přiřazování rolí bylo pozastaveno"
+      ],
+      "User is a group owner": [
+        "Uživatel je vlastníkem skupiny"
+      ],
+      "via ${ groupNames }": [
+        "prostřednictvím ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Čeká na schválení správcem"
       ]
     },
     "Tor out of date": {
@@ -17907,6 +18297,12 @@
       ],
       "Refund": [
         "Vrácení peněz"
+      ],
+      "Prepayment": [
+        "Zálohová platba"
+      ],
+      "Test credit": [
+        "Zkušební kredit"
       ]
     },
     "Unlimited offer": {
@@ -17986,6 +18382,27 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Chcete-li pokračovat, musíte požádat uživatele o povolení přístupu k jejich datům nebo resetovat jejich heslo."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Nepodařilo se aktivovat přístup správce pro ${ n } uživatele",
+        "Nepodařilo se aktivovat přístup správce pro ${ n } uživatele",
+        "Nepodařilo se aktivovat přístup správce pro ${ n } uživatelů",
+        "Nepodařilo se aktivovat přístup správce pro ${ n } uživatelů"
+      ],
+      "Review their account now.": [
+        "Zkontrolujte nyní jeho účet.",
+        "Zkontrolujte nyní jejich účty.",
+        "Zkontrolujte nyní jejich účty.",
+        "Zkontrolujte nyní jejich účty."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Jejich šifrovací klíče byly aktualizovány v průběhu provádění změn."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Tohoto uživatele můžete bezpečně odebrat ze své organizace.",
+        "Tyto uživatele můžete bezpečně odebrat ze své organizace.",
+        "Tyto uživatele můžete bezpečně odebrat ze své organizace.",
+        "Tyto uživatele můžete bezpečně odebrat ze své organizace."
       ]
     },
     "Upsell": {
@@ -18126,6 +18543,24 @@
       ],
       "Writing assistant": [
         "Asistent psaní"
+      ],
+      "(via ${ groupName })": [
+        "(přes ${ groupName })"
+      ],
+      "(via group)": [
+        "(přes skupinu)"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všechny uživatele, skupiny, zabezpečení, fakturaci a systémové konfigurace."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Spravujte uživatele a skupiny, přiřazujte role a přidělujte členům licence."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Spravuje nastavení zabezpečení a může zobrazit všechny auditní logy událostí a detaily o uživateli."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Jakmile uživatel přijme pozvánku, budete mu moci přiřadit role."
       ]
     },
     "Users table: badge": {
@@ -18486,6 +18921,183 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po úspěšném ověření, neodstraňujte TXT záznam, je potřebný k ověření, že doménu stále vlastníte."
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplicity z předchozích importů budou přeskočeny. Akci můžete vzít zpět nebo importovat starší zprávy v nastavení ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
+    "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Přidejte do skupiny delegované role a udělte jejím členům pouze specifická oprávnění, která potřebují. Tím oddělíte plná administrátorská práva a udržíte své prostředí v bezpečí."
+      ],
+      "General": [
+        "Obecné"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Spravujte uživatele a skupiny, přiřazujte role a přidělujte členům licence."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Spravuje nastavení zabezpečení a může zobrazit všechny auditní logy událostí a detaily o uživateli."
+      ],
+      "Roles and permissions": [
+        "Role a oprávnění"
+      ]
+    },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Pokud zapomenete své heslo, můžete ztratit přístup ke svým šifrovaným datům."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Ujistěte se, že si heslo zapamatujete nebo ho bezpečně uložíte, protože je to klíč k dešifrování vašich dat."
+      ],
+      "Turn off check-ins": [
+        "Vypnout ověřování"
+      ],
+      "Turn off password check-ins?": [
+        "Vypnout ověřování hesla?"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Vlastník"
+      ],
+      "Security Admin": [
+        "Správce zabezpečení"
+      ],
+      "User Admin": [
+        "Správce uživatelů"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všechny uživatele, skupiny, zabezpečení, fakturaci a systémové konfigurace."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Spravujte uživatele, skupiny a úložiště pro všechny členy, přiřazujte role a přidělujte licence."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nový člen",
+        "${ memberCount } noví členové",
+        "${ memberCount } nových členů",
+        "${ memberCount } nových členů"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } skupina synchronizována",
+        "${ numberOfPendingGroups } skupiny synchronizovány",
+        "${ numberOfPendingGroups } skupin synchronizováno",
+        "${ numberOfPendingGroups } skupin synchronizováno"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } uživatel synchronizován",
+        "${ numberOfPendingUsers } uživatelé synchronizováni",
+        "${ numberOfPendingUsers } uživatelů synchronizováno",
+        "${ numberOfPendingUsers } uživatelů synchronizováno"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } skupina",
+        "${ pendingGroupsCount } skupiny",
+        "${ pendingGroupsCount } skupin",
+        "${ pendingGroupsCount } skupin"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } skupina byla synchronizována.",
+        "${ pendingGroupsCount } skupiny byly synchronizovány.",
+        "${ pendingGroupsCount } skupin bylo synchronizováno.",
+        "${ pendingGroupsCount } skupin bylo synchronizováno."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } uživatel",
+        "${ pendingUsersCount } uživatelé",
+        "${ pendingUsersCount } uživatelů",
+        "${ pendingUsersCount } uživatelů"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } uživatel synchronizován.",
+        "${ pendingUsersCount } uživatelé synchronizováni.",
+        "${ pendingUsersCount } uživatelů synchronizováno.",
+        "${ pendingUsersCount } uživatelů synchronizováno."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "Prvky ${ usersText } a ${ groupsText } byly synchronizovány."
+      ],
+      "Approve changes from your identity provider": [
+        "Schvalte změny od svého poskytovatele identity"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "K udělení přístupu ke všem službám ${ BRAND_NAME } je vyžadováno konečné schválení."
+      ],
+      "From your identity provider": [
+        "Od vašeho poskytovatele identity"
+      ],
+      "New": [
+        "Nové"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Po schválení budou mít přístup ke všem službám ${ BRAND_NAME } a budou moci bezpečně sdílet data."
+      ],
+      "Private user": [
+        "Soukromý uživatel"
+      ],
+      "Review users and groups before finishing setup": [
+        "Před dokončením instalace zkontrolujte uživatele a skupiny"
+      ],
+      "Updated": [
+        "Aktualizováno"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Uživatelé nastavení jako soukromí musí pro dokončení instalace přijmout pozvánku. Jakmile provedete schválení, odešleme jim pozvánku."
+      ]
+    },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Přiřadit delegované role"
+      ],
+      "Assign roles": [
+        "Přiřadit role"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Kliknutím na jméno uživatele můžete spravovat jeho roli a oprávnění."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Kliknutím na tlačítko Upravit přiřadíte role této skupině a budete automaticky spravovat přístup členů."
+      ],
+      "New: Roles and permissions tab": [
+        "Novinka: Záložka Role a oprávnění"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Otevřete tuto záložku a udělte konkrétní oprávnění bez plného přístupu správce."
+      ],
+      "User roles available": [
+        "Dostupné uživatelské role"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Nyní můžete na této záložce přiřazovat role jednotlivým uživatelům."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... čekání"
+      ],
+      "completed": [
+        "dokončeno"
+      ],
+      "finalizing": [
+        "dokončování"
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Pro osobní použití"
+      ],
+      "For professional use": [
+        "Pro profesionální použití"
       ]
     }
   }

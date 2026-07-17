@@ -1276,6 +1276,18 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Configure new device profile": [
+        "Yeni aygıt profilini yapılandır"
+      ],
+      "Delete device profile": [
+        "Aygıt profilini sil"
+      ],
+      "Generate device profile": [
+        "Aygıt profili oluştur"
+      ],
+      "Instructions": [
+        "Talimatlar"
       ]
     },
     "action": {
@@ -2093,6 +2105,27 @@
       ],
       "You": [
         "Siz"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının askıya alınma durumunu kaldırın."
       ]
     },
     "Browser": {
@@ -2225,6 +2258,9 @@
       ],
       "Take a tour": [
         "Keşfedin"
+      ],
+      "Get 50% offer": [
+        "%50 indirimden yararlanın"
       ]
     },
     "BYOE": {
@@ -4871,6 +4907,12 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Aygıt profili oluşturulamadı. Lütfen tekrar deneyin."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Doğrulama kodu bu yöntemle gönderilemedi."
       ]
     },
     "error": {
@@ -6828,10 +6870,10 @@
         "Beta"
       ],
       "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
-        "İlk 6 ay boyunca ${ monthlyDiscountedPriceElement } olarak faturalandırılır, ${ monthlyRenewalPriceElement } olarak yenilenir."
+        "İlk 6 ay için ${ monthlyDiscountedPriceElement } olarak faturalanır, ${ monthlyRenewalPriceElement } ile yenilenir."
       ],
       "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
-        "İlk 12 ay boyunca ${ yearlyDiscountedPriceElement } olarak faturalandırılır, ${ yearlyRenewalPriceElement } olarak yenilenir."
+        "İlk 12 ay için ${ yearlyDiscountedPriceElement } olarak faturalanır, ${ yearlyRenewalPriceElement } ile yenilenir."
       ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
@@ -9118,6 +9160,118 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } üye gruba eklendi",
+        "${ emails.length } üye gruba eklendi"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "145 ülkede 20.000 üzerinde sunucuya erişim"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Sadece ${ bundlePlanPriceInline } karşılığında ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekleyin"
+      ],
+      "All devices with this device profile deployed": [
+        "Bu aygıt profiline sahip tüm aygıtlara dağıtıldı"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Tüm internet trafiği her zaman şifrelenmiş ve güvenlidir"
+      ],
+      "Choose one:": [
+        "Birini seçin:"
+      ],
+      "Configure Always-on VPN": [
+        "Her zaman açık VPN'i yapılandır"
+      ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "${ regoLink } dosyasını MDM dosya dağıtımınız aracılığıyla doğrudan dağıtın"
+      ],
+      "Deploy across all your managed devices": [
+        "Yönetilen tüm aygıtlarınıza dağıtın"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Bunu MDM’niz (Jamf, Intune…) aracılığıyla veya her bir aygıtta manuel olarak dağıtın."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Her zaman açık VPN aygıt profili yüklenmiş cihazlar ${ VPN_APP_NAME } bağlantısı aktif olmadıkça internete erişemez."
+      ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "${ ps1Link } dosyasını indirin ve aygıt profilini otomatik olarak yüklemek için her bir cihazda sistem kullanıcısı olarak çalıştırın."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "${ removeScriptLink } dosyasını indirin ve profili otomatik olarak silmek için her aygıtta sistem kullanıcısı olarak çalıştırın."
+      ],
+      "Employees can't go online without a VPN connection": [
+        "Çalışanlar VPN bağlantısı olmadan internete giremezler"
+      ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Aygıt profili algıladığı anda uygulama otomatik olarak başlar."
+      ],
+      "Ensure your organization is always protected": [
+        "Kuruluşunuzun her zaman güvende olduğundan emin olun"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "10 Gb/sn olabilen en yüksek VPN hızı"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Aygıt profilini oluşturun ve yapılandırma dosyasını indirin."
+      ],
+      "Group created": [
+        "Grup oluşturuldu"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Parolalarınızı güvende tutun ve tüm aygıtlarda otomatik doldurma özelliği sayesinde anında oturum açın."
+      ],
+      "Manage groups in your identity provider": [
+        "Kimlik hizmeti sağlayıcınızdaki grupları yönetin"
+      ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Dağıtım başarıyla tamamlandıktan sonra aygıtların bu ilkeyi algılaması ve uygulamaya koyması birkaç saate kadar sürebilir."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Yalnızca kuruluşunuzun lisanslı kullanıcıları aygıt profili yüklenmiş aygıtlarda ${ VPN_APP_NAME } uygulaması için kimlik doğrulaması yapabilir."
+      ],
+      "Optional configuration": [
+        "İsteğe bağlı yapılandırma"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Ya da ${ ps1Link } komutunu MDM betiği aracılığıyla çalıştırın"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
+      ],
+      "Restrict logins to your organization": [
+        "Kuruluşunuzun oturum açma işlemlerini kısıtlayın"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
+      ],
+      "Supported platforms": [
+        "Desteklenen platformlar"
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Her zaman açık VPN özelliğini etkinleştirmek için aygıt profilinin her aygıtta ${ policiesPath } konumuna ulaşması gerekir — ${ VPN_APP_NAME } istemcisi bu konumu algılar ve profili otomatik olarak uygular."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Her zaman açık VPN kaldırmak için tüm aygıtlarda ${ policiesPath } dizininden ${ profileFile } dosyasını silin. ${ VPN_APP_NAME } istemcisi dosyanın silindiğini algılar algılamaz profili uygulamayı durdurur."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "MDM'nizi kullanarak dosyayı silin veya MDM'nizin betiği aracılığıyla ${ removeScriptLink } komutunu çalıştırın. Dosya dağıtımını veya betik çalıştırmayı destekleyen herhangi bir MDM bu işlem için kullanılabilir."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Farklı bir MDM mi kullanıyorsunuz? Dosya dağıtımını veya PowerShell betiğinin çalıştırılmasını destekleyen herhangi bir MDM bu iş için uygundur. Daha fazla bilgi için MDM’nizin kullanım kılavuzuna bakın."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Her Zaman Açık VPN aygıt profiliniz dağıtıma hazır."
       ]
     },
     "info": {
@@ -10244,6 +10398,15 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Applies:": [
+        "Uygulanır:"
+      ],
+      "Enforce Always-on VPN": [
+        "Her zaman açık VPN'i zorla"
+      ],
+      "Login restrictions": [
+        "Oturum açma kısıtlamaları"
       ]
     },
     "label": {
@@ -15205,6 +15368,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Lütfen aboneliğiniz iptal edilirken bekleyin"
+      ],
+      "Disabled": [
+        "Devre dışı"
+      ],
+      "Enabled": [
+        "Etkinleştirildi"
+      ],
+      "No restrictions": [
+        "Kısıtlama yok"
+      ],
+      "Restricted to members of your organization": [
+        "Kuruluşunuzun üyeleriyle sınırlıdır"
       ]
     },
     "Status": {
@@ -15867,6 +16042,12 @@
       ],
       "View VPN session details for your organization.": [
         "Kuruluşunuzun VPN oturumu ayrıntılarını görüntüleyin."
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "VPN bağlantısı aktif olmadığı sürece internet erişimini engelleyerek kuruluşunuz genelinde VPN kullanımını zorunlu kılın."
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Bir yıl boyunca tam erişimle %50 kazanın"
       ]
     },
     "Success": {
@@ -17565,6 +17746,42 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Always-on VPN": [
+        "Her zaman açık VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Her zaman açık VPN aygıt profili"
+      ],
+      "Choose a deployment method": [
+        "Dağıtım yöntemi seçin"
+      ],
+      "Choose a removal method": [
+        "Kaldırma yöntemi seçin"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Her zaman açık VPN aygıt profilini yapılandır"
+      ],
+      "Created!": [
+        "Oluşturuldu!"
+      ],
+      "Deploy device profile to your devices": [
+        "Aygıt profilini aygıtlarınıza dağıtın"
+      ],
+      "Deploy via MDM": [
+        "MDM aracılığıyla dağıt"
+      ],
+      "Deploy via PowerShell": [
+        "PowerShell aracılığıyla dağıt"
+      ],
+      "Remove Always-on VPN device profile": [
+        "Her zaman açık VPN aygıt profilini kaldır"
+      ],
+      "Remove via MDM": [
+        "MDM aracılığıyla kaldır"
+      ],
+      "Stay for 50% off your next month": [
+        "Sonraki ay %50 indirimden yararlanın"
       ]
     },
     "Title for payment methods table": {
@@ -17786,6 +18003,9 @@
       ],
       "Your DKIM signing is working.": [
         "DKIM imzanız çalışıyor."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Kuruluşunuzdaki tüm kullanıcıları kapsar. Yalnızca Her zaman açık VPN aygıt profilinin dağıtıldığı aygıtlarda uygulanır."
       ]
     },
     "tooltip": {

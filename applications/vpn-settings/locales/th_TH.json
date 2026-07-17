@@ -1171,6 +1171,111 @@
       ],
       "Zoom out": [
         "ขยายออก"
+      ],
+      "Added ${ memberName } as group owner": [
+        "เพิ่ม ${ memberName } เป็นเจ้าของกลุ่มแล้ว"
+      ],
+      "Approve": [
+        "อนุมัติ"
+      ],
+      "Back to sign in": [
+        "กลับไปเข้าสู่ระบบ"
+      ],
+      "Back to sign-in": [
+        "กลับไปหน้าเข้าสู่ระบบ"
+      ],
+      "Claim offer": [
+        "รับสิทธิ์ตามข้อเสนอ"
+      ],
+      "Close search": [
+        "ปิดการค้นหา"
+      ],
+      "Connect Gmail address": [
+        "เชื่อมต่อที่อยู่ Gmail"
+      ],
+      "Contact Support Center": [
+        "ติดต่อศูนย์บริการสนับสนุน"
+      ],
+      "Continue cancelling": [
+        "ยกเลิกต่อ"
+      ],
+      "Continue to sign in": [
+        "ดำเนินการต่อเพื่อเข้าสู่ระบบ"
+      ],
+      "Delete gateway": [
+        "ลบเกตเวย์"
+      ],
+      "Disable account monitor": [
+        "ปิดใช้งานการตรวจสอบบัญชี"
+      ],
+      "Edit invoice details": [
+        "แก้ไขรายละเอียดใบแจ้งค่าชำระบริการ"
+      ],
+      "Enter code": [
+        "ป้อนรหัส"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "ขอความช่วยเหลือจาก ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "I don't have my 2FA device": [
+        "ไม่มีอุปกรณ์ 2FA"
+      ],
+      "I don't have my key": [
+        "ไม่มีคีย์"
+      ],
+      "I don't have my phrase": [
+        "ไม่มีวลีกู้คืน"
+      ],
+      "I don’t have my backup codes": [
+        "ไม่มีรหัสสำรอง"
+      ],
+      "Keep current plan": [
+        "ใช้แผนปัจจุบันต่อไป"
+      ],
+      "Learn about recovery options": [
+        "เรียนรู้เพิ่มเติมเกี่ยวกับตัวเลือกการกู้คืน"
+      ],
+      "Read the story": [
+        "อ่านเรื่องราว"
+      ],
+      "Recover account": [
+        "กู้คืนบัญชี"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "ลบ ${ memberName } ออกจากการเป็นเจ้าของกลุ่มแล้ว"
+      ],
+      "Return to sign-in": [
+        "กลับไปหน้าลงชื่อเข้าใช้"
+      ],
+      "Review changes": [
+        "ตรวจสอบการเปลี่ยนแปลง"
+      ],
+      "Search groups": [
+        "ค้นหากลุ่ม"
+      ],
+      "Send feedback": [
+        "ส่งข้อเสนอแนะ"
+      ],
+      "Send new code": [
+        "ส่งรหัสใหม่"
+      ],
+      "Share feedback": [
+        "แชร์ข้อเสนอแนะ"
+      ],
+      "Switch to free plan": [
+        "สลับไปใช้ Free plan"
+      ],
+      "Try another way": [
+        "ลองวิธีอื่น"
+      ],
+      "Verify another way": [
+        "ยืนยันด้วยวิธีอื่น"
+      ],
+      "Verify password": [
+        "ยืนยันรหัสผ่าน"
+      ],
+      "Watch the interview": [
+        "ดูบทสัมภาษณ์"
       ]
     },
     "action": {
@@ -1270,6 +1375,9 @@
       ],
       "Writing assistant seats": [
         "สิทธิ์ผู้ใช้ผู้ช่วยด้านการเขียน"
+      ],
+      "Add-on": [
+        "ส่วนเสริม"
       ]
     },
     "Address action": {
@@ -1848,6 +1956,96 @@
       ],
       "What are you migrating?": [
         "คุณกำลังย้ายข้อมูลอะไร?"
+      ],
+      "Activated": [
+        "เปิดใช้งานแล้ว"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "ที่อยู่นี้ถูกใช้งานโดยผู้ใช้นอกองค์กรแล้ว โปรดติดต่อฝ่ายสนับสนุนลูกค้าเพื่อแก้ไขปัญหานี้"
+      ],
+      "All": [
+        "ทั้งหมด"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "สถานะการย้ายข้อมูลจาก Google Workspace ไปยัง ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "อีเมล"
+      ],
+      "Errors": [
+        "ข้อผิดพลาด"
+      ],
+      "Find out what can be migrated.": [
+        "ดูข้อมูลเกี่ยวกับสิ่งที่สามารถย้ายข้อมูลได้"
+      ],
+      "Has errors": [
+        "มีข้อผิดพลาด"
+      ],
+      "In progress": [
+        "กำลังดำเนินการ"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "ไม่พบที่อยู่ของสมาชิก โปรดติดต่อฝ่ายสนับสนุนลูกค้าเพื่อแก้ไขปัญหานี้"
+      ],
+      "Migrate": [
+        "ย้ายข้อมูล"
+      ],
+      "Migrated": [
+        "ย้ายข้อมูลแล้ว"
+      ],
+      "Missing organization private key": [
+        "คีย์ส่วนตัวขององค์กรสูญหาย"
+      ],
+      "Missing organization public key": [
+        "คีย์สาธารณะขององค์กรสูญหาย"
+      ],
+      "No users to display": [
+        "ไม่มีผู้ใช้ที่จะแสดง"
+      ],
+      "Not activated": [
+        "ไม่ได้เปิดใช้งาน"
+      ],
+      "Pending": [
+        "รอดำเนินการ"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "เลือกสิ่งที่ต้องการย้ายข้อมูลอย่างแน่นอน โดยจะมีผลกับผู้ใช้องค์กรทั้งหมด"
+      ],
+      "Select users to migrate": [
+        "เลือกผู้ใช้ที่ต้องการย้ายข้อมูล"
+      ],
+      "Size": [
+        "ขนาด"
+      ],
+      "Status": [
+        "สถานะ"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "ไม่สามารถย้ายข้อมูลผู้ใช้นี้ได้เนื่องจากความไม่เข้ากันของแพลตฟอร์ม"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้เปิดใช้งานบัญชีใน Google Workspace Admin Console"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้เปิดใช้งานบัญชีภายใต้ ${ usersAddressesLink }"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้เปิดใช้งานที่อยู่ภายใต้ ${ usersAddressesLink }"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ผู้ใช้จำเป็นต้องตอบรับคำเชิญเพื่อเข้าร่วม ${ BRAND_NAME }"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้ยกเลิกการเก็บถาวรผู้ใช้ใน Google Workspace Admin Console"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้ยกเลิกการระงับผู้ใช้ใน Google Workspace Admin Console"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "ผู้ใช้ที่เข้าถึงบัญชี ${ BRAND_NAME } แล้ว"
+      ],
+      "You": [
+        "คุณ"
       ]
     },
     "Browser": {
@@ -3183,6 +3381,9 @@
       ],
       "/user per month": [
         "/ผู้ใช้ ต่อเดือน"
+      ],
+      "/user /month": [
+        "/ผู้ใช้ /เดือน"
       ]
     },
     "Default display name vcard": {
@@ -3238,6 +3439,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "แน่ใจหรือไม่ว่าต้องการลบกลุ่มนี้?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "โปรดทราบว่าหากลบกลุ่ม ${ displayGroupName } กลุ่มนี้จะถูกลบออกอย่างถาวร"
       ]
     },
     "Delinquent modal title": {
@@ -3434,6 +3638,54 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "แผนรองรับที่อยู่ Gmail รวม ${ MAX_SYNC_PAID_USER } รายการ"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } รักษาความปลอดภัยของข้อมูลธุรกิจและช่วยให้ส่งอีเมลที่เข้ารหัสลับถึงใครก็ได้"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "เพิ่มที่อยู่เพิ่มเติมในบัญชี หรือใช้นามแฝง hide-my-email เพื่อรักษาความเป็นส่วนตัวของกล่องขาเข้า"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "สร้างความน่าเชื่อถือและการจดจำแบรนด์ด้วยที่อยู่อีเมลระดับมืออาชีพบนโดเมนของตัวเอง"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "ทีมสนับสนุนลูกค้าช่วยส่งต่อแอป VPN ไปถึงมือผู้ใช้โดยตรงได้อย่างไร"
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "วิธีที่เราต่อสู้กลับเมื่อ ${ BRAND_NAME } ถูกบล็อกในการรณรงค์ที่รุนแรง"
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "วิธีที่ให้การสนับสนุนนักเคลื่อนไหวในท้องถิ่นเมื่อความเป็นส่วนตัวและเสรีภาพในการพูดถูกคุกคาม"
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "ดูแลรักษาความปลอดภัยของทีมได้ทุกที่ด้วยแอปสำหรับเว็บ, iOS, Android, Windows, Mac และ Linux"
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "ปัญหาส่วนใหญ่สามารถแก้ไขได้ภายในไม่กี่นาทีด้วยคู่มือทีละขั้นตอน"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "โปรดทราบว่าอีเมลที่ส่งไปยังที่อยู่นี้ แม้ว่าจะส่งมาจากที่อยู่ ${ BRAND_NAME } อื่นๆ จะไม่มีการเข้ารหัสลับจากต้นทางถึงปลายทางอีกต่อไป"
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "เมื่อยกเลิกการเชื่อมต่อและปิดใช้งานแล้ว จะไม่สามารถส่งหรือรับอีเมลในฐานะ ${ address.Email } ใน ${ BRAND_NAME } ได้อีกต่อไป อีเมลที่ส่งไปยังที่อยู่นี้จะยังคงส่งไปถึง Gmail แต่จะไม่ส่งไปถึง ${ MAIL_APP_NAME }"
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "เมื่อยกเลิกการเชื่อมต่อแล้ว จะไม่สามารถส่งหรือรับอีเมลในฐานะ ${ address.Email } ใน ${ BRAND_NAME } ได้อีกต่อไป อีเมลที่ส่งไปยังที่อยู่นี้จะยังคงส่งไปถึง Gmail แต่จะไม่ส่งไปถึง ${ MAIL_APP_NAME }"
+      ],
+      "Still need help? Our support team is here for you.": [
+        "ยังต้องการความช่วยเหลือใช่ไหม? ทีมสนับสนุนพร้อมช่วยเหลือเสมอ"
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "จะนำเข้าอีเมลเก่าและซิงค์ข้อความใหม่จาก Gmail นับจากนี้เป็นต้นไป"
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "สามารถจัดการที่อยู่ ${ BRAND_NAME } หลายที่อยู่ได้จากบัญชีเดียวโดยไม่ต้องสลับบัญชี นามแฝงและเครื่องมือจัดการที่อยู่ช่วยให้ทุกอย่างรวมอยู่ในกล่องขาเข้าเดียว"
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "สามารถรวมที่อยู่เข้าเป็นบัญชี ${ BRAND_NAME } หลักบัญชีเดียวได้โดยใช้คู่มือช่วยเหลือของฝ่ายสนับสนุน"
+      ],
+      "You can reconnect this address at any time.": [
+        "เชื่อมต่อที่อยู่นี้ใหม่ได้ทุกเมื่อ"
       ]
     },
     "description": {
@@ -3646,6 +3898,12 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
+      ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) หรือใหม่กว่า"
+      ],
+      "macOS Ventura": [
+        "macOS Ventura"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3886,6 +4144,33 @@
       ],
       "Trusted contact": [
         "ผู้ติดต่อที่เชื่อถือได้"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "ขอความช่วยเหลือจากผู้ติดต่อกู้คืน โดยผู้ติดต่อจะได้รับอีเมลเพื่อตรวจสอบคำขอและปลดล็อกข้อมูล"
+      ],
+      "Contacts": [
+        "ผู้ติดต่อ"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "ติดต่อพูดคุยในตอนนี้เพื่อดูว่าสามารถช่วยเหลือได้หรือไม่ และเพื่อบอกให้ทราบด้วยตัวเองว่าเป็นผู้พยายามปลดล็อกข้อมูล"
+      ],
+      "Recovery request sent": [
+        "ส่งคำขอกู้คืนแล้ว"
+      ],
+      "Remove your recovery contacts to continue": [
+        "ลบผู้ติดต่อกู้คืนออกเพื่อดำเนินการต่อ"
+      ],
+      "Select recovery contact ${ name }": [
+        "เลือกผู้ติดต่อกู้คืน ${ name }"
+      ],
+      "Start recovery": [
+        "เริ่มการกู้คืน"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "หากต้องการปิดใช้งานวิธีการกู้คืนนี้ ให้ลบผู้ติดต่อกู้คืนทั้งหมดออก"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "ผู้ติดต่อกู้คืนช่วยกู้ข้อมูลคืนเรียบร้อยแล้ว"
       ]
     },
     "Empty group name": {
@@ -4415,6 +4700,48 @@
       ],
       "Zero keys reactivated": [
         "คีย์ว่างเปล่าถูกเปิดใช้งาน"
+      ],
+      "Code is incorrect or not valid anymore": [
+        "รหัสไม่ถูกต้องหรือใช้งานไม่ได้อีกต่อไปแล้ว"
+      ],
+      "Failed to update billing address": [
+        "อัปเดตที่อยู่เรียกเก็บเงินล้มเหลว"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "รหัสกู้คืนไม่ถูกต้อง โปรดลองอีกครั้ง"
+      ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "โทเค็นรีเซ็ตไม่ถูกต้อง โปรดรีเฟรชหน้าเว็บและลองอีกครั้ง"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "อนุญาตสูงสุด ${ displayMaxValue }"
+      ],
+      "No drive found to import": [
+        "ไม่พบไดรฟ์ที่จะนำเข้า"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "สามารถเปลี่ยนได้เฉพาะตัวพิมพ์ใหญ่และเครื่องหมายวรรคตอน (จุด ยัติภังค์ และขีดล่าง) สำหรับที่อยู่นี้เท่านั้น"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "สามารถเพิ่มผู้ใช้ส่วนตัวไปยังกลุ่มได้เมื่อพวกเขาลงชื่อเข้าใช้เป็นครั้งแรก: ${ displayedNames }"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "ไม่สามารถมอบหมายบทบาทให้เสร็จสิ้นสำหรับสมาชิก ${ errors.length } ราย"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "ไม่สามารถมอบหมายบทบาทให้เสร็จสิ้นสำหรับกลุ่ม ${ failedGroupCount } กลุ่ม"
+      ],
+      "There was an error, please try again.": [
+        "มีข้อผิดพลาดเกิดขึ้น โปรดลองอีกครั้ง"
+      ],
+      "Unexpected error, we can't import the files": [
+        "เกิดข้อผิดพลาดที่ไม่คาดคิด ไม่สามารถนำเข้าไฟล์ได้"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "ไม่สามารถส่งรหัสยืนยันด้วยวิธีนี้ได้"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "ใช้ที่อยู่ทั้งหมดในแผนแล้ว โปรดอัปเกรดแผนเพื่อเพิ่มที่อยู่ใหม่หรือปิดใช้งานที่อยู่บางส่วนในบัญชี"
       ]
     },
     "error": {
@@ -4594,6 +4921,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "ไม่สามารถโหลดหน้านี้ได้ โปรดรีเฟรชหน้าหรือตรวจสอบการเชื่อมต่ออินเทอร์เน็ต"
+      ],
+      "Enable account monitor to start loading event.": [
+        "เปิดใช้งานเครื่องมือตรวจสอบบัญชีเพื่อเริ่มโหลดกิจกรรม"
       ]
     },
     "Error notification": {
@@ -4834,6 +5164,9 @@
       ],
       "You can increase or reduce the storage for this user.": [
         "สามารถเพิ่มหรือลดพื้นที่จัดเก็บสำหรับผู้ใช้นี้ได้"
+      ],
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "กำหนดพื้นที่จัดเก็บให้กับบัญชีผู้ดูแลระบบ สามารถจัดสรรพื้นที่จัดเก็บให้กับผู้ใช้เพิ่มเติมในภายหลังได้"
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -4976,6 +5309,48 @@
       ],
       "Unlimited hide-my-email aliases": [
         "นามแฝง hide-my-email ไม่จำกัด"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "แอปเดสก์ท็อป ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "การปกป้องบัญชี ${ PROTON_SENTINEL_NAME }"
+      ],
+      "15 GB storage": [
+        "พื้นที่จัดเก็บ 15 GB"
+      ],
+      "3 email domains": [
+        "3 โดเมนอีเมล"
+      ],
+      "3 folders, labels and filters": [
+        "3 โฟลเดอร์ ป้ายกำกับ และตัวกรอง"
+      ],
+      "500 GB storage": [
+        "พื้นที่จัดเก็บ 500 GB"
+      ],
+      "500 MB Mail storage": [
+        "พื้นที่จัดเก็บ Mail 500 MB"
+      ],
+      "500 MB storage": [
+        "พื้นที่จัดเก็บ 500 MB"
+      ],
+      "Premium features in Mail, Calendar, Drive, Pass and VPN": [
+        "คุณสมบัติพรีเมียมใน Mail, Calendar, Drive, Pass และ VPN"
+      ],
+      "Priority support": [
+        "การสนับสนุนพิเศษ"
+      ],
+      "Schedule and snooze emails": [
+        "กำหนดเวลาและปิดเสียงเตือนชั่วคราวอีเมล"
+      ],
+      "Short domain @pm.me": [
+        "โดเมนสั้น @pm.me"
+      ],
+      "Unlimited folders, labels and filters": [
+        "โฟลเดอร์ ป้ายกำกับ และตัวกรองไม่จำกัด"
+      ],
+      "Use your own email domain": [
+        "ใช้โดเมนอีเมลของตัวเอง"
       ]
     },
     "Features": {
@@ -5097,6 +5472,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "คีย์การยืนยันตัวตนผ่านสองขั้นตอนของคุณพร้อมใช้งานแล้ว"
+      ],
+      "Insert your security key into your device.": [
+        "เสียบคีย์ความปลอดภัยเข้ากับอุปกรณ์"
       ]
     },
     "fido2: Label": {
@@ -8130,6 +8508,372 @@
       ],
       "Zoom meeting": [
         "การประชุมผ่าน Zoom"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "แผนบริการธุรกิจของ ${ BRAND_NAME } มอบเครื่องมือการทำงานร่วมกันทั้งหมดที่จำเป็นให้กับทีมเพื่อเพิ่มประสิทธิภาพและจัดระเบียบการทำงาน ขณะเดียวกันก็ปกป้องธุรกิจ"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } ได้รับทุนสนับสนุนอย่างเป็นอิสระและดำเนินการโดยไม่มีการโฆษณา ด้านล่างนี้คือตัวอย่างวิธีนำความเป็นอิสระนี้ไปใช้ในทางปฏิบัติ"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } จะส่งรหัสยืนยันไปยัง ${ phoneNumber } อาจมีค่าบริการส่งข้อความมาตรฐาน"
+      ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } จะส่งรหัสยืนยันไปยังโทรศัพท์การกู้คืน อาจมีค่าบริการส่งข้อความตามปกติ"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText } แต่สามารถกู้คืนได้ด้วย ${ RecoveryContactsLink }:"
+      ],
+      "${ emails.length } member added to the group": [
+        "เพิ่มสมาชิก ${ emails.length } รายเข้าไปในกลุ่มแล้ว"
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "ผู้ใช้ ${ invitedMemberCount } รายต้องตอบรับคำเชิญเพื่อเริ่มรับอีเมลกลุ่ม"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "เพิ่มสมาชิกใหม่ ${ pendingAdminApprovalCount } รายผ่านผู้ให้บริการข้อมูลระบุตัวตนแล้วและกำลังรอการตรวจสอบ"
+      ],
+      "${ total } user found": [
+        "พบผู้ใช้ ${ total } ราย"
+      ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(เช่น ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(เช่น New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(เช่น PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(เช่น The Vergecast, Big Technology Podcast)"
+      ],
+      "(formerly Twitter)": [
+        "(เดิมชื่อ Twitter)"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**การดำเนินการนี้จะปิดใช้งานการยืนยันตัวตนแบบ 2 ปัจจัย**"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "จำเป็นต้องมีโดเมนที่กำหนดเองเพื่อสร้างกลุ่ม หากยังไม่ได้ตั้งค่าโดเมนที่กำหนดเอง ให้ดำเนินการก่อนภายใต้ ${ linkToDomainPage }"
+      ],
+      "Activity Monitor": [
+        "การตรวจสอบกิจกรรม"
+      ],
+      "Add users by name or email to this group.": [
+        "เพิ่มผู้ใช้ด้วยชื่อหรืออีเมลในกลุ่มนี้"
+      ],
+      "Adding ${ total } gateway server": [
+        "กำลังเพิ่มเซิร์ฟเวอร์เกตเวย์ ${ total } เครื่อง"
+      ],
+      "AI chatbot": [
+        "แชทบอท AI"
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "ส่งอีเมลพร้อมรหัสยืนยันไปยัง ${ emailAddress } เรียบร้อยแล้ว หากไม่พบข้อความในกล่องขาเข้า โปรดตรวจสอบในโฟลเดอร์สแปม"
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "ส่ง SMS พร้อมรหัสยืนยันไปยัง ${ phoneNumber } เรียบร้อยแล้ว"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "ขอให้พวกเขาลงชื่อเข้าใช้ ${ ACCOUNT_APP_NAME } ในเบราว์เซอร์ และไปที่ **การตั้งค่า → การตั้งค่าทั้งหมด → การกู้คืน → การเข้าถึงในกรณีฉุกเฉิน → คนที่เชื่อถือฉัน**"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "ก่อนส่งรหัสยืนยันใหม่ โปรดตรวจสอบโฟลเดอร์สแปมเพื่อหา ${ EmailOrPhoneNumber }"
+      ],
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "เรียกเก็บเงินที่ ${ monthlyDiscountedPriceElement } สำหรับ 6 เดือนแรก ต่ออายุที่ ${ monthlyRenewalPriceElement }"
+      ],
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "เรียกเก็บเงินที่ ${ yearlyDiscountedPriceElement } สำหรับ 12 เดือนแรก ต่ออายุที่ ${ yearlyRenewalPriceElement }"
+      ],
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "การปิดใช้งานการตรวจสอบบัญชีจะล้างประวัติทั้งหมดด้วย แน่ใจหรือไม่ว่าต้องการปิดใช้งานสิ่งนี้?"
+      ],
+      "Can you access your active session?": [
+        "สามารถเข้าถึงเซสชันที่ใช้งานอยู่ได้หรือไม่?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "สามารถเข้าถึงเซสชันเว็บที่ใช้งานอยู่ในเบราว์เซอร์อื่นได้หรือไม่?"
+      ],
+      "Can you reach out to your contact?": [
+        "สามารถติดต่อผู้ติดต่อได้หรือไม่?"
+      ],
+      "Cancel": [
+        "ยกเลิก"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "คลิก **ขอรีเซ็ตรหัสผ่าน** และปฏิบัติตามคำแนะนำ"
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "ติดต่อฝ่ายสนับสนุนลูกค้าเพื่อปิดใช้งานการยืนยันตัวตนผ่านสองขั้นตอนสำหรับบัญชี หรือกู้คืนบัญชีด้วยวิธีอื่น"
+      ],
+      "Couldn´t send feedback": [
+        "ไม่สามารถส่งข้อเสนอแนะได้"
+      ],
+      "Creating gateway with ${ total } server": [
+        "กำลังสร้างเกตเวย์ด้วยเซิร์ฟเวอร์จำนวน ${ total } เครื่อง"
+      ],
+      "Data recoverable with recovery phrase": [
+        "ข้อมูลสามารถกู้คืนได้ด้วยวลีกู้คืน"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "ขึ้นอยู่กับการตั้งค่า พวกเขาอาจได้รับสิทธิ์เข้าถึงทันที หรือหลังจาก**ระยะเวลารอคอย**ที่กำหนดไว้"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "ดาวน์โหลด ${ VPN_APP_NAME }"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "เนื่องจากการเข้ารหัสลับจากต้นทางถึงปลายทาง สามารถรีเซ็ตรหัสผ่านได้ แต่ ${ DataLockedText } จนกว่าจะใช้ ${ DataRecoveryOptionsLink }:"
+      ],
+      "Editing requires permission": [
+        "การแก้ไขต้องได้รับสิทธิ์"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "ป้อนวลีกู้คืน 12 คำที่เชื่อมโยงกับบัญชี"
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "ป้อนวลีกู้คืนเพื่อตรวจสอบข้อมูลระบุตัวตนและปิดใช้งานการยืนยันตัวตนผ่านสองขั้นตอน"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "ไฟล์เท่านั้น (ไม่มีรูปภาพ, ${ DOCS_APP_NAME } หรือ ${ SHEETS_APP_NAME }) - รวมสูงสุด 100 GB, 100,000 ไฟล์ และ 50 GB ต่อไฟล์"
+      ],
+      "Friends and family": [
+        "เพื่อนและครอบครัว"
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "จากที่นั่น พวกเขาสามารถขอเข้าถึงบัญชีในกรณีฉุกเฉินได้โดยคลิก **ขอเข้าถึง**"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "ไม่สามารถลบเกตเวย์ได้ โปรดลองอีกครั้ง"
+      ],
+      "Gateway deleted": [
+        "ลบเกตเวย์แล้ว"
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "ติดต่อผู้ติดต่อฉุกเฉินเพื่อดูว่าพวกเขาช่วยได้หรือไม่ หลังจากขอเข้าถึงบัญชีในกรณีฉุกเฉินแล้ว พวกเขาจะสามารถเปลี่ยนรหัสผ่านให้ได้ **หลังจากสิ้นสุดเวลารอคอยสำหรับการเข้าถึง**"
+      ],
+      "Get visibility into account access": [
+        "รับสิทธิ์การมองเห็นการเข้าถึงบัญชี"
+      ],
+      "Google or other search engine": [
+        "Google หรือเครื่องมือค้นหาอื่นๆ"
+      ],
+      "Group created": [
+        "สร้างกลุ่มแล้ว"
+      ],
+      "Group roles assigned": [
+        "มอบหมายบทบาทกลุ่มแล้ว"
+      ],
+      "How to perform a signed-in reset": [
+        "วิธีรีเซ็ตขณะเข้าสู่ระบบ"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "วิธีที่ผู้ติดต่อฉุกเฉินสามารถเปลี่ยนรหัสผ่านแทนคุณได้:"
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "หากเป็นไปได้ เมื่อลงชื่อเข้าใช้ ให้ใช้อุปกรณ์หรือเบราว์เซอร์ที่เคยใช้ลงชื่อเข้าใช้มาก่อน"
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "หากเข้าสู่ระบบแอปเว็บ ${ BRAND_NAME } ใน**เบราว์เซอร์อื่น** อาจสามารถรีเซ็ตรหัสผ่านจากเซสชันที่ใช้งานอยู่ได้"
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "หากมีผู้ติดต่อฉุกเฉิน ให้ติดต่อเพื่อดูว่าพวกเขาช่วยได้หรือไม่ หลังจากขอเข้าถึงบัญชีในกรณีฉุกเฉินแล้ว พวกเขาจะสามารถเปลี่ยนรหัสผ่านให้ได้ **หลังจากสิ้นสุดเวลารอคอยสำหรับการเข้าถึง**"
+      ],
+      "Instagram": [
+        "Instagram"
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "รหัสไม่ถูกต้อง ${ RequestNewCodeLink } และลองอีกครั้ง"
+      ],
+      "Key sections reorganized for faster access.": [
+        "ปรับโครงสร้างส่วนสำคัญใหม่เพื่อการเข้าถึงที่รวดเร็วยิ่งขึ้น"
+      ],
+      "Manage groups in your identity provider": [
+        "จัดการกลุ่มในผู้ให้บริการข้อมูลระบุตัวตน"
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "ตรวจสอบกิจกรรมการเข้าสู่ระบบ ตรวจหาการเข้าถึงที่ไม่ได้รับอนุญาต และปิดช่องว่างด้านความปลอดภัยและการปฏิบัติตามข้อกำหนด "
+      ],
+      "New group created via your identity provider and pending review.": [
+        "สร้างกลุ่มใหม่ผ่านผู้ให้บริการข้อมูลระบุตัวตนแล้ว และกำลังรอการตรวจสอบ"
+      ],
+      "New sidebar": [
+        "แถบด้านข้างแบบใหม่"
+      ],
+      "New sidebar layout": [
+        "เค้าโครงแถบด้านข้างแบบใหม่"
+      ],
+      "News or media article": [
+        "ข่าวหรือบทความสื่อ"
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "เมื่อได้รับการอนุมัติให้เข้าถึงบัญชีแล้ว พวกเขาจะสามารถเข้าถึงการตั้งค่า**การกู้คืน**และ**เปลี่ยนรหัสผ่าน ${ ACCOUNT_APP_NAME }** แทนคุณได้"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "สามารถเปลี่ยนได้เฉพาะตัวพิมพ์ใหญ่และเครื่องหมายวรรคตอน (จุด ยัติภังค์ และขีดล่าง) ที่นี่เท่านั้น หากต้องการใช้ที่อยู่อื่น ให้เพิ่มที่อยู่ใหม่"
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "เปิดเซสชันที่ใช้งานอยู่ในเบราว์เซอร์ และไปที่ **การตั้งค่า → การตั้งค่าทั้งหมด → การกู้คืน → การตั้งค่าการรีเซ็ตรหัสผ่าน**"
+      ],
+      "Other": [
+        "อื่นๆ"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "ระบบจะแจ้งให้ยืนยันรหัสผ่าน ${ BRAND_NAME } เป็นระยะๆ เพื่อให้แน่ใจว่าจะไม่ลืม โดยความถี่ในการถามจะลดลงเมื่อเวลาผ่านไป"
+      ],
+      "Please specify...": [
+        "โปรดระบุ..."
+      ],
+      "Podcast": [
+        "พอดแคสต์"
+      ],
+      "Product reviews, rankings, or guides": [
+        "บทวิจารณ์ผลิตภัณฑ์ การจัดอันดับ หรือคู่มือ"
+      ],
+      "Professional": [
+        "Professional"
+      ],
+      "Protect this device too?": [
+        "ปกป้องอุปกรณ์นี้ด้วยหรือไม่?"
+      ],
+      "Reddit": [
+        "Reddit"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "การรีเซ็ตรหัสผ่านในเซสชันเว็บที่ใช้งานอยู่จะช่วยให้แน่ใจว่า**ข้อมูลที่เข้ารหัสจะยังคงเข้าถึงได้**หลังจากเปลี่ยนรหัสผ่าน"
+      ],
+      "Select a group to view its members and settings.": [
+        "เลือกกลุ่มเพื่อดูสมาชิกและการตั้งค่า"
+      ],
+      "Share your thoughts...": [
+        "แชร์ความคิดเห็น..."
+      ],
+      "Sign-in complete": [
+        "เข้าสู่ระบบเสร็จสิ้น"
+      ],
+      "Submit": [
+        "ส่ง"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "การสมัครสมาชิกเริ่มต้นในวันที่ ${ startsOnTime }"
+      ],
+      "Switch sidebars": [
+        "สลับแถบด้านข้าง"
+      ],
+      "Synced from identity provider": [
+        "ซิงค์จากผู้ให้บริการข้อมูลระบุตัวตนแล้ว"
+      ],
+      "Thanks - your feedback was sent.": [
+        "ขอบคุณ ส่งข้อเสนอแนะเรียบร้อยแล้ว"
+      ],
+      "Thanks for the feedback!": [
+        "ขอบคุณสำหรับข้อเสนอแนะ!"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "กระบวนการถูกขัดจังหวะสำหรับ ${ pausedCount } กลุ่ม คลิกดำเนินการต่อเพื่อเริ่มการมอบหมายบทบาทใหม่"
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "เครดิตการแนะนำจะได้รับสูงสุดไม่เกิน 2 เดือนหลังจากการทดลองใช้ของเพื่อนสิ้นสุดลง และเฉพาะกรณีที่เพื่อนสมัครรับข้อมูลแผนบริการเท่านั้น"
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "รหัสผ่านนี้ใช้เพื่อเข้าสู่ระบบบัญชี ${ BRAND_NAME }"
+      ],
+      "TikTok": [
+        "TikTok"
+      ],
+      "To continue to ${ product }": [
+        "เพื่อดำเนินการ ${ product } ต่อ"
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "เพื่อช่วยรักษาความปลอดภัยของบัญชี เราต้องการตรวจสอบให้แน่ใจว่าเป็นตัวคุณจริงๆ ที่พยายามเข้าสู่ระบบ"
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "หากต้องการเข้าถึงบัญชีและข้อมูลอีกครั้ง ให้ป้อนวลีกู้คืน 12 คำที่เชื่อมโยงกับบัญชี"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "การทดลองใช้สิ้นสุดลงในวันที่ ${ formattedPeriodEndDate }"
+      ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "ลองกู้คืนบัญชีจาก**อุปกรณ์หรือเบราว์เซอร์ที่เคยใช้ลงชื่อเข้าใช้มาก่อน** เนื่องจากอาจสามารถดำเนินการได้จากที่นั่น:"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "ขออภัย ไม่มีวิธีกู้คืนสำหรับบัญชีนี้"
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "อัปเกรดเพื่อปลดล็อก ${ monitorLink }"
+      ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "ใช้ที่อยู่อีเมลหลายรายการด้วย ${ MAIL_APP_NAME } เพิ่มที่อยู่ ${ BRAND_NAME } ใหม่หรือเชื่อมต่อบัญชีอีเมลอื่นเพื่อจัดการทุกอย่างจากกล่องขาเข้าเดียว"
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "ตรวจพบว่าได้เข้าสู่ระบบแอปเว็บ ${ BRAND_NAME } ใน**เบราว์เซอร์อื่น** แล้ว อาจสามารถรีเซ็ตรหัสผ่านจากเซสชันที่ใช้งานอยู่ได้"
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "แนะนำให้เพิ่มเซิร์ฟเวอร์ในตำแหน่งต่าง ๆ (หนึ่งเซิร์ฟเวอร์ต่อหนึ่งเมือง) เพื่อเพิ่มประสิทธิภาพการทำงานแบบสำรองข้อมูลให้สูงสุด"
+      ],
+      "Web sessions detected:": [
+        "ตรวจพบเซสชันเว็บ:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "ด้วยแผน ${ boldProfessionalPlan } สามารถซื้อ ${ boldDedicatedServers } สำหรับองค์กร และตั้งค่า ${ boldGateways } เพื่อควบคุมว่าผู้ใช้รายใดสามารถเข้าถึงได้"
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "กลุ่มช่วยให้นำนโยบายความปลอดภัยของบริษัทมาใช้สำหรับการควบคุมการเข้าถึงและลดความเสี่ยงในการเข้าถึงข้อมูลที่ไม่ได้รับอนุญาตได้"
+      ],
+      "X": [
+        "X"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "ขณะนี้เข้าสู่ระบบในชื่อ ${ username } สำหรับ ${ organizationName }"
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "สามารถรีเซ็ตรหัสผ่านเพื่อกลับเข้าถึงบัญชีได้แล้ว"
+      ],
+      "You can now sign in to your account again.": [
+        "สามารถเข้าสู่ระบบบัญชีอีกครั้งได้แล้ว"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "สามารถเปิดเซสชันแชตได้ครั้งละหนึ่งรายการเท่านั้น โปรดปิดบทสนทนาก่อนหน้าก่อนที่จะเริ่มบทสนทนาใหม่"
+      ],
+      "You do not have permission to create users.": [
+        "ไม่มีสิทธิ์สร้างผู้ใช้"
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "จะไม่ถูกถามหารหัสแบบใช้ครั้งเดียวหรือคีย์ความปลอดภัย"
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "จะเข้าถึงข้อมูลที่เข้ารหัสได้ทั้งหมดหรือบางส่วนอีกครั้ง"
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "จะได้รับรางวัลเครดิตในอีก 1 เดือนหลังจากการทดลองใช้ของเพื่อนสิ้นสุดลง"
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "จะได้รับรางวัลเครดิตในอีก 2 เดือนหลังจากการทดลองใช้ของเพื่อนสิ้นสุดลง"
+      ],
+      "You're now signed in on your TV.": [
+        "เข้าสู่ระบบบนทีวีแล้ว"
+      ],
+      "Your ${ planDisplayName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "แผน ${ planDisplayName } ไม่เพียงแต่รักษาความปลอดภัยให้กับข้อมูลและการสื่อสารทางธุรกิจเท่านั้น แต่ยังช่วยสนับสนุนวัตถุประสงค์ด้านการปฏิบัติตามกฎระเบียบ สร้างความโดดเด่นให้ธุรกิจ และช่วยให้ทีมเชื่อมต่อถึงกันได้ตลอดเวลา"
+      ],
+      "Your encrypted data will be locked": [
+        "ข้อมูลที่เข้ารหัสจะถูกล็อก"
+      ],
+      "your encrypted data will be locked": [
+        "ข้อมูลที่เข้ารหัสจะถูกล็อก"
+      ],
+      "Your feedback": [
+        "ข้อเสนอแนะ"
+      ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "เผยแพร่การเปลี่ยนแปลงล่าสุดแล้ว โดยผู้ใช้จะมองเห็นความเปลี่ยนแปลงภายในไม่กี่ชั่วโมงข้างหน้า"
+      ],
+      "YouTube": [
+        "YouTube"
       ]
     },
     "info": {
@@ -8225,6 +8969,12 @@
       ],
       "Sending invite...": [
         "กำลังส่งคำเชิญ..."
+      ],
+      "Group Owner": [
+        "เจ้าของกลุ่ม"
+      ],
+      "Invited": [
+        "เชิญแล้ว"
       ]
     },
     "Invoice state display as badge": {
@@ -9113,6 +9863,135 @@
       ],
       "ZIP code": [
         "รหัสไปรษณีย์"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop app": [
+        "แอปเดสก์ท็อป ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "แอปเดสก์ท็อป ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } สำหรับธุรกิจ"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "การปกป้องบัญชี ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protection": [
+        "การปกป้องจาก ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Automatic email forwarding": [
+        "การส่งต่ออีเมลอัตโนมัติ"
+      ],
+      "Block trackers and marketers": [
+        "บล็อกตัวติดตามและนักการตลาด"
+      ],
+      "Brand your workspace": [
+        "สร้างแบรนด์ให้พื้นที่ทำงาน"
+      ],
+      "Catch-all email address": [
+        "ที่อยู่อีเมลแบบครอบคลุมทั้งหมด"
+      ],
+      "Custom domain": [
+        "โดเมนที่กำหนดเอง"
+      ],
+      "Custom email domain": [
+        "โดเมนอีเมลที่กำหนดเอง"
+      ],
+      "Data harvesting": [
+        "การเก็บเกี่ยวข้อมูล"
+      ],
+      "Early access": [
+        "การเข้าถึงก่อนใคร"
+      ],
+      "Email addresses": [
+        "ที่อยู่อีเมล"
+      ],
+      "Email addresses per user": [
+        "ที่อยู่อีเมลต่อผู้ใช้"
+      ],
+      "Email with @yourcompany.com domain": [
+        "อีเมลพร้อมโดเมน @yourcompany.com"
+      ],
+      "End-to-end encryption": [
+        "การเข้ารหัสลับจากต้นทางถึงปลายทาง"
+      ],
+      "Enter code": [
+        "ป้อนรหัส"
+      ],
+      "Enter name or email address": [
+        "ป้อนชื่อหรือที่อยู่อีเมล"
+      ],
+      "Folders, labels, and filters": [
+        "โฟลเดอร์ ป้ายกำกับ และตัวกรอง"
+      ],
+      "Free VPN included": [
+        "รวม VPN ฟรีแล้ว"
+      ],
+      "Import your emails": [
+        "นำเข้าอีเมล"
+      ],
+      "Invite people": [
+        "เชิญผู้คน"
+      ],
+      "Monthly": [
+        "รายเดือน"
+      ],
+      "No": [
+        "ไม่ใช่"
+      ],
+      "Online productivity suite": [
+        "ชุดแอปพลิเคชันทำงานร่วมกันออนไลน์"
+      ],
+      "Open-source code": [
+        "รหัสโอเพนซอร์ส"
+      ],
+      "Password check-ins": [
+        "การยืนยันรหัสผ่าน"
+      ],
+      "Premium features included": [
+        "รวมคุณสมบัติพรีเมียมแล้ว"
+      ],
+      "Priority support": [
+        "การสนับสนุนพิเศษ"
+      ],
+      "Protected by Swiss privacy laws": [
+        "ได้รับการคุ้มครองโดยกฎหมายความเป็นส่วนตัวของสวิตเซอร์แลนด์"
+      ],
+      "See your team's availability": [
+        "ดูความพร้อมของทีม"
+      ],
+      "Select an identity provider to start": [
+        "เลือกผู้ให้บริการข้อมูลระบุตัวตนเพื่อเริ่มต้น"
+      ],
+      "Short domain @pm.me": [
+        "โดเมนสั้น @pm.me"
+      ],
+      "Storage per user": [
+        "พื้นที่จัดเก็บต่อผู้ใช้"
+      ],
+      "Support for multiple users": [
+        "รองรับผู้ใช้หลายคน"
+      ],
+      "Third-party ads": [
+        "โฆษณาจากบุคคลที่สาม"
+      ],
+      "Use your own email domain": [
+        "ใช้โดเมนอีเมลของตัวเอง"
+      ],
+      "Version history": [
+        "ประวัติเวอร์ชัน"
+      ],
+      "Yearly": [
+        "รายปี"
+      ],
+      "Yearly free storage bonus": [
+        "โบนัสพื้นที่จัดเก็บฟรีรายปี"
+      ],
+      "You don't have permissions": [
+        "ไม่มีสิทธิ์"
+      ],
+      "Zero-access architecture": [
+        "สถาปัตยกรรมแบบไม่มีการเข้าถึงข้อมูล"
       ]
     },
     "label": {
@@ -9404,6 +10283,30 @@
       ],
       "What’s this?": [
         "นี่คืออะไร?"
+      ],
+      "activity monitor": [
+        "การตรวจสอบกิจกรรม"
+      ],
+      "Contact support": [
+        "ติดต่อฝ่ายสนับสนุน"
+      ],
+      "contacts’ assistance": [
+        "ความช่วยเหลือจากผู้ติดต่อ"
+      ],
+      "data recovery option": [
+        "ตัวเลือกการกู้คืนข้อมูล"
+      ],
+      "Details": [
+        "รายละเอียด"
+      ],
+      "Learn how": [
+        "เรียนรู้วิธี"
+      ],
+      "Manage addresses": [
+        "จัดการที่อยู่"
+      ],
+      "Visit our support site": [
+        "ไปที่ไซต์สนับสนุน"
       ]
     },
     "Link (Scribe)": {
@@ -9540,6 +10443,9 @@
       ],
       "Enable detailed events": [
         "เปิดใช้งานกิจกรรมโดยละเอียด"
+      ],
+      "Account monitor": [
+        "การตรวจสอบบัญชี"
       ]
     },
     "lumo_signup_2025: Info": {
@@ -9595,6 +10501,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "สิทธิ์ผู้ใช้ ${ MEET_APP_NAME } ${ seats } สิทธิ์"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (สำหรับผู้ใช้ ${ quantity } ราย)"
       ]
     },
     "meet_2025: Feature": {
@@ -9648,6 +10557,33 @@
       ],
       "Video meetings, ${ n } participant": [
         "การประชุมผ่านวิดีโอ ผู้เข้าร่วม ${ n } คน"
+      ],
+      "Cloud storage and file sharing": [
+        "พื้นที่จัดเก็บข้อมูลบนคลาวด์และการแชร์ไฟล์"
+      ],
+      "Data retention policies": [
+        "นโยบายการเก็บรักษาข้อมูล"
+      ],
+      "Document and spreadsheet editor": [
+        "โปรแกรมแก้ไขเอกสารและตารางคำนวณ"
+      ],
+      "Email writing assistant": [
+        "ผู้ช่วยเขียนอีเมล"
+      ],
+      "Includes Meet Professional": [
+        "รวม Meet Professional"
+      ],
+      "Password manager with team vaults": [
+        "โปรแกรมจัดการรหัสผ่านพร้อมห้องนิรภัยของทีม"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "แชท AI ส่วนตัว (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Secure mail and calendar": [
+        "อีเมลและปฏิทินที่ปลอดภัย"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN พร้อมตัวบล็อกโฆษณาและการป้องกันมัลแวร์"
       ]
     },
     "meet_2025: Info": {
@@ -9700,6 +10636,9 @@
       ],
       "Sign in": [
         "เข้าสู่ระบบ"
+      ],
+      "Change backup password": [
+        "เปลี่ยนรหัสผ่านสำรอง"
       ]
     },
     "Message": {
@@ -9720,6 +10659,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "การทดลองใช้ฟรีสิ้นสุดลงแล้ว การเข้าถึงบัญชีจะถูกปิดใช้งานในเร็วๆ นี้ ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "เชื่อมต่อโดเมนที่กำหนดเอง (เช่น yourcompany.com) เพื่อสร้างที่อยู่อีเมลสำหรับคนอื่น จัดการ ${ MAIL_APP_NAME } สำหรับธุรกิจ โรงเรียน หรือกลุ่ม"
       ]
     },
     "Message display when a new app version is available": {
@@ -9730,6 +10672,27 @@
     "Metadata title": {
       "Find your ${ BRAND_NAME } Account username": [
         "ค้นหาชื่อผู้ใช้บัญชี ${ BRAND_NAME } ของคุณ"
+      ],
+      "${ appName }: Sign-in": [
+        "${ appName }: ลงชื่อเข้าใช้"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: ลงทะเบียน"
+      ],
+      "Create a new ${ appName } account": [
+        "สร้างบัญชี ${ appName } ใหม่"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "ลืมรหัสผ่านบัญชี ${ BRAND_NAME } ใช่หรือไม่ รีเซ็ตที่นี่โดยใช้รหัสกู้คืน อีเมล หรือ SMS เพื่อกู้คืนการเข้าถึง ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } และอื่นๆ"
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "ลืมชื่อผู้ใช้บัญชี ${ BRAND_NAME } ใช่หรือไม่ ค้นหาโดยใช้อีเมลกู้คืนหรือหมายเลขโทรศัพท์เพื่อกู้คืนการเข้าถึง ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } และอื่นๆ"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "รีเซ็ตรหัสผ่านบัญชี ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "ลงชื่อเข้าใช้เพื่อเข้าถึงบัญชี ${ appName }"
       ]
     },
     "Modal title": {
@@ -10343,6 +11306,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "เราสแกนเว็บมืดเพื่อตรวจสอบว่าที่อยู่หรือนามแฝง ${ BRAND_NAME } ของคุณรั่วไหลหรือไม่ และแจ้งเตือนทันทีหากพบข้อมูล"
+      ],
+      "Advanced workspace security": [
+        "ความปลอดภัยพื้นที่ทำงานขั้นสูง"
+      ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "เซิร์ฟเวอร์ในกว่า ${ VPN_SERVERS.paid.countries } ประเทศ"
       ]
     },
     "new_plans: feature highlight": {
@@ -10862,6 +11831,27 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "เข้าร่วมตอบแบบสำรวจเพื่อปรับปรุงบริการของ ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } for Business communications": [
+        "การสื่อสารสำหรับ ${ BRAND_NAME } for Business"
+      ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "อีเมล 1-4 ฉบับต่อปี ตัวแจ้งเตือนเพื่อให้อัปเดตวิธีการกู้คืนให้เป็นปัจจุบันอยู่เสมอ"
+      ],
+      "Account email updates": [
+        "อีเมลอัปเดตบัญชี"
+      ],
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "การปิดใช้งานสิ่งนี้หมายความว่าจะไม่ได้รับการแจ้งเตือนในแอปเกี่ยวกับโปรโมชัน คุณสมบัติใหม่ บริการใหม่ของ ${ BRAND_NAME } และการแจ้งเตือนเตือนความจำ"
+      ],
+      "Email communications": [
+        "การสื่อสารทางอีเมล"
+      ],
+      "Product email updates": [
+        "อีเมลอัปเดตผลิตภัณฑ์"
+      ],
+      "Recovery checklist": [
+        "รายการตรวจสอบการกู้คืน"
       ]
     },
     "Notification": {
@@ -12040,6 +13030,9 @@
       ],
       "ZIP code": [
         "รหัสไปรษณีย์"
+      ],
+      "Search for users or addresses": [
+        "ค้นหาผู้ใช้หรือที่อยู่"
       ]
     },
     "placeholder": {
@@ -12271,6 +13264,9 @@
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "การยืนยันที่อยู่อีเมลของคุณจะเพิ่มความปลอดภัยให้กับบัญชีและช่วยให้มีตัวเลือกเพิ่มเติมสำหรับการกู้คืน"
+      ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "ยืนยันที่อยู่อีเมลการกู้คืนนี้ตอนนี้เลย: ${ emailData.value }"
       ]
     },
     "Recovery method": {
@@ -12305,6 +13301,9 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "การยืนยันหมายเลขโทรศัพท์ของคุณจะเพิ่มความปลอดภัยให้กับบัญชีและช่วยให้มีตัวเลือกเพิ่มเติมสำหรับการกู้คืน"
+      ],
+      "Verify this recovery phone number now: ${ phoneData.value }": [
+        "ยืนยันหมายเลขโทรศัพท์กู้คืนนี้ทันที: ${ phoneData.value }"
       ]
     },
     "Referral": {
@@ -12367,6 +13366,12 @@
       ],
       "your subscription": [
         "การสมัครสมาชิกของคุณ"
+      ],
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "ให้ ${ refereeRewardAmount } รับ ${ referrerRewardAmount }"
+      ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "ใช้งาน ${ BRAND_NAME } อยู่และคิดว่าคุณน่าจะชอบ เป็นบริการอีเมล พื้นที่จัดเก็บข้อมูลบนคลาวด์ โปรแกรมจัดการรหัสผ่าน และ VPN ที่ปลอดภัยซึ่งปกป้องความเป็นส่วนตัว ลงทะเบียนด้วยลิงก์นี้เพื่อรับส่วนลด ${ refereeRewardAmount } สำหรับการสมัครสมาชิกครั้งต่อไป: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -12911,6 +13916,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "คุณมีเวลา ${ timeRemaining.inDays } วันในการรีเซ็ตรหัสผ่าน"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "มีเวลาอีก ${ timeRemaining.inHours } ชั่วโมงในการรีเซ็ตรหัสผ่าน"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "มีเวลาอีก ${ timeRemaining.inMinutes } นาทีในการรีเซ็ตรหัสผ่าน"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "มีเวลาอีก ${ timeRemaining.inSeconds } วินาทีในการรีเซ็ตรหัสผ่าน"
       ]
     },
     "session_recovery:available:link": {
@@ -13647,6 +14661,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "การกำหนดค่า SSO จะถูกลบ"
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "ผู้ใช้ ${ n } รายเข้าร่วมองค์กรผ่านผู้ให้บริการข้อมูลระบุตัวตนแล้ว"
+      ],
+      "${ n } user is inactive.": [
+        "ผู้ใช้ ${ n } รายไม่ได้ใช้งานอยู่"
       ]
     },
     "sso: auth device state": {
@@ -13835,6 +14855,12 @@
       ],
       "VPN connection for ${ n } device per user": [
         "การเชื่อมต่อ VPN สำหรับอุปกรณ์ ${ n } เครื่องต่อผู้ใช้"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "ผู้ช่วยการเขียน ${ BRAND_NAME } Scribe"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } สำหรับผู้ใช้ ${ count } ราย"
       ]
     },
     "Subscription change warning": {
@@ -14254,6 +15280,48 @@
     "Subtitle": {
       "View VPN session details for your organization.": [
         "ดูรายละเอียดเซสชัน VPN สำหรับองค์กร"
+      ],
+      "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } มอบพื้นที่จัดเก็บ 1 TB สำหรับไฟล์และรูปภาพ และยังมีสิทธิ์ได้รับโบนัสพื้นที่จัดเก็บรายปีอีกด้วย"
+      ],
+      "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } มอบพื้นที่จัดเก็บ 200 GB สำหรับไฟล์และรูปภาพ และยังมีสิทธิ์ได้รับโบนัสพื้นที่จัดเก็บรายปีอีกด้วย"
+      ],
+      "${ planTitle } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planTitle } ให้สิทธิ์เข้าถึงแอปและคุณสมบัติพรีเมียมทั้งหมด มีระบบความเป็นส่วนตัวในตัวเพื่อให้สามารถใช้งานได้อย่างราบรื่นโดยมั่นใจว่าข้อมูลและข้อมูลระบุตัวตนปลอดภัย"
+      ],
+      "${ planTitle } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planTitle } มอบสิทธิ์การใช้งานแอปทั้งหมด คุณสมบัติทั้งหมด สิทธิ์การเข้าถึงรุ่นใหม่ก่อนใคร และทุกอย่างที่จำเป็นเพื่อควบคุมข้อมูลและความปลอดภัย"
+      ],
+      "${ planTitle } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planTitle } มอบความเป็นส่วนตัวแบบไม่จำกัดและพื้นที่จัดเก็บข้อมูลที่เพิ่มขึ้นสำหรับผู้ใช้สูงสุด 2 คน"
+      ],
+      "${ planTitle } gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ planTitle } มอบเครื่องมือสำหรับการทำงานร่วมกันทั้งหมดที่ทีมต้องการเพื่อการทำงานที่มีประสิทธิภาพและเป็นระเบียบเรียบร้อย ในขณะเดียวกันก็ช่วยปกป้องธุรกิจให้ปลอดภัย"
+      ],
+      "${ planTitle } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their advanced features.": [
+        "${ planTitle } มอบสิ่งที่ทีมต้องการเพื่อการทำงานที่มีประสิทธิภาพและเป็นระเบียบยิ่งขึ้น พร้อมสิทธิ์เข้าถึงแอป ${ BRAND_NAME } ทั้งหมดและคุณสมบัติขั้นสูง"
+      ],
+      "${ planTitle } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planTitle } มอบสิ่งที่ทีมต้องการเพื่อการทำงานที่มีประสิทธิภาพ เป็นระเบียบเรียบร้อยยิ่งขึ้น และสามารถควบคุมกล่องขาเข้า ตารางเวลา และอื่นๆ ได้"
+      ],
+      "${ planTitle } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planTitle } ให้มากกว่าขั้นพื้นฐานเพื่อช่วยให้ทำงานได้อย่างมีประสิทธิภาพ เป็นระเบียบ และสามารถควบคุมกล่องขาเข้า ข้อมูลระบุตัวตนอีเมล และอื่นๆ ได้"
+      ],
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } ช่วยให้มั่นใจว่าสมาชิกในครอบครัวแต่ละคนและข้อมูลได้รับการปกป้องทุกครั้งที่ออนไลน์"
+      ],
+      "Compare the key differences that matter for your business.": [
+        "เปรียบเทียบความแตกต่างที่สำคัญซึ่งมีความหมายต่อธุรกิจ"
+      ],
+      "Save 50% for 6 months, and keep full access": [
+        "ประหยัด 50% เป็นเวลา 6 เดือน และยังคงเข้าถึงข้อมูลได้ครบถ้วน"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "ประหยัด 50% เป็นเวลาหนึ่งปี และยังคงเข้าถึงได้ทั้งหมด"
+      ],
+      "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
+        "ดูข้อเปรียบเทียบกับ ${ MAIL_APP_NAME } และเหตุผลที่ความเป็นอิสระสร้างความแตกต่าง"
       ]
     },
     "Success": {
@@ -14421,6 +15489,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "คุณจะได้รับชื่อผู้ใช้ทาง SMS ภายในหนึ่งนาที หากป้อนหมายเลขโทรศัพท์กู้คืนที่ถูกต้อง"
+      ],
+      "Password check-ins disabled": [
+        "ปิดใช้งานการยืนยันรหัสผ่านแล้ว"
+      ],
+      "Password check-ins enabled": [
+        "เปิดใช้งานการยืนยันรหัสผ่านแล้ว"
       ]
     },
     "Success message": {
@@ -14487,6 +15561,9 @@
       ],
       "/user per month": [
         "/ผู้ใช้ต่อเดือน"
+      ],
+      "/year": [
+        "/ปี"
       ]
     },
     "Suffix for price": {
@@ -14595,6 +15672,24 @@
       ],
       "Light": [
         "สว่าง"
+      ],
+      "Auto": [
+        "อัตโนมัติ"
+      ],
+      "Mode: Auto": [
+        "โหมด: อัตโนมัติ"
+      ],
+      "Mode: Dark": [
+        "โหมด: มืด"
+      ],
+      "Mode: Light": [
+        "โหมด: สว่าง"
+      ],
+      "Sync with system": [
+        "ซิงค์กับระบบ"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "ใช้การตั้งค่า ${ BRAND_NAME }"
       ]
     },
     "Time unit": {
@@ -15706,6 +16801,189 @@
       ],
       "Your subscriptions": [
         "การสมัครสมาชิกของคุณ"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "ผู้ช่วยเขียน ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ VPN_APP_NAME } clients": [
+        "ไคลเอ็นต์ ${ VPN_APP_NAME }"
+      ],
+      "Account": [
+        "บัญชี"
+      ],
+      "Account monitor": [
+        "การตรวจสอบบัญชี"
+      ],
+      "Activate multi-user support": [
+        "เปิดใช้งานการรับรองผู้ใช้หลายคน"
+      ],
+      "Already have multiple accounts?": [
+        "มีหลายบัญชีอยู่แล้วใช่ไหม?"
+      ],
+      "Approve changes": [
+        "อนุมัติการเปลี่ยนแปลง"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "ได้เข้าสู่ระบบ ${ BRAND_NAME } ในเบราว์เซอร์แล้วหรือไม่?"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "แน่ใจหรือไม่ว่าต้องการยกเลิกการเชื่อมต่อและปิดใช้งานที่อยู่นี้?"
+      ],
+      "Ask your emergency contacts for help": [
+        "ขอความช่วยเหลือจากผู้ติดต่อฉุกเฉิน"
+      ],
+      "Can you access your session in the browser?": [
+        "สามารถเข้าถึงเซสชันในเบราว์เซอร์ได้หรือไม่?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "สามารถติดต่อผู้ติดต่อฉุกเฉินได้หรือไม่?"
+      ],
+      "Connected emails": [
+        "อีเมลที่เชื่อมต่อไว้"
+      ],
+      "Couldn’t recover your account": [
+        "ไม่สามารถกู้คืนบัญชีได้"
+      ],
+      "Create group": [
+        "สร้างกลุ่ม"
+      ],
+      "Create new addresses easily": [
+        "สร้างที่อยู่ใหม่ได้ง่ายๆ"
+      ],
+      "Disable account monitor?": [
+        "ปิดใช้งานการตรวจสอบบัญชีหรือไม่?"
+      ],
+      "Download apps": [
+        "ดาวน์โหลดแอป"
+      ],
+      "Edit group": [
+        "แก้ไขกลุ่ม"
+      ],
+      "Email subscriptions": [
+        "การสมัครรับข้อมูลทางอีเมล"
+      ],
+      "Free plan": [
+        "Free plan"
+      ],
+      "Get direct support": [
+        "รับการสนับสนุนโดยตรง"
+      ],
+      "Get help with an issue": [
+        "รับความช่วยเหลือเกี่ยวกับปัญหา"
+      ],
+      "Group role assignment paused": [
+        "หยุดการมอบหมายบทบาทกลุ่มชั่วคราว"
+      ],
+      "Help us improve": [
+        "ช่วยเราปรับปรุงให้ดียิ่งขึ้น"
+      ],
+      "Helping activists in Hong Kong": [
+        "การช่วยเหลือกลุ่มผู้ประท้วงในฮ่องกง"
+      ],
+      "How ${ MAIL_APP_NAME } is different": [
+        "ความแตกต่างของ ${ MAIL_APP_NAME }"
+      ],
+      "How did you find out about us?": [
+        "รู้จักเราได้อย่างไร?"
+      ],
+      "Imports": [
+        "การนำเข้า"
+      ],
+      "Lower your cost without losing features": [
+        "ลดค่าใช้จ่ายโดยไม่สูญเสียคุณสมบัติการใช้งาน"
+      ],
+      "Make your business stand out": [
+        "สร้างความโดดเด่นให้ธุรกิจ"
+      ],
+      "Monitoring": [
+        "การตรวจสอบ"
+      ],
+      "My account": [
+        "บัญชี"
+      ],
+      "My VPN": [
+        "VPN ของฉัน"
+      ],
+      "No events yet": [
+        "ยังไม่มีกิจกรรม"
+      ],
+      "OpenVpn": [
+        "OpenVpn"
+      ],
+      "OpenVPN username": [
+        "ชื่อผู้ใช้ OpenVPN"
+      ],
+      "Organization": [
+        "องค์กร"
+      ],
+      "Organization and people": [
+        "องค์กรและบุคลากร"
+      ],
+      "Our fight against censorship in Russia": [
+        "การต่อสู้กับการเซ็นเซอร์ในรัสเซีย"
+      ],
+      "Plans": [
+        "แผน"
+      ],
+      "Recover account": [
+        "กู้คืนบัญชี"
+      ],
+      "Remove email": [
+        "ลบอีเมลออก"
+      ],
+      "Remove recovery phone number": [
+        "ลบหมายเลขโทรศัพท์กู้คืน"
+      ],
+      "Request new code?": [
+        "ขอรหัสใหม่หรือไม่?"
+      ],
+      "Security and compliance": [
+        "ความปลอดภัยและการปฏิบัติตามข้อกำหนด"
+      ],
+      "Single-sign on (SSO)": [
+        "การลงชื่อเข้าใช้แบบครั้งเดียว (SSO)"
+      ],
+      "Stay secure and connected anywhere": [
+        "ปลอดภัยและเชื่อมต่อได้ทุกที่"
+      ],
+      "Support your compliance objectives": [
+        "สนับสนุนวัตถุประสงค์ด้านการปฏิบัติตามกฎระเบียบ"
+      ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "แก้ไขปัญหาด้วย ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Troubleshoot your issue": [
+        "แก้ไขปัญหา"
+      ],
+      "Try changing your password in your active web session": [
+        "ลองเปลี่ยนรหัสผ่านในเซสชันเว็บที่ใช้งานอยู่"
+      ],
+      "Two-factor authentication disabled": [
+        "ปิดใช้งานการยืนยันตัวตนผ่านสองขั้นตอนแล้ว"
+      ],
+      "Unblocking internet access in Iran": [
+        "การปลดบล็อกการเข้าถึงอินเทอร์เน็ตในอิหร่าน"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "อัปเกรดการป้องกันเครือข่ายด้วยเซิร์ฟเวอร์เฉพาะ"
+      ],
+      "Use backup recovery code": [
+        "ใช้รหัสกู้คืนสำรอง"
+      ],
+      "Use one account for all your addresses": [
+        "ใช้บัญชีเดียวสำหรับทุกที่อยู่"
+      ],
+      "Verify it’s you": [
+        "ยืนยันว่าเป็นคุณ"
+      ],
+      "VPN": [
+        "VPN"
+      ],
+      "What changes if you switch to the Free plan": [
+        "สิ่งที่จะเปลี่ยนไปเมื่อสลับไปใช้ Free plan"
+      ],
+      "Your current plan": [
+        "แผนปัจจุบัน"
       ]
     },
     "Title for payment methods table": {
@@ -15918,6 +17196,15 @@
       ],
       "Your DKIM signing is working.": [
         "กำลังใช้งานการเซ็น DKIM ของคุณ"
+      ],
+      "Early access to new apps and features.": [
+        "เข้าถึงแอปและคุณสมบัติใหม่ก่อนใคร"
+      ],
+      "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
+        "รวมถึงโดเมนอีเมลที่กำหนดเองและนามแฝง hide-my-email ไม่จำกัดใน ${ MAIL_APP_NAME }, สิทธิ์เข้าถึงเซิร์ฟเวอร์ในกว่า 120 ประเทศใน ${ VPN_SHORT_APP_NAME }, การยืนยันตัวตนแบบ 2 ปัจจัยในตัวและการแชร์อย่างปลอดภัยใน ${ PASS_SHORT_APP_NAME } และอื่นๆ"
+      ],
+      "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
+        "รวมอีเมลระดับมืออาชีพที่ @yourdomain.com, พื้นที่จัดเก็บข้อมูลบนคลาวด์พร้อมการแก้ไขเอกสารร่วมกัน, การตั้งกำหนดการและการประชุมทางวิดีโอ, การจัดการรหัสผ่าน, ${ VPN_SHORT_APP_NAME } ที่ปลอดภัย และอื่นๆ"
       ]
     },
     "tooltip": {
@@ -15944,6 +17231,21 @@
       ],
       "Waiting for user to accept the invitation": [
         "รอให้ผู้ใช้ยอมรับคำเชิญ"
+      ],
+      "Resuming role assignment": [
+        "กำลังดำเนินการมอบหมายบทบาทต่อ"
+      ],
+      "Role assignment paused": [
+        "หยุดการมอบหมายบทบาทชั่วคราว"
+      ],
+      "User is a group owner": [
+        "ผู้ใช้คือเจ้าของกลุ่ม"
+      ],
+      "via ${ groupNames }": [
+        "ผ่าน ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "กำลังรอการอนุมัติจากผู้ดูแลระบบ"
       ]
     },
     "Tor out of date": {
@@ -16019,6 +17321,12 @@
       ],
       "Refund": [
         "การคืนเงิน"
+      ],
+      "Prepayment": [
+        "การชำระเงินล่วงหน้า"
+      ],
+      "Test credit": [
+        "เครดิตทดสอบ"
       ]
     },
     "Unlimited offer": {
@@ -16098,6 +17406,18 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "เพื่อดำเนินการต่อ จำเป็นต้องขออนุญาตผู้ใช้เพื่อเข้าถึงข้อมูลหรือรีเซ็ตรหัสผ่านของพวกเขา"
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "ไม่สามารถเปิดใช้งานการเข้าถึงระดับผู้ดูแลระบบสำหรับผู้ใช้ ${ n } ราย"
+      ],
+      "Review their account now.": [
+        "ตรวจสอบบัญชีตอนนี้"
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "คีย์การเข้ารหัสลับของพวกเขาได้รับการอัปเดตแล้วในระหว่างที่มีการเปลี่ยนแปลง"
+      ],
+      "You can safely remove this user from your organization.": [
+        "สามารถลบผู้ใช้เหล่านี้ออกจากองค์กรได้อย่างปลอดภัย"
       ]
     },
     "Upsell": {
@@ -16139,6 +17459,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "คุณสามารถปกป้องผู้คนได้สูงสุด ${ FAMILY_MAX_USERS } คนด้วย ${ PLAN_NAMES[plan] } เริ่มต้นเพียง ${ priceString }/เดือน ต่อบัญชี"
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } สำหรับธุรกิจ"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "ครบทุกสิ่งที่ต้องการสำหรับการทำงานร่วมกันอย่างปลอดภัยภายในการสมัครสมาชิกเดียว เข้าถึง ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } และผู้ช่วย AI ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "upsell panel": {
@@ -16147,6 +17473,9 @@
       ],
       "Recommended": [
         "แนะนำ"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "ประหยัด ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {
@@ -16217,6 +17546,36 @@
       ],
       "Writing assistant": [
         "ผู้ช่วยการเขียน"
+      ],
+      "(via ${ groupName })": [
+        "(ผ่าน ${ groupName })"
+      ],
+      "(via group)": [
+        "(ผ่านกลุ่ม)"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "มอบหมายบทบาทที่ได้รับมอบสิทธิ์ให้กับผู้ใช้เพื่อให้สิทธิ์เฉพาะเจาะจงที่พวกเขาต้องการ โดยแยกอำนาจของผู้ดูแลระบบเต็มรูปแบบและรักษาสภาพแวดล้อมให้ปลอดภัย"
+      ],
+      "General": [
+        "ทั่วไป"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "จัดการผู้ใช้ กลุ่ม ความปลอดภัย การเรียกเก็บเงิน และการกำหนดค่าระบบทั้งหมด"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "จัดการผู้ใช้และกลุ่ม มอบหมายบทบาท และจัดสรรสิทธิ์การใช้งานให้กับสมาชิก"
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "จัดการการตั้งค่าความปลอดภัย และสามารถดูบันทึกกิจกรรมและรายละเอียดผู้ใช้ทั้งหมดได้"
+      ],
+      "Roles and permissions": [
+        "บทบาทและสิทธิ์"
+      ],
+      "Save": [
+        "บันทึก"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "จะสามารถมอบหมายบทบาทได้เมื่อผู้ใช้ตอบรับคำเชิญแล้ว"
       ]
     },
     "Users table: badge": {
@@ -16308,6 +17667,9 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "ด้วย ${ planTitlePlusMaybeBrand } คุณจะได้รับสิทธิ์เข้าถึงบริการความเป็นส่วนตัวทั้งหมดของ ${ BRAND_NAME } ฟรี"
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "เก็บไฟล์ รูปภาพ และเอกสารให้ปลอดภัยด้วยพื้นที่จัดเก็บข้อมูลบนคลาวด์ ${ maxDriveSpace }"
       ]
     },
     "VPN Gateways": {
@@ -16515,11 +17877,370 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "การทดลองใช้จะสิ้นสุดในวันที่ ${ textDate } จะไม่ถูกเรียกเก็บเงินหากยกเลิกก่อนวันที่ ${ textDate } ${ action }"
+      ],
+      "Are you sure you want to remove your notification email?": [
+        "แน่ใจหรือไม่ว่าต้องการลบอีเมลแจ้งเตือนออก?"
+      ],
+      "Are you sure you want to remove your recovery email?": [
+        "แน่ใจหรือไม่ว่าต้องการลบอีเมลการกู้คืนออก?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "แน่ใจหรือไม่ว่าต้องการลบหมายเลขโทรศัพท์กู้คืนออก?"
+      ],
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "การลบหมายเลขโทรศัพท์นี้ออกจะทำให้ไม่สามารถกู้คืนบัญชีได้อีกต่อไป"
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "เซิร์ฟเวอร์ในเกตเวย์นี้จะเข้าสู่ช่วงปิดใช้งาน 10 วัน เซิร์ฟเวอร์เหล่านี้สามารถเพิ่มไปยังเกตเวย์ใหม่ได้ แต่ไม่สามารถเปลี่ยนประเทศได้"
       ]
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "โปรดอย่าลบบันทึก TXT หลังจากยืนยันตัวตนเสร็จแล้ว เพราะจำเป็นต้องแสดงว่าคุณยังจะเป็นเจ้าของโดเมนนี้อยู่อีก"
+      ]
+    },
+    "Admin roles onboarding": {
+      "2 new admin roles": [
+        "บทบาทผู้ดูแลระบบใหม่ 2 บทบาท"
+      ],
+      "3 new admin roles": [
+        "3 บทบาทผู้ดูแลระบบใหม่"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "กำหนดค่านโยบายความปลอดภัย การเก็บรักษาข้อมูล และโครงสร้างพื้นฐาน VPN รวมถึงจัดการบันทึกการตรวจสอบ"
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "มอบหมายการจัดการโดยกำหนดบทบาทผู้ดูแลระบบเฉพาะ ให้สิทธิ์ผู้ดูแลระบบแต่ละคนเข้าถึงเฉพาะที่จำเป็นเท่านั้น ซึ่งเป็นไปตามหลักการสิทธิ์ขั้นต่ำที่จำเป็นในการปฏิบัติงาน เพื่อปกป้ององค์กรจากบัญชีที่ถูกละเมิดความปลอดภัยและความผิดพลาดที่เกิดขึ้นโดยไม่ได้ตั้งใจ"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "มอบหมายการจัดการสำหรับผู้ใช้หลายคนพร้อมกัน กำหนดบทบาทผู้ดูแลระบบเฉพาะให้กับกลุ่มเพื่อกำหนดสิทธิ์โดยอัตโนมัติ การดำเนินการนี้เป็นไปตามหลักการกำหนดสิทธิ์เท่าที่จำเป็นเพื่อประหยัดเวลาในการเริ่มต้นและสิ้นสุดการทำงานร่วมกับผู้ใช้ ขณะเดียวกันก็ช่วยลดข้อผิดพลาด"
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "มอบหมายการจัดการด้วยบทบาทผู้ดูแลระบบที่เหมาะสม"
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "จัดการผู้ใช้ กลุ่ม พื้นที่จัดเก็บ ความปลอดภัย การเรียกเก็บเงิน บันทึกการตรวจสอบ และการกำหนดค่าระบบทั้งหมด"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "จัดการผู้ใช้ กลุ่ม และพื้นที่จัดเก็บสำหรับสมาชิกทั้งหมด กำหนดบทบาท และจัดสรรใบอนุญาต"
+      ],
+      "New: Control admin access for individual users": [
+        "ใหม่: ควบคุมสิทธิ์การเข้าถึงของผู้ดูแลระบบสำหรับผู้ใช้แต่ละราย"
+      ],
+      "New: Control admin access for many users at once": [
+        "ใหม่: ควบคุมสิทธิ์การเข้าถึงของผู้ดูแลระบบสำหรับผู้ใช้หลายคนพร้อมกัน"
+      ],
+      "Organization admin:": [
+        "ผู้ดูแลระบบองค์กร:"
+      ],
+      "Security admin:": [
+        "ผู้ดูแลระบบความปลอดภัย:"
+      ],
+      "User admin:": [
+        "ผู้ดูแลระบบผู้ใช้:"
+      ]
+    },
+    "Badge": {
+      "Save ${ discountRate }%": [
+        "ประหยัด ${ discountRate }%"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "จะข้ามข้อมูลที่ซ้ำกันจากการนำเข้าครั้งก่อนหน้า สามารถเลิกทำหรือนำเข้าข้อความเก่าในการตั้งค่า ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ]
+    },
+    "Confirm cancellation": {
+      "Access is restored once usage is back within limits.": [
+        "สิทธิ์การเข้าถึงจะได้รับการกู้คืนเมื่อการใช้งานกลับมาอยู่ภายใต้ขีดจำกัด"
+      ],
+      "Back up photos from your devices": [
+        "สำรองข้อมูลรูปภาพจากอุปกรณ์"
+      ],
+      "Cancel subscription": [
+        "ยกเลิกการสมัครสมาชิก"
+      ],
+      "Confirm cancellation": [
+        "ยืนยันการยกเลิก"
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "หากใช้งานเกินขีดจำกัดของ Free plan จะไม่สามารถ:"
+      ],
+      "Keep current plan": [
+        "ใช้แผนปัจจุบันต่อไป"
+      ],
+      "Manage your calendar": [
+        "จัดการปฏิทิน"
+      ],
+      "Receive new emails": [
+        "รับอีเมลใหม่"
+      ],
+      "Send emails with attachments": [
+        "ส่งอีเมลพร้อมไฟล์แนบ"
+      ],
+      "Upload any new files": [
+        "อัปโหลดไฟล์ใหม่"
+      ],
+      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
+        "เมื่อการสมัครสมาชิกสิ้นสุดลงในวันที่ ${ endDate } บัญชีจะสลับไปใช้ Free plan หากการใช้งานเกินขีดจำกัดของ Free plan คุณสมบัติบางอย่างอาจไม่สามารถใช้งานได้ชั่วคราว"
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "โปรดทราบว่าหากลบกลุ่ม ${ displayGroupName } (พร้อมที่อยู่ ${ displayGroupAddressEmail }) จะไม่สามารถรับอีเมลโดยใช้ที่อยู่นี้ได้อีกต่อไป"
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } สำหรับเดือนแรก ต่ออายุที่ ${ regularPrice }/เดือน ยกเลิกได้ทุกเมื่อ"
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "รับ VPN Plus ในราคาเพียง ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "ได้รับการคุ้มครองตามกฎหมายความเป็นส่วนตัวของประเทศสวิตเซอร์แลนด์"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "ข้อเสนอพิเศษ: ประหยัด 90 % สำหรับแผนพรีเมียม"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "ดำเนินการต่อด้วยแบบฟรี"
+      ],
+      "Get the deal": [
+        "รับดีลนี้"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "ยกเลิกต่อ"
+      ],
+      "Keep current plan": [
+        "ใช้แผนปัจจุบันต่อไป"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "ปัญหาหลายอย่างสามารถแก้ไขได้อย่างรวดเร็วด้วยคู่มือช่วยเหลือ หากต้องการการสนับสนุนเพิ่มเติม ทีมงานพร้อมให้ความช่วยเหลือเสมอ"
+      ]
+    },
+    "Group detail label": {
+      "Group address:": [
+        "ที่อยู่กลุ่ม:"
+      ],
+      "Roles and permission:": [
+        "บทบาทและสิทธิ์การใช้งาน:"
+      ]
+    },
+    "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "เพิ่มบทบาทที่ได้รับมอบหมายให้กับกลุ่มเพื่ออนุญาตให้สมาชิกมีสิทธิ์เฉพาะเจาะจงที่จำเป็นเท่านั้น เพื่อแยกอำนาจของผู้ดูแลระบบทั้งหมดและรักษาความปลอดภัยให้กับสภาพแวดล้อม"
+      ],
+      "General": [
+        "ทั่วไป"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "จัดการผู้ใช้และกลุ่ม มอบหมายบทบาท และจัดสรรสิทธิ์การใช้งานให้กับสมาชิก"
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "จัดการการตั้งค่าความปลอดภัย และสามารถดูบันทึกกิจกรรมและรายละเอียดผู้ใช้ทั้งหมดได้"
+      ],
+      "Roles and permissions": [
+        "บทบาทและสิทธิ์การใช้งาน"
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "เพิ่ม ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "การประชุมผ่านวิดีโอที่เป็นความลับสำหรับการสนทนาที่สำคัญ เพิ่มเพียง ${ priceString } ในแต่ละเดือน"
+      ],
+      "Talk privately with ${ planName }": [
+        "พูดคุยเป็นการส่วนตัวด้วย ${ planName }"
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "ดูอัปเดตล่าสุดของผลิตภัณฑ์"
+      ],
+      "Continue cancelling": [
+        "ยกเลิกต่อ"
+      ],
+      "Explore the latest news": [
+        "สำรวจข่าวสารล่าสุด"
+      ],
+      "Keep current plan": [
+        "ใช้แผนปัจจุบันต่อไป"
+      ],
+      "Make your voice heard": [
+        "แสดงความคิดเห็นของคุณ"
+      ],
+      "Request a feature": [
+        "ขอคุณสมบัติใหม่"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "ขอคุณสมบัติใหม่หรือโหวตไอเดียจากผู้ใช้อื่นๆ ในฟอรัมข้อเสนอแนะ"
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "ดูว่าแอป ${ BRAND_NAME } มีการพัฒนาอย่างไรจากข้อเสนอแนะ"
+      ],
+      "Submit your ideas": [
+        "ส่งไอเดีย"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "ข้อเสนอแนะช่วยในการปรับปรุง ไม่ว่าจะพบบั๊ก ต้องการคุณสมบัติใหม่ หรือคิดว่าบางอย่างควรทำงานต่างออกไป ยินดีรับฟังเสมอ"
+      ]
+    },
+    "Paragraph": {
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } ได้รับเงินทุนอย่างเป็นอิสระและดำเนินการโดยไม่มีการโฆษณา ตัวอย่างด้านล่างแสดงถึงวิธีการนำความเป็นอิสระนี้ไปใช้ในทางปฏิบัติ"
+      ]
+    },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "หากลืมรหัสผ่าน อาจสูญเสียการเข้าถึงข้อมูลที่เข้ารหัส"
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "โปรดจำหรือจัดเก็บรหัสผ่านไว้อย่างปลอดภัย เนื่องจากรหัสผ่านเป็นกุญแจสำคัญในการถอดรหัสข้อมูล"
+      ],
+      "Turn off check-ins": [
+        "ปิดการยืนยันรหัสผ่าน"
+      ],
+      "Turn off password check-ins?": [
+        "ปิดการยืนยันรหัสผ่านใช่หรือไม่?"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "เจ้าของ"
+      ],
+      "Security Admin": [
+        "ผู้ดูแลระบบความปลอดภัย"
+      ],
+      "User Admin": [
+        "ผู้ดูแลระบบผู้ใช้"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "กำหนดค่านโยบายความปลอดภัย การเก็บรักษาข้อมูล และโครงสร้างพื้นฐาน VPN รวมถึงจัดการบันทึกการตรวจสอบ"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "จัดการผู้ใช้ กลุ่ม ความปลอดภัย การเรียกเก็บเงิน และการกำหนดค่าระบบทั้งหมด"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "จัดการผู้ใช้ กลุ่ม และพื้นที่จัดเก็บสำหรับสมาชิกทั้งหมด มอบหมายบทบาท และจัดสรรสิทธิ์การใช้งาน"
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "สมาชิกใหม่ ${ memberCount } คน"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "ซิงค์แล้ว ${ numberOfPendingGroups } กลุ่ม"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "ซิงค์ผู้ใช้แล้ว ${ numberOfPendingUsers } ราย"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } กลุ่ม"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "ซิงค์แล้ว ${ pendingGroupsCount } กลุ่ม"
+      ],
+      "${ pendingUsersCount } user": [
+        "ผู้ใช้ ${ pendingUsersCount } ราย"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "ซิงค์ผู้ใช้แล้ว ${ pendingUsersCount } ราย"
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "ซิงค์ ${ usersText } และ ${ groupsText } แล้ว"
+      ],
+      "Approve changes from your identity provider": [
+        "อนุมัติการเปลี่ยนแปลงจากผู้ให้บริการข้อมูลระบุตัวตน"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "ต้องได้รับการอนุมัติขั้นสุดท้ายเพื่ออนุญาตการเข้าถึงบริการทั้งหมดของ ${ BRAND_NAME }"
+      ],
+      "From your identity provider": [
+        "จากผู้ให้บริการข้อมูลระบุตัวตน"
+      ],
+      "New": [
+        "ใหม่"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "เมื่ออนุมัติแล้ว จะสามารถเข้าถึงบริการของ ${ BRAND_NAME } ทั้งหมดและแชร์ได้อย่างปลอดภัย"
+      ],
+      "Private user": [
+        "ผู้ใช้ส่วนตัว"
+      ],
+      "Review users and groups before finishing setup": [
+        "ตรวจสอบผู้ใช้และกลุ่มก่อนเสร็จสิ้นการตั้งค่า"
+      ],
+      "Updated": [
+        "อัปเดตแล้ว"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "ผู้ใช้ที่ตั้งค่าเป็นส่วนตัวจำเป็นต้องยอมรับคำเชิญเพื่อเสร็จสิ้นการตั้งค่า จะส่งคำเชิญให้เมื่อได้รับอนุมัติ"
+      ]
+    },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "มอบหมายบทบาทที่ได้รับมอบอำนาจ"
+      ],
+      "Assign roles": [
+        "มอบหมายบทบาท"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "คลิกชื่อผู้ใช้เพื่อจัดการบทบาทและสิทธิ์การใช้งาน"
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "คลิกแก้ไขเพื่อมอบหมายบทบาทให้กับกลุ่มนี้และจัดการสิทธิ์การเข้าถึงของสมาชิกโดยอัตโนมัติ"
+      ],
+      "New: Roles and permissions tab": [
+        "ใหม่: แท็บบทบาทและสิทธิ์การใช้งาน"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "เปิดแท็บนี้เพื่ออนุญาตสิทธิ์การใช้งานเฉพาะโดยไม่ต้องให้สิทธิ์เข้าถึงของผู้ดูแลระบบทั้งหมด"
+      ],
+      "User roles available": [
+        "มีบทบาทผู้ใช้พร้อมใช้งาน"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "สามารถมอบหมายบทบาทให้แก่ผู้ใช้แต่ละรายจากแท็บนี้ได้แล้ว"
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... กำลังรอ"
+      ],
+      "completed": [
+        "เสร็จสมบูรณ์"
+      ],
+      "finalizing": [
+        "กำลังดำเนินการขั้นสุดท้าย"
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "สำหรับการใช้งานส่วนบุคคล"
+      ],
+      "For professional use": [
+        "สำหรับการใช้งานระดับมืออาชีพ"
+      ]
+    },
+    "Temporary need": {
+      "Continue cancelling": [
+        "ยกเลิกต่อ"
+      ],
+      "Keep current plan": [
+        "ใช้แผนปัจจุบันต่อไป"
+      ]
+    },
+    "Themes": {
+      "Themes": [
+        "ธีม"
       ]
     }
   }
