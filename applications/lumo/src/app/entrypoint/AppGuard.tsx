@@ -6,9 +6,7 @@ import TextLoader from '@proton/components/components/loader/TextLoader';
 
 import { LUMO_APP_NAME } from '../constants';
 
-import { LUMO_ROUTES, isPublicPathname } from './lumoRoutes';
-
-export { LUMO_ROUTES } from './lumoRoutes';
+import { isPublicPathname } from './lumoRoutes';
 
 const determineRouteType = (pathname: string): 'private' | 'public' => {
     return isPublicPathname(pathname) ? 'public' : 'private';
