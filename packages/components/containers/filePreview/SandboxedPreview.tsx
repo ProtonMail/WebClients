@@ -55,16 +55,12 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
         };
         window.addEventListener('message', onSandboxMessage);
 
-        const onSandboxLoad = () => {
-            // Only '*' seems to work here
-            sandbox.contentWindow?.postMessage({ type: 'data', mimeType, data: mergeUint8Arrays(contents) }, '*');
-        };
-        sandbox.addEventListener('load', onSandboxLoad);
-
         const origin = window.location.origin;
 
-        const setSandboxUrl = async () => {
-            const html = `<!doctype html><html>
+        // Create the URL first so we can compare against it before sending the data.
+        // A malicious document could link to an external page that also fires a load
+        // event. Without this check we could leak the decrypted content to it.
+        const html = `<!doctype html><html>
             <head>
                <meta http-equiv="Content-Security-Policy" content="${csp}">
 
@@ -73,15 +69,28 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
             </head>
             <body></body>
             </html>`;
-            const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
 
-            sandbox.setAttribute('src', url);
+        const onSandboxLoad = () => {
+            // Only send the data if the iframe still points to the URL we created.
+            if (sandbox.src !== url) {
+                return;
+            }
+
+            // Only '*' seems to work here
+            sandbox.contentWindow?.postMessage({ type: 'data', mimeType, data: mergeUint8Arrays(contents) }, '*');
+
+            // Send the data only once.
+            sandbox.removeEventListener('load', onSandboxLoad);
         };
+        sandbox.addEventListener('load', onSandboxLoad);
 
-        setSandboxUrl().catch(handleError);
+        sandbox.setAttribute('src', url);
 
         return () => {
             window.removeEventListener('message', onSandboxMessage);
+            sandbox.removeEventListener('load', onSandboxLoad);
+            URL.revokeObjectURL(url);
         };
     }, [contents]);
 
