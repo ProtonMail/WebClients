@@ -771,6 +771,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ],
+      "Don't show this again": [
+        "다시 보지 않기"
+      ],
+      "Regex invalid": [
+        "유효하지 않은 정규식"
+      ],
+      "Regex unsafe": [
+        "정규식 안전하지 않음"
       ]
     },
     "Activity": {
@@ -1363,6 +1372,42 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "타 ${ PASS_APP_NAME } 클라이언트로 인해 사용자의 PIN 코드가 삭제되었습니다."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "데스크톱 잠금 해제 확인이 이미 진행 중입니다."
+      ],
+      "Biometric authentication failed.": [
+        "생체 인증에 실패했습니다."
+      ],
+      "Biometric lock credentials do not match.": [
+        "생체 인식 잠금 자격 증명이 일치하지 않습니다."
+      ],
+      "Biometric lock credentials not found.": [
+        "생체 인식 잠금 자격 증명을 찾을 수 없습니다."
+      ],
+      "Biometric lock is not configured.": [
+        "생체 인식 잠금이 설정되지 않았습니다."
+      ],
+      "Biometric lock setup failed.": [
+        "생체 인식 잠금 설정에 실패했습니다."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "${ PASS_APP_NAME } 데스크톱 앱과의 암호화된 통신에 실패했습니다."
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSH 에이전트 시작 실패: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSH 에이전트 중지 실패: ${ errorMessage }"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 제시간에 응답하지 않았습니다."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 다른 계정으로 로그인되어 있습니다."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } 데스크톱 앱에 로그인해야 합니다."
       ]
     },
     "Error message": {
@@ -2704,6 +2749,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "조직에서 ${ PASS_APP_NAME }에 대한 액세스 권한을 보호해야 합니다"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME }이 보관함에 저장된 SSH 키를 사용합니다."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "${ PASS_SHORT_APP_NAME }에서 SSH 키를 찾을 수 없습니다. 에이전트와 사용할 SSH 키 항목을 생성하세요."
+      ],
+      "No vaults available.": [
+        "사용 가능한 보관함이 없습니다."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "필드(제목이 가장 먼저, 그 다음 사용자 이름 또는 이메일, 웹사이트, 메모 순) 및 일치 정밀도(일치함, 시작 단어 일치, 포함함)순으로 정렬됩니다."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "생체 인식 잠금 해제를 설정하려면 ${ PASS_APP_NAME }에 새로운 브라우저 권한이 필요합니다. 이를 수락하면 확장이 다시 로드됩니다. 그 후에 이 페이지를 다시 열어주세요."
       ]
     },
     "Keyboard key": {
@@ -3899,6 +3959,39 @@
       ],
       "ZIP or Postal code": [
         "우편번호"
+      ],
+      "Basic": [
+        "기본"
+      ],
+      "Check": [
+        "확인"
+      ],
+      "Exact host matching": [
+        "정확한 호스트 일치"
+      ],
+      "Exact URL matching": [
+        "정확한 URL 일치"
+      ],
+      "Never fill on this exact URL": [
+        "이 정확한 URL에서 자동완성 사용 안 함"
+      ],
+      "Parent domain and subdomains (default)": [
+        "상위 도메인 및 하위 도메인(기본값)"
+      ],
+      "Regular expression": [
+        "정규식"
+      ],
+      "Relevant": [
+        "관련성 높은 순"
+      ],
+      "Starts with": [
+        "다음으로 시작"
+      ],
+      "URL wildcard pattern": [
+        "URL 와일드카드 패턴"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "${ PASS_APP_NAME }을 SSH 에이전트로 사용"
       ]
     },
     "Link": {
@@ -3931,6 +4024,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "이 금고에서 ${ semiboldText }을 선택했습니다."
+      ],
+      "'Starts with' matching rule": [
+        "'다음으로 시작' 일치 규칙"
+      ],
+      "Exact (sub) domain matching rule": [
+        "정확한 (하위) 도메인 일치 규칙"
+      ],
+      "Exact URL matching rule": [
+        "정확한 URL 일치 규칙"
+      ],
+      "Never fill with this exact URL": [
+        "이 정확한 URL에서는 자동완성 안 함"
+      ],
+      "Regular expression rule": [
+        "정규식 규칙"
+      ],
+      "Wildcard pattern matching rule": [
+        "와일드카드 패턴 일치 규칙"
       ]
     },
     "new_plans: feature": {
@@ -4083,6 +4194,12 @@
       ],
       "You can attach files to items for a better organization": [
         "더 나은 조직을 위해 항목에 파일 첨부가 가능합니다."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "현재 플랜에서 이 기능이 지원되지 않습니다. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "현재 플랜에서 이 기능이 지원되지 않습니다. 접근 권한을 얻으려면 관리자에게 문의하세요."
       ]
     },
     "PassOnboardingOffer": {
@@ -4372,6 +4489,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "인증 이메일이 전송되었습니다. 메일함 인증을 위해 받은 편지함을 확인해 주세요."
+      ],
+      "SSH agent successfully started": [
+        "SSH 에이전트가 성공적으로 시작되었습니다"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH 에이전트가 성공적으로 중지되었습니다"
       ]
     },
     "Theme": {
@@ -4889,6 +5012,24 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "로그인이 추천되는 위치를 변경하려면 자동완성 동작을 조정하세요."
+      ],
+      "Browser permission required": [
+        "브라우저 권한 필요"
+      ],
+      "Learn more": [
+        "더 알아보기"
+      ],
+      "SSH Agent": [
+        "SSH 에이전트"
+      ],
+      "Test a URL against this rule": [
+        "이 규칙에 대해 URL 테스트"
+      ],
+      "URL matching": [
+        "URL 일치"
       ]
     },
     "Title_cloned_item": {
@@ -5228,6 +5369,37 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }은 강력한 제어 기능을 제공하지만, 단 하나의 오류로도 사기 또는 피싱 웹사이트에서 자동완성이 일치하여 데이터가 입력될 수 있습니다."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH 에이전트를 사용하려면 SSH 키를 사용해야 하지만, 현재 플랜에서 지원되지 않는 기능입니다."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "\"${ neverModeDescriptionStrong }\"으로 인해 이 항목은 자동완성 추천을 받을 수 없습니다. 이 항목이 자동완성되기를 원하면 다른 URL을 추가하세요."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "현재 규칙이 URL과 일치하는지 확인하려면 URL을 입력하십시오"
+      ],
+      "The rule is matching this URL": [
+        "규칙이 이 URL과 일치합니다"
+      ],
+      "The rule is NOT matching this URL": [
+        "규칙이 이 URL과 일치하지 않습니다"
+      ],
+      "This URL will be blocked from autofill": [
+        "이 URL은 자동완성이 차단됩니다"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "이 URL은 자동완성이 차단되지 않습니다"
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "${ planName } 사용하기"
       ]
     }
   }
