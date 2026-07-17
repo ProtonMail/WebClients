@@ -77,7 +77,7 @@
         "Adicionar um grupo"
       ],
       "Add note": [
-        "Adicionar uma nota"
+        "Adicionar nota"
       ],
       "Add people or groups to share": [
         "Adicionar pessoa ou grupo para compartilhar"
@@ -411,7 +411,7 @@
         "Baixar para Windows"
       ],
       "Download info": [
-        "Fazer download de informações"
+        "Baixar informações"
       ],
       "Download logs": [
         "Registros de downloads"
@@ -936,10 +936,10 @@
         "Salvar fotos e remover"
       ],
       "Scan & Download": [
-        "Escanear e Baixar"
+        "Escanear e baixar"
       ],
       "Scan & Download (${ nbSelected })": [
-        "Escanear e Baixar (${ nbSelected })"
+        "Escanear e baixar (${ nbSelected })"
       ],
       "Scan and Download": [
         "Escanear e Baixar"
@@ -2488,7 +2488,7 @@
         "Irlanda"
       ],
       "Islamic Republic of Iran": [
-        "Irã"
+        "República Islâmica do Iran"
       ],
       "Isle of Man": [
         "Ilha de Man"
@@ -6264,7 +6264,7 @@
         "Selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please try again in a few moments": [
-        "Por favor, tente novamente em alguns instantes"
+        "Tente novamente em alguns instantes"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
@@ -8625,7 +8625,7 @@
         "Uma reunião ativa por vez"
       ],
       "Screen-sharing": [
-        "Compartilhamento de tela"
+        "Compartilhar tela"
       ],
       "Unlimited meetings per day": [
         "Reuniões ilimitadas por dia"
@@ -10217,7 +10217,7 @@
         "A planilha não foi criada."
       ],
       "This secure link expired, please change expire date in sharing settings": [
-        "Este link seguro expirou, por favor, altere a data de expiração nas configurações de compartilhamento"
+        "Este link seguro expirou, altere a data de expiração nas configurações de compartilhamento"
       ],
       "Trash failed to be emptied": [
         "Erro ao esvaziar a lixeira"
@@ -10637,7 +10637,7 @@
         "Aproveite os recursos de segurança empresarial gratuitos até o ${ trialEndsOnFormatted }."
       ],
       "help center": [
-        "central de ajuda"
+        "centro de ajuda"
       ],
       "If you need help,": [
         "Se precisar de ajuda,"
@@ -13059,7 +13059,7 @@
         "Selecione um provedor"
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
-        "Confirmar seu endereço de ${ MAIL_APP_NAME }"
+        "Confirme seu endereço de ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Limpando dados"
@@ -14044,6 +14044,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Não foi possível confirmar que o nó foi criado por ${ claimedKeyAuthor }. O motivo é: ${ node.keyAuthor.error.error }"
+      ],
+      "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importado por ${ PRODUCT_NAMES.EASY_SWITCH }"
       ]
     },
     "Today icon tooltip in mini calendar": {
