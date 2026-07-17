@@ -8,6 +8,10 @@ import { c } from 'ttag';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectInitialCameraState,
+    selectIsMediaInitializing,
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectDisplayName } from '@proton/meet/store/slices/meetingInfo';
 import { selectParticipantName } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
@@ -23,6 +27,7 @@ import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSub
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
+import { shouldShowParticipantVideo } from '../../utils/shouldShowParticipantVideo';
 import { BackgroundBlurInitializingOverlay } from '../BackgroundBlurInitializingOverlay/BackgroundBlurInitializingOverlay';
 import { NetworkQualityIndicator } from '../NetworkQualityIndicator/NetworkQualityIndicator';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
@@ -46,8 +51,15 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
 
     const { localParticipant } = useLocalParticipant();
 
+    const isLocalParticipant = participant.identity === localParticipant.identity;
+
     const { facingMode } = useMediaManagementContext();
     const { disableVideos } = useMeetSelector(selectMeetSettings);
+
+    // Suppress the local self-view only during that init window, afterwards it follows the real camera state
+    const isMediaInitializing = useMeetSelector(selectIsMediaInitializing);
+    const initialCameraState = useMeetSelector(selectInitialCameraState);
+    const isLocalVideoSuppressed = isMediaInitializing && !initialCameraState;
 
     const isSpeaking = useDebouncedSpeakingStatus(participant);
 
@@ -69,15 +81,15 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
         participantColors: { borderColor, backgroundColor, profileColor },
     } = useParticipantDisplayColors(participant.identity);
 
-    const shouldShowVideo =
-        cameraIsOn &&
-        ((!disableVideos && !participantsWithDisabledVideos.includes(participant.identity)) ||
-            participant.identity === localParticipant.identity);
+    const shouldShowVideo = shouldShowParticipantVideo({
+        cameraIsOn: !!cameraIsOn,
+        isLocalParticipant,
+        isLocalVideoSuppressed,
+        isVideoDisabled: disableVideos || participantsWithDisabledVideos.includes(participant.identity),
+    });
 
     const speakingIndicatorClassName =
         (shouldShowVideo ? 'tile-border-1' : borderColor) + (viewSize === 'large' ? '' : '-small');
-
-    const isLocalParticipant = participant.identity === localParticipant.identity;
 
     const participantName =
         useMeetSelector((state) => selectParticipantName(state, participant.identity)) ??

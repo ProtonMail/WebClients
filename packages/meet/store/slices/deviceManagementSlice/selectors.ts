@@ -56,6 +56,7 @@ export const selectActiveAudioOutputId = (state: MeetState) => state.deviceManag
 export const selectInitialCameraState = (state: MeetState) => state.deviceManagement.initialCameraState;
 export const selectInitialAudioState = (state: MeetState) => state.deviceManagement.initialAudioState;
 export const selectUserCameraIntent = (state: MeetState) => state.deviceManagement.userCameraIntent;
+export const selectIsMediaInitializing = (state: MeetState) => state.deviceManagement.isMediaInitializing;
 
 export const selectPermissionsModals = (state: MeetState) => state.deviceManagement.uiModals;
 

@@ -11,8 +11,10 @@ import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/sto
 import {
     PermissionBlockedError,
     requestPermission,
+    setActiveDevice,
     setInitialAudioState,
     setInitialCameraState,
+    setMediaInitializing,
     setPreferredDeviceAndPersist,
     showPermissionsModal,
 } from '@proton/meet/store/slices/deviceManagementSlice';
@@ -45,7 +47,7 @@ import {
 } from '@proton/meet/store/slices/uiStateSlice';
 import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { AnnouncementPriority } from '../../components/MeetingAnnouncer/types';
@@ -54,6 +56,7 @@ import { useMediaToggleShortcuts } from '../../hooks/useMediaToggleShortcuts';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import type { InitializeDevices, SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
+import { createDummyVideoTrack } from '../../utils/dummyVideoTrack';
 import { MediaManagementContext } from './MediaManagementContext';
 import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
@@ -345,10 +348,36 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     const initializeCamera = async (camState: boolean) => {
         try {
-            // Always publish the video track (and mute if camera is off at join) so E2EE transforms are set up
-            // as part of the initial SDP offer rather than a post-connect renegotiation.
-            // With H264 and simulcast, renegotiation has a race where the hardware encoder produces the first keyframes
-            // before the E2EE InsertableStreams transform is attached to the simulcast senders, sending unencrypted frames.
+            // When joining with the camera off, publish a muted placeholder track instead of acquiring the real
+            // camera just to mute it. This avoids flashing the camera light and a brief self-view during join, and
+            // keeps the device idle until the user actually turns it on. Firefox is excluded because it doesn't
+            // handle the dummy track reliably, so there we fall through to enabling the real camera and muting it.
+            if (!camState && !isFirefox()) {
+                const existingPublication = [...room.localParticipant.videoTrackPublications.values()].find(
+                    (pub) => pub.source === Track.Source.Camera
+                );
+                if (existingPublication?.track) {
+                    await existingPublication.track.mute();
+                    return;
+                }
+
+                const dummyTrack = createDummyVideoTrack(room);
+                if (!dummyTrack) {
+                    throw new Error('Failed to create placeholder video track');
+                }
+
+                await room.localParticipant.publishTrack(dummyTrack, { source: Track.Source.Camera });
+                await dummyTrack.mute();
+
+                // The placeholder has no real device. Record the intended camera as active so the device list shows a
+                // selection and enabling the camera targets the right device.
+                const intendedCameraId = selectedCameraId || cameras[0]?.deviceId;
+                if (intendedCameraId) {
+                    dispatch(setActiveDevice({ kind: 'videoinput', deviceId: intendedCameraId }));
+                }
+                return;
+            }
+
             const result = await toggleVideo({
                 videoDeviceId: selectedCameraId,
                 isEnabled: true,
@@ -360,9 +389,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 throw new Error('Failed to initialize camera');
             }
 
-            // If the user joined with camera off, mute the track immediately.
-            // The track stays published in the SFU so E2EE transforms remain attached,
-            // avoiding the renegotiation race when the user enables camera later.
             if (!camState) {
                 const videoPublication = [...room.localParticipant.videoTrackPublications.values()].find(
                     (pub) => pub.source === Track.Source.Camera
@@ -436,6 +462,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         const cameraState = desiredCameraState ?? initialCameraState;
         const microphoneState = desiredMicrophoneState ?? initialAudioState;
 
+        // Suppress the local self-view while devices initialize
+        dispatch(setMediaInitializing(true));
+
         const initializeDevicesInternal = async () => {
             await cleanupCameraPreview();
 
@@ -485,21 +514,25 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             }
         };
 
-        if (timeoutMs !== undefined) {
-            try {
-                const initializeDevicesPromise = initializeDevicesInternal();
-                const timeoutPromise = new Promise<void>((resolve) => {
-                    setTimeout(() => {
-                        resolve();
-                    }, timeoutMs);
-                });
+        try {
+            if (timeoutMs !== undefined) {
+                try {
+                    const initializeDevicesPromise = initializeDevicesInternal();
+                    const timeoutPromise = new Promise<void>((resolve) => {
+                        setTimeout(() => {
+                            resolve();
+                        }, timeoutMs);
+                    });
 
-                await Promise.race([initializeDevicesPromise, timeoutPromise]);
-            } catch (error) {
-                reportMeetError('Failed to initialize devices, continuing anyway', error);
+                    await Promise.race([initializeDevicesPromise, timeoutPromise]);
+                } catch (error) {
+                    reportMeetError('Failed to initialize devices, continuing anyway', error);
+                }
+            } else {
+                await initializeDevicesInternal();
             }
-        } else {
-            await initializeDevicesInternal();
+        } finally {
+            dispatch(setMediaInitializing(false));
         }
     };
 
