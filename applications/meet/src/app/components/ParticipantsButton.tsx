@@ -1,32 +1,28 @@
 import { c, msgid } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectInstantMeeting, selectMaxParticipants } from '@proton/meet/store/slices/meetingInfo';
-import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/participants/participantsSlice';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
-import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
+import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
 
-export const ParticipantsButton = ({
-    hasAdminPermission,
-    isPaid,
-}: {
-    hasAdminPermission: boolean;
-    isPaid: boolean;
-}) => {
+export const ParticipantsButton = () => {
     const dispatch = useMeetDispatch();
     const isGuest = useMeetSelector(selectIsGuest);
     const instantMeeting = useMeetSelector(selectInstantMeeting);
     const maxParticipants = useMeetSelector(selectMaxParticipants);
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
+    const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
+    const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
     const getParticipantCountIndicatorVariant = () => {
-        if (!hasAdminPermission && !(isGuest && instantMeeting)) {
+        if (!isLocalParticipantAdminOrHost && !(isGuest && instantMeeting)) {
             return 'default';
         }
 
@@ -50,7 +46,7 @@ export const ParticipantsButton = ({
             );
         }
 
-        if (isPaid) {
+        if (isPaidUser) {
             return totalParticipantCount >= maxParticipants
                 ? c('Info').t`Meeting full (${maxParticipants} participants)`
                 : c('Info').t`${totalParticipantCount} of up to ${maxParticipants} participants`;
@@ -75,9 +71,4 @@ export const ParticipantsButton = ({
             tooltipTitle={getParticipantButtonTooltipTitle()}
         />
     );
-};
-
-export const WrappedParticipantsButton = ({ hasAdminPermission }: { hasAdminPermission: boolean }) => {
-    const [user] = useUser();
-    return <ParticipantsButton hasAdminPermission={hasAdminPermission} isPaid={user?.hasPaidMeet} />;
 };

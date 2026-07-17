@@ -5,9 +5,12 @@ import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
-import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
 import { chatAndReactionsReducer } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { sortedParticipantsReducer } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import {
+    initialState as initialParticipantsState,
+    participantsReducer,
+} from '@proton/meet/store/slices/participants/participantsSlice';
+import { sortedParticipantsReducer } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
@@ -65,12 +68,12 @@ const createMockStore = () => {
     return configureStore({
         reducer: {
             ...sortedParticipantsReducer,
-            ...meetingInfoReducer,
+            ...participantsReducer,
             ...chatAndReactionsReducer,
         },
         preloadedState: {
-            meetingInfo: {
-                ...initialMeetingInfoState,
+            participants: {
+                ...initialParticipantsState,
                 participantsMap: {
                     '123': {
                         ParticipantUUID: '123',

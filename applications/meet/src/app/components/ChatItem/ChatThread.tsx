@@ -11,7 +11,7 @@ import {
     setChatThreadExpanded,
     setChatThreadReplyDraft,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/participants/participantsSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import clsx from '@proton/utils/clsx';
 

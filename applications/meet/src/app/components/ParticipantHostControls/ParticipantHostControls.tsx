@@ -14,7 +14,12 @@ import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantName, selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
+import {
+    selectIsLocalParticipantAdmin,
+    selectIsLocalParticipantHost,
+    selectParticipantIsHostOrAdmin,
+    selectParticipantName,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import clsx from '@proton/utils/clsx';
 
@@ -26,35 +31,30 @@ interface ParticipantHostControlsProps {
     participant: Participant;
     isAudioEnabled: boolean;
     isVideoEnabled: boolean;
-    isLocalParticipantAdmin: boolean;
-    isLocalParticipantHost: boolean;
 }
 
 export const ParticipantHostControls = ({
     participant,
     isAudioEnabled,
     isVideoEnabled,
-    isLocalParticipantAdmin,
-    isLocalParticipantHost,
 }: ParticipantHostControlsProps) => {
     const [loading, withLoading] = useLoading();
 
     const { localParticipant } = useLocalParticipant();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
+    const isLocalParticipantHost = useMeetSelector(selectIsLocalParticipantHost);
+    const isLocalParticipantAdmin = useMeetSelector(selectIsLocalParticipantAdmin);
     const participantName =
         useMeetSelector((state) => selectParticipantName(state, participant.identity)) ?? c('Info').t`Participant`;
-    const participantsMap = useMeetSelector(selectParticipantsMap);
+    const isParticipantHostOrAdmin = useMeetSelector((state) =>
+        selectParticipantIsHostOrAdmin(state, participant.identity)
+    );
 
     const meetCoreClient = useMeetCoreClient();
 
-    const participantData = participantsMap[participant.identity];
-
-    const participantHasAdminPermission =
-        participantData !== undefined ? !!participantData.IsAdmin || !!participantData.IsHost : false;
-
     const hasAccessToParticipantAdminControls =
-        (isLocalParticipantHost || (isLocalParticipantAdmin && !participantHasAdminPermission)) &&
+        (isLocalParticipantHost || (isLocalParticipantAdmin && !isParticipantHostOrAdmin)) &&
         localParticipant?.identity !== participant.identity;
 
     return (

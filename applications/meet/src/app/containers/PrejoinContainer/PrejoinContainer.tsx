@@ -14,7 +14,7 @@ import {
     selectSelectedMicrophoneId,
     selectSpeakerState,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
-import { setLocalParticipantColorIndex } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import { setLocalParticipantColorIndex } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { APPS } from '@proton/shared/lib/constants';

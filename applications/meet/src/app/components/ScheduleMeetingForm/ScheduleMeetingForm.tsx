@@ -28,7 +28,7 @@ import {
 } from '@proton/meet';
 import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { addMeeting, removeMeeting, updateMeeting } from '@proton/meet/store/slices';
+import { addMeeting, removeMeeting, updateMeeting } from '@proton/meet/store/slices/meetings';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, CALENDAR_APP_NAME, MINUTE } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
