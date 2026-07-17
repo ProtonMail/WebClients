@@ -2087,6 +2087,33 @@
       ],
       "You": [
         "Du"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu klären"
+      ],
+      "Find out what can be migrated.": [
+        "Finde heraus, was migriert werden kann."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer kann aufgrund von Plattform-Inkompatibilitäten nicht migriert werden."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere seine Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Benutzer zu migrieren, muss er deine Einladung annehmen, ${ BRAND_NAME } beizutreten."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, dearchiviere ihn in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, hebe seine Sperrung in deiner Google Workspace Admin-Konsole auf."
       ]
     },
     "Browser": {
@@ -4859,6 +4886,15 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "No drive found to import": [
+        "Es wurde kein Drive zum Importieren gefunden"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
       ]
     },
     "error": {
@@ -9113,6 +9149,12 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Manage groups in your identity provider": [
+        "Gruppen bei deinem Identitätsanbieter verwalten"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du bist derzeit al ${ username } für ${ organizationName } angemeldet."
       ]
     },
     "info": {
@@ -10236,6 +10278,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Import your emails": [
+        "Deine E-Mails importieren"
       ]
     },
     "label": {
@@ -15859,6 +15904,9 @@
       ],
       "View VPN session details for your organization.": [
         "Zeig die Details der VPN-Sitzung für deine Organisation an."
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Spare ein Jahr lang 50 % und behalte den vollen Zugriff"
       ]
     },
     "Success": {

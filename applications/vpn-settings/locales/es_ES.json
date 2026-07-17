@@ -1267,6 +1267,15 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Claim offer": [
+        "Reclamar oferta"
+      ],
+      "Learn about recovery options": [
+        "Más información sobre las opciones de recuperación"
+      ],
+      "Watch the interview": [
+        "Ver la entrevista"
       ]
     },
     "action": {
@@ -2079,6 +2088,27 @@
       ],
       "You": [
         "Tú"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuario no se puede migrar debido a incompatibilidades de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, activa su cuenta en tu consola de administración de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, activa su cuenta en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, activa su dirección en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar a este usuario, debe aceptar su invitación para unirse a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, desarchívalo en tu consola de administración de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, reactívalo en tu consola de administración de Google Workspace."
       ]
     },
     "Browser": {
@@ -2435,6 +2465,30 @@
       ],
       "Upload any new files": [
         "Cargar cualquier archivo nuevo"
+      ],
+      "Back up photos from your devices": [
+        "Copia de seguridad de fotos de tus dispositivos"
+      ],
+      "Confirm cancellation": [
+        "Confirmar cancelación"
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Si superas los límites del Free plan, no podrás:"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
+      "Manage your calendar": [
+        "Administra tu calendario"
+      ],
+      "Receive new emails": [
+        "Recibir nuevos correos electrónicos"
+      ],
+      "Send emails with attachments": [
+        "Enviar correos electrónicos con archivos adjuntos"
+      ],
+      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
+        "Cuando tu suscripción termine el ${ endDate }, tu cuenta cambiará al Free plan. Si tu uso supera los límites del Free plan, es posible que algunas funciones no estén disponibles temporalmente."
       ]
     },
     "Confirm modal title": {
@@ -3722,6 +3776,30 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tu plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail.",
         "Tu plan admite un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail."
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } mantiene seguros los datos de tu negocio y te permite enviar correos electrónicos cifrados a cualquiera."
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Genera confianza y reconocimiento de marca con direcciones de correo electrónico profesionales en tu propio dominio."
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Cómo nuestro equipo de atención al cliente llevó nuestra aplicación VPN directamente a las manos de la gente."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Cómo contraatacamos cuando ${ BRAND_NAME } fue bloqueado en una campaña agresiva."
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Ten en cuenta que los correos electrónicos enviados a esta dirección, incluso desde otras direcciones de ${ BRAND_NAME }, ya no estarán cifrados de extremo a extremo."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Una vez desconectada y desactivada, ya no podrás enviar ni recibir correos electrónicos como ${ address.Email } en ${ BRAND_NAME }. Los correos electrónicos enviados a esta dirección seguirán llegando a Gmail, pero no a ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Una vez desconectada, ya no podrás enviar ni recibir correos electrónicos como ${ address.Email } en ${ BRAND_NAME }. Los correos electrónicos enviados a esta dirección seguirán llegando a Gmail, pero no a ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Puedes volver a conectar esta dirección en cualquier momento."
       ]
     },
     "description": {
@@ -4784,6 +4862,29 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "Invalid private key file": [
+        "Archivo de clave privada no válido"
+      ],
+      "No drive found to import": [
+        "No se ha encontrado ningún Drive para importar"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Solo se pueden cambiar las mayúsculas y la puntuación (puntos, guiones y guiones bajos) para esta dirección"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "No se ha podido completar la asignación de roles para ${ errors.length } miembro",
+        "No se ha podido completar la asignación de roles para ${ errors.length } miembros"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "No se ha podido completar la asignación de roles para ${ failedGroupCount } grupo",
+        "No se ha podido completar la asignación de roles para ${ failedGroupCount } grupos"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Error inesperado, no podemos importar los archivos"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No hemos podido enviar un código de verificación con este método."
       ]
     },
     "error": {
@@ -5369,6 +5470,39 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "Aplicación de escritorio de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "Protección de cuenta con ${ PROTON_SENTINEL_NAME }"
+      ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "3 folders, labels and filters": [
+        "3 carpetas, etiquetas y filtros"
+      ],
+      "500 MB Mail storage": [
+        "500 MB de almacenamiento de Mail"
+      ],
+      "Premium features in Mail, Calendar, Drive, Pass and VPN": [
+        "Funciones prémium incluidas en Mail, Calendar, Drive, Pass y VPN"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ],
+      "Schedule and snooze emails": [
+        "Programa y pausa correos electrónicos"
+      ],
+      "Short domain @pm.me": [
+        "Dominio corto @pm.me"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
       ]
     },
     "Features": {
@@ -5416,6 +5550,9 @@
       ],
       "Stream from Netflix, HBO, and more": [
         "Ver en streaming desde Netflix, HBO y más"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Uso compartido seguro de cajas fuertes, elementos y enlaces"
       ]
     },
     "Features: Tooltip": {
@@ -8964,6 +9101,50 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "${ emails.length } member added to the group": [
+        "Se ha añadido ${ emails.length } miembro al grupo",
+        "Se han añadido ${ emails.length } miembros al grupo"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nuevo miembro añadido a través de tu proveedor de identidad y pendiente de revisión.",
+        "${ pendingAdminApprovalCount } nuevos miembros añadidos a través de tu proveedor de identidad y pendientes de revisión."
+      ],
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Facturado a ${ monthlyDiscountedPriceElement } durante los primeros 6 meses, se renueva a ${ monthlyRenewalPriceElement }."
+      ],
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Se factura a ${ yearlyDiscountedPriceElement } durante los primeros 12 meses y se renueva a ${ yearlyRenewalPriceElement }."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
+      ],
+      "Group created": [
+        "Grupo creado"
+      ],
+      "Group roles assigned": [
+        "Roles de grupo asignados"
+      ],
+      "Manage groups in your identity provider": [
+        "Gestiona los grupos en tu proveedor de identidad"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Solo se pueden cambiar las mayúsculas y la puntuación (puntos, guiones y guiones bajos) aquí. Para usar una dirección diferente, añade una nueva."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente has iniciado sesión como ${ username } en ${ organizationName }."
+      ],
+      "You do not have permission to create users.": [
+        "No tienes permiso para crear usuarios."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Recibirás el crédito de recompensa 1 mes después de que finalice la prueba de tu amigo."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Recibirás el crédito de recompensa 2 meses después de que finalice la prueba de tu amigo."
+      ],
+      "Your ${ planDisplayName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Tu plan ${ planDisplayName } no solo mantiene seguros los datos y comunicaciones de tu negocio. Respalda tus objetivos de cumplimiento, hace que tu negocio destaque y mantiene a tu equipo conectado."
       ]
     },
     "info": {
@@ -9064,6 +9245,9 @@
       ],
       "Sending invite...": [
         "Enviando la invitación..."
+      ],
+      "Invited": [
+        "Invitado"
       ]
     },
     "Invoice state display as badge": {
@@ -9994,6 +10178,99 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop app": [
+        "Aplicación de escritorio de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "Aplicación de escritorio de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } para Empresas"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "Protección de cuenta con ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protection": [
+        "Protección de ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Automatic email forwarding": [
+        "Reenvío de correo electrónico automático"
+      ],
+      "Block trackers and marketers": [
+        "Bloquea rastreadores y anunciantes"
+      ],
+      "Catch-all email address": [
+        "Dirección de correo electrónico catch-all"
+      ],
+      "Custom domain": [
+        "Dominio personalizado"
+      ],
+      "Early access": [
+        "Acceso anticipado"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Email addresses per user": [
+        "Direcciones de correo electrónico por usuario"
+      ],
+      "Email with @yourcompany.com domain": [
+        "Correo electrónico con dominio @tuempresa.com"
+      ],
+      "Free VPN included": [
+        "VPN gratuita incluida"
+      ],
+      "Import your emails": [
+        "Importar tus correos electrónicos"
+      ],
+      "Monthly": [
+        "Mensual"
+      ],
+      "No": [
+        "No"
+      ],
+      "Online productivity suite": [
+        "Suite de productividad online"
+      ],
+      "Open-source code": [
+        "Código de código abierto"
+      ],
+      "Premium features included": [
+        "Funciones prémium incluidas"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ],
+      "See your team's availability": [
+        "Ver la disponibilidad de tu equipo"
+      ],
+      "Short domain @pm.me": [
+        "Dominio corto @pm.me"
+      ],
+      "Storage per user": [
+        "Espacio de almacenamiento por usuario"
+      ],
+      "Support for multiple users": [
+        "Soporte para múltiples usuarios"
+      ],
+      "Third-party ads": [
+        "Anuncios de terceras partes"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ],
+      "Version history": [
+        "Historial de versiones"
+      ],
+      "Yearly": [
+        "Anual"
+      ],
+      "Yearly free storage bonus": [
+        "Bonificación anual de almacenamiento gratuito"
+      ],
+      "Zero-access architecture": [
+        "Arquitectura de acceso cero"
       ]
     },
     "label": {
@@ -10708,6 +10985,18 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Inicia sesión para acceder a tu cuenta de ${ appName }"
+      ],
+      "${ appName }: Sign-in": [
+        "${ appName }: Iniciar sesión"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "¿Has olvidado la contraseña de tu cuenta de ${ BRAND_NAME }? Restablécela aquí usando un código de recuperación, un correo electrónico o SMS y recupera el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "¿Has olvidado tu nombre de usuario de la cuenta de ${ BRAND_NAME }? Encuéntralo usando tu correo electrónico de recuperación o número de teléfono y recupera el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Restablece la contraseña de tu cuenta de ${ BRAND_NAME }"
       ]
     },
     "Missing feature": {
@@ -11379,6 +11668,10 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ],
+      "${ options }-day file version history": [
+        "Historial de versiones de archivos de ${ options } día",
+        "Historial de ${ options } días de las versiones de los archivos"
       ]
     },
     "new_plans: feature highlight": {
@@ -12292,6 +12585,9 @@
       ],
       "Windows": [
         "Windows"
+      ],
+      "TCP": [
+        "TCP"
       ]
     },
     "option": {
@@ -13360,6 +13656,9 @@
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Verificar tu dirección de correo electrónico aumenta la seguridad de tu cuenta y permite opciones adicionales para la recuperación."
+      ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "Confirma ahora esta dirección de correo electrónico de recuperación: ${ emailData.value }"
       ]
     },
     "Recovery method": {
@@ -13394,6 +13693,9 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar tu número de teléfono aumenta la seguridad de tu cuenta y permite opciones de recuperación adicionales."
+      ],
+      "Verify this recovery phone number now: ${ phoneData.value }": [
+        "Verifica este número de teléfono de recuperación ahora: ${ phoneData.value }"
       ]
     },
     "Referral": {
@@ -13460,6 +13762,9 @@
       ],
       "your subscription": [
         "tu suscripción"
+      ],
+      "Share using ${ name }": [
+        "Compartir con ${ name }"
       ]
     },
     "Remove organization logo": {
@@ -13688,6 +13993,12 @@
     "Role": {
       "Owner": [
         "Propietario"
+      ],
+      "Security Admin": [
+        "Administrador de seguridad"
+      ],
+      "User Admin": [
+        "Administrador de usuarios"
       ]
     },
     "Safety review": {
@@ -13841,6 +14152,9 @@
       ],
       "Updated": [
         "Actualizado"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Los usuarios configurados como privados deben aceptar la invitación para finalizar la configuración. Les enviaremos una invitación una vez que lo apruebes."
       ]
     },
     "scim: Action": {
@@ -15534,6 +15848,39 @@
       ],
       "View VPN session details for your organization.": [
         "Ver los detalles de la sesión VPN de tu organización"
+      ],
+      "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } ofrece 1 TB de almacenamiento para tus archivos y fotos. También eres elegible para bonificaciones de almacenamiento anuales."
+      ],
+      "${ planTitle } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planTitle } te da acceso a todas las aplicaciones y funciones prémium. La privacidad está integrada para que puedas seguir adelante sabiendo que tus datos y tu identidad están seguros."
+      ],
+      "${ planTitle } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planTitle } te ofrece todas las aplicaciones, todas las funciones, acceso anticipado a nuevos lanzamientos y todo lo que necesitas para tener el control de tus datos y su seguridad."
+      ],
+      "${ planTitle } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planTitle } te da privacidad ilimitada y más almacenamiento para hasta 2 personas."
+      ],
+      "${ planTitle } gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ planTitle } ofrece a tu equipo todas las herramientas de colaboración que necesita para trabajar de forma productiva y organizada, al tiempo que protege tu negocio."
+      ],
+      "${ planTitle } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their advanced features.": [
+        "${ planTitle } le da a tu equipo lo que necesita para ser más productivo y organizado en su trabajo con acceso a todas las aplicaciones de ${ BRAND_NAME } y sus funciones avanzadas."
+      ],
+      "${ planTitle } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planTitle } va más allá de lo básico para ayudarte a ser más productivo, organizado y tener el control de tu bandeja de entrada, identidad de correo electrónico y más."
+      ],
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } te ayuda a asegurarte de que cada miembro de tu familia, y sus datos, estén protegidos siempre que estén online."
+      ],
+      "Compare the key differences that matter for your business.": [
+        "Compara las diferencias clave que importan para tu negocio."
+      ],
+      "Save 50% for 6 months, and keep full access": [
+        "Ahorra un 50 % durante 6 meses y mantén acceso total"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Ahorra un 50 % durante un año y conserva el acceso total"
       ]
     },
     "Success": {
@@ -15773,6 +16120,9 @@
       ],
       "/user per month": [
         "/usuario por mes"
+      ],
+      "/year": [
+        "/año"
       ]
     },
     "Suffix for price": {
@@ -15886,6 +16236,9 @@
     "Temporary need": {
       "Keep current plan": [
         "Mantener el plan actual"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelando"
       ]
     },
     "Theme": {
@@ -17196,6 +17549,36 @@
       ],
       "Your subscriptions": [
         "Tus suscripciones"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "¿Seguro que quieres desconectar y desactivar esta dirección?"
+      ],
+      "Free plan": [
+        "Free plan"
+      ],
+      "Group role assignment paused": [
+        "Asignación de rol de grupo pausada"
+      ],
+      "Helping activists in Hong Kong": [
+        "Ayuda a activistas en Hong Kong"
+      ],
+      "How ${ MAIL_APP_NAME } is different": [
+        "Por qué ${ MAIL_APP_NAME } es diferente"
+      ],
+      "Our fight against censorship in Russia": [
+        "Nuestra lucha contra la censura en Rusia"
+      ],
+      "Support your compliance objectives": [
+        "Logra tus objetivos de cumplimiento"
+      ],
+      "Unblocking internet access in Iran": [
+        "Desbloquear el acceso a internet en Irán"
+      ],
+      "What changes if you switch to the Free plan": [
+        "¿Qué cambia si te pasas al plan gratuito?"
       ]
     },
     "Title for payment methods table": {
@@ -17411,6 +17794,12 @@
       ],
       "Your DKIM signing is working.": [
         "Tu firma DKIM está funcionando."
+      ],
+      "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
+        "Incluye dominios de correo electrónico personalizados y alias de hide-my-email ilimitados en ${ MAIL_APP_NAME }, acceso a servidores en más de 120 países en ${ VPN_SHORT_APP_NAME }, 2FA integrado y uso compartido seguro en ${ PASS_SHORT_APP_NAME }, y más."
+      ],
+      "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
+        "Incluye correo electrónico profesional en @tudominio.com, almacenamiento en la nube con edición colaborativa de documentos, programación y videoconferencias, administración de contraseñas, una ${ VPN_SHORT_APP_NAME } segura y más."
       ]
     },
     "tooltip": {
@@ -17437,6 +17826,21 @@
       ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."
+      ],
+      "Resuming role assignment": [
+        "Reanudando la asignación de rol"
+      ],
+      "Role assignment paused": [
+        "Asignación de rol pausada"
+      ],
+      "User is a group owner": [
+        "El usuario es propietario del grupo"
+      ],
+      "via ${ groupNames }": [
+        "a través de ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Esperando la aprobación del administrador"
       ]
     },
     "Tor out of date": {
@@ -17512,6 +17916,12 @@
       ],
       "Refund": [
         "Reembolso"
+      ],
+      "Prepayment": [
+        "Prepago"
+      ],
+      "Test credit": [
+        "Crédito de prueba"
       ]
     },
     "Unlimited offer": {
@@ -17980,6 +18390,12 @@
       ],
       "macOS": [
         "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {
@@ -18092,6 +18508,32 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Después de la verificación, no elimines este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
+      ]
+    },
+    "Badge": {
+      "Save ${ discountRate }%": [
+        "Ahorra un ${ discountRate }%"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Se omitirán los duplicados de importaciones anteriores. Deshaz o importa mensajes más antiguos en los ajustes de ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
+    "Paragraph": {
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } se financia de manera independiente y funciona sin publicidad. A continuación se muestran ejemplos de cómo se ha utilizado esta independencia en la práctica."
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurar políticas de seguridad, conservación de datos e infraestructura de VPN, y administrar registros de auditoría."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrar todos los usuarios, grupos, seguridad, facturación y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrar usuarios, grupos y almacenamiento de todos los miembros, asignar roles y asignar licencias."
       ]
     }
   }

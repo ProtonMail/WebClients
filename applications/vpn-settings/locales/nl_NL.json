@@ -1267,6 +1267,27 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Approve": [
+        "Goedkeuren"
+      ],
+      "Configure new device profile": [
+        "Configureer een nieuw apparaatprofiel"
+      ],
+      "Delete device profile": [
+        "Apparaatprofiel genereren"
+      ],
+      "Generate device profile": [
+        "Apparaatprofiel genereren"
+      ],
+      "Instructions": [
+        "Instructies"
+      ],
+      "Review changes": [
+        "Wijzigingen beoordelen"
+      ],
+      "Verify password": [
+        "Wachtwoord verifiëren"
       ]
     },
     "action": {
@@ -1376,6 +1397,9 @@
       ],
       "Writing assistant seats": [
         "Licenties voor schrijfassistent"
+      ],
+      "Add-on": [
+        "Add-on"
       ]
     },
     "Address action": {
@@ -2081,6 +2105,27 @@
       ],
       "You": [
         "U"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
       ]
     },
     "Browser": {
@@ -3757,6 +3802,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adres.",
         "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adressen."
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Houd er rekening mee dat e-mails die naar dit adres worden verzonden, zelfs vanaf andere ${ BRAND_NAME }-adressen, niet langer end-to-end versleuteld zijn."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Zodra de verbinding is verbroken en uitgeschakeld, kunt u geen e-mails meer verzenden of ontvangen als ${ address.Email } in ${ BRAND_NAME }. E-mails die naar dit adres worden verzonden, komen nog wel aan in Gmail, maar niet in ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Zodra de verbinding is verbroken, kunt u geen e-mails meer verzenden of ontvangen als ${ address.Email } in ${ BRAND_NAME }. E-mails die naar dit adres worden verzonden, komen nog wel aan in Gmail, maar niet in ${ MAIL_APP_NAME }."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "We importeren uw oude e-mails en synchroniseren vanaf nu nieuwe berichten uit Gmail"
+      ],
+      "You can reconnect this address at any time.": [
+        "U kunt dit adres op elk gewenst moment opnieuw koppelen."
       ]
     },
     "description": {
@@ -4822,6 +4882,29 @@
       ],
       "Zero keys reactivated": [
         "Nul sleutels gereactiveerd"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Kan het apparaatprofiel niet genereren. Probeer het opnieuw."
+      ],
+      "No drive found to import": [
+        "Geen drive gevonden om te importeren"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Voor dit adres kunnen alleen hoofdlettergebruik en interpunctie (punten, koppeltekens en underscores) worden gewijzigd"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Functietoewijzing kon niet worden voltooid voor ${ errors.length } lid",
+        "Functietoewijzing kon niet worden voltooid voor ${ errors.length } leden"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Functietoewijzing kon niet worden voltooid voor ${ failedGroupCount } groep",
+        "Functietoewijzing kon niet worden voltooid voor ${ failedGroupCount } groepen"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Onverwachte fout, we kunnen de bestanden niet importeren"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
       ]
     },
     "error": {
@@ -5562,6 +5645,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Uw tweestapsverificatiesleutel is klaar voor gebruik."
+      ],
+      "Insert your security key into your device.": [
+        "Plaats uw beveiligingssleutel in uw apparaat."
       ]
     },
     "fido2: Label": {
@@ -5768,6 +5854,12 @@
       ],
       "Roles and permissions": [
         "Rollen en permissies"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Beheer gebruikers en groepen, wijs functies toe en verdeel licenties onder leden."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Beheert beveiligingsinstellingen en kan alle logboeken van afspraken en gebruikersgegevens bekijken."
       ]
     },
     "Header": {
@@ -9031,6 +9123,123 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME } Business-abonnementen bieden uw team alle samenwerkingstools die ze nodig hebben om productief en georganiseerd te werken, terwijl uw bedrijf wordt beschermd."
+      ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } lid toegevoegd aan de groep",
+        "${ emails.length } leden toegevoegd aan de groep"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nieuw lid toegevoegd via uw identiteitsprovider en in afwachting van beoordeling.",
+        "${ pendingAdminApprovalCount } nieuwe leden toegevoegd via uw identiteitsprovider en in afwachting van beoordeling."
+      ],
+      "All devices with this device profile deployed": [
+        "Alle apparaten waarop dit apparaatprofiel is geïmplementeerd"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Al het internetverkeer is altijd gecodeerd en veilig"
+      ],
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Gefactureerd voor ${ monthlyDiscountedPriceElement } gedurende de eerste 6 maanden, wordt verlengd voor ${ monthlyRenewalPriceElement }."
+      ],
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Gefactureerd voor ${ yearlyDiscountedPriceElement } gedurende de eerste 12 maanden, wordt verlengd voor ${ yearlyRenewalPriceElement }."
+      ],
+      "Choose one:": [
+        "Maak selectie:"
+      ],
+      "Configure Always-on VPN": [
+        "Configureer Always-on VPN"
+      ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "Implementeer ${ regoLink } rechtstreeks via uw MDM-bestandsimplementatie"
+      ],
+      "Deploy across all your managed devices": [
+        "Implementeer op al uw beheerde apparaten"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Implementeer het via uw MDM (Jamf, Intune…) of handmatig op elk apparaat."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Apparaten waarop het Always-on VPN-apparaatprofiel is geïmplementeerd, kunnen geen verbinding maken met internet, tenzij er een ${ VPN_APP_NAME }-verbinding actief is."
+      ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "Download ${ ps1Link } en voer het op elk apparaat uit als systeemgebruiker om het apparaatprofiel automatisch te plaatsen."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Download ${ removeScriptLink } en voer het op elk apparaat uit als systeemgebruiker om het profiel automatisch te verwijderen."
+      ],
+      "Employees can't go online without a VPN connection": [
+        "Zonder VPN-verbinding kunnen medewerkers niet online"
+      ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "De handhaving start automatisch zodra het apparaat het profiel detecteert."
+      ],
+      "Ensure your organization is always protected": [
+        "Zorg ervoor dat uw organisatie altijd beschermd is"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Genereer het apparaatprofiel en download een configuratiebestand."
+      ],
+      "Group created": [
+        "Groep aangemaakt"
+      ],
+      "Group roles assigned": [
+        "Groepsfuncties toegewezen"
+      ],
+      "Manage groups in your identity provider": [
+        "Beheer groepen in uw identiteitsprovider"
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Nieuwe groep aangemaakt via uw identiteitsprovider en in afwachting van beoordeling."
+      ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Wanneer de implementatie succesvol is afgerond, kan het enkele uren duren voordat apparaten het beleid detecteren en handhaven."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Hier kunnen alleen hoofdlettergebruik en interpunctie (punten, koppeltekens en underscores) worden gewijzigd. Voeg een nieuw adres toe om een ander adres te gebruiken."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Alleen gelicentieerde gebruikers van uw organisatie kunnen ${ VPN_APP_NAME } verifiëren op apparaten waarop het apparaatprofiel is geïmplementeerd."
+      ],
+      "Optional configuration": [
+        "Optionele configuratie"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Of voer ${ ps1Link } uit via uw MDM-scriptuitvoering"
+      ],
+      "Restrict logins to your organization": [
+        "Beperk logins tot uw organisatie"
+      ],
+      "Supported platforms": [
+        "Ondersteunde platforms"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Het proces is onderbroken voor ${ pausedCount } groep. Klik op Doorgaan om het toewijzen van functies te hervatten.",
+        "Het proces is onderbroken voor ${ pausedCount } groepen. Klik op Doorgaan om het toewijzen van functies te hervatten."
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Om Always-on VPN in te schakelen, moet het apparaatprofiel ${ policiesPath } op elk apparaat bereikbaar zijn — De ${ VPN_APP_NAME }-client detecteert het daar en dwingt het profiel automatisch af."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Om Always-on VPN te verwijderen, verwijdert u ${ profileFile } uit ${ policiesPath } op elk apparaat. De ${ VPN_APP_NAME }-client stopt met het afdwingen van het profiel zodra hij detecteert dat het bestand verdwenen is."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Gebruik uw MDM om het bestand te verwijderen, of voer ${ removeScriptLink } uit via de scriptuitvoering van uw MDM. Elke MDM die het implementeren van bestanden of het uitvoeren van scripts ondersteunt, zal werken."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Gebruik je een andere MDM? Elke MDM die het implementeren van bestanden of het uitvoeren van PowerShell-scripts ondersteunt, zal werken. Raadpleeg de documentatie van uw MDM voor meer informatie."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Uw Always-on VPN-apparaatprofiel is klaar voor implementatie."
       ]
     },
     "info": {
@@ -9128,6 +9337,12 @@
       ],
       "Sending invite...": [
         "Uitnodiging verzenden..."
+      ],
+      "Group Owner": [
+        "Groepseigenaar"
+      ],
+      "Invited": [
+        "Uitgenodigd"
       ]
     },
     "Invoice state display as badge": {
@@ -10145,6 +10360,21 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Applies:": [
+        "Van toepassing op:"
+      ],
+      "Enforce Always-on VPN": [
+        "Dwing Always-on VPN af"
+      ],
+      "Import your emails": [
+        "Uw e-mails importeren"
+      ],
+      "Login restrictions": [
+        "Login beperkingen"
+      ],
+      "Password check-ins": [
+        "Wachtwoordcontroles"
       ]
     },
     "label": {
@@ -10814,6 +11044,9 @@
       ],
       "Sign in": [
         "Log in"
+      ],
+      "Change backup password": [
+        "Back-upwachtwoord wijzigen"
       ]
     },
     "Message": {
@@ -12077,6 +12310,18 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Neem deel aan bevragingen om ${ BRAND_NAME }-diensten te verbeteren"
+      ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 e-mails per jaar. Herinneringen om uw herstelmethoden up-to-date te houden."
+      ],
+      "Account email updates": [
+        "E-mailupdates over account"
+      ],
+      "Product email updates": [
+        "E-mailupdates over producten"
+      ],
+      "Recovery checklist": [
+        "Herstelchecklist"
       ]
     },
     "Notification": {
@@ -12710,6 +12955,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Zorg ervoor dat u uw wachtwoord onthoudt of veilig opslaat, aangezien dit de sleutel is om uw gegevens te ontsleutelen."
+      ],
+      "Turn off check-ins": [
+        "Controles uitschakelen"
+      ],
+      "Turn off password check-ins?": [
+        "Wachtwoordcontroles uitschakelen?"
       ]
     },
     "passwordless": {
@@ -13854,6 +14105,9 @@
       ],
       "User Admin": [
         "Gebruiker Beheerder"
+      ],
+      "Owner": [
+        "Eigenaar"
       ]
     },
     "Role description": {
@@ -13991,6 +14245,36 @@
       "${ pendingUsersCount } user synced.": [
         "${ pendingUsersCount } gebruiker gesynct.",
         "${ pendingUsersCount } gebruikers gesynct."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } en ${ groupsText } gesynchroniseerd."
+      ],
+      "Approve changes from your identity provider": [
+        "Keur wijzigingen van uw identiteitsprovider goed"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Definitieve goedkeuring vereist om toegang te verlenen tot alle ${ BRAND_NAME }-diensten."
+      ],
+      "From your identity provider": [
+        "Van uw identiteitsprovider"
+      ],
+      "New": [
+        "Nieuw"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Na goedkeuring hebben ze toegang tot alle ${ BRAND_NAME }-diensten en kunnen ze veilig delen."
+      ],
+      "Private user": [
+        "Privégebruiker"
+      ],
+      "Review users and groups before finishing setup": [
+        "Beoordeel gebruikers en groepen voordat u de setup afrondt"
+      ],
+      "Updated": [
+        "Bijgewerkt"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Gebruikers die zijn ingesteld op privé moeten de uitnodiging accepteren om de setup te voltooien. We sturen ze een uitnodiging zodra u deze goedkeurt."
       ]
     },
     "scim: Action": {
@@ -15016,6 +15300,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Uw SSO-configuratie wordt verwijderd."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } gebruiker is lid geworden van uw organisatie via uw identiteitsprovider",
+        "${ n } gebruikers zijn lid geworden van uw organisatie via uw identiteitsprovider"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } gebruiker is inactief.",
+        "${ n } gebruikers zijn inactief."
       ]
     },
     "sso: auth device state": {
@@ -15044,11 +15336,29 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Uw abonnement wordt geannuleerd, even geduld"
+      ],
+      "Disabled": [
+        "Uitgeschakeld"
+      ],
+      "Enabled": [
+        "Ingeschakeld"
+      ],
+      "No restrictions": [
+        "Geen beperkingen"
+      ],
+      "Restricted to members of your organization": [
+        "Beperkt tot leden van uw organisatie"
       ]
     },
     "Status": {
       "... waiting": [
         "... wachten"
+      ],
+      "completed": [
+        "voltooid"
+      ],
+      "finalizing": [
+        "afronden"
       ]
     },
     "Storage": {
@@ -15229,6 +15539,9 @@
       "VPN connection for ${ n } device per user": [
         "VPN verbinding voor ${ n } apparaat per gebruiker",
         "VPN verbinding voor ${ n } apparaten per gebruiker"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-schrijfassistent"
       ]
     },
     "Subscription change warning": {
@@ -15697,6 +16010,12 @@
       ],
       "View VPN session details for your organization.": [
         "Bekijk VPN-sessiedetails voor uw organisatie."
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Dwing VPN-gebruik binnen uw organisatie af door internettoegang te blokkeren, tenzij er een VPN-verbinding actief is."
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Bespaar 50% gedurende één jaar en behoud volledige toegang"
       ]
     },
     "Success": {
@@ -15864,6 +16183,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "U ontvangt uw gebruikersnaam binnen een minuut via SMS als u een geldig herstel-telefoonnummer hebt ingevoerd."
+      ],
+      "Password check-ins disabled": [
+        "Wachtwoordcontroles uitgeschakeld"
+      ],
+      "Password check-ins enabled": [
+        "Wachtwoordcontroles ingeschakeld"
       ]
     },
     "Success message": {
@@ -17377,6 +17702,51 @@
       ],
       "Your subscriptions": [
         "Uw abonnementen"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
+      ],
+      "Always-on VPN": [
+        "Altijd-aan VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Always-on VPN-apparaatprofiel"
+      ],
+      "Approve changes": [
+        "Wijzigingen goedkeuren"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Weet u zeker dat u de verbinding met dit adres wilt verbreken en uitschakelen?"
+      ],
+      "Choose a deployment method": [
+        "Kies een implementatiemethode"
+      ],
+      "Choose a removal method": [
+        "Kies een verwijderingsmethode"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Configureer het Always-on VPN-apparaatprofiel"
+      ],
+      "Created!": [
+        "Aangemaakt!"
+      ],
+      "Deploy device profile to your devices": [
+        "Implementeer het apparaatprofiel op uw apparaten"
+      ],
+      "Deploy via MDM": [
+        "Implementeren via MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Implementeren via PowerShell"
+      ],
+      "Group role assignment paused": [
+        "Toewijzing van groepsfunctie onderbroken"
+      ],
+      "Remove Always-on VPN device profile": [
+        "Verwijder het Always-on VPN-apparaatprofiel"
+      ],
+      "Remove via MDM": [
+        "Verwijderen via MDM"
       ]
     },
     "Title for payment methods table": {
@@ -17598,6 +17968,9 @@
       ],
       "Your DKIM signing is working.": [
         "Ondertekenen met DKIM werkt."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Omvat alle gebruikers in uw organisatie. Alleen afgedwongen op apparaten waarop het Always-on VPN-apparaatprofiel is geïmplementeerd."
       ]
     },
     "tooltip": {
@@ -17627,6 +18000,18 @@
       ],
       "Waiting for user to accept the invitation": [
         "Wachten tot gebruiker de uitnodiging accepteert"
+      ],
+      "Resuming role assignment": [
+        "Functietoewijzing hervatten"
+      ],
+      "Role assignment paused": [
+        "Functietoewijzing onderbroken"
+      ],
+      "User is a group owner": [
+        "Gebruiker is een groepseigenaar"
+      ],
+      "Waiting for admin approval": [
+        "Wachtend op goedkeuring van de beheerder"
       ]
     },
     "Tor out of date": {
@@ -17702,6 +18087,12 @@
       ],
       "Refund": [
         "Terugbetalen"
+      ],
+      "Prepayment": [
+        "Vooruitbetaling"
+      ],
+      "Test credit": [
+        "Testtegoed"
       ]
     },
     "Unlimited offer": {
@@ -17781,6 +18172,21 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Om verder te gaan, moet u toestemming vragen aan de gebruiker om toegang te krijgen tot hun gegevens of hun wachtwoord te resetten."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Kon beheerderstoegang niet inschakelen voor ${ n } gebruiker",
+        "Kon beheerderstoegang niet inschakelen voor ${ n } gebruikers"
+      ],
+      "Review their account now.": [
+        "Beoordeel hun account nu.",
+        "Beoordeel hun accounts nu."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Hun encryptiesleutels zijn bijgewerkt terwijl we wijzigingen aan het aanbrengen waren."
+      ],
+      "You can safely remove this user from your organization.": [
+        "U kunt deze gebruiker veilig uit uw organisatie verwijderen.",
+        "U kunt deze gebruikers veilig uit uw organisatie verwijderen."
       ]
     },
     "Upsell": {
@@ -17927,6 +18333,18 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Beheer alle gebruikers, groepen, beveiliging, facturering en systeemconfiguraties."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Beheer gebruikers en groepen, wijs functies toe en verdeel licenties onder leden."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Beheert beveiligingsinstellingen en kan alle logboeken van afspraken en gebruikersgegevens bekijken."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
       ]
     },
     "Users table: badge": {
@@ -18261,6 +18679,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Na een succesvolle verificatie mag u dit TXT-record niet verwijderen, omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplicaten van eerdere importen worden overgeslagen. Maak dit ongedaan of importeer oudere berichten in de instellingen van ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }

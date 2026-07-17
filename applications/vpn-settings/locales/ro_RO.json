@@ -1276,6 +1276,18 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Configure new device profile": [
+        "Configurare profil de dispozitiv nou"
+      ],
+      "Delete device profile": [
+        "Ștergere profil dispozitiv"
+      ],
+      "Generate device profile": [
+        "Generare profil dispozitiv"
+      ],
+      "Instructions": [
+        "Instrucțiuni"
       ]
     },
     "action": {
@@ -2110,6 +2122,27 @@
       ],
       "You": [
         "Eu"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Acest utilizator nu poate fi migrat din cauza unor incompatibilități de platformă."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, activați-i contul în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i contul la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i adresa la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pentru a migra acest utilizator, acesta trebuie să accepte invitația de a se alătura la ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, dezarhivați-l în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, deblocați-l în consola de administrare din Google Workspace."
       ]
     },
     "Browser": {
@@ -4906,6 +4939,12 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Nu s-a putut genera profilul dispozitivului. Reîncercați."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Nu s-a putut trimite un cod de verificare folosind această metodă."
       ]
     },
     "error": {
@@ -7208,7 +7247,7 @@
         "Descărcare jurnale actuale"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
-        "Descărcați șablonul CSV, completați datele utilizatorului și apoi încărcați fișierul CSV completat pentru a crea conturi pentru acești utilizatori."
+        "Descărcați șablonul CSV, completați datele utilizatorilor și apoi încărcați fișierul CSV completat pentru a crea conturi pentru acești utilizatori."
       ],
       "Download the app and import existing codes.": [
         "Descărcați aplicația și importați codurile existente."
@@ -9252,6 +9291,87 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "All devices with this device profile deployed": [
+        "Toate dispozitivele cu acest profil de dispozitiv implementat"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Tot traficul de pe internet este criptat și securizat."
+      ],
+      "Choose one:": [
+        "Alegeți una:"
+      ],
+      "Configure Always-on VPN": [
+        "Configurare VPN activ permanent"
+      ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "Implementați ${ regoLink } direct prin implementarea MDM personală pentru fișiere"
+      ],
+      "Deploy across all your managed devices": [
+        "Implementați-l pe toate dispozitivele gestionate"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Implementați-l prin MDM-ul personal(Jamf, Intune…) sau manual pe fiecare dispozitiv."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Dispozitivele care au implementat un profil VPN activ permanent nu pot accesa internetul decât dacă este activă o conexiune ${ VPN_APP_NAME }."
+      ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "Descărcați ${ ps1Link } și rulați-l pe fiecare dispozitiv ca utilizator de sistem pentru a plasa automat profilul dispozitivului."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Descărcați ${ removeScriptLink } și rulați-l pe fiecare dispozitiv ca utilizator de sistem pentru a șterge automat profilul."
+      ],
+      "Employees can't go online without a VPN connection": [
+        "Angajații nu se pot conecta la internet fără o conexiune VPN"
+      ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Aplicarea începe automat imediat ce dispozitivul detectează profilul."
+      ],
+      "Ensure your organization is always protected": [
+        "Asigurați-vă că organizația vă este mereu protejată"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Generați profilul dispozitivului și descărcați un fișier de configurare."
+      ],
+      "Manage groups in your identity provider": [
+        "Gestionați grupurile în furnizorul de identitate"
+      ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "După implementarea cu succes, poate dura până la câteva ore pentru ca dispozitivele să detecteze și să aplice politica."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Doar utilizatorii licențiați ai organizației pot autentifica ${ VPN_APP_NAME } pe dispozitivele care au implementat profilul de dispozitiv."
+      ],
+      "Optional configuration": [
+        "Configurare opțională"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Sau rulați ${ ps1Link } prin executarea scriptului MDM personal."
+      ],
+      "Restrict logins to your organization": [
+        "Restricționare conectări pentru organizație"
+      ],
+      "Supported platforms": [
+        "Platforme suportate"
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Pentru a activa funcția VPN activ permanent, profilul dispozitivului trebuie să ajungă la ${ policiesPath } pe fiecare dispozitiv — clientul ${ VPN_APP_NAME } îl detectează acolo și impune automat profilul."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Pentru a elimina funcția VPN activ permanent, ștergeți ${ profileFile } din ${ policiesPath } pe fiecare dispozitiv. Clientul ${ VPN_APP_NAME } oprește aplicarea profilului imediat ce detectează că fișierul a dispărut."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Folosiți propriul MDM pentru a șterge fișierul sau rulați ${ removeScriptLink } prin execuția scriptului MDM. Va funcționa orice MDM care acceptă implementarea fișierelor sau rularea scripturilor."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Folosiți un alt MDM? Orice MDM care acceptă implementarea fișierelor sau executarea de scripturi PowerShell va funcționa. Consultați documentația MDM-ului personal pentru informații suplimentare."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "V-ați conectat cu ${ username } pentru (${ organizationName }."
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Profilul dispozitivului VPN activ permanent este gata de implementare."
       ]
     },
     "info": {
@@ -10386,6 +10506,15 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Applies:": [
+        "Se aplică:"
+      ],
+      "Enforce Always-on VPN": [
+        "Forțare VPN activ permanent"
+      ],
+      "Login restrictions": [
+        "Restricții de conectare"
       ]
     },
     "label": {
@@ -15442,6 +15571,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Vi se anulează abonamentul, așteptați."
+      ],
+      "Disabled": [
+        "Dezactivat"
+      ],
+      "Enabled": [
+        "Activat"
+      ],
+      "No restrictions": [
+        "Fără restricții"
+      ],
+      "Restricted to members of your organization": [
+        "Restricționat membrilor organizației"
       ]
     },
     "Status": {
@@ -16128,6 +16269,12 @@
       ],
       "View VPN session details for your organization.": [
         "Vizualizați detaliile sesiunii VPN pentru organizație."
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Impuneți utilizarea VPN în întreaga organizație blocând accesul la internet, cu excepția cazului în care este activă o conexiune VPN."
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Economisiți 50% pentru un an și păstrați accesul complet"
       ]
     },
     "Success": {
@@ -17838,6 +17985,39 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Always-on VPN": [
+        "VPN activ permanent"
+      ],
+      "Always-on VPN device profile": [
+        "Profil VPN activ permanent"
+      ],
+      "Choose a deployment method": [
+        "Alegeți o metodă de implementare"
+      ],
+      "Choose a removal method": [
+        "Alegeți o metodă de eliminare"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Configurare profil dispozitiv VPN activ permanent"
+      ],
+      "Created!": [
+        "S-a creat!"
+      ],
+      "Deploy device profile to your devices": [
+        "Implementați profilul dispozitivului pe dispozitivele personale"
+      ],
+      "Deploy via MDM": [
+        "Implementare prin MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Implementare prin PowerShell"
+      ],
+      "Remove Always-on VPN device profile": [
+        "Eliminare profil dispozitiv VPN activ permanent"
+      ],
+      "Remove via MDM": [
+        "Eliminare prin MDM"
       ]
     },
     "Title for payment methods table": {
@@ -18059,6 +18239,9 @@
       ],
       "Your DKIM signing is working.": [
         "Semnarea DKIM funcționează."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Include toți utilizatorii din organizație. Se aplică numai pe dispozitivele pe care a fost implementat profilul de dispozitiv VPN activ permanent."
       ]
     },
     "tooltip": {
@@ -18753,7 +18936,7 @@
         "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont ${ BRAND_NAME }. Luați în considerare modificarea opțiunilor de importare."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
+        "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom reveni online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nu s-a putut verifica serverul de e-mail. Dacă aveți încredere în el, puteți ignora verificarea."

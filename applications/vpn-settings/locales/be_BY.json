@@ -1276,6 +1276,18 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Configure new device profile": [
+        "Сканфігурыраваць новыя профілі прылады"
+      ],
+      "Delete device profile": [
+        "Выдаліць профіль прылады"
+      ],
+      "Generate device profile": [
+        "Генерыраваць профіль прылады"
+      ],
+      "Instructions": [
+        "Інструкцыі"
       ]
     },
     "action": {
@@ -2127,6 +2139,27 @@
       ],
       "You": [
         "Вы"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у кансолі адміністратара Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго адрас у ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Каб перанесці гэтага карыстальніка, яму неабходна прыняць запрашэнне далучыцца да ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, разгархівуйце яго ў кансолі адміністратара Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, разблакіруйце яго ў кансолі адміністратара Google Workspace."
       ]
     },
     "Browser": {
@@ -4941,6 +4974,12 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Немагчыма згенерыраваць профіль прылады. Паспрабуйце яшчэ раз."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
       ]
     },
     "error": {
@@ -9370,6 +9409,99 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } удзельнік дадзены ў групу",
+        "${ emails.length } удзельнікі дадзены ў групу",
+        "${ emails.length } удзельнікаў дадзены ў групу",
+        "${ emails.length } удзельнікаў дадзены ў групу"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Доступ да больш чым 20 000 сервераў у больш чым 145 краінах"
+      ],
+      "All devices with this device profile deployed": [
+        "Усе прылады з гэтым профілем прылады разгорнуты"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Увесь трафік інтэрнэту заўсёды з'яўляецца зашыфраваным і бяспечным"
+      ],
+      "Choose one:": [
+        "Выберыце які-небудзь:"
+      ],
+      "Configure Always-on VPN": [
+        "Канфігурацыя пастаяннай VPN"
+      ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "Разгарніце ${ regoLink } непасрэдна праз свой файл разгортвання MDM"
+      ],
+      "Deploy across all your managed devices": [
+        "Разгарнуць на ўсіх кіруемых прыладах"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Разгарніце яго праз MDM (Jamf, Intune…) або ўручную на кожнай прыладзе."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Прылады, у якіх у профілі ёсць разгорнутая пастаянная VPN не змогуць падключыцца да інтэрнэту, пакуль падключэнне ${ VPN_APP_NAME } знаходзіцца ў актыўным стане."
+      ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "Спампуйце ${ ps1Link } і выканайце на кожнай прыладзе як сістэмны карыстальнік, каб аўтаматычна размясціць профіль прылады"
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Спампаваць ${ removeScriptLink } і выканаць яго на кожнай прыладзе як сістэмнага карыстальніка, каб выдаліць профіль аўтаматычна."
+      ],
+      "Employees can't go online without a VPN connection": [
+        "Работнікі не змогуць падключыцца да інтэрнэту без падключэння па VPN"
+      ],
+      "Ensure your organization is always protected": [
+        "Пераканайцеся, што ваша арганізацыя заўсёды абаронена"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Генерыраваць профіль прылады і спампаваць файл канфігурацыі."
+      ],
+      "Group created": [
+        "Група створана"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Вы страціце доступ да ${ BRAND_NAME } з тарыфным планам ${ planTitle } (дзейнічае да ${ expiryDate }), які ўключае наступныя функцыі:"
+      ],
+      "Manage groups in your identity provider": [
+        "Кіраванне групамі ў вашым пастаўшчыку пасведчанняў"
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Толькі ліцэнзаваныя карыстальнікі вашай арганізацыі змогуць аўтарызавацца ў ${ VPN_APP_NAME } на прыладах, якія маюць там разгорнутыя профілі."
+      ],
+      "Optional configuration": [
+        "Неабавязковая канфігурацыя"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Або выканайце ${ ps1Link } праз свой выканальны сцэнарый"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Прэміяльная абарона прыватнасці паміж усімі вашымі прыладамі"
+      ],
+      "Restrict logins to your organization": [
+        "Абмежаванне ўваходаў у вашу арганізацыю"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Застаньцеся на сваім тарыфным плане і атрымайце скідку ў памеры 50% у наступным месяцы"
+      ],
+      "Supported platforms": [
+        "Платформы, якія падтрымліваюцца"
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Выдаліце ${ profileFile } з ${ policiesPath } на кожнай прыладзе, каб выдаліць пастаянную VPN. Кліент ${ VPN_APP_NAME } прымусова спыніць профіль як толькі ён выявіць, што файл адсутнічае."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Скарыстайцеся сваім MDM, выдаліць файл або выканайце ${ removeScriptLink } праз свой выканальны сцэнарый MDM. Любы MDM, які падтрымлівае разгортванне файлаў або выкананне сцэнарыяў будзе працаваць."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Выкарыстоўваеце іншы MDM? Любы MDM, які падтрымлівае разгортванне файлаў або выкананне сцэнарыяў PowerShell будзе працаваць. Звярніцеся да дакументацыі MDM, каб атрымаць падрабязную інфармацыю."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Вы ўжо ўвайшлі як ${ username } у ${ organizationName }."
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Ваш профіль прылады пастаяннай VPN гатовы для разгортвання."
       ]
     },
     "info": {
@@ -10512,6 +10644,15 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Applies:": [
+        "Прымяняецца:"
+      ],
+      "Enforce Always-on VPN": [
+        "Прымяніць пастаянную VPN"
+      ],
+      "Login restrictions": [
+        "Абмежаванні ўваходаў"
       ]
     },
     "label": {
@@ -11757,7 +11898,7 @@
         "Подпісы HTML"
       ],
       "Kill switch/always-on VPN": [
-        "Kill Switch/Пастаянны VPN"
+        "Kill Switch/Пастаянная VPN"
       ],
       "Limited support": [
         "Абмежаваная падтрымка"
@@ -15663,6 +15804,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
+      ],
+      "Disabled": [
+        "Адключана"
+      ],
+      "Enabled": [
+        "Уключана"
+      ],
+      "No restrictions": [
+        "Без абмежаванняў"
+      ],
+      "Restricted to members of your organization": [
+        "Забаронена ўдзельнікам вашай арганізацыі"
       ]
     },
     "Status": {
@@ -16373,6 +16526,12 @@
       ],
       "View VPN session details for your organization.": [
         "Паглядзець падрабязнасці сеанса VPN для вашай арганізацыі."
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Прымусова выкарыстоўвайце VPN ва ўсёй арганізацыі, блакіруючы доступ да інтэрнэту, пакуль не будзе ўсталявана падключэнне па VPN."
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Зэканомце 50% на адзін год і захавайце поўны доступ"
       ]
     },
     "Success": {
@@ -18095,6 +18254,39 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Always-on VPN": [
+        "Пастаянная VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Профіль прылады пастаяннай VPN"
+      ],
+      "Choose a deployment method": [
+        "Выберыце спосаб разгортвання"
+      ],
+      "Choose a removal method": [
+        "Выберыце спосаб выдалення"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Канфігурацыя профілю прылады пастаяннай VPN"
+      ],
+      "Created!": [
+        "Створана!"
+      ],
+      "Deploy device profile to your devices": [
+        "Разгортванне профілю прылады на вашых прыладах"
+      ],
+      "Deploy via MDM": [
+        "Разгортванне праз MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Разгортванне праз PowerShell"
+      ],
+      "Remove Always-on VPN device profile": [
+        "Выдаліць профіль прылады пастаяннай VPN"
+      ],
+      "Remove via MDM": [
+        "Выдаліце праз MDM"
       ]
     },
     "Title for payment methods table": {
@@ -18316,6 +18508,9 @@
       ],
       "Your DKIM signing is working.": [
         "Ваш подпіс DKIM працуе."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Уключае ўсіх карыстальнікаў вашай арганізацыі. Дзейнічае толькі на прыладах, дзе разгорнуты профіль прылады з пастаяннай VPN."
       ]
     },
     "tooltip": {

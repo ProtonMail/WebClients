@@ -1276,6 +1276,18 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Configure new device profile": [
+        "Configureu un perfil de dispositiu nou"
+      ],
+      "Delete device profile": [
+        "Eliminar el perfil de dispositiu"
+      ],
+      "Generate device profile": [
+        "Generar el perfil de dispositiu"
+      ],
+      "Instructions": [
+        "Instruccions"
       ]
     },
     "action": {
@@ -2093,6 +2105,27 @@
       ],
       "You": [
         "Tú"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
       ]
     },
     "Browser": {
@@ -2225,6 +2258,9 @@
       ],
       "Take a tour": [
         "Feu una visita guiada"
+      ],
+      "Get 50% offer": [
+        "Aconseguiu una oferta del 50%"
       ]
     },
     "BYOE": {
@@ -4871,6 +4907,12 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "No s'ha pogut generar el perfil de dispositiu. Torneu-ho a provar."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
       ]
     },
     "error": {
@@ -9122,6 +9164,111 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Accediu a més de 20.000 servidors en 145 països"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Afegiu-hi ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } per només ${ bundlePlanPriceInline }"
+      ],
+      "All devices with this device profile deployed": [
+        "S'han desplegat tots els dispositius amb aquest perfil"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Tot el trànsit d'internet està sempre xifrat i és segur"
+      ],
+      "Choose one:": [
+        "Trieu-ne una:"
+      ],
+      "Configure Always-on VPN": [
+        "Configureu la VPN sempre activa"
+      ],
+      "Deploy ${ regoLink } directly via your MDM file deployment": [
+        "Desplegueu ${ regoLink } directament mitjançant el desplegament de fitxers del vostre MDM"
+      ],
+      "Deploy across all your managed devices": [
+        "Desplegueu-ho a tots els dispositius que gestioneu"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Desplegueu-ho mitjançant el vostre MDM (Jamf, Intune…) o de manera manual a cada dispositiu."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Els dispositius que tenen desplegat el perfil de dispositiu de la VPN sempre activa no poden accedir a internet tret que hi hagi una connexió activa a ${ VPN_APP_NAME }."
+      ],
+      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
+        "Descarregueu ${ ps1Link } i executeu-lo a cada dispositiu com a usuari del sistema per col·locar automàticament el perfil de dispositiu."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Descarregueu ${ removeScriptLink } i executeu-lo a cada dispositiu com a usuari del sistema per eliminar el perfil automàticament."
+      ],
+      "Employees can't go online without a VPN connection": [
+        "Els empleats no poden connectar-se a internet sense una connexió VPN"
+      ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "L'aplicació forçosa s'inicia automàticament tan aviat com el dispositiu detecta el perfil."
+      ],
+      "Ensure your organization is always protected": [
+        "Assegureu-vos que la vostra organització estigui sempre protegida"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Velocitats de VPN més ràpides de fins a 10 Gbps"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Genereu el perfil de dispositiu i descarregueu un fitxer de configuració."
+      ],
+      "Have some more time to decide without interruption.": [
+        "Tingueu més temps per decidir sense interrupcions."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Si ho cancel·leu ara, perdreu l'accés a ${ BRAND_NAME } ${ planTitle } el ${ expiryDate }, incloent-hi aquestes característiques:"
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Mantingueu les vostres contrasenyes segures i inicieu sessió a l'instant amb l'emplenament automàtic a tots els dispositius."
+      ],
+      "Manage groups in your identity provider": [
+        "Gestioneu els grups al vostre proveïdor d'identitat"
+      ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Un cop s'hagi desplegat correctament, els dispositius poden trigar fins a unes quantes hores a detectar i aplicar la política."
+      ],
+      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
+        "Només els usuaris de la vostra organització amb llicència poden autenticar ${ VPN_APP_NAME } en els dispositius que tenen desplegat el perfil de dispositiu."
+      ],
+      "Optional configuration": [
+        "Configuració opcional"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "O executeu ${ ps1Link } mitjançant l'execució de scripts del vostre MDM"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Protecció de privacitat prèmium a tots els vostres dispositius"
+      ],
+      "Restrict logins to your organization": [
+        "Restringiu els inicis de sessió a la vostra organització"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Mantingueu el vostre pla i gaudiu d'un 50% de descompte el mes vinent."
+      ],
+      "Supported platforms": [
+        "Plataformes compatibles"
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Per habilitar la VPN sempre activa, cal que el perfil de dispositiu arribi a ${ policiesPath } a cada dispositiu; el client de ${ VPN_APP_NAME } el detectarà allà i aplicarà el perfil de manera forçosa automàticament."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Per suprimir la VPN sempre activa, elimineu ${ profileFile } de ${ policiesPath } a cada dispositiu. El client de ${ VPN_APP_NAME } deixarà d'aplicar el perfil de manera forçosa així que detecti que el fitxer ha desaparegut."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Utilitzeu el vostre MDM per suprimir el fitxer, o executeu ${ removeScriptLink } mitjançant l'execució de scripts del MDM. Qualsevol MDM que admeti el desplegament de fitxers o l'execució de scripts funcionarà."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Utilitzeu un MDM diferent? Qualsevol MDM que admeti el desplegament de fitxers o l'execució de seqüències de PowerShell funcionarà. Consulteu la documentació del vostre MDM per obtenir més informació."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualment heu iniciat sessió com a ${ username } per a ${ organizationName }."
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "El vostre perfil de dispositiu de la VPN sempre activa ja està a punt per desplegar-se."
       ]
     },
     "info": {
@@ -10248,6 +10395,15 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Applies:": [
+        "S'aplica a:"
+      ],
+      "Enforce Always-on VPN": [
+        "Forceu la VPN sempre activa"
+      ],
+      "Login restrictions": [
+        "Restriccions d'inici de sessió"
       ]
     },
     "label": {
@@ -15212,6 +15368,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Espereu, s'està cancel·lant la vostra subscripció"
+      ],
+      "Disabled": [
+        "Deshabilitat"
+      ],
+      "Enabled": [
+        "Habilitat"
+      ],
+      "No restrictions": [
+        "Sense restriccions"
+      ],
+      "Restricted to members of your organization": [
+        "Restringit als membres de la vostra organització"
       ]
     },
     "Status": {
@@ -15874,6 +16042,12 @@
       ],
       "View VPN session details for your organization.": [
         "Veieu els detalls de la sessió VPN de la vostra organització."
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Forceu l'ús de la VPN a tota la vostra organització bloquejant l'accés a internet tret que hi hagi una connexió VPN activa."
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Estalvieu el 50% durant 1 any i mantingueu-hi l'accés complet"
       ]
     },
     "Success": {
@@ -17572,6 +17746,42 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Always-on VPN": [
+        "VPN sempre activa"
+      ],
+      "Always-on VPN device profile": [
+        "Perfil de dispositiu de la VPN sempre activa"
+      ],
+      "Choose a deployment method": [
+        "Trieu un mètode de desplegament"
+      ],
+      "Choose a removal method": [
+        "Trieu un mètode d'eliminació"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Configureu el perfil de dispositiu de la VPN sempre activa"
+      ],
+      "Created!": [
+        "S'ha creat!"
+      ],
+      "Deploy device profile to your devices": [
+        "Desplegueu el perfil de dispositiu als vostres dispositius"
+      ],
+      "Deploy via MDM": [
+        "Desplegar-ho mitjançant MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Desplegar-ho mitjançant PowerShell"
+      ],
+      "Remove Always-on VPN device profile": [
+        "Esborreu el perfil de dispositiu de la VPN sempre activa"
+      ],
+      "Remove via MDM": [
+        "Esborrar-ho mitjançant MDM"
+      ],
+      "Stay for 50% off your next month": [
+        "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
       ]
     },
     "Title for payment methods table": {
@@ -17793,6 +18003,9 @@
       ],
       "Your DKIM signing is working.": [
         "La vostra signatura DKIM està funcionant."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Inclou tots els usuaris de la vostra organització. S'aplica de manera forçosa només en els dispositius on s'ha desplegat el perfil de dispositiu de la VPN sempre activa."
       ]
     },
     "tooltip": {
