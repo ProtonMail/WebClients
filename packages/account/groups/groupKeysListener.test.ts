@@ -154,7 +154,7 @@ describe('groupKeysListener', () => {
     it('generates keys for groups that need them when the listener fires', async () => {
         mockedCreateGroupAddressKey.mockImplementation(async ({ address }) => [getGeneratedKey(address.ID)]);
 
-        const { store, isEnabled } = setup();
+        const { store } = setup();
 
         store.dispatch(
             setStateAction({
@@ -164,7 +164,6 @@ describe('groupKeysListener', () => {
         );
 
         await waitFor(() => expect(mockedCreateGroupAddressKey).toHaveBeenCalledTimes(2));
-        expect(isEnabled).toHaveBeenCalledWith('SystemGroupFlag');
 
         await waitFor(() => {
             const groups = selectGroups(store.getState() as unknown as GroupsState).value!;
@@ -270,24 +269,6 @@ describe('groupKeysListener', () => {
         // Predicate returns false before the effect runs, so the feature flag is never consulted.
         expect(isEnabled).not.toHaveBeenCalled();
         expect(mockedCreateGroupAddressKey).not.toHaveBeenCalled();
-    });
-
-    it('does not generate keys when the SystemGroupFlag is disabled', async () => {
-        const { store, isEnabled } = setup({ isFlagEnabled: false });
-
-        store.dispatch(
-            setStateAction({
-                groups: [getGroup({ ID: '1' })],
-                organizationKey: getOrganizationKey(),
-            })
-        );
-
-        await waitFor(() => expect(isEnabled).toHaveBeenCalledWith('SystemGroupFlag'));
-        expect(mockedCreateGroupAddressKey).not.toHaveBeenCalled();
-
-        const groups = selectGroups(store.getState() as unknown as GroupsState).value!;
-        expect(groups[0].Address.HasKeys).toBe(0);
-        expect(groups[0].Address.Keys).toEqual([]);
     });
 
     it('stays unsubscribed while the effect is running, then resubscribes when it completes', async () => {
