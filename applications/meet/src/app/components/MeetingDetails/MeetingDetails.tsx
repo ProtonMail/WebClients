@@ -19,7 +19,7 @@ import {
     selectPassphrase,
     selectRoomName,
 } from '@proton/meet/store/slices/meetingInfo';
-import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { KeyRotationLog } from '@proton/meet/types/types';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';

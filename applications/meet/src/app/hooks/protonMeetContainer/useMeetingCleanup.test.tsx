@@ -1,9 +1,15 @@
+import { Provider } from 'react-redux';
+
 import { useRoomContext } from '@livekit/components-react';
+import { configureStore } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
-import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { resetParticipantMaps } from '@proton/meet/store/slices';
+import {
+    initialState as initialParticipantsState,
+    participantsReducer,
+} from '@proton/meet/store/slices/participants/participantsSlice';
+import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { useMeetingCleanup } from './useMeetingCleanup';
@@ -16,21 +22,8 @@ vi.mock('../../contexts/MeetCoreClientContext', () => ({
     useMeetCoreClient: vi.fn(),
 }));
 
-vi.mock('@proton/meet/store/hooks', () => ({
-    useMeetDispatch: vi.fn(),
-}));
-
-vi.mock('@proton/meet/store/slices', () => ({
-    resetParticipantMaps: vi.fn(),
-}));
-
 const useRoomContextMock = useRoomContext as unknown as Mock;
 const useMeetCoreClientMock = useMeetCoreClient as unknown as Mock;
-const useMeetDispatchMock = useMeetDispatch as unknown as Mock;
-const resetParticipantMapsMock = resetParticipantMaps as unknown as Mock;
-
-const dispatch = vi.fn();
-const resetParticipantMapsAction = { type: 'meetingInfo/resetParticipantMaps' };
 
 const mockRoom = {
     disconnect: vi.fn().mockResolvedValue(undefined),
@@ -39,6 +32,40 @@ const mockRoom = {
 const mockMeetCoreClient = {
     leaveMeeting: vi.fn().mockResolvedValue(undefined),
 };
+
+const mockParticipantMap = {
+    test: {
+        ParticipantUUID: 'test',
+        DisplayName: 'test',
+    },
+};
+
+const createMockStore = () => {
+    return configureStore({
+        reducer: {
+            ...participantsReducer,
+        },
+        preloadedState: {
+            participants: {
+                ...initialParticipantsState,
+                participantsMap: mockParticipantMap,
+                participantDecryptedNameMap: { test: 'test' },
+                isFetchingParticipants: true,
+            },
+        },
+    });
+};
+
+function createTestWrapper(store: ReturnType<typeof createMockStore>) {
+    function TestWrapper({ children }: { children: React.ReactNode }) {
+        return (
+            <Provider context={ProtonStoreContext} store={store}>
+                {children}
+            </Provider>
+        );
+    }
+    return TestWrapper;
+}
 
 const createParams = () => ({
     instantMeetingRef: { current: true },
@@ -58,13 +85,14 @@ describe('useMeetingCleanup', () => {
         mockMeetCoreClient.leaveMeeting.mockResolvedValue(undefined);
         useRoomContextMock.mockReturnValue(mockRoom);
         useMeetCoreClientMock.mockReturnValue(mockMeetCoreClient);
-        useMeetDispatchMock.mockReturnValue(dispatch);
-        resetParticipantMapsMock.mockReturnValue(resetParticipantMapsAction);
     });
 
     it('resets meeting state without disconnecting when disconnect is not requested', () => {
+        const store = createMockStore();
         const params = createParams();
-        const { result } = renderHook(() => useMeetingCleanup(params));
+        const { result } = renderHook(() => useMeetingCleanup(params), {
+            wrapper: createTestWrapper(store),
+        });
 
         result.current.cleanupMeeting();
 
@@ -72,7 +100,12 @@ describe('useMeetingCleanup', () => {
         expect(params.meetingLinkNameRef.current).toBe('');
         expect(params.meetingInfoRef.current).toBeNull();
         expect(params.decryptionKeyRef.current).toBeNull();
-        expect(dispatch).toHaveBeenCalledWith(resetParticipantMapsAction);
+
+        const { participants } = store.getState();
+        expect(participants.participantsMap).toEqual({});
+        expect(participants.participantDecryptedNameMap).toEqual({});
+        expect(participants.isFetchingParticipants).toBe(false);
+
         expect(params.disallowHealthCheck).toHaveBeenCalledTimes(1);
         expect(params.cleanupMlsState).toHaveBeenCalledTimes(1);
         expect(params.setJoinedRoom).toHaveBeenCalledWith(false);
@@ -83,8 +116,11 @@ describe('useMeetingCleanup', () => {
     });
 
     it('disconnects the room, leaves the meeting and stops PiP when disconnect is requested', () => {
+        const store = createMockStore();
         const params = createParams();
-        const { result } = renderHook(() => useMeetingCleanup(params));
+        const { result } = renderHook(() => useMeetingCleanup(params), {
+            wrapper: createTestWrapper(store),
+        });
 
         result.current.cleanupMeeting({ disconnect: true });
 

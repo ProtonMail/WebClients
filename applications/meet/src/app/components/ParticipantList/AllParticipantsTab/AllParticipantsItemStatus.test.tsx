@@ -4,7 +4,10 @@ import { configureStore } from '@reduxjs/toolkit';
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
+import {
+    initialState as initialParticipantsState,
+    participantsReducer,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import {
     initialState as initialRecordingStatusState,
     recordingStatusReducer,
@@ -30,13 +33,13 @@ interface MockStoreOptions {
 const createMockStore = ({ isHost = false, isScreenSharing = false, isRecording = false }: MockStoreOptions = {}) => {
     return configureStore({
         reducer: {
-            ...meetingInfoReducer,
+            ...participantsReducer,
             ...recordingStatusReducer,
             ...screenShareStatusReducer,
         },
         preloadedState: {
-            meetingInfo: {
-                ...initialMeetingInfoState,
+            participants: {
+                ...initialParticipantsState,
                 participantsMap: {
                     [participantIdentity]: {
                         ParticipantUUID: participantIdentity,

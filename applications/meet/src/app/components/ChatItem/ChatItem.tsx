@@ -7,8 +7,10 @@ import { c } from 'ttag';
 import { IcArrowUpAndLeft } from '@proton/icons/icons/IcArrowUpAndLeft';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
-import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import {
+    selectLocalParticipantIdentity,
+    selectParticipantName,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import {
     type MeetChatMessage,
     type MeetingRoomUpdate,

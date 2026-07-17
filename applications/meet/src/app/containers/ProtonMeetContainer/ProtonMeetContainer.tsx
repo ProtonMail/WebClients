@@ -10,9 +10,17 @@ import { useUser } from '@proton/account/user/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { setInvalidMeetingLinkModalOpen, setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
 import { resetChatAndReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import {
+    setInvalidMeetingLinkModalOpen,
+    setPreviousMeetingLink,
+    setUpsellModalType,
+} from '@proton/meet/store/slices/meetAppStateSlice';
 import { addKeyRotationLog } from '@proton/meet/store/slices/meetingInfo';
+import {
+    selectHasAnotherAdmin,
+    selectIsLocalParticipantAdminOrHost,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import { setMeetingLocked, toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
 import {
     PopUpControls,
@@ -72,7 +80,6 @@ import { LoadingState } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { getIceCandidateInfo } from '../../utils/checkIfUsingTurnRelay';
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
-import { isLocalParticipantAdmin } from '../../utils/isLocalParticipantAdmin';
 import { cleanupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
 import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
@@ -104,6 +111,8 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
     const dispatch = useMeetDispatch();
     const isGuest = useMeetSelector(selectIsGuest);
     const { isPaidUser, isSubUser } = useMeetSelector(selectSubscriptionStatus);
+    const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
+    const hasAnotherAdmin = useMeetSelector(selectHasAnotherAdmin);
 
     const promptOnTabClose = useFlag('MeetPromptOnTabClose');
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
@@ -178,14 +187,10 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
     const accessTokenRef = useRef<string | null>(null);
     const decryptionKeyRef = useRef<CryptoKey | null>(null);
 
-    const {
-        getParticipants,
-        participantDecryptedNameMap,
-        participantsMap,
-        resetParticipantNameMap,
-        updateAdminParticipant,
-        getQueryParticipantsCount,
-    } = useParticipantNameMap(meetingDetails.meetingId as string, decryptionKeyRef);
+    const { getParticipants, updateAdminParticipant, getQueryParticipantsCount } = useParticipantNameMap(
+        meetingDetails.meetingId,
+        decryptionKeyRef
+    );
 
     const {
         stopPiP,
@@ -198,7 +203,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         pipCleanup,
     } = usePictureInPicture({
         isDisconnected: isReconnecting || reconnectionFailed,
-        participantDecryptedNameMap,
     });
 
     const joinBlockedRef = useRef(false);
@@ -288,12 +292,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         joinedRoom,
     });
 
-    const {
-        isLocalParticipantHost,
-        isLocalParticipantAdmin: isLocalParticipantAdminLevelUser,
-        hasAnotherAdmin,
-    } = isLocalParticipantAdmin(participantsMap, room.localParticipant);
-
     const shareLink = `${window.location.origin}${
         meetingDetails.meetingId && meetingDetails.meetingPassword
             ? getMeetingLink(meetingDetails.meetingId, meetingDetails.meetingPassword)
@@ -323,7 +321,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         disallowHealthCheck,
         initializeDevices,
         getParticipants,
-        resetParticipantNameMap,
         reportMeetError,
         withMeetingLinkNameTag,
         setJoinedRoom,
@@ -928,19 +925,19 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
             dispatch(setUpsellModalType(UpsellModalTypes.GuestAccount));
         }
 
-        if (isLocalParticipantHost && !isPaidUser) {
+        if (isLocalParticipantAdminOrHost && !isPaidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.HostFreeAccount));
         }
 
-        if (isLocalParticipantHost && (isPaidUser || isSubUser)) {
+        if (isLocalParticipantAdminOrHost && (isPaidUser || isSubUser)) {
             dispatch(setUpsellModalType(UpsellModalTypes.HostPaidAccount));
         }
 
-        if (!isLocalParticipantHost && user && !isPaidUser) {
+        if (!isLocalParticipantAdminOrHost && user && !isPaidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.FreeAccount));
         }
 
-        if (!isLocalParticipantHost && user && (isPaidUser || isSubUser)) {
+        if (!isLocalParticipantAdminOrHost && user && (isPaidUser || isSubUser)) {
             dispatch(setUpsellModalType(UpsellModalTypes.PaidAccount));
         }
 
@@ -970,7 +967,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
 
     const handleMeetingExpired = async () => {
         dispatch(setPreviousMeetingLink(meetingLinkRef.current));
-        if (isLocalParticipantHost || isGuestAdminRef.current) {
+        if (isLocalParticipantAdminOrHost || isGuestAdminRef.current) {
             isExpiringRef.current = true;
             dispatch(
                 setUpsellModalType(
@@ -1050,8 +1047,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
 
         const unblock = history.block((_location, action) => {
             if (action === 'POP') {
-                const userIsAdminLevel = isLocalParticipantHost || isLocalParticipantAdminLevelUser;
-                if (!userIsAdminLevel || hasAnotherAdmin) {
+                if (!isLocalParticipantAdminOrHost || hasAnotherAdmin) {
                     if (
                         [...room.localParticipant.videoTrackPublications.values()].some(
                             (publication) => publication.source === Track.Source.ScreenShare
@@ -1062,7 +1058,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
                         dispatch(setPopupStateValue({ popup: PopUpControls.LeaveMeetingParticipant, value: true }));
                     }
                     return false;
-                } else if (userIsAdminLevel && !hasAnotherAdmin) {
+                } else if (isLocalParticipantAdminOrHost && !hasAnotherAdmin) {
                     dispatch(setPopupStateValue({ popup: PopUpControls.LeaveMeeting, value: true }));
                     return false;
                 } else {
@@ -1079,8 +1075,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         };
     }, [
         joinedRoom,
-        isLocalParticipantHost,
-        isLocalParticipantAdminLevelUser,
+        isLocalParticipantAdminOrHost,
         hasAnotherAdmin,
         history,
         dispatch,
