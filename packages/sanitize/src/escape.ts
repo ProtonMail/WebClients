@@ -50,7 +50,11 @@ export const unescapeCSSEncoding = (str: string) => {
     // Regexp declared inside the function to reset its state (because of the global flag).
     // cf https://stackoverflow.com/questions/1520800/why-does-a-regexp-with-global-flag-give-wrong-results
     // Fixed to handle all CSS whitespace characters that can terminate escape sequences
-    const UNESCAPE_CSS_ESCAPES_REGEX = /\\([0-9A-Fa-f]{1,6})[ \t\n\r\f]?/g;
+    // A CRLF pair is collapsed to a single newline during CSS input preprocessing
+    // (https://www.w3.org/TR/css-syntax-3/#input-preprocessing) before an escape
+    // consumes its single trailing whitespace, so treat \r\n as one terminator to
+    // match browser behavior and avoid a url() sanitization bypass.
+    const UNESCAPE_CSS_ESCAPES_REGEX = /\\([0-9A-Fa-f]{1,6})(?:\r\n|[ \t\n\r\f])?/g;
     const UNESCAPE_HTML_DEC_REGEX = /&#(\d+)(;|(?=[^\d;]))/g;
     const UNESCAPE_HTML_HEX_REGEX = /&#x([0-9A-Fa-f]+)(;|(?=[^\d;]))/g;
     const OTHER_ESC = /\\(.)/g;
