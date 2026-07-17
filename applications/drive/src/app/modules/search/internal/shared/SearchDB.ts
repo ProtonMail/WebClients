@@ -247,6 +247,36 @@ export class SearchDB {
         return this.db.put('userSettings', true, 'hasSearchableIndex');
     }
 
+    async getSearchLibraryBlobVersion(): Promise<string | undefined> {
+        const value = await this.db.get('userSettings', 'searchLibraryBlobVersion');
+        return typeof value === 'string' ? value : undefined;
+    }
+
+    setSearchLibraryBlobVersion(version: string): Promise<string> {
+        return this.db.put('userSettings', version, 'searchLibraryBlobVersion');
+    }
+
+    /**
+     * Compares the persisted search-library blob-format version against `currentVersion`.
+     * A mismatch (bumped deliberately when a library upgrade breaks blob compatibility)
+     * wipes the index the same way key rotation does, then persists the new version so
+     * the next bootstrap doesn't re-trigger the reset.
+     */
+    async ensureCompatibleBlobVersion(currentVersion: string): Promise<void> {
+        const storedVersion = await this.getSearchLibraryBlobVersion();
+        if (storedVersion === currentVersion) {
+            return;
+        }
+
+        // Backward compatibility: indexes built before this version check existed have
+        // no stored value. The check was introduced at version 1, so treat a missing
+        // value as "1" rather than unversioned before deciding whether a wipe is needed.
+        if ((storedVersion ?? '1') !== currentVersion) {
+            await this.clearIndex();
+        }
+        await this.setSearchLibraryBlobVersion(currentVersion);
+    }
+
     // --- BFS visitor states ---
 
     getBFSVisitorState(id: string): Promise<BFSVisitorState | undefined> {
