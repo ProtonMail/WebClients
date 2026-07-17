@@ -2290,25 +2290,25 @@
         "Siz"
       ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Platform uyuşmazlıkları nedeniyle bu kullanıcı taşınamaz."
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
       ],
       "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının hesabını açın."
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı taşımak için ${ usersAddressesLink } altından hesabını açın."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı taşımak için ${ usersAddressesLink } altından adresini açın."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Bu kullanıcıyı taşımak için kullanıcının ${ BRAND_NAME } platformuna katılma davetini kabul etmesi gerekir."
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
       ],
       "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının arşivini kaldırın."
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
       ],
       "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının askıya alınma durumunu kaldırın."
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının askıya alınma durumunu kaldırın."
       ]
     },
     "Browser": {
@@ -2441,6 +2441,9 @@
       ],
       "Take a tour": [
         "Keşfedin"
+      ],
+      "Get 50% offer": [
+        "%50 indirimden yararlanın"
       ]
     },
     "BYOE": {
@@ -9299,6 +9302,24 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "145 ülkede 20.000 üzerinde sunucuya erişim"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "10 Gb/sn olabilen en yüksek VPN hızı"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
       ]
     },
     "info": {
@@ -10463,25 +10484,25 @@
         "Posta kodu"
       ],
       "Exact host matching": [
-        "Tam ana bilgisayar eşleşmesi"
+        "Tam sunucu eşleşmesi"
       ],
       "Exact URL matching": [
-        "Tam URL eşleşmesi"
+        "Tam adres eşleşmesi"
       ],
       "Never fill on this exact URL": [
-        "Bu URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "Parent domain and subdomains (default)": [
         "Ana etki alanı ve alt etki alanları (varsayılan)"
       ],
       "Regular expression": [
-        "Düzenli ifade"
+        "Kurallı ifade"
       ],
       "Starts with": [
-        "Şununla başlar"
+        "Şununla başlayan"
       ],
       "URL wildcard pattern": [
-        "URL genel arama karakteri deseni"
+        "Adres genel arama karakteri modeli"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11047,16 +11068,16 @@
         "Tam (alt) etki alanı eşleştirme kuralı"
       ],
       "Exact URL matching rule": [
-        "Tam URL eşleştirme kuralı"
+        "Tam adres eşleştirme kuralı"
       ],
       "Never fill with this exact URL": [
-        "Bu tam URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "Regular expression rule": [
-        "Düzenli ifade kuralı"
+        "Kurallı ifade kuralı"
       ],
       "Wildcard pattern matching rule": [
-        "genel arama karakter deseni eşleştirme kuralı"
+        "Genel arama karakter modeli eşleştirme kuralı"
       ]
     },
     "Message display when a new app version is available": {
@@ -16506,6 +16527,9 @@
       ],
       "Users and addresses": [
         "Kullanıcılar ve adresler"
+      ],
+      "Stay for 50% off your next month": [
+        "Sonraki ay %50 indirimden yararlanın"
       ]
     },
     "Title header for keys table": {
@@ -16856,7 +16880,7 @@
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
+        "${ modeLabelStong } güçlü bir denetim sağlar, ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı siteler ile eşleşmesine ve bu verilerin doldurulmasına neden olabilir."
       ]
     },
     "WeekDay": {
