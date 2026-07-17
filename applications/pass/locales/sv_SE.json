@@ -779,6 +779,9 @@
       ],
       "Regex invalid": [
         "Regex ogiltigt"
+      ],
+      "Regex unsafe": [
+        "Regex osäker"
       ]
     },
     "Activity": {
@@ -1389,6 +1392,27 @@
       ],
       "Failed to stop SSH agent: ${ errorMessage }": [
         "Misslyckades att stoppa SSH-agent: ${ errorMessage }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "En kontroll av skrivbordsupplåsning pågår redan."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometriska inloggningsuppgifter för lås matchar inte."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometriska inloggningsuppgifter för lås hittades inte."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Kunde inte ladda instruktioner för agentkonfiguration. Kopiera token nedan, den kommer inte att visas igen."
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Utgångstiden måste vara mellan 1 timme och 1 år"
+      ],
+      "Failed to load token actions": [
+        "Misslyckades att ladda token-åtgärder"
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Skrivbordsappen ${ PASS_APP_NAME } bör vara inloggad."
       ]
     },
     "Error message": {
@@ -2066,8 +2090,7 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2740,6 +2763,42 @@
       ],
       "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
         "${ PASS_APP_NAME } kommer använda SSH-nycklarna sparade i dina valv."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Åtkomsttoken, som används tillsammans med ${ passCliLink }, gör att du kan automatisera CI/CD eller ge din AI-agent begränsad åtkomst till vad den behöver för att köra sitt jobb."
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Efter att du har bekräftat behöver du acceptera en begäran om behörighet för ${ PASS_APP_NAME }."
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Kopiera markdown-texten nedan och skicka den till din AI-agent. Det här är den enda gången din token visas."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Varje åtgärd som denna agent-token har utfört, med den senaste först."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Inga SSH-nycklar hittades i ${ PASS_SHORT_APP_NAME }. Skapa SSH-nyckelobjekt att använda med agenten."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Se till att det tidigare aktiva fönstret är där du vill skriva automatiskt och att din markör var fokuserad på inloggningsfältet."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Sorterat efter fält (titel först, sedan användarnamn eller e-post, webbplats, anteckningar) och matchningsprecision (exakt, börjar med, innehåller)."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Testa din token genom att logga in och lista valv:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agenten kommer att behöva ange ett skäl för varje åtgärd den utför, och varje åtgärd kommer att registreras i en granskningslogg som du kan granska. Efter att du har skapat din token får du instruktioner att kopiera och klistra in i din AI-agent."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Denna token får skrivskyddad åtkomst till de valv du väljer. Den kan läsa objekt, men kan inte redigera dem, dela valv eller bjuda in andra. Du kan ändra detta senare."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "För att konfigurera upplåsning med biometri kräver ${ PASS_APP_NAME } en ny webbläsarbehörighet. När du har accepterat den kommer tillägget att laddas om. Öppna den här sidan igen efteråt."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Du har inte längre åtkomst till vissa valv eller objekt eftersom din grupp ${ groupName }s åtkomst togs bort."
       ]
     },
     "Keyboard key": {
@@ -3970,6 +4029,18 @@
       ],
       "Use ${ PASS_APP_NAME } as SSH agent": [
         "Använd ${ PASS_APP_NAME } som SSH-agent"
+      ],
+      "Exact host matching": [
+        "Exakt värdmatchning"
+      ],
+      "Record Number": [
+        "Postnummer"
+      ],
+      "Relevant": [
+        "Relevant"
+      ],
+      "URL wildcard pattern": [
+        "Jokerteckenmönster för URL"
       ]
     },
     "Link": {
@@ -4007,6 +4078,21 @@
       ],
       "Never fill with this exact URL": [
         "Fyll aldrig med denna exakta URL"
+      ],
+      "'Starts with' matching rule": [
+        "Matchningsregel för \"Börjar med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Matchningsregel för exakt (under)domän"
+      ],
+      "Exact URL matching rule": [
+        "Matchningsregel för exakt URL"
+      ],
+      "Regular expression rule": [
+        "Regel för reguljärt uttryck"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchningsregel för jokerteckenmönster"
       ]
     },
     "new_plans: feature": {
@@ -5009,6 +5095,18 @@
       ],
       "Test a URL against this rule": [
         "Testa en URL mot denna regel"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Justera beteenden för autofyll för att ändra var inloggningar föreslås."
+      ],
+      "Agent setup instructions": [
+        "Instruktioner för att konfigurera agent"
+      ],
+      "Browser permission required": [
+        "Webbläsarbehörighet krävs"
+      ],
+      "No access tokens yet": [
+        "Inga åtkomsttoken än"
       ]
     },
     "Title_cloned_item": {
@@ -5357,6 +5455,15 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ger kraftfull kontroll, men ett enda fel kan göra att autofyll matchar och fyller i data på bedrägliga webbplatser eller nätfiske-webbplatser."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH-agent kräver användning av SSH-nycklar, vilket inte är tillgängligt i ditt paket."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Detta objekt kan inte föreslås för autofyll på grund av \"${ neverModeDescriptionStrong }\". Lägg till en till URL om du vill att detta objekt ska autofyllas."
       ]
     }
   }

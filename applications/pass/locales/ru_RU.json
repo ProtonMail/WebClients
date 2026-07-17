@@ -714,6 +714,78 @@
       ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
+      ],
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } для Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } для iOS"
+      ],
+      "Copy card number": [
+        "Скопировать номер карты"
+      ],
+      "Copy email": [
+        "Скопировать эл. почту"
+      ],
+      "Copy expiration date": [
+        "Скопировать срок действия"
+      ],
+      "Copy instructions": [
+        "Скопировать инструкции"
+      ],
+      "Copy name on card": [
+        "Скопировать имя на карте"
+      ],
+      "Copy note content": [
+        "Скопировать текст заметки"
+      ],
+      "Copy security code": [
+        "Скопировать код безопасности"
+      ],
+      "Copy token": [
+        "Скопировать токен"
+      ],
+      "Copy username": [
+        "Скопировать имя пользователя"
+      ],
+      "Create token": [
+        "Создать токен"
+      ],
+      "Do not show again": [
+        "Больше не показывать"
+      ],
+      "Do not show again when I press": [
+        "Больше не показывать при нажатии"
+      ],
+      "Don't show this again": [
+        "Больше не показывать это"
+      ],
+      "Get mobile and desktop apps": [
+        "Скачать мобильные и десктопные приложения"
+      ],
+      "Manage vault access": [
+        "Управлять доступом к хранилищу"
+      ],
+      "New token": [
+        "Новый токен"
+      ],
+      "Organize vaults": [
+        "Управление хранилищами"
+      ],
+      "Read More": [
+        "Подробнее"
+      ],
+      "Regex invalid": [
+        "Некорректное регул. выражение"
+      ],
+      "Regex unsafe": [
+        "Небезопасное регулярное выражение"
+      ],
+      "Show Less": [
+        "Свернуть"
+      ],
+      "View agent activity": [
+        "Просмотреть активность агента"
       ]
     },
     "Browser": {
@@ -830,6 +902,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Ваша личная информация стала известна в результате утечки данных из сторонней службы."
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Эти хранилища будут недоступны, а их содержимое станет недоступно для поиска или автозаполнения."
       ]
     },
     "Email": {
@@ -1242,6 +1317,87 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Проверка разблокировки на компьютере уже выполняется."
+      ],
+      "Biometric authentication failed.": [
+        "Биометрическая аутентификация не удалась."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Учетные данные биометрической блокировки не совпадают."
+      ],
+      "Biometric lock credentials not found.": [
+        "Учетные данные биометрической блокировки не найдены."
+      ],
+      "Biometric lock is not configured.": [
+        "Биометрическая блокировка не настроена."
+      ],
+      "Biometric lock setup failed.": [
+        "Настройка биометрической блокировки не удалась."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Не удалось загрузить инструкции по настройке агента. Скопируйте токен ниже, он больше не будет показан."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Ошибка зашифрованного соединения с десктопным приложением ${ PASS_APP_NAME }."
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Срок действия должен быть от 1 часа до 1 года"
+      ],
+      "Failed to create access token": [
+        "Не удалось создать токен доступа"
+      ],
+      "Failed to delete access token": [
+        "Не удалось удалить токен доступа"
+      ],
+      "Failed to load access tokens": [
+        "Не удалось загрузить токены доступа"
+      ],
+      "Failed to load token actions": [
+        "Не удалось загрузить действия токена"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Не удалось запустить SSH-агент: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Не удалось остановить SSH-агент: ${ errorMessage }"
+      ],
+      "Failed to update vault access": [
+        "Не удалось обновить доступ к хранилищу"
+      ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Не удалось выполнить импорт для хранилища «${ vaultData.name }»: ${ errorMessage }"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Имя должно содержать не более 191 символа"
+      ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Серверы недоступны. Пожалуйста, попробуйте разблокировать ${ PASS_SHORT_APP_NAME } через несколько минут."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Десктопное приложение ${ PASS_APP_NAME } не ответило вовремя."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Десктопное приложение ${ PASS_APP_NAME } заблокировано, его необходимо разблокировать."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Десктопное приложение ${ PASS_APP_NAME } не установлено."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Десктопное приложение ${ PASS_APP_NAME } не отвечает. Оно запущено?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "В десктопном приложении ${ PASS_APP_NAME } выполнен вход в другой аккаунт."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "В десктопном приложении ${ PASS_APP_NAME } должен быть выполнен вход."
+      ],
+      "Unsupported Bitwarden file format": [
+        "Неподдерживаемый формат файла Bitwarden"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Вы сейчас не в сети. Пожалуйста, возобновите подключение, чтобы разблокировать ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "Error message": {
@@ -1886,9 +2042,6 @@
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
         "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
@@ -2472,6 +2625,216 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "Пользователь ${ inviterEmail } хочет поделиться элементом с группой, которой вы управляете."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "Пользователь ${ inviterEmail } хочет поделиться элементом с группой ${ name }."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } будет использовать SSH-ключи, сохраненные в ваших хранилищах."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Офлайн-режим ${ PASS_SHORT_APP_NAME } включен."
+      ],
+      "${ selectedShareIds.size } selected": [
+        "Выбрано: ${ selectedShareIds.size }"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Срок действия токена доступа \"${ action.token.Name }\" уже истек. В случае удаления он больше не будет отображаться."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Токен доступа «${ action.token.Name }» немедленно прекратит работу. Это действие нельзя отменить."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Токены доступа, используемые совместно с ${ passCliLink }, позволяют автоматизировать CI/CD или предоставить вашему ИИ-агенту ограниченный доступ к тому, что ему необходимо для выполнения работы."
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "После подтверждения вам потребуется принять запрос на разрешение для ${ PASS_APP_NAME }."
+      ],
+      "An item previously shared with you was removed.": [
+        "Элемент, которым с вами ранее поделились, был удален."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "От 60 (1 час) до 525600 (1 год)"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Перенесите свои существующие пароли в ${ PASS_APP_NAME }."
+      ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Скопировано в буфер обмена (истекает через ${ timeoutDurationHumanReadable })"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Скопируйте разметку ниже и отправьте ее своему ИИ-агенту. Токен показывается в первый и последний раз."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Скопируйте этот токен сейчас. Из соображений безопасности он больше не будет показан."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Создайте токен для интеграции ${ PASS_APP_NAME } со своими скриптами и инструментами."
+      ],
+      "Created ${ createdDate }": [
+        "Создано: ${ createdDate }"
+      ],
+      "Created item": [
+        "Создан элемент"
+      ],
+      "Deleted item": [
+        "Элемент удален"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Скачайте pass-cli по ссылке ${ passCliLink }."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Включите офлайн-режим, чтобы иметь возможность получить доступ к своим данным в ${ PASS_SHORT_APP_NAME } в случае потери интернет-соединения или недоступности серверов ${ BRAND_NAME }."
+      ],
+      "Enabling desktop auto-lock": [
+        "Включение автоблокировки на десктопе"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Каждое действие, выполненное этим токеном агента, начиная с самых новых."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Срок действия истек ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Истекает ${ formattedDate }"
+      ],
+      "Failed updating your vault organization": [
+        "Не удалось обновить организацию вашего хранилища"
+      ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Получите максимум от ${ PASS_APP_NAME }, создав хранилище для каждой команды или проекта."
+      ],
+      "invites the group ${ name } to access items in": [
+        "приглашает группу ${ name } получить доступ к элементам в"
+      ],
+      "Log out of any existing session:": [
+        "Выйдите из любого существующего сеанса:"
+      ],
+      "Moved item to trash": [
+        "Элемент перемещен в Корзину"
+      ],
+      "No activity recorded yet.": [
+        "Активность пока не зарегистрирована."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "В ${ PASS_SHORT_APP_NAME } не найдено SSH-ключей. Создайте элементы SSH-ключей для использования с агентом."
+      ],
+      "No vaults available.": [
+        "Нет доступных хранилищ."
+      ],
+      "None selected": [
+        "Ничего не выбрано"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Отображаются только токены, срок действия которых истек за последние 30 дней. Более старые токены удаляются автоматически."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Откройте настройки Safari для расширения и убедитесь, что разрешения сайта включены для доменов ${ BRAND_NAME }"
+      ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Пожалуйста, держите приложение ${ PASS_APP_NAME } открытым, чтобы буфер обмена мог очищаться автоматически."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Пожалуйста, держите браузер открытым, чтобы буфер обмена мог очищаться автоматически."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Пожалуйста, убедитесь, что ранее активное окно — это то место, куда вы хотите применить автонабор, а курсор находится в поле ввода имени пользователя."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Защищено ${ PROTON_SENTINEL_LINK }, нашей передовой программой защиты аккаунтов"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Сортировка по полям (сначала название, затем имя пользователя или эл. почта, веб-сайт, заметки) и по точности совпадения (точное соответствие, начинается с, содержит)."
+      ],
+      "Read item": [
+        "Прочесть элемент"
+      ],
+      "Restored item from trash": [
+        "Элемент восстановлен из Корзины"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Выберите хранилища, которые «${ token.Name }» может читать."
+      ],
+      "Servers are unreachable": [
+        "Серверы недоступны"
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Протестируйте токен, выполнив вход и выведя список хранилищ:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Агент должен будет указывать причину для каждого выполняемого им действия, и каждое действие будет записываться в журнал аудита, который вы сможете просмотреть. После создания токена вы получите инструкции для копирования и вставки в своего ИИ-агента."
+      ],
+      "The group is invited to a vault.": [
+        "Группа приглашена в хранилище."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Затем вы можете перейти на страницу ${ url }, чтобы скопировать инструкции для отправки вашему ИИ-агенту."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Эта функция в настоящее время является экспериментальной на Linux. Пожалуйста, убедитесь, что ваша система обновлена."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Для работы этой функции требуется, чтобы десктопное приложение ${ PASS_APP_NAME } было установлено и запущено во время настройки."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Этот токен получает доступ только для чтения к выбранным вами хранилищам. Он может читать элементы, но не может редактировать их, делиться хранилищами или приглашать других. Вы можете изменить это позже."
+      ],
+      "This will reload the application.": [
+        "Это приведет к перезапуску приложения."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Чтобы настроить разблокировку по биометрии, для ${ PASS_APP_NAME } требуется новое разрешение браузера. После того как вы примете его, расширение перезагрузится. Пожалуйста, откройте эту страницу заново после этого."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Тестируйте новые функции, обновления и продукты ${ BRAND_NAME } до их публичного релиза."
+      ],
+      "Updated item": [
+        "Элемент обновлен"
+      ],
+      "Updating vault organization...": [
+        "Обновление организации хранилища..."
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Улучшите тарифный план до ${ PASS_APP_NAME } Plus, чтобы создавать токены доступа и использовать ${ PASS_APP_NAME } программно."
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Хранилище «${ share.content.name }» было удалено."
+      ],
+      "Vault access granted": [
+        "Доступ к хранилищу предоставлен"
+      ],
+      "Vault organization successfully updated": [
+        "Организация хранилища успешно обновлена"
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Когда режим включен, вы по-прежнему можете получить доступ к своим данным в ${ PASS_SHORT_APP_NAME } при потере интернет-соединения или недоступности серверов ${ BRAND_NAME }."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Теперь вы можете использовать свой резервный пароль, чтобы получить доступ к ${ PASS_SHORT_APP_NAME } в режиме офлайн"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Теперь вы можете использовать свой дополнительный пароль, чтобы получить доступ к ${ PASS_SHORT_APP_NAME } в режиме офлайн"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Теперь вы можете использовать свой второй пароль, чтобы получить доступ к ${ PASS_SHORT_APP_NAME } в режиме офлайн"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Возможно, вам потребуется предоставить разрешение на специальные возможности для ${ PASS_APP_NAME }."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Вы больше не имеете доступа к некоторым хранилищам или элементам, поскольку доступ вашей группы ${ groupName } был удален."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Теперь вы имеете доступ к «Item ${ itemName }», поскольку вашей группе ${ groupName } был предоставлен доступ."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Теперь вы имеете доступ к «Vault ${ vaultName }», поскольку вашей группе ${ groupName } был предоставлен доступ."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Вы больше не будете иметь доступ к общему доступу, 2FA и другим дополнительным функциям в ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -3590,6 +3953,150 @@
       ],
       "ZIP or Postal code": [
         "ZIP-код или почтовый индекс"
+      ],
+      "1 day": [
+        "1 день"
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "1 week": [
+        "1 неделя"
+      ],
+      "1 year": [
+        "1 год"
+      ],
+      "Access tokens": [
+        "Токены доступа"
+      ],
+      "Account Number": [
+        "Номер счёта"
+      ],
+      "Basic": [
+        "Базовые"
+      ],
+      "Check": [
+        "Проверить"
+      ],
+      "Checkbox": [
+        "Флажок"
+      ],
+      "Custom": [
+        "Свой вариант"
+      ],
+      "Custom expiration (minutes)": [
+        "Пользовательский срок действия (в минутах)"
+      ],
+      "Exact host matching": [
+        "Точное соответствие хоста"
+      ],
+      "Exact URL matching": [
+        "Точное соответствие URL"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Токены с истекшим сроком действия (${ expired.length })"
+      ],
+      "Expiry Date": [
+        "Срок действия"
+      ],
+      "Holder Name": [
+        "Имя владельца"
+      ],
+      "Issuing Authority": [
+        "Орган выдачи"
+      ],
+      "Issuing Country": [
+        "Страна выдачи"
+      ],
+      "Issuing State/Country": [
+        "Страна/штат выдачи"
+      ],
+      "Larger window": [
+        "Увеличить окно"
+      ],
+      "Medical Conditions": [
+        "Заболевания"
+      ],
+      "Medications": [
+        "Лекарственные препараты"
+      ],
+      "Member ID": [
+        "ID участника"
+      ],
+      "Member Name": [
+        "Имя участника"
+      ],
+      "Membership ID": [
+        "ID участника"
+      ],
+      "Name (SSID)": [
+        "Имя (SSID)"
+      ],
+      "Never fill on this exact URL": [
+        "Никогда не заполнять на этом точном URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Родительский домен и поддомены (по умолчанию)"
+      ],
+      "Points Balance": [
+        "Баланс баллов"
+      ],
+      "Record Number": [
+        "Номер записи"
+      ],
+      "Regular expression": [
+        "Регулярное выражение"
+      ],
+      "Relevant": [
+        "По соответствию"
+      ],
+      "Routing Number": [
+        "Маршрутный номер"
+      ],
+      "Secret": [
+        "Секрет"
+      ],
+      "Seed Phrase": [
+        "Сид-фраза"
+      ],
+      "Share ID": [
+        "Поделиться ID"
+      ],
+      "Starts with": [
+        "Начинается с"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Tier/Level": [
+        "Уровень/статус"
+      ],
+      "Tier/Status": [
+        "Уровень/Статус"
+      ],
+      "Token name": [
+        "Имя токена"
+      ],
+      "Unnamed custom item": [
+        "Пользовательский элемент без имени"
+      ],
+      "Unnamed SSH key": [
+        "SSH-ключ без имени"
+      ],
+      "Unnamed WiFi item": [
+        "Элемент WiFi без имени"
+      ],
+      "URL wildcard pattern": [
+        "Шаблон URL с подстановочными знаками"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Использовать ${ PASS_APP_NAME } в качестве SSH-агента"
+      ],
+      "Use for AI agent": [
+        "Использовать для ИИ-агента"
+      ],
+      "Vault access": [
+        "Доступ к хранилищу"
       ]
     },
     "Link": {
@@ -3628,6 +4135,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Вы выбрали ${ semiboldText } в этом хранилище."
+      ],
+      "'Starts with' matching rule": [
+        "Правило соответствия «Начинается с»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правило точного соответствия (под) домена"
+      ],
+      "Exact URL matching rule": [
+        "Правило точного соответствия URL"
+      ],
+      "Never fill with this exact URL": [
+        "Никогда не заполнять с этим точным URL"
+      ],
+      "Regular expression rule": [
+        "Правило регулярного выражения"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правило соответствия шаблону с подстановочными знаками"
       ]
     },
     "new_plans: feature": {
@@ -3644,6 +4169,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } был включен"
+      ],
+      "Access token deleted": [
+        "Токен доступа удален"
       ]
     },
     "Option": {
@@ -3780,11 +4308,20 @@
       ],
       "You can attach files to items for a better organization": [
         "Вы можете прикреплять файлы к элементам для лучшей организации"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Эта функция не поддерживается в вашем тарифном плане. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Эта функция не поддерживается в вашем тарифном плане. Обратитесь к администратору, чтобы получить доступ."
       ]
     },
     "PassOnboardingOffer": {
       "${ price }/month": [
         "${ price } в месяц"
+      ],
+      "${ plusTitle } Lifetime for ${ plusLifetimePrice }": [
+        "Пожизненный тариф ${ plusTitle } за ${ plusLifetimePrice }"
       ]
     },
     "Placeholder": {
@@ -3895,6 +4432,15 @@
       ],
       "Used on ${ url }": [
         "Использовать на ${ url }"
+      ],
+      "e.g. 60": [
+        "например, 60"
+      ],
+      "Name displayed in emails": [
+        "Имя, отображаемое в электронных письмах"
+      ],
+      "Select option": [
+        "Выберите вариант"
       ]
     },
     "Security Center - Info": {
@@ -4044,6 +4590,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Письмо с подтверждением отправлено. Проверьте свой почтовый ящик, чтобы подтвердить его подлинность."
+      ],
+      "SSH agent successfully started": [
+        "SSH-агент успешно запущен"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-агент успешно остановлен"
       ]
     },
     "Theme": {
@@ -4534,6 +5086,69 @@
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонима.",
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов.",
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Для использования токенов доступа требуется тариф ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Активность для «${ token.Name }»"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Настройте поведение автозаполнения, чтобы изменить места, где предлагаются логины."
+      ],
+      "Agent setup instructions": [
+        "Инструкции по настройке агента"
+      ],
+      "Browser permission required": [
+        "Требуется разрешение браузера"
+      ],
+      "Clear clipboard": [
+        "Очистить буфер обмена"
+      ],
+      "Create new access token": [
+        "Создать новый токен доступа"
+      ],
+      "Delete access token?": [
+        "Удалить токен доступа?"
+      ],
+      "Hidden vaults": [
+        "Скрытые хранилища"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Manage vault access": [
+        "Управлять доступом к хранилищу"
+      ],
+      "No access tokens yet": [
+        "Токенов доступа пока нет"
+      ],
+      "Organize vaults": [
+        "Управление хранилищами"
+      ],
+      "Perform autotype?": [
+        "Выполнить автонабор?"
+      ],
+      "Setup offline mode": [
+        "Настройка офлайн-режима"
+      ],
+      "SSH Agent": [
+        "SSH-агент"
+      ],
+      "Test a URL against this rule": [
+        "Протестировать URL на соответствие этому правилу"
+      ],
+      "URL matching": [
+        "Соответствие URL"
+      ],
+      "Vault shared with a group you administer": [
+        "Хранилище предоставлено группе под вашим управлением"
+      ],
+      "Visible vaults": [
+        "Видимые хранилища"
+      ],
+      "Your new access token": [
+        "Ваш новый токен доступа"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4874,6 +5489,100 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Режим «${ modeLabelStong }» обеспечивает мощный контроль, но одна ошибка может привести к тому, что автозаполнение сработает и заполнит данные на мошеннических или фишинговых сайтах."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Офлайн-режим ${ PASS_SHORT_APP_NAME } выключен."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Не удалось выполнить автозаполнение. Убедитесь, что у приложения ${ PASS_APP_NAME } есть необходимые разрешения, и попробуйте еще раз (${ error })."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Для работы SSH-агента требуется использование SSH-ключей, которые недоступны в вашем тарифном плане."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Этот элемент не может быть предложен для автозаполнения из-за правила «${ neverModeDescriptionStrong }». Добавьте другой URL, если хотите, чтобы для этого элемента работало автозаполнение."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Активность"
+      ],
+      "Activity details could not be loaded.": [
+        "Не удалось загрузить подробности активности."
+      ],
+      "Folder": [
+        "Папка"
+      ],
+      "Item": [
+        "Элемент"
+      ],
+      "Reason": [
+        "Причина"
+      ],
+      "Vault": [
+        "Хранилище"
+      ]
+    },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Вы хотите, чтобы буфер обмена автоматически очищался через ${ timeoutDurationHumanReadable }?"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
+      ]
+    },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Потребуется разрешение от вашего браузера"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Введите URL для проверки соответствия вашему текущему правилу"
+      ],
+      "The rule is matching this URL": [
+        "Правило соответствует этому URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Правило НЕ соответствует этому URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Этот URL будет заблокирован для автозаполнения"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Этот URL НЕ будет заблокирован для автозаполнения"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Активен"
+      ],
+      "Agent": [
+        "Агент"
+      ],
+      "Expired": [
+        "Срок действия истек"
+      ],
+      "Expiring soon": [
+        "Скоро истекает"
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "копия"
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Перейти на тариф ${ planName }"
       ]
     }
   }
