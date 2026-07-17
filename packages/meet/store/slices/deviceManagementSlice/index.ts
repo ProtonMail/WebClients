@@ -28,6 +28,7 @@ export const deviceManagementInitialState: DeviceManagementState = {
     initialCameraState: false,
     initialAudioState: false,
     userCameraIntent: null,
+    isMediaInitializing: false,
     uiModals: {
         permissionsModal: PermissionsModalType.NONE,
     },
@@ -100,6 +101,9 @@ const slice = createSlice({
         },
         setUserCameraIntent: (state, action: PayloadAction<boolean | null>) => {
             state.userCameraIntent = action.payload;
+        },
+        setMediaInitializing: (state, action: PayloadAction<boolean>) => {
+            state.isMediaInitializing = action.payload;
         },
         dismissPermissionsModal: (state) => {
             state.uiModals.permissionsModal = PermissionsModalType.NONE;
@@ -221,6 +225,7 @@ export const {
     setInitialCameraState,
     setInitialAudioState,
     setUserCameraIntent,
+    setMediaInitializing,
     dismissPermissionsModal,
     showPermissionsModal,
     resetDeviceManagement,
