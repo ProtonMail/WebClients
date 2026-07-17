@@ -93,7 +93,7 @@ interface EnhancedAccessControlItem {
 }
 const AccessControlSettingsSection = () => {
     const [samlSSO] = useSamlSSO();
-    const hasSsoConfig = samlSSO && samlSSO.configs.length > 0;
+    const hasSsoConfig = samlSSO?.configs.some((config) => config.Enabled);
     const [organization] = useOrganization();
     const [subscription] = useSubscription();
 
