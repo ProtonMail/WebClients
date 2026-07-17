@@ -19,6 +19,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - lumoSurveyPaidUsers: Survey flag for paid users
  * - lumoSurveyGuestUsers: Survey flag for guest users
  * - memory: Enable the memory feature (saved memories used to personalize general chats)
+ * - visualizationInstructions: Enable chart and KPI card formatting instructions in the system prompt
  * - customAgents: Enable the custom agents option in the composer tools dropdown
  * - maxAvailableFree: When enabled, free users can select Lumo Max (default off during high load)
  * - maxAvailableGuest: When enabled, guest users can select Lumo Max (default off during high load)
@@ -37,6 +38,7 @@ export const useLumoFlags = () => {
     const apiKeyManagement = useFlag('LumoAPIKeyManagement');
     const lumoSurvey = useFlag('LumoSurveys');
     const memory = useFlag('LumoMeowmory');
+    const visualizationInstructions = useFlag('LumoVisualizationInstructions');
     const lumoNativeAuth = useFlag('LumoNativeAuth');
     const customAgents = useFlag('LumoCustomAgents');
     const aiPaperTrail = useFlag('LumoAiPaperTrail');
@@ -45,6 +47,7 @@ export const useLumoFlags = () => {
 
     return {
         memory,
+        visualizationInstructions,
         customAgents,
         aiPaperTrail,
         imageTools,
