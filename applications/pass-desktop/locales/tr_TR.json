@@ -320,7 +320,7 @@
         "Bastığımda bir daha görüntülenmesin"
       ],
       "Do not show this again": [
-        "Bunu bir daha gösterme"
+        "Bunu yeniden gösterme"
       ],
       "Don't show this again": [
         "Bunu yeniden gösterme"
@@ -808,10 +808,10 @@
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
       ],
       "Regex invalid": [
-        "Regex geçersiz"
+        "Kurallı ifade geçersiz"
       ],
       "Regex unsafe": [
-        "Regex güvenli değil"
+        "Kurallı ifade güvenli değil"
       ]
     },
     "Activity": {
@@ -1225,10 +1225,10 @@
         "Varsayılan e-posta kutusu ayarlanamadı"
       ],
       "Failed to start SSH agent: ${ errorMessage }": [
-        "SSH agent başlatılamadı: ${ errorMessage }"
+        "SSH aracısı başlatılamadı: ${ errorMessage }"
       ],
       "Failed to stop SSH agent: ${ errorMessage }": [
-        "SSH agent durdurulamadı: ${ errorMessage }"
+        "SSH aracısı durdurulamadı: ${ errorMessage }"
       ],
       "Failed to sync aliases": [
         "Takma adlar eşitlenemedi"
@@ -1626,7 +1626,7 @@
         "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
       ],
       "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
-        "${ PASS_APP_NAME } kasalarınızda kaydedilmiş SSH anahtarlarını kullanacaktır."
+        "${ PASS_APP_NAME }, kasalarınızda kaydedilmiş SSH anahtarlarını kullanacak."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } çevrim dışı kipi açıldı."
@@ -2052,7 +2052,7 @@
         "Kimlik onaylandı"
       ],
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
-        "SSH agent'ı başka bir ücretli hesapta kullanmayı planlamıyorsanız o hesaba geçmeden önce bu ayarı devre dışı bırakmayı unutmayın."
+        "SSH aracısını başka bir ücretli hesapta kullanmayı planlamıyorsanız o hesaba geçmeden önce bu ayarı kapatmayı unutmayın."
       ],
       "Import the CSV file below.": [
         "Aşağıdan CSV dosyasını içe aktarın."
@@ -2164,7 +2164,7 @@
         "Düşük Öncelik"
       ],
       "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
-        "SSH agent'ın aktif kalması için ${ PASS_APP_NAME } uygulamasının çalışır durumda olduğundan emin olun (pencere küçültülmüş olabilir). Parola gerektiren SSH anahtarları şu anda desteklenmemektedir."
+        "SSH aracsının etkin kalması için ${ PASS_APP_NAME } uygulamasının çalıştığından emin olun (pencere küçültülmüş olabilir). Parola ifadesi gereken SSH anahtarları şu anda desteklenmiyor."
       ],
       "Manager": [
         "Yönetici"
@@ -2195,7 +2195,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2231,7 +2232,7 @@
         "Ağ bağlantısı yok"
       ],
       "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
-        "${ PASS_SHORT_APP_NAME } içinde SSH anahtarı bulunamadı. Aracı ile birlikte kullanmak üzere SSH anahtarı öğeleri oluşturun."
+        "${ PASS_SHORT_APP_NAME } içinde SSH anahtarı bulunamadı. Aracı ile kullanılacak SSH anahtarı ögeleri oluşturun."
       ],
       "No vaults available.": [
         "Kullanılabilecek bir kasa yok."
@@ -2258,7 +2259,7 @@
         "Yalnızca son 30 gün içinde süresi dolan kodlar görüntülenir. Daha eski kodlar otomatik olarak silinir."
       ],
       "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
-        "\"Hizmetler\"i açın (Windows arama çubuğunu kullanabilir veya Win+R tuşlarına basıp services.msc yazabilirsiniz)."
+        "\"Hizmetler\" bölümünü açın (Windows arama çubuğunu kullanabilir veya Win+R tuşlarına basıp services.msc yazabilirsiniz)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Eklenti için Safari ayarlarını açın ve site izinlerinin ${ BRAND_NAME } etki alanı için açık olduğunu doğrulayın"
@@ -2286,7 +2287,7 @@
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir."
       ],
       "Paste the following command in your terminal:": [
-        "Aşağıdaki komutu terminalinize yapıştırın:"
+        "Şu komutu terminalinize yapıştırın:"
       ],
       "Paused": [
         "Duraklatıldı"
@@ -2517,7 +2518,7 @@
         "Oturum zaman aşımına uğradı"
       ],
       "Set \"Startup type\" to Disabled, click OK.": [
-        "\"Başlangıç türünü\" \"Devre Dışı\" olarak ayarlayın ve TAMAM'a tıklayın."
+        "\"Başlangıç türünü\" kapalı olarak ayarlayın ve Tamam üzerine tıklayın."
       ],
       "Set by your organization": [
         "Kuruluşunuz tarafından ayarlanmış"
@@ -2680,7 +2681,7 @@
         "Biyometri ile kilit açmak için ${ PASS_APP_NAME } uygulamasına yeni bir tarayıcı izni verilmesi gerekiyor. İzni verdikten sonra eklenti yeniden yüklenecek. Ardından bu sayfayı yeniden açın."
       ],
       "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
-        "Windows'ta ${ PASS_APP_NAME } SSH agent kullanmak için OpenSSH hizmetinin devre dışı bırakılması gerekir."
+        "Windows üzerinde ${ PASS_APP_NAME } SSH aracısı kullanmak için OpenSSH hizmetinin kapatılması gerekir."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Dünya çapında 50.000 üzerinde kurumsal kullanıcı ve 100 milyon hesap tarafından güveniliyor."
@@ -2903,7 +2904,7 @@
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
-        "Alanlara göre (önce başlık, ardından kullanıcı adı veya e-posta adresi, web sitesi, notlar) ve eşleşme hassasiyetine göre (tam eşleşme, şununla başlar, içeriyor) sıralanmıştır."
+        "Alanlara göre (önce başlık, ardından kullanıcı adı veya e-posta adresi, site adresi, notlar) ve eşleşme türüne göre (tam eşleşme, şununla başlayan, şunu içeren) sıralanmıştır."
       ]
     },
     "Keyboard key": {
@@ -4079,7 +4080,7 @@
         "Güncelle"
       ],
       "Use ${ PASS_APP_NAME } as SSH agent": [
-        "SSH agent olarak ${ PASS_APP_NAME } kullanın"
+        "SSH aracısı olarak ${ PASS_APP_NAME } kullanın"
       ],
       "Use for AI agent": [
         "Yapay zeka aracısı için kullan"
@@ -4181,31 +4182,31 @@
         "Temel"
       ],
       "Check": [
-        "Kontrol et"
+        "Denetle"
       ],
       "Exact host matching": [
-        "Tam ana bilgisayar eşleşmesi"
+        "Tam sunucu eşleşmesi"
       ],
       "Exact URL matching": [
-        "Tam URL eşleşmesi"
+        "Tam adres eşleşmesi"
       ],
       "Never fill on this exact URL": [
-        "Bu URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "Parent domain and subdomains (default)": [
         "Ana etki alanı ve alt etki alanları (varsayılan)"
       ],
       "Regular expression": [
-        "Düzenli ifade"
+        "Kurallı ifade"
       ],
       "Relevant": [
         "İlgili"
       ],
       "Starts with": [
-        "Şununla başlar"
+        "Şununla başlayan"
       ],
       "URL wildcard pattern": [
-        "URL genel arama karakteri deseni"
+        "Adres genel arama karakteri modeli"
       ]
     },
     "Link": {
@@ -4262,16 +4263,16 @@
         "Tam (alt) etki alanı eşleştirme kuralı"
       ],
       "Exact URL matching rule": [
-        "Tam URL eşleştirme kuralı"
+        "Tam adres eşleştirme kuralı"
       ],
       "Never fill with this exact URL": [
-        "Bu tam URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "Regular expression rule": [
-        "Düzenli ifade kuralı"
+        "Kurallı ifade kuralı"
       ],
       "Wildcard pattern matching rule": [
-        "genel arama karakter deseni eşleştirme kuralı"
+        "Genel arama karakter modeli eşleştirme kuralı"
       ]
     },
     "new_plans: feature": {
@@ -4717,10 +4718,10 @@
         "Rastgele ön ek oluşturma özelliği açıldı"
       ],
       "SSH agent successfully started": [
-        "SSH agent başarıyla başlatıldı"
+        "SSH aracısı başlatıldı"
       ],
       "SSH agent successfully stopped": [
-        "SSH agent başarıyla durduruldu"
+        "SSH aracısı durduruldu"
       ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz.",
@@ -5129,7 +5130,7 @@
         "Gözden geçirip paylaş"
       ],
       "Screenshot of OpenSSH service on Windows": [
-        "Windows'ta OpenSSH hizmetinin ekran görüntüsü"
+        "Windows üzerinde OpenSSH hizmetinin ekran görüntüsü"
       ],
       "Secure your data": [
         "Verilerinizi koruyun"
@@ -5153,7 +5154,7 @@
         "Ayarlar"
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
-        "${ PASS_APP_NAME } SSH Agent'ı Kur"
+        "${ PASS_APP_NAME } SSH aracısını kur"
       ],
       "Setup offline mode": [
         "Çevrim dışı kipi kur"
@@ -5174,7 +5175,7 @@
         "SPF (isteğe bağlı)"
       ],
       "SSH Agent": [
-        "SSH Agent"
+        "SSH aracısı"
       ],
       "Status": [
         "Durum"
@@ -5271,10 +5272,10 @@
         "Ayrıntılı bilgi alın"
       ],
       "Test a URL against this rule": [
-        "Bir URL'yi bu kurala göre test et"
+        "Bir adresin bu kurala göre durumuna bak"
       ],
       "URL matching": [
-        "URL eşleştirme"
+        "Adres eşleştirme"
       ]
     },
     "Title_cloned_item": {
@@ -5538,7 +5539,7 @@
         "${ PASS_APP_NAME } başlatılırken bir sorun çıktı. Lütfen eklentiyi yenilemeyi ya da yeniden yüklemeyi deneyin"
       ],
       "SSH agent requires using SSH keys, which is not available in your plan.": [
-        "SSH agent tarifenizde bulunmayan SSH anahtarlarının kullanılmasını gerektirir."
+        "SSH aracısı için tarifenizde bulunmayan SSH anahtarları özelliği gerekir."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Takma ad ön ekiniz 40 karakterden uzun olamaz"
@@ -5631,27 +5632,27 @@
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
+        "${ modeLabelStong } güçlü bir denetim sağlar, ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı siteler ile eşleşmesine ve bu verilerin doldurulmasına neden olabilir."
       ],
       "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
-        "Bu öğe \"${ neverModeDescriptionStrong }\" nedeniyle otomatik doldurma için önerilemez. Bu öğenin otomatik olarak doldurulmasını istiyorsanız başka bir URL ekleyin."
+        "Bu öge \"${ neverModeDescriptionStrong }\" nedeniyle otomatik doldurma için önerilemez. Bu ögenin otomatik olarak doldurulmasını istiyorsanız başka bir adres ekleyin."
       ]
     },
     "Result": {
       "Enter a URL to check to see if your current rule is matching the URL": [
-        "Mevcut kuralınızın bu URL ile eşleşip eşleşmediğini kontrol etmek için bir URL yazın"
+        "Var olan kuralınızın eşleşip eşleşmediğini denetlemek için bir adres yazın"
       ],
       "The rule is matching this URL": [
-        "Kural bu URL ile eşleşiyor"
+        "Kural bu adres ile eşleşiyor"
       ],
       "The rule is NOT matching this URL": [
-        "Kural bu URL ile EŞLEŞMİYOR"
+        "Kural bu adres ile EŞLEŞMİYOR"
       ],
       "This URL will be blocked from autofill": [
-        "Bu URL otomatik doldurma özelliğinden engellenecek"
+        "Bu adres otomatik doldurmada engellenecek"
       ],
       "This URL will NOT be blocked from autofill": [
-        "Bu URL otomatik doldurma özelliğinden engellenmeyecek"
+        "Bu adres otomatik doldurmada engellenmeyecek"
       ]
     }
   }

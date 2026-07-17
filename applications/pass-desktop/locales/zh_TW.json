@@ -642,6 +642,174 @@
       ],
       "Your password manager is not here? Request it.": [
         "找不到您使用的密碼管理器？歡迎告訴我們"
+      ],
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "Android 版 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "iOS 版 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Accept and view the item": [
+        "接受並檢視項目"
+      ],
+      "Accept invitation": [
+        "接受邀請"
+      ],
+      "Add custom domain": [
+        "新增自訂網域"
+      ],
+      "Add forwarding mailbox": [
+        "新增轉寄電子郵件信箱"
+      ],
+      "Add username field": [
+        "新增使用者名稱欄位"
+      ],
+      "Apply lifetime coupon code": [
+        "套用終身優惠券代碼"
+      ],
+      "Autotype": [
+        "自動輸入"
+      ],
+      "Autotype in previous window": [
+        "在先前的視窗中自動輸入"
+      ],
+      "Bulk delete items from trash": [
+        "批次從垃圾桶刪除項目"
+      ],
+      "Bulk move items to another vault": [
+        "批次將項目移至另一個保管庫"
+      ],
+      "Bulk move items to trash": [
+        "批次將項目移至垃圾桶"
+      ],
+      "Bulk restore items from trash": [
+        "批次從垃圾桶還原項目"
+      ],
+      "Bulk select items": [
+        "批次選取項目"
+      ],
+      "Cancel email change": [
+        "取消變更電子郵件"
+      ],
+      "Continue offline": [
+        "繼續離線"
+      ],
+      "Copy card number": [
+        "複製卡號"
+      ],
+      "Copy email": [
+        "複製電子郵件"
+      ],
+      "Copy expiration date": [
+        "複製到期日"
+      ],
+      "Copy forwarding address": [
+        "複製轉寄位址"
+      ],
+      "Copy instructions": [
+        "複製說明"
+      ],
+      "Copy name on card": [
+        "複製卡片上的姓名"
+      ],
+      "Copy note content": [
+        "複製筆記內容"
+      ],
+      "Copy security code": [
+        "複製安全代碼"
+      ],
+      "Copy token": [
+        "複製權杖"
+      ],
+      "Copy username": [
+        "複製使用者名稱"
+      ],
+      "Create token": [
+        "建立權杖"
+      ],
+      "Cut": [
+        "剪下"
+      ],
+      "Disable instead": [
+        "改為停用"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "停用此別名以停止接收傳送至此別名的電子郵件"
+      ],
+      "Do not show again when I press": [
+        "按下此鍵時不要再顯示"
+      ],
+      "Do not show this again": [
+        "不再顯示此內容"
+      ],
+      "Don't show this again": [
+        "不再顯示此內容"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "啟用此別名以接收傳送至此別名的電子郵件"
+      ],
+      "Generate secure link": [
+        "產生安全連結"
+      ],
+      "Generating secure link...": [
+        "正在產生安全連結……"
+      ],
+      "Get mobile and desktop apps": [
+        "取得行動裝置與電腦版應用程式"
+      ],
+      "Join our Reddit": [
+        "加入我們的 Reddit"
+      ],
+      "Link expires after": [
+        "連結過期時間於"
+      ],
+      "Manage vault access": [
+        "管理保管庫存取權限"
+      ],
+      "Maximum views": [
+        "最大檢視次數"
+      ],
+      "New token": [
+        "新權杖"
+      ],
+      "No expired links": [
+        "無過期的連結"
+      ],
+      "Paste": [
+        "貼上"
+      ],
+      "Regex invalid": [
+        "正規表示式無效"
+      ],
+      "Regex unsafe": [
+        "正規表示式不安全"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "移除所有過期的連結 (${ inactiveLinkCount })"
+      ],
+      "Restrict number of views": [
+        "限制檢視次數"
+      ],
+      "Share secure link": [
+        "共享安全連結"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "有人在 ${ PASS_APP_NAME } 上與您共享了一個項目。"
+      ],
+      "Transfer aliases": [
+        "移轉別名"
+      ],
+      "Transfer and delete mailbox": [
+        "移轉並刪除電子郵件信箱"
+      ],
+      "Unlock offline with password": [
+        "使用密碼離線解鎖"
+      ],
+      "View agent activity": [
+        "檢視代理活動"
+      ],
+      "Write us on X/Twitter": [
+        "在 X/Twitter 上寫信給我們"
       ]
     },
     "App menu": {
@@ -659,6 +827,12 @@
       ],
       "Toggle developers tools": [
         "切換開發人員工具"
+      ],
+      "Start ${ PASS_APP_NAME } at login": [
+        "在登入時啟動 ${ PASS_APP_NAME }"
+      ],
+      "Uninstall ${ PASS_APP_NAME }": [
+        "解除安裝 ${ PASS_APP_NAME }"
       ]
     },
     "Browser": {
@@ -706,6 +880,75 @@
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "暗網是隱藏的網路充斥著個人資訊，如身分，可為買賣。"
+      ],
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } 隨付費方案提供。立即升級以取得存取權限。"
+      ],
+      "${ total } other login uses the same password": [
+        "有 ${ total } 個其他登入使用相同的密碼"
+      ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "雙重驗證為您的登入資訊增添了另一層防護。${ PASS_APP_NAME } 透過儲存並自動填入您的雙重驗證代碼，讓雙重驗證變得更加簡單。"
+      ],
+      "Add the following CNAME DNS records to your domain.": [
+        "將以下 CNAME DNS 記錄新增至您的網域。"
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "將以下 MX DNS 記錄新增至您的網域。請注意，目標地址末尾有一個點 (.)。如果您的網域註冊服務商不允許此末尾的點，請在新增 DNS 記錄時將其移除。"
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "將以下 TXT DNS 記錄新增至您的網域。"
+      ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } 是一種電子郵件驗證方法，旨在避免電子郵件身分冒充。強烈建議設定 DKIM，以減少您的電子郵件最終進入收件者垃圾郵件資料夾的機率。"
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "如果您的電子郵件、密碼或其他個人資料外洩，將會收到通知。"
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "如果您使用的是子網域，例如 ${ subdomainExample }，您需要改用 ${ dmarcExampleSubdomain } 作為網域。"
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "如果您使用的是子網域，例如 subdomain.domain.com，您需要改用 ${ domainKeyExampleSubdomain } 作為網域。這意味著，如果您的網域是 mail.domain.com，您應該輸入 ${ domainKeyExampleMail } 作為網域。"
+      ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "如果您使用的是 Cloudflare，請確保不要選取代理伺服器選項。"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "某些 DNS 註冊服務商可能需要完整的記錄路徑，在這種情況下，請改用 ${ domain } 作為網域值。"
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "部分網域註冊服務商（例如 Namecheap、Cloudflare 等）也可能會使用 @ 作為主網域。"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "開始針對與您的電子郵件地址及 hide-my-email 別名建立的帳號進行相關的資料外洩監控。"
+      ],
+      "These items remain at risk": [
+        "這些項目仍處於風險之中"
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "這些保管庫將無法存取，且其內容將無法用於「搜尋」或「自動填入」。"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "此帳號易受攻擊，請造訪該服務並變更您的密碼。"
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "此服務提供雙重驗證。啟用它以增加帳號安全性。"
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "若要驗證網域的所有權，請新增以下 TXT 記錄。部分網域註冊服務商（例如 Namecheap、Cloudflare 等）可能會使用 @ 作為主網域。"
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "解鎖進階安全功能與詳細日誌以保護您的線上活動。"
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "藉由 ${ PASS_SHORT_APP_NAME } 監控，在您的憑證遭到入侵時取得即時警報，使您能防患於未然。解鎖進階安全功能與詳細日誌以保護您的線上活動。"
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "您的電子郵件地址在至少 1 次資料外洩中被外洩。"
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "您的個人資訊在第三方服務的資料外洩中洩露。"
       ]
     },
     "Error": {
@@ -966,6 +1209,228 @@
       ],
       "Wrong second password": [
         "第二密碼錯誤"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "桌面端解鎖檢查已在進行中。"
+      ],
+      "A domain ownership must be verified first.": [
+        "必須先驗證網域的所有權。"
+      ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "目前無法更新別名。請稍後再試"
+      ],
+      "An error occured during the import process": [
+        "在匯入過程中發生錯誤"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "驗證失敗。確認您的 ${ BRAND_NAME } 密碼以繼續匯出"
+      ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "驗證失敗。請確認您的備份密碼以繼續匯出"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "驗證失敗。請確認您的額外密碼以繼續匯出"
+      ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "驗證失敗。請確認您的第二密碼以繼續匯出"
+      ],
+      "Biometric authentication failed.": [
+        "生物辨識驗證失敗。"
+      ],
+      "Biometric lock credentials do not match.": [
+        "生物辨識鎖定憑證不相符。"
+      ],
+      "Biometric lock credentials not found.": [
+        "找不到生物辨識鎖定憑證。"
+      ],
+      "Biometric lock is not configured.": [
+        "未設定生物辨識鎖定。"
+      ],
+      "Biometric lock setup failed.": [
+        "生物辨識鎖定設定失敗。"
+      ],
+      "Could not leave item.": [
+        "無法離開項目。"
+      ],
+      "Could not load recommendations at the moment.": [
+        "目前無法載入推薦資訊。"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "無法擷取「${ vaultName }」保管庫的使用者邀請資訊"
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "無法載入代理設定說明。請複製下方權杖，它將不會再次顯示。"
+      ],
+      "Deleting item history failed": [
+        "刪除項目歷程記錄失敗"
+      ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "無法驗證網域。請確保您已新增正確的 DNS 記錄"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "與 ${ PASS_APP_NAME } 電腦版應用程式的加密通訊失敗。"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "過期時間必須介於 1 小時到 1 年之間"
+      ],
+      "Failed to block the contact": [
+        "無法封鎖聯絡人"
+      ],
+      "Failed to cancel mailbox change": [
+        "無法取消變更電子郵件信箱"
+      ],
+      "Failed to change mailbox": [
+        "無法變更電子郵件信箱"
+      ],
+      "Failed to create access token": [
+        "無法建立存取權杖"
+      ],
+      "Failed to create domain": [
+        "無法建立網域"
+      ],
+      "Failed to create new mailbox": [
+        "無法建立新電子郵件信箱"
+      ],
+      "Failed to create the contact": [
+        "無法建立聯絡人"
+      ],
+      "Failed to delete access token": [
+        "無法刪除存取權杖"
+      ],
+      "Failed to delete domain": [
+        "無法刪除網域"
+      ],
+      "Failed to delete email address from monitoring": [
+        "無法從監控中刪除電子郵件地址"
+      ],
+      "Failed to delete the contact": [
+        "無法刪除聯絡人"
+      ],
+      "Failed to delete the mailbox": [
+        "無法刪除該電子郵件信箱"
+      ],
+      "Failed to load access tokens": [
+        "無法載入存取權杖"
+      ],
+      "Failed to load breaches for this address": [
+        "無法載入此位址的資料外洩資訊"
+      ],
+      "Failed to load breaches for this email alias": [
+        "無法載入此電子郵件別名的資料外洩資訊"
+      ],
+      "Failed to load domain settings.": [
+        "無法載入網域設定。"
+      ],
+      "Failed to load token actions": [
+        "無法載入權杖動作"
+      ],
+      "Failed to resend verification code": [
+        "無法重新傳送驗證碼"
+      ],
+      "Failed to resend verification for custom email": [
+        "無法重新傳送自訂電子郵件的驗證"
+      ],
+      "Failed to resolve breaches for this address": [
+        "無法為此位址解決資料外洩問題"
+      ],
+      "Failed to set default mailbox": [
+        "無法設定預設電子郵件信箱"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "無法啟動 SSH 代理：${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "無法停止 SSH 代理：${ errorMessage }"
+      ],
+      "Failed to sync aliases": [
+        "無法同步別名"
+      ],
+      "Failed to update catch-all setting.": [
+        "無法更新全數收取設定。"
+      ],
+      "Failed to update default domain": [
+        "無法更新預設網域"
+      ],
+      "Failed to update domain mailboxes.": [
+        "無法更新網域電子郵件信箱。"
+      ],
+      "Failed to update domain name.": [
+        "無法更新網域名稱。"
+      ],
+      "Failed to update monitoring settings": [
+        "無法更新監控設定"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "無法更新隨機前綴產生設定。"
+      ],
+      "Failed to update vault access": [
+        "無法更新保管庫存取權限"
+      ],
+      "Failed to verify domain": [
+        "驗證網域失敗"
+      ],
+      "Failed updating monitor flag of the item": [
+        "更新項目的監控標記失敗"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "更新此電子郵件地址的監控狀態失敗"
+      ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "保管庫 \"${ vaultData.name }\" 匯入失敗：${ errorMessage }"
+      ],
+      "Inactive secure links could not be removed.": [
+        "無法移除未活動的安全連結。"
+      ],
+      "Name must be 191 characters or fewer": [
+        "名稱長度必須在 191 個字元或以下"
+      ],
+      "Secure link could not be created.": [
+        "無法建立安全連結。"
+      ],
+      "Secure link could not be opened.": [
+        "無法開啟安全連結。"
+      ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "無法連線至伺服器。請在幾分鐘後嘗試解鎖 ${ PASS_SHORT_APP_NAME }。"
+      ],
+      "Something went wrong. Please sign in again.": [
+        "發生錯誤。請重新登入。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } 電腦版應用程式未及時回應。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } 桌面應用程式沒有回應，它是否正在執行？"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } 電腦版應用程式已登入不同的帳號。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "應先登入 ${ PASS_APP_NAME } 電腦版應用程式。"
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "移除安全連結時發生錯誤。請在幾分鐘後重試。"
+      ],
+      "Try reaching out to the link owner.": [
+        "請嘗試與該連結的擁有者聯絡。"
+      ],
+      "Unsupported Bitwarden file format": [
+        "不支援的 Bitwarden 檔案格式"
+      ],
+      "Wrong backup password": [
+        "備份密碼錯誤"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "您目前處於離線狀態。請重新連線以解鎖 ${ PASS_SHORT_APP_NAME }。"
+      ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "您的 DNS 設定不正確。我們取得的 MX 記錄為："
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "您的 DNS 設定不正確。我們取得的 TXT 記錄為："
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "您的 PIN 碼已被另一個 ${ PASS_APP_NAME } 用戶端移除"
       ]
     },
     "Error message": {
@@ -1606,6 +2071,774 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } 封已封鎖"
+      ],
+      "${ count } view": [
+        "檢視次數：${ count }"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } 次檢視"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } 封已轉寄"
+      ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } 想與您管理的群組共享一個項目。"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } 想要與 ${ name } 群組共享一個項目。"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } 想與您共享一個項目。"
+      ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "將能隨時存取 ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } 將透過 ${ BRAND_NAME } 匿名影像代理伺服器顯示項目的小型圖示。"
+      ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } 將產生一個轉寄位址（也稱為反向別名），您可以將其複製到剪貼簿。"
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } 將僅匯入登入資訊、筆記、信用卡和身分。"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } 將使用儲存在您保管庫中的 SSH 金鑰。"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } 離線模式已啟用。"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } 封已傳送"
+      ],
+      "${ row.breachCount } breach detected": [
+        "偵測到 ${ row.breachCount } 次資料外洩"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "已選取 ${ selectedShareIds.size } 個"
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "系統會針對傳送電子郵件至 ${ aliasEmail } 或自其接收電子郵件的每個電子郵件地址建立一個聯絡人。"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "存取 ${ PASS_APP_NAME } 將一律需要您的 ${ BRAND_NAME } 密碼。"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "存取 ${ PASS_APP_NAME } 將一律需要您的備份密碼。"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "存取 ${ PASS_APP_NAME } 將一律需要您的額外密碼。"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "存取 ${ PASS_APP_NAME } 將一律需要您的第二密碼。"
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "存取 ${ PASS_APP_NAME } 將需要您的指紋或裝置 PIN 碼。"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "存取權杖「${ action.token.Name }」已經過期。如果刪除，將不再顯示。"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "存取權杖 \"${ action.token.Name }\" 將立即停止運作。此操作無法復原。"
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "存取權杖與 ${ passCliLink } 搭配使用，可讓您將 CI/CD 自動化，或為您的 AI 代理提供執行其工作所需的範圍內存取權限。"
+      ],
+      "Add your custom email address to monitor:": [
+        "新增您要監控的自訂電子郵件地址："
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "確認後，您需要接受 ${ PASS_APP_NAME } 的權限提示。"
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "成功匯入資料後，基於安全考量，您可以刪除包含您密碼的 CSV 檔案。"
+      ],
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "別名已成功停用。您將不會再收到傳送至 ${ item.aliasEmail } 的電子郵件"
+      ],
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "別名已成功啟用。您現在可以收到傳送至 ${ item.aliasEmail } 的電子郵件"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "您的 ${ BRAND_NAME } 與 SimpleLogin 帳號之間的別名同步已啟用。"
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "垃圾桶中的別名將繼續轉寄電子郵件。如果您想停止在此位址接收電子郵件，請改為停用它。"
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "未同步的別名 (${ aliasCount })"
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "使用自訂網域的別名未受監控，請將其新增為自訂電子郵件以進行監控。"
+      ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "所有使用電子郵件信箱 ${ emailJSX } 的別名也將被刪除。"
+      ],
+      "All breaches for this address were resolved": [
+        "此位址的所有資料外洩問題皆已解決"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "所有目前的資料外洩都將被標記為已解決。若未來發生資料外洩，系統將會通知您。"
+      ],
+      "All inactive secure links were removed": [
+        "所有未活動的安全連結均已移除"
+      ],
+      "An item previously shared with you was removed.": [
+        "之前與您共享的項目已被移除。"
+      ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "您確定要自您的電子郵件信箱中移除 ${ emailJSX } 嗎？"
+      ],
+      "Are you sure you want to remove the link?": [
+        "您確定要移除該連結嗎？"
+      ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "自動建立的別名會自動歸以下電子郵件信箱 (或多個信箱) 所有："
+      ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "在以這種格式匯出您的資料之前，請開啟 Safari 設定 ->「一般」索引標籤 -> 停用「下載後開啟安全檔案」選項。這將防止 Safari 錯誤地解壓縮匯出的檔案。"
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "介於 60 (1 小時) 和 525600 (1 年) 之間"
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "生物辨識鎖定已成功註冊。使用它來解鎖 ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "生物辨識將被停用，且需要再次啟用。"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "將您現有的密碼帶入 ${ PASS_APP_NAME }。"
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "使用您自己的網域，您就不需要再購買其他的電子郵件代管解決方案。"
+      ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "新增您的網域後，即可建立如 hi@my-domain.com 的別名。"
+      ],
+      "Can create, edit, and delete items in this vault.": [
+        "可以在此保管庫中建立、編輯和刪除項目。"
+      ],
+      "Can create, edit, and delete this item.": [
+        "可以建立、編輯和刪除此項目。"
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "可以授與、撤銷此項目的存取權限，並可將其刪除。"
+      ],
+      "Can grant and revoke access to this item.": [
+        "可以授與和撤銷此項目的存取權限。"
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "確認您的額外密碼以繼續將其移除。"
+      ],
+      "Congratulations, your access has been confirmed": [
+        "恭喜，您的存取權限已確認"
+      ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "已複製到剪貼簿（將於 ${ timeoutDurationHumanReadable } 後過期）"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "複製下方的 Markdown 並將其傳送給您的 AI 代理。這是唯一一次會顯示此權杖。"
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "立即複製此權杖。出於安全原因，它將不會再次顯示。"
+      ],
+      "Coupon successfully applied!": [
+        "優惠券已成功套用！"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "建立權杖以將 ${ PASS_APP_NAME } 與您的指令碼和工具整合。"
+      ],
+      "Create contact illustration": [
+        "建立聯絡人插圖"
+      ],
+      "Created ${ createdDate }": [
+        "建立於 ${ createdDate }"
+      ],
+      "Created ${ time }.": [
+        "建立於 ${ time }。"
+      ],
+      "Created item": [
+        "已建立項目"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "CSV 提供了一種便於檢視資料的格式。然而，由於其結構簡單，某些資料將不會被包含在內（如自訂欄位、通行密鑰等）。若要進行完整匯出，我們建議使用其他格式。"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "使用 ${ domainDisplay } 建立的別名的預設顯示名稱，除非被別名顯示名稱覆寫。"
+      ],
+      "Deleted item": [
+        "已刪除項目"
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "DNS 變更可能需要長達 24 小時才能更新。"
+      ],
+      "Domain: ${ domainPath } or @": [
+        "網域：${ domainPath } 或 @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "從 ${ passCliLink } 下載 pass-cli。"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "電子郵件地址已成功排除於監控之外"
+      ],
+      "Email address successfully included in monitoring": [
+        "電子郵件地址已成功納入監控"
+      ],
+      "Email headers illustration": [
+        "電子郵件標頭插圖"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "傳送電子郵件至此位址，例如，它將顯示為是自 ${ exampleEmail } 傳送。"
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "傳送至您別名的電子郵件會被轉寄至您的電子郵件信箱。一個別名可以擁有多個電子郵件信箱：這對於在您和您的朋友之間共享一個別名非常實用。"
+      ],
+      "Enable auto-locking to secure your data": [
+        "啟用自動鎖定以保護您的資料"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "啟用離線模式，以便在失去網際網路連線或無法連線至 ${ BRAND_NAME } 伺服器時，仍可存取您的 ${ PASS_SHORT_APP_NAME } 資料。"
+      ],
+      "Enabling biometrics auto-lock": [
+        "正在啟用生物辨識自動鎖定"
+      ],
+      "Enabling biometrics lock failed": [
+        "啟用生物辨識鎖定失敗"
+      ],
+      "Enter the address you want to email.": [
+        "輸入您想傳送電子郵件的位址。"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "此代理權杖執行的每項操作，最舊的操作排在前面。"
+      ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "每當您的別名收到某人的電子郵件時，系統便會自動建立新聯絡人。"
+      ],
+      "Expired on ${ formattedDate }": [
+        "已於 ${ formattedDate } 過期"
+      ],
+      "Expires on ${ formattedDate }": [
+        "將於 ${ formattedDate } 過期"
+      ],
+      "Exporting your data...": [
+        "正在匯出您的資料……"
+      ],
+      "Extra password successfully created": [
+        "已成功建立額外密碼"
+      ],
+      "Extra password successfully removed": [
+        "已成功移除額外密碼"
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "尋找 \"OpenSSH Authentication Agent\"，右鍵按一下「內容」。"
+      ],
+      "Follow those steps to import your data with a generic CSV:": [
+        "請按照以下步驟，使用通用的 CSV 檔案匯入您的資料："
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "出於安全原因，此操作需要身分驗證。"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "安全起見，您需要確認對這些共享保管庫的存取權限"
+      ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "轉寄位址已複製到剪貼簿。傳送電子郵件到此位址，${ Email } 就會收到。"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "產生的密碼將會儲存 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週的時間。"
+      ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "為每個團隊或專案建立保管庫，以充分發揮 ${ PASS_APP_NAME } 的功用。"
+      ],
+      "Here's how it works:": [
+        "以下是運作方式："
+      ],
+      "Identity confirmed": [
+        "身分已確認"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "如果您不打算在另一個付費帳號上使用 SSH 代理，請記得在切換至該帳號之前停用此設定。"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "在 ${ PASS_SHORT_APP_NAME } 中，項目筆記是以該項目的加密金鑰加密，且只有具有該項目存取權限的使用者才能檢視該筆記。即使是 ${ BRAND_NAME } 或 SimpleLogin 也無法查看它。"
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "安裝適用於 ${ browser.title } 的 ${ PASS_APP_NAME } 以快速自動填入您的登入資訊。"
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "安裝適用於 ${ browser.title } 的 ${ PASS_APP_NAME } 以快速自動填入您的登入資訊。 "
+      ],
+      "Invite specific people and set the right permissions.": [
+        "邀請特定人員並設定正確的權限。"
+      ],
+      "invites the group ${ name } to access items in": [
+        "邀請群組 ${ name } 存取以下位置的項目"
+      ],
+      "Item history permanently deleted": [
+        "項目歷程記錄已永久刪除"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "項目共享：${ itemAccessCount } 個使用者"
+      ],
+      "Item successfully excluded from monitoring": [
+        "項目已成功排除於監控之外"
+      ],
+      "Item successfully included in monitoring": [
+        "項目已成功納入監控"
+      ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "鍵盤快速鍵僅能在使用 ${ PASS_APP_NAME } 桌面應用程式並檢視登入項目時使用"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "最近一次資料外洩發生於 ${ formattedDate }"
+      ],
+      "Leaving item...": [
+        "正在離開項目……"
+      ],
+      "Log out of any existing session:": [
+        "登出任何現有的工作階段："
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "請確保保持 ${ PASS_APP_NAME } 執行 (可以最小化) 以讓 SSH 代理保持作用。目前不支援含有複雜密碼的 SSH 金鑰。"
+      ],
+      "Moved item to trash": [
+        "已將項目移動至垃圾桶"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "將項目移至另一個保管庫將會抹除其歷史紀錄及所有安全連結。"
+      ],
+      "Moving items to another vault will erase their history.": [
+        "將項目移至另一個保管庫將會抹除其歷史紀錄。"
+      ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "需要向某人傳送電子郵件，但不想讓他們看到您的電子郵件地址？設定聯絡人別名。"
+      ],
+      "No activity recorded yet.": [
+        "尚未記錄任何活動。"
+      ],
+      "No network connection": [
+        "無網路連線"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "在 ${ PASS_SHORT_APP_NAME } 中找不到任何 SSH 金鑰。請建立 SSH 金鑰項目以與代理搭配使用。"
+      ],
+      "No vaults available.": [
+        "無可用保管庫。"
+      ],
+      "None selected": [
+        "未選取任何項目"
+      ],
+      "Not recommended": [
+        "不建議使用"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "離線模式目前無法被啟用"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "線上存取 ${ PASS_APP_NAME } 將需要 PIN 碼。在嘗試失敗 3 次後，您將被登出。"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "系統僅會顯示在過去 30 天內過期的權杖。更早之前的權杖將會自動刪除。"
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "開啟「服務」 (您可以使用 Windows 搜尋列，或者按 Win+R 並輸入 services.msc)。"
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "針對該延伸功能開啟您的 Safari 設定，並驗證已為 ${ BRAND_NAME } 網域啟用網站權限"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "超過 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週的密碼將自動從歷史記錄中刪除。"
+      ],
+      "Paste the following command in your terminal:": [
+        "將以下命令貼入您的終端機："
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "請檢查您的垃圾郵件資料夾，或嘗試重新傳送代碼。"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "請確認您的 ${ BRAND_NAME } 密碼以啟用離線模式"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "請確認您的 ${ BRAND_NAME } 密碼，以匯出您的 ${ PASS_APP_NAME } 資料"
+      ],
+      "Please confirm your backup password": [
+        "請確認您的備份密碼"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "請確認您的備份密碼以使用生物辨識進行自動鎖定。"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "請確認您的備份密碼以使用您的密碼自動鎖定。"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "請確認您的備份密碼以啟用離線模式"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "請確認您的備份密碼以匯出您的 ${ PASS_APP_NAME } 資料"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "請確認您的備份密碼以註銷您目前的鎖定。"
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "請確認您的備份密碼以更新自動鎖定時間。"
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "請確認您的額外密碼，以便使用您的額外密碼自動鎖定。"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "請確認您的額外密碼以啟用離線模式"
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "請確認您的額外密碼，以匯出您的 ${ PASS_APP_NAME } 資料"
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "請確認您的額外密碼以註銷您目前的鎖定。"
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "請確認您的額外密碼以更新自動鎖定時間。"
+      ],
+      "Please confirm your password": [
+        "請確認您的密碼"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "請確認您的密碼，以便使用自動生物辨識鎖定。"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "請確認您的密碼，以便使用您的密碼進行自動鎖定。"
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "請確認您的密碼以註銷您目前的鎖定。"
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "請確認您的密碼以更新自動鎖定時間。"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "請確認您的 PIN 碼以註銷您目前的鎖定。"
+      ],
+      "Please confirm your second password": [
+        "請確認您的第二密碼"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "請確認您的第二密碼以進行生物辨識自動鎖定。"
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "請確認您的第二密碼以進行密碼自動鎖定。"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "請確認您的第二密碼以啟用離線模式"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "請確認您的第二密碼以匯出您的 ${ PASS_APP_NAME } 資料"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "請確認您的第二密碼以註銷您目前的鎖定。"
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "請確認您的第二密碼以更新自動鎖定時間。"
+      ],
+      "Please contact your administrator": [
+        "請與您的管理員聯絡"
+      ],
+      "Please do not close this window": [
+        "請勿關閉此視窗"
+      ],
+      "Please follow the steps below to set up your domain.": [
+        "請按照以下步驟來設定您的網域。"
+      ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "請保持 ${ PASS_APP_NAME } 開啟，以便系統自動清除剪貼簿。"
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "請保持瀏覽器開啟，以便系統自動清除剪貼簿。"
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "請確保先前作用中的視窗即為您要自動鍵入之處，且游標已聚焦於登入欄位。"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "請使用完整的路徑網域，例如 my-domain.com；如果使用的是子網域，則請使用 my-subdomain.my-domain.com。"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "依欄位（首先是標題，其次是使用者名稱或電子郵件、網站、筆記）和相符精確度（完全符合、開頭符合、包含）排序。"
+      ],
+      "Read item": [
+        "讀取項目"
+      ],
+      "Registering extra password...": [
+        "正在註冊額外密碼……"
+      ],
+      "Removing all inactive secure links...": [
+        "正在移除所有未活動的安全連結……"
+      ],
+      "Removing extra password...": [
+        "正在移除額外密碼……"
+      ],
+      "Removing secure link...": [
+        "正在移除安全連結……"
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "重設歷程記錄將永久刪除所有過去的項目版本，且此操作無法復原。"
+      ],
+      "Restored item from trash": [
+        "已從垃圾桶還原項目"
+      ],
+      "See more info": [
+        "查看更多詳細資料"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "選取 \"${ token.Name }\" 可以讀取的保管庫。"
+      ],
+      "Select where you want your imported vaults to be saved.": [
+        "選取您要儲存已匯入保管庫的位置。"
+      ],
+      "Servers are unreachable": [
+        "無法連線至伺服器"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "將「啟動類型」設定為「已停用」，然後按一下「確定」。"
+      ],
+      "Set by your organization": [
+        "由您的組織設定"
+      ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "將其他人的收件匣新增為轉寄電子郵件信箱，即可與他們共享別名。"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "與最多 10 個人共享您的登入資訊和安全筆記"
+      ],
+      "Shared item invitation": [
+        "共享項目邀請"
+      ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "SimpleLogin 筆記與別名位址儲存在同一個位置，雖然在靜態儲存時受到加密保護，但並非端對端加密，這意味著任何可以存取 SimpleLogin 資料庫的人都可以讀取它。"
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "下次需要別名時只需使用 ${ emailBold } 即可：它將在首次收到電子郵件時 ${ automaticallyBold } 建立。若要進行更精細的控制，您也可以定義 ${ rulesHyperLink }。"
+      ],
+      "Successfully left the item": [
+        "已成功離開該項目"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "切換至另一個保管庫或在此保管庫中建立一個項目"
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "輕點圖示 ${ gearIcon }，以您想要的方式自訂別名。"
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "透過登入並列出保管庫來測試權杖："
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "代理將被要求為其執行的每項操作提供原因，且每項操作都將記錄在您可以審查的稽核日誌中。建立權杖後，您將取得要複製並貼入 AI 代理的說明。"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "變更日誌可以在 ${ changelogLink } 找到。"
+      ],
+      "The display name when sending an email from this alias.": [
+        "自此別名傳送電子郵件時的顯示名稱。"
+      ],
+      "The export will only contain vaults that you own.": [
+        "此匯出僅會包含您所擁有的保管庫。"
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "匯出的檔案將使用 PGP 加密，且需要強健的助記詞。"
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "使用 ${ PASS_APP_NAME } 將需要額外密碼。它是在您的 ${ BRAND_NAME } 密碼之上的附加密碼。"
+      ],
+      "The group is invited to a vault.": [
+        "該群組已被邀請至保管庫。"
+      ],
+      "The secure link has been removed": [
+        "安全連結已移除"
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "然後您可以前往 ${ url } 複製要傳送給您的 AI 代理的說明。"
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "此功能目前在 Linux 上為實驗性功能。請確保您的系統已更新至最新狀態。"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "此功能需要安裝 ${ PASS_APP_NAME } 桌面應用程式並在設定期間執行。"
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "此項目目前未與任何人共享。邀請其他人來與其共享。"
+      ],
+      "This mailbox will use your previous email.": [
+        "此電子郵件信箱將會使用您之前的電子郵件。"
+      ],
+      "This operation is irreversible.": [
+        "此操作無法還原。"
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "此操作無法還原。所有使用網域 ${ domainTextBold } 的別名都將被刪除。請注意，一旦刪除，別名將無法還原。"
+      ],
+      "This option is currently not available on your browser.": [
+        "您的瀏覽器目前不支援此選項。"
+      ],
+      "This option is currently not available on your device.": [
+        "此選項目前在您的裝置上不可用。"
+      ],
+      "This setting is disabled on the organization level": [
+        "此設定在組織層級已被停用"
+      ],
+      "This setting is enforced by your organization": [
+        "此設定是由您的組織強制執行的"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "此權杖可唯讀存取您選取的保管庫。它可以讀取項目，但無法編輯項目、共享保管庫或邀請他人。您可以稍後變更此設定。"
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "此保管庫目前未與任何人共享。邀請他人以與其共享。"
+      ],
+      "This version will be added to the history as the newest version.": [
+        "此版本將作為最新版本新增至歷程記錄中。"
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "提示：將其新增至您的 .bashrc 或 .zshrc 檔案，以便在您開啟終端機時自動執行。"
+      ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "若要繼續接收電子郵件，請將這些別名移轉至不同的電子郵件信箱："
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "若要自另一個密碼管理程式遷移資料，請前往該密碼管理程式，匯出您的資料，然後將其上載至 ${ PASS_APP_NAME }。資料匯入完成後，請刪除該匯出的檔案。"
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "若要檢視您匯入的資料，請按一下您瀏覽器工具列中的 ${ PASS_APP_NAME } 圖示。"
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "若要設定生物辨識解鎖，${ PASS_APP_NAME } 需要新的瀏覽器權限。在您接受後，延伸功能將會重新載入。請在之後重新開啟此頁面。"
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "若要在 Windows 上使用 ${ PASS_APP_NAME } SSH 代理，必須停用 OpenSSH 服務。"
+      ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "受到全球超過 50,000 名企業使用者和 1 億個帳號的信任。"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "無限的 hide-my-email 別名和進階別名管理"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "使用生物辨識解鎖 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "使用您的 ${ BRAND_NAME } 密碼解鎖 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "使用您的備份密碼解鎖 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "使用您的額外密碼解鎖 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "使用您的第二密碼解鎖 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Updated item": [
+        "已更新項目"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "立即升級以解鎖頂級質子版功能"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "升級至 ${ PASS_APP_NAME } Plus 以建立存取權杖並以程式化方式使用 ${ PASS_APP_NAME }。"
+      ],
+      "User's access successfully updated": [
+        "使用者存取權限已成功更新"
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "保管庫 \"${ share.content.name }\" 已被移除。"
+      ],
+      "Vault access granted": [
+        "已授予保管庫存取權限"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "保管庫共享：${ vaultMembersCount } 位成員"
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "我們偵測到您有 ${ aliasCount } 個別名存在於 SimpleLogin，但在 ${ PASS_APP_NAME } 中缺失。您想要將它們匯入嗎？"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "我們已向 ${ email } 傳送了驗證碼。請在下方輸入："
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "在 ${ PASS_APP_NAME } 上建立/編輯登入資訊時，「使用者名稱」輸入欄位將一律顯示。"
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "啟用後，如果您失去網際網路連線或無法連線至 ${ BRAND_NAME } 伺服器，仍可存取您的 ${ PASS_SHORT_APP_NAME } 資料。"
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "自此別名傳送電子郵件時，該電子郵件將顯示 ${ emailSender } 為寄件者。"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "您現在可以使用您的 ${ BRAND_NAME } 密碼來在離線狀態下存取 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "您現在可以使用您的備份密碼來在離線狀態下存取 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "您現在可以使用您的額外密碼來在離線狀態下存取 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "您現在可以使用您的第二密碼來在離線狀態下存取 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "您無法變更此別名的電子郵件信箱。"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "您還有 ${ daysRemaining } 天可以體驗這些以及其他頂級質子版功能。"
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "您已超出您的訂閱中所包含的保管庫數量。項目只能移至您的前兩個保管庫。若要在所有保管庫之間移動項目，請升級您的訂閱。"
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "您已達到可建立的信用卡數量上限。升級您的訂閱即可建立無限數量的信用卡。"
+      ],
+      "You may close this tab.": [
+        "您可以關閉此索引標籤。"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "您可能需要授予輔助功能權限給 ${ PASS_APP_NAME }。"
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "您需要有具備編輯權限的保管庫，才能匯入項目。"
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "您不再擁有某些保管庫或項目的存取權，因為您的群組 ${ groupName } 的存取權限已被移除。"
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "您現在可以存取 \"項目 ${ itemName }\"，因為您的群組 ${ groupName } 已獲授予存取權限。"
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "您現在可以存取 \"保管庫 ${ vaultName }\"，因為您的群組 ${ groupName } 已獲授予存取權限。"
+      ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "驗證您的網域後，您將能夠自訂您的網域設定（全數收取電子郵件別名、別名的預設顯示名稱等...）。"
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "您將被登出，並需要重新在您所有的其他裝置上登入。"
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "系統將會通知您這些電子郵件地址的資料外洩資訊。"
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "系統將會通知您此電子郵件地址的資料外洩資訊。"
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "系統將不再通知您這些電子郵件地址的資料外洩資訊。"
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "系統將不再通知您此電子郵件地址的資料外洩資訊。"
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "您將無法再存取 ${ PASS_APP_NAME } 中的共享、2FA 和其他進階功能"
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "您將不再能在 ${ PASS_APP_NAME } 中使用共享、雙重驗證、信用卡及其他進階功能"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "您的組織要求您確保對 ${ PASS_APP_NAME } 的存取安全"
       ]
     },
     "Keyboard key": {
@@ -1614,6 +2847,12 @@
       ],
       "V": [
         "V"
+      ],
+      "ENTER": [
+        "ENTER"
+      ],
+      "TAB": [
+        "TAB"
       ]
     },
     "Label": {
@@ -2639,6 +3878,252 @@
       ],
       "ZIP or Postal code": [
         "郵遞區號"
+      ],
+      "${ aliasCount } alias": [
+        "${ aliasCount } 個別名"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } 次封鎖"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } 次轉寄"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "在過去 14 天內，${ forwardedEmails }，${ repliedEmails }，${ blockedEmails }。"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } 能辨識您使用的網站和應用程式，並在任何瀏覽器或裝置上為您自動填入含有憑證的表單。無需複製與貼上。"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } 次回覆"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } 個安全連結"
+      ],
+      "1 day": [
+        "1 天"
+      ],
+      "1 month": [
+        "1 個月"
+      ],
+      "1 week": [
+        "1 週"
+      ],
+      "1 year": [
+        "1 年"
+      ],
+      "Access tokens": [
+        "存取權杖"
+      ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "建立新別名時，為此網域新增一個隨機前綴。"
+      ],
+      "Additional details": [
+        "其他詳細資料"
+      ],
+      "Alias address (disabled)": [
+        "別名位址 (已停用)"
+      ],
+      "Always show username field": [
+        "一律顯示使用者名稱欄位"
+      ],
+      "Basic": [
+        "基本"
+      ],
+      "Check": [
+        "檢查"
+      ],
+      "Choose unlock method": [
+        "選擇解鎖方式"
+      ],
+      "Contact created ${ time } ago.": [
+        "聯絡人建立於 ${ time } 前。"
+      ],
+      "Custom": [
+        "自訂"
+      ],
+      "Custom expiration (minutes)": [
+        "自訂到期時間 (分鐘)"
+      ],
+      "EMAIL": [
+        "電子郵件"
+      ],
+      "Email (new alias)": [
+        "電子郵件 (新別名)"
+      ],
+      "Exact host matching": [
+        "精確的主機比對"
+      ],
+      "Exact URL matching": [
+        "精確的 URL 比對"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "已過期的權杖 (${ expired.length })"
+      ],
+      "Extra email addresses": [
+        "額外電子郵件地址"
+      ],
+      "File attachments": [
+        "檔案附件"
+      ],
+      "Floor, apartment, building": [
+        "樓層、公寓、建築"
+      ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "出於安全原因，${ PASS_SHORT_APP_NAME } 在閒置 10 分鐘後會自動鎖定。"
+      ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "Instagram handle": [
+        "Instagram 使用者名稱"
+      ],
+      "Issuing Authority": [
+        "核發機構"
+      ],
+      "Issuing State/Country": [
+        "簽發州/國家"
+      ],
+      "Keyboard shortcut:": [
+        "鍵盤快速鍵："
+      ],
+      "LinkedIn account": [
+        "LinkedIn 帳號"
+      ],
+      "Make all admins": [
+        "將所有人設為管理員"
+      ],
+      "Make all editors": [
+        "將所有人設為編輯者"
+      ],
+      "Make all managers": [
+        "將全員設為管理員"
+      ],
+      "Make all viewers": [
+        "將所有人設為檢視者"
+      ],
+      "max views reached": [
+        "已達到最大檢視次數"
+      ],
+      "Medical Conditions": [
+        "醫療狀況"
+      ],
+      "Medical Record": [
+        "醫療紀錄"
+      ],
+      "Never fill on this exact URL": [
+        "絕不在此精確的 URL 填入"
+      ],
+      "No Activity in the last 14 days.": [
+        "最近 14 天內無活動。"
+      ],
+      "Open-source password manager for effortless protection.": [
+        "開源密碼管理程式，提供輕鬆防護。"
+      ],
+      "Operating System": [
+        "作業系統"
+      ],
+      "Parent domain and subdomains (default)": [
+        "上層網域和子網域 (預設)"
+      ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "通行密鑰是傳統密碼的簡易且安全替代方案，可防止網路釣魚攻擊並讓您的線上體驗更流暢。 ${ PASS_APP_NAME } 在所有平台上都支援通行密鑰。"
+      ],
+      "PASSWORD": [
+        "密碼"
+      ],
+      "Personal website": [
+        "個人網站"
+      ],
+      "PGP-encrypted (recommended)": [
+        "PGP 加密 (建議)"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "使用額外密碼保護 ${ PASS_APP_NAME }"
+      ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "如果您的個人資訊在第三方資料外洩事件中洩露，您將立即收到警示。您可以監控多個電子郵件地址或您自己的網域名稱。"
+      ],
+      "Reddit handle": [
+        "Reddit 使用者名稱"
+      ],
+      "Regular expression": [
+        "正規表示式"
+      ],
+      "Relevant": [
+        "最相關"
+      ],
+      "Reward Program": [
+        "回饋計畫"
+      ],
+      "Routing Number": [
+        "路由號碼"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "使用受數百萬人信任的端對端加密，透過 ${ PASS_APP_NAME } 安全地儲存、共享和自動登入您的帳號"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "使用受數百萬人信任的端對端加密，透過 ${ PASS_APP_NAME } 安全地儲存、共享和自動登入您的帳號。"
+      ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "選取將匯入 SimpleLogin 別名的保管庫"
+      ],
+      "Social security": [
+        "社會安全保障"
+      ],
+      "Starts with": [
+        "開頭為"
+      ],
+      "Street address, P.O. box": [
+        "街道地址、郵政信箱"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "與 SimpleLogin 同步別名"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "一次訂閱，盡享 ${ BRAND_NAME } 最優質服務"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "此項目的可存取期限至 ${ date } 為止，或直到達到檢視次數限制為止。"
+      ],
+      "Token name": [
+        "權杖名稱"
+      ],
+      "Unlock premium features": [
+        "解鎖頂級質子版功能"
+      ],
+      "Unnamed custom item": [
+        "未命名的自訂項目"
+      ],
+      "Unnamed identity": [
+        "未命名的身分"
+      ],
+      "Unnamed SSH key": [
+        "未命名的 SSH 金鑰"
+      ],
+      "Unnamed WiFi item": [
+        "未命名的 WiFi 項目"
+      ],
+      "URL wildcard pattern": [
+        "URL 萬用字元模式"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "將 ${ PASS_APP_NAME } 用作 SSH 代理"
+      ],
+      "Use for AI agent": [
+        "用於 AI 代理"
+      ],
+      "USERNAME": [
+        "使用者名稱"
+      ],
+      "Vault access": [
+        "保管庫存取權限"
+      ],
+      "Vault, item & link sharing": [
+        "保管庫、項目與連結共享"
+      ],
+      "What's included": [
+        "包含內容"
       ]
     },
     "Link": {
@@ -2647,6 +4132,9 @@
       ],
       "Learn more": [
         "瞭解詳情"
+      ],
+      "auto create rules ››": [
+        "自動建立規則 ››"
       ]
     },
     "Log preference": {
@@ -2679,6 +4167,27 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "您選取於保管庫的${ semiboldText }."
+      ],
+      "'Starts with' matching rule": [
+        "「開頭為」相符規則"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精確的 (子) 網域比對規則"
+      ],
+      "Exact URL matching rule": [
+        "精確的 URL 比對規則"
+      ],
+      "Never fill with this exact URL": [
+        "絕不填入此精確的 URL"
+      ],
+      "Regular expression rule": [
+        "正規表示式規則"
+      ],
+      "Wildcard pattern matching rule": [
+        "萬用字元模式比對規則"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "您可以拖放所選的項目至另一個保管庫"
       ]
     },
     "new_plans: feature": {
@@ -2695,6 +4204,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } 已啟用。"
+      ],
+      "Access token deleted": [
+        "存取權杖已刪除"
       ]
     },
     "Option": {
@@ -2759,6 +4271,81 @@
       ],
       "Upload files from your device.": [
         "從你的裝置上傳檔案."
+      ],
+      "\"${ file.name }\" could not be uploaded.": [
+        "無法上載 \"${ file.name }\"。"
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "無法匯入 \"${ filename }\"。"
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" 的大小過大，無法上載。允許的最大大小為 (${ maxFileSizeInMB })"
+      ],
+      "Delete all files": [
+        "刪除所有檔案"
+      ],
+      "Do you want to remove all the files?": [
+        "您要移除所有檔案嗎？"
+      ],
+      "Download file": [
+        "下載檔案"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "由於 Firefox 的限制，在上載檔案之前，必須先在一個新視窗中重新開啟 ${ PASS_APP_NAME }。"
+      ],
+      "Exporting files": [
+        "正在匯出檔案"
+      ],
+      "Failed linking files to item": [
+        "無法將檔案連結至項目"
+      ],
+      "File attachments": [
+        "檔案附件"
+      ],
+      "If your data contains file attachments, they will not be imported.": [
+        "如果您的資料中含有檔案附件，該附件將不會被匯入。"
+      ],
+      "Include file attachments": [
+        "包括檔案附件"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "選取的檔案沒有足夠的可用儲存空間。"
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "刪除後，此檔案仍然可以從該項目的歷程記錄中復原。"
+      ],
+      "Open new window to upload files": [
+        "開啟新視窗以上載檔案"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "下載檔案時請耐心等待。"
+      ],
+      "Remove all files": [
+        "移除所有檔案"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "部分檔案過大而無法上載。允許的最大大小為 (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "匯出的檔案附件將不會被加密。"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "您目前的方案不支援此功能。 ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "您目前的方案不支援此功能。請聯絡您的管理員以取得存取權限。"
+      ],
+      "Total files: ": [
+        "檔案總數： "
+      ],
+      "Total imported files: ": [
+        "已匯入檔案總數： "
+      ],
+      "Upgrade to support file attachments": [
+        "升級以支援檔案附件"
+      ],
+      "You can attach files to items for a better organization": [
+        "您可以將檔案附加至項目，以進行更好的組織"
       ]
     },
     "PassOnboardingOffer": {
@@ -2862,6 +4449,30 @@
       ],
       "Used on ${ url }": [
         "使用${ url }"
+      ],
+      "Add private key": [
+        "新增私有金鑰"
+      ],
+      "Alias Display Name": [
+        "別名顯示名稱"
+      ],
+      "e.g. 60": [
+        "例如：60"
+      ],
+      "Enter username": [
+        "輸入使用者名稱"
+      ],
+      "Name displayed in emails": [
+        "在電子郵件中顯示的名稱"
+      ],
+      "Note from SimpleLogin": [
+        "來自 SimpleLogin 的筆記"
+      ],
+      "Search ${ pluralItemType } in all items": [
+        "在所有項目中搜尋 ${ pluralItemType }"
+      ],
+      "Search in all items": [
+        "在所有項目中搜尋"
       ]
     },
     "Security Center - Info": {
@@ -2908,6 +4519,12 @@
       ],
       "Yes, it was me": [
         "對，就是我"
+      ],
+      "Sign-in failed": [
+        "登入失敗"
+      ],
+      "Sign-in rejection failure": [
+        "拒絕登入失敗"
       ]
     },
     "sso: auth device state": {
@@ -2942,6 +4559,69 @@
       ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "保管庫不能包含超過 ${ targetMaxMembers } 位使用者。"
+      ],
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "別名同步成功啟用。SimpleLogin 別名可能需要一些時間來同步"
+      ],
+      "Catch-all setting successfully disabled": [
+        "已成功停用全數收取設定"
+      ],
+      "Catch-all setting successfully enabled": [
+        "已成功啟用全數收取設定"
+      ],
+      "Contact successfully blocked": [
+        "已成功封鎖聯絡人"
+      ],
+      "Contact successfully created": [
+        "已成功建立聯絡人"
+      ],
+      "Contact successfully deleted": [
+        "已成功刪除聯絡人"
+      ],
+      "Default domain successfully updated": [
+        "預設網域已成功更新"
+      ],
+      "Default mailbox successfully updated": [
+        "預設電子郵件信箱已成功更新"
+      ],
+      "Display name successfully updated": [
+        "顯示名稱已成功更新"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "網域所有權已驗證。您現在可以設定 MX 記錄。"
+      ],
+      "Domain successfully deleted": [
+        "網域已成功刪除"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "網域已成功驗證。您的網域可以開始接收電子郵件並建立別名"
+      ],
+      "Mailbox change successfully cancelled": [
+        "已成功取消電子郵件信箱變更"
+      ],
+      "Mailbox successfully deleted": [
+        "電子郵件信箱已成功刪除"
+      ],
+      "Mailbox successfully verified": [
+        "電子郵件信箱已成功驗證"
+      ],
+      "Mailboxes successfully updated": [
+        "電子郵件信箱已成功更新"
+      ],
+      "Random prefix generation successfully disabled": [
+        "已成功停用隨機前置字元產生"
+      ],
+      "Random prefix generation successfully enabled": [
+        "已成功啟用隨機前置字元產生"
+      ],
+      "SSH agent successfully started": [
+        "SSH 代理已成功啟動"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH 代理已成功停止"
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "驗證電子郵件已傳送。請檢查您的收件匣以驗證您的電子郵件信箱"
       ]
     },
     "Theme": {
@@ -3318,6 +4998,171 @@
       ],
       "Your welcome gift": [
         "您的歡迎禮物"
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "存取權杖需要 ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "\"${ token.Name }\" 的活動"
+      ],
+      "Add custom domain": [
+        "新增自訂網域"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "調整自動填入行為以變更建議登入資訊的位置。"
+      ],
+      "Agent setup instructions": [
+        "代理設定說明"
+      ],
+      "Auto create/on the fly alias": [
+        "自動建立/即時建立別名"
+      ],
+      "Browser permission required": [
+        "需要瀏覽器權限"
+      ],
+      "Cancel changing your email?": [
+        "是否取消變更您的電子郵件？"
+      ],
+      "Change your lock method": [
+        "變更您的鎖定方式"
+      ],
+      "Confirm identity": [
+        "確認身分"
+      ],
+      "Create new access token": [
+        "建立新的存取權杖"
+      ],
+      "Default Display Name": [
+        "預設顯示名稱"
+      ],
+      "Delete access token?": [
+        "確定要刪除存取權杖嗎？"
+      ],
+      "Delete this item?": [
+        "刪除此項目嗎？"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "確定要刪除保管庫 \"${ vaultName }\"？"
+      ],
+      "Domain ownership verification": [
+        "網域所有權驗證"
+      ],
+      "Encrypted import": [
+        "已加密的匯入"
+      ],
+      "Enter coupon code": [
+        "輸入優惠券代碼"
+      ],
+      "Enter your ${ BRAND_NAME } password": [
+        "輸入您的 ${ BRAND_NAME } 密碼"
+      ],
+      "Enter your second password": [
+        "輸入您的第二密碼"
+      ],
+      "Hidden vaults": [
+        "隱藏的保管庫"
+      ],
+      "Importing your data": [
+        "正在匯入您的資料"
+      ],
+      "Learn more": [
+        "進一步瞭解"
+      ],
+      "Leave this item?": [
+        "是否離開此項目？"
+      ],
+      "Manage vault access": [
+        "管理保管庫存取權限"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "將 ${ count } 個項目移動到 ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "要將 ${ trashedItemsCount } 個項目移至垃圾桶嗎？"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "要將所有項目移至「${ vaultName }」嗎？"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "將項目移至「${ vaultName }」"
+      ],
+      "No access tokens yet": [
+        "目前沒有存取權杖"
+      ],
+      "No insecure passwords": [
+        "無不安全的密碼"
+      ],
+      "No shared secure links": [
+        "無共享的安全連結"
+      ],
+      "Pay once, access forever.": [
+        "一次付款，永久存取。"
+      ],
+      "Pending access confirmation": [
+        "等待存取確認"
+      ],
+      "Perform autotype?": [
+        "執行自動鍵入？"
+      ],
+      "Permanently remove all items?": [
+        "確定要永久移除所有項目嗎？"
+      ],
+      "Random Prefix Generation": [
+        "隨機前綴產生"
+      ],
+      "Remove secure link?": [
+        "移除安全連結？"
+      ],
+      "Reset history for this item?": [
+        "確定要重設此項目的歷程記錄？"
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Windows 上的 OpenSSH 服務螢幕擷取畫面"
+      ],
+      "Select the default domain for aliases": [
+        "選取別名的預設網域"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "設定 ${ PASS_APP_NAME } SSH 代理"
+      ],
+      "Setup offline mode": [
+        "設定離線模式"
+      ],
+      "Shared item invitation": [
+        "共享項目邀請"
+      ],
+      "Shared via": [
+        "共享來源"
+      ],
+      "SSH Agent": [
+        "SSH 代理"
+      ],
+      "Test a URL against this rule": [
+        "依此規則測試 URL"
+      ],
+      "URL matching": [
+        "URL 比對"
+      ],
+      "Vault shared with a group you administer": [
+        "保管庫已與您管理的群組共享"
+      ],
+      "Visible vaults": [
+        "可見的保管庫"
+      ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "斜載的 ${ PASS_SHORT_APP_NAME } 筆記和 SimpleLogin 筆記之間有何不同？"
+      ],
+      "You don't have any vaults": [
+        "您沒有任何保管庫"
+      ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "您的 ${ planName } 訂閱將於 ${ endDate } 結束"
+      ],
+      "Your new access token": [
+        "您的新存取權杖"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "您即將永久刪除 ${ aliasCount } 個別名。"
       ]
     },
     "Title_cloned_item": {
@@ -3348,6 +5193,12 @@
       ],
       "URL is invalid": [
         "URL無效"
+      ],
+      "Domain URL is invalid": [
+        "網域網址無效"
+      ],
+      "Section name cannot be empty": [
+        "區段名稱不能為空"
       ]
     },
     "Vault Select": {
@@ -3526,6 +5377,214 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的訂閱不允許新增多重保管庫。預設會把所有項目匯入第一個保管庫。若要匯入多重保管庫，需升級訂閱。"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了強大的控制，但單個錯誤可能會導致自動填入在欺詐性或網路釣魚網站上比對並填入資料。"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } 離線模式已停用。"
+      ],
+      "Addresses already invited.": [
+        "已邀請過這些位址。"
+      ],
+      "Aliases in trash will continue forwarding emails.": [
+        "垃圾桶中的別名將繼續轉寄電子郵件。"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "您垃圾桶中的所有項目將被永久刪除。您無法復原此操作。"
+      ],
+      "An error occurred while exporting your data": [
+        "匯出您的資料時發生錯誤"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "您確定要將 ${ trashedItemsCount } 個項目移至垃圾桶嗎？"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "您確定要永久刪除 ${ deletedItemsCount } 個項目嗎？"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "您確定要永久刪除此項目嗎？"
+      ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "注意：如果您遺失此密碼，您將無法存取您的 ${ PASS_APP_NAME } 帳號。"
+      ],
+      "Coupon cannot be empty": [
+        "優惠券不能為空"
+      ],
+      "Coupon could not be applied.": [
+        "無法套用優惠券。"
+      ],
+      "Domain cannot be empty": [
+        "網域不能為空"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "過期日期不符合 MM/YY 格式"
+      ],
+      "Extra password cannot be empty": [
+        "額外密碼不能為空"
+      ],
+      "Extra password is required": [
+        "需要額外密碼"
+      ],
+      "Extra password should have at least 8 characters": [
+        "額外密碼應至少包含 8 個字元"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "自動輸入失敗。請確保 ${ PASS_APP_NAME } 擁有必要的權限，然後重試 (${ error })。"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "授予剪貼簿存取權限，以啟用自動清除已複製密碼與資料的功能。"
+      ],
+      "Identity could not be confirmed": [
+        "無法確認身分"
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "不允許邀請組織外的電子郵件地址。"
+      ],
+      "No secure links matching": [
+        "沒有符合的安全連結"
+      ],
+      "No shared items matching": [
+        "沒有相符的共享項目"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "一旦同步，在 ${ PASS_SHORT_APP_NAME } 中刪除別名也會同時在 SimpleLogin 中刪除它們。"
+      ],
+      "Please contact us to investigate the issue": [
+        "請與我們聯絡以調查此問題"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "請注意，一旦刪除，別名將無法還原"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "移除您的額外密碼將會使您在所有裝置上登出，並結束所有活動中的工作階段。"
+      ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "部分項目目前為共享狀態。刪除項目將會移除所有其他使用者的存取權限。"
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "部分項目目前為共享狀態。將其移至另一個保管庫將會移除所有其他使用者的存取權限。"
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH 代理需要使用 SSH 金鑰，這在您目前的方案中無法使用。"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "此別名「${ aliasEmail }」目前已在登入資訊「${ relatedLoginName }」中使用。"
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "系統將不再對此電子郵件地址進行資料外洩監控。"
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "由於 \"${ neverModeDescriptionStrong }\"，無法為此項目建議自動填入。如果您希望此項目自動填入，請新增另一個 URL。"
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "此項目目前為共享狀態。刪除項目將會移除所有其他使用者的存取權限。"
+      ],
+      "Too many attempts": [
+        "嘗試次數過多"
+      ],
+      "You have reached the limit of members who can access this item.": [
+        "您已達到可存取此項目的成員人數上限。"
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "您已達到此項目的使用者人數上限。${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "您已達到您方案中可擁有的保管庫上限。"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "您將失去此項目及其詳細資料的存取權限。是否要繼續？"
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "您的管理員需要先為您建立保管庫，您才能建立項目"
+      ],
+      "Your organization does not allow creating a vault": [
+        "您的組織不允許建立保管庫"
+      ],
+      "Your organization does not allow sharing individual items": [
+        "您的組織不允許共享單一項目"
+      ],
+      "Your session is inactive.": [
+        "您的工作階段目前處於閒置狀態。"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "活動"
+      ],
+      "Activity details could not be loaded.": [
+        "無法載入活動詳細資料。"
+      ],
+      "Folder": [
+        "資料夾"
+      ],
+      "Item": [
+        "項目"
+      ],
+      "Reason": [
+        "原因"
+      ],
+      "Vault": [
+        "保管庫"
+      ]
+    },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "是否要在 ${ timeoutDurationHumanReadable } 後自動清除剪貼簿？"
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "anything@${ domainDisplay }"
+      ]
+    },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "需要取得瀏覽器的權限"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "輸入一個 URL 以檢查您目前的規則是否與該 URL 相符"
+      ],
+      "The rule is matching this URL": [
+        "此規則與此 URL 相符"
+      ],
+      "The rule is NOT matching this URL": [
+        "此規則與此 URL 不相符"
+      ],
+      "This URL will be blocked from autofill": [
+        "此 URL 將會被阻止自動填入"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "此 URL 將不會被阻止自動填入"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "作用中"
+      ],
+      "Agent": [
+        "代理"
+      ],
+      "Expired": [
+        "已過期"
+      ],
+      "Expiring soon": [
+        "即將過期"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "此處列出的資訊並非所有使用者的資訊皆已遭外洩。"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "除非被破解，否則即使已加密的密碼遭到外洩，仍可保持安全。"
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "取得 ${ planName }"
       ]
     }
   }
