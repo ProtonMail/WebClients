@@ -8,7 +8,7 @@ import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { lockCreateSuccess, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors';
-import { selectLegacyGroupInvites } from '@proton/pass/store/selectors/invites';
+import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -29,8 +29,8 @@ export function* getEventChannels(): Generator<unknown, EventChannel[]> {
     switch (SYNC_STRATEGY) {
         case SyncStrategy.LEGACY:
             const channels = [coreChannel, shareChannels, sharesChannel, invitesChannel];
-            const legacyGroupInvites: boolean = yield select(selectLegacyGroupInvites);
-            if (legacyGroupInvites) channels.push(groupInvitesChannel);
+            const loadGroupInvites: boolean = yield select(selectLoadGroupInvites);
+            if (loadGroupInvites) channels.push(groupInvitesChannel);
 
             return channels;
 
