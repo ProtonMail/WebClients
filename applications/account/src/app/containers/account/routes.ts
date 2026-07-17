@@ -1,9 +1,5 @@
 import { c } from 'ttag';
 
-import {
-    getIsIncomingDelegatedAccessAvailable,
-    getIsOutgoingDelegatedAccessAvailable,
-} from '@proton/account/delegatedAccess/available';
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig, SubrouteGroup } from '@proton/components';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
@@ -25,7 +21,6 @@ import {
     PRODUCT_NAMES,
     PROTON_SENTINEL_NAME,
 } from '@proton/shared/lib/constants';
-import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { UserType } from '@proton/shared/lib/interfaces';
 import {
     getIsBYOEAccount,
@@ -37,7 +32,7 @@ import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/sh
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/subscription/helpers';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 
-import type { AccountRouterParams } from '../../content/router-params';
+import type { AccountRecoveryRouterFlags, AccountRouterParams } from '../../content/router-params';
 import { recoveryIds } from './recoveryIds';
 
 function getV2DashboardSections(
@@ -167,20 +162,18 @@ function getV1DashboardSections(
     ];
 }
 
-const getRecoverySettings = ({
-    isMnemonicAvailable,
-    isRecoveryFileAvailable,
-    isSessionRecoveryAvailable,
-    isDelegatedAccessAvailable,
-    isAccountRecoveryAvailable,
+export const getRecoverySettings = ({
+    accountRecoveryRouterFlags: {
+        isRecoveryScoreBannerAvailable,
+        isAccountRecoveryAvailable,
+        isMnemonicAvailable,
+        isDelegatedAccessAvailable,
+        isRecoveryFileAvailable,
+        isSessionRecoveryAvailable,
+    },
     recoveryNotification,
 }: {
-    isAccountRecoveryAvailable: boolean;
-    isDataRecoveryAvailable: boolean;
-    isMnemonicAvailable: boolean;
-    isRecoveryFileAvailable: boolean;
-    isSessionRecoveryAvailable: boolean;
-    isDelegatedAccessAvailable: boolean;
+    accountRecoveryRouterFlags: AccountRecoveryRouterFlags;
     recoveryNotification?: ThemeColor;
 }) => {
     const recoverySubrouteGroups = {
@@ -281,6 +274,7 @@ const getRecoverySettings = ({
             {
                 text: '',
                 id: 'checklist',
+                available: isRecoveryScoreBannerAvailable,
             },
             {
                 text: '',
@@ -296,9 +290,6 @@ export const getAccountAppRoutes = ({
     user,
     subscription,
     organization,
-    isDataRecoveryAvailable,
-    isSessionRecoveryAvailable,
-    isReferralProgramEnabled,
     recoveryNotification,
     showVPNDashboard,
     showVPNDashboardVariant,
@@ -314,14 +305,8 @@ export const getAccountAppRoutes = ({
     showGenericDashboard,
     hasPendingInvitations,
     flags,
+    accountRecoveryRouterFlags,
 }: AccountRouterParams) => {
-    const {
-        isZoomIntegrationEnabled = false,
-        isProtonMeetIntegrationEnabled = false,
-        canDisplayNonPrivateEmailPhone = false,
-        isMnemonicAvailable = false,
-        isRecoveryFileAvailable = false,
-    } = flags;
     const { isFree, canPay, isPaid, isMember, isAdmin, Type, hasPaidMail } = user;
     const credits = referralInfo.maxRewardAmount;
 
@@ -369,21 +354,13 @@ export const getAccountAppRoutes = ({
         !isSSOUser;
 
     const showVideoConferenceSection =
-        (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) &&
+        (flags.isZoomIntegrationEnabled || flags.isProtonMeetIntegrationEnabled) &&
         !isExternalUser &&
         (organization?.Settings.VideoConferencingEnabled || !hasPaidMail);
 
-    const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
-    const isDelegatedAccessAvailable = user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user);
-    const isNonPrivateDelegatedAccessAvailable = !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
     const recoverySettings = getRecoverySettings({
-        isAccountRecoveryAvailable,
         recoveryNotification,
-        isSessionRecoveryAvailable,
-        isDataRecoveryAvailable,
-        isMnemonicAvailable,
-        isRecoveryFileAvailable,
-        isDelegatedAccessAvailable,
+        accountRecoveryRouterFlags,
     });
 
     const paymentsSectionAvailable =
@@ -586,24 +563,27 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Notifications`,
                         id: 'notifications',
-                        available: !user.isPrivate && !isAccountRecoveryAvailable && canDisplayNonPrivateEmailPhone,
+                        available:
+                            !user.isPrivate &&
+                            !accountRecoveryRouterFlags.isAccountRecoveryAvailable &&
+                            flags.canDisplayNonPrivateEmailPhone,
                     },
                     {
                         text: c('Title').t`Account recovery`,
                         id: 'account-recovery',
                         // This is a special section for non-private users that only contains the QR code sign in
-                        available: !user.isPrivate && !isAccountRecoveryAvailable,
+                        available: !user.isPrivate && !accountRecoveryRouterFlags.isAccountRecoveryAvailable,
                     },
                     {
                         text: c('Title').t`Emergency access`,
                         id: 'emergency-access',
                         // This is a special section for non-private users that only contains incoming delegated access
-                        available: isNonPrivateDelegatedAccessAvailable,
+                        available: accountRecoveryRouterFlags.isNonPrivateDelegatedAccessAvailable,
                     },
                     {
                         text: c('emergency_access').t`Data recovery contacts`,
                         id: recoveryIds.recoveryContacts,
-                        available: isNonPrivateDelegatedAccessAvailable,
+                        available: accountRecoveryRouterFlags.isNonPrivateDelegatedAccessAvailable,
                     },
                     {
                         text: isFamilyOrg
@@ -716,7 +696,7 @@ export const getAccountAppRoutes = ({
                 description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
                 to: '/referral',
                 icon: 'money-bills',
-                available: isReferralProgramEnabled,
+                available: flags.isReferralProgramEnabled,
                 subsections: [
                     {
                         id: 'referral-invite-section',

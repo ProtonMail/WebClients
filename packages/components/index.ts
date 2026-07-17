@@ -704,14 +704,8 @@ export { default as YourPlanSectionV2 } from './containers/payments/subscription
 export { default as YourPlanUpsellsSectionV2 } from './containers/payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
 export { default as YourStorageSection } from './containers/payments/subscription/YourStorageSection';
 export { default as SubscriptionsSection } from './containers/payments/SubscriptionsSection';
-export { default as CrashReportsToggle } from './containers/privacy/CrashReportsToggle';
 export { default as PrivacySection } from './containers/privacy/PrivacySection';
-export { default as TelemetryToggle } from './containers/privacy/TelemetryToggle';
-export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
-export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
 export { default as RecoveryPageTelemetry } from './containers/recovery/RecoveryPageTelemetry';
-export { OverviewSection } from './containers/recovery/OverviewSection';
-export { SessionRecoverySection } from './containers/recovery/SessionRecoverySection';
 export { InviteSection } from './containers/referral/invite/InviteSection';
 export { ReferralInvitesContextProvider } from './containers/referral/ReferralInvitesContext';
 export { RightToLeftProvider } from './containers/rightToLeft/Provider';

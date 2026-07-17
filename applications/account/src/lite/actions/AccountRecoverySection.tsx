@@ -8,11 +8,10 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import SignInWithAnotherDeviceSettings from '@proton/components/containers/recovery/SignInWithAnotherDeviceSettings';
+import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
+import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
-
-import SignInWithAnotherDeviceSettings from './SignInWithAnotherDeviceSettings';
-import RecoveryEmail from './email/RecoveryEmail';
-import RecoveryPhone from './phone/RecoveryPhone';
 
 export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }) => {
     const defaultCountry = useMyCountry();

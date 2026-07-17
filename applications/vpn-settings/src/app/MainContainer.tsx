@@ -3,10 +3,15 @@ import { useEffect, useState } from 'react';
 import { Route } from 'react-router';
 import { Redirect, Switch, useLocation } from 'react-router-dom';
 
+import RecoverySettingsRouter from 'proton-account/src/app/containers/account/recovery/RecoverySettingsRouter';
 import OrganizationSettingsRouter from 'proton-account/src/app/containers/organization/OrganizationSettingsRouter';
 import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
 import { AutocompleteSettingsSearch } from 'proton-account/src/app/content/SettingsSearch';
-import type { Flags } from 'proton-account/src/app/content/router-params';
+import type {
+    AccountRecoveryRouterFlags,
+    Flags,
+    OrganizationSettingsRouterParams,
+} from 'proton-account/src/app/content/router-params';
 import { c } from 'ttag';
 
 import { useGroups } from '@proton/account/groups/hooks';
@@ -20,7 +25,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import {
-    AccountRecoverySection,
     AutomaticSubscriptionModal,
     CancelSubscriptionSection,
     CancelSubscriptionViaSupportSection,
@@ -28,7 +32,6 @@ import {
     CredentialLeakSection,
     CreditsSection,
     DashboardTelemetry,
-    DataRecoverySection,
     DeleteSection,
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
@@ -38,7 +41,6 @@ import {
     LanguageSection,
     LogsSection,
     OpenVPNCredentialsSection,
-    OverviewSection,
     PasswordsSection,
     PaymentMethodsSection,
     PlansSection,
@@ -49,7 +51,6 @@ import {
     PrivateMainSettingsArea,
     ReferralInvitesContextProvider,
     SentinelSection,
-    SessionRecoverySection,
     SessionsSection,
     SubscriptionModalProvider,
     SubscriptionsSection,
@@ -87,6 +88,7 @@ import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
+import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import type { Permission } from '@proton/shared/lib/interfaces';
@@ -134,7 +136,8 @@ const MainContainer: FunctionComponent = () => {
     const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [referralInfo] = useReferralInfo();
-    const [{ isDataRecoveryAvailable }, loadingDataRecovery] = useIsDataRecoveryAvailable();
+    const [{ isMnemonicAvailable, isRecoveryFileAvailable, isDataRecoveryAvailable }, loadingDataRecovery] =
+        useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false, false);
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
@@ -144,23 +147,36 @@ const MainContainer: FunctionComponent = () => {
     // Zendesk Chat Integration
     const { handleOpenZendeskChat, showZendeskChat, zendeskRef } = useZendeskChat(user);
 
-    const vpnRoutes = getRoutes({
-        user,
-        subscription,
-        showVPNDashboard,
-        showVPNDashboardVariant: showVPNDashboardVariant.name,
-        isB2BTrial,
-        isReferralProgramEnabled,
-        referralInfo: referralInfo.uiData,
-        isProtonMeetIntegrationEnabled,
-        isZoomIntegrationEnabled,
+    const organizationSettingsRouterParams: OrganizationSettingsRouterParams = {
+        groups,
         organization,
+        isB2BDrive: false,
+        isB2BTrial,
+        isGroupOwner,
+        permissions: permissions ?? ({} as Record<Permission, boolean>),
+        memberships: [],
+    };
+
+    const accountRecoveryRouterFlags: AccountRecoveryRouterFlags = {
+        isAccountRecoveryAvailable: getIsAccountRecoveryAvailable(user),
+        isMnemonicAvailable,
+        isRecoveryFileAvailable,
         isDataRecoveryAvailable,
         isSessionRecoveryAvailable,
-        recoveryNotificationColor: recoveryNotification?.color,
-    });
+        // Delegated access disabled on VPN because 1) it doesn't support the account switcher, and 2) it doesn't get pass scope.
+        isDelegatedAccessAvailable: false,
+        isNonPrivateDelegatedAccessAvailable: false,
+        // Disabled on VPN because it can't use delegated access, so we don't display the recovery score either.
+        isRecoveryScoreBannerAvailable: false,
+    };
 
     const flags: Flags = {
+        canDisplayNonPrivateEmailPhone: false,
+        isAuthenticatorAvailable: false,
+        isCategoryViewEnabled: false,
+        isCryptoPostQuantumOptInEnabled: false,
+        isMspEnabled: false,
+        isScribeEnabled: false,
         isUserGroupsFeatureEnabled,
         isUserGroupsNoCustomDomainEnabled,
         isUserGroupsPassBusinessEnabled,
@@ -170,19 +186,27 @@ const MainContainer: FunctionComponent = () => {
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
         isAlwaysOnVpnEnabled,
+        isReferralProgramEnabled,
     };
+
+    const vpnRoutes = getRoutes({
+        user,
+        subscription,
+        showVPNDashboard,
+        showVPNDashboardVariant: showVPNDashboardVariant.name,
+        referralInfo: referralInfo.uiData,
+        recoveryNotification: recoveryNotification?.color,
+        organizationSettingsRouterParams,
+        flags,
+        accountRecoveryRouterFlags,
+    });
 
     const organizationAppRoutes = getOrganizationAppRoutes({
         app: APPS.PROTONVPN_SETTINGS,
-        organization,
         user,
         subscription,
-        groups,
-        permissions: permissions ?? ({} as Record<Permission, boolean>),
-        isB2BDrive: false,
-        isB2BTrial,
-        isGroupOwner,
         flags,
+        ...organizationSettingsRouterParams,
     });
 
     const [{ ignoreOnboarding }] = useState(() => {
@@ -347,12 +371,7 @@ const MainContainer: FunctionComponent = () => {
                                 )}
                                 {getIsSectionAvailable(vpnRoutes.recovery) && (
                                     <Route path={vpnRoutes.recovery.to}>
-                                        <PrivateMainSettingsArea config={vpnRoutes.recovery}>
-                                            <OverviewSection />
-                                            <AccountRecoverySection />
-                                            <DataRecoverySection />
-                                            <SessionRecoverySection />
-                                        </PrivateMainSettingsArea>
+                                        <RecoverySettingsRouter app={app} recovery={vpnRoutes.recovery} path="" />
                                     </Route>
                                 )}
                                 <Route path="/account">

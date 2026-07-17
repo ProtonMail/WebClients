@@ -4,13 +4,15 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { AccountRecoverySection, CrashReportsToggle, TelemetryToggle } from '@proton/components';
+import CrashReportsToggle from '@proton/components/containers/privacy/CrashReportsToggle';
+import TelemetryToggle from '@proton/components/containers/privacy/TelemetryToggle';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
 import MobileAddressSection from '../components/Address/MobileAddressSection';
 import MobileSection from '../components/MobileSection';
 import MobileSectionLabel from '../components/MobileSectionLabel';
 import MobileSectionRow from '../components/MobileSectionRow';
+import { AccountRecoverySection } from './AccountRecoverySection';
 
 import './MobileSettings.scss';
 
