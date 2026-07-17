@@ -204,7 +204,13 @@ export class ESAdapter implements FunctionsV2 {
     async handleEvent(event: ESEvent<ESBaseMessage> | undefined) {
         await this.esLibraryFunctionsV1.handleEvent(event);
         if (event) {
+            // Record which messages the event touched so the import knows what to refresh.
             await this.indexService.handleEvent(event);
+            // `handleEvent` only enqueues the ES-DB write, it doesn't await it. Wait for the syncing
+            // queue to drain so the ES database actually contains this event before we pull the
+            // affected messages into the v2 index — otherwise we'd import from a stale ES database.
+            await this.esLibraryFunctionsV1.waitForSyncing?.();
+            await this.indexService.importFromEncryptedSearch();
         }
     }
 

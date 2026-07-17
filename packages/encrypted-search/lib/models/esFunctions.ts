@@ -124,6 +124,14 @@ export interface EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ES
     handleEvent: (event: ESEvent<ESItemMetadata> | undefined) => Promise<void>;
 
     /**
+     * Resolve once the events currently queued by `handleEvent` have finished syncing to the ES
+     * database. `handleEvent` only enqueues the sync (it returns before the DB write happens), so
+     * awaiting this is the only way for a caller to know the ES database actually reflects the events
+     * it has forwarded — e.g. before reading from it to feed another index.
+     */
+    waitForSyncing?: () => Promise<void>;
+
+    /**
      * @param ID the item ID
      * @returns whether a given item, specified by its ID, is part of the currently shown search results or not.
      * It returns false if a search is not happening on going
