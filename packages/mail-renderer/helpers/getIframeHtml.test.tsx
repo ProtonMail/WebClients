@@ -132,6 +132,29 @@ describe('getIframeHTML', () => {
             expect(htmlString).not.toContain('lang=');
         });
 
+        it('Should neutralize a </style> breakout smuggled into a head style element', () => {
+            const document = parseHtmlElement('<html><head></head><body>hello</body></html>');
+            const style = document.ownerDocument.createElement('style');
+            // Simulate a style whose text content contains a literal </style> breakout
+            // (as could be produced by CSSOM cssText serialization).
+            style.textContent = '.x { content: "</style><img src=x onerror=alert(1)>"; }';
+            document.querySelector('head')?.appendChild(style);
+
+            const htmlString = getIframeHtml({
+                emailContent: 'dude',
+                messageDocument: document,
+                isPlainText: false,
+                isPrint: false,
+                themeCSSVariables: '',
+                iframeCSSStyles: '',
+                iframeSVG: '',
+            });
+
+            const rendered = new DOMParser().parseFromString(htmlString, 'text/html');
+            // The smuggled img must not have escaped the style element into a live node.
+            expect(rendered.querySelector('img')).toBeNull();
+        });
+
         it('Should escape quotes in lang values to prevent attribute injection', () => {
             const document = parseHtmlElement('<html><head></head><body>hello</body></html>');
             document.setAttribute('lang', 'en" onload="alert(1)');
