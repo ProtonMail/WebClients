@@ -27,6 +27,8 @@ import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathna
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { getCookie } from '@proton/shared/lib/helpers/cookies'
+import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 
 async function getAppContainer() {
   try {
@@ -59,6 +61,10 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
   startLogoutListener()
 
   void OpenTracer.trace('boot_bootstrap_start')
+  void OpenTracer.trace('boot_bootstrap_cookie_shell_start', {
+    cookieAtLoad: versionCookieAtLoad,
+    cookieLive: getCookie('Tag'),
+  })
 
   if (volumeId && linkId) {
     if (localIDFromPathname !== undefined) {
@@ -141,10 +147,22 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
       unleashPromise,
     ])
 
-    void OpenTracer.trace('boot_bootstrap_user_loaded')
+    void OpenTracer.trace('boot_bootstrap_user_loaded', {
+      earlyAccessEnabled: userData.userSettings?.EarlyAccess,
+      earlyAccessScopeValue: userData.earlyAccessScope?.Value,
+      earlyAccessScopeDefault: userData.earlyAccessScope?.DefaultValue,
+      desyncRetries: sessionStorage.getItem('EARLY_ACCESS_DESYNCHRONIZATION_RETRIES_STORAGE_KEY'),
+      cookieAtLoad: versionCookieAtLoad,
+      cookieLive: getCookie('Tag'),
+    })
 
     // postLoad needs everything to be loaded.
     await bootstrap.postLoad({ appName, authentication, ...userData, history })
+    void OpenTracer.trace('boot_bootstrap_cookie_shell_after_postload', {
+      cookieAtLoad: versionCookieAtLoad,
+      cookieLive: getCookie('Tag'),
+    })
+
     // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
     await preloadPromise
 
