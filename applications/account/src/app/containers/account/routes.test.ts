@@ -5,7 +5,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 import { buildUser } from '@proton/testing/builders/user';
 
-import type { AccountRouterParams, Flags } from '../../content/router-params';
+import type { AccountRecoveryRouterFlags, AccountRouterParams, Flags } from '../../content/router-params';
 import { getAccountAppRoutes } from './routes';
 
 jest.mock('@proton/payments/core/subscription/helpers', () => ({
@@ -21,7 +21,21 @@ jest.mock('@proton/payments/core/subscription/helpers', () => ({
 const mockedHasCancellablePlan = jest.mocked(hasCancellablePlan);
 const mockedIsCancellableOnlyViaSupport = jest.mocked(isCancellableOnlyViaSupport);
 
+const accountRecoveryRouterFlags: AccountRecoveryRouterFlags = {
+    isAccountRecoveryAvailable: false,
+    isMnemonicAvailable: false,
+    isRecoveryFileAvailable: false,
+    isDataRecoveryAvailable: false,
+    isSessionRecoveryAvailable: false,
+    isDelegatedAccessAvailable: false,
+    isNonPrivateDelegatedAccessAvailable: false,
+    isRecoveryScoreBannerAvailable: false,
+};
+
 const defaultFlags: Flags = {
+    isAlwaysOnVpnEnabled: false,
+    isMspEnabled: false,
+    isReferralProgramEnabled: false,
     canDisplayNonPrivateEmailPhone: false,
     isUserGroupsFeatureEnabled: false,
     isUserGroupsNoCustomDomainEnabled: false,
@@ -35,7 +49,6 @@ const defaultFlags: Flags = {
     isRetentionPoliciesEnabled: false,
     isAuthenticatorAvailable: false,
     isCategoryViewEnabled: false,
-    isRecoveryContactsEnabled: false,
 };
 
 type Overrides = Omit<Partial<AccountRouterParams>, 'flags'> & { flags?: Partial<Flags> };
@@ -45,10 +58,8 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         app: APPS.PROTONMAIL,
         user: buildUser(),
         subscription: { Renew: Renew.Enabled } as Subscription,
-        isDataRecoveryAvailable: false,
-        isSessionRecoveryAvailable: false,
-        isReferralProgramEnabled: false,
         recoveryNotification: undefined,
+        accountRecoveryRouterFlags,
         organization: undefined,
         showVPNDashboard: false,
         showVPNDashboardVariant: 'disabled',
@@ -74,6 +85,7 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
             boolean
         >,
         flags: { ...defaultFlags, ...flagOverrides },
+        groups: undefined,
         ...rest,
     };
 }

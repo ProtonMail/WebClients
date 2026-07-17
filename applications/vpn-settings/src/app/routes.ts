@@ -1,3 +1,9 @@
+import { getRecoverySettings } from 'proton-account/src/app/containers/account/routes';
+import type {
+    AccountRecoveryRouterFlags,
+    Flags,
+    OrganizationSettingsRouterParams,
+} from 'proton-account/src/app/content/router-params';
 import { c } from 'ttag';
 
 import type { ThemeColor } from '@proton/colors/types';
@@ -12,8 +18,7 @@ import {
     isManagedExternally,
 } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/subscription/helpers';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
@@ -23,19 +28,15 @@ interface Arguments {
     subscription: MaybeFreeSubscription;
     showVPNDashboard: boolean;
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
-    isB2BTrial: boolean;
-    isReferralProgramEnabled: boolean;
-    isZoomIntegrationEnabled: boolean;
-    isProtonMeetIntegrationEnabled: boolean;
-    organization?: OrganizationExtended;
-    isDataRecoveryAvailable: boolean;
-    isSessionRecoveryAvailable: boolean;
-    recoveryNotificationColor?: ThemeColor;
+    recoveryNotification?: ThemeColor;
     referralInfo: {
         refereeRewardAmount: string;
         referrerRewardAmount: string;
         maxRewardAmount: string;
     };
+    organizationSettingsRouterParams: OrganizationSettingsRouterParams;
+    flags: Flags;
+    accountRecoveryRouterFlags: AccountRecoveryRouterFlags;
 }
 
 export const getRoutes = ({
@@ -43,15 +44,11 @@ export const getRoutes = ({
     subscription,
     showVPNDashboard,
     showVPNDashboardVariant,
-    isB2BTrial,
-    isReferralProgramEnabled,
     referralInfo,
-    isZoomIntegrationEnabled,
-    isProtonMeetIntegrationEnabled,
-    organization,
-    isSessionRecoveryAvailable,
-    isDataRecoveryAvailable,
-    recoveryNotificationColor,
+    recoveryNotification,
+    organizationSettingsRouterParams,
+    flags,
+    accountRecoveryRouterFlags,
 }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const cancellablePlan = hasCancellablePlan(subscription);
@@ -62,11 +59,14 @@ export const getRoutes = ({
 
     const isExternalUser = getIsExternalAccount(user);
     const showVideoConferenceSection =
-        (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) &&
+        (flags.isZoomIntegrationEnabled || flags.isProtonMeetIntegrationEnabled) &&
         !isExternalUser &&
-        (organization?.Settings.VideoConferencingEnabled || !user.hasPaidMail);
+        (organizationSettingsRouterParams.organization?.Settings.VideoConferencingEnabled || !user.hasPaidMail);
 
-    const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
+    const recoverySettings = getRecoverySettings({
+        recoveryNotification,
+        accountRecoveryRouterFlags,
+    });
 
     return {
         dashboardV2: {
@@ -146,7 +146,7 @@ export const getRoutes = ({
                     text: c('Title').t`Invoices`,
                     id: 'invoices',
                     variant: SettingsLayoutVariant.Card,
-                    available: !isB2BTrial,
+                    available: !organizationSettingsRouterParams.isB2BTrial,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,
@@ -223,7 +223,7 @@ export const getRoutes = ({
                 {
                     text: c('Title').t`Invoices`,
                     id: 'invoices',
-                    available: !isB2BTrial,
+                    available: !organizationSettingsRouterParams.isB2BTrial,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,
@@ -256,34 +256,7 @@ export const getRoutes = ({
                 },
             ],
         },
-        recovery: {
-            id: 'recovery',
-            text: c('Title').t`Recovery`,
-            to: '/recovery',
-            icon: 'key',
-            available: isAccountRecoveryAvailable,
-            notification: recoveryNotificationColor,
-            subsections: [
-                {
-                    text: '',
-                    id: 'checklist',
-                },
-                {
-                    text: c('Title').t`Account recovery`,
-                    id: 'account',
-                },
-                {
-                    text: c('Title').t`Data recovery`,
-                    id: 'data',
-                    available: isDataRecoveryAvailable,
-                },
-                {
-                    text: c('Title').t`Password reset settings`,
-                    id: 'password-reset',
-                    available: isSessionRecoveryAvailable,
-                },
-            ],
-        },
+        recovery: recoverySettings,
         account: {
             id: 'account',
             text: c('Title').t`Account`,
@@ -399,7 +372,7 @@ export const getRoutes = ({
             description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
             to: '/referral',
             icon: 'money-bills',
-            available: isReferralProgramEnabled,
+            available: flags.isReferralProgramEnabled,
             subsections: [
                 {
                     id: 'referral-invite-section',
