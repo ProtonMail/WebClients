@@ -147,16 +147,21 @@ export const escapeURLinStyle = (style: string) => {
             }
         );
 
-    if (escapedStyle === unescapedEncoding) {
-        // nothing escaped: just return input
-        return style;
-    }
-
+    // Always return the decoded, comment-stripped string (escapedStyle) rather than the
+    // original input. Returning the un-decoded original would let escaped declarations such
+    // as `position:\66 ixed` reach escapeForbiddenStyle unmatched while the browser still
+    // decodes them at render time, bypassing neutralization.
     return escapeFlag ? escape(escapedStyle) : escapedStyle;
 };
 
 export const escapeForbiddenStyle = (style: string): string => {
-    const parsedStyle = style
+    // Defense in depth: decode CSS/HTML escapes before matching so that escaped payloads
+    // (e.g. `position:\66 ixed`) cannot slip through the literal regexes below while the
+    // browser decodes them at render time. This guards the function even if it is ever
+    // called on un-decoded input outside the escapeURLinStyle pipeline.
+    const decodedStyle = recurringUnescapeCSSEncoding(style);
+
+    const parsedStyle = decodedStyle
         .replaceAll(REGEXP_POSITION_ABSOLUTE, 'position: relative')
         .replaceAll(REGEXP_POSITION_OVERLAY, 'position: inherit')
         .replaceAll(REGEXP_HEIGHT_PERCENTAGE, (rule, prop) => {
