@@ -17,8 +17,8 @@ import {
     selectMicrophonePermission,
     selectMicrophones,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { selectPage, selectPageCount, setPage } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
-import { selectPage, selectPageCount, setPage } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import {
     MeetingSideBars,
     PopUpControls,
@@ -27,7 +27,6 @@ import {
     togglePopupState,
     toggleSideBarState,
 } from '@proton/meet/store/slices/uiStateSlice';
-import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -35,7 +34,6 @@ import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
-import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useToolbarRovingFocus } from '../../hooks/useToolbarRovingFocus';
 import { getCameraButtonAriaLabel, getMicrophoneButtonAriaLabel } from '../../utils/mediaButtonAriaLabels';
@@ -48,7 +46,7 @@ import { InfoButton } from '../InfoButton/InfoButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
 import { MeetingName } from '../MeetingName/MeetingName';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
-import { ParticipantsButton, WrappedParticipantsButton } from '../ParticipantsButton';
+import { ParticipantsButton } from '../ParticipantsButton';
 import { RecordingControls } from '../RecordingControls/RecordingControls';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
@@ -59,7 +57,6 @@ import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const dispatch = useMeetDispatch();
-    const isGuest = useMeetSelector(selectIsGuest);
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const [isCameraToggleLoading, withCameraToggleLoading] = useLoading();
     const isScreenShare = useMeetSelector(selectIsScreenShare);
@@ -70,10 +67,6 @@ export const ParticipantControls = () => {
 
     const sideBarState = useMeetSelector(selectSideBarState);
     const popupState = useMeetSelector(selectPopupState);
-
-    const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
-
-    const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost;
 
     const pageCount = useMeetSelector(selectPageCount);
 
@@ -252,11 +245,7 @@ export const ParticipantControls = () => {
 
                     <div className="flex-nowrap gap-2 hidden lg:flex">
                         <ScreenShareButton />
-                        {isGuest ? (
-                            <ParticipantsButton hasAdminPermission={hasAdminPermission} isPaid={false} />
-                        ) : (
-                            <WrappedParticipantsButton hasAdminPermission={hasAdminPermission} />
-                        )}
+                        <ParticipantsButton />
                         <ChatButton />
                         <EmojiReactionButton />
                         <CircleButton

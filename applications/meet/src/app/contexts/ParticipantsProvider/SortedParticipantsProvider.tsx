@@ -6,14 +6,14 @@ import { type Participant, RoomEvent } from 'livekit-client';
 import { useHandler } from '@proton/components/hooks/useHandler';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { setLocalParticipantIdentity } from '@proton/meet/store/slices/participants/participantsSlice';
 import {
-    removeParticipant,
+    removeSortedParticipant,
     resetSortedParticipants,
     selectPagedIdentities,
     selectSortedParticipantIdentities,
-    setLocalParticipantIdentity,
     updateSortedParticipants,
-} from '@proton/meet/store/slices/sortedParticipantsSlice';
+} from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 
 const updateOnlyOn = [
     RoomEvent.ParticipantConnected,
@@ -49,7 +49,7 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
 
     const handleParticipantDisconnected = useCallback(
         (participant: Participant) => {
-            dispatch(removeParticipant(participant.identity));
+            dispatch(removeSortedParticipant(participant.identity));
         },
         [dispatch]
     );

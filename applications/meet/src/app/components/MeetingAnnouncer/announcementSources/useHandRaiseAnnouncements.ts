@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 
 import { announcementMessages } from '../messages';
 import { useAnnounce } from '../useAnnounce';

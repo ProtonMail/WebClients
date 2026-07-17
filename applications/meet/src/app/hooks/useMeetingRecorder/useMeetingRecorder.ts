@@ -7,10 +7,11 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import {
     addParticipantRecording,
     removeParticipantRecording,
+    selectHasRecordingPermissions,
     selectIsLocalParticipantRecording,
     startLocalRecordingTimer,
     stopLocalRecordingTimer,
@@ -26,7 +27,6 @@ import { retry } from '../../utils/retry';
 import { useIsLargerThanMd } from '../useIsLargerThanMd';
 import { useIsNarrowHeight } from '../useIsNarrowHeight';
 import { useStableCallback } from '../useStableCallback';
-import { useHaveRecordingPermissions } from './hooks/useHaveRecordingPermissions';
 import { useIsRecordingSupported } from './hooks/useIsRecordingSupported';
 import { useRecordedTracks } from './hooks/useRecordedTracks';
 import { useRecordingCodec } from './hooks/useRecordingCodec';
@@ -40,7 +40,7 @@ import { RecordingSession } from './recordingSession/recordingSession';
 export const useMeetingRecorder = () => {
     const isWebCodecsRecordingEnabled = useFlag('MeetRecordingWebCodecs');
 
-    const hasRecordingPermissions = useHaveRecordingPermissions();
+    const hasRecordingPermissions = useMeetSelector(selectHasRecordingPermissions);
     const isRecordingSupported = useIsRecordingSupported();
     const recordingCodec = useRecordingCodec({
         enabled: hasRecordingPermissions && isRecordingSupported,

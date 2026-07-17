@@ -11,7 +11,6 @@ import clsx from '@proton/utils/clsx';
 
 import { useMediaManagementContext } from '../../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useCopyTextToClipboard } from '../../../hooks/useCopyTextToClipboard.ts';
-import { useIsLocalParticipantAdmin } from '../../../hooks/useIsLocalParticipantAdmin';
 import { EmptyList } from '../shared/EmptyList';
 import { ParticipantListContainer } from '../shared/ParticipantListContainer';
 import { AllParticipantsItem } from './AllParticipantsItem';
@@ -26,7 +25,6 @@ export const AllParticipantsTab = ({ participants, setIsScrolled }: Props) => {
     const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
     const activeSpeakers = useDebouncedActiveSpeakers();
     const { toggleVideo, isVideoEnabled } = useMediaManagementContext();
-    const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const meetingLink = useMeetSelector(selectMeetingLink);
     const copyTextToClipboard = useCopyTextToClipboard();
@@ -66,8 +64,6 @@ export const AllParticipantsTab = ({ participants, setIsScrolled }: Props) => {
                                             ? !isVideoEnabled
                                             : participantsWithDisabledVideos.includes(participant.identity)
                                     }
-                                    isLocalParticipantAdmin={isLocalParticipantAdmin}
-                                    isLocalParticipantHost={isLocalParticipantHost}
                                     toggleVideo={toggleVideo}
                                 />
                             </li>

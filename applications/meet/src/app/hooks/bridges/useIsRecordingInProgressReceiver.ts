@@ -6,7 +6,7 @@ import type { Participant, RemoteParticipant } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
-import { selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantsMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import type { ParticipantEntity } from '@proton/meet/types/types';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
@@ -29,7 +29,7 @@ export const useIsRecordingInProgressReceiver = () => {
 
     const waitForParticipant = useCallback(
         (identity: string, timeoutMs = 10_000): Promise<ParticipantEntity | undefined> => {
-            const current = store.getState().meetingInfo.participantsMap[identity];
+            const current = store.getState().participants.participantsMap[identity];
             if (current) {
                 return Promise.resolve(current);
             }
@@ -38,7 +38,7 @@ export const useIsRecordingInProgressReceiver = () => {
                 let timeout: NodeJS.Timeout;
 
                 const unsubscribe = store.subscribe(() => {
-                    const participant = store.getState().meetingInfo.participantsMap[identity];
+                    const participant = store.getState().participants.participantsMap[identity];
                     if (participant) {
                         clearTimeout(timeout);
                         unsubscribe();

@@ -4,18 +4,15 @@ import { deviceManagementReducer } from './deviceManagementSlice';
 import { meetAppStateReducer } from './meetAppStateSlice';
 import { meetingInfoReducer } from './meetingInfo';
 import { meetingsReducer } from './meetings';
+import { participantsReducer } from './participants/participantsSlice';
+import { sortedParticipantsReducer } from './participants/sortedParticipantsSlice';
 import { recordingStatusReducer } from './recordingStatusSlice';
 import { recordingsReducer } from './recordingsSlice';
 import { screenShareStatusReducer } from './screenShareStatusSlice';
 import { settingsReducer } from './settings';
-import { sortedParticipantsReducer } from './sortedParticipantsSlice';
 import { uiStateReducer } from './uiStateSlice';
 import { userSettingsReducer } from './userSettings';
 import { meetUserReducer } from './userSlice';
-
-export * from './meetAppStateSlice';
-export * from './meetingInfo';
-export * from './meetings';
 
 export const meetReducers = {
     ...chatAndReactionsReducer,
@@ -24,12 +21,13 @@ export const meetReducers = {
     ...meetAppStateReducer,
     ...meetingInfoReducer,
     ...meetingsReducer,
+    ...participantsReducer,
+    ...sortedParticipantsReducer,
     ...userSettingsReducer,
     ...recordingsReducer,
     ...recordingStatusReducer,
     ...screenShareStatusReducer,
     ...settingsReducer,
-    ...sortedParticipantsReducer,
     ...uiStateReducer,
     ...meetUserReducer,
 };

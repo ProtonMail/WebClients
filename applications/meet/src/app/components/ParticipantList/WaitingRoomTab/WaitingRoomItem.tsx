@@ -6,7 +6,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantName } from '@proton/meet/store/slices/participants/participantsSlice';
 
 import { ParticipantNameWithInitials } from '../shared/ParticipantNameWithInitials';
 

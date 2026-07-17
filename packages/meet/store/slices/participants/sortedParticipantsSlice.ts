@@ -5,27 +5,22 @@ import type { Participant } from 'livekit-client';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import shallowEqual from '@proton/utils/shallowEqual';
 
-import { PAGE_SIZE } from '../../constants';
-import { getIdealSortedParticipants } from '../../utils/participants/getIdealSortedParticipants';
-import { getVisuallyStableSortedParticipants } from '../../utils/participants/getVisuallyStableSortedParticipants';
-import type { MeetState } from '../rootReducer';
-import { selectParticipantsMap } from './meetingInfo';
-import { selectSelfView } from './settings';
+import { PAGE_SIZE } from '../../../constants';
+import { getIdealSortedParticipants } from '../../../utils/participants/getIdealSortedParticipants';
+import { getVisuallyStableSortedParticipants } from '../../../utils/participants/getVisuallyStableSortedParticipants';
+import type { MeetState } from '../../rootReducer';
+import { selectSelfView } from '../settings';
 
 export interface SortedParticipantsState {
-    localParticipantIdentity: string;
     sortedParticipantIdentities: string[];
     page: number;
     pageSize: number;
-    localParticipantColorIndex: number;
 }
 
 export const initialState: SortedParticipantsState = {
-    localParticipantIdentity: '',
     sortedParticipantIdentities: [],
     page: 0,
     pageSize: PAGE_SIZE,
-    localParticipantColorIndex: 0,
 };
 
 const calculateTotalPageCount = ({
@@ -71,12 +66,6 @@ const slice = createSlice({
         setPageSize: (state, action: PayloadAction<number>) => {
             state.pageSize = action.payload;
         },
-        setLocalParticipantColorIndex: (state, action: PayloadAction<number>) => {
-            state.localParticipantColorIndex = action.payload;
-        },
-        setLocalParticipantIdentity: (state, action: PayloadAction<string>) => {
-            state.localParticipantIdentity = action.payload;
-        },
         // Used in combination of removeParticipant thunk
         _removeParticipant: (state, action: PayloadAction<{ participantIdentity: string; lastPage: number }>) => {
             const { participantIdentity, lastPage } = action.payload;
@@ -92,7 +81,7 @@ const slice = createSlice({
     },
 });
 
-export const removeParticipant =
+export const removeSortedParticipant =
     (participantIdentity: string): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
     (dispatch, getState) => {
         const { sortedParticipantIdentities, pageSize } = getState().sortedParticipants;
@@ -188,29 +177,6 @@ export const selectPageCount = createSelector(
     (identities, pageSize, selfView) => calculateTotalPageCount({ identities, pageSize, selfView })
 );
 
-export const selectLocalParticipantColorIndex = (state: MeetState) => {
-    return state.sortedParticipants.localParticipantColorIndex;
-};
-
-export const selectLocalParticipantIdentity = (state: MeetState) => {
-    return state.sortedParticipants.localParticipantIdentity;
-};
-
-export const selectIsLocalParticipantAdminOrHost = createSelector(
-    [selectParticipantsMap, selectLocalParticipantIdentity],
-    (participantsMap, localParticipantIdentity) => {
-        const participant = participantsMap[localParticipantIdentity];
-        return !!participant?.IsAdmin || !!participant?.IsHost;
-    }
-);
-
-export const {
-    setSortedParticipantIdentities,
-    resetSortedParticipants,
-    setPage,
-    setPageSize,
-    setLocalParticipantColorIndex,
-    setLocalParticipantIdentity,
-} = slice.actions;
+export const { setSortedParticipantIdentities, resetSortedParticipants, setPage, setPageSize } = slice.actions;
 
 export const sortedParticipantsReducer = { sortedParticipants: slice.reducer };

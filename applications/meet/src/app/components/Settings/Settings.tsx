@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectMeetSettings, setDisableVideos, setPipEnabled, setSelfView } from '@proton/meet/store/slices/settings';
 import {
@@ -18,7 +19,6 @@ import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { BackgroundBlurToggle } from './BackgroundBlurToggle';
 import { NoiseCancellingToggle } from './NoiseCancellingToggle';
 import { WaitingRoomToggle } from './WaitingRoomToggle';
@@ -36,8 +36,7 @@ export const Settings = () => {
     const sideBarState = useMeetSelector(selectSideBarState);
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
     const showDuration = useMeetSelector(selectShowDuration);
-
-    const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
+    const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
 
     const [loadingLock, withLoadingLock] = useLoading();
     const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
@@ -58,7 +57,7 @@ export const Settings = () => {
         >
             <div className="overflow-y-auto flex-1 min-h-0">
                 <div className="flex flex-column flex-nowrap w-full gap-4 pr-4">
-                    {(isLocalParticipantAdmin || isLocalParticipantHost) && (
+                    {isLocalParticipantAdminOrHost && (
                         <SettingsArea title={c('Title').t`Security`}>
                             <WaitingRoomToggle />
                             <SettingToggle

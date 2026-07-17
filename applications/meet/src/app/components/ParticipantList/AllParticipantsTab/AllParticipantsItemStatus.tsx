@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantIsHost } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantIsHostOrAdmin } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectIsParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import { selectIsParticipantScreenSharing } from '@proton/meet/store/slices/screenShareStatusSlice';
 
@@ -41,7 +41,7 @@ const getParticipantStatusLabel = ({
 
 export const AllParticipantsItemStatus = ({ participantIdentity }: { participantIdentity: string }) => {
     const isRecording = useMeetSelector((state) => selectIsParticipantRecording(state, participantIdentity));
-    const isHost = useMeetSelector((state) => selectParticipantIsHost(state, participantIdentity));
+    const isHost = useMeetSelector((state) => selectParticipantIsHostOrAdmin(state, participantIdentity));
     const isScreenSharing = useMeetSelector((state) => selectIsParticipantScreenSharing(state, participantIdentity));
 
     if (!isRecording && !isHost && !isScreenSharing) {

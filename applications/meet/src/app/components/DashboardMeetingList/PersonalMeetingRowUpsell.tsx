@@ -6,7 +6,7 @@ import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetUsers } from '@proton/icons/icons/IcMeetUsers';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { setUpsellModalType } from '@proton/meet/store/slices';
+import { setUpsellModalType } from '@proton/meet/store/slices/meetAppStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 
 import './MeetingRow/MeetingRow.scss';

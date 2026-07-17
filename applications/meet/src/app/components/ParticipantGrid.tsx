@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components/index';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectPagedIdentities } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import { selectPagedIdentities } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 
 import { useSortedPagedParticipants } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
