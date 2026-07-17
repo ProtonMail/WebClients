@@ -8,8 +8,14 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import useLoading from '@proton/hooks/useLoading';
 import { IcMeetPhone } from '@proton/icons/icons/IcMeetPhone';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectHasAnotherAdmin,
+    selectHostIsPresent,
+    selectIsLocalParticipantAdmin,
+    selectIsLocalParticipantHost,
+} from '@proton/meet/store/slices/participants/participantsSlice';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
-import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import {
     MeetingSideBars,
     PopUpControls,
@@ -24,7 +30,6 @@ import clsx from '@proton/utils/clsx';
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
-import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { EndMeetingWarningModal } from '../EndMeetingWarningModal/EndMeetingWarningModal';
 import { LeaveMeetingWarningModal } from '../LeaveMeetingWarningModal/LeaveMeetingWarningModal';
 import { ScreenShareLeaveWarningModal } from '../ScreenShareLeaveWarningModal/ScreenShareLeaveWarningModal';
@@ -39,6 +44,10 @@ export const LeaveMeetingPopup = () => {
     const { handleEndMeeting, handleLeave } = useMeetContext();
     const isLocalScreenShare = useMeetSelector(selectIsLocalScreenShare);
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
+    const hasAnotherAdmin = useMeetSelector(selectHasAnotherAdmin);
+    const hostIsPresent = useMeetSelector(selectHostIsPresent);
+    const isLocalParticipantHost = useMeetSelector(selectIsLocalParticipantHost);
+    const isLocalParticipantAdmin = useMeetSelector(selectIsLocalParticipantAdmin);
 
     const popupState = useMeetSelector(selectPopupState);
     const [loadingEndMeeting, withLoadingEndMeeting] = useLoading();
@@ -46,9 +55,6 @@ export const LeaveMeetingPopup = () => {
     const [endingMeeting, setEndingMeeting] = useState(false);
 
     const isLargerThanMd = useIsLargerThanMd();
-
-    const { isLocalParticipantHost, isLocalParticipantAdmin, hasAnotherAdmin, hostIsPresent } =
-        useIsLocalParticipantAdmin();
 
     const handleButtonClick = () => {
         switch (true) {

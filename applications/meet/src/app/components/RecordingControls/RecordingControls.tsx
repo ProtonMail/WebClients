@@ -9,7 +9,10 @@ import { IcArrowDownCircle } from '@proton/icons/icons/IcArrowDownCircle';
 import { IcMeetRecord } from '@proton/icons/icons/IcMeetRecord';
 import { IcMeetRecordStop } from '@proton/icons/icons/IcMeetRecordStop';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsGuestAdmin } from '@proton/meet/store/slices';
+import {
+    selectIsGuestAdmin,
+    selectIsLocalParticipantAdminOrHost,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import {
     selectIsLocalParticipantRecording,
     selectLocalRecordingTime,
@@ -24,7 +27,6 @@ import clsx from '@proton/utils/clsx';
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useMeetingRecorderContext } from '../../contexts/MeetingRecorderContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
-import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 import { ScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/ScreenRecordingUpsell';
 import { SubUserScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/SubUserScreenRecordingUpsell';
@@ -88,13 +90,13 @@ export const RecordingControls = () => {
     const [showStartRecordingConfirmation, setShowStartRecordingConfirmation] = useState(false);
     const [showStopRecordingConfirmation, setShowStopRecordingConfirmation] = useState(false);
 
-    const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
+    const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
     const { isPaidUser, isSubUser } = useMeetSelector(selectSubscriptionStatus);
     const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
 
     const isRecordingSupported = useIsRecordingSupported();
 
-    const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost || isGuestAdmin;
+    const hasAdminPermission = isLocalParticipantAdminOrHost || isGuestAdmin;
 
     const shouldDisplayRecordingControls = hasAdminPermission;
 

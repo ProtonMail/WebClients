@@ -8,7 +8,7 @@ import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@pr
 import {
     initialState as initialSortedParticipantsState,
     sortedParticipantsReducer,
-} from '@proton/meet/store/slices/sortedParticipantsSlice';
+} from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 

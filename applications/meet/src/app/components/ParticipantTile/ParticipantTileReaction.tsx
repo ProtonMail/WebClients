@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveReaction, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/participants/participantsSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 

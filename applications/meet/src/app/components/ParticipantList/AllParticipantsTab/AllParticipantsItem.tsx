@@ -11,7 +11,10 @@ import { IcMeetEyeClosed } from '@proton/icons/icons/IcMeetEyeClosed';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveReaction, selectParticipantHasRaisedHand } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
+import {
+    selectIsLocalParticipantAdminOrHost,
+    selectParticipantName,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import { disableParticipantVideo, enableParticipantVideo } from '@proton/meet/store/slices/settings';
 
 import { SpeakingIndicator } from '../../../atoms/SpeakingIndicator';
@@ -32,10 +35,6 @@ interface AllParticipantsItemProps {
     hasVideoPublication: boolean;
     // True if local participant disabled video of this participant
     isVideoDisabled: boolean;
-
-    // Local participant props
-    isLocalParticipantAdmin: boolean;
-    isLocalParticipantHost: boolean;
     toggleVideo: ToggleVideoType;
 }
 
@@ -46,14 +45,13 @@ export const AllParticipantsItem = memo(
         isMuted,
         hasVideoPublication,
         isVideoDisabled,
-        isLocalParticipantAdmin,
-        isLocalParticipantHost,
         toggleVideo,
     }: AllParticipantsItemProps) => {
         const participantName = useMeetSelector((state) => selectParticipantName(state, participant.identity));
 
         const dispatch = useMeetDispatch();
 
+        const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
         const activeReactions = useMeetSelector((state) => selectActiveReaction(state, participant.identity));
         const isHandRaised = useMeetSelector((state) => selectParticipantHasRaisedHand(state, participant.identity));
         const displayEmoji = activeReactions || (isHandRaised ? RAISE_HAND_EMOJI : undefined);
@@ -132,13 +130,11 @@ export const AllParticipantsItem = memo(
                     </div>
                 )}
 
-                {isLocalParticipantAdmin || isLocalParticipantHost ? (
+                {isLocalParticipantAdminOrHost ? (
                     <ParticipantHostControls
                         participant={participant}
                         isVideoEnabled={hasVideoPublication}
                         isAudioEnabled={!isMuted}
-                        isLocalParticipantAdmin={isLocalParticipantAdmin}
-                        isLocalParticipantHost={isLocalParticipantHost}
                     />
                 ) : null}
             </ParticipantNameWithInitials>
