@@ -4,6 +4,7 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { isShadowRoot } from 'proton-pass-extension/app/content/services/detector/detector.api';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
+import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -127,7 +128,13 @@ export const intoDropdownAction = withContext<(request: DropdownRequest) => Prom
         if (!(tabUrl && origins)) return;
 
         const [origin, frameOrigin] = origins;
-        const base = { frameOrigin, frameId, fieldId, formId, origin } as const;
+        /** For a `'field'` request, this code runs in the same frame the field lives in, so
+         * `document` here is already the right one. For a `'frame'` request, this always runs
+         * in the top frame (see `InlineService`) -- that value was already resolved sub-frame-side
+         * and relayed in via `request.telemetry`. */
+        const telemetry =
+            request.type === 'field' ? getAutofillPageTelemetryDimensions(request.field.element) : request.telemetry;
+        const base = { frameOrigin, frameId, fieldId, formId, origin, telemetry } as const;
 
         switch (action) {
             case DropdownAction.AUTOFILL_CC:
