@@ -20,7 +20,9 @@ export const NoteContent: FC<ItemContentProps<'note'>> = ({ revision: { data, it
                         {/** `revision` is used as key here to trigger in an internal
                          * state reset of `TextAreaReadonly` when toggling between
                          * note revisions when comparing history (resets expansion) */}
-                        <TextAreaReadonly key={revision}>{note}</TextAreaReadonly>
+                        <TextAreaReadonly key={revision} defaultExpanded>
+                            {note}
+                        </TextAreaReadonly>
                     </FieldBox>
                 </FieldsetCluster>
             )}
