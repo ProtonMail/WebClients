@@ -794,6 +794,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
+      ],
+      "Regex invalid": [
+        "Regex ungültig"
+      ],
+      "Regex unsafe": [
+        "Regex unsicher"
       ]
     },
     "Activity": {
@@ -2972,6 +2978,9 @@
       "Moving an item to another vault will erase its secure links.": [
         "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
         "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Sortiert nach Feld (zuerst Titel, dann Benutzername oder E-Mail, Website, Notizen) und Übereinstimmungsgenauigkeit (exakt, beginnt mit, enthält)."
       ]
     },
     "Keyboard key": {
@@ -4157,6 +4166,36 @@
       ],
       "ZIP or Postal code": [
         "Postleitzahl oder ZIP-Code"
+      ],
+      "Basic": [
+        "Basis"
+      ],
+      "Check": [
+        "Prüfen"
+      ],
+      "Exact host matching": [
+        "Genaue Host-Übereinstimmung"
+      ],
+      "Exact URL matching": [
+        "Genaue URL-Übereinstimmung"
+      ],
+      "Never fill on this exact URL": [
+        "Niemals auf dieser genauen URL ausfüllen"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Übergeordnete Domain und Subdomains (Standard)"
+      ],
+      "Regular expression": [
+        "Regulärer Ausdruck"
+      ],
+      "Relevant": [
+        "Relevant"
+      ],
+      "Starts with": [
+        "Beginnt mit"
+      ],
+      "URL wildcard pattern": [
+        "URL-Platzhalter-Muster"
       ]
     },
     "Link": {
@@ -4186,6 +4225,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Du hast ${ semiboldText } in diesem Tresor ausgewählt."
+      ],
+      "'Starts with' matching rule": [
+        "„Beginnt mit“-Übereinstimmungsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Genaue (Sub-) Domain-Übereinstimmungsregel"
+      ],
+      "Exact URL matching rule": [
+        "Genaue URL-Übereinstimmungsregel"
+      ],
+      "Never fill with this exact URL": [
+        "Niemals mit dieser genauen URL ausfüllen"
+      ],
+      "Regular expression rule": [
+        "Reguläre-Ausdruck-Regel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Platzhalter-Übereinstimmungsregel"
       ]
     },
     "new_plans: feature": {
@@ -5192,6 +5249,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du bist dabei, ${ aliasCount } Alias dauerhaft zu löschen.",
         "Du bist dabei, ${ aliasCount } Aliasse dauerhaft zu löschen."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Passe das Verhalten für automatisches Ausfüllen an, um zu ändern, wo Anmeldungen vorgeschlagen werden."
+      ],
+      "Learn more": [
+        "Mehr erfahren"
+      ],
+      "Test a URL against this rule": [
+        "Teste eine URL mit dieser Regel"
+      ],
+      "URL matching": [
+        "URL-Übereinstimmung"
       ]
     },
     "Title_cloned_item": {
@@ -5541,6 +5610,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } bietet eine leistungsstarke Kontrolle, aber ein einziger Fehler kann dazu führen, dass das automatische Ausfüllen auf betrügerischen oder Phishing-Websites übereinstimmt und Daten ausfüllt."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Dieser Eintrag kann aufgrund der Regel „${ neverModeDescriptionStrong }“ nicht für automatisches Ausfüllen vorgeschlagen werden. Füge eine andere URL hinzu, wenn du möchtest, dass dieser Eintrag automatisch ausgefüllt wird."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Gib eine URL ein, um zu prüfen, ob deine aktuelle Regel mit der URL übereinstimmt"
+      ],
+      "The rule is matching this URL": [
+        "Die Regel stimmt mit dieser URL überein"
+      ],
+      "The rule is NOT matching this URL": [
+        "Die Regel stimmt NICHT mit dieser URL überein"
+      ],
+      "This URL will be blocked from autofill": [
+        "Dieses automatische Ausfüllen wird für diese URL blockiert"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Dieses automatische Ausfüllen wird für diese URL NICHT blockiert"
       ]
     }
   }

@@ -794,6 +794,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
+      ],
+      "Regex invalid": [
+        "Regex ongeldig"
+      ],
+      "Regex unsafe": [
+        "Regex onveilig"
       ]
     },
     "Activity": {
@@ -2972,6 +2978,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Gerangschikt op veld (eerst titel, daarna gebruikersnaam of e-mail, website, notities) en overeenkomstprecisie (exact, begint met, bevat)."
       ]
     },
     "Keyboard key": {
@@ -4157,6 +4166,36 @@
       ],
       "ZIP or Postal code": [
         "Postcode"
+      ],
+      "Basic": [
+        "Basis"
+      ],
+      "Check": [
+        "Controleren"
+      ],
+      "Exact host matching": [
+        "Exacte hostovereenkomst"
+      ],
+      "Exact URL matching": [
+        "Exacte URL-overeenkomst"
+      ],
+      "Never fill on this exact URL": [
+        "Nooit invullen op deze exacte URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Bovenliggende domein en subdomeinen (standaard)"
+      ],
+      "Regular expression": [
+        "Reguliere expressie"
+      ],
+      "Relevant": [
+        "Relevant"
+      ],
+      "Starts with": [
+        "Begint met"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertekenpatroon"
       ]
     },
     "Link": {
@@ -4186,6 +4225,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "U heeft ${ semiboldText } geselecteerd in deze kluis."
+      ],
+      "'Starts with' matching rule": [
+        "'Begint met'-matchregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Exacte (sub)domein matchregel"
+      ],
+      "Exact URL matching rule": [
+        "Exacte URL-matchregel"
+      ],
+      "Never fill with this exact URL": [
+        "Nooit invullen met deze exacte URL"
+      ],
+      "Regular expression rule": [
+        "Reguliere expressieregel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchregel met jokertekenpatroon"
       ]
     },
     "new_plans: feature": {
@@ -5192,6 +5249,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Pas het gedrag van automatisch aanvullen aan om te wijzigen waar inloggegevens worden voorgesteld."
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Test a URL against this rule": [
+        "Test een URL met deze regel"
+      ],
+      "URL matching": [
+        "URL-overeenkomst"
       ]
     },
     "Title_cloned_item": {
@@ -5541,6 +5610,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Dit item kan niet worden voorgesteld voor automatisch aanvullen vanwege de \"${ neverModeDescriptionStrong }\". Voeg een andere URL toe als u wilt dat dit item automatisch wordt ingevuld."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Voer een URL in om te controleren of uw huidige regel overeenkomt met de URL"
+      ],
+      "The rule is matching this URL": [
+        "De regel komt overeen met deze URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "De regel komt NIET overeen met deze URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Deze URL zal worden geblokkeerd voor automatisch aanvullen"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Deze URL zal NIET worden geblokkeerd voor automatisch aanvullen"
       ]
     }
   }

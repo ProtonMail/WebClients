@@ -4289,6 +4289,9 @@
       ],
       "URL wildcard pattern": [
         "Узор падстаноўчых знакаў URL-адраса"
+      ],
+      "Never fill on this exact URL": [
+        "Ніколі не запаўняць на гэтым дакладным URL-адрасе"
       ]
     },
     "Link": {
@@ -4334,6 +4337,12 @@
       ],
       "Regular expression rule": [
         "Правіла рэгулярнага выразу"
+      ],
+      "Never fill with this exact URL": [
+        "Ніколі не запаўняць з гэтага дакладнага URL-адраса"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правіла супастаўлення па шаблоне з падстаноўчымі знакамі"
       ]
     },
     "new_plans: feature": {
@@ -5730,6 +5739,9 @@
       ],
       "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
         "Гэты элемент не можа быць прапанаваны для аўтазапаўнення з прычыны таго, што ён мае метку \"${ neverModeDescriptionStrong }\". Дадайце іншы URL-адрас, калі хочаце аўтазапаўняць гэты элемент."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } забяспечвае магутны кантроль, але адна памылка можа прывесці да таго, што аўтазапаўненне спрацуе і запоўніць даныя на махлярскіх або фішынгавых вэб-сайтах."
       ]
     },
     "Result": {
@@ -5744,6 +5756,9 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Гэты URL-адрас НЕ будзе заблакіраваны для аўтазапаўнення"
+      ],
+      "The rule is NOT matching this URL": [
+        "Правіла НЕ адпавядае гэтаму URL-адрасу"
       ]
     }
   }

@@ -794,6 +794,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ],
+      "Regex invalid": [
+        "Regex inválido"
+      ],
+      "Regex unsafe": [
+        "Regex inseguro"
       ]
     },
     "Activity": {
@@ -811,6 +817,9 @@
       ],
       "Vault": [
         "Cofre"
+      ],
+      "Activity details could not be loaded.": [
+        "Não foi possível carregar os detalhes da atividade."
       ]
     },
     "Browser": {
@@ -1449,6 +1458,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Não foi possível carregar as instruções de configuração do agente. Copie o token abaixo, pois ele não será exibido novamente."
+      ],
+      "Failed to load token actions": [
+        "Falha ao carregar as ações do token"
       ]
     },
     "Error message": {
@@ -1895,7 +1910,7 @@
         "Não recebeu o código?"
       ],
       "Disabling auto-lock": [
-        "Desativar bloqueio automático"
+        "Desativando bloqueio automático"
       ],
       "Disabling auto-lock failed": [
         "Erro ao desativar o bloqueio automático"
@@ -2254,7 +2269,7 @@
         "Nenhum"
       ],
       "None selected": [
-        "Nenhum selecionado-"
+        "Nenhum selecionado"
       ],
       "Not configured": [
         "Não configurado"
@@ -2951,6 +2966,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "O token de acesso \"${ action.token.Name }\" já está expirado. Se for excluído, ele não será mais mostrado."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Apenas os tokens que expiraram nos últimos 30 dias são mostrados. Os tokens mais antigos são excluídos automaticamente."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Classificado por campo (título primeiro, depois nome de usuário ou e-mail, site, notas) e precisão de correspondência (exata, começa com, contém)."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Depois você pode acessar ${ url } para copiar as instruções para enviar ao seu agente de IA."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Para configurar o desbloqueio por biometria, o ${ PASS_APP_NAME } precisa de uma nova permissão do navegador. Após você aceitá-la, a extensão será recarregada. Abra novamente esta página depois disso."
       ]
     },
     "Keyboard key": {
@@ -3577,7 +3607,7 @@
         "Número da licença"
       ],
       "License Number": [
-        "Número da Licença"
+        "Número da licença"
       ],
       "LinkedIn account": [
         "Conta do LinkedIn"
@@ -4145,6 +4175,27 @@
       ],
       "Starts with": [
         "Iniciar com"
+      ],
+      "Check": [
+        "Verificar"
+      ],
+      "Exact host matching": [
+        "Correspondência exata de host"
+      ],
+      "Exact URL matching": [
+        "Correspondência de URL exata"
+      ],
+      "Never fill on this exact URL": [
+        "Nunca preencher nesta URL exata"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domínio pai e subdomínios (padrão)"
+      ],
+      "Relevant": [
+        "Relevante"
+      ],
+      "URL wildcard pattern": [
+        "Padrão de URL com caractere curinga"
       ]
     },
     "Link": {
@@ -4177,6 +4228,21 @@
       ],
       "Regular expression rule": [
         "Regra de expressão regular"
+      ],
+      "'Starts with' matching rule": [
+        "Regra de correspondência \"Começa com\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regra de correspondência exata de (sub) domínio"
+      ],
+      "Exact URL matching rule": [
+        "Regra de correspondência de URL exata"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca preencher com esta URL exata"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regra de correspondência com padrão curinga"
       ]
     },
     "new_plans: feature": {
@@ -4256,7 +4322,7 @@
         "Excluir ${ deleteFile.state.name }"
       ],
       "Delete all files": [
-        "Exclua todos os arquivos"
+        "Excluir todos os arquivos"
       ],
       "Do you want to remove all the files?": [
         "Deseja remover todos os arquivos?"
@@ -5189,6 +5255,12 @@
       ],
       "URL matching": [
         "Correspondência de URL"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajuste os comportamentos do preenchimento automático para alterar onde os inícios de sessão são sugeridos."
+      ],
+      "Test a URL against this rule": [
+        "Testar uma URL com esta regra"
       ]
     },
     "Title_cloned_item": {
@@ -5538,6 +5610,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "O modo ${ modeLabelStong } oferece um controle avançado, mas um único erro pode fazer com que o preenchimento automático corresponda e preencha dados em sites fraudulentos ou de phishing."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Este item não pode ser sugerido para preenchimento automático devido à regra \"${ neverModeDescriptionStrong }\". Adicione outra URL se você quiser o preenchimento automático para este item."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Insira uma URL para verificar se a sua regra atual corresponde a ela"
+      ],
+      "The rule is matching this URL": [
+        "A regra corresponde a esta URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "A regra NÃO corresponde a esta URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Esta URL será bloqueada no preenchimento automático"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Esta URL NÃO será bloqueada no preenchimento automático"
       ]
     }
   }
