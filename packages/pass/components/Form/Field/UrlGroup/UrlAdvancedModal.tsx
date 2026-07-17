@@ -18,7 +18,7 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { RegexSafety, checkRegex } from '@proton/pass/lib/urls/safe-regex/safe-regex';
+import { getRegexError } from '@proton/pass/lib/urls/safe-regex/safe-regex';
 import { getModeLabel, getModeWarning, sortDefaultFirst } from '@proton/pass/lib/urls/utils/autofill';
 import type { MaybeNull, UrlGroupValues, UrlItem } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -104,10 +104,7 @@ export const UrlAdvancedModal: FC<UrlAdvancedModalProps> = ({ open, index, initi
 
     const handleBlurValue = async () => {
         if (urlItem?.mode !== AutofillMode.RegularExpression) return;
-        const result = checkRegex(urlItem.url);
-        if (result === RegexSafety.Invalid) setRegexError(c('Action').t`Regex invalid`);
-        else if (result === RegexSafety.Unsafe) setRegexError(c('Action').t`Regex unsafe`);
-        else setRegexError(undefined);
+        setRegexError(getRegexError(urlItem.url));
     };
 
     const handleCancel = () => {
