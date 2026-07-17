@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectParticipantDecryptedNameMap, selectRoomName } from '@proton/meet/store/slices/meetingInfo';
+import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import {
     selectLocalParticipantIdentity,
-    selectTotalParticipantCount,
-} from '@proton/meet/store/slices/sortedParticipantsSlice';
+    selectParticipantDecryptedNameMap,
+} from '@proton/meet/store/slices/participants/participantsSlice';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import clsx from '@proton/utils/clsx';
 

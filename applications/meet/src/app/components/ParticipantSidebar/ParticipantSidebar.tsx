@@ -9,7 +9,7 @@ import {
     selectPage,
     selectPageCount,
     setPage as setPageAction,
-} from '@proton/meet/store/slices/sortedParticipantsSlice';
+} from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import clsx from '@proton/utils/clsx';
 
 import { Pagination } from '../../atoms/Pagination/Pagination';

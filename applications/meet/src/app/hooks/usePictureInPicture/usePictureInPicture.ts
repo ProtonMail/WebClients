@@ -12,6 +12,7 @@ import {
     selectSelectedCameraId,
     selectSelectedMicrophoneId,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -49,13 +50,7 @@ const enableMediaSessionControls = async (reportMeetError: ReportMeetError) => {
     }
 };
 
-export function usePictureInPicture({
-    isDisconnected,
-    participantDecryptedNameMap,
-}: {
-    isDisconnected: boolean;
-    participantDecryptedNameMap: Record<string, string>;
-}) {
+export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolean }) {
     const { reportMeetError } = useMeetErrorReporting();
     const room = useRoomContext();
 
@@ -74,6 +69,7 @@ export function usePictureInPicture({
     const [isPipActive, setIsPipActive] = useState(false);
 
     // Use useLatest to avoid stale closures
+    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const participantDecryptedNameMapRef = useLatest(participantDecryptedNameMap);
 
     const notifications = useNotifications();

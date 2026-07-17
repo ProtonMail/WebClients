@@ -3,7 +3,10 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectInvalidMeetingLinkModalOpen, setInvalidMeetingLinkModalOpen } from '@proton/meet/store/slices';
+import {
+    selectInvalidMeetingLinkModalOpen,
+    setInvalidMeetingLinkModalOpen,
+} from '@proton/meet/store/slices/meetAppStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import invalidLinkIcon from '@proton/styles/assets/img/meet/invalid-link.svg';
 

@@ -9,7 +9,8 @@ import {
     startMeetingDurationTimer,
     stopMeetingDurationTimer,
 } from '@proton/meet/store/slices/meetingInfo';
-import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import { setIsGuestAdmin } from '@proton/meet/store/slices/participants/participantsSlice';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
@@ -107,9 +108,9 @@ export const MeetContainer = ({
                 instantMeeting,
                 displayName,
                 passphrase,
-                isGuestAdmin,
             })
         );
+        dispatch(setIsGuestAdmin(isGuestAdmin));
     }, [
         dispatch,
         roomName,

@@ -2,7 +2,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectLocalParticipantColorIndex,
     selectLocalParticipantIdentity,
-} from '@proton/meet/store/slices/sortedParticipantsSlice';
+} from '@proton/meet/store/slices/participants/participantsSlice';
 
 import { getParticipantDisplayColorsByIdentity } from '../utils/participantDisplayColors/getParticipantDisplayColorsByIdentity';
 import { getParticipantDisplayColorsByIndex } from '../utils/participantDisplayColors/getParticipantDisplayColorsByIndex';

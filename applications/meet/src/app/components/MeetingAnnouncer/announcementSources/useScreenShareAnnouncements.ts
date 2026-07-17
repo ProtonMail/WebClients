@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectScreenSharingParticipantIdentity } from '@proton/meet/store/slices/screenShareStatusSlice';
 
 import { announcementMessages } from '../messages';
