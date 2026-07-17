@@ -5,7 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, SettingsLink } from '@proton/components';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsGuestAdmin, selectRoomName } from '@proton/meet/store/slices';
+import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
+import {
+    selectIsGuestAdmin,
+    selectIsLocalParticipantAdminOrHost,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectShowDuration } from '@proton/meet/store/slices/uiStateSlice';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { PLANS } from '@proton/payments/core/constants.ts';
@@ -15,7 +19,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
-import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin.ts';
 import { useMeetingDuration } from '../../hooks/useMeetingDuration';
 import { formatDuration } from '../../utils/formatDuration';
 import { MeetingDuration } from '../MeetingDuration/MeetingDuration';
@@ -183,15 +186,15 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
 
 export const MeetingName = ({ classNames }: MeetingNameProps) => {
     const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
-    const { isLocalParticipantHost, isLocalParticipantAdmin } = useIsLocalParticipantAdmin();
+    const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
     const roomName = useMeetSelector(selectRoomName);
     const forceShowDuration = !isPaidUser;
     const showDuration = useMeetSelector(selectShowDuration) || forceShowDuration;
 
     const Container = useMemo(
-        () => (isLocalParticipantHost || isLocalParticipantAdmin || isGuestAdmin ? CTAContainer : React.Fragment),
-        [isLocalParticipantHost, isLocalParticipantAdmin, isGuestAdmin]
+        () => (isLocalParticipantAdminOrHost || isGuestAdmin ? CTAContainer : React.Fragment),
+        [isLocalParticipantAdminOrHost, isGuestAdmin]
     );
 
     return (

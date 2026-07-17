@@ -6,7 +6,7 @@ import {
     raiseHand,
     setActiveReaction,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { mergeParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { mergeParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import { ParticipantEvent } from '@proton/meet/types/types';
 

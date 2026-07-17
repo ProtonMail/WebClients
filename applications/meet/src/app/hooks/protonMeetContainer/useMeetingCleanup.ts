@@ -3,7 +3,7 @@ import type { Dispatch, MutableRefObject, SetStateAction } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { resetParticipantMaps } from '@proton/meet/store/slices';
+import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
 import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';

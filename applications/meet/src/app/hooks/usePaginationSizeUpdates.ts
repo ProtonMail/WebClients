@@ -2,8 +2,13 @@ import { useEffect } from 'react';
 
 import { PAGE_SIZE, SCREEN_SHARE_PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '@proton/meet/constants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectPage,
+    selectPageCount,
+    setPage,
+    setPageSize,
+} from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
-import { selectPage, selectPageCount, setPage, setPageSize } from '@proton/meet/store/slices/sortedParticipantsSlice';
 
 import { useIsLargerThanMd } from './useIsLargerThanMd';
 import { useIsNarrowHeight } from './useIsNarrowHeight';

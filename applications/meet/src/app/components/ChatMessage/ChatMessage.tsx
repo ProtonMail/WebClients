@@ -33,8 +33,10 @@ import {
     setChatThreadReplyDraft,
     setDraftMessage,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
-import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import {
+    selectLocalParticipantIdentity,
+    selectParticipantName,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import clsx from '@proton/utils/clsx';
 
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';

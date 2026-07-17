@@ -10,12 +10,11 @@ import {
     mergeParticipantDecryptedNameMap,
     mergeParticipantsMap,
     removeParticipantFromMap,
-    resetParticipantMaps,
     selectParticipantDecryptedNameMap,
     selectParticipantsMap,
     setIsFetchingParticipants,
     setParticipantAdmin,
-} from '@proton/meet/store/slices/meetingInfo';
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import type { ParticipantEntity } from '@proton/meet/types/types';
 import { decryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { queryParticipants, queryParticipantsCount } from '@proton/shared/lib/api/meet';
@@ -152,10 +151,6 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
         }
     };
 
-    const resetParticipantNameMap = () => {
-        dispatch(resetParticipantMaps());
-    };
-
     const updateAdminParticipant = async (roomId: string, participantUid: string, participantType: Number) => {
         if (participantUid === localParticipant?.identity) {
             await getParticipants(roomId);
@@ -219,10 +214,7 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
     }, [room, meetingLinkName, getParticipants]);
 
     return {
-        participantDecryptedNameMap,
         getParticipants,
-        participantsMap,
-        resetParticipantNameMap,
         updateAdminParticipant,
         getQueryParticipantsCount,
     };

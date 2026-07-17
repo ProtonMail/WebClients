@@ -4,11 +4,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react';
 
 import { chatAndReactionsReducer } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices/meetingInfo';
+import {
+    initialState as initialParticipantsState,
+    participantsReducer,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import {
     initialState as initialSortedParticipantsState,
     sortedParticipantsReducer,
-} from '@proton/meet/store/slices/sortedParticipantsSlice';
+} from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
@@ -47,7 +50,7 @@ const createMockStore = (overrides?: { chatMessages?: MeetChatMessage[]; events?
         reducer: {
             ...sortedParticipantsReducer,
             ...chatAndReactionsReducer,
-            ...meetingInfoReducer,
+            ...participantsReducer,
         },
         preloadedState: {
             sortedParticipants: {
@@ -62,8 +65,8 @@ const createMockStore = (overrides?: { chatMessages?: MeetChatMessage[]; events?
                 activeReactions: {},
                 reactionEventIndex: {},
             },
-            meetingInfo: {
-                ...initialMeetingInfoState,
+            participants: {
+                ...initialParticipantsState,
                 participantsMap: mockParticipantMap,
                 participantDecryptedNameMap: mockParticipantNameMap,
             },

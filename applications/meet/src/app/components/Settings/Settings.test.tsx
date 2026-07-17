@@ -4,55 +4,35 @@ import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
-import { screenShareStatusReducer } from '@proton/meet/store/slices/screenShareStatusSlice';
-import type { MeetSettingsState } from '@proton/meet/store/slices/settings';
-import { settingsReducer } from '@proton/meet/store/slices/settings';
+import {
+    initialState as initialParticipantsState,
+    participantsReducer,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import {
     initialState as initialSortedParticipantsState,
     sortedParticipantsReducer,
-} from '@proton/meet/store/slices/sortedParticipantsSlice';
+} from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
+import { screenShareStatusReducer } from '@proton/meet/store/slices/screenShareStatusSlice';
+import type { MeetSettingsState } from '@proton/meet/store/slices/settings';
+import { settingsReducer } from '@proton/meet/store/slices/settings';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
+import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import type { MeetContextValues } from '../../contexts/MeetContext';
 import { MeetContext } from '../../contexts/MeetContext';
-import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { Settings } from './Settings';
 
-vi.mock('../../hooks/useLocalParticipantResolution', () => ({
-    useLocalParticipantResolution: vi.fn().mockReturnValue({
-        resolution: '1080p',
-        handleResolutionChange: vi.fn(),
-    }),
-}));
-
-vi.mock('../../hooks/useIsLocalParticipantAdmin', () => ({
-    useIsLocalParticipantAdmin: vi.fn().mockReturnValue({
-        isLocalParticipantAdmin: false,
-        hasAnotherAdmin: false,
-        hostIsPresent: false,
-        isLocalParticipantHost: false,
-    }),
-}));
-
-vi.mock('../../contexts/MediaManagementProvider/MediaManagementContext', () => ({
-    useMediaManagementContext: vi.fn().mockReturnValue({
-        backgroundBlur: false,
-        toggleBackgroundBlur: vi.fn(),
-        isBackgroundBlurSupported: false,
-        noiseFilter: false,
-        toggleNoiseFilter: vi.fn(),
-    }),
-}));
-
-const createMockStore = (settingsState: Partial<MeetSettingsState> = {}) => {
+const createMockStore = (
+    settingsState: Partial<MeetSettingsState> = {},
+    participantsState: Partial<typeof initialParticipantsState> = {}
+) => {
     return configureStore({
         // @ts-expect-error - mock data
         reducer: {
             ...settingsReducer,
             ...uiStateReducer,
-            ...meetingInfoReducer,
+            ...participantsReducer,
             ...screenShareStatusReducer,
             ...sortedParticipantsReducer,
         },
@@ -85,8 +65,9 @@ const createMockStore = (settingsState: Partial<MeetSettingsState> = {}) => {
                 permissionPromptStatus: 'CLOSED',
                 noDeviceDetected: 'CLOSED',
             },
-            meetingInfo: {
-                ...initialMeetingInfoState,
+            participants: {
+                ...initialParticipantsState,
+                ...participantsState,
             },
             screenShareStatus: {
                 participantScreenSharingIdentity: null,
@@ -106,12 +87,14 @@ const Wrapper = ({
     children,
     contextValue = {},
     settingsState = {},
+    participantsState = {},
 }: {
     children: React.ReactNode;
     contextValue?: Partial<MeetContextValues>;
     settingsState?: Partial<MeetSettingsState>;
+    participantsState?: Partial<typeof initialParticipantsState>;
 }) => {
-    const store = createMockStore(settingsState);
+    const store = createMockStore(settingsState, participantsState);
 
     return (
         <Provider context={ProtonStoreContext} store={store}>
@@ -159,17 +142,18 @@ describe('Settings', () => {
     });
 
     it('should show security options when user is a host or admin', () => {
-        // Temporarily override the mock for this test
-        const mockUseIsLocalParticipantAdmin = vi.mocked(useIsLocalParticipantAdmin);
-        mockUseIsLocalParticipantAdmin.mockReturnValueOnce({
-            isLocalParticipantAdmin: true,
-            hasAnotherAdmin: false,
-            hostIsPresent: true,
-            isLocalParticipantHost: false,
-        });
-
         render(
-            <Wrapper>
+            <Wrapper
+                participantsState={{
+                    localParticipantIdentity: 'local-participant',
+                    participantsMap: {
+                        'local-participant': {
+                            ParticipantUUID: 'local-participant',
+                            IsHost: ParticipantCapabilityPermission.Allowed,
+                        },
+                    },
+                }}
+            >
                 <Settings />
             </Wrapper>
         );
