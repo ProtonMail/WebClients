@@ -67,7 +67,7 @@ type Props = RouteChildrenProps & {
 
 export const SettingsTabs: FC<Props> = ({ exportTab, ...props }) => {
     const navigate = useNavigate();
-    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
