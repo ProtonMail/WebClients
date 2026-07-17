@@ -10,8 +10,17 @@ import clsx from '@proton/utils/clsx';
 
 import './TextAreaReadonly.scss';
 
-type Props = { children: string; className?: string };
+type Props = {
+    children: string;
+    className?: string;
+    defaultExpanded?: boolean;
+};
 type ExpansionState = 'initial' | 'collapsed' | 'expanded';
+
+/** Treat `'initial'` as expanded when `defaultExpanded` so the very first
+ * render never carries the animate class (avoids a mount-time transition). */
+const isStateExpanded = (state: ExpansionState, defaultExpanded: boolean) =>
+    state === 'expanded' || (state === 'initial' && defaultExpanded);
 
 /** Clamp to multiple of body's line-height to
  * prevent partial line cropping. */
@@ -24,22 +33,25 @@ const getMaxHeight = () => {
     else return Math.floor(maxHeight / lineHeight) * lineHeight;
 };
 
-export const TextAreaReadonly: FC<Props> = ({ children, className }) => {
+export const TextAreaReadonly: FC<Props> = ({ children, className, defaultExpanded = false }) => {
     const ref = useRef<HTMLTextAreaElement>(null);
     const [scrollHeight, setScrollHeight] = useState(0);
     const [expansionState, setExpansionState] = useState<ExpansionState>('initial');
     const [maxHeight, setMaxHeight] = useState(getMaxHeight);
 
-    const isExpanded = expansionState === 'expanded';
+    const isExpanded = isStateExpanded(expansionState, defaultExpanded);
     const needsExpansion = scrollHeight > maxHeight;
     const shouldAnimate = expansionState !== 'initial';
     const height = !needsExpansion || isExpanded ? scrollHeight : maxHeight;
 
-    const toggleExpansion = useCallback<MouseEventHandler>((evt) => {
-        evt.preventDefault();
-        evt.stopPropagation();
-        setExpansionState((prev) => (prev === 'expanded' ? 'collapsed' : 'expanded'));
-    }, []);
+    const toggleExpansion = useCallback<MouseEventHandler>(
+        (evt) => {
+            evt.preventDefault();
+            evt.stopPropagation();
+            setExpansionState((prev) => (isStateExpanded(prev, defaultExpanded) ? 'collapsed' : 'expanded'));
+        },
+        [defaultExpanded]
+    );
 
     const preventSelectionClick = useCallback<MouseEventHandler>((evt) => {
         if (ref.current) {
