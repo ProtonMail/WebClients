@@ -56,6 +56,24 @@ describe('Escape', () => {
             const expected = 'background: url(https://attacker.com);';
             expect(recurringUnescapeCSSEncoding(input)).toBe(expected);
         });
+
+        it('should consume a CRLF pair as a single escape terminator', () => {
+            const input = 'background: \\75\r\nrl(https://attacker.com);';
+            const expected = 'background: url(https://attacker.com);';
+            expect(recurringUnescapeCSSEncoding(input)).toBe(expected);
+        });
+
+        it('should consume a lone CR as an escape terminator', () => {
+            const input = 'background: \\75\rrl(https://attacker.com);';
+            const expected = 'background: url(https://attacker.com);';
+            expect(recurringUnescapeCSSEncoding(input)).toBe(expected);
+        });
+
+        it('should consume a form feed as an escape terminator', () => {
+            const input = 'background: \\75\frl(https://attacker.com);';
+            const expected = 'background: url(https://attacker.com);';
+            expect(recurringUnescapeCSSEncoding(input)).toBe(expected);
+        });
     });
 
     describe('escapeURLinStyle', () => {
@@ -97,6 +115,15 @@ describe('Escape', () => {
             const style = `/* comment */ color: red;`;
 
             expect(escapeURLinStyle(style)).toEqual(` color: red;`);
+        });
+
+        it('should escape a URL obfuscated with a hex escape and a CRLF pair', () => {
+            const style = 'background-image:\\75\r\nrl(https://attacker.example/image.png)';
+
+            const escaped = escapeURLinStyle(style);
+
+            expect(escaped).toContain('proton-url(');
+            expect(escaped).not.toMatch(/[^-]url\(/);
         });
     });
 
