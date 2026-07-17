@@ -190,10 +190,12 @@ export const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) =
                         title={dataRecovery.title}
                         description={dataRecovery.description}
                         subsections={Object.values(dataRecovery.subroutes)}
+                        header={
+                            <PasswordResetOptionRequiredWarningInGroup
+                                emailSubpagePath={getSubroutePath(recoveryPath, passwordReset.subroutes.email)}
+                            />
+                        }
                     >
-                        <PasswordResetOptionRequiredWarningInGroup
-                            emailSubpagePath={getSubroutePath(recoveryPath, passwordReset.subroutes.email)}
-                        />
                         <RecoveryDevice to={getSubroutePath(recoveryPath, dataRecovery.subroutes.deviceRecovery)} />
                         <RecoveryFile to={getSubroutePath(recoveryPath, dataRecovery.subroutes.backupFile)} />
                         <RecoveryContacts to={getSubroutePath(recoveryPath, dataRecovery.subroutes.recoveryContacts)} />

@@ -4,6 +4,10 @@ import { Redirect, Route, Switch, matchPath, useLocation } from 'react-router-do
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import {
+    getIsIncomingDelegatedAccessAvailable,
+    getIsOutgoingDelegatedAccessAvailable,
+} from '@proton/account/delegatedAccess/available';
 import { OutgoingEmergencyContactTopBanner } from '@proton/account/delegatedAccess/emergencyContact/outgoing/OutgoingEmergencyContactTopBanner';
 import { IncomingRecoveryContactTopBanner } from '@proton/account/delegatedAccess/recoveryContact/incoming/IncomingRecoveryContactTopBanner';
 import { OutgoingRecoveryContactTopBanner } from '@proton/account/delegatedAccess/recoveryContact/outgoing/OutgoingRecoveryContactTopBanner';
@@ -64,6 +68,7 @@ import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
+import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -84,7 +89,12 @@ import Main from '../public/Main';
 import AccountSidebar from './AccountSidebar';
 import AccountStartupModals from './AccountStartupModals';
 import SettingsSearch, { AutocompleteSettingsSearch } from './SettingsSearch';
-import type { AccountSettings, Flags, OrganizationSettings } from './router-params';
+import type {
+    AccountRecoveryRouterFlags,
+    AccountSettingsRouterParams,
+    Flags,
+    OrganizationSettingsRouterParams,
+} from './router-params';
 import { getRoutes } from './routes';
 
 const MailSettingsRouter = lazy(
@@ -269,10 +279,19 @@ const MainContainer = () => {
 
     const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();
 
-    const accountSettings: AccountSettings = {
+    const accountRecoveryRouterFlags: AccountRecoveryRouterFlags = {
+        isDelegatedAccessAvailable: user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user),
+        isNonPrivateDelegatedAccessAvailable: !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user),
+        isAccountRecoveryAvailable: getIsAccountRecoveryAvailable(user),
         isDataRecoveryAvailable,
         isSessionRecoveryAvailable,
-        isReferralProgramEnabled,
+        isMnemonicAvailable,
+        isRecoveryFileAvailable,
+        isRecoveryScoreBannerAvailable: true,
+    };
+
+    const accountSettingsRouterParams: AccountSettingsRouterParams = {
+        accountRecoveryRouterFlags,
         recoveryNotification: recoveryNotification?.color,
         showVPNDashboard,
         showVPNDashboardVariant: showVPNDashboardVariant.name,
@@ -291,7 +310,7 @@ const MainContainer = () => {
         hasPendingInvitations,
     };
 
-    const organizationSettings: OrganizationSettings = {
+    const organizationSettingsRouterParams: OrganizationSettingsRouterParams = {
         groups,
         organization,
         isB2BDrive,
@@ -317,8 +336,7 @@ const MainContainer = () => {
         isAuthenticatorAvailable,
         isCategoryViewEnabled: canUseCategoryView,
         isMspEnabled,
-        isMnemonicAvailable,
-        isRecoveryFileAvailable,
+        isReferralProgramEnabled,
     };
 
     const routes = getRoutes({
@@ -326,8 +344,8 @@ const MainContainer = () => {
         user,
         addresses,
         subscription,
-        accountSettings,
-        organizationSettings,
+        accountSettingsRouterParams,
+        organizationSettingsRouterParams,
         flags,
     });
 

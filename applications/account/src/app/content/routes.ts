@@ -12,15 +12,15 @@ import { getWalletAppRoutes } from '../containers/wallet/routes';
 import type { AccountRouterParams, AllRouterParams, OrganizationRouterParams } from './router-params';
 
 export const getRoutes = (params: AllRouterParams) => {
-    const { accountSettings, organizationSettings, ...sharedSettings } = params;
+    const { accountSettingsRouterParams, organizationSettingsRouterParams, ...sharedSettings } = params;
     const accountParams: AccountRouterParams = {
         ...sharedSettings,
-        ...organizationSettings,
-        ...accountSettings,
+        ...organizationSettingsRouterParams,
+        ...accountSettingsRouterParams,
     };
     const organizationParams: OrganizationRouterParams = {
         ...sharedSettings,
-        ...organizationSettings,
+        ...organizationSettingsRouterParams,
     };
     return {
         account: getAccountAppRoutes(accountParams),

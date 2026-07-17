@@ -17,10 +17,19 @@ import type {
     VPNDashboardVariant,
 } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
-export type AccountSettings = {
+export type AccountRecoveryRouterFlags = {
+    isAccountRecoveryAvailable: boolean;
+    isMnemonicAvailable: boolean;
+    isRecoveryFileAvailable: boolean;
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
-    isReferralProgramEnabled: boolean;
+    isDelegatedAccessAvailable: boolean;
+    isNonPrivateDelegatedAccessAvailable: boolean;
+    isRecoveryScoreBannerAvailable: boolean;
+};
+
+export type AccountSettingsRouterParams = {
+    accountRecoveryRouterFlags: AccountRecoveryRouterFlags;
     recoveryNotification?: ThemeColor;
     showVPNDashboard: boolean;
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
@@ -45,33 +54,31 @@ export type AccountSettings = {
 
 // Define the feature flag that are used in the account app
 export type Flags = {
-    canDisplayNonPrivateEmailPhone?: boolean;
-    isUserGroupsFeatureEnabled?: boolean;
-    isUserGroupsNoCustomDomainEnabled?: boolean;
-    isUserGroupsPassBusinessEnabled?: boolean;
-    isScribeEnabled?: boolean;
-    isZoomIntegrationEnabled?: boolean;
-    isProtonMeetIntegrationEnabled?: boolean;
-    isSharedServerFeatureEnabled?: boolean;
-    isAlwaysOnVpnEnabled?: boolean;
-    isCryptoPostQuantumOptInEnabled?: boolean;
-    isSsoForPbsEnabled?: boolean;
-    isRetentionPoliciesEnabled?: boolean;
-    isAuthenticatorAvailable?: boolean;
-    isCategoryViewEnabled?: boolean;
-    isRecoveryContactsEnabled?: boolean;
-    isMspEnabled?: boolean;
-    isMnemonicAvailable?: boolean;
-    isRecoveryFileAvailable?: boolean;
+    canDisplayNonPrivateEmailPhone: boolean;
+    isUserGroupsFeatureEnabled: boolean;
+    isUserGroupsNoCustomDomainEnabled: boolean;
+    isUserGroupsPassBusinessEnabled: boolean;
+    isScribeEnabled: boolean;
+    isZoomIntegrationEnabled: boolean;
+    isProtonMeetIntegrationEnabled: boolean;
+    isSharedServerFeatureEnabled: boolean;
+    isAlwaysOnVpnEnabled: boolean;
+    isCryptoPostQuantumOptInEnabled: boolean;
+    isSsoForPbsEnabled: boolean;
+    isRetentionPoliciesEnabled: boolean;
+    isAuthenticatorAvailable: boolean;
+    isCategoryViewEnabled: boolean;
+    isMspEnabled: boolean;
+    isReferralProgramEnabled: boolean;
 };
 
-export type OrganizationSettings = {
-    organization?: OrganizationExtended;
+export type OrganizationSettingsRouterParams = {
+    organization: OrganizationExtended | undefined;
     isB2BDrive: boolean;
     isB2BTrial: boolean;
     isGroupOwner: boolean | null;
-    memberships?: GroupMembershipReturn[];
-    groups?: Group[];
+    memberships: GroupMembershipReturn[] | undefined;
+    groups: Group[] | undefined;
     permissions: Record<Permission, boolean>;
 };
 
@@ -83,10 +90,10 @@ export type GeneralRouterParams = {
     flags: Flags;
 };
 
-export type OrganizationRouterParams = GeneralRouterParams & OrganizationSettings;
-export type AccountRouterParams = GeneralRouterParams & AccountSettings & OrganizationSettings;
+export type OrganizationRouterParams = GeneralRouterParams & OrganizationSettingsRouterParams;
+export type AccountRouterParams = GeneralRouterParams & AccountSettingsRouterParams & OrganizationSettingsRouterParams;
 
 export type AllRouterParams = GeneralRouterParams & {
-    accountSettings: AccountSettings;
-    organizationSettings: OrganizationSettings;
+    accountSettingsRouterParams: AccountSettingsRouterParams;
+    organizationSettingsRouterParams: OrganizationSettingsRouterParams;
 };
