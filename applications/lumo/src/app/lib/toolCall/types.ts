@@ -10,6 +10,25 @@ export type ToolCallData =
     | CryptocurrencyToolCallData;
 export type ToolCallName = ToolCallData['name'];
 
+/**
+ * Announce chunk: backend has named the tool but arguments are still streaming.
+ * Carries enough info to show a label immediately.
+ */
+export type ToolCallAnnouncement = { name: string; arguments?: never };
+
+export function isToolCallAnnouncement(data: unknown): data is ToolCallAnnouncement {
+    return typeof data === 'object' && data !== null && 'name' in data && typeof data.name === 'string' && !('arguments' in data);
+}
+
+export function tryParseToolCallAnnouncement(content: string): ToolCallAnnouncement | null {
+    if (!content) return null;
+    try {
+        const parsed = JSON.parse(content);
+        return isToolCallAnnouncement(parsed) ? parsed : null;
+    } catch {}
+    return null;
+}
+
 export function isToolCallData(data: unknown): data is ToolCallData {
     return (
         isWebSearchToolCallData(data) ||
