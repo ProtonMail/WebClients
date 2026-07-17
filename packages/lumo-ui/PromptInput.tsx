@@ -1,0 +1,91 @@
+import type { KeyboardEvent } from 'react';
+import { useEffect, useRef } from 'react';
+
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
+import lumoArrow from '@proton/styles/assets/img/illustrations/lumo-arrow.svg';
+import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
+import clsx from '@proton/utils/clsx';
+
+interface Props {
+    value: string;
+    onChange: (value: string) => void;
+    /** Called on Enter (without Shift) or the send button — the host decides what to do with `value`. */
+    onSubmit: () => void;
+    /** Called by the stop button while busy; when omitted no stop button is shown. */
+    onStop?: () => void;
+    /** While true the composer shows a stop button instead of send and blocks Enter-to-submit. */
+    isBusy?: boolean;
+    disabled?: boolean;
+    placeholder?: string;
+    className?: string;
+}
+
+/**
+ * The chat composer: an auto-growing text field with a circular send button tucked bottom-right, and a
+ * stop button in its place while busy — matching lumo.proton.me. Purely presentational; the host owns
+ * the value and the submit/stop intent. Uses a native textarea so the design library stays below
+ * `@proton/components` (no dependency on its form controls).
+ */
+const PromptInput = ({ value, onChange, onSubmit, onStop, isBusy, disabled, placeholder, className }: Props) => {
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+    // Auto-grow: reset to a single row, then expand to fit the content up to the CSS max-height.
+    useEffect(() => {
+        const textarea = textareaRef.current;
+        if (textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = `${textarea.scrollHeight}px`;
+        }
+    }, [value]);
+
+    const submit = () => {
+        if (!value.trim() || isBusy || disabled) {
+            return;
+        }
+        onSubmit();
+    };
+
+    const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+        if (event.key === 'Enter' && !event.shiftKey) {
+            event.preventDefault();
+            submit();
+        }
+    };
+
+    return (
+        <div className={clsx('lumo-prompt-input flex flex-row flex-nowrap items-end gap-2', className)}>
+            <textarea
+                ref={textareaRef}
+                className="lumo-prompt-input__field flex-1 resize-none"
+                rows={1}
+                value={value}
+                disabled={disabled}
+                onChange={(event) => onChange(event.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder={placeholder ?? c('Placeholder').t`Ask for help…`}
+            />
+            {isBusy && onStop ? (
+                <Button icon pill color="norm" className="lumo-prompt-input__send shrink-0" onClick={onStop}>
+                    <img src={lumoStop} alt={c('Action').t`Stop`} />
+                </Button>
+            ) : (
+                value.trim() && (
+                    <Button
+                        icon
+                        pill
+                        color="norm"
+                        className="lumo-prompt-input__send shrink-0"
+                        disabled={disabled}
+                        onClick={submit}
+                    >
+                        <img src={lumoArrow} alt={c('Action').t`Send`} />
+                    </Button>
+                )
+            )}
+        </div>
+    );
+};
+
+export default PromptInput;
