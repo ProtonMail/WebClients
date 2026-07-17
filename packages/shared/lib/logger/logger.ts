@@ -6,6 +6,7 @@ import { DAY } from '@proton/shared/lib/constants';
 
 import {
     CLEANUP_INTERVAL_MS,
+    DEFAULT_HIDE_LOGS_NON_DEV_ENV,
     DEFAULT_LOGGER_NAME,
     DEFAULT_MAX_ENTRIES,
     DEFAULT_RETENTION_DAYS,
@@ -24,6 +25,11 @@ export interface LoggerOptions {
     loggerName?: string;
     loggerID: string;
     forceMemoryStorage?: boolean; // For testing - bypasses IndexedDB
+    /**
+     * Set to `true` to suppress console output outside development environments.
+     * Logs are still persisted. Default value is `false`.
+     */
+    hideLogsNonDevEnvironment?: boolean;
 }
 export interface GlobalErrorHandler {
     enable(): void;
@@ -47,6 +53,8 @@ export class Logger {
     private storageInitialized: Promise<void> | null = null;
 
     private maxEntries: number = DEFAULT_MAX_ENTRIES;
+
+    private hideLogsNonDevEnvironment: boolean = DEFAULT_HIDE_LOGS_NON_DEV_ENV;
 
     private retentionDays: number = DEFAULT_RETENTION_DAYS;
 
@@ -93,11 +101,12 @@ export class Logger {
 
     constructor(
         name: string = DEFAULT_LOGGER_NAME,
-        options?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays'>>
+        options?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays' | 'hideLogsNonDevEnvironment'>>
     ) {
         this.loggerName = name;
         this.maxEntries = options?.maxEntries ?? DEFAULT_MAX_ENTRIES;
         this.retentionDays = options?.retentionDays ?? DEFAULT_RETENTION_DAYS;
+        this.hideLogsNonDevEnvironment = options?.hideLogsNonDevEnvironment ?? DEFAULT_HIDE_LOGS_NON_DEV_ENV;
         // Create and enable global error handler immediately to capture errors before initialization
         this.globalErrorHandler = this.createGlobalErrorHandler();
         this.globalErrorHandler.enable();
@@ -213,6 +222,7 @@ export class Logger {
             throw new Error('Cannot setup persistence plugin: loglevel instance not created');
         }
 
+        const outputLogToConsole = process.env.NODE_ENV === 'development' ? true : !this.hideLogsNonDevEnvironment;
         const originalFactory = this.loglevelInstance.methodFactory;
         const loggerInstance = this;
 
@@ -223,10 +233,11 @@ export class Logger {
             loggerName: string | symbol
         ) {
             const rawMethod = originalFactory(methodName, logLevel as any, loggerName);
-
             return function (message: string, ...args: any[]) {
                 // Console output with logger name prefix
-                rawMethod(`[${loggerInstance.loggerName}]`, message, ...args);
+                if (outputLogToConsole) {
+                    rawMethod(`[${loggerInstance.loggerName}]`, message, ...args);
+                }
                 void loggerInstance.persistLog(String(methodName), message, args);
             };
         };
@@ -783,7 +794,7 @@ class LoggerManager {
      */
     public getLogger(
         name: string = DEFAULT_LOGGER_NAME,
-        constructorOptions?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays'>>
+        constructorOptions?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays' | 'hideLogsNonDevEnvironment'>>
     ): Logger {
         if (!this.loggers.has(name)) {
             this.loggers.set(name, new Logger(name, constructorOptions));
