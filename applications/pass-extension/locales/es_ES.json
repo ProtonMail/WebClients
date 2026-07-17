@@ -794,6 +794,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
+      ],
+      "Regex invalid": [
+        "Regex no válida"
+      ],
+      "Regex unsafe": [
+        "Regex insegura"
       ]
     },
     "Activity": {
@@ -1455,6 +1461,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se ha eliminado el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Ya hay una comprobación de desbloqueo de escritorio en curso."
       ]
     },
     "Error message": {
@@ -2969,6 +2978,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Clasificado por campo (primero el título, luego el nombre de usuario o correo electrónico, el sitio web y las notas) y por la precisión de la coincidencia (exacta, empieza por, contiene)."
       ]
     },
     "Keyboard key": {
@@ -4151,6 +4163,39 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Basic": [
+        "Básico"
+      ],
+      "Check": [
+        "Verificar"
+      ],
+      "Exact host matching": [
+        "Coincidencia exacta de host"
+      ],
+      "Exact URL matching": [
+        "Coincidencia exacta de URL"
+      ],
+      "Never fill on this exact URL": [
+        "No rellenar nunca en esta URL exacta"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
+      ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
+      "Relevant": [
+        "Relevancia"
+      ],
+      "Starts with": [
+        "Comienza con"
+      ],
+      "Token name": [
+        "Nombre del token"
+      ],
+      "URL wildcard pattern": [
+        "Patrón de comodín de URL"
       ]
     },
     "Link": {
@@ -4180,6 +4225,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Has seleccionado ${ semiboldText } en esta caja fuerte."
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidencia 'Comienza con'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia exacta de (sub) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia exacta de URL"
+      ],
+      "Never fill with this exact URL": [
+        "No rellenar nunca con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón de comodín"
       ]
     },
     "new_plans: feature": {
@@ -5186,6 +5249,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajusta el comportamiento del relleno automático para cambiar dónde se sugieren los inicios de sesión."
+      ],
+      "Learn more": [
+        "Más información"
+      ],
+      "Test a URL against this rule": [
+        "Probar una URL con esta regla"
+      ],
+      "URL matching": [
+        "Coincidencia de URL"
       ]
     },
     "Title_cloned_item": {
@@ -5535,6 +5610,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tu suscripción no te permite crear varias cajas fuertes. Todos los elementos serán importados atsu primera caja fuerte. Para importar a varias cajas fuertes mejora tu suscripción."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ofrece un control potente, pero un solo error puede hacer que el relleno automático coincida y rellene datos en sitios web fraudulentos o de suplantación de identidad."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Este elemento no se puede sugerir para el relleno automático debido a la regla \"${ neverModeDescriptionStrong }\". Agrega otra URL si quieres que este elemento se rellene automáticamente."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ingresa una URL para verificar si tu regla actual coincide con la URL"
+      ],
+      "The rule is matching this URL": [
+        "La regla coincide con esta URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regla NO coincide con esta URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Esta URL se bloqueará del relleno automático"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Esta URL NO se bloqueará del relleno automático"
       ]
     }
   }
