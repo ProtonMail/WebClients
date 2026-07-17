@@ -182,6 +182,16 @@ describe('protonizer - body style sanitization', () => {
         const result = protonizer(html, true);
         expect(getBodyStyle(result)).toBeNull();
     });
+
+    it('should neutralize a position:fixed obfuscated with a CSS hex escape in a style attribute', () => {
+        const html =
+            '<html><body><p style="position:\\66 ixed;top:0;left:0;width:100%;height:100%;z-index:99999">Hello</p></body></html>';
+        const result = protonizer(html, true);
+        const paragraphStyle = result.querySelector('p')?.getAttribute('style') || '';
+        expect(paragraphStyle).not.toMatch(/position\s*:\s*fixed/i);
+        expect(paragraphStyle).not.toContain('\\66');
+        expect(paragraphStyle).toContain('position: inherit');
+    });
 });
 
 describe('sanitizeComposerReply', () => {
