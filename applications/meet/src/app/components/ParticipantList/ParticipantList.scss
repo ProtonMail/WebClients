@@ -1,5 +1,40 @@
 .participants-list-container {
 	padding-block-start: 3.5rem;
+	overflow: hidden;
+	border-end-start-radius: 2.5rem;
+	border-end-end-radius: 2.5rem;
+
+	.tabs {
+		position: relative;
+	}
+
+	.tabs-nav {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline: 0;
+		z-index: 1;
+		padding-block-end: 0;
+		background: linear-gradient(180deg, #28243e 0%, rgb(40 36 62 / 0) 100%);
+		backdrop-filter: blur(5px);
+	}
+}
+
+.participants-list {
+	padding-block-end: 5rem;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		inline-size: 6px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: rgb(255 255 255 / 0.2);
+		border-radius: 3px;
+	}
+}
+
+.tabs .participants-list {
+	padding-block: 3rem 5rem;
 }
 
 .participant-list-button-base {
