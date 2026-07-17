@@ -171,6 +171,13 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
     };
 
     /**
+     * Resolve once every sync currently queued by `handleEvent` has drained. Reads the tail of the
+     * chain at call time, so it waits for the events forwarded so far (any enqueued later are not
+     * awaited). Lets a caller know the ES database actually reflects those events before reading it.
+     */
+    const waitForSyncing = () => syncingEventsRef.current;
+
+    /**
      * Return cache
      */
     const getCache = () => {
@@ -1489,6 +1496,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             isSearchResult,
             esDelete,
             handleEvent,
+            waitForSyncing,
             initializeES,
             getCache,
             resetCache,
