@@ -1697,6 +1697,9 @@
       ],
       "Take a tour": [
         "ツアーを開始"
+      ],
+      "Get 50% offer": [
+        "50％割引オファーを獲得"
       ]
     },
     "Calendar access select label": {
@@ -6724,6 +6727,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "今キャンセルすると、${ expiryDate } に${ BRAND_NAME } ${ planTitle } へのアクセス権を失います（以下の機能を含む）："
       ]
     },
     "info": {
