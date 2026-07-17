@@ -18,6 +18,7 @@ import {
 
 import { ClientInvoker } from './ClientInvoker'
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
+import { getCookie } from '@proton/shared/lib/helpers/cookies'
 
 export class EditorToClientBridge {
   private logger = new Logger('EditorIframe', DOCS_EDITOR_DEBUG_KEY)
@@ -35,7 +36,16 @@ export class EditorToClientBridge {
         const tag = event.data.versionCookieAtLoad
         if (tag && tag !== versionCookieAtLoad) {
           updateVersionCookie(tag, undefined)
-          this.clientFrame.postMessage(EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD, BridgeOriginProvider.GetClientOrigin())
+          this.clientFrame.postMessage(
+            {
+              type: EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD,
+              shellTag: tag,
+              editorAtLoad: versionCookieAtLoad,
+              editorAfter: getCookie('Tag'),
+              mismatch: !!(tag && tag !== versionCookieAtLoad),
+            },
+            BridgeOriginProvider.GetClientOrigin(),
+          )
         } else {
           this.clientFrame.postMessage(EDITOR_CONFIRMS_VERSIONS_MATCH, BridgeOriginProvider.GetClientOrigin())
         }
