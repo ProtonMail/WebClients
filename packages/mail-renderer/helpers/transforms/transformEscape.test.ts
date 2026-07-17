@@ -116,6 +116,12 @@ describe('transformEscape', () => {
         <div style="background: \\75r&#x6c;('https://TRACKING14/')">test14</div>
     `;
 
+    // The HTML parser decodes &#13;&#10; into a CRLF pair; browsers collapse it to a
+    // single newline during CSS input preprocessing, so \75 + CRLF reconstructs url(.
+    const BACKGROUND_URL_CRLF_ESCAPING = `
+        <div style="background-image:\\75&#13;&#10;rl(https://TRACKING/)">test</div>
+    `;
+
     const BACKGROUND_URL_SAFE = `
         <span>url('dewd')</span>
         <span>style="dewdw" url('dewd')</span>
@@ -374,6 +380,12 @@ describe('transformEscape', () => {
         it('should escape octal and hex encoded urls with escape', () => {
             const list = getList(BACKGROUND_URL_OCTAL_HEX_ENCODING);
             list.forEach((key) => expect(key).toMatch(/proton-/));
+        });
+
+        it('should escape a url obfuscated with a hex escape and a CRLF pair', () => {
+            const { document } = setup(BACKGROUND_URL_CRLF_ESCAPING);
+            expect(document.innerHTML).toMatch(/proton-url\(https/);
+            expect(document.innerHTML).not.toMatch(/[^-]url\(https/);
         });
 
         it('should not break the HTML', () => {
