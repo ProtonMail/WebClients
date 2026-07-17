@@ -4,10 +4,8 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
-        "copy": "sh -c 'cd $(git rev-parse --show-toplevel) && src_path=\"$1\"; dest_path=$(echo \"$1\" | sed \"s|applications/drive/src/app|packages/drive-store|\"); mkdir -p $(dirname \"$dest_path\"); cp \"$src_path\" \"$dest_path\"' --",
         "lint": "eslint --quiet",
         "prettier": "prettier",
-        "sync": "node scripts/sync.mjs",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci",
         "test:watch": "jest --watch"
