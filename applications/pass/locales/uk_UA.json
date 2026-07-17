@@ -678,6 +678,114 @@
       ],
       "Your password manager is not here? Request it.": [
         "Немає вашого менеджера паролів? Попросіть його."
+      ],
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } для Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } для iOS"
+      ],
+      "Accept invitation": [
+        "Прийняти запрошення"
+      ],
+      "Add forwarding mailbox": [
+        "Додати поштову скриньку для пересилання"
+      ],
+      "Apply lifetime coupon code": [
+        "Застосувати довічний код купона"
+      ],
+      "Cancel email change": [
+        "Скасувати зміну електронної пошти"
+      ],
+      "Copy card number": [
+        "Копіювати номер картки"
+      ],
+      "Copy email": [
+        "Копіювати електронну пошту"
+      ],
+      "Copy expiration date": [
+        "Копіювати термін дії"
+      ],
+      "Copy forwarding address": [
+        "Копіювати адресу пересилання"
+      ],
+      "Copy instructions": [
+        "Копіювати інструкції"
+      ],
+      "Copy name on card": [
+        "Копіювати ім'я на картці"
+      ],
+      "Copy note content": [
+        "Копіювати вміст нотатки"
+      ],
+      "Copy security code": [
+        "Копіювати код безпеки"
+      ],
+      "Copy token": [
+        "Копіювати токен"
+      ],
+      "Copy username": [
+        "Копіювати ім'я користувача"
+      ],
+      "Create token": [
+        "Створити токен"
+      ],
+      "Do not show again": [
+        "Не показувати знову"
+      ],
+      "Do not show again when I press": [
+        "Не показувати знову, коли я натискаю"
+      ],
+      "Don't show this again": [
+        "Більше не показувати"
+      ],
+      "Get mobile and desktop apps": [
+        "Отримати мобільну та настільну програми"
+      ],
+      "Invite more...": [
+        "Запросити ще..."
+      ],
+      "Join our Reddit": [
+        "Приєднуйтеся до нашого Reddit"
+      ],
+      "Make manager": [
+        "Зробити керівником"
+      ],
+      "Manage vault access": [
+        "Керувати доступом до сховища"
+      ],
+      "New token": [
+        "Новий токен"
+      ],
+      "Organize vaults": [
+        "Впорядкувати сховища"
+      ],
+      "Pay once": [
+        "Одноразова оплата"
+      ],
+      "Read More": [
+        "Читати більше"
+      ],
+      "Regex invalid": [
+        "Регулярний вираз недійсний"
+      ],
+      "Regex unsafe": [
+        "Регулярний вираз небезпечний"
+      ],
+      "Reset history": [
+        "Скинути історію"
+      ],
+      "Show Less": [
+        "Показати менше"
+      ],
+      "Start from scratch": [
+        "Почати з нуля"
+      ],
+      "View agent activity": [
+        "Переглянути діяльність агента"
+      ],
+      "Write us on X/Twitter": [
+        "Напишіть нам у X/Twitter"
       ]
     },
     "Browser": {
@@ -791,6 +899,12 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Ваша особиста інформація була виточена в результаті витоку даних стороннього сервісу."
+      ],
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "Функція ${ DARK_WEB_MONITORING_NAME } доступна за платним тарифним планом. Покращте його, щоб отримати негайний доступ."
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Ці сховища не будуть доступними, а їхній вміст не буде доступним для пошуку чи автозаповнення."
       ]
     },
     "Email": {
@@ -1173,6 +1287,117 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код був видалений іншим клієнтом ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Перевірка розблокування на комп'ютері вже триває."
+      ],
+      "An error occured during the import process": [
+        "Під час процесу імпортування сталася помилка"
+      ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Помилка автентифікації. Підтвердьте свій резервний пароль, щоб продовжити експорт"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Помилка автентифікації. Підтвердьте свій додатковий пароль, щоб продовжити експорт"
+      ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Помилка автентифікації. Підтвердьте свій другий пароль, щоб продовжити експорт"
+      ],
+      "Biometric authentication failed.": [
+        "Помилка біометричної автентифікації."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Біометричні облікові дані блокування не збігаються."
+      ],
+      "Biometric lock credentials not found.": [
+        "Біометричні облікові дані блокування не знайдені."
+      ],
+      "Biometric lock is not configured.": [
+        "Біометричне блокування не налаштовано."
+      ],
+      "Biometric lock setup failed.": [
+        "Помилка налаштування біометричного блокування."
+      ],
+      "Could not leave item.": [
+        "Не вдалося покинути елемент."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Не вдалося завантажити інструкції з налаштування агента. Будь ласка, скопіюйте токен нижче, його більше не буде показано."
+      ],
+      "Deleting item history failed": [
+        "Не вдалося видалити історію елемента"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Помилка зашифрованого зв'язку з настільною програмою ${ PASS_APP_NAME }."
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Термін дії має становити від 1 години до 1 року"
+      ],
+      "Failed loading group members": [
+        "Не вдалося завантажити учасників групи"
+      ],
+      "Failed to cancel mailbox change": [
+        "Не вдалося скасувати зміну поштової скриньки"
+      ],
+      "Failed to change mailbox": [
+        "Не вдалося змінити поштову скриньку"
+      ],
+      "Failed to create access token": [
+        "Не вдалося створити токен доступу"
+      ],
+      "Failed to delete access token": [
+        "Не вдалося видалити токен доступу"
+      ],
+      "Failed to load access tokens": [
+        "Не вдалося завантажити токени доступу"
+      ],
+      "Failed to load token actions": [
+        "Не вдалося завантажити дії токена"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Не вдалося запустити агент SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Не вдалося зупинити агент SSH: ${ errorMessage }"
+      ],
+      "Failed to update vault access": [
+        "Не вдалося оновити доступ до сховища"
+      ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Не вдалося імпортувати сховище \"${ vaultData.name }\": ${ errorMessage }"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Назва має містити не більше 191 символу"
+      ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Сервери недоступні. Спробуйте розблокувати ${ PASS_SHORT_APP_NAME } за кілька хвилин."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Настільна програма ${ PASS_APP_NAME } не відповіла вчасно."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Десктопна програма ${ PASS_APP_NAME } заблокована, її необхідно розблокувати."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Десктопна програма ${ PASS_APP_NAME } не встановлена."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Десктопна програма ${ PASS_APP_NAME } не відповідає. Вона запущена?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "У настільній програмі ${ PASS_APP_NAME } виконано вхід з іншого облікового запису."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "У настільну програму ${ PASS_APP_NAME } потрібно увійти."
+      ],
+      "Unsupported Bitwarden file format": [
+        "Непідтримуваний формат файлу Bitwarden"
+      ],
+      "Wrong backup password": [
+        "Неправильний резервний пароль"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Зараз ви не в мережі. Відновіть з'єднання, щоб розблокувати ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "Error message": {
@@ -2242,6 +2467,363 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша організація вимагає, щоб ви захистили свій доступ до ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } хоче поділитися елементом із групою, яку ви адмініструєте."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } хоче поділитись елементом із групою ${ name }."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } використовуватиме ключі SSH, збережені у ваших сховищах."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Режим не в мережі ${ PASS_SHORT_APP_NAME } увімкнено."
+      ],
+      "${ selectedShareIds.size } selected": [
+        "Вибрано: ${ selectedShareIds.size }"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Для доступу до ${ PASS_APP_NAME } завжди буде потрібен ваш резервний пароль."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Для доступу до ${ PASS_APP_NAME } завжди буде потрібен ваш додатковий пароль."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Для доступу до ${ PASS_APP_NAME } завжди буде потрібен ваш другий пароль."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Токен доступу \"${ action.token.Name }\" уже протермінований. Якщо його видалити, він більше не показуватиметься."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Токен доступу \"${ action.token.Name }\" негайно припинить роботу. Цю дію не можна скасувати."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Токени доступу, що використовуються разом із ${ passCliLink }, дозволяють автоматизувати CI/CD або надати вашому ШІ-агенту обмежений доступ до того, що йому потрібно для виконання роботи."
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Після підтвердження вам потрібно буде прийняти запит на дозвіл для ${ PASS_APP_NAME }."
+      ],
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Псевдонім успішно вимкнено. Ви більше не отримуватимете електронні листи, надіслані на ${ item.aliasEmail }"
+      ],
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Псевдонім успішно увімкнено. Тепер ви можете отримувати електронні листи, надіслані на ${ item.aliasEmail }"
+      ],
+      "An item previously shared with you was removed.": [
+        "Елемент, яким з вами раніше поділилися, було вилучено."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Від 60 (1 година) до 525600 (1 рік)"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Перенесіть свої наявні паролі в ${ PASS_APP_NAME }."
+      ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Додавши свій домен, ви зможете створювати псевдоніми на зразок hi@my-domain.com."
+      ],
+      "Can create, edit, and delete items in this vault.": [
+        "Може створювати, змінювати та видалити елементи в цьому сховищі."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Може створювати, змінювати та видалити цей елемент."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Може надавати та відкликати доступ до цього елемента, а також видалити його."
+      ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Скопійовано в буфер обміну (діє протягом ${ timeoutDurationHumanReadable })"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Скопіюйте наведену нижче розмітку markdown і надішліть її своєму ШІ-агенту. Це єдиний раз, коли буде показано токен."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Скопіюйте цей токен зараз. З міркувань безпеки його більше не буде показано."
+      ],
+      "Coupon successfully applied!": [
+        "Купон успішно застосовано!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Створіть токен, щоб інтегрувати ${ PASS_APP_NAME } зі своїми скриптами та інструментами."
+      ],
+      "Created ${ createdDate }": [
+        "Створено ${ createdDate }"
+      ],
+      "Created item": [
+        "Створено елемент"
+      ],
+      "Deleted item": [
+        "Видалений елемент"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Завантажте pass-cli з ${ passCliLink }."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Увімкніть режим не в мережі, щоб отримати доступ до даних ${ PASS_SHORT_APP_NAME }, якщо ви втратите інтернет-з'єднання або сервери ${ BRAND_NAME } будуть недоступні."
+      ],
+      "Enabling desktop auto-lock": [
+        "Увімкнення десктопного автоблокування"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Кожна дія, яку виконав цей токен агента, спочатку найновіші."
+      ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Щоразу, коли на ваш псевдонім надходить електронна пошта від когось, автоматично створюється новий контакт."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Термін дії закінчився ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Термін дії закінчується ${ formattedDate }"
+      ],
+      "Exporting your data...": [
+        "Експорт ваших даних..."
+      ],
+      "Failed updating your vault organization": [
+        "Не вдалося оновити організацію вашого сховища"
+      ],
+      "Follow those steps to import your data with a generic CSV:": [
+        "Виконайте ці кроки, щоб імпортувати ваші дані за допомогою загального файлу CSV:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "З міркувань безпеки ця дія потребує підтвердження особистих даних."
+      ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Адресу пересилання скопійовано в буфер обміну. Надішліть листа на цю адресу, і ${ Email } отримає його."
+      ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Отримайте максимум від ${ PASS_APP_NAME }, створивши сховище для кожної команди чи проєкту."
+      ],
+      "Identity confirmed": [
+        "Особисті дані підтверджено"
+      ],
+      "invites the group ${ name } to access items in": [
+        "запрошує групу ${ name } отримати доступ до елементів у"
+      ],
+      "Item history permanently deleted": [
+        "Історію елемента назавжди видалено"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Дізнайтеся, що робити, ${ dataLeakedLink }"
+      ],
+      "Leaving item...": [
+        "Залишення елемента..."
+      ],
+      "Log out of any existing session:": [
+        "Вийти з будь-якого наявного сеансу:"
+      ],
+      "Manager": [
+        "Керівник"
+      ],
+      "Moved item to trash": [
+        "Елемент переміщено в смітник"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Переміщення елемента до іншого сховища призведе до стирання його безпечних посилань."
+      ],
+      "No activity recorded yet.": [
+        "Жодної діяльності ще не записано."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Не знайдено ключів SSH в ${ PASS_SHORT_APP_NAME }. Створіть елементи ключів SSH для використання з агентом."
+      ],
+      "No vaults available.": [
+        "Немає доступних сховищ."
+      ],
+      "None selected": [
+        "Нічого не вибрано"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Показуються лише ті токени, термін дії яких закінчився за останні 30 днів. Старіші токени автоматично видаляються."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Відкрийте налаштування Safari для розширення та переконайтеся, що для доменів ${ BRAND_NAME } увімкнено дозволи для сайтів"
+      ],
+      "Please confirm your backup password": [
+        "Будь ласка, підтвердьте свій резервний пароль"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Будь ласка, підтвердьте свій резервний пароль для автоматичного блокування за допомогою біометрії."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Будь ласка, підтвердьте свій резервний пароль для автоматичного блокування за допомогою вашого пароля."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Будь ласка, підтвердьте свій резервний пароль для того, щоб увімкнути режим не в мережі"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Будь ласка, підтвердьте свій резервний пароль, щоб експортувати свої дані ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Будь ласка, підтвердьте свій резервний пароль, щоб зняти поточне блокування."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Будь ласка, підтвердьте свій резервний пароль, щоб оновити час автоблокування."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Будь ласка, підтвердьте свій додатковий пароль для того, щоб увімкнути режим не в мережі"
+      ],
+      "Please confirm your second password": [
+        "Будь ласка, підтвердьте свій другий пароль"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Будь ласка, підтвердьте свій другий пароль, щоб увімкнути автоблокування за допомогою біометрії."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Будь ласка, підтвердьте свій drugiй пароль, щоб увімкнути автоблокування за допомогою пароля."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Будь ласка, підтвердьте свій другий пароль, щоб увімкнути режим не в мережі"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Будь ласка, підтвердьте свій другий пароль, щоб експортувати свої дані ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Будь ласка, підтвердьте свій другий пароль, щоб скасувати реєстрацію поточного блокування."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Будь ласка, підтвердьте свій другий пароль, щоб оновити час автоблокування."
+      ],
+      "Please contact your administrator": [
+        "Будь ласка, зверніться до свого адміністратора"
+      ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Тримайте ${ PASS_APP_NAME } відкритим, щоб буфер обміну міг очиститися автоматично."
+      ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Будь ласка, тримайте це вікно відкритим, поки ваші дані імпортуються. Цей процес може тривати кілька хвилин."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Тримайте браузер відкритим, щоб буфер обміну міг очиститися автоматично."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Переконайтеся, що раніше активне вікно є саме тим, де ви хочете використати автонабір, а курсор сфокусовано на полі входу."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Захищено за допомогою ${ PROTON_SENTINEL_LINK }, нашої передової програми захисту облікових записів"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Упорядковано за полями (спочатку назва, потім ім'я користувача або електронна пошта, вебсайт, нотатки) та точністю збігу (точний, починається з, містить)."
+      ],
+      "Read item": [
+        "Читати елемент"
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Скидання історії назавжди видалить усі минулі версії елемента, і цю дію не можна буде скасувати."
+      ],
+      "Restored item from trash": [
+        "Елемент відновлено зі смітника"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Виберіть сховища, які \"${ token.Name }\" може читати."
+      ],
+      "Servers are unreachable": [
+        "Сервери недоступні"
+      ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Діліться псевдонімами з іншими, додавши їхні вхідні як поштову скриньку для пересилання."
+      ],
+      "Successfully left the item": [
+        "Елемент успішно покинуто"
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Торкніться значка ${ gearIcon }, щоб налаштувати псевдонім за своїм бажанням."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Протестуйте токен, увійшовши та вивівши список сховищ:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Агент повинен буде вказувати причину для кожної виконуваної ним дії, і кожна дія фіксуватиметься в журналі аудиту, який ви зможете переглянути. Після створення токена ви отримаєте інструкції для копіювання та вставлення у свого ШІ-агента."
+      ],
+      "The group is invited to a vault.": [
+        "Групу запрошено до сховища."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Потім ви можете перейти на ${ url }, щоб скопіювати інструкції для надсилання вашому ШІ-агенту."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Ця функція наразі є експериментальною в Linux. Переконайтеся, що ваша система оновлена."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Ця функція потребує, щоб десктопна програма ${ PASS_APP_NAME } була встановлена та запущена під час налаштування."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Цей елемент зараз не поділений ні з ким. Запросіть людей, щоб поділитися ним з іншими."
+      ],
+      "This mailbox will use your previous email.": [
+        "Ця поштова скринька використовуватиме вашу попередню електронну пошту."
+      ],
+      "This option is currently not available on your browser.": [
+        "Ця опція наразі недоступна у вашому браузері."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Цей токен отримує доступ лише для читання до вибраних вами сховищ. Він може читати елементи, але не може змінювати їх, ділитися сховищами або запрошувати інших. Ви зможете змінити це пізніше."
+      ],
+      "This will reload the application.": [
+        "Це призведе до перезавантаження програми."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Для налаштування розблокування за допомогою біометрії ${ PASS_APP_NAME } потребує нового дозволу браузера. Після того, як ви його приймете, розширення перезавантажиться. Будь ласка, знову відкрийте цю сторінку після цього."
+      ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Нам довіряють понад 50 000 бізнес-користувачів і 100 мільйонів облікових записів по всьому світу."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Випробовуйте нові функції, оновлення та продукти ${ BRAND_NAME } перед їхнім публічним випуском."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Розблокуйте ${ PASS_SHORT_APP_NAME } за допомогою свого другого пароля"
+      ],
+      "Updated item": [
+        "Оновлено елемент"
+      ],
+      "Updating vault organization...": [
+        "Оновлення організації сховища..."
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Перейдіть на тарифний план ${ PASS_APP_NAME } Plus, щоб створювати токени доступу та використовувати ${ PASS_APP_NAME } програмно."
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Сховище \"${ share.content.name }\" було вилучено."
+      ],
+      "Vault access granted": [
+        "Надано доступ до сховища"
+      ],
+      "Vault organization successfully updated": [
+        "Організацію сховища успішно оновлено"
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Якщо увімкнено, ви все одно зможете отримати доступ до даних ${ PASS_SHORT_APP_NAME }, якщо втратите інтернет-з'єднання або сервери ${ BRAND_NAME } будуть недоступні."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Тепер ви можете використовувати свій резервний пароль для доступу до ${ PASS_SHORT_APP_NAME } не в мережі"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Тепер ви можете використовувати свій додатковий пароль для доступу до ${ PASS_SHORT_APP_NAME } не в мережі"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Тепер ви можете використовувати свій другий пароль для доступу до ${ PASS_SHORT_APP_NAME } не в мережі"
+      ],
+      "You may close this tab.": [
+        "Ви можете закрити цю вкладку."
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Можливо, вам потрібно буде надати дозвіл на доступність для ${ PASS_APP_NAME }."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Вам потрібне сховище з дозволом на зміну, перш ніж ви зможете імпортувати елементи."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Ви більше не маєте доступу до деяких сховищ або елементів, оскільки доступ вашої групи ${ groupName } було вилучено."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Тепер ви маєте доступ до \"Елемента ${ itemName }\", оскільки вашій групі ${ groupName } було надано доступ."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Тепер ви маєте доступ до \"Сховища ${ vaultName }\", оскільки вашій групі ${ groupName } було надано доступ."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Ви більше не матимете доступу до спільного доступу, 2FA та інших розширених функцій у ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -3258,6 +3840,252 @@
       ],
       "ZIP or Postal code": [
         "Поштовий індекс"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } безпечне посилання",
+        "${ secureLinksCount } безпечні посилання",
+        "${ secureLinksCount } безпечних посилань",
+        "${ secureLinksCount } безпечних посилань"
+      ],
+      "1 day": [
+        "1 день"
+      ],
+      "1 month": [
+        "1 місяць"
+      ],
+      "1 week": [
+        "1 тиждень"
+      ],
+      "1 year": [
+        "1 рік"
+      ],
+      "Access tokens": [
+        "Токени доступу"
+      ],
+      "Account Number": [
+        "Номер рахунку"
+      ],
+      "API Credential": [
+        "Облікові дані API"
+      ],
+      "API Key": [
+        "Ключ API"
+      ],
+      "Bank Account": [
+        "Банківський рахунок"
+      ],
+      "Bank Name": [
+        "Назва банку"
+      ],
+      "Basic": [
+        "Базовий"
+      ],
+      "Built-in 2FA": [
+        "Вбудована 2FA"
+      ],
+      "Check": [
+        "Перевірити"
+      ],
+      "Checkbox": [
+        "Прапорець"
+      ],
+      "Create a custom item": [
+        "Створити власний елемент"
+      ],
+      "Crypto Wallet": [
+        "Криптогаманець"
+      ],
+      "Custom": [
+        "Власний"
+      ],
+      "Custom expiration (minutes)": [
+        "Власний термін дії (хвилини)"
+      ],
+      "Custom Items": [
+        "Власні елементи"
+      ],
+      "Database": [
+        "База даних"
+      ],
+      "Database Type": [
+        "Тип бази даних"
+      ],
+      "Date of Birth": [
+        "Дата народження"
+      ],
+      "Driver License": [
+        "Посвідчення водія"
+      ],
+      "Exact host matching": [
+        "Точна відповідність хоста"
+      ],
+      "Exact URL matching": [
+        "Точна відповідність URL-адреси"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Протерміновані токени (${ expired.length })"
+      ],
+      "Expiry Date": [
+        "Термін дії"
+      ],
+      "Extra fields": [
+        "Додаткові поля"
+      ],
+      "Holder Name": [
+        "Ім'я власника"
+      ],
+      "Hostname": [
+        "Ім'я хоста"
+      ],
+      "Issuing Authority": [
+        "Орган видачі"
+      ],
+      "Issuing Country": [
+        "Країна видачі"
+      ],
+      "Larger window": [
+        "У більшому вікні"
+      ],
+      "License Key": [
+        "Ліцензійний ключ"
+      ],
+      "Make all managers": [
+        "Зробити всіх керівниками"
+      ],
+      "Medical Record": [
+        "Медична картка"
+      ],
+      "Member ID": [
+        "Ідентифікатор учасника"
+      ],
+      "Membership": [
+        "Членство"
+      ],
+      "Name (SSID)": [
+        "Назва (SSID)"
+      ],
+      "Never fill on this exact URL": [
+        "Ніколи не заповнювати на цій точній URL-адресі"
+      ],
+      "Operating System": [
+        "Операційна система"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Основний домен і піддомени (типовий)"
+      ],
+      "Passport Number": [
+        "Номер паспорта"
+      ],
+      "PGP-encrypted (recommended)": [
+        "Зашифровано PGP (рекомендується)"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Points Balance": [
+        "Баланс балів"
+      ],
+      "Private key": [
+        "Приватний ключ"
+      ],
+      "Private Key": [
+        "Приватний ключ"
+      ],
+      "Program Name": [
+        "Назва програми"
+      ],
+      "Public key": [
+        "Відкритий ключ"
+      ],
+      "Regular expression": [
+        "Регулярний вираз"
+      ],
+      "Relevant": [
+        "Релевантні"
+      ],
+      "Reward Program": [
+        "Програма винагород"
+      ],
+      "Routing Number": [
+        "Маршрутний номер"
+      ],
+      "Secret": [
+        "Секрет"
+      ],
+      "Seed Phrase": [
+        "Фраза відновлення"
+      ],
+      "Share ID": [
+        "ID спільного ресурсу"
+      ],
+      "Social Security": [
+        "Соціальне забезпечення"
+      ],
+      "Software license": [
+        "Ліцензія на програмне забезпечення"
+      ],
+      "SSH key": [
+        "Ключ SSH"
+      ],
+      "Starts with": [
+        "Починається з"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Найкраще від ${ BRAND_NAME } за однією передплатою"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Цей елемент доступний до ${ date } або до досягнення ліміту переглядів."
+      ],
+      "Tier/Status": [
+        "Рівень/Статус"
+      ],
+      "Token name": [
+        "Назва токена"
+      ],
+      "Unlock premium features": [
+        "Розблокувати преміумфункції"
+      ],
+      "Unnamed custom item": [
+        "Власний елемент без назви"
+      ],
+      "Unnamed SSH key": [
+        "Ключ SSH без назви"
+      ],
+      "Unnamed WiFi item": [
+        "Елемент WiFi без назви"
+      ],
+      "Unspecified": [
+        "Не вказано"
+      ],
+      "URL wildcard pattern": [
+        "Шаблон URL-адреси із символом підставлення"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Використовувати ${ PASS_APP_NAME } як агент SSH"
+      ],
+      "Use for AI agent": [
+        "Використовувати для ШІ-агента"
+      ],
+      "Vault access": [
+        "Доступ до сховища"
+      ],
+      "Vault, item & link sharing": [
+        "Спільний доступ до сховищ, елементів і посилань"
+      ],
+      "VPN Devices": [
+        "Пристрої VPN"
+      ],
+      "VPN Speed": [
+        "Швидкість VPN"
+      ],
+      "What's included": [
+        "Що включено"
+      ],
+      "WiFi network": [
+        "Мережа WiFi"
       ]
     },
     "Link": {
@@ -3266,6 +4094,9 @@
       ],
       "Learn more": [
         "Докладніше"
+      ],
+      "if your data is leaked": [
+        "якщо стався витік ваших даних"
       ]
     },
     "Log preference": {
@@ -3288,6 +4119,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Ви вибрали ${ semiboldText } у цьому сховищі."
+      ],
+      "'Starts with' matching rule": [
+        "Правило відповідності 'Починається з'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правило точної відповідності (під) домену"
+      ],
+      "Exact URL matching rule": [
+        "Правило точної відповідності URL-адреси"
+      ],
+      "Never fill with this exact URL": [
+        "Ніколи не заповнювати з цією точковою URL-адресою"
+      ],
+      "Regular expression rule": [
+        "Правило регулярного виразу"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правило відповідності шаблону із символом підставлення"
       ]
     },
     "new_plans: feature": {
@@ -3304,6 +4153,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } увімкнено"
+      ],
+      "Access token deleted": [
+        "Токен доступу видалено"
       ]
     },
     "Option": {
@@ -3374,11 +4226,86 @@
       ],
       "You can attach files to items for a better organization": [
         "Ви можете прикріплювати файли до елементів для кращої організації"
+      ],
+      "\"${ file.name }\" could not be uploaded.": [
+        "Не вдалося вивантажити \"${ file.name }\"."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "Не вдалося імпортувати \"${ filename }\"."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" є завеликим для вивантаження. Максимально дозволений розмір: (${ maxFileSizeInMB })"
+      ],
+      "Delete all files": [
+        "Видалити всі файли"
+      ],
+      "Do you want to remove all the files?": [
+        "Бажаєте вилучити всі файли?"
+      ],
+      "Download file": [
+        "Завантажити файл"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Через обмеження у Firefox, програмі ${ PASS_APP_NAME } необхідно відкритися в новому вікні, перш ніж ви зможете вивантажити файли."
+      ],
+      "Exporting files": [
+        "Експорт файлів"
+      ],
+      "Failed linking files to item": [
+        "Не вдалося зв'язати файли з елементом"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Якщо увімкнено, під час експорту всі ваші файли буде завантажено. Це може зайняти деякий час залежно від вашого інтернет-з'єднання."
+      ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Якщо ваші дані містять вкладення файлів, їх не буде імпортовано."
+      ],
+      "Include file attachments": [
+        "Включити вкладення файлів"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Недостатньо вільного простору сховища для вибраних файлів."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Після видалення цей файл усе ще можна відновити з історії елемента."
+      ],
+      "Open new window to upload files": [
+        "Відкрити нове вікно, щоб вивантажити файли"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Будь ласка, зачекайте, поки завантажуються ваші файли."
+      ],
+      "Remove all files": [
+        "Вилучити всі файли"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Деякі файли є завеликими для вивантаження. Максимально дозволений розмір: (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Експортовані вкладення файлів не будуть зашифровані."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Ця функція не підтримується у вашому тарифному плані. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Ця функція не підтримується у вашому тарифному плані. Зверніться до свого адміністратора, щоб отримати доступ."
+      ],
+      "Total files: ": [
+        "Всього файлів: "
+      ],
+      "Total imported files: ": [
+        "Всього імпортованих файлів: "
+      ],
+      "Upgrade to support file attachments": [
+        "Покращте тарифний план, щоб отримати підтримку вкладення файлів"
       ]
     },
     "PassOnboardingOffer": {
       "${ price }/month": [
         "${ price } / місяць"
+      ],
+      "${ plusTitle } Lifetime for ${ plusLifetimePrice }": [
+        "${ plusTitle } довічно за ${ plusLifetimePrice }"
       ]
     },
     "Placeholder": {
@@ -3486,6 +4413,18 @@
       ],
       "Used on ${ url }": [
         "Використовується на ${ url }"
+      ],
+      "e.g. 60": [
+        "наприклад, 60"
+      ],
+      "Name displayed in emails": [
+        "Ім'я, що відображається в листах"
+      ],
+      "Search ${ pluralItemType } in all items": [
+        "Шукати ${ pluralItemType } серед усіх елементів"
+      ],
+      "Select option": [
+        "Вибрати опцію"
       ]
     },
     "Security Center - Info": {
@@ -3626,6 +4565,21 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Підтверджувальний лист надіслано. Будь ласка, перевірте свою поштову скриньку, щоб підтвердити свою поштову скриньку"
+      ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Елементи не можуть містити більше ніж ${ share.targetMaxMembers } користувача.",
+        "Елементи не можуть містити більше ніж ${ share.targetMaxMembers } користувачів.",
+        "Елементи не можуть містити більше ніж ${ share.targetMaxMembers } користувачів.",
+        "Елементи не можуть містити більше ніж ${ share.targetMaxMembers } користувачів."
+      ],
+      "Mailbox change successfully cancelled": [
+        "Зміну поштової скриньки успішно скасовано"
+      ],
+      "SSH agent successfully started": [
+        "Агент SSH успішно запущено"
+      ],
+      "SSH agent successfully stopped": [
+        "Агент SSH успішно зупинено"
       ]
     },
     "Theme": {
@@ -4074,6 +5028,111 @@
         "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }.",
         "Ви збираєтеся назавжди видалити псевдонімів ${ aliasCount }.",
         "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Для використання токенів доступу потрібен ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Діяльність для \"${ token.Name }\""
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Налаштуйте поведінку автозаповнення, щоб змінити місця, де пропонуються входи."
+      ],
+      "Agent setup instructions": [
+        "Інструкції з налаштування агента"
+      ],
+      "Browser permission required": [
+        "Потрібен дозвіл браузера"
+      ],
+      "Cancel changing your email?": [
+        "Скасувати зміну електронної пошти?"
+      ],
+      "Change mailbox email": [
+        "Змінити електронну пошту поштової скриньки"
+      ],
+      "Clear clipboard": [
+        "Очистити буфер обміну"
+      ],
+      "Confirm identity": [
+        "Підтвердити особисті дані"
+      ],
+      "Create new access token": [
+        "Створити новий токен доступу"
+      ],
+      "Delete access token?": [
+        "Видалити токен доступу?"
+      ],
+      "Did you know?": [
+        "Чи знаєте ви?"
+      ],
+      "Encrypted import": [
+        "Зашифрований імпорт"
+      ],
+      "Enter coupon code": [
+        "Введіть код купона"
+      ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Введіть свій пароль ${ BRAND_NAME }"
+      ],
+      "Enter your second password": [
+        "Введіть свій другий пароль"
+      ],
+      "Hidden vaults": [
+        "Приховані сховища"
+      ],
+      "Importing your data": [
+        "Імпортування ваших даних"
+      ],
+      "Information exposed in breach": [
+        "Інформація, розкрита під час витоку"
+      ],
+      "Learn more": [
+        "Докладніше"
+      ],
+      "Manage vault access": [
+        "Керувати доступом до сховища"
+      ],
+      "No access tokens yet": [
+        "Ще немає токенів доступу"
+      ],
+      "No shared items": [
+        "Немає спільних елементів"
+      ],
+      "Organize vaults": [
+        "Впорядкувати сховища"
+      ],
+      "Pay once, access forever.": [
+        "Сплачуйте один раз, користуйтеся доступом назавжди."
+      ],
+      "Perform autotype?": [
+        "Виконати автонабір?"
+      ],
+      "Reset history for this item?": [
+        "Скинути історію для цього елемента?"
+      ],
+      "Setup offline mode": [
+        "Налаштувати режим не в мережі"
+      ],
+      "SSH Agent": [
+        "Агент SSH"
+      ],
+      "Test a URL against this rule": [
+        "Перевірити URL-адресу на відповідність цьому правилу"
+      ],
+      "URL matching": [
+        "Відповідність URL-адреси"
+      ],
+      "Vault shared with a group you administer": [
+        "Сховище поділене з групою, яку ви адмініструєте"
+      ],
+      "Visible vaults": [
+        "Видимі сховища"
+      ],
+      "You don't have any vaults": [
+        "У вас немає жодного сховища"
+      ],
+      "Your new access token": [
+        "Ваш новий токен доступу"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4349,6 +5408,181 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша передплата не дозволяє створювати кілька сховищ. Всі елементи будуть імпортовані до вашого першого сховища. Щоб імпортувати дані до кількох сховищ, передплатіть тарифний план вищого рівня."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } надає потужний контроль, але одна помилка може призвести до того, що автозаповнення збігатиметься і заповнюватиме дані на шахрайських або фішингових вебсайтах."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Режим не в мережі ${ PASS_SHORT_APP_NAME } вимкнено."
+      ],
+      "2 consecutive dots are not allowed": [
+        "2 крапки поспіль не дозволяються"
+      ],
+      "Addresses already invited.": [
+        "Адреси вже запрошені."
+      ],
+      "An error occurred while importing your data.": [
+        "Під час імпортування ваших даних сталася помилка."
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Не може починатися з крапки"
+      ],
+      "Cannot contain a dot at the end": [
+        "Не може закінчуватися крапкою"
+      ],
+      "Coupon cannot be empty": [
+        "Купон не може бути порожнім"
+      ],
+      "Coupon could not be applied.": [
+        "Не вдалося застосувати купон."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Не вдалося виконати автозаповнення. Переконайтеся, що ${ PASS_APP_NAME } має необхідні дозволи, і спробуйте знову (${ error })."
+      ],
+      "Identity could not be confirmed": [
+        "Не вдалося підтвердити особисті дані"
+      ],
+      "No shared items matching": [
+        "Немає відповідних спільних елементів"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Дозволені лише малі буквено-цифрові символи, крапки, дефіси та підкреслення"
+      ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Деякі елементи зараз поділені з іншими. Видалення їх вилучить доступ для всіх інших користувачів."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Деякі елементи зараз поділені з іншими. Переміщення їх до іншого сховища вилучить доступ для всіх інших користувачів."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Для агента SSH потрібне використання ключів SSH, що недоступно у вашому тарифному плані."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Цей елемент не може бути запропонований для автозаповнення через \"${ neverModeDescriptionStrong }\". Додайте іншу URL-адресу, якщо ви хочете автозаповнення для цього елемента."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Цей елемент зараз поділений з іншими. Його видалення вилучить доступ для всіх інших користувачів."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Цей елемент зараз поділений з іншими. Переміщення його до іншого сховища вилучить доступ для всіх інших користувачів."
+      ],
+      "You have reached the limit of members who can access this item.": [
+        "Ви досягли ліміту учасників, які можуть отримати доступ до цього елемента."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Ви досягли ліміту користувачів для цього елемента. ${ upgradeLink }"
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Вашому адміністратору потрібно створити сховище для вас, перш ніж ви зможете створювати елементи"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Ваша організація не дозволяє створювати сховище"
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Ваша організація не дозволяє ділитися окремими елементами"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Діяльність"
+      ],
+      "Activity details could not be loaded.": [
+        "Не вдалося завантажити подробиці діяльності."
+      ],
+      "Folder": [
+        "Папка"
+      ],
+      "Item": [
+        "Елемент"
+      ],
+      "Reason": [
+        "Причина"
+      ],
+      "Vault": [
+        "Сховище"
+      ]
+    },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Бажаєте, щоб ваш буфер обміну автоматично очищався через ${ timeoutDurationHumanReadable }?"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Домен"
+      ],
+      "Password ends with": [
+        "Пароль закінчується на"
+      ],
+      "Username": [
+        "Ім'я користувача"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
+      ]
+    },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Потрібен дозвіл від вашого браузера"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Введіть URL-адресу для перевірки, щоб перевірити, чи ваше поточне правило відповідає URL-адресі"
+      ],
+      "The rule is matching this URL": [
+        "Правило відповідає цій URL-адресі"
+      ],
+      "The rule is NOT matching this URL": [
+        "Правило НЕ відповідає цій URL-адресі"
+      ],
+      "This URL will be blocked from autofill": [
+        "Цю URL-адресу буде заблоковано для автозаповнення"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Цю URL-адресу НЕ буде заблоковано для автозаповнення"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Активний"
+      ],
+      "Agent": [
+        "Агент"
+      ],
+      "Expired": [
+        "Термін дії закінчився"
+      ],
+      "Expiring soon": [
+        "Термін дії скоро закінчується"
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "копія"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Не вся перелічена тут інформація була розкрита для всіх користувачів."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Якщо зашифровані паролі не розшифровано, вони залишаються безпечними, навіть якщо їх було розкрито."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Отримати ${ planName }"
       ]
     }
   }
