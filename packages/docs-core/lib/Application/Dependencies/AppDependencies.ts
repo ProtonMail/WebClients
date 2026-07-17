@@ -56,7 +56,7 @@ import { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
 import type { SheetsDatabaseSchema } from '../../Database/SheetsDBSchema'
 import { CURRENT_SHEETS_DB_VERSION, SHEETS_DATABASE_NAME, sheetsDBMigrations } from '../../Database/SheetsDBSchema'
-import { SheetsStorageService } from '../../Services/SheetsStorageService'
+import { SheetsStorageService } from '../../Services/SheetsStorage/SheetsStorageService'
 
 export class AppDependencies extends DependencyContainer {
   constructor(

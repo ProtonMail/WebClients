@@ -42,6 +42,7 @@ import { useActiveBreakpoint } from './useActiveBreakpoint'
 import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { isDevOrBlack } from '@proton/utils/env'
+import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -129,6 +130,24 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       .then((enabled) => setIsPatchesStorageEnabled(enabled))
       .catch(console.error)
   }, [clientInvoker])
+
+  const [isActionsStorageEnabled, setIsActionsStorageEnabled] = useState(false)
+  useEffect(() => {
+    void clientInvoker
+      .checkIfFeatureFlagIsEnabled('SheetsActionsStorageEnabled')
+      .then((enabled) => setIsActionsStorageEnabled(enabled))
+      .catch(console.error)
+  }, [clientInvoker])
+  const storeAction = useMemo(
+    () =>
+      isActionsStorageEnabled
+        ? (type: SheetsActionType, content: unknown) => {
+            clientInvoker.storeSpreadsheetAction(type, content).catch(console.error)
+          }
+        : () => {},
+    [clientInvoker, isActionsStorageEnabled],
+  )
+
   // On dev/black the detector is always on (like other Sheets features); in prod it is gated by
   // the SheetsDriftDetectionEnabled flag.
   const [isDriftDetectionEnabled, setIsDriftDetectionEnabled] = useState(isDevOrBlack())
@@ -388,6 +407,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         isReadonly={isReadonly}
         isRevisionMode={isRevisionMode}
         isViewOnlyMode={isViewOnlyMode}
+        storeAction={storeAction}
       >
         <UI hidden={hidden} isRevisionMode={isRevisionMode} clientInvoker={clientInvoker} isPublicMode={isPublicMode} />
       </ProtonSheetsUIStoreProvider>
@@ -400,6 +420,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       isReadonly={isReadonly}
       isRevisionMode={isRevisionMode}
       isViewOnlyMode={isViewOnlyMode}
+      storeAction={storeAction}
     >
       <LegacyUI
         hidden={hidden}

@@ -36,7 +36,7 @@ import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
-import type { SheetsStorageService } from '../SheetsStorageService'
+import type { SheetsStorageService } from '../SheetsStorage/SheetsStorageService'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 export class DocLoader implements DocLoaderInterface<DocumentState> {
