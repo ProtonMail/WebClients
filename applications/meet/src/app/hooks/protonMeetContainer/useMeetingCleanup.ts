@@ -1,8 +1,9 @@
-import type { Dispatch, MutableRefObject, SetStateAction } from 'react';
+import type { MutableRefObject } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { setJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
 import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 
@@ -17,7 +18,6 @@ interface UseMeetingCleanupParams {
     disallowHealthCheck: () => void;
     cleanupMlsState: () => void;
     stopPiP: () => Promise<void>;
-    setJoinedRoom: Dispatch<SetStateAction<boolean>>;
 }
 
 interface CleanupMeetingOptions {
@@ -36,7 +36,6 @@ export const useMeetingCleanup = ({
     disallowHealthCheck,
     cleanupMlsState,
     stopPiP,
-    setJoinedRoom,
 }: UseMeetingCleanupParams): UseMeetingCleanupResult => {
     const dispatch = useMeetDispatch();
     const room = useRoomContext();
@@ -57,7 +56,7 @@ export const useMeetingCleanup = ({
         decryptionKeyRef.current = null;
         disallowHealthCheck();
         cleanupMlsState();
-        setJoinedRoom(false);
+        dispatch(setJoinedRoom(false));
     });
 
     return { cleanupMeeting };
