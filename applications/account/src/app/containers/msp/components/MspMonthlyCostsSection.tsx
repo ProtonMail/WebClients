@@ -6,6 +6,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import {
     DropdownActions,
+    IllustrationPlaceholder,
     Pagination,
     Table,
     TableBody,
@@ -23,6 +24,7 @@ import SettingsSectionExtraWide from '@proton/components/containers/account/Sett
 import { getMspBillingSummary } from '@proton/shared/lib/api/msp';
 import { getFormattedMonths } from '@proton/shared/lib/date/date';
 import type { MspBillingSummary } from '@proton/shared/lib/interfaces/MspBillingSummary';
+import emptyRecordsImg from '@proton/styles/assets/img/illustrations/empty-records.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { MOCK_MONTHLY_DATA, MOCK_SEATS_HISTORY } from '../mock/monthlyCosts';
@@ -139,67 +141,78 @@ const MspMonthlyCostsSection = () => {
                         </p>
                     </div>
 
-                    <div className="flex flex-column gap-4">
-                        <Table hasActions borderWeak responsive="cards" className="msp-billing-table">
-                            <TableHeader className="msp-table-header">
-                                <TableRow>
-                                    <TableHeaderCell>{c('Column header').t`Billing period`}</TableHeaderCell>
-                                    <TableHeaderCell className="text-right">{c('Column header')
-                                        .t`Managed companies`}</TableHeaderCell>
-                                    <TableHeaderCell className="text-right">{c('Column header')
-                                        .t`Total billed seats`}</TableHeaderCell>
-                                    <TableHeaderCell className="text-right">{c('Column header')
-                                        .t`Total cost`}</TableHeaderCell>
-                                    <TableHeaderCell className="w-1/10" />
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {pageRows.map((row) => (
-                                    <TableRow key={`${row.year}-${row.month}`}>
-                                        <TableCell label={c('Column header').t`Billing period`}>
-                                            <span className="text-nowrap">{billingPeriod(row)}</span>
-                                        </TableCell>
-                                        <TableCell
-                                            className="text-right"
-                                            label={c('Column header').t`Managed companies`}
-                                        >
-                                            {row.companies}
-                                        </TableCell>
-                                        <TableCell
-                                            className="text-right"
-                                            label={c('Column header').t`Total billed seats`}
-                                        >
-                                            {row.seats}
-                                        </TableCell>
-                                        <TableCell className="text-right" label={c('Column header').t`Total cost`}>
-                                            {getSimplePriceString(currency, row.cost)}
-                                        </TableCell>
-                                        <TableCell className="text-right action-cell">
-                                            <DropdownActions
-                                                size="small"
-                                                shape="ghost"
-                                                iconName="three-dots-vertical"
-                                                list={rowActions}
-                                            />
-                                        </TableCell>
+                    {MOCK_MONTHLY_DATA.length === 0 ? (
+                        <div className="flex items-center justify-center py-12">
+                            <IllustrationPlaceholder url={emptyRecordsImg}>
+                                <p className="m-0 text-sm color-hint text-center">
+                                    {c('Info')
+                                        .t`No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.`}
+                                </p>
+                            </IllustrationPlaceholder>
+                        </div>
+                    ) : (
+                        <div className="flex flex-column gap-4">
+                            <Table hasActions borderWeak responsive="cards" className="msp-billing-table">
+                                <TableHeader className="msp-table-header">
+                                    <TableRow>
+                                        <TableHeaderCell>{c('Column header').t`Billing period`}</TableHeaderCell>
+                                        <TableHeaderCell className="text-right">{c('Column header')
+                                            .t`Managed companies`}</TableHeaderCell>
+                                        <TableHeaderCell className="text-right">{c('Column header')
+                                            .t`Total billed seats`}</TableHeaderCell>
+                                        <TableHeaderCell className="text-right">{c('Column header')
+                                            .t`Total cost`}</TableHeaderCell>
+                                        <TableHeaderCell className="w-1/10" />
                                     </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
+                                </TableHeader>
+                                <TableBody>
+                                    {pageRows.map((row) => (
+                                        <TableRow key={`${row.year}-${row.month}`}>
+                                            <TableCell label={c('Column header').t`Billing period`}>
+                                                <span className="text-nowrap">{billingPeriod(row)}</span>
+                                            </TableCell>
+                                            <TableCell
+                                                className="text-right"
+                                                label={c('Column header').t`Managed companies`}
+                                            >
+                                                {row.companies}
+                                            </TableCell>
+                                            <TableCell
+                                                className="text-right"
+                                                label={c('Column header').t`Total billed seats`}
+                                            >
+                                                {row.seats}
+                                            </TableCell>
+                                            <TableCell className="text-right" label={c('Column header').t`Total cost`}>
+                                                {getSimplePriceString(currency, row.cost)}
+                                            </TableCell>
+                                            <TableCell className="text-right action-cell">
+                                                <DropdownActions
+                                                    size="small"
+                                                    shape="ghost"
+                                                    iconName="three-dots-vertical"
+                                                    list={rowActions}
+                                                />
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
 
-                        {MOCK_MONTHLY_DATA.length > PAGE_SIZE && (
-                            <div className="flex justify-center">
-                                <Pagination
-                                    total={MOCK_MONTHLY_DATA.length}
-                                    limit={PAGE_SIZE}
-                                    page={page}
-                                    onNext={onNext}
-                                    onPrevious={onPrevious}
-                                    onSelect={onSelect}
-                                />
-                            </div>
-                        )}
-                    </div>
+                            {MOCK_MONTHLY_DATA.length > PAGE_SIZE && (
+                                <div className="flex justify-center">
+                                    <Pagination
+                                        total={MOCK_MONTHLY_DATA.length}
+                                        limit={PAGE_SIZE}
+                                        page={page}
+                                        onNext={onNext}
+                                        onPrevious={onPrevious}
+                                        onSelect={onSelect}
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    )}
                 </div>
             )}
         </SettingsSectionExtraWide>
