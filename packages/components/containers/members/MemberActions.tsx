@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import type { getSSODomainsSet } from '@proton/account/samlSSO/helper';
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import DropdownActionsIcon from '@proton/components/components/dropdown/DropdownActionsIcon';
 import { useLoading } from '@proton/hooks';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
@@ -36,7 +37,7 @@ export const MagicLinkMemberActions = ({
     const [loadingDelete, withLoadingDelete] = useLoading();
 
     return (
-        <DropdownActions
+        <DropdownActionsIcon
             list={[
                 onEdit && {
                     key: 'edit',
@@ -60,6 +61,8 @@ export const MagicLinkMemberActions = ({
                 },
             ].filter(isTruthy)}
             size="small"
+            iconElement={<IcThreeDotsVertical alt={c('Title').t`Open actions dropdown`} />}
+            shape="ghost"
         />
     );
 };
@@ -309,7 +312,15 @@ const MemberActions = ({
             } as const),
     ].filter(isTruthy);
 
-    return <DropdownActions loading={loading} list={list} size="small" />;
+    return (
+        <DropdownActionsIcon
+            loading={loading}
+            list={list}
+            size="small"
+            iconElement={<IcThreeDotsVertical alt={c('Title').t`Open actions dropdown`} />}
+            shape="ghost"
+        />
+    );
 };
 
 export default MemberActions;

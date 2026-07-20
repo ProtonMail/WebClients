@@ -60,16 +60,21 @@ const OrganizationGroupsManagementSection = () => {
 
     return (
         <SettingsSectionWide className="h-full groups-management">
-            <SettingsPageTitle className="mt-14">{c('Title').t`Groups`}</SettingsPageTitle>
-            <SettingsParagraph className="flex flex-column flex-nowrap" learnMoreUrl={getKnowledgeBaseUrl('/groups')}>
-                {showMailFeatures ? mailDescription : genericDescription}
-            </SettingsParagraph>
-            {!hasUsableDomain && (
-                <SettingsParagraph>
-                    {c('Info')
-                        .jt`A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${linkToDomainPage}.`}
+            <SettingsPageTitle className="mt-14 mb-4">{c('Title').t`Groups`}</SettingsPageTitle>
+            <div className="mb-12">
+                <SettingsParagraph
+                    className="flex flex-column flex-nowrap"
+                    learnMoreUrl={getKnowledgeBaseUrl('/groups')}
+                >
+                    {showMailFeatures ? mailDescription : genericDescription}
                 </SettingsParagraph>
-            )}
+                {!hasUsableDomain && (
+                    <SettingsParagraph>
+                        {c('Info')
+                            .jt`A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${linkToDomainPage}.`}
+                    </SettingsParagraph>
+                )}
+            </div>
             {restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED && (
                 <Card
                     rounded
