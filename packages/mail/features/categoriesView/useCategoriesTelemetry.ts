@@ -57,14 +57,14 @@ export const useCategoriesTelemetry = () => {
         });
     };
 
-    const sendReportToggleCategory = (categoryId: CategoryLabelID, newValue: boolean) => {
+    const sendReportToggleCategory = (categoryId: string, newValue: boolean) => {
         sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_category, {
             categoryId,
             newValue: newValue ? 'true' : 'false',
         });
     };
 
-    const sendReportToggleNotification = (categoryId: CategoryLabelID, newValue: boolean) => {
+    const sendReportToggleNotification = (categoryId: string, newValue: boolean) => {
         sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_notification, {
             categoryId,
             newValue: newValue ? 'true' : 'false',
