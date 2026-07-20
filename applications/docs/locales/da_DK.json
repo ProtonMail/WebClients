@@ -1324,7 +1324,7 @@
         "Status"
       ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
       ],
       "To migrate this user, enable their account in your Google Workspace Admin Console.": [
         "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
@@ -1463,6 +1463,9 @@
       ],
       "Maybe later": [
         "Måske senere"
+      ],
+      "Get 50% offer": [
+        "Få et 50%-tilbud"
       ]
     },
     "Cancellation upsell": {
@@ -3590,6 +3593,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "Failed to trash document": [
+        "Dokumentet kunne ikke flyttes til papirkurven"
+      ],
+      "Some documents could not be loaded": [
+        "Nogle dokumenter kunne ikke indlæses"
       ]
     },
     "error": {
@@ -5872,6 +5881,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Adgang til mere end 20.000 servere i 145 lande"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Hurtigste VPN-hastigheder – op til 10Gbps"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Få lidt mere tid til overvejelse – uden afbrydelse."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Premium privatlivsbeskyttelse på alle dine enheder"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Bliv på dit abonnement og få 50% rabat næste måned"
       ]
     },
     "info": {
@@ -6431,7 +6458,7 @@
         "Upload billede"
       ],
       "URL wildcard pattern": [
-        "URL-jokertegnmønster"
+        "URL-wildcarddomæne"
       ],
       "Username": [
         "Brugernavn"
@@ -6783,7 +6810,7 @@
         "Regel for regulært udtryk"
       ],
       "Wildcard pattern matching rule": [
-        "Regel for jokertegnmønstermatch"
+        "Regel for wildcardmønster"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er udløbet. ${ nonAutoRenewalAction }"
@@ -8212,6 +8239,18 @@
       ],
       "Your settings have been changed successfully": [
         "Dine indstillinger er blevet ændret"
+      ],
+      "\"Document deleted permanently": [
+        "\"Dokument slettet permanent"
+      ],
+      "Failed to delete document": [
+        "Kunne ikke slette dokumentet"
+      ],
+      "Failed to restore document": [
+        "Kunne ikke genoprette dokument"
+      ],
+      "Failed to trash document": [
+        "Dokumentet kunne ikke flyttes til papirkurven"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10661,6 +10700,9 @@
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
+      ],
+      "Stay for 50% off your next month": [
+        "Bliv hængende for 50% rabat i den næste måned"
       ]
     },
     "Title header for keys table": {
@@ -10927,7 +10969,7 @@
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svindel- eller phishing-websteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",
