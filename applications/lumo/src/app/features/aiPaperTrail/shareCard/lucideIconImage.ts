@@ -27,7 +27,7 @@ export const loadLucideIconImage = (name: IconName, size: number, color: string)
         return Promise.reject(new Error(`Share card icon not defined: ${name}`));
     }
 
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths.map((d) => `<path d="${d}"/>`).join('')}</svg>`;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">${paths.map((d) => `<path d="${d}"/>`).join('')}</svg>`;
     const url = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
     return loadImage(url);
 };

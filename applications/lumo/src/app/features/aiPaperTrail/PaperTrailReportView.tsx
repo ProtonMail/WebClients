@@ -211,7 +211,14 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                                     {cardData.exposureScore}
                                 </span>
                                 <span className="pt-glance__score-max">/100</span>
-                                <span className="pt-glance__grade">{cardData.grade}</span>
+                            </div>
+                            <div className="pt-glance__privacy-type">
+                                <span className="pt-glance__privacy-type-label">
+                                    {c('collider_2025:Label').t`My privacy type`}
+                                </span>
+                                <span className={`pt-glance__privacy-type-value ${exposureTone(cardData.exposureScore)}`}>
+                                    {cardData.grade}
+                                </span>
                             </div>
                             <ul className="pt-score__list">
                                 {report.dataExposure.map((exposure, i) => {

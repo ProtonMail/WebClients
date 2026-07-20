@@ -324,7 +324,34 @@
         align-items: baseline;
         flex-wrap: wrap;
         gap: 0.35rem 0.5rem;
+        margin-block-end: 0.75rem;
+    }
+
+    &__privacy-type {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
         margin-block-end: 1rem;
+        padding: 0.85rem 1rem;
+        border-radius: 0.75rem;
+        background: #f6f3ff;
+        border: 1px solid #ebe6fa;
+    }
+
+    &__privacy-type-label {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--pt-muted);
+    }
+
+    &__privacy-type-value {
+        font-family: var(--pt-top);
+        font-size: 1.15rem;
+        font-weight: 600;
+        line-height: 1.25;
+        color: var(--pt-text);
     }
 
     &__score {
@@ -338,15 +365,6 @@
         font-size: 1.1rem;
         font-weight: 600;
         color: var(--pt-muted);
-    }
-
-    &__grade {
-        flex-basis: 100%;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--pt-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
     }
 
     &__narrative {
