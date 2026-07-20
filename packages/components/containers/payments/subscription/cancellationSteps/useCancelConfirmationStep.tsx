@@ -6,8 +6,8 @@ import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { CancelSubscriptionModal } from '../cancelSubscription/CancelSubscriptionModal';
+import { CancelSubscriptionModalForWorldCup } from '../cancelSubscription/CancelSubscriptionModalForWorldCup/CancelSubscriptionModalForWorldCup';
 import type { CancelSubscriptionResult } from '../cancelSubscription/types';
-import { CancelSubscriptionModalForWorldCup } from '../cancelSubscription/worldCupCancelation/CancelSubscriptionModalForWorldCup';
 import type { CancellationStep, CancellationStepConfig } from './types';
 
 function hasSubscribedDuringWorldCupRange({ CreateTime }: Subscription): boolean {
@@ -31,12 +31,10 @@ export const useCancelConfirmationStep = ({
         worldCupRetentionFF &&
         subscription?.Cycle === CYCLE.MONTHLY &&
         hasSubscribedDuringWorldCupRange(subscription) &&
-        [
-            COUPON_CODES.VPN_PLUS_FREE_2024,
-            COUPON_CODES.TRYVPNPLUS2024,
-            COUPON_CODES.VPNMATCHDAYDEALS,
-            COUPON_CODES.VPNSAVEOFFER,
-        ].find((coupon) => coupon === subscription?.CouponCode);
+        [COUPON_CODES.VPN_PLUS_FREE_2024, COUPON_CODES.TRYVPNPLUS2024, COUPON_CODES.VPNMATCHDAYDEALS].find(
+            (coupon) => coupon === subscription?.CouponCode
+        ) &&
+        subscription.UpcomingSubscription?.CouponCode !== COUPON_CODES.VPNSAVEOFFER;
 
     const modal = isPaidSubscription(subscription)
         ? cancelSubscriptionModal((props) => {
