@@ -32,21 +32,6 @@ export const CancelSubscriptionModalForWorldCup = ({
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(APPS.PROTONVPN_SETTINGS);
     const planTitle = getPlanTitle(subscription) ?? '';
-    const getOffer = {
-        icon: stayVpnPlus,
-        value: () => c('Info').t`Stay on your plan and get 50% off your next month`,
-        hint: () => c('Info').t`Have some more time to decide without interruption.`,
-        action: () => {
-            void openSubscriptionModal({
-                coupon: COUPON_CODES.VPNSAVEOFFER,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow,
-                cycle: CYCLE.MONTHLY,
-                disableCycleSelector: true,
-                disablePlanSelection: true,
-            });
-        },
-    };
 
     const expiryDate = (
         <Time format="PPP" className="text-bold" key="expiry-time">
@@ -62,6 +47,23 @@ export const CancelSubscriptionModalForWorldCup = ({
         onResolve?.({ status: 'kept' });
     };
 
+    const getOffer = {
+        icon: stayVpnPlus,
+        value: () => c('Info').t`Stay on your plan and get 50% off your next month`,
+        hint: () => c('Info').t`Have some more time to decide without interruption.`,
+        action: () => {
+            handleClose();
+            void openSubscriptionModal({
+                coupon: COUPON_CODES.VPNSAVEOFFER,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                telemetryFlow,
+                cycle: CYCLE.MONTHLY,
+                disableCycleSelector: true,
+                disablePlanSelection: true,
+            });
+        },
+    };
+
     return (
         <ModalTwo {...rest} onClose={handleClose} size="xlarge">
             <ModalTwoHeader title={c('Title').t`Stay for 50% off your next month`} />
@@ -72,15 +74,17 @@ export const CancelSubscriptionModalForWorldCup = ({
                 </p>
 
                 {features.map((feature) => (
-                    <div key={feature.value().trim()} className="flex flex-row items-center rounded-xl w-full gap-3">
+                    <div
+                        key={feature.value().trim()}
+                        className="vpn-features-world-cup flex flex-row items-center rounded-xl w-full gap-3"
+                    >
                         {feature.icon}
                         <span className="text-semibold">{feature.value()}</span>
                     </div>
                 ))}
                 <div
-                    className={`flex flex-row p-4 items-center rounded-xl w-full flex-nowrap`}
+                    className={`vpn-features-world-cup flex flex-row p-4 items-center rounded-xl w-full flex-nowrap justify-space-between`}
                     style={{
-                        justifyContent: 'space-between',
                         backgroundColor: '#239ECE1F',
                     }}
                 >

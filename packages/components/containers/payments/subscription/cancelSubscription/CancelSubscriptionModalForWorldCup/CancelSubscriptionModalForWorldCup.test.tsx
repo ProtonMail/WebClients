@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { addMonths, format, getUnixTime } from 'date-fns';
 
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
@@ -76,7 +76,7 @@ describe('CancelSubscriptionModalForWorldCup', () => {
 
         render(<CancelSubscriptionModalForWorldCup subscription={adaptedSubscription} onResolve={onResolve} open />);
 
-        const expectedDate = format(futureDate, 'PPP');
+        const expectedDate = format(futureDate, 'PPP', {});
         expect(screen.getByText(new RegExp(expectedDate))).toBeInTheDocument();
     });
 
@@ -105,9 +105,9 @@ describe('CancelSubscriptionModalForWorldCup', () => {
 
         expect(mockOpenSubscriptionModal).toHaveBeenCalledWith(
             expect.objectContaining({
-                coupon: 'VPNSAVEOFFER',
+                coupon: COUPON_CODES.VPNSAVEOFFER,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                cycle: 1,
+                cycle: CYCLE.MONTHLY,
                 disableCycleSelector: true,
                 disablePlanSelection: true,
             })
@@ -128,29 +128,14 @@ describe('CancelSubscriptionModalForWorldCup', () => {
         expect(messageText).toBeInTheDocument();
     });
 
-    it('should not call onResolve when get 50% offer button is clicked', async () => {
+    it('should call onResolve with kept status when get 50% offer button is clicked', async () => {
         const user = userEvent.setup();
         render(<CancelSubscriptionModalForWorldCup subscription={mockSubscription} onResolve={onResolve} open />);
 
         const getOfferButton = screen.getByRole('button', { name: /get 50% offer/i });
         await user.click(getOfferButton);
 
-        expect(onResolve).not.toHaveBeenCalled();
-    });
-
-    it('should render features with different background colors', () => {
-        const { container } = render(
-            <CancelSubscriptionModalForWorldCup subscription={mockSubscription} onResolve={onResolve} open />
-        );
-
-        const featureElements = container.querySelectorAll('.flex.flex-row.p-4.items-center.rounded-xl');
-        expect(featureElements.length).toBeGreaterThan(0);
-
-        featureElements.forEach((element, index) => {
-            if (index === featureElements.length - 1) {
-                expect(element).toHaveStyle({ backgroundColor: '#239ECE1F' });
-            }
-        });
+        expect(onResolve).toHaveBeenCalledWith({ status: 'kept' });
     });
 
     it('should render loading state on get 50% offer button', () => {
@@ -163,5 +148,16 @@ describe('CancelSubscriptionModalForWorldCup', () => {
 
         const getOfferButton = screen.getByRole('button', { name: /get 50% offer/i });
         expect(getOfferButton).toBeInTheDocument();
+    });
+
+    it('should render offer section with correct layout classes', () => {
+        const { container } = render(
+            <CancelSubscriptionModalForWorldCup subscription={mockSubscription} onResolve={onResolve} open />
+        );
+
+        const offerSections = container.querySelectorAll('.vpn-features-world-cup');
+        const offerSection = offerSections[offerSections.length - 1];
+        expect(offerSection).toBeInTheDocument();
+        expect(offerSection).toHaveStyle({ backgroundColor: '#239ECE1F' });
     });
 });
