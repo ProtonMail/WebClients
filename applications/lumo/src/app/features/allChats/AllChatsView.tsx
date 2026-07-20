@@ -13,6 +13,7 @@ import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt'
 import { LumoLink } from '../../components/Links/LumoLink';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
+import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';
 import { useConversationStar } from '../../hooks/useConversationStar';
 import { useDriveFolderIndexing } from '../../hooks/useDriveFolderIndexing';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
@@ -165,7 +166,8 @@ const ConversationRow = memo(
 
         const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
         const timestamp = formatChatRelativeDate(conversation[sortField]);
-        const { preview } = rowData;
+        const { isProject, preview, projectIcon, projectName } = rowData;
+        const projectLabel = projectName?.trim() || c('collider_2025:Label').t`Untitled project`;
 
         const startRenaming = useCallback(() => {
             setDraftTitle(conversation.title);
@@ -260,9 +262,41 @@ const ConversationRow = memo(
                                 conversation={conversation}
                                 className="all-chats-row-interactive shrink-0"
                             />
-                            <span className="all-chats-row-title-text text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
-                                {label}
-                            </span>
+                            <div className="all-chats-row-title-content min-w-0">
+                                <div className="all-chats-row-title-main flex flex-nowrap items-center gap-1 min-w-0">
+                                    <span className="all-chats-row-title-text text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
+                                        {label}
+                                    </span>
+                                    <Button
+                                        icon
+                                        shape="ghost"
+                                        size="small"
+                                        className={clsx(
+                                            'all-chats-row-star all-chats-row-interactive shrink-0',
+                                            isStarred && 'is-favorited'
+                                        )}
+                                        aria-label={
+                                            isStarred
+                                                ? c('collider_2025:Action').t`Remove from favorites`
+                                                : c('collider_2025:Action').t`Add to favorites`
+                                        }
+                                        aria-pressed={!!isStarred}
+                                        onClick={(event) => {
+                                            event.preventDefault();
+                                            event.stopPropagation();
+                                            handleStarToggle();
+                                        }}
+                                    >
+                                        <LumoIcon
+                                            name="Star"
+                                            size={16}
+                                            fill={isStarred ? 'currentColor' : 'none'}
+                                            strokeWidth={isStarred ? 0 : 2}
+                                        />
+                                    </Button>
+                                </div>
+                                <span className="all-chats-row-date-mobile">{timestamp}</span>
+                            </div>
                             {preview ? (
                                 <span className="all-chats-row-preview text-ellipsis overflow-hidden whitespace-nowrap flex-1 min-w-0">
                                     {preview}
@@ -276,49 +310,57 @@ const ConversationRow = memo(
                     <div className="all-chats-row-meta relative z-2 shrink-0 flex items-center justify-end self-stretch">
                         <span className="all-chats-row-date">{timestamp}</span>
                         <div className="all-chats-row-actions">
-                            <Button
-                                icon
-                                shape="ghost"
-                                size="small"
-                                className={clsx('all-chats-row-star shrink-0', isStarred && 'is-favorited')}
-                                aria-label={
-                                    isStarred
-                                        ? c('collider_2025:Action').t`Remove from favorites`
-                                        : c('collider_2025:Action').t`Add to favorites`
-                                }
-                                aria-pressed={!!isStarred}
-                                onClick={(event) => {
-                                    event.preventDefault();
-                                    event.stopPropagation();
-                                    handleStarToggle();
-                                }}
-                            >
-                                <LumoIcon
-                                    name="Star"
-                                    size={16}
-                                    fill={isStarred ? 'currentColor' : 'none'}
-                                    strokeWidth={isStarred ? 0 : 2}
+                            {isProject ? (
+                                <LumoLink
+                                    to={`/projects/${conversation.spaceId}`}
+                                    className="all-chats-row-project all-chats-row-interactive shrink-0"
+                                    aria-label={c('collider_2025:Action').t`Go to project`}
+                                    title={projectLabel}
+                                    onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+                                        event.stopPropagation();
+                                    }}
+                                >
+                                    <ProjectIcon iconId={projectIcon} size={14} className="shrink-0" />
+                                    <span className="all-chats-row-project-name">{projectLabel}</span>
+                                </LumoLink>
+                            ) : null}
+                            <div className="all-chats-row-actions-desktop shrink-0">
+                                <Button
+                                    icon
+                                    shape="ghost"
+                                    size="small"
+                                    className="shrink-0"
+                                    aria-label={c('collider_2025:Action').t`Rename chat`}
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                        startRenaming();
+                                    }}
+                                >
+                                    <LumoIcon name="Pencil" size={15} />
+                                </Button>
+                                <Button
+                                    icon
+                                    className="shrink-0"
+                                    shape="ghost"
+                                    size="small"
+                                    aria-label={c('collider_2025:Action').t`Delete chat`}
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                        setDeleteRequested(true);
+                                    }}
+                                >
+                                    <LumoIcon name="Trash2" size={15} />
+                                </Button>
+                            </div>
+                            <div className="all-chats-row-actions-mobile shrink-0">
+                                <ConversationSidebarActions
+                                    conversation={conversation}
+                                    onRename={startRenaming}
+                                    includeStarOption={false}
                                 />
-                            </Button>
-                            <Button
-                                icon
-                                className="shrink-0"
-                                shape="ghost"
-                                size="small"
-                                aria-label={c('collider_2025:Action').t`Delete chat`}
-                                onClick={(event) => {
-                                    event.preventDefault();
-                                    event.stopPropagation();
-                                    setDeleteRequested(true);
-                                }}
-                            >
-                                <LumoIcon name="Trash2" size={15} />
-                            </Button>
-                            <ConversationSidebarActions
-                                conversation={conversation}
-                                onRename={startRenaming}
-                                visibleOnHover
-                            />
+                            </div>
                         </div>
                     </div>
                 ) : null}
@@ -636,6 +678,8 @@ export const AllChatsView = () => {
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }} header={layoutHeader}>
             <div className="all-chats-view flex flex-column flex-nowrap flex-1 px-4 md:px-10 min-h-0 py-4">
+                {/* For small screens, move the action buttons outside of the LumoLayoutWithDrawer header. Here we should show a input bar for the search query, and then below is the action buttons that are in the layoutHeader. */}
+
                 <div
                     className="flex flex-column flex-1 w-full mx-auto min-h-0"
                     // style={{ '--max-w-custom': '900px' } as React.CSSProperties}

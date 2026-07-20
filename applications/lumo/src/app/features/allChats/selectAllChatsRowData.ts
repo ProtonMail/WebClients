@@ -13,6 +13,7 @@ export interface AllChatsRowData {
     icon: IconName;
     isProject: boolean;
     projectName?: string;
+    projectIcon?: string;
 }
 
 export type AllChatsRowDataMap = Record<ConversationId, AllChatsRowData>;
@@ -43,6 +44,7 @@ export const selectAllChatsRowDataMap = createSelector(
                 }),
                 isProject,
                 projectName: isProject ? space?.projectName : undefined,
+                projectIcon: isProject ? projectIcon : undefined,
             };
         });
 
