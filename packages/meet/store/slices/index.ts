@@ -1,4 +1,5 @@
 import { chatAndReactionsReducer } from './chatAndReactionsSlice';
+import { connectionReducer } from './connectionSlice';
 import { devToolsReducer } from './devToolsSlice';
 import { deviceManagementReducer } from './deviceManagementSlice';
 import { meetAppStateReducer } from './meetAppStateSlice';
@@ -16,6 +17,7 @@ import { meetUserReducer } from './userSlice';
 
 export const meetReducers = {
     ...chatAndReactionsReducer,
+    ...connectionReducer,
     ...devToolsReducer,
     ...deviceManagementReducer,
     ...meetAppStateReducer,
