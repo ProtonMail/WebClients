@@ -64,7 +64,7 @@ export function* onSharesIncoming(incoming: SharesIncomingChannel, api: Api, opt
     try {
         while (true) {
             const event: ShareGetResponse[] = yield take(incoming);
-            const shares: Share[] = yield call(processSharesIncomingEvent, event);
+            const shares: Share[] = yield call(processSharesIncomingEvent, event, options);
             for (const share of shares) yield fork(getShareChannelForks(api, options), share);
         }
     } finally {

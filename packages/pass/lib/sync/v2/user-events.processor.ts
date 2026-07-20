@@ -55,7 +55,7 @@ export function* processUserEvents(event: SyncEventListOutput, options: RootSaga
         call(processAliasNoteChanged, event.AliasNoteChanged),
         call(processPendingAliasToCreate, event.PendingAliasToCreateChanged),
         call(processBreachUpdate, event.BreachUpdate),
-        call(processSharesCreated, event.SharesCreated),
+        call(processSharesCreated, event.SharesCreated, options),
         call(processSharesUpdated, event.SharesUpdated),
         call(processSharesDeleted, event.SharesDeleted),
         call(processFoldersUpdated, event.FoldersUpdated),
