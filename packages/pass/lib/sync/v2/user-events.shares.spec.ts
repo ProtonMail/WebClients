@@ -20,6 +20,7 @@ const requestItemsForShareId = jest.spyOn(itemRequests, 'requestItemsForShareId'
 
 const createEvent = (ShareID: ShareId) => ({ ShareID }) as SyncEventShareOutput;
 const removeShare = jest.fn();
+const canOpenShare = jest.fn(() => true);
 const share = createTestShare({ shareId: 's1' });
 const items = [createTestItem('login', { itemId: 'i1', shareId: 's1' })];
 
@@ -37,8 +38,9 @@ beforeEach(() => {
     requestShare.mockResolvedValue({} as ShareGetResponse);
     parseShareResponse.mockResolvedValue(share);
     requestItemsForShareId.mockResolvedValue(items);
-    exposePassCrypto({ removeShare } as unknown as PassCryptoWorker);
+    exposePassCrypto({ removeShare, canOpenShare } as unknown as PassCryptoWorker);
     removeShare.mockClear();
+    canOpenShare.mockClear();
 });
 
 afterEach(() => {
