@@ -13,6 +13,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
@@ -23,7 +24,6 @@ import ContactEmailInput from '../../../shared/outgoing/ContactEmailInput';
 import { useAddContactInputs } from '../../../shared/outgoing/useAddContactInputs';
 import shieldSuccess from '../../../shared/shield-success.svg';
 import shield from '../../../shared/shield.svg';
-import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 
 export interface AddOutgoingTrustedContactModalProps extends Omit<
     ModalProps<'form'>,
@@ -44,7 +44,7 @@ const getHeader = (text: string, email: string, svg = shield) => {
 
 export const CreateOutgoingRecoveryContactModal = ({ ...rest }: AddOutgoingTrustedContactModalProps) => {
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
     const [delegatedAccess, setDelegatedAccess] = useState<OutgoingDelegatedAccessOutput | null>(null);

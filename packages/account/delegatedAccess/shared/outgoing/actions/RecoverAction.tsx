@@ -5,13 +5,13 @@ import { c } from 'ttag';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
 import RetrySignedKeyListError from '../../../RetrySignedKeyListError';
 import { recoverDelegatedAccessStep1Thunk, recoverDelegatedAccessStep2Thunk } from '../../../outgoingActions';
 import { RecoverOutgoingRecoveryContactModal } from '../../../recoveryContact/outgoing/modals/RecoverOutgoingRecoveryContactModal';
 import { RetryWarningRecoverOutgoingRecoveryContactModal } from '../../../recoveryContact/outgoing/modals/RetryWarningRecoverOutgoingRecoveryContactModal';
-import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 import { useOutgoingController } from '../../OutgoingDelegatedAccessProvider';
 import type { EnrichedOutgoingDelegatedAccess, RecoverActionPayload } from '../interface';
 
@@ -22,7 +22,7 @@ export const RecoverAction = () => {
     const [errorDetails, setErrorDetails] = useState<string | null>(null);
 
     const handleError = useErrorHandler();
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
 
     const [tmpOutgoingDelegatedAccess, setTmpOutgoingDelegatedAccess] =
