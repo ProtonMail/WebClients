@@ -105,6 +105,17 @@ describe('CommentController', () => {
     )
   })
 
+  it('should not refetch all comments on the first websocket connection', async () => {
+    controller.fetchAllComments = jest.fn()
+
+    await controller.handleEvent({
+      type: WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady,
+      payload: undefined,
+    })
+
+    expect(controller.fetchAllComments).not.toHaveBeenCalled()
+  })
+
   it('should refetch all comments upon websocket reconnection', async () => {
     controller.fetchAllComments = jest.fn()
 
@@ -113,7 +124,12 @@ describe('CommentController', () => {
       payload: undefined,
     })
 
-    expect(controller.fetchAllComments).toHaveBeenCalled()
+    await controller.handleEvent({
+      type: WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady,
+      payload: undefined,
+    })
+
+    expect(controller.fetchAllComments).toHaveBeenCalledTimes(1)
   })
 
   describe('shouldSendDocumentName', () => {
