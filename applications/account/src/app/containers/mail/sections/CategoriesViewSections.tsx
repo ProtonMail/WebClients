@@ -2,15 +2,19 @@ import { c } from 'ttag';
 
 import { Info, useModalState } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { updateLabel } from '@proton/mail/store/labels/actions';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import type { Label } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { CategoriesUnreadCountToggle } from './CategoriesUnreadCountToggle';
 import { CategorySettingsItem } from './CategorySettingsItem';
@@ -26,37 +30,59 @@ export const CategoriesViewSections = () => {
     const [modal, setModal, renderModal] = useModalState();
 
     const showBadgeSettings = useFlag('CategoriesUnseenBadge');
+    const isReloadDisabled = useFlag('InboxDesktopCategoryViewSettingsToggleReloadDisabled');
 
     const [mailSettings] = useMailSettings();
-    const { categoriesStore, activeCategoriesTabs } = useCategoriesData();
+    const { categoriesStore, activeCategoriesTabs: activeTabs } = useCategoriesData();
+    const { sendReportToggleCategory, sendReportToggleNotification } = useCategoriesTelemetry();
 
-    const handleCategoryUpdate = async (category: CategoryTab) => {
+    const getCategoryFromStore = (categoryID: string) => {
         if (!mailSettings.MailCategoryView) {
+            return undefined;
+        }
+        return categoriesStore?.find((cat) => cat.ID === categoryID);
+    };
+
+    const updateCategory = (cat: Label) => {
+        return withLoading(
+            dispatch(
+                updateLabel({
+                    labelID: cat.ID,
+                    label: { Name: cat.Name, Color: cat.Color, Display: cat.Display, Notify: cat.Notify },
+                })
+            )
+        );
+    };
+
+    const handleChangeDisplay = async (categoryID: string) => {
+        const cat = getCategoryFromStore(categoryID);
+        if (!cat) {
             return;
         }
 
-        const categoryFromStore = categoriesStore?.find((cat) => cat.ID === category.id);
-        if (!categoryFromStore) {
-            return;
-        }
-
-        const isLastEnabledCategory =
-            activeCategoriesTabs.filter((cat) => cat.id !== MAILBOX_LABEL_IDS.CATEGORY_DEFAULT).length === 1 &&
-            !category.display;
-
-        if (isLastEnabledCategory) {
+        const isLastEnabled = activeTabs.filter((c) => c.id !== MAILBOX_LABEL_IDS.CATEGORY_DEFAULT).length === 1;
+        if (cat.Display && isLastEnabled) {
             setModal(true);
             return;
         }
 
-        const newCategory = {
-            Name: categoryFromStore.Name,
-            Color: categoryFromStore.Color,
-            Display: category.display ? 1 : 0,
-            Notify: category.notify ? 1 : 0,
-        };
+        await updateCategory({ ...cat, Display: cat.Display ? 0 : 1 });
+        sendReportToggleCategory(cat.ID, !cat.Display);
 
-        await withLoading(dispatch(updateLabel({ labelID: category.id, label: newCategory })));
+        // INDA-703: remove the current implementation once 1.14.0 is released
+        if (isElectronApp && !isReloadDisabled) {
+            void invokeInboxDesktopIPC({ type: 'userLogin' }).catch(noop);
+        }
+    };
+
+    const handleChangeNotify = async (categoryID: string) => {
+        const cat = getCategoryFromStore(categoryID);
+        if (!cat) {
+            return;
+        }
+
+        await updateCategory({ ...cat, Notify: cat.Notify ? 0 : 1 });
+        sendReportToggleNotification(cat.ID, !cat.Notify);
     };
 
     return (
@@ -93,9 +119,10 @@ export const CategoriesViewSections = () => {
                                 <CategorySettingsItem
                                     key={category.id}
                                     categoriesEnabled={mailSettings.MailCategoryView}
-                                    onUpdate={handleCategoryUpdate}
                                     category={category}
                                     loading={loading}
+                                    updateDisplay={handleChangeDisplay}
+                                    updateNotify={handleChangeNotify}
                                 />
                             );
                         })}
