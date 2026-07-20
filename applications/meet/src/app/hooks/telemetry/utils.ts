@@ -2,6 +2,8 @@ import { type RemoteTrackPublication, Track } from 'livekit-client';
 
 import type { ParticipantQualityStats } from './types';
 
+export const getUrlWithoutProtocol = (url: string) => url.replace(/^[a-z]+:\/\//i, '');
+
 export const getWebRTCStats = async (
     pub: RemoteTrackPublication,
     identity: string,

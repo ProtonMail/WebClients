@@ -65,6 +65,7 @@ import { useReconnection } from '../../hooks/protonMeetContainer/useReconnection
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
 import { logJoinStats } from '../../hooks/telemetry/meetingTelemetry';
+import { getUrlWithoutProtocol } from '../../hooks/telemetry/utils';
 import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
 import { useDisplayName } from '../../hooks/useDisplayName';
@@ -525,6 +526,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
                         isReconnect: false,
                         isInstantJoin,
                         participantCount,
+                        websocketUrl: getUrlWithoutProtocol(websocketUrl),
                         tokenFetchMs,
                         mlsSetupMs,
                         livekitConnectMs,
@@ -660,6 +662,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
                     isReconnect: false,
                     isInstantJoin,
                     participantCount,
+                    websocketUrl: websocketUrlRef.current ? getUrlWithoutProtocol(websocketUrlRef.current) : undefined,
                     tokenFetchMs,
                     mlsSetupMs,
                     livekitConnectMs,
@@ -1138,6 +1141,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
                         isReconnecting={isReconnecting}
                         mlsRetrying={mlsRetrying}
                         onSimulateReconnection={() => setReconnectionFailed(true)}
+                        websocketUrl={websocketUrlRef.current}
                     />
                 </MeetingRecorderProvider>
             ) : (
