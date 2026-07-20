@@ -3,45 +3,34 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
-import { ConnectionState, DisconnectReason, RoomEvent, Track } from 'livekit-client';
-import { c } from 'ttag';
+import { Track } from 'livekit-client';
 
-import { useUser } from '@proton/account/user/hooks';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { resetChatAndReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import {
+    selectIsReconnecting,
+    selectJoinedRoom,
+    selectJoiningInProgress,
+    selectMlsRetrying,
+    selectPrejoinParticipantCount,
+    selectReconnectionFailed,
+    setReconnectionFailed,
+} from '@proton/meet/store/slices/connectionSlice';
 import {
     setInvalidMeetingLinkModalOpen,
     setPreviousMeetingLink,
     setUpsellModalType,
 } from '@proton/meet/store/slices/meetAppStateSlice';
-import { addKeyRotationLog } from '@proton/meet/store/slices/meetingInfo';
 import {
     selectHasAnotherAdmin,
     selectIsLocalParticipantAdminOrHost,
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import { setMeetingLocked, toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
-import {
-    PopUpControls,
-    resetUiState,
-    setMeetingReadyPopupOpen,
-    setPopupStateValue,
-} from '@proton/meet/store/slices/uiStateSlice';
-import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
+import { PopUpControls, setPopupStateValue } from '@proton/meet/store/slices/uiStateSlice';
+import { selectIsGuest, selectSubscriptionStatus, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
-import {
-    decryptSessionKey,
-    deriveEncryptionKeyFromSessionKey,
-    encryptDisplayNameWithKey,
-} from '@proton/meet/utils/cryptoUtils';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
-import { sanitizeMessage } from '@proton/sanitize/purify';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
@@ -54,24 +43,23 @@ import { MeetingOpenedInDesktopApp } from '../../components/MeetingOpenedInDeskt
 import { PasswordPrompt } from '../../components/PasswordPrompt/PasswordPrompt';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
-import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
 import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
+import { type MeetingDetails, useJoinFlow } from '../../hooks/protonMeetContainer/useJoinFlow';
 import { useMeetingCleanup } from '../../hooks/protonMeetContainer/useMeetingCleanup';
+import { useMeetingConnection } from '../../hooks/protonMeetContainer/useMeetingConnection';
 import { useMeetingErrorContext } from '../../hooks/protonMeetContainer/useMeetingErrorContext';
-import { useReconnection } from '../../hooks/protonMeetContainer/useReconnection';
+import { useMlsSession } from '../../hooks/protonMeetContainer/useMlsSession';
+import { useRoomEventHandlers } from '../../hooks/protonMeetContainer/useRoomEventHandlers';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
-import { logJoinStats } from '../../hooks/telemetry/meetingTelemetry';
-import { getUrlWithoutProtocol } from '../../hooks/telemetry/utils';
 import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
 import { useDisplayName } from '../../hooks/useDisplayName';
 import { useKeyManagement } from '../../hooks/useKeyManagement';
-import { isConnectionTimeoutError, useLiveKitConnection } from '../../hooks/useLiveKitConnection';
-import { useMlsSession } from '../../hooks/useMlsSession';
+import { useLiveKitConnection } from '../../hooks/useLiveKitConnection';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
 import { useSafariWebsocketVisibilityHandler } from '../../hooks/useSafariWebsocketVisibilityHandler';
@@ -79,7 +67,6 @@ import { useStableCallback } from '../../hooks/useStableCallback';
 import { useWakeLock } from '../../hooks/useWakeLock';
 import { LoadingState } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
-import { getIceCandidateInfo } from '../../utils/checkIfUsingTurnRelay';
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { cleanupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
@@ -96,21 +83,10 @@ interface ProtonMeetContainerProps {
     user?: UserModel | null;
 }
 
-const getNetworkHints = () => {
-    const connection = (navigator as any).connection;
-    if (!connection) {
-        return {};
-    }
-    return {
-        networkEffectiveType: connection.effectiveType as string | undefined,
-        networkRtt: connection.rtt as number | undefined,
-        networkDownlink: connection.downlink as number | undefined,
-    };
-};
-
-export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetContainerProps) => {
+export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) => {
     const dispatch = useMeetDispatch();
     const isGuest = useMeetSelector(selectIsGuest);
+    const userId = useMeetSelector(selectUserId);
     const { isPaidUser, isSubUser } = useMeetSelector(selectSubscriptionStatus);
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
     const hasAnotherAdmin = useMeetSelector(selectHasAnotherAdmin);
@@ -119,7 +95,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
     const meetUpsellEnabled = useFlag('MeetUpsell');
     const meetOpenLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
-    const meetJoinTelemetryEnabled = useFlag('MeetJoinTelemetry');
 
     useWakeLock();
 
@@ -131,7 +106,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
 
     const { meetingLinkNameRef, withMeetingLinkNameTag, reportMeetError, clearSentryReportErrorCounts } =
         useMeetingErrorContext();
-    const { createNotification } = useNotifications();
 
     const {
         connectWithStunFallbackToTurnRelay,
@@ -142,7 +116,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
     } = useLiveKitConnection({ reportMeetError, withMeetingLinkNameTag });
 
     const history = useHistory();
-    const createInstantMeeting = useCreateInstantMeeting();
 
     const [decryptionReadinessStatus, setDecryptionReadinessStatus] = useState(
         MeetingDecryptionReadinessStatus.UNINITIALIZED
@@ -160,31 +133,28 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
 
     const instantMeetingRef = useRef(!token);
 
-    const { displayName, setDisplayName } = useDisplayName({ isGuest, userId: user?.ID, isInstantJoin });
+    const { displayName, setDisplayName } = useDisplayName({ isGuest, userId, isInstantJoin });
 
-    const [joiningInProgress, setJoiningInProgress] = useState(false);
-    const [joinedRoom, setJoinedRoom] = useState(false);
+    const joinedRoom = useMeetSelector(selectJoinedRoom);
+    const joiningInProgress = useMeetSelector(selectJoiningInProgress);
+    const isReconnecting = useMeetSelector(selectIsReconnecting);
+    const reconnectionFailed = useMeetSelector(selectReconnectionFailed);
+    const mlsRetrying = useMeetSelector(selectMlsRetrying);
+    const prejoinParticipantCount = useMeetSelector(selectPrejoinParticipantCount);
 
-    const [meetingDetails, setMeetingDetails] = useState({
+    const [meetingDetails, setMeetingDetails] = useState<MeetingDetails>({
         meetingId: token,
         meetingPassword: urlPassword,
         meetingName: '',
         locked: false,
         maxDuration: 0,
         maxParticipants: 0,
-        expirationTime: null as number | null,
+        expirationTime: null,
     });
 
-    const [isReconnecting, setIsReconnecting] = useState(false);
-    const [reconnectionFailed, setReconnectionFailed] = useState(false);
-    const [mlsRetrying, setMlsRetrying] = useState(false);
     // Stable ref to break the circular dependency between useConnectionHealthCheck and performFullReconnection
     const triggerFullReconnectionRef = useRef<(reason: RejoinReasonInfo) => void>(() => {});
-    const [prejoinParticipantCount, setPrejoinParticipantCount] = useState<number | null>(null);
-    const [liveKitConnectionState, setLiveKitConnectionState] = useState<ConnectionState | null>(null);
-    const [showReconnectedMessage, setShowReconnectedMessage] = useState(false);
 
-    const liveKitConnectionStateRef = useRef<ConnectionState | null>(null);
     const accessTokenRef = useRef<string | null>(null);
     const decryptionKeyRef = useRef<CryptoKey | null>(null);
 
@@ -206,9 +176,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         isDisconnected: isReconnecting || reconnectionFailed,
     });
 
-    const joinBlockedRef = useRef(false);
     const joinedRoomLoggedRef = useRef(false);
-    const loadingStartTimeRef = useRef(0);
 
     const meetCoreClient = useMeetCoreClient();
     const room = useRoomContext();
@@ -218,25 +186,11 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
 
     const meetingInfoRef = useRef<MeetingInfoResponse | null>(null);
 
-    const getCachedMeetingInfo = useCallback(
-        async (meetingToken: string) => {
-            if (meetingInfoRef.current) {
-                return meetingInfoRef.current;
-            }
-            const info = await getMeetingInfo(meetingToken);
-            meetingInfoRef.current = info;
-            return info;
-        },
-        [getMeetingInfo]
-    );
-
     useIsRecordingInProgressReceiver();
 
     const isGuestAdminRef = useRef(false);
 
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
-    const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
-    const isMeetNewSwitchJoinTypeEnabled = useFlag('MeetNewSwitchJoinType');
 
     const {
         keyRotationScheduler,
@@ -262,7 +216,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         updateAdminParticipant,
         allowHealthCheck,
         triggerFullReconnectionRef,
-        setMlsRetrying,
         currentKeyRef,
         mlsGroupStateRef,
     });
@@ -286,7 +239,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         disallowHealthCheck,
         cleanupMlsState,
         stopPiP,
-        setJoinedRoom,
     });
 
     useSafariWebsocketVisibilityHandler({
@@ -301,11 +253,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
 
     const assignHost = useAssignHost(accessTokenRef.current as string, token);
 
-    const updateAccessToken = (accessToken: string) => {
-        accessTokenRef.current = accessToken;
-    };
-
-    const { isReconnectingRef, websocketUrlRef, performFullReconnection } = useReconnection({
+    const { isReconnectingRef, websocketUrlRef, performFullReconnection, connectWithMls } = useMeetingConnection({
         meetingLinkNameRef,
         meetingPassword: meetingDetails.meetingPassword as string,
         displayName,
@@ -316,20 +264,36 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         keyRotationScheduler,
         getAccessDetails,
         handleMlsSetup,
+        reportMLSRelatedError,
         connectWithStunFallbackToTurnRelay,
         cleanupMlsState,
         allowHealthCheck,
         disallowHealthCheck,
         initializeDevices,
         getParticipants,
+        getQueryParticipantsCount,
         reportMeetError,
         withMeetingLinkNameTag,
-        setJoinedRoom,
-        setMlsRetrying,
-        setIsReconnecting,
-        setReconnectionFailed,
         triggerFullReconnectionRef,
     });
+
+    const { liveKitConnectionState, setLiveKitConnectionState, showReconnectedMessage, setShowReconnectedMessage } =
+        useRoomEventHandlers({
+            joinedRoom,
+            disallowHealthCheck,
+            cleanupMlsState,
+            stopPiP,
+            joinedRoomLoggedRef,
+            instantMeetingRef,
+            mlsSetupDone,
+            isReconnectingRef,
+            isExpiringRef,
+            meetingLinkRef,
+            meetingLinkNameRef,
+            triggerFullReconnectionRef,
+            reportMeetError,
+            withMeetingLinkNameTag,
+        });
 
     const submitPassword = async () => {
         try {
@@ -390,501 +354,34 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         }
     };
 
-    const handleMeetingIsLockedError = async () => {
-        setIsMeetingLockedModalOpen(true);
-    };
-
-    const handleWebRtcUnsupported = () => {
-        if (!isWebRtcSupported()) {
-            setIsWebRtcUnsupportedModalOpen(true);
-            throw new Error('Your browser does not support WebRTC');
-        }
-    };
-
-    const handleJoin = async (displayName: string, meetingToken: string = token, meetingPassword: string) => {
-        setDisplayName(displayName);
-
-        let tokenFetchMs: number | null = null;
-        let mlsSetupMs: number | null = null;
-        let livekitConnectMs: number | null = null;
-        let deviceInitMs: number | null = null;
-        let participantCount = 0;
-        let lastConnectionInfo = { stunFailed: false, connectionAttempts: 0 };
-
-        try {
-            const sanitizedParticipantName = sanitizeMessage(displayName);
-            const meetingInfo = await getCachedMeetingInfo(meetingToken);
-            const sessionKey = await decryptSessionKey({
-                encryptedSessionKey: meetingInfo.MeetingInfo.SessionKey,
-                password: meetingPassword,
-                salt: meetingInfo.MeetingInfo.Salt,
-            });
-            const decryptionKey = sessionKey ? await deriveEncryptionKeyFromSessionKey(sessionKey) : null;
-            decryptionKeyRef.current = decryptionKey;
-            const encryptedDisplayName = decryptionKey
-                ? await encryptDisplayNameWithKey(decryptionKey, sanitizedParticipantName)
-                : '';
-
-            const t0 = performance.now();
-            const { websocketUrl, accessToken } = await getAccessDetails({
-                displayName: sanitizedParticipantName,
-                token: meetingToken,
-                encryptedDisplayName: encryptedDisplayName,
-            });
-            tokenFetchMs = Math.round(performance.now() - t0);
-
-            websocketUrlRef.current = websocketUrl;
-
-            // The backend sets ExpirationTime on the meeting once the first participant joins (i.e. right here,
-            // triggered by getAccessDetails). If the cached response we fetched before getAccessDetails didn't
-            // have it yet, invalidate the cache so the next getCachedMeetingInfo call fetches a fresh response
-            // with the populated ExpirationTime. Otherwise the cached value is still accurate and we avoid an
-            // extra network round-trip.
-            if (!meetingInfo.MeetingInfo.ExpirationTime) {
-                meetingInfoRef.current = null;
-            }
-
-            let participantsCountValue: number | null = null;
-            if (isMeetNewSwitchJoinTypeEnabled) {
-                // No need to await here, we just want to set the participants count for the prejoin loader
-                // In the handleMlsSetup call, the participants count will be handled in the new join method.
-                void getQueryParticipantsCount(meetingToken).then((count) => {
-                    setPrejoinParticipantCount(count ?? 0);
-                });
-            } else {
-                // get participants count from the API so we can know which joinType to use based on the participants count
-                participantsCountValue = (await getQueryParticipantsCount(meetingToken)) ?? 0;
-
-                participantCount = participantsCountValue;
-            }
-
-            accessTokenRef.current = accessToken;
-
-            const t1 = performance.now();
-            const { key: groupKey, epoch } =
-                (await handleMlsSetup(meetingToken, accessToken, meetingPassword, participantsCountValue)) || {};
-            mlsSetupMs = Math.round(performance.now() - t1);
-
-            reportMLSRelatedError(groupKey, epoch);
-
-            if (!groupKey || !epoch) {
-                throw new Error('Group key or epoch is missing');
-            }
-
-            dispatch(
-                addKeyRotationLog({
-                    timestamp: Date.now(),
-                    epoch: Number(epoch),
-                    type: 'log',
-                    message: 'Key rotation successful',
-                })
-            );
-
-            if (isMeetSeamlessKeyRotationEnabled) {
-                // eslint-disable-next-line no-console
-                console.log('Enabled seamless key rotation');
-                await keyRotationScheduler.schedule(groupKey, epoch);
-            } else {
-                await keyProvider.setKeyWithEpoch(groupKey, epoch);
-            }
-            const timeoutMs = 20_000;
-            try {
-                await room.setE2EEEnabled(true);
-                // Start device init concurrently with connect so the camera track is included in the initial SDP offer
-                // rather than a post-connect renegotiation.
-                // On Safari with H264, renegotiation can cause the simulcast encoder to fail silently.
-                // E2EE is already enabled above so the queued publish will be encrypted.
-                const t2 = performance.now();
-                const initDevices = initializeDevices({ timeoutMs: 5_000 });
-                lastConnectionInfo = await connectWithStunFallbackToTurnRelay(websocketUrl, accessToken, timeoutMs);
-                livekitConnectMs = Math.round(performance.now() - t2);
-                await initDevices;
-                deviceInitMs = Math.round(performance.now() - t2);
-            } catch (livekitError: any) {
-                // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
-                try {
-                    await meetCoreClient.leaveMeeting();
-                } catch (leaveError) {
-                    reportMeetError(
-                        'Failed to leave MLS group after LiveKit connection failure',
-                        withMeetingLinkNameTag(leaveError)
-                    );
-                }
-                disallowHealthCheck();
-                cleanupMlsState();
-                throw livekitError;
-            }
-
-            await getParticipants(meetingToken);
-
-            if (meetJoinTelemetryEnabled) {
-                const totalJoinMs = Date.now() - loadingStartTimeRef.current;
-                if (totalJoinMs > 15_000) {
-                    const iceCandidateInfo = await getIceCandidateInfo(room);
-                    logJoinStats({
-                        roomId: meetingToken,
-                        isReconnect: false,
-                        isInstantJoin,
-                        participantCount,
-                        websocketUrl: getUrlWithoutProtocol(websocketUrl),
-                        tokenFetchMs,
-                        mlsSetupMs,
-                        livekitConnectMs,
-                        deviceInitMs,
-                        totalJoinMs,
-                        stunFailed: lastConnectionInfo.stunFailed,
-                        turnFallback: isUsingTurnRelay,
-                        connectionAttempts: lastConnectionInfo.connectionAttempts,
-                        ...iceCandidateInfo,
-                        ...getNetworkHints(),
-                    });
-                }
-            }
-
-            // In case of mobile devices we need to set these states early, as the camera preview being active while initializing the devices for LiveKit causes issues.
-            if (isMobile()) {
-                setJoinedRoom(true);
-                setJoiningInProgress(false);
-                await wait(50);
-            }
-
-            const originalOnTokenRefresh = room.engine.client.onTokenRefresh;
-
-            room.engine.client.onTokenRefresh = (token) => {
-                updateAccessToken(token);
-                originalOnTokenRefresh?.(token);
-            };
-
-            // Tracks WebSocket/media connection status at the transport layer
-            // If connectionLost is true, the MLS modal takes precedence and banner is hidden
-            room.on(RoomEvent.ConnectionStateChanged, (state: ConnectionState) => {
-                const previousState = liveKitConnectionStateRef.current;
-                liveKitConnectionStateRef.current = state;
-                setLiveKitConnectionState(state);
-
-                if (
-                    state === ConnectionState.Connected &&
-                    previousState !== null &&
-                    previousState !== ConnectionState.Connected
-                ) {
-                    // Show brief "Reconnected" message only if MLS health check hasn't failed
-                    setShowReconnectedMessage(true);
-                    setTimeout(() => {
-                        setShowReconnectedMessage(false);
-                        // Don't clear state immediately - let MLS health check run first
-                        setTimeout(() => {
-                            setLiveKitConnectionState(null);
-                            liveKitConnectionStateRef.current = null;
-                        }, 1000);
-                    }, 3000);
-                } else if (state === ConnectionState.Connected) {
-                    setShowReconnectedMessage(false);
-                }
-            });
-
-            room.on(RoomEvent.Disconnected, (reason?: DisconnectReason) => {
-                // STATE_MISMATCH is recoverable — trigger full reconnection flow
-                if (reason === DisconnectReason.STATE_MISMATCH) {
-                    // Don't call leaveMeeting here, performFullReconnection will await it
-                    disallowHealthCheck();
-                    setIsReconnecting(true);
-                    setJoinedRoom(false);
-                    setLiveKitConnectionState(null);
-                    setShowReconnectedMessage(false);
-                    liveKitConnectionStateRef.current = null;
-                    joinedRoomLoggedRef.current = false;
-                    cleanupMlsState();
-                    dispatch(resetChatAndReactions());
-                    dispatch(resetUiState());
-                    triggerFullReconnectionRef.current(RejoinReasonInfo.LivekitStateMismatch);
-                    return;
-                }
-
-                instantMeetingRef.current = false;
-                mlsSetupDone.current = false;
-                disallowHealthCheck();
-
-                setJoinedRoom(false);
-                setLiveKitConnectionState(null);
-                setShowReconnectedMessage(false);
-                liveKitConnectionStateRef.current = null;
-
-                joinedRoomLoggedRef.current = false;
-                // Skip leaveMeeting when performFullReconnection is active, it will await it properly.
-                if (!isReconnectingRef.current) {
-                    void meetCoreClient.leaveMeeting();
-                }
-                void stopPiP();
-
-                cleanupMlsState();
-
-                dispatch(resetChatAndReactions());
-                dispatch(resetUiState());
-
-                if (reason === DisconnectReason.ROOM_DELETED) {
-                    if (!isExpiringRef.current) {
-                        dispatch(setPreviousMeetingLink(meetingLinkRef.current));
-                        dispatch(setUpsellModalType(UpsellModalTypes.MeetingEnded));
-                    }
-                    isExpiringRef.current = false;
-                } else if (reason === DisconnectReason.PARTICIPANT_REMOVED) {
-                    dispatch(setPreviousMeetingLink(meetingLinkRef.current));
-                    dispatch(setUpsellModalType(UpsellModalTypes.RemovedFromMeeting));
-                } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
-                    // Log abnormal error to sentry
-                    reportMeetError('Room disconnected unexpectedly', withMeetingLinkNameTag(DisconnectReason[reason]));
-                }
-                meetingLinkNameRef.current = '';
-
-                if (reason === DisconnectReason.ROOM_DELETED || reason === DisconnectReason.PARTICIPANT_REMOVED) {
-                    history.push('/dashboard');
-                }
-            });
-
-            if (!isMobile()) {
-                setJoinedRoom(true);
-                setJoiningInProgress(false);
-            }
-
-            // Log successful room join (only once)
-            if (!joinedRoomLoggedRef.current && meetCoreClient && isMeetClientMetricsLogEnabled) {
-                joinedRoomLoggedRef.current = true;
-                try {
-                    await meetCoreClient.logJoinedRoom();
-                } catch (error) {
-                    reportMeetError('Failed to log joined room', withMeetingLinkNameTag(error));
-                }
-            }
-        } catch (error: any) {
-            if (meetJoinTelemetryEnabled) {
-                logJoinStats({
-                    roomId: meetingToken,
-                    isReconnect: false,
-                    isInstantJoin,
-                    participantCount,
-                    websocketUrl: websocketUrlRef.current ? getUrlWithoutProtocol(websocketUrlRef.current) : undefined,
-                    tokenFetchMs,
-                    mlsSetupMs,
-                    livekitConnectMs,
-                    deviceInitMs,
-                    totalJoinMs: null,
-                    stunFailed: lastConnectionInfo.stunFailed,
-                    turnFallback: isUsingTurnRelay,
-                    connectionAttempts: lastConnectionInfo.connectionAttempts,
-                    ...getNetworkHints(),
-                });
-            }
-
-            reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
-
-            setJoiningInProgress(false);
-            joinBlockedRef.current = false;
-
-            const { code } = getApiError(error);
-
-            // Log failed room join
-            if (isMeetClientMetricsLogEnabled) {
-                try {
-                    await meetCoreClient.logJoinedRoomFailed(code ? String(code) : undefined);
-                } catch (logError) {
-                    reportMeetError('Failed to log joined room failed', withMeetingLinkNameTag(logError));
-                }
-            }
-
-            if (code === MEETING_LOCKED_ERROR_CODE) {
-                await handleMeetingIsLockedError();
-                return;
-            }
-            if (isConnectionTimeoutError(error)) {
-                setIsConnectionFailedModalOpen(true);
-                return;
-            }
-            if (!error?.userNotified) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`Failed to join meeting. Please try again.`,
-                });
-            }
-        }
-    };
-
-    const joinInstantMeeting = async (displayName: string) => {
-        handleWebRtcUnsupported();
-
-        if (joinBlockedRef.current) {
-            return;
-        }
-        setJoiningInProgress(true);
-
-        joinBlockedRef.current = true;
-
-        loadingStartTimeRef.current = Date.now();
-
-        try {
-            await meetCoreClient.logStartToJoinRoom();
-        } catch (error) {
-            reportMeetError('Failed to log start to join room', withMeetingLinkNameTag(error));
-        }
-
-        try {
-            const { id, passwordBase } = await createInstantMeeting({
-                params: {},
-                isGuest: isGuest,
-                isPaidUser,
-            });
-            meetingLinkNameRef.current = id; // id is the meeting link name
-
-            const handshakeResult = await handleHandshakeInfoFetch(id);
-
-            if (!handshakeResult) {
-                setJoiningInProgress(false);
-                joinBlockedRef.current = false;
-                return;
-            }
-
-            const { roomName, locked, maxDuration, maxParticipants } = await getMeetingDetails({
-                token: id,
-                customPassword: '',
-                urlPassword: passwordBase,
-                handshakeInfo: handshakeResult.handshakeInfo as SRPHandshakeInfo,
-            });
-
-            setMeetingDetails((prev) => ({
-                ...prev,
-                meetingId: id,
-                meetingPassword: passwordBase,
-                meetingName: roomName,
-                locked,
-                maxDuration,
-                maxParticipants,
-            }));
-
-            dispatch(setMeetingLocked(locked));
-            dispatch(setMeetingReadyPopupOpen(true));
-
-            await handleJoin(displayName, id, passwordBase);
-
-            meetingLinkRef.current = getMeetingLink(id, passwordBase);
-
-            const meetingInfo = await getCachedMeetingInfo(id);
-
-            setMeetingDetails((prev) => ({
-                ...prev,
-                expirationTime: 1000 * (meetingInfo.MeetingInfo.ExpirationTime ?? 0),
-            }));
-
-            isGuestAdminRef.current = isGuest;
-
-            history.push(meetingLinkRef.current);
-        } catch (error: any) {
-            reportMeetError('Failed to create instant meeting', withMeetingLinkNameTag(error));
-            setJoiningInProgress(false);
-            if (!error?.userNotified) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`Failed to start meeting. Please try again.`,
-                });
-            }
-        }
-
-        joinBlockedRef.current = false;
-    };
-
-    const joinMeeting = async (displayName: string, meetingToken: string = token) => {
-        isExpiringRef.current = false;
-        meetingLinkNameRef.current = meetingToken; // meetingToken is the meeting link name
-        handleWebRtcUnsupported();
-
-        if (joinBlockedRef.current) {
-            return;
-        }
-
-        setJoiningInProgress(true);
-
-        joinBlockedRef.current = true;
-
-        loadingStartTimeRef.current = Date.now();
-
-        try {
-            await meetCoreClient.logStartToJoinRoom();
-        } catch (error) {
-            reportMeetError('Failed to log start to join room', withMeetingLinkNameTag(error));
-        }
-
-        try {
-            const handshakeInfo = await initHandshake(meetingToken);
-
-            if (!handshakeInfo) {
-                setJoiningInProgress(false);
-                joinBlockedRef.current = false;
-                return;
-            }
-
-            let details = {
-                meetingName: '',
-                locked: false,
-                maxDuration: 0,
-                maxParticipants: 0,
-            };
-
-            try {
-                const { roomName, locked, maxDuration, maxParticipants } = await getMeetingDetails({
-                    token: meetingToken,
-                    customPassword: password,
-                    urlPassword,
-                    handshakeInfo: handshakeInfo as SRPHandshakeInfo,
-                });
-
-                details = {
-                    meetingName: roomName,
-                    locked,
-                    maxDuration,
-                    maxParticipants,
-                };
-            } catch (error: any) {
-                setJoiningInProgress(false);
-                joinBlockedRef.current = false;
-                if (!error?.userNotified) {
-                    createNotification({
-                        type: 'error',
-                        text: c('Error').t`Failed to join meeting. Please try again.`,
-                    });
-                }
-                return;
-            }
-
-            setMeetingDetails((prev) => ({
-                ...prev,
-                meetingName: details.meetingName,
-                locked: details.locked,
-                maxDuration: details.maxDuration,
-                maxParticipants: details.maxParticipants,
-            }));
-
-            dispatch(setMeetingLocked(details.locked));
-
-            await handleJoin(displayName, meetingToken, urlPassword);
-
-            meetingLinkRef.current = getMeetingLink(token, urlPassword);
-            const meetingInfo = await getCachedMeetingInfo(meetingToken);
-
-            setMeetingDetails((prev) => ({
-                ...prev,
-                expirationTime: 1000 * (meetingInfo.MeetingInfo.ExpirationTime ?? 0),
-            }));
-        } catch (error: any) {
-            reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
-            setJoiningInProgress(false);
-            if (!error?.userNotified && !isConnectionTimeoutError(error)) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`Failed to join meeting. Please try again.`,
-                });
-            }
-        }
-
-        joinBlockedRef.current = false;
-    };
+    const { joinMeeting, joinInstantMeeting } = useJoinFlow({
+        token,
+        urlPassword,
+        password,
+        isInstantJoin,
+        setDisplayName,
+        connectWithMls,
+        websocketUrlRef,
+        decryptionKeyRef,
+        accessTokenRef,
+        meetingInfoRef,
+        meetingLinkRef,
+        meetingLinkNameRef,
+        isGuestAdminRef,
+        isExpiringRef,
+        joinedRoomLoggedRef,
+        setMeetingDetails,
+        setIsWebRtcUnsupportedModalOpen,
+        setIsMeetingLockedModalOpen,
+        setIsConnectionFailedModalOpen,
+        getMeetingDetails,
+        initHandshake,
+        getMeetingInfo,
+        isUsingTurnRelay,
+        handleHandshakeInfoFetch,
+        reportMeetError,
+        withMeetingLinkNameTag,
+    });
 
     const setup = async () => {
         if (meetOpenLinksInDesktopApp && getDesktopAppPreference() && token && !isInstantJoin && !isElectronApp) {
@@ -936,11 +433,11 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
             dispatch(setUpsellModalType(UpsellModalTypes.HostPaidAccount));
         }
 
-        if (!isLocalParticipantAdminOrHost && user && !isPaidUser) {
+        if (!isLocalParticipantAdminOrHost && !isGuest && !isPaidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.FreeAccount));
         }
 
-        if (!isLocalParticipantAdminOrHost && user && (isPaidUser || isSubUser)) {
+        if (!isLocalParticipantAdminOrHost && !isGuest && (isPaidUser || isSubUser)) {
             dispatch(setUpsellModalType(UpsellModalTypes.PaidAccount));
         }
 
@@ -1140,7 +637,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
                         setLiveKitConnectionState={setLiveKitConnectionState}
                         isReconnecting={isReconnecting}
                         mlsRetrying={mlsRetrying}
-                        onSimulateReconnection={() => setReconnectionFailed(true)}
+                        onSimulateReconnection={() => dispatch(setReconnectionFailed(true))}
                         websocketUrl={websocketUrlRef.current}
                     />
                 </MeetingRecorderProvider>
@@ -1159,7 +656,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
                     isInstantJoin={isInstantJoin}
                     joiningLoaderHeader={joiningLoaderHeader}
                     joiningLoaderSubtitle={joiningLoaderSubtitle}
-                    userId={user?.ID}
                 />
             )}
 
@@ -1169,11 +665,11 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
             {reconnectionFailed && (
                 <ConnectionLostModal
                     onRejoin={() => {
-                        setReconnectionFailed(false);
+                        dispatch(setReconnectionFailed(false));
                         void performFullReconnection(RejoinReasonInfo.Other);
                     }}
                     onLeave={() => {
-                        setReconnectionFailed(false);
+                        dispatch(setReconnectionFailed(false));
                         handleUngracefulLeave();
                     }}
                 />
@@ -1201,10 +697,4 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
             ) : null}
         </div>
     );
-};
-
-export const ProtonMeetContainerWithUser = (props: Omit<ProtonMeetContainerProps, 'user'>) => {
-    const [user] = useUser();
-
-    return <ProtonMeetContainer {...props} user={user} />;
 };

@@ -1,17 +1,17 @@
-import { type Dispatch, type MutableRefObject, type SetStateAction, useRef } from 'react';
+import { type MutableRefObject, useRef } from 'react';
 
-import { JoinTypeInfo, MeetCoreErrorEnum, MlsSyncStateInfo, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
+import { MeetCoreErrorEnum, MlsSyncStateInfo, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { setMlsRetrying } from '@proton/meet/store/slices/connectionSlice';
 import { setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
 import type { MLSGroupState } from '@proton/meet/types/types';
-import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
-import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../utils/wasmUtils';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
 
 interface UseMlsSessionParams {
     getGroupKeyInfo: () => Promise<{ key: string; epoch: bigint }>;
@@ -19,7 +19,6 @@ interface UseMlsSessionParams {
     updateAdminParticipant: (roomId: string, participantUid: string, participantType: Number) => Promise<void>;
     allowHealthCheck: () => void;
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
-    setMlsRetrying: Dispatch<SetStateAction<boolean>>;
     currentKeyRef: MutableRefObject<string | null>;
     mlsGroupStateRef: MutableRefObject<MLSGroupState | null>;
 }
@@ -40,14 +39,9 @@ export const useMlsSession = ({
     updateAdminParticipant,
     allowHealthCheck,
     triggerFullReconnectionRef,
-    setMlsRetrying,
     currentKeyRef,
     mlsGroupStateRef,
 }: UseMlsSessionParams): UseMlsSessionResult => {
-    const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
-    const isMeetSwitchJoinTypeEnabled = useFlag('MeetSwitchJoinType');
-    const isMeetNewSwitchJoinTypeEnabled = useFlag('MeetNewSwitchJoinType');
-
     const meetCoreClient = useMeetCoreClient();
 
     const authentication = useAuthentication();
@@ -59,8 +53,7 @@ export const useMlsSession = ({
     const handleMlsSetup = async (
         meetingLinkName: string,
         accessToken: string,
-        meetingPassword: string,
-        participantsCountValue?: number | null
+        meetingPassword: string
     ): Promise<{ key: string; epoch: bigint } | undefined> => {
         if (!mlsSetupDone.current) {
             mlsSetupDone.current = true;
@@ -70,12 +63,12 @@ export const useMlsSession = ({
                 onNewGroupKeyInfo,
                 onMlsSyncStateChanged: (state: number) => {
                     if (state === MlsSyncStateInfo.Retrying) {
-                        setMlsRetrying(true);
+                        dispatch(setMlsRetrying(true));
                     } else if (state === MlsSyncStateInfo.Failed) {
-                        setMlsRetrying(false);
+                        dispatch(setMlsRetrying(false));
                         triggerFullReconnectionRef.current(RejoinReasonInfo.EpochMismatch);
                     } else if (state === MlsSyncStateInfo.Success) {
-                        setMlsRetrying(false);
+                        dispatch(setMlsRetrying(false));
                     }
                 },
             });
@@ -84,48 +77,13 @@ export const useMlsSession = ({
 
         try {
             const sessionId = authentication.hasSession() ? authentication.getUID() : null;
-            if (isMeetNewSwitchJoinTypeEnabled) {
-                await meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType(
-                    accessToken,
-                    meetingLinkName,
-                    meetingPassword,
-                    sessionId,
-                    isMeetSwitchJoinTypeEnabled
-                );
-            } else {
-                const joinType = await meetCoreClient.getJoinType(
-                    isMeetNewJoinTypeEnabled,
-                    isMeetSwitchJoinTypeEnabled,
-                    participantsCountValue ?? 0
-                );
-                if (joinType === JoinTypeInfo.ExternalProposal) {
-                    // eslint-disable-next-line no-console
-                    console.log('Joining room with proposal');
-                    try {
-                        await meetCoreClient.joinRoomWithProposal(
-                            accessToken,
-                            meetingLinkName,
-                            meetingPassword,
-                            sessionId
-                        );
-                    } catch (error) {
-                        // fallback to join with external commit
-                        await meetCoreClient.joinMeetingWithAccessToken(
-                            accessToken,
-                            meetingLinkName,
-                            meetingPassword,
-                            sessionId
-                        );
-                    }
-                } else {
-                    await meetCoreClient.joinMeetingWithAccessToken(
-                        accessToken,
-                        meetingLinkName,
-                        meetingPassword,
-                        sessionId
-                    );
-                }
-            }
+            await meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType(
+                accessToken,
+                meetingLinkName,
+                meetingPassword,
+                sessionId,
+                true
+            );
 
             await meetCoreClient.setMlsGroupUpdateHandler();
             await meetCoreClient.setLiveKitAdminChangeHandler();
