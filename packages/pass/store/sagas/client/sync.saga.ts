@@ -19,9 +19,11 @@ import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/priva
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
+import { refreshUserData } from '@proton/pass/store/sagas/events/core/channel.core';
 import { selectSyncStrategy, selectUser } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { MaybeNull } from '@proton/pass/types';
+import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { User } from '@proton/shared/lib/interfaces';
 
@@ -36,6 +38,14 @@ function* syncWorker(options: RootSagaOptions) {
 
     try {
         yield wait(1_500);
+
+        /** Refresh user data (addresses + keys) before syncing */
+        try {
+            const keyPassword = options.getAuthStore().getPassword();
+            if (keyPassword) yield call(refreshUserData, options.extensionId, keyPassword);
+        } catch (err) {
+            logger.warn('[Saga::Sync] user data refresh failed', err);
+        }
 
         if (legacySync) {
             /** In V2 mode these are covered by user events:
