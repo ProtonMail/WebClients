@@ -58,8 +58,8 @@ export const EmptyFileConfirmModal = () => {
                             )}
                         </p>
                         <ul className="unstyled mb-2">
-                            {fileNames.map((name) => (
-                                <li key={name} className="text-bold text-break">
+                            {fileNames.map((name, index) => (
+                                <li key={`${name}-${index}`} className="text-bold text-break">
                                     {name}
                                 </li>
                             ))}
