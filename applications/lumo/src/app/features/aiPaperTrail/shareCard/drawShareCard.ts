@@ -1,6 +1,7 @@
 import lumoSideeyeIcon from '@proton/styles/assets/img/lumo/lumo-sideeye.svg';
 
 import type { PaperTrailCardData } from '../reportTypes';
+import { privacyTypeLabel } from '../reportTypes';
 import { loadLucideIconImage } from './lucideIconImage';
 
 export const CARD_WIDTH = 1080;
@@ -16,23 +17,23 @@ const FONT_STACK = `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Robo
 const SYNE_FONT = `Syne, ${FONT_STACK}`;
 
 const LAYOUT = {
-    padding: 48,
-    logoSize: 72,
+    padding: 42,
+    logoSize: 128,
     logoToTitle: 16,
     titleSize: 44,
     titleToHero: 32,
     heroHeight: 292,
     heroRadius: 24,
     cardPad: 28,
-    heroColGap: 24,
-    heroLeftRatio: 0.42,
+    heroColGap: 12,
+    heroLeftRatio: 0.28,
     sectionGap: 48,
     knowledgePadX: 28,
     knowledgePadTop: 28,
     knowledgePadBottom: 32,
     knowledgeTitleGap: 36,
     knowledgeRowGap: 76,
-    barHeight: 10,
+    barHeight: 16,
     labelToBar: 18,
     colGap: 48,
     footerHeight: 52,
@@ -55,7 +56,6 @@ interface Palette {
     footerBg: string;
     footerBorder: string;
     icon: string;
-    iconBg: string;
     divider: string;
     border: string;
 }
@@ -64,17 +64,16 @@ const PALETTES: Record<ShareCardTheme, Palette> = {
     light: {
         bg: '#ffffff',
         hero: '#f3efff',
-        statsPanel: '#f3efff',
-        title: '#1c1340',
+        statsPanel: '#F3F0FF',
+        title: '#372580',
         subtle: '#6b6a7b',
-        label: '#8a849c',
+        label: '#6B6A7B',
         track: 'rgba(109, 74, 255, 0.12)',
         accent: '#6d4aff',
         ringTrack: 'rgba(109, 74, 255, 0.14)',
         footerBg: '#faf9fd',
         footerBorder: 'rgba(28, 19, 64, 0.08)',
-        icon: '#6d4aff',
-        iconBg: 'rgba(109, 74, 255, 0.12)',
+        icon: '#372580',
         divider: 'rgba(109, 74, 255, 0.16)',
         border: 'rgba(28, 19, 64, 0.1)',
     },
@@ -91,7 +90,6 @@ const PALETTES: Record<ShareCardTheme, Palette> = {
         footerBg: 'rgba(255, 255, 255, 0.04)',
         footerBorder: 'rgba(255, 255, 255, 0.1)',
         icon: '#b9a7ff',
-        iconBg: 'rgba(255, 255, 255, 0.08)',
         divider: 'rgba(255, 255, 255, 0.1)',
         border: 'rgba(255, 255, 255, 0.1)',
     },
@@ -111,16 +109,6 @@ const formatValue = (value: number): string => {
         return `$${(value / 1000).toFixed(value >= 10000 ? 0 : 1)}k`;
     }
     return `$${Math.round(value)}`;
-};
-
-export const privacyTypeLabel = (score: number): string => {
-    if (score >= 70) {
-        return 'Easy to read';
-    }
-    if (score >= 40) {
-        return 'Somewhat readable';
-    }
-    return 'Hard to read';
 };
 
 const exposureBarColor = (score: number, theme: ShareCardTheme): string => {
@@ -169,7 +157,7 @@ const loadImage = (src: string): Promise<HTMLImageElement> =>
     });
 
 const drawLabel = (ctx: CanvasRenderingContext2D, text: string, x: number, y: number, color: string): void => {
-    ctx.font = `700 15px ${FONT_STACK}`;
+    ctx.font = `700 17px ${FONT_STACK}`;
     ctx.fillStyle = color;
     ctx.textAlign = 'left';
     ctx.fillText(text.toUpperCase(), x, y);
@@ -219,13 +207,9 @@ const drawStatRow = (
     label: string,
     value: string
 ): void => {
-    const iconBox = 44;
+    const iconBox = 64;
     const iconX = x + 20;
     const iconY = y + (h - iconBox) / 2;
-
-    roundRect(ctx, iconX, iconY, iconBox, iconBox, 11);
-    ctx.fillStyle = palette.iconBg;
-    ctx.fill();
 
     if (icon) {
         ctx.drawImage(icon, iconX + 8, iconY + 8, iconBox - 16, iconBox - 16);
@@ -235,10 +219,10 @@ const drawStatRow = (
     const textMidY = y + h / 2;
     drawLabel(ctx, label, textX, textMidY - 16, palette.label);
     const valueSize = fitFont(ctx, value, 700, 28, 20, w - (textX - x) - 16);
-    ctx.font = `700 ${valueSize}px ${FONT_STACK}`;
-    ctx.fillStyle = palette.accent;
+    ctx.font = `600 ${valueSize * 1.1}px ${FONT_STACK}`;
+    ctx.fillStyle = palette.title;
     ctx.textAlign = 'left';
-    ctx.fillText(value, textX, textMidY + 14);
+    ctx.fillText(value, textX, textMidY + 22);
 };
 
 const drawShareCard = (
@@ -291,7 +275,7 @@ const drawShareCard = (
     const heroTitleY = heroY + LAYOUT.cardPad + 22;
 
     ctx.textAlign = 'left';
-    ctx.font = `700 22px ${SYNE_FONT}`;
+    ctx.font = `700 30px ${SYNE_FONT}`;
     ctx.fillStyle = palette.title;
     ctx.fillText('Privacy Exposure', heroInnerX, heroTitleY);
 
@@ -323,12 +307,12 @@ const drawShareCard = (
 
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillStyle = theme === 'light' ? palette.accent : palette.title;
-    ctx.font = `800 ${Math.round(ringRadius * 0.88)}px ${FONT_STACK}`;
-    ctx.fillText(String(data.exposureScore), ringCx, ringCy - 2);
+    ctx.fillStyle = palette.title;
+    ctx.font = `600 ${Math.round(ringRadius * 0.96)}px ${FONT_STACK}`;
+    ctx.fillText(String(data.exposureScore), ringCx, ringCy - 8);
     ctx.font = `600 ${Math.round(ringRadius * 0.22)}px ${FONT_STACK}`;
     ctx.fillStyle = palette.subtle;
-    ctx.fillText('OUT OF 100', ringCx, ringCy + ringRadius * 0.38);
+    ctx.fillText('OUT OF 100', ringCx, ringCy + ringRadius * 0.45);
     ctx.textBaseline = 'alphabetic';
 
     const statsX = heroInnerX + leftW + LAYOUT.heroColGap;
@@ -376,7 +360,7 @@ const drawShareCard = (
     const colW = (innerW - LAYOUT.colGap) / 2;
     const knowledgeCardH = knowledgeCardHeight(areas.length);
     const knowledgeTitleY = sectionY + LAYOUT.knowledgePadTop + 22;
-    const firstRowY = knowledgeTitleY + LAYOUT.knowledgeTitleGap;
+    const firstRowY = knowledgeTitleY + LAYOUT.knowledgeTitleGap + 22;
 
     roundRect(ctx, heroX, sectionY, heroW, knowledgeCardH, LAYOUT.heroRadius);
     ctx.fillStyle = palette.bg;
@@ -387,7 +371,7 @@ const drawShareCard = (
 
     ctx.textAlign = 'left';
     ctx.fillStyle = palette.title;
-    ctx.font = `700 24px ${SYNE_FONT}`;
+    ctx.font = `800 24px ${FONT_STACK}`;
     ctx.fillText('What AI Knows About Me', heroX + LAYOUT.knowledgePadX, knowledgeTitleY);
 
     areas.forEach((area, i) => {
@@ -398,7 +382,7 @@ const drawShareCard = (
         const areaColor = exposureBarColor(area.exposureScore, theme);
         const score = Math.max(0, Math.min(100, area.exposureScore));
 
-        ctx.font = `600 21px ${FONT_STACK}`;
+        ctx.font = `400 24px ${FONT_STACK}`;
         ctx.fillStyle = palette.title;
         ctx.textAlign = 'left';
         ctx.fillText(area.area, colX, y);
@@ -428,7 +412,7 @@ const drawShareCard = (
     ctx.lineWidth = 1;
     ctx.stroke();
 
-    ctx.font = `600 20px ${FONT_STACK}`;
+    ctx.font = `600 26px ${FONT_STACK}`;
     const footerPrefix = "What's your AI Paper Trail? ";
     ctx.fillStyle = palette.subtle;
     const prefixWidth = ctx.measureText(footerPrefix).width;
