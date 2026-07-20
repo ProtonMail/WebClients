@@ -7,7 +7,7 @@ import shuffle from '@proton/utils/shuffle';
 
 import { logParticipantQuality } from './meetingTelemetry';
 import type { ParticipantQualityStats } from './types';
-import { calculateStatsDelta, getWebRTCStats, shouldReportStats } from './utils';
+import { calculateStatsDelta, getUrlWithoutProtocol, getWebRTCStats, shouldReportStats } from './utils';
 
 const BATCH_SIZE = 10;
 const REPORT_INTERVAL_MS = 10 * MINUTE;
@@ -17,13 +17,15 @@ const MAX_STATS_PER_REPORT = 6;
 
 export class ParticipantQualityTelemetryProcessor {
     private room: Room;
+    private websocketUrl?: string;
     private poorQualityStats: ParticipantQualityStats[] = [];
     private interval: NodeJS.Timeout | null = null;
     private earlyReportTimeout: NodeJS.Timeout | null = null;
     private previousStatsByTrackSid = new Map<string, ParticipantQualityStats>();
 
-    constructor(room: Room) {
+    constructor(room: Room, websocketUrl?: string) {
         this.room = room;
+        this.websocketUrl = websocketUrl ? getUrlWithoutProtocol(websocketUrl) : undefined;
     }
 
     private getStatsForAllParticipants = async () => {
@@ -103,7 +105,7 @@ export class ParticipantQualityTelemetryProcessor {
 
         // Will be batched by telemetry
         [...selectedPoorQualityStats, ...selectedStats].forEach((stat) => {
-            logParticipantQuality(stat);
+            logParticipantQuality({ ...stat, websocketUrl: this.websocketUrl });
         });
 
         this.poorQualityStats = [];
