@@ -6,7 +6,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { ParticipantQualityTelemetryProcessor } from './ParticipantQualityTelemetryProcessor';
 
-export const useMeetingTelemetry = () => {
+export const useMeetingTelemetry = (websocketUrl?: string) => {
     const meetQualityTelemetryEnabled = useFlag('MeetQualityTelemetry');
     const room = useRoomContext();
 
@@ -15,12 +15,12 @@ export const useMeetingTelemetry = () => {
             return;
         }
 
-        const participantQualityTelemetryProcessor = new ParticipantQualityTelemetryProcessor(room);
+        const participantQualityTelemetryProcessor = new ParticipantQualityTelemetryProcessor(room, websocketUrl);
 
         participantQualityTelemetryProcessor.listen();
 
         return () => {
             participantQualityTelemetryProcessor.stopListening();
         };
-    }, [meetQualityTelemetryEnabled]);
+    }, [meetQualityTelemetryEnabled, room, websocketUrl]);
 };
