@@ -1,4 +1,5 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
+import { c } from 'ttag';
 
 import type { KtState } from '@proton/account/kt';
 import type { MemberState } from '@proton/account/member';
@@ -30,7 +31,7 @@ export const addCompanyThunk = ({
         const organizationKey = await dispatch(organizationKeyThunk());
         const adminOrgKey = organizationKey?.privateKey;
         if (!adminOrgKey) {
-            throw new Error('Organization key not available');
+            throw new Error(c('Error').t`Please set up your organization before adding a company.`);
         }
         const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
         const cryptoPayload = await generateSubsidiaryOrganizationKeys({ adminOrgKey, keyGenConfig });
