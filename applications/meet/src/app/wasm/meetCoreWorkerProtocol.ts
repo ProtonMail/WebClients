@@ -37,6 +37,18 @@ export type MeetCoreWorkerEventMessage =
           type: 'meet-core:event:mls-sync-state';
           state: number;
           reason?: number;
+      }
+    | {
+          type: 'meet-core:event:join-decision';
+          requestId: string;
+          admitted: boolean;
+      }
+    | {
+          type: 'meet-core:event:join-request';
+          change: 0 | 1;
+          requestId: string;
+          participantUid: string;
+          expiresAt: number;
       };
 
 export interface MeetCoreWorkerFailureMessage {
@@ -115,9 +127,7 @@ export interface MeetCoreRpcFailureResponseMessage {
 }
 
 export type MeetCoreWorkerRequestMessage =
-    | MeetCoreInitRequestMessage
-    | MeetCoreRpcRequestMessage
-    | MeetCoreCookieAckMessage;
+    MeetCoreInitRequestMessage | MeetCoreRpcRequestMessage | MeetCoreCookieAckMessage;
 
 export type MeetCoreWorkerResponseMessage =
     | MeetCoreInitSuccessResponseMessage

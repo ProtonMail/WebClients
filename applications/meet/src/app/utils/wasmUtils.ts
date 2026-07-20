@@ -3,6 +3,11 @@ import {
     setMeetCoreCallbacks,
     setMeetCoreLivekitAdminChangeCallback,
 } from '../wasm/meetCoreCallbacks';
+import {
+    type JoinRequestChangeInfo,
+    emitWaitingRoomJoinDecision,
+    emitWaitingRoomJoinRequest,
+} from '../wasm/waitingRoomCallbacks';
 
 export const loadWasmModule = async () => {
     return import('@proton-meet/proton-meet-core');
@@ -26,6 +31,17 @@ declare global {
         mlsSyncStateChangeEvent: {
             on_mls_sync_state_changed: (state: number, failedReason?: number) => Promise<void>;
         };
+        joinDecisionEvent: {
+            on_join_decision: (requestId: string, admitted: boolean) => void;
+        };
+        joinRequestEvent: {
+            on_join_request: (
+                change: JoinRequestChangeInfo,
+                requestId: string,
+                participantUid: string,
+                expiresAt: number
+            ) => void;
+        };
     }
 }
 
@@ -36,6 +52,19 @@ interface SetupWasmDependenciesParameters {
 }
 
 let keyPollIntervalId: ReturnType<typeof setInterval> | null = null;
+
+export const installWaitingRoomCallbackNamespaces = () => {
+    window.joinDecisionEvent = {
+        on_join_decision: (requestId: string, admitted: boolean) => {
+            emitWaitingRoomJoinDecision(requestId, admitted);
+        },
+    };
+    window.joinRequestEvent = {
+        on_join_request: (change, requestId, participantUid, expiresAt) => {
+            emitWaitingRoomJoinRequest(change, requestId, participantUid, expiresAt);
+        },
+    };
+};
 
 export const cleanupWasmDependencies = () => {
     if (keyPollIntervalId !== null) {
@@ -49,6 +78,8 @@ export const cleanupWasmDependencies = () => {
     };
     window.disconnectionEvent = { disconnection_handler: async () => {} };
     window.mlsSyncStateChangeEvent = { on_mls_sync_state_changed: async () => {} };
+    window.joinDecisionEvent = { on_join_decision: () => {} };
+    window.joinRequestEvent = { on_join_request: () => {} };
 
     resetMeetCoreCallbacks();
 };
@@ -88,6 +119,9 @@ export const setupWasmDependencies = ({
     window.mlsSyncStateChangeEvent = {
         on_mls_sync_state_changed: onMlsSyncStateChangedInternal,
     };
+
+    // Install waiting room callback namespaces for the WASM direct client
+    installWaitingRoomCallbackNamespaces();
 
     setMeetCoreCallbacks({
         onNewGroupKey,
