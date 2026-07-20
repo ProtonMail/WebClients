@@ -7,7 +7,6 @@ import type { CellTooltipProps } from '@rowsncolumns/spreadsheet'
 import type { ComponentPropsWithoutRef } from 'react'
 import { type Ref, useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
-import { copyTextToClipboard } from '../../../../Utils/copy-to-clipboard'
 import { useApplication } from '../../../ApplicationProvider'
 import { OPEN_LINK_EVENT } from '../../constants'
 import { createStringifier } from '../../stringifier'
@@ -15,6 +14,7 @@ import { useUI } from '../../ui-store'
 import * as UI from '../ui'
 import { Icon } from '../ui'
 import { createComponent } from '../utils'
+import { copyTextToClipboard } from './copyTextToClipboard'
 const { s } = createStringifier(strings)
 
 export interface ItemProps extends Ariakit.ButtonProps {
