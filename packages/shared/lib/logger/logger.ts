@@ -1,15 +1,16 @@
 import { type AesGcmCryptoKey, decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
+import type { LogLevelNumbers } from 'loglevel';
 import log, { type Logger as LogLevelLogger } from 'loglevel';
 
 import { DAY } from '@proton/shared/lib/constants';
 
 import {
     CLEANUP_INTERVAL_MS,
+    DEFAULT_ALLOWED_LOG_LEVELS,
     DEFAULT_LOGGER_NAME,
     DEFAULT_MAX_ENTRIES,
     DEFAULT_RETENTION_DAYS,
-    DEFAULT_SHOW_LOGS_NON_DEV_ENV,
     LOGGER_DB_PREFIX,
     MAX_PENDING_LOGS,
     PENDING_LOGS_TRIM_SIZE,
@@ -26,10 +27,11 @@ export interface LoggerOptions {
     loggerID: string;
     forceMemoryStorage?: boolean; // For testing - bypasses IndexedDB
     /**
-     * Set to `true` to suppress console output outside development environments.
-     * Logs are still persisted. Default value is `false`.
+     * List of explicitly allowed log levels for console output in non-development environments.
+     * Example: [log.levels.ERROR, log.levels.WARN] to only show warnings and errors.
+     * Default: only error are outputed to the console.
      */
-    showLogsNonDevEnvironment?: boolean;
+    allowedLogLevels?: LogLevelNumbers[];
 }
 export interface GlobalErrorHandler {
     enable(): void;
@@ -54,7 +56,7 @@ export class Logger {
 
     private maxEntries: number = DEFAULT_MAX_ENTRIES;
 
-    private showLogsNonDevEnvionments: boolean = DEFAULT_SHOW_LOGS_NON_DEV_ENV;
+    private allowedLogLevels: LogLevelNumbers[] = DEFAULT_ALLOWED_LOG_LEVELS;
 
     private retentionDays: number = DEFAULT_RETENTION_DAYS;
 
@@ -101,12 +103,12 @@ export class Logger {
 
     constructor(
         name: string = DEFAULT_LOGGER_NAME,
-        options?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays' | 'showLogsNonDevEnvironment'>>
+        options?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays' | 'allowedLogLevels'>>
     ) {
         this.loggerName = name;
         this.maxEntries = options?.maxEntries ?? DEFAULT_MAX_ENTRIES;
         this.retentionDays = options?.retentionDays ?? DEFAULT_RETENTION_DAYS;
-        this.showLogsNonDevEnvionments = options?.showLogsNonDevEnvironment ?? DEFAULT_SHOW_LOGS_NON_DEV_ENV;
+        this.allowedLogLevels = options?.allowedLogLevels ?? DEFAULT_ALLOWED_LOG_LEVELS;
         // Create and enable global error handler immediately to capture errors before initialization
         this.globalErrorHandler = this.createGlobalErrorHandler();
         this.globalErrorHandler.enable();
@@ -222,20 +224,21 @@ export class Logger {
             throw new Error('Cannot setup persistence plugin: loglevel instance not created');
         }
 
-        const outputLogToConsole = process.env.NODE_ENV === 'development' ? true : this.showLogsNonDevEnvionments;
+        const isDev = process.env.NODE_ENV === 'development';
+        const allowedLevels = this.allowedLogLevels;
         const originalFactory = this.loglevelInstance.methodFactory;
         const loggerInstance = this;
 
         // Apply the plugin to this specific loglevel instance
         this.loglevelInstance.methodFactory = function (
             methodName: any,
-            logLevel: number,
+            logLevel: LogLevelNumbers,
             loggerName: string | symbol
         ) {
-            const rawMethod = originalFactory(methodName, logLevel as any, loggerName);
+            const rawMethod = originalFactory(methodName, logLevel, loggerName);
             return function (message: string, ...args: any[]) {
                 // Console output with logger name prefix
-                if (outputLogToConsole) {
+                if (isDev || allowedLevels.includes(logLevel)) {
                     rawMethod(`[${loggerInstance.loggerName}]`, message, ...args);
                 }
                 void loggerInstance.persistLog(String(methodName), message, args);
@@ -794,7 +797,7 @@ class LoggerManager {
      */
     public getLogger(
         name: string = DEFAULT_LOGGER_NAME,
-        constructorOptions?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays' | 'showLogsNonDevEnvironment'>>
+        constructorOptions?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays' | 'allowedLogLevels'>>
     ): Logger {
         if (!this.loggers.has(name)) {
             this.loggers.set(name, new Logger(name, constructorOptions));
