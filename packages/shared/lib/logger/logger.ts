@@ -6,10 +6,10 @@ import { DAY } from '@proton/shared/lib/constants';
 
 import {
     CLEANUP_INTERVAL_MS,
-    DEFAULT_HIDE_LOGS_NON_DEV_ENV,
     DEFAULT_LOGGER_NAME,
     DEFAULT_MAX_ENTRIES,
     DEFAULT_RETENTION_DAYS,
+    DEFAULT_SHOW_LOGS_NON_DEV_ENV,
     LOGGER_DB_PREFIX,
     MAX_PENDING_LOGS,
     PENDING_LOGS_TRIM_SIZE,
@@ -29,7 +29,7 @@ export interface LoggerOptions {
      * Set to `true` to suppress console output outside development environments.
      * Logs are still persisted. Default value is `false`.
      */
-    hideLogsNonDevEnvironment?: boolean;
+    showLogsNonDevEnvironment?: boolean;
 }
 export interface GlobalErrorHandler {
     enable(): void;
@@ -54,7 +54,7 @@ export class Logger {
 
     private maxEntries: number = DEFAULT_MAX_ENTRIES;
 
-    private hideLogsNonDevEnvironment: boolean = DEFAULT_HIDE_LOGS_NON_DEV_ENV;
+    private showLogsNonDevEnvionments: boolean = DEFAULT_SHOW_LOGS_NON_DEV_ENV;
 
     private retentionDays: number = DEFAULT_RETENTION_DAYS;
 
@@ -101,12 +101,12 @@ export class Logger {
 
     constructor(
         name: string = DEFAULT_LOGGER_NAME,
-        options?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays' | 'hideLogsNonDevEnvironment'>>
+        options?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays' | 'showLogsNonDevEnvironment'>>
     ) {
         this.loggerName = name;
         this.maxEntries = options?.maxEntries ?? DEFAULT_MAX_ENTRIES;
         this.retentionDays = options?.retentionDays ?? DEFAULT_RETENTION_DAYS;
-        this.hideLogsNonDevEnvironment = options?.hideLogsNonDevEnvironment ?? DEFAULT_HIDE_LOGS_NON_DEV_ENV;
+        this.showLogsNonDevEnvionments = options?.showLogsNonDevEnvironment ?? DEFAULT_SHOW_LOGS_NON_DEV_ENV;
         // Create and enable global error handler immediately to capture errors before initialization
         this.globalErrorHandler = this.createGlobalErrorHandler();
         this.globalErrorHandler.enable();
@@ -222,7 +222,7 @@ export class Logger {
             throw new Error('Cannot setup persistence plugin: loglevel instance not created');
         }
 
-        const outputLogToConsole = process.env.NODE_ENV === 'development' ? true : !this.hideLogsNonDevEnvironment;
+        const outputLogToConsole = process.env.NODE_ENV === 'development' ? true : this.showLogsNonDevEnvionments;
         const originalFactory = this.loglevelInstance.methodFactory;
         const loggerInstance = this;
 
@@ -794,7 +794,7 @@ class LoggerManager {
      */
     public getLogger(
         name: string = DEFAULT_LOGGER_NAME,
-        constructorOptions?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays' | 'hideLogsNonDevEnvironment'>>
+        constructorOptions?: Partial<Pick<LoggerOptions, 'maxEntries' | 'retentionDays' | 'showLogsNonDevEnvironment'>>
     ): Logger {
         if (!this.loggers.has(name)) {
             this.loggers.set(name, new Logger(name, constructorOptions));
