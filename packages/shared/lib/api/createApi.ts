@@ -88,6 +88,21 @@ export type ApiUserRestrictedEvent = {
     };
 };
 
+export type ApiErrorEvent = {
+    type: 'api-error';
+    payload: {
+        errorCode: number | undefined;
+        errorMessage: string | undefined;
+        apiInfo: {
+            method: string | undefined;
+            url: string | undefined;
+            silence: boolean | undefined;
+        };
+        isOffline: boolean;
+        isUnreachable: boolean;
+    };
+};
+
 export type ApiEvent =
     | ServerTimeEvent
     | ApiStatusEvent
@@ -95,7 +110,8 @@ export type ApiEvent =
     | ApiLogoutEvent
     | ApiMissingScopeEvent
     | ApiVerificationEvent
-    | ApiUserRestrictedEvent;
+    | ApiUserRestrictedEvent
+    | ApiErrorEvent;
 
 export type ApiListenerCallback = (event: ApiEvent) => boolean;
 
@@ -290,6 +306,23 @@ const createApi = ({
                 } else {
                     offlineSet.clear();
                 }
+
+                // Can be used to easily listen to all API errors
+                const { method, url, silence } = rest;
+                notify({
+                    type: 'api-error',
+                    payload: {
+                        errorCode: code,
+                        errorMessage,
+                        apiInfo: {
+                            url,
+                            method,
+                            silence,
+                        },
+                        isOffline,
+                        isUnreachable,
+                    },
+                });
 
                 if (isOffline || isUnreachable) {
                     notify({
