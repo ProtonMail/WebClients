@@ -25,7 +25,7 @@ import {
     selectUserSettings,
 } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, CoreEvent, MaybeNull, PassPlanResponse } from '@proton/pass/types';
+import type { Api, CoreEvent, Maybe, MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn } from '@proton/pass/utils/fp/predicates';
@@ -67,6 +67,15 @@ export function* onUserRefreshed(eventUser?: User, keyPassword?: string) {
     }
 }
 
+/** Re-fetches user data (user, addresses + keys, settings) and rehydrates the
+ * crypto context. Used to pick up a newly granted address key, e.g. when a
+ * member is added to a group and needs it to decrypt its shared vaults. */
+export function* refreshUserData(extensionId: Maybe<string>, keyPassword?: string) {
+    const data: HydratedUserState = yield call(getUserData, extensionId);
+    yield put(userRefresh(data));
+    yield call(onUserRefreshed, data.user, keyPassword);
+}
+
 function* onCoreEvent(
     event: EventManagerEvent<CoreEvent>,
     _: EventChannel<CoreEvent>,
@@ -93,9 +102,7 @@ function* onCoreEvent(
     const keyPassword = getAuthStore().getPassword();
 
     if (event.Refresh) {
-        const data: HydratedUserState = yield call(getUserData, extensionId);
-        yield put(userRefresh(data));
-        yield call(onUserRefreshed, data.user, keyPassword);
+        yield call(refreshUserData, extensionId, keyPassword);
         return;
     }
 
