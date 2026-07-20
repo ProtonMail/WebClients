@@ -4,6 +4,7 @@ import type { SshKeyData } from 'proton-pass-desktop/native';
 import { ssh_agent_napi } from 'proton-pass-desktop/native';
 import { store } from 'proton-pass-desktop/store';
 import logger from 'proton-pass-desktop/utils/logger';
+import { isWindows } from 'proton-pass-desktop/utils/platform';
 
 import type { ItemRevision, MaybeNull, SSHKeyItem } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -36,6 +37,17 @@ let readyLock: MaybeNull<Promise<void>> = null;
 
 const isReady = () => sshSynced && isClientBooted();
 
+/** Fix window foreground limitation on Windows:
+ * https://github.com/electron/electron/issues/2867#issuecomment-2901356176 */
+const showWindowInForeground = (window: BrowserWindow) => {
+    if (isWindows()) {
+        if (!window.isFocused() && !window.isMinimized()) window.minimize();
+        window.show();
+    } else {
+        window.show();
+    }
+};
+
 /** Create a callback that will be called from Rust when SSH
  * operations occur. Returns true if app is unlocked, false if
  * locked/timeout. Concurrent callers share a single 60s poll. */
@@ -54,7 +66,7 @@ const onStart = (getWindow: () => MaybeNull<BrowserWindow>) => () =>
                 if (!window) throw new Error('Could not find window for lock check');
 
                 if (isReady()) return true;
-                window.show();
+                showWindowInForeground(window);
                 await (readyLock ??= waitUntil(isReady, 100, 60_000).finally(() => (readyLock = null)));
                 return true;
             } catch (err) {
