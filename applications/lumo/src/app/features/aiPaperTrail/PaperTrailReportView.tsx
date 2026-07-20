@@ -81,22 +81,28 @@ const formatRiskSeverity = (severity: PaperTrailReport['complianceRisks'][number
     return c('collider_2025:Label').t`Low`;
 };
 
-const SharePreview = ({ cardData, onShare }: { cardData: PaperTrailCardData; onShare: () => void }) => (
-    <div className="pt-share">
-        <h2 className="pt-section-title">{c('collider_2025:Title').t`Share your score`}</h2>
-        <p className="pt-section-sub">
-            {c('collider_2025:Info')
-                .t`Your card shows exposure by life area only — no personal details.`}
-        </p>
-        <div className="pt-share__body">
-            <ShareCardCanvasPreview data={cardData} theme="light" />
-            <div className="pt-share__actions">
-                <Button color="norm" size="large" pill onClick={onShare}>
-                    <LumoIcon name="Share" className="mr-2" />
-                    {c('collider_2025:Action').t`Create shareable card`}
-                </Button>
-            </div>
+const ShareRail = ({ cardData, onShare }: { cardData: PaperTrailCardData; onShare: () => void }) => (
+    <aside className="pt-share-rail" aria-label={c('collider_2025:Title').t`Share your score`}>
+        <div className="pt-share-rail__float">
+            <h2 className="pt-share-rail__title">{c('collider_2025:Title').t`Share your score`}</h2>
+            <ShareCardCanvasPreview data={cardData} theme="light" className="pt-share-rail__canvas" />
+            <p className="pt-share-rail__hint">
+                {c('collider_2025:Info').t`Exposure by life area only, no personal details.`}
+            </p>
+            <Button color="norm" size="medium" pill fullWidth onClick={onShare}>
+                <LumoIcon name="Share" className="mr-2" />
+                {c('collider_2025:Action').t`Create shareable card`}
+            </Button>
         </div>
+    </aside>
+);
+
+const ShareMobileBar = ({ onShare }: { onShare: () => void }) => (
+    <div className="pt-share-bar">
+        <Button color="norm" size="large" pill fullWidth onClick={onShare}>
+            <LumoIcon name="Share" className="mr-2" />
+            {c('collider_2025:Action').t`Share your score`}
+        </Button>
     </div>
 );
 
@@ -141,6 +147,8 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                 </p>
             </header>
 
+            <div className="pt-report__layout">
+                <div className="pt-report__main">
             <section className="pt-card pt-card--profile">
                 <div className="pt-profile__head">
                     <div>
@@ -347,8 +355,6 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                 </ul>
             </section>
 
-            <SharePreview cardData={cardData} onShare={() => shareModal.openModal(true)} />
-
             <div className="pt-report__actions">
                 <Button shape="ghost" size="large" pill onClick={onStartOver}>
                     {c('collider_2025:Action').t`Analyse another export`}
@@ -369,6 +375,12 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                 {c('collider_2025:Info')
                     .t`Built by ${BRAND_NAME}, the privacy brand trusted by over 100M people and the team behind ${MAIL_APP_NAME}, ${VPN_APP_NAME}, ${DRIVE_APP_NAME}, and ${PASS_APP_NAME}.`}
             </p>
+                </div>
+
+                <ShareRail cardData={cardData} onShare={() => shareModal.openModal(true)} />
+            </div>
+
+            <ShareMobileBar onShare={() => shareModal.openModal(true)} />
 
             {shareModal.render && <ShareableCard data={cardData} {...shareModal.modalProps} />}
 

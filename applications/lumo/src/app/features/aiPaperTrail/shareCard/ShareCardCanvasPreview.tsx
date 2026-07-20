@@ -1,9 +1,14 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import clsx from 'clsx';
 
 import type { PaperTrailCardData } from '../reportTypes';
-import { CARD_HEIGHT, CARD_WIDTH, type ShareCardTheme, renderShareCard } from './drawShareCard';
+import {
+    CARD_WIDTH,
+    type ShareCardTheme,
+    computeShareCardHeight,
+    renderShareCard,
+} from './drawShareCard';
 
 import './ShareCardCanvasPreview.scss';
 
@@ -19,13 +24,16 @@ export const ShareCardCanvasPreview = forwardRef<HTMLCanvasElement, Props>(funct
     ref
 ) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [height, setHeight] = useState(() => computeShareCardHeight(data.areas.length));
 
     useImperativeHandle(ref, () => canvasRef.current as HTMLCanvasElement);
 
     useEffect(() => {
         const canvas = canvasRef.current;
         if (canvas) {
-            void renderShareCard(canvas, data, theme);
+            void renderShareCard(canvas, data, theme).then(() => {
+                setHeight(canvas.height);
+            });
         }
     }, [data, theme]);
 
@@ -33,7 +41,7 @@ export const ShareCardCanvasPreview = forwardRef<HTMLCanvasElement, Props>(funct
         <canvas
             ref={canvasRef}
             width={CARD_WIDTH}
-            height={CARD_HEIGHT}
+            height={height}
             className={clsx('share-card-canvas-preview', className)}
         />
     );
