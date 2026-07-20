@@ -30,6 +30,7 @@ import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getInboxDesktopLogsBlob, isInboxDesktopBugReportLogsSupported } from '@proton/shared/lib/desktop/logHelpers';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -501,14 +502,14 @@ const BugModal = ({
 
                         <InputFieldTwo
                             id="Browser"
-                            label={c('Label').t`Browser`}
+                            label={isElectronApp ? c('Label').t`Client` : c('Label').t`Browser`}
                             value={model.Browser}
                             onValue={handleChange('Browser')}
                             disabled={loading}
                         />
                         <InputFieldTwo
                             id="BrowserVersion"
-                            label={c('Label').t`Browser version`}
+                            label={isElectronApp ? c('Label').t`Client version` : c('Label').t`Browser version`}
                             value={model.BrowserVersion}
                             onValue={handleChange('BrowserVersion')}
                             disabled={loading}
