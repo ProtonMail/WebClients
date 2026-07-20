@@ -1445,6 +1445,9 @@
       ],
       "Maybe later": [
         "以后再说"
+      ],
+      "Get 50% offer": [
+        "享受 50% 折扣"
       ]
     },
     "Cancellation upsell": {
@@ -2847,7 +2850,7 @@
         "下载 Linux 版"
       ],
       "Download for macOS": [
-        "下载 macOS 版本"
+        "下载 macOS 版"
       ],
       "Download for Windows": [
         "下载 Windows 版"
@@ -3559,6 +3562,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 无法解密的名称"
+      ],
+      "Failed to trash document": [
+        "将文档移入回收站失败"
+      ],
+      "Some documents could not be loaded": [
+        "部分文档无法加载"
       ]
     },
     "error": {
@@ -4347,7 +4356,7 @@
         "生成应用专用密码或开启 IMAP 功能"
       ],
       "CSV or a VCF (vCard) file": [
-        "CSV 或 VCF（vCard）文件"
+        "CSV 或 VCF (vCard) 文件"
       ],
       "full calendar view": [
         "全日历视图"
@@ -5788,6 +5797,30 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "访问遍布 145 多个国家/地区的 20,000+ 台服务器"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "最快达 10 Gbps 的 VPN 速度"
+      ],
+      "Have some more time to decide without interruption.": [
+        "不受打扰地多些时间做决定"
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "通过报告问题来帮助我们改善体验，请在报告中附上下方的调试信息。"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "如果现在取消，您将在 ${ expiryDate } 失去对 ${ BRAND_NAME } ${ planTitle } 的访问权限，包括以下功能："
+      ],
+      "Premium privacy protection across all your devices": [
+        "所有设备上的高级隐私保护"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "保留当前套餐，下月享受 5 折优惠"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "我们检测到您之前打开文档时曾遇到问题"
       ]
     },
     "info": {
@@ -8069,6 +8102,18 @@
       ],
       "Your settings have been changed successfully": [
         "设置已更改"
+      ],
+      "\"Document deleted permanently": [
+        "文档已永久删除"
+      ],
+      "Failed to delete document": [
+        "删除文档失败"
+      ],
+      "Failed to restore document": [
+        "恢复文档失败"
+      ],
+      "Failed to trash document": [
+        "将文档移入回收站失败"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10041,7 +10086,7 @@
         "下载 ${ DRIVE_APP_NAME } 应用"
       ],
       "Download the app": [
-        "下载 APP"
+        "下载应用"
       ],
       "Download unverified file?": [
         "下载未经验证的文件？"
@@ -10459,6 +10504,12 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
+      ],
+      "Problems Detected": [
+        "检测到问题"
+      ],
+      "Stay for 50% off your next month": [
+        "下月继续享受 5 折优惠"
       ]
     },
     "Title header for keys table": {

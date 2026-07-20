@@ -1460,6 +1460,9 @@
       ],
       "Maybe later": [
         "Belki sonra"
+      ],
+      "Get 50% offer": [
+        "%50 indirimden yararlanın"
       ]
     },
     "Cancellation upsell": {
@@ -3202,7 +3205,7 @@
         "Davet yeniden gönderilemedi"
       ],
       "Failed to trash document": [
-        "Belge çöp kutusuna atılamadı"
+        "Belge çöpe atılamadı"
       ],
       "Failed to unshare node": [
         "Nokta paylaşımı kaldırılamadı"
@@ -3590,6 +3593,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
+      ],
+      "Some documents could not be loaded": [
+        "Bazı belgeler yüklenemedi"
       ]
     },
     "error": {
@@ -4969,7 +4975,7 @@
         "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Elektronik tablo içeriğini paylaşmakta bir sakınca görmüyorsanız, aşağıdaki hata ayıklama bilgilerini bildiriminize ekleyin."
       ],
       "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
-        "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Lütfen raporunuza aşağıdaki hata ayıklama bilgilerini ekleyin."
+        "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Lütfen bildiriminize aşağıdaki hata ayıklama bilgilerini ekleyin."
       ],
       "here": [
         "buraya"
@@ -5645,7 +5651,7 @@
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
       "We've detected that you've previously experienced issues opening a document.": [
-        "Daha önce bir belgeyi açarken sorun yaşadığınızı tespit ettik."
+        "Daha önce bir belgeyi açarken sorun yaşadığınızı farkettik."
       ],
       "Week": [
         "Hafta"
@@ -5872,6 +5878,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "145 ülkede 20.000 üzerinde sunucuya erişim"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "10 Gb/sn olabilen en yüksek VPN hızı"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
       ]
     },
     "info": {
@@ -6164,10 +6188,10 @@
         "Bu bağlantıyı silin ve erişimi olan herkesi kaldırın."
       ],
       "Exact host matching": [
-        "Tam ana bilgisayar eşleşmesi"
+        "Tam sunucu eşleşmesi"
       ],
       "Exact URL matching": [
-        "Tam URL eşleşmesi"
+        "Tam adres eşleşmesi"
       ],
       "Expiry": [
         "Geçerlilik sonu"
@@ -6290,7 +6314,7 @@
         "Gezinme"
       ],
       "Never fill on this exact URL": [
-        "Bu URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "New password": [
         "Yeni parola"
@@ -6356,7 +6380,7 @@
         "Bölge"
       ],
       "Regular expression": [
-        "Düzenli ifade"
+        "Kurallı ifade"
       ],
       "Replace existing file": [
         "Var olan dosya değiştirilsin"
@@ -6395,7 +6419,7 @@
         "Klasör atlansın"
       ],
       "Starts with": [
-        "Şununla başlar"
+        "Şununla başlayan"
       ],
       "Stop sharing": [
         "Paylaşmayı durdur"
@@ -6431,7 +6455,7 @@
         "Görsel yükle"
       ],
       "URL wildcard pattern": [
-        "URL genel arama karakteri deseni"
+        "Adres genel arama karakteri modeli"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -6774,16 +6798,16 @@
         "Tam (alt) etki alanı eşleştirme kuralı"
       ],
       "Exact URL matching rule": [
-        "Tam URL eşleştirme kuralı"
+        "Tam adres eşleştirme kuralı"
       ],
       "Never fill with this exact URL": [
-        "Bu tam URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "Regular expression rule": [
-        "Düzenli ifade kuralı"
+        "Kurallı ifade kuralı"
       ],
       "Wildcard pattern matching rule": [
-        "genel arama karakter deseni eşleştirme kuralı"
+        "Genel arama karakter modeli eşleştirme kuralı"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ücretsiz deneme süreniz sona erdi. ${ nonAutoRenewalAction }"
@@ -8128,7 +8152,7 @@
         "Belge geri yüklenemedi"
       ],
       "Failed to trash document": [
-        "Belge çöp kutusuna atılamadı"
+        "Belge çöpe atılamadı"
       ],
       "Failed to upload files: ${ err }": [
         "Dosyalar yüklenemedi: ${ err }"
@@ -10462,7 +10486,7 @@
         "Gizli gezinme ile VPN karşılaştırması"
       ],
       "Problems Detected": [
-        "Tespit Edilen Sorunlar"
+        "Bulunan sorunlar"
       ],
       "Public link": [
         "Herkese açık bağlantı"
@@ -10673,6 +10697,9 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Stay for 50% off your next month": [
+        "Sonraki ay %50 indirimden yararlanın"
       ]
     },
     "Title header for keys table": {
@@ -10939,7 +10966,7 @@
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
+        "${ modeLabelStong } güçlü bir denetim sağlar, ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı siteler ile eşleşmesine ve bu verilerin doldurulmasına neden olabilir."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",

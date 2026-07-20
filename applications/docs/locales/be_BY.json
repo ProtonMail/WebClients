@@ -1369,7 +1369,7 @@
         "Каб перанесці гэтага карыстальніка, яму неабходна прыняць запрашэнне далучыцца да ${ BRAND_NAME }."
       ],
       "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Каб перанесці гэтага карыстальніка, разгархівуйце яго ў кансолі адміністратара Google Workspace."
+        "Каб перанесці гэтага карыстальніка, разархівуйце яго ў кансолі адміністратара Google Workspace."
       ],
       "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
         "Каб перанесці гэтага карыстальніка, разблакіруйце яго ў кансолі адміністратара Google Workspace."
@@ -1493,6 +1493,9 @@
       ],
       "Maybe later": [
         "Магчыма пазней"
+      ],
+      "Get 50% offer": [
+        "Скарыстайцеся скідкай у памеры 50%"
       ]
     },
     "Cancellation upsell": {
@@ -3646,6 +3649,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Failed to trash document": [
+        "Не ўдалося перамясціць дакумент у сметніцу"
+      ],
+      "Some documents could not be loaded": [
+        "Некаторыя дакументы не ўдалося загрузіць"
       ]
     },
     "error": {
@@ -6016,6 +6025,30 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Доступ да больш чым 20 000 сервераў у больш чым 145 краінах"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
+      ],
+      "Have some more time to decide without interruption.": [
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Дапамажыце нам палепшыць гэты сэрвіс, паведаміўшы пра праблему. Далучыце адладачную інфармацыю ніжэй да вашай справаздачы."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Вы страціце доступ да ${ BRAND_NAME } з тарыфным планам ${ planTitle } (дзейнічае да ${ expiryDate }), які ўключае наступныя функцыі:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Прэміяльная абарона прыватнасці паміж усімі вашымі прыладамі"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Застаньцеся на сваім тарыфным плане і атрымайце скідку ў памеры 50% у наступным месяцы"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Сістэма выявіла, што вы сутыкаліся з праблемай пры адкрыцці дакумента."
       ]
     },
     "info": {
@@ -7597,7 +7630,7 @@
         "Подпісы HTML"
       ],
       "Kill switch/always-on VPN": [
-        "Kill Switch/Пастаянны VPN"
+        "Kill Switch/Пастаянная VPN"
       ],
       "Limited support": [
         "Абмежаваная падтрымка"
@@ -8525,6 +8558,18 @@
       ],
       "Your settings have been changed successfully": [
         "Вашы налады былі паспяхова зменены"
+      ],
+      "\"Document deleted permanently": [
+        "\"Дакумент незваротна выдалены"
+      ],
+      "Failed to delete document": [
+        "Не ўдалося выдаліць дакумент"
+      ],
+      "Failed to restore document": [
+        "Не ўдалося аднавіць дакумент"
+      ],
+      "Failed to trash document": [
+        "Не ўдалося перамясціць дакумент у сметніцу"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11083,6 +11128,12 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "Problems Detected": [
+        "Выяўленыя праблемы"
+      ],
+      "Stay for 50% off your next month": [
+        "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
       ]
     },
     "Title header for keys table": {
