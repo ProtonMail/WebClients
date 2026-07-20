@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
 import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
 import Table from '@proton/components/components/table/Table';
@@ -13,6 +14,10 @@ import { getUser2FATagProps } from '@proton/components/containers/members/UsersA
 import type { UseUserMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
 import useConfig from '@proton/components/hooks/useConfig';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcMinusCircle } from '@proton/icons/icons/IcMinusCircle';
+import { IcShareNode } from '@proton/icons/icons/IcShareNode';
+import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasMailProduct } from '@proton/shared/lib/helpers/organization';
@@ -34,6 +39,7 @@ import MemberRole from '../MemberRole';
 import UserRowSkeleton from './UserRowSkeleton';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 import UserTableBadge from './UsersTableBadge';
+import UserTableIcon from './UsersTableIcon';
 
 export const MembersTable = ({
     members,
@@ -45,8 +51,9 @@ export const MembersTable = ({
     membersHook: UseUserMemberActions;
 }) => {
     const { APP_NAME } = useConfig();
-    const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
     const [permissions] = useOrgPermissions();
+
+    const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
 
     const tableLabel = [
         '',
@@ -82,6 +89,10 @@ export const MembersTable = ({
         const hasPendingFamilyInvitation = getIsMemberInvited(member);
         const isDisabled = getIsMemberDisabled(member);
 
+        const unprivatizationResult = unprivatizationMemberState.members[member.ID];
+        const isPendingState = unprivatizationResult?.type === 'approval';
+        const unprivatisationError = unprivatizationResult?.type === 'error';
+
         const hasDisabledLayout = hasPendingMagicLinkInvite || isDisabled;
         const hasFeaturesColumn = !hasPendingMagicLinkInvite;
 
@@ -107,15 +118,15 @@ export const MembersTable = ({
                 labels={tableLabel}
                 className={clsx('align-top', hasPendingFamilyInvitation && 'color-weak')}
             >
-                <TableCell className="align-baseline">
-                    <div className="flex items-center gap-3">
+                <TableCell className="align-middle">
+                    <div className="flex items-center gap-2">
                         <div className="flex flex-nowrap items-center gap-3">
                             <Avatar className="shrink-0 text-rg" color="weak">
                                 {getInitials(memberName)}
                             </Avatar>
                             <button
                                 type="button"
-                                className="text-ellipsis shrink link align-baseline"
+                                className="text-ellipsis shrink link align-baseline color-norm"
                                 data-testid="users-and-addresses-table:memberName"
                                 title={memberName}
                                 onClick={() => actions.handleEditUser(member)}
@@ -123,44 +134,110 @@ export const MembersTable = ({
                                 {memberName}
                             </button>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div className="display-contents">
                             {(() => {
+                                if (hasPendingMagicLinkInvite) {
+                                    return (
+                                        <Tooltip
+                                            title={c('Users table: badge')
+                                                .t`Invitation sent, awaiting reply from the invited member`}
+                                            openDelay={0}
+                                        >
+                                            <span>
+                                                <Pill
+                                                    className="text-uppercase"
+                                                    rounded="rounded-sm"
+                                                    color={'var(--text-norm)'}
+                                                    backgroundColor={'var(--background-weak)'}
+                                                >
+                                                    {c('Users table: badge').t`Invited`}
+                                                </Pill>
+                                            </span>
+                                        </Tooltip>
+                                    );
+                                }
+
                                 if (!hasMagicLinkLayout) {
                                     return (
                                         <>
-                                            {Boolean(member.Self) && (
-                                                <UserTableBadge type="success">
-                                                    {c('Users table: badge').t`It's you`}
-                                                </UserTableBadge>
-                                            )}
-                                            {(() => {
-                                                const result = unprivatizationMemberState.members[member.ID];
-                                                if (result?.type !== 'error') {
-                                                    return;
-                                                }
-                                                const error = result.error;
-                                                return (
-                                                    <Tooltip
-                                                        title={c('unprivatization')
-                                                            .t`Could not enable administrator access: ${error}`}
-                                                        openDelay={0}
-                                                    >
-                                                        <IcExclamationTriangleFilled className="color-danger" />
-                                                    </Tooltip>
-                                                );
-                                            })()}
                                             {meta.allowPrivateMemberConfiguration &&
                                                 !meta.isOrgAFamilyPlan &&
                                                 Boolean(member.Private) && (
-                                                    <UserTableBadge
-                                                        type="info"
-                                                        tooltip={c('Users table: badge')
+                                                    <UserTableIcon
+                                                        title={c('Users table: badge')
                                                             .t`Administrators can't access the data of private users`}
                                                         data-testid="users-and-addresses-table:memberIsPrivate"
-                                                    >
-                                                        {c('Users table: badge').t`Private`}
-                                                    </UserTableBadge>
+                                                        icon={<IcKey className="color-hint" />}
+                                                    />
                                                 )}
+                                            {hasTwoFactor && (
+                                                <UserTableIcon
+                                                    title={twoFactorTooltip}
+                                                    icon={<IcShieldHalfFilled className="color-hint" />}
+                                                />
+                                            )}
+                                            {Boolean(member.SSO) && (
+                                                <UserTableIcon
+                                                    title={c('Users table: badge')
+                                                        .t`SSO user provided by your identity provider`}
+                                                    icon={
+                                                        <IcShareNode
+                                                            className="color-hint"
+                                                            style={{ transform: 'scaleX(-1)' }}
+                                                        />
+                                                    }
+                                                />
+                                            )}
+                                            {isDisabled && (
+                                                <UserTableIcon
+                                                    title={c('Users table: badge').t`Inactive`}
+                                                    icon={<IcMinusCircle className="color-hint" />}
+                                                />
+                                            )}
+
+                                            {unprivatisationError && (
+                                                <UserTableIcon
+                                                    title={c('unprivatization')
+                                                        .t`Could not enable administrator access: ${unprivatizationResult.error}`}
+                                                    icon={<IcExclamationTriangleFilled className="color-danger" />}
+                                                />
+                                            )}
+
+                                            {isPendingState && (
+                                                <Tooltip
+                                                    title={c('unprivatization').t`Waiting for admin approval`}
+                                                    openDelay={0}
+                                                >
+                                                    <span>
+                                                        <Pill
+                                                            className="text-uppercase"
+                                                            rounded="rounded-sm"
+                                                            color="var(--signal-warning-major-3)"
+                                                            backgroundColor="var(--signal-warning-minor-2)"
+                                                        >
+                                                            {c('Users table: badge').t`Pending`}
+                                                        </Pill>
+                                                    </span>
+                                                </Tooltip>
+                                            )}
+                                            {Boolean(hasPendingAllowAdminAccessRequest) && (
+                                                <Tooltip
+                                                    title={c('unprivatization')
+                                                        .t`Request to manage account sent, awaiting user approval`}
+                                                    openDelay={0}
+                                                >
+                                                    <span>
+                                                        <Pill
+                                                            className="text-uppercase"
+                                                            rounded="rounded-sm"
+                                                            color="var(--signal-warning-major-3)"
+                                                            backgroundColor="var(--signal-warning-minor-2)"
+                                                        >
+                                                            {c('Users table: badge').t`Requested`}
+                                                        </Pill>
+                                                    </span>
+                                                </Tooltip>
+                                            )}
 
                                             {member.NumAI > 0 &&
                                                 // if the current organization doesn't have access to
@@ -175,54 +252,16 @@ export const MembersTable = ({
                                             {member.NumLumo > 0 && (
                                                 <UserTableBadge type="weak">{LUMO_SHORT_APP_NAME}</UserTableBadge>
                                             )}
-                                            {Boolean(hasPendingAllowAdminAccessRequest) && (
-                                                <UserTableBadge
-                                                    type="weak"
-                                                    tooltip={c('unprivatization')
-                                                        .t`Request to manage account sent, awaiting user approval`}
-                                                >
-                                                    {c('Users table: badge').t`Pending admin access`}
-                                                </UserTableBadge>
-                                            )}
-                                            {hasTwoFactor && (
-                                                <UserTableBadge type="weak" tooltip={twoFactorTooltip}>
-                                                    {c('Users table: badge').t`2FA`}
-                                                </UserTableBadge>
-                                            )}
-                                            {Boolean(member.SSO) && (
-                                                <UserTableBadge
-                                                    type="success"
-                                                    tooltip={c('Users table: badge')
-                                                        .t`SSO user provided by your identity provider`}
-                                                >
-                                                    {c('Users table: badge').t`SSO`}
-                                                </UserTableBadge>
-                                            )}
-                                            {isDisabled && (
-                                                <UserTableBadge type="weak">
-                                                    {c('Users table: badge').t`Inactive`}
-                                                </UserTableBadge>
-                                            )}
                                         </>
                                     );
                                 }
 
-                                if (hasPendingMagicLinkInvite) {
-                                    return (
-                                        <UserTableBadge
-                                            type="info"
-                                            tooltip={c('Users table: badge')
-                                                .t`Invitation sent, awaiting reply from the invited member`}
-                                        >
-                                            {c('Users table: badge').t`Invite sent`}
-                                        </UserTableBadge>
-                                    );
-                                }
+                                return null;
                             })()}
                         </div>
                     </div>
                 </TableCell>
-                <TableCell className="text-cut align-baseline" data-testid="users-and-addresses-table:memberRole">
+                <TableCell className="text-cut align-middle" data-testid="users-and-addresses-table:memberRole">
                     <div className={clsx('flex flex-column flex-nowrap', hasDisabledLayout && 'color-hint')}>
                         <MemberRole member={member} userOrganizationRoles={models.memberRolesMap?.[member.ID]} />
                         {hasPendingFamilyInvitation && (
@@ -234,7 +273,7 @@ export const MembersTable = ({
                         )}
                     </div>
                 </TableCell>
-                <TableCell className="align-baseline">
+                <TableCell className="align-middle">
                     <div className={clsx(hasDisabledLayout && 'color-hint')}>
                         {hasPendingFamilyInvitation ? (
                             <p className="m-0 text-ellipsis">{member.Name}</p>
@@ -244,11 +283,11 @@ export const MembersTable = ({
                     </div>
                 </TableCell>
                 {meta.showFeaturesColumn && (
-                    <TableCell className="align-baseline">
+                    <TableCell className="align-middle">
                         {hasFeaturesColumn && <MemberFeatures member={member} organization={models.organization} />}
                     </TableCell>
                 )}
-                <TableCell className="align-baseline">
+                <TableCell className="align-middle">
                     <div>
                         {hasMagicLinkLayout ? (
                             <MagicLinkMemberActions

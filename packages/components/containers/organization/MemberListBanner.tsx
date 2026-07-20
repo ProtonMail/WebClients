@@ -21,10 +21,7 @@ const MembersListItem = ({ member }: { member: Member }) => {
     const email = getMemberEmailOrName(member);
     return (
         <div className="text-ellipsis w-full">
-            <span className="text-bold" title={name}>
-                {name}
-            </span>{' '}
-            {email !== name && <span title={email}>({email})</span>}
+            <span title={name}>{name}</span> {email !== name && <span title={email}>({email})</span>}
         </div>
     );
 };
@@ -70,7 +67,7 @@ export const MemberListBanner = ({
     action: ReactNode;
 }) => {
     return (
-        <Banner className="p-2 mb-5" contentWrapperClassName="flex-1 flex" noIcon variant={variant} largeRadius>
+        <Banner className="p-2 mb-12" contentWrapperClassName="flex-1 flex" noIcon variant={variant} largeRadius>
             <div className="flex flex-row flex-1 gap-4">
                 <div className="md:flex-1 gap-2 flex flex-nowrap">
                     <div>{members}</div>

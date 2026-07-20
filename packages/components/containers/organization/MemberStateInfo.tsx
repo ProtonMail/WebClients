@@ -13,12 +13,7 @@ interface Props {
 export const MemberStateInfo = ({ title, children, backgroundColor, color }: Props) => (
     <Tooltip title={title} openDelay={0}>
         <span>
-            <Pill
-                className="text-semibold text-uppercase"
-                rounded="rounded-sm"
-                backgroundColor={backgroundColor}
-                color={color}
-            >
+            <Pill className="text-uppercase" rounded="rounded-sm" backgroundColor={backgroundColor} color={color}>
                 {children}
             </Pill>
         </span>
