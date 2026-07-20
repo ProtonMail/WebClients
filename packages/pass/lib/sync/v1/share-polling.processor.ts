@@ -1,4 +1,4 @@
-import { put, select } from 'redux-saga/effects';
+import { call, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
@@ -19,6 +19,7 @@ import {
     sharesEventSync,
 } from '@proton/pass/store/actions';
 import type { ItemsByShareId, ShareItem, SharesState } from '@proton/pass/store/reducers';
+import { refreshUserData } from '@proton/pass/store/sagas/events/core/channel.core';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse, ShareId } from '@proton/pass/types';
@@ -98,7 +99,7 @@ export function* processSharePollingEvent(
     }
 
     const itemsMutated = DeletedItemIDs.length + UpdatedItems.length > 0 || FullRefresh;
-    if (itemsMutated) onItemsUpdated?.();
+    if (itemsMutated) yield onItemsUpdated?.();
 
     return true;
 }
@@ -124,10 +125,30 @@ export function* processSharesPollingEvent(remoteShares: ShareGetResponse[], loc
  * and dispatches `sharesEventNew`. Returns the active parsed shares so the
  * caller can decide how to handle them (V1: fork per-share channels,
  * migration: no-op) */
-export function* processSharesIncomingEvent(event: ShareGetResponse[]): Generator<any, Share[]> {
+export function* processSharesIncomingEvent(
+    event: ShareGetResponse[],
+    options?: RootSagaOptions
+): Generator<any, Share[]> {
     logger.info(`[Polling::Shares]`, `${event.length} remote share(s) not in cache`);
 
-    const encryptedShares: Maybe<Share>[] = yield Promise.all(event.map((s) => parseShareResponse(s)));
+    let encryptedShares: Maybe<Share>[] = yield Promise.all(event.map((s) => parseShareResponse(s)));
+
+    /** If a group share failed to decrypt, refresh user data (addresses + keys)
+     * and retry. This can happen when a member is added later to an existing
+     * group, granting them a new address key needed to decrypt the share. */
+    const groupShareFailed = event.some((share, idx) => !encryptedShares[idx] && Boolean(share.GroupID));
+    if (groupShareFailed && options) {
+        const keyPassword = options.getAuthStore().getPassword();
+        if (keyPassword) {
+            yield call(refreshUserData, options.extensionId, keyPassword);
+            encryptedShares = yield Promise.all(
+                event.map((share, idx) =>
+                    encryptedShares[idx] ? Promise.resolve(encryptedShares[idx]) : parseShareResponse(share)
+                )
+            );
+        }
+    }
+
     const shares = encryptedShares.filter(truthy);
 
     if (shares.length === 0) return [];
