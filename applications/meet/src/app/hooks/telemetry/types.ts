@@ -8,6 +8,8 @@ export interface ParticipantQualityStats extends Record<string, unknown> {
     isLocal: boolean;
     participantCount?: number;
 
+    websocketUrl?: string;
+
     packetsReceived?: number;
     packetsLost?: number;
     packetsDiscarded?: number;
@@ -55,6 +57,8 @@ export interface JoinStats extends Record<string, unknown> {
     isReconnect: boolean;
     isInstantJoin: boolean;
     participantCount: number;
+
+    websocketUrl?: string;
 
     // Per-phase durations (ms) — null means the phase did not complete
     tokenFetchMs: number | null;

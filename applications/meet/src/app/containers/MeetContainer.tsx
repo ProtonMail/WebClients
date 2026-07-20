@@ -55,6 +55,7 @@ interface MeetContainerProps {
     isReconnecting: boolean;
     mlsRetrying: boolean;
     onSimulateReconnection: () => void;
+    websocketUrl: string | null;
 }
 
 export const MeetContainer = ({
@@ -87,6 +88,7 @@ export const MeetContainer = ({
     isReconnecting,
     mlsRetrying,
     onSimulateReconnection,
+    websocketUrl,
 }: MeetContainerProps) => {
     const debugOverlay = useDebugOverlay();
     const dispatch = useMeetDispatch();
@@ -159,7 +161,7 @@ export const MeetContainer = ({
         await handleMeetingExpired();
     });
 
-    useMeetingTelemetry();
+    useMeetingTelemetry(websocketUrl ?? undefined);
 
     // Safari needs a warmup so we can pass strict Safari PiP requirements
     // Running after joining the meeting
