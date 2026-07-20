@@ -15,7 +15,7 @@ export const LOGGER_DB_PREFIX = 'proton-logger-';
 export const DEFAULT_MAX_ENTRIES = 10000;
 export const DEFAULT_RETENTION_DAYS = 7;
 export const DEFAULT_LOGGER_NAME = 'default';
-export const DEFAULT_HIDE_LOGS_NON_DEV_ENV = false;
+export const DEFAULT_SHOW_LOGS_NON_DEV_ENV = false;
 
 /**
  * Pending logs management
