@@ -4,6 +4,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 import type { MeetState } from './rootReducer';
 import { resetChatAndReactions } from './slices/chatAndReactionsSlice';
+import { resetConnection } from './slices/connectionSlice';
 import { resetMeetingInfo, stopMeetingDurationTimer } from './slices/meetingInfo';
 import { resetParticipants } from './slices/participants/participantsSlice';
 import { resetSortedParticipants } from './slices/participants/sortedParticipantsSlice';
@@ -19,6 +20,7 @@ export const resetMeetingState =
         dispatch(resetMeetingInfo());
         dispatch(resetChatAndReactions());
         dispatch(resetUiState());
+        dispatch(resetConnection());
         dispatch(resetParticipants());
         dispatch(resetSortedParticipants());
         dispatch(resetScreenShareStatus());
