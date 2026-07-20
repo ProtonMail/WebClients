@@ -59,7 +59,7 @@ const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props)
                     <span>{c('Title header for members table').t`Name`}</span>
                 </AdminRolesSpotlight>
             ),
-            className: 'w-3/10',
+            className: 'w-auto',
         },
         {
             key: 'role',
@@ -94,15 +94,15 @@ const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props)
                     >{c('Title header for members table').t`Features`}</span>
                 </>
             ),
-            className: 'w-1/4',
+            className: 'w-1/5',
         },
-        { key: 'actions', node: '', className: 'w-1/6' },
+        { key: 'actions', node: '', className: 'w-custom', style: { '--w-custom': '3em' } },
     ].filter(isTruthy);
 
     return (
         <>
-            {headerCells.map(({ key, node, className = '' }) => (
-                <TableCell key={key} className={className} type="header">
+            {headerCells.map(({ key, node, className = '', style }) => (
+                <TableCell key={key} className={className} type="header" style={style}>
                     {node}
                 </TableCell>
             ))}

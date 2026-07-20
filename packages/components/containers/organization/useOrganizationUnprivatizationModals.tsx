@@ -173,7 +173,7 @@ const useOrganizationUnprivatizationModals = () => {
                             n
                         )}
 
-                        <MembersList members={disabledMembers} listClassName="color-weak" />
+                        <MembersList members={disabledMembers} />
                     </>
                 }
                 action={
