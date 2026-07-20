@@ -29,6 +29,12 @@ interface WorkerCallbackGlobals extends DedicatedWorkerGlobalScope {
     mlsSyncStateChangeEvent?: {
         on_mls_sync_state_changed: (state: number, failedReason?: number) => Promise<void>;
     };
+    joinDecisionEvent?: {
+        on_join_decision: (requestId: string, admitted: boolean) => void;
+    };
+    joinRequestEvent?: {
+        on_join_request: (change: 0 | 1, requestId: string, participantUid: string, expiresAt: number) => void;
+    };
 }
 
 const workerGlobal = self as WorkerCallbackGlobals;
@@ -115,6 +121,30 @@ const installWorkerCallbackNamespaces = () => {
                 type: 'meet-core:event:mls-sync-state',
                 state,
                 reason: failedReason,
+            };
+            workerGlobal.postMessage(message);
+        },
+    };
+
+    workerGlobal.joinDecisionEvent = {
+        on_join_decision: (requestId: string, admitted: boolean) => {
+            const message: MeetCoreWorkerEventMessage = {
+                type: 'meet-core:event:join-decision',
+                requestId,
+                admitted,
+            };
+            workerGlobal.postMessage(message);
+        },
+    };
+
+    workerGlobal.joinRequestEvent = {
+        on_join_request: (change: 0 | 1, requestId: string, participantUid: string, expiresAt: number) => {
+            const message: MeetCoreWorkerEventMessage = {
+                type: 'meet-core:event:join-request',
+                change,
+                requestId,
+                participantUid,
+                expiresAt,
             };
             workerGlobal.postMessage(message);
         },
@@ -231,6 +261,34 @@ const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<Mee
             const result = await activeApp.decodeChat(...request.params);
             return toChatIncomingEventInfoData(result);
         }
+        case 'hasMlsGroupInfo':
+            return activeApp.hasMlsGroupInfo();
+        case 'prepareMlsSessionForWaitingRoom':
+            return activeApp.prepareMlsSessionForWaitingRoom(...request.params);
+        case 'createJoinRequest':
+            return activeApp.createJoinRequest(...request.params);
+        case 'waitForWaitingRoomWelcome':
+            return activeApp.waitForWaitingRoomWelcome(...request.params);
+        case 'cancelWaitingRoomJoinRequest':
+            return activeApp.cancelWaitingRoomJoinRequest(...request.params);
+        case 'clearWaitingRoomJoinRequest':
+            return activeApp.clearWaitingRoomJoinRequest();
+        case 'setJoinDecisionHandler':
+            return activeApp.setJoinDecisionHandler();
+        case 'clearJoinDecisionHandler':
+            return activeApp.clearJoinDecisionHandler();
+        case 'setJoinRequestHandler':
+            return activeApp.setJoinRequestHandler();
+        case 'clearJoinRequestHandler':
+            return activeApp.clearJoinRequestHandler();
+        case 'admitWaitingRoomJoinRequest':
+            return activeApp.admitWaitingRoomJoinRequest(...request.params);
+        case 'admitAllWaitingRoomJoinRequests':
+            return activeApp.admitAllWaitingRoomJoinRequests(...request.params);
+        case 'rejectWaitingRoomJoinRequest':
+            return activeApp.rejectWaitingRoomJoinRequest(...request.params);
+        case 'updateWaitingRoomSetting':
+            return activeApp.updateWaitingRoomSetting(...request.params);
     }
 };
 
