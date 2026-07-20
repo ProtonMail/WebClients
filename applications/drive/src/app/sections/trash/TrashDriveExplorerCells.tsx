@@ -1,6 +1,7 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
+import { NodeType } from '@proton/drive';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
@@ -83,8 +84,8 @@ export const getTrashCells = ({ viewportWidth }: { viewportWidth: Breakpoints['v
         ...defaultSizeCellConfig,
         render: (uid) => {
             const SizeCellComponent = () => {
-                const size = useTrashStore((state) => state.getItem(uid)?.size);
-                return <SizeCell size={size} />;
+                const item = useTrashStore((state) => state.getItem(uid));
+                return <SizeCell size={item?.type === NodeType.Folder ? undefined : item?.size} />;
             };
             return <SizeCellComponent />;
         },
