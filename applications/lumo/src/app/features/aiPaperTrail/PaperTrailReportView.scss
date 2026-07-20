@@ -257,6 +257,21 @@
             background: var(--pt-soft);
         }
     }
+
+    &--alert {
+        .pt-stat__value {
+            color: #c4572a;
+        }
+
+        .pt-stat__label {
+            color: #c4572a;
+        }
+
+        &:hover,
+        &:focus-visible {
+            background: #fff5f2;
+        }
+    }
 }
 
 .pt-glance {
@@ -514,9 +529,9 @@
         border-color: #f2e4b8;
     }
 
-    &--tips {
-        background: linear-gradient(180deg, #f3fbf7, #fafdfb 55%);
-        border-color: #d9f0e6;
+    &--terms {
+        background: linear-gradient(180deg, #f6f3ff, #faf8ff 55%);
+        border-color: #e8e2f8;
     }
 
     &--compliance {
@@ -525,52 +540,34 @@
     }
 }
 
-.pt-insights {
+.pt-terms {
     list-style: none;
-    margin: 1rem 0 0;
+    margin: 1.25rem 0 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    gap: 0.85rem;
-}
-
-.pt-insight {
     display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-    padding: 1rem;
-    border-radius: 0.85rem;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(28, 19, 64, 0.06);
+    flex-direction: column;
+    gap: 1.35rem;
 
-    &__emoji {
-        inline-size: 2.25rem;
-        block-size: 2.25rem;
-        border-radius: 0.6rem;
-        background: rgba(109, 74, 255, 0.08);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.1rem;
-        flex-shrink: 0;
-    }
-
-    &__body {
-        min-inline-size: 0;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
     }
 
     &__title {
-        font-size: 0.95rem;
-        font-weight: 700;
-        margin: 0 0 0.2rem;
-        line-height: 1.3;
+        font-family: var(--pt-top);
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.35;
+        margin: 0;
+        color: var(--pt-text);
     }
 
     &__detail {
         margin: 0;
+        line-height: 1.55;
+        font-size: 0.92rem;
         color: var(--pt-muted);
-        line-height: 1.45;
-        font-size: 0.88rem;
     }
 }
 
@@ -679,86 +676,6 @@
         margin-block-start: 1rem;
     }
 
-    &__preview {
-        inline-size: 100%;
-        max-inline-size: 18rem;
-        padding: 1.25rem;
-        border-radius: 1rem;
-        background: linear-gradient(145deg, #1c1340, #3a2578);
-        color: #fff;
-        box-shadow: 0 12px 32px rgba(28, 19, 64, 0.18);
-    }
-
-    &__preview-head {
-        display: flex;
-        flex-direction: column;
-        gap: 0.15rem;
-        margin-block-end: 1rem;
-        text-align: start;
-    }
-
-    &__preview-brand {
-        font-size: 0.68rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        opacity: 0.75;
-    }
-
-    &__preview-title {
-        font-family: var(--pt-top);
-        font-size: 1rem;
-        font-weight: 600;
-    }
-
-    &__preview-score {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-block-end: 1rem;
-    }
-
-    &__preview-value {
-        font-family: var(--pt-top);
-        font-size: 2.75rem;
-        font-weight: 700;
-        line-height: 1;
-    }
-
-    &__preview-grade {
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        opacity: 0.85;
-        margin-block-start: 0.25rem;
-    }
-
-    &__preview-bars {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.45rem;
-    }
-
-    &__preview-bar {
-        display: grid;
-        grid-template-columns: 4.5rem 1fr;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    &__preview-area {
-        font-size: 0.68rem;
-        font-weight: 600;
-        opacity: 0.85;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
     &__actions {
         display: flex;
         flex-wrap: wrap;
@@ -767,23 +684,96 @@
     }
 }
 
-.pt-flag {
-    &__tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
+.pt-flag-modal {
+    padding-block-start: 0.5rem;
 
-        &--modal {
-            margin-block-start: 1rem;
-        }
+    &__hero {
+        text-align: center;
+        margin-block-end: 1.5rem;
     }
 
-    &__tag {
-        background: rgba(180, 35, 24, 0.1);
-        color: #8a1f15;
-        border-radius: 999px;
-        padding: 0.4rem 0.85rem;
-        font-size: 0.9rem;
+    &__badge {
+        inline-size: 4rem;
+        block-size: 4rem;
+        margin-inline: auto;
+        margin-block-end: 0.85rem;
+        border-radius: 50%;
+        background: #ffefe6;
+        color: #c4572a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__count {
+        margin: 0 0 0.5rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #c4572a;
+    }
+
+    &__title {
+        font-family: var(--pt-top);
+        font-size: 1.45rem;
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+        margin: 0 0 0.65rem;
+        color: var(--pt-text);
+    }
+
+    &__intro {
+        margin: 0;
+        line-height: 1.55;
+        font-size: 0.95rem;
+        color: var(--pt-muted);
+        max-inline-size: 32rem;
+        margin-inline: auto;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.9rem 1rem;
+        border-radius: 0.85rem;
+        background: #fff7f7;
+        border: 1px solid #f5dddd;
+    }
+
+    &__item-icon {
+        color: #c4572a;
+        flex-shrink: 0;
+        margin-block-start: 0.1rem;
+    }
+
+    &__item-text {
+        line-height: 1.45;
+        font-size: 0.92rem;
+        font-weight: 500;
+        color: #5c2f28;
+    }
+
+    &__footnote {
+        margin: 1.25rem 0 0;
+        padding: 0.9rem 1rem;
+        border-radius: 0.75rem;
+        background: #f6f3ff;
+        border: 1px solid #ebe6fa;
+        line-height: 1.5;
+        font-size: 0.88rem;
+        color: #4a4560;
     }
 }
 
