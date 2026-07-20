@@ -13,11 +13,11 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { editDelegatedAccessThunk } from '../../../outgoingActions';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';
-import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 import { getDefaultWaitTimeOptionValue, getWaitTimeOptions } from './getWaitTimeOptions';
 
 export interface EditOutgoingEmergencyContactModalProps extends Omit<
@@ -29,7 +29,7 @@ export interface EditOutgoingEmergencyContactModalProps extends Omit<
 
 export const EditOutgoingEmergencyContactModal = ({ value, ...rest }: EditOutgoingEmergencyContactModalProps) => {
     const handleError = useErrorHandler();
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 

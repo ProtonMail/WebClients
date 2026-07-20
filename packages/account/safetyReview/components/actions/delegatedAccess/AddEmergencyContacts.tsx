@@ -4,7 +4,6 @@ import ValidationError from '@proton/account/delegatedAccess/ValidationError';
 import { addDelegatedAccessesThunk } from '@proton/account/delegatedAccess/outgoingActions';
 import { AddContactInputs } from '@proton/account/delegatedAccess/shared/outgoing/AddContactInputs';
 import { useAddContactInputs } from '@proton/account/delegatedAccess/shared/outgoing/useAddContactInputs';
-import { useDelegatedAccessDispatch } from '@proton/account/delegatedAccess/useDelegatedAccessDispatch';
 import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
@@ -12,6 +11,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import noop from '@proton/utils/noop';
@@ -30,7 +30,7 @@ export const AddEmergencyContacts = (props: Props) => {
     const { validator, onFormSubmit } = useFormErrors();
 
     const handleError = useErrorHandler();
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
 
     const addContactInputs = useAddContactInputs();
 

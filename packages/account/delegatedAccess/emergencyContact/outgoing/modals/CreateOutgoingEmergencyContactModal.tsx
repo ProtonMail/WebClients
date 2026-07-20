@@ -12,6 +12,7 @@ import { useRecoverySettingsTelemetry } from '@proton/components/containers/reco
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
@@ -20,7 +21,6 @@ import { addDelegatedAccessThunk } from '../../../outgoingActions';
 import ContactEmailInput from '../../../shared/outgoing/ContactEmailInput';
 import { useAddContactInputs } from '../../../shared/outgoing/useAddContactInputs';
 import shield from '../../../shared/shield.svg';
-import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 
 export interface CreateOutgoingEmergencyContactModalProps extends Omit<
     ModalProps<'form'>,
@@ -29,7 +29,7 @@ export interface CreateOutgoingEmergencyContactModalProps extends Omit<
 
 export const CreateOutgoingEmergencyContactModal = ({ ...rest }: CreateOutgoingEmergencyContactModalProps) => {
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
