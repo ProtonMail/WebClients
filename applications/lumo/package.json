@@ -34,7 +34,7 @@
         "clsx": "^2.1.1",
         "d3-array": "^3.2.4",
         "d3-scale": "^4.0.2",
-        "dompurify": "^3.4.11",
+        "dompurify": "^3.4.12",
         "exceljs": "^4.4.0",
         "jest": "^30.4.2",
         "jest-environment-jsdom": "^30.4.1",
@@ -42,9 +42,9 @@
         "jszip": "^3.10.1",
         "lodash": "^4.18.1",
         "lottie-react": "^2.4.1",
-        "lucide-react": "^1.24.0",
+        "lucide-react": "^1.25.0",
         "p-limit": "^6.2.0",
-        "pdfjs-dist": "^5.2.133",
+        "pdfjs-dist": "^5.7.284",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-markdown": "^9.1.0",
@@ -65,9 +65,9 @@
         "ttag": "^1.8.12",
         "turndown": "^7.2.4",
         "uuid": "^14.0.1",
-        "vega": "^5.33.0",
+        "vega": "^5.33.1",
         "vega-embed": "^7.1.0",
-        "vega-interpreter": "^1.2.0",
+        "vega-interpreter": "^1.2.1",
         "vega-lite": "^5.23.0"
     },
     "devDependencies": {
@@ -81,7 +81,7 @@
         "@types/react-dom": "^18.3.7",
         "@types/react-syntax-highlighter": "^15.5.13",
         "@vitejs/plugin-react-swc": "^3.11.0",
-        "autoprefixer": "^10.5.2",
+        "autoprefixer": "^10.5.4",
         "babel-plugin-transform-import-meta": "^2.3.3",
         "core-js": "^3.49.0",
         "cross-env": "^10.1.0",
@@ -89,10 +89,10 @@
         "eslint-config-prettier": "^10.1.8",
         "fake-indexeddb": "^6.2.5",
         "msw": "2.12.14",
-        "postcss": "^8.5.16",
+        "postcss": "^8.5.19",
         "sass": "^1.80.3",
         "typescript": "^6.0.3",
-        "vite": "^8.1.4"
+        "vite": "^8.1.5"
     },
     "msw": {
         "workerDirectory": [
