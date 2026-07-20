@@ -14,9 +14,15 @@ interface Props {
     conversation: Conversation;
     onRename?: () => void;
     visibleOnHover?: boolean;
+    includeStarOption?: boolean;
 }
 
-export const ConversationSidebarActions = ({ conversation, onRename, visibleOnHover }: Props) => {
+export const ConversationSidebarActions = ({
+    conversation,
+    onRename,
+    visibleOnHover,
+    includeStarOption = true,
+}: Props) => {
     const [showDeleteFlow, setShowDeleteFlow] = useState(false);
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
         conversation,
@@ -24,14 +30,18 @@ export const ConversationSidebarActions = ({ conversation, onRename, visibleOnHo
     });
 
     const options: DropdownOptions[] = [
-        {
-            label: !isStarred ? c('Option').t`Add to favorites` : c('Option').t`Remove from favorites`,
-            icon: <LumoIcon name="Star" size={16} />,
-            onClick: (e) => {
-                e?.stopPropagation();
-                handleStarToggle();
-            },
-        },
+        ...(includeStarOption
+            ? [
+                  {
+                      label: !isStarred ? c('Option').t`Add to favorites` : c('Option').t`Remove from favorites`,
+                      icon: <LumoIcon name="Star" size={16} />,
+                      onClick: (e?: React.MouseEvent) => {
+                          e?.stopPropagation();
+                          handleStarToggle();
+                      },
+                  },
+              ]
+            : []),
         ...(onRename
             ? [
                   {
