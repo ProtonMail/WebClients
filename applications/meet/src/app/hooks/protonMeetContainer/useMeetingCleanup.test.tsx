@@ -5,6 +5,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
+import { connectionReducer, initialState as initialConnectionState } from '@proton/meet/store/slices/connectionSlice';
 import {
     initialState as initialParticipantsState,
     participantsReducer,
@@ -44,6 +45,7 @@ const createMockStore = () => {
     return configureStore({
         reducer: {
             ...participantsReducer,
+            ...connectionReducer,
         },
         preloadedState: {
             participants: {
@@ -51,6 +53,10 @@ const createMockStore = () => {
                 participantsMap: mockParticipantMap,
                 participantDecryptedNameMap: { test: 'test' },
                 isFetchingParticipants: true,
+            },
+            connection: {
+                ...initialConnectionState,
+                joinedRoom: true,
             },
         },
     });
@@ -75,7 +81,6 @@ const createParams = () => ({
     disallowHealthCheck: vi.fn(),
     cleanupMlsState: vi.fn(),
     stopPiP: vi.fn().mockResolvedValue(undefined),
-    setJoinedRoom: vi.fn(),
 });
 
 describe('useMeetingCleanup', () => {
@@ -101,14 +106,14 @@ describe('useMeetingCleanup', () => {
         expect(params.meetingInfoRef.current).toBeNull();
         expect(params.decryptionKeyRef.current).toBeNull();
 
-        const { participants } = store.getState();
+        const { participants, connection } = store.getState();
         expect(participants.participantsMap).toEqual({});
         expect(participants.participantDecryptedNameMap).toEqual({});
         expect(participants.isFetchingParticipants).toBe(false);
+        expect(connection.joinedRoom).toBe(false);
 
         expect(params.disallowHealthCheck).toHaveBeenCalledTimes(1);
         expect(params.cleanupMlsState).toHaveBeenCalledTimes(1);
-        expect(params.setJoinedRoom).toHaveBeenCalledWith(false);
 
         expect(mockRoom.disconnect).not.toHaveBeenCalled();
         expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
@@ -128,7 +133,7 @@ describe('useMeetingCleanup', () => {
         expect(mockMeetCoreClient.leaveMeeting).toHaveBeenCalledTimes(1);
         expect(params.stopPiP).toHaveBeenCalledTimes(1);
 
-        expect(params.setJoinedRoom).toHaveBeenCalledWith(false);
+        expect(store.getState().connection.joinedRoom).toBe(false);
         expect(params.meetingLinkNameRef.current).toBe('');
     });
 });

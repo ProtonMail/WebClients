@@ -15,7 +15,7 @@ import {
     selectSpeakerState,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { setLocalParticipantColorIndex } from '@proton/meet/store/slices/participants/participantsSlice';
-import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
+import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { APPS } from '@proton/shared/lib/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -46,7 +46,6 @@ interface PrejoinContainerProps {
     displayName: string;
     setDisplayName: (displayName: string) => void;
     isInstantJoin: boolean;
-    userId?: string;
     joiningLoaderHeader?: string;
     joiningLoaderSubtitle?: string;
 }
@@ -63,12 +62,12 @@ export const PrejoinContainer = ({
     displayName,
     setDisplayName,
     isInstantJoin,
-    userId,
     joiningLoaderHeader,
     joiningLoaderSubtitle,
 }: PrejoinContainerProps) => {
     const dispatch = useMeetDispatch();
     const isGuest = useMeetSelector(selectIsGuest);
+    const userId = useMeetSelector(selectUserId);
 
     // check if a custom display name is already stored for the user
     const hasStoredDisplayName = getItem(getDisplayNameStorageKey(isGuest, userId)) != null;
