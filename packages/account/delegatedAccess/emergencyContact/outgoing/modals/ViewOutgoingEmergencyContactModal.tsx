@@ -11,11 +11,11 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 import { grantDelegatedAccessThunk, resetDelegatedAccessThunk } from '../../../outgoingActions';
 import { getMetaOutgoingDelegatedAccess } from '../../../shared/outgoing/helper';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';
-import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 import { getFormattedAccessibleAtDate } from '../../date';
 import { getDaysFromMilliseconds } from '../../helper';
 import userExclamation from '../user-exclamation.svg';
@@ -34,7 +34,7 @@ export const ViewOutgoingEmergencyContactModal = ({
     ...rest
 }: ViewAccessOutgoingEmergencyContactModalProps) => {
     const handleError = useErrorHandler();
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
 
     const [loading, withLoading] = useLoading();
