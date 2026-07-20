@@ -1,6 +1,6 @@
 import type { ConnectionStateInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 
-import type { MeetCoreClient } from './MeetCoreClient';
+import type { CreateJoinRequestResult, MeetCoreClient } from './MeetCoreClient';
 import {
     emitMeetCoreDisconnectionEvent,
     emitMeetCoreLivekitAdminChangeEvent,
@@ -20,6 +20,7 @@ import type {
     MeetCoreWorkerRequestMessage,
     MeetCoreWorkerResponseMessage,
 } from './meetCoreWorkerProtocol';
+import { emitWaitingRoomJoinDecision, emitWaitingRoomJoinRequest } from './waitingRoomCallbacks';
 
 interface PendingRequest {
     resolve: (value: MeetCoreRpcResult | null) => void;
@@ -234,6 +235,72 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         return this.request('decodeChat', args);
     }
 
+    public hasMlsGroupInfo(): Promise<boolean> {
+        return this.request('hasMlsGroupInfo', []);
+    }
+
+    public prepareMlsSessionForWaitingRoom(
+        ...args: Parameters<MeetCoreClient['prepareMlsSessionForWaitingRoom']>
+    ): Promise<void> {
+        return this.request('prepareMlsSessionForWaitingRoom', args);
+    }
+
+    public createJoinRequest(meetLinkName: string, meetingSessionKey: string): Promise<CreateJoinRequestResult> {
+        return this.request('createJoinRequest', [meetLinkName, meetingSessionKey]);
+    }
+
+    public waitForWaitingRoomWelcome(meetLinkName: string): Promise<void> {
+        return this.request('waitForWaitingRoomWelcome', [meetLinkName]);
+    }
+
+    public cancelWaitingRoomJoinRequest(meetLinkName: string): Promise<void> {
+        return this.request('cancelWaitingRoomJoinRequest', [meetLinkName]);
+    }
+
+    public clearWaitingRoomJoinRequest(): Promise<void> {
+        return this.request('clearWaitingRoomJoinRequest', []);
+    }
+
+    public setJoinDecisionHandler(): Promise<void> {
+        return this.request('setJoinDecisionHandler', []);
+    }
+
+    public clearJoinDecisionHandler(): Promise<void> {
+        return this.request('clearJoinDecisionHandler', []);
+    }
+
+    public setJoinRequestHandler(): Promise<void> {
+        return this.request('setJoinRequestHandler', []);
+    }
+
+    public clearJoinRequestHandler(): Promise<void> {
+        return this.request('clearJoinRequestHandler', []);
+    }
+
+    public updateWaitingRoomSetting(meetLinkName: string, enable: boolean, sessionKeyBase64: string): Promise<void> {
+        return this.request('updateWaitingRoomSetting', [meetLinkName, enable, sessionKeyBase64]);
+    }
+
+    public admitWaitingRoomJoinRequest(
+        meetLinkName: string,
+        requestId: string,
+        sessionKeyBase64: string
+    ): Promise<void> {
+        return this.request('admitWaitingRoomJoinRequest', [meetLinkName, requestId, sessionKeyBase64]);
+    }
+
+    public admitAllWaitingRoomJoinRequests(meetLinkName: string, sessionKeyBase64: string): Promise<void> {
+        return this.request('admitAllWaitingRoomJoinRequests', [meetLinkName, sessionKeyBase64]);
+    }
+
+    public rejectWaitingRoomJoinRequest(
+        meetLinkName: string,
+        requestId: string,
+        participantUid: string
+    ): Promise<void> {
+        return this.request('rejectWaitingRoomJoinRequest', [meetLinkName, requestId, participantUid]);
+    }
+
     public dispose(): void {
         if (this.disposed) {
             return;
@@ -367,6 +434,17 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
                 return;
             case 'meet-core:event:mls-sync-state':
                 await emitMeetCoreMlsSyncStateEvent(message.state, message.reason);
+                return;
+            case 'meet-core:event:join-decision':
+                emitWaitingRoomJoinDecision(message.requestId, message.admitted);
+                return;
+            case 'meet-core:event:join-request':
+                emitWaitingRoomJoinRequest(
+                    message.change,
+                    message.requestId,
+                    message.participantUid,
+                    message.expiresAt
+                );
                 return;
         }
     }
