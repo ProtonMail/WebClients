@@ -34,6 +34,7 @@ export const createTrashItem = async (
     haveSignatureIssues?: boolean
 ): Promise<TrashItem> => {
     const rootNode = await getRootNode(rawNode, client);
+
     return {
         uid: node.uid,
         name: node.name,
