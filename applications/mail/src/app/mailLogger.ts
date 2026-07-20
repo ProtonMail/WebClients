@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import { loggerManager } from '@proton/shared/lib/logger';
 
-const logger = loggerManager.getLogger('mail', { hideLogsNonDevEnvironment: true });
+const logger = loggerManager.getLogger('mail');
 
 export const MAIL_LOG_COMPONENT = {
     MAILBOX_ACTIONS: 'mailbox-actions',
