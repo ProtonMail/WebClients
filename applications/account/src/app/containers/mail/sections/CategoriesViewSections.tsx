@@ -1,7 +1,8 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Info, useModalState } from '@proton/components';
-import useLoading from '@proton/hooks/useLoading';
 import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
@@ -24,7 +25,7 @@ import { PromptDisableCategories } from './PromptDisableCategories';
 import './CategoriesViewSections.scss';
 
 export const CategoriesViewSections = () => {
-    const [loading, withLoading] = useLoading(false);
+    const [pendingID, setPendingID] = useState<string | null>(null);
 
     const dispatch = useDispatch();
     const [modal, setModal, renderModal] = useModalState();
@@ -43,15 +44,18 @@ export const CategoriesViewSections = () => {
         return categoriesStore?.find((cat) => cat.ID === categoryID);
     };
 
-    const updateCategory = (cat: Label) => {
-        return withLoading(
-            dispatch(
+    const updateCategory = async (cat: Label) => {
+        setPendingID(cat.ID);
+        try {
+            await dispatch(
                 updateLabel({
                     labelID: cat.ID,
                     label: { Name: cat.Name, Color: cat.Color, Display: cat.Display, Notify: cat.Notify },
                 })
-            )
-        );
+            );
+        } finally {
+            setPendingID(null);
+        }
     };
 
     const handleChangeDisplay = async (categoryID: string) => {
@@ -120,7 +124,7 @@ export const CategoriesViewSections = () => {
                                     key={category.id}
                                     categoriesEnabled={mailSettings.MailCategoryView}
                                     category={category}
-                                    loading={loading}
+                                    loading={pendingID === tmp.ID}
                                     updateDisplay={handleChangeDisplay}
                                     updateNotify={handleChangeNotify}
                                 />
