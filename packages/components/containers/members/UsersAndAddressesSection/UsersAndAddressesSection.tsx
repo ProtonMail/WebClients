@@ -36,7 +36,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph large className="flex items-center mb-6 gap-2">
+            <SettingsParagraph large className="flex items-center mb-12 gap-2">
                 <UserAndAddressesSectionIntro onOpenNewDomainModal={setNewDomainModalOpen} />
             </SettingsParagraph>
 

@@ -65,17 +65,17 @@ interface Props extends ModalProps {
 const StatusBadge = ({ status }: { status: ItemStatus }) => {
     switch (status) {
         case ItemStatus.Waiting:
-            return <span className="text-sm color-hint text-semibold">{c('Status').t`... waiting`}</span>;
+            return <span className="color-hint text-sm text-bold">{c('Status').t`... waiting`}</span>;
         case ItemStatus.Finalizing:
             return (
-                <span className="inline-flex items-center gap-1 text-semibold color-primary">
+                <span className="inline-flex items-center gap-1 text-sm text-bold color-primary">
                     <IcArrowsRotate className="scim-spin" />
                     {c('Status').t`finalizing`}
                 </span>
             );
         case ItemStatus.Completed:
             return (
-                <span className="inline-flex items-center gap-1 text-sm color-success">
+                <span className="inline-flex items-center gap-1 text-sm text-bold color-success">
                     <IcCheckmarkCircleFilled />
                     {c('Status').t`completed`}
                 </span>
@@ -97,7 +97,7 @@ const UserInfoRow = ({
     status: ItemStatus;
     isPrivate?: boolean;
 }) => (
-    <div className="flex items-center gap-3 py-3">
+    <div className="flex items-center gap-3 py-2">
         <Avatar className="shrink-0 text-rg" color="weak">
             {getInitials(name)}
         </Avatar>
@@ -114,7 +114,9 @@ const UserInfoRow = ({
                 </p>
             )}
         </div>
-        <StatusBadge status={status} />
+        <span className="mr-6">
+            <StatusBadge status={status} />
+        </span>
     </div>
 );
 
@@ -134,10 +136,10 @@ const Section = ({
     const ChevronIcon = expanded ? IcChevronUp : IcChevronDown;
 
     return (
-        <div className="border-bottom">
+        <div className="border-bottom mb-2 pb-2">
             <button
                 type="button"
-                className="w-full flex items-center justify-space-between py-3 text-left"
+                className="w-full flex items-center justify-space-between py-2 text-left"
                 onClick={onToggle}
             >
                 <span className="block">
@@ -149,7 +151,7 @@ const Section = ({
                     <ChevronIcon className="shrink-0" />
                 </span>
             </button>
-            {expanded && <div className="pb-3">{children}</div>}
+            {expanded && <div>{children}</div>}
         </div>
     );
 };
@@ -207,11 +209,11 @@ const GroupInfoRow = ({
     return (
         <div>
             {hasMembers ? (
-                <button type="button" className="w-full flex items-center gap-3 py-3 text-left" onClick={onToggle}>
+                <button type="button" className="w-full flex items-center gap-3 py-2 text-left" onClick={onToggle}>
                     {header}
                 </button>
             ) : (
-                <div className="flex items-center gap-3 py-3">{header}</div>
+                <div className="flex items-center gap-3 py-2">{header}</div>
             )}
             {expanded && hasMembers && (
                 <div className="pl-11">
