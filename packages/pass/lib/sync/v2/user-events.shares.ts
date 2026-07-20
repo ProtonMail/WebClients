@@ -10,7 +10,9 @@ import { requestShare } from '@proton/pass/lib/shares/share.requests';
 import { discardDrafts } from '@proton/pass/lib/sync/common/drafts';
 import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { shareCreated, shareDeleted, shareUpdated } from '@proton/pass/store/actions';
+import { refreshUserData } from '@proton/pass/store/sagas/events/core/channel.core';
 import { selectShare } from '@proton/pass/store/selectors';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe, MaybeNull, Share, ShareCreatedDTO, ShareId, SyncEventShareOutput } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import chunk from '@proton/utils/chunk';
@@ -83,9 +85,27 @@ function* processShareBatches<T>(
  * then re-create) is handled at the reducer level: `shareCreated` wipes any
  * existing entry before merging, so stale local data never conflicts with freshly
  * fetched state. Returns `true` if all fetches succeeded. */
-export function* processSharesCreated(created: SyncEventShareOutput[]): EventProcessor {
+export function* processSharesCreated(created: SyncEventShareOutput[], options?: RootSagaOptions): EventProcessor {
     if (created.length === 0) return true;
-    return yield call(processShareBatches<ShareCreatedDTO>, created, shareWithItemsFetcher, shareCreated);
+
+    const ok: boolean = yield call(processShareBatches<ShareCreatedDTO>, created, shareWithItemsFetcher, shareCreated);
+
+    /** If a created share failed to decrypt, refresh user data (addresses + keys)
+     * and retry. This can happen when a member is added later to an existing
+     * group, granting them a new address key needed to decrypt the share. */
+    const unresolved = created.filter(({ ShareID }) => !PassCrypto.canOpenShare(ShareID));
+    if (unresolved.length === 0 || !options) return ok;
+    const keyPassword = options.getAuthStore().getPassword();
+    if (!keyPassword) return ok;
+    yield call(refreshUserData, options.extensionId, keyPassword);
+    const retried: boolean = yield call(
+        processShareBatches<ShareCreatedDTO>,
+        unresolved,
+        shareWithItemsFetcher,
+        shareCreated
+    );
+
+    return ok && retried;
 }
 
 /** Processes share deletions by discarding drafts and removing share
