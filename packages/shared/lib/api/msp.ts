@@ -9,6 +9,11 @@ export const getMspSubsidiaries = (params?: PaginationParams) => ({
     params,
 });
 
+export const getMspBillingSummary = (mspId: string) => ({
+    method: 'get',
+    url: `core/v4/organizations/${mspId}/subsidiaries/billing-summary/cost`,
+});
+
 export const getAllMspSubsidiaries = (api: Api) => {
     return queryPages((Page, PageSize) => {
         return api<{ Organizations: MspSubsidiary[]; Total: number }>(getMspSubsidiaries({ Page, PageSize }));

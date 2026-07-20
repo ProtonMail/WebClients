@@ -1,5 +1,8 @@
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import {
     DropdownActions,
@@ -10,16 +13,19 @@ import {
     TableHeader,
     TableHeaderCell,
     TableRow,
+    useApi,
     usePagination,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
+import { getMspBillingSummary } from '@proton/shared/lib/api/msp';
 import { getFormattedMonths } from '@proton/shared/lib/date/date';
+import type { MspBillingSummary } from '@proton/shared/lib/interfaces/MspBillingSummary';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { MOCK_MONTHLY_DATA, MOCK_SEATS_HISTORY, MONTHLY_RATE } from '../mock/monthlyCosts';
+import { MOCK_MONTHLY_DATA, MOCK_SEATS_HISTORY } from '../mock/monthlyCosts';
 import type { MonthlyRow } from '../types';
 import SeatsUsageChart from './SeatsUsageChart';
 
@@ -29,19 +35,39 @@ const PAGE_SIZE = 15;
 
 const MONTHS_SHORT = getFormattedMonths('MMM');
 
-const billingPeriod = (row: MonthlyRow): string => `${MONTHS_SHORT[row.month]}, ${row.year}`;
+const billingPeriod = ({ month, year }: Pick<MonthlyRow, 'month' | 'year'>): string =>
+    `${MONTHS_SHORT[month]}, ${year}`;
+
+// `BillingPeriod` from the API is formatted as "MM-YYYY".
+const formatApiBillingPeriod = (apiBillingPeriod: string): string => {
+    const [month, year] = apiBillingPeriod.split('-').map(Number);
+    return billingPeriod({ month: month - 1, year });
+};
 
 const MspMonthlyCostsSection = () => {
+    const api = useApi();
+    const [organization] = useOrganization();
+    const mspId = organization?.ID;
     const [subscription] = useSubscription();
     const currency = subscription?.Currency;
     const isMspCostsTableEnabled = useFlag('MspCostsTableEnabled');
 
+    const [billingSummary, setBillingSummary] = useState<MspBillingSummary>();
+    const [billingSummaryLoading, setBillingSummaryLoading] = useState(true);
+
+    useEffect(() => {
+        if (!mspId) {
+            return;
+        }
+        void api<MspBillingSummary>(getMspBillingSummary(mspId))
+            .then(setBillingSummary)
+            .finally(() => setBillingSummaryLoading(false));
+    }, [mspId]);
+
     const { page, list: pageRows, onNext, onPrevious, onSelect } = usePagination(MOCK_MONTHLY_DATA, 1, PAGE_SIZE);
-    if (!currency) {
+    if (!currency || billingSummaryLoading || !billingSummary) {
         return null;
     }
-
-    const currentRow = MOCK_MONTHLY_DATA[0];
 
     const rowActions = [
         {
@@ -63,13 +89,13 @@ const MspMonthlyCostsSection = () => {
     const stats = [
         {
             label: c('Label').t`Billed seats`,
-            value: currentRow.seats,
+            value: Math.round(billingSummary.TotalBilledLicenses),
             sub: c('Info').t`Average`,
         },
-        { label: c('Label').t`Companies`, value: String(currentRow.companies), sub: c('Info').t`Active` },
+        { label: c('Label').t`Companies`, value: String(billingSummary.ManagedCompanies), sub: c('Info').t`Active` },
         {
             label: c('Label').t`Cost`,
-            value: getSimplePriceString(currency, MONTHLY_RATE),
+            value: getSimplePriceString(currency, billingSummary.CostPerLicense * 100),
             sub: c('Info').t`Per seat/month`,
         },
     ];
@@ -84,8 +110,10 @@ const MspMonthlyCostsSection = () => {
             <div className="border border-norm rounded-lg shadow-norm px-6 pt-6 pb-8 flex flex-column-md flex-row items-center gap-8">
                 <div className="flex flex-column gap-1 flex-1">
                     <p className="m-0 text-semibold">{c('Label').t`Total cost`}</p>
-                    <p className="m-0 text-bold text-7xl">{getSimplePriceString(currency, currentRow.cost)}</p>
-                    <p className="m-0 text-sm color-weak">{billingPeriod(currentRow)}</p>
+                    <p className="m-0 text-bold text-7xl">
+                        {getSimplePriceString(currency, billingSummary.TotalCost * 100)}
+                    </p>
+                    <p className="m-0 text-sm color-weak">{formatApiBillingPeriod(billingSummary.BillingPeriod)}</p>
                 </div>
                 <div className="flex gap-6 flex-1">
                     {stats.map(({ label, value, sub }) => (
