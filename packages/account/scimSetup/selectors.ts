@@ -9,6 +9,8 @@ import { selectGroups } from '../groups';
 import { getIsScimGroup, getIsScimGroupPendingKeys } from '../groups/groupFlags';
 import { selectMembers } from '../members';
 import { selectJoinedUnprivatizationState } from '../members/unprivatizeMembers';
+import { selectOrganization } from '../organization';
+import hasKeylessSsoEntitlement from './hasKeylessSsoEntitlement';
 
 /** Members awaiting manual approval (unprivatization). */
 export const selectPendingScimUsers = createSelector(selectJoinedUnprivatizationState, (joinedState) =>
@@ -50,9 +52,15 @@ export const selectPendingScimMembersByGroup = createSelector(
  * existing SCIM groups that have keys but gained pending-admin members.
  */
 export const selectPendingScimGroups = createSelector(
+    selectOrganization,
     selectGroups,
     selectPendingScimMembersByGroup,
-    (groupsState, pendingMembersByGroup) => {
+    (organizationState, groupsState, pendingMembersByGroup) => {
+        // Orgs on plans with the keyless-sso entitlement must not see or approve pending SCIM groups.
+        if (hasKeylessSsoEntitlement(organizationState.value?.PlanName)) {
+            return [];
+        }
+
         const groups = groupsState.value ?? [];
         const newGroups = groups.filter(getIsScimGroupPendingKeys);
         const updatedGroups = groups.filter(
