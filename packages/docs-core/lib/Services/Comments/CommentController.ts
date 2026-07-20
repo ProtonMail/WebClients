@@ -17,8 +17,8 @@ import {
   CommentsMessageType,
   CommentThreadState,
   CommentType,
+  CommentThreadType,
 } from '@proton/docs-shared'
-import { CommentThreadType } from '@proton/docs-shared'
 import { CreateRealtimeCommentPayload } from './CreateRealtimeCommentPayload'
 import { DocControllerEvent } from '../../AuthenticatedDocController/AuthenticatedDocControllerEvent'
 import { EventTypeEnum } from '@proton/docs-proto'
@@ -44,6 +44,7 @@ import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceIn
  */
 export class CommentController implements CommentControllerInterface, InternalEventHandlerInterface {
   private localCommentsState: LocalCommentsState
+  private hasSeenWebsocketOpen = false
 
   public readonly liveComments: LiveComments = new LiveComments(
     this.websocketService,
@@ -119,7 +120,12 @@ export class CommentController implements CommentControllerInterface, InternalEv
 
   async handleEvent(event: InternalEventInterface): Promise<void> {
     if (event.type === WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady) {
-      void this.fetchAllComments()
+      if (this.hasSeenWebsocketOpen) {
+        // only fetch comments on a reconnection, not on the first connection as DocLoader already does it on the initial load
+        void this.fetchAllComments()
+        return
+      }
+      this.hasSeenWebsocketOpen = true
     } else if (event.type === DocControllerEvent.RealtimeCommentMessageReceived) {
       const { message } = event.payload as DocControllerEventPayloads[DocControllerEvent.RealtimeCommentMessageReceived]
 
