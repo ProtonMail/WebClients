@@ -16,7 +16,7 @@ const MemberFeatures = ({ member, organization }: Props) => {
     return (
         <>
             {(organization?.MaxSpace || 0) > 0 ? (
-                <span className="mb-2 flex flex-nowrap">
+                <span className="mb-1 flex flex-nowrap">
                     <span className="shrink-0 flex mt-0.5">
                         <IcFilingCabinet />
                     </span>
