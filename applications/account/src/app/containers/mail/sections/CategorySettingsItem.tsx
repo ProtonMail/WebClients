@@ -9,40 +9,32 @@ import {
     getDescriptionFromCategoryId,
     getLabelFromCategoryId,
 } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
-import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 interface CategoryItemProps {
     category: CategoryTab;
     loading: boolean;
     categoriesEnabled: boolean;
-    onUpdate: (category: CategoryTab) => void;
+    updateDisplay: (categoryID: string) => void;
+    updateNotify: (categoryID: string) => void;
 }
 
-export const CategorySettingsItem = ({ category, loading, categoriesEnabled, onUpdate }: CategoryItemProps) => {
+export const CategorySettingsItem = ({
+    category,
+    loading,
+    categoriesEnabled,
+    updateDisplay,
+    updateNotify,
+}: CategoryItemProps) => {
     const categoryLabel = getLabelFromCategoryId(category.id);
 
-    const isReloadDisabled = useFlag('InboxDesktopCategoryViewSettingsToggleReloadDisabled');
-    const { sendReportToggleCategory, sendReportToggleNotification } = useCategoriesTelemetry();
-
     const handleToggleCategory = () => {
-        onUpdate({ ...category, display: !category.display });
-        sendReportToggleCategory(category.id, !category.display);
-
-        // INDA-703: remove the current implementation once 1.14.0 is released
-        if (isElectronApp && !isReloadDisabled) {
-            void invokeInboxDesktopIPC({ type: 'userLogin' }).catch(noop);
-        }
+        updateDisplay(category.id);
     };
 
     const handleToggleNotification = () => {
-        onUpdate({ ...category, notify: !category.notify });
-        sendReportToggleNotification(category.id, !category.notify);
+        updateNotify(category.id);
     };
 
     return (
