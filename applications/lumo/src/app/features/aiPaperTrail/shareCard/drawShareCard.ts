@@ -1,58 +1,79 @@
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
 import type { PaperTrailCardData } from '../reportTypes';
+import { loadLucideIconImage } from './lucideIconImage';
 
 export const CARD_WIDTH = 1080;
 export const CARD_HEIGHT = 1080;
 
 export type ShareCardTheme = 'dark' | 'light';
 
+export const SHARE_CARD_URL = 'proton.me/lumo/aitrail';
+
 const FONT_STACK = `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`;
 
 interface Palette {
-    bg: [string, string, string];
-    eyebrow: string;
+    bg: string;
+    hero: string;
+    statsPanel: string;
     title: string;
     subtle: string;
+    label: string;
     track: string;
-    /** Neutral panel behind the grade callout. */
-    panel: string;
-    panelLabel: string;
-    /** Accent panel behind the "worth to Big Tech" callout. */
-    callout: [string, string];
-    calloutText: string;
-    calloutSub: string;
+    accent: string;
+    ringTrack: string;
+    footerBg: string;
+    footerBorder: string;
+    icon: string;
+    iconBg: string;
     divider: string;
+    border: string;
 }
 
 const PALETTES: Record<ShareCardTheme, Palette> = {
-    dark: {
-        bg: ['#1b1340', '#241653', '#0d0a1f'],
-        eyebrow: '#b9a7ff',
-        title: '#ffffff',
-        subtle: '#cdbcff',
-        track: 'rgba(255, 255, 255, 0.12)',
-        panel: 'rgba(255, 255, 255, 0.06)',
-        panelLabel: '#cdbcff',
-        callout: ['#7c5cff', '#a07bff'],
-        calloutText: '#ffffff',
-        calloutSub: 'rgba(255, 255, 255, 0.82)',
-        divider: 'rgba(255, 255, 255, 0.1)',
-    },
     light: {
-        bg: ['#f3efff', '#faf7ff', '#fdf2f6'],
-        eyebrow: '#6d4aff',
+        bg: '#ffffff',
+        hero: '#f3efff',
+        statsPanel: '#ffffff',
         title: '#1c1340',
         subtle: '#6b6a7b',
+        label: '#8a849c',
         track: 'rgba(28, 19, 64, 0.08)',
-        panel: 'rgba(28, 19, 64, 0.045)',
-        panelLabel: '#6b6a7b',
-        callout: ['#6d4aff', '#8f6bff'],
-        calloutText: '#d6443a',
-        calloutSub: '#6b6a7b',
-        divider: 'rgba(28, 19, 64, 0.1)',
+        accent: '#6d4aff',
+        ringTrack: 'rgba(109, 74, 255, 0.14)',
+        footerBg: '#faf9fd',
+        footerBorder: 'rgba(28, 19, 64, 0.08)',
+        icon: '#6d4aff',
+        iconBg: 'rgba(109, 74, 255, 0.1)',
+        divider: 'rgba(28, 19, 64, 0.08)',
+        border: 'rgba(28, 19, 64, 0.08)',
+    },
+    dark: {
+        bg: '#1b1340',
+        hero: 'rgba(255, 255, 255, 0.06)',
+        statsPanel: 'rgba(255, 255, 255, 0.04)',
+        title: '#ffffff',
+        subtle: '#cdbcff',
+        label: '#b9a7ff',
+        track: 'rgba(255, 255, 255, 0.12)',
+        accent: '#b9a7ff',
+        ringTrack: 'rgba(255, 255, 255, 0.12)',
+        footerBg: 'rgba(255, 255, 255, 0.04)',
+        footerBorder: 'rgba(255, 255, 255, 0.1)',
+        icon: '#b9a7ff',
+        iconBg: 'rgba(255, 255, 255, 0.08)',
+        divider: 'rgba(255, 255, 255, 0.1)',
+        border: 'rgba(255, 255, 255, 0.1)',
     },
 };
+
+interface ShareCardAssets {
+    logo?: HTMLImageElement;
+    privacyIcon?: HTMLImageElement;
+    valueIcon?: HTMLImageElement;
+}
+
+const PADDING = 64;
 
 const formatValue = (value: number): string => {
     if (!value || value <= 0) {
@@ -64,8 +85,17 @@ const formatValue = (value: number): string => {
     return `$${Math.round(value)}`;
 };
 
-// Exposure colour: higher = more exposed = worse (red). Lower = safer (green).
-const exposureColor = (score: number, theme: ShareCardTheme): string => {
+export const privacyTypeLabel = (score: number): string => {
+    if (score >= 70) {
+        return 'Easy to read';
+    }
+    if (score >= 40) {
+        return 'Somewhat readable';
+    }
+    return 'Hard to read';
+};
+
+const exposureBarColor = (score: number, theme: ShareCardTheme): string => {
     if (theme === 'light') {
         if (score >= 70) {
             return '#d6443a';
@@ -73,7 +103,7 @@ const exposureColor = (score: number, theme: ShareCardTheme): string => {
         if (score >= 40) {
             return '#d99500';
         }
-        return '#b9a7ff';
+        return '#1aa67a';
     }
     if (score >= 70) {
         return '#ff7a7a';
@@ -110,17 +140,13 @@ const loadImage = (src: string): Promise<HTMLImageElement> =>
         img.src = src;
     });
 
-const MARGIN = 72;
-
-/** Draw a small uppercase label, returning nothing. Assumes left text alignment. */
 const drawLabel = (ctx: CanvasRenderingContext2D, text: string, x: number, y: number, color: string): void => {
-    ctx.font = `700 22px ${FONT_STACK}`;
+    ctx.font = `700 18px ${FONT_STACK}`;
     ctx.fillStyle = color;
     ctx.textAlign = 'left';
     ctx.fillText(text.toUpperCase(), x, y);
 };
 
-/** Shrink the font until `text` fits within `maxWidth` (down to a floor), then return the px size used. */
 const fitFont = (
     ctx: CanvasRenderingContext2D,
     text: string,
@@ -138,126 +164,175 @@ const fitFont = (
     return size;
 };
 
-/**
- * Draw the 1:1 square shareable card. Square is the safest universal format — it
- * displays uncropped in every social feed (X, Facebook, Reddit, LinkedIn, Instagram).
- * It deliberately contains NO personal information — only a privacy score broken down
- * by area (higher = more privacy-conscious).
- */
+const drawStatRow = (
+    ctx: CanvasRenderingContext2D,
+    palette: Palette,
+    x: number,
+    y: number,
+    w: number,
+    h: number,
+    icon: HTMLImageElement | undefined,
+    label: string,
+    value: string
+): void => {
+    const iconBox = 52;
+    const iconX = x + 20;
+    const iconY = y + (h - iconBox) / 2;
+
+    roundRect(ctx, iconX, iconY, iconBox, iconBox, 14);
+    ctx.fillStyle = palette.iconBg;
+    ctx.fill();
+
+    if (icon) {
+        ctx.drawImage(icon, iconX + 10, iconY + 10, iconBox - 20, iconBox - 20);
+    }
+
+    const textX = iconX + iconBox + 18;
+    drawLabel(ctx, label, textX, y + h / 2 - 10, palette.label);
+    const valueSize = fitFont(ctx, value, 700, 34, 24, w - (textX - x) - 16);
+    ctx.font = `700 ${valueSize}px ${FONT_STACK}`;
+    ctx.fillStyle = palette.title;
+    ctx.textAlign = 'left';
+    ctx.fillText(value, textX, y + h / 2 + 28);
+};
+
 const drawShareCard = (
     ctx: CanvasRenderingContext2D,
     data: PaperTrailCardData,
     theme: ShareCardTheme,
-    logo?: HTMLImageElement
+    assets: ShareCardAssets
 ): void => {
     const cx = CARD_WIDTH / 2;
     const palette = PALETTES[theme];
+    const contentW = CARD_WIDTH - PADDING * 2;
 
-    // Background gradient.
-    const bg = ctx.createLinearGradient(0, 0, CARD_WIDTH, CARD_HEIGHT);
-    bg.addColorStop(0, palette.bg[0]);
-    bg.addColorStop(0.55, palette.bg[1]);
-    bg.addColorStop(1, palette.bg[2]);
-    ctx.fillStyle = bg;
+    ctx.save();
+    roundRect(ctx, 0, 0, CARD_WIDTH, CARD_HEIGHT, 32);
+    ctx.clip();
+    ctx.fillStyle = palette.bg;
     ctx.fillRect(0, 0, CARD_WIDTH, CARD_HEIGHT);
+    ctx.restore();
 
+    ctx.strokeStyle = palette.border;
+    ctx.lineWidth = 2;
+    roundRect(ctx, 1, 1, CARD_WIDTH - 2, CARD_HEIGHT - 2, 32);
+    ctx.stroke();
+
+    if (assets.logo) {
+        const logoSize = 64;
+        ctx.drawImage(assets.logo, cx - logoSize / 2, PADDING, logoSize, logoSize);
+    }
+
+    ctx.textAlign = 'center';
     ctx.fillStyle = palette.title;
-    ctx.font = `800 56px ${FONT_STACK}`;
-    ctx.fillText('My AI Paper Trail', cx, 80);
+    ctx.font = `700 48px ${FONT_STACK}`;
+    ctx.fillText('My AI Paper Trail', cx, PADDING + 108);
 
-    // ---- Hero: score ring (left) + grade & worth callouts (right) ----
-    const ringCx = 296;
-    const ringCy = 280;
-    const ringRadius = 128;
+    const heroX = PADDING;
+    const heroY = PADDING + 136;
+    const heroW = contentW;
+    const heroH = 272;
+    roundRect(ctx, heroX, heroY, heroW, heroH, 24);
+    ctx.fillStyle = palette.hero;
+    ctx.fill();
+
+    const ringCx = heroX + heroW * 0.24;
+    const ringTop = heroY + 36;
+    const ringRadius = 78;
+
+    ctx.textAlign = 'center';
+    ctx.font = `600 22px ${FONT_STACK}`;
+    ctx.fillStyle = palette.subtle;
+    ctx.fillText('Privacy Exposure', ringCx, ringTop);
+
+    const ringCy = ringTop + 28 + ringRadius;
     const startAngle = -Math.PI / 2;
     const fraction = Math.max(0, Math.min(1, data.exposureScore / 100));
-    const ringColor = exposureColor(data.exposureScore, theme);
 
-    ctx.lineWidth = 16;
+    ctx.lineWidth = 12;
     ctx.lineCap = 'round';
     ctx.beginPath();
     ctx.arc(ringCx, ringCy, ringRadius, 0, Math.PI * 2);
-    ctx.strokeStyle = palette.track;
+    ctx.strokeStyle = palette.ringTrack;
     ctx.stroke();
     ctx.beginPath();
     ctx.arc(ringCx, ringCy, ringRadius, startAngle, startAngle + fraction * Math.PI * 2);
-    ctx.strokeStyle = ringColor;
+    ctx.strokeStyle = palette.accent;
     ctx.stroke();
 
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = palette.title;
-    ctx.font = `800 110px ${FONT_STACK}`;
-    ctx.fillText(String(data.exposureScore), ringCx, ringCy - 12);
-    ctx.font = `600 27px ${FONT_STACK}`;
+    ctx.font = `800 68px ${FONT_STACK}`;
+    ctx.fillText(String(data.exposureScore), ringCx, ringCy - 6);
+    ctx.font = `600 18px ${FONT_STACK}`;
     ctx.fillStyle = palette.subtle;
-    ctx.fillText('OUT OF 100', ringCx, ringCy + 55);
+    ctx.fillText('OUT OF 100', ringCx, ringCy + 36);
     ctx.textBaseline = 'alphabetic';
 
-    // Right-hand callout cards.
-    const cardX = 540;
-    const cardW = CARD_WIDTH - MARGIN - cardX;
-    const cardH = 116;
-    const card1Y = 150;
-    const card2Y = card1Y + cardH + 20;
-
-    // Grade card (neutral panel).
-    ctx.fillStyle = palette.panel;
-    roundRect(ctx, cardX, card1Y, cardW, cardH, 26);
+    const statsX = heroX + heroW * 0.46;
+    const statsY = heroY + 24;
+    const statsW = heroW * 0.5;
+    const statsH = heroH - 48;
+    roundRect(ctx, statsX, statsY, statsW, statsH, 20);
+    ctx.fillStyle = palette.statsPanel;
     ctx.fill();
-    drawLabel(ctx, 'Exposure grade', cardX + 32, card1Y + 44, palette.panelLabel);
-    const gradeText = data.grade.toUpperCase();
-    const gradeSize = fitFont(ctx, gradeText, 800, 44, 28, cardW - 64);
-    ctx.font = `800 ${gradeSize}px ${FONT_STACK}`;
-    ctx.fillStyle = ringColor;
-    ctx.textAlign = 'left';
-    ctx.fillText(gradeText, cardX + 32, card1Y + 92);
-
-    // Worth card (accent panel — the shareable hook).
-    const callout = ctx.createLinearGradient(cardX, card2Y, cardX + cardW, card2Y + cardH);
-    callout.addColorStop(0, palette.callout[0]);
-    callout.addColorStop(1, palette.callout[1]);
-    ctx.fillStyle = palette.panel;
-    // ctx.fillStyle = callout;
-    roundRect(ctx, cardX, card2Y, cardW, cardH, 26);
-    ctx.fill();
-    drawLabel(ctx, 'My Data Value', cardX + 32, card2Y + 44, palette.calloutSub);
-    ctx.font = `800 56px ${FONT_STACK}`;
-    ctx.fillStyle = palette.calloutText;
-    ctx.textAlign = 'left';
-    ctx.fillText(formatValue(data.estimatedValueUsd), cardX + 32, card2Y + 100);
-
-    // ---- Divider ----
-    const dividerY = 450;
     ctx.strokeStyle = palette.divider;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(MARGIN, dividerY);
-    ctx.lineTo(CARD_WIDTH - MARGIN, dividerY);
+    ctx.lineWidth = 1;
     ctx.stroke();
 
-    // ---- Per-area bars (two columns) ----
-    ctx.fillStyle = palette.eyebrow;
-    ctx.font = `700 24px ${FONT_STACK}`;
+    const rowH = statsH / 2;
+    drawStatRow(
+        ctx,
+        palette,
+        statsX,
+        statsY,
+        statsW,
+        rowH,
+        assets.privacyIcon,
+        'My Privacy Type',
+        privacyTypeLabel(data.exposureScore)
+    );
+    ctx.beginPath();
+    ctx.moveTo(statsX + 20, statsY + rowH);
+    ctx.lineTo(statsX + statsW - 20, statsY + rowH);
+    ctx.strokeStyle = palette.divider;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    drawStatRow(
+        ctx,
+        palette,
+        statsX,
+        statsY + rowH,
+        statsW,
+        rowH,
+        assets.valueIcon,
+        'My Data Value',
+        formatValue(data.estimatedValueUsd)
+    );
+
+    const sectionY = heroY + heroH + 52;
     ctx.textAlign = 'left';
-    ctx.fillText('What AI knows about me', MARGIN, dividerY + 48);
+    ctx.fillStyle = palette.title;
+    ctx.font = `700 28px ${FONT_STACK}`;
+    ctx.fillText('What AI Knows About Me', heroX, sectionY);
 
     const areas = data.areas.slice(0, 8);
     const half = Math.ceil(areas.length / 2);
     const colGap = 48;
-    const colW = (CARD_WIDTH - 2 * MARGIN - colGap) / 2;
-    const barHeight = 16;
-    const rowGap = 75;
-    const firstRowY = dividerY + 106;
+    const colW = (heroW - colGap) / 2;
+    const barHeight = 10;
+    const rowGap = 68;
+    const firstRowY = sectionY + 40;
 
     areas.forEach((area, i) => {
         const col = i < half ? 0 : 1;
         const rowIndex = i < half ? i : i - half;
-        const colX = MARGIN + col * (colW + colGap);
+        const colX = heroX + col * (colW + colGap);
         const y = firstRowY + rowIndex * rowGap;
-        const areaColor = exposureColor(area.exposureScore, theme);
+        const areaColor = exposureBarColor(area.exposureScore, theme);
 
-        ctx.font = `600 28px ${FONT_STACK}`;
+        ctx.font = `600 24px ${FONT_STACK}`;
         ctx.fillStyle = palette.title;
         ctx.textAlign = 'left';
         ctx.fillText(area.area, colX, y);
@@ -275,22 +350,27 @@ const drawShareCard = (
         ctx.fill();
     });
 
-    // ---- Footer CTA ----
-    ctx.textAlign = 'center';
-    ctx.fillStyle = palette.title;
-    ctx.font = `800 36px ${FONT_STACK}`;
-    ctx.fillText('Lower is better. How exposed are you?', cx, CARD_HEIGHT - 200);
-    ctx.fillStyle = palette.eyebrow;
-    ctx.font = `600 30px ${FONT_STACK}`;
-    ctx.fillText("What's your AI Paper Trail? · lumo.proton.me/ai-paper-trail", cx, CARD_HEIGHT - 144);
+    const footerY = CARD_HEIGHT - PADDING - 56;
+    const footerW = contentW;
+    roundRect(ctx, heroX, footerY, footerW, 56, 16);
+    ctx.fillStyle = palette.footerBg;
+    ctx.fill();
+    ctx.strokeStyle = palette.footerBorder;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
 
-    if (logo) {
-        const logoSize = 72;
-        ctx.drawImage(logo, cx - logoSize / 2, CARD_HEIGHT - 110, logoSize, logoSize);
-    }
+    ctx.font = `600 22px ${FONT_STACK}`;
+    const footerPrefix = "What's your AI Paper Trail? ";
+    ctx.fillStyle = palette.subtle;
+    const prefixWidth = ctx.measureText(footerPrefix).width;
+    const urlWidth = ctx.measureText(SHARE_CARD_URL).width;
+    const footerStartX = cx - (prefixWidth + urlWidth) / 2;
+    ctx.textAlign = 'left';
+    ctx.fillText(footerPrefix, footerStartX, footerY + 36);
+    ctx.fillStyle = palette.accent;
+    ctx.fillText(SHARE_CARD_URL, footerStartX + prefixWidth, footerY + 36);
 };
 
-/** Load the Lumo logo (best-effort) and render the card onto a canvas. */
 export const renderShareCard = async (
     canvas: HTMLCanvasElement,
     data: PaperTrailCardData,
@@ -300,11 +380,13 @@ export const renderShareCard = async (
     if (!ctx) {
         return;
     }
-    let logo: HTMLImageElement | undefined;
-    try {
-        logo = await loadImage(lumoCatIcon);
-    } catch {
-        logo = undefined;
-    }
-    drawShareCard(ctx, data, theme, logo);
+
+    const iconColor = PALETTES[theme].icon;
+    const [logo, privacyIcon, valueIcon] = await Promise.all([
+        loadImage(lumoCatIcon).catch(() => undefined),
+        loadLucideIconImage('Zap', 32, iconColor).catch(() => undefined),
+        loadLucideIconImage('BadgeDollarSign', 32, iconColor).catch(() => undefined),
+    ]);
+
+    drawShareCard(ctx, data, theme, { logo, privacyIcon, valueIcon });
 };

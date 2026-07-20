@@ -18,6 +18,7 @@ import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { getPaperTrailSectionIcon } from './getPaperTrailSectionIcon';
 import { type PaperTrailCardData, type PaperTrailReport, deriveCardData, toHandle } from './reportTypes';
 import { ShareableCard } from './shareCard/ShareableCard';
+import { ShareCardCanvasPreview } from './shareCard/ShareCardCanvasPreview';
 
 import './PaperTrailReportView.scss';
 
@@ -88,29 +89,7 @@ const SharePreview = ({ cardData, onShare }: { cardData: PaperTrailCardData; onS
                 .t`Your card shows exposure by life area only — no personal details.`}
         </p>
         <div className="pt-share__body">
-            <div className="pt-share__preview" aria-hidden="true">
-                <div className="pt-share__preview-head">
-                    <span className="pt-share__preview-brand">{LUMO_SHORT_APP_NAME}</span>
-                    <span className="pt-share__preview-title">{c('collider_2025:Title').t`AI Paper Trail`}</span>
-                </div>
-                <div className={`pt-share__preview-score ${exposureTone(cardData.exposureScore)}`}>
-                    <span className="pt-share__preview-value">{cardData.exposureScore}</span>
-                    <span className="pt-share__preview-grade">{cardData.grade}</span>
-                </div>
-                <ul className="pt-share__preview-bars">
-                    {cardData.areas.slice(0, 5).map((area) => (
-                        <li key={area.area} className="pt-share__preview-bar">
-                            <span className="pt-share__preview-area">{area.area}</span>
-                            <span className="pt-score__bar">
-                                <span
-                                    className={`pt-score__bar-fill ${exposureModifier(area.exposureScore)}`}
-                                    style={{ inlineSize: `${area.exposureScore}%` }}
-                                />
-                            </span>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            <ShareCardCanvasPreview data={cardData} theme="light" />
             <div className="pt-share__actions">
                 <Button color="norm" size="large" pill onClick={onShare}>
                     <LumoIcon name="Share" className="mr-2" />
@@ -130,81 +109,25 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
     const displayName = report.name || report.label;
     const handle = toHandle(report.name || report.label);
 
-    const risks = [
+    const aiTerms = [
         {
-            emoji: '🎯',
-            title: c('collider_2025:Title').t`Targeted manipulation`,
+            title: c('collider_2025:Title').t`Share only what is needed`,
             detail: c('collider_2025:Info')
-                .t`A profile like this powers ads and messaging engineered to push your buttons — products, opinions, even how you vote.`,
+                .t`Avoid including names, addresses, financial details, or other identifying information when they are not essential.`,
         },
         {
-            emoji: '💸',
-            title: c('collider_2025:Title').t`Personalised pricing`,
-            detail: c('collider_2025:Info')
-                .t`Companies quietly adjust prices and offers based on what they think you can afford.`,
+            title: c('collider_2025:Title').t`Review privacy settings`,
+            detail: c('collider_2025:Info').t`Turn off chat history and model training where possible.`,
         },
         {
-            emoji: '🛒',
-            title: c('collider_2025:Title').t`Sold to data brokers`,
+            title: c('collider_2025:Title').t`Delete your data regularly`,
             detail: c('collider_2025:Info')
-                .t`Inferred traits get bundled and sold to brokers, advertisers, and anyone willing to pay.`,
+                .t`Check what your AIs store about you and delete what you no longer need.`,
         },
         {
-            emoji: '🎣',
-            title: c('collider_2025:Title').t`More convincing scams`,
+            title: c('collider_2025:Title').t`Choose privacy-first AI`,
             detail: c('collider_2025:Info')
-                .t`The more that's known about you, the more believable phishing and fraud attempts become.`,
-        },
-        {
-            emoji: '📋',
-            title: c('collider_2025:Title').t`Decisions made about you`,
-            detail: c('collider_2025:Info')
-                .t`Profiles can feed into insurance, lending, and hiring outcomes — without you ever knowing.`,
-        },
-        {
-            emoji: '🏛️',
-            title: c('collider_2025:Title').t`Out of your control`,
-            detail: c('collider_2025:Info')
-                .t`Once collected, your data can be breached, handed over on request, or kept indefinitely.`,
-        },
-    ];
-
-    const tips = [
-        {
-            emoji: '🔒',
-            title: c('collider_2025:Title').t`Use privacy-first tools`,
-            detail: c('collider_2025:Info')
-                .t`Pick services that don't train on or sell your conversations — like ${LUMO_SHORT_APP_NAME}, which can't read your chats.`,
-        },
-        {
-            emoji: '🙈',
-            title: c('collider_2025:Title').t`Share less with AI`,
-            detail: c('collider_2025:Info')
-                .t`Keep names, addresses, health details, and financial specifics out of your prompts.`,
-        },
-        {
-            emoji: '🧹',
-            title: c('collider_2025:Title').t`Turn off history & training`,
-            detail: c('collider_2025:Info')
-                .t`In ChatGPT and Claude, disable chat history and model training wherever the setting exists.`,
-        },
-        {
-            emoji: '📧',
-            title: c('collider_2025:Title').t`Mask your identity`,
-            detail: c('collider_2025:Info')
-                .t`Use email aliases and hide-my-email so your real address isn't tied to every account.`,
-        },
-        {
-            emoji: '🗑️',
-            title: c('collider_2025:Title').t`Export & delete regularly`,
-            detail: c('collider_2025:Info')
-                .t`Periodically review, download, and delete the data AI services hold on you.`,
-        },
-        {
-            emoji: '🛡️',
-            title: c('collider_2025:Title').t`Prefer end-to-end encryption`,
-            detail: c('collider_2025:Info')
-                .t`Choose apps where the provider can't read your content in the first place.`,
+                .t`${LUMO_SHORT_APP_NAME} is end-to-end encrypted and never used for training, profiling, or advertising.`,
         },
     ];
 
@@ -251,7 +174,7 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                     {hasRedFlags ? (
                         <button
                             type="button"
-                            className="pt-stat pt-stat--action"
+                            className="pt-stat pt-stat--action pt-stat--alert"
                             onClick={() => redFlagsModal.openModal(true)}
                         >
                             <span className="pt-stat__value">{report.sensitiveCategories.length}</span>
@@ -412,42 +335,13 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                 </section>
             )}
 
-            <section className="pt-panel pt-panel--warn">
-                <h2 className="pt-section-title">{c('collider_2025:Title').t`Why this matters`}</h2>
-                <p className="pt-section-sub">
-                    {c('collider_2025:Info')
-                        .t`This isn't just trivia. Here's what a profile like yours can actually be used for.`}
-                </p>
-                <ul className="pt-insights">
-                    {risks.map((item, i) => (
-                        <li key={i} className="pt-insight">
-                            <span className="pt-insight__emoji" aria-hidden="true">
-                                {item.emoji}
-                            </span>
-                            <div className="pt-insight__body">
-                                <h3 className="pt-insight__title">{item.title}</h3>
-                                <p className="pt-insight__detail">{item.detail}</p>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-
-            <section className="pt-panel pt-panel--tips">
-                <h2 className="pt-section-title">{c('collider_2025:Title').t`How to stay private`}</h2>
-                <p className="pt-section-sub">
-                    {c('collider_2025:Info').t`A few habits go a long way to shrinking your paper trail.`}
-                </p>
-                <ul className="pt-insights">
-                    {tips.map((item, i) => (
-                        <li key={i} className="pt-insight">
-                            <span className="pt-insight__emoji" aria-hidden="true">
-                                {item.emoji}
-                            </span>
-                            <div className="pt-insight__body">
-                                <h3 className="pt-insight__title">{item.title}</h3>
-                                <p className="pt-insight__detail">{item.detail}</p>
-                            </div>
+            <section className="pt-panel pt-panel--terms">
+                <h2 className="pt-section-title">{c('collider_2025:Title').t`Use AI on your terms`}</h2>
+                <ul className="pt-terms">
+                    {aiTerms.map((item, i) => (
+                        <li key={i} className="pt-terms__item">
+                            <h3 className="pt-terms__title">{item.title}</h3>
+                            <p className="pt-terms__detail">{item.detail}</p>
                         </li>
                     ))}
                 </ul>
@@ -479,20 +373,33 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
             {shareModal.render && <ShareableCard data={cardData} {...shareModal.modalProps} />}
 
             {redFlagsModal.render && (
-                <ModalTwo {...redFlagsModal.modalProps} size="small">
+                <ModalTwo {...redFlagsModal.modalProps} size="medium">
                     <ModalTwoHeader title={c('collider_2025:Title').t`What this profile exposes`} />
-                    <ModalTwoContent>
-                        <p className="color-weak mt-0">
-                            {c('collider_2025:Info')
-                                .t`These are the most sensitive categories Big Tech AI could infer about you from your chats.`}
-                        </p>
-                        <div className="pt-flag__tags pt-flag__tags--modal">
-                            {report.sensitiveCategories.map((category, i) => (
-                                <span key={i} className="pt-flag__tag">
-                                    {category}
-                                </span>
-                            ))}
+                    <ModalTwoContent className="pt-flag-modal">
+                        <div className="pt-flag-modal__hero">
+                            <div className="pt-flag-modal__badge" aria-hidden="true">
+                                <LumoIcon name="ShieldAlert" size={28} />
+                            </div>
+                            <p className="pt-flag-modal__count">
+                                {c('collider_2025:Info').t`${report.sensitiveCategories.length} sensitive categories`}
+                            </p>
+                            <p className="pt-flag-modal__intro">
+                                {c('collider_2025:Info')
+                                    .t`These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.`}
+                            </p>
                         </div>
+                        <ul className="pt-flag-modal__list">
+                            {report.sensitiveCategories.map((category, i) => (
+                                <li key={i} className="pt-flag-modal__item">
+                                    <LumoIcon name="CircleAlert" size={18} className="pt-flag-modal__item-icon" />
+                                    <span className="pt-flag-modal__item-text">{category}</span>
+                                </li>
+                            ))}
+                        </ul>
+                        <p className="pt-flag-modal__footnote">
+                            {c('collider_2025:Info')
+                                .t`This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.`}
+                        </p>
                     </ModalTwoContent>
                 </ModalTwo>
             )}
