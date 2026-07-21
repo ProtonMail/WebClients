@@ -1413,6 +1413,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Regex invalid": [
+        "Expression régulière non valide"
+      ],
+      "Regex unsafe": [
+        "Expression régulière non sécurisée"
       ]
     },
     "Error message": {
