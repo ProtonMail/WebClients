@@ -11,7 +11,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { ContentPreviewMethod, downloadContent, getContentPreviewMethod } from './content';
 import type { Drive } from './interface';
 import { getNavigation } from './navigation';
-import { getNodeActiveRevisionUid, getNodeMimeType } from './nodeUtils';
+import { getNodeActiveRevisionUid, getNodeMediaDuration, getNodeMimeType } from './nodeUtils';
 import { getEffectivePreviewMethod, resolvePreviewOutput } from './resolvePreviewOutput';
 import { useVideoStreaming } from './streaming';
 import usePreviewActions from './usePreviewActions';
@@ -50,7 +50,8 @@ export function usePreviewState({
 
     const previewMethod = node ? getContentPreviewMethod(node) : undefined;
     const mimeType = node ? getNodeMimeType(node) : undefined;
-    const videoStreaming = useVideoStreaming({ drive, nodeUid, mimeType });
+    const mediaDuration = node ? getNodeMediaDuration(node) : undefined;
+    const videoStreaming = useVideoStreaming({ drive, nodeUid, mimeType, mediaDuration });
     const effectivePreviewMethod = getEffectivePreviewMethod(previewMethod, node, videoStreaming);
 
     const shouldIgnoreError = (nodeUid: string, error: unknown) => {
