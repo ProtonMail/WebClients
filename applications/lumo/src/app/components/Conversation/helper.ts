@@ -4,9 +4,14 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { findAgentById } from '../../features/agents/registry';
-import { collectContextAttachmentIds, planRagAttachmentStorage, retrieveDocumentContextForProject } from '../../lib/rag';
-import { type ContextFilter, ENABLE_U2L_ENCRYPTION, prepareTurns } from '../../llm';
+import {
+    collectContextAttachmentIds,
+    planRagAttachmentStorage,
+    retrieveDocumentContextForProject,
+} from '../../lib/rag';
+import { type ContextFilter, prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
+import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
 import { clearPendingAgent } from '../../redux/slices/composerActions';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
@@ -31,6 +36,7 @@ import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/s
 import type { LumoDispatch as AppDispatch, LumoDispatch, LumoState } from '../../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
+import { SearchService } from '../../services/search/searchService';
 import type { ImageAspectRatio, MessageId, ShallowAttachment } from '../../types';
 import {
     type Attachment,
@@ -50,7 +56,6 @@ import {
     refreshAttachmentFromSearchIndex,
     resolveReferencedFilesForSend,
 } from '../../util/resolveProjectFiles';
-import { SearchService } from '../../services/search/searchService';
 import { runGenerationWithCompaction } from './compactionFlow';
 
 const createLumoErrorHandler =

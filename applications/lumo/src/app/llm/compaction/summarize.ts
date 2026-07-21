@@ -1,6 +1,7 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { LumoApiClient } from '../../lib/lumo-api-client/core/client';
+import { ENABLE_U2L_ENCRYPTION } from '../config';
 import { buildCompactionPrompt } from './prompt';
 
 export type SummarizeOptions = {
@@ -17,7 +18,7 @@ export async function summarizeWithLlm(api: Api, transcript: string, options: Su
     const { signal, customInstructions } = options;
     const prompt = buildCompactionPrompt(transcript, customInstructions);
 
-    const client = new LumoApiClient();
+    const client = new LumoApiClient({ enableU2LEncryption: ENABLE_U2L_ENCRYPTION });
     const summary = await client.quickChat(api, prompt, {
         enableWebSearch: false,
         signal,
