@@ -21,12 +21,14 @@
         "./base": "./base.js",
         "./glob": "./glob.js",
         "./icon": "./icon.js",
+        "./package-json": "./package-json.js",
         "./react": "./react.js",
         "./restrictedImports": "./restrictedImports.js"
     },
     "dependencies": {
         "@eslint/eslintrc": "^3.3.6",
         "@eslint/js": "^9.39.5",
+        "@eslint/json": "^2.0.1",
         "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "^2.0.0",
         "@types/eslint-plugin-jsx-a11y": "^6.10.1",
         "eslint": "^9.39.5",
