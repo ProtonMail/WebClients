@@ -1,6 +1,7 @@
 import type { NodeEntity, PhotoNode } from '@proton/drive';
-import { NodeType } from '@proton/drive';
+import { NodeType, ValidationError } from '@proton/drive';
 import { getNodeName, isMissingNode } from '@proton/drive/modules/nodes';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import type { AsyncQueue } from '../../../utils/asyncQueue';
 import { createAsyncQueue } from '../../../utils/asyncQueue';
@@ -145,8 +146,18 @@ export function traverseNodeStructure(nodes: NodeEntity[], signal: AbortSignal):
         const childUids = await limitFolderRequests.run(async () => {
             const folderStart = performance.now();
             const uids: string[] = [];
-            for await (const uid of driveClient.iterateFolderChildrenNodeUids(node.uid, undefined, signal)) {
-                uids.push(uid);
+            try {
+                for await (const uid of driveClient.iterateFolderChildrenNodeUids(node.uid, undefined, signal)) {
+                    uids.push(uid);
+                }
+            } catch (error) {
+                // Folder was deleted elsewhere between listing and traversal: skip it like a
+                // missing node instead of failing the whole archive.
+                if (error instanceof ValidationError && error.code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
+                    downloadLogDebug('traverseNodeStructure: folder no longer exists, skipping');
+                    return [];
+                }
+                throw error;
             }
             downloadLogDebug('iterateFolderChildrenNodeUids done', {
                 folderUid: node.uid,

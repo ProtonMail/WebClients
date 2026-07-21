@@ -1,4 +1,6 @@
+import { ValidationError } from '@proton/drive';
 import { NodeType } from '@proton/drive/index';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
 import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';
@@ -379,6 +381,45 @@ describe('traverseNodeStructure', () => {
         await consumeQueue;
 
         expect(consumedUids).toEqual(['root', 'child']);
+    });
+
+    it('skips a folder deleted mid-traversal and archives the rest', async () => {
+        const root = makeFolder('root');
+        const folderA = makeFolder('folderA');
+        const folderB = makeFolder('folderB');
+        const fileInB = makeFile('fileInB');
+
+        const nodeMap: Record<string, any> = { folderA, folderB, fileInB };
+
+        mockClient.iterateFolderChildrenNodeUids.mockImplementation(async function* (uid: string) {
+            if (uid === 'root') {
+                yield 'folderA';
+                yield 'folderB';
+            } else if (uid === 'folderA') {
+                throw new ValidationError('Node not found', API_CUSTOM_ERROR_CODES.NOT_FOUND);
+            } else if (uid === 'folderB') {
+                yield 'fileInB';
+            }
+        });
+        mockClient.iterateNodes.mockImplementation(async function* (uids: string[]) {
+            for (const uid of uids) {
+                yield nodeMap[uid];
+            }
+        });
+
+        const { nodesQueue, traversalCompletedPromise } = traverseNodeStructure([root], new AbortController().signal);
+
+        const consumedUids: string[] = [];
+        const consumeQueue = (async () => {
+            for await (const node of nodesQueue.iterator()) {
+                consumedUids.push(node.uid);
+            }
+        })();
+
+        await traversalCompletedPromise;
+        await consumeQueue;
+
+        expect(consumedUids.sort()).toEqual(['fileInB', 'folderA', 'folderB', 'root'].sort());
     });
 });
 
