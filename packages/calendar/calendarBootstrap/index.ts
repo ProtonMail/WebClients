@@ -18,7 +18,7 @@ import type { CalendarMemberEventManager } from '@proton/shared/lib/interfaces/c
 
 import { calendarServerEvent } from '../calendarServerEvent';
 import { calendarsActions } from '../calendars';
-import { deleteCalendarFromKeyCache } from './keys';
+import { deleteCalendarFromKeyCache } from './keyCache';
 
 const name = 'calendarsBootstrap' as const;
 

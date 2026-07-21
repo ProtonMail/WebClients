@@ -21,7 +21,7 @@ import {
     findCalendarBootstrapID,
     selectCalendarsBootstrap,
 } from '../calendarBootstrap';
-import { deleteCalendarFromKeyCache } from '../calendarBootstrap/keys';
+import { deleteCalendarFromKeyCache } from '../calendarBootstrap/keyCache';
 import { calendarServerEvent } from '../calendarServerEvent';
 import type { CalendarStartListening } from '../interface';
 import type { CalendarsState } from './index';

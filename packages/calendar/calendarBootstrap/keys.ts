@@ -5,7 +5,6 @@ import type { ThunkAction } from 'redux-thunk';
 
 import { addressKeysThunk } from '@proton/account/addressKeys';
 import { addressesThunk } from '@proton/account/addresses';
-import type { SessionKey } from '@protontech/crypto';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
@@ -15,7 +14,7 @@ import {
 } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { getAddressesMembersMap } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import type { Address } from '@proton/shared/lib/interfaces';
-import type { DecryptedCalendarKey, MemberPassphrase } from '@proton/shared/lib/interfaces/calendar';
+import type { MemberPassphrase } from '@proton/shared/lib/interfaces/calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetDecryptedPassphraseAndCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetDecryptedPassphraseAndCalendarKeys';
 import { splitKeys } from '@proton/shared/lib/keys';
@@ -23,19 +22,8 @@ import noop from '@proton/utils/noop';
 
 import type { CalendarsBootstrapState } from './index';
 import { calendarBootstrapThunk } from './index';
-
-interface DecryptedPassphraseAndCalendarKeysResult {
-    decryptedCalendarKeys: DecryptedCalendarKey[];
-    decryptedPassphrase: string;
-    decryptedPassphraseSessionKey: SessionKey;
-    passphraseID: string;
-}
-
-const map = new Map<string, Promise<DecryptedPassphraseAndCalendarKeysResult> | undefined>();
-
-export const deleteCalendarFromKeyCache = (calendarID: string) => {
-    map.delete(calendarID);
-};
+import type { DecryptedPassphraseAndCalendarKeysResult } from './keyCache';
+import { getCalendarKeyCache } from './keyCache';
 
 const getCalendarKeyPassphrase = async (
     getAddressKeys: GetAddressKeys,
@@ -105,6 +93,7 @@ export const getDecryptedPassphraseAndCalendarKeysThunk = ({
     };
 
     return async (dispatch) => {
+        const map = getCalendarKeyCache();
         const oldPromise = map.get(calendarID);
         if (oldPromise) {
             return oldPromise;
