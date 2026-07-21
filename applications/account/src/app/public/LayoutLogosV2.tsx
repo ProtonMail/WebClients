@@ -1,23 +1,23 @@
-import { CalendarLogo, DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components';
+import { CalendarLogo, DriveLogo, LumoLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components';
 import type { IconSize } from '@proton/icons/types';
 import {
     CALENDAR_APP_NAME,
     DRIVE_APP_NAME,
+    LUMO_SHORT_APP_NAME,
     MAIL_APP_NAME,
     PASS_APP_NAME,
     VPN_APP_NAME,
     WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 
 interface AppLogosProps {
     size: IconSize;
     className?: string;
 }
 
-const LayoutLogos = ({ size, className }: AppLogosProps) => {
+const LayoutLogos = ({ size, className = 'flex gap-1' }: AppLogosProps) => {
     return (
-        <div className={clsx(className, 'flex gap-1')}>
+        <div className={className}>
             {[
                 {
                     title: MAIL_APP_NAME,
@@ -42,6 +42,10 @@ const LayoutLogos = ({ size, className }: AppLogosProps) => {
                 {
                     title: WALLET_APP_NAME,
                     logo: <WalletLogo variant="glyph-only" size={size} />,
+                },
+                {
+                    title: LUMO_SHORT_APP_NAME,
+                    logo: <LumoLogo variant="glyph-only" size={size} />,
                 },
             ].map(({ title, logo }) => {
                 return (
