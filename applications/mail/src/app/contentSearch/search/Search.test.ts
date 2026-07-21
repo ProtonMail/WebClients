@@ -25,7 +25,11 @@ const message = (ID: string, Unread: number): SearchResult => ({ ID, Unread }) a
  * then runs the initial search so `unfilteredResults` is populated by the time it resolves.
  */
 const startedSearch = async (initial: NormalizedSearchParams, messages: SearchResult[]) => {
-    const workerSearch = jest.fn(async () => messages.map((m) => m.ID));
+    const workerSearch = jest.fn(async (params, callback) => {
+        const ids = messages.map((m) => m.ID);
+        await callback(ids);
+        return ids;
+    });
     const worker = { search: workerSearch } as unknown as Comlink.Remote<SearchWorker>;
     const readMessages = jest.fn(async () => messages);
     const close = jest.fn();
@@ -34,13 +38,14 @@ const startedSearch = async (initial: NormalizedSearchParams, messages: SearchRe
     const search = new Search(initial, Promise.resolve(worker), openESReader);
     const onResults = jest.fn();
 
+    search.onResults.subscribe(onResults);
+
     const firstResults = new Promise<SearchResult[]>((resolve) => {
         const unsubscribe = search.onResults.subscribe((results) => {
             unsubscribe();
             resolve(results);
         });
     });
-    search.onResults.subscribe(onResults);
     search.start();
     await firstResults;
 
