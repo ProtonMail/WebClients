@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { LumoLogo } from '@proton/components';
+import LumoLogo from '@proton/components/components/logo/LumoLogo';
 import {
     getAccessToAdvancedAI,
     getChatHistory,
