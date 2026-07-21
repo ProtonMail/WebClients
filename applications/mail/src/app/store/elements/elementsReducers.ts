@@ -156,10 +156,7 @@ export const loadFulfilled = (
  */
 export const showSerializedElements = (
     state: Draft<ElementsState>,
-    action: PayloadAction<
-        { result: QueryResults; page: number; params: ElementsStateParams; onlyInsertNewData: boolean },
-        string
-    >
+    action: PayloadAction<{ result: QueryResults; page: number; params: ElementsStateParams }, string>
 ) => {
     // Always use params from the request, and do not use params from the state
     // Otherwise, concurrent requests will update the wrong "context filter"
@@ -167,7 +164,6 @@ export const showSerializedElements = (
     const {
         result: { Total, Stale, Elements },
         page,
-        onlyInsertNewData,
     } = action.payload;
 
     if (state.taskRunning.labelIDs.includes(params.labelID)) {
@@ -190,17 +186,11 @@ export const showSerializedElements = (
     });
 
     // We only insert elements that are not already in the state. The event loop updates existing items.
-    if (onlyInsertNewData) {
-        Elements.forEach((element) => {
-            if (element.ID && !state.elements[element.ID]) {
-                state.elements[element.ID] = element;
-            }
-        });
-    } else {
-        Object.assign(state, {
-            elements: { ...state.elements, ...toMap(Elements, 'ID') },
-        });
-    }
+    Elements.forEach((element) => {
+        if (element.ID && !state.elements[element.ID]) {
+            state.elements[element.ID] = element;
+        }
+    });
 
     if (Stale === 0 || !state.total[contextFilter]) {
         state.total[contextFilter] = Total;

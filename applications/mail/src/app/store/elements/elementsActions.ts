@@ -85,11 +85,10 @@ export const showSerializedElements = createAction<{
     result: QueryResults;
     page: number;
     params: ElementsStateParams;
-    onlyInsertNewData: boolean;
 }>('elements/showSerializedElements');
 
 export const load = createAsyncThunk<
-    { result: QueryResults; taskRunning: TaskRunningInfo; params: ElementsStateParams; onlyInsertNewData: boolean },
+    { result: QueryResults; taskRunning: TaskRunningInfo; params: ElementsStateParams },
     QueryParams,
     MailThunkExtra
 >(
@@ -102,10 +101,9 @@ export const load = createAsyncThunk<
         const params = state.elements.params;
 
         const currentContextIdentifier = selectCurrentContextIdentifier(state);
-        const onlyInsertNewData = extra.unleashClient.isEnabled('OnlyInsertNewDataOnFetch');
 
         // Indicates that we have a context, the location was already loaded
-        const contextAlreadyPresent = onlyInsertNewData && !!state.elements.total[currentContextIdentifier];
+        const contextAlreadyPresent = !!state.elements.total[currentContextIdentifier];
 
         const pageFetchCount = getPageFetchCount({
             isSearching: params.isSearching,
@@ -119,7 +117,6 @@ export const load = createAsyncThunk<
                     result,
                     page,
                     params,
-                    onlyInsertNewData,
                 })
             );
         };
@@ -186,7 +183,7 @@ export const load = createAsyncThunk<
             });
         }
 
-        return { result, taskRunning, params, onlyInsertNewData };
+        return { result, taskRunning, params };
     }
 );
 

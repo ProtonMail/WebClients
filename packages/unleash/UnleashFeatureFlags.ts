@@ -241,7 +241,6 @@ export enum MailFeatureFlag {
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     MailStoreDebugMode = 'MailStoreDebugMode',
-    OnlyInsertNewDataOnFetch = 'OnlyInsertNewDataOnFetch',
     //ML R&D
     LumoInMail = 'LumoInMail',
     ScribeToLumo = 'ScribeToLumo',
