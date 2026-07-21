@@ -6,8 +6,8 @@ import type { DriveEvent, NodeEntity, ProtonDriveClient } from '@proton/drive'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { nodeToTrashedDocumentItem } from './create-document-items'
-import type { SDKEventListener } from '~/drive-sdk/manage-events-subscription'
 import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
+import type { SDKEventListener } from '~/drive-sdk/event-subscriber'
 
 export function useTrashed(drive: ProtonDriveClient) {
   const { createNotification } = useNotifications()
