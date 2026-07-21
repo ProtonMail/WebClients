@@ -1,4 +1,5 @@
 import { type ESCiphertext, type IndexKey, encryptItem } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
+
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { AddressEvent } from '@proton/shared/lib/interfaces';
 
@@ -56,6 +57,30 @@ export const isESTimepoint = (value: any): value is ESTimepoint =>
  * return e.g. a content object with undefined properties only
  */
 export const isObjectEmpty = (object: Object) => Object.keys(object).length === 0;
+
+/**
+ * Estimate the size of a ESItem object in memory
+ */
+export const sizeOfESItem = (value: any): number => {
+    if (typeof value === 'boolean') {
+        return 4;
+    } else if (typeof value === 'string') {
+        return value.length * 2;
+    } else if (typeof value === 'number') {
+        return 8;
+    } else if (Array.isArray(value)) {
+        return value.map(sizeOfESItem).reduce((p, c) => p + c, 0);
+    } else if (value === null) {
+        // This is to avoid the "typeof null === 'object'" bug
+        return 0;
+    } else if (typeof value === 'object') {
+        // Note that object keys are ignored as this function is already an
+        // over-estimate of the actual memory footprint
+        return sizeOfESItem(Object.values(value));
+    }
+    // Only 'undefined' type should reach this point
+    return 0;
+};
 
 /**
  * Size in bytes of a ciphertext
