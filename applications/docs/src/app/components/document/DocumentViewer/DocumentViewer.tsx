@@ -31,6 +31,7 @@ import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
 import {
   isPrivateNodeMeta,
   isPublicNodeMeta,
+  useDocInvites,
   type DocumentAction,
   type NodeMeta,
   type PublicNodeMeta,
@@ -49,7 +50,6 @@ import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { useAuthentication, useConfig, MimeIcon, useModalState, AuthenticatedBugModal } from '@proton/components'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
 import { useApplication } from '~/utils/application-context'
-import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
 import { useFlag } from '@proton/unleash/useFlag'
 import type { ProviderType } from '../../../provider-type'
@@ -110,8 +110,6 @@ export function DocumentViewer({
   const { isDebugMode } = useDebugMode()
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
 
-  const { removeLocalIDFromUrl } = useDocsUrlBar()
-
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
   const [docController, setDocController] = useState<AuthenticatedDocControllerInterface | undefined>(undefined)
   const [editorController, setEditorController] = useState<EditorControllerInterface | null>(null)
@@ -134,7 +132,52 @@ export function DocumentViewer({
   const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
   const isOpenTracerEnabled = useIsOpenTracerEnabled()
 
-  const nodeUid = isPrivateNodeMeta(nodeMeta) ? generateNodeUid(nodeMeta.volumeId, nodeMeta.linkId) : null
+  const isPrivateNode = isPrivateNodeMeta(nodeMeta)
+  const nodeUid = isPrivateNode ? generateNodeUid(nodeMeta.volumeId, nodeMeta.linkId) : null
+
+  const [accessReady, setAccessReady] = useState(!isPrivateNode)
+  const { acceptInvite, inviteForNodeMeta, isLoading: isInviteLoading } = useDocInvites()
+  const invite = inviteForNodeMeta(nodeMeta)
+  const acceptInviteInProgress = useRef(false)
+
+  useEffect(() => {
+    void OpenTracer.trace('boot_doc_viewer_loader_effect_access_ready_check', {
+      accessReady,
+      isInviteLoading,
+      acceptInviteInProgress: acceptInviteInProgress.current,
+      isPrivateNode,
+      hasInvite: !!invite,
+    })
+
+    if (accessReady || isInviteLoading || acceptInviteInProgress.current) {
+      return
+    }
+
+    if (!isPrivateNode || !invite) {
+      setAccessReady(true)
+      return
+    }
+
+    acceptInviteInProgress.current = true
+    application.logger.info('Accepting document invite...')
+    void OpenTracer.trace('boot_doc_viewer_loader_effect_accepting_invite')
+
+    void acceptInvite(invite)
+      .then((result) => {
+        if (result) {
+          void OpenTracer.trace('boot_doc_viewer_loader_effect_accepting_invite_success')
+        } else {
+          void OpenTracer.trace('boot_doc_viewer_loader_effect_accepting_invite_no_result')
+        }
+      })
+      .catch((error) => {
+        void OpenTracer.trace('boot_doc_viewer_loader_effect_accepting_invite_error')
+        application.logger.warn('Could not accept invite', error)
+      })
+      .finally(() => {
+        setAccessReady(true)
+      })
+  }, [accessReady, nodeMeta, isPrivateNode, isInviteLoading, invite, acceptInvite, application.logger])
 
   const [currentDocumentNode, setCurrentDocumentNode] = useState<NodeEntity>()
   useEffect(() => {
@@ -568,6 +611,12 @@ export function DocumentViewer({
 
   useEffect(() => {
     void OpenTracer.trace('boot_doc_viewer_loader_effect')
+
+    if (!accessReady) {
+      void OpenTracer.trace('boot_doc_viewer_loader_effect_access_ready_false')
+      return
+    }
+
     if (docOrchestrator) {
       void OpenTracer.trace('boot_doc_viewer_loader_effect_has_doc_orchestrator')
       return
@@ -600,6 +649,7 @@ export function DocumentViewer({
     })
 
     if (!initializing) {
+      application.logger.info('Initializing document loader')
       setInitializing(true)
       void OpenTracer.trace('boot_doc_viewer_loader_initialize_start', { documentType })
       void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType))
@@ -609,7 +659,7 @@ export function DocumentViewer({
       void OpenTracer.trace('boot_doc_viewer_dispose')
       disposer()
     }
-  }, [application, docOrchestrator, documentType, getLocalID, initializing, nodeMeta, removeLocalIDFromUrl])
+  }, [application, docOrchestrator, documentType, getLocalID, initializing, nodeMeta, accessReady])
 
   useEffect(() => {
     if (docOrchestrator && editorFrame && editorController && !bridge) {
