@@ -1466,6 +1466,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Regex invalid": [
+        "Expression régulière non valide"
+      ],
+      "Regex unsafe": [
+        "Expression régulière non sécurisée"
       ]
     },
     "Error message": {
@@ -2195,8 +2201,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2905,6 +2910,12 @@
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "Classés par champ (titre en premier, puis nom d'utilisateur ou adresse e-mail, site web, notes) et par précision de la correspondance (exact, commence par, contient)."
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Si vous signez vos commits Git avec votre clé SSH, exécutez également cette commande :"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Pour que Git fonctionne avec l'agent SSH de ${ PASS_APP_NAME }, Git doit utiliser OpenSSH pour Windows. Pour ce faire, exécutez la commande suivante :"
       ]
     },
     "Keyboard key": {

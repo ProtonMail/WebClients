@@ -1466,6 +1466,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
+      ],
+      "Regex invalid": [
+        "Regulärer Ausdruck ungültig"
+      ],
+      "Regex unsafe": [
+        "Regulärer Ausdruck unsicher"
       ]
     },
     "Error message": {
@@ -2900,11 +2906,16 @@
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "Sortiert nach Feld (zuerst Titel, dann Benutzername oder E-Mail, Website, Notizen) und Übereinstimmungsgenauigkeit (exakt, beginnt mit, enthält)."
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Wenn du deine Git-Commits mit deinem SSH-Schlüssel signierst, führe außerdem folgenden Befehl aus:"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Damit Git mit dem SSH-Agenten von ${ PASS_APP_NAME } funktioniert, muss Git Windows-OpenSSH verwenden. Dies kann durch Ausführen des folgenden Befehls erreicht werden:"
       ]
     },
     "Keyboard key": {

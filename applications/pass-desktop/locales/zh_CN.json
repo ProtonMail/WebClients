@@ -1461,6 +1461,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
+      ],
+      "Regex invalid": [
+        "正则表达式无效"
+      ],
+      "Regex unsafe": [
+        "正则表达式不安全"
       ]
     },
     "Error message": {
@@ -2872,6 +2878,12 @@
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "按字段排序（标题优先，然后是用户名或邮箱、网站、备注）和匹配精度（精确匹配、开头匹配、包含匹配）。"
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "如果您使用 SSH 密钥签署 Git 提交，也请运行以下命令："
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "要使 Git 与 ${ PASS_APP_NAME } SSH 代理配合使用，Git 必须使用 Windows OpenSSH，您可通过运行以下命令完成："
       ]
     },
     "Keyboard key": {

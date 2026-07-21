@@ -1050,6 +1050,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Vašo kodo PIN je odstranil drug odjemalec ${ PASS_APP_NAME }."
+      ],
+      "Regex invalid": [
+        "Neveljaven regularni izraz"
+      ],
+      "Regex unsafe": [
+        "Regularni izraz ni varen"
       ]
     },
     "Error message": {
@@ -1894,6 +1900,12 @@
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "Razvrščeno po polju (najprej ime, nato uporabniško ime ali e-poštni naslov, spletna stran, opombe) in natančnosti ujemanja (natančno ujemanje, se začne z, vsebuje)."
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Če svoje Git spremembe podpisujete s svojim SSH ključem, izvedite tudi naslednji ukaz:"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Da bi aplikacija Git delovala s SSH posrednikom ${ PASS_APP_NAME }, mora Git uporabljati Windows OpenSSH. To lahko zagotovite z izvedbo naslednjega ukaza:"
       ]
     },
     "Label": {
@@ -2796,6 +2808,18 @@
       ],
       "Relevant": [
         "Pomembno"
+      ],
+      "Basic": [
+        "Osnovno"
+      ],
+      "Check": [
+        "Preveri"
+      ],
+      "Regular expression": [
+        "Regularni izraz"
+      ],
+      "Starts with": [
+        "Se začne z"
       ]
     },
     "Link": {
@@ -2836,6 +2860,9 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "V tem trezorju ste izbrali ${ semiboldText }."
+      ],
+      "Regular expression rule": [
+        "Pravilo regularnega izraza"
       ]
     },
     "new_plans: feature": {
@@ -3499,6 +3526,9 @@
       ],
       "Your welcome gift": [
         "Vaš darilo za dobrodošlico"
+      ],
+      "Learn more": [
+        "Več informacij"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -3746,6 +3776,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaša naročnina vam ne dovoljuje ustvarjanja več trezorjev. Vsi predmeti bodo uvoženi v vaš prvi trezor. Za uvoz v več trezorjev nadgradite svojo naročnino."
+      ]
+    },
+    "Result": {
+      "The rule is matching this URL": [
+        "Pravilo se ujema s tem naslovom"
       ]
     }
   }

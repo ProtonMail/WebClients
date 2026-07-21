@@ -2869,6 +2869,9 @@
       ],
       "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
         "Windows에서 ${ PASS_APP_NAME } SSH 에이전트를 사용하려면 OpenSSH 서비스를 비활성화해야 합니다."
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Git이 ${ PASS_APP_NAME } SSH 에이전트와 함께 동작하려면, Git은 Windows OpenSSH를 사용해야 합니다. 아래 명령어를 통해 설정할 수 있습니다:"
       ]
     },
     "Keyboard key": {
