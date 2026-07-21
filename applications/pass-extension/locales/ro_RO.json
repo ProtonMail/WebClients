@@ -347,7 +347,7 @@
         "Exportare"
       ],
       "Fill in": [
-        "Completați"
+        "Completare"
       ],
       "Fill password": [
         "Completare parolă"
@@ -552,12 +552,6 @@
       ],
       "Regenerate": [
         "Regenerare"
-      ],
-      "Regex invalid": [
-        "Expresie regulată nevalidă"
-      ],
-      "Regex unsafe": [
-        "Expresie regulată nesigură"
       ],
       "Reject": [
         "Respingere"
@@ -1317,6 +1311,12 @@
       "PIN codes do not match": [
         "Codurile PIN nu coincid."
       ],
+      "Regex invalid": [
+        "Expresie regulată nevalidă"
+      ],
+      "Regex unsafe": [
+        "Expresie regulată nesigură"
+      ],
       "Registration failure: ${ message }": [
         "Eșuare înregistrare: ${ message }"
       ],
@@ -1804,7 +1804,7 @@
         "Copiere automată parolă generată în memorie."
       ],
       "Automatically fill in your saved payment information.": [
-        "Completați automat informațiile de plată salvate."
+        "Vă completați automat informațiile de plată salvate."
       ],
       "Autosaved on ${ url }": [
         "Autosalvat la ${ url }"
@@ -2513,7 +2513,7 @@
         "Completați-vă rapid identitățile."
       ],
       "Quickly autofill your saved credentials.": [
-        "Autocompletați rapid datele de conectare salvate."
+        "Vă autocompletați rapid datele de conectare salvate."
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "Clasificat după câmp (titlul mai întâi, apoi numele de utilizator sau adresa de e-mail, site web, note) și precizia potrivirii (exactă, începe cu, conține)."

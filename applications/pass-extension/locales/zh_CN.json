@@ -553,12 +553,6 @@
       "Regenerate": [
         "重新生成"
       ],
-      "Regex invalid": [
-        "正则表达式无效"
-      ],
-      "Regex unsafe": [
-        "正则表达式不安全"
-      ],
       "Reject": [
         "拒绝"
       ],
@@ -1306,6 +1300,12 @@
       ],
       "PIN codes do not match": [
         "两次输入的 PIN 码不一致"
+      ],
+      "Regex invalid": [
+        "正则表达式无效"
+      ],
+      "Regex unsafe": [
+        "正则表达式不安全"
       ],
       "Registration failure: ${ message }": [
         "注册失败：${ message }"
