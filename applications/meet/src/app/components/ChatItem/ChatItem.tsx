@@ -225,7 +225,7 @@ export const ChatItem = ({
                         {showReactionControls && (
                             // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                             <div
-                                className="chat-item-quick-reactions flex items-center absolute gap-1 p-1.5 border rounded-full"
+                                className="chat-item-quick-reactions flex flex-nowrap items-center absolute gap-1 p-1.5 border rounded-full"
                                 role="group"
                                 aria-label={c('Info').t`Message actions`}
                             >
@@ -244,7 +244,7 @@ export const ChatItem = ({
                                     </>
                                 )}
                                 <div
-                                    className="flex items-center gap-0.5"
+                                    className="flex flex-nowrap items-center gap-0.5"
                                     role="toolbar"
                                     aria-label={c('Info').t`Quick reactions`}
                                     {...emojiToolbarProps}
