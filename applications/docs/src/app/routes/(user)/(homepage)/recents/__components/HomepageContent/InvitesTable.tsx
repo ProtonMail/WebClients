@@ -11,6 +11,7 @@ import { ServerTime } from '@proton/docs-shared'
 import { useDocInvites } from '@proton/drive-store'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
+import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { getInitials } from '@proton/shared/lib/helpers/string'
 import clsx from '@proton/utils/clsx'
 import { type ComponentPropsWithoutRef, useState } from 'react'
@@ -19,19 +20,17 @@ import { useApplication } from '~/utils/application-context'
 import { useHomepageView } from '../../__utils/homepage-view'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
+import type { ExtendedInvitationDetails } from '@proton/drive-store/store'
 
-const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
 const MAX_INVITES_WHEN_COLLAPSED = 3
+const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
 
 const dateFormatter = new DateFormatter()
 
 export type InvitesTableProps = ComponentPropsWithoutRef<'div'>
 
 export function InvitesTable(props: InvitesTableProps) {
-  const application = useApplication()
-  const { updateRecentDocuments } = useHomepageView()
-  const { confirmModal, invitations, acceptInvite, rejectInvite, recentlyAcceptedInvites, openInvitedDocument } =
-    useDocInvites()
+  const { confirmModal, invitations, recentlyAcceptedInvites, rejectInvite } = useDocInvites()
   const [collapsed, setCollapsed] = useState(true)
 
   const allInvites = [...invitations, ...recentlyAcceptedInvites]
@@ -90,45 +89,6 @@ export function InvitesTable(props: InvitesTableProps) {
               return null
             }
 
-            const actions = (
-              <div className="flex flex-nowrap gap-[.625rem]">
-                <Tooltip title={c('Action').t`Accept invitation`}>
-                  <Button
-                    size="medium"
-                    icon
-                    color="weak"
-                    disabled={invite.isLocked}
-                    onClick={async () => {
-                      openInvitedDocument(invite)
-                      await acceptInvite(invite)
-                      setTimeout(updateRecentDocuments, WAIT_AFTER_ACCEPT_INVITE)
-                      application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.invite_accepted)
-                    }}
-                    aria-label={c('Action').t`Accept invitation to document`}
-                    data-testid="accept-invite-button"
-                  >
-                    <IcCheckmark />
-                  </Button>
-                </Tooltip>
-                <Tooltip title={c('Action').t`Decline invitation`}>
-                  <Button
-                    size="medium"
-                    icon
-                    color="weak"
-                    disabled={invite.isLocked}
-                    onClick={async () => {
-                      await rejectInvite(invite)
-                      application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.invite_rejected)
-                    }}
-                    aria-label={c('Action').t`Decline invitation to document`}
-                    data-testid="reject-invite-button"
-                  >
-                    <IcCross />
-                  </Button>
-                </Tooltip>
-              </div>
-            )
-
             const type = isProtonDocsDocument(invite.link.mimeType) ? 'document' : 'spreadsheet'
 
             return (
@@ -150,7 +110,9 @@ export function InvitesTable(props: InvitesTableProps) {
                       </span>
                     </span>
 
-                    <span className="-me-3 shrink-0 medium:hidden">{actions}</span>
+                    <span className="-me-3 shrink-0 medium:hidden">
+                      <InviteActions invite={invite} onRejectInvite={rejectInvite} />
+                    </span>
                   </span>
                 </Table.DataCell>
                 <Table.DataCell target="large">
@@ -185,7 +147,7 @@ export function InvitesTable(props: InvitesTableProps) {
                   </span>
                 </Table.DataCell>
                 <Table.DataCell target="medium" data-testid="invite-actions-cell">
-                  {actions}
+                  <InviteActions invite={invite} onRejectInvite={rejectInvite} />
                 </Table.DataCell>
               </Table.Row>
             )
@@ -209,6 +171,76 @@ export function InvitesTable(props: InvitesTableProps) {
       )}
       {confirmModal}
     </ContentSheet>
+  )
+}
+
+interface InviteActionsProps {
+  invite: ExtendedInvitationDetails
+  onRejectInvite: (invite: ExtendedInvitationDetails) => void
+}
+
+function InviteActions({ invite, onRejectInvite }: InviteActionsProps) {
+  const [isAcceptingInvite, setIsAcceptingInvite] = useState(false)
+
+  const application = useApplication()
+  const { updateRecentDocuments } = useHomepageView()
+  const { acceptInvite, openInvitedDocument } = useDocInvites()
+
+  async function handleAcceptInvite(invite: ExtendedInvitationDetails) {
+    try {
+      setIsAcceptingInvite(true)
+      await acceptInvite(invite)
+      openInvitedDocument(invite)
+      setTimeout(updateRecentDocuments, WAIT_AFTER_ACCEPT_INVITE)
+      application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.invite_accepted)
+    } catch (error) {
+      application.logger.error('Could not accept invite')
+      traceError(error)
+    } finally {
+      setIsAcceptingInvite(false)
+    }
+  }
+
+  async function handleRejectInvite(invite: ExtendedInvitationDetails) {
+    try {
+      await onRejectInvite(invite)
+      application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.invite_rejected)
+    } catch (error) {
+      application.logger.error('Could not reject invite')
+      traceError(error)
+    }
+  }
+
+  return (
+    <div className="flex flex-nowrap gap-[.625rem]">
+      <Tooltip title={c('Action').t`Accept invitation`}>
+        <Button
+          size="medium"
+          icon
+          color="weak"
+          disabled={invite.isLocked || isAcceptingInvite}
+          loading={isAcceptingInvite}
+          onClick={() => handleAcceptInvite(invite)}
+          aria-label={c('Action').t`Accept invitation to document`}
+          data-testid="accept-invite-button"
+        >
+          <IcCheckmark />
+        </Button>
+      </Tooltip>
+      <Tooltip title={c('Action').t`Decline invitation`}>
+        <Button
+          size="medium"
+          icon
+          color="weak"
+          disabled={invite.isLocked}
+          onClick={() => handleRejectInvite(invite)}
+          aria-label={c('Action').t`Decline invitation to document`}
+          data-testid="reject-invite-button"
+        >
+          <IcCross />
+        </Button>
+      </Tooltip>
+    </div>
   )
 }
 
