@@ -417,9 +417,6 @@
       "Get the apps": [
         "Skaff deg appene"
       ],
-      "Get the deal": [
-        "Skaff deg tilbudet"
-      ],
       "Get the writing assistant": [
         "Skaff deg skriveassistenten"
       ],
@@ -1458,6 +1455,9 @@
       "Continue your subscription": [
         "Fortsett abonnementet"
       ],
+      "Get 50% offer": [
+        "Få 50 % tilbud"
+      ],
       "Maybe later": [
         "Kanskje senere"
       ]
@@ -1517,20 +1517,6 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
-      ],
-      "Subtotal": [
-        "Delsum"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Delsum for ${ cycle } måned",
-        "Delsum for ${ cycle } måneder"
-      ],
-      "Total": [
-        "Totalt"
-      ],
-      "Total for ${ n } month": [
-        "Totalt for ${ n } måned",
-        "Totalt for ${ n } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -3201,6 +3187,9 @@
       "Failed to resend invitation": [
         "Kunne ikke sende invitasjonen på nytt"
       ],
+      "Failed to trash document": [
+        "Kunne ikke legge dokumentet i papirkurven"
+      ],
       "Failed to unshare node": [
         "Kunne ikke oppheve deling av node"
       ],
@@ -3394,6 +3383,9 @@
       ],
       "Some contacts could not be deleted": [
         "Noen kontakter kunne ikke slettes"
+      ],
+      "Some documents could not be loaded": [
+        "Kunne ikke laste inn enkelte dokumenter"
       ],
       "Some groups could not be deleted": [
         "Noen grupper kunne ikke slettes"
@@ -4595,6 +4587,9 @@
       "Accept/decline": [
         "Godta/avslå"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Tilgang til over 20 000 servere i 145 land"
+      ],
       "Ad targeting": [
         "Annonsemålretting"
       ],
@@ -4908,6 +4903,9 @@
       "Failing signatures will be re-signed by you": [
         "Sviktende signaturer vil bli signert på nytt av deg"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Raskeste VPN-hastigheter på opptil 10 Gbps"
+      ],
       "File \"${ name }\" was deleted during download": [
         "Fil \"${ name }\" ble slettet under nedlasting"
       ],
@@ -4962,8 +4960,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
       ],
+      "Have some more time to decide without interruption.": [
+        "Ha litt mer tid til å bestemme deg uten avbrudd."
+      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Hjelp oss med å forbedre denne opplevelsen ved å rapportere problemet. Hvis du føler deg komfortabel med å dele regnearkinnhold, kan du legge ved feilsøkingsinformasjonen nedenfor i rapporten din."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Hjelp oss med å forbedre denne opplevelsen ved å rapportere problemet. Legg ved feilsøkingsinformasjonen nedenfor i rapporten din."
       ],
       "here": [
         "her"
@@ -4976,6 +4980,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Hvis du kansellerer nå, mister du tilgangen til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inkludert disse funksjonene:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
@@ -5280,6 +5287,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
       ],
+      "Premium privacy protection across all your devices": [
+        "Førsteklasses personvernbeskyttelse på tvers av alle enhetene dine"
+      ],
       "Preparing link to file": [
         "Forbereder kobling til fil"
       ],
@@ -5402,6 +5412,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Hold deg til planen din og få 50 % rabatt neste måned"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Abonnementet fornyes automatisk hver ${ cycle } måned.",
@@ -5637,6 +5650,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifiseringskode til ${ strong }"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Vi har oppdaget at du tidligere har opplevd problemer med å åpne et dokument."
       ],
       "Week": [
         "Uke"
@@ -5952,10 +5968,6 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
       ],
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tegn"
       ],
@@ -6180,9 +6192,6 @@
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Skaff deg tilbudet"
       ],
       "Hide password": [
         "Skjul passord"
@@ -8050,6 +8059,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" har fått nytt navn"
       ],
+      "\"Document deleted permanently": [
+        "\"Dokument slettet permanent\""
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } element ble ikke dekryptert",
         "${ count } elementer ble ikke dekryptert"
@@ -8151,6 +8163,9 @@
       "Failed to accept share invitation": [
         "Kunne ikke godta delingsinvitasjonen"
       ],
+      "Failed to delete document": [
+        "Kunne ikke slette dokumentet"
+      ],
       "Failed to download files: ${ err }": [
         "Kunne ikke laste ned filer: ${ err }"
       ],
@@ -8165,6 +8180,12 @@
       ],
       "Failed to rename document": [
         "Kunne ikke endre navn på dokumentet"
+      ],
+      "Failed to restore document": [
+        "Kunne ikke gjenopprette dokumentet"
+      ],
+      "Failed to trash document": [
+        "Kunne ikke legge dokumentet i papirkurven"
       ],
       "Failed to upload files: ${ err }": [
         "Kunne ikke laste opp filer: ${ err }"
@@ -9800,11 +9821,6 @@
         "Abonnementet vil bli nedgradert på slutten av faktureringssyklusen."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Livstid"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsplass"
@@ -10497,6 +10513,9 @@
       "Private browsing vs VPN": [
         "Privat surfing kontra VPN"
       ],
+      "Problems Detected": [
+        "Problemer oppdaget"
+      ],
       "Public link": [
         "Offentlig kobling"
       ],
@@ -10605,6 +10624,9 @@
       "Start import process": [
         "Start importprosessen"
       ],
+      "Stay for 50% off your next month": [
+        "Bli og få 50 % rabatt neste måned"
+      ],
       "Stop sharing": [
         "Avslutt deling"
       ],
@@ -10613,9 +10635,6 @@
       ],
       "Subscription canceled": [
         "Abonnement kansellert"
-      ],
-      "Summer Sale": [
-        "Sommersalg"
       ],
       "The link either does not exist or has expired": [
         "Koblingen finnes enten ikke eller er utløpt"

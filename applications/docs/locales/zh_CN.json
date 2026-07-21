@@ -414,9 +414,6 @@
       "Get the apps": [
         "获取应用"
       ],
-      "Get the deal": [
-        "立即享受优惠"
-      ],
       "Get the writing assistant": [
         "获取写作助手"
       ],
@@ -1443,6 +1440,9 @@
       "Continue your subscription": [
         "继续您的订阅"
       ],
+      "Get 50% offer": [
+        "享受 50% 折扣"
+      ],
       "Maybe later": [
         "以后再说"
       ]
@@ -1500,18 +1500,6 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位用户"
-      ],
-      "Subtotal": [
-        "小计"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "${ cycle } 个月小计"
-      ],
-      "Total": [
-        "总计"
-      ],
-      "Total for ${ n } month": [
-        "${ n } 月合计"
       ]
     },
     "Collapsible tooltip": {
@@ -2847,7 +2835,7 @@
         "下载 Linux 版"
       ],
       "Download for macOS": [
-        "下载 macOS 版本"
+        "下载 macOS 版"
       ],
       "Download for Windows": [
         "下载 Windows 版"
@@ -3179,6 +3167,9 @@
       "Failed to resend invitation": [
         "重新发送邀请失败"
       ],
+      "Failed to trash document": [
+        "将文档移入回收站失败"
+      ],
       "Failed to unshare node": [
         "无法取消共享节点"
       ],
@@ -3367,6 +3358,9 @@
       ],
       "Some contacts could not be deleted": [
         "无法删除部分联系人"
+      ],
+      "Some documents could not be loaded": [
+        "部分文档无法加载"
       ],
       "Some groups could not be deleted": [
         "无法删除部分群组"
@@ -4347,7 +4341,7 @@
         "生成应用专用密码或开启 IMAP 功能"
       ],
       "CSV or a VCF (vCard) file": [
-        "CSV 或 VCF（vCard）文件"
+        "CSV 或 VCF (vCard) 文件"
       ],
       "full calendar view": [
         "全日历视图"
@@ -4531,6 +4525,9 @@
       ],
       "Accept/decline": [
         "接受/拒绝"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "访问遍布 145 多个国家/地区的 20,000+ 台服务器"
       ],
       "Ad targeting": [
         "广告定位"
@@ -4841,6 +4838,9 @@
       "Failing signatures will be re-signed by you": [
         "未通过的签名将由您重新签署"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "最快达 10 Gbps 的 VPN 速度"
+      ],
       "File \"${ name }\" was deleted during download": [
         "文件“${ name }”在下载过程中被删除"
       ],
@@ -4895,8 +4895,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府和网络供应商可以监视您的在线活动。Proton 通过隐藏您的真实 IP 地址并加密网络活动，让您的浏览私密无忧。"
       ],
+      "Have some more time to decide without interruption.": [
+        "不受打扰地多些时间做决定"
+      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "通过报告问题来帮助我们改善体验。如果您愿意分享电子表格内容，请将下方的调试信息附加到您的报告中。"
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "通过报告问题来帮助我们改善体验，请在报告中附上下方的调试信息。"
       ],
       "here": [
         "此处"
@@ -4909,6 +4915,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "如果现在取消，您将在 ${ expiryDate } 失去对 ${ BRAND_NAME } ${ planTitle } 的访问权限，包括以下功能："
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
@@ -5210,6 +5219,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人。"
       ],
+      "Premium privacy protection across all your devices": [
+        "所有设备上的高级隐私保护"
+      ],
       "Preparing link to file": [
         "正在准备文件链接"
       ],
@@ -5332,6 +5344,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "请启用以下 VPN 设置，即可轻松保持网络连接："
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "保留当前套餐，下月享受 5 折优惠"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "订阅服务每 ${ cycle } 个月自动续费。"
@@ -5566,6 +5581,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "我们检测到您之前打开文档时曾遇到问题"
       ],
       "Week": [
         "周"
@@ -5875,9 +5893,6 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
       ],
-      "${ n } month": [
-        "${ n } 个月"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length } / ${ maxLength } 个字符"
       ],
@@ -6102,9 +6117,6 @@
       ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
-      ],
-      "Get the deal": [
-        "获取优惠"
       ],
       "Hide password": [
         "隐藏密码"
@@ -7875,6 +7887,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName } 重命名成功"
       ],
+      "\"Document deleted permanently": [
+        "文档已永久删除"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } 个项目解密失败"
       ],
@@ -7965,6 +7980,9 @@
       "Failed to accept share invitation": [
         "无法接受共享邀请"
       ],
+      "Failed to delete document": [
+        "删除文档失败"
+      ],
       "Failed to download files: ${ err }": [
         "下载文件失败：${ err }"
       ],
@@ -7979,6 +7997,12 @@
       ],
       "Failed to rename document": [
         "重命名文档失败"
+      ],
+      "Failed to restore document": [
+        "恢复文档失败"
+      ],
+      "Failed to trash document": [
+        "将文档移入回收站失败"
       ],
       "Failed to upload files: ${ err }": [
         "上传文件失败：${ err }"
@@ -9573,11 +9597,6 @@
         "订阅将在账单周期结束时降级。"
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "终身"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 存储空间"
@@ -10041,7 +10060,7 @@
         "下载 ${ DRIVE_APP_NAME } 应用"
       ],
       "Download the app": [
-        "下载 APP"
+        "下载应用"
       ],
       "Download unverified file?": [
         "下载未经验证的文件？"
@@ -10250,6 +10269,9 @@
       "Private browsing vs VPN": [
         "隐私浏览模式与 VPN 对比"
       ],
+      "Problems Detected": [
+        "检测到问题"
+      ],
       "Public link": [
         "公开链接"
       ],
@@ -10358,6 +10380,9 @@
       "Start import process": [
         "开始导入过程"
       ],
+      "Stay for 50% off your next month": [
+        "下月继续享受 5 折优惠"
+      ],
       "Stop sharing": [
         "停止分享"
       ],
@@ -10366,9 +10391,6 @@
       ],
       "Subscription canceled": [
         "订阅已取消"
-      ],
-      "Summer Sale": [
-        "夏季特惠"
       ],
       "The link either does not exist or has expired": [
         "该链接不存在或已失效"

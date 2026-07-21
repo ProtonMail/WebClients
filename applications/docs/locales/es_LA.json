@@ -417,9 +417,6 @@
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
-      "Get the deal": [
-        "Obtener la promoción"
-      ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
       ],
@@ -1461,6 +1458,9 @@
       "Continue your subscription": [
         "Continuar con la suscripción"
       ],
+      "Get 50% offer": [
+        "Obtener oferta del 50%"
+      ],
       "Maybe later": [
         "Quizás más tarde"
       ]
@@ -1520,20 +1520,6 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
-      ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Subtotal por ${ cycle } mes",
-        "Subtotal por ${ cycle } meses"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total por ${ n } mes",
-        "Total por ${ n } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -3204,6 +3190,9 @@
       "Failed to resend invitation": [
         "Error al reenviar la invitación"
       ],
+      "Failed to trash document": [
+        "Error al enviar el documento a la papelera"
+      ],
       "Failed to unshare node": [
         "Error al dejar de compartir el nodo"
       ],
@@ -3397,6 +3386,9 @@
       ],
       "Some contacts could not be deleted": [
         "Algunos contactos no se pudieron eliminar"
+      ],
+      "Some documents could not be loaded": [
+        "No se pudieron cargar algunos documentos"
       ],
       "Some groups could not be deleted": [
         "Algunos grupos no se pudieron eliminar"
@@ -4598,6 +4590,9 @@
       "Accept/decline": [
         "Aceptar/rechazar"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Acceda a más de 20 000 servidores en 145 países"
+      ],
       "Ad targeting": [
         "Orientación de anuncios"
       ],
@@ -4911,6 +4906,9 @@
       "Failing signatures will be re-signed by you": [
         "Las firmas con errores serán firmadas nuevamente por usted."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Velocidades VPN más rápidas de hasta 10 Gbps"
+      ],
       "File \"${ name }\" was deleted during download": [
         "El archivo \"${ name }\" fue eliminado durante la descarga"
       ],
@@ -4965,8 +4963,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear su actividad en línea. Ocultando su IP real y cifrando su actividad de navegación se vuelve privada."
       ],
+      "Have some more time to decide without interruption.": [
+        "Tenga más tiempo para decidir sin interrupciones."
+      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Ayúdenos a mejorar esta experiencia informando del problema. Si está de acuerdo en compartir el contenido de la hoja de cálculo, adjunte la información de depuración que aparece a continuación a su informe."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Ayúdenos a mejorar esta experiencia informando del problema. Adjunte la información de depuración que aparece a continuación a su informe."
       ],
       "here": [
         "aquí"
@@ -4979,6 +4983,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Si cancela ahora, perderá acceso a ${ BRAND_NAME }${ planTitle } el ${ expiryDate }, incluyendo estas funciones:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si cancela, la suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
@@ -5283,6 +5290,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espere mientras se buscan contactos que contengan datos cifrados con la clave inactiva."
       ],
+      "Premium privacy protection across all your devices": [
+        "Protección de privacidad premium en todos sus dispositivos"
+      ],
       "Preparing link to file": [
         "Preparando enlace al archivo"
       ],
@@ -5405,6 +5415,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Manténgase en línea sin ningún esfuerzo al activar los siguientes ajustes VPN:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Quédese en su plan y obtenga un 50% de descuento en su próximo mes"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "La suscripción se renueva automáticamente cada ${ cycle } mes.",
@@ -5640,6 +5653,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Hemos detectado que anteriormente tuvo problemas al abrir un documento."
       ],
       "Week": [
         "Semana"
@@ -5955,10 +5971,6 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } meses"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } caracteres"
       ],
@@ -6183,9 +6195,6 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Obtener la oferta"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -8053,6 +8062,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" renombrado"
       ],
+      "\"Document deleted permanently": [
+        "«Documento eliminado de forma permanente"
+      ],
       "${ count } item failed to be decrypted": [
         "Error al descifrar ${ count } elemento",
         "Error al descifrar ${ count } elementos"
@@ -8154,6 +8166,9 @@
       "Failed to accept share invitation": [
         "Ocurrió un error al aceptar la invitación compartida"
       ],
+      "Failed to delete document": [
+        "Error al eliminar el documento"
+      ],
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
       ],
@@ -8168,6 +8183,12 @@
       ],
       "Failed to rename document": [
         "Error al cambiar el nombre del documento"
+      ],
+      "Failed to restore document": [
+        "Error al restaurar el documento"
+      ],
+      "Failed to trash document": [
+        "Error al enviar el documento a la papelera"
       ],
       "Failed to upload files: ${ err }": [
         "Error al cargar los archivos: ${ err }"
@@ -9803,11 +9824,6 @@
         "Pasará a un plan inferior al finalizar el ciclo de facturación."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "De por vida"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de almacenamiento"
@@ -10500,6 +10516,9 @@
       "Private browsing vs VPN": [
         "Navegación privada y VPN"
       ],
+      "Problems Detected": [
+        "Problemas detectados"
+      ],
       "Public link": [
         "Enlace público"
       ],
@@ -10608,6 +10627,9 @@
       "Start import process": [
         "Iniciar proceso de importación"
       ],
+      "Stay for 50% off your next month": [
+        "Quédese y obtenga un 50% de descuento en su próximo mes"
+      ],
       "Stop sharing": [
         "Dejar de compartir"
       ],
@@ -10616,9 +10638,6 @@
       ],
       "Subscription canceled": [
         "Se canceló la suscripción."
-      ],
-      "Summer Sale": [
-        "Ofertas de verano"
       ],
       "The link either does not exist or has expired": [
         "El enlace no existe o ha expirado"
