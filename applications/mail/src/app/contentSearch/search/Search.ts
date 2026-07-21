@@ -63,11 +63,11 @@ export class Search {
     /** @internal called by SearchService */
     public start() {
         this.execute()
-            .catch((err) => {
-                this.onError.notify(err as Error);
-            })
             .finally(() => {
                 this.resolveDone?.();
+            })
+            .catch((err) => {
+                this.onError.notify(err as Error);
             });
     }
 

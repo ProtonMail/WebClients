@@ -12,6 +12,7 @@ import { isLoadEvent } from '../utils/eventTypeGuards';
 import { SearchLoop } from './SearchLoop';
 import { createLocalSearchQueryOptions } from './queryOptions';
 
+// The values are the same as what mobile has set in their codebase
 const SMALLISH_CARDINALITY = 80;
 const BUCKET_SIZE_SECONDS = 60n * 60n * 24n * 90n;
 
