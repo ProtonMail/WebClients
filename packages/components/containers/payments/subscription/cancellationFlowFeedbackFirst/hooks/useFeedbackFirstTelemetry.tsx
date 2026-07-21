@@ -75,5 +75,15 @@ export const useFeedbackFirstTelemetry = () => {
         sendReport(TelemetryAccountCancellationFlowFeedbackEvents.confirmCancellation);
     };
 
-    return { startCancellation, sendFeedbackReport, sendSecondStepReport, sendConfirmCancellation };
+    const sendManagedExternally = () => {
+        sendReport(TelemetryAccountCancellationFlowFeedbackEvents.managedExternally);
+    };
+
+    return {
+        startCancellation,
+        sendFeedbackReport,
+        sendSecondStepReport,
+        sendConfirmCancellation,
+        sendManagedExternally,
+    };
 };
