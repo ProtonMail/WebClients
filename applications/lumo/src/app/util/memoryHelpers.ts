@@ -39,6 +39,12 @@ export const MEMORY_MIN_CONTENT_LENGTH = 8;
 /** General-chat user prompts before a background memory update runs. */
 export const MEMORY_AUTO_SAVE_PROMPT_THRESHOLD = 10;
 
+/** Soft target for total saved memories — used in prompts and UI guidance, not enforced. */
+export const MEMORY_RECOMMENDED_TOTAL_COUNT = 50;
+
+/** Minimum saved memories required before running optimize. */
+export const MEMORY_OPTIMIZE_MIN_COUNT = 2;
+
 const MIN_SAMPLES_TO_GENERATE = 2;
 
 // ---------------------------------------------------------------------------
@@ -96,6 +102,11 @@ export const memoriesFromContents = (contents: string[], source: MemorySource): 
 
 export const sortMemoriesByDate = (memories: Memory[]) =>
     [...memories].toSorted((a, b) => b.createdAt - a.createdAt);
+
+export const isMemoryCountHigh = (memories: Memory[]) =>
+    normalizeMemories(memories).length >= MEMORY_RECOMMENDED_TOTAL_COUNT;
+
+export const shouldSuggestMemoryOptimize = (memories: Memory[]) => isMemoryCountHigh(memories);
 
 /**
  * Applies an edited content string to an existing memory.
@@ -185,6 +196,8 @@ export const sampleUserPromptsForMemoryGeneration = (
 
 export const canGenerateMemoriesFromChats = (sampleCount: number) => sampleCount >= MIN_SAMPLES_TO_GENERATE;
 
+export const canOptimizeMemories = (memoryCount: number) => memoryCount >= MEMORY_OPTIMIZE_MIN_COUNT;
+
 // ---------------------------------------------------------------------------
 // Prompt builders
 // ---------------------------------------------------------------------------
@@ -234,19 +247,30 @@ Output rules:
 
 const numberedList = (items: string[]) => items.map((item, index) => `${index + 1}. ${item}`).join('\n');
 
+const buildHighMemoryCountGuidance = (existingCount: number) => {
+    if (existingCount < MEMORY_RECOMMENDED_TOTAL_COUNT) {
+        return '';
+    }
+
+    return `
+IMPORTANT: The user already has ${existingCount} saved memories — well above the ideal ~${MEMORY_RECOMMENDED_TOTAL_COUNT}. Be extremely selective. Only return genuinely new, high-signal facts not already implied below. Prefer returning [] over adding marginal or overlapping entries.`;
+};
+
 export const buildMemoryBootstrapPrompt = (samples: string[], existingMemories: Memory[] = []): string => {
-    const isFreshBootstrap = existingMemories.length === 0;
+    const existing = normalizeMemories(existingMemories);
+    const isFreshBootstrap = existing.length === 0;
 
     const intro = isFreshBootstrap
         ? `You bootstrap long-term memories for an AI assistant from scratch.
 
 Your job is to read the user's past chat prompts as a CORPUS and produce a consolidated set of durable memories that will personalize all future general chats. The list you return will be saved directly without further cleanup, so it must already be deduplicated and consolidated.
 
-Returning very few memories (or none) here would mean future replies are NOT personalized — that is the worst outcome. With more than a handful of prompts, there are almost always durable signals (preferred languages, tools, communication style, domains of work) that can be inferred from the AGGREGATE, even when each individual prompt is a one-off question. Look for those patterns and extract them. Aim for ~${MEMORY_GENERATION_TARGET_COUNT} memories where possible.`
+Returning very few memories (or none) here would mean future replies are NOT personalized — that is the worst outcome. With more than a handful of prompts, there are almost always durable signals (preferred languages, tools, communication style, domains of work) that can be inferred from the AGGREGATE, even when each individual prompt is a one-off question. Look for those patterns and extract them. Aim for ~${MEMORY_GENERATION_TARGET_COUNT} memories where possible — quality and consolidation matter more than quantity.`
         : `You incrementally update long-term memories for an AI assistant.
 
 The user already has these memories saved. Treat them as a hard blocklist — do NOT repeat, paraphrase, narrow, broaden, or combine them into "new" wording. Only return genuinely NEW information not already implied by any item below:
-${numberedList(existingMemories.map((m) => m.content))}
+${numberedList(existing.map((m) => m.content))}
+${buildHighMemoryCountGuidance(existing.length)}
 
 From the user's chat prompts below, extract any additional durable facts, preferences, or context that are NOT already covered by the existing memories above. If a candidate memory would overlap with anything above — even with different phrasing — skip it. The list you return will be appended without further cleanup, so it must already be deduplicated, non-overlapping, and limited to net-new facts.`;
 
@@ -263,6 +287,30 @@ ${trailingRules}
 
 User prompt samples:
 ${numberedList(samples)}`;
+};
+
+export const buildMemoryOptimizePrompt = (memories: Memory[]): string => {
+    const normalized = sortMemoriesByDate(normalizeMemories(memories));
+
+    return `You clean up and consolidate long-term memories for an AI assistant.
+
+The user has saved these memories. Produce an OPTIMIZED replacement list that will be saved directly. Remove duplicates, merge overlapping facts into single atomic entries, and drop vague or low-signal items. Do NOT invent new facts that are not already implied by the list below.
+
+Current saved memories:
+${numberedList(normalized.map((memory) => memory.content))}
+
+Tasks:
+- Remove exact and semantic duplicates — keep the clearest wording
+- Merge related observations into ONE memory when they express the same underlying preference or fact
+- Drop transient, vague, or one-off task memories that should not personalize future chats
+- Preserve every distinct, durable preference, expertise signal, tool, or long-running context
+- Prefer fewer, higher-signal memories over many redundant ones — aim for ~${MEMORY_RECOMMENDED_TOTAL_COUNT} consolidated entries where possible
+
+Output rules:
+- Return ONLY a JSON array of strings (no markdown fences, no commentary, no surrounding text)
+- Each memory ≤ ${MEMORY_MAX_CONTENT_LENGTH} chars, self-contained, atomic
+- Write implicitly in third person ("Prefers X", not "The user prefers X")
+- Do not include passwords, tokens, API keys, government IDs, addresses, phone numbers, or full names of third parties`;
 };
 
 // ---------------------------------------------------------------------------
@@ -292,8 +340,9 @@ export const parseMemoryStringsResponse = (response: string, existingMemories: M
         return [];
     }
 
+    const existing = normalizeMemories(existingMemories);
     const memories: string[] = [];
-    const seen = new Set(existingMemories.map((memory) => normalizeMemoryContent(memory.content).toLowerCase()));
+    const seen = new Set(existing.map((memory) => normalizeMemoryContent(memory.content).toLowerCase()));
 
     for (const item of parsed) {
         if (typeof item !== 'string') {
@@ -317,9 +366,60 @@ export const parseMemoryStringsResponse = (response: string, existingMemories: M
     return memories;
 };
 
+export const parseMemoryOptimizeResponse = (response: string): string[] => {
+    const parsed = extractJsonArray(response);
+    if (!Array.isArray(parsed)) {
+        return [];
+    }
+
+    const memories: string[] = [];
+    const seen = new Set<string>();
+
+    for (const item of parsed) {
+        if (typeof item !== 'string') {
+            continue;
+        }
+        const normalized = normalizeMemoryContent(item);
+        if (normalized.length < MEMORY_MIN_CONTENT_LENGTH) {
+            continue;
+        }
+        const key = normalized.toLowerCase();
+        if (seen.has(key)) {
+            continue;
+        }
+        seen.add(key);
+        memories.push(normalized);
+    }
+
+    return memories;
+};
+
 // ---------------------------------------------------------------------------
 // Reconciliation
 // ---------------------------------------------------------------------------
+
+/** Rebuilds the saved list from an optimized model response, preserving exact user entries. */
+export const rebuildMemoriesFromOptimizedContents = (
+    contents: string[],
+    previousMemories: Memory[]
+): Memory[] => {
+    const previousByContent = new Map(
+        normalizeMemories(previousMemories).map((memory) => [
+            normalizeMemoryContent(memory.content).toLowerCase(),
+            memory,
+        ])
+    );
+    const now = Date.now();
+
+    return contents.map((content, index) => {
+        const normalizedContent = normalizeMemoryContent(content);
+        const previous = previousByContent.get(normalizedContent.toLowerCase());
+        if (previous) {
+            return { ...previous, content: normalizedContent };
+        }
+        return { ...createMemory(normalizedContent, 'generated'), createdAt: now - index };
+    });
+};
 
 /** Append generated memories to the existing list; skips memories whose content already exists. */
 export const mergeAppendedGeneratedMemories = (existing: Memory[], generated: Memory[]): Memory[] => {

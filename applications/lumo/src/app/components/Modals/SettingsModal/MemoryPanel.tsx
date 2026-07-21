@@ -28,10 +28,12 @@ import {
     MEMORY_AUTO_SAVE_PROMPT_THRESHOLD,
     MEMORY_MAX_CONTENT_LENGTH,
     applyMemoryEdit,
+    canOptimizeMemories,
     createMemory,
     isUserMemory,
     normalizeMemories,
     partitionMemories,
+    shouldSuggestMemoryOptimize,
     sortMemoriesByDate,
 } from '../../../util/memoryHelpers';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
@@ -162,9 +164,10 @@ const ToggleRow = ({ id, label, tooltip, checked, onChange }: ToggleRowProps) =>
 interface AddMemoryPopoverProps {
     tipsTitle: string;
     onAdd: (content: string) => void;
+    disabled?: boolean;
 }
 
-const AddMemoryPopover = ({ tipsTitle, onAdd }: AddMemoryPopoverProps) => {
+const AddMemoryPopover = ({ tipsTitle, onAdd, disabled = false }: AddMemoryPopoverProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [value, setValue] = useState('');
 
@@ -192,6 +195,7 @@ const AddMemoryPopover = ({ tipsTitle, onAdd }: AddMemoryPopoverProps) => {
                     shape="ghost"
                     size="small"
                     onClick={toggle}
+                    disabled={disabled}
                     aria-label={c('collider_2025: Action').t`Add memory`}
                 >
                     <LumoIcon name="Plus" size={16} />
@@ -238,6 +242,8 @@ const AddMemoryPopover = ({ tipsTitle, onAdd }: AddMemoryPopoverProps) => {
 interface MemoryActionsMenuProps {
     hasMemories: boolean;
     hasGeneratedMemories: boolean;
+    canOptimize: boolean;
+    onOptimize: () => void;
     onClearAll: () => void;
     onClearGenerated: () => void;
 }
@@ -245,6 +251,8 @@ interface MemoryActionsMenuProps {
 const MemoryActionsMenu = ({
     hasMemories,
     hasGeneratedMemories,
+    canOptimize,
+    onOptimize,
     onClearAll,
     onClearGenerated,
 }: MemoryActionsMenuProps) => {
@@ -261,6 +269,14 @@ const MemoryActionsMenu = ({
             size="small"
             content={<LumoIcon name="Ellipsis" size={16} aria-label={c('collider_2025: Action').t`More options`} />}
         >
+            {canOptimize && (
+                <DropdownMenuButton
+                    className="flex flex-nowrap items-center gap-2 text-left w-full"
+                    onClick={onOptimize}
+                >
+                    {c('collider_2025: Action').t`Optimize memories`}
+                </DropdownMenuButton>
+            )}
             {hasGeneratedMemories && (
                 <DropdownMenuButton
                     className="flex flex-nowrap items-center gap-2 text-left w-full color-danger"
@@ -416,7 +432,14 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
 const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const { createNotification } = useNotifications();
-    const { generateFromChats, canGenerateFromChats, isGenerating, isBootstrapping } = useMemoryGeneration();
+    const {
+        generateFromChats,
+        optimizeMemories,
+        canGenerateFromChats,
+        isGenerating,
+        isBootstrapping,
+        isOptimizing,
+    } = useMemoryGeneration();
     const dispatch = useLumoDispatch();
     const store = useLumoStore();
 
@@ -424,6 +447,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
     const clearAllModal = useModalStateObject();
     const clearGeneratedModal = useModalStateObject();
     const disableMemoryModal = useModalStateObject();
+    const optimizeModal = useModalStateObject();
 
     const memories = useMemo(
         () => sortMemoriesByDate(normalizeMemories(lumoUserSettings.memories)),
@@ -436,11 +460,13 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
     const newPromptsSinceLastUpdate = lumoUserSettings.memoryPromptsSinceAutoSave ?? 0;
     const promptsUntilAutoSave = Math.max(0, MEMORY_AUTO_SAVE_PROMPT_THRESHOLD - newPromptsSinceLastUpdate);
     const hasMemories = memories.length > 0;
+    const canOptimize = canOptimizeMemories(memories.length);
+    const suggestOptimize = shouldSuggestMemoryOptimize(memories);
     const hasNewChats = newPromptsSinceLastUpdate > 0;
     const showUpdateFromChatsButton = hasMemories && hasNewChats;
 
     const persistMemories = (next: Memory[], extra: Partial<typeof lumoUserSettings> = {}) => {
-        updateSettings({ memories: next, _autoSave: true, ...extra });
+        updateSettings({ memories: normalizeMemories(next), _autoSave: true, ...extra });
     };
 
     const handleAddMemory = (content: string) => {
@@ -550,6 +576,50 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         }
     };
 
+    const getMemoryContentsKey = (nextMemories: Memory[]) =>
+        normalizeMemories(nextMemories)
+            .map((memory) => memory.content.toLowerCase())
+            .sort()
+            .join('\n');
+
+    const handleConfirmOptimizeMemories = async () => {
+        try {
+            const latestMemories = normalizeMemories(store.getState().lumoUserSettings.memories);
+            const beforeCount = latestMemories.length;
+            const beforeKey = getMemoryContentsKey(latestMemories);
+            const optimized = await optimizeMemories(latestMemories);
+            const afterKey = getMemoryContentsKey(optimized);
+
+            optimizeModal.openModal(false);
+            setEditingId(null);
+
+            if (beforeKey === afterKey) {
+                createNotification({
+                    type: 'info',
+                    text: c('collider_2025: Info').t`Your memories are already well organized.`,
+                });
+                return;
+            }
+
+            persistMemories(optimized);
+
+            const removed = beforeCount - optimized.length;
+            if (removed > 0) {
+                createNotification({
+                    type: 'success',
+                    text: c('collider_2025: Success').t`Optimized memories: reduced from ${beforeCount} to ${optimized.length}.`,
+                });
+            } else {
+                createNotification({
+                    type: 'success',
+                    text: c('collider_2025: Success').t`Memories optimized successfully.`,
+                });
+            }
+        } catch (error) {
+            handleGenerationError(error);
+        }
+    };
+
     const disableMemoryText = c('collider_2025: DisableMemory')
         .t`Deletes all saved memories and turns off the memory feature.`;
 
@@ -605,6 +675,13 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                             {hasMemories && <span className="color-weak text-normal"> ({memories.length})</span>}
                         </h3>
 
+                        {suggestOptimize && (
+                            <p className="memory-panel-optimize-hint m-0 text-sm color-weak shrink-0">
+                                {c('collider_2025: Info')
+                                    .t`You have many saved memories. Use Optimize in the menu to merge duplicates and keep the list focused.`}
+                            </p>
+                        )}
+
                         <section className="memory-panel-main flex flex-column flex-nowrap flex-1 min-h-0 rounded-lg border border-weak bg-weak overflow-hidden">
                             <header className="shrink-0 flex flex-row flex-nowrap items-center justify-space-between gap-2 py-2 px-3 border-bottom border-weak bg-norm">
                                 <div className="flex flex-row flex-nowrap items-center min-w-0">
@@ -628,6 +705,8 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                     <MemoryActionsMenu
                                         hasMemories={hasMemories}
                                         hasGeneratedMemories={generatedMemories.length > 0}
+                                        canOptimize={canOptimize}
+                                        onOptimize={() => optimizeModal.openModal(true)}
                                         onClearAll={() => clearAllModal.openModal(true)}
                                         onClearGenerated={() => clearGeneratedModal.openModal(true)}
                                     />
@@ -693,6 +772,29 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                     </Button>
                 </div>
             )}
+
+            <Prompt
+                {...optimizeModal.modalProps}
+                title={c('collider_2025: Title').t`Optimize memories?`}
+                buttons={[
+                    <Button
+                        key="confirm"
+                        color="norm"
+                        loading={isOptimizing}
+                        onClick={handleConfirmOptimizeMemories}
+                    >
+                        {c('collider_2025: Action').t`Optimize`}
+                    </Button>,
+                    <Button key="cancel" onClick={optimizeModal.modalProps.onClose} disabled={isOptimizing}>
+                        {c('collider_2025: Action').t`Cancel`}
+                    </Button>,
+                ]}
+            >
+                <p className="m-0">
+                    {c('collider_2025: Description')
+                        .t`${LUMO_SHORT_APP_NAME} will review your saved memories, remove duplicates, and merge related entries into clearer ones. Your memory list will be replaced with the optimized result.`}
+                </p>
+            </Prompt>
 
             <Prompt
                 {...clearGeneratedModal.modalProps}
