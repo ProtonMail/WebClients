@@ -120,7 +120,6 @@ enum AccountFlag {
     UserGroupsScimGroups = 'UserGroupsScimGroups',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
     RecoveryFileShareEnabled = 'RecoveryFileShareEnabled',
-    GenericUserSettings = 'GenericUserSettings',
     WorldCupRetention = 'WorldCupRetention',
 }
 
