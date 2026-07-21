@@ -1,0 +1,68 @@
+{
+    "name": "@proton/lumo-api-client",
+    "version": "2.1.0",
+    "description": "Modular LLM API client for Lumo products with clean separation of concerns",
+    "keywords": [
+        "lumo",
+        "llm",
+        "api",
+        "proton",
+        "chat",
+        "ai",
+        "modular",
+        "react",
+        "redux"
+    ],
+    "homepage": "https://protonag.atlassian.net/jira/software/c/projects/LUMO/issues",
+    "bugs": {
+        "url": "https://protonag.atlassian.net/jira/software/c/projects/LUMO/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.protontech.ch/web/clients/",
+        "directory": "packages/lumo-api-client"
+    },
+    "license": "GPL-3.0",
+    "author": "Proton Technologies AG",
+    "exports": {
+        ".": "./index.ts",
+        "./types-api": "./types-api.ts",
+        "./core/client": "./core/client.ts",
+        "./core/desktop-tools": "./core/desktop-tools.ts",
+        "./core/generation-terminal": "./core/generation-terminal.ts",
+        "./core/network": "./core/network.ts",
+        "./core/request-builder": "./core/request-builder.ts",
+        "./core/types": "./core/types.ts",
+        "./core/transforms/smoothing": "./core/transforms/smoothing.ts",
+        "./integrations/react": "./integrations/react.ts",
+        "./utils": "./utils.ts"
+    },
+    "main": "index.ts",
+    "types": "index.ts",
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint --quiet",
+        "test": "jest",
+        "type-check": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@proton/shared": "workspace:^",
+        "@protontech/crypto": "*",
+        "uuid": "^14.0.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.29.7",
+        "@babel/preset-env": "^7.29.7",
+        "@babel/preset-typescript": "^7.29.7",
+        "@jest/globals": "^30.4.1",
+        "@types/jest": "^30.0.0",
+        "babel-jest": "^30.4.1",
+        "eslint": "^9.39.5",
+        "jest": "^30.4.2",
+        "ts-jest": "^29.4.11",
+        "typescript": "^6.0.3"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1"
+    }
+}

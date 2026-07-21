@@ -1,6 +1,6 @@
+import { quickChat } from '@proton/lumo-api-client';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import { quickChat } from '../lib/lumo-api-client';
 import { ENABLE_U2L_ENCRYPTION } from '../llm/config';
 import { appendGeneratedMemoriesThunk, updateLumoUserSettings } from '../redux/slices/lumoUserSettings';
 import type { LumoDispatch, LumoState } from '../redux/store';
