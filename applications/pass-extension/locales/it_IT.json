@@ -1444,6 +1444,12 @@
       ],
       "This domain is already managed by your organization": [
         "Questo dominio è già gestito dalla tua organizzazione"
+      ],
+      "Regex invalid": [
+        "Espressione regolare non valida"
+      ],
+      "Regex unsafe": [
+        "Espressione regolare non sicura"
       ]
     },
     "Error message": {
@@ -2137,8 +2143,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
