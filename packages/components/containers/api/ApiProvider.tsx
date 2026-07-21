@@ -15,7 +15,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import ApiModals from './ApiModals';
 import ApiContext from './apiContext';
-import ApiServerTimeContext from './apiServerTimeContext';
+import ApiServerTimeContext, { type ApiServerTimeWithTimestamp } from './apiServerTimeContext';
 
 const hasApiStatusChanged = (old: Partial<ApiStatusState>, next: Partial<ApiStatusState>) => !isDeepEqual(next, old);
 
@@ -25,7 +25,7 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
     const store = useStore();
     const { createNotification } = useNotifications();
     const authentication = useAuthentication();
-    const [apiServerTime, setApiServerTime] = useState<Date | undefined>(undefined);
+    const [apiServerTime, setApiServerTime] = useState<ApiServerTimeWithTimestamp | undefined>(undefined);
     const apiStatusRef = useRef<Partial<ApiStatusState>>(defaultApiStatus);
 
     useEffect(() => {
