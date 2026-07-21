@@ -11,15 +11,14 @@ export const ContentSearchVersionToggle = () => {
     const [searchVersion, setSearchVersion] = useLocalStateSync<SearchVersion>('v2', 'OVERRIDE_SEARCH_V2');
 
     if (!flag) {
-        return;
+        return null;
     }
 
     return (
         <div className="mt-6">
             <span className="block text-semibold mb-2">{c('Label').t`Content search version to use`}</span>
             <RadioGroup<SearchVersion>
-                name="assistant-runtime"
-                className=""
+                name="content-search-version"
                 value={searchVersion ?? 'v2'}
                 onChange={(value) => {
                     setSearchVersion(value);
