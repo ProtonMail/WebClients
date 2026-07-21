@@ -547,12 +547,6 @@
       "Regenerate": [
         "重新生成"
       ],
-      "Regex invalid": [
-        "正则表达式无效"
-      ],
-      "Regex unsafe": [
-        "正则表达式不安全"
-      ],
       "Reject": [
         "拒绝"
       ],
@@ -1267,6 +1261,12 @@
       ],
       "PIN codes do not match": [
         "两次输入的 PIN 码不一致"
+      ],
+      "Regex invalid": [
+        "正则表达式无效"
+      ],
+      "Regex unsafe": [
+        "正则表达式不安全"
       ],
       "Request timed out": [
         "请求超时"
@@ -2079,7 +2079,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接！"
       ],
       "Moving items": [
         "正在移动"
