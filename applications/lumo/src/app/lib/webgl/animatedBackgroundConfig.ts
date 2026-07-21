@@ -19,6 +19,10 @@ export const ANIMATED_BACKGROUND_MAX_DPR = 1.1;
 /** Ambient animation target; slow blob motion reads fine below 60fps. */
 export const ANIMATED_BACKGROUND_TARGET_FPS = 24;
 
+/** Particle sample-texture refresh cadence. Blobs drift slowly, so a few Hz reads as identical. */
+export const ANIMATED_BACKGROUND_SAMPLE_REFRESH_HZ = 8;
+export const ANIMATED_BACKGROUND_SAMPLE_REFRESH_INTERVAL_MS = 1000 / ANIMATED_BACKGROUND_SAMPLE_REFRESH_HZ;
+
 type BlobOverrides = Partial<Omit<WebglShaderBgBlobConfig, 'x' | 'color'>>;
 
 /** Shared defaults for blob motion; override per blob as needed. */
@@ -362,7 +366,9 @@ export function getAnimatedBackgroundShaderConfig(
     mode: AnimatedBackgroundBlobMode = DEFAULT_ANIMATED_BACKGROUND_BLOB_MODE
 ): WebglShaderBgConfig {
     if (mode === 'lavaLamp') {
-        return isDark ? ANIMATED_BACKGROUND_SHADER_CONFIG_LAVA_LAMP_DARK : ANIMATED_BACKGROUND_SHADER_CONFIG_LAVA_LAMP_LIGHT;
+        return isDark
+            ? ANIMATED_BACKGROUND_SHADER_CONFIG_LAVA_LAMP_DARK
+            : ANIMATED_BACKGROUND_SHADER_CONFIG_LAVA_LAMP_LIGHT;
     }
     return isDark ? ANIMATED_BACKGROUND_SHADER_CONFIG_DARK : ANIMATED_BACKGROUND_SHADER_CONFIG_LIGHT;
 }
