@@ -7,7 +7,8 @@ export type ToolCallData =
     | ProtonInfoToolCallData
     | WeatherToolCallData
     | StockToolCallData
-    | CryptocurrencyToolCallData;
+    | CryptocurrencyToolCallData
+    | NativeToolCallData;
 export type ToolCallName = ToolCallData['name'];
 
 /**
@@ -39,7 +40,8 @@ export function isToolCallData(data: unknown): data is ToolCallData {
         isProtonInfoToolCallData(data) ||
         isWeatherToolCallData(data) ||
         isStockToolCallData(data) ||
-        isCryptocurrencyToolCallData(data)
+        isCryptocurrencyToolCallData(data) ||
+        isNativeToolCallData(data)
     );
 }
 
@@ -285,6 +287,31 @@ export function isCryptocurrencyArguments(args: unknown): args is Cryptocurrency
     );
 }
 
+/** Desktop connector tools use a `connector__tool` namespaced name. */
+export type NativeToolName = `${string}__${string}`;
+export type NativeToolCallData = {
+    name: NativeToolName;
+    arguments: Record<string, unknown>;
+};
+
+export function isNativeToolCallData(data: unknown): data is NativeToolCallData {
+    if (typeof data !== 'object' || data === null || !('name' in data)) {
+        return false;
+    }
+    const name = (data as { name: unknown }).name;
+    if (typeof name !== 'string' || !name.includes('__')) {
+        return false;
+    }
+    if (isWebSearchToolCallData(data) || isWebExtractToolCallData(data) || isProtonInfoToolCallData(data)) {
+        return false;
+    }
+    if (!('arguments' in data)) {
+        return true;
+    }
+    const args = (data as { arguments: unknown }).arguments;
+    return typeof args === 'object' && args !== null && !Array.isArray(args);
+}
+
 export type ToolResultData = WebSourceToolResultData | ToolResultError;
 
 export function isToolResultData(data: unknown): data is ToolResultData {
@@ -384,6 +411,10 @@ function normalizeToolCallPayload(parsed: unknown): unknown {
         }
     } else if (name === 'web_search' || name === 'web_extract') {
         args = { query: '' };
+    }
+
+    if (typeof args !== 'object' || args === null || Array.isArray(args)) {
+        args = {};
     }
 
     return { name, arguments: args };

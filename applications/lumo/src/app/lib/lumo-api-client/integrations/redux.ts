@@ -32,6 +32,7 @@ import { ConversationStatus, Role } from '../../../types';
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../../../types-api';
 import { createImageAttachment, generateImageMarkdown } from '../../imageAttachment';
 import { LumoApiClient } from '../core/client';
+import { getDesktopLumoApiClientConfig } from '../core/desktop-tools';
 import { getTerminalTypeFromApiError } from '../core/generation-terminal';
 import type { AssistantCallOptions, GenerationResponseMessage, LumoApiClientConfig, Turn } from '../core/types';
 import { postProcessTitle } from '../utils';
@@ -65,13 +66,17 @@ export function sendMessageWithRedux(
         let accumulatedContent = '';
         let accumulatedTitle = '';
         let persistedTitle: string | undefined = undefined;
+        let sawToolActivity = false;
         // Filenames generated for images during this response. The Redux store may not yet
         // reflect just-added attachments when the next image_data chunk arrives, so we track
         // them locally to keep collision suffixes ((2), (3), …) correct within one response.
         const generatedImageFilenames = new Set<string>();
         let servingModelID: string | undefined;
 
-        const client = new LumoApiClient(config);
+        const client = new LumoApiClient({
+            ...getDesktopLumoApiClientConfig(),
+            ...config,
+        });
 
         try {
             await client.callAssistant(api, turns, {
@@ -105,8 +110,9 @@ export function sendMessageWithRedux(
                             throw new Error(`Generation failed: ${message.type}`);
 
                         case 'done':
-                            // handle case for successful response with no content
-                            if (!accumulatedContent.trim()) {
+                            // Tool-only turns (native desktop tools, server tools) may finish
+                            // without prose content before the follow-up generation round.
+                            if (!accumulatedContent.trim() && !sawToolActivity) {
                                 console.warn(`Generation completed with no content`);
                                 if (errorHandler && conversationId) {
                                     throw errorHandler({ type: 'error' }, conversationId);
@@ -161,6 +167,7 @@ export function sendMessageWithRedux(
                                     break;
 
                                 case 'tool_call':
+                                    sawToolActivity = true;
                                     if (messageId) {
                                         dispatch(
                                             setToolCall({
@@ -172,6 +179,7 @@ export function sendMessageWithRedux(
                                     break;
 
                                 case 'tool_result':
+                                    sawToolActivity = true;
                                     if (messageId) {
                                         dispatch(
                                             setToolResult({
@@ -254,6 +262,7 @@ export function sendMessageWithRedux(
                             break;
 
                         case 'server_tool_call':
+                            sawToolActivity = true;
                             // Server-side tool calls arrive as dedicated `chat.tool_call` SSE chunks
                             // (parsed into 'server_tool_call' messages in streaming.ts, decrypted in
                             // decrypt.ts). We funnel them into the same block-render path used by the
@@ -292,6 +301,7 @@ export function sendMessageWithRedux(
                             break;
 
                         case 'server_tool_result':
+                            sawToolActivity = true;
                             // Companion to 'server_tool_call'; routed into the same block-render path
                             // via setToolResult. `content` is an object for plaintext payloads and a
                             // decrypted JSON string when encrypted.

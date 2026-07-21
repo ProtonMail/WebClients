@@ -2,18 +2,26 @@ import { v4 as uuidv4 } from 'uuid';
 
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import type { LumoCompletionTarget } from '../../../types-api';
+import type { ChatCompletionsFunctionTool, ChatCompletionsTool, LumoCompletionTarget, ResponseFormat, ToolName } from '../../../types-api';
 import { when } from '../../../util/collections';
 import { toChatCompletionsBody } from './chat-completions';
+import {
+    type PendingClientToolCall,
+    filterClientToolCalls,
+    mergePendingClientToolCalls,
+    resolveClientToolExecutor,
+    type ClientToolExecutor,
+} from './client-tools';
+import { createDesktopClientToolExecutor } from './desktop-tools';
 import { DEFAULT_LUMO_PUB_KEY, encryptTurns } from './encryption';
 import { RequestEncryptionParams } from './encryptionParams';
 import { LUMO_CHAT_ENDPOINT, callChatEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
 import { extractTitleSourceText } from './title-generation';
 import { makeAbortTransformStream } from './transforms/abort';
-import { makeChunkParserTransformStream } from './transforms/chunks';
+import { makeChunkParserTransformStreamWithCapture } from './transforms/chunks';
 import { makeContextUpdaterTransformStream } from './transforms/context';
-import { makeDecryptionTransformStream } from './transforms/decrypt';
+import { decryptToolCallArguments, makeDecryptionTransformStream } from './transforms/decrypt';
 import { makeFinishSink } from './transforms/finish';
 import { makeImageLoggerTransformStream } from './transforms/image-logger';
 import { makeSmoothingTransformStream } from './transforms/smoothing';
@@ -43,11 +51,14 @@ const DEFAULT_CONFIG: LumoApiClientConfig = {
     lumoPubKey: DEFAULT_LUMO_PUB_KEY,
     externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency', 'web_extract', 'proton_info'],
     imageTools: ['generate_image', 'describe_image', 'edit_image'],
+    enableDesktopTools: false,
     interceptors: {
         request: [],
         response: [],
     },
 };
+
+const MAX_CLIENT_TOOL_ROUNDS = 5;
 
 /**
  * Main LLM API Client class
@@ -78,13 +89,23 @@ export class LumoApiClient {
             enableReasoning = false,
             modelTier = 'auto',
             enableSuggestedQuestions = false,
+            enableDesktopTools = this.config.enableDesktopTools,
             requestKey,
             requestId,
             generateTitle = false,
             autoGenerateEncryption = true,
             imageAspectRatio,
+            responseFormat,
+            clientTools,
+            serverTools,
+            clientToolExecutor,
         } = options;
         const { enableU2LEncryption, endpoint } = this.config;
+
+        const resolvedClientToolExecutor = resolveClientToolExecutor({
+            clientToolExecutor,
+            createDefaultExecutor: enableDesktopTools ? createDesktopClientToolExecutor : undefined,
+        });
 
         // Setup U2L encryption
         const encryption = await RequestEncryptionParams.create(requestKey, requestId, {
@@ -94,29 +115,11 @@ export class LumoApiClient {
 
         const titleSourceText = generateTitle ? extractTitleSourceText(turns) : null;
 
-        // Prepare the request
-        // TODO consider just passing `options` instead of rebuilding a narrower object
-        let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(
-            turns,
-            encryption,
-            {
-                enableExternalTools,
-                enableImageTools,
-                    enableReasoning,
-                enableSuggestedQuestions: false,
-            },
-            { imageAspectRatio }
-        );
-
-        // Prepare request context and run interceptors
         const requestContext: RequestContext = this.initializeRequestContext(endpoint, {
             enableU2LEncryption,
             enableExternalTools,
         });
-        request = await this.notifyRequestInterceptors(request, requestContext);
 
-        // Prepare response context and call server, then monitor the SSE stream until the end
-        const responseContext: ResponseContext = this.initializeResponseContext(requestContext);
         const parallelTasks: Promise<void>[] = [];
 
         if (titleSourceText !== null) {
@@ -163,21 +166,79 @@ export class LumoApiClient {
             );
         }
 
-        parallelTasks.push(
-            this.runSseReceiveLoop(
-                api,
-                request,
-                endpoint,
-                signal,
-                encryption,
-                responseContext,
-                chunkCallback,
-                finishCallback,
-                { target: 'message', modelTier }
-            )
-        );
+        let currentTurns = turns;
+        let finalStatus: Status = 'failed';
+        try {
+            for (let round = 0; round < MAX_CLIENT_TOOL_ROUNDS; round++) {
+                let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(
+                    currentTurns,
+                    encryption,
+                    {
+                        enableExternalTools,
+                        enableImageTools,
+                        enableReasoning,
+                        enableSuggestedQuestions: false,
+                        clientToolExecutor: resolvedClientToolExecutor,
+                    },
+                    { imageAspectRatio }
+                );
+                request = await this.notifyRequestInterceptors(request, requestContext);
 
-        await Promise.all(parallelTasks);
+                const responseContext: ResponseContext = this.initializeResponseContext(requestContext);
+
+                // Suppress intermediate `done` events while client tool rounds may continue.
+                const roundChunkCallback: ChunkCallback | undefined = chunkCallback
+                    ? async (message) => {
+                          if (message.type === 'done') {
+                              return;
+                          }
+                          return chunkCallback(message);
+                      }
+                    : undefined;
+
+                const { pendingClientToolCalls, status } = await this.runSseReceiveLoop(
+                    api,
+                    request,
+                    endpoint,
+                    signal,
+                    encryption,
+                    responseContext,
+                    roundChunkCallback,
+                    undefined,
+                    { target: 'message', modelTier, responseFormat, clientTools, serverTools }
+                );
+                finalStatus = status;
+
+                if (!resolvedClientToolExecutor) {
+                    break;
+                }
+
+                const executableCalls = filterClientToolCalls(pendingClientToolCalls, resolvedClientToolExecutor);
+                if (executableCalls.length === 0) {
+                    break;
+                }
+
+                currentTurns = await this.appendClientToolResults(
+                    this.stripTrailingEmptyAssistant(currentTurns),
+                    executableCalls,
+                    resolvedClientToolExecutor,
+                    chunkCallback
+                );
+            }
+
+            if (chunkCallback) {
+                await chunkCallback({ type: 'done' });
+            }
+
+            await Promise.all(parallelTasks);
+        } catch (error) {
+            finalStatus = 'failed';
+            throw error;
+        } finally {
+            if (finishCallback) {
+                await finishCallback(finalStatus);
+            }
+        }
     }
 
     private async runSseReceiveLoop(
@@ -189,10 +250,19 @@ export class LumoApiClient {
         responseContext: ResponseContext,
         chunkCallback: ChunkCallback | undefined,
         finishCallback: FinishCallback | undefined,
-        options: { enableSmoothing?: boolean; target?: LumoCompletionTarget; modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' } = {}
-    ) {
+        options: {
+            enableSmoothing?: boolean;
+            target?: LumoCompletionTarget;
+            modelTier?: 'auto' | 'lumo-lite' | 'lumo-max';
+            responseFormat?: ResponseFormat;
+            clientTools?: ChatCompletionsFunctionTool[];
+            serverTools?: ToolName[];
+        } = {}
+    ): Promise<{ pendingClientToolCalls: PendingClientToolCall[]; status: Status }> {
         const enableSmoothing = options.enableSmoothing ?? this.config.enableSmoothing;
+        const target = options.target ?? 'message';
         const thisNotifyResponse = this.notifyResponse.bind(this);
+        const chunkCapture = makeChunkParserTransformStreamWithCapture(target);
 
         // Final status will be changed to succeeded on success
         let finalStatus: Status = 'failed';
@@ -201,6 +271,9 @@ export class LumoApiClient {
             enableReasoning: Boolean(request.options?.reasoning),
             modelTier: options.modelTier,
             target: options.target,
+            responseFormat: options.responseFormat,
+            clientTools: options.clientTools,
+            serverTools: options.serverTools,
         });
 
         try {
@@ -213,7 +286,7 @@ export class LumoApiClient {
             await responseBody
                 .pipeThrough(makeAbortTransformStream(signal)) // deals with AbortSignal
                 .pipeThrough(makeUtf8DecodingTransformStream()) // bytes -> utf8
-                .pipeThrough(makeChunkParserTransformStream(options.target)) // utf8 -> chunk objects
+                .pipeThrough(chunkCapture.stream) // utf8 -> chunk objects
                 .pipeThrough(makeDecryptionTransformStream(encryption)) // U2L decryption
                 .pipeThrough(makeImageLoggerTransformStream()) // noop - logs image_data
                 .pipeThrough(makeContextUpdaterTransformStream(responseContext)) // bookkeeping (read-only)
@@ -223,6 +296,16 @@ export class LumoApiClient {
             // Stream is complete
             finalStatus = 'succeeded';
             await this.notifyResponseComplete(finalStatus, responseContext);
+
+            const decryptedToolCalls = await decryptToolCallArguments(
+                chunkCapture.getPendingClientToolCalls(),
+                encryption
+            );
+
+            return {
+                pendingClientToolCalls: mergePendingClientToolCalls(decryptedToolCalls),
+                status: finalStatus,
+            };
         } catch (error: any) {
             // Run response error interceptors
             await this.notifyResponseError(error, responseContext);
@@ -231,7 +314,7 @@ export class LumoApiClient {
             if (error?.name === 'AbortError') {
                 console.warn('Generation aborted');
                 finalStatus = 'succeeded';
-                return; // Don't re-throw
+                return { pendingClientToolCalls: [], status: finalStatus };
             }
 
             // Bubble up
@@ -247,12 +330,22 @@ export class LumoApiClient {
 
     private prepareChatEndpointPostData(
         request: LumoApiGenerationRequest,
-        options: { enableReasoning: boolean; modelTier?: 'auto' | 'lumo-lite' | 'lumo-max'; target?: LumoCompletionTarget }
+        options: {
+            enableReasoning: boolean;
+            modelTier?: 'auto' | 'lumo-lite' | 'lumo-max';
+            target?: LumoCompletionTarget;
+            responseFormat?: ResponseFormat;
+            clientTools?: ChatCompletionsFunctionTool[];
+            serverTools?: ToolName[];
+        }
     ) {
         return toChatCompletionsBody(request, {
             enableReasoning: options.enableReasoning,
             modelTier: options.modelTier,
             target: options.target,
+            responseFormat: options.responseFormat,
+            clientTools: options.clientTools,
+            serverTools: options.serverTools,
         });
     }
 
@@ -264,20 +357,27 @@ export class LumoApiClient {
             enableImageTools: boolean;
             enableReasoning: boolean;
             enableSuggestedQuestions: boolean;
+            clientToolExecutor?: ClientToolExecutor;
         },
         additionalOptions?: {
             imageAspectRatio?: ImageAspectRatio;
         }
     ): Promise<LumoApiGenerationRequest> {
         const { lumoPubKey } = this.config;
-        const { enableExternalTools, enableImageTools, enableReasoning, enableSuggestedQuestions } = flags;
+        const {
+            enableExternalTools,
+            enableImageTools,
+            enableReasoning,
+            enableSuggestedQuestions,
+            clientToolExecutor,
+        } = flags;
         const { imageAspectRatio } = additionalOptions || {};
 
         // Encrypt request if needed
         if (encryption) {
             turns = await encryptTurns(turns, encryption);
         }
-        const tools = this.getTools(enableExternalTools, enableImageTools);
+        const tools = await this.getTools(enableExternalTools, enableImageTools, clientToolExecutor);
         return {
             type: 'generation_request',
             turns,
@@ -290,6 +390,81 @@ export class LumoApiClient {
             request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
             request_id: encryption?.requestId,
         };
+    }
+
+    private stripTrailingEmptyAssistant(turns: Turn[]): Turn[] {
+        if (turns.length === 0) {
+            return turns;
+        }
+
+        const last = turns[turns.length - 1];
+        if (last.role === Role.Assistant && !last.content?.trim()) {
+            return turns.slice(0, -1);
+        }
+
+        return turns;
+    }
+
+    private async appendClientToolResults(
+        turns: Turn[],
+        calls: PendingClientToolCall[],
+        executor: ClientToolExecutor,
+        chunkCallback: ChunkCallback | undefined
+    ): Promise<Turn[]> {
+        const results = await executor.execute(calls);
+        const nextTurns = [...turns];
+
+        for (let i = 0; i < calls.length; i++) {
+            const call = calls[i]!;
+            const result = results[i]!;
+
+            let parsedArguments: unknown = {};
+            try {
+                parsedArguments = JSON.parse(call.arguments || '{}');
+            } catch {
+                parsedArguments = call.arguments;
+            }
+
+            const toolCallContent = JSON.stringify({
+                id: call.id,
+                name: call.name,
+                arguments: parsedArguments,
+            });
+
+            nextTurns.push({
+                role: Role.ToolCall,
+                content: toolCallContent,
+            });
+
+            nextTurns.push({
+                role: Role.ToolResult,
+                content: result.content,
+            });
+
+            if (chunkCallback) {
+                // Replace the streamed tool-call block, whose arguments are still U2L
+                // ciphertext, with the decrypted form so it persists and replays correctly.
+                await chunkCallback({
+                    type: 'token_data',
+                    target: 'tool_call',
+                    count: 0,
+                    content: toolCallContent,
+                });
+                await chunkCallback({
+                    type: 'token_data',
+                    target: 'tool_result',
+                    count: 0,
+                    content: result.content,
+                });
+            }
+        }
+
+        nextTurns.push({
+            role: Role.Assistant,
+            content: '',
+        });
+
+        return nextTurns;
     }
 
     private async runTargetedGeneration(
@@ -324,13 +499,23 @@ export class LumoApiClient {
         });
     }
 
-    private getTools(enableExternalTools: boolean, enableImageTools: boolean) {
+    private async getTools(
+        enableExternalTools: boolean,
+        enableImageTools: boolean,
+        clientToolExecutor?: ClientToolExecutor
+    ): Promise<ChatCompletionsTool[]> {
         const { externalTools, imageTools } = this.config;
-        // prettier-ignore
-        return [
-            ...when(enableExternalTools, externalTools),
-            ...when(enableImageTools, imageTools),
+        const builtinTools: ChatCompletionsTool[] = [
+            ...when(enableExternalTools, externalTools).map((name) => ({ name })),
+            ...when(enableImageTools, imageTools).map((name) => ({ name })),
         ];
+
+        const advertisedClientTools = (await clientToolExecutor?.getClientTools?.()) ?? [];
+        if (advertisedClientTools.length === 0) {
+            return builtinTools;
+        }
+
+        return [...builtinTools, ...advertisedClientTools];
     }
 
     /******* Interceptor internal methods *******/

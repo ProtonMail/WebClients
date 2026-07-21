@@ -1,5 +1,6 @@
 import type {
     ChatCompletionsContentPart,
+    ChatCompletionsFunctionTool,
     ChatCompletionsImagePart,
     ChatCompletionsLumoExtension,
     ChatCompletionsMessage,
@@ -7,6 +8,7 @@ import type {
     ChatCompletionsTool,
     LumoApiGenerationRequest,
     LumoCompletionTarget,
+    ResponseFormat,
     ToolName,
     WireImage,
     WireTurn,
@@ -24,6 +26,19 @@ export type ToChatCompletionsOptions = {
     model?: string;
     modelTier?: LumoApiModelTier;
     target?: LumoCompletionTarget;
+    responseFormat?: ResponseFormat;
+    /**
+     * Client-defined function tools (OpenAI shape), executed on the client. When present they are
+     * forwarded as the request `tools`, merged with any built-in scheduler tools.
+     */
+    clientTools?: ChatCompletionsFunctionTool[];
+    /**
+     * Built-in server-side scheduler tools (name-only shape, e.g. `web_search`) to advertise alongside
+     * the client tools. The backend accepts a mixed `tools` array — it executes these worker-side and
+     * auto-resumes the same stream — products can use `web_search` AND client function tools in one
+     * request. Merged with `request.options.tools`.
+     */
+    serverTools?: ToolName[];
 };
 
 export function resolveChatModel(modelTier: LumoApiModelTier = 'auto', model?: string): string {
@@ -47,7 +62,6 @@ export function toChatCompletionsBody(
 ): ChatCompletionsRequest {
     const { enableReasoning = Boolean(request.options?.reasoning), model, modelTier = 'auto' } = options;
 
-    const tools = normalizeTools(request.options?.tools);
     const body: ChatCompletionsRequest = {
         model: resolveChatModel(modelTier, model),
         messages: serializeMessages(request.turns),
@@ -56,9 +70,19 @@ export function toChatCompletionsBody(
         reasoning_effort: enableReasoning ? 'high' : 'none',
     };
 
+    // Merge built-in server tools with client function tools so ONE request can carry both.
+    // Server tools may arrive on the generation request (`enableExternalTools`) or explicitly via
+    // `options.serverTools`. Server tools come first, then the client tools.
+    const clientTools = options.clientTools ?? [];
+    const serverTools = [...normalizeTools(request.options?.tools), ...normalizeTools(options.serverTools)];
+    const tools = [...serverTools, ...clientTools];
     if (tools.length > 0) {
         body.tools = tools;
         body.tool_choice = 'auto';
+    }
+
+    if (options.responseFormat) {
+        body.response_format = options.responseFormat;
     }
 
     body.lumo = buildLumoExtension(request, options);
@@ -191,10 +215,47 @@ function toOpenAiRole(role: Role): ChatCompletionsMessage['role'] {
     }
 }
 
-function normalizeTools(tools: boolean | ToolName[] | undefined): ChatCompletionsTool[] {
+function normalizeTools(tools: boolean | ToolName[] | ChatCompletionsTool[] | undefined): ChatCompletionsTool[] {
     if (!tools || tools === true) {
         return [];
     }
 
-    return tools.map((name) => ({ name }));
+    return tools.map((tool) => {
+        if (typeof tool === 'string') {
+            return { name: tool };
+        }
+        if ('type' in tool && tool.type === 'function') {
+            return normalizeFunctionTool(tool);
+        }
+        if ('name' in tool && ('description' in tool || 'parameters' in tool)) {
+            return normalizeFunctionTool({
+                type: 'function',
+                function: {
+                    name: tool.name,
+                    description: tool.description,
+                    parameters: tool.parameters,
+                },
+            });
+        }
+        return tool;
+    });
+}
+
+const JSON_SCHEMA_DRAFT = 'https://json-schema.org/draft/2020-12/schema';
+
+function normalizeFunctionTool(tool: ChatCompletionsFunctionTool): ChatCompletionsFunctionTool {
+    const parameters = tool.function.parameters ?? { type: 'object', properties: {} };
+    return {
+        type: 'function',
+        function: {
+            name: tool.function.name,
+            description: tool.function.description ?? '',
+            parameters: {
+                ...parameters,
+                type: parameters.type ?? 'object',
+                $schema: parameters.$schema ?? JSON_SCHEMA_DRAFT,
+                properties: parameters.properties ?? {},
+            },
+        },
+    };
 }
