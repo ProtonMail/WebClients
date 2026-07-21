@@ -1,6 +1,6 @@
+import { CryptoProxy } from '@protontech/crypto';
 import type { Store } from 'redux';
 
-import { CryptoProxy } from '@protontech/crypto';
 import { FILE_PENDING_SHARE, FILE_PUBLIC_SHARE } from '@proton/pass/constants';
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -127,14 +127,15 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
     /** When asking for a group keys, first check the context
      * There are some race conditions where the user groups are not loaded yet
      * In these cases, trigger fetch intent and retry */
-    const getGroupOrFetch = async (groupId: string) => {
+    const getGroupOrFetch = async (groupId: string, force = false) => {
         let group = context.groups.get(groupId);
 
-        if (group === undefined && store) {
+        if ((group === undefined || force) && store) {
             /** There's many cache layer but if we truly miss keys because they are not loaded
              * This will trigger the request and update the group keys on success. NOTE: on
              * success `getOrganizationGroup` will hydrate the crypto `groupKeys` accordingly.
-             * see: `packages/pass/store/sagas/organization/organization.group.saga.ts` */
+             * see: `packages/pass/store/sagas/organization/organization.group.saga.ts`.
+             * `force` bypasses the cache to fetch updated keys. */
             const asyncDispatch = asyncRequestDispatcherFactory(store.dispatch);
             await asyncDispatch(getGroup, groupId);
             group = context.groups.get(groupId);
@@ -145,7 +146,8 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
         return group;
     };
 
-    const getGroupAddressKeys = async (groupId: string) => (await getGroupOrFetch(groupId)).group.keys;
+    const getGroupAddressKeys = async (groupId: string, force = false) =>
+        (await getGroupOrFetch(groupId, force)).group.keys;
 
     const getGroupPublicKeys = async (groupId: string) => {
         const group = await getGroupOrFetch(groupId);
@@ -156,22 +158,30 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
 
     const getDecryptedGroupKey = async (organizationKey: MaybeNull<OrganizationKey>, groupId: string) => {
         assertHydrated(context);
-        const groupKeys = await getGroupAddressKeys(groupId);
 
-        if (organizationKey) {
-            const decryptedOrganizationKey = await getDecryptedOrganizationKeyHelper({
-                userKeys: context.userKeys,
-                Key: organizationKey,
-                keyPassword: authStore.getPassword()!,
+        const decrypt = async (force: boolean) => {
+            const groupKeys = await getGroupAddressKeys(groupId, force);
+
+            if (organizationKey) {
+                const decryptedOrganizationKey = await getDecryptedOrganizationKeyHelper({
+                    userKeys: context.userKeys,
+                    Key: organizationKey,
+                    keyPassword: authStore.getPassword()!,
+                });
+
+                return getDecryptedGroupAddressKey(groupKeys, decryptedOrganizationKey.privateKey);
+            }
+
+            return getDecryptedGroupAddressKey(groupKeys, context.primaryUserKey.privateKey, {
+                required: true,
+                value: 'account.key-token.address',
             });
+        };
 
-            return getDecryptedGroupAddressKey(groupKeys, decryptedOrganizationKey.privateKey);
-        }
-
-        return getDecryptedGroupAddressKey(groupKeys, context.primaryUserKey.privateKey, {
-            required: true,
-            value: 'account.key-token.address',
-        });
+        /** Cached group keys may be stale in-session (e.g. group was edited with
+         * new ownership which changed the group key token). If decryption fails,
+         * refresh the group keys and retry once. */
+        return (await decrypt(false)) ?? (await decrypt(true));
     };
 
     const openShareKey = async (addressId: string, groupId: MaybeNull<string>, shareKey: ShareKeyResponse) => {
