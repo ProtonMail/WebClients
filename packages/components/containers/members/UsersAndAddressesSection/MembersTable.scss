@@ -1,0 +1,26 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+// Mirrors the "normal" card breakpoint from the shared `simple-table--responsive-cards`
+// layout (packages/styles/scss/components/_simple-table.scss) — keep the two in sync.
+$card-breakpoint: 35rem;
+
+// Pins the cell marked `.action-cell` to the card's top-right corner instead of
+// leaving it stacked at the bottom, once the table falls back to card layout.
+.members-table--actions-corner {
+	@container (max-width: #{$card-breakpoint}) {
+		tr {
+			position: relative;
+		}
+
+		td:first-child {
+			padding-inline-end: #{rem(32)};
+		}
+
+		td.action-cell {
+			position: absolute;
+			inset-block-start: var(--space-2);
+			inset-inline-end: var(--space-2);
+			padding: 0;
+		}
+	}
+}
