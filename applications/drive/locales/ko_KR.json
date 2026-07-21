@@ -1821,6 +1821,9 @@
       "Discover and set up features": [
         "기능 알아보고 설정하기"
       ],
+      "Get 50% offer": [
+        "50% 할인 받기"
+      ],
       "Maybe later": [
         "나중에"
       ],
@@ -5177,6 +5180,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN은 기기와 인터넷 사이의 안전한 터널입니다. 인터넷 서비스 공급자(ISP)와 방문하는 웹사이트로부터 사용자의 위치와 활동을 숨기죠."
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "145개국의 20,000개 이상 서버에 접근"
+      ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
       ],
@@ -5435,6 +5441,9 @@
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
       ],
+      "Data integrity check failed": [
+        "데이터 무결성 검사 실패"
+      ],
       "Dec": [
         "12월"
       ],
@@ -5600,6 +5609,9 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "기술 지원 문제 로그를 내보내기"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "최대 10 Gbps의 빠른 VPN 속도"
+      ],
       "Feb": [
         "2월"
       ],
@@ -5663,6 +5675,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
       ],
+      "Have some more time to decide without interruption.": [
+        "방해받지 않고 결정할 수 있는 시간이 더 있으니 천천히 결정하세요."
+      ],
       "here": [
         "여기"
       ],
@@ -5680,6 +5695,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "지금 취소하면 ${ expiryDate }부로 ${ BRAND_NAME } ${ planTitle }에 접근할 수 없으며, 다음 기능이 제한됩니다:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
@@ -6137,6 +6155,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "비활성 키로 암호화된 데이터가 포함된 연락처를 찾는 동안 기다려 주세요."
       ],
+      "Premium privacy protection across all your devices": [
+        "모든 기기에 걸친 프리미엄 프라이버시 보호"
+      ],
       "Preparing": [
         "준비 중"
       ],
@@ -6362,6 +6383,9 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "다음 VPN 설정을 활성화하여 손쉽게 연결 상태를 유지해 보세요:"
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "현재 플랜을 유지허고 다음 달에는 50% 할인 받으세요"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
       ],
@@ -6518,8 +6542,8 @@
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "비공개 검색을 진정으로 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다 - 인덱싱이 완료되면 알려 드리겠습니다."
       ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
-        "진정한 비공개 검색을 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. ${ DRIVE_APP_NAME }는 계속 정상적으로 사용할 수 있습니다. 인덱싱이 완료되면 알려드리겠습니다."
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "정확한 검색 활성화를 위해 로컬 기기에 파일을 색인해야 합니다. 색인 중에도 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다. 색인이 완료되면 알려드립니다. 페이지를 닫으면 색인은 중단되며, 다시 페이지를 열었을 때 다시 재개됩니다."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
@@ -11711,7 +11735,7 @@
         "두 명을 위한 무제한 프라이버시"
       ],
       "Upload any new files": [
-        "새로운 파일 업로드"
+        "새로운 파일 업로드를 할 수 없게 됩니다"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
         "구독은 ${ BRAND_NAME }의 유일한 수익입니다. 회원님의 지원은 우리의 독립성을 유지하고, 온라인 프라이버시에 대한 우리의 사명을 발전시키며, 자유를 위해 투쟁하는 활동가와 단체를 지원하는 것입니다."
@@ -12563,6 +12587,9 @@
       "Import your data to ${ BRAND_NAME }": [
         "${ BRAND_NAME }으로 데이터 불러오기"
       ],
+      "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "${ PRODUCT_NAMES.EASY_SWITCH }로 불러온 항목"
+      ],
       "Index populators": [
         "인덱스 구성기"
       ],
@@ -12904,6 +12931,9 @@
       ],
       "Start import process": [
         "불러오기 과정 시작"
+      ],
+      "Stay for 50% off your next month": [
+        "첫 달은 50% 할인으로 누리기"
       ],
       "Stop sharing": [
         "공유 중지"

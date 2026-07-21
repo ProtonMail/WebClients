@@ -1693,7 +1693,7 @@
         "Status"
       ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
       ],
       "To migrate this user, enable their account in your Google Workspace Admin Console.": [
         "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
@@ -1838,6 +1838,9 @@
       ],
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
+      ],
+      "Get 50% offer": [
+        "Få et 50%-tilbud"
       ],
       "Maybe later": [
         "Måske senere"
@@ -5253,6 +5256,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "En VPN er en sikker tunnel mellem din enhed og internettet. Den skjuler din placering og aktivitet for din internetudbyder (ISP) og de websteder, du besøger."
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Adgang til mere end 20.000 servere i 145 lande"
+      ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
@@ -5687,6 +5693,9 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Eksportér diagnoselogfiler til teknisk support og fejlfinding"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Hurtigste VPN-hastigheder – op til 10Gbps"
+      ],
       "Feb": [
         "Feb"
       ],
@@ -5750,6 +5759,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
       ],
+      "Have some more time to decide without interruption.": [
+        "Få lidt mere tid til overvejelse – uden afbrydelse."
+      ],
       "here": [
         "her"
       ],
@@ -5767,6 +5779,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -6231,6 +6246,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
       ],
+      "Premium privacy protection across all your devices": [
+        "Premium privatlivsbeskyttelse på alle dine enheder"
+      ],
       "Preparing": [
         "Forbereder"
       ],
@@ -6456,6 +6474,9 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "Bliv på dit abonnement og få 50% rabat næste måned"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
       ],
@@ -6615,8 +6636,8 @@
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "For at muliggøre en ægte privat søgning er vi nødt til at indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } normalt - vi giver dig besked, når indekseringen er færdig."
       ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
-        "For at aktivere ægte privat søgning, er vi nødt til at indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } normalt - vi giver dig besked, når indekseringen er færdig."
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "For at kunne søge ordentligt skal vi indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } normalt – vi giver dig besked når indekseringen er færdig. Hvis du forlader denne side bliver indekseringen sat på pause og genoptages så når du vender tilbage."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -7321,6 +7342,12 @@
       "City": [
         "By"
       ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversion"
+      ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
       ],
@@ -7881,7 +7908,7 @@
         "Uploadet af"
       ],
       "URL wildcard pattern": [
-        "URL-jokertegnmønster"
+        "URL-wildcarddomæne"
       ],
       "User opted in": [
         "Brugeren tilmeldte sig"
@@ -8300,7 +8327,7 @@
         "Regel for regulært udtryk"
       ],
       "Wildcard pattern matching rule": [
-        "Regel for jokertegnmønstermatch"
+        "Regel for wildcardmønster"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er udløbet. ${ nonAutoRenewalAction }"
@@ -12800,6 +12827,9 @@
       "Import your data to ${ BRAND_NAME }": [
         "Importér dine data til ${ BRAND_NAME }"
       ],
+      "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importeret af ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
       "Index populators": [
         "Index populators"
       ],
@@ -13142,6 +13172,9 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
+      ],
+      "Stay for 50% off your next month": [
+        "Bliv hængende for 50% rabat i den næste måned"
       ],
       "Stop sharing": [
         "Stop deling"
@@ -13646,7 +13679,7 @@
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svindel- eller phishing-websteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",
