@@ -203,6 +203,7 @@ export enum TelemetryAccountCancellationFlowFeedbackEvents {
     feedbackStep = 'feedback_step',
     secondStep = 'second_step',
     confirmCancellation = 'confirm_cancellation',
+    managedExternally = 'managed_externally',
 }
 
 export enum TelemetryAccountOrganizationLogoUploadEvents {
