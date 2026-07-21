@@ -5,7 +5,6 @@ import type { PlanIDs } from '@proton/payments/core/interface';
 import { hasLumoAddonFromPlanIDs, hasMeetAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import {
-    BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
     DARK_WEB_MONITORING_NAME,
     DRIVE_SHORT_APP_NAME,
@@ -21,6 +20,7 @@ import { getPremium } from '@proton/shared/lib/helpers/premium';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
+import { getScribeWritingAssistantText } from '../../assistant/helpers';
 import { getNUsersText } from '../../../features/highlights';
 import { getAccessToAdvancedAIText, getFullChatHistoryText, getUnlimitedChatsText } from '../../../features/lumo';
 import {
@@ -46,10 +46,12 @@ export const getWhatsIncluded = ({
     planIDs,
     plansMap,
     freePlan,
+    scribeToLumo,
 }: {
     planIDs: PlanIDs;
     plansMap: PlansMap;
     freePlan: FreePlanDefault;
+    scribeToLumo: boolean;
 }): Included[] => {
     const summary = Object.entries(planIDs).reduce(
         (acc, [planNameValue, quantity]) => {
@@ -66,6 +68,8 @@ export const getWhatsIncluded = ({
         },
         { space: 0, addresses: 0, domains: 0, vpn: 0 }
     );
+
+    const writingAssistantText = getScribeWritingAssistantText(scribeToLumo);
 
     // Default included features
     let included: Included[] = [
@@ -253,7 +257,7 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: c('Info').t`${BRAND_NAME} Scribe writing assistant`,
+                text: writingAssistantText,
             },
         ];
     }
@@ -292,7 +296,7 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: c('Info').t`${BRAND_NAME} Scribe writing assistant`,
+                text: writingAssistantText,
             },
         ];
     }

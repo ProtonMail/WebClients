@@ -4,8 +4,10 @@ import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcShield } from '@proton/icons/icons/IcShield';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 import type { BenefitItem } from '../Benefits';
 import swissFlag from '../flag.svg';
@@ -200,9 +202,12 @@ export const getAdvancedSecurityBenefit = (): BenefitItem => {
 };
 
 export const getScribeBenefit = (): BenefitItem => {
+    const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
     return {
         key: `scribe-benefit`,
-        text: c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
+        text: scribeToLumo
+            ? c('mail_signup_2024: Info').t`${LUMO_SHORT_APP_NAME} writing assistant`
+            : c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
         icon: {
             name: 'pen-sparks',
         },

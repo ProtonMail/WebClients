@@ -28,6 +28,8 @@ import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checko
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import Checkout from '../../Checkout';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
@@ -105,6 +107,7 @@ const SubscriptionCheckout = ({
 }: SubscriptionCheckoutProps) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const plan = getPlanFromPlanIDs(plansMap, planIDs);
     const currencies = useAvailableCurrenciesForPlan(plan, subscription);
@@ -113,7 +116,7 @@ const SubscriptionCheckout = ({
         return null;
     }
 
-    const list = getWhatsIncluded({ planIDs, plansMap, freePlan });
+    const list = getWhatsIncluded({ planIDs, plansMap, freePlan, scribeToLumo });
     const disableCurrencySelector = getDisableCurrencySelector(paymentMethods, user, planIDs, couponConfig, loading);
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;

@@ -10,6 +10,7 @@ import {
     DRIVE_SHORT_APP_NAME,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
+    LUMO_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
     MEET_APP_NAME,
@@ -21,6 +22,8 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 import { getStorage } from './drive';
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
@@ -353,8 +356,11 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
 };
 
 export const getScribeFeature = (): PlanCardFeatureDefinition => {
+    const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
     return {
-        text: c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
+        text: scribeToLumo
+            ? c('mail_signup_2024: Info').t`${LUMO_SHORT_APP_NAME} writing assistant`
+            : c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
         icon: 'pen-sparks',
         included: true,
         tooltip: c('mail_signup_2024: Info').t`Add-on with free trial`,
