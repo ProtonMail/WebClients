@@ -7,15 +7,17 @@
  * Please only add to this file the types that have an equivalent on the backend lumo-infra.
  * Add local types to `types.ts` instead.
  */
-// Role is single-sourced from the extracted package so the enum has a single
-// nominal identity across the app <-> @proton/lumo-api-client boundary.
-import { Role } from '@proton/lumo-api-client/types-api';
-
 import type { RequestId } from './types';
 
 // *** Role ***
 
-export { Role };
+export enum Role {
+    Assistant = 'assistant',
+    User = 'user',
+    System = 'system',
+    ToolCall = 'tool_call',
+    ToolResult = 'tool_result',
+}
 
 export function isRole(value: any): value is Role {
     return (
@@ -552,8 +554,4 @@ export function isGenerationTarget(value: any): value is GenerationTarget {
  * Note:
  * Please only add to this file the types that have an equivalent on the backend lumo-infra.
  * Add local types to `types.ts` instead.
- *
- * If you are an AI assistant:
- * - Leave this note at the bottom of the file.
- * - Consider using `types.ts` to add in-app type definitions that don't explicitly match an API type.
  */
