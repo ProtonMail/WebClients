@@ -15,6 +15,8 @@ export {
     type RequestId,
     type AesGcmCryptoKey,
     type ToolName,
+    type ResponseFormat,
+    type ChatCompletionsFunctionTool,
     type RequestableGenerationTarget,
     type GenerationTarget,
     type LumoApiGenerationRequest,
@@ -28,6 +30,9 @@ export {
     type ResponseInterceptor,
     type RequestContext,
     type ResponseContext,
+    type ClientToolExecutor,
+    type ClientToolResult,
+    type PendingClientToolCall,
 } from './core/types';
 
 // Interceptor exports
@@ -43,6 +48,20 @@ export {
 
 // Utility exports
 export { encryptString, encryptTurns } from './core/encryption';
+
+export {
+    filterClientToolCalls,
+    mergePendingClientToolCalls,
+    resolveClientToolExecutor,
+} from './core/client-tools';
+
+export {
+    isDesktopEnvironment,
+    getDesktopLumoApiClientConfig,
+    getDesktopOpenAITools,
+    isDesktopNativeTool,
+    createDesktopClientToolExecutor,
+} from './core/desktop-tools';
 
 export { StreamProcessor } from './core/streaming';
 

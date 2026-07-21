@@ -22,6 +22,7 @@ type OpenAiDelta = {
 
 type OpenAiToolCallDelta = {
     index?: number;
+    id?: string;
     function?: {
         name?: string;
         arguments?: string;
@@ -83,6 +84,7 @@ type StreamCounters = {
 };
 
 type ToolCallAccumulator = {
+    id: string;
     name: string;
     arguments: string;
 };
@@ -95,6 +97,7 @@ type ToolCallAccumulator = {
 export class StreamProcessor {
     private leftover = '';
     private toolCalls = new Map<number, ToolCallAccumulator>();
+    private toolCallsFinishReason = false;
     private defaultTarget: GenerationTarget;
     /** Last `model` value seen on any SSE chunk for this stream. */
     private servingModel?: string;
@@ -138,6 +141,7 @@ export class StreamProcessor {
         this.leftover = '';
         this.toolCalls.clear();
         this.servingModel = undefined;
+        this.toolCallsFinishReason = false;
         this.counters = {
             message: 0,
             title: 0,
@@ -296,6 +300,10 @@ export class StreamProcessor {
             messages.push({ type: 'harmful' });
         }
 
+        if (choice.finish_reason === 'tool_calls') {
+            this.toolCallsFinishReason = true;
+        }
+
         if (!choice.delta) {
             return messages;
         }
@@ -340,10 +348,40 @@ export class StreamProcessor {
         return messages;
     }
 
+    getFinalizedToolCalls(): { id: string; name: string; arguments: string }[] {
+        return [...this.toolCalls.entries()]
+            .sort(([a], [b]) => a - b)
+            .map(([index, call]) => ({
+                id: call.id || `call_${index}`,
+                name: call.name,
+                arguments: call.arguments || '{}',
+            }))
+            .filter((call) => call.name.length > 0);
+    }
+
+    /** Tool calls with fully parsed JSON arguments, ready for client-side execution. */
+    getCompleteToolCalls(): { id: string; name: string; arguments: string }[] {
+        return this.getFinalizedToolCalls().filter((call) => {
+            try {
+                JSON.parse(call.arguments);
+                return true;
+            } catch {
+                return false;
+            }
+        });
+    }
+
+    hadToolCallsFinishReason(): boolean {
+        return this.toolCallsFinishReason;
+    }
+
     private processToolCallDelta(toolCall: OpenAiToolCallDelta): GenerationResponseMessage | null {
         const index = toolCall.index ?? 0;
-        const existing = this.toolCalls.get(index) ?? { name: '', arguments: '' };
+        const existing = this.toolCalls.get(index) ?? { id: '', name: '', arguments: '' };
 
+        if (typeof toolCall.id === 'string') {
+            existing.id = toolCall.id;
+        }
         if (toolCall.function?.name) {
             existing.name = toolCall.function.name;
         }
@@ -362,11 +400,14 @@ export class StreamProcessor {
             try {
                 toolArguments = JSON.parse(existing.arguments);
             } catch {
+                // Arguments are not yet valid JSON — either a mid-stream partial or U2L ciphertext.
+                // Emit the raw string so the decrypt transform or a client tool executor can handle it.
                 return {
                     type: 'token_data',
                     target: 'tool_call',
                     count: this.counters.toolCall++,
                     content: JSON.stringify({
+                        id: existing.id,
                         name: existing.name,
                         arguments: existing.arguments,
                     }),
@@ -379,6 +420,7 @@ export class StreamProcessor {
             target: 'tool_call',
             count: this.counters.toolCall++,
             content: JSON.stringify({
+                id: existing.id,
                 name: existing.name,
                 arguments: toolArguments,
             }),
