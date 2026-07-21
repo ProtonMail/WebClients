@@ -10583,7 +10583,7 @@ __metadata:
     eslint: "npm:^9.39.5"
     idb: "npm:^8.0.3"
     jest: "npm:^30.4.2"
-    playwright: "patch:playwright@npm%3A1.61.1#~/.yarn/patches/playwright-npm-1.61.1-55c1fb1408.patch"
+    playwright: "npm:^1.61.1"
     react: "npm:^18.3.1"
     ts-jest: "npm:^29.4.11"
     ts-loader: "npm:^9.6.2"
@@ -11272,7 +11272,7 @@ __metadata:
     is-valid-domain: "npm:0.1.6"
     loglevel: "npm:^1.9.2"
     papaparse: "npm:^5.5.4"
-    playwright: "patch:playwright@npm%3A1.61.1#~/.yarn/patches/playwright-npm-1.61.1-55c1fb1408.patch"
+    playwright: "npm:^1.61.1"
     prettier: "npm:^3.9.5"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
@@ -40163,7 +40163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:1.61.1":
+"playwright@npm:1.61.1, playwright@npm:^1.61.1":
   version: 1.61.1
   resolution: "playwright@npm:1.61.1"
   dependencies:
@@ -40175,21 +40175,6 @@ __metadata:
   bin:
     playwright: cli.js
   checksum: 10/0cd1a8a7e106202e785450763973bf326d4aa112ed195bbd78b17af43dcfd12e29bc8204ae61c88f748dd0f2bdf69a7827bc3bbf8c1ec4c71b8e35586e05f13c
-  languageName: node
-  linkType: hard
-
-"playwright@patch:playwright@npm%3A1.61.1#~/.yarn/patches/playwright-npm-1.61.1-55c1fb1408.patch":
-  version: 1.61.1
-  resolution: "playwright@patch:playwright@npm%3A1.61.1#~/.yarn/patches/playwright-npm-1.61.1-55c1fb1408.patch::version=1.61.1&hash=0aebab"
-  dependencies:
-    fsevents: "npm:2.3.2"
-    playwright-core: "npm:1.61.1"
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  bin:
-    playwright: cli.js
-  checksum: 10/cbdaee96cbf12f98d27cef15f82aa7b891b9e6ef9e16f7331643fea0814efd839ece4bd9829bf5aceb504e741b717ed94d7f8c97a235f49abb7224aab2025de5
   languageName: node
   linkType: hard
 
@@ -41622,7 +41607,7 @@ __metadata:
     moment: "npm:^2.30.1"
     node-stream-zip: "npm:^1.15.0"
     pdf-parse: "npm:^1.1.4"
-    playwright: "patch:playwright@npm%3A1.61.1#~/.yarn/patches/playwright-npm-1.61.1-55c1fb1408.patch"
+    playwright: "npm:^1.61.1"
     prettier: "npm:^3.9.5"
     prom-client: "npm:^15.1.3"
     rimraf: "npm:^6.1.3"
