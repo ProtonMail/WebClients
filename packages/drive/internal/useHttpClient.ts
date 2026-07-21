@@ -20,7 +20,7 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
 
     const fetchJson = async (options: ProtonDriveHTTPClientJsonRequest) => {
         try {
-            const result = await api({
+            return await api({
                 url: options.url,
                 method: options.method,
                 headers: Object.fromEntries(options.headers.entries()),
@@ -37,10 +37,6 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
                 // SDK has own parsing of responses.
                 output: 'raw',
             });
-            if (result.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
-                instrumentRateLimitedRequest();
-            }
-            return result;
         } catch (error) {
             // useApi throws StatusCodeError when the status code is not 2xx.
             // SDK has own parsing of responses, thus we need to simulate
@@ -49,6 +45,9 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
             // that would also kept the non-2xx responses as well.
             if (error instanceof Error && error.name === 'StatusCodeError' && 'data' in error && 'status' in error) {
                 const status = Number(error.status) || 500;
+                if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                    instrumentRateLimitedRequest();
+                }
                 return new Response(JSON.stringify(error.data), { status });
             }
             throw error;

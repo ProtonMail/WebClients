@@ -1,9 +1,10 @@
-import type { ProtonDriveHTTPClientBlobRequest } from '@protontech/drive-sdk';
+import type { ProtonDriveHTTPClientBlobRequest, ProtonDriveHTTPClientJsonRequest } from '@protontech/drive-sdk';
 
 import { useHttpClient } from './useHttpClient';
 
 const mockApiRequest = jest.fn();
 const mockCallWithTimeout = jest.fn(<T>(promise: Promise<T>) => promise);
+const mockIncrement = jest.fn();
 jest.mock('react', () => ({
     __esModule: true,
     useRef: jest.fn((value) => ({ current: value })),
@@ -12,6 +13,15 @@ jest.mock('react', () => ({
 jest.mock('@proton/components/hooks/useApi', () => ({
     __esModule: true,
     default: () => mockApiRequest,
+}));
+
+jest.mock('@proton/metrics', () => ({
+    __esModule: true,
+    default: {
+        drive_warnings_total: {
+            increment: (...args: unknown[]) => mockIncrement(...args),
+        },
+    },
 }));
 
 jest.mock('./withTimeout', () => ({
@@ -67,5 +77,26 @@ describe('useHttpClient', () => {
         });
         expect(fetchMock).toHaveBeenCalledTimes(1);
         expect(fetchMock).toHaveBeenCalledWith(expect.objectContaining({ url: request.url }));
+    });
+
+    it('records a rate-limited metric and rebuilds the response when a JSON request gets a 429', async () => {
+        const statusCodeError = new Error('Too Many Requests');
+        statusCodeError.name = 'StatusCodeError';
+        Object.assign(statusCodeError, { status: 429, data: { Code: 429, Error: 'Too many requests' } });
+        mockApiRequest.mockRejectedValue(statusCodeError);
+
+        const httpClient = useHttpClient();
+        const request: ProtonDriveHTTPClientJsonRequest = {
+            url: 'https://drive-api.proton.me/api/files',
+            method: 'GET',
+            headers: new Headers(),
+            timeoutMs: 10_000,
+        };
+
+        const result = await httpClient.fetchJson(request);
+
+        expect(result.status).toBe(429);
+        expect(await result.json()).toEqual({ Code: 429, Error: 'Too many requests' });
+        expect(mockIncrement).toHaveBeenCalledWith({ warning: 'http_client_rate_limited' });
     });
 });
