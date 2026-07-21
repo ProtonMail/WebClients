@@ -577,12 +577,6 @@
       "Regenerate": [
         "재생성"
       ],
-      "Regex invalid": [
-        "유효하지 않은 정규식"
-      ],
-      "Regex unsafe": [
-        "정규식 안전하지 않음"
-      ],
       "Reject": [
         "거절"
       ],
@@ -2169,7 +2163,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2644,6 +2638,9 @@
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "개인 이메일을 비공개로 유지하려면 별칭 연락처를 만들어 보세요."
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Git이 ${ PASS_APP_NAME } SSH 에이전트와 함께 동작하려면, Git은 Windows OpenSSH를 사용해야 합니다. 아래 명령어를 통해 설정할 수 있습니다:"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "타 비밀번호 관리자에서 데이터를 이전하려면, 현재 사용 중인 비밀번호 관리자에 이동하여 데이터를 불러온 다음 ${ PASS_APP_NAME }에 업로드 하십시오. 데이터를 모두 가져오면 해당 추출된 파일은 삭제하십시오."
