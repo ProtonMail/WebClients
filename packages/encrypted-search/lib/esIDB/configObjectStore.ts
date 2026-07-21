@@ -1,9 +1,7 @@
-import type { IDBPDatabase } from 'idb';
-
 import noop from '@proton/utils/noop';
 
-import { esErrorReport } from '../esHelpers';
-import type { ConfigKeys, ConfigValues, EncryptedSearchDB, RetryObject } from '../models';
+import { esErrorReport } from '../esHelpers/esReporting';
+import type { ConfigKeys, ConfigValues, RetryObject } from '../models';
 import {
     ESDbTableNotFound,
     ESInvalidAccessError,
@@ -128,23 +126,6 @@ const writeConfigProperty = async (userID: string, configID: ConfigKeys, value: 
     await safelyWriteToIDBAbsolutely({ value, key: configID, storeName: 'config', esDB });
 
     esDB.close();
-};
-
-/**
- * Update the estimated size by a given amount in the config object store,
- * but without opening a new instance of ESDB
- */
-export const updateSize = async (esDB: IDBPDatabase<EncryptedSearchDB>, sizeDelta: number) => {
-    if (sizeDelta === 0) {
-        return;
-    }
-
-    const oldSize: number | undefined = await esDB.get('config', 'size');
-    if (typeof oldSize === 'undefined') {
-        return;
-    }
-
-    return safelyWriteToIDBAbsolutely({ value: oldSize + sizeDelta, key: 'size', storeName: 'config', esDB });
 };
 
 /**
