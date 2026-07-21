@@ -148,6 +148,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Télécharger les applications ${ DRIVE_APP_NAME }"
       ],
+      "Download chart": [
+        "Télécharger le graphique"
+      ],
       "Download logs": [
         "Télécharger les journaux"
       ],
@@ -201,6 +204,9 @@
       ],
       "Hide": [
         "Masquer"
+      ],
+      "Hide chart spec": [
+        "Masquer la spécification du graphique"
       ],
       "Hide more benefits": [
         "Masquer plus d'avantages"
@@ -429,6 +435,9 @@
       ],
       "Verify account": [
         "Vérifier le compte"
+      ],
+      "View chart spec": [
+        "Visualiser la spécification du graphique"
       ],
       "View invoice": [
         "Voir la facture"
@@ -834,6 +843,9 @@
       ],
       "Discover and set up features": [
         "Découvrez et configurez les fonctionnalités"
+      ],
+      "Get 50% offer": [
+        "Profitez d'une réduction de 50 %"
       ],
       "Remind me later": [
         "Me le rappeler plus tard"
@@ -1380,6 +1392,9 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Découvrir comment utiliser ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
+        "Permettez à ${ LUMO_SHORT_APP_NAME } de visualiser les données à l'aide de graphiques"
+      ],
       "Lightweight model for everyday tasks": [
         "Modèle léger pour les tâches quotidiennes"
       ],
@@ -1918,6 +1933,9 @@
       "Free accounts keep chat history for 7 days. Talk to your admin to keep this chat.": [
         "Les comptes gratuits conservent l'historique des conversations pendant 7 jours. Contactez votre administrateur pour conserver ces conversations."
       ],
+      "Free accounts keep chat history for 7 days. This chat is past that window and will be permanently deleted unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Les comptes gratuits conservent l'historique des discussions pendant 7 jours. Cette discussion a dépassé ce délai et sera définitivement supprimée, sauf si vous passez à ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
       "Free space": [
         "Espace libre"
       ],
@@ -2115,6 +2133,9 @@
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Ces fichiers correspondaient à des messages résumés et ne sont plus envoyés au modèle."
+      ],
+      "This chat is past the free retention window and will be permanently deleted. Talk to your admin to keep it.": [
+        "Cette conversation a dépassé la durée de conservation gratuite et sera définitivement supprimée. Contactez votre administrateur pour la conserver."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Cette conversation sera supprimée dans 2 jours. Passez à ${ LUMO_SHORT_APP_NAME } Plus pour la conserver."
@@ -2800,6 +2821,9 @@
       "Visionary": [
         "Visionary"
       ],
+      "Visualization mode": [
+        "Mode de visualisation"
+      ],
       "We'd love your feedback!": [
         "Nous aimerions connaître votre avis."
       ],
@@ -3019,6 +3043,15 @@
       ],
       "This chat expires tomorrow": [
         "Cette conversation expire demain"
+      ],
+      "This chat will be deleted soon": [
+        "Cette conversation sera supprimée bientôt"
+      ],
+      "This chat will be deleted today": [
+        "Cette conversation sera supprimée aujourd'hui"
+      ],
+      "This chat will be deleted tomorrow": [
+        "Cette conversation sera supprimée demain"
       ],
       "This conversation is getting long": [
         "Cette conversation commence à être longue."
@@ -3368,7 +3401,7 @@
         "Lier avec le dossier ${ DRIVE_APP_NAME }"
       ],
       "Load more": [
-        "Charger plus"
+        "Charger plus d'éléments"
       ],
       "New chat": [
         "Nouvelle session de chat"
@@ -3386,7 +3419,7 @@
         "Recherche"
       ],
       "See all": [
-        "Afficher tout"
+        "Tout afficher"
       ],
       "Send": [
         "Envoyer"
@@ -3417,9 +3450,6 @@
       "Failed to create folder": [
         "La création du dossier n'a pas abouti."
       ],
-      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
-        "Le fichier « ${ file.name } » n'a pas pu être téléchargé car son intégrité n'a pas pu être vérifiée. Veuillez réessayer."
-      ],
       "Failed to index Drive folder for search": [
         "L'indexation du dossier Drive pour la recherche n'a pas abouti."
       ],
@@ -3440,12 +3470,6 @@
       ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Le fichier « ${ file.name } » (${ fileSizeFormatted }) dépasse la limite de ${ maxSizeFormatted }. Associez un dossier ${ DRIVE_APP_NAME } pour importer des fichiers plus volumineux."
-      ],
-      "File download failed due to integrity check. Please try again.": [
-        "Le fichier n'a pas pu être téléchargé en raison de contrôle d'intégrité. Veuillez réessayer."
-      ],
-      "File format not supported: ${ file.name }": [
-        "Format de fichier non pris en charge : ${ file.name }"
       ],
       "File type not supported: ${ file.name }": [
         "Type de fichier non pris en charge : ${ file.name }"
@@ -3506,6 +3530,9 @@
       " Chat in Project": [
         " Discussion dans le Projet",
         " Discussions dans le Projet"
+      ],
+      "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
+        "« ${ file.name } » est toujours en cours d'indexation. Le contenu s'affichera lorsque vous l'enverrez."
       ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } a besoin d'une base de données locale (indexedDB) pour garder vos conversations sur cet appareil, mais celle-ci n'est pas disponible."
@@ -3813,13 +3840,13 @@
     },
     "collider_2025:Inspiration suggestion prompt": {
       "3D animated character in a high-quality family film style, expressive face, large emotional eyes, soft subsurface skin, stylized proportions, vibrant colors, detailed hair and clothing, cinematic lighting, shallow depth of field, friendly and charming personality, ultra polished render, studio-quality animation still.": [
-        "Personnage animé en 3D dans le style d'un film familial de haute qualité, visage expressif, grands yeux expressifs, peau douce avec transluminescence, proportions stylisées, couleurs vives, cheveux et vêtements détaillés, éclairage cinématographique, faible profondeur de champ, personnalité amicale et charmante, rendu ultra soigné, arrêt sur image d'animation de qualité studio."
+        "Personnage animé en 3D dans le style d'un film familial de grande qualité, visage expressif, grands yeux pleins d'émotion, peau aux reflets subtils, proportions stylisées, couleurs vives, coiffure et vêtements détaillés, éclairage cinématographique, faible profondeur de champ, personnalité sympathique et charmante, rendu ultra soigné, image d'animation de qualité studio."
       ],
       "A dreamy close-up of flowers swept into soft radial trails by rotating camera motion, where the center blooms in crisp detail while petals dissolve outward into creamy bokeh under gentle natural light.": [
-        "Un gros plan onirique de fleurs balayées en douces traînées radiales par le mouvement de rotation de l'appareil photo, où le cœur s'épanouit avec des détails nets tandis que les pétales se dissolvent vers l'extérieur dans un bokeh crémeux sous une douce lumière naturelle."
+        "Un gros plan onirique de fleurs dont les contours s'estompent en douces traînées radiales sous l'effet d'un mouvement de caméra rotatif, où le cœur de la fleur resplendit avec une netteté exceptionnelle tandis que les pétales se fondent vers l'extérieur en un bokeh crémeux sous une douce lumière naturelle."
       ],
       "A striking monochromatic study in yellow — just a fragment of contemporary architecture emerging from its equally golden surroundings, with tonal shifts alone carving out the geometric surfaces and lending the scene its quiet sense of depth and form.": [
-        "Une étude monochrome saisissante en jaune, un simple fragment d'architecture contemporaine émergeant de son environnement tout aussi doré, où les variations de tons sculptent à elles seules les surfaces géométriques et confèrent à la scène son sens discret de profondeur et de forme."
+        "Une étude monochrome saisissante dans les tons jaunes : un simple fragment d’architecture contemporaine émergeant d’un environnement tout aussi doré, où les variations de nuances suffisent à sculpter les surfaces géométriques et à conférer à la scène une impression discrète de profondeur et de forme."
       ],
       "A warm and cozy Japandi-style living room, minimalist aesthetic, cream sectional sofa, neutral and mustard throw pillows, woven pouf, large textured area rug with fringe, minimalist botanical wall art, large indoor palm plant, soft ambient golden lighting, candles, serene and peaceful atmosphere, photorealistic, interior design photography.": [
         "Un salon chaleureux et confortable de style Japandi, esthétique minimaliste, canapé d'angle crème, coussins décoratifs neutres et moutarde, pouf tissé, grand tapis texturé à franges, art mural botanique minimaliste, grand palmier d'intérieur, éclairage doré d'ambiance doux, bougies, atmosphère sereine et paisible, photographie de design d'intérieur photoréaliste."
@@ -3846,7 +3873,7 @@
         "Silhouette de dos d'une femme aux cheveux attachés, tapant sur un ordinateur portable. Écran violet foncé, fond violet clair épuré, éclairage studio à contraste élevé, style minimaliste de maquette technologique."
       ],
       "Close-up texture of polished cross-section tree trunk, intricate swirling growth rings, detailed cracks and wood grain, warm brown and amber tones, natural organic pattern, high resolution.": [
-        "Texture en gros plan d'une section transversale polie de tronc d'arbre, cernes de croissance complexes et sinueux, fissures et grain de bois détaillés, tons chauds de marron et d'ambre, motif organique naturel, haute résolution."
+        "Gros plan sur la texture d'une coupe transversale polie d'un tronc d'arbre, cernes de croissance entrelacés et complexes, fissures et veinage du bois détaillés, tons chauds de brun et d'ambre, motif organique naturel, haute résolution."
       ],
       "Ethereal portrait of a person wearing a sleek dark VR headset, body dissolving into a glowing cyan-teal haze. Centered composition, uniform saturated teal-blue gradient background, backlit silhouette with luminous rim lighting on the headset and fingertips. One hand loosely clenched, the other reaching forward palm-out. Futuristic sci-fi atmosphere, minimalist and dreamlike, digital art style, shallow depth of field.": [
         "Portrait éthéré d'une personne portant un élégant casque de réalité virtuelle sombre, son corps se fondant dans une brume cyan-turquoise lumineuse. Composition centrée, fond uniforme à dégradé bleu-turquoise saturé, silhouette rétroéclairée avec un éclairage périphérique lumineux sur le casque et le bout des doigts. Une main légèrement crispée, l'autre tendue paume ouverte. Atmosphère futuriste de science-fiction, minimaliste et onirique, style d'art numérique, faible profondeur de champ."
@@ -3873,13 +3900,13 @@
         "Maquette photoréaliste d'un t-shirt blanc accroché au mur d'une boutique de vêtements moderne. T-shirt blanc en coton premium, vierge, présenté sur un cintre en bois, contre un mur aux tons pastel doux (beige clair, rose poudré ou vert sauge). Intérieur de magasin élégant en arrière-plan, avec portants et étagères légèrement flous. Lumière naturelle mêlée à un éclairage d'ambiance chaleureux. Texture et plis du tissu réalistes. Esthétique minimaliste et épurée. Merchandising de mode haut de gamme. Faible profondeur de champ. Composition centrée. Maquette de vêtement commercial. T-shirt vierge prêt à recevoir un design personnalisé. Ultra-réaliste. Haute résolution (8K)."
       ],
       "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
-        "La vitesse pure distillée dans une seule image — la F1 filant sur le tarmac avec un flou de mouvement qui étire tout derrière elle, des étincelles jaillissant de la piste et la fibre de carbone accrochant la lumière sous cet angle bas viscéral, au ras de l'asphalte."
+        "La vitesse à l'état pur condensée en une seule image : la monoplace de F1 filant à toute allure sur le bitume, laissant derrière elle un sillage flou, des étincelles jaillissant de la surface et la fibre de carbone captant la lumière sous cet angle plongeant, au ras de l'asphalte, qui fait vibrer les sens."
       ],
       "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "Le mot « FLUORISH » est entièrement composé d'herbe verte luxuriante et de végétation naturelle, chaque lettre étant façonnée à partir de brins d'herbe frais et denses, avec une texture organique réaliste, des tons verts vibrants, des détails botaniques complexes, une typographie naturelle photoréaliste, une douce lumière naturelle, des ombres subtiles, un design écologique très détaillé, isolé sur un fond propre, un lettrage 3D de qualité supérieure, ultra-réaliste, 8K, une mise au point nette, une qualité publicitaire professionnelle."
+        "Le mot « FLUORISH » est entièrement composé d’herbe verte luxuriante et de végétation naturelle ; chaque lettre est façonnée à partir de brins d’herbe denses et frais, avec une texture organique réaliste, des tons verts éclatants, des détails botaniques complexes, une typographie naturelle photoréaliste, une lumière naturelle douce, des ombres subtiles, un design écologique très détaillé, isolé sur un fond épuré, un lettrage 3D haut de gamme, ultra-réaliste, en 8K, avec une mise au point nette, d’une qualité publicitaire professionnelle."
       ],
       "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
-        "Prise de vue aérienne minimaliste de dessus d'une longue planche de surf orange flottant sur une eau bleue claire. L'eau présente des contours de vagues ondulants et incurvés ainsi que des motifs de lumière caustique vifs et scintillants. Une ombre douce est projetée directement sous la planche, créant une esthétique épurée, sereine et moderne."
+        "Plan aérien minimaliste pris en plongée d'une longue planche de surf orange flottant sur une eau d'un bleu limpide. L'eau présente des contours ondulés et courbes, ainsi que des motifs lumineux brillants et chatoyants. Une ombre douce se projette juste sous la planche, créant une esthétique épurée, sereine et moderne."
       ]
     },
     "collider_2025:Label": {
@@ -4037,7 +4064,7 @@
         "Décrivez le rôle, la portée et le comportement que vous souhaitez que ${ LUMO_SHORT_APP_NAME } adopte."
       ],
       "Describe your image...": [
-        "Décrivez votre image..."
+        "Décrivez votre image…"
       ],
       "Draw and/or describe what to change, \"remove the items\", etc.": [
         "Dessinez et/ou décrivez ce qu'il faut changer, « supprimer les éléments », etc."
@@ -4437,7 +4464,7 @@
         "Créer"
       ],
       "Gallery": [
-        "Galerie"
+        "Album photo"
       ]
     },
     "collider_2025:Title": {
@@ -4625,7 +4652,7 @@
         "Partagez moins avec l'IA"
       ],
       "Sign in to build your gallery": [
-        "Connectez-vous pour construire votre galerie."
+        "Connectez-vous pour créer votre galerie"
       ],
       "Sign in to create projects": [
         "Connectez-vous pour créer des projets"
@@ -4673,7 +4700,7 @@
         "Ce que les géants de la tech ont déduit"
       ],
       "What do you want to create today?": [
-        "Que voulez-vous créer aujourd'hui ?"
+        "Que voulez-vous créer aujourd'hui ?"
       ],
       "What this profile exposes": [
         "Ce que ce profil révèle"
@@ -6271,6 +6298,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boite aux lettres et une seule personne."
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Accédez à plus de 20 000 serveurs dans plus de 145 pays"
+      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
@@ -6318,6 +6348,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
+      ],
+      "Chart spec view": [
+        "Vue spécification du graphique"
       ],
       "Chunk": [
         "Segment"
@@ -6422,6 +6455,9 @@
       "Expired": [
         "Expiré"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Des vitesses VPN ultra-rapides pouvant atteindre 10 Gbps"
+      ],
       "Folder:": [
         "Dossier :"
       ],
@@ -6434,8 +6470,14 @@
       "Google Pay mark": [
         "Marquer Google Pay"
       ],
+      "Have some more time to decide without interruption.": [
+        "Prenez encore un peu de temps pour vous décider, sans être dérangé."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Si vous résiliez votre abonnement maintenant, vous perdrez l'accès à ${ BRAND_NAME } ${ planTitle } à compter du ${ expiryDate }, y compris les fonctionnalités suivantes :"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
@@ -6509,6 +6551,9 @@
       "MIME:": [
         "MIME :"
       ],
+      "Model output": [
+        "Sorties du modèle"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
       ],
@@ -6557,6 +6602,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
       ],
+      "Premium privacy protection across all your devices": [
+        "Une protection optimale de la vie privée sur tous vos appareils"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
       ],
@@ -6571,6 +6619,9 @@
       ],
       "Registering your subscription…": [
         "Enregistrement de votre abonnement…"
+      ],
+      "Rendered spec": [
+        "Spécifications rendues"
       ],
       "Searchable chunks": [
         "Segments consultables"
@@ -6604,6 +6655,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Continuez à souscrire à votre forfait et bénéficiez de 50 % de réduction sur votre abonnement du mois prochain"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
@@ -6879,6 +6933,12 @@
       ],
       "City": [
         "Ville"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Version client"
       ],
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
@@ -9740,6 +9800,9 @@
       ],
       "Simplify password management": [
         "Simplifiez la gestion des mots de passe"
+      ],
+      "Stay for 50% off your next month": [
+        "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
       ],
       "Summary": [
         "Résumé"
