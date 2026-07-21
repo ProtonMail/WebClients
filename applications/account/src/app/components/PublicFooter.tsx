@@ -20,7 +20,7 @@ const PublicFooter = ({ children, className, center = true, includeDescription =
     return (
         <footer className={clsx('text-sm', className)}>
             <div className="mb-1">
-                <LayoutLogosV2 size={5} className={center ? 'justify-center' : undefined} />
+                <LayoutLogosV2 size={5} className={center ? 'flex gap-1 justify-center' : 'flex gap-1'} />
             </div>
             <div className={clsx('mb-6 color-weak', center && 'text-center')}>
                 {
