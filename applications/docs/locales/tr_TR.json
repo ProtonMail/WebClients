@@ -417,9 +417,6 @@
       "Get the apps": [
         "Uygulamaları edinin"
       ],
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
       "Get the writing assistant": [
         "Yazma yardımcısını edinin"
       ],
@@ -1458,6 +1455,9 @@
       "Continue your subscription": [
         "Aboneliğinizi kullanmayı sürdürün"
       ],
+      "Get 50% offer": [
+        "%50 indirimden yararlanın"
+      ],
       "Maybe later": [
         "Belki sonra"
       ]
@@ -1517,20 +1517,6 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
-      ],
-      "Subtotal": [
-        "Ara toplam"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "${ cycle } aylık ara toplam",
-        "${ cycle } aylık ara toplam"
-      ],
-      "Total": [
-        "Toplam"
-      ],
-      "Total for ${ n } month": [
-        "${ n } aylık toplam",
-        "${ n } aylık toplam"
       ]
     },
     "Collapsible tooltip": {
@@ -3202,7 +3188,7 @@
         "Davet yeniden gönderilemedi"
       ],
       "Failed to trash document": [
-        "Belge çöp kutusuna atılamadı"
+        "Belge çöpe atılamadı"
       ],
       "Failed to unshare node": [
         "Nokta paylaşımı kaldırılamadı"
@@ -3397,6 +3383,9 @@
       ],
       "Some contacts could not be deleted": [
         "Bazı kişiler silinemedi"
+      ],
+      "Some documents could not be loaded": [
+        "Bazı belgeler yüklenemedi"
       ],
       "Some groups could not be deleted": [
         "Bazı gruplar silinemedi"
@@ -4598,6 +4587,9 @@
       "Accept/decline": [
         "Kabul et/reddet"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "145 ülkede 20.000 üzerinde sunucuya erişim"
+      ],
       "Ad targeting": [
         "Hedeflenmiş reklam"
       ],
@@ -4911,6 +4903,9 @@
       "Failing signatures will be re-signed by you": [
         "İmzalanmamış değişiklikler sizin tarafınızdan yeniden imzalanacak"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "10 Gb/sn olabilen en yüksek VPN hızı"
+      ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" dosyası indirme sırasında silindi"
       ],
@@ -4965,11 +4960,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
       ],
+      "Have some more time to decide without interruption.": [
+        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
+      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Elektronik tablo içeriğini paylaşmakta bir sakınca görmüyorsanız, aşağıdaki hata ayıklama bilgilerini bildiriminize ekleyin."
       ],
       "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
-        "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Lütfen raporunuza aşağıdaki hata ayıklama bilgilerini ekleyin."
+        "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Lütfen bildiriminize aşağıdaki hata ayıklama bilgilerini ekleyin."
       ],
       "here": [
         "buraya"
@@ -4982,6 +4980,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
@@ -5286,6 +5287,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Lütfen etkin olmayan anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
       ],
+      "Premium privacy protection across all your devices": [
+        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
+      ],
       "Preparing link to file": [
         "Dosya bağlantısı hazırlanıyor"
       ],
@@ -5408,6 +5412,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Aşağıdaki VPN ayarlarını etkinleştirerek kolayca bağlı kalın:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Abonelik her ${ cycle } ayda bir otomatik olarak yenilenir.",
@@ -5645,7 +5652,7 @@
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
       "We've detected that you've previously experienced issues opening a document.": [
-        "Daha önce bir belgeyi açarken sorun yaşadığınızı tespit ettik."
+        "Daha önce bir belgeyi açarken sorun yaşadığınızı farkettik."
       ],
       "Week": [
         "Hafta"
@@ -5961,10 +5968,6 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
-      "${ n } month": [
-        "${ n } ay",
-        "${ n } ay"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } karakter"
       ],
@@ -6060,6 +6063,12 @@
       ],
       "City": [
         "İl"
+      ],
+      "Client": [
+        "İstemci"
+      ],
+      "Client version": [
+        "İstemci sürümü"
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
@@ -6164,10 +6173,10 @@
         "Bu bağlantıyı silin ve erişimi olan herkesi kaldırın."
       ],
       "Exact host matching": [
-        "Tam ana bilgisayar eşleşmesi"
+        "Tam sunucu eşleşmesi"
       ],
       "Exact URL matching": [
-        "Tam URL eşleşmesi"
+        "Tam adres eşleşmesi"
       ],
       "Expiry": [
         "Geçerlilik sonu"
@@ -6189,9 +6198,6 @@
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Tekliften yararlanın"
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -6290,7 +6296,7 @@
         "Gezinme"
       ],
       "Never fill on this exact URL": [
-        "Bu URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "New password": [
         "Yeni parola"
@@ -6356,7 +6362,7 @@
         "Bölge"
       ],
       "Regular expression": [
-        "Düzenli ifade"
+        "Kurallı ifade"
       ],
       "Replace existing file": [
         "Var olan dosya değiştirilsin"
@@ -6395,7 +6401,7 @@
         "Klasör atlansın"
       ],
       "Starts with": [
-        "Şununla başlar"
+        "Şununla başlayan"
       ],
       "Stop sharing": [
         "Paylaşmayı durdur"
@@ -6431,7 +6437,7 @@
         "Görsel yükle"
       ],
       "URL wildcard pattern": [
-        "URL genel arama karakteri deseni"
+        "Adres genel arama karakteri modeli"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -6774,16 +6780,16 @@
         "Tam (alt) etki alanı eşleştirme kuralı"
       ],
       "Exact URL matching rule": [
-        "Tam URL eşleştirme kuralı"
+        "Tam adres eşleştirme kuralı"
       ],
       "Never fill with this exact URL": [
-        "Bu tam URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "Regular expression rule": [
-        "Düzenli ifade kuralı"
+        "Kurallı ifade kuralı"
       ],
       "Wildcard pattern matching rule": [
-        "genel arama karakter deseni eşleştirme kuralı"
+        "Genel arama karakter modeli eşleştirme kuralı"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ücretsiz deneme süreniz sona erdi. ${ nonAutoRenewalAction }"
@@ -8128,7 +8134,7 @@
         "Belge geri yüklenemedi"
       ],
       "Failed to trash document": [
-        "Belge çöp kutusuna atılamadı"
+        "Belge çöpe atılamadı"
       ],
       "Failed to upload files: ${ err }": [
         "Dosyalar yüklenemedi: ${ err }"
@@ -9764,11 +9770,6 @@
         "Abonelik tarifeniz fatura döneminin sonunda düşürülecek."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Lifetime"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -10462,7 +10463,7 @@
         "Gizli gezinme ile VPN karşılaştırması"
       ],
       "Problems Detected": [
-        "Tespit Edilen Sorunlar"
+        "Bulunan sorunlar"
       ],
       "Public link": [
         "Herkese açık bağlantı"
@@ -10572,6 +10573,9 @@
       "Start import process": [
         "İçe aktarma işlemini başlatın"
       ],
+      "Stay for 50% off your next month": [
+        "Sonraki ay %50 indirimden yararlanın"
+      ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
       ],
@@ -10580,9 +10584,6 @@
       ],
       "Subscription canceled": [
         "Abonelik iptal edildi"
-      ],
-      "Summer Sale": [
-        "Yaz İndirimi"
       ],
       "The link either does not exist or has expired": [
         "Bağlantı bulunamadı ya da geçerlilik süresi dolmuş"
@@ -10939,7 +10940,7 @@
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
+        "${ modeLabelStong } güçlü bir denetim sağlar, ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı siteler ile eşleşmesine ve bu verilerin doldurulmasına neden olabilir."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",

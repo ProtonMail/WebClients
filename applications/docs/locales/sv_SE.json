@@ -417,9 +417,6 @@
       "Get the apps": [
         "Skaffa apparna"
       ],
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
       "Get the writing assistant": [
         "Skaffa skrivassistenten"
       ],
@@ -1517,20 +1514,6 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
-      ],
-      "Subtotal": [
-        "Delsumma"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Delsumma för ${ cycle } månad",
-        "Delsumma för ${ cycle } månader"
-      ],
-      "Total": [
-        "Totalt"
-      ],
-      "Total for ${ n } month": [
-        "Totalt för ${ n } månad",
-        "Totalt för ${ n } månader"
       ]
     },
     "Collapsible tooltip": {
@@ -3201,6 +3184,9 @@
       "Failed to resend invitation": [
         "Misslyckades att skicka inbjudan igen"
       ],
+      "Failed to trash document": [
+        "Misslyckades att slänga dokument"
+      ],
       "Failed to unshare node": [
         "Misslyckades att sluta dela nod"
       ],
@@ -3394,6 +3380,9 @@
       ],
       "Some contacts could not be deleted": [
         "Några kontakter kunde inte tas bort"
+      ],
+      "Some documents could not be loaded": [
+        "Några dokument kunde inte laddas"
       ],
       "Some groups could not be deleted": [
         "Några grupper kunde inte tas bort"
@@ -4595,6 +4584,9 @@
       "Accept/decline": [
         "Acceptera/avböj"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Åtkomst till över 20 000 servrar i över 145 länder"
+      ],
       "Ad targeting": [
         "Målgruppsanpassning av annonser"
       ],
@@ -4908,6 +4900,9 @@
       "Failing signatures will be re-signed by you": [
         "Misslyckade signaturer kommer att signeras igen till dig"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Snabbaste VPN-hastigheter på upp till 10 Gbps"
+      ],
       "File \"${ name }\" was deleted during download": [
         "Fil “${ name }“ togs bort under nedladdningen"
       ],
@@ -4964,6 +4959,9 @@
       ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Hjälp oss att förbättra denna upplevelse genom att rapportera problemet. Om du känner dig bekväm med att dela kalkylbladets innehåll kan du bifoga felsökningsinformationen nedan till din rapport."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Hjälp oss förbättra denna upplevelse genom att rapportera problemet. Bifoga felsökningsinformationen nedan till din rapport."
       ],
       "here": [
         "här"
@@ -5638,6 +5636,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
       ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Vi har upptäckt att du tidigare upplevt problem med att öppna ett dokument."
+      ],
       "Week": [
         "Vecka"
       ],
@@ -5952,10 +5953,6 @@
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } månad",
-        "${ n } månader"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tecken"
       ],
@@ -6051,6 +6048,12 @@
       ],
       "City": [
         "Ort"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversion"
       ],
       "Code is 6 digits without spaces": [
         "Kod är 6 siffror utan mellanslag"
@@ -6180,9 +6183,6 @@
       ],
       "From: ${ fromEmail }": [
         "Från: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Ta del av erbjudandet"
       ],
       "Hide password": [
         "Dölj lösenord"
@@ -8175,6 +8175,9 @@
       "Failed to restore document": [
         "Misslyckades att återställa dokument"
       ],
+      "Failed to trash document": [
+        "Misslyckades att slänga dokument"
+      ],
       "Failed to upload files: ${ err }": [
         "Misslyckades att ladda upp filer: ${ err }"
       ],
@@ -9809,11 +9812,6 @@
         "Prenumerationen kommer att nedgraderas i slutet av faktureringsperioden."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Livstid"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsutrymme"
@@ -10506,6 +10504,9 @@
       "Private browsing vs VPN": [
         "Privat surfning jämfört med VPN"
       ],
+      "Problems Detected": [
+        "Problem upptäckta"
+      ],
       "Public link": [
         "Offentlig länk"
       ],
@@ -10614,6 +10615,9 @@
       "Start import process": [
         "Starta importprocessen"
       ],
+      "Stay for 50% off your next month": [
+        "Stanna kvar för 50 % rabatt nästa månad"
+      ],
       "Stop sharing": [
         "Sluta dela"
       ],
@@ -10622,9 +10626,6 @@
       ],
       "Subscription canceled": [
         "Prenumeration avslutad"
-      ],
-      "Summer Sale": [
-        "Sommarrea"
       ],
       "The link either does not exist or has expired": [
         "Länken finns inte eller har löpt ut"

@@ -420,9 +420,6 @@
       "Get the apps": [
         "Luați aplicațiile"
       ],
-      "Get the deal": [
-        "Obțineți oferta"
-      ],
       "Get the writing assistant": [
         "Luați asistentul de scriere"
       ],
@@ -1473,6 +1470,9 @@
       "Continue your subscription": [
         "Păstrare abonament"
       ],
+      "Get 50% offer": [
+        "Profitați de oferta de 50%"
+      ],
       "Maybe later": [
         "Poate mai târziu"
       ]
@@ -1534,22 +1534,6 @@
         "un utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
-      ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Subtotal pentru ${ cycle } lună",
-        "Subtotal pentru ${ cycle } luni",
-        "Subtotal pentru ${ cycle } de luni"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total pentru o lună",
-        "Total pentru ${ n } luni",
-        "Total pentru ${ n } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -3425,6 +3409,9 @@
       "Some contacts could not be deleted": [
         "Unele contacte nu s-au putut șterge."
       ],
+      "Some documents could not be loaded": [
+        "Unele documente nu au putut fi încărcate."
+      ],
       "Some groups could not be deleted": [
         "Unele grupuri nu s-au putut șterge."
       ],
@@ -4661,6 +4648,9 @@
       "Accept/decline": [
         "Acceptare/Refuzare"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Accesați peste 20.000 de servere din peste 145 de țări"
+      ],
       "Ad targeting": [
         "Publicitate țintită"
       ],
@@ -4978,6 +4968,9 @@
       "Failing signatures will be re-signed by you": [
         "Semnăturile nereușite vor fi resemnate de către dvs."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Cele mai rapide viteze VPN de până la 10 Gbps"
+      ],
       "File \"${ name }\" was deleted during download": [
         "Fișierul „${ name }” a fost șters în timpul descărcării."
       ],
@@ -5032,6 +5025,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
       ],
+      "Have some more time to decide without interruption.": [
+        "Mai aveți timp să vă decideți fără întrerupere."
+      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Ajutați-ne să îmbunătățim această experiență raportând problema. Dacă nu vă deranjează să partajați conținutul din foaia de calcul, atașați informațiile de depanare de mai jos la raport."
       ],
@@ -5049,6 +5045,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Dacă anulați acum, veți pierde accesul la ${ BRAND_NAME } ${ planTitle } la ${ expiryDate }, inclusiv la aceste funcții:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Dacă anulați, abonamentul la ${ planTitle } nu va fi reînnoit când va expira la ${ expiryDate }."
@@ -5356,6 +5355,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
       ],
+      "Premium privacy protection across all your devices": [
+        "Protecție premium a confidențialității pe toate dispozitivele personale"
+      ],
       "Preparing link to file": [
         "Se pregătește legătura către fișier."
       ],
@@ -5478,6 +5480,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Păstrați-vă conexiunea fără efort, activând următoarele setări VPN:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Păstrați-vă abonamentul și primiți o reducere de 50% luna următoare"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Interval luni reînnoire automată abonament: ${ cycle }.",
@@ -6038,11 +6043,6 @@
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "O lună",
-        "${ n } luni",
-        "${ n } de luni"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } de caractere"
       ],
@@ -6138,6 +6138,12 @@
       ],
       "City": [
         "Oraş"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versiune client"
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
@@ -6267,9 +6273,6 @@
       ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Luați oferta"
       ],
       "Hide password": [
         "Ascundere parolă"
@@ -9934,11 +9937,6 @@
         "Abonamentul va fi retrogradat la sfârșitul perioadei de facturare."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Pe viață"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GiB spațiu de stocare"
@@ -10762,6 +10760,9 @@
       "Start import process": [
         "Începere proces de importare"
       ],
+      "Stay for 50% off your next month": [
+        "Rămâneți cu o reducere de 50% luna următoare"
+      ],
       "Stop sharing": [
         "Oprire partajare"
       ],
@@ -10770,9 +10771,6 @@
       ],
       "Subscription canceled": [
         "Abonament anulat"
-      ],
-      "Summer Sale": [
-        "Reduceri de vară"
       ],
       "The link either does not exist or has expired": [
         "Legătura nu există sau a expirat"
@@ -11199,7 +11197,7 @@
         "Aceasta va înlocui toate datele din registrul de lucru."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
+        "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom reveni online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nu s-a putut verifica serverul de e-mail. Dacă aveți încredere în el, puteți ignora verificarea."
