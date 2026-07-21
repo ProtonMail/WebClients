@@ -54,12 +54,12 @@ describe('StreamProcessor', () => {
         ]);
     });
 
-    it('accumulates tool call fragments into legacy tool_call JSON', () => {
+    it('accumulates tool call fragments (with id) into legacy tool_call JSON', () => {
         const processor = new StreamProcessor();
 
         processor.processChunk(
             formatOpenAiChunk({
-                tool_calls: [{ index: 0, function: { name: 'web_search', arguments: '{"query":' } }],
+                tool_calls: [{ index: 0, id: 'call_abc', function: { name: 'web_search', arguments: '{"query":' } }],
             })
         );
 
@@ -75,6 +75,7 @@ describe('StreamProcessor', () => {
                 target: 'tool_call',
                 count: 1,
                 content: JSON.stringify({
+                    id: 'call_abc',
                     name: 'web_search',
                     arguments: { query: 'weather' },
                 }),
@@ -203,6 +204,57 @@ describe('StreamProcessor', () => {
         );
 
         expect(messages).toEqual([{ type: 'harmful' }]);
+    });
+
+    it('exposes complete tool calls when the stream ends without an explicit finish_reason', () => {
+        const processor = new StreamProcessor();
+
+        processor.processChunk(
+            formatOpenAiChunk({
+                tool_calls: [
+                    {
+                        index: 0,
+                        id: 'call_abc',
+                        function: { name: 'browser__fetch', arguments: '{"url":"https://example.com"}' },
+                    },
+                ],
+            })
+        );
+
+        expect(processor.getCompleteToolCalls()).toEqual([
+            {
+                id: 'call_abc',
+                name: 'browser__fetch',
+                arguments: '{"url":"https://example.com"}',
+            },
+        ]);
+    });
+
+    it('exposes finalized tool calls after a tool_calls finish reason', () => {
+        const processor = new StreamProcessor();
+
+        processor.processChunk(
+            formatOpenAiChunk({
+                tool_calls: [
+                    { index: 0, id: 'call_abc', function: { name: 'filesystem__fs_read', arguments: '{"path":' } },
+                ],
+            })
+        );
+        processor.processChunk(
+            formatOpenAiChunk({
+                tool_calls: [{ index: 0, function: { arguments: '"/tmp/x"}' } }],
+            })
+        );
+        processor.processChunk(`data: ${JSON.stringify({ choices: [{ index: 0, finish_reason: 'tool_calls' }] })}\n\n`);
+
+        expect(processor.hadToolCallsFinishReason()).toBe(true);
+        expect(processor.getFinalizedToolCalls()).toEqual([
+            {
+                id: 'call_abc',
+                name: 'filesystem__fs_read',
+                arguments: '{"path":"/tmp/x"}',
+            },
+        ]);
     });
 
     it('maps chat.tool_call chunks to server_tool_call messages', () => {
