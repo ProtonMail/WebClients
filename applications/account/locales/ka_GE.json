@@ -135,9 +135,6 @@
       "Add domain": [
         "დომენის დამატება"
       ],
-      "Add email address": [
-        "ელფოსტის მისამართის დამატება"
-      ],
       "Add external address": [
         "გარე მისამართის დამატება"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "PayPal-ის დამატება"
-      ],
-      "Add phone number": [
-        "ტელეფონის ნომრის დამატება"
       ],
       "Add public holidays": [
         "საჯარო დასვენების დამატება"
@@ -753,9 +747,6 @@
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
       ],
-      "Enable device-based recovery": [
-        "მოწყობილობაზე დაფუძნებული აღდგენის ჩართვა"
-      ],
       "Enable multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
       ],
@@ -836,9 +827,6 @@
       ],
       "Generate password": [
         "პაროლის გენერირება"
-      ],
-      "Generate recovery phrase": [
-        "აღდგენის ფრაზის გენერაცია"
       ],
       "Generate token": [
         "კოდის გენერაცია"
@@ -1016,6 +1004,9 @@
       ],
       "Insert link": [
         "ბმულის ჩასმა"
+      ],
+      "Instructions": [
+        "ინსტრუქციები"
       ],
       "Invite": [
         "მოწვევა"
@@ -1868,9 +1859,6 @@
       ],
       "View plans details": [
         "ტარიფის დეტალების ნახვა"
-      ],
-      "View recovery settings": [
-        "აღდგენის პარამეტრების ნახვა"
       ],
       "View recovery setup details": [
         "აღდგენის დაყენების დეტალების ნახვა"
@@ -3504,6 +3492,9 @@
       ],
       "Discover and set up features": [
         "აღმოაჩინეთ და მოირგეთ ფუნქციები"
+      ],
+      "Get 50% offer": [
+        "50% ფასდაკლების მიღება"
       ],
       "Got it": [
         "გავიგე"
@@ -6762,9 +6753,6 @@
       "Add recovery contact": [
         "აღდგენის კონტაქტის დამატება"
       ],
-      "Add recovery method": [
-        "აღდგენის მეთოდის დამატება"
-      ],
       "Added on ${ formattedDate }": [
         "დამატების თარიღია ${ formattedDate }"
       ],
@@ -7006,14 +6994,8 @@
       "Subscription expired": [
         "გამოწერას ვადა ამოიწურა"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "მათ მე სანდო კონტაქტებში ჩამამატეს. მე მაქვს წვდომა მათ ანგარიშებთან, თუ რამე სასწრაფო მოხდება."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "მათ დაგამატეს სანდო კონტაქტად. საგანგებო სიტუაციის შემთხვევაში შეგიძლიათ შეხვიდეთ მათ ანგარიშში."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "მათ შეიძლება გთხოვონ თქვენს ანგარიშთან წვდომა, თუ რამე სასწრაფო ხდება."
       ],
       "They may ask to access your account in case of an emergency.": [
         "მათ შეიძლება მოითხოვონ წვდომა თქვენს ანგარიშზე საგანგებო სიტუაციის შემთხვევაში."
@@ -7033,9 +7015,6 @@
       ],
       "Time required before automatically granting them access": [
         "მათთვის წვდომის ავტომატურად მინიჭებისთვის საჭირო დრო"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "აღდგენის კონტაქტების დასამატებლად, თქვენ უნდა გქონდეთ აღდგენის ელფოსტის მისამართი ან ტელეფონის ნომერი."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "აღდგენის ამ მეთოდის გამოსართავად, ამოშალეთ ყველა თქვენი აღდგენის კონტაქტი."
@@ -7087,12 +7066,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "შეგიძლიათ, გააუქმოთ მათი წვდომა ნებისმიერ დროს, რომ თქვენს ანგარიშზე ისევ ექსკლუზიური მართვა დაიბრუნოთ."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "თქვენ ჯერ არავის მიერ არ ყოფილხართ მითითებული აღდგენის კონტაქტად."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "თქვენ ჯერ არავის მოუნიშნიხართ, როგორც სასწრაფო კონტაქტი."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "მიაღწიეთ მაქსიმალურ ${ limit } სასწრაფო კონტაქტს.",
@@ -10186,12 +10159,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "ტელეფონის ნომერი, მხოლოდ, ერთი ${ BRAND_NAME }-ის ანგარიშის გადასამოწმებლად შეგიძლიათ, გამოიყენოთ"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "აღდგენის ფაილი საშუალებას გაძლევთ, თქვენი ანგარიშის აღდგენის შემდეგ გახსნათ და დაათვალიეროთ თქვენი მონაცემები"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "აღდგენის ფრაზა საშუალებას გაძლევთ, დაიბრუნოთ თქვენს ანგარიშთან წვდომა და აღადგინოთ თქვენი დაშიფრული შეტყობინებები, თუ პაროლს დაკარგავთ"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "მომხმარებელი წარმოადგენს ანგარიშს, რომელსაც ერთადერთი მომხმარებლის სახელი, საფოსტო ყუთი და მფლობელი გააჩნია"
       ],
@@ -10206,9 +10173,6 @@
       ],
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "გაააქტიურეთ ანგარიშის აღდგენის ერთი მეთოდი მაინც, რომ დარწმუნდეთ, რომ თქვენს ${ BRAND_NAME }-ის ანგარიშზე წვდომა პაროლის დაკარგვის შემთხვევაშიც კი გექნებათ."
       ],
       "Active": [
         "აქტიური"
@@ -10633,6 +10597,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "გასაგრძელებლად აირჩიეთ ობიექტის ID."
+      ],
+      "Choose one:": [
+        "აირჩიეთ ერთი:"
       ],
       "Choose your service to connect with": [
         "აირჩიეთ სერვისი დასაკავშირებლად"
@@ -11237,9 +11204,6 @@
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "ახალი აღდგენის ფრაზის გენერირება გააუქმებს თქვენს მიმდინარე აღდგენის ფრაზას."
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "აღდგენის ახალი ფრაზის გენერაცია ძველ ფრაზას გათიშავს."
-      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "მიიღეთ ${ AUTHENTICATOR_APP_NAME } ყველა თქვენი მოწყობილობისთვის."
       ],
@@ -11363,9 +11327,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "თუ სისტემის დროის სარტყელი არ ემთხვევა მიმდინარე დროის სარტყელის პარამეტრს, თქვენ გთხოვენ მის განახლებას (მაქსიმუმ დღეში ერთხელ)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "თუ ეს ძველი პაროლის დაბრუნების გამოა, შეგიძლიათ, თავიდან მოიშოროთ ეს შეტყობინება"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
       ],
@@ -11413,9 +11374,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "თუ ცოტა ხნის წინ გადატვირთეთ თქვენი პაროლი, შეგიძლიათ გამოიყენოთ ${ recoveryMethodLink } თქვენი მონაცემების განსაბლოკად. თუ ეს გამოწვეულია ძველი პაროლის გადატვირთვით, შეგიძლიათ შეაჩეროთ ამ შეტყობინების ხელახლა ჩვენება."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "თუ თქვენ ახლახან შეცვალეთ პაროლი, შეგიძლიათ, გამოიყენოთ მონაცემების აღდგენის ტიპი თქვენი მონაცემების განსაბლოკად"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "თუ თქვენს ორგანიზაციას ჰყავს საზოგადოებრივი ფიგურები, მუშაობს სენსიტიურ მონაცემებზე ან შეიძლება გახდეს კიბერშეტევების სამიზნე, გირჩევთ ჩართოთ ${ PROTON_SENTINEL_NAME } ყველასთვის თქვენს ორგანიზაციაში."
@@ -11551,9 +11509,6 @@
       ],
       "Invited": [
         "მოწვეულია"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "როგორც ჩანს, ზოგიერთი თქვენი მონაცემი დაშიფრული და დაბლოკილია."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "სერვერის ქვეყნის შეცვლას 10 დღემდე სჭირდება, ასე რომ, დარწმუნდით, რომ თქვენი არჩევანი სწორია."
@@ -12075,9 +12030,6 @@
       "Please fill out this field.": [
         "გთხოვთ შეავსოთ ეს ველი."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "გაუფრთხილდით. დაგჭირდებათ თქვენს ანგარიშთან წვდომისთვის ან პაროლის შეცვლის შემთხვევაში მონაცემების გასაშიფრად."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "გთხოვთ, გაითვალისწინოთ, რომ თუ წაშლით ფილტრს ${ nameDeleted }, ჩვენ შევწყვეტთ ყველა იმ ავტომატიზებული მოქმედების დამუშავებას, რომელსაც ის იწვევს."
       ],
@@ -12209,9 +12161,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "აღდგენის ფრაზა გაცვლით ბაფერში დაკოპირდა"
-      ],
-      "Recovery phrase downloaded": [
-        "აღდგენის ფრაზა გადმოწერილია"
       ],
       "Recovery phrase has been disabled": [
         "აღსადგენი ფრაზა გათიშულია"
@@ -13171,9 +13120,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "ჩვენი რეკომენდაციაა, ორგანიზაციის წევრები გააფრთხილოთ და სთხოვოთ, თვითონ ჩართონ 2FA მანამდე, სანამ ამას ძალით გააკეთებთ."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "ჩვენ აღდგენის ინფორმაციას დაცულად შევინახავთ თქვენს სანდო მოწყობილობაზე, რათა მონაცემების დაკარგვაში ხელი შეგიშალოთ"
-      ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "ჩვენ მტკიცედ გირჩევთ ყველას, რომ ჩართონ აღდგენა აღდგენის ფრაზის საშუალებით."
       ],
@@ -13664,12 +13610,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "თქვენი აღდგენის ფაილი აღადგენს წვდომას ელფოსტაზე, კონტაქტებზე, ფაილებზე, პაროლებსა და თქვენს ანგარიშში არსებულ ნებისმიერ სხვა დაშიფრულ მონაცემზე პაროლის გადატვირთვის შემდეგ."
-      ],
-      "Your recovery phrase": [
-        "თქვენი აღდგენის ფრაზა"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "აღდგენის ფრაზა მითითებული მიმდევრობით დალაგებულ შემთხვევით არჩეულ 12 სიტყვას წარმოადგენს."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "თქვენი აღდგენის ფრაზა საშუალებას მოგცემთ შეხვიდეთ და აღადგინოთ თქვენი მონაცემები, თუ დაკარგავთ წვდომას თქვენს ${ BRAND_NAME } ანგარიშზე. იგი შედგება 12 სიტყვისგან და მოქმედებს როგორც სარეზერვო პაროლი."
@@ -14513,6 +14453,9 @@
       ],
       "App Settings": [
         "აპის პარამეტრები"
+      ],
+      "Applies:": [
+        "ეხება:"
       ],
       "Apply filter to existing emails": [
         "ფილტრის გადატარება არსებულ ელფოსტებზე"
@@ -16000,17 +15943,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "მოწყობილობაზე დაფუძნებული აღმოჩენა"
-      ],
       "Notification phone number": [
         "გაფრთხილების ტელეფონის ნომერი"
       ],
       "Recovery phone number": [
         "აღდგენის ტელეფონის ნომერი"
-      ],
-      "Recovery phrase": [
-        "აღდგენის ფრაზა"
       ],
       "Set recovery phone number": [
         "აღდგენის ტელეფონის ნომრის დაყენება"
@@ -16328,9 +16265,6 @@
       "How to share via email": [
         "როგორ გავაზიარო ელფოსტით"
       ],
-      "How to unlock data": [
-        "როგორ განვბლოკოთ მონაცემები"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "როგორ გამოვიყენოთ ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16354,9 +16288,6 @@
       ],
       "Learn more": [
         "გაიგეთ მეტი"
-      ],
-      "Learn more about data recovery": [
-        "შეიტყვეთ მეტი მონაცემების აღდგენის შესახებ"
       ],
       "Manage addresses": [
         "მართეთ მისამართები"
@@ -21305,146 +21236,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **გამორთეთ ტელეფონით აღდგენა**, რომ ხელი შეუშალოთ შემტევებს, თქვენი ანგარიში მოიპარონ."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **ჩართეთ აღდგენა ტელეფონით**, რომ აღიდგინოთ წვდომა თქვენს ანგარიშთან, თუ პაროლი დაგავიწყდათ."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } გამოიყენებს ამ მისამართს, რომ ყოველთვის გქონდეთ ყველა განახლება თქვენი ანგარიშის უსაფრთხოებასთან დაკავშირებით."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } გამოიყენებს ან მისამართს, რომ გამოგიგზავნოთ ჩამოყრის კოდები ელფოსტით, თუ პაროლის ჩამოყრას გადაწყვეტთ."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } გამოიყენებს ან ტელეფონის ნომერს, რომ გამოგიგზავნოთ ჩამოყრის კოდები SMS-ით, თუ პაროლის ჩამოყრას გადაწყვეტთ."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery }, რომ დარწმუნებული ბრძანდებოდეთ, რომ მონაცემების აღდგენა შესაძლებელია."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**გამორთეთ ანგარიშის ჩამოყრა ელფოსტისთ**, რომ ხელი შეუშალოთ შემტევებს, თქვენი ანგარიში მოიპარონ."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**ჩართეთ აღდგენა ელფოსტით**, რომ აღიდგინოთ წვდომა თქვენს ანგარიშთან, თუ პაროლი დაგავიწყდათ."
-      ],
-      "Account reset by email has been disabled": [
-        "ანგარიშის ჩამოყრა ელფოსტით გამორთულია"
-      ],
-      "Account reset by phone has been disabled": [
-        "ანგარიშის ჩამოყრა ტელეფონით გამორთულია"
-      ],
-      "Account safety review": [
-        "ანგარიშის უსაფრთხოების მიმოხილვა"
-      ],
-      "Add a phone number": [
-        "ტელეფონის ნომრის დამატება"
-      ],
-      "Add a recovery email": [
-        "აღდგენის ელფოსტის დამატება"
-      ],
-      "Add a recovery email address": [
-        "აღდგენის ელფოსტის მისამართის დამატება"
-      ],
-      "Add a recovery phone number": [
-        "აღდგენის ტელეფონის ნომრის დამატება"
-      ],
-      "Add an alternative email address": [
-        "ალტერნატიული ელფოსტის მისამართის დამატება"
-      ],
-      "Add an email": [
-        "ელ-ფოსტის დამატება"
-      ],
-      "Back to Safety Review": [
-        "უსაფრთხოების მიმოხილვაზე დაბრუნება"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "იმის გამო, რომ თქვენ გადატვირთეთ თქვენი პაროლი, თქვენი მიმდინარე აღდგენის ფრაზა შეიძლება გამოყენებულ იქნას მხოლოდ თქვენი პაროლის გადატვირთვამდე შექმნილი მონაცემების აღსადგენად."
-      ],
-      "Can be used to regain access to your account and data": [
-        "შეგიძლიათ, თქვენს ანგარიშზე და მონაცემებთან წვდომის აღსადგენად გამოიყენოთ"
-      ],
-      "Check account security": [
-        "ანგარიშის უსაფრთხოების შემოწმება"
-      ],
       "Code sent to ${ boldValue }": [
         "კოდი გაგზავნილია ${ boldValue }-სთან"
-      ],
-      "Continue to Safety Review": [
-        "გაგრძელება უსაფრთხოების მიმოხილვაზე"
-      ],
-      "Device-based recovery enabled": [
-        "მოწყობილობაზე დაფუძნებული აღდგენა ჩართულია"
-      ],
-      "Disable account reset by email": [
-        "ანგარიშის ელფოსტით ჩამოყრის გათიშვა"
-      ],
-      "Disable recovery by email": [
-        "ელფოსტით აღდგენის გათიშვა"
-      ],
-      "Disable recovery by phone": [
-        "ტელეფონით აღდგენის გამორთვა"
-      ],
-      "Download ${ size }": [
-        "${ size }-ის გადმოწერა"
-      ],
-      "Download your recovery phrase": [
-        "ჩამოტვირთეთ თქვენი აღდგენის ფრაზა"
-      ],
-      "Email address": [
-        "ელფოსტის მისამართი"
-      ],
-      "Enable device-based recovery": [
-        "მოწყობილობაზე დაფუძნებული აღდგენის ჩართვა"
-      ],
-      "Enable recovery by email": [
-        "ელფოსტით აღდგენის ჩართვა"
-      ],
-      "Enable recovery by phone": [
-        "ტელეფონით აღდგენის ჩართვა"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "მესმის, რომ ამ აღდგენის ფრაზით ვერ შევძლებ ამჟამად დაბლოკილი მონაცემების აღდგენას"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "თუ თქვენი ${ BRAND_NAME }-ის პაროლი დაგავიწყდათ და მისი ჩამოყრა გჭირდებათ, შემდეგ ჯერზე, როცა ამ მოწყობილობაზე ახალი პაროლით შემოხვალთ, თქვენს ${ BRAND_NAME }-ის ანგარიშზე სრული წვდომა აღგიდგებათ."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "თუ თქვენი ${ BRAND_NAME }-ის პაროლი დაგავიწყდათ და მისი ჩამოყრა გჭირდებათ, შემდეგ ჯერზე, როცა ამ მოწყობილობაზე ახალი პაროლით შემოხვალთ, თქვენს ${ BRAND_NAME }-ის ანგარიშზე სრული წვდომა აღგიდგებათ."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "თუ დაკარგავთ წვდომას თქვენს ${ BRAND_NAME } ანგარიშზე, თქვენი აღდგენის ფრაზა საშუალებას მოგცემთ შეხვიდეთ და აღადგინოთ თქვენი მონაცემები."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "თუ თქვენი ავტორიზაციის დეტალები დაკარგეთ და გნებავთ, ჩამოყაროთ თქვენი ანგარიში, **მნიშვნელოვანია**, რომ ორივე, **ანგარიშის აღდგენის და მონაცემების აღდდგენის მეთოდი** გქონდეთ ჩართული. სხვაგვარად, შეიძლება, დაკარგოთ წვდომა თქვენს ელფოსტასთან, კონტაქტებთან, ფაილებთან და პაროლებთან."
-      ],
-      "in case we need to contact you": [
-        "იმ შემთხვევაში, თუ თქვენთან დაკავშირება დაგვჭირდება"
       ],
       "Invalid code": [
         "არასწორი კოდი"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "ეს ერთად-ერთი გზაა, თქვენი ანგარიში სრულად აღადგინოთ, ასე რომ, დარწმუნდით, რომ ის დაცულ ადგილას გაქვთ შენახული."
-      ],
-      "Recovery email address": [
-        "აღდგენის ელფოსტის მისამართი"
-      ],
-      "Recovery phone number": [
-        "აღდგენის ტელეფონის ნომერი"
-      ],
       "Review account safety": [
         "ანგარიშის უსაფრთხოების გადახედვა"
-      ],
-      "Safeguard account now": [
-        "დაიცავით ანგარიში ახლავე"
-      ],
-      "Safeguard your account": [
-        "დაიცავით თქვენ ანგარიში"
-      ],
-      "Safeguard your account further": [
-        "დაიცავით თქვენ ანგარიში უფრო მეტად"
       ],
       "Safety review": [
         "უსაფრთხოების მიმოხილვა"
@@ -21452,194 +21251,8 @@
       "Send a new code": [
         "ახალი კოდის გაგზავნა"
       ],
-      "Show more": [
-        "მეტის ჩვენება"
-      ],
-      "Take action to secure your account": [
-        "ქმედებები თქვენი ანგარიშის დასაცავად"
-      ],
-      "There was an error generating your recovery phrase": [
-        "თქვენი აღდგენის ფრაზის გენერირებისას მოხდა შეცდომა"
-      ],
-      "There was an error verifying your email": [
-        "შეცდომა თქვენი ელფოსტის გადამოწმებისას"
-      ],
-      "There was an error verifying your recovery email": [
-        "შეცდომა თქვენი აღდგენის ელფოსტის გადამოწმებისას"
-      ],
-      "There was an error verifying your recovery phone": [
-        "შეცდომა თქვენი აღდგენის ტელეფონის გადამოწმებისას"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "თქვენი მონაცემები ავტომატურად აღსადგენად, როცა სანდო მოწყობილობაში შედიხართ"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "იმისათვის, რომ დარწმუნდეთ, რომ ელფოსტის მისამართი თქვენია, შეიყვანეთ გადამოწმების კოდი, რომელიც გაგზავნილია მისამართზე ${ boldEmail }."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "იმისათვის, რომ დავრწმუნდეთ, რომ ტელეფონის ნომერი თქვენია, შეიყვანეთ გადამოწმების კოდი, რომელიც გაგზავნილია მისამართზე ${ boldPhoneNumber }."
-      ],
-      "to prevent attackers from taking over your account": [
-        "შემტევებისთვის თქვენი ანგარიშის მოპარვის ასაკრძალად"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "ანგარიშის და მონაცემების აღსადგენად, თუ ვერ შედიხართ"
-      ],
-      "to recover your account if you're ever locked out": [
-        "ანგარიშის აღსადგენად, თუ ვერ შედიხართ"
-      ],
       "update it now": [
         "განაახლეთ ახლავე"
-      ],
-      "Update your recovery phrase": [
-        "განაახლეთ თქვენი აღდგენის ფრაზა"
-      ],
-      "Update your recovery phrase?": [
-        "განაახლოთ თქვენი აღდგენის ფრაზა?"
-      ],
-      "Verify": [
-        "გადამოწმება"
-      ],
-      "Verify your email address": [
-        "გადაამოწმეთ თქვენი ელფოსტის მისამართი"
-      ],
-      "Verify your phone number": [
-        "დაადასტურეთ ტელ. ნომერი"
-      ],
-      "Verify your recovery email address": [
-        "გადაამოწმეთ თქვენი აღდგენის ელფოსტის მისამართი"
-      ],
-      "Verify your recovery phone number": [
-        "გადაამოწმეთ თქვენი აღდგენის ტელეფონის ნომერი"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "თქვენი აღდგენის ფრაზის გენერირებისას მოხდა შეცდომა. გთხოვთ, სცადოთ მოგვიანებით ან დაუკავშირდეთ მხარდაჭერას, თუ პრობლემა კვლავ განმეორდება."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "თქვენი ელფოსტის გადამოწმებისას მოხდა შეცდომა. გთხოვთ, სცადოთ მოგვიანებით, ან დაუკავშირდეთ მხარდაჭერას, თუ პრობლემა კვლავ განმეორდება."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "აღმოჩენილია შეცდომა თქვენი აღდგენის ელფოსტის გადამოწმებისას. სცადეთ მოგვიანებით, ან, თუ შეცდომა არ გაქრა, დაუკავშირდით ჩვენი მხარდაჭერის გუნდს."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "აღმოჩენილია შეცდომა თქვენი აღდგენის ტელეფონის გადამოწმებისას. სცადეთ მოგვიანებით, ან, თუ შეცდომა არ გაქრა, დაუკავშირდით ჩვენი მხარდაჭერის გუნდს."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "როცა მოწყობილობით აღდგენას ჩართავთ, ${ BRAND_NAME } თქვენი ბრაუზერის ვების საცავი დაშფირულ მარქაფის ბრელოკს შეინახავს ფაილის სახით."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "არსებობს რისკი, თქვენს ანგარითან და მონაცემებთან წვდომა დაკარგოთ"
-      ],
-      "You are at risk of losing access to your data.": [
-        "არსებობს რისკი, თქვენს მონაცემებთან წვდომა დაკარგოთ"
-      ],
-      "You can disable this at any time.": [
-        "გათიშვა ნებისმიერ დროს შეგიძლიათ."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "ამ აღდგენის ფრაზაში მოცემული აღდგენის ფრაზა შეგიძლიათ გამოიყენოთ თქვენი ანგარიშის სრულად აღსადგენად პაროლის გადატვირთვისას, ამიტომ დარწმუნდით, რომ ინახავთ მას უსაფრთხო ადგილას."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "თუ პაროლი დაგავიწყდათ თქვენს ანგარიშთან აღსადგენად, შეგიძლიათ, აღდგენის ელფოსტა გამოიყენოთ."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "თუ პაროლი დაგავიწყდათ თქვენს ანგარიშთან წვდომის აღსადგენად, შეგიძლიათ, აღდგენის ელფოსტა გამოიყენოთ."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "თუ პაროლი დაგავიწყდათ თქვენს ანგარიშთან წვდომის აღსადგენად, შეგიძლიათ, აღდგენის ტელეფონი გამოიყენოთ."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "თქვენ ადრე ჩამოტვირთეთ აღდგენის ფრაზა. ახლის ჩამოტვირთვა **გააუქმებს ძველს**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "გაქვთ რეკომენდებული ქმედებები, რიმ კიდევ უფრო მეტად დაიცვათ თქვენი ანგარიში."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "გაქვთ რეკომენდებული ქმედებები, რიმ დაიცვათ თქვენი ანგარიში."
-      ],
-      "You have recommended actions.": [
-        "გაქვთ რეკომენდებული ქმედებები."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "ამ მისამართს თქვენი ანგარიშის ჩამოსაყრელად ვეღარ გამოიყენებთ."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "ამ ტელეფონის ნომერს თქვენი ანგარიშის ჩამოსაყრელად ვეღარ გამოიყენებთ."
-      ],
-      "Your account and data can be recovered": [
-        "თქვენი ანგარიშის და მონაცემების აღდგენა შესაძლებელია"
-      ],
-      "Your account and data can be recovered.": [
-        "თქვენი ანგარიშისა და მონაცემების აღდგენა შესაძლებელია."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "თქვენი ანგარიშისა და მონაცემების აღდგენა შესაძლებელია. შეამოწმეთ, გაქვთ ჯერ კიდევ წვდომა თქვენი აღდგენის მეთოდებთან, თუ აღარ."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "თქვენი ანგარიშის და მონაცემების აღდგენა შესაძლებელია. ასევე, კიდევ გაქვთ ქმედებები, რათა თქვენი ანგარიში კიდევ უფრო მეტად დაიცვათ."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "თქვენი მონაცემებისა და ანგარიშის აღდგენა შესაძლებელია. გაქვთ რეკომენდებული ქმედებები."
-      ],
-      "Your account is fully secure.": [
-        "თქვენი ანგარიში სრულად დაცულია."
-      ],
-      "Your account is secure.": [
-        "თქვენი ანგარიში დაცულია."
-      ],
-      "Your email address is:": [
-        "თქვენი ელფოსტის მისამართია:"
-      ],
-      "Your email is set": [
-        "თქვენი ელფოსტა დაყეენბულია"
-      ],
-      "Your recovery email": [
-        "თქვენი აღდგენის ელფოსტა"
-      ],
-      "Your recovery email address is:": [
-        "თქვენი აღდგენის ელფოსტის მისამართია:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "თქვენი აღდგენის ტელეფონი და ელფოსტა **მხოლოდ თქვენს ანგარიშთან წვდომისთვის შეგიძლიათ, გამოიყენოთ**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "თქვენი აღდგენის ელფოსტა **მხოლოდ თქვენს ანგარიშთან წვდომისთვის შეგიძლიათ, გამოიყენოთ**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "თქვენი აღდგენის ელფოსტა შეიძლება ბოროტად იქნას გამოყენებული თავდამსხმელების მიერ თქვენი ანგარიშის ხელში ჩასაგდებად. ${ disableEmail } თქვენი ანგარიშის უსაფრთხოების გასაზრდელად."
-      ],
-      "Your recovery email has been enabled": [
-        "თქვენი აღდგენის ელფოსტა ჩართულია"
-      ],
-      "Your recovery email is set": [
-        "თქვენი აღდგენის ელფოსტა დაყენებულია"
-      ],
-      "Your recovery methods": [
-        "თქვენი აღდგენის მეთოდები"
-      ],
-      "Your recovery phone": [
-        "თქენი აღდგენის ტელეფონი"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "თქვენი აღდგენის ტელეფონი **მხოლოდ თქვენს ანგარიშთან წვდომისთვის შეგიძლიათ, გამოიყენოთ**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "თქვენი აღდგენის ტელეფონი შეიძლება ბოროტად იქნას გამოყენებული თავდამსხმელების მიერ თქვენი ანგარიშის ხელში ჩასაგდებად. ${ disablePhone } თქვენი ანგარიშის უსაფრთხოების გასაზრდელად."
-      ],
-      "Your recovery phone has been enabled": [
-        "თქქვენი აღდგენი ტელეფონი ჩართულია"
-      ],
-      "Your recovery phone is set": [
-        "თქვენი აღდგენის ტელეფონი დაყენებულია"
-      ],
-      "Your recovery phone number is:": [
-        "თქვენი აღდგენის ტელეფონის ნომერია:"
-      ],
-      "Your recovery phrase": [
-        "თქვენი აღდგენის ფრაზა"
-      ],
-      "Your recovery phrase is set": [
-        "თქვენი აღდგენის ფრაზა დაყენებულია"
       ]
     },
     "safety_review": {
@@ -22461,9 +22074,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "პაროლის შეცვლის ასაკრძალად აღდგენის მეთოდი დაყენებული უნდა გქონდეთ."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "იმისათვის, რომ დაიცვათ თქვენი ანგარიში და მონაცემები, პაროლის ჩამოყრა, ანგარიშის მორგების ფანჯრიდან შეგიძლიათ ვებ აპლიკაციაში."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -23707,6 +23317,12 @@
     "State": {
       "Canceling your subscription, please wait": [
         "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
+      ],
+      "Disabled": [
+        "გათიშულია"
+      ],
+      "Enabled": [
+        "ჩართულია"
       ]
     },
     "Status": {
@@ -25289,6 +24905,9 @@
       "Also in your plan": [
         "ასევე თქვენს გეგმაშია"
       ],
+      "Always-on VPN": [
+        "ყოველთვის-ჩართული VPN"
+      ],
       "Amount": [
         "რაოდენობა"
       ],
@@ -25557,6 +25176,9 @@
       "Created": [
         "შექმნილია"
       ],
+      "Created!": [
+        "შეიქმნა!"
+      ],
       "Creating user accounts": [
         "მომხმარებლის ანგარიშების შექმნა"
       ],
@@ -25604,9 +25226,6 @@
       ],
       "Data collection": [
         "მონაცემთა შეგროვება"
-      ],
-      "Data locked": [
-        "მონაცემები დაბლოკილია"
       ],
       "Data recovery": [
         "მონაცემების აღდგენა"
@@ -25978,9 +25597,6 @@
       ],
       "Generate missing keys": [
         "ნაკლული გასაღებების გენერაცია"
-      ],
-      "Generate new recovery phrase?": [
-        "აღდგენის ახალი ფრაზის გენერაცია?"
       ],
       "Generate SMTP token": [
         "SMTP კოდის გენერაცია"
@@ -27638,9 +27254,6 @@
         "ვერ მოხერხდა ადმინისტრატორის წვდომის ჩართვა ${ n } მომხმარებლისთვის",
         "ვერ მოხერხდა ადმინისტრატორის წვდომის ჩართვა ${ n } მომხმარებლისთვის"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "ვერ ჩავრთე ადმინისტრატორის წვდომა: ${ error }"
-      ],
       "Enable admin access?": [
         "ჩავრთო ადმინის წვდომა?"
       ],
@@ -27903,9 +27516,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "ადმინისტრატორებს კონფიდენციალური მომხმარებლების მონაცემებთან წვდომა არ აქვთ"
       ],
@@ -27914,21 +27524,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "მოსაწვევი გაგზავნილია. ველოდები პასუხს მოწვეული წევრისგან"
-      ],
-      "Invite sent": [
-        "მოსაწვევი გაგზავნილია"
-      ],
-      "It's you": [
-        "თქვენ"
-      ],
-      "Pending admin access": [
-        "ველოდები ადმინისტრატორის წვდომას"
-      ],
-      "Private": [
-        "პირადი"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "თქვენი იდენტიფიკატორების მომწოდებლის მიერ გამოყოფილი SSO მომხმარებელი"

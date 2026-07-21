@@ -135,9 +135,6 @@
       "Add domain": [
         "Lisää verkkotunnus"
       ],
-      "Add email address": [
-        "Lisää sähköpostiosoite"
-      ],
       "Add external address": [
         "Lisää ulkoinen osoite"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "Lisää PayPal"
-      ],
-      "Add phone number": [
-        "Lisää puhelinnumero"
       ],
       "Add public holidays": [
         "Lisää yleiset vapaapäivät"
@@ -753,9 +747,6 @@
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
       ],
-      "Enable device-based recovery": [
-        "Käytä laitepohjaista palautusta"
-      ],
       "Enable multi-user support": [
         "Ota usean käyttäjän tuki käyttöön"
       ],
@@ -836,9 +827,6 @@
       ],
       "Generate password": [
         "Luo salasana"
-      ],
-      "Generate recovery phrase": [
-        "Luo palautuslauseke"
       ],
       "Generate token": [
         "Luo tunniste"
@@ -1868,9 +1856,6 @@
       ],
       "View plans details": [
         "Näytä tilauksen tiedot"
-      ],
-      "View recovery settings": [
-        "Näytä palautusasetukset"
       ],
       "View recovery setup details": [
         "Näytä palautusasennuksen tiedot"
@@ -6762,9 +6747,6 @@
       "Add recovery contact": [
         "Lisää palautusyhteyshenkilö"
       ],
-      "Add recovery method": [
-        "Lisää palautustapa"
-      ],
       "Added on ${ formattedDate }": [
         "Lisätty ${ formattedDate }"
       ],
@@ -7006,14 +6988,8 @@
       "Subscription expired": [
         "Tilaus vanhentunut"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "He lisäsivät minut luotetuksi yhteystiedoksi. Voin käyttää heidän tiliään hätätilanteessa."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "He lisäsivät teidät luotetuksi yhteystiedoksi. Voitte käyttää heidän tiliään hätätilanteessa."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "He voivat pyytää pääsyä tililleni hätätilanteessa."
       ],
       "They may ask to access your account in case of an emergency.": [
         "He voivat pyytää pääsyä tilillenne hätätilanteessa."
@@ -7033,9 +7009,6 @@
       ],
       "Time required before automatically granting them access": [
         "Vaadittu aika ennen automaattisen pääsyn myöntämistä heille."
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "Palautustietojen lisäämiseksi, sinulla on oltava palautussähköpostiosoite tai puhelinnumero."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Poistakaa käytöstä tämä palautusmenetelmä poistamalla kaikki palautusyhteyshenkilönne."
@@ -7087,12 +7060,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Voit poistaa heidän käyttöoikeutensa milloin tahansa palauttaaksesi tilisi yksinhallinnan."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "Teitä ei ole vielä nimetty kenenkään palautusyhteyshenkilöksi."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "Teitä ei ole vielä nimetty kenenkään hätäyhteystiedoksi."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Olet saavuttanut ${ limit } hätäyhteyshenkilön enimmäismäärän.",
@@ -7580,6 +7547,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Aseta ensin palautus-/ilmoitusosoite"
+      ],
+      "Please set up your organization before adding a company.": [
+        "Määritä organisaatiosi tiedot ennen kuin lisäät yrityksen."
       ],
       "Please try again in a few moments.": [
         "Yritä hetken kuluttua uudelleen."
@@ -10186,12 +10156,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Yksittäisellä puhelinnumerolla voidaan vahvistaa ainoastaan yksi ${ BRAND_NAME }-tili"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Palautustiedosto mahdollistaa tietojesi avauksen ja tarkastelun tilin palautuksen jälkeen"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Palautuslauseke mahdollistaa pääsyn tilillesi ja salattujen viestiesi palautuksen mikäli unohdat salasanasi"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
@@ -10206,9 +10170,6 @@
       ],
       "Account successfully updated": [
         "Tili on päivitetty"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivoi vähintään yksi tietojen palautustapa, jotta pääset edelleen ${ BRAND_NAME }-tilisi sisältöön, jos kadotat salasanasi."
       ],
       "Active": [
         "Aktiiviset"
@@ -11237,9 +11198,6 @@
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Uuden palautuslauseen luominen poistaa nykyisen palautuslauseenne käytöstä."
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Uuden palautuslausekkeen luonti poistaa vanhan lauseen käytöstä."
-      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Hanki ${ AUTHENTICATOR_APP_NAME } kaikkiin laitteisiisi."
       ],
@@ -11363,9 +11321,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Jos järjestelmän aikavyöhyke ei vastaa nykyistä aikavyöhykeasetusta, teitä pyydetään päivittämään se (enintään kerran päivässä)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Jos tämä johtuu vanhasta salasanan nollauksesta, voit estää viestiä näkymästä uudelleen."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
       ],
@@ -11413,9 +11368,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Jos olette hiljattain nollanneet salasananne, voitte ${ recoveryMethodLink } avata tietojenne lukituksen. Jos tämä johtuu vanhasta salasanan nollauksesta, voitte estää viestin näyttämisen uudelleen."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Jos olet hiljattain nollannut salasanasi, voit avata tietosi tilisi tietojenpalautustapojen avulla"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Jos organisaatioonne kuuluu julkisuuden henkilöitä, käsittelette arkaluonteisia tietoja tai saatatte joutua kyberhyökkäysten kohteeksi, suosittelemme lämpimästi ottamaan käyttöön ${ PROTON_SENTINEL_NAME } -palvelun kaikille organisaatiossanne."
@@ -11551,9 +11503,6 @@
       ],
       "Invited": [
         "Kutsuttu"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "Osa tiedoistasi näyttää olevan salattu ja lukittu."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Palvelimen maan vaihtaminen kestää 10 päivää, joten varmista, että valintasi on oikein."
@@ -11840,8 +11789,14 @@
       "No addresses exist": [
         "Osoitteita ei ole"
       ],
+      "No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.": [
+        "Laskutusyksityiskohtia ei ole vielä saatavilla. Laskutusjaksoittain jaotellut tiedot näkyvät tässä. Kun ne ovat saatavilla, voit ladata ne CSV-tiedostona."
+      ],
       "No card required": [
         "Korttia ei vaadita"
+      ],
+      "No companies yet. Start by creating a new company.": [
+        "Yrityksiä ei ole vielä. Aloita luomalla uusi yritys."
       ],
       "No connected addresses.": [
         "Ei yhdistettyjä osoitteita."
@@ -12075,9 +12030,6 @@
       "Please fill out this field.": [
         "Täytä tämä kenttä."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Pidä se turvassa, koska tarvitset sitä päästäksesi tilillesi ja purkaaksesi tietojesi salauksen, jos joudut joskus nollaamaan salasanasi."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Huomioittehan, että jos poistatte suodattimen ${ nameDeleted }, lopetamme kaikkien sen käynnistämien automaattisten toimintojen käsittelyn."
       ],
@@ -12209,9 +12161,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Palautuslauseke kopioitiin leikepöydälle"
-      ],
-      "Recovery phrase downloaded": [
-        "Palautuslauseke ladattiin"
       ],
       "Recovery phrase has been disabled": [
         "Palautuslause on poistettu käytöstä"
@@ -13171,9 +13120,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Suosittelemme, että ilmoitat asiasta organisaation jäsenille ja pyydät heitä ottamaan 2FA:n käyttöön omilla tileillään ennen 2FA:n käytön pakottamista."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Palautustiedot säilytetään tietojen menetyksen ehkäisemiseksi luottamallasi laitteella"
-      ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Suosittelemme vahvasti, että kaikki ottavat käyttöön palautuksen palautuslauseen avulla."
       ],
@@ -13664,12 +13610,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Palautustiedostonne palauttaa pääsyn sähköposteihin, yhteystietoihin, tiedostoihin, salasanoihin ja kaikkiin muihin tilillänne oleviin salattuihin tietoihin salasanan nollauksen jälkeen."
-      ],
-      "Your recovery phrase": [
-        "Palautuslauseesi"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Palautuslausekkeesi on sarja 12 satunnaisesti luotua sanaa tietyssä järjestyksessä."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "Palautuslauseenne avulla voitte kirjautua sisään ja palauttaa tietonne, jos teidät lukitaan ulos ${ BRAND_NAME }-tililtänne. Se koostuu 12 sanasta ja toimii kuin varasalasana."
@@ -14687,6 +14627,12 @@
       ],
       "City": [
         "Kaupunki"
+      ],
+      "Client": [
+        "Ohjelma"
+      ],
+      "Client version": [
+        "Pääteohjelman versio"
       ],
       "Code is 6 digits without spaces": [
         "Koodi sisältää 6 numeroa ilman välilyöntejä"
@@ -16000,17 +15946,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Laitteistopohjainen palautus"
-      ],
       "Notification phone number": [
         "Ilmoituspuhelinnumero"
       ],
       "Recovery phone number": [
         "Palautusnumero"
-      ],
-      "Recovery phrase": [
-        "Palautuslauseke"
       ],
       "Set recovery phone number": [
         "Aseta palautuspuhelinnumero"
@@ -16328,9 +16268,6 @@
       "How to share via email": [
         "Miten jaat sähköpostitse"
       ],
-      "How to unlock data": [
-        "Miten tiedot avataan"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Miten ${ DARK_WEB_MONITORING_NAME } toimii"
       ],
@@ -16354,9 +16291,6 @@
       ],
       "Learn more": [
         "Lue lisää"
-      ],
-      "Learn more about data recovery": [
-        "Lue lisää tietojen palautuksesta"
       ],
       "Manage addresses": [
         "Hallitse osoitteita"
@@ -21305,146 +21239,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **Poistakaa käytöstä tilin palauttaminen puhelimitse** estääksenne hyökkääjiä kaappaamasta tiliänne."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **Ota käyttöön palautus puhelimitse** päästäksesi takaisin tilillesi, jos unohdat salasanasi."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } käyttää tätä osoitetta pitääkseen teidät ajan tasalla tilinne turvallisuudesta."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } lähettää palautuskoodin sähköpostitse tähän osoitteeseen, kun nollaat salasanasi."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } lähettää palautuskoodin tekstiviestitse tähän numeroon, kun nollaat salasanasi."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } varmistaaksesi, että tietosi voidaan palauttaa."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**Poistakaa käytöstä tilin palauttaminen sähköpostitse** estääksenne hyökkääjiä kaappaamasta tiliänne."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Ota käyttöön palautus sähköpostitse** päästäksesi takaisin tilillesi, jos unohdat salasanasi."
-      ],
-      "Account reset by email has been disabled": [
-        "Tilin palauttaminen sähköpostitse on poistettu käytöstä"
-      ],
-      "Account reset by phone has been disabled": [
-        "Tilin palauttaminen puhelimitse on poistettu käytöstä"
-      ],
-      "Account safety review": [
-        "Tilisi turvallisuuskatsaus"
-      ],
-      "Add a phone number": [
-        "Lisää puhelinnumero"
-      ],
-      "Add a recovery email": [
-        "Lisää palautusosoite"
-      ],
-      "Add a recovery email address": [
-        "Lisää palautusosoite"
-      ],
-      "Add a recovery phone number": [
-        "Lisää palautusnumero"
-      ],
-      "Add an alternative email address": [
-        "Lisää vaihtoehtoinen sähköpostiosoite"
-      ],
-      "Add an email": [
-        "Lisää sähköpostiosoite"
-      ],
-      "Back to Safety Review": [
-        "Takaisin turvallisuuskatsaukseen"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "Koska nollasitte salasananne, nykyistä palautuslauseettanne voidaan käyttää vain ennen salasanan nollausta luotujen tietojen palauttamiseen."
-      ],
-      "Can be used to regain access to your account and data": [
-        "Voidaan käyttää palauttamaan pääsysi tilillesi ja tietoihisi"
-      ],
-      "Check account security": [
-        "Tarkista tilin turvallisuus"
-      ],
       "Code sent to ${ boldValue }": [
         "Koodi lähetettiin kohteeseen ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Jatka turvallisuuskatsaukseen"
-      ],
-      "Device-based recovery enabled": [
-        "Laitepohjainen palautus otettiin käyttöön"
-      ],
-      "Disable account reset by email": [
-        "Poista käytöstä tilin palauttaminen sähköpostitse"
-      ],
-      "Disable recovery by email": [
-        "Poista palautus sähköpostitse käytöstä"
-      ],
-      "Disable recovery by phone": [
-        "Poista palautus puhelimitse käytöstä"
-      ],
-      "Download ${ size }": [
-        "Lataa ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "Lataa palautuslauseenne"
-      ],
-      "Email address": [
-        "Sähköpostiosoite"
-      ],
-      "Enable device-based recovery": [
-        "Käytä laitepohjaista palautusta"
-      ],
-      "Enable recovery by email": [
-        "Ota palautus sähköpostitse käyttöön"
-      ],
-      "Enable recovery by phone": [
-        "Ota palautus puhelimitse käyttöön"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Ymmärrän, etten voi palauttaa tällä hetkellä lukittuja tietoja tällä palautuslauseella"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Jos unohdat ${ BRAND_NAME } -salasanasi ja sinun on nollattava se, kirjautuessasi seuraavan kerran sisään tällä laitteella uutta salasanaasi käyttäen, täysi pääsysi ${ BRAND_NAME } -tilille palautetaan."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Jos unohdat ${ BRAND_NAME } -salasanasi ja sinun on nollattava se, kirjautuessasi seuraavan kerran sisään tällä laitteella uutta salasanaasi käyttäen, täysi pääsysi ${ BRAND_NAME } -tilille palautetaan."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Jos teidät lukitaan ulos ${ BRAND_NAME }-tililtänne, palautuslauseenne antaa teille mahdollisuuden kirjautua sisään ja palauttaa tietonne."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Jos kadotat kirjautumistietosi ja joudut nollaamaan tilisi, **on erittäin tärkeää**, että olet määrittänyt **tilin ja tietojen palautustavat**, tai et välttämättä pääse käsiksi sähköposteihisi, yhteystietoihisi, tiedostoihisi tai salasanoihisi."
-      ],
-      "in case we need to contact you": [
-        "siltä varalta, että meidän on otettava teihin yhteyttä"
       ],
       "Invalid code": [
         "Virheellinen koodi"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Se on ainoa tapa palauttaa tilisi kokonaan, joten varmista, että säilytät sen jossakin turvallisessa paikassa."
-      ],
-      "Recovery email address": [
-        "Palautusosoite"
-      ],
-      "Recovery phone number": [
-        "Palautunumero"
-      ],
       "Review account safety": [
         "Tarkista tiliturvallisuus"
-      ],
-      "Safeguard account now": [
-        "Suojaa tilisi nyt"
-      ],
-      "Safeguard your account": [
-        "Suojaa tilisi"
-      ],
-      "Safeguard your account further": [
-        "Suojaa tilisi paremmin"
       ],
       "Safety review": [
         "Turvallisuuskatsaus"
@@ -21452,194 +21254,8 @@
       "Send a new code": [
         "Lähetä uusi koodi"
       ],
-      "Show more": [
-        "Näytä lisää"
-      ],
-      "Take action to secure your account": [
-        "Toimi suojataksesi tilisi"
-      ],
-      "There was an error generating your recovery phrase": [
-        "Tapahtui virhe palautuslauseenne luonnissa"
-      ],
-      "There was an error verifying your email": [
-        "Sähköpostiosoitteen vahvistamisessa tapahtui virhe"
-      ],
-      "There was an error verifying your recovery email": [
-        "Virhe vahvistettaessa palautusosoitettasi"
-      ],
-      "There was an error verifying your recovery phone": [
-        "Virhe vahvistettaessa palautusnumeroasi"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "palauttaaksesi tietosi automaattisesti, kun kirjaudut sisään luotetulla laitteella"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Varmistaaksesi sähköpostiosoitteen kuuluvan sinulle, syötä osoitteeseen ${ boldEmail } lähetetty vahvistuskoodi."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Varmistaaksesi puhelinnumeron kuuluvan sinulle, syötä numeroon ${ boldPhoneNumber } lähetetty vahvistuskoodi."
-      ],
-      "to prevent attackers from taking over your account": [
-        "estääksenne hyökkääjiä kaappaamasta tiliänne"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "palauttaaksesi tilisi ja tietosi, jos sinut lukitaan ulos"
-      ],
-      "to recover your account if you're ever locked out": [
-        "palauttaaksesi tilisi, jos sinut lukitaan ulos"
-      ],
       "update it now": [
         "päivitä se nyt"
-      ],
-      "Update your recovery phrase": [
-        "Päivitä palautuslauseenne"
-      ],
-      "Update your recovery phrase?": [
-        "Päivitetäänkö palautuslauseenne?"
-      ],
-      "Verify": [
-        "Vahvista"
-      ],
-      "Verify your email address": [
-        "Vahvista sähköpostiosoitteesi"
-      ],
-      "Verify your phone number": [
-        "Vahvista puhelinnumerosi"
-      ],
-      "Verify your recovery email address": [
-        "Vahvista palautusosoitteesi"
-      ],
-      "Verify your recovery phone number": [
-        "Vahvista palautusnumerosi nyt"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "Kohtasimme virheen luodessamme palautuslauseettanne. Yrittäkää myöhemmin uudelleen tai ottakaa yhteyttä tukeen, jos ongelma jatkuu."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Sähköpostiosoitteenne vahvistuksessa tapahtui virhe. Yrittäkää myöhemmin uudelleen tai ottakaa yhteyttä tukeen, jos ongelma jatkuu."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Palautussähköpostisi vahvistuksessa tapahtui virhe. Yritä myöhemmin uudelleen tai ota yhteyttä tukeen, jos ongelma jatkuu."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Palautuspuhelimesi vahvistuksessa tapahtui virhe. Yritä myöhemmin uudelleen tai ota yhteyttä tukeen, jos ongelma jatkuu."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "Ottaessasi laitepohjaisen palautuksen käyttöön, ${ BRAND_NAME } tallentaa avainketjusi salatun varmuuskopion tiedostona selaimesi verkkotallennustilaan."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Olet vaarassa menettää pääsyn tilillesi ja tietoihisi."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Olet vaarassa menettää pääsyn tietoihisi."
-      ],
-      "You can disable this at any time.": [
-        "Voit poistaa tämän käytöstä milloin tahansa."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Voitte käyttää tämän palautuslauseen sisältämää palautuslusetta palauttaaksenne tilinne täysin, kun nollaatte salasananne, joten pitäkää se varmasti jossain turvallisessa paikassa."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "Voitte käyttää sähköpostianne päästäksenne takaisin tilillenne, jos unohdatte salasananne."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Voit käyttää palautussähköpostia päästäksesi takaisin tilillesi, jos unohdat salasanasi."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "Voit käyttää palautuspuhelinta päästäksesi takaisin tilillesi, jos unohdat salasanasi."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "Olette aiemmin ladanneet palautuslauseen. Uuden lataaminen **poistaa vanhan käytöstä**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Teille on suositeltuja toimintoja tilinne suojauksen parantamiseksi edelleen."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "Teille on suositeltuja toimintoja tilinne suojaamiseksi."
-      ],
-      "You have recommended actions.": [
-        "Sinulle on suositeltuja toimintoja."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "Ette voi enää käyttää tätä osoitetta tilinne palauttamiseen."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "Ette voi enää käyttää tätä puhelinnumeroa tilinne palauttamiseen."
-      ],
-      "Your account and data can be recovered": [
-        "Tilisi ja tietosi voidaan palauttaa"
-      ],
-      "Your account and data can be recovered.": [
-        "Tilinne ja tietonne voidaan palauttaa."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Tilisi ja tietosi voidaan palauttaa. Tarkista, voitko yhä käyttää palautustapojasi."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Tilisi ja tietosi voidaan palauttaa. Sinulle on suositeltuja toimintoja tilisi suojauksen parantamiseksi."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "Tilisi ja tietosi voidaan palauttaa. Sinulle on suositeltuja toimintoja."
-      ],
-      "Your account is fully secure.": [
-        "Tilisi on täysin suojattu."
-      ],
-      "Your account is secure.": [
-        "Tilisi on suojattu."
-      ],
-      "Your email address is:": [
-        "Sähköpostiosoitteesi on:"
-      ],
-      "Your email is set": [
-        "Sähköpostiosoitteesi on asetettu"
-      ],
-      "Your recovery email": [
-        "Palautusosoitteesi"
-      ],
-      "Your recovery email address is:": [
-        "Palautusosoitteesi on:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "Palautussähköpostisi ja -puhelimesi voivat **palauttaa vain pääsyn tilillesi**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "Palautussähköpostisi voi **palauttaa vain pääsyn tilillesi**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Hyökkääjät voivat käyttää palautussähköpostianne väärin ottaakseen tilinne haltuunsa. Toiminto ${ disableEmail } tilinne turvallisuuden parantamiseksi."
-      ],
-      "Your recovery email has been enabled": [
-        "Palautusosoitteesi on otettu käyttöön"
-      ],
-      "Your recovery email is set": [
-        "Palautusosoitteesi on asetettu"
-      ],
-      "Your recovery methods": [
-        "Palautustapasi"
-      ],
-      "Your recovery phone": [
-        "Palautusnumerosi"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "Palautuspuhelimesi voi **palauttaa vain pääsyn tilillesi**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Hyökkääjät voivat käyttää palautuspuhelintanne väärin ottaakseen tilinne haltuunsa. Toiminto ${ disablePhone } tilinne turvallisuuden parantamiseksi."
-      ],
-      "Your recovery phone has been enabled": [
-        "Palautusnumerosi on otettu käyttöön"
-      ],
-      "Your recovery phone is set": [
-        "Palautusnumerosi on asetettu"
-      ],
-      "Your recovery phone number is:": [
-        "Palautusnumerosi on:"
-      ],
-      "Your recovery phrase": [
-        "Palautuslauseenne"
-      ],
-      "Your recovery phrase is set": [
-        "Palautuslauseenne on asetettu"
       ]
     },
     "safety_review": {
@@ -22461,9 +22077,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Salasanan nollauksen estäminen edellyttää palautustavan määritystä."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Voit parantaa tilisi turvallisuutta ja suojata tietojasi pyytämällä salasanan nollausta verkkosovelluksen tiliasetuksissa."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -25605,9 +25218,6 @@
       "Data collection": [
         "Tietojen keräys"
       ],
-      "Data locked": [
-        "Tiedot on lukittu"
-      ],
       "Data recovery": [
         "Tietojen palautus"
       ],
@@ -25978,9 +25588,6 @@
       ],
       "Generate missing keys": [
         "Luo puuttuvat avaimet"
-      ],
-      "Generate new recovery phrase?": [
-        "Luodaanko uusi palautuslauseke?"
       ],
       "Generate SMTP token": [
         "Luo SMTP-tunniste"
@@ -27638,8 +27245,8 @@
         "${ n }:lle käyttäjälle ei voitu antaa järjestelmänvalvojan oikeuksia",
         "${ n }:lle käyttäjälle ei voitu antaa järjestelmänvalvojan oikeuksia"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Hallintaoikeutta ei voitu myöntää: ${ error }"
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Hallintaoikeutta ei voitu myöntää: ${ unprivatizationResult.error }"
       ],
       "Enable admin access?": [
         "Myönnetäänkö hallintaoikeus?"
@@ -27710,6 +27317,9 @@
       ],
       "View request": [
         "Näytä pyyntö"
+      ],
+      "Waiting for admin approval": [
+        "Odotetaan järjestelmänvalvojan hyväksyntää"
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Voit ${ reject } pyynnön, jos et halua jatkaa."
@@ -27903,9 +27513,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin"
       ],
@@ -27915,20 +27522,14 @@
       "Invitation sent, awaiting reply from the invited member": [
         "Kutsu lähetetty, odotetaan kutsutun jäsenen vastausta"
       ],
-      "Invite sent": [
-        "Kutsu lähetetty"
+      "Invited": [
+        "Kutsuttu"
       ],
-      "It's you": [
-        "Sinä"
+      "Pending": [
+        "Odottaa"
       ],
-      "Pending admin access": [
-        "Odottaa ylläpito-oikeutta"
-      ],
-      "Private": [
-        "Yksityinen"
-      ],
-      "SSO": [
-        "Kertakirjautuminen"
+      "Requested": [
+        "Pyydetty"
       ],
       "SSO user provided by your identity provider": [
         "Identiteetintarjoajasi SSO-käyttäjä"

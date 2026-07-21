@@ -135,9 +135,6 @@
       "Add domain": [
         "Agregar dominio"
       ],
-      "Add email address": [
-        "Agregar una dirección de correo"
-      ],
       "Add external address": [
         "Agregar una dirección externa"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "Agregar PayPal"
-      ],
-      "Add phone number": [
-        "Agregar número telefónico"
       ],
       "Add public holidays": [
         "Agregar días festivos"
@@ -326,6 +320,9 @@
       ],
       "Compare plans": [
         "Compare los planes"
+      ],
+      "Configure new device profile": [
+        "Configurar un perfil de dispositivo"
       ],
       "Configure SAML": [
         "Configurar SAML"
@@ -509,6 +506,9 @@
       ],
       "Delete and confirm": [
         "Eliminar y confirmar"
+      ],
+      "Delete device profile": [
+        "Eliminar perfil del dispositivo"
       ],
       "Delete filter “${ Name }”": [
         "Eliminar el filtro «${ Name }»"
@@ -753,9 +753,6 @@
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
       ],
-      "Enable device-based recovery": [
-        "Activar recuperación desde un dispositivo"
-      ],
       "Enable multi-user support": [
         "Activar soporte multi usuario"
       ],
@@ -822,6 +819,9 @@
       "Generate": [
         "Generar"
       ],
+      "Generate device profile": [
+        "Generar el perfil del dispositivo"
+      ],
       "Generate key": [
         "Generar clave"
       ],
@@ -836,9 +836,6 @@
       ],
       "Generate password": [
         "Generar contraseña"
-      ],
-      "Generate recovery phrase": [
-        "Generar frase de recuperación"
       ],
       "Generate token": [
         "Generar token"
@@ -1017,6 +1014,9 @@
       "Insert link": [
         "Insertar enlace"
       ],
+      "Instructions": [
+        "Instrucciones"
+      ],
       "Invite": [
         "Invitar"
       ],
@@ -1028,6 +1028,9 @@
       ],
       "Italic": [
         "Cursiva"
+      ],
+      "JumpCloud": [
+        "JumpCloud"
       ],
       "Keep": [
         "Conservar"
@@ -1133,6 +1136,9 @@
       ],
       "Maybe later": [
         "Más tarde"
+      ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
       ],
       "More": [
         "Más"
@@ -1868,9 +1874,6 @@
       ],
       "View plans details": [
         "Ver detalles de planes"
-      ],
-      "View recovery settings": [
-        "Ver los ajustes de recuperación"
       ],
       "View recovery setup details": [
         "Ver los detalles de configuración de recuperación"
@@ -2986,11 +2989,11 @@
         "Ocurrió un error desconocido. Actualice la página e intente de nuevo."
       ],
       "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "¿Está seguro de que desea continuar sin ${ withoutString } y ${ notMigratedOthers } otro?",
-        "¿Está seguro de que desea continuar sin ${ withoutString } y otros ${ notMigratedOthers }?"
+        "¿En verdad desea continuar sin ${ withoutString } y ${ notMigratedOthers } otro?",
+        "¿En verdad desea continuar sin ${ withoutString } y otros ${ notMigratedOthers }?"
       ],
       "Are you sure you want to continue without ${ withoutString }?": [
-        "¿Está seguro de que desea continuar sin ${ withoutString }?"
+        "¿En verdad desea continuar sin ${ withoutString }?"
       ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "¿En verdad desea continuar? Los usuarios que no hayan reclamado su cuenta antes de que finalice la migración deberán solicitar un restablecimiento de contraseña al administrador de su organización en ${ BRAND_NAME }."
@@ -3504,6 +3507,9 @@
       ],
       "Discover and set up features": [
         "Descubra y configure las funcionalidades"
+      ],
+      "Get 50% offer": [
+        "Obtener oferta del 50%"
       ],
       "Got it": [
         "Entendido"
@@ -6762,9 +6768,6 @@
       "Add recovery contact": [
         "Añadir un contacto de recuperación"
       ],
-      "Add recovery method": [
-        "Agregar método de recuperación"
-      ],
       "Added on ${ formattedDate }": [
         "Añadido el ${ formattedDate }"
       ],
@@ -7006,14 +7009,8 @@
       "Subscription expired": [
         "La suscripción expiró"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "Me añadió como contacto de confianza. Puedo acceder a su cuenta en caso de emergencia."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "Le añadió como contacto de confianza. Puede acceder a su cuenta en caso de emergencia."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "Pueden pedir acceder a mi cuenta en caso de emergencia."
       ],
       "They may ask to access your account in case of an emergency.": [
         "Pueden solicitar acceder a su cuenta en caso de emergencia."
@@ -7033,9 +7030,6 @@
       ],
       "Time required before automatically granting them access": [
         "Tiempo necesario antes de otorgarles acceso automáticamente"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "Para agregar contactos de recuperación, debe tener una dirección de correo electrónico o número de telefono de recuperación."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Para desactivar este método de recuperación, elimine todos sus contactos de recuperación."
@@ -7087,12 +7081,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Puede eliminar el acceso en cualquier momento para recuperar el control exclusivo de su cuenta."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "Aún no se le ha designado como contacto de recuperación para nadie."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "Aún no se le ha designado como contacto de emergencia para nadie."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Alcanzó el máximo de ${ limit } contacto de emergencia.",
@@ -7228,6 +7216,9 @@
       ],
       "Contact signature not verified": [
         "Firma del contacto no verificada"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "No se pudo generar el perfil del dispositivo. Intente de nuevo."
       ],
       "Could not open created vault": [
         "No se pudo abrir la bóveda creada"
@@ -10189,17 +10180,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Un archivo de recuperación le permite desbloquear y ver los datos después de una recuperación de la cuenta."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Una frase de recuperación le permite acceder a la cuenta y recuperar los mensajes cifrados si olvida la contraseña"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada con un único nombre de usuario, buzón y persona"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Acceda a más de 6,500 servidores de alta velocidad en hasta 10 dispositivos para mantener sus datos de navegación seguros. Disponible en ${ ios }, ${ android }, ${ appleTV } y ${ desktop }."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Acceda a más de 20 000 servidores en 145 países"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Acceda a sus contraseñas y proteja sus identidades en línea sin problemas en todos sus dispositivos. Descargue e instale las aplicaciones y extensiones de ${ PASS_APP_NAME } relevantes."
@@ -10209,9 +10197,6 @@
       ],
       "Account successfully updated": [
         "Cuenta actualizada"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Active al menos un método de recuperación de datos para asegurarse de tener acceso a los contenidos de la cuenta de ${ BRAND_NAME } si pierde la contraseña."
       ],
       "Active": [
         "Activo"
@@ -10224,6 +10209,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Añada ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } por solo ${ bundlePlanPriceInline }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Agregar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -10315,8 +10303,14 @@
       "All data and settings are preserved": [
         "Se preservan todos los datos y ajustes"
       ],
+      "All devices with this device profile deployed": [
+        "Todos los dispositivos con este perfil de dispositivo implementado"
+      ],
       "All inactive members deleted": [
         "Se eliminaron todos los miembros inactivos"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Todo el tráfico de internet siempre está cifrado y seguro"
       ],
       "All keys successfully reactivated": [
         "Todas las claves reactivadas"
@@ -10637,6 +10631,9 @@
       "Choose an Entity ID to continue.": [
         "Seleccione una ID de entidad para continuar."
       ],
+      "Choose one:": [
+        "Elija uno:"
+      ],
       "Choose your service to connect with": [
         "Elija su servicio para conectar"
       ],
@@ -10672,6 +10669,9 @@
       ],
       "Compromised": [
         "Comprometida"
+      ],
+      "Configure Always-on VPN": [
+        "Configurar VPN siempre activa"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configure la autenticación SAML para la organización con un proveedor de identidad (IdP). Esto activará SAML para toda la organización."
@@ -10852,6 +10852,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Dependiendo de sus ajustes, podrán recibir acceso inmediatamente o después de un **periodo de espera** designado."
       ],
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "Implemente ${ regoArtifact } directamente mediante la implementación de su archivo MDM"
+      ],
+      "Deploy across all your managed devices": [
+        "Implementar en todos sus dispositivos gestionados"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Impleméntelo mediante su MDM (Jamf, Intune…) o manualmente en cada dispositivo."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Los dispositivos que tienen implementado el perfil de dispositivo VPN siempre activa no pueden acceder a Internet a menos que haya una conexión ${ VPN_APP_NAME } activa."
+      ],
       "Did you know?": [
         "¿Lo sabía?"
       ],
@@ -10928,6 +10940,15 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al darse de baja finalizará cualquier conexión a servidores de pago de ${ VPN_APP_NAME }."
       ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Descargue ${ mobileConfigArtifact } y ábralo en cada Mac para instalar el perfil, luego apruébelo en los ajustes del sistema."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "Descargue ${ powershellArtifact } y ejecútelo en cada dispositivo como usuario del sistema para colocar automáticamente el perfil del dispositivo."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Descargue ${ removeScriptLink } y ejecútelo en cada dispositivo como usuario del sistema para eliminar el perfil automáticamente."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
       ],
@@ -11000,6 +11021,9 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Los correos electrónicos etiquetados con la etiqueta ${ nameDeleted } no se eliminarán y se podrán encontrar en sus respectivas carpetas."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Los empleados no pueden estar en línea sin una conexión VPN"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Active la renovación automática para mantener el acceso a servidores y funciones Plus."
       ],
@@ -11051,6 +11075,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL del punto final recibida del proveedor de identidad (por ejemplo, https://idp.ejemplo.com/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "La ejecución inicia automáticamente en cuanto el dispositivo detecte el perfil."
+      ],
       "Enhance your network security": [
         "Aumente la seguridad de la red"
       ],
@@ -11059,6 +11086,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Asegure una comunicación privada y cifrada completa. Reclame su dirección gratuita de ${ BRAND_NAME } ahora."
+      ],
+      "Ensure your organization is always protected": [
+        "Asegúrese de que su organización está siempre protegida"
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Ingrese una contraseña para finalizar su cuenta de ${ BRAND_NAME } y ¡empezar a usar ${ VPN_APP_NAME } en todos sus dispositivos!"
@@ -11156,6 +11186,9 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rápido y enfocado: su correo electrónico y calendario directamente en su escritorio."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Velocidades VPN más rápidas de hasta 10 Gbps"
+      ],
       "Featured in": [
         "Destacados"
       ],
@@ -11237,11 +11270,11 @@
       "Gateways": [
         "Puertas de enlace"
       ],
+      "Generate the device profile and download a configuration file.": [
+        "Genere el perfil del dispositivo y descargue el archivo de configuración."
+      ],
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Generar una frase de recuperación nueva desactivará la actual frase de recuperación."
-      ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Generar una frase de recuperación nueva desactivará la anterior."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Obtenga ${ AUTHENTICATOR_APP_NAME } para todos sus dispositivos"
@@ -11302,6 +11335,9 @@
       ],
       "Groups": [
         "Grupos"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Tenga más tiempo para decidir sin interrupciones."
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Ayude a otras familias a dar a sus hijos un inicio seguro en línea. Comparta este hito y corra la voz."
@@ -11366,9 +11402,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Si la zona horaria del sistema no coincide con la preferencia actual de zona horaria, se le pedirá que la actualice (como máximo una vez al día)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Si esto se debe a un restablecimiento de contraseña anterior, puede evitar que el mensaje se vuelva a mostrar"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
       ],
@@ -11377,6 +11410,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si cree que esto es un error, contáctenos ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Si cancela ahora, perderá acceso a ${ BRAND_NAME }${ planTitle } el ${ expiryDate }, incluyendo estas funciones:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si cancela, la suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
@@ -11416,9 +11452,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Si ha restablecido la contraseña recientemente, puede usar ${ recoveryMethodLink } para desbloquear sus datos. Si esto se debe a un restablecimiento de contraseña anterior, puede evitar que el mensaje vuelva a aparecer."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Si restableció la contraseña recientemente, puede usar un método de recuperación para desbloquear los datos"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Si su organización tiene figuras públicas, maneja datos sensibles o podría ser objetivo de ciberataques, se le recomienda encarecidamente activar ${ PROTON_SENTINEL_NAME } para todos en su organización."
@@ -11555,9 +11588,6 @@
       "Invited": [
         "Se ha invitado"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Parece que algunos de los datos están cifrados y bloqueados."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Se necesitan 10 días para cambiar el país de un servidor, así que asegúrese de que su selección sea correcta."
       ],
@@ -11632,6 +11662,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mantenga su información más segura y privada con estas guías y consejos."
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Mantenga sus contraseñas seguras e inicie sesión instantáneamente con completado automático en todos los dispositivos."
       ],
       "Key deletion is irreversible!": [
         "¡La eliminación de la clave es irreversible!"
@@ -11722,6 +11755,9 @@
       ],
       "Low Priority": [
         "Prioridad baja"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "La mayoría de servicios de correo podrían rechazar o filtrar los correos como spam si faltan SPF/DKIM/DMARC o no están bien configurados."
@@ -11912,6 +11948,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Una vez que se haya concedido el acceso a su cuenta, podrán acceder a sus ajustes de **Recuperación** y **cambiar la contraseña de ${ ACCOUNT_APP_NAME }** por usted."
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Una vez implementado con éxito, puede tomar unas horas para que los dispositivos detecten y fuercen la política."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Solo se pueden cambiar las mayúsculas y la puntuación (puntos, guiones y guiones bajos) aquí. Para usar direcciones diferentes, añada una."
       ],
@@ -11952,6 +11991,9 @@
       ],
       "or discover other features:": [
         "o descubra otras funciones:"
+      ],
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "O ejecute ${ powershellArtifact } mediante la ejecución de su script MDM"
       ],
       "Or select a particular server:": [
         "O seleccione un servidor en particular:"
@@ -12078,9 +12120,6 @@
       "Please fill out this field.": [
         "Complete este campo."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Manténgala segura. La necesitará para acceder a la cuenta y descifrar los datos en caso de un restablecimiento de contraseña."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Tome en cuenta que si elimina el filtro ${ nameDeleted }, dejaremos de procesar todas las acciones automatizadas que lo activa."
       ],
@@ -12128,6 +12167,9 @@
       ],
       "Preference saved": [
         "Preferencia guardada"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Protección de privacidad premium en todos sus dispositivos"
       ],
       "Preview": [
         "Vista previa"
@@ -12177,6 +12219,9 @@
       "Public sharing of documents is not yet supported.": [
         "El intercambio público de documentos aún no está admitido."
       ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "Envíe ${ mobileConfigArtifact } a cada Mac gestionada usando su MDM."
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contáctenos para obtener ayuda con cualquier cosa de ${ BRAND_NAME }."
       ],
@@ -12212,9 +12257,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Frase recuperación copiada al portapapeles"
-      ],
-      "Recovery phrase downloaded": [
-        "Frase de recuperación descargada"
       ],
       "Recovery phrase has been disabled": [
         "La frase de recuperación ha sido desactivada"
@@ -12466,6 +12508,9 @@
       "Start using the shorter, catchier version of your email address.": [
         "Use la versión más corta y atractiva de su dirección de correo."
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "Quédese en su plan y obtenga un 50% de descuento en su próximo mes"
+      ],
       "Step ${ step }": [
         "Paso ${ step }",
         "Paso ${ step }"
@@ -12530,6 +12575,9 @@
       ],
       "support team": [
         "equipo de soporte"
+      ],
+      "Supported platforms": [
+        "Plataformas soportadas"
       ],
       "Swiss based": [
         "Con sede en Suiza"
@@ -12856,6 +12904,12 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Para descifrar y ver los datos bloqueados después de restablecer la contraseña, seleccione un método de recuperación."
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "Para activar VPN siempre activa, el perfil de configuración necesita estar instalado en cada Mac, el cliente ${ VPN_APP_NAME } fuerza el perfil de dispositivo automáticamente una vez configurado."
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Para activar VPN siempre activa, el perfil del dispositivo necesita llegar a ${ policiesPath } en cada dispositivo, el cliente ${ VPN_APP_NAME } lo detecta automáticamente y fuerza el perfil automáticamente."
+      ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Para activar la protección postcuántica, necesitará generar sus nuevas claves de cifrado postcuánticas."
       ],
@@ -12894,6 +12948,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Para recuperar el acceso a su cuenta y datos, ingrese la frase de recuperación de 12 palabras asociada a su cuenta."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Para eliminar VPN siempre activa, elimine ${ profileFile } de ${ policiesPath } en cada dispositivo. El cliente ${ VPN_APP_NAME } dejará de forzar el perfil tan pronto detecte que el archivo ya no está."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Para asegurar la conexión a internet, descargue e instale la aplicación ${ VPN_APP_NAME } en el dispositivo y conéctese a un servidor."
@@ -13045,6 +13102,9 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Use la dirección de correo seleccionada como nombre de usuario SMTP en el servicio externo y el token generado como contraseña SMTP."
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Use su MDM para eliminar el archivo o ejecute ${ removeScriptLink } mediante la ejecución de scripts de su MDM. Cualquier MDM que admita la implementación de archivos o la ejecución de scripts funcionará."
+      ],
       "User activated": [
         "El usuario fue activado."
       ],
@@ -13056,6 +13116,12 @@
       ],
       "Users": [
         "Usuarios"
+      ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "¿Usa otra solución MDM? Cualquier MDM que admita la implementación de un perfil de configuración funcionará. Consulte la documentación de su MDM para obtener instrucciones sobre cómo cargarlo y asignarlo a su flota de dispositivos."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "¿Usa otra solución MDM? Cualquier MDM que admita la implementación de archivos o la ejecución de scripts de PowerShell funcionará. Consulte la documentación de su MDM para obtener más información."
       ],
       "Vault created": [
         "Bóveda creada"
@@ -13173,9 +13239,6 @@
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar a los miembros de la organización y pedirles que configuren 2FA para las cuentas antes de requerir el uso de 2FA."
-      ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Almacenamos de forma segura la información de recuperación en el dispositivo de confianza para evitar que pierda los datos"
       ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Recomendamos encarecidamente que todos activen la recuperación mediante frase de recuperación."
@@ -13602,6 +13665,9 @@
       "Your account was successfully updated with this promotion": [
         "Se ha actualizado la cuenta con esta promoción"
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Su perfil de dispositivo VPN siempre activa está listo para implementarse."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a la cuenta de ${ BRAND_NAME }."
       ],
@@ -13667,12 +13733,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Su archivo de recuperación restaurará el acceso a correos electrónicos, contactos, archivos, contraseñas y cualquier otro dato cifrado en su cuenta después de restablecer la contraseña."
-      ],
-      "Your recovery phrase": [
-        "La frase de recuperación"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "La frase de recuperación es una serie de 12 palabras generadas aleatoriamente en un orden específico."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "Su frase de recuperación le permitirá iniciar sesión y recuperar sus datos si no puede acceder a la cuenta de ${ BRAND_NAME }. Está compuesta por 12 palabras y funciona como una contraseña de respaldo."
@@ -14517,6 +14577,9 @@
       "App Settings": [
         "Ajustes de la aplicación"
       ],
+      "Applies:": [
+        "Aplica a:"
+      ],
       "Apply filter to existing emails": [
         "Aplicar filtro a los correos existentes"
       ],
@@ -14977,6 +15040,9 @@
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
       ],
+      "Enforce Always-on VPN": [
+        "Forzar VPN siempre activa"
+      ],
       "Enter code": [
         "Ingresar código"
       ],
@@ -15222,6 +15288,9 @@
       ],
       "Lock app after inactivity": [
         "Bloquear aplicación después de inactividad"
+      ],
+      "Login restrictions": [
+        "Restricciones de inicio de sesión"
       ],
       "Logo": [
         "Logo"
@@ -16003,17 +16072,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Recuperación desde un dispositivo"
-      ],
       "Notification phone number": [
         "Número de teléfono de notificación"
       ],
       "Recovery phone number": [
         "Número telefónico de recuperación"
-      ],
-      "Recovery phrase": [
-        "Frase de recuperación"
       ],
       "Set recovery phone number": [
         "Establecer número de teléfono de recuperación"
@@ -16331,9 +16394,6 @@
       "How to share via email": [
         "Cómo compartir por correo electrónico"
       ],
-      "How to unlock data": [
-        "Cómo desbloquear datos"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Cómo usar ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16357,9 +16417,6 @@
       ],
       "Learn more": [
         "Más información"
-      ],
-      "Learn more about data recovery": [
-        "Más información acerca de la recuperación de datos"
       ],
       "Manage addresses": [
         "Gestione las direcciones"
@@ -21308,146 +21365,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **Desactive la recuperación por teléfono** para evitar que los atacantes tomen el control de su cuenta."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **Active la recuperación por teléfono** para recuperar el acceso a la cuenta si olvidara la contraseña."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } usará esta dirección para mantenerle actualizado sobre la seguridad de su cuenta."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } usará esta dirección para enviar un código de restablecimiento por correo electrónico cuando restablezca su contraseña."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } usará este número telefónico para enviar un código de restablecimiento por SMS cuando restablezca su contraseña."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } para asegurar que sus datos puedan ser recuperados."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**Desactive el restablecimiento de la cuenta por correo electrónico** para evitar que los atacantes tomen el control de su cuenta."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Active la recuperación por correo electrónico** para recuperar el acceso a la cuenta si olvidara la contraseña."
-      ],
-      "Account reset by email has been disabled": [
-        "Se desactivó el restablecimiento de la cuenta por correo electrónico"
-      ],
-      "Account reset by phone has been disabled": [
-        "Se desactivó el restablecimiento de la cuenta por teléfono"
-      ],
-      "Account safety review": [
-        "Verificación de seguridad de la cuenta"
-      ],
-      "Add a phone number": [
-        "Añadir un número de teléfono"
-      ],
-      "Add a recovery email": [
-        "Agregar un correo de recuperación"
-      ],
-      "Add a recovery email address": [
-        "Agregue una dirección de correo de recuperación"
-      ],
-      "Add a recovery phone number": [
-        "Agregar un número telefónico de recuperación"
-      ],
-      "Add an alternative email address": [
-        "Añadir una dirección de correo alternativa"
-      ],
-      "Add an email": [
-        "Añadir correo electrónico"
-      ],
-      "Back to Safety Review": [
-        "Volver a la verificación de seguridad"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "Como restableció su contraseña, la frase de recuperación actual solo puede usarse para recuperar los datos creados antes del restablecimiento de la contraseña."
-      ],
-      "Can be used to regain access to your account and data": [
-        "Puede usarse para recuperar el acceso a la cuenta y sus datos"
-      ],
-      "Check account security": [
-        "Verificar la seguridad de la cuenta"
-      ],
       "Code sent to ${ boldValue }": [
         "Código enviado a ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Continuar con la verificación de seguridad"
-      ],
-      "Device-based recovery enabled": [
-        "Recuperación desde un dispositivo activada"
-      ],
-      "Disable account reset by email": [
-        "Desactivar el restablecimiento de la cuenta por correo electrónico"
-      ],
-      "Disable recovery by email": [
-        "Desactivar recuperación por correo electrónico"
-      ],
-      "Disable recovery by phone": [
-        "Desactivar la recuperación por teléfono"
-      ],
-      "Download ${ size }": [
-        "Descargar ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "Descargue su frase de recuperación"
-      ],
-      "Email address": [
-        "Dirección de correo"
-      ],
-      "Enable device-based recovery": [
-        "Active la recuperación desde un dispositivo"
-      ],
-      "Enable recovery by email": [
-        "Activar la recuperación por correo electrónico"
-      ],
-      "Enable recovery by phone": [
-        "Activar la recuperación por teléfono"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Entiendo que no podré recuperar los datos actualmente bloqueados con esta frase de recuperación"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Si olvida su contraseña de ${ BRAND_NAME } y necesita restablecerla, la próxima vez que inicie sesión en este dispositivo con su contraseña nueva, se restaurará el acceso total a la cuenta de ${ BRAND_NAME }."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Si olvida su contraseña de ${ BRAND_NAME } y necesita restablecerla, la próxima vez que inicie sesión en este dispositivo con su contraseña nueva, se restaurará el acceso total a la cuenta de ${ BRAND_NAME }."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Si se bloquea su cuenta de ${ BRAND_NAME }, su frase de recuperación le permitirá iniciar sesión y recuperar sus datos."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Si pierde los datos de inicio de sesión y necesita restablecer la cuenta, **es obligatorio** que tenga configurados **un método de recuperación de la cuenta y de los datos**, de lo contrario, es posible que no pueda acceder a ninguno de sus correos electrónicos, contactos, archivos o contraseñas."
-      ],
-      "in case we need to contact you": [
-        "en caso de que necesitemos contactarle"
       ],
       "Invalid code": [
         "Código inválido"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Es la única forma de restaurar la cuenta, por lo que tome las medidas necesarias para mantenerlo a salvo."
-      ],
-      "Recovery email address": [
-        "Correo electrónico de recuperación"
-      ],
-      "Recovery phone number": [
-        "Número telefónico de recuperación"
-      ],
       "Review account safety": [
         "Compruebe la seguridad de la cuenta"
-      ],
-      "Safeguard account now": [
-        "Proteger la cuenta ahora"
-      ],
-      "Safeguard your account": [
-        "Proteja la cuenta"
-      ],
-      "Safeguard your account further": [
-        "Proteja más su cuenta"
       ],
       "Safety review": [
         "Verificación de seguridad"
@@ -21455,194 +21380,8 @@
       "Send a new code": [
         "Enviar otro código"
       ],
-      "Show more": [
-        "Mostrar más"
-      ],
-      "Take action to secure your account": [
-        "Tome acciones para asegurar la cuenta"
-      ],
-      "There was an error generating your recovery phrase": [
-        "Ocurrió un error al generar su frase de recuperación"
-      ],
-      "There was an error verifying your email": [
-        "Ocurrió un error al verificar su correo electrónico"
-      ],
-      "There was an error verifying your recovery email": [
-        "Ocurrió un error al verificar su correo electrónico de recuperación"
-      ],
-      "There was an error verifying your recovery phone": [
-        "Ocurrió un error al verificar su teléfono de recuperación"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "para recuperar sus datos cuando inicie sesión en un dispositivo de confianza"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Para asegurarnos que la dirección de correo es suya, ingrese el código de verificación enviado a ${ boldEmail }."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Para asegurarnos que el número telefónico es suyo, ingrese el código de verificación enviado a ${ boldPhoneNumber }."
-      ],
-      "to prevent attackers from taking over your account": [
-        "para evitar que los atacantes tomen el control de su cuenta"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "para recuperar la cuenta y los datos si alguna vez se bloqueara"
-      ],
-      "to recover your account if you're ever locked out": [
-        "para recuperar la cuenta si alguna vez se bloqueara"
-      ],
       "update it now": [
         "actualícelo ahora"
-      ],
-      "Update your recovery phrase": [
-        "Actualice su frase de recuperación"
-      ],
-      "Update your recovery phrase?": [
-        "¿Actualizar su frase de recuperación?"
-      ],
-      "Verify": [
-        "Verificar"
-      ],
-      "Verify your email address": [
-        "Verifique su dirección de correo"
-      ],
-      "Verify your phone number": [
-        "Verifique su número de teléfono"
-      ],
-      "Verify your recovery email address": [
-        "Verifique la dirección de correo de recuperación"
-      ],
-      "Verify your recovery phone number": [
-        "Verifique el número telefónico de recuperación"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "Encontramos un error al generar la frase de recuperación. Intente de nuevo más tarde o contacte con el soporte si el problema continúa."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Encontramos un error al verificar su correo electrónico. Intente de nuevo más tarde o contacte con el soporte si el problema continúa."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Encontramos un error al verificar su correo electrónico de recuperación. Intente de nuevo más tarde o contacte con el soporte si el problema continúa."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Encontramos un error al verificar su teléfono de recuperación. Intente de nuevo más tarde o contacte con el soporte si el problema continúa."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "Cuando activa la recuperación desde un dispositivo, ${ BRAND_NAME } almacenará una cadena de respaldo cifrada como un archivo en el almacenamiento web de su navegador."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Está en riesgo de perder el acceso a la cuenta y sus datos."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Corre el riesgo de perder el acceso a sus datos."
-      ],
-      "You can disable this at any time.": [
-        "Puede desactivar esto en cualquier momento."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Puede usar la frase de recuperación para restaurar completamente la cuenta cuando restablezca su contraseña, así que asegúrese de mantenerla a salvo en algún lugar."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "Puede usar su correo electrónico para recuperar el acceso a la cuenta si olvidara la contraseña."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Puede usar su correo electrónico de recuperación para recuperar el acceso a la cuenta si olvidara la contraseña."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "Puede usar su teléfono de recuperación para recuperar el acceso a la cuenta si olvidara la contraseña."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "Previamente descargó una frase de recuperación. Descargar uno nuevo **desactivará el anterior**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Tiene recomendaciones para proteger aún más su cuenta."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "Tiene recomendaciones para proteger su cuenta."
-      ],
-      "You have recommended actions.": [
-        "Tiene acciones recomendadas."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "Ya no podrá usar esta dirección para restablecer su cuenta."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "Ya no podrá usar este número de teléfono para restablecer su cuenta."
-      ],
-      "Your account and data can be recovered": [
-        "La cuenta y sus datos pueden recuperarse"
-      ],
-      "Your account and data can be recovered.": [
-        "La cuenta y sus datos pueden recuperarse."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "La cuenta y sus datos pueden recuperarse. Compruebe que aún tenga acceso a sus métodos de recuperación."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Su cuenta y sus datos pueden recuperarse. Tiene recomendaciones para proteger aún más su cuenta."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "La cuenta y sus datos pueden recuperarse. Tiene acciones recomendadas."
-      ],
-      "Your account is fully secure.": [
-        "La cuenta está completamente segura."
-      ],
-      "Your account is secure.": [
-        "Su cuenta está segura."
-      ],
-      "Your email address is:": [
-        "Su dirección de correo es:"
-      ],
-      "Your email is set": [
-        "Su correo electrónico está configurado"
-      ],
-      "Your recovery email": [
-        "Correo electrónico de recuperación"
-      ],
-      "Your recovery email address is:": [
-        "La dirección de correo de recuperación es:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "El correo electrónico y el teléfono solo **pueden recuperar el acceso a la cuenta**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "El correo electrónico de recuperación solo **puede recuperar el acceso a la cuenta**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Su correo electrónico de recuperación podría ser utilizado indebidamente por atacantes para hacerse con el control de su cuenta. ${ disableEmail } para aumentar la seguridad de su cuenta."
-      ],
-      "Your recovery email has been enabled": [
-        "Se ha activado el correo electrónico de recuperación"
-      ],
-      "Your recovery email is set": [
-        "Se configuró el correo electrónico de recuperación"
-      ],
-      "Your recovery methods": [
-        "Métodos de recuperación"
-      ],
-      "Your recovery phone": [
-        "Teléfono de recuperación"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "El teléfono de recuperación solo **puede recuperar el acceso a la cuenta**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Su teléfono de recuperación podría ser utilizado indebidamente por atacantes para hacerse con el control de su cuenta. ${ disablePhone } para aumentar la seguridad de su cuenta."
-      ],
-      "Your recovery phone has been enabled": [
-        "Se activó el teléfono de recuperación"
-      ],
-      "Your recovery phone is set": [
-        "Se configuró el teléfono de recuperación"
-      ],
-      "Your recovery phone number is:": [
-        "El número de teléfono de recuperación es:"
-      ],
-      "Your recovery phrase": [
-        "Su frase de recuperación"
-      ],
-      "Your recovery phrase is set": [
-        "Se configuró la frase de recuperación"
       ]
     },
     "safety_review": {
@@ -22464,9 +22203,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Para desactivar el restablecimiento de contraseña, debe configurar un método de recuperación."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Para mejorar la seguridad de la cuenta y proteger los datos, puede solicitar un restablecimiento de contraseña desde los ajustes de la cuenta en la aplicación web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -23710,6 +23446,15 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Estamos cancelando la suscripción. Espere."
+      ],
+      "Disabled": [
+        "Desactivado"
+      ],
+      "Enabled": [
+        "Activado"
+      ],
+      "No restrictions": [
+        "Sin restricciones"
       ]
     },
     "Status": {
@@ -24500,6 +24245,9 @@
       ],
       "Compare the key differences that matter for your business.": [
         "Compare las diferencias clave que importan para su negocio."
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Fuerce el uso de VPN en toda su organización al bloquear el acceso a internet a menos que una conexión VPN esté activa."
       ],
       "Free forever": [
         "Gratis para siempre"
@@ -25292,6 +25040,12 @@
       "Also in your plan": [
         "También en su plan"
       ],
+      "Always-on VPN": [
+        "VPN siempre activa"
+      ],
+      "Always-on VPN device profile": [
+        "Perfil del dispositivo VPN siempre activa"
+      ],
       "Amount": [
         "Monto"
       ],
@@ -25427,8 +25181,14 @@
       "Check your default mail application": [
         "Compruebe su aplicación de correo por defecto"
       ],
+      "Choose a deployment method": [
+        "Elija un método de implementación"
+      ],
       "Choose a provider": [
         "Elegir un proveedor"
+      ],
+      "Choose a removal method": [
+        "Elija un método de eliminación"
       ],
       "Choose an account": [
         "Seleccionar una cuenta"
@@ -25456,6 +25216,9 @@
       ],
       "Composing": [
         "Escribir"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Configurar perfil del dispositivo VPN siempre activa"
       ],
       "Confirm": [
         "Confirmar"
@@ -25560,6 +25323,9 @@
       "Created": [
         "Creado"
       ],
+      "Created!": [
+        "¡Creado!"
+      ],
       "Creating user accounts": [
         "Creación de cuentas de usuario"
       ],
@@ -25607,9 +25373,6 @@
       ],
       "Data collection": [
         "Recopilación de datos"
-      ],
-      "Data locked": [
-        "Datos bloqueados"
       ],
       "Data recovery": [
         "Recuperación de datos"
@@ -25692,6 +25455,15 @@
       ],
       "Deny access to user?": [
         "¿Denegar acceso al usuario?"
+      ],
+      "Deploy device profile to your devices": [
+        "Implemente el perfil del dispositivo en todos sus dispositivos"
+      ],
+      "Deploy via MDM": [
+        "Implementar vía MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Implementar mediante PowerShell"
       ],
       "Description": [
         "Descripción"
@@ -25982,9 +25754,6 @@
       "Generate missing keys": [
         "Generar claves faltantes"
       ],
-      "Generate new recovery phrase?": [
-        "¿Generar frase de recuperación nueva?"
-      ],
       "Generate SMTP token": [
         "Generar token SMTP"
       ],
@@ -26133,6 +25902,9 @@
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
       ],
+      "Install it manually": [
+        "Instalar manualmente"
+      ],
       "Integrations": [
         "Integraciones"
       ],
@@ -26189,6 +25961,9 @@
       ],
       "Lower your cost without losing features": [
         "Reduzca sus costes sin perder funcionalidades"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "Contraseña principal"
@@ -26457,6 +26232,9 @@
       "Remove all members?": [
         "¿Eliminar todos los miembros?"
       ],
+      "Remove Always-on VPN device profile": [
+        "Eliminar perfil del dispositivo VPN siempre activa"
+      ],
       "Remove calendar": [
         "Borrar el calendario"
       ],
@@ -26483,6 +26261,9 @@
       ],
       "Remove user?": [
         "¿Eliminar el usuario?"
+      ],
+      "Remove via MDM": [
+        "Eliminar mediante MDM"
       ],
       "Rename the gateway": [
         "Cambiar el nombre de la puerta de enlace"
@@ -26721,6 +26502,9 @@
       "Status": [
         "Estado"
       ],
+      "Stay for 50% off your next month": [
+        "Quédese y obtenga un 50% de descuento en su próximo mes"
+      ],
       "Stay secure and connected anywhere": [
         "Manténgase seguro y conectado en cualquier lugar"
       ],
@@ -26955,6 +26739,9 @@
       ],
       "What is the dark web?": [
         "¿Qué es la dark web?"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Wipe all logs?": [
         "¿Borrar todos los registros?"
@@ -27261,6 +27048,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Incluye todos los usuarios de su organización. Solo forzado en dispositivos donde el perfil del dispositivo VPN siempre activa ha sido implementado."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Incluye dominios de correo personalizados y alias de hide-my-email ilimitados en ${ MAIL_APP_NAME }, acceso a servidores en más de 120 países en ${ VPN_SHORT_APP_NAME }, autenticación de dos factores integrada, uso compartido seguro en ${ PASS_SHORT_APP_NAME } y más."
@@ -27641,9 +27431,6 @@
         "No se pudo activar el acceso de admin para ${ n } usuario",
         "No se pudo activar el acceso de admin para ${ n } usuarios"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "No se pudo activar el acceso de administrador: ${ error }"
-      ],
       "Enable admin access?": [
         "¿Activar el acceso de administrador?"
       ],
@@ -27906,9 +27693,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Los administradores no pueden acceder a los datos de usuarios privados"
       ],
@@ -27917,21 +27701,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitación enviada, esperando la respuesta del miembro invitado"
-      ],
-      "Invite sent": [
-        "Invitación enviada"
-      ],
-      "It's you": [
-        "Es usted"
-      ],
-      "Pending admin access": [
-        "Acceso de administrador pendiente"
-      ],
-      "Private": [
-        "Privado"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Usuario SSO proporcionado por el proveedor de identidad"
