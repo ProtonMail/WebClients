@@ -417,9 +417,6 @@
       "Get the apps": [
         "Obtén les aplicacions"
       ],
-      "Get the deal": [
-        "Obteniu l’oferta"
-      ],
       "Get the writing assistant": [
         "Obteniu l'assistent d'escriptura"
       ],
@@ -1461,6 +1458,9 @@
       "Continue your subscription": [
         "Continueu amb la vostra subscripció"
       ],
+      "Get 50% offer": [
+        "Aconseguiu una oferta del 50%"
+      ],
       "Maybe later": [
         "Potser més tard"
       ]
@@ -1520,20 +1520,6 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
-      ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Subtotal per ${ cycle } mes",
-        "Subtotal per ${ cycle } mesos"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total per ${ n } mes",
-        "Total per ${ n } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -3401,6 +3387,9 @@
       "Some contacts could not be deleted": [
         "Alguns contactes no poden ser esborrats"
       ],
+      "Some documents could not be loaded": [
+        "Alguns documents no s'han pogut carregar"
+      ],
       "Some groups could not be deleted": [
         "Alguns grups no poden ser esborrats"
       ],
@@ -4601,6 +4590,9 @@
       "Accept/decline": [
         "Accepta/rebutja"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Accediu a més de 20.000 servidors en 145 països"
+      ],
       "Ad targeting": [
         "Orientació d'anuncis"
       ],
@@ -4914,6 +4906,9 @@
       "Failing signatures will be re-signed by you": [
         "Tornareu a signar les signatures amb errors."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Velocitats de VPN més ràpides de fins a 10 Gbps"
+      ],
       "File \"${ name }\" was deleted during download": [
         "El fitxer «${ name }» s'ha eliminat durant la descarregada"
       ],
@@ -4968,6 +4963,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
       ],
+      "Have some more time to decide without interruption.": [
+        "Tingueu més temps per decidir sense interrupcions."
+      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Ajudeu-nos a millorar aquesta experiència informant del problema. Si us sentiu còmode compartint el contingut del full de càlcul, adjunteu la informació de depuració següent al vostre informe."
       ],
@@ -4985,6 +4983,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Si ho cancel·leu ara, perdreu l'accés a ${ BRAND_NAME } ${ planTitle } el ${ expiryDate }, incloent-hi aquestes característiques:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
@@ -5289,6 +5290,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
       ],
+      "Premium privacy protection across all your devices": [
+        "Protecció de privacitat prèmium a tots els vostres dispositius"
+      ],
       "Preparing link to file": [
         "S'està preparant l'enllaç al fitxer"
       ],
@@ -5411,6 +5415,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantingueu-vos connectat fàcilment activant la configuració següent de la VPN:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Mantingueu el vostre pla i gaudiu d'un 50% de descompte el mes vinent."
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "La subscripció es renova automàticament cada ${ cycle } mes.",
@@ -5964,10 +5971,6 @@
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } mesos"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } caràcters"
       ],
@@ -6063,6 +6066,12 @@
       ],
       "City": [
         "Ciutat"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versió del client"
       ],
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
@@ -6192,9 +6201,6 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Aconseguiu l'oferta"
       ],
       "Hide password": [
         "Amaga la contrasenya"
@@ -9824,11 +9830,6 @@
         "La subscripció es desactivarà al final del cicle de facturació."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Per sempre"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -10632,6 +10633,9 @@
       "Start import process": [
         "Iniciar el procés d'importació"
       ],
+      "Stay for 50% off your next month": [
+        "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
+      ],
       "Stop sharing": [
         "Deixa de compartir"
       ],
@@ -10640,9 +10644,6 @@
       ],
       "Subscription canceled": [
         "S'ha cancel·lat la subscripció"
-      ],
-      "Summer Sale": [
-        "Rebaixes d'estiu"
       ],
       "The link either does not exist or has expired": [
         "L’enllaç no existeix o bé ha caducat"

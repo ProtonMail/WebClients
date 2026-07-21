@@ -423,9 +423,6 @@
       "Get the apps": [
         "Pobierz aplikacje"
       ],
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ],
       "Get the writing assistant": [
         "Uzyskaj asystenta pisania"
       ],
@@ -1551,24 +1548,6 @@
         "${ users } użytkowników",
         "${ users } użytkowników",
         "${ users } użytkowników"
-      ],
-      "Subtotal": [
-        "Suma częściowa"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Suma częściowa za ${ cycle } miesiąc",
-        "Suma częściowa za ${ cycle } miesiące",
-        "Suma częściowa za ${ cycle } miesięcy",
-        "Suma częściowa za ${ cycle } miesięcy"
-      ],
-      "Total": [
-        "Razem"
-      ],
-      "Total for ${ n } month": [
-        "Łącznie za ${ n } miesiąc",
-        "Łącznie za ${ n } miesiące",
-        "Łącznie za ${ n } miesięcy",
-        "Łącznie za ${ n } miesięcy"
       ]
     },
     "Collapsible tooltip": {
@@ -6106,12 +6085,6 @@
       "${ BRAND_NAME } username": [
         "Nazwa użytkownika ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "${ n } miesiąca"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } znaków"
       ],
@@ -6336,9 +6309,6 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Skorzystaj z oferty"
       ],
       "Hide password": [
         "Ukryj hasło"
@@ -10140,11 +10110,6 @@
         "Subskrypcja zostanie obniżona na koniec cyklu rozliczeniowego."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Dożywotnio"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB przestrzeni dyskowej"
@@ -10993,9 +10958,6 @@
       ],
       "Subscription canceled": [
         "Subskrypcja została anulowana"
-      ],
-      "Summer Sale": [
-        "Letnie promocje"
       ],
       "The link either does not exist or has expired": [
         "Link wygasł lub nie istnieje"

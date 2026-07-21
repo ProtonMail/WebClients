@@ -417,9 +417,6 @@
       "Get the apps": [
         "Hanki sovellukset"
       ],
-      "Get the deal": [
-        "Hyödynnä tarjous"
-      ],
       "Get the writing assistant": [
         "Hanki kirjoitusavustaja"
       ],
@@ -1517,20 +1514,6 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
-      ],
-      "Subtotal": [
-        "Välisumma"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Välisumma ${ cycle } kuukaudelle",
-        "Välisumma ${ cycle } kuukaudelle"
-      ],
-      "Total": [
-        "Summa"
-      ],
-      "Total for ${ n } month": [
-        "Summa ${ n } kuukaudelle",
-        "Summa ${ n } kuukaudelle"
       ]
     },
     "Collapsible tooltip": {
@@ -3394,6 +3377,9 @@
       ],
       "Some contacts could not be deleted": [
         "Joitakin yhteystietoja ei voitu poistaa"
+      ],
+      "Some documents could not be loaded": [
+        "Joitain dokumentteja ei voitu ladata"
       ],
       "Some groups could not be deleted": [
         "Joitakin ryhmiä ei voitu poistaa"
@@ -5958,10 +5944,6 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
       ],
-      "${ n } month": [
-        "${ n } kuukausi",
-        "${ n } kuukautta"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } merkkiä"
       ],
@@ -6057,6 +6039,12 @@
       ],
       "City": [
         "Kaupunki"
+      ],
+      "Client": [
+        "Ohjelma"
+      ],
+      "Client version": [
+        "Pääteohjelman versio"
       ],
       "Code is 6 digits without spaces": [
         "Koodi sisältää 6 numeroa ilman välilyöntejä"
@@ -6186,9 +6174,6 @@
       ],
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Hyödynnä tarjous"
       ],
       "Hide password": [
         "Piilota salasana"
@@ -9749,11 +9734,6 @@
         "Tilaus alennetaan laskutusjakson päättyessä."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Elinikäinen"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Gt tallennustilaa"
@@ -10565,9 +10545,6 @@
       ],
       "Subscription canceled": [
         "Tilaus on peruttu"
-      ],
-      "Summer Sale": [
-        "Kesäale"
       ],
       "The link either does not exist or has expired": [
         "Linkkiä ei ole olemassa tai se on vanhentunut"
