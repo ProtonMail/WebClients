@@ -99,7 +99,7 @@ export const useInvitationsActions = () => {
     ) => {
         const invitation = await getInvitation(abortSignal, invitationId);
         const invitationName = invitation.decryptedLinkName ? (
-            <strong>{`${invitation.decryptedLinkName} `}</strong>
+            <strong key={invitationId}>{`${invitation.decryptedLinkName} `}</strong>
         ) : (
             ''
         );
