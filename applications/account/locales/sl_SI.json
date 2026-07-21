@@ -107,9 +107,6 @@
       "Add domain": [
         "Dodaj domeno"
       ],
-      "Add email address": [
-        "Dodaj e-poštni naslov"
-      ],
       "Add external address": [
         "Dodaj zunanji naslov"
       ],
@@ -127,9 +124,6 @@
       ],
       "Add PayPal": [
         "Dodaj PayPal"
-      ],
-      "Add phone number": [
-        "Dodaj telefonsko številko"
       ],
       "Add public holidays": [
         "Dodaj praznike"
@@ -614,9 +608,6 @@
       "enable desktop notifications": [
         "prikazovanje obvestil na namizju"
       ],
-      "Enable device-based recovery": [
-        "Omogoči obnovitev na podlagi naprave"
-      ],
       "Enable multi-user support": [
         "Vklopite večuporabniški način"
       ],
@@ -655,9 +646,6 @@
       ],
       "Generate password": [
         "Ustvari geslo"
-      ],
-      "Generate recovery phrase": [
-        "Ustvari obnovitveno frazo"
       ],
       "Generate token": [
         "Ustvari žeton"
@@ -806,6 +794,9 @@
       "Italic": [
         "Ležeče"
       ],
+      "JumpCloud": [
+        "JumpCloud"
+      ],
       "Keep": [
         "Obdrži"
       ],
@@ -892,6 +883,9 @@
       ],
       "Maybe later": [
         "Mogoče kasneje"
+      ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
       ],
       "More": [
         "Več"
@@ -1495,9 +1489,6 @@
       ],
       "View plans details": [
         "Ogled podrobnosti paketa"
-      ],
-      "View recovery settings": [
-        "Prikaži nastavitve obnovitve"
       ],
       "Void": [
         "Nična"
@@ -2346,6 +2337,9 @@
       ],
       "Discover and set up features": [
         "Odkrijte in nastavite funkcije"
+      ],
+      "Get 50% offer": [
+        "Izkoristite ponudbo s 50% popustom"
       ],
       "Got it": [
         "Razumem"
@@ -4971,9 +4965,6 @@
       "Subscription expired": [
         "Naročnina je potekla"
       ],
-      "They may ask to access my account in case of an emergency.": [
-        "V nujnih primerih bodo lahko zahtevali dostop do mojega računa."
-      ],
       "Time required before automatically granting them access": [
         "Čas, potreben preden jim samodejno podelite dostop"
       ],
@@ -5009,12 +5000,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Njihov dostop lahko kadar koli odstranite, da ponovno pridobite izključni nadzor nad svojim računom."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "Nihče vas še ni izbral za stik v nujnih primerih."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "Nihče vaš še ni izbral za stik v nujnih primerih."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Dosegli ste največjo dovoljeno število stikov za nujne primere: ${ limit }.",
@@ -5427,6 +5412,9 @@
       ],
       "Please set a recovery phone number first": [
         "Najprej nastavite telefonsko številko za obnovitev"
+      ],
+      "Please set up your organization before adding a company.": [
+        "Preden dodate podjetje, nastavite svojo organizacijo."
       ],
       "Please try again in a few moments.": [
         "Poskusite znova čez nekaj trenutkov."
@@ -7632,20 +7620,17 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "S telefonsko številko lahko preverite samo en ${ BRAND_NAME } račun"
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Obnovitvena fraza vam omogoča dostop do vašega računa in obnovitev vaših šifriranih sporočil, če pozabite svoje geslo."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Uporabnik je račun, povezan s posameznim uporabniškim imenom, poštnim nabiralnikom in osebo."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Zagotovite si dostop do več kot 6.500 hitrih strežnikov na do 10 napravah, da bodo vaši podatki brskanja varni. Na voljo na ${ ios }, ${ android }, ${ appleTV } in ${ desktop }."
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Dostop do več kot 20.000 strežnikov v več kot 145 državah"
+      ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivirajte vsaj en način za obnovitev podatkov, da lahko v primeru izgube gesla še naprej dostopate do vsebine računa ${ BRAND_NAME }."
       ],
       "Active": [
         "Aktivno"
@@ -7655,6 +7640,9 @@
       ],
       "Activity Monitor": [
         "Nadzor dejavnosti"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Dodajte ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } za le ${ bundlePlanPriceInline }"
       ],
       "add a recovery method": [
         "dodajte način obnovitve"
@@ -8070,6 +8058,9 @@
         "Brišem ${ deletedServerCount } prehodne strežnike",
         "Brišem ${ deletedServerCount } prehodnih strežnikov"
       ],
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "Namestite ${ regoArtifact } neposredno prek namestitve datoteke MDM"
+      ],
       "Did you know?": [
         "Ali ste vedeli?"
       ],
@@ -8129,6 +8120,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Zmanjšanje paketa bo prekinila vse povezave do plačljivih ${ VPN_APP_NAME } strežnikov."
+      ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Prenesite datoteko ${ mobileConfigArtifact } in jo odprite na vsakem računalniku Mac, namestite profil in ga potrdite v sistemskih nastavitvah."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "Prenesite ${ powershellArtifact } in ga kot sistemski uporabnik zaženite na vsaki napravi, da se profil naprave samodejno namesti."
       ],
       "Download on the App Store": [
         "Prenesi iz trgovine App Store"
@@ -8289,6 +8286,9 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Hitro in osredotočeno. E-pošta in koledar na vašem namizju."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Največja hitrost VPN s hitrostjo do 10 Gbps"
+      ],
       "Featured in": [
         "Predstavljeno v"
       ],
@@ -8349,9 +8349,6 @@
       "Gateways": [
         "prehode"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Ustvarjanje nove obnovitvene fraze bo razveljavilo vašo staro frazo."
-      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Pridobite dostop z ustvarjanjem računa ${ BRAND_NAME } in s sprejetjem povabila."
       ],
@@ -8391,6 +8388,9 @@
       "Groups": [
         "Skupine"
       ],
+      "Have some more time to decide without interruption.": [
+        "Imate še nekaj časa, da se odločite, ne da bi vas pri tem kaj motilo."
+      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Pomagajte drugim družinam zagotoviti svojim otrokom varen začetek na spletu. Dajte v skupno ravo ta mejnik in razširite novico."
       ],
@@ -8427,14 +8427,14 @@
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
         "Če je bil vneseni e-poštni naslov uporabljen za rezervacijo otrokovega e-poštnega naslova, vam bomo ponovno poslali aktivacijski kupon."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Če je to posledica ponastavitve starega gesla, lahko preprečite, da se sporočilo prikaže znova."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Če imate težave z ustvarjanjem računa, lahko zahtevate povabilo in odzvali se bomo v enem delovnem dnevu."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Če menite, da je prišlo do pomote, se obrnite na nas ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Če naročnino prekinete zdaj, boste dne ${ expiryDate } izgubili dostop do ${ BRAND_NAME } ${ planTitle }, vključno z naslednjimi funkcijami:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Če prekličete, se vaša naročnina na ${ planTitle } ne bo podaljšala, ko poteče dne ${ expiryDate }."
@@ -8468,9 +8468,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Če ste kupili darilno kodo ali ste jo prejeli od naše podporne ekipe, jo lahko vnesete tukaj."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Če ste nedavno ponastavili svoje geslo, lahko uporabite način obnove podatkov, da odklenete svoje podatke."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Če ima vaša organizacija javne osebnosti, obravnava občutljive podatke ali je lahko tarča kibernetskih napadov, vam toplo priporočamo, da za vse v vaši organizaciji omogočite ${ PROTON_SENTINEL_NAME }."
@@ -8595,9 +8592,6 @@
       "Invited": [
         "Povabljeni"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Zdi se, da je nekaj vaših podatkov šifriranih in zaklenjenih."
-      ],
       "It's better to have:": [
         "Bolje je imeti:"
       ],
@@ -8612,6 +8606,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Poskrbite, da bodo vaši podatki bolj varni in zasebni s temi vodniki in nasveti."
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Zaščitite svoja gesla in se s funkcijo samodejnega izpolnjevanja prijavite z vseh naprav."
       ],
       "Key sections reorganized for faster access.": [
         "Ključni razdelki so preurejeni za hitrejši dostop."
@@ -8684,6 +8681,9 @@
       ],
       "Low Priority": [
         "Nizka pomembnost"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Večje e-poštne storitve lahko zavrnejo ali filtrirajo vašo e-pošto v neželeno pošto, če SPF/DKIM/DMARC manjka ali ni pravilno nastavljen."
@@ -8778,8 +8778,14 @@
       "No addresses exist": [
         "Naslovi ne obstajajo"
       ],
+      "No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.": [
+        "Zaenkrat še ni podrobnih podatkov o zaračunavanju. Tukaj so prikazane vaše razčlenitve po obračunskih obdobjih. Ko bodo na voljo, jih boste lahko prenesli kot CSV datoteko."
+      ],
       "No card required": [
         "Ni potrebna kartica"
+      ],
+      "No companies yet. Start by creating a new company.": [
+        "Ni podjetij. Najprej ustvarite novo podjetje."
       ],
       "No folder selected": [
         "Mapa ni izbrana"
@@ -8852,6 +8858,9 @@
       ],
       "or discover other features:": [
         "ali odkrijte druge funkcije:"
+      ],
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "Ali pa zaženite ${ powershellArtifact } prek izvajanja skripta MDM"
       ],
       "Or select a particular server:": [
         "Ali izberite določen strežnik:"
@@ -8949,9 +8958,6 @@
       "Please fill out this field.": [
         "Izpolnite to polje."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Shranite ga na varnem. Potrebovali ga boste za dostop do svojega računa in dešifriranje podatkov v primeru ponastavitve gesla."
-      ],
       "please open a support ticket": [
         "prosimo odprite zahtevek za podporo"
       ],
@@ -8994,6 +9000,9 @@
       "Preference saved": [
         "Nastavitev shranjena"
       ],
+      "Premium privacy protection across all your devices": [
+        "Vrhunska zaščita zasebnosti na vseh vaših napravah"
+      ],
       "Preview": [
         "Predogled"
       ],
@@ -9027,6 +9036,9 @@
       "Public sharing of documents is not yet supported.": [
         "Javna souporaba dokumentov še ni podprta."
       ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "Prek svojega sistema MDM namestite ${ mobileConfigArtifact } na vsak upravljani računalnik Mac."
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Za pomoč pri vsem, kar je povezano z ${ BRAND_NAME }, se obrnite na nas."
       ],
@@ -9050,9 +9062,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Obnovitvena fraza je kopirana v odložišče."
-      ],
-      "Recovery phrase downloaded": [
-        "Obnovitvena fraza je prenesena."
       ],
       "Recovery phrase has been disabled": [
         "Obnovitvena fraza je bila onemogočena."
@@ -9230,6 +9239,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Uporabite krajšo in lažjo različico svojega e-poštnega naslova."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50% popust"
       ],
       "Step ${ step }": [
         "${ step }. korak",
@@ -9516,6 +9528,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Za dešifriranje in ogled zaklenjenih podatkov po ponastavitvi gesla izberite način obnovitve."
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "Da omogočite funkcijo »vedno vključen VPN«, je potrebno na vsak Mac namestiti profil s konfiguracijo. Odjemalec ${ VPN_APP_NAME } po namestitvi samodejno prevzame profil naprave in ga uporabi."
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Da bi zagotovili, da ne izgubite pomembnih podatkov, ${ DRIVE_APP_NAME } shranjuje starejše različice datotek, medtem ko vi in vaši sodelavci opravljate spremembe. Izberite, kako dolgo naj ${ BRAND_NAME } ohrani prejšnje različice."
       ],
@@ -9654,6 +9669,9 @@
       "Users": [
         "Uporabniki"
       ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "Uporabljate drug sistem za upravljanje mobilnih naprav (MDM)? Primeren je kateri koli sistem MDM, ki podpira namestitev konfiguracijskega profila. V dokumentaciji vašega sistema MDM poiščite navodila, kako ga naložiti in dodeliti vaš inventar naprav."
+      ],
       "Vault created": [
         "Trezor ustvarjen"
       ],
@@ -9740,9 +9758,6 @@
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Priporočamo, da obvestite člane organizacije in jih prosite, naj nastavijo dvojno preverjanje pristnosti za svoje račune, preden zahtevate uporabo tega preverjanja."
-      ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Varno shranimo podatke za obnovitev na vaši zaupanja vredni napravi, da preprečimo izgubo podatkov."
       ],
       "We use 3-D Secure to protect your payments": [
         "Za zaščito vaših plačil uporabljamo 3-D Secure."
@@ -10100,12 +10115,6 @@
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Vaše nedavne spremembe so bile objavljene. Uporabnikom bodo vidne v naslednjih nekaj urah."
-      ],
-      "Your recovery phrase": [
-        "Vaša obnovitvena fraza"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Vaša obnovitvena fraza je niz 12 naključno ustvarjenih besed v določenem vrstnem redu."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsak ${ cycle } mesec.",
@@ -10838,6 +10847,12 @@
       "City": [
         "Mesto"
       ],
+      "Client": [
+        "Odjemalec"
+      ],
+      "Client version": [
+        "Različica odjemalca"
+      ],
       "Code is 6 digits without spaces": [
         "Koda vsebuje 6 števk brez presledkov"
       ],
@@ -11429,6 +11444,9 @@
       "Recovery phrase": [
         "Obnovitvena fraza"
       ],
+      "Regular expression": [
+        "Regularni izraz"
+      ],
       "Remove": [
         "Odstrani"
       ],
@@ -11539,6 +11557,9 @@
       ],
       "Start date": [
         "Začetni datum"
+      ],
+      "Starts with": [
+        "Se začne z"
       ],
       "State": [
         "Država"
@@ -11716,14 +11737,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Obnovitev v napravi"
-      ],
       "Recovery phone number": [
         "Telefonska številka za obnovitev"
-      ],
-      "Recovery phrase": [
-        "Obnovitvena fraza"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11971,9 +11986,6 @@
       "How to share via email": [
         "Kako dati v skupno rabo prek e-pošte"
       ],
-      "How to unlock data": [
-        "Kako odkleniti podatke."
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Kako uporabljati ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -11991,9 +12003,6 @@
       ],
       "Learn more": [
         "Več o tem"
-      ],
-      "Learn more about data recovery": [
-        "Izvedite več o obnovitvi podatkov."
       ],
       "Not activated": [
         "Ni aktivirano"
@@ -12400,6 +12409,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Povežite vašo domeno po meri v ${ BRAND_NAME } in pripravite e-poštne naslove po meri (npr. vi@vasepodjetje.com). Naš čarovnik vas bo vodil skozi postopek."
+      ],
+      "Regular expression rule": [
+        "Pravilo regularnega izraza"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaše brezplačno preizkusno obdobje se je izteklo. ${ nonAutoRenewalAction }"
@@ -15727,173 +15739,20 @@
       ]
     },
     "Safety review": {
-      "Account safety review": [
-        "Pregled varnosti računa"
-      ],
-      "Add a recovery email": [
-        "Dodajte e-poštni naslov za obnovitev"
-      ],
-      "Add a recovery email address": [
-        "Dodajte e-poštni naslov za obnovitev"
-      ],
-      "Add a recovery phone number": [
-        "Dodajte telefonsko številko za obnovitev"
-      ],
-      "Add an alternative email address": [
-        "Dodajte nadomestni e-poštni naslov"
-      ],
-      "Back to Safety Review": [
-        "Nazaj na varnostni pregled"
-      ],
-      "Can be used to regain access to your account and data": [
-        "Lahko uporabite za obnovitev dostopa do vašega računa in podatkov."
-      ],
-      "Check account security": [
-        "Preveri varnost računa"
-      ],
       "Code sent to ${ boldValue }": [
         "Koda je poslana na ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Nadaljuj na varnostni pregled"
-      ],
-      "Device-based recovery enabled": [
-        "Obnovitev v napravi je omogočena."
-      ],
-      "Disable account reset by email": [
-        "Onemogoči ponastavitev računa po e-pošti"
-      ],
-      "Download ${ size }": [
-        "Prenesi ${ size }"
-      ],
-      "Email address": [
-        "E-poštni naslov"
-      ],
-      "Enable device-based recovery": [
-        "Omogočite obnovitev na podlagi naprave"
-      ],
-      "Enable recovery by email": [
-        "Omogoči obnovitev po e-pošti"
-      ],
-      "Enable recovery by phone": [
-        "Omogoči obnovitev po telefonu"
       ],
       "Invalid code": [
         "Neveljavna koda"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "To je edini način, da v celoti obnovite svoj račun, zato ga hranite na varnem."
-      ],
-      "Recovery email address": [
-        "E-poštni naslov za obnovitev"
-      ],
-      "Recovery phone number": [
-        "Telefonska številka za obnovitev"
-      ],
       "Review account safety": [
         "Preglejte varnost računa"
-      ],
-      "Safeguard account now": [
-        "Zavarujte račun zdaj"
-      ],
-      "Safeguard your account": [
-        "Zavarujte svoj račun"
-      ],
-      "Safeguard your account further": [
-        "Dodatno zavarujte vaš račun"
       ],
       "Safety review": [
         "Varnostni pregled"
       ],
       "Send a new code": [
         "Pošlji novo kodo"
-      ],
-      "Show more": [
-        "Prikaži več"
-      ],
-      "Take action to secure your account": [
-        "Ukrepajte za zaščito vašega računa"
-      ],
-      "There was an error verifying your recovery email": [
-        "Pri preverjanju vašega e-poštnega naslova za obnovitev je prišlo do napake."
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "in tako samodejno obnovitev vaše podatke, ko se vpišete v račun iz zaupanja vredne naprave."
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Vnesite potrditveno kodo, poslano na ${ boldEmail } in tako potrdite, da e-poštni naslov res pripada vam."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Vnesite potrditveno kodo, poslano na ${ boldPhoneNumber } in tako potrdite, da je telefonska številka res vaša."
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "ter tako obnovite vaš račun in podatke, če se kdaj zgodi, da ostanete brez dostopa."
-      ],
-      "to recover your account if you're ever locked out": [
-        "ter tako obnovite vaš račun, če se kdaj zgodi, da ostanete brez dostopa."
-      ],
-      "Verify": [
-        "Preveri"
-      ],
-      "Verify your recovery email address": [
-        "Preverite vaš e-poštni naslov za obnovitev"
-      ],
-      "Verify your recovery phone number": [
-        "Preverite vašo obnovitveno telefonsko številko"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Obstaja tveganje, da izgubite dostop do svojega računa in podatkov."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Obstaja tveganje, da izgubite dostop do svojih podatkov."
-      ],
-      "You can disable this at any time.": [
-        "To lahko kadarkoli onemogočite."
-      ],
-      "You have recommended actions.": [
-        "Imate priporočila."
-      ],
-      "Your account and data can be recovered": [
-        "Vaš račun in podatke je mogoče obnoviti."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Vaš račun in podatke je mogoče obnoviti. Imate priporočila za dodatno zavarovanje računa."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "Vaš račun in podatke je mogoče obnoviti. Imate priporočila."
-      ],
-      "Your account is fully secure.": [
-        "Vaš račun je popolnoma zavarovan."
-      ],
-      "Your account is secure.": [
-        "Vaš račun je varen."
-      ],
-      "Your email is set": [
-        "Vaš e-poštni naslov je nastavljen"
-      ],
-      "Your recovery email": [
-        "Vaš e-poštni naslov za obnovitev"
-      ],
-      "Your recovery email address is:": [
-        "Vaš e-poštni naslov za obnovitev je:"
-      ],
-      "Your recovery email has been enabled": [
-        "Vaš e-poštni naslov za obnovitev je bil omogočen."
-      ],
-      "Your recovery email is set": [
-        "Vaš e-poštni naslov za obnovitev je nastavljen."
-      ],
-      "Your recovery methods": [
-        "Vaš način obnovitve"
-      ],
-      "Your recovery phone": [
-        "Vaša telefonska številka za obnovitev"
-      ],
-      "Your recovery phone has been enabled": [
-        "Vaša telefonska številka za obnovitev je bila omogočena."
-      ],
-      "Your recovery phone number is:": [
-        "Vaša telefonska številka za obnovitev je:"
       ]
     },
     "saml: Action": {
@@ -16350,9 +16209,6 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "Če želite onemogočiti ponastavitev gesla, morate pripraviti način obnovitve."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Zaradi večje varnosti vašega računa in zaščite vaših podatkov lahko zahtevate ponastavitev gesla iz vaših nastavitev računa v spletni aplikaciji."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -18782,9 +18638,6 @@
       "Dashboard": [
         "Nadzorna plošča"
       ],
-      "Data locked": [
-        "Podatki so zaklenjeni"
-      ],
       "Data recovery": [
         "Obnovitev podatkov"
       ],
@@ -19055,9 +18908,6 @@
       "Generate missing keys": [
         "Ustvarite manjkajoče ključe"
       ],
-      "Generate new recovery phrase?": [
-        "Ustvari novo obnovitveno frazo?"
-      ],
       "Generate SMTP token": [
         "Ustvari SMTP žeton"
       ],
@@ -19172,6 +19022,9 @@
       "Information exposed in breach": [
         "Informacije, razkrite pri kršitvi"
       ],
+      "Install it manually": [
+        "Namestite ga ročno"
+      ],
       "Integrations": [
         "Integracije"
       ],
@@ -19213,6 +19066,9 @@
       ],
       "Link confirmation": [
         "Potrditvena povezava"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "Glavno geslo"
@@ -19631,6 +19487,9 @@
       "Status": [
         "Stanje"
       ],
+      "Stay for 50% off your next month": [
+        "V naslednjem mesecu izkoristite 50% popust"
+      ],
       "Subscription": [
         "Naročnina"
       ],
@@ -19780,6 +19639,9 @@
       ],
       "What is the dark web?": [
         "Kaj je temni splet (Dark Web)?"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "WireGuard configuration": [
         "WireGuard nastavitev"
@@ -20176,6 +20038,9 @@
       "Confirm all": [
         "Potrdi vse"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Dostopa za skrbnika ni bilo mogoče omogočiti: ${ unprivatizationResult.error }"
+      ],
       "Enable admin access?": [
         "Omogoči administratorski dostop?"
       ],
@@ -20199,6 +20064,9 @@
       ],
       "View request": [
         "Poglej zahtevek"
+      ],
+      "Waiting for admin approval": [
+        "Čakam na odobritev administratorja"
       ]
     },
     "Update font modal": {
@@ -20287,17 +20155,14 @@
       "Inactive": [
         "Neaktivno"
       ],
-      "Invite sent": [
-        "Vabilo poslano"
+      "Invited": [
+        "Povabljeni"
       ],
-      "It's you": [
-        "To ste vi"
+      "Pending": [
+        "V čakanju"
       ],
-      "Private": [
-        "Zasebno"
-      ],
-      "SSO": [
-        "SSO"
+      "Requested": [
+        "Zahteva je poslana"
       ],
       "SSO user provided by your identity provider": [
         "Uporabnik SSO, ki ga je zagotovil vaš ponudnik identitete"

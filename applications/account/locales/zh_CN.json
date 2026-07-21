@@ -135,9 +135,6 @@
       "Add domain": [
         "添加域名"
       ],
-      "Add email address": [
-        "添加邮箱地址"
-      ],
       "Add external address": [
         "添加外部地址"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "添加 PayPal"
-      ],
-      "Add phone number": [
-        "添加电话号码"
       ],
       "Add public holidays": [
         "添加公众假期"
@@ -326,6 +320,9 @@
       ],
       "Compare plans": [
         "比较套餐"
+      ],
+      "Configure new device profile": [
+        "配置新设备配置文件"
       ],
       "Configure SAML": [
         "配置 SAML"
@@ -509,6 +506,9 @@
       ],
       "Delete and confirm": [
         "删除并确认"
+      ],
+      "Delete device profile": [
+        "删除设备配置文件"
       ],
       "Delete filter “${ Name }”": [
         "删除筛选器 “${ Name }”"
@@ -753,9 +753,6 @@
       "enable desktop notifications": [
         "开启推送通知"
       ],
-      "Enable device-based recovery": [
-        "启用基于设备的恢复"
-      ],
       "Enable multi-user support": [
         "启用多用户支持"
       ],
@@ -822,6 +819,9 @@
       "Generate": [
         "生成"
       ],
+      "Generate device profile": [
+        "生成设备配置文件"
+      ],
       "Generate key": [
         "生成密钥"
       ],
@@ -836,9 +836,6 @@
       ],
       "Generate password": [
         "生成密码"
-      ],
-      "Generate recovery phrase": [
-        "生成恢复短语"
       ],
       "Generate token": [
         "生成令牌"
@@ -1017,6 +1014,9 @@
       "Insert link": [
         "插入链接"
       ],
+      "Instructions": [
+        "说明"
+      ],
       "Invite": [
         "邀请"
       ],
@@ -1028,6 +1028,9 @@
       ],
       "Italic": [
         "斜体"
+      ],
+      "JumpCloud": [
+        "JumpCloud"
       ],
       "Keep": [
         "保留"
@@ -1133,6 +1136,9 @@
       ],
       "Maybe later": [
         "以后再说"
+      ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
       ],
       "More": [
         "更多"
@@ -1868,9 +1874,6 @@
       ],
       "View plans details": [
         "查看等级详情"
-      ],
-      "View recovery settings": [
-        "查看恢复设置"
       ],
       "View recovery setup details": [
         "查看恢复设置详情"
@@ -3481,6 +3484,9 @@
       ],
       "Discover and set up features": [
         "发现并设置功能"
+      ],
+      "Get 50% offer": [
+        "享受 50% 折扣"
       ],
       "Got it": [
         "好的"
@@ -5820,7 +5826,7 @@
         "浏览器"
       ],
       "Calendar": [
-        "Calendar"
+        "日历"
       ],
       "Chrome": [
         "Chrome"
@@ -5829,10 +5835,10 @@
         "电脑版"
       ],
       "Download for Brave": [
-        "为 Brave 下载"
+        "下载 Brave 版"
       ],
       "Download for Chrome": [
-        "为 Chrome 下载"
+        "下载 Chrome 版"
       ],
       "Download for Edge": [
         "下载 Edge 版"
@@ -5844,10 +5850,10 @@
         "下载 Linux 版"
       ],
       "Download for macOS": [
-        "下载 macOS 版本"
+        "下载 macOS 版"
       ],
       "Download for Safari": [
-        "为 Safari 下载"
+        "下载 Safari 版"
       ],
       "Download for Windows": [
         "下载 Windows 版"
@@ -5919,7 +5925,7 @@
         "macOS Ventura"
       ],
       "Mail": [
-        "邮件"
+        "邮箱"
       ],
       "Mobile": [
         "移动版"
@@ -6717,9 +6723,6 @@
       "Add recovery contact": [
         "添加恢复联系人"
       ],
-      "Add recovery method": [
-        "添加恢复方法"
-      ],
       "Added on ${ formattedDate }": [
         "添加于 ${ formattedDate }"
       ],
@@ -6960,14 +6963,8 @@
       "Subscription expired": [
         "订阅已过期"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "他们添加我为可信联系人，以便我可以在紧急情况下访问他们的账户。"
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "他们已将您添加为受信任的联系人。在紧急情况下，您可以访问他们的账户。"
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "他们可能会在紧急情况下请求访问我的账户"
       ],
       "They may ask to access your account in case of an emergency.": [
         "他们可能会在紧急情况下请求访问您的账户。"
@@ -6986,9 +6983,6 @@
       ],
       "Time required before automatically granting them access": [
         "自动授予访问权限前所需的等待时间"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "若要添加恢复联系人，您必须设置密保邮箱或手机。"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "要禁用此恢复方式，请移除您所有的恢复联系人！"
@@ -7040,12 +7034,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "您可以随时移除他们的访问权限，以重新获得对账户的专属控制权。"
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "您尚未被指定为任何人的恢复联系人！"
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "您尚未被指定为任何人的紧急联系人"
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "您已达到 ${ limit } 个紧急联系人的上限"
@@ -7179,6 +7167,9 @@
       ],
       "Contact signature not verified": [
         "未验证联系人签名"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "无法生成设备配置文件，请重试。"
       ],
       "Could not open created vault": [
         "无法打开创建的保险库"
@@ -9609,7 +9600,7 @@
         "生成应用专用密码或开启 IMAP 功能"
       ],
       "CSV or a VCF (vCard) file": [
-        "CSV 或 VCF（vCard）文件"
+        "CSV 或 VCF (vCard) 文件"
       ],
       "full calendar view": [
         "全日历视图"
@@ -10074,17 +10065,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "恢复文件可让您在账户恢复后解锁并查看数据"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "若不慎忘记密码，恢复短语可让您访问账户并恢复已加密的消息。"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一个用户即一个关联了单一用户名、邮箱和自然人的账户"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "在最多10个设备上访问6,500多个高速服务器以保持您浏览数据的安全。 可在 ${ ios }、 ${ android }、 ${ appleTV }和 ${ desktop } 上获得。"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "访问遍布 145 多个国家/地区的 20,000+ 台服务器"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "跨设备无缝访问您的密码并保护您的在线身份。下载并安装相关的 ${ PASS_APP_NAME } 应用和扩展程序。"
@@ -10094,9 +10082,6 @@
       ],
       "Account successfully updated": [
         "账户已成功更新"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
       "Active": [
         "订阅中"
@@ -10109,6 +10094,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 仅需 ${ bundlePlanPriceInline }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -10194,8 +10182,14 @@
       "All data and settings are preserved": [
         "所有数据和设置将予以保留"
       ],
+      "All devices with this device profile deployed": [
+        "所有已部署此设备配置文件的设备"
+      ],
       "All inactive members deleted": [
         "已删除所有非活跃成员"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "所有互联网流量始终加密且安全"
       ],
       "All keys successfully reactivated": [
         "已成功重新激活所有密钥"
@@ -10515,6 +10509,9 @@
       "Choose an Entity ID to continue.": [
         "选择一个实体 ID 以继续。"
       ],
+      "Choose one:": [
+        "请选其一："
+      ],
       "Choose your service to connect with": [
         "请选择要连接的服务"
       ],
@@ -10550,6 +10547,9 @@
       ],
       "Compromised": [
         "已泄露"
+      ],
+      "Configure Always-on VPN": [
+        "配置始终开启 VPN"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "通过身份供应商 (IdP) 为组织配置 SAML 身份验证。这将为整个组织启用 SAML。"
@@ -10725,6 +10725,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "根据您的设置，他们可能立即获得访问权限，或需要经过指定的**等待期**！"
       ],
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "通过您的 MDM 文件部署直接部署 ${ regoArtifact }"
+      ],
+      "Deploy across all your managed devices": [
+        "在所有受管设备上部署"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "通过您的 MDM（Jamf、Intune…）部署，或在每台设备上手动部署。"
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "已部署始终开启 VPN 设备配置文件的设备，除非 ${ VPN_APP_NAME } 连接处于活动状态，否则无法访问互联网。"
+      ],
       "Did you know?": [
         "您知道吗？"
       ],
@@ -10800,6 +10812,15 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
       ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "下载 ${ mobileConfigArtifact } 并在每台 Mac 上打开以安装配置文件，然后在“系统设置”中批准它。"
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "下载 ${ powershellArtifact } 并以系统用户身份在每台设备上运行，以自动放置设备配置文件。"
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "下载 ${ removeScriptLink } 并以系统用户身份在每台设备上运行，以自动删除该配置文件。"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "下载 ${ VPN_APP_NAME }"
       ],
@@ -10872,6 +10893,9 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "标记为 ${ nameDeleted } 的邮件不会被删除，仍可在相应的文件夹中找到。"
       ],
+      "Employees can't go online without a VPN connection": [
+        "没有 VPN 连接，员工将无法上网"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "启用自动更新，以保持对 Plus 服务器和功能的访问权限。"
       ],
@@ -10923,6 +10947,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "从身份供应商（如 https://idp.example.com/sso/saml）收到的终端 URL。"
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "设备检测到配置文件后，强制执行会自动开始。"
+      ],
       "Enhance your network security": [
         "增强网络安全"
       ],
@@ -10931,6 +10958,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "确保通信完全私密且加密，立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
+      ],
+      "Ensure your organization is always protected": [
+        "确保您的组织始终受到保护"
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "输入密码完成您的 ${ BRAND_NAME } 账户设置，即可在所有设备上使用 ${ VPN_APP_NAME } 服务！"
@@ -11028,6 +11058,9 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "最快达 10 Gbps 的 VPN 速度"
+      ],
       "Featured in": [
         "推荐"
       ],
@@ -11109,11 +11142,11 @@
       "Gateways": [
         "网关"
       ],
+      "Generate the device profile and download a configuration file.": [
+        "生成设备配置文件并下载配置文件。"
+      ],
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "生成新的恢复短语将停用您当前的恢复短语。"
-      ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "新生成的恢复短语将取代旧的！"
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "使用 ${ AUTHENTICATOR_APP_NAME } 即可在您的任意设备上获取验证码。"
@@ -11174,6 +11207,9 @@
       ],
       "Groups": [
         "群组"
+      ],
+      "Have some more time to decide without interruption.": [
+        "不受打扰地多些时间做决定"
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "帮助其他家庭为他们的孩子提供一个安全的在线起点。分享这一里程碑并广为传播。"
@@ -11238,9 +11274,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "如果系统时区与当前时区偏好设置不匹配，系统将提示您更新（每天最多一次）。"
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "如果这是由于密码重置造成的问题，您可以要求不再展示这条信息。"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
@@ -11249,6 +11282,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如有异议，请点击${ contactLink }联系我们。"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "如果现在取消，您将在 ${ expiryDate } 失去对 ${ BRAND_NAME } ${ planTitle } 的访问权限，包括以下功能："
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
@@ -11288,9 +11324,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "如果您最近重置了密码，可以通过 ${ recoveryMethodLink } 解锁您的数据。如果这是因为旧密码重置导致的，您可以停止再次显示此消息。"
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "如果您近期重置了您的密码，您可以使用数据恢复手段解锁您的数据。"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "如果您的组织中有公众人物、处理敏感数据或可能成为网络攻击的目标，我们强烈建议您为组织中的所有成员启用 ${ PROTON_SENTINEL_NAME }。"
@@ -11424,9 +11457,6 @@
       "Invited": [
         "已邀请"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "您的部分数据被加密并锁定。"
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "更改服务器的国家/地区需要 10 天时间，因此请确保您的选择正确。"
       ],
@@ -11501,6 +11531,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "使用这些指南和技巧，让您的信息更安全、更私密。"
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "保障您的密码安全，并通过跨设备自动填充功能即时登录。"
       ],
       "Key deletion is irreversible!": [
         "密钥删除不可逆！"
@@ -11591,6 +11624,9 @@
       ],
       "Low Priority": [
         "较低优先顺序"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "如果 SPF/DKIM/DMARC 不存在或配置不当，主流邮箱厂商可能会将您的邮件归为垃圾邮件，甚至直接拒收。"
@@ -11781,6 +11817,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "当您的账户访问权限被授予后，他们可以访问您的**恢复**设置并为您**更改 ${ ACCOUNT_APP_NAME } 密码**！"
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "成功部署后，设备可能需要最多几个小时才能检测并强制执行该策略。"
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "该地址只能更改大小写和标点符号（句号、连字符和下划线）。如需使用其他地址，请添加新地址。"
       ],
@@ -11819,6 +11858,9 @@
       ],
       "or discover other features:": [
         "或发现其他功能："
+      ],
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "或通过您的 MDM 脚本执行运行 ${ powershellArtifact }"
       ],
       "Or select a particular server:": [
         "或指定服务器："
@@ -11943,9 +11985,6 @@
       "Please fill out this field.": [
         "请填写此项。"
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "请妥善保存，将来如需重置密码，只有通过它才能恢复账户并解密数据。"
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "请注意，如果您删除筛选器 ${ nameDeleted }，我们将停止处理由其触发的所有自动化操作。"
       ],
@@ -11993,6 +12032,9 @@
       ],
       "Preference saved": [
         "设置已保存"
+      ],
+      "Premium privacy protection across all your devices": [
+        "所有设备上的高级隐私保护"
       ],
       "Preview": [
         "预览"
@@ -12042,6 +12084,9 @@
       "Public sharing of documents is not yet supported.": [
         "暂不支持公开分享。"
       ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "使用您的 MDM 将 ${ mobileConfigArtifact } 推送到每台受管 Mac。"
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "如需任何帮助，请联系我们 ${ BRAND_NAME }"
       ],
@@ -12077,9 +12122,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "恢复短语已复制到剪贴板"
-      ],
-      "Recovery phrase downloaded": [
-        "恢复短语已下载"
       ],
       "Recovery phrase has been disabled": [
         "恢复短语已禁用"
@@ -12330,6 +12372,9 @@
       "Start using the shorter, catchier version of your email address.": [
         "开始使用更简短且更朗朗上口的邮箱地址。"
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "保留当前套餐，下月享受 5 折优惠"
+      ],
       "Step ${ step }": [
         "步骤 ${ step }"
       ],
@@ -12392,6 +12437,9 @@
       ],
       "support team": [
         "客服团队"
+      ],
+      "Supported platforms": [
+        "支持的平台"
       ],
       "Swiss based": [
         "立足瑞士"
@@ -12714,6 +12762,12 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "密码重置后如需解密账户数据，请选择一种恢复方式。"
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "要启用始终开启 VPN，需要在每台 Mac 上安装配置文件 — ${ VPN_APP_NAME } 客户端会在配置文件就位后自动强制执行该设备配置文件。"
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "要启用始终开启 VPN，设备配置文件需要到达每台设备上的 ${ policiesPath } — ${ VPN_APP_NAME } 客户端会在该位置检测到它并自动强制执行该配置文件。"
+      ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "若要启用后量子保护，您需要完成新后量子加密密钥的生成。"
       ],
@@ -12752,6 +12806,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "若要重新获得对您账户和数据的访问权限，请输入与您账户关联的 12 字恢复短语。"
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "要移除始终开启 VPN，请从每台设备上的 ${ policiesPath } 中删除 ${ profileFile }。${ VPN_APP_NAME } 客户端在检测到该文件被删除后会立即停止强制执行该配置文件。"
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "增强互联网传输安全，下载安装 ${ VPN_APP_NAME } 应用程序，连接应用提供的服务器。"
@@ -12903,6 +12960,9 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "在外部服务中使用所选邮箱地址作为 SMTP 用户名，使用生成的令牌作为 SMTP 密码。"
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "使用您的 MDM 删除该文件，或通过您的 MDM 脚本执行功能运行 ${ removeScriptLink }。任何支持部署文件或执行脚本的 MDM 均可使用。"
+      ],
       "User activated": [
         "用户已激活"
       ],
@@ -12914,6 +12974,12 @@
       ],
       "Users": [
         "用户"
+      ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "使用其他 MDM？任何支持部署配置文件的 MDM 均可使用。请参阅您的 MDM 文档，了解如何上传并将其分配给您的设备集群。"
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "使用其他 MDM？任何支持部署文件或执行 PowerShell 脚本的 MDM 均可使用。请参阅您的 MDM 文档以获取更多信息。"
       ],
       "Vault created": [
         "保险库已创建"
@@ -13031,9 +13097,6 @@
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "我们建议在强制使用 2FA 之前通知组织成员并要求他们为其账户设置 2FA。"
-      ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "我们会将账户恢复信息安全地存储在您的可信设备上，避免数据意外丢失"
       ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "我们强烈建议所有人启用通过恢复短语恢复。"
@@ -13261,7 +13324,7 @@
         "您现在可以重新登录您的账户啦！"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "您一次只能打开一个在线聊天实例，请在开始新对话前关闭之前的对话。"
+        "您一次只能打开一个聊天实例。请先关闭之前的会话，再开始新的会话。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
@@ -13449,6 +13512,9 @@
       "Your account was successfully updated with this promotion": [
         "您的账户已成功应用此促销优惠"
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "您的始终开启 VPN 设备配置文件已准备好部署。"
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
       ],
@@ -13514,12 +13580,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "重置密码后，您的恢复文件将能够恢复账户中的邮件、联系人、文件、密码以及任何其他加密数据的访问权限。"
-      ],
-      "Your recovery phrase": [
-        "您的恢复短语"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "您的恢复短语由 12 个随机生成的单词按特定顺序组成。"
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "您的恢复短语使您能够在无法访问 ${ BRAND_NAME } 账户时重新登录并恢复数据。它由 12 个单词组成，作用类似于备份密码。"
@@ -14356,6 +14416,9 @@
       "App Settings": [
         "应用设置"
       ],
+      "Applies:": [
+        "适用于："
+      ],
       "Apply filter to existing emails": [
         "对现有邮件执行此规则"
       ],
@@ -14815,6 +14878,9 @@
       "End-to-end encryption": [
         "端到端加密"
       ],
+      "Enforce Always-on VPN": [
+        "强制启用始终开启 VPN"
+      ],
       "Enter code": [
         "输入代码"
       ],
@@ -15060,6 +15126,9 @@
       ],
       "Lock app after inactivity": [
         "应用闲置后锁定"
+      ],
+      "Login restrictions": [
+        "登录限制"
       ],
       "Logo": [
         "图标"
@@ -15840,17 +15909,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "通过设备恢复"
-      ],
       "Notification phone number": [
         "通知用手机号码"
       ],
       "Recovery phone number": [
         "密保手机"
-      ],
-      "Recovery phrase": [
-        "恢复短语"
       ],
       "Set recovery phone number": [
         "设置密保手机"
@@ -16167,9 +16230,6 @@
       "How to share via email": [
         "如何通过邮件分享"
       ],
-      "How to unlock data": [
-        "如何解锁数据"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "如何使用 ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16193,9 +16253,6 @@
       ],
       "Learn more": [
         "了解详情"
-      ],
-      "Learn more about data recovery": [
-        "详细了解数据恢复"
       ],
       "Manage addresses": [
         "管理地址"
@@ -16680,7 +16737,7 @@
         "私密且无限制的 AI 聊天 (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
-        "为重要对话准备的私人视频通话"
+        "私密视频通话，用于重要会话。"
       ],
       "Secure calendar": [
         "安全日历"
@@ -21072,146 +21129,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **禁用通过密保手机恢复**，防止攻击者劫持您的账户。"
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        "如果忘记密码，可通过**密保手机**恢复密码，并重新访问您的账户。"
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } 将使用此邮箱地址与您保持联络关于账户安全的问题。"
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "重置密码时，${ BRAND_NAME } 将使用此地址通过电子邮件发送重置密码。"
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "重置密码时，${ BRAND_NAME } 将使用此电话号码通过短信发送重置密码。"
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } 以确保您的数据可以恢复。"
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**禁止通过邮件重置密码** 以防止攻击者窃取您的账户。"
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "如果忘记密码，可通过**密保邮箱**恢复密码，并重新访问您的账户。"
-      ],
-      "Account reset by email has been disabled": [
-        "通过电子邮件重置账户功能已被禁用"
-      ],
-      "Account reset by phone has been disabled": [
-        "通过手机重置账户功能已被禁用"
-      ],
-      "Account safety review": [
-        "账户安全审查"
-      ],
-      "Add a phone number": [
-        "添加电话号码"
-      ],
-      "Add a recovery email": [
-        "添加密保邮箱"
-      ],
-      "Add a recovery email address": [
-        "添加密保邮箱"
-      ],
-      "Add a recovery phone number": [
-        "添加密保手机"
-      ],
-      "Add an alternative email address": [
-        "添加备用邮箱地址"
-      ],
-      "Add an email": [
-        "添加邮箱"
-      ],
-      "Back to Safety Review": [
-        "返回安全审查"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "由于您重置了密码，因此您当前的恢复短语只能用于恢复密码重置之前创建的数据。"
-      ],
-      "Can be used to regain access to your account and data": [
-        "可用于重新访问您的账户和数据"
-      ],
-      "Check account security": [
-        "检查账户安全"
-      ],
       "Code sent to ${ boldValue }": [
         "验证码已发送到 ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "继续进行安全审查"
-      ],
-      "Device-based recovery enabled": [
-        "已启用基于设备的恢复功能"
-      ],
-      "Disable account reset by email": [
-        "禁用通过电子邮件重置账户"
-      ],
-      "Disable recovery by email": [
-        "禁用通过密保邮箱恢复"
-      ],
-      "Disable recovery by phone": [
-        "禁用通过密保手机恢复"
-      ],
-      "Download ${ size }": [
-        "下载 ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "下载您的恢复短语"
-      ],
-      "Email address": [
-        "邮箱地址"
-      ],
-      "Enable device-based recovery": [
-        "启用基于设备的恢复"
-      ],
-      "Enable recovery by email": [
-        "启用通过密保邮箱恢复"
-      ],
-      "Enable recovery by phone": [
-        "启用通过密保手机恢复"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "我明白，使用此恢复短语将无法恢复当前已锁定的数据。"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "如果您忘记了您的 ${ BRAND_NAME } 的密码并且需要重置它，下次您使用您的新密码登录此设备时，将恢复您的 ${ BRAND_NAME } 账户的全部访问权限。"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "如果您忘记了您的 ${ BRAND_NAME } 的密码并且需要重置它，下次您使用您的新密码登录此设备时，将恢复您的 ${ BRAND_NAME } 账户的全部访问权限。"
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "如果您无法登录 ${ BRAND_NAME } 账户，您的恢复短语将允许您登录并恢复数据。"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "如果您丢失了登录信息并需要重置账户，**务必**同时拥有**账户恢复方法和数据恢复方法**，否则您可能无法访问任何邮件、联系人、文件或密码。"
-      ],
-      "in case we need to contact you": [
-        "以使我们能够联系到你"
       ],
       "Invalid code": [
         "无效的验证码"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "这是完全恢复账户的唯一方法，因此请确保将其保存在安全的地方。"
-      ],
-      "Recovery email address": [
-        "密保邮箱"
-      ],
-      "Recovery phone number": [
-        "密保手机"
-      ],
       "Review account safety": [
         "审查账户安全"
-      ],
-      "Safeguard account now": [
-        "立即保护账户"
-      ],
-      "Safeguard your account": [
-        "保护您的账户"
-      ],
-      "Safeguard your account further": [
-        "进一步保护您的账户"
       ],
       "Safety review": [
         "安全审查"
@@ -21219,191 +21144,8 @@
       "Send a new code": [
         "发送新代码"
       ],
-      "Show more": [
-        "显示更多"
-      ],
-      "Take action to secure your account": [
-        "采取行动确保您的账户安全"
-      ],
-      "There was an error generating your recovery phrase": [
-        "生成恢复短语时出错"
-      ],
-      "There was an error verifying your email": [
-        "验证邮箱出错"
-      ],
-      "There was an error verifying your recovery email": [
-        "验证密保邮箱时出错"
-      ],
-      "There was an error verifying your recovery phone": [
-        "验证密保手机时出错"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "在登录受信任设备时自动恢复数据"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "为确保邮箱地址是您的，请输入发送至 ${ boldEmail } 的验证码。"
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "为确保电话号码是您的，请输入发送至 ${ boldPhoneNumber } 的验证码。"
-      ],
-      "to prevent attackers from taking over your account": [
-        "以防止攻击者接管您的账户"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "如果您被锁定，可以恢复您的账户和数据"
-      ],
-      "to recover your account if you're ever locked out": [
-        "如果您被锁定，可恢复您的账户"
-      ],
       "update it now": [
         "立即更新"
-      ],
-      "Update your recovery phrase": [
-        "更新您的恢复短语"
-      ],
-      "Update your recovery phrase?": [
-        "更新您的恢复短语？"
-      ],
-      "Verify": [
-        "验证"
-      ],
-      "Verify your email address": [
-        "验证邮箱地址"
-      ],
-      "Verify your phone number": [
-        "验证您的电话号码"
-      ],
-      "Verify your recovery email address": [
-        "验证您的密保邮箱"
-      ],
-      "Verify your recovery phone number": [
-        "验证密保手机"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "生成恢复短语时出错。请稍后重试，如果问题仍然存在，请联系客服。"
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "验证邮箱出现错误，请稍后重试。若无效，请联系技术支援。"
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "我们在验证您的密保邮箱时遇到了错误。请稍后重试，如果问题仍然存在，请联系客服。"
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "我们在验证您的密保手机时遇到了错误。请稍后重试，如果问题仍然存在，请联系客服。"
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "启用基于设备的恢复后，${ BRAND_NAME } 会将加密备份的密钥链作为文件存储在浏览器的网络存储中。"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "您将面临无法访问账户和数据的风险。"
-      ],
-      "You are at risk of losing access to your data.": [
-        "您将面临无法访问数据的风险。"
-      ],
-      "You can disable this at any time.": [
-        "您可以随时禁用此功能。"
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "若忘记密码，您将可以通过密保邮箱重新访问您的账户。"
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "如果忘记密码，可以使用密保邮箱重新访问账户。"
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "如果忘记密码，可以使用密保手机重新访问账户。"
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "您以前下载过恢复短语，下载新的恢复短语将**停用先前的恢复短语**。"
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "建议您采取进一步保护账户的措施。"
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "您有保护账户安全的建议。"
-      ],
-      "You have recommended actions.": [
-        "建议您采取的行动。"
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "您将无法继续使用此邮箱地址重置您的账户。"
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "您将无法继续使用此电话号码重置您的账户。"
-      ],
-      "Your account and data can be recovered": [
-        "您的账户和数据可以恢复"
-      ],
-      "Your account and data can be recovered.": [
-        "您的账户和数据可以恢复。"
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "您的账户和数据可以恢复。检查是否仍可访问恢复方法。"
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "您的账户和数据可以恢复。建议您采取进一步保护账户的措施。"
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "您的账户和数据可以恢复。建议您采取的行动"
-      ],
-      "Your account is fully secure.": [
-        "您的账户非常安全。"
-      ],
-      "Your account is secure.": [
-        "您的账户很安全。"
-      ],
-      "Your email address is:": [
-        "您的邮箱地址是:"
-      ],
-      "Your email is set": [
-        "您的密保邮箱已设定"
-      ],
-      "Your recovery email": [
-        "您的密保邮箱"
-      ],
-      "Your recovery email address is:": [
-        "密保邮箱："
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "您的密保邮箱和手机**只能恢复对您账户的访问**。"
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "您的密保邮箱**只能恢复对您账户的访问**。"
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "密保邮箱可能被攻击者滥用以劫持您的账户，启用 ${ disableEmail } 可提高账户安全性！"
-      ],
-      "Your recovery email has been enabled": [
-        "密保邮箱已启用"
-      ],
-      "Your recovery email is set": [
-        "密保邮箱已设置"
-      ],
-      "Your recovery methods": [
-        "您的恢复方法"
-      ],
-      "Your recovery phone": [
-        "您的密保手机"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "您的密保手机**只能恢复对您账户的访问**。"
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "密保手机可能被攻击者滥用以劫持您的账户，启用 ${ disablePhone } 可提高账户安全性！"
-      ],
-      "Your recovery phone has been enabled": [
-        "密保手机已启用"
-      ],
-      "Your recovery phone is set": [
-        "密保手机已设置"
-      ],
-      "Your recovery phone number is:": [
-        "密保手机："
-      ],
-      "Your recovery phrase": [
-        "您的恢复短语"
-      ],
-      "Your recovery phrase is set": [
-        "恢复短语已设置"
       ]
     },
     "safety_review": {
@@ -22206,9 +21948,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "要禁用密码重置，您必须设置恢复方法。"
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "为了增强您的账户和数据的安全性，您可以在网页客户端的账户设置中申请重置密码。"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -23423,6 +23162,15 @@
     "State": {
       "Canceling your subscription, please wait": [
         "正在取消您的订阅，请稍候。"
+      ],
+      "Disabled": [
+        "已禁用"
+      ],
+      "Enabled": [
+        "已启用"
+      ],
+      "No restrictions": [
+        "没有限制"
       ]
     },
     "Status": {
@@ -24188,6 +23936,9 @@
       ],
       "Compare the key differences that matter for your business.": [
         "对比对您的业务至关重要的主要差异。"
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "通过阻止互联网访问（除非 VPN 连接处于活动状态）来强制组织内使用 VPN。"
       ],
       "Free forever": [
         "永久免费"
@@ -24967,6 +24718,12 @@
       "Also in your plan": [
         "也在您的套餐中"
       ],
+      "Always-on VPN": [
+        "始终开启 VPN"
+      ],
+      "Always-on VPN device profile": [
+        "始终开启 VPN 设备配置文件"
+      ],
       "Amount": [
         "数额"
       ],
@@ -25102,8 +24859,14 @@
       "Check your default mail application": [
         "检查默认邮箱应用"
       ],
+      "Choose a deployment method": [
+        "选择部署方式"
+      ],
       "Choose a provider": [
         "选择提供商"
+      ],
+      "Choose a removal method": [
+        "请选择移除方式"
       ],
       "Choose an account": [
         "选择账户"
@@ -25131,6 +24894,9 @@
       ],
       "Composing": [
         "邮件编辑"
+      ],
+      "Configure Always-on VPN device profile": [
+        "配置始终开启 VPN 设备配置文件"
       ],
       "Confirm": [
         "确认"
@@ -25234,6 +25000,9 @@
       "Created": [
         "创建时间"
       ],
+      "Created!": [
+        "已创建！"
+      ],
       "Creating user accounts": [
         "正在创建账户"
       ],
@@ -25281,9 +25050,6 @@
       ],
       "Data collection": [
         "数据收集"
-      ],
-      "Data locked": [
-        "数据已锁定"
       ],
       "Data recovery": [
         "数据恢复"
@@ -25365,6 +25131,15 @@
       ],
       "Deny access to user?": [
         "拒绝用户访问？"
+      ],
+      "Deploy device profile to your devices": [
+        "将设备配置文件部署到您的设备"
+      ],
+      "Deploy via MDM": [
+        "通过 MDM 部署"
+      ],
+      "Deploy via PowerShell": [
+        "通过 PowerShell 部署"
       ],
       "Description": [
         "描述"
@@ -25654,9 +25429,6 @@
       "Generate missing keys": [
         "生成缺失的密钥"
       ],
-      "Generate new recovery phrase?": [
-        "生成新的恢复短语？"
-      ],
       "Generate SMTP token": [
         "生成 SMTP 令牌"
       ],
@@ -25804,6 +25576,9 @@
       "Information exposed in breach": [
         "数据外泄事件中泄露的信息"
       ],
+      "Install it manually": [
+        "手动安装"
+      ],
       "Integrations": [
         "集成"
       ],
@@ -25860,6 +25635,9 @@
       ],
       "Lower your cost without losing features": [
         "在不牺牲功能的前提下降低成本"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "主密码"
@@ -26128,6 +25906,9 @@
       "Remove all members?": [
         "移除全部成员？"
       ],
+      "Remove Always-on VPN device profile": [
+        "移除始终开启 VPN 设备配置文件"
+      ],
       "Remove calendar": [
         "移除日历"
       ],
@@ -26154,6 +25935,9 @@
       ],
       "Remove user?": [
         "是否移除用户？"
+      ],
+      "Remove via MDM": [
+        "通过 MDM 移除"
       ],
       "Rename the gateway": [
         "重命名网关"
@@ -26392,6 +26176,9 @@
       "Status": [
         "状态"
       ],
+      "Stay for 50% off your next month": [
+        "下月继续享受 5 折优惠"
+      ],
       "Stay secure and connected anywhere": [
         "随时随地保持安全和连接"
       ],
@@ -26625,6 +26412,9 @@
       ],
       "What is the dark web?": [
         "什么是暗网？"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Wipe all logs?": [
         "清除所有日志？"
@@ -26931,6 +26721,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "包含您组织中的所有用户，仅对已部署始终开启 VPN 设备配置文件的设备强制执行。"
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "包括 ${ MAIL_APP_NAME } 中的自定义邮箱域名和无限 Hide-my-email 别名、${ VPN_SHORT_APP_NAME } 中对 120 多个国家/地区服务器的访问权限、${ PASS_SHORT_APP_NAME } 中的内置 2FA 和安全共享等。"
@@ -27310,9 +27103,6 @@
       "Could not enable admin access for ${ n } user": [
         "无法为 ${ n } 位用户启用管理员权限"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "无法启用管理员访问权限：${ error }"
-      ],
       "Enable admin access?": [
         "启用管理员访问权限？"
       ],
@@ -27572,9 +27362,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "管理员无法访问私人用户的数据"
       ],
@@ -27583,21 +27370,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "邀请已发送，等待被邀请成员的回复"
-      ],
-      "Invite sent": [
-        "邀请已发送"
-      ],
-      "It's you": [
-        "这是您"
-      ],
-      "Pending admin access": [
-        "等待管理员访问"
-      ],
-      "Private": [
-        "私有"
-      ],
-      "SSO": [
-        "单点登录"
       ],
       "SSO user provided by your identity provider": [
         "由身份供应商提供的 SSO 用户"
