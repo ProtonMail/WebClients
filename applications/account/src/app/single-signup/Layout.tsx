@@ -79,6 +79,7 @@ const Layout = ({
         <div
             className={clsx(
                 'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
+                // eslint-disable-next-line no-nested-ternary
                 background === 'dark'
                     ? 'signup-v1-bg--dark'
                     : background === 'bf2025'
@@ -121,7 +122,10 @@ const Layout = ({
                                 {footer}
                                 <div className="w-full flex justify-space-between flex-column md:flex-row">
                                     <div className="flex gap-1 flex-column md:flex-row">
-                                        <LayoutLogosV2 size={5} className="justify-center md:justify-start" />
+                                        <LayoutLogosV2
+                                            size={5}
+                                            className="flex gap-1 justify-center md:justify-start"
+                                        />
                                         <span
                                             className={clsx(
                                                 'text-sm text-center mb-4 lg:mb-0',
