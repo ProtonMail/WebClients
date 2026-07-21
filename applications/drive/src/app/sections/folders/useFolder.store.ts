@@ -42,7 +42,7 @@ export type FolderViewData = {
     shareId: string;
 };
 
-type FolderPermissions = {
+export type FolderPermissions = {
     canEdit: boolean;
     canShare: boolean;
     canCreateNode: boolean;

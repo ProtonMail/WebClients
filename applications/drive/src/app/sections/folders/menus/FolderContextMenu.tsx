@@ -9,7 +9,6 @@ import { ShareFileButton, ShareLinkButton } from '../../../legacy/components/sec
 import useIsEditEnabled from '../../../legacy/components/sections/useIsEditEnabled';
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
 import type { ContextMenuPosition } from '../../../modules/contextMenu';
-import { ReportAbuseButton } from '../../commonButtons/ReportAbuseButton';
 import { CreateNewDocumentButton } from '../buttons/CreateNewDocumentButton';
 import { CreateNewFileButton } from '../buttons/CreateNewFileButton';
 import { CreateNewFolderButton } from '../buttons/CreateNewFolderButton';
@@ -52,7 +51,6 @@ export function FolderContextMenu({
         showCreateFileModal,
         showFileSharingModal,
         showSharingModal,
-        showReportAbuseModal,
         createNewDocument,
         createNewSheet,
     } = actions;
@@ -112,12 +110,6 @@ export function FolderContextMenu({
                         linkId={activeFolder.linkId}
                         showSharingModal={showSharingModal}
                     />
-                </>
-            )}
-            {permissions.canReportAbuse && (
-                <>
-                    <ContextSeparator />
-                    <ReportAbuseButton buttonType="contextMenu" onClick={showReportAbuseModal} close={close} />
                 </>
             )}
         </ContextMenu>
