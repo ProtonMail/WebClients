@@ -417,9 +417,6 @@
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
-      "Get the deal": [
-        "Obtener la promoción"
-      ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
       ],
@@ -1461,6 +1458,9 @@
       "Continue your subscription": [
         "Continuar con tu suscripción"
       ],
+      "Get 50% offer": [
+        "Aprovecha la oferta del 50%"
+      ],
       "Maybe later": [
         "Quizás más tarde"
       ]
@@ -1520,20 +1520,6 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
-      ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Subtotal por ${ cycle } mes",
-        "Subtotal por ${ cycle } meses"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total por ${ n } mes",
-        "Total para ${ n } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -4598,6 +4584,9 @@
       "Accept/decline": [
         "Aceptar/rechazar"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Acceso a más de 20.000 servidores en 145 países"
+      ],
       "Ad targeting": [
         "Orientación de anuncios"
       ],
@@ -4911,6 +4900,9 @@
       "Failing signatures will be re-signed by you": [
         "Las firmas con errores serán firmadas de nuevo por ti."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "La velocidad de VPN más rápida hasta 10Gbps"
+      ],
       "File \"${ name }\" was deleted during download": [
         "El archivo \"${ name }\" se ha eliminado durante la descarga."
       ],
@@ -4965,6 +4957,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear tu actividad en línea. Ocultando tu IP real y cifrando tu actividad de navegación se vuelve privada."
       ],
+      "Have some more time to decide without interruption.": [
+        "Date algo más de tiempo para decidir sin interrupciones."
+      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Ayúdanos a mejorar esta experiencia notificando el problema. Si no tienes inconveniente en compartir el contenido de la hoja de cálculo, adjunta la información de depuración que se muestra a continuación a tu informe."
       ],
@@ -4979,6 +4974,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Si cancelas ahora, perderás acceso al ${ BRAND_NAME } ${ planTitle } el día ${ expiryDate }, incluyendo estas funcionalidades:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si cancelas, tu suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
@@ -5283,6 +5281,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espera mientras buscamos contactos que contengan datos cifrados con la clave inactiva."
       ],
+      "Premium privacy protection across all your devices": [
+        "Protección de privacidad prémium en todos tus dispositivos"
+      ],
       "Preparing link to file": [
         "Preparando enlace al archivo"
       ],
@@ -5405,6 +5406,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantente en línea sin ningún esfuerzo al activar los siguientes ajustes VPN:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Continúa con tu plan y consigue un 50% de descuento en tu próximo mes"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "La suscripción se renueva automáticamente cada ${ cycle } mes.",
@@ -5955,10 +5959,6 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } meses"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } caracteres"
       ],
@@ -6183,9 +6183,6 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Aprovecha la oferta"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -9803,11 +9800,6 @@
         "Pasarás a un plan inferior al finalizar el ciclo de facturación."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "De por vida"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -10608,6 +10600,9 @@
       "Start import process": [
         "Iniciar el proceso de importación"
       ],
+      "Stay for 50% off your next month": [
+        "Quédate y aprovecha tu 50% de descuento el próximo mes"
+      ],
       "Stop sharing": [
         "Dejar de compartir"
       ],
@@ -10616,9 +10611,6 @@
       ],
       "Subscription canceled": [
         "Se ha cancelado la suscripción."
-      ],
-      "Summer Sale": [
-        "Descuento de verano"
       ],
       "The link either does not exist or has expired": [
         "El enlace no existe o ha expirado."

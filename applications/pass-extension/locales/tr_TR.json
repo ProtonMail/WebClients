@@ -553,12 +553,6 @@
       "Regenerate": [
         "Yeniden üret"
       ],
-      "Regex invalid": [
-        "Regex geçersiz"
-      ],
-      "Regex unsafe": [
-        "Regex güvenli değil"
-      ],
       "Reject": [
         "Reddet"
       ],
@@ -1311,6 +1305,12 @@
       ],
       "PIN codes do not match": [
         "PIN kodu ile onayı aynı değil"
+      ],
+      "Regex invalid": [
+        "Kurallı ifade geçersiz"
+      ],
+      "Regex unsafe": [
+        "Kurallı ifade güvenli değil"
       ],
       "Registration failure: ${ message }": [
         "Kayıt yapılamadı: ${ message }"
@@ -2488,7 +2488,7 @@
         "Kaydedilmiş kimlik doğrulama bilgilerinizi otomatik olarak doldurun."
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
-        "Alanlara göre (önce başlık, ardından kullanıcı adı veya e-posta adresi, web sitesi, notlar) ve eşleşme hassasiyetine göre (tam eşleşme, şununla başlar, içeriyor) sıralanmıştır."
+        "Alanlara göre (önce başlık, ardından kullanıcı adı veya e-posta adresi, site adresi, notlar) ve eşleşme türüne göre (tam eşleşme, şununla başlayan, şunu içeren) sıralanmıştır."
       ],
       "Read item": [
         "Öge okuma"
@@ -3243,7 +3243,7 @@
         "Tümünü toplama"
       ],
       "Check": [
-        "Kontrol et"
+        "Denetle"
       ],
       "Checkbox": [
         "İşaret kutusu"
@@ -3405,10 +3405,10 @@
         "E-posta adresi ya da kullanıcı adı yazın"
       ],
       "Exact host matching": [
-        "Tam ana bilgisayar eşleşmesi"
+        "Tam sunucu eşleşmesi"
       ],
       "Exact URL matching": [
-        "Tam URL eşleşmesi"
+        "Tam adres eşleşmesi"
       ],
       "Expiration date": [
         "Son kullanma tarihi"
@@ -3702,7 +3702,7 @@
         "Asla"
       ],
       "Never fill on this exact URL": [
-        "Bu URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "New email": [
         "Yeni e-posta"
@@ -3876,7 +3876,7 @@
         "Reddit takma adı"
       ],
       "Regular expression": [
-        "Düzenli ifade"
+        "Kurallı ifade"
       ],
       "Relevant": [
         "İlgili"
@@ -3990,7 +3990,7 @@
         "SGN"
       ],
       "Starts with": [
-        "Şununla başlar"
+        "Şununla başlayan"
       ],
       "State or province": [
         "İl ya da bölge"
@@ -4107,7 +4107,7 @@
         "Güncelle"
       ],
       "URL wildcard pattern": [
-        "URL genel arama karakteri deseni"
+        "Adres genel arama karakteri modeli"
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Tarayıcınızın varsayılan parola yöneticisi olarak ${ PASS_APP_NAME } kullanın"
@@ -4222,16 +4222,16 @@
         "Tam (alt) etki alanı eşleştirme kuralı"
       ],
       "Exact URL matching rule": [
-        "Tam URL eşleştirme kuralı"
+        "Tam adres eşleştirme kuralı"
       ],
       "Never fill with this exact URL": [
-        "Bu tam URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "Regular expression rule": [
-        "Düzenli ifade kuralı"
+        "Kurallı ifade kuralı"
       ],
       "Wildcard pattern matching rule": [
-        "genel arama karakter deseni eşleştirme kuralı"
+        "Genel arama karakter modeli eşleştirme kuralı"
       ],
       "You can drag and drop the selected item to another vault": [
         "Seçilmiş ögeyi sürükleyip başka bir kasaya bırakabilirsiniz",
@@ -4537,19 +4537,19 @@
     },
     "Result": {
       "Enter a URL to check to see if your current rule is matching the URL": [
-        "Mevcut kuralınızın bu URL ile eşleşip eşleşmediğini kontrol etmek için bir URL yazın"
+        "Var olan kuralınızın eşleşip eşleşmediğini denetlemek için bir adres yazın"
       ],
       "The rule is matching this URL": [
-        "Kural bu URL ile eşleşiyor"
+        "Kural bu adres ile eşleşiyor"
       ],
       "The rule is NOT matching this URL": [
-        "Kural bu URL ile EŞLEŞMİYOR"
+        "Kural bu adres ile EŞLEŞMİYOR"
       ],
       "This URL will be blocked from autofill": [
-        "Bu URL otomatik doldurma özelliğinden engellenecek"
+        "Bu adres otomatik doldurmada engellenecek"
       ],
       "This URL will NOT be blocked from autofill": [
-        "Bu URL otomatik doldurma özelliğinden engellenmeyecek"
+        "Bu adres otomatik doldurmada engellenmeyecek"
       ]
     },
     "Security Center - Info": {
@@ -5191,7 +5191,7 @@
         "Takma adlarınızı SimpleLogin ile eşitleyin"
       ],
       "Test a URL against this rule": [
-        "Bir URL'yi bu kurala göre test et"
+        "Bir adresin bu kurala göre durumuna bak"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını kurduğunuz için teşekkürler"
@@ -5215,7 +5215,7 @@
         "Güncelleme yayınlanmış"
       ],
       "URL matching": [
-        "URL eşleştirme"
+        "Adres eşleştirme"
       ],
       "Use my email": [
         "E-postamı kullan"
@@ -5331,7 +5331,7 @@
         "${ BRAND_NAME } parolası gereklidir"
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
+        "${ modeLabelStong } güçlü bir denetim sağlar, ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı siteler ile eşleşmesine ve bu verilerin doldurulmasına neden olabilir."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } çevrim dışı kipi kapatıldı."
@@ -5538,7 +5538,7 @@
         "Bu e-posta adresi artık veri sızıntıları için izlenmeyecek."
       ],
       "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
-        "Bu öğe \"${ neverModeDescriptionStrong }\" nedeniyle otomatik doldurma için önerilemez. Bu öğenin otomatik olarak doldurulmasını istiyorsanız başka bir URL ekleyin."
+        "Bu öge \"${ neverModeDescriptionStrong }\" nedeniyle otomatik doldurma için önerilemez. Bu ögenin otomatik olarak doldurulmasını istiyorsanız başka bir adres ekleyin."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Bu öge şu anda paylaşılıyor. Silerseniz diğer kullanıcıların erişimi kaldırılacak."

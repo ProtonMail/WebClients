@@ -423,9 +423,6 @@
       "Get the apps": [
         "Получить приложения"
       ],
-      "Get the deal": [
-        "Воспользоваться"
-      ],
       "Get the writing assistant": [
         "Получить помощник по написанию"
       ],
@@ -1488,6 +1485,9 @@
       "Continue your subscription": [
         "Продолжить подписку"
       ],
+      "Get 50% offer": [
+        "Получить 50% скидку"
+      ],
       "Maybe later": [
         "Может быть позже"
       ]
@@ -1551,24 +1551,6 @@
         "${ users } пользователя",
         "${ users } пользователей",
         "${ users } пользователей"
-      ],
-      "Subtotal": [
-        "Промежуточный итог"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Промежуточный итог за ${ cycle } месяц",
-        "Промежуточный итог за ${ cycle } месяца",
-        "Промежуточный итог за ${ cycle } месяцев",
-        "Промежуточный итог за ${ cycle } месяца"
-      ],
-      "Total": [
-        "Итого"
-      ],
-      "Total for ${ n } month": [
-        "Итого за ${ n } месяц",
-        "Итого за ${ n } месяца",
-        "Итого за ${ n } месяцев",
-        "Итого за ${ n } месяцев"
       ]
     },
     "Collapsible tooltip": {
@@ -4721,6 +4703,9 @@
       "Accept/decline": [
         "Принять/отклонить"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Доступ к 20 000+ серверов в 145 странах"
+      ],
       "Ad targeting": [
         "Нацеливание рекламы"
       ],
@@ -5042,6 +5027,9 @@
       "Failing signatures will be re-signed by you": [
         "Неудавшиеся подписи будут вами переподписаны"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Самые быстрые VPN-подключения — до 10 Гбит/с"
+      ],
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" был удален во время загрузки"
       ],
@@ -5096,6 +5084,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Правительства и интернет-провайдеры могут отслеживать ваши действия в Интернете. Скрывая свой реальный адрес IP и шифруя свои действия, ваш просмотр веб-страниц становится приватным."
       ],
+      "Have some more time to decide without interruption.": [
+        "Обдумайте решение без спешки и перебоев."
+      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Помогите нам стать лучше, сообщив об этой проблеме. Если вы не против поделиться содержимым электронной таблицы, прикрепите к сообщению информацию для отладки."
       ],
@@ -5110,6 +5101,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Отменив подписку сейчас, ${ expiryDate } вы потеряете доступ к ${ BRAND_NAME } ${ planTitle }, в том числе к следующим функциям:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Если вы отмените, ваша подписка ${ planTitle } не будет продлена после истечения её срока действия ${ expiryDate }."
@@ -5420,6 +5414,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пожалуйста, подождите, пока мы ищем контакты с данными, зашифрованными неактивным ключом."
       ],
+      "Premium privacy protection across all your devices": [
+        "Премиальная защита конфиденциальности всех ваших устройств"
+      ],
       "Preparing link to file": [
         "Подготовка ссылки на файл"
       ],
@@ -5542,6 +5539,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Оставайтесь на связи без усилий, включив следующие настройки VPN:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Сохраните подписку и получите скидку 50% на следующий месяц"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Подписка обновляется каждый ${ cycle } месяц.",
@@ -6106,12 +6106,6 @@
       "${ BRAND_NAME } username": [
         "имя пользователя ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
       ],
@@ -6333,9 +6327,6 @@
       ],
       "From: ${ fromEmail }": [
         "От: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Получить со скидкой"
       ],
       "Hide password": [
         "Скрыть пароль"
@@ -10074,11 +10065,6 @@
         "Подписка будет понижена в конце платежного периода."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Пожизненная"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ хранилище"
@@ -10919,6 +10905,9 @@
       "Start import process": [
         "Начать процесс импорта"
       ],
+      "Stay for 50% off your next month": [
+        "Оставайтесь и получите скидку 50% на следующий месяц"
+      ],
       "Stop sharing": [
         "Закрыть доступ"
       ],
@@ -10927,9 +10916,6 @@
       ],
       "Subscription canceled": [
         "Подписка отменена"
-      ],
-      "Summer Sale": [
-        "Летние скидки"
       ],
       "The link either does not exist or has expired": [
         "Ссылка не существует или просрочена"

@@ -135,9 +135,6 @@
       "Add domain": [
         "Domein toevoegen"
       ],
-      "Add email address": [
-        "E-mailadres toevoegen"
-      ],
       "Add external address": [
         "Extern adres toevoegen"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "PayPal toevoegen"
-      ],
-      "Add phone number": [
-        "Telefoonnummer toevoegen"
       ],
       "Add public holidays": [
         "Feestdagen toevoegen"
@@ -759,9 +753,6 @@
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
-      "Enable device-based recovery": [
-        "Op apparaat gebaseerd herstel inschakelen"
-      ],
       "Enable multi-user support": [
         "Ondersteuning voor meerdere gebruikers inschakelen"
       ],
@@ -845,9 +836,6 @@
       ],
       "Generate password": [
         "Wachtwoord genereren"
-      ],
-      "Generate recovery phrase": [
-        "Genereer herstelzin"
       ],
       "Generate token": [
         "Token genereren"
@@ -1041,6 +1029,9 @@
       "Italic": [
         "Schuin"
       ],
+      "JumpCloud": [
+        "JumpCloud"
+      ],
       "Keep": [
         "Behouden"
       ],
@@ -1145,6 +1136,9 @@
       ],
       "Maybe later": [
         "Misschien later"
+      ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
       ],
       "More": [
         "Meer"
@@ -1880,9 +1874,6 @@
       ],
       "View plans details": [
         "Abonnementsgegevens bekijken"
-      ],
-      "View recovery settings": [
-        "Herstelinstellingen weergeven"
       ],
       "View recovery setup details": [
         "Bekijk de details van de herstelinstellingen"
@@ -3516,6 +3507,9 @@
       ],
       "Discover and set up features": [
         "Ontdek en configureer functies"
+      ],
+      "Get 50% offer": [
+        "Neem de 50% deal"
       ],
       "Got it": [
         "Begrepen"
@@ -6774,9 +6768,6 @@
       "Add recovery contact": [
         "Herstelcontact toevoegen"
       ],
-      "Add recovery method": [
-        "Herstelmethode toevoegen"
-      ],
       "Added on ${ formattedDate }": [
         "Toegevoegd op ${ formattedDate }"
       ],
@@ -7018,14 +7009,8 @@
       "Subscription expired": [
         "Abonnement is verlopen"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "Zij hebben mij toegevoegd als vertrouwd contact. Ik kan toegang krijgen tot hun account in geval van nood."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "Ze hebben u toegevoegd als vertrouwd contactpersoon. U kunt in geval van nood toegang krijgen tot hun account."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "Zij kunnen vragen om toegang tot mijn account te krijgen in geval van nood."
       ],
       "They may ask to access your account in case of an emergency.": [
         "Zij kunnen vragen om toegang tot mijn account te krijgen in geval van nood."
@@ -7045,9 +7030,6 @@
       ],
       "Time required before automatically granting them access": [
         "Benodigde tijd voordat hen automatisch toegang wordt verleend"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "Om herstel contactpersonen toe te voegen, hebt u een herstel e-mailadres of telefoonnummer nodig."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Om deze herstelmethode uit te schakelen, verwijdert u al uw herstelcontacten."
@@ -7099,12 +7081,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "U kunt hun toegang op elk moment verwijderen om de exclusieve controle over uw account te herwinnen."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "U bent nog niet aangewezen als herstelcontact voor iemand."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "U bent nog niet aangewezen als noodcontact voor iemand."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "U heef het maximum van ${ limit } contactpersoon bereikt.",
@@ -10201,17 +10177,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Een herstelbestand laat u uw gegevens ontgrendelen en bekijken na accountherstel"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Met een herstelzin kunt u toegang krijgen tot uw account en uw gecodeerde berichten herstellen als u uw wachtwoord bent vergeten"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Toegang tot 6 500+ hoge snelheid servers op maximaal 10 apparaten om uw surfgegevens veilig te houden. Beschikbaar op ${ ios }, ${ android }, ${ appleTV }en ${ desktop }."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Toegang tot meer dan 20.000 servers in 145 landen"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Krijg toegang tot uw wachtwoorden en bescherm uw online-identiteiten naadloos tussen uw apparaten. Download en installeer de relevante ${ PASS_APP_NAME }-apps en extensies."
@@ -10221,9 +10194,6 @@
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Activeer ten minste één methode voor gegevensherstel om ervoor te zorgen dat u toegang kunt blijven krijgen tot de inhoud van uw ${ BRAND_NAME } Account als u uw wachtwoord verliest."
       ],
       "Active": [
         "Actief"
@@ -10236,6 +10206,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Voeg ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toe voor slechts ${ bundlePlanPriceInline }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
@@ -10876,8 +10849,8 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Afhankelijk van uw instellingen kunnen ze direct toegang krijgen, of na een bepaalde **wachtperiode**."
       ],
-      "Deploy ${ regoLink } directly via your MDM file deployment": [
-        "Implementeer ${ regoLink } rechtstreeks via uw MDM-bestandsimplementatie"
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "Implementeer ${ regoArtifact } rechtstreeks via de implementatie van uw MDM-bestand"
       ],
       "Deploy across all your managed devices": [
         "Implementeer op al uw beheerde apparaten"
@@ -10964,8 +10937,11 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
       ],
-      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
-        "Download ${ ps1Link } en voer het op elk apparaat uit als systeemgebruiker om het apparaatprofiel automatisch te plaatsen."
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Download ${ mobileConfigArtifact } en open het bestand op elke Mac om het profiel te installeren. Keur het vervolgens goed in de Systeeminstellingen."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "Download ${ powershellArtifact } en voer het op elk apparaat uit als systeemgebruiker om het apparatenprofiel automatisch te installeren."
       ],
       "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
         "Download ${ removeScriptLink } en voer het op elk apparaat uit als systeemgebruiker om het profiel automatisch te verwijderen."
@@ -11207,6 +11183,9 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Snel en gericht. E-mail en agenda, direct op uw bureaublad."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "De hoogste VPN-snelheden tot 10 Gbps"
+      ],
       "Featured in": [
         "Uitgelicht in"
       ],
@@ -11294,9 +11273,6 @@
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Het genereren van een nieuwe herstelzin deactiveert uw huidige herstelzin."
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Als u een nieuwe herstelzin genereert, wordt uw oude zin gedeactiveerd."
-      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Verkrijg ${ AUTHENTICATOR_APP_NAME } voor al uw apparaten."
       ],
@@ -11356,6 +11332,9 @@
       ],
       "Groups": [
         "Groepen"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Neem nog even de tijd om in alle rust een beslissing te nemen."
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Help andere gezinnen om hun kinderen een veilige start online te geven. Deel deze mijlpaal en zeg het voort."
@@ -11420,9 +11399,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Als de tijdzone niet overeenkomt met de huidige tijdzone, dan wordt u gevraagd om deze bij te werken (maximaal één keer per dag)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Als dit gebeurt wegens een oude wachtwoord reset, kan u voorkomen dat dit bericht opnieuw wordt weergegeven"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
@@ -11431,6 +11407,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Als u nu annuleert, hebt u vanaf ${ expiryDate }geen toegang meer tot ${ BRAND_NAME } ${ planTitle }, waaronder deze functies:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
@@ -11470,9 +11449,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Als u onlangs uw wachtwoord opnieuw hebt ingesteld, kunt u ${ recoveryMethodLink } gebruiken om uw gegevens te ontgrendelen. Als dit komt door een eerdere wachtwoordreset, kunt u voorkomen dat het bericht opnieuw wordt weergegeven."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Als u recent uw wachtwoord gereset heeft, kan u de data herstelmethode gebruiken om uw data te ontgrendelen"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Als uw organisatie publieke figuren heeft, gevoelige gegevens verwerkt, of het doelwit kan zijn van cyberaanvallen, wordt u sterk aangeraden om ${ PROTON_SENTINEL_NAME } in te schakelen voor iedereen binnen uw organisatie."
@@ -11609,9 +11585,6 @@
       "Invited": [
         "Uitgenodigd"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Het ziet er naar uit dat een deel van uw data versleuteld en vergrendeld is."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Het duurt 10 dagen om het land van een server te veranderen, dus zorg ervoor dat uw selectie correct is."
       ],
@@ -11686,6 +11659,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Houd uw info veiliger en privé met deze handleidingen en tips."
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Bewaar uw wachtwoorden veilig en log direct in dankzij de automatische invulfunctie op al uw apparaten."
       ],
       "Key deletion is irreversible!": [
         "Sleutelverwijdering is onomkeerbaar."
@@ -11776,6 +11752,9 @@
       ],
       "Low Priority": [
         "Lage Prioriteit"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Belangrijke e-maildiensten kunnen uw e-mails weigeren of filteren op spam als SPF/DKIM/DMARC ontbreekt of niet correct wordt ingesteld."
@@ -11975,9 +11954,6 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME } ontvangers gebruikt."
       ],
-      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
-        "Alleen gelicentieerde gebruikers van uw organisatie kunnen ${ VPN_APP_NAME } verifiëren op apparaten waarop het apparaatprofiel is geïmplementeerd."
-      ],
       "Only sign in on devices you trust": [
         "Meld u alleen aan op apparaten die u vertrouwt."
       ],
@@ -11999,9 +11975,6 @@
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Open uw Safari-instellingen voor de extensie en controleer of site toelatingen zijn ingeschakeld voor ${ BRAND_NAME }-domeinen"
       ],
-      "Optional configuration": [
-        "Optionele configuratie"
-      ],
       "or ${ selectFileButton }": [
         "of ${ selectFileButton }"
       ],
@@ -12016,8 +11989,8 @@
       "or discover other features:": [
         "of andere functies ontdekken:"
       ],
-      "Or run ${ ps1Link } via your MDM script execution": [
-        "Of voer ${ ps1Link } uit via uw MDM-scriptuitvoering"
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "Of voer ${ powershellArtifact } uit via uw MDM-script"
       ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
@@ -12144,9 +12117,6 @@
       "Please fill out this field.": [
         "Vul dit veld in."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Bewaar het veilig. U hebt het nodig om toegang te krijgen tot uw account en om uw gegevens te decoderen in geval van een nieuw wachtwoord."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Let op, wanneer u de filter ${ nameDeleted } wist, zullen alle geautomatiseerde acties van de filter niet langer uitgevoerd worden."
       ],
@@ -12194,6 +12164,9 @@
       ],
       "Preference saved": [
         "Voorkeur opgeslagen"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Eersteklas privacybescherming op al uw apparaten"
       ],
       "Preview": [
         "Voorbeeld"
@@ -12243,6 +12216,9 @@
       "Public sharing of documents is not yet supported.": [
         "Publiek delen van documenten is nog niet ondersteund."
       ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "Zet ${ mobileConfigArtifact } via uw MDM op elke beheerde Mac."
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contacteer ons voor hulp met ${ BRAND_NAME }."
       ],
@@ -12278,9 +12254,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Herstelzin gekopieerd naar klembord"
-      ],
-      "Recovery phrase downloaded": [
-        "Herstelzin gedownload"
       ],
       "Recovery phrase has been disabled": [
         "Herstelzin is uitgeschakeld"
@@ -12329,9 +12302,6 @@
       ],
       "Restore": [
         "Herstel"
-      ],
-      "Restrict logins to your organization": [
-        "Beperk logins tot uw organisatie"
       ],
       "Review past periods and export the data for reporting or client invoicing.": [
         "Beoordeel eerdere perioden en exporteer de gegevens voor rapportage of facturatie aan klanten."
@@ -12534,6 +12504,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Gebruik de kortere, meer catchy versie van uw e-mailadres."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Behoud uw abonnement aan en u ontvangt 50% korting op uw volgende maand"
       ],
       "Step ${ step }": [
         "Stap ${ step }",
@@ -12928,6 +12901,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Om uw vergrendelde gegevens te decoderen en te bekijken na een wachtwoordreset, selecteert u een herstelmethode."
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "Om Always-on VPN in te schakelen, moet het configuratieprofiel op elke Mac worden geïnstalleerd — de ${ VPN_APP_NAME }-client past het apparatenprofiel automatisch toe zodra het is geïnstalleerd."
+      ],
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
         "Om Always-on VPN in te schakelen, moet het apparaatprofiel ${ policiesPath } op elk apparaat bereikbaar zijn — De ${ VPN_APP_NAME }-client detecteert het daar en dwingt het profiel automatisch af."
       ],
@@ -13138,6 +13114,9 @@
       "Users": [
         "Gebruikers"
       ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "Gebruikt u een andere MDM? Elke MDM die het implementeren van een configuratieprofiel ondersteunt, is geschikt. Raadpleeg de documentatie van uw MDM voor informatie over hoe u het profiel kunt uploaden en toewijzen aan uw apparatenpark."
+      ],
       "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
         "Gebruik je een andere MDM? Elke MDM die het implementeren van bestanden of het uitvoeren van PowerShell-scripts ondersteunt, zal werken. Raadpleeg de documentatie van uw MDM voor meer informatie."
       ],
@@ -13257,9 +13236,6 @@
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "We raden aan om de organisatieleden op de hoogte te brengen en ze te vragen om 2FA in te stellen voor hun account voordat u het gebruik van 2FA forceert."
-      ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Wij slaan herstelinformatie veilig op uw vertrouwde apparaat op om te voorkomen dat u uw gegevens verliest"
       ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "We raden iedereen ten zeerste aan om herstel via een herstelzin in te schakelen."
@@ -13754,12 +13730,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Met uw herstelbestand krijgt u na het resetten van uw wachtwoord weer toegang tot uw e-mails, contacten, bestanden, wachtwoorden en alle andere versleutelde gegevens op uw account."
-      ],
-      "Your recovery phrase": [
-        "Uw herstelzin"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Uw herstel zin is een serie van 12 willekeurig gegenereerde woorden in een specifieke volgorde."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "Met uw herstelzin kunt u zich aanmelden en uw gegevens herstellen als u geen toegang meer hebt tot uw ${ BRAND_NAME }-account. De herstelzin bestaat uit 12 woorden en fungeert als een reservewachtwoord."
@@ -16099,17 +16069,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Apparaat-gebaseerd herstel"
-      ],
       "Notification phone number": [
         "Telefoonnummer voor meldingen"
       ],
       "Recovery phone number": [
         "Herstel-telefoonnummer"
-      ],
-      "Recovery phrase": [
-        "Herstelzin"
       ],
       "Set recovery phone number": [
         "Hersteltelefoonnummer instellen"
@@ -16427,9 +16391,6 @@
       "How to share via email": [
         "Delen via e-mail"
       ],
-      "How to unlock data": [
-        "Hoe gegevens ontgrendelen"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Hoe gebruikt u ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16453,9 +16414,6 @@
       ],
       "Learn more": [
         "Meer informatie"
-      ],
-      "Learn more about data recovery": [
-        "Meer informatie over dataherstel"
       ],
       "Manage addresses": [
         "Adressen beheren"
@@ -21404,146 +21362,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **Accountreset via e-mail uitschakelen** om te voorkomen dat aanvallers uw account overnemen."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **Schakel herstel door telefoon** in om toegang tot uw account te krijgen als u uw wachtwoord vergeet."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } zal dit adres gebruiken om u op de hoogte te houden van de beveiliging van uw account."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } zal dit adres gebruiken om een reset code per e-mail te versturen wanneer u uw wachtwoord opnieuw instelt."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } zal dit telefoonnummer gebruiken om een reset code via sms te versturen wanneer u uw wachtwoord opnieuw instelt."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } om ervoor te zorgen dat uw gegevens kunnen worden hersteld."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**Accountreset via e-mail uitschakelen** om te voorkomen dat aanvallers uw account overnemen."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Schakel herstel in via e-mail** om weer toegang te krijgen tot uw account als u uw wachtwoord vergeet."
-      ],
-      "Account reset by email has been disabled": [
-        "Accountreset via e-mail is uitgeschakeld."
-      ],
-      "Account reset by phone has been disabled": [
-        "Account reset via e-mail is uitgeschakeld"
-      ],
-      "Account safety review": [
-        "Nazicht Accountveiligheid"
-      ],
-      "Add a phone number": [
-        "Telefoonnummer toevoegen"
-      ],
-      "Add a recovery email": [
-        "Een e-mailadres voor herstel toevoegen"
-      ],
-      "Add a recovery email address": [
-        "Voeg een herstel-e-mailadres toe"
-      ],
-      "Add a recovery phone number": [
-        "Een telefoonnummer voor herstel toevoegen"
-      ],
-      "Add an alternative email address": [
-        "Alternatief e-mailadres toevoegen"
-      ],
-      "Add an email": [
-        "Voeg een e-mailadres toe"
-      ],
-      "Back to Safety Review": [
-        "Terug naar beoordeling veiligheid"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "Omdat u uw wachtwoord opnieuw hebt ingesteld, kan uw huidige herstelzin alleen worden gebruikt om de gegevens te herstellen die zijn aangemaakt voordat u uw wachtwoord opnieuw instelde."
-      ],
-      "Can be used to regain access to your account and data": [
-        "Kan gebruikt worden om opnieuw toegang te krijgen tot uw account en gegevens"
-      ],
-      "Check account security": [
-        "Controleer accountbeveiliging"
-      ],
       "Code sent to ${ boldValue }": [
         "Code verzonden naar ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Doorgaan naar de veiligheidsbeoordeling"
-      ],
-      "Device-based recovery enabled": [
-        "Apparaatgebaseerde herstel ingeschakeld"
-      ],
-      "Disable account reset by email": [
-        "Uitschakelen account reset via e-mail"
-      ],
-      "Disable recovery by email": [
-        "Herstellen via e-mail uitschakelen"
-      ],
-      "Disable recovery by phone": [
-        "Herstellen via telefoon uitschakelen"
-      ],
-      "Download ${ size }": [
-        "${ size } downloaden"
-      ],
-      "Download your recovery phrase": [
-        "Download uw herstelzin"
-      ],
-      "Email address": [
-        "E-mailadres"
-      ],
-      "Enable device-based recovery": [
-        "Op apparaat gebaseerd herstel inschakelen"
-      ],
-      "Enable recovery by email": [
-        "Herstellen via e-mail inschakelen"
-      ],
-      "Enable recovery by phone": [
-        "Herstellen via telefoon inschakelen"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Ik begrijp dat ik met deze herstelzin geen momenteel vergrendelde gegevens kan herstellen."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Als u uw ${ BRAND_NAME }-wachtwoord bent vergeten en moet u het opnieuw instellen, de volgende keer dat u zich aanmeldt op dit apparaat met uw nieuwe wachtwoord, zal volledige toegang tot uw ${ BRAND_NAME }-account worden hersteld."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Als u uw ${ BRAND_NAME }-wachtwoord bent vergeten en moet u het opnieuw instellen, de volgende keer dat u zich aanmeldt op dit apparaat met uw nieuwe wachtwoord, zal volledige toegang tot uw ${ BRAND_NAME }-account worden hersteld."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Als u buitengesloten raakt uit uw ${ BRAND_NAME }-account, zal uw herstelziin u toelaten om in te loggen en uw data te herstellen."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Als u uw inloggegevens verliest en uw account opnieuw moet instellen **Het is dwingend** dat u zowel een **account recovery en data recovery** heeft geïnstalleerd. Anders heeft u mogelijk geen toegang tot uw e-mails, contacten, bestanden of wachtwoorden."
-      ],
-      "in case we need to contact you": [
-        "voor het geval we contact met u moeten opnemen"
       ],
       "Invalid code": [
         "Ongeldige code"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Het is de enige manier om uw account volledig te herstellen, dus wees er zeker van dat u deze herstelkit ergens veilig bewaart."
-      ],
-      "Recovery email address": [
-        "E-mailadres voor herstel"
-      ],
-      "Recovery phone number": [
-        "Herstel-telefoonnummer"
-      ],
       "Review account safety": [
         "Controleer de veiligheid van uw account"
-      ],
-      "Safeguard account now": [
-        "Beveilig account nu"
-      ],
-      "Safeguard your account": [
-        "Bescherm uw account"
-      ],
-      "Safeguard your account further": [
-        "Bescherm uw account verder"
       ],
       "Safety review": [
         "Overzicht van veiligheid"
@@ -21551,194 +21377,8 @@
       "Send a new code": [
         "Stuur een nieuwe code"
       ],
-      "Show more": [
-        "Meer tonen"
-      ],
-      "Take action to secure your account": [
-        "Neem actie om uw account te beveiligen"
-      ],
-      "There was an error generating your recovery phrase": [
-        "Er is een fout opgetreden bij het genereren van uw herstelzin"
-      ],
-      "There was an error verifying your email": [
-        "Er is een fout opgetreden bij het verifiëren van uw herstel-e-mail"
-      ],
-      "There was an error verifying your recovery email": [
-        "Er is een fout opgetreden bij het verifiëren van uw herstel-e-mail"
-      ],
-      "There was an error verifying your recovery phone": [
-        "Er is een fout opgetreden bij het verifiëren van uw hersteltelefoon"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "om uw gegevens automatisch te herstellen wanneer u inlogt op een vertrouwd apparaat"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Om zeker te zijn dat het e-mailadres van u is, moet u de verificatiecode invoeren die naar ${ boldEmail } is verzonden."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Om zeker te zijn dat het uw telefoonnummer is, voer de verificatiecode in die naar ${ boldPhoneNumber } is verzonden."
-      ],
-      "to prevent attackers from taking over your account": [
-        "om te voorkomen dat aanvallers uw account overnemen"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "om uw account en gegevens te herstellen als u ooit buitengesloten bent"
-      ],
-      "to recover your account if you're ever locked out": [
-        "om uw account te herstellen als u ooit buitengesloten bent"
-      ],
       "update it now": [
         "update deze nu"
-      ],
-      "Update your recovery phrase": [
-        "Herstelzin bijwerken"
-      ],
-      "Update your recovery phrase?": [
-        "Update uw herstelzin?"
-      ],
-      "Verify": [
-        "Verifiëren"
-      ],
-      "Verify your email address": [
-        "Verifieer uw e-mailadres"
-      ],
-      "Verify your phone number": [
-        "Verifieer uw telefoonnummer"
-      ],
-      "Verify your recovery email address": [
-        "Verifieer uw herstel-e-mailadres"
-      ],
-      "Verify your recovery phone number": [
-        "Verifieer uw hersteltelefoonnummer"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "Er is een fout opgetreden tijdens het genereren van uw herstelzin. Probeer het later opnieuw of neem contact op met de ondersteuning als het probleem zich blijft voordoen."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Er is een fout opgetreden tijdens het verifiëren van uw e-mail. Probeer het later opnieuw of neem contact op met support als het probleem zich blijft voordoen."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Er is een fout opgetreden tijdens het verifiëren van uw herstel-e-mail. Probeer het later opnieuw of neem contact op met support als het probleem zich blijft voordoen."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Er is een fout opgetreden tijdens het verifiëren van uw hersteltelefoon. Probeer het later opnieuw of neem contact op met support als het probleem zich blijft voordoen."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "Wanneer u de op apparaat gebaseerde recovery inschakelt, zal ${ BRAND_NAME } een versleutelde back-up als een bestand opslaan in de webopslag van uw browser."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "U loopt het risico de toegang tot uw account en gegevens te verliezen."
-      ],
-      "You are at risk of losing access to your data.": [
-        "U loopt het risico de toegang tot uw gegevens te verliezen."
-      ],
-      "You can disable this at any time.": [
-        "U kunt dit op elk moment uitschakelen."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "U kunt de herstelzin in deze herstelzin gebruiken om uw account volledig te herstellen wanneer u uw wachtwoord opnieuw instelt, dus zorg ervoor dat u deze op een veilige plek bewaart."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "U kunt uw herstel-e-mailadres gebruiken om toegang te krijgen tot uw account als u uw wachtwoord vergeet."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "U kunt uw herstel-e-mailadres gebruiken om toegang te krijgen tot uw account als u uw wachtwoord vergeet."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "U kunt uw hersteltelefoon gebruiken om toegang tot uw account te krijgen als u uw wachtwoord vergeet."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "U heeft eerder een herstelzin gedownload. Een nieuwe downloaden zal **de oude deactiveren**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "U heeft aanbevolen acties om uw account verder te beveiligen."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "U heeft aanbevolen acties om uw account te beveiligen."
-      ],
-      "You have recommended actions.": [
-        "U heeft aanbevolen acties."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "U zult dit adres niet langer kunnen gebruiken om uw account te resetten."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "U zult dit telefoonnummer niet langer kunnen gebruiken om uw account te resetten."
-      ],
-      "Your account and data can be recovered": [
-        "Uw account en gegevens kunnen worden hersteld"
-      ],
-      "Your account and data can be recovered.": [
-        "Uw account en gegevens kunnen worden hersteld."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Uw account en gegevens kunnen worden hersteld. Controleer of u nog steeds toegang heeft tot uw herstelmethoden."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Uw account en gegevens kunnen worden hersteld. U heeft aanbevolen acties om uw account verder te beveiligen."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "Uw account en gegevens kunnen worden hersteld. U hebt aanbevolen acties."
-      ],
-      "Your account is fully secure.": [
-        "Uw account is volledig veilig."
-      ],
-      "Your account is secure.": [
-        "Uw account is veilig."
-      ],
-      "Your email address is:": [
-        "Uw e-mailadres:"
-      ],
-      "Your email is set": [
-        "Uw e-mail is ingesteld"
-      ],
-      "Your recovery email": [
-        "Uw herstel-e-mailadres"
-      ],
-      "Your recovery email address is:": [
-        "Uw herstel e-mailadres is:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "Uw herstel-e-mailadres en -telefoon kunnen **alleen de toegang tot uw account** herstellen."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "Uw herstel-e-mail kan **alleen de toegang tot uw account** herstellen."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Uw herstel-e-mailadres kan door aanvallers worden misbruikt om uw account over te nemen. ${ disableEmail } om de beveiliging van uw account te vergroten."
-      ],
-      "Your recovery email has been enabled": [
-        "Uw herstel-e-mailadres is ingeschakeld"
-      ],
-      "Your recovery email is set": [
-        "Uw herstel-e-mailadres is ingesteld"
-      ],
-      "Your recovery methods": [
-        "Uw herstelmethoden"
-      ],
-      "Your recovery phone": [
-        "Uw herstel-telefoonnummer"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "Uw hersteltelefoon kan **alleen de toegang tot uw account** herstellen."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Uw herstel telefoonnummer kan door aanvallers worden misbruikt om uw account over te nemen. ${ disablePhone } om de beveiliging van uw account te vergroten."
-      ],
-      "Your recovery phone has been enabled": [
-        "Uw hersteltelefoon is ingeschakeld"
-      ],
-      "Your recovery phone is set": [
-        "Uw hersteltelefoon is ingesteld"
-      ],
-      "Your recovery phone number is:": [
-        "Uw hersteltelefoonnummer is:"
-      ],
-      "Your recovery phrase": [
-        "Uw herstelzin"
-      ],
-      "Your recovery phrase is set": [
-        "Uw herstelzin is ingesteld"
       ]
     },
     "safety_review": {
@@ -22560,9 +22200,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Om het wachtwoordherstel uit te schakelen, moet u een herstelmethode ingesteld hebben."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Om de veiligheid van uw account te verbeteren en uw data te beschermen kunt u in de account instellingen van de webapplicatie een verzoek doen om uw wachtwoord te resetten."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -23815,9 +23452,6 @@
       ],
       "No restrictions": [
         "Geen beperkingen"
-      ],
-      "Restricted to members of your organization": [
-        "Beperkt tot leden van uw organisatie"
       ]
     },
     "Status": {
@@ -25737,9 +25371,6 @@
       "Data collection": [
         "Gegevensverzameling"
       ],
-      "Data locked": [
-        "Gegevens vergrendeld"
-      ],
       "Data recovery": [
         "Dataherstel"
       ],
@@ -26120,9 +25751,6 @@
       "Generate missing keys": [
         "Ontbrekende sleutels genereren"
       ],
-      "Generate new recovery phrase?": [
-        "Nieuwe herstelzin genereren?"
-      ],
       "Generate SMTP token": [
         "Genereer SMTP-token"
       ],
@@ -26271,6 +25899,9 @@
       "Information exposed in breach": [
         "Informatie die is blootgesteld bij datalek"
       ],
+      "Install it manually": [
+        "Installeer het handmatig"
+      ],
       "Integrations": [
         "Integraties"
       ],
@@ -26327,6 +25958,9 @@
       ],
       "Lower your cost without losing features": [
         "Verlaag uw kosten zonder in te leveren op functionaliteiten"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "Hoofdwachtwoord"
@@ -26865,6 +26499,9 @@
       "Status": [
         "Status"
       ],
+      "Stay for 50% off your next month": [
+        "Blijf en ontvang 50% korting op uw volgende maand"
+      ],
       "Stay secure and connected anywhere": [
         "Blijf overal veilig en verbonden"
       ],
@@ -27099,6 +26736,9 @@
       ],
       "What is the dark web?": [
         "Wat is het dark web?"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Wipe all logs?": [
         "Alle logboeken wissen?"
@@ -27788,9 +27428,6 @@
         "Kon beheerderstoegang niet inschakelen voor ${ n } gebruiker",
         "Kon beheerderstoegang niet inschakelen voor ${ n } gebruikers"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Kan beheerderstoegang niet inschakelen: ${ error }"
-      ],
       "Enable admin access?": [
         "Beheerdersrechten inschakelen?"
       ],
@@ -28053,9 +27690,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administrators hebben geen toegang tot de gegevens van privégebruikers"
       ],
@@ -28064,21 +27698,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Uitnodiging verzonden, wachtend op antwoord van het uitgenodigde lid"
-      ],
-      "Invite sent": [
-        "Uitnodiging verzonden"
-      ],
-      "It's you": [
-        "Jij bent het"
-      ],
-      "Pending admin access": [
-        "In afwachting van admin toegang"
-      ],
-      "Private": [
-        "Privé"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO-gebruiker verstrekt door uw identiteitsprovider"

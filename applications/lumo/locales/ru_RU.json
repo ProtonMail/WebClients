@@ -852,6 +852,9 @@
       "Discover and set up features": [
         "Настройте функции"
       ],
+      "Get 50% offer": [
+        "Получить 50% скидку"
+      ],
       "Remind me later": [
         "Напомнить позже"
       ],
@@ -2221,9 +2224,6 @@
       "You've reached your image limit for this period.": [
         "Вы достигли лимита изображений на этот период."
       ],
-      "You've reached your image limit for this period. Upgrade to keep creating images.": [
-        "Вы достигли лимита изображений на этот период. Улучшите тариф, чтобы продолжить создавать изображения."
-      ],
       "You've run out of weekly chats, please ": [
         "У вас закончились еженедельные чаты, пожалуйста "
       ],
@@ -3189,14 +3189,8 @@
       "Download": [
         "Скачать"
       ],
-      "Download image": [
-        "Скачать изображение"
-      ],
       "Edit agent": [
         "Изменить агента"
-      ],
-      "Edit image": [
-        "Изменить изображение"
       ],
       "Edit instructions": [
         "Изменить инструкции"
@@ -3412,26 +3406,17 @@
       "Link with ${ DRIVE_APP_NAME } folder": [
         "Связать с папкой в ${ DRIVE_APP_NAME }"
       ],
-      "Load more": [
-        "Загрузить еще"
-      ],
       "New chat": [
         "Новый чат"
       ],
       "New project": [
         "Новый проект"
       ],
-      "Projects": [
-        "Проекты"
-      ],
       "Save": [
         "Сохранить"
       ],
       "Search": [
         "Поиск"
-      ],
-      "See all": [
-        "Посмотреть все"
       ],
       "Send": [
         "Отправить"
@@ -3462,9 +3447,6 @@
       "Failed to create folder": [
         "Не удалось создать папку"
       ],
-      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
-        "Не удалось скачать \"${ file.name }\": ошибка проверки целостности данных. Пожалуйста, попробуйте еще раз."
-      ],
       "Failed to index Drive folder for search": [
         "Не удалось проиндексировать папку хранилища для поиска"
       ],
@@ -3474,9 +3456,6 @@
       "Failed to load image": [
         "Не удалось загрузить изображение"
       ],
-      "Failed to load images. Please try again.": [
-        "Не удалось загрузить изображения. Пожалуйста, попробуйте еще раз."
-      ],
       "Failed to process file: ${ file.name }": [
         "Не удалось обработать файл: ${ file.name }"
       ],
@@ -3485,12 +3464,6 @@
       ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Файл \"${ file.name }\" (${ fileSizeFormatted }) превышает лимит в ${ maxSizeFormatted }. Привяжите папку ${ DRIVE_APP_NAME }, чтобы загружать файлы большего размера."
-      ],
-      "File download failed due to integrity check. Please try again.": [
-        "Не удалось скачать файл из-за ошибки проверки целостности. Пожалуйста, попробуйте еще раз."
-      ],
-      "File format not supported: ${ file.name }": [
-        "Формат файла не поддерживается: ${ file.name }"
       ],
       "File type not supported: ${ file.name }": [
         "Тип файла не поддерживается: ${ file.name }"
@@ -3641,9 +3614,6 @@
       "Cookies or website data are blocked in your browser settings": [
         "Файлы cookie или данные веб-сайтов заблокированы в настройках вашего браузера"
       ],
-      "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
-        "Создавайте изображения, применяйте стили и делайте наброски идей. Войдите в систему или создайте бесплатный аккаунт, чтобы сохранять свои работы."
-      ],
       "Create purpose-built assistants with their own instructions. Set them up once, and they’ll follow your preferences every time.": [
         "Создавайте специализированных помощников с собственными инструкциями. Настройте их один раз, и они будут следовать вашим настройкам каждый раз."
       ],
@@ -3724,9 +3694,6 @@
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "На этой карточке нет личных данных — только ваш показатель уязвимости по областям. Чем он ниже, тем меньше информации вы раскрыли."
-      ],
-      "No projects yet": [
-        "Проектов пока нет"
       ],
       "Now protect the person behind it.": [
         "Теперь защитите человека, который за этим стоит."
@@ -3858,77 +3825,6 @@
         "Ваша информация зашифрована с нулевым доступом"
       ]
     },
-    "collider_2025:Inspiration suggestion prompt": {
-      "3D animated character in a high-quality family film style, expressive face, large emotional eyes, soft subsurface skin, stylized proportions, vibrant colors, detailed hair and clothing, cinematic lighting, shallow depth of field, friendly and charming personality, ultra polished render, studio-quality animation still.": [
-        "3D-анимированный персонаж в стиле качественного семейного кино, выразительное лицо, большие эмоциональные глаза, мягкая подкожная кожа, стилизованные пропорции, яркие цвета, детализированные волосы и одежда, кинематографичное освещение, малая глубина поля резкости, дружелюбный и обаятельный характер, ультраполированный рендер, анимационный кадр студийного качества."
-      ],
-      "A dreamy close-up of flowers swept into soft radial trails by rotating camera motion, where the center blooms in crisp detail while petals dissolve outward into creamy bokeh under gentle natural light.": [
-        "Мечтательный крупный план цветов, закрученных в мягкие радиальные шлейфы вращением камеры: центр распускается в четких деталях, а лепестки растворяются по краям в мягком кремовом боке под нежным естественным светом."
-      ],
-      "A striking monochromatic study in yellow — just a fragment of contemporary architecture emerging from its equally golden surroundings, with tonal shifts alone carving out the geometric surfaces and lending the scene its quiet sense of depth and form.": [
-        "Впечатляющий монохромный этюд в желтых тонах — лишь фрагмент современной архитектуры, вырастающий из своего столь же золотого окружения, где одни только тональные переходы очерчивают геометрические поверхности и придают сцене спокойное ощущение глубины и формы."
-      ],
-      "A warm and cozy Japandi-style living room, minimalist aesthetic, cream sectional sofa, neutral and mustard throw pillows, woven pouf, large textured area rug with fringe, minimalist botanical wall art, large indoor palm plant, soft ambient golden lighting, candles, serene and peaceful atmosphere, photorealistic, interior design photography.": [
-        "Теплая и уютная гостиная в стиле джапанди, минималистичная эстетика, кремовый секционный диван, нейтральные и горчичные декоративные подушки, плетеный пуф, большой текстурированный ковер с бахромой, минималистичный ботанический настенный арт, крупная комнатная пальма, мягкое золотистое рассеянное освещение, свечи, безмятежная и мирная атмосфера, фотореализм, интерьерная фотография."
-      ],
-      "Abstract composition of translucent glass shapes floating in space, soft refraction and reflection, smooth curved forms, frosted and clear glass mix, pastel lighting with subtle purple and blue tones, minimalist design, premium modern aesthetic, soft shadows, ultra clean background, high resolution, 3D render style.": [
-        "Абстрактная композиция из полупрозрачных стеклянных фигур, парящих в пространстве, мягкое преломление и отражение света, плавные изогнутые формы, сочетание матового и прозрачного стекла, пастельное освещение с тонкими пурпурными и синими тонами, минималистичный дизайн, современная эстетика премиум-класса, мягкие тени, абсолютно чистый фон, высокое разрешение, стиль 3D-рендера."
-      ],
-      "Abstract frozen ice background in soft pastel lavender and light purple tones, translucent crystalline ice textures, subtle frost patterns, glowing icy surface, smooth gradients, sparkling frozen details, ethereal winter atmosphere, clean and minimal design, soft lighting, elegant luxury aesthetic, high resolution, dreamy frozen landscape, delicate reflections, ultra-detailed, background only, no objects, no text.": [
-        "Абстрактный ледяной фон в мягких пастельных лавандовых и светло-фиолетовых тонах, полупрозрачные кристаллические текстуры льда, едва заметные морозные узоры, светящаяся ледяная поверхность, плавные градиенты, сверкающая замороженная информация, неземная зимняя атмосфера, чистый и минималистичный дизайн, мягкое освещение, элегантная роскошная эстетика, высокое разрешение, мечтательный ледяной пейзаж, нежные отражения, ультрадетализированный, только фон, без объектов, без текста."
-      ],
-      "Abstract futuristic background with flowing horizontal ribbon waves, layered luminous bands, soft neon green and cyan gradients, smooth organic curves, subtle motion blur, glossy depth, dark high-contrast backdrop, dynamic light streaks, modern tech aesthetic, clean geometric rhythm, cinematic glow, ultra-detailed digital art, premium UI background, 3D render.": [
-        "Абстрактный футуристический фон со струящимися горизонтальными волнообразными лентами, многослойными светящимися полосами, мягкими неоново-зелеными и голубыми градиентами, плавными органическими изгибами, едва заметным размытием в движении, глянцевой глубиной, темным высококонтрастным задним планом, динамичными световыми полосами, современной технологичной эстетикой, чистым геометрическим ритмом, кинематографичным свечением, ультрадетализированным цифровым артом, премиум-фоном интерфейса, 3D-рендером."
-      ],
-      "Abstract glass background design, translucent glass morphism style, smooth flowing shapes and layered glass panels, soft refraction and light dispersion, purple and deep violet dominant color palette, blended with rich blue tones and subtle accents of warm yellow light, cinematic lighting, ultra soft gradients, glossy and frosted glass textures, depth and blur effects, minimal but premium aesthetic, high resolution, 3D rendered, modern tech UI background, elegant and futuristic atmosphere": [
-        "Абстрактный дизайн стеклянного фона, полупрозрачный стиль гласморфизма, плавные обтекаемые формы и многослойные стеклянные панели, мягкое преломление и рассеивание света, доминирующая пурпурно-фиолетовая цветовая палитра в сочетании с насыщенными синими тонами и тонкими акцентами теплого желтого света, кинематографичное освещение, ультрамягкие градиенты, текстуры глянцевого и матового стекла, эффекты глубины и размытия, минималистичная, но премиальная эстетика, высокое разрешение, 3D-рендеринг, современный технологичный фон интерфейса, элегантная и футуристическая атмосфера"
-      ],
-      "Abstract minimalist background, soft light purple and pastel yellow color palette, smooth gradient transitions, flowing organic shapes, subtle glow, airy and modern aesthetic, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
-        "Абстрактный минималистичный фон, мягкая палитра из светло-фиолетового и пастельно-желтого цветов, плавные градиентные переходы, текучие органические формы, тонкое свечение, воздушная и современная эстетика, чистая композиция, мягкие световые эффекты, премиальный дизайн, мягкая глубина, элегантная и мечтательная атмосфера, ультравысокое разрешение."
-      ],
-      "Aerial photograph of rolling agricultural hills forming smooth, wave-like patterns across a vast landscape. The fields are divided into soft gradients of green and golden yellow, suggesting different crops or stages of growth. Long, curved tractor tracks trace elegant lines through the terrain, emphasizing the rhythm and geometry of the land. Warm sunlight casts gentle shadows across the contours, enhancing depth and texture. Minimalist composition, highly detailed natural patterns, serene and atmospheric, captured in a cinematic landscape photography style with soft contrast and rich natural color tones.": [
-        "Аэрофотоснимок холмистых сельскохозяйственных полей, образующих плавные волнообразные узоры на фоне бескрайнего ландшафта. Поля разделены на мягкие градиенты зеленого и золотисто-желтого цветов, что указывает на различные культуры или стадии роста. Длинные изогнутые колеи от тракторов прочерчивают элегантные линии, подчеркивая ритм и геометрию местности. Теплый солнечный свет отбрасывает мягкие тени на контуры, усиливая глубину и текстуру. Минималистичная композиция, высокодетализированная природная информация, безмятежная и атмосферная, запечатленная в стиле кинематографичной пейзажной фотографии с мягким контрастом и насыщенными естественными цветовыми тонами."
-      ],
-      "Back view silhouette of a woman with hair tied up typing on a laptop. Dark purple screen, clean light purple background, high-contrast studio lighting, minimalist tech mockup style.": [
-        "Силуэт женщины со спины с собранными в пучок волосами, печатающей на ноутбуке. Темно-фиолетовый экран, чистый светло-фиолетовый фон, контрастное студийное освещение, минималистичный стиль технологического макета."
-      ],
-      "Close-up texture of polished cross-section tree trunk, intricate swirling growth rings, detailed cracks and wood grain, warm brown and amber tones, natural organic pattern, high resolution.": [
-        "Крупный план текстуры отполированного поперечного среза ствола дерева: замысловатые закрученные годовые кольца, отчетливые трещины и текстура древесины, теплые коричневые и янтарные тона, естественный органический узор, высокое разрешение."
-      ],
-      "Ethereal portrait of a person wearing a sleek dark VR headset, body dissolving into a glowing cyan-teal haze. Centered composition, uniform saturated teal-blue gradient background, backlit silhouette with luminous rim lighting on the headset and fingertips. One hand loosely clenched, the other reaching forward palm-out. Futuristic sci-fi atmosphere, minimalist and dreamlike, digital art style, shallow depth of field.": [
-        "Неземной портрет человека в стильной темной VR-гарнитуре, чье тело растворяется в сияющей сине-зеленой дымке. Композиция по центру, однородный насыщенный сине-зеленый градиентный фон, силуэт с подсветкой сзади и светящимся контурным светом на гарнитуре и кончиках пальцев. Одна рука слегка сжата в кулак, другая рука тянется вперед ладонью наружу. Футуристическая научно-фантастическая атмосфера, минималистичный и сказочный стиль цифрового искусства, малая глубина резкости."
-      ],
-      "Futuristic abstract background, neon green and blue gradient, smooth organic shapes, subtle glow, ethereal atmosphere, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
-        "Футуристический абстрактный фон, неон-зеленый и синий градиент, плавные органические формы, едва заметное свечение, неземная атмосфера, чистая композиция, мягкие световые эффекты, высококлассный дизайн, мягкая глубина, элегантная и мечтательная атмосфера, сверхвысокое разрешение."
-      ],
-      "Heavily blurred, out of focus surreal profile portrait. Vibrant neon gradient with bright orange, hot pink, and deep electric blue. High contrast, heavy film grain, minimalist abstract aesthetic.": [
-        "Сильно размытый, расфокусированный сюрреалистичный портрет в профиль. Яркий неоновый градиент с насыщенным оранжевым, ярко-розовым и глубоким электрическим синим. Высокий контраст, выраженное зерно пленки, минималистичная абстрактная эстетика."
-      ],
-      "Hyper-realistic voluminous fluffy white clouds, dense and soft textures, minimalist pale blue gradient sky, soft cinematic lighting, clean aesthetic, ethereal and peaceful mood, studio 3D render style, 8k resolution": [
-        "Гиперреалистичные объемные пушистые белые облака, плотные и мягкие текстуры, минималистичное нежно-голубое градиентное небо, мягкое кинематографичное освещение, чистая эстетика, неземная и умиротворенная атмосфера, стиль студийного 3D-рендера, разрешение 8k"
-      ],
-      "Minimalist Asian ink wash painting style. A winding white path trails along a mountain ridge covered in deep blue and indigo trees, fading into a heavy white fog. A vibrant, textured solid red sun hangs in the upper right. Surreal, serene, and high-contrast composition.": [
-        "Минималистичный азиатский стиль живописи тушью. Извилистый белый путь тянется по горному хребту, покрытому темно-синими и индиговыми деревьями, исчезая в густом белом тумане. Яркое текстурированное красное солнце висит в правом верхнем углу. Сюрреалистичная, безмятежная и высококонтрастная композиция."
-      ],
-      "Minimalist op-art graphic of the number \"5\" formed by a distorted halftone grid blurred. Black dots varying in size create a 3D bulging illusion on a vibrant solid yellow background. Clean vector aesthetic, high contrast, mathematical pattern distortion.": [
-        "Минималистичная графика в стиле оп-арт с цифрой «5», сформированной искаженной размытой полутоновой сеткой. Черные точки разного размера создают иллюзию трехмерной выпуклости на ярком однотонном желтом фоне. Чистая векторная эстетика, высокий контраст, математическое искажение узора."
-      ],
-      "Modern two-story minimalist white villa with rounded edges, large sliding glass doors, and a swimming pool. Minimalist patio furniture, mediterranean vibe, architectural photography style, bright sunny day.": [
-        "Современная двухэтажная минималистичная белая вилла с округлыми краями, большими раздвижными стеклянными дверями и бассейном. Минималистичная мебель для патио, средиземноморская атмосфера, архитектурный стиль фотографии, яркий солнечный день."
-      ],
-      "Photorealistic white T-shirt mockup hanging on a wall inside a modern boutique clothing store, blank white premium cotton T-shirt displayed neatly on a wooden hanger, mounted against a soft pastel-colored wall (light beige, blush pink, or sage green), stylish retail interior in the background with clothing racks and shelves softly blurred, natural daylight mixed with warm ambient store lighting, realistic fabric texture and folds, clean minimal aesthetic, high-end fashion merchandising, shallow depth of field, centered composition, commercial apparel mockup, blank T-shirt ready for custom design placement, ultra-realistic, high resolution, 8k.": [
-        "Фотореалистичный макет белой футболки, висящей на стене внутри современного бутика одежды; чистая белая футболка из платного хлопка аккуратно представлена на деревянных плечиках и закреплена на стене мягкого пастельного цвета (светло-бежевый, нежно-розовый или шалфейно-зеленый); стильный интерьер магазина на заднем плане с мягко размытыми стойками для одежды и полками; естественный дневной свет, смешанный с теплым окружающим освещением магазина; реалистичная текстура ткани и складки; чистая минималистичная эстетика; высококлассный модный мерчандайзинг; малая глубина поля резкости; композиция по центру; коммерческий макет одежды; чистая футболка, готовая к размещению пользовательского дизайна; ультрареалистично, высокое разрешение, 8k."
-      ],
-      "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
-        "Чистая скорость, запечатленная в одном кадре: болид Формулы-1 мчится по асфальту, оставляя за собой размытый шлейф движения, искры летят от покрытия, а carbon-волокно ловит свет под тем самым живым низким углом прямо у самой земли."
-      ],
-      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "Слово «FLUORISH», целиком сформированное из сочной зеленой травы и естественной растительности, каждая буква создана из густых свежих травинок, реалистичная органическая текстура, яркие зеленые тона, замысловатая ботаническая информация, фотореалистичная природная типографика, мягкий естественный солнечный свет, едва заметные тени, высокодетализированный экологичный дизайн, изолировано на чистом фоне, платные 3D-буквы, ультрареалистично, 8k, резкий фокус, профессиональное рекламное качество."
-      ],
-      "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
-        "Минималистичный снимок сверху длинной оранжевой доски для серфинга, плывущей по прозрачной голубой воде. На воде видны пологие изогнутые контуры волн и яркие, мерцающие каустические световые узоры. Мягкая тень отбрасывается прямо под доской, создавая чистую, безмятежную и современную эстетику."
-      ]
-    },
     "collider_2025:Label": {
       "16:9": [
         "16:9"
@@ -3992,9 +3888,6 @@
       ],
       "Image preview": [
         "Предпросмотр изображения"
-      ],
-      "Inspiration image": [
-        "Изображение для вдохновения"
       ],
       "Instructions": [
         "Инструкции"
@@ -4082,9 +3975,6 @@
       ],
       "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Опишите должность, сферу деятельности и поведение, которые вы хотите задать для ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Describe your image...": [
-        "Опишите свое изображение..."
       ],
       "Draw and/or describe what to change, \"remove the items\", etc.": [
         "Нарисуйте и/или опишите, что нужно изменить, например: «удалить элементы» и т. д."
@@ -4479,14 +4369,6 @@
         "Папка успешно создана"
       ]
     },
-    "collider_2025:Tab": {
-      "Create": [
-        "Создать"
-      ],
-      "Gallery": [
-        "Галерея"
-      ]
-    },
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "Не удалось запустить ${ LUMO_SHORT_APP_NAME }"
@@ -4544,9 +4426,6 @@
       ],
       "Every clarification is a new data point": [
         "Каждое уточнение — это новая точка данных"
-      ],
-      "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
-        "Обзор изображений, созданных в ${ LUMO_SHORT_APP_NAME }"
       ],
       "Export & delete regularly": [
         "Регулярно экспортируйте и удаляйте"
@@ -4671,9 +4550,6 @@
       "Share less with AI": [
         "Меньше делитесь с ИИ"
       ],
-      "Sign in to build your gallery": [
-        "Войдите, чтобы создать свою галерею"
-      ],
       "Sign in to create projects": [
         "Войдите, чтобы создавать проекты"
       ],
@@ -4719,9 +4595,6 @@
       "What Big Tech inferred": [
         "Какие выводы сделали ИТ-гиганты"
       ],
-      "What do you want to create today?": [
-        "Что вы хотите создать сегодня?"
-      ],
       "What this profile exposes": [
         "Что раскрывает этот профиль"
       ],
@@ -4736,9 +4609,6 @@
       ],
       "You saw the profile?": [
         "Вы видели профиль?"
-      ],
-      "Your image gallery is empty": [
-        "Ваша галерея изображений пуста"
       ],
       "Your shareable card": [
         "Карточка, которой можно поделиться"
@@ -6332,6 +6202,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Доступ к 20 000+ серверов в 145 странах"
+      ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
@@ -6479,6 +6352,9 @@
       "Expired": [
         "Истёкший"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Самые быстрые VPN-подключения — до 10 Гбит/с"
+      ],
       "Folder:": [
         "Папка:"
       ],
@@ -6491,8 +6367,14 @@
       "Google Pay mark": [
         "Пометить Google Pay"
       ],
+      "Have some more time to decide without interruption.": [
+        "Обдумайте решение без спешки и перебоев."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Отменив подписку сейчас, ${ expiryDate } вы потеряете доступ к ${ BRAND_NAME } ${ planTitle }, в том числе к следующим функциям:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Если вы отмените, ваша подписка ${ planTitle } не будет продлена после истечения её срока действия ${ expiryDate }."
@@ -6614,6 +6496,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Пожалуйста, попробуйте другой способ оплаты или свяжитесь с вашим банком."
       ],
+      "Premium privacy protection across all your devices": [
+        "Премиальная защита конфиденциальности всех ваших устройств"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
       ],
@@ -6661,6 +6546,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Сохраните подписку и получите скидку 50% на следующий месяц"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
@@ -9915,6 +9803,9 @@
       ],
       "Simplify password management": [
         "Упростить управление паролями"
+      ],
+      "Stay for 50% off your next month": [
+        "Оставайтесь и получите скидку 50% на следующий месяц"
       ],
       "Summary": [
         "Сводка"

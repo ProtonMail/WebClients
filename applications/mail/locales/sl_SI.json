@@ -1471,7 +1471,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -2281,6 +2284,9 @@
       ],
       "Discover and set up features": [
         "Odkrijte in nastavite funkcije"
+      ],
+      "Get 50% offer": [
+        "Izkoristite ponudbo s 50% popustom"
       ],
       "Got it": [
         "Razumem"
@@ -6824,6 +6830,9 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Zagotovite si dostop do več kot 6.500 hitrih strežnikov na do 10 napravah, da bodo vaši podatki brskanja varni. Na voljo na ${ ios }, ${ android }, ${ appleTV } in ${ desktop }."
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Dostop do več kot 20.000 strežnikov v več kot 145 državah"
+      ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
       ],
@@ -7382,6 +7391,9 @@
         "Poteče čez manj kot ${ hoursDiff } ure",
         "Poteče čez manj kot ${ hoursDiff } ur"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Največja hitrost VPN s hitrostjo do 10 Gbps"
+      ],
       "file attached": [
         "pripeta datoteka",
         "pripeti datoteki",
@@ -7445,6 +7457,9 @@
         "Vsebuje ${ numAttachments } priponke (${ numAttachmentsSize })",
         "Vsebuje ${ numAttachments } priponke (${ numAttachmentsSize })"
       ],
+      "Have some more time to decide without interruption.": [
+        "Imate še nekaj časa, da se odločite, ne da bi vas pri tem kaj motilo."
+      ],
       "here": [
         "tukaj"
       ],
@@ -7465,6 +7480,9 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Če menite, da smo se zmotili, se obrnite na nas ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Če naročnino prekinete zdaj, boste dne ${ expiryDate } izgubili dostop do ${ BRAND_NAME } ${ planTitle }, vključno z naslednjimi funkcijami:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Če prekličete, se vaša naročnina na ${ planTitle } ne bo podaljšala, ko poteče dne ${ expiryDate }."
@@ -7925,6 +7943,9 @@
       "Preferences updated": [
         "Nastavitve posodobljene"
       ],
+      "Premium privacy protection across all your devices": [
+        "Vrhunska zaščita zasebnosti na vseh vaših napravah"
+      ],
       "Preview failed to be loaded": [
         "Predogleda ni bilo mogoče naložiti"
       ],
@@ -8143,6 +8164,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50% popust"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Zmogljivosti shrambe niso podprte v tem brskalniku. Potrebujemo to podporo, da omogočimo iskanje po vsebini sporočil."
@@ -9417,6 +9441,12 @@
       "Cleaned": [
         "Očiščena"
       ],
+      "Client": [
+        "Odjemalec"
+      ],
+      "Client version": [
+        "Različica odjemalca"
+      ],
       "Code is 6 digits without spaces": [
         "Koda vsebuje 6 števk brez presledkov"
       ],
@@ -9807,6 +9837,9 @@
       "Region": [
         "Regija"
       ],
+      "Regular expression": [
+        "Regularni izraz"
+      ],
       "Remember my choice": [
         "Zapomni si mojo izbiro"
       ],
@@ -9848,6 +9881,9 @@
       ],
       "Start date": [
         "Začetni datum"
+      ],
+      "Starts with": [
+        "Se začne z"
       ],
       "State": [
         "Država"
@@ -10491,6 +10527,9 @@
       ],
       "Re:": [
         "Odgovor:"
+      ],
+      "Regular expression rule": [
+        "Pravilo regularnega izraza"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaše brezplačno preizkusno obdobje se je izteklo. ${ nonAutoRenewalAction }"
@@ -15597,6 +15636,9 @@
       ],
       "Start import process": [
         "Začni uvažati"
+      ],
+      "Stay for 50% off your next month": [
+        "V naslednjem mesecu izkoristite 50% popust"
       ],
       "Storage capacity warning": [
         "Opozorilo o zmogljivosti shranjevanja"

@@ -547,12 +547,6 @@
       "Regenerate": [
         "Regenerér"
       ],
-      "Regex invalid": [
-        "Regex ugyldig"
-      ],
-      "Regex unsafe": [
-        "Regex usikker"
-      ],
       "Reject": [
         "Afvis"
       ],
@@ -1272,6 +1266,12 @@
       ],
       "PIN codes do not match": [
         "Pinkoder stemmer ikke overens"
+      ],
+      "Regex invalid": [
+        "Ugyldig regex"
+      ],
+      "Regex unsafe": [
+        "Usikker regex"
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
@@ -2105,8 +2105,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Hvis du flytter et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -3009,7 +3008,7 @@
         "Banknavn"
       ],
       "Basic": [
-        "Grundlæggende"
+        "Basal"
       ],
       "Beta Access": [
         "Beta-adgang"
@@ -3045,7 +3044,7 @@
         "Catch-All"
       ],
       "Check": [
-        "Kontroller"
+        "Tjek"
       ],
       "Checkbox": [
         "Afkrydsningsfelt"
@@ -3942,7 +3941,7 @@
         "Opdatér"
       ],
       "URL wildcard pattern": [
-        "URL-jokertegnmønster"
+        "URL-wildcarddomæne"
       ],
       "Use ${ PASS_APP_NAME } as SSH agent": [
         "Brug ${ PASS_APP_NAME } som SSH-agent"
@@ -4083,7 +4082,7 @@
         "Regel for regulært udtryk"
       ],
       "Wildcard pattern matching rule": [
-        "Regel for jokertegnmønstermatch"
+        "Regel for wildcardmønster"
       ],
       "You can drag and drop the selected item to another vault": [
         "Du kan trække og slippe det valgte element til en anden boks",
@@ -4386,7 +4385,7 @@
     },
     "Result": {
       "Enter a URL to check to see if your current rule is matching the URL": [
-        "Indtast en URL for at kontrollere, om Deres nuværende regel matcher URL'en"
+        "Indtast en URL for at kontrollere om din nuværende regel matcher URL'en"
       ],
       "The rule is matching this URL": [
         "Reglen matcher denne URL"
@@ -5167,7 +5166,7 @@
         "Adgangskoden til ${ BRAND_NAME } kræves"
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svindel- eller phishing-websteder."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } offline-tilstand er deaktiveret."
@@ -5380,7 +5379,7 @@
         "Denne e-mailadresse vil ikke længere blive monitoreret for databrud."
       ],
       "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
-        "Dette element kan ikke foreslås til autofyld på grund af \"${ neverModeDescriptionStrong }\". Tilføj en anden URL, hvis De ønsker, at dette element skal autofyldes."
+        "Dette element kan ikke foreslås til autofyld på grund af \"${ neverModeDescriptionStrong }\". Tilføj en anden URL, hvis du ønsker, at dette element skal autofyldes."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Dette element er i øjeblikket delt. Hvis du sletter det, fjernes adgangen for alle andre brugere."
