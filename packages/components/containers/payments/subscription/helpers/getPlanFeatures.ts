@@ -14,6 +14,8 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import { getScribeWritingAssistantText } from '../assistant/helpers';
+
 export type Feature = {
     icon: IconName;
     text: string;
@@ -23,7 +25,7 @@ export type Feature = {
 // so I have typed this as Plan plus the optional MaxBaseSpace.
 type PlanPlusBaseSpace = Plan & { MaxBaseSpace?: number };
 
-export const getPlanFeatures = (plan: PlanPlusBaseSpace) => {
+export const getPlanFeatures = (plan: PlanPlusBaseSpace, scribeToLumo: boolean) => {
     const maxBytes = plan.Name === PLANS.FREE ? plan.MaxBaseSpace : plan.MaxSpace;
     const getMaxSpace = (unit: 'GB' | 'TB') => humanSize({ bytes: maxBytes, unit, fraction: 0 });
     // Variable must be planMaxSpace instead of maxSpaceGB in order to avoid quality:i118 error for variables in a context.
@@ -95,7 +97,7 @@ export const getPlanFeatures = (plan: PlanPlusBaseSpace) => {
 
     const protonScribe: Feature = {
         icon: 'pen-sparks',
-        text: c('Info').t`${BRAND_NAME} Scribe writing assistant`,
+        text: getScribeWritingAssistantText(scribeToLumo),
     };
 
     const sharedCalendar: Feature = {
