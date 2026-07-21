@@ -8,7 +8,6 @@ import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { exportRecoveryFile } from '@proton/shared/lib/recoveryFile/recoveryFile';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import darkIllustration from '../../assets/recovery-file-dark.svg';
@@ -24,7 +23,6 @@ export const DownloadRecoveryFile = (props: Props) => {
     const isDarkTheme = theme.information.dark;
     const [loading, withLoading] = useLoading();
     const dispatch = useDispatch();
-    const isShareFeatureEnabled = useFlag('RecoveryFileShareEnabled');
 
     return (
         <form
@@ -35,7 +33,7 @@ export const DownloadRecoveryFile = (props: Props) => {
                     (async function () {
                         const recoveryFileContents = await dispatch(downloadRecoveryFileThunk(true));
                         if (recoveryFileContents) {
-                            await exportRecoveryFile(recoveryFileContents, isShareFeatureEnabled);
+                            await exportRecoveryFile(recoveryFileContents);
                         }
                         props.safetyReview.actions.next('completed', props.recoveryItem);
                     })()
