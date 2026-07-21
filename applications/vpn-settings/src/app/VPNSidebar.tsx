@@ -10,8 +10,7 @@ import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
 import { Tree } from '@proton/components/components/sidebar/nav/Tree';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { SidebarToggle } from '@proton/vpn/components/Sidebar/Toggle';
-import { useB2BAdminNavigation, useNavigationRef } from '@proton/vpn/contexts/navigation';
+import { useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 
@@ -28,7 +27,6 @@ type Props = {
 
 export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSidebarToggle }: Props) => {
     const adminSidebarFeature = useB2BAdminNavigation();
-    const navigationRef = useNavigationRef();
     const { pathname } = useLocation();
 
     if (adminSidebarFeature.loading) {
@@ -47,7 +45,7 @@ export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSide
             </Sidebar>
         );
     }
-    const isSidebarActive = adminSidebarFeature.enabled && adminSidebarFeature.sidebar.status;
+    const isSidebarActive = adminSidebarFeature.enabled;
 
     return (
         <Sidebar
@@ -58,7 +56,6 @@ export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSide
             onToggleExpand={onSidebarToggle}
             version={<VpnSidebarVersion />}
             hasAppLinks={false}
-            navigationRef={adminSidebarFeature.enabled ? navigationRef : null}
             footerVariant={'minimal'}
         >
             <SidebarNav className="overflow-auto">
@@ -87,7 +84,6 @@ export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSide
                     </SidebarList>
                 )}
             </SidebarNav>
-            <SidebarToggle adminSidebarFeature={adminSidebarFeature} />
         </Sidebar>
     );
 };

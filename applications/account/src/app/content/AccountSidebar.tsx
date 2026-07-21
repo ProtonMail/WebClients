@@ -17,8 +17,7 @@ import {
 import { Tree } from '@proton/components/components/sidebar/nav/Tree';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { SidebarToggle } from '@proton/vpn/components/Sidebar/Toggle';
-import { useB2BAdminNavigation, useNavigationRef } from '@proton/vpn/contexts/navigation';
+import { useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
@@ -36,7 +35,6 @@ interface AccountSidebarProps {
 
 const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }: AccountSidebarProps) => {
     const adminSidebar = useB2BAdminNavigation();
-    const navigationRef = useNavigationRef();
 
     const backButtonCopy = {
         [APPS.PROTONMAIL]: c('Navigation').t`Inbox`,
@@ -74,7 +72,6 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
     };
 
     const isAdminSidebarEnabled = app === APPS.PROTONVPN_SETTINGS && adminSidebar?.enabled;
-    const isB2BAdminActive = app === APPS.PROTONVPN_SETTINGS && adminSidebar?.enabled && adminSidebar.sidebar.status;
 
     const { pathname } = useLocation();
 
@@ -108,14 +105,13 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
             version={<AppVersion />}
             wide={isAdminSidebarEnabled}
             data-testid="account:sidebar"
-            navigationRef={isAdminSidebarEnabled ? navigationRef : null}
             footerVariant={sidebarFooterVariant}
         >
             {adminSidebar?.loading ? (
                 <Loader />
             ) : (
                 <SidebarNav className="overflow-auto">
-                    {isB2BAdminActive ? (
+                    {isAdminSidebarEnabled ? (
                         <Tree routes={adminSidebar.routes} pathname={pathname} />
                     ) : (
                         <SidebarList>
@@ -140,7 +136,6 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
                     )}
                 </SidebarNav>
             )}
-            {isAdminSidebarEnabled ? <SidebarToggle key="sidebar-toggle" adminSidebarFeature={adminSidebar} /> : null}
         </Sidebar>
     );
 };
