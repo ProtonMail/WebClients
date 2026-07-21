@@ -1476,6 +1476,12 @@
       ],
       "Failed to start SSH agent: ${ errorMessage }": [
         "Не ўдалося запусціць агент SSH: ${ errorMessage }"
+      ],
+      "Regex invalid": [
+        "Памылковы рэгулярны выраз"
+      ],
+      "Regex unsafe": [
+        "Небяспечны рэгулярны выраз"
       ]
     },
     "Error message": {
@@ -2964,13 +2970,16 @@
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "Упарадкавана па полі (спачатку загаловак, потым імя карыстальніка або электронная пошта, вэб-сайт, нататкі) і адпавядае дакладнасці (дакладна, пачынаецца з, змяшчае)."
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Калі вы ўвайшлі ў свой Git commits з дапамогай ключа SSH, то таксама выканайце наступную каманду:"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Git павінен выкарыстоўваць OpenSSH з Windows, каб Git мог працаваць з агентам ${ PASS_APP_NAME } SSH. Гэта можна зрабіць з дапамогай наступнай каманды:"
       ]
     },
     "Keyboard key": {

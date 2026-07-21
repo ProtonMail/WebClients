@@ -1466,6 +1466,12 @@
       ],
       "Failed to stop SSH agent: ${ errorMessage }": [
         "Klarte ikke å stoppe SSH-agenten: ${ errorMessage }"
+      ],
+      "Regex invalid": [
+        "Ugyldig regex"
+      ],
+      "Regex unsafe": [
+        "Regex utrygg"
       ]
     },
     "Error message": {
@@ -2870,8 +2876,7 @@
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
       ],
       "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
         "${ PASS_APP_NAME } vil bruke SSH-nøklene som er lagret i hvelvene dine."
@@ -2905,6 +2910,12 @@
       ],
       "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
         "For å bruke ${ PASS_APP_NAME } SSH-agenten på Windows, må OpenSSH-tjenesten være deaktivert."
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Hvis du signerer Git-commitene dine med SSH-nøkkelen din, kjør også denne kommandoen:"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "For at Git skal fungere med ${ PASS_APP_NAME } SSH-agenten, må Git bruke Windows OpenSSH. Dette kan gjøres ved å kjøre denne kommandoen:"
       ]
     },
     "Keyboard key": {

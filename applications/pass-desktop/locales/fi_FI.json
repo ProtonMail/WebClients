@@ -1461,6 +1461,12 @@
       ],
       "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Olette tällä hetkellä yhteydettömässä tilassa. Palauttakaa yhteys avataksenne sovelluksen ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Regex invalid": [
+        "Lauseke on virheellinen"
+      ],
+      "Regex unsafe": [
+        "Lauseke ei ole turvallinen"
       ]
     },
     "Error message": {
@@ -2709,8 +2715,7 @@
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "Järjestys kentän (ensin otsikko, sitten käyttäjätunnus tai sähköpostiosoite, verkkosivusto, muistiinpanot) ja vastaavuustarkkuuden (tarkka, alkaa merkeillä, sisältää) mukaan."
@@ -2897,6 +2902,12 @@
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "Teillä ei ole enää pääsyä jakamiseen, 2FA-tunnistautumiseen ja muihin erityisominaisuuksiin sovelluksessa ${ PASS_APP_NAME }"
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Jos allekirjoitat Git-kommitit SSH-avaimellasi, suorita myös tämä komento:"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Jotta Git toimisi ${ PASS_APP_NAME } SSH-agentin kanssa, Gitin on käytettävä Windows OpenSSH:ta. Tämä voidaan tehdä suorittamalla seuraava komento:"
       ]
     },
     "Keyboard key": {

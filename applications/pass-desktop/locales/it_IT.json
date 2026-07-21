@@ -1446,6 +1446,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "L'app desktop ${ PASS_APP_NAME } dovrebbe aver effettuato l'accesso."
+      ],
+      "Regex invalid": [
+        "Espressione regolare non valida"
+      ],
+      "Regex unsafe": [
+        "Espressione regolare non sicura"
       ]
     },
     "Error message": {
@@ -2724,8 +2730,7 @@
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "${ inviterEmail } wants to share an item with the group ${ name }.": [
         "${ inviterEmail } vuole condividere un elemento con il gruppo ${ name }."
@@ -2882,6 +2887,12 @@
       ],
       "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "Potresti dover concedere l'autorizzazione di accessibilità a ${ PASS_APP_NAME }."
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Se firmi i tuoi commit Git con la tua chiave SSH, esegui anche questo comando:"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Per far funzionare Git con l'agente SSH di ${ PASS_APP_NAME }, Git deve utilizzare OpenSSH di Windows. A tal fine, è sufficiente eseguire il seguente comando:"
       ]
     },
     "Keyboard key": {
