@@ -1,13 +1,10 @@
-import type { GenerationResponseMessage } from '../../../lib/lumo-api-client';
+import type { GenerationResponseMessage } from '@proton/lumo-api-client';
 
 /**
  * Accumulates assistant message text from streamed chunks and enforces terminal error types.
  * Only `token_data` with `target === 'message'` is appended; other targets (title, tools, etc.) are ignored.
  */
-export function appendWorkflowCodegenAssistantText(
-    accumulated: string,
-    message: GenerationResponseMessage
-): string {
+export function appendWorkflowCodegenAssistantText(accumulated: string, message: GenerationResponseMessage): string {
     switch (message.type) {
         case 'error':
         case 'timeout':

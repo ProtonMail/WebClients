@@ -1,0 +1,470 @@
+import { LumoApiClient } from '@proton/lumo-api-client/core/client';
+import { getDesktopLumoApiClientConfig } from '@proton/lumo-api-client/core/desktop-tools';
+import { getTerminalTypeFromApiError } from '@proton/lumo-api-client/core/generation-terminal';
+import type {
+    AssistantCallOptions,
+    GenerationResponseMessage,
+    LumoApiClientConfig,
+    Turn,
+} from '@proton/lumo-api-client/core/types';
+import { postProcessTitle } from '@proton/lumo-api-client/utils';
+import type { Api } from '@proton/shared/lib/interfaces';
+
+import { selectAttachmentsBySpaceId } from '../redux/selectors';
+import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
+import {
+    changeConversationTitle,
+    pushConversationRequest,
+    updateConversationStatus,
+} from '../redux/slices/core/conversations';
+// Redux action creators
+import {
+    addImageAttachment,
+    appendChunk,
+    appendReasoning,
+    deleteMessage,
+    finishMessage,
+    pushMessageRequest,
+    setSuggestedQuestions,
+    setToolCall,
+    setToolResult,
+} from '../redux/slices/core/messages';
+import type { LumoDispatch, LumoState } from '../redux/store';
+import { attachmentDataCache } from '../services/attachmentDataCache';
+import {
+    ContextLengthExceededError,
+    getContextLengthExceededUpstreamMessage,
+    isContextLengthExceededApiError,
+    isContextLengthExceededError,
+} from '../services/errors/contextLengthError';
+import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
+import { ConversationStatus, Role } from '../types';
+import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../types-api';
+import { createImageAttachment, generateImageMarkdown } from './imageAttachment';
+
+/**
+ * Redux-integrated helper for sending messages with automatic Redux updates
+ */
+export function sendMessageWithRedux(
+    api: Api,
+    turns: Turn[],
+    options: AssistantCallOptions & {
+        config?: Partial<LumoApiClientConfig>;
+        messageId?: string;
+        conversationId?: string;
+        spaceId?: string;
+        role?: Role;
+        errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
+    } = {} as any
+) {
+    return async (dispatch: LumoDispatch, getState: () => LumoState): Promise<void> => {
+        const {
+            config,
+            messageId,
+            conversationId,
+            spaceId,
+            role = Role.Assistant,
+            errorHandler,
+            ...assistantOptions
+        } = options;
+
+        let accumulatedContent = '';
+        let accumulatedTitle = '';
+        let persistedTitle: string | undefined = undefined;
+        let sawToolActivity = false;
+        // Filenames generated for images during this response. The Redux store may not yet
+        // reflect just-added attachments when the next image_data chunk arrives, so we track
+        // them locally to keep collision suffixes ((2), (3), …) correct within one response.
+        const generatedImageFilenames = new Set<string>();
+        let servingModelID: string | undefined;
+
+        const client = new LumoApiClient({
+            ...getDesktopLumoApiClientConfig(),
+            ...config,
+        });
+
+        try {
+            await client.callAssistant(api, turns, {
+                ...assistantOptions,
+                chunkCallback: async (message: GenerationResponseMessage) => {
+                    switch (message.type) {
+                        case 'tool-error':
+                            // The model reported a context-window overflow mid-stream. Surface a
+                            // dedicated, recoverable error so the orchestration layer can compact
+                            // the conversation and retry. Other tool-error codes fall back to the
+                            // generic error handling below.
+                            if (message.error.code === CONTEXT_LENGTH_EXCEEDED_CODE) {
+                                throw new ContextLengthExceededError({
+                                    conversationId,
+                                    upstreamMessage: message.error.message,
+                                });
+                            }
+                            if (errorHandler && conversationId) {
+                                throw errorHandler({ type: 'error' }, conversationId);
+                            }
+                            throw new Error(`Generation failed: tool-error (${message.error.code})`);
+
+                        case 'error':
+                        case 'timeout':
+                        case 'rejected':
+                        case 'harmful':
+                            // Use custom error handler if provided, otherwise use generic Error
+                            if (errorHandler && conversationId) {
+                                throw errorHandler(message, conversationId);
+                            }
+                            throw new Error(`Generation failed: ${message.type}`);
+
+                        case 'done':
+                            // Tool-only turns (native desktop tools, server tools) may finish
+                            // without prose content before the follow-up generation round.
+                            if (!accumulatedContent.trim() && !sawToolActivity) {
+                                console.warn(`Generation completed with no content`);
+                                if (errorHandler && conversationId) {
+                                    throw errorHandler({ type: 'error' }, conversationId);
+                                }
+                                throw new Error('Generation failed: no content');
+                            }
+                            break;
+
+                        case 'ingesting':
+                            // When we start ingesting the message and we have a title, persist it
+                            if (message.target !== 'message' && accumulatedTitle && conversationId && spaceId) {
+                                const processedTitle = postProcessTitle(accumulatedTitle);
+                                dispatch(
+                                    changeConversationTitle({
+                                        id: conversationId,
+                                        spaceId,
+                                        title: processedTitle,
+                                        persist: true,
+                                    })
+                                );
+                                dispatch(pushConversationRequest({ id: conversationId }));
+                                persistedTitle = processedTitle;
+                            }
+                            break;
+
+                        case 'token_data':
+                            switch (message.target) {
+                                case 'title':
+                                    accumulatedTitle += message.content;
+                                    if (conversationId && spaceId) {
+                                        dispatch(
+                                            changeConversationTitle({
+                                                id: conversationId,
+                                                spaceId,
+                                                title: postProcessTitle(accumulatedTitle),
+                                                persist: false,
+                                            })
+                                        );
+                                    }
+                                    break;
+
+                                case 'message':
+                                    accumulatedContent += message.content;
+                                    if (messageId) {
+                                        dispatch(
+                                            appendChunk({
+                                                messageId,
+                                                content: message.content,
+                                            })
+                                        );
+                                    }
+                                    break;
+
+                                case 'tool_call':
+                                    sawToolActivity = true;
+                                    if (messageId) {
+                                        dispatch(
+                                            setToolCall({
+                                                messageId,
+                                                content: message.content,
+                                            })
+                                        );
+                                    }
+                                    break;
+
+                                case 'tool_result':
+                                    sawToolActivity = true;
+                                    if (messageId) {
+                                        dispatch(
+                                            setToolResult({
+                                                messageId,
+                                                content: message.content,
+                                            })
+                                        );
+                                    }
+                                    break;
+
+                                case 'reasoning':
+                                    if (messageId) {
+                                        dispatch(
+                                            appendReasoning({
+                                                messageId,
+                                                content: message.content,
+                                                sequence: message.count,
+                                            })
+                                        );
+                                    }
+                                    break;
+
+                                case 'suggested_questions':
+                                    if (messageId) {
+                                        try {
+                                            const questions: string[] = JSON.parse(message.content);
+                                            if (Array.isArray(questions)) {
+                                                dispatch(setSuggestedQuestions({ messageId, questions }));
+                                            }
+                                        } catch {
+                                            console.warn(
+                                                'Failed to parse suggested_questions content',
+                                                message.content
+                                            );
+                                        }
+                                    }
+                                    break;
+                            }
+                            break;
+
+                        case 'image_data':
+                            console.log('[IMAGE_DATA] Received in Redux integration', {
+                                image_id: message.image_id,
+                                data: message.data
+                                    ? `${message.data.substring(0, 50)}... (${message.data.length} chars)`
+                                    : 'none',
+                                is_final: message.is_final,
+                                seed: message.seed,
+                            });
+
+                            if (message.image_id && message.data && messageId && spaceId) {
+                                const storeFilenames = Object.values(
+                                    selectAttachmentsBySpaceId(spaceId)(getState())
+                                ).map((a) => a.filename);
+                                const existingFilenames = [...storeFilenames, ...generatedImageFilenames];
+                                const { attachment, data: imageData } = createImageAttachment(
+                                    message.image_id,
+                                    message.data,
+                                    spaceId,
+                                    existingFilenames
+                                );
+                                generatedImageFilenames.add(attachment.filename);
+
+                                // Store image data in cache instead of Redux
+                                attachmentDataCache.setData(attachment.id, imageData);
+
+                                dispatch(addAttachment(attachment));
+                                dispatch(addImageAttachment({ messageId, attachment }));
+                                dispatch(appendChunk({ messageId, content: generateImageMarkdown(message.image_id) }));
+                                // Push attachment to server now that it has spaceId
+                                dispatch(pushAttachmentRequest({ id: message.image_id }));
+                            }
+                            break;
+
+                        case 'usage':
+                            applyUsageFromStreamMessage(message);
+                            if (message.usage.model) {
+                                servingModelID = message.usage.model;
+                            }
+                            break;
+
+                        case 'server_tool_call':
+                            sawToolActivity = true;
+                            // Server-side tool calls arrive as dedicated `chat.tool_call` SSE chunks
+                            // (parsed into 'server_tool_call' messages in streaming.ts, decrypted in
+                            // decrypt.ts). We funnel them into the same block-render path used by the
+                            // streamed delta tool calls (setToolCall -> setToolCallInBlocks). The
+                            // playground branch routes its tool calls into this exact path too, so
+                            // this stays compatible when that branch is merged in.
+                            //
+                            // Each call is emitted twice: an "announce" chunk (name only) followed by
+                            // a "dispatch" chunk (name + arguments). setToolCallInBlocks replaces the
+                            // announce block with the dispatch block because they share the same name,
+                            // giving streaming-style updates for free.
+                            if (messageId) {
+                                // `arguments` is an object when the backend sends plaintext, a
+                                // decrypted JSON string when encrypted, or absent on the announce.
+                                const rawArguments = message.arguments as unknown;
+                                let toolArguments: unknown;
+                                if (typeof rawArguments === 'string') {
+                                    try {
+                                        toolArguments = JSON.parse(rawArguments);
+                                    } catch {
+                                        toolArguments = rawArguments;
+                                    }
+                                } else {
+                                    toolArguments = rawArguments;
+                                }
+                                dispatch(
+                                    setToolCall({
+                                        messageId,
+                                        content: JSON.stringify({
+                                            name: message.name,
+                                            ...(toolArguments !== undefined ? { arguments: toolArguments } : {}),
+                                        }),
+                                    })
+                                );
+                            }
+                            break;
+
+                        case 'server_tool_result':
+                            sawToolActivity = true;
+                            // Companion to 'server_tool_call'; routed into the same block-render path
+                            // via setToolResult. `content` is an object for plaintext payloads and a
+                            // decrypted JSON string when encrypted.
+                            if (messageId) {
+                                const rawContent = message.content as unknown;
+                                dispatch(
+                                    setToolResult({
+                                        messageId,
+                                        content:
+                                            typeof rawContent === 'string' ? rawContent : JSON.stringify(rawContent),
+                                    })
+                                );
+                            }
+                            break;
+                    }
+
+                    // Call the original callback if provided
+                    if (assistantOptions.chunkCallback) {
+                        return assistantOptions.chunkCallback(message);
+                    }
+                },
+                finishCallback: async (status) => {
+                    if (messageId && conversationId && spaceId) {
+                        // Always finish the message (even if failed) to preserve any content that was streamed
+                        // This includes reasoning tokens, partial message content, or tool calls
+                        dispatch(
+                            finishMessage({
+                                messageId,
+                                conversationId,
+                                spaceId,
+                                content: accumulatedContent,
+                                status: status === 'failed' ? 'failed' : status,
+                                role,
+                                ...(servingModelID !== undefined ? { modelID: servingModelID } : {}),
+                            })
+                        );
+                        // Always persist the message to IDB, even if generation failed.
+                        // Failed messages have content the user can see (partial response,
+                        // reasoning tokens, tool calls). Without this push, the message
+                        // exists only in Redux and vanishes on page reload.
+                        // Importantly, if the user continues the conversation below a
+                        // non-persisted message, the entire child subtree is at risk:
+                        // persistence relies on the message tree topology, and a missing
+                        // parent means children cannot be persisted either.
+                        dispatch(pushMessageRequest({ id: messageId }));
+
+                        // Handle final title processing
+                        const finalTitle = postProcessTitle(accumulatedTitle);
+                        if (accumulatedTitle) {
+                            dispatch(
+                                changeConversationTitle({
+                                    id: conversationId,
+                                    spaceId,
+                                    title: finalTitle,
+                                    persist: true,
+                                })
+                            );
+                        }
+
+                        // Update conversation status to completed
+                        dispatch(
+                            updateConversationStatus({
+                                id: conversationId,
+                                status: ConversationStatus.COMPLETED, // Always set to completed regardless of success/failure
+                            })
+                        );
+
+                        // Push conversation request if title changed
+                        if (!persistedTitle || finalTitle !== persistedTitle) {
+                            dispatch(pushConversationRequest({ id: conversationId }));
+                        }
+                    }
+
+                    // Call the original callback if provided
+                    if (assistantOptions.finishCallback) {
+                        await assistantOptions.finishCallback(status);
+                    }
+                },
+            });
+        } catch (error) {
+            // A plain HTTP 400 (no SSE stream) can also signal context overflow.
+            // Normalise it so the orchestration layer handles it like the SSE event.
+            if (!isContextLengthExceededError(error) && isContextLengthExceededApiError(error)) {
+                throw new ContextLengthExceededError({
+                    conversationId,
+                    upstreamMessage: getContextLengthExceededUpstreamMessage(error),
+                });
+            }
+
+            const terminalType = getTerminalTypeFromApiError(error);
+            if (terminalType && errorHandler && conversationId) {
+                throw errorHandler({ type: terminalType }, conversationId);
+            }
+
+            throw error;
+        }
+    };
+}
+
+/**
+ * Create Redux callbacks for streaming responses
+ */
+// TODO unused? consider removing
+export function createReduxCallbacks(
+    messageId: string,
+    conversationId: string,
+    spaceId: string,
+    role: Role = Role.Assistant
+) {
+    // FIXME
+    // FIXME
+    // I think we lost the ability to generate a title.
+    // Reference code is getCallbacks() in llm/index.ts, notably, calls to changeConversationTitle()
+    // FIXME
+    // FIXME
+
+    let accumulatedContent = '';
+
+    return {
+        // todo turn chunkCallback(message, dispatch) into dispatch(chunkCallback(message))
+        chunkCallback: async (message: GenerationResponseMessage, dispatch: LumoDispatch) => {
+            if (message.type === 'token_data' && message.target === 'message') {
+                accumulatedContent += message.content;
+
+                dispatch(
+                    appendChunk({
+                        messageId,
+                        content: message.content,
+                    })
+                );
+            }
+            return {};
+        },
+        // todo turn finishCallback(status, dispatch) into dispatch(finishCallback(status))
+        finishCallback: async (status: 'succeeded' | 'failed', dispatch: LumoDispatch) => {
+            // If generation failed, delete the message instead of keeping it
+            if (status === 'failed') {
+                dispatch(deleteMessage(messageId));
+            } else {
+                dispatch(
+                    finishMessage({
+                        messageId,
+                        conversationId,
+                        spaceId,
+                        content: accumulatedContent,
+                        status,
+                        role,
+                    })
+                );
+            }
+
+            // Update conversation status to completed
+            dispatch(
+                updateConversationStatus({
+                    id: conversationId,
+                    status: ConversationStatus.COMPLETED,
+                })
+            );
+        },
+    };
+}

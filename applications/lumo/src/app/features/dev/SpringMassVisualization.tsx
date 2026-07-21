@@ -1,4 +1,4 @@
-import { LAG0 } from '../../lib/lumo-api-client/core/transforms/smoothing';
+import { LAG0 } from '@proton/lumo-api-client/core/transforms/smoothing';
 
 interface SpringMassVisualizationProps {
     lag: number;

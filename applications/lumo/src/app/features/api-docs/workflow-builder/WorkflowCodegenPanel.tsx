@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Option, SelectTwo, TextAreaTwo, useApi, useNotifications } from '@proton/components/index';
+import { LumoApiClient, createSystemTurn, createUserTurn } from '@proton/lumo-api-client';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SignInButton } from '../../../components/Guest/SignInLink';
 import { LumoMarkdownCodeBlock } from '../../../components/LumoMarkdown/LumoMarkdownCodeBlock';
-import { LumoApiClient, createSystemTurn, createUserTurn } from '../../../lib/lumo-api-client';
 import { WorkflowGraphView } from './WorkflowGraphView';
 import { parseWorkflowCodegenResponse } from './parseWorkflowCodegenResponse';
 import type { LumoWorkflowCodegenResult, WorkflowCodegenLang } from './workflowCodegen.types';
