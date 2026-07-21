@@ -417,9 +417,6 @@
       "Get the apps": [
         "აპების გადმოწერა"
       ],
-      "Get the deal": [
-        "ფასდაკლების მიღება"
-      ],
       "Get the writing assistant": [
         "მიიღეთ წერის დამხმარე"
       ],
@@ -1458,6 +1455,9 @@
       "Continue your subscription": [
         "გააგრძელეთ თქვენი გამოწერა"
       ],
+      "Get 50% offer": [
+        "50% ფასდაკლების მიღება"
+      ],
       "Maybe later": [
         "მოგვიანებით"
       ]
@@ -1517,20 +1517,6 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
-      ],
-      "Subtotal": [
-        "ქვეჯამი"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "ჯამური თანხა ${ cycle } თვისთვის",
-        "ჯამური თანხა ${ cycle } თვისთვის"
-      ],
-      "Total": [
-        "ჯამი"
-      ],
-      "Total for ${ n } month": [
-        "ჯამში ${ n } თვის",
-        "ჯამში ${ n } თვის"
       ]
     },
     "Collapsible tooltip": {
@@ -5952,10 +5938,6 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
       ],
-      "${ n } month": [
-        "${ n } თვე",
-        "${ n } თვე"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } სიმბოლო"
       ],
@@ -6180,9 +6162,6 @@
       ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "ფასდაკლების მიღება"
       ],
       "Hide password": [
         "პაროლის დამალვა"
@@ -9743,11 +9722,6 @@
         "გამოწერის სატარიფო გეგმა ჩამოიწევა გადახდის ციკლის ბოლოს."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "სამუდამოდ"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
@@ -10556,9 +10530,6 @@
       ],
       "Subscription canceled": [
         "გამოწერა გაუქმებულია"
-      ],
-      "Summer Sale": [
-        "ზაფხულის ფასდაკლება"
       ],
       "The link either does not exist or has expired": [
         "ბმული არ არსებობს ან ვადაგასულია"
