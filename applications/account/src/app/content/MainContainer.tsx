@@ -218,7 +218,6 @@ const MainContainer = () => {
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isMspEnabled = useFlag('MspEnabled');
-    const isGenericUserSettingsEnabled = useFlag('GenericUserSettings');
 
     const { canUseCategoryView } = useCategoriesData();
 
@@ -230,7 +229,7 @@ const MainContainer = () => {
     const recoveryNotification = useRecoveryNotification(false, false);
 
     const appFromPathname = getAppFromPathnameSafe(location.pathname);
-    const isGenericSettings = isGenericUserSettingsEnabled && !appFromPathname;
+    const isGenericSettings = !appFromPathname;
     const app = appFromPathname ?? (isGenericSettings ? APPS.PROTONACCOUNT : getToApp(undefined, user));
     const appSlug = isGenericSettings ? '' : getSlugFromApp(app);
 
