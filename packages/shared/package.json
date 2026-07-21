@@ -53,7 +53,7 @@
         "@vitest/browser-playwright": "^4.1.10",
         "@webgpu/types": "^0.1.71",
         "eslint": "^9.39.5",
-        "playwright": "patch:playwright@npm%3A1.61.1#~/.yarn/patches/playwright-npm-1.61.1-55c1fb1408.patch",
+        "playwright": "^1.61.1",
         "prettier": "^3.9.5",
         "ttag": "^1.8.12",
         "typescript": "^6.0.3",
