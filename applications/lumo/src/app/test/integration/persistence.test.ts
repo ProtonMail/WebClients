@@ -3,7 +3,7 @@ import { type SetupServer, setupServer } from 'msw/node';
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { CONVERSATION_STORE, DbApi, MESSAGE_STORE, SPACE_STORE } from '../../indexedDb/db';
-import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
+import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import { _getCallbacks } from '../../llm';
 import { setRetryPushEveryMs } from '../../redux/sagas';
 import {

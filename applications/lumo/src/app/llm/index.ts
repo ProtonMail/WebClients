@@ -394,7 +394,7 @@ export function postProcessTitle(title: string): string {
     return title;
 }
 
-// todo replace callers to use createReduxCallbacks (lib/lumo-api-client/integrations/redux.ts) and remove this function
+// todo replace callers to use createReduxCallbacks (lib/lumoApiClientRedux.ts) and remove this function
 // todo unused? consider removing
 export function _getCallbacks(
     spaceId: SpaceId,

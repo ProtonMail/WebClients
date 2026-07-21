@@ -1,8 +1,8 @@
 // utils/errorAnalyzer.ts
+import { getTerminalTypeFromApiError } from '@proton/lumo-api-client/core/generation-terminal';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { getTerminalTypeFromApiError } from '../../lib/lumo-api-client/core/generation-terminal';
 import { LUMO_API_ERRORS } from '../../types';
 import { getErrorTypeFromMessage } from './errorHandling';
 

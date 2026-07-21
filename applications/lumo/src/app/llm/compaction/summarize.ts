@@ -1,6 +1,6 @@
+import { LumoApiClient } from '@proton/lumo-api-client/core/client';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import { LumoApiClient } from '../../lib/lumo-api-client/core/client';
 import { ENABLE_U2L_ENCRYPTION } from '../config';
 import { buildCompactionPrompt } from './prompt';
 

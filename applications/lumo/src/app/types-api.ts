@@ -7,17 +7,15 @@
  * Please only add to this file the types that have an equivalent on the backend lumo-infra.
  * Add local types to `types.ts` instead.
  */
+// Role is single-sourced from the extracted package so the enum has a single
+// nominal identity across the app <-> @proton/lumo-api-client boundary.
+import { Role } from '@proton/lumo-api-client/types-api';
+
 import type { RequestId } from './types';
 
 // *** Role ***
 
-export enum Role {
-    Assistant = 'assistant',
-    User = 'user',
-    System = 'system',
-    ToolCall = 'tool_call',
-    ToolResult = 'tool_result',
-}
+export { Role };
 
 export function isRole(value: any): value is Role {
     return (
@@ -131,9 +129,7 @@ export type ChatCompletionsFunctionTool = {
 };
 
 export type ChatCompletionsTool =
-    | ChatCompletionsBuiltInTool
-    | ChatCompletionsFlatFunctionTool
-    | ChatCompletionsFunctionTool;
+    ChatCompletionsBuiltInTool | ChatCompletionsFlatFunctionTool | ChatCompletionsFunctionTool;
 
 /**
  * OpenAI content parts. A message's `content` may be a plain string (the common
