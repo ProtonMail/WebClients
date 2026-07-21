@@ -5,6 +5,7 @@ const logger = loggerManager.getLogger('mail');
 
 export const MAIL_LOG_COMPONENT = {
     MAILBOX_ACTIONS: 'mailbox-actions',
+    API_ERROR: 'mail-api-errors',
 } as const;
 
 export type MailLogComponent = (typeof MAIL_LOG_COMPONENT)[keyof typeof MAIL_LOG_COMPONENT];
