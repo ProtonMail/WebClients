@@ -4,7 +4,7 @@ import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 
 import { DIACRITICS_REGEXP, ES_MAX_INITIAL_CHARS } from '../constants';
 import type { HighlightMetadata } from '../models';
-import { esSentryReport } from './esAPI';
+import { esSentryReport } from './esReporting';
 import { normalizeString } from './esUtils';
 
 /**
@@ -360,9 +360,7 @@ export const highlightJSX = (metadata: string, keywords: string[], isBold: boole
                             : metadata.slice(oldPreviousIndex, position[0]);
 
                     return (
-                        <span
-                            key={index} // eslint-disable-line react/no-array-index-key
-                        >
+                        <span key={index}>
                             {startingSlice}
                             <mark className={`${isBold ? 'text-bold' : ''}`}>
                                 {metadata.slice(position[0], position[1])}

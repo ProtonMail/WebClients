@@ -1,10 +1,10 @@
 import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 
 import { STORING_OUTCOME } from '../constants';
-import { ciphertextSize, decryptFromDB } from '../esHelpers';
+import { decryptFromDB } from '../esHelpers/esDecrypt';
+import { ciphertextSize } from '../esHelpers/esUtils';
 import type { EncryptedItemWithInfo } from '../models';
-import { updateSize } from './configObjectStore';
-import { openESDB, safelyWriteToIDBConditionally } from './indexedDB';
+import { openESDB, safelyWriteToIDBConditionally, updateSize } from './indexedDB';
 
 /**
  * Get a decrypted content item from IndexedDB

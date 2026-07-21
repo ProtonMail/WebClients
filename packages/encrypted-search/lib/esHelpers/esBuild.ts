@@ -1,5 +1,3 @@
-import type { IDBPDatabase } from 'idb';
-
 import { CryptoProxy, type PrivateKeyReference } from '@protontech/crypto';
 import {
     type ESCiphertext,
@@ -8,6 +6,8 @@ import {
     generateIndexKey,
     importIndexKey,
 } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
+import type { IDBPDatabase } from 'idb';
+
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
@@ -22,21 +22,12 @@ import {
     TIMESTAMP_TYPE,
     defaultESProgress,
 } from '../constants';
-import {
-    contentIndexingProgress,
-    executeContentOperations,
-    executeMetadataOperations,
-    initializeConfig,
-    metadataIndexingProgress,
-    openESDB,
-    readIndexKey,
-    readLimited,
-    readMetadataBatch,
-    readSortedIDs,
-    setLimited,
-    wrappedGetOldestInfo,
-    writeAllEvents,
-} from '../esIDB';
+import { initializeConfig, readIndexKey, readLimited, setLimited } from '../esIDB/configObjectStore';
+import { executeContentOperations } from '../esIDB/content';
+import { writeAllEvents } from '../esIDB/events';
+import { openESDB } from '../esIDB/indexedDB';
+import { contentIndexingProgress, metadataIndexingProgress } from '../esIDB/indexingProgress';
+import { executeMetadataOperations, readMetadataBatch, readSortedIDs, wrappedGetOldestInfo } from '../esIDB/metadata';
 import type {
     ESCache,
     ESItemInfo,
@@ -49,9 +40,8 @@ import type {
     GetUserKeys,
     InternalESCallbacks,
 } from '../models';
-import { esErrorReport, esSentryReport } from './esAPI';
-import { sizeOfESItem } from './esCache';
-import { isObjectEmpty, serializeAndEncryptItem } from './esUtils';
+import { esErrorReport, esSentryReport } from './esReporting';
+import { isObjectEmpty, serializeAndEncryptItem, sizeOfESItem } from './esUtils';
 
 /**
  * Execute the initial steps of a new metadata indexing, i.e. generating an index key and the DB itself
