@@ -2,38 +2,13 @@ import { getIsOfflineError, getIsTimeoutError, isNotExistError } from '@proton/s
 import { SECOND } from '@proton/shared/lib/constants';
 import { randomDelay } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { SentryCommonInitiatives, captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { ES_MAX_RETRIES, ES_TEMPORARY_ERRORS } from '../constants';
-import { readNumMetadata } from '../esIDB';
+import { readNumMetadata } from '../esIDB/metadata';
+import { esSentryReport } from './esReporting';
 
-export const esErrorReport = (context: string, extra?: Record<string, unknown>) => {
-    traceError(extra?.error, {
-        extra: {
-            context,
-            ...extra,
-        },
-        tags: {
-            initiative: SentryCommonInitiatives.ENCRYPTED_SEARCH,
-            context,
-        },
-    });
-};
-
-/**
- * Helper to send ES-related sentry reports
- * @param errorMessage the error message that will appear in the title of the log
- * @param extra any other contextual information that will be attached to the log
- */
-export const esSentryReport = (errorMessage: string, extra?: any) => {
-    // if there is an error, use esErrorReport, otherwise use captureMessage
-    if (extra?.error != null) {
-        esErrorReport(errorMessage, extra);
-    } else {
-        captureMessage(`[EncryptedSearch] ${errorMessage}`, { extra });
-    }
-};
+export { esErrorReport, esSentryReport } from './esReporting';
 
 /**
  * Helper to run api calls for ES. They have the following properties:

@@ -1,12 +1,11 @@
-import type { IDBPDatabase } from 'idb';
-
 import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 
 import { STORING_OUTCOME } from '../constants';
-import { ciphertextSize, decryptFromDB } from '../esHelpers';
-import type { ESItemInfo, ESTimepoint, EncryptedItemWithInfo, EncryptedSearchDB } from '../models';
-import { updateSize } from './configObjectStore';
-import { openESDB, safelyWriteToIDBConditionally } from './indexedDB';
+import { decryptFromDB } from '../esHelpers/esDecrypt';
+import { ciphertextSize } from '../esHelpers/esUtils';
+import type { ESItemInfo, ESTimepoint, EncryptedItemWithInfo } from '../models';
+import { openESDB, safelyWriteToIDBConditionally, updateSize } from './indexedDB';
+import { getOldestInfo } from './metadataOldest';
 
 /**
  * Get a decrypted metadata item from IndexedDB
@@ -97,22 +96,6 @@ export const readNumMetadata = async (userID: string) => {
     esDB.close();
     return count;
 };
-
-/**
- * Retrieve the ID of the oldest item's metadata
- */
-export const getOldestID = async (esDB: IDBPDatabase<EncryptedSearchDB>) =>
-    esDB.getKeyFromIndex('metadata', 'temporal', IDBKeyRange.lowerBound([0, 0]));
-
-/**
- * Retrieve the ID and timepoint of the oldest item's metadata
- */
-export const getOldestInfo = async (esDB: IDBPDatabase<EncryptedSearchDB>): Promise<ESItemInfo | undefined> =>
-    getOldestID(esDB).then((ID) =>
-        ID
-            ? esDB.get('metadata', ID).then((item) => (!!item ? { ID, timepoint: item.timepoint } : undefined))
-            : undefined
-    );
 
 /**
  * Wrapper for getOldestInfo that internally opens an instance of esDB

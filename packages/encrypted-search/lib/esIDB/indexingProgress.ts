@@ -1,5 +1,5 @@
 import { INDEXING_STATUS, TIMESTAMP_TYPE, defaultESProgress } from '../constants';
-import { roundMilliseconds } from '../esHelpers';
+import { roundMilliseconds } from '../esHelpers/esUtils';
 import type { ESProgress } from '../models';
 import { openESDB, safelyWriteToIDBAbsolutely } from './indexedDB';
 
