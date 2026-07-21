@@ -6,6 +6,7 @@ import {
   type ProtonDriveClient,
   MemberRole,
   NodeType,
+  ProtonDriveError,
   generateNodeUid,
   getDrive,
 } from '@proton/drive'
@@ -20,8 +21,9 @@ import { useAddresses } from '@proton/account/addresses/hooks'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
 import type { RecentDocumentAPIItem } from '@proton/docs-core/lib/Api/Types/GetRecentsResponse'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
-import { traceError, SentryRealtimeInitiatives, addSentryBreadcrumb } from '@proton/shared/lib/helpers/sentry'
-import type { SDKEventListener } from '~/drive-sdk/manage-events-subscription'
+import { addSentryBreadcrumb } from '@proton/shared/lib/helpers/sentry'
+import { traceRecentsError } from './traceRecentsError'
+import type { SDKEventListener } from '~/drive-sdk/event-subscriber'
 
 export function useRecents(drive: ProtonDriveClient) {
   const [addresses] = useAddresses()
@@ -49,21 +51,9 @@ export function useRecents(drive: ProtonDriveClient) {
     const uidsToLoad = new Set<string>()
     for (const document of documents) {
       uidsToLoad.add(generateNodeUid(document.VolumeID, document.LinkID))
-      const ancestorsUids = []
       for (const ancestorLinkID of document.AncestorIDs) {
         uidsToLoad.add(generateNodeUid(document.VolumeID, ancestorLinkID))
-        ancestorsUids.push(generateNodeUid(document.VolumeID, ancestorLinkID))
       }
-      addSentryBreadcrumb({
-        type: 'docs',
-        category: 'docs',
-        level: 'info',
-        message: 'Ancestors to load',
-        data: {
-          document,
-          ancestorsUids,
-        },
-      })
     }
 
     // Load all the nodes
@@ -86,26 +76,24 @@ export function useRecents(drive: ProtonDriveClient) {
           nodesByUid.set(node.uid, node)
         }
       }
-    } catch (error: any) {
+    } catch (error) {
       logger.debug('[LoadRecentsWithDriveSDK] Error while iterating nodes', { error })
-      addSentryBreadcrumb({
-        type: 'docs',
-        category: 'docs',
-        level: 'warning',
-        message: 'Node iterator error',
-        data: {
-          error,
-        },
-      })
+      const data: any = { error }
+      if (error instanceof ProtonDriveError) {
+        data.errorCause = error.cause // Explicitly logging it - debugging SDK and Sentry interaction
+      } else {
+        addSentryBreadcrumb({
+          type: 'docs',
+          category: 'docs',
+          level: 'warning',
+          message: 'Node iterator error',
+          data,
+        })
+      }
       // Creating new error to capture current stack
       const sentryError = new Error('fetchRecents failed at iterateNodes')
       sentryError.cause = error
-      traceError(sentryError, {
-        tags: {
-          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-          feature: 'DocsLoadRecentsWithDriveSDK',
-        },
-      })
+      traceRecentsError(sentryError)
     }
     addSentryBreadcrumb({
       type: 'docs',
@@ -113,6 +101,7 @@ export function useRecents(drive: ProtonDriveClient) {
       level: 'info',
       message: 'Finished loading nodes',
       data: {
+        documents,
         loadedNodes: [...nodesByUid.keys()],
         missingNodes: [...uidsToLoad].filter((nodeUid) => !nodesByUid.has(nodeUid)),
       },
@@ -141,12 +130,7 @@ export function useRecents(drive: ProtonDriveClient) {
             documentItems.push(createDocumentItem(node, documentDetails))
           } catch (error) {
             logger.debug('[LoadRecentsWithDriveSDK] Could not process document', { error, document })
-            traceError(error, {
-              tags: {
-                initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-                feature: 'DocsLoadRecentsWithDriveSDK',
-              },
-            })
+            traceRecentsError(error)
           }
         }
 
@@ -161,12 +145,7 @@ export function useRecents(drive: ProtonDriveClient) {
         setInitialized()
       })
       .catch((error) => {
-        traceError(error, {
-          tags: {
-            initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-            feature: 'DocsLoadRecentsWithDriveSDK',
-          },
-        })
+        traceRecentsError(error)
         createNotification({
           type: 'error',
           text: c('Error').t`Failed to load recent documents`,
