@@ -1,6 +1,6 @@
 import { MemoryRouter } from 'react-router-dom';
 
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import * as orgHooks from '@proton/account/organization/hooks';
@@ -37,7 +37,6 @@ vi.mock('@proton/components/components/sidebar/SettingsListItem', () => ({
 vi.mock('@proton/account/user/hooks');
 vi.mock('@proton/account/organization/hooks');
 vi.mock('@proton/vpn/components/Sidebar', () => ({
-    FeedbackModal: () => <div data-testid="feedback-modal" />,
     Sidebar: ({ routes }: any) => <div data-testid="admin-sidebar">{JSON.stringify(routes)}</div>,
 }));
 vi.mock('@proton/components/containers/layout/helper', () => ({
@@ -46,7 +45,6 @@ vi.mock('@proton/components/containers/layout/helper', () => ({
 }));
 vi.mock('@proton/vpn/contexts/navigation', () => ({
     useB2BAdminNavigation: vi.fn(),
-    useNavigationRef: vi.fn(() => ({ current: null })),
 }));
 
 const renderWithRouter = (ui: React.ReactElement) => render(<MemoryRouter>{ui}</MemoryRouter>);
@@ -111,7 +109,6 @@ describe('VPNSidebar', () => {
         expect(screen.getByTestId('sidebar-list')).toBeInTheDocument();
         expect(screen.getByTestId('item-/to')).toBeInTheDocument();
         expect(screen.getByTestId('item-/org')).toBeInTheDocument();
-        expect(screen.queryByText('New sidebar')).not.toBeInTheDocument();
     });
 
     it('renders new sidebar when admin feature is enabled', () => {
@@ -132,8 +129,6 @@ describe('VPNSidebar', () => {
             enabled: true,
             loading: false,
             nav: { items: [] },
-            sidebar: { status: true, toggle: vi.fn() },
-            spotlight: { isOn: true, setOff: vi.fn() },
             routes: resolved,
             settings: [],
         });
@@ -147,48 +142,5 @@ describe('VPNSidebar', () => {
             />
         );
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-        expect(screen.getByText('New sidebar')).toBeInTheDocument();
-        expect(screen.getByText('Share feedback')).toBeInTheDocument();
-
-        const toggle = screen.getByRole('switch');
-        expect(toggle).toBeInTheDocument();
-    });
-
-    it('toggles new sidebar when toggle is clicked', () => {
-        const toggle = vi.fn();
-
-        (navigation.useB2BAdminNavigation as Mock).mockReturnValue({
-            enabled: true,
-            loading: false,
-            sidebar: { status: false, toggle },
-            spotlight: { isOn: false, setOff: vi.fn() },
-            nav: { items: [] },
-            routes: {
-                items: [
-                    {
-                        id: 'admin',
-                        label: 'Admin',
-                        to: '/admin',
-                        children: undefined,
-                        icon: undefined,
-                        meta: {},
-                    },
-                ],
-            },
-            settings: [],
-        });
-
-        renderWithRouter(
-            <VPNSidebar
-                sidebarExpanded={false}
-                onSidebarToggle={() => {}}
-                routes={routesMock}
-                organizationRoutes={organizationRoutesMock}
-            />
-        );
-        const uiToggle = screen.getByRole('switch');
-        fireEvent.click(uiToggle);
-
-        expect(toggle).toHaveBeenCalled();
     });
 });
