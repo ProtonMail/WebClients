@@ -1,9 +1,10 @@
 import {
     ANIMATED_BACKGROUND_BASE_CSS_VAR,
     ANIMATED_BACKGROUND_MAX_DPR,
+    ANIMATED_BACKGROUND_SAMPLE_REFRESH_INTERVAL_MS,
     ANIMATED_BACKGROUND_TARGET_FPS,
-    DEFAULT_ANIMATED_BACKGROUND_BLOB_MODE,
     type AnimatedBackgroundBlobMode,
+    DEFAULT_ANIMATED_BACKGROUND_BLOB_MODE,
     getAnimatedBackgroundParticleConfig,
     getAnimatedBackgroundShaderConfig,
 } from './animatedBackgroundConfig';
@@ -29,6 +30,7 @@ export function createAnimatedBackground(
         baseCssVar: ANIMATED_BACKGROUND_BASE_CSS_VAR,
         maxDpr: ANIMATED_BACKGROUND_MAX_DPR,
         targetFps: ANIMATED_BACKGROUND_TARGET_FPS,
+        sampleRefreshIntervalMs: ANIMATED_BACKGROUND_SAMPLE_REFRESH_INTERVAL_MS,
         particleOptions: getAnimatedBackgroundParticleConfig(isDark, blobMode),
     });
 
