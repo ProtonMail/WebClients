@@ -9,7 +9,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
-import { useLocalState } from '@proton/components/index';
+import { useLocalStateSync } from '@proton/components/hooks/useLocalStateSync';
 import { getIndexKey } from '@proton/encrypted-search/esHelpers';
 import { contentIndexingProgress, hasESDB, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
@@ -83,7 +83,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // selected by the `ContentSearch` flag. `useContentSearch` mirrors `useEncryptedSearch`'s
     // API but resolves results from the content-search-v2 index instead of the legacy ES flow.
     const isContentSearchEnabled = useFlag('ContentSearch');
-    const [searchVersion] = useLocalState<'v1' | 'v2'>('v2', 'OVERRIDE_SEARCH_V2');
+    const [searchVersion] = useLocalStateSync<'v1' | 'v2'>('v2', 'OVERRIDE_SEARCH_V2');
 
     const esLibraryFunctionsV1 = useEncryptedSearch<ESBaseMessage, NormalizedSearchParams, ESMessageContent>({
         refreshMask: EVENT_ERRORS.MAIL,
