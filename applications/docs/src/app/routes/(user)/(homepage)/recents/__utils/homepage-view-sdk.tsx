@@ -7,7 +7,6 @@ import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { useEffect, useMemo, useState } from 'react'
 import { useRouteMatch } from 'react-router'
-import { useApplication } from '~/utils/application-context'
 import { HOMEPAGE_TRASH_PATH } from '../../../__components/AppContainer'
 import {
   filterDocuments,
@@ -27,17 +26,15 @@ import {
 } from './homepage-view'
 import { useRecents } from './use-recents'
 import { useTrashed } from './use-trashed'
-import { manageEventsSubscription } from '~/drive-sdk/manage-events-subscription'
 import { c } from 'ttag'
 import useNotifications from '@proton/components/hooks/useNotifications'
-import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
-
-const subscribeToEvents = manageEventsSubscription()
+import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
+import { traceRecentsError } from './traceRecentsError'
 
 export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps) {
   const drive = getDrive()
+  const eventSubscriber = getEventSubscriber()
 
-  const { logger } = useApplication()
   const { createNotification } = useNotifications()
 
   const [search, setSearch] = useSearch()
@@ -81,12 +78,7 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
           type: 'error',
           text: c('Error').t`Failed to load 'My files' folder`,
         })
-        traceError(error, {
-          tags: {
-            initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-            feature: 'DocsLoadRecentsWithDriveSDK',
-          },
-        })
+        traceRecentsError(error)
       })
   }, [createNotification, drive])
 
@@ -95,8 +87,12 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
     if (!myFilesNode) {
       return
     }
-    return subscribeToEvents(drive, myFilesNode.treeEventScopeId, logger, [recentsListener, trashedListener])
-  }, [drive, recentsListener, trashedListener, logger, myFilesNode])
+
+    void eventSubscriber
+      .initialize(myFilesNode.treeEventScopeId, [recentsListener, trashedListener])
+      .catch(traceRecentsError)
+    return () => eventSubscriber.reset()
+  }, [recentsListener, trashedListener, myFilesNode, eventSubscriber])
 
   const state = useMemo((): HomepageViewState => {
     try {
@@ -121,12 +117,7 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
         )
       }
     } catch (error) {
-      traceError(error, {
-        tags: {
-          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-          feature: 'DocsLoadRecentsWithDriveSDK',
-        },
-      })
+      traceRecentsError(error)
       return { view: 'unknown' }
     }
   }, [
