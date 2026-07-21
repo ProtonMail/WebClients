@@ -148,6 +148,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
       ],
+      "Download chart": [
+        "Çizelgeyi indir"
+      ],
       "Download logs": [
         "Günlüğü indir"
       ],
@@ -201,6 +204,9 @@
       ],
       "Hide": [
         "Gizle"
+      ],
+      "Hide chart spec": [
+        "Çizelge özelliğini gizle"
       ],
       "Hide more benefits": [
         "Diğer faydaları gizle"
@@ -429,6 +435,9 @@
       ],
       "Verify account": [
         "Hesabı doğrula"
+      ],
+      "View chart spec": [
+        "Çizelge özelliğini görüntüle"
       ],
       "View invoice": [
         "Faturayı görüntüle"
@@ -835,6 +844,9 @@
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
       ],
+      "Get 50% offer": [
+        "%50 indirimden yararlanın"
+      ],
       "Remind me later": [
         "Daha sonra anımsat"
       ],
@@ -1175,7 +1187,7 @@
     },
     "collider_2025: Characteristic": {
       "${ LUMO_SHORT_APP_NAME }'s code is fully open source, so anyone can independently verify that it's private and secure—and that we never use your data to train the model.": [
-        "${ LUMO_SHORT_APP_NAME } uygulamasının kodu tamamen açık kaynaklıdır; böylece herkes uygulamanın güvenli ve emniyetli olduğunu ve verilerinizi modeli eğitmek için asla kullanmadığımızı bağımsız olarak doğrulayabilir."
+        "${ LUMO_SHORT_APP_NAME } kodu tümüyle açık kaynaklıdır. Böylece isteyen herkes gizli ve güvenli olduğunu bağımsız olarak doğrulayabilir. Ayrıca verilerinizi modeli eğitmek için kullanmadığımızı da görebilir."
       ],
       "1 TB cloud storage": [
         "1 TB bulut depolama alanı"
@@ -1190,7 +1202,7 @@
         "Business tarifesindeki her şey"
       ],
       "More image generations": [
-        "Daha fazla görüntü oluşturma"
+        "Daha fazla görsel oluşturma"
       ],
       "More Max model usage": [
         "Max modelinin diğer kullanımları"
@@ -1380,6 +1392,9 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } uygulamasının nasıl kullanılacağı ile ilgili ayrıntılı bilgi alın"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
+        "${ LUMO_SHORT_APP_NAME } ile verileri çizelgelere dönüştürün"
+      ],
       "Lightweight model for everyday tasks": [
         "Günlük işler için hafif model"
       ],
@@ -1428,7 +1443,7 @@
     },
     "collider_2025: DisableMemory": {
       "Deletes all saved memories and turns off the memory feature.": [
-        "Kaydedilmiş tüm bellekleri siler ve bellek özelliğini devre dışı bırakır."
+        "Kaydedilmiş tüm bellekleri siler ve bellek özelliğini kapatır."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1661,7 +1676,7 @@
     },
     "collider_2025: Guest Signin": {
       "Create a free account to keep your chats, organize them in projects, and get higher usage limits.": [
-        "Sohbetlerinizi saklamak, projeler halinde düzenlemek ve daha yüksek kullanım limitleri elde etmek için ücretsiz bir hesap oluşturun."
+        "Sohbetlerinizi saklamak, projeler içinde gruplamak ve daha yüksek kullanım sınırları edinmek için ücretsiz bir hesap açın."
       ],
       "Save your chat history": [
         "Sohbet geçmişinizi kaydedin"
@@ -1741,7 +1756,7 @@
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
       "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
-        "${ LUMO_SHORT_APP_NAME } her yazışmada sınırlı miktarda bilgi işleyebilir. Burada bu alanın şu anda ne kadarının kullanıldığını görebilirsiniz. Alan dolduğunda yazışlmayı sürdürebilmek için eski iletiler otomatik olarak özetlenir."
+        "${ LUMO_SHORT_APP_NAME } her yazışmada sınırlı miktarda bilgi işleyebilir. Burada bu alanın şu anda ne kadarının kullanıldığını görebilirsiniz. Alan dolduğunda yazışmayı sürdürebilmek için eski iletiler otomatik olarak özetlenir."
       ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "${ LUMO_SHORT_APP_NAME }+ — API erişimi ve anahtarları ${ LUMO_SHORT_APP_NAME }+ tarifesinde bulunur (yükseltmek veya anahtarları yönetmek için oturum açın)"
@@ -1772,7 +1787,7 @@
         "${ LUMO_APP_NAME } uygulamasını ekle"
       ],
       "Add from ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } uygulamasından ekleyin"
+        "${ DRIVE_SHORT_APP_NAME } üzerinden ekle"
       ],
       "Add from computer": [
         "Bilgisayardan ekle"
@@ -1918,6 +1933,9 @@
       "Free accounts keep chat history for 7 days. Talk to your admin to keep this chat.": [
         "Ücretsiz hesaplarda sohbet geçmişi 7 gün boyunca tutulur. Bu sohbeti tutmak için yöneticiniz ile görüşün."
       ],
+      "Free accounts keep chat history for 7 days. This chat is past that window and will be permanently deleted unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Ücretsiz hesaplarda sohbet geçmişi 7 gün boyunca saklanır. Bu sohbet bu süreyi aşmış ve ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltmezseniz kalıcı olarak silinecek."
+      ],
       "Free space": [
         "Boş alan"
       ],
@@ -1925,7 +1943,7 @@
         "Şu hedef için bir iş akışı çizelgesi ve uygulama kodu oluştur. Kod için hedef dil:"
       ],
       "Generate them from your recent chats, or add one with + above.": [
-        "Son sohbetlerinizden oluşturun ya da yukarıdaki + işaretini kullanarak yeni bir tane ekleyin."
+        "Son sohbetlerinizden oluşturun ya da yukarıdaki + ile yeni bir tane ekleyin."
       ],
       "Generating…": [
         "Oluşturuluyor…"
@@ -2116,6 +2134,9 @@
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Bu dosyalar özetlenmiş iletilere aitti ve artık modele gönderilmiyor."
       ],
+      "This chat is past the free retention window and will be permanently deleted. Talk to your admin to keep it.": [
+        "Bu sohbet ücretsiz saklama süresini aştığı için kalıcı olarak silinecek. Sohbeti saklamak istiyorsanız yöneticiniz ile görüşün."
+      ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Bu sohbet 2 gün içinde silinecek. Sohbeti korumak için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ],
@@ -2123,7 +2144,7 @@
         "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltmezseniz bu sohbet bugün silinecek."
       ],
       "This chat will be removed tomorrow unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
-        "${ LUMO_SHORT_APP_NAME } Plus sürümüne yükseltmediğiniz sürece bu sohbet yarın silinecektir."
+        "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltmezseniz bu sohbet yarın silinecek."
       ],
       "This folder is empty": [
         "Bu klasör boş"
@@ -2135,7 +2156,7 @@
         "Böylece yanıtı beğendiğinizi bilebiliriz. İsteminizi veya ${ LUMO_SHORT_APP_NAME } yanıtını asla görmeyiz."
       ],
       "This lets us know you weren't happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply unless you explicitly share it with us.": [
-        "Bu, yanıttan memnun kalmadığınızı bilmemizi sağlar. Bizimle açıkça paylaşmadığınız sürece komutunuzu veya ${ LUMO_SHORT_APP_NAME } uygulamasının yanıtını asla görmeyiz."
+        "Böylece, yanıtı beğenmediğinizi bilebiliriz. Bizimle açıkça paylaşmadığınız sürece asla isteminizi veya ${ LUMO_SHORT_APP_NAME } yanıtını görmeyiz."
       ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Başlamak için, güvenli depolama alanınızı ayarlamak üzere lütfen ${ DRIVE_APP_NAME } uygulamasını açın."
@@ -2156,10 +2177,10 @@
         "Bu dosya bir tablo olarak işlenemedi."
       ],
       "Upgrade for more image generations and access to advanced models.": [
-        "Daha fazla görsel oluşturma ve gelişmiş modellere erişim için yükseltin."
+        "Daha fazla görsel oluşturmak ve gelişmiş modellere erişmek için tarifenizi yükseltin."
       ],
       "Upgrade for unlimited chats, projects, larger file uploads, and more.": [
-        "Sınırsız sohbet, proje, daha büyük dosya yüklemeleri ve daha fazlası için sürümünüzü yükseltin."
+        "Sınırsız sohbet, proje, daha büyük dosya yükleme ve diğer şeyler için tarifenizi yükseltin."
       ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "\"${ file.name }\" dosyası ${ DRIVE_APP_NAME } üzerine yükleniyor..."
@@ -2186,13 +2207,13 @@
         "Bu dönem için görsel oluşturma sınırınıza ulaştınız. Görsel oluşturmayı sürdürmek için tarfienizi yükseltin."
       ],
       "You've run out of weekly chats, please ": [
-        "Haftalık sohbet hakkınız doldu, lütfen "
+        "Haftalık sohbet sınırınıza ulaştınız, lütfen "
       ],
       "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
-        "Haftalık sohbet limitinizi doldurdunuz, lütfen daha yüksek limitlere sahip olmak için oturum açın veya bir hesap oluşturun."
+        "Haftalık sohbet sınırınıza ulaştınız. Daha yüksek sınırlar edinmek için lütfen oturum veya hesap açın."
       ],
       "You've run out of weekly chats, please upgrade to have higher limits.": [
-        "Haftalık sohbet limitinizi doldurdunuz, lütfen daha yüksek limitlere sahip olmak için yükseltin."
+        "Haftalık sohbet sınırınıza ulaştınız. Daha yüksek sınırlar edinmek için tarifenizi yükseltin."
       ],
       "You've run out of weekly chats. Contact your admin to get higher limits.": [
         "Haftalık sohbet sınırınıza ulaştınız. Daha yüksek sınır elde etmek için yöneticiniz ile görüşün."
@@ -2800,6 +2821,9 @@
       "Visionary": [
         "Visionary"
       ],
+      "Visualization mode": [
+        "Görselleştirme kipi"
+      ],
       "We'd love your feedback!": [
         "Geri bildirimlerinizi bekliyoruz!"
       ],
@@ -3019,6 +3043,15 @@
       ],
       "This chat expires tomorrow": [
         "Bu sohbetin geçerlilik süresi yarın dolacak"
+      ],
+      "This chat will be deleted soon": [
+        "Bu sohbet yakında silinecek"
+      ],
+      "This chat will be deleted today": [
+        "Bu sohbet bugün silinecek"
+      ],
+      "This chat will be deleted tomorrow": [
+        "Bu sohbet yarın silinecek"
       ],
       "This conversation is getting long": [
         "Bu yazışma uzamaya başladı"
@@ -3368,7 +3401,7 @@
         "${ DRIVE_APP_NAME } klasörüyle bağlantı kur"
       ],
       "Load more": [
-        "Diğerlerini yükle"
+        "Daha fazla yükle"
       ],
       "New chat": [
         "Yeni sohbet"
@@ -3386,7 +3419,7 @@
         "Ara"
       ],
       "See all": [
-        "Tümünü görüntüle"
+        "Tümünü gör"
       ],
       "Send": [
         "Gönder"
@@ -3417,9 +3450,6 @@
       "Failed to create folder": [
         "Klasör oluşturulamadı"
       ],
-      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
-        "\"${ file.name }\" dosyası indirilemedi: Veri bütünlüğü denetlenemedi. Lütfen yeniden deneyin."
-      ],
       "Failed to index Drive folder for search": [
         "Drive klasörü arama için dizine eklenemedi"
       ],
@@ -3440,12 +3470,6 @@
       ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "“${ file.name }” dosyası (${ fileSizeFormatted }) ${ maxSizeFormatted } sınırını aşıyor. Daha büyük dosyalar yüklemek için bir ${ DRIVE_APP_NAME } klasörü bağlantısı ekleyin."
-      ],
-      "File download failed due to integrity check. Please try again.": [
-        "Dosya bütünlük denetimi nedeniyle indirilemedi. Lütfen yeniden deneyin."
-      ],
-      "File format not supported: ${ file.name }": [
-        "Dosya biçimi desteklenmiyor: ${ file.name }"
       ],
       "File type not supported: ${ file.name }": [
         "Dosya türü desteklenmiyor: ${ file.name }"
@@ -3506,6 +3530,9 @@
       " Chat in Project": [
         " Projedeki sohbet",
         " Projedeki sohbetler"
+      ],
+      "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
+        "\"${ file.name }\" dosyası dizine ekleniyor. Gönderdiğinizde içerik yüklenecek."
       ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } uygulamasının sohbetlerinizi bu aygıtta tutmak için yerel veri tabanı depolama alanını (IndexedDB) kullanması gerekiyor. Ancak burada kullanılamıyor."
@@ -3580,7 +3607,7 @@
         "En başta hizmet sağlayıcının içeriğinizi okuyamayacağı uygulamaları seçin."
       ],
       "Choose or drop .zip or conversations.json from Chat GPT or Claude.": [
-        "Chat GPT veya Claude'dan aldığınız bir .zip veya conversations.json dosyasını seçin ya da sürükleyip bırakın."
+        "Chat GPT veya Claude üzerinden aldığınız bir .zip veya conversations.json dosyasını seçin ya da sürükleyip bırakın."
       ],
       "Companies quietly adjust prices and offers based on what they think you can afford.": [
         "Şirketler, size hissettirmeden fiyatları ve teklifleri bütçenizin yetebileceğini düşündükleri miktara göre ayarlar."
@@ -3613,7 +3640,7 @@
         "veri noktası"
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
-        "Sohbet geçmişinizden yola çıkarak Big Tech yapay zekasının hakkınızda neler öğrenebileceğini keşfedin ve paylaşabileceğiniz bir gizlilik puanı alın."
+        "Sohbet geçmişinizden yola çıkarak Big Tech yapay zekasının sizinle ilgili neler öğrenebileceğini görün ve paylaşabileceğiniz bir gizlilik notu alın."
       ],
       "Download your data from ChatGPT (Settings → Data Controls → Export), or Claude (Settings → Privacy → Export data).": [
         "Verilerinizi ChatGPT üzerinden (Ayarlar → Veri denetimleri → Dışa aktar) veya Claude üzerinden (Ayarlar → Gizlilik → Verileri dışa aktar) indirin."
@@ -3676,10 +3703,10 @@
         "Aygıtınızda kilitleme kipi açıldı"
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
-        "Bu kartta hiçbir kişisel ayrıntı yer almaz; yalnızca alanlara göre maruz kalma puanınız gösterilir. Daha düşük bir puan, daha az bilgi paylaştığınız anlamına gelir."
+        "Bu kartta hiçbir kişisel bilgi bulunmaz. Yalnızca alanlara göre açığa çıkma notunuz gösterilir. Daha düşük bir not, daha az bilgi paylaştığınız anlamına gelir."
       ],
       "No projects yet": [
-        "Henüz bir proje yok"
+        "Henüz proje yok"
       ],
       "Now protect the person behind it.": [
         "Arkasındaki kişiyi koruyun."
@@ -3694,7 +3721,7 @@
         "YAPIŞTIRILDI"
       ],
       "Periodically review, download, and delete the data AI services hold on you.": [
-        "Yapay zeka hizmetlerinin hakkınızda tuttuğu verileri periyodik olarak gözden geçirin, indirin ve silin."
+        "Yapay zeka hizmetlerinin sizinle ilgili tuttuğu verileri düzenli olarak gözden geçirin, indirin ve silin."
       ],
       "Pick services that don't train on or sell your conversations — like ${ LUMO_SHORT_APP_NAME }, which can't read your chats.": [
         "Yazışmalarınızın içerikleri ile eğitilmeyen veya bunları satmayan hizmetleri seçin. Sohbetlerinizi okuyamayan ${ LUMO_SHORT_APP_NAME } gibi."
@@ -3733,13 +3760,13 @@
         "Big Tech şirketlerinin yapay zekalarının sizinle ilgili neler bildiğini görün. ${ LUMO_SHORT_APP_NAME } ile hazırlanmıştır."
       ],
       "Something went wrong analysing this export. Please try again.": [
-        "Bu dışa aktarma dosyası analiz edilirken bir hata oluştu. Lütfen tekrar deneyin."
+        "Bu dışa aktarma dosyası incelenirken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "Spotting the patterns in what you typed…": [
         "Yazdıklarınızdaki örüntüler bulunuyor…"
       ],
       "The fuller the bar, the more of that area Big Tech could reconstruct from your chats. Lower is better. Hover a row to see what gave it away.": [
-        "Çubuk ne kadar doluysa, Büyük Teknoloji şirketleri sohbetlerinizden o alanı o kadar fazla yeniden kurgulayabilir. Daha düşük olması daha iyidir. Neyin açık verdiğini görmek için imleci bir satırın üzerine getirin."
+        "Çubuk ne kadar doluysa, Big Tech şirketleri o alanı sohbetlerinizden çok daha iyi yeniden kurgulayabilir. Daha düşük olması daha iyidir. Neyin açık verdiğini görmek için imleci bir satırın üzerine getirin."
       ],
       "The more an attacker knows about you, the more believable the phishing message. Personalised scams are far harder to spot.": [
         "Bir saldırgan sizinle ilgili ne kadar çok şey bilirse, kimlik avı girişimi iletisi o kadar inandırıcı olur. Kişiselleştirilmiş dolandırıcılıkları farketmek çok daha zor olur."
@@ -3754,7 +3781,7 @@
         "Bu, tam olarak ${ LUMO_SHORT_APP_NAME } uygulamasının durdurmak için tasarlandığı türden bir profil oluşturma işlemidir. ${ LUMO_SHORT_APP_NAME } ile yazışmalarınız şifrelenir ve hiçbir zaman profilinizin oluşturulması için kullanılmaz."
       ],
       "This isn't just trivia. Here's what a profile like yours can actually be used for.": [
-        "Bu sadece önemsiz bir bilgi değil. Sizinki gibi bir profilin aslında ne amaçla kullanılabileceğini aşağıda görebilirsiniz."
+        "Bu önemsiz bir bilgi değil. Sizinki gibi bir profilin aslında ne için kullanılabileceğine bakın."
       ],
       "This message is empty. Sorry about that.": [
         "Bu ileti boş. Üzgünüz."
@@ -3775,7 +3802,7 @@
         "Belirli bir dosya ile ilgili soru sormak için @dosyaadı yazın"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
-        "Sınırsız özel ${ LUMO_SHORT_APP_NAME } oluşturmak, gelişmiş yapay zeka modellerinin kilidini açmak ve daha fazlası için ${ LUMO_SHORT_APP_NAME } Plus sürümüne yükseltin."
+        "Sınırsız özel ${ LUMO_SHORT_APP_NAME } oluşturmak, gelişmiş yapay zeka modellerine erişmek ve diğer şeyler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
         "Sınırsız proje oluşturmak, gelişmiş yapay zeka modellerine erişmek ve diğer şeyler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
@@ -3816,7 +3843,7 @@
         "Yüksek kaliteli aile filmi tarzında 3 boyutlu canlandırma karakteri, anlamlı bir yüz, büyük duygusal gözler, yumuşak yarı saydam cilt, stilize edilmiş oranlar, canlı renkler, ayrıntılı saç ve kıyafetler, sinematik aydınlatma, sığ alan derinliği, arkadaş canlısı ve sevimli bir kişilik, ultra pürüzsüz görselleştirme, stüdyo kalitesinde animasyon karesi."
       ],
       "A dreamy close-up of flowers swept into soft radial trails by rotating camera motion, where the center blooms in crisp detail while petals dissolve outward into creamy bokeh under gentle natural light.": [
-        "Yumuşak doğal ışık altında, merkezin net ayrıntılarla açtığı, taç yaprakların ise dışarıya doğru kremsi bir bokehe dönüştüğü, dönen kamera hareketiyle yumuşak radyal izlere sürüklenen çiçeklerin rüya gibi bir yakın çekimi."
+        "Dönen kamera hareketiyle çiçeklerin yumuşak, radyal izler halinde yayıldığı rüya gibi bir yakın çekim. Bu çekimde merkezdeki çiçekler net ayrıntılarla parıldarken, yaprakları yumuşak doğal ışık altında dışa doğru kremsi bir bokeh efektine dönüşüyor."
       ],
       "A striking monochromatic study in yellow — just a fragment of contemporary architecture emerging from its equally golden surroundings, with tonal shifts alone carving out the geometric surfaces and lending the scene its quiet sense of depth and form.": [
         "Sarı renkte çarpıcı, tek renkli bir çalışma. Geometrik yüzeyleri yalnızca ton geçişlerinin belirginleştirdiği ve sahneye sessiz bir derinlik ve biçim hissi kattığı, kendisiyle aynı altın sarısı ortamdan yükselen çağdaş mimarinin yalnızca bir parçası."
@@ -3846,7 +3873,7 @@
         "Saçı arkadan toplanmış, dizüstü bilgisayarda yazı yazan bir kadının arkadan görünüm silüeti. Koyu mor ekran, temiz açık mor arka plan, yüksek kontrastlı stüdyo ışığı, minimalist teknoloji maketi stili."
       ],
       "Close-up texture of polished cross-section tree trunk, intricate swirling growth rings, detailed cracks and wood grain, warm brown and amber tones, natural organic pattern, high resolution.": [
-        "Cilalanmış enine kesit ağaç gövdesinin yakın çekim dokusu, karmaşık sarmal büyüme halkaları, ayrıntılı çatlaklar ve ahşap damarları, sıcak kahverengi ve kehribar tonları, doğal organik desen, yüksek çözünürlük."
+        "Cilalı ağaç gövdesi kesitinin yakın çekim dokusu, karmaşık kıvrımlı büyüme halkaları, ayrıntılı çatlaklar ve ahşap damarları, sıcak kahverengi ve kehribar tonları, doğal organik desen, yüksek çözünürlük."
       ],
       "Ethereal portrait of a person wearing a sleek dark VR headset, body dissolving into a glowing cyan-teal haze. Centered composition, uniform saturated teal-blue gradient background, backlit silhouette with luminous rim lighting on the headset and fingertips. One hand loosely clenched, the other reaching forward palm-out. Futuristic sci-fi atmosphere, minimalist and dreamlike, digital art style, shallow depth of field.": [
         "Şık, koyu renkli bir VR gözlüğü takmış, vücudu parlayan camgöbeği-turkuaz bir pusa karışarak yok olan bir kişinin ruhani portresi. Ortalanmış kompozisyon, tek tip doygun turkuaz-mavi gradyan arka plan, gözlükte ve parmak uçlarında ışıklı kenar aydınlatması olan arkadan aydınlatmalı silüet. Bir el hafifçe sıkılmış, diğeri avuç içi dışarı bakacak şekilde ileriye doğru uzanıyor. Fütüristik bilimkurgu atmosferi, minimalist ve rüya gibi, dijital sanat stili, sığ alan derinliği."
@@ -3867,19 +3894,19 @@
         "Bulanıklaştırılmış, bozulmuş bir yarı ton ızgarasından oluşan \"5\" sayısının minimalist op-art grafiği. Değişen boyutlardaki siyah noktalar, canlı, düz sarı bir arka plan üzerinde 3B şişkinlik illüzyonu yaratıyor. Temiz vektör estetiği, yüksek kontrast, matematiksel desen bozulması."
       ],
       "Modern two-story minimalist white villa with rounded edges, large sliding glass doors, and a swimming pool. Minimalist patio furniture, mediterranean vibe, architectural photography style, bright sunny day.": [
-        "Yuvarlak hatlara, büyük sürgülü cam kapılara ve yüzme havuzuna sahip iki katlı modern minimalist beyaz villa. Minimalist veranda mobilyaları, Akdeniz havası, mimari fotoğrafçılık tarzı, parlak güneşli bir gün."
+        "Yuvarlak kenarlı, geniş sürgülü cam kapıları ve yüzme havuzu bulunan modern, iki katlı minimalist beyaz villa. Minimalist veranda mobilyaları, Akdeniz havası, mimari fotoğrafçılık stili, parlak ve güneşli bir gün."
       ],
       "Photorealistic white T-shirt mockup hanging on a wall inside a modern boutique clothing store, blank white premium cotton T-shirt displayed neatly on a wooden hanger, mounted against a soft pastel-colored wall (light beige, blush pink, or sage green), stylish retail interior in the background with clothing racks and shelves softly blurred, natural daylight mixed with warm ambient store lighting, realistic fabric texture and folds, clean minimal aesthetic, high-end fashion merchandising, shallow depth of field, centered composition, commercial apparel mockup, blank T-shirt ready for custom design placement, ultra-realistic, high resolution, 8k.": [
-        "Modern bir butik giyim mağazasının içinde duvara asılı fotogerçekçi beyaz tişört maketi, ahşap bir askıda düzgün bir şekilde sergilenen boş, beyaz, yüksek kaliteli pamuklu tişört, yumuşak pastel renkli bir duvara (açık bej, toz pembe veya adaçayı yeşili) monte edilmiş, arka planda kıyafet askıları ve rafları hafifçe bulanıklaştırılmış şık perakende mağaza içi, sıcak mağaza aydınlatmasıyla karışmış doğal gün ışığı, gerçekçi kumaş dokusu ve kıvrımları, temiz minimal estetik, lüks moda mağazacılığı, sığ alan derinliği, ortalanmış kompozisyon, ticari giyim maketi, özel tasarım yerleşimi için hazır boş tişört, ultra gerçekçi, yüksek çözünürlük, 8k."
+        "Modern bir butik giyim mağazasının içindeki duvara asılı fotogerçekçi beyaz tişört maketi. Ahşap bir askıda düzgünce sergilenen boş beyaz birinci sınıf pamuklu tişört, yumuşak pastel renkli bir duvara (açık bej, pudra pembesi veya adaçayı yeşili) yerleştirilmiş, Arka planda giysi askıları ve rafların hafifçe bulanıklaştırıldığı şık bir mağaza iç mekanı, doğal gün ışığı ile mağazanın sıcak ortam aydınlatmasının harmanlandığı bir ortam, gerçekçi kumaş dokusu ve kıvrımları, sade ve minimalist bir estetik, lüks moda ürün sunumu, sığ alan derinliği, ortalanmış kompozisyon, ticari giyim maketi, özel tasarımın yerleştirilmesine hazır boş tişört, ultra gerçekçi, yüksek çözünürlüklü, 8k."
       ],
       "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
-        "Tek bir kareye damıtılmış saf hız; arkasındaki her şeyi hareket bulanıklığıyla geride bırakarak asfaltta hızla ilerleyen bir F1 arabası, yüzeyden saçılan kıvılcımlar ve asfaltın hemen üzerindeki o etkileyici düşük açıda ışığı yakalayan carbon fiber."
+        "Saf hızın tek bir karede yoğunlaşmış hâli. F1 aracı asfaltta hızla ilerlerken arkasındaki her şeyi hareket bulanıklığıyla geride bırakıyor. Yüzeyden kıvılcımlar sıçrıyor ve karbon fiber asfaltın hemen üstündeki o içgüdüsel düşük açıdan ışığı yansıtıyor."
       ],
       "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "Tümüyle yemyeşil çimlerden ve doğal bitki örtüsünden oluşturulmuş, her harfi sık ve taze çim yapraklarından işlenmiş, gerçekçi organik doku, canlı yeşil tonlar, karmaşık botanik ayrıntılar, fotogerçekçi doğa yazı biçimi, yumuşak doğal güneş ışığı, hafif gölgeler, son derece ayrıntılı çevre dostu tasarım, temiz bir arka plan üzerinde yalıtılmış, ücretli 3 boyutlu harfler, ultra gerçekçi, 8k, keskin odak, profesyonel reklam kalitesinde \"FLUORISH\" sözcüğü."
+        "\"FLUORISH\" sözcüğü tümüyle yemyeşil çim ve doğal bitki örtüsünden oluşmaktadır. Her bir harf yoğun ve taze çim yapraklarından, gerçekçi organik dokudan, canlı yeşil tonlardan, karmaşık botanik detaylardan, fotogerçekçi doğa tipografisinden, yumuşak doğal güneş ışığından, ince gölgelerden, son derece ayrıntılı çevre dostu tasarımdan oluşmaktadır. Temiz bir arka plan üzerinde vurgulanmıştır. Birinci sınıf 3B harf tasarımı, ultra gerçekçi, 8K çözünürlük, keskin odak, profesyonel reklam kalitesi."
       ],
       "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
-        "Berrak mavi su üzerinde yüzen uzun, turuncu bir sörf tahtasının tepeden çekilmiş minimalist hava fotoğrafı. Su; dalgalı, kavisli dalga hatlarına ve parlak, titreşen kostik ışık desenlerine sahiptir. Tahtanın hemen altına düşen yumuşak bir gölge, temiz, sakin ve modern bir estetik yaratır."
+        "Berrak mavi sularda yüzen uzun, turuncu bir sörf tahtasının yukarıdan aşağıya doğru çekilmiş minimalist bir havadan çekim görüntüsü. Suyun üzerinde dalgalı, kavisli dalga hatları ve parlak, ışıltılı, keskin ışık desenleri görülüyor. Tahtanın hemen altına düşen yumuşak bir gölge, sade, dingin ve modern bir estetik yaratıyor."
       ]
     },
     "collider_2025:Label": {
@@ -4037,7 +4064,7 @@
         "${ LUMO_SHORT_APP_NAME } uygulamasının üstlenmesini istediğiniz rolü, kapsamı ve davranışı tanımlayın."
       ],
       "Describe your image...": [
-        "Görselinizi tarif edin..."
+        "Görselinizi tanımlayın..."
       ],
       "Draw and/or describe what to change, \"remove the items\", etc.": [
         "Nelerin değiştirileceğini çizin ve/veya tanımlayın; \"ögeleri kaldır\" vb."
@@ -4538,7 +4565,7 @@
         "${ LUMO_SHORT_APP_NAME } sohbetlerinizi nasıl gizli tutar?"
       ],
       "How to stay private": [
-        "Güvenli kalma yolları"
+        "Güvende kalma yolları"
       ],
       "Image generation and editing": [
         "Görsel oluşturma ve düzenleme"
@@ -4577,7 +4604,7 @@
         "${ LUMO_SHORT_APP_NAME } Plus ile daha fazla Proje"
       ],
       "Most revealing": [
-        "En çok bilgi ifşa eden"
+        "En çok bilgi açığan çıkaran"
       ],
       "My AI paper trail": [
         "Yapay zeka veri izim"
@@ -6271,6 +6298,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "145 ülkede 20.000 üzerinde sunucuya erişim"
+      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
@@ -6318,6 +6348,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
+      ],
+      "Chart spec view": [
+        "Çizelge özelliği görünümü"
       ],
       "Chunk": [
         "Öbek"
@@ -6422,6 +6455,9 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "10 Gb/sn olabilen en yüksek VPN hızı"
+      ],
       "Folder:": [
         "Klasör:"
       ],
@@ -6434,8 +6470,14 @@
       "Google Pay mark": [
         "Google Pay işareti"
       ],
+      "Have some more time to decide without interruption.": [
+        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
@@ -6509,6 +6551,9 @@
       "MIME:": [
         "MIME:"
       ],
+      "Model output": [
+        "Model çıktısı"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
@@ -6557,6 +6602,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
+      "Premium privacy protection across all your devices": [
+        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
@@ -6571,6 +6619,9 @@
       ],
       "Registering your subscription…": [
         "Aboneliğiniz kaydediliyor…"
+      ],
+      "Rendered spec": [
+        "Görselleştirilmiş özellik"
       ],
       "Searchable chunks": [
         "Aranabilir öbekler"
@@ -6604,6 +6655,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
@@ -6879,6 +6933,12 @@
       ],
       "City": [
         "İl"
+      ],
+      "Client": [
+        "İstemci"
+      ],
+      "Client version": [
+        "İstemci sürümü"
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
@@ -9740,6 +9800,9 @@
       ],
       "Simplify password management": [
         "Parola yönetimini kolaylaştırın"
+      ],
+      "Stay for 50% off your next month": [
+        "Sonraki ay %50 indirimden yararlanın"
       ],
       "Summary": [
         "Özet"

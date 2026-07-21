@@ -71,6 +71,9 @@
       "Add address or domain": [
         "Tilføj adresse eller domæne"
       ],
+      "Add and verify": [
+        "Tilføj og bekræft"
+      ],
       "Add another account": [
         "Tilføj en anden konto"
       ],
@@ -88,6 +91,9 @@
       ],
       "Add PayPal": [
         "Tilføj PayPal"
+      ],
+      "Add recovery options": [
+        "Tilføj gendannelsesmuligheder"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Tilføj henvisningslink til ${ MAIL_APP_NAME }-signatur"
@@ -140,6 +146,9 @@
       "Cancel": [
         "Annullér"
       ],
+      "Cancel request": [
+        "Annullér anmodning"
+      ],
       "Cancel subscription": [
         "Opsig abonnement"
       ],
@@ -166,6 +175,9 @@
       ],
       "Check import progress": [
         "Kontroller importforløbet"
+      ],
+      "Check now": [
+        "Tjek nu"
       ],
       "Choose a file or drag it here": [
         "Vælg en fil eller træk den hertil"
@@ -205,6 +217,9 @@
       ],
       "Compare plans": [
         "Sammenlign abonnementer"
+      ],
+      "Configure new device profile": [
+        "Konfigurer ny enhedsprofil"
       ],
       "Configure SAML": [
         "Konfigurér SAML"
@@ -287,6 +302,9 @@
       "Create new policy": [
         "Opret ny politik"
       ],
+      "Create recovery phrase": [
+        "Opret gendannelsessætning"
+      ],
       "Create users": [
         "Opret brugere"
       ],
@@ -313,6 +331,9 @@
       ],
       "Delete account": [
         "Slet konto"
+      ],
+      "Delete device profile": [
+        "Slet enhedsprofil"
       ],
       "Delete Gateway": [
         "Slet gateway"
@@ -410,6 +431,9 @@
       "Download recovery file": [
         "Download gendannelsesfil"
       ],
+      "Download updated file": [
+        "Download opdateret fil"
+      ],
       "Edit": [
         "Redigér"
       ],
@@ -503,14 +527,17 @@
       "Forgot password?": [
         "Glemt adgangskode?"
       ],
+      "Generate device profile": [
+        "Generer enhedsprofil"
+      ],
+      "Generate new phrase": [
+        "Generer ny sætning"
+      ],
       "Generate new recovery phrase": [
         "Opret ny gendannelsessætning"
       ],
       "Generate password": [
         "Generér adgangskode"
-      ],
-      "Generate recovery phrase": [
-        "Opret gendannelsessætning"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Få ${ planName } til ${ priceCoupon }"
@@ -608,6 +635,9 @@
       "I don’t have my backup codes": [
         "Jeg har ikke mine backup-koder"
       ],
+      "Ignore": [
+        "Ignorer"
+      ],
       "Import": [
         "Importér"
       ],
@@ -620,11 +650,20 @@
       "Increase": [
         "Forøg"
       ],
+      "Instructions": [
+        "Instruktioner"
+      ],
       "Invite": [
         "Invitér"
       ],
       "Invite user": [
         "Invitér bruger"
+      ],
+      "JumpCloud": [
+        "JumpCloud"
+      ],
+      "Keep": [
+        "Behold"
       ],
       "Keep current plan": [
         "Behold nuværende abonnement"
@@ -695,6 +734,9 @@
       "Mark as resolved": [
         "Markér som løst"
       ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
+      ],
       "More benefits": [
         "Flere fordele"
       ],
@@ -739,6 +781,9 @@
       ],
       "Open navigation": [
         "Åbn navigation"
+      ],
+      "Opt out": [
+        "Fravælg"
       ],
       "Or": [
         "Eller"
@@ -896,6 +941,9 @@
       "Review changes": [
         "Gennemse ændringer"
       ],
+      "Review recovery options": [
+        "Gennemgå gendannelsesmuligheder"
+      ],
       "Revoke": [
         "Tilbagekald"
       ],
@@ -914,6 +962,9 @@
       "Save address": [
         "Gem adresse"
       ],
+      "Save and verify": [
+        "Gem og bekræft"
+      ],
       "Save SAML configuration": [
         "Gem SAML-konfiguration"
       ],
@@ -928,6 +979,9 @@
       ],
       "Search settings": [
         "Søgeindstillinger"
+      ],
+      "Secure account": [
+        "Beskyt din konto"
       ],
       "See DNS TXT record": [
         "Se DNS TXT-post"
@@ -1000,6 +1054,9 @@
       ],
       "Set up a custom domain": [
         "Konfigurer et brugerdomæne"
+      ],
+      "Set up account recovery": [
+        "Indstil kontogendannelse"
       ],
       "Set up auto-forwarding from Gmail": [
         "Konfigurer automatisk videresendelse fra Gmail"
@@ -1246,6 +1303,9 @@
       ],
       "View plans details": [
         "Vis abonnementdetaljer"
+      ],
+      "View recovery setup details": [
+        "Se gendannelseskonfiguration"
       ],
       "Void": [
         "Ugyldig"
@@ -2078,7 +2138,7 @@
         "Status"
       ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
       ],
       "To migrate this user, enable their account in your Google Workspace Admin Console.": [
         "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
@@ -2226,6 +2286,9 @@
       ],
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
+      ],
+      "Get 50% offer": [
+        "Få et 50%-tilbud"
       ],
       "Maybe later": [
         "Måske senere"
@@ -3564,6 +3627,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "${ BRAND_NAME }s end-to-end kryptering betyder at det kun er dig der kan låse op få dine data. Konfigurer metoder til gendannelse for at sikre dig at du aldrig mister adgang."
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } giver dig mulighed for at samarbejde med andre i et sikkert, krypteret miljø."
       ],
@@ -3587,6 +3653,9 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blokér Google fra at profilere dig. Gmail kan ikke se hvad du laver i ${ MAIL_APP_NAME }"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Overfør din e-mail, kalenderbegivenheder og kontakter fra en anden udbyder."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Opbyg tillid og brandgenkendelse med professionelle e-mailadresser på dit eget domæne."
@@ -3666,6 +3735,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Sådan støttede vi lokale aktivister, da privatliv og ytringsfriheden blev truet."
       ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "Sådan låser du op for din krypterede data hvis du mister din adgangskode."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
@@ -3677,6 +3749,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Giver dig mulighed for øjeblikkeligt at tilføje mødelinks til dine begivenhedsinvitationer."
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "Metoder som inkluderer både nulstilling af adgangskoden og datagendannelse."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "De fleste problemer kan løses på nogle få minutter med vores trinvise vejledninger."
@@ -3707,6 +3782,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "Har du stadig brug for hjælp? Vores supportteam er her for at hjælpe."
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "Dette giver dig mulighed for at tilgå din ${ BRAND_NAME }-konto igen, men det gendanner ikke din krypterede data."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Dette kan ske hvis nogle tilladelser blev fjernet, eller din adgangskode blev ændret."
@@ -4114,9 +4192,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Sådan virker det:** På denne enhed indtaster du den kode, der vises på den enhed, du vil logge ind på. Du vil blive logget ind som **${ email }**. Begge enheder forbliver aktive."
       ],
-      "Allow QR code sign‒in": [
-        "Tillad login med QR-kode"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Vær forsigtig med beskeder med QR-koder. Scan kun en kode, hvis du stoler på kilden."
       ],
@@ -4131,9 +4206,6 @@
       ],
       "QR code sign-in enabled": [
         "Login med QR-kode aktiveret"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Scan QR-kode på din mobilenhed for at logge ind"
       ],
       "Security tips": [
         "Sikkerhedstips"
@@ -4271,39 +4343,338 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME }-konto e-mail"
+      ],
+      "${ days } day left": [
+        "${ days } dag tilbage",
+        "${ days } dage tilbage"
+      ],
+      "${ hours } hour left": [
+        "${ hours } time tilbage",
+        "${ hours } timer tilbage"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } minut tilbage",
+        "${ minutes } minutter tilbage"
+      ],
       "${ n } day": [
         "${ n } dag",
         "${ n } dage"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } anmoder om nødadgang til din konto"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user } vil kunne bruge din konto og ændre dine data."
+      ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } vil blive logget ud af din konto og vil ikke kunne få adgang til den igen før næste nødadgang."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } vil ikke længere kunne hjælpe dig med at gendanne dine data efter en nulstilling af adgangskoden."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } vil ikke længere kunne bede om adgang til din konto i en nødsituation."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } vil ikke kunne få adgang til din konto før næste nødadgang."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** er nu din gendannelseskontakt. De kan hjælpe dig med at gendanne dine data efter en nulstilling af adgangskoden."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Hvis de bekræfter**, klik **Godkend gendannelse**. Dette vil låse deres krypterede data op."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Hvis de ikke bad om din hjælp**, er det muligt, at en anden forsøger at få adgang til deres konto. Ignorer i så fald denne anmodning."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Beskyt din arv.** Opgrader dit abonnement for at tilføje nødkontakter."
+      ],
+      "Access account": [
+        "Adgangskonto"
+      ],
+      "Access granted": [
+        "Adgang givet"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "Adgang givet den ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Anmodning om adgang annulleret"
+      ],
+      "Access requested": [
+        "Anmodning om adgang sendt"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Adgang vil blive givet den ${ formattedAccessibleAt }"
+      ],
+      "Add": [
+        "Tilføj"
+      ],
+      "Add emergency contact": [
+        "Tilføj nødkontakt"
+      ],
+      "Add option": [
+        "Tilføj mulighed"
+      ],
+      "Add recovery contact": [
+        "Tilføj gendannelseskontakt"
+      ],
       "Added on ${ formattedDate }": [
         "Tilføjet den ${ formattedDate }"
+      ],
+      "Approve recovery": [
+        "Godkend gendannelse"
+      ],
+      "Approved request": [
+        "Godkendt anmodning"
       ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
         "Få hjælp fra en gendannelseskontakt. De modtager en e-mail for at bekræfte din anmodning og låse dine data op."
       ],
+      "Asking for help": [
+        "Anmoder om hjælp"
+      ],
+      "Cancel request": [
+        "Annuller anmodning"
+      ],
+      "Cancel request?": [
+        "Annullér anmodning?"
+      ],
+      "Change access wait time": [
+        "Ændr ventetid for adgang"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Ændr hvor lang tid ${ user } skal vente, før vedkommende automatisk får adgang."
+      ],
+      "Change wait time": [
+        "Ændr ventetid"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Vælg en person, du har tillid til, til at hjælpe dig med at gendanne dine data i tilfælde af nulstilling af adgangskoden. Gendannelseskontakter skal allerede have en ${ BRAND_NAME } konto."
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Vælg en, du tør betro dine data. Vedkommende skal allerede have en ${ BRAND_NAME } konto"
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Forbind med dem for at bekræfte, at de har brug for hjælp til at gendanne deres data."
+      ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Data recovery contacts": [
+        "Kontakter til gendannelse af data"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Data gendannet. Du kan du dekryptere dine eksisterende data og krypterede filer."
+      ],
+      "Disabled": [
+        "Deaktiveret"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Mist ikke din nødadgang. Aktivér automatisk fornyelse i dag."
+      ],
+      "Emergency access": [
+        "Nødadgang"
+      ],
+      "Emergency access for ${ user } removed": [
+        "Nødadgang for ${ user } blev fjernet"
+      ],
+      "Emergency access granted": [
+        "Nødadgang bevilget"
+      ],
+      "Emergency access refused": [
+        "Nødadgang nægtet"
+      ],
+      "Emergency access request": [
+        "Anmodning om nødadgang"
+      ],
+      "Emergency access requested": [
+        "Anmodning om nødadgang"
+      ],
+      "Emergency access revoked": [
+        "Nødadgang tilbagekaldt"
+      ],
+      "Emergency contact added": [
+        "Nødkontakt tilføjet"
+      ],
+      "Emergency contact enabled": [
+        "Nødkontakt aktiveret"
+      ],
+      "Emergency contact removed": [
+        "Nødkontakt fjernet"
+      ],
+      "Enable": [
+        "Aktivér"
+      ],
+      "Enable auto-renew": [
+        "Aktivér automatisk fornyelse"
+      ],
+      "For ${ email }": [
+        "Til ${ email }"
       ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
         "Kontakt dem nu for at se, om de kan hjælpe, og for personligt at lade dem vide, at det er dig, der forsøger at låse dine data op."
       ],
+      "Give access now": [
+        "Giv adgang nu"
+      ],
+      "Give immediate access?": [
+        "Giv adgang med det samme?"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Få dem til at tjekke deres indbakke for en e-mail, der beder om deres hjælp til at gendanne dine data. E-mailen indeholder et link, de skal klikke på for at bekræfte din anmodning."
+      ],
       "Immediate": [
         "Øjeblikkelig"
+      ],
+      "Included with ${ planName }": [
+        "Inkluderet i ${ planName }"
       ],
       "Less than a day": [
         "Mindre end 1 dag"
       ],
+      "Less than a minute left": [
+        "Mindre end et minut tilbage"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "Det maksimale antal på ${ limit } kontakt nået. Fjern en kontakt eller tilføj en ny for at ændre det.",
+        "Det maksimale antal på ${ limit } kontakter nået. Fjern en kontakt eller tilføj en ny for at ændre det."
+      ],
+      "Only ": [
+        "Kun "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Bed kun om nødadgang, når der er en **gyldig situation**, der kræver, at du administrerer en anden brugers konto."
+      ],
+      "Pending request": [
+        "Afventende anmodning"
+      ],
+      "People I trust": [
+        "Personer, jeg stoler på"
+      ],
+      "People who have you as a recovery contact": [
+        "Personer som har dig som gendannelseskontakt"
+      ],
+      "People who trust me": [
+        "Mennesker, som stoler på mig"
+      ],
+      "Proceed anyway": [
+        "Fortsæt alligevel"
+      ],
+      "Protect your legacy with emergency access": [
+        "Beskyt din arv med nødadgang"
+      ],
+      "Recover data": [
+        "Gendan data"
+      ],
+      "Recovery approved": [
+        "Genoprettelse godkendt"
+      ],
+      "Recovery contact added": [
+        "Gendannelseskontakt tilføjet"
+      ],
+      "Recovery contact enabled": [
+        "Gendannelseskontakt aktiveret"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Gendannelseskontakt for ${ user } fjernet"
+      ],
+      "Recovery contact removed": [
+        "Gendannelseskontakt fjernet"
+      ],
       "Recovery request sent": [
         "Anmodning om gendannelse sendt"
+      ],
+      "Refuse access": [
+        "Afvis adgang"
+      ],
+      "Refuse access?": [
+        "Afvis adgang?"
+      ],
+      "Remove recovery contact": [
+        "Fjern gendannelseskontakt"
+      ],
+      "Remove trusted contact": [
+        "Fjern betroet kontakt"
       ],
       "Remove your recovery contacts to continue": [
         "Fjern din gendannelseskontakter for at fortsætte"
       ],
+      "Renew to get emergency access again.": [
+        "Forny for at få nødadgang igen."
+      ],
+      "Request access": [
+        "Anmod om adgang"
+      ],
+      "Request access?": [
+        "Anmod om adgang?"
+      ],
+      "Requesting access": [
+        "Anmoder om adgang"
+      ],
+      "Review recovery request": [
+        "Gennemgå anmodning om gendannelse"
+      ],
+      "Revoke access": [
+        "Tilbagekald adgang"
+      ],
+      "Revoke access?": [
+        "Tilbagekald adgang?"
+      ],
+      "See request": [
+        "Se anmodning"
+      ],
       "Select recovery contact ${ name }": [
         "Vælg gendannelseskontakt ${ name }"
       ],
+      "Send recovery request": [
+        "Send gendannelsesanmodning"
+      ],
       "Start recovery": [
         "Start gendannelse"
+      ],
+      "Stop being recovery contact": [
+        "Stop med at være gendannelseskontakt"
+      ],
+      "Stop being recovery contact?": [
+        "Stop med at være gendannelseskontakt?"
+      ],
+      "Stop being trusted contact": [
+        "Stop med at være betroet kontakt"
+      ],
+      "Stop being trusted contact?": [
+        "Stop med at være betroet kontakt?"
+      ],
+      "Subscription expired": [
+        "Abonnement udløbet"
+      ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "De har tilføjet dig som betroet kontakt. Du kan få adgang til deres konto i en nødsituation."
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "De kan anmode om at få adgang til din konto i en nødsituation."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "De vil automatisk få adgang om **${ days } dag**, den **${ formattedAccessibleAt }**. Du kan afvise deres anmodning eller du kan når som helst give dem umiddelbar adgang.",
+        "De vil automatisk få adgang om **${ days } dage**, den **${ formattedAccessibleAt }**. Du kan afvise deres anmodning eller du kan når som helst give dem umiddelbar adgang."
+      ],
+      "This will take effect immediately.": [
+        "Øjeblikkelig ikrafttræden."
+      ],
+      "Time required before automatically giving access": [
+        "Tid før der automatisk gives adgang"
+      ],
+      "Time required before automatically giving you access": [
+        "Krævet tid før du automatisk får adgang"
+      ],
+      "Time required before automatically granting them access": [
+        "Krævet tid før der automatisk gives adgang"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "For at deaktivere denne gendannelsesmetode, skal du fjerne alle dine gendannelseskontakter."
@@ -4311,8 +4682,76 @@
       "Trusted contact": [
         "Betroet kontakt"
       ],
+      "Unable to recover data": [
+        "Kan ikke gendanne data"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
+      ],
+      "Wait time": [
+        "Ventetid"
+      ],
+      "Wait time for access": [
+        "Ventetid for adgang"
+      ],
+      "Wait time saved": [
+        "Sparet ventetid"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Vi har modtaget en anmodning om at låse de krypterede data op for din kontakt **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Vi sendte en e-mail-anmodning til ${ user }. Fortæl dem, at det virkelig er dig, der prøver at få adgang igen."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Vi kunne ikke verificere gendannelsesdataen. Vil du fortsætte alligevel?"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Vi giver **${ user }** besked om, at du har anmodet om nødadgang."
+      ],
+      "You are signed in to the account ${ account }.": [
+        "Du er logget ind på kontoen ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "Du kan nu få adgang til og administrere deres konto."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Du kan fjerne deres adgang når som helst for at genvinde fuld kontrol over din konto."
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "De har nået det maksimale antal på ${ limit } nødkontakt.",
+        "Du har nået det maksimale antal på ${ limit } nødkontakter."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Du bliver adviseret, når nogen anmoder om nødadgang."
+      ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Du vil ikke længere kunne hjælpe ${ user } med at gendanne deres data, efter de har nulstillet deres adgangskode."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "I en nødsituation vil du ikke længere kunne anmode om adgang til kontoen for ${ user }."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Du vil stadig kunne anmode om adgang til kontoen for ${ user } på et senere tidspunkt."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Du vil få adgang til deres konto øjeblikkeligt."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Du får adgang til deres konto om **${ days } dag**, eller når de godkender din anmodning.",
+        "Du vil få adgang til deres konto om **${ days } dage**, eller når de godkender din anmodning."
+      ],
       "Your recovery contact has helped you recover data.": [
         "Din gendannelseskontakt har hjulpet dig med at gendanne data."
+      ],
+      "Your recovery contacts": [
+        "Dine gendannelseskontakter"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Dine gendannelseskontakter bør være personer, du kender og nemt kan komme i kontakt med."
       ]
     },
     "Empty group name": {
@@ -4332,6 +4771,9 @@
       ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
+      ],
+      "Address cannot be yours": [
+        "Adressen kan ikke være din"
       ],
       "Address could not be added.": [
         "Adressen kunne ikke tilføjes."
@@ -4368,6 +4810,9 @@
       ],
       "Company name or personal name is required": [
         "Virksomhedsnavn eller personnavn er påkrævet"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Kunne ikke generere enhedsprofilen. Prøv igen."
       ],
       "Couldn't load invoices. Please try again later.": [
         "Fakturaindlæsning mislykkedes. Prøv igen senere."
@@ -5144,6 +5589,11 @@
         "3 TB samlet lagerplads"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Din kontos fordele"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lagerplads er delt mellem familiemedlemmer på tværs af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
@@ -5384,6 +5834,9 @@
       ],
       "Edit user storage": [
         "Redigér brugerlager"
+      ],
+      "Family": [
+        "Family"
       ],
       "Family name": [
         "Efternavn"
@@ -6586,6 +7039,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Du får ${ referrerRewardAmount }** i kredit for hver ven, der tegner et abonnement."
       ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "**Din e-mail til gendannelse alene giver dig ikke adgang til at gendanne dine krypterede data** efter du har nulstillet din adgangskode."
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "**Din gendannelsestelefon giver dig ikke adgang til at gendanne dine krypterede data** efter du har nulstillet din adgangskode."
+      ],
       "+ ${ invisibleCount } More": [
         "+${ invisibleCount } mere",
         "+${ invisibleCount } mere"
@@ -6618,23 +7077,17 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "En gendannelsesfil lader dig låse op for og se dine data efter kontogendannelse."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Med en gendannelsessætning kan du få adgang til din konto igen og gendanne dine krypterede beskeder, hvis du glemmer din adgangskode"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Adgang til mere end 20.000 servere i 145 lande"
       ],
       "Account monitor": [
         "Kontoovervågning"
       ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivér mindst én datagendannelsesmetode for at sikre dig, at du fortsat kan få adgang til indholdet af din ${ BRAND_NAME }-konto, hvis du mister din adgangskode."
       ],
       "active": [
         "aktiv"
@@ -6645,11 +7098,23 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for kun ${ bundlePlanPriceInline }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Tilføj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "Tilføj 1 til 5 personer som du stoler på og kan kontakte nemt. De vil kunne nulstille din adgangskode for dig ved at logge ind på din konto. De skal allerede have en ${ BRAND_NAME }-konto."
+      ],
+      "Add a phone number in case we need to contact you": [
+        "Tilføj et telefonnummer i tilfælde af at vi får brug for at kontakte dig"
+      ],
       "add a recovery method": [
         "tilføj en gendannelsesmetode"
+      ],
+      "Add an email address in case we need to contact you": [
+        "Tilføj en e-mailadresse i tilfælde af at vi får brug for at kontakte dig"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Tilføj endnu et lag sikkerhed til din konto. Du skal bekræfte dig selv med 2FA hver gang du logger på."
@@ -6708,8 +7173,14 @@
         "Alle (${ totalFoldersCount } etiket)",
         "Alle (${ totalFoldersCount } etiketter)"
       ],
+      "All devices with this device profile deployed": [
+        "Alle enheder med denne enhedsprofil aktiveret"
+      ],
       "All inactive members deleted": [
         "Alle inaktive brugere er slettet"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Al internettrafik er altid krypteret og sikker"
       ],
       "All keys successfully reactivated": [
         "Alle nøgler er genaktiveret med succes"
@@ -6735,6 +7206,12 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Tillad brugere at forbinde til sikre delte servere fra sektionen **Lande** i ${ VPN_APP_NAME }-appen."
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Ved at tillade log ind med QR-kode vil du kunne logge ind ved at skanne en QR-kode hvis du glemmer din adgangskode. Alt du har brug for er at være logget ind på en ${ BRAND_NAME }-tjeneste på en anden enhed."
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "Ved at tillade nulstilling af adgangskoden fra indstillinger kan du ændre din adgangskode, hvis du har mistet den, men stadig er logget ind på ${ BRAND_NAME }."
       ],
       "Already allocated": [
         "Allerede tildelt"
@@ -6859,6 +7336,9 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
       ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "Ved at tilføje personer du stoler på som gendannelseskontakter, kan vi sende dem en e-mail for at hjælpe dig, hvis du har problemer med at gendanne dine data efter en nulstilling af adgangskoden. Du kan også være en gendannelseskontakt for andre."
+      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Ved at deaktivere kontoovervågning sletter du også hele din historik. Er du sikker på, at du vil deaktivere den?"
       ],
@@ -6895,6 +7375,9 @@
       "Choose an Entity ID to continue.": [
         "Vælg et entitets-ID for at fortsætte."
       ],
+      "Choose one:": [
+        "Vælg en:"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
       ],
@@ -6915,6 +7398,9 @@
       ],
       "Compromised": [
         "Kompromitteret"
+      ],
+      "Configure Always-on VPN": [
+        "Konfigurer konstant VPN"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurer SAML-godkendelse for din organisation via en identitetsudbyder (IdP). Dette vil aktivere SAML for hele organisationen."
@@ -7022,6 +7508,9 @@
       "Data recoverable with recovery phrase": [
         "Data kan gendannes med gendannelsessætning"
       ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Datagendannelse kræver en metode til at nulstille adgangskoden (e-mail eller SMS)"
+      ],
       "dedicated servers": [
         "dedikerede servere"
       ],
@@ -7047,6 +7536,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Afhængigt af dine indstillinger, kan du få adgang med det samme eller efter en bestemt **venteperiode.**"
       ],
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "Rul ${ regoArtifact } ud direkte via din MDM filudrulning"
+      ],
+      "Deploy across all your managed devices": [
+        "Rul ud på tværs af alle dine administrerede enheder"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Rul den ud igennem din MDM (Jamf, Intune…) eller manuelt på hver enhed."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Enheder, der har en konstant VPN enhedsprofil aktiveret, kan ikke tilgå internettet, medmindre en ${ VPN_APP_NAME }-forbindelse er aktiv."
+      ],
       "Did you know?": [
         "Vidste du det?"
       ],
@@ -7058,6 +7559,9 @@
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "Deaktivering af totrins-godkendelsesappen 2FA gør din konto mindre sikker. Gør kun dette hvis det er absolut nødvendigt."
+      ],
+      "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
+        "Ved at deaktivere sikkerhedskopiering af data på denne enhed, mister du muligheden for automatisk at låse op for din krypterede data efter du har nulstillet adgangskoden."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
@@ -7117,6 +7621,15 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Download ${ mobileConfigArtifact }, og åbn den på hver Mac for at installere profilen og godkend den derefter i Systemindstillinger."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "Download ${ powershellArtifact } og kør den på hver enhed som systembruger for automatisk at placere enhedsprofilen."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Download ${ removeScriptLink } og kør den på hver enhed som systembruger for at slette profilen automatisk."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Download ${ VPN_APP_NAME }"
       ],
@@ -7171,6 +7684,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "E-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden, slettes automatisk."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Medarbejdere kan ikke være online uden en VPN-forbindelse"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Aktivér auto-fornyelse for fortsat at have adgang til Plus-servere og -funktioner."
       ],
@@ -7195,6 +7711,9 @@
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Hvis du aktiverer gendannelse ved hjælp af en sætning igen, genereres der en ny gendannelsessætning."
       ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Ved at aktivere sikkerhedskopiering på denne enhed vil du kunne gendanne adgangen til e-mails, kontakter, filer, adgangskoder, og andet krypteret data på din konto efter adgangskoden er blevet nulstillet, bare ved at logge ind."
+      ],
       "End date": [
         "Slutdato"
       ],
@@ -7207,11 +7726,17 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL modtaget fra din identitetsudbyder (f.eks. https://idp.example.com/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Aktivering starter automatisk så snart enheden registrerer profilen."
+      ],
       "Enhance your network security": [
         "Styrk din netværkssikkerhed"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sørg for privat og krypteret kommunikation. Gør krav på din gratis ${ BRAND_NAME } e-mailadresse nu."
+      ],
+      "Ensure your organization is always protected": [
+        "Sørg for at din organisation altid er beskyttet"
       ],
       "Enter code": [
         "Indtast kode"
@@ -7288,6 +7813,9 @@
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Hurtigste VPN-hastigheder – op til 10Gbps"
+      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Kun filer (ingen fotos, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
       ],
@@ -7333,8 +7861,11 @@
       "Gateways": [
         "Gateways"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
+      "Generate the device profile and download a configuration file.": [
+        "Generer enhedsprofilen og download en konfigurationsfil."
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Hvis du opretter en ny gendannelsessætning, deaktiveres din gamle gendannelsessætning."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Få ${ AUTHENTICATOR_APP_NAME } til alle dine enheder."
@@ -7375,6 +7906,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Have some more time to decide without interruption.": [
+        "Få lidt mere tid til overvejelse – uden afbrydelse."
+      ],
       "here": [
         "her"
       ],
@@ -7393,11 +7927,14 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Hvis en anden administrator ændrede denne adgangskode, må du bede dem om den nye Organisationsadgangskode."
       ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "${ BRAND_NAME } bruger stadig din e-mail til gendannelse til at sende sikkerhedsnotifikationer, hvis slået fra."
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
+        "${ BRAND_NAME } bruger stadig din gendannelsestelefon til at sende sikkerhedsnotifikationer, hvis slået fra."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Hvis det er muligt, så brug en enhed eller browser hvor du har tidligere har været logget ind, når du logger ind."
-      ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Hvis dette skyldes en gammel nulstilling af adgangskoden, kan du forhindre, at meddelelsen vises igen"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
@@ -7407,6 +7944,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -7441,8 +7981,8 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ VPN_APP_NAME }."
       ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Hvis du for nylig har nulstillet din adgangskode, kan du bruge en datagendannelsesmetode til at låse dine data op"
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "Hvis du for nylig nulstillede din adgangskode kan du ${ recoveryMethodLink } for at låse op for dine data. Hvis dette er på grund af en gammel nulstilling af adgangskoden kan du stoppe beskeden fra at vises igen."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Hvis din organisation har offentlige personer, håndterer følsomme data eller kan blive mål for cyberangreb, opfordres du kraftigt til at aktivere ${ PROTON_SENTINEL_NAME } for alle i din organisation."
@@ -7542,9 +8082,6 @@
       "Invited": [
         "Inviteret"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Det ser ud til, at nogle af dine data er krypteret og låst."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tager 10 dage at ændre en servers land, så vær sikker på dit valg er korrekt."
       ],
@@ -7602,6 +8139,12 @@
       "Item updated in vault": [
         "Element opdateret i boks"
       ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "Det er ofte den letteste måde at gendanne din konto hvis du er logget ind."
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "Det er en eneste måde at gendanne alting med det samme, så opbevar den sikkert men stadig tilgængeligt."
+      ],
       "JCB logo": [
         "JCB logo"
       ],
@@ -7610,6 +8153,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold dine oplysninger mere sikre og private med disse vejledninger og tips."
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Hold dine adgangskoder sikre, og log ind med det samme med autofyld på tværs af alle enheder."
       ],
       "Key sections reorganized for faster access.": [
         "Vigtige sektioner er rykket rundt for hurtigere adgang."
@@ -7674,6 +8220,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "macOS": [
+        "macOS"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Store e-mailtjenester kan afvise eller filtrere dine e-mails til spam hvis SPF/DKIM/DMARC mangler eller ikke er sat ordenligt op."
       ],
@@ -7684,7 +8233,7 @@
         "Sørg for ${ addARecoveryMethod }, så du kan få adgang til din konto igen, hvis du glemmer din adgangskode."
       ],
       "Manage groups in your identity provider": [
-        "Administrér grupper i din identitetsudbyder"
+        "Administrer grupper i din identitetsudbyder"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrér hvilke ${ BRAND_NAME }-applikationer medlemmerne af din organisation kan få adgang til. Hvis deaktiveret, vil kun administratorer have adgang."
@@ -7815,6 +8364,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Når der er blevet givet adgang til din konto, kan de få adgang til dine **gendannelsesindstillinger** og **ændre din ${ ACCOUNT_APP_NAME }-adgangskode** for dig."
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Når den er rullet ud, kan det kan tage op til et par timer for at enhederne registrerer og aktiverer politikken."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Kun store bogstaver og tegnsætning (punktum, bindestreger og understregninger) kan ændres her. Tilføj en ny for at bruge en anden adresse."
       ],
@@ -7840,6 +8392,9 @@
       ],
       "or discover other features:": [
         "eller opdag andre funktioner:"
+      ],
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "Eller kør ${ powershellArtifact } via din MDM-scriptkørsel"
       ],
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
@@ -7939,9 +8494,6 @@
       "Please fill in all required fields.": [
         "Udfyld venligst alle obligatoriske felter."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Sørg for at gemme den sikkert. Du skal bruge den til at få adgang til din konto og dekryptere dine data i tilfælde af en nulstilling af adgangskoden."
-      ],
       "please open a support ticket": [
         "åbn venligst en support-sag"
       ],
@@ -7977,6 +8529,9 @@
       ],
       "Preference saved": [
         "Præference gemt"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Premium privatlivsbeskyttelse på alle dine enheder"
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -8020,6 +8575,9 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "Rul ${ mobileConfigArtifact } ud til hver administreret Mac ved hjælp af din MDM."
+      ],
       "Recently used servers:": [
         "Nyligt anvendte servere:"
       ],
@@ -8028,6 +8586,12 @@
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Anbefales på betroede enheder. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Gendannelse via e-mail er ikke tilgængeligt mens ${ PROTON_SENTINEL_NAME } er aktiveret."
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Gendannelse via telefon er ikke tilgængeligt mens ${ PROTON_SENTINEL_NAME } er aktiveret."
       ],
       "Recovery file downloaded": [
         "Gendannelsesfil downloadet"
@@ -8040,9 +8604,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Gendannelsessætning kopieret til udklipsholderen"
-      ],
-      "Recovery phrase downloaded": [
-        "Gendannelsessætning downloadet"
       ],
       "Recovery phrase has been disabled": [
         "Gendannelsessætning er blevet deaktiveret"
@@ -8222,6 +8783,9 @@
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "Bliv på dit abonnement og få 50% rabat næste måned"
+      ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"
       ],
@@ -8267,6 +8831,9 @@
       ],
       "support team": [
         "supportteam"
+      ],
+      "Supported platforms": [
+        "Understøttede platforme"
       ],
       "Swiss based": [
         "Baseret i Schweiz"
@@ -8386,6 +8953,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dette kan tage noget tid. Luk ikke denne side, og afbryd ikke forbindelsen til internettet."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Denne datagendannelsesmetode kræver en metode til at nulstille adgangskoden (e-mail eller SMS)"
+      ],
       "This file is too large to preview": [
         "Denne fil er for stor til forhåndsvisning"
       ],
@@ -8433,6 +9003,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit ${ BRAND_NAME }-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, bedes du deaktivere disse for at fortsætte."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "Dette giver dig mulighed for hurtigt og sikkert at tilgå din ${ BRAND_NAME }-konto, så du kan ændre din adgangskode."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Dette vil permanent slette data og alle e-mailadresser tilknyttet disse brugere."
@@ -8503,6 +9076,18 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Vælg en gendannelsesmetode for at dekryptere eller se dine låste data efter en adgangskodenulstilling."
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "For at aktivere Always-on VPN skal konfigurationsprofilen installeres på hver Mac — ${ VPN_APP_NAME }-klienten aktiverer enhedsprofilen automatisk, når den er på plads."
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "For at aktivere konstant VPN skal enhedsprofilen nå ${ policiesPath } på hver enhed – ${ VPN_APP_NAME }-klienten registrerer den der, og aktiverer profilen automatisk."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via e-mail** fra."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+        "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via telefon** fra."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
@@ -8526,6 +9111,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Indtast gendannelsessætningen på 12 ord der er tilknyttet din konto for få adgangen til din konto og data tilbage."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "For at fjerne konstant VPN skal ${ profileFile } fjernes fra ${ policiesPath } på hver enhed. ${ VPN_APP_NAME }-klienten deaktiverer profilen så snart den registrerer at filen er væk."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "For at sikre din internetforbindelse, skal du downloade og installere ${ VPN_APP_NAME }-applikationen til din enhed og oprette forbindelse til en server."
@@ -8644,6 +9232,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Brug følgende legitimationsoplysninger, når du opretter forbindelse til ${ VPN_APP_NAME }-servere uden applikation. Eksempler på brug omfatter: Tunnelblick på macOS, OpenVPN på GNU/Linux."
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Brug din MDM til at slette filen, eller kør ${ removeScriptLink } via din MDM's scriptkørsel. Enhver MDM, der understøtter udrulning af filer eller at køre scripts, fungerer."
+      ],
       "User activated": [
         "Bruger aktiveret"
       ],
@@ -8655,6 +9246,12 @@
       ],
       "Users": [
         "Brugere"
+      ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "Bruger du en anden MDM? Enhver MDM, der understøtter aktivering af en konfigurationsprofil, fungerer. Se dokumentationen for din MDM for hvordan du uploader og tildeler den til dine enheder."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Bruger du en anden MDM? Enhver MDM, som understøtter at rulle filer ud eller køre PowerShell scripts, fungerer. Se dokumentationen for din MDM for mere information."
       ],
       "Vault created": [
         "Boks oprettet"
@@ -8716,6 +9313,12 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi råder dig til at bruge officielle ${ VPN_APP_NAME }-applikationer, når det er muligt."
       ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Vi kan bruge din e-mail til gendannelse til at sende dig en bekræftelseskode for at nulstille din adgangskode, og kontakte dig hvis vi registrerer mistænkelig aktivitet."
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Vi kan bruge din telefon til gendannelse til at sende dig en bekræftelseskode for at nulstille din adgangskode, og kontakte dig hvis vi registrerer mistænkelig aktivitet."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
@@ -8746,8 +9349,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi anbefaler, at man underretter organisationens medlemmer og beder dem om at konfigurere 2FA til deres konti, før man gennemtvinger brugen af 2FA."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Vi gemmer gendannelsesoplysninger sikkert på din betroede enhed for at forhindre, at du mister dine data"
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "Vi anbefaler kraftigt at alle aktiverer gendannelse med en gendannelsessætning."
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruger 3-D Secure til at sikre dine betalinger"
@@ -8936,6 +9539,9 @@
       "You don't have any referrals.": [
         "De har ingen henvisninger."
       ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Du behøver ikke at åbne eller læse filen – bare download den og opbevar den sikkert."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du får besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
@@ -9060,6 +9666,9 @@
       "Your account was successfully updated with this promotion": [
         "Din konto er blevet opdateret med denne kampagne"
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Din konstante VPN enhedsprofil er klar til at blive aktiveret."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
@@ -9111,11 +9720,11 @@
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Dine seneste ændringer er blevet publiceret. De vil være synlige for brugerne i løbet af de næste par timer."
       ],
-      "Your recovery phrase": [
-        "Din gendannelsessætning"
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Din gendannelsesfil genopretter adgangen til e-mails, kontakter, filer, adgangskoder, og alt andet krypteret data på din konto efter adgangskoden er blevet nulstillet."
       ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Din gendannelsessætning er en serie af 12 tilfældigt genererede ord i en bestemt rækkefølge."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Din gendannelsessætning giver dig mulighed for at logge ind og gendanne din ${ BRAND_NAME }-konto, hvis du bliver låst ude. Den består af 12 ord og fungerer som en backup-adgangskode."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
@@ -9402,6 +10011,9 @@
       "Allow": [
         "Tillad"
       ],
+      "Allow QR code sign-in": [
+        "Tillad login med QR-kode"
+      ],
       "Allow recovery by email": [
         "Tillad gendannelse via e-mail"
       ],
@@ -9431,6 +10043,9 @@
       ],
       "App password": [
         "App-adgangskode"
+      ],
+      "Applies:": [
+        "Anvendes:"
       ],
       "Apply policy to": [
         "Anvend politik til"
@@ -9515,6 +10130,12 @@
       ],
       "City": [
         "By"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversion"
       ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
@@ -9694,6 +10315,9 @@
       "End-to-end encryption": [
         "End-to-end kryptering"
       ],
+      "Enforce Always-on VPN": [
+        "Aktivér konstant VPN"
+      ],
       "Enter code": [
         "Indtast kode"
       ],
@@ -9838,6 +10462,9 @@
       "Level for NetShield blocker filtering": [
         "Niveau for NetShield-blokkerfiltrering"
       ],
+      "Login restrictions": [
+        "Loginrestriktioner"
+      ],
       "Logo": [
         "Logo"
       ],
@@ -9849,6 +10476,9 @@
       ],
       "Main reason for cancelling": [
         "Hovedårsag til at annullere"
+      ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "Vær sikker på at du har adgang til en e-mail eller telefon til gendannelse, og har indstillet en metode til datagendannelse."
       ],
       "Manage categories": [
         "Administrer kategorier"
@@ -10232,6 +10862,9 @@
       "Vulnerable password": [
         "Sårbar adgangskode"
       ],
+      "We securely stored recovery information on this device.": [
+        "Vi har opbevaret din gendannelsesinformation sikkert på denne enhed."
+      ],
       "Weak": [
         "Svag"
       ],
@@ -10271,6 +10904,12 @@
       "Your password (trusted contact)": [
         "Din adgangskode (betroet kontakt)"
       ],
+      "Your recovery email": [
+        "Din gendannelsesmail"
+      ],
+      "Your recovery phone number": [
+        "Dit telefonnummer til gendannelse"
+      ],
       "Zero-access architecture": [
         "Nuladgangsarkitektur"
       ],
@@ -10279,14 +10918,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Enhedsbaseret gendannelse"
-      ],
       "Recovery phone number": [
         "Telefonnummer til gendannelse"
-      ],
-      "Recovery phrase": [
-        "Gendannelsessætning"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10503,9 +11136,6 @@
       "How to share via email": [
         "Sådan deles via e-mail"
       ],
-      "How to unlock data": [
-        "Sådan oplåses data"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Sådan bruges ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -10526,9 +11156,6 @@
       ],
       "Learn more": [
         "Få mere at vide"
-      ],
-      "Learn more about data recovery": [
-        "Få mere at vide om datagendannelse"
       ],
       "Manage addresses": [
         "Administrer adresser"
@@ -10571,6 +11198,9 @@
       ],
       "Upgrade your plan": [
         "Opgradér abonnement"
+      ],
+      "use a data recovery method": [
+        "brug en metode til datagendannelse"
       ],
       "Vault": [
         "Boks"
@@ -12847,6 +13477,14 @@
         "Tidsbegrænset tilbud."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Kan du huske din ${ BRAND_NAME }-adgangskode?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Den bedste måde at undgå at miste adgangen til din konto og dine data er ved at huske dine legitimationsoplysninger."
+      ]
+    },
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "Du kan miste adgang til dine krypterede data, hvis du glemmer din adgangskode."
@@ -13705,6 +14343,188 @@
         "Ved at Bekræfte dit telefonnummer øger du din kontos sikkerhed og giver flere muligheder for gendannelse."
       ]
     },
+    "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "${ score } / ${ maxScore } gennemført"
+      ],
+      "Add more options for stronger protection": [
+        "Tilføj flere muligheder for bedre beskyttelse"
+      ],
+      "Check your access to your recovery options": [
+        "Tjek adgangen til dine gendannelsesmuligheder"
+      ],
+      "Critical": [
+        "Kritisk"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "Undgå at blive låst ude af din ${ BRAND_NAME }-konto"
+      ],
+      "How you increased your account protection": [
+        "Sådan forbedrede du din kontobeskyttelse"
+      ],
+      "Inactive recovery options": [
+        "Inaktive gendannelsesindstillinger"
+      ],
+      "Maximum": [
+        "Maksimum"
+      ],
+      "Partial": [
+        "Delvis"
+      ],
+      "Recoverability": [
+        "Gendannelighed"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Kræv bekræftet metode til nulstilling af adgangskode (e-mail eller SMS)"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "Score: ${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "Stærk"
+      ],
+      "Take precautions to avoid losing access": [
+        "Tag foranstaltninger for at undgå at miste adgang"
+      ],
+      "Weak": [
+        "Svag"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Du er helt beskyttet. En periodisk gennemgang sikrer at alting stadig fungerer efterhånden som dine enheder og kontakter ændrer sig over tid."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Du er der delvist, men du er stadig ikke sikker. En glemt adgangskode kan stadig betyde, at du mister dine e-mails, filer og adgangskoder."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "Du er stadig i fare. Du kan permanent miste dine e-mails, filer og adgangskoder, hvis du glemmer din adgangskode."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Du er godt beskyttet, men der er stadig mangler. Flere gendannelsesmuligheder giver dig et stærkere sikkerhedsnet, hvis du skulle miste din adgangskode."
+      ],
+      "Your account and data can be recovered": [
+        "Din konto og dine data kan gendannes"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Din konto har ingen gendannelsesmuligheder konfigureret. Hvis du mister din adgangskode, mister du permanent adgang til dine e-mails, filer og adgangskoder."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Din konto er ikke helt beskyttet. En glemt adgangskode kan stadig betyde, at du mister dine e-mails, filer og adgangskoder."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Din gendannelseskonfiguration er mangelfuld. Du kan permanent miste adgang til dine e-mails, filer og adgangskoder, hvis du glemmer din adgangskode."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Din gendannelseskonfiguration er strålende. Hold dine muligheder opdateret, så de stadig virker når du har brug for dem."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Din gendannelseskonfiguration er ufærdig. En glemt adgangskode kan stadig betyde, at du mister dine e-mails, filer og adgangskoder."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Din gendannelseskonfiguration er solid med nogle små mangler. Hver mulighed du tilføjer gør dit sikkerhedsnet stærkere."
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "Tilføj nødkontakter"
+      ],
+      "Add recovery contacts": [
+        "Tilføj gendannelseskontakter"
+      ],
+      "Add recovery email": [
+        "Tilføj e-mail til gendannelse"
+      ],
+      "Add recovery phone": [
+        "Tilføj gendannelsestelefon"
+      ],
+      "Allow data recovery on this device": [
+        "Tillad gendannelse af data på denne enhed"
+      ],
+      "Allow password reset from settings": [
+        "Tillad nulstilling af adgangskode fra indstillinger"
+      ],
+      "Allow scanning QR code to sign in": [
+        "Tillad skanning af QR-kode for at logge ind"
+      ],
+      "Data recovery allowed on this device": [
+        "Datagendannelse tilladt på denne enhed"
+      ],
+      "Download recovery file": [
+        "Download gendannelsesfil"
+      ],
+      "Email recovery enabled": [
+        "E-mailgendannelse aktiveret"
+      ],
+      "Emergency contacts added": [
+        "Nødkontakter tilføjet"
+      ],
+      "Enable email recovery": [
+        "Aktivér e-mailgendannelse"
+      ],
+      "Enable recovery by phone": [
+        "Aktiver gendannelse via telefonnummer"
+      ],
+      "Password reset allowed from settings": [
+        "Nulstilling af adgangskoden er tilladt fra indstillinger"
+      ],
+      "Password verified": [
+        "Adgangskode bekræftet"
+      ],
+      "Phone recovery enabled": [
+        "Telefongendannelse aktiveret"
+      ],
+      "Recovery contacts added": [
+        "Gendannelseskontakter tilføjet"
+      ],
+      "Recovery file downloaded": [
+        "Gendannelsesfil downloadet"
+      ],
+      "Recovery phrase saved": [
+        "Gendannelsessætning gemt"
+      ],
+      "Save recovery phrase": [
+        "Gem gendannelsessætning"
+      ],
+      "Sign-in with QR code allowed": [
+        "Login med QR-kode er tilladt"
+      ],
+      "Verify password": [
+        "Bekræft adgangskode"
+      ],
+      "Verify recovery email": [
+        "Bekræft e-mail til gendannelse"
+      ],
+      "Verify recovery phone": [
+        "Bekræft gendannelsestelefon"
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Copy": [
+        "Kopiér"
+      ],
+      "Show": [
+        "Vis"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Sørg for at opbevare din gendannelsessætning, så den er tilgængelig efter den er oprettet.** Af sikkerhedsmæssige årsager opbevarer vi ikke sætningen efter du har gemt dine ændringer, og du vil ikke kunne se den igen i ${ BRAND_NAME }-appen."
+      ],
+      "copy recovery phrase": [
+        "Kopiér gendannelsessætningen"
+      ],
+      "Download PDF": [
+        "Download PDF"
+      ],
+      "download PDF": [
+        "download PDF"
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "Eller ${ copyRecoverySwitchButton } som tekst."
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "Eller brug ${ downloadRecoveryKitSwitchButton } i stedet."
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } pr. henvisning"
@@ -14020,47 +14840,8 @@
       ]
     },
     "Safety review": {
-      "Check account security": [
-        "Tjek kontosikkerhed"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Hvis du mister dine adgangsoplysninger og har brug for at nulstille din konto, **er det afgørende**, at du har både **konto- og datagendannelsesmetode** på plads, ellers kan du måske ikke tilgå nogen af dine e-mails, kontakter, filer eller adgangskoder."
-      ],
       "Review account safety": [
         "Gennemgå kontoens sikkerhed"
-      ],
-      "Safeguard account now": [
-        "Beskyt din konto nu"
-      ],
-      "Safeguard your account": [
-        "Beskyt din konto"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Du risikerer at miste adgangen til din konto og dine data."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Du risikerer at miste adgangen til dine data."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Du har anbefalede handlinger for yderligere at beskytte din konto."
-      ],
-      "You have recommended actions.": [
-        "Du har anbefalede handlinger."
-      ],
-      "Your account and data can be recovered": [
-        "Din konto og dine data kan gendannes"
-      ],
-      "Your account and data can be recovered.": [
-        "Din konto og dine data kan gendannes."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Din konto og dine data kan gendannes. Tjek, om du stadig kan tilgå dine gendannelsesmetoder."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Din konto og dine data kan gendannes. Du har anbefalede handlinger for at beskytte din konto yderligere."
-      ],
-      "Your account is fully secure.": [
-        "Din konto er fuldt ud sikker."
       ]
     },
     "saml: Action": {
@@ -14321,6 +15102,17 @@
     "Select search results": {
       "No results found": [
         "Ingen resultater fundet"
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Opnå størst mulig sikkerhed på din konto ved at slå gendannelse via e-mail og SMS fra."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Download din gendannelsessætning for at sikre, at du altid kan tilgå din ${ BRAND_NAME }-konto."
+      ],
+      "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
+        "Du har anbefalinger fra ${ PROTON_SENTINEL_NAME }"
       ]
     },
     "Server-Info": {
@@ -14594,11 +15386,11 @@
       ]
     },
     "session_recovery:settings:info": {
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "For at slå nulstilling af adgangskode fra i indstillinger skal du gemme din gendannelsessætning."
+      ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Hvis du ikke vil tillade nulstilling af adgangskoden, skal du have opsat en gendannelsesmetode."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "For at øge sikkerheden for din konto og beskytte dine data kan du anmode om en nulstilling af adgangskoden fra dine kontoindstillinger i webapplikationen."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14651,6 +15443,9 @@
       ]
     },
     "Settings section title": {
+      "Account": [
+        "Konto"
+      ],
       "Organization": [
         "Organisation"
       ]
@@ -15234,17 +16029,78 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Opsiger dit abonnement, vent venligst"
+      ],
+      "Disabled": [
+        "Deaktiveret"
+      ],
+      "Enabled": [
+        "Aktiveret"
+      ],
+      "No restrictions": [
+        "Ingen begrænsninger"
       ]
     },
     "Status": {
+      "${ count } person": [
+        "${ count } person",
+        "${ count } personer"
+      ],
       "... waiting": [
         "... venter"
+      ],
+      "Add a phone number": [
+        "Tilføj et telefonnummer"
+      ],
+      "Add an email address": [
+        "Tilføj en e-mailadresse"
+      ],
+      "Available on this device": [
+        "Tilgængeligt på denne enhed"
       ],
       "completed": [
         "fuldført"
       ],
+      "Disable recovery by email": [
+        "Deaktivér gendannelse via e-mail"
+      ],
+      "Disable recovery by phone": [
+        "Deaktivér gendannelse via telefon"
+      ],
       "finalizing": [
         "færdiggør"
+      ],
+      "Generate a recovery phrase": [
+        "Opret en gendannelsessætning"
+      ],
+      "Last changed ${ formattedDate }": [
+        "Sidst ændret ${ formattedDate }"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "Sidst opdateret ${ formattedUpdateDate }"
+      ],
+      "Not saved": [
+        "Ikke gemt"
+      ],
+      "Off": [
+        "Fra"
+      ],
+      "On": [
+        "Til"
+      ],
+      "Outdated": [
+        "Forældet"
+      ],
+      "Saved": [
+        "Gemt"
+      ],
+      "Unverified": [
+        "Ikke bekræftet"
+      ],
+      "Verified": [
+        "Bekræftet"
+      ],
+      "Verify ${ value }": [
+        "Bekræft ${ value }"
       ]
     },
     "Storage": {
@@ -15885,6 +16741,9 @@
       "Compare the key differences that matter for your business.": [
         "Sammenlign de vigtigste forskelle der har en betydning for din virksomhed."
       ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Aktivér VPN på tværs af din organisation ved at blokere internetadgang, medmindre en VPN-forbindelse er aktiv."
+      ],
       "Save 50% for 6 months, and keep full access": [
         "Spar 50% i 6 måneder, og behold fuld adgang"
       ],
@@ -16359,6 +17218,9 @@
       "Access control": [
         "Adgangskontrol"
       ],
+      "Accessibility": [
+        "Tilgængelighed"
+      ],
       "Account": [
         "Konto"
       ],
@@ -16402,8 +17264,14 @@
         "Tilføj ${ totalServerCount } server?",
         "Tilføj ${ totalServerCount } servere?"
       ],
+      "Add a recovery contact": [
+        "Tilføj gendannelseskontakt"
+      ],
       "Add address": [
         "Tilføj adresse"
+      ],
+      "Add an emergency contact": [
+        "Tilføj en nødkontakt"
       ],
       "Add contact group name": [
         "Tilføj kontaktgruppenavn"
@@ -16453,6 +17321,9 @@
       "Add users to \"${ policyName }\"": [
         "Føj brugere til \"${ policyName }\""
       ],
+      "Advanced recovery options": [
+        "Avancerede gendannelsesmuligheder"
+      ],
       "Allocate storage": [
         "Tildel lagerplads"
       ],
@@ -16461,6 +17332,12 @@
       ],
       "Also in your plan": [
         "Også i dit abonnement"
+      ],
+      "Always-on VPN": [
+        "Konstant VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Konstant VPN enhedsprofil"
       ],
       "Amount": [
         "Beløb"
@@ -16561,8 +17438,14 @@
       "Change second password": [
         "Ændr anden adgangskode"
       ],
+      "Choose a deployment method": [
+        "Vælg en metode til udrulning"
+      ],
       "Choose a provider": [
         "Vælg en udbyder"
+      ],
+      "Choose a removal method": [
+        "Vælg en metode til fjernelse"
       ],
       "Choose user affiliations": [
         "Vælg brugertilhørsforhold"
@@ -16575,6 +17458,12 @@
       ],
       "Collaborate on documents": [
         "Arbejd sammen om dokumenter"
+      ],
+      "Compare plans": [
+        "Sammenlign abonnementer"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Konfigurer konstant VPN enhedsprofil"
       ],
       "Confirm": [
         "Bekræft"
@@ -16661,6 +17550,9 @@
       "Created": [
         "Oprettet"
       ],
+      "Created!": [
+        "Oprettet!"
+      ],
       "Creating user accounts": [
         "Opretter brugerkonti"
       ],
@@ -16694,11 +17586,17 @@
       "Customize your mail import": [
         "Tilpas din mail-import"
       ],
-      "Data locked": [
-        "Data låst"
+      "Dashboard": [
+        "Kontrolpanel"
       ],
       "Data recovery": [
         "Datagendannelse"
+      ],
+      "Data recovery contacts": [
+        "Kontakter til gendannelse af data"
+      ],
+      "Data recovery options": [
+        "Metoder til datagendannelse"
       ],
       "Data retention": [
         "Datalagring"
@@ -16709,8 +17607,14 @@
       "Day theme": [
         "Dagstema"
       ],
+      "Deactivate current phrase?": [
+        "Deaktivér nuværende sætning?"
+      ],
       "Decrypt key": [
         "Dekryptér nøgle"
+      ],
+      "Deep dive into email blog posts": [
+        "Dyk ned i e-mail-blogindlæg"
       ],
       "Deep dive into VPN blog posts": [
         "Dyk ned i VPN-blogindlæg"
@@ -16740,6 +17644,15 @@
       "Deny access to user?": [
         "Nægt bruger adgang?"
       ],
+      "Deploy device profile to your devices": [
+        "Rul enhedsprofilen ud til dine enheder"
+      ],
+      "Deploy via MDM": [
+        "Rul ud via MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Rul ud via PowerShell"
+      ],
       "Description": [
         "Beskrivelse"
       ],
@@ -16749,11 +17662,17 @@
       "Device": [
         "Enhed"
       ],
+      "Device data backup": [
+        "Sikkerhedskopiering af data på enheden"
+      ],
       "Device name": [
         "Enhedsnavn"
       ],
       "Disable account monitor?": [
         "Deaktivér kontoovervågning?"
+      ],
+      "Disable device data backup?": [
+        "Deaktiver sikkerhedskopiering af data på enheden"
       ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
@@ -16790,6 +17709,9 @@
       ],
       "Download apps": [
         "Download apps"
+      ],
+      "Download your recovery phrase": [
+        "Download din gendannelsessætning"
       ],
       "Downloads": [
         "Downloads"
@@ -16848,6 +17770,12 @@
       "Email subscriptions": [
         "E-mail-abonnementer"
       ],
+      "Email verification": [
+        "Bekræftelse via e-mail"
+      ],
+      "Emergency access": [
+        "Nødadgang"
+      ],
       "Enable advanced account protection": [
         "Aktiver avanceret kontobeskyttelse"
       ],
@@ -16903,9 +17831,6 @@
       "Generate missing keys": [
         "Generér manglende nøgler"
       ],
-      "Generate new recovery phrase?": [
-        "Opret ny gendannelsessætning?"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "Få ${ vpnPlus } for at få adgang til alle servere"
       ],
@@ -16935,6 +17860,9 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Group membership": [
+        "Gruppemedlemskab"
       ],
       "Group role assignment paused": [
         "Tildeling af grupperolle sat på pause"
@@ -17000,6 +17928,9 @@
       "Information exposed in breach": [
         "Information afsløret i en datalækage"
       ],
+      "Install it manually": [
+        "Installer den manuelt"
+      ],
       "Integrations": [
         "Integrationer"
       ],
@@ -17015,11 +17946,17 @@
       "IP": [
         "IP"
       ],
+      "Language and time": [
+        "Sprog og klokkeslæt"
+      ],
       "Limit reached": [
         "Grænse nået"
       ],
       "Lower your cost without losing features": [
         "Sænk dine omkostninger uden at miste funktioner"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "Hovedadgangskode"
@@ -17069,6 +18006,9 @@
       "No events yet": [
         "Ingen events endnu"
       ],
+      "Notifications": [
+        "Notifikationer"
+      ],
       "Open": [
         "Åbn"
       ],
@@ -17117,6 +18057,9 @@
       "Password": [
         "Adgangskode"
       ],
+      "Password reset options": [
+        "Indstillinger for nulstilling af adgangskode"
+      ],
       "Password reset settings": [
         "Indstillinger for nulstilling af adgangskode"
       ],
@@ -17134,6 +18077,9 @@
       ],
       "Payment verification": [
         "Betalingsbekræftelse"
+      ],
+      "Pending invitations": [
+        "Afventende invitationer"
       ],
       "Phone": [
         "Telefon"
@@ -17156,6 +18102,9 @@
       "QR Code": [
         "QR-kode"
       ],
+      "QR code sign-in": [
+        "Login med QR-kode"
+      ],
       "Recommended": [
         "Anbefalet"
       ],
@@ -17177,6 +18126,9 @@
       "Recovery file": [
         "Gendannelsesfil"
       ],
+      "Recovery phrase": [
+        "Gendannelsesssætning"
+      ],
       "Refer a friend": [
         "Henvis en ven"
       ],
@@ -17185,6 +18137,9 @@
       ],
       "Remove all members?": [
         "Fjern alle medlemmer?"
+      ],
+      "Remove Always-on VPN device profile": [
+        "Fjern konstant VPN enhedsprofil"
       ],
       "Remove device?": [
         "Fjern enhed?"
@@ -17209,6 +18164,9 @@
       ],
       "Remove user?": [
         "Fjern bruger?"
+      ],
+      "Remove via MDM": [
+        "Fjern via MDM"
       ],
       "Rename the gateway": [
         "Omdøb gatewayen"
@@ -17333,8 +18291,14 @@
       "Sign out": [
         "Log ud"
       ],
+      "Signed in to another account": [
+        "Logget ind på en anden konto"
+      ],
       "Signed in to member account": [
         "Logget ind på medlemskonto"
+      ],
+      "Signed-in reset": [
+        "Nulstilling logget ind"
       ],
       "Simplify email distribution": [
         "Forenkl e-maildistribution"
@@ -17347,6 +18311,12 @@
       ],
       "Single-sign on (SSO)": [
         "Single-sign on (SSO)"
+      ],
+      "SMS verification": [
+        "Bekræftelse via SMS"
+      ],
+      "Some of your encrypted data is locked": [
+        "Noget af din krypteret data er låst"
       ],
       "Something went wrong": [
         "Et eller andet gik galt"
@@ -17368,6 +18338,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Stay for 50% off your next month": [
+        "Bliv hængende for 50% rabat i den næste måned"
       ],
       "Stay secure and connected anywhere": [
         "Vær sikker og forbundet overalt"
@@ -17399,6 +18372,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "There are no events for your account": [
         "Der er ingen begivenheder til din konto"
@@ -17456,6 +18432,9 @@
       ],
       "Upgrade complete!": [
         "Opgradering udført!"
+      ],
+      "Upgrade plan": [
+        "Opgradér abonnement"
       ],
       "Upgrade to ${ planName }": [
         "Opgradér til ${ planName }"
@@ -17550,6 +18529,9 @@
       "What is the dark web?": [
         "Hvad er det mørke net?"
       ],
+      "Windows": [
+        "Windows"
+      ],
       "Wipe all logs?": [
         "Slet alle logge?"
       ],
@@ -17583,11 +18565,23 @@
       "Your plan": [
         "Dit abonnement"
       ],
+      "Your recovery file": [
+        "Din gendannelsesfil"
+      ],
+      "Your recovery phrase": [
+        "Din gendannelsessætning"
+      ],
+      "Your recovery setup": [
+        "Din gendannelseskonfiguration"
+      ],
       "Your referrals": [
         "Dine henvisninger"
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Your storage": [
+        "Din lagerplads"
       ],
       "Your subscriptions": [
         "Dine abonnementer"
@@ -17666,6 +18660,24 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brugerkonti og give administratorrettigheder til andre brugere. Kun den primære administrator kan redigere abonnementet for organisationen."
       ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "Tillad gendannelse af din konto med en engangskode som vi sender til din e-mail til gendannelse"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "Tillad gendannelse af din konto med en engangskode som vi sender til din telefon til gendannelse"
+      ],
+      "Allow resetting your password from the account settings": [
+        "Tillad nulstilling af din adgangskode fra kontoindstillinger"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "Tillad at skanne en QR-kode fra en ${ BRAND_NAME }-mobilapp for at logge ind"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "Tillad at betroede kontakter anmoder om adgang til din konto"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "Tillad at betroede kontakter låser op for dine krypterede data efter adgangskoden er blevet nulstillet"
+      ],
       "Any protection applied to suspicious activity": [
         "Enhver form for beskyttelse mod mistænkelig aktivitet"
       ],
@@ -17729,6 +18741,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
       ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Inkluderer alle brugere i din organisation. Kun aktiveret på enheder hvor den konstante VPN enhedsprofil er aktiv."
+      ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Inkluderer brugerdefinerede e-maildomæner og ubegrænsede hide-my-email-aliasser i ${ MAIL_APP_NAME }, adgang til servere i 120+ lande i ${ VPN_SHORT_APP_NAME }, indbygget 2FA og sikker deling i ${ PASS_SHORT_APP_NAME }, og mere."
       ],
@@ -17752,6 +18767,15 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Original IP-adresse og Internetudbyder (ISP)"
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "Gem sætningen på 12 ord for at låse op for din konto og dine krypterede data med det samme, hvis du skulle glemme din adgangskode"
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "Gem en krypterings-backupfil i denne browser for at gendanne dine data efter adgangskoden er blevet nulstillet"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "Gem en krypterings-backupfil for at gendanne dine data efter adgangskoden er blevet nulstillet"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Indstiller følgende sidefod i de e-mails, du sender: ${ signature } Linket peger på dit henvisningslink. Sidefoden vises under din signatur. Du kan til enhver tid tilpasse din signatur i indstillingerne."
@@ -17967,8 +18991,8 @@
         "Kunne ikke tildele administratoradgang til ${ n } bruger",
         "Kunne ikke tildele administratoradgang til ${ n } brugere"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Kunne ikke aktivere administratoradgang: ${ error }"
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Kunne ikke aktivere administratoradgang: ${ unprivatizationResult.error }"
       ],
       "Enable manually": [
         "Aktiver manuelt"
@@ -18024,6 +19048,9 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "For at fortsætte skal du bede om brugerens tilladelse til at tilgå deres data eller nulstille deres adgangskode."
+      ],
+      "Waiting for admin approval": [
+        "Venter på godkendelse fra administrator"
       ],
       "You can safely remove this user from your organization.": [
         "Du kan trygt fjerne denne bruger fra din organisation.",
@@ -18189,9 +19216,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorer kan ikke tilgå private brugeres data"
       ],
@@ -18201,20 +19225,14 @@
       "Invitation sent, awaiting reply from the invited member": [
         "Invitation sendt, afventer svar fra det inviterede medlem"
       ],
-      "Invite sent": [
-        "Invitation sendt"
+      "Invited": [
+        "Inviteret"
       ],
-      "It's you": [
-        "Det er dig"
+      "Pending": [
+        "Afventende"
       ],
-      "Pending admin access": [
-        "Afventer administratoradgang"
-      ],
-      "Private": [
-        "Privat"
-      ],
-      "SSO": [
-        "SSO"
+      "Requested": [
+        "Anmodet"
       ],
       "SSO user provided by your identity provider": [
         "SSO-bruger leveret af din identitetsudbyder"

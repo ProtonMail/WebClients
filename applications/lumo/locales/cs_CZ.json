@@ -2230,9 +2230,6 @@
       "You've reached your image limit for this period.": [
         "Dosáhli jste limitu obrázků pro toto období."
       ],
-      "You've reached your image limit for this period. Upgrade to keep creating images.": [
-        "Dosáhli jste svého limitu pro vytváření obrázků pro toto období. Chcete-li pokračovat ve vytváření obrázků, proveďte navýšení."
-      ],
       "You've run out of weekly chats, please ": [
         "Dosáhli jste týdenního limitu chatů, prosím "
       ],
@@ -3198,14 +3195,8 @@
       "Download": [
         "Stáhnout"
       ],
-      "Download image": [
-        "Stáhnout obrázek"
-      ],
       "Edit agent": [
         "Upravit agenta"
-      ],
-      "Edit image": [
-        "Upravit obrázek"
       ],
       "Edit instructions": [
         "Upravit instrukce"
@@ -3421,26 +3412,17 @@
       "Link with ${ DRIVE_APP_NAME } folder": [
         "Propojit se složkou ${ DRIVE_APP_NAME }"
       ],
-      "Load more": [
-        "Načíst další"
-      ],
       "New chat": [
         "Nová konverzace"
       ],
       "New project": [
         "Nový projekt"
       ],
-      "Projects": [
-        "Projekty"
-      ],
       "Save": [
         "Uložit"
       ],
       "Search": [
         "Hledat"
-      ],
-      "See all": [
-        "Zobrazit vše"
       ],
       "Send": [
         "Odeslat"
@@ -3471,9 +3453,6 @@
       "Failed to create folder": [
         "Vytvoření složky selhalo"
       ],
-      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
-        "Selhalo stahování souboru \"${ file.name }\": Kontrola integrity dat selhala. Zkuste to prosím znovu."
-      ],
       "Failed to index Drive folder for search": [
         "Nepodařilo se indexovat složku Drive pro vyhledávání"
       ],
@@ -3483,9 +3462,6 @@
       "Failed to load image": [
         "Nepodařilo se načíst obrázek"
       ],
-      "Failed to load images. Please try again.": [
-        "Načtení obrázků selhalo. Zkuste to prosím znovu."
-      ],
       "Failed to process file: ${ file.name }": [
         "Zpracování souboru selhalo: ${ file.name }"
       ],
@@ -3494,12 +3470,6 @@
       ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Soubor \"${ file.name }\" (${ fileSizeFormatted }) přesahuje limit ${ maxSizeFormatted }. Pro nahrání větších souborů propojte složku ${ DRIVE_APP_NAME }."
-      ],
-      "File download failed due to integrity check. Please try again.": [
-        "Stahování souboru selhalo kvůli kontrole integrity. Zkuste to znovu."
-      ],
-      "File format not supported: ${ file.name }": [
-        "Formát souboru není podporován: ${ file.name }"
       ],
       "File type not supported: ${ file.name }": [
         "Nepodporovaný typ souboru: ${ file.name }"
@@ -3650,9 +3620,6 @@
       "Cookies or website data are blocked in your browser settings": [
         "V nastavení vašeho prohlížeče jsou blokovány soubory cookie nebo data webů"
       ],
-      "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
-        "Vytvářejte obrázky, aplikujte styly a skicujte nápady. Přihlaste se nebo si vytvořte bezplatný účet, abyste si mohli své výtvory uložit."
-      ],
       "Create purpose-built assistants with their own instructions. Set them up once, and they’ll follow your preferences every time.": [
         "Vytvářejte účelové asistenty s vlastními instrukcemi. Nastavte je jednou a budou pokaždé dodržovat vaše předvolby."
       ],
@@ -3733,9 +3700,6 @@
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Na této kartě nejsou žádné osobní údaje – pouze vaše míra ohrožení soukromí podle oblastí. Nižší hodnota znamená, že jste o sobě prozradili méně."
-      ],
-      "No projects yet": [
-        "Zatím žádné projekty"
       ],
       "Now protect the person behind it.": [
         "Nyní chraňte člověka, který za tím stojí."
@@ -3867,77 +3831,6 @@
         "Vaše informace jsou šifrovány s nulovým přístupem"
       ]
     },
-    "collider_2025:Inspiration suggestion prompt": {
-      "3D animated character in a high-quality family film style, expressive face, large emotional eyes, soft subsurface skin, stylized proportions, vibrant colors, detailed hair and clothing, cinematic lighting, shallow depth of field, friendly and charming personality, ultra polished render, studio-quality animation still.": [
-        "3D animovaná postava ve stylu kvalitního rodinného filmu, výrazná tvář, velké emotivní oči, jemná podpovrchová kůže, stylizované proporce, zářivé barvy, detailní vlasy a oblečení, filmové osvětlení, malá hloubka ostrosti, přátelský a okouzlující charakter, ultra vyhlazený render, animační snímek ve studiové kvalitě."
-      ],
-      "A dreamy close-up of flowers swept into soft radial trails by rotating camera motion, where the center blooms in crisp detail while petals dissolve outward into creamy bokeh under gentle natural light.": [
-        "Snový detail květin rozostřených do jemných radiálních stop otáčivým pohybem fotoaparátu, kde střed kvete v ostrých detailech, zatímco okvětní lístky se pod jemným přirozeným světlem rozplývají směrem ven do krémového bokehu."
-      ],
-      "A striking monochromatic study in yellow — just a fragment of contemporary architecture emerging from its equally golden surroundings, with tonal shifts alone carving out the geometric surfaces and lending the scene its quiet sense of depth and form.": [
-        "Působivá monochromatická studie ve žluté barvě – pouhý fragment moderní architektury vystupující ze svého stejně zlatavého okolí, kde samotné tónové posuny vykreslují geometrické povrchy a dodávají scéně tichý pocit hloubky a tvaru."
-      ],
-      "A warm and cozy Japandi-style living room, minimalist aesthetic, cream sectional sofa, neutral and mustard throw pillows, woven pouf, large textured area rug with fringe, minimalist botanical wall art, large indoor palm plant, soft ambient golden lighting, candles, serene and peaceful atmosphere, photorealistic, interior design photography.": [
-        "Teplý a útulný obývací pokoj ve stylu Japandi, minimalistická estetika, krémová rohová pohovka, neutrální a hořčicové polštáře, pletený puf, velký texturovaný koberec s třásněmi, minimalistické botanické umění na zdi, velká pokojová palma, jemné ambientní zlatavé osvětlení, svíčky, klidná a mírumilovná atmosféra, fotorealistické, fotografie interiérového designu."
-      ],
-      "Abstract composition of translucent glass shapes floating in space, soft refraction and reflection, smooth curved forms, frosted and clear glass mix, pastel lighting with subtle purple and blue tones, minimalist design, premium modern aesthetic, soft shadows, ultra clean background, high resolution, 3D render style.": [
-        "Abstraktní kompozice průsvitných skleněných tvarů vznášejících se v prostoru, jemný lom a odraz světla, hladké zakřivené tvary, směs matného a čirého skla, pastelové osvětlení s jemnými fialovými a modrými tóny, minimalistický design, prémiová moderní estetika, jemné stíny, ultra čisté pozadí, vysoké rozlišení, styl 3D renderu."
-      ],
-      "Abstract frozen ice background in soft pastel lavender and light purple tones, translucent crystalline ice textures, subtle frost patterns, glowing icy surface, smooth gradients, sparkling frozen details, ethereal winter atmosphere, clean and minimal design, soft lighting, elegant luxury aesthetic, high resolution, dreamy frozen landscape, delicate reflections, ultra-detailed, background only, no objects, no text.": [
-        "Abstraktní pozadí zamrzlého ledu v jemných pastelových levandulových a světle fialových tónech, průsvitné krystalické ledové textury, jemné vzory námrazy, zářící ledový povrch, hladké přechody, jiskřivé zmrzlé detaily, éterická zimní atmosféra, čistý a minimalistický design, jemné osvětlení, elegantní luxusní estetika, vysoké rozlišení, snová ledová krajina, jemné odrazy, ultra detailní, pouze pozadí, žádné objekty, žádný text."
-      ],
-      "Abstract futuristic background with flowing horizontal ribbon waves, layered luminous bands, soft neon green and cyan gradients, smooth organic curves, subtle motion blur, glossy depth, dark high-contrast backdrop, dynamic light streaks, modern tech aesthetic, clean geometric rhythm, cinematic glow, ultra-detailed digital art, premium UI background, 3D render.": [
-        "Abstraktní futuristické pozadí s plynulými horizontálními vlnami stuh, vrstvenými svítícími pásy, jemnými neonově zelenými a azurovými přechody, hladkými organickými křivkami, jemným rozmazáním pohybu, lesklou hloubkou, tmavým vysoce kontrastním pozadím, dynamickými světelnými šmouhami, moderní technologickou estetikou, čistým geometrickým rytmem, filmovou září, ultradetailním digitálním uměním, prémiovým pozadím uživatelského rozhraní, 3D render."
-      ],
-      "Abstract glass background design, translucent glass morphism style, smooth flowing shapes and layered glass panels, soft refraction and light dispersion, purple and deep violet dominant color palette, blended with rich blue tones and subtle accents of warm yellow light, cinematic lighting, ultra soft gradients, glossy and frosted glass textures, depth and blur effects, minimal but premium aesthetic, high resolution, 3D rendered, modern tech UI background, elegant and futuristic atmosphere": [
-        "Design abstraktního skleněného pozadí, styl průsvitného skla (glassmorphism), plynulé splývavé tvary a vrstvené skleněné panely, jemný lom a rozptyl světla, dominantní paleta purpurové a tmavě fialové barvy, mísená s bohatými modrými tóny a jemnými akcenty hřejivého žlutého světla, filmové osvětlení, ultra jemné přechody, lesklé a matné skleněné textury, efekty hloubky a rozostření, minimalistická, ale prémiová estetika, vysoké rozlišení, 3D render, pozadí moderního technologického rozhraní, elegantní a futuristická atmosféra"
-      ],
-      "Abstract minimalist background, soft light purple and pastel yellow color palette, smooth gradient transitions, flowing organic shapes, subtle glow, airy and modern aesthetic, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
-        "Abstraktní minimalistické pozadí, paleta jemných světle fialových a pastelově žlutých barev, hladké přechody, plynulé organické tvary, jemná záře, vzdušná a moderní estetika, čistá kompozice, jemné světelné efekty, špičkový design, jemná hloubka, elegantní snová atmosféra, ultra vysoké rozlišení."
-      ],
-      "Aerial photograph of rolling agricultural hills forming smooth, wave-like patterns across a vast landscape. The fields are divided into soft gradients of green and golden yellow, suggesting different crops or stages of growth. Long, curved tractor tracks trace elegant lines through the terrain, emphasizing the rhythm and geometry of the land. Warm sunlight casts gentle shadows across the contours, enhancing depth and texture. Minimalist composition, highly detailed natural patterns, serene and atmospheric, captured in a cinematic landscape photography style with soft contrast and rich natural color tones.": [
-        "Letecká fotografie zvlněných zemědělských kopců tvořících hladké, vlnovité vzory v širé krajině. Pole jsou rozdělena do jemných přechodů zelené a zlatavě žluté barvy, což naznačuje různé plodiny nebo fáze růstu. Dlouhé, zakřivené koleje od traktoru vykreslují v terénu elegantní linie a zdůrazňují rytmus a geometrii krajiny. Teplé sluneční světlo vrhá jemné stíny na obrysy, což zvýrazňuje hloubku a texturu. Minimalistická kompozice, vysoce detailní přírodní vzory, klidná a atmosférická, zachycená ve stylu kinematografické krajinářské fotografie s jemným kontrastem a sytými přírodními barevnými tóny."
-      ],
-      "Back view silhouette of a woman with hair tied up typing on a laptop. Dark purple screen, clean light purple background, high-contrast studio lighting, minimalist tech mockup style.": [
-        "Silueta ženy s vyčesanými vlasy zezadu, jak píše na notebooku. Tmavě fialová obrazovka, čisté světle fialové pozadí, vysoce kontrastní studiové osvětlení, minimalistický styl technologického mockupu."
-      ],
-      "Close-up texture of polished cross-section tree trunk, intricate swirling growth rings, detailed cracks and wood grain, warm brown and amber tones, natural organic pattern, high resolution.": [
-        "Detailní textura leštěného příčného řezu kmenem stromu, složité vířící letokruhy, detailní praskliny a kresba dřeva, teplé hnědé a jantarové tóny, přirozený organický vzor, vysoké rozlišení."
-      ],
-      "Ethereal portrait of a person wearing a sleek dark VR headset, body dissolving into a glowing cyan-teal haze. Centered composition, uniform saturated teal-blue gradient background, backlit silhouette with luminous rim lighting on the headset and fingertips. One hand loosely clenched, the other reaching forward palm-out. Futuristic sci-fi atmosphere, minimalist and dreamlike, digital art style, shallow depth of field.": [
-        "Éterický portrét člověka s elegantním tmavým VR headsetem, jehož tělo se rozpouští v zářivém azurově tyrkysovém oparu. Vycentrovaná kompozice, jednotné syté tyrkysově modré přechodové pozadí, podsvícená silueta s luminiscenčním obrysovým osvětlením na headsetu a konečcích prstů. Jedna ruka volně sevřená v pěst, druhá natažená dopředu dlaní ven. Futuristická sci-fi atmosféra, minimalistický a snový styl digitálního umění, nízká hloubka ostrosti."
-      ],
-      "Futuristic abstract background, neon green and blue gradient, smooth organic shapes, subtle glow, ethereal atmosphere, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
-        "Futuristické abstraktní pozadí, neonově zelený a modrý přechod, hladké organické tvary, jemná záře, éterická atmosféra, čistá kompozice, jemné světelné efekty, špičkový design, měkká hloubka, elegantní a snová atmosféra, mimořádně vysoké rozlišení."
-      ],
-      "Heavily blurred, out of focus surreal profile portrait. Vibrant neon gradient with bright orange, hot pink, and deep electric blue. High contrast, heavy film grain, minimalist abstract aesthetic.": [
-        "Silně rozmazaný, neostrý surrealistický profilový portrét. Zářivý neonový přechod s jasně oranžovou, žhavě růžovou a hlubokou elektrickou modří. Vysoký kontrast, výrazná filmová zrnitost, minimalistická abstraktní estetika."
-      ],
-      "Hyper-realistic voluminous fluffy white clouds, dense and soft textures, minimalist pale blue gradient sky, soft cinematic lighting, clean aesthetic, ethereal and peaceful mood, studio 3D render style, 8k resolution": [
-        "Hyperrealistické objemné nadýchané bílé mraky, husté a jemné textury, minimalistické bledě modré gradientní nebe, měkké kinematografické osvětlení, čistá estetika, éterická a klidná nálada, styl studiového 3D renderu, rozlišení 8k"
-      ],
-      "Minimalist Asian ink wash painting style. A winding white path trails along a mountain ridge covered in deep blue and indigo trees, fading into a heavy white fog. A vibrant, textured solid red sun hangs in the upper right. Surreal, serene, and high-contrast composition.": [
-        "Minimalistický styl asijské tušové malby. Klikatá bílá cesta se táhne podél horského hřebene pokrytého tmavě modrými a indigovými stromy a ztrácí se v husté bílé mlze. V pravém horním rohu visí zářivé, texturované, jednolité červené slunce. Surrealistická, klidná a vysoce kontrastní kompozice."
-      ],
-      "Minimalist op-art graphic of the number \"5\" formed by a distorted halftone grid blurred. Black dots varying in size create a 3D bulging illusion on a vibrant solid yellow background. Clean vector aesthetic, high contrast, mathematical pattern distortion.": [
-        "Minimalistická op-artová grafika čísla „5“ tvořená zkreslenou a rozmazanou polotónovou mřížkou. Černé tečky různé velikosti vytvářejí iluzi 3D vyboulení na zářivém, sytě žlutém pozadí. Čistá vektorová estetika, vysoký kontrast, matematické zkreslení vzoru."
-      ],
-      "Modern two-story minimalist white villa with rounded edges, large sliding glass doors, and a swimming pool. Minimalist patio furniture, mediterranean vibe, architectural photography style, bright sunny day.": [
-        "Moderní dvoupodlažní minimalistická bílá vila se zaoblenými hranami, velkými posuvnými skleněnými dveřmi a bazénem. Minimalistický nábytek na terase, středomořská atmosféra, styl architektonické fotografie, jasný slunečný den."
-      ],
-      "Photorealistic white T-shirt mockup hanging on a wall inside a modern boutique clothing store, blank white premium cotton T-shirt displayed neatly on a wooden hanger, mounted against a soft pastel-colored wall (light beige, blush pink, or sage green), stylish retail interior in the background with clothing racks and shelves softly blurred, natural daylight mixed with warm ambient store lighting, realistic fabric texture and folds, clean minimal aesthetic, high-end fashion merchandising, shallow depth of field, centered composition, commercial apparel mockup, blank T-shirt ready for custom design placement, ultra-realistic, high resolution, 8k.": [
-        "Fotorealistický model bílého trička visícího na stěně uvnitř moderního butiku s oblečením, čisté bílé tričko z prémiové bavlny úhledně vystavené na dřevěném ramínku, zavěšené na jemné pastelové stěně (světle béžová, pudrově růžová nebo šalvějově zelená), stylový interiér prodejny v pozadí s jemně rozostřenými věšáky na oblečení a policemi, přirozené denní světlo smíchané s teplým okolním osvětlením obchodu, realistická textura látky a záhyby, čistá minimalistická estetika, špičkový módní merchandising, malá hloubka ostrosti, vycentrovaná kompozice, komerční model oblečení, prázdné tričko připravené pro umístění vlastního designu, ultrarealistické, vysoké rozlišení, 8k."
-      ],
-      "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
-        "Surová rychlost zachycená v jediném snímku – vůz F1 řítící se po asfaltu s pohybovým rozostřením, které rozmazává vše za ním, jiskry odlétající od povrchu a carbonová vlákna zachycující světlo z působivého nízkého úhlu přímo u asfaltu."
-      ],
-      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "Slovo „FLUORISH“ tvořené výhradně svěží zelenou trávou a přírodní vegetací, každé písmeno vytvořené z hustých čerstvých stébel trávy, realistická organická textura, zářivé zelené tóny, propracované botanické detaily, fotorealistická přírodní typografie, jemné přirozené sluneční světlo, jemné stíny, vysoce detailní ekologický design, izolované na čistém pozadí, prémiové 3D písmo, ultrarealistické, 8k, ostré zaostření, profesionální reklamní kvalita."
-      ],
-      "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
-        "Minimalistický letecký pohled shora na dlouhé oranžové surfové prkno plovoucí na průzračné modré vodě. Voda má vlnící se, zakřivené obrysy vln a jasné, třpytivé světelné vzory kaustiky. Přímo pod prknem se vykresluje jemný stín, což vytváří čistou, klidnou a moderní estetiku."
-      ]
-    },
     "collider_2025:Label": {
       "16:9": [
         "16:9"
@@ -4001,9 +3894,6 @@
       ],
       "Image preview": [
         "Náhled obrázku"
-      ],
-      "Inspiration image": [
-        "Inspirativní obrázek"
       ],
       "Instructions": [
         "Pokyny"
@@ -4091,9 +3981,6 @@
       ],
       "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Popište roli, rozsah a chování, které chcete, aby ${ LUMO_SHORT_APP_NAME } přijala."
-      ],
-      "Describe your image...": [
-        "Popište svůj obrázek..."
       ],
       "Draw and/or describe what to change, \"remove the items\", etc.": [
         "Nakreslete a/nebo popište, co chcete změnit, např. „odebrat položky“ atd."
@@ -4488,14 +4375,6 @@
         "Složka úspěšně vytvořena"
       ]
     },
-    "collider_2025:Tab": {
-      "Create": [
-        "Vytvořit"
-      ],
-      "Gallery": [
-        "Galerie"
-      ]
-    },
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "Aplikaci ${ LUMO_SHORT_APP_NAME } nelze spustit"
@@ -4553,9 +4432,6 @@
       ],
       "Every clarification is a new data point": [
         "Každé upřesnění je novým datovým bodem"
-      ],
-      "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
-        "Prozkoumejte obrázky vytvořené v ${ LUMO_SHORT_APP_NAME }"
       ],
       "Export & delete regularly": [
         "Pravidelně exportovat a mazat"
@@ -4680,9 +4556,6 @@
       "Share less with AI": [
         "Sdílejte méně s AI"
       ],
-      "Sign in to build your gallery": [
-        "Přihlaste se a vytvořte si svou galerii"
-      ],
       "Sign in to create projects": [
         "Pro vytváření projektů se přihlaste"
       ],
@@ -4728,9 +4601,6 @@
       "What Big Tech inferred": [
         "Co o vás vyvodily velké technologické firmy"
       ],
-      "What do you want to create today?": [
-        "Co chcete vytvořit dnes?"
-      ],
       "What this profile exposes": [
         "Co tento profil odhaluje"
       ],
@@ -4745,9 +4615,6 @@
       ],
       "You saw the profile?": [
         "Viděli jste ten profil?"
-      ],
-      "Your image gallery is empty": [
-        "Vaše galerie obrázků je prázdná"
       ],
       "Your shareable card": [
         "Vaše karta ke sdílení"

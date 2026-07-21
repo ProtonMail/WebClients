@@ -72,9 +72,6 @@
       "Add domain": [
         "Rnu taɣult"
       ],
-      "Add email address": [
-        "Rnu tansa n yimayl"
-      ],
       "Add filter": [
         "Rnu astay"
       ],
@@ -89,9 +86,6 @@
       ],
       "Add PayPal": [
         "Rnu PayPal"
-      ],
-      "Add phone number": [
-        "Rnu uṭṭun n usawal"
       ],
       "Add public holidays": [
         "Rnu ismiras izayazen"
@@ -437,9 +431,6 @@
       ],
       "Generate password": [
         "Sirew awal uffir"
-      ],
-      "Generate recovery phrase": [
-        "Sirrew tafyirt n tririt"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Awi ${ planName } i ${ priceCoupon }"
@@ -4805,9 +4796,6 @@
       "Gateways": [
         "Tinezgarin"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Asirew n tefyirt n tririt tamaynut ad tsens tafyirt-ik·im taqburt."
-      ],
       "Got it": [
         "Gziɣ-t"
       ],
@@ -5147,9 +5135,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Tafyirt n tririt tettwanɣel ɣer tecfawit"
-      ],
-      "Recovery phrase downloaded": [
-        "Tafyirt n tririt tettwasader-d"
       ],
       "Recovery phrase has been disabled": [
         "Tafyirt n tririt tettwasens"
@@ -5557,9 +5542,6 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tangalt n tmurt"
-      ],
-      "Your recovery phrase": [
-        "Tafyirt-ik·im n tririt"
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
         "Abun-inek·inem i tansa n yimayl ${ BRAND_NAME } yettwaḥerzen: ${ reservedEmail }"
@@ -6718,9 +6700,6 @@
     "label": {
       "Recovery phone number": [
         "Uṭṭun n usawal n tririt"
-      ],
-      "Recovery phrase": [
-        "Tafyirt n tririt"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -6876,17 +6855,11 @@
       "How to pay with Bitcoin?": [
         "Amek ara txellseḍ s Bitcoin?"
       ],
-      "How to unlock data": [
-        "Amek ara tekkseḍ asekkeṛ i yisefka"
-      ],
       "Import/export": [
         "Kter/sifeḍ"
       ],
       "Learn more": [
         "Issin ugar"
-      ],
-      "Learn more about data recovery": [
-        "Issin ugar ɣef tririt n yisefka"
       ],
       "Not activated": [
         "Ur yermid ara"
@@ -8605,38 +8578,11 @@
       ]
     },
     "Safety review": {
-      "Add a recovery email address": [
-        "Rnu tansa imayl n tririt"
-      ],
-      "Add a recovery phone number": [
-        "Leqqem uṭṭun n tilifun n tririt"
-      ],
       "Code sent to ${ boldValue }": [
         "Tangalt tettwazen ɣer ${ boldValue }"
       ],
-      "Download ${ size }": [
-        "Sader ${ size }"
-      ],
-      "Email address": [
-        "Tansa n yimayl"
-      ],
       "Invalid code": [
         "Yir tangalt"
-      ],
-      "Recovery email address": [
-        "Tansa imayl n tririt"
-      ],
-      "Recovery phone number": [
-        "Uṭṭun n usawal n tririt"
-      ],
-      "Show more": [
-        "Sken-d ugar"
-      ],
-      "Verify": [
-        "Senqed"
-      ],
-      "Your recovery email address is:": [
-        "Tansa-k·m n yimayl n tririt d:"
       ]
     },
     "saml: Action": {
@@ -9947,9 +9893,6 @@
       "Dashboard": [
         "Tafelwit n usenqed"
       ],
-      "Data locked": [
-        "Isefka sekkeṛen"
-      ],
       "Data recovery": [
         "Tiririt n yisefka"
       ],
@@ -10121,9 +10064,6 @@
       ],
       "Generate missing keys": [
         "Sirew tisura ixuṣṣen"
-      ],
-      "Generate new recovery phrase?": [
-        "Ad tsirreweḍ tafyirt n tririt tamaynutt?"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Awi-d ${ vpnPlus } akken ad tkecmeḍ akk iqeddacen"
@@ -10799,15 +10739,6 @@
     "Users table: badge": {
       "Inactive": [
         "Ur iteddu yara"
-      ],
-      "Invite sent": [
-        "Tinubga tettwazen akken iwata"
-      ],
-      "Private": [
-        "Amaẓlay"
-      ],
-      "SSO": [
-        "SSO"
       ]
     },
     "Validation": {

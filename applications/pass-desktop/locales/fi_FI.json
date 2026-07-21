@@ -577,12 +577,6 @@
       "Regenerate": [
         "Luo uusi"
       ],
-      "Regex invalid": [
-        "Lauseke on virheellinen"
-      ],
-      "Regex unsafe": [
-        "Lauseke ei ole turvallinen"
-      ],
       "Reject": [
         "Kieltäydy"
       ],
@@ -1326,6 +1320,12 @@
       "PIN codes do not match": [
         "PIN-koodit eivät täsmää"
       ],
+      "Regex invalid": [
+        "Lauseke on virheellinen"
+      ],
+      "Regex unsafe": [
+        "Lauseke ei ole turvallinen"
+      ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
       ],
@@ -2054,6 +2054,9 @@
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "Jos et aio käyttää SSH-agenttia toisella maksullisella tilillä, muista poistaa tämä asetus käytöstä ennen siirtymistä kyseiselle tilille."
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Jos allekirjoitat Git-kommitit SSH-avaimellasi, suorita myös tämä komento:"
+      ],
       "Import the CSV file below.": [
         "Tuo CSV-tiedosto alta."
       ],
@@ -2195,8 +2198,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2673,6 +2675,9 @@
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Voit pitää henkilökohtaisen sähköpostiosoitteesi piilossa luomalla aliasyhteystiedon, joka naamioi sen."
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Jotta Git toimisi ${ PASS_APP_NAME } SSH-agentin kanssa, Gitin on käytettävä Windows OpenSSH:ta. Tämä voidaan tehdä suorittamalla seuraava komento:"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Tuo tietosi muista salasanahallinnoista lataamalla käyttämästäsi palvelusta viemäsi tiedosto ${ PASS_APP_NAME }iin. Kun tietosi on tuotu, poista vientitiedosto."

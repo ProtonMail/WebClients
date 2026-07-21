@@ -1702,6 +1702,9 @@
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
       ],
+      "Get 50% offer": [
+        "%50 indirimden yararlanın"
+      ],
       "Maybe later": [
         "Belki sonra"
       ],
@@ -5434,6 +5437,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Bir VPN, aygıtınız ile internet arasında güvenli bir tüneldir. Konumunuzu ve etkinliklerinizi İnternet hizmeti sağlayıcınızdan (İSS) ve ziyaret ettiğiniz sitelerden gizler."
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "145 ülkede 20.000 üzerinde sunucuya erişim"
+      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
@@ -5816,6 +5822,9 @@
       "Failed to update meeting waiting room status": [
         "Görüşme bekleme odasının durumu güncellenemedi"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "10 Gb/sn olabilen en yüksek VPN hızı"
+      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
@@ -5846,6 +5855,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
       ],
+      "Have some more time to decide without interruption.": [
+        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
+      ],
       "here": [
         "buraya"
       ],
@@ -5866,6 +5878,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
@@ -6202,6 +6217,9 @@
       "Powered by ${ protonButton }": [
         "${ protonButton } tarafından sunuluyor"
       ],
+      "Premium privacy protection across all your devices": [
+        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
+      ],
       "Previous modifications on this series will be lost.": [
         "Bu dizide daha önce yapılmış değişiklikler kaybolacak."
       ],
@@ -6301,6 +6319,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Aşağıdaki VPN ayarlarını etkinleştirerek kolayca bağlı kalın:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
@@ -7118,6 +7139,12 @@
       "City": [
         "İl"
       ],
+      "Client": [
+        "İstemci"
+      ],
+      "Client version": [
+        "İstemci sürümü"
+      ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
@@ -7239,10 +7266,10 @@
         "Her"
       ],
       "Exact host matching": [
-        "Tam ana bilgisayar eşleşmesi"
+        "Tam sunucu eşleşmesi"
       ],
       "Exact URL matching": [
-        "Tam URL eşleşmesi"
+        "Tam adres eşleşmesi"
       ],
       "Expires": [
         "Geçerlilik süresi sonu"
@@ -7359,7 +7386,7 @@
         "Gezinme"
       ],
       "Never fill on this exact URL": [
-        "Bu URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "New password": [
         "Yeni parola"
@@ -7453,7 +7480,7 @@
         "Bölge"
       ],
       "Regular expression": [
-        "Düzenli ifade"
+        "Kurallı ifade"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } görüntülü görüşmesini kaldır"
@@ -7495,7 +7522,7 @@
         "Başlangıç tarihi"
       ],
       "Starts with": [
-        "Şununla başlar"
+        "Şununla başlayan"
       ],
       "State": [
         "İl"
@@ -7546,7 +7573,7 @@
         "İnternet adresi"
       ],
       "URL wildcard pattern": [
-        "URL genel arama karakteri deseni"
+        "Adres genel arama karakteri modeli"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -7980,22 +8007,22 @@
         "Tam (alt) etki alanı eşleştirme kuralı"
       ],
       "Exact URL matching rule": [
-        "Tam URL eşleştirme kuralı"
+        "Tam adres eşleştirme kuralı"
       ],
       "Fw:": [
         "İlt:"
       ],
       "Never fill with this exact URL": [
-        "Bu tam URL'yi asla doldurma"
+        "Bu tam adres asla doldurulmasın"
       ],
       "Re:": [
         "Ynt:"
       ],
       "Regular expression rule": [
-        "Düzenli ifade kuralı"
+        "Kurallı ifade kuralı"
       ],
       "Wildcard pattern matching rule": [
-        "genel arama karakter deseni eşleştirme kuralı"
+        "Genel arama karakter modeli eşleştirme kuralı"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ücretsiz deneme süreniz sona erdi. ${ nonAutoRenewalAction }"
@@ -12637,6 +12664,9 @@
       "Start import process": [
         "İçe aktarma işlemini başlatın"
       ],
+      "Stay for 50% off your next month": [
+        "Sonraki ay %50 indirimden yararlanın"
+      ],
       "Subscription canceled": [
         "Abonelik iptal edildi"
       ],
@@ -13065,7 +13095,7 @@
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
+        "${ modeLabelStong } güçlü bir denetim sağlar, ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı siteler ile eşleşmesine ve bu verilerin doldurulmasına neden olabilir."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",

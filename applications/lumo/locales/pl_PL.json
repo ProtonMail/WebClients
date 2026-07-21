@@ -2230,9 +2230,6 @@
       "You've reached your image limit for this period.": [
         "Osiągnięto limit obrazów dla tego okresu."
       ],
-      "You've reached your image limit for this period. Upgrade to keep creating images.": [
-        "Osiągnąłeś swój limit obrazów w tym okresie. Ulepsz plan, aby dalej tworzyć obrazy."
-      ],
       "You've run out of weekly chats, please ": [
         "Wykorzystałeś(-aś) limit czatów co tydzień, prosimy "
       ],
@@ -3198,14 +3195,8 @@
       "Download": [
         "Pobierz"
       ],
-      "Download image": [
-        "Pobierz obraz"
-      ],
       "Edit agent": [
         "Edytuj agenta"
-      ],
-      "Edit image": [
-        "Edytuj obraz"
       ],
       "Edit instructions": [
         "Edytuj instrukcje"
@@ -3421,26 +3412,17 @@
       "Link with ${ DRIVE_APP_NAME } folder": [
         "Połącz z folderem ${ DRIVE_APP_NAME }"
       ],
-      "Load more": [
-        "Załaduj więcej"
-      ],
       "New chat": [
         "Nowy czat"
       ],
       "New project": [
         "Nowy projekt"
       ],
-      "Projects": [
-        "Projekty"
-      ],
       "Save": [
         "Zapisz"
       ],
       "Search": [
         "Szukaj"
-      ],
-      "See all": [
-        "Zobacz wszystkie"
       ],
       "Send": [
         "Wyślij"
@@ -3471,9 +3453,6 @@
       "Failed to create folder": [
         "Nie udało się utworzyć folderu"
       ],
-      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
-        "Nie udało się pobrać \"${ file.name }\": weryfikacja spójności danych nie powiodła się. Spróbuj ponownie."
-      ],
       "Failed to index Drive folder for search": [
         "Nie udało się zaindeksować folderu na Dysku do wyszukiwania"
       ],
@@ -3483,9 +3462,6 @@
       "Failed to load image": [
         "Nie udało się załadować obrazu"
       ],
-      "Failed to load images. Please try again.": [
-        "Nie udało się załadować obrazów. Spróbuj ponownie."
-      ],
       "Failed to process file: ${ file.name }": [
         "Nie udało się przetworzyć pliku: ${ file.name }"
       ],
@@ -3494,12 +3470,6 @@
       ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Plik „${ file.name }” (${ fileSizeFormatted }) przekracza limit ${ maxSizeFormatted }. Połącz folder z ${ DRIVE_APP_NAME }, aby przesyłać większe pliki."
-      ],
-      "File download failed due to integrity check. Please try again.": [
-        "Pobieranie pliku nie powiodło się z powodu błędu weryfikacji spójności. Spróbuj ponownie."
-      ],
-      "File format not supported: ${ file.name }": [
-        "Nieobsługiwany format pliku: ${ file.name }"
       ],
       "File type not supported: ${ file.name }": [
         "Nieobsługiwany typ pliku: ${ file.name }"
@@ -3650,9 +3620,6 @@
       "Cookies or website data are blocked in your browser settings": [
         "Pliki cookies lub dane stron internetowych są zablokowane w ustawieniach Twojej przeglądarki"
       ],
-      "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
-        "Twórz obrazy, zastosuj style i szkicuj pomysły. Zaloguj się lub utwórz darmowe konto, aby zapisywać swoje prace."
-      ],
       "Create purpose-built assistants with their own instructions. Set them up once, and they’ll follow your preferences every time.": [
         "Twórz specjalistycznych asystentów z własnymi instrukcjami. Skonfiguruj ich raz, a będą zawsze postępować zgodnie z Twoimi ustawieniami."
       ],
@@ -3733,9 +3700,6 @@
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Ta karta nie zawiera danych osobowych — jedynie Twój wskaźnik ujawnienia informacji według obszaru. Niższa wartość oznacza, że udostępniasz mniej."
-      ],
-      "No projects yet": [
-        "Brak projektów"
       ],
       "Now protect the person behind it.": [
         "Teraz chroń osobę, która za tym stoi."
@@ -3867,77 +3831,6 @@
         "Twoje informacje są zaszyfrowane metodą zero-access"
       ]
     },
-    "collider_2025:Inspiration suggestion prompt": {
-      "3D animated character in a high-quality family film style, expressive face, large emotional eyes, soft subsurface skin, stylized proportions, vibrant colors, detailed hair and clothing, cinematic lighting, shallow depth of field, friendly and charming personality, ultra polished render, studio-quality animation still.": [
-        "Trójwymiarowa animowana postać w stylu wysokiej jakości filmu familijnego, ekspresyjna twarz, duże, pełne emocji oczy, gładka skóra o miękkim rozproszeniu podpowierzchniowym, stylizowane proporcje, żywe kolory, szczegółowo przedstawione włosy i ubranie, filmowe oświetlenie, płytka głębia ostrości, przyjazna i urocza osobowość, niezwykle dopracowany render, kadr z animacji o jakości studyjnej."
-      ],
-      "A dreamy close-up of flowers swept into soft radial trails by rotating camera motion, where the center blooms in crisp detail while petals dissolve outward into creamy bokeh under gentle natural light.": [
-        "Marzycielskie zbliżenie kwiatów ułożonych w łagodne, promieniste smugi przez obrotowy ruch kamery, gdzie środek rozkwita z wyraźnymi szczegółami, podczas gdy płatki rozchodzą się na zewnątrz w kremowe bokeh pod wpływem delikatnego, naturalnego światła."
-      ],
-      "A striking monochromatic study in yellow — just a fragment of contemporary architecture emerging from its equally golden surroundings, with tonal shifts alone carving out the geometric surfaces and lending the scene its quiet sense of depth and form.": [
-        "Uderzające monochromatyczne studium w żółci — zaledwie fragment współczesnej architektury wyłaniający się z równie złotego otoczenia, gdzie same przesunięcia tonalne rzeźbią geometryczne powierzchnie i nadają scenie cichą głębię oraz formę."
-      ],
-      "A warm and cozy Japandi-style living room, minimalist aesthetic, cream sectional sofa, neutral and mustard throw pillows, woven pouf, large textured area rug with fringe, minimalist botanical wall art, large indoor palm plant, soft ambient golden lighting, candles, serene and peaceful atmosphere, photorealistic, interior design photography.": [
-        "Ciepły i przytulny salon w stylu japandi, minimalistyczna estetyka, kremowa sofa narożna, neutralne i musztardowe poduszki dekoracyjne, pleciona pufa, duży dywan z teksturą i frędzlami, minimalistyczna botaniczna sztuka ścienna, duża palma pokojowa, miękkie nastrojowe złote oświetlenie, świece, spokojna i pełna harmonii atmosfera, fotorealistyczny, fotografia wnętrz."
-      ],
-      "Abstract composition of translucent glass shapes floating in space, soft refraction and reflection, smooth curved forms, frosted and clear glass mix, pastel lighting with subtle purple and blue tones, minimalist design, premium modern aesthetic, soft shadows, ultra clean background, high resolution, 3D render style.": [
-        "Abstrakcyjna kompozycja półprzezroczystych szklanych kształtów unoszących się w przestrzeni, miękkie załamanie i odbicie światła, gładkie zakrzywione formy, mieszanka matowego i przezroczystego szkła, pastelowe oświetlenie z subtelnymi fioletowymi i niebieskimi tonami, minimalistyczny design, nowoczesna estetyka premium, miękkie cienie, wyjątkowo czyste tło, wysoka rozdzielczość, styl renderowania 3D."
-      ],
-      "Abstract frozen ice background in soft pastel lavender and light purple tones, translucent crystalline ice textures, subtle frost patterns, glowing icy surface, smooth gradients, sparkling frozen details, ethereal winter atmosphere, clean and minimal design, soft lighting, elegant luxury aesthetic, high resolution, dreamy frozen landscape, delicate reflections, ultra-detailed, background only, no objects, no text.": [
-        "Abstrakcyjne tło z zamarzniętym lodem w delikatnych odcieniach pastelowej lawendy i jasnego fioletu, półprzezroczyste kryształowe tekstury lodu, subtelne wzory szronu, świecąca lodowa powierzchnia, płynne przejścia tonalne, mieniące się zamarznięte szczegóły, eteryczna zimowa atmosfera, czysty i minimalistyczny design, miękkie oświetlenie, elegancka, luksusowa estetyka, wysoka rozdzielczość, marzycielski zamarznięty krajobraz, delikatne refleksy, niezwykle szczegółowe, tylko tło, bez obiektów, bez tekstu."
-      ],
-      "Abstract futuristic background with flowing horizontal ribbon waves, layered luminous bands, soft neon green and cyan gradients, smooth organic curves, subtle motion blur, glossy depth, dark high-contrast backdrop, dynamic light streaks, modern tech aesthetic, clean geometric rhythm, cinematic glow, ultra-detailed digital art, premium UI background, 3D render.": [
-        "Abstrakcyjne futurystyczne tło z płynącymi poziomymi falami wstęg, warstwowymi świetlistymi pasmami, łagodnymi neonowymi zielonymi i cyjanowymi gradientami, gładkimi organicznymi krzywiznami, subtelnym rozmyciem ruchu, błyszczącą głębią, ciemnym tłem o wysokim kontraście, dynamicznymi smugami światła, nowoczesną estetyką technologiczną, czystym geometrycznym rytmem, kinowym blaskiem, niezwykle szczegółową grafiką cyfrową, tłem interfejsu użytkownika klasy premium, renderem 3D."
-      ],
-      "Abstract glass background design, translucent glass morphism style, smooth flowing shapes and layered glass panels, soft refraction and light dispersion, purple and deep violet dominant color palette, blended with rich blue tones and subtle accents of warm yellow light, cinematic lighting, ultra soft gradients, glossy and frosted glass textures, depth and blur effects, minimal but premium aesthetic, high resolution, 3D rendered, modern tech UI background, elegant and futuristic atmosphere": [
-        "Abstrakcyjne szklane tło, styl półprzezroczystego glassmorphismu, płynne kształty i warstwowe szklane panele, miękkie załamanie i rozproszenie światła, dominująca paleta barw purpury i głębokiego fioletu połączona z bogatymi odcieniami błękitu i subtelnymi akcentami ciepłego żółtego światła, filmowe oświetlenie, wyjątkowo miękkie gradienty, błyszczące i matowe tekstury szkła, efekty głębi i rozmycia, minimalistyczna, ale ekskluzywna estetyka premium, wysoka rozdzielczość, renderowanie 3D, nowoczesne tło interfejsu technologicznego, elegancka i futurystyczna atmosfera"
-      ],
-      "Abstract minimalist background, soft light purple and pastel yellow color palette, smooth gradient transitions, flowing organic shapes, subtle glow, airy and modern aesthetic, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
-        "Abstrakcyjne minimalistyczne tło, paleta barw w odcieniach delikatnego jasnego fioletu i pastelowej żółci, płynne przejścia tonalne, opływowe organiczne kształty, subtelna poświata, lekka i nowoczesna estetyka, czysta kompozycja, delikatne efekty świetlne, luksusowy design, subtelna głębia, elegancka i marzycielska atmosfera, ultrawysoka rozdzielczość."
-      ],
-      "Aerial photograph of rolling agricultural hills forming smooth, wave-like patterns across a vast landscape. The fields are divided into soft gradients of green and golden yellow, suggesting different crops or stages of growth. Long, curved tractor tracks trace elegant lines through the terrain, emphasizing the rhythm and geometry of the land. Warm sunlight casts gentle shadows across the contours, enhancing depth and texture. Minimalist composition, highly detailed natural patterns, serene and atmospheric, captured in a cinematic landscape photography style with soft contrast and rich natural color tones.": [
-        "Zdjęcie lotnicze pofałdowanych wzgórz rolniczych, tworzących gładkie, faliste wzory na rozległym krajobrazie. Pola są podzielone na łagodne przejścia tonalne zieleni i złocistej żółci, co sugeruje różne uprawy lub etapy wzrostu. Długie, zakrzywione ślady traktorów wyznaczają eleganckie linie w terenie, podkreślając rytm i geometrię krajobrazu. Ciepłe światło słoneczne rzuca łagodne cienie na kontury, podkreślając głębię i teksturę. Minimalistyczna kompozycja, wysoce szczegółowe naturalne wzory, spokojna i nastrojowa atmosfera, uchwycona w kinowym stylu fotografii krajobrazowej z miękkim kontrastem i bogatą gamą naturalnych barw."
-      ],
-      "Back view silhouette of a woman with hair tied up typing on a laptop. Dark purple screen, clean light purple background, high-contrast studio lighting, minimalist tech mockup style.": [
-        "Sylwetka kobiety z upiętymi włosami, piszącej na laptopie, widziana z tyłu. Ciemnofioletowy ekran, czyste jasnofioletowe tło, kontrastowe oświetlenie studyjne, minimalistyczny styl makiety technologicznej."
-      ],
-      "Close-up texture of polished cross-section tree trunk, intricate swirling growth rings, detailed cracks and wood grain, warm brown and amber tones, natural organic pattern, high resolution.": [
-        "Zbliżenie na teksturę wypolerowanego przekroju pnia drzewa, skomplikowane, kręte słoje roczne, szczegółowe pęknięcia i usłojenie drewna, ciepłe brązowe i bursztynowe tony, naturalny organiczny wzór, wysoka rozdzielczość."
-      ],
-      "Ethereal portrait of a person wearing a sleek dark VR headset, body dissolving into a glowing cyan-teal haze. Centered composition, uniform saturated teal-blue gradient background, backlit silhouette with luminous rim lighting on the headset and fingertips. One hand loosely clenched, the other reaching forward palm-out. Futuristic sci-fi atmosphere, minimalist and dreamlike, digital art style, shallow depth of field.": [
-        "Eteryczny portret osoby w eleganckich, ciemnych goglach VR, której ciało rozpływa się w świecącej cyjanowo-turkusowej mgle. Kompozycja wyśrodkowana, jednolite nasycone tło z niebiesko-turkusowym gradientem, podświetlona sylwetka z jasnym podświetleniem krawędziowym na goglach i czubkach palców. Jedna dłoń luźno zaciśnięta, druga wyciągnięta do przodu z otwartą dłonią. Futurystyczna atmosfera sci-fi, minimalistyczna i marzycielska, styl sztuki cyfrowej, płytka głębia ostrości."
-      ],
-      "Futuristic abstract background, neon green and blue gradient, smooth organic shapes, subtle glow, ethereal atmosphere, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
-        "Futurystyczne abstrakcyjne tło, neonowy zielono-niebieski gradient, gładkie organiczne kształty, subtelny blask, eteryczna atmosfera, czysta kompozycja, delikatne efekty świetlne, luksusowy design, łagodna głębia, elegancka i marzycielska atmosfera, ultrawysoka rozdzielczość."
-      ],
-      "Heavily blurred, out of focus surreal profile portrait. Vibrant neon gradient with bright orange, hot pink, and deep electric blue. High contrast, heavy film grain, minimalist abstract aesthetic.": [
-        "Mocno rozmyty, nieostry, surrealistyczny portret profilowy. Jaskrawy neonowy gradient z jasnym pomarańczem, intensywnym różem i głębokim elektryzującym błękitem. Wysoki kontrast, wyraźne ziarno filmowe, minimalistyczna estetyka abstrakcyjna."
-      ],
-      "Hyper-realistic voluminous fluffy white clouds, dense and soft textures, minimalist pale blue gradient sky, soft cinematic lighting, clean aesthetic, ethereal and peaceful mood, studio 3D render style, 8k resolution": [
-        "Hiperrealistyczne, puszyste, białe chmury o dużej objętości, gęste i miękkie tekstury, minimalistyczne niebo z jasnoniebieskim gradientem, miękkie kinowe oświetlenie, czysta estetyka, eteryczny i spokojny nastrój, styl renderowania 3D w studiu, rozdzielczość 8k"
-      ],
-      "Minimalist Asian ink wash painting style. A winding white path trails along a mountain ridge covered in deep blue and indigo trees, fading into a heavy white fog. A vibrant, textured solid red sun hangs in the upper right. Surreal, serene, and high-contrast composition.": [
-        "Minimalistyczny azjatycki styl malarstwa tuszem. Kręta biała ścieżka biegnie wzdłuż grzbietu górskiego porośniętego ciemnoniebieskimi i indygowymi drzewami, niknąc w gęstej białej mgle. W prawym górnym rogu wisi jaskrawe, teksturowane, jednolicie czerwone słońce. Surrealistyczna, spokojna i kontrastowa kompozycja."
-      ],
-      "Minimalist op-art graphic of the number \"5\" formed by a distorted halftone grid blurred. Black dots varying in size create a 3D bulging illusion on a vibrant solid yellow background. Clean vector aesthetic, high contrast, mathematical pattern distortion.": [
-        "Minimalistyczna grafika op-art przedstawiająca cyfrę „5” utworzoną przez zniekształconą, rozmytą siatkę półtonów. Czarne kropki o różnych rozmiarach tworzą trójwymiarową iluzję wypukłości na jaskrawym, jednolitym żółtym tle. Czysta estetyka wektorowa, wysoki kontrast, matematyczne zniekształcenie wzoru."
-      ],
-      "Modern two-story minimalist white villa with rounded edges, large sliding glass doors, and a swimming pool. Minimalist patio furniture, mediterranean vibe, architectural photography style, bright sunny day.": [
-        "Nowoczesna, piętrowa, minimalistyczna biała willa z zaokrąglonymi krawędziami, dużymi przesuwnymi szklanymi drzwiami i basenem. Minimalistyczne meble tarasowe, śródziemnomorski klimat, styl fotografii architektonicznej, jasny, słoneczny dzień."
-      ],
-      "Photorealistic white T-shirt mockup hanging on a wall inside a modern boutique clothing store, blank white premium cotton T-shirt displayed neatly on a wooden hanger, mounted against a soft pastel-colored wall (light beige, blush pink, or sage green), stylish retail interior in the background with clothing racks and shelves softly blurred, natural daylight mixed with warm ambient store lighting, realistic fabric texture and folds, clean minimal aesthetic, high-end fashion merchandising, shallow depth of field, centered composition, commercial apparel mockup, blank T-shirt ready for custom design placement, ultra-realistic, high resolution, 8k.": [
-        "Fotorealistyczna makieta białego t-shirtu wiszącego na ścianie wewnątrz nowoczesnego butiku z odzieżą, czysty, biały t-shirt z bawełny premium schludnie zaprezentowany na drewnianym wieszaku, zamontowany na ścianie w pastelowym kolorze (jasny beż, pudrowy róż lub szałwiowa zieleń), stylowe wnętrze sklepu w tle z lekko rozmazanymi wieszakami na ubrania i półkami, naturalne światło dzienne zmieszane z ciepłym, nastrojowym oświetleniem sklepu, realistyczna tekstura i zagniecenia materiału, czysta, minimalistyczna estetyka, ekskluzywny merchandising modowy, płytka głębia ostrości, centralna kompozycja, komercyjna makieta odzieży, czysty t-shirt gotowy na niestandardowe umieszczenie wzoru, ultrarealistyczny, wysoka rozdzielczość, 8k."
-      ],
-      "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
-        "Czysta prędkość uchwycona w pojedynczym kadrze — bolid F1 pędzący po asfalcie z rozmyciem ruchu pozostawiającym smugi za sobą, iskry tryskające spod podwozia i włókno węglowe łapiące światło pod niezwykle niskim kątem, tuż przy samej nawierzchni."
-      ],
-      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "Słowo „FLUORISH” utworzone w całości z bujnej, zielonej trawy i naturalnej roślinności, każda litera stworzona z gęstych, świeżych źdźbeł trawy, realistyczna tekstura organiczna, żywe odcienie zieleni, zawiłe szczegóły botaniczne, fotorealistyczna typografia przyrodnicza, miękkie, naturalne światło słoneczne, subtelne cienie, wysoce szczegółowy ekologiczny projekt, wyizolowany na czystym tle, trójwymiarowe litery premium, ultrarealistyczny, 8k, ostry fokus, profesjonalna jakość reklamowa."
-      ],
-      "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
-        "Minimalistyczne ujęcie z góry przedstawiające długą pomarańczową deskę surfingową unoszącą się na czystej, błękitnej wodzie. Woda ma łagodne, zakrzywione kontury fal i jasne, migoczące wzory kaustyczne. Bezpośrednio pod deską rzucany jest miękki cień, co tworzy czystą, spokojną i nowoczesną estetykę."
-      ]
-    },
     "collider_2025:Label": {
       "16:9": [
         "16:9"
@@ -4001,9 +3894,6 @@
       ],
       "Image preview": [
         "Podgląd obrazu"
-      ],
-      "Inspiration image": [
-        "Obraz inspiracji"
       ],
       "Instructions": [
         "Instrukcje"
@@ -4091,9 +3981,6 @@
       ],
       "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Opisz stanowisko, zakres i zachowanie, jakie ma przyjąć ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Describe your image...": [
-        "Opisz swój obraz..."
       ],
       "Draw and/or describe what to change, \"remove the items\", etc.": [
         "Narysuj i/lub opisz, co zmienić, np. „usuń elementy” itp."
@@ -4488,14 +4375,6 @@
         "Pomyślnie utworzono folder"
       ]
     },
-    "collider_2025:Tab": {
-      "Create": [
-        "Utwórz"
-      ],
-      "Gallery": [
-        "Galeria"
-      ]
-    },
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } nie może się uruchomić"
@@ -4553,9 +4432,6 @@
       ],
       "Every clarification is a new data point": [
         "Każde wyjaśnienie to nowy punkt danych"
-      ],
-      "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
-        "Odkrywaj obrazy utworzone za pomocą ${ LUMO_SHORT_APP_NAME }"
       ],
       "Export & delete regularly": [
         "Regularnie eksportuj i usuwaj"
@@ -4680,9 +4556,6 @@
       "Share less with AI": [
         "Udostępniaj mniej AI"
       ],
-      "Sign in to build your gallery": [
-        "Zaloguj się, aby stworzyć swoją galerię"
-      ],
       "Sign in to create projects": [
         "Zaloguj się, aby tworzyć projekty"
       ],
@@ -4728,9 +4601,6 @@
       "What Big Tech inferred": [
         "Co wywnioskowali giganci technologiczni"
       ],
-      "What do you want to create today?": [
-        "Co chcesz dzisiaj stworzyć?"
-      ],
       "What this profile exposes": [
         "Co ujawnia ten profil"
       ],
@@ -4745,9 +4615,6 @@
       ],
       "You saw the profile?": [
         "Czy widziałeś ten profil?"
-      ],
-      "Your image gallery is empty": [
-        "Twoja galeria obrazów jest pusta"
       ],
       "Your shareable card": [
         "Twoja karta do udostępnienia"

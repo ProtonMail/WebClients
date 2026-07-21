@@ -71,6 +71,9 @@
       "Add address or domain": [
         "Dodaj adres lub domenę"
       ],
+      "Add and verify": [
+        "Dodaj i zweryfikuj"
+      ],
       "Add another account": [
         "Dodaj inne konto"
       ],
@@ -88,6 +91,9 @@
       ],
       "Add PayPal": [
         "Dodaj konto PayPal"
+      ],
+      "Add recovery options": [
+        "Dodaj opcje odzyskiwania"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Dodaj link polecający do podpisu ${ MAIL_APP_NAME }"
@@ -140,6 +146,9 @@
       "Cancel": [
         "Anuluj"
       ],
+      "Cancel request": [
+        "Anuluj żądanie"
+      ],
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
@@ -166,6 +175,9 @@
       ],
       "Check import progress": [
         "Sprawdź postęp importowania"
+      ],
+      "Check now": [
+        "Sprawdź teraz"
       ],
       "Choose a file or drag it here": [
         "Wybierz plik lub przeciągnij go tutaj"
@@ -286,6 +298,9 @@
       ],
       "Create new policy": [
         "Utwórz nową zasadę"
+      ],
+      "Create recovery phrase": [
+        "Utwórz hasło odzyskiwania"
       ],
       "Create users": [
         "Utwórz użytkowników"
@@ -410,6 +425,9 @@
       "Download recovery file": [
         "Pobierz plik odzyskiwania"
       ],
+      "Download updated file": [
+        "Pobierz zaktualizowany plik"
+      ],
       "Edit": [
         "Edytuj"
       ],
@@ -503,14 +521,14 @@
       "Forgot password?": [
         "Nie pamiętasz hasła?"
       ],
+      "Generate new phrase": [
+        "Wygeneruj nowe hasło"
+      ],
       "Generate new recovery phrase": [
         "Generuj nowe hasło odzyskiwania"
       ],
       "Generate password": [
         "Generuj hasło"
-      ],
-      "Generate recovery phrase": [
-        "Generuj hasło odzyskiwania"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Wybierz plan ${ planName } za ${ priceCoupon }"
@@ -608,6 +626,9 @@
       "I don’t have my backup codes": [
         "Nie mam swoich kodów zapasowych"
       ],
+      "Ignore": [
+        "Ignoruj"
+      ],
       "Import": [
         "Importuj"
       ],
@@ -625,6 +646,9 @@
       ],
       "Invite user": [
         "Zaproś użytkownika"
+      ],
+      "Keep": [
+        "Zachowaj"
       ],
       "Keep current plan": [
         "Zachowaj obecny plan"
@@ -739,6 +763,9 @@
       ],
       "Open navigation": [
         "Otwórz nawigację"
+      ],
+      "Opt out": [
+        "Wypisz się"
       ],
       "Or": [
         "lub"
@@ -896,6 +923,9 @@
       "Review changes": [
         "Przejrzyj zmiany"
       ],
+      "Review recovery options": [
+        "Przejrzyj opcje odzyskiwania"
+      ],
       "Revoke": [
         "Unieważnij"
       ],
@@ -914,6 +944,9 @@
       "Save address": [
         "Zapisz adres"
       ],
+      "Save and verify": [
+        "Zapisz i zweryfikuj"
+      ],
       "Save SAML configuration": [
         "Zapisz konfigurację SAML"
       ],
@@ -928,6 +961,9 @@
       ],
       "Search settings": [
         "Szukaj ustawień"
+      ],
+      "Secure account": [
+        "Zabezpiecz konto"
       ],
       "See DNS TXT record": [
         "Zobacz rekord TXT"
@@ -1000,6 +1036,9 @@
       ],
       "Set up a custom domain": [
         "Skonfiguruj niestandardową domenę"
+      ],
+      "Set up account recovery": [
+        "Skonfiguruj odzyskiwanie konta"
       ],
       "Set up auto-forwarding from Gmail": [
         "Skonfiguruj automatyczne przekierowanie z Gmaila"
@@ -1246,6 +1285,9 @@
       ],
       "View plans details": [
         "Pokaż szczegóły planów"
+      ],
+      "View recovery setup details": [
+        "Pokaż szczegóły konfiguracji odzyskiwania"
       ],
       "Void": [
         "Unieważnij"
@@ -3610,6 +3652,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "Szyfrowanie end-to-end w ${ BRAND_NAME } oznacza, że tylko Ty możesz odblokować swoje dane. Skonfiguruj teraz opcje odzyskiwania, aby nigdy nie stracić dostępu."
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } w ${ DRIVE_APP_NAME } umożliwia współpracę z innymi w bezpiecznym i szyfrowanym środowisku."
       ],
@@ -3633,6 +3678,9 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Zablokuj Google możliwość profilowania Cię. Gmail nie widzi, co robisz w ${ MAIL_APP_NAME }"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Przenieś swoje wiadomości, wydarzenia z kalendarza i kontakty od innego dostawcy."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Buduj zaufanie i rozpoznawalność marki dzięki profesjonalnym adresom e-mail we własnej domenie."
@@ -3712,6 +3760,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Jak wspieraliśmy lokalnych aktywistów, gdy prywatność i wolność słowa były zagrożone."
       ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "Jak odblokować swoje zaszyfrowane dane w przypadku utraty hasła."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
       ],
@@ -3723,6 +3774,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Dodawaj linki do spotkań w zaproszeniach na wydarzenia."
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "Metody, które obejmują zarówno resetowanie hasła, jak i odzyskiwanie danych."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Większość problemów można rozwiązać w kilka minut dzięki naszym instrukcjom krok po kroku."
@@ -3753,6 +3807,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "Nadal potrzebujesz pomocy? Nasz zespół wsparcia jest do Twojej dyspozycji."
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "Umożliwia to odzyskanie dostępu do konta ${ BRAND_NAME }, ale nie powoduje odzyskania zaszyfrowanych danych."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Może się tak zdarzyć, jeśli uprawnienia zostały usunięte lub zmieniło się Twoje hasło."
@@ -4170,9 +4227,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Jak to działa:** Wpisz kod wyświetlony na urządzeniu, na którym chcesz się zalogować. Zostaniesz zalogowany jako **${ email }**. Oba urządzenia pozostaną zalogowane."
       ],
-      "Allow QR code sign‒in": [
-        "Zezwalaj na logowanie za pomocą kodu QR"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Uważaj na wiadomości z kodami QR. Skanuj kody tylko z zaufanych źródeł."
       ],
@@ -4187,9 +4241,6 @@
       ],
       "QR code sign-in enabled": [
         "Logowanie za pomocą kodu QR jest włączone"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Zeskanuj kod QR na urządzeniu mobilnym"
       ],
       "Security tips": [
         "Wskazówki dotyczące bezpieczeństwa"
@@ -4327,41 +4378,350 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "Konto ${ BRAND_NAME }"
+      ],
+      "${ days } day left": [
+        "Pozostał ${ days } dzień",
+        "Pozostały ${ days } dni",
+        "Pozostało ${ days } dni",
+        "Pozostało ${ days } dni"
+      ],
+      "${ hours } hour left": [
+        "Pozostała ${ hours } godzina",
+        "Pozostały ${ hours } godziny",
+        "Pozostało ${ hours } godzin",
+        "Pozostało ${ hours } godziny"
+      ],
+      "${ minutes } minute left": [
+        "Pozostała ${ minutes } minuta",
+        "Pozostały ${ minutes } minuty",
+        "Pozostało ${ minutes } minut",
+        "Pozostało ${ minutes } minuty"
+      ],
       "${ n } day": [
         "${ n } dzień",
         "${ n } dni",
         "${ n } dni",
         "${ n } dnia"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "Użytkownik ${ user } prosi o dostęp awaryjny do Twojego konta"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "Użytkownik ${ user } będzie mógł uzyskać dostęp do Twojego konta i danych."
+      ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "Użytkownik ${ user } zostanie wylogowany z Twojego konta i nie będzie mógł uzyskać do niego dostępu aż do następnego dostępu awaryjnego."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } nie będzie już w stanie pomóc Ci odzyskać danych po zresetowaniu hasła."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "Użytkownik ${ user } nie będzie już mógł uzyskać dostępu do Twojego konta."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "Użytkownik ${ user } nie będzie mieć dostępu do Twojego konta do momentu uzyskania kolejnego dostępu awaryjnego."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "Użytkownik **${ contact }** jest teraz Twoim kontaktem do odzyskiwania danych. Może pomóc Ci odblokować dane po zresetowaniu hasła."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Jeśli to potwierdzi**, kliknij **Zatwierdź odzyskiwanie**. To odblokuje jej zaszyfrowane dane."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Jeśli ta osoba nie prosiła Cię o pomoc**, istnieje możliwość, że ktoś inny próbuje uzyskać dostęp do jej konta. W takim przypadku zignoruj tę prośbę."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Chroń to, co po Tobie zostanie.** Ulepsz swój plan, aby dodać kontakty alarmowe."
+      ],
+      "Access account": [
+        "Uzyskaj dostęp do konta"
+      ],
+      "Access granted": [
+        "Dostęp został przyznany"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "Dostęp przyznany ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Żądanie dostępu zostało anulowane"
+      ],
+      "Access requested": [
+        "Żądanie zostało wysłane"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Dostęp zostanie przyznany ${ formattedAccessibleAt }"
+      ],
+      "Add": [
+        "Dodaj"
+      ],
+      "Add emergency contact": [
+        "Dodaj kontakt alarmowy"
+      ],
+      "Add option": [
+        "Dodaj opcję"
+      ],
+      "Add recovery contact": [
+        "Dodaj kontakt odzyskiwania konta"
+      ],
       "Added on ${ formattedDate }": [
         "Dodano ${ formattedDate }"
+      ],
+      "Approve recovery": [
+        "Zatwierdź odzyskiwanie"
+      ],
+      "Approved request": [
+        "Zatwierdzona prośba"
       ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
         "Poproś kontakt odzyskiwania konta o pomoc. Otrzyma on e-mail z prośbą o zweryfikowanie Twojej prośby i odblokowanie Twoich danych."
       ],
+      "Asking for help": [
+        "Prośba o pomoc"
+      ],
+      "Cancel request": [
+        "Anuluj prośbę"
+      ],
+      "Cancel request?": [
+        "Anulować żądanie?"
+      ],
+      "Change access wait time": [
+        "Zmień czas oczekiwania na dostęp"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Zmień czas, przez który użytkownik ${ user } będzie musiał czekać, przed automatycznym uzyskaniem dostępu do konta."
+      ],
+      "Change wait time": [
+        "Zmień czas oczekiwania"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Wybierz osobę, której ufasz, aby pomogła Ci odzyskać dane w przypadku zresetowania hasła. Kontakty odzyskiwania konta muszą już posiadać konto ${ BRAND_NAME }."
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Wybierz osobę, której ufasz. Musi posiadać konto ${ BRAND_NAME }."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Skontaktuj się z tą osobą, aby potwierdzić, czy potrzebuje pomocy w odzyskaniu swoich danych."
+      ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Data recovery contacts": [
+        "Kontakty do odzyskiwania danych"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Dane zostały pomyślnie odzyskane. Możesz teraz odszyfrować swoje istniejące dane i zaszyfrowane pliki."
+      ],
+      "Disabled": [
+        "Wyłączono"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Nie strać dostępu awaryjnego. Włącz automatyczne odnowienie."
+      ],
+      "Emergency access": [
+        "Dostęp awaryjny"
+      ],
+      "Emergency access for ${ user } removed": [
+        "Dostęp awaryjny dla ${ user } został usunięty"
+      ],
+      "Emergency access granted": [
+        "Dostęp awaryjny został przyznany"
+      ],
+      "Emergency access refused": [
+        "Odrzucono żądanie dostępu awaryjnego"
+      ],
+      "Emergency access request": [
+        "Żądanie dostępu awaryjnego"
+      ],
+      "Emergency access requested": [
+        "Dostęp awaryjny został przyznany"
+      ],
+      "Emergency access revoked": [
+        "Dostęp awaryjny został unieważniony"
+      ],
+      "Emergency contact added": [
+        "Kontakt alarmowy został dodany"
+      ],
+      "Emergency contact enabled": [
+        "Kontakt alarmowy został włączony"
+      ],
+      "Emergency contact removed": [
+        "Kontakt alarmowy został usunięty"
+      ],
+      "Enable": [
+        "Włącz"
+      ],
+      "Enable auto-renew": [
+        "Włącz automatyczne odnawianie"
+      ],
+      "For ${ email }": [
+        "Dla ${ email }"
       ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
         "Skontaktuj się z nią teraz, aby dowiedzieć się, czy może pomóc, i poinformować ją osobiście, że to Ty próbujesz odblokować swoje dane."
       ],
+      "Give access now": [
+        "Przyznaj dostęp teraz"
+      ],
+      "Give immediate access?": [
+        "Przyznać natychmiastowy dostęp?"
+      ],
+      "Got it": [
+        "Rozumiem"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Poproś tę osobę o sprawdzenie skrzynki odbiorczej i znalezienie wiadomości z prośbą o pomoc w odzyskaniu danych. Ta wiadomość zawiera link, który musi kliknąć, aby zweryfikować Twoją prośbę."
+      ],
       "Immediate": [
         "Natychmiast"
+      ],
+      "Included with ${ planName }": [
+        "W planie ${ planName }"
       ],
       "Less than a day": [
         "Mniej niż dzień"
       ],
+      "Less than a minute left": [
+        "Pozostała mniej niż minuta"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "Osiągnięto limit ${ limit } kontaktu. Aby to zmienić, usuń kontakt i dodaj nowy.",
+        "Osiągnięto limit ${ limit } kontaktów. Aby to zmienić, usuń kontakt i dodaj nowy.",
+        "Osiągnięto limit ${ limit } kontaktów. Aby to zmienić, usuń kontakt i dodaj nowy.",
+        "Osiągnięto limit ${ limit } kontaktów. Aby to zmienić, usuń kontakt i dodaj nowy."
+      ],
+      "Only ": [
+        "Tylko "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Poproś o dostęp awaryjny tylko w **uzasadnionych sytuacjach**, wymagających zarządzania kontem innego użytkownika."
+      ],
+      "Pending request": [
+        "Oczekująca prośba"
+      ],
+      "People I trust": [
+        "Użytkownicy, którym ufasz"
+      ],
+      "People who have you as a recovery contact": [
+        "Osoby, które wskazały Cię jako kontakt odzyskiwania konta"
+      ],
+      "People who trust me": [
+        "Użytkownicy, którzy Tobie ufają"
+      ],
+      "Proceed anyway": [
+        "Mimo to kontynuuj"
+      ],
+      "Protect your legacy with emergency access": [
+        "Chroń swoje dane dzięki dostępowi awaryjnemu"
+      ],
+      "Recover data": [
+        "Odzyskaj dane"
+      ],
+      "Recovery approved": [
+        "Odzyskiwanie zatwierdzone"
+      ],
+      "Recovery contact added": [
+        "Kontakt odzyskiwania konta został dodany"
+      ],
+      "Recovery contact enabled": [
+        "Kontakt odzyskiwania konta został włączony"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Kontakt odzyskiwania konta dla użytkownika ${ user } został usunięty"
+      ],
+      "Recovery contact removed": [
+        "Kontakt odzyskiwania konta został usunięty"
+      ],
       "Recovery request sent": [
         "Wysłano prośbę o odzyskanie konta"
+      ],
+      "Refuse access": [
+        "Odmów dostępu"
+      ],
+      "Refuse access?": [
+        "Odmówić dostępu?"
+      ],
+      "Remove recovery contact": [
+        "Usuń kontakt odzyskiwania konta"
+      ],
+      "Remove trusted contact": [
+        "Usuń zaufany kontakt"
       ],
       "Remove your recovery contacts to continue": [
         "Usuń swoje kontakty odzyskiwania konta, aby kontynuować"
       ],
+      "Renew to get emergency access again.": [
+        "Odnów subskrypcję, aby uzyskać ponownie dostęp awaryjny."
+      ],
+      "Request access": [
+        "Poproś o dostęp"
+      ],
+      "Request access?": [
+        "Poprosić o dostęp?"
+      ],
+      "Requesting access": [
+        "Żądanie dostępu"
+      ],
+      "Review recovery request": [
+        "Przejrzyj prośbę o odzyskanie konta"
+      ],
+      "Revoke access": [
+        "Unieważnij dostęp"
+      ],
+      "Revoke access?": [
+        "Unieważnić dostęp?"
+      ],
+      "See request": [
+        "Zobacz prośbę"
+      ],
       "Select recovery contact ${ name }": [
         "Wybierz kontakt odzyskiwania konta ${ name }"
       ],
+      "Send recovery request": [
+        "Wyślij prośbę o odzyskanie konta"
+      ],
       "Start recovery": [
         "Rozpocznij odzyskiwanie"
+      ],
+      "Stop being recovery contact": [
+        "Chcę przestać być kontaktem odzyskiwania konta"
+      ],
+      "Stop being recovery contact?": [
+        "Chcesz przestać być kontaktem odzyskiwania konta?"
+      ],
+      "Stop being trusted contact": [
+        "Chcę przestać być zaufanym kontaktem"
+      ],
+      "Stop being trusted contact?": [
+        "Przestać być zaufanym kontaktem?"
+      ],
+      "Subscription expired": [
+        "Subskrypcja wygasła"
+      ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "Dodali Cię jako zaufany kontakt. Możesz uzyskać dostęp do ich konta w nagłych wypadkach."
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "Mogą poprosić o dostęp do Twojego konta w sytuacji awaryjnej."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Uzyskają dostęp automatycznie za **${ days } dzień**, w dniu **${ formattedAccessibleAt }**. Możesz odrzucić ich żądanie lub natychmiast przyznać im dostęp w dowolnym momencie.",
+        "Uzyskają dostęp automatycznie za **${ days } dni**, w dniu **${ formattedAccessibleAt }**. Możesz odrzucić ich żądanie lub natychmiast przyznać im dostęp w dowolnym momencie.",
+        "Uzyskają dostęp automatycznie za **${ days } dni**, w dniu **${ formattedAccessibleAt }**. Możesz odrzucić ich żądanie lub natychmiast przyznać im dostęp w dowolnym momencie.",
+        "Uzyskają dostęp automatycznie za **${ days } dni**, w dniu **${ formattedAccessibleAt }**. Możesz odrzucić ich żądanie lub natychmiast przyznać im dostęp w dowolnym momencie."
+      ],
+      "This will take effect immediately.": [
+        "Zmiana nastąpi natychmiast."
+      ],
+      "Time required before automatically giving access": [
+        "Czas wymagany do automatycznego przyznania dostępu"
+      ],
+      "Time required before automatically giving you access": [
+        "Czas wymagany przed automatycznym przyznaniem Ci dostępu"
+      ],
+      "Time required before automatically granting them access": [
+        "Wymagany czas przed automatycznym przyznaniem dostępu"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Aby wyłączyć tę metodę odzyskiwania konta, usuń wszystkie swoje kontakty odzyskiwania konta."
@@ -4369,8 +4729,80 @@
       "Trusted contact": [
         "Zaufany kontakt"
       ],
+      "Unable to recover data": [
+        "Nie można odzyskać danych"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
+      ],
+      "Wait time": [
+        "Czas oczekiwania"
+      ],
+      "Wait time for access": [
+        "Czas oczekiwania na dostęp"
+      ],
+      "Wait time saved": [
+        "Czas oczekiwania został zapisany"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Otrzymaliśmy prośbę o odblokowanie zaszyfrowanych danych Twojego kontaktu **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Wysłaliśmy prośbę e-mail do użytkownika ${ user }. Poinformuj go, że to naprawdę Ty próbujesz odzyskać dostęp."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Nie udało nam się zweryfikować danych odzyskiwania. Mimo to kontynuować?"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Powiadomimy użytkownika **${ user }**, że poprosiłeś o dostęp awaryjny."
+      ],
+      "You are signed in to the account ${ account }.": [
+        "Zalogowano jako ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "Możesz uzyskać dostęp do konta i zarządzać nim."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Możesz usunąć dostęp w dowolnym momencie."
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Osiągnięto maksymalną liczbę ${ limit } kontaktu alarmowego.",
+        "Osiągnięto maksymalną liczbę ${ limit } kontaktów alarmowych.",
+        "Osiągnięto maksymalną liczbę ${ limit } kontaktów alarmowych.",
+        "Osiągnięto maksymalną liczbę ${ limit } kontaktów alarmowych."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Otrzymasz powiadomienie, gdy ktoś zażąda dostępu awaryjnego."
+      ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Nie będziesz już mieć możliwości pomóc użytkownikowi ${ user } odzyskać jego danych po zresetowaniu przez niego hasła."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Nie będziesz już mógł uzyskać dostępu do konta ${ user }."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Nadal możesz poprosić o dostęp do konta użytkownika ${ user } w późniejszym czasie."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Otrzymasz dostęp do konta natychmiast."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Otrzymasz dostęp do konta za **${ days } dzień** lub po zatwierdzeniu żądania.",
+        "Otrzymasz dostęp do konta za **${ days } dni** lub po zatwierdzeniu żądania.",
+        "Otrzymasz dostęp do konta za **${ days } dni** lub po zatwierdzeniu żądania.",
+        "Otrzymasz dostęp do konta za **${ days } dnia** lub po zatwierdzeniu żądania."
+      ],
       "Your recovery contact has helped you recover data.": [
         "Twój kontakt odzyskiwania konta pomógł Ci odzyskać dane."
+      ],
+      "Your recovery contacts": [
+        "Twoje kontakty odzyskiwania konta"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Twoimi kontaktami odzyskiwania konta powinny być osoby, które znasz i z którymi możesz łatwo się skontaktować."
       ]
     },
     "Empty group name": {
@@ -4390,6 +4822,9 @@
       ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
+      ],
+      "Address cannot be yours": [
+        "Adres nie może być Twój"
       ],
       "Address could not be added.": [
         "Nie udało się dodać adresu."
@@ -5214,6 +5649,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB przestrzeni dyskowej"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Twoje bonusy konta"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -6762,6 +7202,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Otrzymujesz ${ referrerRewardAmount }** w środkach za każdego znajomego, który zasubskrybuje plan."
       ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "**Sam adres pomocniczy nie pozwala na odzyskanie zaszyfrowanych danych** po zresetowaniu hasła."
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "**Sam numer pomocniczy nie pozwala na odzyskanie zaszyfrowanych danych** po zresetowaniu hasła."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } więcej",
         "+ ${ invisibleCount } więcej",
@@ -6798,12 +7244,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Plik odzyskiwania umożliwia odblokowanie danych po odzyskaniu konta"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Jeśli zapomnisz hasła, to hasło odzyskiwania umożliwia odzyskanie dostępu do konta i zaszyfrowanych wiadomości"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
       ],
@@ -6812,9 +7252,6 @@
       ],
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktywuj co najmniej jedną metodę odzyskiwania danych, aby uniknąć utraty dostępu do konta ${ BRAND_NAME }."
       ],
       "active": [
         "aktywna"
@@ -6828,8 +7265,17 @@
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Dodaj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "Dodaj od 1 do 5 osób, którym ufasz i z którymi możesz łatwo się skontaktować. Będą one mogły zresetować Twoje hasło za Ciebie, logując się na Twoje konto. Muszą one już posiadać konto ${ BRAND_NAME }."
+      ],
+      "Add a phone number in case we need to contact you": [
+        "Dodaj numer telefonu, abyśmy mogli skontaktować się z Tobą w razie potrzeby"
+      ],
       "add a recovery method": [
         "Dodaj metodę odzyskiwania"
+      ],
+      "Add an email address in case we need to contact you": [
+        "Dodaj adres e-mail na wypadek, gdybyśmy musieli się z Tobą skontaktować"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Dodaj dodatkową warstwę bezpieczeństwa konta. Włącz uwierzytelnianie dwustopniowe."
@@ -6929,6 +7375,12 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Zezwala użytkownikom na łączenie się z udostępnionymi serwerami z sekcji **Kraje** w aplikacji ${ VPN_APP_NAME }."
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Zezwolenie na logowanie kodem QR pozwoli Ci zalogować się poprzez zeskanowanie kodu QR w przypadku zapomnienia hasła. Wystarczy, że zalogujesz się do usługi ${ BRAND_NAME } na innym urządzeniu."
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "Zezwolenie na resetowanie hasła z poziomu ustawień pozwala na zmianę hasła w przypadku jego utraty, jeśli nadal jesteś zalogowany w ${ BRAND_NAME }."
       ],
       "Already allocated": [
         "Już przydzielona"
@@ -7052,6 +7504,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "Dodając osoby, którym ufasz, jako kontakty pomocnicze, będziemy mogli wysłać im wiadomość e-mail, aby Ci pomóc, jeśli będziesz mieć trudności z odzyskaniem danych po zresetowaniu hasła. Ty również możesz być kontaktem pomocniczym dla innych osób."
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Wyłączenie monitora konta spowoduje również wyczyszczenie całej historii. Czy na pewno chcesz to wyłączyć?"
@@ -7224,6 +7679,9 @@
       "Data recoverable with recovery phrase": [
         "Dane do odzyskania za pomocą hasła odzyskiwania"
       ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Odzyskiwanie danych wymaga opcji resetowania hasła (e-mail lub SMS)"
+      ],
       "dedicated servers": [
         "dedykowane serwery"
       ],
@@ -7262,6 +7720,9 @@
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "Wyłączenie uwierzytelniania dwustopniowego (2FA) w aplikacji sprawi, że Twoje konto będzie mniej bezpieczne. Przejdź dalej tylko wtedy, gdy jest to absolutnie konieczne."
+      ],
+      "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
+        "Wyłączenie kopii zapasowej danych na tym urządzeniu uniemożliwi automatyczne odblokowanie zaszyfrowanych danych po zresetowaniu hasła."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Poznaj nowe funkcje i zacznij z nich korzystać!"
@@ -7401,6 +7862,9 @@
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Włączenie odzyskiwania za pomocą hasła wygeneruje nowe hasło odzyskiwania."
       ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Włączenie kopii zapasowej danych na tym urządzeniu przywróci dostęp do wiadomości, kontaktów, plików, haseł i wszelkich innych zaszyfrowanych danych na Twoim koncie po zresetowaniu hasła, po prostu przez zalogowanie się na tym urządzeniu."
+      ],
       "End date": [
         "Data zakończenia"
       ],
@@ -7539,8 +8003,8 @@
       "Gateways": [
         "bramy"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Nowe hasło odzyskiwania zastąpi stare."
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Wygenerowanie nowego hasła odzyskiwania spowoduje dezaktywację obecnego hasła odzyskiwania."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Pobierz ${ AUTHENTICATOR_APP_NAME } na swoje urządzenia."
@@ -7599,11 +8063,14 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jeśli inny administrator zmienił to hasło, poproś go, aby przekazał Ci nowe hasło organizacji."
       ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "Jeśli ta opcja jest wyłączona, ${ BRAND_NAME } nadal będzie używać Twojego adresu pomocniczego do wysyłania powiadomień o bezpieczeństwie."
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
+        "Nawet po wyłączeniu tej opcji, ${ BRAND_NAME } nadal będzie używać Twojego numeru pomocniczego do wysyłania powiadomień dotyczących bezpieczeństwa."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Jeśli to możliwe, do zalogowania się użyj urządzenia lub przeglądarki, na których logowanie nastąpiło już wcześniej."
-      ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Jeśli jest to spowodowane starym resetowaniem hasła, możesz zatrzymać ponowne pokazywanie tej wiadomości"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
@@ -7647,8 +8114,8 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Po obniżeniu planu stracisz dostęp do płatnych funkcji usługi ${ VPN_APP_NAME }."
       ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Po zresetowaniu hasła możesz odblokować dane za pomocą metody odzyskiwania danych"
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "Jeśli niedawno zresetowano hasło, możesz ${ recoveryMethodLink }, aby odblokować swoje dane. Jeśli wynika to ze starego resetu hasła, możesz zablokować ponowne wyświetlanie tego komunikatu."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Jeśli w Twojej organizacji znajdują się osoby publiczne, przetwarza ona dane wrażliwe lub może być celem cyberataków, zdecydowanie zalecamy włączenie funkcji ${ PROTON_SENTINEL_NAME } dla wszystkich w organizacji."
@@ -7752,9 +8219,6 @@
       "Invited": [
         "Zaproszono"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Niektóre dane są zaszyfrowane i zablokowane."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Zmiana kraju serwera zajmie 10 dni, więc upewnij się, że wybór jest prawidłowy."
       ],
@@ -7811,6 +8275,12 @@
       ],
       "Item updated in vault": [
         "Zaktualizowanie elementu w sejfie"
+      ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "Często jest to najprostszy sposób na odzyskanie konta, jeśli jesteś zalogowany."
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "To jedyny sposób na natychmiastowe odzyskanie wszystkiego, więc upewnij się, że przechowujesz je w bezpiecznym, ale dostępnym miejscu."
       ],
       "JCB logo": [
         "Logo JCB"
@@ -8157,9 +8627,6 @@
       "Please fill in all required fields.": [
         "Uzupełnij wszystkie wymagane pola."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Zachowaj to hasło. Jeśli zresetujesz hasło, będziesz go potrzebować do odzyskania dostępu do konta i odszyfrowania danych."
-      ],
       "please open a support ticket": [
         "wyślij zgłoszenie"
       ],
@@ -8247,6 +8714,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Zalecane na zaufanych urządzeniach. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Odzyskiwanie za pomocą poczty e-mail nie jest dostępne, gdy usługa ${ PROTON_SENTINEL_NAME } jest włączona."
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Odzyskiwanie za pomocą telefonu nie jest dostępne, gdy usługa ${ PROTON_SENTINEL_NAME } jest włączona."
+      ],
       "Recovery file downloaded": [
         "Plik odzyskiwania został pobrany"
       ],
@@ -8258,9 +8731,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Hasło odzyskiwania zostało skopiowane do schowka"
-      ],
-      "Recovery phrase downloaded": [
-        "Hasło odzyskiwania zostało pobrane"
       ],
       "Recovery phrase has been disabled": [
         "Hasło odzyskiwania zostało wyłączone"
@@ -8616,6 +9086,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Proces może zająć trochę czasu. Nie zamykaj strony lub nie rozłączaj się z Internetem."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Ta metoda odzyskiwania danych wymaga opcji resetowania hasła (e-mail lub SMS)"
+      ],
       "This file is too large to preview": [
         "Plik jest zbyt duży do podglądu"
       ],
@@ -8663,6 +9136,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję ${ BRAND_NAME }. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "Umożliwi to szybki i bezpieczny dostęp do Twojego konta ${ BRAND_NAME }, dzięki czemu będzie można zmienić hasło."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Spowoduje to trwałe usunięcie danych i wszystkich adresów skojarzonych z użytkownikami."
@@ -8732,6 +9208,12 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Wybierz metodę odzyskiwania, aby odszyfrować dane zablokowane przed zresetowaniem hasła."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "Aby zapewnić najwyższe możliwe bezpieczeństwo swojego konta, wyłącz opcję **Odzyskiwanie za pomocą adresu pomocniczego**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+        "Aby zapewnić najwyższe możliwe bezpieczeństwo swojego konta, wyłącz opcję **Odzyskiwanie za pomocą numeru pomocniczego**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
@@ -8946,6 +9428,12 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Zalecamy używanie oficjalnych aplikacji ${ VPN_APP_NAME }."
       ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Możemy użyć Twojego adresu pomocniczego do wysłania kodu weryfikacyjnego w celu zresetowania hasła, a także do skontaktowania się z Tobą w przypadku zauważenia podejrzanej aktywności."
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Możemy użyć Twojego numeru pomocniczego do wysłania kodu weryfikacyjnego w celu zresetowania hasła, a także do skontaktowania się z Tobą w przypadku zauważenia podejrzanej aktywności."
+      ],
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
       ],
@@ -8976,8 +9464,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Przed wymuszeniem uwierzytelniania dwustopniowego, zalecamy poinformowanie użytkowników organizacji i poproszenie ich o włączenie tej opcji."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Aby uniknąć utraty danych, informacje o odzyskiwaniu pozostaną zachowane na zaufanym urządzeniu"
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "Zdecydowanie zalecamy, aby każdy włączył odzyskiwanie za pomocą hasła odzyskiwania."
       ],
       "We use 3-D Secure to protect your payments": [
         "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności"
@@ -9180,6 +9668,9 @@
       "You don't have any referrals.": [
         "Nie masz żadnych poleceń."
       ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Nie musisz otwierać ani czytać tego pliku – po prostu go pobierz i przechowuj w bezpiecznym miejscu."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
       ],
@@ -9363,11 +9854,11 @@
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Twoje ostatnie zmiany zostały opublikowane. Będą widoczne dla użytkowników w ciągu najbliższych kilku godzin."
       ],
-      "Your recovery phrase": [
-        "Twoje hasło odzyskiwania"
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Twój plik odzyskiwania przywróci dostęp do wiadomości, kontaktów, plików, haseł i wszelkich innych zaszyfrowanych danych na Twoim koncie po zresetowaniu hasła."
       ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Hasłem odzyskiwania jest seria 12 słów w określonej kolejności."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Jeśli stracisz dostęp do swojego konta ${ BRAND_NAME }, Twoje hasło odzyskiwania pozwoli Ci się zalogować i odzyskać dane. Składa się ono z 12 słów i działa jak hasło zapasowe."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co ${ cycle } miesiąc.",
@@ -9667,6 +10158,9 @@
       ],
       "Allow": [
         "Dozwolone"
+      ],
+      "Allow QR code sign-in": [
+        "Zezwalaj na logowanie kodem QR"
       ],
       "Allow recovery by email": [
         "Zezwalaj na odzyskiwanie przez e-mail"
@@ -10118,6 +10612,9 @@
       "Main reason for cancelling": [
         "Główny powód anulowania"
       ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "Upewnij się, że masz dostęp do adresu pomocniczego lub telefonu i masz skonfigurowaną opcję odzyskiwania danych."
+      ],
       "Manage categories": [
         "Zarządzaj kategoriami"
       ],
@@ -10502,6 +10999,9 @@
       "Vulnerable password": [
         "Słabe hasło"
       ],
+      "We securely stored recovery information on this device.": [
+        "Bezpiecznie przechowujemy informacje o odzyskiwaniu danych na tym urządzeniu."
+      ],
       "Weak": [
         "Słabe"
       ],
@@ -10541,6 +11041,12 @@
       "Your password (trusted contact)": [
         "Twoje hasło (zaufany kontakt)"
       ],
+      "Your recovery email": [
+        "Twój adres pomocniczy"
+      ],
+      "Your recovery phone number": [
+        "Twój pomocniczy numer telefonu"
+      ],
       "Zero-access architecture": [
         "Architektura zero-access"
       ],
@@ -10549,14 +11055,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Odzyskiwanie za pomocą zaufanego urządzenia"
-      ],
       "Recovery phone number": [
         "Numer pomocniczy"
-      ],
-      "Recovery phrase": [
-        "Hasło odzyskiwania"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10775,9 +11275,6 @@
       "How to share via email": [
         "Jak udostępnić za pomocą poczty e-mail?"
       ],
-      "How to unlock data": [
-        "Jak odblokować dane"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Jak używać ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -10798,9 +11295,6 @@
       ],
       "Learn more": [
         "Dowiedz się więcej"
-      ],
-      "Learn more about data recovery": [
-        "Dowiedz się więcej o odzyskiwaniu danych"
       ],
       "Manage addresses": [
         "Zarządzaj adresami"
@@ -10843,6 +11337,9 @@
       ],
       "Upgrade your plan": [
         "Ulepsz plan"
+      ],
+      "use a data recovery method": [
+        "użyj metody odzyskiwania danych"
       ],
       "Vault": [
         "Sejf"
@@ -13213,6 +13710,14 @@
         "Oferta ograniczona czasowo."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Czy pamiętasz swoje hasło do usługi ${ BRAND_NAME }?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Najlepszym sposobem na uniknięcie utraty dostępu do konta i danych jest zapamiętanie swoich danych logowania."
+      ]
+    },
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "Jeśli zapomnisz hasła, możesz utracić dostęp do swoich zaszyfrowanych danych."
@@ -14087,6 +14592,188 @@
         "Weryfikacja numeru telefonu zwiększa bezpieczeństwo konta i umożliwia dodatkowe opcje odzyskiwania konta."
       ]
     },
+    "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "Ukończono ${ score } / ${ maxScore }"
+      ],
+      "Add more options for stronger protection": [
+        "Dodaj więcej opcji, aby uzyskać silniejszą ochronę"
+      ],
+      "Check your access to your recovery options": [
+        "Sprawdź swój dostęp do opcji odzyskiwania"
+      ],
+      "Critical": [
+        "Krytyczny"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "Nie daj się odciąć od swojego konta ${ BRAND_NAME }"
+      ],
+      "How you increased your account protection": [
+        "Jak zwiększyłeś ochronę swojego konta"
+      ],
+      "Inactive recovery options": [
+        "Nieaktywne opcje odzyskiwania"
+      ],
+      "Maximum": [
+        "Maksymalny"
+      ],
+      "Partial": [
+        "Częściowy"
+      ],
+      "Recoverability": [
+        "Możliwość odzyskania"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Wymagaj zweryfikowanej opcji resetowania hasła (e-mail lub SMS)"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "Wynik: ${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "Silny"
+      ],
+      "Take precautions to avoid losing access": [
+        "Podejmij środki ostrożności, aby uniknąć utraty dostępu"
+      ],
+      "Weak": [
+        "Słabe"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Masz pełną ochronę. Okresowy przegląd pozwala na sprawne działanie wszystkiego w miarę zmian urządzeń i kontaktów."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Twoje zabezpieczenia są częściowe, ale wciąż nie jesteś w pełni bezpieczny. Zapomniane hasło nadal może oznaczać utratę wiadomości, plików i haseł."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "Nadal narażasz się na duże ryzyko. Jeśli zapomnisz hasła, możesz bezpowrotnie utracić swoje wiadomości, pliki i hasła."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Twoje zabezpieczenia są dobre, ale wciąż są luki. Więcej opcji odzyskiwania daje Ci mocniejszą siatkę bezpieczeństwa na wypadek utraty hasła."
+      ],
+      "Your account and data can be recovered": [
+        "Twoje konto i dane mogą zostać odzyskane"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Twoje konto nie ma skonfigurowanych żadnych opcji odzyskiwania. Jeśli utracisz hasło, bezpowrotnie stracisz dostęp do swoich wiadomości, plików i haseł."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Twoje konto nie jest w pełni chronione. Zapomniane hasło wciąż może oznaczać utratę dostępu do Twoich wiadomości, plików i haseł."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Twoja konfiguracja odzyskiwania jest szczątkowa. Jeśli stracisz hasło, możesz trwale utracić dostęp do wiadomości, plików i haseł."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Twoja konfiguracja odzyskiwania jest doskonała. Dbaj o aktualność swoich opcji, aby zadziałały, gdy będą potrzebne."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Twoja konfiguracja odzyskiwania jest niekompletna. Zapomniane hasło nadal może oznaczać utratę dostępu do wiadomości, plików i haseł."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Twoja konfiguracja odzyskiwania jest solidna, pozostało tylko kilka drobnych luk do zamknięcia. Każda dodana opcja wzmacnia Twoje bezpieczeństwo."
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "Dodaj kontakty alarmowe"
+      ],
+      "Add recovery contacts": [
+        "Dodaj kontakty do odzyskiwania danych"
+      ],
+      "Add recovery email": [
+        "Dodaj adres pomocniczy"
+      ],
+      "Add recovery phone": [
+        "Dodaj numer pomocniczy"
+      ],
+      "Allow data recovery on this device": [
+        "Zezwalaj na odzyskiwanie danych na tym urządzeniu"
+      ],
+      "Allow password reset from settings": [
+        "Zezwalaj na resetowanie hasła z poziomu ustawień"
+      ],
+      "Allow scanning QR code to sign in": [
+        "Zezwalaj na skanowanie kodu QR w celu zalogowania się"
+      ],
+      "Data recovery allowed on this device": [
+        "Odzyskiwanie danych dozwolone na tym urządzeniu"
+      ],
+      "Download recovery file": [
+        "Pobierz plik odzyskiwania"
+      ],
+      "Email recovery enabled": [
+        "Odzyskiwanie przez e-mail zostało włączone"
+      ],
+      "Emergency contacts added": [
+        "Dodano kontakty alarmowe"
+      ],
+      "Enable email recovery": [
+        "Włącz odzyskiwanie przez e-mail"
+      ],
+      "Enable recovery by phone": [
+        "Włącz odzyskiwanie przez telefon"
+      ],
+      "Password reset allowed from settings": [
+        "Resetowanie hasła dozwolone z poziomu ustawień"
+      ],
+      "Password verified": [
+        "Hasło zweryfikowane"
+      ],
+      "Phone recovery enabled": [
+        "Odzyskiwanie przez telefon zostało włączone"
+      ],
+      "Recovery contacts added": [
+        "Dodano kontakty do odzyskiwania danych"
+      ],
+      "Recovery file downloaded": [
+        "Pobrano plik odzyskiwania"
+      ],
+      "Recovery phrase saved": [
+        "Zapisano hasło odzyskiwania"
+      ],
+      "Save recovery phrase": [
+        "Zapisz hasło odzyskiwania"
+      ],
+      "Sign-in with QR code allowed": [
+        "Logowanie za pomocą kodu QR dozwolone"
+      ],
+      "Verify password": [
+        "Zweryfikuj hasło"
+      ],
+      "Verify recovery email": [
+        "Zweryfikuj adres pomocniczy"
+      ],
+      "Verify recovery phone": [
+        "Zweryfikuj numer pomocniczy"
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Copy": [
+        "Kopiuj"
+      ],
+      "Show": [
+        "Pokaż"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Upewnij się, że po utworzeniu hasła odzyskiwania zachowasz do niego dostęp.** Ze względów bezpieczeństwa nie przechowujemy hasła po zapisaniu zmian i nie będziesz mieć możliwości ponownego jego zobaczenia w aplikacji ${ BRAND_NAME }."
+      ],
+      "copy recovery phrase": [
+        "kopiuj hasło odzyskiwania"
+      ],
+      "Download PDF": [
+        "Pobierz plik PDF"
+      ],
+      "download PDF": [
+        "pobierz plik PDF"
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "Lub ${ copyRecoverySwitchButton } jako tekst."
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "Lub ${ downloadRecoveryKitSwitchButton }."
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } za polecenie"
@@ -14414,47 +15101,8 @@
       ]
     },
     "Safety review": {
-      "Check account security": [
-        "Sprawdź bezpieczeństwo konta"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Jeśli zapomnisz danych logowania, **metoda odzyskiwania konta i danych** **jest konieczna**, aby zresetować konto. W przeciwnym razie nie będziesz mógł uzyskać dostępu do swoich wiadomości, kontaktów, plików i haseł."
-      ],
       "Review account safety": [
         "Sprawdź bezpieczeństwo konta"
-      ],
-      "Safeguard account now": [
-        "Zabezpiecz konto"
-      ],
-      "Safeguard your account": [
-        "Zabezpiecz konto"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Istnieje ryzyko utraty dostępu do konta i danych."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Istnieje ryzyko utraty dostępu do danych."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Masz zalecane akcje, aby zabezpieczyć konto."
-      ],
-      "You have recommended actions.": [
-        "Masz zalecane akcje."
-      ],
-      "Your account and data can be recovered": [
-        "Konto i dane mogą zostać odzyskane"
-      ],
-      "Your account and data can be recovered.": [
-        "Twoje konto i dane mogą zostać odzyskane."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Konto i dane mogą zostać odzyskane. Sprawdź, czy możesz uzyskać dostęp do metod odzyskiwania."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Konto i dane mogą zostać odzyskane. Masz zalecane akcje, aby zabezpieczyć swoje konto."
-      ],
-      "Your account is fully secure.": [
-        "Konto jest bezpieczne"
       ]
     },
     "saml: Action": {
@@ -14729,6 +15377,17 @@
     "Select search results": {
       "No results found": [
         "Nie znaleziono żadnych wyników"
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Aby zapewnić najwyższe możliwe bezpieczeństwo swojego konta, wyłącz odzyskiwanie za pomocą poczty e-mail oraz SMS."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Aby mieć pewność, że zawsze będziesz mieć dostęp do swojego konta ${ BRAND_NAME }, pobierz swoje hasło odzyskiwania."
+      ],
+      "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
+        "Masz zalecane działania od ${ PROTON_SENTINEL_NAME }"
       ]
     },
     "Server-Info": {
@@ -15026,11 +15685,11 @@
       ]
     },
     "session_recovery:settings:info": {
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "Aby wyłączyć możliwość resetowania hasła w ustawieniach, musisz zapisać hasło odzyskiwania."
+      ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Ustaw metodę odzyskiwania, aby wyłączyć resetowanie hasła."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Możesz zresetować hasło w ustawieniach konta, aby zwiększyć bezpieczeństwo konta i danych."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -15085,6 +15744,9 @@
       ]
     },
     "Settings section title": {
+      "Account": [
+        "Konto"
+      ],
       "Organization": [
         "Organizacja"
       ]
@@ -15697,14 +16359,68 @@
       ]
     },
     "Status": {
+      "${ count } person": [
+        "${ count } osoba",
+        "${ count } osoby",
+        "${ count } osób",
+        "${ count } osoby"
+      ],
       "... waiting": [
         "... oczekiwanie"
+      ],
+      "Add a phone number": [
+        "Dodaj numer telefonu"
+      ],
+      "Add an email address": [
+        "Dodaj adres e-mail"
+      ],
+      "Available on this device": [
+        "Dostępne na tym urządzeniu"
       ],
       "completed": [
         "zakończono"
       ],
+      "Disable recovery by email": [
+        "Wyłącz odzyskiwanie przez e-mail"
+      ],
+      "Disable recovery by phone": [
+        "Wyłącz odzyskiwanie przez telefon"
+      ],
       "finalizing": [
         "finalizowanie"
+      ],
+      "Generate a recovery phrase": [
+        "Wygeneruj hasło odzyskiwania"
+      ],
+      "Last changed ${ formattedDate }": [
+        "Ostatnia zmiana: ${ formattedDate }"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "Ostatnia aktualizacja: ${ formattedUpdateDate }"
+      ],
+      "Not saved": [
+        "Niezapisane"
+      ],
+      "Off": [
+        "Wyłączone"
+      ],
+      "On": [
+        "Włączone"
+      ],
+      "Outdated": [
+        "Nieaktualne"
+      ],
+      "Saved": [
+        "Zapisano"
+      ],
+      "Unverified": [
+        "Niezweryfikowano"
+      ],
+      "Verified": [
+        "Zweryfikowany"
+      ],
+      "Verify ${ value }": [
+        "Zweryfikuj ${ value }"
       ]
     },
     "Storage": {
@@ -16879,6 +17595,9 @@
       "Access control": [
         "Kontrola dostępu"
       ],
+      "Accessibility": [
+        "Dostępność"
+      ],
       "Account": [
         "Konto"
       ],
@@ -16924,8 +17643,14 @@
         "Dodać ${ totalServerCount } serwerów?",
         "Dodać ${ totalServerCount } serwerów?"
       ],
+      "Add a recovery contact": [
+        "Dodaj kontakt pomocniczy"
+      ],
       "Add address": [
         "Dodaj adres"
+      ],
+      "Add an emergency contact": [
+        "Dodaj kontakt alarmowy"
       ],
       "Add contact group name": [
         "Dodaj nazwę grupy kontaktów"
@@ -16974,6 +17699,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Dodaj użytkowników do zasady \"${ policyName }\""
+      ],
+      "Advanced recovery options": [
+        "Zaawansowane opcje odzyskiwania"
       ],
       "Allocate storage": [
         "Przydziel przestrzeń dyskową"
@@ -17098,6 +17826,9 @@
       "Collaborate on documents": [
         "Współpracuj nad dokumentami"
       ],
+      "Compare plans": [
+        "Porównaj plany"
+      ],
       "Confirm": [
         "Potwierdź"
       ],
@@ -17218,11 +17949,17 @@
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
       ],
-      "Data locked": [
-        "Dane są zablokowane"
+      "Dashboard": [
+        "Pulpit"
       ],
       "Data recovery": [
         "Odzyskiwanie danych"
+      ],
+      "Data recovery contacts": [
+        "Kontakty do odzyskiwania danych"
+      ],
+      "Data recovery options": [
+        "Opcje odzyskiwania danych"
       ],
       "Data retention": [
         "Przechowywanie danych"
@@ -17233,8 +17970,14 @@
       "Day theme": [
         "Jasny motyw"
       ],
+      "Deactivate current phrase?": [
+        "Dezaktywować obecne hasło?"
+      ],
       "Decrypt key": [
         "Odszyfruj klucz"
+      ],
+      "Deep dive into email blog posts": [
+        "Dogłębna analiza wpisów na blogu o poczcie e-mail"
       ],
       "Deep dive into VPN blog posts": [
         "Szczegółowa analiza wpisów na blogu VPN"
@@ -17275,11 +18018,17 @@
       "Device": [
         "Urządzenie"
       ],
+      "Device data backup": [
+        "Kopia zapasowa danych urządzenia"
+      ],
       "Device name": [
         "Nazwa urządzenia"
       ],
       "Disable account monitor?": [
         "Wyłączyć monitor konta?"
+      ],
+      "Disable device data backup?": [
+        "Wyłączyć kopię zapasową danych urządzenia?"
       ],
       "Disable two-factor authentication": [
         "Wyłącz uwierzytelnianie dwustopniowe"
@@ -17316,6 +18065,9 @@
       ],
       "Download apps": [
         "Pobierz aplikacje"
+      ],
+      "Download your recovery phrase": [
+        "Pobierz swoje hasło odzyskiwania"
       ],
       "Downloads": [
         "Pliki do pobrania"
@@ -17374,6 +18126,12 @@
       "Email subscriptions": [
         "Subskrypcje e-mail"
       ],
+      "Email verification": [
+        "Weryfikacja adresu e-mail"
+      ],
+      "Emergency access": [
+        "Dostęp awaryjny"
+      ],
       "Enable advanced account protection": [
         "Włącz zaawansowaną ochronę konta"
       ],
@@ -17431,9 +18189,6 @@
       "Generate missing keys": [
         "Generuj brakujące klucze"
       ],
-      "Generate new recovery phrase?": [
-        "Wygenerować nowe hasło odzyskiwania?"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "Wybierz plan ${ vpnPlus }, aby uzyskać dostęp do wszystkich serwerów"
       ],
@@ -17463,6 +18218,9 @@
       ],
       "Gift code": [
         "Kod podarunkowy"
+      ],
+      "Group membership": [
+        "Członkostwo w grupie"
       ],
       "Group role assignment paused": [
         "Przypisywanie stanowisk w grupie zostało wstrzymane"
@@ -17545,6 +18303,9 @@
       "IP": [
         "Adres IP"
       ],
+      "Language and time": [
+        "Język i czas"
+      ],
       "Limit reached": [
         "Limit został osiągnięty"
       ],
@@ -17599,6 +18360,9 @@
       "No events yet": [
         "Brak wydarzeń"
       ],
+      "Notifications": [
+        "Powiadomienia"
+      ],
       "Open": [
         "Nierozwiązane"
       ],
@@ -17647,6 +18411,9 @@
       "Password": [
         "Hasło"
       ],
+      "Password reset options": [
+        "Opcje resetowania hasła"
+      ],
       "Password reset settings": [
         "Ustawienia resetowania hasła"
       ],
@@ -17664,6 +18431,9 @@
       ],
       "Payment verification": [
         "Weryfikacja płatności"
+      ],
+      "Pending invitations": [
+        "Oczekujące zaproszenia"
       ],
       "Phone": [
         "Telefon"
@@ -17686,6 +18456,9 @@
       "QR Code": [
         "Kod QR"
       ],
+      "QR code sign-in": [
+        "Logowanie za pomocą kodu QR"
+      ],
       "Recommended": [
         "Zalecany"
       ],
@@ -17706,6 +18479,9 @@
       ],
       "Recovery file": [
         "Plik odzyskiwania"
+      ],
+      "Recovery phrase": [
+        "Hasło odzyskiwania"
       ],
       "Refer a friend": [
         "Poleć znajomemu"
@@ -17863,8 +18639,14 @@
       "Sign out": [
         "Wyloguj"
       ],
+      "Signed in to another account": [
+        "Zalogowano na inne konto"
+      ],
       "Signed in to member account": [
         "Zalogowano na konto użytkownika"
+      ],
+      "Signed-in reset": [
+        "Resetowanie przy zalogowaniu"
       ],
       "Simplify email distribution": [
         "Uprość wysyłanie poczty"
@@ -17877,6 +18659,12 @@
       ],
       "Single-sign on (SSO)": [
         "Jednokrotne logowanie (SSO)"
+      ],
+      "SMS verification": [
+        "Weryfikacja SMS"
+      ],
+      "Some of your encrypted data is locked": [
+        "Niektóre z Twoich zaszyfrowanych danych są zablokowane"
       ],
       "Something went wrong": [
         "Coś poszło nie tak"
@@ -17931,6 +18719,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Theme": [
+        "Motyw"
       ],
       "There are no events for your account": [
         "Brak logów dla konta"
@@ -17988,6 +18779,9 @@
       ],
       "Upgrade complete!": [
         "Ulepszenie zakończone!"
+      ],
+      "Upgrade plan": [
+        "Ulepsz plan"
       ],
       "Upgrade to ${ planName }": [
         "Ulepsz do planu ${ planName }"
@@ -18115,11 +18909,23 @@
       "Your plan": [
         "Twój plan"
       ],
+      "Your recovery file": [
+        "Twój plik odzyskiwania"
+      ],
+      "Your recovery phrase": [
+        "Twoje hasło odzyskiwania"
+      ],
+      "Your recovery setup": [
+        "Twoja konfiguracja odzyskiwania"
+      ],
       "Your referrals": [
         "Twoje polecenia"
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Your storage": [
+        "Twoja przestrzeń dyskowa"
       ],
       "Your subscriptions": [
         "Twoja subskrypcja"
@@ -18197,6 +19003,24 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorzy mogą zarządzać kontami użytkowników i nadawać uprawnienia administratora innym użytkownikom. Tylko główny administrator może edytować plan organizacji."
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "Zezwalaj na odzyskiwanie konta za pomocą jednorazowego kodu wysłanego na Twój adres pomocniczy"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "Zezwalaj na odzyskiwanie konta za pomocą jednorazowego kodu wysłanego na Twój numer pomocniczy"
+      ],
+      "Allow resetting your password from the account settings": [
+        "Zezwalaj na resetowanie hasła z poziomu ustawień konta"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "Zezwalaj na skanowanie kodu QR w aplikacji mobilnej ${ BRAND_NAME } w celu zalogowania się"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "Zezwalaj zaufanym kontaktom na żądanie dostępu do Twojego konta"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "Zezwalaj zaufanym kontaktom na odblokowanie Twoich zaszyfrowanych danych po zresetowaniu hasła"
       ],
       "Any protection applied to suspicious activity": [
         "Zastosowane zabezpieczenia do podejrzanej aktywności"
@@ -18284,6 +19108,15 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adres IP i dostawca Internetu (ISP)"
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "Zapisz hasło odzyskiwania składające się z 12 słów, aby natychmiast odblokować swoje konto i zaszyfrowane dane w przypadku zapomnienia hasła"
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "Zapisz plik kopii zapasowej szyfrowania w tej przeglądarce, aby móc odzyskać swoje dane po zresetowaniu hasła"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "Zapisz plik kopii zapasowej szyfrowania, aby odzyskać dane po zresetowaniu hasła"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Ustawia stopkę w wysyłanych wiadomościach: ${ signature } Link wskazuje na Twój link polecający. Stopka zostanie dodana pod Twoim podpisem. Podpis możesz spersonalizować w ustawieniach."
@@ -18500,9 +19333,6 @@
         "Nie można włączyć dostępu administratora dla ${ n } użytkowników",
         "Nie można włączyć dostępu administratora dla ${ n } użytkowników",
         "Nie można włączyć dostępu administratora dla ${ n } użytkowników"
-      ],
-      "Could not enable administrator access: ${ error }": [
-        "Nie można włączyć dostępu administratora: ${ error }"
       ],
       "Enable manually": [
         "Włącz ręcznie"
@@ -18727,9 +19557,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorzy nie mogą uzyskać dostępu do danych prywatnych użytkowników"
       ],
@@ -18738,21 +19565,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Zaproszenie zostało wysłane. Oczekiwanie na odpowiedź"
-      ],
-      "Invite sent": [
-        "Zaproszenie wysłane"
-      ],
-      "It's you": [
-        "Ty"
-      ],
-      "Pending admin access": [
-        "Oczekiwanie na dostęp administratora"
-      ],
-      "Private": [
-        "Prywatny"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Użytkownik SSO od dostawcy tożsamości"

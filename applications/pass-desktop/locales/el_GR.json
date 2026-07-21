@@ -577,12 +577,6 @@
       "Regenerate": [
         "Αναπαραγωγή"
       ],
-      "Regex invalid": [
-        "Μη έγκυρο Regex"
-      ],
-      "Regex unsafe": [
-        "Μη ασφαλές Regex"
-      ],
       "Reject": [
         "Απόρριψη"
       ],
@@ -1326,6 +1320,12 @@
       "PIN codes do not match": [
         "Οι κωδικοί PIN δεν ταιριάζουν"
       ],
+      "Regex invalid": [
+        "Μη έγκυρο Regex"
+      ],
+      "Regex unsafe": [
+        "Μη ασφαλές Regex"
+      ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
@@ -2054,6 +2054,9 @@
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "Εάν δε σκοπεύετε να χρησιμοποιήσετε τον παράγοντα SSH σε άλλον λογαριασμό επί πληρωμή, θυμηθείτε να απενεργοποιήσετε αυτήν τη ρύθμιση πριν μεταβείτε σε αυτόν τον λογαριασμό."
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Αν υπογράψετε τις υποβολές Git με το κλειδί SSH, εκτελέστε επίσης αυτήν την εντολή:"
+      ],
       "Import the CSV file below.": [
         "Εισαγάγετε το παρακάτω αρχείο CSV."
       ],
@@ -2195,8 +2198,7 @@
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2673,6 +2675,9 @@
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Για να διατηρήσετε κρυφή την προσωπική σας διεύθυνση ηλεκτρονικού ταχυδρομείου, μπορείτε να δημιουργήσετε μια ψευδώνυμη επαφή που καλύπτει τη διεύθυνσή σας."
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Για να λειτουργήσει το Git με τον παράγοντα SSH ${ PASS_APP_NAME }, το Git πρέπει να χρησιμοποιεί το Windows OpenSSH. Αυτό μπορεί να γίνει εκτελώντας αυτήν την εντολή:"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Για να μεταφέρετε δεδομένα από έναν άλλο διαχειριστή κωδικών πρόσβασης, μεταβείτε στον διαχειριστή κωδικών πρόσβασης, εξαγάγετε τα δεδομένα σας και, στη συνέχεια, ανεβάστε τα στο ${ PASS_APP_NAME }. Μόλις εισαχθούν τα δεδομένα σας, διαγράψτε το εξαγόμενο αρχείο."

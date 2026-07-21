@@ -71,6 +71,9 @@
       "Add address or domain": [
         "Přidat adresu nebo doménu"
       ],
+      "Add and verify": [
+        "Přidat a ověřit"
+      ],
       "Add another account": [
         "Přidat další účet"
       ],
@@ -88,6 +91,9 @@
       ],
       "Add PayPal": [
         "Přidat PayPal"
+      ],
+      "Add recovery options": [
+        "Přidat možnosti obnovení"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Přidat doporučující odkaz k podpisu ${ MAIL_APP_NAME }"
@@ -140,6 +146,9 @@
       "Cancel": [
         "Zrušit"
       ],
+      "Cancel request": [
+        "Zrušit žádost"
+      ],
       "Cancel subscription": [
         "Zrušit předplatné"
       ],
@@ -166,6 +175,9 @@
       ],
       "Check import progress": [
         "Zkontrolovat průběh importu"
+      ],
+      "Check now": [
+        "Zkontrolovat"
       ],
       "Choose a file or drag it here": [
         "Vyberte soubor nebo jej sem přetáhněte"
@@ -286,6 +298,9 @@
       ],
       "Create new policy": [
         "Vytvořit novou zásadu"
+      ],
+      "Create recovery phrase": [
+        "Vytvořit obnovovací frázi"
       ],
       "Create users": [
         "Vytvořit uživatele"
@@ -410,6 +425,9 @@
       "Download recovery file": [
         "Stáhnout soubor pro obnovení"
       ],
+      "Download updated file": [
+        "Stáhnout aktualizovaný soubor"
+      ],
       "Edit": [
         "Upravit"
       ],
@@ -503,14 +521,14 @@
       "Forgot password?": [
         "Zapomenuté heslo?"
       ],
+      "Generate new phrase": [
+        "Vygenerovat novou frázi"
+      ],
       "Generate new recovery phrase": [
         "Vygenerovat novou obnovovací frázi"
       ],
       "Generate password": [
         "Generovat heslo"
-      ],
-      "Generate recovery phrase": [
-        "Vygenerovat obnovovací frázi"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Získat ${ planName } za ${ priceCoupon }"
@@ -608,6 +626,9 @@
       "I don’t have my backup codes": [
         "Nemám své záložní kódy"
       ],
+      "Ignore": [
+        "Ignorovat"
+      ],
       "Import": [
         "Importovat"
       ],
@@ -625,6 +646,9 @@
       ],
       "Invite user": [
         "Pozvat uživatele"
+      ],
+      "Keep": [
+        "Zachovat"
       ],
       "Keep current plan": [
         "Zachovat aktuální tarif"
@@ -739,6 +763,9 @@
       ],
       "Open navigation": [
         "Otevřít menu"
+      ],
+      "Opt out": [
+        "Odhlásit se"
       ],
       "Or": [
         "nebo se"
@@ -896,6 +923,9 @@
       "Review changes": [
         "Zkontrolovat změny"
       ],
+      "Review recovery options": [
+        "Zkontrolovat možnosti obnovení"
+      ],
       "Revoke": [
         "Zrušit"
       ],
@@ -914,6 +944,9 @@
       "Save address": [
         "Uložit adresu"
       ],
+      "Save and verify": [
+        "Uložit a ověřit"
+      ],
       "Save SAML configuration": [
         "Uložit nastavení SAML"
       ],
@@ -928,6 +961,9 @@
       ],
       "Search settings": [
         "Hledat v nastavení"
+      ],
+      "Secure account": [
+        "Zabezpečit účet"
       ],
       "See DNS TXT record": [
         "Zobrazit DNS TXT záznam"
@@ -1000,6 +1036,9 @@
       ],
       "Set up a custom domain": [
         "Nastavit vlastní doménu"
+      ],
+      "Set up account recovery": [
+        "Nastavit obnovení účtu"
       ],
       "Set up auto-forwarding from Gmail": [
         "Nastavit automatické přeposílání z Gmailu"
@@ -1246,6 +1285,9 @@
       ],
       "View plans details": [
         "Zobrazit detaily tarifu"
+      ],
+      "View recovery setup details": [
+        "Zobrazit podrobnosti o nastavení obnovy"
       ],
       "Void": [
         "Neplatné"
@@ -3610,6 +3652,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "Díky koncovému šifrování v ${ BRAND_NAME } můžete svá data odemknout pouze vy. Nastavte si možnosti obnovení ještě dnes, abyste o přístup nikdy nepřišli."
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožní spolupracovat s ostatními v bezpečném a šifrovaném prostředí."
       ],
@@ -3633,6 +3678,9 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blokujte možnosti Googlu sledovat vaše aktivity. Gmail nemůže vidět, do děláte v ${ MAIL_APP_NAME }"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Přeneste si své e-maily, události v kalendáři a kontakty od jiného poskytovatele."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Vybudujte si důvěryhodnost a rozpoznatelnost značky pomocí profesionálních e-mailových adres na vlastní doméně."
@@ -3712,6 +3760,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Jak jsme podpořili místní aktivisty, když bylo ohroženo soukromí a svoboda projevu."
       ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "Jak odemknout zašifrovaná data v případě ztráty hesla."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
@@ -3723,6 +3774,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Umožňuje okamžitě přidávat odkazy na schůzky do pozvánek na události."
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "Metody, které zahrnují jak resetování hesla, tak obnovu dat."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Většinu problémů lze vyřešit během několika minut pomocí našich podrobných návodů."
@@ -3753,6 +3807,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "Stále potřebujete pomoc? Náš tým podpory je vám k dispozici."
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "Tímto způsobem získáte opět přístup ke svému účtu ${ BRAND_NAME }, ale vaše zašifrovaná data tím nebudou obnovena."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "K tomu může dojít, pokud byla oprávnění odebrána nebo pokud jste změnili heslo."
@@ -4170,9 +4227,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Jak to funguje:** V tomto zařízení zadejte kód zobrazený na zařízení, ke kterému se chcete přihlásit. Budete přihlášeni jako **${ email }**. Obě zařízení zůstanou aktivní."
       ],
-      "Allow QR code sign‒in": [
-        "Povolit přihlášení pomocí QR kódu"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Dávejte si pozor na zprávy s QR kódy. Kód skenujte pouze v případě, že důvěřujete jeho zdroji."
       ],
@@ -4187,9 +4241,6 @@
       ],
       "QR code sign-in enabled": [
         "Přihlášení pomocí QR kódu je povoleno"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Naskenujte QR kód na svém mobilním zařízení a přihlaste se"
       ],
       "Security tips": [
         "Bezpečnostní tipy"
@@ -4327,41 +4378,350 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "E-mail účtu ${ BRAND_NAME }"
+      ],
+      "${ days } day left": [
+        "Zbývá ${ days } den",
+        "Zbývají ${ days } dny",
+        "Zbývá ${ days } dnů",
+        "Zbývá ${ days } dnů"
+      ],
+      "${ hours } hour left": [
+        "Zbývá ${ hours } hodina",
+        "Zbývají ${ hours } hodiny",
+        "Zbývá ${ hours } hodin",
+        "Zbývá ${ hours } hodin"
+      ],
+      "${ minutes } minute left": [
+        "Zbývá ${ minutes } minuta",
+        "Zbývají ${ minutes } minuty",
+        "Zbývá ${ minutes } minut",
+        "Zbývá ${ minutes } minut"
+      ],
       "${ n } day": [
         "${ n } den",
         "${ n } dny",
         "${ n } dnů",
         "${ n } dnů"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } žádá o nouzový přístup k vašemu účtu"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user } bude moci používat váš účet a měnit vaše data."
+      ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } bude odhlášen(a) z vašeho účtu a nebude mít k němu přístup až do dalšího nouzového přístupu."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } vám již nebude moci pomoci s obnovením dat po resetu hesla."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } již nebude moci požádat o přístup k vašemu účtu v případě nouze."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } nebude mít přístup k vašemu účtu až do dalšího nouzového přístupu."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** je nyní váš kontakt pro obnovení. Může vám pomoci odemknout vaše data po resetování hesla."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Pokud potvrdí**, klikněte na **Schválit obnovení**. Tím odemknete jejich šifrovaná data."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Pokud vás o pomoc nepožádali**, je možné, že se někdo jiný pokouší získat přístup k jejich účtu. V takovém případě tuto žádost ignorujte."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Chraňte své dědictví.** Upgradujte svůj plán a přidejte nouzové kontakty."
+      ],
+      "Access account": [
+        "Přístup k účtu"
+      ],
+      "Access granted": [
+        "Přístup povolen"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "Přístup udělen ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Žádost o přístup zrušena"
+      ],
+      "Access requested": [
+        "Přístup vyžádán"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Přístup bude udělen ${ formattedAccessibleAt }"
+      ],
+      "Add": [
+        "Přidat"
+      ],
+      "Add emergency contact": [
+        "Přidat nouzový kontakt"
+      ],
+      "Add option": [
+        "Přidat možnost"
+      ],
+      "Add recovery contact": [
+        "Přidat kontakt pro obnovení"
+      ],
       "Added on ${ formattedDate }": [
         "Přidáno ${ formattedDate }"
+      ],
+      "Approve recovery": [
+        "Schválit obnovení"
+      ],
+      "Approved request": [
+        "Schválená žádost"
       ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
         "Požádejte o pomoc kontaktní osobu pro obnovení. Obdrží e-mail s ověřením vaší žádosti a odemknutím dat."
       ],
+      "Asking for help": [
+        "Požádat o pomoc"
+      ],
+      "Cancel request": [
+        "Zrušit žádost"
+      ],
+      "Cancel request?": [
+        "Zrušit žádost?"
+      ],
+      "Change access wait time": [
+        "Změnit dobu čekání na přístup"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Změňte čas, který ${ user } bude muset čekat, než mu bude automaticky udělen přístup."
+      ],
+      "Change wait time": [
+        "Změnit dobu čekání"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Vyberte někoho, komu důvěřujete, aby vám pomohl obnovit vaše data v případě resetování hesla. Kontakty pro obnovení už musí mít účet ${ BRAND_NAME }."
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Vyberte někoho, komu důvěřujete se svými daty. Musí již mít ${ BRAND_NAME } účet."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Spojte se s nimi a potvrďte, zda potřebují pomoc s obnovením svých dat."
+      ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Data recovery contacts": [
+        "Kontakty pro obnovu dat"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Data byla úspěšně obnovena. Nyní můžete dešifrovat vaše stávající data a zašifrované soubory."
+      ],
+      "Disabled": [
+        "Deaktivováno"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Neztraťte nouzový přístup. Zapněte dnes automatické obnovení."
+      ],
+      "Emergency access": [
+        "Nouzový přístup"
+      ],
+      "Emergency access for ${ user } removed": [
+        "Nouzový přístup pro ${ user } odebrán"
+      ],
+      "Emergency access granted": [
+        "Nouzový přístup udělen"
+      ],
+      "Emergency access refused": [
+        "Nouzový přístup odmítnut"
+      ],
+      "Emergency access request": [
+        "Nouzový přístup vyžádán"
+      ],
+      "Emergency access requested": [
+        "Vyžádán nouzový přístup"
+      ],
+      "Emergency access revoked": [
+        "Nouzový přístup zrušen"
+      ],
+      "Emergency contact added": [
+        "Nouzový kontakt přidán"
+      ],
+      "Emergency contact enabled": [
+        "Nouzový konktakt povolen"
+      ],
+      "Emergency contact removed": [
+        "Nouzový kontakt odebrán"
+      ],
+      "Enable": [
+        "Povolit"
+      ],
+      "Enable auto-renew": [
+        "Povolte automatické obnovení"
+      ],
+      "For ${ email }": [
+        "Pro ${ email }"
       ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
         "Spojte se s nimi hned teď a zjistěte, zda vám mohou pomoci, a dejte jim osobně vědět, že jste to vy, kdo se snaží odemknout svá data."
       ],
+      "Give access now": [
+        "Udělit přístup nyní"
+      ],
+      "Give immediate access?": [
+        "Udělit okamžitý přístup?"
+      ],
+      "Got it": [
+        "Rozumím"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Požádejte je, aby zkontrolovali svou e-mailovou schránku, zda v ní není e-mail s žádostí o pomoc při obnovení vašich dat. E-mail obsahuje odkaz, na který musí kliknout, aby ověřili vaši žádost."
+      ],
       "Immediate": [
         "Okamžitě"
+      ],
+      "Included with ${ planName }": [
+        "Zahrnuto v ${ planName }"
       ],
       "Less than a day": [
         "Méně než den"
       ],
+      "Less than a minute left": [
+        "Zbývá méně než minuta"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "Dosaženo maximálního počtu ${ limit } kontaktu. Chcete-li počet změnit, odstraňte jeden kontakt a přidejte nový.",
+        "Dosaženo maximálního počtu ${ limit } kontaktů. Chcete-li počet změnit, odstraňte jeden kontakt a přidejte nový.",
+        "Dosaženo maximálního počtu ${ limit } kontaktů. Chcete-li počet změnit, odstraňte jeden kontakt a přidejte nový.",
+        "Dosaženo maximálního počtu ${ limit } kontaktů. Chcete-li počet změnit, odstraňte jeden kontakt a přidejte nový."
+      ],
+      "Only ": [
+        "Pouze "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Nouzový přístup žádejte pouze tehdy, když nastane **odůvodněná situace**, která vyžaduje, abyste spravovali účet jiného uživatele."
+      ],
+      "Pending request": [
+        "Požadavek čeká na vyřízení"
+      ],
+      "People I trust": [
+        "Lidé, kterým důvěřuji"
+      ],
+      "People who have you as a recovery contact": [
+        "Lidé, kteří vás mají jako kontaktní osobu pro obnovení"
+      ],
+      "People who trust me": [
+        "Lidé, kteří mi důvěřují"
+      ],
+      "Proceed anyway": [
+        "Přesto pokračovat"
+      ],
+      "Protect your legacy with emergency access": [
+        "Chraňte své dědictví pomocí nouzového přístupu"
+      ],
+      "Recover data": [
+        "Obnovit data"
+      ],
+      "Recovery approved": [
+        "Obnovení schváleno"
+      ],
+      "Recovery contact added": [
+        "Kontakt pro obnovení přidán"
+      ],
+      "Recovery contact enabled": [
+        "Kontakt pro obnovení povolen"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Kontakt pro obnovení uživatele ${ user } byl odebrán"
+      ],
+      "Recovery contact removed": [
+        "Kontakt pro obnovení odebrán"
+      ],
       "Recovery request sent": [
         "Žádost o obnovení byla odeslána"
+      ],
+      "Refuse access": [
+        "Odmítnout přístup"
+      ],
+      "Refuse access?": [
+        "Odmítnout přístup?"
+      ],
+      "Remove recovery contact": [
+        "Odebrat kontakt pro obnovení"
+      ],
+      "Remove trusted contact": [
+        "Odebrat důvěryhodný kontakt"
       ],
       "Remove your recovery contacts to continue": [
         "Odeberte své kontakty pro obnovení, abyste mohli pokračovat"
       ],
+      "Renew to get emergency access again.": [
+        "Obnovte, abyste znovu získali nouzový přístup."
+      ],
+      "Request access": [
+        "Požádat o přístup"
+      ],
+      "Request access?": [
+        "Požádat o přístup?"
+      ],
+      "Requesting access": [
+        "Vyžádání přístupu"
+      ],
+      "Review recovery request": [
+        "Zkontrolovat žádost o obnovení"
+      ],
+      "Revoke access": [
+        "Zrušit přístup"
+      ],
+      "Revoke access?": [
+        "Zrušit přístup?"
+      ],
+      "See request": [
+        "Zobrazit žádost"
+      ],
       "Select recovery contact ${ name }": [
         "Vyberte kontakt pro obnovení ${ name }"
       ],
+      "Send recovery request": [
+        "Odeslat žádost o obnovení"
+      ],
       "Start recovery": [
         "Zahájit obnovení"
+      ],
+      "Stop being recovery contact": [
+        "Odebrat kontakt pro obnovení"
+      ],
+      "Stop being recovery contact?": [
+        "Odebrat kontakt pro obnovení?"
+      ],
+      "Stop being trusted contact": [
+        "Odebrat důvěryhodný kontakt"
+      ],
+      "Stop being trusted contact?": [
+        "Odebrat důvěryhodný kontakt?"
+      ],
+      "Subscription expired": [
+        "Předplatné vypršelo"
+      ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "Přidali vás jako důvěryhodný kontakt. V případě nouze máte přístup k jejich účtu."
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "V případě nouze vás mohou požádat o přístup k vašemu účtu."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Přístup získají automaticky za **${ days } den**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě.",
+        "Přístup získají automaticky za **${ days } dny**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě.",
+        "Přístup získají automaticky za **${ days } dnů**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě.",
+        "Přístup získají automaticky za **${ days } dnů**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě."
+      ],
+      "This will take effect immediately.": [
+        "Tato změna se projeví okamžitě."
+      ],
+      "Time required before automatically giving access": [
+        "Doba potřebná před automatickým udělením přístupu"
+      ],
+      "Time required before automatically giving you access": [
+        "Doba potřebná před automatickým udělením přístupu"
+      ],
+      "Time required before automatically granting them access": [
+        "Doba potřebná před automatickým udělením přístupu"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Chcete-li tuto metodu obnovení deaktivovat, odeberte všechny své kontakty pro obnovení."
@@ -4369,8 +4729,80 @@
       "Trusted contact": [
         "Důvěryhodný kontakt"
       ],
+      "Unable to recover data": [
+        "Data nelze obnovit"
+      ],
+      "Upgrade": [
+        "Navýšení"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
+      ],
+      "Wait time": [
+        "Doba čekání"
+      ],
+      "Wait time for access": [
+        "Doba čekání na přístup"
+      ],
+      "Wait time saved": [
+        "Doba čekání uložena"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Obdrželi jsme požadavek na odemčení šifrovaných dat vašeho kontaktu **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Odeslali jsme e-mailovou žádost uživateli ${ user }. Dejte mu vědět, že jste to opravdu vy, kdo se pokouší získat přístup."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Nebyli jsme schopni ověřit data pro obnovení. Přesto pokračovat?"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Budeme informovat **${ user }**, že jste požádali o nouzový přístup."
+      ],
+      "You are signed in to the account ${ account }.": [
+        "Jste přihlášen(a) k účtu ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "Nyní můžete přistupovat k jejich účtu a spravovat jej."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Můžete jim kdykoli odebrat přístup a znovu získat výhradní kontrolu nad svým účtem."
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Dosáhli jste maximálního počtu ${ limit } nouzového kontaktu.",
+        "Dosáhli jste maximálního počtu ${ limit } nouzových kontaktů.",
+        "Dosáhli jste maximálního počtu ${ limit } nouzových kontaktů.",
+        "Dosáhli jste maximálního počtu ${ limit } nouzových kontaktů."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Budete upozorněni, až si někdo vyžádá nouzový přístup."
+      ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Nebudete již mít možnost pomoci ${ user } obnovit jejich data po tom, co resetují své heslo."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "V případě nouze již nebudete moci požádat o přístup k účtu uživatele ${ user }."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Stále budete moci později požádat o přístup k účtu ${ user }."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Okamžitě získáte přístup k jejich účtu."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Získáte přístup k jejich účtu za **${ days } den**, nebo když schválí váš požadavek.",
+        "Získáte přístup k jejich účtu za **${ days } dny**, nebo když schválí váš požadavek.",
+        "Získáte přístup k jejich účtu za **${ days }** dnů, nebo když schválí Váš požadavek.",
+        "Získáte přístup k jejich účtu za **${ days }** dnů, nebo když schválí Váš požadavek."
+      ],
       "Your recovery contact has helped you recover data.": [
         "Váš kontakt pro obnovení vám pomohl obnovit data."
+      ],
+      "Your recovery contacts": [
+        "Vaše kontakty pro obnovení"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Vaše kontakty pro obnovení by měli být lidé, které znáte a které můžete snadno kontaktovat."
       ]
     },
     "Empty group name": {
@@ -4390,6 +4822,9 @@
       ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
+      ],
+      "Address cannot be yours": [
+        "Adresa nemůže být vaše"
       ],
       "Address could not be added.": [
         "Adresa nemohla být přidána."
@@ -5214,6 +5649,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB celkového úložiště"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Výhody vašeho účtu"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -6762,6 +7202,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Získáte ${ referrerRewardAmount }** kreditů za každého přítele, který si pořídí předplatné."
       ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "**Samotný e-mail pro obnovení vám neumožňuje obnovit zašifrovaná data** po resetování vašeho hesla."
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "**Samotný telefon pro obnovení vám neumožňuje obnovit zašifrovaná data** po resetování vašeho hesla."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } další",
         "+ ${ invisibleCount } další",
@@ -6798,12 +7244,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Soubor pro obnovení vám umožňuje odemknout a zobrazit data po obnovení účtu"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "V případě, že zapomenete heslo, obnovovací fráze umožňuje přístup k účtu a obnovu zašifrovaných zpráv"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Uživatelem je účet spojený s jedním uživatelským jménem, poštovní schránkou a osobou"
       ],
@@ -6812,9 +7252,6 @@
       ],
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivujte alespoň jednu metodu obnovy dat, abyste měli jistotu, že v případě ztráty hesla budete mít i nadále přístup k obsahu svého účtu ${ BRAND_NAME }."
       ],
       "active": [
         "aktivní"
@@ -6828,8 +7265,17 @@
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Přidat ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "Přidejte 1 až 5 osob, kterým důvěřujete a které můžete snadno kontaktovat. Tyto osoby budou moci za vás resetovat heslo po přihlášení k vašemu účtu. Musí již mít účet u ${ BRAND_NAME }."
+      ],
+      "Add a phone number in case we need to contact you": [
+        "Přidejte telefonní číslo pro případ, že bychom vás potřebovali kontaktovat"
+      ],
       "add a recovery method": [
         "přidali metodu obnovení"
+      ],
+      "Add an email address in case we need to contact you": [
+        "Přidejte e-mailovou adresu pro případ, že bychom vás potřebovali kontaktovat"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Přidejte další úroveň zabezpečení do vašeho účtu. Budete se muset oveřit pomocí 2FA při každém přihlášení."
@@ -6929,6 +7375,12 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožňuje uživatelům připojit se k bezpečným sdíleným serverům ze sekce **Země** v aplikaci ${ VPN_APP_NAME }."
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Pokud povolíte přihlášení pomocí QR kódu, budete se moci přihlásit naskenováním QR kódu v případě, že zapomenete heslo. Stačí, abyste byli přihlášeni ke službě ${ BRAND_NAME } na jiném zařízení."
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "Povolení resetování hesla v nastavení vám umožní změnit heslo, pokud jste ho ztratili, ale jste stále přihlášeni do služby ${ BRAND_NAME }."
       ],
       "Already allocated": [
         "Již bylo přiděleno"
@@ -7052,6 +7504,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "Pokud přidáte lidi, kterým důvěřujete, jako své kontakty pro obnovení, budeme jim moci poslat e-mail s žádostí o pomoc, v případě, že budete mít potíže s obnovením dat po resetování hesla. I vy sami se můžete stát pro ostatní kontaktem pro obnovení."
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Deaktivací monitoru účtu smažete také celou vaší historii. Opravdu chcete pokračovat v deaktivaci?"
@@ -7224,6 +7679,9 @@
       "Data recoverable with recovery phrase": [
         "Data, která lze obnovit pomocí obnovovací fráze"
       ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Obnova dat vyžaduje možnost resetování hesla (e-mail nebo SMS)"
+      ],
       "dedicated servers": [
         "dedikované servery"
       ],
@@ -7262,6 +7720,9 @@
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "Deaktivováním dvoufázového ověření bude váš účet méně zabezpečený. Pokračujte pouze zda je to úplně nezbytné."
+      ],
+      "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
+        "Vypnutím zálohování dat na tomto zařízení zabráníte automatickému odemknutí šifrovaných dat po resetování hesla."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Objevte nové odemčené funkce a začněte je ihned používat!"
@@ -7401,6 +7862,9 @@
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Opětovné povolení obnovení pomocí fráze vygeneruje novou frázi pro obnovení."
       ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Aktivací zálohování dat na tomto zařízení si po resetování hesla obnovíte přístup k e-mailům, kontaktům, souborům, heslům a dalším šifrovaným datům ve vašem účtu – stačí se na tomto zařízení přihlásit."
+      ],
       "End date": [
         "Datum ukončení"
       ],
@@ -7539,8 +8003,8 @@
       "Gateways": [
         "Brány"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Vygenerováním nové obnovovací fráze bude deaktivována stará."
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Vytvořením nové obnovovací fráze dojde k deaktivaci vaší současné obnovovací fráze."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Získejte ${ AUTHENTICATOR_APP_NAME } pro všechna vaše zařízení."
@@ -7599,11 +8063,14 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Pokud některý ze správců změnil heslo, budete ho muset požádat o nové heslo organizace."
       ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "I v případě deaktivace bude ${ BRAND_NAME } nadále používat vaši e-mailovou adresu pro obnovení k zasílání bezpečnostních oznámení."
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
+        "I v případě deaktivace bude ${ BRAND_NAME } nadále používat váš telefon pro obnovení k zasílání bezpečnostních oznámení."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Pokud je to možné, použijte při přihlášení zařízení nebo prohlížeč, ve kterém jste se již dříve přihlásili."
-      ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Pokud je to způsobeno resetováním starého hesla, můžete zastavit opětovné zobrazování zprávy"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -7647,8 +8114,8 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ VPN_APP_NAME }."
       ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Pokud jste nedávno resetovali heslo, můžete svá data odemknout pomocí metody obnovy dat"
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "Pokud jste si nedávno resetovali heslo, můžete pomocí odkazu ${ recoveryMethodLink } odemknout svá data. Pokud se jedná o starý reset hesla, můžete zabránit opětovnému zobrazování této zprávy."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Pokud má vaše organizace veřejné činitele, zpracovává citlivá data nebo může být terčem kybernetických útoků, důrazně doporučujeme povolit ${ PROTON_SENTINEL_NAME } pro všechny členy vaší organizace."
@@ -7752,9 +8219,6 @@
       "Invited": [
         "Pozván(a)"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Změna země serveru trvá 10 dní, proto se ujistěte, že je váš výběr správný."
       ],
@@ -7811,6 +8275,12 @@
       ],
       "Item updated in vault": [
         "Položka v trezoru aktualizována"
+      ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "Pokud jste přihlášeni, je to často nejjednodušší způsob, jak obnovit přístup k účtu."
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "Jde o jediný způsob, jak okamžitě obnovit vše, proto zajistěte uložení na bezpečném a dostupném místě."
       ],
       "JCB logo": [
         "JCB logo"
@@ -8157,9 +8627,6 @@
       "Please fill in all required fields.": [
         "Vyplňte prosím všechna povinná pole."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Dbejte na její bezpečnost. Budete jí potřebovat pro přístup ke svému účtu a dešifrování dat v případě nutnosti resetovat heslo."
-      ],
       "please open a support ticket": [
         "prosím odešlete požadavek na podporu"
       ],
@@ -8247,6 +8714,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Doporučeno na důvěryhodných zařízeních. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Obnova pomocí e-mailu není k dispozici, pokud je zapnuta služba ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Obnova přes telefon není k dispozici, pokud je aktivována služba ${ PROTON_SENTINEL_NAME }."
+      ],
       "Recovery file downloaded": [
         "Soubor pro obnovení byl stažen"
       ],
@@ -8258,9 +8731,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Obnovovací fráze byla zkopírovaná do schránky"
-      ],
-      "Recovery phrase downloaded": [
-        "Obnovovací fráze byla stažena"
       ],
       "Recovery phrase has been disabled": [
         "Obnovovací fráze bude deaktivována"
@@ -8616,6 +9086,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Toto může nějakou dobu trvat. Nezavírejte prosím tuto stránku ani se neodpojujte od internetu."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Tato metoda obnovy dat vyžaduje možnost resetování hesla (e-mail nebo SMS)"
+      ],
       "This file is too large to preview": [
         "Tento soubor je pro náhled příliš velký"
       ],
@@ -8663,6 +9136,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní použít Paypal pro platby ${ BRAND_NAME } předplatného. Přesměrujeme vás na váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím než budete pokračovat."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "Díky tomu se budete moci rychle a bezpečně přihlásit ke svému účtu ${ BRAND_NAME } a změnit si heslo."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Tímto trvale smažete data a všechny e-mailové adresy spojené s těmito uživateli."
@@ -8732,6 +9208,12 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Chcete-li po resetování hesla dešifrovat a zobrazit uzamčená data, vyberte metodu obnovení."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "Chcete-li zajistit co nejvyšší zabezpečení svého účtu, deaktivujte funkci **Obnovení pomocí e-mailu**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+        "Chcete-li zajistit co nejvyšší zabezpečení svého účtu, deaktivujte funkci **Obnovení pomocí telefonu**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
@@ -8946,6 +9428,12 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Doporučujeme používat jen oficiální aplikace ${ VPN_APP_NAME }, pokud je to možné."
       ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Na vaši e-mailovou adresu pro obnovení vám můžeme zaslat ověřovací kód pro resetování hesla a také vás kontaktovat, pokud zaznamenáme podezřelou aktivitu."
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Na váš telefon pro obnovení vám můžeme zaslat ověřovací kód pro resetování hesla a také vás kontaktovat, pokud zaznamenáme podezřelou aktivitu."
+      ],
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
       ],
@@ -8976,8 +9464,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Před vynucením používání 2FA doporučujeme informovat členy organizace a požádat je, aby si v účtech nastavili 2FA."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Abyste o svá data nepřišli, bezpečně ukládáme informace pro obnovení do vašeho důvěryhodného zařízení"
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "Důrazně doporučujeme, aby si každý aktivoval obnovení pomocí obnovovací fráze."
       ],
       "We use 3-D Secure to protect your payments": [
         "K zabezpečení vašich plateb používáme 3-D Secure"
@@ -9180,6 +9668,9 @@
       "You don't have any referrals.": [
         "Nikomu jste nedoporučili."
       ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Soubor nemusíte otevírat ani číst – stačí si ho stáhnout a uložit na bezpečné místo."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
@@ -9363,11 +9854,11 @@
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Vaše nedávné změny byly publikovány. Budou viditelné pro uživatele v následujících několika hodinách."
       ],
-      "Your recovery phrase": [
-        "Vaše obnovovací fráze"
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Váš soubor pro obnovení po resetování hesla obnoví přístup k e-mailům, kontaktům, souborům, heslům a všem dalším šifrovaným datům ve vašem účtu."
       ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Vaše obnovovací fráze je série 12 náhodně vygenerovaných slov v určitém pořadí."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Pomocí obnovovací fráze se budete moci přihlásit a obnovit svá data, pokud ztratíte přístup ke svému účtu ${ BRAND_NAME }. Skládá se z 12 slov a funguje jako záložní heslo."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Váš naplánovaný tarif začíná ${ renewalTime } a bude se automaticky obnovovat každý ${ cycle } měsíc.",
@@ -9667,6 +10158,9 @@
       ],
       "Allow": [
         "Povolit"
+      ],
+      "Allow QR code sign-in": [
+        "Povolit přihlášení pomocí QR kódu"
       ],
       "Allow recovery by email": [
         "Povolit obnovení e-mailem"
@@ -10118,6 +10612,9 @@
       "Main reason for cancelling": [
         "Hlavní důvod zrušení"
       ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "Ujistěte se, že máte přístup k e-mailu nebo telefonnímu číslu pro obnovení a že máte k dispozici možnost obnovy dat."
+      ],
       "Manage categories": [
         "Zpravovat kategorie"
       ],
@@ -10502,6 +10999,9 @@
       "Vulnerable password": [
         "Zranitelné heslo"
       ],
+      "We securely stored recovery information on this device.": [
+        "Na tomto zařízení jsme bezpečně uložili informace pro obnovení."
+      ],
       "Weak": [
         "Slabé"
       ],
@@ -10541,6 +11041,12 @@
       "Your password (trusted contact)": [
         "Vaše heslo (důvěryhodný kontakt)"
       ],
+      "Your recovery email": [
+        "Váš e-mail pro obnovení"
+      ],
+      "Your recovery phone number": [
+        "Vaše telefonní číslo pro obnovení"
+      ],
       "Zero-access architecture": [
         "Architektura s nulovým přístupem"
       ],
@@ -10549,14 +11055,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Obnova na základě zařízení"
-      ],
       "Recovery phone number": [
         "Telefonní číslo pro obnovení"
-      ],
-      "Recovery phrase": [
-        "Obnovovací fráze"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10775,9 +11275,6 @@
       "How to share via email": [
         "Jak sdílet pomocí e-mailu"
       ],
-      "How to unlock data": [
-        "Jak odemknout údaje"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Jak používat ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -10798,9 +11295,6 @@
       ],
       "Learn more": [
         "Více informací"
-      ],
-      "Learn more about data recovery": [
-        "Další informace o obnově dat"
       ],
       "Manage addresses": [
         "Spravovat adresy"
@@ -10843,6 +11337,9 @@
       ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
+      ],
+      "use a data recovery method": [
+        "použít metodu obnovení dat"
       ],
       "Vault": [
         "Trezor"
@@ -13213,6 +13710,14 @@
         "Časově omezená nabídka."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Pamatujete si své heslo k ${ BRAND_NAME }?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Nejlepší způsob, jak se vyhnout ztrátě přístupu k vašemu účtu a datům, je zapamatovat si své přihlašovací údaje."
+      ]
+    },
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "Pokud zapomenete své heslo, můžete ztratit přístup ke svým šifrovaným datům."
@@ -14087,6 +14592,188 @@
         "Ověřením telefonního čísla zvyšujete bezpečnost účtu a umožňujete další možnosti obnovení."
       ]
     },
+    "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "${ score }/${ maxScore } dokončeno"
+      ],
+      "Add more options for stronger protection": [
+        "Přidejte další možnosti pro lepší ochranu"
+      ],
+      "Check your access to your recovery options": [
+        "Zkontrolujte svůj přístup k možnostem obnovení"
+      ],
+      "Critical": [
+        "Kritické"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "Neztraťte přístup ke svému účtu ${ BRAND_NAME }"
+      ],
+      "How you increased your account protection": [
+        "Jak jste zvýšili zabezpečení svého účtu"
+      ],
+      "Inactive recovery options": [
+        "Neaktivní možnosti obnovy"
+      ],
+      "Maximum": [
+        "Maximum"
+      ],
+      "Partial": [
+        "Částečné"
+      ],
+      "Recoverability": [
+        "Možnost obnovení"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Vyžadovat ověřenou možnost resetování hesla (e-mail nebo SMS)"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "Skóre: ${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "Silné"
+      ],
+      "Take precautions to avoid losing access": [
+        "Učiňte opatření, abyste předešli ztrátě přístupu"
+      ],
+      "Weak": [
+        "Slabé"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Jste plně chráněni. Pravidelná kontrola udržuje vše funkční, i když se vaše zařízení a kontakty v průběhu času mění."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Jste částečně chráněni, ale stále ne úplně v bezpečí. Zapomenuté heslo by stále mohlo znamenat ztrátu e-mailů, souborů a hesel."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "Stále jste ve vysokém riziku. Pokud zapomenete své heslo, můžete trvale přijít o e-maily, soubory a hesla."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Jste dobře chráněni, ale stále existují mezery. Více možností obnovení vám poskytne silnější záchrannou síť, pokud byste někdy ztratili heslo."
+      ],
+      "Your account and data can be recovered": [
+        "Váš účet a data je možné obnovit"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Váš účet nemá nastaveny žádné možnosti obnovení. Pokud ztratíte své heslo, trvale přijdete o přístup ke svým e-mailům, souborům a heslům."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Váš účet není plně chráněn. Zapomenuté heslo by stále mohlo znamenat ztrátu přístupu k vašim e-mailům, souborům a heslům."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Nastavení obnovy vašeho účtu je minimální. Pokud ztratíte své heslo, můžete trvale přijít o přístup k e-mailům, souborům a heslům."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Nastavení obnovy vašeho účtu je vynikající. Udržujte své možnosti aktuální, aby fungovaly, až je budete potřebovat."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Nastavení obnovení účtu není kompletní. Zapomenuté heslo by stále mohlo znamenat ztrátu přístupu k vašim e-mailům, souborům a heslům."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Nastavení obnovy vašeho účtu je solidní, zbývá jen vyřešit několik drobných mezer. Každá přidaná možnost posiluje vaši záchrannou síť."
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "Přidat nouzové kontakty"
+      ],
+      "Add recovery contacts": [
+        "Přidat kontakty pro obnovení"
+      ],
+      "Add recovery email": [
+        "Přidat e-mail pro obnovení"
+      ],
+      "Add recovery phone": [
+        "Přidat telefon pro obnovení"
+      ],
+      "Allow data recovery on this device": [
+        "Povolit obnovu dat na tomto zařízení"
+      ],
+      "Allow password reset from settings": [
+        "Povolit resetování hesla z Nastavení"
+      ],
+      "Allow scanning QR code to sign in": [
+        "Povolte skenování QR kódu pro přihlášení"
+      ],
+      "Data recovery allowed on this device": [
+        "Na tomto zařízení je povoleno obnovení dat"
+      ],
+      "Download recovery file": [
+        "Stáhnout soubor pro obnovení"
+      ],
+      "Email recovery enabled": [
+        "Obnovení pomocí e-mailu zapnuto"
+      ],
+      "Emergency contacts added": [
+        "Nouzové kontakty přidány"
+      ],
+      "Enable email recovery": [
+        "Aktivovat obnovení e-mailem"
+      ],
+      "Enable recovery by phone": [
+        "Povolte obnovení telefonem"
+      ],
+      "Password reset allowed from settings": [
+        "Reset hesla je možný v nastavení"
+      ],
+      "Password verified": [
+        "Heslo ověřeno"
+      ],
+      "Phone recovery enabled": [
+        "Obnovení pomocí telefonu zapnuto"
+      ],
+      "Recovery contacts added": [
+        "Kontakty pro obnovení přidány"
+      ],
+      "Recovery file downloaded": [
+        "Soubor pro obnovení byl stažen"
+      ],
+      "Recovery phrase saved": [
+        "Obnovovací fráze uložena"
+      ],
+      "Save recovery phrase": [
+        "Uložit obnovovací frázi"
+      ],
+      "Sign-in with QR code allowed": [
+        "Přihlášení pomocí QR kódu povoleno"
+      ],
+      "Verify password": [
+        "Ověření hesla"
+      ],
+      "Verify recovery email": [
+        "Ověřit e-mail pro obnovení"
+      ],
+      "Verify recovery phone": [
+        "Ověřit telefon pro obnovení"
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Copy": [
+        "Kopírovat"
+      ],
+      "Show": [
+        "Zobrazit"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Po vytvoření si nezapomeňte svou obnovovací frázi uschovat na bezpečném místě.** Z bezpečnostních důvodů tuto frázi po uložení změn neukládáme a v aplikaci ${ BRAND_NAME } ji již nebudete moci znovu zobrazit."
+      ],
+      "copy recovery phrase": [
+        "zkopírovat obnovovací frázi"
+      ],
+      "Download PDF": [
+        "Stáhnout PDF"
+      ],
+      "download PDF": [
+        "stáhnout PDF"
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "Nebo ${ copyRecoverySwitchButton } jako text."
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "Nebo namísto toho ${ downloadRecoveryKitSwitchButton }."
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } za doporučení"
@@ -14414,47 +15101,8 @@
       ]
     },
     "Safety review": {
-      "Check account security": [
-        "Zkontrolujte zabezpečení účtu"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Pokud ztratíte přihlašovací údaje a potřebujete resetovat účet, **je nutné** mít k dispozici **metodu obnovení účtu i obnovení dat**, jinak se vám může stát, že nebudete mít přístup k vašim e-mailům, kontaktům, souborům nebo heslům."
-      ],
       "Review account safety": [
         "Zkontrolujte bezpečnost účtu"
-      ],
-      "Safeguard account now": [
-        "Zabezpečte nyní svůj účet"
-      ],
-      "Safeguard your account": [
-        "Zabezpečte svůj účet"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Hrozí, že ztratíte přístup ke svému účtu a datům."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Hrozí, že ztratíte přístup ke svým datům."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Doporučili jsme vám opatření, která vám pomohou ještě lépe zabezpečit váš účet."
-      ],
-      "You have recommended actions.": [
-        "Jsou zde některé doporučené akce."
-      ],
-      "Your account and data can be recovered": [
-        "Váš účet a data je možné obnovit"
-      ],
-      "Your account and data can be recovered.": [
-        "Váš účet a data je možné obnovit."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Váš účet a data je možné obnovit. Zkontrolujte, zda máte stále přístup k metodám obnovení."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Váš účet a data je možné obnovit. Jsou zde některé doporučené akce pro dodatečné zabezpečení vašeho účtu."
-      ],
-      "Your account is fully secure.": [
-        "Váš účet je plně zabezpečen."
       ]
     },
     "saml: Action": {
@@ -14729,6 +15377,17 @@
     "Select search results": {
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Chcete-li zajistit nejvyšší možnou bezpečnost svého účtu, deaktivujte obnovení pomocí e-mailu a SMS."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Chcete-li zajistit, že budete mít k vašemu účtu ${ BRAND_NAME } vždy přístup, stáhněte si svou obnovovací frázi."
+      ],
+      "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
+        "Máte doporučené akce od ${ PROTON_SENTINEL_NAME }"
       ]
     },
     "Server-Info": {
@@ -15026,11 +15685,11 @@
       ]
     },
     "session_recovery:settings:info": {
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "Chcete-li v nastaveních zakázat resetování hesla, musíte si uložit svou obnovovací frázi."
+      ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Chcete-li zakázat resetování hesla, musíte mít nastavenou metodu obnovení."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Chcete-li zvýšit zabezpečení svého účtu a chránit svá data, můžete v nastavení účtu ve webové aplikaci požádat o resetování hesla."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -15085,6 +15744,9 @@
       ]
     },
     "Settings section title": {
+      "Account": [
+        "Účet"
+      ],
       "Organization": [
         "Organizace"
       ]
@@ -15697,14 +16359,68 @@
       ]
     },
     "Status": {
+      "${ count } person": [
+        "${ count } osoba",
+        "${ count } osoby",
+        "${ count } osob",
+        "${ count } osob"
+      ],
       "... waiting": [
         "... čekání"
+      ],
+      "Add a phone number": [
+        "Přidat telefonní číslo"
+      ],
+      "Add an email address": [
+        "Přidejte e-mailovou adresu"
+      ],
+      "Available on this device": [
+        "K dispozici na tomto zařízení"
       ],
       "completed": [
         "dokončeno"
       ],
+      "Disable recovery by email": [
+        "Deaktivovat obnovení e-mailem"
+      ],
+      "Disable recovery by phone": [
+        "Deaktivovat obnovení telefonem"
+      ],
       "finalizing": [
         "dokončování"
+      ],
+      "Generate a recovery phrase": [
+        "Vygenerovat obnovovací frázi"
+      ],
+      "Last changed ${ formattedDate }": [
+        "Poslední změna: ${ formattedDate }"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "Poslední aktualizace: ${ formattedUpdateDate }"
+      ],
+      "Not saved": [
+        "Neuložen"
+      ],
+      "Off": [
+        "Vypnuto"
+      ],
+      "On": [
+        "Zap."
+      ],
+      "Outdated": [
+        "Zastaralé"
+      ],
+      "Saved": [
+        "Uložen"
+      ],
+      "Unverified": [
+        "Neověřeno"
+      ],
+      "Verified": [
+        "Ověřeno"
+      ],
+      "Verify ${ value }": [
+        "Ověřte ${ value }"
       ]
     },
     "Storage": {
@@ -16879,6 +17595,9 @@
       "Access control": [
         "Nastavení přístupu"
       ],
+      "Accessibility": [
+        "Přístupnost"
+      ],
       "Account": [
         "Účet"
       ],
@@ -16924,8 +17643,14 @@
         "Přidat ${ totalServerCount } serverů?",
         "Přidat ${ totalServerCount } serverů?"
       ],
+      "Add a recovery contact": [
+        "Přidat kontakt pro obnovení"
+      ],
       "Add address": [
         "Přidat adresu"
+      ],
+      "Add an emergency contact": [
+        "Přidat nouzový kontakt"
       ],
       "Add contact group name": [
         "Přidat název skupiny kontaktů"
@@ -16974,6 +17699,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Přidání uživatelů do \"${ policyName }\""
+      ],
+      "Advanced recovery options": [
+        "Pokročilé možnosti obnovení"
       ],
       "Allocate storage": [
         "Přiřadit úložiště"
@@ -17098,6 +17826,9 @@
       "Collaborate on documents": [
         "Spolupracovat na dokumentech"
       ],
+      "Compare plans": [
+        "Porovnání tarifů"
+      ],
       "Confirm": [
         "Potvrdit"
       ],
@@ -17218,11 +17949,17 @@
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
       ],
-      "Data locked": [
-        "Data uzamčena"
+      "Dashboard": [
+        "Ovládací panel"
       ],
       "Data recovery": [
         "Obnovení dat"
+      ],
+      "Data recovery contacts": [
+        "Kontakty pro obnovu dat"
+      ],
+      "Data recovery options": [
+        "Možnosti obnovy dat"
       ],
       "Data retention": [
         "Uchovávání dat"
@@ -17233,8 +17970,14 @@
       "Day theme": [
         "Denní motiv"
       ],
+      "Deactivate current phrase?": [
+        "Deaktivovat aktuální frázi?"
+      ],
       "Decrypt key": [
         "Dešifrovat klíč"
+      ],
+      "Deep dive into email blog posts": [
+        "Začtěte se do článků o e-mailu na blogu"
       ],
       "Deep dive into VPN blog posts": [
         "Začtěte se do článků o VPN na blogu"
@@ -17275,11 +18018,17 @@
       "Device": [
         "Zařízení"
       ],
+      "Device data backup": [
+        "Záloha dat zařízení"
+      ],
       "Device name": [
         "Název zařízení"
       ],
       "Disable account monitor?": [
         "Deaktivovat monitor účtu?"
+      ],
+      "Disable device data backup?": [
+        "Deaktivovat zálohování dat zařízení?"
       ],
       "Disable two-factor authentication": [
         "Zakázat dvoufázové ověření"
@@ -17316,6 +18065,9 @@
       ],
       "Download apps": [
         "Stáhnout aplikace"
+      ],
+      "Download your recovery phrase": [
+        "Stáhněte si svou obnovovací frázi"
       ],
       "Downloads": [
         "Stahování"
@@ -17374,6 +18126,12 @@
       "Email subscriptions": [
         "E-mailové odběry"
       ],
+      "Email verification": [
+        "Ověření e-mailu"
+      ],
+      "Emergency access": [
+        "Nouzový přístup"
+      ],
       "Enable advanced account protection": [
         "Povolení pokročilé ochrany účtu"
       ],
@@ -17431,9 +18189,6 @@
       "Generate missing keys": [
         "Generovat chybějící klíče"
       ],
-      "Generate new recovery phrase?": [
-        "Vygenerovat novou frázi pro obnovení?"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "Získejte ${ vpnPlus } pro přístup ke všem serverům"
       ],
@@ -17463,6 +18218,9 @@
       ],
       "Gift code": [
         "Dárkový kód"
+      ],
+      "Group membership": [
+        "Členství ve skupině"
       ],
       "Group role assignment paused": [
         "Přiřazování skupinových rolí bylo pozastaveno"
@@ -17545,6 +18303,9 @@
       "IP": [
         "IP"
       ],
+      "Language and time": [
+        "Jazyk a čas"
+      ],
       "Limit reached": [
         "Limit dosažen"
       ],
@@ -17599,6 +18360,9 @@
       "No events yet": [
         "Zatím žádné události"
       ],
+      "Notifications": [
+        "Upozornění"
+      ],
       "Open": [
         "Otevřít"
       ],
@@ -17647,6 +18411,9 @@
       "Password": [
         "Heslo"
       ],
+      "Password reset options": [
+        "Možnosti resetování hesla"
+      ],
       "Password reset settings": [
         "Nastavení resetování hesla"
       ],
@@ -17664,6 +18431,9 @@
       ],
       "Payment verification": [
         "Ověřování platby"
+      ],
+      "Pending invitations": [
+        "Čekající pozvánky"
       ],
       "Phone": [
         "Telefon"
@@ -17686,6 +18456,9 @@
       "QR Code": [
         "QR kód"
       ],
+      "QR code sign-in": [
+        "Přihlášení pomocí QR kódu"
+      ],
       "Recommended": [
         "Doporučeno"
       ],
@@ -17706,6 +18479,9 @@
       ],
       "Recovery file": [
         "Soubor pro obnovení"
+      ],
+      "Recovery phrase": [
+        "Obnovovací fráze"
       ],
       "Refer a friend": [
         "Doporučte přítele"
@@ -17863,8 +18639,14 @@
       "Sign out": [
         "Odhlásit se"
       ],
+      "Signed in to another account": [
+        "Přihlášen(a) k jinému účtu"
+      ],
       "Signed in to member account": [
         "Přihlášeno k členskému účtu"
+      ],
+      "Signed-in reset": [
+        "Resetování v přihlášeném stavu"
       ],
       "Simplify email distribution": [
         "Zjednodušení distribuce e-mailů"
@@ -17877,6 +18659,12 @@
       ],
       "Single-sign on (SSO)": [
         "Jednotné přihlášení (SSO)"
+      ],
+      "SMS verification": [
+        "SMS ověření"
+      ],
+      "Some of your encrypted data is locked": [
+        "Některá z vašich šifrovaných dat jsou uzamčena"
       ],
       "Something went wrong": [
         "Něco se pokazilo"
@@ -17931,6 +18719,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "Theme": [
+        "Motiv"
       ],
       "There are no events for your account": [
         "Pro váš účet nejsou k dispozici žádné události"
@@ -17988,6 +18779,9 @@
       ],
       "Upgrade complete!": [
         "Navýšení dokončeno!"
+      ],
+      "Upgrade plan": [
+        "Navýšit tarif"
       ],
       "Upgrade to ${ planName }": [
         "Navýšit na ${ planName }"
@@ -18115,11 +18909,23 @@
       "Your plan": [
         "Váš tarif"
       ],
+      "Your recovery file": [
+        "Váš soubor pro obnovení"
+      ],
+      "Your recovery phrase": [
+        "Vaše obnovovací fráze"
+      ],
+      "Your recovery setup": [
+        "Vaše nastavení obnovy"
+      ],
       "Your referrals": [
         "Vámi doporučení"
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "Your storage": [
+        "Vaše úložiště"
       ],
       "Your subscriptions": [
         "Vaše předplatné"
@@ -18197,6 +19003,24 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správci mohou spravovat uživatelské účty a udělovat práva správce ostatním uživatelům. Tarif organizace může upravovat pouze hlavní správce."
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "Umožnit obnovení účtu pomocí jednorázového kódu zaslaného na vaši e-mailovou adresu pro obnovení"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "Umožnit obnovení účtu pomocí jednorázového kódu zaslaného na váš telefon pro obnovení"
+      ],
+      "Allow resetting your password from the account settings": [
+        "Umožňuje resetování vašeho hesla v nastavení účtu"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "Umožnit přihlášení naskenováním QR kódu z mobilní aplikace ${ BRAND_NAME }"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "Povolit důvěryhodným kontaktům požádat o přístup k vašemu účtu"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "Povolit důvěryhodným kontaktům odemknout vaše šifrovaná data po resetování hesla"
       ],
       "Any protection applied to suspicious activity": [
         "Jakákoli ochrana uplatňovaná na podezřelou aktivitu"
@@ -18284,6 +19108,15 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Zdrojová IP adresa a poskytovatel internetových služeb (ISP)"
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "Uložte si 12-slovnou frázi, abyste mohli okamžitě odemknout svůj účet a zašifrovaná data, pokud zapomenete heslo"
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "Uložte si v tomto prohlížeči záložní soubor šifrování, abyste mohli obnovit svá data po resetování hesla"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "Uložte si záložní soubor šifrování, abyste mohli obnovit svá data po resetování hesla"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "V odesílaných e-mailech nastaví následující zápatí: ${ signature } Odkaz odkazuje na váš doporučující odkaz. Zápatí se zobrazí pod vaším podpisem. Podpis si můžete kdykoli přizpůsobit v nastavení."
@@ -18500,9 +19333,6 @@
         "Nepodařilo se aktivovat přístup správce pro ${ n } uživatele",
         "Nepodařilo se aktivovat přístup správce pro ${ n } uživatelů",
         "Nepodařilo se aktivovat přístup správce pro ${ n } uživatelů"
-      ],
-      "Could not enable administrator access: ${ error }": [
-        "Nepodařilo se povolit přístup správce: ${ error }"
       ],
       "Enable manually": [
         "Povolit ručně"
@@ -18727,9 +19557,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Správci nemají přístup k datům soukromých uživatelů"
       ],
@@ -18738,21 +19565,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Pozvánka odeslána, čeká se na odpověď od pozvaného uživatele"
-      ],
-      "Invite sent": [
-        "Pozvánka odeslána"
-      ],
-      "It's you": [
-        "To jsi ty"
-      ],
-      "Pending admin access": [
-        "Čeká se na vyřízení správcovského přístupu"
-      ],
-      "Private": [
-        "Soukromý"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO uživatel poskytnutý poskytovatelem identity"

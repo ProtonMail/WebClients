@@ -577,12 +577,6 @@
       "Regenerate": [
         "Regenerare"
       ],
-      "Regex invalid": [
-        "Expresie regulată nevalidă"
-      ],
-      "Regex unsafe": [
-        "Expresie regulată nesigură"
-      ],
       "Reject": [
         "Respingere"
       ],
@@ -1331,6 +1325,12 @@
       "PIN codes do not match": [
         "Codurile PIN nu coincid."
       ],
+      "Regex invalid": [
+        "Expresie regulată nevalidă"
+      ],
+      "Regex unsafe": [
+        "Expresie regulată nesigură"
+      ],
       "Request timed out": [
         "Solicitarea a expirat"
       ],
@@ -2078,6 +2078,9 @@
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "Dacă nu intenționați să utilizați agentul SSH pe un alt cont plătit, nu uitați să dezactivați această setare înainte de a trece la contul respectiv."
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Dacă semnați transferurile din Git cu cheia SSH, executați și această comandă:"
+      ],
       "Import the CSV file below.": [
         "Importați mai jos fișierul CSV."
       ],
@@ -2221,9 +2224,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2702,6 +2703,9 @@
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Pentru a vă păstra adresa de e-mail personală ascunsă, puteți crea un alias de contact care vă maschează adresa."
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Pentru ca Git să funcționeze cu agentul SSH ${ PASS_APP_NAME }, Git trebuie să utilizeze Windows OpenSSH. Acest lucru se poate face rulând următoarea comandă:"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Pentru a migra datele dintr-un alt manager de parole, accesați managerul de parole, exportați datele, apoi încărcați-le în ${ PASS_APP_NAME }. După ce datele v-au fost importate, puteți șterge fișierul exportat."

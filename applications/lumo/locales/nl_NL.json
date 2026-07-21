@@ -148,6 +148,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
       ],
+      "Download chart": [
+        "Grafiek downloaden"
+      ],
       "Download logs": [
         "Logboeken downloaden"
       ],
@@ -201,6 +204,9 @@
       ],
       "Hide": [
         "Verberg"
+      ],
+      "Hide chart spec": [
+        "Verberg specificaties grafiek"
       ],
       "Hide more benefits": [
         "Verberg meer voordelen"
@@ -429,6 +435,9 @@
       ],
       "Verify account": [
         "Verifieer account"
+      ],
+      "View chart spec": [
+        "Bekijk specificaties grafiek"
       ],
       "View invoice": [
         "Factuur bekijken"
@@ -834,6 +843,9 @@
       ],
       "Discover and set up features": [
         "Ontdek en configureer functies"
+      ],
+      "Get 50% offer": [
+        "Neem de 50% deal"
       ],
       "Remind me later": [
         "Herinner mij later"
@@ -1380,6 +1392,9 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Meer informatie over het gebruik van ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
+        "Laat ${ LUMO_SHORT_APP_NAME } gegevens visualiseren met grafieken"
+      ],
       "Lightweight model for everyday tasks": [
         "Lichtgewicht model voor alledaagse taken"
       ],
@@ -1918,6 +1933,9 @@
       "Free accounts keep chat history for 7 days. Talk to your admin to keep this chat.": [
         "Gratis accounts bewaren de chatgeschiedenis gedurende 7 dagen. Neem contact op met uw beheerder om deze chat te bewaren."
       ],
+      "Free accounts keep chat history for 7 days. This chat is past that window and will be permanently deleted unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Bij gratis accounts wordt de chatgeschiedenis 7 dagen bewaard. Deze chat valt buiten die periode en wordt definitief verwijderd, tenzij u een upgrade uitvoert naar ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
       "Free space": [
         "Vrije ruimte"
       ],
@@ -2115,6 +2133,9 @@
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Deze bestanden hoorden bij samengevatte berichten en worden niet langer naar het model verzonden."
+      ],
+      "This chat is past the free retention window and will be permanently deleted. Talk to your admin to keep it.": [
+        "Deze chat valt buiten de bewaartermijn en wordt definitief verwijderd. Neem contact op met uw beheerder om de chat te behouden."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Deze chat wordt over 2 dagen verwijderd. Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus om deze te behouden."
@@ -2800,6 +2821,9 @@
       "Visionary": [
         "Visionary"
       ],
+      "Visualization mode": [
+        "Visualisatiemodus"
+      ],
       "We'd love your feedback!": [
         "We hechten veel waarde aan uw feedback!"
       ],
@@ -3020,6 +3044,15 @@
       "This chat expires tomorrow": [
         "Deze chat verloopt morgen"
       ],
+      "This chat will be deleted soon": [
+        "Dit chatgesprek wordt binnenkort verwijderd"
+      ],
+      "This chat will be deleted today": [
+        "Dit chatgesprek wordt vandaag verwijderd"
+      ],
+      "This chat will be deleted tomorrow": [
+        "Dit chatgesprek wordt morgen verwijderd"
+      ],
       "This conversation is getting long": [
         "Dit gesprek wordt lang"
       ],
@@ -3145,7 +3178,7 @@
         "Downloaden"
       ],
       "Download image": [
-        "Afbeelding downloaden"
+        "Download afbeelding"
       ],
       "Edit agent": [
         "Agent bewerken"
@@ -3376,17 +3409,11 @@
       "New project": [
         "Nieuw project"
       ],
-      "Projects": [
-        "Projecten"
-      ],
       "Save": [
         "Opslaan"
       ],
       "Search": [
         "Zoeken"
-      ],
-      "See all": [
-        "Bekijk alles"
       ],
       "Send": [
         "Verzenden"
@@ -3417,9 +3444,6 @@
       "Failed to create folder": [
         "Kan map niet maken"
       ],
-      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
-        "Downloaden van \"${ file.name }\" mislukt: Dataintegriteitscontrole is mislukt. Probeer het opnieuw."
-      ],
       "Failed to index Drive folder for search": [
         "Kon Drive-map niet indexeren voor zoeken"
       ],
@@ -3440,12 +3464,6 @@
       ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Bestand \"${ file.name }\" (${ fileSizeFormatted }) overschrijdt de limiet van ${ maxSizeFormatted }. Koppel een ${ DRIVE_APP_NAME }-map om grotere bestanden te uploaden."
-      ],
-      "File download failed due to integrity check. Please try again.": [
-        "Bestand downloaden mislukt vanwege integriteitscontrole. Probeer het opnieuw."
-      ],
-      "File format not supported: ${ file.name }": [
-        "Bestandsformaat wordt niet ondersteund: ${ file.name }"
       ],
       "File type not supported: ${ file.name }": [
         "Bestandstype wordt niet ondersteund: ${ file.name }"
@@ -3506,6 +3524,9 @@
       " Chat in Project": [
         " Chatten in Project",
         " Chats in Project"
+      ],
+      "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
+        "“${ file.name }” wordt nog geïndexeerd. De inhoud wordt geladen zodra u het verstuurt."
       ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } heeft lokale databaseopslag (IndexedDB) nodig om uw gesprekken op dit apparaat te bewaren, maar deze is hier niet beschikbaar."
@@ -3677,9 +3698,6 @@
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Er staan geen persoonlijke gegevens op deze kaart, alleen uw blootstellingsscore per gebied. Lager betekent dat u minder hebt prijsgegeven."
-      ],
-      "No projects yet": [
-        "Nog geen projecten"
       ],
       "Now protect the person behind it.": [
         "Bescherm nu de persoon erachter."
@@ -3876,7 +3894,7 @@
         "Pure snelheid samengevat in een enkel frame: de F1-auto die over het asfalt scheurt met bewegingsonscherpte die alles erachter vervaagt, vonken die van het oppervlak vliegen en carbonfiber dat het licht vangt vanuit die intense lage hoek vlak op het asfalt."
       ],
       "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "Het woord \"FLUORISH\" volledig gevormd uit weelderig groen gras en natuurlijke vegetatie, elke letter gemaakt van dicht, vers gras, realistische organische textuur, levendige groentinten, complexe botanische details, fotorealistische natuurtypografie, zacht natuurlijk zonlicht, subtiele schaduwen, zeer gedetailleerd milieuvriendelijk ontwerp, geïsoleerd op een schone achtergrond, premium 3D-belettering, ultrarealistisch, 8k, scherpe focus, professionele reclamekwaliteit."
+        "Het woord \"FLUORISH\" bestaat volledig uit weelderig groen gras en natuurlijke vegetatie, elke letter is gemaakt van dichte verse grassprietjes, realistische organische textuur, levendige groene tinten, ingewikkelde botanische details, fotorealistische natuurtypografie, zacht natuurlijk zonlicht, subtiele schaduwen, zeer gedetailleerd milieuvriendelijk ontwerp, geïsoleerd op een strakke achtergrond, premium 3D-letters, ultrarealistisch, 8k, scherpe focus, professionele advertentiekwaliteit."
       ],
       "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
         "Minimalistische luchtfoto van bovenaf van een lange oranje surfplank die op helderblauw water drijft. Het water heeft rollende, gebogen golfconturen en heldere, glinsterende caustische lichtpatronen. Direct onder de plank valt een zachte schaduw, wat zorgt voor een strakke, serene en moderne esthetiek."
@@ -6271,6 +6289,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Toegang tot meer dan 20.000 servers in 145 landen"
+      ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
       ],
@@ -6318,6 +6339,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
+      ],
+      "Chart spec view": [
+        "Geef specificaties grafiek weer"
       ],
       "Chunk": [
         "Chunk"
@@ -6422,6 +6446,9 @@
       "Expired": [
         "Verlopen"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "De hoogste VPN-snelheden tot 10 Gbps"
+      ],
       "Folder:": [
         "Map:"
       ],
@@ -6434,8 +6461,14 @@
       "Google Pay mark": [
         "Google Pay merk"
       ],
+      "Have some more time to decide without interruption.": [
+        "Neem nog even de tijd om in alle rust een beslissing te nemen."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Als u nu annuleert, hebt u vanaf ${ expiryDate }geen toegang meer tot ${ BRAND_NAME } ${ planTitle }, waaronder deze functies:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
@@ -6509,6 +6542,9 @@
       "MIME:": [
         "MIME:"
       ],
+      "Model output": [
+        "Modelresultaat"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
@@ -6557,6 +6593,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
       ],
+      "Premium privacy protection across all your devices": [
+        "Eersteklas privacybescherming op al uw apparaten"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
@@ -6571,6 +6610,9 @@
       ],
       "Registering your subscription…": [
         "Uw abonnement registreren…"
+      ],
+      "Rendered spec": [
+        "Specificaties weergegeven"
       ],
       "Searchable chunks": [
         "Doorzoekbare chunks"
@@ -6604,6 +6646,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Behoud uw abonnement aan en u ontvangt 50% korting op uw volgende maand"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
@@ -9740,6 +9785,9 @@
       ],
       "Simplify password management": [
         "Vereenvoudig wachtwoordbeheer"
+      ],
+      "Stay for 50% off your next month": [
+        "Blijf en ontvang 50% korting op uw volgende maand"
       ],
       "Summary": [
         "Overzicht"

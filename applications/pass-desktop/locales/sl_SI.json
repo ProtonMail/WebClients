@@ -952,6 +952,12 @@
       "PIN codes do not match": [
         "Kodi PIN se ne ujemata"
       ],
+      "Regex invalid": [
+        "Neveljaven regularni izraz"
+      ],
+      "Regex unsafe": [
+        "Regularni izraz ni varen"
+      ],
       "Request timed out": [
         "Zahteva se je iztekla"
       ],
@@ -1403,6 +1409,9 @@
       "How does monitoring work?": [
         "Kako poteka nadzor?"
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Če svoje Git spremembe podpisujete s svojim SSH ključem, izvedite tudi naslednji ukaz:"
+      ],
       "Import the CSV file below.": [
         "Uvozite spodnjo datoteko CSV."
       ],
@@ -1751,6 +1760,9 @@
       "This version will be added to the history as the newest version.": [
         "Ta različica bo dodana v zgodovino kot najnovejša različica."
       ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Da bi aplikacija Git delovala s SSH posrednikom ${ PASS_APP_NAME }, mora Git uporabljati Windows OpenSSH. To lahko zagotovite z izvedbo naslednjega ukaza:"
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
       ],
@@ -2050,6 +2062,9 @@
       "Backup password": [
         "Varnostno geslo"
       ],
+      "Basic": [
+        "Osnovno"
+      ],
       "Birthdate": [
         "Rojstni datum"
       ],
@@ -2073,6 +2088,9 @@
       ],
       "Catch-All": [
         "Ujemi vse"
+      ],
+      "Check": [
+        "Preveri"
       ],
       "Choose your preferred look and feel.": [
         "Izberite želeni videz in občutek."
@@ -2545,6 +2563,9 @@
       "Reddit handle": [
         "Ime za Reddit"
       ],
+      "Regular expression": [
+        "Regularni izraz"
+      ],
       "Relevant": [
         "Pomembno"
       ],
@@ -2631,6 +2652,9 @@
       ],
       "SSN": [
         "SSN"
+      ],
+      "Starts with": [
+        "Se začne z"
       ],
       "State or province": [
         "Država ali pokrajina"
@@ -2833,6 +2857,9 @@
         "${ count } predmeta",
         "${ count } predmeti",
         "${ count } predmetov"
+      ],
+      "Regular expression rule": [
+        "Pravilo regularnega izraza"
       ],
       "You selected ${ semiboldText } in this vault.": [
         "V tem trezorju ste izbrali ${ semiboldText }."
@@ -3040,6 +3067,11 @@
       ],
       "Used on ${ url }": [
         "Uporabljeno na ${ url }"
+      ]
+    },
+    "Result": {
+      "The rule is matching this URL": [
+        "Pravilo se ujema s tem naslovom"
       ]
     },
     "Security Center - Info": {
@@ -3283,6 +3315,9 @@
       ],
       "Last modified": [
         "Zadnjič spremenjeno"
+      ],
+      "Learn more": [
+        "Več informacij"
       ],
       "Leave this item?": [
         "Zapustim ta predmet?"

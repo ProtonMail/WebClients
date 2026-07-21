@@ -577,12 +577,6 @@
       "Regenerate": [
         "Gerar novamente"
       ],
-      "Regex invalid": [
-        "Regex inválido"
-      ],
-      "Regex unsafe": [
-        "Regex inseguro"
-      ],
       "Reject": [
         "Rejeitar"
       ],
@@ -1326,6 +1320,12 @@
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
       ],
+      "Regex invalid": [
+        "Regex inválido"
+      ],
+      "Regex unsafe": [
+        "Regex inseguro"
+      ],
       "Request timed out": [
         "A solicitação expirou"
       ],
@@ -1885,7 +1885,7 @@
         "Não recebeu o código?"
       ],
       "Disabling auto-lock": [
-        "Desativar bloqueio automático"
+        "Desativando bloqueio automático"
       ],
       "Disabling auto-lock failed": [
         "Erro ao desativar o bloqueio automático"
@@ -2195,8 +2195,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2241,7 +2240,7 @@
         "Nenhum"
       ],
       "None selected": [
-        "Nenhum selecionado-"
+        "Nenhum selecionado"
       ],
       "Not recommended": [
         "Não recomendado"
@@ -3573,7 +3572,7 @@
         "Número da licença"
       ],
       "License Number": [
-        "Número da Licença"
+        "Número da licença"
       ],
       "LinkedIn account": [
         "Conta do LinkedIn"
@@ -4017,7 +4016,7 @@
         "Texto"
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
-        "O melhor da ${ BRAND_NAME } com uma sola assinatura"
+        "O melhor da ${ BRAND_NAME } com uma assinatura"
       ],
       "Theme": [
         "Tema"
@@ -4065,7 +4064,7 @@
         "Unlimited"
       ],
       "Unlock premium features": [
-        "Desbloqueie recursos premium"
+        "Desbloquear recursos premium"
       ],
       "Unlock with": [
         "Desbloquear com"
@@ -4344,7 +4343,7 @@
         "Excluir ${ deleteFile.state.name }"
       ],
       "Delete all files": [
-        "Exclua todos os arquivos"
+        "Excluir todos os arquivos"
       ],
       "Do you want to remove all the files?": [
         "Deseja remover todos os arquivos?"
