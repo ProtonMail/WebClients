@@ -1,9 +1,10 @@
-import { ENABLE_U2L_ENCRYPTION, prepareTurns } from './index';
 import type { ConversationContext } from '../components/Conversation/helper';
+import type { PersonalizationSettings } from '../redux/slices/personalization';
 import { attachmentDataCache } from '../services/attachmentDataCache';
 import type { Attachment, Message } from '../types';
 import { Role } from '../types';
-import type { PersonalizationSettings } from '../redux/slices/personalization';
+import { ENABLE_U2L_ENCRYPTION } from './config';
+import { prepareTurns } from './index';
 
 describe('llm encryption configuration', () => {
     it('enables U2L encryption', () => {
