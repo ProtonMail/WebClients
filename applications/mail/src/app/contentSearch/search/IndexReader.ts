@@ -115,19 +115,22 @@ export class IndexReader {
         resultCallback: (results: string[]) => void,
         abortSignal: AbortSignal
     ) {
-        let start = range.high;
+        function* bucketGenerator(min: bigint, max: bigint, windowSize: bigint) {
+            for (let high = max; high > min; high -= windowSize) {
+                const low = high - windowSize;
+                yield { low: low < min ? min : low, high };
+            }
+        }
+
+        const buckets = bucketGenerator(range.low, range.high, BUCKET_SIZE_SECONDS);
         let anyBucketHadHits = false;
-        while (start - BUCKET_SIZE_SECONDS >= range.low) {
+        for (const bucket of buckets) {
             const searchLoop = new SearchLoop(this.engine, txn, exp.clone(), createLocalSearchQueryOptions());
-            const hits = await searchLoop.runBucketedSearch(
-                { low: start - BUCKET_SIZE_SECONDS, high: start },
-                abortSignal
-            );
+            const hits = await searchLoop.runBucketedSearch(bucket, abortSignal);
             if (hits.length > 0) {
                 anyBucketHadHits = true;
                 resultCallback(hits);
             }
-            start -= BUCKET_SIZE_SECONDS;
         }
 
         if (!anyBucketHadHits) {
