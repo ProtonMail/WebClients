@@ -10,11 +10,11 @@ import { OnboardingFlow, OnboardingStep } from './onboardingInterface';
  * it. The whole progression is therefore described by this ordered table, and
  * the "active step" is simply the first step whose bit has not been set yet.
  */
-const B2C_ONBOARDING_SEQUENCE: { step: OnboardingStep; flag: CategoriesOnboardingFlags }[] = [
+export const B2C_ONBOARDING_SEQUENCE: { step: OnboardingStep; flag: CategoriesOnboardingFlags }[] = [
     { step: OnboardingStep.INITIAL_MODAL, flag: CategoriesOnboardingFlags.INITIAL_MODAL },
-    { step: OnboardingStep.MESSAGE, flag: CategoriesOnboardingFlags.SPOTLIGHT_MESSAGE },
     { step: OnboardingStep.CATEGORIZE, flag: CategoriesOnboardingFlags.SPOTLIGHT_CATEGORIZE },
     { step: OnboardingStep.CUSTOMIZE, flag: CategoriesOnboardingFlags.SPOTLIGHT_CUSTOMIZE },
+    { step: OnboardingStep.MESSAGE, flag: CategoriesOnboardingFlags.SPOTLIGHT_MESSAGE },
 ];
 
 export const hasSeenOnboardingModal = (flagValue: number): boolean => {
