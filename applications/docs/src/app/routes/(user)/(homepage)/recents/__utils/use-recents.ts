@@ -18,10 +18,10 @@ import { useRecentsStore } from './use-recents-store'
 import { getRoleFromHierarchy } from '~/drive-sdk/get-role-from-hierarchy'
 import { useAddresses } from '@proton/account/addresses/hooks'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
-import type { SDKEventListener } from '~/drive-sdk/manage-events-subscription'
 import type { RecentDocumentAPIItem } from '@proton/docs-core/lib/Api/Types/GetRecentsResponse'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
-import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
+import { traceError, SentryRealtimeInitiatives, addSentryBreadcrumb } from '@proton/shared/lib/helpers/sentry'
+import type { SDKEventListener } from '~/drive-sdk/manage-events-subscription'
 
 export function useRecents(drive: ProtonDriveClient) {
   const [addresses] = useAddresses()
@@ -49,9 +49,21 @@ export function useRecents(drive: ProtonDriveClient) {
     const uidsToLoad = new Set<string>()
     for (const document of documents) {
       uidsToLoad.add(generateNodeUid(document.VolumeID, document.LinkID))
+      const ancestorsUids = []
       for (const ancestorLinkID of document.AncestorIDs) {
         uidsToLoad.add(generateNodeUid(document.VolumeID, ancestorLinkID))
+        ancestorsUids.push(generateNodeUid(document.VolumeID, ancestorLinkID))
       }
+      addSentryBreadcrumb({
+        type: 'docs',
+        category: 'docs',
+        level: 'info',
+        message: 'Ancestors to load',
+        data: {
+          document,
+          ancestorsUids,
+        },
+      })
     }
 
     // Load all the nodes
@@ -59,6 +71,16 @@ export function useRecents(drive: ProtonDriveClient) {
     try {
       for await (const node of drive.iterateNodes([...uidsToLoad])) {
         if ('missingUid' in node) {
+          addSentryBreadcrumb({
+            type: 'docs',
+            category: 'docs',
+            level: 'warning',
+            message: 'Missing node while iterating',
+            data: {
+              uidsToLoad,
+              missingNodeUid: node.missingUid,
+            },
+          })
           logger.debug('[LoadRecentsWithDriveSDK] Node not found', { node })
         } else {
           nodesByUid.set(node.uid, node)
@@ -66,13 +88,35 @@ export function useRecents(drive: ProtonDriveClient) {
       }
     } catch (error: any) {
       logger.debug('[LoadRecentsWithDriveSDK] Error while iterating nodes', { error })
-      traceError(error, {
+      addSentryBreadcrumb({
+        type: 'docs',
+        category: 'docs',
+        level: 'warning',
+        message: 'Node iterator error',
+        data: {
+          error,
+        },
+      })
+      // Creating new error to capture current stack
+      const sentryError = new Error('fetchRecents failed at iterateNodes')
+      sentryError.cause = error
+      traceError(sentryError, {
         tags: {
           initiative: SentryRealtimeInitiatives.SDK_SWITCH,
           feature: 'DocsLoadRecentsWithDriveSDK',
         },
       })
     }
+    addSentryBreadcrumb({
+      type: 'docs',
+      category: 'docs',
+      level: 'info',
+      message: 'Finished loading nodes',
+      data: {
+        loadedNodes: [...nodesByUid.keys()],
+        missingNodes: [...uidsToLoad].filter((nodeUid) => !nodesByUid.has(nodeUid)),
+      },
+    })
 
     return { documents, nodesByUid }
   }, [docsApi, drive, logger])
