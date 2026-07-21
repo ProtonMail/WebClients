@@ -66,6 +66,7 @@ const UploadDragDrop = ({
             onDragEnter={handleDragOver}
             onDragOver={handleDragOver}
             onDrop={preventDefaultEvent}
+            data-testid="drag-and-drop-upload"
         >
             <img className="visibility-hidden absolute h-0 w-0" src={dragdropImageSvg} alt="" aria-hidden="true" />
             {children}
