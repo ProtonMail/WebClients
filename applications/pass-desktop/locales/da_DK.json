@@ -577,12 +577,6 @@
       "Regenerate": [
         "Regenerér"
       ],
-      "Regex invalid": [
-        "Regex ugyldig"
-      ],
-      "Regex unsafe": [
-        "Regex usikker"
-      ],
       "Reject": [
         "Afvis"
       ],
@@ -1326,6 +1320,12 @@
       "PIN codes do not match": [
         "Pinkoder stemmer ikke overens"
       ],
+      "Regex invalid": [
+        "Ugyldig regex"
+      ],
+      "Regex unsafe": [
+        "Usikker regex"
+      ],
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
@@ -2054,6 +2054,9 @@
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "Hvis du ikke har planer om at bruge SSH-agenten på en anden betalt konto, så husk at deaktivere denne indstilling før du skifter til den konto."
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Hvis du signerer dine Git-commits med din SSH-nøgle skal du også køre denne kommando:"
+      ],
       "Import the CSV file below.": [
         "Importér CSV-filen nedenfor."
       ],
@@ -2195,8 +2198,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Hvis du flytter et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2674,6 +2676,9 @@
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Hvis du vil holde din personlige e-mailadresse skjult, kan du oprette en alias-kontakt, der maskerer din adresse."
       ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "For at Git kan fungere med ${ PASS_APP_NAME } SSH-agenten, skal Git bruge Windows OpenSSH. Dette kan gøres ved at køre denne kommando:"
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "For at migrere data fra en anden adgangskodeadministrator skal du gå til adgangskodeadministratoren, eksportere dine data og derefter uploade dem til ${ PASS_APP_NAME }. Når dine data er blevet importeret, skal du slette den eksporterede fil."
       ],
@@ -3123,7 +3128,7 @@
         "Banknavn"
       ],
       "Basic": [
-        "Grundlæggende"
+        "Basal"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Ud over at gemme dine logins beskytter ${ PASS_APP_NAME } din identitet med en integreret e-mailaliasfunktion. Når du tilmelder dig en ny onlinekonto, kan ${ PASS_APP_NAME } automatisk oprette et alias for at beskytte din faktiske e-mailadresse. "
@@ -3159,7 +3164,7 @@
         "Catch-All"
       ],
       "Check": [
-        "Kontroller"
+        "Tjek"
       ],
       "Checkbox": [
         "Afkrydsningsfelt"
@@ -4104,7 +4109,7 @@
         "Opdatér"
       ],
       "URL wildcard pattern": [
-        "URL-jokertegnmønster"
+        "URL-wildcarddomæne"
       ],
       "Use ${ PASS_APP_NAME } as SSH agent": [
         "Brug ${ PASS_APP_NAME } som SSH-agent"
@@ -4262,7 +4267,7 @@
         "Regel for regulært udtryk"
       ],
       "Wildcard pattern matching rule": [
-        "Regel for jokertegnmønstermatch"
+        "Regel for wildcardmønster"
       ],
       "You can drag and drop the selected item to another vault": [
         "Du kan trække og slippe det valgte element til en anden boks",
@@ -4565,7 +4570,7 @@
     },
     "Result": {
       "Enter a URL to check to see if your current rule is matching the URL": [
-        "Indtast en URL for at kontrollere, om Deres nuværende regel matcher URL'en"
+        "Indtast en URL for at kontrollere om din nuværende regel matcher URL'en"
       ],
       "The rule is matching this URL": [
         "Reglen matcher denne URL"
@@ -5352,7 +5357,7 @@
         "Adgangskoden til ${ BRAND_NAME } kræves"
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svindel- eller phishing-websteder."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } offline-tilstand er deaktiveret."
@@ -5568,7 +5573,7 @@
         "Denne e-mailadresse vil ikke længere blive monitoreret for databrud."
       ],
       "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
-        "Dette element kan ikke foreslås til autofyld på grund af \"${ neverModeDescriptionStrong }\". Tilføj en anden URL, hvis De ønsker, at dette element skal autofyldes."
+        "Dette element kan ikke foreslås til autofyld på grund af \"${ neverModeDescriptionStrong }\". Tilføj en anden URL, hvis du ønsker, at dette element skal autofyldes."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Dette element er i øjeblikket delt. Hvis du sletter det, fjernes adgangen for alle andre brugere."
