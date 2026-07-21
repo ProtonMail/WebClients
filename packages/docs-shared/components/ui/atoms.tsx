@@ -1,7 +1,7 @@
 import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
 import { type ReactNode, forwardRef } from 'react'
-import { Icon } from './ui'
+import { Icon } from './icon'
 
 // dropdown
 // --------
