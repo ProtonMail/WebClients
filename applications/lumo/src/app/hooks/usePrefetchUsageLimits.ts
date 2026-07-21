@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
+import { fetchUsageLimits } from '@proton/lumo-api-client/core/network';
 
-import { fetchUsageLimits } from '../lib/lumo-api-client/core/network';
 import { useLumoPlan } from '../providers/LumoPlanProvider';
 import { setRemainingLimits } from '../services/usageLimitsStore';
 
