@@ -82,7 +82,8 @@ const FRAGMENT_SHADER = `
 `;
 
 /**
- * Second render pass on the blob WebGL context — samples the framebuffer via copyTexImage2D.
+ * Second render pass on the blob WebGL context — samples the framebuffer via copyTexSubImage2D
+ * into a texture allocated once (and reallocated only on resize/drawing-buffer-size change).
  * @param {WebGLRenderingContext} gl
  * @param {Partial<GridParticleFieldOptions>} options
  */
@@ -133,6 +134,8 @@ export function createWebglParticlePass(gl, options) {
     let cssW = 1;
     let cssH = 1;
     let dpr = 1;
+    let texW = 0;
+    let texH = 0;
     const stride = FLOATS_PER_POINT * 4;
 
     function bindVertexAttributes() {
@@ -180,6 +183,17 @@ export function createWebglParticlePass(gl, options) {
         bindVertexAttributes();
     }
 
+    function allocateSampleTexture() {
+        const w = gl.drawingBufferWidth;
+        const h = gl.drawingBufferHeight;
+        if (w < 1 || h < 1) return;
+        gl.activeTexture(gl.TEXTURE0);
+        gl.bindTexture(gl.TEXTURE_2D, blobTexture);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, w, h, 0, gl.RGB, gl.UNSIGNED_BYTE, null);
+        texW = w;
+        texH = h;
+    }
+
     return {
         /** @param {number} width @param {number} height @param {number} pixelRatio */
         resize(width, height, pixelRatio) {
@@ -190,6 +204,22 @@ export function createWebglParticlePass(gl, options) {
             gl.uniform2f(uResolution, Math.max(cssW, 1), Math.max(cssH, 1));
             gl.uniform1f(uPointSize, (settings.size ?? 1.75) * dpr * 2);
             buildGrid();
+            allocateSampleTexture();
+        },
+
+        /** Copy the current framebuffer (blob layer) into the sample texture. */
+        sampleFramebuffer() {
+            const w = gl.drawingBufferWidth;
+            const h = gl.drawingBufferHeight;
+            if (w < 1 || h < 1) return;
+            gl.activeTexture(gl.TEXTURE0);
+            gl.bindTexture(gl.TEXTURE_2D, blobTexture);
+            if (w !== texW || h !== texH) {
+                gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, w, h, 0, gl.RGB, gl.UNSIGNED_BYTE, null);
+                texW = w;
+                texH = h;
+            }
+            gl.copyTexSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 0, 0, w, h);
         },
 
         /**
@@ -197,24 +227,13 @@ export function createWebglParticlePass(gl, options) {
          */
         render(frame) {
             if (pointCount === 0) return;
-
-            const w = gl.drawingBufferWidth;
-            const h = gl.drawingBufferHeight;
-
-            gl.activeTexture(gl.TEXTURE0);
-            gl.bindTexture(gl.TEXTURE_2D, blobTexture);
-            // Default framebuffer is RGB when the context is created with alpha: false.
-            gl.copyTexImage2D(gl.TEXTURE_2D, 0, gl.RGB, 0, 0, w, h, 0);
-
             gl.enable(gl.BLEND);
             gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
             gl.useProgram(program);
             bindVertexAttributes();
-
             gl.uniform1f(uTime, frame.timeSec);
             gl.uniform3f(uBaseColor, frame.baseColor[0], frame.baseColor[1], frame.baseColor[2]);
             gl.uniform2f(uMouse, frame.mouseX, frame.mouseY);
-
             gl.drawArrays(gl.POINTS, 0, pointCount);
         },
 
