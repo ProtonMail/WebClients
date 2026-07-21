@@ -33,6 +33,8 @@ import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
@@ -76,10 +78,11 @@ const AddonSection = ({
     subscription: Subscription | FreeSubscription;
     maxMembers: number;
 }) => {
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
     const addons = isPaidSubscription(subscription) ? getAddons(subscription) : [];
 
     const addonTitles = addons.map((addon) =>
-        getAddonDashboardTitle(addon.Name as ADDON_NAMES, addon.Quantity, maxMembers)
+        getAddonDashboardTitle(addon.Name as ADDON_NAMES, addon.Quantity, maxMembers, scribeToLumo)
     );
     const passLifeTimeAddon = getPassLifetimeAddonDashboardTitle(user);
     const mergedAddonTitles = [...addonTitles, passLifeTimeAddon].filter(isTruthy).join(', ');
@@ -160,8 +163,9 @@ export const CurrentPlanInfoSection = ({
     const goToSettings = useSettingsLink();
 
     const { MaxMembers = 1 } = organization || {};
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
-    const { userText } = getSubscriptionPanelText(user, organization, addresses);
+    const { userText } = getSubscriptionPanelText(user, organization, addresses, scribeToLumo);
 
     const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
 

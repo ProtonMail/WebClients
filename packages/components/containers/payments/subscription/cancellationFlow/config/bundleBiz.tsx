@@ -17,6 +17,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { PAID_PREMIUM_MAX_PARTICIPANTS } from '../../../features/meet';
 import { getPrioritySupport } from '../../../features/shared';
+import { getScribeWritingAssistantText } from '../../assistant/helpers';
 import type {
     ConfirmationModal,
     PlanConfig,
@@ -36,7 +37,12 @@ const upsellPlans: UpsellPlans = {
     [APPS.PROTONMAIL]: PLANS.BUNDLE_PRO_2024,
 };
 
-export const getBundleBizConfig = ({ app, plan, subscription }: ConfigProps): PlanConfig => {
+export const getBundleBizConfig = ({
+    app,
+    plan,
+    subscription,
+    scribeToLumo,
+}: ConfigProps & { scribeToLumo: boolean }): PlanConfig => {
     const currentPlan = PLANS.BUNDLE_BIZ_2025;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
@@ -106,7 +112,7 @@ export const getBundleBizConfig = ({ app, plan, subscription }: ConfigProps): Pl
             },
             {
                 icon: 'magic-wand',
-                text: c('Subscription reminder').t`${BRAND_NAME} Scribe writing assistant`,
+                text: getScribeWritingAssistantText(scribeToLumo),
             },
             {
                 icon: 'shield-half-filled',

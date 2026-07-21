@@ -23,6 +23,7 @@ import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Audience } from '@proton/shared/lib/interfaces';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -228,6 +229,7 @@ export const ProtonPlanCustomizer = ({
     ...rest
 }: Props) => {
     const domainVpnBiz2023Enabled = useFlag('DomainVpnBiz2023');
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const normalizedSelectedPlan = SelectedPlan.createNormalized(selectedPlanIDs, plansMap, cycle, currency);
 
@@ -243,6 +245,7 @@ export const ProtonPlanCustomizer = ({
         allowedAddonTypes,
         domainVpnBiz2023Enabled,
         mode,
+        scribeToLumo,
     });
 
     return (
