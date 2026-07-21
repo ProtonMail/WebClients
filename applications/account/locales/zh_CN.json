@@ -7803,6 +7803,9 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "Please set up your organization before adding a company.": [
+        "请先设置您的组织，然后再添加公司。"
       ]
     },
     "error": {
@@ -13631,6 +13634,12 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.": [
+        "暂无账单明细，按账单周期划分的明细将显示在此处。明细可用后，您可以将其下载为 CSV 文件。"
+      ],
+      "No companies yet. Start by creating a new company.": [
+        "暂无公司，请先新建公司。"
       ]
     },
     "info": {
@@ -15906,6 +15915,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Client": [
+        "客户端"
+      ],
+      "Client version": [
+        "客户端版本"
       ]
     },
     "label": {
@@ -27177,6 +27192,12 @@
       ],
       "You can safely remove this user from your organization.": [
         "您可以将这些用户从组织中安全移除。"
+      ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "无法启用管理员访问权限：${ unprivatizationResult.error }"
+      ],
+      "Waiting for admin approval": [
+        "等待管理员批准"
       ]
     },
     "Update font modal": {
@@ -27385,6 +27406,15 @@
       ],
       "Writing assistant": [
         "写作助手"
+      ],
+      "Invited": [
+        "已邀请"
+      ],
+      "Pending": [
+        "待处理"
+      ],
+      "Requested": [
+        "已请求"
       ]
     },
     "Validation": {
