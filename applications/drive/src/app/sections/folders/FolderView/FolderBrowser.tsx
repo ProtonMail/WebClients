@@ -177,7 +177,6 @@ export function FolderBrowser({
 
     const toolbar = (
         <FolderToolbar
-            volumeId={volumeId}
             actions={actions}
             uploadFile={uploadFile}
             uploadFolder={uploadFolder}
