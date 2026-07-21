@@ -5,7 +5,8 @@ import { useUser } from '@proton/account/user/hooks';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { PLANS } from '@proton/payments/core/constants';
-import { getPlanName } from '@proton/payments/core/subscription/helpers';
+import { getAvailableSubscriptionActions, getPlanName } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 
 import { useCancelRenewal } from '../cancelSubscription/useCancelRenewal';
 import FeedbackDowngradeContent, {
@@ -17,6 +18,7 @@ import { BugOrQualityIssueContent } from './content/BugOrQualityIssueContent';
 import { ConfirmCancellationContent } from './content/ConfirmCancellationContent';
 import { DifferentAccountContent } from './content/DifferentAccountContent';
 import { DifferentProviderContent } from './content/DifferentProviderContent';
+import { ManagedExternallyContent } from './content/ManagedExternallyContent';
 import { MissingFeatureContent } from './content/MissingFeatureContent';
 import { OfferContent } from './content/OfferContent';
 import { TemporaryNeedContent } from './content/TemporaryNeedContent';
@@ -32,6 +34,7 @@ enum CANCELLATION_STEPS {
     CONFIRM,
     DIFFERENT_ACCOUNT,
     DIFFERENT_PROVIDER,
+    MANAGED_EXTERNALLY,
 }
 
 interface Props extends ModalProps {
@@ -46,7 +49,8 @@ export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props)
     const offerData = useCancellationOffer();
     const { cancelSubscriptionRenewal } = useCancelRenewal();
 
-    const { sendFeedbackReport, sendSecondStepReport, sendConfirmCancellation } = useFeedbackFirstTelemetry();
+    const { sendFeedbackReport, sendSecondStepReport, sendConfirmCancellation, sendManagedExternally } =
+        useFeedbackFirstTelemetry();
 
     const closeModal = () => {
         modalProps.onClose?.();
@@ -97,6 +101,12 @@ export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props)
     };
 
     const handleConfirmCancellation = async () => {
+        if (subscription && !getAvailableSubscriptionActions(subscription).canCancel) {
+            sendManagedExternally();
+            setStep(CANCELLATION_STEPS.MANAGED_EXTERNALLY);
+            return;
+        }
+
         await cancelSubscriptionRenewal(
             feedback ?? { Reason: '', Feedback: '', ReasonDetails: '', Context: 'mail' },
             false
@@ -140,6 +150,9 @@ export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props)
             )}
             {step === CANCELLATION_STEPS.CONFIRM && (
                 <ConfirmCancellationContent onKeepPlan={closeModal} onCancelSubscription={handleConfirmCancellation} />
+            )}
+            {step === CANCELLATION_STEPS.MANAGED_EXTERNALLY && isPaidSubscription(subscription) && (
+                <ManagedExternallyContent subscription={subscription} onClose={closeModal} />
             )}
         </ModalTwo>
     );
