@@ -10764,6 +10764,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Client": [
+        "客户端"
+      ],
+      "Client version": [
+        "客户端版本"
       ]
     },
     "label": {
@@ -18763,6 +18769,12 @@
       ],
       "You can safely remove this user from your organization.": [
         "您可以将这些用户从组织中安全移除。"
+      ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "无法启用管理员访问权限：${ unprivatizationResult.error }"
+      ],
+      "Waiting for admin approval": [
+        "等待管理员批准"
       ]
     },
     "Upsell": {
@@ -18947,6 +18959,15 @@
       ],
       "Writing assistant": [
         "写作助手"
+      ],
+      "Invited": [
+        "已邀请"
+      ],
+      "Pending": [
+        "待处理"
+      ],
+      "Requested": [
+        "已请求"
       ]
     },
     "Validation": {
