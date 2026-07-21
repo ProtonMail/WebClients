@@ -37,6 +37,11 @@ export const ACCOUNT_URL_RULES: SerializedUrlRule[] = [
         .pathIncludes('/join-org')
         .withAnyHashParam(['t'])
         .build(),
+    // Update email preferences or unsubscribe should open in a browser tab.
+    urlRule('account-update-daily-email-preferences')
+        .forSubdomain(ACCOUNT_SUBDOMAIN)
+        .pathIncludes('/unsubscribe')
+        .build(),
 ];
 
 /**
