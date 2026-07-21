@@ -192,7 +192,6 @@ const SingleSignupContainerV2 = ({
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
-    const isShareFeatureEnabled = useFlag('RecoveryFileShareEnabled');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -1175,7 +1174,6 @@ const SingleSignupContainerV2 = ({
                     return userKeys;
                 },
                 emailAddress,
-                isShareFeatureEnabled,
             });
 
             return mnemonicData;
@@ -1224,7 +1222,6 @@ const SingleSignupContainerV2 = ({
                 telemetryContext: getTelemetryContext(model.session),
                 reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
                 reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
-                isShareFeatureEnabled,
             }),
             wait(3500),
         ]);

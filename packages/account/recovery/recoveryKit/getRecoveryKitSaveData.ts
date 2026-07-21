@@ -51,7 +51,6 @@ export interface RecoveryKitSaveReturnValue {
 export const getRecoveryKitSaveData = ({
     recoveryPhrase,
     recoveryKitBlob,
-    isShareFeatureEnabled,
 }: {
     recoveryPhrase: string;
     /**
@@ -59,9 +58,8 @@ export const getRecoveryKitSaveData = ({
      * Null if an error occurred while generating.
      */
     recoveryKitBlob: RecoveryKitBlob | null;
-    isShareFeatureEnabled: boolean;
 }): RecoveryKitSaveReturnValue => {
-    const canShareRecoveryKitInMobile = isShareFeatureEnabled && isIos();
+    const canShareRecoveryKitInMobile = isIos();
     const canDownloadRecoveryKit = !!recoveryKitBlob && (canShareRecoveryKitInMobile || canUseRecoveryKitPdfDownload());
 
     const handleDownload = async () => {
