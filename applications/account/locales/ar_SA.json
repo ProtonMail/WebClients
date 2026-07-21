@@ -135,9 +135,6 @@
       "Add domain": [
         "إضافة نطاق"
       ],
-      "Add email address": [
-        "إضافة بريد إلكتروني"
-      ],
       "Add external address": [
         "إضافة عنوان خارجي"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "إضافة حساب PayPal"
-      ],
-      "Add phone number": [
-        "إضافة رقم الهاتف"
       ],
       "Add public holidays": [
         "أضف عطلات رسمية"
@@ -753,9 +747,6 @@
       "enable desktop notifications": [
         "تمكين إشعارات سطح المكتب"
       ],
-      "Enable device-based recovery": [
-        "تفعيل الاسترداد المستند إلى الجهاز"
-      ],
       "Enable multi-user support": [
         "تفعيل دعم متعدد المستخدمين"
       ],
@@ -836,9 +827,6 @@
       ],
       "Generate password": [
         "إنشاء كلمة مرور"
-      ],
-      "Generate recovery phrase": [
-        "إنشاء عبارة الاسترداد"
       ],
       "Generate token": [
         "إنشاء رمز"
@@ -1868,9 +1856,6 @@
       ],
       "View plans details": [
         "عرض تفاصيل الباقات"
-      ],
-      "View recovery settings": [
-        "عرض إعدادات الاسترداد"
       ],
       "View recovery setup details": [
         "عرض تفاصيل إعداد الاسترداد"
@@ -6902,9 +6887,6 @@
       "Add recovery contact": [
         "إضافة جهة اتصال الاسترداد"
       ],
-      "Add recovery method": [
-        "إضافة طريقة الاسترداد"
-      ],
       "Added on ${ formattedDate }": [
         "أُضيف في ${ formattedDate }"
       ],
@@ -7150,14 +7132,8 @@
       "Subscription expired": [
         "انتهت مدة الإشتراك الزمنية."
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "لقد أضافوني كجهة اتصال موثوق بها. يمكنني الوصول إلى حسابهم في حالة الطوارئ."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "تمت إضافتك كجهة اتصال موثوق بها. يمكن الوصول إلى حسابهم في حالة الطوارئ."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "قد يطلبون الوصول إلى حسابي في حالة الطوارئ."
       ],
       "They may ask to access your account in case of an emergency.": [
         "قد يطلبون الوصول إلى الحساب في حالة الطوارئ."
@@ -7181,9 +7157,6 @@
       ],
       "Time required before automatically granting them access": [
         "الوقت المطلوب قبل منحهم الوصول تلقائيًا"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "لإضافة جهات اتصال الاسترداد، يجب أن يكون لديك عنوان بريد إلكتروني أو رقم هاتف للاسترداد."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "لتعطيل طريقة الاسترداد هذه، قم بإزالة جميع جهات اتصال الاسترداد الخاصة بك."
@@ -7235,12 +7208,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "يمكنك سحب وصولهم في أي وقت لتكون من يتحكم في حسابك حصرا."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "لم يتم تعيينك كجهة اتصال استرداد لأي شخص حتى الآن."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "لم يتم تعيينك كجهة اتصال للطوارئ لأي شخص حتى الآن."
       ],
       "You reached the maximum of ${ limit } emergency contacts.": [
         "تم الوصول إلى الحد الأقصى وهو ${ limit } جهة اتصال للطوارئ.",
@@ -10594,12 +10561,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "لا يمكن استخدام رقم الهاتف إلا للتحقق من حساب ${ BRAND_NAME } واحد فقط"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "يتيح لك ملف الاسترداد فتح وعرض بياناتك بعد استرداد الحساب"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "تتيح لك عبارة الاسترداد الوصول إلى حسابك واسترداد رسائلك المشفرة إذا نسيت كلمة مرورك"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "المستخدم هو حساب مرتبط باسم مستخدم واحد وصندوق بريد واحد وشخص واحد"
       ],
@@ -10614,9 +10575,6 @@
       ],
       "Account successfully updated": [
         "تم تحديث الحساب بنجاح"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "فعّل طريقة واحدة على الأقل لاسترداد البيانات للتأكد من أنه يمكنك الاستمرار في الوصول إلى محتويات حساب ${ BRAND_NAME } الخاص بك إذا فقدت كلمة المرور."
       ],
       "Active": [
         "نشط"
@@ -11697,9 +11655,6 @@
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "سيؤدي إنشاء عبارة استرداد جديدة إلى تعطيل عبارة الاسترداد الحالية."
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "سيؤدي إنشاء عبارة استرداد جديدة إلى إلغاء تنشيط عبارتك القديمة."
-      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "احصل على ${ AUTHENTICATOR_APP_NAME } لجميع أجهزتك."
       ],
@@ -11823,9 +11778,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "إذا كانت المنطقة الزمنية للنظام لا تطابق تفضيل المنطقة الزمنية الحالية، سيُطلب تحديثها (مرة واحدة يوميًا كحد أقصى)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "إذا كان هذا بسبب إعادة تعيين كلمة المرور القديمة، فيمكنك إيقاف عرض الرسالة مرة أخرى"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "إذا كنت تواجه مشكلة في إنشاء الحساب الخاص بك، يرجى طلب دعوة وسوف نستجيب في غضون يوم عمل واحد."
       ],
@@ -11873,9 +11825,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "في حال إعادة تعيين كلمة المرور مؤخرًا، يمكن ${ recoveryMethodLink } لإلغاء قفل البيانات. إذا كان هذا بسبب إعادة تعيين قديمة لكلمة المرور، يمكن إيقاف ظهور الرسالة مجددًا."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "إذا قمت مؤخرًا بإعادة تعيين كلمة المرور الخاصة بك، يمكنك استخدام طريقة استعادة البيانات لإلغاء قفل بياناتك"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "إذا كانت مؤسستك تضم شخصيات عامة، أو تتعامل مع بيانات حساسة، أو قد تكون مستهدفة في هجمات إلكترونية، فيُنصح بشدة بتفعيل ${ PROTON_SENTINEL_NAME } لجميع أفراد مؤسستك."
@@ -12023,9 +11972,6 @@
         "تم إرسال الدعوات بنجاح",
         "تم إرسال الدعوات بنجاح",
         "تمّ إرسال الدعوات بنجاح"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "يبدو أن بعض بياناتك مشفرة ومقفلة."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "يستغرق تغيير بلد الخادم 10 أيام، لذا تأكد من صحة اختيارك."
@@ -12563,9 +12509,6 @@
       "Please fill out this field.": [
         "الرجاء ملء هذه الخانة."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "احتفاظ بها في مكان آمن. سوف تحتاجها للوصول إلى حسابك وفك تشفير بياناتك في حالة إعادة تعيين كلمة المرور."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "يرجى العلم أنه في حال حذف المرشح ${ nameDeleted }، سيتم إيقاف معالجة جميع الإجراءات التلقائية التي يشغلها."
       ],
@@ -12694,9 +12637,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "تم نسخ عبارة الاسترداد في الحافظة"
-      ],
-      "Recovery phrase downloaded": [
-        "تم تحميل ملف الإسترداد"
       ],
       "Recovery phrase has been disabled": [
         "تم تعطيل عبارة الاسترداد"
@@ -13684,9 +13624,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "نوصي بإخطار أعضاء المؤسسة ومطالبتهم بإعداد المصادقة الثنائية (2FA) لحساباتهم قبل فرض استخدامها."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "نحن نخزن معلومات الاسترداد بشكل آمن على جهازك الموثوق به لمنعك من فقدان بياناتك"
-      ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "نوصي بشدة الجميع بتفعيل الاسترداد عن طريق عبارة الاسترداد."
       ],
@@ -14221,12 +14158,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "سيعمل ملف الاسترداد على استعادة الوصول إلى رسائل البريد الإلكتروني وجهات الاتصال والملفات وكلمات المرور وأي بيانات مشفرة أخرى في الحساب بعد إعادة تعيين كلمة المرور."
-      ],
-      "Your recovery phrase": [
-        "عبارة استردادك"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "عبارة الاسترداد الخاصة بك هي سلسلة من 12 كلمة تم إنشاؤها عشوائيًا بترتيب معين."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "تتيح لك عبارة الاسترداد تسجيل الدخول واستعادة بياناتك إذا تم قفلك خارج حساب ${ BRAND_NAME } الخاص بك. تتكوّن من 12 كلمة وتعمل ككلمة مرور احتياطية."
@@ -16597,17 +16528,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "الاسترداد المعتمد على الجهاز"
-      ],
       "Notification phone number": [
         "رقم هاتف الإشعارات"
       ],
       "Recovery phone number": [
         "رقم الهاتف الخاص بالاسترداد"
-      ],
-      "Recovery phrase": [
-        "عبارة الاسترداد"
       ],
       "Set recovery phone number": [
         "إعداد رقم هاتف للاسترداد"
@@ -16929,9 +16854,6 @@
       "How to share via email": [
         "كيفية المشاركة عبر البريد الإلكتروني"
       ],
-      "How to unlock data": [
-        "كيفية فتح البيانات"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "كيفية استخدام ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16955,9 +16877,6 @@
       ],
       "Learn more": [
         "معرفة المزيد"
-      ],
-      "Learn more about data recovery": [
-        "معرفة المزيد حول استعادة البيانات"
       ],
       "Manage addresses": [
         "إدارة العناوين"
@@ -22194,146 +22113,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **تعطيل الاسترداد عن طريق الهاتف** لمنع المهاجمين من السيطرة على حسابك."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **تفعيل الاسترداد عبر الهاتف** لاستعادة الوصول إلى حسابك إذا نسيت كلمة المرور."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "سيستخدم ${ BRAND_NAME } هذا العنوان لإطلاعك على آخر مستجدات أمان حسابك."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "سيستخدم ${ BRAND_NAME } هذا العنوان لإرسال رمز إعادة التعيين عبر البريد الإلكتروني عند إعادة تعيين كلمة المرور."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "سيستخدم ${ BRAND_NAME } رقم الهاتف هذا لإرسال رمز إعادة التعيين عبر رسالة نصية قصيرة (SMS) عند إعادة تعيين كلمة المرور."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } لضمان إمكانية استرداد بياناتك."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**تعطيل إعادة تعيين الحساب عن طريق البريد الإلكتروني** لمنع المهاجمين من السيطرة على حسابك."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**تفعيل الاسترداد عبر البريد الإلكتروني** لاستعادة الوصول إلى حسابك إذا نسيت كلمة المرور."
-      ],
-      "Account reset by email has been disabled": [
-        "تم تعطيل إعادة تعيين الحساب عن طريق البريد الإلكتروني"
-      ],
-      "Account reset by phone has been disabled": [
-        "تم تعطيل إعادة تعيين الحساب عن طريق الهاتف"
-      ],
-      "Account safety review": [
-        "مراجعة أمان الحساب"
-      ],
-      "Add a phone number": [
-        "إضافة رقم هاتف"
-      ],
-      "Add a recovery email": [
-        "إضافة بريد إلكتروني للاسترداد"
-      ],
-      "Add a recovery email address": [
-        "إضافة عنوان بريد إلكتروني للاسترداد"
-      ],
-      "Add a recovery phone number": [
-        "إضافة رقم هاتف للاسترداد"
-      ],
-      "Add an alternative email address": [
-        "أضف عنوان بريد إلكتروني بديل"
-      ],
-      "Add an email": [
-        "أضف بريدًا إلكترونيًا"
-      ],
-      "Back to Safety Review": [
-        "العودة إلى قسم مراجعة الأمان"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "نظرًا لأنك قمت بإعادة تعيين كلمة المرور، يمكن استخدام عبارة الاسترداد الحالية فقط لاستعادة البيانات التي تم إنشاؤها قبل إعادة تعيين كلمة المرور."
-      ],
-      "Can be used to regain access to your account and data": [
-        "يمكن استخدامها لاستعادة الوصول إلى حسابك وبياناتك"
-      ],
-      "Check account security": [
-        "التحقق من حماية الحساب"
-      ],
       "Code sent to ${ boldValue }": [
         "تم إرسال الرمز إلى ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "المتابعة إلى صفحة مراجعة الأمان"
-      ],
-      "Device-based recovery enabled": [
-        "تم تفعيل الاسترداد المستند إلى الجهاز"
-      ],
-      "Disable account reset by email": [
-        "عطّل إعادة تعيين الحساب عن طريق البريد الإلكتروني"
-      ],
-      "Disable recovery by email": [
-        "عطّل الاسترداد عن طريق البريد الإلكتروني"
-      ],
-      "Disable recovery by phone": [
-        "عطّل الاسترداد عن طريق الهاتف"
-      ],
-      "Download ${ size }": [
-        "تنزيل ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "قم بتنزيل عبارة الاسترداد الخاصة بك"
-      ],
-      "Email address": [
-        "عنوان البريد الإلكتروني"
-      ],
-      "Enable device-based recovery": [
-        "تفعيل الاسترداد المستند إلى الجهاز"
-      ],
-      "Enable recovery by email": [
-        "تفعيل الاسترداد عبر البريد الإلكتروني"
-      ],
-      "Enable recovery by phone": [
-        "تفعيل الاسترداد عبر الهاتف"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "أفهم أنني لن أتمكن من استرداد البيانات المقفلة حاليًا باستخدام عبارة الاسترداد هذه"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "في حال نسيت كلمة مرور ${ BRAND_NAME } الخاصة بك واحتجت إلى إعادة تعيينها، في المرة التالية التي تسجل فيها الدخول على هذا الجهاز باستخدام كلمة المرور الجديدة، ستتم استعادة الوصول الكامل إلى حساب ${ BRAND_NAME } الخاص بك."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "في حال نسيت كلمة مرور ${ BRAND_NAME } الخاصة بك واحتجت إلى إعادة تعيينها، في المرة التالية التي تسجل فيها الدخول على هذا الجهاز باستخدام كلمة المرور الجديدة، ستتم استعادة الوصول الكامل إلى حساب ${ BRAND_NAME } الخاص بك."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "إذا تم قفلك خارج حساب ${ BRAND_NAME } الخاص بك، فستتيح لك عبارة الاسترداد تسجيل الدخول واستعادة بياناتك."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "في حال فقدت تفاصيل تسجيل الدخول وتحتاج إلى إعادة تعيين حسابك، **فمن الضروري** أن تكون لديك **طريقة لاسترداد الحساب وطريقة لاسترداد البيانات**، وإلا فقد لا تتمكن من الوصول إلى أي من رسائلك الإلكترونية أو جهات اتصالك أو ملفاتك أو كلمات المرور."
-      ],
-      "in case we need to contact you": [
-        "في حال احتجنا إلى الاتصال بك"
       ],
       "Invalid code": [
         "رمز غير صالح"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "إنها الطريقة الوحيدة لاستعادة حسابك بالكامل، لذا تأكد من حفظها في مكان آمن."
-      ],
-      "Recovery email address": [
-        "عنوان البريد الإلكتروني للاسترداد"
-      ],
-      "Recovery phone number": [
-        "رقم الهاتف الخاص بالاسترداد"
-      ],
       "Review account safety": [
         "مراجعة أمان الحساب"
-      ],
-      "Safeguard account now": [
-        "حماية الحساب الآن"
-      ],
-      "Safeguard your account": [
-        "احم حسابك"
-      ],
-      "Safeguard your account further": [
-        "عزّز حماية حسابك"
       ],
       "Safety review": [
         "مراجعة الأمان"
@@ -22341,194 +22128,8 @@
       "Send a new code": [
         "إرسال رمز جديد"
       ],
-      "Show more": [
-        "عرض المزيد"
-      ],
-      "Take action to secure your account": [
-        "اتخذ الإجراء لتأمين حسابك"
-      ],
-      "There was an error generating your recovery phrase": [
-        "حدث خطأ أثناء إنشاء عبارة الاسترداد الخاصة بك"
-      ],
-      "There was an error verifying your email": [
-        "حدث خطأ أثناء التحقق من بريدك الإلكتروني"
-      ],
-      "There was an error verifying your recovery email": [
-        "حدث خطأ أثناء التحقق من بريدك الإلكتروني للاسترداد"
-      ],
-      "There was an error verifying your recovery phone": [
-        "حدث خطأ أثناء التحقق من هاتفك المخصص للاسترداد"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "لاسترداد بياناتك تلقائيًا عند تسجيل الدخول على جهاز موثوق به"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "للتأكد من أن عنوان البريد الإلكتروني يخصك، أدخل رمز التحقق المرسل إلى ${ boldEmail }."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "للتأكد من أن رقم الهاتف يخصك، أدخل رمز التحقق المرسل إلى ${ boldPhoneNumber }."
-      ],
-      "to prevent attackers from taking over your account": [
-        "لمنع المهاجمين من السيطرة على حسابك"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "لاسترداد حسابك وبياناتك في حال تم إغلاقه"
-      ],
-      "to recover your account if you're ever locked out": [
-        "لاسترداد حسابك في حال تم إغلاقه"
-      ],
       "update it now": [
         "قم بتحديثه الآن"
-      ],
-      "Update your recovery phrase": [
-        "قم بتحديث عبارة الاسترداد الخاصة بك"
-      ],
-      "Update your recovery phrase?": [
-        "تحديث عبارة الاسترداد؟"
-      ],
-      "Verify": [
-        "التحقق"
-      ],
-      "Verify your email address": [
-        "تحقق من عنوان بريدك الإلكتروني"
-      ],
-      "Verify your phone number": [
-        "تحقق من رقم هاتفك"
-      ],
-      "Verify your recovery email address": [
-        "التحقق من عنوان البريد الإلكتروني للاسترداد"
-      ],
-      "Verify your recovery phone number": [
-        "التحقق من رقم هاتف الاسترداد"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "واجهنا خطأً أثناء إنشاء عبارة الاسترداد. يرجى المحاولة مرة أخرى لاحقاً، أو التواصل مع الدعم إذا استمرت المشكلة."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "واجهنا خطأ أثناء التحقق من بريدك الإلكتروني. يرجى المحاولة مرة أخرى لاحقًا، أو الاتصال بالدعم إذا استمرت المشكلة."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "واجهنا خطأ أثناء التحقق من بريدك الإلكتروني للاسترداد. يرجى المحاولة مرة أخرى لاحقًا، أو الاتصال بالدعم إذا استمرت المشكلة."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "واجهنا خطأ أثناء التحقق من هاتفك المخصص للاسترداد. يرجى المحاولة مرة أخرى لاحقًا، أو الاتصال بفريق الدعم إذا استمرت المشكلة."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "عند تفعيل الاسترداد المستند إلى الجهاز، سيقوم ${ BRAND_NAME } بتخزين سلسلة مفاتيح احتياطية مشفرة كملف في مساحة تخزين الويب الخاصة بالمتصفح."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "أنت معرض لخطر فقدان الوصول إلى حسابك وبياناتك."
-      ],
-      "You are at risk of losing access to your data.": [
-        "أنت معرض لخطر فقدان الوصول إلى بياناتك."
-      ],
-      "You can disable this at any time.": [
-        "يمكنك تعطيله في أي وقت."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "يمكنك استخدام عبارة الاسترداد هذه لاستعادة حسابك بالكامل عند إعادة تعيين كلمة المرور، لذا تأكّد من الاحتفاظ بها في مكان آمن."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "يمكنك استخدام بريدك الإلكتروني لاستعادة الوصول إلى حسابك إذا نسيت كلمة المرور."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "يمكنك استخدام بريدك الإلكتروني المخصص للاسترداد لاستعادة الوصول إلى حسابك في حال نسيت كلمة المرور."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "يمكنك استخدام هاتفك المخصص للاسترداد لاستعادة الوصول إلى حسابك إذا نسيت كلمة المرور."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "لقد قمت سابقًا بتنزيل عبارة استرداد. سيؤدي تنزيل واحدة جديدة إلى **تعطيل العبارة القديمة**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "اتخذ الإجراءات الموصى بها لزيادة حماية حسابك."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "لديك إجراءات موصى بها لحماية حسابك."
-      ],
-      "You have recommended actions.": [
-        "لديك إجراءات موصى بها."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "لن تتمكن بعد الآن من استخدام هذا العنوان لإعادة تعيين حسابك."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "لن تتمكن بعد الآن من استخدام رقم الهاتف هذا لإعادة تعيين حسابك."
-      ],
-      "Your account and data can be recovered": [
-        "يمكن استرداد حسابك وبياناتك"
-      ],
-      "Your account and data can be recovered.": [
-        "يمكن استرداد حسابك وبياناتك."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "يمكن استرداد حسابك وبياناتك. تحقق مما إذا كان لا يزال بإمكانك الوصول إلى طرق الاسترداد الخاصة بك."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "يمكن استرداد حسابك وبياناتك. لديك إجراءات موصى بها لتعزيز حماية حسابك."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "يمكن استرداد حسابك وبياناتك. لديك إجراءات موصى بها."
-      ],
-      "Your account is fully secure.": [
-        "حسابك مؤمن بالكامل."
-      ],
-      "Your account is secure.": [
-        "حسابك آمن."
-      ],
-      "Your email address is:": [
-        "عنوان بريدك الإلكتروني هو:"
-      ],
-      "Your email is set": [
-        "جرى تعيين بريدك الإلكتروني"
-      ],
-      "Your recovery email": [
-        "بريدك الإلكتروني للاسترداد"
-      ],
-      "Your recovery email address is:": [
-        "عنوان بريدك الإلكتروني للاسترداد هو:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "يمكن لبريدك الإلكتروني وهاتفك المخصصين للاسترداد **فقط استرداد الوصول إلى حسابك**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "يمكن لبريدك الإلكتروني المخصص للاسترداد **فقط استرداد الوصول إلى حسابك**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "قد يستغل المهاجمون بريدك الإلكتروني المخصص للاسترداد للاستيلاء على حسابك. ${ disableEmail } لزيادة أمان حسابك."
-      ],
-      "Your recovery email has been enabled": [
-        "تم تفعيل بريدك الإلكتروني للاسترداد"
-      ],
-      "Your recovery email is set": [
-        "تم تعيين بريد الاسترداد"
-      ],
-      "Your recovery methods": [
-        "طرق الاسترداد الخاصة بك"
-      ],
-      "Your recovery phone": [
-        "هاتفك المخصص للاسترداد"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "يمكن لهاتفك المخصص للاسترداد **فقط استرداد الوصول إلى حسابك**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "قد يستغل المهاجمون هاتفك المخصص للاسترداد للاستيلاء على حسابك. ${ disablePhone } لزيادة أمان حسابك."
-      ],
-      "Your recovery phone has been enabled": [
-        "تم تفعيل هاتفك المخصص للاسترداد"
-      ],
-      "Your recovery phone is set": [
-        "تم تعيين هاتفك المخصص للاسترداد"
-      ],
-      "Your recovery phone number is:": [
-        "رقم هاتف الاسترداد الخاص بك هو:"
-      ],
-      "Your recovery phrase": [
-        "عبارة الاسترداد الخاصة بك"
-      ],
-      "Your recovery phrase is set": [
-        "تم تعيين عبارة الاسترداد الخاصة بك"
       ]
     },
     "safety_review": {
@@ -23426,9 +23027,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "لعدم السماح بإعادة تعيين كلمة المرور، يجب أن يكون لديك طريقة استرداد معدة."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "لتعزيز أمان حسابك وحماية بياناتك، يمكنك طلب إعادة تعيين كلمة المرور من إعدادات حسابك في تطبيق الويب."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -26828,9 +26426,6 @@
       "Data collection": [
         "جمع البيانات"
       ],
-      "Data locked": [
-        "البيانات مقفلة"
-      ],
       "Data recovery": [
         "استرداد البيانات"
       ],
@@ -27209,9 +26804,6 @@
       ],
       "Generate missing keys": [
         "إنشاء المفاتيح المفقودة"
-      ],
-      "Generate new recovery phrase?": [
-        "إنشاء عبارة استرداد جديدة؟"
       ],
       "Generate SMTP token": [
         "إنشاء رمز SMTP"
@@ -28881,8 +28473,8 @@
         "تعذر تفعيل وصول المسؤول لـ ${ n } مستخدمًا",
         "تعذر تفعيل وصول المسؤول لـ ${ n } مستخدم"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "تعذر تفعيل وصول المسؤول: ${ error }"
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "تعذّر منح صلاحيات المسؤول: ${ unprivatizationResult.error }"
       ],
       "Enable admin access?": [
         "تفعيل وصول المسؤول؟"
@@ -28957,6 +28549,9 @@
       ],
       "View request": [
         "عرض الطلب"
+      ],
+      "Waiting for admin approval": [
+        "بانتظار موافقة المسؤول"
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "يمكنك ${ reject } هذا الطلب إذا كنت لا ترغب في المتابعة."
@@ -29158,9 +28753,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "المصادقة الثنائية (2FA)"
-      ],
       "Administrators can't access the data of private users": [
         "لا يمكن للمسؤولين الوصول إلى بيانات المستخدمين الخاصين"
       ],
@@ -29170,20 +28762,14 @@
       "Invitation sent, awaiting reply from the invited member": [
         "أُرسلت الدعوة، وفي انتظار الرد من العضو المدعو"
       ],
-      "Invite sent": [
-        "أُرسلت الدعوة"
+      "Invited": [
+        "مدعو"
       ],
-      "It's you": [
-        "هذا أنت"
+      "Pending": [
+        "قيد الانتظار"
       ],
-      "Pending admin access": [
-        "في انتظار وصول المسؤول"
-      ],
-      "Private": [
-        "خاص"
-      ],
-      "SSO": [
-        "SSO"
+      "Requested": [
+        "مطلوب"
       ],
       "SSO user provided by your identity provider": [
         "مستخدم SSO مأخوذ من موفر الهوية الذي تستعمله"

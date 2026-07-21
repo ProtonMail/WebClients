@@ -135,9 +135,6 @@
       "Add domain": [
         "Thêm miền"
       ],
-      "Add email address": [
-        "Thêm địa chỉ email"
-      ],
       "Add external address": [
         "Thêm địa chỉ bên ngoài"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "Thêm PayPal"
-      ],
-      "Add phone number": [
-        "Thêm số điện thoại"
       ],
       "Add public holidays": [
         "Thêm ngày lễ"
@@ -753,9 +747,6 @@
       "enable desktop notifications": [
         "kích hoạt các thông báo màn hình"
       ],
-      "Enable device-based recovery": [
-        "Kích hoạt khôi phục bằng thiết bị"
-      ],
       "Enable multi-user support": [
         "Kích hoạt hỗ trợ đa-người-dùng"
       ],
@@ -836,9 +827,6 @@
       ],
       "Generate password": [
         "Tạo mật khẩu"
-      ],
-      "Generate recovery phrase": [
-        "Tạo cụm từ khôi phục mới"
       ],
       "Generate token": [
         "Tạo mã thông báo"
@@ -1868,9 +1856,6 @@
       ],
       "View plans details": [
         "Xem thông tin gói"
-      ],
-      "View recovery settings": [
-        "Xem cài đặt khôi phục"
       ],
       "View recovery setup details": [
         "Xem chi tiết thiết lập khôi phục"
@@ -6717,9 +6702,6 @@
       "Add recovery contact": [
         "Thêm liên hệ khôi phục"
       ],
-      "Add recovery method": [
-        "Thêm phương thức khôi phục"
-      ],
       "Added on ${ formattedDate }": [
         "Đã thêm vào ${ formattedDate }"
       ],
@@ -6960,14 +6942,8 @@
       "Subscription expired": [
         "Đăng ký đã hết hạn"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "Họ đã thêm tôi làm liên hệ tin cậy. Tôi có thể truy cập tài khoản của họ trong trường hợp khẩn cấp."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "Đã thêm bạn làm liên hệ tin cậy. Có thể truy cập tài khoản của họ trong trường hợp khẩn cấp."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "Họ có thể yêu cầu truy cập tài khoản của tôi trong trường hợp khẩn cấp."
       ],
       "They may ask to access your account in case of an emergency.": [
         "Họ có thể yêu cầu truy cập tài khoản trong trường hợp khẩn cấp."
@@ -6986,9 +6962,6 @@
       ],
       "Time required before automatically granting them access": [
         "Thời gian cần thiết trước khi tự động cấp quyền truy cập"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "Để thêm các liên hệ khôi phục, phải có số điện thoại hoặc địa chỉ email khôi phục."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Để vô hiệu hóa phương thức khôi phục này, hãy xóa tất cả các liên hệ khôi phục của bạn."
@@ -7040,12 +7013,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Có thể xóa quyền truy cập của họ bất kỳ lúc nào để lấy lại quyền kiểm soát độc quyền tài khoản."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "Bạn chưa được chỉ định làm liên hệ khôi phục cho bất kỳ ai."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "Chưa được chỉ định làm liên hệ khẩn cấp cho bất kỳ ai."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Đã đạt tối đa ${ limit } liên hệ khẩn cấp."
@@ -10074,12 +10041,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Một số điện thoại chỉ có thể được sử dụng để xác minh một tài khoản ${ BRAND_NAME }"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Tệp khôi phục cho phép mở khóa và xem dữ liệu sau khi khôi phục tài khoản"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Cụm từ khôi phục giúp truy cập vào tài khoản của mình và khôi phục các thư đã mã hóa nếu bạn quên mật khẩu"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Một người dùng là một tài khoản được liên kết với một tên người dùng, hộp thư và cá nhân duy nhất"
       ],
@@ -10094,9 +10055,6 @@
       ],
       "Account successfully updated": [
         "Tài khoản được cập nhật thành công"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Kích hoạt ít nhất một phương thức khôi phục mật khẩu để đảm bảo rằng có thể tiếp tục truy cập vào nội dung trong tài khoản ${ BRAND_NAME } của mình nếu bạn mất mật khẩu."
       ],
       "Active": [
         "Hoạt động"
@@ -11112,9 +11070,6 @@
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Tạo cụm từ khôi phục mới sẽ vô hiệu hóa cụm từ khôi phục hiện tại."
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Tạo cụm từ khôi phục mới sẽ vô hiệu hóa cụm từ cũ."
-      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Tải ${ AUTHENTICATOR_APP_NAME } cho tất cả thiết bị."
       ],
@@ -11238,9 +11193,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Nếu múi giờ hệ thống không khớp với tùy chọn múi giờ hiện tại, sẽ được yêu cầu cập nhật (tối đa một lần mỗi ngày)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Nếu điều này là do đặt lại mật khẩu cũ, có thể ngăn thông báo hiển thị lại"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Nếu bạn đang gặp khó khăn trong việc tạo tài khoản, vui lòng yêu cầu một lời mời và chúng tôi sẽ hồi đáp trong một ngày làm việc."
       ],
@@ -11288,9 +11240,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Nếu gần đây đã đặt lại mật khẩu, có thể ${ recoveryMethodLink } để mở khóa dữ liệu. Nếu việc này là do một lần đặt lại mật khẩu cũ, có thể chặn thông báo này hiển thị lại."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Nếu gần đây bạn đã đặt lại mật khẩu của mình, có thể sử dụng phương pháp khôi phục dữ liệu để mở khóa dữ liệu"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Nếu tổ chức có người của công chúng, xử lý dữ liệu nhạy cảm hoặc có thể là mục tiêu của các cuộc tấn công mạng, bạn được khuyến khích kích hoạt ${ PROTON_SENTINEL_NAME } cho mọi người trong tổ chức."
@@ -11423,9 +11372,6 @@
       ],
       "Invited": [
         "Đã mời"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "Có vẻ như một số dữ liệu đã mã hóa và khóa."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Mất 10 ngày để thay đổi quốc gia của máy chủ, vì vậy hãy đảm bảo lựa chọn là chính xác."
@@ -11943,9 +11889,6 @@
       "Please fill out this field.": [
         "Vui lòng điền vào mục này"
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Vui lòng giữ an toàn. Sẽ cần nó để truy cập tài khoản và giải mã dữ liệu trong trường hợp đặt lại mật khẩu."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Lưu ý rằng nếu xóa bộ lọc ${ nameDeleted }, chúng tôi sẽ ngừng xử lý tất cả các thao tác tự động mà bộ lọc này kích hoạt."
       ],
@@ -12077,9 +12020,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Đã sao chép cụm từ khôi phục vào bảng tạm"
-      ],
-      "Recovery phrase downloaded": [
-        "Tải cụm từ khôi phục"
       ],
       "Recovery phrase has been disabled": [
         "Đã vô hiệu hóa cụm từ khôi phục "
@@ -13032,9 +12972,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Nên thông báo cho các thành viên trong tổ chức và yêu cầu họ thiết lập 2FA cho tài khoản trước khi bắt buộc sử dụng 2FA."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Lưu trữ thông tin khôi phục một cách bảo mật trên thiết bị đáng tin cậy để ngăn chặn mất dữ liệu"
-      ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Khuyến nghị mọi người nên kích hoạt khôi phục bằng cụm từ khôi phục."
       ],
@@ -13514,12 +13451,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Tệp khôi phục sẽ khôi phục quyền truy cập vào email, liên hệ, tệp, mật khẩu và bất kỳ dữ liệu đã mã hóa nào khác trên tài khoản sau khi đặt lại mật khẩu."
-      ],
-      "Your recovery phrase": [
-        "Cụm từ khôi phục"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Cụm từ khôi phục là một chuỗi 12 từ theo thứ tự được tạo ngẫu nhiên."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "Cụm từ khôi phục sẽ cho phép đăng nhập và khôi phục dữ liệu nếu bị khóa khỏi Tài khoản ${ BRAND_NAME }. Cụm từ này bao gồm 12 từ và hoạt động giống như một mật khẩu sao lưu."
@@ -15840,17 +15771,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Khôi phục dựa trên thiết bị"
-      ],
       "Notification phone number": [
         "Số điện thoại thông báo"
       ],
       "Recovery phone number": [
         "Số điện thoại khôi phục"
-      ],
-      "Recovery phrase": [
-        "Cụm từ khôi phục"
       ],
       "Set recovery phone number": [
         "Đặt số điện thoại khôi phục"
@@ -16167,9 +16092,6 @@
       "How to share via email": [
         "Cách chia sẻ qua email"
       ],
-      "How to unlock data": [
-        "Cách mở khóa dữ liệu"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Cách sử dụng ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16193,9 +16115,6 @@
       ],
       "Learn more": [
         "Tìm hiểu thêm"
-      ],
-      "Learn more about data recovery": [
-        "Tìm hiểu thêm về khôi phục dữ liệu"
       ],
       "Manage addresses": [
         "Quản lý địa chỉ"
@@ -21072,146 +20991,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **Vô hiệu hóa khôi phục bằng điện thoại** để ngăn kẻ tấn công chiếm đoạt tài khoản."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **Kích hoạt khôi phục bằng điện thoại** để lấy lại quyền truy cập vào tài khoản nếu quên mật khẩu."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } sẽ sử dụng địa chỉ này để cập nhật về bảo mật tài khoản."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } sẽ sử dụng địa chỉ này để gửi mã đặt lại qua email khi đặt lại mật khẩu."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } sẽ sử dụng số điện thoại này để gửi mã đặt lại qua SMS khi đặt lại mật khẩu."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } để đảm bảo dữ liệu có thể được khôi phục."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**Vô hiệu hóa đặt lại tài khoản bằng email** để ngăn kẻ tấn công chiếm đoạt tài khoản."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Kích hoạt khôi phục bằng email** để lấy lại quyền truy cập vào tài khoản nếu quên mật khẩu."
-      ],
-      "Account reset by email has been disabled": [
-        "Tính năng đặt lại tài khoản bằng email đã bị vô hiệu hóa"
-      ],
-      "Account reset by phone has been disabled": [
-        "Tính năng đặt lại tài khoản bằng điện thoại đã bị vô hiệu hóa"
-      ],
-      "Account safety review": [
-        "Xem lại an toàn tài khoản"
-      ],
-      "Add a phone number": [
-        "Thêm số điện thoại"
-      ],
-      "Add a recovery email": [
-        "Thêm email khôi phục"
-      ],
-      "Add a recovery email address": [
-        "Thêm địa chỉ email khôi phục"
-      ],
-      "Add a recovery phone number": [
-        "Thêm số điện thoại khôi phục"
-      ],
-      "Add an alternative email address": [
-        "Thêm địa chỉ email thay thế"
-      ],
-      "Add an email": [
-        "Thêm email"
-      ],
-      "Back to Safety Review": [
-        "Quay lại Xem lại an toàn"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "Do bạn đặt lại mật khẩu, cụm từ khôi phục hiện tại chỉ có thể được sử dụng để khôi phục dữ liệu được tạo trước khi đặt lại mật khẩu."
-      ],
-      "Can be used to regain access to your account and data": [
-        "Có thể được sử dụng để lấy lại quyền truy cập vào tài khoản và dữ liệu"
-      ],
-      "Check account security": [
-        "Kiểm tra bảo mật tài khoản"
-      ],
       "Code sent to ${ boldValue }": [
         "Mã đã được gửi tới ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Tiếp tục đến Xem lại An toàn"
-      ],
-      "Device-based recovery enabled": [
-        "Đã kích hoạt khôi phục dựa trên thiết bị"
-      ],
-      "Disable account reset by email": [
-        "Vô hiệu hóa đặt lại tài khoản bằng email"
-      ],
-      "Disable recovery by email": [
-        "Vô hiệu hóa khôi phục bằng email"
-      ],
-      "Disable recovery by phone": [
-        "Vô hiệu hóa khôi phục bằng số điện thoại"
-      ],
-      "Download ${ size }": [
-        "Tải xuống ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "Tải xuống cụm từ khôi phục"
-      ],
-      "Email address": [
-        "Địa chỉ email"
-      ],
-      "Enable device-based recovery": [
-        "Kích hoạt khôi phục bằng thiết bị"
-      ],
-      "Enable recovery by email": [
-        "Kích hoạt khôi phục bằng email"
-      ],
-      "Enable recovery by phone": [
-        "Kích hoạt khôi phục bằng điện thoại"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Tôi hiểu rằng tôi sẽ không thể khôi phục dữ liệu hiện đang bị khóa bằng cụm từ khôi phục này"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Nếu quên mật khẩu ${ BRAND_NAME } và cần đặt lại, lần tới khi đăng nhập trên thiết bị này bằng mật khẩu mới, quyền truy cập đầy đủ vào Tài khoản ${ BRAND_NAME } sẽ được khôi phục."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Nếu quên mật khẩu ${ BRAND_NAME } và cần đặt lại, lần tới khi đăng nhập thiết bị này bằng mật khẩu mới, quyền truy cập đầy đủ vào Tài khoản ${ BRAND_NAME } sẽ được khôi phục."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Nếu bị khóa khỏi Tài khoản ${ BRAND_NAME }, cụm từ khôi phục sẽ cho phép đăng nhập và khôi phục dữ liệu."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Nếu mất thông tin đăng nhập và cần đặt lại tài khoản, **bắt buộc** phải có cả **phương thức khôi phục tài khoản và khôi phục dữ liệu**, nếu không có thể không truy cập được bất kỳ email, liên hệ, tệp hoặc mật khẩu nào."
-      ],
-      "in case we need to contact you": [
-        "trong trường hợp chúng tôi cần liên hệ với bạn"
       ],
       "Invalid code": [
         "Mã không hợp lệ"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Đó là cách duy nhất để khôi phục hoàn toàn tài khoản, vì vậy hãy đảm bảo giữ nó ở nơi an toàn."
-      ],
-      "Recovery email address": [
-        "Địa chỉ email khôi phục"
-      ],
-      "Recovery phone number": [
-        "Số điện thoại khôi phục"
-      ],
       "Review account safety": [
         "Xem lại an toàn tài khoản"
-      ],
-      "Safeguard account now": [
-        "Bảo vệ tài khoản ngay"
-      ],
-      "Safeguard your account": [
-        "Bảo vệ tài khoản"
-      ],
-      "Safeguard your account further": [
-        "Bảo vệ tài khoản thêm nữa"
       ],
       "Safety review": [
         "Xem lại an toàn"
@@ -21219,194 +21006,8 @@
       "Send a new code": [
         "Gửi mã mới"
       ],
-      "Show more": [
-        "Hiển thị thêm"
-      ],
-      "Take action to secure your account": [
-        "Thực hiện thao tác để bảo vệ tài khoản"
-      ],
-      "There was an error generating your recovery phrase": [
-        "Đã xảy ra lỗi khi tạo cụm từ khôi phục"
-      ],
-      "There was an error verifying your email": [
-        "Đã xảy ra lỗi khi xác minh email"
-      ],
-      "There was an error verifying your recovery email": [
-        "Đã xảy ra lỗi khi xác minh email khôi phục"
-      ],
-      "There was an error verifying your recovery phone": [
-        "Đã xảy ra lỗi khi xác minh số điện thoại khôi phục"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "để tự động khôi phục dữ liệu khi đăng nhập vào thiết bị tin cậy"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Để đảm bảo địa chỉ email là, hãy nhập mã xác minh được gửi đến ${ boldEmail }."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Để đảm bảo số điện thoại là, hãy nhập mã xác minh được gửi đến ${ boldPhoneNumber }."
-      ],
-      "to prevent attackers from taking over your account": [
-        "để ngăn kẻ tấn công chiếm đoạt tài khoản"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "để khôi phục tài khoản và dữ liệu nếu bị khóa"
-      ],
-      "to recover your account if you're ever locked out": [
-        "để khôi phục tài khoản nếu bị khóa"
-      ],
       "update it now": [
         "cập nhật ngay"
-      ],
-      "Update your recovery phrase": [
-        "Cập nhật cụm từ khôi phục"
-      ],
-      "Update your recovery phrase?": [
-        "Cập nhật cụm từ khôi phục?"
-      ],
-      "Verify": [
-        "Xác minh"
-      ],
-      "Verify your email address": [
-        "Xác minh địa chỉ email"
-      ],
-      "Verify your phone number": [
-        "Xác minh số điện thoại"
-      ],
-      "Verify your recovery email address": [
-        "Xác minh địa chỉ email khôi phục"
-      ],
-      "Verify your recovery phone number": [
-        "Xác minh số điện thoại khôi phục"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "Đã xảy ra lỗi khi tạo cụm từ khôi phục. Vui lòng thử lại sau hoặc liên hệ hỗ trợ nếu sự cố tiếp diễn."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Đã gặp lỗi khi xác minh email. Vui lòng thử lại sau, hoặc liên hệ bộ phận hỗ trợ nếu sự cố vẫn tiếp diễn."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Đã gặp lỗi khi xác minh email khôi phục. Vui lòng thử lại sau hoặc liên hệ bộ phận hỗ trợ nếu sự cố vẫn tiếp diễn."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Đã gặp lỗi khi xác minh số điện thoại khôi phục. Vui lòng thử lại sau hoặc liên hệ bộ phận hỗ trợ nếu sự cố vẫn tiếp diễn."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "Khi kích hoạt khôi phục dựa trên thiết bị, ${ BRAND_NAME } sẽ lưu trữ chuỗi khóa sao lưu đã mã hóa dưới dạng tệp trong bộ nhớ web của trình duyệt."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Có nguy cơ mất quyền truy cập vào tài khoản và dữ liệu."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Có nguy cơ mất quyền truy cập vào dữ liệu."
-      ],
-      "You can disable this at any time.": [
-        "Có thể vô hiệu hóa tính năng này bất cứ lúc nào."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Có thể sử dụng cụm từ khôi phục trong cụm từ khôi phục này để khôi phục hoàn toàn tài khoản khi đặt lại mật khẩu, vì vậy hãy đảm bảo giữ cụm từ đó ở nơi an toàn."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "Có thể sử dụng email để lấy lại quyền truy cập vào tài khoản nếu quên mật khẩu."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Có thể sử dụng email khôi phục để lấy lại quyền truy cập vào tài khoản nếu quên mật khẩu."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "Có thể sử dụng số điện thoại khôi phục để lấy lại quyền truy cập vào tài khoản nếu quên mật khẩu."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "Trước đây đã tải xuống một cụm từ khôi phục. Tải xuống cụm từ mới sẽ **vô hiệu hóa cụm từ cũ**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Bạn có các thao tác được đề xuất để bảo vệ tài khoản thêm."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "Đã đề đề xuất các thao tác để bảo vệ tài khoản."
-      ],
-      "You have recommended actions.": [
-        "Đã đề đề xuất các thao tác."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "Sẽ không còn có thể sử dụng địa chỉ này để đặt lại tài khoản."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "Sẽ không còn có thể sử dụng số điện thoại này để đặt lại tài khoản."
-      ],
-      "Your account and data can be recovered": [
-        "Tài khoản và dữ liệu có thể được khôi phục"
-      ],
-      "Your account and data can be recovered.": [
-        "Tài khoản và dữ liệu có thể được khôi phục."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Tài khoản và dữ liệu có thể được khôi phục. Hãy kiểm tra xem bạn còn có thể truy cập các phương thức khôi phục không."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Tài khoản và dữ liệu có thể được khôi phục. Bạn có các thao tác được đề xuất để bảo vệ tài khoản thêm nữa."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "Tài khoản và dữ liệu có thể được khôi phục. Bạn có các thao tác được đề xuất."
-      ],
-      "Your account is fully secure.": [
-        "Tài khoản hoàn toàn an toàn."
-      ],
-      "Your account is secure.": [
-        "Tài khoản đã an toàn."
-      ],
-      "Your email address is:": [
-        "Địa chỉ email là:"
-      ],
-      "Your email is set": [
-        "Email đã được thiết lập"
-      ],
-      "Your recovery email": [
-        "Email khôi phục"
-      ],
-      "Your recovery email address is:": [
-        "Địa chỉ email khôi phục là:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "Email và số điện thoại khôi phục **chỉ có thể khôi phục quyền truy cập vào tài khoản**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "Email khôi phục **chỉ có thể khôi phục quyền truy cập vào tài khoản**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Email khôi phục có thể bị kẻ tấn công lợi dụng để chiếm đoạt tài khoản. ${ disableEmail } để tăng cường bảo mật tài khoản."
-      ],
-      "Your recovery email has been enabled": [
-        "Email khôi phục đã được kích hoạt"
-      ],
-      "Your recovery email is set": [
-        "Email khôi phục đã được thiết lập"
-      ],
-      "Your recovery methods": [
-        "Các phương thức khôi phục của bạn"
-      ],
-      "Your recovery phone": [
-        "Số điện thoại khôi phục của bạn"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "Số điện thoại khôi phục **chỉ có thể khôi phục quyền truy cập vào tài khoản**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Số điện thoại khôi phục có thể bị kẻ tấn công lợi dụng để chiếm đoạt tài khoản. ${ disablePhone } để tăng cường bảo mật tài khoản."
-      ],
-      "Your recovery phone has been enabled": [
-        "Số điện thoại khôi phục đã được kích hoạt"
-      ],
-      "Your recovery phone is set": [
-        "Số điện thoại khôi phục đã được thiết lập"
-      ],
-      "Your recovery phone number is:": [
-        "Số điện thoại khôi phục là:"
-      ],
-      "Your recovery phrase": [
-        "Cụm từ khôi phục của bạn"
-      ],
-      "Your recovery phrase is set": [
-        "Cụm từ khôi phục đã được thiết lập"
       ]
     },
     "safety_review": {
@@ -22209,9 +21810,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Để chặn việc đặt lại mật khẩu, cần thiết lập phương thức khôi phục."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Để tăng cường bảo mật cho tài khoản và bảo vệ dữ liệu, có thể yêu cầu đặt lại mật khẩu từ cài đặt tài khoản trong ứng dụng web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -25285,9 +24883,6 @@
       "Data collection": [
         "Thu thập dữ liệu"
       ],
-      "Data locked": [
-        "Đã khóa dữ liệu"
-      ],
       "Data recovery": [
         "Khôi phục dữ liệu"
       ],
@@ -25656,9 +25251,6 @@
       ],
       "Generate missing keys": [
         "Tạo các khóa mã thiếu"
-      ],
-      "Generate new recovery phrase?": [
-        "Tạo cụm từ khôi phục mới?"
       ],
       "Generate SMTP token": [
         "Tạo mã thông báo SMTP"
@@ -27313,9 +26905,6 @@
       "Could not enable admin access for ${ n } user": [
         "Không thể kích hoạt quyền truy cập quản trị viên cho ${ n } người dùng"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Không thể kích hoạt quyền truy cập quản trị viên: ${ error }"
-      ],
       "Enable admin access?": [
         "Kích hoạt quyền truy cập quản trị viên?"
       ],
@@ -27575,9 +27164,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Quản trị viên không thể truy cập dữ liệu của người dùng riêng tư"
       ],
@@ -27586,21 +27172,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Đã gửi lời mời, đang chờ phản hồi từ thành viên được mời"
-      ],
-      "Invite sent": [
-        "Đã gửi lời mời"
-      ],
-      "It's you": [
-        "Chính là bạn"
-      ],
-      "Pending admin access": [
-        "Đang chờ quyền truy cập quản trị viên"
-      ],
-      "Private": [
-        "Riêng tư"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Người dùng SSO được cung cấp bởi nhà cung cấp danh tính"

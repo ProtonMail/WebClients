@@ -135,9 +135,6 @@
       "Add domain": [
         "Lägg till domän"
       ],
-      "Add email address": [
-        "Lägg till e-postadress"
-      ],
       "Add external address": [
         "Lägg till extern adress"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "Lägg till PayPal"
-      ],
-      "Add phone number": [
-        "Lägg till telefonnummer"
       ],
       "Add public holidays": [
         "Lägg till allmänna helgdagar"
@@ -326,6 +320,9 @@
       ],
       "Compare plans": [
         "Jämför paket"
+      ],
+      "Configure new device profile": [
+        "Konfigurera ny enhetsprofil"
       ],
       "Configure SAML": [
         "Konfigurera SAML"
@@ -509,6 +506,9 @@
       ],
       "Delete and confirm": [
         "Ta bort och bekräfta"
+      ],
+      "Delete device profile": [
+        "Ta bort enhetsprofil"
       ],
       "Delete filter “${ Name }”": [
         "Ta bort filter “${ Name }“"
@@ -753,9 +753,6 @@
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
       ],
-      "Enable device-based recovery": [
-        "Aktivera enhetsbaserad återställning"
-      ],
       "Enable multi-user support": [
         "Aktivera stöd för flera användare"
       ],
@@ -822,6 +819,9 @@
       "Generate": [
         "Generera"
       ],
+      "Generate device profile": [
+        "Generera enhetsprofil"
+      ],
       "Generate key": [
         "Generera nyckel"
       ],
@@ -836,9 +836,6 @@
       ],
       "Generate password": [
         "Generera lösenord"
-      ],
-      "Generate recovery phrase": [
-        "Generera återställningsfras"
       ],
       "Generate token": [
         "Generera token"
@@ -1032,6 +1029,9 @@
       "Italic": [
         "Kursiv"
       ],
+      "JumpCloud": [
+        "JumpCloud"
+      ],
       "Keep": [
         "Behåll"
       ],
@@ -1136,6 +1136,9 @@
       ],
       "Maybe later": [
         "Kanske senare"
+      ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
       ],
       "More": [
         "Mer"
@@ -1871,9 +1874,6 @@
       ],
       "View plans details": [
         "Visa paketdetaljer"
-      ],
-      "View recovery settings": [
-        "Visa återställningsinställningar"
       ],
       "View recovery setup details": [
         "Visa konfigurationsdetaljer för återställning"
@@ -6765,9 +6765,6 @@
       "Add recovery contact": [
         "Lägg till återställningskontakt"
       ],
-      "Add recovery method": [
-        "Lägg till återställningsmetod"
-      ],
       "Added on ${ formattedDate }": [
         "Tillagd den ${ formattedDate }"
       ],
@@ -7009,14 +7006,8 @@
       "Subscription expired": [
         "Prenumeration löpt ut"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "De har lagt till mig som betrodd kontakt. Jag kan komma åt deras konto i händelse av en nödsituation."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "De har lagt till dig som betrodd kontakt. Du kan komma åt deras konto i händelse av en nödsituation."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "De kan komma att be om åtkomst till mitt konto i händelse av en nödsituation."
       ],
       "They may ask to access your account in case of an emergency.": [
         "De kan komma att be om åtkomst till ditt konto i händelse av en nödsituation."
@@ -7036,9 +7027,6 @@
       ],
       "Time required before automatically granting them access": [
         "Tid som krävs innan de automatiskt beviljas åtkomst"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "För att lägga till återställningskontakter måste du ha en e-postadress eller ett telefonnummer för återställning."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "För att inaktivera denna återställningsmetod, ta bort alla dina återställningskontakter."
@@ -7090,12 +7078,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Du kan när som helst ta bort deras åtkomst för att återfå exklusiv kontroll för ditt konto."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "Du har inte blivit utsedd som en återställningskontakt för någon än."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "Du har inte blivit utsedd som en nödkontakt för någon än."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Du har nått maximala antalet av ${ limit } nödkontakt.",
@@ -7231,6 +7213,9 @@
       ],
       "Contact signature not verified": [
         "Kontaktsignatur inte verifierad"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Kunde inte generera enhetsprofilen. Försök igen."
       ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
@@ -10192,17 +10177,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "En återställningsfil låter dig låsa upp och visa dina data efter kontoåterställning"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "En återställningsfras låter dig komma åt ditt konto och återställa dina krypterade meddelanden om du glömmer ditt lösenord"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En användare är ett konto som är associerat till ett enda användarnamn, brevlåda och person"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Få åtkomst till 6 500+ höghastighetsservrar på upp till 10 enheter för att hålla din webbläsardata säker. Tillgängligt på ${ ios }, ${ android }, ${ appleTV } och ${ desktop }."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Åtkomst till över 20 000 servrar i över 145 länder"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Kom åt dina lösenord och skydda dina identiteter online sömlöst på alla dina enheter. Ladda ner och installera relevanta ${ PASS_APP_NAME }-appar och utökningar."
@@ -10212,9 +10194,6 @@
       ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
       "Active": [
         "Aktiv"
@@ -10227,6 +10206,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } för endast ${ bundlePlanPriceInline }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Lägg till ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -10318,8 +10300,14 @@
       "All data and settings are preserved": [
         "All data och alla inställningar är bevarad"
       ],
+      "All devices with this device profile deployed": [
+        "Alla enheter med denna enhetsprofil distribuerad"
+      ],
       "All inactive members deleted": [
         "Alla inaktiva medlemmar borttagna"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "All internettrafik är alltid krypterad och säker"
       ],
       "All keys successfully reactivated": [
         "Alla nycklar har återaktiverats"
@@ -10858,6 +10846,9 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Beroende på dina inställningar kan de få åtkomst omedelbart eller efter en bestämd **väntetid.**"
       ],
+      "Deploy across all your managed devices": [
+        "Distribuera på alla dina hanterade enheter"
+      ],
       "Did you know?": [
         "Visste du att?"
       ],
@@ -10934,6 +10925,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
       ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Ladda ner ${ removeScriptLink } och kör det på varje enhet som systemanvändare för att ta bort profilen automatiskt."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Ladda ner ${ VPN_APP_NAME }"
       ],
@@ -11006,6 +11000,9 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-post märkta med etiketten ${ nameDeleted } kommer inte att tas bort och kan fortfarande hittas i respektive mapp."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Anställda kan inte gå online utan en VPN-anslutning"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Aktivera automatisk förnyelse för att behålla åtkomst till Plus-servrar och funktioner."
       ],
@@ -11057,6 +11054,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Ändpunkts-URL mottagen från din identitetsleverantör (t.ex. https://idp.exempel.se/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Tillämpningen startar automatiskt så snart enheten upptäcker profilen."
+      ],
       "Enhance your network security": [
         "Förbättra din nätverkssäkerhet"
       ],
@@ -11065,6 +11065,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Säkerställ fullständig privat och krypterad kommunikation. Gör anspråk på din gratis ${ BRAND_NAME } e-postadress nu."
+      ],
+      "Ensure your organization is always protected": [
+        "Se till att din organisation alltid är skyddad"
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Ange ett lösenord för att slutföra ditt ${ BRAND_NAME } konto och börja använda ${ VPN_APP_NAME } på alla dina enheter!"
@@ -11162,6 +11165,9 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Snabb och fokuserad. E-post och kalender, direkt på din stationära dator"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Snabbaste VPN-hastigheter på upp till 10 Gbps"
+      ],
       "Featured in": [
         "Som sett i"
       ],
@@ -11243,11 +11249,11 @@
       "Gateways": [
         "Gateways"
       ],
+      "Generate the device profile and download a configuration file.": [
+        "Generera enhetsprofilen och ladda ner en konfigurationsfil."
+      ],
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Att generera en ny återställningsfras kommer inaktivera din nuvarande återställningsfras."
-      ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Att generera en ny återställningsfras kommer inaktivera din gamla."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Skaffa ${ AUTHENTICATOR_APP_NAME } för alla dina enheter."
@@ -11372,9 +11378,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Om systemets tidszon inte matchar den nuvarande tidszonen kommer du att bli ombedd att uppdatera den (högst en gång per dag)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Om detta beror på en gammal lösenordsåterställning kan du stoppa meddelandet från att visas igen"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
       ],
@@ -11422,9 +11425,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Om du nyligen återställde ditt lösenord kan du använda ${ recoveryMethodLink } för att låsa upp dina data. Om detta beror på en gammal lösenordsåterställning kan du stoppa meddelandet från att visas igen."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Om du nyligen har återställt ditt lösenord kan du använda en dataåterställningsmetod för att låsa upp dina data"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Om din organisation har offentliga personer, hanterar känsliga data eller kan vara måltavla för cyberattacker, rekommenderas du starkt att aktivera ${ PROTON_SENTINEL_NAME } för alla i din organisation."
@@ -11560,9 +11560,6 @@
       ],
       "Invited": [
         "Inbjuden"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "Det verkar som om en del av dina data är krypterade och låsta."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tar 10 dagar att ändra en servers land, så se till att ditt val är korrekt."
@@ -11729,6 +11726,9 @@
       "Low Priority": [
         "Låg prioritet"
       ],
+      "macOS": [
+        "macOS"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Stora e-posttjänster kan avvisa eller filtrera din e-post till skräppost om SPF/DKIM/DMARC saknas eller inte är korrekt inställda."
       ],
@@ -11852,6 +11852,9 @@
       "No card required": [
         "Inget kort krävs"
       ],
+      "No companies yet. Start by creating a new company.": [
+        "Inga företag ännu. Börja med att skapa ett nytt företag."
+      ],
       "No connected addresses.": [
         "Inga anslutna adresser."
       ],
@@ -11944,9 +11947,6 @@
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Öppna dina Safari-inställningar för tillägget och verifiera att webbplatsbehörigheter är aktiverade för ${ BRAND_NAME }-domäner"
-      ],
-      "Optional configuration": [
-        "Valfri konfiguration"
       ],
       "or ${ selectFileButton }": [
         "eller ${ selectFileButton }"
@@ -12087,9 +12087,6 @@
       "Please fill out this field.": [
         "Fyll i detta fält."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Förvara det säkert. Du behöver det för att komma åt ditt konto och dekryptera dina data i händelse av lösenordsåterställning."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Observera att om du tar bort filtret ${ nameDeleted } kommer vi att sluta bearbeta alla automatiska åtgärder som det utlöser."
       ],
@@ -12221,9 +12218,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Återställningsfras kopierad till urklipp"
-      ],
-      "Recovery phrase downloaded": [
-        "Återställningsfras nerladdad"
       ],
       "Recovery phrase has been disabled": [
         "Återställningsfras har inaktiverats"
@@ -12539,6 +12533,9 @@
       ],
       "support team": [
         "supportteam"
+      ],
+      "Supported platforms": [
+        "Plattformar som stöds"
       ],
       "Swiss based": [
         "Baserat i Schweiz"
@@ -13183,9 +13180,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi rekommenderar att du aviserar organisationsmedlemmarna och ber dem ställa in 2FA för sina konton innan verkställning med användningen av 2FA."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Vi lagrar säkert återställningsinformation på din betrodda enhet för att förhindra att du förlorar din data"
-      ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Vi rekommenderar starkt att alla aktiverar återställning med återställningsfras."
       ],
@@ -13676,12 +13670,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Din återställningsfil kommer återställa åtkomst till e-post, kontakter, filer, lösenord och annan krypterad data på ditt konto efter en lösenordsåterställning."
-      ],
-      "Your recovery phrase": [
-        "Din återställningsfras"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Din återställningsfras är en serie av 12 slumpmässigt genererade ord i en specifik ordning."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "Din återställningsfras låter dig logga in och återställa dina data om du skulle bli utestängd från ditt ${ BRAND_NAME }-konto. Den består av 12 ord och fungerar som ett reservlösenord."
@@ -14526,6 +14514,9 @@
       "App Settings": [
         "App-inställningar"
       ],
+      "Applies:": [
+        "Tillämpas:"
+      ],
       "Apply filter to existing emails": [
         "Tillämpa filter till befintlig e-post"
       ],
@@ -14699,6 +14690,12 @@
       ],
       "City": [
         "Ort"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversion"
       ],
       "Code is 6 digits without spaces": [
         "Kod är 6 siffror utan mellanslag"
@@ -15231,6 +15228,9 @@
       ],
       "Lock app after inactivity": [
         "Lås app efter inaktivitet"
+      ],
+      "Login restrictions": [
+        "Inloggningsbegränsningar"
       ],
       "Logo": [
         "Logga"
@@ -16012,17 +16012,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Enhetsbaserad återställning"
-      ],
       "Notification phone number": [
         "Telefonnummer för avisering"
       ],
       "Recovery phone number": [
         "Telefonnummer för återställning"
-      ],
-      "Recovery phrase": [
-        "Återställningsfras"
       ],
       "Set recovery phone number": [
         "Ställ in telefonnummer för återställning"
@@ -16340,9 +16334,6 @@
       "How to share via email": [
         "Hur man delar via e-post"
       ],
-      "How to unlock data": [
-        "Hur man låser upp data"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Hur man använder ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16366,9 +16357,6 @@
       ],
       "Learn more": [
         "Lär dig mer"
-      ],
-      "Learn more about data recovery": [
-        "Lär dig mer om dataåterställning"
       ],
       "Manage addresses": [
         "Hantera adresser"
@@ -21326,146 +21314,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **Inaktivera återställning via telefon** för att förhindra angripare från att ta över ditt konto."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **Aktivera telefon för återställning** för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } kommer använda denna adress för att hålla dig uppdaterad om din kontosäkerhet."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } kommer använda denna adress för att skicka en återställningskod via e-post när du återställer ditt lösenord."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } kommer använda detta telefonnummer för att skicka en återställningskod via SMS när du återställer ditt lösenord."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } för att säkerställa att din data kan återställas."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**Inaktivera kontoåterställning med e-post** för att förhindra angripare från att ta över ditt konto."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Aktivera e-post för återställning** för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
-      ],
-      "Account reset by email has been disabled": [
-        "Kontoåterställning med e-post har inaktiverats"
-      ],
-      "Account reset by phone has been disabled": [
-        "Kontoåterställning med telefon har inaktiverats"
-      ],
-      "Account safety review": [
-        "Säkerhetsgranska konto"
-      ],
-      "Add a phone number": [
-        "Lägg till ett telefonnummer"
-      ],
-      "Add a recovery email": [
-        "Lägg till en e-post för återställning"
-      ],
-      "Add a recovery email address": [
-        "Lägg till en e-postadress för återställning"
-      ],
-      "Add a recovery phone number": [
-        "Lägg till ett telefonnummer för återställning"
-      ],
-      "Add an alternative email address": [
-        "Lägg till en alternativ e-postadress"
-      ],
-      "Add an email": [
-        "Lägg till en e-post"
-      ],
-      "Back to Safety Review": [
-        "Tillbaka till säkerhetsgranskning"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "Eftersom du återställer ditt lösenord kan din nuvarande återställningsfras endast användas för att återställa data skapad innan din lösenordsåterställning."
-      ],
-      "Can be used to regain access to your account and data": [
-        "Kan användas för att återfå åtkomst till ditt konto och data"
-      ],
-      "Check account security": [
-        "Kontrollera kontosäkerhet"
-      ],
       "Code sent to ${ boldValue }": [
         "Kod skickad till ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Fortsätt till säkerhetsgranskning"
-      ],
-      "Device-based recovery enabled": [
-        "Enhetsbaserad återställning aktiverad"
-      ],
-      "Disable account reset by email": [
-        "Inaktivera kontoåterställning med e-post"
-      ],
-      "Disable recovery by email": [
-        "Inaktivera återställning med e-post"
-      ],
-      "Disable recovery by phone": [
-        "Inaktivera återställning med telefon"
-      ],
-      "Download ${ size }": [
-        "Ladda ner ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "Ladda ner din återställningsfras"
-      ],
-      "Email address": [
-        "E-postadress"
-      ],
-      "Enable device-based recovery": [
-        "Aktivera enhetsbaserad återställning"
-      ],
-      "Enable recovery by email": [
-        "Aktivera återställning via e-post"
-      ],
-      "Enable recovery by phone": [
-        "Aktivera återställning via telefon"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Jag förstår att jag inte kommer att kunna återställa för närvarande låsta data med denna återställningsfras"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Om du glömmer ditt ${ BRAND_NAME }-lösenord och behöver återställa det så kommer full åtkomst till ditt ${ BRAND_NAME }-konto att återställas nästa gång du loggar in på den här enheten."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Om du glömmer ditt ${ BRAND_NAME }-lösenord och behöver återställa det så kommer full åtkomst till ditt ${ BRAND_NAME }-konto att återställas nästa gång du loggar in på den här enheten."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kommer din återställningsfras att låta dig logga in och återställa dina data."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Om du tappar dina inloggningsuppgifter och behöver återställa ditt konto **är det absolut nödvändigt** att du har både en **kontoåterställnings- och dataåterställningsmetod** på plats, annars kanske du inte kommer åt din e-post, kontakter, filer eller lösenord."
-      ],
-      "in case we need to contact you": [
-        "ifall vi behöver kontakta dig"
       ],
       "Invalid code": [
         "Ogiltig kod"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Det är det enda sättet att helt återställa ditt konto, så se till att du förvarar det någonstans på ett säkert sätt."
-      ],
-      "Recovery email address": [
-        "E-postadress för återställning"
-      ],
-      "Recovery phone number": [
-        "Telefonnummer för återställning"
-      ],
       "Review account safety": [
         "Granska kontosäkerhet"
-      ],
-      "Safeguard account now": [
-        "Skydda konto nu"
-      ],
-      "Safeguard your account": [
-        "Skydda ditt konto"
-      ],
-      "Safeguard your account further": [
-        "Skydda ditt konto ytterligare"
       ],
       "Safety review": [
         "Säkerhetsgranskning"
@@ -21473,194 +21329,8 @@
       "Send a new code": [
         "Skicka en ny kod"
       ],
-      "Show more": [
-        "Visa mer"
-      ],
-      "Take action to secure your account": [
-        "Vidta åtgärd för att säkra ditt konto"
-      ],
-      "There was an error generating your recovery phrase": [
-        "Det var ett fel vid generering av din återställningsfras"
-      ],
-      "There was an error verifying your email": [
-        "Det var ett fel att verifiera din e-post"
-      ],
-      "There was an error verifying your recovery email": [
-        "Det var ett fel att verifiera din e-post för återställning"
-      ],
-      "There was an error verifying your recovery phone": [
-        "Det var ett fel att verifiera din telefon för återställning"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "för att automatiskt återställa din data när du loggar in på en betrodd enhet"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "För att vara säker på att e-postadressen är din, ange verifieringskoden som skickats till ${ boldEmail }."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "För att vara säker på att telefonnumret är ditt, ange verifieringskoden som skickats till ${ boldPhoneNumber }."
-      ],
-      "to prevent attackers from taking over your account": [
-        "för att förhindra angripare från att ta över ditt konto"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "för att återställa ditt konto och data om du någon gång blir utelåst"
-      ],
-      "to recover your account if you're ever locked out": [
-        "för att återställa ditt konto om du någon gång blir utelåst"
-      ],
       "update it now": [
         "uppdatera det nu"
-      ],
-      "Update your recovery phrase": [
-        "Öppna din återställningsfras"
-      ],
-      "Update your recovery phrase?": [
-        "Uppdatera din återställningsfras?"
-      ],
-      "Verify": [
-        "Verifiera"
-      ],
-      "Verify your email address": [
-        "Verifiera din e-postadress"
-      ],
-      "Verify your phone number": [
-        "Verifiera ditt telefonnummer"
-      ],
-      "Verify your recovery email address": [
-        "Verifiera din e-postadress för återställning"
-      ],
-      "Verify your recovery phone number": [
-        "Verifiera ditt telefonnummer för återställning"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "Vi stötte på ett fel vid genereringen av din återställningsfras. Försök igen senare eller kontakta supporten om problemet kvarstår."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Vi stötte på ett fel vid verifieringen av din e-post. Försök igen senare eller kontakta supporten om problemet kvarstår."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Vi stötte på ett fel vid verifieringen av din e-post för återställning. Försök igen senare eller kontakta supporten om problemet kvarstår."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Vi stötte på ett fel vid verifieringen av din telefon för återställning. Försök igen senare eller kontakta supporten om problemet kvarstår."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "När du aktiverar enhetsbaserad återställning så kommer ${ BRAND_NAME } att lagra en krypterad reservnyckelkedja i din webbläsares webblagringsutrymme."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Du riskerar att förlora åtkomst till ditt konto och data."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Du riskerar att förlora åtkomst till dina data."
-      ],
-      "You can disable this at any time.": [
-        "Du kan inaktivera detta när som helst."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Du kan använda återställningsfrasen i denna återställningsfras för att helt återställa ditt konto när du återställer ditt lösenord, så se till att du förvarar det på ett säkert ställe."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "Du kan använda din e-post för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Du kan använda din e-post för återställning för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "Du kan använda din telefon för återställning för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "Du har tidigare laddat ner en återställningsfras. Om du laddar ner en ny kommer den gamla **inaktiveras**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Du har rekommenderade åtgärder för att skydda ditt konto ytterligare."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "Du har rekommenderade åtgärder för att skydda ditt konto."
-      ],
-      "You have recommended actions.": [
-        "Du har rekommenderade åtgärder."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "Du kommer inte längre att kunna använda denna adress för att återställa ditt konto."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "Du kommer inte längre att kunna använda detta telefonnummer för att återställa ditt konto."
-      ],
-      "Your account and data can be recovered": [
-        "Ditt konto och data kan återställas"
-      ],
-      "Your account and data can be recovered.": [
-        "Ditt konto och data kan återställas."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Ditt konto och data kan återställas. Kontrollera om du fortfarande kan komma åt dina återställningsmetoder."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Ditt konto och data kan återställas. Du har rekommenderade åtgärder för att skydda ditt konto ytterligare."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "Ditt konto och data kan återställas. Du har rekommenderade åtgärder."
-      ],
-      "Your account is fully secure.": [
-        "Ditt konto är helt säkert."
-      ],
-      "Your account is secure.": [
-        "Ditt konto är säkert."
-      ],
-      "Your email address is:": [
-        "Din e-postadress är:"
-      ],
-      "Your email is set": [
-        "Din e-postadress är inställd"
-      ],
-      "Your recovery email": [
-        "Din e-post för återställning"
-      ],
-      "Your recovery email address is:": [
-        "Din e-postadress för återställning är:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "Din e-post och telefon för återställning kan **endast återställa åtkomst till ditt konto**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "Din e-post för återställning kan **endast återställa åtkomst till ditt konto**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Din e-post för återställning kan missbrukas av angripare för att ta över ditt konto. ${ disableEmail } för att öka din kontosäkerhet."
-      ],
-      "Your recovery email has been enabled": [
-        "Din e-post för återställning har aktiverats"
-      ],
-      "Your recovery email is set": [
-        "Din e-post för återställning är inställd"
-      ],
-      "Your recovery methods": [
-        "Dina återställningsmetoder"
-      ],
-      "Your recovery phone": [
-        "Din telefon för återställning"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "Din telefon för återställning kan **endast återställa åtkomst till ditt konto**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Din telefon för återställning kan missbrukas av angripare för att ta över ditt konto. ${ disablePhone } för att öka din kontosäkerhet."
-      ],
-      "Your recovery phone has been enabled": [
-        "Din telefon för återställning har aktiverats"
-      ],
-      "Your recovery phone is set": [
-        "Din telefon för återställning är inställd"
-      ],
-      "Your recovery phone number is:": [
-        "Ditt telefonnummer för återställning är:"
-      ],
-      "Your recovery phrase": [
-        "Din återställningsfras"
-      ],
-      "Your recovery phrase is set": [
-        "Din återställningsfras är inställd"
       ]
     },
     "safety_review": {
@@ -22482,9 +22152,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "För att inte tillåta lösenordsåterställning måste du ha en återställningsmetod inställd."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "För att förbättra säkerheten för ditt konto och skydda dina data kan du begära en lösenordsåterställning från dina kontoinställningar i webbapplikationen."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -24528,6 +24195,9 @@
       "Compare the key differences that matter for your business.": [
         "Jämför de viktigaste skillnaderna som är viktiga för ditt företag."
       ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Tvinga VPN-användning i hela din organisation genom att blockera internetåtkomst om inte en VPN-anslutning är aktiv."
+      ],
       "Free forever": [
         "Gratis för alltid"
       ],
@@ -25322,6 +24992,9 @@
       "Also in your plan": [
         "Också i ditt paket"
       ],
+      "Always-on VPN": [
+        "Alltid-på VPN"
+      ],
       "Amount": [
         "Belopp"
       ],
@@ -25456,6 +25129,9 @@
       ],
       "Check your default mail application": [
         "Kontrollera din standardapplikation för e-post"
+      ],
+      "Choose a deployment method": [
+        "Välj en distributionsmetod"
       ],
       "Choose a provider": [
         "Välj en leverantör"
@@ -25644,9 +25320,6 @@
       "Data collection": [
         "Datainsamling"
       ],
-      "Data locked": [
-        "Data låst"
-      ],
       "Data recovery": [
         "Dataåterställning"
       ],
@@ -25728,6 +25401,15 @@
       ],
       "Deny access to user?": [
         "Neka åtkomst till användare?"
+      ],
+      "Deploy device profile to your devices": [
+        "Distribuera enhetsprofil till dina enheter"
+      ],
+      "Deploy via MDM": [
+        "Distribuera via MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Distribuera via PowerShell"
       ],
       "Description": [
         "Beskrivning"
@@ -26018,9 +25700,6 @@
       "Generate missing keys": [
         "Generera saknade nycklar"
       ],
-      "Generate new recovery phrase?": [
-        "Generera ny återställningsfras?"
-      ],
       "Generate SMTP token": [
         "Generera SMTP-token"
       ],
@@ -26172,6 +25851,9 @@
       "Information exposed in breach": [
         "Information exponerad vid intrång"
       ],
+      "Install it manually": [
+        "Installera det manuellt"
+      ],
       "Integrations": [
         "Integrationer"
       ],
@@ -26228,6 +25910,9 @@
       ],
       "Lower your cost without losing features": [
         "Sänk din kostnad utan att förlora funktioner"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "Huvudlösenord"
@@ -26763,6 +26448,9 @@
       "Status": [
         "Status"
       ],
+      "Stay for 50% off your next month": [
+        "Stanna kvar för 50 % rabatt nästa månad"
+      ],
       "Stay secure and connected anywhere": [
         "Håll dig säker och ansluten var som helst"
       ],
@@ -26997,6 +26685,9 @@
       ],
       "What is the dark web?": [
         "Vad är mörka webben?"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Wipe all logs?": [
         "Rensa alla loggar?"
@@ -27686,9 +27377,6 @@
         "Kunde inte aktivera administratörsåtkomst för ${ n } användare",
         "Kunde inte aktivera administratörsåtkomst för ${ n } användare"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Kunde inte aktivera administratörsåtkomst: ${ error }"
-      ],
       "Enable admin access?": [
         "Aktivera administratörsåtkomst?"
       ],
@@ -27951,9 +27639,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratörer kan inte komma åt privata användares data"
       ],
@@ -27963,20 +27648,11 @@
       "Invitation sent, awaiting reply from the invited member": [
         "Inbjudan skickad, inväntar svar från den inbjudna medlemmen"
       ],
-      "Invite sent": [
-        "Inbjudan skickad"
+      "Invited": [
+        "Inbjuden"
       ],
-      "It's you": [
-        "Det är du"
-      ],
-      "Pending admin access": [
-        "Väntande administratörsåtkomst"
-      ],
-      "Private": [
-        "Privat"
-      ],
-      "SSO": [
-        "SSO"
+      "Pending": [
+        "Väntar"
       ],
       "SSO user provided by your identity provider": [
         "SSO-användare tillhandahållen av din identitetsleverantör"
