@@ -69,7 +69,6 @@ import { Button } from '@proton/atoms/Button/Button'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { isLocalEnvironment } from '@proton/utils/env'
 import { useChangeAddressWhenPubliclyShared } from '../useChangeAddressWhenPubliclyShared'
-import { manageEventsSubscription } from '../../../drive-sdk/manage-events-subscription'
 import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive'
 import { getNodeName } from '~/drive-sdk'
 import { getDocsReportContextLines } from '~/utils/report-context'
@@ -78,8 +77,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import TracerAlert from '../../../tracer/TracerAlert'
-
-const subscribeToEvents = manageEventsSubscription()
+import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -105,6 +103,7 @@ export function DocumentViewer({
 }: DocumentViewerProps) {
   const application = useApplication()
   const drive = getDrive()
+  const eventSubscriber = getEventSubscriber()
   const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
   const { isDebugMode } = useDebugMode()
@@ -236,8 +235,16 @@ export function DocumentViewer({
     if (!sdkEventsEnabled || !currentDocumentNode || !documentState) {
       return
     }
-    return subscribeToEvents(drive, currentDocumentNode.treeEventScopeId, application.logger, [handleEvent])
-  }, [application.logger, currentDocumentNode, documentState, drive, handleEvent, sdkEventsEnabled])
+    void eventSubscriber.initialize(currentDocumentNode.treeEventScopeId, [handleEvent]).catch((error) => {
+      traceError(error, {
+        tags: {
+          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+          feature: 'DocsDocumentViewerEventsSDK',
+        },
+      })
+    })
+    return () => eventSubscriber.reset()
+  }, [application.logger, currentDocumentNode, documentState, eventSubscriber, handleEvent, sdkEventsEnabled])
 
   const [error, setError] = useState<DocumentError | null>(() => {
     if (documentType === 'sheet' && !isSheetsEditorEnabled) {
