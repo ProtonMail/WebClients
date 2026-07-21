@@ -106,7 +106,7 @@ const SettingsSearchArea = () => {
     const { viewportWidth } = useActiveBreakpoint();
     const adminSidebarFeature = useB2BAdminNavigation();
 
-    if (!(adminSidebarFeature.enabled && adminSidebarFeature.sidebar.status && viewportWidth['>=large'])) {
+    if (!(adminSidebarFeature.enabled && viewportWidth['>=large'])) {
         return null;
     }
 
