@@ -226,7 +226,7 @@
       "Copy address": [
         "Adresi kopyala"
       ],
-      "Copy invitation link": [
+      "Copy invite link": [
         "Davet bağlantısını kopyala"
       ],
       "Copy link": [
@@ -1801,7 +1801,7 @@
     },
     "Error": {
       "Background blur initialization failed. Please toggle your camera or background blur again": [
-        "Arka plan bulanıklığı başlatma işlemi başarısız oldu. Lütfen kameranızı veya arka plan bulanıklığı özelliğini tekrar etkinleştirin/devre dışı bırakın"
+        "Arka plan bulanıklığı hazırlanamadı. Lütfen kameranızı veya arka plan bulanıklığını yeniden kapatıp açın"
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
@@ -2202,7 +2202,7 @@
         "İlgilenmeniz gerekiyor"
       ],
       "Background blur initializing": [
-        "Arka plan bulanıklığı başlatılıyor"
+        "Arka plan bulanıklığı hazırlanıyor"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
@@ -2905,6 +2905,12 @@
       ],
       "Category": [
         "Kategori"
+      ],
+      "Client": [
+        "İstemci"
+      ],
+      "Client version": [
+        "İstemci sürümü"
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
