@@ -209,7 +209,11 @@ const TwoFactorSection = () => {
                                     const id = getId(registeredKey);
                                     const isCompromised = hasBit(registeredKey.Flags, Fido2CredentialFlags.Compromised);
                                     return (
-                                        <div key={id} className="flex items-center py-2 gap-2 border-bottom">
+                                        <div
+                                            key={id}
+                                            className="flex items-center py-2 gap-2 border-bottom"
+                                            data-testid="fido2:security-key"
+                                        >
                                             <div className="flex-1 text-break items-center">
                                                 <span>{registeredKey.Name}</span>
                                                 {isCompromised && (
@@ -224,6 +228,7 @@ const TwoFactorSection = () => {
                                             <ButtonGroup size="small">
                                                 <Button
                                                     icon
+                                                    data-testid="fido2:edit-key"
                                                     onClick={() => {
                                                         setTmpEdit({
                                                             id,
@@ -236,6 +241,7 @@ const TwoFactorSection = () => {
                                                 </Button>
                                                 <Button
                                                     icon
+                                                    data-testid="fido2:delete-key"
                                                     onClick={() => {
                                                         setTmpRemove({
                                                             keys: [{ id, name: registeredKey.Name }],
