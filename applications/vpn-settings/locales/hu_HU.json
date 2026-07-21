@@ -447,9 +447,6 @@
       "Generate password": [
         "Jelszó létrehozása"
       ],
-      "Generate recovery phrase": [
-        "Helyreállító jelmondat létrehozása"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } csomag beszerzése ${ priceCoupon } áron"
       ],
@@ -536,6 +533,9 @@
       ],
       "Invite user": [
         "Felhasználó meghívása"
+      ],
+      "Keep": [
+        "Megtartás"
       ],
       "Keep Editing": [
         "Szerkesztés folytatása"
@@ -3402,9 +3402,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Hogyan működik:** Írja be erre az eszközre azt a kódot, amely azon az eszközön jelenik meg, amelyre be szeretne jelentkezni. Ön **${ email }** néven lesz bejelentkezve. Mindkét eszköz aktív marad."
       ],
-      "Allow QR code sign‒in": [
-        "QR-kódos bejelentkezés engedélyezése"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Legyen óvatos a QR-kódokat tartalmazó üzenetekkel. Csak akkor olvassa be a kódot, ha megbízik a forrásban."
       ],
@@ -3419,9 +3416,6 @@
       ],
       "QR code sign-in enabled": [
         "A QR-kódos bejelentkezés engedélyezve"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "A QR-kód beolvasásával a mobilkészülékén bejelentkezhet"
       ],
       "Security tips": [
         "Biztonsági tippek"
@@ -3563,8 +3557,35 @@
         "${ n } nap",
         "${ n } nap"
       ],
+      "Access granted": [
+        "Hozzáférés engedélyezve"
+      ],
+      "Add": [
+        "Hozzáadás"
+      ],
+      "Disabled": [
+        "Letiltva"
+      ],
+      "Emergency access for ${ user } removed": [
+        "A(z) ${ user } vészhelyzeti hozzáférése eltávolítva."
+      ],
+      "Give immediate access?": [
+        "Azonnali hozzáférést biztosít?"
+      ],
+      "Only ": [
+        "Csak "
+      ],
+      "Request access?": [
+        "Hozzáférés kérése?"
+      ],
       "Trusted contact": [
         "Megbízható névjegy"
+      ],
+      "Upgrade to ${ planName }": [
+        "Váltás ${ planName } csomagra"
+      ],
+      "You are signed in to the account ${ account }.": [
+        "Jelenleg a következőként van belépve a fiókba: ${ account }."
       ]
     },
     "Empty group name": {
@@ -4281,6 +4302,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB teljes tárhely"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "A fiókja előnyei"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -5533,20 +5559,11 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "A helyreállító fájl lehetővé teszi az adatok zárolásának feloldását a fiók helyreállítása után."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "A helyreállító jelmondat segít visszaszerezni ez elérését a fiókjához és helyreállítani a titkosított leveleit, ha elfelejtené a jelszavát"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "A felhasználó egy fiókot jelent, amely egyetlen felhasználói nevet, e-mail fiókot és személyt takar"
       ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktiváljon legalább egy helyreállítási módszert, hogy abban az esetben is visszaszerezhesse a hozzáférést a ${ BRAND_NAME } fiókjában tárolt adataihoz, ha elfelejtené a jelszavát."
       ],
       "active": [
         "aktív"
@@ -6072,9 +6089,6 @@
       "Gateways": [
         "Átjárók"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Új helyreállító jelmondat létrehozása érvényteleníti a korábbit."
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Értesüljön arról, ha jelszava vagy más személyes adatai kiszivárogtak. ${ learnMoreLinkNoBreach }"
       ],
@@ -6104,9 +6118,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ha egy másik adminisztrátor megváltoztatná ezt a jelszót, el kell kérni tőle az új Szervezeti Jelszót."
-      ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Ha ez egy régi jelszó visszaállításból adódik, megtilthatja az üzenet újbóli megjelenését"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
@@ -6140,9 +6151,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Ha nemrégiben visszaállította a jelszavát, továbbra is hozzáférhet az adataihoz, valamelyik helyreállítási módszer használatával"
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Ha problémába ütközött, segítünk. ${ boldPhoneCall } vagy ${ boldZoomMeeting } egy támogatási szakemberünkkel, vagy indítson ${ boldLiveChat } egy segítségnyújtóval."
@@ -6229,9 +6237,6 @@
       ],
       "Invited": [
         "Meghívva"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "Úgy tűnik az adatai egy része titkosítva és zárolva vannak."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "A szerver országának megváltoztatása 10 napot vesz igénybe, ezért győződjön meg róla, hogy helyesen választotta ki."
@@ -6561,9 +6566,6 @@
       "Please fill in all required fields.": [
         "Kérjük, töltse ki az összes kötelező mezőt."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Tartsa biztonságban. Szüksége lesz rá a fiókja eléréshez és adatai visszafejtéséhez, ha visszaállítaná a fiókja jelszavát."
-      ],
       "please open a support ticket": [
         "kérjük, nyisson egy ügyfélszolgálati jegyet"
       ],
@@ -6641,9 +6643,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "A helyreállító jelmondat a vágólapra másolva"
-      ],
-      "Recovery phrase downloaded": [
-        "Helyreállító jelmondat letöltve"
       ],
       "Recovery phrase has been disabled": [
         "A helyreállító jelmondat kikpacsolva"
@@ -7232,9 +7231,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Mielőtt kötelezővé teszi a kétlépcsős hitelesítést, javasoljuk, hogy kérje meg a szervezet tagjait arra, hogy állítsák be maguknak a fiókjukban."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Biztonságban tároljuk a helyreállítási információkat a megbízható eszközén, hogy elkerülhető legyen az adatai elvesztése"
-      ],
       "We use 3-D Secure to protect your payments": [
         "Fizetéseit a 3-D Secure technológia védi"
       ],
@@ -7503,12 +7499,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "Your recovery phrase": [
-        "Az ön helyreállító jelmondata"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "A helyreállító jelmondat egy 12, véletlenszerűen előállított szóból álló sorozat, megadott sorrendben."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Az ütemezett csomagja ${ renewalTime } időpontban indul, és ${ cycle } havonta automatikusan megújul.",
@@ -8449,14 +8439,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Eszköz alapú helyreállítás"
-      ],
       "Recovery phone number": [
         "Helyreállítási telefonszám"
-      ],
-      "Recovery phrase": [
-        "Helyreállító jelmondat"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8658,9 +8642,6 @@
       "How to share via email": [
         "Megosztás módja e-mailen keresztül"
       ],
-      "How to unlock data": [
-        "Hogyan oldja fel adatait"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "A ${ DARK_WEB_MONITORING_NAME } használata"
       ],
@@ -8678,9 +8659,6 @@
       ],
       "Learn more": [
         "További információk"
-      ],
-      "Learn more about data recovery": [
-        "További információk az adat helyreállításról"
       ],
       "Not activated": [
         "Nem aktivált"
@@ -11346,6 +11324,14 @@
         "A telefonszámának megerősítése növeli a fiókja biztonságát, illetve több helyreállítási lehetőséget biztosít."
       ]
     },
+    "RecoveryPhrase: Action": {
+      "Copy": [
+        "Másolás"
+      ],
+      "Show": [
+        "Megjelenítés"
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } ajánlásonként"
@@ -11441,41 +11427,8 @@
       ]
     },
     "Safety review": {
-      "Check account security": [
-        "A fiók biztonságának ellenőrzése"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Ha elveszíti a belépéshez szükséges adatait és vissza kell állítania a fiókját, **feltétlenül szükséges**, hogy legyen **mind fiók, mind pedig adat helyreállítási módszere** beállítva, különben megeshet, hogy nem fogja tudni többé elérni az e-mailjeit, névjegyeit, fájljait vagy jelszavait."
-      ],
       "Review account safety": [
         "Fiókbiztonság átnézése"
-      ],
-      "Safeguard account now": [
-        "A fiók biztonságának növelése"
-      ],
-      "Safeguard your account": [
-        "Tartsa biztonságban a fiókját"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Fennáll a kockázata a fiókjához és az adataihoz való hozzáférés elvesztésének."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Fennáll a kockázata az adataihoz való hozzáférés elvesztésének."
-      ],
-      "You have recommended actions.": [
-        "Javasolt műveletek érhetők el."
-      ],
-      "Your account and data can be recovered": [
-        "A fiók és adatai helyreállíthatók"
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "A fiók és adatai helyreállíthatók. Győződjön meg róla, hogy továbbra is hozzáfér a helyreállítási módszereihez."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "A fiók és adatai helyreállíthatók. Javasolt műveletek érhetők el, a fiókja biztonságának növeléséhez."
-      ],
-      "Your account is fully secure.": [
-        "A fiókja teljesen biztonságban van."
       ]
     },
     "saml: Action": {
@@ -11939,9 +11892,6 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "A jelszó visszaállítás kikapcsolásához, be kell állítania egy helyreállítási módot."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Fiókja biztonságának növelése és adatainak védelme érdekében a webes alkalmazás fiókbeállításaiban kérheti a jelszó visszaállítását."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11994,6 +11944,9 @@
       ]
     },
     "Settings section title": {
+      "Account": [
+        "Fiók"
+      ],
       "Organization": [
         "Szervezet"
       ]
@@ -13507,6 +13460,9 @@
       "Access control": [
         "Hozzáférés vezérlés"
       ],
+      "Accessibility": [
+        "Kisegítő lehetőségek"
+      ],
       "Account and password": [
         "Fiók és jelszó"
       ],
@@ -13782,8 +13738,8 @@
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
       ],
-      "Data locked": [
-        "Adatok zárolva"
+      "Dashboard": [
+        "Vezérlőpult"
       ],
       "Data recovery": [
         "Adat helyreállítás"
@@ -13958,9 +13914,6 @@
       "Generate missing keys": [
         "Hiányzó kulcsok generálása"
       ],
-      "Generate new recovery phrase?": [
-        "Új helyreállító jelmondat létrehozása?"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "Fizessen elő ${ vpnPlus } csomagra az összes szerver használatához"
       ],
@@ -13984,6 +13937,9 @@
       ],
       "Gift code": [
         "Ajándék kód"
+      ],
+      "Group membership": [
+        "Csoporttagság"
       ],
       "Groups": [
         "Csoportok"
@@ -14037,6 +13993,9 @@
       "IP": [
         "IP"
       ],
+      "Language and time": [
+        "Nyelv és idő"
+      ],
       "Limit reached": [
         "Korlát elérve"
       ],
@@ -14063,6 +14022,9 @@
       ],
       "No account information was found in any data breaches": [
         "A fiók adatai nem találhatók meg egyik adatvédelmi incidensben sem"
+      ],
+      "Notifications": [
+        "Értesítések"
       ],
       "Open": [
         "Megnyitás"
@@ -14332,6 +14294,9 @@
       "Text": [
         "Szöveg"
       ],
+      "Theme": [
+        "Téma"
+      ],
       "There are no events for your account": [
         "Nincsenek események a fiókjához."
       ],
@@ -14361,6 +14326,9 @@
       ],
       "Upgrade complete!": [
         "A verzió frissítése befejeződött!"
+      ],
+      "Upgrade plan": [
+        "Váltás nagyobb csomagra"
       ],
       "Upgrade to ${ planName }": [
         "Váltás ${ planName } csomagra"
@@ -14457,6 +14425,9 @@
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
+      ],
+      "Your storage": [
+        "Tárhely"
       ],
       "Your subscriptions": [
         "Előfizetések"
@@ -14787,9 +14758,6 @@
       "Confirm all": [
         "Összes megerősítése"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Nem lehetett az adminisztrátori hozzáférést bekapcsolni: ${ error }"
-      ],
       "Enable manually": [
         "Bekapcsolás manuálisan"
       ],
@@ -14937,21 +14905,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Meghívás elküldve, várakozás a válaszra a meghívott személytől"
-      ],
-      "Invite sent": [
-        "Meghívó elküldve"
-      ],
-      "It's you": [
-        "Ez Ön"
-      ],
-      "Pending admin access": [
-        "Függőben lévő adminisztrátor jogosultság"
-      ],
-      "Private": [
-        "Privát"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Az SSO-felhasználót a személyazonosság-szolgáltatója biztosítja"

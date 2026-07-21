@@ -71,6 +71,9 @@
       "Add address or domain": [
         "Tambah alamat atau domain"
       ],
+      "Add and verify": [
+        "Tambah dan verifikasi"
+      ],
       "Add another account": [
         "Tambah akun lainnya"
       ],
@@ -88,6 +91,9 @@
       ],
       "Add PayPal": [
         "Tambahkan akun PayPal"
+      ],
+      "Add recovery options": [
+        "Tambah opsi pemulihan"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Tambah tautan rujukan ke tanda tangan ${ MAIL_APP_NAME }"
@@ -140,6 +146,9 @@
       "Cancel": [
         "Batal"
       ],
+      "Cancel request": [
+        "Batalkan permintaan"
+      ],
       "Cancel subscription": [
         "Batalkan langganan"
       ],
@@ -166,6 +175,9 @@
       ],
       "Check import progress": [
         "Cek proses impor"
+      ],
+      "Check now": [
+        "Periksa sekarang"
       ],
       "Choose a file or drag it here": [
         "Pilih berkas atau taruh di sini"
@@ -286,6 +298,9 @@
       ],
       "Create new policy": [
         "Buat kebijakan baru"
+      ],
+      "Create recovery phrase": [
+        "Buat frasa pemulihan"
       ],
       "Create users": [
         "Buat pengguna"
@@ -410,6 +425,9 @@
       "Download recovery file": [
         "Unduh file pemulihan"
       ],
+      "Download updated file": [
+        "Unduh file yang diperbarui"
+      ],
       "Edit": [
         "Sunting"
       ],
@@ -503,14 +521,14 @@
       "Forgot password?": [
         "Lupa kata sandi?"
       ],
+      "Generate new phrase": [
+        "Buat frasa baru"
+      ],
       "Generate new recovery phrase": [
         "Buat frasa pemulihan baru"
       ],
       "Generate password": [
         "Buat kata sandi"
-      ],
-      "Generate recovery phrase": [
-        "Hasilkan frasa pemulihan"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Dapatkan ${ planName } dengan harga ${ priceCoupon }"
@@ -608,6 +626,9 @@
       "I don’t have my backup codes": [
         "Tidak memiliki kode cadangan"
       ],
+      "Ignore": [
+        "Abaikan"
+      ],
       "Import": [
         "Impor"
       ],
@@ -625,6 +646,9 @@
       ],
       "Invite user": [
         "Undang pengguna"
+      ],
+      "Keep": [
+        "Simpan"
       ],
       "Keep current plan": [
         "Tetap gunakan paket saat ini"
@@ -739,6 +763,9 @@
       ],
       "Open navigation": [
         "Buka navigasi"
+      ],
+      "Opt out": [
+        "Undur diri"
       ],
       "Or": [
         "Atau"
@@ -896,6 +923,9 @@
       "Review changes": [
         "Tinjau perubahan"
       ],
+      "Review recovery options": [
+        "Tinjau opsi pemulihan"
+      ],
       "Revoke": [
         "Cabut"
       ],
@@ -914,6 +944,9 @@
       "Save address": [
         "Simpan alamat"
       ],
+      "Save and verify": [
+        "Simpan dan verifikasi"
+      ],
       "Save SAML configuration": [
         "Simpan konfigurasi SAML"
       ],
@@ -928,6 +961,9 @@
       ],
       "Search settings": [
         "Cari di pengaturan"
+      ],
+      "Secure account": [
+        "Amankan akun"
       ],
       "See DNS TXT record": [
         "Lihat rekaman TXT DNS"
@@ -1000,6 +1036,9 @@
       ],
       "Set up a custom domain": [
         "Atur domain khusus"
+      ],
+      "Set up account recovery": [
+        "Siapkan pemulihan akun"
       ],
       "Set up auto-forwarding from Gmail": [
         "Siapkan penerusan otomatis dari Gmail"
@@ -1246,6 +1285,9 @@
       ],
       "View plans details": [
         "Lihat rincian paket"
+      ],
+      "View recovery setup details": [
+        "Tampilkan rincian pengaturan pemulihan"
       ],
       "Void": [
         "Batal"
@@ -3541,6 +3583,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "Enkripsi end-to-end dari ${ BRAND_NAME } berarti hanya Anda yang dapat membuka kunci data Anda. Siapkan opsi pemulihan sekarang untuk memastikan Anda tidak pernah kehilangan akses."
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } di ${ DRIVE_APP_NAME } memungkinkan Anda untuk saling bekerja sama dalam lingkungan yang aman dan terenkripsi."
       ],
@@ -3564,6 +3609,9 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blokir kemampuan Google untuk membuat profil Anda. Gmail tidak dapat melihat aktivitas di ${ MAIL_APP_NAME }"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Pindahkan email, acara kalender, dan kontak dari penyedia lain."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Bangun kepercayaan dan pengenalan merek dengan alamat email profesional di domain Anda sendiri."
@@ -3643,6 +3691,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Bagaimana kami mendukung aktivis lokal ketika privasi dan kebebasan berbicara terancam."
       ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "Cara membuka kunci data terenkripsi jika lupa kata sandi."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
       ],
@@ -3654,6 +3705,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Memungkinkan Anda untuk menambahkan tautan rapat secara instan ke undangan acara Anda."
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "Metode yang mencakup atur ulang kata sandi dan pemulihan data."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Sebagian besar masalah dapat diselesaikan dalam beberapa menit dengan panduan langkah demi langkah kami."
@@ -3684,6 +3738,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "Masih butuh bantuan? Tim dukungan kami siap membantu."
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "Ini memungkinkan memperoleh kembali akses ke akun ${ BRAND_NAME } tetapi tidak memulihkan data yang terenkripsi."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Hal ini dapat terjadi jika izin dihapus atau kata sandi Anda diubah."
@@ -4086,9 +4143,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Cara kerjanya:** Masukkan kode yang ditampilkan di perangkat yang ingin Anda masuki ke perangkat ini. Anda akan masuk sebagai **${ email }**. Kedua perangkat akan tetap aktif."
       ],
-      "Allow QR code sign‒in": [
-        "Izinkan masuk dengan kode QR"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Berhati-hatilah terhadap pesan yang mengandung kode QR. Pindailah kode QR hanya apabila Anda memercayai sumbernya."
       ],
@@ -4103,9 +4157,6 @@
       ],
       "QR code sign-in enabled": [
         "Entri masuk via kode QR diaktifkan"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Pindai kode QR pada perangkat seluler Anda untuk masuk"
       ],
       "Security tips": [
         "Tip keamanan"
@@ -4243,38 +4294,332 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "Email Akun ${ BRAND_NAME }"
+      ],
+      "${ days } day left": [
+        "${ days } hari tersisa"
+      ],
+      "${ hours } hour left": [
+        "${ hours } jam tersisa"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } menit tersisa"
+      ],
       "${ n } day": [
         "${ n } hari"
+      ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } meminta akses darurat ke akun Anda"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user } akan dapat menggunakan akun Anda dan mengubah data Anda."
+      ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } akan dikeluarkan dari akun Anda dan tidak akan dapat mengaksesnya lagi hingga akses darurat berikutnya."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } tidak akan lagi dapat membantu memulihkan data setelah atur ulang kata sandi dilakukan."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } tidak akan lagi dapat meminta akses ke akun Anda dalam keadaan darurat."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } tidak akan dapat mengakses akun Anda hingga akses darurat berikutnya."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** sekarang menjadi kontak pemulihan Anda. Mereka dapat membantu membuka kunci data setelah mengatur ulang kata sandi."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Jika mereka mengonfirmasi**, klik **Setujui pemulihan**. Tindakan ini akan membuka kunci data terenkripsi mereka."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Jika mereka tidak meminta bantuan Anda**, mungkin ada orang lain yang mencoba mengakses akun mereka. Dalam hal ini, abaikan permintaan ini."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Lindungi warisan Anda.** Tingkatkan paket Anda untuk menambahkan kontak darurat."
+      ],
+      "Access account": [
+        "Akses akun"
+      ],
+      "Access granted": [
+        "Akses diberikan"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "Akses diberikan pada ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Permintaan akses dibatalkan"
+      ],
+      "Access requested": [
+        "Akses diminta"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Akses akan diberikan pada ${ formattedAccessibleAt }"
+      ],
+      "Add": [
+        "Tambahkan"
+      ],
+      "Add emergency contact": [
+        "Tambahkan kontak darurat"
+      ],
+      "Add option": [
+        "Tambah opsi"
+      ],
+      "Add recovery contact": [
+        "Tambahkan kontak pemulihan"
       ],
       "Added on ${ formattedDate }": [
         "Ditambahkan pada ${ formattedDate }"
       ],
+      "Approve recovery": [
+        "Setujui pemulihan"
+      ],
+      "Approved request": [
+        "Permintaan disetujui"
+      ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
         "Minta bantuan dari kontak pemulihan. Mereka akan menerima email untuk memverifikasi permintaan dan membuka kunci data Anda."
+      ],
+      "Asking for help": [
+        "Meminta bantuan"
+      ],
+      "Cancel request": [
+        "Batalkan permintaan"
+      ],
+      "Cancel request?": [
+        "Batalkan permintaan?"
+      ],
+      "Change access wait time": [
+        "Ubah waktu tunggu akses"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Ubah seberapa lama ${ user } harus menunggu sebelum mereka secara otomatis diberikan akses."
+      ],
+      "Change wait time": [
+        "Ubah waktu tunggu"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Pilih seseorang yang tepercaya untuk membantu memulihkan data jika terjadi atur ulang kata sandi. Kontak pemulihan harus sudah memiliki Akun ${ BRAND_NAME }."
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Pilih seseorang yang Anda percayai dengan data Anda. Mereka harus telah memiliki Akun ${ BRAND_NAME }."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Hubungi mereka untuk mengonfirmasi bahwa mereka memerlukan bantuan untuk memulihkan data mereka."
       ],
       "Contacts": [
         "Kontak"
       ],
+      "Data recovery contacts": [
+        "Kontak pemulihan data"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Data berhasil dipulihkan. Sekarang data yang ada dan file terenkripsi dapat didekripsi."
+      ],
+      "Disabled": [
+        "Dinonaktifkan"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Jangan sampai Anda kehilangan akses darurat. Aktifkan pembaruan otomatis sekarang juga."
+      ],
+      "Emergency access": [
+        "Akses darurat"
+      ],
+      "Emergency access for ${ user } removed": [
+        "Akses darurat untuk ${ user } dihapus"
+      ],
+      "Emergency access granted": [
+        "Akses darurat diberikan"
+      ],
+      "Emergency access refused": [
+        "Akses darurat ditolak"
+      ],
+      "Emergency access request": [
+        "Permintaan akses darurat"
+      ],
+      "Emergency access requested": [
+        "Akses darurat diminta"
+      ],
+      "Emergency access revoked": [
+        "Akses darurat dicabut"
+      ],
+      "Emergency contact added": [
+        "Kontak darurat ditambahkan"
+      ],
+      "Emergency contact enabled": [
+        "Kontak darurat diaktifkan"
+      ],
+      "Emergency contact removed": [
+        "Kontak darurat dihapus"
+      ],
+      "Enable": [
+        "Aktifkan"
+      ],
+      "Enable auto-renew": [
+        "Aktifkan pembaruan otomatis"
+      ],
+      "For ${ email }": [
+        "Untuk ${ email }"
+      ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
         "Hubungi mereka sekarang untuk meminta bantuan, dan untuk memberi tahu mereka secara langsung bahwa Anda yang mencoba membuka kunci data Anda."
+      ],
+      "Give access now": [
+        "Berikan akses sekarang"
+      ],
+      "Give immediate access?": [
+        "Berikan akses dengan segera?"
+      ],
+      "Got it": [
+        "Mengerti"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Minta mereka untuk memeriksa kotak masuk untuk melihat email bantuan pemulihan data. Email tersebut berisi tautan yang harus diklik untuk memverifikasi permintaan."
       ],
       "Immediate": [
         "Segera"
       ],
+      "Included with ${ planName }": [
+        "Terliput dengan ${ planName }"
+      ],
       "Less than a day": [
         "Kurang dari satu hari"
+      ],
+      "Less than a minute left": [
+        "Kurang dari satu menit"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "Jumlah maksimum ${ limit } kontak telah tercapai. Untuk mengubahnya, hapus kontak dan tambahkan yang baru."
+      ],
+      "Only ": [
+        "Hanya "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Mohon untuk hanya meminta akses darurat ketika benar-benar terdapat **situasi yang mendesak**, yang mengharuskan Anda untuk mengelola akun pengguna lain."
+      ],
+      "Pending request": [
+        "Permintaan tertunda"
+      ],
+      "People I trust": [
+        "Orang-orang yang saya percayai"
+      ],
+      "People who have you as a recovery contact": [
+        "Orang yang menjadikan Anda sebagai kontak pemulihan mereka"
+      ],
+      "People who trust me": [
+        "Orang-orang yang memercayai saya"
+      ],
+      "Proceed anyway": [
+        "Tetap lanjutkan"
+      ],
+      "Protect your legacy with emergency access": [
+        "Lindungi pusaka Anda dengan akses darurat"
+      ],
+      "Recover data": [
+        "Pulihkan data"
+      ],
+      "Recovery approved": [
+        "Pemulihan disetujui"
+      ],
+      "Recovery contact added": [
+        "Kontak pemulihan ditambahkan"
+      ],
+      "Recovery contact enabled": [
+        "Kontak pemulihan diaktifkan"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Kontak pemulihan untuk ${ user } dihapus"
+      ],
+      "Recovery contact removed": [
+        "Kontak pemulihan dihapus"
       ],
       "Recovery request sent": [
         "Permintaan pemulihan terkirim"
       ],
+      "Refuse access": [
+        "Tolak akses"
+      ],
+      "Refuse access?": [
+        "Tolak akses?"
+      ],
+      "Remove recovery contact": [
+        "Hapus kontak pemulihan"
+      ],
+      "Remove trusted contact": [
+        "Hapus kontak tepercaya"
+      ],
       "Remove your recovery contacts to continue": [
         "Hapus kontak pemulihan untuk melanjutkan"
+      ],
+      "Renew to get emergency access again.": [
+        "Perbarui izin akses untuk kembali memperoleh akses darurat."
+      ],
+      "Request access": [
+        "Minta akses"
+      ],
+      "Request access?": [
+        "Minta akses?"
+      ],
+      "Requesting access": [
+        "Meminta akses"
+      ],
+      "Review recovery request": [
+        "Tinjau permintaan pemulihan"
+      ],
+      "Revoke access": [
+        "Cabut akses"
+      ],
+      "Revoke access?": [
+        "Cabut akses?"
+      ],
+      "See request": [
+        "Lihat permintaan"
       ],
       "Select recovery contact ${ name }": [
         "Pilih kontak pemulihan ${ name }"
       ],
+      "Send recovery request": [
+        "Kirim permintaan pemulihan"
+      ],
       "Start recovery": [
         "Mulai pemulihan"
+      ],
+      "Stop being recovery contact": [
+        "Berhenti menjadi kontak pemulihan"
+      ],
+      "Stop being recovery contact?": [
+        "Berhenti menjadi kontak pemulihan?"
+      ],
+      "Stop being trusted contact": [
+        "Berhenti menjadi kontak tepercaya"
+      ],
+      "Stop being trusted contact?": [
+        "Berhenti menjadi kontak tepercaya?"
+      ],
+      "Subscription expired": [
+        "Masa langganan habis"
+      ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "Mereka menambahkan Anda sebagai kontak tepercaya. Anda dapat mengakses akun mereka jika terjadi keadaan darurat."
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "Mereka mungkin meminta untuk mengakses akun Anda jika terjadi keadaan darurat."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Mereka akan menerima akses secara otomatis dalam **${ days } hari**, pada pukul **${ formattedAccessibleAt }**. Anda dapat menolak permintaan mereka atau memberikan mereka akses dengan segera kapan saja."
+      ],
+      "This will take effect immediately.": [
+        "Hal ini akan berlaku dengan segera."
+      ],
+      "Time required before automatically giving access": [
+        "Waktu yang diperlukan sebelum memberikan akses secara otomatis"
+      ],
+      "Time required before automatically giving you access": [
+        "Waktu yang diperlukan sebelum memberikan Anda akses secara otomatis"
+      ],
+      "Time required before automatically granting them access": [
+        "Waktu yang diperlukan sebelum memberikan akses kepada mereka secara otomatis"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Untuk menonaktifkan metode pemulihan ini, hapus semua kontak pemulihan Anda."
@@ -4282,8 +4627,74 @@
       "Trusted contact": [
         "Kontak tepercaya"
       ],
+      "Unable to recover data": [
+        "Gagal memulihkan data"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
+      ],
+      "Wait time": [
+        "Waktu tunggu"
+      ],
+      "Wait time for access": [
+        "Waktu tunggu akses"
+      ],
+      "Wait time saved": [
+        "Waktu tunggu disimpan"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Permintaan untuk membuka kunci data terenkripsi dari kontak Anda, **${ user }**, telah diterima."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Permintaan email dikirim ke ${ user }. Beri tahu mereka bahwa ini benar-benar Anda yang mencoba memperoleh kembali akses."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Gagal memverifikasi data pemulihan. Tetap lanjutkan?"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Kami akan memberi tahu **${ user }** bahwa Anda meminta akses darurat."
+      ],
+      "You are signed in to the account ${ account }.": [
+        "Anda telah masuk ke akun ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "Anda kini dapat mengakses dan mengelola akun mereka."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Anda dapat menghapus akses mereka kapan saja untuk memperoleh kembali kontrol eksklusif terhadap akun Anda."
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Anda telah mencapai batas julah ${ limit } kontak darurat."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Anda akan diberi tahu pada saat seseorang meminta akses darurat."
+      ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Tidak akan dapat lagi membantu ${ user } memulihkan data setelah mereka mengatur ulang kata sandi."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Anda tidak akan lagi dapat meminta akses ke akun ${ user } di kala terdapat kejadian darurat."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Anda masih akan dapat meminta akses ke akun milik ${ user } di lain waktu."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Anda akan menerima akses ke akun mereka dengan segera."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Anda akan menerima akses ke akun mereka dalam **${ days } hari** atau pada saat mereka menyetujui permintaan Anda."
+      ],
       "Your recovery contact has helped you recover data.": [
         "Kontak pemulihan Anda telah membantu memulihkan data."
+      ],
+      "Your recovery contacts": [
+        "Kontak pemulihan Anda"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Kontak pemulihan sebaiknya adalah orang yang dikenal dan dapat dihubungi dengan mudah."
       ]
     },
     "Empty group name": {
@@ -4303,6 +4714,9 @@
       ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
+      ],
+      "Address cannot be yours": [
+        "Alamat ini tidak dapat dimiliki oleh Anda"
       ],
       "Address could not be added.": [
         "Alamat tidak dapat ditambahkan."
@@ -5106,6 +5520,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "Total penyimpanan 3 TB"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Keuntungan akun Anda"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -6498,6 +6917,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Anda mendapatkan ${ referrerRewardAmount }** dalam bentuk kredit untuk setiap teman yang berlangganan."
       ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "**Email pemulihan saja tidak memungkinkan Anda untuk memulihkan data terenkripsi Anda** setelah mengatur ulang kata sandi."
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "**Nomor telepon pemulihan saja tidak memungkinkan untuk memulihkan data terenkripsi Anda** setelah mengatur ulang kata sandi."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Lainnya"
       ],
@@ -6528,12 +6953,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "File pemulihan memungkinkan Anda untuk mengakses dan melihat data Anda setelah akun dipulihkan"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Frasa pemulihan memungkinkan Anda untuk dapat mengakses akun dan memulihkan pesan terenkripsi seandainya Anda lupa kata sandi"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Pengguna adalah akun yang terkait dengan satu nama pengguna, kotak surat, dan satu orang."
       ],
@@ -6542,9 +6961,6 @@
       ],
       "Account successfully updated": [
         "Akun berhasil diperbarui"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktifkan setidaknya satu metode pemulihan agar Anda dapat tetap mengakses isi akun ${ BRAND_NAME } Anda apabila kata sandi Anda hilang."
       ],
       "active": [
         "aktif"
@@ -6558,8 +6974,17 @@
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Tambah ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "Tambahkan 1 hingga 5 orang yang Anda percayai dan dapat dihubungi dengan mudah. Mereka akan dapat mengatur ulang kata sandi untuk Anda dengan masuk ke akun Anda. Mereka harus sudah memiliki Akun ${ BRAND_NAME }."
+      ],
+      "Add a phone number in case we need to contact you": [
+        "Tambahkan nomor telepon seandainya kami perlu menghubungi Anda"
+      ],
       "add a recovery method": [
         "tambah metode pemulihan"
+      ],
+      "Add an email address in case we need to contact you": [
+        "Tambahkan alamat email seandainya kami perlu menghubungi Anda"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Tambahkan lapisan keamanan tambahan ke akun Anda. Anda perlu memverifikasi diri dengan 2FA setiap kali Anda masuk."
@@ -6638,6 +7063,12 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Memungkinkan pengguna untuk terhubung ke server terbagi yang aman dari kolom **Negara** di aplikasi ${ VPN_APP_NAME }."
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Mengizinkan masuk dengan kode QR akan memungkinkan Anda masuk dengan memindai kode QR jika lupa kata sandi. Anda hanya perlu masuk ke layanan ${ BRAND_NAME } di perangkat lain."
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "Mengizinkan atur ulang kata sandi dari pengaturan memudahkan Anda untuk mengubah kata sandi jika lupa, tetapi masih dalam keadaan masuk ke ${ BRAND_NAME }."
       ],
       "Already allocated": [
         "Telah dialokasikan"
@@ -6761,6 +7192,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "Dengan menambahkan orang yang dipercaya sebagai kontak pemulihan, kami akan dapat mengirimkan email kepada mereka untuk membantu Anda jika Anda kesulitan memulihkan data setelah atur ulang kata sandi. Anda juga dapat menjadi kontak pemulihan untuk orang lain."
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Dengan menonaktifkan monitor akun, seluruh riwayat juga akan dibersihkan. Apakah Anda yakin ingin menonaktifkan ini?"
@@ -6921,6 +7355,9 @@
       "Data recoverable with recovery phrase": [
         "Data dapat dipulihkan dengan frasa pemulihan"
       ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Pemulihan data memerlukan opsi atur ulang kata sandi (email atau SMS)"
+      ],
       "dedicated servers": [
         "server khusus"
       ],
@@ -6956,6 +7393,9 @@
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "Menonaktifkan 2FA aplikasi autentikator akan membuat akun Anda kurang aman. Lanjutkan hanya jika benar-benar diperlukan."
+      ],
+      "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
+        "Menonaktifkan cadangan data pada perangkat ini akan mencegah Anda membuka kunci data terenkripsi secara otomatis setelah atur ulang kata sandi."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Telusuri berbagai fitur yang terbuka dan gunakan fitur-fitur ini sekarang juga!"
@@ -7091,6 +7531,9 @@
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Mengaktifkan ulang frasa pemulihan akan membuat frasa pemulihan baru."
+      ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Mengaktifkan cadangan data pada perangkat ini akan memulihkan akses ke email, kontak, file, kata sandi, dan data terenkripsi lainnya di akun Anda setelah atur ulang kata sandi, cukup dengan masuk di perangkat ini."
       ],
       "End date": [
         "Tanggal akhir"
@@ -7230,8 +7673,8 @@
       "Gateways": [
         "Gateway"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Membuat frasa pemulihan baru akan menonaktifkan frasa pemulihan saat ini."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Dapatkan ${ AUTHENTICATOR_APP_NAME } untuk seluruh perangkat Anda."
@@ -7290,11 +7733,14 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Apabila administrator lain mengubah kata sandi ini, Anda harus menanyakan Kata Sandi Organisasi yang baru kepada mereka."
       ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "Jika dinonaktifkan, ${ BRAND_NAME } akan tetap menggunakan email pemulihan Anda untuk mengirimkan notifikasi keamanan."
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
+        "Jika dinonaktifkan, ${ BRAND_NAME } akan tetap menggunakan telepon pemulihan Anda untuk mengirimkan notifikasi keamanan."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Jika memungkinkan, saat masuk, gunakan perangkat atau peramban tempat Anda pernah masuk sebelumnya."
-      ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Apabila hal ini disebabkan oleh pengaturan ulang kata sandi yang telah lama, Anda dapat mengatur agar pesan ini tidak lagi muncul ke depannya"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
@@ -7338,8 +7784,8 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ VPN_APP_NAME }."
       ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Apabila Anda baru saja mengatur ulang kata sandi Anda, Anda dapat menggunakan salah satu metode pemulihan untuk membuka kunci data Anda"
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "Jika baru-baru ini mengatur ulang kata sandi, Anda dapat ${ recoveryMethodLink } untuk membuka kunci data. Jika ini disebabkan oleh atur ulang kata sandi lama, Anda dapat menghentikan pesan ini agar tidak ditampilkan lagi."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Apabila organisasi Anda diisi oleh sosok publik, menangani data yang sensitif, atau berpotensi untuk menjadi target serangan siber, Anda sangat dianjurkan untuk mengaktifkan ${ PROTON_SENTINEL_NAME } bagi semua orang di organisasi Anda."
@@ -7437,9 +7883,6 @@
       "Invited": [
         "Diundang"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Sepertinya sebagian data Anda terenkripsi dan terkunci."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Perubahan negara server akan memakan waktu 10 hari. Oleh karenanya, pastikan pilihan Anda sudah benar."
       ],
@@ -7496,6 +7939,12 @@
       ],
       "Item updated in vault": [
         "Item diperbarui dalam brankas"
+      ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "Ini sering kali menjadi cara termudah untuk memulihkan akun Anda jika Anda sudah masuk."
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "Ini adalah satu-satunya cara untuk memulihkan semuanya secara instan, jadi pastikan disimpan di tempat yang aman tetapi dapat diakses."
       ],
       "JCB logo": [
         "Logo JCB"
@@ -7830,9 +8279,6 @@
       "Please fill in all required fields.": [
         "Harap isi semua kolom yang diwajibkan."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Harap simpan frasa pemulihan ini sebaik-baiknya. Anda akan memerlukan frasa pemulihan ini untuk dapat mengakses akun Anda apabila di kemudian waktu Anda harus mengatur ulang kata sandi Anda."
-      ],
       "please open a support ticket": [
         "silakan buka tiket layanan dukungan"
       ],
@@ -7920,6 +8366,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Direkomendasikan pada perangkat yang Anda percayai. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Pemulihan dengan email tidak tersedia saat ${ PROTON_SENTINEL_NAME } diaktifkan."
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Pemulihan dengan telepon tidak tersedia saat ${ PROTON_SENTINEL_NAME } diaktifkan."
+      ],
       "Recovery file downloaded": [
         "File pemulihan diunduh"
       ],
@@ -7931,9 +8383,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Frasa pemulihan disalin ke papan klip"
-      ],
-      "Recovery phrase downloaded": [
-        "Frasa pemulihan diunduh"
       ],
       "Recovery phrase has been disabled": [
         "Frasa pemulihan telah dinonaktifkan"
@@ -8271,6 +8720,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Proses ini dapat memakan waktu sejenak. Mohon untuk tidak menutup halaman ini atau memutuskan koneksi internet Anda."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Metode pemulihan data ini memerlukan opsi atur ulang kata sandi (email atau SMS)"
+      ],
       "This file is too large to preview": [
         "File terlalu besar untuk dipratinjau"
       ],
@@ -8318,6 +8770,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tindakan ini akan memungkinkan Anda untuk membayar langganan ${ BRAND_NAME } Anda melalui PayPal. Kami akan membuka PayPal di tab baru dalam peramban. Apabila Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "Ini akan memungkinkan Anda mengakses Akun ${ BRAND_NAME } dengan cepat dan aman sehingga dapat mengubah kata sandi."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Tindakan ini akan menghapus seluruh data dan alamat email yang terhubung dengan pengguna ini secara permanen."
@@ -8387,6 +8842,12 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Untuk mendekripsi dan melihat data Anda yang terkunci setelah pengaturan ulang kata sandi, pilih metode pemulihan."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "Untuk memastikan keamanan setinggi mungkin pada akun Anda, nonaktifkan **Pemulihan dengan email pemulihan**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+        "Untuk memastikan keamanan setinggi mungkin pada akun Anda, nonaktifkan **Pemulihan dengan telepon pemulihan**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
@@ -8601,6 +9062,12 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Kami menyarankan Anda untuk menggunakan aplikasi resmi ${ VPN_APP_NAME } apabila memungkinkan."
       ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Kami dapat menggunakan email pemulihan untuk mengirimkan kode verifikasi guna mengatur ulang kata sandi, dan menghubungi Anda jika kami mendeteksi aktivitas mencurigakan."
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Kami dapat menggunakan telepon pemulihan untuk mengirimkan kode verifikasi guna mengatur ulang kata sandi, dan menghubungi Anda jika kami mendeteksi aktivitas mencurigakan."
+      ],
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
       ],
@@ -8631,8 +9098,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Sebelum Anda mewajibkan penggunaan 2FA, kami menyarankan Anda untuk terlebih dahulu memberi tahu anggota organisasi Anda dan meminta mereka untuk menyiapkan 2FA pada akun mereka masing-masing."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Kami menyimpan informasi pemulihan pada perangkat yang Anda percaya secara aman untuk mencegah Anda kehilangan data"
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "Kami sangat menyarankan semua orang untuk mengaktifkan pemulihan dengan frasa pemulihan."
       ],
       "We use 3-D Secure to protect your payments": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran Anda"
@@ -8814,6 +9281,9 @@
       "You don't have any referrals.": [
         "Anda tidak memiliki rujukan apa pun."
       ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Anda tidak perlu membuka atau membaca file tersebut—cukup unduh dan simpan di tempat yang aman."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
       ],
@@ -8985,11 +9455,11 @@
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Perubahan terbaru telah dipublikasikan. Perubahan tersebut akan terlihat oleh pengguna dalam beberapa jam ke depan."
       ],
-      "Your recovery phrase": [
-        "Frasa pemulihan Anda"
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "File pemulihan Anda akan memulihkan akses ke email, kontak, file, kata sandi, dan data terenkripsi lainnya di akun Anda setelah atur ulang kata sandi."
       ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Frasa pemulihan Anda tersusun atas 12 kata yang terangkai dalam urutan yang spesifik."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Frasa pemulihan akan memungkinkan masuk dan memulihkan data jika terkunci dari Akun ${ BRAND_NAME }. Frasa terdiri dari 12 kata dan berfungsi seperti kata sandi cadangan."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap ${ cycle } bulan."
@@ -9268,6 +9738,9 @@
       ],
       "Allow": [
         "Izinkan"
+      ],
+      "Allow QR code sign-in": [
+        "Izinkan masuk dengan kode QR"
       ],
       "Allow recovery by email": [
         "Izinkan pemulihan akun melalui email"
@@ -9716,6 +10189,9 @@
       "Main reason for cancelling": [
         "Alasan utama untuk membatalkan"
       ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "Pastikan Anda memiliki akses ke email atau telepon pemulihan, dan memiliki opsi pemulihan data."
+      ],
       "Manage categories": [
         "Kelola kategori"
       ],
@@ -10097,6 +10573,9 @@
       "Vulnerable password": [
         "Kata sandi yang rentan"
       ],
+      "We securely stored recovery information on this device.": [
+        "Kami menyimpan informasi pemulihan dengan aman di perangkat ini."
+      ],
       "Weak": [
         "Lemah"
       ],
@@ -10136,6 +10615,12 @@
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak tepercaya)"
       ],
+      "Your recovery email": [
+        "Email pemulihan Anda"
+      ],
+      "Your recovery phone number": [
+        "Nomor telepon pemulihan Anda"
+      ],
       "Zero-access architecture": [
         "Arsitektur zero-access"
       ],
@@ -10144,14 +10629,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Pemulihan berbasis perangkat"
-      ],
       "Recovery phone number": [
         "Nomor telepon pemulihan"
-      ],
-      "Recovery phrase": [
-        "Frasa pemulihan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10367,9 +10846,6 @@
       "How to share via email": [
         "Cara berbagi via email"
       ],
-      "How to unlock data": [
-        "Cara membuka kunci data"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Cara menggunakan ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -10390,9 +10866,6 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
-      ],
-      "Learn more about data recovery": [
-        "Pelajari lebih lanjut mengenai pemulihan data"
       ],
       "Manage addresses": [
         "Kelola alamat"
@@ -10435,6 +10908,9 @@
       ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
+      ],
+      "use a data recovery method": [
+        "gunakan metode pemulihan data"
       ],
       "Vault": [
         "Brankas"
@@ -12664,6 +13140,14 @@
         "Penawaran waktu terbatas."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Apakah Anda ingat kata sandi ${ BRAND_NAME }?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Cara terbaik untuk menghindari kehilangan akses ke akun dan data adalah dengan mengingat kredensial Anda."
+      ]
+    },
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "Jika lupa kata sandi, Anda mungkin kehilangan akses ke data yang terenkripsi."
@@ -13514,6 +13998,188 @@
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
     },
+    "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "${ score } / ${ maxScore } selesai"
+      ],
+      "Add more options for stronger protection": [
+        "Tambahkan opsi lain untuk perlindungan yang lebih kuat"
+      ],
+      "Check your access to your recovery options": [
+        "Periksa akses ke opsi pemulihan Anda"
+      ],
+      "Critical": [
+        "Kritis"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "Jangan sampai terkunci dari Akun ${ BRAND_NAME }"
+      ],
+      "How you increased your account protection": [
+        "Bagaimana Anda meningkatkan perlindungan akun"
+      ],
+      "Inactive recovery options": [
+        "Opsi pemulihan tidak aktif"
+      ],
+      "Maximum": [
+        "Maksimum"
+      ],
+      "Partial": [
+        "Sebagian"
+      ],
+      "Recoverability": [
+        "Kemampuan Pemulihan"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Wajibkan opsi atur ulang kata sandi terverifikasi (email atau SMS)"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "Skor: ${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "Kuat"
+      ],
+      "Take precautions to avoid losing access": [
+        "Ambil tindakan pencegahan untuk menghindari kehilangan akses"
+      ],
+      "Weak": [
+        "Lemah"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Anda sepenuhnya terlindungi. Tinjauan berkala memastikan semuanya tetap berfungsi seiring perubahan perangkat dan kontak Anda dari waktu ke waktu."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Anda sudah separuh jalan, tetapi belum aman sepenuhnya. Kata sandi yang terlupa masih bisa berarti kehilangan email, file, dan kata sandi Anda."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "Anda masih berisiko tinggi. Jika Anda lupa kata sandi, Anda bisa kehilangan email, file, dan kata sandi secara permanen."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Anda terlindungi dengan baik, tetapi masih ada celah. Lebih banyak opsi pemulihan memberi Anda jaring pengaman yang lebih kuat jika Anda kehilangan kata sandi."
+      ],
+      "Your account and data can be recovered": [
+        "Akun dan data Anda dapat dipulihkan"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Akun Anda belum memiliki opsi pemulihan yang disiapkan. Jika kehilangan kata sandi, Anda akan kehilangan akses ke email, file, dan kata sandi secara permanen."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Akun Anda belum sepenuhnya terlindungi. Kata sandi yang terlupa masih bisa berarti kehilangan akses ke email, file, dan kata sandi Anda."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Pengaturan pemulihan Anda hampir tidak ada. Jika kehilangan kata sandi, Anda bisa kehilangan akses ke email, file, dan kata sandi secara permanen."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Pengaturan pemulihan Anda sangat bagus. Jaga agar opsi Anda tetap mutakhir sehingga tetap berfungsi saat Anda membutuhkannya."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Pengaturan pemulihan Anda belum lengkap. Kata sandi yang terlupa masih bisa berarti kehilangan akses ke email, file, dan kata sandi Anda."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Pengaturan pemulihan Anda sudah kokoh, dengan beberapa celah tersisa untuk ditutup. Setiap opsi yang Anda tambahkan membuat jaring pengaman Anda semakin kuat."
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "Tambahkan kontak darurat"
+      ],
+      "Add recovery contacts": [
+        "Tambahkan kontak pemulihan"
+      ],
+      "Add recovery email": [
+        "Tambahkan email pemulihan"
+      ],
+      "Add recovery phone": [
+        "Tambahkan telepon pemulihan"
+      ],
+      "Allow data recovery on this device": [
+        "Izinkan pemulihan data pada perangkat ini"
+      ],
+      "Allow password reset from settings": [
+        "Izinkan atur ulang kata sandi dari pengaturan"
+      ],
+      "Allow scanning QR code to sign in": [
+        "Izinkan memindai kode QR untuk masuk"
+      ],
+      "Data recovery allowed on this device": [
+        "Pemulihan data diizinkan pada perangkat ini"
+      ],
+      "Download recovery file": [
+        "Unduh file pemulihan"
+      ],
+      "Email recovery enabled": [
+        "Pemulihan email diaktifkan"
+      ],
+      "Emergency contacts added": [
+        "Kontak darurat ditambahkan"
+      ],
+      "Enable email recovery": [
+        "Aktifkan pemulihan email"
+      ],
+      "Enable recovery by phone": [
+        "Aktifkan pemulihan dengan telepon"
+      ],
+      "Password reset allowed from settings": [
+        "Atur ulang kata sandi diizinkan dari pengaturan"
+      ],
+      "Password verified": [
+        "Kata sandi terverifikasi"
+      ],
+      "Phone recovery enabled": [
+        "Pemulihan telepon diaktifkan"
+      ],
+      "Recovery contacts added": [
+        "Kontak pemulihan ditambahkan"
+      ],
+      "Recovery file downloaded": [
+        "File pemulihan diunduh"
+      ],
+      "Recovery phrase saved": [
+        "Frasa pemulihan disimpan"
+      ],
+      "Save recovery phrase": [
+        "Simpan frasa pemulihan"
+      ],
+      "Sign-in with QR code allowed": [
+        "Masuk dengan kode QR diizinkan"
+      ],
+      "Verify password": [
+        "Verifikasi kata sandi"
+      ],
+      "Verify recovery email": [
+        "Verifikasi email pemulihan"
+      ],
+      "Verify recovery phone": [
+        "Verifikasi telepon pemulihan"
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Copy": [
+        "Salin"
+      ],
+      "Show": [
+        "Tampilkan"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Pastikan frasa pemulihan tetap dapat diakses setelah membuatnya.** Demi alasan keamanan, frasa tidak disimpan setelah menyimpan perubahan, dan tidak akan dapat dilihat lagi di aplikasi ${ BRAND_NAME }."
+      ],
+      "copy recovery phrase": [
+        "salin frasa pemulihan"
+      ],
+      "Download PDF": [
+        "Unduh PDF"
+      ],
+      "download PDF": [
+        "unduh PDF"
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "Atau ${ copyRecoverySwitchButton } sebagai teks."
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "Atau ${ downloadRecoveryKitSwitchButton }."
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per rujukan"
@@ -13823,47 +14489,8 @@
       ]
     },
     "Safety review": {
-      "Check account security": [
-        "Periksa keamanan akun"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Apabila Anda kehilangan rincian login Anda dan perlu untuk mengatur ulang akun, **sangat penting** bagi Anda untuk memiliki **metode pemulihan akun dan data** yang aktif. Apabila tidak, Anda berisiko untuk tidak lagi dapat mengakses email, kontak, file, atau kata sandi yang Anda miliki."
-      ],
       "Review account safety": [
         "Tinjau keamanan akun"
-      ],
-      "Safeguard account now": [
-        "Amankan akun sekarang juga"
-      ],
-      "Safeguard your account": [
-        "Amankan akun Anda"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Anda berisiko untuk kehilangan akses ke akun dan data Anda."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Anda berisiko untuk kehilangan akses ke data Anda."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Anda memiliki tindakan yang disarankan untuk melindungi akun Anda lebih jauh."
-      ],
-      "You have recommended actions.": [
-        "Anda memiliki tindakan yang disarankan."
-      ],
-      "Your account and data can be recovered": [
-        "Akun dan data Anda dapat dipulihkan"
-      ],
-      "Your account and data can be recovered.": [
-        "Akun dan data Anda dapat dipulihkan."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Akun dan data Anda dapat dipulihkan. Periksa bahwa Anda masih dapat mengakses metode pemulihan Anda."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Akun dan data Anda dapat dipulihkan. Anda memiliki tindakan yang disarankan untuk melindungi akun Anda lebih jauh."
-      ],
-      "Your account is fully secure.": [
-        "Akun Anda sepenuhnya aman."
       ]
     },
     "saml: Action": {
@@ -14117,6 +14744,17 @@
     "Select search results": {
       "No results found": [
         "Tidak ada hasil yang ditemukan"
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Untuk memastikan keamanan akun setinggi mungkin, nonaktifkan pemulihan melalui email dan SMS."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Untuk memastikan selalu dapat mengakses Akun ${ BRAND_NAME }, unduh frasa pemulihan."
+      ],
+      "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
+        "Anda memiliki tindakan yang disarankan dari ${ PROTON_SENTINEL_NAME }"
       ]
     },
     "Server-Info": {
@@ -14378,11 +15016,11 @@
       ]
     },
     "session_recovery:settings:info": {
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "Untuk melarang atur ulang kata sandi dari pengaturan, Anda harus menyimpan frasa pemulihan."
+      ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Untuk menghapus izin atur ulang sandi, Anda harus mengatur metode pemulihan."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Untuk meningkatkan keamanan akun dan melindungi data Anda, Anda dapat meminta pengaturan ulang kata sandi dari menu pengaturan akun pada aplikasi web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14434,6 +15072,9 @@
       ]
     },
     "Settings section title": {
+      "Account": [
+        "Akun"
+      ],
       "Organization": [
         "Organisasi"
       ]
@@ -15007,14 +15648,65 @@
       ]
     },
     "Status": {
+      "${ count } person": [
+        "${ count } orang"
+      ],
       "... waiting": [
         "... menunggu"
+      ],
+      "Add a phone number": [
+        "Tambahkan nomor telepon"
+      ],
+      "Add an email address": [
+        "Tambahkan alamat email"
+      ],
+      "Available on this device": [
+        "Tersedia di perangkat ini"
       ],
       "completed": [
         "selesai"
       ],
+      "Disable recovery by email": [
+        "Nonaktifkan pemulihan dengan email"
+      ],
+      "Disable recovery by phone": [
+        "Nonaktifkan pemulihan dengan telepon"
+      ],
       "finalizing": [
         "menuntaskan"
+      ],
+      "Generate a recovery phrase": [
+        "Buat frasa pemulihan"
+      ],
+      "Last changed ${ formattedDate }": [
+        "Terakhir diubah ${ formattedDate }"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "Terakhir diperbarui ${ formattedUpdateDate }"
+      ],
+      "Not saved": [
+        "Tidak disimpan"
+      ],
+      "Off": [
+        "Mati"
+      ],
+      "On": [
+        "Nyala"
+      ],
+      "Outdated": [
+        "Usang"
+      ],
+      "Saved": [
+        "Disimpan"
+      ],
+      "Unverified": [
+        "Belum diverifikasi"
+      ],
+      "Verified": [
+        "Terverifikasi"
+      ],
+      "Verify ${ value }": [
+        "Verifikasi ${ value }"
       ]
     },
     "Storage": {
@@ -16099,6 +16791,9 @@
       "Access control": [
         "Kontrol akses"
       ],
+      "Accessibility": [
+        "Aksesibilitas"
+      ],
       "Account": [
         "Akun"
       ],
@@ -16141,8 +16836,14 @@
       "Add ${ totalServerCount } server?": [
         "Tambah ${ totalServerCount } server?"
       ],
+      "Add a recovery contact": [
+        "Tambahkan kontak pemulihan"
+      ],
       "Add address": [
         "Tambahkan alamat"
+      ],
+      "Add an emergency contact": [
+        "Tambahkan kontak darurat"
       ],
       "Add contact group name": [
         "Tambah nama grup kontak"
@@ -16191,6 +16892,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Tambah pengguna ke \"${ policyName }\""
+      ],
+      "Advanced recovery options": [
+        "Opsi pemulihan lanjutan"
       ],
       "Allocate storage": [
         "Alokasi penyimpanan"
@@ -16315,6 +17019,9 @@
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
       ],
+      "Compare plans": [
+        "Bandingkan paket"
+      ],
       "Confirm": [
         "Konfirmasi"
       ],
@@ -16432,11 +17139,17 @@
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
       ],
-      "Data locked": [
-        "Data terkunci"
+      "Dashboard": [
+        "Dasbor"
       ],
       "Data recovery": [
         "Pemulihan data"
+      ],
+      "Data recovery contacts": [
+        "Kontak pemulihan data"
+      ],
+      "Data recovery options": [
+        "Opsi pemulihan data"
       ],
       "Data retention": [
         "Retensi data"
@@ -16447,8 +17160,14 @@
       "Day theme": [
         "Tema siang"
       ],
+      "Deactivate current phrase?": [
+        "Nonaktifkan frasa saat ini?"
+      ],
       "Decrypt key": [
         "Dekripsi kunci"
+      ],
+      "Deep dive into email blog posts": [
+        "Jelajahi lebih dalam postingan blog email"
       ],
       "Deep dive into VPN blog posts": [
         "Dalami postingan blog VPN"
@@ -16486,11 +17205,17 @@
       "Device": [
         "Perangkat"
       ],
+      "Device data backup": [
+        "Cadangan data perangkat"
+      ],
       "Device name": [
         "Nama perangkat"
       ],
       "Disable account monitor?": [
         "Nonaktifkan monitor akun?"
+      ],
+      "Disable device data backup?": [
+        "Nonaktifkan cadangan data perangkat?"
       ],
       "Disable two-factor authentication": [
         "Nonaktifkan autentikasi dua faktor"
@@ -16527,6 +17252,9 @@
       ],
       "Download apps": [
         "Unduh aplikasi"
+      ],
+      "Download your recovery phrase": [
+        "Unduh frasa pemulihan"
       ],
       "Downloads": [
         "Unduhan"
@@ -16585,6 +17313,12 @@
       "Email subscriptions": [
         "Langganan email"
       ],
+      "Email verification": [
+        "Verifikasi email"
+      ],
+      "Emergency access": [
+        "Akses darurat"
+      ],
       "Enable advanced account protection": [
         "Aktifkan perlindungan akun lanjutan"
       ],
@@ -16639,9 +17373,6 @@
       "Generate missing keys": [
         "Hasilkan kunci yang hilang"
       ],
-      "Generate new recovery phrase?": [
-        "Buat frasa pemulihan baru?"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "Dapatkan ${ vpnPlus } untuk mengakses seluruh server"
       ],
@@ -16671,6 +17402,9 @@
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "Group membership": [
+        "Keanggotaan grup"
       ],
       "Group role assignment paused": [
         "Penetapan peran grup dijeda"
@@ -16750,6 +17484,9 @@
       "IP": [
         "IP"
       ],
+      "Language and time": [
+        "Bahasa dan waktu"
+      ],
       "Limit reached": [
         "Batas tercapai"
       ],
@@ -16804,6 +17541,9 @@
       "No events yet": [
         "Belum ada acara"
       ],
+      "Notifications": [
+        "Notifikasi"
+      ],
       "Open": [
         "Buka"
       ],
@@ -16852,6 +17592,9 @@
       "Password": [
         "Kata sandi"
       ],
+      "Password reset options": [
+        "Opsi atur ulang kata sandi"
+      ],
       "Password reset settings": [
         "Pengaturan atur ulang kata sandi"
       ],
@@ -16869,6 +17612,9 @@
       ],
       "Payment verification": [
         "Verifikasi pembayaran"
+      ],
+      "Pending invitations": [
+        "Undangan yang belum ditanggapi"
       ],
       "Phone": [
         "Telepon"
@@ -16891,6 +17637,9 @@
       "QR Code": [
         "Kode QR"
       ],
+      "QR code sign-in": [
+        "Masuk dengan kode QR"
+      ],
       "Recommended": [
         "Direkomendasikan"
       ],
@@ -16911,6 +17660,9 @@
       ],
       "Recovery file": [
         "File pemulihan"
+      ],
+      "Recovery phrase": [
+        "Frasa pemulihan"
       ],
       "Refer a friend": [
         "Rujuk teman"
@@ -17068,8 +17820,14 @@
       "Sign out": [
         "Keluar"
       ],
+      "Signed in to another account": [
+        "Terdaftar masuk ke akun lainnya"
+      ],
       "Signed in to member account": [
         "Terdaftar masuk dengan akun anggota"
+      ],
+      "Signed-in reset": [
+        "Atur ulang saat masuk"
       ],
       "Simplify email distribution": [
         "Sederhanakan distribusi email"
@@ -17082,6 +17840,12 @@
       ],
       "Single-sign on (SSO)": [
         "Pelepasan masuk tunggal (SSO)"
+      ],
+      "SMS verification": [
+        "Verifikasi SMS"
+      ],
+      "Some of your encrypted data is locked": [
+        "Beberapa data terenkripsi Anda terkunci"
       ],
       "Something went wrong": [
         "Terjadi kesalahan"
@@ -17133,6 +17897,9 @@
       ],
       "Text": [
         "Teks"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "There are no events for your account": [
         "Akun Anda tidak memiliki peristiwa"
@@ -17190,6 +17957,9 @@
       ],
       "Upgrade complete!": [
         "Peningkatan selesai!"
+      ],
+      "Upgrade plan": [
+        "Tingkatkan akun"
       ],
       "Upgrade to ${ planName }": [
         "Tingkatkan ke ${ planName }"
@@ -17317,11 +18087,23 @@
       "Your plan": [
         "Paket Anda"
       ],
+      "Your recovery file": [
+        "File pemulihan Anda"
+      ],
+      "Your recovery phrase": [
+        "Frasa pemulihan Anda"
+      ],
+      "Your recovery setup": [
+        "Pengaturan pemulihan Anda"
+      ],
       "Your referrals": [
         "Rujukan Anda"
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
+      ],
+      "Your storage": [
+        "Penyimpanan Anda"
       ],
       "Your subscriptions": [
         "Langganan Anda"
@@ -17399,6 +18181,24 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat mengedit paket organisasi."
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "Izinkan pemulihan akun Anda dengan kode sekali pakai yang dikirimkan ke email pemulihan Anda"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "Izinkan pemulihan akun Anda dengan kode sekali pakai yang dikirimkan ke telepon pemulihan Anda"
+      ],
+      "Allow resetting your password from the account settings": [
+        "Izinkan atur ulang kata sandi dari pengaturan akun"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "Izinkan memindai kode QR dari aplikasi seluler ${ BRAND_NAME } untuk masuk"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "Izinkan kontak tepercaya untuk meminta akses ke akun Anda"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "Izinkan kontak tepercaya untuk membuka kunci data terenkripsi Anda setelah atur ulang kata sandi"
       ],
       "Any protection applied to suspicious activity": [
         "Setiap perlindungan yang diterapkan terhadap aktivitas yang mencurigakan"
@@ -17486,6 +18286,15 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Alamat IP dan penyedia layanan internet (ISP) sumber"
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "Simpan frasa sepanjang 12 kata untuk membuka kunci akun dan data terenkripsi secara instan jika lupa kata sandi"
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "Simpan file cadangan enkripsi di peramban ini untuk memulihkan data Anda setelah atur ulang kata sandi"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "Simpan file cadangan enkripsi untuk memulihkan data Anda setelah atur ulang kata sandi"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Mengatur footer berikut dalam email yang Anda kirim: ${ signature } Tautan tersebut mengarah ke tautan rujukan Anda. Footer akan muncul di bawah tanda tangan Anda. Anda dapat mempersonalisasi tanda tangan Anda kapan saja di pengaturan."
@@ -17699,9 +18508,6 @@
       ],
       "Could not enable admin access for ${ n } user": [
         "Tidak dapat mengaktifkan akses admin untuk ${ n } pengguna"
-      ],
-      "Could not enable administrator access: ${ error }": [
-        "Izin administrator tidak dapat diaktifkan: ${ error }"
       ],
       "Enable manually": [
         "Aktifkan secara manual"
@@ -17920,9 +18726,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administrator tidak dapat mengakses data pengguna privat"
       ],
@@ -17931,21 +18734,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Undangan terkirim, menunggu balasan dari anggota yang diundang"
-      ],
-      "Invite sent": [
-        "Undangan dikirim"
-      ],
-      "It's you": [
-        "Ini Anda"
-      ],
-      "Pending admin access": [
-        "Menunggu akses admin"
-      ],
-      "Private": [
-        "Pribadi"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Pengguna SSO disediakan oleh penyedia identitas Anda"
