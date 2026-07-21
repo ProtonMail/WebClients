@@ -15,11 +15,14 @@ import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/u
 import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssistantUpsellConfig';
 import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/payments/core/subscription/helpers';
-import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 
-import { getScribeUpsellLearnMore, getScribeUpsellText } from './helpers';
+import { getScribeUpsellLearnMore, getScribeUpsellText, getScribeWritingAssistantText } from './helpers';
 
 const AssistantToggle = () => {
     const [subscription, subscriptionLoading] = useSubscription();
@@ -27,6 +30,7 @@ const AssistantToggle = () => {
     const [plans] = usePlans();
     const [organization] = useOrganization();
     const [member] = useMember();
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const composerAssistantEnabled = useAssistantFeatureEnabled();
     const planWithAIAssistantIncluded = hasPlanWithAIAssistantIncluded(subscription);
@@ -79,15 +83,19 @@ const AssistantToggle = () => {
         <section className="border rounded flex items-start flex-column gap-2 p-6">
             <div className="flex justify-space-between items-center">
                 <div className="flex gap-2 items-center">
-                    <IcPenSparks size={6} style={{ color: '#D132EA' }} />
-                    <p className="m-0 text-bold text-2xl">{c('Info').t`${BRAND_NAME} Scribe writing assistant`}</p>
+                    {scribeToLumo ? (
+                        <img src={lumoIcon} alt="" width={24} height={24} />
+                    ) : (
+                        <IcPenSparks size={6} style={{ color: '#D132EA' }} />
+                    )}
+                    <p className="m-0 text-bold text-2xl">{getScribeWritingAssistantText(scribeToLumo)}</p>
                     {trialStatus === 'trial-ongoing' && (
                         <Badge type="info">{c('Assistant toggle').t`Trial in progress`}</Badge>
                     )}
                 </div>
             </div>
             <p className="m-0 mb-2 color-weak">
-                {getScribeUpsellText()} {learnMore}.
+                {getScribeUpsellText(scribeToLumo)} {learnMore}.
             </p>
             <div className="flex flex-row items-baseline gap-2">
                 <Button shape="outline" size="small" onClick={handleCustomize} loading={loadingSubscriptionModal}>{c(
