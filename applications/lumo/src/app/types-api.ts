@@ -109,9 +109,31 @@ export type LumoApiGenerationRequest = {
  * OpenAI-compatible chat completions request body for `POST /ai/v1/chat/completions`.
  */
 /** Built-in scheduler tools (web_search, weather, etc.) use the name-only shape. */
-export type ChatCompletionsTool = {
+export type ChatCompletionsBuiltInTool = {
     name: ToolName;
 };
+
+/** Client-side / desktop connector tools — flat Lumo API shape sent on the wire. */
+export type ChatCompletionsFlatFunctionTool = {
+    name: string;
+    description?: string;
+    parameters?: Record<string, unknown>;
+};
+
+/** OpenAI nested shape accepted in client code; flattened before sending to Lumo. */
+export type ChatCompletionsFunctionTool = {
+    type: 'function';
+    function: {
+        name: string;
+        description?: string;
+        parameters?: Record<string, unknown>;
+    };
+};
+
+export type ChatCompletionsTool =
+    | ChatCompletionsBuiltInTool
+    | ChatCompletionsFlatFunctionTool
+    | ChatCompletionsFunctionTool;
 
 /**
  * OpenAI content parts. A message's `content` may be a plain string (the common
@@ -168,6 +190,23 @@ export type ChatCompletionsStreamOptions = {
     include_usage?: boolean;
 };
 
+/**
+ * OpenAI structured-outputs response format. When set, the backend forwards it to the
+ * model's guided decoding so the streamed output is constrained to the given JSON schema.
+ * See https://developers.openai.com/api/docs/guides/structured-outputs.
+ */
+export type ResponseFormatJSONSchema = {
+    type: 'json_schema';
+    json_schema: {
+        name: string;
+        schema: Record<string, unknown>;
+        strict?: boolean;
+        description?: string;
+    };
+};
+
+export type ResponseFormat = ResponseFormatJSONSchema;
+
 export type LumoRemainingLimits = {
     lite?: number;
     max?: number;
@@ -195,6 +234,7 @@ export type ChatCompletionsRequest = {
     reasoning_effort?: 'none' | 'high';
     tools?: ChatCompletionsTool[];
     tool_choice?: 'auto' | 'none' | 'required';
+    response_format?: ResponseFormat;
     lumo?: ChatCompletionsLumoExtension;
 };
 
@@ -208,7 +248,8 @@ export type ChatEndpointGenerationRequest = {
 export type ImageAspectRatio = '1:1' | '2:3' | '3:2' | '9:16' | '16:9';
 
 export type Options = {
-    tools?: ToolName[] | boolean;
+    /** Built-in tool names, OpenAI function tools (e.g. desktop connectors), or `true` for none. */
+    tools?: ToolName[] | ChatCompletionsTool[] | boolean;
     reasoning?: boolean;
     suggested_questions?: boolean;
     image_aspect_ratio?: ImageAspectRatio;
