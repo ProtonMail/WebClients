@@ -41,6 +41,8 @@ import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 import UserTableBadge from './UsersTableBadge';
 import UserTableIcon from './UsersTableIcon';
 
+import './MembersTable.scss';
+
 export const MembersTable = ({
     members,
     loadingMembers,
@@ -287,7 +289,7 @@ export const MembersTable = ({
                         {hasFeaturesColumn && <MemberFeatures member={member} organization={models.organization} />}
                     </TableCell>
                 )}
-                <TableCell className="align-middle">
+                <TableCell className="align-middle action-cell">
                     <div>
                         {hasMagicLinkLayout ? (
                             <MagicLinkMemberActions
@@ -322,7 +324,12 @@ export const MembersTable = ({
     });
 
     return (
-        <Table hasActions responsive="cards" data-testid="users-and-addresses-table">
+        <Table
+            hasActions
+            responsive="cards"
+            className="members-table--actions-corner"
+            data-testid="users-and-addresses-table"
+        >
             <thead>
                 <tr className="bg-weak">
                     <UsersAndAddressesSectionHeader
