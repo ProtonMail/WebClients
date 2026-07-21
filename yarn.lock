@@ -4340,6 +4340,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eslint/core@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@eslint/core@npm:1.2.1"
+  dependencies:
+    "@types/json-schema": "npm:^7.0.15"
+  checksum: 10/e1f9f5534f495b74a4c13c372e8f2feaf0c67f5dd666111c849c97c221d4ba730c98333a2ca94dd28cd7c24e3b1016bd868ca03c42e070732c047053f854cb13
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^3.3.6":
   version: 3.3.6
   resolution: "@eslint/eslintrc@npm:3.3.6"
@@ -4364,6 +4373,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eslint/json@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@eslint/json@npm:2.0.1"
+  dependencies:
+    "@eslint/core": "npm:^1.2.1"
+    "@eslint/plugin-kit": "npm:^0.7.2"
+    "@humanwhocodes/momoa": "npm:^3.3.10"
+    natural-compare: "npm:^1.4.0"
+  checksum: 10/f6d222fbcfb0d3203a1dcb67574a797780951bd3f261d17963fe5c7c8a81338771b39cc178bd6cf27804a37f42b0bc47a11e5d067884dd7fcbc849060b43db7f
+  languageName: node
+  linkType: hard
+
 "@eslint/object-schema@npm:^2.1.7":
   version: 2.1.7
   resolution: "@eslint/object-schema@npm:2.1.7"
@@ -4378,6 +4399,16 @@ __metadata:
     "@eslint/core": "npm:^0.17.0"
     levn: "npm:^0.4.1"
   checksum: 10/c5947d0ffeddca77d996ac1b886a66060c1a15ed1d5e425d0c7e7d7044a4bd3813fc968892d03950a7831c9b89368a2f7b281e45dd3c74a048962b74bf3a1cb4
+  languageName: node
+  linkType: hard
+
+"@eslint/plugin-kit@npm:^0.7.2":
+  version: 0.7.2
+  resolution: "@eslint/plugin-kit@npm:0.7.2"
+  dependencies:
+    "@eslint/core": "npm:^1.2.1"
+    levn: "npm:^0.4.1"
+  checksum: 10/ef9fc6f8ca28e132d4c81cfbaa92274800d1d73bb9d6ef2124613dd39b7f09e3592deb64bad10b183bff78db5465d4b100f522d994c8550424526b9ac4a072b0
   languageName: node
   linkType: hard
 
@@ -4739,6 +4770,13 @@ __metadata:
   version: 2.0.4
   resolution: "@humanwhocodes/momoa@npm:2.0.4"
   checksum: 10/d3c0601bc0c2ac77bd5804053a6e85698a0dfaec956d538483da79e9ad7467ffa79210293a22249fc9354ffe30e640af0bd386f864b2cd15ea8a48b534620e44
+  languageName: node
+  linkType: hard
+
+"@humanwhocodes/momoa@npm:^3.3.10":
+  version: 3.3.10
+  resolution: "@humanwhocodes/momoa@npm:3.3.10"
+  checksum: 10/c6c0f1586ec45af5052202e1c438fdb3950ecd7574e6375731d95a89543dff6890ee61605e5dfff8c26c6380bc6018681f6030b3c09135b469221f439f7668d3
   languageName: node
   linkType: hard
 
@@ -10599,6 +10637,7 @@ __metadata:
   dependencies:
     "@eslint/eslintrc": "npm:^3.3.6"
     "@eslint/js": "npm:^9.39.5"
+    "@eslint/json": "npm:^2.0.1"
     "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "npm:^2.0.0"
     "@types/eslint-plugin-jsx-a11y": "npm:^6.10.1"
     eslint: "npm:^9.39.5"
