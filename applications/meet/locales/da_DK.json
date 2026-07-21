@@ -226,7 +226,7 @@
       "Copy address": [
         "Kopier adresse"
       ],
-      "Copy invitation link": [
+      "Copy invite link": [
         "Kopiér invitationslink"
       ],
       "Copy link": [
@@ -278,7 +278,7 @@
         "Afvis"
       ],
       "Dismiss new messages": [
-        "Afvis nye beskeder"
+        "Skjul nye beskeder"
       ],
       "Done": [
         "Udført"
@@ -1800,6 +1800,9 @@
       ]
     },
     "Error": {
+      "Background blur initialization failed. Please toggle your camera or background blur again": [
+        "Kunne ikke aktivere baggrundssløring. Aktivér dit kamera eller din baggrundssløring igen"
+      ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
@@ -2197,6 +2200,9 @@
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
+      ],
+      "Background blur initializing": [
+        "Aktiverer baggrundssløring"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
@@ -2900,6 +2906,12 @@
       "Category": [
         "Kategori"
       ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversion"
+      ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
       ],
@@ -3027,7 +3039,7 @@
         "Deltagerkontroller"
       ],
       "Participants join after you approve them": [
-        "Deltagere tilslutter sig efter, at De har godkendt dem"
+        "Deltagere tilslutter sig efter du har godkendt dem"
       ],
       "Passphrase": [
         "Adgangssætning"
