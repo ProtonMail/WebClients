@@ -197,7 +197,6 @@ const AdvancedSearch = ({
             page: UNDEFINED, // Reset page parameter when performing an advanced search so that search results are shown from the first page
         });
 
-        performance.mark('search-submit');
         history.push(newURL);
 
         onClose();
