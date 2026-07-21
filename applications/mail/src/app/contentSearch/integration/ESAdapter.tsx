@@ -258,6 +258,7 @@ export class ESAdapter implements Functions {
     leaveSearch() {
         this.lastSearch?.dispose();
         this.lastSearch = undefined;
+        this.coalescedResults?.cancel();
     }
 
     resetCache() {}
