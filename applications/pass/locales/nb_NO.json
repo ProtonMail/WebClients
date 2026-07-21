@@ -1413,6 +1413,12 @@
       ],
       "Failed to stop SSH agent: ${ errorMessage }": [
         "Klarte ikke å stoppe SSH-agenten: ${ errorMessage }"
+      ],
+      "Regex invalid": [
+        "Ugyldig regex"
+      ],
+      "Regex unsafe": [
+        "Regex utrygg"
       ]
     },
     "Error message": {

@@ -1009,6 +1009,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Vašo kodo PIN je odstranil drug odjemalec ${ PASS_APP_NAME }."
+      ],
+      "Regex invalid": [
+        "Neveljaven regularni izraz"
+      ],
+      "Regex unsafe": [
+        "Regularni izraz ni varen"
       ]
     },
     "Error message": {
@@ -2715,6 +2721,18 @@
       ],
       "Relevant": [
         "Pomembno"
+      ],
+      "Basic": [
+        "Osnovno"
+      ],
+      "Check": [
+        "Preveri"
+      ],
+      "Regular expression": [
+        "Regularni izraz"
+      ],
+      "Starts with": [
+        "Se začne z"
       ]
     },
     "Link": {
@@ -2741,6 +2759,9 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "V tem trezorju ste izbrali ${ semiboldText }."
+      ],
+      "Regular expression rule": [
+        "Pravilo regularnega izraza"
       ]
     },
     "new_plans: feature": {
@@ -3404,6 +3425,9 @@
       ],
       "Your welcome gift": [
         "Vaš darilo za dobrodošlico"
+      ],
+      "Learn more": [
+        "Več informacij"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -3651,6 +3675,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaša naročnina vam ne dovoljuje ustvarjanja več trezorjev. Vsi predmeti bodo uvoženi v vaš prvi trezor. Za uvoz v več trezorjev nadgradite svojo naročnino."
+      ]
+    },
+    "Result": {
+      "The rule is matching this URL": [
+        "Pravilo se ujema s tem naslovom"
       ]
     }
   }

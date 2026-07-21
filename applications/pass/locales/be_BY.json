@@ -1423,6 +1423,12 @@
       ],
       "Failed to start SSH agent: ${ errorMessage }": [
         "Не ўдалося запусціць агент SSH: ${ errorMessage }"
+      ],
+      "Regex invalid": [
+        "Памылковы рэгулярны выраз"
+      ],
+      "Regex unsafe": [
+        "Небяспечны рэгулярны выраз"
       ]
     },
     "Error message": {
