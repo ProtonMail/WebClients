@@ -6,7 +6,7 @@ import { renderWithProviders } from '@proton/testing/lib/context/renderWithProvi
 
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
-import type { FolderViewItem } from '../useFolder.store';
+import type { FolderPermissions, FolderViewItem } from '../useFolder.store';
 import { useFolderStore } from '../useFolder.store';
 import { FolderBrowser } from './FolderBrowser';
 
@@ -45,6 +45,11 @@ jest.mock('../../../legacy/hooks/drive/useActiveShare', () => ({
     }),
 }));
 
+jest.mock('@proton/unleash/useFlag', () => ({
+    __esModule: true,
+    useFlag: (flag: string) => flag === 'DriveWebReportAbuseDirectShare',
+}));
+
 const resetStores = () => {
     act(() => {
         useFolderStore.getState().reset();
@@ -77,7 +82,23 @@ function buildItem(role: MemberRole): FolderViewItem {
     };
 }
 
-function renderFolderBrowser(role: MemberRole, buttonType: 'toolbar' | 'contextMenu') {
+const buildPermissions = (overrides: Partial<FolderPermissions> = {}): FolderPermissions => ({
+    canEdit: true,
+    canShare: true,
+    canCreateNode: true,
+    canCreateDocs: true,
+    canCreateSheets: true,
+    canOpenInDocs: true,
+    canShareNode: true,
+    canMove: true,
+    canCopy: true,
+    canRename: true,
+    canTrash: true,
+    canReportAbuse: true,
+    ...overrides,
+});
+
+function renderFolderBrowser(role: MemberRole, buttonType: 'toolbar' | 'contextMenu', permissions?: FolderPermissions) {
     const item = buildItem(role);
 
     act(() => {
@@ -92,6 +113,9 @@ function renderFolderBrowser(role: MemberRole, buttonType: 'toolbar' | 'contextM
             'tree-event-scope-1'
         );
         useFolderStore.getState().setItems([item]);
+        if (permissions) {
+            useFolderStore.getState().setPermissions(permissions);
+        }
         useSelectionStore.getState().setAllItemIds(new Set([item.uid]));
         useSelectionStore.getState().selectItem(item.uid);
         if (buttonType === 'contextMenu') {
@@ -161,5 +185,22 @@ describe('FolderBrowser', () => {
         await waitFor(() => {
             expect(screen.queryByTestId('toolbar-share-link')).not.toBeInTheDocument();
         });
+    });
+
+    it('shows report abuse in the toolbar when allowed', async () => {
+        renderFolderBrowser(MemberRole.Admin, 'toolbar', buildPermissions({ canReportAbuse: true }));
+
+        await waitFor(() => {
+            expect(screen.getByTestId('toolbar-report-abuse')).toBeInTheDocument();
+        });
+    });
+
+    it('does not show report abuse in the item context menu', async () => {
+        renderFolderBrowser(MemberRole.Admin, 'contextMenu', buildPermissions({ canReportAbuse: true }));
+
+        await waitFor(() => {
+            expect(screen.getByTestId('context-menu-details')).toBeInTheDocument();
+        });
+        expect(screen.queryByTestId('context-menu-report-abuse')).not.toBeInTheDocument();
     });
 });

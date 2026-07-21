@@ -32,7 +32,6 @@ import { useFolderStore } from '../useFolder.store';
 import type { FolderActions, FolderUploadFile, FolderUploadFolder } from '../useFolderActions';
 
 interface Props {
-    volumeId: string;
     actions: FolderActions;
     uploadFile: FolderUploadFile;
     uploadFolder: FolderUploadFolder;
@@ -41,7 +40,6 @@ interface Props {
 }
 
 export const FolderToolbar = ({
-    volumeId,
     actions,
     uploadFile,
     uploadFolder,
@@ -52,11 +50,10 @@ export const FolderToolbar = ({
     const { viewportWidth } = useActiveBreakpoint();
     const isEditEnabled = useIsEditEnabled();
     const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
-    const { items, permissions, role, isRoot } = useFolderStore(
+    const { items, permissions, isRoot } = useFolderStore(
         useShallow((state) => ({
             permissions: state.permissions,
             items: state.items,
-            role: state.role,
             isRoot: state.folder?.isRoot,
         }))
     );
@@ -127,10 +124,10 @@ export const FolderToolbar = ({
                 {/* CAREFUL separate menu for small viewport - same problem with sharing... */}
                 {viewportWidth['<=small'] ? (
                     <ActionsDropdown
-                        volumeId={volumeId}
                         selectedItems={selectedItems}
-                        role={role}
+                        permissions={permissions}
                         canShareSelectedItem={canShareSelectedItem}
+                        actions={actions}
                     />
                 ) : (
                     <>
