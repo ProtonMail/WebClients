@@ -29,10 +29,15 @@ const getSilenced = ({ silence }: SilenceConfig = {}, code: number) => {
     return !!silence;
 };
 
+const applyServerTimeUpdate = (latestServerTime: Date) => ({
+    serverTime: updateServerTime(latestServerTime),
+    serverTimeUpdatedAt: new Date(),
+});
+
 export type ServerTimeEvent = {
     type: 'server-time';
     payload: {
-        value: Date;
+        value: { serverTime: Date; serverTimeUpdatedAt: Date };
         extra: { standardDateHeader: string | undefined; customDateHeader: string | undefined };
     };
 };
@@ -217,7 +222,7 @@ const createApi = ({
                 notify({
                     type: 'server-time',
                     payload: {
-                        value: updateServerTime(serverTime),
+                        value: applyServerTimeUpdate(serverTime),
                         extra: getStandardAndCustomDateHeader(response.headers),
                     },
                 });
@@ -241,7 +246,7 @@ const createApi = ({
                     notify({
                         type: 'server-time',
                         payload: {
-                            value: updateServerTime(serverTime),
+                            value: applyServerTimeUpdate(serverTime),
                             extra: getStandardAndCustomDateHeader(e.response?.headers),
                         },
                     });
