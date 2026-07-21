@@ -71,6 +71,9 @@
       "Add address or domain": [
         "ईमेल पता या डोमेन जोड़ें"
       ],
+      "Add and verify": [
+        "जोड़ें और सत्यापित करें"
+      ],
       "Add another account": [
         "एक और खाता जोड़ें"
       ],
@@ -88,6 +91,9 @@
       ],
       "Add PayPal": [
         "PayPal जोड़ें"
+      ],
+      "Add recovery options": [
+        "रिकवरी विकल्प जोड़ें"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "रेफरल लिंक को ${ MAIL_APP_NAME } हस्ताक्षर में जोड़ें"
@@ -140,6 +146,9 @@
       "Cancel": [
         "रद्द करें"
       ],
+      "Cancel request": [
+        "अनुरोध रद्द करें"
+      ],
       "Cancel subscription": [
         "सदस्यता रद्द करें"
       ],
@@ -166,6 +175,9 @@
       ],
       "Check import progress": [
         "आयात प्रगति की जाँच करें"
+      ],
+      "Check now": [
+        "अभी जाँच करें"
       ],
       "Choose a file or drag it here": [
         "कोई फाइल चुनें या उसे यहां खीच के लाएं"
@@ -286,6 +298,9 @@
       ],
       "Create new policy": [
         "नई नीति बनाएं"
+      ],
+      "Create recovery phrase": [
+        "रिकवरी फ्रेज़ बनाएं"
       ],
       "Create users": [
         "उपयोगकर्ता बनाएं"
@@ -410,6 +425,9 @@
       "Download recovery file": [
         "पुनर्प्राप्ति फ़ाइल डाउनलोड करें"
       ],
+      "Download updated file": [
+        "अपडेट की गई फ़ाइल डाउनलोड करें"
+      ],
       "Edit": [
         "बदलें"
       ],
@@ -503,14 +521,14 @@
       "Forgot password?": [
         "पासवर्ड भूल गए?"
       ],
+      "Generate new phrase": [
+        "नया वाक्य जनरेट करें"
+      ],
       "Generate new recovery phrase": [
         "नया पुनर्प्राप्ति वाक्य बनाएं"
       ],
       "Generate password": [
         "पासवर्ड उत्पन्न करें"
-      ],
-      "Generate recovery phrase": [
-        "पुनर्प्राप्ति वाक्य बनाएं"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ priceCoupon } में ${ planName } प्राप्त करें"
@@ -608,6 +626,9 @@
       "I don’t have my backup codes": [
         "मेरे पास मेरे बैकअप कोड नहीं हैं"
       ],
+      "Ignore": [
+        "अनदेखा करें"
+      ],
       "Import": [
         "आयात करें"
       ],
@@ -625,6 +646,9 @@
       ],
       "Invite user": [
         "यूज़र को न्योता भेजें"
+      ],
+      "Keep": [
+        "रखें"
       ],
       "Keep current plan": [
         "चालू प्लैन रखें"
@@ -739,6 +763,9 @@
       ],
       "Open navigation": [
         "नेविगेशन खोलें"
+      ],
+      "Opt out": [
+        "ऑप्ट आउट करें"
       ],
       "Or": [
         "या"
@@ -896,6 +923,9 @@
       "Review changes": [
         "बदलावों की समीक्षा करें"
       ],
+      "Review recovery options": [
+        "रिकवरी विकल्पों की समीक्षा करें"
+      ],
       "Revoke": [
         "निरस्त करें"
       ],
@@ -914,6 +944,9 @@
       "Save address": [
         "पता सहेजें"
       ],
+      "Save and verify": [
+        "सेव करें और सत्यापित करें"
+      ],
       "Save SAML configuration": [
         "SAML संरचना सहेजें"
       ],
@@ -928,6 +961,9 @@
       ],
       "Search settings": [
         "सेटिंग सर्च करे"
+      ],
+      "Secure account": [
+        "खाता सुरक्षित करें"
       ],
       "See DNS TXT record": [
         "DNS TXT रिकॉर्ड देखें"
@@ -1000,6 +1036,9 @@
       ],
       "Set up a custom domain": [
         "कस्टम डोमेन सेटअप करें"
+      ],
+      "Set up account recovery": [
+        "खाता रिकवरी सेटअप करें"
       ],
       "Set up auto-forwarding from Gmail": [
         "Gmail से ऑटो-फॉरवर्डिंग सेटअप करें"
@@ -1246,6 +1285,9 @@
       ],
       "View plans details": [
         "प्लान विवरण देखें"
+      ],
+      "View recovery setup details": [
+        "रिकवरी सेटअप की जानकारी देखें"
       ],
       "Void": [
         "खाली"
@@ -3564,6 +3606,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "${ BRAND_NAME } के शुरुआत-से-अंत तक एन्क्रिप्शन का अर्थ है कि केवल आप ही अपने डेटा को अनलॉक कर सकते हैं। यह सुनिश्चित करने के लिए कि आप कभी भी एक्सेस न खोएं, अभी रिकवरी विकल्प सेटअप करें।"
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME } में ${ DOCS_SHORT_APP_NAME } आपको एक सुरक्षित, एन्क्रिप्ट किया गया वातावरण में दूसरों के साथ मिलकर काम करने की सुविधा देता है।"
       ],
@@ -3587,6 +3632,9 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Google की आपको प्रोफाइल करने की क्षमता को ब्लॉक करें। Gmail नहीं देख सकता कि आप ${ MAIL_APP_NAME } में क्या करते हैं"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "किसी अन्य प्रदाता से अपने ईमेल, कैलेंडर कार्यक्रम और संपर्क लाएं।"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "अपने खुद के डोमेन पर पेशेवर ईमेल पतों के साथ विश्वास और ब्रांड पहचान बनाएं।"
@@ -3666,6 +3714,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "जब निजता और बोलने की स्वतंत्रता को ख़तरा था, तब हमने स्थानीय कार्यकर्ताओं की सहायता कैसे की।"
       ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "यदि आप अपना पासवर्ड भूल जाते हैं तो आप अपने एन्क्रिप्टेड डेटा को कैसे अनलॉक करते हैं।"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
       ],
@@ -3677,6 +3728,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "अपने कार्यक्रम के न्योते में तुरंत मीटिंग लिंक जोड़ने की सुविधा।"
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "ऐसी विधियाँ जिनमें पासवर्ड रीसेट और डेटा रिकवरी दोनों शामिल हैं।"
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "हमारी चरण-दर-चरण गाइडों की मदद से अधिकांश समस्याओं को कुछ ही मिनटों में हल किया जा सकता है।"
@@ -3707,6 +3761,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "अभी भी सहायता की आवश्यकता है? हमारी सहायता टीम आपके लिए यहाँ है।"
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "यह आपको अपने ${ BRAND_NAME } खाते को फिर से एक्सेस करने की अनुमति देता है लेकिन आपके एन्क्रिप्ट किए गए डेटा को रिकवर नहीं करता है।"
       ],
       "This may happen if permissions were removed or your password changed.": [
         "ऐसा तब हो सकता है यदि अनुमतियाँ हटा दी गई हों या आपका पासवर्ड बदल गया हो।"
@@ -4114,9 +4171,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**यह कैसे काम करता है:** इस डिवाइस में वह कोड दर्ज करें जो उस डिवाइस पर प्रदर्शित हो रहा है जिस पर आप साइनइन करना चाहते हैं। आप **${ email }** के रूप में साइनइन हो जाएंगे। दोनों डिवाइस एक्टिव रहेंगे।"
       ],
-      "Allow QR code sign‒in": [
-        "QR कोड साइन-इन की अनुमति दें"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "QR कोड वाले संदेशों से सावधान रहें। केवल तभी कोड स्कैन करें जब आप स्रोत पर भरोसा करते हों।"
       ],
@@ -4131,9 +4185,6 @@
       ],
       "QR code sign-in enabled": [
         "QR कोड साइन-इन सक्षम है"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "साइनइन करने के लिए अपने मोबाइल डिवाइस पर QR कोड स्कैन करें"
       ],
       "Security tips": [
         "सुरक्षा टिप्स"
@@ -4271,39 +4322,338 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } खाता ईमेल"
+      ],
+      "${ days } day left": [
+        "${ days } दिन बाकी",
+        "${ days } दिन बाकी"
+      ],
+      "${ hours } hour left": [
+        "${ hours } घंटा बचा है",
+        "${ hours } घंटे बचे हैं"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } मिनट बचा है",
+        "${ minutes } मिनट बचे हैं"
+      ],
       "${ n } day": [
         "${ n } दिन",
         "${ n } दिन"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } आपके खाता के लिए आपातकालीन एक्सेस का अनुरोध कर रहा है"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user } आपके खाता का उपयोग करने और आपके डेटा को बदलने में सक्षम होंगे।"
+      ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } को आपके खाता से साइनआउट कर दिया जाएगा, और वे अगली आपातकालीन एक्सेस तक इसे दोबारा एक्सेस नहीं कर पाएंगे।"
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "पासवर्ड रीसेट करने के बाद ${ user } अब आपका डेटा रिकवर करने में आपकी मदद नहीं कर पाएगा।"
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "आपातकालीन स्थिति में ${ user } अब आपके खाता के लिए एक्सेस का अनुरोध नहीं कर पाएंगे।"
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } अगली आपातकालीन एक्सेस तक आपके खाता को एक्सेस नहीं कर पाएंगे।"
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** अब आपका रिकवरी संपर्क है। पासवर्ड रीसेट करने के बाद वे आपके डेटा को अनलॉक करने में आपकी मदद कर सकते हैं।"
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**यदि वे पुष्टि करते हैं**, तो **रिकवरी अनुमोदित करें** पर क्लिक करें। इससे उनका एन्क्रिप्टेड डेटा अनलॉक हो जाएगा।"
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**यदि उन्होंने आपकी मदद का अनुरोध नहीं किया है**, तो यह संभव है कि कोई अन्य उनके खाते तक पहुँचने का प्रयास कर रहा हो। उस स्थिति में, इस अनुरोध को अनदेखा करें।"
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**अपनी लेगेसी को सुरक्षित रखें।** आपातकालीन संपर्कों को जोड़ने के लिए अपने प्लैन को अपग्रेड करें।"
+      ],
+      "Access account": [
+        "खाता एक्सेस करें"
+      ],
+      "Access granted": [
+        "एक्सेस दिया गया"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "${ formattedAccessibleAt } को एक्सेस दिया गया"
+      ],
+      "Access request canceled": [
+        "एक्सेस अनुरोध रद्द कर दिया गया"
+      ],
+      "Access requested": [
+        "एक्सेस का अनुरोध किया गया"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "एक्सेस ${ formattedAccessibleAt } को दिया जाएगा"
+      ],
+      "Add": [
+        "जोड़ें"
+      ],
+      "Add emergency contact": [
+        "आपातकालीन संपर्क जोड़ें"
+      ],
+      "Add option": [
+        "विकल्प जोड़ें"
+      ],
+      "Add recovery contact": [
+        "रिकवरी संपर्क जोड़ें"
+      ],
       "Added on ${ formattedDate }": [
         "${ formattedDate } को जोड़ा गया"
+      ],
+      "Approve recovery": [
+        "रिकवरी अनुमोदित करें"
+      ],
+      "Approved request": [
+        "अनुमोदित अनुरोध"
       ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
         "मदद के लिए रिकवरी संपर्क से पूछें। उन्हें आपके अनुरोध को सत्यापित करने और आपके डेटा को अनलॉक करने के लिए एक ईमेल प्राप्त होगा।"
       ],
+      "Asking for help": [
+        "मदद मांगना"
+      ],
+      "Cancel request": [
+        "अनुरोध रद्द करें"
+      ],
+      "Cancel request?": [
+        "अनुरोध रद्द करें?"
+      ],
+      "Change access wait time": [
+        "एक्सेस प्रतीक्षा समय बदलें"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "वह समय बदलें जो ${ user } को उन्हें स्वतः एक्सेस देने से पहले प्रतीक्षा करनी होगी।"
+      ],
+      "Change wait time": [
+        "प्रतीक्षा समय बदलें"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "किसी ऐसे व्यक्ति को चुनें जिस पर आप पासवर्ड रीसेट होने की स्थिति में अपना डेटा रिकवर करने में मदद करने के लिए भरोसा करते हैं। रिकवरी संपर्कों के पास पहले से ही एक ${ BRAND_NAME } खाता होना चाहिए।"
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "किसी ऐसे व्यक्ति को चुनें जिस पर आप अपने डेटा के साथ भरोसा करते हैं। उनके पास पहले से ही एक ${ BRAND_NAME } खाता होना चाहिए।"
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "यह पुष्टि करने के लिए उनसे संपर्क करें कि क्या उन्हें अपना डेटा रिकवर करने के लिए मदद की आवश्यकता है।"
+      ],
       "Contacts": [
         "संपर्क"
+      ],
+      "Data recovery contacts": [
+        "डेटा रिकवरी संपर्क"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "डेटा सफलतापूर्वक रिकवर किया गया। अब आप अपने मौजूदा डेटा और एन्क्रिप्टेड फ़ाइलों को डीक्रिप्ट कर सकते हैं।"
+      ],
+      "Disabled": [
+        "अक्षम किया"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "आपातकालीन एक्सेस न खोएं। आज ही ऑटो-रिन्यू सक्षम करें।"
+      ],
+      "Emergency access": [
+        "आपातकालीन एक्सेस"
+      ],
+      "Emergency access for ${ user } removed": [
+        "${ user } के लिए आपातकालीन एक्सेस हटा दिया गया"
+      ],
+      "Emergency access granted": [
+        "आपातकालीन एक्सेस दिया गया"
+      ],
+      "Emergency access refused": [
+        "आपातकालीन एक्सेस अस्वीकार कर दिया गया"
+      ],
+      "Emergency access request": [
+        "आपातकालीन एक्सेस अनुरोध"
+      ],
+      "Emergency access requested": [
+        "आपातकालीन एक्सेस का अनुरोध किया गया"
+      ],
+      "Emergency access revoked": [
+        "आपातकालीन एक्सेस वापस ले लिया गया"
+      ],
+      "Emergency contact added": [
+        "आपातकालीन संपर्क जोड़ा गया"
+      ],
+      "Emergency contact enabled": [
+        "आपातकालीन संपर्क सक्षम किया गया"
+      ],
+      "Emergency contact removed": [
+        "आपातकालीन संपर्क हटा दिया गया"
+      ],
+      "Enable": [
+        "सक्षम करें"
+      ],
+      "Enable auto-renew": [
+        "ऑटो-रिन्यू सक्षम करें"
+      ],
+      "For ${ email }": [
+        "${ email } के लिए"
       ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
         "यह देखने के लिए कि क्या वे मदद कर सकते हैं, उनसे अभी संपर्क करें, और उन्हें व्यक्तिगत रूप से बताएं कि आप ही अपना डेटा अनलॉक करने का प्रयास कर रहे हैं।"
       ],
+      "Give access now": [
+        "अभी एक्सेस दें"
+      ],
+      "Give immediate access?": [
+        "तुरंत एक्सेस दें?"
+      ],
+      "Got it": [
+        "समझ गया"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "उन्हें अपना इंबॉक्स चेक करने के लिए कहें जहाँ आपके डेटा को रिकवर करने में उनकी मदद मांगने वाला एक ईमेल आया होगा। ईमेल में एक लिंक है जिस पर उन्हें आपके अनुरोध को सत्यापित करने के लिए क्लिक करना होगा।"
+      ],
       "Immediate": [
         "तत्काल"
+      ],
+      "Included with ${ planName }": [
+        "${ planName } के साथ शामिल"
       ],
       "Less than a day": [
         "एक दिन से भी कम"
       ],
+      "Less than a minute left": [
+        "एक मिनट से भी कम समय बचा है"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "अधिकतम ${ limit } संपर्क सीमा तक पहुँच गए। बदलने के लिए, एक संपर्क हटाएं और नया जोड़ें।",
+        "अधिकतम ${ limit } संपर्कों की सीमा तक पहुँच गए। बदलने के लिए, एक संपर्क हटाएं और नया जोड़ें।"
+      ],
+      "Only ": [
+        "केवल "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "आपातकालीन एक्सेस का अनुरोध केवल तब करें जब कोई **वैध स्थिति** हो जिसमें आपको किसी अन्य उपयोगकर्ता का खाता संभालना आवश्यक हो।"
+      ],
+      "Pending request": [
+        "लंबित अनुरोध"
+      ],
+      "People I trust": [
+        "जिन लोगों पर मैं भरोसा करता हूँ"
+      ],
+      "People who have you as a recovery contact": [
+        "वे लोग जिन्होंने आपको रिकवरी संपर्क के रूप में रखा है"
+      ],
+      "People who trust me": [
+        "जो लोग मुझ पर भरोसा करते हैं"
+      ],
+      "Proceed anyway": [
+        "वैसे भी आगे बढ़ें"
+      ],
+      "Protect your legacy with emergency access": [
+        "आपातकालीन एक्सेस के साथ अपनी विरासत को सुरक्षित रखें"
+      ],
+      "Recover data": [
+        "डेटा रिकवर करें"
+      ],
+      "Recovery approved": [
+        "रिकवरी अनुमोदित"
+      ],
+      "Recovery contact added": [
+        "रिकवरी संपर्क जोड़ा गया"
+      ],
+      "Recovery contact enabled": [
+        "रिकवरी संपर्क सक्षम किया गया"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "${ user } के लिए रिकवरी संपर्क हटाया गया"
+      ],
+      "Recovery contact removed": [
+        "रिकवरी संपर्क हटाया गया"
+      ],
       "Recovery request sent": [
         "रिकवरी अनुरोध भेजा गया"
+      ],
+      "Refuse access": [
+        "एक्सेस अस्वीकार करें"
+      ],
+      "Refuse access?": [
+        "एक्सेस अस्वीकार करें?"
+      ],
+      "Remove recovery contact": [
+        "रिकवरी संपर्क हटाएं"
+      ],
+      "Remove trusted contact": [
+        "विश्वसनीय संपर्क हटाएं"
       ],
       "Remove your recovery contacts to continue": [
         "जारी रखने के लिए अपने रिकवरी संपर्कों को हटाएं"
       ],
+      "Renew to get emergency access again.": [
+        "आपातकालीन एक्सेस दोबारा पाने के लिए रिन्यू करें।"
+      ],
+      "Request access": [
+        "एक्सेस का अनुरोध करें"
+      ],
+      "Request access?": [
+        "एक्सेस का अनुरोध करें?"
+      ],
+      "Requesting access": [
+        "एक्सेस का अनुरोध किया जा रहा है"
+      ],
+      "Review recovery request": [
+        "रिकवरी अनुरोध की समीक्षा करें"
+      ],
+      "Revoke access": [
+        "एक्सेस वापस लें"
+      ],
+      "Revoke access?": [
+        "एक्सेस वापस लें?"
+      ],
+      "See request": [
+        "अनुरोध देखें"
+      ],
       "Select recovery contact ${ name }": [
         "रिकवरी संपर्क ${ name } चुनें"
       ],
+      "Send recovery request": [
+        "रिकवरी अनुरोध भेजें"
+      ],
       "Start recovery": [
         "रिकवरी शुरू करें"
+      ],
+      "Stop being recovery contact": [
+        "रिकवरी संपर्क बनना बंद करें"
+      ],
+      "Stop being recovery contact?": [
+        "रिकवरी संपर्क बनना बंद करें?"
+      ],
+      "Stop being trusted contact": [
+        "विश्वसनीय संपर्क बनना बंद करें"
+      ],
+      "Stop being trusted contact?": [
+        "विश्वसनीय संपर्क बने रहना बंद करें?"
+      ],
+      "Subscription expired": [
+        "सदस्यता समाप्त हो गई"
+      ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "उन्होंने आपको विश्वसनीय संपर्क के रूप में जोड़ा है। आपातकालीन स्थिति में आप उनके खाते तक एक्सेस कर सकते हैं।"
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "वे आपातकालीन स्थिति में आपके खाते को एक्सेस करने के लिए कह सकते हैं।"
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "उन्हें **${ days } दिन** में स्वतः एक्सेस मिल जाएगा, **${ formattedAccessibleAt }** को, आप उनके अनुरोध को अस्वीकार कर सकते हैं या उन्हें किसी भी समय तुरंत एक्सेस दे सकते हैं।",
+        "उन्हें **${ days } दिनों** में स्वतः एक्सेस मिल जाएगा, **${ formattedAccessibleAt }** को, आप उनके अनुरोध को अस्वीकार कर सकते हैं या उन्हें किसी भी समय तुरंत एक्सेस दे सकते हैं।"
+      ],
+      "This will take effect immediately.": [
+        "यह तुरंत प्रभावी होगा।"
+      ],
+      "Time required before automatically giving access": [
+        "स्वतः एक्सेस देने से पहले आवश्यक समय"
+      ],
+      "Time required before automatically giving you access": [
+        "आपको स्वतः एक्सेस देने से पहले आवश्यक समय"
+      ],
+      "Time required before automatically granting them access": [
+        "उन्हें स्वतः एक्सेस देने से पहले आवश्यक समय"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "इस रिकवरी विधि को अक्षम करने के लिए, अपने सभी रिकवरी संपर्कों को हटाएं।"
@@ -4311,8 +4661,76 @@
       "Trusted contact": [
         "विश्वसनीय संपर्क"
       ],
+      "Unable to recover data": [
+        "डेटा रिकवर करने में असमर्थ"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } पे अपग्रेड करें"
+      ],
+      "Wait time": [
+        "प्रतीक्षा समय"
+      ],
+      "Wait time for access": [
+        "एक्सेस के लिए प्रतीक्षा समय"
+      ],
+      "Wait time saved": [
+        "प्रतीक्षा समय सहेजा गया"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "हमें आपके संपर्क **${ user }** के एन्क्रिप्टेड डेटा को अनलॉक करने का अनुरोध प्राप्त हुआ है।"
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "हमने ${ user } को एक ईमेल अनुरोध भेजा है। उन्हें बताएं कि यह वास्तव में आप ही हैं जो फिर से एक्सेस करने का प्रयास कर रहे हैं।"
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "हम रिकवरी डेटा को सत्यापित करने में सक्षम नहीं थे। वैसे भी आगे बढ़ें?"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "हम **${ user }** को सूचित करेंगे कि आपने आपातकालीन एक्सेस का अनुरोध किया है।"
+      ],
+      "You are signed in to the account ${ account }.": [
+        "${ account } खाते से साइनइन हो।"
+      ],
+      "You can now access and manage their account.": [
+        "अब आप उनके खाता को एक्सेस करें और संभाल सकते हैं।"
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "आप अपने खाता पर विशेष नियंत्रण वापस पाने के लिए किसी भी समय उनका एक्सेस हटा सकते हैं।"
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "आप अधिकतम ${ limit } आपातकालीन संपर्क तक पहुँच चुके हैं।",
+        "आप अधिकतम ${ limit } आपातकालीन संपर्कों तक पहुँच चुके हैं।"
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "जब कोई आपातकालीन एक्सेस का अनुरोध करेगा तो आपको सूचित किया जाएगा।"
+      ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "पासवर्ड रीसेट करने के बाद आप ${ user } का डेटा रिकवर करने में उनकी मदद नहीं कर पाएंगे।"
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "आपातकालीन स्थिति में अब आप ${ user } के खाता के लिए एक्सेस का अनुरोध नहीं कर पाएंगे।"
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "आप बाद में भी ${ user } के खाता के लिए एक्सेस का अनुरोध करने में सक्षम होंगे।"
+      ],
+      "You'll receive access to their account immediately.": [
+        "आपको उनके खाता का एक्सेस तुरंत मिल जाएगा।"
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "आपको **${ days } दिन** में उनके खाता का एक्सेस मिल जाएगा, या जब वे आपके अनुरोध को स्वीकृत कर देंगे।",
+        "आपको **${ days } दिनों** में उनके खाता का एक्सेस मिल जाएगा, या जब वे आपके अनुरोध को स्वीकृत कर देंगे।"
+      ],
       "Your recovery contact has helped you recover data.": [
         "आपके रिकवरी संपर्क ने डेटा रिकवर करने में आपकी मदद की है।"
+      ],
+      "Your recovery contacts": [
+        "आपके रिकवरी संपर्क"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "आपके रिकवरी संपर्क ऐसे लोग होने चाहिए जिन्हें आप जानते हैं और जिनसे आसानी से संपर्क कर सकते हैं।"
       ]
     },
     "Empty group name": {
@@ -4332,6 +4750,9 @@
       ],
       "A group with this name already exists": [
         "इस नाम का एक समूह पहले से मौजूद है"
+      ],
+      "Address cannot be yours": [
+        "पता आपका नहीं हो सकता"
       ],
       "Address could not be added.": [
         "पता जोड़ा नहीं जा सका।"
@@ -5142,6 +5563,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 टीबी स्टोरेज"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "आपके खाते के फायदे"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -6586,6 +7012,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "सब्सक्राइब करने वाले प्रत्येक मित्र के लिए **आपको ${ referrerRewardAmount }** क्रेडिट के रूप में मिलते हैं।"
       ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "अपना पासवर्ड रीसेट करने के बाद **केवल आपका रिकवर ईमेल ही आपको अपना एन्क्रिप्टेड डेटा रिकवर करने की अनुमति नहीं देता है**।"
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "अपना पासवर्ड रीसेट करने के बाद **केवल आपका रिकवर फ़ोन ही आपको अपना एन्क्रिप्टेड डेटा रिकवर करने की अनुमति नहीं देता है**।"
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } और",
         "+ ${ invisibleCount } और"
@@ -6618,12 +7050,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "एक ${ BRAND_NAME } खाता सत्यापित करने के लिए सिर्फ एक फोन नंबर इस्तेमाल हो सकता है"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "एक रिकवरी फ़ाइल आपको खाता रिकवरी के बाद अपना डाटा अनलॉक करने और देखने देती है"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "अगर आप अपना पासवर्ड भूल जाते हैं तो रिक्वरी वाक्य आपको अपने खाते को एक्सेस करने और आपके एन्क्रिप्ट किए संदेशो को रिकवर करने में मदद करेगा।"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "सिर्फ एक यूज़रनेम, मेलबॉक्स, और इंसान से जुड़े खाते को यूज़र कहते है।"
       ],
@@ -6632,9 +7058,6 @@
       ],
       "Account successfully updated": [
         "खाता आधुनिकीकरण सफल हो गया है"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "कम-से-कम एक रिक्वरी तरीका सेट करे ताकि आप अपना ${ BRAND_NAME } खाता इस्तेमाल करना जारी रख सके जब भी आपका पासवर्ड खो जाए।"
       ],
       "active": [
         "सक्रिय"
@@ -6648,8 +7071,17 @@
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } जोड़ें"
       ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "1 से 5 ऐसे लोगों को जोड़ें जिन पर आप भरोसा करते हैं और जिनसे आसानी से संपर्क कर सकते हैं। वे आपके खाते में साइनइन करके आपके लिए आपका पासवर्ड रीसेट करने में सक्षम होंगे। उनके पास पहले से ही एक ${ BRAND_NAME } खाता होना चाहिए।"
+      ],
+      "Add a phone number in case we need to contact you": [
+        "यदि हमें आपसे संपर्क करने की आवश्यकता हो तो एक फ़ोन नंबर जोड़ें"
+      ],
       "add a recovery method": [
         "रिकवरी तरीका जोड़े"
+      ],
+      "Add an email address in case we need to contact you": [
+        "यदि हमें आपसे संपर्क करने की आवश्यकता हो तो एक ईमेल पता जोड़ें"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "अपने खाता पर सुरक्षा की एक और परत डालें। आपको हर बार साइनइन करते वक्त 2-एफए से खुद को सत्यापित करना पड़ेगा।"
@@ -6735,6 +7167,12 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "उपयोगकर्ताओं को ${ VPN_APP_NAME } ऐप के **देश** अनुभाग से सुरक्षित साझा सर्वर से कनेक्ट करने की अनुमति दें।"
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "QR कोड साइन-इन की अनुमति देने से आप पासवर्ड भूल जाने पर QR कोड को स्कैन करके साइन इन कर सकेंगे। इसके लिए बस आपको किसी अन्य डिवाइस पर ${ BRAND_NAME } सेवा में साइन इन होना आवश्यक है।"
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "सेटिंग से पासवर्ड रीसेट की अनुमति देने से आप अपना पासवर्ड बदल सकते हैं यदि आप इसे भूल गए हैं, लेकिन फिर भी ${ BRAND_NAME } में साइनइन हैं।"
       ],
       "Already allocated": [
         "पहले से दिया गया"
@@ -6858,6 +7296,9 @@
       ],
       "Billing cycle: ${ text }": [
         "बिल चक्र: ${ text }"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "जिन लोगों पर आप भरोसा करते हैं उन्हें रिकवरी संपर्कों के रूप में जोड़कर, यदि आपको पासवर्ड रीसेट के बाद अपना डेटा रिकवर करने में परेशानी हो रही है तो हम आपकी मदद के लिए उन्हें एक ईमेल भेजने में सक्षम होंगे। आप दूसरों के लिए भी रिकवरी संपर्क बन सकते हैं।"
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "खाता मॉनिटर को अक्षम करने से, आपका संपूर्ण इतिहास भी साफ़ हो जाएगा। क्या आप वाकई इसे अक्षम करना चाहते हैं?"
@@ -7022,6 +7463,9 @@
       "Data recoverable with recovery phrase": [
         "रिकवरी फ्रेज़ के साथ डेटा रिकवर करने योग्य है"
       ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "डेटा रिकवरी के लिए पासवर्ड रीसेट विकल्प (ईमेल या एसएमएस) की आवश्यकता होती है"
+      ],
       "dedicated servers": [
         "समर्पित सर्वर"
       ],
@@ -7058,6 +7502,9 @@
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "ऑथेंटिकेटर ऐप 2-एफए को अक्षम करने से आपका खाता कम सुरक्षित हो जाएगा। केवल तभी आगे बढ़ें जब बिल्कुल आवश्यक हो।"
+      ],
+      "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
+        "इस डिवाइस पर डेटा बैकअप को अक्षम करने से आप पासवर्ड रीसेट के बाद अपने एन्क्रिप्टेड डेटा को स्वचालित रूप से अनलॉक नहीं कर पाएंगे।"
       ],
       "Discover new features unlocked and start using them right away!": [
         "अनलॉक की गई नई सुविधाएँ खोजें और तुरंत उनका उपयोग शुरू करें!"
@@ -7194,6 +7641,9 @@
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "वाक्यांश द्वारा पुनर्प्राप्ति को पुन: सक्षम करने से एक नया पुनर्प्राप्ति वाक्यांश जनरेट होगा।"
+      ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "इस डिवाइस पर डेटा बैकअप सक्षम करने से पासवर्ड रीसेट के बाद इस डिवाइस पर साइन इन करके आसानी से आपके खाते पर ईमेल, संपर्कों, फ़ाइलों, पासवर्ड और किसी भी अन्य एन्क्रिप्टेड डेटा तक एक्सेस रीस्टोर हो जाएगी।"
       ],
       "End date": [
         "समाप्त होने की तारीख"
@@ -7333,8 +7783,8 @@
       "Gateways": [
         "गेटवे"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "नया पुनर्प्राप्ति वाक्यांश बनाने से आपका पुराना वाक्यांश निष्क्रिय हो जाएगा।"
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "एक नया रिकवरी फ्रेज़ जेनरेट करने से आपका वर्तमान रिकवरी फ्रेज़ निष्क्रिय हो जाएगा।"
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "अपने सभी डिवाइस के लिए ${ AUTHENTICATOR_APP_NAME } प्राप्त करें।"
@@ -7393,11 +7843,14 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "यदि किसी अन्य व्यवस्थापक ने इस पासवर्ड को बदल दिया है, तो आपको उन्हें नए संगठन पासवर्ड के लिए पूछना होगा।"
       ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "यदि अक्षम किया जाता है, तो भी ${ BRAND_NAME } सुरक्षा सूचनाएं भेजने के लिए आपके रिकवर ईमेल का उपयोग करेगा।"
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
+        "यदि अक्षम किया जाता है, तो भी ${ BRAND_NAME } सुरक्षा सूचनाएं भेजने के लिए आपके रिकवर फ़ोन का उपयोग करेगा।"
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "यदि संभव हो, तो साइनइन करते समय उस डिवाइस या ब्राउज़र का उपयोग करें जहां आपने पहले साइनइन किया है।"
-      ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "यदि यह पुराने पासवर्ड रीसेट के कारण है, तो आप संदेश को फिर से प्रदर्शित होने से रोक सकते हैं"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "यदि आपको अपना खाता बनाने में परेशानी हो रही है, तो कृपया एक निमंत्रण का अनुरोध करें और हम एक व्यावसायिक दिन के भीतर जवाब देंगे।"
@@ -7441,8 +7894,8 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "यदि आप डाउनग्रेड के साथ आगे बढ़ते हैं, तो आप ${ VPN_APP_NAME } सशुल्क सुविधाओं तक पहुंच खो देंगे।"
       ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "यदि आपने हाल ही में अपना पासवर्ड रीसेट किया है, तो आप अपने डेटा को अनलॉक करने के लिए डेटा पुनर्प्राप्ति विधि का उपयोग कर सकते हैं"
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "यदि आपने हाल ही में अपना पासवर्ड रीसेट किया है, तो आप अपने डेटा को अनलॉक करने के लिए ${ recoveryMethodLink } कर सकते हैं। यदि यह किसी पुराने पासवर्ड रीसेट के कारण है, तो आप संदेश को दोबारा प्रदर्शित होने से रोक सकते हैं।"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "यदि आपके संगठन में सार्वजनिक हस्तियां हैं, जो संवेदनशील डेटा को हैंडल करती हैं, या साइबर हमलों का निशाना बन सकती हैं, तो आपको अपने संगठन में सभी के लिए ${ PROTON_SENTINEL_NAME } सक्षम करने के लिए अत्यधिक प्रोत्साहित किया जाता है।"
@@ -7542,9 +7995,6 @@
       "Invited": [
         "आमंत्रित"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "ऐसा लगता है कि आपका कुछ डेटा एन्क्रिप्ट और लॉक किया गया है।"
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "सर्वर के देश को बदलने में 10 दिन लगते हैं, इसलिए सुनिश्चित करें कि आपका चयन सही है।"
       ],
@@ -7601,6 +8051,12 @@
       ],
       "Item updated in vault": [
         "तिजोरी में आइटम अपडेट हुआ"
+      ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "यदि आप साइन इन हैं तो अपने खाते को रिकवर करने का यह अक्सर सबसे आसान तरीका होता है।"
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "यह सब कुछ तुरंत रिकवर करने का एकमात्र तरीका है, इसलिए सुनिश्चित करें कि आप इसे सुरक्षित लेकिन सुलभ स्थान पर रखें।"
       ],
       "JCB logo": [
         "JCB लोगो"
@@ -7939,9 +8395,6 @@
       "Please fill in all required fields.": [
         "कृपया सभी आवश्यक फील्ड भरें।"
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "कृपया इसे सुरक्षित रखें। पासवर्ड रीसेट होने की स्थिति में आपको अपने खाते तक पहुंचने और अपने डेटा को डिक्रिप्ट करने के लिए इसकी आवश्यकता होगी।"
-      ],
       "please open a support ticket": [
         "कृपया सहायता टिकट खोलें"
       ],
@@ -8029,6 +8482,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "भरोसेमंद डिवाइसों पे इस्तेमाल करने की सलाह। ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "${ PROTON_SENTINEL_NAME } सक्षम होने के दौरान ईमेल द्वारा रिकवरी उपलब्ध नहीं है।"
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "जब ${ PROTON_SENTINEL_NAME } सक्षम हो तो फ़ोन द्वारा रिकवरी उपलब्ध नहीं होती है।"
+      ],
       "Recovery file downloaded": [
         "रिकवरी फ़ाइल डाउनलोड की गई"
       ],
@@ -8040,9 +8499,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "पुनर्प्राप्ति वाक्यांश क्लिपबोर्ड पर कॉपी किया गया"
-      ],
-      "Recovery phrase downloaded": [
-        "पुनर्प्राप्ति वाक्यांश डाउनलोड किया गया"
       ],
       "Recovery phrase has been disabled": [
         "पुनर्प्राप्ति वाक्यांश अक्षम कर दिया गया है"
@@ -8386,6 +8842,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "यह कुछ समय ले सकता है। कृपया इस पेज को बंद न करें और इंटरनेट से डिस्कनेक्ट न करें।"
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "इस डेटा रिकवरी विधि के लिए एक पासवर्ड रीसेट विकल्प (ईमेल या एसएमएस) की आवश्यकता होती है"
+      ],
       "This file is too large to preview": [
         "यह फ़ाइल प्रीव्यू करने के लिए बहुत बड़ी है"
       ],
@@ -8433,6 +8892,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "ये PayPal को ${ BRAND_NAME } सदस्यता के भुगतान के इस्तेमाल के लिए सक्षम कर देगा। हम आपको एक नए ब्राउज़र टैब में PayPal को रिडाइरेक्ट कर देंगे। अगर आप कोई पॉपअप ब्लॉकर इस्तेमाल करते है, तो जारी रखने के लिए कृपया उसे अक्षम कर दे।"
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "यह आपको अपने ${ BRAND_NAME } खाते तक तुरंत और सुरक्षित रूप से एक्सेस करने देगा ताकि आप अपना पासवर्ड बदल सकें।"
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "यह डेटा और इन उपयोगकर्ताओं से जुड़े सभी ईमेल पते को स्थायी रूप से हटा देगा।"
@@ -8502,6 +8964,12 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "पासवर्ड रीसेट करने के बाद अपने लॉक किए गए डेटा को डिक्रिप्ट करने और देखने के लिए, एक पुनर्प्राप्ति विधि चुनें।"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "अपने खाते की उच्चतम संभव सुरक्षा सुनिश्चित करने के लिए, **रिकवर ईमेल द्वारा रिकवरी** को अक्षम करें।"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+        "अपने खाते की उच्चतम संभव सुरक्षा सुनिश्चित करने के लिए, **रिकवर फ़ोन द्वारा रिकवरी** को अक्षम करें।"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "स्पैम और दुर्व्यवहार से लड़ने के लिए, कृपया सत्यापित करें कि आप इंसान हैं"
@@ -8716,6 +9184,12 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "हम आपको सलाह देते हैं कि जब भी संभव हो आधिकारिक ${ VPN_APP_NAME } एप्लिकेशन का उपयोग करें।"
       ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "हम आपके पासवर्ड को रीसेट करने के लिए आपको एक सत्यापन कोड भेजने के लिए और यदि हमें किसी संदिग्ध गतिविधि का पता चलता है तो आपसे संपर्क करने के लिए आपके रिकवर ईमेल का उपयोग कर सकते हैं।"
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "हम आपके पासवर्ड को रीसेट करने के लिए आपको एक सत्यापन कोड भेजने के लिए और यदि हमें किसी संदिग्ध गतिविधि का पता चलता है तो आपसे संपर्क करने के लिए आपके रिकवर फ़ोन का उपयोग कर सकते हैं।"
+      ],
       "We couldn’t process your payment.": [
         "आपका भुगतान प्रॉसेस नहीं कर सके।"
       ],
@@ -8746,8 +9220,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "हम अनुशंसा करते हैं कि 2FA का उपयोग लागू करने से पहले संगठन के सदस्यों को सूचित करें और उनसे अपने खातों के लिए 2FA स्थापित करने के लिए कहें।"
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "आपका डाटा खोने से बचाने के लिए हम रिकवरी जानकारी आपके भरोसेमंद डिवाइस पे सुरक्षित रखते है।"
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "हम दृढ़ता से सलाह देते हैं कि हर कोई रिकवरी फ्रेज़ द्वारा रिकवरी को सक्षम करें।"
       ],
       "We use 3-D Secure to protect your payments": [
         "आपके भुगतान की सुरक्षा के लिए हम 3-D सिक्योर का उपयोग करते हैं"
@@ -8936,6 +9410,9 @@
       "You don't have any referrals.": [
         "आपके पास कोई रेफरल नहीं है।"
       ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "आपको फ़ाइल को खोलने या पढ़ने की आवश्यकता नहीं है—बस इसे डाउनलोड करें और कहीं सुरक्षित स्थान पर स्टोर करें।"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "यदि आपका पासवर्ड या अन्य डाटा किसी तीसरें-पार्टी से लीक हुआ है, तो आपको सूचित किया जाएगा।"
       ],
@@ -9111,11 +9588,11 @@
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "आपके हाल के परिवर्तन प्रकाशित कर दिए गए हैं। वे अगले कुछ घंटों में उपयोगकर्ताओं को दिखाई देंगे।"
       ],
-      "Your recovery phrase": [
-        "आपका पुनर्प्राप्ति वाक्यांश"
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "आपकी रिकवरी फ़ाइल पासवर्ड रीसेट के बाद आपके खाते पर ईमेल, संपर्कों, फ़ाइलों, पासवर्ड और किसी भी अन्य एन्क्रिप्टेड डेटा तक एक्सेस को रीस्टोर कर देगी।"
       ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "आपका रिकवरी वाक्यांश 12 यादृच्छिक रूप से उत्पन्न शब्दों की एक श्रंखला है जो एक विशिष्ट क्रम में हैं।"
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "यदि आप अपने ${ BRAND_NAME } खाते से लॉक आउट हो जाते हैं, तो आपका रिकवरी फ्रेज़ आपको साइनइन करने और अपना डेटा रिकवर करने की अनुमति देगा। यह 12 शब्दों से बना है और एक बैकअप पासवर्ड की तरह काम करता है।"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "आपका निर्धारित प्लैन ${ renewalTime } को शुरू होगा और हर ${ cycle } महीने में स्वतः नवीनीकृत हो जाएगा।",
@@ -9401,6 +9878,9 @@
       ],
       "Allow": [
         "अनुमति दें"
+      ],
+      "Allow QR code sign-in": [
+        "QR कोड साइन-इन की अनुमति दें"
       ],
       "Allow recovery by email": [
         "ईमेल द्वारा पुनर्प्राप्ति की अनुमति दें"
@@ -9850,6 +10330,9 @@
       "Main reason for cancelling": [
         "रद्द करने का मुख्य कारण"
       ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "सुनिश्चित करें कि आपके पास रिकवर ईमेल या फ़ोन तक एक्सेस है, और डेटा रिकवरी विकल्प उपलब्ध है।"
+      ],
       "Manage categories": [
         "श्रेणीयों को संभालें"
       ],
@@ -10232,6 +10715,9 @@
       "Vulnerable password": [
         "असुरक्षित पासवर्ड"
       ],
+      "We securely stored recovery information on this device.": [
+        "हमने इस डिवाइस पर रिकवरी जानकारी सुरक्षित रूप से स्टोर कर ली है।"
+      ],
       "Weak": [
         "कमज़ोर"
       ],
@@ -10271,6 +10757,12 @@
       "Your password (trusted contact)": [
         "आपका पासवर्ड (विश्वसनीय संपर्क)"
       ],
+      "Your recovery email": [
+        "आपका रिकवर ईमेल"
+      ],
+      "Your recovery phone number": [
+        "आपका रिकवरी फ़ोन नंबर"
+      ],
       "Zero-access architecture": [
         "ज़ीरो-एक्सेस आर्किटेक्चर"
       ],
@@ -10279,14 +10771,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "डिवाइस-आधारित पुनर्प्राप्ति"
-      ],
       "Recovery phone number": [
         "पुनर्प्राप्ति फ़ोन नंबर"
-      ],
-      "Recovery phrase": [
-        "पुनर्प्राप्ति वाक्यांश"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10503,9 +10989,6 @@
       "How to share via email": [
         "ईमेल के माध्यम से शेयर कैसे करें"
       ],
-      "How to unlock data": [
-        "डेटा अनलॉक कैसे करें"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } का उपयोग कैसे करें"
       ],
@@ -10526,9 +11009,6 @@
       ],
       "Learn more": [
         "और जानें"
-      ],
-      "Learn more about data recovery": [
-        "डाटा रिक्वरी के बारे में और जानें"
       ],
       "Manage addresses": [
         "पते प्रबंधित करें"
@@ -10571,6 +11051,9 @@
       ],
       "Upgrade your plan": [
         "अपना प्लान अपग्रेड करें"
+      ],
+      "use a data recovery method": [
+        "डेटा रिकवरी विधि का उपयोग करें"
       ],
       "Vault": [
         "तिजोरी"
@@ -12847,6 +13330,14 @@
         "सीमित समय का डील।"
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "क्या आपको अपना ${ BRAND_NAME } पासवर्ड याद है?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "अपने खाते और डेटा तक पहुंच खोने से बचने का सबसे अच्छा तरीका अपने प्रमाण याद रखना है।"
+      ]
+    },
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "यदि आप अपना पासवर्ड भूल जाते हैं, तो आप अपने एन्क्रिप्ट किया डेटा तक पहुंच खो सकते हैं।"
@@ -13705,6 +14196,188 @@
         "अपना ईमेल पता सत्यापित करने से खाते की सुरक्षा बढ़ जाती है और रिकवरी के लिए ज़्यादा विकल्प खुल जाते है।"
       ]
     },
+    "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "${ score } / ${ maxScore } पूर्ण"
+      ],
+      "Add more options for stronger protection": [
+        "मजबूत सुरक्षा के लिए और अधिक विकल्प जोड़ें"
+      ],
+      "Check your access to your recovery options": [
+        "अपने रिकवरी विकल्पों तक अपनी पहुंच की जांच करें"
+      ],
+      "Critical": [
+        "गंभीर"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "अपने ${ BRAND_NAME } खाते से बाहर न हों"
+      ],
+      "How you increased your account protection": [
+        "आपने अपने खाता सुरक्षा को कैसे बढ़ाया"
+      ],
+      "Inactive recovery options": [
+        "निष्क्रिय रिकवरी विकल्प"
+      ],
+      "Maximum": [
+        "अधिकतम"
+      ],
+      "Partial": [
+        "आंशिक"
+      ],
+      "Recoverability": [
+        "रिकवरेबिलिटी"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "सत्यापित पासवर्ड रीसेट विकल्प की आवश्यकता है (ईमेल या एसएमएस)"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "स्कोर: ${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "मजबूत"
+      ],
+      "Take precautions to avoid losing access": [
+        "पहुंच खोने से बचने के लिए सावधानी बरतें"
+      ],
+      "Weak": [
+        "कमज़ोर"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "आप पूरी तरह से सुरक्षित हैं। समय-समय पर की जाने वाली समीक्षा आपके डिवाइस और संपर्क बदलते रहने पर भी सब कुछ चालू रखती है।"
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "आप आंशिक रूप से सुरक्षित हैं, लेकिन पूरी तरह नहीं। पासवर्ड भूलने का मतलब अभी भी आपके ईमेल, फ़ाइलें और पासवर्ड खोना हो सकता है।"
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "आप अभी भी उच्च जोखिम में हैं। यदि आप अपना पासवर्ड भूल जाते हैं, तो आप स्थायी रूप से अपने ईमेल, फ़ाइलें और पासवर्ड खो सकते हैं।"
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "आप काफी हद तक सुरक्षित हैं, लेकिन अभी भी कमियां हैं। यदि आप कभी अपना पासवर्ड खो देते हैं, तो अधिक रिकवरी विकल्प आपको अधिक मजबूत सुरक्षा तंत्र प्रदान करते हैं।"
+      ],
+      "Your account and data can be recovered": [
+        "आपका खाता और डेटा रिकवर किया जा सकता है"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "आपके खाते के लिए कोई रिकवरी विकल्प सेटअप नहीं है। यदि आप अपना पासवर्ड खो देते हैं, तो आप अपने ईमेल, फ़ाइलें और पासवर्ड तक अपनी पहुंच स्थायी रूप से खो देंगे।"
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "आपका खाता पूरी तरह सुरक्षित नहीं है। पासवर्ड भूलने का मतलब अभी भी आपके ईमेल, फ़ाइलें और पासवर्ड तक पहुंच खोना हो सकता है।"
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "आपका रिकवरी सेटअप नाममात्र का है। यदि आप अपना पासवर्ड खो देते हैं, तो आप अपने ईमेल, फ़ाइलें और पासवर्ड तक अपनी पहुंच स्थायी रूप से खो सकते हैं।"
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "आपका रिकवरी सेटअप उत्कृष्ट है। अपने विकल्पों को अपडेट रखें ताकि ज़रूरत पड़ने पर वे काम कर सकें।"
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "आपका रिकवरी सेटअप अधूरा है। पासवर्ड भूलने का मतलब अभी भी आपके ईमेल, फ़ाइलें और पासवर्ड तक पहुंच खोना हो सकता है।"
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "आपका रिकवरी सेटअप मजबूत है, केवल कुछ ही कमियां बची हैं। आपके द्वारा जोड़ा जाने वाला प्रत्येक विकल्प आपके सुरक्षा तंत्र को और मजबूत बनाता है।"
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "आपातकालीन संपर्क जोड़ें"
+      ],
+      "Add recovery contacts": [
+        "रिकवरी संपर्क जोड़ें"
+      ],
+      "Add recovery email": [
+        "रिकवरी ईमेल जोड़ें"
+      ],
+      "Add recovery phone": [
+        "रिकवरी फ़ोन जोड़ें"
+      ],
+      "Allow data recovery on this device": [
+        "इस डिवाइस पर डेटा रिकवरी की अनुमति दें"
+      ],
+      "Allow password reset from settings": [
+        "सेटिंग से पासवर्ड रीसेट की अनुमति दें"
+      ],
+      "Allow scanning QR code to sign in": [
+        "साइन इन करने के लिए QR कोड स्कैन करने की अनुमति दें"
+      ],
+      "Data recovery allowed on this device": [
+        "इस डिवाइस पर डेटा रिकवरी की अनुमति है"
+      ],
+      "Download recovery file": [
+        "रिकवरी फ़ाइल डाउनलोड करें"
+      ],
+      "Email recovery enabled": [
+        "ईमेल रिकवरी सक्षम है"
+      ],
+      "Emergency contacts added": [
+        "आपातकालीन संपर्क जोड़े गए"
+      ],
+      "Enable email recovery": [
+        "ईमेल रिकवरी सक्षम करें"
+      ],
+      "Enable recovery by phone": [
+        "फ़ोन द्वारा रिकवरी सक्षम करें"
+      ],
+      "Password reset allowed from settings": [
+        "सेटिंग से पासवर्ड रीसेट की अनुमति है"
+      ],
+      "Password verified": [
+        "पासवर्ड सत्यापित हो गया"
+      ],
+      "Phone recovery enabled": [
+        "फ़ोन रिकवरी सक्षम है"
+      ],
+      "Recovery contacts added": [
+        "रिकवरी संपर्क जोड़े गए"
+      ],
+      "Recovery file downloaded": [
+        "रिकवरी फ़ाइल डाउनलोड की गई"
+      ],
+      "Recovery phrase saved": [
+        "रिकवरी फ्रेज़ सेव किया गया"
+      ],
+      "Save recovery phrase": [
+        "रिकवरी फ्रेज़ सेव करें"
+      ],
+      "Sign-in with QR code allowed": [
+        "QR कोड के साथ साइन-इन की अनुमति है"
+      ],
+      "Verify password": [
+        "पासवर्ड सत्यापित करें"
+      ],
+      "Verify recovery email": [
+        "रिकवर ईमेल सत्यापित करें"
+      ],
+      "Verify recovery phone": [
+        "रिकवरी फ़ोन सत्यापित करें"
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Copy": [
+        "कॉपी करें"
+      ],
+      "Show": [
+        "दिखाएं"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**सुनिश्चित करें कि आप बनाने के बाद अपने रिकवरी फ्रेज़ को सुरक्षित रखें।** सुरक्षा कारणों से, हम आपके बदलावों को सहेजने के बाद इस वाक्यांश को स्टोर नहीं करते हैं, और आप इसे फिर से ${ BRAND_NAME } ऐप में नहीं देख पाएंगे।"
+      ],
+      "copy recovery phrase": [
+        "रिकवरी फ्रेज़ कॉपी करें"
+      ],
+      "Download PDF": [
+        "PDF डाउनलोड करें"
+      ],
+      "download PDF": [
+        "PDF डाउनलोड करें"
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "या पाठ के रूप में ${ copyRecoverySwitchButton } करें।"
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "या इसके बजाय ${ downloadRecoveryKitSwitchButton } करें।"
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "प्रति रेफरल ${ referrerRewardAmount }"
@@ -14020,47 +14693,8 @@
       ]
     },
     "Safety review": {
-      "Check account security": [
-        "खाते की सुरक्षा जांचें"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "यदि आप अपना लॉगिन विवरण खो देते हैं और अपने खाते को रीसेट करने की आवश्यकता पड़ती है, तो **यह अनिवार्य है** कि आपके पास **खाते की रिकवरी और डाटा रिकवरी विधि** दोनों उपलब्ध हों, अन्यथा आप अपने किसी भी ईमेल, संपर्क, फ़ाइल या पासवर्ड तक पहुँच नहीं पाएंगे।"
-      ],
       "Review account safety": [
         "खाता सुरक्षा की समीक्षा करें"
-      ],
-      "Safeguard account now": [
-        "अब अपना खाता सुरक्षित करें"
-      ],
-      "Safeguard your account": [
-        "अपने खाते को सुरक्षित करें"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "आपको अपने खाते और डाटा तक पहुँच खोने का जोखिम है।"
-      ],
-      "You are at risk of losing access to your data.": [
-        "आपको अपने डाटा तक पहुँच खोने का जोखिम है।"
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "आपके पास अपने खाता को और अधिक सुरक्षित करने के लिए अनुशंसित कार्रवाइयां हैं।"
-      ],
-      "You have recommended actions.": [
-        "आपके पास अनुशंसित कार्रवाइयाँ हैं।"
-      ],
-      "Your account and data can be recovered": [
-        "आपका खाता और डाटा पुनर्प्राप्त किया जा सकता है"
-      ],
-      "Your account and data can be recovered.": [
-        "आपका खाता और डेटा रिकवर किया जा सकता है।"
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "आपका खाता और डाटा पुनर्प्राप्त किया जा सकता है। देखें कि क्या आप अभी भी अपनी रिकवरी विधियों तक पहुँच सकते हैं।"
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "आपका खाता और डाटा रिकवर किया जा सकता है। आपके खाता को और सुरक्षित रखने के लिए अनुशंसित कार्रवाईयाँ उपलब्ध हैं।"
-      ],
-      "Your account is fully secure.": [
-        "आपका खाता पूरी तरह से सुरक्षित है।"
       ]
     },
     "saml: Action": {
@@ -14321,6 +14955,17 @@
     "Select search results": {
       "No results found": [
         "कोई परिणाम नहीं मिला"
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "अपने खाते की उच्चतम संभव सुरक्षा सुनिश्चित करने के लिए, ईमेल और एसएमएस के माध्यम से रिकवरी को अक्षम करें।"
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "यह सुनिश्चित करने के लिए कि आप हमेशा अपने ${ BRAND_NAME } खाते तक पहुंच सकें, अपना रिकवरी फ्रेज़ डाउनलोड करें।"
+      ],
+      "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
+        "आपके पास ${ PROTON_SENTINEL_NAME } की ओर से अनुशंसित कार्रवाइयां हैं"
       ]
     },
     "Server-Info": {
@@ -14594,11 +15239,11 @@
       ]
     },
     "session_recovery:settings:info": {
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "सेटिंग से पासवर्ड रीसेट को अस्वीकार करने के लिए, आपको अपना रिकवरी फ्रेज़ सेव करना होगा।"
+      ],
       "To disallow password reset, you must have a recovery method set up.": [
         "पासवर्ड रीसेट को निषेधित करने के लिए, आपको एक पुनर्प्राप्ति विधि सेट करनी होगी।"
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "अपने खाते की सुरक्षा और अपने डेटा की सुरक्षा को बढ़ाने के लिए, आप वेब एप्लिकेशन में अपने खाते की सेटिंग्स से पासवर्ड रीसेट का अनुरोध कर सकते हैं।"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14651,6 +15296,9 @@
       ]
     },
     "Settings section title": {
+      "Account": [
+        "खाता"
+      ],
       "Organization": [
         "संगठन"
       ]
@@ -15237,14 +15885,66 @@
       ]
     },
     "Status": {
+      "${ count } person": [
+        "${ count } व्यक्ति",
+        "${ count } लोग"
+      ],
       "... waiting": [
         "... प्रतीक्षा कर रहा है"
+      ],
+      "Add a phone number": [
+        "एक फ़ोन नंबर जोड़ें"
+      ],
+      "Add an email address": [
+        "एक ईमेल पता जोड़ें"
+      ],
+      "Available on this device": [
+        "इस डिवाइस पर उपलब्ध है"
       ],
       "completed": [
         "पूरा हुआ"
       ],
+      "Disable recovery by email": [
+        "ईमेल द्वारा रिकवरी अक्षम करें"
+      ],
+      "Disable recovery by phone": [
+        "फ़ोन द्वारा रिकवरी अक्षम करें"
+      ],
       "finalizing": [
         "अंतिम रूप दिया जा रहा है"
+      ],
+      "Generate a recovery phrase": [
+        "एक रिकवरी फ्रेज़ जनरेट करें"
+      ],
+      "Last changed ${ formattedDate }": [
+        "पिछली बार बदला गया ${ formattedDate }"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "आखिरी बार ${ formattedUpdateDate } को अपडेट हुआ"
+      ],
+      "Not saved": [
+        "सेव नहीं किया गया"
+      ],
+      "Off": [
+        "बंद"
+      ],
+      "On": [
+        "चालू"
+      ],
+      "Outdated": [
+        "पुराना हो चुका"
+      ],
+      "Saved": [
+        "सेव किया गया"
+      ],
+      "Unverified": [
+        "असत्यापित"
+      ],
+      "Verified": [
+        "सत्यापित"
+      ],
+      "Verify ${ value }": [
+        "${ value } सत्यापित करें"
       ]
     },
     "Storage": {
@@ -16359,6 +17059,9 @@
       "Access control": [
         "पहुँच नियंत्रण"
       ],
+      "Accessibility": [
+        "उपलब्धता"
+      ],
       "Account": [
         "खाता"
       ],
@@ -16402,8 +17105,14 @@
         "क्या ${ totalServerCount } सर्वर जोड़ें?",
         "क्या ${ totalServerCount } सर्वर जोड़ें?"
       ],
+      "Add a recovery contact": [
+        "रिकवरी संपर्क जोड़ें"
+      ],
       "Add address": [
         "पता जोड़े"
+      ],
+      "Add an emergency contact": [
+        "एक आपातकालीन संपर्क जोड़ें"
       ],
       "Add contact group name": [
         "संपर्क समूह का नाम जोड़ें"
@@ -16452,6 +17161,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "\"${ policyName }\" में उपयोगकर्ताओं को जोड़ें"
+      ],
+      "Advanced recovery options": [
+        "उन्नत रिकवरी विकल्प"
       ],
       "Allocate storage": [
         "भंडारण आवंटित करें"
@@ -16576,6 +17288,9 @@
       "Collaborate on documents": [
         "दस्तावेजों पर सहयोग करें"
       ],
+      "Compare plans": [
+        "प्लैन की तुलना करें"
+      ],
       "Confirm": [
         "पुष्टि करें"
       ],
@@ -16694,11 +17409,17 @@
       "Customize your mail import": [
         "अपना मेल आयात अनुकूलित करें"
       ],
-      "Data locked": [
-        "डेटा लॉक"
+      "Dashboard": [
+        "डैशबोर्ड"
       ],
       "Data recovery": [
         "डेटा पुनर्प्राप्ति"
+      ],
+      "Data recovery contacts": [
+        "डेटा रिकवरी संपर्क"
+      ],
+      "Data recovery options": [
+        "डेटा रिकवरी विकल्प"
       ],
       "Data retention": [
         "डेटा रिटेंशन"
@@ -16709,8 +17430,14 @@
       "Day theme": [
         "दिन का थीम"
       ],
+      "Deactivate current phrase?": [
+        "वर्तमान वाक्यांश निष्क्रिय करें?"
+      ],
       "Decrypt key": [
         "डिक्रिप्ट कुंजी"
+      ],
+      "Deep dive into email blog posts": [
+        "ईमेल ब्लॉग पोस्ट को गहराई से जानें"
       ],
       "Deep dive into VPN blog posts": [
         "VPN ब्लॉग पोस्ट में गहराई से जाएं"
@@ -16749,11 +17476,17 @@
       "Device": [
         "डिवाइस"
       ],
+      "Device data backup": [
+        "डिवाइस डेटा बैकअप"
+      ],
       "Device name": [
         "डिवाइस नाम"
       ],
       "Disable account monitor?": [
         "खाता मॉनिटर अक्षम करें?"
+      ],
+      "Disable device data backup?": [
+        "डिवाइस डेटा बैकअप अक्षम करें?"
       ],
       "Disable two-factor authentication": [
         "दो-कारक प्रमाणीकरण अक्षम करें"
@@ -16790,6 +17523,9 @@
       ],
       "Download apps": [
         "ऐप डाउनलोड करें"
+      ],
+      "Download your recovery phrase": [
+        "अपना रिकवरी फ्रेज़ डाउनलोड करें"
       ],
       "Downloads": [
         "डाउनलोड"
@@ -16848,6 +17584,12 @@
       "Email subscriptions": [
         "ईमेल सदस्यता"
       ],
+      "Email verification": [
+        "ईमेल सत्यापन"
+      ],
+      "Emergency access": [
+        "आपातकालीन एक्सेस"
+      ],
       "Enable advanced account protection": [
         "उन्नत खाता सुरक्षा सक्षम करें"
       ],
@@ -16903,9 +17645,6 @@
       "Generate missing keys": [
         "लापता कुंजी उत्पन्न करें"
       ],
-      "Generate new recovery phrase?": [
-        "नया पुनर्प्राप्ति वाक्यांश उत्पन्न करें"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "${ vpnPlus } लें सारे सर्वर एक्सेस करने के लिए"
       ],
@@ -16935,6 +17674,9 @@
       ],
       "Gift code": [
         "उपहार कोड"
+      ],
+      "Group membership": [
+        "ग्रुप सदस्यता"
       ],
       "Group role assignment paused": [
         "ग्रुप भूमिका असाइनमेंट रुका हुआ है"
@@ -17015,6 +17757,9 @@
       "IP": [
         "आईपी"
       ],
+      "Language and time": [
+        "भाषा और समय"
+      ],
       "Limit reached": [
         "सीमित पहुंच"
       ],
@@ -17069,6 +17814,9 @@
       "No events yet": [
         "अभी तक कोई कार्यक्रम नहीं"
       ],
+      "Notifications": [
+        "सूचना"
+      ],
       "Open": [
         "अनिर्णित"
       ],
@@ -17117,6 +17865,9 @@
       "Password": [
         "पासवर्ड"
       ],
+      "Password reset options": [
+        "पासवर्ड रीसेट विकल्प"
+      ],
       "Password reset settings": [
         "पासवर्ड रीसेट सेटिंग्स"
       ],
@@ -17134,6 +17885,9 @@
       ],
       "Payment verification": [
         "भुगतान सत्यापन"
+      ],
+      "Pending invitations": [
+        "लंबित न्योते"
       ],
       "Phone": [
         "फोन"
@@ -17156,6 +17910,9 @@
       "QR Code": [
         "QR कोड"
       ],
+      "QR code sign-in": [
+        "QR कोड साइन-इन"
+      ],
       "Recommended": [
         "सलाह"
       ],
@@ -17176,6 +17933,9 @@
       ],
       "Recovery file": [
         "पुनर्प्राप्ति फ़ाइल"
+      ],
+      "Recovery phrase": [
+        "रिकवरी फ्रेज़"
       ],
       "Refer a friend": [
         "एक मित्र को सूचित करें"
@@ -17333,8 +18093,14 @@
       "Sign out": [
         "साइन आउट करें"
       ],
+      "Signed in to another account": [
+        "दूसरे खाता में साइनइन किया गया"
+      ],
       "Signed in to member account": [
         "सदस्य खाते पे साइनइन हुए"
+      ],
+      "Signed-in reset": [
+        "साइन-इन रीसेट"
       ],
       "Simplify email distribution": [
         "ईमेल वितरण को सरल बनाएं"
@@ -17347,6 +18113,12 @@
       ],
       "Single-sign on (SSO)": [
         "सिंगल साइन-ऑन (SSO)"
+      ],
+      "SMS verification": [
+        "एसएमएस सत्यापन"
+      ],
+      "Some of your encrypted data is locked": [
+        "आपका कुछ एन्क्रिप्टेड डेटा लॉक है"
       ],
       "Something went wrong": [
         "कोई गड़बड़ हो गई"
@@ -17399,6 +18171,9 @@
       ],
       "Text": [
         "पाठ"
+      ],
+      "Theme": [
+        "थीम"
       ],
       "There are no events for your account": [
         "आपके खाते के लिए कोई कार्यक्रम नहीं हैं"
@@ -17456,6 +18231,9 @@
       ],
       "Upgrade complete!": [
         "अपग्रेड पूरा हुआ:"
+      ],
+      "Upgrade plan": [
+        "योजना अपग्रेड करें"
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
@@ -17583,11 +18361,23 @@
       "Your plan": [
         "आपका प्लान"
       ],
+      "Your recovery file": [
+        "आपकी रिकवरी फ़ाइल"
+      ],
+      "Your recovery phrase": [
+        "आपका रिकवरी फ्रेज़"
+      ],
+      "Your recovery setup": [
+        "आपका रिकवरी सेटअप"
+      ],
       "Your referrals": [
         "आपके रेफरल"
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Your storage": [
+        "आपका स्टोरेज"
       ],
       "Your subscriptions": [
         "आपकी सदस्यता"
@@ -17665,6 +18455,24 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "व्यवस्थापक उपयोगकर्ता खातों को प्रबंधित कर सकते हैं और अन्य उपयोगकर्ताओं को व्यवस्थापक अधिकार दे सकते हैं। केवल प्राथमिक व्यवस्थापक संगठन की योजना संपादित कर सकता है।"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "अपने रिकवर ईमेल पर भेजे गए एक-बार इस्तेमाल होने वाले कोड से अपने खाते को रिकवर करने की अनुमति दें"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "आपके रिकवर फ़ोन पर भेजे गए एक-बारगी कोड के साथ अपने खाते को रिकवर करने की अनुमति दें"
+      ],
+      "Allow resetting your password from the account settings": [
+        "खाता सेटिंग से अपना पासवर्ड रीसेट करने की अनुमति दें"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "साइनइन करने के लिए ${ BRAND_NAME } मोबाइल ऐप से QR कोड को स्कैन करने की अनुमति दें"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "विश्वसनीय संपर्कों को आपके खाते तक एक्सेस का अनुरोध करने की अनुमति दें"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "पासवर्ड रीसेट करने के बाद विश्वसनीय संपर्कों को आपके एन्क्रिप्ट किए गए डेटा को अनलॉक करने की अनुमति दें"
       ],
       "Any protection applied to suspicious activity": [
         "संदिग्ध गतिविधि पर लागू कोई भी सुरक्षा"
@@ -17752,6 +18560,15 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "मूल IP पता और इंटरनेट सेवा प्रदाता (ISP)"
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "यदि आप अपना पासवर्ड भूल जाते हैं तो अपने खाते और अपने एन्क्रिप्टेड डेटा को तुरंत अनलॉक करने के लिए 12-शब्दों का लंबा वाक्यांश सेव करें"
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "पासवर्ड रीसेट करने के बाद अपना डेटा रिकवर करने के लिए इस ब्राउज़र में एक एन्क्रिप्शन बैकअप फ़ाइल सहेजें"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "पासवर्ड रीसेट के बाद अपना डेटा रिकवर करने के लिए एक एन्क्रिप्शन बैकअप फ़ाइल सेव करें"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "आपके भेजे गए ईमेल के फुटर में ये डाल देगा: ${ signature } लिंक आपके रेफरल लिंक पे ले जाएगा। फुटर आपके हस्ताक्षर के नीचे आएगा। आप सेटिंग में अपने हस्ताक्षर को कभी भी बदल सकते है।"
@@ -17966,9 +18783,6 @@
       "Could not enable admin access for ${ n } user": [
         "${ n } उपयोगकर्ता के लिए एडमिन एक्सेस सक्षम करें नहीं किया जा सका",
         "${ n } उपयोगकर्ताओं के लिए एडमिन एक्सेस सक्षम करें नहीं किया जा सका"
-      ],
-      "Could not enable administrator access: ${ error }": [
-        "एडमिन एक्सेस सक्षम नहीं किया जा सका: ${ error }"
       ],
       "Enable manually": [
         "मैन्युअल रूप से सक्षम करें"
@@ -18189,9 +19003,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2-एफए"
-      ],
       "Administrators can't access the data of private users": [
         "प्रशासक निजी उपयोगकर्ताओं का डाटा एक्सेस नहीं कर सकते"
       ],
@@ -18200,21 +19011,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "निमंत्रण भेज दिया गया है, निमंत्रित सदस्य से जवाब की प्रतीक्षा में"
-      ],
-      "Invite sent": [
-        "न्योता भेजा गया"
-      ],
-      "It's you": [
-        "यह आप हैं"
-      ],
-      "Pending admin access": [
-        "लंबित एडमिन एक्सेस"
-      ],
-      "Private": [
-        "निजी"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "आपके पहचान प्रदाता द्वारा प्रदान किया गया SSO उपयोगकर्ता"

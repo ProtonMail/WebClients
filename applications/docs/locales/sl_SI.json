@@ -396,9 +396,6 @@
       "Get the apps": [
         "Namesti aplikacije"
       ],
-      "Get the deal": [
-        "Izkoristite posebno ponudbo"
-      ],
       "Get the writing assistant": [
         "Pridobite pomočnika pri pisanju"
       ],
@@ -1327,6 +1324,9 @@
       "Continue your subscription": [
         "Podaljšajte naročnino"
       ],
+      "Get 50% offer": [
+        "Izkoristite ponudbo s 50% popustom"
+      ],
       "Maybe later": [
         "Morda kasneje"
       ]
@@ -1381,24 +1381,6 @@
         "${ users } uporabnika",
         "${ users } uporabniki",
         "${ users } uporabnikov"
-      ],
-      "Subtotal": [
-        "Vmesni seštevek"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Vmesni seštevek za ${ cycle } mesec",
-        "Vmesni seštevek za ${ cycle } meseca",
-        "Vmesni seštevek za ${ cycle } mesece",
-        "Vmesni seštevek za ${ cycle } mesecev"
-      ],
-      "Total": [
-        "Skupaj"
-      ],
-      "Total for ${ n } month": [
-        "Skupaj za ${ n } mesec",
-        "Skupaj za ${ n } meseca",
-        "Skupaj za ${ n } mesece",
-        "Skupaj za ${ n } mesecev"
       ]
     },
     "Collapsible tooltip": {
@@ -3163,6 +3145,9 @@
       "Some contacts could not be deleted": [
         "Nekaterih stikov ni bilo mogoče izbrisati"
       ],
+      "Some documents could not be loaded": [
+        "Nekaterih dokumentov ni mogoče naložiti"
+      ],
       "Some groups could not be deleted": [
         "Nekaterih skupin ni bilo mogoče izbrisati"
       ],
@@ -4396,6 +4381,9 @@
       "Accept/decline": [
         "Sprejmi/zavrni"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Dostop do več kot 20.000 strežnikov v več kot 145 državah"
+      ],
       "Ad targeting": [
         "Ciljno oglaševanje"
       ],
@@ -4675,6 +4663,9 @@
       "Failing signatures will be re-signed by you": [
         "Neuspešni podpisi bodo znova podpisani z vašim podpisom."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Največja hitrost VPN s hitrostjo do 10 Gbps"
+      ],
       "File \"${ name }\" was deleted during download": [
         "Datoteka \"${ name }\" je bila med prenosom izbrisana"
       ],
@@ -4714,6 +4705,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlade in ponudniki internetnih storitev lahko spremljajo vašo spletno dejavnost. S skrivanjem vašega resničnega IP-ja in šifriranjem vaše dejavnosti postane vaše brskanje zasebno."
       ],
+      "Have some more time to decide without interruption.": [
+        "Imate še nekaj časa, da se odločite, ne da bi vas pri tem kaj motilo."
+      ],
       "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
         "Sporočite nam težavo in pomagajte izboljšati uporabniško izkušnjo. K poročilu priložite spodaj navedene podatke o napaki."
       ],
@@ -4725,6 +4719,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Če imate težave z ustvarjanjem računa, lahko zahtevate povabilo in odzvali se bomo v enem delovnem dnevu."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Če naročnino prekinete zdaj, boste dne ${ expiryDate } izgubili dostop do ${ BRAND_NAME } ${ planTitle }, vključno z naslednjimi funkcijami:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Če prekličete, se vaša naročnina na ${ planTitle } ne bo podaljšala, ko poteče dne ${ expiryDate }."
@@ -5017,6 +5014,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Počakajte, poteka iskanje stikov, ki vsebujejo podatke, šifrirane z neaktivnim ključem."
       ],
+      "Premium privacy protection across all your devices": [
+        "Vrhunska zaščita zasebnosti na vseh vaših napravah"
+      ],
       "Preparing link to file": [
         "Priprava povezave do datoteke"
       ],
@@ -5136,6 +5136,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50% popust"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Naročnina se samodejno obnovi na ${ cycle } mesec.",
@@ -5658,12 +5661,6 @@
       "${ BRAND_NAME } username": [
         "Uporabniško ime za ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } mesec",
-        "${ n } meseca",
-        "${ n } mesece",
-        "${ n } mesecv"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"
       ],
@@ -5747,6 +5744,12 @@
       ],
       "City": [
         "Mesto"
+      ],
+      "Client": [
+        "Odjemalec"
+      ],
+      "Client version": [
+        "Različica odjemalca"
       ],
       "Code is 6 digits without spaces": [
         "Koda vsebuje 6 števk brez presledkov"
@@ -5858,9 +5861,6 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Izkoristite posebno ponudbo"
       ],
       "Hide password": [
         "Skrij geslo"
@@ -6006,6 +6006,9 @@
       "Region": [
         "Regija"
       ],
+      "Regular expression": [
+        "Regularni izraz"
+      ],
       "Replace existing file": [
         "Zamenjaj obstoječo datoteko"
       ],
@@ -6038,6 +6041,9 @@
       ],
       "Skip folder": [
         "Preskoči mapo"
+      ],
+      "Starts with": [
+        "Se začne z"
       ],
       "Stop sharing": [
         "Ustavi skupno rabo"
@@ -6378,6 +6384,9 @@
       ]
     },
     "Message": {
+      "Regular expression rule": [
+        "Pravilo regularnega izraza"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaše brezplačno preizkusno obdobje se je izteklo. ${ nonAutoRenewalAction }"
       ],
@@ -9236,11 +9245,6 @@
         "Naročnina bo zmanjšana ob koncu obračunskega cikla."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Za vedno"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
@@ -10060,6 +10064,9 @@
       "Start import process": [
         "Začni uvažati"
       ],
+      "Stay for 50% off your next month": [
+        "V naslednjem mesecu izkoristite 50% popust"
+      ],
       "Stop sharing": [
         "Ustavi skupno rabo"
       ],
@@ -10068,9 +10075,6 @@
       ],
       "Subscription canceled": [
         "Naročnina preklicana"
-      ],
-      "Summer Sale": [
-        "Poletna razprodaja"
       ],
       "The link either does not exist or has expired": [
         "Povezava ne obstaja ali pa je potekla"

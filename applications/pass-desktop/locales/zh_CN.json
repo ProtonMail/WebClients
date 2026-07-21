@@ -577,12 +577,6 @@
       "Regenerate": [
         "重新生成"
       ],
-      "Regex invalid": [
-        "正则表达式无效"
-      ],
-      "Regex unsafe": [
-        "正则表达式不安全"
-      ],
       "Reject": [
         "拒绝"
       ],
@@ -1321,6 +1315,12 @@
       "PIN codes do not match": [
         "两次输入的 PIN 码不一致"
       ],
+      "Regex invalid": [
+        "正则表达式无效"
+      ],
+      "Regex unsafe": [
+        "正则表达式不安全"
+      ],
       "Request timed out": [
         "请求超时"
       ],
@@ -2030,6 +2030,9 @@
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "如果您不打算在其他付费账户上使用 SSH 代理，请在切换至该账户前记得禁用此设置。"
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "如果您使用 SSH 密钥签署 Git 提交，也请运行以下命令："
+      ],
       "Import the CSV file below.": [
         "导入以下 CSV 文件。"
       ],
@@ -2169,7 +2172,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接！"
       ],
       "Moving items": [
         "正在移动"
@@ -2644,6 +2647,9 @@
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "要隐藏您的个人邮箱地址，您可以创建一个别名联系人来掩盖您的地址。"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "要使 Git 与 ${ PASS_APP_NAME } SSH 代理配合使用，Git 必须使用 Windows OpenSSH，您可通过运行以下命令完成："
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "要从其他密码管理器迁移数据，请访问密码管理器，导出您的数据，然后上传到 ${ PASS_APP_NAME }。导入数据后，删除导出文件。"

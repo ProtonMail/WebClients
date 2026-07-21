@@ -553,12 +553,6 @@
       "Regenerate": [
         "Luo uusi"
       ],
-      "Regex invalid": [
-        "Lauseke on virheellinen"
-      ],
-      "Regex unsafe": [
-        "Lauseke ei ole turvallinen"
-      ],
       "Reject": [
         "Kieltäydy"
       ],
@@ -1311,6 +1305,12 @@
       ],
       "PIN codes do not match": [
         "PIN-koodit eivät täsmää"
+      ],
+      "Regex invalid": [
+        "Lauseke on virheellinen"
+      ],
+      "Regex unsafe": [
+        "Lauseke ei ole turvallinen"
       ],
       "Registration failure: ${ message }": [
         "Rekisteröintivirhe: ${ message }"

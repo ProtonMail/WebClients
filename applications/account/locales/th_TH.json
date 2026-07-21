@@ -135,9 +135,6 @@
       "Add domain": [
         "เพิ่มโดเมน"
       ],
-      "Add email address": [
-        "เพิ่มที่อยู่อีเมล"
-      ],
       "Add external address": [
         "เพิ่มที่อยู่ภายนอก"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "เพิ่ม PayPal"
-      ],
-      "Add phone number": [
-        "เพิ่มหมายเลขโทรศัพท์"
       ],
       "Add public holidays": [
         "เพิ่มวันหยุดนักขัตฤกษ์"
@@ -753,9 +747,6 @@
       "enable desktop notifications": [
         "เปิดการแจ้งเตือนบนเดสก์ท็อป"
       ],
-      "Enable device-based recovery": [
-        "เปิดใช้งานการกู้คืนโดยใช้อุปกรณ์"
-      ],
       "Enable multi-user support": [
         "เปิดใช้งานการสนับสนุนผู้ใช้หลายคน"
       ],
@@ -836,9 +827,6 @@
       ],
       "Generate password": [
         "สร้างรหัสผ่าน"
-      ],
-      "Generate recovery phrase": [
-        "สร้างวลีกู้คืนใหม่"
       ],
       "Generate token": [
         "สร้างโทเค็น"
@@ -1868,9 +1856,6 @@
       ],
       "View plans details": [
         "ดูรายละเอียดการสมัครสมาชิค"
-      ],
-      "View recovery settings": [
-        "ดูการตั้งค่าการกู้คืน"
       ],
       "View recovery setup details": [
         "ดูรายละเอียดการตั้งค่าการกู้คืน"
@@ -6717,9 +6702,6 @@
       "Add recovery contact": [
         "เพิ่มผู้ติดต่อกู้คืน"
       ],
-      "Add recovery method": [
-        "เพิ่มวิธีการกู้คืน"
-      ],
       "Added on ${ formattedDate }": [
         "เพิ่มเมื่อ ${ formattedDate }"
       ],
@@ -6960,14 +6942,8 @@
       "Subscription expired": [
         "การสมัครสมาชิกหมดอายุแล้ว"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "พวกเขาเพิ่มฉันเป็นผู้ติดต่อที่เชื่อถือได้ ฉันสามารถเข้าถึงบัญชีของพวกเขาได้ในกรณีฉุกเฉิน"
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "พวกเขาเพิ่มคุณเป็นผู้ติดต่อที่เชื่อถือได้ สามารถเข้าถึงบัญชีของพวกเขาได้ในกรณีฉุกเฉิน"
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "พวกเขาอาจขอสิทธิ์เข้าถึงบัญชีของฉันในกรณีฉุกเฉิน"
       ],
       "They may ask to access your account in case of an emergency.": [
         "บุคคลเหล่านี้อาจขอเข้าถึงบัญชีในกรณีฉุกเฉิน"
@@ -6986,9 +6962,6 @@
       ],
       "Time required before automatically granting them access": [
         "เวลาที่ต้องรอก่อนจะให้สิทธิ์เข้าถึงโดยอัตโนมัติ"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "การเพิ่มผู้ติดต่อกู้คืนข้อมูลต้องมีที่อยู่อีเมลหรือหมายเลขโทรศัพท์สำหรับการกู้คืน"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "หากต้องการปิดใช้งานวิธีการกู้คืนนี้ ให้ลบผู้ติดต่อกู้คืนทั้งหมดออก"
@@ -7040,12 +7013,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "คุณสามารถลบการเข้าถึงของพวกเขาได้ตลอดเวลาเพื่อกลับมาควบคุมบัญชีของคุณแต่เพียงผู้เดียว"
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "ยังไม่ได้ถูกกำหนดให้เป็นผู้ติดต่อกู้คืนสำหรับใคร"
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "คุณยังไม่ได้รับการกำหนดให้เป็นผู้ติดต่อฉุกเฉินสำหรับใคร"
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "คุณมีผู้ติดต่อฉุกเฉินครบจำนวนสูงสุด ${ limit } คนแล้ว"
@@ -10074,12 +10041,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "หมายเลขโทรศัพท์หนึ่งหมายเลขสามารถใช้ยืนยันบัญชี ${ BRAND_NAME } ได้เพียงหนึ่งบัญชีเท่านั้น"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "ไฟล์การกู้คืนช่วยให้ปลดล็อกและดูข้อมูลได้หลังจากการกู้คืนบัญชี"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "วลีกู้คืนช่วยให้คุณเข้าถึงบัญชีและกู้คืนข้อความที่เข้ารหัสของคุณได้หากคุณลืมรหัสผ่าน"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "ผู้ใช้คือบัญชีที่เชื่อมโยงกับชื่อผู้ใช้ กล่องจดหมาย และบุคคลเดียว"
       ],
@@ -10094,9 +10055,6 @@
       ],
       "Account successfully updated": [
         "อัปเดตบัญชีสำเร็จแล้ว"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "เปิดใช้งานวิธีการกู้คืนข้อมูลอย่างน้อยหนึ่งวิธีเพื่อให้แน่ใจว่าคุณจะสามารถเข้าถึงเนื้อหาในบัญชี ${ BRAND_NAME } ของคุณต่อไปได้หากคุณลืมรหัสผ่าน"
       ],
       "Active": [
         "กำลังเปิดใช้งานอยู่"
@@ -11112,9 +11070,6 @@
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "การสร้างวลีกู้คืนใหม่จะปิดใช้งานวลีกู้คืนปัจจุบัน"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "การสร้างวลีการกู้คืนใหม่จะปิดใช้งานวลีเดิมของคุณ"
-      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "รับ ${ AUTHENTICATOR_APP_NAME } สำหรับอุปกรณ์ทั้งหมดของคุณ"
       ],
@@ -11238,9 +11193,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "หากโซนเวลาของระบบไม่ตรงกับการตั้งค่าโซนเวลาปัจจุบัน ระบบจะขอให้คุณอัปเดต (สูงสุดวันละครั้ง)"
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "หากสิ่งนี้เกิดจากการรีเซ็ตรหัสผ่านเก่า คุณสามารถหยุดแสดงข้อความนี้ได้"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "หากพบปัญหาในการสร้างบัญชี โปรดส่งคำร้องขอการเชิญและเราจะตอบกลับคุณภายในหนึ่งวันทำการ"
       ],
@@ -11288,9 +11240,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "หากเพิ่งรีเซ็ตรหัสผ่านไปเมื่อเร็วๆ นี้ สามารถ ${ recoveryMethodLink } เพื่อปลดล็อกข้อมูลได้ หากปัญหานี้เกิดจากการรีเซ็ตรหัสผ่านครั้งเก่า สามารถปิดไม่ให้แสดงข้อความนี้อีกได้"
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "หากคุณเพิ่งรีเซ็ตรหัสผ่าน คุณสามารถใช้วิธีกู้คืนข้อมูลเพื่อปลดล็อกข้อมูลของคุณได้"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "หากองค์กรมีบุคคลสาธารณะ จัดการข้อมูลที่ละเอียดอ่อน หรืออาจตกเป็นเป้าหมายของการโจมตีทางไซเบอร์ ขอแนะนำอย่างยิ่งให้เปิดใช้งาน ${ PROTON_SENTINEL_NAME } สำหรับทุกคนในองค์กร"
@@ -11423,9 +11372,6 @@
       ],
       "Invited": [
         "เชิญแล้ว"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "ดูเหมือนว่าข้อมูลบางส่วนของคุณถูกเข้ารหัสและล็อกอยู่"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "ใช้เวลา 10 วันในการเปลี่ยนประเทศของเซิร์ฟเวอร์ ดังนั้นโปรดตรวจสอบให้แน่ใจว่าการเลือกถูกต้อง"
@@ -11943,9 +11889,6 @@
       "Please fill out this field.": [
         "โปรดกรอกข้อมูลในช่องข้อมูลนี้"
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "โปรดเก็บรักษาไว้อย่างปลอดภัย คุณจะต้องใช้มันเพื่อเข้าถึงบัญชีและถอดรหัสข้อมูลของคุณในกรณีที่มีการรีเซ็ตรหัสผ่าน"
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "โปรดทราบว่าหากลบตัวกรอง ${ nameDeleted } เราจะหยุดประมวลผลการดำเนินการอัตโนมัติทั้งหมดที่ตัวกรองดังกล่าวกระตุ้นให้ทำงาน"
       ],
@@ -12077,9 +12020,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "วลีกู้คืนได้ถูกทำสำเนาไปที่คลิปบอร์ด"
-      ],
-      "Recovery phrase downloaded": [
-        "ดาวน์โหลดวลีกู้คืนแล้ว"
       ],
       "Recovery phrase has been disabled": [
         "มีการปิดใช้งานวลีกู้คืน"
@@ -13032,9 +12972,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "เราขอแนะนำให้แจ้งสมาชิกในองค์กรและขอให้พวกเขาตั้งค่า 2FA สำหรับบัญชีของตนก่อนที่จะบังคับใช้ 2FA"
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "เราจัดเก็บข้อมูลการกู้คืนอย่างปลอดภัยบนอุปกรณ์ที่เชื่อถือได้ของคุณเพื่อป้องกันไม่ให้ข้อมูลของคุณสูญหาย"
-      ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "ขอแนะนำอย่างยิ่งให้ทุกคนเปิดใช้งานการกู้คืนด้วยวลีกู้คืน"
       ],
@@ -13514,12 +13451,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "ไฟล์กู้คืนจะกู้คืนการเข้าถึงอีเมล ผู้ติดต่อ ไฟล์ รหัสผ่าน และข้อมูลที่เข้ารหัสลับอื่นๆ ในบัญชีหลังจากรีเซ็ตรหัสผ่าน"
-      ],
-      "Your recovery phrase": [
-        "วลีกู้คืนของคุณ"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "วลีกู้คืนของคุณคือชุดคำ 12 คำที่สร้างขึ้นแบบสุ่มตามลำดับที่เฉพาะเจาะจง"
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "หากถูกล็อกออกจากบัญชี ${ BRAND_NAME } วลีกู้คืนจะช่วยให้เข้าสู่ระบบและกู้คืนข้อมูลได้ โดยวลีนี้ประกอบด้วยคำ 12 คำและทำหน้าที่เสมือนรหัสผ่านสำรอง"
@@ -15840,17 +15771,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "การกู้คืนโดยใช้อุปกรณ์"
-      ],
       "Notification phone number": [
         "หมายเลขโทรศัพท์สำหรับการแจ้งเตือน"
       ],
       "Recovery phone number": [
         "หมายเลขโทรศัพท์สำรอง"
-      ],
-      "Recovery phrase": [
-        "วลีกู้คืน"
       ],
       "Set recovery phone number": [
         "ตั้งค่าหมายเลขโทรศัพท์กู้คืน"
@@ -16167,9 +16092,6 @@
       "How to share via email": [
         "วิธีแชร์ผ่านอีเมล"
       ],
-      "How to unlock data": [
-        "วิธีปลดล็อกข้อมูล"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "วิธีใช้ ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16193,9 +16115,6 @@
       ],
       "Learn more": [
         "เรียนรู้เพิ่มเติม"
-      ],
-      "Learn more about data recovery": [
-        "เรียนรู้เพิ่มเติมเกี่ยวกับการกู้คืนข้อมูล"
       ],
       "Manage addresses": [
         "จัดการที่อยู่"
@@ -21072,146 +20991,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **ปิดใช้งานการกู้คืนทางโทรศัพท์** เพื่อป้องกันไม่ให้ผู้โจมตียึดครองบัญชี"
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **เปิดใช้งานการกู้คืนทางโทรศัพท์** เพื่อเข้าถึงบัญชีของคุณได้อีกครั้งหากคุณลืมรหัสผ่าน"
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } จะใช้ที่อยู่นี้เพื่อแจ้งข้อมูลอัปเดตเกี่ยวกับความปลอดภัยของบัญชี"
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } จะใช้ที่อยู่นี้เพื่อส่งรหัสรีเซ็ตทางอีเมลเมื่อคุณรีเซ็ตรหัสผ่าน"
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } จะใช้หมายเลขโทรศัพท์นี้เพื่อส่งรหัสรีเซ็ตทาง SMS เมื่อคุณรีเซ็ตรหัสผ่าน"
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } เพื่อให้แน่ใจว่าข้อมูลของคุณจะสามารถกู้คืนได้"
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**ปิดใช้งานการรีเซ็ตบัญชีทางอีเมล** เพื่อป้องกันไม่ให้ผู้โจมตียึดครองบัญชี"
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**เปิดใช้งานการกู้คืนทางอีเมล** เพื่อเข้าถึงบัญชีของคุณได้อีกครั้งหากคุณลืมรหัสผ่าน"
-      ],
-      "Account reset by email has been disabled": [
-        "การรีเซ็ตบัญชีทางอีเมลถูกปิดใช้งานแล้ว"
-      ],
-      "Account reset by phone has been disabled": [
-        "การรีเซ็ตบัญชีทางโทรศัพท์ถูกปิดใช้งานแล้ว"
-      ],
-      "Account safety review": [
-        "การตรวจสอบความปลอดภัยของบัญชี"
-      ],
-      "Add a phone number": [
-        "เพิ่มหมายเลขโทรศัพท์"
-      ],
-      "Add a recovery email": [
-        "เพิ่มอีเมลการกู้คืน"
-      ],
-      "Add a recovery email address": [
-        "เพิ่มที่อยู่อีเมลสำรอง"
-      ],
-      "Add a recovery phone number": [
-        "เพิ่มหมายเลขโทรศัพท์สำรอง"
-      ],
-      "Add an alternative email address": [
-        "เพิ่มที่อยู่อีเมลสำรอง"
-      ],
-      "Add an email": [
-        "เพิ่มอีเมล"
-      ],
-      "Back to Safety Review": [
-        "กลับไปที่การตรวจสอบความปลอดภัย"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "เนื่องจากมีการรีเซ็ตรหัสผ่าน วลีกู้คืนปัจจุบันจะสามารถใช้ได้เฉพาะกับการกู้คืนข้อมูลที่สร้างขึ้นก่อนการรีเซ็ตรหัสผ่านเท่านั้น"
-      ],
-      "Can be used to regain access to your account and data": [
-        "สามารถใช้เพื่อเข้าถึงบัญชีและข้อมูลของคุณได้อีกครั้ง"
-      ],
-      "Check account security": [
-        "ตรวจสอบความปลอดภัยของบัญชี"
-      ],
       "Code sent to ${ boldValue }": [
         "ได้ส่งรหัสไปที่ ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "ดำเนินการตรวจสอบความปลอดภัยต่อ"
-      ],
-      "Device-based recovery enabled": [
-        "เปิดใช้งานการกู้คืนโดยใช้อุปกรณ์แล้ว"
-      ],
-      "Disable account reset by email": [
-        "ปิดใช้งานการรีเซ็ตบัญชีทางอีเมล"
-      ],
-      "Disable recovery by email": [
-        "ปิดใช้งานการกู้คืนทางอีเมล"
-      ],
-      "Disable recovery by phone": [
-        "ปิดใช้งานการกู้คืนทางโทรศัพท์"
-      ],
-      "Download ${ size }": [
-        "ดาวน์โหลด ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "ดาวน์โหลดวลีกู้คืน"
-      ],
-      "Email address": [
-        "ที่อยู่อีเมล"
-      ],
-      "Enable device-based recovery": [
-        "เปิดใช้งานการกู้คืนโดยใช้อุปกรณ์"
-      ],
-      "Enable recovery by email": [
-        "เปิดใช้งานการกู้คืนทางอีเมล"
-      ],
-      "Enable recovery by phone": [
-        "เปิดใช้งานการกู้คืนทางโทรศัพท์"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "เข้าใจดีว่า จะไม่สามารถกู้คืนข้อมูลที่ถูกล็อกในปัจจุบันด้วยวลีกู้คืนนี้ได้"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "หากคุณลืมรหัสผ่าน ${ BRAND_NAME } และต้องการรีเซ็ต ครั้งถัดไปที่คุณเข้าสู่ระบบบนอุปกรณ์นี้โดยใช้รหัสผ่านใหม่ การเข้าถึงบัญชี ${ BRAND_NAME } ของคุณอย่างเต็มรูปแบบจะได้รับการกู้คืน"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "หากคุณลืมรหัสผ่าน ${ BRAND_NAME } และต้องการรีเซ็ต ครั้งถัดไปที่คุณเข้าสู่ระบบอุปกรณ์นี้โดยใช้รหัสผ่านใหม่ การเข้าถึงบัญชี ${ BRAND_NAME } ของคุณอย่างเต็มรูปแบบจะได้รับการกู้คืน"
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "หากถูกล็อกออกจากบัญชี ${ BRAND_NAME } วลีกู้คืนจะช่วยให้สามารถเข้าสู่ระบบและกู้คืนข้อมูลได้"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "หากทำรายละเอียดการเข้าสู่ระบบหายและจำเป็นต้องรีเซ็ตบัญชี **จำเป็นอย่างยิ่ง** ที่จะต้องมีทั้ง **วิธีการกู้คืนบัญชีและข้อมูล** มิฉะนั้นอาจไม่สามารถเข้าถึงอีเมล รายชื่อติดต่อ ไฟล์ หรือรหัสผ่านใดๆ ได้"
-      ],
-      "in case we need to contact you": [
-        "ในกรณีที่เราจำเป็นต้องติดต่อคุณ"
       ],
       "Invalid code": [
         "รหัสไม่ถูกต้อง"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "นี่เป็นวิธีเดียวที่จะกู้คืนบัญชีได้อย่างสมบูรณ์ ดังนั้นโปรดเก็บรักษาไว้ในที่ปลอดภัย"
-      ],
-      "Recovery email address": [
-        "ที่อยู่อีเมลการกู้คืน"
-      ],
-      "Recovery phone number": [
-        "หมายเลขโทรศัพท์การกู้คืน"
-      ],
       "Review account safety": [
         "ตรวจสอบความปลอดภัยบัญชี"
-      ],
-      "Safeguard account now": [
-        "ปกป้องบัญชีทันที"
-      ],
-      "Safeguard your account": [
-        "ปกป้องบัญชี"
-      ],
-      "Safeguard your account further": [
-        "ปกป้องบัญชีของคุณเพิ่มเติม"
       ],
       "Safety review": [
         "การตรวจสอบความปลอดภัย"
@@ -21219,194 +21006,8 @@
       "Send a new code": [
         "ส่งรหัสใหม่"
       ],
-      "Show more": [
-        "แสดงเพิ่มเติม"
-      ],
-      "Take action to secure your account": [
-        "ดำเนินการเพื่อรักษาความปลอดภัยบัญชีของคุณ"
-      ],
-      "There was an error generating your recovery phrase": [
-        "เกิดข้อผิดพลาดในการสร้างวลีกู้คืน"
-      ],
-      "There was an error verifying your email": [
-        "เกิดข้อผิดพลาดในการยืนยันอีเมลของคุณ"
-      ],
-      "There was an error verifying your recovery email": [
-        "เกิดข้อผิดพลาดในการยืนยันอีเมลการกู้คืนของคุณ"
-      ],
-      "There was an error verifying your recovery phone": [
-        "เกิดข้อผิดพลาดในการยืนยันโทรศัพท์การกู้คืนของคุณ"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "เพื่อกู้คืนข้อมูลของคุณโดยอัตโนมัติเมื่อคุณเข้าสู่ระบบบนอุปกรณ์ที่เชื่อถือได้"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "เพื่อให้แน่ใจว่าที่อยู่อีเมลเป็นของคุณ โปรดป้อนรหัสยืนยันที่ส่งไปที่ ${ boldEmail }"
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "เพื่อให้แน่ใจว่าหมายเลขโทรศัพท์เป็นของคุณ โปรดป้อนรหัสยืนยันที่ส่งไปที่ ${ boldPhoneNumber }"
-      ],
-      "to prevent attackers from taking over your account": [
-        "เพื่อป้องกันไม่ให้ผู้โจมตียึดครองบัญชีของคุณ"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "เพื่อกู้คืนบัญชีและข้อมูลของคุณหากคุณถูกล็อกไม่ให้เข้าใช้งาน"
-      ],
-      "to recover your account if you're ever locked out": [
-        "เพื่อกู้คืนบัญชีของคุณหากคุณถูกล็อกไม่ให้เข้าใช้งาน"
-      ],
       "update it now": [
         "อัปเดตตอนนี้เลย"
-      ],
-      "Update your recovery phrase": [
-        "อัปเดตวลีกู้คืน"
-      ],
-      "Update your recovery phrase?": [
-        "อัปเดตวลีกู้คืนหรือไม่?"
-      ],
-      "Verify": [
-        "ยืนยัน"
-      ],
-      "Verify your email address": [
-        "ยืนยันที่อยู่อีเมลของคุณ"
-      ],
-      "Verify your phone number": [
-        "ยืนยันหมายเลขโทรศัพท์ของคุณ"
-      ],
-      "Verify your recovery email address": [
-        "ยืนยันที่อยู่อีเมลการกู้คืนของคุณ"
-      ],
-      "Verify your recovery phone number": [
-        "ยืนยันหมายเลขโทรศัพท์การกู้คืนของคุณ"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "พบข้อผิดพลาดขณะสร้างวลีกู้คืน โปรดลองอีกครั้งในภายหลัง หรือติดต่อฝ่ายสนับสนุนหากปัญหายังคงอยู่"
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "เราพบข้อผิดพลาดขณะยืนยันอีเมลของคุณ โปรดลองอีกครั้งในภายหลัง หรือติดต่อฝ่ายสนับสนุนหากปัญหายังคงอยู่"
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "เราพบข้อผิดพลาดขณะยืนยันอีเมลการกู้คืนของคุณ โปรดลองใหม่อีกครั้งในภายหลัง หรือติดต่อฝ่ายสนับสนุนหากปัญหายังคงอยู่"
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "เราพบข้อผิดพลาดขณะยืนยันโทรศัพท์การกู้คืนของคุณ โปรดลองใหม่อีกครั้งในภายหลัง หรือติดต่อฝ่ายสนับสนุนหากปัญหายังคงอยู่"
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "เมื่อคุณเปิดใช้งานการกู้คืนโดยใช้อุปกรณ์ ${ BRAND_NAME } จะจัดเก็บคีย์เชนสำรองข้อมูลที่เข้ารหัสไว้เป็นไฟล์ในพื้นที่จัดเก็บเว็บบนเบราว์เซอร์ของคุณ"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "คุณเสี่ยงต่อการสูญเสียการเข้าถึงบัญชีและข้อมูล"
-      ],
-      "You are at risk of losing access to your data.": [
-        "คุณเสี่ยงต่อการสูญเสียการเข้าถึงข้อมูล"
-      ],
-      "You can disable this at any time.": [
-        "คุณสามารถปิดใช้งานสิ่งนี้ได้ตลอดเวลา"
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "สามารถใช้วลีกู้คืนในวลีกู้คืนนี้เพื่อกู้คืนบัญชีได้อย่างสมบูรณ์เมื่อรีเซ็ตรหัสผ่าน โปรดตรวจสอบให้แน่ใจว่าได้เก็บรักษาไว้ในที่ปลอดภัย"
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "คุณสามารถใช้อีเมลเพื่อกู้คืนสิทธิ์การเข้าถึงบัญชีได้หากลืมรหัสผ่าน"
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "คุณสามารถใช้อีเมลการกู้คืนของคุณเพื่อเข้าถึงบัญชีของคุณได้อีกครั้งหากคุณลืมรหัสผ่าน"
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "คุณสามารถใช้โทรศัพท์การกู้คืนของคุณเพื่อเข้าถึงบัญชีของคุณได้อีกครั้งหากคุณลืมรหัสผ่าน"
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "เคยดาวน์โหลดวลีกู้คืนไว้ก่อนหน้านี้แล้ว การดาวน์โหลดวลีใหม่จะ **ปิดใช้งานวลีเดิม**"
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "คุณมีการดำเนินการที่แนะนำเพื่อปกป้องบัญชีของคุณเพิ่มเติม"
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "คุณมีการดำเนินการที่แนะนำเพื่อปกป้องบัญชีของคุณ"
-      ],
-      "You have recommended actions.": [
-        "มีการดำเนินการที่แนะนำ"
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "คุณจะไม่สามารถใช้ที่อยู่นี้เพื่อรีเซ็ตบัญชีของคุณได้อีกต่อไป"
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "คุณจะไม่สามารถใช้หมายเลขโทรศัพท์นี้เพื่อรีเซ็ตบัญชีของคุณได้อีกต่อไป"
-      ],
-      "Your account and data can be recovered": [
-        "บัญชีและข้อมูลสามารถกู้คืนได้"
-      ],
-      "Your account and data can be recovered.": [
-        "บัญชีและข้อมูลของคุณสามารถกู้คืนได้"
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "บัญชีและข้อมูลสามารถกู้คืนได้ ตรวจสอบว่ายังสามารถเข้าถึงวิธีการกู้คืนได้หรือไม่"
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "บัญชีและข้อมูลสามารถกู้คืนได้ คุณมีคำแนะนำในการดำเนินการเพื่อปกป้องบัญชีเพิ่มเติม"
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "บัญชีและข้อมูลของคุณสามารถกู้คืนได้ คุณมีรายการแนะนำที่ต้องดำเนินการ"
-      ],
-      "Your account is fully secure.": [
-        "บัญชีปลอดภัยอย่างสมบูรณ์"
-      ],
-      "Your account is secure.": [
-        "บัญชีของคุณปลอดภัย"
-      ],
-      "Your email address is:": [
-        "ที่อยู่อีเมลของคุณคือ:"
-      ],
-      "Your email is set": [
-        "ตั้งค่าอีเมลของคุณแล้ว"
-      ],
-      "Your recovery email": [
-        "อีเมลการกู้คืนของคุณ"
-      ],
-      "Your recovery email address is:": [
-        "ที่อยู่อีเมลการกู้คืนคือ:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "อีเมลและโทรศัพท์การกู้คืนของคุณสามารถ **กู้คืนการเข้าถึงบัญชีของคุณได้เท่านั้น**"
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "อีเมลการกู้คืนของคุณสามารถ **กู้คืนการเข้าถึงบัญชีของคุณได้เท่านั้น**"
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "อีเมลการกู้คืนอาจถูกผู้โจมตีใช้เพื่อยึดครองบัญชี ${ disableEmail } เพื่อเพิ่มความปลอดภัยของบัญชี"
-      ],
-      "Your recovery email has been enabled": [
-        "เปิดใช้งานอีเมลการกู้คืนของคุณแล้ว"
-      ],
-      "Your recovery email is set": [
-        "ตั้งค่าอีเมลการกู้คืนของคุณแล้ว"
-      ],
-      "Your recovery methods": [
-        "วิธีการกู้คืนของคุณ"
-      ],
-      "Your recovery phone": [
-        "โทรศัพท์การกู้คืนของคุณ"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "โทรศัพท์การกู้คืนของคุณสามารถ **กู้คืนการเข้าถึงบัญชีของคุณได้เท่านั้น**"
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "โทรศัพท์กู้คืนอาจถูกผู้โจมตีใช้เพื่อยึดครองบัญชี ${ disablePhone } เพื่อเพิ่มความปลอดภัยของบัญชี"
-      ],
-      "Your recovery phone has been enabled": [
-        "เปิดใช้งานโทรศัพท์การกู้คืนของคุณแล้ว"
-      ],
-      "Your recovery phone is set": [
-        "ตั้งค่าโทรศัพท์การกู้คืนของคุณแล้ว"
-      ],
-      "Your recovery phone number is:": [
-        "หมายเลขโทรศัพท์กู้คืนคือ:"
-      ],
-      "Your recovery phrase": [
-        "วลีกู้คืน"
-      ],
-      "Your recovery phrase is set": [
-        "ตั้งค่าวลีกู้คืนแล้ว"
       ]
     },
     "safety_review": {
@@ -22209,9 +21810,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "เพื่อไม่อนุญาตให้รีเซ็ตรหัสผ่าน คุณต้องตั้งค่าวิธีการกู้คืนไว้"
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "เพื่อเพิ่มความปลอดภัยให้กับบัญชีและปกป้องข้อมูลของคุณ คุณสามารถขอรีเซ็ตรหัสผ่านได้จากการตั้งค่าบัญชีในแอปพลิเคชั่นเว็บ"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -25285,9 +24883,6 @@
       "Data collection": [
         "การเก็บรวบรวมข้อมูล"
       ],
-      "Data locked": [
-        "ข้อมูลถูกล็อค"
-      ],
       "Data recovery": [
         "กู้คืนข้อมูล"
       ],
@@ -25656,9 +25251,6 @@
       ],
       "Generate missing keys": [
         "สร้างคีย์ที่หายไป"
-      ],
-      "Generate new recovery phrase?": [
-        "สร้างวลีกู้คืนใหม่หรือไม่?"
       ],
       "Generate SMTP token": [
         "สร้างโทเค็น SMTP"
@@ -27313,9 +26905,6 @@
       "Could not enable admin access for ${ n } user": [
         "ไม่สามารถเปิดใช้งานการเข้าถึงระดับผู้ดูแลระบบสำหรับผู้ใช้ ${ n } ราย"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "ไม่สามารถเปิดใช้งานการเข้าถึงของผู้ดูแลระบบ: ${ error }"
-      ],
       "Enable admin access?": [
         "เปิดใช้งานการเข้าถึงของผู้ดูแลระบบหรือไม่?"
       ],
@@ -27575,9 +27164,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "ผู้ดูแลระบบไม่สามารถเข้าถึงข้อมูลของผู้ใช้ส่วนตัว"
       ],
@@ -27586,21 +27172,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "ส่งคำเชิญแล้ว รอการตอบกลับจากสมาชิกที่ได้รับเชิญ"
-      ],
-      "Invite sent": [
-        "ส่งคำเชิญแล้ว"
-      ],
-      "It's you": [
-        "นี่คือคุณ"
-      ],
-      "Pending admin access": [
-        "รอการเข้าถึงของผู้ดูแลระบบ"
-      ],
-      "Private": [
-        "ส่วนตัว"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "ผู้ใช้ SSO ที่จัดหาโดยผู้ให้บริการข้อมูลระบุตัวตนของคุณ"

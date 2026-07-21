@@ -417,9 +417,6 @@
       "Get the apps": [
         "Få appsene"
       ],
-      "Get the deal": [
-        "Gør brug af tilbuddet"
-      ],
       "Get the writing assistant": [
         "Hent skriveassistenten"
       ],
@@ -1324,7 +1321,7 @@
         "Status"
       ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
       ],
       "To migrate this user, enable their account in your Google Workspace Admin Console.": [
         "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
@@ -1461,6 +1458,9 @@
       "Continue your subscription": [
         "Fortsæt dit abonnement"
       ],
+      "Get 50% offer": [
+        "Få et 50%-tilbud"
+      ],
       "Maybe later": [
         "Måske senere"
       ]
@@ -1520,20 +1520,6 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
-      ],
-      "Subtotal": [
-        "I alt"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Deltotal for ${ cycle } måned",
-        "Deltotal for ${ cycle } måneder"
-      ],
-      "Total": [
-        "I alt"
-      ],
-      "Total for ${ n } month": [
-        "I alt for ${ n } måned",
-        "I alt for ${ n } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -3204,6 +3190,9 @@
       "Failed to resend invitation": [
         "Kunne ikke gensende invitation"
       ],
+      "Failed to trash document": [
+        "Dokumentet kunne ikke flyttes til papirkurven"
+      ],
       "Failed to unshare node": [
         "Kunne ikke fjerne deling af knude"
       ],
@@ -3397,6 +3386,9 @@
       ],
       "Some contacts could not be deleted": [
         "Nogle kontakter kunne ikke slettes"
+      ],
+      "Some documents could not be loaded": [
+        "Nogle dokumenter kunne ikke indlæses"
       ],
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
@@ -4598,6 +4590,9 @@
       "Accept/decline": [
         "Accepter/afvis"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Adgang til mere end 20.000 servere i 145 lande"
+      ],
       "Ad targeting": [
         "Annoncemålretning"
       ],
@@ -4911,6 +4906,9 @@
       "Failing signatures will be re-signed by you": [
         "Manglende signaturer vil blive genunderskrevet af dig."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Hurtigste VPN-hastigheder – op til 10Gbps"
+      ],
       "File \"${ name }\" was deleted during download": [
         "Filen \"${ name }\" blev slettet under download"
       ],
@@ -4965,6 +4963,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
       ],
+      "Have some more time to decide without interruption.": [
+        "Få lidt mere tid til overvejelse – uden afbrydelse."
+      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Hjælp os med at forbedre denne situation ved at rapportere problemet. Hvis du er tryg med at dele regnearksindhold skal du vedhæfte nedenstående fejlfindingsoplysninger til din rapport."
       ],
@@ -4982,6 +4983,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -5286,6 +5290,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
       ],
+      "Premium privacy protection across all your devices": [
+        "Premium privatlivsbeskyttelse på alle dine enheder"
+      ],
       "Preparing link to file": [
         "Forbereder link til fil"
       ],
@@ -5408,6 +5415,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Bliv på dit abonnement og få 50% rabat næste måned"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Abonnement fornyes automatisk hver ${ cycle } måned.",
@@ -5961,10 +5971,6 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
       ],
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tegn"
       ],
@@ -6060,6 +6066,12 @@
       ],
       "City": [
         "By"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversion"
       ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
@@ -6189,9 +6201,6 @@
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Tag imod tilbuddet"
       ],
       "Hide password": [
         "Skjul adgangskode"
@@ -6431,7 +6440,7 @@
         "Upload billede"
       ],
       "URL wildcard pattern": [
-        "URL-jokertegnmønster"
+        "URL-wildcarddomæne"
       ],
       "Username": [
         "Brugernavn"
@@ -6783,7 +6792,7 @@
         "Regel for regulært udtryk"
       ],
       "Wildcard pattern matching rule": [
-        "Regel for jokertegnmønstermatch"
+        "Regel for wildcardmønster"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er udløbet. ${ nonAutoRenewalAction }"
@@ -8002,6 +8011,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" omdøbt"
       ],
+      "\"Document deleted permanently": [
+        "\"Dokument slettet permanent"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } element kunne ikke dekrypteres",
         "${ count } elementer kunne ikke dekrypteres"
@@ -8103,6 +8115,9 @@
       "Failed to accept share invitation": [
         "Kunne ikke acceptere invitation til at dele"
       ],
+      "Failed to delete document": [
+        "Kunne ikke slette dokumentet"
+      ],
       "Failed to download files: ${ err }": [
         "Kunne ikke downloade filer: ${ err }"
       ],
@@ -8117,6 +8132,12 @@
       ],
       "Failed to rename document": [
         "Kunne ikke omdøbe dokumentet"
+      ],
+      "Failed to restore document": [
+        "Kunne ikke genoprette dokument"
+      ],
+      "Failed to trash document": [
+        "Dokumentet kunne ikke flyttes til papirkurven"
       ],
       "Failed to upload files: ${ err }": [
         "Kunne ikke uploade filer: ${ err }"
@@ -9752,11 +9773,6 @@
         "Abonnementet vil blive nedgraderet ved udgangen af faktureringscyklussen."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Livstid"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagerplads"
@@ -10560,6 +10576,9 @@
       "Start import process": [
         "Start importeringsprocessen"
       ],
+      "Stay for 50% off your next month": [
+        "Bliv hængende for 50% rabat i den næste måned"
+      ],
       "Stop sharing": [
         "Stop deling"
       ],
@@ -10568,9 +10587,6 @@
       ],
       "Subscription canceled": [
         "Abonnement annulleret"
-      ],
-      "Summer Sale": [
-        "Sommerudsalg"
       ],
       "The link either does not exist or has expired": [
         "Linket findes enten ikke eller er udløbet"
@@ -10927,7 +10943,7 @@
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svindel- eller phishing-websteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",

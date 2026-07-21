@@ -71,6 +71,9 @@
       "Add address or domain": [
         "주소 및 도메인 추가"
       ],
+      "Add and verify": [
+        "추가 및 확인"
+      ],
       "Add another account": [
         "다른 계정 추가"
       ],
@@ -88,6 +91,9 @@
       ],
       "Add PayPal": [
         "PayPal 추가"
+      ],
+      "Add recovery options": [
+        "복구 방법 추가"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "${ MAIL_APP_NAME } 서명에 추천인 링크 추가"
@@ -140,6 +146,9 @@
       "Cancel": [
         "취소"
       ],
+      "Cancel request": [
+        "요청 취소"
+      ],
       "Cancel subscription": [
         "구독 취소"
       ],
@@ -166,6 +175,9 @@
       ],
       "Check import progress": [
         "가져오기 진행상황 확인"
+      ],
+      "Check now": [
+        "지금 확인"
       ],
       "Choose a file or drag it here": [
         "파일을 선택하거나 드래그하세요"
@@ -205,6 +217,9 @@
       ],
       "Compare plans": [
         "플랜 비교하기"
+      ],
+      "Configure new device profile": [
+        "새로운 기기 프로파일 구성"
       ],
       "Configure SAML": [
         "SAML 구성"
@@ -287,6 +302,9 @@
       "Create new policy": [
         "새 정책 추가"
       ],
+      "Create recovery phrase": [
+        "새로운 복구 키 생성"
+      ],
       "Create users": [
         "사용자 만들기"
       ],
@@ -313,6 +331,9 @@
       ],
       "Delete account": [
         "계정 삭제"
+      ],
+      "Delete device profile": [
+        "기기 프로파일 삭제"
       ],
       "Delete Gateway": [
         "게이트웨이 삭제"
@@ -410,6 +431,9 @@
       "Download recovery file": [
         "복구 파일 다운로드"
       ],
+      "Download updated file": [
+        "업데이트된 파일 다운로드"
+      ],
       "Edit": [
         "편집"
       ],
@@ -503,14 +527,17 @@
       "Forgot password?": [
         "비밀번호를 잊어버리셨나요?"
       ],
+      "Generate device profile": [
+        "기기 프로파일 생성"
+      ],
+      "Generate new phrase": [
+        "새로운 키 생성"
+      ],
       "Generate new recovery phrase": [
         "새로운 복구시점 만들기"
       ],
       "Generate password": [
         "비밀번호 생성"
-      ],
-      "Generate recovery phrase": [
-        "복구 코드 생성"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName }을(를) ${ priceCoupon }로 구매하기"
@@ -608,6 +635,9 @@
       "I don’t have my backup codes": [
         "백업 코드를 가지고 있지 않아요."
       ],
+      "Ignore": [
+        "무시"
+      ],
       "Import": [
         "불러오기"
       ],
@@ -620,11 +650,20 @@
       "Increase": [
         "증가"
       ],
+      "Instructions": [
+        "지침"
+      ],
       "Invite": [
         "초대"
       ],
       "Invite user": [
         "사용자 초대"
+      ],
+      "JumpCloud": [
+        "JumpCloud"
+      ],
+      "Keep": [
+        "보관"
       ],
       "Keep current plan": [
         "현재 요금제 유지"
@@ -695,6 +734,9 @@
       "Mark as resolved": [
         "해결됨으로 표시"
       ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
+      ],
       "More benefits": [
         "더 많은 혜택"
       ],
@@ -739,6 +781,9 @@
       ],
       "Open navigation": [
         "탐색 열기"
+      ],
+      "Opt out": [
+        "선택 취소"
       ],
       "Or": [
         "또는"
@@ -896,6 +941,9 @@
       "Review changes": [
         "변경 사항 검토"
       ],
+      "Review recovery options": [
+        "복구 방법 검토"
+      ],
       "Revoke": [
         "취소"
       ],
@@ -914,6 +962,9 @@
       "Save address": [
         "주소 저장"
       ],
+      "Save and verify": [
+        "저장 및 인증"
+      ],
       "Save SAML configuration": [
         "SAML 구성 저장"
       ],
@@ -928,6 +979,9 @@
       ],
       "Search settings": [
         "검색 설정"
+      ],
+      "Secure account": [
+        "계정 보호"
       ],
       "See DNS TXT record": [
         "DNS TXT 레코드 보기"
@@ -1000,6 +1054,9 @@
       ],
       "Set up a custom domain": [
         "커스텀 도메인 설정"
+      ],
+      "Set up account recovery": [
+        "계정 복구 설정"
       ],
       "Set up auto-forwarding from Gmail": [
         "Gmail에서 자동 가져오기 설정"
@@ -1246,6 +1303,9 @@
       ],
       "View plans details": [
         "플랜 세부정보 보기"
+      ],
+      "View recovery setup details": [
+        "복구 방법 설정 정보 보기"
       ],
       "Void": [
         "버리기"
@@ -2210,6 +2270,9 @@
       "Discover and set up features": [
         "기능 알아보고 설정하기"
       ],
+      "Get 50% offer": [
+        "50% 할인 받기"
+      ],
       "Maybe later": [
         "나중에"
       ],
@@ -2469,7 +2532,7 @@
         "첨부 파일이 있는 이메일 전송"
       ],
       "Upload any new files": [
-        "새로운 파일 업로드"
+        "새로운 파일 업로드를 할 수 없게 됩니다"
       ],
       "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
         "구독이 ${ endDate }에 종료되면 무료 플랜으로 자동으로 전환됩니다. 만약 무료 플랜의 한도량을 초과하여 사용하는 경우, 일부 기능의 사용이 제한될 수 있습니다."
@@ -3541,6 +3604,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "${ BRAND_NAME }의 강력한 종단 간 암호화 기술로 인해, 오직 회원님만 데이터를 잠금 해제할 수 있습니다. 데이터 접근 권한을 상실하지 않기 위해 복구 방법을 설정하세요."
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME }의 ${ DOCS_SHORT_APP_NAME }를 사용하면 안전하고 암호화된 환경에서 다른 사람들과 함께 작업할 수 있습니다."
       ],
@@ -3564,6 +3630,9 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Google의 염탐 가능성을 차단하세요. Gmail은 사용자가 ${ MAIL_APP_NAME }에서 무엇을 하는지 볼 수 없습니다."
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "다른 서비스 제공자로부터 회원님의 이매일, 캘린더 이벤트 및 연락처를 가져올 수 있습니다."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "자신의 도메인에서 전문 이메일 주소로 신뢰와 브랜드 인지도를 구축하세요."
@@ -3643,6 +3712,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "저희가 프라이버시와 표현의 자유가 위협받을 때 현지 활동가들을 어떻게 지원했는지."
       ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "비밀번호 분실시 암호화된 데이터를 잠금 해제하는 방법입니다."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
       ],
@@ -3654,6 +3726,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "이벤트 초대장에 화상 회의 링크를 즉시 추가할 수 있습니다."
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "비밀번호 재설정과 데이터 복구가 동시에 가능한 방법입니다."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "대부분의 문제는 단계별 가이드를 통해 몇 분 안에 해결할 수 있습니다."
@@ -3684,6 +3759,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "여전히 도움이 필요하신가요? 지원 팀이 회원님을 위해 대기하고 있습니다."
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "아래 복구 방법으로 ${ BRAND_NAME } 계정에 다시 접근할 수 있으나, 암호화된 데이터를 복구할 수는 없습니다."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "권한이 사라졌거나 비밀번호가 바뀌었을 때 일어날 수 있습니다."
@@ -4086,9 +4164,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**작동 방식:** 로그인하려는 기기에 표시된 코드를 입력하세요. **${ email }**(으)로 로그인됩니다. 두 기기 모두 활성 상태로 유지됩니다."
       ],
-      "Allow QR code sign‒in": [
-        "QR 코드 로그인 허용"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "QR 코드가 포함된 메시지를 주의하십시오. 출처를 신뢰할 수 있는 경우에만 코드를 스캔하십시오."
       ],
@@ -4103,9 +4178,6 @@
       ],
       "QR code sign-in enabled": [
         "QR 코드 로그인이 활성화됨"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "로그인하려면 모바일 디바이스에서 QR 코드를 스캔하세요"
       ],
       "Security tips": [
         "보안 팁"
@@ -4243,38 +4315,332 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } 계정 이메일"
+      ],
+      "${ days } day left": [
+        "${ days }일 남음"
+      ],
+      "${ hours } hour left": [
+        "${ hours }시간 남음"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes }분 남음"
+      ],
       "${ n } day": [
         "${ n }일"
+      ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user }님이 계정에 대한 비상 접근을 요청 중입니다"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user }님이 사용자의 계정을 사용 및 데이터를 변경할 수 있게 됩니다."
+      ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user }님이 사용자의 계정에서 로그아웃되며, 다음 긴급 접근 시까지 다시 접근할 수 없게 됩니다."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user }님이 비밀번호 재설정 후 데이터를 복구하는 데 더 이상 도움을 줄 수 없게 됩니다."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "비상시 ${ user }님이 사용자의 계정에 대한 접근을 더 이상 요청할 수 없게 됩니다."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user }님이 다음 비상 접근시까지 사용자의 계정에 접근할 수 없게 됩니다."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }**님이 회원님의 복구 연락처로 추가되었습니다. 해당 사용자는 비밀번호 재설정 이후 회원님의 데이터를 잠금 해제하는 데 도움을 줄 수 있습니다."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**확인하면** **복구 승인**을 클릭하세요. 암호화된 데이터의 잠금이 해제됩니다."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**만약 도움을 요청한 사실이 없다면**, 다른 누군가가 해당 계정에 접근하려는 중일 수 있습니다. 그런 경우 이 요청을 무시하세요."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**디지털 유산을 보호하세요.** 플랜을 업그레이드하여 비상 연략처를 추가하세요."
+      ],
+      "Access account": [
+        "계정 접근"
+      ],
+      "Access granted": [
+        "엑세스 승인됨."
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "${ formattedAccessibleAt }에 접근이 허용됨"
+      ],
+      "Access request canceled": [
+        "접근 요청이 취소되었습니다"
+      ],
+      "Access requested": [
+        "접근 요청됨"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "${ formattedAccessibleAt }에 접근이 허용됨"
+      ],
+      "Add": [
+        "추가"
+      ],
+      "Add emergency contact": [
+        "비상 연락처 추가"
+      ],
+      "Add option": [
+        "옵션 추가"
+      ],
+      "Add recovery contact": [
+        "복구 연락처 추가"
       ],
       "Added on ${ formattedDate }": [
         "${ formattedDate }에 추가됨"
       ],
+      "Approve recovery": [
+        "복구 승인"
+      ],
+      "Approved request": [
+        "승인된 요청"
+      ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
         "복구 담당자에게 도움을 요청하세요. 요청을 확인하고 데이터를 잠금 해제하기 위한 이메일을 받게 됩니다."
+      ],
+      "Asking for help": [
+        "도움 요청"
+      ],
+      "Cancel request": [
+        "요청 취소"
+      ],
+      "Cancel request?": [
+        "요청을 취소합니까?"
+      ],
+      "Change access wait time": [
+        "접근 대기 시간 변경"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "${ user }님이 자동으로 접근 권한을 부여받기 전까지 대기해야 하는 시간을 변경합니다."
+      ],
+      "Change wait time": [
+        "접근 대기 시간 변경"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "비밀번호 재설정 시 데이터를 복구하는 데 도움을 줄 신뢰할 수 있는 사람을 선택하세요. 복구 연락처는 이미 ${ BRAND_NAME } 계정을 가지고 있어야 합니다."
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "데이터 접근에 신뢰할 수 있는 사람을 선택하십시오. 해당 사용자들이 이미 ${ BRAND_NAME } 계정을 가지고 있어야 합니다."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "해당 사용자들이 회원님의 데이터를 복구하는 데 확인하도록 요청하기 위해 연락하세요."
       ],
       "Contacts": [
         "연락처"
       ],
+      "Data recovery contacts": [
+        "데이터 복구 연락처"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "데이터가 성공적으로 복구되었습니다. 이제 기존 데이터 및 암호화된 파일을 복호화할 수 있습니다."
+      ],
+      "Disabled": [
+        "비활성화됨"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "긴급 접근 권한을 잃지 마세요. 자동 갱신을 오늘 활성화하세요."
+      ],
+      "Emergency access": [
+        "비상 접근"
+      ],
+      "Emergency access for ${ user } removed": [
+        "사용자 ${ user }의 긴급 접근권한이 삭제되었습니다."
+      ],
+      "Emergency access granted": [
+        "긴급 접근이 승인됨"
+      ],
+      "Emergency access refused": [
+        "긴급 접근 거부됨"
+      ],
+      "Emergency access request": [
+        "긴급 접근 요청"
+      ],
+      "Emergency access requested": [
+        "긴급 접근 요청됨"
+      ],
+      "Emergency access revoked": [
+        "긴급 접근 취소됨"
+      ],
+      "Emergency contact added": [
+        "비상 연락처 추가됨"
+      ],
+      "Emergency contact enabled": [
+        "비상 연락처가 활성화되었습니다"
+      ],
+      "Emergency contact removed": [
+        "비상 연락처 삭제됨"
+      ],
+      "Enable": [
+        "활성화"
+      ],
+      "Enable auto-renew": [
+        "자동 갱신 활성화"
+      ],
+      "For ${ email }": [
+        "${ email }"
+      ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
         "지금 바로 연락하여 도움을 받을 수 있는지 확인하고, 데이터를 잠금 해제하려는 사람이 사용자임을 직접 알리십시오."
+      ],
+      "Give access now": [
+        "즉시 접근 권한 부여"
+      ],
+      "Give immediate access?": [
+        "즉시 접근 권한을 부여하시겠습니까?"
+      ],
+      "Got it": [
+        "확인"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "사용자의 데이터를 복구하는 데 도움을 요청하는 이메일을 받은 편지함에서 확인하도록 요청하세요. 이 이메일에는 요청을 확인하기 위해 클릭해야 하는 링크가 포함되어 있습니다."
       ],
       "Immediate": [
         "즉시"
       ],
+      "Included with ${ planName }": [
+        "${ planName }에 포함됨"
+      ],
       "Less than a day": [
         "하루 미만"
+      ],
+      "Less than a minute left": [
+        "1분 미만 남음"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "최대 ${ limit }개 연락처에 도달했습니다. 연락처를 삭제한 뒤 새 연락처를 생성하십시오."
+      ],
+      "Only ": [
+        "단 "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "긴급 접근은 **유효한 상황**이 발생하여 사용자가 다른 사용자의 계정을 관리해야 할 경우에만 요청하십시오."
+      ],
+      "Pending request": [
+        "요청 대기 중"
+      ],
+      "People I trust": [
+        "내가 신뢰하는 사용자"
+      ],
+      "People who have you as a recovery contact": [
+        "나를 복구 연락처로 지정한 사람들"
+      ],
+      "People who trust me": [
+        "나를 신뢰하는 사용자"
+      ],
+      "Proceed anyway": [
+        "그래도 계속 진행"
+      ],
+      "Protect your legacy with emergency access": [
+        "긴급 접근으로 회원님의 유산을 보호하세요"
+      ],
+      "Recover data": [
+        "데이터 복구"
+      ],
+      "Recovery approved": [
+        "복구 승인됨"
+      ],
+      "Recovery contact added": [
+        "복구 연락처가 추가되었습니다."
+      ],
+      "Recovery contact enabled": [
+        "복구 연락처 활성화됨"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "${ user }님에 대한 복구 연락처가 삭제되었습니다."
+      ],
+      "Recovery contact removed": [
+        "복구 연락처가 삭제되었습니다"
       ],
       "Recovery request sent": [
         "복구 요청 전송됨"
       ],
+      "Refuse access": [
+        "접근 권한 거부"
+      ],
+      "Refuse access?": [
+        "접근 권한을 거부합니까?"
+      ],
+      "Remove recovery contact": [
+        "복구 연락처 삭제"
+      ],
+      "Remove trusted contact": [
+        "신뢰된 연락처 제거"
+      ],
       "Remove your recovery contacts to continue": [
         "계속하려면 복구 연락처를 삭제하십시오"
+      ],
+      "Renew to get emergency access again.": [
+        "다시 긴급 접근을 얻으려면 갱신하십시오."
+      ],
+      "Request access": [
+        "접근 요청"
+      ],
+      "Request access?": [
+        "접근 권한을 요청합니까?"
+      ],
+      "Requesting access": [
+        "접근 권한 요청 중"
+      ],
+      "Review recovery request": [
+        "복구 요청 검토"
+      ],
+      "Revoke access": [
+        "접근 권한 회수"
+      ],
+      "Revoke access?": [
+        "접근 권한을 회수합니까?"
+      ],
+      "See request": [
+        "요청 보기"
       ],
       "Select recovery contact ${ name }": [
         "복구 연락처 ${ name } 선택"
       ],
+      "Send recovery request": [
+        "복구 요청 전송"
+      ],
       "Start recovery": [
         "복구 시작"
+      ],
+      "Stop being recovery contact": [
+        "복구 연락처 그만두기"
+      ],
+      "Stop being recovery contact?": [
+        "복구 연락처를 그만 두시겠습니까?"
+      ],
+      "Stop being trusted contact": [
+        "신뢰할 수 있는 연락처에서 제외"
+      ],
+      "Stop being trusted contact?": [
+        "신뢰할 수 있는 연락처에서 해제합니까?"
+      ],
+      "Subscription expired": [
+        "구독 만료됨"
+      ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "나를 신뢰할 수 있는 연락처로 추가한 사용자입니다. 비상 상황 발생 시 상대방의 계정에 접근할 수 있습니다."
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "아래 사용자가 비밀번호 분실 등의 비상 상황에서 회원님의 계정에 접근을 요청할 수 있습니다."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "**${ days }**일 **${ formattedAccessibleAt }**일 후에 접근 권한이 자동으로 부여됩니다. 언제든지 요청을 거부하거나 즉시 접근 권한을 부여할 수 있습니다."
+      ],
+      "This will take effect immediately.": [
+        "이 효력은 즉시 발생합니다."
+      ],
+      "Time required before automatically giving access": [
+        "자동으로 접근 권한을 부여하기까지 필요한 시간"
+      ],
+      "Time required before automatically giving you access": [
+        "자동으로 사용자에게 접근 권한을 부여하기까지 필요한 시간"
+      ],
+      "Time required before automatically granting them access": [
+        "자동으로 접근 권한을 부여하기 전에 필요한 시간"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "해당 복구 방법을 비활성화하려면 모든 복구 연락처를 삭제하십시오."
@@ -4282,8 +4648,74 @@
       "Trusted contact": [
         "신뢰하는 연락처"
       ],
+      "Unable to recover data": [
+        "데이터 복구를 사용할 수 없음"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }으로 업그레이드"
+      ],
+      "Wait time": [
+        "대기 시간"
+      ],
+      "Wait time for access": [
+        "접근 대기 시간"
+      ],
+      "Wait time saved": [
+        "대기 시간 저장됨"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "연락처 **${ user }** 님의 암호화된 데이터 잠금 해제 요청이 접수되었습니다."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "${ user }에게 이메일 요청을 보냈습니다. 접근 권한을 다시 얻으려고 시도하는 사람이 실제로 본인임을 알려주세요."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "복구 데이터를 확인할 수 없습니다. 그래도 진행하시겠습니까?"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "사용자가 긴급 접근을 요청했음을 **${ user }**님이 알림 받게됩니다."
+      ],
+      "You are signed in to the account ${ account }.": [
+        "${ account } 계정으로 로그인했습니다."
+      ],
+      "You can now access and manage their account.": [
+        "이제 해당 계정에 접근하고 관리할 수 있습니다."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "언제든지 접근 권한을 삭제하여 사용자의 계정에 대한 독점적인 통제권을 되찾을 수 있습니다."
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "최대 ${ limit }개의 비상 연락처 개수에 도달했습니다."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "누군가 비상 접근을 요청하면 알림을 받게 됩니다."
+      ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "비밀번호를 재설정하면 ${ user }님이 데이터를 복구하도록 더 이상 도울 수 없습니다."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "비상시 ${ user }의 계정에 대한 접근을 더 이상 요청할 수 없게 됩니다"
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "추후에 ${ user }의 계정에 대한 접근을 여전히 요청할 수 있습니다."
+      ],
+      "You'll receive access to their account immediately.": [
+        "즉시 사용자의 계정에 접근할 수 있게 됩니다."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "**${ days }일** 후 또는 사용자의 요청이 승인 됐을 때 해당 계정에 접근할 수 있게 됩니다."
+      ],
       "Your recovery contact has helped you recover data.": [
         "사용자의 복구 연락처가 데이터를 복구하도록 도왔습니다."
+      ],
+      "Your recovery contacts": [
+        "복구 연락처"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "복구 연락처는 사용자가 신뢰하고 쉽게 연락할 수 있는 지인이여야 합니다."
       ]
     },
     "Empty group name": {
@@ -4303,6 +4735,9 @@
       ],
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
+      ],
+      "Address cannot be yours": [
+        "주소를 내 소유로 할 수 없습니다"
       ],
       "Address could not be added.": [
         "주소를 추가할 수 없습니다."
@@ -4339,6 +4774,9 @@
       ],
       "Company name or personal name is required": [
         "법인명 또는 개인 성명을 입력해야 합니다."
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "기기 프로파일 생성에 실패했습니다. 다시 시도하세요."
       ],
       "Couldn't load invoices. Please try again later.": [
         "청구서 불러오기를 실패했습니다. 다시 시도해 주세요."
@@ -5106,6 +5544,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "총 3TB 저장공간"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "나의 계정 혜택"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -6498,6 +6941,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "회원님 또한 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받게 됩니다."
       ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "비밀번호를 재설정한 뒤 **복구 이메일 단독으로 회원님의 암호화된 데이터를 복구할 수는 없습니다.**"
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "비밀번호를 재설정한 뒤 **복구 휴대폰 단독으로 회원님의 암호화된 데이터를 복구할 수는 없습니다.**"
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount }명 더"
       ],
@@ -6528,23 +6977,17 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "전화번호는 오직 하나의 ${ BRAND_NAME } 계정의 인증에만 사용할 수 있습니다"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "복구 파일을 사용하면 계정 재설정 후 데이터를 잠금 해제하고 확인할 수 있습니다."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "복구 키를 사용하면 암호를 잊어버린 경우 계정에 액세스하여 암호화된 메시지를 복구할 수 있습니다"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "사용자는 단일 사용자 이름, 사서함 및 사람과 연결된 계정입니다."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "145개국의 20,000개 이상 서버에 접근"
       ],
       "Account monitor": [
         "계정 모니터링"
       ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "비밀번호를 분실한 경우 ${ BRAND_NAME } 계정의 콘텐츠에 계속 액세스할 수 있도록 적어도 하나의 데이터 복구 방법을 활성화하세요."
       ],
       "active": [
         "활성화"
@@ -6555,11 +6998,23 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "단 ${ bundlePlanPriceInline }에 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 추가"
       ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "가장 신뢰하고 연락하기 쉬운 1~5명의 사람들을 추가하세요. 해당 사용자들이 회원님의 계정에 로그인하여 잊어버린 비밀번호를 재설정할 수 있도록 설정할 수 있습니다. 해당 사용자들은 이미 ${ BRAND_NAME } 계정을 가지고 있어야 합니다."
+      ],
+      "Add a phone number in case we need to contact you": [
+        "만일 연락이 필요할 경우를 위해 휴대폰 번호를 추가하세요"
+      ],
       "add a recovery method": [
         "복구 수단 추가"
+      ],
+      "Add an email address in case we need to contact you": [
+        "만일 연락이 필요할 경우를 위해 이메일 주소를 추가하세요"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2단계 인증으로 본인 확인해야 합니다."
@@ -6612,8 +7067,14 @@
       "All (${ totalFoldersCount } label)": [
         "총 (${ totalFoldersCount } 개 라벨)"
       ],
+      "All devices with this device profile deployed": [
+        "해당 기기 프로파일로 배포된 모든 장치"
+      ],
       "All inactive members deleted": [
         "모든 비활성 상태의 구성원이 삭제되었습니다."
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "모든 인터넷 트래픽이 암호화되고 안전한 상태로 유지됩니다"
       ],
       "All keys successfully reactivated": [
         "모든 키가 성공적으로 재활성화 되었습니다"
@@ -6638,6 +7099,12 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "구성원이 ${ VPN_APP_NAME } 앱의 **국가** 섹션에서 보안 공유 서버에 연결할 수 있도록 허용합니다."
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "QR코드로 로그인을 허용하면 비밀번호를 잊어버렸을때 QR코드를 스캔하여 로그인할 수 있습니다.\n${ BRAND_NAME } 서비스가 로그인된 다른 기기만 있으면 됩니다."
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "설정에서 비밀번호 재설정을 허용하면 만약 비밀번호를 분실하여 새로운 비밀번호로 변경하더라도 ${ BRAND_NAME }에 로그인 상태로 유지됩니다."
       ],
       "Already allocated": [
         "이미 할당 됨"
@@ -6762,6 +7229,9 @@
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
       ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "신뢰하는 사람을 복구 연락처에 추가함으로써, 비밀번호 재설정 이후 데이터를 복구할 때 해당 사용자들에게 이메일을 보내 도움을 요청할 수 있습니다. 반대로 회원님이 타인의 복구 연락처가 되어 줄 수도 있습니다."
+      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "계정 모니터를 비활성화하면 전체 기록이 함께 삭제됩니다. 정말 비활성화하시겠습니까?"
       ],
@@ -6798,6 +7268,9 @@
       "Choose an Entity ID to continue.": [
         "계속하려면 Entity ID를 선택하세요."
       ],
+      "Choose one:": [
+        "하나 선택:"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
@@ -6818,6 +7291,9 @@
       ],
       "Compromised": [
         "유출됨"
+      ],
+      "Configure Always-on VPN": [
+        "VPN 항상 켜기 구성"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "인증 제공자(IdP)를 통해 조직의 SAML 인증을 구성하십시오. 이 설정값은 전체 조직의 SAML 활성화가 진행됩니다."
@@ -6921,6 +7397,9 @@
       "Data recoverable with recovery phrase": [
         "복구 키로 데이터 복구 가능"
       ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "데이터 복구 방법을 설정하려면 비밀번호 재설정 방법 (이메일 또는 SMS)이 필요합니다."
+      ],
       "dedicated servers": [
         "전용 서버"
       ],
@@ -6945,6 +7424,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "설정에 따라 접근 권한을 즉시 회복할 수도, 혹은 설정된 **대기 기간**에 따라 일정 시간 이후에 다시 회복할 수 있습니다."
       ],
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "MDM 파일 배포로 즉시 ${ regoArtifact } 배포를 시작하세요"
+      ],
+      "Deploy across all your managed devices": [
+        "모든 사내 보유 기기에 배포"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "MDM (Jamf, Intune...)으로 배포하거나 각각의 기기에 수동으로 배포하세요."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "${ VPN_APP_NAME } 연결이 활성 상태인 경우에는 VPN 항상 켜기가 배포된 기기에서 인터넷에 접근할 수 없습니다."
+      ],
       "Did you know?": [
         "알고 계셨나요?"
       ],
@@ -6956,6 +7447,9 @@
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "인증 앱 2단계 인증 비활성화시 계정의 보안이 취약해집니다. 꼭 필요한 경우에만 진행하세요."
+      ],
+      "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
+        "이 기기에서 데이터 백업을 비활성화하는 경우 비밀번호 재설정 후 암호화된 데이터를 자동으로 잠금 해제하지 못할 수 있습니다."
       ],
       "Discover new features unlocked and start using them right away!": [
         "잠금해제된 새 기능들을 둘러보고 바로 사용해보세요!"
@@ -7014,6 +7508,12 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
       ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "프로파일 설치를 위해 ${ mobileConfigArtifact } 다운로드 후 각각의 Mac에서 해당 프로파일을 실행합니다. 그다음 시스템 설정에서 프로파일(macOS 설정상에선 프로필)을 승인합니다."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "프로파일을 자동 삭제하려면 ${ removeScriptLink } 다운로드 후 시스템 사용자로 로그인한 상태에서 해당 프로파일을 실행하십시오."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } 다운로드"
       ],
@@ -7068,6 +7568,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "휴지통 및 스팸함으로 이동된지 30일이 경과한 이메일이 자동으로 삭제됩니다."
       ],
+      "Employees can't go online without a VPN connection": [
+        "VPN 없이는 직원이 온라인에 접속할 수 없습니다."
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Plus 서버와 기능에 계속 접근하기 위해 자동 갱신을 활성화하세요"
       ],
@@ -7092,6 +7595,9 @@
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "복구 키를 다시 활성화하면 새로운 복구 문구가 생성됩니다."
       ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "이 기기에서 데이터 백업을 활성화하는 경우 계정의 비밀번호를 재설정한 다음 이 기기로 다시 로그인하여 이메일과 연락처, 파일, 비밀번호 및 다른 모든 암호화된 데이터에 대한 접근 권한을 복구할 수 있게 됩니다."
+      ],
       "End date": [
         "종료일"
       ],
@@ -7104,11 +7610,17 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "기기가 프로파일을 감지하면 곧바로 자동으로 강제화됩니다."
+      ],
       "Enhance your network security": [
         "네트워크 보안을 향상시키기"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 무료 ${ BRAND_NAME } 이메일 주소를 받아보세요."
+      ],
+      "Ensure your organization is always protected": [
+        "조직의 보호 상태를 유지하세요"
       ],
       "Enter code": [
         "코드 입력"
@@ -7185,6 +7697,9 @@
       "Failed to fetch logs.": [
         "로그를 가져오지 못했습니다."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "최대 10 Gbps의 빠른 VPN 속도"
+      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "파일 전용 (사진 불가, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }) - 최대 총 100 GB, 100,000개 파일 및 파일 당 50 GB)"
       ],
@@ -7230,8 +7745,11 @@
       "Gateways": [
         "게이트웨이"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "새 복구 방법을 구성하면 이전의 복구 방법이 비활성화 됩니다."
+      "Generate the device profile and download a configuration file.": [
+        "기기 프로파일 생성 후 구성 파일을 다운로드하세요."
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "새 복구 키를 구성하면 이전의 복구 키가 비활성화 됩니다."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "${ AUTHENTICATOR_APP_NAME }를 회원님의 모든 기기에서 사용하세요."
@@ -7272,6 +7790,9 @@
       "Groups": [
         "그룹"
       ],
+      "Have some more time to decide without interruption.": [
+        "방해받지 않고 결정할 수 있는 시간이 더 있으니 천천히 결정하세요."
+      ],
       "here": [
         "여기"
       ],
@@ -7290,11 +7811,14 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "다른 관리자가 이 비밀번호를 변경 한 경우 새 조직 비밀번호를 요청해야 합니다."
       ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "만약 비활성화되더라도 ${ BRAND_NAME }이 보안 알림을 전송할 때 계속 이 주소가 사용됩니다."
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
+        "만약 비활성화되더라도 ${ BRAND_NAME }이 보안 알림을 전송할 때 계속 이 복구 휴대폰이 사용됩니다."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "가능하다면 로그인할 때 이전에 로그인한 적이 있는 기기나 브라우저를 사용하세요."
-      ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "이전 비밀번호 재설정으로 인한 것이라면 메시지가 다시 표시되지 않도록 할 수 있어요."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -7304,6 +7828,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "지금 취소하면 ${ expiryDate }부로 ${ BRAND_NAME } ${ planTitle }에 접근할 수 없으며, 다음 기능이 제한됩니다:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
@@ -7338,8 +7865,8 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ VPN_APP_NAME } 유료 기능을 사용할 수 없습니다."
       ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "최근에 비밀번호를 재설정한 경우 데이터 복구 방법을 사용하여 데이터 잠금을 해제할 수 있어요."
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "최근에 비밀번호를 재설정했다면, ${ recoveryMethodLink }을 통해 데이터를 잠금 해제할 수 있습니다. 오래전의 비밀번호 재설정 때문이라면, 이 메시지가 다시 나타나지 않도록 중지할 수 있습니다"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "회원님의 조직에 공인이 있거나, 민감한 데이터를 처리하거나, 사이버 공격의 표적이 될 수 있다면, 조직 내 모든 구성원을 위해 ${ PROTON_SENTINEL_NAME }을 활성화할 것을 강력히 권장합니다."
@@ -7437,9 +7964,6 @@
       "Invited": [
         "초대됨"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "일부 데이터가 암호화되어 잠겨있어요."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "서버의 국가를 변경하는데 10일이 소요됩니다. 결정 사항이 옳은지 반드시 확인하십시오."
       ],
@@ -7497,6 +8021,12 @@
       "Item updated in vault": [
         "금고 내에 항목을 업데이트했습니다."
       ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "만약 로그인 상태라면 일반적으로 데이터 복구가 가능한 가장 쉬운 방법입니다."
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "이 방법은 즉시 모든 파일과 비밀번호를 복구할 수 있는 유일한 방법입니다. 반드시 접근 가능하고 안전한 곳에 보관해야 합니다."
+      ],
       "JCB logo": [
         "JCB 로고"
       ],
@@ -7505,6 +8035,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "이 가이드와 팁을 통해 내 정보가 더욱 안전하고 사적이도록 하세요."
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "비밀번호를 안전하게 보관하고 자동완성으로 기기를 넘나들며 편리하게 로그인하세요."
       ],
       "Key sections reorganized for faster access.": [
         "더 빠른 접근을 위해 주요 섹션이 재구성되었습니다."
@@ -7568,6 +8101,9 @@
       ],
       "Low Priority": [
         "중요도 낮음"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "주요 이메일 서비스는 SPF/DKIM/DMARC가 누락되었거나 제대로 설정되지 않은 경우 스팸으로 이메일을 거부하거나 필터링할 수 있습니다."
@@ -7710,6 +8246,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "회원님의 계정에 대한 접근 권한이 부여되면, 해당 사용자들이 회원님의 **복구** 설정에 접근하여 대신 **${ ACCOUNT_APP_NAME } 비밀번호를 변경**할 수 있습니다."
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "한 번 성공적으로 배포되면, 기기 감지와 정책 적용에 몇 시간이 걸릴 수 있습니다."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "여기서는 대소문자와 문장 부호(마침표, 하이픈, 밑줄)만 변경할 수 있습니다. 다른 주소를 사용하려면 새 주소를 추가해 주세요."
       ],
@@ -7733,6 +8272,9 @@
       ],
       "or discover other features:": [
         "혹은 다른 기능 살펴보기:"
+      ],
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "또는 MDM 스크립트 구성을 통해 ${ powershellArtifact }을(를) 실행하세요."
       ],
       "Or select a particular server:": [
         "또는 특정 서버 선택:"
@@ -7830,9 +8372,6 @@
       "Please fill in all required fields.": [
         "필수 입력란을 모두 입력해주세요."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "안전한 곳에 보관하세요. 사용자 계정에 접근하거나 패스워드 리셋을 위해 데이터를 복호화할 때 필요합니다."
-      ],
       "please open a support ticket": [
         "지원 티켓을 만들어 주세요"
       ],
@@ -7868,6 +8407,9 @@
       ],
       "Preference saved": [
         "설정이 저장되었습니다."
+      ],
+      "Premium privacy protection across all your devices": [
+        "모든 기기에 걸친 프리미엄 프라이버시 보호"
       ],
       "Preview": [
         "미리보기"
@@ -7920,6 +8462,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "신뢰하는 기기에서 권장됩니다. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "${ PROTON_SENTINEL_NAME }이 활성화된 경우 이메일으로 복구를 사용할 수 없습니다."
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "${ PROTON_SENTINEL_NAME }이 활성화된 경우 휴대폰으로 복구를 사용할 수 없습니다."
+      ],
       "Recovery file downloaded": [
         "복구 파일 다운로드됨."
       ],
@@ -7931,9 +8479,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "복구 구절이 클립보드에 복사되었습니다"
-      ],
-      "Recovery phrase downloaded": [
-        "복구 키 다운로드됨"
       ],
       "Recovery phrase has been disabled": [
         "복구 방법이 비활성화 되었습니다"
@@ -8112,6 +8657,9 @@
       "Start sharing it with contacts and use it for online services.": [
         "연락처에 있는 사람들과 공유하고 온라인 서비스에서 사용하세요."
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "현재 플랜을 유지허고 다음 달에는 50% 할인 받으세요"
+      ],
       "Storage allocated to other users in this organisation": [
         "스토리지가 이 조직의 다른 사용자들에게 할당됨"
       ],
@@ -8156,6 +8704,9 @@
       ],
       "support team": [
         "지원 팀"
+      ],
+      "Supported platforms": [
+        "지원되는 플랫폼"
       ],
       "Swiss based": [
         "스위스에 위치"
@@ -8271,6 +8822,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "이 작업은 몇 분이 소요될 수 있습니다. 이 페이지를 닫거나 인터넷 연결을 끊지 마세요."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "해당 데이터 복구 방법을 설정하려면 비밀번호 재설정 방법 (이메일 또는 SMS)이 필요합니다."
+      ],
       "This file is too large to preview": [
         "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
       ],
@@ -8318,6 +8872,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "PayPal을 사용하여 Proton 구독 비용을 지불할 수 있습니다. 새 브라우저 탭에서 ${ BRAND_NAME }으로 리디렉션합니다. 팝업 차단기를 사용하는 경우 계속 진행하기 위해 팝업 차단기를 비활성화하세요."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "QR코드로 로그인은 비밀번호를 변경할 수 있도록 ${ BRAND_NAME } 계정에 가장 빠르고 안전하게 접근할 수 있는 방법입니다."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "이 사용자와 관련된 데이터와 모든 이메일 주소가 영구적으로 삭제됩니다."
@@ -8387,6 +8944,15 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "암호 재설정 후 잠긴 데이터를 해독하고 보려면 복구 방법을 선택하세요."
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "VPN 항상 켜기를 활성화하려면 모든 기기에서 ${ policiesPath }에 접근하도록 기기 프로파일이 필요합니다. ${ VPN_APP_NAME } 클라이언트가 감지 후 프로파일을 자동으로 설치합니다."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "최상의 계정 보안 상태를 유지하기 위해, **복구 이메일로 복구**를 비활성화하세요."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+        "최상의 계정 보안 상태를 유지하기 위해, **복구 전화번호로 복구**를 비활성화하세요."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
@@ -8529,6 +9095,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "애플리케이션 없이 ${ VPN_APP_NAME } 서버에 연결할 때 다음 자격 증명을 사용하세요. macOS의 Tunnelblick, GNU/Linux의 OpenVPN도 사용하고 있어요."
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "MDM 스크립트 구성을 통해 ${ removeScriptLink }을(를) 실행하거나 MDM을 통해 파일을 지우십시오. 파일 배포나 스크립트 실행을 지원하는 MDM 환경에서만 지원합니다."
+      ],
       "User activated": [
         "사용자 활성화됨"
       ],
@@ -8540,6 +9109,12 @@
       ],
       "Users": [
         "사용자"
+      ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "다른 MDM을 사용하시나요? 구성 프로파일 배포를 지원한다면 어느 MDM애서나 사용 가능합니다. 조직 보유 기기에 프로파일을 업로드 및 적용하는 방법을 확인하려면 사용 중인 MDM의 지원 문서를 참조하십시오."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "다른 MDM을 사용하시나요? 파일 배포를 지원하거나 PowerShell 스크립트 구성을 지원하는 MDM에서는 모두 작동합니다. 자세한 정보는 사용자의 MDM 사용 백서를 참조하십시오."
       ],
       "Vault created": [
         "금고를 생성했습니다"
@@ -8601,6 +9176,12 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "가능하면 ${ VPN_APP_NAME } 공식 애플리케이션 사용을 권장합니다."
       ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "비밀번호를 재설정하기 위해 인증번호를 전송하거나 의심스러운 활동을 포착하는 경우 연락을 드릴 수 있도록 Proton이 복구 이메일 주소를 사용할 수 있습니다."
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "비밀번호를 재설정하기 위해 인증번호를 전송하거나 의심스러운 활동을 포착하는 경우 연락을 드릴 수 있도록 Proton이 복구 휴대폰 번호를 사용할 수 있습니다."
+      ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
@@ -8631,8 +9212,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "2단계 인증 요구 시작 전에 조직 구성원에게 알린 다음 계정에 2단계 인증을 설정하도록 요청하는 것이 권장됩니다."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Proton이 사용자가 데이터를 상실하지 않도록 신뢰할 수 있는 기기에 복구 정보를 안전하게 저장합니다."
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "복구 키로 복구를 활성화하는 것을 강력하게 권장합니다."
       ],
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
@@ -8814,6 +9395,9 @@
       "You don't have any referrals.": [
         "추천인이 없습니다."
       ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "복구 파일을 열거나 읽을 필요가 없습니다. 다운로드 후 안전한 곳에 저장하세요."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
       ],
@@ -8934,6 +9518,9 @@
       "Your account was successfully updated with this promotion": [
         "사용자의 계정이 해당 프로모션으로 성공적으로 업데이트되었습니다"
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "VPN 항상 켜기 프로파일이 베포될 준비가 완료되었습니다."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
@@ -8985,11 +9572,11 @@
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "최근 변경 사항이 게시되었습니다. 몇 시간 내로 다른 사용자에게 반영되어 표시됩니다."
       ],
-      "Your recovery phrase": [
-        "내 복구 키"
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "복구 파일은 비밀번호 재설정 이후 이메일, 연락처, 파일, 비밀번호 등의 암호화된 데이터의 접근 권한을 복구하는데 사용됩니다."
       ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "복구 문구는 특정 순서로 무작위로 생성된 12개의 단어입니다."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "만약 ${ BRAND_NAME } 계정이 완전히 잠겼을 때 복구 키로 다시 로그인하고 데이터를 복구할 수 있습니다. 백업 비밀번호와 같은 역할을 하는 12개의 단어로 구성되어 있습니다."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
@@ -9269,6 +9856,9 @@
       "Allow": [
         "허용"
       ],
+      "Allow QR code sign-in": [
+        "QR코드로 로그인 허용"
+      ],
       "Allow recovery by email": [
         "이메일을 통한 복구 허용"
       ],
@@ -9298,6 +9888,9 @@
       ],
       "App password": [
         "앱 비밀번호"
+      ],
+      "Applies:": [
+        "적용 대상:"
       ],
       "Apply policy to": [
         "다음 항목에 정책 적용:"
@@ -9560,6 +10153,9 @@
       "End-to-end encryption": [
         "종단간 암호화"
       ],
+      "Enforce Always-on VPN": [
+        "VPN 항상 켜기 강제화"
+      ],
       "Enter code": [
         "코드 입력"
       ],
@@ -9704,6 +10300,9 @@
       "Level for NetShield blocker filtering": [
         "NetShield 차단 필터링 수준"
       ],
+      "Login restrictions": [
+        "로그인 제한"
+      ],
       "Logo": [
         "로고"
       ],
@@ -9715,6 +10314,9 @@
       ],
       "Main reason for cancelling": [
         "취소의 주된 이유"
+      ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "복구 이메일이나 휴대폰에 접근할 수 있는지, 혹은 사용 가능한 데이터 복구 방법이 있는지 반드시 확인하세요."
       ],
       "Manage categories": [
         "카테고리 관리"
@@ -10097,6 +10699,9 @@
       "Vulnerable password": [
         "취약한 비밀번호"
       ],
+      "We securely stored recovery information on this device.": [
+        "이 기기에서 복구 정보를 안전하게 보관하고 있습니다."
+      ],
       "Weak": [
         "약함"
       ],
@@ -10136,6 +10741,12 @@
       "Your password (trusted contact)": [
         "사용자 비밀번호 (신뢰할 수 있는 연락처)"
       ],
+      "Your recovery email": [
+        "나의 복구 이메일"
+      ],
+      "Your recovery phone number": [
+        "나의 복구 휴대폰 번호"
+      ],
       "Zero-access architecture": [
         "제로 액세스 아키텍처"
       ],
@@ -10144,14 +10755,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "기기 기반 복구"
-      ],
       "Recovery phone number": [
         "복구 전화번호"
-      ],
-      "Recovery phrase": [
-        "복구 키"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10367,9 +10972,6 @@
       "How to share via email": [
         "이메일을 통해 공유하는 방법"
       ],
-      "How to unlock data": [
-        "데이터 잠금해제 방법"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 사용법 안내"
       ],
@@ -10390,9 +10992,6 @@
       ],
       "Learn more": [
         "더 알아보기"
-      ],
-      "Learn more about data recovery": [
-        "파일 복구에 대해 더 알아보기"
       ],
       "Manage addresses": [
         "주소 관리"
@@ -10435,6 +11034,9 @@
       ],
       "Upgrade your plan": [
         "플랜 업그레이드"
+      ],
+      "use a data recovery method": [
+        "데이터 복구 방법 사용"
       ],
       "Vault": [
         "금고"
@@ -12664,6 +13266,14 @@
         "기간 한정 할인."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "${ BRAND_NAME } 계정 비밀번호가 기억 나시나요?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "계정과 데이터의 접근 권한을 잃지 않기 위한 가장 좋은 방법은 개인의 자격 증명을 기억하는 것입니다."
+      ]
+    },
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "비밀번호 분실시, 엄호화된 데이터에 대한 접근 권한을 상실할 수 있습니다."
@@ -13514,6 +14124,188 @@
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
       ]
     },
+    "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "${ maxScore }개 중 ${ score }개 완료"
+      ],
+      "Add more options for stronger protection": [
+        "더욱 강력한 보호를 위해 복구 방법을 추가하세요"
+      ],
+      "Check your access to your recovery options": [
+        "복구 옵션에 대한 접근 권한 확인"
+      ],
+      "Critical": [
+        "매우 위험"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } 계정이 잠기지 않도록 조치를 취하세요"
+      ],
+      "How you increased your account protection": [
+        "회원님의 계정을 보호하기 위해 추가된 복구 방법들입니다"
+      ],
+      "Inactive recovery options": [
+        "비활성화된 복구 방법"
+      ],
+      "Maximum": [
+        "최대"
+      ],
+      "Partial": [
+        "부분적"
+      ],
+      "Recoverability": [
+        "복구 가능성"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "인증된 비밀번호 재설정 방법 필요 (이메일 또는 SMS)"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "점수: ${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "강력함"
+      ],
+      "Take precautions to avoid losing access": [
+        "데이터 손실을 방지하기 위해 예방 조치를 취하세요"
+      ],
+      "Weak": [
+        "약함"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "완벽하게 보호받고 있습니다. 정기적인 검토를 통해 사용하는 기기 및 연락처의 변경 사항에 맞춰 항상 올바르게 작동하도록 유지하세요."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "어느 정도 설정되었지만 아직 완전히 안전하지는 않습니다. 비밀번호를 분실할 경우 이메일, 파일, 비밀번호를 잃게 될 수 있습니다."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "아직 계정이 위험해요. 비밀번호를 잊어버린 경우, 회원님의 이메일, 파일 및 비밀번호에 영구적으로 접근하지 못할 가능성이 있습니다."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "잘 보호되고 있지만, 여전히 빈틈이 존재합니다. 비밀번호를 잊어버린 경우 추가적인 복구 방법을 통해 더욱 안전하게 회원님의 데이터를 보호할 수 있습니다."
+      ],
+      "Your account and data can be recovered": [
+        "계정 및 데이터를 복구할 수 있습니다"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "설정된 복구 방법이 없습니다. 비밀번호 분실시, 회원님의 이메일, 파일 및 비밀번호에 대한 접근 권한을 영구 상실하게 됩니다."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "계정이 완전히 보호되지 않았습니다. 비밀번호를 잊어버린 경우 이메일, 파일 및 비밀번호에 대한 접근 권한을 잃을 수 있습니다."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "복구 방법 설정이 거의 완료되었어요. 비밀번호를 잊어버린 경우, 여전히 회원님의 이메일, 파일 및 비밀번호에 영구적으로 접근하지 못할 가능성이 있습니다."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "복구 방법 설정이 완벽해요! 만약 필요할 때 복구 방법이 제대로 작동하기 위해 복구 방법을 최신 상태로 유지해 주세요."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "복구 방법 설정이 완료되지 않았어요. 비밀번호를 잊어버린 경우 이메일, 파일 및 비밀번호에 여전히 접근하지 못할 수 있습니다."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "현재 복구 방법 설정이 견고하나, 여전히 조금의 틈이 남아있어요. 추가되는 복구 방법이 많을수록 데이터 복구 가능성도 더 높아집니다."
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "비상 연락처 추가"
+      ],
+      "Add recovery contacts": [
+        "복구 연락처 추가"
+      ],
+      "Add recovery email": [
+        "복구 이매일 추가"
+      ],
+      "Add recovery phone": [
+        "복구 휴대폰 추가"
+      ],
+      "Allow data recovery on this device": [
+        "이 기기에서 데이터 복구 허용"
+      ],
+      "Allow password reset from settings": [
+        "설정에서 비밀번호 재설정 허용"
+      ],
+      "Allow scanning QR code to sign in": [
+        "QR코드로 로그인 허용"
+      ],
+      "Data recovery allowed on this device": [
+        "이 기기에서 데이터 복구 허용됨"
+      ],
+      "Download recovery file": [
+        "복구 파일 다운로드"
+      ],
+      "Email recovery enabled": [
+        "이메일 복구 활성화됨"
+      ],
+      "Emergency contacts added": [
+        "비상 연락처가 추가되었습니다"
+      ],
+      "Enable email recovery": [
+        "이메일로 복구 활성화"
+      ],
+      "Enable recovery by phone": [
+        "전화를 통한 복구 활성화"
+      ],
+      "Password reset allowed from settings": [
+        "설정에서 비밀번호 재설정 허용됨"
+      ],
+      "Password verified": [
+        "비밀번호 확인됨"
+      ],
+      "Phone recovery enabled": [
+        "휴대폰 복구 활성화됨"
+      ],
+      "Recovery contacts added": [
+        "복구 연락처가 추가되었습니다."
+      ],
+      "Recovery file downloaded": [
+        "복구 파일 다운로드됨"
+      ],
+      "Recovery phrase saved": [
+        "복구 키가 저장되었습니다"
+      ],
+      "Save recovery phrase": [
+        "복구 키 저장"
+      ],
+      "Sign-in with QR code allowed": [
+        "QR코드로 로그인이 허용됨."
+      ],
+      "Verify password": [
+        "비밀번호 확인"
+      ],
+      "Verify recovery email": [
+        "복구 이메일 인증"
+      ],
+      "Verify recovery phone": [
+        "복구 휴대폰 인증"
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Copy": [
+        "복사"
+      ],
+      "Show": [
+        "보이기"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**생성 후에는 복구 키를 접근 가능한 곳에 안전하게 보관하세요.** 보안 상의 이유로, 변경된 복구 키가 보관되지 않으며, 따라서 ${ BRAND_NAME } 앱에서 위의 복구 키를 다시 볼 수 없습니다."
+      ],
+      "copy recovery phrase": [
+        "복구 키를 복사"
+      ],
+      "Download PDF": [
+        "PDF 다운로드"
+      ],
+      "download PDF": [
+        "PDF 다운로드"
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "또는 텍스트로 ${ copyRecoverySwitchButton }할 수 있습니다."
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "또는 대신 ${ downloadRecoveryKitSwitchButton }."
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "추천당 ${ referrerRewardAmount }"
@@ -13823,47 +14615,8 @@
       ]
     },
     "Safety review": {
-      "Check account security": [
-        "계정 보안 확인"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "로그인 정보를 분실하여 계정을 초기화해야 하는 경우, 이메일, 연락처, 파일 또는 비밀번호에 액세스하지 못할 수 있으므로 **계정 복구 및 데이터 복구 방법**을 모두 마련하는 것이 **필수**입니다."
-      ],
       "Review account safety": [
         "내 계정 보안 검토하기"
-      ],
-      "Safeguard account now": [
-        "지금 계정 보호"
-      ],
-      "Safeguard your account": [
-        "계정 보호"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "계정 및 데이터에 대한 액세스 권한이 손실될 위험이 있습니다."
-      ],
-      "You are at risk of losing access to your data.": [
-        "데이터에 대한 액세스 권한이 손실될 위험이 있습니다."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "계정을 더욱 안전하게 보호하기 위한 권장 조치가 있습니다."
-      ],
-      "You have recommended actions.": [
-        "권장 조치가 있습니다."
-      ],
-      "Your account and data can be recovered": [
-        "계정 및 데이터 복구 가능"
-      ],
-      "Your account and data can be recovered.": [
-        "계정 및 데이터를 복구할 수 있습니다."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "계정과 데이터를 복구할 수 있습니다. 복구 방법에 계속 접근할 수 있는지 확인하세요."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "계정과 데이터를 복구할 수 있습니다. 계정을 더욱 안전하게 보호하기 위한 권장 조치가 있습니다."
-      ],
-      "Your account is fully secure.": [
-        "계정이 완전히 안전합니다."
       ]
     },
     "saml: Action": {
@@ -14117,6 +14870,17 @@
     "Select search results": {
       "No results found": [
         "결과를 찾을 수 없음"
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "최상의 계정 보안 상태를 유지하기 위해, **복구 이메일 및 SMS로 복구**를 비활성화하세요."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "항상 ${ BRAND_NAME } 계정에 접근할 수 있도록 복구 키를 다운로드해 두세요."
+      ],
+      "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME }에 권장되는 조치 사항이 있습니다"
       ]
     },
     "Server-Info": {
@@ -14378,11 +15142,11 @@
       ]
     },
     "session_recovery:settings:info": {
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "설정에서 비밀번호 재설정을 허용하지 않으려면, 복구 키를 저장해야 합니다."
+      ],
       "To disallow password reset, you must have a recovery method set up.": [
         "비밀번호 재설정을 허용하지 않으려면, 복구 방법 설정이 필요합니다."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "계정의 보안을 강화하고 데이터를 보호하기 위해, 웹 어플리케이션의 계정 설정 내에서 비밀번호 재설정을 요청할 수 있습니다."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14434,6 +15198,9 @@
       ]
     },
     "Settings section title": {
+      "Account": [
+        "계정"
+      ],
       "Organization": [
         "조직"
       ]
@@ -15004,17 +15771,77 @@
     "State": {
       "Canceling your subscription, please wait": [
         "구독을 취소하고 있습니다. 기다려 주세요"
+      ],
+      "Disabled": [
+        "비활성화됨"
+      ],
+      "Enabled": [
+        "활성화됨"
+      ],
+      "No restrictions": [
+        "제한 없음"
       ]
     },
     "Status": {
+      "${ count } person": [
+        "${ count }명"
+      ],
       "... waiting": [
         "... 대기 중"
+      ],
+      "Add a phone number": [
+        "복구 휴대폰 추가"
+      ],
+      "Add an email address": [
+        "이메일 주소 추가"
+      ],
+      "Available on this device": [
+        "이 기기에서 사용 가능"
       ],
       "completed": [
         "완료"
       ],
+      "Disable recovery by email": [
+        "이메일로 복구 비활성화"
+      ],
+      "Disable recovery by phone": [
+        "휴대폰으로 복구 비활성화"
+      ],
       "finalizing": [
         "마무리 중"
+      ],
+      "Generate a recovery phrase": [
+        "새로운 복구 키 생성"
+      ],
+      "Last changed ${ formattedDate }": [
+        "${ formattedDate }에 마지막으로 변경됨"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "${ formattedUpdateDate }에 마지막으로 업데이트됨"
+      ],
+      "Not saved": [
+        "저장되지 않음"
+      ],
+      "Off": [
+        "끔"
+      ],
+      "On": [
+        "켬"
+      ],
+      "Outdated": [
+        "오래됨"
+      ],
+      "Saved": [
+        "저장됨"
+      ],
+      "Unverified": [
+        "인증되지 않음"
+      ],
+      "Verified": [
+        "인증됨"
+      ],
+      "Verify ${ value }": [
+        "${ value } 인증"
       ]
     },
     "Storage": {
@@ -15463,7 +16290,7 @@
         "두 명을 위한 무제한 프라이버시"
       ],
       "Upload any new files": [
-        "새로운 파일 업로드"
+        "새로운 파일 업로드를 할 수 없게 됩니다"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
         "구독은 ${ BRAND_NAME }의 유일한 수익입니다. 회원님의 지원은 우리의 독립성을 유지하고, 온라인 프라이버시에 대한 우리의 사명을 발전시키며, 자유를 위해 투쟁하는 활동가와 단체를 지원하는 것입니다."
@@ -15630,6 +16457,9 @@
       ],
       "Compare the key differences that matter for your business.": [
         "당신의 비즈니스에 중요한 핵심 차이점을 비교해 보세요."
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "VPN 연결 없이는 조직 구성원이 인터넷에 접속할 수 없도록 VPN 사용을 강제화하세요."
       ],
       "Save 50% for 6 months, and keep full access": [
         "6개월 동안 50%를 절약하고 모든 접근 권한 유지"
@@ -16099,6 +16929,9 @@
       "Access control": [
         "접근 제어"
       ],
+      "Accessibility": [
+        "접근성"
+      ],
       "Account": [
         "계정"
       ],
@@ -16141,8 +16974,14 @@
       "Add ${ totalServerCount } server?": [
         "${ totalServerCount }개 서버를 추가할까요?"
       ],
+      "Add a recovery contact": [
+        "복구 연럭처 추가"
+      ],
       "Add address": [
         "주소 추가"
+      ],
+      "Add an emergency contact": [
+        "비상 연락처 추가"
       ],
       "Add contact group name": [
         "연락처 그룹 이름 추가"
@@ -16192,6 +17031,9 @@
       "Add users to \"${ policyName }\"": [
         "\"${ policyName }\"에 사용자 추가"
       ],
+      "Advanced recovery options": [
+        "고급 복구 방법"
+      ],
       "Allocate storage": [
         "저장공간 할당"
       ],
@@ -16200,6 +17042,12 @@
       ],
       "Also in your plan": [
         "플랜에 추가로 포함된 항목"
+      ],
+      "Always-on VPN": [
+        "VPN 항상 켜기"
+      ],
+      "Always-on VPN device profile": [
+        "VPN 항상 켜기 기기 프로파일"
       ],
       "Amount": [
         "금액"
@@ -16300,8 +17148,14 @@
       "Change second password": [
         "2차 비밀번호 변경"
       ],
+      "Choose a deployment method": [
+        "배포 수단 선택"
+      ],
       "Choose a provider": [
         "제공업체 선택"
+      ],
+      "Choose a removal method": [
+        "삭제 방법 선택"
       ],
       "Choose user affiliations": [
         "사용자 소속 선택"
@@ -16314,6 +17168,12 @@
       ],
       "Collaborate on documents": [
         "문서에서 협업하기"
+      ],
+      "Compare plans": [
+        "플랜 비교"
+      ],
+      "Configure Always-on VPN device profile": [
+        "VPN 항상 켜기 기기 프로파일 구성"
       ],
       "Confirm": [
         "확인"
@@ -16399,6 +17259,9 @@
       "Created": [
         "생성함"
       ],
+      "Created!": [
+        "생성 완료!"
+      ],
       "Creating user accounts": [
         "사용자 계정 만드는 중"
       ],
@@ -16432,11 +17295,17 @@
       "Customize your mail import": [
         "사용자 메일 가져오기"
       ],
-      "Data locked": [
-        "데이터 잠김"
+      "Dashboard": [
+        "대시보드"
       ],
       "Data recovery": [
         "데이터 복구"
+      ],
+      "Data recovery contacts": [
+        "데이터 복구 연락처"
+      ],
+      "Data recovery options": [
+        "데이터 복구 방법"
       ],
       "Data retention": [
         "데이터 보존"
@@ -16447,8 +17316,14 @@
       "Day theme": [
         "주간 테마"
       ],
+      "Deactivate current phrase?": [
+        "현재 복구 키를 비활성화하시겠습니까?"
+      ],
       "Decrypt key": [
         "키 해독"
+      ],
+      "Deep dive into email blog posts": [
+        "이메일 블로그 게시물 자세히 살펴보기"
       ],
       "Deep dive into VPN blog posts": [
         "VPN 블로그 게시물 자세히 살펴보기"
@@ -16477,6 +17352,15 @@
       "Deny access to user?": [
         "사용자에게 접근을 거부할까요?"
       ],
+      "Deploy device profile to your devices": [
+        "장치에 기기 프로파일 배포"
+      ],
+      "Deploy via MDM": [
+        "MDM으로 배포"
+      ],
+      "Deploy via PowerShell": [
+        "PowerShell로 배포"
+      ],
       "Description": [
         "설명"
       ],
@@ -16486,11 +17370,17 @@
       "Device": [
         "기기"
       ],
+      "Device data backup": [
+        "기기 데이터 백업"
+      ],
       "Device name": [
         "장치명"
       ],
       "Disable account monitor?": [
         "계정정 모니터링을 비활성화하시겠습니까?"
+      ],
+      "Disable device data backup?": [
+        "기기 데이터 백업을 비활성화하시겠습니까?"
       ],
       "Disable two-factor authentication": [
         "2단계 인증 비활성화"
@@ -16527,6 +17417,9 @@
       ],
       "Download apps": [
         "앱 다운로드"
+      ],
+      "Download your recovery phrase": [
+        "나의 복구 키 다운로드"
       ],
       "Downloads": [
         "다운로드"
@@ -16585,6 +17478,12 @@
       "Email subscriptions": [
         "이메일 구독"
       ],
+      "Email verification": [
+        "이메일 인증"
+      ],
+      "Emergency access": [
+        "비상 접근"
+      ],
       "Enable advanced account protection": [
         "향상된 계정 보호 활성화하기"
       ],
@@ -16639,9 +17538,6 @@
       "Generate missing keys": [
         "사라진 키 생성"
       ],
-      "Generate new recovery phrase?": [
-        "새로운 복구시점을 만들까요?"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "${ vpnPlus }를 얻어 모든 서버에 접근"
       ],
@@ -16671,6 +17567,9 @@
       ],
       "Gift code": [
         "기프트 코드"
+      ],
+      "Group membership": [
+        "그룹 구성원"
       ],
       "Group role assignment paused": [
         "그룹 규칙 할당 중단됨"
@@ -16735,6 +17634,9 @@
       "Information exposed in breach": [
         "유출 시 노출된 정보"
       ],
+      "Install it manually": [
+        "수동으로 설치"
+      ],
       "Integrations": [
         "통합"
       ],
@@ -16750,11 +17652,17 @@
       "IP": [
         "IP"
       ],
+      "Language and time": [
+        "언어 및 시간"
+      ],
       "Limit reached": [
         "제한 도달"
       ],
       "Lower your cost without losing features": [
         "기능 상실 없이 비용 절감"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "기본 비밀번호"
@@ -16804,6 +17712,9 @@
       "No events yet": [
         "이벤트 없음"
       ],
+      "Notifications": [
+        "알림"
+      ],
       "Open": [
         "열기"
       ],
@@ -16852,6 +17763,9 @@
       "Password": [
         "비밀번호"
       ],
+      "Password reset options": [
+        "비밀번호 재설정 방법"
+      ],
       "Password reset settings": [
         "비밀번호 재설정 설정"
       ],
@@ -16869,6 +17783,9 @@
       ],
       "Payment verification": [
         "지불 방법 확인"
+      ],
+      "Pending invitations": [
+        "초대 대기 중"
       ],
       "Phone": [
         "전화"
@@ -16891,6 +17808,9 @@
       "QR Code": [
         "QR코드"
       ],
+      "QR code sign-in": [
+        "QR코드로 로그인"
+      ],
       "Recommended": [
         "추천됨"
       ],
@@ -16912,6 +17832,9 @@
       "Recovery file": [
         "복구 파일"
       ],
+      "Recovery phrase": [
+        "복구 키"
+      ],
       "Refer a friend": [
         "친구 초대"
       ],
@@ -16920,6 +17843,9 @@
       ],
       "Remove all members?": [
         "그룹 구성원을 추방하시겠습니까?"
+      ],
+      "Remove Always-on VPN device profile": [
+        "VPN 항상 켜기 기기 프로파일 삭제"
       ],
       "Remove device?": [
         "기기를 삭제할까요?"
@@ -16944,6 +17870,9 @@
       ],
       "Remove user?": [
         "사용자를 삭제할까요?"
+      ],
+      "Remove via MDM": [
+        "MDM으로 삭제"
       ],
       "Rename the gateway": [
         "게이트웨이 이름 변경"
@@ -17068,8 +17997,14 @@
       "Sign out": [
         "로그아웃"
       ],
+      "Signed in to another account": [
+        "다른 계정으로 로그인"
+      ],
       "Signed in to member account": [
         "회원 계정으로 로그인됨"
+      ],
+      "Signed-in reset": [
+        "로그인 상태에서 재설정"
       ],
       "Simplify email distribution": [
         "이메일 배포 간소화하기"
@@ -17082,6 +18017,12 @@
       ],
       "Single-sign on (SSO)": [
         "싱글 사인 온 (SSO)"
+      ],
+      "SMS verification": [
+        "SMS 인증"
+      ],
+      "Some of your encrypted data is locked": [
+        "일부 암호화된 데이터가 잠겨 있습니다."
       ],
       "Something went wrong": [
         "문제가 발생했습니다"
@@ -17103,6 +18044,9 @@
       ],
       "Status": [
         "상태"
+      ],
+      "Stay for 50% off your next month": [
+        "첫 달은 50% 할인으로 누리기"
       ],
       "Stay secure and connected anywhere": [
         "언제 어디서나 안전하게 연결하세요"
@@ -17133,6 +18077,9 @@
       ],
       "Text": [
         "텍스트"
+      ],
+      "Theme": [
+        "테마"
       ],
       "There are no events for your account": [
         "사용자의 계정에 이벤트가 없습니다."
@@ -17190,6 +18137,9 @@
       ],
       "Upgrade complete!": [
         "업그레이드 완료!"
+      ],
+      "Upgrade plan": [
+        "플랜 업그레이드"
       ],
       "Upgrade to ${ planName }": [
         "${ planName }으로 업그레이드"
@@ -17284,6 +18234,9 @@
       "What is the dark web?": [
         "다크 웹이란?"
       ],
+      "Windows": [
+        "Windows"
+      ],
       "Wipe all logs?": [
         "모든 로그를 삭제하시겠습니까?"
       ],
@@ -17317,11 +18270,23 @@
       "Your plan": [
         "내 플랜"
       ],
+      "Your recovery file": [
+        "나의 복구 파일"
+      ],
+      "Your recovery phrase": [
+        "나의 복구 키"
+      ],
+      "Your recovery setup": [
+        "복구 방법 설정 상태"
+      ],
       "Your referrals": [
         "내 추천"
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Your storage": [
+        "나의 저장 공간"
       ],
       "Your subscriptions": [
         "구독"
@@ -17400,6 +18365,24 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "조직 관리자는 다른 구성원의 사용자 계정을 관리하고 관리자 권한을 부여할 수 있습니다. 주 관리자만 조직의 플랜을 수정할 수 있습니다."
       ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "복구 이메일로 전송된 일회용 코드로 계정을 복구할 수 있도록 허용합니다"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "복구 전화로 전송된 일회용 코드로 계정을 복구할 수 있도록 허용합니다"
+      ],
+      "Allow resetting your password from the account settings": [
+        "계정 설정에서 비밀번호 재설정 허용"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "${ BRAND_NAME } 모바일 앱에서 QR코드로 로그인 허용"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "계정 접근 권한을 요쳥하려면 신뢰하는 연락처를 허용하세요"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "비밀번호 재설정 이후 암호화된 데이터를 잠금 해제하려면 신뢰하는 연락처를 허용하세요"
+      ],
       "Any protection applied to suspicious activity": [
         "의심스러운 활동에 적용되는 모든 보호"
       ],
@@ -17463,6 +18446,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
       ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "조직 내의 모든 사용자에게 포함됩니다. VPN 항상 켜기 기기 프로파일이 배포된 환경에서만 강제화할 수 있습니다."
+      ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "${ MAIL_APP_NAME }에서의 커스텀 이메일 도메인 및 무제한 hide-my-email 포함, ${ VPN_SHORT_APP_NAME }에서의 120여개국 내에 있는 서버에 접근, ${ PASS_SHORT_APP_NAME }애서의 내장형 2단계 인증기 및 안전한 공유, 그 외에도 수많은 혜택까지."
       ],
@@ -17486,6 +18472,15 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "출처 IP 주소 및 인터넷 서비스 제공자(ISP)"
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "만약 비밀번호를 분실한 경우 즉시 계정과 암호화된 데이터를 잠금 해제할 수 있도록 12개의 긴 단어로 이루어진 복구 키를 저장하세요."
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "비밀번호 재설정 이후 데이터를 복구할 수 있도록 브라우저에 암호화된 백업 데이터를 저장하세요"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "비밀번호 재설정 후에 데이터를 복구할 수 있도록 암호화 백업 파일을 저장해 두세요"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "보내는 이메일에 다음 바닥 글을 설정합니다: ${ signature } 해당 링크는 회원님의 추천 링크로 연결됩니다. 바닥 글은 서명 아래에 표시됩니다. 언제든지 설정에서 서명을 개인화할 수 있습니다."
@@ -17699,9 +18694,6 @@
       ],
       "Could not enable admin access for ${ n } user": [
         "${ n }명 사용자에 대한 관리자 접근 권한 활성화를 할 수 없음"
-      ],
-      "Could not enable administrator access: ${ error }": [
-        "관리자 권한 활성화 불가 : ${ error }"
       ],
       "Enable manually": [
         "수동 활성화"
@@ -17920,9 +18912,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2단계 인증"
-      ],
       "Administrators can't access the data of private users": [
         "관리자가 개인 사용자의 데이터에 접근할 수 없습니다."
       ],
@@ -17931,21 +18920,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "초대장을 보냈습니다. 초대받은 구성원의 응답을 기다리고 있습니다."
-      ],
-      "Invite sent": [
-        "초대를 보냈습니다"
-      ],
-      "It's you": [
-        "나"
-      ],
-      "Pending admin access": [
-        "관리자 접근 권한 대기 중"
-      ],
-      "Private": [
-        "개인"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO 사용자는 사용자의 정보 제공사로부터 제공되었습니다."

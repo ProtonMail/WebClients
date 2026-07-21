@@ -1833,6 +1833,9 @@
       "Discover and set up features": [
         "Entdecken und Funktionen einrichten"
       ],
+      "Get 50% offer": [
+        "50 % Rabatt sichern"
+      ],
       "Maybe later": [
         "Vielleicht später"
       ],
@@ -5247,6 +5250,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ein VPN ist ein sicherer Tunnel zwischen deinem Gerät und dem Internet. Er verbirgt deinen Standort und deine Aktivitäten vor deinem Internetdienstanbieter (ISP) und den von dir besuchten Websites."
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Zugriff auf über 20.000 Server in 145 Ländern"
+      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
@@ -5510,6 +5516,9 @@
       "Custom email domains": [
         "Eigene E-Mail-Domains"
       ],
+      "Data integrity check failed": [
+        "Prüfung der Datenintegrität fehlgeschlagen"
+      ],
       "Dec": [
         "Dez"
       ],
@@ -5678,6 +5687,9 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportiere Diagnoseprotokolle für den technischen Support und die Fehlerbehebung"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
+      ],
       "Feb": [
         "Feb"
       ],
@@ -5741,6 +5753,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
       ],
+      "Have some more time to decide without interruption.": [
+        "Gewinne etwas Zeit, um ungestört zu entscheiden."
+      ],
       "here": [
         "hier"
       ],
@@ -5758,6 +5773,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Wenn du jetzt kündigst, verlierst du am ${ expiryDate } den Zugang zu ${ BRAND_NAME } ${ planTitle }, inklusive dieser Funktionen:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
@@ -6222,6 +6240,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die Daten enthalten, die mit dem inaktiven Schlüssel verschlüsselt sind."
       ],
+      "Premium privacy protection across all your devices": [
+        "Premium-Schutz deiner Privatsphäre auf all deinen Geräten"
+      ],
       "Preparing": [
         "Vorbereitung"
       ],
@@ -6447,6 +6468,9 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Bleibe mühelos verbunden, indem du die folgenden VPN-Einstellungen aktivierst:"
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
       ],
@@ -6606,8 +6630,8 @@
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Um eine wirklich private Suche zu ermöglichen, müssen wir deine Dateien lokal indizieren. Du kannst ${ DRIVE_APP_NAME } wie gewohnt weiternutzen - wir informieren dich, sobald die Indexierung erfolgt ist."
       ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
-        "Um eine echte Suche zu ermöglichen, müssen wir deine Dateien lokal indizieren. Du kannst ${ DRIVE_APP_NAME } wie gewohnt weiter nutzen - wir geben dir Bescheid, sobald die Indexierung abgeschlossen ist."
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Um eine umfassende Suche zu ermöglichen, müssen wir deine Dateien lokal indizieren. Du kannst ${ DRIVE_APP_NAME } weiterhin wie gewohnt nutzen – wir informieren dich, sobald die Indizierung abgeschlossen ist. Wenn du diese Seite verlässt, wird die Indizierung unterbrochen und fortgesetzt, sobald du zurückkehrst."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
@@ -7311,6 +7335,12 @@
       ],
       "City": [
         "Stadt"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Client-Version"
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
@@ -12848,6 +12878,9 @@
       "Import your data to ${ BRAND_NAME }": [
         "Deine Daten nach ${ BRAND_NAME } importieren"
       ],
+      "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Mit ${ PRODUCT_NAMES.EASY_SWITCH } importiert"
+      ],
       "Index populators": [
         "Index-Generatoren"
       ],
@@ -13190,6 +13223,9 @@
       ],
       "Start import process": [
         "Importvorgang starten"
+      ],
+      "Stay for 50% off your next month": [
+        "Bleibe und sichere dir 50 % Rabatt auf deinen nächsten Monat"
       ],
       "Stop sharing": [
         "Teilen beenden"
