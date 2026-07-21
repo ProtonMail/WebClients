@@ -1,5 +1,6 @@
 import type { NodeEntity } from '@proton/drive';
 import { NodeType } from '@proton/drive';
+import { parseAdditionalMetadata } from '@proton/drive/modules/extendedAttributes';
 
 export { getNodeName } from '@proton/drive/modules/nodes';
 
@@ -41,6 +42,18 @@ export function getNodeActiveRevisionUid(node?: NodeEntity): string | undefined 
     }
 
     return undefined;
+}
+
+/**
+ * Clear-text media duration (seconds) captured at upload time. Needed for the
+ * MSE seek bar: a fragmented MP4 carries no duration of its own, so MSE only
+ * knows what it has buffered unless we feed it this value.
+ */
+export function getNodeMediaDuration(node?: NodeEntity): number | undefined {
+    if (!node?.activeRevision?.ok || !node.activeRevision.value) {
+        return undefined;
+    }
+    return parseAdditionalMetadata(node.activeRevision.value.claimedAdditionalMetadata).media?.duration;
 }
 
 export function getNodeStorageSize(node: NodeEntity): number | undefined {

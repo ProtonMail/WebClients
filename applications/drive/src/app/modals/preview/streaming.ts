@@ -10,6 +10,8 @@ import metrics from '@proton/metrics/index';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { initDownloadSW } from '../../modules/fileSaver/download';
+import type { MseStreamHandle } from './mseStreaming';
+import { isFragmentedMp4, startMseStream } from './mseStreaming';
 
 const logger = logging.getLogger('preview-streaming');
 
@@ -17,17 +19,70 @@ type UseVideoStreamingProps = {
     drive: Pick<ProtonDriveClient, 'getFileDownloader'>;
     nodeUid: string;
     mimeType?: string;
+    mediaDuration?: number;
 };
 
 const SW_READY_TIMEOUT = 15 * 1000; // 15 seconds for SW to register
 
+// Enough to cover the init segment (ftyp + moov) and the first fragments, so we
+// can detect a fragmented file and sniff its codecs before choosing a path.
+const MSE_HEAD_BYTES = 256 * 1024;
+
+type StreamingMode = 'detecting' | 'sw' | 'mse';
+
 class ServiceWorkerTimeoutError extends Error {}
 
-export function useVideoStreaming({ drive, nodeUid, mimeType }: UseVideoStreamingProps) {
+/**
+ * Streams a video for preview, picking a playback path per file:
+ *
+ * - **Service Worker** (default): a range server the `<video>` element pulls
+ *   byte ranges from on demand. Works for progressive MP4 and most formats.
+ * - **MSE** (fragmented MP4 only): fragments are fed straight into a
+ *   `SourceBuffer` (see `mseStreaming.ts`). Used because Chrome's demuxer
+ *   prescans a fragmented file — downloading it whole — before it starts.
+ *
+ * The path is detected by sniffing the first bytes of the file, then falls
+ * back on failure: MSE → Service Worker → full download (see
+ * `resolvePreviewOutput`).
+ *
+ * The returned `url` is `undefined` while a path is still being chosen (with
+ * `isLoading: true`), and it changes if a running path degrades to a fallback —
+ * so treat it as the current URL, not a stable one.
+ */
+export function useVideoStreaming({ drive, nodeUid, mimeType, mediaDuration }: UseVideoStreamingProps) {
     const [streamId] = useState<string>(() => uuidv4());
     const swTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const [isBrokenVideo, setIsBrokenVideo] = useState(false);
     const [isServiceWorkerReady, setIsServiceWorkerReady] = useState(false);
+
+    const [streamingMode, setStreamingMode] = useState<StreamingMode>('detecting');
+    // Mirror of `streamingMode` for reads inside stable callbacks (e.g.
+    // `handleBrokenVideo`), where the state value would be a stale closure.
+    const streamingModeRef = useRef<StreamingMode>('detecting');
+    const setMode = useCallback((mode: StreamingMode) => {
+        streamingModeRef.current = mode;
+        setStreamingMode(mode);
+    }, []);
+    const [mseUrl, setMseUrl] = useState<string | undefined>(undefined);
+    const mseHandleRef = useRef<MseStreamHandle | undefined>(undefined);
+    const swFallbackRef = useRef<(() => void) | null>(null);
+    const videoElementRef = useRef<HTMLVideoElement | null>(null);
+    const seekListenerRef = useRef<(() => void) | null>(null);
+    // Attach a `seeking` listener so the MSE stream can fetch the target region.
+    // We manage it here because this hook owns the <video> element reference.
+    const attachVideoElement = useCallback((element: HTMLVideoElement | null) => {
+        const previous = videoElementRef.current;
+        if (previous && seekListenerRef.current) {
+            previous.removeEventListener('seeking', seekListenerRef.current);
+            seekListenerRef.current = null;
+        }
+        videoElementRef.current = element;
+        if (element) {
+            const listener = () => mseHandleRef.current?.onSeek();
+            seekListenerRef.current = listener;
+            element.addEventListener('seeking', listener);
+        }
+    }, []);
 
     const isServiceWorkerAvailable = useMemo(() => !!navigator.serviceWorker, []);
     const isStreamableVideo = useMemo(() => {
@@ -49,6 +104,20 @@ export function useVideoStreaming({ drive, nodeUid, mimeType }: UseVideoStreamin
     };
 
     const handleBrokenVideo = useCallback((error?: SyntheticEvent<HTMLVideoElement, Event> | Error | unknown) => {
+        // A failure while MSE is the active mechanism degrades to the Service
+        // Worker path rather than abandoning streaming. Only if the Service
+        // Worker also fails do we give up and let the preview fall back to a
+        // full download (see resolvePreviewOutput). This is the MSE → SW →
+        // full-load cascade.
+        if (streamingModeRef.current === 'mse' && swFallbackRef.current) {
+            logger.warn(`MSE streaming failed, falling back to Service Worker: ${errorToString(error)}`);
+            mseHandleRef.current?.dispose();
+            mseHandleRef.current = undefined;
+            setMseUrl(undefined);
+            swFallbackRef.current();
+            return;
+        }
+
         let videoError;
         if (error instanceof Error) {
             videoError = error;
@@ -161,19 +230,92 @@ export function useVideoStreaming({ drive, nodeUid, mimeType }: UseVideoStreamin
         }
 
         const abortController = new AbortController();
-        initServiceWorker(abortController);
-        streamPromiseRef.current = initStreamPromise(abortController.signal);
+        const { signal } = abortController;
 
         const messageHandler = (event: MessageEvent) => {
             // Chain message handling to ensure sequential processing.
             // We cannot seek to different place while read is in progress.
             messageQueueRef.current = messageQueueRef.current.then(() => handleMessage(abortController, event));
         };
-        navigator.serviceWorker.addEventListener('message', messageHandler);
+
+        const startServiceWorkerStreaming = () => {
+            setMode('sw');
+            initServiceWorker(abortController);
+            streamPromiseRef.current = initStreamPromise(signal);
+            navigator.serviceWorker.addEventListener('message', messageHandler);
+        };
+        // Exposed so a mid-stream MSE failure can degrade to this path.
+        swFallbackRef.current = startServiceWorkerStreaming;
+
+        // Fragmented MP4 doesn't play through the Service Worker range server on
+        // Chrome (it prescans the whole file first), so detect it and switch to
+        // MSE. Everything else keeps the Service Worker path.
+        const start = async () => {
+            let head: Uint8Array<ArrayBuffer> | undefined;
+            let createStream: (() => SeekableReadableStream) | undefined;
+            let claimedTotalSize: number | undefined;
+            try {
+                const downloader = await drive.getFileDownloader(nodeUid, signal);
+                createStream = () => downloader.getSeekableStream();
+                claimedTotalSize = downloader.getClaimedSizeInBytes();
+                // Read the head from a throwaway stream only to detect/sniff; the
+                // MSE helper makes its own stream and reads from the start again.
+                const detectStream = createStream();
+                await detectStream.seek(0);
+                // Copy the SDK's `Uint8Array<ArrayBufferLike>` into an
+                // ArrayBuffer-backed view for the typed MSE helpers.
+                head = new Uint8Array((await detectStream.read(MSE_HEAD_BYTES)).value);
+            } catch (error) {
+                if (error instanceof Error && error.name === 'AbortError') {
+                    return;
+                }
+                logger.warn(`fMP4 detection failed, falling back to Service Worker: ${errorToString(error)}`);
+            }
+
+            if (signal.aborted) {
+                return;
+            }
+
+            if (head && createStream && isFragmentedMp4(head)) {
+                try {
+                    const handle = startMseStream({
+                        // The helper owns its stream fully: it creates one at the
+                        // start and a fresh one after each read-to-end (the SDK
+                        // stream closes for good once fully read, like the Service
+                        // Worker path on `done`).
+                        createStream,
+                        initSegment: head,
+                        durationSeconds: mediaDuration,
+                        totalSize: claimedTotalSize,
+                        getCurrentTime: () => videoElementRef.current?.currentTime ?? 0,
+                        shouldStop: () => signal.aborted,
+                        onError: handleBrokenVideo,
+                    });
+                    mseHandleRef.current = handle;
+                    setMseUrl(handle.url);
+                    setMode('mse');
+                    return;
+                } catch (error) {
+                    logger.warn(`MSE setup failed, falling back to Service Worker: ${errorToString(error)}`);
+                }
+            }
+
+            if (signal.aborted) {
+                return;
+            }
+            startServiceWorkerStreaming();
+        };
+
+        void start();
 
         return () => {
             navigator.serviceWorker.removeEventListener('message', messageHandler);
             clearSerwiceWorkerTimeout();
+            mseHandleRef.current?.dispose();
+            mseHandleRef.current = undefined;
+            swFallbackRef.current = null;
+            setMseUrl(undefined);
+            setMode('detecting');
             abortController.abort();
         };
     }, [nodeUid, isStreamableVideo]);
@@ -182,18 +324,27 @@ export function useVideoStreaming({ drive, nodeUid, mimeType }: UseVideoStreamin
         return undefined;
     }
 
-    if (!isServiceWorkerReady) {
+    if (streamingMode === 'mse') {
         return {
-            url: undefined,
+            url: mseUrl,
             onVideoPlaybackError: handleBrokenVideo,
-            isLoading: true,
+            isLoading: !mseUrl,
+            videoRef: attachVideoElement,
+        };
+    }
+
+    if (streamingMode === 'sw' && isServiceWorkerReady) {
+        return {
+            url: `/sw/stream/${streamId}`,
+            onVideoPlaybackError: handleBrokenVideo,
+            isLoading: false,
         };
     }
 
     return {
-        url: `/sw/stream/${streamId}`,
+        url: undefined,
         onVideoPlaybackError: handleBrokenVideo,
-        isLoading: false,
+        isLoading: true,
     };
 }
 
