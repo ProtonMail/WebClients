@@ -5,16 +5,16 @@ import { c } from 'ttag';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-
-import { useLumoFlags } from '../../hooks/useLumoFlags';
-import type { DesktopConnector } from '../../lib/lumo-api-client/core/desktop-tools';
+import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
 import {
     getDesktopConnectors,
     isDesktopEnvironment,
     setDesktopConnectorEnabled,
     subscribeDesktopConnectors,
-} from '../../lib/lumo-api-client/core/desktop-tools';
+} from '@proton/lumo-api-client/core/desktop-tools';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 import type { MenuDropdownProps, MenuItemProps } from './components/MenuDropdown';
 import { MenuDropdown, MenuItem } from './components/MenuDropdown';

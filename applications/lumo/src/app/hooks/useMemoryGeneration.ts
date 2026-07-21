@@ -1,17 +1,17 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
+import { quickChat } from '@proton/lumo-api-client';
 
-import { quickChat } from '../lib/lumo-api-client';
 import { useLumoPlan } from '../hooks/useLumoPlan';
 import { useLumoSelector } from '../redux/hooks';
 import type { Memory } from '../redux/slices/lumoUserSettings';
 import {
+    MEMORY_GENERATION_MAX_SAMPLES,
     buildMemoryBootstrapPrompt,
     buildMemoryOptimizePrompt,
     canGenerateMemoriesFromChats,
     canOptimizeMemories,
-    MEMORY_GENERATION_MAX_SAMPLES,
     memoriesFromContents,
     parseMemoryOptimizeResponse,
     parseMemoryStringsResponse,
