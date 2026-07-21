@@ -1,11 +1,14 @@
+import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import type { IDBPDatabase } from 'idb';
 
-import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import chunk from '@proton/utils/chunk';
 
 import { ES_MAX_PARALLEL_ITEMS, ES_SYNC_ACTIONS, STORING_OUTCOME } from '../constants';
-import { executeContentOperations, executeMetadataOperations, openESDB, readLimited, setLimited } from '../esIDB';
+import { readLimited, setLimited } from '../esIDB/configObjectStore';
+import { executeContentOperations } from '../esIDB/content';
+import { openESDB } from '../esIDB/indexedDB';
+import { executeMetadataOperations } from '../esIDB/metadata';
 import type {
     CachedItem,
     ESCache,

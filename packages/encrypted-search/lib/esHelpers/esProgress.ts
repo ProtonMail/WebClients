@@ -1,8 +1,9 @@
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
 
-import type { IndexedDBRow } from '../esIDB';
-import { getIndexingProgressQueryHelpers, readSize } from '../esIDB';
+import { readSize } from '../esIDB/configObjectStore';
+import type { IndexedDBRow } from '../esIDB/indexingProgress';
+import { getIndexingProgressQueryHelpers } from '../esIDB/indexingProgress';
 import type { ESProgress } from '../models/interfaces';
 import { estimateIndexingDuration } from './esBuild';
 
