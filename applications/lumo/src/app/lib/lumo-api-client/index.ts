@@ -77,7 +77,7 @@ export async function quickChat(
     options: {
         chunkCallback?: (content: string) => void;
         enableWebSearch?: boolean;
-        config?: LumoApiClientConfig;
+        config?: Partial<LumoApiClientConfig>;
         signal?: AbortSignal;
     } = {}
     // todo: consider including an optional system prompt as an argument or an option
