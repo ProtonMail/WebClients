@@ -1,11 +1,15 @@
 import { serverTime } from '@protontech/crypto';
 import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
+
 import { MINUTE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ES_MAX_RETRIES, ES_MAX_RETRY_DELAY, ES_RETRY_QUEUE_TIMEOUT } from '../constants';
-import { executeContentOperations, openESDB, readMetadataBatch, readRetries, setRetries } from '../esIDB';
+import { readRetries, setRetries } from '../esIDB/configObjectStore';
+import { executeContentOperations } from '../esIDB/content';
+import { openESDB } from '../esIDB/indexedDB';
+import { readMetadataBatch } from '../esIDB/metadata';
 import type { EncryptedItemWithInfo, InternalESCallbacks, RetryObject } from '../models';
 import { isObjectEmpty, serializeAndEncryptItem } from './esUtils';
 

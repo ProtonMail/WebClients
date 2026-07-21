@@ -1,16 +1,16 @@
+import type { ESCiphertext } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import type { IDBPDatabase } from 'idb';
 import { deleteDB, openDB } from 'idb';
 
-import type { ESCiphertext } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import { detectStorageCapabilities } from '@proton/shared/lib/helpers/browser';
 import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
-import { ciphertextSize, esSentryReport, isTimepointSmaller } from '../esHelpers';
+import { esSentryReport } from '../esHelpers/esReporting';
+import { ciphertextSize, isTimepointSmaller } from '../esHelpers/esUtils';
 import type { EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
-import { updateSize } from './configObjectStore';
 import { upgrade } from './indexedDBUpgrade';
-import { getOldestID, getOldestInfo } from './metadata';
+import { getOldestID, getOldestInfo } from './metadataOldest';
 
 /**
  * Format the name of the ES database for the given user ID
@@ -71,10 +71,46 @@ export const openESDB = async (userID: string) => {
     }
 };
 
+/* eslint-disable @typescript-eslint/no-use-before-define -- mutually recursive IDB quota helpers */
 /**
- * Delete the oldest item from ESDB, both from the metadata table and the content table
+ * Update the estimated size by a given amount in the config object store,
+ * but without opening a new instance of ESDB
  */
-const deleteOldestItem = async (ID: string, esDB: IDBPDatabase<EncryptedSearchDB>) => {
+export async function updateSize(esDB: IDBPDatabase<EncryptedSearchDB>, sizeDelta: number) {
+    if (sizeDelta === 0) {
+        return;
+    }
+
+    const oldSize: number | undefined = await esDB.get('config', 'size');
+    if (typeof oldSize === 'undefined') {
+        return;
+    }
+
+    return writeConfigSize(esDB, oldSize + sizeDelta);
+}
+
+async function writeConfigSize(esDB: IDBPDatabase<EncryptedSearchDB>, size: number) {
+    try {
+        await esDB.put('config', size, 'size');
+    } catch (error: any) {
+        if (error.name === 'QuotaExceededError') {
+            const oldestItemID = await getOldestID(esDB);
+            if (!oldestItemID) {
+                esSentryReport('writeConfigSize: quota reached with empty IDB', { error });
+                throw error;
+            }
+
+            await deleteOldestItem(oldestItemID, esDB);
+
+            return writeConfigSize(esDB, size);
+        }
+
+        esSentryReport('writeConfigSize: put failed', { error });
+        throw error;
+    }
+}
+
+async function deleteOldestItem(ID: string, esDB: IDBPDatabase<EncryptedSearchDB>) {
     let removeSize = 0;
     await Promise.all([
         esDB.get('metadata', ID).then((item) => {
@@ -88,7 +124,8 @@ const deleteOldestItem = async (ID: string, esDB: IDBPDatabase<EncryptedSearchDB
     ]);
 
     return updateSize(esDB, -removeSize);
-};
+}
+/* eslint-enable @typescript-eslint/no-use-before-define */
 
 /**
  * Return whether an item fetched from either the metadata table or the content table is of type ESCiphertext
