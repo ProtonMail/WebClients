@@ -1,5 +1,4 @@
-import type { ReactNode, RefObject } from 'react';
-import { createContext, useContext, useMemo, useRef } from 'react';
+import { type ReactNode, createContext, useContext, useMemo } from 'react';
 
 import { useB2BAdminSidebarFeature } from '../hooks/useB2BAdminSidebarFeature';
 
@@ -7,7 +6,6 @@ export type B2BAdminNavigation = ReturnType<typeof useB2BAdminSidebarFeature>;
 
 interface NavigationContextValue {
     navigation: B2BAdminNavigation;
-    navigationRef: RefObject<HTMLDivElement>;
 }
 
 const NavigationContext = createContext<NavigationContextValue | undefined>(undefined);
@@ -19,18 +17,14 @@ interface NavigationProviderProps {
 }
 
 /**
- * Computes the B2B admin navigation (the full `useB2BAdminSidebarFeature` value) and owns
- * the navigation DOM ref, then shares both with its subtree — so neither has to be drilled
- * through props. Descendants read them via `useB2BAdminNavigation` / `useNavigationRef`.
- *
- * The ref lives here (not redux) because a DOM ref isn't serializable, and the feature
- * value carries functions for the same reason.
+ * Computes the B2B admin navigation (the full `useB2BAdminSidebarFeature` value),
+ * then shares both with its subtree — so neither has to be drilled
+ * through props. Descendants read them via `useB2BAdminNavigation`.
  */
 export const NavigationProvider = ({ prefix, children }: NavigationProviderProps) => {
-    const navigationRef = useRef<HTMLDivElement>(null);
-    const navigation = useB2BAdminSidebarFeature({ prefix, navigationRef });
+    const navigation = useB2BAdminSidebarFeature({ prefix });
 
-    const value = useMemo<NavigationContextValue>(() => ({ navigation, navigationRef }), [navigation]);
+    const value = useMemo<NavigationContextValue>(() => ({ navigation }), [navigation]);
 
     return <NavigationContext.Provider value={value}>{children}</NavigationContext.Provider>;
 };
@@ -44,5 +38,3 @@ const useNavigationContext = () => {
 };
 
 export const useB2BAdminNavigation = () => useNavigationContext().navigation;
-
-export const useNavigationRef = () => useNavigationContext().navigationRef;
