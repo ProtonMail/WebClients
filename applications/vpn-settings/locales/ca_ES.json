@@ -71,6 +71,9 @@
       "Add address or domain": [
         "Afegeix una adreça o domini"
       ],
+      "Add and verify": [
+        "Afegiu i verifiqueu"
+      ],
       "Add another account": [
         "Afegeix un altre compte"
       ],
@@ -88,6 +91,9 @@
       ],
       "Add PayPal": [
         "Afegeix PayPal"
+      ],
+      "Add recovery options": [
+        "Afegiu opcions de recuperació"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Afegeix un enllaç de recomanació a la signatura de ${ MAIL_APP_NAME }"
@@ -140,6 +146,9 @@
       "Cancel": [
         "Cancel·la"
       ],
+      "Cancel request": [
+        "Cancel·la la sol·licitud"
+      ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
@@ -166,6 +175,9 @@
       ],
       "Check import progress": [
         "Comprova el progrés de la importació"
+      ],
+      "Check now": [
+        "Comproveu-ho ara"
       ],
       "Choose a file or drag it here": [
         "Trieu un fitxer o arrossegueu-lo aquí"
@@ -289,6 +301,9 @@
       ],
       "Create new policy": [
         "Crea una política"
+      ],
+      "Create recovery phrase": [
+        "Creeu una frase de recuperació"
       ],
       "Create users": [
         "Crea usuaris"
@@ -416,6 +431,9 @@
       "Download recovery file": [
         "Descarrega el fitxer de recuperació"
       ],
+      "Download updated file": [
+        "Descarregueu el fitxer actualitzat"
+      ],
       "Edit": [
         "Edita"
       ],
@@ -512,14 +530,14 @@
       "Generate device profile": [
         "Generar el perfil de dispositiu"
       ],
+      "Generate new phrase": [
+        "Genereu una frase nova"
+      ],
       "Generate new recovery phrase": [
         "Genera una nova frase de recuperació "
       ],
       "Generate password": [
         "Genera la contrasenya"
-      ],
-      "Generate recovery phrase": [
-        "Genera una frase de recuperació"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obteniu ${ planName } per ${ priceCoupon }."
@@ -617,6 +635,9 @@
       "I don’t have my backup codes": [
         "No tinc els meus codis de còpia de seguretat"
       ],
+      "Ignore": [
+        "Ignoreu-ho"
+      ],
       "Import": [
         "Importa"
       ],
@@ -637,6 +658,12 @@
       ],
       "Invite user": [
         "Convida l'usuari"
+      ],
+      "JumpCloud": [
+        "JumpCloud"
+      ],
+      "Keep": [
+        "Mantenir"
       ],
       "Keep current plan": [
         "Mantingueu el pla actual"
@@ -707,6 +734,9 @@
       "Mark as resolved": [
         "Marca com a resolt"
       ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
+      ],
       "More benefits": [
         "Més avantatges"
       ],
@@ -751,6 +781,9 @@
       ],
       "Open navigation": [
         "Obre la navegació"
+      ],
+      "Opt out": [
+        "Renuncia"
       ],
       "Or": [
         "O"
@@ -908,6 +941,9 @@
       "Review changes": [
         "Revisar els canvis"
       ],
+      "Review recovery options": [
+        "Reviseu les opcions de recuperació"
+      ],
       "Revoke": [
         "Revoca"
       ],
@@ -926,6 +962,9 @@
       "Save address": [
         "Desa l'adreça"
       ],
+      "Save and verify": [
+        "Deseu i verifiqueu"
+      ],
       "Save SAML configuration": [
         "Desa la configuració SAML"
       ],
@@ -940,6 +979,9 @@
       ],
       "Search settings": [
         "Configuració de cerca"
+      ],
+      "Secure account": [
+        "Protegiu el compte"
       ],
       "See DNS TXT record": [
         "Mostra el registre DNS TXT"
@@ -1012,6 +1054,9 @@
       ],
       "Set up a custom domain": [
         "Configura un domini personalitzat"
+      ],
+      "Set up account recovery": [
+        "Configureu la recuperació del compte"
       ],
       "Set up auto-forwarding from Gmail": [
         "Configura el reenviament automàtic des de Gmail"
@@ -1258,6 +1303,9 @@
       ],
       "View plans details": [
         "Mostra els detalls dels plans"
+      ],
+      "View recovery setup details": [
+        "Visualitzeu els detalls de la configuració de recuperació"
       ],
       "Void": [
         "Nul"
@@ -2238,6 +2286,9 @@
       ],
       "Discover and set up features": [
         "Descobriu i configureu les característiques"
+      ],
+      "Get 50% offer": [
+        "Aconseguiu una oferta del 50%"
       ],
       "Maybe later": [
         "Potser més tard"
@@ -3576,6 +3627,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "El xifratge d'extrem a extrem de ${ BRAND_NAME } significa que només vós podeu desbloquejar les vostres dades. Configureu les opcions de recuperació ara per assegurar-vos que no en perdeu mai l'accés."
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } al ${ DRIVE_APP_NAME } us permet treballar amb altres persones en un entorn segur i xifrat."
       ],
@@ -3599,6 +3653,9 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Bloquegeu la capacitat de Google per crear el vostre perfil. Gmail no podrà veure què feu a ${ MAIL_APP_NAME }"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Importeu els vostres correus electrònics, els esdeveniments del calendari i els contactes des d'un altre proveïdor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Bastiu confiança i reconeixement de marca amb adreces de correu electrònic professionals del vostre propi domini."
@@ -3678,6 +3735,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Com vam donar suport als activistes locals quan la privacitat i la llibertat d'expressió es van veure amenaçades."
       ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "Com desbloquejar les vostres dades xifrades si perdeu la contrasenya."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
@@ -3689,6 +3749,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Us permet afegir instantàniament enllaços de reunió a les invitacions d'esdeveniments."
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "Mètodes que inclouen tant el restabliment de contrasenya com la recuperació de dades."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "La majoria de problemes es poden resoldre en pocs minuts amb les nostres guies pas a pas."
@@ -3719,6 +3782,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "Encara necessiteu ajuda? El nostre equip de suport és a la vostra disposició."
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "Això us permet recuperar l'accés al compte de ${ BRAND_NAME }, però no recupera les dades xifrades."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Això podria passar si s'han suprimit els permisos o s'ha canviat la contrasenya."
@@ -4126,9 +4192,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Com funciona:** Introduïu en aquest dispositiu el codi que es mostra al dispositiu on voleu iniciar la sessió. Se us identificarà com a **${ email }**. Tots dos dispositius romandran actius."
       ],
-      "Allow QR code sign‒in": [
-        "Permet iniciar la sessió amb un codi QR"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Aneu amb compte amb els missatges amb codis QR. Només heu d’escanejar un codi si confieu en la font."
       ],
@@ -4143,9 +4206,6 @@
       ],
       "QR code sign-in enabled": [
         "S'ha activat l'inici de sessió amb codi QR."
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Escanegeu el codi QR al vostre dispositiu mòbil per iniciar la sessió"
       ],
       "Security tips": [
         "Consells de seguretat"
@@ -4283,39 +4343,338 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "Correu electrònic del compte ${ BRAND_NAME }"
+      ],
+      "${ days } day left": [
+        "Queda ${ days } dia",
+        "Queden ${ days } dies."
+      ],
+      "${ hours } hour left": [
+        "Queda ${ hours } hora",
+        "Queden ${ hours } hores"
+      ],
+      "${ minutes } minute left": [
+        "Queda ${ minutes } minut",
+        "Queden ${ minutes } minuts"
+      ],
       "${ n } day": [
         "${ n } dia",
         "${ n } dies"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } sol·licita accés d'emergència al vostre compte"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user } podrà utilitzar el vostre compte i canviar les vostres dades."
+      ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } tancarà la sessió del vostre compte i no hi podrà accedir de nou fins al següent accés d'emergència."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } ja no us podrà ajudar a recuperar les dades després d'un restabliment de contrasenya."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } ja no podrà sol·licitar accés al vostre compte en cas d'emergència."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } no podrà accedir al vostre compte fins al següent accés d'emergència."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** és ara el vostre contacte de recuperació. Us pot ajudar a desbloquejar les dades després de restablir la contrasenya."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Si ho confirmen**, feu clic a **Aprovar la recuperació**. Això desbloquejarà les seves dades xifrades."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Si no han demanat la vostra ajuda**, és possible que algú altre estigui intentant accedir al seu compte. En aquest cas, ignoreu aquesta sol·licitud."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Protegiu el vostre llegat.** Actualitzeu el pla per afegir contactes d'emergència."
+      ],
+      "Access account": [
+        "Accediu al compte"
+      ],
+      "Access granted": [
+        "S'ha concedit l'accés."
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "S'ha concedit accés el ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "La sol·licitud d'accés s'ha cancel·lat"
+      ],
+      "Access requested": [
+        "S'ha sol·licitat l'accés"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Es concedirà accés el ${ formattedAccessibleAt }"
+      ],
+      "Add": [
+        "Afegeix"
+      ],
+      "Add emergency contact": [
+        "Afegeix un contacte d'emergència"
+      ],
+      "Add option": [
+        "Afegiu una opció"
+      ],
+      "Add recovery contact": [
+        "Afegiu un contacte de recuperació"
+      ],
       "Added on ${ formattedDate }": [
         "S'ha afegit el ${ formattedDate }"
+      ],
+      "Approve recovery": [
+        "Aproveu la recuperació"
+      ],
+      "Approved request": [
+        "S'ha aprovat la sol·licitud"
       ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
         "Demaneu ajuda a un contacte de recuperació. Rebrà un correu electrònic per verificar la vostra sol·licitud i desbloquejar-vos les dades."
       ],
+      "Asking for help": [
+        "Demanar ajuda"
+      ],
+      "Cancel request": [
+        "Cancel·leu la sol·licitud"
+      ],
+      "Cancel request?": [
+        "Voleu cancel·lar la sol·licitud?"
+      ],
+      "Change access wait time": [
+        "Canvieu el temps d'espera per obtenir accés"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Canvieu el temps que ${ user } haurà d'esperar abans de donar-li accés automàticament."
+      ],
+      "Change wait time": [
+        "Canvia el temps d'espera"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Trieu algú de confiança perquè us ajudi a recuperar les dades en cas de restabliment de contrasenya. Els contactes de recuperació han de tenir un compte de ${ BRAND_NAME }."
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Trieu algú en qui confieu per a accedir a les vostres dades. Aquesta persona ha de tenir ja un compte de ${ BRAND_NAME }."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Poseu-vos-hi en contacte per confirmar que necessiten ajuda per recuperar les seves dades."
+      ],
       "Contacts": [
         "Contactes"
+      ],
+      "Data recovery contacts": [
+        "Contactes de recuperació de dades"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Les dades s'han recuperat correctament. Ara podreu desxifrar les vostres dades i els fitxers xifrats que tingueu."
+      ],
+      "Disabled": [
+        "Desactivat"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "No perdeu l'accés d'emergència. Activeu la renovació automàtica avui mateix."
+      ],
+      "Emergency access": [
+        "Accés d'emergència"
+      ],
+      "Emergency access for ${ user } removed": [
+        "S'ha eliminat l'accés d'emergència per a ${ user }"
+      ],
+      "Emergency access granted": [
+        "S'ha concedit l'accés d'emergència"
+      ],
+      "Emergency access refused": [
+        "S'ha denegat l'accés d'emergència"
+      ],
+      "Emergency access request": [
+        "Sol·licitud d'accés d'emergència"
+      ],
+      "Emergency access requested": [
+        "S'ha sol·licitat l'accés d'emergència"
+      ],
+      "Emergency access revoked": [
+        "S'ha revocat l'accés d'emergència"
+      ],
+      "Emergency contact added": [
+        "S'ha afegit el contacte d'emergència"
+      ],
+      "Emergency contact enabled": [
+        "S'ha habilitat el contacte d'emergència"
+      ],
+      "Emergency contact removed": [
+        "S'ha eliminat el contacte d'emergència"
+      ],
+      "Enable": [
+        "Habiliteu-ho"
+      ],
+      "Enable auto-renew": [
+        "Habilita la renovació automàtica"
+      ],
+      "For ${ email }": [
+        "Per a ${ email }"
       ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
         "Poseu-vos-hi en contacte ara per veure si us poden ajudar i per fer-los saber personalment que sou vós qui intenteu desbloquejar les dades."
       ],
+      "Give access now": [
+        "Dona accés ara"
+      ],
+      "Give immediate access?": [
+        "Voleu concedir accés immediat?"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Demaneu-los que revisin la bústia d'entrada per buscar un correu on se'ls demani ajuda per recuperar les vostres dades. El correu conté un enllaç on han de fer clic per verificar la vostra sol·licitud."
+      ],
       "Immediate": [
         "Immediat"
+      ],
+      "Included with ${ planName }": [
+        "Inclòs amb ${ planName }"
       ],
       "Less than a day": [
         "Menys d'un dia"
       ],
+      "Less than a minute left": [
+        "Queda menys d'un minut"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "S'ha arribat al màxim d'${ limit } contacte. Per canviar-ho, esborreu un contacte i afegiu-ne un de nou.",
+        "S'ha arribat al màxim de ${ limit } contactes. Per canviar-ho, esborreu un contacte i afegiu-ne un de nou."
+      ],
+      "Only ": [
+        "Només "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Sol·liciteu accés d'emergència només quan hi hagi una **situació vàlida** que us requereixi gestionar el compte d'un altre usuari."
+      ],
+      "Pending request": [
+        "Sol·licitud pendent"
+      ],
+      "People I trust": [
+        "Persones de confiança"
+      ],
+      "People who have you as a recovery contact": [
+        "Persones que us tenen com a contacte de recuperació"
+      ],
+      "People who trust me": [
+        "Persones que confien en mi"
+      ],
+      "Proceed anyway": [
+        "Continueu igualment"
+      ],
+      "Protect your legacy with emergency access": [
+        "Protegiu el vostre llegat amb l'accés d'emergència"
+      ],
+      "Recover data": [
+        "Recupereu les dades"
+      ],
+      "Recovery approved": [
+        "S'ha aprovat la recuperació"
+      ],
+      "Recovery contact added": [
+        "S'ha afegit el contacte de recuperació"
+      ],
+      "Recovery contact enabled": [
+        "S'ha habilitat el contacte de recuperació"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "S'ha suprimit el contacte de recuperació de ${ user }"
+      ],
+      "Recovery contact removed": [
+        "S'ha esborrat el contacte de recuperació"
+      ],
       "Recovery request sent": [
         "S'ha enviat la sol·licitud de recuperació"
+      ],
+      "Refuse access": [
+        "Denega l'accés"
+      ],
+      "Refuse access?": [
+        "Voleu denegar-hi l'accés?"
+      ],
+      "Remove recovery contact": [
+        "Esborreu el contacte de recuperació"
+      ],
+      "Remove trusted contact": [
+        "Esborra el contacte de confiança"
       ],
       "Remove your recovery contacts to continue": [
         "Esborreu els vostres contactes de recuperació per continuar"
       ],
+      "Renew to get emergency access again.": [
+        "Renoveu per a tornar a tenir accés d'emergència."
+      ],
+      "Request access": [
+        "Sol·liciteu accés"
+      ],
+      "Request access?": [
+        "Voleu sol·licitar accés?"
+      ],
+      "Requesting access": [
+        "S'està sol·licitant accés"
+      ],
+      "Review recovery request": [
+        "Reviseu la sol·licitud de recuperació"
+      ],
+      "Revoke access": [
+        "Revoca l'accés"
+      ],
+      "Revoke access?": [
+        "Voleu revocar-li l'accés?"
+      ],
+      "See request": [
+        "Vegeu la sol·licitud"
+      ],
       "Select recovery contact ${ name }": [
         "Seleccioneu el contacte de recuperació ${ name }."
       ],
+      "Send recovery request": [
+        "Envieu la sol·licitud de recuperació"
+      ],
       "Start recovery": [
         "Començar la recuperació"
+      ],
+      "Stop being recovery contact": [
+        "Deixeu de ser contacte de recuperació."
+      ],
+      "Stop being recovery contact?": [
+        "Voleu deixar de ser contacte de recuperació?"
+      ],
+      "Stop being trusted contact": [
+        "Deixeu de ser un contacte de confiança"
+      ],
+      "Stop being trusted contact?": [
+        "Voleu deixar de ser un contacte de confiança?"
+      ],
+      "Subscription expired": [
+        "La subscripció ha caducat"
+      ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "Us han afegit com a contacte de confiança. Podreu accedir al seu compte en cas d'emergència."
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "Poden demanar l'accés al vostre compte en cas d'emergència."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Es rebrà l'accés automàticament en **${ days } dia**, el **${ formattedAccessibleAt }**. Podreu rebutjar la sol·licitud o donar accés immediat en qualsevol moment.",
+        "Es rebrà l'accés automàticament en **${ days } dies**, el **${ formattedAccessibleAt }**. Podreu rebutjar la sol·licitud o donar accés immediat en qualsevol moment."
+      ],
+      "This will take effect immediately.": [
+        "Això tindrà efecte immediat."
+      ],
+      "Time required before automatically giving access": [
+        "Temps necessari abans de proporcionar accés automàticament."
+      ],
+      "Time required before automatically giving you access": [
+        "Temps necessari abans de proporcionar-vos accés automàticament."
+      ],
+      "Time required before automatically granting them access": [
+        "Temps necessari abans de concedir-li accés automàticament"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Per desactivar aquest mètode de recuperació, esborreu tots els vostres contactes de recuperació."
@@ -4323,8 +4682,76 @@
       "Trusted contact": [
         "Contacte de confiança"
       ],
+      "Unable to recover data": [
+        "No s'han pogut recuperar les dades"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
+      ],
+      "Wait time": [
+        "Temps d'espera"
+      ],
+      "Wait time for access": [
+        "Temps d'espera per obtenir accés"
+      ],
+      "Wait time saved": [
+        "S'ha desat el temps d'espera"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Hem rebut una sol·licitud per desbloquejar les dades xifrades del teu contacte **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Hem enviat una sol·licitud per correu electrònic a ${ user }. Feu-li saber que sou vós qui intenta recuperar l'accés."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "No s'han pogut verificar les dades de recuperació. Voleu continuar igualment?"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Notificarem **${ user }** que heu sol·licitat accés d'emergència."
+      ],
+      "You are signed in to the account ${ account }.": [
+        "Heu iniciat la sessió al compte ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "Ara podeu accedir i gestionar el seu compte."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Els hi podeu suprimir l'accés en qualsevol moment per recuperar el control exclusiu del vostre compte."
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Heu arribat al màxim d'${ limit } contacte d'emergència.",
+        "Heu arribat al màxim de ${ limit } contactes d'emergència."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Se us notificarà quan algú sol·liciti accés d'emergència."
+      ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Ja no podràs ajudar ${ user } a recuperar les seves dades després que restableixi la contrasenya."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Ja no podreu sol·licitar accés al compte de ${ user } en cas d'emergència."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Encara podreu sol·licitar accés al compte de ${ user } més endavant."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Obtindreu accés al seu compte de manera immediata."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Rebreu accés al seu compte en **${ days } dia** o quan aprovin la vostra sol·licitud.",
+        "Rebreu accés al seu compte en **${ days } dies** o quan aprovin la vostra sol·licitud."
+      ],
       "Your recovery contact has helped you recover data.": [
         "El vostre contacte de recuperació us ha ajudat a recuperar les dades."
+      ],
+      "Your recovery contacts": [
+        "Els vostres contactes de recuperació"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Els vostres contactes de recuperació han de ser persones que conegueu i amb qui us pugueu posar en contacte fàcilment."
       ]
     },
     "Empty group name": {
@@ -4344,6 +4771,9 @@
       ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
+      ],
+      "Address cannot be yours": [
+        "L'adreça no pot ser vostra"
       ],
       "Address could not be added.": [
         "No s'ha pogut afegir l'adreça."
@@ -5157,6 +5587,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         " 3 TB d'emmagatzematge total"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Els avantatges del vostre compte"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -6601,6 +7036,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Rebeu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
       ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "**El vostre correu electrònic de recuperació per si sol no us permet recuperar les dades xifrades** després de restablir la contrasenya."
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "**El vostre telèfon de recuperació per si sol no us permet recuperar les dades xifrades** després de restablir la contrasenya."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } més",
         "+ ${ invisibleCount } més"
@@ -6633,23 +7074,17 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Un fitxer de recuperació us permet desbloquejar i veure les vostres dades després d'una recuperació del compte."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Una frase de recuperació us permet accedir al compte i recuperar els missatges xifrats si oblideu la contrasenya."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Accediu a més de 20.000 servidors en 145 països"
       ],
       "Account monitor": [
         "Monitor del compte"
       ],
       "Account successfully updated": [
         "El compte s'ha actualitzat."
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Activeu almenys un mètode de recuperació de dades per assegurar-vos que podeu continuar accedint al contingut del vostre compte ${ BRAND_NAME } si perdeu la contrasenya."
       ],
       "active": [
         "activa"
@@ -6660,11 +7095,23 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Afegiu-hi ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } per només ${ bundlePlanPriceInline }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "Afegiu d'1 a 5 persones en qui confieu i amb qui pugueu contactar fàcilment. Podran restablir-vos la contrasenya iniciant sessió al vostre compte. Han de tenir ja un compte de ${ BRAND_NAME }."
+      ],
+      "Add a phone number in case we need to contact you": [
+        "Afegiu un número de telèfon en cas que calgui contactar-vos"
+      ],
       "add a recovery method": [
         "afegir un mètode de recuperació"
+      ],
+      "Add an email address in case we need to contact you": [
+        "Afegiu una adreça de correu electrònic en cas d'haver de contactar amb vosaltres"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Afegiu una capa de seguretat addicional al vostre compte. Haureu de verificar-vos amb 2FA cada vegada que inicieu la sessió."
@@ -6756,6 +7203,12 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permeteu als usuaris connectar-se a servidors compartits segurs des de la secció **Països** de l'aplicació ${ VPN_APP_NAME }."
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Si permeteu l'inici de sessió amb codi QR la podreu iniciar escanejant-ne un si oblideu la contrasenya. Només cal que tingueu la sessió iniciada en un servei de ${ BRAND_NAME } en un altre dispositiu."
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "Permetre el restabliment de contrasenya des de les preferències us facilita canviar-la si l'heu perdut, mentre tingueu la sessió iniciada a ${ BRAND_NAME }."
       ],
       "Already allocated": [
         "Ja assignat"
@@ -6879,6 +7332,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "En afegir persones de la vostra confiança com a contactes de recuperació, els podrem enviar un correu electrònic per ajudar-vos si teniu problemes per recuperar les vostres dades després d'un restabliment de contrasenya. També podeu ser contacte de recuperació per altres persones."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
@@ -7046,6 +7502,9 @@
       "Data recoverable with recovery phrase": [
         "Podeu recuperar les dades amb la frase de recuperació"
       ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "La recuperació de dades requereix una opció de restabliment de contrasenya (correu electrònic o SMS)"
+      ],
       "dedicated servers": [
         "servidors dedicats"
       ],
@@ -7071,8 +7530,8 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Depenent de les vostres preferències, podran rebre accés immediatament o després d'un **període d'espera** designat."
       ],
-      "Deploy ${ regoLink } directly via your MDM file deployment": [
-        "Desplegueu ${ regoLink } directament mitjançant el desplegament de fitxers del vostre MDM"
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "Desplegueu ${ regoArtifact } directament mitjançant el desplegament de fitxers del vostre MDM"
       ],
       "Deploy across all your managed devices": [
         "Desplegueu-ho a tots els dispositius que gestioneu"
@@ -7094,6 +7553,9 @@
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "Si desactiveu l'aplicació d'autenticació 2FA, el vostre compte serà menys segur. Feu-ho només si és absolutament necessari."
+      ],
+      "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
+        "Si desactiveu la còpia de seguretat de dades en aquest dispositiu, no podreu desbloquejar automàticament les dades xifrades després d'un restabliment de contrasenya."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Descobriu les noves característiques desbloquejades i comenceu a utilitzar-les de seguida!"
@@ -7153,8 +7615,11 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
       ],
-      "Download ${ ps1Link } and run on each device as the system user to automatically place the device profile.": [
-        "Descarregueu ${ ps1Link } i executeu-lo a cada dispositiu com a usuari del sistema per col·locar automàticament el perfil de dispositiu."
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Descarregueu ${ mobileConfigArtifact } i obriu-lo a cada Mac per instal·lar-hi el perfil, i després aproveu-lo a les Preferències del Sistema."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "Descarregueu ${ powershellArtifact } i executeu-lo a cada dispositiu com a usuari del sistema per col·locar-hi automàticament el perfil de dispositiu."
       ],
       "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
         "Descarregueu ${ removeScriptLink } i executeu-lo a cada dispositiu com a usuari del sistema per eliminar el perfil automàticament."
@@ -7239,6 +7704,9 @@
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Si torneu a activar la recuperació per frase, es generarà una nova frase de recuperació."
+      ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Si habiliteu la còpia de seguretat de dades en aquest dispositiu, podreu restaurar l'accés als correus electrònics, contactes, fitxers, contrasenyes i qualsevol altra dada xifrada del vostre compte després d'un restabliment de contrasenya, només amb iniciar sessió en aquest dispositiu."
       ],
       "End date": [
         "Data de fi"
@@ -7339,6 +7807,9 @@
       "Failed to fetch logs.": [
         "No s'han pogut obtenir els registres."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Velocitats de VPN més ràpides de fins a 10 Gbps"
+      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Només fitxers (ni fotos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }): fins a un total de 100 GB, 100.000 fitxers i 50 GB per fitxer"
       ],
@@ -7387,8 +7858,8 @@
       "Generate the device profile and download a configuration file.": [
         "Genereu el perfil de dispositiu i descarregueu un fitxer de configuració."
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "La generació d’una nova frase de recuperació desactivarà l'antiga."
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "La generació d'una nova frase de recuperació desactivarà la vostra frase de recuperació actual."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Obteniu ${ AUTHENTICATOR_APP_NAME } per a tots els vostres dispositius."
@@ -7429,6 +7900,9 @@
       "Groups": [
         "Grups"
       ],
+      "Have some more time to decide without interruption.": [
+        "Tingueu més temps per decidir sense interrupcions."
+      ],
       "here": [
         "aquí"
       ],
@@ -7447,11 +7921,14 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si un altre administrador ha canviat aquesta contrasenya, haureu de preguntar-li quina és la nova contrasenya d'organització."
       ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "Si està desactivat, ${ BRAND_NAME } continuarà utilitzant el vostre correu electrònic de recuperació per enviar notificacions de seguretat."
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
+        "Si està desactivat, ${ BRAND_NAME } continuarà utilitzant el vostre telèfon de recuperació per enviar notificacions de seguretat."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Si pot ser, inicieu sessió en un dispositiu o un navegador on ja ho hàgiu fet abans."
-      ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Si això és a causa d'un restabliment antic de la contrasenya, podeu evitar que el missatge torni a aparèixer"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
@@ -7461,6 +7938,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Si ho cancel·leu ara, perdreu l'accés a ${ BRAND_NAME } ${ planTitle } el ${ expiryDate }, incloent-hi aquestes característiques:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
@@ -7495,8 +7975,8 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Si baixeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ VPN_APP_NAME }."
       ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Si recentment heu restablert la vostra contrasenya, podeu utilitzar un mètode de recuperació de dades per desbloquejar les vostres dades."
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "Si heu restablert la contrasenya fa poc, podeu ${ recoveryMethodLink } per desbloquejar les vostres dades. Si això es deu a un restabliment de contrasenya antic, podeu fer que no es torni a mostrar el missatge."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Si la vostra organització té figures públiques, gestiona dades sensibles o pot ser objecte d'atacs cibernètics, us recomanem especialment que activeu ${ PROTON_SENTINEL_NAME } per tots els membres de l'organització."
@@ -7596,9 +8076,6 @@
       "Invited": [
         "Convidat"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Sembla que algunes de les vostres dades estan xifrades i bloquejades."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Es triga 10 dies a canviar el país d'un servidor. Assegureu-vos que la vostra selecció sigui correcta."
       ],
@@ -7656,6 +8133,12 @@
       "Item updated in vault": [
         "S'ha actualitzat un element a la caixa forta"
       ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "Sovint és la manera més fàcil de recuperar el vostre compte si teniu la sessió iniciada."
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "És l'única manera de recuperar-ho tot a l'instant, així que assegureu-vos de guardar-la en un lloc segur però accessible."
+      ],
       "JCB logo": [
         "Logotip de JCB"
       ],
@@ -7664,6 +8147,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Manteniu la vostra informació més segura i privada amb aquestes guies i consells."
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Mantingueu les vostres contrasenyes segures i inicieu sessió a l'instant amb l'emplenament automàtic a tots els dispositius."
       ],
       "Key sections reorganized for faster access.": [
         "S'han reorganitzat les seccions clau per un accés més ràpid."
@@ -7727,6 +8213,9 @@
       ],
       "Low Priority": [
         "Prioritat baixa"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Els principals serveis de correu electrònic poden rebutjar o filtrar els vostres correus electrònics al correu brossa si SPF/DKIM/DMARC no hi són o no estan configurats correctament."
@@ -7875,9 +8364,6 @@
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Només podeu canviar les majúscules i la puntuació (punts, guionets i guions baixos). Per utilitzar una adreça diferent, afegiu-ne una de nova."
       ],
-      "Only licensed users of your organization can authenticate ${ VPN_APP_NAME } on devices which have the device profile deployed.": [
-        "Només els usuaris de la vostra organització amb llicència poden autenticar ${ VPN_APP_NAME } en els dispositius que tenen desplegat el perfil de dispositiu."
-      ],
       "Open source": [
         "Codi obert"
       ],
@@ -7886,9 +8372,6 @@
       ],
       "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
         "Obriu la sessió activa al navegador i aneu a **Preferències → Totes les preferències → Recuperació → Configuració del restabliment de contrasenya.**"
-      ],
-      "Optional configuration": [
-        "Configuració opcional"
       ],
       "or ${ selectFileButton }": [
         "o ${ selectFileButton }"
@@ -7904,8 +8387,8 @@
       "or discover other features:": [
         "o descobriu altres característiques:"
       ],
-      "Or run ${ ps1Link } via your MDM script execution": [
-        "O executeu ${ ps1Link } mitjançant l'execució de scripts del vostre MDM"
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "O executeu ${ powershellArtifact } mitjançant l'execució de scripts del vostre MDM"
       ],
       "Or select a particular server:": [
         "O seleccioneu un servidor concret:"
@@ -8005,9 +8488,6 @@
       "Please fill in all required fields.": [
         "Empleneu tots els camps obligatoris."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Manteniu-lo protegit. El necessitareu per accedir al vostre compte i desxifrar les vostres dades en cas d'un restabliment de contrasenya."
-      ],
       "please open a support ticket": [
         "obriu un tiquet de suport"
       ],
@@ -8043,6 +8523,9 @@
       ],
       "Preference saved": [
         "S'ha desat la preferència."
+      ],
+      "Premium privacy protection across all your devices": [
+        "Protecció de privacitat prèmium a tots els vostres dispositius"
       ],
       "Preview": [
         "Vista prèvia"
@@ -8086,6 +8569,9 @@
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
       ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "Envieu ${ mobileConfigArtifact } a cada Mac gestionat mitjançant el vostre MDM."
+      ],
       "Recently used servers:": [
         "Servidors utilitzats recentment:"
       ],
@@ -8094,6 +8580,12 @@
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomanat en dispositius de confiança. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "La recuperació per correu electrònic no està disponible mentre ${ PROTON_SENTINEL_NAME } estigui habilitat."
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "La recuperació per telèfon no està disponible mentre ${ PROTON_SENTINEL_NAME } estigui habilitat."
       ],
       "Recovery file downloaded": [
         "S'ha descarregat el fitxer de recuperació"
@@ -8106,9 +8598,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
-      ],
-      "Recovery phrase downloaded": [
-        "S'ha descarregat la frase de recuperació"
       ],
       "Recovery phrase has been disabled": [
         "S'ha desactivat la frase de recuperació"
@@ -8145,9 +8634,6 @@
       ],
       "Restore": [
         "Restaura"
-      ],
-      "Restrict logins to your organization": [
-        "Restringiu els inicis de sessió a la vostra organització"
       ],
       "SAML configuration saved": [
         "S'ha desat la configuració SAML."
@@ -8290,6 +8776,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Mantingueu el vostre pla i gaudiu d'un 50% de descompte el mes vinent."
       ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
@@ -8458,6 +8947,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Això pot trigar força temps. No tanqueu aquesta pàgina ni us desconnecteu d'internet."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Aquest mètode de recuperació de dades requereix una opció de restabliment de contrasenya (correu electrònic o SMS)"
+      ],
       "This file is too large to preview": [
         "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
@@ -8505,6 +8997,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Això permetrà que PayPal s'utilitzi per pagar la vostra subscripció a ${ BRAND_NAME }. Us redirigirem a PayPal en una pestanya nova del navegador. Si utilitzeu bloquejadors de finestres emergents, desactiveu-los per a continuar."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "Això us permetrà accedir al vostre compte de ${ BRAND_NAME } de manera ràpida i segura perquè pugueu canviar la contrasenya."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Això suprimirà permanentment les dades i totes les adreces de correu electrònic associades a aquests usuaris."
@@ -8575,8 +9070,17 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per a desxifrar i veure les dades bloquejades després d'un restabliment de contrasenya, seleccioneu un mètode de recuperació."
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "Per habilitar la VPN sempre activa, cal instal·lar el perfil de configuració a cada Mac. El client de ${ VPN_APP_NAME } aplicarà el perfil del dispositiu automàticament un cop estigui instal·lat."
+      ],
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
         "Per habilitar la VPN sempre activa, cal que el perfil de dispositiu arribi a ${ policiesPath } a cada dispositiu; el client de ${ VPN_APP_NAME } el detectarà allà i aplicarà el perfil de manera forçosa automàticament."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant correu electrònic de recuperació**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant telèfon de recuperació**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
@@ -8737,6 +9241,9 @@
       "Users": [
         "Usuaris"
       ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "Feu servir un MDM diferent? Qualsevol MDM que admeti el desplegament d'un perfil de configuració funcionarà. Consulteu la documentació del vostre MDM sobre com carregar-lo i assignar-lo a la vostra flota de dispositius."
+      ],
       "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
         "Utilitzeu un MDM diferent? Qualsevol MDM que admeti el desplegament de fitxers o l'execució de seqüències de PowerShell funcionarà. Consulteu la documentació del vostre MDM per obtenir més informació."
       ],
@@ -8800,6 +9307,12 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Us recomanem utilitzar les aplicacions ${ VPN_APP_NAME } oficials quan sigui possible."
       ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Podem utilitzar el vostre correu electrònic de recuperació per enviar-vos un codi de verificació per restablir la contrasenya i per contactar amb vosaltres si detectem activitat sospitosa."
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Podem utilitzar el vostre telèfon de recuperació per enviar-vos un codi de verificació per restablir la contrasenya i per contactar amb vosaltres si detectem activitat sospitosa."
+      ],
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
       ],
@@ -8830,8 +9343,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomanem que notifiqueu als membres de l'organització i els demaneu que estableixin l'autenticació de doble factor (2FA) per als seus comptes abans de fer-ne complir l'ús."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Emmagatzemem de manera segura la informació de recuperació al vostre dispositiu de confiança per a evitar que perdeu les vostres dades"
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "Recomanem encaridament que tothom activi la recuperació mitjançant frase de recuperació."
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
@@ -9020,6 +9533,9 @@
       "You don't have any referrals.": [
         "No teniu cap referència."
       ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "No cal que obriu ni llegiu el fitxer; només descarregueu-lo i deseu-lo en un lloc segur."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades han estat filtrades des d'un servei de tercers."
       ],
@@ -9198,11 +9714,11 @@
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "S'han publicat els vostres canvis recents. Seran visibles per als usuaris en les hores vinents."
       ],
-      "Your recovery phrase": [
-        "La vostra frase de recuperació"
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Després d'un restabliment de contrasenya, el fitxer de recuperació us restaurarà l'accés als correus electrònics, contactes, fitxers, contrasenyes i qualsevol altra dada xifrada del vostre compte."
       ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "La vostra frase de recuperació és una sèrie de 12 paraules generades aleatòriament en un ordre específic."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "La vostra frase de recuperació us permetrà iniciar la sessió i recuperar les vostres dades si perdeu l'accés al vostre compte de ${ BRAND_NAME }. Està composta per 12 paraules i actua com una contrasenya de seguretat."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mes.",
@@ -9489,6 +10005,9 @@
       "Allow": [
         "Adreces permeses"
       ],
+      "Allow QR code sign-in": [
+        "Permeteu l'inici de sessió amb codi QR"
+      ],
       "Allow recovery by email": [
         "Permet la recuperació per correu electrònic"
       ],
@@ -9605,6 +10124,12 @@
       ],
       "City": [
         "Ciutat"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versió del client"
       ],
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
@@ -9945,6 +10470,9 @@
       ],
       "Main reason for cancelling": [
         "Motiu principal de la cancel·lació"
+      ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "Assegureu-vos de tenir accés a un correu electrònic o telèfon de recuperació, i de disposar d'una opció de recuperació de dades."
       ],
       "Manage categories": [
         "Gestiona les categories"
@@ -10328,6 +10856,9 @@
       "Vulnerable password": [
         "Contrasenya vulnerable"
       ],
+      "We securely stored recovery information on this device.": [
+        "Hem emmagatzemat de manera segura la informació de recuperació en aquest dispositiu."
+      ],
       "Weak": [
         "Feble"
       ],
@@ -10367,6 +10898,12 @@
       "Your password (trusted contact)": [
         "La vostra contrasenya (contacte de confiança)"
       ],
+      "Your recovery email": [
+        "El vostre correu electrònic de recuperació"
+      ],
+      "Your recovery phone number": [
+        "El vostre número de telèfon de recuperació"
+      ],
       "Zero-access architecture": [
         "Arquitectura d'accés zero"
       ],
@@ -10375,14 +10912,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Recuperació basada en el dispositiu"
-      ],
       "Recovery phone number": [
         "Número de telèfon de recuperació"
-      ],
-      "Recovery phrase": [
-        "Frase de recuperació"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10599,9 +11130,6 @@
       "How to share via email": [
         "Com compartir per correu?"
       ],
-      "How to unlock data": [
-        "Com desbloquejar les dades"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Com utilitzar ${ DARK_WEB_MONITORING_NAME }?"
       ],
@@ -10622,9 +11150,6 @@
       ],
       "Learn more": [
         "Més informació"
-      ],
-      "Learn more about data recovery": [
-        "Més informació sobre la recuperació de dades"
       ],
       "Manage addresses": [
         "Gestioneu les adreces"
@@ -10667,6 +11192,9 @@
       ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
+      ],
+      "use a data recovery method": [
+        "feu servir un mètode de recuperació de dades"
       ],
       "Vault": [
         "Caixa forta"
@@ -12943,6 +13471,14 @@
         "Oferta per temps limitat."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Recordeu la contrasenya de ${ BRAND_NAME }?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "La millor manera d'evitar perdre l'accés al vostre compte i a les vostres dades és recordar les vostres credencials."
+      ]
+    },
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "Si oblideu la contrasenya, podeu perdre l'accés a les vostres dades xifrades."
@@ -13801,6 +14337,188 @@
         "Verificar el vostre número de telèfon augmenta la seguretat del compte i permet opcions addicionals per a la recuperació."
       ]
     },
+    "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "S'ha completat ${ score } / ${ maxScore }"
+      ],
+      "Add more options for stronger protection": [
+        "Afegiu més opcions per a una protecció més robusta"
+      ],
+      "Check your access to your recovery options": [
+        "Comproveu l'accés a les opcions de recuperació"
+      ],
+      "Critical": [
+        "Crític"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "No us quedeu sense accés al vostre compte de ${ BRAND_NAME }"
+      ],
+      "How you increased your account protection": [
+        "Com heu augmentat la protecció del vostre compte"
+      ],
+      "Inactive recovery options": [
+        "Les opcions de recuperació no estan actives"
+      ],
+      "Maximum": [
+        "Màxim"
+      ],
+      "Partial": [
+        "Parcial"
+      ],
+      "Recoverability": [
+        "Recuperabilitat"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Cal una opció de restabliment de contrasenya verificada (correu electrònic o SMS)"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "Puntuació: ${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "Forta"
+      ],
+      "Take precautions to avoid losing access": [
+        "Preneu precaucions per evitar perdre l'accés"
+      ],
+      "Weak": [
+        "Feble"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Esteu totalment protegits. Una revisió periòdica fa que tot continuï funcionant a mesura que els vostres dispositius i contactes canvien amb el temps."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Ja hi sou en part, però encara no esteu segurs. Si oblideu la contrasenya, podríeu perdre els vostres correus electrònics, fitxers i contrasenyes."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "Encara esteu en alt risc. Si oblideu la contrasenya, podríeu perdre per sempre els vostres correus electrònics, fitxers i contrasenyes."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Esteu ben coberts, però encara hi ha buits. Més opcions de recuperació us proporcionaran una xarxa de seguretat més forta si mai perdeu la contrasenya."
+      ],
+      "Your account and data can be recovered": [
+        "El compte i les vostres dades es poden recuperar"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "El vostre compte no té cap opció de recuperació configurada. Si perdeu la contrasenya, perdreu l'accés de manera permanent als vostres correus electrònics, fitxers i contrasenyes."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "El vostre compte no està totalment protegit. Si oblideu la contrasenya, encara podríeu perdre l'accés als vostres correus electrònics, fitxers i contrasenyes."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "La vostra configuració de recuperació és gairebé inexistent. Si perdeu la contrasenya, podríeu perdre de manera permanent l'accés als vostres correus electrònics, fitxers i contrasenyes."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "La vostra configuració de recuperació és excel·lent. Mantingueu les opcions actualitzades perquè continuïn funcionant quan les necessiteu."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "La vostra configuració de recuperació està incompleta. Si oblideu la contrasenya, encara podríeu perdre l'accés als vostres correus electrònics, fitxers i contrasenyes."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "La vostra configuració de recuperació és sòlida, tot i que queden alguns buits per cobrir. Cada opció que afegiu fa que la vostra xarxa de seguretat sigui més forta."
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "Afegiu contactes d'emergència"
+      ],
+      "Add recovery contacts": [
+        "Afegiu contactes de recuperació"
+      ],
+      "Add recovery email": [
+        "Afegir un correu electrònic de recuperació"
+      ],
+      "Add recovery phone": [
+        "Afegiu un telèfon de recuperació"
+      ],
+      "Allow data recovery on this device": [
+        "Permeteu la recuperació de dades en aquest dispositiu"
+      ],
+      "Allow password reset from settings": [
+        "Permeteu el restabliment de la contrasenya des de les preferències"
+      ],
+      "Allow scanning QR code to sign in": [
+        "Permeteu l'escaneig de codis QR per iniciar sessió"
+      ],
+      "Data recovery allowed on this device": [
+        "S'ha permès la recuperació de dades en aquest dispositiu"
+      ],
+      "Download recovery file": [
+        "Descarregueu el fitxer de recuperació"
+      ],
+      "Email recovery enabled": [
+        "S'ha activat la recuperació per correu electrònic"
+      ],
+      "Emergency contacts added": [
+        "S'han afegit els contactes d'emergència"
+      ],
+      "Enable email recovery": [
+        "Habiliteu la recuperació per correu electrònic"
+      ],
+      "Enable recovery by phone": [
+        "Habiliteu la recuperació per telèfon"
+      ],
+      "Password reset allowed from settings": [
+        "S'ha permès el restabliment de la contrasenya des de les preferències"
+      ],
+      "Password verified": [
+        "S'ha verificat la contrasenya"
+      ],
+      "Phone recovery enabled": [
+        "S'ha activat la recuperació per telèfon"
+      ],
+      "Recovery contacts added": [
+        "S'han afegit els contactes de recuperació"
+      ],
+      "Recovery file downloaded": [
+        "S'ha descarregat el fitxer de recuperació"
+      ],
+      "Recovery phrase saved": [
+        "S'ha desat la frase de recuperació"
+      ],
+      "Save recovery phrase": [
+        "Deseu la frase de recuperació"
+      ],
+      "Sign-in with QR code allowed": [
+        "S'ha permès l'inici de sessió amb codi QR"
+      ],
+      "Verify password": [
+        "Verifiqueu la contrasenya"
+      ],
+      "Verify recovery email": [
+        "Verifiqueu el correu electrònic de recuperació"
+      ],
+      "Verify recovery phone": [
+        "Verifiqueu el telèfon de recuperació"
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Copy": [
+        "Copia"
+      ],
+      "Show": [
+        "Mostra"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Assegureu-vos de mantenir la vostra frase de recuperació accessible després de crear-la**. Per motius de seguretat, no la guardem un cop hàgiu desat els canvis i no la podreu tornar a veure a l'aplicació ${ BRAND_NAME }."
+      ],
+      "copy recovery phrase": [
+        "copia la frase de recuperació"
+      ],
+      "Download PDF": [
+        "Descarrega el PDF"
+      ],
+      "download PDF": [
+        "descarrega el PDF"
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "O ${ copyRecoverySwitchButton } com a text."
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "O ${ downloadRecoveryKitSwitchButton } en el seu lloc."
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per referència"
@@ -14116,47 +14834,8 @@
       ]
     },
     "Safety review": {
-      "Check account security": [
-        "Comprova la seguretat del compte"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Si perdeu les dades d'inici de sessió i necessiteu restablir el compte, **és imprescindible** que tingueu un **mètode de recuperació del compte i de les dades**. En cas contrari, és possible que no pugueu accedir a cap dels vostres correus electrònics, contactes, fitxers o contrasenyes."
-      ],
       "Review account safety": [
         "Reviseu la seguretat del compte"
-      ],
-      "Safeguard account now": [
-        "Protegeix el compte"
-      ],
-      "Safeguard your account": [
-        "Protegiu el vostre compte"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Correu el risc de perdre l'accés al vostre compte i les vostres dades."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Correu el risc de perdre l'accés a les vostres dades."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Teniu accions recomanades per protegir el compte encara més."
-      ],
-      "You have recommended actions.": [
-        "Teniu accions recomanades."
-      ],
-      "Your account and data can be recovered": [
-        "El vostre compte i les dades es poden recuperar."
-      ],
-      "Your account and data can be recovered.": [
-        "El vostre compte i les dades es poden recuperar."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "El vostre compte i les dades es poden recuperar. Comproveu si encara podeu accedir als mètodes de recuperació."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "El vostre compte i les dades es poden recuperar. Teniu accions recomanades per a protegir el compte encara més."
-      ],
-      "Your account is fully secure.": [
-        "El vostre compte és totalment segur."
       ]
     },
     "saml: Action": {
@@ -14417,6 +15096,17 @@
     "Select search results": {
       "No results found": [
         "No s'ha trobat cap resultat."
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Per garantir la màxima seguretat del vostre compte, desactiveu la recuperació mitjançant correu electrònic i SMS."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Per a assegurar-vos que sempre pugueu accedir al vostre compte de ${ BRAND_NAME }, descarregueu-ne la frase de recuperació."
+      ],
+      "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
+        "Teniu accions recomanades per ${ PROTON_SENTINEL_NAME }"
       ]
     },
     "Server-Info": {
@@ -14693,11 +15383,11 @@
       ]
     },
     "session_recovery:settings:info": {
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "Per desactivar el restabliment de contrasenya des de la configuració cal que deseu la frase de recuperació."
+      ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Per a no permetre el restabliment de la contrasenya, heu de tenir configurat un mètode de recuperació."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Per millorar la seguretat del vostre compte i protegir les vostres dades, podeu sol·licitar un restabliment de la contrasenya des de la configuració del compte en l'aplicació web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14750,6 +15440,9 @@
       ]
     },
     "Settings section title": {
+      "Account": [
+        "Compte"
+      ],
       "Organization": [
         "Organització"
       ]
@@ -15342,20 +16035,69 @@
       ],
       "No restrictions": [
         "Sense restriccions"
-      ],
-      "Restricted to members of your organization": [
-        "Restringit als membres de la vostra organització"
       ]
     },
     "Status": {
+      "${ count } person": [
+        "${ count } persona",
+        "${ count } persones"
+      ],
       "... waiting": [
         "... esperant"
+      ],
+      "Add a phone number": [
+        "Afegiu un número de telèfon"
+      ],
+      "Add an email address": [
+        "Afegiu una adreça de correu electrònic"
+      ],
+      "Available on this device": [
+        "Està disponible en aquest dispositiu"
       ],
       "completed": [
         "s'ha completat"
       ],
+      "Disable recovery by email": [
+        "Desactiveu la recuperació per correu electrònic"
+      ],
+      "Disable recovery by phone": [
+        "Desactiveu la recuperació per telèfon"
+      ],
       "finalizing": [
         "està finalitzant"
+      ],
+      "Generate a recovery phrase": [
+        "Genereu una frase de recuperació"
+      ],
+      "Last changed ${ formattedDate }": [
+        "Última modificació el ${ formattedDate }"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "Darrera actualització el ${ formattedUpdateDate }"
+      ],
+      "Not saved": [
+        "No s'ha desat"
+      ],
+      "Off": [
+        "Apagat"
+      ],
+      "On": [
+        "Activat"
+      ],
+      "Outdated": [
+        "Obsolet"
+      ],
+      "Saved": [
+        "S'ha desat"
+      ],
+      "Unverified": [
+        "Sense verificar"
+      ],
+      "Verified": [
+        "S'ha verificat"
+      ],
+      "Verify ${ value }": [
+        "Verifiqueu ${ value }"
       ]
     },
     "Storage": {
@@ -16473,6 +17215,9 @@
       "Access control": [
         "Control d'accés"
       ],
+      "Accessibility": [
+        "Accessibilitat"
+      ],
       "Account": [
         "Compte"
       ],
@@ -16516,8 +17261,14 @@
         "Voleu afegir ${ totalServerCount } servidor?",
         "Voleu afegir ${ totalServerCount } servidors?"
       ],
+      "Add a recovery contact": [
+        "Afegiu un contacte de recuperació"
+      ],
       "Add address": [
         "Afegeix una adreça"
+      ],
+      "Add an emergency contact": [
+        "Afegiu un contacte d'emergència"
       ],
       "Add contact group name": [
         "Afegeix el nom del grup de contactes"
@@ -16566,6 +17317,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Afegeix usuaris a «${ policyName }»"
+      ],
+      "Advanced recovery options": [
+        "Opcions de recuperació avançades"
       ],
       "Allocate storage": [
         "Assignar espai"
@@ -16702,6 +17456,9 @@
       "Collaborate on documents": [
         "Col·laboració en documents"
       ],
+      "Compare plans": [
+        "Compareu els plans"
+      ],
       "Configure Always-on VPN device profile": [
         "Configureu el perfil de dispositiu de la VPN sempre activa"
       ],
@@ -16826,11 +17583,17 @@
       "Customize your mail import": [
         "Personalitzeu la importació del vostre correu electrònic"
       ],
-      "Data locked": [
-        "Dades bloquejades"
+      "Dashboard": [
+        "Tauler de control"
       ],
       "Data recovery": [
         "Recuperació de dades"
+      ],
+      "Data recovery contacts": [
+        "Contactes de recuperació de dades"
+      ],
+      "Data recovery options": [
+        "Opcions de recuperació de dades"
       ],
       "Data retention": [
         "Conservació de dades"
@@ -16841,8 +17604,14 @@
       "Day theme": [
         "Tema de dia"
       ],
+      "Deactivate current phrase?": [
+        "Voleu desactivar la frase actual?"
+      ],
       "Decrypt key": [
         "Desxifra la clau"
+      ],
+      "Deep dive into email blog posts": [
+        "Exploreu a fons les publicacions del blog sobre correu electrònic"
       ],
       "Deep dive into VPN blog posts": [
         "Anàlisi en profunditat de les nostres publicacions del blog de VPN"
@@ -16890,11 +17659,17 @@
       "Device": [
         "Dispositiu"
       ],
+      "Device data backup": [
+        "Còpia de seguretat de dades del dispositiu"
+      ],
       "Device name": [
         "Nom del dispositiu"
       ],
       "Disable account monitor?": [
         "Voleu desactivar el monitor del compte?"
+      ],
+      "Disable device data backup?": [
+        "Voleu desactivar la còpia de seguretat de dades del dispositiu?"
       ],
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
@@ -16931,6 +17706,9 @@
       ],
       "Download apps": [
         "Descarregueu les aplicacions"
+      ],
+      "Download your recovery phrase": [
+        "Descarregueu la frase de recuperació"
       ],
       "Downloads": [
         "Descàrregues"
@@ -16989,6 +17767,12 @@
       "Email subscriptions": [
         "Subscripcions per correu electrònic"
       ],
+      "Email verification": [
+        "Verificació del correu electrònic"
+      ],
+      "Emergency access": [
+        "Accés d'emergència"
+      ],
       "Enable advanced account protection": [
         "Activació de la protecció avançada del compte"
       ],
@@ -17044,9 +17828,6 @@
       "Generate missing keys": [
         "Genera les claus que falten"
       ],
-      "Generate new recovery phrase?": [
-        "Voleu generar una nova frase de recuperació?"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "Obteniu ${ vpnPlus } per accedir a tots els servidors"
       ],
@@ -17076,6 +17857,9 @@
       ],
       "Gift code": [
         "Codi regal"
+      ],
+      "Group membership": [
+        "Membres del grup"
       ],
       "Group role assignment paused": [
         "S'ha pausat l'assignació de rols de grup"
@@ -17141,6 +17925,9 @@
       "Information exposed in breach": [
         "Informació exposada en la filtració"
       ],
+      "Install it manually": [
+        "Instal·leu-lo manualment"
+      ],
       "Integrations": [
         "Integracions"
       ],
@@ -17156,11 +17943,17 @@
       "IP": [
         "IP"
       ],
+      "Language and time": [
+        "Idioma i hora"
+      ],
       "Limit reached": [
         "S'ha assolit el límit."
       ],
       "Lower your cost without losing features": [
         "Reduïu costos sense perdre funcionalitats"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "Contrasenya principal"
@@ -17210,6 +18003,9 @@
       "No events yet": [
         "Encara no hi ha esdeveniments"
       ],
+      "Notifications": [
+        "Notificacions"
+      ],
       "Open": [
         "Pendent"
       ],
@@ -17258,6 +18054,9 @@
       "Password": [
         "Contrasenya"
       ],
+      "Password reset options": [
+        "Opcions de restabliment de la contrasenya"
+      ],
       "Password reset settings": [
         "Preferències de restabliment de contrasenya"
       ],
@@ -17275,6 +18074,9 @@
       ],
       "Payment verification": [
         "Verificació de pagament"
+      ],
+      "Pending invitations": [
+        "Invitacions pendents"
       ],
       "Phone": [
         "Telèfon"
@@ -17297,6 +18099,9 @@
       "QR Code": [
         "Codi QR"
       ],
+      "QR code sign-in": [
+        "Inici de sessió amb codi QR"
+      ],
       "Recommended": [
         "Recomanat"
       ],
@@ -17317,6 +18122,9 @@
       ],
       "Recovery file": [
         "Arxiu de recuperació"
+      ],
+      "Recovery phrase": [
+        "Frase de recuperació"
       ],
       "Refer a friend": [
         "Recomana una amistat"
@@ -17480,8 +18288,14 @@
       "Sign out": [
         "Tanca la sessió"
       ],
+      "Signed in to another account": [
+        "S'ha iniciat la sessió a un altre compte"
+      ],
       "Signed in to member account": [
         "S'ha iniciat la sessió al compte de membre"
+      ],
+      "Signed-in reset": [
+        "Restabliment amb la sessió iniciada"
       ],
       "Simplify email distribution": [
         "Simplifiqueu la distribució de correu electrònic"
@@ -17494,6 +18308,12 @@
       ],
       "Single-sign on (SSO)": [
         "Inici de sessió únic (SSO)"
+      ],
+      "SMS verification": [
+        "Verificació per SMS"
+      ],
+      "Some of your encrypted data is locked": [
+        "Algunes de les vostres dades xifrades estan bloquejades"
       ],
       "Something went wrong": [
         "S'ha produït un error."
@@ -17515,6 +18335,9 @@
       ],
       "Status": [
         "Estat"
+      ],
+      "Stay for 50% off your next month": [
+        "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
       ],
       "Stay secure and connected anywhere": [
         "Mantingueu-vos segurs i connectats a tot arreu"
@@ -17546,6 +18369,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "There are no events for your account": [
         "No hi ha esdeveniments per al vostre compte"
@@ -17603,6 +18429,9 @@
       ],
       "Upgrade complete!": [
         "S'ha millorat el pla."
+      ],
+      "Upgrade plan": [
+        "Millora el pla"
       ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
@@ -17697,6 +18526,9 @@
       "What is the dark web?": [
         "Què és el web fosc?"
       ],
+      "Windows": [
+        "Windows"
+      ],
       "Wipe all logs?": [
         "Voleu esborrar tots els registres?"
       ],
@@ -17730,11 +18562,23 @@
       "Your plan": [
         "El vostre pla"
       ],
+      "Your recovery file": [
+        "El vostre fitxer de recuperació"
+      ],
+      "Your recovery phrase": [
+        "La vostra frase de recuperació"
+      ],
+      "Your recovery setup": [
+        "La vostra configuració de recuperació"
+      ],
       "Your referrals": [
         "Les vostres referències"
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Your storage": [
+        "El vostre emmagatzematge"
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
@@ -17812,6 +18656,24 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Els administradors poden gestionar els comptes d'usuari i donar privilegis d'administrador a altres usuaris. Només l'administrador principal pot editar el pla de l'organització."
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "Permeteu la recuperació del compte amb un codi d'un sol ús enviat al vostre correu electrònic de recuperació"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "Permeteu la recuperació del vostre compte amb un codi d'un sol ús enviat al telèfon de recuperació"
+      ],
+      "Allow resetting your password from the account settings": [
+        "Permeteu el restabliment de contrasenya des de les preferències del compte"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "Permeteu l'escaneig d'un codi QR des d'una aplicació mòbil de ${ BRAND_NAME } per iniciar sessió"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "Permeteu que els contactes de confiança sol·licitin accés al vostre compte"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "Permeteu que els contactes de confiança desbloquegin les vostres dades xifrades després d'un restabliment de contrasenya"
       ],
       "Any protection applied to suspicious activity": [
         "Qualsevol protecció aplicada a l'activitat sospitosa"
@@ -17902,6 +18764,15 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adreça IP d'origen i proveïdor de serveis d'internet (ISP)"
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "Deseu la frase de 12 paraules per desbloquejar el vostre compte i les dades xifrades a l'instant si oblideu la contrasenya"
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "Deseu un fitxer de còpia de seguretat del xifratge en aquest navegador per recuperar les vostres dades després d'un restabliment de contrasenya"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "Deseu un fitxer de còpia de seguretat del xifratge per recuperar les dades després d'un restabliment de contrasenya"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "S'estableix el peu de pàgina següent als correus que envieu: ${ signature } L'enllaç apunta al vostre enllaç de recomanació. El peu de pàgina apareixerà sota la vostra signatura. Podeu personalitzar la signatura en qualsevol moment a les preferències."
@@ -18117,8 +18988,8 @@
         "No s'ha pogut activar l'accés d'administrador per a ${ n } usuari",
         "No s'ha pogut activar l'accés d'administrador per a ${ n } usuaris"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "No s'ha pogut activar l'accés de l'administrador: ${ error }"
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "No s'ha pogut activar l'accés de l'administrador: ${ unprivatizationResult.error }"
       ],
       "Enable manually": [
         "Activa manualment"
@@ -18174,6 +19045,9 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Per a continuar, haureu de sol·licitar el permís de l'usuari per a accedir a les seves dades o restablir la seva contrasenya."
+      ],
+      "Waiting for admin approval": [
+        "S'està esperant l'aprovació de l'administrador"
       ],
       "You can safely remove this user from your organization.": [
         "Podeu eliminar aquest usuari de la vostra organització de manera segura.",
@@ -18339,9 +19213,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Els administradors no poden accedir a les dades dels usuaris privats"
       ],
@@ -18351,20 +19222,14 @@
       "Invitation sent, awaiting reply from the invited member": [
         "S'ha enviat la invitació. S'està esperant la resposta del membre convidat."
       ],
-      "Invite sent": [
-        "S'ha enviat la invitació."
+      "Invited": [
+        "Convidat"
       ],
-      "It's you": [
-        "Sou vós"
+      "Pending": [
+        "Pendent"
       ],
-      "Pending admin access": [
-        "Accés com a administrador pendent"
-      ],
-      "Private": [
-        "Privat"
-      ],
-      "SSO": [
-        "Inici de sessió únic (SSO)"
+      "Requested": [
+        "S'ha sol·licitat"
       ],
       "SSO user provided by your identity provider": [
         "Usuari SSO proporcionat pel vostre proveïdor d'identitat"
