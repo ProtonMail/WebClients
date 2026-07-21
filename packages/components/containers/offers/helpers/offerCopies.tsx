@@ -14,6 +14,7 @@ import {
     DARK_WEB_MONITORING_NAME,
     DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,
+    LUMO_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
@@ -22,6 +23,8 @@ import {
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 import {
     get2FAAuthenticatorText,
@@ -127,6 +130,7 @@ const getPremiumDriveFeature = () => ({
 const getPremiumInboxFeature = (domains?: number, addresses?: number, scribe?: boolean) => {
     const plan = PLAN_NAMES[PLANS.MAIL];
     const name = c('BF2024: Deal details').t`${plan} and ${CALENDAR_SHORT_APP_NAME}`;
+    const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
 
     if (addresses) {
         if (domains === 1) {
@@ -150,11 +154,17 @@ const getPremiumInboxFeature = (domains?: number, addresses?: number, scribe?: b
 
         return {
             name,
-            tooltip: c('BF2024: Tooltip').ngettext(
-                msgid`Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email address, support for custom email domains, ${BRAND_NAME} Scribe writing assistant, unlimited hide-my-email aliases and more.`,
-                `Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email addresses, support for custom email domains, ${BRAND_NAME} Scribe writing assistant, unlimited hide-my-email aliases and more.`,
-                addresses
-            ),
+            tooltip: scribeToLumo
+                ? c('BF2024: Tooltip').ngettext(
+                      msgid`Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email address, support for custom email domains, ${LUMO_SHORT_APP_NAME} writing assistant, unlimited hide-my-email aliases and more.`,
+                      `Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email addresses, support for custom email domains, ${LUMO_SHORT_APP_NAME} writing assistant, unlimited hide-my-email aliases and more.`,
+                      addresses
+                  )
+                : c('BF2024: Tooltip').ngettext(
+                      msgid`Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email address, support for custom email domains, ${BRAND_NAME} Scribe writing assistant, unlimited hide-my-email aliases and more.`,
+                      `Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email addresses, support for custom email domains, ${BRAND_NAME} Scribe writing assistant, unlimited hide-my-email aliases and more.`,
+                      addresses
+                  ),
         };
     }
 
@@ -168,8 +178,11 @@ const getPremiumInboxFeature = (domains?: number, addresses?: number, scribe?: b
 
     return {
         name,
-        tooltip: c('BF2024: Tooltip')
-            .t`Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${BRAND_NAME} Scribe writing assistant, unlimited hide-my-email aliases and more.`,
+        tooltip: scribeToLumo
+            ? c('BF2024: Tooltip')
+                  .t`Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${LUMO_SHORT_APP_NAME} writing assistant, unlimited hide-my-email aliases and more.`
+            : c('BF2024: Tooltip')
+                  .t`Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${BRAND_NAME} Scribe writing assistant, unlimited hide-my-email aliases and more.`,
     };
 };
 

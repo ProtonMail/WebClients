@@ -17,9 +17,11 @@ import type { PlanConfig } from './interface';
 export const getReminderPageConfig = ({
     app,
     subscription,
+    scribeToLumo = false,
 }: {
     app?: APP_NAMES;
     subscription: MaybeFreeSubscription;
+    scribeToLumo?: boolean;
 }): PlanConfig | null => {
     const plan = getPlan(subscription);
 
@@ -64,7 +66,7 @@ export const getReminderPageConfig = ({
     }
 
     if (plan.Name === PLANS.BUNDLE_BIZ_2025) {
-        return getBundleBizConfig({ app, plan, subscription });
+        return getBundleBizConfig({ app, plan, subscription, scribeToLumo });
     }
 
     return null;

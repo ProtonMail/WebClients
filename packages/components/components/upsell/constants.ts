@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
+import { getScribeWritingAssistantText } from '@proton/components/containers/payments/subscription/assistant/helpers';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -98,7 +99,7 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature | UpsellFea
     },
     'proton-scribe': {
         icon: 'pen-sparks',
-        getText: () => c('new_plans: feature').t`${BRAND_NAME} Scribe writing assistant`,
+        getText: (scribeToLumo) => getScribeWritingAssistantText(!!scribeToLumo),
     },
     '2-users-support': {
         icon: 'users',

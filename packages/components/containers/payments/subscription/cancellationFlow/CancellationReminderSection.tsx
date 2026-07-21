@@ -13,6 +13,7 @@ import useAppTitle from '@proton/components/hooks/useAppTitle';
 import { PLANS } from '@proton/payments/core/constants';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
@@ -46,14 +47,16 @@ export const CancellationReminderSection = ({ app }: Props) => {
     const [cancelModalProps, setCancelModalOpen, cancelRenderModal] = useModalState();
     const [redirectModalProps, setRedirectModalOpen, redirectRenderModal] = useModalState();
 
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
+
     const [config, setConfig] = useState<ReturnType<typeof getReminderPageConfig> | null>(
-        getReminderPageConfig({ app, subscription })
+        getReminderPageConfig({ app, subscription, scribeToLumo })
     );
 
     const goToSettings = useSettingsLink();
 
     useEffect(() => {
-        const newConfig = getReminderPageConfig({ app, subscription });
+        const newConfig = getReminderPageConfig({ app, subscription, scribeToLumo });
         setConfig(newConfig);
     }, [b2bAccess, b2cAccess]);
 

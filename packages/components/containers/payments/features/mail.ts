@@ -2,7 +2,13 @@ import { c, msgid } from 'ttag';
 
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
-import { BRAND_NAME, CALENDAR_APP_NAME, DARK_WEB_MONITORING_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    CALENDAR_APP_NAME,
+    DARK_WEB_MONITORING_NAME,
+    LUMO_SHORT_APP_NAME,
+    MAIL_APP_NAME,
+} from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -396,8 +402,11 @@ export const getEmailDistributionLists = (included: boolean): PlanCardFeatureDef
 };
 
 export const getProtonScribe = (included: boolean): PlanCardFeatureDefinition => {
+    const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
     return {
-        text: c('new_plans: feature').t`${BRAND_NAME} Scribe writing assistant`,
+        text: scribeToLumo
+            ? c('new_plans: feature').t`${LUMO_SHORT_APP_NAME} writing assistant`
+            : c('new_plans: feature').t`${BRAND_NAME} Scribe writing assistant`,
         icon: 'magic-wand',
         included,
     };
