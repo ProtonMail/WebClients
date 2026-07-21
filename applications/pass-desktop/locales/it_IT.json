@@ -577,12 +577,6 @@
       "Regenerate": [
         "Genera di nuovo"
       ],
-      "Regex invalid": [
-        "Regex non valida"
-      ],
-      "Regex unsafe": [
-        "Regex non sicura"
-      ],
       "Reject": [
         "Rifiuta"
       ],
@@ -1326,6 +1320,12 @@
       "PIN codes do not match": [
         "I codici PIN non corrispondono"
       ],
+      "Regex invalid": [
+        "Espressione regolare non valida"
+      ],
+      "Regex unsafe": [
+        "Espressione regolare non sicura"
+      ],
       "Request timed out": [
         "Timeout della richiesta"
       ],
@@ -2054,6 +2054,9 @@
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "Se non hai intenzione di utilizzare l'agente SSH su un altro account a pagamento, ricordati di disattivare questa impostazione prima di passare a quell'account."
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Se firmi i tuoi commit Git con la tua chiave SSH, esegui anche questo comando:"
+      ],
       "Import the CSV file below.": [
         "Importa il file CSV qui sotto."
       ],
@@ -2195,8 +2198,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2673,6 +2675,9 @@
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Per mantenere il tuo indirizzo email nascosto, puoi creare un contatto alias che maschererà il tuo indirizzo"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Per far funzionare Git con l'agente SSH di ${ PASS_APP_NAME }, Git deve utilizzare OpenSSH di Windows. A tal fine, è sufficiente eseguire il seguente comando:"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Per migrare i dati provenienti da un altro gestore di password, accedi al gestore di password, esporta i tuoi dati e caricali su ${ PASS_APP_NAME }. Una volta importati i dati, elimina il file esportato."
