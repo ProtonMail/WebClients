@@ -1459,6 +1459,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
+      ],
+      "Regex invalid": [
+        "正则表达式无效"
+      ],
+      "Regex unsafe": [
+        "正则表达式不安全"
       ]
     },
     "Error message": {
@@ -2193,7 +2199,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"

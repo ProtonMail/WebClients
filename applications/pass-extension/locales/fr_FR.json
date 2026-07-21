@@ -1464,6 +1464,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Regex invalid": [
+        "Expression régulière non valide"
+      ],
+      "Regex unsafe": [
+        "Expression régulière non sécurisée"
       ]
     },
     "Error message": {
@@ -2220,8 +2226,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"

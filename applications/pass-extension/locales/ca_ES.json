@@ -1464,6 +1464,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
+      ],
+      "Regex invalid": [
+        "Expressió regular no vàlida"
+      ],
+      "Regex unsafe": [
+        "Expressió regular no segura"
       ]
     },
     "Error message": {
@@ -2220,8 +2226,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"

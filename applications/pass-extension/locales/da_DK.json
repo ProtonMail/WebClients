@@ -1464,6 +1464,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
+      ],
+      "Regex invalid": [
+        "Ugyldig regex"
+      ],
+      "Regex unsafe": [
+        "Usikker regex"
       ]
     },
     "Error message": {
@@ -2220,8 +2226,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -4171,10 +4176,10 @@
         "Relevant"
       ],
       "Basic": [
-        "Grundlæggende"
+        "Basal"
       ],
       "Check": [
-        "Kontroller"
+        "Tjek"
       ],
       "Exact host matching": [
         "Nøjagtigt værtsmatch"
@@ -4195,7 +4200,7 @@
         "Begynder med"
       ],
       "URL wildcard pattern": [
-        "URL-jokertegnmønster"
+        "URL-wildcarddomæne"
       ]
     },
     "Link": {
@@ -4242,7 +4247,7 @@
         "Regel for regulært udtryk"
       ],
       "Wildcard pattern matching rule": [
-        "Regel for jokertegnmønstermatch"
+        "Regel for wildcardmønster"
       ]
     },
     "new_plans: feature": {
@@ -5612,15 +5617,15 @@
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svindel- eller phishing-websteder."
       ],
       "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
-        "Dette element kan ikke foreslås til autofyld på grund af \"${ neverModeDescriptionStrong }\". Tilføj en anden URL, hvis De ønsker, at dette element skal autofyldes."
+        "Dette element kan ikke foreslås til autofyld på grund af \"${ neverModeDescriptionStrong }\". Tilføj en anden URL, hvis du ønsker, at dette element skal autofyldes."
       ]
     },
     "Result": {
       "Enter a URL to check to see if your current rule is matching the URL": [
-        "Indtast en URL for at kontrollere, om Deres nuværende regel matcher URL'en"
+        "Indtast en URL for at kontrollere om din nuværende regel matcher URL'en"
       ],
       "The rule is matching this URL": [
         "Reglen matcher denne URL"
