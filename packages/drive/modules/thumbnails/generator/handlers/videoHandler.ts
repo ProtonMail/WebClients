@@ -8,6 +8,7 @@ import { FileLoadError, UnsupportedFormatError } from '../thumbnailError';
 import { BaseHandler } from './baseHandler';
 import type { ThumbnailGenerationResult } from './interfaces';
 import { getImageFromCanvas } from './utils/getImageFromCanvas';
+import { parseMp4Metadata } from './utils/mp4BoxParser';
 
 export class VideoHandler extends BaseHandler {
     readonly handlerName = 'VideoHandler';
@@ -147,6 +148,29 @@ export class VideoHandler extends BaseHandler {
         return false;
     }
 
+    // Chrome reports `video.duration` as `Infinity`, and `videoWidth`/`videoHeight`
+    // as `0`, for fragmented MP4 (no `mvhd`/`mdhd` duration, no sample table, so
+    // it never gets a full prescan). Fall back to reading both straight from the
+    // box structure, which we can do cheaply since the whole file is already
+    // local at upload time.
+    private async resolveVideoMetadata(
+        video: HTMLVideoElement,
+        content: Blob
+    ): Promise<{ width: number; height: number; duration: number }> {
+        const validDuration = Number.isFinite(video.duration) && video.duration > 0;
+        const validDimensions = video.videoWidth > 0 && video.videoHeight > 0;
+        if (validDuration && validDimensions) {
+            return { width: video.videoWidth, height: video.videoHeight, duration: video.duration };
+        }
+
+        const metadata = parseMp4Metadata(await content.arrayBuffer());
+        return {
+            width: validDimensions ? video.videoWidth : (metadata?.width ?? video.videoWidth),
+            height: validDimensions ? video.videoHeight : (metadata?.height ?? video.videoHeight),
+            duration: validDuration ? video.duration : (metadata?.durationInSeconds ?? video.duration),
+        };
+    }
+
     private extractVideoFrame(content: Blob): Promise<{
         img: HTMLImageElement;
         videoDimensions: { width: number; height: number };
@@ -226,11 +250,12 @@ export class VideoHandler extends BaseHandler {
                             // Draw video frame to canvas
                             context.drawImage(video, 0, 0, canvas.width, canvas.height);
                             const img = await getImageFromCanvas(canvas);
+                            const { width, height, duration } = await this.resolveVideoMetadata(video, content);
                             cleanup(listeners);
                             resolve({
                                 img,
-                                videoDimensions: { width: video.videoWidth, height: video.videoHeight },
-                                duration: video.duration,
+                                videoDimensions: { width, height },
+                                duration,
                             });
                         } catch (error) {
                             cleanup(listeners);

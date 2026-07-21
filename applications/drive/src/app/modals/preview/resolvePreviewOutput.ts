@@ -9,6 +9,7 @@ export type VideoStreamingResult = {
     url: string | undefined;
     onVideoPlaybackError: (error?: unknown) => void;
     isLoading: boolean;
+    videoRef?: (element: HTMLVideoElement | null) => void;
 };
 
 export interface PreviewRawState {

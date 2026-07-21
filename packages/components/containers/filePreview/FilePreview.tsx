@@ -68,6 +68,7 @@ interface FilePreviewProps {
     videoStreaming?: {
         url?: string;
         onVideoPlaybackError?: (error?: unknown) => void;
+        videoRef?: (element: HTMLVideoElement | null) => void;
     };
 
     contents?: Uint8Array<ArrayBuffer>[];
@@ -132,6 +133,7 @@ export const FilePreviewContent = ({
         isLoading?: boolean;
         url?: string;
         onVideoPlaybackError?: (error?: unknown) => void;
+        videoRef?: (element: HTMLVideoElement | null) => void;
     };
 
     contents?: Uint8Array<ArrayBuffer>[];
