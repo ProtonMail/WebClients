@@ -4,3 +4,4 @@ export * from './indexedDB';
 export * from './indexingProgress';
 export * from './content';
 export * from './metadata';
+export * from './metadataOldest';
