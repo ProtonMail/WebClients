@@ -130,7 +130,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const isMeetAvailable = useFlag('PMVC2025');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
-    const isGenericUserSettingsEnabled = useFlag('GenericUserSettings');
     const subscribed = User.Subscribed;
     const { sendAppClick } = useExploreAppsListTelemetry();
 
@@ -226,23 +225,21 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                     />
                 </div>
             </div>
-            {isGenericUserSettingsEnabled && (
-                <div className="w-full text-center mt-auto fade-in py-4">
-                    <Button
-                        pill
-                        shape="outline"
-                        className="inline-flex items-center gap-2"
-                        style={{
-                            '--button-default-border-color': 'color-mix(in srgb, var(--primary) 28%, transparent)',
-                            '--button-default-background-color': 'transparent',
-                        }}
-                        onClick={goToAccountSettings('settings')}
-                    >
-                        <IcCogWheel className="shrink-0" />
-                        {c('Action').t`Settings`}
-                    </Button>
-                </div>
-            )}
+            <div className="w-full text-center mt-auto fade-in py-4">
+                <Button
+                    pill
+                    shape="outline"
+                    className="inline-flex items-center gap-2"
+                    style={{
+                        '--button-default-border-color': 'color-mix(in srgb, var(--primary) 28%, transparent)',
+                        '--button-default-background-color': 'transparent',
+                    }}
+                    onClick={goToAccountSettings('settings')}
+                >
+                    <IcCogWheel className="shrink-0" />
+                    {c('Action').t`Settings`}
+                </Button>
+            </div>
         </Layout>
     );
 };
