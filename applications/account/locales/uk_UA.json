@@ -135,9 +135,6 @@
       "Add domain": [
         "Додати домен"
       ],
-      "Add email address": [
-        "Додати поштову адресу"
-      ],
       "Add external address": [
         "Додати зовнішню адресу"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "Додати PayPal"
-      ],
-      "Add phone number": [
-        "Додати номер телефону"
       ],
       "Add public holidays": [
         "Додати державні свята"
@@ -753,9 +747,6 @@
       "enable desktop notifications": [
         "увімкнути сповіщення на робочому столі"
       ],
-      "Enable device-based recovery": [
-        "Увімкнути відновлення на основі пристрою"
-      ],
       "Enable multi-user support": [
         "Увімкнути підтримку декількох користувачів"
       ],
@@ -836,9 +827,6 @@
       ],
       "Generate password": [
         "Згенерувати пароль"
-      ],
-      "Generate recovery phrase": [
-        "Згенерувати фразу відновлення"
       ],
       "Generate token": [
         "Згенерувати токен"
@@ -1868,9 +1856,6 @@
       ],
       "View plans details": [
         "Переглянути подробиці тарифного плану"
-      ],
-      "View recovery settings": [
-        "Переглянути налаштування відновлення"
       ],
       "View recovery setup details": [
         "Переглянути подробиці налаштування відновлення"
@@ -6852,9 +6837,6 @@
       "Add recovery contact": [
         "Додати контакт для відновлення"
       ],
-      "Add recovery method": [
-        "Додати спосіб відновлення"
-      ],
       "Added on ${ formattedDate }": [
         "Додано ${ formattedDate }"
       ],
@@ -7098,14 +7080,8 @@
       "Subscription expired": [
         "Термін дії передплати завершився"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "Мене додали як довірений контакт. Я можу мати доступ до їхнього облікового запису у разі екстреної ситуації."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "Вони додали вас як довірену контактну особу. Ви можете отримати доступ до їхнього облікового запису в разі надзвичайної ситуації."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "Вони можуть попросити доступ до мого облікового запису у разі екстреної ситуації."
       ],
       "They may ask to access your account in case of an emergency.": [
         "Вони можуть попросити доступ до вашого облікового запису в разі надзвичайної ситуації."
@@ -7127,9 +7103,6 @@
       ],
       "Time required before automatically granting them access": [
         "Час, необхідний перед автоматичним наданням їм доступу"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "Щоб додати контакти відновлення, необхідно мати резервну адресу електронної пошти або номер телефону."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Щоб вимкнути цей спосіб відновлення, вилучіть усі ваші контакти для відновлення."
@@ -7181,12 +7154,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Ви можете вилучити їхній доступ у будь-який час, щоб повернути одноосібний контроль над своїм обліковим записом."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "Вас ще ніхто не призначив контактом для відновлення."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "Вас ще ніхто не призначив контактом для екстрених випадків."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Ви досягли ліміту в ${ limit } довірену особу для екстрених випадків.",
@@ -10410,12 +10377,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Файл відновлення дозволяє розблокувати та переглянути дані після відновлення облікового запису"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Фраза відновлення дасть змогу отримати доступ до вашого облікового запису та відновити зашифровані повідомлення, якщо ви забудете пароль"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Користувач — це обліковий запис, пов'язаний з певним іменем користувача, поштовою скринькою та людиною"
       ],
@@ -10430,9 +10391,6 @@
       ],
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Активуйте принаймні один спосіб відновлення даних, щоб не втратити доступ до вмісту свого облікового запису ${ BRAND_NAME } у разі втрати пароля."
       ],
       "Active": [
         "Активні"
@@ -11487,9 +11445,6 @@
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Створення нової фрази відновлення деактивує вашу поточну фразу відновлення."
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Генерування нової фрази відновлення деактивує попередню."
-      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Отримайте ${ AUTHENTICATOR_APP_NAME } для всіх своїх пристроїв."
       ],
@@ -11613,9 +11568,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Якщо часовий пояс системи не відповідає поточному вибраному часовому поясу, вам буде запропоновано оновити його (не більше одного разу на день)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Якщо це пов'язано зі скиданням старого пароля, ви можете запобігти повторному показу повідомлення"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
       ],
@@ -11663,9 +11615,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Якщо ви нещодавно скинули свій пароль, ви можете скористатися посиланням ${ recoveryMethodLink }, щоб розблокувати свої дані. Якщо це сталося через старе скидання пароля, ви можете зупинити повторне відображення повідомлення."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Якщо ви нещодавно скинули пароль, можете скористатися способом відновлення для розблокування своїх даних"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Якщо ваша організація має публічних діячів, працює з конфіденційними даними або може бути ціллю кібератак, наполегливо рекомендуємо увімкнути ${ PROTON_SENTINEL_NAME } для всіх членів вашої організації."
@@ -11807,9 +11756,6 @@
       ],
       "Invited": [
         "Запрошено"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "Здається, деякі з ваших даних зашифровано та заблоковано."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Зміна країни сервера займає 10 днів, тому переконайтеся, що ви вибрали правильну країну."
@@ -12339,9 +12285,6 @@
       "Please fill out this field.": [
         "Будь ласка, заповніть це поле."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Збережіть її в надійному місці. Вона знадобиться вам для доступу до облікового запису та розшифрування ваших даних у разі скидання пароля."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Зверніть увагу: якщо ви видалите фільтр ${ nameDeleted }, ми припинимо обробку всіх автоматичних дій, які він викликає."
       ],
@@ -12473,9 +12416,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Фразу відновлення скопійовано до буфера обміну"
-      ],
-      "Recovery phrase downloaded": [
-        "Фразу відновлення завантажено"
       ],
       "Recovery phrase has been disabled": [
         "Фразу відновлення вимкнено"
@@ -13449,9 +13389,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Перш ніж впроваджувати двоетапну перевірку, ми радимо повідомити про це учасників організації та попросити їх налаштувати її заздалегідь."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Ми надійно зберігаємо інформацію для відновлення на вашому довіреному пристрої, щоб запобігти втраті ваших даних"
-      ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Ми наполегливо рекомендуємо кожному увімкнути відновлення за допомогою фрази відновлення."
       ],
@@ -13964,12 +13901,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Ваш файл відновлення відновить доступ до електронної пошти, контактів, файлів, паролів та будь-яких інших зашифрованих даних у вашому обліковому записі після скидання пароля."
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза відновлення"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Ваша фраз для відновлення – це 12 випадково згенерованих слів у певному порядку."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "Ваша фраза відновлення дозволить вам увійти та відновити свої дані, якщо ви втратите доступ до свого облікового запису ${ BRAND_NAME }. Вона складається з 12 слів та діє як резервний пароль."
@@ -16320,17 +16251,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Відновлення на основі пристрою"
-      ],
       "Notification phone number": [
         "Номер телефону для сповіщень"
       ],
       "Recovery phone number": [
         "Номер телефону для відновлення"
-      ],
-      "Recovery phrase": [
-        "Фраза відновлення"
       ],
       "Set recovery phone number": [
         "Встановити номер телефону для відновлення"
@@ -16650,9 +16575,6 @@
       "How to share via email": [
         "Як поділитися через електронну пошту"
       ],
-      "How to unlock data": [
-        "Як розблокувати дані"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Як використовувати ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16676,9 +16598,6 @@
       ],
       "Learn more": [
         "Докладніше"
-      ],
-      "Learn more about data recovery": [
-        "Дізнатися більше про відновлення даних"
       ],
       "Manage addresses": [
         "Керувати адресами"
@@ -21771,146 +21690,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **Вимкніть відновлення за допомогою телефону**, щоб запобігти захопленню вашого облікового запису зловмисниками."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **Увімкніть відновлення за телефоном**, щоб відновити доступ до свого облікового запису, якщо ви забули пароль."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } використовуватиме цю адресу, щоб повідомляти вам про безпеку вашого облікового запису."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } буде використовувати цю адресу, щоб надіслати код скидання на електронну пошту, коли ви скинете пароль."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } буде використовувати цей номер телефону для надсилання коду скидання в SMS, коли ви скинете пароль."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery }, щоб переконатися, що ваші дані можна відновити."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**Вимкніть скидання облікового запису за допомогою електронної пошти**, щоб запобігти захопленню вашого облікового запису зловмисниками."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Увімкніть відновлення електронною поштою**, щоб відновити доступ до свого облікового запису, якщо ви забули пароль."
-      ],
-      "Account reset by email has been disabled": [
-        "Скидання облікового запису за допомогою електронної пошти вимкнено"
-      ],
-      "Account reset by phone has been disabled": [
-        "Скидання облікового запису за допомогою телефону вимкнено"
-      ],
-      "Account safety review": [
-        "Перегляд безпеки облікового запису"
-      ],
-      "Add a phone number": [
-        "Додати номер телефону"
-      ],
-      "Add a recovery email": [
-        "Додати резервну електронну пошту"
-      ],
-      "Add a recovery email address": [
-        "Додати адресу резервної електронної пошти"
-      ],
-      "Add a recovery phone number": [
-        "Додати номер телефону для відновлення"
-      ],
-      "Add an alternative email address": [
-        "Додати альтернативну адресу електронної пошти"
-      ],
-      "Add an email": [
-        "Додати електронну пошту"
-      ],
-      "Back to Safety Review": [
-        "Повернутися до перегляду безпеки"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "Оскільки ви скинули свій пароль, вашу поточну фразу відновлення можна використовувати лише для відновлення даних, створених до скидання пароля."
-      ],
-      "Can be used to regain access to your account and data": [
-        "Можна використовувати для відновлення доступу до облікового запису та даних"
-      ],
-      "Check account security": [
-        "Перевірка безпеки облікового запису"
-      ],
       "Code sent to ${ boldValue }": [
         "Код надісланий на ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Перейти до перегляду безпеки"
-      ],
-      "Device-based recovery enabled": [
-        "Відновлення на основі пристрою ввімкнено"
-      ],
-      "Disable account reset by email": [
-        "Вимкнути скидання облікового запису за допомогою електронної пошти"
-      ],
-      "Disable recovery by email": [
-        "Вимкнути відновлення за допомогою електронної пошти"
-      ],
-      "Disable recovery by phone": [
-        "Вимкнути відновлення за телефоном"
-      ],
-      "Download ${ size }": [
-        "Завантажити ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "Завантажити вашу фразу відновлення"
-      ],
-      "Email address": [
-        "Адреса електронної пошти"
-      ],
-      "Enable device-based recovery": [
-        "Увімкнути відновлення на основі пристрою"
-      ],
-      "Enable recovery by email": [
-        "Увімкнути відновлення за допомогою електронної пошти"
-      ],
-      "Enable recovery by phone": [
-        "Увімкнути відновлення за допомогою телефону"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Я розумію, що не зможу відновити наразі заблоковані дані за допомогою цієї фрази відновлення"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Якщо ви забули свій пароль ${ BRAND_NAME } і вам потрібно його скинути, наступного разу, коли ви ввійдете на цей пристрій, використовуючи новий пароль, повний доступ до вашого ${ BRAND_NAME } буде відновлено."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Якщо ви забули свій пароль ${ BRAND_NAME } і вам потрібно його скинути, наступного разу, коли ви ввійдете на цей пристрій, використовуючи новий пароль, повний доступ до вашого ${ BRAND_NAME } буде відновлено."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Якщо ви втратите доступ до свого облікового запису ${ BRAND_NAME }, фраза відновлення дозволить вам увійти та відновити свої дані."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Якщо ви втратили свої дані для входу і вам потрібно скинути обліковий запис, **обов'язково**, щоб у вас був спосіб **відновлення облікового запису та даних**, інакше ви не зможете отримати доступ до своїх електронних листів, контактів, файлів або паролів."
-      ],
-      "in case we need to contact you": [
-        "на випадок, якщо нам знадобиться зв'язатися з вами"
       ],
       "Invalid code": [
         "Невірний код"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Це єдиний спосіб повністю відновити ваш обліковий запис, тому обов'язково збережіть його в надійному місці."
-      ],
-      "Recovery email address": [
-        "Адреса резервної електронної пошти"
-      ],
-      "Recovery phone number": [
-        "Номер телефону для відновлення"
-      ],
       "Review account safety": [
         "Перевірити безпеку облікового запису"
-      ],
-      "Safeguard account now": [
-        "Безпечний захист облікового запису зараз"
-      ],
-      "Safeguard your account": [
-        "Безпечний захист вашого облікового запису"
-      ],
-      "Safeguard your account further": [
-        "Захистіть свій обліковий запис ще більше"
       ],
       "Safety review": [
         "Огляд безпеки"
@@ -21918,194 +21705,8 @@
       "Send a new code": [
         "Надіслати новий код"
       ],
-      "Show more": [
-        "Розгорнути"
-      ],
-      "Take action to secure your account": [
-        "Зробіть дію, щоб захистити ваш обліковий запис"
-      ],
-      "There was an error generating your recovery phrase": [
-        "Виникла помилка під час створення фрази відновлення"
-      ],
-      "There was an error verifying your email": [
-        "Під час перевірки вашої електронної пошти виникла помилка"
-      ],
-      "There was an error verifying your recovery email": [
-        "Виникла помилка при перевірці електронної пошти для відновлення"
-      ],
-      "There was an error verifying your recovery phone": [
-        "Виникла помилка при перевірці телефону для відновлення"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "автоматично відновлювати дані, коли ви входите на довірений пристрій"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Щоб переконатися, що адреса належить вам, введіть код підтвердження, надісланий на адресу ${ boldEmail }."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Щоб переконатися, що номер телефону належить вам, введіть код підтвердження, надісланий на адресу ${ boldPhoneNumber }."
-      ],
-      "to prevent attackers from taking over your account": [
-        "щоб запобігти захопленню вашого облікового запису зловмисниками"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "відновити свій обліковий запис і дані, якщо вас коли-небудь заблокують"
-      ],
-      "to recover your account if you're ever locked out": [
-        "щоб відновити свій обліковий запис, якщо ви коли-небудь втратите доступ до нього"
-      ],
       "update it now": [
         "оновити зараз"
-      ],
-      "Update your recovery phrase": [
-        "Оновити вашу фразу відновлення"
-      ],
-      "Update your recovery phrase?": [
-        "Оновити вашу фразу відновлення?"
-      ],
-      "Verify": [
-        "Перевірити"
-      ],
-      "Verify your email address": [
-        "Підтвердити адресу електронної пошти"
-      ],
-      "Verify your phone number": [
-        "Підтвердити номер телефону"
-      ],
-      "Verify your recovery email address": [
-        "Перевірте вашу адресу електронної пошти для відновлення"
-      ],
-      "Verify your recovery phone number": [
-        "Підтвердьте номер телефону для відновлення"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "Під час створення фрази відновлення виникла помилка. Спробуйте пізніше або зверніться до служби підтримки, якщо проблема не зникне."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Ми виявили помилку під час перевірки вашої електронної пошти. Будь ласка, спробуйте пізніше або зверніться до служби підтримки, якщо проблема не зникне."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Ми виявили помилку під час перевірки вашої відновлюваної електронної пошти. Будь ласка, повторіть спробу пізніше або зверніться до служби підтримки, якщо проблема не зникне."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Під час перевірки телефону для відновлення виникла помилка. Будь ласка, повторіть спробу пізніше або зверніться до служби підтримки, якщо проблема не зникне."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "Коли ви ввімкнете відновлення на основі пристрою, ${ BRAND_NAME } збереже зашифровану резервну копію зв'язки ключів у вигляді файлу у вебсховищі вашого браузера."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Ви ризикуєте втратити доступ до свого облікового запису та даних."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Ви ризикуєте втратити доступ до своїх даних."
-      ],
-      "You can disable this at any time.": [
-        "Ви можете вимкнути це в будь-який час."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Ви можете використовувати фразу відновлення, щоб повністю відновити свій обліковий запис після скидання пароля, тому переконайтеся, що зберігаєте її в надійному місці."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "Ви можете використовувати електронну пошту, щоб відновити доступ до свого облікового запису, якщо забудете пароль."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Якщо ви забули пароль, ви можете скористатися електронною поштою для відновлення, щоб отримати доступ до свого облікового запису."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "Ви можете скористатися телефоном відновлення, щоб відновити доступ до свого облікового запису, якщо забули пароль."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "Ви вже завантажували фразу відновлення раніше. Завантаження нової призведе до **деактивації старої**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Ви отримали рекомендації щодо подальшого захисту вашого облікового запису."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "У вас є рекомендовані дії для захисту вашого облікового запису."
-      ],
-      "You have recommended actions.": [
-        "Вам було рекомендовано дії."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "Ви більше не зможете використовувати цю адресу для скидання свого облікового запису."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "Ви більше не зможете використовувати цей номер телефону для скидання свого облікового запису."
-      ],
-      "Your account and data can be recovered": [
-        "Ваш обліковий запис і дані можна відновити"
-      ],
-      "Your account and data can be recovered.": [
-        "Ваш обліковий запис і дані можна відновити."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Ваш обліковий запис і дані можна відновити. Перевірте, чи є у вас доступ до методів відновлення."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Ваш обліковий запис і дані можна відновити. Ви отримали рекомендації щодо подальшого захисту вашого облікового запису."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "Ваш обліковий запис і дані можна відновити. Вам було рекомендовані дії."
-      ],
-      "Your account is fully secure.": [
-        "Ваш обліковий запис повністю захищений."
-      ],
-      "Your account is secure.": [
-        "Ваш обліковий запис у безпеці."
-      ],
-      "Your email address is:": [
-        "Ваша адреса електронної пошти:"
-      ],
-      "Your email is set": [
-        "Вашу електронну пошту налаштовано"
-      ],
-      "Your recovery email": [
-        "Ваша електронна пошта для відновлення"
-      ],
-      "Your recovery email address is:": [
-        "Ваша адреса електронної пошти для відновлення:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "Відновити доступ до облікового запису можна **лише за допомогою електронної пошти та телефону**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "Ваша електронна пошта для відновлення може **відновити лише доступ до вашого облікового запису**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Ваша резервна адреса електронної пошти може бути використана зловмисниками для захоплення вашого облікового запису. ${ disableEmail }, щоб підвищити безпеку вашого облікового запису."
-      ],
-      "Your recovery email has been enabled": [
-        "Вашу електронну пошту для відновлення ввімкнено"
-      ],
-      "Your recovery email is set": [
-        "Ваша електронна пошта для відновлення налаштована"
-      ],
-      "Your recovery methods": [
-        "Ваші методи відновлення"
-      ],
-      "Your recovery phone": [
-        "Ваш телефон для відновлення"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "Ваш телефон для відновлення може **лише відновити доступ до вашого облікового запису**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Ваш телефон для відновлення може бути використаний зловмисниками для захоплення вашого облікового запису. ${ disablePhone }, щоб підвищити безпеку вашого облікового запису."
-      ],
-      "Your recovery phone has been enabled": [
-        "Ваш телефон для відновлення було увімкнено"
-      ],
-      "Your recovery phone is set": [
-        "Ваш телефон для відновлення встановлено"
-      ],
-      "Your recovery phone number is:": [
-        "Ваш номер телефону для відновлення:"
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза відновлення"
-      ],
-      "Your recovery phrase is set": [
-        "Вашу фразу відновлення встановлено"
       ]
     },
     "safety_review": {
@@ -22965,9 +22566,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Щоб заборонити скидання пароля, необхідно налаштувати спосіб відновлення."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Щоб вдосконалити безпеку свого облікового запису та захистити дані, ви можете запитати скидання пароля в налаштуваннях вебверсії програми."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -26245,9 +25843,6 @@
       "Data collection": [
         "Збір даних"
       ],
-      "Data locked": [
-        "Дані заблоковано"
-      ],
       "Data recovery": [
         "Відновлення даних"
       ],
@@ -26622,9 +26217,6 @@
       ],
       "Generate missing keys": [
         "Генерувати відсутні ключі"
-      ],
-      "Generate new recovery phrase?": [
-        "Згенерувати нову фразу відновлення?"
       ],
       "Generate SMTP token": [
         "Згенерувати SMTP-токен"
@@ -28288,9 +27880,6 @@
         "Не вдалося увімкнути доступ адміністратора для ${ n } користувачів",
         "Не вдалося увімкнути доступ адміністратора для ${ n } користувачів"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Не вдалося увімкнути доступ адміністратора: ${ error }"
-      ],
       "Enable admin access?": [
         "Увімкнути доступ адміністратора?"
       ],
@@ -28559,9 +28148,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Адміністратори не можуть отримати доступ до даних приватних користувачів"
       ],
@@ -28570,21 +28156,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Запрошення надіслано. Очікування на відповідь від запрошеного учасника"
-      ],
-      "Invite sent": [
-        "Запрошення надіслано"
-      ],
-      "It's you": [
-        "Це ви"
-      ],
-      "Pending admin access": [
-        "Очікування доступу адміністратора"
-      ],
-      "Private": [
-        "Приватно"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Користувач SSO, наданий вашим провайдером ідентифікації"
