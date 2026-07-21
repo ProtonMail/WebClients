@@ -17,7 +17,7 @@ import { ThemeToggleDropdown } from '../content/theme/ThemeToggleDropdown';
 import BackButton from './BackButton';
 import LanguageSelect from './LanguageSelect';
 import LayoutFooter from './LayoutFooter';
-import LayoutLogos from './LayoutLogos';
+import LayoutLogosV2 from './LayoutLogosV2';
 
 import './Layout.scss';
 
@@ -180,7 +180,7 @@ const Layout = ({
                     {children}
                     {hasDecoration && hasAppLogos && (
                         <div className="shrink-0 text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
-                            <LayoutLogos size={7} />
+                            <LayoutLogosV2 size={7} className="flex justify-center gap-4 flex-nowrap" />
                         </div>
                     )}
                 </main>
