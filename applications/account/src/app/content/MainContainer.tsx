@@ -181,7 +181,7 @@ const SettingsSearchArea = ({ app, routes }: { app: APP_NAMES; routes: ReturnTyp
         return null;
     }
 
-    if (adminSidebar.enabled && adminSidebar.sidebar.status) {
+    if (adminSidebar.enabled) {
         return <AutocompleteSettingsSearch options={adminSidebar.settings} />;
     }
 
