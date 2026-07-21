@@ -10,6 +10,7 @@ import ScribeAddon from './ScribeAddon';
 jest.mock('@proton/components/containers/payments/subscription/assistant/helpers', () => ({
     getScribeUpsellText: () => 'AI-powered writing assistant',
     getScribeUpsellLearnMore: () => 'https://proton.me/support',
+    getScribeWritingAssistantText: () => 'Proton Scribe writing assistant',
 }));
 
 const addon = PLANS_MAP[ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO] as Plan;

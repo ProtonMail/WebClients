@@ -171,6 +171,7 @@ describe('getAddonCustomizerProperties', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: { scribeAddonEnabled: true, lumoAddonEnabled: true, meetAddonEnabled: false },
         });
 
@@ -193,6 +194,7 @@ describe('getAddonCustomizerProperties', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: { scribeAddonEnabled: true, lumoAddonEnabled: true, meetAddonEnabled: false },
         });
 
@@ -215,6 +217,7 @@ describe('getAddonCustomizerProperties', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: { scribeAddonEnabled: true, lumoAddonEnabled: true, meetAddonEnabled: false },
         });
 
@@ -237,6 +240,7 @@ describe('getAddonCustomizerProperties', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: { scribeAddonEnabled: true, lumoAddonEnabled: false, meetAddonEnabled: false },
         });
 
@@ -266,6 +270,7 @@ describe('getAddonCustomizerProperties', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: { scribeAddonEnabled: true, lumoAddonEnabled: false, meetAddonEnabled: false },
         });
 
@@ -294,6 +299,7 @@ describe('getAddonCustomizerProperties', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: { scribeAddonEnabled: false, lumoAddonEnabled: true, meetAddonEnabled: false },
         });
 
@@ -323,6 +329,7 @@ describe('getAddonCustomizerProperties', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: { scribeAddonEnabled: false, lumoAddonEnabled: true, meetAddonEnabled: false },
         });
 
@@ -351,6 +358,7 @@ describe('getAddonCustomizerProperties', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: { scribeAddonEnabled: false, lumoAddonEnabled: false, meetAddonEnabled: true },
         });
 
@@ -379,6 +387,7 @@ describe('getAddonCustomizerProperties', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: { scribeAddonEnabled: false, lumoAddonEnabled: false, meetAddonEnabled: true },
         });
 
@@ -409,6 +418,7 @@ describe('getAddonCustomizerProperties – non-trial mode', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: {
                 scribeAddonEnabled: false,
                 lumoAddonEnabled: false,
@@ -437,6 +447,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             isTrialMode: true,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: {
                 scribeAddonEnabled: false,
                 lumoAddonEnabled: false,
@@ -459,6 +470,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             isTrialMode: true,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: {
                 scribeAddonEnabled: false,
                 lumoAddonEnabled: false,
@@ -481,6 +493,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             isTrialMode: true,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: {
                 scribeAddonEnabled: false,
                 lumoAddonEnabled: false,
@@ -507,6 +520,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             isTrialMode: true,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: {
                 scribeAddonEnabled: false,
                 lumoAddonEnabled: false,
@@ -533,6 +547,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             isTrialMode: false,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: {
                 scribeAddonEnabled: false,
                 lumoAddonEnabled: false,
@@ -548,6 +563,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             isTrialMode: true,
             selectedPlan,
             onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
             addonFlags: {
                 scribeAddonEnabled: false,
                 lumoAddonEnabled: false,

@@ -17,6 +17,8 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { getReminderPageConfig } from '../cancellationFlow/reminderPageConfig';
 import type { ReminderFlag } from './cancellationReminderHelper';
@@ -27,7 +29,9 @@ const CancellationReminderModal = (props: ModalProps) => {
 
     const { feature, update } = useFeature<ReminderFlag>(FeatureCode.AutoDowngradeReminder);
 
-    const config = getReminderPageConfig({ subscription });
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
+
+    const config = getReminderPageConfig({ subscription, scribeToLumo });
 
     const markAsSeen = () => {
         if (!feature?.Value || Array.isArray(feature.Value)) {
