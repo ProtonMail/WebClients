@@ -40,12 +40,8 @@ const isReady = () => sshSynced && isClientBooted();
 /** Fix window foreground limitation on Windows:
  * https://github.com/electron/electron/issues/2867#issuecomment-2901356176 */
 const showWindowInForeground = (window: BrowserWindow) => {
-    if (isWindows()) {
-        if (!window.isFocused() && !window.isMinimized()) window.minimize();
-        window.show();
-    } else {
-        window.show();
-    }
+    if (isWindows() && !window.isFocused() && !window.isMinimized()) window.minimize();
+    window.show();
 };
 
 /** Create a callback that will be called from Rust when SSH
