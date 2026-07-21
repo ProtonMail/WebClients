@@ -26,8 +26,8 @@ import {
 import type { PersonalizationSettings } from '../redux/slices/personalization';
 import type { LumoDispatch } from '../redux/store';
 import { attachmentDataCache } from '../services/attachmentDataCache';
-import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import { createGenerationError, getErrorTypeFromMessage } from '../services/errors/errorHandling';
+import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import {
     type Attachment,
     type Base64,
@@ -55,8 +55,6 @@ export const EMPTY_ASSISTANT_TURN: Turn = {
     role: Role.Assistant,
     content: '',
 };
-
-export const ENABLE_U2L_ENCRYPTION = true;
 
 // Internal type for turns during processing (before final cleanup)
 type TurnInProgress = Turn & {

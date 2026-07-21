@@ -1,21 +1,19 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { quickChat } from '../lib/lumo-api-client';
-import {
-    appendGeneratedMemoriesThunk,
-    updateLumoUserSettings,
-} from '../redux/slices/lumoUserSettings';
+import { ENABLE_U2L_ENCRYPTION } from '../llm/config';
+import { appendGeneratedMemoriesThunk, updateLumoUserSettings } from '../redux/slices/lumoUserSettings';
 import type { LumoDispatch, LumoState } from '../redux/store';
-import { safeLogger } from '../util/safeLogger';
 import {
+    MEMORY_AUTO_SAVE_PROMPT_THRESHOLD,
     buildMemoryBootstrapPrompt,
     canGenerateMemoriesFromChats,
-    MEMORY_AUTO_SAVE_PROMPT_THRESHOLD,
     memoriesFromContents,
     normalizeMemories,
     parseMemoryStringsResponse,
     sampleUserPromptsForMemoryGeneration,
 } from '../util/memoryHelpers';
+import { safeLogger } from '../util/safeLogger';
 
 let autoSaveInFlight = false;
 
@@ -55,12 +53,9 @@ export const maybeAutoSaveMemoriesFromChats = ({ api, dispatch, getState, hasLum
 
     void (async () => {
         try {
-            const samples = sampleUserPromptsForMemoryGeneration(
-                state.messages,
-                state.conversations,
-                state.spaces,
-                { hasLumoPlus }
-            );
+            const samples = sampleUserPromptsForMemoryGeneration(state.messages, state.conversations, state.spaces, {
+                hasLumoPlus,
+            });
             if (!canGenerateMemoriesFromChats(samples.length)) {
                 dispatch(updateLumoUserSettings({ memoryPromptsSinceAutoSave: 0 }));
                 return;
@@ -69,6 +64,7 @@ export const maybeAutoSaveMemoriesFromChats = ({ api, dispatch, getState, hasLum
             const existingAtRequestTime = normalizeMemories(settings.memories);
             const response = await quickChat(api, buildMemoryBootstrapPrompt(samples, existingAtRequestTime), {
                 enableWebSearch: false,
+                config: { enableU2LEncryption: ENABLE_U2L_ENCRYPTION },
             });
 
             const contents = parseMemoryStringsResponse(response, existingAtRequestTime);
