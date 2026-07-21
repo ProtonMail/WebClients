@@ -1,11 +1,11 @@
+import type { AssistantCallOptions, LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
-import type { AssistantCallOptions, LumoApiClientConfig } from '../../lib/lumo-api-client/core/types';
-import type { GenerationResponseMessage } from '../../types-api';
+import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import type { ContextFilter } from '../../llm';
-import { compactConversation, estimateTurnsTokens, PROACTIVE_COMPACTION_THRESHOLD_TOKENS } from '../../llm/compaction';
+import { PROACTIVE_COMPACTION_THRESHOLD_TOKENS, compactConversation, estimateTurnsTokens } from '../../llm/compaction';
 import { NotEnoughToCompactError } from '../../llm/compaction/partition';
+import { updateConversationStatus } from '../../redux/slices/core/conversations';
 import {
     addMessage,
     createDate,
@@ -13,7 +13,6 @@ import {
     newMessageId,
     pushMessageRequest,
 } from '../../redux/slices/core/messages';
-import { updateConversationStatus } from '../../redux/slices/core/conversations';
 import type { LumoDispatch } from '../../redux/store';
 import { isContextLengthExceededError } from '../../services/errors/contextLengthError';
 import {
@@ -27,6 +26,7 @@ import {
     type SpaceId,
     type Turn,
 } from '../../types';
+import type { GenerationResponseMessage } from '../../types-api';
 
 /** Options forwarded to sendMessageWithRedux, minus the per-attempt identifiers we manage here. */
 type ForwardedSendOptions = AssistantCallOptions & {
@@ -149,7 +149,6 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             }
         }
 
-        // eslint-disable-next-line no-constant-condition
         while (true) {
             try {
                 const turns = buildTurns(currentChain);
