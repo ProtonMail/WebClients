@@ -8,10 +8,14 @@ import { useLumoSelector } from '../redux/hooks';
 import type { Memory } from '../redux/slices/lumoUserSettings';
 import {
     buildMemoryBootstrapPrompt,
+    buildMemoryOptimizePrompt,
     canGenerateMemoriesFromChats,
+    canOptimizeMemories,
     MEMORY_GENERATION_MAX_SAMPLES,
     memoriesFromContents,
+    parseMemoryOptimizeResponse,
     parseMemoryStringsResponse,
+    rebuildMemoriesFromOptimizedContents,
     sampleUserPromptsForMemoryGeneration,
 } from '../util/memoryHelpers';
 
@@ -24,7 +28,9 @@ export function useMemoryGeneration() {
     const conversations = useLumoSelector((state) => state.conversations);
     const spaces = useLumoSelector((state) => state.spaces);
     const [isBootstrapping, setIsBootstrapping] = useState(false);
+    const [isOptimizing, setIsOptimizing] = useState(false);
     const abortRef = useRef<AbortController | null>(null);
+    const optimizeAbortRef = useRef<AbortController | null>(null);
 
     const promptSamples = useMemo(
         () => sampleUserPromptsForMemoryGeneration(messages, conversations, spaces, { hasLumoPlus }),
@@ -61,18 +67,55 @@ export function useMemoryGeneration() {
         [api, canGenerateFromChats, promptSamples]
     );
 
+    const optimizeMemories = useCallback(
+        async (existingMemories: Memory[]): Promise<Memory[]> => {
+            if (!canOptimizeMemories(existingMemories.length)) {
+                throw new Error('Not enough memories to optimize');
+            }
+
+            optimizeAbortRef.current?.abort();
+            const controller = new AbortController();
+            optimizeAbortRef.current = controller;
+            setIsOptimizing(true);
+
+            try {
+                const response = await quickChat(api, buildMemoryOptimizePrompt(existingMemories), {
+                    enableWebSearch: false,
+                    signal: controller.signal,
+                });
+                const contents = parseMemoryOptimizeResponse(response);
+                if (contents.length === 0) {
+                    throw new Error('No optimized memories returned');
+                }
+                return rebuildMemoriesFromOptimizedContents(contents, existingMemories);
+            } finally {
+                if (optimizeAbortRef.current === controller) {
+                    optimizeAbortRef.current = null;
+                }
+                setIsOptimizing(false);
+            }
+        },
+        [api]
+    );
+
     const cancelGeneration = useCallback(() => {
         abortRef.current?.abort();
         abortRef.current = null;
+        optimizeAbortRef.current?.abort();
+        optimizeAbortRef.current = null;
         setIsBootstrapping(false);
+        setIsOptimizing(false);
     }, []);
 
     return {
         generateFromChats,
+        optimizeMemories,
         cancelGeneration,
         isBootstrapping,
-        isGenerating: isBootstrapping,
+        isOptimizing,
+        isGenerating: isBootstrapping || isOptimizing,
         canGenerateFromChats,
+        canOptimizeMemories,
         promptSampleCount: promptSamples.length,
         maxPromptSamples: MEMORY_GENERATION_MAX_SAMPLES,
         minSamplesRequired: MIN_SAMPLES_REQUIRED,

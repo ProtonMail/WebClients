@@ -7,9 +7,15 @@ import { Role } from '../types';
 import {
     applyMemoryEdit,
     buildMemoryBootstrapPrompt,
+    buildMemoryOptimizePrompt,
+    isMemoryCountHigh,
+    MEMORY_GENERATION_MAX_MEMORIES,
+    MEMORY_RECOMMENDED_TOTAL_COUNT,
     mergeAppendedGeneratedMemories,
+    parseMemoryOptimizeResponse,
     parseMemoryStringsResponse,
     partitionMemories,
+    rebuildMemoriesFromOptimizedContents,
     sampleUserPromptsForMemoryGeneration,
 } from './memoryHelpers';
 
@@ -250,5 +256,82 @@ describe('memoryHelpers', () => {
         expect(edited.content).toBe('Prefers concise bullet points');
         expect(edited.id).toBe('1');
         expect(edited.createdAt).toBe(1);
+    });
+
+    it('builds an incremental prompt with high-count guidance when many memories exist', () => {
+        const existing: Memory[] = Array.from({ length: MEMORY_RECOMMENDED_TOTAL_COUNT }, (_, index) => ({
+            id: `${index}`,
+            content: `Existing memory number ${index}`,
+            createdAt: index,
+            source: 'user',
+        }));
+        const prompt = buildMemoryBootstrapPrompt(['Sample A'], existing);
+
+        expect(prompt).toContain(`already has ${MEMORY_RECOMMENDED_TOTAL_COUNT} saved memories`);
+        expect(prompt).toContain('Be extremely selective');
+    });
+
+    it('limits parsed memories per generation batch', () => {
+        const items = Array.from(
+            { length: MEMORY_GENERATION_MAX_MEMORIES + 5 },
+            (_, index) => `"Generated memory item number ${index}"`
+        );
+        const raw = `[${items.join(', ')}]`;
+
+        expect(parseMemoryStringsResponse(raw)).toHaveLength(MEMORY_GENERATION_MAX_MEMORIES);
+    });
+
+    it('merges appended generated memories without a total cap', () => {
+        const existing: Memory[] = Array.from({ length: 60 }, (_, index) => ({
+            id: `existing-${index}`,
+            content: `Existing memory ${index}`,
+            createdAt: index,
+            source: 'user' as const,
+        }));
+        const generated: Memory[] = [
+            { id: 'new-1', content: 'New memory one added from chats', createdAt: 9999, source: 'generated' },
+        ];
+
+        expect(mergeAppendedGeneratedMemories(existing, generated)).toHaveLength(61);
+        expect(isMemoryCountHigh(existing)).toBe(true);
+    });
+
+    it('builds an optimize prompt from saved memories', () => {
+        const memories: Memory[] = [
+            { id: '1', content: 'Prefers concise answers', createdAt: 1, source: 'user' },
+            { id: '2', content: 'Works in product design', createdAt: 2, source: 'generated' },
+        ];
+        const prompt = buildMemoryOptimizePrompt(memories);
+
+        expect(prompt).toContain('Prefers concise answers');
+        expect(prompt).toContain('Works in product design');
+        expect(prompt).toContain('consolidate');
+        expect(prompt).toContain('ONLY a JSON array');
+    });
+
+    it('parses optimized memory strings and deduplicates', () => {
+        const raw = `["Merged concise preference", "Works in product design", "merged concise preference"]`;
+        expect(parseMemoryOptimizeResponse(raw)).toEqual(['Merged concise preference', 'Works in product design']);
+    });
+
+    it('rebuilds optimized memories while preserving exact user entries', () => {
+        const previous: Memory[] = [
+            { id: 'user-1', content: 'Prefers concise answers', createdAt: 10, source: 'user' },
+            { id: 'generated-1', content: 'Likes bullet points', createdAt: 20, source: 'generated' },
+        ];
+        const optimized = rebuildMemoriesFromOptimizedContents(
+            ['Prefers concise answers', 'Prefers concise bullet-point answers'],
+            previous
+        );
+
+        expect(optimized).toHaveLength(2);
+        expect(optimized[0]).toMatchObject({
+            id: 'user-1',
+            content: 'Prefers concise answers',
+            source: 'user',
+            createdAt: 10,
+        });
+        expect(optimized[1]?.source).toBe('generated');
+        expect(optimized[1]?.content).toBe('Prefers concise bullet-point answers');
     });
 });
