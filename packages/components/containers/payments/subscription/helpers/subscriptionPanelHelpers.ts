@@ -4,12 +4,14 @@ import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calen
 import {
     BRAND_NAME,
     LUMO_APP_NAME,
+    LUMO_SHORT_APP_NAME,
     MEET_APP_NAME,
     ORGANIZATION_STATE,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 
+import { getScribeWritingAssistantText } from '../assistant/helpers';
 import { getNCalendarsText } from '../../features/calendar';
 import { getFreeUsersText } from '../../features/highlights';
 import {
@@ -116,7 +118,11 @@ const getMaxVPNDevicesText = () => {
     );
 };
 
-const getWritingAssistantText = (organization: Organization | undefined, maxMembers: number) => {
+const getWritingAssistantText = (
+    organization: Organization | undefined,
+    maxMembers: number,
+    scribeToLumo: boolean
+) => {
     const maxAi = organization?.MaxAI ?? 0;
 
     if (maxAi === 0) {
@@ -124,13 +130,19 @@ const getWritingAssistantText = (organization: Organization | undefined, maxMemb
     }
 
     if (maxMembers === 1) {
-        return c('Subscription attribute').t`${BRAND_NAME} Scribe writing assistant`;
+        return getScribeWritingAssistantText(scribeToLumo);
     } else {
-        return c('Subscription attribute').ngettext(
-            msgid`${BRAND_NAME} Scribe writing assistant for ${maxAi} user`,
-            `${BRAND_NAME} Scribe writing assistant for ${maxAi} users`,
-            maxAi
-        );
+        return scribeToLumo
+            ? c('Subscription attribute').ngettext(
+                  msgid`${LUMO_SHORT_APP_NAME} writing assistant for ${maxAi} user`,
+                  `${LUMO_SHORT_APP_NAME} writing assistant for ${maxAi} users`,
+                  maxAi
+              )
+            : c('Subscription attribute').ngettext(
+                  msgid`${BRAND_NAME} Scribe writing assistant for ${maxAi} user`,
+                  `${BRAND_NAME} Scribe writing assistant for ${maxAi} users`,
+                  maxAi
+              );
     }
 };
 
@@ -172,7 +184,8 @@ const getMeetText = (organization: Organization | undefined, maxMembers: number)
 export const getSubscriptionPanelText = (
     user: UserModel,
     organization: Organization | undefined,
-    addresses: Address[] | undefined
+    addresses: Address[] | undefined,
+    scribeToLumo: boolean
 ) => {
     const {
         MaxDomains = 0,
@@ -197,7 +210,7 @@ export const getSubscriptionPanelText = (
         vpnText: getVPNText(user, MaxMembers),
         serverText: getServersText(organization),
         maxVPNDevicesText: getMaxVPNDevicesText(),
-        writingAssistantText: getWritingAssistantText(organization, MaxMembers),
+        writingAssistantText: getWritingAssistantText(organization, MaxMembers, scribeToLumo),
         lumoText: getLumoText(organization, MaxMembers),
         meetText: getMeetText(organization, MaxMembers),
     };

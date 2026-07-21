@@ -2,6 +2,8 @@ import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import type { IconSize } from '@proton/icons/types';
 import type { Plan } from '@proton/payments/core/plan/interface';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
 
@@ -25,6 +27,8 @@ const UpsellFeatureList = ({
     odd = false,
     plan,
 }: UpsellFeatureListProps) => {
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
+
     if (features.length === 0) {
         return null;
     }
@@ -45,7 +49,7 @@ const UpsellFeatureList = ({
                                 <Icon className="color-primary m-auto" size={iconSize} name={feature.icon} />
                             </div>
                             <div className="flex-1">
-                                <span className="align-middle">{feature.getText()}</span>
+                                <span className="align-middle">{feature.getText(scribeToLumo)}</span>
                                 {feature.getTooltip && !hideInfo ? (
                                     <Info buttonClass="ml-2" title={feature.getTooltip()} />
                                 ) : null}

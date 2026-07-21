@@ -42,6 +42,7 @@ import {
     getSpace,
     getStorageUsed,
 } from '@proton/shared/lib/user/storage';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers';
@@ -140,7 +141,8 @@ function StorageSplitOrganizationTooltip({ organization, user }: StorageSplitOrg
     });
     const userStorageText = getStorageText(userSpace.maxSpace, userSpace.usedSpace);
     const orgStorageText = getStorageText(organization.MaxSpace, organization.UsedSpace);
-    const { userText } = getSubscriptionPanelText(user, organization, addresses);
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
+    const { userText } = getSubscriptionPanelText(user, organization, addresses, scribeToLumo);
     const { MaxMembers } = organization;
 
     return (

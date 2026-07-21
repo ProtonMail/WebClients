@@ -2,7 +2,7 @@ import type { IconName } from '@proton/icons/types';
 import type { Plan } from '@proton/payments/core/plan/interface';
 
 export interface UpsellFeature {
-    getText: () => string;
+    getText: (scribeToLumo?: boolean) => string;
     getTooltip?: () => string;
     icon: IconName;
 }

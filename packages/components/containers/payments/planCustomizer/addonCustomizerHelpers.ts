@@ -70,10 +70,13 @@ export type AddonCustomizerItem = AddonCustomizerProperties & {
 };
 
 type AddonCustomizerTrialProps =
-    | {}
-    | Pick<NumberCustomiserProps, 'max' | 'increaseBlockedReasons' | 'increaseBlockedReasonText'>;
+    {} | Pick<NumberCustomiserProps, 'max' | 'increaseBlockedReasons' | 'increaseBlockedReasonText'>;
 
-const getTrialProps = (isTrialMode: boolean, addonNameKey: ADDON_NAMES): AddonCustomizerTrialProps => {
+const getTrialProps = (
+    isTrialMode: boolean,
+    addonNameKey: ADDON_NAMES,
+    scribeToLumo: boolean
+): AddonCustomizerTrialProps => {
     if (!isTrialMode) {
         return {};
     }
@@ -96,8 +99,11 @@ const getTrialProps = (isTrialMode: boolean, addonNameKey: ADDON_NAMES): AddonCu
     const increaseBlockedReasonText = {
         [ADDON_PREFIXES.MEMBER]: c('b2b_trials_2025_Info')
             .t`You can have up to ${TRIAL_MAX_USERS} users during the trial period.`,
-        [ADDON_PREFIXES.SCRIBE]: c('b2b_trials_2025_Info')
-            .t`You can have up to ${TRIAL_MAX_SCRIBE_SEATS} Scribe seats during the trial period.`,
+        [ADDON_PREFIXES.SCRIBE]: scribeToLumo
+            ? c('b2b_trials_2025_Info')
+                  .t`You can have up to ${TRIAL_MAX_SCRIBE_SEATS} ${LUMO_SHORT_APP_NAME} writing assistant seats during the trial period.`
+            : c('b2b_trials_2025_Info')
+                  .t`You can have up to ${TRIAL_MAX_SCRIBE_SEATS} Scribe seats during the trial period.`,
         [ADDON_PREFIXES.LUMO]: c('b2b_trials_2025_Info')
             .t`You can have up to ${TRIAL_MAX_LUMO_SEATS} ${LUMO_SHORT_APP_NAME} seats during the trial period.`,
         [ADDON_PREFIXES.MEET]: c('meet_2025: Info')
@@ -141,6 +147,7 @@ export const getAddonCustomizerProperties = ({
     selectedPlan,
     onChangePlanIDs,
     addonFlags,
+    scribeToLumo,
 }: {
     addonName: ADDON_NAMES;
     plansMap: { [key: string]: Plan };
@@ -150,6 +157,7 @@ export const getAddonCustomizerProperties = ({
     selectedPlan: SelectedPlan;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     addonFlags: AddonFlags;
+    scribeToLumo: boolean;
 }): AddonCustomizerProperties => {
     const currentPlan = SelectedPlan.createFromSubscription(latestSubscription, plansMap);
 
@@ -210,7 +218,7 @@ export const getAddonCustomizerProperties = ({
     const value = selectedPlan.getTotal(featureLimitKey);
 
     const selectedPlanTotalMembers = selectedPlan.getTotalUsers();
-    const trialConstraints = getTrialProps(isTrialMode, addonName);
+    const trialConstraints = getTrialProps(isTrialMode, addonName, scribeToLumo);
 
     // The total number of scribe, lumo, or meet addons can't be higher than the total number of members
     const max = getMaxAddonAmount(addonName, trialConstraints, {
@@ -338,6 +346,7 @@ export function computeAddonCustomizerItems({
     allowedAddonTypes,
     domainVpnBiz2023Enabled = false,
     mode,
+    scribeToLumo = false,
 }: {
     normalizedSelectedPlan: SelectedPlan;
     plansMap: PlansMap;
@@ -350,6 +359,7 @@ export function computeAddonCustomizerItems({
     allowedAddonTypes?: AddonGuard[];
     domainVpnBiz2023Enabled?: boolean;
     mode?: CustomiserMode;
+    scribeToLumo?: boolean;
 }): AddonCustomizerItem[] {
     const currentPlan = SelectedPlan.createFromSubscription(latestSubscription, plansMap);
 
@@ -398,6 +408,7 @@ export function computeAddonCustomizerItems({
                 selectedPlan: normalizedSelectedPlan,
                 onChangePlanIDs,
                 addonFlags,
+                scribeToLumo,
             }),
         }));
 }

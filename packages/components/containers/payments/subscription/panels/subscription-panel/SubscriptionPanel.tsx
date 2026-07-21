@@ -41,6 +41,8 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
@@ -93,6 +95,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
     const isPassB2bPlan = getIsPassB2BPlan(planName);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const space = getSpace(user);
 
@@ -169,7 +172,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
         writingAssistantText,
         lumoText,
         meetText,
-    } = getSubscriptionPanelText(user, organization, addresses);
+    } = getSubscriptionPanelText(user, organization, addresses, scribeToLumo);
 
     const getVpnPlusItems = (): Item[] => {
         return [

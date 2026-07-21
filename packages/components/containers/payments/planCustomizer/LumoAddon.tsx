@@ -8,6 +8,8 @@ import type { Plan } from '@proton/payments/core/plan/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import useSubscriptionModalTelemetry from '../subscription/useSubscriptionModalTelemetry';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
@@ -43,6 +45,7 @@ interface LumoAddonProps extends Omit<NumberCustomiserProps, 'label' | 'tooltip'
 
 const LumoAddon = ({ price, onAddLumo, value, telemetryContext, ...rest }: LumoAddonProps) => {
     const { reportAddLumo } = useSubscriptionModalTelemetry();
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const [showLumoBanner, setShowLumoBanner] = useState(value === 0);
 
@@ -66,7 +69,11 @@ const LumoAddon = ({ price, onAddLumo, value, telemetryContext, ...rest }: LumoA
         <NumberCustomiser
             label={LUMO_APP_NAME}
             value={value}
-            tooltip={c('Info').t`${LUMO_APP_NAME} includes ${BRAND_NAME} Scribe writing assistant`}
+            tooltip={
+                scribeToLumo
+                    ? c('Info').t`${LUMO_APP_NAME} includes the writing assistant`
+                    : c('Info').t`${LUMO_APP_NAME} includes ${BRAND_NAME} Scribe writing assistant`
+            }
             {...rest}
         />
     );
