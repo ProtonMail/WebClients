@@ -1,4 +1,5 @@
 import { effectiveDpr, parseCssColorToRgb255, rgb255To01 } from './canvasUtils';
+import { createSampleRefreshGate } from './sampleRefreshGate';
 import { createWebglParticlePass } from './webglParticlePass';
 
 /** Max blobs compiled into the fragment shader (see `MAX_BLOBS` in shader source). */
@@ -447,6 +448,7 @@ function compileShader(gl, type, source) {
  * @property {string | null} [baseCssVar]
  * @property {number} [maxDpr] cap device pixel ratio (default: uncapped)
  * @property {number} [targetFps] throttle renders (default: 60)
+ * @property {number} [sampleRefreshIntervalMs] min ms between particle sample-texture refreshes (default: 0, i.e. every frame)
  * @property {import('./gridParticleField.d.ts').GridParticleFieldOptions} [particleOptions] dot-grid pass after blobs
  * @property {(timeMs: number) => void} [onAfterRender] optional hook after each frame
  */
@@ -468,13 +470,13 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     const targetFps = Math.max(1, runtime.targetFps ?? 60);
     const onAfterRender = runtime.onAfterRender ?? null;
     const particleOptions = runtime.particleOptions ?? null;
+    const sampleRefreshIntervalMs = runtime.sampleRefreshIntervalMs ?? 0;
     const minFrameIntervalMs = 1000 / targetFps;
     const gl = canvas.getContext('webgl', {
         alpha: false,
         antialias: false,
         depth: false,
         stencil: false,
-        preserveDrawingBuffer: true,
     });
 
     const noop = () => {};
@@ -530,6 +532,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);
 
     const particlePass = particleOptions ? createWebglParticlePass(gl, particleOptions) : null;
+    const sampleGate = createSampleRefreshGate(sampleRefreshIntervalMs);
 
     const uResolution = gl.getUniformLocation(program, 'resolution');
     const uMouse = gl.getUniformLocation(program, 'mouse');
@@ -610,10 +613,14 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     const motionMq = typeof window !== 'undefined' ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
 
     function onVisibilityChange() {
+        const wasPaused = paused;
         paused = document.hidden;
         if (!paused) {
             baseColorDirty = true;
             lastFrameMs = 0;
+            if (wasPaused && raf === 0) {
+                raf = window.requestAnimationFrame(render);
+            }
         }
     }
 
@@ -676,6 +683,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         }
         gl.viewport(0, 0, w, h);
         particlePass?.resize(cssW, cssH, dpr);
+        sampleGate.reset();
         if (sizeChanged) {
             baseColorDirty = true;
             renderFrame(performance.now());
@@ -739,8 +747,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     function resolveBlobMotionPeriods(blob) {
         const centerPeriod = blob.driftToCenterPeriodSec ?? 12;
         const floatPeriod = blob.floatPeriodSec ?? centerPeriod * 1.35;
-        const morphPeriod =
-            blob.radiusMorphPeriodSec ?? blob.radiusPulsePeriodSec ?? centerPeriod * 0.85;
+        const morphPeriod = blob.radiusMorphPeriodSec ?? blob.radiusPulsePeriodSec ?? centerPeriod * 0.85;
         return {
             centerPeriod,
             floatPeriod,
@@ -860,12 +867,17 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         applyShaderUniforms(config, t);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
 
-        particlePass?.render({
-            timeSec: t,
-            mouseX: mouseCss.x,
-            mouseY: mouseCss.y,
-            baseColor: base,
-        });
+        if (particlePass) {
+            if (sampleGate.shouldRefresh(now)) {
+                particlePass.sampleFramebuffer();
+            }
+            particlePass.render({
+                timeSec: t,
+                mouseX: mouseCss.x,
+                mouseY: mouseCss.y,
+                baseColor: base,
+            });
+        }
 
         const w = gl.drawingBufferWidth;
         const h = gl.drawingBufferHeight;
@@ -877,10 +889,11 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     }
 
     function render(/** @type {number} */ now) {
-        raf = window.requestAnimationFrame(render);
         if (paused) {
+            raf = 0;
             return;
         }
+        raf = window.requestAnimationFrame(render);
         if (now - lastFrameMs < minFrameIntervalMs) {
             return;
         }
