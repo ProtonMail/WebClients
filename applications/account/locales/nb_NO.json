@@ -135,9 +135,6 @@
       "Add domain": [
         "Legg til domene"
       ],
-      "Add email address": [
-        "Legg til e-postadresse"
-      ],
       "Add external address": [
         "Legg til ekstern adresse"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "Legg til PayPal"
-      ],
-      "Add phone number": [
-        "Legg til telefonnummer"
       ],
       "Add public holidays": [
         "Legg til offentlige helligdager"
@@ -326,6 +320,9 @@
       ],
       "Compare plans": [
         "Sammenlign planer"
+      ],
+      "Configure new device profile": [
+        "Konfigurer ny enhetsprofil"
       ],
       "Configure SAML": [
         "Konfigurer SAML"
@@ -509,6 +506,9 @@
       ],
       "Delete and confirm": [
         "Slett og bekreft"
+      ],
+      "Delete device profile": [
+        "Slett enhetsprofil"
       ],
       "Delete filter “${ Name }”": [
         "Slett filter “${ Name }”"
@@ -753,9 +753,6 @@
       "enable desktop notifications": [
         "aktivere skrivebordsvarsler"
       ],
-      "Enable device-based recovery": [
-        "Aktiver enhetsbasert gjenoppretting"
-      ],
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
       ],
@@ -822,6 +819,9 @@
       "Generate": [
         "Generer"
       ],
+      "Generate device profile": [
+        "Generer enhetsprofil"
+      ],
       "Generate key": [
         "Generer nøkkel"
       ],
@@ -836,9 +836,6 @@
       ],
       "Generate password": [
         "Generer passord"
-      ],
-      "Generate recovery phrase": [
-        "Generer gjenopprettingsfrase"
       ],
       "Generate token": [
         "Generer token"
@@ -1017,6 +1014,9 @@
       "Insert link": [
         "Sett inn kobling"
       ],
+      "Instructions": [
+        "Instruksjoner"
+      ],
       "Invite": [
         "Inviter"
       ],
@@ -1028,6 +1028,9 @@
       ],
       "Italic": [
         "Kursiv"
+      ],
+      "JumpCloud": [
+        "JumpCloud"
       ],
       "Keep": [
         "Behold"
@@ -1133,6 +1136,9 @@
       ],
       "Maybe later": [
         "Kanskje senere"
+      ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
       ],
       "More": [
         "Mer"
@@ -1868,9 +1874,6 @@
       ],
       "View plans details": [
         "Vis plandetaljer"
-      ],
-      "View recovery settings": [
-        "Vis innstillinger for gjenoppretting"
       ],
       "View recovery setup details": [
         "Se detaljer om gjenopprettingsoppsettet"
@@ -3504,6 +3507,9 @@
       ],
       "Discover and set up features": [
         "Oppdag og konfigurer funksjoner"
+      ],
+      "Get 50% offer": [
+        "Få 50 % tilbud"
       ],
       "Got it": [
         "Skjønner"
@@ -6762,9 +6768,6 @@
       "Add recovery contact": [
         "Legg til gjenopprettingskontakt"
       ],
-      "Add recovery method": [
-        "Legg til gjenoppretingsmetode"
-      ],
       "Added on ${ formattedDate }": [
         "Lagt til på ${ formattedDate }"
       ],
@@ -7006,14 +7009,8 @@
       "Subscription expired": [
         "Abonnement utløpt"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "De la meg til som en betrodd kontakt. Jeg kan få tilgang til kontoen deres i tilfelle en nødsituasjon."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "De har lagt deg til som en betrodd kontakt. Du kan få tilgang til kontoen deres i tilfelle en nødsituasjon."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "De kan be om tilgang til min konto i nødstilfeller."
       ],
       "They may ask to access your account in case of an emergency.": [
         "De kan be om tilgang til kontoen din i tilfelle en nødsituasjon."
@@ -7033,9 +7030,6 @@
       ],
       "Time required before automatically granting them access": [
         "Tid som kreves før de automatisk får tilgang"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "For å legge til gjenopprettingskontakter må du ha en gjenopprettings-e-postadresse eller et telefonnummer."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "For å deaktivere denne gjenopprettingsmetoden, fjern alle gjenopprettingskontaktene dine."
@@ -7087,12 +7081,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Du kan når som helst fjerne tilgangen deres for å få tilbake eksklusiv kontroll over kontoen din."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "Du har ikke blitt angitt som gjenopprettingskontakt for noen ennå."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "Du har ikke blitt utpekt som nødkontakt for noen ennå."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Du har nådd maksimalt ${ limit } nødkontakt.",
@@ -7228,6 +7216,9 @@
       ],
       "Contact signature not verified": [
         "Kontaktsignaturen er ikke bekreftet"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Kunne ikke generere enhetsprofilen. Prøv på nytt."
       ],
       "Could not open created vault": [
         "Kunne ikke åpne opprettet hvelv"
@@ -10186,17 +10177,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "En gjenopprettingsfil lar deg låse opp og se dine data etter en gjenoppretting av konto."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "En gjenopprettingsfrase lar deg få tilgang til kontoen din og gjenopprette krypterte meldinger hvis du glemmer passordet ditt."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Få tilgang til over 6500 høyhastighetsservere på opptil 10 enheter for å beskytte nettleserdataene dine. Tilgjengelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Tilgang til over 20 000 servere i 145 land"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Skaff deg tilgang til passordene dine og beskytt nettidentitetene sømløst på tvers av enhetene. Last ned og installer de relevante ${ PASS_APP_NAME }-appene og utvidelsene."
@@ -10206,9 +10194,6 @@
       ],
       "Account successfully updated": [
         "Konto oppdatert"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktiver minst én datagjenopprettingsmetode for å sikre at du fortsatt har tilgang til innholdet i ${ BRAND_NAME }-kontoen hvis du mister passordet."
       ],
       "Active": [
         "Aktiv"
@@ -10221,6 +10206,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Legg til ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for kun ${ bundlePlanPriceInline }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -10312,8 +10300,14 @@
       "All data and settings are preserved": [
         "Alle data og innstillinger bevares"
       ],
+      "All devices with this device profile deployed": [
+        "Alle enheter med denne enhetsprofilen distribuert"
+      ],
       "All inactive members deleted": [
         "Alle inaktive medlemmer slettet"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "All internettrafikk er alltid kryptert og sikker"
       ],
       "All keys successfully reactivated": [
         "Alle nøkler aktivert på nytt"
@@ -10634,6 +10628,9 @@
       "Choose an Entity ID to continue.": [
         "Velg en enhets-ID for å fortsette."
       ],
+      "Choose one:": [
+        "Velg én:"
+      ],
       "Choose your service to connect with": [
         "Velg tjenesten du vil koble til"
       ],
@@ -10669,6 +10666,9 @@
       ],
       "Compromised": [
         "Kompromittert"
+      ],
+      "Configure Always-on VPN": [
+        "Konfigurer alltid-på-VPN"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurer SAML-autentisering for organisasjonen din gjennom en identitetsleverandør (IdP). Dette vil aktivere SAML for hele organisasjonen."
@@ -10849,6 +10849,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Avhengig av innstillingene dine kan de få tilgang umiddelbart, eller etter angitt **ventetid**."
       ],
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "Distribuer ${ regoArtifact } direkte via MDM-fildistribusjonen din"
+      ],
+      "Deploy across all your managed devices": [
+        "Implementer på tvers av alle dine administrerte enheter"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Distribuer den via MDM-en din (Jamf, Intune…) eller manuelt på hver enhet."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Enheter som har en alltid på-enhetsprofil implementert, kan ikke nå internett med mindre en ${ VPN_APP_NAME }-tilkobling er aktiv."
+      ],
       "Did you know?": [
         "Visste du at?"
       ],
@@ -10925,6 +10937,15 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
       ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Last ned ${ mobileConfigArtifact } og åpne den på hver Mac for å installere profilen, og godkjenn den deretter i Systeminnstillinger."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "Last ned ${ powershellArtifact } og kjør den på hver enhet som systembruker for å plassere enhetsprofilen automatisk."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Last ned ${ removeScriptLink } og kjør den på hver enhet som systembruker for å slette profilen automatisk."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Last ned ${ VPN_APP_NAME }"
       ],
@@ -10997,6 +11018,9 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-postmeldinger merket med etiketten, ${ nameDeleted }, vil ikke bli slettet og kan fortsatt bli funnet i den respektive mappen."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Ansatte kan ikke gå på nett uten VPN-tilkobling"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Aktiver automatisk fornyelse for å beholde tilgangen til Plus-tjenere og -funksjoner."
       ],
@@ -11048,6 +11072,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Nettadresse for endepunkt mottatt fra identitetsleverandøren din (f.eks. https://idp.example.com/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Håndhevingen starter automatisk så snart enheten oppdager profilen."
+      ],
       "Enhance your network security": [
         "Forsterk nettverkssikkerheten sin"
       ],
@@ -11056,6 +11083,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sikre fullstendig privat og kryptert kommunikasjon. Gjør krav på din gratis ${ BRAND_NAME }-e-postadresse nå."
+      ],
+      "Ensure your organization is always protected": [
+        "Sørg for at organisasjonen din alltid er beskyttet"
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Skriv inn et passord for å fullføre ${ BRAND_NAME }-kontoen din, og begynn å bruke ${ VPN_APP_NAME } på alle enhetene dine."
@@ -11153,6 +11183,9 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rask og fokusert. E-post og kalender, rett på skrivebordet."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Raskeste VPN-hastigheter på opptil 10 Gbps"
+      ],
       "Featured in": [
         "Som fremhevet i"
       ],
@@ -11234,11 +11267,11 @@
       "Gateways": [
         "Gateway-tjenere"
       ],
+      "Generate the device profile and download a configuration file.": [
+        "Generer enhetsprofilen og last ned en konfigurasjonsfil."
+      ],
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Hvis du genererer en ny gjenopprettingsfrase, deaktiveres den nåværende gjenopprettingsfrasen."
-      ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Generering av ny gjenopprettingsfrase vil deaktivere den gamle."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Få ${ AUTHENTICATOR_APP_NAME } for alle dine enheter."
@@ -11299,6 +11332,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Ha litt mer tid til å bestemme deg uten avbrudd."
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Hjelp andre familier med å gi barna en trygg start på nettet. Del denne milepælen og spre ordet."
@@ -11363,9 +11399,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Hvis systemets tidssone ikke samsvarer med gjeldende tidssoneinnstilling, blir du bedt om å oppdatere den (på det meste én gang per dag)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Hvis dette skyldes en gammel tilbakestilling av passord, kan du hindre meldingen fra å vises igjen"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
@@ -11374,6 +11407,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener det er en feil, kontakt oss ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Hvis du kansellerer nå, mister du tilgangen til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inkludert disse funksjonene:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
@@ -11413,9 +11449,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Hvis du nylig har tilbakestilt passordet ditt, kan du bruke ${ recoveryMethodLink } til å låse opp dataene. Hvis dette skyldes en gammel tilbakestilling av passordet, kan du stoppe meldingen fra å vises igjen."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Hvis du nylig tilbakestilte passordet ditt, kan du bruke en datagjenopprettingsmetode til å låse opp dine data."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Hvis organisasjonen din har offentlige personer, håndterer sensitive data, eller kan bli målrettet i cyberangrep, blir du sterkt oppfordret til å aktivere ${ PROTON_SENTINEL_NAME } for alle i din organisasjon."
@@ -11552,9 +11585,6 @@
       "Invited": [
         "Invitert"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Det ser ut til at noe av dataene dine er kryptert og låst."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tar 10 dager å endre en tjeners land, så sørg for at valget ditt er riktig."
       ],
@@ -11629,6 +11659,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold informasjonen din sikrere og mer privat med disse veiledningene og tipsene."
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Hold passordene dine trygge og logg inn umiddelbart med autofyll på alle enheter."
       ],
       "Key deletion is irreversible!": [
         "Nøkkelsletting er irreversibel!"
@@ -11719,6 +11752,9 @@
       ],
       "Low Priority": [
         "Lav prioritet"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Store e-posttjenester kan avvise eller filtrere e-postene dine til søppelpost hvis SPF / DKIM / DMARC mangler eller ikke er konfigurert riktig."
@@ -11909,6 +11945,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Når tilgang til kontoen din er gitt, kan de få tilgang til **gjenopprettingsinnstillingene** dine og **endre ${ ACCOUNT_APP_NAME }-passordet** for deg."
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Når den er distribuert, kan det ta opptil noen timer før enhetene oppdager og håndhever retningslinjen."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Bare store bokstaver og tegnsetting (punktum, bindestreker og understrek) kan endres her. Hvis du vil bruke en annen adresse, må du legge til en ny."
       ],
@@ -11949,6 +11988,9 @@
       ],
       "or discover other features:": [
         "eller oppdag andre funksjoner:"
+      ],
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "Eller kjør ${ powershellArtifact } via MDM-skriptutførelsen din"
       ],
       "Or select a particular server:": [
         "Eller velg en spesiell tjener:"
@@ -12075,9 +12117,6 @@
       "Please fill out this field.": [
         "Fyll ut dette feltet."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Ta godt vare på den. Du trenger den for å få tilgang til kontoen din og dekryptere dine data i tilfelle en tilbakestilling av passord."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Vær oppmerksom på at hvis du sletter filteret, ${ nameDeleted }, slutter vi å behandle alle de automatiserte handlingene det utløser."
       ],
@@ -12125,6 +12164,9 @@
       ],
       "Preference saved": [
         "Preferanse lagret"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Førsteklasses personvernbeskyttelse på tvers av alle enhetene dine"
       ],
       "Preview": [
         "Forhåndsvis"
@@ -12174,6 +12216,9 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling av dokumenter støttes enda ikke."
       ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "Send ${ mobileConfigArtifact } til alle administrerte Mac-er som bruker MDM-en din."
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
       ],
@@ -12209,9 +12254,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Gjenopprettingsfrase kopiet til utklippstavlen."
-      ],
-      "Recovery phrase downloaded": [
-        "Gjenopprettingsfrase lastet ned"
       ],
       "Recovery phrase has been disabled": [
         "Gjenopprettingsfrase er deaktivert"
@@ -12463,6 +12505,9 @@
       "Start using the shorter, catchier version of your email address.": [
         "Bruk en kortere og mer fengende versjon av e-postadressen din."
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "Hold deg til planen din og få 50 % rabatt neste måned"
+      ],
       "Step ${ step }": [
         "Trinn ${ step }",
         "Trinn ${ step }"
@@ -12527,6 +12572,9 @@
       ],
       "support team": [
         "støtteapparat"
+      ],
+      "Supported platforms": [
+        "Støttede plattformer"
       ],
       "Swiss based": [
         "Sveitsisk basert"
@@ -12853,6 +12901,12 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "For å dekryptere og se låst data etter en tilbakestilling av passord, velg en gjenopprettingsmetode."
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "For å aktivere Alltid-på-VPN må konfigurasjonsprofilen installeres på alle Mac-maskiner – ${ VPN_APP_NAME }-klienten håndhever enhetsprofilen automatisk når den er på plass."
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "For å aktivere Alltid-på-VPN må enhetsprofilen nå ${ policiesPath } på alle enheter – ${ VPN_APP_NAME }-klienten oppdager den der og håndhever profilen automatisk."
+      ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "For å aktivere post-kvantebeskyttelse må du fullføre genereringen av de nye post-kvantekrypteringsnøklene dine."
       ],
@@ -12891,6 +12945,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "For å få tilbake tilgang til kontoen og dataene dine, skriv inn gjenopprettingsfrasen på 12 ord som er knyttet til kontoen."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "For å fjerne Alltid på-VPN, slett ${ profileFile } fra ${ policiesPath } på alle enheter. ${ VPN_APP_NAME }-klienten slutter å håndheve profilen så snart den oppdager at filen er borte."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "For å sikre internettilkoblingen, last ned og installer ${ VPN_APP_NAME }-applikasjonen for din enhet og koble til en tjener."
@@ -13042,6 +13099,9 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Bruk den valgte e-postadressen som SMTP-brukernavn i den eksterne tjenesten, og det genererte tokenet som SMTP-passordet."
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Bruk MDM-en din til å slette filen, eller kjør ${ removeScriptLink } via MDM-ens skriptkjøring. Enhver MDM som støtter distribusjon av filer eller kjøring av skript vil fungere."
+      ],
       "User activated": [
         "Bruker aktivert"
       ],
@@ -13053,6 +13113,12 @@
       ],
       "Users": [
         "Brukere"
+      ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "Bruker du en annen MDM? Enhver MDM som støtter utrulling av en konfigurasjonsprofil vil fungere. Se dokumentasjonen for MDM-en din for hvordan du laster den opp og tilordner den til enhetsparken din."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Bruker du en annen MDM? Enhver MDM som støtter distribusjon av filer eller kjøring av PowerShell-skript vil fungere. Se dokumentasjonen for MDM-en din for mer informasjon."
       ],
       "Vault created": [
         "Hvelv opprettet"
@@ -13170,9 +13236,6 @@
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi anbefaler å varsle organisasjonsmedlemmene og be dem om å sette opp 2FA for kontoene sine før du håndhever bruken av 2FA."
-      ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Vi lagrer sikkert gjenopprettinginformasjon på din klarerte enhet for å forhindre at du mister dine data"
       ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Vi anbefaler på det sterkeste at alle aktiverer gjenoppretting via gjenopprettingsfrase."
@@ -13599,6 +13662,9 @@
       "Your account was successfully updated with this promotion": [
         "Kontoen din ble oppdatert med denne kampanjen"
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Din alltid på-VPN-enhetsprofil er klar til utrulling."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
@@ -13664,12 +13730,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Gjenopprettingsfilen din vil gjenopprette tilgangen til e-poster, kontakter, filer, passord og andre krypterte data på kontoen din etter en tilbakestilling av passordet."
-      ],
-      "Your recovery phrase": [
-        "Din gjenopprettingsfrase"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Gjenopprettingsfrasen din er en serie på 12 tilfeldig genererte ord i en bestemt rekkefølge."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "Gjenopprettingsfrasen din lar deg logge på og gjenopprette dataene dine hvis du blir låst ute av ${ BRAND_NAME }-kontoen din. Den består av 12 ord og fungerer som et reservepassord."
@@ -14514,6 +14574,9 @@
       "App Settings": [
         "Appinnstillinger"
       ],
+      "Applies:": [
+        "Gjelder for:"
+      ],
       "Apply filter to existing emails": [
         "Anvend filter på eksisterende e-postmeldinger"
       ],
@@ -14974,6 +15037,9 @@
       "End-to-end encryption": [
         "Ende-til-ende-kryptering"
       ],
+      "Enforce Always-on VPN": [
+        "Håndhev alltid-på-VPN"
+      ],
       "Enter code": [
         "Skriv inn koden"
       ],
@@ -15219,6 +15285,9 @@
       ],
       "Lock app after inactivity": [
         "Lås appen etter inaktivitet"
+      ],
+      "Login restrictions": [
+        "Innloggingsbegrensninger"
       ],
       "Logo": [
         "Logo"
@@ -16000,17 +16069,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Enhetsbasert gjenoppretting"
-      ],
       "Notification phone number": [
         "Telefonnummer for varsling"
       ],
       "Recovery phone number": [
         "Gjenopprettingstelefonnummer"
-      ],
-      "Recovery phrase": [
-        "Gjenopprettingsfrase"
       ],
       "Set recovery phone number": [
         "Angi telefonnummer for gjenoppretting"
@@ -16328,9 +16391,6 @@
       "How to share via email": [
         "Hvordan dele via e-post"
       ],
-      "How to unlock data": [
-        "Hvordan låse opp data"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Hvordan bruke ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16354,9 +16414,6 @@
       ],
       "Learn more": [
         "Lær mer"
-      ],
-      "Learn more about data recovery": [
-        "Lær mer om datagjenoppretting"
       ],
       "Manage addresses": [
         "Administrer adresser"
@@ -21305,146 +21362,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **Deaktiver gjenoppretting via telefon** for å forhindre angripere fra å ta over kontoen din."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        "**Aktiver gjenoppretting via telefon** for å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } vil bruke denne adressen for å holde deg oppdatert om kontosikkerheten din."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } vil bruke denne adressen til å sende en tilbakestillingskode på e-post når du tilbakestiller passordet ditt."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } vil bruke dette telefonnummeret til å sende en tilbakestillingskode på SMS når du tilbakestiller passordet ditt."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } for å sikre at dataene dine kan gjenopprettes."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**Deaktiver kontotilbakestilling via e-post** for å forhindre angripere fra å ta over kontoen din."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Aktiver gjenoppretting via e-post** for å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
-      ],
-      "Account reset by email has been disabled": [
-        "Kontotilbakestilling via e-post er deaktivert"
-      ],
-      "Account reset by phone has been disabled": [
-        "Kontotilbakestilling via telefon er deaktivert"
-      ],
-      "Account safety review": [
-        "Gjennomgang av kontosikkerhet"
-      ],
-      "Add a phone number": [
-        "Legg til et telefonnummer"
-      ],
-      "Add a recovery email": [
-        "Legg til e-postadresse for gjenoppretting"
-      ],
-      "Add a recovery email address": [
-        "Legg til en gjenopprettings-e-postadresse"
-      ],
-      "Add a recovery phone number": [
-        "Legg til et gjenopprettingstelefonnummer"
-      ],
-      "Add an alternative email address": [
-        "Legg til en alternativ e-postadresse"
-      ],
-      "Add an email": [
-        "Legg til en e-post"
-      ],
-      "Back to Safety Review": [
-        "Tilbake til gjennomgang av sikkerhet"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "Fordi du tilbakestilte passordet ditt, kan den nåværende gjenopprettingsfrasen din bare brukes til å gjenopprette dataene som ble opprettet før tilbakestillingen av passordet."
-      ],
-      "Can be used to regain access to your account and data": [
-        "Kan brukes til å få tilgang til kontoen din og dataene dine"
-      ],
-      "Check account security": [
-        "Gjennomgå kontosikkerhet"
-      ],
       "Code sent to ${ boldValue }": [
         "Kode sendt til ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Fortsett til gjennomgang av sikkerhet"
-      ],
-      "Device-based recovery enabled": [
-        "Enhetsbasert gjenoppretting aktivert"
-      ],
-      "Disable account reset by email": [
-        "Deaktiver tilbakestilling av konto ved e-post"
-      ],
-      "Disable recovery by email": [
-        "Deaktiver gjenoppretting via e-post"
-      ],
-      "Disable recovery by phone": [
-        "Deaktiver gjenoppretting via telefon"
-      ],
-      "Download ${ size }": [
-        "Last ned ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "Last ned gjenopprettingsfrasen din"
-      ],
-      "Email address": [
-        "E-postadresse"
-      ],
-      "Enable device-based recovery": [
-        "Aktiver enhetsbasert gjenoppretting"
-      ],
-      "Enable recovery by email": [
-        "Aktiver gjenoppretting via e-post"
-      ],
-      "Enable recovery by phone": [
-        "Aktiver gjenoppretting via telefon"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Jeg forstår at jeg ikke vil kunne gjenopprette data som er låst for øyeblikket med denne gjenopprettingsfrasen"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Hvis du glemmer ${ BRAND_NAME }-passordet og må tilbakestille det, gjenopprettes full tilgang til ${ BRAND_NAME }-kontoen neste gang du logger på denne enheten med det nye passordet."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Hvis du glemmer ${ BRAND_NAME }-passordet og må tilbakestille det, gjenopprettes full tilgang til ${ BRAND_NAME }-kontoen neste gang du logger på denne enheten med det nye passordet."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Hvis du blir låst ute fra ${ BRAND_NAME }-kontoen din, vil gjenopprettingsfrasen din tillate deg å logge på og gjenopprette dataene dine."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Hvis du mister påloggingsinformasjonen din og trenger å tilbakestille kontoen din, **er det viktig** at du har både en **kontogjenopprettings- og datagjenopprettingsmetode** på plass, ellers kan det hende du ikke får tilgang til noen av e-postene, kontaktene, filene eller passordene dine."
-      ],
-      "in case we need to contact you": [
-        "i tilfelle vi trenger å kontakte deg"
       ],
       "Invalid code": [
         "Ugyldig kode"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Det er den eneste måten å gjenopprette kontoen din på, så sørg for at du oppbevarer det på et trygt sted."
-      ],
-      "Recovery email address": [
-        "Gjenopprettings-e-postadresse"
-      ],
-      "Recovery phone number": [
-        "Gjenopprettingstelefonnummer"
-      ],
       "Review account safety": [
         "Gjennomgå kontosikkerhet"
-      ],
-      "Safeguard account now": [
-        "Beskytt konto nå"
-      ],
-      "Safeguard your account": [
-        "Beskytt kontoen din"
-      ],
-      "Safeguard your account further": [
-        "Beskytt kontoen din ytterligere"
       ],
       "Safety review": [
         "Gjennomgang av sikkerhet"
@@ -21452,194 +21377,8 @@
       "Send a new code": [
         "Send en ny kode"
       ],
-      "Show more": [
-        "Vis mer"
-      ],
-      "Take action to secure your account": [
-        "Iverksett tiltak for å sikre kontoen din"
-      ],
-      "There was an error generating your recovery phrase": [
-        "Det oppstod en feil under generering av gjenopprettingsfrasen din"
-      ],
-      "There was an error verifying your email": [
-        "Det oppstod en feil under bekreftelse av e-posten din"
-      ],
-      "There was an error verifying your recovery email": [
-        "Det oppstod en feil under bekreftelse av gjenopprettings-e-posten din"
-      ],
-      "There was an error verifying your recovery phone": [
-        "Det oppstod en feil under verifisering av gjenopprettingstelefonen"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "for å automatisk gjenopprette dataene dine når du logger på en pålitelig enhet"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "For å være sikker på at e-postadressen er din, skriv inn verifiseringskoden som ble sendt til ${ boldEmail }."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "For å være sikker på at telefonnummeret er ditt, skriv inn verifiseringskoden som ble sendt til ${ boldPhoneNumber }."
-      ],
-      "to prevent attackers from taking over your account": [
-        "for å forhindre angripere fra å ta over kontoen din"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "for å gjenopprette kontoen og dataene dine hvis du noen gang blir utestengt"
-      ],
-      "to recover your account if you're ever locked out": [
-        "for å gjenopprette kontoen din hvis du noen gang blir utestengt"
-      ],
       "update it now": [
         "oppdater nå"
-      ],
-      "Update your recovery phrase": [
-        "Oppdater gjenopprettingsfrasen din"
-      ],
-      "Update your recovery phrase?": [
-        "Oppdatere gjenopprettingsfrasen din?"
-      ],
-      "Verify": [
-        "Verifiser"
-      ],
-      "Verify your email address": [
-        "Verifiser e-postadressen din"
-      ],
-      "Verify your phone number": [
-        "Bekreft mobilnummeret ditt"
-      ],
-      "Verify your recovery email address": [
-        "Verifiser e-postadressen for gjenoppretting"
-      ],
-      "Verify your recovery phone number": [
-        "Verifiser telefonnummeret for gjenoppretting"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "Det oppstod en feil under genereringen av gjenopprettingsfrasen din. Prøv på nytt senere, eller kontakt brukerstøtte hvis problemet vedvarer."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Vi oppdaget en feil under bekreftelsen av e-posten din. Prøv igjen senere, eller kontakt brukerstøtte hvis problemet vedvarer."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Vi oppdaget en feil under bekreftelse av gjenopprettings-e-posten din. Prøv på nytt senere, eller kontakt kundestøtte hvis problemet vedvarer."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Vi oppdaget en feil under verifisering av gjenopprettingstelefonen. Prøv på nytt senere, eller kontakt kundestøtte hvis problemet vedvarer."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "Når du aktiverer enhetsbasert gjenoppretting, vil ${ BRAND_NAME } lagre en kryptert sikkerhetskopinøkkelring som en fil i nettleserens nettlagring."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Du risikerer å miste tilgangen til kontoen din og dataene dine."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Du risikerer å miste tilgangen til dataene dine."
-      ],
-      "You can disable this at any time.": [
-        "Du kan deaktivere dette når som helst."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Du kan bruke gjenopprettingsfrasen til å gjenopprette kontoen din fullstendig når du tilbakestiller passordet, så sørg for at du oppbevarer den et trygt sted."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "Du kan bruke e-posten din til å få tilgang til kontoen igjen hvis du glemmer passordet ditt."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Du kan bruke gjenopprettings-e-posten din til å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "Du kan bruke gjenopprettingstelefonen til å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "Du har tidligere lastet ned en gjenopprettingsfrase. Hvis du laster ned en ny, **deaktiveres den gamle**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Du har anbefalte tiltak for å beskytte kontoen din ytterligere."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "Du har anbefalte tiltak for å beskytte kontoen din."
-      ],
-      "You have recommended actions.": [
-        "Du har anbefalte handlinger."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "Du vil ikke lenger kunne bruke denne adressen til å tilbakestille kontoen din."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "Du vil ikke lenger kunne bruke dette telefonnummeret til å tilbakestille kontoen din."
-      ],
-      "Your account and data can be recovered": [
-        "Kontoen din og dataene dine kan gjenopprettes"
-      ],
-      "Your account and data can be recovered.": [
-        "Kontoen og dataene dine kan gjenopprettes."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Kontoen din og dataene dine kan gjenopprettes. Sjekk om du fortsatt har tilgang til gjenopprettingsmetodene dine."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Kontoen din og dataene dine kan gjenopprettes. Du har anbefalt tiltak for å beskytte kontoen din ytterligere."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "Kontoen din og dataene dine kan gjenopprettes. Du har anbefalte handlinger."
-      ],
-      "Your account is fully secure.": [
-        "Kontoen din er helt sikker."
-      ],
-      "Your account is secure.": [
-        "Kontoen din er sikker."
-      ],
-      "Your email address is:": [
-        "Din e-postadresse:"
-      ],
-      "Your email is set": [
-        "E-posten din er konfigurert"
-      ],
-      "Your recovery email": [
-        "Gjenopprettings-e-posten din"
-      ],
-      "Your recovery email address is:": [
-        "Din gjenopprettings-e-postadresse er:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "Gjenopprettings-e-posten og telefonen kan **bare gjenopprette tilgangen til kontoen din**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "Gjenopprettings-e-posten kan **bare gjenopprette tilgangen til kontoen din**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Gjenopprettings-e-postadressen din kan misbrukes av angripere til å ta over kontoen din. ${ disableEmail } for å øke kontosikkerheten din."
-      ],
-      "Your recovery email has been enabled": [
-        "Gjenopprettings-e-posten din er aktivert"
-      ],
-      "Your recovery email is set": [
-        "Gjenopprettings-e-posten din er angitt"
-      ],
-      "Your recovery methods": [
-        "Gjenopprettingsmetodene dine"
-      ],
-      "Your recovery phone": [
-        "Gjenopprettingstelefonen din"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "Gjenopprettings-telefonen kan **bare gjenopprette tilgangen til kontoen din**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Gjenopprettingstelefonen din kan misbrukes av angripere til å ta over kontoen din. ${ disablePhone } for å øke kontosikkerheten."
-      ],
-      "Your recovery phone has been enabled": [
-        "Gjenopprettingstelefonen din er aktivert"
-      ],
-      "Your recovery phone is set": [
-        "Gjenopprettingstelefonen er angitt"
-      ],
-      "Your recovery phone number is:": [
-        "Telefonnummeret ditt for gjenoppretting er:"
-      ],
-      "Your recovery phrase": [
-        "Din gjenopprettingsfrase"
-      ],
-      "Your recovery phrase is set": [
-        "Gjenopprettingsfrasen din er angitt"
       ]
     },
     "safety_review": {
@@ -22461,9 +22200,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "For å forby tilbakestilling av passord, må du ha konfigurert en gjenopprettingsmetode."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "For å forsterke sikkerheten til kontoen din og beskytte dataene dine, kan du be om tilbakestilling av passord fra kontoinnstillingene i webapplikasjonen."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -23707,6 +23443,15 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Kansellerer abonnementet ditt, vent litt"
+      ],
+      "Disabled": [
+        "Deaktivert"
+      ],
+      "Enabled": [
+        "Aktivert"
+      ],
+      "No restrictions": [
+        "Ingen restriksjoner"
       ]
     },
     "Status": {
@@ -24497,6 +24242,9 @@
       ],
       "Compare the key differences that matter for your business.": [
         "Sammenlign de viktigste forskjellene som er viktige for din bedrift."
+      ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Håndhev VPN-bruk i hele organisasjonen ved å blokkere internettilgang med mindre en VPN-tilkobling er aktiv."
       ],
       "Free forever": [
         "Gratis for alltid"
@@ -25289,6 +25037,12 @@
       "Also in your plan": [
         "Også i planen din"
       ],
+      "Always-on VPN": [
+        "Alltid på-VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Alltid-på-VPN-enhetsprofil"
+      ],
       "Amount": [
         "Beløp"
       ],
@@ -25424,8 +25178,14 @@
       "Check your default mail application": [
         "Sjekk standard e-postapplikasjon"
       ],
+      "Choose a deployment method": [
+        "Velg en distribusjonsmetode"
+      ],
       "Choose a provider": [
         "Velg en leverandør"
+      ],
+      "Choose a removal method": [
+        "Velg en fjerningsmetode"
       ],
       "Choose an account": [
         "Velg en konto"
@@ -25453,6 +25213,9 @@
       ],
       "Composing": [
         "Skriving"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Konfigurer Alltid-på-VPN-enhetsprofil"
       ],
       "Confirm": [
         "Bekreft"
@@ -25557,6 +25320,9 @@
       "Created": [
         "Opprettet"
       ],
+      "Created!": [
+        "Opprettet!"
+      ],
       "Creating user accounts": [
         "Oppretter brukerkontoer"
       ],
@@ -25604,9 +25370,6 @@
       ],
       "Data collection": [
         "Datasamling"
-      ],
-      "Data locked": [
-        "Data låst"
       ],
       "Data recovery": [
         "Datagjenoppretting"
@@ -25689,6 +25452,15 @@
       ],
       "Deny access to user?": [
         "Nekte tilgang til bruker?"
+      ],
+      "Deploy device profile to your devices": [
+        "Distribuer enhetsprofilen til enhetene dine"
+      ],
+      "Deploy via MDM": [
+        "Distributer via MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Utrull via PowerShell"
       ],
       "Description": [
         "Beskrivelse"
@@ -25979,9 +25751,6 @@
       "Generate missing keys": [
         "Genererer manglende nøkler"
       ],
-      "Generate new recovery phrase?": [
-        "Generere ny gjenopprettingsfrase?"
-      ],
       "Generate SMTP token": [
         "Generer SMTP-token"
       ],
@@ -26130,6 +25899,9 @@
       "Information exposed in breach": [
         "Informasjon avslørt i brudd"
       ],
+      "Install it manually": [
+        "Installer manuelt"
+      ],
       "Integrations": [
         "Integreringer"
       ],
@@ -26186,6 +25958,9 @@
       ],
       "Lower your cost without losing features": [
         "Reduser kostnadene dine uten å miste funksjoner"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "Hovedpassord"
@@ -26454,6 +26229,9 @@
       "Remove all members?": [
         "Fjern alle medlemmer?"
       ],
+      "Remove Always-on VPN device profile": [
+        "Fjern enhetsprofilen for Alltid-på-VPN"
+      ],
       "Remove calendar": [
         "Fjern kalender"
       ],
@@ -26480,6 +26258,9 @@
       ],
       "Remove user?": [
         "Fjern bruker?"
+      ],
+      "Remove via MDM": [
+        "Fjern via MDM"
       ],
       "Rename the gateway": [
         "Gi gatewayen nytt navn"
@@ -26718,6 +26499,9 @@
       "Status": [
         "Status"
       ],
+      "Stay for 50% off your next month": [
+        "Bli og få 50 % rabatt neste måned"
+      ],
       "Stay secure and connected anywhere": [
         "Forbli sikker og tilkoblet hvor som helst"
       ],
@@ -26952,6 +26736,9 @@
       ],
       "What is the dark web?": [
         "Hva er det mørke nettet?"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Wipe all logs?": [
         "Slette alle logger?"
@@ -27258,6 +27045,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Inkluderer alle brukere i organisasjonen din. Håndheves kun på enheter der enhetsprofilen for alltid-på-VPN er distribuert."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Inkluderer egendefinerte e-postdomener og ubegrensede hide-my-email-aliaser i ${ MAIL_APP_NAME }, tilgang til servere i over 120 land i ${ VPN_SHORT_APP_NAME }, innebygd 2FA og sikker deling i ${ PASS_SHORT_APP_NAME } og mer."
@@ -27638,9 +27428,6 @@
         "Kunne ikke aktivere administratortilgang for ${ n } bruker",
         "Kunne ikke aktivere administratortilgang for ${ n } brukere"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Kunne ikke aktivere administratortilgang: ${ error }"
-      ],
       "Enable admin access?": [
         "Aktivere administratortilgang?"
       ],
@@ -27903,9 +27690,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorer har ikke tilgang til dataene til private brukere"
       ],
@@ -27914,21 +27698,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitasjon sendt, venter på svar fra det inviterte medlemmet"
-      ],
-      "Invite sent": [
-        "Invitasjon sendt"
-      ],
-      "It's you": [
-        "Det er deg"
-      ],
-      "Pending admin access": [
-        "Venter på administratortilgang"
-      ],
-      "Private": [
-        "Privat"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO-bruker levert av identitetsleverandøren din"

@@ -547,12 +547,6 @@
       "Regenerate": [
         "Regenerar"
       ],
-      "Regex invalid": [
-        "Expresión regular inválida"
-      ],
-      "Regex unsafe": [
-        "Expresión regular insegura"
-      ],
       "Reject": [
         "Rechazar"
       ],
@@ -1272,6 +1266,12 @@
       ],
       "PIN codes do not match": [
         "Los códigos PIN no coinciden"
+      ],
+      "Regex invalid": [
+        "Expresión regular inválida"
+      ],
+      "Regex unsafe": [
+        "Expresión regular insegura"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -2105,8 +2105,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"

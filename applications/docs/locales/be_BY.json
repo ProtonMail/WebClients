@@ -423,9 +423,6 @@
       "Get the apps": [
         "Атрымаць праграмы"
       ],
-      "Get the deal": [
-        "Скарыстацца прапановай"
-      ],
       "Get the writing assistant": [
         "Атрымаць памочніка ў напісанні"
       ],
@@ -1369,7 +1366,7 @@
         "Каб перанесці гэтага карыстальніка, яму неабходна прыняць запрашэнне далучыцца да ${ BRAND_NAME }."
       ],
       "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Каб перанесці гэтага карыстальніка, разгархівуйце яго ў кансолі адміністратара Google Workspace."
+        "Каб перанесці гэтага карыстальніка, разархівуйце яго ў кансолі адміністратара Google Workspace."
       ],
       "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
         "Каб перанесці гэтага карыстальніка, разблакіруйце яго ў кансолі адміністратара Google Workspace."
@@ -1491,6 +1488,9 @@
       "Continue your subscription": [
         "Працягнуць падпіску"
       ],
+      "Get 50% offer": [
+        "Скарыстайцеся скідкай у памеры 50%"
+      ],
       "Maybe later": [
         "Магчыма пазней"
       ]
@@ -1554,24 +1554,6 @@
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
-      ],
-      "Subtotal": [
-        "Прамежкавы вынік"
-      ],
-      "Subtotal for ${ cycle } month": [
-        "Прамежкавы вынік за ${ cycle } месяц",
-        "Прамежкавы вынік за ${ cycle } месяцы",
-        "Прамежкавы вынік за ${ cycle } месяцаў",
-        "Прамежкавы вынік за ${ cycle } месяцаў"
-      ],
-      "Total": [
-        "Агулам"
-      ],
-      "Total for ${ n } month": [
-        "Усяго за ${ n } месяц",
-        "Усяго за ${ n } месяцы",
-        "Усяго за ${ n } месяцаў",
-        "Усяго за ${ n } месяцы"
       ]
     },
     "Collapsible tooltip": {
@@ -3248,6 +3230,9 @@
       "Failed to resend invitation": [
         "Не ўдалося паўторна адправіць запрашэнне"
       ],
+      "Failed to trash document": [
+        "Не ўдалося перамясціць дакумент у сметніцу"
+      ],
       "Failed to unshare node": [
         "Не ўдалося скасаваць абаагульванне вузла"
       ],
@@ -3451,6 +3436,9 @@
       ],
       "Some contacts could not be deleted": [
         "Не ўдалося выдаліць некаторыя кантакты"
+      ],
+      "Some documents could not be loaded": [
+        "Некаторыя дакументы не ўдалося загрузіць"
       ],
       "Some groups could not be deleted": [
         "Не ўдалося выдаліць некаторыя групы"
@@ -4724,6 +4712,9 @@
       "Accept/decline": [
         "Прыняць/адхіліць"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Доступ да больш чым 20 000 сервераў у больш чым 145 краінах"
+      ],
       "Ad targeting": [
         "Мэтавая рэклама"
       ],
@@ -5045,6 +5036,9 @@
       "Failing signatures will be re-signed by you": [
         "Няўдалыя подпісы будуць паўторна падпісаны вамі"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
+      ],
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" быў выдалены падчас спампоўвання"
       ],
@@ -5099,8 +5093,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
+      "Have some more time to decide without interruption.": [
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
+      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Дапамажыце нам палепшыць гэты сэрвіс, паведаміўшы пра праблему. Далучыце прыведзеную ніжэй адладачную інфармацыю да вашага паведамлення, калі электронная табліца не змяшчае канфідэнцыяльных даных."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Дапамажыце нам палепшыць гэты сэрвіс, паведаміўшы пра праблему. Далучыце адладачную інфармацыю ніжэй да вашай справаздачы."
       ],
       "here": [
         "тут"
@@ -5113,6 +5113,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Вы страціце доступ да ${ BRAND_NAME } з тарыфным планам ${ planTitle } (дзейнічае да ${ expiryDate }), які ўключае наступныя функцыі:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
@@ -5423,6 +5426,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль адбываецца пошук кантактаў, якія змяшчаюць зашыфраваныя даныя з дапамогай неактыўнага ключа."
       ],
+      "Premium privacy protection across all your devices": [
+        "Прэміяльная абарона прыватнасці паміж усімі вашымі прыладамі"
+      ],
       "Preparing link to file": [
         "Падрыхтоўка спасылкі на файл"
       ],
@@ -5545,6 +5551,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Застаньцеся на сваім тарыфным плане і атрымайце скідку ў памеры 50% у наступным месяцы"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Падпіска аўтаматычна падаўжаецца кожны ${ cycle } месяц.",
@@ -5782,6 +5791,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Вам адпраўлены новы код спраўджання на ${ strong }"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Сістэма выявіла, што вы сутыкаліся з праблемай пры адкрыцці дакумента."
       ],
       "Week": [
         "Тыдзень"
@@ -6109,12 +6121,6 @@
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяцы",
-        "${ n } месяцаў",
-        "${ n } месяцаў"
-      ],
       "${ value.length }/${ maxLength } characters": [
         "Сімвалаў: ${ value.length }/${ maxLength }"
       ],
@@ -6339,9 +6345,6 @@
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
-      ],
-      "Get the deal": [
-        "Скарыстацца прапановай"
       ],
       "Hide password": [
         "Схаваць пароль"
@@ -7597,7 +7600,7 @@
         "Подпісы HTML"
       ],
       "Kill switch/always-on VPN": [
-        "Kill Switch/Пастаянны VPN"
+        "Kill Switch/Пастаянная VPN"
       ],
       "Limited support": [
         "Абмежаваная падтрымка"
@@ -8283,6 +8286,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" паспяхова перайменаваны"
       ],
+      "\"Document deleted permanently": [
+        "\"Дакумент незваротна выдалены"
+      ],
       "${ count } item failed to be decrypted": [
         "Не ўдалося расшыфраваць ${ count } элемент",
         "Не ўдалося расшыфраваць ${ count } элементы",
@@ -8406,6 +8412,9 @@
       "Failed to accept share invitation": [
         "Не ўдалося прыняць абагуленае запрашэнне"
       ],
+      "Failed to delete document": [
+        "Не ўдалося выдаліць дакумент"
+      ],
       "Failed to download files: ${ err }": [
         "Не ўдалося спампаваць файлы: ${ err }"
       ],
@@ -8420,6 +8429,12 @@
       ],
       "Failed to rename document": [
         "Не ўдалося перайменаваць дакумент"
+      ],
+      "Failed to restore document": [
+        "Не ўдалося аднавіць дакумент"
+      ],
+      "Failed to trash document": [
+        "Не ўдалося перамясціць дакумент у сметніцу"
       ],
       "Failed to upload files: ${ err }": [
         "Не ўдалося запампаваць файлы: ${ err }"
@@ -10137,11 +10152,6 @@
         "Падпіска будзе паніжана ў канцы перыяду аплаты."
       ]
     },
-    "Subscription length": {
-      "Lifetime": [
-        "Пажыццёва"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ сховішча"
@@ -10874,6 +10884,9 @@
       "Private browsing vs VPN": [
         "Прыватны прагляд у параўнанні з VPN"
       ],
+      "Problems Detected": [
+        "Выяўленыя праблемы"
+      ],
       "Public link": [
         "Публічная спасылка"
       ],
@@ -10982,6 +10995,9 @@
       "Start import process": [
         "Пачаць працэс імпартавання"
       ],
+      "Stay for 50% off your next month": [
+        "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
+      ],
       "Stop sharing": [
         "Спыніць абагульванне"
       ],
@@ -10990,9 +11006,6 @@
       ],
       "Subscription canceled": [
         "Падпіска скасавана"
-      ],
-      "Summer Sale": [
-        "Летні распродаж"
       ],
       "The link either does not exist or has expired": [
         "Спасылка не існуе або пратэрмінавана"

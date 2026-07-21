@@ -135,9 +135,6 @@
       "Add domain": [
         "Magdagdag ng domain"
       ],
-      "Add email address": [
-        "Magdagdag ng email address"
-      ],
       "Add external address": [
         "Magdagdag ng external na address"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "Magdagdag ng PayPal"
-      ],
-      "Add phone number": [
-        "Magdagdag ng numero ng telepono"
       ],
       "Add public holidays": [
         "Magdagdag ng mga pampublikong holiday"
@@ -753,9 +747,6 @@
       "enable desktop notifications": [
         "paganahin ang mga abiso sa desktop"
       ],
-      "Enable device-based recovery": [
-        "Paganahin ang device-based recovery"
-      ],
       "Enable multi-user support": [
         "Paganahin ang suporta sa multi-user"
       ],
@@ -836,9 +827,6 @@
       ],
       "Generate password": [
         "Mag-generate ng password"
-      ],
-      "Generate recovery phrase": [
-        "Mag-generate ng parirala ng pag-recover"
       ],
       "Generate token": [
         "Mag-generate ng token"
@@ -1868,9 +1856,6 @@
       ],
       "View plans details": [
         "Tingnan ang mga detalye ng plano"
-      ],
-      "View recovery settings": [
-        "Tingnan ang mga setting ng pag-recover"
       ],
       "View recovery setup details": [
         "Tingnan ang mga detalye ng pag-setup ng pag-recover"
@@ -6762,9 +6747,6 @@
       "Add recovery contact": [
         "Magdagdag ng recovery contact"
       ],
-      "Add recovery method": [
-        "Magdagdag ng paraan ng pag-recover"
-      ],
       "Added on ${ formattedDate }": [
         "Idinagdag noong ${ formattedDate }"
       ],
@@ -7006,14 +6988,8 @@
       "Subscription expired": [
         "Nag-expire na ang subscription"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "Idinagdag nila ako bilang pinagkakatiwalaang contact. Pwede kong i-access ang account nila kung may emergency."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "Idinagdag ka nila bilang pinagkakatiwalaang contact. Maaari mong i-access ang kanilang account kung may emergency."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "Maaari nilang hilingin na i-access ang aking account sakaling may emergency."
       ],
       "They may ask to access your account in case of an emergency.": [
         "Maaari silang humiling na i-access ang account sakaling may emergency."
@@ -7033,9 +7009,6 @@
       ],
       "Time required before automatically granting them access": [
         "Oras na kailangan bago sila awtomatikong bigyan ng access"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "Upang magdagdag ng mga recovery contact, dapat mayroon kang recovery email address o numero ng telepono."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Upang huwag paganahin ang paraan ng pag-recover na ito, alisin ang lahat ng iyong recovery contact."
@@ -7087,12 +7060,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Pwede mong alisin ang kanilang access anumang oras para mabawi ang eksklusibong kontrol sa iyong account."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "Hindi ka pa naitatalaga bilang recovery contact para sa sinuman."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "Hindi ka pa naitatalaga bilang emergency contact para sa sinuman."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Naabot mo ang maximum na ${ limit } emergency contact.",
@@ -10186,12 +10153,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ang isang numero ng telepono ay magagamit lang upang i-verify ang isang ${ BRAND_NAME } account"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Hinahayaan ka ng recovery file na i-unlock at tingnan ang data pagkatapos ng pag-recover ng account"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Hinahayaan ka ng parirala ng pag-recover na i-access ang iyong account at i-recover ang mga naka-encrypt na mensahe kung makalimutan mo ang iyong password"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Ang user ay isang account na nauugnay sa iisang username, mailbox at tao"
       ],
@@ -10206,9 +10167,6 @@
       ],
       "Account successfully updated": [
         "Matagumpay na na-update ang account"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "I-activate ang kahit isang paraan ng pag-recover ng data upang matiyak na patuloy na maa-access ang nilalaman ng ${ BRAND_NAME } Account kung mawala ang password."
       ],
       "Active": [
         "Aktibo"
@@ -11237,9 +11195,6 @@
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Ang pag-generate ng bagong parirala ng pag-recover ay magde-deactivate sa kasalukuyang parirala ng pag-recover."
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Ang pag-generate ng bagong parirala ng pag-recover ay magde-deactivate sa luma."
-      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Kunin ang ${ AUTHENTICATOR_APP_NAME } para sa lahat ng iyong device."
       ],
@@ -11363,9 +11318,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Kung hindi tugma ang time zone ng system sa kasalukuyang kagustuhan sa time zone, hihilingin sa iyong i-update ito (sa pinakamadalas ay isang beses bawat araw)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Kung dahil ito sa lumang pag-reset ng password, mapipigilan ang mensahe sa pagpapakita muli"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Kung nagkakaproblema sa paggawa ng account, mangyaring humiling ng imbitasyon at tutugon kami sa loob ng isang araw ng negosyo."
       ],
@@ -11413,9 +11365,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Kung nag-reset ka kamakailan ng iyong password, maaari mong gamitin ang ${ recoveryMethodLink } upang i-unlock ang iyong data. Kung ito ay dahil sa isang lumang pag-reset ng password, maaari mong ihinto ang pagpapakita muli ng mensahe."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Kung kamakailan mong na-reset ang iyong password, maaari kang gumamit ng paraan ng pag-recover ng data upang ma-unlock ang data"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Kung ang organisasyon ay may mga pampublikong pigura, nagha-handle ng sensitibong data, o maaaring targetin sa mga cyber attack, mahigpit na hinihikayat na paganahin ang ${ PROTON_SENTINEL_NAME } para sa lahat sa organisasyon."
@@ -11551,9 +11500,6 @@
       ],
       "Invited": [
         "Inimbitahan"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "Mukhang ang ilan sa data ay naka-encrypt at naka-lock."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Inaabot ng 10 araw bago mapalitan ang bansa ng server, kaya siguraduhing tama ang pinili."
@@ -12075,9 +12021,6 @@
       "Please fill out this field.": [
         "Pakipunan ang field na ito."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Mangyaring panatilihin itong ligtas. Kakailanganin mo ito upang i-access ang iyong account at i-decrypt ang iyong data kung sakaling mag-reset ng password."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Tandaan na kung ide-delete ang filter na ${ nameDeleted }, ititigil namin ang pagproseso sa lahat ng automated na aksyon na nati-trigger nito."
       ],
@@ -12209,9 +12152,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Nakopya ang parirala ng pag-recover sa clipboard"
-      ],
-      "Recovery phrase downloaded": [
-        "Na-download na ang parirala ng pag-recover"
       ],
       "Recovery phrase has been disabled": [
         "Hindi pinagana ang parirala ng pag-recover"
@@ -13171,9 +13111,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Inirerekomenda naming ipaalam sa mga miyembro ng organisasyon at hilingin sa kanila na i-set up ang 2FA para sa kanilang mga account bago ipatupad ang paggamit ng 2FA."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Ligtas naming iniimbak ang impormasyon sa pag-recover sa iyong pinagkakatiwalaang device upang maiwasan ang pagkawala ng iyong data"
-      ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Mariing inirerekomenda na paganahin ng lahat ang recovery gamit ang parirala ng pag-recover."
       ],
@@ -13664,12 +13601,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Ibabalik ng iyong recovery file ang access sa mga email, contact, file, password, at anumang iba pang naka-encrypt na data sa iyong account pagkatapos ng pag-reset ng password."
-      ],
-      "Your recovery phrase": [
-        "Ang iyong parirala ng pag-recover"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Ang parirala ng pag-recover ay isang serye ng 12 salitang random na na-generate sa isang partikular na pagkakasunod-sunod."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "Ang parirala ng pag-recover ay magbibigay-daan na mag-sign in at i-recover ang data kung ma-lock out sa ${ BRAND_NAME } Account. Binubuo ito ng 12 salita at nagsisilbi bilang backup na password."
@@ -16000,17 +15931,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Device-based na recovery"
-      ],
       "Notification phone number": [
         "Numero ng telepono para sa abiso"
       ],
       "Recovery phone number": [
         "Numero ng telepono para sa pag-recover"
-      ],
-      "Recovery phrase": [
-        "Parirala ng pag-recover"
       ],
       "Set recovery phone number": [
         "I-set ang recovery phone number"
@@ -16328,9 +16253,6 @@
       "How to share via email": [
         "Paano mag-share gamit ang email"
       ],
-      "How to unlock data": [
-        "Paano i-unlock ang data"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Paano gamitin ang ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16354,9 +16276,6 @@
       ],
       "Learn more": [
         "Matuto pa"
-      ],
-      "Learn more about data recovery": [
-        "Matuto pa tungkol sa pag-recover ng data"
       ],
       "Manage addresses": [
         "Pamahalaan ang mga address"
@@ -21305,146 +21224,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **Huwag paganahin ang recovery sa pamamagitan ng telepono** upang maiwasan ang pagkuha ng mga attacker sa account."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **Paganahin ang pag-recover sa pamamagitan ng phone** upang mabawi ang access sa account kung makalimutan ang password."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "Gagamitin ng ${ BRAND_NAME } ang address na ito para panatilihin kang na-update sa seguridad ng account."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "Gagamitin ng ${ BRAND_NAME } ang address na ito upang magpadala ng reset code sa pamamagitan ng email kapag i-ni-reset mo ang password."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "Gagamitin ng ${ BRAND_NAME } ang phone number na ito upang magpadala ng reset code sa pamamagitan ng SMS kapag i-ni-reset mo ang password."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } upang matiyak na ma-re-recover ang data."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**Huwag paganahin ang pag-reset ng account sa pamamagitan ng email** upang maiwasan ang pagkuha ng mga attacker sa account."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Paganahin ang pag-recover sa pamamagitan ng email** upang mabawi ang access sa account kung makalimutan ang password."
-      ],
-      "Account reset by email has been disabled": [
-        "Hindi na pinagana ang pag-reset ng account sa pamamagitan ng email"
-      ],
-      "Account reset by phone has been disabled": [
-        "Hindi na pinagana ang pag-reset ng account sa pamamagitan ng telepono"
-      ],
-      "Account safety review": [
-        "Pagsusuri sa kaligtasan ng account"
-      ],
-      "Add a phone number": [
-        "Magdagdag ng numero ng telepono"
-      ],
-      "Add a recovery email": [
-        "Magdagdag ng recovery email"
-      ],
-      "Add a recovery email address": [
-        "Magdagdag ng recovery email address"
-      ],
-      "Add a recovery phone number": [
-        "Magdagdag ng recovery phone number"
-      ],
-      "Add an alternative email address": [
-        "Magdagdag ng alternatibong email address"
-      ],
-      "Add an email": [
-        "Magdagdag ng email"
-      ],
-      "Back to Safety Review": [
-        "Bumalik sa Safety Review"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "Dahil nag-reset ka ng password, ang kasalukuyang parirala ng pag-recover ay maaari lamang gamitin upang i-recover ang data na ginawa bago ang pag-reset ng password."
-      ],
-      "Can be used to regain access to your account and data": [
-        "Maaaring gamitin upang mabawi ang access sa iyong account at data"
-      ],
-      "Check account security": [
-        "Suriin ang seguridad ng account"
-      ],
       "Code sent to ${ boldValue }": [
         "Ipinadala ang code sa ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Magpatuloy sa Safety Review"
-      ],
-      "Device-based recovery enabled": [
-        "Pinagana ang device-based recovery"
-      ],
-      "Disable account reset by email": [
-        "Huwag paganahin ang pag-reset ng account sa pamamagitan ng email"
-      ],
-      "Disable recovery by email": [
-        "Huwag paganahin ang recovery sa pamamagitan ng email"
-      ],
-      "Disable recovery by phone": [
-        "Huwag paganahin ang recovery sa pamamagitan ng telepono"
-      ],
-      "Download ${ size }": [
-        "I-download ang ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "I-download ang parirala ng pag-recover"
-      ],
-      "Email address": [
-        "Email address"
-      ],
-      "Enable device-based recovery": [
-        "Paganahin ang device-based recovery"
-      ],
-      "Enable recovery by email": [
-        "Paganahin ang pag-recover sa pamamagitan ng email"
-      ],
-      "Enable recovery by phone": [
-        "Paganahin ang pag-recover sa pamamagitan ng telepono"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Naiintindihan ko na hindi ko mai-recover ang kasalukuyang naka-lock na data gamit ang parirala ng pag-recover na ito"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Kung makalimutan mo ang ${ BRAND_NAME } password at kailangang i-reset ito, sa susunod na mag-sign in ka sa device na ito gamit ang bagong password, ibabalik ang buong access sa iyong ${ BRAND_NAME } Account."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Kung makalimutan mo ang ${ BRAND_NAME } password at kailangang i-reset ito, sa susunod na mag-sign in ka sa device na ito gamit ang bagong password, ibabalik ang buong access sa iyong ${ BRAND_NAME } Account."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Kung ma-lock out sa ${ BRAND_NAME } Account, ang parirala ng pag-recover ay magbibigay-daan na mag-sign in at i-recover ang data."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Kung mawala ang mga detalye sa pag-login at kailangang i-reset ang account, **napakahalaga** na mayroon kang **paraan ng pag-recover ng account at pag-recover ng data**, kung hindi ay maaaring hindi mo ma-access ang alinman sa mga email, contact, file, o password."
-      ],
-      "in case we need to contact you": [
-        "kung sakaling kailangan ka naming kontakin"
       ],
       "Invalid code": [
         "Hindi valid na code"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Ito lang ang paraan upang ganap na ibalik ang account, kaya siguraduhin na itago ito sa ligtas na lugar."
-      ],
-      "Recovery email address": [
-        "Recovery email address"
-      ],
-      "Recovery phone number": [
-        "Recovery phone number"
-      ],
       "Review account safety": [
         "Suriin ang kaligtasan ng account"
-      ],
-      "Safeguard account now": [
-        "Pangalagaan ang account ngayon"
-      ],
-      "Safeguard your account": [
-        "Pangalagaan ang account"
-      ],
-      "Safeguard your account further": [
-        "Pangalagaan pa lalo ang account"
       ],
       "Safety review": [
         "Safety review"
@@ -21452,194 +21239,8 @@
       "Send a new code": [
         "Magpadala ng bagong code"
       ],
-      "Show more": [
-        "Ipakita pa"
-      ],
-      "Take action to secure your account": [
-        "Kumilos upang i-secure ang account"
-      ],
-      "There was an error generating your recovery phrase": [
-        "Nagkaroon ng error sa pag-generate ng parirala ng pag-recover"
-      ],
-      "There was an error verifying your email": [
-        "Nagkaroon ng error sa pag-verify ng iyong email"
-      ],
-      "There was an error verifying your recovery email": [
-        "Nagkaroon ng error sa pag-verify ng iyong recovery email"
-      ],
-      "There was an error verifying your recovery phone": [
-        "Nagkaroon ng error sa pag-verify ng iyong recovery phone"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "upang awtomatikong i-recover ang data kapag mag-log in sa isang pinagkakatiwalaang device"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Upang matiyak na iyo ang email address, ilagay ang verification code na ipinadala sa ${ boldEmail }."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Upang matiyak na sa iyo ang phone number, ilagay ang verification code na ipinadala sa ${ boldPhoneNumber }."
-      ],
-      "to prevent attackers from taking over your account": [
-        "upang maiwasan ang pagkuha ng mga attacker sa account"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "upang i-recover ang account at data kung sakaling ma-lock out ka"
-      ],
-      "to recover your account if you're ever locked out": [
-        "upang i-recover ang account kung sakaling ma-lock out ka"
-      ],
       "update it now": [
         "i-update ito ngayon"
-      ],
-      "Update your recovery phrase": [
-        "I-update ang parirala ng pag-recover"
-      ],
-      "Update your recovery phrase?": [
-        "I-update ang parirala ng pag-recover?"
-      ],
-      "Verify": [
-        "I-verify"
-      ],
-      "Verify your email address": [
-        "I-verify ang email address"
-      ],
-      "Verify your phone number": [
-        "I-verify ang numero ng telepono"
-      ],
-      "Verify your recovery email address": [
-        "I-verify ang iyong recovery email address"
-      ],
-      "Verify your recovery phone number": [
-        "I-verify ang recovery phone number"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "Nakaranas kami ng error habang ginagawa ang parirala ng pag-recover. Pakisubukang muli mamaya, o makipag-ugnayan sa suporta kung magpapatuloy ang isyu."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Nakaranas kami ng error habang bini-verify ang iyong email. Pakisubukang muli mamaya o makipag-ugnayan sa suporta kung magpapatuloy ang isyu."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Nakaranas kami ng error habang bine-verify ang iyong recovery email. Pakisubukang muli mamaya o makipag-ugnayan sa suporta kung magpapatuloy ang isyu."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Nakaranas kami ng error habang bine-verify ang iyong recovery phone. Pakisubukang muli mamaya o makipag-ugnayan sa suporta kung magpapatuloy ang isyu."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "Kapag pinagana mo ang device-based recovery, mag-iimbak ang ${ BRAND_NAME } ng naka-encrypt na backup keychain bilang file sa web storage ng browser."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Nanganganib na mawalan ng access sa account at data."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Nanganganib kang mawalan ng access sa iyong data."
-      ],
-      "You can disable this at any time.": [
-        "Maaari mo itong huwag paganahin anumang oras."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Maaaring gamitin ang parirala ng pag-recover sa parirala ng pag-recover na ito upang ganap na ibalik ang account kapag nag-reset ng password, kaya siguraduhing itago ito sa ligtas na lugar."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "Maaari mong gamitin ang iyong email upang mabawi ang iyong access sa account kung makalimutan mo ang password."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Maaari mong gamitin ang iyong recovery email upang mabawi ang access sa iyong account kung makalimutan mo ang password."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "Maaari mong gamitin ang recovery phone upang mabawi ang access sa account kung makalimutan mo ang password."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "Naka-download ka na dati ng parirala ng pag-recover. Ang pag-download ng bago ay **magde-deactivate sa luma**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "May mga inirerekomendang aksyon para mas maprotektahan ang account."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "May mga inirerekomendang aksyon para maprotektahan ang account."
-      ],
-      "You have recommended actions.": [
-        "May mga inirerekomendang aksyon."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "Hindi na magagamit ang address na ito para i-reset ang account."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "Hindi na magagamit ang numero ng teleponong ito para i-reset ang account."
-      ],
-      "Your account and data can be recovered": [
-        "Maaaring i-recover ang account at data"
-      ],
-      "Your account and data can be recovered.": [
-        "Maaaring ma-recover ang account at data."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Maaaring i-recover ang account at data. I-check kung maa-access mo pa ang mga recovery method."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Maaaring i-recover ang iyong account at data. Mayroon kang mga inirerekomendang aksyon upang higit pang mapangalagaan ang iyong account."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "Maaaring i-recover ang iyong account at data. Mayroon kang mga inirerekomendang aksyon."
-      ],
-      "Your account is fully secure.": [
-        "Ganap na secure ang iyong account."
-      ],
-      "Your account is secure.": [
-        "Secure ang iyong account."
-      ],
-      "Your email address is:": [
-        "Ang iyong email address ay:"
-      ],
-      "Your email is set": [
-        "Naka-set na ang email"
-      ],
-      "Your recovery email": [
-        "Ang iyong recovery email"
-      ],
-      "Your recovery email address is:": [
-        "Ang iyong recovery email address ay:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "Ang iyong recovery email at phone ay **maaari lang mag-recover ng access sa account**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "Ang iyong recovery email ay **maaari lang mag-recover ng access sa iyong account**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Maaaring abusuhin ng mga attacker ang recovery email upang makuha ang account. ${ disableEmail } para pataasin ang seguridad ng account."
-      ],
-      "Your recovery email has been enabled": [
-        "Pinagana na ang iyong recovery email"
-      ],
-      "Your recovery email is set": [
-        "Naka-set na ang iyong recovery email"
-      ],
-      "Your recovery methods": [
-        "Ang iyong mga recovery method"
-      ],
-      "Your recovery phone": [
-        "Ang iyong recovery phone"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "Ang iyong recovery phone ay **maaari lang mag-recover ng access sa account**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Maaaring abusuhin ng mga attacker ang recovery phone upang makuha ang account. ${ disablePhone } para pataasin ang seguridad ng account."
-      ],
-      "Your recovery phone has been enabled": [
-        "Pinagana na ang iyong recovery phone"
-      ],
-      "Your recovery phone is set": [
-        "Naka-set na ang iyong recovery phone"
-      ],
-      "Your recovery phone number is:": [
-        "Ang iyong recovery phone number ay:"
-      ],
-      "Your recovery phrase": [
-        "Ang parirala ng pag-recover"
-      ],
-      "Your recovery phrase is set": [
-        "Naka-set na ang parirala ng pag-recover"
       ]
     },
     "safety_review": {
@@ -22461,9 +22062,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Upang hindi payagan ang pag-reset ng password, dapat may naka-set up na paraan ng recovery.paraan ng pag-recover."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Upang mapahusay ang seguridad ng account at maprotektahan ang data, maaaring humiling ng pag-reset ng password mula sa mga setting ng account sa web application."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -25605,9 +25203,6 @@
       "Data collection": [
         "Pagkolekta ng data"
       ],
-      "Data locked": [
-        "Naka-lock ang data"
-      ],
       "Data recovery": [
         "Pag-recover ng data"
       ],
@@ -25978,9 +25573,6 @@
       ],
       "Generate missing keys": [
         "Mag-generate ng mga nawawalang key"
-      ],
-      "Generate new recovery phrase?": [
-        "Mag-generate ng bagong parirala ng pag-recover?"
       ],
       "Generate SMTP token": [
         "Mag-generate ng SMTP token"
@@ -27638,9 +27230,6 @@
         "Hindi mapagana ang admin access para sa ${ n } user",
         "Hindi mapagana ang admin access para sa ${ n } na user"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Hindi mapagana ang access ng administrator: ${ error }"
-      ],
       "Enable admin access?": [
         "Paganahin ang access ng admin?"
       ],
@@ -27903,9 +27492,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Hindi maa-access ng mga admin ang data ng mga pribadong user"
       ],
@@ -27914,21 +27500,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Naipadala ang imbitasyon, naghihintay ng reply mula sa inimbitahang miyembro"
-      ],
-      "Invite sent": [
-        "Naipadala ang invite"
-      ],
-      "It's you": [
-        "Ikaw ito"
-      ],
-      "Pending admin access": [
-        "Nakabinbing access ng admin"
-      ],
-      "Private": [
-        "Pribado"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO user na ibinigay ng identity provider"

@@ -547,12 +547,6 @@
       "Regenerate": [
         "Regenera"
       ],
-      "Regex invalid": [
-        "Expressió regular no vàlida"
-      ],
-      "Regex unsafe": [
-        "Expressió regular no segura"
-      ],
       "Reject": [
         "Rebutja"
       ],
@@ -1272,6 +1266,12 @@
       ],
       "PIN codes do not match": [
         "Els codis PIN no coincideixen"
+      ],
+      "Regex invalid": [
+        "Expressió regular no vàlida"
+      ],
+      "Regex unsafe": [
+        "Expressió regular no segura"
       ],
       "Request timed out": [
         "La sol·licitud ha caducat"
@@ -2105,8 +2105,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"

@@ -71,6 +71,9 @@
       "Add address or domain": [
         "メールアドレスかドメインを追加"
       ],
+      "Add and verify": [
+        "追加して確認"
+      ],
       "Add another account": [
         "別のアカウントを追加する"
       ],
@@ -88,6 +91,9 @@
       ],
       "Add PayPal": [
         "PayPal を追加"
+      ],
+      "Add recovery options": [
+        "復旧オプションを追加"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "${ MAIL_APP_NAME }の署名に紹介リンクを追加する"
@@ -140,6 +146,9 @@
       "Cancel": [
         "キャンセル"
       ],
+      "Cancel request": [
+        "リクエストをキャンセル"
+      ],
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
       ],
@@ -166,6 +175,9 @@
       ],
       "Check import progress": [
         "インポートの進行を確認"
+      ],
+      "Check now": [
+        "今すぐ確認"
       ],
       "Choose a file or drag it here": [
         "ファイルを選択するかここにドラッグしてください"
@@ -286,6 +298,9 @@
       ],
       "Create new policy": [
         "新しいポリシーを作成"
+      ],
+      "Create recovery phrase": [
+        "回復フレーズを作成"
       ],
       "Create users": [
         "ユーザーを作成"
@@ -410,6 +425,9 @@
       "Download recovery file": [
         "回復用ファイルをダウンロード"
       ],
+      "Download updated file": [
+        "更新されたファイルをダウンロード"
+      ],
       "Edit": [
         "編集"
       ],
@@ -503,14 +521,14 @@
       "Forgot password?": [
         "パスワードを忘れましたか？"
       ],
+      "Generate new phrase": [
+        "新しいフレーズを生成"
+      ],
       "Generate new recovery phrase": [
         "新しい回復用フレーズを生成"
       ],
       "Generate password": [
         "パスワードを生成"
-      ],
-      "Generate recovery phrase": [
-        "回復用フレーズを生成"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } を ${ priceCoupon }で入手"
@@ -608,6 +626,9 @@
       "I don’t have my backup codes": [
         "バックアップコードが手元にありません"
       ],
+      "Ignore": [
+        "無視"
+      ],
       "Import": [
         "インポート"
       ],
@@ -625,6 +646,9 @@
       ],
       "Invite user": [
         "ユーザーを招待"
+      ],
+      "Keep": [
+        "保持"
       ],
       "Keep current plan": [
         "現在のプランを維持する"
@@ -739,6 +763,9 @@
       ],
       "Open navigation": [
         "ナビゲーションを開く"
+      ],
+      "Opt out": [
+        "オプトアウト"
       ],
       "Or": [
         "または"
@@ -896,6 +923,9 @@
       "Review changes": [
         "変更を確認"
       ],
+      "Review recovery options": [
+        "復旧オプションを確認"
+      ],
       "Revoke": [
         "失効"
       ],
@@ -914,6 +944,9 @@
       "Save address": [
         "メールアドレスを保存"
       ],
+      "Save and verify": [
+        "保存して確認"
+      ],
       "Save SAML configuration": [
         "SAML設定を保存"
       ],
@@ -928,6 +961,9 @@
       ],
       "Search settings": [
         "設定の検索"
+      ],
+      "Secure account": [
+        "アカウントを保護"
       ],
       "See DNS TXT record": [
         "DNS TXT レコードを確認"
@@ -1000,6 +1036,9 @@
       ],
       "Set up a custom domain": [
         "カスタムドメインを設定"
+      ],
+      "Set up account recovery": [
+        "アカウントの復旧をセットアップ"
       ],
       "Set up auto-forwarding from Gmail": [
         "Gmail からの自動転送の設定"
@@ -1246,6 +1285,9 @@
       ],
       "View plans details": [
         "プランの詳細を表示"
+      ],
+      "View recovery setup details": [
+        "回復セットアップの詳細を表示"
       ],
       "Void": [
         "無効"
@@ -2209,6 +2251,9 @@
       ],
       "Discover and set up features": [
         "機能の発見と設定"
+      ],
+      "Get 50% offer": [
+        "50％割引オファーを獲得"
       ],
       "Maybe later": [
         "たぶんあとで"
@@ -3541,6 +3586,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "${ BRAND_NAME }のエンドツーエンド暗号化により、お客様自身のみがデータを解読できます。アクセスを失わないよう、今すぐ回復オプションをセットアップしてください。"
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME }の${ DOCS_SHORT_APP_NAME }では、安全で暗号化された環境で他の人と共同作業ができます。"
       ],
@@ -3564,6 +3612,9 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Google によるあなたのプロファイリングをブロックします。 ${ MAIL_APP_NAME } でのお客様の行動は Gmail からは閲覧できません"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "別のプロバイダーからメール、カレンダーの予定、連絡先を移行します。"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "独自ドメインのプロフェッショナルなメールアドレスで、信頼とブランド認知度を構築します。"
@@ -3643,6 +3694,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "プライバシーと言論の自由が脅かされたとき、地元の活動家をどのようにサポートしたか。"
       ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "パスワードを紛失した場合に、暗号化済みデータを解読する方法。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
@@ -3654,6 +3708,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "イベントの招待状に会議リンクを即座に追加できます。"
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "パスワードリセットとデータ回復の両方を含む方法。"
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "ほとんどの問題は、ステップバイステップのガイドに従うことで、数分で解決できます。"
@@ -3684,6 +3741,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "まだ解決しませんか？当社のサポートチームがお手伝いいたします。"
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "これにより${ BRAND_NAME }アカウントへのアクセスを回復できますが、暗号化済みデータは回復されません。"
       ],
       "This may happen if permissions were removed or your password changed.": [
         "これは、権限が削除されたか、お客様のパスワードが変更された場合に発生する可能性があります。"
@@ -4086,9 +4146,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**動作方法：** サインインしたいデバイスに表示されたコードをこのデバイスに入力してください。**${ email }**としてサインインされます。両方のデバイスはアクティブのままになります。"
       ],
-      "Allow QR code sign‒in": [
-        "QRコードでのサインインを許可"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "QRコードが記載されたメッセージにはご注意ください。送信元が信頼できる場合のみ、コードをスキャンしてください。"
       ],
@@ -4103,9 +4160,6 @@
       ],
       "QR code sign-in enabled": [
         "QRコードサインインが有効になりました"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "モバイルデバイスの QR コードをスキャンして、サインインしてください"
       ],
       "Security tips": [
         "セキュリティに関するヒント"
@@ -4243,38 +4297,332 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } アカウントメール"
+      ],
+      "${ days } day left": [
+        "残り ${ days } 日"
+      ],
+      "${ hours } hour left": [
+        "残り ${ hours } 時間"
+      ],
+      "${ minutes } minute left": [
+        "残り ${ minutes } 分"
+      ],
       "${ n } day": [
         "${ n } 日"
+      ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user }がお客様のアカウントへの緊急アクセスをリクエストしています"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user } はお客様のアカウントを使用し、お客様のデータを変更できるようになります。"
+      ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user }はお客様のアカウントからサインアウトされ、次回の緊急アクセスまで再度アクセスすることはできません。"
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "パスワードリセット後、${ user } 様はお客様のデータ回復を支援できなくなります。"
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user }様は緊急時にお客様のアカウントへのアクセスをリクエストできなくなります。"
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } は、次回の緊急アクセスまでお客様のアカウントにアクセスできません。"
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** 様がお客様の回復連絡先になりました。パスワードのリセット後、それらの人々がデータのロック解除をサポートできるようになります。"
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**相手が確認したら**、**[復旧を承認]**をクリックしてください。これにより、相手の暗号化済みデータがロック解除されます。"
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**もし相手があなたの助けをリクエストしていない場合**、他の誰かがそのアカウントにアクセスしようとしている可能性があります。その場合は、このリクエストを無視してください。"
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**レガシーを守る。**緊急連絡先を追加するにはプランをアップグレードしてください。"
+      ],
+      "Access account": [
+        "アカウントにアクセス"
+      ],
+      "Access granted": [
+        "アクセスが許可されました"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "${ formattedAccessibleAt } にアクセスが許可されました"
+      ],
+      "Access request canceled": [
+        "アクセスリクエストがキャンセルされました"
+      ],
+      "Access requested": [
+        "アクセスを要求されました"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "${ formattedAccessibleAt } にアクセスが許可されます"
+      ],
+      "Add": [
+        "追加"
+      ],
+      "Add emergency contact": [
+        "緊急連絡先を追加"
+      ],
+      "Add option": [
+        "オプションを追加"
+      ],
+      "Add recovery contact": [
+        "復旧連絡先を追加"
       ],
       "Added on ${ formattedDate }": [
         "${ formattedDate } に追加されました"
       ],
+      "Approve recovery": [
+        "復旧を承認"
+      ],
+      "Approved request": [
+        "承認済みリクエスト"
+      ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
         "復旧連絡先に協力を依頼してください。相手にはリクエストを確認し、データをロック解除するためのメールが届きます。"
+      ],
+      "Asking for help": [
+        "支援を要請中"
+      ],
+      "Cancel request": [
+        "リクエストをキャンセル"
+      ],
+      "Cancel request?": [
+        "リクエストをキャンセルしますか？"
+      ],
+      "Change access wait time": [
+        "アクセス待機時間の変更"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "${ user }に自動的にアクセス権を付与するまでの待機時間を変更します。"
+      ],
+      "Change wait time": [
+        "待機時間の変更"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "パスワードをリセットした場合に、データの回復を支援してくれる信頼できる人を選択してください。復旧連絡先は、すでに ${ BRAND_NAME } アカウントを所有している必要があります。"
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "データに関して信頼できるお客様を選んでください。そのお客様は、すでに${ BRAND_NAME }アカウントを所有している必要があります。"
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "相手に連絡し、データの回復に支援が必要であることを確認してください。"
       ],
       "Contacts": [
         "連絡先"
       ],
+      "Data recovery contacts": [
+        "データ回復連絡先"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "データが正常に回復されました。既存のデータと暗号化されたファイルを復号化できるようになりました。"
+      ],
+      "Disabled": [
+        "無効"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "緊急アクセスを失うことはありません。今すぐ自動更新を有効にしてください。"
+      ],
+      "Emergency access": [
+        "緊急アクセス"
+      ],
+      "Emergency access for ${ user } removed": [
+        "${ user } の緊急アクセスが削除されました"
+      ],
+      "Emergency access granted": [
+        "緊急アクセスが許可されました"
+      ],
+      "Emergency access refused": [
+        "緊急アクセスが拒否されました"
+      ],
+      "Emergency access request": [
+        "緊急アクセスがリクエストされました"
+      ],
+      "Emergency access requested": [
+        "緊急アクセスが要求されました"
+      ],
+      "Emergency access revoked": [
+        "緊急アクセスが取り消されました"
+      ],
+      "Emergency contact added": [
+        "緊急連絡先が追加されました"
+      ],
+      "Emergency contact enabled": [
+        "緊急時の連絡先を有効にしました"
+      ],
+      "Emergency contact removed": [
+        "緊急連絡先が削除されました"
+      ],
+      "Enable": [
+        "有効"
+      ],
+      "Enable auto-renew": [
+        "自動更新を有効にする"
+      ],
+      "For ${ email }": [
+        "${ email }に"
+      ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
         "今すぐ相手に連絡して支援してもらえるか確認し、お客様ご自身がデータのロック解除を試みていることを直接伝えてください。"
+      ],
+      "Give access now": [
+        "今すぐアクセス権を付与"
+      ],
+      "Give immediate access?": [
+        "今すぐアクセスを許可しますか？"
+      ],
+      "Got it": [
+        "はい"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "お客様のデータを回復するために支援を求めるメールを受信トレイで確認するよう相手に伝えてください。そのメールには、リクエストを検証するためにクリックが必要なリンクが含まれています。"
       ],
       "Immediate": [
         "すぐに"
       ],
+      "Included with ${ planName }": [
+        "${ planName } に含まれる"
+      ],
       "Less than a day": [
         "１日未満"
+      ],
+      "Less than a minute left": [
+        "残り一分未満です"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "連絡先の最大数（${ limit }）に達しました。変更するには、連絡先を削除してから新しい連絡先を追加してください。"
+      ],
+      "Only ": [
+        "のみ "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "他のユーザーのアカウントを管理する必要がある**正当な場合**にのみ、緊急アクセスをリクエストしてください。"
+      ],
+      "Pending request": [
+        "保留中のリクエスト"
+      ],
+      "People I trust": [
+        "信頼済みの人々"
+      ],
+      "People who have you as a recovery contact": [
+        "お客様を復旧連絡先として持つユーザー"
+      ],
+      "People who trust me": [
+        "私を信頼している人"
+      ],
+      "Proceed anyway": [
+        "このまま続行"
+      ],
+      "Protect your legacy with emergency access": [
+        "緊急アクセスでお客様の遺産を保護します"
+      ],
+      "Recover data": [
+        "データを復元"
+      ],
+      "Recovery approved": [
+        "復旧が承認されました"
+      ],
+      "Recovery contact added": [
+        "復旧連絡先が追加されました"
+      ],
+      "Recovery contact enabled": [
+        "復旧用連絡先が有効になりました"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "${ user } 様の復旧連絡先が削除されました"
+      ],
+      "Recovery contact removed": [
+        "復旧連絡先が削除されました"
       ],
       "Recovery request sent": [
         "復旧リクエストが送信されました"
       ],
+      "Refuse access": [
+        "アクセスを拒否する"
+      ],
+      "Refuse access?": [
+        "アクセスを拒否しますか？"
+      ],
+      "Remove recovery contact": [
+        "復旧連絡先を削除"
+      ],
+      "Remove trusted contact": [
+        "信頼済みの連絡先から削除"
+      ],
       "Remove your recovery contacts to continue": [
         "続行するには、復旧連絡先を削除してください"
+      ],
+      "Renew to get emergency access again.": [
+        "緊急アクセスを再度ご利用いただくには、更新してください。"
+      ],
+      "Request access": [
+        "アクセスをリクエスト"
+      ],
+      "Request access?": [
+        "アクセスをリクエストしますか？"
+      ],
+      "Requesting access": [
+        "アクセスをリクエストしています"
+      ],
+      "Review recovery request": [
+        "復旧リクエストを見る"
+      ],
+      "Revoke access": [
+        "アクセスの失効"
+      ],
+      "Revoke access?": [
+        "アクセスを取り消しますか？"
+      ],
+      "See request": [
+        "リクエストを表示"
       ],
       "Select recovery contact ${ name }": [
         "復旧連絡先 ${ name } を選択"
       ],
+      "Send recovery request": [
+        "復旧リクエストを送信"
+      ],
       "Start recovery": [
         "回復を開始"
+      ],
+      "Stop being recovery contact": [
+        "復旧連絡先を辞める"
+      ],
+      "Stop being recovery contact?": [
+        "復旧用連絡先を停止しますか？"
+      ],
+      "Stop being trusted contact": [
+        "信頼済みの連絡先を停止"
+      ],
+      "Stop being trusted contact?": [
+        "信頼できる連絡先を停止しますか?"
+      ],
+      "Subscription expired": [
+        "サブスクリプションの有効期限が切れました"
+      ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "相手がお客様を信頼できる連絡先として追加しました。緊急時には、相手のアカウントにアクセスできます。"
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "緊急時に、相手からお客様のアカウントへのアクセスを要求される場合があります。"
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "彼らは**${ days }日**後に、**${ formattedAccessibleAt }**に自動的にアクセスできるようになります。お客様はいつでも彼らのリクエストを拒否するか、すぐにアクセスを許可できます。"
+      ],
+      "This will take effect immediately.": [
+        "これは直ちに適用されます。"
+      ],
+      "Time required before automatically giving access": [
+        "自動的にアクセスを付与するまでに必要な時間"
+      ],
+      "Time required before automatically giving you access": [
+        "自動的にお客様にアクセスを付与するまでに必要な時間"
+      ],
+      "Time required before automatically granting them access": [
+        "自動的にアクセスを許可するまでに必要な時間"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "この復旧方法を無効化するには、すべての復旧連絡先を削除してください。"
@@ -4282,8 +4630,74 @@
       "Trusted contact": [
         "信頼済みの連絡先"
       ],
+      "Unable to recover data": [
+        "データの回復に失敗しました"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ],
+      "Wait time": [
+        "待機時間"
+      ],
+      "Wait time for access": [
+        "アクセス待機時間"
+      ],
+      "Wait time saved": [
+        "待ち時間の削減"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "お客様の連絡先である **${ user }** 様の暗号化済みデータをロック解除するリクエストを受信しました。"
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "${ user } にメールリクエストを送信しました。アクセスを回復しようとしているのが、本当に本人であることを相手に伝えてください。"
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "復旧データを検証できませんでした。このまま続行しますか？"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "お客様が緊急アクセスをリクエストしたことを、**${ user }** に通知します。"
+      ],
+      "You are signed in to the account ${ account }.": [
+        "アカウント ${ account } でサインインしました"
+      ],
+      "You can now access and manage their account.": [
+        "現在、お客様はアカウントにアクセス、管理することができます。"
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "お客様はいつでも相手のアクセスを削除し、お客様のアカウント単独での管理を取り戻すことができます。"
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "緊急連絡先の最大数${ limit }件に達しました。"
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "緊急アクセスがリクエストされた場合、お客様に通知されます。"
+      ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "パスワードのリセット後、お客様は ${ user } のデータ回復を支援することができなくなります。"
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "緊急時に${ user }様のアカウントへのアクセスをリクエストできなくなります。"
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "後で${ user }様のアカウントへのアクセスをリクエストできるようになります。"
+      ],
+      "You'll receive access to their account immediately.": [
+        "お客様は、すぐに彼らのアカウントにアクセスできるようになります。"
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "お客様は、**${ days }日後** または相手がお客様のリクエストを承認した際に、そのアカウントへアクセスできるようになります。"
+      ],
       "Your recovery contact has helped you recover data.": [
         "復旧連絡先がお客様のデータ回復を支援しました。"
+      ],
+      "Your recovery contacts": [
+        "お客様の復旧連絡先"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "復旧連絡先には、あなたが容易に連絡できる知人が望ましいです。"
       ]
     },
     "Empty group name": {
@@ -4303,6 +4717,9 @@
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
+      ],
+      "Address cannot be yours": [
+        "このアドレスはあなたのものではありません"
       ],
       "Address could not be added.": [
         "アドレスを追加できませんでした。"
@@ -5106,6 +5523,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "合計 3 TB のストレージ"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "アカウントのメリット"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -6498,6 +6920,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "友達が登録するたびに、クレジットとして**${ referrerRewardAmount }**を獲得できます。"
       ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "パスワードのリセット後、**回復用メールアドレスのみでは暗号化済みデータを回復できません**。"
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "パスワードのリセット後、**回復用電話番号のみでは暗号化済みデータを回復できません**。"
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 個以上"
       ],
@@ -6528,12 +6956,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "回復ファイルはアカウントが回復した後でロックを解除しデータを閲覧できるようにします。"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "回復用フレーズはパスワードを忘れた場合にアカウントにアクセスしたり暗号化されたメッセージを復元するのに使われます。"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "ユーザーとは、1つのユーザー名、メールボックス、人物に関連するアカウントのことです"
       ],
@@ -6542,9 +6964,6 @@
       ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "パスワードがわからなくなっても、${ BRAND_NAME } アカウントのコンテンツにアクセスできるように、少なくとも一つのデータ回復方法を有効にしてください。"
       ],
       "active": [
         "アクティブ"
@@ -6558,8 +6977,17 @@
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } を追加"
       ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "信頼できて簡単に連絡が取れる人を1〜5人追加してください。追加された人は、お客様のアカウントにサインインしてお客様の代わりにパスワードをリセットできます。その人はすでに${ BRAND_NAME }アカウントを所有している必要があります。"
+      ],
+      "Add a phone number in case we need to contact you": [
+        "連絡が必要な場合に備えて、電話番号を追加してください"
+      ],
       "add a recovery method": [
         "回復手段の追加"
+      ],
+      "Add an email address in case we need to contact you": [
+        "連絡が必要な場合に備えて、メールアドレスを追加してください"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "アカウントに追加のセキュリティ層を追加します。サインインするたびに2要素認証を行う必要があります。"
@@ -6638,6 +7066,12 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "ユーザーが${ VPN_APP_NAME }アプリの**国**セクションから安全な共有サーバーに接続することを許可します。"
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "QRコードログインを許可すると、パスワードを忘れた場合でもQRコードをスキャンしてサインインできるようになります。別のデバイスで${ BRAND_NAME }サービスにサインインしている必要があります。"
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "設定からのパスワードリセットを許可すると、パスワードを忘れた場合でも、${ BRAND_NAME }にサインインしている状態であればパスワードを変更できます。"
       ],
       "Already allocated": [
         "割り当て済み"
@@ -6761,6 +7195,9 @@
       ],
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "信頼できる人を回復用連絡先として追加することで、パスワードリセット後にデータの回復が困難になった場合、その連絡先にメールを送信して支援を受けることができます。お客様が他の人の回復用連絡先になることも可能です。"
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "アカウントモニターを無効にすると、すべての履歴が消去されます。無効にしてよろしいですか？"
@@ -6921,6 +7358,9 @@
       "Data recoverable with recovery phrase": [
         "回復フレーズによりデータ回復可能"
       ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "データの回復には、パスワードリセットオプション（メールまたはSMS）が必要です"
+      ],
       "dedicated servers": [
         "専用サーバー"
       ],
@@ -6956,6 +7396,9 @@
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "認証アプリの2FAを無効化すると、お客様のアカウントの安全性が低下します。必要に応じてのみ続行してください。"
+      ],
+      "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
+        "このデバイスでのデータバックアップを無効化すると、パスワードのリセット後に暗号化済みデータを自動的に解読できなくなります。"
       ],
       "Discover new features unlocked and start using them right away!": [
         "アンロックされた新機能を見つけて、すぐに使い始めましょう！"
@@ -7091,6 +7534,9 @@
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "もう一度回復を有効にすると新しい回復用フレーズが生成されます。"
+      ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "このデバイスでのデータバックアップを有効化すると、パスワードリセット後にこのデバイスでサインインするだけで、アカウント内のメール、連絡先、ファイル、パスワード、その他すべての暗号化済みデータへのアクセスを復元できるようになります。"
       ],
       "End date": [
         "終了日"
@@ -7230,8 +7676,8 @@
       "Gateways": [
         "ゲートウェイ"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "新たな回復用フレーズを生成すると古いものは無効になります。"
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "新しい回復フレーズを生成すると、現在の回復フレーズは無効化されます。"
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "すべてのデバイスで${ AUTHENTICATOR_APP_NAME }を入手"
@@ -7290,11 +7736,14 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "別の管理者がこのパスワードを変更した場合、変更した人に新しい組織パスワードを問合せてください。"
       ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "無効化された場合でも、${ BRAND_NAME }はセキュリティ通知の送信に回復用メールアドレスを使用します。"
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
+        "無効化された場合でも、${ BRAND_NAME }はセキュリティ通知の送信に回復用電話番号を使用します。"
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "可能であれば、サインインする際、以前にサインインしたことのあるデバイスまたはブラウザを使用してください。"
-      ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "古いパスワードのリセットが原因の場合は、メッセージを再表示しないようにすることができます。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -7304,6 +7753,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "今キャンセルすると、${ expiryDate } に${ BRAND_NAME } ${ planTitle } へのアクセス権を失います（以下の機能を含む）："
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "キャンセルすると、${ planTitle } サブスクリプションは ${ expiryDate } に期限切れになっても更新されません。"
@@ -7338,8 +7790,8 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ VPN_APP_NAME } の有料機能が使えなくなります。"
       ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "最近、パスワードをリセットしたのであれば、回復手段を使ってデータのロックを解除することができます"
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "最近パスワードをリセットした場合は、${ recoveryMethodLink }を行ってデータを解読できます。過去のパスワードリセットが原因である場合は、このメッセージを非表示にすることができます。"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "お客様の組織に公人がいたり、機密データを扱ったり、サイバー攻撃の標的になる可能性がある場合、組織内のすべてのお客様に対して${ PROTON_SENTINEL_NAME }を有効にすることを強く推奨します。"
@@ -7437,9 +7889,6 @@
       "Invited": [
         "招待済み"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "いくつかのデータの暗号化と復号を可能にします。"
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "サーバーの国を変更するには 10 日かかるので、選択が正しいことを確認してください。"
       ],
@@ -7496,6 +7945,12 @@
       ],
       "Item updated in vault": [
         "保管庫のアイテムが更新されました"
+      ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "サインインしている場合、通常これがアカウントを回復するための最も簡単な方法です。"
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "すべてを即座に回復する唯一の方法です。安全でありながらアクセス可能な場所に保管してください。"
       ],
       "JCB logo": [
         "JCB ロゴ"
@@ -7830,9 +8285,6 @@
       "Please fill in all required fields.": [
         "必須項目をすべて入力してください。"
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "パスワードをリセットした場合、アカウントへのアクセスとデータの復号に必要になります。安全な場所に保管してください。"
-      ],
       "please open a support ticket": [
         "サポートチケットを開いてください"
       ],
@@ -7920,6 +8372,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "信頼できるデバイスで推奨されます。 ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "${ PROTON_SENTINEL_NAME }が有効な間は、メールアドレスによる回復は利用できません。"
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "${ PROTON_SENTINEL_NAME }が有効な間は、電話番号による回復は利用できません。"
+      ],
       "Recovery file downloaded": [
         "回復用ファイルをダウンロードしました"
       ],
@@ -7931,9 +8389,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "回復用フレーズはクリップボードへコピーされました"
-      ],
-      "Recovery phrase downloaded": [
-        "回復用フレーズをダウンロードしました"
       ],
       "Recovery phrase has been disabled": [
         "回復用フレーズは無効にされました"
@@ -8271,6 +8726,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "時間がかかる場合があります。このページを閉じたり、インターネットから切断したりしないでください。"
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "このデータ回復方法には、パスワードリセットオプション（メールまたはSMS）が必要です"
+      ],
       "This file is too large to preview": [
         "このファイルは、非常に大きいためプレビューできません"
       ],
@@ -8318,6 +8776,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "これにより、PayPal を使用して ${ BRAND_NAME } のサブスクリプションの支払いが可能になります。 新しいブラウザタブで PayPal にリダイレクトします。 使用している場合は ポップアップブロッカーを一旦無効にしてから続行してください。"
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "これにより、${ BRAND_NAME }アカウントに迅速かつ安全にアクセスしてパスワードを変更できるようになります。"
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "これはデータとユーザーに関係するメールアドレス全てが永久に削除されます。"
@@ -8387,6 +8848,12 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "パスワードをリセットしたあともロックされたデータを復号して表示できるようにするために、回復手段を選択してください。"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "アカウントのセキュリティを最大限に高めるには、**回復用メールアドレスによる回復**を無効化してください。"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+        "アカウントのセキュリティを最大限に高めるには、**回復用電話番号による回復**を無効化してください。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
@@ -8601,6 +9068,12 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "公式の ${ VPN_APP_NAME } アプリケーションの使用をおすすめします。"
       ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "回復用メールアドレス宛に、パスワードリセット用の検証コードを送信したり、不審なアクティビティが検出された際に連絡したりするために使用します。"
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "回復用電話番号宛に、パスワードリセット用の検証コードを送信したり、不審なアクティビティが検出された際に連絡したりするために使用します。"
+      ],
       "We couldn’t process your payment.": [
         "お支払いを処理できませんでした。"
       ],
@@ -8631,8 +9104,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "2要素認証の使用を強制する前に、組織のメンバーに通知し、アカウントに 2要素認証を設定するよう依頼することをお勧めします。"
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "回復に関する情報を信頼できるデバイスに安全に保存し、データ紛失を防止します"
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "すべてのお客様に、回復フレーズによる回復を有効にすることを強くお勧めします。"
       ],
       "We use 3-D Secure to protect your payments": [
         "支払いを保護するために3Dセキュアを使用しています"
@@ -8814,6 +9287,9 @@
       "You don't have any referrals.": [
         "紹介はまだありません。"
       ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "ファイルを開いたり読み取ったりする必要はありません。ダウンロードして安全な場所に保管してください。"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
       ],
@@ -8985,11 +9461,11 @@
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "お客様の最近の変更が公開されました。今後数時間以内にユーザーに表示されるようになります。"
       ],
-      "Your recovery phrase": [
-        "回復用フレーズ"
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "回復用ファイルを使用すると、パスワードリセット後にお客様のアカウントのメール、連絡先、ファイル、パスワード、およびその他の暗号化済みデータへのアクセスを復元できます。"
       ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "あなたの回復フレーズは、特定の順序でランダムに生成された 12 の単語のシリーズです。"
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "回復フレーズを使用すると、${ BRAND_NAME }アカウントからロックアウトされた場合に、サインインしてデータを回復できます。12個の単語で構成され、バックアップパスワードのように機能します。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "予定されているプランは${ renewalTime }から始まり、${ cycle }ヶ月ごとに自動更新されます。"
@@ -9268,6 +9744,9 @@
       ],
       "Allow": [
         "許可"
+      ],
+      "Allow QR code sign-in": [
+        "QRコードログインを許可"
       ],
       "Allow recovery by email": [
         "メールアドレスでの回復を許可"
@@ -9716,6 +10195,9 @@
       "Main reason for cancelling": [
         "取消の主な理由"
       ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "回復用メールアドレスまたは電話番号へのアクセスを確保し、データ回復オプションを用意しておいてください。"
+      ],
       "Manage categories": [
         "カテゴリーを管理"
       ],
@@ -10097,6 +10579,9 @@
       "Vulnerable password": [
         "脆弱なパスワード"
       ],
+      "We securely stored recovery information on this device.": [
+        "回復情報をこのデバイスに安全に保存しました。"
+      ],
       "Weak": [
         "弱い"
       ],
@@ -10136,6 +10621,12 @@
       "Your password (trusted contact)": [
         "パスワード (信頼済みの連絡先)"
       ],
+      "Your recovery email": [
+        "回復用メールアドレス"
+      ],
+      "Your recovery phone number": [
+        "回復用電話番号"
+      ],
       "Zero-access architecture": [
         "ゼロアクセスアーキテクチャ"
       ],
@@ -10144,14 +10635,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "デバイスベースの回復"
-      ],
       "Recovery phone number": [
         "回復用電話番号"
-      ],
-      "Recovery phrase": [
-        "回復用フレーズ"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10367,9 +10852,6 @@
       "How to share via email": [
         "メールで共有する方法"
       ],
-      "How to unlock data": [
-        "データのロックを解除する方法"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } の使用方法"
       ],
@@ -10390,9 +10872,6 @@
       ],
       "Learn more": [
         "詳細"
-      ],
-      "Learn more about data recovery": [
-        "データの回復の詳細"
       ],
       "Manage addresses": [
         "アドレスを管理"
@@ -10435,6 +10914,9 @@
       ],
       "Upgrade your plan": [
         "プランをアップグレード"
+      ],
+      "use a data recovery method": [
+        "データ回復方法を使用する"
       ],
       "Vault": [
         "保管庫"
@@ -12664,6 +13146,14 @@
         "期間限定割引"
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "${ BRAND_NAME }のパスワードを覚えていますか？"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "アカウントやデータへのアクセスを失うのを防ぐ最善の方法は、ご自身の認証情報を覚えておくことです。"
+      ]
+    },
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "パスワードを忘れた場合、暗号化済みデータへのアクセス権を失う可能性があります。"
@@ -13514,6 +14004,188 @@
         "電話番号を確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"
       ]
     },
+    "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "${ score } / ${ maxScore } 完了"
+      ],
+      "Add more options for stronger protection": [
+        "さらに保護を強化するためにオプションを追加"
+      ],
+      "Check your access to your recovery options": [
+        "復旧オプションへのアクセスを確認してください"
+      ],
+      "Critical": [
+        "重大"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME }アカウントからロックアウトされないようにしましょう"
+      ],
+      "How you increased your account protection": [
+        "アカウント保護の強化状況"
+      ],
+      "Inactive recovery options": [
+        "未設定の回復オプション"
+      ],
+      "Maximum": [
+        "最大"
+      ],
+      "Partial": [
+        "一部完了"
+      ],
+      "Recoverability": [
+        "回復可能性"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "検証済みのパスワードリセットオプション（メールまたはSMS）を必須にする"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "スコア: ${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "強い"
+      ],
+      "Take precautions to avoid losing access": [
+        "アクセス権の喪失を防ぐために対策を講じてください"
+      ],
+      "Weak": [
+        "弱い"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "完全に保護されています。定期的な確認を行うことで、デバイスや連絡先の変更に合わせてすべてが機能し続けます。"
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "一部設定されていますが、まだ安全ではありません。パスワードを忘れると、メール、ファイル、パスワードを失う可能性があります。"
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "依然として高いリスクがあります。パスワードを忘れると、メール、ファイル、パスワードを永久に失う可能性があります。"
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "十分にカバーされていますが、まだ不足している部分があります。さらに復旧オプションを追加することで、万が一パスワードを紛失した際のセーフティネットがより強固になります。"
+      ],
+      "Your account and data can be recovered": [
+        "アカウントとデータを回復できます"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "お客様のアカウントには復旧オプションがセットアップされていません。パスワードを紛失すると、メール、ファイル、パスワードへのアクセス権を永久に失うことになります。"
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "お客様のアカウントは完全に保護されていません。パスワードを忘れると、メール、ファイル、パスワードへのアクセス権を失う可能性があります。"
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "復旧セットアップがほとんど行われていません。パスワードを紛失すると、メール、ファイル、パスワードへのアクセス権を永久に失う可能性があります。"
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "お客様の復旧セットアップは優れています。必要なときに機能するよう、オプションを常に最新の状態に保ってください。"
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "復旧セットアップが不完全です。パスワードを忘れると、メール、ファイル、パスワードへのアクセス権を失う可能性があります。"
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "お客様の復旧用のセットアップは堅実ですが、まだいくつかの不足している部分があります。オプションを追加するたびに、セーフティネットがさらに強固になります。"
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "緊急連絡先を追加"
+      ],
+      "Add recovery contacts": [
+        "回復用連絡先を追加"
+      ],
+      "Add recovery email": [
+        "回復用メールアドレスを追加"
+      ],
+      "Add recovery phone": [
+        "回復用電話番号を追加"
+      ],
+      "Allow data recovery on this device": [
+        "このデバイスでのデータ回復を許可"
+      ],
+      "Allow password reset from settings": [
+        "設定からのパスワードリセットを許可"
+      ],
+      "Allow scanning QR code to sign in": [
+        "QRコードをスキャンしたサインインを許可"
+      ],
+      "Data recovery allowed on this device": [
+        "このデバイスでのデータ回復を許可済み"
+      ],
+      "Download recovery file": [
+        "回復用ファイルをダウンロード"
+      ],
+      "Email recovery enabled": [
+        "メールでの回復が有効になりました"
+      ],
+      "Emergency contacts added": [
+        "緊急連絡先を追加済み"
+      ],
+      "Enable email recovery": [
+        "メールでの回復を有効化"
+      ],
+      "Enable recovery by phone": [
+        "電話番号による回復を有効化"
+      ],
+      "Password reset allowed from settings": [
+        "設定からのパスワードリセットを許可済み"
+      ],
+      "Password verified": [
+        "パスワード確認済み"
+      ],
+      "Phone recovery enabled": [
+        "電話番号回復を有効化しました"
+      ],
+      "Recovery contacts added": [
+        "回復用連絡先を追加済み"
+      ],
+      "Recovery file downloaded": [
+        "回復用ファイルをダウンロード済み"
+      ],
+      "Recovery phrase saved": [
+        "回復フレーズを保存済み"
+      ],
+      "Save recovery phrase": [
+        "回復フレーズを保存"
+      ],
+      "Sign-in with QR code allowed": [
+        "QRコードでのサインインを許可済み"
+      ],
+      "Verify password": [
+        "パスワードを確認"
+      ],
+      "Verify recovery email": [
+        "回復用メールアドレスを確認"
+      ],
+      "Verify recovery phone": [
+        "回復用電話番号を確認"
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Copy": [
+        "コピー"
+      ],
+      "Show": [
+        "表示"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**回復フレーズを作成した後は、いつでもアクセスできるように保管してください。** セキュリティ上の理由から、変更の保存後はフレーズを保存しないため、${ BRAND_NAME }アプリで再確認することはできません。"
+      ],
+      "copy recovery phrase": [
+        "回復用フレーズをコピー"
+      ],
+      "Download PDF": [
+        "PDF をダウンロード"
+      ],
+      "download PDF": [
+        "PDFをダウンロード"
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "または、${ copyRecoverySwitchButton } をテキストとして。"
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "または、代わりに ${ downloadRecoveryKitSwitchButton } 。"
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "紹介ごとに ${ referrerRewardAmount }"
@@ -13823,47 +14495,8 @@
       ]
     },
     "Safety review": {
-      "Check account security": [
-        "アカウントのセキュリティを確認してください"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "ログイン情報を失い、アカウントをリセットする必要がある場合、**アカウント回復とデータ回復**の方法を確立しておくことが**非常に重要です**。そうしないと、メール、連絡先、ファイル、またはパスワードにアクセスできなくなる可能性があります。"
-      ],
       "Review account safety": [
         "アカウントの安全性を確認してください"
-      ],
-      "Safeguard account now": [
-        "今すぐアカウントを保護"
-      ],
-      "Safeguard your account": [
-        "アカウントを保護する"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "アカウントとデータへのアクセスを失うリスクがあります。"
-      ],
-      "You are at risk of losing access to your data.": [
-        "データへのアクセスを失うリスクがあります。"
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "お客様のアカウントをさらに保護するための推奨事項があります。"
-      ],
-      "You have recommended actions.": [
-        "推奨されるアクションがあります。"
-      ],
-      "Your account and data can be recovered": [
-        "アカウントとデータは回復できます"
-      ],
-      "Your account and data can be recovered.": [
-        "アカウントとデータは回復できます。"
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "アカウントとデータは回復できます。回復手段にアクセスできるか確認してください。"
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "あなたのアカウントとデータは回復可能です。アカウントをさらに保護するために推奨されるアクションがあります。"
-      ],
-      "Your account is fully secure.": [
-        "アカウントは完全にセキュアです。"
       ]
     },
     "saml: Action": {
@@ -14117,6 +14750,17 @@
     "Select search results": {
       "No results found": [
         "該当する結果が見つかりませんでした"
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "アカウントのセキュリティを最大限に高めるため、メールとSMSによる回復を無効化してください。"
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "${ BRAND_NAME }アカウントにいつでもアクセスできるようにするため、回復フレーズをダウンロードしてください。"
+      ],
+      "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME }から推奨される対応があります"
       ]
     },
     "Server-Info": {
@@ -14378,11 +15022,11 @@
       ]
     },
     "session_recovery:settings:info": {
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "設定からのパスワードリセットを禁止するには、回復フレーズを保存する必要があります。"
+      ],
       "To disallow password reset, you must have a recovery method set up.": [
         "パスワードリセットを禁止するには、復旧方法を設定する必要があります"
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "アカウントのセキュリティを強化し、データを保護するために、Webアプリのアカウント設定からパスワードのリセットをリクエストできます。"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14434,6 +15078,9 @@
       ]
     },
     "Settings section title": {
+      "Account": [
+        "アカウント"
+      ],
       "Organization": [
         "組織"
       ]
@@ -15007,14 +15654,65 @@
       ]
     },
     "Status": {
+      "${ count } person": [
+        "${ count } 人"
+      ],
       "... waiting": [
         "... 待機中"
+      ],
+      "Add a phone number": [
+        "電話番号を追加"
+      ],
+      "Add an email address": [
+        "メールアドレスを追加"
+      ],
+      "Available on this device": [
+        "このデバイスで利用可能"
       ],
       "completed": [
         "完了"
       ],
+      "Disable recovery by email": [
+        "メールアドレスでの回復を無効化"
+      ],
+      "Disable recovery by phone": [
+        "電話番号による回復を無効化"
+      ],
       "finalizing": [
         "完了処理中"
+      ],
+      "Generate a recovery phrase": [
+        "回復フレーズを生成"
+      ],
+      "Last changed ${ formattedDate }": [
+        "最終変更：${ formattedDate }"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "最終更新：${ formattedUpdateDate }"
+      ],
+      "Not saved": [
+        "未保存"
+      ],
+      "Off": [
+        "切"
+      ],
+      "On": [
+        "オン"
+      ],
+      "Outdated": [
+        "期限切れ"
+      ],
+      "Saved": [
+        "保存済み"
+      ],
+      "Unverified": [
+        "未検証"
+      ],
+      "Verified": [
+        "確認済み"
+      ],
+      "Verify ${ value }": [
+        "${ value } を確認"
       ]
     },
     "Storage": {
@@ -16099,6 +16797,9 @@
       "Access control": [
         "アクセス管理"
       ],
+      "Accessibility": [
+        "アクセシビリティ"
+      ],
       "Account": [
         "アカウント"
       ],
@@ -16141,8 +16842,14 @@
       "Add ${ totalServerCount } server?": [
         "${ totalServerCount } 台のサーバーを追加しますか？"
       ],
+      "Add a recovery contact": [
+        "回復用連絡先を追加"
+      ],
       "Add address": [
         "アドレスを追加"
+      ],
+      "Add an emergency contact": [
+        "緊急連絡先を追加"
       ],
       "Add contact group name": [
         "連絡先グループの名前を追加"
@@ -16191,6 +16898,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "「${ policyName }」 にユーザーを追加"
+      ],
+      "Advanced recovery options": [
+        "高度な回復オプション"
       ],
       "Allocate storage": [
         "ストレージを割り当てる"
@@ -16315,6 +17025,9 @@
       "Collaborate on documents": [
         "ドキュメントの共同編集"
       ],
+      "Compare plans": [
+        "プランを比較する"
+      ],
       "Confirm": [
         "確認"
       ],
@@ -16432,11 +17145,17 @@
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
       ],
-      "Data locked": [
-        "データはロックされています"
+      "Dashboard": [
+        "ダッシュボード"
       ],
       "Data recovery": [
         "データの回復"
+      ],
+      "Data recovery contacts": [
+        "データ回復連絡先"
+      ],
+      "Data recovery options": [
+        "データ回復オプション"
       ],
       "Data retention": [
         "データ保持"
@@ -16447,8 +17166,14 @@
       "Day theme": [
         "昼間のテーマ"
       ],
+      "Deactivate current phrase?": [
+        "現在のフレーズを無効化しますか？"
+      ],
       "Decrypt key": [
         "キーを復号"
+      ],
+      "Deep dive into email blog posts": [
+        "メールブログ投稿を深掘りする"
       ],
       "Deep dive into VPN blog posts": [
         "VPNブログ投稿を深掘りする"
@@ -16486,11 +17211,17 @@
       "Device": [
         "デバイス"
       ],
+      "Device data backup": [
+        "デバイスのデータバックアップ"
+      ],
       "Device name": [
         "デバイス名"
       ],
       "Disable account monitor?": [
         "アカウントモニターを無効化しますか？"
+      ],
+      "Disable device data backup?": [
+        "デバイスのデータバックアップを無効化しますか？"
       ],
       "Disable two-factor authentication": [
         "2要素認証を無効化"
@@ -16527,6 +17258,9 @@
       ],
       "Download apps": [
         "アプリをダウンロード"
+      ],
+      "Download your recovery phrase": [
+        "回復フレーズをダウンロード"
       ],
       "Downloads": [
         "ダウンロード"
@@ -16585,6 +17319,12 @@
       "Email subscriptions": [
         "メールサブスクリプション"
       ],
+      "Email verification": [
+        "メールによる確認"
+      ],
+      "Emergency access": [
+        "緊急アクセス"
+      ],
       "Enable advanced account protection": [
         "高度なアカウント保護を有効にする"
       ],
@@ -16639,9 +17379,6 @@
       "Generate missing keys": [
         "紛失した鍵の生成"
       ],
-      "Generate new recovery phrase?": [
-        "新しい回復用フレーズを生成しますか？"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "すべてのサーバーに接続するために ${ vpnPlus } を入手"
       ],
@@ -16671,6 +17408,9 @@
       ],
       "Gift code": [
         "ギフトコード"
+      ],
+      "Group membership": [
+        "グループメンバーシップ"
       ],
       "Group role assignment paused": [
         "グループの役割の割り当てが一時停止されました"
@@ -16750,6 +17490,9 @@
       "IP": [
         "IP"
       ],
+      "Language and time": [
+        "言語と時間"
+      ],
       "Limit reached": [
         "上限に達しました"
       ],
@@ -16804,6 +17547,9 @@
       "No events yet": [
         "予定はまだありません"
       ],
+      "Notifications": [
+        "通知"
+      ],
       "Open": [
         "開く"
       ],
@@ -16852,6 +17598,9 @@
       "Password": [
         "パスワード"
       ],
+      "Password reset options": [
+        "パスワードリセットオプション"
+      ],
       "Password reset settings": [
         "パスワードリセットの設定"
       ],
@@ -16869,6 +17618,9 @@
       ],
       "Payment verification": [
         "支払いの検証"
+      ],
+      "Pending invitations": [
+        "保留中の招待"
       ],
       "Phone": [
         "電話番号"
@@ -16891,6 +17643,9 @@
       "QR Code": [
         "QRコード"
       ],
+      "QR code sign-in": [
+        "QRコードサインイン"
+      ],
       "Recommended": [
         "おすすめ"
       ],
@@ -16911,6 +17666,9 @@
       ],
       "Recovery file": [
         "回復用ファイル"
+      ],
+      "Recovery phrase": [
+        "回復フレーズ"
       ],
       "Refer a friend": [
         "友達を招待"
@@ -17068,8 +17826,14 @@
       "Sign out": [
         "サインアウト"
       ],
+      "Signed in to another account": [
+        "他のアカウントでサインイン"
+      ],
       "Signed in to member account": [
         "メンバーアカウントでサインイン"
+      ],
+      "Signed-in reset": [
+        "サインイン状態でのリセット"
       ],
       "Simplify email distribution": [
         "メール配信を簡単に"
@@ -17082,6 +17846,12 @@
       ],
       "Single-sign on (SSO)": [
         "シングルサインオン (SSO)"
+      ],
+      "SMS verification": [
+        "SMS認証"
+      ],
+      "Some of your encrypted data is locked": [
+        "暗号化済みデータの一部がロックされています"
       ],
       "Something went wrong": [
         "何か問題が発生しました"
@@ -17133,6 +17903,9 @@
       ],
       "Text": [
         "テキスト"
+      ],
+      "Theme": [
+        "テーマ"
       ],
       "There are no events for your account": [
         "お客様のアカウントには予定がありません。"
@@ -17190,6 +17963,9 @@
       ],
       "Upgrade complete!": [
         "アップグレード完了!"
+      ],
+      "Upgrade plan": [
+        "プランをアップグレード"
       ],
       "Upgrade to ${ planName }": [
         "${ planName } へアップグレード"
@@ -17317,11 +18093,23 @@
       "Your plan": [
         "現在のプラン"
       ],
+      "Your recovery file": [
+        "回復用ファイル"
+      ],
+      "Your recovery phrase": [
+        "回復フレーズ"
+      ],
+      "Your recovery setup": [
+        "回復セットアップ"
+      ],
       "Your referrals": [
         "あなたの紹介"
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Your storage": [
+        "あなたのストレージ"
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
@@ -17399,6 +18187,24 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "回復用メールアドレスに送信されるワンタイムコードを使用してアカウントの回復を許可する"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "回復用電話番号に送信されるワンタイムコードを使用してアカウントの回復を許可する"
+      ],
+      "Allow resetting your password from the account settings": [
+        "アカウント設定からのパスワードリセットを許可する"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "${ BRAND_NAME }モバイルアプリからQRコードをスキャンしてサインインすることを許可する"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "信頼できる連絡先がお客様のアカウントへのアクセスを要求できるようにする"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "パスワードリセット後に、信頼できる連絡先が暗号化済みデータを解読できるようにする"
       ],
       "Any protection applied to suspicious activity": [
         "疑わしいアクティビティに適用される保護"
@@ -17486,6 +18292,15 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "発信元IPアドレスおよびインターネットサービスプロバイダ (ISP)"
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "パスワードを忘れた場合に、アカウントと暗号化済みデータを即座に解読するための12語のフレーズを保存します"
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "パスワードリセット後にデータを回復するため、このブラウザに暗号化バックアップファイルを保存します"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "パスワードリセット後にデータを回復するため、暗号化バックアップファイルを保存します"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "あなたが送信するメールに以下のフッターを設定します: ${ signature } リンクはあなたの紹介リンクを指しています。フッターはあなたの署名の下に表示されます。署名は設定でいつでも個別にカスタマイズできます。"
@@ -17699,9 +18514,6 @@
       ],
       "Could not enable admin access for ${ n } user": [
         "${ n }人のユーザーの管理者アクセス権を有効にできませんでした"
-      ],
-      "Could not enable administrator access: ${ error }": [
-        "管理者アクセスを有効にできません：${ error }"
       ],
       "Enable manually": [
         "手動で有効化"
@@ -17920,9 +18732,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2要素認証"
-      ],
       "Administrators can't access the data of private users": [
         "管理者がプライベートユーザーのデータにアクセスすることはできません。"
       ],
@@ -17931,21 +18740,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "招待が送信されました。招待メンバーからの返信待ちです。"
-      ],
-      "Invite sent": [
-        "招待状を送信しました"
-      ],
-      "It's you": [
-        "あなたです"
-      ],
-      "Pending admin access": [
-        "管理者のアクセスが保留中"
-      ],
-      "Private": [
-        "プライベート"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "ID プロバイダーによって提供された SSO ユーザー"

@@ -71,6 +71,9 @@
       "Add address or domain": [
         "Dodaj adresu ili domenu"
       ],
+      "Add and verify": [
+        "Dodaj i potvrdi"
+      ],
       "Add another account": [
         "Dodaj drugi račun"
       ],
@@ -88,6 +91,9 @@
       ],
       "Add PayPal": [
         "Dodaj PayPal"
+      ],
+      "Add recovery options": [
+        "Dodaj opcije oporavka"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Dodaj poveznicu za preporuku u potpis za ${ MAIL_APP_NAME }"
@@ -140,6 +146,9 @@
       "Cancel": [
         "Poništi"
       ],
+      "Cancel request": [
+        "Poništi zahtjev"
+      ],
       "Cancel subscription": [
         "Otkaži pretplatu"
       ],
@@ -166,6 +175,9 @@
       ],
       "Check import progress": [
         "Provjerite napredak uvoza"
+      ],
+      "Check now": [
+        "Provjeri sada"
       ],
       "Choose a file or drag it here": [
         "Odaberite datoteku ili je dovucite ovdje"
@@ -286,6 +298,9 @@
       ],
       "Create new policy": [
         "Stvori novo pravilo"
+      ],
+      "Create recovery phrase": [
+        "Stvori frazu za oporavak"
       ],
       "Create users": [
         "Stvori korisnike"
@@ -410,6 +425,9 @@
       "Download recovery file": [
         "Preuzimanje datoteke za oporavak"
       ],
+      "Download updated file": [
+        "Preuzmi ažuriranu datoteku"
+      ],
       "Edit": [
         "Uredi"
       ],
@@ -503,14 +521,14 @@
       "Forgot password?": [
         "Zaboravili ste lozinku?"
       ],
+      "Generate new phrase": [
+        "Generirajte novu frazu"
+      ],
       "Generate new recovery phrase": [
         "Generirajte novu frazu za oporavak"
       ],
       "Generate password": [
         "Generiraj lozinku"
-      ],
-      "Generate recovery phrase": [
-        "Generirajte frazu za oporavak"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Nabavite ${ planName } za ${ priceCoupon }"
@@ -608,6 +626,9 @@
       "I don’t have my backup codes": [
         "Nemam svoje sigurnosne kodove"
       ],
+      "Ignore": [
+        "Zanemari"
+      ],
       "Import": [
         "Uvoz"
       ],
@@ -625,6 +646,9 @@
       ],
       "Invite user": [
         "Pozovite korisnika"
+      ],
+      "Keep": [
+        "Zadrži"
       ],
       "Keep current plan": [
         "Zadrži trenutačni plan"
@@ -739,6 +763,9 @@
       ],
       "Open navigation": [
         "Otvori navigaciju"
+      ],
+      "Opt out": [
+        "Isključi se"
       ],
       "Or": [
         "Ili"
@@ -896,6 +923,9 @@
       "Review changes": [
         "Pregledaj promjene"
       ],
+      "Review recovery options": [
+        "Pregledaj opcije oporavka"
+      ],
       "Revoke": [
         "Opozovi"
       ],
@@ -914,6 +944,9 @@
       "Save address": [
         "Spremi adresu"
       ],
+      "Save and verify": [
+        "Spremi i potvrdi"
+      ],
       "Save SAML configuration": [
         "Spremi SAML konfiguraciju"
       ],
@@ -928,6 +961,9 @@
       ],
       "Search settings": [
         "Postavke pretraživanja"
+      ],
+      "Secure account": [
+        "Osiguraj korisnički račun"
       ],
       "See DNS TXT record": [
         "Pogledaj DNS TXT zapis"
@@ -1000,6 +1036,9 @@
       ],
       "Set up a custom domain": [
         "Postavi prilagođenu domenu"
+      ],
+      "Set up account recovery": [
+        "Postavi oporavak korisničkog računa"
       ],
       "Set up auto-forwarding from Gmail": [
         "Postavite automatsko prosljeđivanje iz Gmaila"
@@ -1246,6 +1285,9 @@
       ],
       "View plans details": [
         "Prikaži detalje pretplata"
+      ],
+      "View recovery setup details": [
+        "Prikaži pojedinosti o postavljanju oporavka"
       ],
       "Void": [
         "Nevažeće"
@@ -3587,6 +3629,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "End-to-end šifriranje koje nudi ${ BRAND_NAME } znači da samo vi možete otključati svoje podatke. Postavite opcije oporavka sada kako biste osigurali da nikada ne izgubite pristup."
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } u ${ DRIVE_APP_NAME } omogućuje vam suradnju s drugima u sigurnom, šifriranom okruženju."
       ],
@@ -3610,6 +3655,9 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blokirajte Googleovu sposobnost profiliranja. Gmail ne može vidjeti što radite u aplikaciji ${ MAIL_APP_NAME }"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Prenesite svoju e-poštu, kalendarske događaje i kontakte od drugog davatelja usluga."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Izgradite povjerenje i prepoznatljivost brenda profesionalnim adresama e-pošte na vlastitoj domeni."
@@ -3689,6 +3737,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Kako smo podržali lokalne aktiviste kada su privatnost i sloboda govora bili ugroženi."
       ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "Kako otključavate svoje šifrirane podatke ako izgubite lozinku."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Popis kontakata koji uvozite sadrži neke grupe. Pregledajte kako bi ove grupe trebalo uvesti."
       ],
@@ -3700,6 +3751,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Omogućuje trenutačno dodavanje poveznica za sastanke u pozivnice za događaje."
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "Metode koje uključuju i ponovno pokretanje lozinke i oporavak podataka."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Većina se problema može riješiti u nekoliko minuta pomoću naših vodiča korak-po-korak."
@@ -3730,6 +3784,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "I dalje trebate pomoć? Naš tim za podršku tu je za vas."
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "To vam omogućuje ponovni pristup vašem ${ BRAND_NAME } korisničkom računu, ali ne oporavlja vaše šifrirane podatke."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Ovo se može dogoditi ako su dozvole uklonjene ili je Vaša lozinka promijenjena."
@@ -4142,9 +4199,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Kako to radi:** unesite u ovaj uređaj kôd prikazan na uređaju na koji se želite prijaviti. Bit ćete prijavljeni kao **${ email }**. Oba uređaja će ostati aktivna."
       ],
-      "Allow QR code sign‒in": [
-        "Dopusti prijavu QR kôdom"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Budite oprezni porukama s QR kôdovima. Skenirajte kôd samo ako vjerujete izvoru."
       ],
@@ -4159,9 +4213,6 @@
       ],
       "QR code sign-in enabled": [
         "Prijava QR kôdom omogućena"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Skenirajte QR kôd na svom mobilnom uređaju za prijavu"
       ],
       "Security tips": [
         "Sigurnosni savjeti"
@@ -4299,40 +4350,344 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "Adresa e-pošte za ${ BRAND_NAME } korisnički račun"
+      ],
+      "${ days } day left": [
+        "Još ${ days } dan",
+        "Još ${ days } dana",
+        "Još ${ days } dana"
+      ],
+      "${ hours } hour left": [
+        "Još ${ hours } sat",
+        "Još ${ hours } sata",
+        "Još ${ hours } sati"
+      ],
+      "${ minutes } minute left": [
+        "Preostala je još ${ minutes } minuta",
+        "Još ${ minutes } minute",
+        "Još ${ minutes } minuta"
+      ],
       "${ n } day": [
         "${ n } dan",
         "${ n } dana",
         "${ n } dana"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } zahtijeva hitni pristup vašem korisničkom računu"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "Korisnik ${ user } moći će koristiti Vaš korisnički račun i mijenjati Vaše podatke."
+      ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } bit će odjavljen s vašeg korisničkog računa i neće mu moći ponovno pristupiti do sljedećeg hitnog pristupa."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "Korisnik ${ user } vam više neće moći pomoći oporaviti podatke nakon ponovnog postavljanja lozinke."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } više neće moći zatražiti pristup Vašem korisničkom računu u slučaju nužde."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } neće moći pristupiti vašem korisničkom računu do sljedećeg hitnog pristupa."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** je sada vaš kontakt za oporavak. Može vam pomoći otključati podatke nakon što ponovno pokrenete lozinku."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Ako potvrde**, kliknite **Odobri oporavak**. Ovo će otključati njihove šifrirane podatke."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Ako nisu zatražili vašu pomoć**, moguće je da netko drugi pokušava pristupiti njihovom korisničkom računu. U tom slučaju zanemarite ovaj zahtjev."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Zaštitite svoje naslijeđe.** Nadogradite svoj plan kako biste dodali kontakte za hitne slučajeve."
+      ],
+      "Access account": [
+        "Pristupi korisničkom računu"
+      ],
+      "Access granted": [
+        "Pristup je odobren"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "Pristup je odobren ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Zahtjev za pristupom poništen"
+      ],
+      "Access requested": [
+        "Zatražen pristup"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Pristup će biti odobren ${ formattedAccessibleAt }"
+      ],
+      "Add": [
+        "Dodaj"
+      ],
+      "Add emergency contact": [
+        "Dodajte kontakt za hitne slučajeve"
+      ],
+      "Add option": [
+        "Dodaj opciju"
+      ],
+      "Add recovery contact": [
+        "Dodaj kontakt za oporavak"
+      ],
       "Added on ${ formattedDate }": [
         "Dodano ${ formattedDate }"
+      ],
+      "Approve recovery": [
+        "Odobri oporavak"
+      ],
+      "Approved request": [
+        "Odobren zahtjev"
       ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
         "Zatražite pomoć od kontakta za oporavak. Primit će e-poštu radi potvrde vašeg zahtjeva i otključavanja vaših podataka."
       ],
+      "Asking for help": [
+        "Traženje pomoći"
+      ],
+      "Cancel request": [
+        "Poništi zahtjev"
+      ],
+      "Cancel request?": [
+        "Poništi zahtjev?"
+      ],
+      "Change access wait time": [
+        "Promijeni vrijeme čekanja za pristup"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Promijenite vrijeme koje će ${ user } morati čekati prije nego što mu se automatski odobri pristup."
+      ],
+      "Change wait time": [
+        "Promijeni vrijeme čekanja"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Odaberite nekoga kome vjerujete da će vam pomoći oporaviti podatke u slučaju ponovnog postavljanja lozinke. Kontakti za oporavak već moraju imati ${ BRAND_NAME } korisnički račun."
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Odaberite osobu kojoj povjeravate svoje podatke. Ona već mora imati otvoren ${ BRAND_NAME } korisnički račun."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Povežite se s njima kako biste potvrdili da im je potrebna pomoć za oporavak podataka."
+      ],
       "Contacts": [
         "Kontakti"
+      ],
+      "Data recovery contacts": [
+        "Kontakti za oporavak podataka"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Podaci su uspješno oporavljeni. Sada možete dešifrirati svoje postojeće podatke i šifrirane datoteke."
+      ],
+      "Disabled": [
+        "Onemogućeno"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Nemojte izgubiti hitni pristup. Omogućite automatsku obnovu danas."
+      ],
+      "Emergency access": [
+        "Hitni pristup"
+      ],
+      "Emergency access for ${ user } removed": [
+        "Hitni pristupa za ${ user } uklonjen"
+      ],
+      "Emergency access granted": [
+        "Hitni pristup odobren"
+      ],
+      "Emergency access refused": [
+        "Hitni pristup odbijen"
+      ],
+      "Emergency access request": [
+        "Zahtjev za hitnim pristupom"
+      ],
+      "Emergency access requested": [
+        "Zatražen hitni pristup"
+      ],
+      "Emergency access revoked": [
+        "Hitni pristup uskraćen"
+      ],
+      "Emergency contact added": [
+        "Hitni kontakt je dodan"
+      ],
+      "Emergency contact enabled": [
+        "Kontakt za hitne slučajeve omogućen"
+      ],
+      "Emergency contact removed": [
+        "Hitni kontakt uklonjen"
+      ],
+      "Enable": [
+        "Omogući"
+      ],
+      "Enable auto-renew": [
+        "Omogući automatsku obnovu"
+      ],
+      "For ${ email }": [
+        "Za ${ email }"
       ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
         "Stupite s njima u kontakt sada da vidite mogu li vam pomoći i da ih osobno obavijestite da vi pokušavate otključati svoje podatke."
       ],
+      "Give access now": [
+        "Odobri pristup sada"
+      ],
+      "Give immediate access?": [
+        "Dati trenutačni pristup?"
+      ],
+      "Got it": [
+        "Razumijem"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Neka provjere svoju pristiglu poštu radi e-pošte u kojoj se traži njihova pomoć za oporavak vaših podataka. E-pošta sadrži poveznicu na koju moraju kliknuti kako bi potvrdili vaš zahtjev."
+      ],
       "Immediate": [
         "Odmah"
+      ],
+      "Included with ${ planName }": [
+        "Uključeno uz ${ planName }"
       ],
       "Less than a day": [
         "Manje od jednog dana"
       ],
+      "Less than a minute left": [
+        "Još manje od minute"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "Dosegnut je maksimalni broj od ${ limit } kontakta. Za promjenu uklonite kontakt i dodajte novi.",
+        "Dosegnut je maksimalni broj od ${ limit } kontakta. Za promjenu uklonite kontakt i dodajte novi.",
+        "Dosegnut je maksimalni broj od ${ limit } kontakata. Za promjenu uklonite kontakt i dodajte novi."
+      ],
+      "Only ": [
+        "Samo "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Zatražite hitni pristup samo kada postoji **opravdana situacija** koja zahtijeva da upravljate korisničkim računom drugog korisnika."
+      ],
+      "Pending request": [
+        "Zahtjev na čekanju"
+      ],
+      "People I trust": [
+        "Osobe kojima vjerujem"
+      ],
+      "People who have you as a recovery contact": [
+        "Ljudi koji vas imaju kao kontakt za oporavak"
+      ],
+      "People who trust me": [
+        "Osobe koje mi vjeruju"
+      ],
+      "Proceed anyway": [
+        "Svejedno nastavi"
+      ],
+      "Protect your legacy with emergency access": [
+        "Zaštitite svoju ostavštinu pomoću pristupa za hitne slučajeve"
+      ],
+      "Recover data": [
+        "Oporavi podatke"
+      ],
+      "Recovery approved": [
+        "Oporavak odobren"
+      ],
+      "Recovery contact added": [
+        "Kontakt za oporavak dodan"
+      ],
+      "Recovery contact enabled": [
+        "Kontakt za oporavak omogućen"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Kontakt za oporavak za korisnika ${ user } je uklonjen"
+      ],
+      "Recovery contact removed": [
+        "Kontakt za oporavak uklonjen"
+      ],
       "Recovery request sent": [
         "Zahtjev za oporavak poslan"
+      ],
+      "Refuse access": [
+        "Nemoj dozvoliti pristup"
+      ],
+      "Refuse access?": [
+        "Nemoj dozvoliti pristup?"
+      ],
+      "Remove recovery contact": [
+        "Ukloni kontakt za oporavak"
+      ],
+      "Remove trusted contact": [
+        "Ukloni pouzdani kontakt"
       ],
       "Remove your recovery contacts to continue": [
         "Uklonite svoje kontakte za oporavak kako biste nastavili"
       ],
+      "Renew to get emergency access again.": [
+        "Obnovite kako biste ponovo dobili hitni pristup."
+      ],
+      "Request access": [
+        "Zatraži pristup"
+      ],
+      "Request access?": [
+        "Zatražiti pristup?"
+      ],
+      "Requesting access": [
+        "Zahtijevanje pristupa"
+      ],
+      "Review recovery request": [
+        "Pregledaj zahtjev za oporavak"
+      ],
+      "Revoke access": [
+        "Uskrati pristup?"
+      ],
+      "Revoke access?": [
+        "Uskrati pristup?"
+      ],
+      "See request": [
+        "Vidi zahtjev"
+      ],
       "Select recovery contact ${ name }": [
         "Odaberi kontakt za oporavak ${ name }"
       ],
+      "Send recovery request": [
+        "Pošalji zahtjev za oporavak"
+      ],
       "Start recovery": [
         "Pokreni oporavak"
+      ],
+      "Stop being recovery contact": [
+        "Prestani biti kontakt za oporavak"
+      ],
+      "Stop being recovery contact?": [
+        "Želite li prestati biti kontakt za oporavak?"
+      ],
+      "Stop being trusted contact": [
+        "Prestani biti pouzdani kontakt"
+      ],
+      "Stop being trusted contact?": [
+        "Želite li prestati biti pouzdani kontakt?"
+      ],
+      "Subscription expired": [
+        "Pretplata istekla"
+      ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "Dodali su vas kao pouzdani kontakt. Možete pristupiti njihovom korisničkom računu u hitnom slučaju."
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "Mogu zatražiti pristup vašem korisničkom računu u hitnom slučaju."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Oni će automatski dobiti pristup za **${ days } dan**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
+        "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
+        "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku."
+      ],
+      "This will take effect immediately.": [
+        "Ovo će stupiti na snagu odmah."
+      ],
+      "Time required before automatically giving access": [
+        "Vrijeme potrebno prije automatskog odobravanja pristupa"
+      ],
+      "Time required before automatically giving you access": [
+        "Vrijeme potrebno prije nego što vam se automatski omogući pristup"
+      ],
+      "Time required before automatically granting them access": [
+        "Vrijeme potrebno prije nego što im se automatski omogući pristup"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Da biste onemogućili ovaj način oporavka, uklonite sve svoje kontakte za oporavak."
@@ -4340,8 +4695,78 @@
       "Trusted contact": [
         "Pouzdani kontakt"
       ],
+      "Unable to recover data": [
+        "Nije moguće oporaviti podatke"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadogradite za ${ planName }"
+      ],
+      "Wait time": [
+        "Vrijeme čekanja"
+      ],
+      "Wait time for access": [
+        "Vrijeme čekanja za pristup"
+      ],
+      "Wait time saved": [
+        "Ušteđeno vrijeme čekanja"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Primili smo zahtjev za otključavanje šifriranih podataka vašeg kontakta **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Poslali smo zahtjev e-poštom korisniku ${ user }. Obavijestite ga da ste to stvarno vi koji pokušavate ponovno dobiti pristup."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Nismo uspjeli potvrditi podatke za oporavak. Želite li ipak nastaviti?"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Obavijestit ćemo korisnika **${ user }** da ste zatražili hitni pristup."
+      ],
+      "You are signed in to the account ${ account }.": [
+        "Prijavljeni ste na korisnički račun ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "Sada možete pristupiti njihovom korisničkom računu i upravljati njime."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Možete ukloniti njihov pristup u bilo kojem trenutku kako biste povratili isključivu kontrolu nad svojim korisničkim računom."
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Dosegnuli ste maksimalan broj od ${ limit } kontakta za hitne slučajeve.",
+        "Dosegnuli ste maksimalan broj od ${ limit } kontakta za hitne slučajeve.",
+        "Dosegnuli ste maksimalan broj od ${ limit } kontakata za hitne slučajeve."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Dobit ćete obavijest kada netko zatraži hitni pristup."
+      ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Više nećete moći pomoći korisniku ${ user } da oporavi svoje podatke nakon što ponovno pokrene svoju lozinku."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Više nećete moći zatražiti pristup računu korisnika ${ user } u slučaju nužde."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "I dalje ćete moći zatražiti pristup korisničkom računu korisnika ${ user } kasnije."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Dobit ćete pristup njihovom korisničkom računu odmah."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Dobit ćete pristup njihovom računu za **${ days } dan**, ili kada odobre Vaš zahtjev.",
+        "Dobit ćete pristup njihovom korisničkom računu za **${ days } dana** ili kada odobre Vaš zahtjev.",
+        "Dobit ćete pristup njihovom računu za **${ days } dana**, ili kada odobre Vaš zahtjev."
+      ],
       "Your recovery contact has helped you recover data.": [
         "Vaš kontakt za oporavak pomogao vam je oporaviti podatke."
+      ],
+      "Your recovery contacts": [
+        "Vaši kontakti za oporavak"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Vaši kontakti za oporavak trebale bi biti osobe koje poznajete i s kojima možete lako stupiti u kontakt."
       ]
     },
     "Empty group name": {
@@ -4361,6 +4786,9 @@
       ],
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
+      ],
+      "Address cannot be yours": [
+        "Adresa ne može biti vaša"
       ],
       "Address could not be added.": [
         "Nije moguće dodati adresu."
@@ -5178,6 +5606,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB prostora za pohranu"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Pogodnosti Vašeg korisničkog računa"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -6674,6 +7107,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Dobivate ${ referrerRewardAmount }** u kreditima za svakog prijatelja koji se pretplati."
       ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "**Samo vaša adresa e-pošte za oporavak ne omogućuje vam oporavak šifriranih podataka** nakon što ponovno pokrenete lozinku."
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "**Samo vaš telefon za oporavak ne omogućuje vam oporavak šifriranih podataka** nakon što ponovno pokrenete lozinku."
+      ],
       "+ ${ invisibleCount } More": [
         "Još ${ invisibleCount }",
         "+ još ${ invisibleCount }",
@@ -6708,12 +7147,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefonski broj može se koristiti samo za potvrdu jednog ${ BRAND_NAME } korisničkog računa"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Datoteka za oporavak omogućuje Vam otključavanje i pregledavanje Vaših podataka nakon oporavka korisničkog računa"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Fraza za oporavak omogućuje ti pristup korisničkom računu i oporavak šifriranih poruka ako zaboraviš lozinku"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Korisnik je korisnički račun povezan s jednim korisničkim imenom, poštanskim sandučićem i osobom"
       ],
@@ -6722,9 +7155,6 @@
       ],
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivirajte barem jednu metodu oporavka podataka kako biste bili sigurni da i dalje možete pristupiti sadržaju svog ${ BRAND_NAME } računa ako izgubite lozinku."
       ],
       "active": [
         "aktivno"
@@ -6738,8 +7168,17 @@
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Dodaj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "Dodajte 1 do 5 osoba kojima vjerujete i koje možete lako kontaktirati. Oni će moći ponovno pokrenuti lozinku umjesto vas prijavom na vaš korisnički račun. Već moraju imati ${ BRAND_NAME } korisnički račun."
+      ],
+      "Add a phone number in case we need to contact you": [
+        "Dodajte telefonski broj u slučaju da vas moramo kontaktirati"
+      ],
       "add a recovery method": [
         "dodate metodu oporavka"
+      ],
+      "Add an email address in case we need to contact you": [
+        "Dodajte adresu e-pošte u slučaju da vas moramo kontaktirati"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Dodajte još jedan sloj sigurnosti svom korisničkom računu. Morat ćete potvrditi svoj identitet s 2FA svaki put kada se prijavite."
@@ -6832,6 +7271,12 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Dopustite korisnicima povezivanje sa sigurnim dijeljenim poslužiteljima iz odjeljka **Države** u aplikaciji ${ VPN_APP_NAME }."
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Dopuštanje prijave QR kôdom omogućit će vam prijavu skeniranjem QR kôda ako zaboravite lozinku. Sve što trebate je biti prijavljeni na uslugu ${ BRAND_NAME } na drugom uređaju."
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "Dopuštanjem ponovnog pokretanja lozinke iz postavki možete promijeniti lozinku ako ste je izgubili, ali ste još uvijek prijavljeni na ${ BRAND_NAME }."
       ],
       "Already allocated": [
         "Već dodijeljeno"
@@ -6955,6 +7400,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciklus naplate: ${ text }"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "Dodavanjem ljudi kojima vjerujete kao kontakata za oporavak, moći ćemo im poslati e-poštu da vam pomognu ako budete imali problema s oporavkom podataka nakon ponovnog pokretanja lozinke. Također možete biti kontakt za oporavak drugima."
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Onemogućavanjem nadzora korisničkog računa također ćete očistiti cijelu povijest. Jeste li sigurni da to želite onemogućiti?"
@@ -7123,6 +7571,9 @@
       "Data recoverable with recovery phrase": [
         "Podaci se mogu oporaviti uz frazu za oporavak"
       ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Oporavak podataka zahtijeva opciju ponovnog pokretanja lozinke (e-pošta ili SMS)"
+      ],
       "dedicated servers": [
         "namjenski poslužitelji"
       ],
@@ -7160,6 +7611,9 @@
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "Onemogućavanje 2FA u autentifikator aplikaciji učinit će Vaš korisnički račun manje sigurnim. Nastavite samo ako je to apsolutno nužno."
+      ],
+      "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
+        "Onemogućavanje sigurnosne kopije podataka na ovom uređaju spriječit će vas u automatskom otključavanju šifriranih podataka nakon ponovnog pokretanja lozinke."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Otkrijte nove otključane značajke i počnite ih odmah koristiti!"
@@ -7297,6 +7751,9 @@
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Ponovno omogućavanje oporavka pomoću fraze generirat će novu frazu za oporavak."
+      ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Omogućivanje sigurnosne kopije podataka na ovom uređaju vratit će pristup e-pošti, kontaktima, datotekama, lozinkama i svim drugim šifriranim podacima na vašem korisničkom računu nakon ponovnog pokretanja lozinke, jednostavno prijavom na ovom uređaju."
       ],
       "End date": [
         "Datum završetka"
@@ -7436,8 +7893,8 @@
       "Gateways": [
         "Pristupnici"
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Generiranjem nove fraze za oporavak deaktivirat će se Vaša stara fraza."
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Generiranje nove fraze za oporavak deaktivirat će vašu trenutnu frazu za oporavak."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Preuzmite ${ AUTHENTICATOR_APP_NAME } za sve svoje uređaje."
@@ -7496,11 +7953,14 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ako je drugi administrator promijenio ovu lozinku, morat ćete ih pitati za novu lozinku organizacije."
       ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "Ako se onemogući, ${ BRAND_NAME } će i dalje koristiti vašu adresu e-pošte za oporavak za slanje sigurnosnih obavijesti."
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
+        "Ako je onemogućeno, ${ BRAND_NAME } će i dalje koristiti vaš telefon za oporavak za slanje sigurnosnih obavijesti."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Ako je moguće, pri prijavi upotrijebite uređaj ili preglednik na kojem ste se već prije prijavili."
-      ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Ako je to zbog starog reseta lozinke, možete spriječiti da se poruka ponovno prikazuje."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
@@ -7544,8 +8004,8 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ako nastavite sa snižavanjem statusa, izgubit ćete pristup plaćenim ${ VPN_APP_NAME } značajkama."
       ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Ako ste nedavno resetirali svoju lozinku, možete koristiti metodu oporavka podataka kako biste otključali svoje podatke"
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "Ako ste nedavno ponovno pokrenuli lozinku, možete ${ recoveryMethodLink } kako biste otključali svoje podatke. Ako je to zbog starog ponovnog pokretanja lozinke, možete zaustaviti ponovno prikazivanje ove poruke."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Ako Vaša organizacija ima javne ličnosti, rukuje osjetljivim podacima ili bi mogla biti metom kibernetičkih napada, izrazito se preporučuje da omogućite ${ PROTON_SENTINEL_NAME } za sve u Vašoj organizaciji."
@@ -7647,9 +8107,6 @@
       "Invited": [
         "Pozvani"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Čini se da su neki tvoji podaci šifrirani i zaključani."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Potrebno je 10 dana za promjenu zemlje poslužitelja, stoga provjerite je li Vaš odabir točan."
       ],
@@ -7706,6 +8163,12 @@
       ],
       "Item updated in vault": [
         "Stavka ažurirana u trezoru"
+      ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "To je često najlakši način za oporavak korisničkog računa ako ste prijavljeni."
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "To je jedini način da trenutačno oporavite sve, stoga se pobrinite da to držite na sigurnom, ali dostupnom mjestu."
       ],
       "JCB logo": [
         "Logotip JCB"
@@ -8048,9 +8511,6 @@
       "Please fill in all required fields.": [
         "Molimo popunite sva obavezna polja."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Molimo, čuvajte ju na sigurnom. Trebat će Vam za pristup vašem korisničkom računu i dešifriranje Vaših podataka u slučaju resetiranja lozinke."
-      ],
       "please open a support ticket": [
         "molimo otvorite zahtjev za podršku"
       ],
@@ -8138,6 +8598,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Preporučeno na pouzdanim uređajima. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Oporavak putem e-pošte nije dostupan dok je omogućen ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Oporavak putem telefona nije dostupan dok je omogućen ${ PROTON_SENTINEL_NAME }."
+      ],
       "Recovery file downloaded": [
         "Preuzeta datoteka za oporavak"
       ],
@@ -8149,9 +8615,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Fraza za oporavak kopirana u međuspremnik"
-      ],
-      "Recovery phrase downloaded": [
-        "Preuzeta fraza za oporavak"
       ],
       "Recovery phrase has been disabled": [
         "Fraza za oporavak je onemogućena"
@@ -8501,6 +8964,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Ovo bi moglo potrajati. Nemojte zatvarati ovu stranicu niti prekida vezu s internetom."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Ovaj način oporavka podataka zahtijeva opciju ponovnog pokretanja lozinke (e-pošta ili SMS)"
+      ],
       "This file is too large to preview": [
         "Ova datoteka je prevelika za pretpregled"
       ],
@@ -8548,6 +9014,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ovo će omogućiti PayPalu da se koristi za plaćanje vaše ${ BRAND_NAME } pretplate. Preusmjerit ćemo vas na PayPal u novoj kartici preglednika. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "Ovo će vam omogućiti da brzo i sigurno pristupite svom korisničkom računu ${ BRAND_NAME } kako biste mogli promijeniti svoju lozinku."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Ovo će trajno izbrisati podatke i sve adrese e-pošte povezane s ovim korisnicima."
@@ -8617,6 +9086,12 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Kako bi dešifrirao i pregledao svoje zaključane podatke nakon ponovnog postavljanja lozinke, odaberi metodu oporavka."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "Kako biste osigurali najvišu moguću sigurnost svog korisničkog računa, onemogućite **Oporavak putem adrese e-pošte za oporavak**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+        "Kako biste osigurali najvišu moguću sigurnost svog korisničkog računa, onemogućite **Oporavak putem telefona za oporavak**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
@@ -8831,6 +9306,12 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Savjetujemo Vam da koristite službene ${ VPN_APP_NAME } aplikacije kada je to moguće."
       ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Možemo upotrijebiti vašu adresu e-pošte za oporavak kako bismo vam poslali kôd za potvrdu za ponovno pokretanje lozinke i kako bismo vas kontaktirali ako primijetimo sumnjivu aktivnost."
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Možemo upotrijebiti vaš telefon za oporavak kako bismo vam poslali kôd za potvrdu za ponovno pokretanje lozinke i kako bismo vas kontaktirali ako primijetimo sumnjivu aktivnost."
+      ],
       "We couldn’t process your payment.": [
         "Nismo uspjeli obraditi vaše plaćanje."
       ],
@@ -8861,8 +9342,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Preporučujemo da obavijestite članove organizacije i zamolite ih da postave 2FA za svoje korisničke račune prije nego što uvedete obaveznu upotrebu 2FA."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Sigurno pohranjujemo informacije za oporavak na Vašem pouzdanom uređaju kako bismo spriječili gubitak Vaših podataka."
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "Svima preporučujemo da omoguće oporavak pomoću fraze za oporavak."
       ],
       "We use 3-D Secure to protect your payments": [
         "Koristimo 3-D Secure za zaštitu vaših plaćanja"
@@ -9058,6 +9539,9 @@
       "You don't have any referrals.": [
         "Nemate preporuka."
       ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Ne morate otvarati ni čitati datoteku — samo je učitajte i spremite na sigurno mjesto."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Bit ćete obaviješteni ako je vaša lozinka ili drugi podaci procurili s usluge treće strane."
       ],
@@ -9237,11 +9721,11 @@
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Vaše nedavne promjene su objavljene. Bit će vidljive korisnicima u sljedećih nekoliko sati."
       ],
-      "Your recovery phrase": [
-        "Tvoja fraza za oporavak"
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Vaša datoteka za oporavak vratit će pristup e-pošti, kontaktima, datotekama, lozinkama i svim drugim šifriranim podacima na vašem korisničkom računu nakon ponovnog pokretanja lozinke."
       ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Vaša fraza za oporavak je niz od 12 nasumično generiranih riječi u određenom redoslijedu."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Vaša fraza za oporavak omogućit će vam da se prijavite i oporavite svoje podatke ako izgubite pristup svom ${ BRAND_NAME } korisničkom računu. Sastoji se od 12 riječi i djeluje kao lozinka sigurnosne kopije."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Vaš plan na čekanju počinje ${ renewalTime } i automatski će se obnavljati svakog ${ cycle }. mjeseca.",
@@ -9534,6 +10018,9 @@
       ],
       "Allow": [
         "Dopusti"
+      ],
+      "Allow QR code sign-in": [
+        "Dopusti prijavu QR kôdom"
       ],
       "Allow recovery by email": [
         "Omogući oporavak putem adrese e-pošte"
@@ -9984,6 +10471,9 @@
       "Main reason for cancelling": [
         "Glavni razlog otkazivanja"
       ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "Provjerite imate li pristup adresi e-pošte za oporavak ili telefonu te opciju oporavka podataka."
+      ],
       "Manage categories": [
         "Upravljanje kategorijama"
       ],
@@ -10367,6 +10857,9 @@
       "Vulnerable password": [
         "Ranjiva lozinka"
       ],
+      "We securely stored recovery information on this device.": [
+        "Sigurno smo spremili informacije o oporavku na ovom uređaju."
+      ],
       "Weak": [
         "Slaba"
       ],
@@ -10406,6 +10899,12 @@
       "Your password (trusted contact)": [
         "Vaša lozinka (pouzdani kontakt)"
       ],
+      "Your recovery email": [
+        "Vaša adresa e-pošte za oporavak"
+      ],
+      "Your recovery phone number": [
+        "Vaš telefonski broj za oporavak"
+      ],
       "Zero-access architecture": [
         "Arhitektura s nultim pristupom"
       ],
@@ -10414,14 +10913,8 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Oporavak na temelju uređaja"
-      ],
       "Recovery phone number": [
         "Broj mobitela za oporavak"
-      ],
-      "Recovery phrase": [
-        "Fraza za oporavak"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10639,9 +11132,6 @@
       "How to share via email": [
         "Kako podijeliti putem e-pošte"
       ],
-      "How to unlock data": [
-        "Kako otključati podatke"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Kako koristiti ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -10662,9 +11152,6 @@
       ],
       "Learn more": [
         "Saznajte više"
-      ],
-      "Learn more about data recovery": [
-        "Naučite više o oporavku podataka"
       ],
       "Manage addresses": [
         "Upravljanje adresama"
@@ -10707,6 +11194,9 @@
       ],
       "Upgrade your plan": [
         "Nadogradite svoju pretplatu"
+      ],
+      "use a data recovery method": [
+        "upotrijebi način oporavka podataka"
       ],
       "Vault": [
         "Trezor"
@@ -13030,6 +13520,14 @@
         "Vremenski ograničena ponuda."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Sjećate li se svoje lozinke za ${ BRAND_NAME }?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Najbolji način da izbjegnete gubitak pristupa svom korisničkom računu i podacima jest da zapamtite svoje vjerodajnice."
+      ]
+    },
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "Ako zaboravite svoju lozinku, mogli biste izgubiti pristup svojim šifriranim podacima."
@@ -13896,6 +14394,188 @@
         "Potvrđivanje broja telefona povećava sigurnost tvojeg korisničkog računa i omogućuje dodatne opcije za oporavak."
       ]
     },
+    "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "Dovršeno ${ score } / ${ maxScore }"
+      ],
+      "Add more options for stronger protection": [
+        "Dodajte više opcija za jaču zaštitu"
+      ],
+      "Check your access to your recovery options": [
+        "Provjerite svoj pristup opcijama oporavka"
+      ],
+      "Critical": [
+        "Kritično"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "Nemojte izgubiti pristup svom ${ BRAND_NAME } korisničkom računu"
+      ],
+      "How you increased your account protection": [
+        "Kako ste povećali zaštitu svog korisničkog računa"
+      ],
+      "Inactive recovery options": [
+        "Neaktivne opcije oporavka"
+      ],
+      "Maximum": [
+        "Maksimalno"
+      ],
+      "Partial": [
+        "Djelomična"
+      ],
+      "Recoverability": [
+        "Mogućnost oporavka"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Zahtijeva potvrđenu opciju ponovnog pokretanja lozinke (e-pošta ili SMS)"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "Rezultat: ${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "Snažno"
+      ],
+      "Take precautions to avoid losing access": [
+        "Poduzmite mjere opreza kako biste izbjegli gubitak pristupa"
+      ],
+      "Weak": [
+        "Slaba"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Potpuno ste zaštićeni. Povremeni pregled održava sve u funkciji kako se vaši uređaji i kontakti mijenjaju s vremenom."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Djelomično ste stigli, ali još niste sigurni. Zaboravljena lozinka i dalje bi mogla značiti gubitak e-pošte, datoteka i lozinki."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "I dalje ste pod visokim rizikom. Ako zaboravite lozinku, mogli biste trajno izgubiti svoju e-poštu, datoteke i lozinke."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Dobro ste osigurani, ali još uvijek postoje praznine. Više opcija oporavka pruža vam jaču sigurnosnu mrežu ako ikada izgubite lozinku."
+      ],
+      "Your account and data can be recovered": [
+        "Vaš korisnički račun i podaci mogu se oporaviti"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Vaš korisnički račun nema postavljene opcije oporavka. Ako izgubite lozinku, trajno ćete izgubiti pristup svojoj e-pošti, datotekama i lozinkama."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Vaš korisnički račun nije potpuno zaštićen. Zaboravljena lozinka i dalje bi mogla značiti gubitak pristupa vašoj e-pošti, datotekama i lozinkama."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Vaše postavljanje oporavka jedva da postoji. Ako izgubite lozinku, mogli biste trajno izgubiti pristup svojoj e-pošti, datotekama i lozinkama."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Vaše postavljanje oporavka je izvrsno. Redovito ažurirajte svoje opcije kako bi i dalje radile kada vam zatrebaju."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Vaše postavljanje oporavka je nepotpuno. Zaboravljena lozinka i dalje bi mogla značiti gubitak pristupa vašoj e-pošti, datotekama i lozinkama."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Vaše postavljanje oporavka je čvrsto, s nekoliko preostalih praznina koje treba zatvoriti. Svaka opcija koju dodate jača vašu sigurnosnu mrežu."
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "Dodaj kontakte za hitne slučajeve"
+      ],
+      "Add recovery contacts": [
+        "Dodaj kontakte za oporavak"
+      ],
+      "Add recovery email": [
+        "Dodaj adresu e-pošte za oporavak"
+      ],
+      "Add recovery phone": [
+        "Dodaj telefon za oporavak"
+      ],
+      "Allow data recovery on this device": [
+        "Dopusti oporavak podataka na ovom uređaju"
+      ],
+      "Allow password reset from settings": [
+        "Dopusti ponovno pokretanje lozinke iz postavki"
+      ],
+      "Allow scanning QR code to sign in": [
+        "Dopusti skeniranje QR kôda za prijavu"
+      ],
+      "Data recovery allowed on this device": [
+        "Oporavak podataka dopušten je na ovom uređaju"
+      ],
+      "Download recovery file": [
+        "Preuzmi datoteku za oporavak"
+      ],
+      "Email recovery enabled": [
+        "Oporavak putem e-pošte je omogućen"
+      ],
+      "Emergency contacts added": [
+        "Dodani kontakti za hitne slučajeve"
+      ],
+      "Enable email recovery": [
+        "Omogući oporavak putem e-pošte"
+      ],
+      "Enable recovery by phone": [
+        "Omogući oporavak putem telefona"
+      ],
+      "Password reset allowed from settings": [
+        "Ponovno pokretanje lozinke dopušteno iz postavki"
+      ],
+      "Password verified": [
+        "Lozinka potvrđena"
+      ],
+      "Phone recovery enabled": [
+        "Oporavak putem telefona je omogućen"
+      ],
+      "Recovery contacts added": [
+        "Dodani su kontakti za oporavak"
+      ],
+      "Recovery file downloaded": [
+        "Datoteka za oporavak je učitana"
+      ],
+      "Recovery phrase saved": [
+        "Fraza za oporavak spremljena"
+      ],
+      "Save recovery phrase": [
+        "Spremi frazu za oporavak"
+      ],
+      "Sign-in with QR code allowed": [
+        "Prijava s QR kôdom je dopuštena"
+      ],
+      "Verify password": [
+        "Potvrdi lozinku"
+      ],
+      "Verify recovery email": [
+        "Potvrdi adresu e-pošte za oporavak"
+      ],
+      "Verify recovery phone": [
+        "Potvrdi telefon za oporavak"
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Copy": [
+        "Kopiraj"
+      ],
+      "Show": [
+        "Prikaži"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Pobrinite se da vaša fraza za oporavak bude dostupna nakon što je stvorite.** Iz sigurnosnih razloga ne pohranjujemo frazu nakon što spremite promjene i više je nećete moći vidjeti u aplikaciji ${ BRAND_NAME }."
+      ],
+      "copy recovery phrase": [
+        "kopiraj frazu za oporavak"
+      ],
+      "Download PDF": [
+        "Preuzmi PDF"
+      ],
+      "download PDF": [
+        "preuzmi PDF"
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "Ili ${ copyRecoverySwitchButton } kao tekst."
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "Ili umjesto toga ${ downloadRecoveryKitSwitchButton }."
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } po preporuci"
@@ -14217,47 +14897,8 @@
       ]
     },
     "Safety review": {
-      "Check account security": [
-        "Provjera sigurnosti računa"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Ako izgubite podatke za prijavu i trebate ponovno pokrenuti svoj korisnički račun, **nužno je** da imate postavljenu i **metodu oporavka korisničkog računa i metodu oporavka podataka**, inače možda nećete moći pristupiti svojim porukama e-pošte, kontaktima, datotekama ili lozinkama."
-      ],
       "Review account safety": [
         "Pregledaj sigurnost korisničkog računa"
-      ],
-      "Safeguard account now": [
-        "Zaštitite korisnički račun sada"
-      ],
-      "Safeguard your account": [
-        "Zaštitite svoj račun"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "U opasnosti ste od gubitka pristupa svom korisničkom računu i podacima."
-      ],
-      "You are at risk of losing access to your data.": [
-        "U opasnosti ste od gubitka pristupa svojim podacima."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "Imate preporučene radnje za daljnju zaštitu svog korisničkog računa."
-      ],
-      "You have recommended actions.": [
-        "Imate preporučene radnje."
-      ],
-      "Your account and data can be recovered": [
-        "Vaš korisnički račun i podaci mogu se oporaviti"
-      ],
-      "Your account and data can be recovered.": [
-        "Vaš korisnički račun i podaci mogu se oporaviti."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Vaš korisnički račun i podaci mogu se oporaviti. Provjerite možete li još uvijek pristupiti svojim metodama oporavka."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Vaš korisnički račun i podaci mogu se oporaviti. Imate preporučene radnje za daljnju zaštitu svog korisničkog računa."
-      ],
-      "Your account is fully secure.": [
-        "Vaš korisnički račun je potpuno siguran."
       ]
     },
     "saml: Action": {
@@ -14525,6 +15166,17 @@
     "Select search results": {
       "No results found": [
         "Nema rezultata"
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Kako biste osigurali najvišu moguću sigurnost svog korisničkog računa, onemogućite oporavak putem e-pošte i SMS-a."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Kako biste bili sigurni da uvijek možete pristupiti svom ${ BRAND_NAME } korisničkom računu, učitajte svoju frazu za oporavak."
+      ],
+      "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
+        "Imate preporučene radnje od ${ PROTON_SENTINEL_NAME }"
       ]
     },
     "Server-Info": {
@@ -14810,11 +15462,11 @@
       ]
     },
     "session_recovery:settings:info": {
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "Da biste onemogućili ponovno pokretanje lozinke iz postavki, morate spremiti svoju frazu za oporavak."
+      ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Kako biste zabranili ponovno postavljanje lozinke, morate imati postavljenu metodu oporavka."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Kako biste poboljšali sigurnost svog korisničkog računa i zaštitili svoje podatke, možete zatražiti ponovno postavljanje lozinke iz postavki računa u web-aplikaciji."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14868,6 +15520,9 @@
       ]
     },
     "Settings section title": {
+      "Account": [
+        "Korisnički račun"
+      ],
       "Organization": [
         "Organizacija"
       ]
@@ -15467,14 +16122,67 @@
       ]
     },
     "Status": {
+      "${ count } person": [
+        "${ count } osoba",
+        "${ count } osobe",
+        "${ count } osoba"
+      ],
       "... waiting": [
         "... čekanje"
+      ],
+      "Add a phone number": [
+        "Dodaj telefonski broj"
+      ],
+      "Add an email address": [
+        "Dodaj adresu e-pošte"
+      ],
+      "Available on this device": [
+        "Dostupno na ovom uređaju"
       ],
       "completed": [
         "dovršeno"
       ],
+      "Disable recovery by email": [
+        "Onemogući oporavak putem e-pošte"
+      ],
+      "Disable recovery by phone": [
+        "Onemogući oporavak putem telefona"
+      ],
       "finalizing": [
         "završavanje"
+      ],
+      "Generate a recovery phrase": [
+        "Generirajte frazu za oporavak"
+      ],
+      "Last changed ${ formattedDate }": [
+        "Zadnji put promijenjeno ${ formattedDate }"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "Zadnji put ažurirano ${ formattedUpdateDate }"
+      ],
+      "Not saved": [
+        "Nije spremljeno"
+      ],
+      "Off": [
+        "Isključeno"
+      ],
+      "On": [
+        "Uključeno"
+      ],
+      "Outdated": [
+        "Zastarjelo"
+      ],
+      "Saved": [
+        "Spremljeno"
+      ],
+      "Unverified": [
+        "Nije potvrđeno"
+      ],
+      "Verified": [
+        "Potvrđeno"
+      ],
+      "Verify ${ value }": [
+        "Potvrdi ${ value }"
       ]
     },
     "Storage": {
@@ -16619,6 +17327,9 @@
       "Access control": [
         "Kontrola pristupa"
       ],
+      "Accessibility": [
+        "Pristupačnost"
+      ],
       "Account": [
         "Korisnički račun"
       ],
@@ -16663,8 +17374,14 @@
         "Dodati ${ totalServerCount } poslužitelja?",
         "Dodati ${ totalServerCount } poslužitelja?"
       ],
+      "Add a recovery contact": [
+        "Dodaj kontakt za oporavak"
+      ],
       "Add address": [
         "Dodaj adresu"
+      ],
+      "Add an emergency contact": [
+        "Dodaj kontakt za hitne slučajeve"
       ],
       "Add contact group name": [
         "Dodaj naziv grupi kontakata"
@@ -16713,6 +17430,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Dodaj korisnike u „${ policyName }”"
+      ],
+      "Advanced recovery options": [
+        "Napredne opcije oporavka"
       ],
       "Allocate storage": [
         "Dodijelite prostor za pohranu"
@@ -16837,6 +17557,9 @@
       "Collaborate on documents": [
         "Surađujte na dokumentima"
       ],
+      "Compare plans": [
+        "Usporedi planove"
+      ],
       "Confirm": [
         "Potvrdi"
       ],
@@ -16956,11 +17679,17 @@
       "Customize your mail import": [
         "Prilagodite svoj uvoz e-pošte"
       ],
-      "Data locked": [
-        "Podaci zaključani"
+      "Dashboard": [
+        "Upravljačka ploča"
       ],
       "Data recovery": [
         "Povrat podataka"
+      ],
+      "Data recovery contacts": [
+        "Kontakti za oporavak podataka"
+      ],
+      "Data recovery options": [
+        "Opcije oporavka podataka"
       ],
       "Data retention": [
         "Zadržavanje podataka"
@@ -16971,8 +17700,14 @@
       "Day theme": [
         "Dnevna tema"
       ],
+      "Deactivate current phrase?": [
+        "Deaktivirati trenutnu frazu?"
+      ],
       "Decrypt key": [
         "Dešifriranje ključa"
+      ],
+      "Deep dive into email blog posts": [
+        "Duboko zaronite u objave na blogu o e-pošti"
       ],
       "Deep dive into VPN blog posts": [
         "Detaljna analiza blog objava o VPN-u"
@@ -17012,11 +17747,17 @@
       "Device": [
         "Uređaj"
       ],
+      "Device data backup": [
+        "Sigurnosna kopija podataka uređaja"
+      ],
       "Device name": [
         "Naziv uređaja"
       ],
       "Disable account monitor?": [
         "Onemogućiti nadzor korisničkog računa?"
+      ],
+      "Disable device data backup?": [
+        "Onemogućiti sigurnosnu kopiju podataka uređaja?"
       ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"
@@ -17053,6 +17794,9 @@
       ],
       "Download apps": [
         "Preuzimanje aplikacija"
+      ],
+      "Download your recovery phrase": [
+        "Učitajte svoju frazu za oporavak"
       ],
       "Downloads": [
         "Preuzimanja"
@@ -17111,6 +17855,12 @@
       "Email subscriptions": [
         "Pretplate na e-poštu"
       ],
+      "Email verification": [
+        "Verifikacija e-pošte"
+      ],
+      "Emergency access": [
+        "Hitni pristup"
+      ],
       "Enable advanced account protection": [
         "Omogući naprednu zaštitu korisničkog računa"
       ],
@@ -17167,9 +17917,6 @@
       "Generate missing keys": [
         "Generirajte ključeve koji nedostaju"
       ],
-      "Generate new recovery phrase?": [
-        "Generirajte novu frazu za oporavak?"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "Nabavite ${ vpnPlus } za pristup svim poslužiteljima"
       ],
@@ -17199,6 +17946,9 @@
       ],
       "Gift code": [
         "Darovni kôd"
+      ],
+      "Group membership": [
+        "Grupno članstvo"
       ],
       "Group role assignment paused": [
         "Dodjeljivanje uloga grupe je pauzirano"
@@ -17280,6 +18030,9 @@
       "IP": [
         "IP"
       ],
+      "Language and time": [
+        "Jezik i vrijeme"
+      ],
       "Limit reached": [
         "Ograničenje je dosegnuto"
       ],
@@ -17334,6 +18087,9 @@
       "No events yet": [
         "Još nema događaja"
       ],
+      "Notifications": [
+        "Obavijesti"
+      ],
       "Open": [
         "Otvori"
       ],
@@ -17382,6 +18138,9 @@
       "Password": [
         "Lozinka"
       ],
+      "Password reset options": [
+        "Opcije ponovnog pokretanja lozinke"
+      ],
       "Password reset settings": [
         "Postavke ponovnog postavljanja lozinke"
       ],
@@ -17399,6 +18158,9 @@
       ],
       "Payment verification": [
         "Potvrda plaćanja"
+      ],
+      "Pending invitations": [
+        "Pozivnice na čekanju"
       ],
       "Phone": [
         "Telefon"
@@ -17421,6 +18183,9 @@
       "QR Code": [
         "QR kod"
       ],
+      "QR code sign-in": [
+        "Prijava QR kôdom"
+      ],
       "Recommended": [
         "Preporučeno"
       ],
@@ -17441,6 +18206,9 @@
       ],
       "Recovery file": [
         "Datoteka za oporavak"
+      ],
+      "Recovery phrase": [
+        "Fraza za oporavak"
       ],
       "Refer a friend": [
         "Uputi prijatelja"
@@ -17598,8 +18366,14 @@
       "Sign out": [
         "Odjava"
       ],
+      "Signed in to another account": [
+        "Prijavljeni ste na drugi korisnički račun"
+      ],
       "Signed in to member account": [
         "Prijavljen na korisnički račun člana"
+      ],
+      "Signed-in reset": [
+        "Ponovno pokretanje u prijavljenom stanju"
       ],
       "Simplify email distribution": [
         "Pojednostavite distribuciju e-pošte"
@@ -17612,6 +18386,12 @@
       ],
       "Single-sign on (SSO)": [
         "Jedinstvena prijava (SSO)"
+      ],
+      "SMS verification": [
+        "SMS potvrda"
+      ],
+      "Some of your encrypted data is locked": [
+        "Neki od vaših šifriranih podataka su zaključani"
       ],
       "Something went wrong": [
         "Nešto je pošlo po zlu"
@@ -17665,6 +18445,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "There are no events for your account": [
         "Nema događaja za vaš korisnički račun"
@@ -17722,6 +18505,9 @@
       ],
       "Upgrade complete!": [
         "Nadogradnja dovršena!"
+      ],
+      "Upgrade plan": [
+        "Nadogradi pretplatu"
       ],
       "Upgrade to ${ planName }": [
         "Nadogradite na ${ planName }"
@@ -17849,11 +18635,23 @@
       "Your plan": [
         "Vaša pretplata"
       ],
+      "Your recovery file": [
+        "Vaša datoteka za oporavak"
+      ],
+      "Your recovery phrase": [
+        "Vaša fraza za oporavak"
+      ],
+      "Your recovery setup": [
+        "Vaše postavljanje oporavka"
+      ],
       "Your referrals": [
         "Vaše preporuke"
       ],
       "Your shorter address is now ready": [
         "Vaša kraća adresa je sada spremna"
+      ],
+      "Your storage": [
+        "Vaša pohrana"
       ],
       "Your subscriptions": [
         "Vaše pretplate"
@@ -17931,6 +18729,24 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratori mogu upravljati korisničkim računima i dodijeliti administratorske ovlasti drugim korisnicima. Samo primarni administrator može uređivati plan organizacije."
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "Dopustite oporavak korisničkog računa pomoću jednokratnog kôda poslanog na vašu adresu e-pošte za oporavak"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "Dopustite oporavak svog korisničkog računa s jednokratnim kôdom poslanim na vaš telefon za oporavak"
+      ],
+      "Allow resetting your password from the account settings": [
+        "Dopusti ponovno pokretanje lozinke iz postavki računa"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "Dopustite skeniranje QR kôda iz mobilne aplikacije ${ BRAND_NAME } za prijavu"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "Dopustite pouzdanim kontaktima da zatraže pristup vašem korisničkom računu"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "Dopustite pouzdanim kontaktima da otključaju vaše šifrirane podatke nakon ponovnog pokretanja lozinke"
       ],
       "Any protection applied to suspicious activity": [
         "Bilo koja zaštita primijenjena na sumnjivu aktivnost"
@@ -18018,6 +18834,15 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Izvorna IP adresa i pružatelj internetskih usluga (ISP)"
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "Spremite frazu dugu 12 riječi kako biste trenutačno otključali svoj korisnički račun i šifrirane podatke ako ste zaboravili lozinku"
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "Spremite datoteku sigurnosne kopije šifriranja u ovom pregledniku kako biste oporavili svoje podatke nakon ponovnog pokretanja lozinke"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "Spremite datoteku sigurnosne kopije šifriranja kako biste oporavili svoje podatke nakon ponovnog pokretanja lozinke"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Postavlja sljedeće podnožje u e-pošti koju šaljete: ${ signature }. Poveznica upućuje na Vašu preporučnu poveznicu. Podnožje će se pojaviti ispod Vašeg potpisa. Potpis možete personalizirati bilo kada u ikoni zupčanika."
@@ -18233,9 +19058,6 @@
         "Nije moguće omogućiti administratorski pristup za ${ n } korisnika",
         "Nije moguće omogućiti administratorski pristup za ${ n } korisnika",
         "Nije moguće omogućiti administratorski pristup za ${ n } korisnika"
-      ],
-      "Could not enable administrator access: ${ error }": [
-        "Nije moguće omogućiti administratorski pristup: ${ error }"
       ],
       "Enable manually": [
         "Omogući ručno"
@@ -18458,9 +19280,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratori ne mogu pristupiti podacima privatnih korisnika"
       ],
@@ -18469,21 +19288,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Pozivnica je poslana, čeka se odgovor pozvanog člana"
-      ],
-      "Invite sent": [
-        "Pozivnica je uspješno poslana"
-      ],
-      "It's you": [
-        "To ste vi"
-      ],
-      "Pending admin access": [
-        "Administratorski pristup na čekanju"
-      ],
-      "Private": [
-        "Privatno"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO korisnik kojeg pruža Vaš davatelj identiteta"

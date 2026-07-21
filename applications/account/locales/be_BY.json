@@ -135,9 +135,6 @@
       "Add domain": [
         "Дадаць дамен"
       ],
-      "Add email address": [
-        "Дадаць адрас электроннай пошты"
-      ],
       "Add external address": [
         "Дадаць знешні адрас"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "Дадаць PayPal"
-      ],
-      "Add phone number": [
-        "Дадаць нумар тэлефона"
       ],
       "Add public holidays": [
         "Дадаць дзяржаўныя святы"
@@ -326,6 +320,9 @@
       ],
       "Compare plans": [
         "Параўнайце тарыфныя планы"
+      ],
+      "Configure new device profile": [
+        "Сканфігурыраваць новыя профілі прылады"
       ],
       "Configure SAML": [
         "Канфігурацыя SAML"
@@ -509,6 +506,9 @@
       ],
       "Delete and confirm": [
         "Выдаліць і пацвердзіць"
+      ],
+      "Delete device profile": [
+        "Выдаліць профіль прылады"
       ],
       "Delete filter “${ Name }”": [
         "Выдаліць фільтр “${ Name }”"
@@ -753,9 +753,6 @@
       "enable desktop notifications": [
         "ўключэнне апавяшчэнняў на працоўным стале"
       ],
-      "Enable device-based recovery": [
-        "Уключыць аднаўленне на падставе прылады"
-      ],
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
       ],
@@ -822,6 +819,9 @@
       "Generate": [
         "Згенерыраваць"
       ],
+      "Generate device profile": [
+        "Генерыраваць профіль прылады"
+      ],
       "Generate key": [
         "Згенерыраваць ключ"
       ],
@@ -836,9 +836,6 @@
       ],
       "Generate password": [
         "Згенерыраваць пароль"
-      ],
-      "Generate recovery phrase": [
-        "Згенерыраваць фразу аднаўлення"
       ],
       "Generate token": [
         "Згенерыраваць токен"
@@ -1017,6 +1014,9 @@
       "Insert link": [
         "Уставіць спасылку"
       ],
+      "Instructions": [
+        "Інструкцыі"
+      ],
       "Invite": [
         "Запрасіць"
       ],
@@ -1028,6 +1028,9 @@
       ],
       "Italic": [
         "Курсіў"
+      ],
+      "JumpCloud": [
+        "JumpCloud"
       ],
       "Keep": [
         "Пакінуць"
@@ -1133,6 +1136,9 @@
       ],
       "Maybe later": [
         "Магчыма пазней"
+      ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
       ],
       "More": [
         "Больш"
@@ -1868,9 +1874,6 @@
       ],
       "View plans details": [
         "Паглядзець падрабязнасці тарыфных планаў"
-      ],
-      "View recovery settings": [
-        "Паглядзець налады аднаўлення"
       ],
       "View recovery setup details": [
         "Паглядзець падрабязнасці наладкі аднаўлення"
@@ -3344,7 +3347,7 @@
         "Каб перанесці гэтага карыстальніка, яму неабходна прыняць запрашэнне далучыцца да ${ BRAND_NAME }."
       ],
       "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Каб перанесці гэтага карыстальніка, разгархівуйце яго ў кансолі адміністратара Google Workspace."
+        "Каб перанесці гэтага карыстальніка, разархівуйце яго ў кансолі адміністратара Google Workspace."
       ],
       "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
         "Каб перанесці гэтага карыстальніка, разблакіруйце яго ў кансолі адміністратара Google Workspace."
@@ -3550,6 +3553,9 @@
       ],
       "Discover and set up features": [
         "Пазнаёміцца і наладзіць функцыі"
+      ],
+      "Get 50% offer": [
+        "Скарыстайцеся скідкай у памеры 50%"
       ],
       "Got it": [
         "Зразумела"
@@ -6852,9 +6858,6 @@
       "Add recovery contact": [
         "Дадаць кантакт для аднаўлення"
       ],
-      "Add recovery method": [
-        "Дадаць спосаб аднаўлення"
-      ],
       "Added on ${ formattedDate }": [
         "Дададзена ${ formattedDate }"
       ],
@@ -7098,14 +7101,8 @@
       "Subscription expired": [
         "Падпіска пратэрмінавана"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "Яны дадалі мяне ў якасці даверанага кантакту і я магу атрымліваць доступ да іх уліковага запісу ў выпадку экстраннай сітуацыі."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
-        "Яны дадалі вас ў якасці даверанага кантакту і вы можаце атрымліваць доступ да іх уліковага запісу ў выпадку экстраннай сітуацыі."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "Яны могуць папрасіць доступ да майго ўліковага запісу ў выпадку экстраннай сітуацыі."
+        "Яны дадалі вас у якасці даверанага кантакту і вы можаце атрымліваць доступ да іх уліковага запісу ў выпадку экстраннай сітуацыі."
       ],
       "They may ask to access your account in case of an emergency.": [
         "Яны могуць папрасіць доступ да вашага ўліковага запісу ў выпадку экстраннай сітуацыі."
@@ -7127,9 +7124,6 @@
       ],
       "Time required before automatically granting them access": [
         "Час, які патрэбны на атрыманне дазволу аўтаматычнага доступу"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "Вы павінны мець адрас электроннай пошты або нумар тэлефона для аднаўлення."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Выдаліце ўсе свае кантакты для аднаўлення, каб адключыць гэты спосаб аднаўлення."
@@ -7181,12 +7175,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Вы можаце выдаліць іх доступ у любы час, каб аднавіць эксклюзіўны кантроль над сваім уліковым запісам."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "Вас пакуль яшчэ ніхто не прызначыў у якасці кантакту для аднаўлення."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "Вас пакуль яшчэ ніхто не прызначаў у якасці экстраннага кантакту."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранны кантакт.",
@@ -7326,6 +7314,9 @@
       ],
       "Contact signature not verified": [
         "Подпіс кантакту неправераны"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Немагчыма згенерыраваць профіль прылады. Паспрабуйце яшчэ раз."
       ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
@@ -10410,17 +10401,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Файл аднаўлення дазваляе разблакіраваць і прагледзець вашы даныя пасля аднаўлення ўліковага запісу"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Фраза аднаўлення дазваляе вам атрымаць доступ да ўліковага запісу і аднавіць зашыфраваныя паведамленні, калі вы забылі пароль"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Атрымайце доступ да больш чым 6500 высакахуткасных сервераў з магчымасцю падключэння да 10 прылад, каб захаваць свае даныя прыгляду ў бяспецы. Праграмы даступны для ${ ios }, ${ android }, ${ appleTV } і ${ desktop }."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Доступ да больш чым 20 000 сервераў у больш чым 145 краінах"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Атрымайце доступ да сваіх пароляў і абараніце сваю ідэнтычнасць у інтэрнэце на ўсіх прыладах, якімі валодаеце. Спампуйце і ўсталюйце адпаведныя праграмы ${ PASS_APP_NAME } і пашырэнні."
@@ -10430,9 +10418,6 @@
       ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Актывуйце прынамсі адзін спосаб аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
       "Active": [
         "Актываваць"
@@ -10445,6 +10430,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Дадаванне ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Дадайце ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } усяго за ${ bundlePlanPriceInline }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Дадаць ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -10547,6 +10535,9 @@
       ],
       "All data and settings are preserved": [
         "Усе даныя і налады будуць захаваны."
+      ],
+      "All devices with this device profile deployed": [
+        "Усе прылады з гэтым профілем прылады разгорнуты"
       ],
       "All inactive members deleted": [
         "Усе неактыўныя ўдзельнікі выдалены"
@@ -10875,6 +10866,9 @@
       "Choose an Entity ID to continue.": [
         "Выберыце Entity ID для працягу."
       ],
+      "Choose one:": [
+        "Выберыце які-небудзь:"
+      ],
       "Choose your service to connect with": [
         "Выберыце сэрвіс для падключэння"
       ],
@@ -10910,6 +10904,9 @@
       ],
       "Compromised": [
         "Скампраметаваны"
+      ],
+      "Configure Always-on VPN": [
+        "Канфігурацыя пастаяннай VPN"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (ldP). Гэта ўключыць SAML для ўсёй арганізацыі."
@@ -11100,6 +11097,18 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "У залежнасці ад вашых налад, яны могуць атрымаць доступ неадкладна або пасля прызначанага **перыяду чакання **."
       ],
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "Разгарніце ${ regoArtifact } непасрэдна праз свой файл разгортвання MDM"
+      ],
+      "Deploy across all your managed devices": [
+        "Разгарнуць на ўсіх кіруемых прыладах"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Разгарніце яго праз MDM (Jamf, Intune…) або ўручную на кожнай прыладзе."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Прылады, у якіх у профілі ёсць разгорнутая пастаянная VPN не змогуць падключыцца да інтэрнэту, пакуль падключэнне ${ VPN_APP_NAME } знаходзіцца ў актыўным стане."
+      ],
       "Did you know?": [
         "Ці ведалі вы што?"
       ],
@@ -11178,6 +11187,15 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Спампаваць ${ mobileConfigArtifact } і адкрыць яго на кожным Mac для ўсталявання профілю, а потым ухваліць яго ў сістэмных наладах."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "Спампуйце ${ powershellArtifact } і выканайце на кожнай прыладзе як сістэмны карыстальнік, каб аўтаматычна размясціць профіль прылады"
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Спампаваць ${ removeScriptLink } і выканаць яго на кожнай прыладзе як сістэмнага карыстальніка, каб выдаліць профіль аўтаматычна."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Спампаваць ${ VPN_APP_NAME }"
       ],
@@ -11250,6 +11268,9 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Работнікі не змогуць падключыцца да інтэрнэту без падключэння па VPN"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Уключыце аўтаматычнае падаўжэнне для захавання доступу да сервераў Plus і іх функцый."
       ],
@@ -11301,6 +11322,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL-адрас канцавога пункта атрыманы ад вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Прымусовы аўтаматычны запуск як толькі прылада выявіць профіль."
+      ],
       "Enhance your network security": [
         "Паляпшэнне бяспекі вашай сеткі"
       ],
@@ -11309,6 +11333,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Забяспечце цалкам прыватную і зашыфраваную сувязь. Атрымайце бясплатны адрас электроннай пошты ${ BRAND_NAME }."
+      ],
+      "Ensure your organization is always protected": [
+        "Пераканайцеся, што ваша арганізацыя заўсёды абаронена"
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Увядзіце пароль, каб завяршыць падрыхтоўку ўліковага запісу ${ BRAND_NAME } і пачаць выкарыстоўваць ${ VPN_APP_NAME } паміж усімі вашымі прыладамі!"
@@ -11406,6 +11433,9 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Хуткасць і канцэнтрацыя. Пошта і каляндар на вашым працоўным стале."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
+      ],
       "Featured in": [
         "Рэкамендаваны ў"
       ],
@@ -11485,13 +11515,13 @@
         "Назіранне за шлюзом"
       ],
       "Gateways": [
-        "шлюзоў"
+        "шлюзаў"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Генерыраваць профіль прылады і спампаваць файл канфігурацыі."
       ],
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Генерацыя новай фразы аднаўлення прывядзе да дэактывацыі вашай бягучай фразы аднаўлення."
-      ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Генерацыя новай фразы аднаўлення прывядзе да дэактывацыі папярэдняй."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Атрымайце ${ AUTHENTICATOR_APP_NAME } для ўсіх сваіх прылад."
@@ -11552,6 +11582,9 @@
       ],
       "Groups": [
         "Групы"
+      ],
+      "Have some more time to decide without interruption.": [
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Дапамажыце іншым сем'ям, каб іх дзеці зрабілі першыя крокі ў інтэрнэце бяспечна. Абагуліце гэты этап і распаўсюдзьце інфармацыю."
@@ -11616,9 +11649,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Калі часавы пояс сістэмы не супадае з параметрамі бягучага часавага пояса, вам будзе прапанавана абнавіць яго (не часцей за адзін раз у дзень)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Калі гэта звязана са скіданнем старога пароля, то вы можаце спыніць паўторны паказ паведамлення"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
       ],
@@ -11627,6 +11657,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, звяжыцеся з намі ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Вы страціце доступ да ${ BRAND_NAME } з тарыфным планам ${ planTitle } (дзейнічае да ${ expiryDate }), які ўключае наступныя функцыі:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
@@ -11666,9 +11699,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Вы можаце ${ recoveryMethodLink } для разблакіроўкі сваіх даных, калі нядаўна скідалі пароль. Можна спыніць паўторны паказ паведамлення, калі гэта звязана са скіданнем старога пароля."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Калі вы нядаўна скінулі пароль, то вы можаце скарыстацца спосабам аднаўлення даных, каб разблакіраваць свае даныя"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Калі ваша арганізацыя мае публічных асоб, апрацоўвае канфідэнцыяльныя даныя або можа стаць аб'ектам кібератак, настойліва рэкамендуецца ўключыць ${ PROTON_SENTINEL_NAME } для ўсіх супрацоўнікаў у вашай арганізацыі."
@@ -11811,9 +11841,6 @@
       "Invited": [
         "Запрошаны"
       ],
-      "It appears some of your data is encrypted and locked.": [
-        "Верагодна, што некаторыя з вашых даных зашыфраваны і заблакіраваны."
-      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Пераключэнне краіны сервера зойме 10 дзён і таму, вам варта пераканацца ў правільнасці выбару сервера."
       ],
@@ -11888,6 +11915,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Захоўвайце свае звесткі больш бяспечна і прыватна з дапамогай гэтых дапаможнікаў і парад."
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Захоўвайце свае паролі ў бяспецы і імгненна ўваходзьце з аўтазапаўненнем паміж кожнай прыладах."
       ],
       "Key deletion is irreversible!": [
         "Выдаленне ключа з'яўляецца незваротным!"
@@ -11978,6 +12008,9 @@
       ],
       "Low Priority": [
         "Нізкі прыярытэт"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Распаўсюджаныя паштовыя службы могуць адхіляць вашы электронныя лісты або палічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць або наладжаны не адпаведным чынам."
@@ -12213,8 +12246,8 @@
       "or discover other features:": [
         "або пазнаёмцеся з іншымі функцыямі:"
       ],
-      "Or run ${ ps1Link } via your MDM script execution": [
-        "Або выканайце ${ ps1Link } праз свой выканальны сцэнарый"
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "Або выканайце ${ powershellArtifact } праз свой выканальны сцэнарый"
       ],
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
@@ -12345,9 +12378,6 @@
       "Please fill out this field.": [
         "Запоўніце гэта поле."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Захоўвайце яе ў бяспечным месцы. Яна вам спатрэбіцца для доступу да вашага ўліковага запісу і расшыфроўкі даных у выпадку скідання пароля."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Звярніце ўвагу, што калі вы выдаліце ​​фільтр ${ nameDeleted }, то мы больш не будзем апрацоўваць усе аўтаматычныя дзеянні, якія ён запускае."
       ],
@@ -12395,6 +12425,9 @@
       ],
       "Preference saved": [
         "Параметр захаваны"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Прэміяльная абарона прыватнасці паміж усімі вашымі прыладамі"
       ],
       "Preview": [
         "Папярэдні прагляд"
@@ -12444,6 +12477,9 @@
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
       ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "Адпраўце ${ mobileConfigArtifact } на кожны Mac, якім кіруеце з дапамогай MDM."
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Звяртайцеся да нас з любымі пытаннямі, якія датычацца ${ BRAND_NAME }"
       ],
@@ -12479,9 +12515,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Фраза аднаўлення скапіявана ў буфер абмену"
-      ],
-      "Recovery phrase downloaded": [
-        "Фраза аднаўлення спампавана"
       ],
       "Recovery phrase has been disabled": [
         "Фраза аднаўлення была адключана"
@@ -12735,6 +12768,9 @@
       "Start using the shorter, catchier version of your email address.": [
         "Выбірайце кароткі і запамінальны адрас электроннай пошты."
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "Застаньцеся на сваім тарыфным плане і атрымайце скідку ў памеры 50% у наступным месяцы"
+      ],
       "Step ${ step }": [
         "Крок ${ step }",
         "Крок ${ step }",
@@ -12803,6 +12839,9 @@
       ],
       "support team": [
         "каманда падтрымкі"
+      ],
+      "Supported platforms": [
+        "Платформы, якія падтрымліваюцца"
       ],
       "Swiss based": [
         "Знаходзіцца ў Швейцарыі"
@@ -13137,6 +13176,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Выберыце спосаб аднаўлення для расшыфроўкі і прагляду вашых заблакіраваных даных пасля скідання пароля."
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "Профіль канфігурацыі павінен быць усталяваны на кожным Mac, каб уключыць пастаянную VPN. Кліент ${ VPN_APP_NAME } аўтаматычна прымяняе профіль прылады пасля яго налады."
+      ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Спачатку неабходна завяршыць генерацыю вашых новых постквантавых ключоў шыфравання, а потым уключаць постквантавую абарону."
       ],
@@ -13175,6 +13217,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Увядзіце фразу аднаўлення з 12 слоў, якая звязана з вашым уліковым запісам. Гэта дзеянне дазволіць аднавіць доступ да вашага ўліковага запісу і яго даных."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Выдаліце ${ profileFile } з ${ policiesPath } на кожнай прыладзе, каб выдаліць пастаянную VPN. Кліент ${ VPN_APP_NAME } прымусова спыніць профіль як толькі ён выявіць, што файл адсутнічае."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } для вашай прылады і падключыцца да сервера."
@@ -13326,6 +13371,9 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Выкарыстоўвайце выбраны адрас электроннай пошты ў якасці імя карыстальніка SMTP у знешнім сэрвісе і згенерыраваны токен у якасці пароля SMTP."
       ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Скарыстайцеся сваім MDM, выдаліць файл або выканайце ${ removeScriptLink } праз свой выканальны сцэнарый MDM. Любы MDM, які падтрымлівае разгортванне файлаў або выкананне сцэнарыяў будзе працаваць."
+      ],
       "User activated": [
         "Карыстальнік актываваны"
       ],
@@ -13337,6 +13385,12 @@
       ],
       "Users": [
         "Карыстальнікі"
+      ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "Выкарыстоўваеце іншы MDM? Любы MDM, які падтрымлівае разгортванне профілю канфігурацыі будзе працаваць. Звярніцеся да дакументацыі MDM, каб атрымаць дадатковую інфармацыю па запампоўцы і прызначэнню яго парку прылад."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Выкарыстоўваеце іншы MDM? Любы MDM, які падтрымлівае разгортванне файлаў або выкананне сцэнарыяў PowerShell будзе працаваць. Звярніцеся да дакументацыі MDM, каб атрымаць падрабязную інфармацыю."
       ],
       "Vault created": [
         "Сховішча створана"
@@ -13454,9 +13508,6 @@
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Мы рэкамендуем апавяшчаць удзельнікаў арганізацыі і прасіць іх наладзіць 2ФА для сваіх уліковых запісаў перад прымусовым ужываннем гэтай тэхналогіі."
-      ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Ваша інфармацыя надзейна захоўваецца для аднаўлення на даверанай прыладзе. Гэта дазваляе прадухіліць страту вашых даных."
       ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Вельмі рэкамендуецца, каб у кожнага карыстальніка быў уключаны спосаб аднаўлення доступу па фразе"
@@ -13973,12 +14024,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Ваш файл аднаўлення адновіць доступ да лістоў, кантактаў, файлаў, пароляў і іншых зашыфраваных даных у вашым уліковым запісе пасля скідання пароля."
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза аднаўлення"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Ваша фраза аднаўлення - гэта паслядоўнасць з 12 выпадкова згенерыраваных слоў у вызначаным парадку."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "Ваша фраза аднаўлення дазволіць вам увайсці і аднавіць вашы даныя ў выпадку, калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }. Яна складаецца з 12 слоў і дзейнічае аналагічна рэзервоваму паролю."
@@ -14839,6 +14884,9 @@
       "App Settings": [
         "Налады праграмы"
       ],
+      "Applies:": [
+        "Прымяняецца:"
+      ],
       "Apply filter to existing emails": [
         "Прымяніць фільтр да існуючых лістоў"
       ],
@@ -15301,6 +15349,9 @@
       "End-to-end encryption": [
         "Скразное шыфраванне"
       ],
+      "Enforce Always-on VPN": [
+        "Прымяніць пастаянную VPN"
+      ],
       "Enter code": [
         "Увядзіце код"
       ],
@@ -15546,6 +15597,9 @@
       ],
       "Lock app after inactivity": [
         "Заблакіраваць праграму пасля бяздзейнасці"
+      ],
+      "Login restrictions": [
+        "Абмежаванні ўваходаў"
       ],
       "Logo": [
         "Лагатып"
@@ -16329,17 +16383,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Аднаўленне на падставе прылады"
-      ],
       "Notification phone number": [
         "Нумар тэлефона для апавяшчэнняў"
       ],
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
-      ],
-      "Recovery phrase": [
-        "Фраза аднаўлення"
       ],
       "Set recovery phone number": [
         "Задаць нумар тэлефона для аднаўлення доступу"
@@ -16659,9 +16707,6 @@
       "How to share via email": [
         "Як абагуліць праз электронную пошту"
       ],
-      "How to unlock data": [
-        "Як разблакіраваць даныя"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Як выкарыстоўваць ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16685,9 +16730,6 @@
       ],
       "Learn more": [
         "Даведацца больш"
-      ],
-      "Learn more about data recovery": [
-        "Даведацца больш аб аднаўленні даных"
       ],
       "Manage addresses": [
         "Кіраванне адрасамі"
@@ -18088,7 +18130,7 @@
         "Подпісы HTML"
       ],
       "Kill switch/always-on VPN": [
-        "Kill Switch/Пастаянны VPN"
+        "Kill Switch/Пастаянная VPN"
       ],
       "Limited support": [
         "Абмежаваная падтрымка"
@@ -21780,146 +21822,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **Адключыць аднаўленне па тэлефоне**, каб прадухіліць захоп вашага ўліковага запісу зламыснікамі."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **Уключыць аднаўленне па нумары тэлефона** для вяртання доступу да ўліковага запісу, калі вы забудзеце свой пароль."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } будзе выкарыстоўваць гэты адрас, каб трымаць вас у курсе аб бяспецы вашага ўліковага запісу."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } будзе выкарыстоўваць гэты адрас для адпраўкі кода скідання па электроннай пошце пры скіданні вашага пароля."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } будзе выкарыстоўваць гэты нумар тэлефона для адпраўкі кода скідання па SMS пры скіданні вашага пароля."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery }, каб пераканацца ў тым, што вашы даныя могуць быць адноўлены."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**Адключыць скіданне ўліковага запісу па электроннай пошце**, каб прадухіліць захоп вашага ўліковага запісу зламыснікамі."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Уключыць аднаўленне па электроннай пошце** для вяртання доступу да ўліковага запісу, калі вы забудзеце свой пароль."
-      ],
-      "Account reset by email has been disabled": [
-        "Скіданне ўліковага запісу па электроннай пошце было адключана"
-      ],
-      "Account reset by phone has been disabled": [
-        "Скіданне ўліковага запісу па нумары тэлефона было адключана"
-      ],
-      "Account safety review": [
-        "Агляд бяспекі ўліковага запісу"
-      ],
-      "Add a phone number": [
-        "Дадаць нумар тэлефона"
-      ],
-      "Add a recovery email": [
-        "Дадаць электронную пошту для аднаўлення"
-      ],
-      "Add a recovery email address": [
-        "Дадаць адрас электроннай пошты для аднаўлення доступу"
-      ],
-      "Add a recovery phone number": [
-        "Дадаць нумар тэлефона для аднаўлення"
-      ],
-      "Add an alternative email address": [
-        "Дадаць альтэрнатыўны адрас электроннай пошты"
-      ],
-      "Add an email": [
-        "Дадаць электронную пошту"
-      ],
-      "Back to Safety Review": [
-        "Вярнуцца да бяспечнага агляду"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "Паколькі вы скінулі пароль, бягучую фразу аднаўлення можна будзе выкарыстоўваць толькі для аднаўлення даных, створаных да скідання пароля."
-      ],
-      "Can be used to regain access to your account and data": [
-        "Можа быць выкарыстаны для аднаўлення доступу да вашага ўліковага запісу і даных"
-      ],
-      "Check account security": [
-        "Праверце бяспеку ўліковага запісу"
-      ],
       "Code sent to ${ boldValue }": [
         "Код адпраўлены на ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Працягнуць у бяспечным аглядзе"
-      ],
-      "Device-based recovery enabled": [
-        "Аднаўленне на падставе прылады ўключана"
-      ],
-      "Disable account reset by email": [
-        "Адключыць скіданне ўліковага запісу па электроннай пошце"
-      ],
-      "Disable recovery by email": [
-        "Адключыць аднаўленне па электроннай пошце"
-      ],
-      "Disable recovery by phone": [
-        "Адключыць аднаўленне па нумары тэлефона"
-      ],
-      "Download ${ size }": [
-        "Спампаваць ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "Спампаваць сваю фразу аднаўлення"
-      ],
-      "Email address": [
-        "Адрас электроннай пошты"
-      ],
-      "Enable device-based recovery": [
-        "Уключыце аднаўленне на падставе прылады"
-      ],
-      "Enable recovery by email": [
-        "Уключыць аднаўленне па электроннай пошце"
-      ],
-      "Enable recovery by phone": [
-        "Уключыць аднаўленне па нумары тэлефона"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Я разумею, што ў мяне не будзе магчымасці аднавіць ужо заблакіраваныя даныя з гэтай фразай аднаўлення."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Поўны доступ да вашага ўліковага запісу ${ BRAND_NAME } будзе адноўлены пры наступным уваходзе на гэту прыладу з дапамогай вашага новага пароля, калі вы забудзеце свой бягучы пароль ${ BRAND_NAME } і вам неабходна будзе скінуць яго."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Поўны доступ да вашага ўліковага запісу ${ BRAND_NAME } будзе адноўлены пры наступным уваходзе на гэту прыладу з дапамогай вашага новага пароля, калі вы забудзеце свой бягучы пароль ${ BRAND_NAME } і вам неабходна будзе скінуць яго."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }, ваша фраза аднаўлення дазволіць вам увайсці і аднавіць свае даныя."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Калі вы страціце свае ўліковыя даныя для ўваходу і вам неабходна будзе скінуць уліковы запіс, то ў вас **абавязкова** павінен быць як **метад аднаўлення даных, так і метад аднаўлення ўліковага запісу**. У адваротным выпадку без іх вы не зможаце атрымаць доступ да сваіх паведамленняў, файлаў кантактаў або пароляў."
-      ],
-      "in case we need to contact you": [
-        "у выпадку, калі нам спатрэбіцца звязацца з вамі"
       ],
       "Invalid code": [
         "Памылковы код"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Гэта адзіны спосаб поўнага аднаўлення вашага ўліковага запісу. Пераканайцеся, што ён захаваны ў надзейным месцы."
-      ],
-      "Recovery email address": [
-        "Адрас электроннай пошты для аднаўлення"
-      ],
-      "Recovery phone number": [
-        "Нумар тэлефона для аднаўлення"
-      ],
       "Review account safety": [
         "Агляд бяспекі ўліковага запісу"
-      ],
-      "Safeguard account now": [
-        "Абараніць уліковы запіс"
-      ],
-      "Safeguard your account": [
-        "Абараніце свой уліковы запіс"
-      ],
-      "Safeguard your account further": [
-        "Узмацніце бяспеку свайго ўліковага запісу"
       ],
       "Safety review": [
         "Бяспечны агляд"
@@ -21927,194 +21837,8 @@
       "Send a new code": [
         "Адправіць новы код"
       ],
-      "Show more": [
-        "Паказаць больш"
-      ],
-      "Take action to secure your account": [
-        "Прыміце меры, каб абараніць свой уліковы запіс"
-      ],
-      "There was an error generating your recovery phrase": [
-        "Адбылася памылка генерацыі вашай фразы аднаўлення"
-      ],
-      "There was an error verifying your email": [
-        "Адбылася памылка спраўджання вашай электроннай пошты"
-      ],
-      "There was an error verifying your recovery email": [
-        "Адбылася памылка спраўджання вашай электроннай пошты для аднаўлення"
-      ],
-      "There was an error verifying your recovery phone": [
-        "Адбылася памылка спраўджання вашага нумара тэлефона"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "для аўтаматычнага аднаўлення вашых даных пры ўваходзе ў давераную прыладу"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Увядзіце код спраўджання адпраўлены на электронную пошту ${ boldEmail } спраўдзіць, што яна належыць менавіта вам."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Увядзіце код спраўджання адпраўлены на ваш нумар тэлефона ${ boldPhoneNumber } для пацвярджэння таго, што ён належыць менавіта вам."
-      ],
-      "to prevent attackers from taking over your account": [
-        "для прадухілення захопу зламыснікамі вашага ўліковага запісу"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "для аднаўлення вашага ўліковага запісу і даных пры магчымай блакіроўцы"
-      ],
-      "to recover your account if you're ever locked out": [
-        "для аднаўлення вашага ўліковага запісу пры магчымай блакіроўцы"
-      ],
       "update it now": [
-        "абнавіць яго"
-      ],
-      "Update your recovery phrase": [
-        "Абнавіце сваю фразу аднаўлення"
-      ],
-      "Update your recovery phrase?": [
-        "Абнавіць вашу фразу аднаўлення?"
-      ],
-      "Verify": [
-        "Спраўджанне"
-      ],
-      "Verify your email address": [
-        "Спраўдзіце свой адрас электроннай пошты"
-      ],
-      "Verify your phone number": [
-        "Спраўдзіце свой нумар тэлефона"
-      ],
-      "Verify your recovery email address": [
-        "Спраўдзіць ваш адрас электроннай пошты для аднаўлення"
-      ],
-      "Verify your recovery phone number": [
-        "Спраўдзіць нумар тэлефона для аднаўлення"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "Сістэма сутыкнулася з памылкай падчас генерацыі вашай фразы аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Адбылася памылка пры спраўджанні вашай электроннай пошты. Паспрабуйце яшчэ раз пазней або звярніцеся ў службу падтрымкі, калі праблема застанецца."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Мы сутыкнуліся з памылкай падчас спраўджання вашай электроннай пошты для аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Мы сутыкнуліся з памылкай падчас спраўджання вашага нумара тэлефона для аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "Калі вы ўключыце аднаўленне на падставе прылады, то ${ BRAND_NAME } захавае зашыфраваную рэзервовую копію звязкі ключоў як файл у сховішчы вашага вэб-браўзера."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Вы рызыкуеце страціць доступ да свайго ўліковага запісу і даных."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Вы рызыкуеце страціць доступ да сваіх даных."
-      ],
-      "You can disable this at any time.": [
-        "Вы зможаце адключыць гэту функцыю ў любы момант."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Вы можаце скарыстацца фразай аднаўлення ў гэтым наборы для поўнага аднаўлення вашага ўліковага запісу, калі вы скінулі свой пароль. Пераканайцеся, што гэта інфармацыя захоўваецца ў надзейным месцы."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "Вы можаце выкарыстоўваць сваю электронную пошту для аднаўлення доступу да ўліковага запісу, калі забудзеце пароль."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Вы можаце выкарыстоўваць сваю электронную пошту для вяртання доступу да ўліковага запісу, калі забудзеце пароль."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "Вы можаце выкарыстоўваць свой нумар тэлефона для вяртання доступу да ўліковага запісу, калі вы забудзеце свой пароль."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "Вы ўжо спампоўвалі фразу аднаўлення. Паўторнае спампоўванне **дэактывуе папярэдні экзэмпляр**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "У вас ёсць рэкамендаваныя дзеянні для далейшай абароны вашага ўліковага запісу."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "У вас ёсць рэкамендаваныя дзеянні, каб абараніць свой уліковы запіс."
-      ],
-      "You have recommended actions.": [
-        "У вас ёсць рэкамендаваныя дзеянні."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "Вы больш не зможаце выкарыстоўваць гэты адрас, каб скінуць свой уліковы запіс."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "Вы больш не зможаце выкарыстоўваць гэты нумар тэлефона, каб скінуць свой уліковы запіс."
-      ],
-      "Your account and data can be recovered": [
-        "Ваш уліковы запіс і даныя могуць быць адноўлены"
-      ],
-      "Your account and data can be recovered.": [
-        "Ваш уліковы запіс і даныя могуць быць адноўлены."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Ваш уліковы запіс і даныя могуць быць адноўлены. Праверце, ці ёсць у вас доступ да метадаў аднаўлення."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Ваш уліковы запіс і даныя могуць быць адноўлены. У вас ёсць рэкамендаваныя дзеянні для далейшай абароны вашага ўліковага запісу."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "Ваш уліковы запіс і даныя могуць быць адноўлены. У вас ёсць рэкамендаваныя дзеянні."
-      ],
-      "Your account is fully secure.": [
-        "Ваш уліковы запіс надзейна абаронены."
-      ],
-      "Your account is secure.": [
-        "Ваш уліковы запіс абаронены."
-      ],
-      "Your email address is:": [
-        "Ваш адрас электроннай пошты:"
-      ],
-      "Your email is set": [
-        "У вас зададзена электронная пошта"
-      ],
-      "Your recovery email": [
-        "Ваша электронная пошта для аднаўлення"
-      ],
-      "Your recovery email address is:": [
-        "Ваша электронная пошта для аднаўлення доступу:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "Ваша электронная пошта і нумар тэлефона могуць **аднавіць доступ толькі да вашага ўліковага запісу**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "Ваша электронная пошта можа **аднавіць доступ толькі да вашага ўліковага запісу**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Ваша электронная пошта для аднаўлення доступу можа быць выкарыстана зламыснікамі для захопу вашага ўліковага запісу. ${ disableEmail } для павышэння бяспекі свайго ўліковага запісу."
-      ],
-      "Your recovery email has been enabled": [
-        "Ваша пошта аднаўлення была ўключана."
-      ],
-      "Your recovery email is set": [
-        "Ваша электронная пошта зададзена"
-      ],
-      "Your recovery methods": [
-        "Вашы спосабы аднаўлення"
-      ],
-      "Your recovery phone": [
-        "Ваш нумар тэлефона для аднаўлення"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "Ваш нумар тэлефона можа **аднавіць доступ толькі да вашага ўліковага запісу**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Ваш нумар тэлефона для аднаўлення доступу можа быць выкарыстаны зламыснікамі для захопу вашага ўліковага запісу. ${ disablePhone } для павышэння бяспекі свайго ўліковага запісу."
-      ],
-      "Your recovery phone has been enabled": [
-        "Ваш нумар тэлефона для аднаўлення быў уключаны."
-      ],
-      "Your recovery phone is set": [
-        "Ваш нумар тэлефона для аднаўлення зададзены"
-      ],
-      "Your recovery phone number is:": [
-        "Ваш нумар тэлефона для аднаўлення доступу:"
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза аднаўлення"
-      ],
-      "Your recovery phrase is set": [
-        "Ваш нумар фраза аднаўлення зададзена"
+        "абнавіце яго"
       ]
     },
     "safety_review": {
@@ -22974,9 +22698,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "У вас павінен быць наладжаны спосаб аднаўлення, каб забараніць скіданне пароля."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Вы можаце запытаць скіданне пароля з налад вашага ўліковага запісу ў вэб-праграме, каб палепшыць бяспеку вашага ўліковага запісу і абараніць свае даныя."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -24278,6 +23999,15 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
+      ],
+      "Disabled": [
+        "Адключана"
+      ],
+      "Enabled": [
+        "Уключана"
+      ],
+      "No restrictions": [
+        "Без абмежаванняў"
       ]
     },
     "Status": {
@@ -25119,6 +24849,9 @@
       "Compare the key differences that matter for your business.": [
         "Параўнайце ключавыя адрозненні, якія маюць значэнне для вашага бізнесу."
       ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Прымусова выкарыстоўвайце VPN ва ўсёй арганізацыі, блакіруючы доступ да інтэрнэту, пакуль не будзе ўсталявана падключэнне па VPN."
+      ],
       "Free forever": [
         "Бясплатна назаўсёды"
       ],
@@ -25936,6 +25669,12 @@
       "Also in your plan": [
         "Ваш тарыфны план таксама ўключае"
       ],
+      "Always-on VPN": [
+        "Пастаянная VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Профіль прылады пастаяннай VPN"
+      ],
       "Amount": [
         "Сума"
       ],
@@ -26071,8 +25810,14 @@
       "Check your default mail application": [
         "Праверце сваю прадвызначаную паштовую праграму"
       ],
+      "Choose a deployment method": [
+        "Выберыце спосаб разгортвання"
+      ],
       "Choose a provider": [
         "Выберыце пастаўшчыка"
+      ],
+      "Choose a removal method": [
+        "Выберыце спосаб выдалення"
       ],
       "Choose an account": [
         "Выберыце ўліковы запіс"
@@ -26100,6 +25845,9 @@
       ],
       "Composing": [
         "Напісанне"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Канфігурацыя профілю прылады пастаяннай VPN"
       ],
       "Confirm": [
         "Пацвердзіць"
@@ -26206,6 +25954,9 @@
       "Created": [
         "Створана"
       ],
+      "Created!": [
+        "Створана!"
+      ],
       "Creating user accounts": [
         "Стварэнне ўліковых запісаў карыстальнікаў"
       ],
@@ -26253,9 +26004,6 @@
       ],
       "Data collection": [
         "Збор даных"
-      ],
-      "Data locked": [
-        "Даныя заблакіраваны"
       ],
       "Data recovery": [
         "Аднаўленне даных"
@@ -26340,6 +26088,15 @@
       ],
       "Deny access to user?": [
         "Забараніць доступ карыстальніку?"
+      ],
+      "Deploy device profile to your devices": [
+        "Разгортванне профілю прылады на вашых прыладах"
+      ],
+      "Deploy via MDM": [
+        "Разгортванне праз MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Разгортванне праз PowerShell"
       ],
       "Description": [
         "Апісанне"
@@ -26632,9 +26389,6 @@
       "Generate missing keys": [
         "Згенерыраваць ключы, якія адсутнічаюць"
       ],
-      "Generate new recovery phrase?": [
-        "Згенерыраваць новую фразу аднаўлення?"
-      ],
       "Generate SMTP token": [
         "Генерацыя токена SMTP"
       ],
@@ -26785,6 +26539,9 @@
       "Information exposed in breach": [
         "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
       ],
+      "Install it manually": [
+        "Усталяваць яго ўручную"
+      ],
       "Integrations": [
         "Інтэграцыі"
       ],
@@ -26841,6 +26598,9 @@
       ],
       "Lower your cost without losing features": [
         "Знізіце выдаткі без страты функцый"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "Галоўны пароль"
@@ -27109,6 +26869,9 @@
       "Remove all members?": [
         "Выдаліць усіх удзельнікаў?"
       ],
+      "Remove Always-on VPN device profile": [
+        "Выдаліць профіль прылады пастаяннай VPN"
+      ],
       "Remove calendar": [
         "Выдаліць каляндар"
       ],
@@ -27135,6 +26898,9 @@
       ],
       "Remove user?": [
         "Выдаліць карыстальніка?"
+      ],
+      "Remove via MDM": [
+        "Выдаліце праз MDM"
       ],
       "Rename the gateway": [
         "Перайменаваць шлюз"
@@ -27373,6 +27139,9 @@
       "Status": [
         "Статус"
       ],
+      "Stay for 50% off your next month": [
+        "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
+      ],
       "Stay secure and connected anywhere": [
         "Заставайцеся ў бяспецы і на сувязі ў любым месцы"
       ],
@@ -27609,6 +27378,9 @@
       ],
       "What is the dark web?": [
         "Што такое цёмная сетка?"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Wipe all logs?": [
         "Выцерці ўсе журналы?"
@@ -27915,6 +27687,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Уключае ўсіх карыстальнікаў вашай арганізацыі. Дзейнічае толькі на прыладах, дзе разгорнуты профіль прылады з пастаяннай VPN."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Уключае карыстальніцкія дамены электроннай пошты і неабмежаваную колькасць псеўданімаў hide-my-email у ${ MAIL_APP_NAME }, доступ да сервераў у больш чым 120 краінах свету ў ${ VPN_SHORT_APP_NAME }, убудаваны 2ФА і бяспечнае абагульванне ў ${ PASS_SHORT_APP_NAME } і шмат чаго іншага."
@@ -28297,9 +28072,6 @@
         "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальнікаў",
         "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальнікаў"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Не ўдалося ўключыць доступ для адміністратара: ${ error }"
-      ],
       "Enable admin access?": [
         "Уключыць доступ адміністратара?"
       ],
@@ -28568,9 +28340,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2ФА"
-      ],
       "Administrators can't access the data of private users": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў"
       ],
@@ -28579,21 +28348,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Запрашэнне адпраўлена. Чаканне адказу ад запрошанага ўдзельніка"
-      ],
-      "Invite sent": [
-        "Запрашэнне адпраўлена"
-      ],
-      "It's you": [
-        "Гэта вы"
-      ],
-      "Pending admin access": [
-        "Чаканне правоў доступу адміністратара"
-      ],
-      "Private": [
-        "Прыватны"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Карыстальнік SSO, які забяспечаны вашым пастаўшчыком пасведчанняў"

@@ -553,12 +553,6 @@
       "Regenerate": [
         "Regenerar"
       ],
-      "Regex invalid": [
-        "Expresión regular inválida"
-      ],
-      "Regex unsafe": [
-        "Expresión regular insegura"
-      ],
       "Reject": [
         "Rechazar"
       ],
@@ -1311,6 +1305,12 @@
       ],
       "PIN codes do not match": [
         "Los códigos PIN no coinciden"
+      ],
+      "Regex invalid": [
+        "Expresión regular inválida"
+      ],
+      "Regex unsafe": [
+        "Expresión regular insegura"
       ],
       "Registration failure: ${ message }": [
         "Error del registro: ${ message }"

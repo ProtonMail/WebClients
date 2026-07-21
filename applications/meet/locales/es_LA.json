@@ -226,7 +226,7 @@
       "Copy address": [
         "Copiar la dirección"
       ],
-      "Copy invitation link": [
+      "Copy invite link": [
         "Copiar enlace de invitación"
       ],
       "Copy link": [
@@ -1800,6 +1800,9 @@
       ]
     },
     "Error": {
+      "Background blur initialization failed. Please toggle your camera or background blur again": [
+        "Error al inicializar el desenfoque de fondo. Vuelva a activar o desactivar la cámara o el difuminado de fondo"
+      ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
       ],
@@ -2198,6 +2201,9 @@
       "Attention required": [
         "Atención requerida"
       ],
+      "Background blur initializing": [
+        "Inicializando el difuminado del fondo"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise la carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
@@ -2341,6 +2347,9 @@
       ],
       "Failed to update meeting schedule": [
         "Error al actualizar el horario de la reunión"
+      ],
+      "Failed to update meeting waiting room status": [
+        "Error al actualizar el estado de la sala de espera"
       ],
       "Free meeting": [
         "Reunión gratuita"

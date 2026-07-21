@@ -148,6 +148,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-Apps herunterladen"
       ],
+      "Download chart": [
+        "Diagramm herunterladen"
+      ],
       "Download logs": [
         "Protokolle herunterladen"
       ],
@@ -201,6 +204,9 @@
       ],
       "Hide": [
         "Ausblenden"
+      ],
+      "Hide chart spec": [
+        "Diagrammspezifikation verbergen"
       ],
       "Hide more benefits": [
         "Mehr Vorteile ausblenden"
@@ -429,6 +435,9 @@
       ],
       "Verify account": [
         "Konto verifizieren"
+      ],
+      "View chart spec": [
+        "Diagrammspezifikation anzeigen"
       ],
       "View invoice": [
         "Rechnung anzeigen"
@@ -834,6 +843,9 @@
       ],
       "Discover and set up features": [
         "Entdecken und Funktionen einrichten"
+      ],
+      "Get 50% offer": [
+        "50 % Rabatt sichern"
       ],
       "Remind me later": [
         "Später erneut fragen"
@@ -1379,6 +1391,9 @@
       ],
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Mehr erfahren, wie ${ LUMO_SHORT_APP_NAME } eingesetzt werden kann"
+      ],
+      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
+        "${ LUMO_SHORT_APP_NAME } Daten mithilfe von Diagrammen visualisieren lassen"
       ],
       "Lightweight model for everyday tasks": [
         "Leichtgewichtiges Modell für alltägliche Aufgaben"
@@ -2182,9 +2197,6 @@
       "You've reached your image limit for this period.": [
         "Du hast dein Bild-Limit für diesen Zeitraum erreicht."
       ],
-      "You've reached your image limit for this period. Upgrade to keep creating images.": [
-        "Du hast dein Bilderlimit für diesen Zeitraum erreicht. Führe ein Upgrade durch, um weiterhin Bilder zu erstellen."
-      ],
       "You've run out of weekly chats, please ": [
         "Du hast keine wöchentlichen Chats mehr übrig, bitte "
       ],
@@ -2800,6 +2812,9 @@
       "Visionary": [
         "Visionary"
       ],
+      "Visualization mode": [
+        "Visualisierungs-Modus"
+      ],
       "We'd love your feedback!": [
         "Wir freuen uns auf dein Feedback."
       ],
@@ -3144,14 +3159,8 @@
       "Download": [
         "Herunterladen"
       ],
-      "Download image": [
-        "Bild herunterladen"
-      ],
       "Edit agent": [
         "Agent bearbeiten"
-      ],
-      "Edit image": [
-        "Bild bearbeiten"
       ],
       "Edit instructions": [
         "Anweisungen bearbeiten"
@@ -3367,26 +3376,17 @@
       "Link with ${ DRIVE_APP_NAME } folder": [
         "Mit Ordner von ${ DRIVE_APP_NAME } verknüpfen"
       ],
-      "Load more": [
-        "Weitere laden"
-      ],
       "New chat": [
         "Neuer Chat"
       ],
       "New project": [
         "Neues Projekt"
       ],
-      "Projects": [
-        "Projekte"
-      ],
       "Save": [
         "Speichern"
       ],
       "Search": [
         "Suche"
-      ],
-      "See all": [
-        "Alle anzeigen"
       ],
       "Send": [
         "Senden"
@@ -3417,9 +3417,6 @@
       "Failed to create folder": [
         "Ordner konnte nicht erstellt werden"
       ],
-      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
-        "Fehler beim Herunterladen von „${ file.name }“: Datenintegritätsprüfung fehlgeschlagen. Bitte versuche es erneut."
-      ],
       "Failed to index Drive folder for search": [
         "Fehler beim Indizieren des Drive-Ordners für die Suche"
       ],
@@ -3429,9 +3426,6 @@
       "Failed to load image": [
         "Bild konnte nicht geladen werden"
       ],
-      "Failed to load images. Please try again.": [
-        "Bilder konnten nicht geladen werden. Bitte versuche es noch einmal."
-      ],
       "Failed to process file: ${ file.name }": [
         "Fehler beim Verarbeiten der Datei: ${ file.name }"
       ],
@@ -3440,12 +3434,6 @@
       ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Datei \"${ file.name }\" (${ fileSizeFormatted }) überschreitet das Limit von ${ maxSizeFormatted }. Verknüpfe einen ${ DRIVE_APP_NAME }-Ordner, um größere Dateien hochzuladen."
-      ],
-      "File download failed due to integrity check. Please try again.": [
-        "Der Dateidownload ist aufgrund einer Integritätsprüfung fehlgeschlagen. Bitte versuche es erneut."
-      ],
-      "File format not supported: ${ file.name }": [
-        "Dateiformat nicht unterstützt: ${ file.name }"
       ],
       "File type not supported: ${ file.name }": [
         "Dateiformat nicht unterstützt: ${ file.name }"
@@ -3594,9 +3582,6 @@
       "Cookies or website data are blocked in your browser settings": [
         "In deinen Browsereinstellungen sind Cookies oder Website-Daten blockiert"
       ],
-      "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
-        "Erstelle Bilder, wende Stile an und skizziere Ideen. Melde dich an oder erstelle ein kostenloses Konto, um deine Kreationen zu speichern."
-      ],
       "Create purpose-built assistants with their own instructions. Set them up once, and they’ll follow your preferences every time.": [
         "Erstelle zweckgebundene Assistenten mit ihren eigenen Anweisungen. Richte sie einmal ein und sie werden deine Einstellungen jedes Mal befolgen."
       ],
@@ -3677,9 +3662,6 @@
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Auf dieser Karte befinden sich keine persönlichen Details – nur dein Preisgabe-Score nach Bereich. Je niedriger, desto weniger hast du preisgegeben."
-      ],
-      "No projects yet": [
-        "Noch keine Projekte"
       ],
       "Now protect the person behind it.": [
         "Schütze jetzt die Person dahinter."
@@ -3811,77 +3793,6 @@
         "Deine Daten sind durch Zero-Access-Verschlüsselung geschützt"
       ]
     },
-    "collider_2025:Inspiration suggestion prompt": {
-      "3D animated character in a high-quality family film style, expressive face, large emotional eyes, soft subsurface skin, stylized proportions, vibrant colors, detailed hair and clothing, cinematic lighting, shallow depth of field, friendly and charming personality, ultra polished render, studio-quality animation still.": [
-        "3D-animierter Charakter im Stil eines hochwertigen Familienfilms, ausdrucksstarkes Gesicht, große emotionale Augen, weiche Subsurface-Haut, stilisierte Proportionen, lebendige Farben, detailliertes Haar und Kleidung, filmische Beleuchtung, geringe Tiefenschärfe, freundliche und charmante Persönlichkeit, ultra-poliertes Rendering, Animations-Standbild in Studioqualität."
-      ],
-      "A dreamy close-up of flowers swept into soft radial trails by rotating camera motion, where the center blooms in crisp detail while petals dissolve outward into creamy bokeh under gentle natural light.": [
-        "Eine verträumte Nahaufnahme von Blumen, die durch rotierende Kamerabewegungen in weiche, radiale Spuren gezogen werden, wobei das Zentrum in scharfen Details erblüht, während sich die Blütenblätter unter sanftem natürlichem Licht nach außen hin in ein cremiges Bokeh auflösen."
-      ],
-      "A striking monochromatic study in yellow — just a fragment of contemporary architecture emerging from its equally golden surroundings, with tonal shifts alone carving out the geometric surfaces and lending the scene its quiet sense of depth and form.": [
-        "Eine beeindruckende monochrome Studie in Gelb – nur ein Fragment zeitgenössischer Architektur, das sich aus seiner ebenso goldenen Umgebung abhebt, während feine Farbschattierungen die geometrischen Oberflächen formen und der Szene eine ruhige Tiefe und Struktur verleihen."
-      ],
-      "A warm and cozy Japandi-style living room, minimalist aesthetic, cream sectional sofa, neutral and mustard throw pillows, woven pouf, large textured area rug with fringe, minimalist botanical wall art, large indoor palm plant, soft ambient golden lighting, candles, serene and peaceful atmosphere, photorealistic, interior design photography.": [
-        "Ein warmes und gemütliches Wohnzimmer im Japandi-Stil, minimalistische Ästhetik, cremefarbenes Sektionssofa, neutrale und senfgelbe Kissen, geflochtener Sitzpouf, großer strukturierter Teppich mit Fransen, minimalistische botanische Wandkunst, große Palmen-Zimmerpflanze, weiche goldene Umgebungsbeleuchtung, Kerzen, ruhige und friedliche Atmosphäre, fotorealistisch, Innenarchitektur-Fotografie."
-      ],
-      "Abstract composition of translucent glass shapes floating in space, soft refraction and reflection, smooth curved forms, frosted and clear glass mix, pastel lighting with subtle purple and blue tones, minimalist design, premium modern aesthetic, soft shadows, ultra clean background, high resolution, 3D render style.": [
-        "Abstrakte Komposition aus transluzenten Glasformen, die im Raum schweben, sanfte Lichtbrechung und Reflexion, weiche geschwungene Formen, Mischung aus mattiertem und klarem Glas, Pastellbeleuchtung mit dezenten Lila- und Blautönen, minimalistisches Design, moderne Premium-Ästhetik, weiche Schatten, ultrasauberer Hintergrund, hohe Auflösung, 3D-Renderstil."
-      ],
-      "Abstract frozen ice background in soft pastel lavender and light purple tones, translucent crystalline ice textures, subtle frost patterns, glowing icy surface, smooth gradients, sparkling frozen details, ethereal winter atmosphere, clean and minimal design, soft lighting, elegant luxury aesthetic, high resolution, dreamy frozen landscape, delicate reflections, ultra-detailed, background only, no objects, no text.": [
-        "Abstrakter gefrorener Eis-Hintergrund in sanften Pastell-Lavendel- und hellen Lilatönen, lichtdurchlässige kristalline Eistexturen, subtile Frostmuster, leuchtende Eisoberfläche, sanfte Farbverläufe, funkelnde gefrorene Details, ätherische Winteratmosphäre, klares und minimalistisches Design, weiche Beleuchtung, elegante Luxusästhetik, hohe Auflösung, verträumte Eislandschaft, zarte Reflexionen, ultradetailliert, nur Hintergrund, keine Objekte, kein Text."
-      ],
-      "Abstract futuristic background with flowing horizontal ribbon waves, layered luminous bands, soft neon green and cyan gradients, smooth organic curves, subtle motion blur, glossy depth, dark high-contrast backdrop, dynamic light streaks, modern tech aesthetic, clean geometric rhythm, cinematic glow, ultra-detailed digital art, premium UI background, 3D render.": [
-        "Abstrakter futuristischer Hintergrund mit fließenden horizontalen Bandwellen, geschichteten leuchtenden Streifen, weichen neongrünen und cyanfarbenen Verläufen, sanften organischen Kurven, dezenter Bewegungsunschärfe, glänzender Tiefe, dunklem, kontrastreichem Hintergrund, dynamischen Lichtstreifen, moderner Tech-Ästhetik, sauberem geometrischem Rhythmus, kinematografischem Leuchten, hochdetaillierter digitaler Kunst, Premium-Benutzeroberflächen-Hintergrund, 3D-Render."
-      ],
-      "Abstract glass background design, translucent glass morphism style, smooth flowing shapes and layered glass panels, soft refraction and light dispersion, purple and deep violet dominant color palette, blended with rich blue tones and subtle accents of warm yellow light, cinematic lighting, ultra soft gradients, glossy and frosted glass textures, depth and blur effects, minimal but premium aesthetic, high resolution, 3D rendered, modern tech UI background, elegant and futuristic atmosphere": [
-        "Abstraktes Glashintergrund-Design, transluzenter Glasmorphismus-Stil, weich fließende Formen und geschichtete Glasscheiben, sanfte Lichtbrechung und Lichtstreuung, dominante Farbpalette in Purpur und tiefem Violett, gemischt mit satten Blautönen und dezenten Akzenten von warmem gelbem Licht, kinoreife Beleuchtung, ultrasanfte Farbverläufe, glänzende und mattierte Glasstrukturen, Tiefen- und Unschärfeeffekte, minimalistische, aber erstklassige Premium-Ästhetik, hohe Auflösung, 3D-gerendert, moderner Tech-Benutzeroberflächen-Hintergrund, elegante und futuristische Atmosphäre"
-      ],
-      "Abstract minimalist background, soft light purple and pastel yellow color palette, smooth gradient transitions, flowing organic shapes, subtle glow, airy and modern aesthetic, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
-        "Abstrakter, minimalistischer Hintergrund, Farbpalette in hellem Lila und Pastellgelb, sanfte Farbverläufe, fließende organische Formen, dezentes Leuchten, luftige und moderne Ästhetik, klare Komposition, sanfte Lichteffekte, High-End-Design, weiche Tiefe, elegante und verträumte Atmosphäre, ultrahohe Auflösung."
-      ],
-      "Aerial photograph of rolling agricultural hills forming smooth, wave-like patterns across a vast landscape. The fields are divided into soft gradients of green and golden yellow, suggesting different crops or stages of growth. Long, curved tractor tracks trace elegant lines through the terrain, emphasizing the rhythm and geometry of the land. Warm sunlight casts gentle shadows across the contours, enhancing depth and texture. Minimalist composition, highly detailed natural patterns, serene and atmospheric, captured in a cinematic landscape photography style with soft contrast and rich natural color tones.": [
-        "Luftaufnahme von sanften landwirtschaftlichen Hügeln, die wellenartige Muster über eine weite Landschaft bilden. Die Felder sind in sanfte Verläufe aus Grün und Goldgelb unterteilt, was auf verschiedene Nutzpflanzen oder Wachstumsstadien hindeutet. Lange, geschwungene Traktorspuren ziehen elegante Linien durch das Gelände und betonen die Rhythmik und Geometrie des Bodens. Warmes Sonnenlicht wirft sanfte Schatten auf die Konturen und verstärkt Tiefe und Textur. Minimalistische Komposition, detailreiche Naturmuster, ruhig und atmosphärisch, aufgenommen im Stil einer filmischen Landschaftsfotografie mit weichem Kontrast und satten, natürlichen Farbtönen."
-      ],
-      "Back view silhouette of a woman with hair tied up typing on a laptop. Dark purple screen, clean light purple background, high-contrast studio lighting, minimalist tech mockup style.": [
-        "Rückansicht einer Silhouette einer Frau mit hochgestecktem Haar, die auf einem Laptop tippt. Dunkellila Bildschirm, cleaner helllila Hintergrund, kontrastreiche Studiobeleuchtung, minimalistischer Tech-Mockup-Stil."
-      ],
-      "Close-up texture of polished cross-section tree trunk, intricate swirling growth rings, detailed cracks and wood grain, warm brown and amber tones, natural organic pattern, high resolution.": [
-        "Nahaufnahme-Textur eines polierten Baumstamm-Querschnitts, kunstvolle, wirbelnde Jahresringe, detaillierte Risse und Holzmaserung, warme Braun- und Bernsteintöne, natürliches organisches Muster, hohe Auflösung."
-      ],
-      "Ethereal portrait of a person wearing a sleek dark VR headset, body dissolving into a glowing cyan-teal haze. Centered composition, uniform saturated teal-blue gradient background, backlit silhouette with luminous rim lighting on the headset and fingertips. One hand loosely clenched, the other reaching forward palm-out. Futuristic sci-fi atmosphere, minimalist and dreamlike, digital art style, shallow depth of field.": [
-        "Ätherisches Porträt einer Person mit einer eleganten, dunklen VR-Brille, deren Körper sich in einem leuchtenden, cyan-türkisfarbenen Nebel auflöst. Zentrierte Komposition, gleichmäßiger, gesättigter blau-türkisfarbener Farbverlauf im Hintergrund, Silhouette mit Gegenlicht und leuchtender Konturenbeleuchtung auf dem Headset und den Fingerspitzen. Eine Hand ist locker geballt, die andere streckt sich mit der Handfläche nach außen nach vorne. Futuristische Sci-Fi-Atmosphäre, minimalistisch und traumhaft, digitaler Kunststil, geringe Schärfentiefe."
-      ],
-      "Futuristic abstract background, neon green and blue gradient, smooth organic shapes, subtle glow, ethereal atmosphere, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
-        "Futuristischer abstrakter Hintergrund, neongrüner und blauer Farbverlauf, weiche organische Formen, dezentes Leuchten, ätherische Atmosphäre, saubere Komposition, sanfte Lichteffekte, High-End-Design, weiche Tiefe, elegante und verträumte Atmosphäre, ultrahohe Auflösung."
-      ],
-      "Heavily blurred, out of focus surreal profile portrait. Vibrant neon gradient with bright orange, hot pink, and deep electric blue. High contrast, heavy film grain, minimalist abstract aesthetic.": [
-        "Stark verschwommenes, unscharfes, surreales Profilporträt. Lebendiger Neon-Verlauf mit leuchtendem Orange, grellem Pink und tiefem Elektroblau. Hoher Kontrast, starkes Filmkorn, minimalistische abstrakte Ästhetik."
-      ],
-      "Hyper-realistic voluminous fluffy white clouds, dense and soft textures, minimalist pale blue gradient sky, soft cinematic lighting, clean aesthetic, ethereal and peaceful mood, studio 3D render style, 8k resolution": [
-        "Hyperrealistische, voluminöse, flauschige weiße Wolken, dichte und weiche Texturen, minimalistischer blassblauer Verlaufshimmel, weiche filmische Beleuchtung, klare Ästhetik, ätherische und friedliche Stimmung, Studio-3D-Rendering-Stil, 8K-Auflösung"
-      ],
-      "Minimalist Asian ink wash painting style. A winding white path trails along a mountain ridge covered in deep blue and indigo trees, fading into a heavy white fog. A vibrant, textured solid red sun hangs in the upper right. Surreal, serene, and high-contrast composition.": [
-        "Minimalistischer asiatischer Tuschemalerei-Stil. Ein gewundener weißer Pfad führt an einem Bergrücken entlang, der mit tiefblauen und indigofarbenen Bäumen bedeckt ist und in dichten weißen Nebel übergeht. Eine leuchtende, strukturierte, kräftig rote Sonne steht oben rechts. Surreale, ruhige und kontrastreiche Komposition."
-      ],
-      "Minimalist op-art graphic of the number \"5\" formed by a distorted halftone grid blurred. Black dots varying in size create a 3D bulging illusion on a vibrant solid yellow background. Clean vector aesthetic, high contrast, mathematical pattern distortion.": [
-        "Minimalistische Op-Art-Grafik der Zahl „5“, gebildet durch ein verzerrtes, weichgezeichnetes Halbtonraster. Schwarze Punkte unterschiedlicher Größe erzeugen eine dreidimensionale, gewölbte Illusion auf einem leuchtenden, einfarbig gelben Hintergrund. Cleane Vektor-Ästhetik, hoher Kontrast, mathematische Musterverzerrung."
-      ],
-      "Modern two-story minimalist white villa with rounded edges, large sliding glass doors, and a swimming pool. Minimalist patio furniture, mediterranean vibe, architectural photography style, bright sunny day.": [
-        "Moderne, zweistöckige, minimalistische weiße Villa mit abgerundeten Ecken, großen Glasschiebetüren und einem Pool. Minimalistische Terrassenmöbel, mediterrane Atmosphäre, Architekturfotografie-Stil, heller, sonniger Tag."
-      ],
-      "Photorealistic white T-shirt mockup hanging on a wall inside a modern boutique clothing store, blank white premium cotton T-shirt displayed neatly on a wooden hanger, mounted against a soft pastel-colored wall (light beige, blush pink, or sage green), stylish retail interior in the background with clothing racks and shelves softly blurred, natural daylight mixed with warm ambient store lighting, realistic fabric texture and folds, clean minimal aesthetic, high-end fashion merchandising, shallow depth of field, centered composition, commercial apparel mockup, blank T-shirt ready for custom design placement, ultra-realistic, high resolution, 8k.": [
-        "Fotorealistisches Mockup eines weißen T-Shirts, das an einer Wand in einem modernen Boutique-Bekleidungsgeschäft hängt; ein unbedrucktes, hochwertiges Premium-T-Shirt aus Baumwolle, das ordentlich auf einem Holzkleiderbügel präsentiert wird, montiert an einer weichen pastellfarbenen Wand (hellbeige, blush-rosa oder salbeigrün), stilvolles Einzelhandels-Interieur im Hintergrund mit sanft verschwommenen Kleiderständern und Regalen, natürliches Tageslicht gemischt mit warmer Ladenausleuchtung, realistische Stoffstruktur und Falten, saubere, minimalistische Ästhetik, High-End-Modemerchandising, geringe Tiefenschärfe, zentrierte Komposition, kommerzielles Bekleidungs-Mockup, leeres T-Shirt bereit für benutzerdefinierte Designplatzierung, ultrarealistisch, hohe Auflösung, 8k."
-      ],
-      "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
-        "Reine Geschwindigkeit, destilliert in einem einzigen Frame – das F1-Auto fegt über den Asphalt, während die Bewegungsunschärfe alles dahinter verwischt, Funken von der Oberfläche sprühen und Carbon das Licht in diesem packenden, tiefen Winkel direkt über dem Asphalt einfängt."
-      ],
-      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "Das Wort „FLUORISH“, vollständig geformt aus saftig grünem Gras und natürlicher Vegetation, jeder Buchstabe kunstvoll gestaltet aus dichten, frischen Grashalmen, realistische organische Textur, lebendige Grüntöne, filigrane botanische Details, fotorealistische Naturtypografie, weiches natürliches Sonnenlicht, feine Schatten, hochgradig detailliertes umweltfreundliches Design, freigestellt auf sauberem Hintergrund, Premium-3D-Schriftzug, ultrarealistisch, 8k, gestochen scharf, professionelle Werbequalität."
-      ],
-      "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
-        "Minimalistische Luftaufnahme direkt von oben auf ein langes orangefarbenes Surfbrett, das auf klarem blauem Wasser treibt. Das Wasser hat sanfte, geschwungene Wellenkonturen und helle, schimmernde Lichtreflexionen. Ein weicher Schatten fällt direkt unter das Brett und sorgt für eine klare, ruhige und moderne Ästhetik."
-      ]
-    },
     "collider_2025:Label": {
       "16:9": [
         "16:9"
@@ -3945,9 +3856,6 @@
       ],
       "Image preview": [
         "Bildvorschau"
-      ],
-      "Inspiration image": [
-        "Inspirationsbild"
       ],
       "Instructions": [
         "Anweisungen"
@@ -4035,9 +3943,6 @@
       ],
       "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Beschreibe die Rolle, den Umfang und das Verhalten, die ${ LUMO_SHORT_APP_NAME } annehmen soll."
-      ],
-      "Describe your image...": [
-        "Beschreibe dein Bild..."
       ],
       "Draw and/or describe what to change, \"remove the items\", etc.": [
         "Zeichne und/oder beschreibe, was geändert werden soll, „Einträge entfernen“ usw."
@@ -4432,14 +4337,6 @@
         "Ordner erfolgreich erstellt"
       ]
     },
-    "collider_2025:Tab": {
-      "Create": [
-        "Erstellen"
-      ],
-      "Gallery": [
-        "Gallerie"
-      ]
-    },
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } kann nicht gestartet werden"
@@ -4497,9 +4394,6 @@
       ],
       "Every clarification is a new data point": [
         "Jede Präzisierung ist ein neuer Datenpunkt"
-      ],
-      "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
-        "Entdecke Bilder, die mit ${ LUMO_SHORT_APP_NAME } erstellt wurden"
       ],
       "Export & delete regularly": [
         "Regelmäßig exportieren & löschen"
@@ -4624,9 +4518,6 @@
       "Share less with AI": [
         "Weniger mit KI teilen"
       ],
-      "Sign in to build your gallery": [
-        "Melde dich an, um deine Galerie zu erstellen"
-      ],
       "Sign in to create projects": [
         "Anmelden, um Projekte erstellen"
       ],
@@ -4672,9 +4563,6 @@
       "What Big Tech inferred": [
         "Was Big Tech abgeleitet hat"
       ],
-      "What do you want to create today?": [
-        "Was möchtest du heute erstellen?"
-      ],
       "What this profile exposes": [
         "Was dieses Profil offenbart"
       ],
@@ -4689,9 +4577,6 @@
       ],
       "You saw the profile?": [
         "Hast du das Profil gesehen?"
-      ],
-      "Your image gallery is empty": [
-        "Deine Bildergalerie ist leer"
       ],
       "Your shareable card": [
         "Deine teilbare Karte"
@@ -6271,6 +6156,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Ein Benutzer ist ein Konto, das mit einem einzigen Benutzernamen, einem Postfach und einer Person verbunden ist."
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Zugriff auf über 20.000 Server in 145 Ländern"
+      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
@@ -6318,6 +6206,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
+      ],
+      "Chart spec view": [
+        "Ansicht der Diagrammspezifikation"
       ],
       "Chunk": [
         "Datenblock"
@@ -6422,6 +6313,9 @@
       "Expired": [
         "Abgelaufen"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
+      ],
       "Folder:": [
         "Ordner:"
       ],
@@ -6434,8 +6328,14 @@
       "Google Pay mark": [
         "Google Pay markieren"
       ],
+      "Have some more time to decide without interruption.": [
+        "Gewinne etwas Zeit, um ungestört zu entscheiden."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Wenn du jetzt kündigst, verlierst du am ${ expiryDate } den Zugang zu ${ BRAND_NAME } ${ planTitle }, inklusive dieser Funktionen:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
@@ -6509,6 +6409,9 @@
       "MIME:": [
         "MIME:"
       ],
+      "Model output": [
+        "Modellausgabe"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
       ],
@@ -6557,6 +6460,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
+      "Premium privacy protection across all your devices": [
+        "Premium-Schutz deiner Privatsphäre auf all deinen Geräten"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
@@ -6571,6 +6477,9 @@
       ],
       "Registering your subscription…": [
         "Registrierung deines Abonnements…"
+      ],
+      "Rendered spec": [
+        "Bereitgestellte Spezifikation"
       ],
       "Searchable chunks": [
         "Durchsuchbare Datenblöcke"
@@ -6604,6 +6513,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
@@ -6879,6 +6791,12 @@
       ],
       "City": [
         "Stadt"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Client-Version"
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
@@ -9740,6 +9658,9 @@
       ],
       "Simplify password management": [
         "Vereinfache die Passwortverwaltung"
+      ],
+      "Stay for 50% off your next month": [
+        "Bleibe und sichere dir 50 % Rabatt auf deinen nächsten Monat"
       ],
       "Summary": [
         "Zusammenfassung"

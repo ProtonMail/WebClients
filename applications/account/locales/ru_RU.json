@@ -135,9 +135,6 @@
       "Add domain": [
         "Добавить домен"
       ],
-      "Add email address": [
-        "Добавить адрес электронной почты"
-      ],
       "Add external address": [
         "Добавить внешний адрес"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "Добавить PayPal"
-      ],
-      "Add phone number": [
-        "Добавить номер телефона"
       ],
       "Add public holidays": [
         "Добавить государственные праздники"
@@ -753,9 +747,6 @@
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
-      "Enable device-based recovery": [
-        "Включить восстановление на основе устройств"
-      ],
       "Enable multi-user support": [
         "Включить многопользовательский режим"
       ],
@@ -836,9 +827,6 @@
       ],
       "Generate password": [
         "Создать пароль"
-      ],
-      "Generate recovery phrase": [
-        "Создать фразу для восстановления"
       ],
       "Generate token": [
         "Сгенерировать токен"
@@ -1868,9 +1856,6 @@
       ],
       "View plans details": [
         "Посмотреть детали тарифа"
-      ],
-      "View recovery settings": [
-        "Просмотреть настройки восстановления"
       ],
       "View recovery setup details": [
         "Просмотреть информацию о настройке восстановления"
@@ -3541,6 +3526,9 @@
       ],
       "Discover and set up features": [
         "Настройте функции"
+      ],
+      "Get 50% offer": [
+        "Получить 50% скидку"
       ],
       "Got it": [
         "Применить"
@@ -6843,9 +6831,6 @@
       "Add recovery contact": [
         "Добавить контакт для восстановления"
       ],
-      "Add recovery method": [
-        "Добавить способ восстановления"
-      ],
       "Added on ${ formattedDate }": [
         "Добавлен ${ formattedDate }"
       ],
@@ -7089,14 +7074,8 @@
       "Subscription expired": [
         "Срок действия подписки истек"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "Они добавили меня в качестве доверенного контакта. Я могу получить доступ к их аккаунту в экстренной ситуации."
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "Вы добавлены в качестве доверенного контакта. Вы можете получить доступ к их аккаунту в случае экстренной ситуации."
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "Они могут попросить предоставить доступ к моему аккаунту в экстренной ситуации."
       ],
       "They may ask to access your account in case of an emergency.": [
         "Они могут запросить доступ к вашему аккаунту в экстренной ситуации."
@@ -7118,9 +7097,6 @@
       ],
       "Time required before automatically granting them access": [
         "Время, необходимое для автоматического предоставления им доступа"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "Чтобы добавить контакты восстановления, у вас должен быть резервный адрес электронной почты или номер телефона."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Чтобы отключить этот способ восстановления, удалите все контакты для восстановления."
@@ -7172,12 +7148,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Вы можете закрыть им доступ в любое время, чтобы вернуть себе единоличный контроль над вашим аккаунтом."
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "Вы пока не назначены контактом для восстановления ни для кого."
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "Вас еще никто не назначал в качестве экстренного контакта."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Достигнут предел в ${ limit } доверенный контакт.",
@@ -10401,17 +10371,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "Файл восстановления позволяет разблокировать и просмотреть данные после восстановления аккаунта"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Фраза восстановления позволяет получить доступ к аккаунту и восстановить зашифрованные сообщения, если вы забыли пароль"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Получите доступ к 6 500+ высокоскоростным серверам до 10 устройств, чтобы защитить ваши данные. Доступно на ${ ios }, ${ android }, ${ appleTV } и ${ desktop }."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Доступ к 20 000+ серверов в 145 странах"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Получайте беспрепятственный доступ к своим паролям и защищайте свои онлайн-идентификации на всех устройствах. Скачайте и установите соответствующие приложения и расширения ${ PASS_APP_NAME }."
@@ -10421,9 +10388,6 @@
       ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
       ],
       "Active": [
         "Активное"
@@ -11388,6 +11352,9 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Быстро и удобно. Электронная почта и календарь прямо на вашем компьютере."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Самые быстрые VPN-подключения — до 10 Гбит/с"
+      ],
       "Featured in": [
         "Опубликовано в"
       ],
@@ -11472,9 +11439,6 @@
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Создание новой фразы восстановления деактивирует текущую фразу восстановления."
       ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "Генерирование новой фразы восстановления приведет к деактивации старой."
-      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Установите ${ AUTHENTICATOR_APP_NAME } на все ваши устройства."
       ],
@@ -11534,6 +11498,9 @@
       ],
       "Groups": [
         "Группы"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Обдумайте решение без спешки и перебоев."
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Помогите другим семьям обеспечить их детям безопасный старт онлайн. Поделитесь этим событием и расскажите о нем."
@@ -11598,9 +11565,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Если системный часовой пояс не соответствует текущим настройкам часового пояса, вам будет предложено обновить его (не чаще одного раза в день)."
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "Если это произошло из-за сброса старого пароля, вы можете отключить повторное отображение сообщения"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
@@ -11609,6 +11573,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Отменив подписку сейчас, ${ expiryDate } вы потеряете доступ к ${ BRAND_NAME } ${ planTitle }, в том числе к следующим функциям:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Если вы отмените, ваша подписка ${ planTitle } не будет продлена после истечения её срока действия ${ expiryDate }."
@@ -11648,9 +11615,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Если вы недавно сбросили пароль, вы можете использовать ${ recoveryMethodLink }, чтобы разблокировать свои данные. Если это связано со старым сбросом пароля, вы можете отключить повторное отображение этого сообщения."
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Если вы недавно сбросили пароль, для разблокировки данных можно воспользоваться методом восстановления данных"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Если в вашей организации есть публичные лица, обрабатываются конфиденциальные данные или организация может стать целью кибератак, вам настоятельно рекомендуется включить ${ PROTON_SENTINEL_NAME } для всех сотрудников в вашей организации."
@@ -11792,9 +11756,6 @@
       ],
       "Invited": [
         "Приглашение отправлено"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "Похоже, что некоторые ваши данные зашифрованы и заблокированы."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Изменение страны сервера займет 10 дней, поэтому убедитесь, что ваш выбор правильный."
@@ -12324,9 +12285,6 @@
       "Please fill out this field.": [
         "Заполните это поле."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Пожалуйста, храните её в безопасности. Она понадобится вам для доступа к вашему аккаунту и расшифровки данных в случае сброса пароля."
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Обратите внимание, что если вы удалите фильтр ${ nameDeleted }, мы перестанем обрабатывать все автоматические действия, которые он запускает."
       ],
@@ -12374,6 +12332,9 @@
       ],
       "Preference saved": [
         "Настройка сохранена"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Премиальная защита конфиденциальности всех ваших устройств"
       ],
       "Preview": [
         "Предпросмотр"
@@ -12458,9 +12419,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Фраза для восстановления скопирована в буфер обмена"
-      ],
-      "Recovery phrase downloaded": [
-        "Фраза для восстановления скачана"
       ],
       "Recovery phrase has been disabled": [
         "Фраза восстановления была отключена"
@@ -12713,6 +12671,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Начните использовать более короткий и запоминающийся вариант своего адреса электронной почты."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Сохраните подписку и получите скидку 50% на следующий месяц"
       ],
       "Step ${ step }": [
         "Шаг ${ step }",
@@ -13434,9 +13395,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Мы рекомендуем уведомить участников организации и попросить их настроить двухфакторную аутентификацию для своих аккаунтов перед введением обязательного использования двухфакторной аутентификации."
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Мы надежно храним информацию о восстановлении на вашем доверенном устройстве, чтобы вы не потеряли свои данные"
-      ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Мы настоятельно рекомендуем всем включить восстановление с помощью фразы восстановления."
       ],
@@ -13949,12 +13907,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Ваш файл восстановления восстановит доступ к электронным письмам, контактам, файлам, паролям и любым другим зашифрованным данным в вашем аккаунте после сброса пароля."
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза для восстановления"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Ваша фраза для восстановления — это набор из 12 случайных слов в определенном порядке."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "Если вы потеряете доступ к своему аккаунту ${ BRAND_NAME }, фраза восстановления позволит вам войти и восстановить свои данные. Она состоит из 12 слов и работает как резервный пароль."
@@ -16302,17 +16254,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "Восстановление на базе устройств"
-      ],
       "Notification phone number": [
         "Номер телефона для уведомлений"
       ],
       "Recovery phone number": [
         "Номер телефона для восстановления"
-      ],
-      "Recovery phrase": [
-        "Фраза для восстановления доступа к учетной записи"
       ],
       "Set recovery phone number": [
         "Установить резервный номер телефона"
@@ -16632,9 +16578,6 @@
       "How to share via email": [
         "Как поделиться по электронной почте"
       ],
-      "How to unlock data": [
-        "Как разблокировать данные"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Как использовать ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16658,9 +16601,6 @@
       ],
       "Learn more": [
         "Подробнее"
-      ],
-      "Learn more about data recovery": [
-        "Подробнее о восстановлении данных"
       ],
       "Manage addresses": [
         "Управление адресами"
@@ -21744,146 +21684,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **Отключите восстановление по телефону**, чтобы предотвратить захват вашего аккаунта злоумышленниками."
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **Включите функцию восстановления по телефону**, чтобы восстановить доступ к своему аккаунту, если вы забудете пароль."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } будет использовать этот адрес для отправки обновлений о безопасности вашего аккаунта."
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "${ BRAND_NAME } отправит на этот адрес код для сброса пароля, когда вы будете его восстанавливать."
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } отправит на этот номер телефона SMS с кодом для сброса пароля, когда вы будете его восстанавливать."
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery }, чтобы убедиться, что ваши данные могут быть восстановлены."
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**Отключите сброс аккаунта по электронной почте**, чтобы предотвратить захват вашего аккаунта злоумышленниками."
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Включите восстановление по электронной почте**, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
-      ],
-      "Account reset by email has been disabled": [
-        "Сброс аккаунта по электронной почте отключен"
-      ],
-      "Account reset by phone has been disabled": [
-        "Сброс аккаунта по номеру телефона отключен"
-      ],
-      "Account safety review": [
-        "Проверка безопасности аккаунта"
-      ],
-      "Add a phone number": [
-        "Добавить номер телефона"
-      ],
-      "Add a recovery email": [
-        "Добавить резервный адрес электронной почты"
-      ],
-      "Add a recovery email address": [
-        "Добавить адрес эл. почты для восстановления доступа"
-      ],
-      "Add a recovery phone number": [
-        "Добавить номер телефона для восстановления"
-      ],
-      "Add an alternative email address": [
-        "Добавить альтернативный адрес электронной почты"
-      ],
-      "Add an email": [
-        "Добавить адрес электронной почты"
-      ],
-      "Back to Safety Review": [
-        "Вернуться к Обзору безопасности"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "Из-за сброса пароля текущая фраза восстановления может использоваться только для восстановления данных, созданных до сброса пароля."
-      ],
-      "Can be used to regain access to your account and data": [
-        "Может использоваться для восстановления доступа к вашему аккаунту и данным"
-      ],
-      "Check account security": [
-        "Проверить безопасность аккаунта"
-      ],
       "Code sent to ${ boldValue }": [
         "Код отправлен на ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "Перейти к Обзору безопасности"
-      ],
-      "Device-based recovery enabled": [
-        "Восстановление на базе устройств включено"
-      ],
-      "Disable account reset by email": [
-        "Отключить сброс аккаунта по электронной почте"
-      ],
-      "Disable recovery by email": [
-        "Отключить восстановление по электронной почте"
-      ],
-      "Disable recovery by phone": [
-        "Отключить восстановление по номеру телефона"
-      ],
-      "Download ${ size }": [
-        "Скачать ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "Скачайте свою фразу восстановления"
-      ],
-      "Email address": [
-        "Адрес электронной почты"
-      ],
-      "Enable device-based recovery": [
-        "Включить восстановление на основе устройств"
-      ],
-      "Enable recovery by email": [
-        "Включить восстановление по электронной почте"
-      ],
-      "Enable recovery by phone": [
-        "Разрешить восстановление по номеру телефона"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Я понимаю, что не смогу восстановить заблокированные в данный момент данные с помощью этой фразы восстановления"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Если вы забудете пароль от ${ BRAND_NAME } и вам потребуется его сбросить, при следующем входе на этом устройстве с новым паролем будет восстановлен полный доступ к вашему аккаунту ${ BRAND_NAME }."
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Если вы забыли свой пароль ${ BRAND_NAME } и вам необходимо его восстановить, то при следующем входе на это устройство с использованием нового пароля полный доступ к вашему аккаунту ${ BRAND_NAME } будет восстановлен."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Если вы потеряете доступ к аккаунту ${ BRAND_NAME }, фраза восстановления позволит вам войти и восстановить свои данные."
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Если вы потеряете данные для входа и вам потребуется сбросить аккаунт, **крайне необходимо**, чтобы у вас был **настроен способ восстановления аккаунта и данных**, иначе вы не сможете получить доступ ко всей вашей электронной почте, контактам, файлам и паролям."
-      ],
-      "in case we need to contact you": [
-        "на случай, если нам понадобится связаться с вами"
       ],
       "Invalid code": [
         "Недействительный код"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Это единственный способ полностью восстановить аккаунт, поэтому убедитесь, что вы храните его в надежном месте."
-      ],
-      "Recovery email address": [
-        "Резервный адрес электронной почты"
-      ],
-      "Recovery phone number": [
-        "Номер телефона для восстановления доступа"
-      ],
       "Review account safety": [
         "Проверьте безопасность аккаунта"
-      ],
-      "Safeguard account now": [
-        "Защитите аккаунт сейчас"
-      ],
-      "Safeguard your account": [
-        "Защитите свой аккаунт"
-      ],
-      "Safeguard your account further": [
-        "Дополнительно защитите свой аккаунт"
       ],
       "Safety review": [
         "Обзор безопасности"
@@ -21891,194 +21699,8 @@
       "Send a new code": [
         "Отправить новый код"
       ],
-      "Show more": [
-        "Показать ещё"
-      ],
-      "Take action to secure your account": [
-        "Примите меры для защиты вашего аккаунта"
-      ],
-      "There was an error generating your recovery phrase": [
-        "Произошла ошибка при создании фразы восстановления"
-      ],
-      "There was an error verifying your email": [
-        "При проверке вашей электронной почты произошла ошибка"
-      ],
-      "There was an error verifying your recovery email": [
-        "Произошла ошибка при подтверждении резервного адреса электронной почты"
-      ],
-      "There was an error verifying your recovery phone": [
-        "Произошла ошибка при подтверждении резервного номера телефона"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "чтобы автоматически восстановить данные при входе на доверенное устройство"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Чтобы убедиться, что адрес электронной почты является вашим, введите код подтверждения, отправленный на ${ boldEmail }."
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Чтобы подтвердить, что номер телефона принадлежит вам, введите код подтверждения, отправленный на номер ${ boldPhoneNumber }."
-      ],
-      "to prevent attackers from taking over your account": [
-        "чтобы предотвратить захват вашего аккаунта злоумышленниками"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "чтобы восстановить аккаунт и данные, если вы когда-нибудь потеряете доступ"
-      ],
-      "to recover your account if you're ever locked out": [
-        "чтобы защитить аккаунт, если вы когда-нибудь потеряете доступ"
-      ],
       "update it now": [
         "обновить его сейчас"
-      ],
-      "Update your recovery phrase": [
-        "Обновите свою фразу восстановления"
-      ],
-      "Update your recovery phrase?": [
-        "Обновить фразу восстановления?"
-      ],
-      "Verify": [
-        "Проверить"
-      ],
-      "Verify your email address": [
-        "Подтвердите свой адрес электронной почты"
-      ],
-      "Verify your phone number": [
-        "Подтвердите свой номер телефона"
-      ],
-      "Verify your recovery email address": [
-        "Подтвердите адрес электронной почты для восстановления"
-      ],
-      "Verify your recovery phone number": [
-        "Подтвердите номер телефона для восстановления"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "При создании фразы восстановления возникла ошибка. Пожалуйста, повторите попытку позже или обратитесь в службу поддержки, если проблема сохранится."
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Мы столкнулись с ошибкой при проверке вашей электронной почты. Пожалуйста, повторите попытку позже или обратитесь в службу поддержки, если проблема не исчезнет."
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Мы столкнулись с ошибкой при проверке вашего резервного адреса электронной почты. Повторите попытку позже или обратитесь в службу поддержки, если проблема сохраняется."
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Мы столкнулись с ошибкой при подтверждении резервного номера телефона. Попробуйте еще раз позднее или свяжитесь со службой поддержки, если проблема сохраняется."
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "Когда вы включаете восстановление на базе устройств, ${ BRAND_NAME } сохраняет зашифрованный резервный ключ как файл в хранилище вашего браузера."
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "Вам грозит потеря доступа к аккаунту и данным."
-      ],
-      "You are at risk of losing access to your data.": [
-        "Вам грозит потеря доступа к данным."
-      ],
-      "You can disable this at any time.": [
-        "Вы можете отключить это в любое время."
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Вы можете использовать фразу восстановления для полного восстановления своего аккаунта при сбросе пароля, поэтому храните ее в надежном месте."
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "Вы можете использовать свою электронную почту, чтобы восстановить доступ к своему аккаунту, если забудете пароль."
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Вы можете использовать резервный адрес электронной почты, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "Вы можете использовать резервный номер телефона, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "Вы уже скачивали фразу восстановления ранее. Скачивание новой фразы **деактивирует старую**."
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "У вас есть рекомендованные действия для дополнительной защиты вашего аккаунта."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "У вас есть рекомендованные действия для защиты вашего аккаунта."
-      ],
-      "You have recommended actions.": [
-        "У вас есть рекомендованные действия."
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "Вы больше не сможете использовать этот адрес для сброса настроек вашего аккаунта."
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "Вы больше не сможете использовать этот номер телефона для сброса настроек вашего аккаунта."
-      ],
-      "Your account and data can be recovered": [
-        "Вы можете восстановить аккаунт и данные"
-      ],
-      "Your account and data can be recovered.": [
-        "Ваш аккаунт и данные могут быть восстановлены."
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "Вы можете восстановить аккаунт и данные. Проверьте, есть ли у вас доступ к методам восстановления."
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "Вы можете восстановить аккаунт и данные. У вас есть рекомендованные действия, чтобы дальше защитить аккаунт."
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "Ваш аккаунт и данные могут быть восстановлены. Есть рекомендуемые действия."
-      ],
-      "Your account is fully secure.": [
-        "Ваш аккаунт полностью защищен."
-      ],
-      "Your account is secure.": [
-        "Ваш аккаунт защищен."
-      ],
-      "Your email address is:": [
-        "Ваш адрес электронной почты:"
-      ],
-      "Your email is set": [
-        "Ваш адрес электронной почты настроен"
-      ],
-      "Your recovery email": [
-        "Ваш резервный адрес электронной почты"
-      ],
-      "Your recovery email address is:": [
-        "Ваш резервный адрес электронной почты:"
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "Ваш резервный адрес электронной почты и телефон могут **восстановить доступ только к вашему аккаунту**."
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "Ваш резервный адрес электронной почты может **восстановить доступ только к вашему аккаунту**."
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Ваш резервный адрес электронной почты может быть использован злоумышленниками для захвата вашего аккаунта. Вы можете ${ disableEmail }, чтобы повысить безопасность своего аккаунта."
-      ],
-      "Your recovery email has been enabled": [
-        "Резервный адрес электронной почты включен"
-      ],
-      "Your recovery email is set": [
-        "Резервный адрес электронной почты настроен"
-      ],
-      "Your recovery methods": [
-        "Ваши способы восстановления"
-      ],
-      "Your recovery phone": [
-        "Ваш резервный номер телефона"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "Ваш номер телефона для восстановления может **восстановить доступ только к вашему аккаунту**."
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Ваш телефон для восстановления может быть использован злоумышленниками для захвата вашего аккаунта. Вы можете ${ disablePhone }, чтобы повысить безопасность своего аккаунта."
-      ],
-      "Your recovery phone has been enabled": [
-        "Резервный номер телефона включен"
-      ],
-      "Your recovery phone is set": [
-        "Резервный номер телефона настроен"
-      ],
-      "Your recovery phone number is:": [
-        "Номер телефона для восстановления доступа:"
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза восстановления"
-      ],
-      "Your recovery phrase is set": [
-        "Фраза восстановления настроена"
       ]
     },
     "safety_review": {
@@ -22938,9 +22560,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "Чтобы запретить сброс пароля, необходимо настроить метод восстановления."
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Чтобы повысить безопасность вашего аккаунта и защитить ваши данные, вы можете запросить сброс пароля из настроек вашего аккаунта в веб-приложении."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -26218,9 +25837,6 @@
       "Data collection": [
         "Сбор данных"
       ],
-      "Data locked": [
-        "Данные заблокированы"
-      ],
       "Data recovery": [
         "Восстановление данных"
       ],
@@ -26595,9 +26211,6 @@
       ],
       "Generate missing keys": [
         "Сгенерировать недостающие ключи"
-      ],
-      "Generate new recovery phrase?": [
-        "Сгенерировать новую фразу для восстановления?"
       ],
       "Generate SMTP token": [
         "Сгенерировать SMTP-токен"
@@ -27336,6 +26949,9 @@
       ],
       "Status": [
         "Состояние"
+      ],
+      "Stay for 50% off your next month": [
+        "Оставайтесь и получите скидку 50% на следующий месяц"
       ],
       "Stay secure and connected anywhere": [
         "Оставайтесь в безопасности и на связи в любом месте"
@@ -28261,9 +27877,6 @@
         "Не удалось включить доступ администратора для ${ n } пользователей",
         "Не удалось включить доступ администратора для ${ n } пользователей"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "Не удалось включить доступ администратора: ${ error }"
-      ],
       "Enable admin access?": [
         "Включить доступ администратора?"
       ],
@@ -28532,9 +28145,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "Двухфакторная аутентификация"
-      ],
       "Administrators can't access the data of private users": [
         "Администраторы не могут получить доступ к данным частных пользователей"
       ],
@@ -28543,21 +28153,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Приглашение отправлено, ожидается ответ от приглашенного участника"
-      ],
-      "Invite sent": [
-        "Приглашение отправлено"
-      ],
-      "It's you": [
-        "Это вы"
-      ],
-      "Pending admin access": [
-        "Ожидание доступа администратора"
-      ],
-      "Private": [
-        "Частный"
-      ],
-      "SSO": [
-        "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Пользователь SSO, предоставленный поставщиком ваших личных данных"

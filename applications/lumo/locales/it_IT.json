@@ -148,6 +148,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Scarica le app per ${ DRIVE_APP_NAME }"
       ],
+      "Download chart": [
+        "Viewing Chart Specifications"
+      ],
       "Download logs": [
         "Scarica i log"
       ],
@@ -201,6 +204,9 @@
       ],
       "Hide": [
         "Nascondi"
+      ],
+      "Hide chart spec": [
+        "Nascondi le specifiche del grafico"
       ],
       "Hide more benefits": [
         "Nascondi maggiori benefici"
@@ -429,6 +435,9 @@
       ],
       "Verify account": [
         "Verifica account"
+      ],
+      "View chart spec": [
+        "Visualizza le specifiche del grafico"
       ],
       "View invoice": [
         "Visualizza fattura"
@@ -834,6 +843,9 @@
       ],
       "Discover and set up features": [
         "Scopri e configura le funzionalità"
+      ],
+      "Get 50% offer": [
+        "Approfitta dell'offerta del 50%"
       ],
       "Remind me later": [
         "Ricordamelo più tardi"
@@ -1380,6 +1392,9 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Scopri di più su come usare ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
+        "Lascia che ${ LUMO_SHORT_APP_NAME } visualizzi i dati tramite grafici"
+      ],
       "Lightweight model for everyday tasks": [
         "Modello leggero per le attività quotidiane"
       ],
@@ -1918,6 +1933,9 @@
       "Free accounts keep chat history for 7 days. Talk to your admin to keep this chat.": [
         "Gli account gratuiti conservano la cronologia delle chat per 7 giorni. Rivolgiti al tuo amministratore per conservare questa chat."
       ],
+      "Free accounts keep chat history for 7 days. This chat is past that window and will be permanently deleted unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Gli account gratuiti conservano la cronologia delle chat per 7 giorni. Questa chat ha superato tale limite e verrà eliminata definitivamente, a meno che non si effettui l'upgrade a ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
       "Free space": [
         "Spazio libero"
       ],
@@ -2115,6 +2133,9 @@
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Questi file appartenevano a messaggi riassunti e non vengono più inviati al modello."
+      ],
+      "This chat is past the free retention window and will be permanently deleted. Talk to your admin to keep it.": [
+        "Questa chat ha superato il periodo di conservazione gratuito e verrà eliminata definitivamente. Rivolgiti al tuo amministratore per conservarla."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Questa chat verrà rimossa tra 2 giorni. Effettua l'upgrade a ${ LUMO_SHORT_APP_NAME } Plus per conservarla."
@@ -2800,6 +2821,9 @@
       "Visionary": [
         "Visionario"
       ],
+      "Visualization mode": [
+        "Modalità di visualizzazione"
+      ],
       "We'd love your feedback!": [
         "Ci piacerebbe ricevere il tuo feedback!"
       ],
@@ -3019,6 +3043,15 @@
       ],
       "This chat expires tomorrow": [
         "Questa chat scade domani"
+      ],
+      "This chat will be deleted soon": [
+        "Questa chat verrà cancellata a breve"
+      ],
+      "This chat will be deleted today": [
+        "Questa chat verrà cancellata oggi"
+      ],
+      "This chat will be deleted tomorrow": [
+        "Questa chat verrà cancellata domani"
       ],
       "This conversation is getting long": [
         "Questa conversazione sta diventando lunga"
@@ -3376,17 +3409,11 @@
       "New project": [
         "Nuovo progetto"
       ],
-      "Projects": [
-        "Progetti"
-      ],
       "Save": [
         "Salva"
       ],
       "Search": [
         "Cerca"
-      ],
-      "See all": [
-        "Vedi tutti"
       ],
       "Send": [
         "Invia"
@@ -3417,9 +3444,6 @@
       "Failed to create folder": [
         "Impossibile creare la cartella"
       ],
-      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
-        "Impossibile scaricare \"${ file.name }\": controllo integrità dati fallito. Riprova."
-      ],
       "Failed to index Drive folder for search": [
         "Impossibile indicizzare la cartella Drive per la ricerca"
       ],
@@ -3440,12 +3464,6 @@
       ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Il file \"${ file.name }\" (${ fileSizeFormatted }) supera il limite di ${ maxSizeFormatted }. Collega una cartella ${ DRIVE_APP_NAME } per caricare file più grandi."
-      ],
-      "File download failed due to integrity check. Please try again.": [
-        "Download del file fallito a causa del controllo di integrità. Riprova."
-      ],
-      "File format not supported: ${ file.name }": [
-        "Formato file non supportato: ${ file.name }"
       ],
       "File type not supported: ${ file.name }": [
         "Tipo di file non supportato: ${ file.name }"
@@ -3506,6 +3524,9 @@
       " Chat in Project": [
         " Chatta nel progetto",
         " Chat in Progetto"
+      ],
+      "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
+        "“${ file.name }” è ancora in fase di indicizzazione. Il contenuto verrà caricato al momento dell'invio."
       ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } richiede l'archiviazione locale del database (IndexedDB) per conservare le tue conversazioni su questo dispositivo, ma qui non è disponibile."
@@ -3595,7 +3616,7 @@
         "I cookie o i dati dei siti web sono bloccati nelle impostazioni del tuo browser"
       ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
-        "Crea immagini, applica stili e abbozza idee. Accedi o crea un account gratuito per salvare le tue creazioni."
+        "Crea immagini, applica stili e abbozza le tue idee. Accedi o crea un account gratuito per salvare le tue creazioni."
       ],
       "Create purpose-built assistants with their own instructions. Set them up once, and they’ll follow your preferences every time.": [
         "Crea assistenti su misura con le loro istruzioni. Configurali una volta e seguiranno le tue preferenze ogni volta."
@@ -3677,9 +3698,6 @@
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Su questa scheda non sono presenti dettagli personali, ma solo il tuo punteggio di esposizione per area. Più è basso, meno dati hai condiviso."
-      ],
-      "No projects yet": [
-        "Ancora nessun progetto"
       ],
       "Now protect the person behind it.": [
         "Ora proteggi la persona che c'è dietro."
@@ -4691,7 +4709,7 @@
         "Hai visto il profilo?"
       ],
       "Your image gallery is empty": [
-        "La tua galleria di immagini è vuota"
+        "La tua galleria immagini è vuota"
       ],
       "Your shareable card": [
         "La tua scheda condivisibile"
@@ -6271,6 +6289,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utente è un account associato a un unico nome utente, una sola casella di posta e una sola persona"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Accesso a oltre 20.000 server in 145 paesi"
+      ],
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
@@ -6318,6 +6339,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
+      ],
+      "Chart spec view": [
+        "Visualizzazione delle specifiche del grafico"
       ],
       "Chunk": [
         "Blocco"
@@ -6422,6 +6446,9 @@
       "Expired": [
         "Scaduto"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Velocità VPN massime fino a 10 Gbps"
+      ],
       "Folder:": [
         "Cartella:"
       ],
@@ -6434,8 +6461,14 @@
       "Google Pay mark": [
         "Marchio Google Pay"
       ],
+      "Have some more time to decide without interruption.": [
+        "Prenditi ancora un po’ di tempo per decidere senza essere interrotto."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Se annulli ora, perderai l'accesso a ${ BRAND_NAME } ${ planTitle } a partire dal ${ expiryDate }, comprese le seguenti funzionalità:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se annulli, il tuo abbonamento ${ planTitle } non verrà rinnovato alla scadenza del ${ expiryDate }."
@@ -6509,6 +6542,9 @@
       "MIME:": [
         "MIME:"
       ],
+      "Model output": [
+        "Risultati del modello"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dai un nome alla tua cartella e seleziona la cartella principale nella quale verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
       ],
@@ -6557,6 +6593,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Riprova utilizzando un altro metodo di pagamento oppure contatta PayPal per assistenza."
       ],
+      "Premium privacy protection across all your devices": [
+        "Protezione della privacy di alto livello su tutti i tuoi dispositivi"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
       ],
@@ -6571,6 +6610,9 @@
       ],
       "Registering your subscription…": [
         "Registrazione dell'abbonamento…"
+      ],
+      "Rendered spec": [
+        "Specifiche di rendering"
       ],
       "Searchable chunks": [
         "Chunk ricercabili"
@@ -6604,6 +6646,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Segui il tuo piano e ottieni uno sconto del 50% sul prossimo mese"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
@@ -9740,6 +9785,9 @@
       ],
       "Simplify password management": [
         "Semplifica la gestione delle password"
+      ],
+      "Stay for 50% off your next month": [
+        "Soggiorna e ottieni uno sconto del 50% sul prossimo mese"
       ],
       "Summary": [
         "Riepilogo"

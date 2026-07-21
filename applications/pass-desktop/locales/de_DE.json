@@ -577,12 +577,6 @@
       "Regenerate": [
         "Neu generieren"
       ],
-      "Regex invalid": [
-        "Regex ungültig"
-      ],
-      "Regex unsafe": [
-        "Regex unsicher"
-      ],
       "Reject": [
         "Ablehnen"
       ],
@@ -1326,6 +1320,12 @@
       "PIN codes do not match": [
         "PIN-Codes stimmen nicht überein"
       ],
+      "Regex invalid": [
+        "Regulärer Ausdruck ungültig"
+      ],
+      "Regex unsafe": [
+        "Regulärer Ausdruck unsicher"
+      ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
@@ -2054,6 +2054,9 @@
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "Falls du den SSH-Agenten nicht auf einem anderen kostenpflichtigen Konto verwenden möchtest, denk bitte daran, diese Einstellung zu deaktivieren, bevor du zu diesem Konto wechselst."
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Wenn du deine Git-Commits mit deinem SSH-Schlüssel signierst, führe außerdem folgenden Befehl aus:"
+      ],
       "Import the CSV file below.": [
         "Importiere die CSV-Datei unten."
       ],
@@ -2195,8 +2198,7 @@
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2673,6 +2675,9 @@
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Um deine persönliche E-Mail-Adresse zu verbergen, kannst du einen Alias-Kontakt erstellen, der deine Adresse verschleiert."
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Damit Git mit dem SSH-Agenten von ${ PASS_APP_NAME } funktioniert, muss Git Windows-OpenSSH verwenden. Dies kann durch Ausführen des folgenden Befehls erreicht werden:"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Um Daten von einem anderen Passwort-Manager zu migrieren, exportiere deine Daten und lade sie dann zu ${ PASS_APP_NAME } hoch. Lösche die exportierte Datei, sobald deine Daten importiert wurden."

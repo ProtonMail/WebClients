@@ -553,12 +553,6 @@
       "Regenerate": [
         "Gerar novamente"
       ],
-      "Regex invalid": [
-        "Regex inválido"
-      ],
-      "Regex unsafe": [
-        "Regex inseguro"
-      ],
       "Reject": [
         "Rejeitar"
       ],
@@ -1312,6 +1306,12 @@
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
       ],
+      "Regex invalid": [
+        "Regex inválido"
+      ],
+      "Regex unsafe": [
+        "Regex inseguro"
+      ],
       "Registration failure: ${ message }": [
         "Falha no registro: ${ message }"
       ],
@@ -1913,7 +1913,7 @@
         "Não recebeu o código?"
       ],
       "Disabling auto-lock": [
-        "Desativar bloqueio automático"
+        "Desativando bloqueio automático"
       ],
       "Disabling auto-lock failed": [
         "Erro ao desativar o bloqueio automático"
@@ -2271,7 +2271,7 @@
         "Nenhum"
       ],
       "None selected": [
-        "Nenhum selecionado-"
+        "Nenhum selecionado"
       ],
       "Not configured": [
         "Não configurado"
@@ -3615,7 +3615,7 @@
         "Número da licença"
       ],
       "License Number": [
-        "Número da Licença"
+        "Número da licença"
       ],
       "LinkedIn account": [
         "Conta do LinkedIn"
@@ -4318,7 +4318,7 @@
         "Excluir ${ deleteFile.state.name }"
       ],
       "Delete all files": [
-        "Exclua todos os arquivos"
+        "Excluir todos os arquivos"
       ],
       "Do you want to remove all the files?": [
         "Deseja remover todos os arquivos?"

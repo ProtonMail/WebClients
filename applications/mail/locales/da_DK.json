@@ -1520,7 +1520,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -2291,7 +2292,7 @@
         "Status"
       ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
       ],
       "To migrate this user, enable their account in your Google Workspace Admin Console.": [
         "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
@@ -2436,6 +2437,9 @@
       ],
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
+      ],
+      "Get 50% offer": [
+        "Få et 50%-tilbud"
       ],
       "Got it": [
         "Forstået"
@@ -7072,6 +7076,9 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Få adgang til 6.500+ højhastighedsservere på op til 10 enheder for at holde dine browserdata sikre. Tilgængelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Adgang til mere end 20.000 servere i 145 lande"
+      ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
@@ -7652,6 +7659,9 @@
         "Udløber om mindre end ${ hoursDiff } time",
         "Udløber om mindre end ${ hoursDiff } timer"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Hurtigste VPN-hastigheder – op til 10Gbps"
+      ],
       "file attached": [
         "fil vedhæftet",
         "filer vedhæftet"
@@ -7724,6 +7734,9 @@
         "Har ${ numAttachments } vedhæftet fil (${ numAttachmentsSize })",
         "Har ${ numAttachments } vedhæftede filer (${ numAttachmentsSize })"
       ],
+      "Have some more time to decide without interruption.": [
+        "Få lidt mere tid til overvejelse – uden afbrydelse."
+      ],
       "here": [
         "her"
       ],
@@ -7744,6 +7757,9 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Hvis du mener, vi har begået en fejl, bedes du ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -8221,6 +8237,9 @@
       "Preferences updated": [
         "Præferencer opdateret"
       ],
+      "Premium privacy protection across all your devices": [
+        "Premium privatlivsbeskyttelse på alle dine enheder"
+      ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
       ],
@@ -8449,6 +8468,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Bliv på dit abonnement og få 50% rabat næste måned"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsfunktioner understøttes ikke i denne browser, vi har brug for denne understøttelse for at kunne søge efter beskedindhold."
@@ -9782,6 +9804,12 @@
       "Clear logs": [
         "Ryd logs"
       ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversion"
+      ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
       ],
@@ -10428,7 +10456,7 @@
         "URL"
       ],
       "URL wildcard pattern": [
-        "URL-jokertegnmønster"
+        "URL-wildcarddomæne"
       ],
       "Username": [
         "Brugernavn"
@@ -11057,7 +11085,7 @@
         "Regel for regulært udtryk"
       ],
       "Wildcard pattern matching rule": [
-        "Regel for jokertegnmønstermatch"
+        "Regel for wildcardmønster"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er udløbet. ${ nonAutoRenewalAction }"
@@ -15946,7 +15974,7 @@
         "Gør en sikker forbindelse til din standard"
       ],
       "Make Categories your own": [
-        "Gør kategorier til Deres egne"
+        "Gør kategorier til dine egne"
       ],
       "Mark all messages as read": [
         "Marker alle meddelelser som læste"
@@ -16334,6 +16362,9 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
+      ],
+      "Stay for 50% off your next month": [
+        "Bliv hængende for 50% rabat i den næste måned"
       ],
       "Storage capacity warning": [
         "Advarsel om lagerkapacitet"
@@ -16792,7 +16823,7 @@
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svindel- eller phishing-websteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",

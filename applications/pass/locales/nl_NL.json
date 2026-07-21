@@ -547,12 +547,6 @@
       "Regenerate": [
         "Opnieuw genereren"
       ],
-      "Regex invalid": [
-        "Regex ongeldig"
-      ],
-      "Regex unsafe": [
-        "Regex onveilig"
-      ],
       "Reject": [
         "Afwijzen"
       ],
@@ -1272,6 +1266,12 @@
       ],
       "PIN codes do not match": [
         "Pincodes komen niet overeen"
+      ],
+      "Regex invalid": [
+        "Ongeldige regex"
+      ],
+      "Regex unsafe": [
+        "Regex onveilig"
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
@@ -2105,8 +2105,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"

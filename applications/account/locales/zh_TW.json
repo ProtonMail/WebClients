@@ -135,9 +135,6 @@
       "Add domain": [
         "加入網域"
       ],
-      "Add email address": [
-        "添加電子郵件地址"
-      ],
       "Add external address": [
         "添加外部電子郵件地址"
       ],
@@ -155,9 +152,6 @@
       ],
       "Add PayPal": [
         "加入 PayPal"
-      ],
-      "Add phone number": [
-        "加入手機號碼"
       ],
       "Add public holidays": [
         "新增公眾假期"
@@ -753,9 +747,6 @@
       "enable desktop notifications": [
         "啟用桌面通知"
       ],
-      "Enable device-based recovery": [
-        "啟用裝置復原"
-      ],
       "Enable multi-user support": [
         "啟用多使用者支援"
       ],
@@ -836,9 +827,6 @@
       ],
       "Generate password": [
         "生成密碼"
-      ],
-      "Generate recovery phrase": [
-        "生成還原短語"
       ],
       "Generate token": [
         "產生權杖"
@@ -1016,6 +1004,9 @@
       ],
       "Insert link": [
         "插入連結"
+      ],
+      "Instructions": [
+        "說明"
       ],
       "Invite": [
         "邀請"
@@ -1868,9 +1859,6 @@
       ],
       "View plans details": [
         "檢視方案詳細內容"
-      ],
-      "View recovery settings": [
-        "瀏覽復原設定"
       ],
       "View recovery setup details": [
         "檢視復原設定詳細資料"
@@ -3481,6 +3469,9 @@
       ],
       "Discover and set up features": [
         "探索及設定功能"
+      ],
+      "Get 50% offer": [
+        "取得 50% 折扣"
       ],
       "Got it": [
         "瞭解"
@@ -6717,9 +6708,6 @@
       "Add recovery contact": [
         "加入復原聯絡人"
       ],
-      "Add recovery method": [
-        "新增復原方式"
-      ],
       "Added on ${ formattedDate }": [
         "已於 ${ formattedDate } 新增"
       ],
@@ -6960,14 +6948,8 @@
       "Subscription expired": [
         "訂閱已過期"
       ],
-      "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "他們將我新增為信任聯絡人。發生緊急狀況時，我可以存取他們的帳號。"
-      ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
         "他們已將您新增為信任的聯絡人。您可以在緊急情況下存取其帳號。"
-      ],
-      "They may ask to access my account in case of an emergency.": [
-        "發生緊急狀況時，他們可以請求存取我的帳號。"
       ],
       "They may ask to access your account in case of an emergency.": [
         "在緊急情況下，他們可能會要求存取您的帳號。"
@@ -6986,9 +6968,6 @@
       ],
       "Time required before automatically granting them access": [
         "自動授予他們存取權之前所需的等待時間"
-      ],
-      "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "若要新增復原聯絡人，您必須擁有復原用電子郵件地址或電話號碼。"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "若要停用此復原方法，請移除您所有的復原聯絡人。"
@@ -7040,12 +7019,6 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "您可以隨時移除他們的存取權，以重新取得您帳號的專屬控制權。"
-      ],
-      "You have not been designated as a recovery contact for anyone yet.": [
-        "您尚未被指定為任何人的復原聯絡人。"
-      ],
-      "You have not been designated as an emergency contact for anyone yet.": [
-        "您目前尚未被任何人指定為緊急聯絡人。"
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "您已達到最高上限 ${ limit } 個緊急聯絡人。"
@@ -10074,17 +10047,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話號碼僅能用於驗證一組 ${ BRAND_NAME } 帳號"
       ],
-      "A recovery file lets you unlock and view your data after account recovery": [
-        "復原檔可讓您在重設帳號後，解鎖並檢視您的資料"
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "倘若想不起密碼時，復原短語讓您可以存取帳號，復原加密郵件訊息"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "於10臺裝置存取6,500+ 高速伺服器以確保您的瀏覽安全。於${ ios }，${ android }，${ appleTV }，及${ desktop }。"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "存取 20,000+ 臺伺服器，分布於 145 個國家"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "跨裝置無縫存取您的密碼並保護您的線上身分。下載並安裝相關的 ${ PASS_APP_NAME } 應用程式與延伸功能。"
@@ -10094,9 +10064,6 @@
       ],
       "Account successfully updated": [
         "帳號已成功更新"
-      ],
-      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "選擇至少一種帳號復原方法，以確保一旦忘記密碼時，您仍可存取 ${ BRAND_NAME } 帳號。"
       ],
       "Active": [
         "啟用的"
@@ -10196,6 +10163,9 @@
       ],
       "All inactive members deleted": [
         "已刪除全部未使用的成員"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "全部的網路流量持續被已加密和保護"
       ],
       "All keys successfully reactivated": [
         "所有金鑰都已成功重新啟用"
@@ -10725,6 +10695,9 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "視您的設定而定，他們可能會立即獲得存取權，或者在指定的 **等待期** 之後獲得存取權"
       ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "已部署持續運作 VPN 的裝置將無法連接網路直到 ${ VPN_APP_NAME } 連線啟用。"
+      ],
       "Did you know?": [
         "您知道嗎？"
       ],
@@ -11028,6 +11001,9 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "快速且專注。電子郵件與行事曆，就在您的桌面上。"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "更快速的 VPN 速度至多 10Gbps"
+      ],
       "Featured in": [
         "專題報導於"
       ],
@@ -11111,9 +11087,6 @@
       ],
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "產生新的復原短語將會停用您目前的復原短語。"
-      ],
-      "Generating a new recovery phrase will deactivate your old one.": [
-        "產生新的復原短語並廢棄舊的。"
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "在您的所有裝置上取得 ${ AUTHENTICATOR_APP_NAME }。"
@@ -11238,9 +11211,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "如果系統時區與目前的時區偏好設定不符，系統會詢問您是否更新 (每天最多一次)。"
       ],
-      "If this is due to an old password reset, you can stop the message from showing again": [
-        "如果這是由於舊的密碼重設所造成，您可以停止該消息再次顯示"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
@@ -11249,6 +11219,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "如果您現在取消，您將於 ${ expiryDate } 失去存取 ${ BRAND_NAME } ${ planTitle }，包含這些功能:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您還是決定取消，現有 ${ planTitle } 授權將不再自動續購，到期日為 ${ expiryDate }"
@@ -11288,9 +11261,6 @@
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "如果您最近重設了密碼，可以 ${ recoveryMethodLink } 來解鎖您的資料。如果這是因為舊的密碼重設引起的，您可以阻止此訊息再次顯示。"
-      ],
-      "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "如果您最近重設了您的密碼，您可以使用資料復原方法去解鎖您的資料"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "如果您的組織有公眾人物、處理敏感資料或可能成為網路攻擊的目標，強烈建議您為組織中的每個人啟用 ${ PROTON_SENTINEL_NAME }。"
@@ -11423,9 +11393,6 @@
       ],
       "Invited": [
         "已邀請"
-      ],
-      "It appears some of your data is encrypted and locked.": [
-        "您的某些資料似乎已被加密和鎖定。"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "將花10天變更伺服器的國家，所以請確認選擇正確。"
@@ -11943,9 +11910,6 @@
       "Please fill out this field.": [
         "請填寫以下欄位。"
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "請保存在安全的地方。在重設密碼後你將會需要它來解密你的資料。"
-      ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "請注意，如果您刪除篩選器 ${ nameDeleted }，我們將停止處理其觸發的所有自動化動作。"
       ],
@@ -11993,6 +11957,9 @@
       ],
       "Preference saved": [
         "偏好設定已儲存"
+      ],
+      "Premium privacy protection across all your devices": [
+        "頂級質子版隱私保護於您全部的裝置"
       ],
       "Preview": [
         "預覽"
@@ -12077,9 +12044,6 @@
       ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
-      ],
-      "Recovery phrase downloaded": [
-        "已下載還原短語"
       ],
       "Recovery phrase has been disabled": [
         "復原短語已被停用"
@@ -12330,6 +12294,9 @@
       "Start using the shorter, catchier version of your email address.": [
         "開始使用更短、更好記的電子郵件地址。"
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "維持您的方案並於下個月取得 50% 折扣的優惠"
+      ],
       "Step ${ step }": [
         "步驟 ${ step }"
       ],
@@ -12392,6 +12359,9 @@
       ],
       "support team": [
         "支援團隊"
+      ],
+      "Supported platforms": [
+        "支援的平臺"
       ],
       "Swiss based": [
         "總部設於瑞士"
@@ -13032,9 +13002,6 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "我們建議於強制啟用雙重驗證前通知組織成員為帳號設定雙重驗證"
       ],
-      "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "我們在您信任的裝置上妥善保管復原金鑰，以防發生資料丟失"
-      ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "我們強烈建議每個人都啟用透過復原短語進行復原的功能。"
       ],
@@ -13449,6 +13416,9 @@
       "Your account was successfully updated with this promotion": [
         "您帳號已成功更新此促銷"
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "您的 持續運作 VPN 將可部署。"
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
@@ -13514,12 +13484,6 @@
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "您的復原檔案將在密碼重設後，還原對電子郵件、聯絡人、檔案、密碼以及您帳號中任何其他已加密資料的存取權限。"
-      ],
-      "Your recovery phrase": [
-        "您的復原短語"
-      ],
-      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "您的復原短語是按特定順序排列的一系列 12 個隨機生成單字。"
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
         "如果您無法登入您的 ${ BRAND_NAME } 帳號，您的復原短語將允許您登入並復原您的資料。它由 12 個單字組成，作用相當於備份密碼。"
@@ -14815,6 +14779,9 @@
       "End-to-end encryption": [
         "端對端加密"
       ],
+      "Enforce Always-on VPN": [
+        "強制持續運作 VPN"
+      ],
       "Enter code": [
         "輸入代碼"
       ],
@@ -15060,6 +15027,9 @@
       ],
       "Lock app after inactivity": [
         "在閒置後鎖定應用程式"
+      ],
+      "Login restrictions": [
+        "登入限制"
       ],
       "Logo": [
         "標誌"
@@ -15840,17 +15810,11 @@
       ]
     },
     "label": {
-      "Device-based recovery": [
-        "基於裝置的復原"
-      ],
       "Notification phone number": [
         "通知電話號碼"
       ],
       "Recovery phone number": [
         "復原手機號碼"
-      ],
-      "Recovery phrase": [
-        "復原短語"
       ],
       "Set recovery phone number": [
         "設定復原電話號碼"
@@ -16167,9 +16131,6 @@
       "How to share via email": [
         "如何透過電子郵件共享"
       ],
-      "How to unlock data": [
-        "如何解鎖資料"
-      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "如何使用${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16193,9 +16154,6 @@
       ],
       "Learn more": [
         "瞭解詳情"
-      ],
-      "Learn more about data recovery": [
-        "了解更多關於資料救援"
       ],
       "Manage addresses": [
         "管理位址"
@@ -21072,146 +21030,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        "**停用透過電話復原**，以防止攻擊者接管您的帳號。"
-      ],
-      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **啟用電話復原**，以便在忘記密碼時重新取得帳號的存取權。"
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
-        "${ BRAND_NAME } 將使用此位址來通知您最新的帳號安全性狀態。"
-      ],
-      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
-        "當您重設密碼時，${ BRAND_NAME } 將使用此位址透過電子郵件傳送重設代碼。"
-      ],
-      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "當您重設密碼時，${ BRAND_NAME } 將使用此電話號碼透過簡訊傳送重設代碼。"
-      ],
-      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
-        "${ enableDeviceRecovery } 可確保您的資料可以被恢復。"
-      ],
-      "**Disable account reset by email** to prevent attackers from taking over your account.": [
-        "**停用透過電子郵件重設帳號**，以防止攻擊者接管您的帳號。"
-      ],
-      "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "若您忘記密碼，請**啟用電子郵件復原**以重新取得帳號的存取權。"
-      ],
-      "Account reset by email has been disabled": [
-        "已停用透過電子郵件重設帳號功能"
-      ],
-      "Account reset by phone has been disabled": [
-        "已停用透過電話重設帳號功能"
-      ],
-      "Account safety review": [
-        "帳號安全檢查"
-      ],
-      "Add a phone number": [
-        "新增電話號碼"
-      ],
-      "Add a recovery email": [
-        "新增一個備援電子郵件"
-      ],
-      "Add a recovery email address": [
-        "加入復原電郵位址"
-      ],
-      "Add a recovery phone number": [
-        "加入復原手機號碼"
-      ],
-      "Add an alternative email address": [
-        "新增備用電子郵件地址"
-      ],
-      "Add an email": [
-        "新增電子郵件"
-      ],
-      "Back to Safety Review": [
-        "回復至安全檢查"
-      ],
-      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
-        "由於您重設了密碼，您目前的復原短語只能用於復原在密碼重設前建立的資料。"
-      ],
-      "Can be used to regain access to your account and data": [
-        "可用於重新取得您的帳號和資料的存取權"
-      ],
-      "Check account security": [
-        "檢查帳號安全"
-      ],
       "Code sent to ${ boldValue }": [
         "驗證碼已發送至 ${ boldValue }"
-      ],
-      "Continue to Safety Review": [
-        "繼續安全檢查"
-      ],
-      "Device-based recovery enabled": [
-        "基於裝置的復原已啟用"
-      ],
-      "Disable account reset by email": [
-        "停用透過電子郵件重設帳號"
-      ],
-      "Disable recovery by email": [
-        "停用透過電子郵件復原"
-      ],
-      "Disable recovery by phone": [
-        "停用透過電話復原"
-      ],
-      "Download ${ size }": [
-        "下載 ${ size }"
-      ],
-      "Download your recovery phrase": [
-        "下載您的復原短語"
-      ],
-      "Email address": [
-        "電子郵件地址"
-      ],
-      "Enable device-based recovery": [
-        "啟用裝置復原"
-      ],
-      "Enable recovery by email": [
-        "啟用透過電子郵件復原"
-      ],
-      "Enable recovery by phone": [
-        "啟用透過手機復原"
-      ],
-      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "我了解我將無法使用此復原短語來復原目前已鎖定的資料"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "如果您忘記了 ${ BRAND_NAME } 密碼並需要重設，下次您在此裝置上使用新密碼登入時，您對 ${ BRAND_NAME } 帳號的完整存取權將會還原。"
-      ],
-      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "如果您忘記了 ${ BRAND_NAME } 密碼並需要重設，下次您在此裝置上使用新密碼登入時，您對 ${ BRAND_NAME } 帳號的完整存取權將會還原。"
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "如果您無法登入您的 ${ BRAND_NAME } 帳號，您的復原短語將允許您登入並復原您的資料。"
-      ],
-      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "若你遺失登入帳號所需的資訊且需要重設你的帳號。**最重要的是**您同時擁有**復原帳號與資料的手段**，不然您可能再也無法存取您的電子郵件、聯絡人或檔案。"
-      ],
-      "in case we need to contact you": [
-        "以防我們需要與您聯絡"
       ],
       "Invalid code": [
         "代碼無效"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "這是完全還原您帳號的唯一方法，因此請務必將其保存在安全的地方。"
-      ],
-      "Recovery email address": [
-        "復原電郵位址"
-      ],
-      "Recovery phone number": [
-        "復原電話號碼"
-      ],
       "Review account safety": [
         "查看帳號安全"
-      ],
-      "Safeguard account now": [
-        "現在保護帳號安全"
-      ],
-      "Safeguard your account": [
-        "保護您的帳號安全"
-      ],
-      "Safeguard your account further": [
-        "更深度的保護您的帳號安全"
       ],
       "Safety review": [
         "安全檢核"
@@ -21219,194 +21045,8 @@
       "Send a new code": [
         "傳送新的代碼"
       ],
-      "Show more": [
-        "顯示更多"
-      ],
-      "Take action to secure your account": [
-        "採取行動以保護您的帳號安全"
-      ],
-      "There was an error generating your recovery phrase": [
-        "產生您的復原短語時發生錯誤"
-      ],
-      "There was an error verifying your email": [
-        "驗證您的電子郵件時發生錯誤"
-      ],
-      "There was an error verifying your recovery email": [
-        "驗證您的復原用電子郵件時發生錯誤"
-      ],
-      "There was an error verifying your recovery phone": [
-        "驗證復原手機時出了一些錯誤"
-      ],
-      "to automatically recover your data when you log into a trusted device": [
-        "當您登入信任的裝置時自動復原您的資料"
-      ],
-      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "為確保該電子郵件地址屬於您，請輸入傳送至 ${ boldEmail } 的驗證碼。"
-      ],
-      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "為確保該電話號碼屬於您，請輸入傳送至 ${ boldPhoneNumber } 的驗證碼。"
-      ],
-      "to prevent attackers from taking over your account": [
-        "以防止攻擊者接管您的帳號"
-      ],
-      "to recover your account and data if you're ever locked out": [
-        "以便在您被鎖定時復原您的帳號和資料"
-      ],
-      "to recover your account if you're ever locked out": [
-        "以便在您被鎖定時復原您的帳號"
-      ],
       "update it now": [
         "立即更新"
-      ],
-      "Update your recovery phrase": [
-        "更新您的復原短語"
-      ],
-      "Update your recovery phrase?": [
-        "要更新您的復原短語嗎？"
-      ],
-      "Verify": [
-        "驗證"
-      ],
-      "Verify your email address": [
-        "驗證您的電子郵件地址"
-      ],
-      "Verify your phone number": [
-        "驗證您的電話號碼"
-      ],
-      "Verify your recovery email address": [
-        "驗證復原電子郵件地址"
-      ],
-      "Verify your recovery phone number": [
-        "驗證復原電話號碼"
-      ],
-      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "我們在產生您的復原短語時遇到錯誤。請稍後再試，或者如果問題持續發生，請聯絡支援團隊。"
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "我們在驗證您的電子郵件時遇到錯誤。請稍後再試，如果問題仍未解決，請聯絡支援團隊。"
-      ],
-      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "我們在驗證您的復原用電子郵件時遇到錯誤。請稍後再試，如果問題仍然存在，請聯絡支援團隊。"
-      ],
-      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "我們在驗證您的復原電話時遇到錯誤。請稍後再試，如果問題仍然存在，請聯絡支援團隊。"
-      ],
-      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "當您啟用了基於裝置的復原，${ BRAND_NAME } 將會把加密的備份金鑰儲存在您的瀏覽器中。"
-      ],
-      "You are at risk of losing access to your account and data.": [
-        "您面臨失去帳號和資料存取權的風險。"
-      ],
-      "You are at risk of losing access to your data.": [
-        "您面臨失去資料存取權的風險。"
-      ],
-      "You can disable this at any time.": [
-        "您可隨時關閉此。"
-      ],
-      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "當您重設密碼時，可以使用此復原短語來完整還原您的帳號，因此請務必將其妥善保存在安全的地方。"
-      ],
-      "You can use your email to regain access to your account if you forget your password.": [
-        "如果您忘記密碼，可以使用您的電子郵件重新取得對帳號的存取權。"
-      ],
-      "You can use your recovery email to regain access to your account if you forget your password.": [
-        "如果您忘記密碼，可以使用您的復原用電子郵件重新取得帳號的存取權。"
-      ],
-      "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "如果您忘記密碼，可以使用您的復原電話重新取得帳號的存取權。"
-      ],
-      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "您之前已下載過復原短語。下載新的將會 **停用舊的復原短語**。"
-      ],
-      "You have recommended actions to safeguard your account further.": [
-        "我們為您提供了一些建議的操作，以進一步保障您的帳號安全。"
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "我們為您提供了建議的操作以保護您的帳號。"
-      ],
-      "You have recommended actions.": [
-        "您有推薦的行動。"
-      ],
-      "You will no longer be able to use this address to reset your account.": [
-        "您將無法再使用此位址來重設您的帳號。"
-      ],
-      "You will no longer be able to use this phone number to reset your account.": [
-        "您將無法再使用此電話號碼來重設您的帳號。"
-      ],
-      "Your account and data can be recovered": [
-        "您的帳號和資料可以被復原"
-      ],
-      "Your account and data can be recovered.": [
-        "您的帳號和資料可以被復原。"
-      ],
-      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "您的帳號 and 資料可以被復原。檢查您是否仍可存取您的復原方法。"
-      ],
-      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
-        "您的帳號和資料可以被復原。您有建議採取的行動，以進一步保障您的帳號安全。"
-      ],
-      "Your account and data can be recovered. You have recommended actions.": [
-        "您的帳號和資料可以被復原。您有建議採取的行動。"
-      ],
-      "Your account is fully secure.": [
-        "你的帳號是完整安全的。"
-      ],
-      "Your account is secure.": [
-        "你的帳號是安全的。"
-      ],
-      "Your email address is:": [
-        "您的電子郵件地址為："
-      ],
-      "Your email is set": [
-        "您的電子郵件已設定完成"
-      ],
-      "Your recovery email": [
-        "你的復原電子郵件"
-      ],
-      "Your recovery email address is:": [
-        "您的復原電子郵件位址為："
-      ],
-      "Your recovery email and phone can **only recover access to your account**.": [
-        "您的復原用電子郵件和電話**只能復原對您帳號的存取權**。"
-      ],
-      "Your recovery email can **only recover access to your account**.": [
-        "您的復原用電子郵件**只能復原對您帳號的存取權**。"
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "您的復原用電子郵件可能會被攻擊者惡意利用以接管您的帳號。請 ${ disableEmail } 以提高您的帳號安全性。"
-      ],
-      "Your recovery email has been enabled": [
-        "您的復原電子郵件已啟用"
-      ],
-      "Your recovery email is set": [
-        "你的復原電子郵件已設置"
-      ],
-      "Your recovery methods": [
-        "您的復原方法"
-      ],
-      "Your recovery phone": [
-        "您的復原手機"
-      ],
-      "Your recovery phone can **only recover access to your account**.": [
-        "您的復原電話**只能復原對您帳號的存取權**。"
-      ],
-      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "您的復原電話可能會被攻擊者惡意利用以接管您的帳號。請 ${ disablePhone } 以提高您的帳號安全性。"
-      ],
-      "Your recovery phone has been enabled": [
-        "您的復原電話已啟用"
-      ],
-      "Your recovery phone is set": [
-        "你的復原手機已設置"
-      ],
-      "Your recovery phone number is:": [
-        "您的復原電話號碼:"
-      ],
-      "Your recovery phrase": [
-        "您的復原短語"
-      ],
-      "Your recovery phrase is set": [
-        "您的復原短語已設定完成"
       ]
     },
     "safety_review": {
@@ -22209,9 +21849,6 @@
       ],
       "To disallow password reset, you must have a recovery method set up.": [
         "若要停用密碼重設，您必須設定復原方式。"
-      ],
-      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "為了增強您帳號的安全性和保護您的資料，您可以在網頁應用程式的帳號設定中請求變更密碼。"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -23426,6 +23063,9 @@
     "State": {
       "Canceling your subscription, please wait": [
         "正將您的訂購授權取消，請稍候"
+      ],
+      "Disabled": [
+        "已停用"
       ]
     },
     "Status": {
@@ -25105,6 +24745,9 @@
       "Check your default mail application": [
         "檢查您的預設電子郵件應用程式"
       ],
+      "Choose a deployment method": [
+        "選擇您的部署方式"
+      ],
       "Choose a provider": [
         "選擇服務商"
       ],
@@ -25284,9 +24927,6 @@
       ],
       "Data collection": [
         "資料收集"
-      ],
-      "Data locked": [
-        "資料已上鎖"
       ],
       "Data recovery": [
         "資料救援"
@@ -25657,9 +25297,6 @@
       "Generate missing keys": [
         "產生遺漏的金鑰"
       ],
-      "Generate new recovery phrase?": [
-        "產生新的還原短語？"
-      ],
       "Generate SMTP token": [
         "產生 SMTP 權杖"
       ],
@@ -25863,6 +25500,9 @@
       ],
       "Lower your cost without losing features": [
         "在不失去功能的同時降低您的成本"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "主要密碼"
@@ -27313,9 +26953,6 @@
       "Could not enable admin access for ${ n } user": [
         "無法為 ${ n } 個使用者啟用管理員存取權限"
       ],
-      "Could not enable administrator access: ${ error }": [
-        "無法啟用管理員存取權：${ error }"
-      ],
       "Enable admin access?": [
         "啟用管理員存取權?"
       ],
@@ -27575,9 +27212,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "雙重驗證"
-      ],
       "Administrators can't access the data of private users": [
         "管理員無法存取私有使用者的資料"
       ],
@@ -27586,21 +27220,6 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "邀請已傳送，正在等待受邀成員的回覆"
-      ],
-      "Invite sent": [
-        "已傳送邀請"
-      ],
-      "It's you": [
-        "這是您"
-      ],
-      "Pending admin access": [
-        "審理管理員存取權"
-      ],
-      "Private": [
-        "不公開"
-      ],
-      "SSO": [
-        "單一登入"
       ],
       "SSO user provided by your identity provider": [
         "您身份提供者提供的單一登入使用者"
