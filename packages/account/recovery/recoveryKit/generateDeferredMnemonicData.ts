@@ -74,13 +74,11 @@ export const generateDeferredMnemonicData = async ({
     emailAddress,
     username,
     getUserKeys,
-    isShareFeatureEnabled,
 }: {
     api: Api;
     emailAddress: string;
     username: string;
     getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>;
-    isShareFeatureEnabled: boolean;
 }): Promise<DeferredMnemonicData> => {
     const generatedRecoveryPhrasePayload = await generateRecoveryPhrasePayload({ username, getUserKeys, api });
 
@@ -96,6 +94,6 @@ export const generateDeferredMnemonicData = async ({
         recoveryKitBlob,
         payload,
         hasSentPayload: false,
-        save: getRecoveryKitSaveData({ recoveryPhrase, recoveryKitBlob, isShareFeatureEnabled }),
+        save: getRecoveryKitSaveData({ recoveryPhrase, recoveryKitBlob }),
     };
 };
