@@ -45,4 +45,18 @@ describe('tryParseToolCall', () => {
             arguments: { query: '' },
         });
     });
+
+    it('accepts desktop connector tool calls', () => {
+        const parsed = tryParseToolCall(
+            JSON.stringify({
+                name: 'filesystem__fs_search',
+                arguments: { query: '*.md', root: '/Users/me/Documents' },
+            })
+        );
+
+        expect(parsed).toEqual({
+            name: 'filesystem__fs_search',
+            arguments: { query: '*.md', root: '/Users/me/Documents' },
+        });
+    });
 });
