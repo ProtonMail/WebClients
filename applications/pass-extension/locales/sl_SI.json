@@ -947,6 +947,12 @@
       "PIN codes do not match": [
         "Kodi PIN se ne ujemata"
       ],
+      "Regex invalid": [
+        "Neveljaven regularni izraz"
+      ],
+      "Regex unsafe": [
+        "Regularni izraz ni varen"
+      ],
       "Registration failure: ${ message }": [
         "Neuspešna registracija: ${ message }"
       ],
@@ -2122,6 +2128,9 @@
       "Backup password": [
         "Varnostno geslo"
       ],
+      "Basic": [
+        "Osnovno"
+      ],
       "Birthdate": [
         "Rojstni datum"
       ],
@@ -2145,6 +2154,9 @@
       ],
       "Catch-All": [
         "Ujemi vse"
+      ],
+      "Check": [
+        "Preveri"
       ],
       "City": [
         "Mesto"
@@ -2605,6 +2617,9 @@
       "Reddit handle": [
         "Ime za Reddit"
       ],
+      "Regular expression": [
+        "Regularni izraz"
+      ],
       "Relevant": [
         "Pomembno"
       ],
@@ -2685,6 +2700,9 @@
       ],
       "SSN": [
         "SSN"
+      ],
+      "Starts with": [
+        "Se začne z"
       ],
       "State or province": [
         "Država ali pokrajina"
@@ -2862,6 +2880,9 @@
         "${ count } predmeta",
         "${ count } predmeti",
         "${ count } predmetov"
+      ],
+      "Regular expression rule": [
+        "Pravilo regularnega izraza"
       ],
       "You selected ${ semiboldText } in this vault.": [
         "V tem trezorju ste izbrali ${ semiboldText }."
@@ -3069,6 +3090,11 @@
       ],
       "Used on ${ url }": [
         "Uporabljeno na ${ url }"
+      ]
+    },
+    "Result": {
+      "The rule is matching this URL": [
+        "Pravilo se ujema s tem naslovom"
       ]
     },
     "Security Center - Info": {
@@ -3330,6 +3356,9 @@
       ],
       "Last modified": [
         "Zadnjič spremenjeno"
+      ],
+      "Learn more": [
+        "Več informacij"
       ],
       "Leave this item?": [
         "Zapustim ta predmet?"
