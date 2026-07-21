@@ -1,3 +1,4 @@
+import type { ChatCompletionsFunctionTool } from '../../../types-api';
 import { Role } from '../../../types-api';
 import { DEFAULT_CHAT_MODEL, LUMO_LITE_MODEL, LUMO_MAX_MODEL, toChatCompletionsBody } from './chat-completions';
 import type { LumoApiGenerationRequest } from './types';
@@ -6,6 +7,15 @@ const baseRequest: LumoApiGenerationRequest = {
     type: 'generation_request',
     turns: [{ role: Role.User, content: 'Hello' }],
     targets: ['message'],
+};
+
+const mailTool: ChatCompletionsFunctionTool = {
+    type: 'function',
+    function: {
+        name: 'view_emails',
+        description: 'List the emails currently on screen.',
+        parameters: { type: 'object', properties: {}, additionalProperties: false },
+    },
 };
 
 describe('toChatCompletionsBody', () => {
@@ -69,6 +79,50 @@ describe('toChatCompletionsBody', () => {
                 { role: 'lumo_tool_call', content: '{"name":"web_search"}' },
                 { role: 'user', content: 'Hello' },
             ],
+            stream: true,
+            stream_options: { include_usage: true },
+            reasoning_effort: 'none',
+            tools: [{ name: 'web_search' }],
+            tool_choice: 'auto',
+            lumo: { client_type: 'frontend' },
+        });
+    });
+
+    it('merges server tools and client function tools into one tools array when both are supplied', () => {
+        expect(
+            toChatCompletionsBody(baseRequest, {
+                clientTools: [mailTool],
+                serverTools: ['web_search'],
+            })
+        ).toEqual({
+            model: DEFAULT_CHAT_MODEL,
+            messages: [{ role: 'user', content: 'Hello' }],
+            stream: true,
+            stream_options: { include_usage: true },
+            reasoning_effort: 'none',
+            tools: [{ name: 'web_search' }, mailTool],
+            tool_choice: 'auto',
+            lumo: { client_type: 'frontend' },
+        });
+    });
+
+    it('forwards client function tools alone when no server tools are supplied', () => {
+        expect(toChatCompletionsBody(baseRequest, { clientTools: [mailTool] })).toEqual({
+            model: DEFAULT_CHAT_MODEL,
+            messages: [{ role: 'user', content: 'Hello' }],
+            stream: true,
+            stream_options: { include_usage: true },
+            reasoning_effort: 'none',
+            tools: [mailTool],
+            tool_choice: 'auto',
+            lumo: { client_type: 'frontend' },
+        });
+    });
+
+    it('forwards server tools requested via options as name-only objects', () => {
+        expect(toChatCompletionsBody(baseRequest, { serverTools: ['web_search'] })).toEqual({
+            model: DEFAULT_CHAT_MODEL,
+            messages: [{ role: 'user', content: 'Hello' }],
             stream: true,
             stream_options: { include_usage: true },
             reasoning_effort: 'none',
@@ -151,6 +205,46 @@ describe('toChatCompletionsBody', () => {
             request_key: 'encrypted-key',
             request_id: 'request-id',
         });
+    });
+
+    it('passes through OpenAI function tools for desktop connectors', () => {
+        const request: LumoApiGenerationRequest = {
+            ...baseRequest,
+            options: {
+                tools: [
+                    { name: 'web_search' },
+                    {
+                        type: 'function',
+                        function: {
+                            name: 'filesystem__fs_read',
+                            description: 'Read a file',
+                            parameters: {
+                                type: 'object',
+                                properties: { path: { type: 'string' } },
+                                required: ['path'],
+                            },
+                        },
+                    },
+                ],
+            },
+        };
+
+        expect(toChatCompletionsBody(request).tools).toEqual([
+            { name: 'web_search' },
+            {
+                type: 'function',
+                function: {
+                    name: 'filesystem__fs_read',
+                    description: 'Read a file',
+                    parameters: {
+                        $schema: 'https://json-schema.org/draft/2020-12/schema',
+                        type: 'object',
+                        properties: { path: { type: 'string' } },
+                        required: ['path'],
+                    },
+                },
+            },
+        ]);
     });
 
     it('maps image aspect ratio into the lumo extension', () => {

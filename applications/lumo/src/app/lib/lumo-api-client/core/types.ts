@@ -10,7 +10,9 @@
  */
 import type { AesGcmCryptoKey } from '../../../crypto/types';
 import type { Base64, RequestId, Status } from '../../../types';
+import type { ClientToolExecutor, ClientToolResult, PendingClientToolCall } from './client-tools';
 import {
+    type ChatCompletionsFunctionTool,
     type ChatCompletionsRequest,
     type ChatEndpointGenerationRequest,
     type Decrypted,
@@ -38,6 +40,7 @@ import {
     type QueuedMessage,
     type RejectedMessage,
     type RequestableGenerationTarget,
+    type ResponseFormat,
     Role,
     type ServerToolCallMessage,
     type ServerToolResultMessage,
@@ -75,6 +78,7 @@ import {
 
 // Re-export types with aliases
 export {
+    type ChatCompletionsFunctionTool,
     type ChatCompletionsRequest,
     type ChatEndpointGenerationRequest,
     type Decrypted,
@@ -101,6 +105,7 @@ export {
     type QueuedMessage,
     type RejectedMessage,
     type RequestableGenerationTarget,
+    type ResponseFormat,
     Role,
     type ServerToolCallMessage,
     type ServerToolResultMessage,
@@ -143,6 +148,8 @@ export type { Base64, RequestId, Status };
 
 export type { AesGcmCryptoKey };
 
+export type { ClientToolExecutor, ClientToolResult, PendingClientToolCall };
+
 // *** Library-internal types (lumo-api-client only) ***
 
 // Configuration interfaces
@@ -153,6 +160,8 @@ export interface LumoApiClientConfig {
     lumoPubKey: string;
     externalTools: ToolName[];
     imageTools: ToolName[];
+    /** When true and no `clientToolExecutor` is supplied, registers the Lumo Desktop bridge executor. */
+    enableDesktopTools: boolean;
     interceptors: {
         request?: RequestInterceptor[];
         response?: ResponseInterceptor[];
@@ -173,11 +182,37 @@ export interface AssistantCallOptions {
     enableReasoning?: boolean;
     modelTier?: 'auto' | 'lumo-lite' | 'lumo-max';
     enableSuggestedQuestions?: boolean;
+    /** Auto-register the Lumo Desktop bridge executor when no `clientToolExecutor` is supplied. Default: false. */
+    enableDesktopTools?: boolean;
     requestKey?: AesGcmCryptoKey;
     requestId?: RequestId;
     generateTitle?: boolean;
     autoGenerateEncryption?: boolean;
     imageAspectRatio?: ImageAspectRatio;
+    /**
+     * OpenAI structured-outputs response format. When set, the model's streamed output for the
+     * main message is constrained to the given JSON schema (title/suggested-question generation
+     * is unaffected).
+     */
+    responseFormat?: ResponseFormat;
+    /**
+     * Client-defined function tools (OpenAI shape) advertised on the wire alongside any server
+     * tools. The model emits `delta.tool_calls` against these; a {@link ClientToolExecutor}
+     * runs them and feeds results back as tool turns. Omit execution by leaving
+     * `clientToolExecutor` unset — the stream still emits tool_call chunks for an external loop.
+     */
+    clientTools?: ChatCompletionsFunctionTool[];
+    /**
+     * Built-in server-side tools (e.g. `web_search`) to advertise alongside `clientTools`. The
+     * backend runs these worker-side and folds the result back into the same stream.
+     */
+    serverTools?: ToolName[];
+    /**
+     * Product-supplied executor for client-side tool calls. When set (or when `enableDesktopTools`
+     * auto-registers the desktop bridge), `callAssistant` runs a multi-round loop. Implement
+     * human-in-the-loop approval inside `execute()` before running mutation handlers.
+     */
+    clientToolExecutor?: ClientToolExecutor;
 }
 
 /**

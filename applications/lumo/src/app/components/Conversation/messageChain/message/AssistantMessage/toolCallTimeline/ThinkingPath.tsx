@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { ToolCallAnnouncement, ToolCallData } from '../../../../../../lib/toolCall/types';
+import { isNativeToolCallData } from '../../../../../../lib/toolCall/types';
 import type { Message } from '../../../../../../types';
 import { type IconName, LumoIcon } from '../../../../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/LazyMarkdownComponents';
@@ -20,6 +21,25 @@ import './ThinkingPath.scss';
  * Get icon name for tool call type.
  */
 function getToolCallIcon(toolCall: ToolCallData | ToolCallAnnouncement): IconName {
+    if (isNativeToolCallData(toolCall)) {
+        if (toolCall.name.startsWith('filesystem__')) {
+            return 'Folder';
+        }
+        if (toolCall.name.startsWith('bash__')) {
+            return 'Terminal';
+        }
+        if (toolCall.name.startsWith('browser__')) {
+            return 'Globe';
+        }
+        if (toolCall.name.startsWith('slack__')) {
+            return 'MessageSquare';
+        }
+        if (toolCall.name.startsWith('confluence__')) {
+            return 'FileText';
+        }
+        return 'Wrench';
+    }
+
     switch (toolCall.name) {
         case 'web_search':
             return 'Globe';
@@ -43,7 +63,45 @@ function getToolCallIcon(toolCall: ToolCallData | ToolCallAnnouncement): IconNam
  * Get human-readable label for tool call with details.
  * Returns [presentTense, pastTense] tuple.
  */
+function getNativeToolCallLabel(name: string, args: Record<string, unknown>): [string, string] {
+    const argStr = (key: string) => (typeof args[key] === 'string' ? (args[key] as string) : '');
+
+    if (name === 'filesystem__fs_search') {
+        const query = argStr('query') || 'files';
+        return [`Searching files for "${query}"...`, `Searched files for "${query}" and sent results back`];
+    }
+    if (name === 'filesystem__fs_read') {
+        const path = argStr('path') || 'file';
+        return [`Reading ${path}...`, `Read ${path} and sent contents back`];
+    }
+    if (name === 'filesystem__fs_write') {
+        const path = argStr('path') || 'file';
+        return [`Writing ${path}...`, `Updated ${path}`];
+    }
+    if (name === 'filesystem__fs_edit') {
+        const path = argStr('path') || 'file';
+        return [`Editing ${path}...`, `Edited ${path}`];
+    }
+    if (name === 'bash__run') {
+        const command = argStr('command') || 'command';
+        const short = command.length > 60 ? `${command.slice(0, 57)}...` : command;
+        return [`Running \`${short}\`...`, `Ran command and sent output back`];
+    }
+    if (name === 'browser__fetch' || name === 'browser__navigate') {
+        const url = argStr('url') || 'page';
+        return [`Fetching ${url}...`, `Fetched ${url} and sent contents back`];
+    }
+
+    const shortName = name.includes('__') ? name.split('__').slice(1).join('__') : name;
+    return [`Running ${shortName}...`, `Ran ${shortName} and sent results back`];
+}
+
 function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [string, string] {
+    if (isNativeToolCallData(toolCall)) {
+        const args = 'arguments' in toolCall ? toolCall.arguments : {};
+        return getNativeToolCallLabel(toolCall.name, args);
+    }
+
     switch (toolCall.name) {
         case 'web_search': {
             const query = toolCall.arguments?.query;
@@ -317,17 +375,58 @@ interface WebExtractResultItem {
     content: string;
 }
 
+interface WebExtractFailedUrl {
+    url: string;
+    error?: string;
+}
+
 interface WebExtractResult {
     type: 'WebExtract' | string;
     results: WebExtractResultItem[];
-    failed_urls: string[];
+    failedUrls: WebExtractFailedUrl[];
 }
+
+const normalizeWebExtractFailedUrl = (item: unknown): WebExtractFailedUrl | null => {
+    if (typeof item === 'string') {
+        return { url: item };
+    }
+
+    if (typeof item === 'object' && item !== null && 'url' in item) {
+        const failedItem = item as { url: unknown; error?: unknown };
+
+        if (typeof failedItem.url !== 'string') {
+            return null;
+        }
+
+        return {
+            url: failedItem.url,
+            error: typeof failedItem.error === 'string' ? failedItem.error : undefined,
+        };
+    }
+
+    return null;
+};
 
 const parseWebExtractResult = (result: string): WebExtractResult | null => {
     try {
-        const parsed = JSON.parse(result);
+        const parsed = JSON.parse(result) as {
+            type?: string;
+            results?: WebExtractResultItem[];
+            failed_urls?: unknown[];
+        };
+
         if (parsed.type === 'WebExtract' && Array.isArray(parsed.results)) {
-            return parsed as WebExtractResult;
+            const failedUrls = Array.isArray(parsed.failed_urls)
+                ? parsed.failed_urls
+                      .map(normalizeWebExtractFailedUrl)
+                      .filter((failedUrl): failedUrl is WebExtractFailedUrl => failedUrl !== null)
+                : [];
+
+            return {
+                type: parsed.type,
+                results: parsed.results,
+                failedUrls,
+            };
         }
     } catch {
         // Not valid JSON or not web extract format
@@ -394,6 +493,8 @@ const ToolCallStep = ({
             toolCall.name === 'cryptocurrency' ||
             toolCall.name === 'weather' ||
             toolCall.name === 'proton_info');
+    const isNativeDesktopTool = isNativeToolCallData(toolCall);
+    const showNativeComplete = isNativeDesktopTool && !isActive && hasDetails;
 
     const hasInlineImageStatus = imageToolResult !== null && !isActive;
     const hasError = imageToolResult?.error === true;
@@ -446,6 +547,33 @@ const ToolCallStep = ({
                             )}
                         </div>
                     </div>
+                ) : showNativeComplete ? (
+                    <>
+                        <div className={clsx(toolStepToggleClassName, 'cursor-default')}>
+                            <span className="color-weak">{label}</span>
+                            <LumoIcon
+                                name="Check"
+                                width={12}
+                                height={12}
+                                className="thinking-step-complete-check shrink-0"
+                            />
+                        </div>
+                        {isExpanded && (
+                            <div className="thinking-step-details mt-2 text-rg lh130">
+                                <pre className="text-sm m-0 whitespace-pre-wrap">{result}</pre>
+                            </div>
+                        )}
+                        {!isExpanded && (
+                            <button
+                                className={clsx(toolStepToggleClassName, 'cursor-pointer mt-1')}
+                                onClick={() => setIsExpanded(true)}
+                                type="button"
+                            >
+                                <span className="text-sm color-weak">View tool result</span>
+                                <LumoIcon name="ChevronDown" width={12} height={12} />
+                            </button>
+                        )}
+                    </>
                 ) : hasDetails ? (
                     <>
                         <button
@@ -472,13 +600,13 @@ const ToolCallStep = ({
                                 )}
                                 {webExtractResult && (
                                     <span className="text-sm color-weak">
-                                        {webExtractResult.results.length + webExtractResult.failed_urls.length}{' '}
-                                        {webExtractResult.results.length + webExtractResult.failed_urls.length === 1
+                                        {webExtractResult.results.length + webExtractResult.failedUrls.length}{' '}
+                                        {webExtractResult.results.length + webExtractResult.failedUrls.length === 1
                                             ? 'URL'
                                             : 'URLs'}
-                                        {webExtractResult.failed_urls.length > 0 && (
+                                        {webExtractResult.failedUrls.length > 0 && (
                                             <span className="color-danger ml-1">
-                                                · {webExtractResult.failed_urls.length} failed
+                                                · {webExtractResult.failedUrls.length} failed
                                             </span>
                                         )}
                                     </span>
@@ -524,7 +652,7 @@ const ToolCallStep = ({
                                                 </div>
                                             </div>
                                         ))}
-                                        {webExtractResult.failed_urls.map((url, idx) => (
+                                        {webExtractResult.failedUrls.map((failedUrl, idx) => (
                                             <div
                                                 key={`failed-${idx}`}
                                                 className="pb-2 border-bottom border-weak last:border-0 last:pb-0 flex items-start gap-2"
@@ -537,9 +665,11 @@ const ToolCallStep = ({
                                                 />
                                                 <div className="min-w-0">
                                                     <p className="text-semibold color-danger m-0 mb-0.5 text-ellipsis overflow-hidden">
-                                                        {url}
+                                                        {failedUrl.url}
                                                     </p>
-                                                    <p className="text-xs color-weak m-0">Failed to extract</p>
+                                                    <p className="text-xs color-weak m-0">
+                                                        {failedUrl.error ?? c('collider_2025: Web Extract').t`Failed to extract`}
+                                                    </p>
                                                 </div>
                                             </div>
                                         ))}

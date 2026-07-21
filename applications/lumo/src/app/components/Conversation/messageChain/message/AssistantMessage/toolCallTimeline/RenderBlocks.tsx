@@ -1,5 +1,6 @@
 import { Suspense, lazy, useCallback, useState } from 'react';
 
+import type { NativeToolCallData } from '../../../../../../lib/toolCall/types';
 import { tryParseToolCallAnnouncement, tryParseToolCall } from '../../../../../../lib/toolCall/types';
 import type { ContentBlock, Message, ThinkingTimelineEvent, ToolCallBlock } from '../../../../../../types';
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
@@ -135,7 +136,29 @@ function toToolCallStep(
     const toolCall = parseToolCallBlock(block);
 
     if (!toolCall) {
-        return isInProgress ? createInProgressToolCallStep(block.content) : null;
+        if (isInProgress) {
+            return createInProgressToolCallStep(block.content);
+        }
+        try {
+            const raw = JSON.parse(block.content) as { name?: string; arguments?: Record<string, unknown> };
+            if (typeof raw.name === 'string' && raw.name.includes('__')) {
+                const blockIndex = allBlocks.indexOf(block);
+                const resultBlock = allBlocks.find((b, idx) => idx > blockIndex && isToolResultBlock(b));
+                const nativeToolCall: NativeToolCallData = {
+                    name: raw.name as NativeToolCallData['name'],
+                    arguments: raw.arguments ?? {},
+                };
+                return {
+                    type: 'tool_call',
+                    toolCall: nativeToolCall,
+                    result: resultBlock?.type === 'tool_result' ? resultBlock.content : undefined,
+                    isActive: false,
+                };
+            }
+        } catch {
+            // ignore malformed tool call payloads
+        }
+        return null;
     }
 
     const blockIndex = allBlocks.indexOf(block);
