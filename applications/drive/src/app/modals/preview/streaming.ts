@@ -1,7 +1,5 @@
 import { type SyntheticEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { v4 as uuidv4 } from 'uuid';
-
 import type { ProtonDriveClient, SeekableReadableStream } from '@proton/drive';
 import { EnrichedError, errorToString, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { logging } from '@proton/drive/modules/logging';
@@ -50,7 +48,9 @@ class ServiceWorkerTimeoutError extends Error {}
  * so treat it as the current URL, not a stable one.
  */
 export function useVideoStreaming({ drive, nodeUid, mimeType, mediaDuration }: UseVideoStreamingProps) {
-    const [streamId] = useState<string>(() => uuidv4());
+    // Per-node id used to route SW stream requests and build the <video> src below. It must
+    // change per node so the URL changes and the <video> reloads on navigation in the preview.
+    const streamId = `stream-id-for-${nodeUid}`;
     const swTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const [isBrokenVideo, setIsBrokenVideo] = useState(false);
     const [isServiceWorkerReady, setIsServiceWorkerReady] = useState(false);
