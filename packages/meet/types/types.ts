@@ -8,7 +8,6 @@ export interface CreateMeetingParams {
     endTime?: string | null;
     recurrence?: string | null;
     timeZone?: string | null;
-    customPassword?: string;
     type?: MeetingType;
     protonCalendar?: boolean;
     waitingRoom?: WaitingRoomState;
