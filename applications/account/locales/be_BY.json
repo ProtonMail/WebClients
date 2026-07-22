@@ -2060,6 +2060,12 @@
       ],
       "Writing assistant seats": [
         "Ліцэнзій памочніка ў напісанні"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)"
       ]
     },
     "Address action": {
@@ -2324,6 +2330,9 @@
       ],
       "Trial in progress": [
         "Ідзе пробны перыяд"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ LUMO_SHORT_APP_NAME } дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
     "Attached ics file error": {
@@ -2414,6 +2423,9 @@
       ],
       "You have reached the trial limit.": [
         "Дасягнута абмежаванне пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій памочніка ў напісанні ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -2622,6 +2634,15 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ]
     },
     "BF2025: Deal details": {
@@ -7971,6 +7992,9 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "Please set up your organization before adding a company.": [
+        "Наладзьце сваю арганізацыю перад дадаваннем кампаніі."
       ]
     },
     "error": {
@@ -14078,6 +14102,24 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочніка ў напісанні"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.": [
+        "Дэталізацыя па аплаце пакуль адсутнічае. Ваша дэталізацыя перыяду аплаты з'явіцца ў гэтым месцы. Вы зможаце спампаваць яе ў фармаце CSV пасля таго, як яна будзе даступная вам."
+      ],
+      "No companies yet. Start by creating a new company.": [
+        "Кампаній пакуль няма. Пачніце са стварэння новай кампаніі."
+      ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Працэдура можа заняць да некалькіх гадзін для прылад, каб выявіць і прамяніць палітыку, пасля паспяховага разгортвання."
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Профіль прылады павінен дасягнуць ${ policiesPath } на кожнай прыладзе, каб уключыць пастаянную VPN. Кліент ${ VPN_APP_NAME } выяўляе яго на прыладзе і аўтаматычна прымяняе профіль."
       ]
     },
     "info": {
@@ -16380,6 +16422,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Client": [
+        "Кліент"
+      ],
+      "Client version": [
+        "Версія кліента"
       ]
     },
     "label": {
@@ -17057,6 +17105,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Вы былі запрошаны паспрабаваць ${ MAIL_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Дадаць памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "mail_signup_2024: title": {
@@ -18365,6 +18419,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -24378,6 +24435,12 @@
         "Падключэнне па VPN для ${ n } прылад на карыстальніка",
         "Падключэнне па VPN для ${ n } прылад на карыстальніка",
         "Падключэнне па VPN для ${ n } прылад на карыстальніка"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } для ${ maxAi } карыстальніка",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } для ${ maxAi } карыстальнікаў",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } для ${ maxAi } карыстальнікаў",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } для ${ maxAi } карыстальнікаў"
       ]
     },
     "Subscription change warning": {
@@ -28152,6 +28215,12 @@
         "Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі.",
         "Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі.",
         "Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі."
+      ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Не ўдалося ўключыць доступ для адміністратара: ${ unprivatizationResult.error }"
+      ],
+      "Waiting for admin approval": [
+        "Чакаецца ўхваленне адміністратара"
       ]
     },
     "Update font modal": {
@@ -28363,6 +28432,15 @@
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
+      ],
+      "Invited": [
+        "Запрошаны"
+      ],
+      "Pending": [
+        "У чаканні"
+      ],
+      "Requested": [
+        "Запытана"
       ]
     },
     "Validation": {
