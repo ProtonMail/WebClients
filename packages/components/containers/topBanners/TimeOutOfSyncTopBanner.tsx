@@ -29,9 +29,19 @@ const isStaleServerTimeUpdate = (previousUpdateLocalTime: Date | undefined, loca
         return true;
     }
     const timeDifference = Math.abs(previousUpdateLocalTime.getTime() - localTime.getTime());
-    // The event loop runs every 30s, so we expect the server time to be updated at least with that frequency
-    // (with a margin of a few seconds)
-    return timeDifference > 35 * SECOND;
+    // The event loop runs every 30s-120s (depending on the app), so we expect the server time to be updated at
+    // least with that frequency (with a margin of a few seconds).
+    // We stay on the upper end of the interval to avoid incorrectly flagging true positive out-of-sync times as
+    // stale while waiting for the longer event loops to run (as this results in the banner being wrongly hidden
+    // for a few seconds on re-renders, which can be triggered e.g. when navigating across Mail folders).
+    // Note also that as long as the staleness threshold is below the out-of-sync one, staleness can only hide
+    // a true positive banner, never trigger displaying a false positive one.
+    // NB: we ignore exponential backoff interval on connectivity issues, which can delay API requests for up to
+    // 300s, since the banner will always eventually be hidden on connectivity issues anyway (as the server time
+    // will be marked as stale). This normally should not matter anyway as the offline banner should be shown
+    // instead of this one (thanks to the "one-of" class logic), but this is not the case if the vpn is connected,
+    // due to navigator.onLine limitations
+    return timeDifference > 125 * SECOND;
 };
 
 type Props = { className?: string };
@@ -49,7 +59,7 @@ const TimeOutOfSyncTopBanner = ({ className }: Props) => {
 
     useEffect(() => {
         // Check for stale server time every 5s, and ping the server if needed to ensure that we retrieve an updated
-        // server time at most 5s after waking from an idle state: we do not want to wait up to 30s for the event loop
+        // server time at most 5s after waking from an idle state: we do not want to wait for the event loop
         // request to be processed, since the stale serverTime() value will be used by the apps in the meantime.
         const stalePingInterval = setInterval(() => {
             if (isStaleServerTimeUpdate(serverTimeUpdatedAtRef.current, new Date())) {
