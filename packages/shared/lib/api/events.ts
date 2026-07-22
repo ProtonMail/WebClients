@@ -81,7 +81,9 @@ export interface CoreEventV6Response extends EventV6Defaults {
     UserSettings: EventV6Response;
     Organizations: EventV6Response;
     OrganizationSettings: EventV6Response;
+    OrganizationEntitlements: EventV6Response;
     Subscriptions: EventV6Response;
+    MemberEntitlements: EventV6Response;
     Members: EventV6Response;
     GroupMembers: EventV6Response;
     Domains: EventV6Response;

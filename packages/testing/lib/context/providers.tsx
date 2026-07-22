@@ -12,6 +12,7 @@ import ConfigProvider from '@proton/components/containers/config/Provider';
 import EventManagerContext from '@proton/components/containers/eventManager/context';
 import ModalsContext from '@proton/components/containers/modals/modalsContext';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import type { Entitlements } from '@proton/payments/core/entitlements/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
@@ -23,6 +24,7 @@ import type {
     ProtonConfig,
     UserModel,
 } from '@proton/shared/lib/interfaces';
+import { makeEntitlements } from '@proton/testing/builders/entitlements';
 import { buildUser } from '@proton/testing/builders/user';
 
 import { apiMock } from '../api';
@@ -139,6 +141,7 @@ export const withPaymentContext =
 type ReduxModelOverrides = Partial<{
     user: UserModel;
     plans: Plan[];
+    entitlements: Entitlements;
 }>;
 
 export type WithReduxStoreProps = {
@@ -172,6 +175,7 @@ export const getPreloadedState = (
     organizationKey: getModelState({} as CachedOrganizationKey),
     userInvitations: getModelState([]),
     plans: getModelState({ plans: modelOverrides.plans ?? [], freePlan: FREE_PLAN }),
+    entitlements: getModelState(modelOverrides.entitlements ?? makeEntitlements()),
     features: {},
     importerConfig: getModelState({} as ApiEnvironmentConfig),
     ...stateOverrides,
