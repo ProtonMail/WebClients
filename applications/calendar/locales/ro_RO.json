@@ -1220,6 +1220,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Duceți productivitatea mesageriei la un nou nivel. Lăsați-l pe ${ LUMO_SHORT_APP_NAME } să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
       ]
     },
     "Attached ics file error": {
@@ -1278,6 +1281,9 @@
       ],
       "You have reached the trial limit.": [
         "Ați atins limita perioadei de evaluare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "În perioada de evaluare puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe pentru asistentul de scriere ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "b2b_trials_Action": {
@@ -1399,6 +1405,14 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Planificați-vă și securizați-vă mesajele de pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele."
       ]
     },
     "BF2025: Deal details": {
@@ -1729,6 +1743,9 @@
       ],
       "Take a tour": [
         "Faceți un tur"
+      ],
+      "Get 50% offer": [
+        "Profitați de oferta de 50%"
       ]
     },
     "Calendar access select label": {
@@ -6911,6 +6928,30 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "Include asistentul de scriere ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Accesați peste 20.000 de servere din peste 145 de țări"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Cele mai rapide viteze VPN de până la 10 Gbps"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Mai aveți timp să vă decideți fără întrerupere."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Dacă anulați acum, veți pierde accesul la ${ BRAND_NAME } ${ planTitle } la ${ expiryDate }, inclusiv la aceste funcții:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Protecție premium a confidențialității pe toate dispozitivele personale"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Păstrați-vă abonamentul și primiți o reducere de 50% luna următoare"
       ]
     },
     "info": {
@@ -7705,6 +7746,12 @@
       ],
       "Zoom meeting": [
         "Conferință pe Zoom"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versiune client"
       ]
     },
     "label": {
@@ -7994,6 +8041,12 @@
       ],
       "for ${ price }": [
         "cu ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Adăugați asistentul de scriere ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Addon": {
@@ -8880,6 +8933,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -13010,6 +13066,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Stay for 50% off your next month": [
+        "Rămâneți cu o reducere de 50% luna următoare"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
