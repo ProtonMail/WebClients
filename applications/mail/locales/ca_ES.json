@@ -1930,6 +1930,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. "
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Porteu la productivitat del correu electrònic a nous nivells. Deixeu que ${ LUMO_SHORT_APP_NAME } us ajudi a redactar, respondre i corregir els vostres correus electrònics."
       ]
     },
     "Attached ics file error": {
@@ -1990,6 +1993,9 @@
       ],
       "You have reached the trial limit.": [
         "Heu arribat al límit de la versió de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
       ]
     },
     "b2b_trials_Action": {
@@ -2104,6 +2110,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protegiu els vostres correus i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu personalitzats, l'assistent de redacció de ${ LUMO_SHORT_APP_NAME }, àlies hide-my-email il·limitats i molt més.",
+        "Protegiu els vostres correus i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu personalitzats, l'assistent de redacció de ${ LUMO_SHORT_APP_NAME }, àlies hide-my-email il·limitats i molt més."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protegiu els vostres correus i la vostra agenda amb xifratge d’extrem a extrem. Inclou 15 adreces de correu, compatibilitat amb dominis de correu personalitzats, l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }, àlies de hide-my-email il·limitats i molt més."
       ]
     },
     "BF2025: Deal details": {
@@ -9320,6 +9333,12 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Mantingueu el vostre pla i gaudiu d'un 50% de descompte el mes vinent."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "info": {
@@ -10503,6 +10522,12 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versió del client"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10950,6 +10975,12 @@
       ],
       "for ${ price }": [
         "per ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Afegiu l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Mailbox": {
@@ -11798,6 +11829,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {

@@ -1917,6 +1917,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "将电子邮件工作效率提升到新水平。让 ${ BRAND_NAME } Scribe 帮您撰写、回复和校对电子邮件。"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "将邮件生产力提升至新高度，让 ${ LUMO_SHORT_APP_NAME } 帮助您撰写、回复和校对邮件。"
       ]
     },
     "Attached ics file error": {
@@ -1976,6 +1979,9 @@
       ],
       "You have reached the trial limit.": [
         "您已达到试用限制！"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 写作助手席位。"
       ]
     },
     "b2b_trials_Action": {
@@ -2088,6 +2094,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "存储空间在所有 ${ BRAND_NAME } 服务之间共享"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
       ]
     },
     "BF2025: Deal details": {
@@ -9162,6 +9174,12 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "保留当前套餐，下月享受 5 折优惠"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } 内置写作助手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ]
     },
     "info": {
@@ -10337,6 +10355,12 @@
       ],
       "URL wildcard pattern": [
         "URL 通配符模式"
+      ],
+      "Client": [
+        "客户端"
+      ],
+      "Client version": [
+        "客户端版本"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10779,6 +10803,12 @@
       ],
       "for ${ price }": [
         "总计 ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 写作助手"
       ]
     },
     "Mailbox": {
@@ -11594,6 +11624,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ]
     },
     "new_plans: feature highlight": {
