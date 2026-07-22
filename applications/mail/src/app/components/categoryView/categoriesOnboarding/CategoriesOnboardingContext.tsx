@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef } from 'react';
 
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
@@ -61,7 +61,7 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
     const onboarding = useCategoriesOnboardingEligibility();
 
     const hasTriggeredModalRef = useRef(false);
-    const [categorizeStepLocation, setCategorizeStepLocation] = useState<CategorizeStepLocation>(undefined);
+    const categorizeStepLocationRef = useRef<CategorizeStepLocation>(undefined);
 
     const b2cOnboardingViewFlag = useFeature<number>(FeatureCode.CategoryViewB2COnboardingViewFlags);
     const flagRef = useRef(b2cOnboardingViewFlag);
@@ -73,12 +73,10 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
     // The onboarding only happens in inbox, the context total will represent the number of emails in primary or the selected category
     const total = useMailSelector(contextTotal);
 
-    useEffect(() => {
-        if (categorizeStepLocation !== undefined || !total) {
-            return;
-        }
-        setCategorizeStepLocation(total > 2 ? 'list' : 'tab');
-    }, [categorizeStepLocation, total]);
+    // Snapshot the location from the first non-zero total; it must not change once decided
+    if (categorizeStepLocationRef.current === undefined && total) {
+        categorizeStepLocationRef.current = total > 2 ? 'list' : 'tab';
+    }
 
     useEffect(() => {
         // Only trigger modal once per session and when the user is in the Inbox
@@ -159,15 +157,8 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
         void flagRef.current.update(setBit(flagValue, bit));
     }, [activeStep]);
 
-    const socialTabSpotlightStep = useMemo(
-        () => getSocialTabSpotlightStep(activeStep, categorizeStepLocation),
-        [activeStep, categorizeStepLocation]
-    );
-
-    const listSpotlightStep = useMemo(
-        () => getListSpotlightStep(activeStep, categorizeStepLocation),
-        [activeStep, categorizeStepLocation]
-    );
+    const socialTabSpotlightStep = getSocialTabSpotlightStep(activeStep, categorizeStepLocationRef.current);
+    const listSpotlightStep = getListSpotlightStep(activeStep, categorizeStepLocationRef.current);
 
     const userIsInB2COnboardingFlow = B2C_ONBOARDING_STEPS.has(activeStep);
 
