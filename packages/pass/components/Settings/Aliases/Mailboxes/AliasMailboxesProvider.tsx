@@ -1,10 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { mailboxVerificationRequired } from '@proton/pass/lib/alias/alias.utils';
 import { getMailboxes } from '@proton/pass/store/actions';
@@ -18,33 +17,14 @@ import { AliasMailboxDeleteModal } from './AliasMailboxDeleteModal';
 import { AliasMailboxEditModal } from './AliasMailboxEdit';
 import { AliasMailboxEditCancel } from './AliasMailboxEditCancel';
 import { MailboxVerifyModal } from './AliasMailboxVerifyModal';
+import {
+    type AliasMailboxAction,
+    AliasMailboxesContext,
+    type AliasMailboxesContextValue,
+} from './AliasMailboxesContext';
 
-export interface AliasMailboxesContextValue {
-    action: MaybeNull<AliasMailboxAction>;
-    loading: boolean;
-    canManage: boolean;
-    mailboxes: UserMailboxOutput[];
-    setAction: (action: MaybeNull<AliasMailboxAction>) => void;
-
-    getAliasMailboxes: () => void;
-    onMailboxCreated: (dto: UserMailboxOutput) => void;
-    onMailboxRemoved: (dto: MailboxDeleteDTO) => void;
-}
-
-export type AliasMailboxAction =
-    | { type: 'create' }
-    | { type: 'verify'; mailboxID: number; sentAt?: number }
-    | { type: 'delete'; mailboxID: number }
-    | { type: 'edit'; mailboxID: number }
-    | { type: 'cancel-edit'; mailboxID: number };
-
-export const AliasMailboxesContext = createContext<MaybeNull<AliasMailboxesContextValue>>(null);
-export const useAliasMailboxes = createUseContext(AliasMailboxesContext);
-
-export const useMailbox = (mailboxID: number) => {
-    const { mailboxes } = useAliasMailboxes();
-    return useMemo(() => mailboxes.find((mailbox) => mailbox.MailboxID === mailboxID), [mailboxID, mailboxes]);
-};
+export type { AliasMailboxAction } from './AliasMailboxesContext';
+export { useAliasMailboxes, useMailbox } from './AliasMailboxesContext';
 
 export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
     const upsell = useUpselling();
