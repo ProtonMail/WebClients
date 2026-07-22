@@ -35,7 +35,6 @@ export const useCreateInstantMeeting = () => {
             params: {
                 ...params,
                 meetingName: isPaidUser ? c('Info').t`Premium meeting` : c('Info').t`Free meeting`,
-                customPassword: '',
                 startTime: null,
                 endTime: null,
                 recurrence: null,
