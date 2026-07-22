@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { isMultiUserPersonalPlan } from '@proton/payments/core/plan/helpers';
 import {
     ADDRESS_FLAGS,
     ADDRESS_PERMISSIONS,
@@ -17,6 +18,7 @@ import type {
     Address,
     CachedOrganizationKey,
     Member,
+    Organization,
     PartialMemberAddress,
     UserModel,
 } from '@proton/shared/lib/interfaces';
@@ -60,6 +62,7 @@ export const getPermissions = ({
     address,
     addresses,
     user,
+    organization,
     organizationKey,
     addressIndex,
 }: {
@@ -68,6 +71,7 @@ export const getPermissions = ({
     address: Address;
     addresses: PartialMemberAddress[];
     user: UserModel;
+    organization?: Organization;
     organizationKey?: CachedOrganizationKey;
 }) => {
     const { isAdmin, canPay } = user;
@@ -78,10 +82,16 @@ export const getPermissions = ({
     const isSelf = !member || !!member.Self;
     const isDefault = addressIndex === 0;
     const isEnabled = Status === ADDRESS_STATUS.STATUS_ENABLED;
+    const isDisabled = Status === ADDRESS_STATUS.STATUS_DISABLED;
     const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
     const isBYOE = Type === ADDRESS_TYPE.TYPE_EXTERNAL && getIsBYOEAddress(address);
     const isNotEncrypted = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
     const isSignatureNotExpected = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
+
+    // An admin managing a member's BYOE address on a multi-user personal (B2C) plan can enable/disable it
+    // (the only case so far). Enable when the address is disabled, disable when it is enabled.
+    const isB2CPlan = !!organization?.PlanName && isMultiUserPersonalPlan(organization.PlanName);
+    const isAdminOnMemberBYOE = isBYOE && !isSelf && isB2CPlan;
 
     const canMakeDefault = !isDefault && !getIsNonDefault(address);
 
@@ -128,13 +138,15 @@ export const getPermissions = ({
         canEditInternalAddress,
         canEditExternalAddress,
         canDisable,
-        canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && Type !== TYPE_ORIGINAL && !isBYOE,
+        canEnable: isDisabled && isAdmin && Type !== TYPE_ORIGINAL && !isBYOE,
         canDeleteAddress: adminCanDeleteCustom,
         canDeleteAddressOncePerYear: !adminCanDeleteCustom && isAdmin && !isSpecialAddress && !isExternal && !isDefault,
         canEdit: isSelf,
         canGrantBYOEPermissions: isSelf && isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to reconnect a BYOE address when a sync is lost
-        canReconnectBYOE: isBYOE && isNotEncrypted && isSignatureNotExpected, // Used to reconnect a BYOE when manually disconnected by the user
-        canDisconnectBYOE: isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to manually disconnect a BYOE address
+        canReconnectBYOE: isSelf && isBYOE && isNotEncrypted && isSignatureNotExpected, // Used to reconnect a BYOE when manually disconnected by the user
+        canDisconnectBYOE: isSelf && isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to manually disconnect a BYOE address
+        canDisableBYOE: isAdminOnMemberBYOE && isEnabled,
+        canEnableBYOE: isAdminOnMemberBYOE && !isEnabled,
     };
 };
 

@@ -2,10 +2,9 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { disconnectBYOEAddress, reconnectBYOEAddress } from '@proton/activation/src/api';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
-import { isMultiUserPersonalPlan } from '@proton/payments/core/plan/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
-import { disableAddress } from '@proton/shared/lib/api/addresses';
+import { disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ActiveKeyWithVersion, Address, Member } from '@proton/shared/lib/interfaces';
 import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelper';
@@ -18,7 +17,6 @@ import { type AddressKeysState, addressKeysThunk } from '../addressKeys/index';
 import { addressThunk, addressesThunk } from '../addresses';
 import { getKTActivation } from '../kt/actions';
 import { type MembersState, getMemberAddresses } from '../members';
-import { type OrganizationState, organizationThunk } from '../organization';
 
 export const setAddressFlags = ({
     address: initialAddress,
@@ -65,12 +63,12 @@ export const updateBYOEAddressConnection = ({
     skipDisable = false,
 }: {
     address: Address;
-    type: 'disconnect' | 'reconnect';
+    type: 'disconnect' | 'reconnect' | 'enable' | 'disable';
     member?: Member;
     skipDisable?: boolean;
 }): ThunkAction<
     Promise<Address | undefined>,
-    AddressKeysState & KtState & MembersState & OrganizationState,
+    AddressKeysState & KtState & MembersState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -80,21 +78,23 @@ export const updateBYOEAddressConnection = ({
         }
         const api = getSilentApi(extra.api);
 
-        // A multi-user personal (B2C, e.g. Family) plan has no organisation key, so an admin cannot access the
-        // member's keys to rebuild their signed key list, meaning a true disconnect (key flags + SKL + KT) is
-        // impossible. Instead the admin disables the member's address, which needs the address ID alone.
-        const isActingOnMember = !!member && !member.Self;
-        if (isActingOnMember) {
-            const organization = await dispatch(organizationThunk());
-            const isB2CPlan = !!organization.PlanName && isMultiUserPersonalPlan(organization.PlanName);
-            if (isB2CPlan && type === 'disconnect') {
+        // Enable/disable are the admin-on-member actions on a multi-user personal (B2C) plan. There is no
+        // organisation key, so the admin cannot rebuild the member's signed key list: these do no key/SKL/KT
+        // work. Disable turns the address off by ID; enable re-enables it through the backend reconnect endpoint.
+        if (type === 'disable' || type === 'enable') {
+            if (type === 'disable') {
                 await api(disableAddress(initialAddress.ID));
-                // Refresh the member's addresses so the disabled status is reflected in the UI.
+            } else {
+                await api(enableAddress(initialAddress.ID));
+            }
+            // Refresh the member's addresses so the new status is reflected in the UI.
+            if (member) {
                 const memberAddresses = await dispatch(
                     getMemberAddresses({ member, cache: CacheType.None, retry: true })
                 );
                 return memberAddresses.find((otherAddress) => otherAddress.ID === initialAddress.ID);
             }
+            return dispatch(addressThunk({ address: initialAddress, cache: CacheType.None }));
         }
 
         const { keyTransparencyVerify } = createKTVerifier({
