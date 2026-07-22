@@ -21,7 +21,6 @@ export const useCreateMeeting = () => {
         endTime = null,
         recurrence = null,
         timeZone = null,
-        customPassword = '',
         type = MeetingType.INSTANT,
         protonCalendar = false,
         waitingRoom = WaitingRoomState.DISABLED,
@@ -31,7 +30,6 @@ export const useCreateMeeting = () => {
         try {
             const { response, passwordBase } = await saveMeeting({
                 params: {
-                    customPassword,
                     protonCalendar,
                     meetingName,
                     startTime,

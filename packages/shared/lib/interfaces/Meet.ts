@@ -101,15 +101,6 @@ export interface MeetingInfo {
     MeetingLinkName: string;
 }
 
-export type UpdateMeetingPasswordData = {
-    Password: string;
-    SessionKey: string;
-    SRPSalt: string;
-    SRPVerifier: string;
-    SRPModulusID: string;
-    CustomPassword: CustomPasswordState;
-};
-
 export interface RotatePersonalMeetingResponse {
     Meeting: Meeting;
     Code: 1000;

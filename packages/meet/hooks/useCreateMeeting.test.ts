@@ -77,7 +77,6 @@ describe('useCreateMeeting', () => {
             endTime: '2025-06-23T01:00:00Z',
             recurrence: null,
             timeZone: 'UTC',
-            customPassword: '',
         };
 
         const { result } = renderHook(() => useCreateMeeting());
