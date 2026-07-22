@@ -1231,6 +1231,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Выведзіце прадукцыйнасць электроннай пошты на новыя ўзроўні. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ LUMO_SHORT_APP_NAME } дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
     "Attached ics file error": {
@@ -1290,6 +1293,9 @@
       ],
       "You have reached the trial limit.": [
         "Дасягнута абмежаванне пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій памочніка ў напісанні ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
       ]
     },
     "b2b_trials_Action": {
@@ -1413,6 +1419,15 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ]
     },
     "BF2025: Deal details": {
@@ -1745,6 +1760,9 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
+      ],
+      "Get 50% offer": [
+        "Скарыстайцеся скідкай у памеры 50%"
       ]
     },
     "Calendar access select label": {
@@ -7012,6 +7030,18 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Застаньцеся на сваім тарыфным плане і атрымайце скідку ў памеры 50% у наступным месяцы"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочніка ў напісанні"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
+      ],
+      "Have some more time to decide without interruption.": [
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
       ]
     },
     "info": {
@@ -7812,6 +7842,12 @@
       ],
       "Zoom meeting": [
         "Сустрэча па Zoom"
+      ],
+      "Client": [
+        "Кліент"
+      ],
+      "Client version": [
+        "Версія кліента"
       ]
     },
     "label": {
@@ -8106,6 +8142,12 @@
       ],
       "for ${ price }": [
         "за ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Дадаць памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Addon": {
@@ -9025,6 +9067,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -13249,6 +13294,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Stay for 50% off your next month": [
+        "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

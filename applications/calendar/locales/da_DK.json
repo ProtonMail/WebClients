@@ -1556,7 +1556,7 @@
         "Status"
       ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af platformsuforenelighed."
+        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
       ],
       "To migrate this user, enable their account in your Google Workspace Admin Console.": [
         "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
@@ -1713,6 +1713,9 @@
       ],
       "Take a tour": [
         "Tag en tour"
+      ],
+      "Get 50% offer": [
+        "Få et 50%-tilbud"
       ]
     },
     "Calendar access select label": {
@@ -6819,6 +6822,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Adgang til mere end 20.000 servere i 145 lande"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Hurtigste VPN-hastigheder – op til 10Gbps"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Få lidt mere tid til overvejelse – uden afbrydelse."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Premium privatlivsbeskyttelse på alle dine enheder"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Bliv på dit abonnement og få 50% rabat næste måned"
       ]
     },
     "info": {
@@ -7546,7 +7567,7 @@
         "URL"
       ],
       "URL wildcard pattern": [
-        "URL-jokertegnmønster"
+        "URL-wildcarddomæne"
       ],
       "Username": [
         "Brugernavn"
@@ -7607,6 +7628,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversion"
       ]
     },
     "label": {
@@ -7995,7 +8022,7 @@
         "Regel for regulært udtryk"
       ],
       "Wildcard pattern matching rule": [
-        "Regel for jokertegnmønstermatch"
+        "Regel for wildcardmønster"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er udløbet. ${ nonAutoRenewalAction }"
@@ -12780,6 +12807,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Stay for 50% off your next month": [
+        "Bliv hængende for 50% rabat i den næste måned"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13065,7 +13095,7 @@
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svigagtige websteder eller phishing-websteder."
+        "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svindel- eller phishing-websteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",
