@@ -20,6 +20,13 @@ const disconnectedBYOEAddress = {
     Flags: ADDRESS_FLAGS.BYOE + ADDRESS_FLAGS.FLAG_DISABLE_E2EE + ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED,
 } as Address;
 
+const disabledBYOEAddress = {
+    Email: 'test4@gmail.com',
+    Status: ADDRESS_STATUS.STATUS_DISABLED,
+    Receive: ADDRESS_RECEIVE.RECEIVE_YES,
+    Flags: ADDRESS_FLAGS.BYOE,
+} as Address;
+
 const internalAddress = {
     Email: 'internalAddress1@proton.me',
     Status: ADDRESS_STATUS.STATUS_ENABLED,
@@ -45,6 +52,15 @@ const sync2 = {
     startDate: 0,
 };
 
+const disabledAddressSync = {
+    id: 'sync3',
+    account: 'test4@gmail.com',
+    importerID: 'importer3',
+    product: ImportType.MAIL,
+    state: ApiSyncState.ACTIVE,
+    startDate: 0,
+};
+
 describe('byoeAddresses', () => {
     it('should return expected data', () => {
         const addresses: Address[] = [enabledBYOEAddress, disconnectedBYOEAddress, internalAddress];
@@ -55,5 +71,33 @@ describe('byoeAddresses', () => {
         expect(byoeAddresses).toEqual([enabledBYOEAddress, disconnectedBYOEAddress]);
         expect(activeBYOEAddresses).toEqual([enabledBYOEAddress]);
         expect(addressesOrSyncs).toEqual(syncs);
+    });
+
+    it('should not count a disabled BYOE address nor its paired sync towards the quota', () => {
+        const addresses: Address[] = [enabledBYOEAddress, disabledBYOEAddress, internalAddress];
+        const syncs: Sync[] = [sync1, disabledAddressSync];
+
+        const { byoeAddresses, activeBYOEAddresses, addressesOrSyncs } = getBYOEAddressesCounts(addresses, syncs);
+
+        expect(byoeAddresses).toEqual([enabledBYOEAddress, disabledBYOEAddress]);
+        expect(activeBYOEAddresses).toEqual([enabledBYOEAddress]);
+        expect(addressesOrSyncs).toEqual([sync1]);
+    });
+
+    it('should exclude a disconnected BYOE address paired sync from the count', () => {
+        const disconnectedAddressSync = {
+            id: 'sync4',
+            account: 'test2@gmail.com',
+            importerID: 'importer4',
+            product: ImportType.MAIL,
+            state: ApiSyncState.ACTIVE,
+            startDate: 0,
+        };
+        const addresses: Address[] = [enabledBYOEAddress, disconnectedBYOEAddress];
+        const syncs: Sync[] = [sync1, disconnectedAddressSync];
+
+        const { addressesOrSyncs } = getBYOEAddressesCounts(addresses, syncs);
+
+        expect(addressesOrSyncs).toEqual([sync1]);
     });
 });
