@@ -27,6 +27,7 @@
     "exports": {
         ".": "./index.ts",
         "./types-api": "./types-api.ts",
+        "./core/chat-completions": "./core/chat-completions.ts",
         "./core/client": "./core/client.ts",
         "./core/desktop-tools": "./core/desktop-tools.ts",
         "./core/generation-terminal": "./core/generation-terminal.ts",
