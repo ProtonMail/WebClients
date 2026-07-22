@@ -15,7 +15,7 @@ import { useRequest } from '@proton/pass/hooks/useRequest';
 import { type EmailFormValues, validateEmailForm } from '@proton/pass/lib/validation/email';
 import { createMailbox } from '@proton/pass/store/actions';
 
-import { useAliasMailboxes } from './AliasMailboxesProvider';
+import { useAliasMailboxes } from './AliasMailboxesContext';
 
 export const FORM_ID = 'custom-address-add';
 
