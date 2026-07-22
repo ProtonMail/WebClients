@@ -51,10 +51,13 @@ export const Header = ({
                 {leftHeaderButton}
             </div>
             {children}
-            <div className="flex flex-row flex-nowrap justify-end items-center shrink-0">
-                <DrawerToggleButton
-                    className={clsx('drawer-toggle-button', withoutDrawerToggle && 'visibility-hidden')}
-                />
+            <div
+                className={clsx(
+                    'flex flex-row flex-nowrap justify-end items-center shrink-0',
+                    withoutDrawerToggle && 'hidden'
+                )}
+            >
+                <DrawerToggleButton className="drawer-toggle-button" />
             </div>
         </div>
     );

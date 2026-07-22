@@ -8,7 +8,6 @@ import type { AllChatsFilterValue } from './filterAllChatsConversations';
 import './AllChatsHeaderActions.scss';
 
 interface AllChatsHeaderBarProps {
-    hasSelection: boolean;
     searchQuery: string;
     onSearchQueryChange: (value: string) => void;
     isSearchOpen: boolean;
@@ -19,13 +18,10 @@ interface AllChatsHeaderBarProps {
     onFilterChange: (value: AllChatsFilterValue) => void;
     onRequestDeleteAll: () => void;
     isDeleteAllDisabled: boolean;
-    onBulkDelete: () => void;
-    onBulkFavorite: () => void;
-    onCancelSelection: () => void;
+    hasSelection: boolean;
 }
 
 export const AllChatsHeaderBar = ({
-    hasSelection,
     searchQuery,
     onSearchQueryChange,
     isSearchOpen,
@@ -36,40 +32,31 @@ export const AllChatsHeaderBar = ({
     onFilterChange,
     onRequestDeleteAll,
     isDeleteAllDisabled,
-    onBulkDelete,
-    onBulkFavorite,
-    onCancelSelection,
+    hasSelection,
 }: AllChatsHeaderBarProps) => {
-    const showHeaderSearch = !hasSelection;
-
     return (
         <div className="all-chats-header-bar flex flex-1 items-center gap-2 min-w-0">
-            {showHeaderSearch ? (
-                <div
-                    className={clsx(
-                        'all-chats-header-search-slot shrink-0',
-                        isSearchOpen && 'all-chats-header-search-slot-is-open'
-                    )}
-                >
-                    <AllChatsHeaderSearch
-                        searchQuery={searchQuery}
-                        onSearchQueryChange={onSearchQueryChange}
-                        isOpen={isSearchOpen}
-                        onOpenChange={onSearchOpenChange}
-                    />
-                </div>
-            ) : null}
+            <div
+                className={clsx(
+                    'all-chats-header-search-slot shrink-0',
+                    isSearchOpen && 'all-chats-header-search-slot-is-open'
+                )}
+            >
+                <AllChatsHeaderSearch
+                    searchQuery={searchQuery}
+                    onSearchQueryChange={onSearchQueryChange}
+                    isOpen={isSearchOpen}
+                    onOpenChange={onSearchOpenChange}
+                />
+            </div>
             <AllChatsHeaderActions
-                hasSelection={hasSelection}
                 sortField={sortField}
                 onSortFieldChange={onSortFieldChange}
                 filter={filter}
                 onFilterChange={onFilterChange}
                 onRequestDeleteAll={onRequestDeleteAll}
                 isDeleteAllDisabled={isDeleteAllDisabled}
-                onBulkDelete={onBulkDelete}
-                onBulkFavorite={onBulkFavorite}
-                onCancelSelection={onCancelSelection}
+                hasSelection={hasSelection}
             />
         </div>
     );
