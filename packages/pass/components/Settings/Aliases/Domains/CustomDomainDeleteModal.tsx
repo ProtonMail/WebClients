@@ -7,7 +7,7 @@ import { useRequest } from '@proton/pass/hooks/useRequest';
 import { deleteCustomDomain } from '@proton/pass/store/actions';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
-import { useAliasDomains, useCustomDomain } from './DomainsProvider';
+import { useAliasDomains, useCustomDomain } from './AliasDomainsContext';
 
 type Props = { domainID: number };
 
