@@ -8,7 +8,7 @@ import proxyScreenshot from '@proton/pass/assets/alias/proxy-screenshot.png';
 import { ClickToCopy } from '@proton/pass/components/Form/Field/Control/ClickToCopy';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 
-import type { CustomDomain } from './DomainsProvider';
+import type { CustomDomain } from './AliasDomainsContext';
 
 export enum DNSSectionID {
     OWNERSHIP = 'OWNERSHIP',
