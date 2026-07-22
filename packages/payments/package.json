@@ -4,7 +4,9 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "scripts": {
+        "check:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs --check",
         "check-types": "tsc",
+        "generate:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs",
         "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand",
