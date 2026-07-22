@@ -127,7 +127,7 @@ function DirectoryTreeBranch({
 
                     {item.expandable && (
                         <button
-                            className={isCollapsed ? 'rotateX-180' : ''}
+                            className={clsx('flex', isCollapsed ? 'rotateX-180' : '')}
                             onClick={handleExpand}
                             disabled={isLoading}
                             type="button"
