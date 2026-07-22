@@ -14,15 +14,21 @@ im.$media-expressions: $media-expressions;
 	min-inline-size: 0;
 }
 
+.all-chats-mobile-header-bar .all-chats-mobile-header-bar-actions {
+	margin-inline-start: auto;
+}
+
+.all-chats-filter-sort-menu-button-label {
+	@include im.media('<=small') {
+		display: none;
+	}
+}
+
 .all-chats-header-search-slot {
-	display: none;
+	display: flex;
 	flex: 0 0 auto;
 	max-inline-size: 100%;
 	min-inline-size: 0;
-
-	@include im.media('>=large') {
-		display: flex;
-	}
 }
 
 .all-chats-header-search-slot-is-open {
@@ -35,7 +41,7 @@ im.$media-expressions: $media-expressions;
 	border: 1px solid transparent;
 	border-radius: 999px;
 	inline-size: 100%;
-	min-block-size: 40px;
+	min-block-size: 30px;
 	transition: border-color 0.15s ease;
 
 	&:focus-within {
@@ -53,24 +59,6 @@ im.$media-expressions: $media-expressions;
 .all-chats-search-toolbar {
 	@include im.media('>=large') {
 		display: none;
-	}
-}
-
-.all-chats-header-action-button {
-	background-color: var(--background-norm);
-	border: 1px solid var(--border-norm);
-	border-radius: 999px;
-	color: var(--text-norm);
-	font-size: 0.8125rem;
-	font-weight: 500;
-	gap: 6px;
-	min-block-size: 36px;
-	padding-inline: 12px;
-
-	&:hover,
-	&:focus-visible {
-		background-color: var(--background-weak);
-		color: var(--text-norm);
 	}
 }
 

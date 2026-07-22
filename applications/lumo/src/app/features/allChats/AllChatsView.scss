@@ -1,5 +1,6 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/styles/scss/lib/rem' as *;
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
@@ -8,6 +9,16 @@ im.$media-expressions: $media-expressions;
 	--all-chats-favorite-color: #f0a417;
 	--all-chats-icon-background-color: var(--background-upsell-toggle);
 	--all-chats-icon-color: var(--interaction-norm-hover);
+}
+
+.all-chats-selected-count {
+	color: var(--all-chats-preview-color);
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+.all-chats-list-with-mobile-bulk-actions {
+	padding-block-end: 5rem;
 }
 
 .all-chats-panel {
@@ -141,6 +152,16 @@ im.$media-expressions: $media-expressions;
 .all-chats-row-title-main {
 	flex: 0 1 auto;
 	min-inline-size: 0;
+
+	@include im.media(' > medium') {
+		inline-size: rem(250);
+		max-inline-size: rem(250);
+	}
+
+	@include im.media(' > xlarge') {
+		inline-size: rem(400);
+		max-inline-size: rem(400);
+	}
 }
 
 .all-chats-row-title-content {
@@ -228,6 +249,30 @@ im.$media-expressions: $media-expressions;
 	white-space: nowrap;
 }
 
+.all-chats-row-project-link {
+	align-items: center;
+	color: var(--all-chats-preview-color);
+	display: none;
+	font-size: 0.8125rem;
+	gap: 4px;
+	min-inline-size: 0;
+	text-decoration: none;
+	transition: color 0.15s ease;
+
+	&:hover,
+	&:focus-visible {
+		color: var(--text-norm);
+		text-decoration: underline;
+	}
+}
+
+.all-chats-row-project-link-name {
+	min-inline-size: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 .all-chats-row-star {
 	color: var(--text-weak);
 
@@ -270,10 +315,25 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.all-chats-row-date-mobile {
+		align-items: center;
 		color: var(--all-chats-preview-color);
-		display: block;
+		display: flex;
+		flex-wrap: nowrap;
 		font-size: 0.8125rem;
+		gap: 6px;
 		line-height: 1.3;
+		min-inline-size: 0;
+	}
+
+	.all-chats-row-project-link {
+		align-items: center;
+		display: inline-flex;
+		flex-wrap: nowrap;
+		gap: 4px;
+	}
+
+	.all-chats-row-actions .all-chats-row-project {
+		display: none;
 	}
 
 	.all-chats-row-actions {

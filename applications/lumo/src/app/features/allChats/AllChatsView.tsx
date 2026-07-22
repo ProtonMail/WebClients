@@ -16,6 +16,7 @@ import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';
 import { useConversationStar } from '../../hooks/useConversationStar';
 import { useDriveFolderIndexing } from '../../hooks/useDriveFolderIndexing';
+import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useSearchService } from '../../hooks/useSearchService';
@@ -48,8 +49,11 @@ import {
 import type { AllChatsEmptyVariant, AllChatsFilterValue } from './filterAllChatsConversations';
 import { filterAllChatsConversations, getAllChatsEmptyVariant } from './filterAllChatsConversations';
 import { formatChatRelativeDate } from './formatChatRelativeDate';
+import { AllChatsMobileBulkActions } from './mobile/AllChatsMobileBulkActions';
+import { AllChatsMobileHeaderBar } from './mobile/AllChatsMobileHeaderBar';
 import type { AllChatsRowData } from './selectAllChatsRowData';
 import { selectAllChatsRowDataMap } from './selectAllChatsRowData';
+import { AllChatsBulkActionButtons } from './shared/AllChatsBulkActionButtons';
 
 import './AllChatsView.scss';
 
@@ -146,12 +150,21 @@ interface ConversationRowProps {
     rowData: AllChatsRowData;
     isActive: boolean;
     isBulkSelected: boolean;
+    showBulkSelectCheckbox: boolean;
     onToggleBulkSelect: (conversationId: ConversationId) => void;
     sortField: ChatHistoryDateField;
 }
 
 const ConversationRow = memo(
-    ({ conversation, rowData, isActive, isBulkSelected, onToggleBulkSelect, sortField }: ConversationRowProps) => {
+    ({
+        conversation,
+        rowData,
+        isActive,
+        isBulkSelected,
+        showBulkSelectCheckbox,
+        onToggleBulkSelect,
+        sortField,
+    }: ConversationRowProps) => {
         const dispatch = useLumoDispatch();
         const [isRenaming, setIsRenaming] = useState(false);
         const [draftTitle, setDraftTitle] = useState(conversation.title);
@@ -219,7 +232,7 @@ const ConversationRow = memo(
         return (
             <div
                 className={clsx(
-                    'all-chats-row group relative flex items-center gap-3 px-0 md:px-3 min-w-0 overflow-hidden',
+                    'all-chats-row group relative flex items-center gap-3 px-3 min-w-0 overflow-hidden',
                     deleteRequested && 'all-chats-row-actions-pinned',
                     isBulkSelected && 'all-chats-row-bulk-selected'
                 )}
@@ -233,17 +246,19 @@ const ConversationRow = memo(
                     />
                 )}
 
-                <Checkbox
-                    checked={isBulkSelected}
-                    onChange={() => {
-                        onToggleBulkSelect(conversation.id);
-                    }}
-                    onClick={(event) => {
-                        event.stopPropagation();
-                    }}
-                    className="all-chats-row-select all-chats-row-interactive relative z-1 shrink-0"
-                    aria-label={c('collider_2025:Action').t`Select conversation`}
-                />
+                {showBulkSelectCheckbox ? (
+                    <Checkbox
+                        checked={isBulkSelected}
+                        onChange={() => {
+                            onToggleBulkSelect(conversation.id);
+                        }}
+                        onClick={(event) => {
+                            event.stopPropagation();
+                        }}
+                        className="all-chats-row-select all-chats-row-interactive relative z-1 shrink-0"
+                        aria-label={c('collider_2025:Action').t`Select conversation`}
+                    />
+                ) : null}
 
                 <div className="relative z-1 flex-1 min-w-0 pointer-events-none">
                     {isRenaming ? (
@@ -295,7 +310,23 @@ const ConversationRow = memo(
                                         />
                                     </Button>
                                 </div>
-                                <span className="all-chats-row-date-mobile">{timestamp}</span>
+                                <div className="all-chats-row-date-mobile">
+                                    <span className="all-chats-row-date-mobile-time shrink-0">{timestamp}</span>
+                                    {isProject ? (
+                                        <LumoLink
+                                            to={`/projects/${conversation.spaceId}`}
+                                            className="all-chats-row-project-link all-chats-row-interactive min-w-0"
+                                            aria-label={c('collider_2025:Action').t`Go to project`}
+                                            title={projectLabel}
+                                            onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+                                                event.stopPropagation();
+                                            }}
+                                        >
+                                            <ProjectIcon iconId={projectIcon} size={12} className="shrink-0" />
+                                            <span className="all-chats-row-project-link-name">{projectLabel}</span>
+                                        </LumoLink>
+                                    ) : null}
+                                </div>
                             </div>
                             {preview ? (
                                 <span className="all-chats-row-preview text-ellipsis overflow-hidden whitespace-nowrap flex-1 min-w-0">
@@ -388,6 +419,12 @@ interface AllChatsHeaderProps {
     someSelected: boolean;
     showSelectAll: boolean;
     onToggleSelectAll: () => void;
+    isMobileLayout?: boolean;
+    isSelectionMode?: boolean;
+    selectedCount?: number;
+    onBulkDelete?: () => void;
+    onBulkFavorite?: () => void;
+    onCancelSelection?: () => void;
 }
 
 const AllChatsHeader = ({
@@ -396,25 +433,67 @@ const AllChatsHeader = ({
     someSelected,
     showSelectAll,
     onToggleSelectAll,
+    isMobileLayout = false,
+    isSelectionMode = false,
+    selectedCount = 0,
+    onBulkDelete,
+    onBulkFavorite,
+    onCancelSelection,
 }: AllChatsHeaderProps) => {
+    const hasSelection = selectedCount > 0;
+    const showSelectionActions = isMobileLayout ? isSelectionMode : hasSelection;
+    const showConversationCount = isMobileLayout ? !isSelectionMode : !hasSelection;
+
     return (
-        <div className="all-chats-header flex items-center gap-3 mb-4 shrink-0 ml-2 sm:ml-5">
-            {showSelectAll ? (
-                <Checkbox
-                    checked={allSelected}
-                    indeterminate={someSelected}
-                    onChange={onToggleSelectAll}
-                    aria-label={
-                        allSelected
-                            ? c('collider_2025:Action').t`Deselect all`
-                            : c('collider_2025:Action').t`Select all`
-                    }
-                />
-            ) : null}
-            <div className="flex items-baseline gap-2 min-w-0">
-                <h1 className="main-text m-0">{c('collider_2025:Title').t`Chats`}</h1>
-                <span className="all-chats-count">{conversationCount}</span>
+        <div
+            className={clsx(
+                'all-chats-header flex items-center gap-3 mb-4 shrink-0 ml-3',
+                showSelectionActions && 'justify-space-between'
+            )}
+        >
+            <div className="flex items-center gap-3 min-w-0">
+                {showSelectAll ? (
+                    <Checkbox
+                        checked={allSelected}
+                        indeterminate={someSelected}
+                        onChange={onToggleSelectAll}
+                        aria-label={
+                            allSelected
+                                ? c('collider_2025:Action').t`Deselect all`
+                                : c('collider_2025:Action').t`Select all`
+                        }
+                    />
+                ) : null}
+                <div className="flex items-baseline gap-2 min-w-0">
+                    <h1 className="main-text m-0">{c('collider_2025:Title').t`Chats`}</h1>
+                    {hasSelection && !isMobileLayout ? (
+                        <span className="all-chats-selected-count">{c('collider_2025:Label')
+                            .t`${selectedCount} selected`}</span>
+                    ) : null}
+                    {showConversationCount ? <span className="all-chats-count">{conversationCount}</span> : null}
+                </div>
             </div>
+            {showSelectionActions && onBulkDelete && onBulkFavorite ? (
+                <div className="all-chats-header-selection-actions flex items-center gap-2 shrink-0 flex-nowrap">
+                    <AllChatsBulkActionButtons
+                        size="small"
+                        disabled={isMobileLayout && !hasSelection}
+                        onBulkDelete={onBulkDelete}
+                        onBulkFavorite={onBulkFavorite}
+                    />
+                    {!isMobileLayout && onCancelSelection ? (
+                        <Button
+                            shape="solid"
+                            color="norm"
+                            size="small"
+                            className="all-chats-header-action-button all-chats-header-action-button-primary shrink-0"
+                            onClick={onCancelSelection}
+                        >
+                            {c('collider_2025:Action').t`Cancel`}
+                        </Button>
+                    ) : null}
+                </div>
+            ) : null}
         </div>
     );
 };
@@ -436,12 +515,14 @@ export const AllChatsView = () => {
     const searchService = useSearchService();
     const hasSpaces = useLumoSelector(selectHasSpaces);
     const hasAnyGeneratedImages = useLumoSelector(selectAnyGeneratedImages);
+    const { isSmallScreen: isMobileLayout } = useIsLumoSmallScreen();
 
     const [filter, setFilter] = useState<FilterValue>('all');
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [sortField, setSortField] = useState<ChatHistoryDateField>('updatedAt');
     const [selectedIds, setSelectedIds] = useState<Set<ConversationId>>(new Set());
+    const [isSelectionMode, setIsSelectionMode] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
     const [isDeleteAllInProgress, setIsDeleteAllInProgress] = useState(false);
 
@@ -519,6 +600,19 @@ export const AllChatsView = () => {
 
     const clearSelection = useCallback(() => {
         setSelectedIds(new Set());
+    }, []);
+
+    const handleSelectionModeChange = useCallback((enabled: boolean) => {
+        setIsSelectionMode(enabled);
+
+        if (!enabled) {
+            setSelectedIds(new Set());
+        }
+    }, []);
+
+    const handleCancelSelection = useCallback(() => {
+        setSelectedIds(new Set());
+        setIsSelectionMode(false);
     }, []);
 
     const handleFilterChange = useCallback((value: FilterValue) => {
@@ -624,36 +718,45 @@ export const AllChatsView = () => {
     ]);
 
     const layoutHeader = useMemo(() => {
+        const sharedHeaderProps = {
+            searchQuery,
+            onSearchQueryChange: handleSearchQueryChange,
+            isSearchOpen,
+            onSearchOpenChange: setIsSearchOpen,
+            sortField,
+            onSortFieldChange: setSortField,
+            filter,
+            onFilterChange: handleFilterChange,
+        };
+
         return {
-            component: (
-                <AllChatsHeaderBar
-                    hasSelection={selectedCount > 0}
-                    searchQuery={searchQuery}
-                    onSearchQueryChange={handleSearchQueryChange}
-                    isSearchOpen={isSearchOpen}
-                    onSearchOpenChange={setIsSearchOpen}
-                    sortField={sortField}
-                    onSortFieldChange={setSortField}
-                    filter={filter}
-                    onFilterChange={handleFilterChange}
+            component: isMobileLayout ? (
+                <AllChatsMobileHeaderBar
+                    {...sharedHeaderProps}
+                    isSelectionMode={isSelectionMode}
+                    onSelectionModeChange={handleSelectionModeChange}
                     onRequestDeleteAll={requestDeleteAll}
                     isDeleteAllDisabled={isDeleteAllInProgress || !hasSpaces}
-                    onBulkDelete={requestBulkDelete}
-                    onBulkFavorite={handleBulkFavorite}
-                    onCancelSelection={clearSelection}
+                />
+            ) : (
+                <AllChatsHeaderBar
+                    {...sharedHeaderProps}
+                    onRequestDeleteAll={requestDeleteAll}
+                    isDeleteAllDisabled={isDeleteAllInProgress || !hasSpaces}
+                    hasSelection={selectedCount > 0}
                 />
             ),
         };
     }, [
-        clearSelection,
         filter,
-        handleBulkFavorite,
         handleFilterChange,
         handleSearchQueryChange,
+        handleSelectionModeChange,
         hasSpaces,
         isDeleteAllInProgress,
+        isMobileLayout,
         isSearchOpen,
-        requestBulkDelete,
+        isSelectionMode,
         requestDeleteAll,
         searchQuery,
         selectedCount,
@@ -677,25 +780,30 @@ export const AllChatsView = () => {
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }} header={layoutHeader}>
-            <div className="all-chats-view flex flex-column flex-nowrap flex-1 px-4 md:px-10 min-h-0 py-4">
-                {/* For small screens, move the action buttons outside of the LumoLayoutWithDrawer header. Here we should show a input bar for the search query, and then below is the action buttons that are in the layoutHeader. */}
-
-                <div
-                    className="flex flex-column flex-1 w-full mx-auto min-h-0"
-                    // style={{ '--max-w-custom': '900px' } as React.CSSProperties}
-                >
+            <div className="all-chats-view flex flex-column flex-nowrap flex-1 px-2 min-h-0 py-4">
+                <div className="flex flex-column flex-1 w-full mx-auto min-h-0">
                     <AllChatsHeader
                         conversationCount={filteredConversations.length}
                         allSelected={allSelected}
                         someSelected={someSelected}
-                        showSelectAll={!isEmpty}
+                        showSelectAll={!isEmpty && (!isMobileLayout || isSelectionMode)}
                         onToggleSelectAll={toggleSelectAll}
+                        isMobileLayout={isMobileLayout}
+                        isSelectionMode={isSelectionMode}
+                        selectedCount={selectedCount}
+                        onBulkDelete={requestBulkDelete}
+                        onBulkFavorite={handleBulkFavorite}
+                        onCancelSelection={isMobileLayout ? handleCancelSelection : clearSelection}
                     />
 
                     <div className="all-chats-panel flex flex-column flex-1 min-h-0 overflow-hidden">
-                        {/* <AllChatsSearchToolbar searchQuery={searchQuery} onSearchQueryChange={setSearchQuery} /> */}
-
-                        <div ref={parentRef} className="flex-1 overflow-auto min-h-0 px-2 pb-2">
+                        <div
+                            ref={parentRef}
+                            className={clsx(
+                                'flex-1 overflow-auto min-h-0 pb-2',
+                                isMobileLayout && isSelectionMode && 'all-chats-list-with-mobile-bulk-actions'
+                            )}
+                        >
                             {isEmpty ? (
                                 <AllChatsEmptyState variant={emptyVariant} />
                             ) : (
@@ -726,6 +834,7 @@ export const AllChatsView = () => {
                                                     rowData={rowData}
                                                     isActive={conversation.id === conversationId}
                                                     isBulkSelected={selectedIds.has(conversation.id)}
+                                                    showBulkSelectCheckbox={!isMobileLayout || isSelectionMode}
                                                     onToggleBulkSelect={toggleSelectConversation}
                                                     sortField={sortField}
                                                 />
@@ -760,6 +869,10 @@ export const AllChatsView = () => {
                     loading={isDeleteAllInProgress}
                 />
             )}
+
+            {isMobileLayout && isSelectionMode ? (
+                <AllChatsMobileBulkActions onCancelSelection={handleCancelSelection} />
+            ) : null}
         </LumoLayoutWithDrawer>
     );
 };
