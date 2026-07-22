@@ -1,8 +1,8 @@
-import { c } from 'ttag';
-
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
-import { fetchSignedKeyLists } from '@proton/key-transparency/helpers';
+import { c } from 'ttag';
+
+import { fetchSignedKeyLists } from '@proton/key-transparency/helpers/apiHelpers';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
 import { encryptMemberToken } from '@proton/shared/lib/keys/memberToken';
@@ -553,12 +553,10 @@ export const unprivatizeMemberHelper = async ({
     );
     const organizationToken = await encryptMemberToken(newMemberKeyToken, organizationPrivateKey);
 
-    const memberUserKeys = armoredMemberUserPrivateKeys.map(
-        (armoredUserPrivateKey): UnprivatizeMemberUserKeyDto => ({
-            OrgPrivateKey: armoredUserPrivateKey,
-            OrgToken: organizationToken,
-        })
-    );
+    const memberUserKeys = armoredMemberUserPrivateKeys.map((armoredUserPrivateKey): UnprivatizeMemberUserKeyDto => ({
+        OrgPrivateKey: armoredUserPrivateKey,
+        OrgToken: organizationToken,
+    }));
 
     const memberAddressKeys = (
         await Promise.all(
