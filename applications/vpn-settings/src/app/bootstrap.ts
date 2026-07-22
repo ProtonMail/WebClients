@@ -1,4 +1,11 @@
-import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
+import {
+    initEvent,
+    serverEvent,
+    userPermissionsThunk,
+    userSettingsThunk,
+    userThunk,
+    welcomeFlagsActions,
+} from '@proton/account';
 import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
@@ -68,6 +75,7 @@ export const bootstrapApp = async ({
             bootstrap.loadCrypto({ appName, unleashClient }),
             unleashPromise,
         ]);
+        dispatch(userPermissionsThunk()).catch(noop);
 
         if (!!userData.userSettings.Telemetry) {
             telemetry.init({
