@@ -17,6 +17,8 @@ export interface AssistantFeedback {
     Sentiment: 'Positive' | 'Negative' | 'Neutral';
     Environment: 'Local' | 'Remote';
     ModelID?: string;
+    RequestedModel?: string;
+    HasGeneratedImages?: boolean;
     Component: 'Mail' | 'Lumo';
     Body: string;
     Prompt?: string;
@@ -28,6 +30,8 @@ export const sendAssistantFeedback = ({
     Sentiment,
     Environment,
     ModelID,
+    RequestedModel,
+    HasGeneratedImages,
     Body,
     Prompt,
     ModelOutput,
@@ -40,6 +44,8 @@ export const sendAssistantFeedback = ({
         Sentiment,
         Environment,
         ModelID,
+        RequestedModel,
+        HasGeneratedImages,
         Body,
         Prompt,
         ModelOutput,

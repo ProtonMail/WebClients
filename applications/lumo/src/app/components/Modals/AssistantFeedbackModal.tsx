@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -25,7 +25,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { stripAttachmentMarkdown } from '../../lib/imageAttachment';
 import { useLumoSelector } from '../../redux/hooks';
-import { selectMessageById } from '../../redux/selectors';
+import { selectMessageById, selectMessageHasGeneratedImages } from '../../redux/selectors';
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import type { Message } from '../../types';
 import {
@@ -54,6 +54,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
     const handleError = useErrorHandler();
     const parentId = message?.parentId;
     const parentMessage = useLumoSelector((state) => (parentId ? selectMessageById(parentId)(state) : undefined));
+    const hasGeneratedImages = useLumoSelector(selectMessageHasGeneratedImages(message.id));
 
     const [selectedOption, setSelectedOption] = useState<string | undefined>(undefined);
     const [body, setBody] = useState<string | undefined>(undefined);
@@ -64,7 +65,15 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
     const [shareResponse, setShareResponse] = useState('');
 
     const shareContentCheckboxId = `model-content-${message.id}`;
-    const servingModelID = message.modelID;
+
+    const feedbackMetadata = useMemo(
+        (): Pick<AssistantFeedback, 'ModelID' | 'RequestedModel' | 'HasGeneratedImages'> => ({
+            ModelID: message.modelID,
+            RequestedModel: message.requestedModel,
+            HasGeneratedImages: hasGeneratedImages,
+        }),
+        [hasGeneratedImages, message.modelID, message.requestedModel]
+    );
 
     const resetFeedbackForm = useCallback(() => {
         setSelectedOption(undefined);
@@ -96,7 +105,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     Category: 'positive',
                     Sentiment: 'Positive',
                     Environment: 'Remote',
-                    ModelID: servingModelID,
+                    ...feedbackMetadata,
                     Body: '',
                     Component: 'Lumo',
                 })
@@ -112,7 +121,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             });
             setFeedbackSubmitted(false);
         }
-    }, [api, createNotification, servingModelID, setFeedbackSubmitted]);
+    }, [api, createNotification, feedbackMetadata, setFeedbackSubmitted]);
 
     const handleThumbUpClick = useCallback(() => {
         if (hasSeenPositiveFeedbackIntro()) {
@@ -188,7 +197,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             Category: selectedOption,
             Sentiment: 'Negative',
             Environment: 'Remote',
-            ModelID: servingModelID,
+            ...feedbackMetadata,
             Body: body || '',
             Component: 'Lumo',
             Prompt: undefined,
@@ -214,7 +223,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             Category: selectedOption,
             Sentiment: 'Negative',
             Environment: 'Remote',
-            ModelID: servingModelID,
+            ...feedbackMetadata,
             Body: body || '',
             Component: 'Lumo',
             Prompt: stripAttachmentMarkdown(sharePrompt),
