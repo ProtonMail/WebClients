@@ -67,7 +67,7 @@ export const getInitialFormValues = (): ImportFormValues => ({ file: null, provi
 export const createFileValidator = (allow: string[]) =>
     pipe(
         (files: File[]) => first(files)!,
-        orThrow('Unsupported file type', (file) => allow.includes(splitExtension(file?.name)[1]), identity)
+        orThrow(c('Error').t`Unsupported file type`, (file) => allow.includes(splitExtension(file?.name)[1]), identity)
     );
 
 export const validateImportForm = ({ provider, file }: ImportFormValues): FormikErrors<ImportFormValues> => {
@@ -215,6 +215,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
             void form.setValues((values) => ({ ...values, file }));
         } catch (e: any) {
             form.setErrors({ file: e.message });
+            createNotification({ type: 'error', text: e.message });
         }
     };
 
