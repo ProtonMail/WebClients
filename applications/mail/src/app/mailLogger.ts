@@ -6,6 +6,7 @@ const logger = loggerManager.getLogger('mail');
 export const MAIL_LOG_COMPONENT = {
     MAILBOX_ACTIONS: 'mailbox-actions',
     API_ERROR: 'mail-api-errors',
+    DRAFT_SAVE: 'draft-save',
 } as const;
 
 export type MailLogComponent = (typeof MAIL_LOG_COMPONENT)[keyof typeof MAIL_LOG_COMPONENT];
@@ -37,6 +38,11 @@ const flattenArgs = (args: unknown[]): string => args.flatMap((arg) => flatten(a
 const createLogMethod =
     (level: LogLevel) =>
     (component: MailLogComponent, message: string, ...args: unknown[]) => {
+        // Not collecting logs: stay silent in prod, but keep errors visible for local debugging
+        if (level === 'error' && process.env.NODE_ENV !== 'production') {
+            console.log(`[${component}] ${message}`, flattenArgs(args));
+            return;
+        }
         logger[level](`[${component}] ${message}`, flattenArgs(args));
     };
 
