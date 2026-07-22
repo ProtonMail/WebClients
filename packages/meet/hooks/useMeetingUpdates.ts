@@ -1,14 +1,8 @@
-import {
-    CustomPasswordState,
-    type Meeting,
-    MeetingType,
-    type WaitingRoomState,
-} from '@proton/shared/lib/interfaces/Meet';
+import { type Meeting, MeetingType, type WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
-import { decryptMeetingPassword, decryptSessionKey, getCombinedPassword } from '../utils/cryptoUtils';
+import { decryptMeetingPassword, decryptSessionKey } from '../utils/cryptoUtils';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
 import { useUpdateMeetingName } from './useUpdateMeetingName';
-import { useUpdateMeetingPassword } from './useUpdateMeetingPassword';
 import { useUpdateMeetingSchedule } from './useUpdateMeetingSchedule';
 import { useUpdateMeetingWaitingRoom } from './useUpdateMeetingWaitingRoom';
 
@@ -22,45 +16,9 @@ export const useMeetingUpdates = () => {
 
     const { updateMeetingName } = useUpdateMeetingName();
 
-    const { updateMeetingPassword } = useUpdateMeetingPassword();
-
     const { updateMeetingSchedule } = useUpdateMeetingSchedule();
 
     const { updateMeetingWaitingRoom } = useUpdateMeetingWaitingRoom();
-
-    const saveMeetingPassword = async ({
-        passphrase,
-        id,
-        passwordBase,
-        meetingObject,
-    }: {
-        passphrase: string;
-        id: string;
-        passwordBase: string;
-        meetingObject: Meeting;
-    }) => {
-        const { userKeys } = await getMeetingDependencies();
-
-        const previousPassword = await decryptMeetingPassword(meetingObject?.Password as string, userKeys);
-
-        const sessionKey = await decryptSessionKey({
-            encryptedSessionKey: meetingObject?.SessionKey as string,
-            password: previousPassword,
-            salt: meetingObject?.Salt as string,
-        });
-
-        if (!sessionKey) {
-            throw new Error('Missing session key');
-        }
-
-        return updateMeetingPassword({
-            meetingId: id,
-            password: getCombinedPassword(passwordBase, passphrase),
-            sessionKey,
-            customPassword: !!passphrase ? CustomPasswordState.PASSWORD_SET : CustomPasswordState.NO_PASSWORD,
-            salt: meetingObject?.Salt as string,
-        });
-    };
 
     const saveMeetingName = async ({
         newTitle,
@@ -127,5 +85,5 @@ export const useMeetingUpdates = () => {
         return updateMeetingWaitingRoom({ meetingLinkName, waitingRoom: waitingRoom });
     };
 
-    return { saveMeetingPassword, saveMeetingName, saveMeetingSchedule, saveMeetingWaitingRoom };
+    return { saveMeetingName, saveMeetingSchedule, saveMeetingWaitingRoom };
 };

@@ -1,12 +1,12 @@
-import { c } from 'ttag';
-
 import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+import { computeKeyPassword as computeBcryptHash, generateKeySalt as generateBcryptSalt } from '@protontech/crypto/srp';
 import { decryptData, deriveKey, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
+import { c } from 'ttag';
+
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-import { computeKeyPassword as computeBcryptHash, generateKeySalt as generateBcryptSalt } from '@protontech/crypto/srp';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { BASE_PASSWORD_LENGTH } from '../constants';
@@ -14,14 +14,6 @@ import { BASE_PASSWORD_LENGTH } from '../constants';
 export const PASSWORD_SEPARATOR = '_';
 
 const MEET_SESSION_KEY_ALGORITHM = 'aes256';
-
-export const getCombinedPassword = (urlPassword: string, customPassword: string) => {
-    if (!customPassword) {
-        return urlPassword;
-    }
-
-    return `${urlPassword}${PASSWORD_SEPARATOR}${customPassword}`;
-};
 
 export const deriveEncryptionKeyFromSessionKey = async (sessionKey: SessionKey) => {
     if (sessionKey.algorithm !== MEET_SESSION_KEY_ALGORITHM) {
@@ -200,30 +192,7 @@ export const hashPasswordWithSalt = async (password: string, salt?: string) => {
     return { salt: saltForHash, passwordHash };
 };
 
-export const getPassphraseFromEncryptedPassword = async ({
-    encryptedPassword,
-    basePassword,
-    userKeys,
-}: {
-    encryptedPassword: string;
-    basePassword: string;
-    userKeys: DecryptedKey<PrivateKeyReference>[];
-}) => {
-    const password = await decryptMeetingPassword(encryptedPassword, userKeys);
-
-    // Removing the base password from the password
-    const passphrase = password.slice(basePassword.length);
-
-    if (!passphrase) {
-        return { password, passphrase };
-    }
-
-    // Removing the underscore from the passphrase, as the password is just the base password + _ + the passphrase
-    return { password, passphrase: passphrase.slice(1) };
-};
-
 interface PrepareMeetingCryptoDataParams {
-    customPassword: string;
     primaryUserKey?: PrivateKeyReference;
     meetingName: string;
     api: Api;
@@ -231,15 +200,12 @@ interface PrepareMeetingCryptoDataParams {
 }
 
 export const prepareMeetingCryptoData = async ({
-    customPassword,
     primaryUserKey,
     meetingName,
     api,
     noEncryptedPasswordReturn = false,
 }: PrepareMeetingCryptoDataParams) => {
-    const passwordBase = getRandomString(BASE_PASSWORD_LENGTH);
-
-    const password = getCombinedPassword(passwordBase, customPassword);
+    const password = getRandomString(BASE_PASSWORD_LENGTH);
 
     const { passwordHash, salt } = await hashPasswordWithSalt(password);
 
@@ -270,6 +236,6 @@ export const prepareMeetingCryptoData = async ({
         srpVerifier,
         srpModulusID,
         salt,
-        passwordBase,
+        passwordBase: password,
     };
 };

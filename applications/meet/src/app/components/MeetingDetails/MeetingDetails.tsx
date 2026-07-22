@@ -16,7 +16,6 @@ import {
     selectKeyRotationLogs,
     selectMeetingLink,
     selectMlsGroupState,
-    selectPassphrase,
     selectRoomName,
 } from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
@@ -42,7 +41,6 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     const { getKeychainIndexInformation } = useMeetContext();
     const keyRotationLogs = useMeetSelector(selectKeyRotationLogs);
     const mlsGroupState = useMeetSelector(selectMlsGroupState);
-    const passphrase = useMeetSelector(selectPassphrase);
     const meetingLink = useMeetSelector(selectMeetingLink);
     const instantMeeting = useMeetSelector(selectInstantMeeting);
     const participantsCount = useMeetSelector(selectTotalParticipantCount);
@@ -155,23 +153,6 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                     </button>
                                 </TableCell>
                             </TableRow>
-                            {passphrase && (
-                                <TableRow>
-                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">
-                                        {c('Title').t`Passphrase`}
-                                    </TableCell>
-                                    <TableCell>
-                                        <button
-                                            className="w-full color-primary cursor-pointer text-left unstyled p-0 m-0"
-                                            onClick={() => {
-                                                void copyTextToClipboard(passphrase);
-                                            }}
-                                        >
-                                            {passphrase}
-                                        </button>
-                                    </TableCell>
-                                </TableRow>
-                            )}
                         </TableBody>
                     </Table>
                 </div>

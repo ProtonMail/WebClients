@@ -47,7 +47,6 @@ export interface MeetingDetails {
 interface UseJoinFlowParams {
     token: string;
     urlPassword: string;
-    password: string;
     isInstantJoin: boolean;
     setDisplayName: (name: string) => void;
     connectWithMls: UseMeetingConnectionResult['connectWithMls'];
@@ -150,7 +149,6 @@ const gatherAndLogJoinStats = async ({
 export const useJoinFlow = ({
     token,
     urlPassword,
-    password,
     isInstantJoin,
     setDisplayName,
     connectWithMls,
@@ -371,7 +369,6 @@ export const useJoinFlow = ({
 
             const { roomName, locked, maxDuration, maxParticipants } = await getMeetingDetails({
                 token: id,
-                customPassword: '',
                 urlPassword: passwordBase,
                 handshakeInfo: handshakeResult.handshakeInfo as SRPHandshakeInfo,
             });
@@ -457,7 +454,6 @@ export const useJoinFlow = ({
             try {
                 const { roomName, locked, maxDuration, maxParticipants } = await getMeetingDetails({
                     token: meetingToken,
-                    customPassword: password,
                     urlPassword,
                     handshakeInfo: handshakeInfo as SRPHandshakeInfo,
                 });

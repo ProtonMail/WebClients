@@ -7,7 +7,6 @@ export interface FormValues {
     endDate: Date;
     endTime: string;
     timeZone: string;
-    customPassword: string;
     recurrence: string;
     // Make waitingRoom mandatory when cleanup MeetWaitingRoom feature flag
     waitingRoom?: WaitingRoomState;

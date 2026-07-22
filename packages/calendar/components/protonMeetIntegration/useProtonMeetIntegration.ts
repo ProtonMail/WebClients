@@ -8,12 +8,8 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
-import { getMeetingLink, useGetMeetingDependencies, useProtonMeet } from '@proton/meet';
-import {
-    decryptSessionKey,
-    encryptMeetingName,
-    getPassphraseFromEncryptedPassword,
-} from '@proton/meet/utils/cryptoUtils';
+import { getMeetingLink, useProtonMeet } from '@proton/meet';
+import { decryptSessionKey, encryptMeetingName } from '@proton/meet/utils/cryptoUtils';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, MEET_APP_NAME } from '@proton/shared/lib/constants';
@@ -55,7 +51,6 @@ export const useProtonMeetIntegration = ({
     const location = useLocation();
 
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
-    const isMeetPassphraseEnabled = useFlag('MeetPassphraseEnabled');
     const isAutoAddMeetingLinkEnabled = useFlag('AutoAddMeetingLink');
 
     const [user] = useUser();
@@ -78,10 +73,6 @@ export const useProtonMeetIntegration = ({
 
     const [meetingDetails, setMeetingDetails] = useState({
         id: '',
-        passwordBase: '',
-        passphrase: '',
-        failed: false,
-        hidePassphrase: !isMeetVideoConferenceEnabled || !isCurrentUserMeetingHost || !isMeetPassphraseEnabled,
     });
 
     const protonMeetConferenceDetails = useRef(
@@ -102,9 +93,7 @@ export const useProtonMeetIntegration = ({
 
     const [sessionKey, setSessionKey] = useState<SessionKey | null>(null);
 
-    const { createProtonMeet, getProtonMeetByLinkName, saveProtonMeetPassword } = useProtonMeet();
-
-    const getMeetingDependencies = useGetMeetingDependencies();
+    const { createProtonMeet, getProtonMeetByLinkName } = useProtonMeet();
 
     const { sentEventProtonMeet } = useVideoConfTelemetry();
     const { sendMeetingCreated } = useMeetFunnelTelemetry();
@@ -122,17 +111,9 @@ export const useProtonMeetIntegration = ({
         conferenceId: string;
         conferenceUrl: string;
     }) => {
-        const { userKeys } = await getMeetingDependencies();
-
-        const { passphrase, password } = await getPassphraseFromEncryptedPassword({
-            encryptedPassword: meeting?.Password as string,
-            basePassword: urlPassword,
-            userKeys,
-        });
-
         const decryptedSessionKey = await decryptSessionKey({
             encryptedSessionKey: meeting?.SessionKey as string,
-            password,
+            password: urlPassword,
             salt: meeting?.Salt as string,
         });
 
@@ -145,9 +126,6 @@ export const useProtonMeetIntegration = ({
         setMeetingDetails((prev) => ({
             ...prev,
             id: meetingId ?? '',
-            passwordBase: urlPassword,
-            passphrase,
-            failed: false,
         }));
 
         setModel({
@@ -275,33 +253,6 @@ export const useProtonMeetIntegration = ({
         }
     };
 
-    const handlePassphraseSave = async (passphrase: string) => {
-        if (!sessionKey) {
-            return;
-        }
-
-        const updatedMeeting = await saveProtonMeetPassword({
-            passphrase,
-            id: meetingObject?.ID as string,
-            passwordBase: meetingDetails.passwordBase,
-            meetingObject: meetingObject as Meeting,
-        });
-
-        const encryptedTitle = await encryptMeetingName(model.title, sessionKey);
-
-        setMeetingDetails((prev) => ({
-            ...prev,
-            passphrase,
-        }));
-
-        setModel({
-            ...model,
-            encryptedTitle,
-        });
-
-        setMeetingObject(updatedMeeting);
-    };
-
     useEffect(() => {
         if (!isMeetVideoConferenceEnabled) {
             return;
@@ -378,7 +329,7 @@ export const useProtonMeetIntegration = ({
 
     const setupInProgress = useRef(false);
 
-    // Setup to access the meeting details (sessionKey, passphrase, password)
+    // Setup to access the meeting details (sessionKey)
     const setup = async () => {
         if (
             !model.conferenceId ||
@@ -398,34 +349,19 @@ export const useProtonMeetIntegration = ({
 
         setupInProgress.current = true;
 
-        const { userKeys } = await getMeetingDependencies();
-
         let meeting: Meeting;
 
         try {
             meeting = await getProtonMeetByLinkName(meetingId);
         } catch {
-            setMeetingDetails((prev) => ({
-                ...prev,
-                failed: true,
-            }));
-
             setupInProgress.current = false;
 
             return;
         }
 
-        const { password, passphrase } = isMeetPassphraseEnabled
-            ? await getPassphraseFromEncryptedPassword({
-                  encryptedPassword: meeting?.Password as string,
-                  basePassword: urlPassword,
-                  userKeys,
-              })
-            : { password: urlPassword, passphrase: '' };
-
         const decryptedSessionKey = await decryptSessionKey({
             encryptedSessionKey: meeting?.SessionKey as string,
-            password,
+            password: urlPassword,
             salt: meeting?.Salt as string,
         });
 
@@ -438,9 +374,6 @@ export const useProtonMeetIntegration = ({
         setMeetingDetails((prev) => ({
             ...prev,
             id: meetingId ?? '',
-            passwordBase: urlPassword,
-            passphrase,
-            failed: false,
         }));
 
         setMeetingObject(meeting as Meeting);
@@ -481,7 +414,6 @@ export const useProtonMeetIntegration = ({
     }, [model.title]);
 
     return {
-        handlePassphraseSave,
         processState,
         meetingObject,
         meetingDetails,

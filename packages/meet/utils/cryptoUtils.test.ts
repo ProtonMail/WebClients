@@ -6,7 +6,6 @@ import {
     decryptMetadataWithKey,
     deriveEncryptionKeyFromSessionKey,
     encryptMetadataWithKey,
-    getCombinedPassword,
     prepareMeetingCryptoData,
 } from './cryptoUtils';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from './testUtils';
@@ -62,11 +61,10 @@ describe('utils', () => {
         expect(decryptedData).toBe(mockData);
     });
 
-    it('should allow for encrypting and decrypting meeting name without using a custom password', async () => {
+    it('should allow for encrypting and decrypting meeting name', async () => {
         const mockPrivateKey = await getMockPrivateKey();
 
         const { encryptedMeetingName, encryptedSessionKey, salt, passwordBase } = await prepareMeetingCryptoData({
-            customPassword: '',
             primaryUserKey: mockPrivateKey,
             meetingName: mockMeetingName,
             // @ts-expect-error - srpGetVerify is mocked, no need for the api
@@ -74,30 +72,7 @@ describe('utils', () => {
         });
 
         const decryptedMeetingName = await decryptMeetingName({
-            password: getCombinedPassword(passwordBase, ''),
-            encryptedMeetingName,
-            encryptedSessionKey,
-            salt,
-        });
-
-        expect(decryptedMeetingName).toBe(mockMeetingName);
-    });
-
-    it('should allow for encrypting and decrypting meeting name with using a custom password', async () => {
-        const mockPassword = 'mockpassword';
-
-        const mockPrivateKey = await getMockPrivateKey();
-
-        const { encryptedMeetingName, encryptedSessionKey, salt, passwordBase } = await prepareMeetingCryptoData({
-            customPassword: mockPassword,
-            primaryUserKey: mockPrivateKey,
-            meetingName: mockMeetingName,
-            // @ts-expect-error - srpGetVerify is mocked, no need for the api
-            api: null,
-        });
-
-        const decryptedMeetingName = await decryptMeetingName({
-            password: getCombinedPassword(passwordBase, mockPassword),
+            password: passwordBase,
             encryptedMeetingName,
             encryptedSessionKey,
             salt,
@@ -110,7 +85,6 @@ describe('utils', () => {
         const mockPrivateKey = await getMockPrivateKey();
 
         const { encryptedPassword } = await prepareMeetingCryptoData({
-            customPassword: '',
             primaryUserKey: mockPrivateKey,
             meetingName: mockMeetingName,
             // @ts-expect-error - srpGetVerify is mocked, no need for the api

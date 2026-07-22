@@ -5,7 +5,6 @@ export { useSaveMeeting } from './hooks/useSaveMeeting';
 export { useGetMeeting } from './hooks/useGetMeeting';
 export { useDeleteMeeting } from './hooks/useDeleteMeeting';
 export { useUpdateMeetingName } from './hooks/useUpdateMeetingName';
-export { useUpdateMeetingPassword } from './hooks/useUpdateMeetingPassword';
 export { useProtonMeet } from './hooks/useProtonMeet';
 export { useGetActiveMeetings } from './hooks/useGetActiveMeetings';
 export { useGetMeetingByLinkName } from './hooks/useGetMeetingByLinkName';

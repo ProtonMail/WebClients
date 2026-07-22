@@ -23,7 +23,6 @@ export interface SRPHandshakeInfo {
     Salt: string;
     SRPSession: string;
     Version: AuthVersion;
-    CustomPassword: MeetingInfoResponse['MeetingInfo']['CustomPassword'];
 }
 
 export const useMeetSrp = () => {
