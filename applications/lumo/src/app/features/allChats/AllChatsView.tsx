@@ -812,8 +812,6 @@ export const AllChatsView = () => {
                                         const conversation = filteredConversations[virtualItem.index];
                                         const rowData = rowDataMap[conversation.id] ?? {
                                             preview: '',
-                                            hasImages: false,
-                                            icon: 'MessageCircle' as const,
                                             isProject: false,
                                         };
 

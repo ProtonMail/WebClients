@@ -26,8 +26,6 @@ const createTestConversation = (daysAgo: number, id: string, overrides: Partial<
 const defaultRowData: AllChatsRowDataMap = {
     'via-preview': {
         preview: 'Budget planning tips',
-        hasImages: false,
-        icon: 'MessageCircle',
         isProject: false,
     },
 };
@@ -70,14 +68,10 @@ describe('filterAllChatsConversations', () => {
         const rowDataMap: AllChatsRowDataMap = {
             'project-chat': {
                 preview: '',
-                hasImages: false,
-                icon: 'MessageCircle',
                 isProject: true,
             },
             'regular-chat': {
                 preview: '',
-                hasImages: false,
-                icon: 'MessageCircle',
                 isProject: false,
             },
         };
