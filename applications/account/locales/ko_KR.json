@@ -7803,6 +7803,9 @@
       ],
       "Zero keys reactivated": [
         "제로 키 재활성화됨"
+      ],
+      "Please set up your organization before adding a company.": [
+        "회사 생성 전 조직을 생성해 주세요."
       ]
     },
     "error": {
@@ -12661,7 +12664,7 @@
         "이를 통해 TV에서 회원님의 ${ BRAND_NAME } 계정에 접근할 수 있게 됩니다."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "이 작업을 실행하면 ${ rententionLabel }보다 오래된 파일의 모든 이전 버전이 삭제됩니다."
+        "이 작업을 실행하면 ${ rententionLabel }보다 오래된 모든 이전 버전의 파일이 삭제됩니다."
       ],
       "This will delete all previous versions of your files.": [
         "이 작업을 실행하면 파일의 모든 이전 버전이 삭제됩니다."
@@ -12898,7 +12901,7 @@
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
       "Upgrade to unlock": [
-        "업그레이드하여 잠금 해제"
+        "잠금해제하려면 업그레이드"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } 잠금 해제하려면 업그레이드"
@@ -14783,7 +14786,7 @@
         "다시 묻지 않기"
       ],
       "Don't keep versions": [
-        "버전 보관 안 함"
+        "버전 유지하지 않기"
       ],
       "Don't show this again": [
         "다시 보지 않기"
@@ -27370,6 +27373,9 @@
       ],
       "Writing assistant": [
         "글쓰기 도우미"
+      ],
+      "Pending": [
+        "보류 중"
       ]
     },
     "Validation": {
