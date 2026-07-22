@@ -432,6 +432,9 @@ export type MessagePriv = {
     /** Model id/hash that served this response (from SSE `model` field). */
     modelID?: string;
 
+    /** Model id sent in the chat request, including response mode, e.g. `lumo-max (thinking)`. */
+    requestedModel?: string;
+
     // Context compaction boundary. When set, this message is a "compaction marker"
     // rather than ordinary content: it records how the conversation was condensed
     // and is rendered as a divider in the UI. See CompactionMeta.
@@ -494,6 +497,7 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.thinkingTimeline === undefined || Array.isArray(value.thinkingTimeline)) &&
         (value.suggestedQuestions === undefined || Array.isArray(value.suggestedQuestions)) &&
         (value.modelID === undefined || typeof value.modelID === 'string') &&
+        (value.requestedModel === undefined || typeof value.requestedModel === 'string') &&
         (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null))
     );
 }
@@ -517,6 +521,7 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         thinkingTimeline,
         suggestedQuestions,
         modelID,
+        requestedModel,
         compaction,
     } = m;
     return {
@@ -532,6 +537,7 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         thinkingTimeline,
         suggestedQuestions,
         modelID,
+        requestedModel,
         compaction,
     };
 }
@@ -568,6 +574,7 @@ export function cleanMessage(message: Message): Message {
         thinkingTimeline,
         suggestedQuestions,
         modelID,
+        requestedModel,
         compaction,
     } = message;
     return {
@@ -590,6 +597,7 @@ export function cleanMessage(message: Message): Message {
         ...(thinkingTimeline !== undefined && { thinkingTimeline }),
         ...(suggestedQuestions !== undefined && { suggestedQuestions }),
         ...(modelID !== undefined && { modelID }),
+        ...(requestedModel !== undefined && { requestedModel }),
         ...(compaction !== undefined && { compaction }),
     };
 }
@@ -640,6 +648,7 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.thinkingTimeline === undefined &&
         value.suggestedQuestions === undefined &&
         value.modelID === undefined &&
+        value.requestedModel === undefined &&
         value.compaction === undefined
     );
 }
@@ -1005,6 +1014,7 @@ export type FinishMessageAction = {
     status: Status;
     role: Role;
     modelID?: string;
+    requestedModel?: string;
 };
 
 export type PopulateInitialStateAction = {

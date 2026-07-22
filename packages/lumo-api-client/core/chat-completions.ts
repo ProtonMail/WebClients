@@ -56,6 +56,10 @@ export function resolveChatModel(modelTier: LumoApiModelTier = 'auto', model?: s
     }
 }
 
+export function formatRequestedModel(model: string, enableReasoning: boolean): string {
+    return `${model} (${enableReasoning ? 'thinking' : 'fast'})`;
+}
+
 export function toChatCompletionsBody(
     request: LumoApiGenerationRequest,
     options: ToChatCompletionsOptions = {}
