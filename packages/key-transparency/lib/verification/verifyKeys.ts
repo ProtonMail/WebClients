@@ -1,5 +1,6 @@
 import type { KeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type {
@@ -12,7 +13,7 @@ import type {
     SignedKeyListItem,
 } from '@proton/shared/lib/interfaces';
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
-import { ParsedSignedKeyList } from '@proton/shared/lib/keys';
+import { ParsedSignedKeyList } from '@proton/shared/lib/keys/parsedSignedKeyList';
 
 import { KT_SKL_VERIFICATION_CONTEXT } from '../constants/constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
@@ -199,7 +200,10 @@ const verifyPublicKeys = async ({
             }
             const data = signedKeyList.Data ?? signedKeyList.ObsolescenceToken;
             if (!data) {
-                return throwKTError("SKL doesn't have data or obsolescence token", KT_ERROR_TYPE.LOCAL, { email, signedKeyList });
+                return throwKTError("SKL doesn't have data or obsolescence token", KT_ERROR_TYPE.LOCAL, {
+                    email,
+                    signedKeyList,
+                });
             }
             await sklVerificationPromise;
             await saveSKLToLS({
