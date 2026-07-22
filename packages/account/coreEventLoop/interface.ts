@@ -5,6 +5,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { AddressesState } from '../addresses';
 import type { DelegatedAccessState } from '../delegatedAccess';
 import type { DomainsState } from '../domains';
+import type { EntitlementsState } from '../entitlements';
 import type { GroupMembersState } from '../groupMembers';
 import type { GroupsState } from '../groups';
 import type { MembersState } from '../members';
@@ -19,6 +20,7 @@ import type { UserSettingsState } from '../userSettings';
 export type CoreEventLoopV6RequiredState = UserState &
     SubscriptionState &
     OrganizationState &
+    EntitlementsState &
     AddressesState &
     UserSettingsState &
     MembersState &
