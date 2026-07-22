@@ -8,7 +8,7 @@ import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
-import { driveEventsResultToDriveEvents } from '../_api';
+import { driveEventsResultToDriveEvents } from '../_api/transformers';
 import { VolumeTypeForEvents } from '../_volumes';
 import { useDriveEventManagerProvider } from './useDriveEventManager';
 

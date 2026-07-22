@@ -1,9 +1,10 @@
 import { VERIFICATION_STATUS } from '@protontech/crypto/constants';
+
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import type useDownload from '../_downloads/useDownload';
-import { useLink } from '../_links';
+import useLink from '../_links/useLink';
 
 export const useCheckLinkSignatures = ({
     checkFirstBlockSignature,

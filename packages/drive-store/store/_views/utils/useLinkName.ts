@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { isIgnoredError, logError } from '../../../utils/errorHandling';
-import { useLink } from '../../_links';
+import useLink from '../../_links/useLink';
 
 /**
  * useLinkName returns link name when its loaded.

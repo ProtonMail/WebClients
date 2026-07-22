@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { useLoading } from '@proton/hooks';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import type { DecryptedLink } from '../_links';
-import { useLinksListing } from '../_links';
+import type { DecryptedLink } from '../_links/interface';
+import useLinksListing from '../_links/useLinksListing/useLinksListing';
 
 /**
  * useLinksDetailsView loads links if not cached yet and provides some

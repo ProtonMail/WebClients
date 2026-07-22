@@ -18,10 +18,9 @@ import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/
 import type { DriveVolume as DriveVolumePayload } from '@proton/shared/lib/interfaces/drive/volume';
 
 import type { Device } from '../_devices';
-import type { DriveEvents } from '../_events';
-import type { EncryptedLink } from '../_links';
+import type { DriveEvents } from '../_events/interface';
+import type { EncryptedLink } from '../_links/interface';
 import type { DriveFileRevision } from '../_revisions';
-import { ShareType, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type {
     Share,
     ShareExternalInvitation,
@@ -33,7 +32,9 @@ import type {
     ShareURLLEGACY,
     ShareWithKey,
     SharedUrlInfo,
-} from '../_shares';
+} from '../_shares/interface';
+import { ShareType } from '../_shares/interface';
+import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares/shareUrl';
 import { ThumbnailType } from '../_uploads/media';
 import type { DriveVolume } from '../_volumes';
 

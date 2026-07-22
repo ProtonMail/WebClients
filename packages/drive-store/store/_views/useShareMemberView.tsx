@@ -6,19 +6,21 @@ import { useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
-import { useDriveEventManager } from '..';
 import { useInvitationsStore } from '../../zustand/share/invitations.store';
 import { useMembersStore } from '../../zustand/share/members.store';
+import { useDriveEventManager } from '../_events/useDriveEventManager';
 import { useInvitations } from '../_invitations';
-import { useLink } from '../_links';
+import useLink from '../_links/useLink';
 import type {
     ShareExternalInvitation,
     ShareInvitation,
     ShareInvitationEmailDetails,
     ShareInvitee,
     ShareMember,
-} from '../_shares';
-import { useShare, useShareActions, useShareMember } from '../_shares';
+} from '../_shares/interface';
+import useShare from '../_shares/useShare';
+import useShareActions from '../_shares/useShareActions';
+import { useShareMember } from '../_shares/useShareMember';
 
 const getExistingEmails = (
     members: ShareMember[],

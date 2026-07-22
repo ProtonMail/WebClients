@@ -5,7 +5,8 @@ import type { ResumedSessionResult } from '@proton/shared/lib/authentication/per
 import { receiveCustomPasswordFromDriveWindow } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { getAuthHeaders } from '@proton/shared/lib/fetch/headers';
 
-import { usePublicAuth, usePublicSession } from '../../store/_api';
+import usePublicAuth from '../../store/_api/usePublicAuth';
+import usePublicSession from '../../store/_api/usePublicSession';
 import { getUrlPassword } from '../../utils/url/password';
 
 export const usePublicDocsToken = (session?: ResumedSessionResult) => {

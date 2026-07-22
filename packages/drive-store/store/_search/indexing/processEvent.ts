@@ -1,10 +1,11 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
+
 import { ES_SYNC_ACTIONS } from '@proton/encrypted-search/constants';
 import type { ESEvent, ESItemEvent, EventsObject } from '@proton/encrypted-search/models';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 
-import type { DriveEvent, DriveEvents } from '../../_events';
+import type { DriveEvent, DriveEvents } from '../../_events/interface';
 import type { ESLink } from '../types';
 import { createItemId, generateOrder } from '../utils';
 

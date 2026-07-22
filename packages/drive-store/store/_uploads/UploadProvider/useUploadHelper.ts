@@ -9,8 +9,10 @@ import { generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import range from '@proton/utils/range';
 
 import { untilStreamEnd } from '../../../utils/stream';
-import { useDebouncedRequest } from '../../_api';
-import { adjustName, splitLinkName, useLink, useLinksListing } from '../../_links';
+import useDebouncedRequest from '../../_api/useDebouncedRequest';
+import { adjustName, splitLinkName } from '../../_links/link';
+import useLink from '../../_links/useLink';
+import useLinksListing from '../../_links/useLinksListing/useLinksListing';
 import { isClientUidAvailable } from './uploadClientUid';
 
 const HASH_CHECK_AMOUNT = 10;

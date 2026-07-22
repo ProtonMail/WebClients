@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { queryShareMap } from '@proton/shared/lib/api/drive/link';
 import type { ShareMapPayload } from '@proton/shared/lib/interfaces/drive/link';
 
-import { useDebouncedRequest } from '../../_api';
+import useDebouncedRequest from '../../_api/useDebouncedRequest';
 
 interface ShareMapParams {
     shareId: string;

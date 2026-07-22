@@ -1,14 +1,14 @@
+import { VERIFICATION_STATUS } from '@protontech/crypto';
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { VERIFICATION_STATUS } from '@protontech/crypto';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { MetricUserPlan } from '../../utils/type/MetricTypes';
 import { tokenIsValid } from '../../utils/url/token';
-import type { IntegrityMetrics } from '../_crypto';
-import { ShareType } from '../_shares';
+import type { IntegrityMetrics } from '../_crypto/integrityMetrics';
+import { ShareType } from '../_shares/interface';
 import { useLinkInner } from './useLink';
 
 jest.mock('@proton/shared/lib/keys/driveKeys');

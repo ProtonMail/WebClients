@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import {
     queryCreateShareURLBookmark,
     queryDeleteShareURLBookmark,
@@ -6,8 +7,10 @@ import {
 } from '@proton/shared/lib/api/drive/bookmark';
 import type { BookmarkPayload } from '@proton/shared/lib/interfaces/drive/bookmark';
 
-import { sharedUrlInfoPayloadToSharedUrlInfo, useDebouncedRequest } from '../_api';
-import { useDefaultShare, useShare } from '../_shares';
+import { sharedUrlInfoPayloadToSharedUrlInfo } from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import useDefaultShare from '../_shares/useDefaultShare';
+import useShare from '../_shares/useShare';
 
 export const useBookmarks = () => {
     const debouncedRequest = useDebouncedRequest();

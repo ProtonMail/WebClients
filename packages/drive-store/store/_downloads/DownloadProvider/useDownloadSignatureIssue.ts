@@ -4,7 +4,7 @@ import { TransferCancel, TransferState } from '../../../components/TransferManag
 import { useSignatureIssueModal } from '../../../components/modals/SignatureIssueModal';
 import { waitUntil } from '../../../utils/async';
 import { isTransferActive, isTransferSignatureIssue } from '../../../utils/transfer';
-import type { SignatureIssues } from '../../_links';
+import type { SignatureIssues } from '../../_links/interface';
 import type { LinkDownload } from '../interface';
 import { TransferSignatureIssueStrategy } from '../interface';
 import type { Download, UpdateData, UpdateFilter, UpdateState } from './interface';

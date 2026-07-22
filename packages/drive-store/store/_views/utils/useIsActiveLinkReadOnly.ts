@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { ShareType } from '../..';
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { isIgnoredError, sendErrorReport } from '../../../utils/errorHandling';
-import type { DecryptedLink } from '../../_links';
-import { useLink } from '../../_links';
+import type { DecryptedLink } from '../../_links/interface';
+import useLink from '../../_links/useLink';
+import { ShareType } from '../../_shares/interface';
 import { useShareType } from './useShareType';
 
 export const isLinkRoot = (link: DecryptedLink) => {

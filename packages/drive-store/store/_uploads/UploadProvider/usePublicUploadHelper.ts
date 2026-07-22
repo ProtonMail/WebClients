@@ -3,8 +3,10 @@ import type { HashCheckResult } from '@proton/shared/lib/interfaces/drive/link';
 import { generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import range from '@proton/utils/range';
 
-import { usePublicSession } from '../../_api';
-import { adjustName, splitLinkName, useLink, usePublicLinksListing } from '../../_links';
+import usePublicSession from '../../_api/usePublicSession';
+import { adjustName, splitLinkName } from '../../_links/link';
+import useLink from '../../_links/useLink';
+import usePublicLinksListing from '../../_links/useLinksListing/usePublicLinksListing';
 import { isClientUidAvailable } from './uploadClientUid';
 
 const HASH_CHECK_AMOUNT = 10;

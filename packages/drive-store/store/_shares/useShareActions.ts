@@ -15,9 +15,9 @@ import chunk from '@proton/utils/chunk';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { useDebouncedRequest } from '../_api';
-import { useDriveEventManager } from '../_events';
-import { useLink } from '../_links';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import { useDriveEventManager } from '../_events/useDriveEventManager';
+import useLink from '../_links/useLink';
 import useLinksState from '../_links/useLinksState';
 import useShare from './useShare';
 
@@ -87,7 +87,7 @@ export default function useShareActions() {
 
         const [PassphraseKeyPacket, NameKeyPacket] = await Promise.all([
             getEncryptedSessionKey(passphraseSessionKey, sharePrivateKey)
-                .then(bytes => bytes.toBase64())
+                .then((bytes) => bytes.toBase64())
                 .catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to encrypt link passphrase during share creation', {
@@ -101,7 +101,7 @@ export default function useShareActions() {
                     )
                 ),
             getEncryptedSessionKey(nameSessionKey, sharePrivateKey)
-                .then(bytes => bytes.toBase64())
+                .then((bytes) => bytes.toBase64())
                 .catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to encrypt link name during share creation', {
@@ -193,7 +193,7 @@ export default function useShareActions() {
                         }
 
                         await getEncryptedSessionKey(shareSessionKey, linkPrivateKey)
-                            .then(bytes => bytes.toBase64())
+                            .then((bytes) => bytes.toBase64())
                             .then((PassphraseNodeKeyPacket) => {
                                 passPhraseNodeKeyPackets.push({
                                     ShareID: share.shareId,

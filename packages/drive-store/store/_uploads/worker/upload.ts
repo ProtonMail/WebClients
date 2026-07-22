@@ -10,7 +10,7 @@ import { serializeFormData } from '@proton/shared/lib/fetch/serialize';
 import { MAX_RETRIES_BEFORE_FAIL, MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_JOBS } from '../constants';
 import type { UploadingBlockControl } from './interface';
 import type { Pauser } from './pauser';
-import { uploadWorker } from './worker';
+import { getWorkerConfig } from './workerConfig';
 
 type LogCallback = (message: string) => void;
 
@@ -282,9 +282,10 @@ async function uploadBlockData(
         xhr.setRequestHeader('Cache-Control', 'no-cache, no-store, max-age=0');
 
         // the default values are for type safety, it should never occur, if it does, we have a problem
+        const config = getWorkerConfig();
         const appVersionHeaders = getAppVersionHeaders(
-            getClientID(uploadWorker.config?.APP_NAME || 'proton-drive'),
-            uploadWorker.config?.APP_VERSION || '0.0.0+wrong123'
+            getClientID(config?.APP_NAME || 'proton-drive'),
+            config?.APP_VERSION || '0.0.0+wrong123'
         );
         Object.keys(appVersionHeaders).forEach((header) => {
             xhr.setRequestHeader(header, appVersionHeaders[header as keyof typeof appVersionHeaders]);

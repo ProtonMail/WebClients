@@ -1,6 +1,6 @@
 import { useAuthentication } from '@proton/components';
 
-import { usePublicSession } from '../_api';
+import usePublicSession from '../_api/usePublicSession';
 
 export const usePublicSessionUser = () => {
     const auth = useAuthentication();

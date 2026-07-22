@@ -5,7 +5,7 @@ import { when } from 'jest-when';
 
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
-import { getSharedLink } from '../../store/_shares';
+import { getSharedLink } from '../../store/_shares/shareUrl';
 import { getUrlPassword } from '../../utils/url/password';
 import { drivePublicRedirectionReasonKey, useRedirectToPublicPage } from './useRedirectToPublicPage';
 
@@ -25,7 +25,7 @@ const mockedUseLocation = jest.mocked(useLocation);
 jest.mock('@proton/shared/lib/helpers/browser');
 const mockedReplaceUrl = jest.mocked(replaceUrl);
 
-jest.mock('../../store/_shares');
+jest.mock('../../store/_shares/shareUrl');
 const mockedGetSharedLink = jest.mocked(getSharedLink);
 
 jest.mock('../../utils/url/password');
@@ -68,7 +68,7 @@ describe('useRedirectToPublicPage', () => {
     });
 
     it('should not redirect if urlPassword is empty', () => {
-        when(mockedGetUrlPassword).calledWith({ readOnly: true }).mockReturnValueOnce('');
+        when(mockedGetUrlPassword).calledWith({ readOnly: true, filterCustom: true }).mockReturnValueOnce('');
         const { result } = renderHook(() => useRedirectToPublicPage());
 
         result.current.redirectToPublicPage(mockToken);
@@ -78,7 +78,7 @@ describe('useRedirectToPublicPage', () => {
     });
 
     it('should not redirect if getSharedLink returns undefined', () => {
-        when(mockedGetUrlPassword).calledWith({ readOnly: true }).mockReturnValueOnce(mockPassword);
+        when(mockedGetUrlPassword).calledWith({ readOnly: true, filterCustom: true }).mockReturnValueOnce(mockPassword);
         when(mockedGetSharedLink).calledWith({ token: mockToken, password: mockPassword }).mockReturnValue(undefined);
 
         const { result } = renderHook(() => useRedirectToPublicPage());
