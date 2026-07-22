@@ -9,14 +9,14 @@ import { StripedList } from '@proton/components/components/stripedList/StripedLi
 import Time from '@proton/components/components/time/Time';
 import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
+import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
 import { hasLumoAddonFromPlanIDs, hasMeetAddonFromPlanIDs, hasScribeAddon } from '@proton/payments/core/plan/addons';
-import { getIsPassB2BPlan, getIsSentinelPlan } from '@proton/payments/core/plan/helpers';
+import { getIsPassB2BPlan } from '@proton/payments/core/plan/helpers';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     getHasVpnB2BPlan,
     getHasVpnOnlyB2BPlan,
-    getIsB2BAudienceFromSubscription,
     getPlanIDs,
     getSubscriptionPlanTitle,
     hasDeprecatedVPN,
@@ -30,7 +30,6 @@ import {
     hasVPNPassBundle,
     hasVPNPassProfessional,
     hasVisionary,
-    hasVpnBusiness,
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
@@ -85,12 +84,13 @@ interface Props {
     app: APP_NAMES;
     user: UserModel;
     subscription: MaybeFreeSubscription;
+    entitlements: EntitlementChecks;
     organization?: Organization;
     addresses?: Address[];
     upsells: Upsell[];
 }
 
-const SubscriptionPanel = ({ app, subscription, organization, user, addresses, upsells }: Props) => {
+const SubscriptionPanel = ({ app, subscription, organization, entitlements, user, addresses, upsells }: Props) => {
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
     const isPassB2bPlan = getIsPassB2BPlan(planName);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
@@ -262,7 +262,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
 
     const b2bUsersItem: Item | false = !!userText &&
         (MaxMembers > 1 ||
-            getIsB2BAudienceFromSubscription(subscription) ||
+            entitlements.orgIsBusiness ||
             upsells.some((upsell) => upsell.features.some((feature) => feature.icon === 'users'))) && {
             icon: 'users' as const,
             text: userText,
@@ -303,7 +303,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
             return false;
         }
 
-        const showGetMoreButton = MaxAI < MaxMembers && getIsB2BAudienceFromSubscription(subscription);
+        const showGetMoreButton = MaxAI < MaxMembers && entitlements.orgIsBusiness;
         const actionElement = showGetMoreButton ? <GetMoreButton /> : null;
 
         return {
@@ -412,12 +412,13 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
                 ...b2bUsersItem,
                 actionElement: getMoreButtonVpnUpsell,
             },
-            hasVpnBusiness(subscription) && {
-                icon: 'servers' as const,
-                text: serverText,
-                actionElement: getMoreButtonVpnUpsell,
-                dataTestId: 'servers',
-            },
+            entitlements.orgIsBusiness &&
+                entitlements.orgHasVpn && {
+                    icon: 'servers' as const,
+                    text: serverText,
+                    actionElement: getMoreButtonVpnUpsell,
+                    dataTestId: 'servers',
+                },
         ].filter(isTruthy);
 
         return (
@@ -478,7 +479,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
                 text: vpnText,
             },
             getProtonPassFeature(user.hasPaidPass ? 'unlimited' : FREE_PASS_ALIASES),
-            getIsSentinelPlan(organization?.PlanName) ? getSentinel(true) : false,
+            entitlements.orgHasSentinel ? getSentinel(true) : false,
             scribeItem,
             lumoItem,
             meetItem,
@@ -540,7 +541,8 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
     const isWalletEA = app === APPS.PROTONWALLET && hasVisionary(subscription);
     // For the VPN B2B plan, we don't want to show the action buttons
     // The user can still open the subscription or customization flow using the other buttons, e.g. "Get more" users
-    const showActionButtons = !hasVpnOnlyB2BPlan && !isWalletEA && !hasLumoBusiness(subscription);
+    const showActionButtons =
+        !hasVpnOnlyB2BPlan && !isWalletEA && !(entitlements.orgIsBusiness && entitlements.orgHasLumo);
 
     return (
         <>

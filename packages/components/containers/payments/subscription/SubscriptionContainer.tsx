@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAllEntitlements } from '@proton/account/entitlements/hooks';
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
@@ -314,6 +315,7 @@ const SubscriptionContainerInner = ({
     const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
     const getUser = useGetUser();
     const getPaymentMethods = useGetPaymentMethods();
+    const getEntitlements = useGetAllEntitlements();
     const { createSubscriptionPoller } = usePaymentPollers();
 
     const {
@@ -563,6 +565,7 @@ const SubscriptionContainerInner = ({
                 getUser({ cache: CacheType.None }),
                 getOrganization({ cache: CacheType.None }),
                 getPaymentMethods({ cache: CacheType.None }),
+                getEntitlements({ cache: CacheType.None }),
             ]).catch(noop);
 
             if (disableThanksStep) {
