@@ -181,7 +181,7 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
         })
         .addCase(finishMessage, (state, action) => {
             const finishAction = action.payload;
-            const { messageId, content, status, modelID } = finishAction;
+            const { messageId, content, status, modelID, requestedModel } = finishAction;
             const message = state[messageId];
             if (!message) {
                 console.warn(`cannot modify message ${messageId}: not found in Redux state`);
@@ -197,6 +197,9 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
             message.status = status;
             if (modelID !== undefined) {
                 message.modelID = modelID;
+            }
+            if (requestedModel !== undefined) {
+                message.requestedModel = requestedModel;
             }
         })
         .addCase(deleteAllMessages, () => {

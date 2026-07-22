@@ -200,6 +200,17 @@ function messageHasGeneratedImages(message: Message, attachments: AttachmentMap)
     });
 }
 
+export const selectMessageHasGeneratedImages =
+    (messageId: MessageId): LumoSelector<boolean> =>
+    (state) => {
+        const message = state.messages[messageId];
+        if (!message) {
+            return false;
+        }
+
+        return messageHasGeneratedImages(message, state.attachments);
+    };
+
 export const selectConversationHasGeneratedImages =
     (conversationId: ConversationId | null | undefined): LumoSelector<boolean> =>
     (state) => {
