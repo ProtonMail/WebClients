@@ -43,12 +43,10 @@ export const parseRecoveryFiles = async (filesAsStrings: string[] = [], recovery
     ).flat();
 
     return Promise.all(
-        decryptedArmoredKeys.map(
-            async (armoredKey): Promise<ArmoredKeyWithInfo> => ({
-                ...(await CryptoProxy.getKeyInfo({ armoredKey })),
-                armoredKey,
-            })
-        )
+        decryptedArmoredKeys.map(async (armoredKey): Promise<ArmoredKeyWithInfo> => ({
+            ...(await CryptoProxy.getKeyInfo({ armoredKey })),
+            armoredKey,
+        }))
     );
 };
 
@@ -111,11 +109,11 @@ export const generateRecoveryFile = async ({
     });
 };
 
-export const exportRecoveryFile = async (message: string, isShareFeatureEnabled: boolean) => {
+export const exportRecoveryFile = async (message: string) => {
     const blob = new Blob([message], { type: 'text/plain' });
     const file = new File([blob], RECOVERY_FILE_FILE_NAME, { type: 'text/plain' });
 
-    if (isShareFeatureEnabled && isIos() && navigator.canShare?.({ files: [file] })) {
+    if (isIos() && navigator.canShare?.({ files: [file] })) {
         return navigator.share({ files: [file] }).catch((error) => {
             if (typeof error === 'object' && error.name === 'AbortError') {
                 throw new RecoveryFileShareAbortedError();

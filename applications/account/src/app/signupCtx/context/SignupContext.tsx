@@ -29,7 +29,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Optional, ReferralData } from '@proton/shared/lib/interfaces';
 import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import sendRecoveryPhrasePayloadHelper from '../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
@@ -249,7 +248,6 @@ export const InnerSignupContextProvider = ({
     const setupUserResponseRef = useRef<Unwrap<ReturnType<typeof handleSetupUser>>>();
     const signupDataRef = useRef<SignupData>();
     const [recoveryPhraseData, setRecoveryPhraseData] = useState<DeferredMnemonicData | undefined>();
-    const isShareFeatureEnabled = useFlag('RecoveryFileShareEnabled');
 
     const updateSignupData = (partial: Partial<SignupData>) => {
         signupDataRef.current = { ...signupDataRef.current, ...partial };
@@ -518,7 +516,6 @@ export const InnerSignupContextProvider = ({
                 referralRegistrationPlan,
                 build: APP_NAME,
                 telemetryContext: paymentsContext.telemetryContext,
-                isShareFeatureEnabled,
             });
 
             setupUserResponseRef.current = setupUserResponse;

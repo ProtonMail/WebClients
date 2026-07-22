@@ -119,7 +119,6 @@ enum AccountFlag {
     VPNReferralWithoutTrial = 'VPNReferralWithoutTrial',
     UserGroupsScimGroups = 'UserGroupsScimGroups',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
-    RecoveryFileShareEnabled = 'RecoveryFileShareEnabled',
     WorldCupRetention = 'WorldCupRetention',
 }
 
