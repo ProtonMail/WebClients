@@ -6,6 +6,7 @@
     "exports": {
         "./constants": "./lib/constants/index.ts",
         "./helpers": "./lib/helpers/index.ts",
+        "./helpers/apiHelpers": "./lib/helpers/apiHelpers.ts",
         "./interfaces": "./lib/interfaces.ts",
         "./shared": "./lib/shared/index.ts",
         "./storage": "./lib/storage/index.ts",
