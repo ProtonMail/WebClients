@@ -78,6 +78,7 @@ import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helper
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import TracerAlert from '../../../tracer/TracerAlert'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
+import { getLogsAsJSON } from '~/utils/downloadLogs'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -374,8 +375,9 @@ export function DocumentViewer({
         }
       }
 
+      const docType = tmpConvertNewDocTypeToOld(documentType)
       try {
-        if (tmpConvertNewDocTypeToOld(documentType) === 'sheet') {
+        if (docType === 'sheet') {
           const spreadsheetPatches = await editorController.getSpreadsheetPatchesAsJsonFile()
           zip.file('spreadsheet-patches.json', spreadsheetPatches)
         }
@@ -383,7 +385,7 @@ export function DocumentViewer({
         console.error('Could not include spreadsheet patches in debug info', error)
       }
       try {
-        if (tmpConvertNewDocTypeToOld(documentType) === 'sheet') {
+        if (docType === 'sheet') {
           const spreadsheetActions = await editorController.getSpreadsheetActionsAsJsonFile()
           zip.file('spreadsheet-actions.json', spreadsheetActions)
         }
@@ -409,9 +411,16 @@ export function DocumentViewer({
 
       if (docController) {
         try {
-          const yDocJSON = await editorController.getYDocAsJSON()
+          const { yDocJSON, sheetsJSON, editorJSON } = await getLogsAsJSON(editorController, docType)
           const updatesTimeline = await docController.getUpdatesInformationAsJsonFile(yDocJSON)
           zip.file('updates-timeline.json', updatesTimeline)
+          zip.file('y-doc.json', JSON.stringify(yDocJSON))
+          if (sheetsJSON) {
+            zip.file('sheet-state.json', JSON.stringify(sheetsJSON))
+          }
+          if (editorJSON) {
+            zip.file('doc-state.json', JSON.stringify(editorJSON))
+          }
         } catch (error) {
           console.error('Could not include updates timeline in debug info', error)
         }
