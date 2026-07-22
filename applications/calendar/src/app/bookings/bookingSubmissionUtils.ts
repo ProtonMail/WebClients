@@ -1,7 +1,7 @@
-import { fromUnixTime } from 'date-fns';
-
 import { CryptoProxy } from '@protontech/crypto';
 import type { SessionKey } from '@protontech/crypto';
+import { fromUnixTime } from 'date-fns';
+
 import { getMeetingLink } from '@proton/meet';
 import type { SaveMeetingParams } from '@proton/meet/hooks/useSaveMeeting';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -93,7 +93,6 @@ const getBookingGeneralProperties = async ({
 
     const { response, passwordBase } = await saveMeeting({
         params: {
-            customPassword: '',
             protonCalendar: true, // todo not sure we need to pass this
             meetingName: title,
             recurrence: null, // todo handle this once we support recurring events

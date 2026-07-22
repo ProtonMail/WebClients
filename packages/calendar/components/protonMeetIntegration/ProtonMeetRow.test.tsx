@@ -1,5 +1,6 @@
 import { Router } from 'react-router-dom';
 
+import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createBrowserHistory } from 'history';
@@ -7,8 +8,6 @@ import { createBrowserHistory } from 'history';
 import { NotificationsProvider } from '@proton/components';
 import { useGetMeetingByLinkName } from '@proton/meet';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
-import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
-import { getPassphraseFromEncryptedPassword } from '@proton/meet/utils/cryptoUtils';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 
@@ -69,7 +68,6 @@ jest.mock('@proton/meet/hooks/useCreateMeeting', () => ({
 jest.mock('@proton/meet/hooks/useMeetingUpdates', () => ({
     useMeetingUpdates: jest.fn().mockReturnValue({
         saveMeetingName: jest.fn(),
-        saveMeetingPassword: jest.fn(),
         saveMeetingSchedule: jest.fn(),
     }),
 }));
@@ -81,7 +79,6 @@ jest.mock('@proton/meet/hooks/useGetMeetingByLinkName', () => ({
 }));
 
 jest.mock('@proton/meet/utils/cryptoUtils', () => ({
-    getPassphraseFromEncryptedPassword: jest.fn(),
     decryptSessionKey: jest.fn().mockResolvedValue('session-key'),
     encryptMeetingName: jest.fn().mockResolvedValue('encrypted-title'),
 }));
@@ -215,8 +212,6 @@ describe('ProtonMeetRow', () => {
             getMeetingByLinkName: jest.fn().mockResolvedValue(mockMeeting),
         });
 
-        (getPassphraseFromEncryptedPassword as jest.Mock).mockReturnValue({ passphrase: '' });
-
         renderProtonMeetRow({ model: modelWithMeeting, isActive: true });
 
         const user = userEvent.setup();
@@ -225,54 +220,8 @@ describe('ProtonMeetRow', () => {
 
         await user.click(screen.getByText('More details'));
 
-        expect(screen.getByText('Add secret passphrase')).toBeInTheDocument();
-
         expect(screen.getByText(modelWithMeeting.conferenceHost)).toBeInTheDocument();
         expect(screen.getByText(modelWithMeeting.conferenceUrl)).toBeInTheDocument();
-    });
-
-    it('should allow for updating the passphrase', async () => {
-        const saveMeetingPassword = jest.fn();
-
-        const passphrase = 'passphrase';
-
-        const setModel = jest.fn();
-
-        (useMeetingUpdates as jest.Mock).mockReturnValue({
-            saveMeetingPassword,
-        });
-
-        (useGetMeetingByLinkName as jest.Mock).mockReturnValue({
-            getMeetingByLinkName: jest.fn().mockResolvedValue(mockMeeting),
-        });
-
-        (getPassphraseFromEncryptedPassword as jest.Mock).mockReturnValue({ passphrase: '' });
-
-        renderProtonMeetRow({ model: modelWithMeeting, isActive: true, setModel });
-
-        const user = userEvent.setup();
-
-        await user.click(screen.getByText('More details'));
-
-        await user.click(screen.getByText('Add secret passphrase'));
-
-        await user.type(screen.getByPlaceholderText('Enter passphrase'), passphrase);
-
-        await user.click(screen.getByText('Save'));
-
-        expect(saveMeetingPassword).toHaveBeenCalledWith(
-            expect.objectContaining({
-                id: mockMeeting.ID,
-                passwordBase: password,
-                passphrase,
-            })
-        );
-
-        expect(setModel).toHaveBeenCalledWith(
-            expect.objectContaining({
-                encryptedTitle: 'encrypted-title',
-            })
-        );
     });
 
     it('should automatically create a meeting when having the Proton Meet video conference provider in the url', async () => {
