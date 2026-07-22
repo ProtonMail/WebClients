@@ -16,7 +16,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
-import { useAliasMailboxes } from './AliasMailboxesProvider';
+import { useAliasMailboxes } from './AliasMailboxesContext';
 
 type Props = { mailboxID: number };
 
