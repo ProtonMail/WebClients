@@ -29,7 +29,7 @@ export interface UseMlsSessionResult {
         meetingLinkName: string,
         accessToken: string,
         meetingPassword: string,
-        participantsCountValue?: number | null
+        isWaitingRoom?: boolean
     ) => Promise<{ key: string; epoch: bigint } | undefined>;
 }
 
@@ -53,7 +53,8 @@ export const useMlsSession = ({
     const handleMlsSetup = async (
         meetingLinkName: string,
         accessToken: string,
-        meetingPassword: string
+        meetingPassword: string,
+        isWaitingRoom = false
     ): Promise<{ key: string; epoch: bigint } | undefined> => {
         if (!mlsSetupDone.current) {
             mlsSetupDone.current = true;
@@ -82,12 +83,21 @@ export const useMlsSession = ({
                 meetingLinkName,
                 meetingPassword,
                 sessionId,
-                true
+                true,
+                isWaitingRoom
             );
 
             await meetCoreClient.setMlsGroupUpdateHandler();
             await meetCoreClient.setLiveKitAdminChangeHandler();
             await meetCoreClient.setMlsSyncStateUpdateHandler();
+
+            if (isWaitingRoom) {
+                try {
+                    await meetCoreClient.setJoinRequestHandler();
+                } catch {
+                    // not yet supported in WASM — callbacks still wired via window globals
+                }
+            }
 
             const groupKeyData = await meetCoreClient.getGroupKey();
 
