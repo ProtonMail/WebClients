@@ -1450,6 +1450,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Duceți productivitatea mesageriei la un nou nivel. Lăsați-l pe ${ LUMO_SHORT_APP_NAME } să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
       ]
     },
     "Attached ics file error": {
@@ -1503,6 +1506,9 @@
       ],
       "You have reached the trial limit.": [
         "Ați atins limita perioadei de evaluare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "În perioada de evaluare puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe pentru asistentul de scriere ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "b2b_trials_Action": {
@@ -1624,6 +1630,14 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Planificați-vă și securizați-vă mesajele de pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele."
       ]
     },
     "BF2025: Deal details": {
@@ -7577,6 +7591,12 @@
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "Pentru a permite o căutare reală, fișierele trebuie să fie indexate local. Puteți utiliza în continuare ${ DRIVE_APP_NAME } în mod normal - vă vom anunța când indexarea este finalizată. Dacă părăsiți această pagină, indexarea se va întrerupe și va fi reluată când reveniți."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "Include asistentul de scriere ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "info": {
@@ -8478,6 +8498,12 @@
       ],
       "URL wildcard pattern": [
         "Model URL cu caractere generice"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versiune client"
       ]
     },
     "Label for contact group color": {
@@ -8743,6 +8769,12 @@
       ],
       "for ${ price }": [
         "cu ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Adăugați asistentul de scriere ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -9613,6 +9645,9 @@
       ],
       "Unlock streaming": [
         "Deblocare transmisii în flux"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {

@@ -1436,6 +1436,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ BRAND_NAME } Scribe να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ LUMO_SHORT_APP_NAME } να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
       ]
     },
     "Attached ics file error": {
@@ -1488,6 +1491,9 @@
       ],
       "You have reached the trial limit.": [
         "Έχετε φτάσει το όριο της δοκιμής."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής κατά τη διάρκεια της δοκιμαστικής περιόδου."
       ]
     },
     "b2b_trials_Action": {
@@ -1607,6 +1613,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε τα με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διεύθυνση email, υποστήριξη για προσαρμοσμένους τομείς email, βοηθό γραφής ${ LUMO_SHORT_APP_NAME }, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε τα με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις email, υποστήριξη για προσαρμοσμένους τομείς email, βοηθό γραφής ${ LUMO_SHORT_APP_NAME }, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ LUMO_SHORT_APP_NAME } βοηθό γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ]
     },
     "BF2025: Deal details": {
@@ -7461,6 +7474,12 @@
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "Για να ενεργοποιήσετε την πραγματική αναζήτηση, πρέπει να δημιουργήσουμε τοπικά ευρετήριο των αρχείων σας. Μπορείτε να χρησιμοποιήσετε κανονικά το ${ DRIVE_APP_NAME } - θα σας ενημερώσουμε όταν ολοκληρωθεί η δημιουργία ευρετηρίου. Εάν φύγετε από αυτήν τη σελίδα, η δημιουργία ευρετηρίου θα διακοπεί προσωρινά και θα συνεχιστεί όταν επιστρέψετε."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } περιλαμβάνει τον βοηθό γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ]
     },
     "info": {
@@ -8356,6 +8375,12 @@
       ],
       "URL wildcard pattern": [
         "Πρότυπο μπαλαντέρ URL"
+      ],
+      "Client": [
+        "Πελάτης"
+      ],
+      "Client version": [
+        "Έκδοση Πελάτη"
       ]
     },
     "Label for contact group color": {
@@ -8616,6 +8641,12 @@
       ],
       "for ${ price }": [
         "για ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Προσθήκη βοηθού γραφής ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -9458,6 +9489,9 @@
       ],
       "Unlock streaming": [
         "Ξεκλειδώστε τη ροή"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ]
     },
     "new_plans: feature highlight": {
