@@ -104,7 +104,7 @@ export const ChatHistorySortMenu = ({
             <Button
                 ref={anchorRef}
                 icon={buttonVariant === 'icon'}
-                shape="solid"
+                shape="ghost"
                 size="medium"
                 className={buttonClassName}
                 aria-label={buttonLabel}
