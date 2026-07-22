@@ -4,7 +4,7 @@ import { disconnectBYOEAddress, reconnectBYOEAddress } from '@proton/activation/
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
-import { disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
+import { disableAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ActiveKeyWithVersion, Address, Member } from '@proton/shared/lib/interfaces';
 import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelper';
@@ -16,7 +16,7 @@ import type { KtState } from '..//kt';
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys/index';
 import { addressThunk, addressesThunk } from '../addresses';
 import { getKTActivation } from '../kt/actions';
-import { type MembersState, getMemberAddresses } from '../members';
+import type { MembersState } from '../members';
 
 export const setAddressFlags = ({
     address: initialAddress,
@@ -59,11 +59,10 @@ export const setAddressFlags = ({
 export const updateBYOEAddressConnection = ({
     address: initialAddress,
     type,
-    member,
     skipDisable = false,
 }: {
     address: Address;
-    type: 'disconnect' | 'reconnect' | 'enable' | 'disable';
+    type: 'disconnect' | 'reconnect';
     member?: Member;
     skipDisable?: boolean;
 }): ThunkAction<
@@ -77,25 +76,6 @@ export const updateBYOEAddressConnection = ({
             throw new Error('No address provided');
         }
         const api = getSilentApi(extra.api);
-
-        // Enable/disable are the admin-on-member actions on a multi-user personal (B2C) plan. There is no
-        // organisation key, so the admin cannot rebuild the member's signed key list: these do no key/SKL/KT
-        // work. Disable turns the address off by ID; enable re-enables it through the backend reconnect endpoint.
-        if (type === 'disable' || type === 'enable') {
-            if (type === 'disable') {
-                await api(disableAddress(initialAddress.ID));
-            } else {
-                await api(enableAddress(initialAddress.ID));
-            }
-            // Refresh the member's addresses so the new status is reflected in the UI.
-            if (member) {
-                const memberAddresses = await dispatch(
-                    getMemberAddresses({ member, cache: CacheType.None, retry: true })
-                );
-                return memberAddresses.find((otherAddress) => otherAddress.ID === initialAddress.ID);
-            }
-            return dispatch(addressThunk({ address: initialAddress, cache: CacheType.None }));
-        }
 
         const { keyTransparencyVerify } = createKTVerifier({
             ktActivation: dispatch(getKTActivation()),
