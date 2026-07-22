@@ -116,7 +116,6 @@ export const getInitialValues = (isMeetWaitingRoomEnabled: boolean): FormValues 
         endDate: new Date(),
         endTime,
         timeZone: '',
-        customPassword: '',
         recurrence: 'NO_REPEAT',
         waitingRoom: isMeetWaitingRoomEnabled ? WaitingRoomState.DISABLED : undefined,
     };

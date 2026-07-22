@@ -15,7 +15,6 @@ export interface MeetingInfoState {
     expirationTime: number | null;
     instantMeeting: boolean;
     displayName: string;
-    passphrase: string;
     mlsGroupState: MLSGroupState | null;
     keyRotationLogs: KeyRotationLog[];
     meetingDurationMs: number;
@@ -32,7 +31,6 @@ export const initialState: MeetingInfoState = {
     expirationTime: null,
     instantMeeting: false,
     displayName: '',
-    passphrase: '',
     mlsGroupState: null,
     keyRotationLogs: [],
     meetingDurationMs: 0,
@@ -143,7 +141,6 @@ export const selectMaxDuration = (state: MeetState) => state.meetingInfo.maxDura
 export const selectExpirationTime = (state: MeetState) => state.meetingInfo.expirationTime;
 export const selectInstantMeeting = (state: MeetState) => state.meetingInfo.instantMeeting;
 export const selectDisplayName = (state: MeetState) => state.meetingInfo.displayName;
-export const selectPassphrase = (state: MeetState) => state.meetingInfo.passphrase;
 
 export const selectMlsGroupState = (state: MeetState) => state.meetingInfo.mlsGroupState;
 export const selectKeyRotationLogs = (state: MeetState) => state.meetingInfo.keyRotationLogs;
