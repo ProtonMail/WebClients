@@ -16,7 +16,6 @@ import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';
 
-import { ProtonMeetPassword } from '../protonMeetIntegration/ProtonMeetPassword';
 import { EventDetailsRow } from './EventDetailsRow';
 import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from './constants';
 import { getSafeConferenceUrl, getVideoConfCopy, isVideoConfOnlyLink } from './videoConfHelpers';
@@ -118,7 +117,6 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                         copySuccessText={c('Notification').t`Passcode copied to clipboard`}
                     />
                 )}
-                {data.service === VIDEO_CONF_SERVICES.PROTON_MEET && <ProtonMeetPassword />}
                 {!hasOnlyLink && (
                     <Collapsible className="mt-2" expandByDefault={isExpanded} externallyControlled>
                         <CollapsibleHeader

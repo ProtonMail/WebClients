@@ -34,7 +34,6 @@ interface MeetContainerProps {
     handleMeetingExpired: () => Promise<void>;
     shareLink: string;
     roomName: string;
-    passphrase: string;
     handleMeetingLockToggle: () => Promise<void>;
     isDisconnected: boolean;
     startPiP: () => void;
@@ -68,7 +67,6 @@ export const MeetContainer = ({
     handleMeetingExpired,
     shareLink,
     roomName,
-    passphrase,
     handleMeetingLockToggle,
     isDisconnected,
     startPiP,
@@ -109,7 +107,6 @@ export const MeetContainer = ({
                 expirationTime,
                 instantMeeting,
                 displayName,
-                passphrase,
             })
         );
         dispatch(setIsGuestAdmin(isGuestAdmin));
@@ -122,7 +119,6 @@ export const MeetContainer = ({
         expirationTime,
         instantMeeting,
         displayName,
-        passphrase,
         isGuestAdmin,
     ]);
 
