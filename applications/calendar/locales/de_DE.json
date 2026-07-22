@@ -1209,6 +1209,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ LUMO_SHORT_APP_NAME } dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
       ]
     },
     "Attached ics file error": {
@@ -1266,6 +1269,9 @@
       ],
       "You have reached the trial limit.": [
         "Du hast das Testversions-Limit erreicht."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } Schreibassistenten-Lizenzen haben."
       ]
     },
     "b2b_trials_Action": {
@@ -1385,6 +1391,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Der Speicherplatz wird von allen ${ BRAND_NAME }-Services gemeinsam genutzt."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und vieles mehr.",
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und vieles mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und mehr."
       ]
     },
     "BF2025: Deal details": {
@@ -1713,6 +1726,9 @@
       ],
       "Take a tour": [
         "Rundgang"
+      ],
+      "Get 50% offer": [
+        "50 % Rabatt sichern"
       ]
     },
     "Calendar access select label": {
@@ -6816,6 +6832,33 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Du bist derzeit al ${ username } für ${ organizationName } angemeldet."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } beinhaltet den Schreibassistenten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Zugriff auf über 20.000 Server in 145 Ländern"
+      ],
+      "Failed to update meeting waiting room status": [
+        "Der Status des Meeting-Warteraums konnte nicht aktualisiert werden"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Gewinne etwas Zeit, um ungestört zu entscheiden."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Wenn du jetzt kündigst, verlierst du am ${ expiryDate } den Zugang zu ${ BRAND_NAME } ${ planTitle }, inklusive dieser Funktionen:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Premium-Schutz deiner Privatsphäre auf all deinen Geräten"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
       ]
     },
     "info": {
@@ -7604,6 +7647,12 @@
       ],
       "URL wildcard pattern": [
         "URL-Platzhalter-Muster"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Client-Version"
       ]
     },
     "label": {
@@ -7888,6 +7937,12 @@
       ],
       "for ${ price }": [
         "für ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent hinzufügen"
       ]
     },
     "meet_2025: Addon": {
@@ -8741,6 +8796,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ]
     },
     "new_plans: feature highlight": {
@@ -12777,6 +12835,9 @@
       ],
       "Users and addresses": [
         "Benutzer und E-Mail-Adressen"
+      ],
+      "Stay for 50% off your next month": [
+        "Bleibe und sichere dir 50 % Rabatt auf deinen nächsten Monat"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
