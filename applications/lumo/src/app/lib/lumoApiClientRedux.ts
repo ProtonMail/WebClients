@@ -1,3 +1,4 @@
+import { formatRequestedModel, resolveChatModel } from '@proton/lumo-api-client/core/chat-completions';
 import { LumoApiClient } from '@proton/lumo-api-client/core/client';
 import { getDesktopLumoApiClientConfig } from '@proton/lumo-api-client/core/desktop-tools';
 import { getTerminalTypeFromApiError } from '@proton/lumo-api-client/core/generation-terminal';
@@ -77,6 +78,10 @@ export function sendMessageWithRedux(
         // them locally to keep collision suffixes ((2), (3), …) correct within one response.
         const generatedImageFilenames = new Set<string>();
         let servingModelID: string | undefined;
+        const requestedModel = formatRequestedModel(
+            resolveChatModel(assistantOptions.modelTier ?? 'auto'),
+            assistantOptions.enableReasoning ?? false
+        );
 
         const client = new LumoApiClient({
             ...getDesktopLumoApiClientConfig(),
@@ -340,6 +345,7 @@ export function sendMessageWithRedux(
                                 content: accumulatedContent,
                                 status: status === 'failed' ? 'failed' : status,
                                 role,
+                                requestedModel,
                                 ...(servingModelID !== undefined ? { modelID: servingModelID } : {}),
                             })
                         );
