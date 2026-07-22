@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
-import { decryptMeetingName, getCombinedPassword } from '@proton/meet/utils/cryptoUtils';
+import { decryptMeetingName } from '@proton/meet/utils/cryptoUtils';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { INVALID_SRP_PARAMS_ERROR_CODE } from '../../constants';
@@ -18,12 +18,10 @@ export const useMeetingAuthentication = () => {
 
     const getMeetingDetails = useCallback(
         async ({
-            customPassword,
             urlPassword,
             token,
             handshakeInfo,
         }: {
-            customPassword: string;
             urlPassword: string;
             token: string;
             handshakeInfo?: SRPHandshakeInfo;
@@ -41,7 +39,7 @@ export const useMeetingAuthentication = () => {
             }
 
             try {
-                await getSessionToken(token, getCombinedPassword(urlPassword, customPassword), handshakeInfo);
+                await getSessionToken(token, urlPassword, handshakeInfo);
             } catch (error) {
                 const { code, message } = getApiError(error);
 
@@ -65,7 +63,7 @@ export const useMeetingAuthentication = () => {
                 const meetingInfo = await getMeetingInfo(token);
 
                 meetingName = await decryptMeetingName({
-                    password: getCombinedPassword(urlPassword, customPassword),
+                    password: urlPassword,
                     encryptedSessionKey: meetingInfo.MeetingInfo.SessionKey,
                     encryptedMeetingName: meetingInfo.MeetingInfo.MeetingName,
                     salt: meetingInfo.MeetingInfo.Salt,
