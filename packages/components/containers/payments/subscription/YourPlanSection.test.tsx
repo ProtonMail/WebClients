@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useAllEntitlements } from '@proton/account/entitlements/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetSubscription, useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -11,6 +12,8 @@ import useCache from '@proton/components/hooks/useCache';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useFeature } from '@proton/features';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import { EntitlementType } from '@proton/payments/core/entitlements/interface';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 import { applyHOCs } from '@proton/testing/lib/context/hocs';
@@ -76,6 +79,7 @@ const mockOpenSubscriptionModal = jest.fn();
 jest.mock('./SubscriptionModalProvider', () => ({
     __esModule: true,
     useSubscriptionModal: () => [mockOpenSubscriptionModal],
+    useSubscriptionModalRaw: () => mockOpenSubscriptionModal,
 }));
 
 jest.mock('@proton/features/useFeature');
@@ -85,6 +89,12 @@ mockUseFeature.mockReturnValue({ feature: { Value: true } });
 jest.mock('@proton/components/hooks/useCache');
 const mockUseCache = useCache as jest.MockedFunction<any>;
 mockUseCache.mockReturnValue({ get: jest.fn(), delete: jest.fn() });
+
+jest.mock('@proton/account/entitlements/hooks', () => ({
+    useAllEntitlements: jest.fn(),
+}));
+const mockUseAllEntitlements = useAllEntitlements as jest.MockedFunction<any>;
+mockUseAllEntitlements.mockReturnValue([undefined, false]);
 
 jest.mock('@proton/components/hooks/useActiveBreakpoint');
 const mockUseActiveBreakpoint = useActiveBreakpoint as jest.MockedFunction<any>;
@@ -117,6 +127,7 @@ describe('YourPlanSection', () => {
         mockUseGetSubscription.mockReturnValue(async () => subscriptionBundle);
         mockUsePendingUserInvitations.mockReturnValue([[], false]);
         mockUseOrganization.mockReturnValue([{}, false]);
+        mockUseAllEntitlements.mockReturnValue([undefined, false]);
     });
 
     afterEach(() => {
@@ -125,6 +136,7 @@ describe('YourPlanSection', () => {
         mockUseOrganization.mockRestore();
         mockUseSubscription.mockRestore();
         mockUseGetSubscription.mockRestore();
+        mockUseAllEntitlements.mockRestore();
     });
 
     describe('when user has no pending invite', () => {
@@ -236,6 +248,16 @@ describe('YourPlanSection', () => {
 
         it('should render subscription and upsells, including sentinel and users', async () => {
             mockUseOrganization.mockReturnValue([{ PlanName: PLANS.DUO }]);
+            mockUseAllEntitlements.mockReturnValue([
+                {
+                    OrganizationEntitlements: [
+                        { Name: EntitlementName.Sentinel, Quantity: 1, Type: EntitlementType.Switch },
+                    ],
+                    UserEntitlements: [],
+                    MemberEntitlements: [],
+                },
+                false,
+            ]);
 
             const { getByTestId } = render(<YourPlanSectionWrapped app={APPS.PROTONMAIL} />);
 

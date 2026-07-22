@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
@@ -17,20 +18,25 @@ jest.mock('@proton/vpn/constants/vpnServers', () => ({
 }));
 
 describe('SubscriptionPanel', () => {
+    const defaultEntitlements = createEntitlementResolver(undefined);
+
     const defaultProps = {
         app: APPS.PROTONMAIL,
         user: buildUser(),
         upsells: [],
         subscription: undefined,
+        entitlements: defaultEntitlements,
     };
 
     it('should not render if user cannot pay', () => {
-        const { container } = render(<SubscriptionPanel {...defaultProps} user={buildUser({ canPay: false })} />);
+        const { container } = renderWithProviders(
+            <SubscriptionPanel {...defaultProps} user={buildUser({ canPay: false })} />
+        );
         expect(container).toBeEmptyDOMElement();
     });
 
     it('should not render for trial subscriptions', () => {
-        const { container } = render(
+        const { container } = renderWithProviders(
             <SubscriptionPanel {...defaultProps} subscription={buildSubscription(undefined, { IsTrial: true })} />
         );
         expect(container).toBeEmptyDOMElement();

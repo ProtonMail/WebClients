@@ -14,6 +14,7 @@ import type {
     PLANS,
 } from '../constants';
 import { PLAN_TYPES } from '../constants';
+import type { Entitlements } from '../entitlements/interface';
 import type {
     AmountAndCurrency,
     ChargeablePaymentParameters,
@@ -149,6 +150,15 @@ export const queryPlans = (params?: QueryPlansParams) => ({
     method: 'get',
     params,
 });
+
+export const queryEntitlements = () => ({
+    url: `core/v5/entitlements`,
+    method: 'get',
+});
+
+export async function getEntitlements(api: Api) {
+    return api<Entitlements>(queryEntitlements());
+}
 
 export const getInvoicePDF = (invoiceID: string, version: PaymentsVersion) => ({
     url: `payments/${version}/invoices/${invoiceID}`,
