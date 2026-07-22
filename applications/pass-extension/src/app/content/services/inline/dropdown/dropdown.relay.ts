@@ -1,6 +1,7 @@
 import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { resolveOriginScope } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
+import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
 import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -57,6 +58,7 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
                             frameAttributes: getFrameAttributes(),
                             field: { fieldId, formId, frameId },
                             origin,
+                            telemetry: getAutofillPageTelemetryDimensions(req.field.element),
                             coords: {
                                 top: top + height,
                                 left: left + width - DROPDOWN_WIDTH,
