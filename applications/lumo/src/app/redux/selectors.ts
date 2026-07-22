@@ -18,6 +18,7 @@ import { getInitials } from '../util/username';
 import type { AttachmentMap } from './slices/core/attachments';
 import { EMPTY_ATTACHMENT_MAP } from './slices/core/attachments';
 import { EMPTY_CONVERSATION_MAP } from './slices/core/conversations';
+import type { MessageMap } from './slices/core/messages';
 import { EMPTY_MESSAGE_MAP } from './slices/core/messages';
 import { isNonEmptyPersonalization } from './slices/personalization';
 import type { LumoState, LumoState as RootState } from './store';
@@ -77,6 +78,31 @@ export const selectMessagesByConversationId =
         conversationId
             ? objectFilterV(state.messages, (m: Message) => m.conversationId === conversationId, EMPTY_MESSAGE_MAP)
             : EMPTY_MESSAGE_MAP;
+
+/**
+ * Groups every non-placeholder message by conversationId in a single pass, sorted newest-first
+ * within each group. Use this (not `selectMessagesByConversationId` in a loop) when you need
+ * messages for many/all conversations at once — looking a conversation up here is O(1) instead
+ * of re-scanning the whole message map per conversation.
+ */
+export const groupMessagesByConversationId = (messages: MessageMap): Record<ConversationId, Message[]> => {
+    const grouped: Record<ConversationId, Message[]> = {};
+
+    Object.values(messages).forEach((message: Message) => {
+        if (message.placeholder) {
+            return;
+        }
+        (grouped[message.conversationId] ??= []).push(message);
+    });
+
+    Object.values(grouped).forEach((conversationMessages) => {
+        conversationMessages.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    });
+
+    return grouped;
+};
+
+export const selectMessagesGroupedByConversationId = createSelector([selectMessages], groupMessagesByConversationId);
 
 export const selectConversationsBySpaceId = (spaceId: SpaceId | null | undefined) => (state: LumoState) =>
     objectFilterV(state.conversations, (c: Conversation) => c.spaceId === spaceId, EMPTY_CONVERSATION_MAP);

@@ -99,14 +99,14 @@ export const searchConversations = (conversations: Conversation[], searchInput: 
 };
 
 /**
- * Filter conversations to only those within the free-user retention window.
- * Retention is based on createdAt.
+ * Filter conversations (or any conversation-derived row with a createdAt) to only those
+ * within the free-user retention window. Retention is based on createdAt.
  */
-export const filterConversationsWithinRetentionWindow = (
-    conversations: Conversation[],
+export const filterConversationsWithinRetentionWindow = <T extends { createdAt: string }>(
+    conversations: T[],
     retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
     now: Date = new Date()
-): Conversation[] => {
+): T[] => {
     const cutoff = subDays(startOfDay(now), retentionDays);
 
     return conversations.filter((conversation) => {
@@ -118,8 +118,14 @@ export const filterConversationsWithinRetentionWindow = (
 /**
  * Apply chat retention policy based on subscription status.
  * Free users can only access conversations from the retention window.
+ *
+ * Generic so callers with a derived row shape (e.g. sidebar history rows) can share this
+ * single source of truth instead of reimplementing the retention window calculation.
  */
-export const applyRetentionPolicy = (conversations: Conversation[], hasLumoPlus: boolean): Conversation[] => {
+export const applyRetentionPolicy = <T extends { createdAt: string }>(
+    conversations: T[],
+    hasLumoPlus: boolean
+): T[] => {
     if (hasLumoPlus) {
         return conversations;
     }

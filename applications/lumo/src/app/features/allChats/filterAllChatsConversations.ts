@@ -1,6 +1,9 @@
 import { applyRetentionPolicy } from '../../layouts/sidepanel/helpers';
+import { selectAttachments, selectMessagesGroupedByConversationId } from '../../redux/selectors';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
+import type { LumoState } from '../../redux/store';
 import type { Conversation } from '../../types';
+import { getConversationPreview } from './allChatsHelpers';
 import type { AllChatsRowDataMap } from './selectAllChatsRowData';
 
 export type AllChatsFilterValue = 'all' | 'favorites' | 'projects';
@@ -14,6 +17,9 @@ interface FilterAllChatsConversationsInput {
     rowDataMap: AllChatsRowDataMap;
     sortField: ChatHistoryDateField;
     hasLumoPlus: boolean;
+    // Read imperatively (only when a search query is present) instead of subscribing to a live
+    // selector, so streaming messages in any conversation don't force this list to recompute.
+    getState: () => LumoState;
 }
 
 export const filterAllChatsConversations = ({
@@ -23,6 +29,7 @@ export const filterAllChatsConversations = ({
     rowDataMap,
     sortField,
     hasLumoPlus,
+    getState,
 }: FilterAllChatsConversationsInput): Conversation[] => {
     const nonGhostConversations = conversations.filter((conversation) => {
         return !conversation.ghost;
@@ -47,9 +54,16 @@ export const filterAllChatsConversations = ({
     }
 
     if (normalizedQuery) {
+        const state = getState();
+        const messagesByConversationId = selectMessagesGroupedByConversationId(state);
+        const attachments = selectAttachments(state);
+
         items = items.filter((conversation) => {
             const title = (conversation.title || '').toLowerCase();
-            const preview = (rowDataMap[conversation.id]?.preview || '').toLowerCase();
+            const preview = getConversationPreview(
+                messagesByConversationId[conversation.id] ?? [],
+                attachments
+            ).toLowerCase();
             return title.includes(normalizedQuery) || preview.includes(normalizedQuery);
         });
     }

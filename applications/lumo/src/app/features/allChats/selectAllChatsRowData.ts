@@ -1,12 +1,13 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectAttachments, selectConversations, selectMessages } from '../../redux/selectors';
+import { selectAttachments, selectConversations, selectMessagesGroupedByConversationId } from '../../redux/selectors';
 import { selectSpaceMap } from '../../redux/slices/core/spaces';
-import type { ConversationId } from '../../types';
+import type { LumoState } from '../../redux/store';
+import type { ConversationId, Message } from '../../types';
 import { getConversationPreview } from './allChatsHelpers';
 
+// Fields derived from conversations/spaces only — never invalidated by streaming messages.
 export interface AllChatsRowData {
-    preview: string;
     isProject: boolean;
     projectName?: string;
     projectIcon?: string;
@@ -15,8 +16,8 @@ export interface AllChatsRowData {
 export type AllChatsRowDataMap = Record<ConversationId, AllChatsRowData>;
 
 export const selectAllChatsRowDataMap = createSelector(
-    [selectConversations, selectMessages, selectAttachments, selectSpaceMap],
-    (conversations, messages, attachments, spaces): AllChatsRowDataMap => {
+    [selectConversations, selectSpaceMap],
+    (conversations, spaces): AllChatsRowDataMap => {
         const rowDataMap: AllChatsRowDataMap = {};
 
         Object.values(conversations).forEach((conversation) => {
@@ -24,13 +25,11 @@ export const selectAllChatsRowDataMap = createSelector(
                 return;
             }
 
-            const preview = getConversationPreview(conversation.id, messages, attachments);
             const space = spaces[conversation.spaceId];
             const isProject = space?.isProject === true;
             const projectIcon = isProject ? space?.projectIcon : undefined;
 
             rowDataMap[conversation.id] = {
-                preview,
                 isProject,
                 projectName: isProject ? space?.projectName : undefined,
                 projectIcon: isProject ? projectIcon : undefined,
@@ -40,3 +39,16 @@ export const selectAllChatsRowDataMap = createSelector(
         return rowDataMap;
     }
 );
+
+const EMPTY_CONVERSATION_MESSAGES: Message[] = [];
+
+// Per-conversation preview selector — only the row whose own conversation streamed
+// recomputes/re-renders, instead of invalidating the whole AllChatsRowDataMap.
+export const selectConversationPreview = (id: ConversationId) =>
+    createSelector(
+        [
+            (state: LumoState) => selectMessagesGroupedByConversationId(state)[id] ?? EMPTY_CONVERSATION_MESSAGES,
+            selectAttachments,
+        ],
+        (messages, attachments) => getConversationPreview(messages, attachments)
+    );

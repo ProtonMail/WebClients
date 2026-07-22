@@ -1,8 +1,9 @@
 import { subDays } from 'date-fns';
 
 import { FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
-import type { Conversation } from '../../types';
-import { ConversationStatus } from '../../types';
+import type { LumoState } from '../../redux/store';
+import type { Conversation, Message } from '../../types';
+import { ConversationStatus, Role } from '../../types';
 import { filterAllChatsConversations, getAllChatsEmptyVariant } from './filterAllChatsConversations';
 import type { AllChatsRowDataMap } from './selectAllChatsRowData';
 
@@ -23,12 +24,20 @@ const createTestConversation = (daysAgo: number, id: string, overrides: Partial<
     };
 };
 
-const defaultRowData: AllChatsRowDataMap = {
-    'via-preview': {
-        preview: 'Budget planning tips',
-        isProject: false,
-    },
-};
+const createTestMessage = (id: string, conversationId: string, content: string): Message => ({
+    id,
+    conversationId,
+    createdAt: new Date().toISOString(),
+    role: Role.User,
+    content,
+});
+
+const emptyState = { messages: {}, attachments: {} } as unknown as LumoState;
+
+const stateWithPreviewMessage = {
+    messages: { 'm-via-preview': createTestMessage('m-via-preview', 'via-preview', 'Budget planning tips') },
+    attachments: {},
+} as unknown as LumoState;
 
 const filterConversations = (
     conversations: Conversation[],
@@ -41,6 +50,7 @@ const filterConversations = (
         rowDataMap: {},
         sortField: 'updatedAt',
         hasLumoPlus: true,
+        getState: () => emptyState,
         ...overrides,
     });
 };
@@ -67,11 +77,9 @@ describe('filterAllChatsConversations', () => {
         const conversations = [createTestConversation(0, 'project-chat'), createTestConversation(0, 'regular-chat')];
         const rowDataMap: AllChatsRowDataMap = {
             'project-chat': {
-                preview: '',
                 isProject: true,
             },
             'regular-chat': {
-                preview: '',
                 isProject: false,
             },
         };
@@ -100,7 +108,7 @@ describe('filterAllChatsConversations', () => {
 
         const result = filterConversations(conversations, {
             searchQuery: 'budget',
-            rowDataMap: defaultRowData,
+            getState: () => stateWithPreviewMessage,
         });
 
         expect(result.map((conversation) => conversation.id)).toEqual(['via-preview']);
