@@ -88,8 +88,6 @@ export const getPermissions = ({
     const isNotEncrypted = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
     const isSignatureNotExpected = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
 
-    // An admin managing a member's BYOE address on a multi-user personal (B2C) plan can enable/disable it
-    // (the only case so far). Enable when the address is disabled, disable when it is enabled.
     const isB2CPlan = !!organization?.PlanName && isMultiUserPersonalPlan(organization.PlanName);
     const isAdminOnMemberBYOE = isBYOE && !isSelf && isB2CPlan;
 
@@ -106,7 +104,7 @@ export const getPermissions = ({
     const canGenerateSelfAddressKeys = isSelf && user.Private === MEMBER_PRIVATE.UNREADABLE && !address.HasKeys;
     const canGenerate = canGenerateMemberAddressKeys || canGenerateSelfAddressKeys;
 
-    let canDisable = isEnabled && isAdmin && !isSpecialAddress && !isExternal;
+    let canDisable = (isEnabled && isAdmin && !isSpecialAddress && !isExternal) || (isAdminOnMemberBYOE && isEnabled);
 
     const isManagedUser = member?.Type === MEMBER_TYPE.MANAGED;
     if (isManagedUser) {
@@ -138,15 +136,13 @@ export const getPermissions = ({
         canEditInternalAddress,
         canEditExternalAddress,
         canDisable,
-        canEnable: isDisabled && isAdmin && Type !== TYPE_ORIGINAL && !isBYOE,
+        canEnable: (isDisabled && isAdmin && Type !== TYPE_ORIGINAL && !isBYOE) || (isAdminOnMemberBYOE && isDisabled),
         canDeleteAddress: adminCanDeleteCustom,
         canDeleteAddressOncePerYear: !adminCanDeleteCustom && isAdmin && !isSpecialAddress && !isExternal && !isDefault,
         canEdit: isSelf,
         canGrantBYOEPermissions: isSelf && isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to reconnect a BYOE address when a sync is lost
         canReconnectBYOE: isSelf && isBYOE && isNotEncrypted && isSignatureNotExpected, // Used to reconnect a BYOE when manually disconnected by the user
-        canDisconnectBYOE: isSelf && isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to manually disconnect a BYOE address
-        canDisableBYOE: isAdminOnMemberBYOE && isEnabled,
-        canEnableBYOE: isAdminOnMemberBYOE && !isEnabled,
+        canDisconnectBYOE: isSelf && isBYOE && !isNotEncrypted && !isSignatureNotExpected && !isDisabled, // Used to manually disconnect a BYOE address
     };
 };
 

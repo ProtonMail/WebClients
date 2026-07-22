@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { disableAllowAddressDeletion } from '@proton/account';
-import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/account/addresses/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
@@ -169,16 +168,6 @@ const AddressActions = ({
         createNotification({ text: c('Success notification').t`Address disabled` });
     });
 
-    const handleDisableBYOE = wrapError(async () => {
-        await dispatch(updateBYOEAddressConnection({ address, member, type: 'disable' }));
-        createNotification({ text: c('Success notification').t`Address disabled` });
-    });
-
-    const handleEnableBYOE = wrapError(async () => {
-        await dispatch(updateBYOEAddressConnection({ address, member, type: 'enable' }));
-        createNotification({ text: c('Success notification').t`Address enabled` });
-    });
-
     const mustActivateOrganizationKey = member?.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey;
     const generalActions: DropdownActionProps[] = [
         permissions.canGenerate && {
@@ -265,18 +254,6 @@ const AddressActions = ({
             onClick: () => setDisconnectBYOEOpen(true),
             disabled: loadingConfig,
             'aria-label': c('Address action').t`Disconnect address “${emailAddress}”`,
-        },
-        permissions.canDisableBYOE && {
-            text: c('Address action').t`Disable`,
-            key: 'address-action-disable-byoe',
-            onClick: () => withLoading(handleDisableBYOE()),
-            'aria-label': c('Address action').t`Disable address “${emailAddress}”`,
-        },
-        permissions.canEnableBYOE && {
-            text: c('Address action').t`Enable`,
-            key: 'address-action-enable-byoe',
-            onClick: () => withLoading(handleEnableBYOE()),
-            'aria-label': c('Address action').t`Enable address “${emailAddress}”`,
         },
     ].filter(isTruthy);
 
