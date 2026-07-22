@@ -16,7 +16,7 @@ import type { EmailFormValues } from '@proton/pass/lib/validation/email';
 import { validateEmailForm } from '@proton/pass/lib/validation/email';
 import { editMailbox } from '@proton/pass/store/actions';
 
-import { useAliasMailboxes } from './AliasMailboxesProvider';
+import { useAliasMailboxes } from './AliasMailboxesContext';
 
 type Props = { mailboxID: number };
 
