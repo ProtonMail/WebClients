@@ -53,17 +53,6 @@ const getMessagesForConversation = (messages: MessageMap, conversationId: Conver
         });
 };
 
-export const conversationHasImages = (
-    conversationId: ConversationId,
-    messages: MessageMap,
-    attachments: AttachmentMap
-): boolean => {
-    const conversationMessages = getMessagesForConversation(messages, conversationId);
-    return conversationMessages.some((message) => {
-        return messageHasImages(message, attachments);
-    });
-};
-
 export const getConversationPreview = (
     conversationId: ConversationId,
     messages: MessageMap,
