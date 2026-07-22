@@ -76,7 +76,7 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
 
     useRegisterMessageHandler(WorkerMessageType.AUTOFILL_SYNC, resolveCandidates);
     useRegisterMessageHandler(InlinePortMessageType.AUTOFILL_FILTER, setFilter);
-    useTelemetryEvent(TelemetryEventName.AutofillDisplay, {}, { location: 'source' })([visible]);
+    useTelemetryEvent(TelemetryEventName.AutofillDisplay, {}, { location: 'source', ...payload.telemetry })([visible]);
 
     useEffect(() => {
         if (visible) void resolveCandidates();
