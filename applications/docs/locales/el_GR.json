@@ -1184,6 +1184,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε τα με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διεύθυνση email, υποστήριξη για προσαρμοσμένους τομείς email, βοηθό γραφής ${ LUMO_SHORT_APP_NAME }, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε τα με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις email, υποστήριξη για προσαρμοσμένους τομείς email, βοηθό γραφής ${ LUMO_SHORT_APP_NAME }, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ LUMO_SHORT_APP_NAME } βοηθό γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ]
     },
     "BF2025: Deal details": {
@@ -5879,6 +5886,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ]
     },
     "info": {
@@ -6700,6 +6710,9 @@
       ],
       "Add-on with free trial": [
         "Πρόσθετο με δωρεάν δοκιμή"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ]
     },
     "meet_2025: Addon": {
@@ -7548,6 +7561,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ]
     },
     "new_plans: feature highlight": {
@@ -11008,6 +11024,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ BRAND_NAME } Scribe να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ LUMO_SHORT_APP_NAME } να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
       ]
     }
   }
