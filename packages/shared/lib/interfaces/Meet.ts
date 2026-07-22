@@ -25,6 +25,7 @@ export interface MeetingInfoResponse {
         MaxDuration: number;
         MaxParticipants: number;
         ExpirationTime: number | null;
+        WaitingRoom?: number; // 1 = waiting room enabled
     };
     Code: 1000;
 }
