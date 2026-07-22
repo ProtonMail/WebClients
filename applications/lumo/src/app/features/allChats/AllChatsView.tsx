@@ -273,15 +273,15 @@ const ConversationRow = memo(
                         />
                     ) : (
                         <div className="all-chats-row-title flex items-center gap-3 min-w-0">
-                            <ConversationExpirationIndicator
-                                conversation={conversation}
-                                className="all-chats-row-interactive shrink-0"
-                            />
                             <div className="all-chats-row-title-content min-w-0">
                                 <div className="all-chats-row-title-main flex flex-nowrap items-center gap-1 min-w-0">
                                     <span className="all-chats-row-title-text text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
                                         {label}
                                     </span>
+                                    <ConversationExpirationIndicator
+                                        conversation={conversation}
+                                        className="all-chats-row-interactive shrink-0"
+                                    />
                                     <Button
                                         icon
                                         shape="ghost"
