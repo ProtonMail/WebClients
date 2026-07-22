@@ -9,7 +9,7 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useAliasDomains } from '@proton/pass/components/Settings/Aliases/Domains/DomainsProvider';
+import { useAliasDomains } from '@proton/pass/components/Settings/Aliases/Domains/AliasDomainsContext';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { validateAliasDomain } from '@proton/pass/lib/validation/domain';
 import { createCustomDomain } from '@proton/pass/store/actions';

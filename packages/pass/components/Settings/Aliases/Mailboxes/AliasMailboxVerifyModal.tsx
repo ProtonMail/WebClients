@@ -9,7 +9,7 @@ import { useCountdown } from '@proton/pass/hooks/useCountdown';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { resendVerifyMailbox, validateMailbox } from '@proton/pass/store/actions';
 
-import { useAliasMailboxes, useMailbox } from './AliasMailboxesProvider';
+import { useAliasMailboxes, useMailbox } from './AliasMailboxesContext';
 
 type Props = { mailboxID: number; sentAt?: number };
 

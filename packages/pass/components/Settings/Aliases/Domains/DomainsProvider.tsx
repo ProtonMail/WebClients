@@ -1,57 +1,24 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getAliasDomains, getCustomDomains } from '@proton/pass/store/actions';
 import { selectCanManageAlias } from '@proton/pass/store/selectors';
-import type {
-    CustomDomainOutput,
-    CustomDomainValidationOutput,
-    MaybeNull,
-    UserAliasDomainOutput,
-    UserAliasSettingsGetOutput,
-} from '@proton/pass/types';
+import type { CustomDomainOutput, MaybeNull, UserAliasDomainOutput } from '@proton/pass/types';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
+import { AliasDomainsContext, type AliasDomainsContextValue, type DomainAction } from './AliasDomainsContext';
 import { CustomDomainCreateModal } from './CustomDomainCreateModal';
 import { CustomDomainDeleteModal } from './CustomDomainDeleteModal';
 import { CustomDomainDetailsModal } from './CustomDomainDetailsModal';
 
-export type DomainAction =
-    | { type: 'create' }
-    | { type: 'delete'; domainID: number }
-    | { type: 'dns'; domainID: number }
-    | { type: 'info'; domainID: number };
-
-export type CustomDomain = CustomDomainOutput & Partial<CustomDomainValidationOutput>;
-
-export interface AliasDomainsContextValue {
-    action: MaybeNull<DomainAction>;
-    aliasDomains: UserAliasDomainOutput[];
-    canManage: boolean;
-    customDomains: CustomDomain[];
-    defaultAliasDomain: MaybeNull<string>;
-    loading: boolean;
-    onCreate: (domain: CustomDomainOutput) => void;
-    onDelete: (domainID: number) => void;
-    onVerify: (domainID: number, validation: CustomDomainValidationOutput) => void;
-    onSetDefault: (data: UserAliasSettingsGetOutput) => void;
-    setAction: (action: MaybeNull<DomainAction>) => void;
-}
-
-export const AliasDomainsContext = createContext<MaybeNull<AliasDomainsContextValue>>(null);
-export const useAliasDomains = createUseContext(AliasDomainsContext);
-
-export const useCustomDomain = (domainID: number) => {
-    const { customDomains } = useAliasDomains();
-    return useMemo(() => customDomains.find((domain) => domain.ID === domainID), [customDomains, domainID]);
-};
+export type { CustomDomain, DomainAction } from './AliasDomainsContext';
+export { useAliasDomains, useCustomDomain } from './AliasDomainsContext';
 
 export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
     const upsell = useUpselling();
