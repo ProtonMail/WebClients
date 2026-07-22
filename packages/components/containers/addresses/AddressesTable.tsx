@@ -9,6 +9,7 @@ import type {
     Address,
     CachedOrganizationKey,
     Member,
+    Organization,
     PartialMemberAddress,
     UserModel,
 } from '@proton/shared/lib/interfaces';
@@ -23,6 +24,7 @@ interface AddressesTableProps {
     user: UserModel;
     members: Member[];
     memberAddressesMap?: { [key: string]: (Address | PartialMemberAddress)[] | undefined };
+    organization?: Organization;
     organizationKey?: CachedOrganizationKey;
     allowAddressDeletion: boolean;
 }
@@ -33,6 +35,7 @@ const AddressesTable = ({
     user,
     members,
     memberAddressesMap,
+    organization,
     organizationKey,
     allowAddressDeletion,
 }: AddressesTableProps) => {
@@ -91,6 +94,7 @@ const AddressesTable = ({
                                             address,
                                             addresses: memberAddresses,
                                             user,
+                                            organization,
                                             organizationKey,
                                         })}
                                         allowAddressDeletion={allowAddressDeletion}
