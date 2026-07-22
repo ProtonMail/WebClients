@@ -12,6 +12,7 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
+import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getCanSubscriptionAccessDuoPlan,
@@ -29,7 +30,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import TrialInfo from '../../referral/components/TrialInfo/TrialInfo';
-import { useSubscriptionModal } from './SubscriptionModalProvider';
+import { useSubscriptionModalRaw } from './SubscriptionModalProvider';
 import { useUpsellsToDisplay } from './helpers';
 import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';
 import PendingInvitationsPanel from './panels/PendingInvitationsPanel';
@@ -49,8 +50,9 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const [calendars] = useCalendars();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
+    const [entitlements, entitlementsLoading] = useEntitlementChecks();
     const [invites = []] = useUserInvitations();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const isReferralExpansionEnabled = useFlag('ReferralExpansionDiscover');
@@ -72,7 +74,13 @@ const YourPlanSectionInner = ({ app }: Props) => {
 
     const hasTrialPaymentMethods = useTrialOnlyPaymentMethods();
 
-    const loading = loadingSubscription || loadingOrganization || loadingPlans || plansMapLoading || upsellsLoading;
+    const loading =
+        loadingSubscription ||
+        loadingOrganization ||
+        entitlementsLoading ||
+        loadingPlans ||
+        plansMapLoading ||
+        upsellsLoading;
 
     if (!subscription || !plans || loading) {
         return <Loader />;
@@ -114,6 +122,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
                     <SubscriptionPanel
                         app={app}
                         subscription={subscription}
+                        entitlements={entitlements}
                         organization={organization}
                         user={user}
                         addresses={addresses}

@@ -66,6 +66,8 @@ export * from './delegatedAccess';
 export * from './mspSubsidiaries';
 export * from './referralInfo';
 export * from './referrals';
+export * from './entitlements';
+export * from './entitlements/listenerV5';
 
 export { safetyReviewTelemetryReducer } from './safetyReview/telemetry/safetyReviewTelemetrySlice';
 
