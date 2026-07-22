@@ -62,7 +62,6 @@ export function useRecents(drive: ProtonDriveClient) {
       for await (const node of drive.iterateNodes([...uidsToLoad])) {
         if ('missingUid' in node) {
           addSentryBreadcrumb({
-            type: 'docs',
             category: 'docs',
             level: 'warning',
             message: 'Missing node while iterating',
@@ -81,27 +80,32 @@ export function useRecents(drive: ProtonDriveClient) {
       const data: any = { error }
       if (error instanceof ProtonDriveError) {
         data.errorCause = error.cause // Explicitly logging it - debugging SDK and Sentry interaction
-      } else {
-        addSentryBreadcrumb({
-          type: 'docs',
-          category: 'docs',
-          level: 'warning',
-          message: 'Node iterator error',
-          data,
-        })
       }
+      addSentryBreadcrumb({
+        category: 'docs',
+        level: 'warning',
+        message: 'Node iterator error',
+        data,
+      })
       // Creating new error to capture current stack
       const sentryError = new Error('fetchRecents failed at iterateNodes')
       sentryError.cause = error
       traceRecentsError(sentryError)
     }
+    // Split in two, otherwise it won't fully log
     addSentryBreadcrumb({
-      type: 'docs',
       category: 'docs',
       level: 'info',
-      message: 'Finished loading nodes',
+      message: 'Finished loading nodes - debug info 1/2',
       data: {
         documents,
+      },
+    })
+    addSentryBreadcrumb({
+      category: 'docs',
+      level: 'info',
+      message: 'Finished loading nodes - debug info 2/2',
+      data: {
         loadedNodes: [...nodesByUid.keys()],
         missingNodes: [...uidsToLoad].filter((nodeUid) => !nodesByUid.has(nodeUid)),
       },
