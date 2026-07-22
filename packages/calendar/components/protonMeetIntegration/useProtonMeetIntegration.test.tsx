@@ -5,7 +5,6 @@ import { createBrowserHistory } from 'history';
 
 import { useApi } from '@proton/components';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
-import { getPassphraseFromEncryptedPassword } from '@proton/meet/utils/cryptoUtils';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
@@ -62,7 +61,6 @@ jest.mock('@proton/meet/hooks/useCreateMeeting', () => ({
 jest.mock('@proton/meet/hooks/useMeetingUpdates', () => ({
     useMeetingUpdates: jest.fn().mockReturnValue({
         saveMeetingName: jest.fn(),
-        saveMeetingPassword: jest.fn(),
         saveMeetingSchedule: jest.fn(),
     }),
 }));
@@ -74,7 +72,6 @@ jest.mock('@proton/meet/hooks/useGetMeetingByLinkName', () => ({
 }));
 
 jest.mock('@proton/meet/utils/cryptoUtils', () => ({
-    getPassphraseFromEncryptedPassword: jest.fn(),
     decryptSessionKey: jest.fn().mockResolvedValue('session-key'),
     encryptMeetingName: jest.fn().mockResolvedValue('encrypted-title'),
 }));
@@ -145,11 +142,6 @@ describe('useProtonMeetIntegration', () => {
 
         jest.mocked(useCreateMeeting).mockReturnValue({
             createMeeting,
-        });
-
-        jest.mocked(getPassphraseFromEncryptedPassword).mockResolvedValue({
-            passphrase: '',
-            password,
         });
 
         const setActiveProvider = jest.fn();

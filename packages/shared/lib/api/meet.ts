@@ -1,4 +1,4 @@
-import type { MeetingPayload, ParticipantPermissions, UpdateMeetingPasswordData } from '../interfaces/Meet';
+import type { MeetingPayload, ParticipantPermissions } from '../interfaces/Meet';
 
 export const queryParticipants = (meetingLinkName: string) => {
     return {
@@ -85,14 +85,6 @@ export const getMeetingByLinkNameCall = (meetingId: string) => {
     return {
         method: 'get',
         url: `meet/v1/meetings/by-link/${meetingId}`,
-    };
-};
-
-export const updateMeetingPasswordCall = (meetingId: string, data: UpdateMeetingPasswordData) => {
-    return {
-        method: 'put',
-        url: `meet/v1/meetings/${meetingId}/password`,
-        data,
     };
 };
 

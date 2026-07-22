@@ -41,7 +41,6 @@ export const useRotatePersonalMeetingLink = () => {
             salt,
             passwordBase,
         } = await prepareMeetingCryptoData({
-            customPassword: '',
             primaryUserKey: privateKey,
             meetingName,
             api,

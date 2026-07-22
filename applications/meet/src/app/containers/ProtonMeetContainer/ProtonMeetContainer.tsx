@@ -24,14 +24,13 @@ import {
     selectHasAnotherAdmin,
     selectIsLocalParticipantAdminOrHost,
 } from '@proton/meet/store/slices/participants/participantsSlice';
-import { setMeetingLocked, toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
+import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
 import { PopUpControls, setPopupStateValue } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectSubscriptionStatus, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -40,7 +39,6 @@ import { ConnectionFailedModal } from '../../components/ConnectionFailedModal/Co
 import { ConnectionLostModal } from '../../components/ConnectionLostModal/ConnectionLostModal';
 import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingLockedModal';
 import { MeetingOpenedInDesktopApp } from '../../components/MeetingOpenedInDesktopApp/MeetingOpenedInDesktopApp';
-import { PasswordPrompt } from '../../components/PasswordPrompt/PasswordPrompt';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -53,7 +51,6 @@ import { useMeetingConnection } from '../../hooks/protonMeetContainer/useMeeting
 import { useMeetingErrorContext } from '../../hooks/protonMeetContainer/useMeetingErrorContext';
 import { useMlsSession } from '../../hooks/protonMeetContainer/useMlsSession';
 import { useRoomEventHandlers } from '../../hooks/protonMeetContainer/useRoomEventHandlers';
-import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
 import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
@@ -74,7 +71,6 @@ import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
 
 enum MeetingDecryptionReadinessStatus {
     UNINITIALIZED = 'uninitialized',
-    INITIALIZED = 'initialized',
     READY_TO_DECRYPT = 'readyToDecrypt',
 }
 
@@ -121,8 +117,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         MeetingDecryptionReadinessStatus.UNINITIALIZED
     );
 
-    const [password, setPassword] = useState('');
-    const [invalidPassphrase, setInvalidPassphrase] = useState(false);
     const [isMeetingLockedModalOpen, setIsMeetingLockedModalOpen] = useState(false);
     const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
     const [openedInDesktopApp, setOpenedInDesktopApp] = useState(false);
@@ -295,50 +289,9 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
             withMeetingLinkNameTag,
         });
 
-    const submitPassword = async () => {
-        try {
-            setInvalidPassphrase(false);
-
-            const handshakeInfo = await initHandshake(token);
-
-            const { roomName, locked, maxDuration, maxParticipants } = await getMeetingDetails({
-                customPassword: password,
-                urlPassword,
-                token,
-                handshakeInfo: handshakeInfo as SRPHandshakeInfo,
-            });
-
-            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
-
-            setMeetingDetails((prev) => ({
-                ...prev,
-                meetingName: roomName,
-                locked,
-                maxDuration,
-                maxParticipants,
-            }));
-
-            dispatch(setMeetingLocked(locked));
-
-            return true;
-        } catch (error) {
-            setInvalidPassphrase(true);
-            return false;
-        }
-    };
-
     const handleHandshakeInfoFetch = async (token: string) => {
         try {
             const handshakeInfo = await initHandshake(token);
-
-            if (handshakeInfo?.CustomPassword === CustomPasswordState.PASSWORD_SET) {
-                setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.INITIALIZED);
-
-                return {
-                    handshakeInfo,
-                    readyToDecrypt: false,
-                };
-            }
 
             setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
 
@@ -357,7 +310,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const { joinMeeting, joinInstantMeeting } = useJoinFlow({
         token,
         urlPassword,
-        password,
         isInstantJoin,
         setDisplayName,
         connectWithMls,
@@ -596,14 +548,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     return (
         <div className="h-full w-full">
-            {decryptionReadinessStatus === MeetingDecryptionReadinessStatus.INITIALIZED && (
-                <PasswordPrompt
-                    password={password}
-                    setPassword={setPassword}
-                    onPasswordSubmit={submitPassword}
-                    invalidPassphrase={invalidPassphrase}
-                />
-            )}
             {isMeetingLockedModalOpen && <MeetingLockedModal onClose={() => setIsMeetingLockedModalOpen(false)} />}
             {(joinedRoom || isReconnecting || reconnectionFailed) && room && displayName ? (
                 <MeetingRecorderProvider>
@@ -614,7 +558,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                         handleMeetingExpired={handleMeetingExpired}
                         shareLink={shareLink}
                         roomName={meetingDetails.meetingName as string}
-                        passphrase={password}
                         handleMeetingLockToggle={handleMeetingLockToggle}
                         isDisconnected={isReconnecting || reconnectionFailed}
                         startPiP={startPiP}

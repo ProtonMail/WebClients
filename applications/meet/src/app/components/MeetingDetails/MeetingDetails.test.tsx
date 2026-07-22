@@ -33,7 +33,7 @@ vi.mock('@proton/meet/store/hooks/useMeetings', () => ({
     ],
 }));
 
-const createMockStore = ({ sideBarOpen = false, passphrase = '' }) => {
+const createMockStore = ({ sideBarOpen = false }) => {
     return configureStore({
         // @ts-expect-error - mock data
         reducer: {
@@ -66,7 +66,6 @@ const createMockStore = ({ sideBarOpen = false, passphrase = '' }) => {
                 ...initialMeetingInfoState,
                 meetingLink: mockLink,
                 roomName: mockMeetingName,
-                passphrase,
             },
             sortedParticipants: {
                 ...initialSortedParticipantsState,
@@ -120,7 +119,7 @@ describe('MeetingDetails', () => {
     });
 
     it('should display the meeting details', () => {
-        const store = createMockStore({ sideBarOpen: true, passphrase: '123' });
+        const store = createMockStore({ sideBarOpen: true });
 
         render(<WrappedMeetingDetails />, {
             wrapper: ({ children }) => (
@@ -143,6 +142,5 @@ describe('MeetingDetails', () => {
         expect(screen.getByText('Friday, August 29, 2025')).toBeInTheDocument();
         expect(screen.getByText(mockLink)).toBeInTheDocument();
         expect(screen.getByText('20:40 - 21:40 (CET)')).toBeInTheDocument();
-        expect(screen.getByText('123')).toBeInTheDocument();
     });
 });
