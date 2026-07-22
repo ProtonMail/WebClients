@@ -25,7 +25,7 @@ export const CategoryRowItem = ({ category, onUpdate }: CategoryRowItemProps) =>
     const { viewportWidth } = useActiveBreakpoint();
 
     return (
-        <MobileSectionRow key={category.id}>
+        <MobileSectionRow>
             <div
                 className={clsx(
                     'w-full flex',
