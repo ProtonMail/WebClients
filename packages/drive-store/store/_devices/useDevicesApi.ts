@@ -1,12 +1,13 @@
 import { queryDevices } from '@proton/shared/lib/api/drive/devices';
 import type { DevicesResult } from '@proton/shared/lib/interfaces/drive/device';
 
-import { deviceInfoToDevices, useDebouncedRequest } from '../_api';
+import { deviceInfoToDevices } from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
 import type { DevicesState } from './interface';
 
 export default function useDevicesApi() {
     const debouncedRequest = useDebouncedRequest();
-    /* eslint-disable-next-line */
+
     const loadDevices = async (abortSignal?: AbortSignal): Promise<DevicesState> => {
         const res = await debouncedRequest<DevicesResult>({
             ...queryDevices(),

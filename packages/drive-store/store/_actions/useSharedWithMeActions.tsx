@@ -4,7 +4,9 @@ import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components';
 
 import useLinksState from '../_links/useLinksState';
-import { getSharedWithMeMembership, useShare, useShareMember } from '../_shares';
+import useShare from '../_shares/useShare';
+import { useShareMember } from '../_shares/useShareMember';
+import { getSharedWithMeMembership } from '../_shares/utils/getSharedWithMeMembership';
 import { useErrorHandler } from '../_utils';
 
 export const useSharedWithMeActions = () => {

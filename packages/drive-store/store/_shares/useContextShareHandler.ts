@@ -2,9 +2,9 @@ import { queryUserLinkAccess } from '@proton/shared/lib/api/drive/link';
 
 import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
-import { useInvitationsActions } from '../_actions';
-import { useDebouncedRequest } from '../_api';
-import { useLink } from '../_links';
+import { useInvitationsActions } from '../_actions/useInvitationsActions';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import useLink from '../_links/useLink';
 
 export const useContextShareHandler = () => {
     const { navigateToRoot, navigateToLink, navigateToNoAccess } = useDriveNavigation();

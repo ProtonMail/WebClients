@@ -8,10 +8,10 @@ import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/consta
 import type { SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import type { DecryptedLink } from '../_links';
-import { useLink } from '../_links';
-import type { ShareURLLEGACY } from '../_shares';
-import { getSharedLink, splitGeneratedAndCustomPassword } from '../_shares';
+import type { DecryptedLink } from '../_links/interface';
+import useLink from '../_links/useLink';
+import type { ShareURLLEGACY } from '../_shares/interface';
+import { getSharedLink, splitGeneratedAndCustomPassword } from '../_shares/shareUrl';
 import useLegacyShareUrl from '../_shares/useLegacyShareUrl';
 
 const getLoadingMessage = (isLinkLoading: boolean, haveShareUrl: boolean, isFile: boolean) => {

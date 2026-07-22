@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
-import type { DriveEvents } from '../_events';
+import type { DriveEvents } from '../_events/interface';
 import type { DecryptedLink, EncryptedLink, LinkShareUrl } from './interface';
 import type { Link, LinksState } from './useLinksState';
 import {

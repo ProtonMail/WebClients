@@ -3,8 +3,8 @@ import { devtools } from 'zustand/middleware';
 
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
-import type { Share, ShareWithKey } from '../../store/_shares';
-import { ShareState, ShareType } from '../../store/_shares';
+import type { Share, ShareWithKey } from '../../store/_shares/interface';
+import { ShareState, ShareType } from '../../store/_shares/interface';
 import type { SharesState } from './types';
 
 export const useSharesStore = create<SharesState>()(

@@ -2,7 +2,7 @@ import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import type { KEY_FLAG } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { useDebouncedRequest } from '../_api';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
 
 type Key = {
     Flags: KEY_FLAG;

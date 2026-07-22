@@ -7,7 +7,8 @@ import type { LinkChildrenResult, LinkMetaBatchPayload } from '@proton/shared/li
 import chunk from '@proton/utils/chunk';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { linkMetaToEncryptedLink, useDebouncedRequest } from '../../_api';
+import { linkMetaToEncryptedLink } from '../../_api/transformers';
+import useDebouncedRequest from '../../_api/useDebouncedRequest';
 import { waitFor } from '../../_utils';
 import type { DecryptedLink, EncryptedLink } from './../interface';
 import useLinksState, { isLinkDecrypted } from './../useLinksState';

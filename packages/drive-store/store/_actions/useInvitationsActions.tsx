@@ -11,7 +11,8 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useInvitations } from '../_invitations';
 import { useInvitationsState } from '../_invitations/useInvitationsState';
-import { useLink, useLinksListing } from '../_links';
+import useLink from '../_links/useLink';
+import useLinksListing from '../_links/useLinksListing/useLinksListing';
 import { useVolumesState } from '../_volumes';
 
 export const useInvitationsActions = () => {

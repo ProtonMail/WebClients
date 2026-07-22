@@ -5,10 +5,10 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { useDriveEventManager } from '../_events';
+import { useDriveEventManager } from '../_events/useDriveEventManager';
 import type { ExtendedInvitationDetails } from '../_invitations/interface';
 import { useInvitationsListing } from '../_invitations/useInvitationsListing';
-import type { AlbumProperties, EncryptedLink, PhotoProperties, SignatureIssues } from '../_links';
+import type { AlbumProperties, EncryptedLink, PhotoProperties, SignatureIssues } from '../_links/interface';
 import { useMemoArrayNoMatterTheOrder } from './utils';
 
 interface FileBrowserBaseItem {

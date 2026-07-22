@@ -6,7 +6,7 @@ import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import chunk from '@proton/utils/chunk';
 
-import { useDebouncedRequest } from '../_api';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
 
 /**
  * Custom hook that will return helper function for processing operations on multiple links in batches.
