@@ -2,7 +2,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
 import { getUrlPassword } from '../../utils/url/password';
 import { useBookmarks } from '../_bookmarks/useBookmarks';
-import { getSharedLink } from '../_shares';
+import { getSharedLink } from '../_shares/shareUrl';
 
 export const useBookmarksView = () => {
     const { addBookmark } = useBookmarks();

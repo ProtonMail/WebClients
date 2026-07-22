@@ -1,19 +1,19 @@
 import { useCallback } from 'react';
 
+import type { PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useAuthentication, useNotifications } from '@proton/components';
-import type { PrivateKeyReference } from '@protontech/crypto';
-import { CryptoProxy } from '@protontech/crypto';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 import { type VerificationKeysCallback, decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
-import type { ShareWithKey } from '../_shares';
-import { useGetPublicKeysForEmail } from '../_user';
+import type { ShareWithKey } from '../_shares/interface';
+import { useGetPublicKeysForEmail } from '../_user/useGetPublicKeysForEmail';
 import {
     getOwnAddressAndPrimaryKeysAsync,
     getOwnAddressKeysAsync,
