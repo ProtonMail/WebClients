@@ -1187,6 +1187,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é compartilhado entre todos os serviços da ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ LUMO_SHORT_APP_NAME }, aliases ide-my-email ilimitados e muito mais.",
+        "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ LUMO_SHORT_APP_NAME }, aliases ide-my-email ilimitados e muito mais."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ LUMO_SHORT_APP_NAME }, aliases ide-my-email ilimitados e muito mais."
       ]
     },
     "BF2025: Deal details": {
@@ -5882,6 +5889,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "info": {
@@ -6703,6 +6713,9 @@
       ],
       "Add-on with free trial": [
         "Extensão com avaliação gratuita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Addon": {
@@ -7602,6 +7615,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -11062,6 +11078,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Seu período de teste terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Leve a produtividade dos e-mails a um novo nível. Deixe ${ BRAND_NAME } Scribe ajudá-lo a escrever, responder e revisar seus e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Leve a produtividade dos e-mails a um novo nível. Deixe ${ LUMO_SHORT_APP_NAME } ajudá-lo a escrever, responder e revisar seus e-mails."
       ]
     }
   }

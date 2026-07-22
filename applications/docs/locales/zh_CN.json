@@ -1169,6 +1169,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "存储空间在所有 ${ BRAND_NAME } 服务之间共享"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
       ]
     },
     "BF2025: Deal details": {
@@ -5806,6 +5812,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ]
     },
     "info": {
@@ -6402,6 +6411,12 @@
       ],
       "Your password (trusted contact)": [
         "您的密码（可信联系人）"
+      ],
+      "Client": [
+        "客户端"
+      ],
+      "Client version": [
+        "客户端版本"
       ]
     },
     "Label for contact group color": {
@@ -6614,6 +6629,9 @@
       ],
       "Add-on with free trial": [
         "免费试用附加组件"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ]
     },
     "meet_2025: Addon": {
@@ -7433,6 +7451,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ]
     },
     "new_plans: feature highlight": {
@@ -10800,6 +10821,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "将电子邮件工作效率提升到新水平。让 ${ BRAND_NAME } Scribe 帮您撰写、回复和校对电子邮件。"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "将邮件生产力提升至新高度，让 ${ LUMO_SHORT_APP_NAME } 帮助您撰写、回复和校对邮件。"
       ]
     }
   }

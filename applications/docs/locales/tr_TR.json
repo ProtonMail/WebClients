@@ -1184,6 +1184,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. 15 e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
       ]
     },
     "BF2025: Deal details": {
@@ -5879,6 +5886,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ]
     },
     "info": {
@@ -6700,6 +6710,9 @@
       ],
       "Add-on with free trial": [
         "Ücretsiz deneme sürümü ile eklenti"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ]
     },
     "meet_2025: Addon": {
@@ -7548,6 +7561,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ]
     },
     "new_plans: feature highlight": {
@@ -11008,6 +11024,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ BRAND_NAME } Scribe tarafından yardım alın."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "E-posta üretkenliğinizi yeni seviyelere taşıyın. ${ LUMO_SHORT_APP_NAME } ile e-postalarınızı yazın, yanıtlayın ve düzeltin."
       ]
     }
   }
