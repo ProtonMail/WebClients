@@ -61,12 +61,12 @@ jest.mock('./useDevicesApi', () => {
 });
 
 const mockedGetLink = jest.fn();
-jest.mock('../_links', () => {
-    const useLink = jest.fn(() => ({
+jest.mock('../_links/useLink', () => ({
+    __esModule: true,
+    default: jest.fn(() => ({
         getLink: mockedGetLink,
-    }));
-    return { useLink };
-});
+    })),
+}));
 
 describe('useLinksState', () => {
     let hook: {

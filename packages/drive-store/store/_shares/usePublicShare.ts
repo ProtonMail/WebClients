@@ -2,10 +2,11 @@ import { useApi } from '@proton/components';
 import { querySharedURLInformation, querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
 import type { SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import { usePublicShareStore } from '../../zustand/public/public-share.store';
-import { sharedUrlInfoPayloadToSharedUrlInfo, usePublicSession } from '../_api';
 import usePublicToken from '../../hooks/drive/usePublicToken';
-import { useLink } from '../_links';
+import { usePublicShareStore } from '../../zustand/public/public-share.store';
+import { sharedUrlInfoPayloadToSharedUrlInfo } from '../_api/transformers';
+import usePublicSession from '../_api/usePublicSession';
+import useLink from '../_links/useLink';
 import { useDecryptPublicShareLink } from './useDecryptPublicShareLink';
 
 /**

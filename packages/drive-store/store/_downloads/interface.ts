@@ -1,8 +1,9 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+
 import type { DriveFileBlock, ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 import type { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import type { DecryptedLink, SignatureIssues } from '../_links';
+import type { DecryptedLink, SignatureIssues } from '../_links/interface';
 
 export type LogCallback = (message: string) => void;
 

@@ -3,7 +3,8 @@ import { createContext, useCallback, useContext, useRef } from 'react';
 import { querySharedURLChildren } from '@proton/shared/lib/api/drive/sharing';
 import type { LinkChildrenResult } from '@proton/shared/lib/interfaces/drive/link';
 
-import { linkMetaToEncryptedLink, usePublicSession } from '../../_api';
+import { linkMetaToEncryptedLink } from '../../_api/transformers';
+import usePublicSession from '../../_api/usePublicSession';
 import type { DecryptedLink } from '../interface';
 import useLinksState from '../useLinksState';
 import type { FetchMeta, FetchResponse, SortParams } from './useLinksListingHelpers';

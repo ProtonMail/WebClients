@@ -1,7 +1,7 @@
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { useSharesStore } from '../../../zustand/share/shares.store';
-import { integrityMetrics } from '../../_crypto';
-import { getShareTypeString } from '../../_shares';
+import integrityMetrics from '../../_crypto/integrityMetrics';
+import { getShareTypeString } from '../../_shares/shareType';
 import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
 import type { LinkDownload } from '../interface';
 

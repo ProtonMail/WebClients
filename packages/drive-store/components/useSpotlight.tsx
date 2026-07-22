@@ -5,8 +5,8 @@ import { useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 import { FeatureCode } from '@proton/features';
 
 import type { DriveFolder } from '../hooks/drive/useActiveShare';
-import { useLinksListing } from '../store/_links';
-import { useDefaultShare } from '../store/_shares';
+import useLinksListing from '../store/_links/useLinksListing/useLinksListing';
+import useDefaultShare from '../store/_shares/useDefaultShare';
 import { sendErrorReport } from '../utils/errorHandling';
 
 const SEARCH_DISCOVERY_FILES_THRESHOLD = 5;

@@ -1,11 +1,13 @@
 import { CryptoProxy } from '@protontech/crypto';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { computeKeyPassword } from '@protontech/crypto/srp';
+
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useSharesStore } from '../../zustand/share/shares.store';
-import { type DecryptedLink, useLink } from './../_links';
-import useLinksState from './../_links/useLinksState';
+import type { DecryptedLink } from '../_links/interface';
+import useLink from '../_links/useLink';
+import useLinksState from '../_links/useLinksState';
 import { ShareState, ShareType, type SharedUrlInfo } from './interface';
 import useSharesKeys from './useSharesKeys';
 

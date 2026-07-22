@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLoading } from '@proton/hooks';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
-import { useLinksListing } from '../_links';
+import useLinksListing from '../_links/useLinksListing/useLinksListing';
 import { useUserSettings } from '../_settings';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 import { generateErrorHandler } from '../_utils';

@@ -4,9 +4,11 @@ import { type useConfirmActionModal, useNotifications } from '@proton/components
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
 
 import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
-import { usePublicLinkActions, usePublicLinksActions, usePublicLinksListing } from '../_links';
+import usePublicLinksListing from '../_links/useLinksListing/usePublicLinksListing';
 import useLinksState from '../_links/useLinksState';
-import { usePublicSessionUser } from '../_user';
+import { usePublicLinkActions } from '../_links/usePublicLinkActions';
+import { usePublicLinksActions } from '../_links/usePublicLinksActions';
+import { usePublicSessionUser } from '../_user/usePublicSessionUser';
 import { useErrorHandler } from '../_utils';
 import useListNotifications from './useListNotifications';
 

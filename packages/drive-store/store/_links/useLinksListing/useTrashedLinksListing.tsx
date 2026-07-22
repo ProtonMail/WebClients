@@ -3,7 +3,7 @@ import { useCallback, useRef } from 'react';
 import { queryVolumeTrash } from '@proton/shared/lib/api/drive/volume';
 import type { ListDriveVolumeTrashPayload } from '@proton/shared/lib/interfaces/drive/volume';
 
-import { useDebouncedRequest } from '../../_api';
+import useDebouncedRequest from '../../_api/useDebouncedRequest';
 import useVolumesState from '../../_volumes/useVolumesState';
 import type { DecryptedLink } from './../interface';
 import useLinksState from './../useLinksState';

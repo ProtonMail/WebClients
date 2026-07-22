@@ -3,9 +3,9 @@ import { useCallback, useRef, useState } from 'react';
 import { CryptoProxy } from '@protontech/crypto';
 
 import { useBookmarks } from '../../_bookmarks/useBookmarks';
-import type { DecryptedLink } from '../../_links';
-import { useShare } from '../../_shares';
+import type { DecryptedLink } from '../../_links/interface';
 import { useDecryptPublicShareLink } from '../../_shares/useDecryptPublicShareLink';
+import useShare from '../../_shares/useShare';
 import useLinksState, { isLinkDecrypted } from '../useLinksState';
 import { useLinksListingHelpers } from './useLinksListingHelpers';
 

@@ -1,7 +1,7 @@
-import { c } from 'ttag';
-
 import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+import { c } from 'ttag';
+
 import {
     queryDeleteFileRevision,
     queryPublicCreateFile,
@@ -27,10 +27,14 @@ import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import retryOnError from '../../../utils/retryOnError';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
 import { useAnonymousUploadAuthStore } from '../../../zustand/upload/anonymous-auth.store';
-import { usePublicSession } from '../../_api';
-import { integrityMetrics } from '../../_crypto';
-import { useLink, usePublicLinksActions, usePublicLinksListing, validateLinkName } from '../../_links';
-import { useDefaultShare, useShare } from '../../_shares';
+import usePublicSession from '../../_api/usePublicSession';
+import integrityMetrics from '../../_crypto/integrityMetrics';
+import useLink from '../../_links/useLink';
+import usePublicLinksListing from '../../_links/useLinksListing/usePublicLinksListing';
+import { usePublicLinksActions } from '../../_links/usePublicLinksActions';
+import { validateLinkName } from '../../_links/validation';
+import useDefaultShare from '../../_shares/useDefaultShare';
+import useShare from '../../_shares/useShare';
 import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
 import { MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';

@@ -9,7 +9,7 @@ import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { HandshakeInfoVendorType } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { useOpenDocument } from '../_documents';
+import { useOpenDocument } from '../_documents/useOpenDocument';
 import { ERROR_CODE_INVALID_SRP_PARAMS, default as usePublicSession } from './usePublicSession';
 
 /**
