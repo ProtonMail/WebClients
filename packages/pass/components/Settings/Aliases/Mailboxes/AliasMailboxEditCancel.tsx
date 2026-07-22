@@ -6,7 +6,7 @@ import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/Confirm
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { cancelMailboxEdit } from '@proton/pass/store/actions';
 
-import { useAliasMailboxes } from './AliasMailboxesProvider';
+import { useAliasMailboxes } from './AliasMailboxesContext';
 
 type Props = { mailboxID: number };
 
