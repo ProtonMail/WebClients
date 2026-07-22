@@ -30,17 +30,7 @@ export const useSaveMeeting = () => {
     const { reportMeetError } = useMeetErrorReporting();
 
     const saveMeeting = async ({
-        params: {
-            customPassword,
-            protonCalendar,
-            meetingName,
-            startTime,
-            endTime,
-            recurrence,
-            timeZone,
-            type,
-            waitingRoom,
-        },
+        params: { protonCalendar, meetingName, startTime, endTime, recurrence, timeZone, type, waitingRoom },
         privateKey,
         addressId,
         noPasswordSave = false,
@@ -55,7 +45,6 @@ export const useSaveMeeting = () => {
             salt,
             passwordBase,
         } = await prepareMeetingCryptoData({
-            customPassword: customPassword || '',
             primaryUserKey: privateKey,
             meetingName,
             api,
@@ -77,9 +66,7 @@ export const useSaveMeeting = () => {
                     EndTime: endTime ?? null,
                     RRule: recurrence ?? null,
                     Timezone: timeZone ?? null,
-                    CustomPassword: !!customPassword
-                        ? CustomPasswordState.PASSWORD_SET
-                        : CustomPasswordState.NO_PASSWORD,
+                    CustomPassword: CustomPasswordState.NO_PASSWORD,
                     Type: type ?? MeetingType.INSTANT,
                     ProtonCalendar: !!protonCalendar
                         ? ProtonCalendarState.FROM_PROTON_CALENDAR

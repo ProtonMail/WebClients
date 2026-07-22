@@ -5,7 +5,6 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
-import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { ProtonMeetMeetingDetails } from './ProtonMeetMeetingDetails';
@@ -26,41 +25,18 @@ const getIcon = (state?: IntegrationState) => {
 interface ProtonMeetRowProps {
     model: EventModel;
     processState?: IntegrationState;
-    handlePassphraseSave: (passphrase: string) => Promise<void>;
     createVideoConferenceMeeting: () => Promise<void>;
     deleteProtonMeet: () => void;
-    meetingObject: Meeting | null;
-    meetingDetails: {
-        id: string;
-        passwordBase: string;
-        passphrase: string;
-        failed: boolean;
-        hidePassphrase: boolean;
-    };
-    setup: () => Promise<void>;
 }
 
 export const ProtonMeetRow = ({
     model,
     processState,
-    handlePassphraseSave,
     createVideoConferenceMeeting,
-    meetingDetails,
     deleteProtonMeet,
-    setup,
 }: ProtonMeetRowProps) => {
     if (processState === 'meeting-present') {
-        return (
-            <ProtonMeetMeetingDetails
-                passphrase={meetingDetails.passphrase}
-                model={model}
-                savePassphrase={handlePassphraseSave}
-                deleteMeeting={deleteProtonMeet}
-                refetchMeeting={setup}
-                fetchingDetailsFailed={meetingDetails.failed}
-                hidePassphrase={meetingDetails.hidePassphrase || !meetingDetails.id}
-            />
-        );
+        return <ProtonMeetMeetingDetails model={model} deleteMeeting={deleteProtonMeet} />;
     }
 
     return (
