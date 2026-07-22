@@ -49,7 +49,13 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
     const free = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
-        if (provider) dropzone.setSupportedFileTypes(PROVIDER_INFO_MAP[provider].fileExtension.split(', '));
+        if (provider) {
+            const extensions = PROVIDER_INFO_MAP[provider].fileExtension.split(', ');
+            /** KeePassXC's export dialog does not always append the `.xml`
+             * extension, so accept extension-less files for this provider */
+            if (provider === ImportProvider.KEEPASS) extensions.push('');
+            dropzone.setSupportedFileTypes(extensions);
+        }
         void form.setValues({ provider, file: null });
     };
 
@@ -160,7 +166,11 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                                     // - iOS because the "accept" attribute does not support the file extension
                                     // - 1Password because it may export a folder ending with .1pif, itself containing the 1pif file we want
                                     // so we disable the accept attribute to allow selecting the file and not just the folder (tested on macOS)
-                                    {...(isIos() || form.values.provider === ImportProvider.ONEPASSWORD
+                                    // - KeePass because KeePassXC's export dialog does not always append the `.xml`
+                                    // extension, and `accept` cannot express "files with no extension"
+                                    {...(isIos() ||
+                                    form.values.provider === ImportProvider.ONEPASSWORD ||
+                                    form.values.provider === ImportProvider.KEEPASS
                                         ? {}
                                         : {
                                               accept: PROVIDER_INFO_MAP[form.values.provider].fileExtension
