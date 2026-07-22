@@ -2,10 +2,8 @@ import { memo, useMemo } from 'react';
 import { shallowEqual } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { startOfDay, subDays } from 'date-fns';
 import { c } from 'ttag';
 
-import { FREE_USER_CHAT_RETENTION_DAYS } from '../../../constants/limits';
 import { useLumoUserSettings } from '../../../hooks';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useConversation } from '../../../providers/ConversationProvider';
@@ -87,11 +85,7 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
                   return space?.isProject !== true;
               });
 
-        let retainedRows = projectFilteredRows;
-        if (!hasLumoPlus) {
-            const cutoff = subDays(startOfDay(new Date()), FREE_USER_CHAT_RETENTION_DAYS);
-            retainedRows = projectFilteredRows.filter((row) => startOfDay(new Date(row.createdAt)) >= cutoff);
-        }
+        const retainedRows = applyRetentionPolicy(projectFilteredRows, hasLumoPlus);
 
         const historySlots = Math.max(0, SIDEBAR_CHAT_TOTAL_LIMIT - retainedFavorites.length);
 

@@ -26,7 +26,7 @@ import { ConversationExpirationIndicator } from '../../layouts/sidepanel/Convers
 import { ConversationSidebarActions } from '../../layouts/sidepanel/ConversationSidebarActions';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../redux/hooks';
+import { useLumoDispatch, useLumoMemoSelector, useLumoSelector, useLumoStore } from '../../redux/hooks';
 import {
     selectAnyGeneratedImages,
     selectConversations,
@@ -52,12 +52,15 @@ import { formatChatRelativeDate } from './formatChatRelativeDate';
 import { AllChatsMobileBulkActions } from './mobile/AllChatsMobileBulkActions';
 import { AllChatsMobileHeaderBar } from './mobile/AllChatsMobileHeaderBar';
 import type { AllChatsRowData } from './selectAllChatsRowData';
-import { selectAllChatsRowDataMap } from './selectAllChatsRowData';
+import { selectAllChatsRowDataMap, selectConversationPreview } from './selectAllChatsRowData';
 import { AllChatsBulkActionButtons } from './shared/AllChatsBulkActionButtons';
 
 import './AllChatsView.scss';
 
 const ROW_HEIGHT = 68;
+
+// Stable reference so falling back to it doesn't defeat memo() on ConversationRow.
+const EMPTY_ROW_DATA: AllChatsRowData = { isProject: false };
 
 type FilterValue = AllChatsFilterValue;
 
@@ -177,9 +180,11 @@ const ConversationRow = memo(
                 location: 'sidebar',
             });
 
+        const preview = useLumoMemoSelector(selectConversationPreview, [conversation.id]);
+
         const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
         const timestamp = formatChatRelativeDate(conversation[sortField]);
-        const { isProject, preview, projectIcon, projectName } = rowData;
+        const { isProject, projectIcon, projectName } = rowData;
         const projectLabel = projectName?.trim() || c('collider_2025:Label').t`Untitled project`;
 
         const startRenaming = useCallback(() => {
@@ -500,6 +505,8 @@ const AllChatsHeader = ({
 
 export const AllChatsView = () => {
     const dispatch = useLumoDispatch();
+    const store = useLumoStore();
+    const getState = useCallback(() => store.getState(), [store]);
     const navigate = useLumoNavigate();
     const { createNotification } = useNotifications();
     const conversationsMap = useLumoSelector(selectConversations, shallowEqual);
@@ -534,8 +541,9 @@ export const AllChatsView = () => {
             rowDataMap,
             sortField,
             hasLumoPlus,
+            getState,
         });
-    }, [conversationsMap, sortField, filter, hasLumoPlus, rowDataMap, searchQuery]);
+    }, [conversationsMap, sortField, filter, hasLumoPlus, rowDataMap, searchQuery, getState]);
 
     const filteredConversationIds = useMemo(() => {
         return filteredConversations.map((conversation) => {
@@ -810,10 +818,7 @@ export const AllChatsView = () => {
                                 <div style={{ height: `${virtualizer.getTotalSize()}px`, position: 'relative' }}>
                                     {virtualItems.map((virtualItem) => {
                                         const conversation = filteredConversations[virtualItem.index];
-                                        const rowData = rowDataMap[conversation.id] ?? {
-                                            preview: '',
-                                            isProject: false,
-                                        };
+                                        const rowData = rowDataMap[conversation.id] ?? EMPTY_ROW_DATA;
 
                                         return (
                                             <div

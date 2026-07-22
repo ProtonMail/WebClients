@@ -3,8 +3,7 @@ import { c } from 'ttag';
 import { isGeneratedImageAttachment } from '../../lib/imageAttachment';
 import { getMessageContent } from '../../messageHelpers';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
-import type { MessageMap } from '../../redux/slices/core/messages';
-import type { ConversationId, Message } from '../../types';
+import type { Message } from '../../types';
 
 const PREVIEW_MAX_LENGTH = 120;
 
@@ -43,23 +42,7 @@ const messageHasImages = (message: Message, attachments: AttachmentMap): boolean
     });
 };
 
-const getMessagesForConversation = (messages: MessageMap, conversationId: ConversationId): Message[] => {
-    return Object.values(messages)
-        .filter((message) => {
-            return message.conversationId === conversationId && !message.placeholder;
-        })
-        .sort((a, b) => {
-            return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-        });
-};
-
-export const getConversationPreview = (
-    conversationId: ConversationId,
-    messages: MessageMap,
-    attachments: AttachmentMap
-): string => {
-    const conversationMessages = getMessagesForConversation(messages, conversationId);
-
+export const getConversationPreview = (conversationMessages: Message[], attachments: AttachmentMap): string => {
     for (const message of conversationMessages) {
         const rawContent = getMessageContent(message);
         const content = stripMarkdownForPreview(rawContent);
