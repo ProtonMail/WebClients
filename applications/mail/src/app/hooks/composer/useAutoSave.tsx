@@ -5,6 +5,8 @@ import { useHandler } from '@proton/components/hooks/useHandler';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
+import { MAIL_LOG_COMPONENT, mailLogger } from 'proton-mail/mailLogger';
+
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';
 import { useDeleteDraft, useSaveDraft } from '../message/useSaveDraft';
 import { usePromise } from '../usePromise';
@@ -40,13 +42,29 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
             lastCall.current = undefined;
             pendingSave.renew();
             await saveDraft(message as MessageStateWithData);
+
+            // Log the transition back to a helthy state
+            if (hasNetworkError) {
+                mailLogger.info(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useAutoSave recovered', {
+                    localID: message.localID,
+                    messageID: message.data?.ID,
+                });
+            }
             setHasNetworkError(false);
         } catch (error: any) {
-            if (isNetworkError(error) || isDecryptionError(error)) {
-                console.error(error);
-                setHasNetworkError(true);
+            const isNetwork = isNetworkError(error);
+            const isDecryption = isDecryptionError(error);
 
-                const errorType = isNetworkError(error) ? 'network' : 'decryption';
+            mailLogger.error(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useAutoSave failed', {
+                localID: message.localID,
+                network: isNetwork,
+                decryption: isDecryption,
+                error,
+            });
+
+            if (isNetwork || isDecryption) {
+                setHasNetworkError(true);
+                const errorType = isNetwork ? 'network' : 'decryption';
                 traceInitiativeError(SentryMailInitiatives.COMPOSER, error, {
                     tags: { feature: 'auto-save', errorType },
                     fingerprint: ['composer', 'auto-save-failed', errorType],
