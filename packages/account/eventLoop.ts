@@ -5,6 +5,7 @@ import type {
     OutgoingDelegatedAccessOutput,
 } from '@proton/account/delegatedAccess/interface';
 import type { Filter } from '@proton/components/containers/filters/interfaces';
+import type { Entitlement } from '@proton/payments/core/entitlements/interface';
 import type { Invoice, SavedPaymentMethod } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -69,6 +70,8 @@ export interface EventLoop {
     OutgoingAddressForwardings?: EventItemUpdate<OutgoingAddressForwarding, 'OutgoingAddressForwarding'>[];
     IncomingDefaults?: EventItemUpdate<IncomingDefault, 'IncomingDefault'>[];
     Subscription?: Subscription & { UpcomingSubscription?: Subscription };
+    OrganizationEntitlements?: Entitlement[];
+    MemberEntitlements?: Entitlement[];
     Config?: ApiEnvironmentConfig;
     SSO?: EventItemUpdate<SSO, 'SSO'>[];
     UsedSpace?: User['UsedSpace'];
