@@ -20,6 +20,12 @@ export enum TaxInclusive {
     INCLUSIVE = 1,
 }
 
+export enum TaxMode {
+    EXCLUSIVE = 0,
+    INCLUSIVE = 1,
+    REVERSE_CHARGE = 2,
+}
+
 export enum SubscriptionMode {
     /**
      * The default mode. Also known as proration mode. If user has an active subscription and selects another plan, then

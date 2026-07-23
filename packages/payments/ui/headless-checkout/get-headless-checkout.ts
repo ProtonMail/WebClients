@@ -11,7 +11,7 @@ import { getAddonType } from '../../core/plan/addons';
 import { getIsB2BAudienceFromPlan, isLifetimePlanSelected } from '../../core/plan/helpers';
 import type { PlansMap } from '../../core/plan/interface';
 import { hasPlanIDs } from '../../core/planIDs';
-import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
+import { SubscriptionMode, TaxMode } from '../../core/subscription/constants';
 import type {
     Subscription,
     SubscriptionCheckForbiddenReason,
@@ -129,8 +129,8 @@ export function createHeadlessCheckoutContextInner(params: GetHeadlessCheckoutPa
     const isTrial = params.isTrial ?? checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     // Tax flags
-    const isTaxExclusive = tax?.inclusive === TaxInclusive.EXCLUSIVE && tax.amount > 0;
-    const isTaxInclusive = tax?.inclusive === TaxInclusive.INCLUSIVE;
+    const isTaxExclusive = tax?.inclusive === TaxMode.EXCLUSIVE && tax.amount > 0;
+    const isTaxInclusive = tax?.inclusive === TaxMode.INCLUSIVE;
 
     // Plan title with baked-in fallbacks
     const planTitle = isFreePlan ? c('Payments.plan_name').t`Free` : checkoutUi.planTitle;
