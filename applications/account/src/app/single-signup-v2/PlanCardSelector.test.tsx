@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 
-import type { PlanCard } from './PlanCardSelector';
 import { PlanCardSelector } from './PlanCardSelector';
+import type { PlanCard } from './interface';
 
 const onSelect = jest.fn();
 

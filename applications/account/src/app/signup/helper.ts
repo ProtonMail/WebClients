@@ -13,7 +13,6 @@ import { getCroHeaders, getOwnershipVerificationHeaders } from '@proton/shared/l
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
-import { getTokenPayment } from '../signupCtx/context/helpers/handleCreateUser';
 import { SignupHumanVerification } from './interfaces';
 
 export async function getSubscriptionPrices({
@@ -93,6 +92,10 @@ export const getOptimisticDomains = () => {
         secondLevelDomain = 'proton.me';
     }
     return [secondLevelDomain, 'protonmail.com'];
+};
+
+export const getTokenPayment = (tokenPayment: string | undefined) => {
+    return tokenPayment ? { TokenPayment: tokenPayment } : undefined;
 };
 
 export const getPaymentTokenForExternalUsers = (

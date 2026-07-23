@@ -25,9 +25,38 @@ import type {
     UserCacheResult,
 } from '../signup/interfaces';
 import type { getSignupSearchParams } from '../signup/searchParams';
-import type { PlanCard } from './PlanCardSelector';
 import type { SubscriptionDataCycleMapping } from './helper';
 import type { TelemetryMeasurementData } from './measure';
+
+interface RegularPlanCard {
+    plan: PLANS;
+    addons?: PlanIDs;
+    subsection: ReactNode;
+    type: 'best' | 'standard';
+    guarantee: boolean;
+    subline?: string;
+    interactive?: never;
+}
+
+interface NonInteractivePlanCard {
+    plan?: never;
+    addons?: never;
+    subsection: ReactNode;
+    type: 'best' | 'standard';
+    guarantee: boolean;
+    subline?: string;
+    interactive: false;
+}
+
+export type PlanCard = RegularPlanCard | NonInteractivePlanCard;
+
+export function isRegularPlanCard(planCard: PlanCard): planCard is RegularPlanCard {
+    return 'plan' in planCard;
+}
+
+export function isNonInteractivePlanCard(planCard: PlanCard): planCard is NonInteractivePlanCard {
+    return planCard.interactive === false;
+}
 
 export type BaseMeasure<T> = (data: T) => Promise<void>;
 export type Measure = BaseMeasure<TelemetryMeasurementData>;
