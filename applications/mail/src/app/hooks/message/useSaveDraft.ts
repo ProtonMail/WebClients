@@ -12,6 +12,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { MAIL_LOG_COMPONENT, mailLogger } from 'proton-mail/mailLogger';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
@@ -38,10 +39,21 @@ export const useCreateDraft = () => {
             if (!shouldPreventEventLoopCallOnCompose) {
                 await call();
             }
+
+            mailLogger.info(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useCreateDraft success', {
+                localID: message.localID,
+                messageID: newMessage.ID,
+            });
         } catch (error: any) {
             if (!error.data) {
                 createNotification({ text: c('Error').t`Error while saving draft. Please try again.`, type: 'error' });
             }
+            mailLogger.error(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useCreateDraft failed', {
+                localID: message.localID,
+                hasData: !!error.data,
+                code: error.data?.Code,
+                error,
+            });
             throw error;
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-90DE62
@@ -72,22 +84,39 @@ const useUpdateDraft = () => {
                 await call();
             }
         } catch (error: any) {
+            const logargs = { localID: message.localID, messageID: message.data?.ID };
             if (!error.data) {
+                const isNetwork = isNetworkError(error);
+                const isDecryption = isDecryptionError(error);
+
+                mailLogger.error(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useUpdateDraft fail, no response', {
+                    ...logargs,
+                    network: isNetwork,
+                    decryption: isDecryption,
+                });
+
                 const errorMessage = c('Error').t`Error while saving draft. Please try again.`;
                 createNotification({ text: errorMessage, type: 'error' });
-                if (!isNetworkError(error) && !isDecryptionError(error)) {
+                if (!isNetwork && !isDecryption) {
                     captureMessage(errorMessage, { extra: { message: pickMessageInfosForSentry(message), error } });
                 }
                 throw error;
             }
 
             if (error.data.Code === SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
+                mailLogger.warn(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useUpdateDraft fail, draft already sent', logargs);
                 onMessageAlreadySent?.();
                 throw error;
             }
 
             if (error.data.Code === SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST) {
+                mailLogger.warn(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useUpdateDraft fail, draft does not exist', logargs);
                 dispatch(deleteDraft(message.localID));
+            } else {
+                mailLogger.warn(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useUpdateDraft fail, other error', {
+                    ...logargs,
+                    code: error.data.Code,
+                });
             }
 
             createNotification({
@@ -143,14 +172,17 @@ export const useDeleteDraft = () => {
             }
             const response: any = await api(deleteMessages([messageID], MAILBOX_LABEL_IDS.ALL_DRAFTS));
 
-            // For the "Please refresh your page, the message has moved."
-            // Backend is not replying with an HTTP error but with an error inside the Response
-            // (it's to deal about potentially different statuses in several deletions)
             if (response?.Responses?.[0]?.Response?.Error) {
                 const { Response } = response.Responses[0];
                 createNotification({ text: Response.Error, type: 'error' });
                 const error = new Error(Response.Error);
                 (error as any).code = Response.Code;
+
+                mailLogger.warn(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useDeleteDraft, deletion rejected', {
+                    messageID,
+                    code: Response.Code,
+                    serverError: Response.Error,
+                });
                 throw error;
             }
 
