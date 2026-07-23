@@ -115,7 +115,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
                         <Tree routes={adminSidebar.routes} pathname={pathname} />
                     ) : (
                         <SidebarList>
-                            <SidebarListWrapper prefix={prefix} {...routes.account} />
+                            {routes.account.available && <SidebarListWrapper prefix={prefix} {...routes.account} />}
                             {app === APPS.PROTONMAIL && <SidebarListWrapper prefix={prefix} {...routes.mail} />}
                             {app === APPS.PROTONCALENDAR && (
                                 <CalendarSettingsSidebar prefix={prefix} {...routes.calendar} />
