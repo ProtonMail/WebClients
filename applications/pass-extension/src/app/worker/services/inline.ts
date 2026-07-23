@@ -5,6 +5,7 @@ import { withSender } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
 import type { FrameData, Frames } from 'proton-pass-extension/lib/utils/frames';
 import { getTabFrames as getAllTabFrames, getFramePath } from 'proton-pass-extension/lib/utils/frames';
+import { parseSender } from 'proton-pass-extension/lib/utils/sender';
 import type { FrameAttributes, FrameQueryResponse, FrameQueryResult } from 'proton-pass-extension/types/frames';
 import type { Coords, DropdownStateDTO } from 'proton-pass-extension/types/inline';
 import type { FrameQueryMessage, InlineDropdownStateMessage } from 'proton-pass-extension/types/messages';
@@ -284,25 +285,28 @@ export const createInlineService = () => {
         })
     );
 
-    WorkerMessageBroker.registerMessage(
-        WorkerMessageType.INLINE_NOTIFICATION_OPEN,
-        withSender(async ({ payload }, tabId) => {
-            if (payload.action !== NotificationAction.AUTOSAVE) throw new Error('Unallowed inline request');
+    WorkerMessageBroker.registerMessage(WorkerMessageType.INLINE_NOTIFICATION_OPEN, async ({ payload }, sender) => {
+        if (payload.action !== NotificationAction.AUTOSAVE) throw new Error('Unallowed inline request');
 
-            await browser.tabs
-                .sendMessage(
-                    tabId,
-                    backgroundMessage({
-                        type: WorkerMessageType.INLINE_NOTIFICATION_OPEN,
-                        payload,
-                    }),
-                    { frameId: 0 }
-                )
-                .catch(noop);
+        /** Only sub-frame autosaves go through here. The notification opens in
+         * the top frame, so read the iframe's URL here (while the sender is still the
+         * iframe) and forward it, so the login is saved for the iframe's site. */
+        const { tabId, href } = await parseSender(sender);
+        payload.data.iframeUrl = href;
 
-            return true;
-        })
-    );
+        await browser.tabs
+            .sendMessage(
+                tabId,
+                backgroundMessage({
+                    type: WorkerMessageType.INLINE_NOTIFICATION_OPEN,
+                    payload,
+                }),
+                { frameId: 0 }
+            )
+            .catch(noop);
+
+        return true;
+    });
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.FRAME_FIELD_LOCK,
