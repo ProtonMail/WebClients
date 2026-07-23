@@ -1,4 +1,4 @@
-import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
+import type { PayloadAction, ThunkAction, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -14,7 +14,7 @@ import { getMemberOrganizationRoles, updateMemberOrganizationRoles } from '@prot
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Address, Api, EnhancedMember, Member, RoleAssignment, User } from '@proton/shared/lib/interfaces';
+import type { Address, Api, EnhancedMember, Member, RoleAssignment } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
@@ -22,9 +22,9 @@ import type { AddressesState } from '../addresses';
 import { addressesThunk } from '../addresses';
 import { bootstrapEvent } from '../bootstrap/action';
 import { serverEvent } from '../eventLoop';
-import { initEvent } from '../init';
 import { getGroupSourcedRoleIds, getUserSourcedRoleIds } from '../organizationRoles/helpers';
-import { type UserState, userFulfilled, userThunk } from '../user';
+import { type UserState, userThunk } from '../user';
+import { type UserPermissionsState, userPermissionsThunk } from '../userPermissions';
 import { getMember } from './getMember';
 
 const name = 'members' as const;
@@ -49,10 +49,7 @@ export type UnprivatizationMemberFailure = {
 interface UnprivatizationMemberState {
     members: {
         [id: string]:
-            | UnprivatizationMemberSuccess
-            | UnprivatizationMemberFailure
-            | UnprivatizationMemberApproval
-            | undefined;
+            UnprivatizationMemberSuccess | UnprivatizationMemberFailure | UnprivatizationMemberApproval | undefined;
     };
     loading: {
         approval: boolean;
@@ -60,7 +57,7 @@ interface UnprivatizationMemberState {
     };
 }
 
-export interface MembersState extends UserState, AddressesState {
+export interface MembersState extends UserState, AddressesState, UserPermissionsState {
     [name]: ModelState<EnhancedMember[]> & {
         meta?: { type: ValueType };
         unprivatization: UnprivatizationMemberState;
@@ -72,8 +69,15 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectMembers = (state: MembersState) => state.members;
 
-const canFetch = (user: User) => {
-    return isAdmin(user);
+export const canFetchMembers = async (
+    dispatch: ThunkDispatch<MembersState, ProtonThunkArguments, UnknownAction>
+): Promise<boolean> => {
+    const user = await dispatch(userThunk());
+    if (isAdmin(user)) {
+        return true;
+    }
+    const { permissions } = await dispatch(userPermissionsThunk());
+    return permissions['account.user.read'];
 };
 
 const getMemberFromState = (state: ModelState<EnhancedMember[]>, target: Member) => {
@@ -231,40 +235,40 @@ const slice = createSlice({
         setUnprivatizationState: (state, action: PayloadAction<UnprivatizationMemberState>) => {
             state.unprivatization = action.payload;
         },
-    },
-    extraReducers: (builder) => {
-        builder.addCase(bootstrapEvent, (state) => {
-            state.unprivatization = initialState.unprivatization;
-        });
-
-        const handleUserUpdate = (state: MembersState['members'], user: User | undefined) => {
+        // Reconcile the cached member list with the user's current fetch permission. Dispatched by
+        // membersListener with the resolved (permission-aware) canFetchMembers() result, which a
+        // reducer can't await itself.
+        handlePermissionChange: (state, action: PayloadAction<{ canFetch: boolean }>) => {
             if (!state.value) {
                 return;
             }
 
             const isFreeMembers = original(state)?.meta?.type === ValueType.dummy;
+            const { canFetch } = action.payload;
 
-            // Do not get any members update when user becomes unsubscribed.
-            if (!isFreeMembers && user && !canFetch(user)) {
-                state.unprivatization = initialState.unprivatization;
+            // Fail closed: a demoted user who can no longer fetch members must not keep seeing the
+            // cached privileged member list. Clear state.value immediately — the next read reruns
+            // canFetchMembers() and repopulates it if the user still qualifies.
+            if (!isFreeMembers && !canFetch) {
                 state.value = freeMembers;
+                state.unprivatization = initialState.unprivatization;
                 state.error = undefined;
                 state.meta.fetchedEphemeral = undefined;
                 state.meta.fetchedAt = 0;
             }
 
-            if (isFreeMembers && user && canFetch(user)) {
+            // A user who has (re)gained access should drop the dummy free-members cache so the next
+            // read refetches the real member list.
+            if (isFreeMembers && canFetch) {
                 state.error = undefined;
                 state.meta.fetchedEphemeral = undefined;
                 state.meta.fetchedAt = 0;
             }
-        };
-
-        builder.addCase(initEvent, (state, action) => {
-            handleUserUpdate(state, action.payload.User);
-        });
-        builder.addCase(userFulfilled, (state, action) => {
-            handleUserUpdate(state, action.payload);
+        },
+    },
+    extraReducers: (builder) => {
+        builder.addCase(bootstrapEvent, (state) => {
+            state.unprivatization = initialState.unprivatization;
         });
 
         builder.addCase(serverEvent, (state, action) => {
@@ -297,8 +301,6 @@ const slice = createSlice({
                         };
                     },
                 });
-            } else {
-                handleUserUpdate(state, action.payload.User);
             }
         });
     },
@@ -315,12 +317,11 @@ const modelThunk = (options?: {
             return previous({ dispatch, getState, extraArgument, options });
         };
         const getPayload = async () => {
-            const user = await dispatch(userThunk());
             const defaultValue = {
                 value: freeMembers,
                 type: ValueType.dummy,
             };
-            if (!canFetch(user)) {
+            if (!(await canFetchMembers(dispatch))) {
                 return defaultValue;
             }
             try {
@@ -524,8 +525,7 @@ export const membersEventLoopV6Thunk = ({
     api: Api;
 }): ThunkAction<Promise<void>, MembersState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
-        const user = await dispatch(userThunk());
-        if (!canFetch(user)) {
+        if (!(await canFetchMembers(dispatch))) {
             return;
         }
         await updateCollectionAsyncV6({

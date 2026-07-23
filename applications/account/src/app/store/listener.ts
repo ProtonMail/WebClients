@@ -1,6 +1,7 @@
 import {
     authenticationListener,
     convertAddressesListener,
+    membersListener,
     organizationKeysManagementListener,
     startAccountSessionsListener,
     startListeningToPlanNameChange,
@@ -46,6 +47,7 @@ export const start = ({
         startAccountSessionsListener(startListening);
         convertAddressesListener(startListening);
         unprivatizeMembersListener(startListening);
+        membersListener(startListening);
         groupOwnerInvitesListener(startListening);
         groupKeysListener(startListening);
         safetyReviewTelemetryListener(startListening);
