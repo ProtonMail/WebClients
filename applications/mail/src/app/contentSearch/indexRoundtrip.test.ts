@@ -45,6 +45,12 @@ const query = (search: NormalizedSearchParams['search']): NormalizedSearchParams
         normalizedKeywords: undefined,
     }) as NormalizedSearchParams;
 
+const search = async (reader: IndexReader, search: NormalizedSearchParams['search']) => {
+    const ids: string[] = [];
+    await reader.search(buildQuery(query(search)), (batch) => ids.push(...batch), new AbortController().signal);
+    return ids;
+};
+
 describe('IndexWriter + IndexReader roundtrip', () => {
     let db: IDBPDatabase<Database>;
     let key: CryptoKey;
@@ -77,13 +83,12 @@ describe('IndexWriter + IndexReader roundtrip', () => {
         ]);
 
         const reader = new IndexReader(db, key);
-        const search = (keyword: string) => reader.search(buildQuery(query({ keyword })), new AbortController().signal);
 
         // each keyword matches exactly one of the two documents...
-        expect(await search('apple')).toEqual(['msg-apple']);
-        expect(await search('banana')).toEqual(['msg-banana']);
+        expect(await search(reader, { keyword: 'apple' })).toEqual(['msg-apple']);
+        expect(await search(reader, { keyword: 'banana' })).toEqual(['msg-banana']);
         // ...and a term present in neither matches nothing.
-        expect(await search('elephant')).toEqual([]);
+        expect(await search(reader, { keyword: 'elephant' })).toEqual([]);
     });
 
     it('filters by time range, returning only documents inside the bounds', async () => {
@@ -94,15 +99,16 @@ describe('IndexWriter + IndexReader roundtrip', () => {
         ]);
 
         const reader = new IndexReader(db, key);
-        const search = (search: NormalizedSearchParams['search']) =>
-            reader.search(buildQuery(query(search)), new AbortController().signal);
 
         // both documents share the keyword; the time bounds select exactly one.
-        expect(await search({ keyword: 'shared', begin: 1_500, end: 2_500 })).toEqual(['msg-new']);
-        expect(await search({ keyword: 'shared', begin: 500, end: 1_500 })).toEqual(['msg-old']);
+        expect(await search(reader, { keyword: 'shared', begin: 1_500, end: 2_500 })).toEqual(['msg-new']);
+        expect(await search(reader, { keyword: 'shared', begin: 500, end: 1_500 })).toEqual(['msg-old']);
         // a window covering both returns both.
-        expect((await search({ keyword: 'shared', begin: 0, end: 3_000 })).sort()).toEqual(['msg-new', 'msg-old']);
+        expect((await search(reader, { keyword: 'shared', begin: 0, end: 3_000 })).sort()).toEqual([
+            'msg-new',
+            'msg-old',
+        ]);
         // a window covering neither returns nothing.
-        expect(await search({ keyword: 'shared', begin: 5_000, end: 6_000 })).toEqual([]);
+        expect(await search(reader, { keyword: 'shared', begin: 5_000, end: 6_000 })).toEqual([]);
     });
 });

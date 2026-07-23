@@ -1,14 +1,20 @@
 import type { IDBPDatabase } from 'idb';
 
 import type { Entry, ExportEvent, Expression } from '@proton/proton-foundation-search';
-import { ExportEventKind, type QueryEvent, QueryEventKind, SerDes } from '@proton/proton-foundation-search';
+import { ExportEventKind, SerDes } from '@proton/proton-foundation-search';
 
 import { BlobCache } from '../cache/BlobCache';
+import type { OpenBlobTransaction } from '../crypto/EncryptedBlobTransaction';
 import { EncryptedBlobTransaction } from '../crypto/EncryptedBlobTransaction';
 import type { Database } from '../db/schema';
 import { createMailSearchEngine } from '../engine/create';
 import { isLoadEvent } from '../utils/eventTypeGuards';
+import { SearchLoop } from './SearchLoop';
 import { createLocalSearchQueryOptions } from './queryOptions';
+
+// The values are the same as what mobile has set in their codebase
+const SMALLISH_CARDINALITY = 80;
+const BUCKET_SIZE_SECONDS = 60n * 60n * 24n * 90n;
 
 export class IndexReader {
     private readonly engine = createMailSearchEngine();
@@ -68,35 +74,68 @@ export class IndexReader {
         }
     }
 
-    async search(exp: Expression, abortSignal: AbortSignal): Promise<string[]> {
+    async search(
+        exp: Expression,
+        resultCallback: (results: string[]) => void,
+        abortSignal: AbortSignal
+    ): Promise<void> {
         performance.mark('search-foundation-start');
-        const hits: string[] = [];
         const blobCache = new BlobCache();
         const txn = await EncryptedBlobTransaction.start(blobCache, this.db, this.indexKey);
-        const queryOptions = createLocalSearchQueryOptions();
-        const search = this.engine.query().withStructuredExpression(exp).withOptions(queryOptions).search();
+
         try {
-            let event: QueryEvent | undefined;
-            while ((event = search.next())) {
-                abortSignal.throwIfAborted();
-                if (isLoadEvent(event)) {
-                    performance.mark('search-foundation-read-blob');
-                    await txn.handleLoadEvent(event);
-                } else if (event.kind() === QueryEventKind.Found) {
-                    const id = event.found()?.identifier();
-                    if (id) {
-                        hits.push(id);
-                    }
+            const searchLoop = new SearchLoop(this.engine, txn, exp.clone(), createLocalSearchQueryOptions());
+            const { cardinality, hits } = await searchLoop.runUntilCardinality(abortSignal);
+            if (hits) {
+                resultCallback(hits);
+            } else if (cardinality) {
+                if (cardinality.estimate().atMost <= SMALLISH_CARDINALITY) {
+                    const hits = await searchLoop.continueAfterCardinality(abortSignal);
+                    resultCallback(hits);
+                } else {
+                    const r = cardinality.range();
+                    const range = { high: r.high, low: r.low };
+                    searchLoop.dispose();
+                    await this.runBucketedSearch(range, txn, exp, resultCallback, abortSignal);
                 }
-                abortSignal.throwIfAborted();
             }
         } finally {
+            exp.free();
             blobCache.free();
-            search.free();
         }
+
         await txn.verify(this.db.transaction('config'));
         performance.measure('search-foundation', 'search-foundation-start');
-        return hits;
+    }
+
+    private async runBucketedSearch(
+        range: { high: bigint; low: bigint },
+        txn: OpenBlobTransaction,
+        exp: Expression,
+        resultCallback: (results: string[]) => void,
+        abortSignal: AbortSignal
+    ) {
+        function* bucketGenerator(min: bigint, max: bigint, windowSize: bigint) {
+            for (let high = max; high > min; high -= windowSize) {
+                const low = high - windowSize;
+                yield { low: low < min ? min : low, high };
+            }
+        }
+
+        const buckets = bucketGenerator(range.low, range.high, BUCKET_SIZE_SECONDS);
+        let anyBucketHadHits = false;
+        for (const bucket of buckets) {
+            const searchLoop = new SearchLoop(this.engine, txn, exp.clone(), createLocalSearchQueryOptions());
+            const hits = await searchLoop.runBucketedSearch(bucket, abortSignal);
+            if (hits.length > 0) {
+                anyBucketHadHits = true;
+                resultCallback(hits);
+            }
+        }
+
+        if (!anyBucketHadHits) {
+            resultCallback([]);
+        }
     }
 
     close() {

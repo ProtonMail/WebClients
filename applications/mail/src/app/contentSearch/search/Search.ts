@@ -1,4 +1,4 @@
-import type * as Comlink from 'comlink';
+import * as Comlink from 'comlink';
 import isDeepEqual from 'lodash/isEqual';
 
 import type { ESItem, NormalizedSearchParams } from '@proton/encrypted-search/models';
@@ -16,15 +16,21 @@ export class Search {
     public readonly onResults = createListeners<[SearchResult[]]>();
     public readonly onError = createListeners<[Error]>();
     public readonly onDisposed = createListeners<[]>();
+    public readonly done: Promise<void>;
 
     private unfilteredResults?: SearchResult[];
     private filteredResults?: SearchResult[];
+    private resolveDone?: (value: void | PromiseLike<void>) => void;
 
     constructor(
         private params: NormalizedSearchParams,
         private workerPromise: Promise<Comlink.Remote<SearchWorker> | undefined>,
         private openESReader: () => Promise<EncryptedSearchReader>
-    ) {}
+    ) {
+        this.done = new Promise((resolve) => {
+            this.resolveDone = resolve;
+        });
+    }
 
     containsMessage(id: string): boolean {
         return !!this.filteredResults?.some((m) => m.ID === id);
@@ -56,9 +62,13 @@ export class Search {
 
     /** @internal called by SearchService */
     public start() {
-        this.execute().catch((err) => {
-            this.onError.notify(err as Error);
-        });
+        this.execute()
+            .finally(() => {
+                this.resolveDone?.();
+            })
+            .catch((err) => {
+                this.onError.notify(err as Error);
+            });
     }
 
     /**
@@ -68,29 +78,37 @@ export class Search {
      * which V2 seeds from and therefore always exists alongside it.
      */
     private async execute(): Promise<void> {
-        const worker = await this.workerPromise;
-        // index does not exist yet, for now just show empty results
-        if (!worker) {
-            this.unfilteredResults = [];
+        const promises: Promise<void>[] = [];
+        const oldStore = await this.openESReader();
+
+        const fetchMessagesForIDs = async (ids: string[]) => {
+            const storeMessages = await oldStore.readMessages(ids);
+            this.unfilteredResults = this.unfilteredResults
+                ? this.unfilteredResults.concat(storeMessages)
+                : storeMessages;
             this.applyFilters();
-            return;
-        }
-        performance.mark('search-worker-start');
-        const ids = await worker.search(this.params);
-        performance.measure('search-worker', 'search-worker-start');
-        if (ids.length === 0) {
-            this.unfilteredResults = [];
-        } else {
-            const oldStore = await this.openESReader();
-            try {
-                performance.mark('search-read-messages-start');
-                this.unfilteredResults = await oldStore.readMessages(ids);
-                performance.measure('search-read-messages', 'search-read-messages-start');
-            } finally {
-                oldStore.close();
+        };
+
+        try {
+            const worker = await this.workerPromise;
+            // index does not exist yet, for now just show empty results
+            if (!worker) {
+                this.unfilteredResults = [];
+                this.applyFilters();
+                return;
             }
+            performance.mark('search-worker-start');
+            await worker.search(
+                this.params,
+                Comlink.proxy((ids) => {
+                    promises.push(fetchMessagesForIDs(ids));
+                })
+            );
+
+            await Promise.all(promises);
+        } finally {
+            oldStore.close();
         }
-        this.applyFilters();
     }
 
     private applyFilters() {
