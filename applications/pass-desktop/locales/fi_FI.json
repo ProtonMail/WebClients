@@ -1425,6 +1425,9 @@
       "Unsupported Bitwarden file format": [
         "Ei tuettu Bitwarden-tiedostomuoto"
       ],
+      "Unsupported file type": [
+        "Tiedostotyyppiä ei tueta"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Holvin \"${ payload.content.name }\" päivitys epäonnistui"
       ],
@@ -2198,7 +2201,8 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
