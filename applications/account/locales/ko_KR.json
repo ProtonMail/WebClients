@@ -360,9 +360,6 @@
       "Connected": [
         "연결됨"
       ],
-      "Contact sales": [
-        "영업 문의"
-      ],
       "Contact support": [
         "문의하기"
       ],
@@ -1527,9 +1524,6 @@
       "Send email reminder": [
         "이메일 알리미 전송"
       ],
-      "Send feedback": [
-        "피드백 전송"
-      ],
       "Send messages with @pm.me": [
         "@pm.me로 메시지 전송"
       ],
@@ -1589,9 +1583,6 @@
       ],
       "Share": [
         "공유"
-      ],
-      "Share feedback": [
-        "피드백 공유"
       ],
       "Share via link": [
         "링크로 공유"
@@ -1956,9 +1947,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 글쓰기 도우미"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 (${ quantity }명 사용자용)"
       ],
@@ -7519,6 +7507,9 @@
       "Please set a recovery/notification email first": [
         "복구/알림 이메일을 먼저 설정해주세요."
       ],
+      "Please set up your organization before adding a company.": [
+        "회사 생성 전 조직을 생성해 주세요."
+      ],
       "Please try again in a few moments.": [
         "잠시 후 다시 시도하십시오."
       ],
@@ -9774,9 +9765,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% 할인"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME }에서 더 이상 파일의 이전 버전을 보관하지 않습니다."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 이(가) 유효하지 않음"
       ],
@@ -10605,9 +10593,6 @@
       "Copy your referral link": [
         "나의 추천인 링크를 공유하세요"
       ],
-      "Couldn´t send feedback": [
-        "피드백을 전송할 수 없음"
-      ],
       "Country code": [
         "국가 코드"
       ],
@@ -11091,9 +11076,6 @@
       "for ${ price }": [
         "${ price }으로"
       ],
-      "For a 10-year version history, please contact our sales team.": [
-        "10년 동안의 버전 기록을 원하시면 저희 영업 팀에 문의하시기 바랍니다."
-      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ androidAppLink } 또는 ${ iosAppLink } 을(를)다운로드하세요."
       ],
@@ -11535,9 +11517,6 @@
       "Key deletion is irreversible!": [
         "키 삭제는 되돌릴 수 없습니다!"
       ],
-      "Key sections reorganized for faster access.": [
-        "더 빠른 접근을 위해 주요 섹션이 재구성되었습니다."
-      ],
       "Keys created": [
         "키 생성됨"
       ],
@@ -11717,12 +11696,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "새로운 구성원이 사용자의 신원 공급자에 의거해 추가되었으며 검토 대기 중입니다."
-      ],
-      "New sidebar": [
-        "새로운 사이드바"
-      ],
-      "New sidebar layout": [
-        "새로운 사이드바 레이아웃"
       ],
       "New user invited to organization": [
         "새 사용자가 조직에 초대되었습니다."
@@ -12282,9 +12255,6 @@
       "Settings updated": [
         "설정 업데이트 완료"
       ],
-      "Share your thoughts...": [
-        "회원님의 생각을 공유해주세요..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "공유된 ${ vaultLink }이(가) 삭제됨"
       ],
@@ -12438,9 +12408,6 @@
       "Swiss based": [
         "스위스에 위치"
       ],
-      "Switch sidebars": [
-        "사이드바 전환"
-      ],
       "Symbols (#$&)": [
         "기호 (#$&)"
       ],
@@ -12479,9 +12446,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "구독해 주셔서 감사합니다. 지금부터 보안 브라우징이 시작됩니다."
-      ],
-      "Thanks - your feedback was sent.": [
-        "감사합니다. 의견이 전송되었습니다."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "개인 정보 보호와 자유가 최우선인 더 나은 인터넷을 구축하려는 우리의 사명을 지원해 주셔서 감사합니다."
@@ -12661,10 +12625,7 @@
         "이를 통해 TV에서 회원님의 ${ BRAND_NAME } 계정에 접근할 수 있게 됩니다."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "이 작업을 실행하면 ${ rententionLabel }보다 오래된 파일의 모든 이전 버전이 삭제됩니다."
-      ],
-      "This will delete all previous versions of your files.": [
-        "이 작업을 실행하면 파일의 모든 이전 버전이 삭제됩니다."
+        "이 작업을 실행하면 ${ rententionLabel }보다 오래된 모든 이전 버전의 파일이 삭제됩니다."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "이 작업은 **${ email }**의 접근을 거절합니다. 정말 계속하시겠어요?"
@@ -12898,7 +12859,7 @@
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
       "Upgrade to unlock": [
-        "업그레이드하여 잠금 해제"
+        "잠금해제하려면 업그레이드"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } 잠금 해제하려면 업그레이드"
@@ -13514,9 +13475,6 @@
       ],
       "your encrypted data will be locked": [
         "개인 데이터는 잠금 상태로 유지됩니다"
-      ],
-      "Your feedback": [
-        "나의 의견"
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
@@ -14783,7 +14741,7 @@
         "다시 묻지 않기"
       ],
       "Don't keep versions": [
-        "버전 보관 안 함"
+        "버전 유지하지 않기"
       ],
       "Don't show this again": [
         "다시 보지 않기"
@@ -23407,9 +23365,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 글쓰기 도우미"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ maxAi }명 사용자를 위한 ${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
@@ -23513,9 +23468,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 글쓰기 도우미"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "premium 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } 및 ${ LUMO_APP_NAME }"
       ],
@@ -25492,9 +25444,6 @@
       "Help center": [
         "지원 센터"
       ],
-      "Help us improve": [
-        "개선할 수 있도록 도와주세요"
-      ],
       "Helping activists in Hong Kong": [
         "홍콩의 활동가 지원"
       ],
@@ -27355,6 +27304,9 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "초대장을 보냈습니다. 초대받은 구성원의 응답을 기다리고 있습니다."
+      ],
+      "Pending": [
+        "보류 중"
       ],
       "SSO user provided by your identity provider": [
         "SSO 사용자는 사용자의 정보 제공사로부터 제공되었습니다."

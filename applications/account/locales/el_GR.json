@@ -1527,9 +1527,6 @@
       "Send email reminder": [
         "Αποστολή email υπενθύμισης"
       ],
-      "Send feedback": [
-        "Αποστολή σχολίων"
-      ],
       "Send messages with @pm.me": [
         "Αποστολή μηνυμάτων με @pm.me"
       ],
@@ -1589,9 +1586,6 @@
       ],
       "Share": [
         "Κοινοποίηση"
-      ],
-      "Share feedback": [
-        "Κοινοποίηση σχολίων"
       ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
@@ -1956,9 +1950,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe βοηθός γραφής"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστη)",
         "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστες)"
@@ -1983,6 +1974,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστες)"
       ],
       "${ price } per dedicated server": [
         "${ price } ανά αποκλειστικό διακομιστή"
@@ -2299,6 +2294,9 @@
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ BRAND_NAME } Scribe να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
       ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ LUMO_SHORT_APP_NAME } να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
+      ],
       "Trial expires on ${ formattedDate }": [
         "Η δοκιμαστική έκδοση λήγει στις ${ formattedDate }"
       ],
@@ -2380,6 +2378,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Μπορείτε να έχετε έως και ${ TRIAL_MAX_LUMO_SEATS } θέσεις ${ LUMO_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής κατά τη διάρκεια της δοκιμαστικής περιόδου."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } θέσεις Scribe κατά τη δοκιμαστική περίοδο."
@@ -2579,12 +2580,19 @@
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε τα με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διεύθυνση email, υποστήριξη για προσαρμοσμένους τομείς email, βοηθό γραφής ${ LUMO_SHORT_APP_NAME }, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε τα με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις email, υποστήριξη για προσαρμοσμένους τομείς email, βοηθό γραφής ${ LUMO_SHORT_APP_NAME }, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση . Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ LUMO_SHORT_APP_NAME } βοηθό γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
@@ -9901,6 +9909,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } περιλαμβάνει τον βοηθό γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
       ],
@@ -10726,9 +10740,6 @@
       ],
       "Copy your referral link": [
         "Αντιγράψτε τον σύνδεσμο παραπομπής σας"
-      ],
-      "Couldn´t send feedback": [
-        "Δεν ήταν δυνατή η αποστολή σχολίων"
       ],
       "Country code": [
         "Κωδικός χώρας"
@@ -11669,9 +11680,6 @@
       "Key deletion is irreversible!": [
         "Η διαγραφή κλειδιών είναι μη αναστρέψιμη!"
       ],
-      "Key sections reorganized for faster access.": [
-        "Κύριες ενότητες αναδιοργανώθηκαν για ταχύτερη πρόσβαση."
-      ],
       "Keys created": [
         "Τα κλειδιά δημιουργήθηκαν"
       ],
@@ -11851,12 +11859,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Νέα ομάδα δημιουργήθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
-      ],
-      "New sidebar": [
-        "Νέα πλαϊνή γραμμή"
-      ],
-      "New sidebar layout": [
-        "Νέα διάταξη πλαϊνής γραμμής"
       ],
       "New user invited to organization": [
         "Νέος χρήστης προσκλήθηκε στον οργανισμό"
@@ -12429,9 +12431,6 @@
       "Settings updated": [
         "Οι ρυθμίσεις ενημερώθηκαν"
       ],
-      "Share your thoughts...": [
-        "Μοιραστείτε τις σκέψεις σας..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "Η κοινόχρηστη ${ vaultLink } διαγράφηκε"
       ],
@@ -12588,9 +12587,6 @@
       "Swiss based": [
         "Με έδρα στην Ελβετία"
       ],
-      "Switch sidebars": [
-        "Εναλλαγή πλαϊνών γραμμών"
-      ],
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
       ],
@@ -12629,9 +12625,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Σας ευχαριστούμε για την εγγραφή σας. Η ασφαλής περιήγηση ξεκινά τώρα."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Ευχαριστούμε - τα σχόλιά σας στάλθηκαν."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Ευχαριστούμε που υποστηρίζετε την αποστολή μας να οικοδομήσουμε ένα καλύτερο διαδίκτυο όπου η ιδιωτικότητα και η ελευθερία έρχονται πρώτες."
@@ -13685,9 +13678,6 @@
       ],
       "your encrypted data will be locked": [
         "τα κρυπτογραφημένα δεδομένα σας θα κλειδωθούν"
-      ],
-      "Your feedback": [
-        "Τα σχόλιά σας"
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
@@ -16714,8 +16704,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Προσθέστε το ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Προσθήκη βοηθού γραφής ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Πρόσθετο με δωρεάν δοκιμή"
@@ -17467,6 +17463,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } και ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
@@ -23720,9 +23719,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe βοηθός γραφής"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } Scribe βοηθός γραφής για ${ maxAi } χρήστη",
         "${ BRAND_NAME } Scribe βοηθός γραφής για ${ maxAi } χρήστες"
@@ -23730,6 +23726,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } αποκλειστικός διακομιστής",
         "${ ipAddresses } αποκλειστικοί διακομιστές"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής για ${ maxAi } χρήστη",
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής για ${ maxAi } χρήστες"
       ],
       "${ n } calendar per user": [
         "${ n } ημερολόγιο ανά χρήστη",
@@ -23842,9 +23842,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe βοηθός γραφής"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } και ${ LUMO_APP_NAME } με premium χαρακτηριστικά"
       ],
@@ -25843,9 +25840,6 @@
       ],
       "Help center": [
         "Κέντρο βοήθειας"
-      ],
-      "Help us improve": [
-        "Βοηθήστε μας να βελτιωθούμε"
       ],
       "Helping activists in Hong Kong": [
         "Βοηθώντας ακτιβιστές στο Χονγκ Κονγκ"

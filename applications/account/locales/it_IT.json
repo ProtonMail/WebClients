@@ -361,7 +361,7 @@
         "Connesso"
       ],
       "Contact sales": [
-        "Contatta il reparto vendite"
+        "Contatta l'ufficio vendite"
       ],
       "Contact support": [
         "Contatta l'assistenza"
@@ -505,7 +505,7 @@
         "Elimina account"
       ],
       "Delete and confirm": [
-        "Elimina e conferma"
+        "Delete the version history?"
       ],
       "Delete device profile": [
         "Elimina profilo dispositivo"
@@ -1527,9 +1527,6 @@
       "Send email reminder": [
         "Invia promemoria email"
       ],
-      "Send feedback": [
-        "Invia feedback"
-      ],
       "Send messages with @pm.me": [
         "Invia messaggi con @pm.me"
       ],
@@ -1589,9 +1586,6 @@
       ],
       "Share": [
         "Condividi"
-      ],
-      "Share feedback": [
-        "Condividi feedback"
       ],
       "Share via link": [
         "Condividi con link"
@@ -1956,9 +1950,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe (per ${ quantity } utente)",
         "Assistente alla scrittura ${ BRAND_NAME } Scribe (per ${ quantity } utenti)"
@@ -7572,6 +7563,9 @@
       "Please set a recovery/notification email first": [
         "Imposta prima un'email di recupero/notifica"
       ],
+      "Please set up your organization before adding a company.": [
+        "Prima di aggiungere un'azienda, configura la tua organizzazione."
+      ],
       "Please try again in a few moments.": [
         "Riprova tra qualche istante."
       ],
@@ -10724,9 +10718,6 @@
       "Copy your referral link": [
         "Copia il tuo link di riferimento"
       ],
-      "Couldn´t send feedback": [
-        "Impossibile inviare il feedback"
-      ],
       "Country code": [
         "Codice nazione"
       ],
@@ -11220,7 +11211,7 @@
         "per ${ price }"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "Per una cronologia delle versioni di 10 anni, contatta il nostro team commerciale."
+        "Per consultare la cronologia delle versioni degli ultimi 10 anni, si prega di contattare il nostro team commerciale."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedere in qualsiasi momento alla posta elettronica e ottimizzare l'esperienza mobile, scarica la nostra app ${ androidAppLink } o ${ iosAppLink }."
@@ -11666,9 +11657,6 @@
       "Key deletion is irreversible!": [
         "La cancellazione della chiave è irreversibile!"
       ],
-      "Key sections reorganized for faster access.": [
-        "Sezioni chiave riorganizzate per un accesso più rapido."
-      ],
       "Keys created": [
         "Chiavi create"
       ],
@@ -11849,12 +11837,6 @@
       "New group created via your identity provider and pending review.": [
         "Nuovo gruppo creato tramite il tuo provider di identità e in attesa di revisione."
       ],
-      "New sidebar": [
-        "Nuova barra laterale"
-      ],
-      "New sidebar layout": [
-        "Nuovo layout della barra laterale"
-      ],
       "New user invited to organization": [
         "Nuovo utente invitato all'organizzazione"
       ],
@@ -11876,8 +11858,14 @@
       "No addresses exist": [
         "Nessun indirizzo esistente"
       ],
+      "No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.": [
+        "Non sono ancora disponibili i dettagli di fatturazione. I dettagli relativi a ciascun periodo di fatturazione appariranno qui. Una volta disponibili, potrai scaricarli in formato CSV."
+      ],
       "No card required": [
         "Nessuna carta richiesta"
+      ],
+      "No companies yet. Start by creating a new company.": [
+        "Non ci sono ancora aziende. Inizia creando una nuova azienda."
       ],
       "No connected addresses.": [
         "Nessun indirizzo connesso."
@@ -12420,9 +12408,6 @@
       "Settings updated": [
         "Impostazioni aggiornate"
       ],
-      "Share your thoughts...": [
-        "Condividi i tuoi pensieri..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } condiviso eliminato"
       ],
@@ -12579,9 +12564,6 @@
       "Swiss based": [
         "Con sede in Svizzera"
       ],
-      "Switch sidebars": [
-        "Scambia barre laterali"
-      ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
       ],
@@ -12620,9 +12602,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Grazie per esserti abbonato. La navigazione sicura inizia ora."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Grazie: il tuo feedback è stato inviato."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Grazie per aver sostenuto la nostra missione di realizzare un internet migliore, dove la privacy e la libertà sono al primo posto."
@@ -12806,10 +12785,10 @@
         "Questo consentirà alla TV di accedere al tuo account ${ BRAND_NAME }."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Questo eliminerà tutte le versioni precedenti dei tuoi file più vecchie di ${ rententionLabel }."
+        "Questa operazione eliminerà tutte le versioni precedenti dei tuoi file più vecchie di ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
-        "Questo eliminerà tutte le versioni precedenti dei tuoi file."
+        "In questo modo verranno eliminate tutte le versioni precedenti dei tuoi file."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Ciò negherà l'accesso a **${ email }**. Sei sicuro di voler continuare?"
@@ -13049,7 +13028,7 @@
         "Effettua l'upgrade per mantenere i tuoi ${ planTitle } vantaggi."
       ],
       "Upgrade to unlock": [
-        "Effettua l'upgrade per sbloccare"
+        "Esegui l'aggiornamento per sbloccare"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Effettua l'upgrade per sbloccare ${ monitorLink }."
@@ -13163,7 +13142,7 @@
         "Versione ${ version }"
       ],
       "Version history": [
-        "Cronologia versioni"
+        "Cronologia delle versioni"
       ],
       "Version number successfully copied to clipboard": [
         "Numero di versione copiato con successo negli appunti"
@@ -13676,9 +13655,6 @@
       ],
       "your encrypted data will be locked": [
         "i tuoi dati crittografati verranno bloccati"
-      ],
-      "Your feedback": [
-        "Il tuo feedback"
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
@@ -14750,6 +14726,12 @@
       ],
       "City": [
         "Città"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versione Client"
       ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
@@ -23705,9 +23687,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente di scrittura ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe per ${ maxAi } utente",
         "Assistente alla scrittura ${ BRAND_NAME } Scribe per ${ maxAi } utenti"
@@ -23827,9 +23806,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, e ${ LUMO_APP_NAME } con funzionalità premium"
       ],
@@ -25829,9 +25805,6 @@
       "Help center": [
         "Centro assistenza"
       ],
-      "Help us improve": [
-        "Aiutaci a migliorare"
-      ],
       "Helping activists in Hong Kong": [
         "Aiutare gli attivisti a Hong Kong"
       ],
@@ -27428,6 +27401,9 @@
         "Impossibile attivare l'accesso amministratore per ${ n } utente",
         "Impossibile attivare l'accesso amministratore per ${ n } utenti"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Impossibile abilitare l'accesso come amministratore: ${ unprivatizationResult.error }"
+      ],
       "Enable admin access?": [
         "Abilitare l'accesso amministratore?"
       ],
@@ -27497,6 +27473,9 @@
       ],
       "View request": [
         "Visualizza la richiesta"
+      ],
+      "Waiting for admin approval": [
+        "In attesa dell'approvazione dell'amministratore"
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Puoi ${ reject } questa richiesta se non desideri procedere."
@@ -27698,6 +27677,15 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invito spedito, in attesa di risposta da parte del membro invitato"
+      ],
+      "Invited": [
+        "Invitato"
+      ],
+      "Pending": [
+        "In attesa"
+      ],
+      "Requested": [
+        "Richiesta inviata"
       ],
       "SSO user provided by your identity provider": [
         "Utente SSO fornito dal tuo fornitore di identità"
