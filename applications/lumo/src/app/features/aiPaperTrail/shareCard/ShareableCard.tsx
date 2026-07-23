@@ -14,7 +14,8 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import type { PaperTrailCardData } from '../reportTypes';
-import { CARD_HEIGHT, CARD_WIDTH, type ShareCardTheme, renderShareCard } from './drawShareCard';
+import { ShareCardCanvasPreview } from './ShareCardCanvasPreview';
+import type { ShareCardTheme } from './drawShareCard';
 import { SHARE_TEXT, SHARE_URL, type SocialPlatform, buildShareIntentUrl } from './socialShare';
 
 import './ShareableCard.scss';
@@ -33,15 +34,8 @@ const canvasToBlob = (canvas: HTMLCanvasElement): Promise<Blob | null> =>
 export const ShareableCard = ({ data, ...modalProps }: Props) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [canShareFiles, setCanShareFiles] = useState(false);
-    const [theme, setTheme] = useState<ShareCardTheme>('dark');
+    const [theme, setTheme] = useState<ShareCardTheme>('light');
     const [linkCopied, setLinkCopied] = useState(false);
-
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (canvas) {
-            void renderShareCard(canvas, data, theme);
-        }
-    }, [data, theme]);
 
     useEffect(() => {
         try {
@@ -158,11 +152,11 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
                     </Button>
                 </div>
                 <div className="paper-trail-card-preview">
-                    <canvas
+                    <ShareCardCanvasPreview
                         ref={canvasRef}
-                        width={CARD_WIDTH}
-                        height={CARD_HEIGHT}
-                        className="paper-trail-card-preview__canvas"
+                        data={data}
+                        theme={theme}
+                        className="share-card-canvas-preview--modal"
                     />
                 </div>
                 <div className="paper-trail-social">

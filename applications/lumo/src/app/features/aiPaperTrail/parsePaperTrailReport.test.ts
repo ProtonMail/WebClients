@@ -94,7 +94,7 @@ describe('parsePaperTrailReport', () => {
         ]);
         // Overall is the average of the per-area exposure scores: (90 + 60 + 0) / 3 = 50.
         expect(card.exposureScore).toBe(50);
-        expect(card.grade).toBe('Exposed');
+        expect(card.grade).toBe('Leaving receipts');
         // The advertiser value (not personal data) is carried onto the card.
         expect(card.estimatedValueUsd).toBe(480);
         // No personal information should leak into the card payload.

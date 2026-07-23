@@ -114,7 +114,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const silentApi = getSilentApi(api);
 
     // Check if there are any existing sessions on lumo.proton.me, if not redirect to lumo.proton.me/guest where user then has the option to signin.
-    const isGuestOrForkPathname = pathname === '/guest' || pathname === SSO_PATHS.LOGIN;
+    const isGuestOrForkPathname =
+        pathname === '/guest' ||
+        pathname.startsWith('/guest/') ||
+        pathname === '/ai-paper-trail' ||
+        pathname === SSO_PATHS.LOGIN;
     if (!isGuestOrForkPathname && !(await hasOptimisticSessions({ api: silentApi }))) {
         // Reload to guest path.
         replaceUrl(getAppHref('/guest', APPS.PROTONLUMO));
