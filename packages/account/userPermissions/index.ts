@@ -1,62 +1,49 @@
-import { createSelector, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getUserPermissions } from '@proton/shared/lib/api/userPermissions';
-import { PERMISSIONS, type Permission, type UserPermission } from '@proton/shared/lib/interfaces';
+import { PERMISSIONS, type Permission, type User, type UserPermission } from '@proton/shared/lib/interfaces';
 
-import { type UserState, selectUser } from '../user';
+import { serverEvent } from '../eventLoop';
+import { type UserState, userFulfilled, userThunk } from '../user';
 
 const name = 'userPermissions';
 
 export interface UserPermissionsState extends UserState {
-    [name]: ModelState<UserPermission>;
+    [name]: ModelState<UserPermission & { permissions: Record<Permission, boolean>; role: number }>;
 }
 
 type SliceState = UserPermissionsState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
 export const selectUserPermissions = (state: UserPermissionsState) => state[name];
-// @todo: remove the dependency of user state when legacy permission system is retired
-export const selectOrgPermissions = createSelector(
-    [
-        (state: UserPermissionsState) => selectUser(state).value,
-        (state: UserPermissionsState) => selectUserPermissions(state).value,
-    ],
-    (user, userPermissions): [Record<Permission, boolean> | null, boolean] => {
-        if (!user || !userPermissions) {
-            return [null, true];
-        }
-        const isLegacyAdmin = user.isAdmin && user.isSelf;
-        const perms = new Set(userPermissions.Permissions);
-        const entries = PERMISSIONS.map((p) => [p, isLegacyAdmin || perms.has(p)] as const);
-        return [Object.fromEntries(entries) as Record<Permission, boolean>, false];
-    }
-);
-// Derive permissions from user state only, serve as a fallback when roles and permissions are not yet enabled
-// @todo: remove this when AdminRoleMVP flag is removed
-export const selectOrgPermissionsLegacy = createSelector(
-    [(state: UserPermissionsState) => selectUser(state).value],
-    (user): [Record<Permission, boolean> | null, boolean] => {
-        if (!user) {
-            return [null, true];
-        }
-        const isLegacyAdmin = user.isAdmin && user.isSelf;
-        const entries = PERMISSIONS.map((p) => [p, isLegacyAdmin] as const);
-        return [Object.fromEntries(entries) as Record<Permission, boolean>, false];
-    }
-);
+
+export const getOrgPermissions = (
+    permissions: UserPermission['Permissions'],
+    isLegacyAdmin: boolean
+): Record<Permission, boolean> => {
+    const permissionsSet = new Set(permissions);
+    // @todo: remove the dependency of user state when legacy permission system is retired
+    const entries = PERMISSIONS.map((p) => [p, isLegacyAdmin || permissionsSet.has(p)] as const);
+    return Object.fromEntries(entries) as Record<Permission, boolean>;
+};
 
 const modelThunk = createAsyncModelThunk<Model, UserPermissionsState, ProtonThunkArguments>(`${name}/fetch`, {
-    miss: async ({ extraArgument }) => {
+    miss: async ({ extraArgument, dispatch }) => {
+        const user = await dispatch(userThunk());
+        // A runtime unleash toggle won't reflect until the next refetch, but that's fine in practice.
         const flag = extraArgument.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
+        const isLegacyAdmin = user.isAdmin && user.isSelf;
         if (!flag) {
-            return { Roles: [], Permissions: [] };
+            const permissions = getOrgPermissions([], isLegacyAdmin);
+            return { Roles: [], Permissions: [], permissions, role: user.Role };
         }
         const Permission = await extraArgument.api<UserPermission>(getUserPermissions());
-        return Permission;
+        const permissions = getOrgPermissions(Permission.Permissions, isLegacyAdmin);
+        return { ...Permission, permissions, role: user.Role };
     },
     previous: previousSelector(selectUserPermissions),
 });
@@ -68,6 +55,30 @@ const slice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
+
+        const clearState = (state: SliceState, user: User) => {
+            // If there's no current value or if the role didn't change, we don't need to trigger a refetch.
+            if (!state.value || state.value.role === user.Role) {
+                return;
+            }
+            // This will cause a refetch to happen the next time this thunk or hook is requested.
+            // This is cleared when the user's role is changed to make sure that permissions are kept up-to-date.
+            state.meta.fetchedEphemeral = undefined;
+            state.value = undefined;
+        };
+
+        // NOTE: Since there's no event loop updates for self permissions, we currently rely on the user role to know when to refetch.
+        builder.addCase(userFulfilled, (state, action) => {
+            clearState(state, action.payload);
+        });
+        builder.addCase(serverEvent, (state, action) => {
+            if (!state.value) {
+                return;
+            }
+            if (action.payload.User) {
+                clearState(state, action.payload.User);
+            }
+        });
     },
 });
 
