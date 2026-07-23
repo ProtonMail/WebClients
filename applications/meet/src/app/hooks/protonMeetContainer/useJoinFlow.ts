@@ -10,12 +10,15 @@ import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeet
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setJoinedRoom, setJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
+import { setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
+import { setIsGuestAdmin } from '@proton/meet/store/slices/participants/participantsSlice';
 import { setMeetingLocked } from '@proton/meet/store/slices/settings';
 import { setMeetingReadyPopupOpen } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { decryptSessionKey, deriveEncryptionKeyFromSessionKey } from '@proton/meet/utils/cryptoUtils';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { SECOND } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -34,16 +37,6 @@ import type { ConnectWithMlsResult, UseMeetingConnectionResult } from './useMeet
 
 type MeetingSetup = ReturnType<typeof useMeetingSetup>;
 
-export interface MeetingDetails {
-    meetingId: string;
-    meetingPassword: string;
-    meetingName: string;
-    locked: boolean;
-    maxDuration: number;
-    maxParticipants: number;
-    expirationTime: number | null;
-}
-
 interface UseJoinFlowParams {
     token: string;
     urlPassword: string;
@@ -56,10 +49,8 @@ interface UseJoinFlowParams {
     meetingInfoRef: MutableRefObject<MeetingInfoResponse | null>;
     meetingLinkRef: MutableRefObject<string | null>;
     meetingLinkNameRef: MutableRefObject<string>;
-    isGuestAdminRef: MutableRefObject<boolean>;
     isExpiringRef: MutableRefObject<boolean>;
     joinedRoomLoggedRef: MutableRefObject<boolean>;
-    setMeetingDetails: Dispatch<SetStateAction<MeetingDetails>>;
     setIsWebRtcUnsupportedModalOpen: Dispatch<SetStateAction<boolean>>;
     setIsMeetingLockedModalOpen: Dispatch<SetStateAction<boolean>>;
     setIsConnectionFailedModalOpen: Dispatch<SetStateAction<boolean>>;
@@ -158,10 +149,8 @@ export const useJoinFlow = ({
     meetingInfoRef,
     meetingLinkRef,
     meetingLinkNameRef,
-    isGuestAdminRef,
     isExpiringRef,
     joinedRoomLoggedRef,
-    setMeetingDetails,
     setIsWebRtcUnsupportedModalOpen,
     setIsMeetingLockedModalOpen,
     setIsConnectionFailedModalOpen,
@@ -373,16 +362,15 @@ export const useJoinFlow = ({
                 handshakeInfo: handshakeResult.handshakeInfo as SRPHandshakeInfo,
             });
 
-            setMeetingDetails((prev) => ({
-                ...prev,
-                meetingId: id,
-                meetingPassword: passwordBase,
-                meetingName: roomName,
-                locked,
-                maxDuration,
-                maxParticipants,
-            }));
-
+            dispatch(
+                setMeetingInfo({
+                    meetingLinkName: id,
+                    meetingPassword: passwordBase,
+                    meetingName: roomName,
+                    maxDuration,
+                    maxParticipants,
+                })
+            );
             dispatch(setMeetingLocked(locked));
             dispatch(setMeetingReadyPopupOpen(true));
 
@@ -392,12 +380,12 @@ export const useJoinFlow = ({
 
             const meetingInfo = await getCachedMeetingInfo(id);
 
-            setMeetingDetails((prev) => ({
-                ...prev,
-                expirationTime: 1000 * (meetingInfo.MeetingInfo.ExpirationTime ?? 0),
-            }));
-
-            isGuestAdminRef.current = isGuest;
+            dispatch(
+                setMeetingInfo({
+                    expirationTime: SECOND * (meetingInfo.MeetingInfo.ExpirationTime ?? 0),
+                })
+            );
+            dispatch(setIsGuestAdmin(isGuest));
 
             history.push(meetingLinkRef.current);
         } catch (error: any) {
@@ -476,13 +464,13 @@ export const useJoinFlow = ({
                 return;
             }
 
-            setMeetingDetails((prev) => ({
-                ...prev,
-                meetingName: details.meetingName,
-                locked: details.locked,
-                maxDuration: details.maxDuration,
-                maxParticipants: details.maxParticipants,
-            }));
+            dispatch(
+                setMeetingInfo({
+                    meetingName: details.meetingName,
+                    maxDuration: details.maxDuration,
+                    maxParticipants: details.maxParticipants,
+                })
+            );
 
             dispatch(setMeetingLocked(details.locked));
 
@@ -491,10 +479,7 @@ export const useJoinFlow = ({
             meetingLinkRef.current = getMeetingLink(token, urlPassword);
             const meetingInfo = await getCachedMeetingInfo(meetingToken);
 
-            setMeetingDetails((prev) => ({
-                ...prev,
-                expirationTime: 1000 * (meetingInfo.MeetingInfo.ExpirationTime ?? 0),
-            }));
+            dispatch(setMeetingInfo({ expirationTime: SECOND * (meetingInfo.MeetingInfo.ExpirationTime ?? 0) }));
         } catch (error: any) {
             reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
             dispatch(setJoiningInProgress(false));

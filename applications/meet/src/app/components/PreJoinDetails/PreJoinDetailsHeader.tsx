@@ -2,22 +2,23 @@ import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { useMeetings } from '@proton/meet/store/hooks/useMeetings';
+import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import { selectIsPersonalRoom } from '@proton/meet/store/slices/meetings';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import type { MeetState } from '@proton/meet/store/store';
 
 type Props = {
-    roomName: string;
     roomId: string;
     instantMeeting: boolean;
 };
 
 const PreJoinDetailsHeaderInternal = ({
-    roomName,
     instantMeeting,
     isPersonalRoom = false,
     meetingsLoading = false,
 }: Omit<Props, 'roomId'> & { isPersonalRoom?: boolean; meetingsLoading?: boolean }) => {
+    const roomName = useMeetSelector(selectRoomName);
+
     const getTitle = () => {
         if (roomName) {
             return roomName;
@@ -72,7 +73,7 @@ export const PreJoinDetailsHeader = (props: Props) => {
     const isGuest = useMeetSelector(selectIsGuest);
 
     return isGuest ? (
-        <PreJoinDetailsHeaderInternal roomName={props.roomName} instantMeeting={props.instantMeeting} />
+        <PreJoinDetailsHeaderInternal instantMeeting={props.instantMeeting} />
     ) : (
         <PreJoinDetailsHeaderLoggedIn {...props} />
     );
