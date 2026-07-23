@@ -4,7 +4,7 @@ import type { IDBPDatabase } from 'idb';
 
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
-import type { Database } from '../db/schema.ts';
+import type { Database } from '../db/schema';
 
 const MAIL_SIGNATURE_CONTEXT = {
     SEARCH_INDEX: 'mail.search.index',

@@ -19,6 +19,17 @@ window.ResizeObserver = jest.fn().mockImplementation(() => ({
 // JSDom does not include a full implementation of webcrypto
 global.crypto.subtle = require('crypto').webcrypto.subtle;
 
+// JSDom's performance only implements now()/timeOrigin, not the User Timing API
+// (mark/measure/clearMarks). jsdom exposes `performance` via a getter with no setter,
+// so we can't replace the object wholesale — instead attach the missing methods,
+// delegating to Node's perf_hooks so mark/measure share a single entry registry.
+const { performance: nodePerformance } = require('perf_hooks');
+global.performance.mark = nodePerformance.mark.bind(nodePerformance);
+global.performance.measure = nodePerformance.measure.bind(nodePerformance);
+global.performance.clearMarks = nodePerformance.clearMarks.bind(nodePerformance);
+global.performance.clearMeasures = nodePerformance.clearMeasures.bind(nodePerformance);
+global.performance.getEntriesByName = nodePerformance.getEntriesByName.bind(nodePerformance);
+
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
