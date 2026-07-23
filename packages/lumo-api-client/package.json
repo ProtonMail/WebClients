@@ -42,9 +42,10 @@
     "types": "index.ts",
     "scripts": {
         "build": "tsc",
+        "check-types": "tsc --noEmit",
         "lint": "eslint --quiet",
         "test": "jest",
-        "type-check": "tsc --noEmit"
+        "test:ci": "jest --coverage --runInBand --ci"
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
