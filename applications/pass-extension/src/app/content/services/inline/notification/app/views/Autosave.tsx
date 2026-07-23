@@ -33,14 +33,14 @@ import noop from '@proton/utils/noop';
 type Props = Extract<NotificationRequest, { action: NotificationAction.AUTOSAVE }>;
 
 const getInitialValues = (
-    { userIdentifier, password, type }: AutosavePayload,
+    { userIdentifier, password, type, iframeUrl }: AutosavePayload,
     { domain, title, optimisticId }: { domain: string; title: MaybeNull<string>; optimisticId: string }
 ): AutosaveFormValues => {
     const name = resolveDefaultItemName({ title, fallback: domain });
 
     return type === AutosaveMode.UPDATE
-        ? { itemId: '', name, password, shareId: '', step: 'select', type, userIdentifier }
-        : { name, optimisticId, password, shareId: '', step: 'edit', type, userIdentifier };
+        ? { itemId: '', name, password, shareId: '', step: 'select', type, userIdentifier, iframeUrl }
+        : { name, optimisticId, password, shareId: '', step: 'edit', type, userIdentifier, iframeUrl };
 };
 
 export const Autosave: FC<Props> = ({ data }) => {
