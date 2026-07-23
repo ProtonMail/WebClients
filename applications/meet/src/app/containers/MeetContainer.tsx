@@ -5,11 +5,11 @@ import type { ConnectionState } from 'livekit-client';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { resetMeetingState } from '@proton/meet/store/resetMeetingState';
 import {
+    selectExpirationTime,
     setMeetingInfo,
     startMeetingDurationTimer,
     stopMeetingDurationTimer,
 } from '@proton/meet/store/slices/meetingInfo';
-import { setIsGuestAdmin } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -25,15 +25,10 @@ import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useStableCallback } from '../hooks/useStableCallback';
 
 interface MeetContainerProps {
-    locked: boolean;
-    maxDuration: number;
-    maxParticipants: number;
     displayName: string;
     handleLeave: () => void;
     handleEndMeeting: () => Promise<void>;
     handleMeetingExpired: () => Promise<void>;
-    shareLink: string;
-    roomName: string;
     handleMeetingLockToggle: () => Promise<void>;
     isDisconnected: boolean;
     startPiP: () => void;
@@ -44,8 +39,6 @@ interface MeetContainerProps {
     instantMeeting: boolean;
     assignHost: (participantUuid: string) => Promise<void>;
     getKeychainIndexInformation: () => (number | undefined)[];
-    expirationTime: number | null;
-    isGuestAdmin: boolean;
     isUsingTurnRelay: boolean;
     liveKitConnectionState: ConnectionState | null;
     showReconnectedMessage: boolean;
@@ -58,15 +51,10 @@ interface MeetContainerProps {
 }
 
 export const MeetContainer = ({
-    expirationTime,
-    maxDuration,
-    maxParticipants,
     displayName,
     handleLeave,
     handleEndMeeting,
     handleMeetingExpired,
-    shareLink,
-    roomName,
     handleMeetingLockToggle,
     isDisconnected,
     startPiP,
@@ -76,7 +64,6 @@ export const MeetContainer = ({
     preparePictureInPicture,
     instantMeeting,
     assignHost,
-    isGuestAdmin,
     getKeychainIndexInformation,
     isUsingTurnRelay,
     liveKitConnectionState,
@@ -100,27 +87,13 @@ export const MeetContainer = ({
     useLayoutEffect(() => {
         dispatch(
             setMeetingInfo({
-                roomName,
-                meetingLink: shareLink,
-                maxDuration,
-                maxParticipants,
-                expirationTime,
                 instantMeeting,
                 displayName,
             })
         );
-        dispatch(setIsGuestAdmin(isGuestAdmin));
-    }, [
-        dispatch,
-        roomName,
-        shareLink,
-        maxDuration,
-        maxParticipants,
-        expirationTime,
-        instantMeeting,
-        displayName,
-        isGuestAdmin,
-    ]);
+    }, [dispatch, instantMeeting, displayName]);
+
+    const expirationTime = useMeetSelector(selectExpirationTime);
 
     useEffect(() => {
         if (!expirationTime) {
