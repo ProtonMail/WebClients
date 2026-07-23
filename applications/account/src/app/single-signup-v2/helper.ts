@@ -69,9 +69,8 @@ import {
 
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
-import { type PlanCard, isRegularPlanCard } from './PlanCardSelector';
-import type { Options, PlanParameters, SignupConfiguration, SignupParameters2, Upsell } from './interface';
-import { UpsellTypes } from './interface';
+import type { Options, PlanCard, PlanParameters, SignupConfiguration, SignupParameters2, Upsell } from './interface';
+import { UpsellTypes, isRegularPlanCard } from './interface';
 
 export const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
     return [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].some((bundlePlan) => plan === bundlePlan);

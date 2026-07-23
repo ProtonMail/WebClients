@@ -15,7 +15,7 @@ import BornPrivateFormContainer from '../../components/form/BornPrivateFormConta
 import BornPrivateFormFooter from '../../components/form/BornPrivateFormFooter';
 import BornPrivateFormHeading from '../../components/form/BornPrivateFormHeading';
 import BornPrivateFormParagraph from '../../components/form/BornPrivateFormParagraph';
-import { Steps, TOTAL_STEPS } from '../EmailReservationSignup';
+import { Steps, TOTAL_STEPS } from '../interface';
 import ParentEmailInput from '../components/ParentEmaiInput';
 
 interface ParentEmailProps {

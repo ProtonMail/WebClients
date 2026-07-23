@@ -16,7 +16,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { srpAuth } from '@proton/shared/lib/srp';
 
-import { useVerifyOwnershipWithPhraseActorRef } from '../../UnauthedLost2FAContainer';
+import { useVerifyOwnershipWithPhraseActorRef } from '../../UnauthedLost2FAContext';
 import { useUnauthedLost2FATelemetry } from '../../useUnauthedLost2FATelemetry';
 
 interface Props {

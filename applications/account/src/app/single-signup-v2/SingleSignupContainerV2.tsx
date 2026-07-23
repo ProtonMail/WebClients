@@ -91,7 +91,6 @@ import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
 import Layout from './Layout';
 import LoginModal from './LoginModal';
-import { isRegularPlanCard } from './PlanCardSelector';
 import { SignupV2ThemeProvider, getSignupV2Theme } from './SignupV2ThemeProvider';
 import type { Step1Rref } from './Step1';
 import Step1 from './Step1';
@@ -110,7 +109,7 @@ import {
     getUserInfo,
 } from './helper';
 import type { OnTriggerModals, SignupModelV2, SignupParameters2 } from './interface';
-import { SignupMode, Steps } from './interface';
+import { SignupMode, Steps, isRegularPlanCard } from './interface';
 import type { TelemetryMeasurementData } from './measure';
 import { getPaymentMethodsAvailable, getPlanNameFromSession, getSignupTelemetryData } from './measure';
 import AccessModal from './modals/AccessModal';
