@@ -4,13 +4,20 @@ import type { LocalVideoTrack } from 'livekit-client';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { isLowEndDevice } from '../../utils/isLowEndDevice';
+import type { CustomBackground as CustomBackgroundImpl } from './CustomBackgroundProcessor';
 import type {
     BackgroundBlur as BackgroundBlurImpl,
     preloadBackgroundBlurAssets as preloadBackgroundBlurAssetsImpl,
 } from './MulticlassBackgroundProcessor';
 import { getConfidenceBoostConfig } from './getConfidenceBoostConfig';
 import type { TunableConstantsOverrides } from './tunableConstants';
-import type { BackgroundBlurProcessor, BackgroundProcessorOptions, BackgroundProcessorVersion } from './types';
+import type {
+    BackgroundBlurProcessor,
+    BackgroundProcessorOptions,
+    BackgroundProcessorVersion,
+    CustomBackgroundProcessor,
+    CustomBackgroundProcessorOptions,
+} from './types';
 
 const SIMPLE_SEGMENTATION_MODEL_PATH = '/assets/background-blur/selfie_segmenter.tflite';
 const MULTICLASS_SEGMENTATION_MODEL_PATH = '/assets/background-blur/selfie_multiclass_256x256.tflite';
@@ -68,6 +75,39 @@ export const createBackgroundProcessor = async (
             isLowEndDevice: lowEndDevice,
             constantOverrides,
         });
+    } catch {
+        return null;
+    }
+};
+
+export const createCustomBackgroundProcessor = async (
+    background: { backgroundColor?: string; imageUrl?: string },
+    forceSimpleSegmentation = false,
+    constantOverrides?: TunableConstantsOverrides
+): Promise<CustomBackgroundProcessor | null> => {
+    if (!supportsBackgroundProcessors() || isMobile()) {
+        return null;
+    }
+
+    try {
+        const { CustomBackground }: { CustomBackground: typeof CustomBackgroundImpl } = await import(
+            /* webpackChunkName: "custom-background-processor" */
+            './CustomBackgroundProcessor'
+        );
+        const lowEndDevice = isLowEndDevice();
+        const useSimpleSegmentation = lowEndDevice || forceSimpleSegmentation;
+
+        const backgroundProcessorOptions = getBackgroundProcessorOptions(useSimpleSegmentation);
+        const modernProcessorsSupported = supportsModernBackgroundProcessors();
+        const dynamicProcessorOptions = { maxFps: modernProcessorsSupported ? 30 : 20 };
+        const processorOptions: CustomBackgroundProcessorOptions = {
+            ...backgroundProcessorOptions,
+            ...dynamicProcessorOptions,
+            ...getConfidenceBoostConfig(),
+            isLowEndDevice: lowEndDevice,
+            constantOverrides,
+        };
+        return CustomBackground(background, undefined, processorOptions);
     } catch {
         return null;
     }

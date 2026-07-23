@@ -11,8 +11,8 @@ import type { TunableConstantsOverrides } from './tunableConstants';
 // version shipping today; `next` carries the segmentation/blur adjustments.
 export type BackgroundProcessorVersion = 'current' | 'next';
 
-export interface BackgroundProcessorOptions extends ProcessorWrapperOptions {
-    blurRadius?: number;
+// Options shared by every background processor; background-specific options extend this.
+export interface BaseBackgroundProcessorOptions extends ProcessorWrapperOptions {
     segmenterOptions?: SegmenterOptions;
     assetPaths?: {
         tasksVisionFileSet?: string;
@@ -24,10 +24,30 @@ export interface BackgroundProcessorOptions extends ProcessorWrapperOptions {
     constantOverrides?: TunableConstantsOverrides;
 }
 
-export type BackgroundBlurProcessor = ProcessorWrapper<BackgroundOptions> & {
+export interface BackgroundProcessorOptions extends BaseBackgroundProcessorOptions {
+    blurRadius?: number;
+}
+
+export interface CustomBackgroundProcessorOptions extends BaseBackgroundProcessorOptions {
+    // Solid CSS color used to fill the background (mutually exclusive with `imageUrl`).
+    backgroundColor?: string;
+    // Image source (object URL, data URL or remote URL) drawn as the background.
+    imageUrl?: string;
+}
+
+type SharedBackgroundProcessorHandle = ProcessorWrapper<BackgroundOptions> & {
     enable: () => void;
     disable: () => void;
     isEnabled: () => boolean;
     getActiveDelegate: () => 'GPU' | 'CPU' | undefined;
+};
+
+export type BackgroundBlurProcessor = SharedBackgroundProcessorHandle & {
     waitUntilBlurApplied?: () => Promise<void>;
+};
+
+export type CustomBackgroundProcessor = SharedBackgroundProcessorHandle & {
+    waitUntilBackgroundApplied?: () => Promise<void>;
+    // Update the background (color or image) without rebuilding the pipeline.
+    setBackground?: (background: { backgroundColor?: string; imageUrl?: string }) => Promise<void>;
 };
