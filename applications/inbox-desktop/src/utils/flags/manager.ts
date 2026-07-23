@@ -35,6 +35,7 @@ class FeatureFlagManager {
                         lastUpdated: 0,
                     },
                 },
+                configFileMode: 0o600,
             });
 
         this.loadFromCache();
