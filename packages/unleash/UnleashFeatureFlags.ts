@@ -175,6 +175,8 @@ enum DriveFeatureFlag {
     // SDK rollouts — names should match @protontech/drive-sdk FeatureFlags enum, or have a manual mapping
     DriveCryptoEncryptBlocksWithPgpAead = 'DriveCryptoEncryptBlocksWithPgpAead',
     DriveSmallFileUpload = 'DriveSmallFileUpload',
+    // Spotlight
+    DriveWebSharingAdminTooltip = 'DriveWebSharingAdminTooltip',
 }
 
 enum DocsFeatureFlag {
