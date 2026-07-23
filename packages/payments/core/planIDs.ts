@@ -1,6 +1,6 @@
 import type { EitherOr, Organization } from '@proton/shared/lib/interfaces';
 
-import { ADDON_NAMES, CYCLE, PLANS } from './constants';
+import { ADDON_NAMES, CYCLE, type PLANS } from './constants';
 import { getDefaultMainCurrency } from './currencies';
 import type { FreeSubscription, PlanIDs } from './interface';
 import {
@@ -14,14 +14,13 @@ import {
 } from './plan/addons';
 import { getPlanFeatureLimit } from './plan/feature-limits';
 import { getPlanNameFromIDs, isMultiUserPersonalPlan } from './plan/helpers';
-import type { Plan, PlansMap } from './plan/interface';
+import type { Plan } from './plan/interface';
 import { getPlanIDs, getSubscriptionsArray, hasLumo, isManagedExternally } from './subscription/helpers';
 import type { Subscription } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from './type-guards';
 
-export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
-export const hasFreePlanIDs = (planIDs: PlanIDs) => !hasPlanIDs(planIDs) || Boolean(planIDs[PLANS.FREE]);
+export { getPlanFromIDs, hasFreePlanIDs, hasPlanIDs } from './plan/helpers';
 
 const getMeetWithEnoughSeats = ({
     planIDs,
@@ -420,11 +419,6 @@ export const setQuantity = (planIDs: PlanIDs, planID: PLANS | ADDON_NAMES, newQu
         [planID]: newQuantity,
     };
 };
-
-export function getPlanFromIDs(planIDs: PlanIDs, plansMap: PlansMap): Plan | undefined {
-    const planName = getPlanNameFromIDs(planIDs);
-    return planName ? plansMap[planName] : undefined;
-}
 
 export function planIDsPositiveDifference(oldPlanIDs: PlanIDs, newPlanIDs: PlanIDs): PlanIDs {
     if (!oldPlanIDs || !newPlanIDs) {
