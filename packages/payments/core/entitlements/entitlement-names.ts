@@ -6,6 +6,7 @@
 export enum EntitlementName {
     ActivityMonitorPass = 'activity-monitor-pass',
     ActivityMonitorVpn = 'activity-monitor-vpn',
+    AdminRoles = 'admin-roles',
     /** Determines eligibility for breach alerts. */
     BreachAlerts = 'breach-alerts',
     /** Indicates whether this is a business. */
@@ -65,6 +66,7 @@ export enum EntitlementName {
     MaxMeetingParticipants = 'max-meeting-participants',
     /** Max members */
     MaxMembers = 'max-members',
+    MaxMembersSubsidiaries = 'max-members-subsidiaries',
     /** Max number of Revisions that can be kept regardless of age */
     MaxRevisionCount = 'max-revision-count',
     /** Max days Revisions can be kept */
@@ -75,6 +77,7 @@ export enum EntitlementName {
     MaxSpace = 'max-space',
     /** Max sub-wallets */
     MaxSubWallets = 'max-sub-wallets',
+    MaxSubsidiaries = 'max-subsidiaries',
     /** Max Vault Item Shares */
     MaxVaultItemShares = 'max-vault-item-shares',
     /** Max Vault Shares */
