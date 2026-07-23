@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import Price from '@proton/components/components/price/Price';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
-import { TaxInclusive } from '../../core/subscription/constants';
+import { TaxMode } from '../../core/subscription/constants';
+import { getTaxMode } from '../../core/subscription/helpers';
 import type { SubscriptionEstimation } from '../../core/subscription/interface';
 
 export const formatTax = (checkResult: SubscriptionEstimation) => {
@@ -11,6 +12,8 @@ export const formatTax = (checkResult: SubscriptionEstimation) => {
     if (!checkResult.Taxes || !taxesQuantity) {
         return null;
     }
+
+    const taxMode = getTaxMode(checkResult);
 
     const amount = checkResult.Taxes.reduce((acc, tax) => acc + tax.Amount, 0);
     const rate = withDecimalPrecision(
@@ -24,8 +27,7 @@ export const formatTax = (checkResult: SubscriptionEstimation) => {
     const taxInclusiveShortElement =
         taxesQuantity > 1 ? c('Payments').t`Including ${rate}% taxes` : c('Payments').t`Including ${rate}% tax`;
 
-    const taxRateElement =
-        checkResult.TaxInclusive === TaxInclusive.EXCLUSIVE ? taxExclusiveShortElement : taxInclusiveShortElement;
+    const taxRateElement = taxMode === TaxMode.EXCLUSIVE ? taxExclusiveShortElement : taxInclusiveShortElement;
 
     const taxAmountElement = (
         <Price key="taxAmount" currency={checkResult.Currency} data-testid="taxAmount">
@@ -43,13 +45,12 @@ export const formatTax = (checkResult: SubscriptionEstimation) => {
             ? c('Payments').jt`Including ${rate}% taxes: ${taxAmountElement}`
             : c('Payments').jt`Including ${rate}% tax: ${taxAmountElement}`;
 
-    const taxRateAndAmountElement =
-        checkResult.TaxInclusive === TaxInclusive.EXCLUSIVE ? taxExclusiveLongElement : taxInclusiveLongElement;
+    const taxRateAndAmountElement = taxMode === TaxMode.EXCLUSIVE ? taxExclusiveLongElement : taxInclusiveLongElement;
 
     return {
         amount,
         rate,
-        inclusive: checkResult.TaxInclusive ?? TaxInclusive.INCLUSIVE,
+        inclusive: taxMode ?? TaxMode.INCLUSIVE,
         currency: checkResult.Currency,
         taxesQuantity,
         taxAmountElement,

@@ -30,7 +30,7 @@ import { getIsB2BAudienceFromPlan, isForbiddenModification } from '../plan/helpe
 import type { PlansMap, SubscriptionPlan } from '../plan/interface';
 import { getPlanFromIDs, hasFreePlanIDs } from '../planIDs';
 import { isFreeSubscription, isPaidSubscription } from '../type-guards';
-import { Renew, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
+import { Renew, SubscriptionPlatform, TaxMode, TrialType } from './constants';
 import { FREE_PLAN } from './freePlans';
 import type { Subscription, SubscriptionCheckForbiddenReason, SubscriptionEstimation } from './interface';
 
@@ -586,12 +586,21 @@ export const getMaximumCycleForApp = (app: ProductParam, currency?: Currency) =>
     return currency && isRegionalCurrency(currency) ? CYCLE.YEARLY : CYCLE.TWO_YEARS;
 };
 
-export function isTaxInclusive(checkResponse?: Pick<SubscriptionEstimation, 'TaxInclusive'>): boolean {
-    return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;
+/**
+ * Prefers `TaxMode` and falls back to the deprecated `TaxInclusive` during the migration.
+ */
+export function getTaxMode(
+    checkResponse?: Pick<SubscriptionEstimation, 'TaxMode' | 'TaxInclusive'>
+): TaxMode | undefined {
+    return checkResponse?.TaxMode ?? (checkResponse?.TaxInclusive as number | undefined);
 }
 
-export function isTaxExclusive(checkResponse?: Pick<SubscriptionEstimation, 'TaxInclusive'>): boolean {
-    return checkResponse?.TaxInclusive === TaxInclusive.EXCLUSIVE;
+export function isTaxInclusive(checkResponse?: Pick<SubscriptionEstimation, 'TaxMode' | 'TaxInclusive'>): boolean {
+    return getTaxMode(checkResponse) === TaxMode.INCLUSIVE;
+}
+
+export function isTaxExclusive(checkResponse?: Pick<SubscriptionEstimation, 'TaxMode' | 'TaxInclusive'>): boolean {
+    return getTaxMode(checkResponse) === TaxMode.EXCLUSIVE;
 }
 
 export const PASS_LAUNCH_OFFER = 'passlaunch';

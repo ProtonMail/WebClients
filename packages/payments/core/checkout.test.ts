@@ -11,7 +11,7 @@ import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
 import { InvalidCouponError, WrongBillingAddressError } from './errors';
 import type { PlanIDs } from './interface';
 import type { Plan } from './plan/interface';
-import { SubscriptionMode } from './subscription/constants';
+import { SubscriptionMode, TaxMode } from './subscription/constants';
 import type { CouponDiscountBreakdownBE, SubscriptionEstimation } from './subscription/interface';
 
 const getPlan = (data: Partial<Plan>) => {
@@ -759,7 +759,7 @@ describe('should get checkout result', () => {
                 },
                 Cycle: 24,
                 SubscriptionMode: 0,
-                TaxInclusive: 1,
+                TaxMode: TaxMode.INCLUSIVE,
                 Taxes: [
                     {
                         Name: 'VAT - Export from Switzerland',
