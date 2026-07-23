@@ -28,7 +28,7 @@ export const AllChatsBulkActionButtons = ({
                 shape="outline"
                 color="weak"
                 size={size}
-                className="all-chats-header-action-button shrink-0 flex flex-nowrap items-center gap-1"
+                className="all-chats-header-action-button shrink-0 flex flex-nowrap items-center gap-2"
                 disabled={disabled}
                 onClick={onBulkDelete}
             >
@@ -39,7 +39,7 @@ export const AllChatsBulkActionButtons = ({
                 shape="outline"
                 size={size}
                 className={clsx(
-                    'all-chats-header-action-button shrink-0 flex flex-nowrap items-center gap-1',
+                    'all-chats-header-action-button shrink-0 flex flex-nowrap items-center gap-2',
                     className
                 )}
                 disabled={disabled}

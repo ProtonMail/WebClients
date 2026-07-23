@@ -308,7 +308,7 @@ const ConversationRow = memo(
                                             name="Star"
                                             size={16}
                                             fill={isStarred ? 'currentColor' : 'none'}
-                                            strokeWidth={isStarred ? 0 : 2}
+                                            strokeWidth={isStarred ? 1.3 : 2}
                                         />
                                     </Button>
                                 </div>
@@ -452,7 +452,7 @@ const AllChatsHeader = ({
     return (
         <div
             className={clsx(
-                'all-chats-header flex items-center gap-3 mb-4 shrink-0 ml-3',
+                'all-chats-header flex items-center gap-3 mb-4 shrink-0 ml-2 md:ml-3',
                 showSelectionActions && 'justify-space-between'
             )}
         >
@@ -462,6 +462,7 @@ const AllChatsHeader = ({
                         checked={allSelected}
                         indeterminate={someSelected}
                         onChange={onToggleSelectAll}
+                        className="ml-1 md:ml-0"
                         aria-label={
                             allSelected
                                 ? c('collider_2025:Action').t`Deselect all`
@@ -470,12 +471,14 @@ const AllChatsHeader = ({
                     />
                 ) : null}
                 <div className="flex items-baseline gap-2 min-w-0">
-                    <h1 className="main-text m-0">{c('collider_2025:Title').t`Chats`}</h1>
+                    <h1 className="main-text m-0 color-norm">{c('collider_2025:Title').t`Chats`}</h1>
                     {hasSelection && !isMobileLayout ? (
-                        <span className="all-chats-selected-count">{c('collider_2025:Label')
+                        <span className="all-chats-selected-count tx-lg">{c('collider_2025:Label')
                             .t`${selectedCount} selected`}</span>
                     ) : null}
-                    {showConversationCount ? <span className="all-chats-count">{conversationCount}</span> : null}
+                    {showConversationCount ? (
+                        <span className="all-chats-count text-lg">{conversationCount}</span>
+                    ) : null}
                 </div>
             </div>
             {showSelectionActions && onBulkDelete && onBulkFavorite ? (
@@ -782,7 +785,7 @@ export const AllChatsView = () => {
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }} header={layoutHeader}>
-            <div className="all-chats-view flex flex-column flex-nowrap flex-1 px-2 min-h-0 py-4">
+            <div className="all-chats-view flex flex-column flex-nowrap flex-1 px-2 min-h-0 py-4 ml-2">
                 <div className="flex flex-column flex-1 w-full mx-auto min-h-0">
                     <AllChatsHeader
                         conversationCount={filteredConversations.length}
