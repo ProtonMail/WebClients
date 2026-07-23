@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { useUser } from '@proton/account/user/hooks';
-import { useAuthentication } from '@proton/components/index';
+import { useGetUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 
-import type { ImportIssue, Importer } from 'proton-mail/helpers/contentSearchV2/import/Importer';
+import type { ImportIssue, Importer } from 'proton-mail/contentSearch/import/Importer';
 
 // The running importer is kept outside React so it outlives the view: the dialog can be
 // closed and reopened, and the next mount reattaches to the still-running import.
@@ -17,27 +17,26 @@ export interface ImporterState {
     /** Issues collected so far, newest run first cleared on start. */
     issues: ImportIssue[];
     /** Estimated minutes remaining, or undefined/`∞` while unknown. */
-    remainingMinutes: string | undefined;
+    remainingMinutes: string;
     /** Start a fresh import, cancelling any previous one. */
     start: () => Promise<void>;
     /** Cancel the running import. */
     stop: () => void;
 }
 
+const getRemainingMinutesFromImporter = (importer: Importer | null) => importer?.remainingMinutes?.toString() ?? '∞';
 /**
  * Binds the view to the (view-outliving) importer: exposes its observable state and the
  * start/stop verbs, and hides all the subscription/seed/cleanup mechanism.
  */
 export function useImporter(): ImporterState {
-    const [user] = useUser();
-    const authentication = useAuthentication();
+    const getUser = useGetUser();
+    const getUserKeys = useGetUserKeys();
     const [importer, setImporter] = useState<Importer | null>(runningImporter);
     const [running, setRunning] = useState(importer?.running ?? false);
     const [progress, setProgress] = useState((importer?.progress ?? 0) * 100);
     const [issues, setIssues] = useState<ImportIssue[]>(importer ? [...importer.issues] : []);
-    const [remainingMinutes, setRemainingMinutes] = useState<string | undefined>(
-        importer?.remainingMinutes?.toString()
-    );
+    const [remainingMinutes, setRemainingMinutes] = useState<string>(getRemainingMinutesFromImporter(importer));
 
     useEffect(() => {
         if (!importer) {
@@ -54,7 +53,7 @@ export function useImporter(): ImporterState {
 
         const unsubscribeProgress = importer.onProgress.subscribe((value) => {
             setProgress(value * 100);
-            setRemainingMinutes(importer.remainingMinutes?.toString());
+            setRemainingMinutes(getRemainingMinutesFromImporter(importer));
             if (!importer.running) {
                 setRunning(false);
                 if (runningImporter === importer) {
@@ -86,11 +85,12 @@ export function useImporter(): ImporterState {
         runningImporter?.stop();
         setIssues([]);
         setProgress(0);
+        const user = await getUser();
         // lazy-load content search code
         const { Importer } = await import(
-            /* webpackChunkName: "content-search-import" */ 'proton-mail/helpers/contentSearchV2/import/Importer'
+            /* webpackChunkName: "content-search-import" */ 'proton-mail/contentSearch/import/Importer'
         );
-        const next = new Importer(user, authentication.getPassword());
+        const next = new Importer(user.ID, getUserKeys);
         runningImporter = next;
         next.start();
         setRunning(true);

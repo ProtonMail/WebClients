@@ -11038,10 +11038,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@proton/proton-foundation-search@npm:2.0.0-preview5":
-  version: 2.0.0-preview5
-  resolution: "@proton/proton-foundation-search@npm:2.0.0-preview5"
-  checksum: 10/916f4541f69095ba647b3b056201d4c0c042faa7d24bf671ee9d3222c23bfe533f13caff8c7b21d37a0148ab70c453d5d2295b92113e85a2608ee02890bdadc4
+"@proton/proton-foundation-search@npm:2.0.0-preview9":
+  version: 2.0.0-preview9
+  resolution: "@proton/proton-foundation-search@npm:2.0.0-preview9"
+  checksum: 10/3192744ed1b4d02ee4aed59ec30ef9d9032fab1abf1471ec0660570e9f174878765d3ce19c7d49ba97e64a399e041f1a40efe7760dce7ec61a8b479862d3fc36
   languageName: node
   linkType: hard
 
@@ -41651,7 +41651,7 @@ __metadata:
     "@proton/pass": "workspace:^"
     "@proton/payments": "workspace:^"
     "@proton/polyfill": "workspace:^"
-    "@proton/proton-foundation-search": "npm:2.0.0-preview5"
+    "@proton/proton-foundation-search": "npm:2.0.0-preview9"
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
@@ -41689,6 +41689,7 @@ __metadata:
     date-fns: "npm:^2.30.0"
     eslint: "npm:^9.39.5"
     eslint-config-prettier: "npm:^10.1.8"
+    fake-indexeddb: "npm:^6.2.5"
     history: "npm:^4.10.1"
     html-webpack-plugin: "npm:^5.6.7"
     idb: "npm:^8.0.3"

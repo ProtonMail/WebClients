@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 
+import { c, msgid } from 'ttag';
+
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Progress from '@proton/components/components/progress/Progress';
+import { useAuthentication } from '@proton/components/index';
 
-import { ImportIssueSeverity } from 'proton-mail/helpers/contentSearchV2/import/Importer';
-import { findEncryptedSearchIndexSize } from 'proton-mail/helpers/contentSearchV2/import/indexSize.ts';
+import { cleanupIndex, lookupDoc } from 'proton-mail/contentSearch/devTools.ts';
+import { ImportIssueSeverity } from 'proton-mail/contentSearch/import/Importer';
+import { findEncryptedSearchIndexSize } from 'proton-mail/contentSearch/import/indexSize.ts';
 
 import { useImporter } from './useImporter';
 
@@ -26,6 +30,7 @@ export function DebugContentSearchView() {
     const [user] = useUser();
     const { running, progress, issues, remainingMinutes, start, stop } = useImporter();
     const [oldIndexSize, setOldIndexSize] = useState<number | false | undefined>(undefined);
+    const authentication = useAuthentication();
 
     useEffect(() => {
         findEncryptedSearchIndexSize(user.ID).then(
@@ -44,22 +49,45 @@ export function DebugContentSearchView() {
     }
 
     if (oldIndexSize === false) {
-        return <div>Something went wrong, close the modal and try again.</div>;
+        return <div>{c('Error').t`Something went wrong, close the modal and try again.`}</div>;
     }
 
     return (
         <div className="flex flex-column flex-nowrap h-full min-h-0">
             <p className="my-2">
-                Found a current encrypted search index with {oldIndexSize} messages.{' '}
+                {c('Info').ngettext(
+                    msgid`Found a current encrypted search index with ${oldIndexSize} message.`,
+                    `Found a current encrypted search index with ${oldIndexSize} messages.`,
+                    oldIndexSize
+                )}{' '}
                 {running
-                    ? "Import in progress, you can close this dialog while it's " +
-                      "running and come back to it later. Don't close the tab though."
-                    : 'You can import it as a new foundation-search index for development purposes.'}
+                    ? c('Info')
+                          .t`Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.`
+                    : c('Info').t`You can import it as a new foundation-search index for development purposes.`}
             </p>
             {!running && (
-                <div>
+                <div className="flex gap-2 my-2">
                     <Button size="small" onClick={() => start()}>
-                        Import
+                        {c('Action').t`Import`}
+                    </Button>
+                    <Button
+                        size="small"
+                        onClick={() => {
+                            const id = prompt(c('Label').t`Document ID`);
+                            if (id) {
+                                lookupDoc(user, authentication.getPassword(), id).catch((err) => console.error(err));
+                            }
+                        }}
+                    >
+                        {c('Action').t`Lookup document`}
+                    </Button>
+                    <Button
+                        size="small"
+                        onClick={() =>
+                            cleanupIndex(user, authentication.getPassword()).catch((err) => console.error(err))
+                        }
+                    >
+                        {c('Action').t`Cleanup`}
                     </Button>
                 </div>
             )}
@@ -68,10 +96,12 @@ export function DebugContentSearchView() {
                     <div className="flex flex-row flex-nowrap items-start gap-2">
                         <div className="flex-1 flex flex-column gap-4">
                             <Progress id="import-progress" max={100} value={progress} />
-                            <label htmlFor="import-progress">{remainingMinutes} minutes remaining &hellip;</label>
+                            <label htmlFor="import-progress">
+                                {c('Info').t`${remainingMinutes} minutes remaining…`}
+                            </label>
                         </div>
                         <Button className="shrink-0" size="small" onClick={() => stop()}>
-                            Cancel
+                            {c('Action').t`Cancel`}
                         </Button>
                     </div>
                 )}
@@ -81,7 +111,11 @@ export function DebugContentSearchView() {
                         className="flex flex-column flex-nowrap flex-1 min-h-0"
                     >
                         <h3 id="import-issues-heading" className="mt-4 mb-2 text-rg text-bold">
-                            {issues.length} issues during import:
+                            {c('Info').ngettext(
+                                msgid`${issues.length} issue during import:`,
+                                `${issues.length} issues during import:`,
+                                issues.length
+                            )}
                         </h3>
                         <ul className="m-0 unstyled flex-1 min-h-0 overflow-y-auto">
                             {issues.map((err, i) => (
