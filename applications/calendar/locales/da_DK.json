@@ -1209,6 +1209,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Tag e-mailproduktivitet til nye højder. Lad ${ BRAND_NAME } Scribe hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Tag e-mailproduktivitet til nye højder. Lad ${ LUMO_SHORT_APP_NAME } hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails."
       ]
     },
     "Attached ics file error": {
@@ -1266,6 +1269,9 @@
       ],
       "You have reached the trial limit.": [
         "Du har nået grænsen for prøveversionen."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_SCRIBE_SEATS } pladser til ${ LUMO_SHORT_APP_NAME }-skriveassistenten i prøveperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -1385,6 +1391,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beskyt dine e-mails og tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-mail-domæner, ${ LUMO_SHORT_APP_NAME }-skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
+        "Beskyt dine e-mails og tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ LUMO_SHORT_APP_NAME }-skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer 15 e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ LUMO_SHORT_APP_NAME }-skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
       ]
     },
     "BF2025: Deal details": {
@@ -6840,6 +6853,12 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Bliv på dit abonnement og få 50% rabat næste måned"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer skriveassistenten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "info": {
@@ -7918,6 +7937,12 @@
       ],
       "for ${ price }": [
         "til ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Tilføj ${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "meet_2025: Addon": {
@@ -8771,6 +8796,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "new_plans: feature highlight": {

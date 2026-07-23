@@ -1141,6 +1141,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ LUMO_SHORT_APP_NAME } pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
       ]
     },
     "Attached ics file error": {
@@ -1179,6 +1182,9 @@
     "b2b_trials_2025_Info": {
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } mest."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } pomočnikov pri pisanju."
       ]
     },
     "b2b_trials_Action": {
@@ -1293,6 +1299,15 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštnih naslovov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje 15 e-poštnih naslovov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več."
       ]
     },
     "BF2025: Deal details": {
@@ -6472,6 +6487,12 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50% popust"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } vsebuje pomočnika pri pisanju"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
       ]
     },
     "info": {
@@ -7476,6 +7497,12 @@
       ],
       "for ${ price }": [
         "za ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Dodaj pomočnika pri pisanju ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Addon": {
@@ -8341,6 +8368,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
       ]
     },
     "new_plans: feature highlight": {
