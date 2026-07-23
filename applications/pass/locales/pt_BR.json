@@ -1372,6 +1372,9 @@
       "Unsupported Bitwarden file format": [
         "Formato de arquivo do Bitwarden não suportado"
       ],
+      "Unsupported file type": [
+        "Tipo de arquivo não suportado"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Erro ao atualizar o cofre \"${ payload.content.name }\""
       ],
@@ -2105,7 +2108,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"

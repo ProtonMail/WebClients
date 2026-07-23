@@ -1366,6 +1366,9 @@
       "Unsupported Bitwarden file format": [
         "Bitwarden-filformat stöds inte"
       ],
+      "Unsupported file type": [
+        "Filtypen stöds inte"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Misslyckades att uppdatera valv ”${ payload.content.name }”"
       ],
@@ -2099,7 +2102,8 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
