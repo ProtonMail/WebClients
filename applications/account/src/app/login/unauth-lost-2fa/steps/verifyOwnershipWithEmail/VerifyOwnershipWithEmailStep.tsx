@@ -24,7 +24,7 @@ import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/f
 
 import { getEmailVerificationCodeText } from '../../../../content/helper';
 import { useRequestNewVerificationCode } from '../../../../unauthed-forgot-password/hooks/useRequestNewVerificationCode';
-import { useVerifyOwnershipWithEmailActorRef } from '../../UnauthedLost2FAContainer';
+import { useVerifyOwnershipWithEmailActorRef } from '../../UnauthedLost2FAContext';
 import { useUnauthedLost2FATelemetry } from '../../useUnauthedLost2FATelemetry';
 
 type VerificationResult = Awaited<ReturnType<typeof initiateVerification>>;

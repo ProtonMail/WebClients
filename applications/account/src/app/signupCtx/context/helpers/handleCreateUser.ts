@@ -6,7 +6,7 @@ import { mergeHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
-import { getHVHeadersBasedOnSignupMode, getPaymentTokenForExternalUsers } from '../../../signup/helper';
+import { getHVHeadersBasedOnSignupMode, getPaymentTokenForExternalUsers, getTokenPayment } from '../../../signup/helper';
 import type {
     AccountData,
     InviteData,
@@ -14,10 +14,6 @@ import type {
     SignupInviteParameters,
 } from '../../../signup/interfaces';
 import { SignupType } from '../../../signup/interfaces';
-
-export const getTokenPayment = (tokenPayment: string | undefined) => {
-    return tokenPayment ? { TokenPayment: tokenPayment } : undefined;
-};
 
 const getSignupTypeQuery = (accountData: AccountData) => {
     if (accountData.signupType === SignupType.Proton) {

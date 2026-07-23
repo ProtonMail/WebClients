@@ -53,8 +53,8 @@ import type { Paths } from '../content/helper';
 import SupportDropdown from '../public/SupportDropdown';
 import { openTroubleshootWithLumo } from '../public/TroubleshootWithLumo';
 import { defaultPersistentKey } from '../public/helper';
-import { RememberMode } from './LoginContainer';
 import SignupButton from './SignupButton';
+import { RememberMode } from './rememberMode';
 
 export interface LoginFormRef {
     getIsLoading: () => boolean;
