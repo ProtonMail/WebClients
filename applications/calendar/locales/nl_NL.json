@@ -1209,6 +1209,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Breng e-mailproductiviteit naar een nieuw niveau. Laat ${ LUMO_SHORT_APP_NAME } u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
       ]
     },
     "Attached ics file error": {
@@ -1266,6 +1269,9 @@
       ],
       "You have reached the trial limit.": [
         "U hebt de proeflimiet bereikt."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Tijdens de proefperiode kunt u maximaal ${ TRIAL_MAX_SCRIBE_SEATS } schrijfassistent-licenties ${ LUMO_SHORT_APP_NAME } hebben."
       ]
     },
     "b2b_trials_Action": {
@@ -1385,6 +1391,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer.",
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-email mailaliassen en meer."
       ]
     },
     "BF2025: Deal details": {
@@ -6840,6 +6853,12 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Behoud uw abonnement aan en u ontvangt 50% korting op uw volgende maand"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } bevat de schrijfassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
       ]
     },
     "info": {
@@ -7628,6 +7647,12 @@
       ],
       "URL wildcard pattern": [
         "URL-jokertekenpatroon"
+      ],
+      "Client": [
+        "Klant"
+      ],
+      "Client version": [
+        "Klantenversie"
       ]
     },
     "label": {
@@ -7912,6 +7937,12 @@
       ],
       "for ${ price }": [
         "voor ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Voeg ${ LUMO_SHORT_APP_NAME } schrijfassistent toe"
       ]
     },
     "meet_2025: Addon": {
@@ -8765,6 +8796,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
       ]
     },
     "new_plans: feature highlight": {
