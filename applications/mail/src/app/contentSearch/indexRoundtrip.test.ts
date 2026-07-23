@@ -59,9 +59,19 @@ describe('IndexWriter + IndexReader roundtrip', () => {
         key = await generateAndImportKey();
     });
 
+    // writeBatch no longer commits on its own: it stages an EncryptedBlobTransaction that the caller
+    // encrypts and writes as part of an idb transaction (mirrors how Import commits a batch).
+    const writeMessages = async (writer: IndexWriter, messages: { metadata: ESBaseMessage; body: string }[]) => {
+        const blobTxn = await writer.writeBatch(messages);
+        const sealed = await blobTxn.encrypt();
+        const txn = db.transaction(['config', 'index_blobs'], 'readwrite');
+        await sealed.verifyAndWrite(txn);
+        await txn.done;
+    };
+
     it('writes two documents and returns only the one matching the query', async () => {
         const writer = new IndexWriter(db, key);
-        await writer.writeBatch([
+        await writeMessages(writer, [
             makeMessage('msg-apple', 'Fruit basket', 'hello world apple pie'),
             makeMessage('msg-banana', 'Grocery list', 'goodbye cruel banana bread'),
         ]);
@@ -78,7 +88,7 @@ describe('IndexWriter + IndexReader roundtrip', () => {
 
     it('filters by time range, returning only documents inside the bounds', async () => {
         const writer = new IndexWriter(db, key);
-        await writer.writeBatch([
+        await writeMessages(writer, [
             makeMessage('msg-old', 'Report', 'quarterly shared summary', 1_000),
             makeMessage('msg-new', 'Report', 'quarterly shared summary', 2_000),
         ]);

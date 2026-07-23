@@ -1,12 +1,30 @@
 import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
-import type { IDBPDatabase, IDBPObjectStore, IDBPTransaction } from 'idb';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+import type { IDBPDatabase, IDBPObjectStore } from 'idb';
 
 import type { CleanupEvent, ExportEvent, QueryEvent, WriteEvent } from '@proton/proton-foundation-search';
 import { SerDes } from '@proton/proton-foundation-search';
 
 import type { BlobCache } from '../cache/BlobCache';
-import type { Database } from '../db/schema';
+import type { Database, DatabaseStores, ReadTransaction, ReadWriteTransaction } from '../db/schema';
 import type { Kind, OfKind } from '../utils/eventTypeGuards';
+
+/** The open, event-handling phase of a blob transaction. This is what {@link EncryptedBlobTransaction.start}
+ * hands back: you stage changes by feeding it events, then `encrypt()` *consumes* it and returns the
+ * {@link SealedBlobTransaction}. Because `verifyAndWrite` lives on the sealed type and not here, you can't
+ * write before encrypting; because the event methods live here and not on the sealed type, you can't stage
+ * more changes after. */
+export type OpenBlobTransaction = Omit<EncryptedBlobTransaction, 'verifyAndWrite'>;
+
+/** The sealed, write-ready phase: the blobs have been encrypted and all that is left is to verify the
+ * revision hasn't changed and write. The only way to obtain one is `encrypt()`, which is what guarantees
+ * at the type level that encryption happened first and that no more events can be handled. */
+export type SealedBlobTransaction = Pick<EncryptedBlobTransaction, 'verifyAndWrite'>;
+
+/**
+ * AES-GCM additional authenticated data for index blobs, to bind the ciphertext to the blob id
+ */
+export const getBlobEncryptionContext = (blobId: string) => utf8StringToUint8Array(`mail.search.index.blob.${blobId}`);
 
 /** This class deals with the fact that idb transactions are interrupted by the async nature of webcrypto.
  * It reads the current revision number when it starts, and verifies that it is still the same when
@@ -18,7 +36,7 @@ import type { Kind, OfKind } from '../utils/eventTypeGuards';
  * then encrypt the writes using web crypto, and then write everything in one idb transaction after
  * confirming that the revision hasn't changed.
  */
-export class EncryptedBlobTransaction {
+export class EncryptedBlobTransaction implements OpenBlobTransaction, SealedBlobTransaction {
     /** blobs that are modified in this transaction, kept in memory for the lifetime of the transaction */
     private writtenBlobs = new Map<string, Uint8Array<ArrayBuffer>>();
     /** encrypted version of the above map. If blobs are added to the above after encrypting,
@@ -29,20 +47,33 @@ export class EncryptedBlobTransaction {
     private trackedBlobIds = new Set<string>();
     /** blob ids that are deleted during this transaction */
     private deleteBlobIds = new Set<string>();
+    /** encrypt has been called, can't apply more changes */
+    private consumed = false;
 
-    constructor(
+    private constructor(
         private cache: BlobCache | undefined,
         private db: IDBPDatabase<Database>,
         private indexKey: CryptoKey,
         private revision: number
     ) {}
 
-    static async start(cache: BlobCache | undefined, db: IDBPDatabase<Database>, indexKey: CryptoKey) {
+    static async start(
+        cache: BlobCache | undefined,
+        db: IDBPDatabase<Database>,
+        indexKey: CryptoKey
+    ): Promise<OpenBlobTransaction> {
         const revision = await EncryptedBlobTransaction.readRevision(db.transaction('config').store);
         return new EncryptedBlobTransaction(cache, db, indexKey, revision);
     }
 
+    private assertNotConsumed() {
+        if (this.consumed) {
+            throw new Error('transaction has been consumed');
+        }
+    }
+
     async handleLoadEvent(event: OfKind<QueryEvent | WriteEvent | ExportEvent | CleanupEvent, typeof Kind.Load>) {
+        this.assertNotConsumed();
         const id = event.id().toString();
         const cached = this.cache?.get(id);
         if (cached) {
@@ -74,11 +105,12 @@ export class EncryptedBlobTransaction {
         if (!blobRecord) {
             return;
         }
-        const decrypted = await decryptData(this.indexKey, blobRecord);
+        const decrypted = await decryptData(this.indexKey, blobRecord, getBlobEncryptionContext(id));
         return decrypted;
     }
 
     handleSaveEvent(event: OfKind<CleanupEvent | WriteEvent, typeof Kind.Save>) {
+        this.assertNotConsumed();
         const id = event.id().toString();
         const cached = event.recv();
         this.cache?.set(id, cached);
@@ -91,27 +123,34 @@ export class EncryptedBlobTransaction {
     }
 
     handleReleaseEvent(event: OfKind<CleanupEvent, typeof Kind.Release>) {
+        this.assertNotConsumed();
         const id = event.id().toString();
         this.cache?.delete(id);
         this.deleteBlobIds.add(id);
     }
 
     trackBlob(id: string) {
+        this.assertNotConsumed();
         this.trackedBlobIds.add(id);
     }
 
     /** should be called after all modifications have been made, before verifyAndWrite.
-     * No idb transactions should be open, as web crypto being async will auto-commit them. */
-    async encrypt(): Promise<void> {
+     * No idb transactions should be open, as web crypto being async will auto-commit them.
+     * This returns the interface that allows writing, to enforce not calling
+     * verifyAndWrite without calling encrypt. */
+    async encrypt(): Promise<SealedBlobTransaction> {
+        this.assertNotConsumed();
+        this.consumed = true;
         const encryptedEntries = await Promise.all(
             Array.from(this.writtenBlobs.entries()).map(
                 async ([id, buffer]): Promise<[string, Uint8Array<ArrayBuffer>]> => {
-                    const ciphertext = await encryptData(this.indexKey, buffer);
+                    const ciphertext = await encryptData(this.indexKey, buffer, getBlobEncryptionContext(id));
                     return [id, ciphertext];
                 }
             )
         );
         this.encryptedBlobsToWrite = new Map(encryptedEntries);
+        return this;
     }
 
     /** verifies the transaction is still valid, writes all changes
@@ -119,7 +158,7 @@ export class EncryptedBlobTransaction {
      * in here can be written as part of a larger idb transaction,
      * often useful to commit related changes together.
      */
-    async verifyAndWrite(txn: IDBPTransaction<Database, any, 'readwrite'>) {
+    async verifyAndWrite<Stores extends DatabaseStores>(txn: ReadWriteTransaction<Stores, 'config' | 'index_blobs'>) {
         if (this.encryptedBlobsToWrite?.size !== this.writtenBlobs.size) {
             throw new Error('Call encrypt() first');
         }
@@ -135,37 +174,29 @@ export class EncryptedBlobTransaction {
         }
         //  no need to await put, txn.done is enough
         void txn.objectStore('config').put(this.revision + 1, 'blobs_revision');
-    }
-    /** verifies the transaction is still valid, writes all changes,
-     * and also deletes and blobs that haven't been tracked with `trackBlob`.
-     * Only needed during cleanup.
-     * Quite a mouthful but very explicit on purpose, don't want to
-     * make this part of verifyAndWrite because when not all blobs
-     * are tracked this could deleted blobs that are still in use. */
-    async verifyAndWriteAndDeleteUntracked(txn: IDBPTransaction<Database, any, 'readwrite'>) {
-        await this.verifyAndWrite(txn);
-        if (this.trackedBlobIds.size === 0) {
-            throw new Error('no blobs are tracked, this would delete all blobs');
-        }
-        const blobStore = txn.objectStore('index_blobs');
-        let keyCursor = await blobStore.openKeyCursor();
-        while (keyCursor) {
-            if (!this.trackedBlobIds.has(keyCursor.key as string)) {
-                // Delete via the store, not the cursor: a key-only cursor (openKeyCursor) is not
-                // allowed to delete() per the IndexedDB spec and throws InvalidStateError.
-                // no need to await delete, txn.done at end is enough
-                void blobStore.delete(keyCursor.key);
+        // if tracking blobs, remove any that are not tracked.
+        // this check should never prevent cleaning up as
+        // at least the metadata blob will always be tracked
+        if (this.trackedBlobIds.size !== 0) {
+            let keyCursor = await blobStore.openKeyCursor();
+            while (keyCursor) {
+                if (!this.trackedBlobIds.has(keyCursor.key as string)) {
+                    // Delete via the store, not the cursor: a key-only cursor (openKeyCursor) is not
+                    // allowed to delete() per the IndexedDB spec and throws InvalidStateError.
+                    // no need to await delete, txn.done at end is enough
+                    void blobStore.delete(keyCursor.key);
+                }
+                keyCursor = await keyCursor.continue();
             }
-            keyCursor = await keyCursor.continue();
         }
     }
 
     /** should only be used for readonly transactions, where aborting does not make sense */
-    verify(txn: IDBPTransaction<Database, any, 'readonly'>): Promise<void> {
+    verify<Stores extends DatabaseStores>(txn: ReadTransaction<Stores, 'config'>): Promise<void> {
         return this.verifyInternal(txn);
     }
 
-    private async verifyInternal(txn: IDBPTransaction<Database, any, any>): Promise<void> {
+    private async verifyInternal<Stores extends DatabaseStores>(txn: ReadTransaction<Stores, 'config'>): Promise<void> {
         const currentRevision = await EncryptedBlobTransaction.readRevision(txn.objectStore('config'));
         if (currentRevision !== this.revision) {
             throw new Error(
