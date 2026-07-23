@@ -112,22 +112,27 @@ export const toHandle = (label: string): string => {
 
 const clampScore = (n: number): number => Math.max(0, Math.min(100, Math.round(n)));
 
-/** A friendly label for an overall exposure score (higher = more exposed = worse). */
-export const exposureGrade = (score: number): string => {
-    if (score >= 80) {
-        return 'Fully exposed';
+/** Canonical privacy-type label for an exposure score (0–100, higher = more exposed). */
+export const privacyTypeLabel = (score: number): string => {
+    const clamped = clampScore(score);
+
+    if (clamped >= 81) {
+        return 'Digital oversharing';
     }
-    if (score >= 60) {
-        return 'Highly exposed';
+    if (clamped >= 61) {
+        return 'Easy to profile';
     }
-    if (score >= 40) {
-        return 'Exposed';
+    if (clamped >= 41) {
+        return 'Leaving receipts';
     }
-    if (score >= 20) {
-        return 'Fairly private';
+    if (clamped >= 21) {
+        return 'Hard to read';
     }
-    return 'Well protected';
+    return 'Privacy maxxing';
 };
+
+/** @deprecated Use `privacyTypeLabel` — kept for callers that still reference the old name. */
+export const exposureGrade = privacyTypeLabel;
 
 /**
  * Derive the share-safe card payload from the full report. We surface exposure directly
@@ -142,5 +147,5 @@ export const deriveCardData = (report: PaperTrailReport): PaperTrailCardData => 
     const exposureScore = areas.length
         ? clampScore(areas.reduce((sum, area) => sum + area.exposureScore, 0) / areas.length)
         : 0;
-    return { exposureScore, grade: exposureGrade(exposureScore), areas, estimatedValueUsd: report.estimatedValueUsd };
+    return { exposureScore, grade: privacyTypeLabel(exposureScore), areas, estimatedValueUsd: report.estimatedValueUsd };
 };

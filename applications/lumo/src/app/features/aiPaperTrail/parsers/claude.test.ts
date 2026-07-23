@@ -32,11 +32,11 @@ describe('claude parser', () => {
         const result = parseClaudeExport(sample);
         expect(result.source).toBe('claude');
         expect(result.conversations).toHaveLength(2);
-        expect(result.conversations[0].userPrompts).toEqual([
+        expect(result.conversations[0].userPrompts.map((prompt) => prompt.text)).toEqual([
             'Is my blood pressure of 150/95 dangerous?',
             'What about my cholesterol?',
         ]);
         expect(result.conversations[0].createdAt).toBe(Math.floor(Date.parse('2024-01-02T10:00:00Z') / 1000));
-        expect(result.conversations[1].userPrompts).toEqual(['Old export shape']);
+        expect(result.conversations[1].userPrompts.map((prompt) => prompt.text)).toEqual(['Old export shape']);
     });
 });
