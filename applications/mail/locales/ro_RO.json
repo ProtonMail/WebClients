@@ -14,7 +14,7 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+        "${ name } şi încă ${ remainingCount } potențiale breșe au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
@@ -1524,9 +1524,7 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie",
-        "Aprobare chei",
-        "Aprobare chei"
+        "Aprobare cheie"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -7160,7 +7158,7 @@
         "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Întrerupătorul de conexiune**: oprește divulgările de date prin blocarea conexiunii dacă VPN-ul cade în mod neașteptat."
+        "**Întrerupătorul de conexiune**: oprește breșele de date prin blocarea conexiunii dacă VPN-ul cade în mod neașteptat."
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
         "**Aceștia primesc ${ refereeRewardAmount }** în credite dacă se abonează."
@@ -11762,7 +11760,7 @@
         "Personalizare logo spațiu de lucru"
       ],
       "Data breach monitoring": [
-        "Monitorizarea divulgării datelor"
+        "Monitorizare breșe de date"
       ],
       "Data retention policies": [
         "Politici de păstrare a datelor"
@@ -13967,7 +13965,7 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+        "${ name } şi încă ${ remainingCount } potențiale breșe au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
@@ -15150,7 +15148,7 @@
         "Transferare automată mesaje ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
+        "Alerte breșe de date ${ strongArgument }"
       ],
       "Desktop app": [
         "Aplicația pentru desktop"
@@ -16272,7 +16270,7 @@
         "Măriți-vă intimitatea cu mai multe adrese"
       ],
       "Information exposed in breach": [
-        "Informații expuse în divulgare"
+        "Informații expuse în breșă"
       ],
       "Insert contacts": [
         "Inserare contacte"
@@ -16451,7 +16449,7 @@
         "Nu există atașamente"
       ],
       "No breaches detected": [
-        "Nu s-au detectat divulgări"
+        "Nu s-au detectat breșe"
       ],
       "No need to empty the trash": [
         "Nu trebuie să goliți gunoiul"
