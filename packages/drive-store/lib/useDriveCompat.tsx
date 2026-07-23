@@ -12,11 +12,12 @@ import { useMoveToFolderModal } from '../components/modals/MoveToFolderModal/Mov
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import type { ShareURL } from '../store';
 import { useDefaultShare, useShareUrl } from '../store';
-import { useDriveCrypto } from '../store/_crypto';
-import type { DocumentAction, DocumentType } from '../store/_documents';
-import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
-import { useLink } from '../store/_links';
-import { getSharedLink } from '../store/_shares';
+import useDriveCrypto from '../store/_crypto/useDriveCrypto';
+import { useDriveDocsFeatureFlag } from '../store/_documents/useDriveDocsFeatureFlag';
+import type { DocumentAction, DocumentType } from '../store/_documents/useOpenDocument';
+import { useOpenDocument } from '../store/_documents/useOpenDocument';
+import useLink from '../store/_links/useLink';
+import { getSharedLink } from '../store/_shares/shareUrl';
 import type { PathItem } from '../store/_views/useLinkPath';
 import { useAbortSignal } from '../store/_views/utils';
 import type { CacheConfig } from './CacheConfig';

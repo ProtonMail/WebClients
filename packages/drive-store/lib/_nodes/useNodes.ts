@@ -1,5 +1,5 @@
 import { useLinkPath } from '@proton/drive-store/store';
-import { useLinks } from '@proton/drive-store/store/_links';
+import useLinks from '@proton/drive-store/store/_links/useLinks';
 import { useDirectSharingInfo } from '@proton/drive-store/store/_shares/useDirectSharingInfo';
 import type { PathItem } from '@proton/drive-store/store/_views/useLinkPath';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';

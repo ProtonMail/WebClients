@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 
 import type { VERIFICATION_STATUS } from '@protontech/crypto';
+
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
 
 import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { logError } from '../../utils/errorHandling';
 import { createAsyncQueue } from '../../utils/parallelRunners';
-import { useLink } from '../_links';
+import useLink from '../_links/useLink';
 
 interface DownloadProviderState {
     /**

@@ -4,8 +4,8 @@ import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { DriveEvent, DriveEvents } from '../_events';
-import { useDriveEventManager } from '../_events';
+import type { DriveEvent, DriveEvents } from '../_events/interface';
+import { useDriveEventManager } from '../_events/useDriveEventManager';
 import type { DecryptedLink, EncryptedLink, LinkShareUrl, SignatureIssues } from './interface';
 import { isDecryptedLinkSame, isEncryptedLinkSame } from './link';
 

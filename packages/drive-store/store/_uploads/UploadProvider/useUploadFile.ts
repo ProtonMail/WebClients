@@ -1,7 +1,7 @@
-import { c } from 'ttag';
-
 import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+import { c } from 'ttag';
+
 import {
     queryCreateFile,
     queryCreateFileRevision,
@@ -28,13 +28,16 @@ import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflic
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import retryOnError from '../../../utils/retryOnError';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
-import { useDebouncedRequest } from '../../_api';
-import { integrityMetrics } from '../../_crypto';
-import { useDriveEventManager } from '../../_events';
-import type { DecryptedLink } from '../../_links';
-import { useLink, useLinksActions, validateLinkName } from '../../_links';
-import type { ShareTypeString } from '../../_shares';
-import { getShareTypeString, useShare } from '../../_shares';
+import useDebouncedRequest from '../../_api/useDebouncedRequest';
+import integrityMetrics from '../../_crypto/integrityMetrics';
+import { useDriveEventManager } from '../../_events/useDriveEventManager';
+import type { DecryptedLink } from '../../_links/interface';
+import useLink from '../../_links/useLink';
+import useLinksActions from '../../_links/useLinksActions';
+import { validateLinkName } from '../../_links/validation';
+import type { ShareTypeString } from '../../_shares/interface';
+import { getShareTypeString } from '../../_shares/shareType';
+import useShare from '../../_shares/useShare';
 import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
 import { useVolumesState } from '../../_volumes';
 import { MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_BLOCKS_LOAD } from '../constants';

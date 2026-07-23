@@ -6,8 +6,9 @@ import type { UserShareResult } from '@proton/shared/lib/interfaces/drive/share'
 import { type GetDriveVolumeResult, VolumeState, VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { findDefaultPhotosShareId, findDefaultShareId, useSharesStore } from '../../zustand/share/shares.store';
-import { shareMetaShortToShare, useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
+import { shareMetaShortToShare } from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import useDriveCrypto from '../_crypto/useDriveCrypto';
 import { useDebouncedFunction } from '../_utils';
 import { useVolumesState } from '../_volumes';
 import { type Share, ShareType, type ShareWithKey } from './interface';

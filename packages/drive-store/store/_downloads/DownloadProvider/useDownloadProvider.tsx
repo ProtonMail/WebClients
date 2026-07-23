@@ -19,7 +19,7 @@ import {
     isTransferProgress,
 } from '../../../utils/transfer';
 import { usePublicShareStore } from '../../../zustand/public/public-share.store';
-import type { SignatureIssues } from '../../_links';
+import type { SignatureIssues } from '../../_links/interface';
 import { useTransferLog } from '../../_transfer';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import fileSaver from '../fileSaver/fileSaver';

@@ -10,7 +10,8 @@ import type { ListDrivePendingInvitationsPayload } from '@proton/shared/lib/inte
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { shareInvitationDetailsPayloadToShareInvitationDetails, useDebouncedRequest } from '../_api';
+import { shareInvitationDetailsPayloadToShareInvitationDetails } from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 import {
     DEFAULT_SORTING,

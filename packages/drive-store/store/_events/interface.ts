@@ -1,7 +1,7 @@
 import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
-import type { EncryptedLink } from '../_links';
+import type { EncryptedLink } from '../_links/interface';
 
 export type EventHandler = (
     volumeId: string,

@@ -1,5 +1,6 @@
 import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, serverTime, updateServerTime } from '@protontech/crypto';
+
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
@@ -18,6 +19,7 @@ import type {
     VerificationData,
 } from './interface';
 import type { Media, ThumbnailInfo } from './media';
+import { setWorkerConfig } from './worker/workerConfig';
 
 type GenerateKeysMessage = {
     command: 'generate_keys';
@@ -243,6 +245,7 @@ export class UploadWorker {
             switch (data.command) {
                 case 'config':
                     this.config = data.data;
+                    setWorkerConfig(data.data);
                     break;
                 case 'generate_keys':
                     (async (data) => {

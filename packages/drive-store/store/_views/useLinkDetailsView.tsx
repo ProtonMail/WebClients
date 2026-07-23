@@ -7,10 +7,10 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { getIsPublicContext } from '../../utils/getIsPublicContext';
 import { useCheckLinkSignatures } from '../_actions/useCheckLinkSignatures';
 import type { useDownload } from '../_downloads';
-import type { DecryptedLink, SignatureIssues } from '../_links';
-import { useLink } from '../_links';
-import { useShareUrl } from '../_shares';
+import type { DecryptedLink, SignatureIssues } from '../_links/interface';
+import useLink from '../_links/useLink';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
+import useShareUrl from '../_shares/useShareUrl';
 
 /**
  * useLinkDetailsView loads link if not cached yet with all signature issues

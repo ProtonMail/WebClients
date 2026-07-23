@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { queryResolveContextShare } from '@proton/shared/lib/api/drive/share';
 
-import { useDebouncedRequest } from '../../store/_api';
+import useDebouncedRequest from '../../store/_api/useDebouncedRequest';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import type { LegacyNodeMeta } from '../NodeMeta';

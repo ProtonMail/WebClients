@@ -5,7 +5,7 @@ import { queryVolumeSharedLinks } from '@proton/shared/lib/api/drive/volume';
 import type { ListDriveSharedByMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 import type { ListDriveVolumeSharedLinksPayload } from '@proton/shared/lib/interfaces/drive/volume';
 
-import { useDebouncedRequest } from '../../_api';
+import useDebouncedRequest from '../../_api/useDebouncedRequest';
 import type { DecryptedLink } from '../interface';
 import useLinksState from '../useLinksState';
 import type { FetchLoadLinksMeta } from './interface';

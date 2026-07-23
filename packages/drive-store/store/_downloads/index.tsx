@@ -1,7 +1,8 @@
 import { useUser } from '@proton/account/user/hooks';
 
-import { usePublicSession } from '../_api';
-import { useLinksListing, usePublicLinksListing } from '../_links';
+import usePublicSession from '../_api/usePublicSession';
+import useLinksListing from '../_links/useLinksListing/useLinksListing';
+import usePublicLinksListing from '../_links/useLinksListing/usePublicLinksListing';
 import { DownloadProvider } from './DownloadProvider';
 import { ThumbnailsDownloadProvider } from './ThumbnailDownloadProvider';
 import useDownload from './useDownload';

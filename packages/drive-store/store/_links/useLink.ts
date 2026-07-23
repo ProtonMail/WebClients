@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { queryGetLink } from '@proton/shared/lib/api/drive/link';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
@@ -22,19 +22,15 @@ import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getIsPublicContext } from '../../utils/getIsPublicContext';
 import type { MetricUserPlan } from '../../utils/type/MetricTypes';
 import { tokenIsValid } from '../../utils/url/token';
-import { linkMetaToEncryptedLink, revisionPayloadToRevision, useDebouncedRequest } from '../_api';
-import type { IntegrityMetrics, VerificationKey } from '../_crypto';
-import { integrityMetrics, useDriveCrypto } from '../_crypto';
-import {
-    type Share,
-    ShareType,
-    type ShareTypeStringWithPublic,
-    type ShareWithKey,
-    getShareTypeString,
-    useDefaultShare,
-    useShare,
-} from '../_shares';
+import { linkMetaToEncryptedLink, revisionPayloadToRevision } from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import integrityMetrics, { type IntegrityMetrics, type VerificationKey } from '../_crypto/integrityMetrics';
+import useDriveCrypto from '../_crypto/useDriveCrypto';
+import { type Share, ShareType, type ShareTypeStringWithPublic, type ShareWithKey } from '../_shares/interface';
+import { getShareTypeString } from '../_shares/shareType';
+import useDefaultShare from '../_shares/useDefaultShare';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
+import useShare from '../_shares/useShare';
 import { useGetMetricsUserPlan } from '../_user/useGetMetricsUserPlan';
 import { useDebouncedFunction } from '../_utils';
 import { decryptExtendedAttributes } from './extendedAttributes';

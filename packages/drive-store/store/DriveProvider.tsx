@@ -1,13 +1,13 @@
 import type { ReactNode } from 'react';
 
-import { PublicSessionProvider } from './_api';
+import { PublicSessionProvider } from './_api/usePublicSession';
 import { DevicesProvider } from './_devices';
 import { DownloadsProvider, PublicDownloadsProvider } from './_downloads';
-import { DriveEventManagerProvider } from './_events';
+import { DriveEventManagerProvider } from './_events/useDriveEventManager';
 import { InvitationsStateProvider } from './_invitations/useInvitationsState';
-import { LinksProvider, PublicLinksProvider } from './_links';
+import { LinksProvider, PublicLinksProvider } from './_links/index';
 import { SearchProvider } from './_search';
-import { SharesProvider } from './_shares';
+import { SharesProvider } from './_shares/index';
 import { UploadProvider } from './_uploads';
 import { PublicUploadProvider } from './_uploads/UploadProvider/UploadProvider';
 import { VolumesProvider } from './_volumes';
