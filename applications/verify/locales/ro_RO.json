@@ -72,6 +72,14 @@
         "Afișare factură"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Duceți productivitatea mesageriei la un nou nivel. Lăsați-l pe ${ LUMO_SHORT_APP_NAME } să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
@@ -1037,6 +1045,12 @@
       ]
     },
     "Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
@@ -1199,6 +1213,9 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } custom email domain": [
         "Un domeniu personal de e-mail",
