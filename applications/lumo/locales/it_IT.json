@@ -997,6 +997,9 @@
       "Collapse ${ LUMO_SHORT_APP_NAME }": [
         "Comprimi ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Connectors": [
+        "Connettori"
+      ],
       "Continue": [
         "Continua"
       ],
@@ -1867,6 +1870,9 @@
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Descrivi un workflow in un linguaggio semplice per ottenere un grafo e del codice eseguibile. Accedi per utilizzare questa funzionalità."
       ],
+      "Disabled": [
+        "Disabilitato"
+      ],
       "Domain name": [
         "Nome dominio"
       ],
@@ -1878,6 +1884,9 @@
       ],
       "Earlier messages were summarized to make room, so they no longer take up space here.": [
         "I messaggi precedenti sono stati riassunti per fare spazio, quindi non occupano più spazio qui."
+      ],
+      "Enabled": [
+        "Abilitato"
       ],
       "Error processing attachment": [
         "Errore durante l'elaborazione dell'allegato"
@@ -1992,6 +2001,9 @@
       ],
       "No calls": [
         "Nessuna chiamata"
+      ],
+      "No connected connectors": [
+        "Nessun connettore collegato"
       ],
       "No content available.": [
         "Nessun contenuto disponibile."
@@ -2988,7 +3000,7 @@
         "Migliora la tua esperienza con l'IA aziendale"
       ],
       "From only": [
-        "A partire da solo"
+        "A partire da"
       ],
       "Get": [
         "Ottieni"
@@ -3012,7 +3024,7 @@
         "Passa a ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
-        "Passa a ${ LUMO_SHORT_APP_NAME } Pro"
+        "Passa alla versione Pro di ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "collider_2025: Warning": {
@@ -3091,6 +3103,11 @@
       ],
       "You're getting close to the number of projects ${ LUMO_SHORT_APP_NAME } can keep purring over.": [
         "Ti stai avvicinando al numero di progetti che ${ LUMO_SHORT_APP_NAME } può gestire continuando a fare le fusa."
+      ]
+    },
+    "collider_2025: Web Extract": {
+      "Failed to extract": [
+        "Estrazione non riuscita"
       ]
     },
     "collider_2025: Web Search": {
@@ -3409,11 +3426,17 @@
       "New project": [
         "Nuovo progetto"
       ],
+      "Projects": [
+        "Progetti"
+      ],
       "Save": [
         "Salva"
       ],
       "Search": [
         "Cerca"
+      ],
+      "See all": [
+        "Mostra tutto"
       ],
       "Send": [
         "Invia"
@@ -3698,6 +3721,9 @@
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Su questa scheda non sono presenti dettagli personali, ma solo il tuo punteggio di esposizione per area. Più è basso, meno dati hai condiviso."
+      ],
+      "No projects yet": [
+        "Non ci sono ancora progetti"
       ],
       "Now protect the person behind it.": [
         "Ora proteggi la persona che c'è dietro."
@@ -6924,6 +6950,12 @@
       ],
       "City": [
         "Città"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versione Client"
       ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
