@@ -1,23 +1,6 @@
-import type { Organization } from '@proton/shared/lib/interfaces';
-
-import {
-    ADDON_NAMES,
-    ADDON_PREFIXES,
-    CYCLE,
-    PLANS,
-    PLAN_TYPES,
-    TRIAL_MAX_DEDICATED_IPS,
-    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
-    TRIAL_MAX_LUMO_SEATS,
-    TRIAL_MAX_SCRIBE_SEATS,
-    TRIAL_MAX_USERS,
-} from '../constants';
-import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
-import { getPlanIDs, hasLumoMobileSubscription, isB2BTrial } from '../subscription/helpers';
-import type { Subscription } from '../subscription/interface';
-import { isFreeSubscription } from '../type-guards';
+import { ADDON_NAMES, ADDON_PREFIXES, PLANS, PLAN_TYPES } from '../constants';
+import type { Currency, PlanIDs } from '../interface';
 import { PlanState } from './constants';
-import { getPlansLimit, getPlansQuantity } from './feature-limits';
 import type { Plan, PlansMap, StrictPlan } from './interface';
 
 export function isPlanEnabled(plan: Plan): boolean {
@@ -42,6 +25,15 @@ export function getPlanNameFromIDs(planIDs: PlanIDs): PLANS | undefined {
         const planNumber = planIDs[key as PLANS] ?? 0;
         return planNumber > 0;
     });
+}
+
+export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
+
+export const hasFreePlanIDs = (planIDs: PlanIDs) => !hasPlanIDs(planIDs) || Boolean(planIDs[PLANS.FREE]);
+
+export function getPlanFromIDs(planIDs: PlanIDs, plansMap: PlansMap): Plan | undefined {
+    const planName = getPlanNameFromIDs(planIDs);
+    return planName ? plansMap[planName] : undefined;
 }
 
 export const getPlanFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}): StrictPlan | undefined => {
@@ -293,81 +285,4 @@ export function isMultiUserPersonalPlan(plan: Plan | PlanIDs | PLANS | ADDON_NAM
 
     const plans: (PLANS | ADDON_NAMES)[] = [PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY, PLANS.PASS_FAMILY];
     return plans.includes(planName);
-}
-
-/**
- * @param downgradeIsTrial - if true, then downgrading from 24/12 months to 1 month is allowed to be a trial
- */
-export const shouldPassIsTrial = ({
-    plansMap,
-    newPlanIDs,
-    newCycle,
-    downgradeIsTrial,
-    subscription: subscriptionParam,
-    organization,
-}: {
-    plansMap: PlansMap;
-    subscription: Subscription | FreeSubscription | undefined;
-    organization: Organization | undefined;
-    newPlanIDs: PlanIDs;
-    newCycle: CYCLE;
-    downgradeIsTrial: boolean;
-}) => {
-    const subscription = subscriptionParam?.UpcomingSubscription ?? subscriptionParam;
-    if (!subscription || isFreeSubscription(subscription)) {
-        return false;
-    }
-
-    if (!isB2BTrial(subscription, organization)) {
-        return false;
-    }
-
-    const oldPlanIDs = getPlanIDs(subscription);
-    const oldCycle = subscription.Cycle;
-    if (newCycle !== oldCycle && (!downgradeIsTrial || newCycle !== CYCLE.MONTHLY)) {
-        return false;
-    }
-
-    const newPrimaryPlan = getPlanFromPlanIDs(plansMap, newPlanIDs);
-    const oldPrimaryPlan = getPlanFromPlanIDs(plansMap, oldPlanIDs);
-    if (!newPrimaryPlan || !oldPrimaryPlan) {
-        return false;
-    }
-
-    if (newPrimaryPlan.Name !== oldPrimaryPlan.Name) {
-        return false;
-    }
-
-    const newPlans = getPlansQuantity(newPlanIDs, plansMap);
-    const oldPlans = getPlansQuantity(oldPlanIDs, plansMap);
-
-    const maxBaseDomains = newPrimaryPlan.MaxDomains;
-    const limits = Object.entries({
-        MaxMembers: TRIAL_MAX_USERS,
-        MaxDomains: maxBaseDomains + TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
-        MaxIPs: TRIAL_MAX_DEDICATED_IPS,
-        MaxAI: TRIAL_MAX_SCRIBE_SEATS,
-        MaxLumo: TRIAL_MAX_LUMO_SEATS,
-    }) as [FeatureLimitKey, number][];
-
-    for (const [maxKey, limit] of limits) {
-        const newLimit = getPlansLimit(newPlans, maxKey);
-        const oldLimit = getPlansLimit(oldPlans, maxKey);
-
-        if (newLimit > limit || newLimit < oldLimit) {
-            return false;
-        }
-    }
-
-    return true;
-};
-
-/**
- * In some cases it's completely forbidden to buy a plan, given the current subscription and the selected plan.
- */
-export function isForbiddenModification(
-    subscription: Subscription | FreeSubscription | undefined,
-    selectedPlan: PLANS | ADDON_NAMES | PlanIDs | Plan
-) {
-    return hasLumoMobileSubscription(subscription) && isMultiUserPersonalPlan(selectedPlan);
 }
