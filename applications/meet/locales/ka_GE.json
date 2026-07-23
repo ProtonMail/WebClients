@@ -1,0 +1,3690 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "ka_GE"
+  },
+  "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(იხსნება ახალ ჩანართში)"
+      ],
+      "camera off": [
+        "კამერა გამორთულია"
+      ],
+      "camera on": [
+        "კამერა ჩართულია"
+      ],
+      "Meeting controls": [
+        "შეხვედრის კონტროლი"
+      ],
+      "microphone muted": [
+        "მიკროფონი დადუმებულია"
+      ],
+      "microphone on": [
+        "მიკროფონი ჩართულია"
+      ]
+    },
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } შემოუერთდა შეხვედრას"
+      ],
+      "${ name } left the meeting": [
+        "${ name }-მა დატოვა შეხვედრა"
+      ],
+      "${ name } lowered their hand": [
+        "${ name }-მა ხელი ჩამოწია"
+      ],
+      "${ name } raised their hand": [
+        "${ name }-მა ხელი აიწია"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name }-მა გამოხატა რეაქცია: ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } ამბობს: ${ message }"
+      ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "მონაწილე შემოუერთდა შეხვედრას"
+      ],
+      "A participant left the meeting": [
+        "მონაწილემ დატოვა შეხვედრა"
+      ],
+      "A participant lowered their hand": [
+        "მონაწილემ ხელი ჩამოწია"
+      ],
+      "A participant raised their hand": [
+        "მონაწილემ ხელი აიწია"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "მონაწილემ გამოხატა რეაქცია: ${ emoji }"
+      ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "დაკავშირება მოხდა TURN რეტრანსლაციის რეჟიმით, ქსელის შეზღუდვების გამო. ამან შეიძლება გაზარდოს დაყოვნება და გავლენა მოახდინოს ზარის ხარისხზე."
+      ],
+      "Connection lost. Reconnecting…": [
+        "კავშირი გაწყდა. მიმდინარეობს თავიდან დაკავშირება…"
+      ],
+      "New chat message: ${ message }": [
+        "ახალი ჩატის შეტყობინება: ${ message }"
+      ],
+      "Now starting recording": [
+        "ახლა იწყება ჩაწერა"
+      ],
+      "Reconnected to the meeting": [
+        "ხელახლა დაკავშირებულია შეხვედრასთან"
+      ],
+      "Recording saved": [
+        "ჩანაწერი შენახულია"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "ჩაწერა დაიწყო. შეხვედრის გაგრძელებით თქვენ ადასტურებთ და ეთანხმებით ფაქტს, რომ გიწერენ."
+      ],
+      "Recording stopped": [
+        "ჩაწერა შეჩერებულია"
+      ],
+      "Screen share started": [
+        "ეკრანის გაზიარება დაწყებულია"
+      ],
+      "Screen share started by ${ name }": [
+        "ეკრანის გაზიარება დაწყებულია ${ name }-ის მიერ"
+      ],
+      "Screen share stopped": [
+        "ეკრანის გაზიარება შეჩერებულია"
+      ],
+      "Screen share stopped by ${ name }": [
+        "ეკრანის გაზიარება შეჩერებულია ${ name }-ის მიერ"
+      ],
+      "The meeting will close in 1 minute": [
+        "შეხვედრა დაიხურება 1 წუთში"
+      ],
+      "The meeting will close in 15 seconds": [
+        "შეხვედრა დაიხურება 15 წამში"
+      ],
+      "The meeting will close in 30 seconds": [
+        "შეხვედრა დაიხურება 30 წამში"
+      ],
+      "The meeting will end in 1 minute": [
+        "შეხვედრა დასრულდება 1 წუთში"
+      ],
+      "The meeting will end in 10 minutes": [
+        "შეხვედრა დასრულდება 10 წუთში"
+      ],
+      "The meeting will end in 15 seconds": [
+        "შეხვედრა დასრულდება 15 წამში"
+      ],
+      "The meeting will end in 5 minutes": [
+        "შეხვედრა დასრულდება 5 წუთში"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "ეს შეხვედრა იწერება. შემოერთებით თქვენ ადასტურებთ და ეთანხმებით ფაქტს, რომ გიწერენ."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "თქვენ ხართ ერთადერთი მონაწილე. შეხვედრა დაიხურება 2 წუთში, თუ ვინმე არ შემოუერთდება."
+      ],
+      "You have been disconnected from the meeting": [
+        "თქვენ გაგთიშეს შეხვედრიდან"
+      ],
+      "You have been muted by the host": [
+        "თქვენ დაგადუმათ მასპინძელმა"
+      ],
+      "Your camera has been turned off by the host": [
+        "თქვენი კამერა გამორთო მასპინძელმა"
+      ]
+    },
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME }-ის მაღაზია"
+      ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } ახალი",
+        "${ newMessageCount } ახალი"
+      ],
+      "Add account": [
+        "ანგარიშის დამატება"
+      ],
+      "Add another account": [
+        "სხვა ანგარიშის დამატება"
+      ],
+      "Admit": [
+        "დაშვება"
+      ],
+      "Admit ${ participantName }": [
+        "დაუშვით ${ participantName }"
+      ],
+      "Admit all": [
+        "ყველას დაშვება"
+      ],
+      "Allow access": [
+        "წვდომის დაშვება"
+      ],
+      "Anyone with the link can join immediately": [
+        "ნებისმიერს, ვისაც აქვს ბმული, შეუძლია პირდაპირ შემოუერთდეს"
+      ],
+      "Applied": [
+        "გამოყენებულია"
+      ],
+      "Apply changes": [
+        "ცვლილებების გამოყენება"
+      ],
+      "Approve participants before they can join": [
+        "დაადასტურეთ მონაწილეები, სანამ ისინი შემოუერთდებიან"
+      ],
+      "Assign ${ selectedParticipantName } as host": [
+        "${ selectedParticipantName }-ის მინიჭება მასპინძლად"
+      ],
+      "Assign new host": [
+        "ახალი მასპინძლის მინიჭება"
+      ],
+      "Attach screenshot(s)": [
+        "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
+      ],
+      "Authenticate": [
+        "ავთენტიკაცია"
+      ],
+      "Back": [
+        "უკან"
+      ],
+      "Background blur": [
+        "ფონის დაბინდვა"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Change password": [
+        "პაროლის შეცვლა"
+      ],
+      "Chat with us": [
+        "დაგველაპარაკეთ"
+      ],
+      "Close": [
+        "დახურვა"
+      ],
+      "Close preview": [
+        "გადახედვის დახურვა"
+      ],
+      "Close reply composer": [
+        "პასუხის რედაქტორის დახურვა"
+      ],
+      "Close this banner": [
+        "ამ ბანერის დახურვა"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
+      "Continue without camera": [
+        "გაგრძელება კამერის გარეშე"
+      ],
+      "Continue without mic and camera": [
+        "გაგრძელება მიკროფონისა და კამერის გარეშე"
+      ],
+      "Continue without microphone": [
+        "გაგრძელება მიკროფონის გარეშე"
+      ],
+      "Copy address": [
+        "მისამართის კოპირება"
+      ],
+      "Copy invite link": [
+        "მოსაწვევის ბმულის კოპირება"
+      ],
+      "Copy link": [
+        "ბმულის კოპირება"
+      ],
+      "Copy link and close": [
+        "ბმულის კოპირება და დახურვა"
+      ],
+      "Copy meeting link": [
+        "შეხვედრის ბმულის კოპირება"
+      ],
+      "Copy room link": [
+        "ოთახის ბმულის კოპირება"
+      ],
+      "Create a free account": [
+        "უფასო ანგარიშის შექმნა"
+      ],
+      "Create a room": [
+        "ოთახის შექმნა"
+      ],
+      "Create an account": [
+        "ანგარიშის შექმნა"
+      ],
+      "Create meeting": [
+        "შეხვედრის შექმნა"
+      ],
+      "Delete": [
+        "წაშლა"
+      ],
+      "Deny": [
+        "უარყოფა"
+      ],
+      "Deny ${ participantName }": [
+        "უარყავით ${ participantName }"
+      ],
+      "Disable ${ participantName }'s video": [
+        "${ participantName }-ის ვიდეოს გამორთვა"
+      ],
+      "Disable camera": [
+        "კამერის გათიშვა"
+      ],
+      "Disable waiting room": [
+        "მოსაცდელი ოთახის გამორთვა"
+      ],
+      "Discard": [
+        "მოცილება"
+      ],
+      "Dismiss": [
+        "მოცილება"
+      ],
+      "Dismiss new messages": [
+        "ახალი შეტყობინებების დახურვა"
+      ],
+      "Done": [
+        "მზადაა"
+      ],
+      "Download": [
+        "გადმოწერა"
+      ],
+      "Download app": [
+        "აპის გადმოწერა"
+      ],
+      "Download local participant report": [
+        "ლოკალური მონაწილის ანგარიშის გადმოწერა"
+      ],
+      "Download logs": [
+        "ჟურნალის გადმოწერა"
+      ],
+      "Download participant report": [
+        "მონაწილის ანგარიშის ჩამოტვირთვა"
+      ],
+      "Download recording": [
+        "ჩანაწერის ჩამოტვირთვა"
+      ],
+      "Download room level report": [
+        "ოთახის დონის ანგარიშის გადმოწერა"
+      ],
+      "Edit": [
+        "ჩასწორება"
+      ],
+      "Edit email address": [
+        "ელ-ფოსტის მისამართის ჩასწორება"
+      ],
+      "Edit phone number": [
+        "ტელეფონის ნომრის ჩასწორება"
+      ],
+      "Edit sign-in details": [
+        "შესვლის დეტალების ჩასწორება"
+      ],
+      "Enable camera": [
+        "კამერის ჩართვა"
+      ],
+      "Enable waiting room": [
+        "მოსაცდელი ოთახის ჩართვა"
+      ],
+      "End meeting": [
+        "შეხვედრის დასრულება"
+      ],
+      "End meeting for all": [
+        "შეხვედრის დასრულება ყველასთვის"
+      ],
+      "Forgot password?": [
+        "დაგავიწყდათ პაროლი?"
+      ],
+      "Full size": [
+        "სრული ზომა"
+      ],
+      "Generate a new meeting link.": [
+        "ახალი შეხვედრის ბმულის გენერირება."
+      ],
+      "Get Meet Professional": [
+        "Meet Professional-ის მიღება"
+      ],
+      "Get verification code": [
+        "შემოწმების კოდის მიღება"
+      ],
+      "Help and feedback": [
+        "დახმარება და გამოხმაურება"
+      ],
+      "Help and resources": [
+        "დახმარება და რესურსები"
+      ],
+      "Hide options": [
+        "პარამეტრების დამალვა"
+      ],
+      "Hide participants": [
+        "მონაწილეების დამალვა"
+      ],
+      "Hide self view": [
+        "საკუთარი ხედის დამალვა"
+      ],
+      "Hide timezones": [
+        "დროის სარტყლების დამალვა"
+      ],
+      "Insert emoji": [
+        "ემოჯის ჩასმა"
+      ],
+      "Join": [
+        "შეუერთდით"
+      ],
+      "Join meeting": [
+        "შეხვედრასთან მიერთება"
+      ],
+      "Join with a link": [
+        "მიერთება ბმულით"
+      ],
+      "Kick out": [
+        "გაგდება"
+      ],
+      "Kick out ${ participantName }": [
+        "${ participantName }-ის გაგდება"
+      ],
+      "Leave": [
+        "გასვლა"
+      ],
+      "Leave meeting": [
+        "შეხვედრიდან გასვლა"
+      ],
+      "Lock meeting": [
+        "შეხვედრის დაბლოკვა"
+      ],
+      "Lower hand": [
+        "ხელის ჩამოშვება"
+      ],
+      "Minimize preview": [
+        "გადახედვის ჩაკეცვა"
+      ],
+      "More info: ${ safeTitle }": [
+        "გაიგეთ მეტი: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "მეტი პარამეტრი ანგარიშებისთვის"
+      ],
+      "Mute ${ participantName }": [
+        "${ participantName }-ის დადუმება"
+      ],
+      "Next month": [
+        "შემდეგი თვე"
+      ],
+      "Next page": [
+        "შემდეგი გვერდი"
+      ],
+      "Noise cancellation": [
+        "ხმაურის ჩახშობა"
+      ],
+      "Open app": [
+        "აპის გახსნა"
+      ],
+      "Open link": [
+        "ბმულის გახსნა"
+      ],
+      "Participants join after you approve them": [
+        "მონაწილეები შემოუერთდებიან მას შემდეგ, რაც მათ დაადასტურებთ"
+      ],
+      "Participants join the call directly": [
+        "მონაწილეები პირდაპირ უერთდებიან ზარს"
+      ],
+      "Pause": [
+        "შეჩერება"
+      ],
+      "Previous month": [
+        "წინა თვე"
+      ],
+      "Previous page": [
+        "წინა გვერდი"
+      ],
+      "Raise hand": [
+        "ხელის აწევა"
+      ],
+      "React with ${ emoji }": [
+        "რეაქცია ${ emoji }-ით"
+      ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "რეაქცია ${ emoji }-ით, ${ identities.length } რეაქცია",
+        "რეაქცია ${ emoji }-ით, ${ identities.length } რეაქცია"
+      ],
+      "Receive video": [
+        "ვიდეოს მიღება"
+      ],
+      "Record": [
+        "ჩაწერა"
+      ],
+      "Refer a friend": [
+        "მიმართეთ მეგობარს"
+      ],
+      "Refresh audio and video tracks": [
+        "აუდიო და ვიდეო ტრეკების განახლება"
+      ],
+      "Refresh screen share track": [
+        "ეკრანის გაზიარების ტრეკის განახლება"
+      ],
+      "Refresh the page": [
+        "გვერდის განახლება"
+      ],
+      "Rejoin meeting": [
+        "თავიდან მიერთება შეხვედრასთან"
+      ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "რეაქციის წაშლა ${ emoji }, ${ identities.length } რეაქცია",
+        "რეაქციის წაშლა ${ emoji }, ${ identities.length } რეაქცია"
+      ],
+      "Reply": [
+        "პასუხი"
+      ],
+      "Report a problem": [
+        "პრობლემის შესახებ შეტყობინება"
+      ],
+      "Request a call": [
+        "ზარის შეკვეთა"
+      ],
+      "Request a feature": [
+        "თვისების მოთხოვნა"
+      ],
+      "Request new code": [
+        "ახალი კოდის გამოთხოვა"
+      ],
+      "Resend code": [
+        "კოდის თავიდან გაგზავნა"
+      ],
+      "Reset to defaults": [
+        "ნაგულისხმევ პარამეტრებზე დაბრუნება"
+      ],
+      "Resume": [
+        "გაგრძელება"
+      ],
+      "Retry": [
+        "თავიდან"
+      ],
+      "Return to dashboard": [
+        "დაბრუნება მართვის პანელზე"
+      ],
+      "Room": [
+        "ოთახი"
+      ],
+      "Rotate personal meeting link": [
+        "პირადი შეხვედრის ბმულის განახლება"
+      ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Schedule": [
+        "განრიგი"
+      ],
+      "Schedule a meeting": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "დაგეგმვა ${ CALENDAR_APP_NAME }-ში"
+      ],
+      "Search countries": [
+        "ქვეყნების ძებნა"
+      ],
+      "Send an encrypted message": [
+        "დაშიფრული შეტყობინების გაგზავნა"
+      ],
+      "Send reply": [
+        "პასუხის გაგზავნა"
+      ],
+      "Settings": [
+        "მორგება"
+      ],
+      "Show duration": [
+        "ხანგრძლივობის ჩვენება"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "მცურავი მინიატურის ჩვენება ეკრანის გაზიარებისას"
+      ],
+      "Show options": [
+        "პარამეტრების ჩვენება"
+      ],
+      "Show participants": [
+        "მონაწილეების ჩვენება"
+      ],
+      "Show timezones": [
+        "დროის სარტყლების ჩვენება"
+      ],
+      "Sign in": [
+        "შესვლა"
+      ],
+      "Sign out": [
+        "გასვლა"
+      ],
+      "Sign out of all accounts": [
+        "ყველა ანგარიშიდან გამოსვლა"
+      ],
+      "Simulate reconnection": [
+        "ხელახალი დაკავშირების სიმულაცია"
+      ],
+      "Skip": [
+        "გამოტოვება"
+      ],
+      "Skip to main content": [
+        "მთავარ შინაარსზე გადასვლა"
+      ],
+      "Start an instant meeting": [
+        "მყისი შეხვედრის დაწყება"
+      ],
+      "Start meeting": [
+        "შეხვედრის დაწყება"
+      ],
+      "Start new meeting": [
+        "ახალი შეხვედრის დაწყება"
+      ],
+      "Start recording": [
+        "ჩაწერის დაწყება"
+      ],
+      "Start Recording Track Stats": [
+        "ტრეკის ვარსკვლავების ჩაწერის დაწყება"
+      ],
+      "Start your own meeting": [
+        "დაიწყეთ საკუთარი შეხვედრა"
+      ],
+      "Starting…": [
+        "იწყება…"
+      ],
+      "Stay in meeting": [
+        "შეხვედრაზე დარჩენა"
+      ],
+      "Stop opening meetings in the desktop app": [
+        "შეხვედრების კომპიუტერის აპში გახსნის შეწყვეტა"
+      ],
+      "Stop receiving video": [
+        "ვიდეოს მიღების გაჩერება"
+      ],
+      "Stop recording": [
+        "ჩაწერის დასრულება"
+      ],
+      "Stop recording and download video": [
+        "ჩაწერის შეწყვეტა და ვიდეოს ჩამოტვირთვა"
+      ],
+      "Stop Recording Track Stats": [
+        "ტრეკის ვარსკვლავების ჩაწერის შეწყვეტა"
+      ],
+      "Submit": [
+        "დამტკიცება"
+      ],
+      "Switch or add account": [
+        "ანგარიშის დამატება ან გადართვა"
+      ],
+      "Tap to unblock audio playback": [
+        "დაატყაპუნეთ აუდიოს დაკვრის განბლოკვისთვის"
+      ],
+      "The current link will stop working.": [
+        "მიმდინარე ბმული მუშაობას შეწყვეტს."
+      ],
+      "Try again": [
+        "კიდევ ცდა"
+      ],
+      "Try another method": [
+        "სხვა მეთოდის ცდა"
+      ],
+      "Turn off incoming video": [
+        "შემომავალი ვიდეოს გამორთვა"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ტარიფის განახლება"
+      ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "განაახლეთ თქვენი პაკეტი, რათა გამოიყენოთ მოსაცდელი ოთახი თქვენს შემდეგ შეხვედრაზე."
+      ],
+      "Upload another video": [
+        "სხვა ვიდეოს ატვირთვა"
+      ],
+      "Upload video": [
+        "ვიდეოს ატვირთვა"
+      ],
+      "Use authentication code": [
+        "ავთენტიკაციის კოდის გამოყენება"
+      ],
+      "Use camera": [
+        "კამერის გამოყენება"
+      ],
+      "Use microphone": [
+        "მიკროფონის გამოყენება"
+      ],
+      "Use recovery code": [
+        "აღდგენის კოდის გამოყენება"
+      ],
+      "Use waiting room with a paid plan": [
+        "გამოიყენეთ მოსაცდელი ოთახი ფასიან პაკეტთან ერთად"
+      ],
+      "Verify": [
+        "გადამოწმება"
+      ],
+      "Verify account": [
+        "ანგარიშის გადამოწმება"
+      ],
+      "View invoice": [
+        "ინვოისის ნახვა"
+      ],
+      "Waiting room": [
+        "მოსაცდელი ოთახი"
+      ],
+      "Waiting room disabled": [
+        "მოსაცდელი ოთახი გამორთულია"
+      ],
+      "Waiting room enabled": [
+        "მოსაცდელი ოთახი ჩართულია"
+      ]
+    },
+    "Alt": {
+      "Audio settings": [
+        "აუდიო პარამეტრები"
+      ],
+      "Blur background": [
+        "ფონის დაბინდვა"
+      ],
+      "Chat": [
+        "ჩატი"
+      ],
+      "Close": [
+        "დახურვა"
+      ],
+      "Close search": [
+        "ძებნის დახურვა"
+      ],
+      "Copy link": [
+        "ბმულის კოპირება"
+      ],
+      "Copy meeting link": [
+        "შეხვედრის ბმულის კოპირება"
+      ],
+      "Debug overlay": [
+        "განლაგების გამართვა"
+      ],
+      "Go to dashboard": [
+        "მთავარზე გადასვლა"
+      ],
+      "Hide self view": [
+        "საკუთარი ხედის დამალვა"
+      ],
+      "Leave Meeting": [
+        "შეხვედრიდან გასვლა"
+      ],
+      "Lock meeting": [
+        "შეხვედრის დაბლოკვა"
+      ],
+      "Lower hand": [
+        "ხელის ჩამოშვება"
+      ],
+      "Meeting details": [
+        "შეხვედრის დეტალები"
+      ],
+      "More options": [
+        "მეტი პარამეტრი"
+      ],
+      "Noise cancellation": [
+        "ხმაურის ჩახშობა"
+      ],
+      "Open chat message search": [
+        "ჩატის შეტყობინებების ძებნის გახსნა"
+      ],
+      "Open participants search": [
+        "მონაწილეების ძებნის გახსნა"
+      ],
+      "Participant host control options": [
+        "მონაწილის ჰოსტის კონტროლის პარამეტრები"
+      ],
+      "Participants": [
+        "მონაწილეები"
+      ],
+      "Raise hand": [
+        "ხელის აწევა"
+      ],
+      "Rotate camera": [
+        "კამერის შებრუნება"
+      ],
+      "Save my name on this device": [
+        "ჩემი სახელის შენახვა ამ მოწყობილობაზე"
+      ],
+      "Screen share": [
+        "ეკრანის გაზიარება"
+      ],
+      "Settings": [
+        "მორგება"
+      ],
+      "Show duration": [
+        "ხანგრძლივობის ჩვენება"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "მცურავი მინიატურის ჩვენება ეკრანის გაზიარებისას"
+      ],
+      "Stop recording and download.": [
+        "შეწყვიტეთ ჩაწერა და ჩამოტვირთეთ."
+      ],
+      "Toggle chat": [
+        "ჩატის გადართვა"
+      ],
+      "Toggle emoji reactions": [
+        "ემოჯი რეაქციების გადართვა"
+      ],
+      "Toggle meeting details": [
+        "შეხვედრის დეტალების გადართვა"
+      ],
+      "Toggle participants": [
+        "მონაწილეების გადართვა"
+      ],
+      "Toggle screen share": [
+        "ეკრანის გაზიარების გადართვა"
+      ],
+      "Toggle settings": [
+        "პარამეტრების გადართვა"
+      ],
+      "Turn off incoming video": [
+        "შემომავალი ვიდეოს გამორთვა"
+      ],
+      "Video settings": [
+        "ვიდეოს პარამეტრები"
+      ],
+      "Waiting room": [
+        "მოსაცდელი ოთახი"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME }-ის აპლიკაციები"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "მასპინძლის მინიჭება"
+      ],
+      "Audio settings": [
+        "აუდიო პარამეტრები"
+      ],
+      "Chat": [
+        "ჩატი"
+      ],
+      "Chat messages": [
+        "ჩატის შეტყობინებები"
+      ],
+      "Device settings": [
+        "მოწყობილობის პარამეტრები"
+      ],
+      "Meeting details": [
+        "შეხვედრის დეტალები"
+      ],
+      "Meeting rooms": [
+        "შეხვედრების ოთახები"
+      ],
+      "Participants": [
+        "მონაწილეები"
+      ],
+      "Participants list": [
+        "მონაწილეთა სია"
+      ],
+      "Primary navigation": [
+        "პირველადი ნავიგაცია"
+      ],
+      "Settings": [
+        "მორგება"
+      ],
+      "Video settings": [
+        "ვიდეოს პარამეტრები"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "აქტიური"
+      ]
+    },
+    "Banner": {
+      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
+        "დაკავშირება მოხდა TURN რეტრანსლაციის რეჟიმით, თქვენი ქსელის შეზღუდვების გამო. ამან შეიძლება გაზარდოს დაყოვნება და გავლენა მოახდინოს ზარის ხარისხზე."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME }-ის პრობლემა"
+      ],
+      "Application problem": [
+        "აპლიკაციის პრობლემა"
+      ],
+      "Authenticator problem": [
+        "ავთენტიკატორის პრობლემა"
+      ],
+      "Bridge problem": [
+        "ხიდის პრობლემა"
+      ],
+      "Calendar problem": [
+        "კალენდრის პრობლემა"
+      ],
+      "Connection problem": [
+        "კავშირის პრობლემა"
+      ],
+      "Contacts problem": [
+        "კონტაქტების პრობლემა"
+      ],
+      "Custom domain problem": [
+        "მომხმარებლის დომენის პრობლემა"
+      ],
+      "Docs problem": [
+        "Docs-ის პრობლემა"
+      ],
+      "Drive problem": [
+        "Drive-ის პრობლემა"
+      ],
+      "Feature request": [
+        "ფუნქციის მოთხოვნა"
+      ],
+      "Import / export problem": [
+        "შემოტანა / გატანის პრობლემა"
+      ],
+      "Installation problem": [
+        "დაყენების პრობლემა"
+      ],
+      "Mail problem": [
+        "ფოსტის პრობლემა"
+      ],
+      "Manual setup problem": [
+        "ხელით დაყენების პრობლემა"
+      ],
+      "Meet problem": [
+        "Meet-ის პრობლემა"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Pass problem": [
+        "Pass-ის პრობლემა"
+      ],
+      "Payments problem": [
+        "გადახდის პრობლემა"
+      ],
+      "Sheets problem": [
+        "Sheets-ის პრობლემა"
+      ],
+      "Sign in problem": [
+        "შესვლის პრობლემა"
+      ],
+      "Sign up problem": [
+        "რეგისტრაციის პრობლემა"
+      ],
+      "Signup problem": [
+        "რეგისტრაციის პრობლემა"
+      ],
+      "Slow speed problem": [
+        "დაბალი სიჩქარის პრობლემა"
+      ],
+      "Speed problem": [
+        "სიჩქარის პრობლემა"
+      ],
+      "Streaming problem": [
+        "სტრიმინგის პრობლემა"
+      ],
+      "Update problem": [
+        "განახლების პრობლემა"
+      ],
+      "VPN problem": [
+        "VPN-ის პრობლემა"
+      ],
+      "Website access problem": [
+        "ვებგვერდთან წვდომის პრობლემა"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "ჩაკეცვა"
+      ],
+      "Expand": [
+        "ამოკეცვა"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "სტაფილოსფერი"
+      ],
+      "cerise": [
+        "ალუბლისფერი"
+      ],
+      "cobalt": [
+        "კობალტისფერი"
+      ],
+      "copper": [
+        "სპილენძიფერი"
+      ],
+      "enzian": [
+        "ენიზანი"
+      ],
+      "fern": [
+        "გვიმრა"
+      ],
+      "forest": [
+        "ტყისფერი"
+      ],
+      "ocean": [
+        "ოკეანე"
+      ],
+      "olive": [
+        "ზეთისხილი"
+      ],
+      "pacific": [
+        "წყნარი ოკეანე"
+      ],
+      "pickle": [
+        "კიტრი"
+      ],
+      "pine": [
+        "ფიჭვი"
+      ],
+      "pink": [
+        "ვარდისფერი"
+      ],
+      "plum": [
+        "ქლიავისფერი"
+      ],
+      "purple": [
+        "იისფერი"
+      ],
+      "reef": [
+        "მარჯნისფერი"
+      ],
+      "sahara": [
+        "საჰარა"
+      ],
+      "slateblue": [
+        "მოცისფერო-ნაცრისფერი"
+      ],
+      "soil": [
+        "მიწისფერი"
+      ],
+      "strawberry": [
+        "მარწყვისფერი"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "აფხაზეთი"
+      ],
+      "Afghanistan": [
+        "ავღანეთი"
+      ],
+      "Albania": [
+        "ალბანეთი"
+      ],
+      "Algeria": [
+        "ალჟირი"
+      ],
+      "American Samoa": [
+        "ამერიკული სამოა"
+      ],
+      "Andorra": [
+        "ანდორა"
+      ],
+      "Angola": [
+        "ანგოლა"
+      ],
+      "Anguilla": [
+        "ანგვილა"
+      ],
+      "Antarctica": [
+        "ანტარქტიკა"
+      ],
+      "Antigua and Barbuda": [
+        "ანტიგუა და ბარბუდა"
+      ],
+      "Argentina": [
+        "არგენტინა"
+      ],
+      "Armenia": [
+        "სომხეთი"
+      ],
+      "Aruba": [
+        "არუბა"
+      ],
+      "Ascension Island": [
+        "ამაღლების კუნძული"
+      ],
+      "Australia": [
+        "ავსტრალია"
+      ],
+      "Austria": [
+        "ავსტრია"
+      ],
+      "Azerbaijan": [
+        "აზერბაიჯანი"
+      ],
+      "Bahamas": [
+        "ბაჰამის კუნძულები"
+      ],
+      "Bahrain": [
+        "ბაჰრეინი"
+      ],
+      "Bangladesh": [
+        "ბანგლადეში"
+      ],
+      "Barbados": [
+        "ბარბადოსი"
+      ],
+      "Belarus": [
+        "ბელარუსი"
+      ],
+      "Belgium": [
+        "ბელგია"
+      ],
+      "Belize": [
+        "ბელიზი"
+      ],
+      "Benin": [
+        "ბენინი"
+      ],
+      "Bermuda": [
+        "ბერმუდა"
+      ],
+      "Bhutan": [
+        "ბჰუტანი"
+      ],
+      "Bolivia": [
+        "ბოლივია"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "კარიბის ნიდერლანდები"
+      ],
+      "Bosnia and Herzegovina": [
+        "ბოსნია და ჰერცეგოვინა"
+      ],
+      "Botswana": [
+        "ბოტსვანა"
+      ],
+      "Bouvet Island": [
+        "ბუვეტის კუნძული"
+      ],
+      "Brazil": [
+        "ბრაზილია"
+      ],
+      "British Indian Ocean Territory": [
+        "ბრიტანული ინდოეთის ოკეანის ტერიტორია"
+      ],
+      "Brunei Darussalam": [
+        "ბრუნეი"
+      ],
+      "Bulgaria": [
+        "ბულგარეთი"
+      ],
+      "Burkina Faso": [
+        "ბურკინა ფასო"
+      ],
+      "Burundi": [
+        "ბურუნდი"
+      ],
+      "Cambodia": [
+        "კამბოჯა"
+      ],
+      "Cameroon": [
+        "კამერუნი"
+      ],
+      "Canada": [
+        "კანადა"
+      ],
+      "Cape Verde": [
+        "კაბო-ვერდე"
+      ],
+      "Cayman Islands": [
+        "კაიმანის კუნძულები"
+      ],
+      "Central African Republic": [
+        "ცენტრალური აფრიკის რესპუბლიკა"
+      ],
+      "Chad": [
+        "ჩადი"
+      ],
+      "Chile": [
+        "ჩილე"
+      ],
+      "China": [
+        "ჩინეთი"
+      ],
+      "Christmas Island": [
+        "შობის კუნძული"
+      ],
+      "Cocos (Keeling) Islands": [
+        "ქოქოსის კუნძულები"
+      ],
+      "Colombia": [
+        "კოლუმბია"
+      ],
+      "Comoros": [
+        "კომოროსი"
+      ],
+      "Congo": [
+        "კონგო"
+      ],
+      "Congo, Democratic Republic of the": [
+        "კონგო, დემოკრატიული რესპუბლიკა"
+      ],
+      "Cook Islands": [
+        "კუკის კუნძულები"
+      ],
+      "Costa Rica": [
+        "კოსტა რიკა"
+      ],
+      "Croatia": [
+        "ხორვატია"
+      ],
+      "Cuba": [
+        "კუბა"
+      ],
+      "Curaçao": [
+        "კიურასაო"
+      ],
+      "Cyprus": [
+        "კვიპროსი"
+      ],
+      "Czech Republic": [
+        "ჩეხეთი"
+      ],
+      "Côte d'Ivoire": [
+        "კოტ-დ’ივუარი"
+      ],
+      "Denmark": [
+        "დანია"
+      ],
+      "Djibouti": [
+        "ჯიბუტი"
+      ],
+      "Dominica": [
+        "დომინიკა"
+      ],
+      "Dominican Republic": [
+        "დომინიკის რესპუბლიკა"
+      ],
+      "Ecuador": [
+        "ეკვადორი"
+      ],
+      "Egypt": [
+        "ეგვიპტე"
+      ],
+      "El Salvador": [
+        "ელ სალვადორი"
+      ],
+      "Equatorial Guinea": [
+        "ეკვატორული გვინეა"
+      ],
+      "Eritrea": [
+        "ერიტრეა"
+      ],
+      "Estonia": [
+        "ესტონეთი"
+      ],
+      "Eswatini": [
+        "ესვატინი"
+      ],
+      "Ethiopia": [
+        "ეთიოპია"
+      ],
+      "Falkland Islands": [
+        "ფოლკლენდის კუნძულები"
+      ],
+      "Faroe Islands": [
+        "ფაროს კუნძულები"
+      ],
+      "Federated States of Micronesia": [
+        "მიკრონეზიის ფედერალური შტატები"
+      ],
+      "Fiji": [
+        "ფიჯი"
+      ],
+      "Finland": [
+        "ფინეთი"
+      ],
+      "France": [
+        "საფრანგეთი"
+      ],
+      "French Guiana": [
+        "ფრანგული გუიანა"
+      ],
+      "French Polynesia": [
+        "ფრანგული პოლინეზია"
+      ],
+      "French Southern Territories": [
+        "საფრანგეთის სამხრეთ ტერიტორიები"
+      ],
+      "Gabon": [
+        "გაბონი"
+      ],
+      "Gambia": [
+        "გამბია"
+      ],
+      "Georgia": [
+        "საქართველო"
+      ],
+      "Germany": [
+        "გერმანია"
+      ],
+      "Ghana": [
+        "განა"
+      ],
+      "Gibraltar": [
+        "გიბრალტარი"
+      ],
+      "Greece": [
+        "საბერძნეთი"
+      ],
+      "Greenland": [
+        "გრინლანდია"
+      ],
+      "Grenada": [
+        "გრენადა"
+      ],
+      "Guadeloupe": [
+        "გვადელუპა"
+      ],
+      "Guam": [
+        "გუამი"
+      ],
+      "Guatemala": [
+        "გვატემალა"
+      ],
+      "Guernsey": [
+        "გერნსი"
+      ],
+      "Guinea": [
+        "გვინეა"
+      ],
+      "Guinea-Bissau": [
+        "გვინეა-ბისაუ"
+      ],
+      "Guyana": [
+        "გაიანა"
+      ],
+      "Haiti": [
+        "ჰაიტი"
+      ],
+      "Heard Island and McDonald Islands": [
+        "ჰერდის კუნძული და მაკდონალდის კუნძულები"
+      ],
+      "Holy See (Vatican City State)": [
+        "წმინდა საყდარი (ვატიკანის ქალაქი-სახელმწიფო)"
+      ],
+      "Honduras": [
+        "ჰონდურასი"
+      ],
+      "Hong Kong": [
+        "ჰონგ კონგი"
+      ],
+      "Hungary": [
+        "უნგრეთი"
+      ],
+      "Iceland": [
+        "ისლანდია"
+      ],
+      "India": [
+        "ინდოეთი"
+      ],
+      "Indonesia": [
+        "ინდონეზია"
+      ],
+      "International": [
+        "საერთაშორისო"
+      ],
+      "Iran": [
+        "ირანი"
+      ],
+      "Iraq": [
+        "ერაყი"
+      ],
+      "Ireland": [
+        "ირლანდია"
+      ],
+      "Isle of Man": [
+        "მენის კუნძული"
+      ],
+      "Israel": [
+        "ისრაელი"
+      ],
+      "Italy": [
+        "იტალია"
+      ],
+      "Jamaica": [
+        "იამაიკა"
+      ],
+      "Japan": [
+        "იაპონია"
+      ],
+      "Jersey": [
+        "ჯერსი"
+      ],
+      "Jordan": [
+        "იორდანია"
+      ],
+      "Kazakhstan": [
+        "ყაზახეთი"
+      ],
+      "Kenya": [
+        "კენია"
+      ],
+      "Kiribati": [
+        "კირიბატი"
+      ],
+      "Kosovo": [
+        "კოსოვო"
+      ],
+      "Kuwait": [
+        "ქუვეითი"
+      ],
+      "Kyrgyzstan": [
+        "ყირგიზეთი"
+      ],
+      "Laos": [
+        "ლაოსი"
+      ],
+      "Latvia": [
+        "ლატვია"
+      ],
+      "Lebanon": [
+        "ლიბანი"
+      ],
+      "Lesotho": [
+        "ლესოტო"
+      ],
+      "Liberia": [
+        "ლიბერია"
+      ],
+      "Libya": [
+        "ლიბია"
+      ],
+      "Liechtenstein": [
+        "ლიხტენშტეინი"
+      ],
+      "Lithuania": [
+        "ლიეტუვა"
+      ],
+      "Luxembourg": [
+        "ლუქსემბურგი"
+      ],
+      "Macao": [
+        "მაკაო"
+      ],
+      "Madagascar": [
+        "მადაგასკარი"
+      ],
+      "Malawi": [
+        "მალავი"
+      ],
+      "Malaysia": [
+        "მალაიზია"
+      ],
+      "Maldives": [
+        "მალდივები"
+      ],
+      "Mali": [
+        "მალი"
+      ],
+      "Malta": [
+        "მალტა"
+      ],
+      "Marshall Islands": [
+        "მარშალის კუნძულები"
+      ],
+      "Martinique": [
+        "მარტინიკა"
+      ],
+      "Mauritania": [
+        "მავრიტანია"
+      ],
+      "Mauritius": [
+        "მავრიკი"
+      ],
+      "Mayotte": [
+        "მაიოტი"
+      ],
+      "Mexico": [
+        "მექსიკა"
+      ],
+      "Moldova": [
+        "მოლდოვა"
+      ],
+      "Monaco": [
+        "მონაკო"
+      ],
+      "Mongolia": [
+        "მონღოლეთი"
+      ],
+      "Montenegro": [
+        "მონტენეგრო"
+      ],
+      "Montserrat": [
+        "მონსერატი"
+      ],
+      "Morocco": [
+        "მოროკო"
+      ],
+      "Mozambique": [
+        "მოზამბიკი"
+      ],
+      "Myanmar": [
+        "მიანმარი"
+      ],
+      "Namibia": [
+        "ნამიბია"
+      ],
+      "Nauru": [
+        "ნაურუ"
+      ],
+      "Nepal": [
+        "ნეპალი"
+      ],
+      "Netherlands": [
+        "ჰოლანდია"
+      ],
+      "New Caledonia": [
+        "ახალი კალედონია"
+      ],
+      "New Zealand": [
+        "ახალი ზელანდია"
+      ],
+      "Nicaragua": [
+        "ნიკარაგუა"
+      ],
+      "Niger": [
+        "ნიგერია"
+      ],
+      "Nigeria": [
+        "ნიგერია"
+      ],
+      "Niue": [
+        "ნიუე"
+      ],
+      "Norfolk Island": [
+        "ნორფოლკის კუნძული"
+      ],
+      "North Korea": [
+        "ჩრდილო კორეა"
+      ],
+      "North Macedonia": [
+        "ჩრდილოეთი მაკედონია"
+      ],
+      "Northern Mariana Islands": [
+        "ჩრდილოეთ მარიანას კუნძულები"
+      ],
+      "Norway": [
+        "ნორვეგია"
+      ],
+      "Oman": [
+        "ომანი"
+      ],
+      "Pakistan": [
+        "პაკისტანი"
+      ],
+      "Palau": [
+        "პალაუ"
+      ],
+      "Palestine": [
+        "პალესტინა"
+      ],
+      "Panama": [
+        "პანამა"
+      ],
+      "Papua New Guinea": [
+        "პაპუა ახალი გვინეა"
+      ],
+      "Paraguay": [
+        "პარაგვაი"
+      ],
+      "Peru": [
+        "პერუ"
+      ],
+      "Philippines": [
+        "ფილიპინები"
+      ],
+      "Pitcairn": [
+        "პიტკერნი"
+      ],
+      "Poland": [
+        "პოლონეთი"
+      ],
+      "Portugal": [
+        "პორტუგალია"
+      ],
+      "Puerto Rico": [
+        "პუერტო რიკო"
+      ],
+      "Qatar": [
+        "კატარი"
+      ],
+      "Reunion": [
+        "რეიუნიონი"
+      ],
+      "Romania": [
+        "რუმინეთი"
+      ],
+      "Russia": [
+        "რუსეთი"
+      ],
+      "Rwanda": [
+        "რუანდა"
+      ],
+      "Saint Barthélemy": [
+        "სენ-ბართელმი"
+      ],
+      "Saint Helena": [
+        "სენტ ჰელენა"
+      ],
+      "Saint Kitts and Nevis": [
+        "სენტ კიტსი და ნევისი"
+      ],
+      "Saint Lucia": [
+        "სანტა ლუჩია"
+      ],
+      "Saint Martin (French Part)": [
+        "სენტ მარტინი (ფრანგული ნაწილი)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "სენ-პიერი და მიკელონი"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "სენტ ვინსენტი და გრენადინები"
+      ],
+      "Samoa": [
+        "სამოა"
+      ],
+      "San Marino": [
+        "სან მარინო"
+      ],
+      "Sao Tome and Principe": [
+        "სან-ტომე და პრინსიპი"
+      ],
+      "Saudi Arabia": [
+        "საუდის არაბეთი"
+      ],
+      "Senegal": [
+        "სენეგალი"
+      ],
+      "Serbia": [
+        "სერბეთი"
+      ],
+      "Seychelles": [
+        "სეიშელი"
+      ],
+      "Sierra Leone": [
+        "სიერა ლეონე"
+      ],
+      "Singapore": [
+        "სინგაპური"
+      ],
+      "Sint Maarten": [
+        "სინტ-მარტენი"
+      ],
+      "Slovakia": [
+        "სლოვაკეთი"
+      ],
+      "Slovenia": [
+        "სლოვენია"
+      ],
+      "Solomon Islands": [
+        "სოლომონის კუნძულები"
+      ],
+      "Somalia": [
+        "სომალი"
+      ],
+      "South Africa": [
+        "სამხრეთ აფრიკა"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "სამხრეთ ჯორჯია და სამხრეთ სენდვიჩის კუნძულები"
+      ],
+      "South Korea": [
+        "სამხრეთ კორეა"
+      ],
+      "South Ossetia": [
+        "სამაჩაბლო"
+      ],
+      "South Sudan": [
+        "სამხრეთ სუდანი"
+      ],
+      "Spain": [
+        "ესპანეთი"
+      ],
+      "Sri Lanka": [
+        "შრი ლანკა"
+      ],
+      "Sudan": [
+        "სუდანი"
+      ],
+      "Suriname": [
+        "სურინამი"
+      ],
+      "Svalbard and Jan Mayen": [
+        "შპიცბერგენი და იან-მაიენი"
+      ],
+      "Sweden": [
+        "შვედეთი"
+      ],
+      "Switzerland": [
+        "შვეიცარია"
+      ],
+      "Syria": [
+        "სირია"
+      ],
+      "Taiwan": [
+        "ტაივანი"
+      ],
+      "Tajikistan": [
+        "ტაჯიკეთი"
+      ],
+      "Tanzania": [
+        "ტანზანია"
+      ],
+      "Thailand": [
+        "ტაილანდი"
+      ],
+      "Timor-Leste": [
+        "აღმოსავლეთ ტიმორი"
+      ],
+      "Togo": [
+        "ტოგო"
+      ],
+      "Tokelau": [
+        "ტოკელაუ"
+      ],
+      "Tonga": [
+        "ტონგა"
+      ],
+      "Trinidad and Tobago": [
+        "ტრინიდადი და ტობაგო"
+      ],
+      "Tristan da Cunha": [
+        "ტრისტან-და-კუნია"
+      ],
+      "Tunisia": [
+        "ტუნისი"
+      ],
+      "Turkey": [
+        "თურქეთი"
+      ],
+      "Turkmenistan": [
+        "თურქმენეთი"
+      ],
+      "Turks and Caicos Islands": [
+        "ტერქსისა და კაიკოსის კუნძულები"
+      ],
+      "Tuvalu": [
+        "ტუვალუ"
+      ],
+      "Uganda": [
+        "უგანდა"
+      ],
+      "Ukraine": [
+        "უკრაინა"
+      ],
+      "United Arab Emirates": [
+        "არაბთა გაერთიანებული საამიროები"
+      ],
+      "United Kingdom": [
+        "გაერთიანებული სამეფო"
+      ],
+      "United States": [
+        "შეერთებული შტატები"
+      ],
+      "United States Minor Outlying Islands": [
+        "შეერთებული შტატების მცირე დაშორებული კუნძულები"
+      ],
+      "Uruguay": [
+        "ურუგვაი"
+      ],
+      "Uzbekistan": [
+        "უზბეკეთი"
+      ],
+      "Vanuatu": [
+        "ვანუატუ"
+      ],
+      "Venezuela": [
+        "ვენესუელა"
+      ],
+      "Vietnam": [
+        "ვიეტნამი"
+      ],
+      "Virgin Islands, British": [
+        "ბრიტანეთის ვირჯინის კუნძულები"
+      ],
+      "Virgin Islands, U.S.": [
+        "აშშ-ის ვირჯინის კუნძულები."
+      ],
+      "Wallis and Futuna": [
+        "უოლისი და ფუტუნა"
+      ],
+      "Western Sahara": [
+        "დასავლეთ საჰარა"
+      ],
+      "Yemen": [
+        "იემენი"
+      ],
+      "Zambia": [
+        "ზამბია"
+      ],
+      "Zimbabwe": [
+        "ზიმბაბვე"
+      ],
+      "Åland Islands": [
+        "ალანდის კუნძულები"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "ინვოისი გადაცილებულია"
+      ]
+    },
+    "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "შიფრვა Messaging Layer Security (MLS) მეშვეობით"
+      ],
+      "Rotating group encryption key for best security": [
+        "უსაფრთხოებისთვის მიმდინარეობს ჯგუფის დაშიფვრის გასაღების განახლება"
+      ],
+      "Try a different name.": [
+        "სცადეთ სხვა სახელი."
+      ],
+      "You'll see people here when they join the meeting.": [
+        "ხალხს აქ დაინახავთ, როდესაც ისინი შემოუერთდებიან შეხვედრას."
+      ]
+    },
+    "Display name": {
+      "Loading…": [
+        "იტვირთება…"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "სანდო კონტაქტი"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
+      ],
+      "Email is not valid": [
+        "ელფოსტა არასწორია"
+      ],
+      "Enter 6 digits": [
+        "შეიყვანეთ 6 ციფრი"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "შეიყვანეთ თქვენი მომხმარებლის სახელი დომენის (@example.com) გარეშე"
+      ],
+      "Event deleted": [
+        "მოვლენა წაიშალა"
+      ],
+      "Failed to assign host": [
+        "მასპინძლის მინიჭება ჩავარდა"
+      ],
+      "Failed to create meeting": [
+        "შეხვედრის შექმნა ჩავარდა"
+      ],
+      "Failed to create personal meeting, please refresh the page": [
+        "პირდაი შეხვედრის შექმნა შეუძლებელია. განაახლეთ გვერდი"
+      ],
+      "Failed to decrypt session key": [
+        "სესიის გასაღების გაშიფვრა ჩავარდა"
+      ],
+      "Failed to delete event": [
+        "მოვლენის წაშლა ჩავარდა"
+      ],
+      "Failed to delete recording": [
+        "ჩანაწერის წაშლა ვერ მოხერხდა"
+      ],
+      "Failed to delete room": [
+        "ოთახის წაშლა ჩავარდა"
+      ],
+      "Failed to download recording": [
+        "ჩანაწერის ჩამოტვირთვა ვერ მოხერხდა"
+      ],
+      "Failed to edit room name": [
+        "ოთახის სახელის ჩასწორება ჩავარდა"
+      ],
+      "Failed to join meeting. Please try again later.": [
+        "შეხვედრაზე შესვლის შეცდომა. მოგვიანებით სცადეთ."
+      ],
+      "Failed to join meeting. Please try again.": [
+        "შეხვედრაზე შეერთება ვერ მოხერხდა. გთხოვთ, თავიდან სცადოთ."
+      ],
+      "Failed to lock meeting": [
+        "შეხვედრის დაბლოკვა ჩავარდა"
+      ],
+      "Failed to rotate personal meeting link": [
+        "პირადი შეხვედრის ბმულის განახლება ჩავარდა"
+      ],
+      "Failed to send chat message. Please try again.": [
+        "ჩატის შეტყობინება ვერ გაიგზავნა. თავიდან სცადეთ."
+      ],
+      "Failed to send emoji reaction. Please try again.": [
+        "ემოჯი რეაქციის გაგზავნა ვერ მოხერხდა. გთხოვთ, თავიდან სცადოთ."
+      ],
+      "Failed to send reaction. Please try again.": [
+        "რეაქციის გაგზავნა ვერ მოხერხდა. გთხოვთ, თავიდან სცადოთ."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "შეხვედრის დაწყება ვერ მოხერხდა. გთხოვთ, თავიდან სცადოთ."
+      ],
+      "Failed to start recording": [
+        "ჩაწერის დაწყება ვერ მოხერხდა"
+      ],
+      "Failed to start screen share": [
+        "ეკრანის გაზიარების დაწყების შეცდომა"
+      ],
+      "Failed to unlock meeting": [
+        "შეხვედრის განბლოკვა ჩავარდა"
+      ],
+      "Incorrect username": [
+        "მომხმარებლის სახელი არასწორია"
+      ],
+      "Invalid meeting link": [
+        "შეხვედრის ბმული არასწორია"
+      ],
+      "Invalid verification code": [
+        "შემოწმების არასწორი კოდი"
+      ],
+      "Not a valid number": [
+        "არასწორი ნომერი"
+      ],
+      "Passwords do not match": [
+        "პაროლები არ ემთხვევა"
+      ],
+      "Please allow screen sharing in your system permissions, then try again": [
+        "სცადეთ, ჩართოთ ეკრანის გაზიარება თქვენი სისტემის წვდომებში და თავიდან სცადეთ"
+      ],
+      "Request timed out": [
+        "მოთხოვნის ვადა გავიდა"
+      ],
+      "Room deleted": [
+        "ოთახი წაიშალა"
+      ],
+      "Screen share is not supported on mobile browsers": [
+        "ეკრანის გაზიარება მობილურ ბრაუზერებზე მხარდაჭერილი არაა"
+      ],
+      "Signature verification failed": [
+        "ხელმოწერის შემოწმების შეცდომა"
+      ],
+      "The email addresses do not match": [
+        "ელფოსტის მისამართები არ ემთხვევა"
+      ],
+      "The meeting password is incorrect": [
+        "შეხვედრის პაროლი არასწორია"
+      ],
+      "The meeting password is invalid": [
+        "შეხვედრის პაროლი არასწორია"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
+      ],
+      "This field is required": [
+        "ეს ველი აუცილებელია"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "ეს ველი მოითხოვს, მინიმუმ, ${ minimumLength } სიმბოლოს."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "ეს შეხვედრა მიმდინარეობს ძველ ვერსიაზე, მასპინძელმა უნდა დაასრულოს იგი და განაახლოს Meet უახლესი ვერსიით თავიდან დასაწყებად."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
+      ],
+      "Unknown error": [
+        "უცნობი შეცდომა"
+      ],
+      "Username must begin with a letter or digit": [
+        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა იწყებოდეს"
+      ],
+      "Username must end with a letter or digit": [
+        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "ამ მეთოდით დამოწმების კოდი ვერ გავაგზავნეთ."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "თქვენს ბრაუზერში ამოიწურა საცავის ადგილი. ჩვენ შევინახეთ ჩანაწერი ამ მომენტამდე."
+      ],
+      "Your device's clock appears to be out of sync. Please check your system time and try again.": [
+        "როგორც ჩანს, თქვენი მოწყობილობის საათი არ არის სინქრონიზებული. გთხოვთ, შეამოწმოთ თქვენი სისტემის დრო და სცადოთ თავიდან."
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "აპი ამჟამად ხელმიუწვდომელია"
+      ],
+      "Error: ${ errorMessage }": [
+        "შეცდომა: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "უფს, რაღაც არასწორად წავიდა"
+      ],
+      "Open in browser": [
+        "ბრაუზერში გახსნა"
+      ],
+      "Please refresh the page or try again later.": [
+        "განაახლეთ გვერდი ან მოგვიანებთ სცადეთ."
+      ],
+      "Something went wrong": [
+        "რაღაც არასწორად წავიდა"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ან ${ CALENDAR_APP_NAME }-ს გამოსაყენებლად ვების ვერსიაზე გადაერთეთ."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "გამოსახულება არჩეული არაა"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "თქვენი უსაფრთხოების გასაღებით ავტორიზაციისას მოხდა შეცდომა. გთხოვთ, სცადოთ თავიდან."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "ჩასვით უსაფრთხოების გასაღები, რომელიც დაკავშირებულია თქვენს ${ BRAND_NAME }-ის ანგარიშთან."
+      ],
+      "Security key": [
+        "უსაფრთხოების გასაღები"
+      ],
+      "Touch your security key.": [
+        "შეეხეთ თქვენს უსაფრთხოების გასაღებს."
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "უსაფრთხოების გასაღები"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
+      "GB": [
+        "გბ"
+      ],
+      "KB": [
+        "კბ"
+      ],
+      "MB": [
+        "მბ"
+      ],
+      "TB": [
+        "ტბ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
+      "Gigabyte": [
+        "გიგაბაიტი",
+        "გიგაბაიტი"
+      ],
+      "Kilobyte": [
+        "კილობაიტი",
+        "კილობაიტი"
+      ],
+      "Megabyte": [
+        "მეგაბაიტი",
+        "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "სისტემის ნაგულისხმევი"
+      ],
+      "Theme font": [
+        "თემის ფონტი"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "დიდი"
+      ],
+      "Medium (recommended)": [
+        "საშუალო (რეკომენდებული)"
+      ],
+      "Small": [
+        "პატარა"
+      ],
+      "Very large": [
+        "ძალიან დიდი"
+      ],
+      "Very small": [
+        "ძალიან პატარა"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "უკვე გაქვთ ანგარიში? ${ signIn }"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "ანგარიში"
+      ],
+      "Apps": [
+        "აპები"
+      ],
+      "Network": [
+        "ქსელი"
+      ],
+      "Other category": [
+        "სხვა კატეგორია"
+      ],
+      "Services": [
+        "სერვისები"
+      ]
+    },
+    "Header": {
+      "Protect your conversations with end-to-end encryption": [
+        "დაიცავით თქვენი მიმოწერა ბოლოდან ბოლომდე დაშიფვრით"
+      ]
+    },
+    "Headline": {
+      "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
+        "გაიარეთ ${ createAnActionAction } ან ${ signInAction }, რომ მიიღოთ წვდომა თქვენს პირად ოთახზე და შექმნათ ახალი ოთახები"
+      ],
+      "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
+        "გაიარეთ ${ createAnActionAction } ან ${ signInAction } შეხვედრების დასაგეგმად"
+      ],
+      "Talk in total ${ privacyWord }": [
+        "ისაუბრეთ სრულ ${ privacyWord } პირობებში"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "ელ-ფოსტა"
+      ],
+      "Manual": [
+        "ხელით"
+      ],
+      "No verification method available": [
+        "შემოწმების არცერთი მეთოდი წვდომადი არაა"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      " and ": [
+        " და "
+      ],
+      "${ maxParticipants } participant limit reached": [
+        "${ maxParticipants } მონაწილის ლიმიტი მიღწეულია"
+      ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "${ MEET_APP_NAME }-ს სჭირდება წვდომა, რათა სხვებმა შეძლონ თქვენი დანახვა და მოსმენა ზარის დროს. თქვენ შეგიძლიათ გამორთოთ თქვენი კამერა ან მიკროფონი ნებისმიერ დროს."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME }-ს სჭირდება კამერასთან წვდომა, რათა სხვებმა შეძლონ თქვენი დანახვა ზარის დროს. თქვენ შეგიძლიათ გამორთოთ იგი ნებისმიერ დროს."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME }-ს სჭირდება მიკროფონთან წვდომა, რათა სხვებმა შეძლონ თქვენი მოსმენა ზარის დროს. თქვენ შეგიძლიათ გამორთოთ იგი ნებისმიერ დროს."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
+        "${ MEET_APP_NAME }-ის მუშაობისთვის საჭიროა WebRTC. გთხოვთ, განაახლოთ თქვენი ბრაუზერი ან მოწყობილობა იმ ვერსიაზე, რომელსაც აქვს WebRTC მხარდაჭერა, სცადოთ სხვა ბრაუზერი ან გამორთოთ ნებისმიერი გაფართოება, რომელიც შესაძლოა ბლოკავდეს მას."
+      ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } და კიდევ ${ otherParticipantsCount } სხვა იწერს"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } იწერს"
+      ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (თქვენ) წარმოგიდგენთ"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } წარმოგიდგენთ"
+      ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames }-მა და სხვებმა გამოხატეს რეაქცია: ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames }-მა გამოხატა რეაქცია: ${ emoji }"
+      ],
+      "${ replyCount } reply": [
+        "${ replyCount } პასუხი",
+        "${ replyCount } პასუხი"
+      ],
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "${ totalParticipantCount } მაქსიმუმ ${ maxParticipants } მონაწილედან"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } მონაწილე",
+        "${ totalParticipantCount } მონაწილე"
+      ],
+      "(You)": [
+        "(თქვენ)"
+      ],
+      "-Removed dangerous URL-": [
+        "-წაშლილი საშიში URL-"
+      ],
+      "1 reply draft": [
+        "1 პასუხის მონახაზი"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "ტელეფონის ნომერი, მხოლოდ, ერთი ${ BRAND_NAME }-ის ანგარიშის გადასამოწმებლად შეგიძლიათ, გამოიყენოთ"
+      ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "გაფართოებული რეჟიმი: შეცვალეთ ბუნდოვნების თითოეული კონსტანტა შემდეგი ვერსიისთვის, შემდეგ გამოიყენეთ, რათა თავიდან შექმნათ გადახედვა. უპირატესობა ენიჭება გადაფარვებს ფაილისა და Unleash მნიშვნელობებთან შედარებით."
+      ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "ანონიმური ${ particle } ${ participantNumber }"
+      ],
+      "Are you sure you want to leave?": [
+        "ნამდვილად გსურთ გასვლა?"
+      ],
+      "Are you sure you want to stop recording?": [
+        "დარწმუნებული ხართ, რომ გსურთ ჩაწერის შეწყვეტა?"
+      ],
+      "Attention required": [
+        "საჭიროა ყურადღება"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "შემოწმების ახალი კოდის მოთხოვნამდე შეამოწმეთ თქვენი სპამის საქაღალდე და რომ ${ strong } სწორი მისამართია."
+      ],
+      "By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "ამ შეხვედრის გაგრძელებით თქვენ ადასტურებთ და ეთანხმებით ფაქტს, რომ გიწერენ."
+      ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "შემოერთებით თქვენ ეთანხმებით ჩვენს ${ termsLink }-ს და ${ privacyLink }-ს."
+      ],
+      "camera": [
+        "კამერა"
+      ],
+      "Camera permission denied": [
+        "კამერის ნებართვა უარყოფილია"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "ცვლილებები მომზადებულია. გამოიყენეთ, რათა თავიდან შექმნათ გადახედვა ახალი კონსტანტებით."
+      ],
+      "Chat with everyone": [
+        "დაელალაპარაკეთ ყველას"
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "შეამოწმეთ თქვენი სისტემური პარამეტრები, რომ დარწმუნდეთ, რომ კამერა ხელმისაწვდომია."
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "შეამოწმეთ თქვენი სისტემური პარამეტრები, რომ დარწმუნდეთ, რომ მიკროფონი ხელმისაწვდომია."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
+      ],
+      "Coming soon": [
+        "სულ მალე"
+      ],
+      "Connection failed": [
+        "კავშირი ჩავარდა"
+      ],
+      "Connection interrupted. Reconnecting...": [
+        "კავშირი გაწყდა. მიმდინარეობს თავიდან დაკავშირება..."
+      ],
+      "Connection issue detected. Attempting to recover…": [
+        "აღმოჩენილია კავშირის პრობლემა. მიმდინარეობს აღდგენის მცდელობა…"
+      ],
+      "Connection lost. Reconnecting…": [
+        "კავშირი გაწყდა. მიმდინარეობს თავიდან დაკავშირება…"
+      ],
+      "Copied to clipboard": [
+        "დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "Could not access the camera.": [
+        "კამერასთან წვდომა ვერ მოხერხდა."
+      ],
+      "Could not start recording.": [
+        "ჩაწერის დაწყება ვერ მოხერხდა."
+      ],
+      "Country code": [
+        "ქვეყნის კოდი"
+      ],
+      "Create an account": [
+        "ანგარიშის შექმნა"
+      ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "შექმენით ანგარიში, რათა უმასპინძლოთ შეხვედრებს 50-მდე მონაწილესთან ერთად."
+      ],
+      "Created on ${ formattedDate }": [
+        "შეიქმნა ${ formattedDate }-ზე"
+      ],
+      "Custom combination": [
+        "მომხმარებლის კომბინაცია"
+      ],
+      "Decrypting meetings...": [
+        "შეხვედრების გაშიფვრა..."
+      ],
+      "Default - ${ systemDefault.label }": [
+        "ნაგულისხმევი - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "ნაგულისხმევი - სისტემის ნაგულისხმევი"
+      ],
+      "Delete event": [
+        "მოვლენის წაშლა"
+      ],
+      "Delete room": [
+        "ოთახის წაშლა"
+      ],
+      "Do you want people to ${ deviceContentType } you in the meeting?": [
+        "გნებავთ, რომ ხალხმა ${ deviceContentType } შეხვედრაზე?"
+      ],
+      "Download current logs": [
+        "მიმდინარე ჟურნალის გადმოწერა"
+      ],
+      "Each code can only be used once": [
+        "თითოეული კოდის გამოყენება შესაძლებელია მხოლოდ ერთხელ"
+      ],
+      "Edit email address": [
+        "ელფოსტის მისამართის ჩასწორება"
+      ],
+      "End Meeting for everyone?": [
+        "დასრულდეს შეხვედრა ყველასთვის?"
+      ],
+      "End the meeting for everyone?": [
+        "დასრულდეს შეხვედრა ყველასთვის?"
+      ],
+      "End-to-end encryption is active for audio and video.": [
+        "გამჭოლი დაშიფვრა აქტიურია აუდიოსთვის და ვიდეოსთვის."
+      ],
+      "End-to-end encryption is active for screen share": [
+        "გამჭოლი დაშიფვრა ჩართულია ეკრანის გაზიარებისთვის"
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "ამ ჩატისთვის გამჭოლი დაშიფვრა ჩართულია."
+      ],
+      "Enter code": [
+        "შეიყვანეთ კოდი"
+      ],
+      "Enter the code from your authenticator app": [
+        "შეიყვანეთ კოდი თქვენი ავთენტიკატორი აპიდან"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "შეიყვანეთ დამოწმების კოდი. ციფრი ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "ყველა გაითიშა ზარიდან."
+      ],
+      "Failed to apply background blur": [
+        "ფონის ბუნდოვნების გამოყენება ვერ მოხერხდა"
+      ],
+      "Failed to update meeting name": [
+        "შეხვედრის სახელის განახლება ჩავარდა"
+      ],
+      "Failed to update meeting schedule": [
+        "შეხვედრის განრიგის განახლება ჩავარდა"
+      ],
+      "Free meeting": [
+        "უფასო შეხვედრა"
+      ],
+      "Free meetings are limited to 1 hour. This call will disconnect soon.": [
+        "უფასო შეხვედრები შეზღუდულია 1 საათზე. ეს ზარი მალე გაითიშება."
+      ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "მიიღეთ პირადი შეხვედრების ოთახი. შექმენით ანგარიში, რომ გქონდეთ პირადი შეხვედრის ბმული, რომლის გამოყენებასაც ნებისმიერ დროს შეძლებთ."
+      ],
+      "Get a secure meeting link then add it to your calendar": [
+        "მიიღეთ უსაფრთხო შეხვედრის ბმული და დაამატეთ იგი თქვენს კალენდარს"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "მიიღეთ საუკეთესო გამოცდილება ${ protonMeet } სამაგიდო აპით"
+      ],
+      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
+        "გადადით about:config, მოძებნეთ media.peerconnection.enabled და დააჭირეთ ჭეშმარიტზე."
+      ],
+      "Host": [
+        "ჰოსტი"
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "უმასპინძლეთ საკუთარ დაცულ შეხვედრას. დაიწყეთ ზარი ${ MEET_APP_NAME }-ში და გააზიარეთ ბმული, რომ მოიწვიოთ ნებისმიერი მსურველი. მარტივია, დაცული და უფასო."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "თუ დაკარგეთ წვდომა თქვენს აუტენტიფიკატორ აპლიკაციაზე, შეგიძლიათ გამოიყენოთ ორფაქტორიანი აუტენტიფიკაციის აწყობისას მოწოდებული 16 სარეზერვო აღდგენის კოდიდან 1. ${ learnMoreLink }"
+      ],
+      "If you’re using Firefox, make sure PeerConnection is enabled.": [
+        "თუ იყენებთ Firefox-ს, დარწმუნდით, რომ PeerConnection ჩართულია."
+      ],
+      "Internet connection lost": [
+        "ინტერნეტკავშირი დაკარგულია"
+      ],
+      "Joined ${ roomNameLabel }": [
+        "შემოუერთდა ${ roomNameLabel }-ს"
+      ],
+      "Learn more": [
+        "მეტის ნახვა"
+      ],
+      "Leave meeting and stop sharing?": [
+        "გსურთ შეხვედრიდან გასვლა და გაზიარების შეწყვეტა?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "შეხვედრიდან გასვლა შეწყვეტს თქვენი ეკრანის გაზიარებას."
+      ],
+      "Left ${ roomNameLabel }": [
+        "დატოვა ${ roomNameLabel }"
+      ],
+      "Left by mistake?": [
+        "შეცდომით დატოვეთ?"
+      ],
+      "Link copied to clipboard": [
+        "ბმული დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "Loading": [
+        "იტვირთება"
+      ],
+      "Loading ${ appName }": [
+        "იტვირთება ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
+      ],
+      "Loading meetings...": [
+        "შეხვედრების ჩატვირთვა..."
+      ],
+      "Loading recordings…": [
+        "მიმდინარეობს ჩანაწერების ჩატვირთვა…"
+      ],
+      "Loading...": [
+        "ჩატვირთვა..."
+      ],
+      "Loading…": [
+        "იტვირთება…"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "გაუშვით ატვირთული ვიდეო ან თქვენი ცოცხალი კამერა ციკლურად ფონის ბუნდოვნების ორ ვერსიას შორის გვერდიგვერდ შესადარებლად."
+      ],
+      "Lower participant's hand": [
+        "მონაწილის ხელის ჩამოწევა"
+      ],
+      "Meet without restrictions": [
+        "შეხვდით შეზღუდვების გარეშე"
+      ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "შეხვდით ყოველგვარი შეზღუდვების გარეშე. განაახლეთ პაკეტი, რათა მოხსნათ 1-საათიანი ლიმიტი და უმასპინძლოთ 100-მდე მონაწილეს."
+      ],
+      "Meeting ended": [
+        "შეხვედრა დასრულდა"
+      ],
+      "Meeting full (${ maxParticipants } participants)": [
+        "შეხვედრა შევსებულია (${ maxParticipants } მონაწილე)"
+      ],
+      "Meeting is decrypting...": [
+        "მიმდინარეობს შეხვედრის გაშიფვრა..."
+      ],
+      "Meeting link": [
+        "შეხვედრის ბმული"
+      ],
+      "Meeting locked. No new participants can join.": [
+        "შეხვედრა ჩაკეტეილია. ახალი მონაწილეები ვერ შევლენ."
+      ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "შეხვედრის ჩაწერა მხარდაჭერილი არ არის Firefox-ში."
+      ],
+      "Meeting time is up": [
+        "შეხვედრის დრო ამოიწურა"
+      ],
+      "Meeting unlocked. Participants can join again.": [
+        "შეხვედრა განბლოკილია. დამსწრეებს შეუძლიათ, შეუერთდნენ."
+      ],
+      "Meeting will end in ${ timeLeft }": [
+        "შეხვედრა დასრულდება ${ timeLeft } -ში"
+      ],
+      "Member": [
+        "წევრი"
+      ],
+      "Message actions": [
+        "ქმედებები შეტყობინებაზე"
+      ],
+      "Message from ${ participantName }": [
+        "შეტყობინება ${ participantName }-სგან"
+      ],
+      "microphone": [
+        "მიკროფონი"
+      ],
+      "Microphone effects": [
+        "მიკროფონის ეფექტები"
+      ],
+      "Microphone permission denied": [
+        "მიკროფონის ნებართვა უარყოფილია"
+      ],
+      "Mute microphone": [
+        "მიკროფონის დადუმება"
+      ],
+      "My meetings": [
+        "ჩემი შეხვედრები"
+      ],
+      "My rooms": [
+        "ჩემი ოთახები"
+      ],
+      "New": [
+        "ახალი"
+      ],
+      "New host": [
+        "ახალი მასპინძელი"
+      ],
+      "New reply": [
+        "ახალი პასუხი"
+      ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "${ microphoneLinkButton }${ andString }${ cameraLinkButton } აღმოჩენილი არაა."
+      ],
+      "No camera detected": [
+        "კამერა აღმოჩენილი არაა"
+      ],
+      "No camera detected.": [
+        "კამერა აღმოჩენილი არაა."
+      ],
+      "No microphone detected": [
+        "მიკროფონი აღმოჩენილი არაა"
+      ],
+      "No microphone detected.": [
+        "მიკროფონი აღმოჩენილი არაა."
+      ],
+      "No publications": [
+        "პუბლიკაციების გარეშე"
+      ],
+      "No recordings found on this device.": [
+        "ამ მოწყობილობაზე ჩანაწერები ვერ მოიძებნა."
+      ],
+      "No remote participants": [
+        "დაშორებული მონაწილეების გარეშე"
+      ],
+      "No results found": [
+        "შედეგების გარეშე"
+      ],
+      "No search results": [
+        "ძებნის შედეგების გარეშე"
+      ],
+      "No speaker detected": [
+        "დინამიკები აღმოჩენილი არაა"
+      ],
+      "Not sent, check your connection.": [
+        "არ გაიგზავნა, შეამოწმეთ ინტერნეტთან კავშირი."
+      ],
+      "Only meetings you created appear here": [
+        "აქ გამოჩნდება, მხოლოდ, ის შეხვედრები, რომლებიც თქვენ შექმენით"
+      ],
+      "Open external link": [
+        "გარე ბმულის გახსნა"
+      ],
+      "Other accounts": [
+        "სხვა ანგარიშები"
+      ],
+      "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
+        "ჩვენი გამჭოლად დაშიფრული შეხვედრები იცავს კონფიდენციალობას და ის სრულად უფასოა."
+      ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "გვერდი ${ displayPage } / ${ totalPages }-დან"
+      ],
+      "Participant": [
+        "Მონაწილე"
+      ],
+      "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
+        "ჩასვით თქვენი ${ MEET_APP_NAME }-ის ბმული, რომ შეუერთდეთ დაცულ შეხვედრას"
+      ],
+      "Permissions not given.": [
+        "წვდომები არ მოგენიჭათ."
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "საუკეთესო გამოცდილებისთვის, გთხოვთ, ჩართოთ წვდომა თქვენს ${ microphoneLinkButton }${ andString }${ cameraLinkButton }-თან."
+      ],
+      "Please try again or try another browser": [
+        "გთხოვთ, სცადოთ თავიდან ან გამოიყენოთ სხვა ბრაუზერი"
+      ],
+      "Poor connection": [
+        "ცუდი კავშირი"
+      ],
+      "Premium meeting": [
+        "პრემიუმ შეხვედრა"
+      ],
+      "Presenting": [
+        "წარმოგიდგენთ"
+      ],
+      "privacy": [
+        "კონფიდენციალობა"
+      ],
+      "Quick reactions": [
+        "სწრაფი რეაქციები"
+      ],
+      "Reactions": [
+        "რეაქციები"
+      ],
+      "Reconnected successfully": [
+        "თავიდან დაკავშირება წარმატებულია"
+      ],
+      "Reconnecting to meeting...": [
+        "შეხვედრასთან თავიდან დაკავშირება..."
+      ],
+      "Record your meetings": [
+        "ჩაწერეთ თქვენი შეხვედრები"
+      ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "ჩაწერეთ თქვენი დაუმუშავებელი კამერის არხი და წარმოების ფონის ბუნდოვნება გვერდიგვერდ. შეჩერება ჩამოტვირთავს ორსავე კლიპს."
+      ],
+      "Recording": [
+        "ჩანაწერი"
+      ],
+      "Recording deleted": [
+        "ჩანაწერი წაშლილია"
+      ],
+      "Recording in progress": [
+        "მიმდინარეობს ჩაწერა"
+      ],
+      "Recording will begin and attendees will be notified.": [
+        "ჩაწერა დაიწყება და მონაწილეები მიიღებენ შეტყობინებას."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "ჩანაწერები ინახება ლოკალურად თქვენს ბრაუზერში. ჩამოტვირთეთ ნებისმიერი მათგანი, რომლის შენახვაც გსურთ, ისინი ავტომატურად წაიშლება 30 დღის შემდეგ."
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "აღდგენის ინფორმაცია დარჩება ამ მოწყობილობაზე, თუ მას ხელით არ წაშლით."
+      ],
+      "Refresh audio and video tracks": [
+        "აუდიო და ვიდეო ტრეკების განახლება"
+      ],
+      "Refresh screen share track": [
+        "ეკრანის გაზიარების ტრეკის განახლება"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
+      ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "დაგეგმეთ თქვენი შემდეგი შეხვედრა. შექმენით ანგარიში, რათა დაგეგმოთ შეხვედრები თქვენი კალენდრის მეშვეობით."
+      ],
+      "Select a camera": [
+        "აირჩიეთ კამერა"
+      ],
+      "Select a microphone": [
+        "აირჩიეთ მიკროფონი"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "სანამ წახვალთ, აირჩიეთ მონაწილე, რათა დანიშნოთ ახალ მასპინძლად: "
+      ],
+      "Select a speaker": [
+        "აირჩიეთ დინამიკი"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
+      ],
+      "Session timed out": [
+        "სესიის დრო გავიდა"
+      ],
+      "Set up a permanent meeting room for your team or clients": [
+        "ააწყვეთ მუდმივი შეხვედრების ოთახი თქვენი გუნდისთვის ან კლიენტებისთვის"
+      ],
+      "Share screen": [
+        "ეკრანის გაზიარება"
+      ],
+      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
+        "გააზიარეთ ეს ბმული სხვების მოსაწვევად. ასევე, მისი მოძებნა ნებისმიერ დროს შეგიძლიათ ინფორმაციის ხატულაზე დაწკაპუნებით ხელსაწყოთა პანელში."
+      ],
+      "Sign in": [
+        "შესვლა"
+      ],
+      "Sort by": [
+        "დალაგების პირობა"
+      ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "დინამიკის შერჩევა მიუწვდომელია ამ ბრაუზერში. გამოიყენეთ თქვენი სისტემის პარამეტრები სხვა დინამიკის ასარჩევად."
+      ],
+      "Start recording": [
+        "ჩაწერის დაწყება"
+      ],
+      "Starting camera…": [
+        "კამერის გაშვება…"
+      ],
+      "Stop sharing your screen": [
+        "ეკრანის გაზიარების შეწყვეტა"
+      ],
+      "Successfully deleted meeting": [
+        "შეხვედრა წარმატებით წაიშალა"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "გმადლობთ პრემიუმ შეხვედრის მასპინძლობისთვის."
+      ],
+      "Thank you for joining.": [
+        "მადლობა შემოერთებისთვის."
+      ],
+      "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
+        "მასპინძელმა მოგაცილათ ამ შეხვედრიდან. თუ ეს შეცდომით მოხდა, სთხოვეთ მასპინძელს, რომ თავიდან მოგიწვიოთ."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "შეხვედრის ბმული, რომლის გახსნასაც შეეცადეთ, არ არსებობს ან შესაძლოა ვადაგასულია. დარწმუნდით, რომ ბმული სწორია, ან მის ნაცვლად დაიწყეთ ახალი დაცული შეხვედრა."
+      ],
+      "This conversation started before you joined.": [
+        "ეს მიმოწერა თქვენს შემოერთებამდე დაიწყო."
+      ],
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "ეს არის ბოლოდან ბოლომდე დაშიფრული ჩატი ეფემერული შეტყობინებებით, რომლებიც ქრება ზარის დასრულებისას."
+      ],
+      "This meeting is being recorded": [
+        "ეს შეხვედრა იწერება"
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "ეს შეხვედრა დაბლოკილია. შესასვლელად დაუკავშირდით მასპინძელს."
+      ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "ამ შეხვედრამ მიაღწია უფასო პაკეტის დროის ლიმიტს. განაახლეთ პაკეტი, რათა მომავალ ზარებზე გაზარდოთ თქვენი შეხვედრის ხანგრძლივობა."
+      ],
+      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
+        "ეს შეხვედრა გაიხსნა ${ MEET_APP_NAME } სამაგიდო აპში."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "ეს ჩანაწერი სამუდამოდ წაიშლება ამ მოწყობილობიდან. ამ ქმედების დაბრუნება შეუძლებელია."
+      ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "ეს დაასრულებს შეხვედრას ყველა მონაწილისთვის და შეწყვეტს თქვენი ეკრანის გაზიარებას."
+      ],
+      "This will end the meeting for all participants.": [
+        "ეს შეხვედრა დასრულდება ყველა მონაწილისთვის."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "ეს გამოგიყვანთ ყველა ანგარიშიდან, სადაც შესული ბრძანდებით."
+      ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "ოთახის შესაქმნელად დაგჭირდებათ **უფასო ${ BRAND_NAME } ანგარიში**, რათა შევძლოთ ოთახის შენახვა. ამას მხოლოდ რამდენიმე წამი სჭირდება."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "სპამისაგან თავდასაცავად გთხოვთ, დაამტკიცოთ, რომ ადამიანი ხართ."
+      ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "ღონისძიების დასაგეგმად დაგჭირდებათ **უფასო ${ BRAND_NAME } ანგარიში**, რათა შევძლოთ ღონისძიების შენახვა. ამას მხოლოდ რამდენიმე წამი სჭირდება."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "თქვენი პირადი შეხვედრების ოთახის გამოსაყენებლად დაგჭირდებათ **უფასო ${ BRAND_NAME } ანგარიში**. ამას მხოლოდ რამდენიმე წამი სჭირდება."
+      ],
+      "Today — ${ absoluteDate }": [
+        "დღეს — ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "ხვალ — ${ absoluteDate }"
+      ],
+      "Turn off camera": [
+        "კამერის გამორთვა"
+      ],
+      "Turn on camera": [
+        "კამერის ჩართვა"
+      ],
+      "Unable to reconnect to the meeting. Please rejoin or leave.": [
+        "შეხვედრასთან ხელახლა დაკავშირება ვერ ხერხდება. გთხოვთ, შემოუერთდეთ თავიდან ან გახვიდეთ."
+      ],
+      "unlimited meeting": [
+        "შეხვედრების შეუზღუდავი რაოდენობა"
+      ],
+      "Unlock ${ unlimitedMeeting } and premium features": [
+        "განბლოკეთ ${ unlimitedMeeting } და პრემიუმ ფუნქციები"
+      ],
+      "Unmute microphone": [
+        "მიკროფონის ხმის ჩართვა"
+      ],
+      "Upgrade to record your meetings locally.": [
+        "განაახლეთ პაკეტი თქვენი შეხვედრების ლოკალურად ჩასაწერად."
+      ],
+      "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
+        "ასწიეთ სატარიფო გეგმა 1-საათიანი ლიმიტის მოსაცილებლად და ამ ათვლის გამოსატოვებლად. ისიამოვნეთ 24 საათამდე შეხვედრის დროით."
+      ],
+      "Video effects": [
+        "ვიდეო ეფექტები"
+      ],
+      "View ": [
+        "ნახვა "
+      ],
+      "Warning": [
+        "გაფრთხილება"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "შემოწმების ახალი კოდი გაიგზავნება ${ strong }-ზე"
+      ],
+      "Week": [
+        "კვირა"
+      ],
+      "Would you like to delete this event?": [
+        "გნებავთ ამ მოვლენის წაშლა?"
+      ],
+      "Would you like to delete this room?": [
+        "გნებავთ ამ ოთახის წაშლა?"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "გნებავთ შემოწმების ახალი კოდის მიღება, თუ შემოწმების ალტერნატიულ მეთოდს გამოიყენებთ?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "გნებავთ შემოწმების ახალი კოდის მიღება?"
+      ],
+      "Yesterday — ${ absoluteDate }": [
+        "გუშინ — ${ absoluteDate }"
+      ],
+      "You are almost there": [
+        "თითქმის მზად ბრძანდებით"
+      ],
+      "You can close this tab.": [
+        "ახლა შეგიძლიათ, დახუროთ ეს ჩანართი."
+      ],
+      "You can now return to the application to continue": [
+        "ახლა გასაგრძელებლად შეგიძლიათ, აპლიკაციაზე დაბრუნდეთ"
+      ],
+      "You can still turn off your microphone and camera anytime in the meeting": [
+        "თქვენ ჯერ კიდევ შეგიზლიათ, გამორთოთ მიკროფონი და კამერა ნებისმიერ დროს შეხვედრის მიმდინარეობისას"
+      ],
+      "You left the meeting": [
+        "თქვენ დატოვეთ შეხვედრა"
+      ],
+      "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
+        "ამ ფუნქციისთვის გჭირდებათ ფასიანი ${ MEET_SHORT_APP_NAME } ან Workspace პაკეტი. განახლებისთვის დაუკავშირდით თქვენი ორგანიზაციის ადმინისტრატორს."
+      ],
+      "You were removed from the meeting": [
+        "თქვენ მოგაცილეს შეხვედრიდან"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "თქვენ დატოვებთ შეხვედრას. სხვები გააგრძელებენ."
+      ],
+      "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
+        "მოგიწვიეს უსაფრთხო შეხვედრაზე. დაადასტურეთ თქვენი სახელი და დააჭირეთ ქვემოთ შესასვლელად."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "თქვენი ${ BRAND_NAME }-ის ანგარიში ამჟამად შეჩერებულია. 28 დღის შემდეგ ელფოსტებს ვეღარ მიიღებთ, დისკიდან გაზიარებული ბმულები დაიბლოკება და ახალ ფაილებს ვეღარ ატვირთავათ. ჩვენი სერვისების მოხმარების გასაგრძელებლად საჭიროა, გადაიხადოთ ყველა ვადაგადაცილებული ინვოისი."
+      ],
+      "Your always available meeting room": [
+        "თქვენი მუდამ ხელმისაწვდომი შეხვედრების ოთახი"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "თქვენმა ბრაუზერმა დაბლოკა წვდომა თქვენს კამერასა და მიკროფონთან. მათ ჩასართავად, განაახლეთ თქვენი ბრაუზერის პარამეტრები და თავიდან შემოუერთდით ზარს."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "თქვენმა ბრაუზერმა დაბლოკა წვდომა თქვენს კამერასთან. მის ჩასართავად, განაახლეთ თქვენი ბრაუზერის პარამეტრები და თავიდან შემოუერთდით ზარს."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "თქვენმა ბრაუზერმა დაბლოკა წვდომა თქვენს მიკროფონთან. მის ჩასართავად, განაახლეთ თქვენი ბრაუზერის პარამეტრები და თავიდან შემოუერთდით ზარს."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "თქვენმა ბრაუზერმა დაბლოკა წვდომა თქვენი ეკრანის გაზიარებასთან. მის ჩასართავად, განაახლეთ თქვენი ბრაუზერის პარამეტრები და თავიდან შემოუერთდით ზარს."
+      ],
+      "Your browser or device isn’t supported": [
+        "თქვენი ბრაუზერი, ან მოწყობილობა მხარდაჭერილი არაა"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "თქვენი ელფოსტა, მხოლოდ, ერთხელ შესამოწმებლად იქნება გამოყენებული."
+      ],
+      "Your meeting is ready": [
+        "თქვენი შეხვედრა მზადაა"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
+      ],
+      "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
+        "თქვენ აპირებთ ბმულის გახსნას ახალ ჩანართში. გაგრძელებამდე დარწმუნდით, რომ ენდობით ვებსაიტს."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME }-ის მომხმარებელი"
+      ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } ვარსკვლავი",
+        "${ numberOfStars } ვარსკვლავი"
+      ],
+      "Add optional details": [
+        "დაამატეთ დამატებითი დეტალები"
+      ],
+      "Add to calendar": [
+        "კალენდარში დამატება"
+      ],
+      "Advanced mode": [
+        "გაფართოებული რეჟიმი"
+      ],
+      "Anyone with the link can join": [
+        "შემოსვლა შეუძლია ყველას, ვისაც აქვს ბმული"
+      ],
+      "Attach screenshot(s)": [
+        "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
+      ],
+      "Audio": [
+        "აუდიო"
+      ],
+      "Authenticator app": [
+        "ავთენტიკატორი აპი"
+      ],
+      "Blurred (next)": [
+        "დაბინდული (შემდეგი)"
+      ],
+      "Browser": [
+        "ბრაუზერი"
+      ],
+      "Browser version": [
+        "ბრაუზერის ვერსია"
+      ],
+      "Camera Active": [
+        "კამერა აქტიურია"
+      ],
+      "Category": [
+        "კატეგორია"
+      ],
+      "Code is 6 digits without spaces": [
+        "კოდი წარმოადგენს 6 ციფრს გამოტოვებების გარეშე"
+      ],
+      "Connection Quality": [
+        "კავშირის ხარისხი"
+      ],
+      "Copy all activity events": [
+        "ყველა აქტივობის მოვლენის კოპირება"
+      ],
+      "Copy invite link": [
+        "მოსაწვევის ბმულის კოპირება"
+      ],
+      "Create meeting options": [
+        "შეხვედრის შექმნის პარამეტრები"
+      ],
+      "Created": [
+        "შექმნილია"
+      ],
+      "Current": [
+        "მიმდინარე"
+      ],
+      "Delete": [
+        "წაშლა"
+      ],
+      "Delete recovery-related information.": [
+        "აღდგენის ინფორმაციის წაშლა."
+      ],
+      "Disabled": [
+        "გათიშული"
+      ],
+      "Does not repeat": [
+        "არ მეორდება"
+      ],
+      "Download .ics": [
+        ".ics-ის გადმოწერა"
+      ],
+      "Email address": [
+        "ელფოსტის მისამართი"
+      ],
+      "Emoji picker": [
+        "ემოჯის ამომრჩევი"
+      ],
+      "Emoji reactions": [
+        "ემოჯი რეაქციები"
+      ],
+      "Enabled": [
+        "ჩართულია"
+      ],
+      "Ended": [
+        "დასრულდა"
+      ],
+      "Every day": [
+        "ყოველდღე"
+      ],
+      "Every month": [
+        "ყოველ თვე"
+      ],
+      "Every week": [
+        "ყოველკვირა"
+      ],
+      "Every weekday": [
+        "ყოველი სამუშაო დღე"
+      ],
+      "Every year": [
+        "ყოველ წელს"
+      ],
+      "Google Calendar": [
+        "Google Calendar"
+      ],
+      "Hide password": [
+        "პაროლის დამალვა"
+      ],
+      "How was the call quality?": [
+        "როგორი იყო ზარის ხარისხი?"
+      ],
+      "Identity": [
+        "იდენტიფიკატორი"
+      ],
+      "Include application logs in bug report": [
+        "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
+      ],
+      "Last used": [
+        "ბოლოს გამოყენებული"
+      ],
+      "Leave meeting options": [
+        "შეხვედრიდან გასვლის პარამეტრები"
+      ],
+      "Manage recordings": [
+        "ჩანაწერების მართვა"
+      ],
+      "Meeting ID": [
+        "შეხვედრის ID"
+      ],
+      "Meeting link": [
+        "შეხვედრის ბმული"
+      ],
+      "Message": [
+        "შეტყობინება"
+      ],
+      "Microphone Active": [
+        "მიკროფონი აქტიურია"
+      ],
+      "Monday to Friday": [
+        "ორშაბათიდან პარასკევის ჩათვლით"
+      ],
+      "Muted": [
+        "დადუმებულია"
+      ],
+      "Name": [
+        "სახელი"
+      ],
+      "Next": [
+        "შემდეგი"
+      ],
+      "Operating system": [
+        "ოპერაციული სისტემა"
+      ],
+      "Operating system version": [
+        "ოპერაციული სისტემის ვერსია"
+      ],
+      "Outlook Calendar": [
+        "Outlook-ის კალენდარი"
+      ],
+      "Participant controls": [
+        "მონაწილეთა კონტროლი"
+      ],
+      "Participants join after you approve them": [
+        "მონაწილეები შემოუერთდებიან მას შემდეგ, რაც დაამტკიცებთ მათ"
+      ],
+      "Password": [
+        "პაროლი"
+      ],
+      "Phone number": [
+        "ტელეფონის ნომერი"
+      ],
+      "Raw": [
+        "დაუმუშავებელი"
+      ],
+      "Remember my name on this device": [
+        "დაიმახსოვრე ჩემი სახელი ამ მოწყობილობაზე"
+      ],
+      "Repeat event": [
+        "მოვლენის გამეორება"
+      ],
+      "Reply": [
+        "პასუხის გაცემა"
+      ],
+      "Return to dashboard": [
+        "დაბრუნება მართვის პანელზე"
+      ],
+      "Reveal password": [
+        "პაროლის ჩვენება"
+      ],
+      "Save my name on this device": [
+        "ჩემი სახელის შენახვა ამ მოწყობილობაზე"
+      ],
+      "Schedule meeting": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Screen share": [
+        "ეკრანის გაზიარება"
+      ],
+      "Selected Camera": [
+        "არჩეული კამერა"
+      ],
+      "Selected Microphone": [
+        "არჩეული მიკროფონი"
+      ],
+      "Selected Speaker": [
+        "არჩეული დინამიკი"
+      ],
+      "Subscribed": [
+        "გამოწერილია"
+      ],
+      "System information": [
+        "სისტემის ინფორმაცია"
+      ],
+      "Track SID": [
+        "SID-ის მიდევნება"
+      ],
+      "Use live camera feed": [
+        "კამერის პირდაპირი არხის გამოყენება"
+      ],
+      "Use simple selfie segmentation": [
+        "მარტივი სელფის სეგმენტაციის გამოყენება"
+      ],
+      "Verification code": [
+        "შემოწმების კოდი"
+      ],
+      "Video": [
+        "ვიდეო"
+      ],
+      "What happened?": [
+        "რა მოხდა?"
+      ],
+      "Your password (admin)": [
+        "თქვენი პაროლი (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "თქვენი პაროლი (სანდო კონტაქტი)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "ბრაუზერის ქეშის გასუფთავება"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
+      "privacy policy": [
+        "კონფიდენციალობის პოლიტიკა"
+      ],
+      "Request an invite": [
+        "მოსაწვევის მოთხოვნა"
+      ],
+      "Sign in": [
+        "შესვლა"
+      ],
+      "terms and conditions": [
+        "წესები და პირობები"
+      ],
+      "What’s this?": [
+        "რა არის ეს?"
+      ]
+    },
+    "meet": {
+      "Create and copy link": [
+        "შექმნა და ბმულის კოპირება"
+      ],
+      "Create new room": [
+        "ახალი ოთახის შექმნა"
+      ],
+      "Meeting rooms can be used at any time": [
+        "სასაუბრო ოთახებით სარგებლობა ნებისმიერ დროსაა შესაძლებელი"
+      ],
+      "Save and copy link": [
+        "შენახვა და ბმულის კოპირება"
+      ]
+    },
+    "Meet": {
+      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
+        "თქვენს ბრაუზერს ან მოწყობილობის პროგრამულ უზრუნველყოფას არ აქვს ${ MEET_APP_NAME }-ის მხარდაჭერა. ${ MEET_APP_NAME }-ის მუშაობისთვის საჭიროა WebAssembly (Wasm). გთხოვთ, განაახლოთ თქვენი ბრაუზერი ან მოწყობილობა იმ ვერსიაზე, რომელსაც აქვს Wasm-ის მხარდაჭერა, ან სცადოთ სხვა ბრაუზერის გამოყენება."
+      ]
+    },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "ვინაიდან ამ შეხვედრის ერთადერთი მონაწილე ხართ, შეხვედრა ავტომატურად დაიხურება. გსურთ შეხვედრაზე დარჩენა?"
+      ]
+    },
+    "meet_2025 Action": {
+      "Leave meeting": [
+        "შეხვედრიდან გასვლა"
+      ],
+      "Stay in the meeting": [
+        "შეხვედრაზე დარჩენა"
+      ]
+    },
+    "meet_2025 Error": {
+      "Failed to start Picture-in-Picture": [
+        "სურათი-სურათშის გაშვება ჩავარდა"
+      ]
+    },
+    "Notification": {
+      "Coming soon": [
+        "სულ მალე"
+      ],
+      "Copied to clipboard": [
+        "დაკოპირდა გაცვლის ბუფერში"
+      ],
+      "Could not send feedback": [
+        "უკუკავშირის გაგზავნა ვერ მოხერხდა"
+      ],
+      "Link copied to clipboard": [
+        "ბმული კოპირებულია ბუფერში"
+      ],
+      "Room name updated": [
+        "ოთახის სახელი განახლდა"
+      ],
+      "Successfully rotated your personal meeting": [
+        "თქვენი პირადი შეხვედრის განახლება წარმატებული"
+      ],
+      "You can't send a feedback for a meeting you haven't been to": [
+        "ვერ გაგზავნით უკუკავშირს იმ შეხვედრის შესახებ, რომელსაც არ დასწრებიხართ"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "ზოგიერთი გამოსახულება არ აიტვირთა, რადგან მიმდინარე მონიშნულებში ფაილის სახელები მეორდება."
+      ]
+    },
+    "Option": {
+      "Audio was breaking up": [
+        "ხმა წყდებოდა"
+      ],
+      "I couldn't hear others": [
+        "სხვების არ მესმოდა"
+      ],
+      "I couldn't present ": [
+        "მე ვერ წარმოგიდგინეთ "
+      ],
+      "I couldn't see others' video": [
+        "სხვების ვიდეოს ვერ ვხედავდი"
+      ],
+      "I couldn't see the presentation": [
+        "ვერ ვხედავდი პრეზენტაციას"
+      ],
+      "Others couldn't hear me": [
+        "სხვებს არ ესმოდათ ჩემი"
+      ],
+      "Others couldn't see my video": [
+        "სხვები ვერ ხედავდნენ ჩემს ვიდეოს"
+      ],
+      "The presentation was blurry": [
+        "პრეზენტაცია ბუნდოვანი იყო"
+      ],
+      "Video quality was poor": [
+        "ვიდეოს ხარისხი იყო ცუდი"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "თქვენთან დაკავშირების საშუალება"
+      ],
+      "E.g., ": [
+        "მაგ. "
+      ],
+      "Enter time": [
+        "შეიყვანეთ დრო"
+      ],
+      "Enter your name": [
+        "შეიყვანეთ თქვენი სახელი"
+      ],
+      "Find...": [
+        "ძებნა..."
+      ],
+      "Loading...": [
+        "იტვირთება..."
+      ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "შეხვედრის სახელი, მაგ. გუნდური სინქრონიზაცია, პროექტის განახლება და ა.შ"
+      ],
+      "Password": [
+        "პაროლი"
+      ],
+      "Please describe the problem and include any error messages": [
+        "აღწერეთ პრობლემა და დაურთეთ შეცდომის ნებისმიერი შეტყობინება"
+      ],
+      "Reply...": [
+        "პასუხი..."
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "ოთახის სახელი, მაგ. გუნდური სინქრონიზაცია, პროექტის განახლება და ა.შ"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "დაგეგმვა ${ CALENDAR_APP_NAME }-ში"
+      ],
+      "Search": [
+        "ძებნა"
+      ],
+      "Select": [
+        "აირჩიეთ"
+      ],
+      "Share more details": [
+        "გაზიარების მეტი დეტალის ჩვენება"
+      ],
+      "Type an encrypted message...": [
+        "აკრიფეთ დაშიფრული შეტყობინება..."
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "ანგარიშის უსაფრთხოების გადახედვა"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "შესვლა წარმატებით არ დასრულდა."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "შედეგების გარეშე"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "გასვლა"
+      ],
+      "Stay signed in": [
+        "სისტემაში დარჩენა"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } საათი",
+        "${ gracePeriodHoursRemaining } საათი"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } ახლა ხელმისაწვდომია."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "თუ გახვალთ მანამდე, სანამ პაროლს შეცლით, შეიძლება, თქვენს ანგარიშზე წვდომა დაკარგოთ."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "თუ გახვალთ პაროლის შეცლის გარეშე, შეიძლება, თქვენს ანგარიშზე წვდომა დაკარგოთ."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "პაროლის შეცვლის დაწყება ${ boldTimeLeft }-ში შეგეძლებათ."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "პაროლის ჩამოყრა"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "გახვალთ პაროლის შეცვლის გარეშე?"
+      ]
+    },
+    "Sort option": {
+      "Alphabetical (A–Z)": [
+        "ანბანის მიხედვით (A–Z)"
+      ],
+      "Newly created": [
+        "ახალი შექმნილი"
+      ],
+      "Past meetings": [
+        "წარსული შეხვედრები"
+      ],
+      "Upcoming": [
+        "მომავალი"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "ტარიფებზე გადასვლა"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "შესვლა"
+      ],
+      "Sign in to your organization": [
+        "შედით თქვენს ორგანიზაციაში"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
+      ]
+    },
+    "Status": {
+      "No": [
+        "არა"
+      ],
+      "Yes": [
+        "დიახ"
+      ]
+    },
+    "Success": {
+      "Assigned new host": [
+        "ახალი მასპინძელი მინიჭებულია"
+      ],
+      "Code sent to ${ methodTo }": [
+        "კოდი გაგზავნილია ${ methodTo }-თან"
+      ],
+      "Email address copied to clipboard": [
+        "ელფოსტის მისამართები დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "Problem reported": [
+        "პრობლემა შეტყობინებულია"
+      ],
+      "Verification successful": [
+        "გადამოწმება წარმატებულია"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "ქმედებები"
+      ],
+      "Date": [
+        "თარიღი"
+      ],
+      "Name": [
+        "სახელი"
+      ],
+      "Size": [
+        "ზომა"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "ანგარიში შეზღუდულია"
+      ],
+      "Account temporarily locked": [
+        "ანგარიში დროებით დაბლოკილია"
+      ],
+      "Activity events": [
+        "აქტივობის მოვლენები"
+      ],
+      "All participants": [
+        "ყველა მონაწილე"
+      ],
+      "Allow camera ": [
+        "კამერის ნებართვა "
+      ],
+      "Allow camera and microphone": [
+        "კამერისა და მიკროფონის ნებართვა"
+      ],
+      "Allow microphone": [
+        "მიკროფონის ნებართვა"
+      ],
+      "Are you sure?": [
+        "დარწმუნებული ბრძანდებით?"
+      ],
+      "Assign a new host": [
+        "ახალი მასპინძლის მინიჭება"
+      ],
+      "Audio": [
+        "ხმა"
+      ],
+      "Available Cameras": [
+        "ხელმისაწვდომი კამერები"
+      ],
+      "Available Microphones": [
+        "ხელმისაწვდომი მიკროფონები"
+      ],
+      "Available Speakers": [
+        "ხელმისაწვდომი დინამიკები"
+      ],
+      "Background blur comparison": [
+        "ფონის ბუნდოვნების შედარება"
+      ],
+      "Camera and microphone are blocked": [
+        "კამერა და მიკროფონი დაბლოკილია"
+      ],
+      "Camera is blocked": [
+        "კამერა დაბლოკილია"
+      ],
+      "Chat": [
+        "ჩატი"
+      ],
+      "Constants": [
+        "კონსტანტები"
+      ],
+      "Couldn't prepare the recording": [
+        "ჩაწერის მომზადება ვერ მოხერხდა"
+      ],
+      "Create new room": [
+        "ახალი ოთახის შექმნა"
+      ],
+      "Date": [
+        "თარიღი"
+      ],
+      "Debug Overlay": [
+        "განლაგების გამართვა"
+      ],
+      "Delete recording?": [
+        "წაიშალოს ჩანაწერი?"
+      ],
+      "Enter your password": [
+        "შეიყვანეთ თქვენი პაროლი"
+      ],
+      "Epoch": [
+        "ეპოქა"
+      ],
+      "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
+        "ეპოქა ${ prevLog.epoch } → ${ log.epoch }"
+      ],
+      "Error at epoch ${ log.epoch }": [
+        "შეცდომა ${ log.epoch } ეპოქაში"
+      ],
+      "Help and feedback": [
+        "დახმარება და გამოხმაურება"
+      ],
+      "Help center": [
+        "დახმარების ცენტრი"
+      ],
+      "Human verification": [
+        "ადამიანის შემოწმება"
+      ],
+      "Info": [
+        "ინფორმაცია"
+      ],
+      "Invalid meeting link": [
+        "შეხვედრის არასწორი ბმული"
+      ],
+      "Invalid verification code": [
+        "შემოწმების არასწორი კოდი"
+      ],
+      "Invite link": [
+        "ბმული მოწვევაზე"
+      ],
+      "Join a meeting": [
+        "შეხვედრასთან მიერთება"
+      ],
+      "Join meeting": [
+        "შეხვედრასთან მიერთება"
+      ],
+      "Joined at epoch ${ log.epoch }": [
+        "გაწევრიანდა ${ log.epoch } ეპოქაში"
+      ],
+      "Joining meeting with ${ participantCount } other participant…": [
+        "შეხვედრაზე შესვლა კიდევ ${ participantCount } სხვა მონაწილესთან ერთად…",
+        "შეხვედრაზე შესვლა კიდევ ${ participantCount } სხვა მონაწილესთან ერთად…"
+      ],
+      "Launching Meeting...": [
+        "შეხვედრის გაშვება..."
+      ],
+      "Local Participant": [
+        "ლოკალური მონაწილე"
+      ],
+      "Meeting": [
+        "შეხვედრა"
+      ],
+      "Meeting created": [
+        "შეხვედრა შეიქმნა"
+      ],
+      "Meeting details": [
+        "შეხვედრის დეტალები"
+      ],
+      "Meeting edited": [
+        "შეხვედრა ჩასწორდა."
+      ],
+      "Meeting settings": [
+        "შეხვედრის მორგება"
+      ],
+      "Messaging Layer Security": [
+        "Messaging Layer Security (MLS)"
+      ],
+      "Microphone is blocked": [
+        "მიკროფონი დაბლოკილია"
+      ],
+      "Minicalendar": [
+        "მინიკალენდარი"
+      ],
+      "No one is waiting": [
+        "არავინ ელოდება"
+      ],
+      "No results found": [
+        "შედეგების გარეშე"
+      ],
+      "Participants": [
+        "მონაწილეები"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "დამსწრეები (${ filteredParticipants.length })"
+      ],
+      "Personal meeting room": [
+        "პირადი შეხვედრის ოთახი"
+      ],
+      "Preparing your recording…": [
+        "თქვენი ჩაწერის მომზადება…"
+      ],
+      "Publications": [
+        "პუბლიკაციები"
+      ],
+      "Reconnection Testing": [
+        "ხელახალი დაკავშირების ტესტირება"
+      ],
+      "Record raw vs blurred camera": [
+        "დაუმუშავებელი და დაბინდული კამერის ჩაწერა"
+      ],
+      "Record this meeting": [
+        "ამ შეხვედრის ჩაწერა"
+      ],
+      "Recordings": [
+        "ჩანაწერები"
+      ],
+      "Remote Participants": [
+        "დაშორებული მონაწილეები"
+      ],
+      "Report a problem": [
+        "პრობლემის შესახებ შეტყობინება"
+      ],
+      "Request new code": [
+        "ახალი კოდის გამოთხოვა"
+      ],
+      "Schedule a meeting": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Screen share is blocked": [
+        "ეკრანის გაზიარება დაბლოკილია"
+      ],
+      "Secure meeting": [
+        "დაცული შეხვედრა"
+      ],
+      "Security": [
+        "უსაფრთხოება"
+      ],
+      "Security code": [
+        "უსაფრთხოების კოდი"
+      ],
+      "Settings": [
+        "მორგება"
+      ],
+      "Sign out": [
+        "გასვლა"
+      ],
+      "Starting meeting as the first participant…": [
+        "შეხვედრის დაწყება პირველი მონაწილის სახით…"
+      ],
+      "Stop recording": [
+        "ჩაწერის დასრულება"
+      ],
+      "Talk confidentially": [
+        "ისაუბრეთ კონფიდენციალურად"
+      ],
+      "Thank you!": [
+        "მადლობა!"
+      ],
+      "Time": [
+        "დრო"
+      ],
+      "Title": [
+        "სათაური"
+      ],
+      "Two-factor authentication": [
+        "2FA"
+      ],
+      "Video": [
+        "ვიდეო"
+      ],
+      "Waiting room": [
+        "მოსაცდელი ოთახი"
+      ],
+      "What went wrong?": [
+        "რა გაფუჭდა?"
+      ],
+      "Your feedback has been submitted": [
+        "თქვენი გამოხმაურება გაიგზავნა"
+      ],
+      "Your recording is ready": [
+        "თქვენი ჩანაწერი მზადაა"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "დღეს"
+      ]
+    },
+    "Tooltip": {
+      "Background blur is not supported on your browser": [
+        "გაუმჭვირვალე ფონი მხარდაუჭერელია თქვენს ბრაუზერზე"
+      ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "ახალი შეხვედრის ბმულის გენერირება. მიმდინარე ბმული მუშაობას შეწყვეტს."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "ხელოვნური ინტელექტის მყისიერი დახმარება, ადამიანი ექსპერტი მუდამ მზადყოფნაშია!"
+      ],
+      "Recurring meeting": [
+        "გამეორებადი შეხვედრა"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "ახალი შეხვედრის ბმულის გენერირება დღეში მხოლოდ ერთხელ შეგიძლიათ."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "საფულის პრობლემა"
+      ]
+    },
+    "Warning": {
+      "Connection is taking longer than expected": [
+        "კავშირს იმაზე მეტი დრო სჭირდება, ვიდრე მოსალოდნელი იყო"
+      ],
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "მიკროფონთან ან კამერასთან წვდომა შეუძლებელია. შეგიძლიათ, სცადოთ მისი ჩართვა თავიდან შეხვედრის მორგების ფანჯრიდან."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "კამერასთან წვდომა შეუძლებელია. შეგიძლიათ, სცადოთ მისი ჩართვა თავიდან შეხვედრის მორგების ფანჯრიდან."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "მიკროფონთან წვდომა შეუძლებელია. შეგიძლიათ, სცადოთ მისი ჩართვა თავიდან შეხვედრის მორგების ფანჯრიდან."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
+      ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "STUN UDP კავშირი ჩავარდა, მიმდინარეობს ცდა TURN რეტრანსლაციით…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "STUN UDP კავშირის მოლოდინის დრო ამოიწურა, მიმდინარეობს ცდა TURN რეტრანსლაციით"
+      ],
+      "Trying another route…": [
+        "სხვა გზის მცდელობა…"
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "სამწუხაროდ, ამჟამად, ონლაინ არ ვართ. შეავსეთ ქვედა ფორმა, აღწერეთ თქვენი პრობლემა და ჩვენ მალევე დაგიკავშირდებით."
+      ]
+    }
+  }
+}

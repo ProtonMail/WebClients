@@ -1,0 +1,3696 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "sv_SE"
+  },
+  "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(öppnas i ny flik)"
+      ],
+      "camera off": [
+        "kamera av"
+      ],
+      "camera on": [
+        "kamera på"
+      ],
+      "Meeting controls": [
+        "Möteskontroller"
+      ],
+      "microphone muted": [
+        "mikrofon tystad"
+      ],
+      "microphone on": [
+        "mikrofon på"
+      ]
+    },
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } gick med i mötet"
+      ],
+      "${ name } left the meeting": [
+        "${ name } lämnade mötet"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } sänkte sin hand"
+      ],
+      "${ name } raised their hand": [
+        "${ name } räckte upp sin hand"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } reagerade med ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } säger: ${ message }"
+      ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "En deltagare gick med i mötet"
+      ],
+      "A participant left the meeting": [
+        "En deltagare lämnade mötet"
+      ],
+      "A participant lowered their hand": [
+        "En deltagare sänkte sin hand"
+      ],
+      "A participant raised their hand": [
+        "En deltagare räckte upp sin hand"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "En deltagare reagerade med ${ emoji }"
+      ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "Ansluten via TURN-reläläge på grund av dina nätverksbegränsningar. Detta kan öka latensen och påverka samtalskvaliteten."
+      ],
+      "Connection lost. Reconnecting…": [
+        "Anslutning förlorad. Återansluter …"
+      ],
+      "New chat message: ${ message }": [
+        "Nytt chattmeddelande: ${ message }"
+      ],
+      "Now starting recording": [
+        "Börjar spela in nu"
+      ],
+      "Reconnected to the meeting": [
+        "Återansluten till mötet"
+      ],
+      "Recording saved": [
+        "Inspelning sparad"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Inspelning har startat. Genom att fortsätta i mötet bekräftar och samtycker du till att bli inspelad."
+      ],
+      "Recording stopped": [
+        "Inspelning stoppad"
+      ],
+      "Screen share started": [
+        "Skärmdelning startad"
+      ],
+      "Screen share started by ${ name }": [
+        "Skärmdelning startad av ${ name }"
+      ],
+      "Screen share stopped": [
+        "Skärmdelning stoppad"
+      ],
+      "Screen share stopped by ${ name }": [
+        "Skärmdelning stoppad av ${ name }"
+      ],
+      "The meeting will close in 1 minute": [
+        "Mötet kommer sluta om 1 minut"
+      ],
+      "The meeting will close in 15 seconds": [
+        "Mötet kommer stänga om 15 sekunder"
+      ],
+      "The meeting will close in 30 seconds": [
+        "Mötet kommer stänga om 30 sekunder"
+      ],
+      "The meeting will end in 1 minute": [
+        "Mötet kommer sluta om 1 minut"
+      ],
+      "The meeting will end in 10 minutes": [
+        "Mötet kommer sluta om 10 minuter"
+      ],
+      "The meeting will end in 15 seconds": [
+        "Mötet kommer sluta om 15 sekunder"
+      ],
+      "The meeting will end in 5 minutes": [
+        "Mötet kommer sluta om 5 minuter"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Det här mötet spelas in. Genom att gå med bekräftar och samtycker du till att bli inspelad."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Du är den enda deltagaren. Mötet kommer avslutas om 2 minuter om inte någon ansluter sig."
+      ],
+      "You have been disconnected from the meeting": [
+        "Du har blivit frånkopplad från mötet"
+      ],
+      "You have been muted by the host": [
+        "Du har tystats av värden"
+      ],
+      "Your camera has been turned off by the host": [
+        "Din kamera har stängts av av värden"
+      ]
+    },
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME }-butik"
+      ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } ny",
+        "${ newMessageCount } nya"
+      ],
+      "Add account": [
+        "Lägg till konto"
+      ],
+      "Add another account": [
+        "Lägg till ett annat konto"
+      ],
+      "Admit": [
+        "Släpp in"
+      ],
+      "Admit ${ participantName }": [
+        "Släpp in ${ participantName }"
+      ],
+      "Admit all": [
+        "Släpp in alla"
+      ],
+      "Allow access": [
+        "Tillåt åtkomst"
+      ],
+      "Anyone with the link can join immediately": [
+        "Alla med länken kan gå med direkt"
+      ],
+      "Applied": [
+        "Tillämpad"
+      ],
+      "Apply changes": [
+        "Tillämpa ändringar"
+      ],
+      "Approve participants before they can join": [
+        "Godkänn deltagare innan de kan gå med"
+      ],
+      "Assign ${ selectedParticipantName } as host": [
+        "Tilldela ${ selectedParticipantName } som värd"
+      ],
+      "Assign new host": [
+        "Tilldela ny värd"
+      ],
+      "Attach screenshot(s)": [
+        "Bifoga skärmdump(ar)"
+      ],
+      "Authenticate": [
+        "Autentisera"
+      ],
+      "Back": [
+        "Tillbaka"
+      ],
+      "Background blur": [
+        "Bakgrundsoskärpa"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Change password": [
+        "Ändra lösenord"
+      ],
+      "Chat with us": [
+        "Chatta med oss"
+      ],
+      "Close": [
+        "Stäng"
+      ],
+      "Close preview": [
+        "Stäng förhandsgranskning"
+      ],
+      "Close reply composer": [
+        "Stäng svarsfönstret"
+      ],
+      "Close this banner": [
+        "Stäng denna banner"
+      ],
+      "Continue": [
+        "Fortsätt"
+      ],
+      "Continue without camera": [
+        "Fortsätt utan kamera"
+      ],
+      "Continue without mic and camera": [
+        "Fortsätt utan mikrofon och kamera"
+      ],
+      "Continue without microphone": [
+        "Fortsätt utan mikrofon"
+      ],
+      "Copy address": [
+        "Kopiera adress"
+      ],
+      "Copy invite link": [
+        "Kopiera inbjudningslänk"
+      ],
+      "Copy link": [
+        "Kopiera länk"
+      ],
+      "Copy link and close": [
+        "Kopiera länk och stäng"
+      ],
+      "Copy meeting link": [
+        "Kopiera möteslänk"
+      ],
+      "Copy room link": [
+        "Kopiera rumslänk"
+      ],
+      "Create a free account": [
+        "Skapa ett gratis konto"
+      ],
+      "Create a room": [
+        "Skapa ett rum"
+      ],
+      "Create an account": [
+        "Skapa ett konto"
+      ],
+      "Create meeting": [
+        "Skapa möte"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
+      "Deny": [
+        "Neka"
+      ],
+      "Deny ${ participantName }": [
+        "Neka ${ participantName }"
+      ],
+      "Disable ${ participantName }'s video": [
+        "Inaktivera video för ${ participantName }"
+      ],
+      "Disable camera": [
+        "Inaktivera kamera"
+      ],
+      "Disable waiting room": [
+        "Inaktivera väntrum"
+      ],
+      "Discard": [
+        "Avfärda"
+      ],
+      "Dismiss": [
+        "Avfärda"
+      ],
+      "Dismiss new messages": [
+        "Avfärda nya meddelanden"
+      ],
+      "Done": [
+        "Klar"
+      ],
+      "Download": [
+        "Ladda ner"
+      ],
+      "Download app": [
+        "Ladda ner app"
+      ],
+      "Download local participant report": [
+        "Ladda ner lokal deltagarrapport"
+      ],
+      "Download logs": [
+        "Ladda ner loggar"
+      ],
+      "Download participant report": [
+        "Ladda ner deltagarrapport"
+      ],
+      "Download recording": [
+        "Ladda ner inspelning"
+      ],
+      "Download room level report": [
+        "Ladda ner rapport på rumsnivå"
+      ],
+      "Edit": [
+        "Redigera"
+      ],
+      "Edit email address": [
+        "Redigera e-postadress"
+      ],
+      "Edit phone number": [
+        "Redigera telefonnummer"
+      ],
+      "Edit sign-in details": [
+        "Redigera inloggningsdetaljer"
+      ],
+      "Enable camera": [
+        "Aktivera kamera"
+      ],
+      "Enable waiting room": [
+        "Aktivera väntrum"
+      ],
+      "End meeting": [
+        "Avsluta möte"
+      ],
+      "End meeting for all": [
+        "Avsluta möte för alla"
+      ],
+      "Forgot password?": [
+        "Glömt lösenord?"
+      ],
+      "Full size": [
+        "Full storlek"
+      ],
+      "Generate a new meeting link.": [
+        "Generera en ny möteslänk."
+      ],
+      "Get Meet Professional": [
+        "Skaffa Meet Professional"
+      ],
+      "Get verification code": [
+        "Skaffa verifieringskod"
+      ],
+      "Help and feedback": [
+        "Hjälp och feedback"
+      ],
+      "Help and resources": [
+        "Hjälp och resurser"
+      ],
+      "Hide options": [
+        "Dölj alternativ"
+      ],
+      "Hide participants": [
+        "Dölj deltagare"
+      ],
+      "Hide self view": [
+        "Dölj självvisning"
+      ],
+      "Hide timezones": [
+        "Dölj tidszoner"
+      ],
+      "Insert emoji": [
+        "Infoga emoji"
+      ],
+      "Join": [
+        "Gå med"
+      ],
+      "Join meeting": [
+        "Gå med i möte"
+      ],
+      "Join with a link": [
+        "Gå med med en länk"
+      ],
+      "Kick out": [
+        "Sparka ut"
+      ],
+      "Kick out ${ participantName }": [
+        "Kasta ut ${ participantName }"
+      ],
+      "Leave": [
+        "Lämna"
+      ],
+      "Leave meeting": [
+        "Lämna möte"
+      ],
+      "Lock meeting": [
+        "Lås möte"
+      ],
+      "Lower hand": [
+        "Sänk handen"
+      ],
+      "Minimize preview": [
+        "Minimera förhandsgranskning"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mer information: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Fler alternativ för konton"
+      ],
+      "Mute ${ participantName }": [
+        "Tysta ${ participantName }"
+      ],
+      "Next month": [
+        "Nästa månad"
+      ],
+      "Next page": [
+        "Nästa sida"
+      ],
+      "Noise cancellation": [
+        "Brusreducering"
+      ],
+      "Open app": [
+        "Öppna app"
+      ],
+      "Open link": [
+        "Öppna länk"
+      ],
+      "Participants join after you approve them": [
+        "Deltagare går med efter att du har godkänt dem"
+      ],
+      "Participants join the call directly": [
+        "Deltagare går med i samtalet direkt"
+      ],
+      "Pause": [
+        "Pausa"
+      ],
+      "Previous month": [
+        "Föregående månad"
+      ],
+      "Previous page": [
+        "Föregående sida"
+      ],
+      "Raise hand": [
+        "Räck upp handen"
+      ],
+      "React with ${ emoji }": [
+        "Reagera med ${ emoji }"
+      ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Reagera med ${ emoji }, ${ identities.length } reaktion",
+        "Reagera med ${ emoji }, ${ identities.length } reaktioner"
+      ],
+      "Receive video": [
+        "Ta emot video"
+      ],
+      "Record": [
+        "Spela in"
+      ],
+      "Refer a friend": [
+        "Hänvisa en vän"
+      ],
+      "Refresh audio and video tracks": [
+        "Uppdatera ljud- och videospår"
+      ],
+      "Refresh screen share track": [
+        "Uppdatera spår för skärmdelning"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
+      ],
+      "Rejoin meeting": [
+        "Gå med i möte igen"
+      ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Ta bort reaktion ${ emoji }, ${ identities.length } reaktion",
+        "Ta bort reaktion ${ emoji }, ${ identities.length } reaktioner"
+      ],
+      "Reply": [
+        "Svara"
+      ],
+      "Report a problem": [
+        "Rapportera ett problem"
+      ],
+      "Request a call": [
+        "Begär ett samtal"
+      ],
+      "Request a feature": [
+        "Begär en funktion"
+      ],
+      "Request new code": [
+        "Begär ny kod"
+      ],
+      "Resend code": [
+        "Skicka koden igen"
+      ],
+      "Reset to defaults": [
+        "Återställ till standard"
+      ],
+      "Resume": [
+        "Återuppta"
+      ],
+      "Retry": [
+        "Försök igen"
+      ],
+      "Return to dashboard": [
+        "Tillbaka till adminpanel"
+      ],
+      "Room": [
+        "Rum"
+      ],
+      "Rotate personal meeting link": [
+        "Rotera personlig möteslänk"
+      ],
+      "Save": [
+        "Spara"
+      ],
+      "Schedule": [
+        "Schemalägg"
+      ],
+      "Schedule a meeting": [
+        "Schemalägg ett möte"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Schemalägg i ${ CALENDAR_APP_NAME }"
+      ],
+      "Search countries": [
+        "Sök länder"
+      ],
+      "Send an encrypted message": [
+        "Skicka ett krypterat meddelande"
+      ],
+      "Send reply": [
+        "Skicka svar"
+      ],
+      "Settings": [
+        "Inställningar"
+      ],
+      "Show duration": [
+        "Visa varaktighet"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Visa flytande miniatyr vid skärmdelning"
+      ],
+      "Show options": [
+        "Visa alternativ"
+      ],
+      "Show participants": [
+        "Visa deltagare"
+      ],
+      "Show timezones": [
+        "Visa tidszoner"
+      ],
+      "Sign in": [
+        "Logga in"
+      ],
+      "Sign out": [
+        "Logga ut"
+      ],
+      "Sign out of all accounts": [
+        "Logga ut från alla konton"
+      ],
+      "Simulate reconnection": [
+        "Simulera återanslutning"
+      ],
+      "Skip": [
+        "Hoppa över"
+      ],
+      "Skip to main content": [
+        "Hoppa över till huvudinnehåll"
+      ],
+      "Start an instant meeting": [
+        "Starta ett omedelbart möte"
+      ],
+      "Start meeting": [
+        "Starta möte"
+      ],
+      "Start new meeting": [
+        "Starta nytt möte"
+      ],
+      "Start recording": [
+        "Starta inspelning"
+      ],
+      "Start Recording Track Stats": [
+        "Starta spela in spårningsstatistik"
+      ],
+      "Start your own meeting": [
+        "Starta ditt eget möte"
+      ],
+      "Starting…": [
+        "Startar …"
+      ],
+      "Stay in meeting": [
+        "Stanna i möte"
+      ],
+      "Stop opening meetings in the desktop app": [
+        "Sluta öppna möten i appen för stationär dator"
+      ],
+      "Stop receiving video": [
+        "Stoppa mottagning av video"
+      ],
+      "Stop recording": [
+        "Stoppa inspelning"
+      ],
+      "Stop recording and download video": [
+        "Stoppa inspelning och ladda ner video"
+      ],
+      "Stop Recording Track Stats": [
+        "Sluta spela in spårningsstatistik"
+      ],
+      "Submit": [
+        "Skicka"
+      ],
+      "Switch or add account": [
+        "Byt eller lägg till konto"
+      ],
+      "Tap to unblock audio playback": [
+        "Tryck för att avblockera ljuduppspelning"
+      ],
+      "The current link will stop working.": [
+        "Nuvarande länken kommer sluta fungera."
+      ],
+      "Try again": [
+        "Försök igen"
+      ],
+      "Try another method": [
+        "Prova annan metod"
+      ],
+      "Turn off incoming video": [
+        "Stäng av inkommande video"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Uppgradera ditt paket för att använda väntrum i ditt nästa möte."
+      ],
+      "Upload another video": [
+        "Ladda upp annan video"
+      ],
+      "Upload video": [
+        "Ladda upp video"
+      ],
+      "Use authentication code": [
+        "Använd autentiseringskod"
+      ],
+      "Use camera": [
+        "Använd kamera"
+      ],
+      "Use microphone": [
+        "Använd mikrofon"
+      ],
+      "Use recovery code": [
+        "Använd återställningskod"
+      ],
+      "Use waiting room with a paid plan": [
+        "Använd väntrum med ett betalt paket"
+      ],
+      "Verify": [
+        "Verifiera"
+      ],
+      "Verify account": [
+        "Verifiera konto"
+      ],
+      "View invoice": [
+        "Visa faktura"
+      ],
+      "Waiting room": [
+        "Väntrum"
+      ],
+      "Waiting room disabled": [
+        "Väntrum inaktiverat"
+      ],
+      "Waiting room enabled": [
+        "Väntrum aktiverat"
+      ]
+    },
+    "Alt": {
+      "Audio settings": [
+        "Ljudinställningar"
+      ],
+      "Blur background": [
+        "Bakgrundsoskärpa"
+      ],
+      "Chat": [
+        "Chatt"
+      ],
+      "Close": [
+        "Stäng"
+      ],
+      "Close search": [
+        "Stäng sök"
+      ],
+      "Copy link": [
+        "Kopiera länk"
+      ],
+      "Copy meeting link": [
+        "Kopiera möteslänk"
+      ],
+      "Debug overlay": [
+        "Felsökningsöverlägg"
+      ],
+      "Go to dashboard": [
+        "Gå till adminpanel"
+      ],
+      "Hide self view": [
+        "Dölj självvisning"
+      ],
+      "Leave Meeting": [
+        "Lämna möte"
+      ],
+      "Lock meeting": [
+        "Lås möte"
+      ],
+      "Lower hand": [
+        "Sänk handen"
+      ],
+      "Meeting details": [
+        "Mötesdetaljer"
+      ],
+      "More options": [
+        "Fler alternativ"
+      ],
+      "Noise cancellation": [
+        "Brusreducering"
+      ],
+      "Open chat message search": [
+        "Öppna chattmeddelandesökning"
+      ],
+      "Open participants search": [
+        "Öppna deltagarsökning"
+      ],
+      "Participant host control options": [
+        "Kontrollalternativ för deltagarvärd"
+      ],
+      "Participants": [
+        "Deltagare"
+      ],
+      "Raise hand": [
+        "Räck upp handen"
+      ],
+      "Rotate camera": [
+        "Rotera kamera"
+      ],
+      "Save my name on this device": [
+        "Spara mitt namn på denna enhet"
+      ],
+      "Screen share": [
+        "Skärmdelning"
+      ],
+      "Settings": [
+        "Inställningar"
+      ],
+      "Show duration": [
+        "Visa varaktighet"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Visa flytande miniatyr vid skärmdelning"
+      ],
+      "Stop recording and download.": [
+        "Stoppa inspelning och ladda ner."
+      ],
+      "Toggle chat": [
+        "Slå på/av chatt"
+      ],
+      "Toggle emoji reactions": [
+        "Slå på/av emoji-reaktioner"
+      ],
+      "Toggle meeting details": [
+        "Slå på/av mötesdetaljer"
+      ],
+      "Toggle participants": [
+        "Slå på/av deltagare"
+      ],
+      "Toggle screen share": [
+        "Slå på/av skärmdelning"
+      ],
+      "Toggle settings": [
+        "Slå på/av inställningar"
+      ],
+      "Turn off incoming video": [
+        "Stäng av inkommande video"
+      ],
+      "Video settings": [
+        "Videoinställningar"
+      ],
+      "Waiting room": [
+        "Väntrum"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME }-applikationer"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "Tilldela värd"
+      ],
+      "Audio settings": [
+        "Ljudinställningar"
+      ],
+      "Chat": [
+        "Chatt"
+      ],
+      "Chat messages": [
+        "Chattmeddelanden"
+      ],
+      "Device settings": [
+        "Enhetsinställningar"
+      ],
+      "Meeting details": [
+        "Mötesdetaljer"
+      ],
+      "Meeting rooms": [
+        "Mötesrum"
+      ],
+      "Participants": [
+        "Deltagare"
+      ],
+      "Participants list": [
+        "Deltagarlista"
+      ],
+      "Primary navigation": [
+        "Primär navigering"
+      ],
+      "Settings": [
+        "Inställningar"
+      ],
+      "Video settings": [
+        "Videoinställningar"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "Aktiv"
+      ]
+    },
+    "Banner": {
+      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
+        "Ansluten via TURN-reläläge på grund av dina nätverksbegränsningar. Detta kan öka latensen och påverka samtalskvaliteten."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
+      ],
+      "Application problem": [
+        "Problem med applikation"
+      ],
+      "Authenticator problem": [
+        "Autentiseringsproblem"
+      ],
+      "Bridge problem": [
+        "Problem med Bridge"
+      ],
+      "Calendar problem": [
+        "Problem med kalender"
+      ],
+      "Connection problem": [
+        "Problem med anslutning"
+      ],
+      "Contacts problem": [
+        "Problem med kontakter"
+      ],
+      "Custom domain problem": [
+        "Problem med anpassad domän"
+      ],
+      "Docs problem": [
+        "Docs-problem"
+      ],
+      "Drive problem": [
+        "Problem med Drive"
+      ],
+      "Feature request": [
+        "Funktionsförslag"
+      ],
+      "Import / export problem": [
+        "Problem med import/export"
+      ],
+      "Installation problem": [
+        "Problem med installation"
+      ],
+      "Mail problem": [
+        "Problem med e-post"
+      ],
+      "Manual setup problem": [
+        "Problem med manuell installation"
+      ],
+      "Meet problem": [
+        "Problem med Meet"
+      ],
+      "Other": [
+        "Övrigt"
+      ],
+      "Pass problem": [
+        "Pass-problem"
+      ],
+      "Payments problem": [
+        "Problem med betalning"
+      ],
+      "Sheets problem": [
+        "Problem med kalkylblad"
+      ],
+      "Sign in problem": [
+        "Problem med inloggning"
+      ],
+      "Sign up problem": [
+        "Problem med registrering"
+      ],
+      "Signup problem": [
+        "Problem med registrering"
+      ],
+      "Slow speed problem": [
+        "Problem med långsam hastighet"
+      ],
+      "Speed problem": [
+        "Problem med hastighet"
+      ],
+      "Streaming problem": [
+        "Problem med streaming"
+      ],
+      "Update problem": [
+        "Problem med uppdatering"
+      ],
+      "VPN problem": [
+        "Problem med VPN"
+      ],
+      "Website access problem": [
+        "Problem med åtkomst till webbplats"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Mimimera"
+      ],
+      "Expand": [
+        "Expandera"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "morot"
+      ],
+      "cerise": [
+        "körsbär"
+      ],
+      "cobalt": [
+        "kobolt"
+      ],
+      "copper": [
+        "koppar"
+      ],
+      "enzian": [
+        "lila"
+      ],
+      "fern": [
+        "ormbunke"
+      ],
+      "forest": [
+        "skog"
+      ],
+      "ocean": [
+        "hav"
+      ],
+      "olive": [
+        "oliv"
+      ],
+      "pacific": [
+        "stilla havet"
+      ],
+      "pickle": [
+        "gurka"
+      ],
+      "pine": [
+        "tall"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "plommon"
+      ],
+      "purple": [
+        "lila"
+      ],
+      "reef": [
+        "rev"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "skifferblå"
+      ],
+      "soil": [
+        "jord"
+      ],
+      "strawberry": [
+        "jordgubb"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abchazien"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albanien"
+      ],
+      "Algeria": [
+        "Algeriet"
+      ],
+      "American Samoa": [
+        "Amerikanska Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktis"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua och Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenien"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension"
+      ],
+      "Australia": [
+        "Australien"
+      ],
+      "Austria": [
+        "Österrike"
+      ],
+      "Azerbaijan": [
+        "Azerbajdzjan"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belgien"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Karibiska Nederländerna"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnien och Hercegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvetön"
+      ],
+      "Brazil": [
+        "Brasilien"
+      ],
+      "British Indian Ocean Territory": [
+        "Brittiska territoriet i Indiska oceanen"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgarien"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kambodja"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Kap Verde"
+      ],
+      "Cayman Islands": [
+        "Caymanöarna"
+      ],
+      "Central African Republic": [
+        "Centralafrikanska republiken"
+      ],
+      "Chad": [
+        "Tchad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "Kina"
+      ],
+      "Christmas Island": [
+        "Julön"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Kokosöarna"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Komorerna"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Demokratiska republiken Kongo"
+      ],
+      "Cook Islands": [
+        "Cooköarna"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Kroatien"
+      ],
+      "Cuba": [
+        "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cypern"
+      ],
+      "Czech Republic": [
+        "Tjeckien"
+      ],
+      "Côte d'Ivoire": [
+        "Elfenbenskusten"
+      ],
+      "Denmark": [
+        "Danmark"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Dominikanska republiken"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egypten"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Ekvatorialguinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estland"
+      ],
+      "Eswatini": [
+        "Swaziland"
+      ],
+      "Ethiopia": [
+        "Etiopien"
+      ],
+      "Falkland Islands": [
+        "Falklandsöarna"
+      ],
+      "Faroe Islands": [
+        "Färöarna"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronesiens federerade stater"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finland"
+      ],
+      "France": [
+        "Frankrike"
+      ],
+      "French Guiana": [
+        "Franska Guyana"
+      ],
+      "French Polynesia": [
+        "Franska Polynesien"
+      ],
+      "French Southern Territories": [
+        "Franska sydterritorierna"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgien"
+      ],
+      "Germany": [
+        "Tyskland"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grekland"
+      ],
+      "Greenland": [
+        "Grönland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard- och McDonaldsöarna"
+      ],
+      "Holy See (Vatican City State)": [
+        "Heliga stolen (Vatikanstaten)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hongkong"
+      ],
+      "Hungary": [
+        "Ungern"
+      ],
+      "Iceland": [
+        "Island"
+      ],
+      "India": [
+        "Indien"
+      ],
+      "Indonesia": [
+        "Indonesien"
+      ],
+      "International": [
+        "Internationell"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irland"
+      ],
+      "Isle of Man": [
+        "Isle of Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italien"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordanien"
+      ],
+      "Kazakhstan": [
+        "Kazakstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirgizistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Lettland"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libyen"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litauen"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaysia"
+      ],
+      "Maldives": [
+        "Maldiverna"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshallöarna"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauretanien"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexiko"
+      ],
+      "Moldova": [
+        "Moldavien"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongoliet"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marocko"
+      ],
+      "Mozambique": [
+        "Moçambique"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Nederländerna"
+      ],
+      "New Caledonia": [
+        "Nya Kaledonien"
+      ],
+      "New Zealand": [
+        "Nya Zeeland"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolkön"
+      ],
+      "North Korea": [
+        "Nordkorea"
+      ],
+      "North Macedonia": [
+        "Nordmakedonien"
+      ],
+      "Northern Mariana Islands": [
+        "Nordmarianerna"
+      ],
+      "Norway": [
+        "Norge"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Nya Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filippinerna"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polen"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "Rumänien"
+      ],
+      "Russia": [
+        "Ryssland"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
+      ],
+      "Saint Helena": [
+        "Saint Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts och Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (franska delen)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre och Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent och Grenadinerna"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome och Principe"
+      ],
+      "Saudi Arabia": [
+        "Saudiarabien"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbien"
+      ],
+      "Seychelles": [
+        "Seychellerna"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakien"
+      ],
+      "Slovenia": [
+        "Slovenien"
+      ],
+      "Solomon Islands": [
+        "Salomonöarna"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Sydafrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Sydgeorgien och södra sandwichöarna"
+      ],
+      "South Korea": [
+        "Sydkorea"
+      ],
+      "South Ossetia": [
+        "Sydossetien"
+      ],
+      "South Sudan": [
+        "Sydsudan"
+      ],
+      "Spain": [
+        "Spanien"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard och Jan Mayen"
+      ],
+      "Sweden": [
+        "Sverige"
+      ],
+      "Switzerland": [
+        "Schweiz"
+      ],
+      "Syria": [
+        "Syrien"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tadzjikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Östtimor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad och Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisien"
+      ],
+      "Turkey": [
+        "Turkiet"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks- och Caicosöarna"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukraina"
+      ],
+      "United Arab Emirates": [
+        "Förenade Arabemiraten"
+      ],
+      "United Kingdom": [
+        "Storbritannien"
+      ],
+      "United States": [
+        "Förenta Staterna"
+      ],
+      "United States Minor Outlying Islands": [
+        "Förenta staternas mindre öar i Oceanien och Västindien"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Brittiska Jungfruöarna"
+      ],
+      "Virgin Islands, U.S.": [
+        "Jungfruöarna, USA"
+      ],
+      "Wallis and Futuna": [
+        "Wallis och Futuna"
+      ],
+      "Western Sahara": [
+        "Västsahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Åland"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Försenad faktura"
+      ]
+    },
+    "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "Kryptering med Messaging Layer Security (MLS)"
+      ],
+      "Rotating group encryption key for best security": [
+        "Roterar gruppens krypteringsnyckel för bästa säkerhet"
+      ],
+      "Try a different name.": [
+        "Prova ett annat namn."
+      ],
+      "You'll see people here when they join the meeting.": [
+        "Du kommer se personer här när de går med i mötet."
+      ]
+    },
+    "Display name": {
+      "Loading…": [
+        "Laddar …"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betrodd kontakt"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Domän inte tillgänglig, försök igen senare"
+      ],
+      "Email is not valid": [
+        "E-post är inte giltig"
+      ],
+      "Enter 6 digits": [
+        "Ange 6 siffror"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ange ditt användarnamn utan domänen (@example.com)"
+      ],
+      "Event deleted": [
+        "Händelsen borttagen"
+      ],
+      "Failed to assign host": [
+        "Misslyckades att tilldela värd"
+      ],
+      "Failed to create meeting": [
+        "Misslyckades att skapa möte"
+      ],
+      "Failed to create personal meeting, please refresh the page": [
+        "Misslyckades att skapa personligt möte, uppdatera sidan"
+      ],
+      "Failed to decrypt session key": [
+        "Misslyckades att avkryptera sessionsnyckel"
+      ],
+      "Failed to delete event": [
+        "Misslyckades att ta bort händelse"
+      ],
+      "Failed to delete recording": [
+        "Misslyckades att ta bort inspelning"
+      ],
+      "Failed to delete room": [
+        "Misslyckades att ta bort rum"
+      ],
+      "Failed to download recording": [
+        "Misslyckades att ladda ner inspelning"
+      ],
+      "Failed to edit room name": [
+        "Misslyckades att redigera rumsnamn"
+      ],
+      "Failed to join meeting. Please try again later.": [
+        "Misslyckades att gå med i möte. Försök igen senare."
+      ],
+      "Failed to join meeting. Please try again.": [
+        "Misslyckades att gå med i möte. Försök igen."
+      ],
+      "Failed to lock meeting": [
+        "Misslyckades att låsa möte"
+      ],
+      "Failed to rotate personal meeting link": [
+        "Misslyckades att rotera personlig möteslänk"
+      ],
+      "Failed to send chat message. Please try again.": [
+        "Misslyckades att skicka chattmeddelande. Försök igen."
+      ],
+      "Failed to send emoji reaction. Please try again.": [
+        "Misslyckades att skicka emoji-reaktion. Försök igen."
+      ],
+      "Failed to send reaction. Please try again.": [
+        "Misslyckades att skicka reaktion. Försök igen."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "Misslyckades att starta möte. Försök igen."
+      ],
+      "Failed to start recording": [
+        "Misslyckades att starta inspelning"
+      ],
+      "Failed to start screen share": [
+        "Misslyckades att starta skärmdelning"
+      ],
+      "Failed to unlock meeting": [
+        "Misslyckades att låsa upp möte"
+      ],
+      "Incorrect username": [
+        "Felaktigt användarnamn"
+      ],
+      "Invalid meeting link": [
+        "Ogiltig möteslänk"
+      ],
+      "Invalid verification code": [
+        "Ogiltig verifieringskod"
+      ],
+      "Not a valid number": [
+        "Inte ett giltigt nummer"
+      ],
+      "Passwords do not match": [
+        "Lösenorden matchar inte"
+      ],
+      "Please allow screen sharing in your system permissions, then try again": [
+        "Tillåt skärmdelning i dina systembehörigheter, försök sedan igen."
+      ],
+      "Request timed out": [
+        "Förfrågan gjorde timeout"
+      ],
+      "Room deleted": [
+        "Rum borttaget"
+      ],
+      "Screen share is not supported on mobile browsers": [
+        "Skärmdelning stöds inte på mobila webbläsare"
+      ],
+      "Signature verification failed": [
+        "Signaturverifiering misslyckades"
+      ],
+      "The email addresses do not match": [
+        "E-postadresserna matchar inte"
+      ],
+      "The meeting password is incorrect": [
+        "Möteslösenordet är felaktigt"
+      ],
+      "The meeting password is invalid": [
+        "Möteslösenordet är felaktigt"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
+      ],
+      "This field is required": [
+        "Detta fält är obligatoriskt"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Detta fält kräver minst ${ minimumLength } tecken."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "Detta möte är i en äldre version. Värden måste avsluta det och uppdatera Meet för att starta om med den senaste versionen."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova använda endast bokstäver, siffror och _.-"
+      ],
+      "Unknown error": [
+        "Okänt fel"
+      ],
+      "Username must begin with a letter or digit": [
+        "Användarnamn måste börja med en bokstav eller siffra"
+      ],
+      "Username must end with a letter or digit": [
+        "Användarnamn måste sluta med en bokstav eller siffra"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "Din webbläsare har slut på lagringsutrymme. Vi har sparat inspelningen fram till denna punkt."
+      ],
+      "Your device's clock appears to be out of sync. Please check your system time and try again.": [
+        "Din enhets klocka verkar inte vara synkroniserad. Kontrollera din systemtid och försök igen."
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "App är för närvarande inte tillgänglig"
+      ],
+      "Error: ${ errorMessage }": [
+        "Fel: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Hoppsan, något gick fel"
+      ],
+      "Open in browser": [
+        "Öppna i webbläsare"
+      ],
+      "Please refresh the page or try again later.": [
+        "Uppdatera sidan eller försök igen senare."
+      ],
+      "Something went wrong": [
+        "Något gick fel"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Byt till webbversionen för att använda ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din internetanslutning."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Ingen bild vald"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Säkerhetsnyckel"
+      ],
+      "Touch your security key.": [
+        "Tryck din säkerhetsnyckel."
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Säkerhetsnyckel"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "byte"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Kilobyte",
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
+      "Theme font": [
+        "Temats typsnitt"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Medium (rekommenderas)"
+      ],
+      "Small": [
+        "Liten"
+      ],
+      "Very large": [
+        "Väldigt stor"
+      ],
+      "Very small": [
+        "Väldigt liten"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Har du redan ett konto? ${ signIn }"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Konto"
+      ],
+      "Apps": [
+        "Appar"
+      ],
+      "Network": [
+        "Nätverk"
+      ],
+      "Other category": [
+        "Annan kategori"
+      ],
+      "Services": [
+        "Tjänster"
+      ]
+    },
+    "Header": {
+      "Protect your conversations with end-to-end encryption": [
+        "Skydda dina konversationer med end-to-end-kryptering"
+      ]
+    },
+    "Headline": {
+      "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
+        "${ createAnActionAction } eller ${ signInAction } för att komma åt ditt personliga rum och skapa nya rum"
+      ],
+      "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
+        "${ createAnActionAction } eller ${ signInAction } för att schemalägga möten"
+      ],
+      "Talk in total ${ privacyWord }": [
+        "Prata i total ${ privacyWord }"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-post"
+      ],
+      "Manual": [
+        "Manuell"
+      ],
+      "No verification method available": [
+        "Ingen verifieringsmetod tillgänglig"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      " and ": [
+        " och "
+      ],
+      "${ maxParticipants } participant limit reached": [
+        "Gränsen på ${ maxParticipants } deltagare har uppnåtts"
+      ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "${ MEET_APP_NAME } behöver åtkomst så att andra kan se och höra dig under samtalet. Du kan stänga av kameran eller mikrofonen när som helst."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } behöver kameraåtkomst så att andra kan se dig under samtalet. Du kan stänga av det när som helst."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } behöver mikrofonåtkomst så att andra kan höra dig under samtalet. Du kan stänga av den när som helst."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
+        "${ MEET_APP_NAME } behöver WebRTC för att köras. Uppdatera din webbläsare eller enhet till en version som stöder WebRTC, prova en annan webbläsare eller inaktivera eventuella tillägg som kan blockera det."
+      ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } och ${ otherParticipantsCount } andra spelar in"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } spelar in"
+      ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (du) presenterar"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } presenterar"
+      ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } och andra reagerade med ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames } reagerade med ${ emoji }"
+      ],
+      "${ replyCount } reply": [
+        "${ replyCount } svar",
+        "${ replyCount } svar"
+      ],
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "${ totalParticipantCount } av upp till ${ maxParticipants } deltagare"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } deltagare",
+        "${ totalParticipantCount } deltagare"
+      ],
+      "(You)": [
+        "(Du)"
+      ],
+      "-Removed dangerous URL-": [
+        "-Tog bort farlig URL-"
+      ],
+      "1 reply draft": [
+        "1 svarsutkast"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
+      ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Avancerat läge: finjustera varje oskärpekonstant för nästa version, välj sedan Tillämpa för att bygga om förhandsgranskningen. Åsidosättningar har företräde framför fil- och Unleash-värden."
+      ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "Anonym ${ particle } ${ participantNumber }"
+      ],
+      "Are you sure you want to leave?": [
+        "Är du säker på att du vill lämna?"
+      ],
+      "Are you sure you want to stop recording?": [
+        "Är du säker på att du vill stoppa inspelning?"
+      ],
+      "Attention required": [
+        "Uppmärksamhet krävs"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
+      ],
+      "By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Genom att fortsätta i mötet bekräftar och samtycker du till att bli inspelad."
+      ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "Genom att ansluta godkänner du våra ${ termsLink } och ${ privacyLink }."
+      ],
+      "camera": [
+        "kamera"
+      ],
+      "Camera permission denied": [
+        "Kamerabehörighet nekad"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Ändringarna är redo. Tillämpa för att bygga om förhandsgranskningen med de nya konstanterna."
+      ],
+      "Chat with everyone": [
+        "Chatta med alla"
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "Kontrollera dina systeminställningar för att se till att en kamera är tillgänglig."
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "Kontrollera dina systeminställningar för att se till att en mikrofon är tillgänglig."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
+      ],
+      "Coming soon": [
+        "Kommer snart"
+      ],
+      "Connection failed": [
+        "Anslutning misslyckades"
+      ],
+      "Connection interrupted. Reconnecting...": [
+        "Anslutning avbruten. Återansluter …"
+      ],
+      "Connection issue detected. Attempting to recover…": [
+        "Anslutningsproblem upptäckt. Försöker att återställa …"
+      ],
+      "Connection lost. Reconnecting…": [
+        "Anslutning förlorad. Återansluter …"
+      ],
+      "Copied to clipboard": [
+        "Kopierat till urklipp"
+      ],
+      "Could not access the camera.": [
+        "Kunde inte komma åt kameran."
+      ],
+      "Could not start recording.": [
+        "Kunde inte starta inspelning."
+      ],
+      "Country code": [
+        "Landskod"
+      ],
+      "Create an account": [
+        "Skapa ett konto"
+      ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "Skapa ett konto för att vara värd för möten med upp till 50 deltagare."
+      ],
+      "Created on ${ formattedDate }": [
+        "Skapat den ${ formattedDate }"
+      ],
+      "Custom combination": [
+        "Anpassad kombination"
+      ],
+      "Decrypting meetings...": [
+        "Dekrypterar möten …"
+      ],
+      "Default - ${ systemDefault.label }": [
+        "Standard - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Standard - Systemstandard"
+      ],
+      "Delete event": [
+        "Ta bort händelse"
+      ],
+      "Delete room": [
+        "Ta bort rum"
+      ],
+      "Do you want people to ${ deviceContentType } you in the meeting?": [
+        "Vill du att folk ska ${ deviceContentType } dig i mötet?"
+      ],
+      "Download current logs": [
+        "Ladda ner nuvarande loggar"
+      ],
+      "Each code can only be used once": [
+        "Varje kod kan endast användas en gång"
+      ],
+      "Edit email address": [
+        "Redigera e-postadress"
+      ],
+      "End Meeting for everyone?": [
+        "Avsluta möte för alla?"
+      ],
+      "End the meeting for everyone?": [
+        "Avsluta mötet för alla?"
+      ],
+      "End-to-end encryption is active for audio and video.": [
+        "End-to-end-kryptering är aktiv för ljud och video."
+      ],
+      "End-to-end encryption is active for screen share": [
+        "End-to-end-kryptering är aktiv för skärmdelning"
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "End-to-end-kryptering är aktiv för denna chatt."
+      ],
+      "Enter code": [
+        "Ange kod"
+      ],
+      "Enter the code from your authenticator app": [
+        "Ange koden från din autentiseringsapp"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Ange verifieringskoden som skickades till ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ange verifieringskod. Siffra ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ange ditt eget lösenord (som organisationsadministratör)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "Alla har kopplats bort från samtalet."
+      ],
+      "Failed to apply background blur": [
+        "Misslyckades att tillämpa bakgrundsoskärpa"
+      ],
+      "Failed to update meeting name": [
+        "Misslyckades att uppdatera mötesnamn"
+      ],
+      "Failed to update meeting schedule": [
+        "Misslyckades att uppdatera mötesschema"
+      ],
+      "Free meeting": [
+        "Gratis möte"
+      ],
+      "Free meetings are limited to 1 hour. This call will disconnect soon.": [
+        "Gratis möten är begränsade till 1 timme. Detta samtal kommer snart att kopplas från."
+      ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "Skaffa ett personligt mötesrum. Skapa ett konto för att få en personlig möteslänk som du kan använda när som helst."
+      ],
+      "Get a secure meeting link then add it to your calendar": [
+        "Skaffa en säker möteslänk och lägg sedan till den i din kalender"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Få den bästa upplevelsen med ${ protonMeet }-appen för stationär dator"
+      ],
+      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
+        "Gå till about:config, sök efter media.peerconnection.enabled och ställ in det på true."
+      ],
+      "Host": [
+        "Värd"
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Håll ditt eget säkra möte. Starta ett samtal i ${ MEET_APP_NAME } och dela länken för att bjuda in vem som helst att gå med. Enkelt, säkert och gratis."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat åtkomsten till din autentiseringsapp kan du använda 1 av de 16 återställningskoderna för säkerhetskopiering som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
+      ],
+      "If you’re using Firefox, make sure PeerConnection is enabled.": [
+        "Om du använder Firefox, se till att PeerConnection är aktiverat."
+      ],
+      "Internet connection lost": [
+        "Internetanslutning förlorades"
+      ],
+      "Joined ${ roomNameLabel }": [
+        "Gick med ${ roomNameLabel }"
+      ],
+      "Learn more": [
+        "Lär dig mer"
+      ],
+      "Leave meeting and stop sharing?": [
+        "Lämna möte och sluta dela?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Att lämna mötet kommer stoppa din skärmdelning."
+      ],
+      "Left ${ roomNameLabel }": [
+        "Lämnade ${ roomNameLabel }"
+      ],
+      "Left by mistake?": [
+        "Lämnade du av misstag?"
+      ],
+      "Link copied to clipboard": [
+        "Länk kopierad till urklipp"
+      ],
+      "Loading": [
+        "Laddar"
+      ],
+      "Loading ${ appName }": [
+        "Laddar ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Läser in kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
+      ],
+      "Loading meetings...": [
+        "Laddar möten …"
+      ],
+      "Loading recordings…": [
+        "Laddar inspelningar …"
+      ],
+      "Loading...": [
+        "Laddar in …"
+      ],
+      "Loading…": [
+        "Laddar in …"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Loopa en uppladdad video eller din livekamera genom båda versionerna av bakgrundsoskärpa sida vid sida."
+      ],
+      "Lower participant's hand": [
+        "Sänk deltagares hand"
+      ],
+      "Meet without restrictions": [
+        "Möte utan begränsningar"
+      ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "Möte utan begränsningar. Uppgradera för att ta bort tidsgränsen på 1 timme och bjud in upp till 100 deltagare."
+      ],
+      "Meeting ended": [
+        "Möte slutat"
+      ],
+      "Meeting full (${ maxParticipants } participants)": [
+        "Mötet fullt (${ maxParticipants } deltagare)"
+      ],
+      "Meeting is decrypting...": [
+        "Mötet dekrypteras …"
+      ],
+      "Meeting link": [
+        "Möteslänk"
+      ],
+      "Meeting locked. No new participants can join.": [
+        "Möte låst. Inga nya deltagare kan gå med."
+      ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Mötesinspelningar stöds inte i Firefox."
+      ],
+      "Meeting time is up": [
+        "Mötestid är slut"
+      ],
+      "Meeting unlocked. Participants can join again.": [
+        "Möte upplåst. Deltagare kan gå med igen."
+      ],
+      "Meeting will end in ${ timeLeft }": [
+        "Möte kommer avslutas om ${ timeLeft }"
+      ],
+      "Member": [
+        "Medlem"
+      ],
+      "Message actions": [
+        "Meddelandeåtgärder"
+      ],
+      "Message from ${ participantName }": [
+        "Meddelande från ${ participantName }"
+      ],
+      "microphone": [
+        "mikrofon"
+      ],
+      "Microphone effects": [
+        "Mikrofoneffekter"
+      ],
+      "Microphone permission denied": [
+        "Mikrofonbehörighet nekad"
+      ],
+      "Mute microphone": [
+        "Stäng av mikrofon"
+      ],
+      "My meetings": [
+        "Mina möten"
+      ],
+      "My rooms": [
+        "Mina rum"
+      ],
+      "New": [
+        "Ny"
+      ],
+      "New host": [
+        "Ny värd"
+      ],
+      "New reply": [
+        "Nytt svar"
+      ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "Ingen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } upptäcktes."
+      ],
+      "No camera detected": [
+        "Ingen kamera upptäckt"
+      ],
+      "No camera detected.": [
+        "Ingen kamera upptäckt."
+      ],
+      "No microphone detected": [
+        "Ingen mikrofon upptäckt"
+      ],
+      "No microphone detected.": [
+        "Ingen mikrofon upptäckt."
+      ],
+      "No publications": [
+        "Inga publikationer"
+      ],
+      "No recordings found on this device.": [
+        "Inga inspelningar hittades på denna enhet."
+      ],
+      "No remote participants": [
+        "Inga fjärrdeltagare"
+      ],
+      "No results found": [
+        "Inga resultat hittades"
+      ],
+      "No search results": [
+        "Inga sökresultat"
+      ],
+      "No speaker detected": [
+        "Ingen högtalare upptäckt"
+      ],
+      "Not sent, check your connection.": [
+        "Inte skickat, kontrollera din anslutning."
+      ],
+      "Only meetings you created appear here": [
+        "Endast möten du skapat visas här"
+      ],
+      "Open external link": [
+        "Öppna extern länk"
+      ],
+      "Other accounts": [
+        "Andra konton"
+      ],
+      "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
+        "Våra end-to-end-krypterade möten skyddar din integritet och möjliggör ett genuint fritt uttryck."
+      ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Sida ${ displayPage } av ${ totalPages }"
+      ],
+      "Participant": [
+        "Deltagare"
+      ],
+      "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
+        "Klistra in din ${ MEET_APP_NAME }-länk för att gå med i ett säkert möte."
+      ],
+      "Permissions not given.": [
+        "Behörigheter har inte getts."
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "Aktivera åtkomst till din ${ microphoneLinkButton }${ andString }${ cameraLinkButton } för den bästa upplevelsen."
+      ],
+      "Please try again or try another browser": [
+        "Försök igen eller prova annan webbläsare"
+      ],
+      "Poor connection": [
+        "Dålig anslutning"
+      ],
+      "Premium meeting": [
+        "Premiummöte"
+      ],
+      "Presenting": [
+        "Presenterar"
+      ],
+      "privacy": [
+        "integritet"
+      ],
+      "Quick reactions": [
+        "Snabbreaktioner"
+      ],
+      "Reactions": [
+        "Reaktioner"
+      ],
+      "Reconnected successfully": [
+        "Återanslutningen lyckades"
+      ],
+      "Reconnecting to meeting...": [
+        "Återansluter till möte …"
+      ],
+      "Record your meetings": [
+        "Spela in dina möten"
+      ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Spela in ditt råa kameraflöde och produktionens bakgrundsoskärpa sida vid sida. Om du stoppar laddas båda klippen ner."
+      ],
+      "Recording": [
+        "Spelar in"
+      ],
+      "Recording deleted": [
+        "Inspelning borttagen"
+      ],
+      "Recording in progress": [
+        "Inspelning pågår"
+      ],
+      "Recording will begin and attendees will be notified.": [
+        "Inspelning kommer starta och deltagare kommer att aviseras."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Inspelningar lagras lokalt i din webbläsare. Ladda ner de som du vill behålla, de tas automatiskt bort efter 30 dagar."
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
+      ],
+      "Refresh audio and video tracks": [
+        "Uppdatera ljud- och videospår"
+      ],
+      "Refresh screen share track": [
+        "Uppdatera spår för skärmdelning"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
+      ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Schemalägg ditt nästa möte. Skapa ett konto för att schemalägga möten med din kalender."
+      ],
+      "Select a camera": [
+        "Välj en kamera"
+      ],
+      "Select a microphone": [
+        "Välj en mikrofon"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "Välj en deltagare att tilldela som ny värd innan du lämnar: "
+      ],
+      "Select a speaker": [
+        "Välj en högtalare"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Servrarna kan inte nås. Försök igen om några minuter"
+      ],
+      "Session timed out": [
+        "Session timeout"
+      ],
+      "Set up a permanent meeting room for your team or clients": [
+        "Ställ in ett permanent mötesrum för ditt team eller klienter"
+      ],
+      "Share screen": [
+        "Dela skärm"
+      ],
+      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
+        "Dela denna länk för att bjuda in andra. Du kan också hitta den när som helst genom att klicka på informationsikonen i verktygsfältet."
+      ],
+      "Sign in": [
+        "Logga in"
+      ],
+      "Sort by": [
+        "Sortera efter"
+      ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "Val av högtalare är inte tillgängligt i denna webbläsare. Använd dina systeminställningar för att välja en annan högtalare."
+      ],
+      "Start recording": [
+        "Starta inspelning"
+      ],
+      "Starting camera…": [
+        "Startar kamera …"
+      ],
+      "Stop sharing your screen": [
+        "Sluta dela din skärm"
+      ],
+      "Successfully deleted meeting": [
+        "Möte togs bort"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Tack för att du var värd för ett premiummöte."
+      ],
+      "Thank you for joining.": [
+        "Tack för att du går med."
+      ],
+      "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
+        "Värden har tagit bort dig från detta möte. Om detta var ett misstag, be värden att bjuda in dig igen."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Möteslänken du försökte öppna finns inte eller kan ha löpt ut. Se till att länken är korrekt eller starta ett nytt säkert möte istället."
+      ],
+      "This conversation started before you joined.": [
+        "Den här konversationen började innan du gick med."
+      ],
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "Det här är en end-to-end-krypterad chatt med efemära meddelanden som försvinner när samtalet avslutas."
+      ],
+      "This meeting is being recorded": [
+        "Detta möte spelas in"
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "Detta möte är låst. Kontakta värden för att gå med."
+      ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Det här mötet har nått tidsgränsen för ett kostnadsfritt paket. Uppgradera för att förlänga din möteslängd i framtida samtal."
+      ],
+      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
+        "Detta möte öppnades i ${ MEET_APP_NAME }-appen för stationär dator."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Denna inspelning kommer att tas bort permanent från denna enhet. Denna åtgärd kan inte ångras."
+      ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Detta kommer avsluta mötet för alla deltagare och stoppa din skärmdelning."
+      ],
+      "This will end the meeting for all participants.": [
+        "Detta kommer avsluta mötet för alla deltagare."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
+      ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "För att skapa ett rum behöver du **ett gratis ${ BRAND_NAME }-konto** så vi kan spara rummet. Detta tar bara några sekunder."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "För att bekämpa skräppost och missbruk, verifiera att du är människa."
+      ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "För att schemalägga en händelse behöver du **ett gratis ${ BRAND_NAME }-konto** så att vi kan spara händelsen. Det tar bara några sekunder."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "För att använda ditt personliga mötesrum behöver du **ett gratis ${ BRAND_NAME }-konto**. Detta tar bara några sekunder."
+      ],
+      "Today — ${ absoluteDate }": [
+        "Idag – ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Imorgon – ${ absoluteDate }"
+      ],
+      "Turn off camera": [
+        "Stäng av kamera"
+      ],
+      "Turn on camera": [
+        "Slå på kamera"
+      ],
+      "Unable to reconnect to the meeting. Please rejoin or leave.": [
+        "Kunde inte återansluta till mötet. Gå med igen eller lämna."
+      ],
+      "unlimited meeting": [
+        "obegränsat möte"
+      ],
+      "Unlock ${ unlimitedMeeting } and premium features": [
+        "Lås upp ${ unlimitedMeeting } och premiumfunktioner"
+      ],
+      "Unmute microphone": [
+        "Slå på mikrofon"
+      ],
+      "Upgrade to record your meetings locally.": [
+        "Uppgradera för att spela in dina möten lokalt."
+      ],
+      "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
+        "Uppgradera för att ta bort 1-timmarsgränsen och hoppa över nedräkningen. Njut av möten på upp till 24 timmar."
+      ],
+      "Video effects": [
+        "Videoeffekter"
+      ],
+      "View ": [
+        "Visa "
+      ],
+      "Warning": [
+        "Varning"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Vi skickar en ny verifieringskod till ${ strong }"
+      ],
+      "Week": [
+        "Vecka"
+      ],
+      "Would you like to delete this event?": [
+        "Vill du ta bort denna händelse?"
+      ],
+      "Would you like to delete this room?": [
+        "Vill du ta bort detta rum?"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Vill du få en ny verifieringskod eller använda en alternativ verifieringsmetod?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Vill du få en ny verifieringskod?"
+      ],
+      "Yesterday — ${ absoluteDate }": [
+        "Igår – ${ absoluteDate }"
+      ],
+      "You are almost there": [
+        "Du är nästan där"
+      ],
+      "You can close this tab.": [
+        "Du kan stänga denna flik."
+      ],
+      "You can now return to the application to continue": [
+        "Du kan nu gå tillbaka till applikationen för att fortsätta"
+      ],
+      "You can still turn off your microphone and camera anytime in the meeting": [
+        "Du kan fortfarande stänga av din mikrofon och kamera när som helst under mötet."
+      ],
+      "You left the meeting": [
+        "Du lämnade mötet"
+      ],
+      "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
+        "Du behöver ett betalt ${ MEET_SHORT_APP_NAME }- eller Workspace-paket för denna funktion. Kontakta din organisationsadministratör för att uppgradera."
+      ],
+      "You were removed from the meeting": [
+        "Du togs bort från mötet"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Du kommer lämna mötet. Andra kommer fortsätta."
+      ],
+      "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
+        "Du har blivit inbjuden att delta i ett säkert möte. Bekräfta ditt namn och klicka nedan för att ansluta."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
+      ],
+      "Your always available meeting room": [
+        "Ditt alltid åtkomliga mötesrum"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Din webbläsare har blockerat åtkomst till din kamera och mikrofon. För att aktivera dem, uppdatera dina webbläsarinställningar och gå med i samtalet igen."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Din webbläsare har blockerat åtkomst till din kamera. För att aktivera den, uppdatera dina webbläsarinställningar och gå med i samtalet igen."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Din webbläsare har blockerat åtkomst till din mikrofon. För att aktivera den, uppdatera dina webbläsarinställningar och gå med i samtalet igen."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Din webbläsare har blockerat åtkomst till din skärmdelning. För att aktivera det, uppdatera dina webbläsarinställningar och gå med i samtalet igen."
+      ],
+      "Your browser or device isn’t supported": [
+        "Din webbläsare eller enhet stöds inte"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Din e-post kommer endast användas för denna engångsverifiering."
+      ],
+      "Your meeting is ready": [
+        "Ditt möte är redo"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
+        "Du är på väg att öppna en länk i en ny flik. Se till att du litar på webbplatsen innan du fortsätter."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "Användarnamn för ${ BRAND_NAME }"
+      ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } stjärna",
+        "${ numberOfStars } stjärnor"
+      ],
+      "Add optional details": [
+        "Lägg till valfria detaljer"
+      ],
+      "Add to calendar": [
+        "Lägg till i kalender"
+      ],
+      "Advanced mode": [
+        "Avancerat läge"
+      ],
+      "Anyone with the link can join": [
+        "Alla med länken kan gå med"
+      ],
+      "Attach screenshot(s)": [
+        "Bifoga skärmdump(ar)"
+      ],
+      "Audio": [
+        "Ljud"
+      ],
+      "Authenticator app": [
+        "Autentiseringsapp"
+      ],
+      "Blurred (next)": [
+        "Oskarp (nästa)"
+      ],
+      "Browser": [
+        "Webbläsare"
+      ],
+      "Browser version": [
+        "Webbläsarversion"
+      ],
+      "Camera Active": [
+        "Kamera aktiv"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversion"
+      ],
+      "Code is 6 digits without spaces": [
+        "Kod är 6 siffror utan mellanslag"
+      ],
+      "Connection Quality": [
+        "Anslutningskvalitet"
+      ],
+      "Copy all activity events": [
+        "Kopiera alla aktivitetshändelser"
+      ],
+      "Copy invite link": [
+        "Kopiera inbjudningslänk"
+      ],
+      "Create meeting options": [
+        "Skapa mötesalternativ"
+      ],
+      "Created": [
+        "Skapad"
+      ],
+      "Current": [
+        "Nuvarande"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
+      "Delete recovery-related information.": [
+        "Ta bort återställningsrelaterad information."
+      ],
+      "Disabled": [
+        "Inaktiverad"
+      ],
+      "Does not repeat": [
+        "Upprepas inte"
+      ],
+      "Download .ics": [
+        "Ladda ner .ics"
+      ],
+      "Email address": [
+        "E-postadress"
+      ],
+      "Emoji picker": [
+        "Emoji-väljare"
+      ],
+      "Emoji reactions": [
+        "Emoji-reaktioner"
+      ],
+      "Enabled": [
+        "Aktiverat"
+      ],
+      "Ended": [
+        "Avslutad"
+      ],
+      "Every day": [
+        "Varje dag"
+      ],
+      "Every month": [
+        "Varje månad"
+      ],
+      "Every week": [
+        "Varje vecka"
+      ],
+      "Every weekday": [
+        "Varje veckdag"
+      ],
+      "Every year": [
+        "Varje år"
+      ],
+      "Google Calendar": [
+        "Google Kalender"
+      ],
+      "Hide password": [
+        "Dölj lösenord"
+      ],
+      "How was the call quality?": [
+        "Hur var samtalskvaliteten?"
+      ],
+      "Identity": [
+        "Identitet"
+      ],
+      "Include application logs in bug report": [
+        "Inkludera applikationsloggar i felrapport"
+      ],
+      "Last used": [
+        "Senast använt"
+      ],
+      "Leave meeting options": [
+        "Lämna mötesalternativ"
+      ],
+      "Manage recordings": [
+        "Hantera inspelningar"
+      ],
+      "Meeting ID": [
+        "Mötes-ID"
+      ],
+      "Meeting link": [
+        "Möteslänk"
+      ],
+      "Message": [
+        "Meddelande"
+      ],
+      "Microphone Active": [
+        "Mikrofon aktiv"
+      ],
+      "Monday to Friday": [
+        "Måndag till fredag"
+      ],
+      "Muted": [
+        "Ljud av"
+      ],
+      "Name": [
+        "Namn"
+      ],
+      "Next": [
+        "Nästa"
+      ],
+      "Operating system": [
+        "Operativsystem"
+      ],
+      "Operating system version": [
+        "Operativsystemets version"
+      ],
+      "Outlook Calendar": [
+        "Outlook-kalender"
+      ],
+      "Participant controls": [
+        "Deltagarkontroller"
+      ],
+      "Participants join after you approve them": [
+        "Deltagare går med efter att du har godkänt dem"
+      ],
+      "Password": [
+        "Lösenord"
+      ],
+      "Phone number": [
+        "Telefonnummer"
+      ],
+      "Raw": [
+        "Rå"
+      ],
+      "Remember my name on this device": [
+        "Kom ihåg mitt namn på denna enhet"
+      ],
+      "Repeat event": [
+        "Upprepa händelse"
+      ],
+      "Reply": [
+        "Svara"
+      ],
+      "Return to dashboard": [
+        "Tillbaka till adminpanel"
+      ],
+      "Reveal password": [
+        "Visa lösenord"
+      ],
+      "Save my name on this device": [
+        "Spara mitt namn på denna enhet"
+      ],
+      "Schedule meeting": [
+        "Schemalägg möte"
+      ],
+      "Screen share": [
+        "Skärmdelning"
+      ],
+      "Selected Camera": [
+        "Vald kamera"
+      ],
+      "Selected Microphone": [
+        "Vald mikrofon"
+      ],
+      "Selected Speaker": [
+        "Vald högtalare"
+      ],
+      "Subscribed": [
+        "Prenumererad"
+      ],
+      "System information": [
+        "Systeminformation"
+      ],
+      "Track SID": [
+        "Spåra SID"
+      ],
+      "Use live camera feed": [
+        "Använd live-kameraflöde"
+      ],
+      "Use simple selfie segmentation": [
+        "Använd enkel selfie-segmentering"
+      ],
+      "Verification code": [
+        "Verifieringskod"
+      ],
+      "Video": [
+        "Video"
+      ],
+      "What happened?": [
+        "Vad hände?"
+      ],
+      "Your password (admin)": [
+        "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "rensar din webbläsares cache"
+      ],
+      "Learn more": [
+        "Lär dig mer"
+      ],
+      "privacy policy": [
+        "integritetspolicy"
+      ],
+      "Request an invite": [
+        "Begär en inbjudan"
+      ],
+      "Sign in": [
+        "Logga in"
+      ],
+      "terms and conditions": [
+        "användarvillkor"
+      ],
+      "What’s this?": [
+        "Vad är detta?"
+      ]
+    },
+    "meet": {
+      "Create and copy link": [
+        "Skapa och kopiera länk"
+      ],
+      "Create new room": [
+        "Skapa nytt rum"
+      ],
+      "Meeting rooms can be used at any time": [
+        "Mötesrum kan användas när som helst"
+      ],
+      "Save and copy link": [
+        "Spara och kopiera länk"
+      ]
+    },
+    "Meet": {
+      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
+        "Din webbläsare eller enhetsmjukvara stöder inte ${ MEET_APP_NAME }. ${ MEET_APP_NAME } kräver WebAssembly (Wasm) för att köras. Uppdatera din webbläsare eller enhet till en version som stöder Wasm, eller prova använda en annan webbläsare."
+      ]
+    },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "Eftersom du är den enda deltagaren i detta möte kommer mötet att stängas automatiskt. Vill du stanna kvar i detta möte?"
+      ]
+    },
+    "meet_2025 Action": {
+      "Leave meeting": [
+        "Lämna möte"
+      ],
+      "Stay in the meeting": [
+        "Stanna i mötet"
+      ]
+    },
+    "meet_2025 Error": {
+      "Failed to start Picture-in-Picture": [
+        "Misslyckades att starta bild-i-bild"
+      ]
+    },
+    "Notification": {
+      "Coming soon": [
+        "Kommer snart"
+      ],
+      "Copied to clipboard": [
+        "Kopierat till urklipp"
+      ],
+      "Could not send feedback": [
+        "Kunde inte skicka feedback"
+      ],
+      "Link copied to clipboard": [
+        "Länk kopierad till urklipp"
+      ],
+      "Room name updated": [
+        "Rumnamn uppdaterat"
+      ],
+      "Successfully rotated your personal meeting": [
+        "Ditt personliga möte har roterats"
+      ],
+      "You can't send a feedback for a meeting you haven't been to": [
+        "Du kan inte skicka feedback för ett möte du inte har varit på"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Några bilder laddades inte upp på grund av dubbla filnamn i det nuvarande valet."
+      ]
+    },
+    "Option": {
+      "Audio was breaking up": [
+        "Ljud avbröts"
+      ],
+      "I couldn't hear others": [
+        "Jag kunde inte höra andra"
+      ],
+      "I couldn't present ": [
+        "Jag kunde inte presentera "
+      ],
+      "I couldn't see others' video": [
+        "Jag kunde inte se andras video"
+      ],
+      "I couldn't see the presentation": [
+        "Jag kunde inte se presentationen"
+      ],
+      "Others couldn't hear me": [
+        "Andra kunde inte höra mig"
+      ],
+      "Others couldn't see my video": [
+        "Andra kunde inte se min video"
+      ],
+      "The presentation was blurry": [
+        "Presentation var suddig"
+      ],
+      "Video quality was poor": [
+        "Videokvaliteten var dålig"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Ett sätt att kontakta dig"
+      ],
+      "E.g., ": [
+        "T.ex., "
+      ],
+      "Enter time": [
+        "Ange tid"
+      ],
+      "Enter your name": [
+        "Ange ditt namn"
+      ],
+      "Find...": [
+        "Hitta …"
+      ],
+      "Loading...": [
+        "Laddar in …"
+      ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "Mötesnamn, t.ex. teamsynkronisering, projektuppdatering etc."
+      ],
+      "Password": [
+        "Lösenord"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Beskriv problemet och inkludera eventuella felmeddelanden"
+      ],
+      "Reply...": [
+        "Svara …"
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "Namn på rum, t.ex. teamsynkronisering, projektuppdatering etc."
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Schemalägg i ${ CALENDAR_APP_NAME }"
+      ],
+      "Search": [
+        "Sök"
+      ],
+      "Select": [
+        "Välj"
+      ],
+      "Share more details": [
+        "Dela fler detaljer"
+      ],
+      "Type an encrypted message...": [
+        "Skriv ett krypterat meddelande …"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Granska kontosäkerhet"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggning lyckades inte slutföras."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Inga resultat hittades"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Logga ut"
+      ],
+      "Stay signed in": [
+        "Förbli inloggad"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } timme",
+        "${ gracePeriodHoursRemaining } timmar"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } är nu tillgängligt."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Om du loggar ut innan du återställer ditt lösenord kan du förlora åtkomsten till ditt konto."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Om du loggar ut utan att återställa ditt lösenord kan du förlora åtkomst till ditt konto."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Du kommer att kunna återställa ditt lösenord i ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Lösenordsåterställning"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Logga ut utan lösenordsåterställning?"
+      ]
+    },
+    "Sort option": {
+      "Alphabetical (A–Z)": [
+        "Alfabetiskt (A–Ö)"
+      ],
+      "Newly created": [
+        "Nyligen skapat"
+      ],
+      "Past meetings": [
+        "Tidigare möten"
+      ],
+      "Upcoming": [
+        "Kommande"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Gå till prenumerationspaket"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Logga in"
+      ],
+      "Sign in to your organization": [
+        "Logga in på din organisation"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
+      ]
+    },
+    "Status": {
+      "No": [
+        "Nej"
+      ],
+      "Yes": [
+        "Ja"
+      ]
+    },
+    "Success": {
+      "Assigned new host": [
+        "Tilldelade ny värd"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kod skickad till ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "E-postadress kopierad till urklipp"
+      ],
+      "Problem reported": [
+        "Problem rapporterat"
+      ],
+      "Verification successful": [
+        "Verifiering lyckades"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Åtgärder"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Name": [
+        "Namn"
+      ],
+      "Size": [
+        "Storlek"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "Kontot begränsat"
+      ],
+      "Account temporarily locked": [
+        "Konto tillfälligt låst"
+      ],
+      "Activity events": [
+        "Aktivitetshändelser"
+      ],
+      "All participants": [
+        "Alla deltagare"
+      ],
+      "Allow camera ": [
+        "Tillåt kamera "
+      ],
+      "Allow camera and microphone": [
+        "Tillåt kamera och mikrofon"
+      ],
+      "Allow microphone": [
+        "Tillåt mikrofon"
+      ],
+      "Are you sure?": [
+        "Är du säker?"
+      ],
+      "Assign a new host": [
+        "Tilldela en ny värd"
+      ],
+      "Audio": [
+        "Ljud"
+      ],
+      "Available Cameras": [
+        "Tillgängliga kameror"
+      ],
+      "Available Microphones": [
+        "Tillgängliga mikrofoner"
+      ],
+      "Available Speakers": [
+        "Tillgängliga högtalare"
+      ],
+      "Background blur comparison": [
+        "Jämförelse av bakgrundsoskärpa"
+      ],
+      "Camera and microphone are blocked": [
+        "Kamera och mikrofon är blockerade"
+      ],
+      "Camera is blocked": [
+        "Kamera är blockerad"
+      ],
+      "Chat": [
+        "Chatt"
+      ],
+      "Constants": [
+        "Konstanter"
+      ],
+      "Couldn't prepare the recording": [
+        "Kunde inte förbereda inspelningen"
+      ],
+      "Create new room": [
+        "Skapa nytt rum"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Debug Overlay": [
+        "Felsökningsöverlägg"
+      ],
+      "Delete recording?": [
+        "Ta bort inspelning?"
+      ],
+      "Enter your password": [
+        "Ange ditt lösenord"
+      ],
+      "Epoch": [
+        "Epoch"
+      ],
+      "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
+        "Epoch ${ prevLog.epoch } → ${ log.epoch }"
+      ],
+      "Error at epoch ${ log.epoch }": [
+        "Fel på epoch ${ log.epoch }"
+      ],
+      "Help and feedback": [
+        "Hjälp och feedback"
+      ],
+      "Help center": [
+        "Hjälpcenter"
+      ],
+      "Human verification": [
+        "Mänsklig verifiering"
+      ],
+      "Info": [
+        "Info"
+      ],
+      "Invalid meeting link": [
+        "Ogiltig möteslänk"
+      ],
+      "Invalid verification code": [
+        "Ogiltig verifieringskod"
+      ],
+      "Invite link": [
+        "Inbjudningslänk"
+      ],
+      "Join a meeting": [
+        "Gå med i ett möte"
+      ],
+      "Join meeting": [
+        "Gå med i möte"
+      ],
+      "Joined at epoch ${ log.epoch }": [
+        "Gick med på epoch ${ log.epoch }"
+      ],
+      "Joining meeting with ${ participantCount } other participant…": [
+        "Går med i möte med ${ participantCount } annan deltagare …",
+        "Går med i möte med ${ participantCount } andra deltagare …"
+      ],
+      "Launching Meeting...": [
+        "Startar möte …"
+      ],
+      "Local Participant": [
+        "Lokal deltagare"
+      ],
+      "Meeting": [
+        "Möte"
+      ],
+      "Meeting created": [
+        "Möte skapat"
+      ],
+      "Meeting details": [
+        "Mötesdetaljer"
+      ],
+      "Meeting edited": [
+        "Mötet redigerat"
+      ],
+      "Meeting settings": [
+        "Mötesinställningar"
+      ],
+      "Messaging Layer Security": [
+        "Messaging Layer Security"
+      ],
+      "Microphone is blocked": [
+        "Mikrofon är blockerad"
+      ],
+      "Minicalendar": [
+        "Minikalender"
+      ],
+      "No one is waiting": [
+        "Ingen väntar"
+      ],
+      "No results found": [
+        "Inga resultat hittades"
+      ],
+      "Participants": [
+        "Deltagare"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "Deltagare (${ filteredParticipants.length })"
+      ],
+      "Personal meeting room": [
+        "Personligt mötesrum"
+      ],
+      "Preparing your recording…": [
+        "Förbereder din inspelning …"
+      ],
+      "Publications": [
+        "Publikationer"
+      ],
+      "Reconnection Testing": [
+        "Test av återanslutning"
+      ],
+      "Record raw vs blurred camera": [
+        "Spela in rå kontra oskarp kamera"
+      ],
+      "Record this meeting": [
+        "Spela in detta möte"
+      ],
+      "Recordings": [
+        "Inspelningar"
+      ],
+      "Remote Participants": [
+        "Fjärrdeltagare"
+      ],
+      "Report a problem": [
+        "Rapportera ett problem"
+      ],
+      "Request new code": [
+        "Begär ny kod"
+      ],
+      "Schedule a meeting": [
+        "Schemalägg ett möte"
+      ],
+      "Screen share is blocked": [
+        "Skärmdelning är blockerad"
+      ],
+      "Secure meeting": [
+        "Säkert möte"
+      ],
+      "Security": [
+        "Säkerhet"
+      ],
+      "Security code": [
+        "Säkerhetskod"
+      ],
+      "Settings": [
+        "Inställningar"
+      ],
+      "Sign out": [
+        "Logga ut"
+      ],
+      "Starting meeting as the first participant…": [
+        "Startar möte som den första deltagaren …"
+      ],
+      "Stop recording": [
+        "Stoppa inspelning"
+      ],
+      "Talk confidentially": [
+        "Prata konfidentiellt"
+      ],
+      "Thank you!": [
+        "Tack!"
+      ],
+      "Time": [
+        "Tid"
+      ],
+      "Title": [
+        "Rubrik"
+      ],
+      "Two-factor authentication": [
+        "Tvåfaktorsautentisering"
+      ],
+      "Video": [
+        "Video"
+      ],
+      "Waiting room": [
+        "Väntrum"
+      ],
+      "What went wrong?": [
+        "Vad gick fel?"
+      ],
+      "Your feedback has been submitted": [
+        "Din feedback har skickats"
+      ],
+      "Your recording is ready": [
+        "Din inspelning är redo"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Idag"
+      ]
+    },
+    "Tooltip": {
+      "Background blur is not supported on your browser": [
+        "Bakgrundsoskärpa stöds inte på din webbläsare"
+      ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Generera en ny möteslänk. Nuvarande länken kommer sluta fungera."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Omedelbar AI-assistans, mänsklig expert nära till hands!"
+      ],
+      "Recurring meeting": [
+        "Återkommande möte"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "Du kan generera en ny möteslänk en gång per dag."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken",
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Wallet-problem"
+      ]
+    },
+    "Warning": {
+      "Connection is taking longer than expected": [
+        "Anslutning tar längre tid än väntat"
+      ],
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "Kunde inte komma åt kamera eller mikrofon. Du kan försöka aktivera dem igen från möteskontrollerna."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "Kunde inte komma åt kamera. Du kan försöka aktivera den igen från möteskontrollerna."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "Kunde inte komma åt mikrofon. Du kan försöka aktivera den igen från möteskontrollerna."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
+      ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "STUN UDP-anslutning misslyckades, försöker med TURN-relä …"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Tidsgräns för STUN UDP-anslutning nåddes, försöker med TURN-relä"
+      ],
+      "Trying another route…": [
+        "Försöker med en annan väg…"
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Tyvärr är vi inte online just nu. Fyll i formuläret nedan för att beskriva ditt problem så undersöker vi det och hör av oss när vi är online igen."
+      ]
+    }
+  }
+}

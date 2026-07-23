@@ -99,9 +99,6 @@
       "Add phone number": [
         "ტელეფონის ნომრის დამატება"
       ],
-      "Add secret passphrase": [
-        "საიდუმლო ფრაზის დამატება"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }-ში ჩამატება"
       ],
@@ -1060,9 +1057,6 @@
       "Page ${ pageNumber }": [
         "გვერდი ${ pageNumber }"
       ],
-      "Passphrase": [
-        "საკვანძო ფრაზა"
-      ],
       "Pause": [
         "შეჩერება"
       ],
@@ -1227,9 +1221,6 @@
       ],
       "Resume downloading": [
         "გადმოწერის გაგრძელება"
-      ],
-      "Retry": [
-        "თავიდან"
       ],
       "Revert to original display": [
         "თავდაპირველ ეკრანზე დაბრუნება"
@@ -1520,8 +1511,7 @@
         "ნდობა"
       ],
       "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
+        "გასაღების სანდოობა"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -1585,9 +1575,6 @@
       ],
       "Update recovery phrase": [
         "აღდგენის ფაზის განახლება"
-      ],
-      "Update secret passphrase": [
-        "საიდუმლო ფრაზის განახლება"
       ],
       "Upgrade": [
         "ტარიფის აწევა"
@@ -4986,9 +4973,6 @@
       "Failed to open to contact": [
         "კონტაქტისთვის გახსნა ჩავარდა"
       ],
-      "Failed to update secret passphrase": [
-        "საიდუმლო ფრაზის განახლება ჩავარდა"
-      ],
       "Filter with this name already exists": [
         "ფილტრი ამ სახელით უკვე არსებობს"
       ],
@@ -5123,9 +5107,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "არაკონფიდენციალური მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
-      ],
-      "Passphrase unavailable": [
-        "საკვანძო ფრაზა ხელმიუწვდომელია"
       ],
       "Password is required": [
         "პაროლი აუცილებელია"
@@ -7681,9 +7662,6 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "ელფოსტასთან ნენებისმიერ დროს წვდომისთვის და მობილურისთვის ოპტიმიზებული პროგრამებისთვის გადმოწერეთ ჩვენი ${ androidAppLink }-ის ან ${ iosAppLink }-ის აპი."
       ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "დამატებითი უსაფრთხოებისთვის, შეგიძლიათ დააყენოთ პაროლის ფრაზა. ის არ იქნება შეტანილი კალენდრის მოწვევაში, არ დაგავიწყდეთ მისი სტუმრებისთვის ცალკე გაზიარება."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "მხოლოდ ${ bundlePlanPriceInline } -ად"
       ],
@@ -10203,9 +10181,6 @@
       "Participants": [
         "მონაწილეები"
       ],
-      "Passphrase:": [
-        "საკვანძო ფრაზა:"
-      ],
       "Password": [
         "პაროლი"
       ],
@@ -12241,9 +12216,6 @@
       "Passcode copied to clipboard": [
         "წვდომის კოდი დაკოპირდა გაცვლის ბუფერში"
       ],
-      "Passphrase copied to clipboard": [
-        "საკვანძო ფრაზა დაკოპირდა გაცვლის ბუფერში"
-      ],
       "Password has been set successfully": [
         "პაროლი წარმატებით დადგა"
       ],
@@ -13123,9 +13095,6 @@
       ],
       "Enter a name": [
         "შეიყვანეთ სახელი"
-      ],
-      "Enter passphrase": [
-        "შეიყვანეთ საკვანძო ფრაზა"
       ],
       "Filter folders": [
         "საქაღალდეების გაფილტვრა"
@@ -14557,9 +14526,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "წერის დამხმარე ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } და ${ LUMO_APP_NAME } პრემიუმ ფუნქციებით"
       ],
@@ -15188,9 +15154,6 @@
       ],
       "Read receipt sent": [
         "წაკითხულობის ანგარიში გაიგზავნა"
-      ],
-      "Secret passphrase updated": [
-        "საიდუმლო ფრაზა განახლდა"
       ],
       "Self-destruction removed": [
         "თვითგანადგურება წაშლილია"

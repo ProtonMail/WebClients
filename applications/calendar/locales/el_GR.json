@@ -98,9 +98,6 @@
       "Add public holidays": [
         "Προσθήκη επίσημων αργιών"
       ],
-      "Add secret passphrase": [
-        "Προσθήκη μυστικής φράσης πρόσβασης"
-      ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
@@ -671,9 +668,6 @@
       "Open settings": [
         "Άνοιγμα ρυθμίσεων"
       ],
-      "Passphrase": [
-        "Φράση πρόσβασης"
-      ],
       "Pause indexing": [
         "Παύση δημιουργίας ευρετηρίου"
       ],
@@ -772,9 +766,6 @@
       ],
       "Resume indexing": [
         "Συνέχιση δημιουργίας ευρετηρίου"
-      ],
-      "Retry": [
-        "Δοκιμάστε ξανά"
       ],
       "Save": [
         "Αποθήκευση"
@@ -955,9 +946,6 @@
       ],
       "Update recovery phrase": [
         "Ενημέρωση φράσης ανάκτησης"
-      ],
-      "Update secret passphrase": [
-        "Ενημέρωση μυστικής φράσης πρόσβασης"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -1209,6 +1197,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ BRAND_NAME } Scribe να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ LUMO_SHORT_APP_NAME } να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
       ]
     },
     "Attached ics file error": {
@@ -1254,6 +1245,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Μπορείτε να έχετε έως και ${ TRIAL_MAX_LUMO_SEATS } θέσεις ${ LUMO_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής κατά τη διάρκεια της δοκιμαστικής περιόδου."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } θέσεις Scribe κατά τη δοκιμαστική περίοδο."
@@ -1370,12 +1364,19 @@
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε τα με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διεύθυνση email, υποστήριξη για προσαρμοσμένους τομείς email, βοηθό γραφής ${ LUMO_SHORT_APP_NAME }, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε τα με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις email, υποστήριξη για προσαρμοσμένους τομείς email, βοηθό γραφής ${ LUMO_SHORT_APP_NAME }, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση . Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ LUMO_SHORT_APP_NAME } βοηθό γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
@@ -3864,9 +3865,6 @@
       "Failed to open to contact": [
         "Αποτυχία ανοίγματος επαφής"
       ],
-      "Failed to update secret passphrase": [
-        "Αποτυχία ενημέρωσης του μυστικού κωδικού πρόσβασης"
-      ],
       "Failed to update settings": [
         "Απέτυχε η ενημέρωση ρυθμίσεων"
       ],
@@ -4010,9 +4008,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
-      ],
-      "Passphrase unavailable": [
-        "Η φράση πρόσβασης δεν είναι διαθέσιμη"
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
@@ -5309,6 +5304,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } περιλαμβάνει τον βοηθό γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } είναι μια λύση βιντεοδιάσκεψης με πλήρη διατερματική κρυπτογράφηση. Προσθέστε τη στο πλάνο σας για να φιλοξενείτε ασφαλείς συσκέψεις."
       ],
@@ -5813,9 +5814,6 @@
       "Failed to update meeting name": [
         "Αποτυχία ενημέρωσης του ονόματος της συνάντησης"
       ],
-      "Failed to update meeting password": [
-        "Αποτυχία ενημέρωσης του κωδικού πρόσβασης της συνάντησης"
-      ],
       "Failed to update meeting schedule": [
         "Αποτυχία ενημέρωσης του προγράμματος σύσκεψης"
       ],
@@ -5833,9 +5831,6 @@
       ],
       "for ${ price }": [
         "για ${ price }"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Για επιπλέον ασφάλεια, μπορείτε να ορίσετε μια φράση πρόσβασης. Δε θα περιληφθεί στην πρόσκληση του ημερολογίου, θυμηθείτε να τη μοιραστείτε με τους καλεσμένους σας ξεχωριστά."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Μόνο για ${ bundlePlanPriceInline }"
@@ -7428,9 +7423,6 @@
       "Participants": [
         "Συμμετέχοντες"
       ],
-      "Passphrase:": [
-        "Φράση πρόσβασης:"
-      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
@@ -7910,8 +7902,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Προσθέστε το ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Προσθήκη βοηθού γραφής ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Πρόσθετο με δωρεάν δοκιμή"
@@ -8304,6 +8302,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } και ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
@@ -9222,9 +9223,6 @@
       ],
       "Passcode copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
-      ],
-      "Passphrase copied to clipboard": [
-        "Ο φράση πρόσβασης αντιγράφηκε στο πρόχειρο"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Η διεύθυνσή σας ${ BRAND_NAME } είναι έτοιμη για χρήση"
@@ -10148,9 +10146,6 @@
       ],
       "Enter a short description or additional info": [
         "Εισαγάγετε μια σύντομη περιγραφή ή πρόσθετες πληροφορίες"
-      ],
-      "Enter passphrase": [
-        "Εισαγάγετε τη φράση πρόσβασης"
       ],
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
@@ -11324,9 +11319,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe βοηθός γραφής"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } και ${ LUMO_APP_NAME } με premium χαρακτηριστικά"
       ],
@@ -11845,9 +11837,6 @@
       ],
       "Problem reported": [
         "Η αναφορά του προβλήματος ολοκληρώθηκε"
-      ],
-      "Secret passphrase updated": [
-        "Η μυστική φράση πρόσβασης ενημερώθηκε"
       ],
       "Undo in progress": [
         "Αναίρεση σε εξέλιξη"

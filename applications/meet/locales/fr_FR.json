@@ -752,9 +752,6 @@
       "Show floating thumbnail during screensharing": [
         "Afficher une miniature flottante pendant le partage d'écran"
       ],
-      "Show passphrase": [
-        "Afficher la phrase secrète"
-      ],
       "Stop recording and download.": [
         "Arrêter l'enregistrement et télécharger."
       ],
@@ -1884,9 +1881,6 @@
       "Invalid meeting link": [
         "Le lien de réunion n'est pas valide."
       ],
-      "Invalid passphrase": [
-        "La phrase secrète est invalide"
-      ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
       ],
@@ -2342,9 +2336,6 @@
       "Failed to update meeting name": [
         "La mise à jour du nom de la réunion n'a pas abouti."
       ],
-      "Failed to update meeting password": [
-        "La mise à jour du mot de passe de la réunion n'a pas abouti."
-      ],
       "Failed to update meeting schedule": [
         "La mise à jour de la réunion n'a pas abouti."
       ],
@@ -2570,9 +2561,6 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Veuillez activer l'accès à votre ${ microphoneLinkButton }${ andString }${ cameraLinkButton } pour une expérience optimale."
       ],
-      "Please enter the passphrase to decrypt and view this meeting": [
-        "Veuillez saisir la phrase secrète pour déchiffrer et afficher cette réunion"
-      ],
       "Please try again or try another browser": [
         "Veuillez réessayer ou essayez un autre navigateur"
       ],
@@ -2707,9 +2695,6 @@
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Cette réunion est verrouillée. Veuillez contacter l'hôte pour la rejoindre."
-      ],
-      "This meeting is password protected": [
-        "Cette réunion est protégée par un mot de passe"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Cette réunion a atteint la limite de durée prévue dans le forfait gratuit. Passez à un forfait supérieur pour prolonger la durée de vos prochaines réunions."
@@ -3041,9 +3026,6 @@
       "Participants join after you approve them": [
         "Les participants rejoindront le groupe une fois que vous les aurez validés"
       ],
-      "Passphrase": [
-        "Phrase secrète"
-      ],
       "Password": [
         "Mot de passe"
       ],
@@ -3240,9 +3222,6 @@
       ],
       "E.g., ": [
         "Par exemple, "
-      ],
-      "Enter passphrase": [
-        "Saisir la phrase secrète"
       ],
       "Enter time": [
         "Saisissez l'horaire"
@@ -3567,9 +3546,6 @@
       ],
       "Participants (${ filteredParticipants.length })": [
         "Participants (${ filteredParticipants.length })"
-      ],
-      "Passphrase": [
-        "Phrase secrète"
       ],
       "Personal meeting room": [
         "Salle de réunion personnelle"

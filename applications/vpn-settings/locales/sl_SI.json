@@ -855,9 +855,6 @@
       "Send email reminder": [
         "Pošlji opomnik po elektronski pošti."
       ],
-      "Send feedback": [
-        "Pošlji povratne informacije"
-      ],
       "Send my username": [
         "Pošlji moje uporabniško ime"
       ],
@@ -896,9 +893,6 @@
       ],
       "Share": [
         "Deli"
-      ],
-      "Share feedback": [
-        "Delite povratne informacije"
       ],
       "Share via link": [
         "Deli prek povezave"
@@ -1165,6 +1159,12 @@
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } uporabniška mesta"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnika)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnika)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnike)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnikov)"
+      ],
       "${ price } per dedicated server": [
         "${ price } na namenski strežnik"
       ],
@@ -1331,6 +1331,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ LUMO_SHORT_APP_NAME } pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
       ]
     },
     "Attached ics file error": {
@@ -1364,6 +1367,9 @@
     "b2b_trials_2025_Info": {
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } mest."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } pomočnikov pri pisanju."
       ]
     },
     "b2b_trials_Action": {
@@ -1507,6 +1513,12 @@
         "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
         "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštnih naslovov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
         "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
@@ -1515,6 +1527,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zavarujte svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje 15 e-poštnih naslovov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje 15 e-poštnih naslovov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zavarujte svojo e-pošto in urnik s celovitim šifriranjem. Vključuje 15 e-poštnih naslovov, podporo za prilagojene e-poštne domene, neomejeno število vzdevkov hide-my-email in drugo."
@@ -5719,6 +5734,12 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: predogled nizke ločljivosti"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } vsebuje pomočnika pri pisanju"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } in ${ CALENDAR_APP_NAME }"
       ],
@@ -6153,9 +6174,6 @@
       ],
       "Copy your referral link": [
         "Kopirajte svojo povezavo za priporočilo"
-      ],
-      "Couldn´t send feedback": [
-        "Ni bilo mogoče poslati povratnih informacij"
       ],
       "Country code": [
         "Koda države"
@@ -6637,9 +6655,6 @@
       "Keep your passwords safe and sign in instantly with autofill across every device.": [
         "Zaščitite svoja gesla in se s funkcijo samodejnega izpolnjevanja prijavite z vseh naprav."
       ],
-      "Key sections reorganized for faster access.": [
-        "Ključni razdelki so preurejeni za hitrejši dostop."
-      ],
       "Keys created": [
         "Ključi so bili ustvarjeni."
       ],
@@ -6759,12 +6774,6 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Zbirajo podatkov o dejavnosti se bo ustavilo in podatki ne bodo več prikazani."
-      ],
-      "New sidebar": [
-        "Nova stranska vrstica"
-      ],
-      "New sidebar layout": [
-        "Nova postavitev stranske vrstice"
       ],
       "News or media article": [
         "Novice ali medijski članki"
@@ -7102,9 +7111,6 @@
       "Setting up your organization": [
         "Nastavljam vašo organizacijo"
       ],
-      "Share your thoughts...": [
-        "Delite svoje mnenje ..."
-      ],
       "Shared server country (${ countriesCount })": [
         "Država z deljenim strežnikom (${ countriesCount })",
         "Državi z deljenim strežnikom (${ countriesCount })",
@@ -7183,9 +7189,6 @@
       "Swiss based": [
         "S sedežem v Švici"
       ],
-      "Switch sidebars": [
-        "Preklopi stranske vrstice"
-      ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
       ],
@@ -7197,9 +7200,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Hvala, ker ste se naročili. Varno brskanje se prične zdaj."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Hvala – vaše povratne informacije so bile poslane."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Hvala, ker podpirate naše poslanstvo za izgradnjo boljšega interneta, kjer sta zasebnost in svoboda na prvem mestu."
@@ -7800,9 +7800,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
-      ],
-      "Your feedback": [
-        "Vaše povratne informacije"
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
@@ -9195,8 +9192,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj pomočnika pri pisanju ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Dodaj pomočnika pri pisanju ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Dodatek z brezplačno preizkusno dobo"
@@ -9446,6 +9449,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } in ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
       ],
       "${ n } calendar": [
         "${ n } koledar",
@@ -12936,6 +12942,12 @@
         "${ ipAddresses } namenskih strežnikov",
         "${ ipAddresses } namenskih strežnikov"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju za ${ maxAi } uporabnika",
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju za ${ maxAi } uporabnika",
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju za ${ maxAi } uporabnike",
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju za ${ maxAi } uporabnikov"
+      ],
       "${ n } calendar per user": [
         "${ n } koledar na uporabnika",
         "${ n } koledarja na uporabnika",
@@ -14295,9 +14307,6 @@
       ],
       "Help center": [
         "Središče za pomoč"
-      ],
-      "Help us improve": [
-        "Pomagajte nam izboljšati"
       ],
       "Home": [
         "Začetek"

@@ -752,9 +752,6 @@
       "Show floating thumbnail during screensharing": [
         "Zwevende miniatuur tonen tijdens het delen van het scherm"
       ],
-      "Show passphrase": [
-        "Toon wachtwoord"
-      ],
       "Stop recording and download.": [
         "Stop met opnemen en download de video."
       ],
@@ -1884,9 +1881,6 @@
       "Invalid meeting link": [
         "Ongeldige vergaderlink"
       ],
-      "Invalid passphrase": [
-        "Ongeldig wachtwoord"
-      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
@@ -2342,9 +2336,6 @@
       "Failed to update meeting name": [
         "Naam vergadering bijwerken mislukt"
       ],
-      "Failed to update meeting password": [
-        "Wachtwoord vergadering bijwerken mislukt"
-      ],
       "Failed to update meeting schedule": [
         "Bijwerken vergaderingsschema mislukt"
       ],
@@ -2570,9 +2561,6 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Schakel de toegang in tot uw ${ microphoneLinkButton }${ andString }${ cameraLinkButton } voor de beste ervaring."
       ],
-      "Please enter the passphrase to decrypt and view this meeting": [
-        "Voer het wachtwoord in om deze vergadering te ontsleutelen en te bekijken."
-      ],
       "Please try again or try another browser": [
         "Probeer het opnieuw of probeer een andere browser"
       ],
@@ -2707,9 +2695,6 @@
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Deze vergadering is vergrendeld. Neem contact op met de host om deel te nemen."
-      ],
-      "This meeting is password protected": [
-        "Deze vergadering is beveiligd met een wachtwoord"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Deze bijeenkomst bereikte de tijdslimiet van een gratis plan. Upgrade om de lengte van uw vergadering bij toekomstige gesprekken te verlengen."
@@ -2906,6 +2891,12 @@
       "Category": [
         "Categorie"
       ],
+      "Client": [
+        "Klant"
+      ],
+      "Client version": [
+        "Klantenversie"
+      ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
@@ -3034,9 +3025,6 @@
       ],
       "Participants join after you approve them": [
         "Deelnemers nemen deel nadat u ze heeft goedgekeurd"
-      ],
-      "Passphrase": [
-        "Wachtzin"
       ],
       "Password": [
         "Wachtwoord"
@@ -3234,9 +3222,6 @@
       ],
       "E.g., ": [
         "Bijv., "
-      ],
-      "Enter passphrase": [
-        "Voer wachtwoordzin in"
       ],
       "Enter time": [
         "Voer tijd in"
@@ -3561,9 +3546,6 @@
       ],
       "Participants (${ filteredParticipants.length })": [
         "Deelnemers (${ filteredParticipants.length })"
-      ],
-      "Passphrase": [
-        "Wachtwoordzin"
       ],
       "Personal meeting room": [
         "Persoonlijke vergaderruimte"

@@ -99,9 +99,6 @@
       "Add phone number": [
         "Добавить номер телефона"
       ],
-      "Add secret passphrase": [
-        "Добавить кодовую фразу"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Добавить в ${ CALENDAR_APP_NAME }"
       ],
@@ -1068,9 +1065,6 @@
       "Page ${ pageNumber }": [
         "Страница ${ pageNumber }"
       ],
-      "Passphrase": [
-        "Кодовая фраза"
-      ],
       "Pause": [
         "Пауза"
       ],
@@ -1235,9 +1229,6 @@
       ],
       "Resume downloading": [
         "Возобновить скачивание"
-      ],
-      "Retry": [
-        "Повторить"
       ],
       "Revert to original display": [
         "Вернуться к исходному отображению"
@@ -1528,10 +1519,7 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверенный ключ",
-        "Доверенных ключа",
-        "Доверенных ключей",
-        "Доверенных ключей"
+        "Доверять ключу"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1595,9 +1583,6 @@
       ],
       "Update recovery phrase": [
         "Обновить фразу для восстановления"
-      ],
-      "Update secret passphrase": [
-        "Обновить секретную кодовую фразу"
       ],
       "Upgrade": [
         "Улучшить"
@@ -5053,9 +5038,6 @@
       "Failed to open to contact": [
         "Не удалось открыть контакт"
       ],
-      "Failed to update secret passphrase": [
-        "Не удалось обновить кодовую фразу"
-      ],
       "Filter with this name already exists": [
         "Фильтр с таким именем уже существует"
       ],
@@ -5196,9 +5178,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Ключ организации должен быть активирован для создания нечастных пользователей"
-      ],
-      "Passphrase unavailable": [
-        "Кодовая фраза недоступна"
       ],
       "Password is required": [
         "Нужно ввести пароль"
@@ -7926,9 +7905,6 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Для постоянного доступа к электронной почте и оптимизации мобильных устройств, скачайте ${ androidAppLink } или ${ iosAppLink }."
       ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Для дополнительной безопасности вы можете установить кодовую фразу. Она не будет включена в приглашение в календарь, не забудьте поделиться ею с гостями отдельно."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Всего за ${ bundlePlanPriceInline }"
       ],
@@ -10535,9 +10511,6 @@
       "Participants": [
         "Участники"
       ],
-      "Passphrase:": [
-        "Кодовая фраза:"
-      ],
       "Password": [
         "Пароль"
       ],
@@ -12652,9 +12625,6 @@
       "Passcode copied to clipboard": [
         "Код доступа скопирован в буфер обмена"
       ],
-      "Passphrase copied to clipboard": [
-        "Кодовая фраза скопирована в буфер обмена"
-      ],
       "Password has been set successfully": [
         "Пароль был успешно установлен"
       ],
@@ -13548,9 +13518,6 @@
       ],
       "Enter a name": [
         "Введите имя"
-      ],
-      "Enter passphrase": [
-        "Ввести кодовую фразу"
       ],
       "Filter folders": [
         "Фильтровать папки"
@@ -15054,9 +15021,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Помощник по написанию ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } и ${ LUMO_APP_NAME } с платными функциями"
       ],
@@ -15757,9 +15721,6 @@
       ],
       "Read receipt sent": [
         "Уведомление о прочтении отправлено"
-      ],
-      "Secret passphrase updated": [
-        "Кодовая фраза обновлена"
       ],
       "Self-destruction removed": [
         "Самоуничтожение отменено"

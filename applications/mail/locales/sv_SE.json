@@ -99,9 +99,6 @@
       "Add phone number": [
         "Lägg till telefonnummer"
       ],
-      "Add secret passphrase": [
-        "Lägg till hemlig lösenfras"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Lägg till i ${ CALENDAR_APP_NAME }"
       ],
@@ -1060,9 +1057,6 @@
       "Page ${ pageNumber }": [
         "Sida ${ pageNumber }"
       ],
-      "Passphrase": [
-        "Lösenfras"
-      ],
       "Pause": [
         "Pausa"
       ],
@@ -1227,9 +1221,6 @@
       ],
       "Resume downloading": [
         "Återuppta nedladdning"
-      ],
-      "Retry": [
-        "Försök igen"
       ],
       "Revert to original display": [
         "Återgå till originalvisning"
@@ -1520,8 +1511,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1585,9 +1575,6 @@
       ],
       "Update recovery phrase": [
         "Uppdatera återställningsfras"
-      ],
-      "Update secret passphrase": [
-        "Uppdatera hemlig lösenfras"
       ],
       "Upgrade": [
         "Uppgradera"
@@ -4983,9 +4970,6 @@
       "Failed to open to contact": [
         "Misslyckades att öppna kontakt"
       ],
-      "Failed to update secret passphrase": [
-        "Misslyckades att uppdatera hemlig lösenfras"
-      ],
       "Filter with this name already exists": [
         "Filter med detta namn finns redan"
       ],
@@ -5120,9 +5104,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
-      ],
-      "Passphrase unavailable": [
-        "Lösenfras otillgänglig"
       ],
       "Password is required": [
         "Lösenord är obligatoriskt"
@@ -6864,11 +6845,17 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderar skrivassistenten"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } hjälper dig att skapa bättre e-post snabbt och enkelt."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME }-panel"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan också skydda ditt företag."
@@ -7683,9 +7670,6 @@
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "För åtkomst när som helst till e-post och en optimerad mobilupplevelse, ladda ner vår ${ androidAppLink }- eller ${ iosAppLink }."
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "För extra säkerhet kan du ställa in en lösenfras. Den kommer inte att inkluderas i kalenderinbjudan, kom ihåg att dela den med dina gäster separat."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "För endast ${ bundlePlanPriceInline }"
@@ -10212,9 +10196,6 @@
       "Participants": [
         "Deltagare"
       ],
-      "Passphrase:": [
-        "Lösenfras:"
-      ],
       "Password": [
         "Lösenord"
       ],
@@ -10941,8 +10922,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Lägg till ${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Lägg till ${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
       "Add-on with free trial": [
         "Utökning med gratis provperiod"
@@ -11330,6 +11317,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } och ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -12250,9 +12240,6 @@
       "Passcode copied to clipboard": [
         "Lösenkod kopierat till urklipp"
       ],
-      "Passphrase copied to clipboard": [
-        "Lösenfras kopierat till urklipp"
-      ],
       "Password has been set successfully": [
         "Lösenord har ställts in"
       ],
@@ -13138,9 +13125,6 @@
       ],
       "Enter a name": [
         "Ange ett namn"
-      ],
-      "Enter passphrase": [
-        "Ange lösenfras"
       ],
       "Filter folders": [
         "Filtrera mappar"
@@ -14572,9 +14556,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe skrivassistent"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } och ${ LUMO_APP_NAME } med premiumfunktioner"
       ],
@@ -15203,9 +15184,6 @@
       ],
       "Read receipt sent": [
         "Läskvitto skickat"
-      ],
-      "Secret passphrase updated": [
-        "Hemlig lösenfras uppdaterad"
       ],
       "Self-destruction removed": [
         "Självförstörelse borttagen"

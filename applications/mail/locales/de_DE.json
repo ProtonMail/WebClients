@@ -99,9 +99,6 @@
       "Add phone number": [
         "Telefonnummer hinzufügen"
       ],
-      "Add secret passphrase": [
-        "Geheime Passphrase hinzufügen"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Hinzufügen zu ${ CALENDAR_APP_NAME }"
       ],
@@ -1060,9 +1057,6 @@
       "Page ${ pageNumber }": [
         "Seite ${ pageNumber }"
       ],
-      "Passphrase": [
-        "Passphrase"
-      ],
       "Pause": [
         "Pausieren"
       ],
@@ -1227,9 +1221,6 @@
       ],
       "Resume downloading": [
         "Download fortsetzen"
-      ],
-      "Retry": [
-        "Erneut versuchen"
       ],
       "Revert to original display": [
         "Zurück zur ursprünglichen Darstellung"
@@ -1520,8 +1511,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1585,9 +1575,6 @@
       ],
       "Update recovery phrase": [
         "Wiederherstellungsphrase aktualisieren"
-      ],
-      "Update secret passphrase": [
-        "Geheime Passphrase aktualisieren"
       ],
       "Upgrade": [
         "Wechseln"
@@ -1944,6 +1931,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ LUMO_SHORT_APP_NAME } dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
       ]
     },
     "Attached ics file error": {
@@ -1992,6 +1982,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-Lizenzen haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } Schreibassistenten-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -2103,12 +2096,19 @@
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und vieles mehr.",
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und vieles mehr."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Sichere deine E-Mails und Termine mit Ende-zu-Ende-Verschlüsselung. Inklusive ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sichere deine E-Mails und plane deine Termine mit Ende-zu-Ende-Verschlüsselung. Enthält 15 E-Mail-Adressen, Support für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr."
@@ -4986,9 +4986,6 @@
       "Failed to open to contact": [
         "Fehler beim Öffnen des Kontakts"
       ],
-      "Failed to update secret passphrase": [
-        "Geheime Passphrase konnte nicht aktualisiert werden"
-      ],
       "Filter with this name already exists": [
         "Filter mit diesem Namen bereits vorhanden"
       ],
@@ -5123,9 +5120,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsschlüssel muss aktiviert sein, um nicht-private Benutzer anzulegen"
-      ],
-      "Passphrase unavailable": [
-        "Passphrase nicht verfügbar"
       ],
       "Password is required": [
         "Passwort ist erforderlich"
@@ -6867,11 +6861,17 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } beinhaltet den Schreibassistenten"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } hilft dir, bessere E-Mails schnell und mühelos zu erstellen."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME } Seitenleiste"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kann auch dein Unternehmen schützen."
@@ -7686,9 +7686,6 @@
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Lade unsere ${ androidAppLink } oder ${ iosAppLink } herunter, um jederzeit auf deine E-Mails zugreifen zu können und ein optimiertes mobiles Erlebnis zu haben."
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Für zusätzliche Sicherheit kannst du eine Passphrase festlegen. Diese wird nicht in der Kalendereinladung enthalten sein, denke daran, sie separat mit deinen Gästen zu teilen."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Für nur ${ bundlePlanPriceInline }"
@@ -10227,9 +10224,6 @@
       "Participants": [
         "Teilnehmer"
       ],
-      "Passphrase:": [
-        "Passphrase:"
-      ],
       "Password": [
         "Passwort"
       ],
@@ -10956,8 +10950,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent hinzufügen"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent hinzufügen"
       ],
       "Add-on with free trial": [
         "Add-on mit kostenloser Testversion"
@@ -11345,6 +11345,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } und ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ],
       "${ n } calendar": [
         "${ n } Kalender",
@@ -12265,9 +12268,6 @@
       "Passcode copied to clipboard": [
         "Passcode in die Zwischenablage kopiert"
       ],
-      "Passphrase copied to clipboard": [
-        "Passphrase in die Zwischenablage kopiert"
-      ],
       "Password has been set successfully": [
         "Passwort wurde erfolgreich gesetzt"
       ],
@@ -13147,9 +13147,6 @@
       ],
       "Enter a name": [
         "Name eingeben"
-      ],
-      "Enter passphrase": [
-        "Passphrase eingeben"
       ],
       "Filter folders": [
         "Ordner filtern"
@@ -14581,9 +14578,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-Schreibassistent"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, und ${ LUMO_APP_NAME } mit Premium-Funktionen"
       ],
@@ -15212,9 +15206,6 @@
       ],
       "Read receipt sent": [
         "Lesebestätigung gesendet"
-      ],
-      "Secret passphrase updated": [
-        "Geheime Passphrase aktualisiert"
       ],
       "Self-destruction removed": [
         "Selbstzerstörung entfernt"

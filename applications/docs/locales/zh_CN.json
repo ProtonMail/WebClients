@@ -1026,6 +1026,14 @@
         "${ BRAND_NAME } 应用"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "将电子邮件工作效率提升到新水平。让 ${ BRAND_NAME } Scribe 帮您撰写、回复和校对电子邮件。"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "将邮件生产力提升至新高度，让 ${ LUMO_SHORT_APP_NAME } 帮助您撰写、回复和校对邮件。"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "ICS 文件为空"
@@ -1155,11 +1163,17 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 Hide-my-email  别名等功能。"
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 Hide-my-email 别名等功能。"
@@ -4436,6 +4450,9 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
@@ -5989,6 +6006,12 @@
       "City": [
         "城市"
       ],
+      "Client": [
+        "客户端"
+      ],
+      "Client version": [
+        "客户端版本"
+      ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
@@ -6612,6 +6635,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 写作助手"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
       "Add-on with free trial": [
         "免费试用附加组件"
       ]
@@ -6989,6 +7015,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 和 ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
       "${ n } calendar": [
         "${ n } 份日历"

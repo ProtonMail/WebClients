@@ -99,9 +99,6 @@
       "Add phone number": [
         "Telefon numarası ekle"
       ],
-      "Add secret passphrase": [
-        "Gizli parola ifadesi ekle"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } üzerine ekle"
       ],
@@ -1060,9 +1057,6 @@
       "Page ${ pageNumber }": [
         "${ pageNumber }. sayfa"
       ],
-      "Passphrase": [
-        "Parola ifadesi"
-      ],
       "Pause": [
         "Duraklat"
       ],
@@ -1227,9 +1221,6 @@
       ],
       "Resume downloading": [
         "İndirmeyi sürdür"
-      ],
-      "Retry": [
-        "Yeniden dene"
       ],
       "Revert to original display": [
         "Özgün görünüme geri dön"
@@ -1520,8 +1511,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1585,9 +1575,6 @@
       ],
       "Update recovery phrase": [
         "Kurtarma ifadesini güncelle"
-      ],
-      "Update secret passphrase": [
-        "Gizli parola ifadesini güncelle"
       ],
       "Upgrade": [
         "Yükselt"
@@ -1944,6 +1931,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ BRAND_NAME } Scribe tarafından yardım alın."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "E-posta üretkenliğinizi yeni seviyelere taşıyın. ${ LUMO_SHORT_APP_NAME } ile e-postalarınızı yazın, yanıtlayın ve düzeltin."
       ]
     },
     "Attached ics file error": {
@@ -1992,6 +1982,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } adet ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansına sahip olabilirsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
@@ -2103,12 +2096,19 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. 15 e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
@@ -4986,9 +4986,6 @@
       "Failed to open to contact": [
         "Kişiye açılamadı"
       ],
-      "Failed to update secret passphrase": [
-        "Gizli parola ifadesi güncellenemedi"
-      ],
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
       ],
@@ -5123,9 +5120,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
-      ],
-      "Passphrase unavailable": [
-        "Parola ifadesi kullanılamıyor"
       ],
       "Password is required": [
         "Parolanın yazılması zorunludur"
@@ -6867,11 +6861,17 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } yazma yardımcısını içerir"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME }, hızlı ve kolayca daha iyi e-postalar oluşturmanızı sağlar."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME } panosu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kuruluşunuzu da koruyabilir."
@@ -7686,9 +7686,6 @@
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Ek güvenlik için bir parola ayarlayabilirsiniz. Bu parola, takvim davetine eklenmez. Konuklarınızla ayrıca paylaşmayı unutmayın."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Yalnızca ${ bundlePlanPriceInline }"
@@ -10227,9 +10224,6 @@
       "Participants": [
         "Katılımcılar"
       ],
-      "Passphrase:": [
-        "Parola ifadesi:"
-      ],
       "Password": [
         "Parola"
       ],
@@ -10956,8 +10950,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısını ekle"
       ],
       "Add-on with free trial": [
         "Ücretsiz deneme sürümü ile eklenti"
@@ -11345,6 +11345,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ n } calendar": [
         "${ n } takvim",
@@ -12265,9 +12268,6 @@
       "Passcode copied to clipboard": [
         "Parola panoya kopyalandı"
       ],
-      "Passphrase copied to clipboard": [
-        "Parola ifadesi panoya kopyalandı"
-      ],
       "Password has been set successfully": [
         "Parola ayarlandı"
       ],
@@ -13147,9 +13147,6 @@
       ],
       "Enter a name": [
         "Bir ad yazın"
-      ],
-      "Enter passphrase": [
-        "Parola ifadesini yazın"
       ],
       "Filter folders": [
         "Klasörleri süz"
@@ -14581,9 +14578,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe yazma yardımcısı"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "Ücretli özellikler ile ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ve ${ LUMO_APP_NAME }"
       ],
@@ -15212,9 +15206,6 @@
       ],
       "Read receipt sent": [
         "Okundu bilgisi gönderildi"
-      ],
-      "Secret passphrase updated": [
-        "Gizli parola ifadesi güncellendi"
       ],
       "Self-destruction removed": [
         "Kendini yok etme kaldırıldı"
