@@ -549,6 +549,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. "
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Porteu la productivitat del correu electrònic a nous nivells. Deixeu que ${ LUMO_SHORT_APP_NAME } us ajudi a redactar, respondre i corregir els vostres correus electrònics."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -563,6 +566,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències d'Scribe durant el període de prova."
@@ -2732,6 +2738,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } és una aplicació de videoconferència amb xifratge d'extrem a extrem. Afegiu-la al vostre pla per allotjar reunions segures."
       ],
@@ -3642,8 +3654,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Afegiu l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Complement amb prova gratuïta"
@@ -3787,6 +3805,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } calendari",
