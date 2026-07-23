@@ -98,9 +98,6 @@
       "Add public holidays": [
         "Tilføj nationale helligdage"
       ],
-      "Add secret passphrase": [
-        "Tilføj hemmelig adgangssætning"
-      ],
       "Add to group": [
         "Føj til gruppe"
       ],
@@ -671,9 +668,6 @@
       "Open settings": [
         "Åbn Indstillinger"
       ],
-      "Passphrase": [
-        "Adgangssætning"
-      ],
       "Pause indexing": [
         "Sæt indeksering på pause"
       ],
@@ -772,9 +766,6 @@
       ],
       "Resume indexing": [
         "Genoptag indeksering"
-      ],
-      "Retry": [
-        "Prøv igen"
       ],
       "Save": [
         "Gem"
@@ -955,9 +946,6 @@
       ],
       "Update recovery phrase": [
         "Opdater gendannelsessætning"
-      ],
-      "Update secret passphrase": [
-        "Opdatér hemmelig adgangssætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -1209,6 +1197,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Tag e-mailproduktivitet til nye højder. Lad ${ BRAND_NAME } Scribe hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Tag e-mailproduktivitet til nye højder. Lad ${ LUMO_SHORT_APP_NAME } hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails."
       ]
     },
     "Attached ics file error": {
@@ -1254,6 +1245,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan have op til ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-pladser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_SCRIBE_SEATS } pladser til ${ LUMO_SHORT_APP_NAME }-skriveassistenten i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kan have op til ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-pladser i prøveperioden."
@@ -1370,12 +1364,19 @@
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-maildomæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
         "Beskyt dine e-mails og tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beskyt dine e-mails og tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-mail-domæner, ${ LUMO_SHORT_APP_NAME }-skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
+        "Beskyt dine e-mails og tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ LUMO_SHORT_APP_NAME }-skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere.",
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer 15 e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer 15 e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ LUMO_SHORT_APP_NAME }-skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer 15 e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ubegrænsede hide-my-email-aliasser og mere."
@@ -3864,9 +3865,6 @@
       "Failed to open to contact": [
         "Kunne ikke oprette kontakten"
       ],
-      "Failed to update secret passphrase": [
-        "Det lykkedes ikke at opdatere hemmelig adgangssætning"
-      ],
       "Failed to update settings": [
         "Kunne ikke opdatere indstillinger"
       ],
@@ -4010,9 +4008,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
-      ],
-      "Passphrase unavailable": [
-        "Adgangssætning ikke tilgængelig"
       ],
       "Password is required": [
         "Adgangskode er påkrævet."
@@ -5309,6 +5304,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer skriveassistenten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } er et end-to-end krypteret system til videomøder. Tilføj det til dit abonnement for at afholde sikre møder."
       ],
@@ -5813,9 +5814,6 @@
       "Failed to update meeting name": [
         "Det lykkedes ikke at opdatere mødenavnet"
       ],
-      "Failed to update meeting password": [
-        "Det lykkedes ikke at opdatere mødeadgangskoden"
-      ],
       "Failed to update meeting schedule": [
         "Kunne ikke opdatere mødeplanen"
       ],
@@ -5833,9 +5831,6 @@
       ],
       "for ${ price }": [
         "til ${ price }"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Som en ekstra sikkerhed kan du indstille en adgangssætning. Den vil ikke blive inkluderet i kalenderinvitationen—husk at dele den med dine gæster separat."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "For kun ${ bundlePlanPriceInline }"
@@ -7428,9 +7423,6 @@
       "Participants": [
         "Deltagere"
       ],
-      "Passphrase:": [
-        "Adgangssætning:"
-      ],
       "Password": [
         "Adgangskode"
       ],
@@ -7910,8 +7902,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tilføj ${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Tilføj ${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "Add-on with free trial": [
         "Tilføjelse med gratis prøveperiode"
@@ -8304,6 +8302,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -9222,9 +9223,6 @@
       ],
       "Passcode copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
-      ],
-      "Passphrase copied to clipboard": [
-        "Adgangssætning kopieret til udklipsholder"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Din ${ BRAND_NAME }-adresse er klar til brug"
@@ -10148,9 +10146,6 @@
       ],
       "Enter a short description or additional info": [
         "Angiv en kort beskrivelse eller yderligere oplysninger"
-      ],
-      "Enter passphrase": [
-        "Indtast adgangssætning"
       ],
       "Filter groups": [
         "Filtrér grupper"
@@ -11324,9 +11319,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-skriveassistent"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, og ${ LUMO_APP_NAME } med premium-funktioner"
       ],
@@ -11845,9 +11837,6 @@
       ],
       "Problem reported": [
         "Problem indberettet"
-      ],
-      "Secret passphrase updated": [
-        "Hemmelig adgangssætning opdateret"
       ],
       "Undo in progress": [
         "Annullering i gang"

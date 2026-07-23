@@ -758,9 +758,6 @@
       "Show floating thumbnail during screensharing": [
         "Паказваць плаваючую мініяцюру падчас абагульвання экрана"
       ],
-      "Show passphrase": [
-        "Паказаць парольную фразу"
-      ],
       "Stop recording and download.": [
         "Спыніць запіс і спампаваць."
       ],
@@ -1887,9 +1884,6 @@
       "Invalid meeting link": [
         "Памылковая спасылка на сустрэчу"
       ],
-      "Invalid passphrase": [
-        "Памылковая парольная фраза"
-      ],
       "Invalid verification code": [
         "Памылковы код спраўджання"
       ],
@@ -2358,9 +2352,6 @@
       "Failed to update meeting name": [
         "Не ўдалося абнавіць назву сустрэчы"
       ],
-      "Failed to update meeting password": [
-        "Не ўдалося абнавіць пароль сустрэчы"
-      ],
       "Failed to update meeting schedule": [
         "Не ўдалося абнавіць расклад сустрэчы"
       ],
@@ -2583,9 +2574,6 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Уключыце доступ да вашага ${ microphoneLinkButton }${ andString }${ cameraLinkButton } для паляпшэння працы."
       ],
-      "Please enter the passphrase to decrypt and view this meeting": [
-        "Увядзіце парольную фразу для расшыфроўкі і прагляду гэтай сустрэчы"
-      ],
       "Please try again or try another browser": [
         "Паспрабуйце яшчэ раз або скарыстайцеся іншым браўзерам"
       ],
@@ -2720,9 +2708,6 @@
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Гэта сустрэча заблакіравана. Звяжыцеся з арганізатарам, каб далучыцца."
-      ],
-      "This meeting is password protected": [
-        "Гэта сустрэча абаронена паролем"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "У гэтай сустрэчы скончыўся бясплатны час, які прадугледжаны бясплатным тарыфным планам. Абнавіце свой тарыфны план, каб пашырыць працягласць сустрэчы ў будучых званках."
@@ -2921,6 +2906,12 @@
       "Category": [
         "Катэгорыя"
       ],
+      "Client": [
+        "Кліент"
+      ],
+      "Client version": [
+        "Версія кліента"
+      ],
       "Code is 6 digits without spaces": [
         "Код складаецца з 6 лічбаў без прабелаў"
       ],
@@ -3049,9 +3040,6 @@
       ],
       "Participants join after you approve them": [
         "Удзельнікі далучаюцца пасля таго, як вы іх ухваліце"
-      ],
-      "Passphrase": [
-        "Парольная фраза"
       ],
       "Password": [
         "Пароль"
@@ -3249,9 +3237,6 @@
       ],
       "E.g., ": [
         "Напрыклад, "
-      ],
-      "Enter passphrase": [
-        "Увядзіце парольную фразу"
       ],
       "Enter time": [
         "Увядзіце час"
@@ -3580,9 +3565,6 @@
       ],
       "Participants (${ filteredParticipants.length })": [
         "Удзельнікі (${ filteredParticipants.length })"
-      ],
-      "Passphrase": [
-        "Парольная фраза"
       ],
       "Personal meeting room": [
         "Асабісты пакой для сустрэч"
