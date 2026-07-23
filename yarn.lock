@@ -11031,17 +11031,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/proton-foundation-search@npm:2.0.0-preview10-job36955646":
+  version: 2.0.0-preview10-job36955646
+  resolution: "@proton/proton-foundation-search@npm:2.0.0-preview10-job36955646"
+  checksum: 10/f2c168452cac01d51a33046b5f90606c904df4871219b5664c341f71786d55460d59f25d38d4f95042ae20946cfda3d9463245f5ceee5530e0e4623ee81d640d
+  languageName: node
+  linkType: hard
+
 "@proton/proton-foundation-search@npm:2.0.0-preview2-job33841442":
   version: 2.0.0-preview2-job33841442
   resolution: "@proton/proton-foundation-search@npm:2.0.0-preview2-job33841442"
   checksum: 10/7c51182275c959fd526f34c160f69af5d115e9e4a390f66984045feca3ef70a36aedfbc40e393dab5552bae69d82fa758de5d880b5902b615af6838c86f7b3e5
-  languageName: node
-  linkType: hard
-
-"@proton/proton-foundation-search@npm:2.0.0-preview9":
-  version: 2.0.0-preview9
-  resolution: "@proton/proton-foundation-search@npm:2.0.0-preview9"
-  checksum: 10/3192744ed1b4d02ee4aed59ec30ef9d9032fab1abf1471ec0660570e9f174878765d3ce19c7d49ba97e64a399e041f1a40efe7760dce7ec61a8b479862d3fc36
   languageName: node
   linkType: hard
 
@@ -41651,7 +41651,7 @@ __metadata:
     "@proton/pass": "workspace:^"
     "@proton/payments": "workspace:^"
     "@proton/polyfill": "workspace:^"
-    "@proton/proton-foundation-search": "npm:2.0.0-preview9"
+    "@proton/proton-foundation-search": "npm:2.0.0-preview10-job36955646"
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
