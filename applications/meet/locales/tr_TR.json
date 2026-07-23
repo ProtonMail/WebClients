@@ -752,9 +752,6 @@
       "Show floating thumbnail during screensharing": [
         "Ekran paylaşımında kayan küçük görsel görüntülensin"
       ],
-      "Show passphrase": [
-        "Parola ifadesini görüntüle"
-      ],
       "Stop recording and download.": [
         "Kaydı durdur ve indir."
       ],
@@ -1884,9 +1881,6 @@
       "Invalid meeting link": [
         "Görüşme bağlantısı geçersiz"
       ],
-      "Invalid passphrase": [
-        "Parola ifadesi geçersiz"
-      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
@@ -2342,9 +2336,6 @@
       "Failed to update meeting name": [
         "Görüşme adı güncellenemedi"
       ],
-      "Failed to update meeting password": [
-        "Görüşme parolası güncellenemedi"
-      ],
       "Failed to update meeting schedule": [
         "Görüşme zamanlaması güncellenemedi"
       ],
@@ -2570,9 +2561,6 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "En iyi deneyim için lütfen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } için erişim izinlerini verin."
       ],
-      "Please enter the passphrase to decrypt and view this meeting": [
-        "Lütfen bu görüşmeyi görüntülemek ve şifresini çözmek için parolayı yazın"
-      ],
       "Please try again or try another browser": [
         "Lütfen yeniden deneyin ya da başka bir tarayıcı kullanın"
       ],
@@ -2707,9 +2695,6 @@
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Bu görüşme kilitlenmiş. Katılmak için lütfen sahibi ile görüşün."
-      ],
-      "This meeting is password protected": [
-        "Bu görüşme parola ile korunuyor"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Bu görüşme ücretsiz tarifenin zaman sınırına ulaştı. Gelecek görüşmelerinizde toplantı süresini uzatmak için tarifenizi yükseltin."
@@ -3041,9 +3026,6 @@
       "Participants join after you approve them": [
         "Katılımcıların katılması için onay vermeniz gerekir"
       ],
-      "Passphrase": [
-        "Parola ifadesi"
-      ],
       "Password": [
         "Parola"
       ],
@@ -3240,9 +3222,6 @@
       ],
       "E.g., ": [
         "Örneğin, "
-      ],
-      "Enter passphrase": [
-        "Parola ifadesini yazın"
       ],
       "Enter time": [
         "Zamanı yazın"
@@ -3567,9 +3546,6 @@
       ],
       "Participants (${ filteredParticipants.length })": [
         "Katılımcılar (${ filteredParticipants.length })"
-      ],
-      "Passphrase": [
-        "Parola ifadesi"
       ],
       "Personal meeting room": [
         "Kişisel görüşme odası"

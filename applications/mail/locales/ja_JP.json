@@ -99,9 +99,6 @@
       "Add phone number": [
         "電話番号を追加"
       ],
-      "Add secret passphrase": [
-        "シークレットパスフレーズを追加"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } に追加"
       ],
@@ -1056,9 +1053,6 @@
       "Page ${ pageNumber }": [
         "${ pageNumber }ページ"
       ],
-      "Passphrase": [
-        "パスフレーズ"
-      ],
       "Pause": [
         "一時停止"
       ],
@@ -1223,9 +1217,6 @@
       ],
       "Resume downloading": [
         "ダウンロードを再開"
-      ],
-      "Retry": [
-        "再試行"
       ],
       "Revert to original display": [
         "元の表示に戻す"
@@ -1580,9 +1571,6 @@
       ],
       "Update recovery phrase": [
         "回復用フレーズを更新"
-      ],
-      "Update secret passphrase": [
-        "シークレットパスフレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -4948,9 +4936,6 @@
       "Failed to open to contact": [
         "連絡先を開けませんでした"
       ],
-      "Failed to update secret passphrase": [
-        "シークレットパスフレーズの更新に失敗しました"
-      ],
       "Filter with this name already exists": [
         "この名前のフィルターが既に存在します"
       ],
@@ -5082,9 +5067,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
-      ],
-      "Passphrase unavailable": [
-        "パスフレーズは利用できません"
       ],
       "Password is required": [
         "パスワードは必須です"
@@ -6963,6 +6945,9 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "最大 10 台のデバイスで 6,500 台以上の高速サーバーにアクセスし、ブラウジングデータを安全に保ちます。 ${ ios }、 ${ android }、 ${ appleTV }、 ${ desktop }で利用できます。"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "148か国にある20,000台以上のサーバーにアクセス"
+      ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
@@ -7530,6 +7515,9 @@
       "Expires in less than ${ hoursDiff } hour": [
         "有効期限は ${ hoursDiff } 時間未満です。"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "最大10 Gbpsの高速VPN接続"
+      ],
       "file attached": [
         "個のファイル添付"
       ],
@@ -7553,9 +7541,6 @@
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "メールと最適化されたモバイル体験へいつでもアクセスできるよう、 ${ androidAppLink } または ${ iosAppLink } をダウンロードしましょう。"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "より高いセキュリティのために、パスフレーズを設定できます。それはカレンダーの招待には含まれませんので、ゲストには別途共有することを忘れないでください。"
       ],
       "For just ${ bundlePlanPriceInline }": [
         "${ bundlePlanPriceInline }のみ"
@@ -7598,6 +7583,9 @@
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments } 件の添付ファイル (${ numAttachmentsSize })"
+      ],
+      "Have some more time to decide without interruption.": [
+        "利用を中断せず、もう少し時間をかけて検討できます。"
       ],
       "here": [
         "こちら"
@@ -8097,6 +8085,9 @@
       "Preferences updated": [
         "設定が更新されました"
       ],
+      "Premium privacy protection across all your devices": [
+        "すべてのデバイスで高度なプライバシー保護"
+      ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
       ],
@@ -8324,6 +8315,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "こちらのVPNの設定を有効にすることで、簡単に接続を維持します。"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "現在のプランを継続すると、翌月が50%オフ"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "ストレージ機能はこのブラウザではサポートされていません。コンテンツの検索を有効にするためには、このサポートが必要です。"
@@ -10039,9 +10033,6 @@
       ],
       "Participants": [
         "参加者"
-      ],
-      "Passphrase:": [
-        "パスフレーズ:"
       ],
       "Password": [
         "パスワード"
@@ -12034,9 +12025,6 @@
       "Passcode copied to clipboard": [
         "パスコードがクリップボードにコピーされました"
       ],
-      "Passphrase copied to clipboard": [
-        "パスフレーズがクリップボードにコピーされました"
-      ],
       "Password has been set successfully": [
         "パスワードは正常に設定されました"
       ],
@@ -12909,9 +12897,6 @@
       ],
       "Enter a name": [
         "名前を入力"
-      ],
-      "Enter passphrase": [
-        "パスフレーズを入力してください"
       ],
       "Filter folders": [
         "フォルダの絞り込み"
@@ -14307,9 +14292,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 執筆アシスタント"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "プレミアム機能を備えた ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME }、および ${ LUMO_APP_NAME }"
       ],
@@ -14902,9 +14884,6 @@
       ],
       "Read receipt sent": [
         "開封確認が送信されました"
-      ],
-      "Secret passphrase updated": [
-        "シークレットパスフレーズが更新されました"
       ],
       "Self-destruction removed": [
         "有効期限が削除されました"
@@ -16031,6 +16010,9 @@
       ],
       "Start import process": [
         "インポートを開始"
+      ],
+      "Stay for 50% off your next month": [
+        "継続すると、翌月が50%オフ"
       ],
       "Storage capacity warning": [
         "ストレージ容量の警告"

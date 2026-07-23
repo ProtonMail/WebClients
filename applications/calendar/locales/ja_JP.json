@@ -98,9 +98,6 @@
       "Add public holidays": [
         "祝日を追加"
       ],
-      "Add secret passphrase": [
-        "シークレットパスフレーズを追加"
-      ],
       "Add to group": [
         "グループに追加"
       ],
@@ -668,9 +665,6 @@
       "Open settings": [
         "設定を開く"
       ],
-      "Passphrase": [
-        "パスフレーズ"
-      ],
       "Pause indexing": [
         "インデックス作成を一時停止"
       ],
@@ -769,9 +763,6 @@
       ],
       "Resume indexing": [
         "インデックス作成"
-      ],
-      "Retry": [
-        "再試行"
       ],
       "Save": [
         "保存"
@@ -952,9 +943,6 @@
       ],
       "Update recovery phrase": [
         "回復用フレーズを更新"
-      ],
-      "Update secret passphrase": [
-        "シークレットパスフレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -3830,9 +3818,6 @@
       "Failed to open to contact": [
         "連絡先を開けませんでした"
       ],
-      "Failed to update secret passphrase": [
-        "シークレットパスフレーズの更新に失敗しました"
-      ],
       "Failed to update settings": [
         "設定の更新に失敗しました"
       ],
@@ -3973,9 +3958,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
-      ],
-      "Passphrase unavailable": [
-        "パスフレーズは利用できません"
       ],
       "Password is required": [
         "パスワードは必須です"
@@ -5360,6 +5342,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPNは、あなたのデバイスとインターネットを繋ぐ安全なトンネルのようなものです。インターネットサービスプロバイダ(ISP)及び利用したウェブサイトから、位置情報と活動情報を隠します。"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "148か国にある20,000台以上のサーバーにアクセス"
+      ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
@@ -5726,11 +5711,11 @@
       "Failed to update meeting name": [
         "ミーティング名の更新に失敗しました"
       ],
-      "Failed to update meeting password": [
-        "ミーティングパスワードの更新に失敗しました"
-      ],
       "Failed to update meeting schedule": [
         "ミーティングスケジュールの更新に失敗しました"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "最大10 Gbpsの高速VPN接続"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "ファイルのみ（写真、${ DOCS_APP_NAME }、${ SHEETS_APP_NAME }を除く） - 合計最大 100 GB、100,000 ファイルまで、1 ファイルあたり 50 GB まで"
@@ -5740,9 +5725,6 @@
       ],
       "for ${ price }": [
         "${ price }で"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "より高いセキュリティのために、パスフレーズを設定できます。それはカレンダーの招待には含まれませんので、ゲストには別途共有することを忘れないでください。"
       ],
       "For just ${ bundlePlanPriceInline }": [
         "わずか${ bundlePlanPriceInline }で"
@@ -5761,6 +5743,9 @@
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府とISPも、あなたのオンライン上の活動を監視することができます。IPアドレスを隠し、活動内容を暗号化することで、お客様のブラウジングはプライベートになります。"
+      ],
+      "Have some more time to decide without interruption.": [
+        "利用を中断せず、もう少し時間をかけて検討できます。"
       ],
       "here": [
         "こちら"
@@ -6119,6 +6104,9 @@
       "Powered by ${ protonButton }": [
         "${ protonButton } によって提供されています"
       ],
+      "Premium privacy protection across all your devices": [
+        "すべてのデバイスで高度なプライバシー保護"
+      ],
       "Previous modifications on this series will be lost.": [
         "一連の予定に対する過去の変更は失われます。"
       ],
@@ -6217,6 +6205,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "こちらのVPNの設定を有効にすることで、簡単に接続を維持します。"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "現在のプランを継続すると、翌月が50%オフ"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
@@ -7305,9 +7296,6 @@
       ],
       "Participants": [
         "参加者"
-      ],
-      "Passphrase:": [
-        "パスフレーズ:"
       ],
       "Password": [
         "パスワード"
@@ -9057,9 +9045,6 @@
       "Passcode copied to clipboard": [
         "パスコードがクリップボードにコピーされました"
       ],
-      "Passphrase copied to clipboard": [
-        "パスフレーズがクリップボードにコピーされました"
-      ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME }アドレスの準備が整いました"
       ]
@@ -9950,9 +9935,6 @@
       ],
       "Enter a short description or additional info": [
         "短い説明または追加情報を入力してください"
-      ],
-      "Enter passphrase": [
-        "パスフレーズを入力してください"
       ],
       "Filter groups": [
         "グループをフィルター"
@@ -11095,9 +11077,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 執筆アシスタント"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "プレミアム機能を備えた ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME }、および ${ LUMO_APP_NAME }"
       ],
@@ -11606,9 +11585,6 @@
       ],
       "Problem reported": [
         "問題が報告されました"
-      ],
-      "Secret passphrase updated": [
-        "シークレットパスフレーズが更新されました"
       ],
       "Undo in progress": [
         "取り消し中"
@@ -12409,6 +12385,9 @@
       ],
       "Start import process": [
         "インポートを開始"
+      ],
+      "Stay for 50% off your next month": [
+        "継続すると、翌月が50%オフ"
       ],
       "Subscription canceled": [
         "サブスクリプションがキャンセルされました"

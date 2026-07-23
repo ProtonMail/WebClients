@@ -72,6 +72,11 @@
         "Visa faktura"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-app för stationär dator"
@@ -1031,6 +1036,12 @@
       ]
     },
     "Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
       ],
@@ -1193,6 +1204,9 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
       "${ n } custom email domain": [
         "${ n } anpassad e-postdomän",

@@ -520,6 +520,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ BRAND_NAME } Scribe tarafından yardım alın."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "E-posta üretkenliğinizi yeni seviyelere taşıyın. ${ LUMO_SHORT_APP_NAME } ile e-postalarınızı yazın, yanıtlayın ve düzeltin."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -534,6 +537,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } adet ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansına sahip olabilirsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
@@ -640,12 +646,19 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. 15 e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
@@ -997,6 +1010,9 @@
       "Collapse ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } uygulamasını daralt"
       ],
+      "Connectors": [
+        "Bağlayıcılar"
+      ],
       "Continue": [
         "İlerle"
       ],
@@ -1053,6 +1069,12 @@
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını aç"
+      ],
+      "Optimize": [
+        "Optimize et"
+      ],
+      "Optimize memories": [
+        "Bellekleri optimize et"
       ],
       "Refresh folder contents": [
         "Klasör içeriklerini yenile"
@@ -1361,6 +1383,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } yanıtları, iletişim tarzı, uzmanlık, yinelenen araçlar ve uzun süreli projelere göre uyarlamak için kayıtlı belleklerinize başvurur."
+      ],
+      "${ LUMO_SHORT_APP_NAME } will review your saved memories, remove duplicates, and merge related entries into clearer ones. Your memory list will be replaced with the optimized result.": [
+        "${ LUMO_SHORT_APP_NAME } kaydettiğiniz bellekleri gözden geçirecek, yinelenenleri kaldıracak ve birbiriyle ilişkili girişleri daha net hale getirecek şekilde birleştirecektir. Bellek listeniz optimize edilmiş sonuçla değiştirilecektir."
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Kendi belleklerinizi ekleyin. Otomatik olarak oluşturulan herhangi bir kaydı düzenleyin veya istediğiniz zaman her şeyi temizleyin. Düzenlediğiniz oluşturulmuş bellekler size ait belleklere dönüştürülür."
@@ -1867,6 +1892,9 @@
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Bir iş akışını sade bir dille tarif edin ve karşılığında bir çizelge ile çalıştırılabilir bir kod alın. Bu özelliği kullanmak için oturum açın."
       ],
+      "Disabled": [
+        "Devre dışı"
+      ],
       "Domain name": [
         "Etki alanı adı"
       ],
@@ -1878,6 +1906,9 @@
       ],
       "Earlier messages were summarized to make room, so they no longer take up space here.": [
         "Yer açmak için önceki iletiler özetlendi. Artık burada yer kaplamıyorlar."
+      ],
+      "Enabled": [
+        "Etkinleştirildi"
       ],
       "Error processing attachment": [
         "Ek dosya işlenirken sorun çıktı"
@@ -1992,6 +2023,9 @@
       ],
       "No calls": [
         "Herhangi bir çağrı yok"
+      ],
+      "No connected connectors": [
+        "Bağlı bağlayıcı yok"
       ],
       "No content available.": [
         "Kullanılabilecek bir içerik yok."
@@ -2200,6 +2234,9 @@
       "You are about to visit an external website:": [
         "Bir dış siteyi ziyaret etmek üzeresiniz:"
       ],
+      "You have many saved memories. Use Optimize in the menu to merge duplicates and keep the list focused.": [
+        "Kaydedilmiş birçok belleğiniz var. Menüdeki Optimize seçeneğini kullanarak yinelenenleri birleştirin ve listenin net kalmasını sağlayın."
+      ],
       "You've reached your image limit for this period.": [
         "Bu dönem için görsel sayısı sınırınıza ulaştınız."
       ],
@@ -2220,6 +2257,9 @@
       ],
       "Your memories are already up to date.": [
         "Bellekleriniz zaten güncel."
+      ],
+      "Your memories are already well organized.": [
+        "Bellekleriniz zaten iyi organize edilmiş durumda."
       ]
     },
     "collider_2025: Job": {
@@ -2638,6 +2678,12 @@
       "File uploaded to Drive folder": [
         "Dosya Drive klasörüne yüklendi"
       ],
+      "Memories optimized successfully.": [
+        "Bellekler başarıyla optimize edildi."
+      ],
+      "Optimized memories: reduced from ${ beforeCount } to ${ optimized.length }.": [
+        "Optimize edilmiş bellekler: ${ beforeCount } adetten ${ optimized.length } adede düşürüldü."
+      ],
       "Thanks for the feedback!": [
         "Geri bildiriminiz için teşekkürler!"
       ]
@@ -2763,6 +2809,9 @@
       ],
       "Opening External Link": [
         "Dış bağlantı açılıyor"
+      ],
+      "Optimize memories?": [
+        "Bellekleri optimize etmek mi?"
       ],
       "Parameters": [
         "Parametreler"
@@ -3003,16 +3052,16 @@
         "${ LUMO_SHORT_APP_NAME } Plus edinin"
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Pro": [
-        "${ LUMO_SHORT_APP_NAME } Pro edinin"
+        "${ LUMO_SHORT_APP_NAME } Pro edin"
       ],
       "Upgrade": [
         "Yükselt"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin"
+        "${ LUMO_SHORT_APP_NAME } Plus sürümüne yükselt"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
-        "${ LUMO_SHORT_APP_NAME } Pro tarifesine yükseltin"
+        "${ LUMO_SHORT_APP_NAME } Pro'ya yükselt"
       ]
     },
     "collider_2025: Warning": {
@@ -3091,6 +3140,11 @@
       ],
       "You're getting close to the number of projects ${ LUMO_SHORT_APP_NAME } can keep purring over.": [
         "${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz çalışmayı sürdürebileceği proje sayısına yaklaşıyorsunuz."
+      ]
+    },
+    "collider_2025: Web Extract": {
+      "Failed to extract": [
+        "Ayıklanamadı"
       ]
     },
     "collider_2025: Web Search": {
@@ -6252,6 +6306,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } yazma yardımcısını içerir"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } uçtan uca şifrelenmiş bir görüntülü görüşme çözümüdür. Güvenli görüşmeler düzenlemek için bunu tarifenize ekleyin."
       ],
@@ -7466,8 +7526,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısını ekle"
       ],
       "Add-on with free trial": [
         "Ücretsiz deneme sürümü ile eklenti"
@@ -7611,6 +7677,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ n } calendar": [
         "${ n } takvim",
@@ -9518,7 +9587,7 @@
         "aylık, yılda bir faturalanır"
       ],
       "per user/month, billed annually": [
-        "kullanıcı/ay, yılda bir faturalanır"
+        "kullanıcı başına/ay, yıllık olarak faturalandırılır"
       ]
     },
     "Success": {

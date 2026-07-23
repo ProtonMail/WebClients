@@ -1038,6 +1038,14 @@
         "${ BRAND_NAME }-Anwendungen"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ LUMO_SHORT_APP_NAME } dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Leere ICS-Datei"
@@ -1169,12 +1177,19 @@
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und vieles mehr.",
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und vieles mehr."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Sichere deine E-Mails und Termine mit Ende-zu-Ende-Verschlüsselung. Inklusive ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sichere deine E-Mails und plane deine Termine mit Ende-zu-Ende-Verschlüsselung. Enthält 15 E-Mail-Adressen, Support für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr."
@@ -3187,6 +3202,9 @@
       "Failed to resend invitation": [
         "Fehler beim erneuten Senden der Einladung"
       ],
+      "Failed to trash document": [
+        "Dokument konnte nicht in den Papierkorb verschoben werden"
+      ],
       "Failed to unshare node": [
         "Fehler beim Zurücknehmen des freigegebenen Knotens"
       ],
@@ -4482,6 +4500,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
@@ -6695,6 +6716,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "Add-on with free trial": [
         "Add-on mit kostenloser Testversion"
       ]
@@ -7135,6 +7159,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } und ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ],
       "${ n } calendar": [
         "${ n } Kalender",
@@ -8062,6 +8089,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" erfolgreich umbenannt"
       ],
+      "\"Document deleted permanently": [
+        "Dokument dauerhaft gelöscht"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } Element konnte nicht entschlüsselt werden",
         "${ count } Elemente konnten nicht entschlüsselt werden"
@@ -8163,6 +8193,9 @@
       "Failed to accept share invitation": [
         "Einladung zur gemeinsamen Nutzung fehlgeschlagen"
       ],
+      "Failed to delete document": [
+        "Dokument konnte nicht gelöscht werden"
+      ],
       "Failed to download files: ${ err }": [
         "Download der Dateien fehlgeschlagen: ${ err }"
       ],
@@ -8177,6 +8210,12 @@
       ],
       "Failed to rename document": [
         "Das Umbenennen des Dokuments ist fehlgeschlagen"
+      ],
+      "Failed to restore document": [
+        "Dokument konnte nicht wiederhergestellt werden"
+      ],
+      "Failed to trash document": [
+        "Dokument konnte nicht in den Papierkorb verschoben werden"
       ],
       "Failed to upload files: ${ err }": [
         "Upload der Dateien fehlgeschlagen: ${ err }"

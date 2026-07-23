@@ -99,9 +99,6 @@
       "Add phone number": [
         "Aggiungi numero di telefono"
       ],
-      "Add secret passphrase": [
-        "Aggiungi frase d'accesso segreta"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Aggiungi a ${ CALENDAR_APP_NAME }"
       ],
@@ -1060,9 +1057,6 @@
       "Page ${ pageNumber }": [
         "Pagina ${ pageNumber }"
       ],
-      "Passphrase": [
-        "Frase d'accesso"
-      ],
       "Pause": [
         "Metti in pausa"
       ],
@@ -1227,9 +1221,6 @@
       ],
       "Resume downloading": [
         "Riprendi il download"
-      ],
-      "Retry": [
-        "Riprova"
       ],
       "Revert to original display": [
         "Torna alla visualizzazione originale"
@@ -1520,8 +1511,7 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
+        "Affida chiave"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -1585,9 +1575,6 @@
       ],
       "Update recovery phrase": [
         "Aggiorna frase di recupero"
-      ],
-      "Update secret passphrase": [
-        "Aggiorna frase d'accesso segreta"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -4986,9 +4973,6 @@
       "Failed to open to contact": [
         "Impossibile aprire il contatto"
       ],
-      "Failed to update secret passphrase": [
-        "Impossibile aggiornare la frase d'accesso segreta"
-      ],
       "Filter with this name already exists": [
         "Esiste già un filtro con questo nome"
       ],
@@ -5123,9 +5107,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
-      ],
-      "Passphrase unavailable": [
-        "Frase segreta non disponibile"
       ],
       "Password is required": [
         "Password necessaria"
@@ -7687,9 +7668,6 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedere in qualsiasi momento alla posta elettronica e ottimizzare l'esperienza mobile, scarica la nostra app ${ androidAppLink } o ${ iosAppLink }."
       ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Per maggiore sicurezza, puoi impostare una frase d'accesso. Non sarà inclusa nell'invito al calendario, ricorda di condividerla con i tuoi ospiti separatamente."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "A soli ${ bundlePlanPriceInline }"
       ],
@@ -9804,6 +9782,12 @@
       "Clear logs": [
         "Pulisci i log"
       ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versione Client"
+      ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
       ],
@@ -10220,9 +10204,6 @@
       ],
       "Participants": [
         "Partecipanti"
-      ],
-      "Passphrase:": [
-        "Frase d'accesso:"
       ],
       "Password": [
         "Password"
@@ -12259,9 +12240,6 @@
       "Passcode copied to clipboard": [
         "Codice copiato negli appunti"
       ],
-      "Passphrase copied to clipboard": [
-        "Frase d'accesso copiata negli appunti"
-      ],
       "Password has been set successfully": [
         "La password è stata impostata con successo"
       ],
@@ -13141,9 +13119,6 @@
       ],
       "Enter a name": [
         "Inserisci un nome"
-      ],
-      "Enter passphrase": [
-        "Inserisci la frase di accesso"
       ],
       "Filter folders": [
         "Filtra cartelle"
@@ -14575,9 +14550,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, e ${ LUMO_APP_NAME } con funzionalità premium"
       ],
@@ -15206,9 +15178,6 @@
       ],
       "Read receipt sent": [
         "Conferma di lettura inviata"
-      ],
-      "Secret passphrase updated": [
-        "Frase d'accesso segreta aggiornata"
       ],
       "Self-destruction removed": [
         "Autodistruzione rimossa"
