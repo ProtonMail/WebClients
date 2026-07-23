@@ -77,6 +77,7 @@ export const getMemberPermissions = ({
     organizationKey,
     disableMemberSignIn,
     ssoDomainsSet,
+    isOwner,
 }: {
     permissions: Record<Permission, boolean> | null;
     appName: APP_NAMES;
@@ -87,6 +88,7 @@ export const getMemberPermissions = ({
     organizationKey?: CachedOrganizationKey;
     disableMemberSignIn: boolean;
     ssoDomainsSet: ReturnType<typeof getSSODomainsSet>;
+    isOwner: boolean;
 }) => {
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
     const hasSetupOrganization = hasOrganizationSetup(organization);
@@ -114,6 +116,8 @@ export const getMemberPermissions = ({
     const canRevokeSessions = !member.Self && isNonPrivate && hasUpdatePermission;
 
     const canLogin =
+        user.isSelf &&
+        isOwner &&
         !disableMemberSignIn &&
         appName !== APPS.PROTONVPN_SETTINGS &&
         isEnabled &&
