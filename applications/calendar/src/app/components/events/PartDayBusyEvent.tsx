@@ -7,8 +7,8 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { CalendarViewBusyEvent } from '../../containers/calendar/interface';
 import { getEventStyle } from '../../helpers/color';
 import { useCalendarSelector } from '../../store/hooks';
-import type { PartDayEventProps } from './PartDayEvent';
-import { PartDayEventView } from './PartDayEvent';
+import type { PartDayEventProps } from './PartDayEventView';
+import { PartDayEventView } from './PartDayEventView';
 
 interface PartDayBusyEventProps extends Pick<
     PartDayEventProps,
