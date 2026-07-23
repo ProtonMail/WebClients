@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
+import { useOrgPermissions, useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -30,6 +31,7 @@ import {
     getIsMemberInvited,
     getMemberUnprivatizationMode,
 } from '@proton/shared/lib/keys/memberHelper';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import MemberActions, { MagicLinkMemberActions, getMemberPermissions } from '../MemberActions';
@@ -54,6 +56,11 @@ export const MembersTable = ({
 }) => {
     const { APP_NAME } = useConfig();
     const [permissions] = useOrgPermissions();
+    const isAdminRoleMVPEnabled = useFlag('AdminRoleMVP');
+    const [userPermissions] = useUserPermissions();
+    const isOwner = isAdminRoleMVPEnabled
+        ? (userPermissions?.Roles?.some(isOwnerRole) ?? false)
+        : Boolean(models.user.isAdmin);
 
     const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
 
@@ -108,6 +115,7 @@ export const MembersTable = ({
             organization: models.organization,
             organizationKey: models.organizationKey,
             disableMemberSignIn: meta.hasExternalMemberCapableB2BPlan,
+            isOwner,
         });
 
         const disableEdit = hasPendingFamilyInvitation && !meta.allowStorageConfiguration;
