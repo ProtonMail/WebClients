@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 
-import { useUnauthLost2FA } from '../UnauthedLost2FAContainer';
+import { useUnauthLost2FA } from '../UnauthedLost2FAContext';
 import { useUnauthedLost2FATelemetry } from '../useUnauthedLost2FATelemetry';
 
 export const TwoFADisabledStep = () => {

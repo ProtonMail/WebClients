@@ -33,7 +33,7 @@ import BundlePlanSubSection from './BundlePlanSubSection';
 import SaveLabel from './SaveLabel';
 import type { SubscriptionDataCycleMapping } from './helper';
 import { getSubscriptionMapping } from './helper';
-import type { SignupParameters2 } from './interface';
+import { type PlanCard, type SignupParameters2, isNonInteractivePlanCard } from './interface';
 
 import './PlanCardSelector.scss';
 
@@ -45,36 +45,6 @@ export const planCardFeatureProps = {
     className: 'text-sm gap-1',
     itemClassName: 'color-weak',
 } as const;
-
-interface RegularPlanCard {
-    plan: PLANS;
-    addons?: PlanIDs;
-    subsection: ReactNode;
-    type: 'best' | 'standard';
-    guarantee: boolean;
-    subline?: string;
-    interactive?: never;
-}
-
-interface NonInteractivePlanCard {
-    plan?: never;
-    addons?: never;
-    subsection: ReactNode;
-    type: 'best' | 'standard';
-    guarantee: boolean;
-    subline?: string;
-    interactive: false;
-}
-
-export type PlanCard = RegularPlanCard | NonInteractivePlanCard;
-
-export function isRegularPlanCard(planCard: PlanCard): planCard is RegularPlanCard {
-    return 'plan' in planCard;
-}
-
-export function isNonInteractivePlanCard(planCard: PlanCard): planCard is NonInteractivePlanCard {
-    return planCard.interactive === false;
-}
 
 const getRecommendedText = () => {
     return c('pass_signup_2023: Header').t`Recommended`;
