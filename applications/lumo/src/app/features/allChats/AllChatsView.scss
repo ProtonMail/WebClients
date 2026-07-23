@@ -5,24 +5,19 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .all-chats-view {
-	--all-chats-preview-color: #9294a0;
+	--all-chats-preview-color: var(--text-secondary);
 	--all-chats-favorite-color: #f0a417;
 	--all-chats-icon-background-color: var(--background-upsell-toggle);
 	--all-chats-icon-color: var(--interaction-norm-hover);
 }
 
-.all-chats-selected-count {
+.all-chats-selected-count .all-chats-count {
 	color: var(--all-chats-preview-color);
-	font-size: 0.875rem;
 	font-weight: 500;
 }
 
 .all-chats-list-with-mobile-bulk-actions {
 	padding-block-end: 5rem;
-}
-
-.all-chats-panel {
-	border-radius: 20px;
 }
 
 .all-chats-toolbar {
