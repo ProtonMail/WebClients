@@ -24,7 +24,7 @@ export const useCategoriesData = () => {
     const isCategoryViewEnabled = canUseCategoryView && settingAccess;
 
     const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
-    const shouldSeeWideToolbars = !isRefreshedToolbarUIDisabled || hasBetaAccess;
+    const shouldSeeWideToolbars = canUseCategoryView ? !isRefreshedToolbarUIDisabled : false;
 
     // Redirect decisions must wait until every input behind `categoryViewAccess` has loaded.
     const isCategoryViewEnabledSettled =
