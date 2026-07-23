@@ -83,7 +83,7 @@ export const CategoriesSettings = () => {
 
                 <MobileSection>
                     {activeCategoriesTabs.map((category) => {
-                        return <CategoryRowItem category={category} onUpdate={handleUpdate} />;
+                        return <CategoryRowItem key={category.id} category={category} onUpdate={handleUpdate} />;
                     })}
                 </MobileSection>
 
@@ -92,7 +92,9 @@ export const CategoriesSettings = () => {
                         <p className="px-4 text-lg text-semibold m-0 mb-2">{c('Title').t`Add categories`}</p>
                         <MobileSection>
                             {disabledCategoriesTabs.map((category) => {
-                                return <CategoryRowItem category={category} onUpdate={handleUpdate} />;
+                                return (
+                                    <CategoryRowItem key={category.id} category={category} onUpdate={handleUpdate} />
+                                );
                             })}
                         </MobileSection>
                     </>
