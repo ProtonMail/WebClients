@@ -1,11 +1,14 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import type { IndexingMetrics } from '@proton/encrypted-search/esHelpers';
 import type { ESCallbacks, EncryptedSearchFunctions, NormalizedSearchParams } from '@proton/encrypted-search/models';
 
+import { isSearch } from 'proton-mail/helpers/elements';
 import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encryptedSearch';
+import { selectSearch } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { getSharedIndexService } from '../indexation/IndexService';
 import { SearchService } from '../search/SearchService';
@@ -78,6 +81,15 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1 }: Props): 
         const adapter = new ESAdapter(searchService, indexService, esCallbacks, esLibraryFunctionsV1);
         ref.current = { adapter, functions: toBoundFunctions(adapter) };
     }
+
+    const search = useMailSelector(selectSearch);
+    const isSearching = isSearch(search);
+
+    useEffect(() => {
+        if (!isSearching) {
+            ref.current?.adapter.leaveSearch();
+        }
+    }, [isSearching]);
 
     // Refresh the per-render dependencies on the (stable) adapter so its bound methods never read
     // stale values — esLibraryFunctionsV1's identity changes when V1's esStatus does.

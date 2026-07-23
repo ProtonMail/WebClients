@@ -22,76 +22,66 @@ describe('buildQuery', () => {
 
     describe('keywords', () => {
         it('matches the keyword against body and subject', () => {
-            expect(q({ search: { keyword: 'hello' } })).toBe('(bodyhello OR subjecthello)');
+            expect(q({ search: { keyword: 'hello' } })).toBe('hello');
         });
 
         it('falls back to space-joined normalizedKeywords when there is no keyword', () => {
-            expect(q({ normalizedKeywords: ['foo', 'bar'] })).toBe('(body"foo bar" OR subject"foo bar")');
+            expect(q({ normalizedKeywords: ['foo', 'bar'] })).toBe('(foo AND bar)');
         });
 
         it('prefers the keyword over normalizedKeywords when both are present', () => {
-            expect(q({ search: { keyword: 'hello' }, normalizedKeywords: ['ignored'] })).toBe(
-                '(bodyhello OR subjecthello)'
-            );
+            expect(q({ search: { keyword: 'hello' }, normalizedKeywords: ['ignored'] })).toBe('hello');
         });
 
         it('produces an empty match when neither keyword nor normalizedKeywords are set', () => {
-            expect(q({})).toBe('(body OR subject)');
+            expect(q({})).toBe('()');
         });
     });
 
     describe('optional filters are only added when defined', () => {
         it('adds an equals clause for the sender', () => {
-            expect(q({ search: { keyword: 'x', from: 'a@b.com' } })).toBe('((bodyx OR subjectx) AND sender="a@b.com")');
+            expect(q({ search: { keyword: 'x', from: 'a@b.com' } })).toBe('(x AND sender="a@b.com")');
         });
 
         it('adds an equals clause for the recipient', () => {
-            expect(q({ search: { keyword: 'x', to: 'c@d.com' } })).toBe(
-                '((bodyx OR subjectx) AND recipient="c@d.com")'
-            );
+            expect(q({ search: { keyword: 'x', to: 'c@d.com' } })).toBe('(x AND recipient="c@d.com")');
         });
 
         it('adds an equals clause for the address id', () => {
-            expect(q({ search: { keyword: 'x', address: 'addr1' } })).toBe('((bodyx OR subjectx) AND addressId=addr1)');
+            expect(q({ search: { keyword: 'x', address: 'addr1' } })).toBe('(x AND addressId=addr1)');
         });
 
         it('maps begin/end to time range bounds', () => {
-            expect(q({ search: { keyword: 'x', begin: 100, end: 200 } })).toBe(
-                '((bodyx OR subjectx) AND time>=100 AND time<=200)'
-            );
+            expect(q({ search: { keyword: 'x', begin: 100, end: 200 } })).toBe('(x AND time>=100 AND time<=200)');
         });
     });
 
     describe('label ids', () => {
         it('adds a single label without an OR group', () => {
-            expect(q({ labelIDs: ['L1'], search: { keyword: 'x' } })).toBe('((bodyx OR subjectx) AND labelId=L1)');
+            expect(q({ labelIDs: ['L1'], search: { keyword: 'x' } })).toBe('(x AND labelId=L1)');
         });
 
         it('folds multiple labels into an OR group', () => {
-            expect(q({ labelIDs: ['L1', 'L2'], search: { keyword: 'x' } })).toBe(
-                '((bodyx OR subjectx) AND (labelId=L1 OR labelId=L2))'
-            );
+            expect(q({ labelIDs: ['L1', 'L2'], search: { keyword: 'x' } })).toBe('(x AND (labelId=L1 OR labelId=L2))');
         });
 
         it('adds no label clause for an empty label list', () => {
-            expect(q({ labelIDs: [], search: { keyword: 'x' } })).toBe('(bodyx OR subjectx)');
+            expect(q({ labelIDs: [], search: { keyword: 'x' } })).toBe('x');
         });
     });
 
     describe('attachments filter', () => {
         it('adds hasAttachments=true only when Attachments is 1', () => {
-            expect(q({ filter: { Attachments: 1 }, search: { keyword: 'x' } })).toBe(
-                '((bodyx OR subjectx) AND hasAttachments=true)'
-            );
+            expect(q({ filter: { Attachments: 1 }, search: { keyword: 'x' } })).toBe('(x AND hasAttachments=true)');
         });
 
         it('omits the clause when Attachments is 0', () => {
-            expect(q({ filter: { Attachments: 0 }, search: { keyword: 'x' } })).toBe('(bodyx OR subjectx)');
+            expect(q({ filter: { Attachments: 0 }, search: { keyword: 'x' } })).toBe('x');
         });
     });
 
     it('ignores the Unread filter (it is not indexed)', () => {
-        expect(q({ filter: { Unread: 1 }, search: { keyword: 'x' } })).toBe('(bodyx OR subjectx)');
+        expect(q({ filter: { Unread: 1 }, search: { keyword: 'x' } })).toBe('x');
     });
 
     it('combines every clause with AND', () => {
@@ -102,7 +92,7 @@ describe('buildQuery', () => {
                 search: { keyword: 'hi', from: 'a@b.com', to: 'c@d.com', address: 'addr1', begin: 100, end: 200 },
             })
         ).toBe(
-            '((bodyhi OR subjecthi) AND sender="a@b.com" AND recipient="c@d.com" AND addressId=addr1 ' +
+            '(hi AND sender="a@b.com" AND recipient="c@d.com" AND addressId=addr1 ' +
                 'AND time>=100 AND time<=200 AND (labelId=L1 OR labelId=L2) AND hasAttachments=true)'
         );
     });

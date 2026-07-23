@@ -30,7 +30,7 @@ export default class SearchWorker {
         return this.reader;
     }
 
-    async search(params: NormalizedSearchParams): Promise<string[]> {
+    async search(params: NormalizedSearchParams, resultCallback: (results: string[]) => void): Promise<void> {
         // if search is already running, abort it as we won't use the results anymore
         this.abortController?.abort();
         const reader = await this.getReader();
@@ -38,12 +38,11 @@ export default class SearchWorker {
         const abortController = new AbortController();
         this.abortController = abortController;
         try {
-            return await reader.search(expression, this.abortController.signal);
+            await reader.search(expression, resultCallback, this.abortController.signal);
         } catch (err) {
-            if (err instanceof Error && err.name === 'AbortError') {
-                return [];
+            if (!(err instanceof Error && err.name === 'AbortError')) {
+                throw err;
             }
-            throw err;
         } finally {
             if (this.abortController === abortController) {
                 this.abortController = undefined;
