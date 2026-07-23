@@ -1,5 +1,3 @@
-import * as Comlink from 'comlink';
-
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models';
 
 import { openContentSearchDB } from '../db/open';
@@ -22,17 +20,25 @@ export default class SearchWorker {
         this.initPromise = undefined;
     }
 
-    async search(params: NormalizedSearchParams): Promise<string[]> {
-        // if search is already running, abort it as we won't use the results anymore
-        this.abortController?.abort();
+    private async getReader(): Promise<IndexReader> {
         if (this.initPromise) {
             await this.initPromise;
         }
+        if (!this.reader) {
+            throw new Error('init not called');
+        }
+        return this.reader;
+    }
+
+    async search(params: NormalizedSearchParams): Promise<string[]> {
+        // if search is already running, abort it as we won't use the results anymore
+        this.abortController?.abort();
+        const reader = await this.getReader();
         const expression = buildQuery(params);
         const abortController = new AbortController();
         this.abortController = abortController;
         try {
-            return await this.reader!.search(expression, this.abortController.signal);
+            return await reader.search(expression, this.abortController.signal);
         } catch (err) {
             if (err instanceof Error && err.name === 'AbortError') {
                 return [];
@@ -45,5 +51,3 @@ export default class SearchWorker {
         }
     }
 }
-
-Comlink.expose(new SearchWorker());
