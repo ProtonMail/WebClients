@@ -8,7 +8,9 @@ import { mainLogger } from "../utils/log";
 import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
 import { ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
 
-const store = new Store();
+const store = new Store({
+    configFileMode: 0o600,
+});
 
 // Delete the old window store for a fresh start
 const deleteWindowStore = () => {
