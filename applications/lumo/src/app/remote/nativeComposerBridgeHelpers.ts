@@ -1,6 +1,8 @@
 import type { ModelTier, ResponseMode } from '../providers/ModelTierProvider';
-import type { LUMO_API_ERRORS } from '../types';
+import type { ImageAspectRatio, LUMO_API_ERRORS } from '../types';
 import {
+    type AspectRatioInfo,
+    type AspectRatioKey,
     type CustomLumo,
     type LimitReachedPayload,
     type LimitReachedResource,
@@ -90,6 +92,14 @@ export const setNativeCreateImage = (enabled: boolean): void => {
         return;
     }
     (window as any).nativeComposerApiInstance.setCreateImage(enabled);
+};
+
+export const setNativeAspectRatio = (ratio: ImageAspectRatio): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setSelectedAspectRatio(ratio);
 };
 
 export const setNativeModelTier = (modelTier: ModelTier): void => {
@@ -197,6 +207,11 @@ export const onNativeChangeModelTier = (handler: ChangeModelTypeEventHandler): (
     return () => window.removeEventListener('lumo:changeModelTier', handler as EventListener);
 };
 
+export const onNativeChangeAspectRatio = (handler: ChangeAspectRatioEventHandler): (() => void) => {
+    window.addEventListener('lumo:changeAspectRatio', handler as EventListener);
+    return () => window.removeEventListener('lumo:changeAspectRatio', handler as EventListener);
+};
+
 export const onNativeChangeResponseMode = (handler: ChangeResponseModeEventHandler): (() => void) => {
     window.addEventListener('lumo:changeResponseMode', handler as EventListener);
     return () => window.removeEventListener('lumo:changeResponseMode', handler as EventListener);
@@ -288,8 +303,24 @@ export const injectNativeImageGenerationHelper = (prompt: string): void => {
     (window as any).nativeComposerApiInstance.injectImageGenerationHelperPrompt(prompt);
 };
 
-export type { CustomLumo, LimitReachedPayload, LimitReachedResource, LumoFile, LumoMode, State };
-export { LumoFileType, getLumoFileType, limitResourceToErrorType } from './nativeComposerBridge';
+export type {
+    CustomLumo,
+    AspectRatioInfo,
+    AspectRatioKey,
+    LimitReachedPayload,
+    LimitReachedResource,
+    LumoFile,
+    LumoMode,
+    State,
+};
+export {
+    AspectRatio,
+    LumoFileType,
+    aspectRatioKeyToImageRatio,
+    getLumoFileType,
+    imageRatioToAspectRatioKey,
+    limitResourceToErrorType,
+} from './nativeComposerBridge';
 
 export type FileUploadEventHandler = (
     event: CustomEvent<{ source: string; files: { base64: string; name: string }[] }>
@@ -302,3 +333,6 @@ export type PreviewFileEventHandler = (event: CustomEvent<{ attachmentId: string
 export type ChangeModelTypeEventHandler = (event: CustomEvent<{ modelTier: ModelTier }>) => void;
 export type ChangeResponseModeEventHandler = (event: CustomEvent<{ responseMode: ResponseMode }>) => void;
 export type SelectCustomLumoEventHandler = (event: CustomEvent<{ id: string }>) => void;
+export type ChangeAspectRatioEventHandler = (
+    event: CustomEvent<{ source: string; aspectRatio: ImageAspectRatio }>
+) => void;

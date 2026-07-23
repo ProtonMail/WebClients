@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { type Dispatch, type SetStateAction, useCallback, useRef, useState } from 'react';
 
 import type { ImageAspectRatio } from '../../../types';
 
@@ -8,7 +8,9 @@ interface UseImageGenerationModeResult {
     selectedAspectRatio: ImageAspectRatio;
     handleAspectRatioChange: (ratio: ImageAspectRatio) => void;
     isCreateImageMode: boolean;
-    setIsCreateImageMode: (enabled: boolean) => void;
+    // Exposed as the raw state dispatcher so callers can flip it with a functional
+    // updater (e.g. the native toggle bridge) without capturing a stale value.
+    setIsCreateImageMode: Dispatch<SetStateAction<boolean>>;
     // Stable getter for use inside callbacks that must not capture a stale value
     getAspectRatio: () => ImageAspectRatio;
 }

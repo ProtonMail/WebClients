@@ -22,7 +22,7 @@ import {
     type ResponseMode,
     getSelectedModelTier,
 } from '../providers/ModelTierProvider';
-import { LUMO_API_ERRORS } from '../types';
+import { IMAGE_ASPECT_RATIOS, type ImageAspectRatio, LUMO_API_ERRORS } from '../types';
 
 /**
  * Legacy model tier vocabulary kept for already-released native clients that
@@ -41,6 +41,48 @@ export enum LumoMode {
     Idle = 'Idle',
     Working = 'Working',
 }
+
+/**
+ * Native-friendly aspect ratio key. Web uses colon form (`ImageAspectRatio`,
+ * e.g. `'16:9'`); native clients read the underscore form (`'16_9'`) because
+ * colons are awkward as identifiers on the Swift/Kotlin side.
+ */
+export type AspectRatioKey<T extends string = ImageAspectRatio> = T extends `${infer A}:${infer B}` ? `${A}_${B}` : T;
+
+export interface AspectRatioInfo {
+    width: number;
+    height: number;
+    ratio: ImageAspectRatio;
+}
+
+const toAspectRatioKey = (ratio: ImageAspectRatio): AspectRatioKey => ratio.replace(':', '_') as AspectRatioKey;
+
+/**
+ * The available aspect ratios, computed from `IMAGE_ASPECT_RATIOS` (the single
+ * source of truth in types-api). Each `'w:h'` string is self-describing, so the
+ * width/height and the underscore key are all derived — nothing is hardcoded.
+ */
+export const AspectRatio = Object.fromEntries(
+    IMAGE_ASPECT_RATIOS.map((ratio) => {
+        const [width, height] = ratio.split(':').map(Number);
+        return [toAspectRatioKey(ratio), { width, height, ratio } satisfies AspectRatioInfo];
+    })
+) as Record<AspectRatioKey, AspectRatioInfo>;
+
+export const DEFAULT_ASPECT_RATIO_KEY: AspectRatioKey = toAspectRatioKey(IMAGE_ASPECT_RATIOS[0]);
+
+/** Reverse lookup (colon → underscore key), built once from `AspectRatio`. */
+const imageRatioToKeyMap = new Map<ImageAspectRatio, AspectRatioKey>(
+    (Object.entries(AspectRatio) as [AspectRatioKey, AspectRatioInfo][]).map(([key, info]) => [info.ratio, key])
+);
+
+/** Native → web: maps an underscore key back to the web's `ImageAspectRatio`. */
+export const aspectRatioKeyToImageRatio = (key: AspectRatioKey): ImageAspectRatio =>
+    AspectRatio[key]?.ratio ?? AspectRatio[DEFAULT_ASPECT_RATIO_KEY].ratio;
+
+/** Web → state: maps an `ImageAspectRatio` to its underscore key. */
+export const imageRatioToAspectRatioKey = (ratio: ImageAspectRatio): AspectRatioKey =>
+    imageRatioToKeyMap.get(ratio) ?? DEFAULT_ASPECT_RATIO_KEY;
 
 export interface LumoFile {
     name: string;
@@ -137,6 +179,10 @@ export interface State {
     isGhostModeEnabled: boolean;
     isWebSearchEnabled: boolean;
     isCreateImageEnabled: boolean;
+    /** All selectable aspect ratios (with width/height so native can render proportioned icons). */
+    availableAspectRatios: Record<AspectRatioKey, AspectRatioInfo>;
+    /** Currently-selected aspect ratio, underscore form (e.g. `'16_9'`). */
+    selectedAspectRatio: AspectRatioKey;
     isVisible: boolean;
     isSmallScreen: boolean;
     showTsAndCs: boolean;
@@ -279,6 +325,8 @@ class NativeComposerApi {
         isMaxModelAvailable: true,
         responseMode: DEFAULT_RESPONSE_MODE,
         isCreateImageEnabled: false,
+        availableAspectRatios: AspectRatio,
+        selectedAspectRatio: DEFAULT_ASPECT_RATIO_KEY,
         attachedFiles: [],
         isWebSearchEnabled: false,
         isVisible: true,
@@ -432,6 +480,31 @@ class NativeComposerApi {
     public setCreateImage(enabled: boolean): void {
         console.log(`NativeComposerApi: Setting create image to ${enabled}`);
         this.updateState({ isCreateImageEnabled: enabled });
+    }
+
+    /**
+     * Web → native: reflect the web's selected aspect ratio into the state so
+     * native shows the correct checkmark.
+     */
+    public setSelectedAspectRatio(ratio: ImageAspectRatio): void {
+        console.log(`NativeComposerApi: Setting selected aspect ratio to ${ratio}`);
+        this.updateState({ selectedAspectRatio: imageRatioToAspectRatioKey(ratio) });
+    }
+
+    /**
+     * Native → web: the native client picked an aspect ratio. Maps the
+     * underscore key back to the web's `ImageAspectRatio` before dispatching, so
+     * the web side never deals in underscore keys.
+     */
+    public async changeAspectRatio(key: AspectRatioKey): Promise<any> {
+        console.log(`NativeComposerApi: Change aspect ratio to ${key}`);
+        const event = new CustomEvent('lumo:changeAspectRatio', {
+            detail: { source: 'nativeComposer', aspectRatio: aspectRatioKeyToImageRatio(key) },
+        });
+        window.dispatchEvent(event);
+
+        // Return success (the actual state update is handled by the web app)
+        return { success: true };
     }
 
     public setNativeModelTier(modelTier: ModelTier): void {
@@ -743,6 +816,7 @@ try {
         toggleWebSearch: createNativeWrapper('toggleWebSearch'),
         setCreateImage: createNativeWrapper('setCreateImage'),
         toggleCreateImage: createNativeWrapper('toggleCreateImage'),
+        changeAspectRatio: createNativeWrapper('changeAspectRatio'),
         changeModelTier: createNativeWrapper('changeModelTier'),
         changeResponseMode: createNativeWrapper('changeResponseMode'),
 
