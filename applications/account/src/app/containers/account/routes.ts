@@ -13,6 +13,7 @@ import {
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments/core/subscription/helpers';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -383,7 +384,7 @@ export const getAccountAppRoutes = ({
     const isVPNDashboardEnabled = app === APPS.PROTONVPN_SETTINGS && showVPNDashboard;
 
     return <const>{
-        available: true,
+        available: user.accessType !== AccessType.Msp,
         header: c('Settings section title').t`Account`,
         routes: {
             vpnDashboardV2: {
