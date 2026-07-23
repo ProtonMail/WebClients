@@ -12,8 +12,9 @@ import { renderWithProviders } from '@proton/testing/lib/context/renderWithProvi
 import { useSharingModal } from './SharingModal';
 import type { SharingModalInnerProps } from './useSharingModalState';
 
+const mockUseFlag = jest.fn((name: string) => name === 'DriveSharingAdminPermissions');
 jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: (name: string) => name === 'DriveSharingAdminPermissions',
+    useFlag: (name: string) => mockUseFlag(name),
 }));
 
 const DRIVE_BASE = {
@@ -47,6 +48,11 @@ function SharingModalTestBed({ nodeUid, drive }: SharingModalInnerProps) {
 }
 
 describe('SharingModal', () => {
+    beforeEach(() => {
+        mockUseFlag.mockImplementation((name: string) => name === 'DriveSharingAdminPermissions');
+        window.localStorage.clear();
+    });
+
     it('should show public link section to owners', async () => {
         const parentNode = {
             ...commonNodeProperties,
@@ -363,6 +369,98 @@ describe('SharingModal', () => {
 
         await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
         expect(await screen.findByTestId('share-modal-settings')).toBeInTheDocument();
+    });
+
+    it('should show the sharing admin spotlight to an eligible admin when there is an editor or admin member', async () => {
+        mockUseFlag.mockImplementation(
+            (name: string) => name === 'DriveSharingAdminPermissions' || name === 'DriveWebSharingAdminTooltip'
+        );
+
+        const parentNode = {
+            ...commonNodeProperties,
+            uid: 'qwe~123',
+            name: { ok: true, value: 'root' },
+            directRole: MemberRole.Admin,
+            isSharedPublicly: false,
+        } as NodeEntity;
+        const viewedNode = {
+            ...commonNodeProperties,
+            uid: 'qwe~456',
+            parentUid: parentNode.uid,
+            name: { ok: true, value: 'shared file' },
+            directRole: MemberRole.Admin,
+        } as NodeEntity;
+
+        const drive = {
+            ...DRIVE_BASE,
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
+            getSharingInfo: (): Promise<ShareResult> =>
+                Promise.resolve({
+                    protonInvitations: [],
+                    nonProtonInvitations: [],
+                    members: [
+                        {
+                            uid: '',
+                            invitationTime: new Date(),
+                            role: MemberRole.Admin,
+                            addedByEmail: { ok: true, value: '' },
+                            inviteeEmail: '',
+                        },
+                    ],
+                    editorsCanShare: true,
+                }),
+        };
+
+        renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
+
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
+        expect(
+            await screen.findByText(
+                `Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.`
+            )
+        ).toBeInTheDocument();
+        expect(screen.getByTestId('share-modal-settings')).toBeInTheDocument();
+        expect(window.localStorage.getItem('proton-drive-admin-spotlight')).toBe('true');
+    });
+
+    it('should not mark the sharing admin spotlight as seen when the current viewer cannot change permissions', async () => {
+        mockUseFlag.mockImplementation(
+            (name: string) => name === 'DriveSharingAdminPermissions' || name === 'DriveWebSharingAdminTooltip'
+        );
+
+        const viewedNode = {
+            ...commonNodeProperties,
+            uid: 'qwe~999',
+            name: { ok: true, value: 'tortilla de patatas' },
+            directRole: MemberRole.Admin,
+        } as NodeEntity;
+
+        const drive = {
+            ...DRIVE_BASE,
+            getNode: (): Promise<NodeEntity> => Promise.resolve(viewedNode),
+            getSharingInfo: (): Promise<ShareResult> =>
+                Promise.resolve({
+                    protonInvitations: [],
+                    nonProtonInvitations: [],
+                    members: [
+                        {
+                            uid: '',
+                            invitationTime: new Date(),
+                            role: MemberRole.Admin,
+                            addedByEmail: { ok: true, value: '' },
+                            inviteeEmail: '',
+                        },
+                    ],
+                    editorsCanShare: true,
+                }),
+        };
+
+        renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
+
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
+        expect(screen.queryByTestId('share-modal-settings')).not.toBeInTheDocument();
+        expect(window.localStorage.getItem('proton-drive-admin-spotlight')).not.toBe('true');
     });
 
     it('should warn user of degrading if user does not have admin on parent', async () => {

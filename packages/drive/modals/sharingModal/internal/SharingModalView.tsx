@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { MemberRole, type ProtonDriveClient, type ShareNodeSettings, type ShareResult } from '@protontech/drive-sdk';
 import { c } from 'ttag';
@@ -12,6 +12,7 @@ import {
     FileIcon,
     type ModalStateProps,
     ModalTwo,
+    Spotlight,
     useConfirmActionModal,
     useToggle,
 } from '@proton/components';
@@ -20,6 +21,8 @@ import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
+import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import {
     useFlagsDriveDirectSharing,
@@ -82,6 +85,8 @@ export interface SharingModalViewProps extends ModalStateProps {
     };
 }
 
+const ADMIN_SPOTLIGHT_STORAGE_KEY = 'proton-drive-admin-spotlight';
+
 export const SharingModalView = ({
     onClose,
     onExit,
@@ -112,8 +117,11 @@ export const SharingModalView = ({
     const { isDirectSharingDisabled } = useFlagsDriveDirectSharing();
     const { isPublicEditModeEnabled } = useFlagsDrivePublicSharing();
     const adminRoleEnabled = useFlagsDriveSharingAdminPermissions();
+    const isSharingAdminTooltipEnabled = useFlag('DriveWebSharingAdminTooltip');
 
     const [settingsModal, showSettingsModal] = useSharingSettingsModal();
+    const [showSpotlight, setShowSpotlight] = useState(false);
+
     const [confirmModal, showConfirmRemoveYourself] = useConfirmActionModal();
 
     const [publicLinkUpdating, withPublicLinkUpdating] = useLoading();
@@ -142,6 +150,21 @@ export const SharingModalView = ({
         !isInvitationWorkflow && !publicLinkStateChanging && !publicLinkUpdating && isShared && canChangePermissions;
 
     const isClosedButtonDisabled = publicLinkBusy || isAdding;
+
+    useEffect(() => {
+        if (!isSharingAdminTooltipEnabled) {
+            // Cleanup storage when FF will be disabled
+            removeItem(ADMIN_SPOTLIGHT_STORAGE_KEY);
+            return;
+        }
+        if (getItem(ADMIN_SPOTLIGHT_STORAGE_KEY) === 'true' || !canChangePermissions || !isShared) {
+            return;
+        }
+        if (directMembers.some((member) => member.role === MemberRole.Admin)) {
+            setItem(ADMIN_SPOTLIGHT_STORAGE_KEY, 'true');
+            setShowSpotlight(true);
+        }
+    }, [directMembers, isSharingAdminTooltipEnabled, canChangePermissions, isShared]);
 
     const cleanFields = () => {
         setInviteMessage('');
@@ -242,26 +265,60 @@ export const SharingModalView = ({
                     </div>
 
                     <div className="grow-0 shrink-0">
-                        {isSettingsVisible && (
-                            <Tooltip title={c('Tooltip').t`Change shared item settings`}>
-                                <Button
-                                    icon
-                                    shape="ghost"
-                                    onClick={() =>
-                                        showSettingsModal({
-                                            sharedFileName: fileName,
-                                            stopSharing: async () => {
-                                                await actions.stopSharing();
-                                                onClose();
-                                            },
-                                        })
+                        {isSettingsVisible &&
+                            (showSpotlight ? (
+                                <Spotlight
+                                    show={showSpotlight}
+                                    type="new"
+                                    onClose={() => setShowSpotlight(false)}
+                                    content={
+                                        <>
+                                            <p className="text-bold mt-0 mb-2">{c('Spotlight')
+                                                .t`Editor permissions`}</p>
+                                            <p className="m-0">{c('Spotlight')
+                                                .t`Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.`}</p>
+                                        </>
                                     }
-                                    data-testid="share-modal-settings"
+                                    originalPlacement="top-end"
+                                    isAboveModal
                                 >
-                                    <IcCogWheel />
-                                </Button>
-                            </Tooltip>
-                        )}
+                                    <Button
+                                        icon
+                                        shape="ghost"
+                                        onClick={() =>
+                                            showSettingsModal({
+                                                sharedFileName: fileName,
+                                                stopSharing: async () => {
+                                                    await actions.stopSharing();
+                                                    onClose();
+                                                },
+                                            })
+                                        }
+                                        data-testid="share-modal-settings"
+                                    >
+                                        <IcCogWheel />
+                                    </Button>
+                                </Spotlight>
+                            ) : (
+                                <Tooltip title={c('Tooltip').t`Change shared item settings`}>
+                                    <Button
+                                        icon
+                                        shape="ghost"
+                                        onClick={() =>
+                                            showSettingsModal({
+                                                sharedFileName: fileName,
+                                                stopSharing: async () => {
+                                                    await actions.stopSharing();
+                                                    onClose();
+                                                },
+                                            })
+                                        }
+                                        data-testid="share-modal-settings"
+                                    >
+                                        <IcCogWheel />
+                                    </Button>
+                                </Tooltip>
+                            ))}
 
                         <ModalHeaderCloseButton buttonProps={{ disabled: isClosedButtonDisabled }} />
                     </div>
