@@ -31,6 +31,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { BackgroundBlurComparison } from './BackgroundBlurComparison/BackgroundBlurComparison';
+import { CustomBackgroundTester } from './CustomBackground/CustomBackgroundTester';
 
 import './DebugOverlay.scss';
 
@@ -812,6 +813,8 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
                     </div>
 
                     <BackgroundBlurComparison />
+
+                    <CustomBackgroundTester />
 
                     {/* Reconnection Testing Section */}
                     <div className="debug-section">
