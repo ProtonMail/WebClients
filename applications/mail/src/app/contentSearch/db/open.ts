@@ -1,6 +1,6 @@
 import { type IDBPDatabase, openDB } from 'idb';
 
-import type { Database } from './schema.ts';
+import type { Database } from './schema';
 
 export function openContentSearchDB(userId: string): Promise<IDBPDatabase<Database>> {
     return openDB<Database>(`content_search_v2_user:${userId}`, 1, {

@@ -21,12 +21,14 @@ import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import ESDeletedConversationsCache from 'proton-mail/helpers/encryptedSearch/ESDeletedConversationsCache';
 import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
+import { useContentSearch } from '../contentSearch/integration/useContentSearch';
 import { convertEventType, getESCallbacks, getESFreeBlobKey, parseSearchParams } from '../helpers/encryptedSearch';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import useISESEnabledElectron from '../hooks/useISESEnabledElectron';
@@ -76,11 +78,26 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     const contentIndexingSuccessMessage = c('Success').t`Message content search enabled`;
 
-    const esLibraryFunctions = useEncryptedSearch<ESBaseMessage, NormalizedSearchParams, ESMessageContent>({
+    // Both orchestrators are invoked unconditionally (rules of hooks); the active one is
+    // selected by the `ContentSearch` flag. `useContentSearch` mirrors `useEncryptedSearch`'s
+    // API but resolves results from the content-search-v2 index instead of the legacy ES flow.
+    const isContentSearchEnabled = useFlag('ContentSearch');
+
+    const esLibraryFunctionsV1 = useEncryptedSearch<ESBaseMessage, NormalizedSearchParams, ESMessageContent>({
         refreshMask: EVENT_ERRORS.MAIL,
         esCallbacks,
         contentIndexingSuccessMessage,
     });
+
+    const esLibraryFunctionsV2 = useContentSearch({
+        refreshMask: EVENT_ERRORS.MAIL,
+        esCallbacks,
+        contentIndexingSuccessMessage,
+        // Keep the legacy ES index in sync while v2 is active by forwarding events to its handler
+        esLibraryFunctionsV1,
+    });
+
+    const esLibraryFunctions = isContentSearchEnabled ? esLibraryFunctionsV2 : esLibraryFunctionsV1;
 
     /**
      * Open the advanced search dropdown

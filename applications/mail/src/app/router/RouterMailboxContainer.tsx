@@ -34,6 +34,7 @@ import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { MailboxToolbar } from './components/MailboxToolbar';
 import { useElementActions } from './hooks/useElementActions';
 import { useGetElementParams } from './hooks/useGetElementParams';
+import { useMeasureSearchDuration } from './hooks/useMeasureSearchDuration';
 import { useRouterNavigation } from './hooks/useRouterNavigation';
 import { useMailboxContainerSideEffects } from './sideEffects/useMailboxContainerSideEffects';
 
@@ -75,6 +76,7 @@ export const RouterMailboxContainer = () => {
     });
 
     const dispatch = useMailDispatch();
+    useMeasureSearchDuration(elementsParams, isSearching, elementsData);
     const breakpoints = useActiveBreakpoint();
 
     // When the labelID is updated, reset the select all value
