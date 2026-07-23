@@ -99,9 +99,6 @@
       "Add phone number": [
         "Telefoonnummer toevoegen"
       ],
-      "Add secret passphrase": [
-        "Geheime wachtwoordzin toevoegen"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Toevoegen aan ${ CALENDAR_APP_NAME }"
       ],
@@ -1060,9 +1057,6 @@
       "Page ${ pageNumber }": [
         "Pagina ${ pageNumber }"
       ],
-      "Passphrase": [
-        "Wachtwoordzin"
-      ],
       "Pause": [
         "Onderbreken"
       ],
@@ -1227,9 +1221,6 @@
       ],
       "Resume downloading": [
         "Download hervatten"
-      ],
-      "Retry": [
-        "Opnieuw proberen"
       ],
       "Revert to original display": [
         "Terugkeren naar originele weergave"
@@ -1520,8 +1511,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1585,9 +1575,6 @@
       ],
       "Update recovery phrase": [
         "Herstelzin bijwerken"
-      ],
-      "Update secret passphrase": [
-        "Geheime wachtwoordzin updaten"
       ],
       "Upgrade": [
         "Upgraden"
@@ -1944,6 +1931,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Breng e-mailproductiviteit naar een nieuw niveau. Laat ${ LUMO_SHORT_APP_NAME } u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
       ]
     },
     "Attached ics file error": {
@@ -1992,6 +1982,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Tijdens de proefperiode kunt u maximaal ${ TRIAL_MAX_SCRIBE_SEATS } schrijfassistent-licenties ${ LUMO_SHORT_APP_NAME } hebben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -2103,12 +2096,19 @@
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer.",
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-email mailaliassen en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
@@ -4986,9 +4986,6 @@
       "Failed to open to contact": [
         "Contact maken mislukt"
       ],
-      "Failed to update secret passphrase": [
-        "Niet gelukt om geheime wachtwoordzin te updaten"
-      ],
       "Filter with this name already exists": [
         "Filter met deze naam bestaat reeds"
       ],
@@ -5123,9 +5120,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
-      ],
-      "Passphrase unavailable": [
-        "Wachtwoordzin niet beschikbaar"
       ],
       "Password is required": [
         "Wachtwoord is vereist"
@@ -6867,11 +6861,17 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } bevat de schrijfassistent"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } helpt u om snel en moeiteloos betere e-mails te maken."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME } paneel"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan uw bedrijf ook beschermen."
@@ -7686,9 +7686,6 @@
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Om altijd toegang te hebben tot e-mail en een geoptimaliseerde mobiele ervaring, download onze ${ androidAppLink } of ${ iosAppLink }-app."
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Voor extra veiligheid kunt u een wachtwoordzin instellen. Deze zal niet worden opgenomen in de agenda-uitnodiging, denk eraan om deze apart met uw gasten te delen."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Voor maar ${ bundlePlanPriceInline }"
@@ -9804,6 +9801,12 @@
       "Clear logs": [
         "Logboeken wissen"
       ],
+      "Client": [
+        "Klant"
+      ],
+      "Client version": [
+        "Klantenversie"
+      ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
@@ -10220,9 +10223,6 @@
       ],
       "Participants": [
         "Deelnemers"
-      ],
-      "Passphrase:": [
-        "Wachtwoordzin:"
       ],
       "Password": [
         "Wachtwoord"
@@ -10950,8 +10950,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Voeg ${ LUMO_SHORT_APP_NAME } schrijfassistent toe"
       ],
       "Add-on with free trial": [
         "Add-on met gratis proefversie"
@@ -11339,6 +11345,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
       ],
       "${ n } calendar": [
         "${ n } agenda",
@@ -12259,9 +12268,6 @@
       "Passcode copied to clipboard": [
         "Passcode gekopieerd naar klembord"
       ],
-      "Passphrase copied to clipboard": [
-        "Wachtwoordzin gekopieerd naar klembord"
-      ],
       "Password has been set successfully": [
         "Wachtwoord is succesvol ingesteld"
       ],
@@ -13141,9 +13147,6 @@
       ],
       "Enter a name": [
         "Voer een naam in"
-      ],
-      "Enter passphrase": [
-        "Voer wachtwoordzin in"
       ],
       "Filter folders": [
         "Filter mappen"
@@ -14575,9 +14578,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe Schrijfassistent"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, en ${ LUMO_APP_NAME } met premium functies"
       ],
@@ -15206,9 +15206,6 @@
       ],
       "Read receipt sent": [
         "Ontvangstbewijs verzonden"
-      ],
-      "Secret passphrase updated": [
-        "Geheime wachtwoordzin bijgewerkt"
       ],
       "Self-destruction removed": [
         "Zelfvernietiging verwijderd"
