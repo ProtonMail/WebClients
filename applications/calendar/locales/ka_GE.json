@@ -98,9 +98,6 @@
       "Add public holidays": [
         "საჯარო დასვენების დამატება"
       ],
-      "Add secret passphrase": [
-        "საიდუმლო ფრაზის დამატება"
-      ],
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
@@ -671,9 +668,6 @@
       "Open settings": [
         "მორგების ფანჯრის გახსნა"
       ],
-      "Passphrase": [
-        "საკვანძო ფრაზა"
-      ],
       "Pause indexing": [
         "დაინდექსების შეჩერება"
       ],
@@ -772,9 +766,6 @@
       ],
       "Resume indexing": [
         "დაინდექსების გაგრძელება"
-      ],
-      "Retry": [
-        "თავიდან"
       ],
       "Save": [
         "შენახვა"
@@ -955,9 +946,6 @@
       ],
       "Update recovery phrase": [
         "აღდგენის ფაზის განახლება"
-      ],
-      "Update secret passphrase": [
-        "საიდუმლო ფრაზის განახლება"
       ],
       "Upgrade": [
         "ტარიფის აწევა"
@@ -3864,9 +3852,6 @@
       "Failed to open to contact": [
         "კონტაქტისთვის გახსნა ჩავარდა"
       ],
-      "Failed to update secret passphrase": [
-        "საიდუმლო ფრაზის განახლება ჩავარდა"
-      ],
       "Failed to update settings": [
         "პარამეტრების განახლების შეცდომა"
       ],
@@ -4010,9 +3995,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "არაკონფიდენციალური მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
-      ],
-      "Passphrase unavailable": [
-        "საკვანძო ფრაზა ხელმიუწვდომელია"
       ],
       "Password is required": [
         "პაროლი აუცილებელია"
@@ -5810,9 +5792,6 @@
       "Failed to update meeting name": [
         "შეხვედრის სახელის განახლება ჩავარდა"
       ],
-      "Failed to update meeting password": [
-        "შეხვედრის პაროლის განახლება ჩავარდა"
-      ],
       "Failed to update meeting schedule": [
         "შეხვედრის განრიგის განახლება ჩავარდა"
       ],
@@ -5824,9 +5803,6 @@
       ],
       "for ${ price }": [
         "${ price }-ისთვის"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "დამატებითი უსაფრთხოებისთვის, შეგიძლიათ დააყენოთ პაროლის ფრაზა. ის არ იქნება შეტანილი კალენდრის მოწვევაში, არ დაგავიწყდეთ მისი სტუმრებისთვის ცალკე გაზიარება."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "სულ რაღაც ${ bundlePlanPriceInline }-ად"
@@ -7400,9 +7376,6 @@
       ],
       "Participants": [
         "მონაწილეები"
-      ],
-      "Passphrase:": [
-        "საკვანძო ფრაზა:"
       ],
       "Password": [
         "პაროლი"
@@ -9196,9 +9169,6 @@
       "Passcode copied to clipboard": [
         "წვდომის კოდი დაკოპირდა გაცვლის ბუფერში"
       ],
-      "Passphrase copied to clipboard": [
-        "საკვანძო ფრაზა დაკოპირდა გაცვლის ბუფერში"
-      ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "თქვენი ${ BRAND_NAME } მისამართი მზადაა გამოსაყენებლად"
       ]
@@ -10121,9 +10091,6 @@
       ],
       "Enter a short description or additional info": [
         "შეიყვანეთ მოკლე აღწერა, ან დამატებითი ინფორმაცია"
-      ],
-      "Enter passphrase": [
-        "შეიყვანეთ საკვანძო ფრაზა"
       ],
       "Filter groups": [
         "ჯგუფების გაფილტრვა"
@@ -11297,9 +11264,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "წერის დამხმარე ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } და ${ LUMO_APP_NAME } პრემიუმ ფუნქციებით"
       ],
@@ -11818,9 +11782,6 @@
       ],
       "Problem reported": [
         "პრობლემა შეტყობინებულია"
-      ],
-      "Secret passphrase updated": [
-        "საიდუმლო ფრაზა განახლდა"
       ],
       "Undo in progress": [
         "მიმდინარეობს გაუქმება"

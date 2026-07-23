@@ -98,9 +98,6 @@
       "Add public holidays": [
         "Дадаць дзяржаўныя святы"
       ],
-      "Add secret passphrase": [
-        "Дадаць сакрэтную парольную фразу"
-      ],
       "Add to group": [
         "Дадаць у групу"
       ],
@@ -677,9 +674,6 @@
       "Open settings": [
         "Адкрыць налады"
       ],
-      "Passphrase": [
-        "Парольная фраза"
-      ],
       "Pause indexing": [
         "Прыпыніць індэксаванне"
       ],
@@ -778,9 +772,6 @@
       ],
       "Resume indexing": [
         "Узнавіць індэксаванне"
-      ],
-      "Retry": [
-        "Паўтарыць"
       ],
       "Save": [
         "Захаваць"
@@ -961,9 +952,6 @@
       ],
       "Update recovery phrase": [
         "Абнавіць фразу аднаўлення"
-      ],
-      "Update secret passphrase": [
-        "Абнавіць сакрэтную парольную фразу"
       ],
       "Upgrade": [
         "Палепшыць"
@@ -1231,6 +1219,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Выведзіце прадукцыйнасць электроннай пошты на новыя ўзроўні. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ LUMO_SHORT_APP_NAME } дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
     "Attached ics file error": {
@@ -1278,6 +1269,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_LUMO_SEATS } ліцэнзій ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій памочніка ў напісанні ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій Scribe на працягу пробнага перыяду."
@@ -1396,6 +1390,12 @@
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
@@ -1404,6 +1404,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
@@ -3932,9 +3935,6 @@
       "Failed to open to contact": [
         "Не ўдалося адкрыць кантакт"
       ],
-      "Failed to update secret passphrase": [
-        "Не ўдалося абнавіць сакрэтную парольную фразу"
-      ],
       "Failed to update settings": [
         "Не ўдалося абнавіць налады"
       ],
@@ -4084,9 +4084,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
-      ],
-      "Passphrase unavailable": [
-        "Парольная фраза недаступна"
       ],
       "Password is required": [
         "Патрабуецца ўвесці пароль"
@@ -5441,6 +5438,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочніка ў напісанні"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } — гэта зашыфраванае скразным метадам рашэнне для відэаканферэнцый. Дадайце яго ў свой тарыфны план, каб праводзіць бяспечныя сустрэчы."
       ],
@@ -5981,9 +5984,6 @@
       "Failed to update meeting name": [
         "Не ўдалося абнавіць назву сустрэчы"
       ],
-      "Failed to update meeting password": [
-        "Не ўдалося абнавіць пароль сустрэчы"
-      ],
       "Failed to update meeting schedule": [
         "Не ўдалося абнавіць расклад сустрэчы"
       ],
@@ -5998,9 +5998,6 @@
       ],
       "for ${ price }": [
         "за ${ price }"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Для дадатковай бяспекі вы можаце задаць парольную фразу. Не забудзьце абагуліць яе з гасцямі асобна, бо яна не будзе ўключана ў запрашэнне календара."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Усяго за ${ bundlePlanPriceInline }"
@@ -7330,6 +7327,12 @@
       "City": [
         "Горад"
       ],
+      "Client": [
+        "Кліент"
+      ],
+      "Client version": [
+        "Версія кліента"
+      ],
       "Code is 6 digits without spaces": [
         "Код складаецца з 6 лічбаў без прабелаў"
       ],
@@ -7614,9 +7617,6 @@
       ],
       "Participants": [
         "Удзельнікі"
-      ],
-      "Passphrase:": [
-        "Парольная фраза:"
       ],
       "Password": [
         "Пароль"
@@ -8107,8 +8107,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Дадаць памочніка ў напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Дадаць памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Дадатак з бясплатным пробным перыядам"
@@ -8521,6 +8527,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } і ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } каляндар",
@@ -9497,9 +9506,6 @@
       ],
       "Passcode copied to clipboard": [
         "Код доступу скапіяваны ў буфер абмену"
-      ],
-      "Passphrase copied to clipboard": [
-        "Парольная фраза скапіявана ў буфер абмену"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
@@ -10487,9 +10493,6 @@
       ],
       "Enter a short description or additional info": [
         "Увядзіце кароткае апісанне або дадатковую інфармацыю"
-      ],
-      "Enter passphrase": [
-        "Увядзіце парольную фразу"
       ],
       "Filter groups": [
         "Фільтр груп"
@@ -11725,9 +11728,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } і ${ LUMO_APP_NAME } з прэміяльнымі функцыямі"
       ],
@@ -12266,9 +12266,6 @@
       ],
       "Problem reported": [
         "Паведамлена аб праблеме"
-      ],
-      "Secret passphrase updated": [
-        "Сакрэтная парольная фраза абноўлена"
       ],
       "Undo in progress": [
         "Выконваецца адрабленне"
