@@ -124,9 +124,13 @@ const MoveDropdown = ({
     const createFolderButtonText = c('Title').t`Create folder "${search}"`;
 
     const alwaysCheckboxDisabled = useMemo(() => {
+        // The checkbox is disabled if the selected folder is a category.
+        if (selectedFolder && isCategoryLabel(selectedFolder.ID)) {
+            return true;
+        }
+
         return !getSendersToFilter(elements).length || !selectedFolder || !!selectAll;
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-BDE05D
-    }, [getSendersToFilter, elements, selectAll]);
+    }, [selectedFolder, getSendersToFilter, elements, selectAll]);
 
     const list = treeview
         .concat([
