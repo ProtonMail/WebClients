@@ -152,6 +152,10 @@ const getDefaultAuthenticatorRedirect = (authenticatorRoutes: ReturnType<typeof 
     return authenticatorRoutes.routes.downloads.to;
 };
 
+const getDefaultMspRedirect = (organizationRoutes: ReturnType<typeof getRoutes>['organization']) => {
+    return organizationRoutes.routes.users.to;
+};
+
 const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account']) => {
     if (getIsSectionAvailable(accountRoutes.routes.vpnDashboardV2)) {
         return `${accountRoutes.routes.vpnDashboardV2.to}${location.search}${location.hash}`;
@@ -471,6 +475,9 @@ const MainContainer = () => {
         }
 
         const path = (() => {
+            if (!routes.account.available) {
+                return getDefaultMspRedirect(routes.organization);
+            }
             if (app === APPS.PROTONPASS) {
                 return getDefaultPassRedirect(user, routes.account, routes.pass);
             }
