@@ -1,8 +1,17 @@
 import type { Engine, InitOutput } from '@proton/proton-foundation-search';
-import init, { ProcessorConfig, Engine as SearchLibraryWasmEngine } from '@proton/proton-foundation-search';
+import init, {
+    ProcessorConfig,
+    Engine as SearchLibraryWasmEngine,
+    TextIndex,
+    TrigramCache,
+} from '@proton/proton-foundation-search';
 
 import type { SearchDB } from '../../shared/SearchDB';
-import { MAX_SEARCHABLE_FILENAME_LENGTH } from '../../shared/config';
+import {
+    SEARCH_ENGINE_CASE_INSENSITIVE,
+    SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH,
+    SEARCH_ENGINE_MAX_TOKEN_BUCKET_SIZE,
+} from '../../shared/config';
 import type { IndexKind } from '../../shared/types';
 import { IndexBlobStore } from './IndexBlobStore';
 import { IndexReader } from './IndexReader';
@@ -39,8 +48,23 @@ export class IndexRegistry {
         }
         await (wasmInit ??= init());
 
-        const config = new ProcessorConfig().withMaxLength(MAX_SEARCHABLE_FILENAME_LENGTH);
-        const engine = SearchLibraryWasmEngine.builder().withBuiltinProcessor(config).build();
+        const config = new ProcessorConfig()
+            .withMaxLength(SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH)
+            .withCaseInsensitive(SEARCH_ENGINE_CASE_INSENSITIVE);
+        const textIndex = new TextIndex()
+            .withMaximumTokenBucketSize(SEARCH_ENGINE_MAX_TOKEN_BUCKET_SIZE)
+            // Avoid perf issues on search library 2.0.0-rc1 version.
+            // TODO: re-check whether this workaround is still needed after upgrading past 2.0.0-rc1.
+            .withTrigramCache(TrigramCache.Disabled);
+
+        const engine = SearchLibraryWasmEngine.builder()
+            .withBuiltinProcessor(config)
+            // with_default_indices() registers all four built-in index types in one call, so a
+            // future library version adding a fifth default index type is included automatically,
+            // no risk of silently omitting one.
+            .withDefaultIndices()
+            .withTextIndex(textIndex)
+            .build();
         const blobStore = new IndexBlobStore(kind, db, this.cryptoKey);
         const indexWriter = new IndexWriter(engine, blobStore);
         const indexReader = new IndexReader(engine, blobStore);

@@ -4,7 +4,7 @@ import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 import type { SearchDB } from '../../shared/SearchDB';
 import type { SearchQuery, SearchResultItem } from '../../shared/types';
 import { IndexKind, type IndexRegistry } from '../index/IndexRegistry';
-import { normalizedFilenameForTag } from '../indexer/indexEntry';
+import { normalizedFilenameForTag, normalizedFilenameForText } from '../indexer/indexEntry';
 
 // TODO: Rename to indices instead of engines.
 let activeEngines: IndexKind[] = [IndexKind.MAIN];
@@ -17,7 +17,7 @@ export function setActiveEnginesForTests(engines: IndexKind[]) {
 /**
  * Searches across all active engines in parallel, yielding results as they arrive.
  *
- * Search bypasses the task queue entirely — Search library WASM supports concurrent read
+ * Search bypasses the task queue entirely - Search library WASM supports concurrent read
  * handles while a write is in progress.
  */
 export class SearchQueryExecutor {
@@ -41,25 +41,26 @@ export class SearchQueryExecutor {
     }
 
     /**
-     * Build a wildcard match on the "filename" attribute, optionally ANDed with exact-match
+     * Build a wildcard match on the "filenameTag" attribute, optionally ANDed with exact-match
      * attribute filters (e.g. nodeType, indexPopulatorGeneration).
      * Excludes trashed files.
      */
     private buildFilenameSearchQuery(query: SearchQuery, wasmQuery: Query): Query {
-        // Normalize query the same way we normalized at index time:
-        // strip all non-alphanumeric characters and lowercase.
-        const normalized = normalizedFilenameForTag(query.filename);
-        const hasFilename = normalized.length > 0;
+        // The tag path preserves special chars (lowercase only); the text path strips them for
+        // the tokenizer. Trim so a trailing-space query ("my file ") doesn't build "*my file *"
+        // (which would miss "my file_name"); internal spaces are preserved.
+        const trimmed = query.filename.trim();
+        const tagQuery = normalizedFilenameForTag(trimmed);
+        const textQuery = normalizedFilenameForText(trimmed);
         const hasFilters = query.filters && Object.keys(query.filters).length > 0;
 
-        // Guard: a pure-special-char query (e.g. "#") with no filters normalizes
-        // to empty. Returning an unfiltered query would match everything — return
-        // nothing instead.
-        if (!hasFilename && !hasFilters) {
+        // Guard: an empty / whitespace-only query with no filters would build a bare query that
+        // matches everything - return nothing instead.
+        if (trimmed.length === 0 && !hasFilters) {
             return wasmQuery;
         }
 
-        const filenameExpr = this.buildFilenameExpression(normalized);
+        const filenameExpr = this.buildFilenameExpression(tagQuery, textQuery);
         const filterExprs = this.buildFilterExpressions(query.filters);
         const trashExclusionExpr = Expression.attr('trashTime', Func.Equals, TermValue.int(0n));
         const allExprs = [filenameExpr, ...filterExprs, trashExclusionExpr].filter(
@@ -70,17 +71,26 @@ export class SearchQueryExecutor {
         return wasmQuery.withStructuredExpression(expr);
     }
 
-    private buildFilenameExpression(normalized: string): Expression | undefined {
-        if (normalized.length === 0) {
+    private buildFilenameExpression(tagQuery: string, textQuery: string): Expression | undefined {
+        const exprs: Expression[] = [];
+        if (tagQuery.length > 0) {
+            // Literal substring glob on the normalized (lowercased) tag (*query*). We use
+            // Func.Equals, NOT Func.Matches: on a tag, Matches tokenizes the pattern (dropping
+            // special chars, splitting on spaces), whereas Equals matches the wildcard pattern
+            // literally. That literal glob is what lets special characters, spaces, and short
+            // (< 3 char) queries match (DRVWEB-5345). The `.then()` part is treated verbatim
+            // (even a literal '*').
+            exprs.push(Expression.attr('filenameTag', Func.Equals, TermValue.wild().then(tagQuery).wildcard()));
+        }
+        if (textQuery.length > 0) {
+            // Fuzzy trigram match on the stripped text (query*) - adds relevance scoring
+            // for longer queries via the text processor.
+            exprs.push(Expression.attr('filenameText', Func.Matches, TermValue.text(textQuery).wildcard()));
+        }
+        if (exprs.length === 0) {
             return undefined;
         }
-        // Substring match on the normalized tag (*query*) — works for any length
-        // including short (< 3 char) queries, special chars, and mixed case.
-        const tagMatch = Expression.attr('filename', Func.Matches, TermValue.wild().then(normalized).wildcard());
-        // Fuzzy trigram match on the stripped text (query*) — adds relevance scoring
-        // for longer queries via the text processor.
-        const textMatch = Expression.attr('filenameText', Func.Matches, TermValue.text(normalized).wildcard());
-        return textMatch.or(tagMatch);
+        return exprs.reduce((acc, e) => acc.or(e));
     }
 
     private buildFilterExpressions(filters: SearchQuery['filters']): Expression[] {
