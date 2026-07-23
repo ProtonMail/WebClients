@@ -549,6 +549,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ BRAND_NAME } Scribe tarafından yardım alın."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "E-posta üretkenliğinizi yeni seviyelere taşıyın. ${ LUMO_SHORT_APP_NAME } ile e-postalarınızı yazın, yanıtlayın ve düzeltin."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -563,6 +566,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } adet ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansına sahip olabilirsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
@@ -2732,6 +2738,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } yazma yardımcısını içerir"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } uçtan uca şifrelenmiş bir görüntülü görüşme çözümüdür. Güvenli görüşmeler düzenlemek için bunu tarifenize ekleyin."
       ],
@@ -3642,8 +3654,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısını ekle"
       ],
       "Add-on with free trial": [
         "Ücretsiz deneme sürümü ile eklenti"
@@ -3787,6 +3805,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ n } calendar": [
         "${ n } takvim",
