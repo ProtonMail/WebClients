@@ -21,7 +21,9 @@ const DEFAULT_STORED_DEFAULT_PROTOCOL = {
     },
 } satisfies DefaultProtocolsStored;
 
-const store = new Store<{ defaultProtocols: DefaultProtocolsStored }>();
+const store = new Store<{ defaultProtocols: DefaultProtocolsStored }>({
+    configFileMode: 0o600,
+});
 
 const notChecked = (stored: DefaultProtocolStored): DefaultProtocol => ({
     ...UNCHECKED_PROTOCOL,

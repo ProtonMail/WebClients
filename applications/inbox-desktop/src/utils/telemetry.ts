@@ -153,7 +153,9 @@ class TelemetryService {
     }
 
     // Store
-    private store = new Store<{ telemetry: TelemetryStored }>();
+    private store = new Store<{ telemetry: TelemetryStored }>({
+        configFileMode: 0o600,
+    });
 
     private updateStats<M extends Measurement>(
         measurement: M,
