@@ -17,7 +17,7 @@ import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/f
 
 import { getSMSVerificationCodeText } from '../../../../content/helper';
 import { useRequestNewVerificationCode } from '../../../../unauthed-forgot-password/hooks/useRequestNewVerificationCode';
-import { useVerifyOwnershipWithPhoneActorRef } from '../../UnauthedLost2FAContainer';
+import { useVerifyOwnershipWithPhoneActorRef } from '../../UnauthedLost2FAContext';
 import { useUnauthedLost2FATelemetry } from '../../useUnauthedLost2FATelemetry';
 
 type VerificationResult = Awaited<ReturnType<typeof initiateVerification>>;
