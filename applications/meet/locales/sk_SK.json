@@ -758,9 +758,6 @@
       "Show floating thumbnail during screensharing": [
         "Zobraziť plávajúcu miniatúru počas zdieľania obrazovky"
       ],
-      "Show passphrase": [
-        "Zobraziť prístupovú frázu"
-      ],
       "Stop recording and download.": [
         "Zastaviť nahrávanie a stiahnuť."
       ],
@@ -1887,9 +1884,6 @@
       "Invalid meeting link": [
         "Neplatný odkaz na schôdzu"
       ],
-      "Invalid passphrase": [
-        "Nesprávna prístupová fráza"
-      ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
       ],
@@ -2358,9 +2352,6 @@
       "Failed to update meeting name": [
         "Aktualizácia názvu schôdzky zlyhala"
       ],
-      "Failed to update meeting password": [
-        "Aktualizácia hesla schôdzky zlyhala"
-      ],
       "Failed to update meeting schedule": [
         "Nepodarilo sa aktualizovať rozvrh schôdzky"
       ],
@@ -2583,9 +2574,6 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Prosím, povoľte prístup k vášmu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } pre čo najlepší zážitok."
       ],
-      "Please enter the passphrase to decrypt and view this meeting": [
-        "Zadajte, prosím, heslo na dešifrovanie a zobrazenie tohto stretnutia."
-      ],
       "Please try again or try another browser": [
         "Skúste to znova alebo použite iný prehliadač, prosím"
       ],
@@ -2720,9 +2708,6 @@
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Toto stretnutie je uzamknuté. Ak sa chcete pripojiť, kontaktujte organizátora, prosím."
-      ],
-      "This meeting is password protected": [
-        "Toto stretnutie je chránené heslom"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Táto schôdzka dosiahla časový limit bezplatného balíka. Prejdite na vyšší balík, aby ste si v budúcnosti mohli predĺžiť dĺžku schôdzí."
@@ -3050,9 +3035,6 @@
       "Participants join after you approve them": [
         "Účastníci sa pripoja až po vašom schválení"
       ],
-      "Passphrase": [
-        "Prístupová fráza"
-      ],
       "Password": [
         "Heslo"
       ],
@@ -3249,9 +3231,6 @@
       ],
       "E.g., ": [
         "Napr., "
-      ],
-      "Enter passphrase": [
-        "Zadajte prístupovú frázu"
       ],
       "Enter time": [
         "Zadajte čas"
@@ -3580,9 +3559,6 @@
       ],
       "Participants (${ filteredParticipants.length })": [
         "Účastníci (${ filteredParticipants.length })"
-      ],
-      "Passphrase": [
-        "Prístupová fráza"
       ],
       "Personal meeting room": [
         "Súkromná zasadacia miestnosť"

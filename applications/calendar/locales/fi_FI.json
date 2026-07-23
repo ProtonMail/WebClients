@@ -98,9 +98,6 @@
       "Add public holidays": [
         "Lisää yleiset vapaapäivät"
       ],
-      "Add secret passphrase": [
-        "Lisää salalause"
-      ],
       "Add to group": [
         "Lisää ryhmään"
       ],
@@ -671,9 +668,6 @@
       "Open settings": [
         "Avaa asetukset"
       ],
-      "Passphrase": [
-        "Salalause"
-      ],
       "Pause indexing": [
         "Keskeytä indeksointi"
       ],
@@ -772,9 +766,6 @@
       ],
       "Resume indexing": [
         "Jatka indeksointia"
-      ],
-      "Retry": [
-        "Yritä uudelleen"
       ],
       "Save": [
         "Tallenna"
@@ -955,9 +946,6 @@
       ],
       "Update recovery phrase": [
         "Vaihda palautuslause"
-      ],
-      "Update secret passphrase": [
-        "Päivitä salalause"
       ],
       "Upgrade": [
         "Päivitä tilaus"
@@ -3861,9 +3849,6 @@
       "Failed to open to contact": [
         "Yhteystiedon avaaminen epäonnistui"
       ],
-      "Failed to update secret passphrase": [
-        "Salaisen salalauseen päivittäminen epäonnistui"
-      ],
       "Failed to update settings": [
         "Asetusten päivittäminen epäonnistui"
       ],
@@ -4007,9 +3992,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
-      ],
-      "Passphrase unavailable": [
-        "Salalause ei ole käytettävissä"
       ],
       "Password is required": [
         "Salasana vaaditaan"
@@ -5807,9 +5789,6 @@
       "Failed to update meeting name": [
         "Kokouksen nimen päivitys epäonnistui"
       ],
-      "Failed to update meeting password": [
-        "Kokouksen salasanan päivitys epäonnistui"
-      ],
       "Failed to update meeting schedule": [
         "Kokouksen aikataulun päivitys epäonnistui"
       ],
@@ -5824,9 +5803,6 @@
       ],
       "for ${ price }": [
         "hintaan ${ price }"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Paremman tietoturvan saamiseksi voit asettaa salalauseen. Sitä ei sisällytetä kalenterikutsuun, joten muistathan jakaa sen vieraille erikseen."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Vain hintaan ${ bundlePlanPriceInline }"
@@ -7406,9 +7382,6 @@
       ],
       "Participants": [
         "Osallistujat"
-      ],
-      "Passphrase:": [
-        "Salalause:"
       ],
       "Password": [
         "Salasana"
@@ -9202,9 +9175,6 @@
       "Passcode copied to clipboard": [
         "Tunnuskoodi kopioitiin leikepöydälle"
       ],
-      "Passphrase copied to clipboard": [
-        "Salalause kopioitiin leikepöydälle"
-      ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME } -osoitteesi on valmis käytettäväksi"
       ]
@@ -10127,9 +10097,6 @@
       ],
       "Enter a short description or additional info": [
         "Syötä lyhyt kuvaus tai lisätietoa"
-      ],
-      "Enter passphrase": [
-        "Syötä salalause"
       ],
       "Filter groups": [
         "Suodata ryhmiä"
@@ -11303,9 +11270,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ja ${ LUMO_APP_NAME } lisäominaisuuksilla"
       ],
@@ -11824,9 +11788,6 @@
       ],
       "Problem reported": [
         "Ongelma raportoitu"
-      ],
-      "Secret passphrase updated": [
-        "Salalause päivitettiin"
       ],
       "Undo in progress": [
         "Kumotaan"

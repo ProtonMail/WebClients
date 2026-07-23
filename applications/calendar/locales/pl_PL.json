@@ -98,9 +98,6 @@
       "Add public holidays": [
         "Dodaj święta"
       ],
-      "Add secret passphrase": [
-        "Dodaj hasło"
-      ],
       "Add to group": [
         "Dodaj do grupy"
       ],
@@ -677,9 +674,6 @@
       "Open settings": [
         "Otwórz ustawienia"
       ],
-      "Passphrase": [
-        "Fraza zabezpieczająca"
-      ],
       "Pause indexing": [
         "Wstrzymaj indeksowanie"
       ],
@@ -778,9 +772,6 @@
       ],
       "Resume indexing": [
         "Wznów indeksowanie"
-      ],
-      "Retry": [
-        "Spróbuj ponownie"
       ],
       "Save": [
         "Zapisz"
@@ -961,9 +952,6 @@
       ],
       "Update recovery phrase": [
         "Zaktualizuj hasło odzyskiwania"
-      ],
-      "Update secret passphrase": [
-        "Zaktualizuj tajne hasło"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -1733,6 +1721,9 @@
       ],
       "Discover and set up features": [
         "Odkryj i skonfiguruj funkcje"
+      ],
+      "Get 50% offer": [
+        "Uzyskaj 50% zniżki"
       ],
       "Maybe later": [
         "Może później"
@@ -3929,9 +3920,6 @@
       "Failed to open to contact": [
         "Nie udało się otworzyć kontaktu"
       ],
-      "Failed to update secret passphrase": [
-        "Nie udało się zaktualizować hasła"
-      ],
       "Failed to update settings": [
         "Nie udało się zaktualizować ustawień"
       ],
@@ -4081,9 +4069,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Musisz aktywować klucz organizacji, aby utworzyć służbowych użytkowników"
-      ],
-      "Passphrase unavailable": [
-        "Hasło niedostępne"
       ],
       "Password is required": [
         "Hasło jest wymagane"
@@ -5588,6 +5573,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN to bezpieczny tunel między urządzeniem a Internetem. Ukrywa on Twoją lokalizację i aktywność przed dostawcą Internetu (ISP) i odwiedzanymi stronami internetowymi."
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Dostęp do ponad 20 000 serwerów w 145 krajach"
+      ],
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
@@ -5975,11 +5963,11 @@
       "Failed to update meeting name": [
         "Nie udało się zaktualizować nazwy spotkania"
       ],
-      "Failed to update meeting password": [
-        "Nie udało się zaktualizować hasła spotkania"
-      ],
       "Failed to update meeting schedule": [
         "Nie udało się zaktualizować harmonogramu spotkania"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Najwyższe prędkości VPN do 10 Gb/s"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Tylko pliki (bez zdjęć, ${ DOCS_APP_NAME } lub ${ SHEETS_APP_NAME }) – łącznie do 100 GB, 100 000 plików i 50 GB na plik"
@@ -5989,9 +5977,6 @@
       ],
       "for ${ price }": [
         "za ${ price }"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Dla większego bezpieczeństwa możesz ustawić hasło. Nie zostanie ono uwzględnione w zaproszeniu do kalendarza, pamiętaj, aby udostępnić je swoim gościom osobno."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Za jedyne ${ bundlePlanPriceInline }"
@@ -6010,6 +5995,9 @@
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Rządy i dostawcy Internetu mogą monitorować Twoją aktywność online. Ukrywając swój prawdziwy adres IP i szyfrując połączenie, przeglądanie staje się prywatne."
+      ],
+      "Have some more time to decide without interruption.": [
+        "Podejmij decyzję bez żadnych zakłóceń, mając na to więcej czasu."
       ],
       "here": [
         "tutaj"
@@ -6031,6 +6019,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "W przypadku anulowania teraz subskrypcji utracisz dostęp do ${ BRAND_NAME } ${ planTitle } w dniu ${ expiryDate }, w tym do następujących funkcji:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Jeśli anulujesz subskrypcję ${ planTitle }, nie zostanie ona odnowiona po terminie wygaśnięcia ${ expiryDate }."
@@ -6371,6 +6362,9 @@
       "Powered by ${ protonButton }": [
         "Obsługiwane przez ${ protonButton }"
       ],
+      "Premium privacy protection across all your devices": [
+        "Najwyższej klasy ochrona prywatności na wszystkich Twoich urządzeniach"
+      ],
       "Previous modifications on this series will be lost.": [
         "Poprzednie zmiany w tej serii zostaną utracone."
       ],
@@ -6472,6 +6466,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Bądź połączony bez trudu, włączając następujące ustawienia VPN:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Pozostań przy swoim planie i otrzymaj 50% zniżki na kolejny miesiąc"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
@@ -7590,9 +7587,6 @@
       ],
       "Participants": [
         "Uczestnicy"
-      ],
-      "Passphrase:": [
-        "Fraza zabezpieczająca:"
       ],
       "Password": [
         "Hasło"
@@ -9474,9 +9468,6 @@
       "Passcode copied to clipboard": [
         "Kod został skopiowany do schowka"
       ],
-      "Passphrase copied to clipboard": [
-        "Hasło zostało skopiowane do schowka"
-      ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Twój adres ${ BRAND_NAME } jest gotowy do użycia"
       ]
@@ -10463,9 +10454,6 @@
       ],
       "Enter a short description or additional info": [
         "Wpisz krótki opis lub dodatkowe informacje"
-      ],
-      "Enter passphrase": [
-        "Wpisz hasło"
       ],
       "Filter groups": [
         "Filtruj grupy"
@@ -11701,9 +11689,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asystent pisania ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } oraz ${ LUMO_APP_NAME } z funkcjami premium"
       ],
@@ -12242,9 +12227,6 @@
       ],
       "Problem reported": [
         "Problem został zgłoszony"
-      ],
-      "Secret passphrase updated": [
-        "Hasło zaktualizowane"
       ],
       "Undo in progress": [
         "Cofnięcie jest w toku"
@@ -13090,6 +13072,9 @@
       ],
       "Start import process": [
         "Rozpocznij proces importowania"
+      ],
+      "Stay for 50% off your next month": [
+        "Zostań z nami, aby uzyskać 50% zniżki w następnym miesiącu"
       ],
       "Subscription canceled": [
         "Subskrypcja została anulowana"

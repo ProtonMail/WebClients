@@ -99,9 +99,6 @@
       "Add phone number": [
         "添加电话号码"
       ],
-      "Add secret passphrase": [
-        "添加密码短语"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "添加到 ${ CALENDAR_APP_NAME }"
       ],
@@ -1056,9 +1053,6 @@
       "Page ${ pageNumber }": [
         "第 ${ pageNumber } 页"
       ],
-      "Passphrase": [
-        "密码短语"
-      ],
       "Pause": [
         "暂停"
       ],
@@ -1223,9 +1217,6 @@
       ],
       "Resume downloading": [
         "继续下载"
-      ],
-      "Retry": [
-        "重试"
       ],
       "Revert to original display": [
         "恢复原始显示"
@@ -1581,9 +1572,6 @@
       "Update recovery phrase": [
         "更新恢复短语"
       ],
-      "Update secret passphrase": [
-        "更新密码短语"
-      ],
       "Upgrade": [
         "升级账户"
       ],
@@ -1931,6 +1919,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "将电子邮件工作效率提升到新水平。让 ${ BRAND_NAME } Scribe 帮您撰写、回复和校对电子邮件。"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "将邮件生产力提升至新高度，让 ${ LUMO_SHORT_APP_NAME } 帮助您撰写、回复和校对邮件。"
       ]
     },
     "Attached ics file error": {
@@ -1978,6 +1969,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "试用期间，最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 写作助手席位。"
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 Scribe 席位"
@@ -2088,11 +2082,17 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 Hide-my-email  别名等功能。"
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 Hide-my-email 别名等功能。"
@@ -4948,9 +4948,6 @@
       "Failed to open to contact": [
         "无法打开联系人"
       ],
-      "Failed to update secret passphrase": [
-        "更新密码短语失败"
-      ],
       "Filter with this name already exists": [
         "已存在同名筛选"
       ],
@@ -5082,9 +5079,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "组织密钥必须激活才能创建非私人用户"
-      ],
-      "Passphrase unavailable": [
-        "密码短语不可用"
       ],
       "Password is required": [
         "密码必须填写"
@@ -6780,11 +6774,17 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } 内置写作助手"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } 帮助您快速轻松地撰写更优质的邮件。"
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME } 面板"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
@@ -7559,9 +7559,6 @@
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "如需随时访问邮件并获得优化的移动端体验，请下载我们的 ${ androidAppLink } 或 ${ iosAppLink } 应用。"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "为了增强安全性，您可以设置一个密码短语。它不会包含在日历邀请中，请记得单独分享给您的宾客。"
       ],
       "For just ${ bundlePlanPriceInline }": [
         "仅需 ${ bundlePlanPriceInline }"
@@ -9638,6 +9635,12 @@
       "Clear logs": [
         "清除日志"
       ],
+      "Client": [
+        "客户端"
+      ],
+      "Client version": [
+        "客户端版本"
+      ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
@@ -10054,9 +10057,6 @@
       ],
       "Participants": [
         "参与者"
-      ],
-      "Passphrase:": [
-        "密码短语："
       ],
       "Password": [
         "密码"
@@ -10779,8 +10779,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 写作助手"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加 ${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
       "Add-on with free trial": [
         "免费试用附加组件"
@@ -11158,6 +11164,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 和 ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
       "${ n } calendar": [
         "${ n } 份日历"
@@ -12049,9 +12058,6 @@
       "Passcode copied to clipboard": [
         "将密码复制到剪贴板"
       ],
-      "Passphrase copied to clipboard": [
-        "密码短语已复制到剪贴板"
-      ],
       "Password has been set successfully": [
         "密码设置成功"
       ],
@@ -12924,9 +12930,6 @@
       ],
       "Enter a name": [
         "请输入名称"
-      ],
-      "Enter passphrase": [
-        "输入密码短语"
       ],
       "Filter folders": [
         "筛选文件夹"
@@ -14322,9 +14325,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 写作助手"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "包含高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME } 和 ${ LUMO_APP_NAME }"
       ],
@@ -14917,9 +14917,6 @@
       ],
       "Read receipt sent": [
         "回执已发送"
-      ],
-      "Secret passphrase updated": [
-        "密码短语已更新"
       ],
       "Self-destruction removed": [
         "自毁已移除"

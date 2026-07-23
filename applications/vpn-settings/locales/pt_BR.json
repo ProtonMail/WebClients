@@ -1019,9 +1019,6 @@
       "Send email reminder": [
         "Enviar lembrete por e-mail"
       ],
-      "Send feedback": [
-        "Enviar comentários"
-      ],
       "Send my username": [
         "Enviar meu nome de usuário"
       ],
@@ -1069,9 +1066,6 @@
       ],
       "Share": [
         "Compartilhar"
-      ],
-      "Share feedback": [
-        "Compartilhar comentário"
       ],
       "Share via link": [
         "Compartilhar via link"
@@ -1364,9 +1358,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente de escrita da ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "Assistente de escrita da ${ BRAND_NAME } Scribe (para ${ quantity } usuário)",
         "Assistente de escrita da ${ BRAND_NAME } Scribe (para ${ quantity } usuários)"
@@ -1391,6 +1382,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenças"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuário)",
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuários)"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -1638,6 +1633,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Leve a produtividade dos e-mails a um novo nível. Deixe ${ BRAND_NAME } Scribe ajudá-lo a escrever, responder e revisar seus e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Leve a produtividade dos e-mails a um novo nível. Deixe ${ LUMO_SHORT_APP_NAME } ajudá-lo a escrever, responder e revisar seus e-mails."
       ]
     },
     "Attached ics file error": {
@@ -1699,6 +1697,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do ${ LUMO_SHORT_APP_NAME } durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças do assistente de escrita do ${ LUMO_SHORT_APP_NAME } durante o período de avaliação."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças do Scribe durante o período de avaliação."
@@ -1872,12 +1873,19 @@
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais.",
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ LUMO_SHORT_APP_NAME }, aliases ide-my-email ilimitados e muito mais.",
+        "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ LUMO_SHORT_APP_NAME }, aliases ide-my-email ilimitados e muito mais."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, aliases hide-my-email ilimitados e muito mais.",
         "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, aliases hide-my-email ilimitados e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ LUMO_SHORT_APP_NAME }, aliases ide-my-email ilimitados e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, aliases hide-my-email ilimitados e muito mais."
@@ -6852,6 +6860,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inclui o assistente de escrita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
@@ -7440,9 +7454,6 @@
       ],
       "Copy your referral link": [
         "Copiar seu link de referência"
-      ],
-      "Couldn´t send feedback": [
-        "Não foi possível enviar o feedback"
       ],
       "Country code": [
         "Código do país"
@@ -8157,9 +8168,6 @@
       "Keep your passwords safe and sign in instantly with autofill across every device.": [
         "Mantenha suas senhas seguras e inicie sessão instantaneamente com preenchimento automático em todos os dispositivos."
       ],
-      "Key sections reorganized for faster access.": [
-        "Seções principais reorganizadas para acesso mais rápido."
-      ],
       "Keys created": [
         "Chave criada"
       ],
@@ -8300,12 +8308,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Novo grupo criado por meio do seu provedor de identidade e pendente de revisão."
-      ],
-      "New sidebar": [
-        "Nova barra lateral"
-      ],
-      "New sidebar layout": [
-        "Novo layout da barra lateral"
       ],
       "New user invited to organization": [
         "Novo usuário convidado para a organização"
@@ -8731,9 +8733,6 @@
       "Setting up your organization": [
         "Configurando a sua organização"
       ],
-      "Share your thoughts...": [
-        "Compartilhe suas ideias..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } compartilhado excluído"
       ],
@@ -8838,9 +8837,6 @@
       "Swiss based": [
         "Sediado na Suíça"
       ],
-      "Switch sidebars": [
-        "Alternar barras laterais"
-      ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
       ],
@@ -8861,9 +8857,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Obrigado por se inscrever. A navegação segura começa agora."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Obrigado - seu feedback foi enviado."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Obrigado por apoiar nossa missão em construir uma internet melhor onde a privacidade e a liberdade em primeiro lugar."
@@ -9674,9 +9667,6 @@
       ],
       "your encrypted data will be locked": [
         "seus dados criptografados ficarão bloqueados"
-      ],
-      "Your feedback": [
-        "Seu comentário"
       ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
@@ -11382,8 +11372,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adicionar assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Adicionar o assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Extensão com avaliação gratuita"
@@ -11794,6 +11790,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } calendário",
@@ -16203,9 +16202,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente de escrita da ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuário",
         "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuários"
@@ -16213,6 +16209,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } para ${ maxAi } usuário",
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } para ${ maxAi } usuários"
       ],
       "${ n } calendar per user": [
         "${ n } calendário por usuario",
@@ -16325,9 +16325,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente de escrita da ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } e ${ LUMO_APP_NAME } com recursos premium"
       ],
@@ -17876,9 +17873,6 @@
       "Help center": [
         "Central de ajuda"
       ],
-      "Help us improve": [
-        "Ajude-nos a melhorar"
-      ],
       "Helping activists in Hong Kong": [
         "Ajudando ativistas em Hong Kong"
       ],
@@ -18993,6 +18987,9 @@
       "Could not enable admin access for ${ n } user": [
         "Não foi possível ativar o acesso de administrador para ${ n } usuário",
         "Não foi possível ativar o acesso de administrador para ${ n } usuários"
+      ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Não foi possível habilitar o acesso de administrador: ${ unprivatizationResult.error }"
       ],
       "Enable manually": [
         "Ativar manualmente"

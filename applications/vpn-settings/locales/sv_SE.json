@@ -1019,9 +1019,6 @@
       "Send email reminder": [
         "Skicka e-postpåminnelse"
       ],
-      "Send feedback": [
-        "Skicka feedback"
-      ],
       "Send my username": [
         "Skicka mitt användarnamn"
       ],
@@ -1069,9 +1066,6 @@
       ],
       "Share": [
         "Dela"
-      ],
-      "Share feedback": [
-        "Dela feedback"
       ],
       "Share via link": [
         "Dela via länk"
@@ -1364,9 +1358,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe skrivassistent"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe skrivassistent (för ${ quantity } användare)",
         "${ BRAND_NAME } Scribe skrivassistent för ${ quantity } användare)"
@@ -1391,6 +1382,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)",
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerad server"
@@ -6849,6 +6844,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderar skrivassistenten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
       ],
@@ -7435,9 +7436,6 @@
       "Copy your referral link": [
         "Kopiera din hänvisningslänk"
       ],
-      "Couldn´t send feedback": [
-        "Kunde inte skicka feedback"
-      ],
       "Country code": [
         "Landskod"
       ],
@@ -7605,6 +7603,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "Ladda ner ${ powershellArtifact } och kör den på varje enhet som systemanvändare för att automatiskt placera enhetsprofilen."
       ],
       "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
         "Ladda ner ${ removeScriptLink } och kör det på varje enhet som systemanvändare för att ta bort profilen automatiskt."
@@ -8127,9 +8128,6 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Håll din information mer säker och privat med dessa guider och tips."
       ],
-      "Key sections reorganized for faster access.": [
-        "Viktiga sektioner omorganiserade för snabbare åtkomst."
-      ],
       "Keys created": [
         "Nycklar skapade"
       ],
@@ -8270,12 +8268,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Ny grupp skapad via din identitetsleverantör och väntar på granskning."
-      ],
-      "New sidebar": [
-        "Ny sidopanel"
-      ],
-      "New sidebar layout": [
-        "Ny layout på sidopanel"
       ],
       "New user invited to organization": [
         "Ny användare inbjuden till organisation"
@@ -8689,9 +8681,6 @@
       "Setting up your organization": [
         "Ställer in din organisation"
       ],
-      "Share your thoughts...": [
-        "Dela dina tankar …"
-      ],
       "Shared ${ vaultLink } deleted": [
         "Delad ${ vaultLink } borttagen"
       ],
@@ -8793,9 +8782,6 @@
       "Swiss based": [
         "Baserat i Schweiz"
       ],
-      "Switch sidebars": [
-        "Byt sidopaneler"
-      ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
       ],
@@ -8816,9 +8802,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Tack för att du prenumererar. Säker surfning börjar nu."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Tack - din feedback skickades."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Tack för att du stödjer vårt uppdrag att bygga ett bättre internet där integritet och frihet kommer först."
@@ -9614,9 +9597,6 @@
       ],
       "your encrypted data will be locked": [
         "dina krypterade data kommer att låsas"
-      ],
-      "Your feedback": [
-        "Din feedback"
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
@@ -11319,8 +11299,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Lägg till ${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Lägg till ${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
       "Add-on with free trial": [
         "Utökning med gratis provperiod"
@@ -11731,6 +11717,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } och ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -16140,9 +16129,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-skrivassistent"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } Scribe skrivassistent för ${ maxAi } användare",
         "${ BRAND_NAME } Scribe skrivassistent för ${ maxAi } användare"
@@ -16150,6 +16136,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikerad server",
         "${ ipAddresses } dedikerade servrar"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent för ${ maxAi } användare",
+        "${ LUMO_SHORT_APP_NAME } skrivassistent för ${ maxAi } användare"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per användare",
@@ -16262,9 +16252,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe skrivassistent"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } och ${ LUMO_APP_NAME } med premiumfunktioner"
       ],
@@ -17807,9 +17794,6 @@
       "Help center": [
         "Hjälpcenter"
       ],
-      "Help us improve": [
-        "Hjälp oss att förbättra"
-      ],
       "Helping activists in Hong Kong": [
         "Hjälper aktivister i Hongkong"
       ],
@@ -18918,6 +18902,9 @@
       "Could not enable admin access for ${ n } user": [
         "Kunde inte aktivera administratörsåtkomst för ${ n } användare",
         "Kunde inte aktivera administratörsåtkomst för ${ n } användare"
+      ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Kunde inte aktivera administratörsåtkomst: ${ unprivatizationResult.error }"
       ],
       "Enable manually": [
         "Aktivera manuellt"

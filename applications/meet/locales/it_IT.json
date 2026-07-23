@@ -752,9 +752,6 @@
       "Show floating thumbnail during screensharing": [
         "Mostra miniatura fluttuante durante la condivisione dello schermo"
       ],
-      "Show passphrase": [
-        "Mostra frase d'accesso"
-      ],
       "Stop recording and download.": [
         "Interrompi la registrazione e scarica."
       ],
@@ -1884,9 +1881,6 @@
       "Invalid meeting link": [
         "Link riunione non valido"
       ],
-      "Invalid passphrase": [
-        "Frase d'accesso non valida"
-      ],
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
@@ -2342,9 +2336,6 @@
       "Failed to update meeting name": [
         "Impossibile aggiornare il nome del dominio"
       ],
-      "Failed to update meeting password": [
-        "Impossibile aggiornare la password della riunione"
-      ],
       "Failed to update meeting schedule": [
         "Impossibile aggiornare la pianificazione della riunione"
       ],
@@ -2570,9 +2561,6 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Abilita l’accesso al tuo ${ microphoneLinkButton }${ andString }${ cameraLinkButton } per un’esperienza ottimale."
       ],
-      "Please enter the passphrase to decrypt and view this meeting": [
-        "Inserisci la frase d'accesso per decriptare e visualizzare questa riunione"
-      ],
       "Please try again or try another browser": [
         "Riprova o prova un altro browser"
       ],
@@ -2707,9 +2695,6 @@
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Questa riunione è bloccata. Contatta l'organizzatore per partecipare."
-      ],
-      "This meeting is password protected": [
-        "Questa riunione è protetta da password"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Questa riunione ha raggiunto il limite di tempo previsto da un piano gratuito. Effettua l'upgrade per estendere la durata delle riunioni nelle chiamate future."
@@ -2906,6 +2891,12 @@
       "Category": [
         "Categoria"
       ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versione Client"
+      ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
       ],
@@ -3034,9 +3025,6 @@
       ],
       "Participants join after you approve them": [
         "I partecipanti si uniscono dopo che li hai approvati"
-      ],
-      "Passphrase": [
-        "Passphrase"
       ],
       "Password": [
         "Password"
@@ -3234,9 +3222,6 @@
       ],
       "E.g., ": [
         "Ad es "
-      ],
-      "Enter passphrase": [
-        "Inserisci la frase di accesso"
       ],
       "Enter time": [
         "Inserisci ora"
@@ -3561,9 +3546,6 @@
       ],
       "Participants (${ filteredParticipants.length })": [
         "Partecipanti (${ filteredParticipants.length })"
-      ],
-      "Passphrase": [
-        "Frase d'accesso"
       ],
       "Personal meeting room": [
         "Riunione personale"

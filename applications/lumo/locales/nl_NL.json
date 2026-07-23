@@ -520,6 +520,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Breng e-mailproductiviteit naar een nieuw niveau. Laat ${ LUMO_SHORT_APP_NAME } u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -534,6 +537,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Tijdens de proefperiode kunt u maximaal ${ TRIAL_MAX_SCRIBE_SEATS } schrijfassistent-licenties ${ LUMO_SHORT_APP_NAME } hebben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -640,12 +646,19 @@
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer.",
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-email mailaliassen en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
@@ -997,6 +1010,9 @@
       "Collapse ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } inklappen"
       ],
+      "Connectors": [
+        "Connectoren"
+      ],
       "Continue": [
         "Doorgaan"
       ],
@@ -1053,6 +1069,12 @@
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Open ${ DRIVE_APP_NAME }"
+      ],
+      "Optimize": [
+        "Optimaliseer"
+      ],
+      "Optimize memories": [
+        "Herinneringen optimaliseren"
       ],
       "Refresh folder contents": [
         "Inhoud van de map vernieuwen"
@@ -1361,6 +1383,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } verwijst naar uw opgeslagen herinneringen om reacties op maat te maken: communicatiestijl, expertise, terugkerende tools en langlopende projecten."
+      ],
+      "${ LUMO_SHORT_APP_NAME } will review your saved memories, remove duplicates, and merge related entries into clearer ones. Your memory list will be replaced with the optimized result.": [
+        "${ LUMO_SHORT_APP_NAME } controleert uw opgeslagen herinneringen, verwijdert duplicaten en voegt gerelateerde vermeldingen samen tot duidelijkere herinneringen. Uw geheugenlijst wordt vervangen door het geoptimaliseerde resultaat."
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Voeg uw eigen herinneringen toe, bewerk automatisch gegenereerde gegevens of wis alles op elk gewenst moment. Gegenereerde herinneringen die u bewerkt, worden gepromoveerd tot uw eigen herinneringen."
@@ -1867,6 +1892,9 @@
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Beschrijf een workflow in eenvoudige taal en krijg een grafiek plus uitvoerbare code. Log in om deze functie te gebruiken."
       ],
+      "Disabled": [
+        "Uitgeschakeld"
+      ],
       "Domain name": [
         "Domeinnaam"
       ],
@@ -1878,6 +1906,9 @@
       ],
       "Earlier messages were summarized to make room, so they no longer take up space here.": [
         "Eerdere berichten zijn samengevat om ruimte te maken, waardoor ze hier geen ruimte meer innemen."
+      ],
+      "Enabled": [
+        "Ingeschakeld"
       ],
       "Error processing attachment": [
         "Fout bij verwerken bijlage"
@@ -1992,6 +2023,9 @@
       ],
       "No calls": [
         "Geen oproepen"
+      ],
+      "No connected connectors": [
+        "Geen aangesloten connectoren"
       ],
       "No content available.": [
         "Geen inhoud beschikbaar."
@@ -2200,6 +2234,9 @@
       "You are about to visit an external website:": [
         "U staat op het punt een externe website te bezoeken:"
       ],
+      "You have many saved memories. Use Optimize in the menu to merge duplicates and keep the list focused.": [
+        "Je hebt veel opgeslagen herinneringen. Gebruik Optimaliseren in het menu om duplicaten samen te voegen en de lijst overzichtelijk te houden."
+      ],
       "You've reached your image limit for this period.": [
         "U heeft uw afbeeldingenlimiet voor deze periode bereikt."
       ],
@@ -2220,6 +2257,9 @@
       ],
       "Your memories are already up to date.": [
         "Uw herinneringen zijn al actueel."
+      ],
+      "Your memories are already well organized.": [
+        "Uw herinneringen zijn al goed georganiseerd."
       ]
     },
     "collider_2025: Job": {
@@ -2638,6 +2678,12 @@
       "File uploaded to Drive folder": [
         "Bestand opgeladen naar Drive-map"
       ],
+      "Memories optimized successfully.": [
+        "Herinneringen zijn succesvol geoptimaliseerd."
+      ],
+      "Optimized memories: reduced from ${ beforeCount } to ${ optimized.length }.": [
+        "Herinneringen geoptimaliseerd: teruggebracht van ${ beforeCount } naar ${ optimized.length }."
+      ],
       "Thanks for the feedback!": [
         "Bedankt voor de feedback!"
       ]
@@ -2763,6 +2809,9 @@
       ],
       "Opening External Link": [
         "Externe link openen"
+      ],
+      "Optimize memories?": [
+        "Herinneringen optimaliseren?"
       ],
       "Parameters": [
         "Parameters"
@@ -2988,7 +3037,7 @@
         "Verbeter uw zakelijke AI-ervaring"
       ],
       "From only": [
-        "Vanaf slechts"
+        "Van alleen"
       ],
       "Get": [
         "Krijg"
@@ -3091,6 +3140,11 @@
       ],
       "You're getting close to the number of projects ${ LUMO_SHORT_APP_NAME } can keep purring over.": [
         "U komt bijna in de buurt van het aantal projecten dat ${ LUMO_SHORT_APP_NAME } kan blijven beheren."
+      ]
+    },
+    "collider_2025: Web Extract": {
+      "Failed to extract": [
+        "Kan niet uitpakken"
       ]
     },
     "collider_2025: Web Search": {
@@ -3409,11 +3463,17 @@
       "New project": [
         "Nieuw project"
       ],
+      "Projects": [
+        "Projecten"
+      ],
       "Save": [
         "Opslaan"
       ],
       "Search": [
         "Zoeken"
+      ],
+      "See all": [
+        "Alles weergeven"
       ],
       "Send": [
         "Verzenden"
@@ -3698,6 +3758,9 @@
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Er staan geen persoonlijke gegevens op deze kaart, alleen uw blootstellingsscore per gebied. Lager betekent dat u minder hebt prijsgegeven."
+      ],
+      "No projects yet": [
+        "Nog geen projecten"
       ],
       "Now protect the person behind it.": [
         "Bescherm nu de persoon erachter."
@@ -6243,6 +6306,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } bevat de schrijfassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
       ],
@@ -6925,6 +6994,12 @@
       "City": [
         "Stad"
       ],
+      "Client": [
+        "Klant"
+      ],
+      "Client version": [
+        "Klantenversie"
+      ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
@@ -7451,8 +7526,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Voeg ${ LUMO_SHORT_APP_NAME } schrijfassistent toe"
       ],
       "Add-on with free trial": [
         "Add-on met gratis proefversie"
@@ -7596,6 +7677,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
       ],
       "${ n } calendar": [
         "${ n } agenda",
