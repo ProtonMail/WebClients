@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { useGetUser } from '@proton/account/user/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 
-import type { ImportIssue, Importer } from 'proton-mail/contentSearch/import/Importer';
+import type { ImportIssue } from 'proton-mail/contentSearch/import/Import';
+import type { ImportHandle } from 'proton-mail/contentSearch/import/ImportHandle';
 
-// The running importer is kept outside React so it outlives the view: the dialog can be
-// closed and reopened, and the next mount reattaches to the still-running import.
-let runningImporter: Importer | null = null;
+import { getSharedIndexService } from '../indexation/IndexService';
 
 export interface ImporterState {
     /** Whether an import is currently in progress. */
@@ -24,18 +23,21 @@ export interface ImporterState {
     stop: () => void;
 }
 
-const getRemainingMinutesFromImporter = (importer: Importer | null) => importer?.remainingMinutes?.toString() ?? '∞';
+const getRemainingMinutesFromImporter = (importer: ImportHandle | undefined) =>
+    importer?.remainingMinutes?.toString() ?? '∞';
 /**
  * Binds the view to the (view-outliving) importer: exposes its observable state and the
  * start/stop verbs, and hides all the subscription/seed/cleanup mechanism.
  */
 export function useImporter(): ImporterState {
-    const getUser = useGetUser();
+    const [user] = useUser();
     const getUserKeys = useGetUserKeys();
-    const [importer, setImporter] = useState<Importer | null>(runningImporter);
+    const [importer, setImporter] = useState<ImportHandle | undefined>(
+        getSharedIndexService(user.ID, getUserKeys).currentImport
+    );
     const [running, setRunning] = useState(importer?.running ?? false);
     const [progress, setProgress] = useState((importer?.progress ?? 0) * 100);
-    const [issues, setIssues] = useState<ImportIssue[]>(importer ? [...importer.issues] : []);
+    const [issues, setIssues] = useState<ImportIssue[]>(importer ? importer.issues : []);
     const [remainingMinutes, setRemainingMinutes] = useState<string>(getRemainingMinutesFromImporter(importer));
 
     useEffect(() => {
@@ -56,9 +58,6 @@ export function useImporter(): ImporterState {
             setRemainingMinutes(getRemainingMinutesFromImporter(importer));
             if (!importer.running) {
                 setRunning(false);
-                if (runningImporter === importer) {
-                    runningImporter = null;
-                }
             }
         });
         // The importer notifies with the same array instance, so copy it to force a render.
@@ -74,27 +73,17 @@ export function useImporter(): ImporterState {
 
     const stop = () => {
         importer?.stop();
-        if (runningImporter === importer) {
-            runningImporter = null;
-        }
         setRunning(false);
-        setImporter(null);
+        setImporter(undefined);
     };
 
     const start = async () => {
-        runningImporter?.stop();
         setIssues([]);
         setProgress(0);
-        const user = await getUser();
-        // lazy-load content search code
-        const { Importer } = await import(
-            /* webpackChunkName: "content-search-import" */ 'proton-mail/contentSearch/import/Importer'
-        );
-        const next = new Importer(user.ID, getUserKeys);
-        runningImporter = next;
-        next.start();
         setRunning(true);
-        setImporter(next); // triggers the effect above, which subscribes to the new importer
+        const indexService = getSharedIndexService(user.ID, getUserKeys);
+        const importer = await indexService.importFromEncryptedSearch();
+        setImporter(importer); // triggers the effect above, which subscribes to the new importer
     };
 
     return { running, progress, issues, remainingMinutes, start, stop };
