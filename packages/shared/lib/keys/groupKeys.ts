@@ -176,7 +176,7 @@ export const encryptGroupOwnerTokenPackets = async ({
     signingKey: PrivateKeyReference;
     signatureContextValue: string;
 }): Promise<{ TokenKeyPacket: string; TokenSignaturePacket: string }> => {
-    // Generate the token key packet - sessionKey encrypted with the publicUserKey
+    // Generate the token key packet - sessionKey encrypted with the encryptionKey
     const TokenKeyPacket = (
         await CryptoProxy.encryptSessionKey({
             ...sessionKey,
@@ -185,7 +185,7 @@ export const encryptGroupOwnerTokenPackets = async ({
         })
     ).toBase64();
 
-    // Re-sign the decrypted token with the private user key
+    // Re-sign the decrypted token with the signingKey
     const TokenSignaturePacket = await CryptoProxy.signMessage({
         textData: decryptedToken,
         signingKeys: [signingKey],
