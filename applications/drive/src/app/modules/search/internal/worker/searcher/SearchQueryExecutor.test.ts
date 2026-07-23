@@ -1,13 +1,12 @@
+import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
-
-import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import { SearchDB } from '../../shared/SearchDB';
 import { collectResults, indexDocuments, makeTestIndexEntry } from '../../testing/indexHelpers';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
 import { IndexKind, IndexRegistry } from '../index/IndexRegistry';
-import { normalizedFilenameForTag } from '../indexer/indexEntry';
+import { normalizedFilenameForTag, normalizedFilenameForText } from '../indexer/indexEntry';
 import { SearchQueryExecutor, setActiveEnginesForTests } from './SearchQueryExecutor';
 
 setupRealSearchLibraryWasm();
@@ -41,28 +40,28 @@ describe('SearchQueryExecutor integration', () => {
         const main = await registry.get(IndexKind.MAIN, db);
         await indexDocuments(main.indexWriter, [
             makeTestIndexEntry('file-1', {
-                filename: { kind: 'tag', value: normalizedFilenameForTag('file_1.txt') },
-                filenameText: { kind: 'text', value: normalizedFilenameForTag('file_1.txt') },
+                filenameTag: { kind: 'tag', value: normalizedFilenameForTag('file_1.txt') },
+                filenameText: { kind: 'text', value: normalizedFilenameForText('file_1.txt') },
             }),
             makeTestIndexEntry('file-2', {
-                filename: { kind: 'tag', value: normalizedFilenameForTag('file_2.jpeg') },
-                filenameText: { kind: 'text', value: normalizedFilenameForTag('file_2.jpeg') },
+                filenameTag: { kind: 'tag', value: normalizedFilenameForTag('file_2.jpeg') },
+                filenameText: { kind: 'text', value: normalizedFilenameForText('file_2.jpeg') },
             }),
             makeTestIndexEntry('folder-1', {
-                filename: { kind: 'tag', value: normalizedFilenameForTag('folder_1') },
-                filenameText: { kind: 'text', value: normalizedFilenameForTag('folder_1') },
+                filenameTag: { kind: 'tag', value: normalizedFilenameForTag('folder_1') },
+                filenameText: { kind: 'text', value: normalizedFilenameForText('folder_1') },
             }),
         ]);
 
         const photos = await registry.get(PHOTOS, db);
         await indexDocuments(photos.indexWriter, [
             makeTestIndexEntry('file-3', {
-                filename: { kind: 'tag', value: normalizedFilenameForTag('file_3.mpeg') },
-                filenameText: { kind: 'text', value: normalizedFilenameForTag('file_3.mpeg') },
+                filenameTag: { kind: 'tag', value: normalizedFilenameForTag('file_3.mpeg') },
+                filenameText: { kind: 'text', value: normalizedFilenameForText('file_3.mpeg') },
             }),
             makeTestIndexEntry('file-2', {
-                filename: { kind: 'tag', value: normalizedFilenameForTag('file_2.jpeg') },
-                filenameText: { kind: 'text', value: normalizedFilenameForTag('file_2.jpeg') },
+                filenameTag: { kind: 'tag', value: normalizedFilenameForTag('file_2.jpeg') },
+                filenameText: { kind: 'text', value: normalizedFilenameForText('file_2.jpeg') },
             }),
         ]);
 
@@ -84,8 +83,8 @@ describe('SearchQueryExecutor integration', () => {
     describe('filename matching', () => {
         const indexFileEntry = (id: string, name: string) =>
             makeTestIndexEntry(id, {
-                filename: { kind: 'tag', value: normalizedFilenameForTag(name) },
-                filenameText: { kind: 'text', value: normalizedFilenameForTag(name) },
+                filenameTag: { kind: 'tag', value: normalizedFilenameForTag(name) },
+                filenameText: { kind: 'text', value: normalizedFilenameForText(name) },
             });
 
         it('returns empty when index is empty', async () => {
@@ -191,20 +190,50 @@ describe('SearchQueryExecutor integration', () => {
             expect(ids).not.toContain('file-2');
         });
 
-        it('matches query with special characters like #', async () => {
-            await indexDocs(indexFileEntry('file-1', 'My file_name #1.png'), indexFileEntry('file-2', 'other.txt'));
+        it('matches query with special characters like # literally', async () => {
+            // Negative control: 'file-2' shares the stripped residue ("...1.png") but not the
+            // literal "#1", so only 'file-1' must match - proving the '#' is matched literally.
+            await indexDocs(
+                indexFileEntry('file-1', 'My file_name #1.png'),
+                indexFileEntry('file-2', 'My file_name 1.png'),
+                indexFileEntry('file-3', 'other.txt')
+            );
 
             const results = await collectResults(executor.performSearch({ filename: '#1' }));
             const ids = results.map((r) => r.nodeUid);
             expect(ids).toContain('file-1');
             expect(ids).not.toContain('file-2');
+            expect(ids).not.toContain('file-3');
         });
 
-        it('returns nothing for pure-special-char query', async () => {
-            await indexDocs(indexFileEntry('file-1', 'My file_name #1.png'));
+        it('matches a lone special-character query', async () => {
+            // With special chars preserved, "#" is a real substring search: it matches names
+            // containing "#" and nothing else.
+            await indexDocs(indexFileEntry('file-1', 'My file_name #1.png'), indexFileEntry('file-2', 'other.txt'));
 
             const results = await collectResults(executor.performSearch({ filename: '#' }));
-            expect(results).toHaveLength(0);
+            const ids = results.map((r) => r.nodeUid);
+            expect(ids).toContain('file-1');
+            expect(ids).not.toContain('file-2');
+        });
+
+        it('returns nothing for empty or whitespace-only query', async () => {
+            await indexDocs(indexFileEntry('file-1', 'My file_name #1.png'));
+
+            expect(await collectResults(executor.performSearch({ filename: '' }))).toHaveLength(0);
+            expect(await collectResults(executor.performSearch({ filename: '   ' }))).toHaveLength(0);
+        });
+
+        it('treats a literal * in the query as a literal character', async () => {
+            await indexDocs(indexFileEntry('file-1', 'a*b.txt'), indexFileEntry('file-2', 'axb.txt'));
+
+            // Func.Equals matches the `.then()` part verbatim, so the '*' is literal, not a
+            // wildcard: only the file that actually contains '*' matches. (The stripped text
+            // residue 'ab' is < 3 chars, so the fuzzy path contributes nothing here.)
+            const results = await collectResults(executor.performSearch({ filename: 'a*b' }));
+            const ids = results.map((r) => r.nodeUid);
+            expect(ids).toContain('file-1');
+            expect(ids).not.toContain('file-2');
         });
 
         it('matches full filename with mixed special chars and spaces', async () => {
@@ -229,8 +258,8 @@ describe('SearchQueryExecutor integration', () => {
     describe('trash exclusion', () => {
         const indexFileEntry = (id: string, name: string, trash: { trashTime?: bigint } = {}) =>
             makeTestIndexEntry(id, {
-                filename: { kind: 'tag', value: normalizedFilenameForTag(name) },
-                filenameText: { kind: 'text', value: normalizedFilenameForTag(name) },
+                filenameTag: { kind: 'tag', value: normalizedFilenameForTag(name) },
+                filenameText: { kind: 'text', value: normalizedFilenameForText(name) },
                 ...(trash.trashTime !== undefined
                     ? { trashTime: { kind: 'integer' as const, value: trash.trashTime } }
                     : {}),
