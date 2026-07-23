@@ -8,9 +8,7 @@ import type { IDBPDatabase } from 'idb';
 import { BlobCache } from '../cache/BlobCache';
 import { openContentSearchDB } from '../db/open';
 import type { Database } from '../db/schema';
-import { EncryptedBlobTransaction } from './EncryptedBlobTransaction';
-
-const bytes = (values: number[]) => new Uint8Array(values) as Uint8Array<ArrayBuffer>;
+import { EncryptedBlobTransaction, getBlobEncryptionContext } from './EncryptedBlobTransaction';
 
 /**
  * The foundation-search events are wasm objects; the transaction only ever calls a
@@ -25,7 +23,7 @@ const fakeCached = (payload: Uint8Array<ArrayBuffer>): FakeCached => ({
 const loadEvent = (id: string) => ({
     id: () => id,
     sendCached: jest.fn(),
-    send: jest.fn((_serdes: unknown, _blob: Uint8Array<ArrayBuffer>) => fakeCached(bytes([]))),
+    send: jest.fn((_serdes: unknown, _blob: Uint8Array<ArrayBuffer>) => fakeCached(new Uint8Array([]))),
     sendEmpty: jest.fn(),
 });
 
@@ -54,18 +52,18 @@ describe('EncryptedBlobTransaction', () => {
 
     /** Stores an encrypted blob straight into storage, bypassing the transaction. */
     const putEncryptedBlob = async (id: string, plaintext: Uint8Array<ArrayBuffer>) => {
-        await db.put('index_blobs', await encryptData(key, plaintext), id);
+        await db.put('index_blobs', await encryptData(key, plaintext, getBlobEncryptionContext(id)), id);
     };
 
     describe('write + read round trip', () => {
         it('encrypts on write and decrypts back on read, and bumps the revision', async () => {
-            const plaintext = bytes([1, 2, 3, 4]);
+            const plaintext = new Uint8Array([1, 2, 3, 4]);
 
             const writeTxn = await EncryptedBlobTransaction.start(undefined, db, key);
             writeTxn.handleSaveEvent(saveEvent('blob-1', fakeCached(plaintext)) as any);
-            await writeTxn.encrypt();
+            const sealed = await writeTxn.encrypt();
             const rw = readwriteTxn();
-            await writeTxn.verifyAndWrite(rw);
+            await sealed.verifyAndWrite(rw);
             await rw.done;
 
             // stored blob is ciphertext, not the plaintext
@@ -99,7 +97,7 @@ describe('EncryptedBlobTransaction', () => {
     describe('reads reflect uncommitted transaction state', () => {
         it('returns a blob written earlier in the same transaction without hitting storage', async () => {
             const txn = await EncryptedBlobTransaction.start(undefined, db, key);
-            txn.handleSaveEvent(saveEvent('pending', fakeCached(bytes([5, 6]))) as any);
+            txn.handleSaveEvent(saveEvent('pending', fakeCached(new Uint8Array([5, 6]))) as any);
 
             const event = loadEvent('pending');
             await txn.handleLoadEvent(event as any);
@@ -110,7 +108,7 @@ describe('EncryptedBlobTransaction', () => {
         });
 
         it('shadows a stored blob that is scheduled for deletion', async () => {
-            await putEncryptedBlob('doomed', bytes([9]));
+            await putEncryptedBlob('doomed', new Uint8Array([9]));
 
             const txn = await EncryptedBlobTransaction.start(undefined, db, key);
             txn.handleReleaseEvent(releaseEvent('doomed') as any);
@@ -127,7 +125,7 @@ describe('EncryptedBlobTransaction', () => {
         it('serves a cached blob without touching storage or decrypting', async () => {
             const cache = new BlobCache();
             const txn = await EncryptedBlobTransaction.start(cache, db, key);
-            const cached = fakeCached(bytes([1]));
+            const cached = fakeCached(new Uint8Array([1]));
             txn.handleSaveEvent(saveEvent('cached', cached) as any);
 
             const event = loadEvent('cached');
@@ -155,29 +153,29 @@ describe('EncryptedBlobTransaction', () => {
             await expect(txn.verify(db.transaction('config'))).resolves.toBeUndefined();
         });
 
-        it('requires encrypt() to be called before verifyAndWrite', async () => {
+        it('refuses to handle further events once consumed by encrypt()', async () => {
+            // encrypt() consumes the transaction and hands back the write-only sealed one; the
+            // original can no longer accept events (the type-state makes this a compile error too,
+            // this guards the runtime case of a stale reference).
             const txn = await EncryptedBlobTransaction.start(undefined, db, key);
-            txn.handleSaveEvent(saveEvent('blob', fakeCached(bytes([1]))) as any);
+            txn.handleSaveEvent(saveEvent('blob', fakeCached(new Uint8Array([1]))) as any);
+            await txn.encrypt();
 
-            const rw = readwriteTxn();
-            // verifyAndWrite throws synchronously before queuing anything, so settle the otherwise
-            // empty transaction to avoid an unhandled abort firing after the test finishes.
-            const done = rw.done.catch(() => {});
-            await expect(txn.verifyAndWrite(rw)).rejects.toThrow('Call encrypt() first');
-            rw.abort();
-            await done;
+            expect(() => txn.handleSaveEvent(saveEvent('after', fakeCached(new Uint8Array([2]))) as any)).toThrow(
+                'transaction has been consumed'
+            );
         });
     });
 
-    describe('cleanup: verifyAndWriteAndDeleteUntracked', () => {
+    describe('cleanup: verifyAndWrite deletes untracked blobs', () => {
         const writeBlobs = async (ids: string[]) => {
             const txn = await EncryptedBlobTransaction.start(undefined, db, key);
             for (const id of ids) {
-                txn.handleSaveEvent(saveEvent(id, fakeCached(bytes([1]))) as any);
+                txn.handleSaveEvent(saveEvent(id, fakeCached(new Uint8Array([1]))) as any);
             }
-            await txn.encrypt();
+            const sealed = await txn.encrypt();
             const rw = readwriteTxn();
-            await txn.verifyAndWrite(rw);
+            await sealed.verifyAndWrite(rw);
             await rw.done;
         };
 
@@ -186,23 +184,26 @@ describe('EncryptedBlobTransaction', () => {
 
             const txn = await EncryptedBlobTransaction.start(undefined, db, key);
             txn.trackBlob('keep');
-            await txn.encrypt();
+            const sealed = await txn.encrypt();
             const rw = readwriteTxn();
-            await txn.verifyAndWriteAndDeleteUntracked(rw);
+            await sealed.verifyAndWrite(rw);
             await rw.done;
 
             expect(await db.get('index_blobs', 'keep')).toBeDefined();
             expect(await db.get('index_blobs', 'drop')).toBeUndefined();
         });
 
-        it('refuses to run when nothing is tracked, to avoid wiping the whole index', async () => {
+        it('does not delete untracked blobs when nothing is tracked, to avoid wiping the whole index', async () => {
             await writeBlobs(['a', 'b']);
 
             const txn = await EncryptedBlobTransaction.start(undefined, db, key);
-            await txn.encrypt();
+            const sealed = await txn.encrypt();
             const rw = readwriteTxn();
 
-            await expect(txn.verifyAndWriteAndDeleteUntracked(rw)).rejects.toThrow('no blobs are tracked');
+            // with no tracked blobs, verifyAndWrite must not treat every existing blob as untracked
+            // and delete it; the untracked-deletion pass is skipped entirely.
+            await sealed.verifyAndWrite(rw);
+            await rw.done;
 
             // nothing was deleted
             expect(await db.get('index_blobs', 'a')).toBeDefined();

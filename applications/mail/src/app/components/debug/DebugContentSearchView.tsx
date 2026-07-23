@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Progress from '@proton/components/components/progress/Progress';
-import { useAuthentication } from '@proton/components/index';
 
-import { cleanupIndex, lookupDoc } from 'proton-mail/contentSearch/devTools.ts';
-import { ImportIssueSeverity } from 'proton-mail/contentSearch/import/Importer';
+import { lookupDoc } from 'proton-mail/contentSearch/devTools.ts';
+import { ImportIssueSeverity } from 'proton-mail/contentSearch/import/Import';
 import { findEncryptedSearchIndexSize } from 'proton-mail/contentSearch/import/indexSize.ts';
 
-import { useImporter } from './useImporter';
+import { useImporter } from '../../contentSearch/import/useImporter';
 
 import './DebugContentSearchView.scss';
 
@@ -30,7 +30,7 @@ export function DebugContentSearchView() {
     const [user] = useUser();
     const { running, progress, issues, remainingMinutes, start, stop } = useImporter();
     const [oldIndexSize, setOldIndexSize] = useState<number | false | undefined>(undefined);
-    const authentication = useAuthentication();
+    const getUserKeys = useGetUserKeys();
 
     useEffect(() => {
         findEncryptedSearchIndexSize(user.ID).then(
@@ -72,22 +72,14 @@ export function DebugContentSearchView() {
                     </Button>
                     <Button
                         size="small"
-                        onClick={() => {
+                        onClick={async () => {
                             const id = prompt(c('Label').t`Document ID`);
                             if (id) {
-                                lookupDoc(user, authentication.getPassword(), id).catch((err) => console.error(err));
+                                lookupDoc(user, await getUserKeys(), id).catch((err) => console.error(err));
                             }
                         }}
                     >
                         {c('Action').t`Lookup document`}
-                    </Button>
-                    <Button
-                        size="small"
-                        onClick={() =>
-                            cleanupIndex(user, authentication.getPassword()).catch((err) => console.error(err))
-                        }
-                    >
-                        {c('Action').t`Cleanup`}
                     </Button>
                 </div>
             )}

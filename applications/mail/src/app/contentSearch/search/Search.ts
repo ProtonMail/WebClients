@@ -22,7 +22,7 @@ export class Search {
 
     constructor(
         private params: NormalizedSearchParams,
-        private workerPromise: Promise<Comlink.Remote<SearchWorker>>,
+        private workerPromise: Promise<Comlink.Remote<SearchWorker> | undefined>,
         private openESReader: () => Promise<EncryptedSearchReader>
     ) {}
 
@@ -69,6 +69,12 @@ export class Search {
      */
     private async execute(): Promise<void> {
         const worker = await this.workerPromise;
+        // index does not exist yet, for now just show empty results
+        if (!worker) {
+            this.unfilteredResults = [];
+            this.applyFilters();
+            return;
+        }
         performance.mark('search-worker-start');
         const ids = await worker.search(this.params);
         performance.measure('search-worker', 'search-worker-start');

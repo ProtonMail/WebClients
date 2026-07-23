@@ -7,6 +7,8 @@ import type { ESCallbacks, EncryptedSearchFunctions, NormalizedSearchParams } fr
 
 import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encryptedSearch';
 
+import { getSharedIndexService } from '../indexation/IndexService';
+import { SearchService } from '../search/SearchService';
 import { ESAdapter } from './ESAdapter';
 
 type Functions = EncryptedSearchFunctions<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
@@ -71,7 +73,9 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1 }: Props): 
     // It only depends on the userID which doesn't change within the lifetime of the app.
     const ref = useRef<{ adapter: ESAdapter; functions: Functions }>();
     if (!ref.current) {
-        const adapter = new ESAdapter(user.ID, getUserKeys, esCallbacks, esLibraryFunctionsV1);
+        const searchService = new SearchService(user.ID, getUserKeys);
+        const indexService = getSharedIndexService(user.ID, getUserKeys);
+        const adapter = new ESAdapter(searchService, indexService, esCallbacks, esLibraryFunctionsV1);
         ref.current = { adapter, functions: toBoundFunctions(adapter) };
     }
 
