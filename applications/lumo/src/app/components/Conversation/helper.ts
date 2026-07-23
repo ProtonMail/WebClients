@@ -111,6 +111,7 @@ export type UiContext = {
     enableImageTools: boolean;
     enableReasoning?: boolean;
     modelTier?: 'auto' | 'lumo-lite' | 'lumo-max';
+    generateTitle?: boolean;
     enableSmoothing?: boolean; // todo remove optional
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
     isGhostMode?: boolean; // todo remove optional
@@ -350,7 +351,7 @@ export function sendMessage({
 
         // Get user ID for RAG retrieval (already resolved above for @mentions)
 
-        const generateTitle = c.messageChain.length === 0;
+        const generateTitle = ui.generateTitle ?? c.messageChain.length === 0;
         const linearChain = newMessageChain;
 
         const isGhostConversation = state.conversations[conversationId]?.ghost === true;
