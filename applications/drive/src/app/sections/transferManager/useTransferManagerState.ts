@@ -132,11 +132,20 @@ export const useTransferManagerState = () => {
             const statesCounter = (statesMap.get(transfer.status) ?? 0) + 1;
             statesMap.set(transfer.status, statesCounter);
             const shouldIgnore = getShouldIgnoreTransferProgress(transfer.status);
-            const belongsToPreviousBatch = doesTransferBelongToPreviousBatch(transfer);
-            if (shouldIgnore || transfer.status === BaseTransferStatus.Finished) {
+            const isFinished = shouldIgnore || transfer.status === BaseTransferStatus.Finished;
+            if (isFinished) {
                 transfersFinished.push(transfer);
             }
-            if (belongsToPreviousBatch) {
+            // The batch-reset heuristic must only drop *finished* transfers left over
+            // from a previously completed batch, so a new batch starts its percentage
+            // fresh. An active transfer is always part of the current batch: excluding
+            // it here would pin the header at 0% for the whole transfer, because
+            // `lastStatusUpdateTime` is frozen at the moment the item entered its
+            // current status (it does not advance on byte progress). A long upload that
+            // happens to start within PROGRESS_RESET_DELAY of the last completion (e.g.
+            // right after the folder-creation item finishes) would otherwise stay
+            // classified as "previous batch" for its entire multi-hour duration.
+            if (isFinished && doesTransferBelongToPreviousBatch(transfer)) {
                 continue;
             }
             if (!shouldIgnore) {
