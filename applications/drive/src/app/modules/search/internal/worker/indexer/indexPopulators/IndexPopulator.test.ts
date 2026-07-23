@@ -582,7 +582,7 @@ describe('IndexPopulator', () => {
             const instance = await indexRegistry.get(IndexKind.MAIN, db);
             const results = await findDocumentsByTag(
                 instance.indexReader,
-                'filename',
+                'filenameTag',
                 normalizedFilenameForTag('renamed.txt')
             );
             expect(results.map((r) => r.identifier)).toEqual(['file-1']);
