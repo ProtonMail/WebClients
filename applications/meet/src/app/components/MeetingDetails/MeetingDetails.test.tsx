@@ -10,6 +10,7 @@ import {
     sortedParticipantsReducer,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
+import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import { MeetContext } from '../../contexts/MeetContext';
@@ -18,7 +19,8 @@ import { WrappedMeetingDetails } from './MeetingDetails';
 const mockMeetingName = 'Mock Meeting Name';
 
 const meetingLinkName = '1234567890';
-const mockLink = `https://example.com/join/id-${meetingLinkName}#pwd-password1234`;
+const meetingPassword = 'password1234';
+const mockLink = `${window.location.origin}${getMeetingLink(meetingLinkName, meetingPassword)}`;
 
 vi.mock('@proton/meet/store/hooks/useMeetings', () => ({
     useMeetings: () => [
@@ -64,8 +66,9 @@ const createMockStore = ({ sideBarOpen = false }) => {
             },
             meetingInfo: {
                 ...initialMeetingInfoState,
-                meetingLink: mockLink,
-                roomName: mockMeetingName,
+                meetingLinkName,
+                meetingPassword,
+                meetingName: mockMeetingName,
             },
             sortedParticipants: {
                 ...initialSortedParticipantsState,

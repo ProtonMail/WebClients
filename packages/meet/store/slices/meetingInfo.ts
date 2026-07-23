@@ -1,15 +1,20 @@
 import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { MINUTE } from '@proton/shared/lib/constants';
 
 import type { KeyRotationLog, MLSGroupState } from '../../types/types';
+import { getMeetingLink } from '../../utils/getMeetingLink';
 import type { MeetState } from '../rootReducer';
 
 export interface MeetingInfoState {
-    roomName: string;
-    meetingLink: string;
+    // Decrypted meeting name
+    meetingName: string;
+    // 10 digits ID, livekit Room.name
+    meetingLinkName: string;
+    // Meeting password
+    meetingPassword: string;
     maxParticipants: number;
     maxDuration: number;
     expirationTime: number | null;
@@ -24,8 +29,9 @@ export interface MeetingInfoState {
 }
 
 export const initialState: MeetingInfoState = {
-    roomName: '',
-    meetingLink: '',
+    meetingName: '',
+    meetingLinkName: '',
+    meetingPassword: '',
     maxParticipants: 0,
     maxDuration: 0,
     expirationTime: null,
@@ -39,6 +45,10 @@ export const initialState: MeetingInfoState = {
     meetingDurationTimer: null,
 };
 
+/**
+ * Meeting info slice.
+ * Stores the current meeting info during prejoin and in-call.
+ */
 const slice = createSlice({
     name: 'meetingInfo',
     initialState,
@@ -47,10 +57,7 @@ const slice = createSlice({
             return { ...state, ...action.payload };
         },
         setRoomName: (state, action: PayloadAction<string>) => {
-            state.roomName = action.payload;
-        },
-        setMeetingLink: (state, action: PayloadAction<string>) => {
-            state.meetingLink = action.payload;
+            state.meetingName = action.payload;
         },
         setExpirationTime: (state, action: PayloadAction<number | null>) => {
             state.expirationTime = action.payload;
@@ -125,7 +132,6 @@ export const stopMeetingDurationTimer =
 export const {
     setMeetingInfo,
     setRoomName,
-    setMeetingLink,
     setExpirationTime,
     setDisplayName,
     setMlsGroupState,
@@ -134,8 +140,20 @@ export const {
 } = slice.actions;
 
 export const selectMeetingInfo = (state: MeetState) => state.meetingInfo;
-export const selectRoomName = (state: MeetState) => state.meetingInfo.roomName;
-export const selectMeetingLink = (state: MeetState) => state.meetingInfo.meetingLink;
+// TODO(follow-up): rename to selectMeetingName and migrate consumers
+export const selectRoomName = (state: MeetState) => state.meetingInfo.meetingName;
+export const selectMeetingLinkName = (state: MeetState) => state.meetingInfo.meetingLinkName;
+export const selectMeetingPassword = (state: MeetState) => state.meetingInfo.meetingPassword;
+export const selectMeetingLink = createSelector(
+    selectMeetingLinkName,
+    selectMeetingPassword,
+    (meetingLinkName, meetingPassword) =>
+        `${window.location.origin}${
+            meetingLinkName && meetingPassword
+                ? getMeetingLink(meetingLinkName, meetingPassword)
+                : window.location.pathname
+        }`
+);
 export const selectMaxParticipants = (state: MeetState) => state.meetingInfo.maxParticipants;
 export const selectMaxDuration = (state: MeetState) => state.meetingInfo.maxDuration;
 export const selectExpirationTime = (state: MeetState) => state.meetingInfo.expirationTime;

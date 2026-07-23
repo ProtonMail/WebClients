@@ -12,6 +12,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { useMeetings } from '@proton/meet/store/hooks/useMeetings';
+import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
 import { selectIsMeetingHost } from '@proton/meet/store/slices/meetings';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import clsx from '@proton/utils/clsx';
@@ -23,13 +24,11 @@ import { WaitingRoomDropdown } from './WaitingRoomDropdown';
 import './PreJoinDetails.scss';
 
 type PreJoinDetailsInternalProps = {
-    roomName: string;
     roomId: string;
     displayName: string;
     keepDisplayName: boolean;
     onDisplayNameChange: (displayName: string) => void;
     onJoinMeeting: (displayName: string, keepOnDevice: boolean) => void;
-    shareLink: string;
     instantMeeting: boolean;
     meetingsLoading: boolean;
 };
@@ -37,13 +36,11 @@ type PreJoinDetailsInternalProps = {
 type PreJoinDetailsProps = Omit<PreJoinDetailsInternalProps, 'meetingsLoading'>;
 
 export const PreJoinDetailsInternal = ({
-    roomName,
     roomId,
     displayName,
     onDisplayNameChange,
     keepDisplayName,
     onJoinMeeting,
-    shareLink,
     instantMeeting,
     meetingsLoading,
 }: PreJoinDetailsInternalProps) => {
@@ -51,6 +48,7 @@ export const PreJoinDetailsInternal = ({
     const { viewportWidth } = useActiveBreakpoint();
 
     const isHost = useMeetSelector((state) => selectIsMeetingHost(state, roomId));
+    const meetingLink = useMeetSelector(selectMeetingLink);
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
@@ -81,7 +79,7 @@ export const PreJoinDetailsInternal = ({
         >
             {!meetingsLoading && (
                 <>
-                    <PreJoinDetailsHeader roomName={roomName} roomId={roomId} instantMeeting={instantMeeting} />
+                    <PreJoinDetailsHeader roomId={roomId} instantMeeting={instantMeeting} />
                     <div className="flex flex-column gap-2 lg:gap-4 w-full">
                         {showHostScreen ? (
                             <InputFieldStackedGroup classname="w-full">
@@ -125,7 +123,7 @@ export const PreJoinDetailsInternal = ({
                                                 transform: 'translateY(-50%)',
                                             }}
                                             onClick={() => {
-                                                void navigator.clipboard.writeText(shareLink);
+                                                void navigator.clipboard.writeText(meetingLink);
                                                 notificationManager.createNotification({
                                                     type: 'info',
                                                     text: c('Notification').t`Copied to clipboard`,

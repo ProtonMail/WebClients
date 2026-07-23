@@ -20,15 +20,16 @@ import {
     setPreviousMeetingLink,
     setUpsellModalType,
 } from '@proton/meet/store/slices/meetAppStateSlice';
+import { selectMeetingLink, selectMeetingLinkName, selectMeetingPassword } from '@proton/meet/store/slices/meetingInfo';
 import {
     selectHasAnotherAdmin,
+    selectIsGuestAdmin,
     selectIsLocalParticipantAdminOrHost,
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
 import { PopUpControls, setPopupStateValue } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectSubscriptionStatus, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
-import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
@@ -45,7 +46,7 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
 import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
-import { type MeetingDetails, useJoinFlow } from '../../hooks/protonMeetContainer/useJoinFlow';
+import { useJoinFlow } from '../../hooks/protonMeetContainer/useJoinFlow';
 import { useMeetingCleanup } from '../../hooks/protonMeetContainer/useMeetingCleanup';
 import { useMeetingConnection } from '../../hooks/protonMeetContainer/useMeetingConnection';
 import { useMeetingErrorContext } from '../../hooks/protonMeetContainer/useMeetingErrorContext';
@@ -136,15 +137,10 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const mlsRetrying = useMeetSelector(selectMlsRetrying);
     const prejoinParticipantCount = useMeetSelector(selectPrejoinParticipantCount);
 
-    const [meetingDetails, setMeetingDetails] = useState<MeetingDetails>({
-        meetingId: token,
-        meetingPassword: urlPassword,
-        meetingName: '',
-        locked: false,
-        maxDuration: 0,
-        maxParticipants: 0,
-        expirationTime: null,
-    });
+    const meetingLinkName = useMeetSelector(selectMeetingLinkName);
+    const meetingPassword = useMeetSelector(selectMeetingPassword);
+
+    const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
 
     // Stable ref to break the circular dependency between useConnectionHealthCheck and performFullReconnection
     const triggerFullReconnectionRef = useRef<(reason: RejoinReasonInfo) => void>(() => {});
@@ -153,7 +149,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const decryptionKeyRef = useRef<CryptoKey | null>(null);
 
     const { getParticipants, updateAdminParticipant, getQueryParticipantsCount } = useParticipantNameMap(
-        meetingDetails.meetingId,
+        meetingLinkName,
         decryptionKeyRef
     );
 
@@ -181,8 +177,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const meetingInfoRef = useRef<MeetingInfoResponse | null>(null);
 
     useIsRecordingInProgressReceiver();
-
-    const isGuestAdminRef = useRef(false);
 
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
 
@@ -239,17 +233,13 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         joinedRoom,
     });
 
-    const shareLink = `${window.location.origin}${
-        meetingDetails.meetingId && meetingDetails.meetingPassword
-            ? getMeetingLink(meetingDetails.meetingId, meetingDetails.meetingPassword)
-            : window.location.pathname
-    }`;
+    const shareLink = useMeetSelector(selectMeetingLink);
 
     const assignHost = useAssignHost(accessTokenRef.current as string, token);
 
     const { isReconnectingRef, websocketUrlRef, performFullReconnection, connectWithMls } = useMeetingConnection({
         meetingLinkNameRef,
-        meetingPassword: meetingDetails.meetingPassword as string,
+        meetingPassword,
         displayName,
         decryptionKeyRef,
         mlsSetupDone,
@@ -319,10 +309,8 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         meetingInfoRef,
         meetingLinkRef,
         meetingLinkNameRef,
-        isGuestAdminRef,
         isExpiringRef,
         joinedRoomLoggedRef,
-        setMeetingDetails,
         setIsWebRtcUnsupportedModalOpen,
         setIsMeetingLockedModalOpen,
         setIsConnectionFailedModalOpen,
@@ -419,7 +407,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const handleMeetingExpired = async () => {
         dispatch(setPreviousMeetingLink(meetingLinkRef.current));
-        if (isLocalParticipantAdminOrHost || isGuestAdminRef.current) {
+        if (isLocalParticipantAdminOrHost || isGuestAdmin) {
             isExpiringRef.current = true;
             dispatch(
                 setUpsellModalType(
@@ -556,8 +544,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                         handleLeave={handleLeave}
                         handleEndMeeting={handleEndMeeting}
                         handleMeetingExpired={handleMeetingExpired}
-                        shareLink={shareLink}
-                        roomName={meetingDetails.meetingName as string}
                         handleMeetingLockToggle={handleMeetingLockToggle}
                         isDisconnected={isReconnecting || reconnectionFailed}
                         startPiP={startPiP}
@@ -565,14 +551,9 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                         pictureInPictureWarmup={pictureInPictureWarmup}
                         pipCleanup={pipCleanup}
                         preparePictureInPicture={preparePictureInPicture}
-                        locked={meetingDetails.locked}
-                        maxDuration={meetingDetails.maxDuration}
-                        maxParticipants={meetingDetails.maxParticipants}
                         instantMeeting={instantMeetingRef.current}
                         assignHost={assignHost}
                         getKeychainIndexInformation={getKeychainIndexInformation}
-                        expirationTime={meetingDetails.expirationTime}
-                        isGuestAdmin={isGuestAdminRef.current}
                         isUsingTurnRelay={isUsingTurnRelay}
                         liveKitConnectionState={liveKitConnectionState}
                         showReconnectedMessage={showReconnectedMessage}
@@ -589,8 +570,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                     handleJoin={instantMeetingRef.current ? joinInstantMeeting : joinMeeting}
                     loadingState={LoadingState.JoiningInProgress}
                     isLoading={joiningInProgress}
-                    shareLink={shareLink}
-                    roomName={meetingDetails.meetingName as string}
                     roomId={token}
                     instantMeeting={instantMeetingRef.current}
                     participantsCount={prejoinParticipantCount}

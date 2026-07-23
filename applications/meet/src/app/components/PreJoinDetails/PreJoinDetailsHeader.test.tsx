@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 
+import { initialState as meetingInfoInitialState, meetingInfoReducer } from '@proton/meet/store/slices/meetingInfo';
 import { meetingsReducer } from '@proton/meet/store/slices/meetings';
 import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
@@ -42,6 +43,7 @@ const renderHeader = ({
         reducer: {
             ...meetingsReducer,
             ...meetUserReducer,
+            ...meetingInfoReducer,
         },
         preloadedState: {
             meet_meetings: {
@@ -50,10 +52,11 @@ const renderHeader = ({
                 meta: { fetchedAt: 0, fetchedEphemeral: false },
             },
             meetUser: { isGuest },
+            meetingInfo: { ...meetingInfoInitialState, meetingName: roomName },
         },
     });
 
-    return render(<PreJoinDetailsHeader roomName={roomName} roomId={roomId} instantMeeting={instantMeeting} />, {
+    return render(<PreJoinDetailsHeader roomId={roomId} instantMeeting={instantMeeting} />, {
         wrapper: ({ children }) => (
             <Provider context={ProtonStoreContext} store={store}>
                 {children}

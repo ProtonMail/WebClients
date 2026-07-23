@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
@@ -14,12 +16,10 @@ import './OpenDesktopAppBanner.scss';
 const STORAGE_KEY = 'open_desktop_app_banner_dismissed_until';
 const OPEN_DESKTOP_APP_STORAGE_KEY = 'open_desktop_app_storage_key';
 
-interface OpenDesktopAppBannerProps {
-    meetingLink: string;
-}
-
-export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps) => {
+export const OpenDesktopAppBanner = () => {
     const [visible, setVisible] = useState(() => !isElectronApp);
+
+    const meetingLink = useMeetSelector(selectMeetingLink);
 
     useEffect(() => {
         // Remove deprecated banner storage key
