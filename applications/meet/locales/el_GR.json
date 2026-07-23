@@ -752,9 +752,6 @@
       "Show floating thumbnail during screensharing": [
         "Εμφάνιση αιωρούμενης μικρογραφίας κατά την κοινή χρήση οθόνης"
       ],
-      "Show passphrase": [
-        "Εμφάνιση κωδικού πρόσβασης"
-      ],
       "Stop recording and download.": [
         "Διακοπή καταγραφής και λήψη."
       ],
@@ -1884,9 +1881,6 @@
       "Invalid meeting link": [
         "Μη έγκυρος σύνδεσμος σύσκεψης"
       ],
-      "Invalid passphrase": [
-        "Μη έγκυρη φράση πρόσβασης"
-      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
@@ -2342,9 +2336,6 @@
       "Failed to update meeting name": [
         "Αποτυχία ενημέρωσης του ονόματος της συνάντησης"
       ],
-      "Failed to update meeting password": [
-        "Αποτυχία ενημέρωσης του κωδικού πρόσβασης της συνάντησης"
-      ],
       "Failed to update meeting schedule": [
         "Αποτυχία ενημέρωσης του προγράμματος σύσκεψης"
       ],
@@ -2570,9 +2561,6 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Παρακαλούμε ενεργοποιήστε την πρόσβαση στο ${ microphoneLinkButton }${ andString }${ cameraLinkButton } για βέλτιστη εμπειρία."
       ],
-      "Please enter the passphrase to decrypt and view this meeting": [
-        "Εισάγετε τον κωδικό πρόσβασης για να αποκρυπτογραφήσετε και να δείτε αυτή τη σύσκεψη."
-      ],
       "Please try again or try another browser": [
         "Παρακαλούμε προσπαθήστε ξανά ή δοκιμάστε έναν άλλο περιηγητή"
       ],
@@ -2707,9 +2695,6 @@
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Αυτή η σύσκεψη είναι κλειδωμένη. Παρακαλούμε επικοινωνήστε με τον διοργανωτή για να συμμετάσχετε."
-      ],
-      "This meeting is password protected": [
-        "Αυτή η συσκεψη προστατεύεται με κωδικό πρόσβασης."
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Αυτή η σύσκεψη έφτασε στο χρονικό όριο ενός δωρεάν προγράμματος. Αναβαθμίστε για να επεκτείνετε τη διάρκεια της σύσκεψής σας σε μελλοντικές κλήσεις."
@@ -3041,9 +3026,6 @@
       "Participants join after you approve them": [
         "Οι συμμετέχοντες συμμετέχουν αφού τους εγκρίνετε"
       ],
-      "Passphrase": [
-        "Συνθηματικό"
-      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
@@ -3240,9 +3222,6 @@
       ],
       "E.g., ": [
         "Για παράδειγμα, "
-      ],
-      "Enter passphrase": [
-        "Εισαγάγετε τη φράση πρόσβασης"
       ],
       "Enter time": [
         "Εισάγετε ώρα"
@@ -3567,9 +3546,6 @@
       ],
       "Participants (${ filteredParticipants.length })": [
         "Συμμετέχοντες (${ filteredParticipants.length })"
-      ],
-      "Passphrase": [
-        "Συνθηματικό"
       ],
       "Personal meeting room": [
         "Προσωπική αίθουσα σύσκεψης"
