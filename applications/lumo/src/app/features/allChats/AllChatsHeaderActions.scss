@@ -3,7 +3,7 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
-@import './AllChatsButtons';
+@use './AllChatsButtons';
 
 .all-chats-header-actions {
 	flex: 0 0 auto;
