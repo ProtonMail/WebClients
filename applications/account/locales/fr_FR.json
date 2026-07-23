@@ -1527,9 +1527,6 @@
       "Send email reminder": [
         "Envoyer un rappel par e-mail"
       ],
-      "Send feedback": [
-        "Envoyer un commentaire"
-      ],
       "Send messages with @pm.me": [
         "Envoyer des messages avec @pm.me"
       ],
@@ -1589,9 +1586,6 @@
       ],
       "Share": [
         "Partager"
-      ],
-      "Share feedback": [
-        "Partager un commentaire"
       ],
       "Share via link": [
         "Partager avec un lien"
@@ -1956,9 +1950,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistant d'écriture ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateur)",
         "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateurs)"
@@ -1983,6 +1974,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } accès"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateurs)"
       ],
       "${ price } per dedicated server": [
         "${ price } par serveur dédié"
@@ -2299,6 +2294,9 @@
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails."
       ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Améliorez la productivité de vos e-mails. Laissez ${ LUMO_SHORT_APP_NAME } vous aider à rédiger, répondre et corriger vos e-mails."
+      ],
       "Trial expires on ${ formattedDate }": [
         "La version d'essai arrive à expiration le ${ formattedDate }."
       ],
@@ -2380,6 +2378,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_SCRIBE_SEATS } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME } pendant la période d'essai."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
@@ -2579,12 +2580,19 @@
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ LUMO_SHORT_APP_NAME }, des alias « hide-my-email » illimités et bien plus encore.",
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ LUMO_SHORT_APP_NAME }, des alias « hide-my-email » illimités et bien plus encore."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore.",
         "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ LUMO_SHORT_APP_NAME }, des alias « hide-my-email » illimités et bien plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore."
@@ -9904,6 +9912,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inclut l'assistant d'écriture"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }"
       ],
@@ -10729,9 +10743,6 @@
       ],
       "Copy your referral link": [
         "Copiez votre lien de parrainage."
-      ],
-      "Couldn´t send feedback": [
-        "Le commentaire n'a pas pu être envoyé."
       ],
       "Country code": [
         "Indicatif du pays"
@@ -11672,9 +11683,6 @@
       "Key deletion is irreversible!": [
         "La suppression de clé est irréversible."
       ],
-      "Key sections reorganized for faster access.": [
-        "Sections principales réorganisées pour un accès plus rapide."
-      ],
       "Keys created": [
         "Les clés ont été créées."
       ],
@@ -11854,12 +11862,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Nouveau groupe ajouté via votre fournisseur d'identité et en attente d'examen."
-      ],
-      "New sidebar": [
-        "Nouvelle barre latérale"
-      ],
-      "New sidebar layout": [
-        "Nouvelle mise en page de la barre latérale"
       ],
       "New user invited to organization": [
         "Le nouvel utilisateur a été invité à rejoindre l'organisation."
@@ -12432,9 +12434,6 @@
       "Settings updated": [
         "Les paramètres ont été mis à jour."
       ],
-      "Share your thoughts...": [
-        "Partagez votre avis..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "Le lien partagé ${ vaultLink } a été supprimé."
       ],
@@ -12591,9 +12590,6 @@
       "Swiss based": [
         "Basé en Suisse"
       ],
-      "Switch sidebars": [
-        "Échanger les barres latérales"
-      ],
       "Symbols (#$&)": [
         "Symboles (#$&)"
       ],
@@ -12632,9 +12628,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Merci de vous être abonné. La navigation sécurisée commence maintenant."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Merci, votre commentaire a été envoyé."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Merci de soutenir notre mission de créer un meilleur internet qui donne la priorité à la protection de la vie privée et à la liberté."
@@ -13688,9 +13681,6 @@
       ],
       "your encrypted data will be locked": [
         "vos données chiffrées seront verrouillées"
-      ],
-      "Your feedback": [
-        "Votre commentaire"
       ],
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
@@ -16717,8 +16707,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Ajouter l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Module complémentaire avec essai gratuit"
@@ -17470,6 +17466,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } et ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } calendrier",
@@ -23726,9 +23725,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistant d'écriture ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe pour ${ maxAi } utilisateur",
         "Assistant d'écriture ${ BRAND_NAME } Scribe pour ${ maxAi } utilisateurs"
@@ -23736,6 +23732,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } serveur dédié",
         "${ ipAddresses } serveurs dédiés"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } pour ${ maxAi } utilisateur",
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } pour ${ maxAi } utilisateurs"
       ],
       "${ n } calendar per user": [
         "${ n } calendrier par utilisateur",
@@ -23848,9 +23848,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistant d'écriture ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, et ${ LUMO_APP_NAME } avec les fonctionnalités premium"
       ],
@@ -25849,9 +25846,6 @@
       ],
       "Help center": [
         "Aide & Support"
-      ],
-      "Help us improve": [
-        "Aidez-nous à nous améliorer"
       ],
       "Helping activists in Hong Kong": [
         "Aider les militants à Hong Kong"
