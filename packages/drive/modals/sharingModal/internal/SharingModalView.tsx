@@ -249,6 +249,25 @@ export const SharingModalView = ({
         }
     };
 
+    const settingsButton = (
+        <Button
+            icon
+            shape="ghost"
+            onClick={() =>
+                showSettingsModal({
+                    sharedFileName: fileName,
+                    stopSharing: async () => {
+                        await actions.stopSharing();
+                        onClose();
+                    },
+                })
+            }
+            data-testid="share-modal-settings"
+        >
+            <IcCogWheel />
+        </Button>
+    );
+
     const renderModalContent = () => {
         // Only show loader while open — during close animation "initialized" resets to "false" but we still want the content visible
         if (!initialized) {
@@ -282,42 +301,10 @@ export const SharingModalView = ({
                                     originalPlacement="top-end"
                                     isAboveModal
                                 >
-                                    <Button
-                                        icon
-                                        shape="ghost"
-                                        onClick={() =>
-                                            showSettingsModal({
-                                                sharedFileName: fileName,
-                                                stopSharing: async () => {
-                                                    await actions.stopSharing();
-                                                    onClose();
-                                                },
-                                            })
-                                        }
-                                        data-testid="share-modal-settings"
-                                    >
-                                        <IcCogWheel />
-                                    </Button>
+                                    {settingsButton}
                                 </Spotlight>
                             ) : (
-                                <Tooltip title={c('Tooltip').t`Change shared item settings`}>
-                                    <Button
-                                        icon
-                                        shape="ghost"
-                                        onClick={() =>
-                                            showSettingsModal({
-                                                sharedFileName: fileName,
-                                                stopSharing: async () => {
-                                                    await actions.stopSharing();
-                                                    onClose();
-                                                },
-                                            })
-                                        }
-                                        data-testid="share-modal-settings"
-                                    >
-                                        <IcCogWheel />
-                                    </Button>
-                                </Tooltip>
+                                <Tooltip title={c('Tooltip').t`Change shared item settings`}>{settingsButton}</Tooltip>
                             ))}
 
                         <ModalHeaderCloseButton buttonProps={{ disabled: isClosedButtonDisabled }} />
