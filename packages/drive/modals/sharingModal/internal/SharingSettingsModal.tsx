@@ -3,10 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, Toggle, useConfirmActionModal, useModalTwoStatic } from '@proton/components';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useEditorsManageAccessContext } from './useEditorsManageAccess';
 
@@ -71,8 +73,11 @@ const SharingSettingsModal = ({
                     >
                         <div className="flex flex-column flex-1 p-0 gap-2" data-testid="delete-share-text">
                             <span className="text-semibold">{c('Label').t`Access`}</span>
-                            <span className="color-weak">{c('Label')
-                                .t`Allow editors to change permissions and share`}</span>
+                            <span className="color-weak">
+                                {c('Label').t`Allow editors to change permissions and share.`}{' '}
+                                <Href href={getKnowledgeBaseUrl('/drive-manage-access-shared-files')}>{c('Link')
+                                    .t`Learn more`}</Href>
+                            </span>
                         </div>
                         <Toggle
                             id="editorSharingSettingsModalToggle"
