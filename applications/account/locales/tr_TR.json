@@ -361,7 +361,7 @@
         "Bağlı"
       ],
       "Contact sales": [
-        "Satış ekibiyle görüşün"
+        "Satış departmanıyla iletişime geçin"
       ],
       "Contact support": [
         "Destek ekibimizle görüşün"
@@ -1527,9 +1527,6 @@
       "Send email reminder": [
         "E-posta anımsatıcısı gönder"
       ],
-      "Send feedback": [
-        "Geri bildirim gönder"
-      ],
       "Send messages with @pm.me": [
         "@pm.me adresinden ileti gönderin"
       ],
@@ -1589,9 +1586,6 @@
       ],
       "Share": [
         "Paylaş"
-      ],
-      "Share feedback": [
-        "Geri bildiriminizi paylaşın"
       ],
       "Share via link": [
         "Bağlantı ile paylaş"
@@ -1956,9 +1950,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe yazma yardımcısı"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)",
         "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)"
@@ -1983,6 +1974,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } koltuğu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)",
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)"
       ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
@@ -2299,6 +2294,9 @@
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ BRAND_NAME } Scribe tarafından yardım alın."
       ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "E-posta üretkenliğinizi yeni seviyelere taşıyın. ${ LUMO_SHORT_APP_NAME } ile e-postalarınızı yazın, yanıtlayın ve düzeltin."
+      ],
       "Trial expires on ${ formattedDate }": [
         "Deneme süresi ${ formattedDate } tarihinde bitecek"
       ],
@@ -2380,6 +2378,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } adet ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansına sahip olabilirsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
@@ -2579,12 +2580,19 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. 15 e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
@@ -9864,7 +9872,7 @@
         "%${ discountPercent } indirim"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
+        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini saklamayacak."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
@@ -9900,6 +9908,12 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } yazma yardımcısını içerir"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME }"
@@ -10727,9 +10741,6 @@
       "Copy your referral link": [
         "Öneri bağlantınızı kopyalayın"
       ],
-      "Couldn´t send feedback": [
-        "Geri bildirim gönderilemedi"
-      ],
       "Country code": [
         "Ülke kodu"
       ],
@@ -11223,7 +11234,7 @@
         "${ price } karşılığında"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "10 yıllık sürüm geçmişine erişebilmek için lütfen satış ekibimizle görüşün."
+        "10 yıllık sürüm geçmişi hakkında bilgi almak için lütfen satış ekibimizle iletişime geçin."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
@@ -11669,9 +11680,6 @@
       "Key deletion is irreversible!": [
         "Anahtar silme işlemi geri alınamaz!"
       ],
-      "Key sections reorganized for faster access.": [
-        "Daha hızlı erişim için temel bölümler yeniden düzenlendi."
-      ],
       "Keys created": [
         "Anahtarlar oluşturuldu"
       ],
@@ -11851,12 +11859,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Kimlik hizmeti sağlayıcınız üzerinden yeni bir grup oluşturuldu ve değerlendirilmeyi bekliyor."
-      ],
-      "New sidebar": [
-        "Yeni kenar çubuğu"
-      ],
-      "New sidebar layout": [
-        "Yeni kenar çubuğu yerleşimi"
       ],
       "New user invited to organization": [
         "Kuruluşa yeni kullanıcı davet edildi"
@@ -12429,9 +12431,6 @@
       "Settings updated": [
         "Ayarlar güncellendi"
       ],
-      "Share your thoughts...": [
-        "Düşüncelerinizi paylaşın..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "Paylaşılan ${ vaultLink } silindi"
       ],
@@ -12588,9 +12587,6 @@
       "Swiss based": [
         "İsviçre merkezli"
       ],
-      "Switch sidebars": [
-        "Kenar çubuklarını değiştir"
-      ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
       ],
@@ -12629,9 +12625,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Abone olduğunuz için teşekkürler. Artık güvenle gezinebilirsiniz."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Teşekkürler. Geri bildiriminiz gönderildi."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gizlilik ve özgürlüğe öncelik veren daha iyi bir internet oluşturma amacımızı desteklediğiniz için teşekkür ederiz."
@@ -12815,10 +12808,10 @@
         "Bu işlem televizyonun ${ BRAND_NAME } hesabınıza erişmesini sağlayacak."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Bu işlem dosyalarınızın ${ rententionLabel } tarihinden önceki tüm sürümlerini silecek."
+        "Bu işlem dosyalarınızın ${ rententionLabel } tarihinden daha eski olan tüm önceki sürümleri silecek."
       ],
       "This will delete all previous versions of your files.": [
-        "Bu işlem dosyalarınızın tüm önceki sürümlerini siler."
+        "Bu işlem dosyalarınızın önceki tüm sürümleri silecek."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Bu işlem, **${ email }** hesabına erişme izni vermeyecek. İlerlemek istediğinize emin misiniz?"
@@ -13058,7 +13051,7 @@
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
       "Upgrade to unlock": [
-        "Kullanmak için tarifenizi yükseltin"
+        "Kilidi açmak için yükseltin"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } özelliğine erişmek için tarifenizi yükseltin."
@@ -13685,9 +13678,6 @@
       ],
       "your encrypted data will be locked": [
         "şifrelenmiş verileriniz kilitlenecek"
-      ],
-      "Your feedback": [
-        "Geri bildiriminiz"
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
@@ -14969,7 +14959,7 @@
         "Bir daha sorma"
       ],
       "Don't keep versions": [
-        "Sürüm geçmişi tutulmasın"
+        "Sürümleri tutma"
       ],
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
@@ -16714,8 +16704,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısını ekle"
       ],
       "Add-on with free trial": [
         "Ücretsiz deneme sürümü ile eklenti"
@@ -17467,6 +17463,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ n } calendar": [
         "${ n } takvim",
@@ -23720,9 +23719,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe yazma yardımcısı"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı",
         "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı"
@@ -23730,6 +23726,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } size ayrılmış sunucu",
         "${ ipAddresses } size ayrılmış sunucu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ${ maxAi } kullanıcı için",
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ${ maxAi } kullanıcı için"
       ],
       "${ n } calendar per user": [
         "Her kullanıcı için ${ n } takvim",
@@ -23842,9 +23842,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe yazma yardımcısı"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "Ücretli özellikler ile ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ve ${ LUMO_APP_NAME }"
       ],
@@ -25843,9 +25840,6 @@
       ],
       "Help center": [
         "Yardım merkezi"
-      ],
-      "Help us improve": [
-        "Kendimizi geliştirmemize yardımcı olun"
       ],
       "Helping activists in Hong Kong": [
         "Hong Kong aktivistlerine yardımlarımız"

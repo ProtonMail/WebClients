@@ -1527,9 +1527,6 @@
       "Send email reminder": [
         "发送邮件提醒"
       ],
-      "Send feedback": [
-        "发送反馈"
-      ],
       "Send messages with @pm.me": [
         "使用 @pm.me 发送消息"
       ],
@@ -1589,9 +1586,6 @@
       ],
       "Share": [
         "分享"
-      ],
-      "Share feedback": [
-        "分享反馈"
       ],
       "Share via link": [
         "通过链接分享"
@@ -1956,9 +1950,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 写作助手"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe 写作助手（适用于 ${ quantity } 位用户）"
       ],
@@ -1979,6 +1970,9 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } 席位"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手（适用于 ${ quantity } 位用户）"
       ],
       "${ price } per dedicated server": [
         "${ price } 每个专用服务器"
@@ -2289,6 +2283,9 @@
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "将电子邮件工作效率提升到新水平。让 ${ BRAND_NAME } Scribe 帮您撰写、回复和校对电子邮件。"
       ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "将邮件生产力提升至新高度，让 ${ LUMO_SHORT_APP_NAME } 帮助您撰写、回复和校对邮件。"
+      ],
       "Trial expires on ${ formattedDate }": [
         "试用期失效于 ${ formattedDate }"
       ],
@@ -2369,6 +2366,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "试用期间，最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 写作助手席位。"
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 Scribe 席位"
@@ -2566,11 +2566,17 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 Hide-my-email  别名等功能。"
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 Hide-my-email 别名等功能。"
@@ -7519,6 +7525,9 @@
       "Please set a recovery/notification email first": [
         "请先设置密保/通知邮箱"
       ],
+      "Please set up your organization before adding a company.": [
+        "请先设置您的组织，然后再添加公司。"
+      ],
       "Please try again in a few moments.": [
         "请稍后再试."
       ],
@@ -9807,6 +9816,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } 内置写作助手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
       ],
@@ -10604,9 +10619,6 @@
       ],
       "Copy your referral link": [
         "复制您的推荐链接"
-      ],
-      "Couldn´t send feedback": [
-        "无法发送反馈"
       ],
       "Country code": [
         "国家/地区代码"
@@ -11538,9 +11550,6 @@
       "Key deletion is irreversible!": [
         "密钥删除不可逆！"
       ],
-      "Key sections reorganized for faster access.": [
-        "已重新组织关键部分，以便快速访问。"
-      ],
       "Keys created": [
         "密钥已创建"
       ],
@@ -11721,12 +11730,6 @@
       "New group created via your identity provider and pending review.": [
         "通过身份提供商创建的新群组待审核"
       ],
-      "New sidebar": [
-        "新侧边栏"
-      ],
-      "New sidebar layout": [
-        "新的侧边栏布局"
-      ],
       "New user invited to organization": [
         "新用户被邀请加入组织"
       ],
@@ -11748,8 +11751,14 @@
       "No addresses exist": [
         "没有地址"
       ],
+      "No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.": [
+        "暂无账单明细，按账单周期划分的明细将显示在此处。明细可用后，您可以将其下载为 CSV 文件。"
+      ],
       "No card required": [
         "无需银行卡"
+      ],
+      "No companies yet. Start by creating a new company.": [
+        "暂无公司，请先新建公司。"
       ],
       "No connected addresses.": [
         "未关联任何地址"
@@ -12288,9 +12297,6 @@
       "Settings updated": [
         "设置已更新"
       ],
-      "Share your thoughts...": [
-        "分享您的想法..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "已删除共享的 ${ vaultLink }"
       ],
@@ -12444,9 +12450,6 @@
       "Swiss based": [
         "立足瑞士"
       ],
-      "Switch sidebars": [
-        "切换侧边栏"
-      ],
       "Symbols (#$&)": [
         "符号 (#$&)"
       ],
@@ -12485,9 +12488,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "感谢您成为订阅用户，安全浏览即刻开启。"
-      ],
-      "Thanks - your feedback was sent.": [
-        "感谢，您的反馈已发送。"
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "感谢支持我们建立一个更好的互联网的使命，让隐私和自由成为第一位。"
@@ -13526,9 +13526,6 @@
       ],
       "your encrypted data will be locked": [
         "您的加密数据将被锁定"
-      ],
-      "Your feedback": [
-        "意见反馈"
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
@@ -14592,6 +14589,12 @@
       ],
       "City": [
         "城市"
+      ],
+      "Client": [
+        "客户端"
+      ],
+      "Client version": [
+        "客户端版本"
       ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
@@ -16533,8 +16536,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 写作助手"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加 ${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
       "Add-on with free trial": [
         "免费试用附加组件"
@@ -17273,6 +17282,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 和 ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
       "${ n } calendar": [
         "${ n } 份日历"
@@ -23422,14 +23434,14 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 写作助手"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } 的 Scribe 写作助手，供 ${ maxAi } 位用户使用。"
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } 台专用服务器"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手（适用于 ${ maxAi } 位用户）"
       ],
       "${ n } calendar per user": [
         "每位用户 ${ n } 份日历"
@@ -23528,9 +23540,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 写作助手"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "包含高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME } 和 ${ LUMO_APP_NAME }"
       ],
@@ -25507,9 +25516,6 @@
       "Help center": [
         "帮助中心"
       ],
-      "Help us improve": [
-        "帮助我们改进"
-      ],
       "Helping activists in Hong Kong": [
         "帮助香港的活动人士"
       ],
@@ -27103,6 +27109,9 @@
       "Could not enable admin access for ${ n } user": [
         "无法为 ${ n } 位用户启用管理员权限"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "无法启用管理员访问权限：${ unprivatizationResult.error }"
+      ],
       "Enable admin access?": [
         "启用管理员访问权限？"
       ],
@@ -27171,6 +27180,9 @@
       ],
       "View request": [
         "查看请求"
+      ],
+      "Waiting for admin approval": [
+        "等待管理员批准"
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "如果您不想继续，您可以申请 ${ reject } 。"
@@ -27370,6 +27382,15 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "邀请已发送，等待被邀请成员的回复"
+      ],
+      "Invited": [
+        "已邀请"
+      ],
+      "Pending": [
+        "待处理"
+      ],
+      "Requested": [
+        "已请求"
       ],
       "SSO user provided by your identity provider": [
         "由身份供应商提供的 SSO 用户"
