@@ -1,7 +1,7 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 
 import { CYCLE, PLANS } from '../../core/constants';
-import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
+import { SubscriptionMode, TaxInclusive, TaxMode } from '../../core/subscription/constants';
 import type { SubscriptionEstimation } from '../../core/subscription/interface';
 import { formatTax } from './tax-helpers';
 
@@ -11,7 +11,7 @@ describe('formatTax', () => {
         AmountDue: 1200,
         Currency: 'USD',
         Cycle: CYCLE.YEARLY,
-        TaxInclusive: TaxInclusive.INCLUSIVE,
+        TaxMode: TaxMode.INCLUSIVE,
         Coupon: null,
         SubscriptionMode: SubscriptionMode.Regular,
         BaseRenewAmount: null,
@@ -320,8 +320,9 @@ describe('formatTax', () => {
             });
         });
 
-        it('uses TaxInclusive from checkResult when provided', () => {
+        it('falls back to TaxInclusive when TaxMode is absent', () => {
             const checkResult = createMockCheckResult({
+                TaxMode: undefined,
                 TaxInclusive: TaxInclusive.EXCLUSIVE,
                 Taxes: [
                     {
@@ -443,7 +444,7 @@ describe('formatTax', () => {
     describe('tax exclusive scenarios', () => {
         it('handles single tax with exclusive setting', () => {
             const checkResult = createMockCheckResult({
-                TaxInclusive: TaxInclusive.EXCLUSIVE,
+                TaxMode: TaxMode.EXCLUSIVE,
                 Taxes: [
                     {
                         Name: 'VAT',
@@ -467,7 +468,7 @@ describe('formatTax', () => {
 
         it('handles multiple taxes with exclusive setting', () => {
             const checkResult = createMockCheckResult({
-                TaxInclusive: TaxInclusive.EXCLUSIVE,
+                TaxMode: TaxMode.EXCLUSIVE,
                 Taxes: [
                     {
                         Name: 'VAT',
