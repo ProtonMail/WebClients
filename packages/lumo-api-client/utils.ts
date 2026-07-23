@@ -1,5 +1,5 @@
-import { type RequestId, Role, type Turn } from './index';
-import { isTurn } from './types';
+import { type RequestId, type Turn, isTurn } from './types';
+import { Role } from './types-api';
 
 /**
  * Simple message interface for convenience
