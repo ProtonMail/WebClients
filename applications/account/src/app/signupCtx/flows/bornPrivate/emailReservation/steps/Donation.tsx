@@ -37,8 +37,8 @@ import BornPrivateFormContainer from '../../components/form/BornPrivateFormConta
 import BornPrivateFormFooter from '../../components/form/BornPrivateFormFooter';
 import BornPrivateFormHeading from '../../components/form/BornPrivateFormHeading';
 import BornPrivateFormParagraph from '../../components/form/BornPrivateFormParagraph';
-import type { FormData, ReservedAccount } from '../EmailReservationSignup';
-import { Steps, TOTAL_STEPS } from '../EmailReservationSignup';
+import type { FormData, ReservedAccount } from '../interface';
+import { Steps, TOTAL_STEPS } from '../interface';
 import DonationAmountSelect from '../components/DonationAmountSelect';
 import ReservationErrorModal from '../components/ReservationErrorModal';
 import { ErrorTypes, generateReadableActivationCode, getDonationCurrency } from '../helpers/emailReservationHelpers';
