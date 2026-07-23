@@ -556,6 +556,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Duceți productivitatea mesageriei la un nou nivel. Lăsați-l pe ${ LUMO_SHORT_APP_NAME } să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -570,6 +573,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de evaluare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "În perioada de evaluare puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe pentru asistentul de scriere ${ LUMO_SHORT_APP_NAME }."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de evaluare."
@@ -2751,6 +2757,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "Include asistentul de scriere ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } este o soluție de videoconferință criptată bilateral. Adăugați-o la planul personal pentru a găzdui conferințe securizate."
       ],
@@ -3670,8 +3682,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adăugați asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Adăugați asistentul de scriere ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Modul cu încercare gratuită"
@@ -3822,6 +3840,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } și ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } calendar",
@@ -4011,7 +4032,7 @@
         "Personalizare logo spațiu de lucru"
       ],
       "Data breach monitoring": [
-        "Monitorizarea divulgării datelor"
+        "Monitorizare breșe de date"
       ],
       "Data retention policies": [
         "Politici de păstrare a datelor"

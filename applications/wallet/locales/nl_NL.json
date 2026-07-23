@@ -549,6 +549,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Breng e-mailproductiviteit naar een nieuw niveau. Laat ${ LUMO_SHORT_APP_NAME } u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -563,6 +566,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Tijdens de proefperiode kunt u maximaal ${ TRIAL_MAX_SCRIBE_SEATS } schrijfassistent-licenties ${ LUMO_SHORT_APP_NAME } hebben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -2732,6 +2738,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } bevat de schrijfassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
       ],
@@ -3343,6 +3355,12 @@
       "City": [
         "Stad"
       ],
+      "Client": [
+        "Klant"
+      ],
+      "Client version": [
+        "Klantenversie"
+      ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
@@ -3636,8 +3654,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Voeg ${ LUMO_SHORT_APP_NAME } schrijfassistent toe"
       ],
       "Add-on with free trial": [
         "Add-on met gratis proefversie"
@@ -3781,6 +3805,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
       ],
       "${ n } calendar": [
         "${ n } agenda",
