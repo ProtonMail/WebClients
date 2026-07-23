@@ -9,6 +9,8 @@ import { useLumoDispatch } from '../../redux/hooks';
 import { newAttachmentId } from '../../redux/slices/core/attachments';
 import { setGhostChatMode } from '../../redux/slices/ghostChat';
 import type { Attachment, ConversationId } from '../../types';
+import { addRecentPaperTrailFile } from '../../util/paperTrailRecentStorage';
+import { shouldPersistPaperTrailLocally } from '../../util/paperTrailLocalSavePreference';
 import { buildPaperTrailContext } from './buildPaperTrailContext';
 import { type NormalizedExport, parseExportFile } from './parsers';
 import { buildPaperTrailPrompt, getExportFilename } from './prompt';
@@ -19,6 +21,7 @@ interface StartResult {
     status: PaperTrailStatus;
     error?: string;
     conversationId?: ConversationId;
+    importId?: string;
     start: (file: File) => Promise<void>;
     reset: () => void;
 }
@@ -38,6 +41,7 @@ export const useStartPaperTrail = (): StartResult => {
     const [status, setStatus] = useState<PaperTrailStatus>('idle');
     const [error, setError] = useState<string>();
     const [conversationId, setConversationId] = useState<ConversationId>();
+    const [importId, setImportId] = useState<string>();
 
     const reset = useCallback(() => {
         // Generation has finished by the time reset is reachable, so the persistence
@@ -46,12 +50,14 @@ export const useStartPaperTrail = (): StartResult => {
         setStatus('idle');
         setError(undefined);
         setConversationId(undefined);
+        setImportId(undefined);
     }, [dispatch]);
 
     const start = useCallback(
         async (file: File) => {
             setError(undefined);
             setConversationId(undefined);
+            setImportId(undefined);
             setStatus('parsing');
 
             let exportData: NormalizedExport;
@@ -64,6 +70,10 @@ export const useStartPaperTrail = (): StartResult => {
             }
 
             setStatus('generating');
+            const recentImportId = shouldPersistPaperTrailLocally()
+                ? addRecentPaperTrailFile(exportData.source)
+                : undefined;
+            setImportId(recentImportId);
 
             const context = buildPaperTrailContext(exportData);
 
@@ -101,6 +111,9 @@ export const useStartPaperTrail = (): StartResult => {
                         uiContext: {
                             enableExternalTools: false,
                             enableImageTools: false,
+                            enableReasoning: false,
+                            modelTier: 'lumo-lite',
+                            generateTitle: false,
                             enableSmoothing: ffSmoothRendering,
                             isGhostMode: true,
                         },
@@ -115,5 +128,5 @@ export const useStartPaperTrail = (): StartResult => {
         [api, dispatch, personalization, ffSmoothRendering]
     );
 
-    return { status, error, conversationId, start, reset };
+    return { status, error, conversationId, importId, start, reset };
 };
