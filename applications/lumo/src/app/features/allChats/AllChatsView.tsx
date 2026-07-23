@@ -499,7 +499,7 @@ const AllChatsHeader = ({
                             shape="solid"
                             color="norm"
                             size="small"
-                            className="all-chats-header-action-button all-chats-header-action-button-primary shrink-0"
+                            className="all-chats-header-action-button shrink-0"
                             onClick={onCancelSelection}
                         >
                             {c('collider_2025:Action').t`Cancel`}
