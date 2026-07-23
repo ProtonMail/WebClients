@@ -241,7 +241,8 @@ export type ChatEndpointGenerationRequest = {
     Prompt: LumoApiGenerationRequest;
 };
 
-export type ImageAspectRatio = '1:1' | '2:3' | '3:2' | '9:16' | '16:9';
+export const IMAGE_ASPECT_RATIOS = ['1:1', '2:3', '3:2', '9:16', '16:9'] as const;
+export type ImageAspectRatio = (typeof IMAGE_ASPECT_RATIOS)[number];
 
 export type Options = {
     /** Built-in tool names, OpenAI function tools (e.g. desktop connectors), or `true` for none. */

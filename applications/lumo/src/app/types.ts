@@ -7,6 +7,7 @@ import type { SpaceMap } from './redux/slices/core/spaces';
 import {
     type EncryptedWireTurn,
     type GenerationResponseMessage,
+    IMAGE_ASPECT_RATIOS,
     type ImageAspectRatio,
     Role,
     type UnencryptedWireTurn,
@@ -18,6 +19,7 @@ import {
 } from './types-api';
 
 export type { ImageAspectRatio };
+export { IMAGE_ASPECT_RATIOS };
 
 // *** Turn aliases ***
 // Turn types are defined in types-api as WireTurn (matching backend schema)
@@ -358,11 +360,7 @@ export type ReasoningChunk = {
 // *** Context compaction ***
 
 export type CompactionStrategyName =
-    | 'clear_tool_results'
-    | 'drop_tool_pairs'
-    | 'strip_context'
-    | 'drop_old_rounds'
-    | 'llm_summary';
+    'clear_tool_results' | 'drop_tool_pairs' | 'strip_context' | 'drop_old_rounds' | 'llm_summary';
 
 export type CompactionStats = {
     tokensBefore: number; // Estimated tokens of the summarized region before compaction
@@ -1085,9 +1083,9 @@ export interface UploadedFile {
 }
 
 export enum LUMO_ELIGIBILITY {
-    'Eligible' = 0,
-    'OnWaitlist' = 1,
-    'NotOnWaitlist' = 2,
+    Eligible = 0,
+    OnWaitlist = 1,
+    NotOnWaitlist = 2,
 }
 
 export function isProtonApiResponse(value: any): value is ProtonApiResponse {

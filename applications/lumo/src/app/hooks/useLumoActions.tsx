@@ -3,7 +3,6 @@ import { useRef } from 'react';
 import useApi from '@proton/components/hooks/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
 
-import { useNativeComposerPromptApi } from '../components/Composer/hooks/useNativeComposerPromptApi';
 import {
     formatPersonalization,
     regenerateMessage,
@@ -11,13 +10,18 @@ import {
     sendMessage,
 } from '../components/Conversation/helper';
 import type { AesGcmCryptoKey } from '../crypto/types';
+import { useLumoPlan } from '../hooks/useLumoPlan';
 import { addContextToMessages, fillAttachmentData } from '../llm/attachments';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
-import { useLumoPlan } from '../hooks/useLumoPlan';
 import { useModelTier } from '../providers/ModelTierProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
-import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters, selectMessageAttachmentIds } from '../redux/selectors';
+import {
+    selectAttachments,
+    selectAttachmentsBySpaceId,
+    selectContextFilters,
+    selectMessageAttachmentIds,
+} from '../redux/selectors';
 import { clearProvisionalAttachments, upsertAttachment } from '../redux/slices/core/attachments';
 import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
@@ -200,11 +204,7 @@ export const useLumoActions = ({
         const historyAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
 
         // Fill @mention provisional attachments from the search index.
-        let filledAttachments = await fillShallowProvisionals(
-            provisionalAttachments,
-            newMessageContent ?? '',
-            spaceId
-        );
+        let filledAttachments = await fillShallowProvisionals(provisionalAttachments, newMessageContent ?? '', spaceId);
 
         // Refresh from the live search index and resolve text-only @mentions.
         if (user?.ID) {
@@ -688,8 +688,6 @@ export const useLumoActions = ({
             generationRegistry.abort(conversationId);
         }
     };
-
-    useNativeComposerPromptApi(handleSendMessage, handleAbort);
 
     // For retry actions initiated in ErrorCard component due to generation errors
     const handleRetryGeneration = async (error: ConversationError) => {
