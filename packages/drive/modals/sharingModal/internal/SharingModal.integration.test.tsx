@@ -189,7 +189,11 @@ describe('SharingModal', () => {
         await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
         expect(screen.getByText('Sharing is end-to-end encrypted')).toBeInTheDocument();
         await openSharingSettings((viewedNode.name as any).value);
-        screen.getByText('Allow editors to change permissions and share');
+        screen.getByText(/Allow editors to change permissions and share\./);
+        expect(screen.getByText('Learn more')).toHaveAttribute(
+            'href',
+            'https://proton.me/support/drive-manage-access-shared-files'
+        );
         const toggle = screen.getByLabelText('Allow editors to change permissions and share');
         expect(toggle).toBeChecked();
 
