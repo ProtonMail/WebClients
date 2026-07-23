@@ -1019,9 +1019,6 @@
       "Send email reminder": [
         "이메일 알리미 전송"
       ],
-      "Send feedback": [
-        "피드백 전송"
-      ],
       "Send my username": [
         "사용자 이름 보내기"
       ],
@@ -1069,9 +1066,6 @@
       ],
       "Share": [
         "공유"
-      ],
-      "Share feedback": [
-        "피드백 공유"
       ],
       "Share via link": [
         "링크로 공유"
@@ -1364,9 +1358,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 글쓰기 도우미"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 (${ quantity }명 사용자용)"
       ],
@@ -7334,9 +7325,6 @@
       "Copy your referral link": [
         "나의 추천인 링크를 공유하세요"
       ],
-      "Couldn´t send feedback": [
-        "피드백을 전송할 수 없음"
-      ],
       "Country code": [
         "국가 코드"
       ],
@@ -8039,9 +8027,6 @@
       "Keep your passwords safe and sign in instantly with autofill across every device.": [
         "비밀번호를 안전하게 보관하고 자동완성으로 기기를 넘나들며 편리하게 로그인하세요."
       ],
-      "Key sections reorganized for faster access.": [
-        "더 빠른 접근을 위해 주요 섹션이 재구성되었습니다."
-      ],
       "Keys created": [
         "키 생성됨"
       ],
@@ -8182,12 +8167,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "새로운 구성원이 사용자의 신원 공급자에 의거해 추가되었으며 검토 대기 중입니다."
-      ],
-      "New sidebar": [
-        "새로운 사이드바"
-      ],
-      "New sidebar layout": [
-        "새로운 사이드바 레이아웃"
       ],
       "New user invited to organization": [
         "새 사용자가 조직에 초대되었습니다."
@@ -8606,9 +8585,6 @@
       "Setting up your organization": [
         "조직을 설정하세요"
       ],
-      "Share your thoughts...": [
-        "회원님의 생각을 공유해주세요..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "공유된 ${ vaultLink }이(가) 삭제됨"
       ],
@@ -8711,9 +8687,6 @@
       "Swiss based": [
         "스위스에 위치"
       ],
-      "Switch sidebars": [
-        "사이드바 전환"
-      ],
       "Symbols (#$&)": [
         "기호 (#$&)"
       ],
@@ -8734,9 +8707,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "구독해 주셔서 감사합니다. 지금부터 보안 브라우징이 시작됩니다."
-      ],
-      "Thanks - your feedback was sent.": [
-        "감사합니다. 의견이 전송되었습니다."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "개인 정보 보호와 자유가 최우선인 더 나은 인터넷을 구축하려는 우리의 사명을 지원해 주셔서 감사합니다."
@@ -9532,9 +9502,6 @@
       ],
       "your encrypted data will be locked": [
         "개인 데이터는 잠금 상태로 유지됩니다"
-      ],
-      "Your feedback": [
-        "나의 의견"
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
@@ -15943,9 +15910,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 글쓰기 도우미"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ maxAi }명 사용자를 위한 ${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
@@ -16049,9 +16013,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 글쓰기 도우미"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "premium 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } 및 ${ LUMO_APP_NAME }"
       ],
@@ -17583,9 +17544,6 @@
       "Help center": [
         "지원 센터"
       ],
-      "Help us improve": [
-        "개선할 수 있도록 도와주세요"
-      ],
       "Helping activists in Hong Kong": [
         "홍콩의 활동가 지원"
       ],
@@ -18920,6 +18878,9 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "초대장을 보냈습니다. 초대받은 구성원의 응답을 기다리고 있습니다."
+      ],
+      "Pending": [
+        "보류 중"
       ],
       "SSO user provided by your identity provider": [
         "SSO 사용자는 사용자의 정보 제공사로부터 제공되었습니다."

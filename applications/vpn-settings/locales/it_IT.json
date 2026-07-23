@@ -1019,9 +1019,6 @@
       "Send email reminder": [
         "Invia promemoria email"
       ],
-      "Send feedback": [
-        "Invia feedback"
-      ],
       "Send my username": [
         "Invia il mio nome utente"
       ],
@@ -1069,9 +1066,6 @@
       ],
       "Share": [
         "Condividi"
-      ],
-      "Share feedback": [
-        "Condividi feedback"
       ],
       "Share via link": [
         "Condividi con link"
@@ -1364,9 +1358,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe (per ${ quantity } utente)",
         "Assistente alla scrittura ${ BRAND_NAME } Scribe (per ${ quantity } utenti)"
@@ -7438,9 +7429,6 @@
       "Copy your referral link": [
         "Copia il tuo link di riferimento"
       ],
-      "Couldn´t send feedback": [
-        "Impossibile inviare il feedback"
-      ],
       "Country code": [
         "Codice nazione"
       ],
@@ -8154,9 +8142,6 @@
       "Keep your passwords safe and sign in instantly with autofill across every device.": [
         "Proteggi le tue password e accedi immediatamente grazie alla funzione di compilazione automatica su tutti i dispositivi."
       ],
-      "Key sections reorganized for faster access.": [
-        "Sezioni chiave riorganizzate per un accesso più rapido."
-      ],
       "Keys created": [
         "Chiavi create"
       ],
@@ -8297,12 +8282,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Nuovo gruppo creato tramite il tuo provider di identità e in attesa di revisione."
-      ],
-      "New sidebar": [
-        "Nuova barra laterale"
-      ],
-      "New sidebar layout": [
-        "Nuovo layout della barra laterale"
       ],
       "New user invited to organization": [
         "Nuovo utente invitato all'organizzazione"
@@ -8728,9 +8707,6 @@
       "Setting up your organization": [
         "Configurazione della tua organizzazione in corso..."
       ],
-      "Share your thoughts...": [
-        "Condividi i tuoi pensieri..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } condiviso eliminato"
       ],
@@ -8835,9 +8811,6 @@
       "Swiss based": [
         "Con sede in Svizzera"
       ],
-      "Switch sidebars": [
-        "Scambia barre laterali"
-      ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
       ],
@@ -8858,9 +8831,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Grazie per esserti abbonato. La navigazione sicura inizia ora."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Grazie: il tuo feedback è stato inviato."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Grazie per aver sostenuto la nostra missione di realizzare un internet migliore, dove la privacy e la libertà sono al primo posto."
@@ -9678,9 +9648,6 @@
       "your encrypted data will be locked": [
         "i tuoi dati crittografati verranno bloccati"
       ],
-      "Your feedback": [
-        "Il tuo feedback"
-      ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
       ],
@@ -10127,6 +10094,12 @@
       ],
       "City": [
         "Città"
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versione Client"
       ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
@@ -16194,9 +16167,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente di scrittura ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe per ${ maxAi } utente",
         "Assistente alla scrittura ${ BRAND_NAME } Scribe per ${ maxAi } utenti"
@@ -16316,9 +16286,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, e ${ LUMO_APP_NAME } con funzionalità premium"
       ],
@@ -17867,9 +17834,6 @@
       "Help center": [
         "Centro assistenza"
       ],
-      "Help us improve": [
-        "Aiutaci a migliorare"
-      ],
       "Helping activists in Hong Kong": [
         "Aiutare gli attivisti a Hong Kong"
       ],
@@ -18982,6 +18946,9 @@
         "Impossibile attivare l'accesso amministratore per ${ n } utente",
         "Impossibile attivare l'accesso amministratore per ${ n } utenti"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Impossibile abilitare l'accesso come amministratore: ${ unprivatizationResult.error }"
+      ],
       "Enable manually": [
         "Abilita manualmente"
       ],
@@ -19036,6 +19003,9 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Per procedere, dovrai richiedere all'utente il permesso di accedere ai propri dati o reimpostare la password."
+      ],
+      "Waiting for admin approval": [
+        "In attesa dell'approvazione dell'amministratore"
       ],
       "You can safely remove this user from your organization.": [
         "Puoi rimuovere in sicurezza questo utente dalla tua organizzazione.",
@@ -19209,6 +19179,15 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invito spedito, in attesa di risposta da parte del membro invitato"
+      ],
+      "Invited": [
+        "Invitato"
+      ],
+      "Pending": [
+        "In attesa"
+      ],
+      "Requested": [
+        "Richiesta inviata"
       ],
       "SSO user provided by your identity provider": [
         "Utente SSO fornito dal tuo fornitore di identità"

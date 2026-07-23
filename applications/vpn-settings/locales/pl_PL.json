@@ -1001,9 +1001,6 @@
       "Send email reminder": [
         "Wyślij przypomnienie"
       ],
-      "Send feedback": [
-        "Wyślij opinię"
-      ],
       "Send my username": [
         "Wyślij moją nazwę użytkownika"
       ],
@@ -1051,9 +1048,6 @@
       ],
       "Share": [
         "Udostępnij"
-      ],
-      "Share feedback": [
-        "Udostępnij opinię"
       ],
       "Share via link": [
         "Udostępnij przez link"
@@ -1346,9 +1340,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asystent pisania ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkownika)",
         "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)",
@@ -2302,6 +2293,9 @@
       ],
       "Discover and set up features": [
         "Odkryj i skonfiguruj funkcje"
+      ],
+      "Get 50% offer": [
+        "Uzyskaj 50% zniżki"
       ],
       "Maybe later": [
         "Może później"
@@ -7247,6 +7241,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Dostęp do ponad 20 000 serwerów w 145 krajach"
+      ],
       "Account monitor": [
         "Monitoring konta"
       ],
@@ -7604,9 +7601,6 @@
       "Copy your referral link": [
         "Kopiuj link polecający"
       ],
-      "Couldn´t send feedback": [
-        "Nie udało się wysłać opinii"
-      ],
       "Country code": [
         "Kod kraju"
       ],
@@ -7958,6 +7952,9 @@
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Najwyższe prędkości VPN do 10 Gb/s"
+      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Tylko pliki (bez zdjęć, ${ DOCS_APP_NAME } lub ${ SHEETS_APP_NAME }) – łącznie do 100 GB, 100 000 plików i 50 GB na plik"
       ],
@@ -8045,6 +8042,9 @@
       "Groups": [
         "Grupy"
       ],
+      "Have some more time to decide without interruption.": [
+        "Podejmij decyzję bez żadnych zakłóceń, mając na to więcej czasu."
+      ],
       "here": [
         "tutaj"
       ],
@@ -8080,6 +8080,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jeśli uważasz, że nastąpiła pomyłka, skontaktuj się z nami ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "W przypadku anulowania teraz subskrypcji utracisz dostęp do ${ BRAND_NAME } ${ planTitle } w dniu ${ expiryDate }, w tym do następujących funkcji:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Jeśli anulujesz subskrypcję ${ planTitle }, nie zostanie ona odnowiona po terminie wygaśnięcia ${ expiryDate }."
@@ -8291,9 +8294,6 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Zachowaj bezpieczeństwo i prywatność swoich danych dzięki tym przewodnikom i wskazówkom."
       ],
-      "Key sections reorganized for faster access.": [
-        "Główne sekcje zostały przeorganizowane w celu uzyskania szybszego dostępu."
-      ],
       "Keys created": [
         "Klucze zostały utworzone"
       ],
@@ -8431,12 +8431,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Nowa grupa została utworzona za pośrednictwem Twojego dostawcy tożsamości i oczekuje na weryfikację."
-      ],
-      "New sidebar": [
-        "Nowy pasek boczny"
-      ],
-      "New sidebar layout": [
-        "Nowy układ paska bocznego"
       ],
       "New user invited to organization": [
         "Zaproszenie nowego użytkownika do organizacji"
@@ -8663,6 +8657,9 @@
       "Preference saved": [
         "Ustawienia zostały zapisane"
       ],
+      "Premium privacy protection across all your devices": [
+        "Najwyższej klasy ochrona prywatności na wszystkich Twoich urządzeniach"
+      ],
       "Preview": [
         "Podgląd"
       ],
@@ -8858,9 +8855,6 @@
       "Setting up your organization": [
         "Konfiguracja organizacji"
       ],
-      "Share your thoughts...": [
-        "Podziel się swoimi przemyśleniami..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "Usunięcie udostępniania sejfu ${ vaultLink }"
       ],
@@ -8911,6 +8905,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Pozostań przy swoim planie i otrzymaj 50% zniżki na kolejny miesiąc"
       ],
       "Storage allocated to other users in this organisation": [
         "Przestrzeń dyskowa przydzielona do innych użytkowników organizacji"
@@ -8963,9 +8960,6 @@
       "Swiss based": [
         "Ulokowany w Szwajcarii"
       ],
-      "Switch sidebars": [
-        "Przełącz paski boczne"
-      ],
       "Symbols (#$&)": [
         "Znaki specjalne (#$&)"
       ],
@@ -8986,9 +8980,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Dziękujemy za subskrypcję. Bezpieczne przeglądanie zaczyna się teraz."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Dziękujemy — Twoja opinia została wysłana."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Dziękujemy za wsparcie naszej misji budowania lepszego Internetu, w którym prywatność i wolność są na pierwszym miejscu."
@@ -9814,9 +9805,6 @@
       ],
       "your encrypted data will be locked": [
         "Twoje zaszyfrowane dane zostaną zablokowane"
-      ],
-      "Your feedback": [
-        "Twoja opinia"
       ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
@@ -16525,9 +16513,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asystent pisania ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Asystent pisania ${ BRAND_NAME } Scribe dla ${ maxAi } użytkownika",
         "Asystent pisania ${ BRAND_NAME } Scribe dla ${ maxAi } użytkowników",
@@ -16679,9 +16664,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asystent pisania ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } oraz ${ LUMO_APP_NAME } z funkcjami premium"
       ],
@@ -18234,9 +18216,6 @@
       "Help center": [
         "Centrum pomocy"
       ],
-      "Help us improve": [
-        "Pomóż nam ulepszyć usługę"
-      ],
       "Helping activists in Hong Kong": [
         "Pomoc aktywistom w Hongkongu"
       ],
@@ -18686,6 +18665,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Stay for 50% off your next month": [
+        "Zostań z nami, aby uzyskać 50% zniżki w następnym miesiącu"
       ],
       "Stay secure and connected anywhere": [
         "Dbaj o bezpieczeństwo i łączność w dowolnym miejscu"

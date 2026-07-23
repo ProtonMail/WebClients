@@ -1019,9 +1019,6 @@
       "Send email reminder": [
         "Адправіць напамін поштай"
       ],
-      "Send feedback": [
-        "Адправіць водгук"
-      ],
       "Send my username": [
         "Адправіць маё імя карыстальніка"
       ],
@@ -1069,9 +1066,6 @@
       ],
       "Share": [
         "Абагуліць"
-      ],
-      "Share feedback": [
-        "Абагуліць водгук"
       ],
       "Share via link": [
         "Абагуліць праз спасылку"
@@ -1364,9 +1358,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальніка)",
         "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
@@ -1399,6 +1390,12 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "Ліцэнзіі ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)"
       ],
       "${ price } per dedicated server": [
         "${ price } за вылучаны сервер"
@@ -1658,6 +1655,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Выведзіце прадукцыйнасць электроннай пошты на новыя ўзроўні. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ LUMO_SHORT_APP_NAME } дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
     "Attached ics file error": {
@@ -1721,6 +1721,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_LUMO_SEATS } ліцэнзій ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій памочніка ў напісанні ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій Scribe на працягу пробнага перыяду."
@@ -1898,6 +1901,12 @@
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
@@ -1906,6 +1915,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
@@ -7001,6 +7013,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочніка ў напісанні"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
@@ -7645,9 +7663,6 @@
       ],
       "Copy your referral link": [
         "Скапіяваць сваю рэферальную спасылку"
-      ],
-      "Couldn´t send feedback": [
-        "Немагчыма адправіць водгук"
       ],
       "Country code": [
         "Код краіны"
@@ -8378,9 +8393,6 @@
       "Keep your passwords safe and sign in instantly with autofill across every device.": [
         "Захоўвайце свае паролі ў бяспецы і імгненна ўваходзьце з аўтазапаўненнем паміж кожнай прыладах."
       ],
-      "Key sections reorganized for faster access.": [
-        "Ключавыя раздзелы рэарганізаваны для больш хуткага доступу."
-      ],
       "Keys created": [
         "Ключы створаны"
       ],
@@ -8522,12 +8534,6 @@
       "New group created via your identity provider and pending review.": [
         "Новая група створана праз вашага пастаўшчыка пасведчанняў і чакае разгляду."
       ],
-      "New sidebar": [
-        "Новая бакавая панэль"
-      ],
-      "New sidebar layout": [
-        "Новы макет бакавой панэлі"
-      ],
       "New user invited to organization": [
         "Новы карыстальнік запрошаны ў арганізацыю"
       ],
@@ -8584,6 +8590,9 @@
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Яны змогуць атрымаць доступ да вашых налад **Аднаўлення** і **змяніць пароль у ${ ACCOUNT_APP_NAME }** для вас пасля таго, як будзе атрыманы доступ да вашага ўліковага запісу."
+      ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Працэдура можа заняць да некалькіх гадзін для прылад, каб выявіць і прамяніць палітыку, пасля паспяховага разгортвання."
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Толькі вялікія літары і знакі пунктуацыі (інтэрвалы, злучкі і падкрэсліванні) могуць быць зменены ў гэтым адрасе. Дадайце новы адрас, каб скарыстацца ім."
@@ -8957,9 +8966,6 @@
       "Setting up your organization": [
         "Наладжванне вашай арганізацыі"
       ],
-      "Share your thoughts...": [
-        "Падзяліцеся сваімі думкамі..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "Абагульванне ${ vaultLink } выдалена"
       ],
@@ -9068,9 +9074,6 @@
       "Swiss based": [
         "Знаходзіцца ў Швейцарыі"
       ],
-      "Switch sidebars": [
-        "Пераключыць бакавыя панэлі"
-      ],
       "Symbols (#$&)": [
         "Сімвалы (#$&)"
       ],
@@ -9091,9 +9094,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Дзякуй, што падпісаліся. Зараз пачнецца бяспечны прагляд."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Дзякуй! Ваш водгук адпраўлены."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Дзякуй за падтрымку нашай місіі па стварэнні лепшага інтэрнэту, дзе прыватнасць і свабода стаяць на першым месцы."
@@ -9316,6 +9316,9 @@
       ],
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Профіль канфігурацыі павінен быць усталяваны на кожным Mac, каб уключыць пастаянную VPN. Кліент ${ VPN_APP_NAME } аўтаматычна прымяняе профіль прылады пасля яго налады."
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Профіль прылады павінен дасягнуць ${ policiesPath } на кожнай прыладзе, каб уключыць пастаянную VPN. Кліент ${ VPN_APP_NAME } выяўляе яго на прыладзе і аўтаматычна прымяняе профіль."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Адключыце **Аднаўленне па электроннай пошце** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
@@ -9938,9 +9941,6 @@
       "your encrypted data will be locked": [
         "вашы зашыфраваныя даныя будуць заблакіраваны"
       ],
-      "Your feedback": [
-        "Ваш водгук"
-      ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
@@ -10401,6 +10401,12 @@
       ],
       "City": [
         "Горад"
+      ],
+      "Client": [
+        "Кліент"
+      ],
+      "Client version": [
+        "Версія кліента"
       ],
       "Code is 6 digits without spaces": [
         "Код складаецца з 6 лічбаў без прабелаў"
@@ -11669,8 +11675,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Дадаць памочніка ў напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Дадаць памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Дадатак з бясплатным пробным перыядам"
@@ -12097,6 +12109,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } і ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } каляндар",
@@ -16666,9 +16681,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Памочнік у напісанні ${ BRAND_NAME } Scribe для ${ maxAi } карыстальніка",
         "Памочнік у напісанні ${ BRAND_NAME } Scribe для ${ maxAi } карыстальнікаў",
@@ -16680,6 +16692,12 @@
         "${ ipAddresses } вылучаныя серверы",
         "${ ipAddresses } вылучаных сервераў",
         "${ ipAddresses } вылучаных сервераў"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } для ${ maxAi } карыстальніка",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } для ${ maxAi } карыстальнікаў",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } для ${ maxAi } карыстальнікаў",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } для ${ maxAi } карыстальнікаў"
       ],
       "${ n } calendar per user": [
         "${ n } каляндар на карыстальніка",
@@ -16820,9 +16838,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } і ${ LUMO_APP_NAME } з прэміяльнымі функцыямі"
       ],
@@ -18405,9 +18420,6 @@
       "Help center": [
         "Даведачны цэнтр"
       ],
-      "Help us improve": [
-        "Дапамажыце палепшыць наш сэрвіс"
-      ],
       "Helping activists in Hong Kong": [
         "Дапамога актывістам у Ганконгу"
       ],
@@ -19105,7 +19117,7 @@
         "Ваша фраза аднаўлення"
       ],
       "Your recovery setup": [
-        "Ваш наладка аднаўлення"
+        "Ваша наладка аднаўлення"
       ],
       "Your referrals": [
         "Вашы рэфералы"
@@ -19526,6 +19538,9 @@
         "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальнікаў",
         "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальнікаў"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Не ўдалося ўключыць доступ для адміністратара: ${ unprivatizationResult.error }"
+      ],
       "Enable manually": [
         "Уключыць уручную"
       ],
@@ -19582,6 +19597,9 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Для працягу, вам неабходна запытаць правы ў карыстальніка на доступ да яго даных або скінуць яго пароль."
+      ],
+      "Waiting for admin approval": [
+        "Чакаецца ўхваленне адміністратара"
       ],
       "You can safely remove this user from your organization.": [
         "Вы можаце бяспечна выдаліць гэтага карыстальніка з вашай арганізацыі.",
@@ -19757,6 +19775,15 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Запрашэнне адпраўлена. Чаканне адказу ад запрошанага ўдзельніка"
+      ],
+      "Invited": [
+        "Запрошаны"
+      ],
+      "Pending": [
+        "У чаканні"
+      ],
+      "Requested": [
+        "Запытана"
       ],
       "SSO user provided by your identity provider": [
         "Карыстальнік SSO, які забяспечаны вашым пастаўшчыком пасведчанняў"
