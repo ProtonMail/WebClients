@@ -1419,6 +1419,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "이메일 생산성을 한 단계 더 높은 경지로. ${ LUMO_SHORT_APP_NAME }가 이메일의 작성과 답장, 교정에 도움을 드립니다."
       ]
     },
     "Attached ics file error": {
@@ -1470,6 +1473,9 @@
       ],
       "You have reached the trial limit.": [
         "무료 체험 한도에 도달했습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 시트를 포함할 수 있습니다."
       ]
     },
     "b2b_trials_Action": {
@@ -1587,6 +1593,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
       ]
     },
     "BF2025: Deal details": {
@@ -7333,6 +7345,12 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "현재 플랜을 유지허고 다음 달에는 50% 할인 받으세요"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME }에 글쓰기 도우미가 포함됩니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ]
     },
     "info": {
@@ -8222,6 +8240,12 @@
       ],
       "URL wildcard pattern": [
         "URL 와일드카드 패턴"
+      ],
+      "Client": [
+        "클라이언트"
+      ],
+      "Client version": [
+        "클라이언트 버전"
       ]
     },
     "Label for contact group color": {
@@ -8477,6 +8501,12 @@
       ],
       "for ${ price }": [
         "${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 추가"
       ]
     },
     "meet_2025: Feature": {
@@ -9291,6 +9321,9 @@
       ],
       "Unlock streaming": [
         "스트리밍 서비스 차단 해제"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ]
     },
     "new_plans: feature highlight": {
