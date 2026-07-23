@@ -15,7 +15,11 @@ type AutosaveCandidates = { candidates: LoginItemPreview[] };
 
 type AutosaveCreateDTO = AutosaveCreate<SelectedShare & { optimisticId: string }>;
 type AutosaveUpdateDTO = AutosaveUpdate<SelectedItem>;
-type AutosaveRequestData = FormCredentials & { name: string; passkey?: SanitizedPasskey };
+type AutosaveRequestData = FormCredentials & {
+    name: string;
+    passkey?: SanitizedPasskey;
+    iframeUrl?: MaybeNull<string>;
+};
 export type AutosaveRequest = (AutosaveCreateDTO | AutosaveUpdateDTO) & AutosaveRequestData;
 export type AutosaveFormValues = AutosaveRequest & { step: 'select' | 'edit' };
 
@@ -24,7 +28,7 @@ export type AutosaveFormValues = AutosaveRequest & { step: 'select' | 'edit' };
 
 export type AutosaveCreatePayload = AutosaveCreate<AutosavePayloadData>;
 export type AutosaveUpdatePayload = AutosaveUpdate<AutosaveCandidates>;
-export type AutosavePayloadData = FormCredentials & { submittedAt: MaybeNull<number> };
+export type AutosavePayloadData = FormCredentials & { submittedAt: MaybeNull<number>; iframeUrl?: MaybeNull<string> };
 export type AutosavePayload = (AutosaveCreatePayload | AutosaveUpdatePayload) & AutosavePayloadData;
 
 type AutosavePromptData = AutosaveCreate | AutosaveUpdate<AutosaveCandidates>;
