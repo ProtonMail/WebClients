@@ -72,6 +72,14 @@
         "查看账单"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "将电子邮件工作效率提升到新水平。让 ${ BRAND_NAME } Scribe 帮您撰写、回复和校对电子邮件。"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "将邮件生产力提升至新高度，让 ${ LUMO_SHORT_APP_NAME } 帮助您撰写、回复和校对邮件。"
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
@@ -1025,6 +1033,12 @@
       ]
     },
     "Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "写作助理 ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
@@ -1187,6 +1201,9 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
       "${ n } custom email domain": [
         "${ n } 个自有域名"

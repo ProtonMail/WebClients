@@ -72,6 +72,14 @@
         "Rechnung anzeigen"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ LUMO_SHORT_APP_NAME } dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop-App"
@@ -1031,6 +1039,12 @@
       ]
     },
     "Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
       ],
@@ -1193,6 +1207,9 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ],
       "${ n } custom email domain": [
         "${ n } eigene E-Mail-Domain",
