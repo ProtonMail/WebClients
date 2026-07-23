@@ -8,14 +8,14 @@ import type {
     ESSetResultsList,
     ESTimepoint,
     EncryptedSearchFunctions,
-    GetUserKeys,
     NormalizedSearchParams,
 } from '@proton/encrypted-search/models';
 
 import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encryptedSearch';
 
+import type { IndexService } from '../indexation/IndexService';
 import type { Search } from '../search/Search';
-import { SearchService } from '../search/SearchService';
+import type { SearchService } from '../search/SearchService';
 
 function errorBeforeFirstResults(search: Search): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -43,18 +43,8 @@ type Functions = EncryptedSearchFunctions<ESBaseMessage, NormalizedSearchParams,
 /**
  * Adapts the content-search-v2 index to the {@link EncryptedSearchFunctions} surface so it can be
  * swapped in behind the `ContentSearch` feature flag (see `useContentSearch` / `EncryptedSearchProvider`).
- * It implements only the search-related members — running a query against the v2 index via
- * {@link SearchService} and highlighting matches — forwards event syncing to the legacy ES instance
- * so its index stays up to date while v2 is active, and forwards every other member to the library's
- * no-op defaults (the v2 index lifecycle — indexing, caching, progress — is managed elsewhere).
- *
- * Intentionally free of any React/hooks code, and with plain prototype methods: `useContentSearch`
- * instantiates it once, refreshes {@link esCallbacks} / {@link esLibraryFunctionsV1} on it each
- * render (so its methods never read stale values), and exposes it as an enumerable object of
- * instance-bound methods — because consumers destructure and call those methods detached.
  */
 export class ESAdapter implements Functions {
-    private searchService: SearchService;
     private lastSearch?: Search;
 
     progressRecorderRef: MutableRefObject<ESTimepoint> = { current: [0, 0] };
@@ -71,22 +61,23 @@ export class ESAdapter implements Functions {
     };
 
     constructor(
-        /** The current user; the adapter is recreated by the hook if it changes. */
-        readonly userID: string,
-        private readonly getUserKeys: GetUserKeys,
+        private readonly searchService: SearchService,
+        private readonly indexService: IndexService,
         /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
         public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>,
         /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
         public esLibraryFunctionsV1: Functions
-    ) {
-        this.searchService = new SearchService(this.userID, this.getUserKeys);
-    }
+    ) {}
 
     async cacheIndexedDB() {
         // `cacheIndexedDB` is the legacy ES warmup hook; the search UI already calls it when the user
         // opens the search box (see `MailSearch.handleOpen`). We repurpose it to spin up the v2 worker
         // ahead of time, so the cold start overlaps with the user typing their query instead of being
         // paid on the first search.
+
+        // we can't have concurrent access to the index,
+        // so we need to stop indexing before we can search.
+        this.indexService.currentImport?.stop();
         await this.searchService.warmUp();
     }
 
@@ -169,8 +160,11 @@ export class ESAdapter implements Functions {
         return highlightJSX(metadata, keywords, isBold, trim);
     }
 
-    handleEvent(event: ESEvent<ESBaseMessage> | undefined) {
-        return this.esLibraryFunctionsV1.handleEvent(event);
+    async handleEvent(event: ESEvent<ESBaseMessage> | undefined) {
+        await this.esLibraryFunctionsV1.handleEvent(event);
+        if (event) {
+            await this.indexService.handleEvent(event);
+        }
     }
 
     enableEncryptedSearch(options?: {

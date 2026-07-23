@@ -16,20 +16,12 @@ import {
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../helpers/test/crypto';
+import { getOrGenerateIndexKey } from '../crypto/indexKey';
+import { openContentSearchDB } from '../db/open';
 import { IndexReader } from '../search/IndexReader';
 import { initFoundationWasm } from '../testing/initFoundationWasm';
-import { ImportIssueSeverity, Importer } from './Importer';
-
-/** start() is fire-and-forget; it emits progress 1 once finished (on success or failure). */
-const completionToPromise = (importer: Importer) =>
-    new Promise<void>((resolve) => {
-        const unsubscribe = importer.onProgress.subscribe((progress) => {
-            if (progress === 1) {
-                unsubscribe();
-                resolve();
-            }
-        });
-    });
+import { EncryptedSearchReader } from './EncryptedSearchReader';
+import { Import, type ImportIssue, ImportIssueSeverity } from './Import';
 
 type Doc = { metadata: ESBaseMessage; body: string };
 
@@ -114,17 +106,46 @@ describe('Importer', () => {
             makeDoc('m2', 'Vacation photos', 'sunny beach and palm trees'),
         ]);
 
-        const importer = new Importer(userId, async () => userKeys);
-        const completion = completionToPromise(importer);
-        // start() takes a batch size for tests; 1 exercises the multi-batch loop and the per-batch
-        // cleanup between writes.
-        importer.start(1);
-        await completion;
-        // the importer swallows failures into issues rather than throwing, so assert it ran clean.
-        expect(importer.issues.filter((issue) => issue.severity === ImportIssueSeverity.Fatal)).toEqual([]);
-        expect(importer.progress).toBe(1);
+        // Assemble the import the way ImportWorker does (the orchestration was extracted out of the
+        // Import class in the refactor): open the source reader, the destination db, and derive the
+        // index key.
+        const srcReader = await EncryptedSearchReader.open(userId, userKeys);
+        const db = await openContentSearchDB(userId);
+        const indexKey = await getOrGenerateIndexKey(db, userKeys);
 
-        const reader = await IndexReader.open(userId, userKeys);
+        // the importer swallows per-item failures into issues rather than throwing.
+        const issues: ImportIssue[] = [];
+        let totalAvailable = 0;
+        let completed = 0;
+        const importer = new Import(
+            db,
+            indexKey,
+            srcReader,
+            {
+                onTotalAvailable: (total) => {
+                    totalAvailable = total;
+                },
+                onCompleted: (done) => {
+                    completed = done;
+                },
+                onIssue: (issue) => {
+                    issues.push(issue);
+                },
+            },
+            // batch size 1 exercises the multi-batch loop and the per-batch cleanup between writes.
+            1
+        );
+
+        await importer.run();
+        srcReader.close();
+        // run() closes the db (via the writer's dispose), so reopen it to read the result back.
+        const readDb = await openContentSearchDB(userId);
+
+        expect(issues.filter((issue) => issue.severity === ImportIssueSeverity.Fatal)).toEqual([]);
+        expect(totalAvailable).toBe(2);
+        expect(completed).toBe(2);
+
+        const reader = new IndexReader(readDb, indexKey);
         expect(await reader.count()).toBe(2);
 
         // the exported document carries the staged metadata attributes verbatim...
@@ -145,5 +166,6 @@ describe('Importer', () => {
 
         // a document that was never indexed is not found.
         expect(await reader.getDocumentById('does-not-exist')).toBeUndefined();
+        readDb.close();
     }, 30_000);
 });
