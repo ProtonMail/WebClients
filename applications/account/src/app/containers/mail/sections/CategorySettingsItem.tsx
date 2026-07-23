@@ -48,7 +48,7 @@ export const CategorySettingsItem = ({
                 disabled={loading || category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT}
             />
 
-            <Label htmlFor={`enable-${category.id}`} className="p-0 flex-1 flex gap-3">
+            <Label htmlFor={`enable-${category.id}`} className="p-0 flex-1 flex-nowrap flex gap-3">
                 <CategoryIcon
                     categoryId={category.id}
                     colorShade={category.colorShade}
