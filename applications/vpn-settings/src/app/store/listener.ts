@@ -1,5 +1,6 @@
 import {
     convertAddressesListener,
+    membersListener,
     organizationKeysManagementListener,
     startListeningToPlanNameChange,
     unprivatizeMembersListener,
@@ -15,5 +16,6 @@ export const start = ({ startListening, mode }: { startListening: AppStartListen
         startListeningToPlanNameChange(startListening);
         convertAddressesListener(startListening);
         unprivatizeMembersListener(startListening);
+        membersListener(startListening);
     }
 };
