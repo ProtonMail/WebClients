@@ -1,12 +1,13 @@
+import type { PrivateKeyReference } from '@protontech/crypto';
+
 import createListeners from '@proton/shared/lib/helpers/listeners';
-import type { UserModel } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import type { ESBaseMessage } from 'proton-mail/models/encryptedSearch';
 
-import { IndexWriter } from '../indexation/IndexWriter.ts';
-import { initWasm } from '../indexation/init.ts';
-import { EncryptedSearchReader } from './EncryptedSearchReader.ts';
+import { IndexWriter } from '../indexation/IndexWriter';
+import { initWasm } from '../init';
+import { EncryptedSearchReader } from './EncryptedSearchReader';
 
 export enum ImportIssueSeverity {
     Warning = 'Warning', // item was still imported
@@ -29,17 +30,15 @@ export class Importer {
     public readonly onIssue = createListeners<[ImportIssue[]]>();
 
     private abortController = new AbortController();
-    private keyPassword: string;
-    private user: UserModel;
     private _issues: ImportIssue[] = [];
     private _startTime: number | undefined;
     private _progress: number = 0;
     private _running = false;
 
-    constructor(user: UserModel, keyPassword: string) {
-        this.user = user;
-        this.keyPassword = keyPassword;
-    }
+    constructor(
+        private readonly userId: string,
+        private readonly getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>
+    ) {}
 
     get issues() {
         return this._issues;
@@ -62,13 +61,13 @@ export class Importer {
         }
     }
 
-    start() {
+    start(batchSize: number = BATCH_SIZE) {
         if (this._running) {
             return;
         }
         this._running = true;
         this._startTime = performance.now();
-        this.run()
+        this.run(batchSize)
             .catch((err) => this.handleError(err))
             .then(() => {
                 this._running = false;
@@ -77,10 +76,10 @@ export class Importer {
             .catch((err) => this.handleError(err));
     }
 
-    private async run() {
-        const userKeys = await getDecryptedUserKeysHelper(this.user, this.keyPassword);
+    private async run(batchSize: number) {
+        const userKeys = await this.getUserKeys();
         this.abortController.signal.throwIfAborted();
-        const oldStore = await EncryptedSearchReader.open(this.user.ID, userKeys);
+        const oldStore = await EncryptedSearchReader.open(this.userId, userKeys);
         const totalMessageCount = await oldStore.getTotalMessageCount();
         if (typeof totalMessageCount !== 'number') {
             throw new Error('could not get total amount of messages in old index');
@@ -88,14 +87,15 @@ export class Importer {
         this.abortController.signal.throwIfAborted();
         await initWasm();
         this.abortController.signal.throwIfAborted();
-        const newStore = await IndexWriter.open(this.user.ID, userKeys);
+        const newStore = await IndexWriter.open(this.userId, userKeys);
         try {
             await newStore.clear();
+            const batchReader = oldStore.createBatchReader();
             let messages: { metadata: ESBaseMessage; body: string }[] | undefined;
             let total = 0;
             while (
-                (messages = await oldStore.readNextBatch(
-                    BATCH_SIZE,
+                (messages = await batchReader.readNextBatch(
+                    batchSize,
                     (issue) => this.onReaderIssue(issue),
                     this.abortController.signal
                 ))
@@ -111,7 +111,7 @@ export class Importer {
                 this.emitProgress(this.correctProgress(total / totalMessageCount));
             }
         } finally {
-            newStore.close();
+            newStore.dispose();
         }
     }
 

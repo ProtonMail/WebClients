@@ -1,7 +1,12 @@
 import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import type { IDBPDatabase, IDBPObjectStore, IDBPTransaction } from 'idb';
 
-import type { Database } from '../db/schema.ts';
+import type { CleanupEvent, ExportEvent, QueryEvent, WriteEvent } from '@proton/proton-foundation-search';
+import { SerDes } from '@proton/proton-foundation-search';
+
+import type { BlobCache } from '../cache/BlobCache';
+import type { Database } from '../db/schema';
+import type { Kind, OfKind } from '../utils/eventTypeGuards';
 
 /** This class deals with the fact that idb transactions are interrupted by the async nature of webcrypto.
  * It reads the current revision number when it starts, and verifies that it is still the same when
@@ -14,31 +19,46 @@ import type { Database } from '../db/schema.ts';
  * confirming that the revision hasn't changed.
  */
 export class EncryptedBlobTransaction {
-    // blobs that are modified in this transaction, kept in memory for the lifetime of the transaction
+    /** blobs that are modified in this transaction, kept in memory for the lifetime of the transaction */
     private writtenBlobs = new Map<string, Uint8Array<ArrayBuffer>>();
-    // encrypted version of the above map. If blobs are added to the above after encrypting,
-    // this one is cleared as it is out of date
+    /** encrypted version of the above map. If blobs are added to the above after encrypting,
+     *  this one is cleared as it is out of date */
     private encryptedBlobsToWrite: Map<string, Uint8Array<ArrayBuffer>> | undefined;
-    // blobs ids that are confirmed to still be needed in the index during a cleanup.
-    // anything not tracked will be deleted during verifyAndWriteAndDeleteUntracked
+    /** blobs ids that are confirmed to still be needed in the index during a cleanup.
+     *  anything not tracked will be deleted during verifyAndWriteAndDeleteUntracked */
     private trackedBlobIds = new Set<string>();
-    // blob ids that are deleted during this transaction
+    /** blob ids that are deleted during this transaction */
     private deleteBlobIds = new Set<string>();
 
-    // TODO: consider keeping blob cache in here, scope is perfect
-
     constructor(
+        private cache: BlobCache | undefined,
         private db: IDBPDatabase<Database>,
         private indexKey: CryptoKey,
         private revision: number
     ) {}
 
-    static async start(db: IDBPDatabase<Database>, indexKey: CryptoKey) {
+    static async start(cache: BlobCache | undefined, db: IDBPDatabase<Database>, indexKey: CryptoKey) {
         const revision = await EncryptedBlobTransaction.readRevision(db.transaction('config').store);
-        return new EncryptedBlobTransaction(db, indexKey, revision);
+        return new EncryptedBlobTransaction(cache, db, indexKey, revision);
     }
 
-    async readBlob(id: string): Promise<Uint8Array<ArrayBuffer> | undefined> {
+    async handleLoadEvent(event: OfKind<QueryEvent | WriteEvent | ExportEvent | CleanupEvent, typeof Kind.Load>) {
+        const id = event.id().toString();
+        const cached = this.cache?.get(id);
+        if (cached) {
+            event.sendCached(cached);
+        } else {
+            const blob = await this.readBlobFromPersistence(id);
+            if (blob) {
+                const cached = event.send(SerDes.Cbor, blob);
+                this.cache?.set(id, cached);
+            } else {
+                event.sendEmpty();
+            }
+        }
+    }
+
+    private async readBlobFromPersistence(id: string): Promise<Uint8Array<ArrayBuffer> | undefined> {
         // first look for any blobs that are touched in this transaction so far.
         // don't return anything if a blob is scheduled for deletion,
         // regardless of whether it exists in storage
@@ -58,20 +78,26 @@ export class EncryptedBlobTransaction {
         return decrypted;
     }
 
-    deleteBlob(id: string) {
-        this.deleteBlobIds.add(id);
-    }
-
-    trackBlob(id: string) {
-        this.trackedBlobIds.add(id);
-    }
-
-    writeBlob(id: string, blob: Uint8Array<ArrayBuffer>) {
+    handleSaveEvent(event: OfKind<CleanupEvent | WriteEvent, typeof Kind.Save>) {
+        const id = event.id().toString();
+        const cached = event.recv();
+        this.cache?.set(id, cached);
+        const blob = cached.serialize(SerDes.Cbor) as Uint8Array<ArrayBuffer>;
         this.writtenBlobs.set(id, blob);
         // clear any already encrypted blobs, if writeBlob happens to be called after encrypt(),
         // which typically it shouldn't. this just ensures we don't miss any blobs when
         // writing the encrypted ones to disk.
         this.encryptedBlobsToWrite = undefined;
+    }
+
+    handleReleaseEvent(event: OfKind<CleanupEvent, typeof Kind.Release>) {
+        const id = event.id().toString();
+        this.cache?.delete(id);
+        this.deleteBlobIds.add(id);
+    }
+
+    trackBlob(id: string) {
+        this.trackedBlobIds.add(id);
     }
 
     /** should be called after all modifications have been made, before verifyAndWrite.
@@ -121,11 +147,14 @@ export class EncryptedBlobTransaction {
         if (this.trackedBlobIds.size === 0) {
             throw new Error('no blobs are tracked, this would delete all blobs');
         }
-        let keyCursor = await txn.objectStore('index_blobs').openKeyCursor();
+        const blobStore = txn.objectStore('index_blobs');
+        let keyCursor = await blobStore.openKeyCursor();
         while (keyCursor) {
             if (!this.trackedBlobIds.has(keyCursor.key as string)) {
+                // Delete via the store, not the cursor: a key-only cursor (openKeyCursor) is not
+                // allowed to delete() per the IndexedDB spec and throws InvalidStateError.
                 // no need to await delete, txn.done at end is enough
-                void keyCursor.delete();
+                void blobStore.delete(keyCursor.key);
             }
             keyCursor = await keyCursor.continue();
         }
