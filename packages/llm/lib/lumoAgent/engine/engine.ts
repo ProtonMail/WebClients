@@ -1,0 +1,250 @@
+import type {
+    ChatCompletionsFunctionTool,
+    ClientToolExecutor,
+    ClientToolResult,
+    PendingClientToolCall,
+} from '@proton/lumo-api-client';
+
+import type {
+    ActionRequest,
+    ChipSummary,
+    ReferenceRegistry,
+    ToolDefinition,
+    ToolHandlers,
+    ToolName,
+} from '../contracts/types';
+import { UnknownReferenceError } from '../contracts/types';
+import { buildToolDescriptors } from './tools';
+import { validateToolArgs } from './validate';
+
+/**
+ * The framework's tool layer as a {@link ClientToolExecutor} — the port the transport
+ * (`@proton/lumo-api-client`) drives its multi-round loop through. The transport owns the round loop;
+ * this factory owns the per-call work: advertise, validate, guard, run, confirm mutations, serialise.
+ * It stays product-blind — definitions, handlers, and confirm UI are all injected.
+ */
+
+const DEFAULT_LOAD_GUIDE_TOOL = 'load_guide';
+
+/** A reference-shaped token, e.g. `email-a1b2c3` — `<kind>-<6 base36>`. */
+const REFERENCE_PATTERN = /^[a-z]+-[0-9a-z]{6}$/;
+
+export type ConfirmDecision = { action: 'apply'; params: Record<string, any> } | { action: 'cancel' };
+
+/**
+ * Human-in-the-loop confirmation for mutations, awaited inside `execute()` (the transport has no notion
+ * of approval). The (possibly edited) params from an `apply` are what the handler runs with.
+ */
+export interface ConfirmController {
+    requestConfirmation(action: ActionRequest, labels: Record<string, string>): Promise<ConfirmDecision>;
+}
+
+/** A transparency chip emitted per tool run for the product's UI. `payload` is what was fed to the model. */
+export interface ToolChip {
+    tool: ToolName;
+    summary: ChipSummary;
+    payload: string;
+}
+
+export interface ClientToolExecutorConfig {
+    definitions: ToolDefinition[];
+    handlers: ToolHandlers;
+    references: ReferenceRegistry;
+    /** Required for mutations; a mutation call without it is rejected. Omit for a read-only product. */
+    confirm?: ConfirmController;
+    loadedGuides?: Iterable<ToolName>;
+    /** Aliases a call name before dispatch, to absorb common model mistakes (e.g. singular→plural). */
+    normalizeName?: (name: string) => string;
+    onChip?: (chip: ToolChip) => void;
+    onTrace?: (error: unknown) => void;
+    loadGuideToolName?: ToolName;
+}
+
+const okResult = (content: string): ClientToolResult => ({ content });
+const errorResult = (message: string): ClientToolResult => ({
+    content: JSON.stringify({ error: message }),
+    is_error: true,
+});
+
+const parseArgs = (raw: string): unknown => {
+    try {
+        return JSON.parse(raw || '{}');
+    } catch {
+        return raw;
+    }
+};
+
+const unknownReferenceMessage = (reference: string): string =>
+    `Unknown reference "${reference}" — it was never returned by an earlier read. Re-read to get valid references, then try again.`;
+
+/** Reject any reference-shaped param value the registry never issued (hallucination guard). */
+const assertReferencesResolve = (params: Record<string, any>, references: ReferenceRegistry): void => {
+    const check = (value: any) => {
+        if (typeof value === 'string' && REFERENCE_PATTERN.test(value) && !references.has(value)) {
+            throw new UnknownReferenceError(value);
+        } else if (Array.isArray(value)) {
+            value.forEach(check);
+        }
+    };
+    Object.values(params).forEach(check);
+};
+
+/** Map each reference-shaped param value to its human-readable name, for the confirm card. */
+const collectLabels = (params: Record<string, any>, references: ReferenceRegistry): Record<string, string> => {
+    const labels: Record<string, string> = {};
+    const collect = (value: any) => {
+        if (typeof value === 'string' && REFERENCE_PATTERN.test(value)) {
+            const label = references.labelFor(value);
+            if (label) {
+                labels[value] = label;
+            }
+        } else if (Array.isArray(value)) {
+            value.forEach(collect);
+        }
+    };
+    Object.values(params).forEach(collect);
+    return labels;
+};
+
+export const createClientToolExecutor = (config: ClientToolExecutorConfig): ClientToolExecutor => {
+    const {
+        definitions,
+        handlers,
+        references,
+        confirm,
+        normalizeName,
+        onChip,
+        onTrace,
+        loadGuideToolName = DEFAULT_LOAD_GUIDE_TOOL,
+    } = config;
+
+    const byName = new Map<ToolName, ToolDefinition>(definitions.map((definition) => [definition.name, definition]));
+    // Widens as `load_guide` runs; getClientTools() re-reads it each round so a just-unlocked tool is
+    // advertised on the next turn.
+    const loadedGuides = new Set<ToolName>(config.loadedGuides ?? []);
+
+    /**
+     * Guard params against hallucinated references, converting the {@link UnknownReferenceError} into a
+     * tool error result the model can recover from. Returns `undefined` when everything resolves; any
+     * other error propagates.
+     */
+    const guardReferences = (params: Record<string, any>): ClientToolResult | undefined => {
+        try {
+            assertReferencesResolve(params, references);
+        } catch (error) {
+            if (error instanceof UnknownReferenceError) {
+                return errorResult(unknownReferenceMessage(error.reference));
+            }
+            throw error;
+        }
+    };
+
+    const runHandler = async (
+        definition: ToolDefinition,
+        params: Record<string, any>
+    ): Promise<{ ok: true; payload: string } | { ok: false; error: ClientToolResult }> => {
+        const handler = handlers[definition.name];
+        if (!handler) {
+            onTrace?.(new Error(`No handler registered for tool "${definition.name}".`));
+            return { ok: false, error: errorResult(`The tool "${definition.name}" is not available.`) };
+        }
+        try {
+            const result = await handler(params, { references });
+            const payload = definition.serializeForLumo(result, references);
+            onChip?.({ tool: definition.name, summary: definition.summarizeChip(params, result), payload });
+            return { ok: true, payload };
+        } catch (error: any) {
+            if (error instanceof UnknownReferenceError) {
+                return { ok: false, error: errorResult(unknownReferenceMessage(error.reference)) };
+            }
+            onTrace?.(error);
+            return { ok: false, error: errorResult(`The ${definition.name} tool failed. Try a different approach.`) };
+        }
+    };
+
+    const runLoadGuide = (args: Record<string, any>): ClientToolResult => {
+        const target = args.guide as ToolName;
+        const targetDefinition = byName.get(target);
+        if (!targetDefinition?.guide) {
+            return errorResult(`There is no guide for "${target}".`);
+        }
+        loadedGuides.add(target);
+        const loadGuide = byName.get(loadGuideToolName);
+        onChip?.({
+            tool: loadGuideToolName,
+            summary: loadGuide?.summarizeChip(args, undefined as never) ?? { label: `Loaded guide for ${target}` },
+            payload: targetDefinition.guide,
+        });
+        return okResult(`Loaded the usage guide for ${target}. Its tool is now available.`);
+    };
+
+    const executeOne = async (call: PendingClientToolCall): Promise<ClientToolResult> => {
+        const definition = byName.get(call.name);
+        if (!definition) {
+            return errorResult(`Unknown tool "${call.name}". Use one of the provided tools.`);
+        }
+
+        const validation = validateToolArgs(definition.paramsSchema, parseArgs(call.arguments));
+        if (!validation.ok) {
+            return errorResult(validation.error);
+        }
+        const args = validation.value;
+
+        const argsError = guardReferences(args);
+        if (argsError) {
+            return argsError;
+        }
+
+        if (definition.name === loadGuideToolName) {
+            return runLoadGuide(args);
+        }
+
+        if (definition.kind === 'mutation') {
+            if (!confirm) {
+                onTrace?.(new Error(`Mutation "${definition.name}" called but no confirm controller is configured.`));
+                return errorResult(`The tool "${definition.name}" is not available.`);
+            }
+            const action: ActionRequest = { type: definition.name, ...args };
+            const decision = await confirm.requestConfirmation(action, collectLabels(action, references));
+            if (decision.action === 'cancel') {
+                return okResult('The user declined that change. Suggest an alternative or ask what they want instead.');
+            }
+            const editedParams = decision.params;
+            const editedError = guardReferences(editedParams);
+            if (editedError) {
+                return editedError;
+            }
+            const applied = await runHandler(definition, editedParams);
+            if (!applied.ok) {
+                return applied.error;
+            }
+            // A create_* tool serialises the new entity's reference here so the model can chain a
+            // follow-up without a re-read; other mutations serialise to ''.
+            const detail = applied.payload;
+            return okResult(
+                `Applied ${definition.name} successfully.${detail ? ` ${detail}` : ''} You MUST now respond — either call the next tool to continue, or, if the request is complete, reply with a brief confirmation of what you did. Do not stop without responding.`
+            );
+        }
+
+        const read = await runHandler(definition, args);
+        return read.ok ? okResult(read.payload) : read.error;
+    };
+
+    return {
+        getClientTools: async (): Promise<ChatCompletionsFunctionTool[]> =>
+            buildToolDescriptors(definitions, loadedGuides),
+        canExecute: (name) => byName.has(name),
+        normalizeCalls: normalizeName
+            ? (calls) => calls.map((call) => ({ ...call, name: normalizeName(call.name) }))
+            : (calls) => calls,
+        // Sequential, not parallel: a mutation must clear its confirm card before the next call, and the
+        // transport zips results to calls by index.
+        execute: async (calls) => {
+            const results: ClientToolResult[] = [];
+            for (const call of calls) {
+                results.push(await executeOne(call));
+            }
+            return results;
+        },
+    };
+};
