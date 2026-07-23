@@ -26,6 +26,8 @@ import { AppVersionGuard } from './AppVersionGuard';
 import type { FetchLastEventIdForTreeScopeId } from './MainThreadBridge';
 import { MainThreadBridge } from './MainThreadBridge';
 import { SearchOptInManager } from './SearchOptInManager';
+import type { ThrottledSearchSdkDriveClient } from './ThrottledSearchSdkDriveClient';
+import { createThrottledSearchSdkDriveClient } from './ThrottledSearchSdkDriveClient';
 import { WorkerClient } from './WorkerClient';
 
 // `isEnvironmentCompatible` may run several times per page (e.g. by
@@ -98,6 +100,7 @@ export class SearchModule {
     private updateChannel: SearchModuleStateUpdateChannel;
     private workerClient: WorkerClient;
     private optInManager: SearchOptInManager;
+    private throttledSdkDriveClient: ThrottledSearchSdkDriveClient;
 
     // The only SearchDB connection for the main thread.
     // The search sharedworker will have its own instance too.
@@ -115,8 +118,10 @@ export class SearchModule {
         const latestEventIdProvider = new PersistentLatestEventIdProvider(this.searchDbPromise);
         const driveClientForSearchEvents = context.createSearchDriveInstance({ latestEventIdProvider });
 
+        this.throttledSdkDriveClient = createThrottledSearchSdkDriveClient(context.driveClient);
+
         const bridge = new MainThreadBridge(
-            context.driveClient,
+            this.throttledSdkDriveClient.client,
             driveClientForSearchEvents,
             latestEventIdProvider,
             context.fetchLastEventIdForTreeScopeId,
@@ -216,6 +221,7 @@ export class SearchModule {
         this.workerClient.dispose();
         this.updateChannel.close();
         this.optInManager.dispose();
+        this.throttledSdkDriveClient.dispose();
         this.setState({
             isRunningOutdatedVersion: true,
             isIndexing: false,
