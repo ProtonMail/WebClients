@@ -33,7 +33,7 @@ jest.mock('../shared/errors', () => {
 });
 
 jest.mock('../shared/Logger', () => ({
-    Logger: { info: jest.fn(), error: jest.fn(), listenForWorkerLogs: jest.fn() },
+    Logger: { debug: jest.fn(), info: jest.fn(), warn: jest.fn(), error: jest.fn(), listenForWorkerLogs: jest.fn() },
 }));
 
 // --- Stub external hooks ---
@@ -52,8 +52,9 @@ jest.mock('@proton/components', () => ({
 }));
 
 jest.mock('@proton/drive', () => ({
+    ...jest.requireActual('@proton/drive'),
     useDrive: () => ({
-        drive: {},
+        drive: { onMessage: jest.fn().mockReturnValue(jest.fn()) },
         internal: { createSearchDriveInstance: jest.fn().mockReturnValue({}) },
     }),
 }));
