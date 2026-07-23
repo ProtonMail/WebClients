@@ -4,7 +4,6 @@ import { MeetCoreErrorEnum, MlsSyncStateInfo, RejoinReasonInfo } from '@proton-m
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setMlsRetrying } from '@proton/meet/store/slices/connectionSlice';
 import { setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
@@ -12,6 +11,7 @@ import type { MLSGroupState } from '@proton/meet/types/types';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
+import { useNotifyError } from '../useNotifyError';
 
 interface UseMlsSessionParams {
     getGroupKeyInfo: () => Promise<{ key: string; epoch: bigint }>;
@@ -46,7 +46,7 @@ export const useMlsSession = ({
 
     const authentication = useAuthentication();
     const dispatch = useMeetDispatch();
-    const { createNotification } = useNotifications();
+    const notifyError = useNotifyError();
 
     const mlsSetupDone = useRef(false);
 
@@ -132,7 +132,7 @@ export const useMlsSession = ({
                     console.error(error);
                     message = c('Error').t`Failed to join meeting. Please try again later.`;
             }
-            createNotification({ type: 'error', text: message });
+            notifyError(message);
             const err = new Error(message);
             Object.assign(err, { userNotified: true });
             throw err;

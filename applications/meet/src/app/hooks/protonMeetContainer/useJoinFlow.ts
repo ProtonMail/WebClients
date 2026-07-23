@@ -5,7 +5,6 @@ import { useRoomContext } from '@livekit/components-react';
 import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -30,6 +29,7 @@ import type { useMeetingSetup } from '../srp/useMeetingSetup';
 import { logJoinStats } from '../telemetry/meetingTelemetry';
 import { getUrlWithoutProtocol } from '../telemetry/utils';
 import { isConnectionTimeoutError } from '../useLiveKitConnection';
+import { useNotifyError } from '../useNotifyError';
 import type { ConnectWithMlsResult, UseMeetingConnectionResult } from './useMeetingConnection';
 
 type MeetingSetup = ReturnType<typeof useMeetingSetup>;
@@ -177,7 +177,7 @@ export const useJoinFlow = ({
     const room = useRoomContext();
     const history = useHistory();
     const meetCoreClient = useMeetCoreClient();
-    const { createNotification } = useNotifications();
+    const notifyJoinError = useNotifyError();
     const createInstantMeeting = useCreateInstantMeeting();
     const isGuest = useMeetSelector(selectIsGuest);
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
@@ -325,10 +325,7 @@ export const useJoinFlow = ({
                 return;
             }
             if (!error?.userNotified) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`Failed to join meeting. Please try again.`,
-                });
+                notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
             }
         }
     };
@@ -404,10 +401,7 @@ export const useJoinFlow = ({
             reportMeetError('Failed to create instant meeting', withMeetingLinkNameTag(error));
             dispatch(setJoiningInProgress(false));
             if (!error?.userNotified) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`Failed to start meeting. Please try again.`,
-                });
+                notifyJoinError(c('Error').t`Failed to start meeting. Please try again.`);
             }
         }
 
@@ -468,10 +462,7 @@ export const useJoinFlow = ({
                 dispatch(setJoiningInProgress(false));
                 joinBlockedRef.current = false;
                 if (!error?.userNotified) {
-                    createNotification({
-                        type: 'error',
-                        text: c('Error').t`Failed to join meeting. Please try again.`,
-                    });
+                    notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
                 }
                 return;
             }
@@ -499,10 +490,7 @@ export const useJoinFlow = ({
             reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
             dispatch(setJoiningInProgress(false));
             if (!error?.userNotified && !isConnectionTimeoutError(error)) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`Failed to join meeting. Please try again.`,
-                });
+                notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
             }
         }
 
