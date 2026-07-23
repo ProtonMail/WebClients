@@ -2,12 +2,9 @@ import type { IDBPDatabase } from 'idb';
 
 import type { Entry, ExportEvent, Expression } from '@proton/proton-foundation-search';
 import { ExportEventKind, type QueryEvent, QueryEventKind, SerDes } from '@proton/proton-foundation-search';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { BlobCache } from '../cache/BlobCache';
 import { EncryptedBlobTransaction } from '../crypto/EncryptedBlobTransaction';
-import { KeyManager } from '../crypto/KeyManager';
-import { openContentSearchDB } from '../db/open';
 import type { Database } from '../db/schema';
 import { createMailSearchEngine } from '../engine/create';
 import { isLoadEvent } from '../utils/eventTypeGuards';
@@ -21,19 +18,20 @@ export class IndexReader {
         private indexKey: CryptoKey
     ) {}
 
-    static async open(userId: string, userKeys: DecryptedKey[]): Promise<IndexReader> {
-        const db = await openContentSearchDB(userId);
-        const keyManager = new KeyManager(userKeys, db);
-        const key = await keyManager.getKey();
-        return new IndexReader(db, key);
-    }
-
     async count(): Promise<number> {
         let count = 0;
         await this.runExport(() => {
             count += 1;
         });
         return count;
+    }
+
+    async getAllIds(): Promise<string[]> {
+        const ids: string[] = [];
+        await this.runExport((entry) => {
+            ids.push(entry.identifier());
+        });
+        return ids;
     }
 
     async getDocumentById(id: string): Promise<undefined | Record<string, any[]>> {
@@ -99,5 +97,9 @@ export class IndexReader {
         await txn.verify(this.db.transaction('config'));
         performance.measure('search-foundation', 'search-foundation-start');
         return hits;
+    }
+
+    close() {
+        this.db.close();
     }
 }
