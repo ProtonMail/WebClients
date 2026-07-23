@@ -749,9 +749,6 @@
       "Show floating thumbnail during screensharing": [
         "屏幕共享时显示浮动缩略图"
       ],
-      "Show passphrase": [
-        "显示密码"
-      ],
       "Stop recording and download.": [
         "停止录制并下载"
       ],
@@ -1881,9 +1878,6 @@
       "Invalid meeting link": [
         "无效的会议链接"
       ],
-      "Invalid passphrase": [
-        "密码无效"
-      ],
       "Invalid verification code": [
         "验证码无效"
       ],
@@ -2331,9 +2325,6 @@
       "Failed to update meeting name": [
         "更新会议名称失败"
       ],
-      "Failed to update meeting password": [
-        "更新会议密码失败"
-      ],
       "Failed to update meeting schedule": [
         "更新会议计划失败"
       ],
@@ -2559,9 +2550,6 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "请启用对 ${ microphoneLinkButton }${ andString }${ cameraLinkButton } 的访问权限，以获得最佳体验。"
       ],
-      "Please enter the passphrase to decrypt and view this meeting": [
-        "请输入密码以解密并查看此会议"
-      ],
       "Please try again or try another browser": [
         "请重试或尝试其他浏览器"
       ],
@@ -2696,9 +2684,6 @@
       ],
       "This meeting is locked. Please contact the host to join.": [
         "此会议已锁定，请联系主持人以加入。"
-      ],
-      "This meeting is password protected": [
-        "此会议受密码保护"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "此会议已达到免费套餐的时长限制，请升级以在未来的通话中延长会议时长。"
@@ -2894,6 +2879,12 @@
       "Category": [
         "类别"
       ],
+      "Client": [
+        "客户端"
+      ],
+      "Client version": [
+        "客户端版本"
+      ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
@@ -3022,9 +3013,6 @@
       ],
       "Participants join after you approve them": [
         "参与者需经您批准后方可加入"
-      ],
-      "Passphrase": [
-        "密码"
       ],
       "Password": [
         "密码"
@@ -3222,9 +3210,6 @@
       ],
       "E.g., ": [
         "例如："
-      ],
-      "Enter passphrase": [
-        "输入密码短语"
       ],
       "Enter time": [
         "输入时间"
@@ -3547,9 +3532,6 @@
       ],
       "Participants (${ filteredParticipants.length })": [
         "参与者 (${ filteredParticipants.length })"
-      ],
-      "Passphrase": [
-        "密码"
       ],
       "Personal meeting room": [
         "个人会议室"
