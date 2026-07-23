@@ -171,14 +171,16 @@ describe('useTransferManagerState', () => {
         expect(result.current.uploads[0].clearTextSize).toBe(100);
     });
 
-    it('should ignore transfers whose last status update happened before the reset window', () => {
+    it('excludes a finished transfer left over from a previous batch', () => {
         const staleDate = new Date('2000-01-01T00:00:00Z');
         addDownloadItems(
+            // Finished long before the reset window — a leftover from a previous
+            // batch that must not inflate the current batch's denominator.
             createDownloadItem({
                 downloadId: 'stale-download',
                 name: 'Stale download',
-                status: DownloadStatus.InProgress,
-                downloadedBytes: 50,
+                status: DownloadStatus.Finished,
+                downloadedBytes: 100,
                 lastStatusUpdateTime: staleDate,
             }),
             createDownloadItem({
@@ -193,6 +195,51 @@ describe('useTransferManagerState', () => {
 
         expect(result.current.items).toHaveLength(2);
         expect(result.current.progressPercentage).toBe(80);
+    });
+
+    it('keeps counting an active transfer that started within the batch-reset window', () => {
+        // Regression: a single long upload shows the header pinned at 0% for its
+        // entire duration. `lastStatusUpdateTime` is frozen at the moment the item
+        // entered its current status (it does not advance on byte progress), so an
+        // upload that starts within PROGRESS_RESET_DELAY of the previous batch's
+        // completion (e.g. right after the folder-creation item finishes) used to be
+        // misclassified as "previous batch" and excluded from the aggregate forever.
+
+        // 1. A previous batch completes at 100%, bumping the internal
+        //    lastCompletionDate to ~now.
+        addUploadItems(
+            createUploadItem({
+                uploadId: 'previous-batch-file',
+                name: 'previous.txt',
+                uploadedBytes: 100,
+                clearTextExpectedSize: 100,
+                status: UploadStatus.Finished,
+                type: NodeType.File,
+                lastStatusUpdateTime: new Date(),
+            })
+        );
+        renderHook(() => useTransferManagerState());
+
+        // 2. A new large upload starts within the reset window; its frozen
+        //    timestamp sits just after lastCompletionDate.
+        addUploadItems(
+            createUploadItem({
+                uploadId: 'active-large-file',
+                name: 'huge.bin',
+                uploadedBytes: 30,
+                clearTextExpectedSize: 100,
+                status: UploadStatus.InProgress,
+                type: NodeType.File,
+                lastStatusUpdateTime: new Date(),
+            })
+        );
+
+        const { result } = renderHook(() => useTransferManagerState());
+
+        // The active transfer must be counted; the finished previous-batch file is
+        // still correctly excluded, so the percentage reflects only the live upload.
+        expect(result.current.status).toBe(TransferManagerStatus.InProgress);
+        expect(result.current.progressPercentage).toBe(30);
     });
 
     it('should return 0 transferredBytes for pending folders', () => {
