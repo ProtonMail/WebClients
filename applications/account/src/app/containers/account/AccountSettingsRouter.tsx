@@ -113,6 +113,10 @@ const AccountSettingsRouter = ({
         },
     } = accountAppRoutes;
 
+    if (!accountAppRoutes.available) {
+        return <>{redirect}</>;
+    }
+
     return (
         <Switch>
             {getIsSectionAvailable(subscription) && shouldRedirectToSubscriptions(location, path, dashboard) ? (
