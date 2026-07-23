@@ -3,7 +3,7 @@ import { getNodeName } from '@proton/drive/modules/nodes';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 
 import { Logger } from '../../shared/Logger';
-import { MAX_SEARCHABLE_FILENAME_LENGTH } from '../../shared/config';
+import { SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH } from '../../shared/config';
 import type { TreeEventScopeId } from '../../shared/types';
 
 // Attribute value variants that the search library WASM understands.
@@ -47,7 +47,7 @@ export interface CoreNodeFields {
  */
 export const CORE_ATTRIBUTE_NAMES = [
     'nodeUid',
-    'filename',
+    'filenameTag',
     'filenameText',
     'path',
     'treeEventScopeId',
@@ -125,32 +125,27 @@ export function extractExtension(filename: string): string {
 
 /**
  * Strip all non-alphanumeric characters from a string.
- * Search library WASM tokenizer will use any special characters (space, #, _, -, (,), ., ...
- * as a token delimiter) which makes matching filenames quite impossible if
- * they are pack with those e.g. "My file_name #1.png" will be tokenized.
+ * The search library WASM text processor tokenizes "text" attributes, using any special
+ * characters (space, #, _, -, (,), ., ...) as a token delimiter. Stripping them up front
+ * gives the tokenizer a single concatenated alphanumeric run to work with.
  *
- * Ideally we should be able to not consider these special characters for search
- * tokenization in filenames but this is not supported.
- * See issue:  See issue: https://protonag.atlassian.net/browse/DRVWEB-5345
- *
- * For now, we normalize filenames by stripping all special characters at indexing
- * and querying time. This allow to match complex filename like "My file_name #1.png"
- * but we don't support special character querying. For that example, "My file_name #1.png" will
- * ne stripped down to "Myfilename1png".
+ * This applies to the "text" attribute only. "tag" attributes are not tokenized, so they
+ * preserve special characters and do not need stripping.
  *
  * Note: We use unicode replace to make sure this replace is i18n friendly.
  */
 const stripSpecialChars = (s: string): string => s.replace(/[^\p{L}\p{N}]/gu, '');
 
 /**
- * Normalize a filename for "tag" indexing: strip special chars + lowercase.
- * We use lowercase since querying tag attributes is case sensitive: So we will normalize to lowercase
- * When feeding the index and normalize queries (using the same utility) before querying the
- * index.
- * Searching over "text" attribute is not case sensitive so we don't need to lowercase the index value like
- * for "tag"s.
+ * Normalize a filename for "tag" indexing: lowercase only, special characters preserved.
  */
-export const normalizedFilenameForTag = (s: string): string => stripSpecialChars(s).toLowerCase();
+export const normalizedFilenameForTag = (s: string): string => s.toLowerCase();
+
+/**
+ * Normalize a filename for "text" indexing: strip special characters, do not lowercase.
+ * Used for the fuzzy / trigram text searches.
+ */
+export const normalizedFilenameForText = (s: string): string => stripSpecialChars(s);
 
 export function createIndexEntry<N extends string>(params: CreateIndexEntryParams<N>): IndexEntry {
     const {
@@ -164,13 +159,16 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
         additionalAttributes,
     } = params;
 
-    let strippedFilenameForTextAttribute = stripSpecialChars(node.name);
-    if (strippedFilenameForTextAttribute.length > MAX_SEARCHABLE_FILENAME_LENGTH) {
+    let strippedFilenameForTextAttribute = normalizedFilenameForText(node.name);
+    if (strippedFilenameForTextAttribute.length > SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH) {
         Logger.error(
-            `Filename exceeds max searchable length (${strippedFilenameForTextAttribute.length}/${MAX_SEARCHABLE_FILENAME_LENGTH})`
+            `Filename exceeds max searchable length (${strippedFilenameForTextAttribute.length}/${SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH})`
         );
-        // Let's still index the first MAX_SEARCHABLE_FILENAME_LENGTH characters.
-        strippedFilenameForTextAttribute = strippedFilenameForTextAttribute.slice(0, MAX_SEARCHABLE_FILENAME_LENGTH);
+        // Let's still index the first SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH characters.
+        strippedFilenameForTextAttribute = strippedFilenameForTextAttribute.slice(
+            0,
+            SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH
+        );
     }
 
     return {
@@ -178,10 +176,10 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
         attributes: [
             { name: 'nodeUid', value: { kind: 'tag', value: node.uid } },
             { name: 'nodeType', value: { kind: 'tag', value: node.type } },
-            // Filename as tag — normalized (lowercase, special chars stripped) for
-            // case-insensitive substring matching via *query* wildcard patterns.
-            { name: 'filename', value: { kind: 'tag', value: normalizedFilenameForTag(node.name) } },
-            // Filename as text — special chars stripped so the text processor sees
+            // Filename as tag - lowercased, special chars preserved, for case-insensitive
+            // substring matching (including special characters).
+            { name: 'filenameTag', value: { kind: 'tag', value: normalizedFilenameForTag(node.name) } },
+            // Filename as text - special chars stripped so the text processor sees
             // concatenated alphanumeric tokens for trigram / fuzzy matching. Not case sensitive.
             { name: 'filenameText', value: { kind: 'text', value: strippedFilenameForTextAttribute } },
             { name: 'path', value: { kind: 'tag', value: parentPath } },

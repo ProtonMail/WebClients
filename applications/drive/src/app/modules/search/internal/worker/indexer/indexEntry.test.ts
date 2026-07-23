@@ -1,6 +1,12 @@
 import type { TreeEventScopeId } from '../../shared/types';
 import type { CoreNodeFields } from './indexEntry';
-import { CORE_ATTRIBUTE_NAMES, createIndexEntry, extractExtension, normalizedFilenameForTag } from './indexEntry';
+import {
+    CORE_ATTRIBUTE_NAMES,
+    createIndexEntry,
+    extractExtension,
+    normalizedFilenameForTag,
+    normalizedFilenameForText,
+} from './indexEntry';
 
 const okAuthor = (email: string) => ({ ok: true as const, value: email });
 
@@ -33,34 +39,37 @@ describe('createIndexEntry', () => {
         expect(entry.documentId).toBe('node-uid-1');
     });
 
-    it('produces an index entry even if the filename strips to empty string', () => {
+    it('produces an index entry even when the text attribute strips to empty', () => {
         const entry = createIndexEntry({ ...defaultParams(), node: makeNode({ name: '...' }) });
         expect(entry.documentId).toBe('node-uid-1');
-        const filename = entry.attributes.find((a) => a.name === 'filename')?.value;
-        expect(filename).toEqual({ kind: 'tag', value: '' });
+        // Tag keeps the literal (lowercased) name; only the tokenized text attribute strips empty.
+        const filename = entry.attributes.find((a) => a.name === 'filenameTag')?.value;
+        expect(filename).toEqual({ kind: 'tag', value: '...' });
+        const filenameText = entry.attributes.find((a) => a.name === 'filenameText')?.value;
+        expect(filenameText).toEqual({ kind: 'text', value: '' });
     });
 
     it.each([
-        // [input filename, expected normalized filename]
+        // [input filename, expected filename tag: lowercased, special chars preserved]
         ['a', 'a'],
-        ['#1.png', '1png'],
-        ['My file_name #1.png', 'myfilename1png'],
-        ['Report.PDF', 'reportpdf'],
-        ['hello world', 'helloworld'],
-        ['file (1).txt', 'file1txt'],
+        ['#1.png', '#1.png'],
+        ['My file_name #1.png', 'my file_name #1.png'],
+        ['Report.PDF', 'report.pdf'],
+        ['hello world', 'hello world'],
+        ['file (1).txt', 'file (1).txt'],
         ['UPPERCASE', 'uppercase'],
-        ['MiXeD CaSe.Doc', 'mixedcasedoc'],
+        ['MiXeD CaSe.Doc', 'mixed case.doc'],
         // i18n
-        ['café résumé.pdf', 'caférésumépdf'],
-        ['Ärzte-Bericht.pdf', 'ärzteberichtpdf'],
-        ['文件 #1.txt', '文件1txt'],
-        ['Résumé_final.pdf', 'résuméfinalpdf'],
-        ['日本語ファイル.doc', '日本語ファイルdoc'],
-        ['مستند.pdf', 'مستندpdf'],
-        ['Ñoño (copia).txt', 'ñoñocopiatxt'],
-    ])('normalizes filename %j to %j', (input, expected) => {
+        ['café résumé.pdf', 'café résumé.pdf'],
+        ['Ärzte-Bericht.pdf', 'ärzte-bericht.pdf'],
+        ['文件 #1.txt', '文件 #1.txt'],
+        ['Résumé_final.pdf', 'résumé_final.pdf'],
+        ['日本語ファイル.doc', '日本語ファイル.doc'],
+        ['مستند.pdf', 'مستند.pdf'],
+        ['Ñoño (copia).txt', 'ñoño (copia).txt'],
+    ])('normalizes filename tag %j to %j', (input, expected) => {
         const entry = createIndexEntry({ ...defaultParams(), node: makeNode({ name: input }) });
-        const filename = entry.attributes.find((a) => a.name === 'filename')?.value;
+        const filename = entry.attributes.find((a) => a.name === 'filenameTag')?.value;
         expect(filename).toEqual({ kind: 'tag', value: expected });
     });
 
@@ -78,7 +87,7 @@ describe('createIndexEntry', () => {
         const attr = (name: string) => entry.attributes.find((a) => a.name === name)?.value;
 
         expect(attr('nodeUid')).toEqual({ kind: 'tag', value: 'node-uid-1' });
-        expect(attr('filename')).toEqual({ kind: 'tag', value: 'documentpdf' });
+        expect(attr('filenameTag')).toEqual({ kind: 'tag', value: 'document.pdf' });
         expect(attr('filenameText')).toEqual({ kind: 'text', value: 'documentpdf' });
         expect(attr('path')).toEqual({ kind: 'tag', value: '/parent-uid-1/parent-uid-2' });
         expect(attr('treeEventScopeId')).toEqual({ kind: 'tag', value: 'scope-1' });
@@ -192,31 +201,46 @@ describe('createIndexEntry', () => {
     });
 });
 
-describe('normalizedFilename', () => {
-    it('strips special chars and lowercases', () => {
-        expect(normalizedFilenameForTag('My file_name #1.png')).toBe('myfilename1png');
+describe('normalizedFilenameForTag', () => {
+    it('lowercases and preserves special characters', () => {
+        expect(normalizedFilenameForTag('My file_name #1.png')).toBe('my file_name #1.png');
     });
 
     it('preserves alphanumeric characters', () => {
         expect(normalizedFilenameForTag('abc123')).toBe('abc123');
     });
 
-    it('returns empty for only special chars', () => {
-        expect(normalizedFilenameForTag('# . _ -')).toBe('');
+    it('preserves a special-chars-only string (lowercased)', () => {
+        expect(normalizedFilenameForTag('# . _ -')).toBe('# . _ -');
     });
 
     it('lowercases all characters', () => {
-        expect(normalizedFilenameForTag('Report.PDF')).toBe('reportpdf');
+        expect(normalizedFilenameForTag('Report.PDF')).toBe('report.pdf');
     });
 
-    it('preserves non-ASCII letters (i18n)', () => {
-        expect(normalizedFilenameForTag('café résumé')).toBe('caférésumé');
-        expect(normalizedFilenameForTag('Ärzte-Bericht.pdf')).toBe('ärzteberichtpdf');
+    it('preserves non-ASCII letters and punctuation (i18n)', () => {
+        expect(normalizedFilenameForTag('café résumé')).toBe('café résumé');
+        expect(normalizedFilenameForTag('Ärzte-Bericht.pdf')).toBe('ärzte-bericht.pdf');
     });
 
     it('preserves CJK and Cyrillic characters', () => {
-        expect(normalizedFilenameForTag('文件 #1.txt')).toBe('文件1txt');
-        expect(normalizedFilenameForTag('документ.pdf')).toBe('документpdf');
+        expect(normalizedFilenameForTag('文件 #1.txt')).toBe('文件 #1.txt');
+        expect(normalizedFilenameForTag('документ.pdf')).toBe('документ.pdf');
+    });
+});
+
+describe('normalizedFilenameForText', () => {
+    it('strips special chars, preserving case', () => {
+        expect(normalizedFilenameForText('My file_name #1.png')).toBe('Myfilename1png');
+    });
+
+    it('returns empty for only special chars', () => {
+        expect(normalizedFilenameForText('# . _ -')).toBe('');
+    });
+
+    it('preserves non-ASCII letters and numbers (i18n)', () => {
+        expect(normalizedFilenameForText('café résumé.pdf')).toBe('caférésumépdf');
+        expect(normalizedFilenameForText('文件 #1.txt')).toBe('文件1txt');
     });
 });
 
