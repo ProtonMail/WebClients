@@ -1,6 +1,7 @@
-import { usePreventLeave } from '@proton/components';
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+
+import { usePreventLeave } from '@proton/components';
 import metrics from '@proton/metrics';
 import type { HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson } from '@proton/metrics/types/drive_photos_transfer_to_photo_stream_histogram_v1.schema';
 import {
@@ -31,9 +32,11 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { is4xx, is5xx } from '../../utils/errorHandling/apiErrors';
-import { useDebouncedRequest } from '../_api';
-import { useDriveEventManager } from '../_events';
-import { ShareType, useDefaultShare, useShare } from '../_shares';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import { useDriveEventManager } from '../_events/useDriveEventManager';
+import { ShareType } from '../_shares/interface';
+import useDefaultShare from '../_shares/useDefaultShare';
+import useShare from '../_shares/useShare';
 import { useBatchHelper } from '../_utils/useBatchHelper';
 import { useVolumesState } from '../_volumes';
 import type { DecryptedLink } from './interface';

@@ -14,9 +14,10 @@ import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import isSearchFeatureEnabled from '../../utils/isSearchFeatureEnabled';
-import { useDriveEventManager } from '../_events';
-import { useLink } from '../_links';
-import { useDefaultShare, useShare } from '../_shares';
+import { useDriveEventManager } from '../_events/useDriveEventManager';
+import useLink from '../_links/useLink';
+import useDefaultShare from '../_shares/useDefaultShare';
+import useShare from '../_shares/useShare';
 import convertDriveEventsToSearchEvents from './indexing/processEvent';
 import useFetchShareMap from './indexing/useFetchShareMap';
 import { migrate } from './migration';

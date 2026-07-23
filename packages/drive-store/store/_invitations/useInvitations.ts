@@ -1,9 +1,9 @@
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import {
     queryAcceptShareInvite,
     queryDeleteExternalInvitation,
@@ -36,17 +36,14 @@ import {
     shareExternalInvitationPayloadToShareExternalInvitation,
     shareInvitationDetailsPayloadToShareInvitationDetails,
     shareInvitationPayloadToShareInvitation,
-    useDebouncedRequest,
-} from '../_api';
-import { useDriveCrypto } from '../_crypto';
+} from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
-import { useLink } from '../_links';
-import {
-    type ShareInvitationDetails,
-    type ShareInvitationEmailDetails,
-    useDriveSharingFlags,
-    useShare,
-} from '../_shares';
+import useDriveCrypto from '../_crypto/useDriveCrypto';
+import useLink from '../_links/useLink';
+import type { ShareInvitationDetails, ShareInvitationEmailDetails } from '../_shares/interface';
+import { useDriveSharingFlags } from '../_shares/useDriveSharingFlags';
+import useShare from '../_shares/useShare';
 import { useInvitationsState } from './useInvitationsState';
 
 export enum EXTERNAL_INVITATIONS_ERROR_NAMES {
