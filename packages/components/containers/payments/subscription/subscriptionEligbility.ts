@@ -1,11 +1,12 @@
 import { type ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
-import { isForbiddenModification, isPlanEnabled } from '@proton/payments/core/plan/helpers';
+import { isPlanEnabled } from '@proton/payments/core/plan/helpers';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     getHas2025OfferCoupon,
     getIsB2BAudienceFromSubscription,
     getPlan,
+    isForbiddenModification,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';

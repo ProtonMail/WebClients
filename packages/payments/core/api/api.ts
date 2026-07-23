@@ -15,6 +15,7 @@ import type {
 } from '../constants';
 import { PLAN_TYPES } from '../constants';
 import type { Entitlements } from '../entitlements/interface';
+import { formatPaymentMethods } from '../formatPaymentMethods';
 import type {
     AmountAndCurrency,
     ChargeablePaymentParameters,
@@ -30,7 +31,6 @@ import type {
     V5PaymentToken,
     WrappedCryptoPayment,
 } from '../interface';
-import { formatPaymentMethods } from '../methods';
 import { normalizePaymentMethodStatus } from '../payment-status';
 import { PlanState } from '../plan/constants';
 import type { FreePlanDefault, SubscriptionPlan } from '../plan/interface';
