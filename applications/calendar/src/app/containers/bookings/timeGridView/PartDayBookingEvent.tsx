@@ -5,7 +5,7 @@ import { addMinutes, isBefore } from 'date-fns';
 import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
 
 import { getEventPartDuration } from '../../../components/calendar/TimeGrid/dayEventsHelpers';
-import { type PartDayEventProps, PartDayEventView } from '../../../components/events/PartDayEvent';
+import { type PartDayEventProps, PartDayEventView } from '../../../components/events/PartDayEventView';
 import { getBookingSlotStyle } from '../../../helpers/color';
 import type { CalendarViewEvent } from '../../calendar/interface';
 import { useBookings } from '../bookingsProvider/BookingsProvider';

@@ -14,7 +14,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import bookingImage from '@proton/styles/assets/img/calendar/booking_created.svg';
 
-import { useCalendarGlobalModals } from './GlobalModalProvider';
+import { useCalendarGlobalModals } from './GlobalModalContext';
 import { type BookingPageCreationModalPayload, ModalType } from './interface';
 
 export const GlobalBookingSuccess = () => {
