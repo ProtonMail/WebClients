@@ -6,7 +6,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { disableAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { ActiveKeyWithVersion, Address, Member } from '@proton/shared/lib/interfaces';
+import type { ActiveKeyWithVersion, Address } from '@proton/shared/lib/interfaces';
 import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelper';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { FlagAction, getNewAddressKeyFlags } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
@@ -16,7 +16,6 @@ import type { KtState } from '..//kt';
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys/index';
 import { addressThunk, addressesThunk } from '../addresses';
 import { getKTActivation } from '../kt/actions';
-import type { MembersState } from '../members';
 
 export const setAddressFlags = ({
     address: initialAddress,
@@ -63,14 +62,8 @@ export const updateBYOEAddressConnection = ({
 }: {
     address: Address;
     type: 'disconnect' | 'reconnect';
-    member?: Member;
     skipDisable?: boolean;
-}): ThunkAction<
-    Promise<Address | undefined>,
-    AddressKeysState & KtState & MembersState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+}): ThunkAction<Promise<Address | undefined>, AddressKeysState & KtState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         if (!initialAddress) {
             throw new Error('No address provided');
