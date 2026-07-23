@@ -45,15 +45,9 @@ import SetPasswordWithPolicyForm from './SetPasswordWithPolicyForm';
 import Testflight from './Testflight';
 import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
+import { RememberMode } from './rememberMode';
 import SSOLogin from './sso/SSOLogin';
 import { UnauthedLost2FAContainer } from './unauth-lost-2fa/UnauthedLost2FAContainer';
-
-export enum RememberMode {
-    Visible = 0, // default
-    Enabled = 1,
-    Hidden = 2,
-    HiddenEnabled = 3,
-}
 
 interface Props {
     defaultUsername?: string;
