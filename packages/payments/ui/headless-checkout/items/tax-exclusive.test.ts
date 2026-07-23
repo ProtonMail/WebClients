@@ -5,7 +5,7 @@ import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { CYCLE, PLANS } from '../../../core/constants';
 import type { Currency } from '../../../core/interface';
 import type { PlansMap } from '../../../core/plan/interface';
-import { SubscriptionMode, TaxInclusive } from '../../../core/subscription/constants';
+import { SubscriptionMode, TaxMode } from '../../../core/subscription/constants';
 import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import { getHeadlessCheckout } from '../get-headless-checkout';
@@ -25,7 +25,7 @@ describe('createTaxExclusiveItem', () => {
         const checkResult = makeCheckResult({
             Amount: 4788,
             AmountDue: 5746,
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
+            TaxMode: TaxMode.EXCLUSIVE,
             Taxes: [{ Name: 'VAT', Rate: 20, Amount: 958 }],
         });
 
@@ -47,7 +47,7 @@ describe('createTaxExclusiveItem', () => {
         const checkResult = makeCheckResult({
             Amount: 4788,
             AmountDue: 4788,
-            TaxInclusive: TaxInclusive.INCLUSIVE,
+            TaxMode: TaxMode.INCLUSIVE,
             Taxes: [{ Name: 'VAT', Rate: 20, Amount: 958 }],
         });
 
@@ -68,7 +68,7 @@ describe('createTaxExclusiveItem', () => {
             planIDs: { [PLANS.MAIL]: 1 },
             plansMap,
             checkResult: makeCheckResult({
-                TaxInclusive: TaxInclusive.INCLUSIVE,
+                TaxMode: TaxMode.INCLUSIVE,
                 Taxes: [{ Name: 'VAT', Rate: 20, Amount: 958 }],
             }),
             app,
@@ -79,7 +79,7 @@ describe('createTaxExclusiveItem', () => {
             planIDs: { [PLANS.MAIL]: 1 },
             plansMap,
             checkResult: makeCheckResult({
-                TaxInclusive: TaxInclusive.EXCLUSIVE,
+                TaxMode: TaxMode.EXCLUSIVE,
                 Taxes: [{ Name: 'VAT', Rate: 20, Amount: 958 }],
             }),
             app,
@@ -94,7 +94,7 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
         AmountDue: 1200,
         Currency: 'USD',
         Cycle: CYCLE.YEARLY,
-        TaxInclusive: TaxInclusive.EXCLUSIVE,
+        TaxMode: TaxMode.EXCLUSIVE,
         Coupon: null,
         SubscriptionMode: SubscriptionMode.Regular,
         BaseRenewAmount: null,
@@ -122,14 +122,14 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
         ({
             checkResult,
             currency,
-            isTaxExclusive: checkResult.TaxInclusive === TaxInclusive.EXCLUSIVE,
-            isTaxInclusive: checkResult.TaxInclusive === TaxInclusive.INCLUSIVE,
+            isTaxExclusive: checkResult.TaxMode === TaxMode.EXCLUSIVE,
+            isTaxInclusive: checkResult.TaxMode === TaxMode.INCLUSIVE,
         }) as HeadlessCheckoutContextInner;
 
     describe('when tax is not exclusive', () => {
-        it('returns visible false when TaxInclusive is INCLUSIVE', () => {
+        it('returns visible false when TaxMode is INCLUSIVE', () => {
             const checkResult = createMockCheckResult({
-                TaxInclusive: TaxInclusive.INCLUSIVE,
+                TaxMode: TaxMode.INCLUSIVE,
             });
 
             const result = createTaxExclusiveItem(createMockContext(checkResult));
@@ -137,9 +137,9 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
             expect(result.visible).toBe(false);
         });
 
-        it('returns visible false when TaxInclusive is undefined', () => {
+        it('returns visible false when TaxMode is undefined', () => {
             const checkResult = createMockCheckResult({
-                TaxInclusive: undefined,
+                TaxMode: undefined,
             });
 
             const result = createTaxExclusiveItem(createMockContext(checkResult));
