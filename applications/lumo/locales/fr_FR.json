@@ -520,6 +520,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Améliorez la productivité de vos e-mails. Laissez ${ LUMO_SHORT_APP_NAME } vous aider à rédiger, répondre et corriger vos e-mails."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -534,6 +537,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_SCRIBE_SEATS } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME } pendant la période d'essai."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
@@ -640,12 +646,19 @@
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ LUMO_SHORT_APP_NAME }, des alias « hide-my-email » illimités et bien plus encore.",
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ LUMO_SHORT_APP_NAME }, des alias « hide-my-email » illimités et bien plus encore."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore.",
         "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ LUMO_SHORT_APP_NAME }, des alias « hide-my-email » illimités et bien plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore."
@@ -997,6 +1010,9 @@
       "Collapse ${ LUMO_SHORT_APP_NAME }": [
         "Réduire ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Connectors": [
+        "Connecteurs"
+      ],
       "Continue": [
         "Continuer"
       ],
@@ -1053,6 +1069,12 @@
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Ouvrir ${ DRIVE_APP_NAME }"
+      ],
+      "Optimize": [
+        "Optimiser"
+      ],
+      "Optimize memories": [
+        "Optimiser les mémoires"
       ],
       "Refresh folder contents": [
         "Actualiser le contenu du dossier"
@@ -1361,6 +1383,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } se base sur vos souvenirs enregistrés pour personnaliser ses réponses : style de communication, expertise, outils fréquemment utilisés et projets à long terme."
+      ],
+      "${ LUMO_SHORT_APP_NAME } will review your saved memories, remove duplicates, and merge related entries into clearer ones. Your memory list will be replaced with the optimized result.": [
+        "${ LUMO_SHORT_APP_NAME } passera en revue vos mémoires enregistrés, supprimera les doublons et fusionnera les entrées associées pour les rendre plus claires. Votre liste de mémoires sera remplacée par le résultat optimisé."
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Ajoutez vos propres souvenirs, modifiez les entrées générées automatiquement ou effacer tout à n'importe quel moment. Si vous modifiez un souvenir généré, il deviendra le vôtre."
@@ -1867,6 +1892,9 @@
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Décrivez un workflow en langage clair et obtenez un graphique plus un code exécutable. Connectez-vous pour utiliser cette fonctionnalité."
       ],
+      "Disabled": [
+        "Désactivé"
+      ],
       "Domain name": [
         "Nom de domaine"
       ],
@@ -1878,6 +1906,9 @@
       ],
       "Earlier messages were summarized to make room, so they no longer take up space here.": [
         "Les messages précédents ont été résumés pour gagner de la place. Ils n'occupent donc plus d'espace ici."
+      ],
+      "Enabled": [
+        "Activé"
       ],
       "Error processing attachment": [
         "Erreur lors du traitement de la pièce jointe"
@@ -1992,6 +2023,9 @@
       ],
       "No calls": [
         "Aucun appel"
+      ],
+      "No connected connectors": [
+        "Aucun connecteur connecté"
       ],
       "No content available.": [
         "Aucun contenu n'est disponible."
@@ -2200,6 +2234,9 @@
       "You are about to visit an external website:": [
         "Vous êtes sur le point de consulter un site web externe :"
       ],
+      "You have many saved memories. Use Optimize in the menu to merge duplicates and keep the list focused.": [
+        "Vous avez enregistré de nombreuses mémoires. Utilisez la fonction Optimiser dans le menu pour fusionner les doublons et affiner la liste."
+      ],
       "You've reached your image limit for this period.": [
         "Vous avez atteint votre limite d'images pour cette période."
       ],
@@ -2220,6 +2257,9 @@
       ],
       "Your memories are already up to date.": [
         "Vos souvenirs sont déjà à jour."
+      ],
+      "Your memories are already well organized.": [
+        "Vos mémoires sont déjà à jour."
       ]
     },
     "collider_2025: Job": {
@@ -2565,17 +2605,8 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
-      "${ LUMO_SHORT_APP_NAME } Plus": [
-        "${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "${ LUMO_SHORT_APP_NAME } Pro": [
-        "${ LUMO_SHORT_APP_NAME } Pro"
-      ],
       "Business": [
         "Business"
-      ],
-      "Personal": [
-        "Personnel"
       ],
       "Plus": [
         "Plus"
@@ -2637,6 +2668,12 @@
       ],
       "File uploaded to Drive folder": [
         "Fichier importé dans le dossier Drive"
+      ],
+      "Memories optimized successfully.": [
+        "Les mémoires ont été optimisées avec succès."
+      ],
+      "Optimized memories: reduced from ${ beforeCount } to ${ optimized.length }.": [
+        "Mémoires optimisées : passage de ${ beforeCount } à ${ optimized.length }."
       ],
       "Thanks for the feedback!": [
         "Merci pour les commentaires."
@@ -2763,6 +2800,9 @@
       ],
       "Opening External Link": [
         "Ouverture du lien externe"
+      ],
+      "Optimize memories?": [
+        "Optimiser les mémoires ?"
       ],
       "Parameters": [
         "Paramètres"
@@ -2987,9 +3027,6 @@
       "Elevate your business AI experience": [
         "Améliorez votre expérience d'IA en entreprise"
       ],
-      "From only": [
-        "À partir de seulement"
-      ],
       "Get": [
         "Obtenir"
       ],
@@ -3003,7 +3040,7 @@
         "Obtenez ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Pro": [
-        "Obtenir ${ LUMO_SHORT_APP_NAME } Pro"
+        "Obtenez ${ LUMO_SHORT_APP_NAME } Pro"
       ],
       "Upgrade": [
         "Changer d'abonnement"
@@ -3091,6 +3128,11 @@
       ],
       "You're getting close to the number of projects ${ LUMO_SHORT_APP_NAME } can keep purring over.": [
         "Vous approchez du nombre maximal de projets que ${ LUMO_SHORT_APP_NAME } peut gérer simultanément."
+      ]
+    },
+    "collider_2025: Web Extract": {
+      "Failed to extract": [
+        "L'extraction n'a pas abouti"
       ]
     },
     "collider_2025: Web Search": {
@@ -6252,6 +6294,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inclut l'assistant d'écriture"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } est une solution de visioconférence chiffrée de bout en bout. Ajoutez-la à votre abonnement pour organiser des réunions sécurisées."
       ],
@@ -7466,8 +7514,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Ajouter l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Module complémentaire avec essai gratuit"
@@ -7611,6 +7665,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } et ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } calendrier",
@@ -9758,9 +9815,6 @@
       ],
       "Payment verification": [
         "Vérification du paiement"
-      ],
-      "Plan type": [
-        "Type de plan"
       ],
       "Processing...": [
         "Traitement en cours…"

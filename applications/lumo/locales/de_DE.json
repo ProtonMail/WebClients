@@ -520,6 +520,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ LUMO_SHORT_APP_NAME } dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -534,6 +537,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-Lizenzen haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } Schreibassistenten-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -640,12 +646,19 @@
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und vieles mehr.",
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und vieles mehr."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Sichere deine E-Mails und Termine mit Ende-zu-Ende-Verschlüsselung. Inklusive ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sichere deine E-Mails und plane deine Termine mit Ende-zu-Ende-Verschlüsselung. Enthält 15 E-Mail-Adressen, Support für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr."
@@ -997,6 +1010,9 @@
       "Collapse ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } einklappen"
       ],
+      "Connectors": [
+        "Konnektoren"
+      ],
       "Continue": [
         "Fortfahren"
       ],
@@ -1053,6 +1069,12 @@
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } öffnen"
+      ],
+      "Optimize": [
+        "Optimieren"
+      ],
+      "Optimize memories": [
+        "Erinnerungen optimieren"
       ],
       "Refresh folder contents": [
         "Ordnerinhalte aktualisieren"
@@ -1361,6 +1383,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } greift auf deine gespeicherten Erinnerungen zurück, um die Antworten individuell anzupassen – Kommunikationsstil, Fachwissen, häufig verwendete Tools und laufende Projekte."
+      ],
+      "${ LUMO_SHORT_APP_NAME } will review your saved memories, remove duplicates, and merge related entries into clearer ones. Your memory list will be replaced with the optimized result.": [
+        "${ LUMO_SHORT_APP_NAME } überprüft deine gespeicherten Erinnerungen, entfernt Duplikate und fasst verwandte Einträge zu übersichtlicheren zusammen. Deine Erinnerungsliste wird durch das optimierte Ergebnis ersetzt."
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Deine eigenen Erinnerungen hinzufügen, beliebige automatisch generierte Einträge bearbeiten oder jederzeit alles entfernen. Bearbeitete, automatisch generierte Erinnerungen werden zu deinen eigenen."
@@ -1867,6 +1892,9 @@
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Beschreibe einen Workflow in einfacher Sprache und erhalte eine Grafik plus ausführbaren Code. Melde dich an, um diese Funktion zu nutzen."
       ],
+      "Disabled": [
+        "Deaktiviert"
+      ],
       "Domain name": [
         "Domainname"
       ],
@@ -1878,6 +1906,9 @@
       ],
       "Earlier messages were summarized to make room, so they no longer take up space here.": [
         "Frühere Nachrichten wurden zusammengefasst, um Platz zu schaffen, sodass sie hier keinen Platz mehr beanspruchen."
+      ],
+      "Enabled": [
+        "Aktiviert"
       ],
       "Error processing attachment": [
         "Fehler beim Verarbeiten des Anhangs"
@@ -1932,6 +1963,9 @@
       ],
       "Free accounts keep chat history for 7 days. Talk to your admin to keep this chat.": [
         "Kostenlose Konten behalten den Chatverlauf für 7 Tage. Sprich mit deinem Administrator, um diesen Chat zu behalten."
+      ],
+      "Free accounts keep chat history for 7 days. This chat is past that window and will be permanently deleted unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Bei kostenlosen Konten wird der Chatverlauf 7 Tage lang gespeichert. Dieser Chat liegt bereits außerhalb dieses Zeitraums und wird dauerhaft gelöscht, sofern du nicht auf ${ LUMO_SHORT_APP_NAME } Plus upgradest."
       ],
       "Free space": [
         "Freier Platz"
@@ -1989,6 +2023,9 @@
       ],
       "No calls": [
         "Keine Aufrufe"
+      ],
+      "No connected connectors": [
+        "Keine verbundenen Konnektoren"
       ],
       "No content available.": [
         "Keine Inhalte verfügbar."
@@ -2131,6 +2168,9 @@
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Diese Dateien gehörten zu zusammengefassten Nachrichten und werden nicht mehr an das Modell gesendet."
       ],
+      "This chat is past the free retention window and will be permanently deleted. Talk to your admin to keep it.": [
+        "Dieser Chat hat die kostenlose Aufbewahrungsfrist überschritten und wird dauerhaft gelöscht. Wende dich an deinen Administrator, um ihn zu behalten."
+      ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Dieser Chat wird in 2 Tagen entfernt. Führe ein Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus durch, um ihn zu behalten."
       ],
@@ -2194,8 +2234,14 @@
       "You are about to visit an external website:": [
         "Du bist dabei, eine externe Webseite zu besuchen:"
       ],
+      "You have many saved memories. Use Optimize in the menu to merge duplicates and keep the list focused.": [
+        "Du hast viele gespeicherte Erinnerungen. Nutze die Optimierung im Menü, um Duplikate zusammenzuführen und die Liste übersichtlich zu halten."
+      ],
       "You've reached your image limit for this period.": [
         "Du hast dein Bild-Limit für diesen Zeitraum erreicht."
+      ],
+      "You've reached your image limit for this period. Upgrade to keep creating images.": [
+        "Du hast dein Bildlimit für diesen Zeitraum erreicht. Führe ein Upgrade durch, um weiterhin Bilder erstellen zu können."
       ],
       "You've run out of weekly chats, please ": [
         "Du hast keine wöchentlichen Chats mehr übrig, bitte "
@@ -2211,6 +2257,9 @@
       ],
       "Your memories are already up to date.": [
         "Deine Erinnerungen sind bereits aktuell"
+      ],
+      "Your memories are already well organized.": [
+        "Deine Erinnerungen sind bereits gut geordnet."
       ]
     },
     "collider_2025: Job": {
@@ -2566,7 +2615,7 @@
         "Business"
       ],
       "Personal": [
-        "Privat"
+        "Persönliches"
       ],
       "Plus": [
         "Plus"
@@ -2628,6 +2677,12 @@
       ],
       "File uploaded to Drive folder": [
         "Datei wurde in Drive-Ordner hochgeladen"
+      ],
+      "Memories optimized successfully.": [
+        "Erinnerungen erfolgreich optimiert"
+      ],
+      "Optimized memories: reduced from ${ beforeCount } to ${ optimized.length }.": [
+        "Erinnerungen optimieren: von ${ beforeCount } auf ${ optimized.length } reduziert."
       ],
       "Thanks for the feedback!": [
         "Vielen Dank für das Feedback!"
@@ -2754,6 +2809,9 @@
       ],
       "Opening External Link": [
         "Externen Link öffnen"
+      ],
+      "Optimize memories?": [
+        "Erinnerungen optimieren?"
       ],
       "Parameters": [
         "Parameter"
@@ -2979,7 +3037,7 @@
         "Bringe dein geschäftliches KI-Erlebnis auf ein neues Level"
       ],
       "From only": [
-        "Ab nur"
+        "Schon ab"
       ],
       "Get": [
         "Hol dir"
@@ -3035,6 +3093,15 @@
       "This chat expires tomorrow": [
         "Dieser Chat läuft morgen ab"
       ],
+      "This chat will be deleted soon": [
+        "Dieser Chat wird bald gelöscht"
+      ],
+      "This chat will be deleted today": [
+        "Dieser Chat wird heute gelöscht"
+      ],
+      "This chat will be deleted tomorrow": [
+        "Dieser Chat wird morgen gelöscht"
+      ],
       "This conversation is getting long": [
         "Diese Unterhaltung wird langsam lang"
       ],
@@ -3073,6 +3140,11 @@
       ],
       "You're getting close to the number of projects ${ LUMO_SHORT_APP_NAME } can keep purring over.": [
         "Du näherst dich der Anzahl an Projekten, die ${ LUMO_SHORT_APP_NAME } bewältigen kann."
+      ]
+    },
+    "collider_2025: Web Extract": {
+      "Failed to extract": [
+        "Extrahieren fehlgeschlagen"
       ]
     },
     "collider_2025: Web Search": {
@@ -3159,8 +3231,14 @@
       "Download": [
         "Herunterladen"
       ],
+      "Download image": [
+        "Bild herunterladen"
+      ],
       "Edit agent": [
         "Agent bearbeiten"
+      ],
+      "Edit image": [
+        "Bild bearbeiten"
       ],
       "Edit instructions": [
         "Anweisungen bearbeiten"
@@ -3376,17 +3454,26 @@
       "Link with ${ DRIVE_APP_NAME } folder": [
         "Mit Ordner von ${ DRIVE_APP_NAME } verknüpfen"
       ],
+      "Load more": [
+        "Weitere laden"
+      ],
       "New chat": [
         "Neuer Chat"
       ],
       "New project": [
         "Neues Projekt"
       ],
+      "Projects": [
+        "Projekte"
+      ],
       "Save": [
         "Speichern"
       ],
       "Search": [
         "Suche"
+      ],
+      "See all": [
+        "Alle anzeigen"
       ],
       "Send": [
         "Senden"
@@ -3425,6 +3512,9 @@
       ],
       "Failed to load image": [
         "Bild konnte nicht geladen werden"
+      ],
+      "Failed to load images. Please try again.": [
+        "Bilder konnten nicht geladen werden. Bitte versuche es erneut."
       ],
       "Failed to process file: ${ file.name }": [
         "Fehler beim Verarbeiten der Datei: ${ file.name }"
@@ -3494,6 +3584,9 @@
       " Chat in Project": [
         " Chat im Projekt",
         " Chats im Projekt"
+      ],
+      "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
+        "„${ file.name }“ wird noch indiziert. Der Inhalt wird beim Absenden geladen."
       ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } benötigt lokalen Datenspeicher (IndexedDB), um deine Unterhaltungen auf diesem Gerät zu speichern, dieser ist hier jedoch nicht verfügbar."
@@ -3582,6 +3675,9 @@
       "Cookies or website data are blocked in your browser settings": [
         "In deinen Browsereinstellungen sind Cookies oder Website-Daten blockiert"
       ],
+      "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
+        "Erstelle Bilder, wende Stile an und skizziere Ideen. Melde dich an oder erstelle ein kostenloses Konto, um deine Kreationen zu speichern."
+      ],
       "Create purpose-built assistants with their own instructions. Set them up once, and they’ll follow your preferences every time.": [
         "Erstelle zweckgebundene Assistenten mit ihren eigenen Anweisungen. Richte sie einmal ein und sie werden deine Einstellungen jedes Mal befolgen."
       ],
@@ -3662,6 +3758,9 @@
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Auf dieser Karte befinden sich keine persönlichen Details – nur dein Preisgabe-Score nach Bereich. Je niedriger, desto weniger hast du preisgegeben."
+      ],
+      "No projects yet": [
+        "Noch keine Projekte"
       ],
       "Now protect the person behind it.": [
         "Schütze jetzt die Person dahinter."
@@ -3793,6 +3892,77 @@
         "Deine Daten sind durch Zero-Access-Verschlüsselung geschützt"
       ]
     },
+    "collider_2025:Inspiration suggestion prompt": {
+      "3D animated character in a high-quality family film style, expressive face, large emotional eyes, soft subsurface skin, stylized proportions, vibrant colors, detailed hair and clothing, cinematic lighting, shallow depth of field, friendly and charming personality, ultra polished render, studio-quality animation still.": [
+        "3D-animierte Figur im Stil eines hochwertigen Familienfilms, ausdrucksstarkes Gesicht, große, emotionsgeladene Augen, weiche Haut mit Subsurface-Effekt, stilisierte Proportionen, leuchtende Farben, detailreiche Haare und Kleidung, kinoreife Beleuchtung, geringe Schärfentiefe, freundliche und charmante Persönlichkeit, äußerst ausgefeiltes Rendering, Animationsstandbild in Studioqualität."
+      ],
+      "A dreamy close-up of flowers swept into soft radial trails by rotating camera motion, where the center blooms in crisp detail while petals dissolve outward into creamy bokeh under gentle natural light.": [
+        "Eine verträumte Nahaufnahme von Blumen, die durch eine Drehbewegung der Kamera in sanfte, strahlenförmige Spuren verwandelt werden, wobei die Blüten in der Mitte in gestochen scharfen Details erscheinen, während sich die Blütenblätter nach außen hin unter sanftem, natürlichem Licht in ein cremiges Bokeh auflösen."
+      ],
+      "A striking monochromatic study in yellow — just a fragment of contemporary architecture emerging from its equally golden surroundings, with tonal shifts alone carving out the geometric surfaces and lending the scene its quiet sense of depth and form.": [
+        "Eine eindrucksvolle monochrome Studie in Gelb – nur ein Fragment zeitgenössischer Architektur, das sich aus seiner ebenso goldenen Umgebung abhebt, wobei allein die Farbnuancen die geometrischen Flächen hervorheben und der Szene ihre stille Tiefe und Form verleihen."
+      ],
+      "A warm and cozy Japandi-style living room, minimalist aesthetic, cream sectional sofa, neutral and mustard throw pillows, woven pouf, large textured area rug with fringe, minimalist botanical wall art, large indoor palm plant, soft ambient golden lighting, candles, serene and peaceful atmosphere, photorealistic, interior design photography.": [
+        "Ein warmes und gemütliches Wohnzimmer im Japandi-Stil, minimalistische Ästhetik, cremefarbenes Ecksofa, Kissen in neutralen Farbtönen und Senffarbe, geflochtener Sitzhocker, großer, strukturierter Teppich mit Fransen, minimalistische Wandbilder mit Pflanzenmotiven, große Zimmerpalme, sanfte, goldene Stimmungsbeleuchtung, Kerzen, ruhige und friedliche Atmosphäre, fotorealistisch, Innenarchitekturfotografie."
+      ],
+      "Abstract composition of translucent glass shapes floating in space, soft refraction and reflection, smooth curved forms, frosted and clear glass mix, pastel lighting with subtle purple and blue tones, minimalist design, premium modern aesthetic, soft shadows, ultra clean background, high resolution, 3D render style.": [
+        "Abstrakte Komposition aus im Raum schwebenden, durchscheinenden Glasformen, sanfte Lichtbrechung und Reflexion, sanft geschwungene Formen, Kombination aus mattem und klarem Glas, pastellfarbene Beleuchtung mit dezenten Violett- und Blautönen, minimalistisches Design, hochwertige, moderne Ästhetik, sanfte Schatten, extrem klarer Hintergrund, hohe Auflösung, 3D-Rendering-Stil."
+      ],
+      "Abstract frozen ice background in soft pastel lavender and light purple tones, translucent crystalline ice textures, subtle frost patterns, glowing icy surface, smooth gradients, sparkling frozen details, ethereal winter atmosphere, clean and minimal design, soft lighting, elegant luxury aesthetic, high resolution, dreamy frozen landscape, delicate reflections, ultra-detailed, background only, no objects, no text.": [
+        "Abstrakter Hintergrund mit gefrorenem Eis in sanften Pastelltönen von Lavendel und Hellviolett, durchscheinende, kristalline Eisstrukturen, dezente Frostmuster, leuchtende Eisoberfläche, sanfte Farbverläufe, funkelnde, vereiste Details, ätherische Winteratmosphäre, klares und minimalistisches Design, sanftes Licht, elegante, luxuriöse Ästhetik, hohe Auflösung, verträumte, vereiste Landschaft, zarte Reflexionen, äußerst detailreich, nur Hintergrund, keine Objekte, kein Text."
+      ],
+      "Abstract futuristic background with flowing horizontal ribbon waves, layered luminous bands, soft neon green and cyan gradients, smooth organic curves, subtle motion blur, glossy depth, dark high-contrast backdrop, dynamic light streaks, modern tech aesthetic, clean geometric rhythm, cinematic glow, ultra-detailed digital art, premium UI background, 3D render.": [
+        "Abstrakter futuristischer Hintergrund mit fließenden horizontalen Bandwellen, übereinanderliegenden leuchtenden Bändern, sanften neongrünen und cyanfarbenen Farbverläufen, weichen organischen Kurven, dezenter Bewegungsunschärfe, glänzender Tiefe, dunklem, kontrastreichem Hintergrund, dynamischen Lichtstreifen, moderner Tech-Ästhetik, klarem geometrischem Rhythmus, filmischem Glanz, äußerst detailreicher Digitalkunst, hochwertigem UI-Hintergrund, 3D-Rendering."
+      ],
+      "Abstract glass background design, translucent glass morphism style, smooth flowing shapes and layered glass panels, soft refraction and light dispersion, purple and deep violet dominant color palette, blended with rich blue tones and subtle accents of warm yellow light, cinematic lighting, ultra soft gradients, glossy and frosted glass textures, depth and blur effects, minimal but premium aesthetic, high resolution, 3D rendered, modern tech UI background, elegant and futuristic atmosphere": [
+        "Abstraktes Glas-Hintergrunddesign, durchscheinender Glas-Morphismus-Stil, sanft fließende Formen und mehrschichtige Glasplatten, sanfte Lichtbrechung und Lichtstreuung, Farbpalette mit dominierenden Tönen in Lila und tiefem Violett, kombiniert mit satten Blautönen und dezenten Akzenten aus warmem Gelb, filmreife Beleuchtung, extrem sanfte Farbverläufe, glänzende und mattierte Glastexturen, Tiefen- und Unschärfeeffekte, minimalistische, aber hochwertige Ästhetik, hohe Auflösung, 3D-gerendert, moderner Tech-UI-Hintergrund, elegante und futuristische Atmosphäre."
+      ],
+      "Abstract minimalist background, soft light purple and pastel yellow color palette, smooth gradient transitions, flowing organic shapes, subtle glow, airy and modern aesthetic, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
+        "Abstrakter, minimalistischer Hintergrund, Farbpalette aus zartem Hellviolett und Pastellgelb, sanfte Farbverläufe, fließende organische Formen, dezenter Schimmer, luftige und moderne Ästhetik, klare Komposition, sanfte Lichteffekte, hochwertiges Design, sanfte Tiefenwirkung, elegante und verträumte Atmosphäre, ultrahohe Auflösung."
+      ],
+      "Aerial photograph of rolling agricultural hills forming smooth, wave-like patterns across a vast landscape. The fields are divided into soft gradients of green and golden yellow, suggesting different crops or stages of growth. Long, curved tractor tracks trace elegant lines through the terrain, emphasizing the rhythm and geometry of the land. Warm sunlight casts gentle shadows across the contours, enhancing depth and texture. Minimalist composition, highly detailed natural patterns, serene and atmospheric, captured in a cinematic landscape photography style with soft contrast and rich natural color tones.": [
+        "Luftaufnahme von sanften, landwirtschaftlich genutzten Hügeln, die in einer weitläufigen Landschaft weiche, wellenförmige Muster bilden. Die Felder sind in sanfte Farbverläufe von Grün und Goldgelb unterteilt, was auf unterschiedliche Kulturen oder Wachstumsstadien hindeutet. Lange, geschwungene Traktorspuren ziehen elegante Linien durch das Gelände und betonen den Rhythmus und die Geometrie der Landschaft. Warmes Sonnenlicht wirft sanfte Schatten über die Konturen und verstärkt so Tiefe und Struktur. Minimalistische Komposition, detailreiche natürliche Muster, ruhig und stimmungsvoll, eingefangen in einem filmischen Landschaftsfotostil mit sanftem Kontrast und satten, natürlichen Farbtönen."
+      ],
+      "Back view silhouette of a woman with hair tied up typing on a laptop. Dark purple screen, clean light purple background, high-contrast studio lighting, minimalist tech mockup style.": [
+        "Silhouette einer Frau von hinten, die mit hochgestecktem Haar auf einem Laptop tippt. Dunkelvioletter Bildschirm, heller, hellvioletter Hintergrund, kontrastreiche Studiobeleuchtung, minimalistischer Tech-Mockup-Stil."
+      ],
+      "Close-up texture of polished cross-section tree trunk, intricate swirling growth rings, detailed cracks and wood grain, warm brown and amber tones, natural organic pattern, high resolution.": [
+        "Nahaufnahme der Textur eines polierten Baumstammquerschnitts, filigrane, wirbelnde Jahresringe, detaillierte Risse und Holzmaserung, warme Braun- und Bernsteintöne, natürliches, organisches Muster, hohe Auflösung."
+      ],
+      "Ethereal portrait of a person wearing a sleek dark VR headset, body dissolving into a glowing cyan-teal haze. Centered composition, uniform saturated teal-blue gradient background, backlit silhouette with luminous rim lighting on the headset and fingertips. One hand loosely clenched, the other reaching forward palm-out. Futuristic sci-fi atmosphere, minimalist and dreamlike, digital art style, shallow depth of field.": [
+        "Ätherisches Porträt einer Person, die ein elegantes, dunkles VR-Headset trägt, wobei sich ihr Körper in einen leuchtenden cyan-türkisfarbenen Schleier auflöst. Zentrierte Komposition, einheitlicher, gesättigter Hintergrund mit türkisblauem Farbverlauf, hinterleuchtete Silhouette mit leuchtender Randbeleuchtung am Headset und an den Fingerspitzen. Eine Hand ist locker geballt, die andere streckt sich mit der Handfläche nach außen nach vorne. Futuristische Sci-Fi-Atmosphäre, minimalistisch und traumhaft, Digital-Art-Stil, geringe Schärfentiefe."
+      ],
+      "Futuristic abstract background, neon green and blue gradient, smooth organic shapes, subtle glow, ethereal atmosphere, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
+        "Futuristischer, abstrakter Hintergrund, neongrüner und blauer Farbverlauf, fließende organische Formen, dezenter Schimmer, ätherische Atmosphäre, klare Komposition, sanfte Lichteffekte, hochwertiges Design, sanfte Tiefenwirkung, elegante und verträumte Atmosphäre, ultrahohe Auflösung."
+      ],
+      "Heavily blurred, out of focus surreal profile portrait. Vibrant neon gradient with bright orange, hot pink, and deep electric blue. High contrast, heavy film grain, minimalist abstract aesthetic.": [
+        "Ein stark unscharfes, verschwommenes, surrealistisches Profilporträt. Lebhafter Neon-Farbverlauf mit leuchtendem Orange, knalligem Pink und tiefem Elektroblau. Hoher Kontrast, starkes Filmkorn, minimalistische, abstrakte Ästhetik."
+      ],
+      "Hyper-realistic voluminous fluffy white clouds, dense and soft textures, minimalist pale blue gradient sky, soft cinematic lighting, clean aesthetic, ethereal and peaceful mood, studio 3D render style, 8k resolution": [
+        "Hyperrealistische, voluminöse, flauschige weiße Wolken, dichte und weiche Texturen, minimalistischer, hellblauer Himmel mit Farbverlauf, sanfte, filmreife Beleuchtung, klare Ästhetik, ätherische und friedliche Stimmung, 3D-Rendering im Studio-Stil, 8k-Auflösung."
+      ],
+      "Minimalist Asian ink wash painting style. A winding white path trails along a mountain ridge covered in deep blue and indigo trees, fading into a heavy white fog. A vibrant, textured solid red sun hangs in the upper right. Surreal, serene, and high-contrast composition.": [
+        "Minimalistischer asiatischer Tuschemalstil. Ein gewundener weißer Pfad schlängelt sich entlang eines Bergkamms, der von tiefblauen und indigoblauen Bäumen gesäumt ist, und verschwindet schließlich in dichtem weißem Nebel. Oben rechts hängt eine leuchtende, strukturierte, vollflächige rote Sonne. Eine surreale, ruhige und kontrastreiche Komposition."
+      ],
+      "Minimalist op-art graphic of the number \"5\" formed by a distorted halftone grid blurred. Black dots varying in size create a 3D bulging illusion on a vibrant solid yellow background. Clean vector aesthetic, high contrast, mathematical pattern distortion.": [
+        "Minimalistische Op-Art-Grafik der Zahl „5“, gebildet aus einem verzerrten, unscharfen Halbtonraster. Schwarze Punkte unterschiedlicher Größe erzeugen auf einem leuchtend gelben Hintergrund eine dreidimensionale, gewölbte Illusion. Klare Vektorästhetik, hoher Kontrast, mathematische Musterverzerrung."
+      ],
+      "Modern two-story minimalist white villa with rounded edges, large sliding glass doors, and a swimming pool. Minimalist patio furniture, mediterranean vibe, architectural photography style, bright sunny day.": [
+        "Moderne, zweistöckige, minimalistische, weiße Villa mit abgerundeten Kanten, großen Glasschiebetüren und einem Swimmingpool. Minimalistische Terrassenmöbel, mediterranes Flair, Architekturfotografie-Stil, strahlend sonniger Tag."
+      ],
+      "Photorealistic white T-shirt mockup hanging on a wall inside a modern boutique clothing store, blank white premium cotton T-shirt displayed neatly on a wooden hanger, mounted against a soft pastel-colored wall (light beige, blush pink, or sage green), stylish retail interior in the background with clothing racks and shelves softly blurred, natural daylight mixed with warm ambient store lighting, realistic fabric texture and folds, clean minimal aesthetic, high-end fashion merchandising, shallow depth of field, centered composition, commercial apparel mockup, blank T-shirt ready for custom design placement, ultra-realistic, high resolution, 8k.": [
+        "Fotorealistisches Mockup eines weißen T-Shirts, das in einer modernen Modeboutique an einer Wand hängt; ein schlichtes, weißes Premium-Baumwoll-T-Shirt, ordentlich auf einem Holzbügel präsentiert, vor einer Wand in sanften Pastelltönen (hellbeige, zartrosa oder salbeigrün), stilvolles Ladeninterieur im Hintergrund mit leicht unscharf dargestellten Kleiderständern und Regalen, natürliches Tageslicht gemischt mit warmer Umgebungsbeleuchtung im Laden, realistische Stofftextur und Falten, klare, minimalistische Ästhetik, hochwertiges Fashion-Merchandising, geringe Schärfentiefe, zentrierte Komposition, kommerzielles Bekleidungs-Mockup, unbedrucktes T-Shirt bereit für die Platzierung eines individuellen Designs, ultrarealistisch, hohe Auflösung, 8k."
+      ],
+      "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
+        "Pure Geschwindigkeit, eingefangen in einem einzigen Bild – der F1-Wagen rast über den Asphalt, während Bewegungsunschärfe alles hinter ihm verschwimmen lässt, Funken von der Oberfläche sprühen und die Carbonfaser, die das Licht in diesem eindringlichen niedrigen Winkel direkt über dem Asphalt einfängt."
+      ],
+      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
+        "Das Wort „FLUORISH“, vollständig aus üppigem grünem Gras und natürlicher Vegetation gebildet, wobei jeder Buchstabe aus dichten, frischen Grashalmen besteht, mit realistischer organischer Textur, leuchtenden Grüntönen, filigranen botanischen Details, fotorealistischer Naturtypografie, sanftem natürlichem Sonnenlicht, dezenten Schatten, hochdetailliertem, umweltfreundlichem Design, isoliert auf einem klaren Hintergrund, hochwertiger 3D-Schriftgestaltung, ultrarealistisch, 8k, scharf fokussiert, in professioneller Werbequalität."
+      ],
+      "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
+        "Minimalistische Luftaufnahme aus der Vogelperspektive eines langen orangefarbenen Surfbretts, das auf klarem, blauem Wasser treibt. Das Wasser weist geschwungene, wellenförmige Konturen und helle, schimmernde Lichtmuster auf. Direkt unter dem Brett fällt ein sanfter Schatten, der eine klare, ruhige und moderne Ästhetik erzeugt."
+      ]
+    },
     "collider_2025:Label": {
       "16:9": [
         "16:9"
@@ -3856,6 +4026,9 @@
       ],
       "Image preview": [
         "Bildvorschau"
+      ],
+      "Inspiration image": [
+        "Inspirationsbild"
       ],
       "Instructions": [
         "Anweisungen"
@@ -3943,6 +4116,9 @@
       ],
       "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Beschreibe die Rolle, den Umfang und das Verhalten, die ${ LUMO_SHORT_APP_NAME } annehmen soll."
+      ],
+      "Describe your image...": [
+        "Dein Bild beschreiben..."
       ],
       "Draw and/or describe what to change, \"remove the items\", etc.": [
         "Zeichne und/oder beschreibe, was geändert werden soll, „Einträge entfernen“ usw."
@@ -4337,6 +4513,14 @@
         "Ordner erfolgreich erstellt"
       ]
     },
+    "collider_2025:Tab": {
+      "Create": [
+        "Erstellen"
+      ],
+      "Gallery": [
+        "Galerie"
+      ]
+    },
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } kann nicht gestartet werden"
@@ -4394,6 +4578,9 @@
       ],
       "Every clarification is a new data point": [
         "Jede Präzisierung ist ein neuer Datenpunkt"
+      ],
+      "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
+        "Entdecke Bilder, die mit ${ LUMO_SHORT_APP_NAME } erstellt wurden"
       ],
       "Export & delete regularly": [
         "Regelmäßig exportieren & löschen"
@@ -4518,6 +4705,9 @@
       "Share less with AI": [
         "Weniger mit KI teilen"
       ],
+      "Sign in to build your gallery": [
+        "Anmelden, um deine Galerie zu erstellen"
+      ],
       "Sign in to create projects": [
         "Anmelden, um Projekte erstellen"
       ],
@@ -4563,6 +4753,9 @@
       "What Big Tech inferred": [
         "Was Big Tech abgeleitet hat"
       ],
+      "What do you want to create today?": [
+        "Was möchtest du heute erstellen?"
+      ],
       "What this profile exposes": [
         "Was dieses Profil offenbart"
       ],
@@ -4577,6 +4770,9 @@
       ],
       "You saw the profile?": [
         "Hast du das Profil gesehen?"
+      ],
+      "Your image gallery is empty": [
+        "Deine Bildergalerie ist leer"
       ],
       "Your shareable card": [
         "Deine teilbare Karte"
@@ -6110,6 +6306,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } beinhaltet den Schreibassistenten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } ist eine Ende-zu-Ende-verschlüsselte Videokonferenzlösung. Deinem Abonnement hinzufügen, um sichere Meetings abzuhalten."
       ],
@@ -7324,8 +7526,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent hinzufügen"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent hinzufügen"
       ],
       "Add-on with free trial": [
         "Add-on mit kostenloser Testversion"
@@ -7469,6 +7677,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } und ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ],
       "${ n } calendar": [
         "${ n } Kalender",
@@ -9618,7 +9829,7 @@
         "Zahlungsbestätigung"
       ],
       "Plan type": [
-        "Abonnementyp"
+        "Abonnementsart"
       ],
       "Processing...": [
         "Wird verarbeitet..."
