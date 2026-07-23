@@ -71,7 +71,8 @@ export const CategorySettingsItem = ({
                 checked={category.notify}
                 onChange={handleToggleNotification}
                 data-testid={`${category.id}-notify`}
-                disabled={loading || category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT}
+                // Notification cannot be changed if the category is disabled or primary
+                disabled={loading || !category.display || category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT}
             />
         </div>
     );
