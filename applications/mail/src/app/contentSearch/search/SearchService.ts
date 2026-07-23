@@ -3,7 +3,7 @@ import * as Comlink from 'comlink';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
-import { KeyManager } from '../crypto/KeyManager';
+import { getIndexKey } from '../crypto/indexKey';
 import { openContentSearchDB } from '../db/open';
 import { EncryptedSearchReader } from '../import/EncryptedSearchReader';
 import { Search } from './Search';
@@ -11,7 +11,7 @@ import type SearchWorker from './SearchWorker';
 
 /** public interface into search functionality */
 export class SearchService {
-    private workerReadyPromise: Promise<Comlink.Remote<SearchWorker>> | undefined;
+    private workerReadyPromise: Promise<Comlink.Remote<SearchWorker> | undefined> | undefined;
 
     constructor(
         private userId: string,
@@ -35,7 +35,7 @@ export class SearchService {
         return search;
     }
 
-    private getWorker(): Promise<Comlink.Remote<SearchWorker>> {
+    private getWorker(): Promise<Comlink.Remote<SearchWorker> | undefined> {
         if (!this.workerReadyPromise) {
             this.workerReadyPromise = this.createAndInitNewWorkerInstance().catch((error) => {
                 // Don't cache a failed init: clear the promise so the next call (search or warmup)
@@ -47,16 +47,20 @@ export class SearchService {
         return this.workerReadyPromise;
     }
 
-    private async createAndInitNewWorkerInstance(): Promise<Comlink.Remote<SearchWorker>> {
+    private async createAndInitNewWorkerInstance(): Promise<Comlink.Remote<SearchWorker> | undefined> {
         performance.mark('search-get-worker-start');
+        const indexKey = await this.getIndexKey();
+        // the index doesn't exist yet
+        if (!indexKey) {
+            return;
+        }
         // Keep the raw worker so we can terminate it if init fails — otherwise a failed attempt
         // leaks a worker thread, and every retry would spawn another.
         const rawWorker = new Worker(
-            new URL(/* webpackChunkName: "content-search-worker" */ 'SearchWorker.ts', import.meta.url)
+            new URL(/* webpackChunkName: "content-search-worker" */ 'search.worker.ts', import.meta.url)
         );
         try {
             const worker = Comlink.wrap<SearchWorker>(rawWorker);
-            const indexKey = await this.getIndexKey();
             await worker.init(this.userId, indexKey);
             performance.measure('search-get-worker', 'search-get-worker-start');
             return worker;
@@ -69,8 +73,7 @@ export class SearchService {
     private async getIndexKey() {
         const db = await openContentSearchDB(this.userId);
         try {
-            const keyManager = new KeyManager(await this.getUserKeys(), db);
-            return await keyManager.getKey();
+            return await getIndexKey(db, await this.getUserKeys());
         } finally {
             // Always release the DB connection, even if key derivation throws.
             db.close();
