@@ -32,7 +32,9 @@ im.$media-expressions: $media-expressions;
 }
 
 .all-chats-header-search-slot-is-open {
-	flex: 1 1 auto;
+	flex: 0 1 auto;
+	inline-size: min(50%, 28rem);
+	max-inline-size: 50%;
 	min-inline-size: 12rem;
 }
 

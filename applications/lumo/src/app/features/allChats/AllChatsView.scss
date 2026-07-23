@@ -173,16 +173,23 @@ im.$media-expressions: $media-expressions;
 	display: none;
 }
 
+.all-chats-row-preview-group {
+	flex: 1 1 0;
+	min-inline-size: 0;
+}
+
 .all-chats-row-preview {
 	color: var(--all-chats-preview-color);
-	flex: 1 1 0;
+	flex: 0 1 auto;
 	font-size: 0.8125rem;
 	line-height: 1.3;
+	max-inline-size: 100%;
 	min-inline-size: 0;
 }
 
 .all-chats-row-meta {
 	flex-shrink: 0;
+	gap: 8px;
 	position: relative;
 	z-index: 2;
 }
@@ -278,6 +285,12 @@ im.$media-expressions: $media-expressions;
 
 	&.is-favorited {
 		color: var(--all-chats-favorite-color);
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			color: var(--all-chats-favorite-color);
+		}
 	}
 }
 
@@ -302,7 +315,7 @@ im.$media-expressions: $media-expressions;
 		display: none;
 	}
 
-	.all-chats-row .all-chats-row-preview {
+	.all-chats-row .all-chats-row-preview-group {
 		display: none;
 	}
 
@@ -332,7 +345,7 @@ im.$media-expressions: $media-expressions;
 		gap: 4px;
 	}
 
-	.all-chats-row-actions .all-chats-row-project {
+	.all-chats-row-preview-group .all-chats-row-project {
 		display: none;
 	}
 

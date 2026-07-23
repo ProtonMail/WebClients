@@ -35,7 +35,7 @@ export const AllChatsHeaderBar = ({
     hasSelection,
 }: AllChatsHeaderBarProps) => {
     return (
-        <div className="all-chats-header-bar flex flex-1 items-center gap-2 min-w-0">
+        <div className="all-chats-header-bar flex flex-1 items-center gap-2 min-w-0 flex-nowrap">
             <div
                 className={clsx(
                     'all-chats-header-search-slot shrink-0',

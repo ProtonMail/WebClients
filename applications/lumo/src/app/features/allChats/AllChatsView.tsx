@@ -42,10 +42,7 @@ import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import type { Conversation, ConversationId } from '../../types';
 import { sendConversationDeleteEvent, sendConversationEditTitleEvent } from '../../util/telemetry';
 import { AllChatsHeaderBar } from './AllChatsHeaderBar';
-import {
-    deleteConversationsWithSemantics,
-    getConversationIdsAffectedByDelete,
-} from './deleteConversationsWithSemantics';
+import { deleteConversationsWithSemantics } from './deleteConversationsWithSemantics';
 import type { AllChatsEmptyVariant, AllChatsFilterValue } from './filterAllChatsConversations';
 import { filterAllChatsConversations, getAllChatsEmptyVariant } from './filterAllChatsConversations';
 import { formatChatRelativeDate } from './formatChatRelativeDate';
@@ -333,11 +330,27 @@ const ConversationRow = memo(
                                     ) : null}
                                 </div>
                             </div>
-                            {preview ? (
-                                <span className="all-chats-row-preview text-ellipsis overflow-hidden whitespace-nowrap flex-1 min-w-0">
-                                    {preview}
-                                </span>
-                            ) : null}
+                            <div className="all-chats-row-preview-group flex flex-nowrap items-center gap-2 flex-1 min-w-0">
+                                {preview ? (
+                                    <span className="all-chats-row-preview text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
+                                        {preview}
+                                    </span>
+                                ) : null}
+                                {isProject ? (
+                                    <LumoLink
+                                        to={`/projects/${conversation.spaceId}`}
+                                        className="all-chats-row-project all-chats-row-interactive shrink-0"
+                                        aria-label={c('collider_2025:Action').t`Go to project`}
+                                        title={projectLabel}
+                                        onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+                                            event.stopPropagation();
+                                        }}
+                                    >
+                                        <ProjectIcon iconId={projectIcon} size={14} className="shrink-0" />
+                                        <span className="all-chats-row-project-name">{projectLabel}</span>
+                                    </LumoLink>
+                                ) : null}
+                            </div>
                         </div>
                     )}
                 </div>
@@ -346,20 +359,6 @@ const ConversationRow = memo(
                     <div className="all-chats-row-meta relative z-2 shrink-0 flex items-center justify-end self-stretch">
                         <span className="all-chats-row-date">{timestamp}</span>
                         <div className="all-chats-row-actions">
-                            {isProject ? (
-                                <LumoLink
-                                    to={`/projects/${conversation.spaceId}`}
-                                    className="all-chats-row-project all-chats-row-interactive shrink-0"
-                                    aria-label={c('collider_2025:Action').t`Go to project`}
-                                    title={projectLabel}
-                                    onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
-                                        event.stopPropagation();
-                                    }}
-                                >
-                                    <ProjectIcon iconId={projectIcon} size={14} className="shrink-0" />
-                                    <span className="all-chats-row-project-name">{projectLabel}</span>
-                                </LumoLink>
-                            ) : null}
                             <div className="all-chats-row-actions-desktop shrink-0">
                                 <Button
                                     icon
@@ -404,6 +403,7 @@ const ConversationRow = memo(
                 {deleteRequested ? (
                     <ConversationDeleteFlow
                         conversation={conversation}
+                        navigateAfterDelete={false}
                         onClose={() => {
                             setDeleteRequested(false);
                         }}
@@ -674,11 +674,6 @@ export const AllChatsView = () => {
         }
 
         const conversationIds = Array.from(selectedIds);
-        const affectedConversationIds = getConversationIdsAffectedByDelete(
-            conversationIds,
-            conversationsMap,
-            spacesMap
-        );
 
         setIsDeleting(true);
 
@@ -700,13 +695,14 @@ export const AllChatsView = () => {
                 },
             });
 
-            createNotification({ text: c('Success').jt`Conversation deleted` });
+            createNotification({
+                text:
+                    conversationIds.length > 1
+                        ? c('Success').jt`Conversations deleted`
+                        : c('Success').jt`Conversation deleted`,
+            });
             setSelectedIds(new Set());
             confirmDeleteModal.openModal(false);
-
-            if (conversationId && affectedConversationIds.has(conversationId)) {
-                navigate('/');
-            }
         } catch (error) {
             createNotification({ text: <>{error}</>, type: 'error' });
         } finally {
@@ -714,11 +710,9 @@ export const AllChatsView = () => {
         }
     }, [
         confirmDeleteModal,
-        conversationId,
         conversationsMap,
         createNotification,
         dispatch,
-        navigate,
         removeIndexedFoldersBySpace,
         searchService,
         selectedIds,
