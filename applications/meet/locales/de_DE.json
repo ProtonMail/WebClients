@@ -752,9 +752,6 @@
       "Show floating thumbnail during screensharing": [
         "Schwebendes Vorschaubild während der Bildschirmfreigabe anzeigen"
       ],
-      "Show passphrase": [
-        "Passphrase anzeigen"
-      ],
       "Stop recording and download.": [
         "Aufzeichnung stoppen und herunterladen."
       ],
@@ -1800,6 +1797,9 @@
       ]
     },
     "Error": {
+      "Background blur initialization failed. Please toggle your camera or background blur again": [
+        "Die Initialisierung der Hintergrundunschärfe ist fehlgeschlagen. Bitte schalte deine Kamera oder die Hintergrundunschärfe erneut ein und aus."
+      ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
@@ -1880,9 +1880,6 @@
       ],
       "Invalid meeting link": [
         "Ungültiger Meeting-Link"
-      ],
-      "Invalid passphrase": [
-        "Ungültige Passphrase"
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
@@ -2198,6 +2195,9 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
+      "Background blur initializing": [
+        "Hintergrundunschärfe wird initialisiert"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
@@ -2335,9 +2335,6 @@
       ],
       "Failed to update meeting name": [
         "Fehler beim Aktualisieren der Besprechungsbezeichnung"
-      ],
-      "Failed to update meeting password": [
-        "Fehler beim Aktualisieren des Besprechungspassworts"
       ],
       "Failed to update meeting schedule": [
         "Fehler beim Aktualisieren des Meeting-Zeitplans"
@@ -2564,9 +2561,6 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Bitte aktiviere den Zugriff auf dein ${ microphoneLinkButton }${ andString }${ cameraLinkButton } für das beste Erlebnis."
       ],
-      "Please enter the passphrase to decrypt and view this meeting": [
-        "Bitte gib die Passphrase ein, um dieses Meeting zu entschlüsseln und anzuzeigen."
-      ],
       "Please try again or try another browser": [
         "Bitte versuche es erneut oder probiere es mit einem anderen Browser"
       ],
@@ -2701,9 +2695,6 @@
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Dieses Meeting ist gesperrt. Bitte kontaktiere den Organisator, um beizutreten."
-      ],
-      "This meeting is password protected": [
-        "Dieses Meeting ist passwortgeschützt"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Dieses Meeting hat die Zeitbegrenzung des kostenlosen Tarifs erreicht. Führe ein Upgrade durch, um die Dauer deiner zukünftigen Meetings zu verlängern"
@@ -3035,9 +3026,6 @@
       "Participants join after you approve them": [
         "Teilnehmer treten bei, nachdem du sie genehmigt hast"
       ],
-      "Passphrase": [
-        "Passphrase"
-      ],
       "Password": [
         "Passwort"
       ],
@@ -3234,9 +3222,6 @@
       ],
       "E.g., ": [
         "Z. B. "
-      ],
-      "Enter passphrase": [
-        "Passphrase eingeben"
       ],
       "Enter time": [
         "Uhrzeit eingeben"
@@ -3561,9 +3546,6 @@
       ],
       "Participants (${ filteredParticipants.length })": [
         "Teilnehmer (${ filteredParticipants.length })"
-      ],
-      "Passphrase": [
-        "Passphrase"
       ],
       "Personal meeting room": [
         "Persönlicher Meeting-Raum"

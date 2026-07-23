@@ -758,9 +758,6 @@
       "Show floating thumbnail during screensharing": [
         "Показывать плавающий значок при демонстрации экрана"
       ],
-      "Show passphrase": [
-        "Показать кодовую фразу"
-      ],
       "Stop recording and download.": [
         "Остановить запись и скачать."
       ],
@@ -1887,9 +1884,6 @@
       "Invalid meeting link": [
         "Недействительная ссылка на встречу"
       ],
-      "Invalid passphrase": [
-        "Неверная кодовая фраза"
-      ],
       "Invalid verification code": [
         "Неверный код подтверждения"
       ],
@@ -2358,9 +2352,6 @@
       "Failed to update meeting name": [
         "Не удалось обновить название встречи"
       ],
-      "Failed to update meeting password": [
-        "Не удалось обновить пароль встречи"
-      ],
       "Failed to update meeting schedule": [
         "Не удалось обновить расписание встречи"
       ],
@@ -2583,9 +2574,6 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Включите доступ к ${ microphoneLinkButton }${ andString }${ cameraLinkButton } для оптимальной работы."
       ],
-      "Please enter the passphrase to decrypt and view this meeting": [
-        "Введите кодовую фразу, чтобы расшифровать и просмотреть эту встречу"
-      ],
       "Please try again or try another browser": [
         "Попробуйте ещё раз или используйте другой браузер"
       ],
@@ -2720,9 +2708,6 @@
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Эта встреча заблокирована. Свяжитесь с организатором, чтобы присоединиться."
-      ],
-      "This meeting is password protected": [
-        "Эта встреча защищена паролем"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Эта встреча достигла лимита времени бесплатного тарифа. Улучшите тариф, чтобы увеличить длительность встреч в будущих звонках."
@@ -3050,9 +3035,6 @@
       "Participants join after you approve them": [
         "Участники присоединяются после того, как вы их одобрите"
       ],
-      "Passphrase": [
-        "Кодовая фраза"
-      ],
       "Password": [
         "Пароль"
       ],
@@ -3249,9 +3231,6 @@
       ],
       "E.g., ": [
         "Например, "
-      ],
-      "Enter passphrase": [
-        "Ввести кодовую фразу"
       ],
       "Enter time": [
         "Введите время"
@@ -3580,9 +3559,6 @@
       ],
       "Participants (${ filteredParticipants.length })": [
         "Участники (${ filteredParticipants.length })"
-      ],
-      "Passphrase": [
-        "Кодовая фраза"
       ],
       "Personal meeting room": [
         "Личная комната для встреч"
