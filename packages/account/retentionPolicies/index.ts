@@ -16,10 +16,12 @@ import { organizationThunk } from '../organization';
 import type { OrganizationState } from '../organization';
 import { userThunk } from '../user';
 import type { UserState } from '../user';
+import { userPermissionsThunk } from '../userPermissions';
+import type { UserPermissionsState } from '../userPermissions';
 
 const name = 'retentionPolicies';
 
-export interface RetentionPoliciesState extends UserState, OrganizationState {
+export interface RetentionPoliciesState extends UserState, OrganizationState, UserPermissionsState {
     [name]: ModelState<RetentionRule[]>;
 }
 
@@ -30,15 +32,20 @@ const initialState: SliceState = getInitialModelState<RetentionRule[]>();
 
 export const selectRetentionPolicies = (state: RetentionPoliciesState) => state[name];
 
-const canFetch = (user: UserModel, organization: Organization) => {
-    return isAdminOrLoginAsAdmin(user) && organization?.ID;
+const canFetch = (user: UserModel, organization: Organization, canReadRetention: boolean): boolean => {
+    return (isAdminOrLoginAsAdmin(user) || canReadRetention) && !!organization?.ID;
 };
 
 const modelThunk = createAsyncModelThunk<Model, RetentionPoliciesState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
-        const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
+        const [user, organization, { permissions }] = await Promise.all([
+            dispatch(userThunk()),
+            dispatch(organizationThunk()),
+            dispatch(userPermissionsThunk()),
+        ]);
         const flag = extraArgument.unleashClient?.isEnabled('DataRetentionPolicy') ?? false;
-        if (!flag || !canFetch(user, organization)) {
+        const canReadRetention = permissions['account.data_retention.read'];
+        if (!flag || !canFetch(user, organization, canReadRetention)) {
             return [];
         }
         return extraArgument

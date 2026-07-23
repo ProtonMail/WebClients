@@ -128,9 +128,13 @@ export const MembersTable = ({
                             </Avatar>
                             <button
                                 type="button"
-                                className="text-ellipsis shrink link align-baseline color-norm"
+                                className={clsx(
+                                    'text-ellipsis shrink align-baseline',
+                                    memberPermissions.canEdit && 'link color-norm'
+                                )}
                                 data-testid="users-and-addresses-table:memberName"
                                 title={memberName}
+                                disabled={!memberPermissions.canEdit}
                                 onClick={() => actions.handleEditUser(member)}
                             >
                                 {memberName}
