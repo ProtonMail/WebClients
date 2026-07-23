@@ -10,13 +10,13 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
-import { useNativeComposerPromptApi } from '../../components/Composer/hooks/useNativeComposerPromptApi';
 import { sendMessage } from '../../components/Conversation/helper';
 import { FilesManagementView } from '../../components/Files';
 import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { SelectableConversationList } from '../../components/SelectableConversationList';
 import { useLumoUserSettings, usePersonalization } from '../../hooks';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
+import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
@@ -122,8 +122,8 @@ const ProjectDetailViewInner = () => {
         driveBrowserModal.openModal(true);
     }, [driveBrowserModal]);
 
-    const handleSendInProject = useCallback(
-        async (content: string, webSearchEnabled: boolean) => {
+    const handleSendInProject = useCallback<HandleSendMessage>(
+        async (content, webSearchEnabled, imageOptions) => {
             try {
                 if (!content.trim() && provisionalAttachments.length === 0) {
                     console.log('Empty content, skipping send');
@@ -178,6 +178,7 @@ const ProjectDetailViewInner = () => {
                             enableExternalTools: webSearchEnabled && ffExternalTools,
                             enableImageTools: ffImageTools,
                             enableSmoothing: ffSmoothRendering,
+                            imageAspectRatio: imageOptions?.aspectRatio,
                         },
                         settingsContext: {
                             personalization,
@@ -205,11 +206,6 @@ const ProjectDetailViewInner = () => {
             history,
             isWebSearchButtonToggled,
         ]
-    );
-
-    useNativeComposerPromptApi(
-        handleSendInProject,
-        () => {} // todo: abort handler missing at this point, known bug
     );
 
     // Hide the native composer while these modals are open on mobile, so it

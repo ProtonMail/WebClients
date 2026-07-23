@@ -39,9 +39,9 @@ import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerToolbar } from './ComposerToolbar';
 import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
+import { useComposerWithImageGeneration } from './hooks/useComposerWithImageGeneration';
 import { useEditorQuery } from './hooks/useEditorQuery';
 import { useFileHandling } from './hooks/useFileHandling';
-import { useImageGenerationMode } from './hooks/useImageGenerationMode';
 import { useNativeComposerCustomLumoApi } from './hooks/useNativeComposerCustomLumoApi';
 import { useNativeComposerFeatureFlagsApi } from './hooks/useNativeComposerFeatureFlagsApi';
 import { useNativeComposerFileApi } from './hooks/useNativeComposerFileApi';
@@ -142,10 +142,12 @@ const ComposerComponentInner = ({
     const isGuest = useIsGuest();
     const { isBlocked: isChatLimitBlocked, ensureTierError } = useChatLimitGate();
 
-    const { selectedAspectRatio, handleAspectRatioChange, isCreateImageMode, setIsCreateImageMode, getAspectRatio } =
-        useImageGenerationMode();
-
-    const isImageGenerationMode = composerMode === ComposerMode.GALLERY || isCreateImageMode;
+    const { selectedAspectRatio, handleAspectRatioChange, isCreateImageMode, setIsCreateImageMode, buildImageOptions } =
+        useComposerWithImageGeneration({
+            composerMode,
+            handleSendMessage,
+            onAbort: onAbort ?? (() => {}),
+        });
 
     // Tell the native mobile shells (iOS/Android) the app is interactive once the real
     // composer is on screen. This is the authoritative "ready" signal that dismisses the
@@ -260,16 +262,14 @@ const ComposerComponentInner = ({
                 return;
             }
             composerInput.clear();
-            const imageOptions = isImageGenerationMode ? { aspectRatio: getAspectRatio() } : undefined;
-            await handleSendMessage(value, isWebSearchButtonToggled, imageOptions);
+            await handleSendMessage(value, isWebSearchButtonToggled, buildImageOptions());
         },
         // composerInput.clear is intentionally omitted from deps — it's stable but the object is created below
-        // getAspectRatio is stable (useCallback with no deps), intentionally omitted
         [
             handleSendMessage,
             isWebSearchButtonToggled,
             isProcessingAttachment,
-            isImageGenerationMode,
+            buildImageOptions,
             isChatLimitBlocked,
             ensureTierError,
             hasAttachments,
