@@ -1,7 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
-import { useLinksListing } from './useLinksListing';
+import useLinksListing from './useLinksListing/useLinksListing';
 import useLinksState from './useLinksState';
 
 type Props = {

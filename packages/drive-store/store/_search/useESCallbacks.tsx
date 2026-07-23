@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom-v5-compat';
 
 import type { PrivateKeyReference } from '@protontech/crypto';
+
 import { normalizeKeyword, testKeywords } from '@proton/encrypted-search/esHelpers';
 import { readAllLastEvents } from '@proton/encrypted-search/esIDB';
 import type {
@@ -16,7 +17,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
-import { driveEventsResultToDriveEvents } from '../_api';
+import { driveEventsResultToDriveEvents } from '../_api/transformers';
 import { DRIVE_CONTENT_VERSION } from './constants';
 import { createLinkGenerator } from './indexing/createLinkGenerator';
 import convertDriveEventsToSearchEvents from './indexing/processEvent';

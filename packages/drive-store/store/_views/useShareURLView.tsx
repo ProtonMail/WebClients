@@ -10,12 +10,14 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { useDriveDocsPublicSharingFF } from '../_documents';
-import type { DecryptedLink } from '../_links';
-import { useLink } from '../_links';
+import { useDriveDocsPublicSharingFF } from '../_documents/useDriveDocsPublicSharingFF';
+import type { DecryptedLink } from '../_links/interface';
+import useLink from '../_links/useLink';
 import useLinksState from '../_links/useLinksState';
-import type { ShareURL } from '../_shares';
-import { getSharedLink, splitGeneratedAndCustomPassword, useShareActions, useShareUrl } from '../_shares';
+import type { ShareURL } from '../_shares/interface';
+import { getSharedLink, splitGeneratedAndCustomPassword } from '../_shares/shareUrl';
+import useShareActions from '../_shares/useShareActions';
+import useShareUrl from '../_shares/useShareUrl';
 import type useShareMemberView from './useShareMemberView';
 
 const getLoadingMessage = (isLinkLoading: boolean, haveShareUrl: boolean, isFile: boolean) => {

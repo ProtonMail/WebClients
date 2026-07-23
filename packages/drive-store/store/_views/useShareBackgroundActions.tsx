@@ -2,8 +2,7 @@ import { useCallback } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
-import type { DriveEvent } from '../_events';
-import type { DriveEvents } from '../_events';
+import type { DriveEvent, DriveEvents } from '../_events/interface';
 import { useInvitations } from '../_invitations';
 
 export const useShareBackgroundActions = () => {

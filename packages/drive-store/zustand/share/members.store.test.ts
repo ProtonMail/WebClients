@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react';
 
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
-import type { ShareMember } from '../../store/_shares';
+import type { ShareMember } from '../../store/_shares/interface';
 import { useMembersStore } from './members.store';
 
 const shareId = 'mockShareId';

@@ -4,9 +4,9 @@ import { useLoading } from '@proton/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { useLinksListing } from '../_links';
+import useLinksListing from '../_links/useLinksListing/useLinksListing';
 import { useUserSettings } from '../_settings';
-import { useDefaultShare } from '../_shares';
+import useDefaultShare from '../_shares/useDefaultShare';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import type { SortField } from './utils/useSorting';
 

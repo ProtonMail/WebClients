@@ -3,7 +3,9 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { useLinkPath } from '../../store';
 import { useDownload } from '../../store/_downloads';
-import { useLink, useLinksListing, validateLinkName } from '../../store/_links';
+import useLink from '../../store/_links/useLink';
+import useLinksListing from '../../store/_links/useLinksListing/useLinksListing';
+import { validateLinkName } from '../../store/_links/validation';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import useUploadHelper from '../../store/_uploads/UploadProvider/useUploadHelper';
 import { useAbortSignal } from '../../store/_views/utils';

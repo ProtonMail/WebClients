@@ -6,8 +6,8 @@ import type { ListDriveSharedWithMeLinksPayload } from '@proton/shared/lib/inter
 
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
-import { useDebouncedRequest } from '../../_api';
-import { useDriveCrypto } from '../../_crypto';
+import useDebouncedRequest from '../../_api/useDebouncedRequest';
+import useDriveCrypto from '../../_crypto/useDriveCrypto';
 import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';
 import { useVolumesState } from '../../_volumes';
 import type { DecryptedLink } from '../interface';

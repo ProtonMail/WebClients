@@ -7,7 +7,7 @@ import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import chunk from '@proton/utils/chunk';
 
 import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
-import { usePublicSession } from '../_api';
+import usePublicSession from '../_api/usePublicSession';
 import useLinksState from './useLinksState';
 
 interface BatchResponsePayload {

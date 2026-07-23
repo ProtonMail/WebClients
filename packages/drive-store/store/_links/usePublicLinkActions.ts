@@ -1,5 +1,6 @@
-import { usePreventLeave } from '@proton/components';
 import { CryptoProxy } from '@protontech/crypto';
+
+import { usePreventLeave } from '@proton/components';
 import { queryPublicCreateDocument } from '@proton/shared/lib/api/drive/documents';
 import { queryPublicCreateFolder } from '@proton/shared/lib/api/drive/folder';
 import { queryPublicRenameLink } from '@proton/shared/lib/api/drive/share';
@@ -18,8 +19,8 @@ import getRandomString from '@proton/utils/getRandomString';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
-import { usePublicSession } from '../_api';
-import { useShare } from '../_shares';
+import usePublicSession from '../_api/usePublicSession';
+import useShare from '../_shares/useShare';
 import { encryptFolderExtendedAttributes } from './extendedAttributes';
 import useLink from './useLink';
 import { validateLinkName } from './validation';

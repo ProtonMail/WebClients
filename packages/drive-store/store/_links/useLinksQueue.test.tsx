@@ -3,8 +3,9 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { useLinksQueue } from './useLinksQueue';
 
 const mockedLoadLinksMeta = jest.fn();
-jest.mock('./useLinksListing', () => ({
-    useLinksListing: () => ({
+jest.mock('./useLinksListing/useLinksListing', () => ({
+    __esModule: true,
+    default: () => ({
         loadLinksMeta: mockedLoadLinksMeta,
     }),
 }));

@@ -22,10 +22,10 @@ import { encryptPassphrase, generateLookupHash, sign } from '@proton/shared/lib/
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSharesStore } from '../../../zustand/share/shares.store';
-import { useDebouncedRequest } from '../../_api';
-import { useDriveCrypto } from '../../_crypto';
-import { useLink } from '../../_links';
+import useDebouncedRequest from '../../_api/useDebouncedRequest';
+import useDriveCrypto from '../../_crypto/useDriveCrypto';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../_links/link';
+import useLink from '../../_links/useLink';
 import { useDebouncedFunction } from '../../_utils';
 import type {
     LockedDeviceForRestore,

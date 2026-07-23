@@ -5,7 +5,8 @@ import {
 } from '@proton/shared/lib/api/drive/member';
 import type { ShareMemberPayload } from '@proton/shared/lib/interfaces/drive/member';
 
-import { shareMemberPayloadToShareMember, useDebouncedRequest } from '../_api';
+import { shareMemberPayloadToShareMember } from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
 import type { ShareMember } from './interface';
 
 export const useShareMember = () => {

@@ -1,5 +1,4 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import type { DocumentType } from '@proton/drive-store/store/_documents';
 import { queryCreateDocument } from '@proton/shared/lib/api/drive/documents';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -12,12 +11,13 @@ import {
     sign,
 } from '@proton/shared/lib/keys/driveKeys';
 
-import { useActions } from '../../store/_actions';
-import { useDebouncedRequest } from '../../store/_api';
-import { useLink } from '../../store/_links';
+import useActions from '../../store/_actions/useActions';
+import useDebouncedRequest from '../../store/_api/useDebouncedRequest';
+import type { DocumentType } from '../../store/_documents/useOpenDocument';
 import { encryptExtendedAttributes } from '../../store/_links/extendedAttributes';
+import useLink from '../../store/_links/useLink';
 import useLinksState from '../../store/_links/useLinksState';
-import { useShare } from '../../store/_shares';
+import useShare from '../../store/_shares/useShare';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import type { LegacyNodeMeta } from '../NodeMeta';

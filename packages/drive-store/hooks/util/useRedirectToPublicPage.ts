@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom-v5-compat';
 
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
-import { getSharedLink } from '../../store/_shares';
+import { getSharedLink } from '../../store/_shares/shareUrl';
 import { deleteStoredUrlPassword, getUrlPassword } from '../../utils/url/password';
 
 export const drivePublicRedirectionReasonKey = 'drivePublicRedirectionReason';

@@ -1,7 +1,9 @@
-import { useApi, usePreventLeave } from '@proton/components';
 import type { SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+import { computeKeyPassword } from '@protontech/crypto/srp';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
+import { useApi, usePreventLeave } from '@proton/components';
 import {
     queryCreateSharedLink,
     queryDeleteMultipleSharedLinks,
@@ -26,7 +28,6 @@ import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
 import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-import { computeKeyPassword } from '@protontech/crypto/srp';
 import chunk from '@proton/utils/chunk';
 import getRandomString from '@proton/utils/getRandomString';
 import groupWith from '@proton/utils/groupWith';
@@ -35,10 +36,11 @@ import unique from '@proton/utils/unique';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { shareUrlPayloadToShareUrl, useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
-import { useDriveEventManager } from '../_events';
-import { useLink } from '../_links';
+import { shareUrlPayloadToShareUrl } from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import useDriveCrypto from '../_crypto/useDriveCrypto';
+import { useDriveEventManager } from '../_events/useDriveEventManager';
+import useLink from '../_links/useLink';
 import { useVolumesState } from '../_volumes';
 import type { ShareURL, UpdateSharedURL } from './interface';
 import { getSharedLink } from './shareUrl';

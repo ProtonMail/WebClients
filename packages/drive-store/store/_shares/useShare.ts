@@ -1,5 +1,6 @@
 import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
 import type { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
@@ -7,8 +8,10 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getIsPublicContext } from '../../utils/getIsPublicContext';
 import { useSharesStore } from '../../zustand/share/shares.store';
-import { shareMetaToShareWithKey, useDebouncedRequest } from '../_api';
-import { integrityMetrics, useDriveCrypto } from '../_crypto';
+import { shareMetaToShareWithKey } from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import integrityMetrics from '../_crypto/integrityMetrics';
+import useDriveCrypto from '../_crypto/useDriveCrypto';
 import { useGetMetricsUserPlan } from '../_user/useGetMetricsUserPlan';
 import { useDebouncedFunction } from '../_utils';
 import type { Share, ShareWithKey } from './interface';
