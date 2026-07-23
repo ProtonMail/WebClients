@@ -1019,9 +1019,6 @@
       "Send email reminder": [
         "Stuur een e-mailherinnering"
       ],
-      "Send feedback": [
-        "Feedback verzenden"
-      ],
       "Send my username": [
         "Stuur mijn gebruikersnaam"
       ],
@@ -1069,9 +1066,6 @@
       ],
       "Share": [
         "Delen"
-      ],
-      "Share feedback": [
-        "Feedback delen"
       ],
       "Share via link": [
         "Deel via link"
@@ -1364,9 +1358,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe Schrijfassistent"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruiker)",
         "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruikers)"
@@ -1391,6 +1382,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruikers)"
       ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
@@ -1638,6 +1633,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Breng e-mailproductiviteit naar een nieuw niveau. Laat ${ LUMO_SHORT_APP_NAME } u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
       ]
     },
     "Attached ics file error": {
@@ -1699,6 +1697,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Tijdens de proefperiode kunt u maximaal ${ TRIAL_MAX_SCRIBE_SEATS } schrijfassistent-licenties ${ LUMO_SHORT_APP_NAME } hebben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -1872,12 +1873,19 @@
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer.",
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-email mailaliassen en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
@@ -6849,6 +6857,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } bevat de schrijfassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME }"
       ],
@@ -7437,9 +7451,6 @@
       ],
       "Copy your referral link": [
         "Kopieer uw doorverwijslink"
-      ],
-      "Couldn´t send feedback": [
-        "Kan feedback niet verzenden"
       ],
       "Country code": [
         "Landcode"
@@ -8154,9 +8165,6 @@
       "Keep your passwords safe and sign in instantly with autofill across every device.": [
         "Bewaar uw wachtwoorden veilig en log direct in dankzij de automatische invulfunctie op al uw apparaten."
       ],
-      "Key sections reorganized for faster access.": [
-        "Belangrijke onderdelen zijn opnieuw georganiseerd voor snellere toegang."
-      ],
       "Keys created": [
         "Sleutels aangemaakt"
       ],
@@ -8297,12 +8305,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Nieuwe groep aangemaakt via uw identiteitsprovider en in afwachting van beoordeling."
-      ],
-      "New sidebar": [
-        "Nieuwe zijbalk"
-      ],
-      "New sidebar layout": [
-        "Nieuwe layout voor zijbalk"
       ],
       "New user invited to organization": [
         "Nieuwe gebruiker uitgenodigd voor de organisatie"
@@ -8728,9 +8730,6 @@
       "Setting up your organization": [
         "Uw organisatie wordt aangemaakt"
       ],
-      "Share your thoughts...": [
-        "Deel uw mening..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "Gedeelde ${ vaultLink } verwijderd"
       ],
@@ -8835,9 +8834,6 @@
       "Swiss based": [
         "Gevestigd in Zwitserland"
       ],
-      "Switch sidebars": [
-        "Zijbalken wisselen"
-      ],
       "Symbols (#$&)": [
         "Symbolen (#$&)"
       ],
@@ -8858,9 +8854,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Bedankt voor uw abonnement. Veilig browsen begint nu."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Bedankt - Uw feedback werd verzonden."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Bedankt voor het ondersteunen van onze missie om een beter internet te bouwen waar privacy en vrijheid op de eerste plaats staan."
@@ -9678,9 +9671,6 @@
       "your encrypted data will be locked": [
         "uw versleutelde gegevens worden vergrendeld."
       ],
-      "Your feedback": [
-        "Uw feedback"
-      ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
@@ -10127,6 +10117,12 @@
       ],
       "City": [
         "Stad"
+      ],
+      "Client": [
+        "Klant"
+      ],
+      "Client version": [
+        "Klantenversie"
       ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
@@ -11379,8 +11375,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Voeg ${ LUMO_SHORT_APP_NAME } schrijfassistent toe"
       ],
       "Add-on with free trial": [
         "Add-on met gratis proefversie"
@@ -11791,6 +11793,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
       ],
       "${ n } calendar": [
         "${ n } agenda",
@@ -16194,9 +16199,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-schrijfassistent"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } Schrijfassistent voor ${ maxAi } gebruiker",
         "${ BRAND_NAME } Schrijfassistent voor ${ maxAi } gebruikers"
@@ -16204,6 +16206,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } toegewijde server",
         "${ ipAddresses } toegewijde servers"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent voor ${ maxAi } gebruiker",
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent voor ${ maxAi } gebruikers"
       ],
       "${ n } calendar per user": [
         "${ n } agenda per gebruiker",
@@ -16316,9 +16322,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe Schrijfassistent"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, en ${ LUMO_APP_NAME } met premium functies"
       ],
@@ -17867,9 +17870,6 @@
       "Help center": [
         "Helpcentrum"
       ],
-      "Help us improve": [
-        "Help ons te verbeteren"
-      ],
       "Helping activists in Hong Kong": [
         "Activisten helpen in Hongkong"
       ],
@@ -18982,6 +18982,9 @@
         "Kon beheerderstoegang niet inschakelen voor ${ n } gebruiker",
         "Kon beheerderstoegang niet inschakelen voor ${ n } gebruikers"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Kan beheerderstoegang niet inschakelen: ${ unprivatizationResult.error }"
+      ],
       "Enable manually": [
         "Handmatig inschakelen"
       ],
@@ -19036,6 +19039,9 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Om verder te gaan, moet u toestemming vragen aan de gebruiker om toegang te krijgen tot hun gegevens of hun wachtwoord te resetten."
+      ],
+      "Waiting for admin approval": [
+        "Wachten op goedkeuring van de beheerder"
       ],
       "You can safely remove this user from your organization.": [
         "U kunt deze gebruiker veilig uit uw organisatie verwijderen.",
@@ -19209,6 +19215,15 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Uitnodiging verzonden, wachtend op antwoord van het uitgenodigde lid"
+      ],
+      "Invited": [
+        "Uitgenodigd"
+      ],
+      "Pending": [
+        "In behandeling"
+      ],
+      "Requested": [
+        "Aangevraagd"
       ],
       "SSO user provided by your identity provider": [
         "SSO-gebruiker verstrekt door uw identiteitsprovider"

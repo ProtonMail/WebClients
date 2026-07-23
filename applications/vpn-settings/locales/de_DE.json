@@ -218,6 +218,9 @@
       "Compare plans": [
         "Pläne vergleichen"
       ],
+      "Configure new device profile": [
+        "Neues Geräteprofil konfigurieren"
+      ],
       "Configure SAML": [
         "SAML konfigurieren"
       ],
@@ -328,6 +331,9 @@
       ],
       "Delete account": [
         "Konto löschen"
+      ],
+      "Delete device profile": [
+        "Geräteprofil löschen"
       ],
       "Delete Gateway": [
         "Gateway löschen"
@@ -640,6 +646,9 @@
       ],
       "Increase": [
         "Vergrößern"
+      ],
+      "Instructions": [
+        "Anweisungen"
       ],
       "Invite": [
         "Einladen"
@@ -1007,9 +1016,6 @@
       "Send email reminder": [
         "Erinnerungs-E-Mail senden"
       ],
-      "Send feedback": [
-        "Feedback senden"
-      ],
       "Send my username": [
         "Meinen Benutzernamen senden"
       ],
@@ -1057,9 +1063,6 @@
       ],
       "Share": [
         "Teilen"
-      ],
-      "Share feedback": [
-        "Feedback teilen"
       ],
       "Share via link": [
         "Als Link teilen"
@@ -1352,9 +1355,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-Schreibassistent"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)",
         "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)"
@@ -1379,6 +1379,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } Lizenzen"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)",
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)"
       ],
       "${ price } per dedicated server": [
         "${ price } pro dediziertem Server"
@@ -1626,6 +1630,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ LUMO_SHORT_APP_NAME } dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
       ]
     },
     "Attached ics file error": {
@@ -1687,6 +1694,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-Lizenzen haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } Schreibassistenten-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -1860,12 +1870,19 @@
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und vieles mehr.",
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und vieles mehr."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Sichere deine E-Mails und Termine mit Ende-zu-Ende-Verschlüsselung. Inklusive ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit End-to-End-Verschlüsselung. Im Lieferumfang enthalten sind 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, der ${ LUMO_SHORT_APP_NAME } Schreibassistent, unbegrenzt viele Hide-my-email-Aliase und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sichere deine E-Mails und plane deine Termine mit Ende-zu-Ende-Verschlüsselung. Enthält 15 E-Mail-Adressen, Support für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr."
@@ -4799,6 +4816,9 @@
       "Company name or personal name is required": [
         "Firmenname oder Name der Person erforderlich"
       ],
+      "Could not generate the device profile. Please try again.": [
+        "Das Geräteprofil konnte nicht erzeugt werden. Bitte versuche es erneut."
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Rechnungen konnten nicht geladen werden. Bitte versuche es später erneut."
       ],
@@ -6834,6 +6854,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } beinhaltet den Schreibassistenten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME }"
       ],
@@ -7080,6 +7106,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Hole dir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } für nur ${ bundlePlanPriceInline }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
       ],
@@ -7152,8 +7181,14 @@
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
+      "All devices with this device profile deployed": [
+        "Alle Geräte mit diesem Geräteprofil bereitgestellt"
+      ],
       "All inactive members deleted": [
         "Alle inaktiven Mitglieder gelöscht"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Der gesamte Internetverkehr ist stets verschlüsselt und sicher."
       ],
       "All keys successfully reactivated": [
         "Alle Schlüssel wurden erfolgreich wiederhergestellt"
@@ -7369,6 +7404,9 @@
       "Compromised": [
         "Gefährdet"
       ],
+      "Configure Always-on VPN": [
+        "Always-on-VPN konfigurieren"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfiguriere die SAML-Authentifizierung für deine Organisation über einen Identitätsanbieter (IdP). Dadurch wird SAML für die gesamte Organisation aktiviert."
       ],
@@ -7407,9 +7445,6 @@
       ],
       "Copy your referral link": [
         "Einladungslink kopieren"
-      ],
-      "Couldn´t send feedback": [
-        "Feedback konnte nicht gesendet werden"
       ],
       "Country code": [
         "Ländercode"
@@ -7505,6 +7540,12 @@
       ],
       "Deploy ${ regoArtifact } directly via your MDM file deployment": [
         "${ regoArtifact } direkt über die MDM-Datei-Verteilung bereitstellen"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Stelle es über dein MDM (Jamf, Intune…) oder manuell auf jedem Gerät bereit."
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Geräte, auf denen das Geräteprofil Always-on-VPN eingerichtet ist, können nur dann auf das Internet zugreifen, wenn eine Verbindung mit ${ VPN_APP_NAME } aktiv ist."
       ],
       "Did you know?": [
         "Schon gewusst?"
@@ -7639,6 +7680,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "E-Mails, die vor mehr als 30 Tagen in Papierkorb und Spam verschoben wurden, werden automatisch gelöscht."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Mitarbeitende können ohne VPN-Verbindung nicht ins Internet gehen"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Aktiviere die automatische Erneuerung, um den Zugang zu den Plus-Servern und -Funktionen zu behalten."
       ],
@@ -7683,6 +7727,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sorge für vollständig private und verschlüsselte Kommunikation. Sichere dir jetzt deine kostenlose ${ BRAND_NAME }-E-Mail-Adresse."
+      ],
+      "Ensure your organization is always protected": [
+        "Sorge dafür, dass dein Unternehmen stets geschützt ist"
       ],
       "Enter code": [
         "Code eingeben"
@@ -8097,8 +8144,8 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Mit diesen Anleitungen und Tipps kannst du deine Daten schützen."
       ],
-      "Key sections reorganized for faster access.": [
-        "Schlüsselbereiche für schnelleren Zugriff neu organisiert."
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Bewahre deine Passwörter sicher auf und melde dich dank der automatischen Ausfüllfunktion auf jedem Gerät im Handumdrehen an."
       ],
       "Keys created": [
         "Schlüssel erstellt"
@@ -8240,12 +8287,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Neue Gruppe wurde über deinen Identitätsanbieter hinzugefügt und wartet auf die Überprüfung."
-      ],
-      "New sidebar": [
-        "Neue Seitenleiste"
-      ],
-      "New sidebar layout": [
-        "Neues Layout für die Seitenleiste"
       ],
       "New user invited to organization": [
         "Neuen Benutzer zur Organisation eingeladen"
@@ -8668,9 +8709,6 @@
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
       ],
-      "Share your thoughts...": [
-        "Sag uns deine Meinung..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "Geteilten ${ vaultLink } gelöscht."
       ],
@@ -8769,11 +8807,11 @@
       "support team": [
         "Support-Team"
       ],
+      "Supported platforms": [
+        "Unterstützte Plattformen"
+      ],
       "Swiss based": [
         "Aus der Schweiz"
-      ],
-      "Switch sidebars": [
-        "Seitenleisten umschalten"
       ],
       "Symbols (#$&)": [
         "Symbole (#$&)"
@@ -8795,9 +8833,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Danke für deine Anmeldung. Sicheres Surfen beginnt jetzt."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Danke – dein Feedback wurde gesendet."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vielen Dank für die Unterstützung unserer Mission, ein besseres Internet zu schaffen, in dem Privatsphäre und Freiheit an erster Stelle stehen."
@@ -9159,6 +9194,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Verwende die folgenden Anmeldedaten, wenn du dich ohne Anwendung mit ${ VPN_APP_NAME }-Servern verbinden möchtest. Beispiele für Anwendungsfälle sind: „Tunnelblick“ unter macOS, „OpenVPN“ unter GNU/Linux."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Löschen die Datei über dein MDM oder führe ${ removeScriptLink } über die Skript-Ausführung deines MDM aus. Jedes MDM, das die Bereitstellung von Dateien oder die Ausführung von Skripten unterstützt, ist dafür geeignet."
       ],
       "User activated": [
         "Benutzer aktiviert"
@@ -9588,6 +9626,9 @@
       "Your account was successfully updated with this promotion": [
         "Dein Konto wurde erfolgreich durch diese Werbeaktion aktualisiert"
       ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Dein Always-on-VPN-Geräteprofil kann bereitgestellt werden."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
       ],
@@ -9599,9 +9640,6 @@
       ],
       "your encrypted data will be locked": [
         "Deine verschlüsselten Daten werden gesperrt"
-      ],
-      "Your feedback": [
-        "Dein Feedback"
       ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
@@ -10231,6 +10269,9 @@
       "End-to-end encryption": [
         "Ende-zu-Ende-Verschlüsselung"
       ],
+      "Enforce Always-on VPN": [
+        "Always-on-VPN erzwingen"
+      ],
       "Enter code": [
         "Code eingeben"
       ],
@@ -10374,6 +10415,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Stufe für NetShield-Blocker-Filterung"
+      ],
+      "Login restrictions": [
+        "Anmeldebeschränkungen"
       ],
       "Logo": [
         "Logo"
@@ -11298,8 +11342,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent hinzufügen"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent hinzufügen"
       ],
       "Add-on with free trial": [
         "Add-on mit kostenloser Testversion"
@@ -11710,6 +11760,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } und ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ],
       "${ n } calendar": [
         "${ n } Kalender",
@@ -15939,6 +15992,15 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
+      ],
+      "Disabled": [
+        "Deaktiviert"
+      ],
+      "Enabled": [
+        "Aktiviert"
+      ],
+      "No restrictions": [
+        "Keine Einschränkungen"
       ]
     },
     "Status": {
@@ -16104,9 +16166,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe Schreibassistent"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } Scribe-Schreibassistent für ${ maxAi } Benutzer",
         "${ BRAND_NAME } Scribe-Schreibassistent für ${ maxAi } Benutzer"
@@ -16114,6 +16173,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedizierter Server",
         "${ ipAddresses } dedizierte Server"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent für ${ maxAi } Benutzer",
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent für ${ maxAi } Benutzer"
       ],
       "${ n } calendar per user": [
         "${ n } Kalender je Nutzer",
@@ -16226,9 +16289,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-Schreibassistent"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, und ${ LUMO_APP_NAME } mit Premium-Funktionen"
       ],
@@ -17231,6 +17291,12 @@
       "Also in your plan": [
         "Auch in deinem Abonnement"
       ],
+      "Always-on VPN": [
+        "Always-on-VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Always-on-VPN Geräteprofil"
+      ],
       "Amount": [
         "Betrag"
       ],
@@ -17330,8 +17396,14 @@
       "Change second password": [
         "Zusätzliches Passwort ändern"
       ],
+      "Choose a deployment method": [
+        "Eine Bereitstellungsmethode wählen"
+      ],
       "Choose a provider": [
         "Anbieter wählen"
+      ],
+      "Choose a removal method": [
+        "Eine Methode zur Entfernung wählen"
       ],
       "Choose user affiliations": [
         "Benutzerzugehörigkeit wählen"
@@ -17347,6 +17419,9 @@
       ],
       "Compare plans": [
         "Abonnemente vergleichen"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Always-on-VPN Geräteprofil konfigurieren"
       ],
       "Confirm": [
         "Bestätigen"
@@ -17431,6 +17506,9 @@
         "Benutzerkonten erstellen"
       ],
       "Created": [
+        "Erstellt"
+      ],
+      "Created!": [
         "Erstellt"
       ],
       "Creating user accounts": [
@@ -17523,6 +17601,12 @@
       ],
       "Deny access to user?": [
         "Dem Benutzer den Zugriff verweigern?"
+      ],
+      "Deploy via MDM": [
+        "Über MDM bereitstellen"
+      ],
+      "Deploy via PowerShell": [
+        "Über PowerShell bereitstellen"
       ],
       "Description": [
         "Beschreibung"
@@ -17746,9 +17830,6 @@
       ],
       "Help center": [
         "Hilfezentrum"
-      ],
-      "Help us improve": [
-        "Hilf uns, besser zu werden"
       ],
       "Helping activists in Hong Kong": [
         "Hilfe für Aktivisten in Hongkong"
@@ -18009,6 +18090,9 @@
       "Remove all members?": [
         "Alle Mitglieder entfernen?"
       ],
+      "Remove Always-on VPN device profile": [
+        "Always-on-VPN Geräteprofil entfernen"
+      ],
       "Remove device?": [
         "Gerät entfernen?"
       ],
@@ -18032,6 +18116,9 @@
       ],
       "Remove user?": [
         "Benutzer entfernen?"
+      ],
+      "Remove via MDM": [
+        "Über MDM entfernen"
       ],
       "Rename the gateway": [
         "Benenne das Gateway um"
@@ -18605,6 +18692,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Umfasst alle Benutzer deiner Organisation. Wird nur auf Geräten durchgesetzt, auf denen das Geräteprofil Always-on-VPN bereitgestellt wurde."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Beinhaltet benutzerdefinierte E-Mail-Domains und unbegrenzte Hide-my-email-Aliase in ${ MAIL_APP_NAME }, Zugriff auf Server in über 120 Ländern in ${ VPN_SHORT_APP_NAME }, integrierte Zwei-Faktor-Authentifizierung und sicheres Teilen in ${ PASS_SHORT_APP_NAME } und vieles mehr."

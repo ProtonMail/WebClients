@@ -1019,9 +1019,6 @@
       "Send email reminder": [
         "Envia un recordatori per correu electrònic"
       ],
-      "Send feedback": [
-        "Envieu comentaris"
-      ],
       "Send my username": [
         "Enviar el meu nom d'usuari"
       ],
@@ -1069,9 +1066,6 @@
       ],
       "Share": [
         "Compartir"
-      ],
-      "Share feedback": [
-        "Compartiu els comentaris"
       ],
       "Share via link": [
         "Comparteix amb un enllaç"
@@ -1364,9 +1358,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistent d'escriptura ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
         "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
@@ -1391,6 +1382,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "llicències de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuaris)"
       ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
@@ -1638,6 +1633,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. "
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Porteu la productivitat del correu electrònic a nous nivells. Deixeu que ${ LUMO_SHORT_APP_NAME } us ajudi a redactar, respondre i corregir els vostres correus electrònics."
       ]
     },
     "Attached ics file error": {
@@ -1699,6 +1697,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències d'Scribe durant el període de prova."
@@ -1872,12 +1873,19 @@
         "Protegiu els correus electrònics i l'agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més.",
         "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protegiu els vostres correus i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu personalitzats, l'assistent de redacció de ${ LUMO_SHORT_APP_NAME }, àlies hide-my-email il·limitats i molt més.",
+        "Protegiu els vostres correus i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu personalitzats, l'assistent de redacció de ${ LUMO_SHORT_APP_NAME }, àlies hide-my-email il·limitats i molt més."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més.",
         "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou 15 adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protegiu els vostres correus i la vostra agenda amb xifratge d’extrem a extrem. Inclou 15 adreces de correu, compatibilitat amb dominis de correu personalitzats, l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }, àlies de hide-my-email il·limitats i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d’extrem a extrem. Inclou 15 adreces de correu electrònic, suport per a dominis de correu personalitzats, àlies hide-my-email il·limitats i més."
@@ -6849,6 +6857,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
@@ -7434,9 +7448,6 @@
       ],
       "Copy your referral link": [
         "Copieu el vostre enllaç de recomanació"
-      ],
-      "Couldn´t send feedback": [
-        "No s'han pogut enviar els comentaris"
       ],
       "Country code": [
         "Codi de país"
@@ -8151,9 +8162,6 @@
       "Keep your passwords safe and sign in instantly with autofill across every device.": [
         "Mantingueu les vostres contrasenyes segures i inicieu sessió a l'instant amb l'emplenament automàtic a tots els dispositius."
       ],
-      "Key sections reorganized for faster access.": [
-        "S'han reorganitzat les seccions clau per un accés més ràpid."
-      ],
       "Keys created": [
         "S'han creat les claus."
       ],
@@ -8294,12 +8302,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "S'ha creat un grup nou a través del vostre proveïdor d'identitat i està pendent de revisió."
-      ],
-      "New sidebar": [
-        "Nova barra lateral"
-      ],
-      "New sidebar layout": [
-        "Nou disseny de la barra lateral"
       ],
       "New user invited to organization": [
         "S'ha convidat el nou usuari a l'organització."
@@ -8725,9 +8727,6 @@
       "Setting up your organization": [
         "S'està configurant la vostra organització."
       ],
-      "Share your thoughts...": [
-        "Compartiu el que en penseu..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "S'ha eliminat l'enllaç compartit ${ vaultLink }."
       ],
@@ -8832,9 +8831,6 @@
       "Swiss based": [
         "Amb seu a Suïssa"
       ],
-      "Switch sidebars": [
-        "Commutar les barres laterals"
-      ],
       "Symbols (#$&)": [
         "Símbols (#$&)"
       ],
@@ -8855,9 +8851,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Gràcies per la subscripció. La navegació segura comença ara."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Gràcies, s'han enviat els vostres comentaris."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gràcies per donar suport a la nostra missió de construir una Internet millor amb la privacitat i la llibertat en primer lloc."
@@ -9674,9 +9667,6 @@
       ],
       "your encrypted data will be locked": [
         "les vostres dades xifrades es bloquejaran"
-      ],
-      "Your feedback": [
-        "Els vostres comentaris"
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
@@ -11382,8 +11372,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Afegiu l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Complement amb prova gratuïta"
@@ -11794,6 +11790,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } calendari",
@@ -16200,9 +16199,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe per a ${ maxAi } usuari",
         "Assistent d'escriptura ${ BRAND_NAME } Scribe per a ${ maxAi } usuaris"
@@ -16210,6 +16206,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicat",
         "${ ipAddresses } servidors dedicats"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } per a ${ maxAi } usuari",
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } per a ${ maxAi } usuaris"
       ],
       "${ n } calendar per user": [
         "${ n } calendari per usuari",
@@ -16322,9 +16322,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } i ${ LUMO_APP_NAME } amb característiques prèmium"
       ],
@@ -17872,9 +17869,6 @@
       ],
       "Help center": [
         "Centre d'ajuda"
-      ],
-      "Help us improve": [
-        "Ajudeu-nos a millorar"
       ],
       "Helping activists in Hong Kong": [
         "Ajudant els activistes a Hong Kong"

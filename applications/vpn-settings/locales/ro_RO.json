@@ -14,7 +14,7 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+        "${ name } şi încă ${ remainingCount } potențiale breșe au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
@@ -1019,9 +1019,6 @@
       "Send email reminder": [
         "Trimitere notificare pe e-mail"
       ],
-      "Send feedback": [
-        "Trimitere feedback"
-      ],
       "Send my username": [
         "Trimiteți-mi numele de utilizator"
       ],
@@ -1069,9 +1066,6 @@
       ],
       "Share": [
         "Partajare"
-      ],
-      "Share feedback": [
-        "Partajare feedback"
       ],
       "Share via link": [
         "Partajare prin legătură web"
@@ -1364,9 +1358,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asistent de scriere ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizator)",
         "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizatori)",
@@ -1395,6 +1386,11 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licențe ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } de utilizatori)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
@@ -1648,6 +1644,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Duceți productivitatea mesageriei la un nou nivel. Lăsați-l pe ${ LUMO_SHORT_APP_NAME } să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
       ]
     },
     "Attached ics file error": {
@@ -1710,6 +1709,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de evaluare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "În perioada de evaluare puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe pentru asistentul de scriere ${ LUMO_SHORT_APP_NAME }."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de evaluare."
@@ -1885,6 +1887,11 @@
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Planificați -vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
         "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
@@ -1892,6 +1899,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Planificați-vă și securizați-vă mesajele de pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, asistență pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
@@ -6925,6 +6935,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "Include asistentul de scriere ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
@@ -7541,9 +7557,6 @@
       ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
-      ],
-      "Couldn´t send feedback": [
-        "Mesajul nu s-a putut trimite."
       ],
       "Country code": [
         "Cod țară"
@@ -8266,9 +8279,6 @@
       "Keep your passwords safe and sign in instantly with autofill across every device.": [
         "Păstrați-vă parolele în siguranță și conectați-vă instantaneu cu completarea automată pe fiecare dispozitiv."
       ],
-      "Key sections reorganized for faster access.": [
-        "Secțiuni cheie reorganizate pentru acces mai rapid."
-      ],
       "Keys created": [
         "Cheile au fost create."
       ],
@@ -8409,12 +8419,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Grup nou creat prin intermediul furnizorului de identitate și în așteptarea revizuirii."
-      ],
-      "New sidebar": [
-        "Bară laterală nouă"
-      ],
-      "New sidebar layout": [
-        "Aspect nou al barei laterale"
       ],
       "New user invited to organization": [
         "Utilizator nou invitat în organizație."
@@ -8844,9 +8848,6 @@
       "Setting up your organization": [
         "Setare organizație"
       ],
-      "Share your thoughts...": [
-        "Spuneți-vă părerea..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } partajat șters."
       ],
@@ -8953,9 +8954,6 @@
       "Swiss based": [
         "Situat în Elveția"
       ],
-      "Switch sidebars": [
-        "Comutare bare laterale"
-      ],
       "Symbols (#$&)": [
         "Simboluri (#$&)"
       ],
@@ -8976,9 +8974,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Vă mulțumim pentru abonare. Navigarea sigură începe acum."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Vă mulțumim – mesajul a fost trimis."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vă mulțumim că ne susțineți misiunea de a construi un internet mai bun unde confidențialitatea și libertatea primează."
@@ -9810,9 +9805,6 @@
       ],
       "your encrypted data will be locked": [
         "datele criptate vor fi blocate"
-      ],
-      "Your feedback": [
-        "Mesaj"
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
@@ -11533,8 +11525,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adăugați asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Adăugați asistentul de scriere ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Modul cu încercare gratuită"
@@ -11954,6 +11952,9 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } și ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
@@ -12181,7 +12182,7 @@
         "Personalizare logo spațiu de lucru"
       ],
       "Data breach monitoring": [
-        "Monitorizarea divulgării datelor"
+        "Monitorizare breșe de date"
       ],
       "Data retention policies": [
         "Politici de păstrare a datelor"
@@ -15265,7 +15266,7 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+        "${ name } şi încă ${ remainingCount } potențiale breșe au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
@@ -16439,9 +16440,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asistent de scriere ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } utilizator",
         "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } utilizatori",
@@ -16451,6 +16449,11 @@
         "Servere dedicate: ${ ipAddresses }",
         "Servere dedicate: ${ ipAddresses }",
         "Servere dedicate: ${ ipAddresses }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } pentru ${ maxAi } utilizator",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } pentru ${ maxAi } utilizatori",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } pentru ${ maxAi } de utilizatori"
       ],
       "${ n } calendar per user": [
         "Un calendar per utilizator",
@@ -16577,9 +16580,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asistent de scriere ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } și ${ LUMO_APP_NAME } cu funcții premium"
       ],
@@ -16894,7 +16894,7 @@
         "Transferare automată mesaje ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
+        "Alerte breșe de date ${ strongArgument }"
       ],
       "Desktop app": [
         "Aplicația pentru desktop"
@@ -18145,9 +18145,6 @@
       "Help center": [
         "Centru de ajutor"
       ],
-      "Help us improve": [
-        "Ajutați la îmbunătățire"
-      ],
       "Helping activists in Hong Kong": [
         "Ajurarea activiștilor din Hong Kong"
       ],
@@ -18196,7 +18193,7 @@
         "Importări"
       ],
       "Information exposed in breach": [
-        "Informații expuse în divulgare"
+        "Informații expuse în breșă"
       ],
       "Install it manually": [
         "Instalați-l manual"
@@ -19363,7 +19360,7 @@
         "Protejați-vă organizația împotriva compromiterii datelor cu ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
-        "Protejați-vă organizația împotriva divulgărilor de date cu ${ VPN_APP_NAME } for Business."
+        "Protejați-vă organizația împotriva breșelor de date cu ${ VPN_APP_NAME } for Business."
       ],
       "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
         "Confidențialitate nelimitată pentru până la ${ FAMILY_MAX_USERS } persoane. De la doar ${ priceString }/lună."

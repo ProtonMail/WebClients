@@ -1019,9 +1019,6 @@
       "Send email reminder": [
         "Send e-mail-påmindelse"
       ],
-      "Send feedback": [
-        "Send feedback"
-      ],
       "Send my username": [
         "Send mit brugernavn"
       ],
@@ -1069,9 +1066,6 @@
       ],
       "Share": [
         "Del"
-      ],
-      "Share feedback": [
-        "Del feedback"
       ],
       "Share via link": [
         "Del via link"
@@ -1364,9 +1358,6 @@
       ]
     },
     "Addon": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-skriveassistent"
-      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } bruger)",
         "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } brugere)"
@@ -1391,6 +1382,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } pladser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } bruger)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } brugere)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerede server"
@@ -1638,6 +1633,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Tag e-mailproduktivitet til nye højder. Lad ${ BRAND_NAME } Scribe hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Tag e-mailproduktivitet til nye højder. Lad ${ LUMO_SHORT_APP_NAME } hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails."
       ]
     },
     "Attached ics file error": {
@@ -1699,6 +1697,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan have op til ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-pladser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_SCRIBE_SEATS } pladser til ${ LUMO_SHORT_APP_NAME }-skriveassistenten i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kan have op til ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-pladser i prøveperioden."
@@ -1872,12 +1873,19 @@
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-maildomæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
         "Beskyt dine e-mails og tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beskyt dine e-mails og tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-mail-domæner, ${ LUMO_SHORT_APP_NAME }-skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
+        "Beskyt dine e-mails og tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ LUMO_SHORT_APP_NAME }-skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere.",
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer 15 e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer 15 e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ LUMO_SHORT_APP_NAME }-skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer 15 e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ubegrænsede hide-my-email-aliasser og mere."
@@ -6852,6 +6860,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer skriveassistenten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
       ],
@@ -7440,9 +7454,6 @@
       ],
       "Copy your referral link": [
         "Kopier dit henvisningslink"
-      ],
-      "Couldn´t send feedback": [
-        "Kunne ikke sende feedback"
       ],
       "Country code": [
         "Landekode"
@@ -8157,9 +8168,6 @@
       "Keep your passwords safe and sign in instantly with autofill across every device.": [
         "Hold dine adgangskoder sikre, og log ind med det samme med autofyld på tværs af alle enheder."
       ],
-      "Key sections reorganized for faster access.": [
-        "Vigtige sektioner er rykket rundt for hurtigere adgang."
-      ],
       "Keys created": [
         "Nøgler oprettet"
       ],
@@ -8300,12 +8308,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Ny gruppe oprettet via din identitetsudbyder og afventer gennemgang."
-      ],
-      "New sidebar": [
-        "Nyt sidepanel"
-      ],
-      "New sidebar layout": [
-        "Nyt layout i sidepanelet"
       ],
       "New user invited to organization": [
         "Ny bruger inviteret til organisation"
@@ -8731,9 +8733,6 @@
       "Setting up your organization": [
         "Konfigurerer din organisation"
       ],
-      "Share your thoughts...": [
-        "Del dine tanker..."
-      ],
       "Shared ${ vaultLink } deleted": [
         "Delt ${ vaultLink } slettet"
       ],
@@ -8838,9 +8837,6 @@
       "Swiss based": [
         "Baseret i Schweiz"
       ],
-      "Switch sidebars": [
-        "Skift sidepanel"
-      ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
       ],
@@ -8861,9 +8857,6 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Tak for din tilmelding. Sikker browsing starter nu."
-      ],
-      "Thanks - your feedback was sent.": [
-        "Tak - din feedback blev sendt."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Tak fordi du støtter vores mission om at opbygge et bedre internet, hvor privatliv og frihed kommer i første række."
@@ -9680,9 +9673,6 @@
       ],
       "your encrypted data will be locked": [
         "din krypterede data vil blive låst"
-      ],
-      "Your feedback": [
-        "Din feedback"
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
@@ -11388,8 +11378,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tilføj ${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Tilføj ${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "Add-on with free trial": [
         "Tilføjelse med gratis prøveperiode"
@@ -11800,6 +11796,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -16203,9 +16202,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-skriveassistent"
-      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } bruger",
         "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } brugere"
@@ -16213,6 +16209,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikeret server",
         "${ ipAddresses } dedikerede servere"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent til ${ maxAi } bruger",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent til ${ maxAi } brugere"
       ],
       "${ n } calendar per user": [
         "${ n } kalender pr. bruger",
@@ -16325,9 +16325,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-skriveassistent"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, og ${ LUMO_APP_NAME } med premium-funktioner"
       ],
@@ -17876,9 +17873,6 @@
       "Help center": [
         "Hjælp-center"
       ],
-      "Help us improve": [
-        "Hjælp os med at blive bedre"
-      ],
       "Helping activists in Hong Kong": [
         "Hjælper aktivister i Hongkong"
       ],
@@ -19229,7 +19223,7 @@
         "Inviteret"
       ],
       "Pending": [
-        "Afventende"
+        "Afventer"
       ],
       "Requested": [
         "Anmodet"
