@@ -14,9 +14,10 @@ import { useLumoNavigate } from './useLumoNavigate';
 
 interface UseConversationDeleteProps {
     conversation: Conversation;
+    navigateAfterDelete?: boolean;
 }
 
-export const useConversationDelete = ({ conversation }: UseConversationDeleteProps) => {
+export const useConversationDelete = ({ conversation, navigateAfterDelete = true }: UseConversationDeleteProps) => {
     const { id: conversationId, spaceId } = conversation;
     const dispatch = useLumoDispatch();
     const navigate = useLumoNavigate();
@@ -48,7 +49,10 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
         }
 
         confirmDeleteModal.openModal(false);
-        navigate('/');
+
+        if (navigateAfterDelete) {
+            navigate('/');
+        }
     }, [
         conversationId,
         spaceId,
@@ -57,6 +61,7 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
         createNotification,
         confirmDeleteModal,
         navigate,
+        navigateAfterDelete,
     ]);
 
     return {
