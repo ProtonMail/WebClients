@@ -5,7 +5,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { UserNameWithIcon } from '../../components/username/UserNameWithIcon';
 import type { Render, RenderProps } from '../LoginRender';
-import { useUnauthLost2FA } from './UnauthedLost2FAContainer';
+import { useUnauthLost2FA } from './UnauthedLost2FAContext';
 import { NoMethodsStep } from './steps/NoMethodsStep';
 import { TwoFADisabledStep } from './steps/TwoFADisabledStep';
 import { RequestTotpBackupCodesStep } from './steps/requestTotpBackupCodes/RequestTotpBackupCodesStep';

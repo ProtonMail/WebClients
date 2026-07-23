@@ -11,7 +11,7 @@ import BornPrivateMain from '../../components/BornPrivateMain';
 import BornPrivateFormContainer from '../../components/form/BornPrivateFormContainer';
 import BornPrivateFormFooter from '../../components/form/BornPrivateFormFooter';
 import BornPrivateFormHeading from '../../components/form/BornPrivateFormHeading';
-import { Steps, TOTAL_STEPS } from '../EmailReservationSignup';
+import { Steps, TOTAL_STEPS } from '../interface';
 import EmailReservationInput from '../components/EmailReservationInput';
 import HowItWorks from '../components/HowItWorks';
 import VoucherInformation from '../components/VoucherInformation';

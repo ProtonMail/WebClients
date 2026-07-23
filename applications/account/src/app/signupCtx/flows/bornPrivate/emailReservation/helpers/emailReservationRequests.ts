@@ -12,7 +12,7 @@ import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 
-import type { ReservedAccount } from '../../emailReservation/EmailReservationSignup';
+import type { ReservedAccount } from '../../emailReservation/interface';
 
 const DONATION_PRODUCT_TYPE = 'born-private-donation';
 

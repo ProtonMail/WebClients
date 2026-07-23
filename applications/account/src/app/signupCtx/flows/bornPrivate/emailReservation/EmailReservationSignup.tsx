@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import type { ChallengeResult } from '@proton/components';
 import { CYCLE } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -9,31 +8,11 @@ import bornPrivatePage from '../../../../../pages/born-private';
 import { SignupType } from '../../../../signup/interfaces';
 import { useMetaTags } from '../../../../useMetaTags';
 import { SignupContextProvider, useSignup } from '../../../context/SignupContext';
+import { type FormData, type ReservedAccount, Steps } from './interface';
 import Confirmation from './steps/Confirmation';
 import Donation from './steps/Donation';
 import EmailReservation from './steps/EmailReservation';
 import ParentEmail from './steps/ParentEmail';
-
-export interface ReservedAccount {
-    username: string;
-    domain: string;
-    payload: ChallengeResult;
-}
-
-export interface FormData {
-    parentEmail: string;
-    reservedAccount: ReservedAccount | null;
-    activationCode: string;
-}
-
-export enum Steps {
-    Reservation = 1,
-    ParentEmail = 2,
-    Donation = 3,
-    Confirmation = 4,
-}
-
-export const TOTAL_STEPS = 3;
 
 const EmailReservationFlow = () => {
     const [step, setStep] = useState<number>(Steps.Reservation);

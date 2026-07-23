@@ -3,7 +3,8 @@ import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import type { Paths } from '../content/helper';
-import LoginContainer, { RememberMode } from '../login/LoginContainer';
+import LoginContainer from '../login/LoginContainer';
+import { RememberMode } from '../login/rememberMode';
 
 interface Props extends ModalProps {
     onLogin: OnLoginCallback;

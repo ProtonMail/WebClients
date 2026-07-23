@@ -8,7 +8,7 @@ import { Href } from '@proton/atoms/Href/Href';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { getSupportContactURL } from '@proton/shared/lib/helpers/url';
 
-import { useUnauthLost2FA } from '../UnauthedLost2FAContainer';
+import { useUnauthLost2FA } from '../UnauthedLost2FAContext';
 import { useUnauthedLost2FATelemetry } from '../useUnauthedLost2FATelemetry';
 
 export const NoMethodsStep = () => {

@@ -8,7 +8,7 @@ import { TotpRecoveryCodeInputField } from '@proton/components/containers/accoun
 import { useFormErrors } from '@proton/components/index';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { useTotpBackupCodesActorRef } from '../../UnauthedLost2FAContainer';
+import { useTotpBackupCodesActorRef } from '../../UnauthedLost2FAContext';
 import type { TotpBackupCodesActorRef } from '../../state-machine/totpBackupCodeMachine';
 import { useUnauthedLost2FATelemetry } from '../../useUnauthedLost2FATelemetry';
 

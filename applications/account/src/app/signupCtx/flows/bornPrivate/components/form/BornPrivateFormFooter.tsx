@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import Progress from '@proton/components/components/progress/Progress';
 import clsx from '@proton/utils/clsx';
 
-import { Steps } from '../../emailReservation/EmailReservationSignup';
+import { Steps } from '../../emailReservation/interface';
 
 interface FormFooterProps {
     step?: number;
