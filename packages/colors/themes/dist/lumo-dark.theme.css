@@ -135,4 +135,28 @@
   --lumo-secondary-upsell-background: var(--interaction-solid-weak-custom);
   --model-mode-selected-background: var(--interaction-solid-weak-custom);
   --glyph-glyph-hint: #707070;
+  --glyph: #f6f6f6;
+  --glyph-mid: #949494;
+  --glyph-low: #707070;
+  --glyph-disabled: #3f3f3f;
+  --glyph-inverse: #0b0b0b;
+  --glyph-contrast: #ffffff;
+  --glyph-brand: #6d4aff;
+  --glyph-brand-mid: #7c6df9;
+  --glyph-brand-strong: #9a97f7;
+  --control-fill-empty: transparent;
+  --control-fill-translucent: rgb(255 255 255 / 0.05);
+  --control-fill-contrast: #ffffff;
+  --control-fill-low: #191919;
+  --control-fill-mid: #292929;
+  --control-fill-strong: #3f3f3f;
+  --control-fill-strong-2: #525252;
+  --control-border: #292929;
+  --control-border-translucent: rgb(255 255 255 / 0.1);
+  --control-border-mid: #3f3f3f;
+  --control-border-focus: #7c6df9;
+  --control-brand-fill: #6d4aff;
+  --control-brand-fill-mid: #7c6df9;
+  --control-brand-fill-strong: #9a97f7;
+  --control-brand-text: #ffffff;
 }

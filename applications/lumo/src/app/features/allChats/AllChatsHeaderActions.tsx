@@ -55,7 +55,7 @@ export const AllChatsHeaderActions = ({
                     shape: 'solid',
                     size: 'medium',
                     color: 'norm',
-                    className: 'shrink-0 flex flex-row flex-nowrap items-center gap-1',
+                    className: 'all-chats-header-action-button shrink-0 flex flex-row flex-nowrap items-center gap-1',
                 }}
             >
                 <LumoIcon name="Plus" size={14} aria-label={c('collider_2025: Link').t`New chat`} />
