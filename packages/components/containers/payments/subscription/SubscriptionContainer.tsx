@@ -47,7 +47,6 @@ import {
     getPlanCurrencyFromPlanIDs,
     getPlanFromPlanIDs,
     getPlanNameFromIDs,
-    shouldPassIsTrial as shouldPassIsTrialPayments,
 } from '@proton/payments/core/plan/helpers';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import { hasPlanIDs, switchPlan } from '@proton/payments/core/planIDs';
@@ -61,6 +60,7 @@ import {
     getPlanIDs,
     hasDeprecatedVPN,
     isSubscriptionCheckForbidden,
+    shouldPassIsTrial as shouldPassIsTrialPayments,
 } from '@proton/payments/core/subscription/helpers';
 import type {
     FullPlansMap,

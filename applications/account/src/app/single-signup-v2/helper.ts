@@ -28,7 +28,6 @@ import {
     getIsB2BAudienceFromPlan,
     getPlanFromPlanIDs,
     getPlanNameFromIDs,
-    isForbiddenModification,
     isLifetimePlanSelected,
 } from '@proton/payments/core/plan/helpers';
 import type { Plan, PlansMap, StrictPlan, SubscriptionPlan } from '@proton/payments/core/plan/interface';
@@ -44,6 +43,7 @@ import {
     getHas2025OfferCoupon,
     getNormalCycleFromCustomCycle,
     getPlan,
+    isForbiddenModification,
     isSubscriptionCheckForbidden,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
