@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
@@ -18,6 +19,7 @@ import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { ValidateRecoveryPhraseModal } from './ValidateRecoveryPhraseModal';
 import darkIllustration from './assets/recovery-phrase-dark.svg';
 import illustration from './assets/recovery-phrase.svg';
 
@@ -26,6 +28,7 @@ const RecoveryPhraseSubpage = () => {
     const isDarkTheme = theme.information.dark;
     const mnemonicData = useSelector(selectMnemonicData);
     const updateRecoveryKit = useUpdateRecoveryKit(mnemonicData);
+    const [validateModalProps, setValidateModalOpen, renderValidateModal] = useModalState();
 
     if (!mnemonicData.isMnemonicAvailable) {
         return null;
@@ -34,6 +37,8 @@ const RecoveryPhraseSubpage = () => {
     return (
         <>
             {updateRecoveryKit.el}
+
+            {renderValidateModal && <ValidateRecoveryPhraseModal {...validateModalProps} />}
 
             <DashboardGrid>
                 <SettingsDescription
@@ -87,14 +92,17 @@ const RecoveryPhraseSubpage = () => {
                                 </div>
                             )}
                             {!mnemonicData.hasOutdatedMnemonic && mnemonicData.mnemonicCanBeRegenerated && (
-                                <div>
+                                <div className="flex gap-2">
                                     <Button
                                         shape="outline"
-                                        className="color-primary inline-flex gap-2 items-center"
+                                        className="color-primary inline-flex gap-2 items-center justify-center"
                                         onClick={updateRecoveryKit.updatePhrase}
                                     >
                                         <IcArrowRotateRight className="shrink-0" />
                                         {c('Action').t`Generate new recovery phrase`}
+                                    </Button>
+                                    <Button shape="outline" onClick={() => setValidateModalOpen(true)}>
+                                        {c('Action').t`Verify recovery phrase`}
                                     </Button>
                                 </div>
                             )}

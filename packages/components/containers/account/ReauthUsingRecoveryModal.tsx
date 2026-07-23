@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { reauthMnemonicThunk } from '@proton/account/recovery/mnemonicActions';
 import { useIsSessionRecoveryInitiationAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -15,15 +16,12 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
-import { getMnemonicAuthInfo, reauthMnemonic } from '@proton/shared/lib/api/auth';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { reauthByEmailVerification, reauthBySmsVerification } from '@proton/shared/lib/api/verify';
-import type { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
-import { srpAuth } from '@proton/shared/lib/srp';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -46,10 +44,10 @@ const ReauthUsingRecoveryModal = ({
     onSuccess,
     ...rest
 }: Props) => {
-    const api = useApi();
+    const silentApi = useSilentApi();
+    const dispatch = useDispatch();
 
     const [user] = useUser();
-    const authentication = useAuthentication();
     const { validator, onFormSubmit } = useFormErrors();
     const [userSettings] = useUserSettings();
 
@@ -57,6 +55,7 @@ const ReauthUsingRecoveryModal = ({
     const [tabIndex, setTabIndex] = useState(0);
     const [mnemonic, setMnemonic] = useState('');
     const mnemonicValidation = useMnemonicInputValidation(mnemonic);
+    const errorHandler = useErrorHandler();
 
     const currentMethod = availableRecoveryMethods[tabIndex];
 
@@ -68,26 +67,11 @@ const ReauthUsingRecoveryModal = ({
         }
 
         if (currentMethod === 'email') {
-            await api(reauthByEmailVerification());
+            await silentApi(reauthByEmailVerification());
         } else if (currentMethod === 'sms') {
-            await api(reauthBySmsVerification());
+            await silentApi(reauthBySmsVerification());
         } else if (currentMethod === 'mnemonic') {
-            const persistent = authentication.getPersistent();
-            const username = user.Email || user.Name;
-            const randomBytes = await mnemonicToBase64RandomBytes(mnemonic);
-            const info = await api<InfoResponse>(getMnemonicAuthInfo(username));
-            await srpAuth({
-                info,
-                api,
-                config: reauthMnemonic({
-                    Username: username,
-                    PersistentCookies: persistent,
-                }),
-                credentials: {
-                    username: username,
-                    password: randomBytes,
-                },
-            });
+            await dispatch(reauthMnemonicThunk({ mnemonic }));
         }
 
         await onSuccess();
@@ -107,7 +91,14 @@ const ReauthUsingRecoveryModal = ({
     const phraseString = c('Info').t`Enter your recovery phrase to change your password now.`;
 
     return (
-        <Modal onClose={onClose} as={Form} onSubmit={() => withSubmitting(onSubmit())} {...rest}>
+        <Modal
+            onClose={onClose}
+            as={Form}
+            onSubmit={() => {
+                void withSubmitting(onSubmit().catch(errorHandler));
+            }}
+            {...rest}
+        >
             <ModalHeader title={title || c('Title').t`Reset password`} subline={user.Email} />
             <ModalContent>
                 {availableRecoveryMethods.length > 1 && (
