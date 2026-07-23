@@ -49,7 +49,7 @@ describe('chatgpt parser', () => {
         expect(result.source).toBe('chatgpt');
         expect(result.conversations).toHaveLength(1);
         expect(result.conversations[0].title).toBe('Budget worries');
-        expect(result.conversations[0].userPrompts).toEqual([
+        expect(result.conversations[0].userPrompts.map((prompt) => prompt.text)).toEqual([
             'I earn 30k, is that enough?',
             'How do I pay off my debt?',
         ]);
@@ -71,6 +71,6 @@ describe('chatgpt parser', () => {
             { title: 'Empty', mapping: {} },
         ] as any);
         expect(result.conversations).toHaveLength(1);
-        expect(result.conversations[0].userPrompts).toEqual(['caption']);
+        expect(result.conversations[0].userPrompts.map((prompt) => prompt.text)).toEqual(['caption']);
     });
 });
