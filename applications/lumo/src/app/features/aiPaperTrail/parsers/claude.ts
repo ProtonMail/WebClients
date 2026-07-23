@@ -1,4 +1,4 @@
-import type { NormalizedConversation, NormalizedExport } from './types';
+import type { NormalizedConversation, NormalizedExport, NormalizedUserPrompt } from './types';
 
 interface ClaudeContentBlock {
     type?: string;
@@ -66,14 +66,17 @@ export const parseClaudeExport = (data: ClaudeConversation[]): NormalizedExport 
         }
         const messages = convo.chat_messages ?? convo.messages ?? [];
 
-        const userPrompts: string[] = [];
+        const userPrompts: NormalizedUserPrompt[] = [];
         for (const message of messages) {
             if (message?.sender !== 'human') {
                 continue;
             }
             const text = extractText(message);
             if (text) {
-                userPrompts.push(text);
+                userPrompts.push({
+                    text,
+                    createdAt: parseTimestamp(message.created_at),
+                });
             }
         }
 

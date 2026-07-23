@@ -5,6 +5,7 @@ import ConversationSkeleton from '../components/ConversationSkeleton';
 import DebugView from '../features/dev/DebugView';
 import { useLumoFlags } from '../hooks/useLumoFlags';
 import { MainLayout } from '../layouts/MainLayout';
+import { GhostChatProvider } from '../providers/GhostChatProvider';
 import { PandocProvider } from '../providers/PandocProvider';
 
 const ConversationPage = lazy(() =>
@@ -30,9 +31,11 @@ export function InnerApp() {
                     {/* Standalone full-screen experience, rendered without the Lumo sidebar/header. */}
                     { aiPaperTrail &&
                         <Route exact path="/ai-paper-trail">
-                            <Suspense fallback={<ConversationSkeleton/>}>
-                                <AiPaperTrailView/>
-                            </Suspense>
+                            <GhostChatProvider>
+                                <Suspense fallback={<ConversationSkeleton/>}>
+                                    <AiPaperTrailView/>
+                                </Suspense>
+                            </GhostChatProvider>
                         </Route>
                     }
                     <Route>

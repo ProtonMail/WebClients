@@ -1,33 +1,23 @@
-import JSZip from 'jszip';
-
 import { isChatGptExport, parseChatGptExport } from './chatgpt';
 import { isClaudeExport, parseClaudeExport } from './claude';
 import { type NormalizedExport, PaperTrailParseError } from './types';
+import { readConversationsFromZip } from './zipConversations';
 
-export type { NormalizedConversation, NormalizedExport, PaperTrailSource } from './types';
+export type { NormalizedConversation, NormalizedExport, NormalizedUserPrompt, PaperTrailSource } from './types';
 export { PaperTrailParseError } from './types';
-
-const CONVERSATIONS_ENTRY = 'conversations.json';
+export {
+    CONVERSATIONS_JSON,
+    getConversationJsonBasename,
+    isConversationJsonPath,
+    listConversationJsonPaths,
+    mergeConversationJsonTexts,
+    readConversationsFromZip,
+} from './zipConversations';
 
 const isZip = (file: File): boolean =>
     file.name.toLowerCase().endsWith('.zip') ||
     file.type === 'application/zip' ||
     file.type === 'application/x-zip-compressed';
-
-const readConversationsFromZip = async (file: File): Promise<string> => {
-    const zip = await JSZip.loadAsync(await file.arrayBuffer());
-    // The export places conversations.json at the archive root, but match defensively
-    // in case it is nested in a folder.
-    const entry =
-        zip.file(CONVERSATIONS_ENTRY) ??
-        zip.file(new RegExp(`(^|/)${CONVERSATIONS_ENTRY}$`, 'i'))[0] ??
-        null;
-
-    if (!entry) {
-        throw new PaperTrailParseError(`Could not find ${CONVERSATIONS_ENTRY} inside the uploaded archive.`);
-    }
-    return entry.async('string');
-};
 
 /** Parse the raw text of a conversations.json into a normalized export. */
 export const parseExportText = (text: string): NormalizedExport => {

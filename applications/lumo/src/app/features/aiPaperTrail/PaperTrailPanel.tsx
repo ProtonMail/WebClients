@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useLumoNavigate } from '../../hooks/useLumoNavigate';
+import { LUMO_ROUTES } from '../../entrypoint/lumoRoutes';
 import { hasDismissedPaperTrailPanel, markPaperTrailPanelDismissed } from '../../util/paperTrailPanelStorage';
 import NotificationPanel from '../notification/NotificationPanel';
 
@@ -11,7 +11,6 @@ import NotificationPanel from '../notification/NotificationPanel';
  * panel (bottom-right) rather than an inline element above the composer.
  */
 export default function PaperTrailPanel() {
-    const navigate = useLumoNavigate();
     const [dismissed, setDismissed] = useState(hasDismissedPaperTrailPanel);
 
     if (dismissed) {
@@ -26,7 +25,9 @@ export default function PaperTrailPanel() {
             text={c('collider_2025:Info')
                 .t`Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.`}
             actionLabel={c('collider_2025:Action').t`Reveal my profile`}
-            onAction={() => navigate('/ai-paper-trail')}
+            onAction={() => {
+                window.location.assign(`${LUMO_ROUTES.GUEST}${LUMO_ROUTES.AI_PAPER_TRAIL}`);
+            }}
             onDismiss={() => {
                 markPaperTrailPanelDismissed();
                 setDismissed(true);

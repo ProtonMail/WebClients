@@ -1,4 +1,4 @@
-import type { NormalizedConversation, NormalizedExport } from './types';
+import type { NormalizedConversation, NormalizedExport, NormalizedUserPrompt } from './types';
 
 interface ChatGptContent {
     content_type?: string;
@@ -71,9 +71,13 @@ export const parseChatGptExport = (data: ChatGptConversation[]): NormalizedExpor
 
         if (prompts.length > 0) {
             prompts.sort((a, b) => a.order - b.order);
+            const userPrompts: NormalizedUserPrompt[] = prompts.map((prompt) => ({
+                text: prompt.text,
+                createdAt: prompt.order > 0 ? prompt.order : undefined,
+            }));
             conversations.push({
                 title: convo.title?.trim() || 'Untitled',
-                userPrompts: prompts.map((p) => p.text),
+                userPrompts,
                 createdAt: typeof convo.create_time === 'number' ? convo.create_time : undefined,
             });
         }
