@@ -98,9 +98,6 @@
       "Add public holidays": [
         "Добавить государственные праздники"
       ],
-      "Add secret passphrase": [
-        "Добавить кодовую фразу"
-      ],
       "Add to group": [
         "Добавить в группу"
       ],
@@ -677,9 +674,6 @@
       "Open settings": [
         "Открыть настройки"
       ],
-      "Passphrase": [
-        "Кодовая фраза"
-      ],
       "Pause indexing": [
         "Приостановить индексирование"
       ],
@@ -778,9 +772,6 @@
       ],
       "Resume indexing": [
         "Продолжить индексирование"
-      ],
-      "Retry": [
-        "Повторить"
       ],
       "Save": [
         "Сохранить"
@@ -961,9 +952,6 @@
       ],
       "Update recovery phrase": [
         "Обновить фразу для восстановления"
-      ],
-      "Update secret passphrase": [
-        "Обновить секретную кодовую фразу"
       ],
       "Upgrade": [
         "Улучшить"
@@ -3929,9 +3917,6 @@
       "Failed to open to contact": [
         "Не удалось открыть контакт"
       ],
-      "Failed to update secret passphrase": [
-        "Не удалось обновить кодовую фразу"
-      ],
       "Failed to update settings": [
         "Не удалось обновить настройки"
       ],
@@ -4081,9 +4066,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Ключ организации должен быть активирован для создания нечастных пользователей"
-      ],
-      "Passphrase unavailable": [
-        "Кодовая фраза недоступна"
       ],
       "Password is required": [
         "Нужно ввести пароль"
@@ -5978,9 +5960,6 @@
       "Failed to update meeting name": [
         "Не удалось обновить название встречи"
       ],
-      "Failed to update meeting password": [
-        "Не удалось обновить пароль встречи"
-      ],
       "Failed to update meeting schedule": [
         "Не удалось обновить расписание встречи"
       ],
@@ -5995,9 +5974,6 @@
       ],
       "for ${ price }": [
         "за ${ price }"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Для дополнительной безопасности вы можете установить кодовую фразу. Она не будет включена в приглашение в календарь, не забудьте поделиться ею с гостями отдельно."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Всего за ${ bundlePlanPriceInline }"
@@ -7611,9 +7587,6 @@
       ],
       "Participants": [
         "Участники"
-      ],
-      "Passphrase:": [
-        "Кодовая фраза:"
       ],
       "Password": [
         "Пароль"
@@ -9495,9 +9468,6 @@
       "Passcode copied to clipboard": [
         "Код доступа скопирован в буфер обмена"
       ],
-      "Passphrase copied to clipboard": [
-        "Кодовая фраза скопирована в буфер обмена"
-      ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Ваш адрес ${ BRAND_NAME } готов к использованию"
       ]
@@ -10484,9 +10454,6 @@
       ],
       "Enter a short description or additional info": [
         "Введите краткое описание или дополнительную информацию"
-      ],
-      "Enter passphrase": [
-        "Ввести кодовую фразу"
       ],
       "Filter groups": [
         "Фильтровать группы"
@@ -11722,9 +11689,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Помощник по написанию ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } и ${ LUMO_APP_NAME } с платными функциями"
       ],
@@ -12263,9 +12227,6 @@
       ],
       "Problem reported": [
         "О проблеме сообщено"
-      ],
-      "Secret passphrase updated": [
-        "Кодовая фраза обновлена"
       ],
       "Undo in progress": [
         "Выполняется отмена"

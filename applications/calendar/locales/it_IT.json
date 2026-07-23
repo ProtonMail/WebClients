@@ -98,9 +98,6 @@
       "Add public holidays": [
         "Aggiungi i giorni festivi"
       ],
-      "Add secret passphrase": [
-        "Aggiungi frase d'accesso segreta"
-      ],
       "Add to group": [
         "Aggiungi ad un gruppo"
       ],
@@ -671,9 +668,6 @@
       "Open settings": [
         "Apri impostazioni"
       ],
-      "Passphrase": [
-        "Frase d'accesso"
-      ],
       "Pause indexing": [
         "Metti in pausa l'indicizzazione"
       ],
@@ -772,9 +766,6 @@
       ],
       "Resume indexing": [
         "Riprendi indicizzazione"
-      ],
-      "Retry": [
-        "Riprova"
       ],
       "Save": [
         "Salva"
@@ -955,9 +946,6 @@
       ],
       "Update recovery phrase": [
         "Aggiorna frase di recupero"
-      ],
-      "Update secret passphrase": [
-        "Aggiorna frase d'accesso segreta"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -3864,9 +3852,6 @@
       "Failed to open to contact": [
         "Impossibile aprire il contatto"
       ],
-      "Failed to update secret passphrase": [
-        "Impossibile aggiornare la frase d'accesso segreta"
-      ],
       "Failed to update settings": [
         "Errore nell'aggiornamento delle impostazioni"
       ],
@@ -4010,9 +3995,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
-      ],
-      "Passphrase unavailable": [
-        "Frase segreta non disponibile"
       ],
       "Password is required": [
         "Password necessaria"
@@ -5813,9 +5795,6 @@
       "Failed to update meeting name": [
         "Impossibile aggiornare il nome del dominio"
       ],
-      "Failed to update meeting password": [
-        "Impossibile aggiornare la password della riunione"
-      ],
       "Failed to update meeting schedule": [
         "Impossibile aggiornare la pianificazione della riunione"
       ],
@@ -5833,9 +5812,6 @@
       ],
       "for ${ price }": [
         "a ${ price }"
-      ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Per maggiore sicurezza, puoi impostare una frase d'accesso. Non sarà inclusa nell'invito al calendario, ricorda di condividerla con i tuoi ospiti separatamente."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "A soli ${ bundlePlanPriceInline }"
@@ -7139,6 +7115,12 @@
       "City": [
         "Città"
       ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versione Client"
+      ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
       ],
@@ -7421,9 +7403,6 @@
       ],
       "Participants": [
         "Partecipanti"
-      ],
-      "Passphrase:": [
-        "Frase d'accesso:"
       ],
       "Password": [
         "Password"
@@ -9217,9 +9196,6 @@
       "Passcode copied to clipboard": [
         "Codice copiato negli appunti"
       ],
-      "Passphrase copied to clipboard": [
-        "Frase d'accesso copiata negli appunti"
-      ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Il tuo indirizzo ${ BRAND_NAME } è pronto per l'uso"
       ]
@@ -10142,9 +10118,6 @@
       ],
       "Enter a short description or additional info": [
         "Inserisci una breve descrizione o informazioni aggiuntive"
-      ],
-      "Enter passphrase": [
-        "Inserisci la frase di accesso"
       ],
       "Filter groups": [
         "Filtra gruppi"
@@ -11318,9 +11291,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
-      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, e ${ LUMO_APP_NAME } con funzionalità premium"
       ],
@@ -11839,9 +11809,6 @@
       ],
       "Problem reported": [
         "Problema segnalato"
-      ],
-      "Secret passphrase updated": [
-        "Frase d'accesso segreta aggiornata"
       ],
       "Undo in progress": [
         "Annullamento in corso"
