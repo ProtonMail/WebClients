@@ -9,7 +9,6 @@ import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/use
 import { updateLabel } from '@proton/mail/store/labels/actions';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Label } from '@proton/shared/lib/interfaces';
@@ -18,6 +17,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { CategoriesUnreadCountToggle } from './CategoriesUnreadCountToggle';
+import { isLastEnabledCategory } from './CategoriesViewSections.helper';
 import { CategorySettingsItem } from './CategorySettingsItem';
 import { CategoryViewToggle } from './CategoryViewToggle';
 import { PromptDisableCategories } from './PromptDisableCategories';
@@ -64,8 +64,7 @@ export const CategoriesViewSections = () => {
             return;
         }
 
-        const isLastEnabled = activeTabs.filter((c) => c.id !== MAILBOX_LABEL_IDS.CATEGORY_DEFAULT).length === 1;
-        if (cat.Display && isLastEnabled) {
+        if (cat.Display && isLastEnabledCategory(activeTabs, cat.ID)) {
             setModal(true);
             return;
         }
