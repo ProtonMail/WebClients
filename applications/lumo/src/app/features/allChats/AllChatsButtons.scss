@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/em' as *;
+
 @mixin all-chats-solid-brand-button {
 	--button-default-background-color: var(--control-brand-fill);
 	--button-hover-background-color: var(--control-brand-fill-mid);
@@ -33,6 +35,11 @@
 .all-chats-header-action-button.button-outline-weak.button-medium,
 .all-chats-header-action-button.button-outline-weak.button-small {
 	@include all-chats-outline-button;
+}
+
+.all-chats-header-action-button.button-small:not(.button-for-icon) {
+	--padding-block: #{em(6)};
+	--padding-inline: #{em(10)};
 }
 
 .all-chats-header-action-button:disabled {
