@@ -64,7 +64,7 @@ const initialMacosClient: DesktopVersion = {
     ManualUpdate: [],
 };
 
-const fetchDesktopClient = async (platform: DESKTOP_PLATFORMS) => {
+const fetchDesktopClient = async (platform: DESKTOP_PLATFORMS): Promise<DesktopVersion[] | undefined> => {
     try {
         const response = await fetch(getDownloadUrl(`/mail/${platform}/version.json`)).catch((error) => {
             throw new VersionLoadError('NETWORK_ERROR', error.message);
@@ -135,22 +135,17 @@ const useInboxDesktopVersion = () => {
 
         return undefined;
     }, [windowsApp, macosApp, linuxApp]);
-
     useEffect(() => {
         const fetchDesktopVersion = async () => {
             const promises = [fetchDesktopClient(WINDOWS), fetchDesktopClient(MACOS), fetchDesktopClient(LINUX)];
             const [windowsClient, macosClient, linuxClient] = await Promise.all(promises);
 
             if (windowsClient) {
-                setWindowsApp(
-                    (previousWindowsApp) => getLatestRelease(currentEnvironment, windowsClient) || previousWindowsApp
-                );
+                setWindowsApp((previousWindowsApp) => getLatestRelease('default', windowsClient) || previousWindowsApp);
             }
 
             if (macosClient) {
-                setMacosApp(
-                    (previousMacosApp) => getLatestRelease(currentEnvironment, macosClient) || previousMacosApp
-                );
+                setMacosApp((previousMacosApp) => getLatestRelease('default', macosClient) || previousMacosApp);
             }
 
             if (linuxClient) {
