@@ -114,7 +114,9 @@ export const createAutoSaveService = () => {
         withContext(async (ctx, { payload }, sender) => {
             const state = ctx.service.store.getState();
 
-            const { domain, subdomain, port, protocol } = parseUrl(sender.tab?.url);
+            /** - For sub-frame autosaves, we save the login for the iframe URL and not the page embedding it.
+             * - Top-frame autosaves have no `iframeUrl` and use `sender.tab.url`. */
+            const { domain, subdomain, port, protocol } = parseUrl(payload.iframeUrl ?? sender.tab?.url);
             const url = intoDomainWithPort({ domain: subdomain ?? domain, port, protocol });
 
             if (payload.type === AutosaveMode.NEW) {

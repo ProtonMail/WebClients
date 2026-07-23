@@ -6,7 +6,7 @@ import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import type { FrameId, RequiredNonNull, TabId } from '@proton/pass/types';
 
 export type ParsedSenderUrl = RequiredNonNull<ParsedUrl, 'domain' | 'protocol'>;
-export type ParsedSender = { tabId: TabId; url: ParsedSenderUrl; frameId: FrameId };
+export type ParsedSender = { tabId: TabId; url: ParsedSenderUrl; frameId: FrameId; href: string };
 
 export const isSupportedSenderUrl = (parsedUrl: ParsedUrl): parsedUrl is ParsedSenderUrl =>
     parsedUrl.domain !== null && parsedUrl.protocol !== null;
@@ -34,5 +34,5 @@ export const parseSender = async (sender: Runtime.MessageSender): Promise<Parsed
     const parsedUrl = parseUrl(senderURL);
     if (!isSupportedSenderUrl(parsedUrl)) throw new Error('[Sender] Unsupported sender');
 
-    return { tabId, url: parsedUrl, frameId };
+    return { tabId, url: parsedUrl, frameId, href: senderURL };
 };
