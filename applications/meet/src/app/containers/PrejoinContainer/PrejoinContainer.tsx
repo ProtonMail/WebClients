@@ -38,8 +38,6 @@ interface PrejoinContainerProps {
     handleJoin: (displayName: string) => void;
     loadingState: LoadingState | null;
     isLoading: boolean;
-    shareLink: string;
-    roomName: string;
     roomId: string;
     instantMeeting: boolean;
     participantsCount: number | null;
@@ -54,8 +52,6 @@ export const PrejoinContainer = ({
     handleJoin,
     loadingState,
     isLoading,
-    shareLink,
-    roomName,
     roomId,
     instantMeeting = false,
     participantsCount,
@@ -138,7 +134,7 @@ export const PrejoinContainer = ({
 
     return (
         <div className="h-full overflow-y-auto relative flex flex-column flex-nowrap">
-            <OpenDesktopAppBanner meetingLink={shareLink} />
+            <OpenDesktopAppBanner />
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
             <div className="w-full meet-container-padding-x shrink-0">
                 <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />
@@ -182,13 +178,11 @@ export const PrejoinContainer = ({
                         </>
                     ) : (
                         <PreJoinDetails
-                            roomName={roomName}
                             roomId={roomId}
                             displayName={displayName}
                             keepDisplayName={hasStoredDisplayName}
                             onDisplayNameChange={setDisplayName}
                             onJoinMeeting={handleJoinMeeting}
-                            shareLink={shareLink}
                             instantMeeting={instantMeeting}
                         />
                     )}
