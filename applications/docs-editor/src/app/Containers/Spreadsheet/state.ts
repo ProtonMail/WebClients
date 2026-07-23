@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
+import { flushSync } from 'react-dom'
 
 import type {
   CellXfs,
@@ -41,7 +42,6 @@ import { CURRENCY_SYMBOL } from './constants'
 import { useEditorState } from '../EditorStateProvider'
 import { useApplication } from '../ApplicationProvider'
 import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
-import { applyPatches as applyPatchesImmer } from 'immer'
 import { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { SpreadsheetLocalYjsAuditKey, SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
 import { detectLocalYjsUpdateDrift, recordSpreadsheetLocalStateChange } from './yjs-local-update-audit'
@@ -233,6 +233,8 @@ type YjsStateDependencies = {
   onAfterBroadcastPatch?: (patches: unknown, doc: YDoc) => void
 }
 
+let shouldObserveLocalTransactions = false
+
 function useYjsState({ localState, spreadsheetState, docState, onAfterBroadcastPatch }: YjsStateDependencies) {
   const { userName, receivedEverythingFromRTS } = useSyncedState()
   const provider = useMemo(() => {
@@ -295,6 +297,7 @@ function useYjsState({ localState, spreadsheetState, docState, onAfterBroadcastP
     skipInitialSync: true,
     supportLegacySharedStringsArray: true,
     onAfterBroadcastPatch,
+    shouldObserveLocalTransactions: () => shouldObserveLocalTransactions,
   })
 
   const usersWithCorrectColor = useMemo(() => {
@@ -326,48 +329,11 @@ function useYjsState({ localState, spreadsheetState, docState, onAfterBroadcastP
     },
   ) satisfies <Key extends keyof KeyValueState, Value extends KeyValueState[Key]>(key: Key, value: Value) => void
 
-  return { ...yjsState, userName, users: usersWithCorrectColor, kvSet, clientID: yDoc.clientID }
+  return { ...yjsState, userName, users: usersWithCorrectColor, kvSet, clientID: yDoc.clientID, doc: yDoc }
 }
 
 // proton sheets state
 // -------------------
-
-function applyPatchToLocalState(patches: SpreadsheetPatch) {
-  useLocalSpreadsheetState.setState((state) => {
-    const newState = {
-      ...state,
-      sheetData: patches.sheetData ? applyPatchesImmer(state.sheetData, patches.sheetData.patches) : state.sheetData,
-      sheets: patches.sheets ? applyPatchesImmer(state.sheets, patches.sheets.patches) : state.sheets,
-      protectedRanges: patches.protectedRanges
-        ? applyPatchesImmer(state.protectedRanges, patches.protectedRanges.patches)
-        : state.protectedRanges,
-      conditionalFormats: patches.conditionalFormats
-        ? applyPatchesImmer(state.conditionalFormats, patches.conditionalFormats.patches)
-        : state.conditionalFormats,
-      dataValidations: patches.dataValidations
-        ? applyPatchesImmer(state.dataValidations, patches.dataValidations.patches)
-        : state.dataValidations,
-      tables: patches.tables ? applyPatchesImmer(state.tables, patches.tables.patches) : state.tables,
-      namedRanges: patches.namedRanges
-        ? applyPatchesImmer(state.namedRanges, patches.namedRanges.patches)
-        : state.namedRanges,
-      charts: patches.charts ? applyPatchesImmer(state.charts, patches.charts.patches) : state.charts,
-      embeds: patches.embeds ? applyPatchesImmer(state.embeds, patches.embeds.patches) : state.embeds,
-      cellXfs:
-        state.cellXfs && patches.cellXfs ? applyPatchesImmer(state.cellXfs, patches.cellXfs.patches) : state.cellXfs,
-      sharedStrings: patches.sharedStrings
-        ? applyPatchesImmer(state.sharedStrings, patches.sharedStrings.patches)
-        : state.sharedStrings,
-    }
-    if (!(newState.cellXfs instanceof Map)) {
-      newState.cellXfs = state.cellXfs
-    }
-    if (!(newState.sharedStrings instanceof Map)) {
-      newState.sharedStrings = state.sharedStrings
-    }
-    return newState
-  })
-}
 
 type OmitDepsKey = 'localState' | 'spreadsheetState' | 'onChangeHistory' | 'locale' | 'onHandledInitialLoad'
 type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDepsKey> &
@@ -550,33 +516,6 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     }
   }
 
-  /**
-   * NOTE: This only applies patches to the local state. None of the changes
-   * are persisted to the Yjs state. Currently only usable for debugging.
-   */
-  const applyPatches = useEvent((patchesArray: unknown) => {
-    if (!patchesArray || !Array.isArray(patchesArray)) {
-      console.error('Invalid patches', patchesArray)
-      return
-    }
-    for (const p of patchesArray) {
-      if (p.type === 0) {
-        // base patch
-        const baseState = p.patches[0][0]
-        useLocalSpreadsheetState.setState({
-          ...(baseState as LocalStateWithoutActions),
-          cellXfs: 'cellXfs' in baseState ? new Map(Object.entries(baseState.cellXfs as object)) : new Map(),
-          sharedStrings:
-            'sharedStrings' in baseState ? new Map(Object.entries(baseState.sharedStrings as object)) : new Map(),
-        })
-      } else {
-        // delta patch
-        const patches = p.patches[0][0] as SpreadsheetPatch
-        applyPatchToLocalState(patches)
-      }
-    }
-  })
-
   const localState = useLocalSpreadsheetState()
 
   const onRequestFonts: (fonts: string[]) => Promise<void | undefined> = useEvent(async (fonts) => {
@@ -756,6 +695,44 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
 
   const onAddUserDefinedColor = useEvent((color: string) => {
     localState.onChangeUserDefinedColors((userDefinedColors) => [...userDefinedColors, color])
+  })
+
+  const applyPatches = useEvent(async (patchesArray: unknown) => {
+    if (!patchesArray || !Array.isArray(patchesArray)) {
+      console.error('Invalid patches', patchesArray)
+      return
+    }
+    shouldObserveLocalTransactions = true
+    try {
+      for (const p of patchesArray) {
+        if (p.type === 0) {
+          flushSync(() => {
+            // base patch
+            const baseState = p.patches[0][0]
+            useLocalSpreadsheetState.setState({
+              ...(baseState as LocalStateWithoutActions),
+              cellXfs: 'cellXfs' in baseState ? new Map(Object.entries(baseState.cellXfs as object)) : new Map(),
+              sharedStrings:
+                'sharedStrings' in baseState ? new Map(Object.entries(baseState.sharedStrings as object)) : new Map(),
+            })
+          })
+          const patches = await spreadsheetState.generateStatePatches()
+          yjsState.onBroadcastPatch([[patches]])
+        } else if (p.type === 1) {
+          // delta patch
+          try {
+            const patches = p.patches[0][0] as SpreadsheetPatch
+            yjsState.onBroadcastPatch([[patches]])
+          } catch (error) {
+            console.error('could not apply patch', p, error)
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Error applying patches', error)
+    } finally {
+      shouldObserveLocalTransactions = false
+    }
   })
 
   return {
