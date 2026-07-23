@@ -1,15 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import type { SessionKey } from '@protontech/crypto';
+
 import { querySharedURLMetadata, querySharedURLPath } from '@proton/shared/lib/api/drive/sharing';
 import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 
-import { linkMetaToEncryptedLink, usePublicSession } from '../../store/_api';
-import { type DecryptedLink, useLink } from '../../store/_links';
+import { linkMetaToEncryptedLink } from '../../store/_api/transformers';
+import usePublicSession from '../../store/_api/usePublicSession';
+import type { DecryptedLink } from '../../store/_links/interface';
+import useLink from '../../store/_links/useLink';
 import { useLinksListingHelpers } from '../../store/_links/useLinksListing/useLinksListingHelpers';
-import type { SharedUrlInfo } from '../../store/_shares';
-import { usePublicShare } from '../../store/_shares';
+import type { SharedUrlInfo } from '../../store/_shares/interface';
+import usePublicShare from '../../store/_shares/usePublicShare';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import type { PublicNodeMeta } from '../NodeMeta';

@@ -6,8 +6,10 @@ import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useGetPublicKeysForEmail, usePublicActions } from '../store';
-import type { DocumentType } from '../store/_documents';
-import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
+import { useDriveDocsFeatureFlag } from '../store/_documents/useDriveDocsFeatureFlag';
+import { useDriveDocsPublicSharingFF } from '../store/_documents/useDriveDocsPublicSharingFF';
+import type { DocumentType } from '../store/_documents/useOpenDocument';
+import { useOpenDocument } from '../store/_documents/useOpenDocument';
 import { useAbortSignal } from '../store/_views/utils';
 import type { NodeMeta, PublicNodeMeta } from './NodeMeta';
 import type { PublicDocumentKeys } from './_documents';

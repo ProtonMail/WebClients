@@ -3,7 +3,7 @@ import { fromUnixTime } from 'date-fns';
 
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 
-import { adjustName, adjustWindowsLinkName, splitLinkName } from '../../_links';
+import { adjustName, adjustWindowsLinkName, splitLinkName } from '../../_links/link';
 import type { StartedNestedLinkDownload } from './interface';
 
 function getPathString(path: string[]): string {
