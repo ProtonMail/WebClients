@@ -262,7 +262,7 @@ const ConversationRow = memo(
                     />
                 ) : null}
 
-                <div className="relative z-1 flex-1 min-w-0 pointer-events-none">
+                <div className="all-chats-row-body relative z-1 flex-1 min-w-0 pointer-events-none">
                     {isRenaming ? (
                         <Input
                             ref={renameInputRef}
@@ -336,24 +336,29 @@ const ConversationRow = memo(
                                         {preview}
                                     </span>
                                 ) : null}
-                                {isProject ? (
-                                    <LumoLink
-                                        to={`/projects/${conversation.spaceId}`}
-                                        className="all-chats-row-project all-chats-row-interactive shrink-0"
-                                        aria-label={c('collider_2025:Action').t`Go to project`}
-                                        title={projectLabel}
-                                        onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
-                                            event.stopPropagation();
-                                        }}
-                                    >
-                                        <ProjectIcon iconId={projectIcon} size={14} className="shrink-0" />
-                                        <span className="all-chats-row-project-name">{projectLabel}</span>
-                                    </LumoLink>
-                                ) : null}
                             </div>
                         </div>
                     )}
                 </div>
+
+                {!isRenaming ? (
+                    <div className="all-chats-row-project-slot relative z-1 shrink-0">
+                        {isProject ? (
+                            <LumoLink
+                                to={`/projects/${conversation.spaceId}`}
+                                className="all-chats-row-project all-chats-row-interactive"
+                                aria-label={c('collider_2025:Action').t`Go to project`}
+                                title={projectLabel}
+                                onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+                                    event.stopPropagation();
+                                }}
+                            >
+                                <ProjectIcon iconId={projectIcon} size={14} className="shrink-0" />
+                                <span className="all-chats-row-project-name">{projectLabel}</span>
+                            </LumoLink>
+                        ) : null}
+                    </div>
+                ) : null}
 
                 {!isRenaming ? (
                     <div className="all-chats-row-meta relative z-2 shrink-0 flex items-center justify-end self-stretch">

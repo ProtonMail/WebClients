@@ -5,7 +5,7 @@ import { getMessageContent } from '../../messageHelpers';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
 import type { Message } from '../../types';
 
-const PREVIEW_MAX_LENGTH = 120;
+const PREVIEW_MAX_LENGTH = 200;
 
 const normalizeWhitespace = (text: string): string => {
     return text.replace(/\s+/g, ' ').trim();
