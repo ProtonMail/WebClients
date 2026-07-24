@@ -1,63 +1,25 @@
-import { clsx } from 'clsx';
+import { c } from 'ttag';
 
-import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
-import { AllChatsHeaderActions } from './AllChatsHeaderActions';
-import { AllChatsHeaderSearch } from './AllChatsHeaderSearch';
-import type { AllChatsFilterValue } from './filterAllChatsConversations';
+import { NewChatButton } from '../../components/Buttons/NewChatButton';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 
 import './AllChatsHeaderActions.scss';
 
-interface AllChatsHeaderBarProps {
-    searchQuery: string;
-    onSearchQueryChange: (value: string) => void;
-    isSearchOpen: boolean;
-    onSearchOpenChange: (isOpen: boolean) => void;
-    sortField: ChatHistoryDateField;
-    onSortFieldChange: (value: ChatHistoryDateField) => void;
-    filter: AllChatsFilterValue;
-    onFilterChange: (value: AllChatsFilterValue) => void;
-    onRequestDeleteAll: () => void;
-    isDeleteAllDisabled: boolean;
-    hasSelection: boolean;
-}
-
-export const AllChatsHeaderBar = ({
-    searchQuery,
-    onSearchQueryChange,
-    isSearchOpen,
-    onSearchOpenChange,
-    sortField,
-    onSortFieldChange,
-    filter,
-    onFilterChange,
-    onRequestDeleteAll,
-    isDeleteAllDisabled,
-    hasSelection,
-}: AllChatsHeaderBarProps) => {
+export const AllChatsHeaderBar = () => {
     return (
-        <div className="all-chats-header-bar flex flex-1 items-center gap-2 min-w-0 flex-nowrap">
-            <div
-                className={clsx(
-                    'all-chats-header-search-slot shrink-0',
-                    isSearchOpen && 'all-chats-header-search-slot-is-open'
-                )}
+        <div className="all-chats-header-bar flex flex-1 items-center justify-end min-w-0 w-full">
+            <NewChatButton
+                buttonProps={{
+                    shape: 'solid',
+                    size: 'medium',
+                    color: 'norm',
+                    className:
+                        'all-chats-header-action-button all-chats-header-new-chat shrink-0 flex flex-row flex-nowrap items-center gap-1',
+                }}
             >
-                <AllChatsHeaderSearch
-                    searchQuery={searchQuery}
-                    onSearchQueryChange={onSearchQueryChange}
-                    isOpen={isSearchOpen}
-                    onOpenChange={onSearchOpenChange}
-                />
-            </div>
-            <AllChatsHeaderActions
-                sortField={sortField}
-                onSortFieldChange={onSortFieldChange}
-                filter={filter}
-                onFilterChange={onFilterChange}
-                onRequestDeleteAll={onRequestDeleteAll}
-                isDeleteAllDisabled={isDeleteAllDisabled}
-                hasSelection={hasSelection}
-            />
+                <LumoIcon name="Plus" size={14} aria-label={c('collider_2025: Link').t`New chat`} />
+                <span className="all-chats-header-new-chat-text">{c('collider_2025:Button').t`New chat`}</span>
+            </NewChatButton>
         </div>
     );
 };
