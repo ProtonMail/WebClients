@@ -1,3 +1,4 @@
+import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import { hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -58,6 +59,7 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         app: APPS.PROTONMAIL,
         user: buildUser(),
         subscription: { Renew: Renew.Enabled } as Subscription,
+        entitlements: createEntitlementResolver(undefined),
         recoveryNotification: undefined,
         accountRecoveryRouterFlags,
         organization: undefined,

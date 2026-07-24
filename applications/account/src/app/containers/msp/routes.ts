@@ -2,14 +2,27 @@ import { c } from 'ttag';
 
 import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { hasMspEligiblePlan } from '@proton/payments/core/subscription/helpers';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
+import { APPS } from '@proton/shared/lib/constants';
 
 import type { GeneralRouterParams } from '../../content/router-params';
 
-export const getMspAppRoutes = ({ flags, subscription }: GeneralRouterParams): SidebarConfig => {
+export const getMspAppRoutes = ({
+    app,
+    flags,
+    subscription,
+    entitlements,
+    user,
+}: GeneralRouterParams): SidebarConfig => {
     const { isMspEnabled = false } = flags;
-
+    // MSP is exclusively available for Pass for now
+    const isAllowedApp = app === APPS.PROTONPASS || app === APPS.PROTONACCOUNT;
+    // MSP is exclusively available for passbiz2024 customers that have subsidiaries and members subsidiaries entitlements,
+    // this is subject to change in the future
+    const isEligible =
+        hasMspEligiblePlan(subscription) && entitlements.orgHasSubsidiaries && entitlements.orgHasMembersSubsidiaries;
     return {
-        available: isMspEnabled && hasMspEligiblePlan(subscription),
+        available: isMspEnabled && isAllowedApp && isEligible && user.accessType !== AccessType.Msp,
         header: c('Settings section title').t`Managed Companies`,
         routes: {
             companies: {
