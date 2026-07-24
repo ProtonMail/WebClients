@@ -10,4 +10,6 @@ export const entitlementChecks = {
     orgHasVpn: (r) => !!r.quantityOrg(EntitlementName.FlagsVpn),
     orgHasSentinel: (r) => !!r.quantityOrg(EntitlementName.Sentinel),
     orgHasLumo: (r) => !!r.quantityOrg(EntitlementName.FlagsLumo),
+    orgHasSubsidiaries: (r) => !!r.quantityOrg(EntitlementName.MaxSubsidiaries),
+    orgHasMembersSubsidiaries: (r) => !!r.quantityOrg(EntitlementName.MaxMembersSubsidiaries),
 } satisfies Record<string, EntitlementCheck>;
