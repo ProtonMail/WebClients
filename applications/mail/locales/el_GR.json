@@ -1511,7 +1511,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1705,6 +1706,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Lookup document": [
+        "Αναζήτηση εγγράφου"
       ]
     },
     "action": {
@@ -5488,6 +5492,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Κάτι πήγε στραβά, κλείστε το παράθυρο και προσπαθήστε ξανά."
       ]
     },
     "error": {
@@ -9325,6 +9332,23 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } πρόβλημα κατά την εισαγωγή:",
+        "${ issues.length } προβλήματα κατά την εισαγωγή:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } λεπτά απομένουν…"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Βρέθηκε ένα τρέχον κρυπτογραφημένο ευρετήριο αναζήτησης με ${ oldIndexSize } μήνυμα.",
+        "Βρέθηκε ένα τρέχον κρυπτογραφημένο ευρετήριο αναζήτησης με ${ oldIndexSize } μηνύματα."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Η εισαγωγή βρίσκεται σε εξέλιξη, μπορείτε να κλείσετε αυτό το παράθυρο διαλόγου ενώ εκτελείται και να επιστρέψετε σε αυτό αργότερα. Ωστόσο, μην κλείσετε την καρτέλα."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Μπορείτε να το εισαγάγετε ως νέο ευρετήριο αναζήτησης ιδρύματος για σκοπούς ανάπτυξης."
       ]
     },
     "info": {
@@ -10511,6 +10535,18 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Content search version to use": [
+        "Έκδοση αναζήτησης περιεχομένου προς χρήση"
+      ],
+      "Document ID": [
+        "ID εγγράφου"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {

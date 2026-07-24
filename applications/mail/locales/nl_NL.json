@@ -1511,7 +1511,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1705,6 +1706,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Lookup document": [
+        "Opzoekdocument"
       ]
     },
     "action": {
@@ -5488,6 +5492,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Er is iets misgegaan. Sluit het venster en probeer opnieuw."
       ]
     },
     "error": {
@@ -9325,6 +9332,23 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } probleem tijdens importeren:",
+        "${ issues.length } problemen tijdens importeren:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minuten resterend…"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Er is een actieve gecodeerde zoekindex gevonden met ${ oldIndexSize } bericht.",
+        "Er is een actieve gecodeerde zoekindex gevonden met ${ oldIndexSize } berichten."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importeren wordt uitgevoerd. U kunt dit dialoogvenster sluiten terwijl het actief is en er later op terugkomen. Sluit het tabblad echter niet."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "U kunt het importeren als een nieuwe basis zoekindex voor ontwikkelingsdoeleinden."
       ]
     },
     "info": {
@@ -10511,6 +10535,18 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Content search version to use": [
+        "Te gebruiken versie voor zoeken naar inhoud"
+      ],
+      "Document ID": [
+        "Document-id"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {

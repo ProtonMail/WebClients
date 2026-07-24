@@ -1511,7 +1511,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1705,6 +1706,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Lookup document": [
+        "Belgeye bak"
       ]
     },
     "action": {
@@ -5488,6 +5492,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Bir hata oluştu. Lütfen pencereyi kapatıp tekrar deneyin."
       ]
     },
     "error": {
@@ -9325,6 +9332,23 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "${ issues.length } issue during import:": [
+        "İçe aktarma sırasında ${ issues.length } sorun oluştu:",
+        "İçe aktarma sırasında ${ issues.length } sorun oluştu:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } dakika kaldı…"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "${ oldIndexSize } ileti içeren güncel şifreli arama dizini bulundu.",
+        "${ oldIndexSize } ileti içeren güncel şifreli arama dizini bulundu."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "İçe aktarma işlemi devam ediyor. İşlem sürerken bu iletişim kutusunu kapatabilir ve daha sonra tekrar açabilirsiniz. Ancak sekmeyi kapatmayın."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Geliştirme amaçlı olarak bunu yeni bir temel arama dizini olarak içe aktarabilirsiniz."
       ]
     },
     "info": {
@@ -10511,6 +10535,18 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Content search version to use": [
+        "Kullanılacak içerik arama sürümü"
+      ],
+      "Document ID": [
+        "Belge Kimliği"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
