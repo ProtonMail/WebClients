@@ -1522,6 +1522,9 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Verify recovery phrase": [
+        "Preverite obnovitveno frazo"
       ]
     },
     "action": {
@@ -5688,6 +5691,9 @@
       ],
       "Zero keys reactivated": [
         "Nič ključev ponovno aktiviranih"
+      ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Ta fraza ne more obnoviti vašega računa. Lahko ustvarite novo in zagotovite, da bo vaš račun v prihodnosti možno obnoviti."
       ]
     },
     "error": {
@@ -6973,6 +6979,9 @@
       ],
       "Your plan": [
         "Vaš paket"
+      ],
+      "Downloads": [
+        "Prenosi"
       ]
     },
     "Hint": {
@@ -10169,6 +10178,12 @@
       ],
       "Zoom meeting": [
         "sestanek prek Zooma"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Preverite, ali je mogoče z vašo obnovitveno frazo v celoti obnoviti vaš račun."
+      ],
+      "Recovery phrase verified": [
+        "Obnovitvena fraza je preverjena"
       ]
     },
     "info": {
@@ -19732,6 +19747,9 @@
       ],
       "Your subscriptions": [
         "Vaše naročnine"
+      ],
+      "Verify your phrase": [
+        "Preverite frazo"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -20851,6 +20869,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Letno, ${ untilString }"
+      ]
+    },
+    "Setting": {
+      "Get updates about comments via email": [
+        "Prejemajte obvestila o komentarjih prek e-pošte"
+      ],
+      "Include document name in email notifications": [
+        "Ime dokumenta vključi v e-poštna obvestila"
       ]
     }
   }
