@@ -16,30 +16,35 @@ export const DEFAULT_BATCH_SIZE = 50;
  */
 export async function* exportEntries(instance: IndexInstance, signal: AbortSignal): AsyncGenerator<Entry> {
     signal.throwIfAborted();
-    const exp = instance.engine.export();
+    instance.blobStore.beginRead();
     try {
-        for (let event = exp.next(); event !== undefined; event = exp.next()) {
-            signal.throwIfAborted();
-            switch (event.kind()) {
-                case ExportEventKind.Load:
-                    await instance.blobStore.loadEvent(event);
-                    break;
-                case ExportEventKind.Entry: {
-                    const entry = event.entry();
-                    if (!entry) {
+        const exp = instance.engine.export();
+        try {
+            for (let event = exp.next(); event !== undefined; event = exp.next()) {
+                signal.throwIfAborted();
+                switch (event.kind()) {
+                    case ExportEventKind.Load:
+                        await instance.blobStore.loadEvent(event);
+                        break;
+                    case ExportEventKind.Entry: {
+                        const entry = event.entry();
+                        if (!entry) {
+                            break;
+                        }
+                        try {
+                            yield entry;
+                        } finally {
+                            entry.free();
+                        }
                         break;
                     }
-                    try {
-                        yield entry;
-                    } finally {
-                        entry.free();
-                    }
-                    break;
                 }
             }
+        } finally {
+            exp.free();
         }
     } finally {
-        exp.free();
+        instance.blobStore.endRead();
     }
 }
 
