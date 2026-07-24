@@ -1,7 +1,7 @@
 import type { IDBPDatabase } from 'idb';
 
 import { decryptFromDB, getIndexKey } from '@proton/encrypted-search/esHelpers';
-import { openESDB } from '@proton/encrypted-search/esIDB';
+import { hasESDB, openESDB } from '@proton/encrypted-search/esIDB';
 import type {
     ESCiphertext,
     ESItem,
@@ -62,7 +62,13 @@ export class EncryptedSearchReader {
         private indexKey: CryptoKey
     ) {}
 
-    static async open(userId: string, userKeys: DecryptedKey[]): Promise<EncryptedSearchReader> {
+    static async open(userId: string, userKeys: DecryptedKey[]): Promise<EncryptedSearchReader | undefined> {
+        // Never create the v1 ES DB: `getIndexKey` and `openESDB` both create an empty shell if it's
+        // absent, which then makes `hasESDB` report true and breaks v1's own enable flow. If there's
+        // no v1 index there's nothing to read, so return undefined instead.
+        if (!(await hasESDB(userId))) {
+            return undefined;
+        }
         const indexKey = await getIndexKey(userKeys, userId);
         if (!indexKey) {
             throw new Error('could not get key for old index');
@@ -70,7 +76,11 @@ export class EncryptedSearchReader {
         return EncryptedSearchReader.openWithIndexKey(userId, indexKey);
     }
 
-    static async openWithIndexKey(userId: string, indexKey: CryptoKey): Promise<EncryptedSearchReader> {
+    static async openWithIndexKey(userId: string, indexKey: CryptoKey): Promise<EncryptedSearchReader | undefined> {
+        // See `open`: bail out before `openESDB` creates an empty shell for a non-existent v1 index.
+        if (!(await hasESDB(userId))) {
+            return undefined;
+        }
         const db = await openESDB(userId);
         if (!db) {
             throw new Error('could not open old index db');

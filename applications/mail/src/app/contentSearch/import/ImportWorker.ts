@@ -21,6 +21,11 @@ export default class ImportWorker {
         try {
             await initWasm();
             const esReader = await EncryptedSearchReader.openWithIndexKey(userId, keys.indexV1Key);
+            // No v1 index to import from. `IndexService.importFromEncryptedSearch` already checks this
+            // before spawning the worker, but guard here too so we never proceed without a source.
+            if (!esReader) {
+                return;
+            }
             const db = await openContentSearchDB(userId);
             const importer = new Import(db, keys.indexV2Key, esReader, notifications, BATCH_SIZE);
             await importer.run();
