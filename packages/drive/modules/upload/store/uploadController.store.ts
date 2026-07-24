@@ -8,9 +8,15 @@ type UploadControllerStore = {
         uploadId: string,
         controller: { uploadController: UploadController | null; abortController: AbortController }
     ) => void;
-    setAbortController: (uploadId: string, abortController: AbortController) => void;
+    /**
+     * Registers abort controllers for one or many uploads in a single state update.
+     */
+    setAbortControllers: (abortControllers: Map<string, AbortController>) => void;
     setUploadController: (uploadId: string, uploadController: UploadController) => void;
-    removeController: (uploadId: string) => void;
+    /**
+     * Removes one or many controllers in a single state update.
+     */
+    removeControllers: (uploadIds: string[]) => void;
     getController: (
         uploadId: string
     ) => { uploadController: UploadController | null; abortController: AbortController } | undefined;
@@ -25,15 +31,23 @@ export const useUploadControllerStore = create<UploadControllerStore>()((set, ge
             controllers: new Map(state.controllers).set(uploadId, controller),
         })),
 
-    setAbortController: (uploadId, abortController) =>
+    setAbortControllers: (abortControllers) =>
         set((state) => {
-            const controllers = new Map(state.controllers);
-            const existing = controllers.get(uploadId);
-            controllers.set(uploadId, {
-                uploadController: existing?.uploadController || null,
-                abortController,
-            });
-            return { controllers };
+            let controllers = state.controllers;
+            for (const [uploadId, abortController] of abortControllers) {
+                const existing = controllers.get(uploadId);
+                if (existing?.abortController === abortController) {
+                    continue;
+                }
+                if (controllers === state.controllers) {
+                    controllers = new Map(state.controllers);
+                }
+                controllers.set(uploadId, {
+                    uploadController: existing?.uploadController || null,
+                    abortController,
+                });
+            }
+            return controllers === state.controllers ? state : { controllers };
         }),
 
     setUploadController: (uploadId, uploadController) =>
@@ -49,10 +63,15 @@ export const useUploadControllerStore = create<UploadControllerStore>()((set, ge
             return { controllers };
         }),
 
-    removeController: (uploadId) =>
+    removeControllers: (uploadIds) =>
         set((state) => {
+            if (uploadIds.length === 0) {
+                return state;
+            }
             const controllers = new Map(state.controllers);
-            controllers.delete(uploadId);
+            for (const uploadId of uploadIds) {
+                controllers.delete(uploadId);
+            }
             return { controllers };
         }),
 
