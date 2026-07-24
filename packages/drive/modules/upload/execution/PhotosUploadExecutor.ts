@@ -1,3 +1,4 @@
+import { readToEnd } from '@openpgp/web-stream-tools';
 import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
@@ -53,10 +54,11 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                     task.file.name,
                     async () => {
                         const fileStream = createFileStream(task.file);
-                        const hashResult = await CryptoProxy.computeHashStream({
+                        const { hashedDataStream } = await CryptoProxy.computeHashStream({
                             algorithm: 'unsafeSHA1',
-                            dataStream: fileStream,
+                            binaryDataStream: fileStream,
                         });
+                        const hashResult = await readToEnd(hashedDataStream);
                         return hashResult.toHex();
                     },
                     abortController.signal
