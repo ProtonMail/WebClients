@@ -71,6 +71,11 @@ async function getAttempt(attemptId: string) {
   return attempt
 }
 
+async function getUndismissedAttempts() {
+  const allAttempts = await getAllAttempts()
+  return allAttempts.filter((attempt) => attempt.outcome === 'loop_detected' && !attempt.dismissed)
+}
+
 async function getEvents(attemptId: string) {
   const db = await connectDb()
   return db.getAllFromIndex('events', 'byAttemptId', attemptId)
@@ -97,6 +102,7 @@ export default {
   saveAttempt,
   saveEvent,
   getAllAttempts,
+  getUndismissedAttempts,
   getAttempt,
   getEvents,
   flushAttempt,

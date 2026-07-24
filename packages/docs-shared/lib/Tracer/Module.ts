@@ -23,6 +23,7 @@ export interface Attempt {
   updatedAt: number
   resolvedAt: number
   outcome: AttemptOutcome
+  dismissed: boolean
 }
 
 export interface TracerEvent {
@@ -141,15 +142,20 @@ async function resolveAttempt() {
 }
 
 /**
- * Downloads a JSON report of the passed attempts and all events associated with them.
+ * Downloads a JSON report of all detected attempts and all events associated with them.
  */
-async function downloadReport(attempts: Attempt[]) {
+async function downloadReport() {
   if (shouldIgnore()) {
     return
   }
+
+  const _attempts = await Persistence.getAllAttempts()
+  const attempts = _attempts.filter((attempt) => attempt.outcome === AttemptOutcome.LOOP_DETECTED)
   if (attempts.length === 0) {
+    log('download', 'no loop detected attempts found')
     return
   }
+
   const reports: Record<string, { events: TracerEvent[]; attempt: Attempt }> = {}
   for (const attempt of attempts) {
     const events = await Persistence.getEvents(attempt.id)
@@ -164,21 +170,30 @@ async function downloadReport(attempts: Attempt[]) {
   a.click()
   URL.revokeObjectURL(url)
 
-  await Persistence.flushAllAttempts()
-  log('share', 'reports shared, logs flushed')
+  log('download', 'report downloaded')
 }
 
 /**
- * Gets all attempts that have not been reported yet that exist in the database.
+ * Flushes all attempts from the database
  */
-async function getUnreportedAttempts() {
+async function flushAttempts() {
   if (shouldIgnore()) {
-    return []
+    return
   }
-  const attempts = await Persistence.getAllAttempts()
-  const unreportedAttempts = attempts.filter((attempt) => attempt.outcome === AttemptOutcome.LOOP_DETECTED)
-  log('report', `${unreportedAttempts.length} unreported attempts found`)
-  return unreportedAttempts
+  await Persistence.flushAllAttempts()
+  log('flush', 'attempts flushed')
+}
+
+/**
+ * Gets count of undismissed attempts that are loop detected.
+ */
+async function getUnreportedAttemptsCount() {
+  if (shouldIgnore()) {
+    return 0
+  }
+  const attempts = await Persistence.getUndismissedAttempts()
+  log('report', `${attempts.length} unreported attempts found`)
+  return attempts.length
 }
 
 /**
@@ -186,6 +201,20 @@ async function getUnreportedAttempts() {
  */
 function setEnabled(enabled: boolean) {
   isEnabled = enabled
+}
+
+/**
+ * Marks all unreported attempts as dismissed.
+ */
+async function dismissAttempts() {
+  if (shouldIgnore()) {
+    return
+  }
+  const attempts = await Persistence.getUndismissedAttempts()
+  for (const attempt of attempts) {
+    await Persistence.saveAttempt({ ...attempt, dismissed: true })
+  }
+  log('dismiss', 'attempts dismissed')
 }
 
 async function incrementAttemptRedirectCount(attempt: Attempt) {
@@ -243,6 +272,7 @@ function createNewAttempt(): Attempt {
     updatedAt: 0,
     resolvedAt: 0,
     outcome: AttemptOutcome.NEW,
+    dismissed: false,
   }
 }
 
@@ -261,5 +291,7 @@ export default {
   resolveAttempt,
   setEnabled,
   downloadReport,
-  getUnreportedAttempts,
+  flushAttempts,
+  dismissAttempts,
+  getUnreportedAttemptsCount,
 }
