@@ -23,7 +23,7 @@ export const useCategoriesData = () => {
     const settingAccess = organization?.Settings?.MailCategoryViewEnabled ? !!mailSettings.MailCategoryView : false;
     const isCategoryViewEnabled = canUseCategoryView && settingAccess;
 
-    const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
+    const isRefreshedToolbarUIDisabled = useFlag('NewToolbarKillSwitch');
     const shouldSeeWideToolbars = canUseCategoryView ? !isRefreshedToolbarUIDisabled : false;
 
     // Redirect decisions must wait until every input behind `categoryViewAccess` has loaded.
