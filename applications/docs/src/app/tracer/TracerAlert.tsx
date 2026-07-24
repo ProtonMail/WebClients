@@ -1,22 +1,24 @@
 import { useState, useEffect } from 'react'
 import { Button } from '@proton/atoms/Button/Button'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
-import type { Attempt } from '@proton/docs-shared/lib/Tracer/Module'
 import BasicModal from '@proton/components/components/modalTwo/BasicModal'
 import { c } from 'ttag'
+import { useApplication } from '~/utils/application-context'
 
 interface TracerAlertProps {
   openBugReportModal: () => void
 }
 
 export default function TracerAlert({ openBugReportModal }: TracerAlertProps) {
+  const application = useApplication()
+
   const [loading, setLoading] = useState(false)
-  const [unreportedAttempts, setUnreportedAttempts] = useState<Attempt[]>([])
+  const [unreportedAttempts, setUnreportedAttempts] = useState<number>(0)
 
   useEffect(() => {
     async function run() {
-      const unreportedAttempts = await OpenTracer.getUnreportedAttempts()
-      if (unreportedAttempts.length > 0) {
+      const unreportedAttempts = await OpenTracer.getUnreportedAttemptsCount()
+      if (unreportedAttempts > 0) {
         setUnreportedAttempts(unreportedAttempts)
       }
     }
@@ -26,20 +28,27 @@ export default function TracerAlert({ openBugReportModal }: TracerAlertProps) {
   async function handleDownloadReport() {
     try {
       setLoading(true)
-      await OpenTracer.downloadReport(unreportedAttempts)
-    } catch (error) {
-      console.error(error)
+      await OpenTracer.downloadReport()
+      await OpenTracer.flushAttempts()
+    } catch (_error) {
+      application.logger.warn('Error downloading report')
     } finally {
+      setUnreportedAttempts(0)
       setLoading(false)
-      handleDismiss()
     }
   }
 
-  function handleDismiss() {
-    setUnreportedAttempts([])
+  async function handleDismiss() {
+    try {
+      await OpenTracer.dismissAttempts()
+    } catch (_error) {
+      application.logger.warn('Error dismissing attempts')
+    } finally {
+      setUnreportedAttempts(0)
+    }
   }
 
-  if (unreportedAttempts.length === 0) {
+  if (unreportedAttempts === 0) {
     return null
   }
 
