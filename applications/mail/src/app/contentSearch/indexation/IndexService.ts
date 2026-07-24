@@ -5,6 +5,7 @@ import { deleteDB } from 'idb';
 
 import { ES_SYNC_ACTIONS } from '@proton/encrypted-search/constants';
 import { getIndexKey as getIndexKeyV1 } from '@proton/encrypted-search/esHelpers';
+import { hasESDB } from '@proton/encrypted-search/esIDB';
 import type { ESEvent } from '@proton/encrypted-search/lib/models';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
@@ -17,7 +18,7 @@ import type ImportWorker from '../import/ImportWorker';
 import { AsyncInit } from '../utils/AsyncInit';
 
 export class IndexService {
-    private importHandle?: AsyncInit<ImportHandle>;
+    private importHandle?: AsyncInit<ImportHandle | undefined>;
 
     constructor(
         private readonly userId: string,
@@ -43,14 +44,24 @@ export class IndexService {
         }
     }
 
-    async importFromEncryptedSearch(): Promise<ImportHandle> {
+    async importFromEncryptedSearch(): Promise<ImportHandle | undefined> {
         if (!this.importHandle || this.importHandle.failed) {
             this.importHandle = new AsyncInit(async () => {
+                // The v1 ES DB is the import source. Bail out before touching any v1 read helper
+                // when it doesn't exist: those helpers go through openESDB, which *creates* the DB
+                // if absent, leaving an empty shell. That shell makes hasESDB report true, so a
+                // later enableEncryptedSearch takes the resume branch and fails instead of building
+                // a fresh, initialized DB. No v1 DB means there is nothing to import anyway.
+                if (!(await hasESDB(this.userId))) {
+                    this.importHandle = undefined;
+                    return;
+                }
                 const userKeys = await this.getUserKeys();
                 const newIndexKey = await this.getKeyAndDropIndexIfNeeded(userKeys);
                 const oldIndexKey = await getIndexKeyV1(userKeys, this.userId);
                 if (!oldIndexKey) {
-                    throw new Error('could not get ES db key');
+                    this.importHandle = undefined;
+                    return;
                 }
                 const keys = {
                     indexV1Key: oldIndexKey,
