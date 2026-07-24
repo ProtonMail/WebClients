@@ -8,6 +8,9 @@ import type { IndexInstance, IndexKind } from '../../../index/IndexRegistry';
 import type { IndexerTaskKind, TaskContext } from '../BaseTask';
 import { BaseTask } from '../BaseTask';
 
+// How long to wait before retrying cleanup when a search/export read is in flight.
+const CLEANUP_DEFER_ON_ACTIVE_READ_MS = 5_000;
+
 // Remove blobs from IndexedDB that are no longer referenced by any engine using the
 // CleanUp API from search library.
 //
@@ -18,6 +21,9 @@ import { BaseTask } from '../BaseTask';
 //     without the manifest being updated, leaving blobs the engine doesn't know about.
 //     Using Tracked events, we collect all blob names the engine considers active and delete
 //     any remaining blobs in IndexedDB that aren't in that set.
+//
+// Search takes precedence: physical blob deletion would remove blobs an in-flight read still
+// references, so if any read is in flight the whole task defers and re-enqueues itself.
 export class CleanUpStaleBlobsTask extends BaseTask {
     getUid(): string {
         return this.getKind();
@@ -29,7 +35,18 @@ export class CleanUpStaleBlobsTask extends BaseTask {
 
     async execute(ctx: TaskContext): Promise<void> {
         Logger.info(`Running: ${this.getUid()}`);
-        for (const instance of ctx.indexRegistry.getAll()) {
+
+        const instances = [...ctx.indexRegistry.getAll()];
+
+        // A search query is in progress, we should not be deleting blobs for now (the pending query might
+        // have internal references to them).
+        if (instances.some((instance) => instance.blobStore.hasActiveReads())) {
+            Logger.info(`${this.getUid()}: deferring - a search/export read is in flight`);
+            ctx.enqueueDelayed(new CleanUpStaleBlobsTask(), CLEANUP_DEFER_ON_ACTIVE_READ_MS);
+            return;
+        }
+
+        for (const instance of instances) {
             try {
                 await this.cleanUpInstance(instance, ctx);
             } catch (e) {
