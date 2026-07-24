@@ -5,6 +5,7 @@ import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/Servi
 import type { ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { deletePassDB } from 'proton-pass-web/lib/database';
 import { getPersistedSession, getSessionKey, getSwitchableSessions } from 'proton-pass-web/lib/sessions';
+import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { clearUserLocalData } from 'proton-pass-web/lib/storage';
 
 import useInstance from '@proton/hooks/useInstance';
@@ -45,10 +46,11 @@ export const AuthSwitchProvider: FC<PropsWithChildren> = ({ children }) => {
         createAuthSwitchService({
             api,
 
-            onSwitch: (LocalID: number) => {
+            onSwitch: async (LocalID: number) => {
                 AppStateManager.setStatus(AppStatus.IDLE);
                 AppStateManager.setBooted(false);
                 authStore?.clear();
+                await sshAgent?.clear().catch(noop);
                 reloadHref(`/u/${LocalID}`);
             },
 
