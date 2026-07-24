@@ -1,12 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import { activatePasswordlessKey } from '@proton/shared/lib/api/members';
-import {
-    getIsPasswordless,
-    getReplacedAddressKeyTokens,
-    isKeyGenConfigV6,
-    reencryptOrganizationToken,
-    splitKeys,
-} from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { createUserKeyRoute, replaceAddressTokens } from '../../api/keys';
@@ -23,8 +17,12 @@ import type {
     UserModel,
 } from '../../interfaces';
 import { storeDeviceRecovery } from '../../recoveryFile/deviceRecovery';
+import { getReplacedAddressKeyTokens } from '../addressKeys';
 import { getActiveAddressKeys } from '../getActiveKeys';
+import { isKeyGenConfigV6 } from '../keyAlgorithm';
 import { getHasMigratedAddressKeys } from '../keyMigration';
+import { splitKeys } from '../keys';
+import { getIsPasswordless, reencryptOrganizationToken } from '../organizationKeys';
 import { generateUserKey } from '../userKeys';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './addAddressKeyHelper';
 
