@@ -7,7 +7,7 @@ import type { TelemetryPaymentFlow } from '@proton/components/payments/client-ex
 import useLoading from '@proton/hooks/useLoading';
 import { ADDON_PREFIXES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
-import { getIsB2BAudienceFromPlan, isForbiddenModification, isPlan } from '@proton/payments/core/plan/helpers';
+import { getIsB2BAudienceFromPlan, isPlan } from '@proton/payments/core/plan/helpers';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { getPrice } from '@proton/payments/core/price-helpers';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
@@ -34,6 +34,7 @@ import {
     hasVPNPassProfessional,
     hasVpnBusiness,
     hasVpnPro,
+    isForbiddenModification,
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';

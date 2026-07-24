@@ -15,10 +15,15 @@ import {
     PLAN_NAMES,
     type PLAN_SERVICES,
     PLAN_TYPES,
+    TRIAL_MAX_DEDICATED_IPS,
+    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+    TRIAL_MAX_LUMO_SEATS,
+    TRIAL_MAX_SCRIBE_SEATS,
+    TRIAL_MAX_USERS,
     VPN_PASS_PROMOTION_COUPONS,
 } from '../constants';
 import { isRegionalCurrency } from '../currencies';
-import type { Currency, FreeSubscription, PlanIDs } from '../interface';
+import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
 import {
     getSupportedAddons,
     hasLumoAddonFromPlanIDs,
@@ -26,9 +31,15 @@ import {
     isIpAddon,
     isMemberAddon,
 } from '../plan/addons';
-import { getIsB2BAudienceFromPlan, isForbiddenModification } from '../plan/helpers';
-import type { PlansMap, SubscriptionPlan } from '../plan/interface';
-import { getPlanFromIDs, hasFreePlanIDs } from '../planIDs';
+import { getPlansLimit, getPlansQuantity } from '../plan/feature-limits';
+import {
+    getIsB2BAudienceFromPlan,
+    getPlanFromIDs,
+    getPlanFromPlanIDs,
+    hasFreePlanIDs,
+    isMultiUserPersonalPlan,
+} from '../plan/helpers';
+import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
 import { isFreeSubscription, isPaidSubscription } from '../type-guards';
 import { Renew, SubscriptionPlatform, TaxMode, TrialType } from './constants';
 import { FREE_PLAN } from './freePlans';
@@ -409,12 +420,12 @@ export const getHasInboxB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasAnyB2bBundle(subscription) || getHasMailB2BPlan(subscription);
 };
 
-export const getPlanIDs = (subscription: MaybeFreeSubscription | null): PlanIDs => {
+export function getPlanIDs(subscription: MaybeFreeSubscription | null): PlanIDs {
     return (subscription?.Plans || []).reduce<PlanIDs>((acc, { Name, Quantity }) => {
         acc[Name] = (acc[Name] || 0) + Quantity;
         return acc;
     }, {});
-};
+}
 
 export const isTrial = (subscription: MaybeFreeSubscription, plan?: PLANS): boolean => {
     if (isFreeSubscription(subscription) || !subscription) {
@@ -432,6 +443,83 @@ export const isTrial = (subscription: MaybeFreeSubscription, plan?: PLANS): bool
 
 export function isB2BTrial(subscription: MaybeFreeSubscription, organization: Organization | undefined): boolean {
     return isTrial(subscription) && !!organization?.IsBusiness;
+}
+
+/**
+ * @param downgradeIsTrial - if true, then downgrading from 24/12 months to 1 month is allowed to be a trial
+ */
+export const shouldPassIsTrial = ({
+    plansMap,
+    newPlanIDs,
+    newCycle,
+    downgradeIsTrial,
+    subscription: subscriptionParam,
+    organization,
+}: {
+    plansMap: PlansMap;
+    subscription: Subscription | FreeSubscription | undefined;
+    organization: Organization | undefined;
+    newPlanIDs: PlanIDs;
+    newCycle: CYCLE;
+    downgradeIsTrial: boolean;
+}) => {
+    const subscription = subscriptionParam?.UpcomingSubscription ?? subscriptionParam;
+    if (!subscription || isFreeSubscription(subscription)) {
+        return false;
+    }
+
+    if (!isB2BTrial(subscription, organization)) {
+        return false;
+    }
+
+    const oldPlanIDs = getPlanIDs(subscription);
+    const oldCycle = subscription.Cycle;
+    if (newCycle !== oldCycle && (!downgradeIsTrial || newCycle !== CYCLE.MONTHLY)) {
+        return false;
+    }
+
+    const newPrimaryPlan = getPlanFromPlanIDs(plansMap, newPlanIDs);
+    const oldPrimaryPlan = getPlanFromPlanIDs(plansMap, oldPlanIDs);
+    if (!newPrimaryPlan || !oldPrimaryPlan) {
+        return false;
+    }
+
+    if (newPrimaryPlan.Name !== oldPrimaryPlan.Name) {
+        return false;
+    }
+
+    const newPlans = getPlansQuantity(newPlanIDs, plansMap);
+    const oldPlans = getPlansQuantity(oldPlanIDs, plansMap);
+
+    const maxBaseDomains = newPrimaryPlan.MaxDomains;
+    const limits = Object.entries({
+        MaxMembers: TRIAL_MAX_USERS,
+        MaxDomains: maxBaseDomains + TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+        MaxIPs: TRIAL_MAX_DEDICATED_IPS,
+        MaxAI: TRIAL_MAX_SCRIBE_SEATS,
+        MaxLumo: TRIAL_MAX_LUMO_SEATS,
+    }) as [FeatureLimitKey, number][];
+
+    for (const [maxKey, limit] of limits) {
+        const newLimit = getPlansLimit(newPlans, maxKey);
+        const oldLimit = getPlansLimit(oldPlans, maxKey);
+
+        if (newLimit > limit || newLimit < oldLimit) {
+            return false;
+        }
+    }
+
+    return true;
+};
+
+/**
+ * In some cases it's completely forbidden to buy a plan, given the current subscription and the selected plan.
+ */
+export function isForbiddenModification(
+    subscription: Subscription | FreeSubscription | undefined,
+    selectedPlan: PLANS | ADDON_NAMES | PlanIDs | Plan
+) {
+    return hasLumoMobileSubscription(subscription) && isMultiUserPersonalPlan(selectedPlan);
 }
 
 export const isReferralTrial = (subscription: MaybeFreeSubscription) => {
