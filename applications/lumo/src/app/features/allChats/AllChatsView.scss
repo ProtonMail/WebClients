@@ -11,6 +11,64 @@ im.$media-expressions: $media-expressions;
 	--all-chats-icon-color: var(--interaction-norm-hover);
 }
 
+.all-chats-page {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	min-block-size: 0;
+}
+
+@include im.media('>small') {
+	.lumo-layout-container:has(> .all-chats-page) {
+		display: grid;
+		flex: 1 1 auto;
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		grid-template-rows: auto minmax(0, 1fr);
+		min-block-size: 0;
+		padding: 0.5rem;
+
+		> .lumo-layout-header {
+			display: contents;
+		}
+
+		> .all-chats-page {
+			display: contents;
+		}
+
+		.lumo-layout-header-left {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.lumo-layout-header-center {
+			grid-column: 2;
+			grid-row: 1;
+			min-inline-size: 0;
+		}
+
+		.lumo-layout-header-right {
+			grid-column: 3;
+			grid-row: 1;
+		}
+
+		.all-chats-page-main {
+			display: flex;
+			flex-direction: column;
+			grid-column: 2;
+			grid-row: 2;
+			min-block-size: 0;
+			min-inline-size: 0;
+			padding-block: 1rem;
+		}
+	}
+}
+
+@include im.media('<=small') {
+	.all-chats-page {
+		padding-block: 1rem;
+	}
+}
+
 .all-chats-selected-count .all-chats-count {
 	color: var(--all-chats-preview-color);
 	font-weight: 500;
@@ -113,7 +171,8 @@ im.$media-expressions: $media-expressions;
 
 	.all-chats-row:hover .all-chats-row-select,
 	.all-chats-row:focus-within .all-chats-row-select,
-	.all-chats-row-bulk-selected .all-chats-row-select {
+	.all-chats-row-bulk-selected .all-chats-row-select,
+	.all-chats-has-bulk-selection .all-chats-row .all-chats-row-select {
 		opacity: 1;
 		pointer-events: auto;
 		visibility: visible;
