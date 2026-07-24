@@ -4,50 +4,53 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
 import type { TelemetryPaymentFlow } from '../payments/client-extensions/usePaymentsTelemetry';
-import useShowDashboard, { getDashboardFeatureFlag } from './accounts/useShowDashboard';
+import useShowDashboard, { useShowDriveDashboard } from './accounts/useShowDashboard';
 import useShowVPNDashboard from './useShowVPNDashboard';
 
-type TelemetryFlowPrefix = 'mail-' | 'calendar-' | 'pass-' | 'drive-';
-const getPrefix = (appName: APP_NAMES): TelemetryFlowPrefix | undefined => {
-    switch (appName) {
-        case APPS.PROTONMAIL:
-            return 'mail-';
-        case APPS.PROTONCALENDAR:
-            return 'calendar-';
-        case APPS.PROTONPASS:
-            return 'pass-';
-        case APPS.PROTONDRIVE:
-            return 'drive-';
-    }
-};
-
 const useDashboardPaymentFlow = (app: APP_NAMES): TelemetryPaymentFlow => {
-    const { showVPNDashboard, showVPNDashboardVariant, canShowVPNDashboard } = useShowVPNDashboard(app);
-    const { showDashboard, canShowDashboard, variant } = useShowDashboard(app, getDashboardFeatureFlag(app));
-
-    const variantName = app === APPS.PROTONVPN_SETTINGS ? showVPNDashboardVariant.name : variant.name;
-    const canDashboardBeVisible = app === APPS.PROTONVPN_SETTINGS ? canShowVPNDashboard : canShowDashboard;
-    const prefix = getPrefix(app);
+    const { showVPNDashboardVariant, canShowVPNDashboard } = useShowVPNDashboard(app);
+    const { canShowDashboard: canShowDriveDashboard, variant } = useShowDriveDashboard(app);
+    const { showDashboard } = useShowDashboard(app);
 
     return useMemo((): TelemetryPaymentFlow => {
-        if (!canDashboardBeVisible) {
-            return 'subscription';
-        }
-        switch (true) {
-            case variantName === 'Control':
-                return 'dashboard-upgrade-control';
-            case app === APPS.PROTONVPN_SETTINGS && variantName === 'A':
-                return 'dashboard-upgrade-A';
-            case app === APPS.PROTONVPN_SETTINGS && variantName === 'B':
-                return 'dashboard-upgrade-B';
-            case prefix && variantName === 'A':
-                return `${prefix}dashboard-variant-A`;
-            case prefix && variantName === 'B':
-                return `${prefix}dashboard-variant-B`;
+        switch (app) {
+            case APPS.PROTONVPN_SETTINGS:
+                if (!canShowVPNDashboard) {
+                    return 'subscription';
+                }
+                switch (showVPNDashboardVariant.name) {
+                    case 'Control':
+                        return 'dashboard-upgrade-control';
+                    case 'A':
+                        return 'dashboard-upgrade-A';
+                    case 'B':
+                        return 'dashboard-upgrade-B';
+                    default:
+                        return 'subscription';
+                }
+            case APPS.PROTONDRIVE:
+                if (!canShowDriveDashboard) {
+                    return 'subscription';
+                }
+                switch (variant.name) {
+                    case 'A':
+                        return 'drive-dashboard-variant-A';
+                    case 'B':
+                        return 'drive-dashboard-variant-B';
+                    default:
+                        return 'subscription';
+                }
+            // Mail/Calendar/Pass dashboards are fully rolled out to the new dashboard
+            case APPS.PROTONMAIL:
+                return showDashboard ? 'mail-dashboard-variant-B' : 'subscription';
+            case APPS.PROTONCALENDAR:
+                return showDashboard ? 'calendar-dashboard-variant-B' : 'subscription';
+            case APPS.PROTONPASS:
+                return showDashboard ? 'pass-dashboard-variant-B' : 'subscription';
             default:
                 return 'subscription';
         }
-    }, [showVPNDashboard, showDashboard, canDashboardBeVisible, variantName]);
+    }, [app, canShowVPNDashboard, showVPNDashboardVariant.name, canShowDriveDashboard, variant.name, showDashboard]);
 };
 
 export default useDashboardPaymentFlow;
