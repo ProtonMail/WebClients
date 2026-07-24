@@ -1904,6 +1904,9 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Contact sales": [
+        "영업팀 문의"
       ]
     },
     "action": {
@@ -2018,6 +2021,9 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 (${ quantity }명 사용자용)"
       ]
     },
     "Address action": {
@@ -2282,6 +2288,9 @@
       ],
       "Trial in progress": [
         "체험판 진행 중"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "이메일 생산성을 한 단계 더 높은 경지로. ${ LUMO_SHORT_APP_NAME }가 이메일의 작성과 답장, 교정에 도움을 드립니다."
       ]
     },
     "Attached ics file error": {
@@ -2369,6 +2378,9 @@
       ],
       "You have reached the trial limit.": [
         "무료 체험 한도에 도달했습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 시트를 포함할 수 있습니다."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -2568,6 +2580,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
       ]
     },
     "BF2025: Deal details": {
@@ -13577,6 +13595,27 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME }가 더 이상 이전 버전의 파일을 보관하지 않습니다."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME }에 글쓰기 도우미가 포함됩니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "10년 버전 기록은 영업팀에 문의하세요."
+      ],
+      "No companies yet. Start by creating a new company.": [
+        "아직 소속 회사가 없습니다. 새 회사를 생성하세요."
+      ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "사용 중인 MDM으로 모든 Mac에 ${ mobileConfigArtifact }을(를) 배포하세요."
+      ],
+      "This will delete all previous versions of your files.": [
+        "기존 버전의 파일이 모두 삭제됩니다."
       ]
     },
     "info": {
@@ -15852,6 +15891,12 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Client": [
+        "클라이언트"
+      ],
+      "Client version": [
+        "클라이언트 버전"
       ]
     },
     "label": {
@@ -16511,6 +16556,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } 맛보기에 초대받았습니다"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 추가"
       ]
     },
     "mail_signup_2024: title": {
@@ -17708,6 +17759,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ]
     },
     "new_plans: feature highlight": {
@@ -23427,6 +23481,9 @@
       ],
       "VPN connection for ${ n } device per user": [
         "사용자 당 ${ n }개 기기에 대한 VPN 연결"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ maxAi }명 사용자용 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ]
     },
     "Subscription change warning": {
@@ -27111,6 +27168,12 @@
       ],
       "You can safely remove this user from your organization.": [
         "사용자의 조직에서 해당 사용자를 안전하게 제거할 수 있습니다."
+      ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "관리자 권한 활성화 불가 : ${ unprivatizationResult.error }"
+      ],
+      "Waiting for admin approval": [
+        "관리자의 승인을 기다리는 중"
       ]
     },
     "Update font modal": {
@@ -27322,6 +27385,12 @@
       ],
       "Writing assistant": [
         "글쓰기 도우미"
+      ],
+      "Invited": [
+        "초대됨"
+      ],
+      "Requested": [
+        "요청됨"
       ]
     },
     "Validation": {

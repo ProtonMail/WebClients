@@ -1907,6 +1907,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Verify recovery phrase": [
+        "Kurtarma ifadesini doğrula"
       ]
     },
     "action": {
@@ -7870,6 +7873,9 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Bu ifadeyle hesabınızı kurtaramazsınız. Gelecekte hesabınızı kurtarabilmenizi sağlamak için yeni ifade oluşturabilirsiniz."
       ]
     },
     "error": {
@@ -9377,7 +9383,7 @@
         "Bize ulaşın"
       ],
       "Downloads": [
-        "İndirilenler"
+        "İndirmeler"
       ],
       "Enjoying ${ planName }?": [
         "${ planName } hoşunuza gitti mi?"
@@ -13781,6 +13787,12 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Kurtarma ifadenizin hesabınızı tamamen kurtarmak için kullanılabilir olup olmadığını kontrol edin."
+      ],
+      "Recovery phrase verified": [
+        "Kurtarma ifadesi doğrulandı"
       ]
     },
     "info": {
@@ -22267,7 +22279,7 @@
     },
     "Setting": {
       "Get updates about comments via email": [
-        "Yorum güncellemeleri e-posta ile bildirilsin"
+        "Yorumlarla ilgili güncellemeleri e-posta ile al"
       ],
       "Include document name in email notifications": [
         "E-posta bildirimlerine belge adı eklensin"
@@ -26823,6 +26835,9 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Verify your phrase": [
+        "İfadeni doğrula"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
