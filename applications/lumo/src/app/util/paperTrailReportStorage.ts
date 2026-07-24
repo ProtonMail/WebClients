@@ -1,4 +1,5 @@
 import type { PaperTrailReport } from '../features/aiPaperTrail/reportTypes';
+import { shouldPersistPaperTrailLocally } from './paperTrailLocalSavePreference';
 import { readPaperTrailStorage, writePaperTrailStorage } from './paperTrailStorage';
 
 const REPORTS_KEY = 'lumo-ai-paper-trail-reports';
@@ -8,6 +9,9 @@ type StoredReports = Record<string, PaperTrailReport>;
 const readReports = (): StoredReports => readPaperTrailStorage<StoredReports>(REPORTS_KEY, {});
 
 export const savePaperTrailReport = (id: string, report: PaperTrailReport): void => {
+    if (!shouldPersistPaperTrailLocally()) {
+        return;
+    }
     const reports = readReports();
     reports[id] = report;
     writePaperTrailStorage(REPORTS_KEY, reports);
