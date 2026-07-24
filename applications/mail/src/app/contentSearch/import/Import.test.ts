@@ -109,6 +109,9 @@ describe('Importer', () => {
         // Import class in the refactor): open the source reader, the destination db, and derive the
         // index key.
         const srcReader = await EncryptedSearchReader.open(userId, userKeys);
+        if (!srcReader) {
+            throw new Error('expected the seeded v1 ES DB to open');
+        }
         const db = await openContentSearchDB(userId);
         const indexKey = await getOrGenerateIndexKey(db, userKeys);
 
