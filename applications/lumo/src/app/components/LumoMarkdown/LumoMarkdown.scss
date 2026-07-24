@@ -65,6 +65,13 @@
 		overflow-x: auto;
 	}
 
+	.lumo-code-block-copy-source {
+		grid-column: 1;
+		grid-row: 1;
+		min-inline-size: 0;
+		z-index: 0;
+	}
+
 	.lumo-syntax-highlighter {
 		grid-column: 1;
 		grid-row: 1;
