@@ -1,0 +1,67 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+@use './AllChatsButtons';
+
+.all-chats-header-actions {
+	flex: 0 0 auto;
+	justify-content: flex-end;
+	margin-inline-start: auto;
+	min-inline-size: 0;
+}
+
+.all-chats-header-bar {
+	min-inline-size: 0;
+}
+
+.all-chats-mobile-header-bar .all-chats-mobile-header-bar-actions {
+	margin-inline-start: auto;
+}
+
+.all-chats-filter-sort-menu-button-label {
+	@include im.media('<=small') {
+		display: none;
+	}
+}
+
+.all-chats-header-search-slot {
+	display: flex;
+	flex: 0 0 auto;
+	max-inline-size: 100%;
+	min-inline-size: 0;
+}
+
+.all-chats-header-search-slot-is-open {
+	flex: 0 1 auto;
+	inline-size: min(50%, 28rem);
+	max-inline-size: 50%;
+	min-inline-size: 12rem;
+}
+
+.all-chats-header-search-input {
+	background-color: var(--background-weak);
+	border: 1px solid transparent;
+	border-radius: 999px;
+	inline-size: 100%;
+	min-block-size: 30px;
+	transition: border-color 0.15s ease;
+
+	&:focus-within {
+		border-color: var(--border-norm);
+	}
+
+	.input-element {
+		background: transparent;
+		border: 0;
+		box-shadow: none;
+		font-size: 0.875rem;
+	}
+}
+
+.all-chats-search-toolbar {
+	@include im.media('>=large') {
+		display: none;
+	}
+}

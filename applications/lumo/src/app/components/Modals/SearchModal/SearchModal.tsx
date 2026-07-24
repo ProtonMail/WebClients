@@ -6,7 +6,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Icon } from '@proton/components/index';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
@@ -19,6 +18,7 @@ import type { SearchResult } from '../../../services/search/types';
 import type { Attachment } from '../../../types';
 import { FilePreviewPanel } from '../../Files/Common/FilePreviewPanel';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
+import { ProjectIcon as ProjectIconComponent } from '../../ProjectIcon/ProjectIcon';
 
 import './SearchModal.scss';
 
@@ -79,11 +79,11 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
         return getProjectCategory(categoryId);
     };
 
-    const projectCategory =
-        (result.type === 'conversation' || result.type === 'message') && result.projectIcon
-            ? getProjectCategoryInfo(result.projectIcon)
-            : null;
-    const ProjectIcon = projectCategory ? <Icon name={projectCategory.icon as any} size={3} className="mr-1" /> : null;
+    const projectIconId = result.type === 'conversation' || result.type === 'message' ? result.projectIcon : undefined;
+    const projectCategory = projectIconId ? getProjectCategoryInfo(projectIconId) : null;
+    const projectIconElement = projectCategory ? (
+        <ProjectIconComponent iconId={projectIconId} size={12} className="mr-1" />
+    ) : null;
 
     // Highlight search terms in text (case-insensitive, avoids global-regex lastIndex bugs)
     const highlightText = (text: string, searchQuery: string) => {
@@ -152,9 +152,6 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
     }
 
     if (result.type === 'project') {
-        const projectCategory = result.projectIcon ? getProjectCategoryInfo(result.projectIcon) : null;
-        const projectIconName = projectCategory ? projectCategory.icon : 'folder';
-
         return (
             <button
                 className="search-result-item search-result-item-project"
@@ -162,7 +159,7 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
                 title={c('Action').t`Open project`}
             >
                 <div className="search-result-icon">
-                    <Icon name={projectIconName as any} size={4} className={'color-norm'} />
+                    <ProjectIconComponent iconId={result.projectIcon} size={16} className="color-norm" />
                 </div>
                 <div className="search-result-content">
                     <div className="search-result-title">{highlightText(result.projectName || '', query)}</div>
@@ -180,7 +177,7 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
             <div className="search-result-content">
                 {result.projectName && (
                     <div className="search-result-preview search-result-folder-path">
-                        {ProjectIcon}
+                        {projectIconElement}
                         {result.projectName}
                     </div>
                 )}

@@ -3,10 +3,9 @@ import { useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
-import type { IconName } from '@proton/icons/types';
 
+import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';
 import { LUMO_FULL_APP_TITLE } from '../../constants';
 import { useSafeUser } from '../../contexts/SafeUserContext';
 import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
@@ -40,7 +39,6 @@ import '../Conversation/Conversation.scss';
  * this assistant can help with.
  */
 const AgentWelcome = ({ agent }: { agent?: CustomAgent }) => {
-    const icon = (agent?.icon as IconName) || DEFAULT_AGENT_ICON;
     const title = agent?.name || LUMO_FULL_APP_TITLE;
     const description =
         agent?.description?.trim() ||
@@ -52,7 +50,7 @@ const AgentWelcome = ({ agent }: { agent?: CustomAgent }) => {
                 className="flex items-center justify-center rounded-full bg-weak ratio-square w-custom"
                 style={{ '--w-custom': '4rem' } as React.CSSProperties}
             >
-                <Icon name={icon} size={7} className="color-norm" />
+                <ProjectIcon iconId={agent?.icon || DEFAULT_AGENT_ICON} size={28} className="color-norm" />
             </span>
             <h1 className="text-bold text-2xl m-0">{title}</h1>
             <p className="color-weak m-0 max-w-custom" style={{ '--max-w-custom': '32rem' } as React.CSSProperties}>
