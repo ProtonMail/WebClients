@@ -9,13 +9,7 @@ import type {
     Permission,
     UserModel,
 } from '@proton/shared/lib/interfaces';
-import type {
-    DriveDashboardVariant,
-    MailDashboardVariant,
-    MeetDashboardVariant,
-    PassDashboardVariant,
-    VPNDashboardVariant,
-} from '@proton/unleash/UnleashFeatureFlagsVariants';
+import type { DriveDashboardVariant, VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 export type AccountRecoveryRouterFlags = {
     isAccountRecoveryAvailable: boolean;
@@ -40,14 +34,9 @@ export type AccountSettingsRouterParams = {
         referrerRewardAmount: string;
         maxRewardAmount: string;
     };
-    showMailDashboard: boolean;
-    showMailDashboardVariant: MailDashboardVariant | 'disabled' | undefined;
-    showPassDashboard: boolean;
-    showPassDashboardVariant: PassDashboardVariant | 'disabled' | undefined;
+    showDashboard: boolean;
     showDriveDashboard: boolean;
     showDriveDashboardVariant: DriveDashboardVariant | 'disabled' | undefined;
-    showMeetDashboard: boolean;
-    showMeetDashboardVariant: MeetDashboardVariant | 'disabled' | undefined;
     showGenericDashboard: boolean;
     hasPendingInvitations: boolean;
 };
