@@ -449,7 +449,7 @@ const AllChatsHeader = ({
                 (showSelectionActions || showFilterSort) && 'justify-space-between'
             )}
         >
-            <div className="flex items-center gap-3 min-w-0 ml-2">
+            <div className="flex items-center gap-3 min-w-0 ml-3">
                 {showSelectAll ? (
                     <Checkbox
                         checked={allSelected}
@@ -781,7 +781,8 @@ export const AllChatsView = () => {
                                 ref={parentRef}
                                 className={clsx(
                                     'flex-1 overflow-auto min-h-0 pb-2',
-                                    isMobileLayout && isSelectionMode && 'all-chats-list-with-mobile-bulk-actions'
+                                    isMobileLayout && isSelectionMode && 'all-chats-list-with-mobile-bulk-actions',
+                                    !isMobileLayout && selectedCount > 0 && 'all-chats-has-bulk-selection'
                                 )}
                             >
                                 {isEmpty ? (

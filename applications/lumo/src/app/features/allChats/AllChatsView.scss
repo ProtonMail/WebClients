@@ -171,7 +171,8 @@ im.$media-expressions: $media-expressions;
 
 	.all-chats-row:hover .all-chats-row-select,
 	.all-chats-row:focus-within .all-chats-row-select,
-	.all-chats-row-bulk-selected .all-chats-row-select {
+	.all-chats-row-bulk-selected .all-chats-row-select,
+	.all-chats-has-bulk-selection .all-chats-row .all-chats-row-select {
 		opacity: 1;
 		pointer-events: auto;
 		visibility: visible;

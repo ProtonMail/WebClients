@@ -32,7 +32,7 @@ export const AllChatsHeaderSearch = ({ searchQuery, onSearchQueryChange }: AllCh
     return (
         <Input
             ref={inputRef}
-            className="all-chats-header-search-input min-w-0"
+            className="all-chats-header-search-input min-w-0 ml-2"
             value={searchQuery}
             onValue={onSearchQueryChange}
             placeholder={c('collider_2025:Placeholder').t`Search chats`}
