@@ -1,7 +1,7 @@
+import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import type { Engine } from '@proton/proton-foundation-search';
 import { CleanupEventKind } from '@proton/proton-foundation-search';
 
@@ -211,5 +211,44 @@ describe('CleanUpStaleBlobsTask', () => {
         const keysAfter = await db.getAllIndexBlobKeys();
         const blobNames = keysAfter.map(([, name]) => name);
         expect(blobNames).toContain('orphan-busy');
+    });
+
+    describe('yields to in-flight reads', () => {
+        it('defers and re-enqueues itself while a read is in flight, deleting nothing', async () => {
+            const instance = await indexRegistry.get(IndexKind.MAIN, db);
+            await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
+            await db.putEncryptedIndexBlob([IndexKind.MAIN, 'orphan-read'], new ArrayBuffer(8), identity);
+
+            const cleanupSpy = jest.spyOn(instance.engine, 'cleanup');
+            // Simulate an in-flight search/export holding the blob store open.
+            instance.blobStore.beginRead();
+
+            const ctx = makeTaskContext({ indexRegistry, db });
+            await new CleanUpStaleBlobsTask().execute(ctx);
+
+            // The deletion path is never entered and nothing is removed.
+            expect(cleanupSpy).not.toHaveBeenCalled();
+            const blobNames = (await db.getAllIndexBlobKeys()).map(([, name]) => name);
+            expect(blobNames).toContain('orphan-read');
+            // A retry is scheduled for later.
+            expect(ctx.enqueueDelayed).toHaveBeenCalledTimes(1);
+            expect(ctx.enqueueDelayed).toHaveBeenCalledWith(expect.any(CleanUpStaleBlobsTask), expect.any(Number));
+        });
+
+        it('resumes deleting once the in-flight read finishes', async () => {
+            const instance = await indexRegistry.get(IndexKind.MAIN, db);
+            await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
+            await db.putEncryptedIndexBlob([IndexKind.MAIN, 'orphan-read'], new ArrayBuffer(8), identity);
+
+            instance.blobStore.beginRead();
+            instance.blobStore.endRead();
+
+            const ctx = makeTaskContext({ indexRegistry, db });
+            await new CleanUpStaleBlobsTask().execute(ctx);
+
+            const blobNames = (await db.getAllIndexBlobKeys()).map(([, name]) => name);
+            expect(blobNames).not.toContain('orphan-read');
+            expect(ctx.enqueueDelayed).not.toHaveBeenCalled();
+        });
     });
 });
