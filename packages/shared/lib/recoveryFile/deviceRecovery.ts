@@ -19,7 +19,8 @@ import type {
     User,
     UserSettings,
 } from '../interfaces';
-import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper, reactivateKeysProcess } from '../keys';
+import { getDecryptedAddressKeysHelper } from '../keys/getDecryptedAddressKeys';
+import { getDecryptedUserKeysHelper } from '../keys/getDecryptedUserKeys';
 import {
     getAllKeysReactivationRequests,
     getInactiveKeys,
@@ -27,6 +28,7 @@ import {
     getLikelyHasKeysToReactivate,
 } from '../keys/getInactiveKeys';
 import type { KeyReactivationRequestStateData } from '../keys/reactivation/interface';
+import { reactivateKeysProcess } from '../keys/reactivation/reactivateKeysProcess';
 import {
     generateRecoveryFileMessage,
     generateRecoverySecret,
