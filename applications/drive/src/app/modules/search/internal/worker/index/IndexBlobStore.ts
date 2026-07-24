@@ -19,6 +19,9 @@ export class IndexBlobStore {
     //   cache. Monitor and replace by a sized scope cache (LRU).
     private cache = new Map<string, Cached>();
 
+    // Number of blob-loading reads currently in flight.
+    private activeReadCount = 0;
+
     constructor(
         private readonly indexKind: IndexKind,
         private readonly db: SearchDB,
@@ -27,6 +30,19 @@ export class IndexBlobStore {
 
     private dbKey(blobName: string): [string, string] {
         return [this.indexKind, blobName];
+    }
+
+    beginRead(): void {
+        this.activeReadCount++;
+    }
+
+    endRead(): void {
+        this.activeReadCount--;
+    }
+
+    /** Whether any blob-loading read is currently in flight. */
+    hasActiveReads(): boolean {
+        return this.activeReadCount > 0;
     }
 
     async loadEvent(event: QueryEvent | WriteEvent | CleanupEvent | ExportEvent): Promise<void> {

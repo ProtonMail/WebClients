@@ -25,43 +25,49 @@ export class IndexReader {
      * Execute a query built by the caller and yield matching results.
      */
     async *execute(configureQuery: (query: Query) => Query): AsyncGenerator<ReadResult> {
-        const search = configureQuery(this.engine.query()).search();
-
-        const startMs = performance.now();
-        let blobsLoaded = 0;
-        let resultsFound = 0;
+        // Signal the beginning of reading to avoid operations that could interrupt/corrupt this read.
+        this.blobStore.beginRead();
         try {
-            let event: QueryEvent | undefined;
-            while ((event = search.next()) !== undefined) {
-                switch (event.kind()) {
-                    case QueryEventKind.Load:
-                        await this.blobStore.loadEvent(event);
-                        blobsLoaded++;
-                        break;
-                    case QueryEventKind.Found: {
-                        const found = event.found();
-                        if (found) {
-                            const score = found.score();
-                            // TODO: Add matches to the yield ReadResult when available from foundation team.
-                            // https://gitlab.protontech.ch/backend-team/foundation-team/search/-/merge_requests/364
-                            yield { identifier: found.identifier(), score: score.value() };
-                            resultsFound++;
-                            score.free();
-                            found.free();
+            const search = configureQuery(this.engine.query()).search();
+
+            const startMs = performance.now();
+            let blobsLoaded = 0;
+            let resultsFound = 0;
+            try {
+                let event: QueryEvent | undefined;
+                while ((event = search.next()) !== undefined) {
+                    switch (event.kind()) {
+                        case QueryEventKind.Load:
+                            await this.blobStore.loadEvent(event);
+                            blobsLoaded++;
+                            break;
+                        case QueryEventKind.Found: {
+                            const found = event.found();
+                            if (found) {
+                                const score = found.score();
+                                // TODO: Add matches to the yield ReadResult when available from foundation team.
+                                // https://gitlab.protontech.ch/backend-team/foundation-team/search/-/merge_requests/364
+                                yield { identifier: found.identifier(), score: score.value() };
+                                resultsFound++;
+                                score.free();
+                                found.free();
+                            }
+                            break;
                         }
-                        break;
+                        case QueryEventKind.Stats:
+                        default:
+                            event.free();
+                            break;
                     }
-                    case QueryEventKind.Stats:
-                    default:
-                        event.free();
-                        break;
                 }
+            } finally {
+                Logger.info(
+                    `IndexReader: query done — ${resultsFound} UIDs found across ${blobsLoaded} blobs in ${Math.round(performance.now() - startMs)}ms`
+                );
+                search.free();
             }
         } finally {
-            Logger.info(
-                `IndexReader: query done — ${resultsFound} UIDs found across ${blobsLoaded} blobs in ${Math.round(performance.now() - startMs)}ms`
-            );
-            search.free();
+            this.blobStore.endRead();
         }
     }
 }
