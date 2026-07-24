@@ -1511,7 +1511,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1705,6 +1706,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Lookup document": [
+        "Document de cerca"
       ]
     },
     "action": {
@@ -5488,6 +5492,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Alguna cosa ha anat malament, tanqueu la finestra modal i torneu-ho a provar."
       ]
     },
     "error": {
@@ -9325,6 +9332,23 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } incidència durant la importació:",
+        "${ issues.length } incidències durant la importació:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Queden ${ remainingMinutes } minuts…"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "S'ha trobat un índex de cerca xifrat actual amb ${ oldIndexSize } missatge.",
+        "S'ha trobat un índex de cerca xifrat actual amb ${ oldIndexSize } missatges."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "La importació és en curs, podeu tancar aquest diàleg mentre s'executa i tornar-hi més tard, però no tanqueu la pestanya."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "El podeu importar com a nou índex de cerca base per a finalitats de desenvolupament."
       ]
     },
     "info": {
@@ -10511,6 +10535,18 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Content search version to use": [
+        "Versió de cerca de contingut que s'ha d'utilitzar"
+      ],
+      "Document ID": [
+        "ID de document"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {

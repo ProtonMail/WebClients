@@ -1511,7 +1511,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1705,6 +1706,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Lookup document": [
+        "Consulter le document"
       ]
     },
     "action": {
@@ -5488,6 +5492,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Une erreur s'est produite. Fermez la fenêtre contextuelle et réessayez."
       ]
     },
     "error": {
@@ -9325,6 +9332,23 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problème lors de l'importation :",
+        "${ issues.length } problèmes lors de l'importation :"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minutes restantes…"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Un index de recherche chiffré actuel a été détecté avec ${ oldIndexSize } message.",
+        "Un index de recherche chiffré actuel a été détecté avec ${ oldIndexSize } messages."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "L'importation est en cours. Vous pouvez fermer cette boîte de dialogue pendant l'opération et y revenir plus tard. Ne fermez toutefois pas l'onglet."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Vous pouvez l'importer en tant que nouvel index de recherche de base à des fins de développement."
       ]
     },
     "info": {
@@ -10511,6 +10535,18 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Content search version to use": [
+        "Version de recherche de contenu à utiliser"
+      ],
+      "Document ID": [
+        "ID du document"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {

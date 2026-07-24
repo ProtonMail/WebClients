@@ -1468,7 +1468,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -1658,6 +1661,9 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Lookup document": [
+        "Poišči dokument"
       ]
     },
     "action": {
@@ -5206,6 +5212,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Nekaj je šlo narobe, zaprite pogovorno okno in poskusite znova."
       ]
     },
     "error": {
@@ -9007,6 +9016,27 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } težava med uvozom",
+        "${ issues.length } težavi med uvozom",
+        "${ issues.length } težave med uvozom",
+        "${ issues.length } težav med uvozom"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Preostalo je še: ${ remainingMinutes }"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Najden je bil aktualni šifrirani iskalni indeks, ki vsebuje ${ oldIndexSize } sporočilo.",
+        "Najden je bil aktualni šifrirani iskalni indeks, ki vsebuje ${ oldIndexSize } sporočili.",
+        "Najden je bil aktualni šifrirani iskalni indeks, ki vsebuje ${ oldIndexSize } sporočila.",
+        "Najden je bil aktualni šifrirani iskalni indeks, ki vsebuje ${ oldIndexSize } sporočil."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Uvoz poteka. To pogovorno okno lahko med izvajanjem zaprete in se k njemu vrnete kasneje. Ne zapirajte zavihka!"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Lahko ga uvozite kot nov osnovni iskalni indeks za namene razvoja."
       ]
     },
     "info": {
@@ -10028,6 +10058,18 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Content search version to use": [
+        "Različica iskalnega indeksa, ki naj se uporabi"
+      ],
+      "Document ID": [
+        "ID dokumenta"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
