@@ -28,7 +28,7 @@ export const AllChatsMobileHeaderBar = ({
     onSelectionModeChange,
 }: AllChatsMobileHeaderBarProps) => {
     return (
-        <div className="all-chats-mobile-header-bar all-chats-header-bar flex flex-1 items-center min-w-0 w-full px-4 md:px-10">
+        <div className="all-chats-mobile-header-bar all-chats-header-bar flex flex-1 items-center min-w-0 w-full md:px-10">
             <div
                 className="all-chats-header-bar-inner flex flex-1 items-center gap-2 mx-auto w-full max-w-custom min-w-0"
                 style={{ '--max-w-custom': '900px' }}
