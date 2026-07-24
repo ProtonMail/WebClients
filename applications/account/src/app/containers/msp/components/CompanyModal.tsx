@@ -16,27 +16,33 @@ import './MspCompaniesSection.scss';
 interface Props {
     mode: 'add' | 'edit';
     initial?: MspCompany;
-    onSave: (data: CompanyFormData) => void;
+    onSave: (data: CompanyFormData) => Promise<void>;
     onClose: () => void;
 }
 
 const CompanyModal = ({ mode, initial, onSave, onClose }: Props) => {
     const [name, setName] = useState(initial?.name ?? '');
     const [seatsText, setSeatsText] = useState(String(initial?.assignedSeats ?? 1));
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const minSeats = Math.max(1, initial?.usedSeats ?? 0);
     const assignedSeats = Math.max(minSeats, parseInt(seatsText, 10) || minSeats);
     const title = mode === 'add' ? c('Title').t`Add company` : c('Title').t`Edit company`;
 
-    const handleSubmit = () => {
-        if (!name.trim() || assignedSeats < minSeats) {
+    const handleSubmit = async () => {
+        if (isSubmitting || !name.trim() || assignedSeats < minSeats) {
             return;
         }
-        onSave({
-            name: name.trim(),
-            assignedSeats,
-            status: initial?.status ?? 'active',
-        });
+        setIsSubmitting(true);
+        try {
+            await onSave({
+                name: name.trim(),
+                assignedSeats,
+                status: initial?.status ?? 'active',
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -99,8 +105,13 @@ const CompanyModal = ({ mode, initial, onSave, onClose }: Props) => {
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" onClick={handleSubmit}>
+                <Button onClick={onClose} disabled={isSubmitting}>{c('Action').t`Cancel`}</Button>
+                <Button
+                    color="norm"
+                    onClick={handleSubmit}
+                    loading={isSubmitting}
+                    disabled={isSubmitting || !name.trim()}
+                >
                     {mode === 'add' ? c('Action').t`Add` : c('Action').t`Save`}
                 </Button>
             </ModalTwoFooter>

@@ -63,6 +63,7 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
+import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments/core/subscription/helpers';
 import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
@@ -201,6 +202,7 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
+    const [entitlements] = useEntitlementChecks();
     const [permissions, loadingOrgPermissions] = useOrgPermissions();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -329,6 +331,7 @@ const MainContainer = () => {
         user,
         addresses,
         subscription,
+        entitlements,
         accountSettingsRouterParams,
         organizationSettingsRouterParams,
         flags,
