@@ -118,6 +118,24 @@ describe('applyRetentionPolicy', () => {
             'recent',
         ]);
     });
+
+    it('applies the same retention window to lighter row shapes, e.g. sidebar history rows', () => {
+        // Regression guard: the sidebar's "Recent" list used to reimplement this cutoff
+        // calculation inline instead of calling this shared helper, so it could silently
+        // drift from Favorites/All Chats. This locks in that it works on any object with
+        // just a createdAt, not only full Conversation objects.
+        const recentRow = { id: 'recent-row', createdAt: subDays(new Date(), 3).toISOString() };
+        const expiredRow = {
+            id: 'expired-row',
+            createdAt: subDays(new Date(), FREE_USER_CHAT_RETENTION_DAYS + 1).toISOString(),
+        };
+
+        expect(applyRetentionPolicy([recentRow, expiredRow], false).map((row) => row.id)).toEqual(['recent-row']);
+        expect(applyRetentionPolicy([recentRow, expiredRow], true).map((row) => row.id)).toEqual([
+            'recent-row',
+            'expired-row',
+        ]);
+    });
 });
 
 describe('getConversationRetentionDaysRemaining', () => {

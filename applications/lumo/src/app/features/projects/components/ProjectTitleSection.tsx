@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { ProjectIcon } from '../../../components/ProjectIcon/ProjectIcon';
 import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
 import { useProjectActions } from '../hooks/useProjectActions';
 
@@ -58,7 +59,7 @@ export const ProjectTitleSection = ({
 
     return (
         <div className="project-detail-title-section flex items-center flex-nowrap w-full px-2 py-0">
-            <Icon name={categoryIcon as any} size={6} className="project-detail-title-icon shrink-0" />
+            <ProjectIcon iconId={categoryIcon} size={24} className="project-detail-title-icon shrink-0" />
             {isEditingTitle ? (
                 <input
                     {...titleField.bind}

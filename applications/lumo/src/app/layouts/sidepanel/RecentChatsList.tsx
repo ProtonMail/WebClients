@@ -1,32 +1,23 @@
-import { memo, useState } from 'react';
+import { memo } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { LumoLink } from '../../components/Links/LumoLink';
-import { useIsTouchDevice } from '../../hooks/useIsTouchDevice';
 import type { Conversation, ConversationId } from '../../types';
-import ChatDropdownMenu from './ChatDropdownMenu';
 import { ConversationExpirationIndicator } from './ConversationExpirationIndicator';
+import { ConversationSidebarActions } from './ConversationSidebarActions';
 
-interface ConversationListItemProps {
+export interface ConversationListItemProps {
     conversation: Conversation;
     isSelected: boolean;
     showDropdown: boolean;
-    isTouchDevice: boolean;
     onItemClick?: () => void;
 }
 
-const ConversationListItem = memo(
-    ({ conversation, isSelected, showDropdown, isTouchDevice, onItemClick }: ConversationListItemProps) => {
-        const [isHovered, setIsHovered] = useState(false);
-        const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+export const ConversationListItem = memo(
+    ({ conversation, isSelected, showDropdown, onItemClick }: ConversationListItemProps) => {
         const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
-        // Mount the dropdown when hovered, open, or on touch (no hover available).
-        // Keeping it mounted while open prevents the portal from closing when the
-        // cursor leaves the list item to reach the dropdown panel.
-        const mountDropdown = showDropdown && (isTouchDevice || isHovered || isDropdownOpen);
 
         return (
             <li
@@ -36,8 +27,6 @@ const ConversationListItem = memo(
                     'hover:bg-weak rounded-md transition-colors text-sm',
                     isSelected && 'is-active'
                 )}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
             >
                 <LumoLink
                     to={`/c/${conversation.id}`}
@@ -54,11 +43,7 @@ const ConversationListItem = memo(
                 </LumoLink>
                 {showDropdown && (
                     <div className="relative z-1 ml-auto pl-1 shrink-0">
-                        {mountDropdown ? (
-                            <ChatDropdownMenu conversation={conversation} onOpenChange={setIsDropdownOpen} />
-                        ) : (
-                            <span aria-hidden="true" className="chat-history-item-actions-spacer" />
-                        )}
+                        <ConversationSidebarActions conversation={conversation} />
                     </div>
                 )}
             </li>
@@ -76,8 +61,6 @@ interface ChatsListProps {
 }
 
 const RecentChatsList = memo(({ conversations, selectedConversationId, disabled, onItemClick }: ChatsListProps) => {
-    const isTouchDevice = useIsTouchDevice();
-
     return (
         <ul className="unstyled flex flex-column flex-nowrap gap-0.5 min-w-0 w-full my-0">
             {conversations.map((conversation) => (
@@ -86,7 +69,6 @@ const RecentChatsList = memo(({ conversations, selectedConversationId, disabled,
                     conversation={conversation}
                     isSelected={selectedConversationId === conversation.id}
                     showDropdown={!disabled}
-                    isTouchDevice={isTouchDevice}
                     onItemClick={onItemClick}
                 />
             ))}

@@ -47,8 +47,8 @@ const ConfirmDeleteModal = ({
     } else if (isPlural) {
         // translator: ${count} is the number of selected conversations being deleted
         message = c('Action').ngettext(
-            msgid`Are you sure you want to delete ${count} conversation?`,
-            `Are you sure you want to delete ${count} conversations?`,
+            msgid`Are you sure you want to delete this ${count} conversation?`,
+            `Are you sure you want to delete these ${count} conversations?`,
             count
         );
     } else {

@@ -1,11 +1,10 @@
 import type { RefObject } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { useModalStateObject } from '@proton/components';
-
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useModalStateObject } from '@proton/components';
 import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg';
 import lumojiCreateDark from '@proton/styles/assets/img/lumo/lumoji-create-dark.svg';
 import lumojiCreateLight from '@proton/styles/assets/img/lumo/lumoji-create-light.svg';
@@ -354,7 +353,7 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
             drawer={{ disabled: true }}
             header={{
                 component: (
-                    <div className="gallery-tab-bar">
+                    <div className="gallery-tab-bar w-full">
                         <div className="gallery-tab-toggle">
                             <button
                                 className={`gallery-tab-toggle__btn${activeTab === 'create' ? ' gallery-tab-toggle__btn--active' : ''}`}
