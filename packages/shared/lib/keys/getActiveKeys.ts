@@ -14,7 +14,7 @@ import {
     isActiveKeyV6,
 } from '../interfaces';
 import { getDefaultKeyFlags } from './keyFlags';
-import { ParsedSignedKeyList } from './signedKeyList';
+import { ParsedSignedKeyList } from './parsedSignedKeyList';
 
 export const getPrimaryFlag = (keys: ActiveKey[]): 1 | 0 => {
     return !keys.length ? 1 : 0;
@@ -130,11 +130,17 @@ export const getActiveUserKeys = async (keys: Key[], decryptedKeys: DecryptedKey
  * if it exists.
  */
 export const getNormalizedActiveAddressKeys = (address: Address | undefined, keys: ActiveAddressKeysByVersion) => {
+    const getNormalizedPrimary = <V extends ActiveKeyWithVersion>(result: V, index: number) => {
+        if (index !== 0) {
+            return 0;
+        }
+        // v6 keys might not have any primary key set
+        return isActiveKeyV6(result) ? result.primary : 1;
+    };
     const normalize = <V extends ActiveKeyWithVersion>(result: V, index: number): V => ({
         ...result,
         // Reset and normalize the primary key. The primary values can be doubly set to 1 if an old SKL is used.
-        // v6 keys might not have any primary key set
-        primary: isActiveKeyV6(result) ? (index === 0 ? result.primary : 0) : index === 0 ? 1 : 0,
+        primary: getNormalizedPrimary(result, index),
     });
     const normalized: ActiveAddressKeysByVersion = {
         v4: keys.v4.sort((a, b) => b.primary - a.primary).map(normalize),

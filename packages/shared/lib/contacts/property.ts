@@ -4,7 +4,7 @@ import type { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfac
 
 import type { ContactValue } from '../interfaces/contacts';
 import { CONTACT_FIRST_LAST_NAME_MAX_LENGTH, CONTACT_NAME_MAX_LENGTH } from './constants';
-import { isDateTextValue, isValidDateValue } from './vcard';
+import { isDateTextValue, isValidDateValue } from './vcardProperties';
 
 const UNESCAPE_REGEX = /\\\\|\\,|\\;/gi;
 const UNESCAPE_EXTENDED_REGEX = /\\\\|\\:|\\,|\\;/gi;
