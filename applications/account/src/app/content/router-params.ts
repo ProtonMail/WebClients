@@ -1,4 +1,5 @@
 import type { ThemeColor } from '@proton/colors';
+import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type {
@@ -76,6 +77,7 @@ export type GeneralRouterParams = {
     user: UserModel;
     addresses?: Address[];
     subscription: MaybeFreeSubscription;
+    entitlements: EntitlementChecks;
     flags: Flags;
 };
 
