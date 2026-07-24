@@ -30,15 +30,26 @@ describe('paperTrailLocalSavePreference', () => {
         expect(isPaperTrailLocalSaveEnabled()).toBe(true);
     });
 
-    it('clears paper trail data when local save is disabled', () => {
+    it('keeps paper trail data in storage when local save is disabled', () => {
         localStorage.setItem(getLumoScopedStorageKey(RECENT_FILES_KEY), '[]');
         localStorage.setItem(getLumoScopedStorageKey(REPORTS_KEY), '{}');
         setPaperTrailLocalSaveEnabled(true);
         setPaperTrailLocalSaveEnabled(false);
 
-        expect(localStorage.getItem(getLumoScopedStorageKey(RECENT_FILES_KEY))).toBeNull();
-        expect(localStorage.getItem(getLumoScopedStorageKey(REPORTS_KEY))).toBeNull();
+        expect(localStorage.getItem(getLumoScopedStorageKey(RECENT_FILES_KEY))).toBe('[]');
+        expect(localStorage.getItem(getLumoScopedStorageKey(REPORTS_KEY))).toBe('{}');
         expect(isPaperTrailLocalSaveEnabled()).toBe(false);
+    });
+
+    it('restores access to saved data when local save is re-enabled', () => {
+        localStorage.setItem(getLumoScopedStorageKey(RECENT_FILES_KEY), '[]');
+        localStorage.setItem(getLumoScopedStorageKey(REPORTS_KEY), '{}');
+        setPaperTrailLocalSaveEnabled(true);
+        setPaperTrailLocalSaveEnabled(false);
+        setPaperTrailLocalSaveEnabled(true);
+
+        expect(isPaperTrailLocalSaveEnabled()).toBe(true);
+        expect(localStorage.getItem(getLumoScopedStorageKey(REPORTS_KEY))).toBe('{}');
     });
 
     it('treats existing paper trail data as enabled until the user opts out', () => {
