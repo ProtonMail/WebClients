@@ -1,27 +1,27 @@
 import { NodeType } from '@protontech/drive-sdk';
 
 import { UploadStatus } from '../types';
-import { getBlockedChildren, getFolderDepth, isParentReady } from './dependencyHelpers';
+import { buildItemsById, getBlockedChildren, getFolderDepth, isParentReady } from './dependencyHelpers';
 
 describe('dependencyHelpers', () => {
     describe('isParentReady', () => {
         it('should return true when no parent in queue', () => {
             const item = { parentUid: 'parent-1', type: NodeType.File, status: UploadStatus.Pending } as any;
-            const result = isParentReady(item, []);
+            const result = isParentReady(item, buildItemsById([]));
             expect(result).toBe(true);
         });
 
         it('should return true when parent folder has nodeUid', () => {
             const item = { parentUploadId: 'folder-1', type: NodeType.File } as any;
             const allItems = [{ uploadId: 'folder-1', type: NodeType.Folder, nodeUid: 'node-123' }] as any;
-            const result = isParentReady(item, allItems);
+            const result = isParentReady(item, buildItemsById(allItems));
             expect(result).toBe(true);
         });
 
         it('should return false when parent folder has no nodeUid', () => {
             const item = { parentUploadId: 'folder-1', type: NodeType.File } as any;
             const allItems = [{ uploadId: 'folder-1', type: NodeType.Folder, nodeUid: undefined }] as any;
-            const result = isParentReady(item, allItems);
+            const result = isParentReady(item, buildItemsById(allItems));
             expect(result).toBe(false);
         });
 
@@ -35,7 +35,7 @@ describe('dependencyHelpers', () => {
                     status: UploadStatus.Finished,
                 },
             ] as any;
-            const result = isParentReady(item, allItems);
+            const result = isParentReady(item, buildItemsById(allItems));
             expect(result).toBe(true);
         });
     });
@@ -43,7 +43,7 @@ describe('dependencyHelpers', () => {
     describe('getFolderDepth', () => {
         it('should return 0 for root level folder', () => {
             const folder = { parentUid: 'root', type: NodeType.Folder } as any;
-            const result = getFolderDepth(folder, []);
+            const result = getFolderDepth(folder, buildItemsById([]));
             expect(result).toBe(0);
         });
 
@@ -52,7 +52,7 @@ describe('dependencyHelpers', () => {
             const allItems = [
                 { uploadId: 'parent', type: NodeType.Folder, nodeUid: 'parent-node', parentUid: 'root' },
             ] as any;
-            const result = getFolderDepth(folder, allItems);
+            const result = getFolderDepth(folder, buildItemsById(allItems));
             expect(result).toBe(1);
         });
 
@@ -62,7 +62,7 @@ describe('dependencyHelpers', () => {
                 { uploadId: 'parent', type: NodeType.Folder, nodeUid: 'parent-node', parentUid: 'root' },
                 { uploadId: 'child', type: NodeType.Folder, nodeUid: 'child-node', parentUploadId: 'parent' },
             ] as any;
-            const result = getFolderDepth(folder, allItems);
+            const result = getFolderDepth(folder, buildItemsById(allItems));
             expect(result).toBe(2);
         });
     });
