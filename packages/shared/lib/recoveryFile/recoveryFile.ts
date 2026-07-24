@@ -9,8 +9,9 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 import { RECOVERY_FILE_FILE_NAME } from '../constants';
 import downloadFile from '../helpers/downloadFile';
 import type { Address, DecryptedKey, Key, KeyWithRecoverySecret, User } from '../interfaces';
-import type { ArmoredKeyWithInfo } from '../keys';
-import { getHasMigratedAddressKeys, getPrimaryKey } from '../keys';
+import { getPrimaryKey } from '../keys/getPrimaryKey';
+import type { ArmoredKeyWithInfo } from '../keys/keyImport';
+import { getHasMigratedAddressKeys } from '../keys/keyMigration';
 
 const decryptRecoveryFile = (recoverySecrets: KeyWithRecoverySecret[]) => async (file: string) => {
     try {
