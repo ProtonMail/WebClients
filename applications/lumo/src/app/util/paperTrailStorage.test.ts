@@ -1,4 +1,5 @@
 import { setPaperTrailLocalSaveEnabled } from './paperTrailLocalSavePreference';
+import { getPaperTrailReport, savePaperTrailReport } from './paperTrailReportStorage';
 import { readPaperTrailStorage, writePaperTrailStorage } from './paperTrailStorage';
 
 const STORAGE_KEY = 'lumo-ai-paper-trail-test';
@@ -26,15 +27,32 @@ describe('paperTrailStorage', () => {
         expect(readPaperTrailStorage(STORAGE_KEY, {})).toEqual(payload);
     });
 
-    it('returns fallback when local save is disabled', () => {
+    it('reads existing data when local save is disabled', () => {
+        setPaperTrailLocalSaveEnabled(true);
+        writePaperTrailStorage(STORAGE_KEY, { kept: true });
         setPaperTrailLocalSaveEnabled(false);
 
-        expect(readPaperTrailStorage(STORAGE_KEY, { empty: true })).toEqual({ empty: true });
+        expect(readPaperTrailStorage(STORAGE_KEY, {})).toEqual({ kept: true });
     });
 
-    it('does not write when local save is disabled', () => {
-        writePaperTrailStorage(STORAGE_KEY, { saved: true });
+    it('does not persist new reports when local save is disabled', () => {
+        setPaperTrailLocalSaveEnabled(false);
 
-        expect(localStorage.getItem(STORAGE_KEY)).toBeNull();
+        savePaperTrailReport('123', {
+            name: '',
+            label: 'Test',
+            quickFacts: [],
+            summary: '',
+            dataPointCount: 0,
+            estimatedValueUsd: 0,
+            valueRationale: '',
+            sections: [],
+            revealingDataPoints: [],
+            sensitiveCategories: [],
+            dataExposure: [],
+            complianceRisks: [],
+        });
+
+        expect(getPaperTrailReport('123')).toBeUndefined();
     });
 });
