@@ -1,6 +1,7 @@
 import { act, fireEvent, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -12,8 +13,18 @@ import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
 import { minimalCache } from '../../../helpers/test/cache';
 import { mailTestRender } from '../../../helpers/test/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
+import { mockActiveCategoriesData } from '../../categoryView/testUtils/helpers';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import MoveDropdown from '../MoveDropdown';
+
+jest.mock('../../categoryView/useCategoriesView', () => ({
+    useCategoriesView: jest.fn(() => ({
+        shouldShowTabs: false,
+        activeCategoriesTabs: [],
+    })),
+}));
+
+const mockedUseCategoriesView = jest.requireMock('../../categoryView/useCategoriesView').useCategoriesView;
 
 const folder1Name = 'Folder1';
 const folder1ID = 'folder-1-id';
@@ -41,6 +52,13 @@ const getMessage = (labelIDs: string[] = []) => {
 };
 
 describe('MoveDropdown', () => {
+    beforeEach(() => {
+        mockedUseCategoriesView.mockReturnValue({
+            shouldShowTabs: false,
+            activeCategoriesTabs: [],
+        });
+    });
+
     const setup = async (labelIDs: string[] = []) => {
         minimalCache();
 
@@ -180,6 +198,38 @@ describe('MoveDropdown', () => {
 
         // Input is filled with the previous search content
         expect(labelModalNameInput.value).toEqual(search);
+    });
+
+    describe("always move sender's emails checkbox", () => {
+        it('should enable the checkbox when a regular folder is selected', async () => {
+            await setup();
+
+            const radio = screen.getByTestId(`label-dropdown:folder-radio-${folder1Name}`) as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(radio);
+            });
+
+            const checkbox = screen.getByTestId('move-dropdown:always-move') as HTMLInputElement;
+            expect(checkbox.disabled).toBe(false);
+        });
+
+        it('should disable the checkbox when a category is selected as destination', async () => {
+            mockedUseCategoriesView.mockReturnValue({
+                shouldShowTabs: true,
+                activeCategoriesTabs: mockActiveCategoriesData,
+            });
+
+            await setup();
+
+            const categoryName = getLabelFromCategoryId(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            const categoryRadio = screen.getByTestId(`label-dropdown:folder-radio-${categoryName}`) as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(categoryRadio);
+            });
+
+            const checkbox = screen.getByTestId('move-dropdown:always-move') as HTMLInputElement;
+            expect(checkbox.disabled).toBe(true);
+        });
     });
 
     it('should create a folder from the option', async () => {
