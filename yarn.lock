@@ -14318,7 +14318,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-virtual@npm:^3.14.6":
+"@tanstack/react-virtual@npm:^3.13.24, @tanstack/react-virtual@npm:^3.14.6":
   version: 3.14.6
   resolution: "@tanstack/react-virtual@npm:3.14.6"
   dependencies:
@@ -41527,6 +41527,7 @@ __metadata:
     "@proton/testing": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.12.0"
+    "@tanstack/react-virtual": "npm:^3.13.24"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^24.13.3"
     "@types/react": "npm:^18.3.31"

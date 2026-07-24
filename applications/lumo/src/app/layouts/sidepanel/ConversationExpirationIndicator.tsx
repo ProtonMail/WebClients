@@ -57,9 +57,9 @@ export const ConversationExpirationIndicator = ({ conversation, className }: Con
                 aria-label={tooltip}
             >
                 {urgency === 'urgent' ? (
-                    <LumoIcon name="Hourglass" size={16} className="color-weak" aria-label={iconAlt} />
+                    <LumoIcon name="Hourglass" size={16} className="color-warning" aria-label={iconAlt} />
                 ) : (
-                    <LumoIcon name="Clock" size={16} className="color-weak" aria-label={iconAlt} />
+                    <LumoIcon name="Clock" size={16} className="color-warning" aria-label={iconAlt} />
                 )}
             </span>
         </Tooltip>

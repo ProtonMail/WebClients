@@ -5,10 +5,11 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .collapsible-section-header {
-	font-size: rem(13);
 	transition: background-color 0.15s ease;
 	min-block-size: rem(40);
 	block-size: rem(40);
+	color: var(--glyph-glyph-hint);
+	font-size: rem(12);
 
 	// &:hover {
 	// 	background-color: var(--background-weak);

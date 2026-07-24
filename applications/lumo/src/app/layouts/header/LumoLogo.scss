@@ -1,12 +1,4 @@
-@use '@proton/styles/scss/lib' as lib;
-
-// .lumo-logo-container {
-//     display: flex;
-//     align-items: center;
-//     gap: lib.rem(8);
-// }
-
-a {
+.lumo-logo-link {
 	text-decoration: none !important;
 
 	&:hover,
