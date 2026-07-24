@@ -1,6 +1,7 @@
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
+import { parseInvitationData } from '@proton/shared/lib/keys/unprivatization';
 
 export type RoleChangeClassification =
     | {
@@ -19,7 +20,15 @@ export const classifyRoleChange = ({
     targetRole: MEMBER_ROLE;
     isPasswordlessOrg: boolean;
 }): RoleChangeClassification => {
-    const toPromote = member.Role !== MEMBER_ROLE.ORGANIZATION_ADMIN && targetRole === MEMBER_ROLE.ORGANIZATION_ADMIN;
+    let invitationData = null;
+    if (member.Unprivatization?.InvitationData) {
+        try {
+            invitationData = parseInvitationData(member.Unprivatization.InvitationData);
+        } catch {}
+    }
+    const isAdmin = member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN || invitationData?.Admin === true;
+
+    const toPromote = !isAdmin && targetRole === MEMBER_ROLE.ORGANIZATION_ADMIN;
     if (toPromote) {
         if (!isPasswordlessOrg) {
             return { kind: 'promote', via: 'no-payload', requiresPrompt: false };
@@ -34,7 +43,7 @@ export const classifyRoleChange = ({
         };
     }
 
-    const toDemote = member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN && targetRole !== MEMBER_ROLE.ORGANIZATION_ADMIN;
+    const toDemote = isAdmin && targetRole !== MEMBER_ROLE.ORGANIZATION_ADMIN;
     if (toDemote) {
         return { kind: 'demote', requiresPrompt: true };
     }
