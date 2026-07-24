@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { copyDomToClipboard, isFirefox } from '@proton/shared/lib/helpers/browser';
+import { copyDomToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon.tsx';
 
@@ -16,39 +16,36 @@ interface Props extends Omit<ButtonProps, 'value'> {
     onSuccess?: () => void;
 }
 
+const copyRichHtmlToClipboard = async (element: HTMLDivElement): Promise<boolean> => {
+    if (!navigator.clipboard || typeof navigator.clipboard.write !== 'function') {
+        return false;
+    }
+
+    const plainText = element.textContent || element.innerText || '';
+    const htmlContent = element.innerHTML;
+
+    try {
+        await navigator.clipboard.write([
+            new ClipboardItem({
+                'text/plain': new Blob([plainText], { type: 'text/plain' }),
+                'text/html': new Blob([htmlContent], { type: 'text/html' }),
+            }),
+        ]);
+        return true;
+    } catch (err) {
+        console.warn('Failed to copy with Clipboard API, falling back to DOM copy', err);
+        return false;
+    }
+};
+
 const copyToClipboard = async (element: HTMLDivElement): Promise<boolean> => {
     try {
-        // Firefox has issues with document.execCommand('copy') and DOM ranges
-        // Try modern Clipboard API first for both HTML and text
-        if (isFirefox() && navigator.clipboard && typeof navigator.clipboard.write === 'function') {
-            try {
-                const plainText = element.textContent || element.innerText || '';
-                const htmlContent = element.innerHTML;
-
-                // Try to copy both HTML and text using modern API
-                const clipboardItems = [
-                    new ClipboardItem({
-                        'text/plain': new Blob([plainText], { type: 'text/plain' }),
-                        'text/html': new Blob([htmlContent], { type: 'text/html' }),
-                    }),
-                ];
-
-                await navigator.clipboard.write(clipboardItems);
-                return true;
-            } catch (err) {
-                console.warn('Failed to copy with modern Clipboard API for Firefox, falling back to text only', err);
-                // Fall back to plain text only
-                try {
-                    const plainText = element.textContent || element.innerText || '';
-                    await navigator.clipboard.writeText(plainText);
-                    return true;
-                } catch (textErr) {
-                    console.warn('Failed to copy as plain text for Firefox, falling back to DOM copy', textErr);
-                }
-            }
+        // Prefer Clipboard API (HTML + plain) when available — execCommand('copy') is unreliable in
+        // Firefox and can omit text/html in some browsers, which pastes as plain text only.
+        if (await copyRichHtmlToClipboard(element)) {
+            return true;
         }
 
-        // Fallback for other browsers or if Firefox Clipboard API fails
         await copyDomToClipboard(element);
         return true;
     } catch (err) {
