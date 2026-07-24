@@ -199,15 +199,9 @@ const UploadStage = ({
     const [openableFileIds, setOpenableFileIds] = useState<Set<string>>(() => new Set());
 
     useEffect(() => {
-        if (!saveLocallyEnabled) {
-        setRecentFiles([]);
-        setOpenableFileIds(new Set());
-        return;
-    }
-
-    setRecentFiles(getRecentPaperTrailFiles());
-    setOpenableFileIds(new Set(getPaperTrailReportIds()));
-}, [recentFilesRefreshKey, saveLocallyEnabled]);
+        setRecentFiles(getRecentPaperTrailFiles());
+        setOpenableFileIds(new Set(getPaperTrailReportIds()));
+    }, [recentFilesRefreshKey]);
 
     const steps = [
         {
@@ -316,14 +310,12 @@ const UploadStage = ({
 
             <GuestLocalSaveOption enabled={saveLocallyEnabled} onChange={onSaveLocallyChange} />
 
-            {saveLocallyEnabled && (
-                <RecentFilesSection
-                    files={recentFiles}
-                    openableFileIds={openableFileIds}
-                    onOpenReport={onOpenReport}
-                    onDeleteReport={onDeleteReport}
-                />
-            )}
+            <RecentFilesSection
+                files={recentFiles}
+                openableFileIds={openableFileIds}
+                onOpenReport={onOpenReport}
+                onDeleteReport={onDeleteReport}
+            />
 
             <div className="ai-paper-trail__steps">
                 {steps.map((step, i) => (
