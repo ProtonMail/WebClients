@@ -299,10 +299,8 @@ export const getAccountAppRoutes = ({
     memberships,
     isB2BTrial,
     referralInfo,
-    showMailDashboard,
-    showPassDashboard,
+    showDashboard,
     showDriveDashboard,
-    showMeetDashboard,
     showGenericDashboard,
     hasPendingInvitations,
     flags,
@@ -372,13 +370,7 @@ export const getAccountAppRoutes = ({
 
     const shouldShowDashboard = isFree || canPay || !isMember || (isPaid && canPay);
     // We do not have to check app names here as the hook responsible to populate these values will do it for us.
-    const shouldShowV2Dashboard =
-        showGenericDashboard ||
-        showVPNDashboard ||
-        showMailDashboard ||
-        showPassDashboard ||
-        showDriveDashboard ||
-        showMeetDashboard;
+    const shouldShowV2Dashboard = showGenericDashboard || showVPNDashboard || showDashboard || showDriveDashboard;
 
     // As VPN dashboard has its own route for v2 dashboard, we need to check for APP and Feature flag to decide between v1 vs v2 dashboard
     const isVPNDashboardEnabled = app === APPS.PROTONVPN_SETTINGS && showVPNDashboard;

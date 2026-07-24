@@ -1,6 +1,6 @@
 import { fromUnixTime, isFuture, subDays } from 'date-fns';
 
-import useShowDashboard, { getDashboardFeatureFlag } from '@proton/components/hooks/accounts/useShowDashboard';
+import useShowDashboard, { useShowDriveDashboard } from '@proton/components/hooks/accounts/useShowDashboard';
 import useConfig from '@proton/components/hooks/useConfig';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { type ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
@@ -34,13 +34,14 @@ export function useHideBanner(
 ): boolean {
     const { APP_NAME } = useConfig();
     const { showVPNDashboard } = useShowVPNDashboard(app);
-    const { showDashboard } = useShowDashboard(app, getDashboardFeatureFlag(app));
+    const { showDashboard } = useShowDashboard(app);
+    const { showDashboard: showDriveDashboard } = useShowDriveDashboard(app);
 
     if (!([APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS] as APP_NAMES[]).includes(APP_NAME)) {
         return true;
     }
 
-    if (showVPNDashboard || showDashboard) {
+    if (showVPNDashboard || showDashboard || showDriveDashboard) {
         return true;
     }
 
