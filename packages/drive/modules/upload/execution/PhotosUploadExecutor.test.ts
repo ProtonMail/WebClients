@@ -1,3 +1,4 @@
+import { type WebStream, toStream } from '@openpgp/web-stream-tools';
 import { CryptoProxy } from '@protontech/crypto';
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
@@ -105,7 +106,9 @@ describe('PhotosUploadExecutor', () => {
             captureTime: new Date('2024-01-01T00:00:00Z'),
         });
 
-        jest.mocked(CryptoProxy.computeHashStream).mockResolvedValue(new Uint8Array([1, 2, 3, 4]));
+        jest.mocked(CryptoProxy.computeHashStream).mockResolvedValue({
+            hashedDataStream: toStream(new Uint8Array([1, 2, 3, 4])) as WebStream<Uint8Array<ArrayBuffer>>,
+        });
 
         const mockFindPhotoDuplicates = jest.fn().mockResolvedValue([]);
 
@@ -659,7 +662,7 @@ describe('PhotosUploadExecutor', () => {
 
             expect(CryptoProxy.computeHashStream).toHaveBeenCalledWith({
                 algorithm: 'unsafeSHA1',
-                dataStream: expect.any(ReadableStream),
+                binaryDataStream: expect.any(ReadableStream),
             });
         });
     });
