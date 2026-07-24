@@ -1,4 +1,5 @@
 import type { PaperTrailSource } from '../features/aiPaperTrail/parsers/types';
+import { shouldPersistPaperTrailLocally } from './paperTrailLocalSavePreference';
 import { readPaperTrailStorage, writePaperTrailStorage } from './paperTrailStorage';
 import { deletePaperTrailReport, prunePaperTrailReports } from './paperTrailReportStorage';
 
@@ -29,6 +30,9 @@ export const getRecentPaperTrailFiles = (): RecentPaperTrailFile[] => {
 };
 
 export const addRecentPaperTrailFile = (source: PaperTrailSource): string => {
+    if (!shouldPersistPaperTrailLocally()) {
+        return String(Date.now());
+    }
     const id = String(Date.now());
     const existing = getRecentPaperTrailFiles();
     const updated: RecentPaperTrailFile[] = [{ id, source, uploadedAt: Date.now() }, ...existing].slice(
