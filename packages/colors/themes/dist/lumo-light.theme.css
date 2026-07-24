@@ -138,4 +138,29 @@
     ),
     #fff;
   --model-mode-selected-background: var(--background-main-canvas);
+  --glyph-glyph-hint: #949494;
+  --glyph: #0b0b0b;
+  --glyph-mid: #707070;
+  --glyph-low: #949494;
+  --glyph-disabled: #c2c2c2;
+  --glyph-inverse: #f6f6f6;
+  --glyph-contrast: #ffffff;
+  --glyph-brand: #6439ed;
+  --glyph-brand-mid: #4c2cb3;
+  --glyph-brand-strong: #311e71;
+  --control-fill-empty: transparent;
+  --control-fill-translucent: rgb(0 0 0 / 0.04);
+  --control-fill-contrast: #ffffff;
+  --control-fill-low: #fafbff;
+  --control-fill-mid: #f5f6fe;
+  --control-fill-strong: #e9eafc;
+  --control-fill-strong-2: #dddefb;
+  --control-border: #e9eafc;
+  --control-border-translucent: rgb(0 0 0 / 0.08);
+  --control-border-mid: #dddefb;
+  --control-border-focus: #6439ed;
+  --control-brand-fill: #6439ed;
+  --control-brand-fill-mid: #4c2cb3;
+  --control-brand-fill-strong: #311e71;
+  --control-brand-text: #ffffff;
 }

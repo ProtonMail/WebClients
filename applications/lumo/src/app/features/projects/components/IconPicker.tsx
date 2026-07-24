@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Dropdown, Icon, usePopperAnchor } from '@proton/components';
+import { Dropdown, usePopperAnchor } from '@proton/components';
 
+import { ProjectIcon } from '../../../components/ProjectIcon/ProjectIcon';
 import { PROJECT_ICONS } from '../constants';
 
 import './IconPicker.scss';
@@ -35,7 +36,7 @@ export const IconPicker = ({ selectedIcon, onSelectIcon }: IconPickerProps) => {
                 aria-label={c('collider_2025:Action').t`Choose project icon`}
                 title={c('collider_2025:Tooltip').t`Choose icon`}
             >
-                <Icon name={selectedIcon as any} size={5} />
+                <ProjectIcon iconId={selectedIcon} size={20} />
             </button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <div className="p-3">
@@ -49,7 +50,7 @@ export const IconPicker = ({ selectedIcon, onSelectIcon }: IconPickerProps) => {
                                 onClick={() => handleIconSelect(icon)}
                                 aria-label={icon}
                             >
-                                <Icon name={icon as any} size={5} />
+                                <ProjectIcon iconId={icon} size={20} />
                             </button>
                         ))}
                     </div>
