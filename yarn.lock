@@ -10440,6 +10440,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/drive@workspace:packages/drive"
   dependencies:
+    "@openpgp/web-stream-tools": "npm:~0.3.1"
     "@proton/account": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
@@ -11435,9 +11436,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/crypto@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@protontech/crypto@npm:2.0.1"
+"@protontech/crypto@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@protontech/crypto@npm:2.1.1"
   dependencies:
     "@noble/hashes": "npm:^2.2.0"
     "@openpgp/web-stream-tools": "npm:~0.3.1"
@@ -11446,7 +11447,7 @@ __metadata:
     core-js: "npm:^3.49.0"
     jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.2"
     openpgp: "npm:@protontech/openpgp@~6.3.1-0"
-  checksum: 10/f3fe80240664c9b9f8d18725d3927b236adc566a9387e9958bd8d2740a2309778ee92cd6138e8b842d6ce1a0a1d12e9a508a28f9d97763525ccb07416fc0a70d
+  checksum: 10/423f82d1cdad92c329e1686ac55625a2a5cdfdc5aac2528dfc11fe9654bb2c011bf6dae32312c84d20f780d7f7f156114f1555f8149709256422599071ff1c2b
   languageName: node
   linkType: hard
 
