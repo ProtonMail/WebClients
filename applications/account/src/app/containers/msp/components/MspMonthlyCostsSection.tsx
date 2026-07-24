@@ -21,11 +21,13 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { getMspBillingSummary } from '@proton/shared/lib/api/msp';
 import { getFormattedMonths } from '@proton/shared/lib/date/date';
 import type { MspBillingSummary } from '@proton/shared/lib/interfaces/MspBillingSummary';
 import emptyRecordsImg from '@proton/styles/assets/img/illustrations/empty-records.svg';
 import { useFlag } from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import { MOCK_MONTHLY_DATA, MOCK_SEATS_HISTORY } from '../mock/monthlyCosts';
 import type { MonthlyRow } from '../types';
@@ -89,16 +91,12 @@ const MspMonthlyCostsSection = () => {
     ];
 
     const stats = [
+        { label: c('Label').t`Billing period`, value: formatApiBillingPeriod(billingSummary.BillingPeriod) },
+        { label: c('Label').t`Managed Companies`, value: String(billingSummary.ManagedCompanies) },
+        { label: c('Label').t`Billable licenses`, value: Math.round(billingSummary.TotalBilledLicenses) },
         {
-            label: c('Label').t`Billed seats`,
-            value: Math.round(billingSummary.TotalBilledLicenses),
-            sub: c('Info').t`Average`,
-        },
-        { label: c('Label').t`Companies`, value: String(billingSummary.ManagedCompanies), sub: c('Info').t`Active` },
-        {
-            label: c('Label').t`Cost`,
+            label: c('Label').t`Cost per license`,
             value: getSimplePriceString(currency, billingSummary.CostPerLicense * 100),
-            sub: c('Info').t`Per seat/month`,
         },
     ];
 
@@ -108,21 +106,31 @@ const MspMonthlyCostsSection = () => {
                 <SettingsPageTitle className="mt-14">{c('Title').t`Monthly Costs`}</SettingsPageTitle>
                 <SettingsParagraph>{c('Info').t`Your total monthly cost for all managed companies.`}</SettingsParagraph>
             </div>
-            {/* ── Cost overview card ── */}
-            <div className="border border-norm rounded-lg shadow-norm px-6 pt-6 pb-8 flex flex-column-md flex-row items-center gap-8">
-                <div className="flex flex-column gap-1 flex-1">
-                    <p className="m-0 text-semibold">{c('Label').t`Total cost`}</p>
-                    <p className="m-0 text-bold text-7xl">
-                        {getSimplePriceString(currency, billingSummary.TotalCost * 100)}
-                    </p>
-                    <p className="m-0 text-sm color-weak">{formatApiBillingPeriod(billingSummary.BillingPeriod)}</p>
+            {/* ── Current cost card ── */}
+            <div className="border border-norm rounded-lg shadow-norm px-6 py-6 flex flex-column gap-6">
+                <div className="flex flex-column md:flex-row md:items-start md:justify-space-between gap-2">
+                    <div className="flex items-center gap-2">
+                        <IcFileLines className="shrink-0" />
+                        <p className="m-0 text-bold text-lg">{c('Title').t`Current cost`}</p>
+                    </div>
+                    <div className="flex flex-column md:items-end">
+                        <p className="m-0 text-bold text-7xl">
+                            {getSimplePriceString(currency, billingSummary.TotalCost * 100)}
+                        </p>
+                        <p className="m-0 text-sm color-weak">{c('Label').t`Total cost`}</p>
+                    </div>
                 </div>
-                <div className="flex gap-6 flex-1">
-                    {stats.map(({ label, value, sub }) => (
-                        <div key={label} className="flex flex-column gap-1 flex-1">
-                            <p className="m-0 text-semibold">{label}</p>
-                            <p className="m-0 text-bold text-2xl">{value}</p>
-                            <p className="m-0 text-sm color-weak">{sub}</p>
+                <div className="grid grid-cols-2 md:flex md:flex-nowrap gap-4 md:gap-8">
+                    {stats.map(({ label, value }, index) => (
+                        <div
+                            key={label}
+                            className={clsx(
+                                'flex flex-column gap-1 md:w-auto md:flex-1',
+                                index === stats.length - 1 && 'md:items-end'
+                            )}
+                        >
+                            <p className="m-0 text-bold">{value}</p>
+                            <p className="m-0 text-sm color-weak">{label}</p>
                         </div>
                     ))}
                 </div>
