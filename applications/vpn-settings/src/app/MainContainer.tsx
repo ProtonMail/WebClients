@@ -86,6 +86,7 @@ import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
 import { useZendeskChat } from '@proton/components/containers/zendesk/useZendeskChat';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
+import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
@@ -141,6 +142,7 @@ const MainContainer: FunctionComponent = () => {
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false, false);
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
+    const [entitlements] = useEntitlementChecks();
 
     const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();
 
@@ -205,6 +207,7 @@ const MainContainer: FunctionComponent = () => {
         app: APPS.PROTONVPN_SETTINGS,
         user,
         subscription,
+        entitlements,
         flags,
         ...organizationSettingsRouterParams,
     });
