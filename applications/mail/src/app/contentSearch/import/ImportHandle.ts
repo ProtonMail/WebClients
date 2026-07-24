@@ -12,7 +12,9 @@ export class ImportHandle {
 
     private _issues: ImportIssue[] = [];
     private _startTime: number | undefined;
+    private _completed: number = 0;
     private _progress: number = 0;
+    private _total: number | undefined;
     private importPromise?: Promise<void>;
 
     constructor(
@@ -38,8 +40,10 @@ export class ImportHandle {
             Comlink.proxy({
                 onTotalAvailable: (_total) => {
                     total = _total;
+                    this._total = _total;
                 },
                 onCompleted: (completed) => {
+                    this._completed = completed;
                     this.emitProgress(this.correctProgress(completed / total));
                 },
                 onIssue: (issue) => {
@@ -76,6 +80,15 @@ export class ImportHandle {
 
     get progress() {
         return this._progress;
+    }
+
+    /** Total number of items to import, once the worker has reported it (undefined until then). */
+    get total(): number | undefined {
+        return this._total;
+    }
+
+    get completed(): number {
+        return this._completed;
     }
 
     get remainingMinutes(): number | undefined {
