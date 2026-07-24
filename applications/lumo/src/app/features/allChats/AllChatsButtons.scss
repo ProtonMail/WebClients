@@ -1,0 +1,56 @@
+@use '~@proton/styles/scss/lib/em' as *;
+
+@mixin all-chats-solid-brand-button {
+	--button-default-background-color: var(--control-brand-fill);
+	--button-hover-background-color: var(--control-brand-fill-mid);
+	--button-active-background-color: var(--control-brand-fill-strong);
+	--button-default-text-color: var(--control-brand-text);
+	--button-hover-text-color: var(--control-brand-text);
+	--button-active-text-color: var(--control-brand-text);
+	--focus-outline: var(--control-border-focus);
+}
+
+@mixin all-chats-outline-button {
+	--button-default-background-color: var(--control-fill-low);
+	--button-hover-background-color: var(--control-fill-mid);
+	--button-active-background-color: var(--control-fill-strong-2);
+	--button-default-border-color: var(--control-border);
+	--button-hover-border-color: var(--control-border-mid);
+	--button-active-border-color: var(--control-border-mid);
+	--button-default-text-color: var(--text-norm);
+	--button-hover-text-color: var(--text-norm);
+	--button-active-text-color: var(--text-norm);
+	--focus-outline: var(--control-border-focus);
+}
+
+.all-chats-header-action-button {
+	border-radius: 2em;
+}
+
+.all-chats-header-action-button.button-solid-norm.button-medium,
+.all-chats-header-action-button.button-solid-norm.button-small {
+	@include all-chats-solid-brand-button;
+}
+
+.all-chats-header-action-button.button-outline-weak.button-medium,
+.all-chats-header-action-button.button-outline-weak.button-small {
+	@include all-chats-outline-button;
+}
+
+.all-chats-header-action-button.button-small:not(.button-for-icon) {
+	--padding-block: #{em(6)};
+	--padding-inline: #{em(10)};
+}
+
+.all-chats-header-action-button:disabled {
+	opacity: 0.5;
+}
+
+.all-chats-header-action-button.is-active {
+	--button-default-background-color: var(--control-fill-strong);
+	--button-hover-background-color: var(--control-fill-strong);
+	--button-active-background-color: var(--control-fill-strong-2);
+	--button-default-border-color: var(--control-border-mid);
+	--button-hover-border-color: var(--control-border-mid);
+	--button-active-border-color: var(--control-border-mid);
+}

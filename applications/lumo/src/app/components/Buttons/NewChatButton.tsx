@@ -80,7 +80,7 @@ const NewChatButtonAuthenticated = ({ buttonProps, children, toolTipPlacement }:
     );
 };
 
-const NewChatButton = ({ buttonProps, children, toolTipPlacement }: NewChatButtonProps) => {
+export const NewChatButton = ({ buttonProps, children, toolTipPlacement }: NewChatButtonProps) => {
     const isGuest = useIsGuest();
 
     return isGuest ? (

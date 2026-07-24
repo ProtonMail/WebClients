@@ -10,11 +10,15 @@ im.$media-expressions: $media-expressions;
 }
 
 .lumo-sidebar {
+	flex: 1 1 0;
 	padding: #{rem(12)};
 	gap: #{rem(8)};
+	min-block-size: 0;
 	min-inline-size: 0;
 	max-inline-size: 100%;
-	overflow-x: hidden;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 
 	// `.lumo-plus-button` provides its own SVG styling, opt it out of the
 	// chunky-stroke treatment applied to the rest of the sidebar icons.
@@ -95,26 +99,61 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-// Scrollable main content area — fills all space above sidebar-bottom.
-// Uses overflow: auto so that when expanded sections (projects/favorites) exceed
-// the available height on small screens, content scrolls rather than being clipped.
-.sidebar-main-content {
+// Scrollable main content — uses @proton/atoms Scroll for overflow edge borders.
+.sidebar-main-scroll {
+	flex: 1 1 0;
 	min-block-size: 0;
 	min-inline-size: 0;
-	overflow: hidden auto;
-	gap: 8px;
+
+	&.scroll-outer-vertical {
+		block-size: auto;
+	}
+
+	.scroll-inner {
+		-webkit-overflow-scrolling: touch;
+		touch-action: pan-y;
+	}
+
+	.scroll-child {
+		display: flex;
+		flex-direction: column;
+		gap: #{rem(8)};
+
+		> * {
+			flex-shrink: 0;
+		}
+	}
+
+	// Replace default gradient shadows with Figma-style divider lines.
+	.scroll-start-shadow,
+	.scroll-end-shadow {
+		z-index: 2;
+		block-size: #{rem(1)};
+		background: var(--border-weak);
+		transition: opacity 0.15s ease;
+	}
+
+	.scroll-start-shadow {
+		background: var(--border-weak);
+	}
+
+	.scroll-end-shadow {
+		background: var(--border-weak);
+	}
 
 	@include im.media('<=small') {
-		gap: 0;
+		.scroll-child {
+			gap: 0;
+		}
 	}
 }
 
 .sidebar-section {
 	inline-size: 100%;
+	flex-shrink: 0;
 
 	&.sidebar-bottom {
 		flex-shrink: 0;
-		padding-block-start: #{rem(12)};
 	}
 }
 
@@ -129,30 +168,19 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-// Favorites content
-.favorites-content {
-	max-block-size: 30vh;
-	overflow: hidden hidden;
-	animation: sidebar-fade-in 0.25s ease-in-out;
-
-	@include im.media('<=small') {
-		max-block-size: 12vh;
-	}
-}
-
-// Chat history sidebar section - structured like projects
-.chat-history-sidebar-section {
-	flex: 1;
-	min-block-size: 0;
-	min-inline-size: 0;
-}
-
-// Chat history content area - owns the scroll
+// Favorites and history share the sidebar scroll — no nested scroll containers.
+.favorites-content,
 .chat-history-content {
-	min-block-size: 0;
-	min-inline-size: 0;
-	overflow: hidden auto;
 	animation: sidebar-fade-in 0.25s ease-in-out;
+}
+
+.chats-sidebar-section {
+	min-inline-size: 0;
+}
+
+// Chat history sidebar section — no longer owns its own scroll area.
+.chat-history-sidebar-section {
+	min-inline-size: 0;
 }
 
 // Inner button for sidebar rows that have a separate right-side element (e.g. NewChatSidebarButton toggle)
