@@ -25,7 +25,7 @@ export class Search {
     constructor(
         private params: NormalizedSearchParams,
         private workerPromise: Promise<Comlink.Remote<SearchWorker> | undefined>,
-        private openESReader: () => Promise<EncryptedSearchReader>
+        private openESReader: () => Promise<EncryptedSearchReader | undefined>
     ) {
         this.done = new Promise((resolve) => {
             this.resolveDone = resolve;
@@ -79,7 +79,23 @@ export class Search {
      */
     private async execute(): Promise<void> {
         const promises: Promise<void>[] = [];
+
+        const worker = await this.workerPromise;
+        // index does not exist yet, for now just show empty results
+        if (!worker) {
+            this.unfilteredResults = [];
+            this.applyFilters();
+            return;
+        }
+
+        // Open the legacy store only once we know the v2 index exists (the reader never creates the v1
+        // DB — see EncryptedSearchReader.open). If it's somehow missing there's nothing to resolve.
         const oldStore = await this.openESReader();
+        if (!oldStore) {
+            this.unfilteredResults = [];
+            this.applyFilters();
+            return;
+        }
 
         const fetchMessagesForIDs = async (ids: string[]) => {
             const storeMessages = await oldStore.readMessages(ids);
@@ -90,13 +106,6 @@ export class Search {
         };
 
         try {
-            const worker = await this.workerPromise;
-            // index does not exist yet, for now just show empty results
-            if (!worker) {
-                this.unfilteredResults = [];
-                this.applyFilters();
-                return;
-            }
             performance.mark('search-worker-start');
             await worker.search(
                 this.params,
