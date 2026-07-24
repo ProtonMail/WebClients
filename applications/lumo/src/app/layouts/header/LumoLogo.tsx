@@ -28,7 +28,11 @@ const LumoLogoHeader = memo(() => {
     // Show default logo during loading instead of blank space
     if (isLumoPlanLoading) {
         return (
-            <Link to="/" aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`} className="lumo-logo-container">
+            <Link
+                to="/"
+                aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`}
+                className="lumo-logo-link lumo-logo-container"
+            >
                 <img src={logoSrc} alt={LUMO_SHORT_APP_NAME} height={LOGO_HEIGHT} />
             </Link>
         );
@@ -39,7 +43,12 @@ const LumoLogoHeader = memo(() => {
     if (isGuest) {
         return (
             <>
-                <Link to="/" onClick={onGuestClick} aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`}>
+                <Link
+                    to="/"
+                    onClick={onGuestClick}
+                    aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`}
+                    className="lumo-logo-link"
+                >
                     {logoContent}
                 </Link>
                 {disclaimerModalProps.render && (
@@ -50,7 +59,7 @@ const LumoLogoHeader = memo(() => {
     }
 
     return (
-        <Link to="/" aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`}>
+        <Link to="/" aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`} className="lumo-logo-link">
             {logoContent}
         </Link>
     );

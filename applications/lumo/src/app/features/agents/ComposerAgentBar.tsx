@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
-
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';
 import { useConversationAgent } from '../../hooks/useConversationAgent';
 import { useLumoDispatch } from '../../redux/hooks';
 import { openAgentPicker } from '../../redux/slices/composerActions';
@@ -32,7 +31,7 @@ export const ComposerAgentBar = ({ conversationId }: ComposerAgentBarProps) => {
                 className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-weak color-primary text-sm"
                 data-testid="composer-agent-badge"
             >
-                <Icon name={(activeAgent.icon as any) || DEFAULT_AGENT_ICON} size={3.5} />
+                <ProjectIcon iconId={activeAgent.icon || DEFAULT_AGENT_ICON} size={14} />
                 <button
                     type="button"
                     className="text-semibold text-ellipsis max-w-custom interactive-pseudo-inset rounded"
