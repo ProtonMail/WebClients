@@ -1,8 +1,13 @@
-import isDeepEqual from 'lodash/isEqual';
-
-import { defaultESContext } from '@proton/encrypted-search/constants';
 import { highlightJSX, insertMarks } from '@proton/encrypted-search/esHelpers';
-import type { ESCallbacks, ESEvent, ESSetResultsList, NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type {
+    ESCallbacks,
+    ESEvent,
+    ESIndexingState,
+    ESSetResultsList,
+    ESStatus,
+    ESTimepoint,
+    NormalizedSearchParams,
+} from '@proton/encrypted-search/models';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 
@@ -10,6 +15,8 @@ import type { IndexService } from '../indexation/IndexService';
 import type { Search } from '../search/Search';
 import type { SearchService } from '../search/SearchService';
 import type { FunctionsV1, FunctionsV2 } from './useContentSearch';
+
+export type ESStatusConcrete = ESStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>;
 
 /**
  * Coalesces rapid calls to at most one per animation frame, always delivering the latest arguments.
@@ -75,19 +82,47 @@ function errorBeforeFirstResults(search: Search): Promise<void> {
  * swapped in behind the `ContentSearch` feature flag (see `useContentSearch` / `EncryptedSearchProvider`).
  */
 export class ESAdapter implements FunctionsV2 {
+    private readonly searchService: SearchService;
+    private readonly indexService: IndexService;
+    /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
+    public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
+    /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
+    public esLibraryFunctionsV1: FunctionsV1;
+
     private lastSearch?: Search;
     private coalescedResults?: FrameCoalescer<Parameters<ESSetResultsList<ESBaseMessage, ESMessageContent>>>;
+    private isV1ContentIndexingDone = false;
+    /** Pushes a new status to the hook, triggering a re-render. Called on V1 updates and, later, on self-driven ones. */
+    private updateESStatus: (status: ESStatusConcrete) => void;
+    /** Pushes a new progress snapshot to the hook (raw counter + derived state), triggering a re-render. */
+    private updateESProgress: (timepoint: ESTimepoint, progressState: ESIndexingState) => void;
 
-    esIndexingProgressState = defaultESContext.esIndexingProgressState;
-
-    constructor(
-        private readonly searchService: SearchService,
-        private readonly indexService: IndexService,
+    constructor({
+        searchService,
+        indexService,
+        esCallbacks,
+        esLibraryFunctionsV1,
+        updateESStatus,
+        updateESProgress,
+    }: {
+        searchService: SearchService;
+        indexService: IndexService;
         /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
-        public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>,
+        esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
         /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
-        public esLibraryFunctionsV1: FunctionsV1
-    ) {}
+        esLibraryFunctionsV1: FunctionsV1;
+        updateESStatus: (status: ESStatusConcrete) => void;
+        updateESProgress: (timepoint: ESTimepoint, progressState: ESIndexingState) => void;
+    }) {
+        this.searchService = searchService;
+        this.indexService = indexService;
+        this.esCallbacks = esCallbacks;
+        this.esLibraryFunctionsV1 = esLibraryFunctionsV1;
+        this.updateESStatus = updateESStatus;
+        this.updateESProgress = updateESProgress;
+    }
+
+    waitForSyncing?: (() => Promise<void>) | undefined;
 
     async cacheIndexedDB() {
         // `cacheIndexedDB` is the legacy ES warmup hook; the search UI already calls it when the user
@@ -133,25 +168,29 @@ export class ESAdapter implements FunctionsV2 {
         return true;
     }
 
-    checkESStatusUpdates(previousStatus?: FunctionsV1['esStatus']): FunctionsV1['esStatus'] | undefined {
-        const v1Status = this.esLibraryFunctionsV1.esStatus;
-        if (isDeepEqual(v1Status, previousStatus)) {
-            return undefined;
-        }
-
-        if (v1Status.contentIndexingDone && !previousStatus?.contentIndexingDone) {
-            this.indexService.importFromEncryptedSearch().catch((error) => console.error(error));
-        }
-
-        return v1Status;
+    private get canTriggerImport(): boolean {
+        return this.isV1ContentIndexingDone;
     }
 
-    checkProgressUpdate(progress: [number, number]): [number, number] | undefined {
-        const v1Progress = this.esLibraryFunctionsV1.progressRecorderRef.current;
-        if (isDeepEqual(v1Progress, progress)) {
-            return undefined;
+    /**
+     * Forward a V1 status update. Kept as an entry point (rather than reading V1 directly) so the
+     * adapter can also drive status itself once it emits its own from indexService/searchService.
+     */
+    onV1StatusUpdate(v1Status: FunctionsV1['esStatus']) {
+        const wasContentIndexingDone = this.isV1ContentIndexingDone;
+        this.isV1ContentIndexingDone = v1Status?.contentIndexingDone ?? false;
+        this.updateESStatus(v1Status);
+
+        // Trigger the one-time import only on the false→true transition, not on every status update
+        // once indexing is done.
+        if (!wasContentIndexingDone && this.isV1ContentIndexingDone) {
+            this.indexService.importFromEncryptedSearch().catch((error) => console.error(error));
         }
-        return v1Progress;
+    }
+
+    /** Forward a V1 progress update. Same rationale as {@link onV1StatusUpdate}. */
+    onV1ProgressUpdate(timepoint: ESTimepoint, progressState: ESIndexingState) {
+        this.updateESProgress(timepoint, progressState);
     }
 
     // Highlighting is purely keyword-driven (no index access), so it is ported verbatim from
@@ -210,7 +249,10 @@ export class ESAdapter implements FunctionsV2 {
             // queue to drain so the ES database actually contains this event before we pull the
             // affected messages into the v2 index — otherwise we'd import from a stale ES database.
             await this.esLibraryFunctionsV1.waitForSyncing?.();
-            await this.indexService.importFromEncryptedSearch();
+            if (this.canTriggerImport) {
+                await this.indexService.importFromEncryptedSearch().catch((err) => console.error(err));
+            } else {
+            }
         }
     }
 
