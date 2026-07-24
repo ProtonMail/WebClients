@@ -1,14 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { defaultESStatus } from '@proton/encrypted-search/constants';
+import { defaultESIndexingState, defaultESStatus } from '@proton/encrypted-search/constants';
 import type { IndexingMetrics } from '@proton/encrypted-search/esHelpers';
 import type {
     ESCallbacks,
-    ESStatus,
+    ESIndexingState,
+    ESTimepoint,
     EncryptedSearchFunctions,
     NormalizedSearchParams,
 } from '@proton/encrypted-search/models';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { isSearch } from '../../helpers/elements';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
@@ -17,10 +20,12 @@ import { useMailSelector } from '../../store/hooks';
 
 import { getSharedIndexService } from '../indexation/IndexService';
 import { SearchService } from '../search/SearchService';
-import { ESAdapter } from './ESAdapter';
+import { ESAdapter, type ESStatusConcrete } from './ESAdapter';
 
 export type FunctionsV1 = EncryptedSearchFunctions<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
-export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'progressRecorderRef'>;
+// The reactive surface (esStatus/esIndexingProgressState/progressRecorderRef) is owned by the hook,
+// not the adapter, so the hook can rebuild the functions object when it changes — mirroring V1.
+export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'esIndexingProgressState' | 'progressRecorderRef'>;
 
 interface Props {
     refreshMask: number;
@@ -58,21 +63,28 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
     toggleEncryptedSearch: adapter.toggleEncryptedSearch.bind(adapter),
     getCache: adapter.getCache.bind(adapter),
     resetCache: adapter.resetCache.bind(adapter),
-    esIndexingProgressState: adapter.esIndexingProgressState,
 });
 
 /**
  * Content-search counterpart of {@link useEncryptedSearch}. It exposes the same
  * {@link EncryptedSearchFunctions} surface — implemented, hook-free, in {@link ESAdapter} — so it can
- * be swapped in behind the `ContentSearch` feature flag. This hook only owns the adapter's lifecycle:
- * it keeps a single stable instance (its bound surface) and refreshes the per-render dependencies on it.
+ * be swapped in behind the `ContentSearch` feature flag. This hook owns the adapter's lifecycle and,
+ * mirroring V1, the reactive surface (esStatus/esIndexingProgressState/progressRecorderRef): the
+ * adapter drives these through the setters passed at construction, and the hook rebuilds the returned
+ * functions object whenever they change so consumers re-render — exactly like `useEncryptedSearch`.
  */
 export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1 }: Props): FunctionsV1 => {
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
+    const featureFlag = useFlag('ContentSearch');
 
-    const progressRecorderRef = useRef<[number, number]>([0, 0]);
-    const [esStatus, setESStatus] = useState<ESStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>>();
+    // The reactive surface, owned by the hook. The adapter pushes updates into these via the setters
+    // passed at construction (see below). progressRecorderRef stays a ref like in V1 — it's the raw
+    // [indexed, total] counter — but it's paired with the esIndexingProgressState state update so a
+    // progress tick still triggers a re-render (a ref write alone wouldn't).
+    const [esStatus, setESStatus] = useState<ESStatusConcrete>(defaultESStatus);
+    const [esIndexingProgressState, setESIndexingProgressState] = useState<ESIndexingState>(defaultESIndexingState);
+    const progressRecorderRef = useRef<ESTimepoint>([0, 0]);
 
     // A ref, not useMemo: the adapter owns imperative state that must survive every render — the
     // lazily cold-started search worker and the current search state (see ESAdapter.searchService/lastSearch).
@@ -81,42 +93,60 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1 }: Props): 
     // per-render deps (esCallbacks/esLibraryFunctionsV1, which change most renders) are refreshed
     // onto it below — rather than recreating it, which is what encoding them as memo deps would do.
     // It only depends on the userID which doesn't change within the lifetime of the app.
-    const ref = useRef<{ adapter: ESAdapter; functions: FunctionsV1 }>();
-    if (!ref.current) {
+    const adapterRef = useRef<ESAdapter>();
+    if (!adapterRef.current) {
         const searchService = new SearchService(user.ID, getUserKeys);
         const indexService = getSharedIndexService(user.ID, getUserKeys);
-        const adapter = new ESAdapter(searchService, indexService, esCallbacks, esLibraryFunctionsV1);
-        ref.current = {
-            adapter,
-            functions: { ...toBoundFunctions(adapter), esStatus: defaultESStatus, progressRecorderRef },
-        };
+        adapterRef.current = new ESAdapter({
+            searchService,
+            indexService,
+            esCallbacks,
+            esLibraryFunctionsV1,
+            updateESStatus: setESStatus,
+            updateESProgress: (timepoint, progressState) => {
+                progressRecorderRef.current = timepoint;
+                setESIndexingProgressState(progressState);
+            },
+        });
     }
-
-    const esValue = ref.current.adapter.checkESStatusUpdates(esStatus);
-    if (esValue) {
-        setESStatus(esValue);
-        ref.current.functions.esStatus = esValue;
-    }
-
-    const progressValue = ref.current.adapter.checkProgressUpdate(progressRecorderRef.current);
-    if (progressValue) {
-        progressRecorderRef.current = progressValue;
-        ref.current.functions.progressRecorderRef.current = progressValue;
-    }
-
-    const search = useMailSelector(selectSearch);
-    const isSearching = isSearch(search);
-
-    useEffect(() => {
-        if (!isSearching) {
-            ref.current?.adapter.leaveSearch();
-        }
-    }, [isSearching]);
+    const adapter = adapterRef.current;
 
     // Refresh the per-render dependencies on the (stable) adapter so its bound methods never read
     // stale values — esLibraryFunctionsV1's identity changes when V1's esStatus does.
-    ref.current.adapter.esCallbacks = esCallbacks;
-    ref.current.adapter.esLibraryFunctionsV1 = esLibraryFunctionsV1;
+    adapter.esCallbacks = esCallbacks;
+    adapter.esLibraryFunctionsV1 = esLibraryFunctionsV1;
 
-    return ref.current.functions;
+    // Observe V1's status and progress and forward them into the adapter, which decides what to push
+    // back out through the setters above. Kept as two channels so the import-on-completion side effect
+    // (status) and the progress bar updates stay independent.
+    const v1Status = esLibraryFunctionsV1.esStatus;
+    const v1Timepoint = esLibraryFunctionsV1.progressRecorderRef.current;
+    const v1ProgressState = esLibraryFunctionsV1.esIndexingProgressState;
+
+    useEffect(() => {
+        if (featureFlag) {
+            adapter.onV1StatusUpdate(v1Status);
+        }
+    }, [featureFlag, adapter, v1Status]);
+
+    useEffect(() => {
+        if (featureFlag) {
+            adapter.onV1ProgressUpdate(v1Timepoint, v1ProgressState);
+        }
+    }, [featureFlag, adapter, v1Timepoint, v1ProgressState]);
+
+    const isSearching = isSearch(useMailSelector(selectSearch));
+    useEffect(() => {
+        if (featureFlag && !isSearching) {
+            adapter.leaveSearch();
+        }
+    }, [featureFlag, adapter, isSearching]);
+
+    // Rebuild the functions object whenever the reactive surface changes — the same mechanism V1 uses
+    // (its `useMemo` keyed on esStatus/esIndexingProgressState). The bound method surface is stable, so
+    // a new object identity here is what propagates fresh status/progress to consumers.
+    return useMemo<FunctionsV1>(
+        () => ({ ...toBoundFunctions(adapter), esStatus, esIndexingProgressState, progressRecorderRef }),
+        [adapter, esStatus, esIndexingProgressState]
+    );
 };
