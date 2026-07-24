@@ -1,6 +1,5 @@
 import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
-import { type ReactivateKeysResult, getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { createAddressKeyRouteV2 } from '../../api/keys';
 import {
@@ -19,6 +18,8 @@ import {
     getPrimaryFlag,
 } from '../getActiveKeys';
 import { getInactiveKeys } from '../getInactiveKeys';
+import { getDefaultKeyFlags } from '../keyFlags';
+import type { ReactivateKeysResult } from '../reactivation/interface';
 import { reactivateAddressKeysV2 } from '../reactivation/reactivateKeysProcessV2';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 import { getFilteredImportRecords } from './helper';
