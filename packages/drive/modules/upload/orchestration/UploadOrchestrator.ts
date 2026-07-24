@@ -8,7 +8,7 @@ import { PhotosUploadExecutor } from '../execution/PhotosUploadExecutor';
 import { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { UploadEventSubscriberCallback, UploadTask } from '../types';
-import { type UploadConflictStrategy, type UploadConflictType, UploadStatus, isPhotosUploadItem } from '../types';
+import { type UploadConflictStrategy, type UploadConflictType, UploadStatus } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
 import { getNextTasks } from '../utils/schedulerHelpers';
 import { uploadLogDebug } from '../utils/uploadLogger';
@@ -74,12 +74,11 @@ export class UploadOrchestrator {
         this.conflictManager.removeConflictResolver();
     }
 
-    emitFileQueued(uploadId: string, isForPhotos: boolean, abortController: AbortController): void {
+    emitFileQueued(uploadId: string, isForPhotos: boolean): void {
         void this.eventHandler.handleEvent({
             type: 'file:queued',
             uploadId,
             isForPhotos,
-            abortController,
         });
     }
 
@@ -209,11 +208,12 @@ export class UploadOrchestrator {
         const allItems = queueStore.getQueue();
 
         const childrenIds = getBlockedChildren(uploadId, allItems);
+        if (childrenIds.length === 0) {
+            return;
+        }
 
-        childrenIds.forEach((childId) => {
-            queueStore.updateQueueItems(childId, {
-                status: UploadStatus.ParentCancelled,
-            });
+        queueStore.updateQueueItems(childrenIds, {
+            status: UploadStatus.ParentCancelled,
         });
     }
 
@@ -269,29 +269,10 @@ export class UploadOrchestrator {
     }
 
     /**
-     * Cancel an upload
-     * Emits cancel event for proper cleanup
+     * Cancel one or many uploads in a single store update.
      */
-    async cancel(uploadId: string): Promise<void> {
-        const queueStore = useUploadQueueStore.getState();
-        const item = queueStore.getItem(uploadId);
-
-        if (!item) {
-            return;
-        }
-
-        if (item.type === NodeType.File || item.type === NodeType.Photo) {
-            await this.eventHandler.handleEvent({
-                type: 'file:cancelled',
-                uploadId,
-                isForPhotos: isPhotosUploadItem(item),
-            });
-        } else {
-            await this.eventHandler.handleEvent({
-                type: 'folder:cancelled',
-                uploadId,
-            });
-        }
+    cancel(uploadIds: string[]): void {
+        this.eventHandler.cancel(uploadIds);
     }
 
     stop(): void {

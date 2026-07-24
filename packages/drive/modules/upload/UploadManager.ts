@@ -6,13 +6,15 @@ import generateUID from '@proton/utils/generateUID';
 import { UploadDriveClientRegistry } from './UploadDriveClientRegistry';
 import { UploadOrchestrator } from './orchestration/UploadOrchestrator';
 import { useUploadControllerStore } from './store/uploadController.store';
-import { useUploadQueueStore } from './store/uploadQueue.store';
+import { type UploadItemInput, useUploadQueueStore } from './store/uploadQueue.store';
 import type { UploadConflictType, UploadEventSubscriberCallback } from './types';
 import { EmptyFileDecision, type UploadConflictStrategy, UploadStatus } from './types';
 import { type FolderNode, buildFolderStructure } from './utils/buildFolderStructure';
 import { hasFolderStructure } from './utils/hasFolderStructure';
 import { isEmptyFolderPlaceholder } from './utils/isEmptyFolderPlaceholder';
 import { isDataTransferList, processDroppedItems } from './utils/processDroppedItems';
+
+type FileQueueEntry = { uploadId: string; abortController: AbortController };
 
 /**
  * Public API - thin wrapper around orchestrator
@@ -162,7 +164,6 @@ export class UploadManager {
         parentUid: string | undefined,
         isForPhotos: boolean
     ): Promise<string[]> {
-        const queueStore = useUploadQueueStore.getState();
         const batchId = generateUID();
 
         const filesArray = isDataTransferList(filesOrDataTransfer)
@@ -189,65 +190,51 @@ export class UploadManager {
         });
 
         const hasStructure = hasFolderStructure(filteredFilesArray);
-        const queuedUploadIds = [];
+        const queuedUploadIds: string[] = [];
         if (isForPhotos) {
-            for (const file of filteredFilesArray) {
-                const abortController = new AbortController();
-                const uploadId = queueStore.addItem({
-                    type: NodeType.Photo,
-                    file,
-                    name: file.name,
-                    uploadedBytes: 0,
-                    clearTextExpectedSize: file.size,
-                    status: UploadStatus.Pending,
-                    batchId,
-                    isForPhotos,
-                    allowEmptyFile: confirmedEmptyFiles.has(file),
-                });
-                this.orchestrator.emitFileQueued(uploadId, true, abortController);
-                queuedUploadIds.push(uploadId);
-            }
+            queuedUploadIds.push(
+                ...this.queueFiles(
+                    filteredFilesArray,
+                    (file, uploadId) => ({
+                        type: NodeType.Photo,
+                        uploadId,
+                        file,
+                        name: file.name,
+                        uploadedBytes: 0,
+                        clearTextExpectedSize: file.size,
+                        status: UploadStatus.Pending,
+                        batchId,
+                        isForPhotos,
+                        allowEmptyFile: confirmedEmptyFiles.has(file),
+                    }),
+                    true
+                )
+            );
         } else {
             if (!parentUid) {
                 // Should never happen
-                throw new Error('parentUid is mendatory for non-photos upload, you probably called wrong endpoint');
+                throw new Error('parentUid is mandatory for non-photos upload, you probably called wrong endpoint');
             }
+
+            const makeFileItem = (file: File, uploadId: string): UploadItemInput => ({
+                type: NodeType.File,
+                uploadId,
+                file,
+                parentUid,
+                name: file.name,
+                uploadedBytes: 0,
+                clearTextExpectedSize: file.size,
+                status: UploadStatus.Pending,
+                batchId,
+                allowEmptyFile: confirmedEmptyFiles.has(file),
+            });
+
             if (!hasStructure) {
-                for (const file of filteredFilesArray) {
-                    const abortController = new AbortController();
-                    const uploadId = queueStore.addItem({
-                        type: NodeType.File,
-                        file,
-                        parentUid,
-                        name: file.name,
-                        uploadedBytes: 0,
-                        clearTextExpectedSize: file.size,
-                        status: UploadStatus.Pending,
-                        batchId,
-                        allowEmptyFile: confirmedEmptyFiles.has(file),
-                    });
-                    this.orchestrator.emitFileQueued(uploadId, false, abortController);
-                    queuedUploadIds.push(uploadId);
-                }
+                queuedUploadIds.push(...this.queueFiles(filteredFilesArray, makeFileItem, false));
             } else {
                 const { filesWithStructure, standaloneFiles } = this.separateFilesAndFolders(filteredFilesArray);
 
-                for (const file of standaloneFiles) {
-                    const abortController = new AbortController();
-                    const uploadId = queueStore.addItem({
-                        type: NodeType.File,
-                        file,
-                        parentUid,
-                        name: file.name,
-                        uploadedBytes: 0,
-                        clearTextExpectedSize: file.size,
-                        status: UploadStatus.Pending,
-                        batchId,
-                        allowEmptyFile: confirmedEmptyFiles.has(file),
-                    });
-                    this.orchestrator.emitFileQueued(uploadId, false, abortController);
-                    queuedUploadIds.push(uploadId);
-                }
+                queuedUploadIds.push(...this.queueFiles(standaloneFiles, makeFileItem, false));
 
                 const rootFolders = this.groupFilesByRootFolder(filesWithStructure);
                 for (const rootFiles of rootFolders.values()) {
@@ -261,8 +248,33 @@ export class UploadManager {
         return queuedUploadIds;
     }
 
-    async cancelUpload(uploadId: string): Promise<void> {
-        await this.orchestrator.cancel(uploadId);
+    /**
+     * Builds queue items and abort controllers for a flat list of files, then
+     * commits them to the queue in a single batched update.
+     */
+    private queueFiles(
+        files: File[],
+        makeItem: (file: File, uploadId: string) => UploadItemInput,
+        isForPhotos: boolean
+    ): string[] {
+        const items: UploadItemInput[] = [];
+        const fileQueue: FileQueueEntry[] = [];
+
+        for (const file of files) {
+            const uploadId = generateUID();
+            items.push(makeItem(file, uploadId));
+            fileQueue.push({ uploadId, abortController: new AbortController() });
+        }
+
+        this.commitFileQueue(items, fileQueue, isForPhotos);
+        return fileQueue.map((entry) => entry.uploadId);
+    }
+
+    /**
+     * Cancel one or many uploads in a single store update.
+     */
+    cancel(uploadIds: string[]): void {
+        this.orchestrator.cancel(uploadIds);
     }
 
     retryUpload(uploadId: string): void {
@@ -274,7 +286,8 @@ export class UploadManager {
         }
 
         const abortController = new AbortController();
-        this.orchestrator.emitFileQueued(uploadId, item.type === NodeType.Photo, abortController);
+        useUploadControllerStore.getState().setAbortControllers(new Map([[uploadId, abortController]]));
+        this.orchestrator.emitFileQueued(uploadId, item.type === NodeType.Photo);
 
         queueStore.updateQueueItems(uploadId, {
             status: UploadStatus.Pending,
@@ -361,11 +374,14 @@ export class UploadManager {
      * Creates root folder and recursively adds subfolders and files
      */
     private addFolderStructureToQueue(structure: FolderNode, parentUid: string, batchId: string): void {
-        const queueStore = useUploadQueueStore.getState();
         const folderMap = new Map<string, string>();
+        const items: UploadItemInput[] = [];
+        const fileQueue: FileQueueEntry[] = [];
 
-        const rootFolderId = queueStore.addItem({
+        const rootFolderId = generateUID();
+        items.push({
             type: NodeType.Folder,
+            uploadId: rootFolderId,
             name: structure.name,
             parentUid,
             status: UploadStatus.Pending,
@@ -374,7 +390,28 @@ export class UploadManager {
 
         folderMap.set('', rootFolderId);
 
-        this.flattenFolderStructure(structure, parentUid, rootFolderId, '', batchId, folderMap);
+        this.flattenFolderStructure(structure, parentUid, rootFolderId, '', batchId, folderMap, items, fileQueue);
+
+        this.commitFileQueue(items, fileQueue, false);
+    }
+
+    /**
+     * Inserts queued folders/files into the queue store and registers their abort
+     * controllers, each in a single batched update, then emits one file:queued
+     * event per file. Batching avoids a full store copy per item when queuing many
+     * files at once (e.g. a large folder upload).
+     */
+    private commitFileQueue(items: UploadItemInput[], fileQueue: FileQueueEntry[], isForPhotos: boolean): void {
+        useUploadQueueStore.getState().addItems(items);
+        useUploadControllerStore
+            .getState()
+            .setAbortControllers(
+                new Map(fileQueue.map(({ uploadId, abortController }) => [uploadId, abortController]))
+            );
+
+        for (const { uploadId } of fileQueue) {
+            this.orchestrator.emitFileQueued(uploadId, isForPhotos);
+        }
     }
 
     /**
@@ -387,15 +424,17 @@ export class UploadManager {
         parentUploadId: string | undefined,
         currentPath: string,
         batchId: string,
-        folderMap: Map<string, string>
+        folderMap: Map<string, string>,
+        items: UploadItemInput[],
+        fileQueue: FileQueueEntry[]
     ): void {
-        const queueStore = useUploadQueueStore.getState();
-
         for (const [folderName, subfolder] of node.subfolders) {
             const folderPath = currentPath ? `${currentPath}/${folderName}` : folderName;
+            const uploadId = generateUID();
 
-            const uploadId = queueStore.addItem({
+            items.push({
                 type: NodeType.Folder,
+                uploadId,
                 name: folderName,
                 parentUid,
                 parentUploadId,
@@ -405,13 +444,24 @@ export class UploadManager {
 
             folderMap.set(folderPath, uploadId);
 
-            this.flattenFolderStructure(subfolder, parentUid, uploadId, folderPath, batchId, folderMap);
+            this.flattenFolderStructure(
+                subfolder,
+                parentUid,
+                uploadId,
+                folderPath,
+                batchId,
+                folderMap,
+                items,
+                fileQueue
+            );
         }
 
         for (const file of node.files) {
             const abortController = new AbortController();
-            const uploadId = queueStore.addItem({
+            const uploadId = generateUID();
+            items.push({
                 type: NodeType.File,
+                uploadId,
                 file,
                 parentUid,
                 parentUploadId,
@@ -421,7 +471,7 @@ export class UploadManager {
                 status: UploadStatus.Pending,
                 batchId,
             });
-            this.orchestrator.emitFileQueued(uploadId, false, abortController);
+            fileQueue.push({ uploadId, abortController });
         }
     }
 }

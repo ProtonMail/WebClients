@@ -202,9 +202,10 @@ describe('SDKTransferActivity', () => {
             const pausedHandler = mockOnMessage.mock.calls[0][1];
             pausedHandler();
 
-            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(2);
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('file1', { status: UploadStatus.PausedServer });
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('file2', { status: UploadStatus.PausedServer });
+            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(1);
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(['file1', 'file2'], {
+                status: UploadStatus.PausedServer,
+            });
         });
 
         it('should not affect non-in-progress uploads', () => {
@@ -243,9 +244,8 @@ describe('SDKTransferActivity', () => {
             const resumedHandler = mockOnMessage.mock.calls[1][1];
             resumedHandler();
 
-            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(2);
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('file1', { status: UploadStatus.InProgress });
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('file2', { status: UploadStatus.InProgress });
+            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(1);
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(['file1', 'file2'], { status: UploadStatus.InProgress });
         });
 
         it('should not affect non-paused uploads', () => {
@@ -285,21 +285,21 @@ describe('SDKTransferActivity', () => {
 
             pausedHandler();
             expect(manager.isPaused()).toBe(true);
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('file1', { status: UploadStatus.PausedServer });
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(['file1'], { status: UploadStatus.PausedServer });
 
             mockUpdateQueueItems.mockClear();
             mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.PausedServer }]);
 
             resumedHandler();
             expect(manager.isPaused()).toBe(false);
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('file1', { status: UploadStatus.InProgress });
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(['file1'], { status: UploadStatus.InProgress });
 
             mockUpdateQueueItems.mockClear();
             mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.InProgress }]);
 
             pausedHandler();
             expect(manager.isPaused()).toBe(true);
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('file1', { status: UploadStatus.PausedServer });
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(['file1'], { status: UploadStatus.PausedServer });
         });
     });
 });

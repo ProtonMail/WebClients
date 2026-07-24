@@ -204,8 +204,8 @@ export class ConflictManager {
                     if (isFolder && resolution.existingNodeUid) {
                         const allItems = queueStore.getQueue();
                         const childrenIds = getBlockedChildren(uploadId, allItems);
-                        for (const childId of childrenIds) {
-                            queueStore.updateQueueItems(childId, {
+                        if (childrenIds.length > 0) {
+                            queueStore.updateQueueItems(childrenIds, {
                                 parentUid: resolution.existingNodeUid,
                             });
                         }
@@ -275,11 +275,12 @@ export class ConflictManager {
         const allItems = queueStore.getQueue();
 
         const childrenIds = getBlockedChildren(uploadId, allItems);
+        if (childrenIds.length === 0) {
+            return;
+        }
 
-        childrenIds.forEach((childId) => {
-            queueStore.updateQueueItems(childId, {
-                status: UploadStatus.ParentCancelled,
-            });
+        queueStore.updateQueueItems(childrenIds, {
+            status: UploadStatus.ParentCancelled,
         });
     }
 }
