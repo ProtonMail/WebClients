@@ -49,7 +49,7 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
                                 user={user}
                                 className="flex flex-nowrap items-center color-weak text-no-decoration border-weak border-bottom interactive-pseudo relative py-1"
                             >
-                                <Logo appName={appToLinkTo} variant="glyph-only" className="shrink-0 mr-2" />
+                                <Logo size={9} appName={appToLinkTo} variant="glyph-only" className="shrink-0 mr-2" />
                                 <span className={clsx(current && 'color-norm text-semibold')} aria-hidden>
                                     {appToLinkToName}
                                 </span>
