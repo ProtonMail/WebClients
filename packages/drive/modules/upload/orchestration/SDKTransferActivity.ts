@@ -88,11 +88,12 @@ export class SDKTransferActivity {
         this.isAutomaticallyPaused = true;
 
         const allItems = uploadQueueStore.getQueue();
-        allItems.forEach((item) => {
-            if (item.status === UploadStatus.InProgress) {
-                uploadQueueStore.updateQueueItems(item.uploadId, { status: UploadStatus.PausedServer });
-            }
-        });
+        const inProgressIds = allItems
+            .filter((item) => item.status === UploadStatus.InProgress)
+            .map((item) => item.uploadId);
+        if (inProgressIds.length > 0) {
+            uploadQueueStore.updateQueueItems(inProgressIds, { status: UploadStatus.PausedServer });
+        }
     }
 
     /**
@@ -103,10 +104,11 @@ export class SDKTransferActivity {
         this.isAutomaticallyPaused = false;
 
         const allItems = uploadQueueStore.getQueue();
-        allItems.forEach((item) => {
-            if (item.status === UploadStatus.PausedServer) {
-                uploadQueueStore.updateQueueItems(item.uploadId, { status: UploadStatus.InProgress });
-            }
-        });
+        const pausedIds = allItems
+            .filter((item) => item.status === UploadStatus.PausedServer)
+            .map((item) => item.uploadId);
+        if (pausedIds.length > 0) {
+            uploadQueueStore.updateQueueItems(pausedIds, { status: UploadStatus.InProgress });
+        }
     }
 }

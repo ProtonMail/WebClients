@@ -69,12 +69,12 @@ const handleDrop = async (e: React.DragEvent) => {
 };
 ```
 
-#### `cancelUpload(uploadId: string): void`
+#### `cancel(uploadIds: string[]): void`
 
-Cancel an in-progress upload.
+Cancel one or many in-progress uploads in a single store update.
 
 ```typescript
-uploadManager.cancelUpload(uploadId);
+uploadManager.cancel([uploadId]);
 ```
 
 #### `retryUpload(uploadId: string): void`
