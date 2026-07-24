@@ -22,15 +22,11 @@ const MenuCheckmark = ({ visible }: { visible: boolean }) => {
 interface AllChatsMobileOptionsMenuProps {
     isSelectionMode: boolean;
     onSelectionModeChange: (enabled: boolean) => void;
-    onRequestDeleteAll: () => void;
-    isDeleteAllDisabled: boolean;
 }
 
 export const AllChatsMobileOptionsMenu = ({
     isSelectionMode,
     onSelectionModeChange,
-    onRequestDeleteAll,
-    isDeleteAllDisabled,
 }: AllChatsMobileOptionsMenuProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const anchorRef = useRef<HTMLButtonElement>(null);
@@ -86,25 +82,6 @@ export const AllChatsMobileOptionsMenu = ({
                             {c('collider_2025:Action').t`Select chats`}
                         </span>
                         <MenuCheckmark visible={isSelectionMode} />
-                    </div>
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                    className="justify-start"
-                    disabled={isDeleteAllDisabled}
-                    onMouseDown={(event) => {
-                        event.preventDefault();
-                    }}
-                    onClick={(event) => {
-                        event.stopPropagation();
-                        onRequestDeleteAll();
-                        setIsOpen(false);
-                    }}
-                >
-                    <div className="flex items-center gap-3 w-full">
-                        <LumoIcon name="Flame" size={16} className="color-weak shrink-0" />
-                        <span className="text-sm font-medium flex-1 text-left">
-                            {c('collider_2025: Button').t`Delete all`}
-                        </span>
                     </div>
                 </DropdownMenuButton>
             </MenuDropdown>
