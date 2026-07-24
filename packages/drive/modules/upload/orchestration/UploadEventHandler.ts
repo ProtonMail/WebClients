@@ -1,3 +1,5 @@
+import { NodeType } from '@protontech/drive-sdk';
+
 import metrics from '@proton/metrics';
 
 import { TransferSpeedMetrics } from '../../transferPerformance';
@@ -12,7 +14,7 @@ import type {
     UploadEvent,
     UploadEventSubscriberCallback,
 } from '../types';
-import { UploadStatus } from '../types';
+import { UploadStatus, isPhotosUploadItem } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
 import { uploadLogDebug, uploadLogError } from '../utils/uploadLogger';
 import type { ConflictManager } from './ConflictManager';
@@ -23,8 +25,9 @@ import type { SDKTransferActivity } from './SDKTransferActivity';
  * Delegates to specialized managers for specific concerns
  */
 export class UploadEventHandler {
+    // Unlisted events are notify-only (broadcast to subscribers, no internal handler).
     private eventHandlers: {
-        [K in UploadEvent['type']]: (event: Extract<UploadEvent, { type: K }>) => void | Promise<void>;
+        [K in UploadEvent['type']]?: (event: Extract<UploadEvent, { type: K }>) => void | Promise<void>;
     };
     private eventSubscriptions = new Map<string, UploadEventSubscriberCallback>();
     private uploadSpeedMetrics = new TransferSpeedMetrics((values) => {
@@ -44,7 +47,6 @@ export class UploadEventHandler {
         private onWakeOrchestrator: () => void = () => {}
     ) {
         this.eventHandlers = {
-            'file:queued': (event: Extract<UploadEvent, { type: 'file:queued' }>) => this.handleFileQueued(event),
             'file:preparing': (event: Extract<UploadEvent, { type: 'file:preparing' }>) =>
                 this.handleFilePreparing(event),
             'file:prepared': (event: Extract<UploadEvent, { type: 'file:prepared' }>) => this.handleFilePrepared(event),
@@ -58,15 +60,11 @@ export class UploadEventHandler {
             'file:conflict': (event: Extract<UploadEvent, { type: 'file:conflict' }>) =>
                 this.conflictManager.handleConflict(event.uploadId, event.error),
             'file:empty': (event: Extract<UploadEvent, { type: 'file:empty' }>) => this.handleFileEmpty(event),
-            'file:cancelled': (event: Extract<UploadEvent, { type: 'file:cancelled' }>) =>
-                this.handleFileCancelled(event),
             'folder:conflict': (event: Extract<UploadEvent, { type: 'folder:conflict' }>) =>
                 this.conflictManager.handleConflict(event.uploadId, event.error),
             'folder:complete': (event: Extract<UploadEvent, { type: 'folder:complete' }>) =>
                 this.handleFolderComplete(event),
             'folder:error': (event: Extract<UploadEvent, { type: 'folder:error' }>) => this.handleFolderError(event),
-            'folder:cancelled': (event: Extract<UploadEvent, { type: 'folder:cancelled' }>) =>
-                this.handleFolderCancelled(event),
         };
     }
 
@@ -96,11 +94,6 @@ export class UploadEventHandler {
         if (handler) {
             await (handler as (event: UploadEvent) => void | Promise<void>)(event);
         }
-    }
-
-    private handleFileQueued(event: FileUploadEvent & { type: 'file:queued' }): void {
-        const controllerStore = useUploadControllerStore.getState();
-        controllerStore.setAbortController(event.uploadId, event.abortController);
     }
 
     private handleFilePreparing(event: FileUploadEvent & { type: 'file:preparing' }): void {
@@ -158,7 +151,7 @@ export class UploadEventHandler {
             status: event.isEmpty ? UploadStatus.EmptyFile : UploadStatus.Finished,
             nodeUid: event.nodeUid,
         });
-        controllerStore.removeController(event.uploadId);
+        controllerStore.removeControllers([event.uploadId]);
         if (event.isForPhotos) {
             this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
         } else {
@@ -182,7 +175,7 @@ export class UploadEventHandler {
             status: UploadStatus.Failed,
             error: event.error,
         });
-        controllerStore.removeController(event.uploadId);
+        controllerStore.removeControllers([event.uploadId]);
         if (event.isForPhotos) {
             this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
         } else {
@@ -199,8 +192,8 @@ export class UploadEventHandler {
 
         const allItems = Array.from(queueStore.queue.values());
         const childrenIds = getBlockedChildren(event.uploadId, allItems);
-        for (const childId of childrenIds) {
-            queueStore.updateQueueItems(childId, {
+        if (childrenIds.length > 0) {
+            queueStore.updateQueueItems(childrenIds, {
                 parentUid: event.nodeUid,
             });
         }
@@ -250,7 +243,7 @@ export class UploadEventHandler {
         queueStore.updateQueueItems(event.uploadId, {
             status: UploadStatus.EmptyFile,
         });
-        controllerStore.removeController(event.uploadId);
+        controllerStore.removeControllers([event.uploadId]);
         if (event.isForPhotos) {
             this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
         } else {
@@ -258,35 +251,71 @@ export class UploadEventHandler {
         }
     }
 
-    private async handleFileCancelled(event: FileUploadEvent & { type: 'file:cancelled' }): Promise<void> {
+    /**
+     * Cancel one or many uploads (files, photos and/or folders) in a single store update,
+     * so cancelling triggers a single store notification (and selector recompute) rather than
+     * one per upload.
+     */
+    cancel(uploadIds: string[]): void {
+        if (uploadIds.length === 0) {
+            return;
+        }
+
         const queueStore = useUploadQueueStore.getState();
         const controllerStore = useUploadControllerStore.getState();
+        const allItems = Array.from(queueStore.queue.values());
+        const itemsById = new Map(allItems.map((item) => [item.uploadId, item]));
 
-        this.uploadSpeedMetrics.onFileEnded(event.uploadId);
-        const controller = controllerStore.getController(event.uploadId);
-        if (controller) {
-            controller.abortController.abort();
+        const cancelledIds = uploadIds.filter((uploadId) => itemsById.has(uploadId));
+        if (cancelledIds.length === 0) {
+            return;
+        }
+        const cancelledIdsSet = new Set(cancelledIds);
+
+        for (const uploadId of cancelledIds) {
+            // Folders aren't tracked by the speed metrics, so only report file/photo ends.
+            if (itemsById.get(uploadId)?.type !== NodeType.Folder) {
+                this.uploadSpeedMetrics.onFileEnded(uploadId);
+            }
+            const controller = controllerStore.getController(uploadId);
+            if (controller) {
+                controller.abortController.abort();
+            }
         }
 
-        queueStore.updateQueueItems(event.uploadId, {
-            status: UploadStatus.Cancelled,
-        });
-        controllerStore.removeController(event.uploadId);
-        if (event.isForPhotos) {
-            this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
-        } else {
-            this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        // One pass over the queue keeps this O(queue size) no matter how many ids are cancelled.
+        const parentCancelledIds: string[] = [];
+        for (const item of allItems) {
+            if (
+                item.parentUploadId &&
+                cancelledIdsSet.has(item.parentUploadId) &&
+                !cancelledIdsSet.has(item.uploadId)
+            ) {
+                parentCancelledIds.push(item.uploadId);
+            }
         }
-    }
 
-    private handleFolderCancelled(event: FolderCreationEvent & { type: 'folder:cancelled' }): void {
-        const queueStore = useUploadQueueStore.getState();
+        controllerStore.removeControllers(cancelledIds);
+        queueStore.updateQueueItems(cancelledIds, { status: UploadStatus.Cancelled });
+        if (parentCancelledIds.length > 0) {
+            queueStore.updateQueueItems(parentCancelledIds, { status: UploadStatus.ParentCancelled });
+        }
 
-        queueStore.updateQueueItems(event.uploadId, {
-            status: UploadStatus.Cancelled,
-        });
-        this.cancelFolderChildren(event.uploadId);
+        // Notify subscribers; the store writes above already ran in one batch.
+        for (const uploadId of cancelledIds) {
+            const item = itemsById.get(uploadId);
+            if (!item) {
+                continue;
+            }
+            void this.handleEvent(
+                item.type === NodeType.Folder
+                    ? { type: 'folder:cancelled', uploadId }
+                    : { type: 'file:cancelled', uploadId, isForPhotos: isPhotosUploadItem(item) }
+            );
+        }
+
         this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
     }
 
     dispose(): void {

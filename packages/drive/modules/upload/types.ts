@@ -8,7 +8,7 @@ import type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonD
 import type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
 
 export type FileUploadEvent =
-    | { type: 'file:queued'; uploadId: string; isForPhotos: boolean; abortController: AbortController }
+    | { type: 'file:queued'; uploadId: string; isForPhotos: boolean }
     | { type: 'file:preparing'; uploadId: string; isForPhotos: boolean }
     | { type: 'file:prepared'; uploadId: string; isForPhotos: boolean }
     | {

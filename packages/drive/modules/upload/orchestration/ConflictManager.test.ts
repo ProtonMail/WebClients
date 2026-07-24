@@ -377,15 +377,11 @@ describe('ConflictManager', () => {
                 })
             );
 
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('child1', {
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(['child1', 'child2'], {
                 parentUid: 'existing-folder-456',
             });
 
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('child2', {
-                parentUid: 'existing-folder-456',
-            });
-
-            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(3);
+            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(2);
         });
 
         it('should resolve folder conflict with skip strategy and cancel children', async () => {
@@ -410,15 +406,11 @@ describe('ConflictManager', () => {
                 })
             );
 
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('child1', {
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(['child1', 'child2'], {
                 status: UploadStatus.ParentCancelled,
             });
 
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('child2', {
-                status: UploadStatus.ParentCancelled,
-            });
-
-            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(3);
+            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(2);
         });
     });
 });
