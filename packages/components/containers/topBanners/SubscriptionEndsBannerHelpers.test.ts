@@ -20,12 +20,14 @@ jest.mock('@proton/components/hooks/useShowVPNDashboard', () => ({
 jest.mock('@proton/components/hooks/accounts/useShowDashboard', () => ({
     __esModule: true,
     default: jest.fn(),
-    getDashboardFeatureFlag: jest.fn(),
+    useShowDriveDashboard: jest.fn(),
 }));
 
 const mockUseConfig = require('@proton/components/hooks/useConfig').default as jest.Mock;
 const mockUseShowVPNDashboard = require('@proton/components/hooks/useShowVPNDashboard').default as jest.Mock;
 const mockUseShowDashboard = require('@proton/components/hooks/accounts/useShowDashboard').default as jest.Mock;
+const mockUseShowDriveDashboard = require('@proton/components/hooks/accounts/useShowDashboard')
+    .useShowDriveDashboard as jest.Mock;
 
 const defaultSubscription = buildSubscription();
 
@@ -40,6 +42,7 @@ describe('shouldHideBanner', () => {
         mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONACCOUNT });
         mockUseShowVPNDashboard.mockReturnValue({ showVPNDashboard: false });
         mockUseShowDashboard.mockReturnValue({ showDashboard: false });
+        mockUseShowDriveDashboard.mockReturnValue({ showDashboard: false });
     });
 
     describe('app guard', () => {
