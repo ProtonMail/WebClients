@@ -1,7 +1,6 @@
 import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@protontech/crypto';
 import { CryptoProxy, canKeyEncryptAndDecrypt } from '@protontech/crypto';
 
-import { getDefaultKeyFlags } from '../';
 import { getApiError } from '../../api/helpers/apiErrorHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { HTTP_STATUS_CODE } from '../../constants';
@@ -29,6 +28,7 @@ import {
 } from '../getActiveKeys';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getPrimaryKey } from '../getPrimaryKey';
+import { getDefaultKeyFlags } from '../keyFlags';
 import { getHasMigratedAddressKey } from '../keyMigration';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 import { USER_KEY_USERID } from '../userKeys';
