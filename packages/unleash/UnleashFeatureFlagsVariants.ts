@@ -7,10 +7,7 @@ import type { FeatureFlag } from './UnleashFeatureFlags';
  */
 export const FLAGS_WITH_VARIANT = [
     'VPNDashboard',
-    'MailDashboard',
-    'PassDashboard',
     'DriveDashboard',
-    'MeetDashboard',
     'InboxBringYourOwnEmailSignup',
     'WebApiRateLimiter',
     'MaxContactsImport',
@@ -27,10 +24,7 @@ export const FLAGS_WITH_VARIANT = [
  * Naming convention: `${FlagName}Variant`
  */
 export type VPNDashboardVariant = 'Control' | 'A' | 'B';
-export type MailDashboardVariant = 'A' | 'B';
-export type PassDashboardVariant = 'A' | 'B';
 export type DriveDashboardVariant = 'A' | 'B';
-export type MeetDashboardVariant = 'A' | 'B';
 export type MeetSpotlightTypeVariant = 'no-cta' | 'cta';
 export type InboxBringYourOwnEmailSignupVariant = 'Control' | 'Bold' | 'Light';
 export type WebApiRateLimiterVariant = 'Config';
@@ -61,10 +55,7 @@ type VariantReturnType<TVariantNameValue extends string> = Partial<
  */
 type FeatureFlagVariantMap = {
     VPNDashboard: VariantReturnType<VPNDashboardVariant>;
-    MailDashboard: VariantReturnType<MailDashboardVariant>;
-    PassDashboard: VariantReturnType<PassDashboardVariant>;
     DriveDashboard: VariantReturnType<DriveDashboardVariant>;
-    MeetDashboard: VariantReturnType<MeetDashboardVariant>;
     InboxBringYourOwnEmailSignup: VariantReturnType<InboxBringYourOwnEmailSignupVariant>;
     WebApiRateLimiter: VariantReturnType<WebApiRateLimiterVariant>;
     MaxContactsImport: VariantReturnType<MaxContactsImportVariant>;

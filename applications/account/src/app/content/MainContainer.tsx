@@ -55,7 +55,10 @@ import { useReferralUserEligible } from '@proton/components/containers/referral/
 import LiveChatZendesk from '@proton/components/containers/zendesk/LiveChatZendesk';
 import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
 import { useZendeskChat } from '@proton/components/containers/zendesk/useZendeskChat';
-import useShowDashboard, { useShowGenericDashboard } from '@proton/components/hooks/accounts/useShowDashboard';
+import useShowDashboard, {
+    useShowDriveDashboard,
+    useShowGenericDashboard,
+} from '@proton/components/hooks/accounts/useShowDashboard';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
@@ -249,24 +252,8 @@ const MainContainer = () => {
     const [groups, loadingGroups] = useGroups();
 
     const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(app);
-    const { showDashboard: showMailDashboard, variant: showMailDashboardVariant } = useShowDashboard(
-        app,
-        'MailDashboard'
-    );
-    const { showDashboard: showPassDashboard, variant: showPassDashboardVariant } = useShowDashboard(
-        app,
-        'PassDashboard'
-    );
-
-    const { showDashboard: showDriveDashboard, variant: showDriveDashboardVariant } = useShowDashboard(
-        app,
-        'DriveDashboard'
-    );
-
-    const { showDashboard: showMeetDashboard, variant: showMeetDashboardVariant } = useShowDashboard(
-        app,
-        'MeetDashboard'
-    );
+    const { showDashboard: showDriveDashboard, variant: showDriveDashboardVariant } = useShowDriveDashboard(app);
+    const { showDashboard } = useShowDashboard(app);
 
     const canShowGenericDashboard = useShowGenericDashboard(app);
 
@@ -301,15 +288,10 @@ const MainContainer = () => {
         showThemeSelection,
         assistantKillSwitch,
         referralInfo: referralInfo.uiData,
-        showMailDashboard,
-        showMailDashboardVariant: showMailDashboardVariant.name,
+        showDashboard,
         showGenericDashboard: canShowGenericDashboard,
-        showPassDashboard,
-        showPassDashboardVariant: showPassDashboardVariant.name,
         showDriveDashboard,
         showDriveDashboardVariant: showDriveDashboardVariant.name,
-        showMeetDashboard,
-        showMeetDashboardVariant: showMeetDashboardVariant.name,
         hasPendingInvitations,
     };
 
