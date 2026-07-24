@@ -3,21 +3,25 @@ import { NodeType } from '@protontech/drive-sdk';
 import type { QueueEntry } from '../store/uploadQueue.store';
 import type { FileUploadItems, FolderCreationItem, SchedulerLoad, UploadTask } from '../types';
 import { UploadStatus, isPhotosUploadItem } from '../types';
-import { getFolderDepth, isParentReady } from './dependencyHelpers';
+import { buildItemsById, getFolderDepth, isParentReady } from './dependencyHelpers';
 
-function getReadyFolderTasks(queueItems: QueueEntry[], maxCount: number): UploadTask[] {
+function getReadyFolderTasks(
+    queueItems: QueueEntry[],
+    itemsById: Map<string, QueueEntry>,
+    maxCount: number
+): UploadTask[] {
     const readyFolders = queueItems
         .filter((entry): entry is FolderCreationItem => {
             return (
                 entry.type === NodeType.Folder &&
                 entry.status === UploadStatus.Pending &&
-                isParentReady(entry, queueItems)
+                isParentReady(entry, itemsById)
             );
         })
         // Sort by depth for parent-first creation
         .sort((a, b) => {
-            const depthA = getFolderDepth(a, queueItems);
-            const depthB = getFolderDepth(b, queueItems);
+            const depthA = getFolderDepth(a, itemsById);
+            const depthB = getFolderDepth(b, itemsById);
             return depthA - depthB;
         })
         .slice(0, maxCount);
@@ -32,13 +36,17 @@ function getReadyFolderTasks(queueItems: QueueEntry[], maxCount: number): Upload
     }));
 }
 
-function getReadyFileTasks(queueItems: QueueEntry[], maxCount: number): UploadTask[] {
+function getReadyFileTasks(
+    queueItems: QueueEntry[],
+    itemsById: Map<string, QueueEntry>,
+    maxCount: number
+): UploadTask[] {
     const readyFiles = queueItems
         .filter((entry): entry is FileUploadItems => {
             return (
                 (entry.type === NodeType.File || entry.type === NodeType.Photo) &&
                 entry.status === UploadStatus.Pending &&
-                isParentReady(entry, queueItems)
+                isParentReady(entry, itemsById)
             );
         })
         .slice(0, maxCount);
@@ -81,16 +89,17 @@ export function getNextTasks(
     maxConcurrentFolders: number
 ): UploadTask[] {
     const tasks: UploadTask[] = [];
+    const itemsById = buildItemsById(queueItems);
 
     const availableFolderSlots = maxConcurrentFolders - currentLoad.activeFolders;
     if (availableFolderSlots > 0) {
-        const folderTasks = getReadyFolderTasks(queueItems, availableFolderSlots);
+        const folderTasks = getReadyFolderTasks(queueItems, itemsById, availableFolderSlots);
         tasks.push(...folderTasks);
     }
 
     const availableFileSlots = maxConcurrentFiles - currentLoad.activePreparingFiles;
     if (availableFileSlots > 0) {
-        const fileTasks = getReadyFileTasks(queueItems, availableFileSlots);
+        const fileTasks = getReadyFileTasks(queueItems, itemsById, availableFileSlots);
         tasks.push(...fileTasks);
     }
 

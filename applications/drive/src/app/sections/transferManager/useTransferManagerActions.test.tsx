@@ -27,7 +27,7 @@ jest.mock('@proton/drive/modules/upload', () => {
     return {
         ...jest.requireActual('@proton/drive/modules/upload'),
         uploadManager: {
-            cancelUpload: jest.fn(),
+            cancel: jest.fn(),
             retryUpload: jest.fn(),
         },
         useUploadQueueStore: jest.fn((selector) => {
@@ -213,7 +213,7 @@ describe('useTransferManagerActions', () => {
             await onSubmit();
 
             expect(mockDownloadManager.cancel).toHaveBeenCalledWith(['download-1']);
-            expect(uploadManager.cancelUpload).toHaveBeenCalledWith('upload-1');
+            expect(uploadManager.cancel).toHaveBeenCalledWith(['upload-1']);
             expect(mockDownloadManager.cancel).not.toHaveBeenCalledWith(['download-2']);
         });
 
@@ -233,10 +233,11 @@ describe('useTransferManagerActions', () => {
             const onSubmit = mockShowConfirmModal.mock.calls[0][0].onSubmit;
             await onSubmit();
 
-            expect(uploadManager.cancelUpload).toHaveBeenCalledWith('upload-preparing');
-            expect(uploadManager.cancelUpload).toHaveBeenCalledWith('upload-waiting');
-            expect(uploadManager.cancelUpload).toHaveBeenCalledWith('upload-conflict');
-            expect(uploadManager.cancelUpload).not.toHaveBeenCalledWith('upload-finished');
+            expect(uploadManager.cancel).toHaveBeenCalledWith([
+                'upload-preparing',
+                'upload-waiting',
+                'upload-conflict',
+            ]);
         });
     });
 
@@ -256,7 +257,7 @@ describe('useTransferManagerActions', () => {
             const entry = createMockEntry('upload', BaseTransferStatus.InProgress);
             result.current.cancelTransfer(entry);
 
-            expect(uploadManager.cancelUpload).toHaveBeenCalledWith('test-id');
+            expect(uploadManager.cancel).toHaveBeenCalledWith(['test-id']);
         });
     });
 

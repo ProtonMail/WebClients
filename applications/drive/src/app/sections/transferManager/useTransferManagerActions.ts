@@ -46,10 +46,12 @@ export const useTransferManagerActions = () => {
         const downloadIds = downloadStore.getQueue().map((item) => item.downloadId);
         const uploadIds = uploadStore.getQueue().map((item) => item.uploadId);
         // Cancel in-flight transfers first so abort signals propagate before items vanish from the store.
-        await Promise.all([
-            downloadIds.length > 0 ? downloadManager.cancel(downloadIds) : undefined,
-            ...uploadIds.map((id) => uploadManager.cancelUpload(id)),
-        ]);
+        if (downloadIds.length > 0) {
+            await downloadManager.cancel(downloadIds);
+        }
+        if (uploadIds.length > 0) {
+            uploadManager.cancel(uploadIds);
+        }
         clearDownloads();
         clearUploads();
     };
@@ -60,7 +62,7 @@ export const useTransferManagerActions = () => {
                 void downloadManager.cancel([entry.id]);
             }
             if (entry.type === 'upload') {
-                void uploadManager.cancelUpload(entry.id);
+                uploadManager.cancel([entry.id]);
             }
         },
         [downloadManager]
@@ -114,10 +116,17 @@ export const useTransferManagerActions = () => {
             canUndo: true,
             // needs to be async because that's required by ConfirmModal.onSubmit
             onSubmit: async () => {
-                for (const entry of entries) {
-                    if (isCancellable(entry)) {
-                        cancelTransfer(entry);
-                    }
+                const downloadIds = cancellableEntries
+                    .filter((entry) => entry.type === 'download')
+                    .map((entry) => entry.id);
+                const uploadIds = cancellableEntries
+                    .filter((entry) => entry.type === 'upload')
+                    .map((entry) => entry.id);
+                if (downloadIds.length > 0) {
+                    await downloadManager.cancel(downloadIds);
+                }
+                if (uploadIds.length > 0) {
+                    uploadManager.cancel(uploadIds);
                 }
             },
         });
