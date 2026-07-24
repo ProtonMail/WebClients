@@ -10,6 +10,7 @@
         "test:ci": "jest --coverage --runInBand --ci"
     },
     "dependencies": {
+        "@openpgp/web-stream-tools": "~0.3.1",
         "@proton/account": "workspace:^",
         "@proton/atoms": "workspace:^",
         "@proton/components": "workspace:^",
