@@ -1,75 +1,19 @@
 import { c } from 'ttag';
 
+import type { IconName } from '../../components/LumoIcon/LumoIcon';
+import { DEFAULT_PROJECT_ICON } from './projectIconIds';
+import { getProjectLucideIcon, isKnownProjectIcon, normalizeProjectIconId } from './projectIconMapping';
+
+export type { ProjectIconId } from './projectIconIds';
+export { DEFAULT_PROJECT_ICON, PROJECT_ICONS } from './projectIconIds';
 export interface ProjectCategory {
     id: string;
     name: string;
     icon: string;
+    lucideIcon: IconName;
     color: string;
 }
 
-// Available icons for project icon picker (validated against @proton/icons)
-export const PROJECT_ICONS: string[] = [
-    // Work & Productivity
-    'folder',
-    'file-lines',
-    'calendar-cells',
-    'pass-work',
-    'presentation-screen',
-
-    // Development & Tech
-    'code',
-    'window-terminal',
-    'users-merge',
-    'robot',
-    'rocket',
-    'bolt',
-    'wrench',
-
-    // Design & Creative
-    'palette',
-    'pen-sparks',
-    'camera',
-    'pass-atom',
-
-    // Finance & Commerce
-    'bank',
-    'wallet',
-    'money-bills',
-    'pass-shopping-cart',
-    'pass-shop',
-
-    // Communication & Media
-    'mobile',
-    'tv',
-    'language',
-
-    // Data & Analytics
-    'chart-line',
-    'lightbulb',
-
-    // Nature & Living Things
-    'earth',
-    'pass-leaf',
-    'pass-flower',
-    'pass-fish',
-    'pass-bear',
-    'pass-cream',
-    'sun',
-    'fire',
-
-    // Lifestyle & Personal
-    'pass-home',
-    'pass-heart',
-    'pass-gift',
-    'pass-book',
-    'bookmark',
-
-    // Recreation & Fun
-    'pass-basketball',
-    'pass-pacman',
-];
-
-export const DEFAULT_PROJECT_ICON = 'folder';
 export const DEFAULT_PROJECT_COLOR = '#6D4AFF';
 
 // Icon heuristics: map keywords to icons
@@ -170,24 +114,28 @@ export function getIconFromProjectName(projectName: string): string {
  * - Direct icon names (e.g., 'money-bills', 'heart')
  */
 export function getProjectCategory(iconId?: string): ProjectCategory {
-    // Check if it's a direct icon name from our icon list
-    if (iconId && PROJECT_ICONS.includes(iconId)) {
+    if (iconId && isKnownProjectIcon(iconId)) {
+        const normalizedIcon = normalizeProjectIconId(iconId);
+
         return {
-            id: iconId,
-            name: iconId, // Use icon name as category name
-            icon: iconId, // Icon name is the same as the ID
+            id: normalizedIcon,
+            name: normalizedIcon,
+            icon: normalizedIcon,
+            lucideIcon: getProjectLucideIcon(iconId),
             color: DEFAULT_PROJECT_COLOR,
         };
     }
 
-    // Fallback to default
     return {
         id: 'other',
         name: 'Other',
         icon: DEFAULT_PROJECT_ICON,
+        lucideIcon: getProjectLucideIcon(DEFAULT_PROJECT_ICON),
         color: DEFAULT_PROJECT_COLOR,
     };
 }
+
+export { getProjectLucideIcon, isKnownProjectIcon, normalizeProjectIconId } from './projectIconMapping';
 
 // Map direct icon names to prompt categories for suggestions
 const ICON_TO_PROMPT_CATEGORY: Record<string, string> = {
