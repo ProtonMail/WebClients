@@ -12,6 +12,7 @@ import { useRightPanel } from '../providers/RightPanelProvider';
 interface HeaderConfig {
     component?: React.ReactNode;
     leftButton?: React.ReactNode;
+    rightButton?: React.ReactNode;
     showNewChatButton?: boolean;
 }
 
@@ -42,7 +43,12 @@ export const LumoLayoutWithDrawer = ({ children, header, drawer }: LumoLayoutWit
     const headerConfig = header || {};
     const drawerConfig = drawer || {};
 
-    const { component: headerComponent, leftButton: leftHeaderButton, showNewChatButton = false } = headerConfig;
+    const {
+        component: headerComponent,
+        leftButton: leftHeaderButton,
+        rightButton: rightHeaderButton,
+        showNewChatButton = false,
+    } = headerConfig;
 
     const {
         content: drawerContentComponent,
@@ -89,6 +95,7 @@ export const LumoLayoutWithDrawer = ({ children, header, drawer }: LumoLayoutWit
             <Header
                 withoutDrawerToggle={withoutDrawerToggle}
                 leftHeaderButton={leftHeaderButton}
+                rightHeaderButton={rightHeaderButton}
                 showNewChatButton={showNewChatButton}
             >
                 {headerComponent || null}
