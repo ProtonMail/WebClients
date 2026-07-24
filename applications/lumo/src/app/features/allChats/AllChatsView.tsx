@@ -17,7 +17,6 @@ import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';
 import { useConversationStar } from '../../hooks/useConversationStar';
 import { useDriveFolderIndexing } from '../../hooks/useDriveFolderIndexing';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
-import { useLumoNavigate } from '../../hooks/useLumoNavigate';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useSearchService } from '../../hooks/useSearchService';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
@@ -27,21 +26,18 @@ import { ConversationSidebarActions } from '../../layouts/sidepanel/Conversation
 import { useConversation } from '../../providers/ConversationProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoMemoSelector, useLumoSelector, useLumoStore } from '../../redux/hooks';
-import {
-    selectAnyGeneratedImages,
-    selectConversations,
-    selectConversationsHaveGeneratedImages,
-} from '../../redux/selectors';
+import { selectConversations, selectConversationsHaveGeneratedImages } from '../../redux/selectors';
 import {
     changeConversationTitle,
     pushConversationRequest,
     toggleConversationStarred,
 } from '../../redux/slices/core/conversations';
-import { deleteAllSpacesRequest, selectHasSpaces, selectSpaceMap } from '../../redux/slices/core/spaces';
+import { selectSpaceMap } from '../../redux/slices/core/spaces';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import type { Conversation, ConversationId } from '../../types';
 import { sendConversationDeleteEvent, sendConversationEditTitleEvent } from '../../util/telemetry';
 import { AllChatsHeaderBar } from './AllChatsHeaderBar';
+import { AllChatsHeaderSearch } from './AllChatsHeaderSearch';
 import { deleteConversationsWithSemantics } from './deleteConversationsWithSemantics';
 import type { AllChatsEmptyVariant, AllChatsFilterValue } from './filterAllChatsConversations';
 import { filterAllChatsConversations, getAllChatsEmptyVariant } from './filterAllChatsConversations';
@@ -51,6 +47,7 @@ import { AllChatsMobileHeaderBar } from './mobile/AllChatsMobileHeaderBar';
 import type { AllChatsRowData } from './selectAllChatsRowData';
 import { selectAllChatsRowDataMap } from './selectAllChatsRowData';
 import { AllChatsBulkActionButtons } from './shared/AllChatsBulkActionButtons';
+import { AllChatsFilterSortMenu } from './shared/AllChatsFilterSortMenu';
 
 import './AllChatsView.scss';
 
@@ -413,6 +410,10 @@ interface AllChatsHeaderProps {
     isMobileLayout?: boolean;
     isSelectionMode?: boolean;
     selectedCount?: number;
+    sortField?: ChatHistoryDateField;
+    onSortFieldChange?: (value: ChatHistoryDateField) => void;
+    filter?: AllChatsFilterValue;
+    onFilterChange?: (value: AllChatsFilterValue) => void;
     onBulkDelete?: () => void;
     onBulkFavorite?: () => void;
     onCancelSelection?: () => void;
@@ -427,6 +428,10 @@ const AllChatsHeader = ({
     isMobileLayout = false,
     isSelectionMode = false,
     selectedCount = 0,
+    sortField,
+    onSortFieldChange,
+    filter,
+    onFilterChange,
     onBulkDelete,
     onBulkFavorite,
     onCancelSelection,
@@ -434,12 +439,14 @@ const AllChatsHeader = ({
     const hasSelection = selectedCount > 0;
     const showSelectionActions = isMobileLayout ? isSelectionMode : hasSelection;
     const showConversationCount = isMobileLayout ? !isSelectionMode : !hasSelection;
+    const showFilterSort =
+        !isMobileLayout && !hasSelection && filter !== undefined && onFilterChange && sortField && onSortFieldChange;
 
     return (
         <div
             className={clsx(
-                'all-chats-header flex items-center gap-3 mb-4 shrink-0 ml-2 md:ml-3',
-                showSelectionActions && 'justify-space-between'
+                'all-chats-header flex items-center gap-3 mb-4 shrink-0',
+                (showSelectionActions || showFilterSort) && 'justify-space-between'
             )}
         >
             <div className="flex items-center gap-3 min-w-0">
@@ -467,6 +474,14 @@ const AllChatsHeader = ({
                     ) : null}
                 </div>
             </div>
+            {showFilterSort ? (
+                <AllChatsFilterSortMenu
+                    filter={filter}
+                    onFilterChange={onFilterChange}
+                    sortField={sortField}
+                    onSortFieldChange={onSortFieldChange}
+                />
+            ) : null}
             {showSelectionActions && onBulkDelete && onBulkFavorite ? (
                 <div className="all-chats-header-selection-actions flex items-center gap-2 shrink-0 flex-nowrap">
                     <AllChatsBulkActionButtons
@@ -496,7 +511,6 @@ export const AllChatsView = () => {
     const dispatch = useLumoDispatch();
     const store = useLumoStore();
     const getState = useCallback(() => store.getState(), [store]);
-    const navigate = useLumoNavigate();
     const { createNotification } = useNotifications();
     const conversationsMap = useLumoSelector(selectConversations, shallowEqual);
     const spacesMap = useLumoSelector(selectSpaceMap, shallowEqual);
@@ -506,21 +520,16 @@ export const AllChatsView = () => {
     const isGuest = useIsGuest();
     const favoritesUpsellModal = useModalStateObject();
     const confirmDeleteModal = useModalStateObject();
-    const deleteAllModal = useModalStateObject();
     const { removeIndexedFoldersBySpace } = useDriveFolderIndexing();
     const searchService = useSearchService();
-    const hasSpaces = useLumoSelector(selectHasSpaces);
-    const hasAnyGeneratedImages = useLumoSelector(selectAnyGeneratedImages);
     const { isSmallScreen: isMobileLayout } = useIsLumoSmallScreen();
 
     const [filter, setFilter] = useState<FilterValue>('all');
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [sortField, setSortField] = useState<ChatHistoryDateField>('updatedAt');
     const [selectedIds, setSelectedIds] = useState<Set<ConversationId>>(new Set());
     const [isSelectionMode, setIsSelectionMode] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
-    const [isDeleteAllInProgress, setIsDeleteAllInProgress] = useState(false);
 
     const filteredConversations = useMemo<Conversation[]>(() => {
         return filterAllChatsConversations({
@@ -565,19 +574,6 @@ export const AllChatsView = () => {
             return nextSelectedIds;
         });
     }, [selectionValidConversationIds]);
-
-    useEffect(() => {
-        if (isDeleteAllInProgress && !hasSpaces) {
-            setIsDeleteAllInProgress(false);
-            deleteAllModal.openModal(false);
-            setSelectedIds(new Set());
-            createNotification({
-                type: 'success',
-                text: c('collider_2025: Success').t`All chats deleted successfully`,
-            });
-            navigate('/');
-        }
-    }, [createNotification, deleteAllModal, hasSpaces, isDeleteAllInProgress, navigate]);
 
     const selectedCount = selectedIds.size;
     const allSelected = filteredConversations.length > 0 && selectedCount === filteredConversations.length;
@@ -632,10 +628,6 @@ export const AllChatsView = () => {
 
     const handleSearchQueryChange = useCallback((value: string) => {
         setSearchQuery(value);
-
-        if (value.trim()) {
-            setIsSearchOpen(true);
-        }
     }, []);
 
     const handleBulkFavorite = useCallback(() => {
@@ -661,15 +653,6 @@ export const AllChatsView = () => {
 
         confirmDeleteModal.openModal(true);
     }, [confirmDeleteModal, selectedIds]);
-
-    const requestDeleteAll = useCallback(() => {
-        deleteAllModal.openModal(true);
-    }, [deleteAllModal]);
-
-    const handleConfirmDeleteAll = useCallback(() => {
-        setIsDeleteAllInProgress(true);
-        dispatch(deleteAllSpacesRequest());
-    }, [dispatch]);
 
     const handleConfirmBulkDelete = useCallback(async () => {
         if (selectedIds.size === 0) {
@@ -726,8 +709,6 @@ export const AllChatsView = () => {
         const sharedHeaderProps = {
             searchQuery,
             onSearchQueryChange: handleSearchQueryChange,
-            isSearchOpen,
-            onSearchOpenChange: setIsSearchOpen,
             sortField,
             onSortFieldChange: setSortField,
             filter,
@@ -740,16 +721,9 @@ export const AllChatsView = () => {
                     {...sharedHeaderProps}
                     isSelectionMode={isSelectionMode}
                     onSelectionModeChange={handleSelectionModeChange}
-                    onRequestDeleteAll={requestDeleteAll}
-                    isDeleteAllDisabled={isDeleteAllInProgress || !hasSpaces}
                 />
             ) : (
-                <AllChatsHeaderBar
-                    {...sharedHeaderProps}
-                    onRequestDeleteAll={requestDeleteAll}
-                    isDeleteAllDisabled={isDeleteAllInProgress || !hasSpaces}
-                    hasSelection={selectedCount > 0}
-                />
+                <AllChatsHeaderBar />
             ),
         };
     }, [
@@ -757,14 +731,9 @@ export const AllChatsView = () => {
         handleFilterChange,
         handleSearchQueryChange,
         handleSelectionModeChange,
-        hasSpaces,
-        isDeleteAllInProgress,
         isMobileLayout,
-        isSearchOpen,
         isSelectionMode,
-        requestDeleteAll,
         searchQuery,
-        selectedCount,
         sortField,
     ]);
 
@@ -790,6 +759,15 @@ export const AllChatsView = () => {
                     className="flex flex-column flex-1 w-full mx-auto min-h-0 max-w-custom"
                     style={{ '--max-w-custom': '900px' }}
                 >
+                    {!isMobileLayout ? (
+                        <div className="all-chats-header-search-row mb-4 shrink-0">
+                            <AllChatsHeaderSearch
+                                searchQuery={searchQuery}
+                                onSearchQueryChange={handleSearchQueryChange}
+                            />
+                        </div>
+                    ) : null}
+
                     <AllChatsHeader
                         conversationCount={filteredConversations.length}
                         allSelected={allSelected}
@@ -799,6 +777,10 @@ export const AllChatsView = () => {
                         isMobileLayout={isMobileLayout}
                         isSelectionMode={isSelectionMode}
                         selectedCount={selectedCount}
+                        sortField={sortField}
+                        onSortFieldChange={setSortField}
+                        filter={filter}
+                        onFilterChange={handleFilterChange}
                         onBulkDelete={requestBulkDelete}
                         onBulkFavorite={handleBulkFavorite}
                         onCancelSelection={isMobileLayout ? handleCancelSelection : clearSelection}
@@ -860,16 +842,6 @@ export const AllChatsView = () => {
                     count={selectedCount}
                     hasGeneratedImages={hasGeneratedImages}
                     loading={isDeleting}
-                />
-            )}
-
-            {deleteAllModal.render && (
-                <ConfirmDeleteModal
-                    {...deleteAllModal.modalProps}
-                    handleDelete={handleConfirmDeleteAll}
-                    deleteAll={true}
-                    hasGeneratedImages={hasAnyGeneratedImages}
-                    loading={isDeleteAllInProgress}
                 />
             )}
 

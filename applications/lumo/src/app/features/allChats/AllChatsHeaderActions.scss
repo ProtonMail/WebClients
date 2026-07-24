@@ -5,19 +5,16 @@ im.$media-expressions: $media-expressions;
 
 @use './AllChatsButtons';
 
-.all-chats-header-actions {
-	flex: 0 0 auto;
-	justify-content: flex-end;
-	margin-inline-start: auto;
-	min-inline-size: 0;
-}
-
 .all-chats-header-bar {
 	min-inline-size: 0;
 }
 
+.all-chats-header-bar-inner {
+	min-inline-size: 0;
+}
+
 .all-chats-mobile-header-bar .all-chats-mobile-header-bar-actions {
-	margin-inline-start: auto;
+	flex-shrink: 0;
 }
 
 .all-chats-filter-sort-menu-button-label {
@@ -28,16 +25,9 @@ im.$media-expressions: $media-expressions;
 
 .all-chats-header-search-slot {
 	display: flex;
-	flex: 0 0 auto;
+	flex: 1 1 auto;
 	max-inline-size: 100%;
 	min-inline-size: 0;
-}
-
-.all-chats-header-search-slot-is-open {
-	flex: 0 1 auto;
-	inline-size: min(50%, 28rem);
-	max-inline-size: 50%;
-	min-inline-size: 12rem;
 }
 
 .all-chats-header-search-input {
@@ -57,6 +47,20 @@ im.$media-expressions: $media-expressions;
 		border: 0;
 		box-shadow: none;
 		font-size: 0.875rem;
+	}
+}
+
+.all-chats-header-new-chat {
+	flex-shrink: 0;
+}
+
+.all-chats-header-search-row {
+	min-inline-size: 0;
+}
+
+.all-chats-header-new-chat-text {
+	@include im.media('<=medium') {
+		display: none;
 	}
 }
 
