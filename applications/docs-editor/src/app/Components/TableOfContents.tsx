@@ -7,9 +7,20 @@ import { c } from 'ttag'
 import { useDocsLayoutContext } from '../Containers/DocsLayout'
 import clsx from '@proton/utils/clsx'
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
-import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, usePopperAnchor, Icon } from '@proton/components'
+import {
+  Dropdown,
+  DropdownButton,
+  DropdownMenu,
+  DropdownMenuButton,
+  usePopperAnchor,
+  LabelStack,
+  useLocalState,
+} from '@proton/components'
 import { useStore } from 'zustand'
 import { useEditorState } from '../Containers/EditorStateProvider'
+import { IcCross } from '@proton/icons/icons/IcCross'
+import { IcListBullets } from '@proton/icons/icons/IcListBullets'
+import { IcLink } from '@proton/icons/icons/IcLink'
 
 // distance from top of scroll root to make heading active
 const ACTIVATION_OFFSET = 75
@@ -99,7 +110,7 @@ function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
       >
         <DropdownMenu>
           <DropdownMenuButton onClick={handleCopyLink} className="flex flex-nowrap items-center gap-2">
-            <Icon name="link" />
+            <IcLink />
             <span className="text-sm">{c('Action').t`Copy link`}</span>
           </DropdownMenuButton>
         </DropdownMenu>
@@ -199,6 +210,7 @@ function HeadingParamListener({ scrollToNode }: HeadingParamListenerProps) {
 function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererProps) {
   const [editor] = useLexicalComposerContext()
   const { setLeftPanelActive, leftPanelActive, resetLeftPanelToDefault } = useDocsLayoutContext()
+  const [isNewTagDismissed, setIsNewTagDismissed] = useLocalState(false, 'docs-toc-new-tag')
 
   const scrollToNode = React.useCallback(
     (key: NodeKey) => {
@@ -228,14 +240,26 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
       <HeadingParamListener scrollToNode={scrollToNode} />
       <ActiveHeadingListener tableOfContents={tableOfContents} />
 
-      <div className="table-of-contents flex h-full min-w-0 flex-col gap-4 p-4" data-testid="table-of-contents">
-        <div className="relative flex items-center gap-2">
+      <div className="table-of-contents flex h-full min-w-0 flex-col" data-testid="table-of-contents">
+        <div className="relative flex items-center p-2.5 pl-0 pt-8">
           <button
-            onClick={() => setLeftPanelActive((prev: boolean) => !prev)}
-            className="bg-weak z-20 flex min-h-8 min-w-8 items-center justify-center rounded-full p-2"
+            onClick={() => {
+              setLeftPanelActive((prev: boolean) => !prev)
+              setIsNewTagDismissed(true)
+            }}
+            className={clsx(
+              'relative z-20 flex min-h-8 min-w-8 items-center justify-center rounded-r-full p-2.5',
+              leftPanelActive ? 'bg-transparent' : 'shadow-norm bg-norm',
+            )}
             data-testid="toc-toggle"
           >
-            <Icon name={leftPanelActive ? 'arrow-left' : 'list-bullets'} />
+            {!leftPanelActive && !isNewTagDismissed && (
+              <LabelStack
+                labels={[{ title: c('Info').t`NEW`, name: c('Info').t`NEW`, color: '#179FD9' }]}
+                className="absolute left-full top-0 -translate-x-1/4 -translate-y-2"
+              />
+            )}
+            {leftPanelActive ? <IcCross /> : <IcListBullets />}
           </button>
           <span
             className="text-weak z-10 truncate text-sm font-medium transition-all"
@@ -247,16 +271,19 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
             {c('Title').t`Outline`}
           </span>
         </div>
-        <ul
-          className="flex min-w-0 flex-1 flex-col overflow-y-auto transition-transform"
-          style={{
-            transform: leftPanelActive ? 'translateX(0)' : 'translateX(calc(-100% - 20px))',
-          }}
-        >
-          {tableOfContents.map(([key, text, tag]) => (
-            <ContentItem key={key} nodeKey={key} text={text} tag={tag} scrollToNode={scrollToNode} />
-          ))}
-        </ul>
+
+        <div className="flex flex-col gap-4 p-5 pt-0">
+          <ul
+            className="flex min-w-0 flex-1 flex-col overflow-y-auto transition-transform"
+            style={{
+              transform: leftPanelActive ? 'translateX(0)' : 'translateX(calc(-100% - 20px))',
+            }}
+          >
+            {tableOfContents.map(([key, text, tag]) => (
+              <ContentItem key={key} nodeKey={key} text={text} tag={tag} scrollToNode={scrollToNode} />
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   )
