@@ -23,13 +23,20 @@ export type SshAgentService = {
 type SSHAgentState = {
     enabled: boolean;
     keys: Set<string>;
+    /** Whether this SSH agent service instance has pushed keys to the Rust agent
+     * at least once. The Rust agent lives in the desktop main process and
+     * persists across renderer reloads/account switches, so on a fresh
+     * instance `keys` is empty while the agent may still hold a previous
+     * account's keys. We must not trust the `skip` optimization until we've
+     * reconciled the Rust agent at least once. */
+    syncedOnce: boolean;
 };
 
 export const createSshAgentService = ({
     bridge: { sshAgent },
     datasource,
 }: SshAgentServiceOptions): SshAgentService => {
-    const state: SSHAgentState = { enabled: false, keys: new Set() };
+    const state: SSHAgentState = { enabled: false, syncedOnce: false, keys: new Set() };
 
     const sync = asyncLatest(async (signal, items: SSHKeyItem[]) => {
         if (state.enabled) {
@@ -38,10 +45,14 @@ export const createSshAgentService = ({
                 if (signal.aborted || !isRunning) return;
 
                 const { keys } = state;
-                const skip = items.length === keys.size && items.every((i) => keys.has(getItemRevisionKey(i)));
+                const skip =
+                    state.syncedOnce &&
+                    items.length === keys.size &&
+                    items.every((i) => keys.has(getItemRevisionKey(i)));
                 if (skip) return;
 
                 await sshAgent.setKeys(items);
+                state.syncedOnce = true;
                 state.keys.clear();
                 items.forEach((item) => state.keys.add(getItemRevisionKey(item)));
             } catch (error) {
@@ -68,6 +79,7 @@ export const createSshAgentService = ({
 
         destroy: async () => {
             sync.cancel();
+            state.syncedOnce = false;
             state.keys.clear();
             if (service.enabled) await setEnabled(false);
             await sshAgent.destroy();
@@ -75,6 +87,7 @@ export const createSshAgentService = ({
 
         clear: async () => {
             sync.cancel();
+            state.syncedOnce = false;
             state.keys.clear();
             await sshAgent.clear();
         },
