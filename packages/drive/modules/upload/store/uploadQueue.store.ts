@@ -1,8 +1,6 @@
 import type { NodeType } from '@protontech/drive-sdk';
 import { create } from 'zustand';
 
-import generateUID from '@proton/utils/generateUID';
-
 import {
     type FileUploadItem,
     type FolderCreationItem,
@@ -22,9 +20,9 @@ export type UploadItemConflict = UploadItem & {
 export type QueueEntry = UploadItem | UploadItemConflict;
 
 export type UploadItemInput =
-    | Omit<FileUploadItem, 'lastStatusUpdateTime' | 'uploadId'>
-    | Omit<FolderCreationItem, 'lastStatusUpdateTime' | 'uploadId'>
-    | Omit<PhotosUploadItem, 'lastStatusUpdateTime' | 'uploadId'>;
+    | Omit<FileUploadItem, 'lastStatusUpdateTime'>
+    | Omit<FolderCreationItem, 'lastStatusUpdateTime'>
+    | Omit<PhotosUploadItem, 'lastStatusUpdateTime'>;
 
 type QueueItemUpdate = {
     name?: string;
@@ -47,20 +45,13 @@ type UploadQueueStore = {
     queue: Map<string, QueueEntry>;
 
     /**
-     * Adds a new upload item to the queue.
-     *
-     * @param item - The upload item to add (file or folder)
-     * @returns The generated unique upload ID for this item
-     */
-    addItem: (item: UploadItemInput) => string;
-
-    /**
      * Adds multiple upload items to the queue in a single state update.
      *
-     * @param items - The upload items to add
-     * @returns Array of generated upload IDs in the same order as the input
+     * @param items - The upload items to add, each already carrying its own `uploadId`.
+     * Callers generate the ID themselves so they can reference an item (e.g. as a parent)
+     * while still building the batch, before it is inserted.
      */
-    addItems: (items: UploadItemInput[]) => string[];
+    addItems: (items: UploadItemInput[]) => void;
 
     /**
      * Updates specific properties of a queue item.
@@ -110,25 +101,15 @@ type UploadQueueStore = {
 export const useUploadQueueStore = create<UploadQueueStore>()((set, get) => ({
     queue: new Map(),
 
-    addItem: (item) => {
-        const uploadId = generateUID();
-        set((state) => ({
-            queue: new Map(state.queue).set(uploadId, { ...item, uploadId, lastStatusUpdateTime: new Date() }),
-        }));
-        return uploadId;
-    },
-
     addItems: (items) => {
         const now = new Date();
-        const uploadIds = items.map(() => generateUID());
         set((state) => {
             const queue = new Map(state.queue);
-            for (let i = 0; i < items.length; i++) {
-                queue.set(uploadIds[i], { ...items[i], uploadId: uploadIds[i], lastStatusUpdateTime: now });
+            for (const item of items) {
+                queue.set(item.uploadId, { ...item, lastStatusUpdateTime: now });
             }
             return { queue };
         });
-        return uploadIds;
     },
 
     updateQueueItems: (uploadIds, update) => {
