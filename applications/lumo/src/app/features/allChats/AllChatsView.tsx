@@ -37,7 +37,7 @@ import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import type { Conversation, ConversationId } from '../../types';
 import { sendConversationDeleteEvent, sendConversationEditTitleEvent } from '../../util/telemetry';
 import { AllChatsHeaderBar } from './AllChatsHeaderBar';
-import { AllChatsHeaderSearch } from './AllChatsHeaderSearch';
+import { AllChatsHeaderNewChatButton } from './AllChatsHeaderNewChatButton';
 import { deleteConversationsWithSemantics } from './deleteConversationsWithSemantics';
 import type { AllChatsEmptyVariant, AllChatsFilterValue } from './filterAllChatsConversations';
 import { filterAllChatsConversations, getAllChatsEmptyVariant } from './filterAllChatsConversations';
@@ -449,7 +449,7 @@ const AllChatsHeader = ({
                 (showSelectionActions || showFilterSort) && 'justify-space-between'
             )}
         >
-            <div className="flex items-center gap-3 min-w-0">
+            <div className="flex items-center gap-3 min-w-0 ml-2">
                 {showSelectAll ? (
                     <Checkbox
                         checked={allSelected}
@@ -723,8 +723,9 @@ export const AllChatsView = () => {
                     onSelectionModeChange={handleSelectionModeChange}
                 />
             ) : (
-                <AllChatsHeaderBar />
+                <AllChatsHeaderBar searchQuery={searchQuery} onSearchQueryChange={handleSearchQueryChange} />
             ),
+            rightButton: isMobileLayout ? undefined : <AllChatsHeaderNewChatButton />,
         };
     }, [
         filter,
@@ -754,80 +755,70 @@ export const AllChatsView = () => {
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }} header={layoutHeader}>
-            <div className="all-chats-view flex flex-column flex-nowrap flex-1 px-4 md:px-10 min-h-0 py-4">
-                <div
-                    className="flex flex-column flex-1 w-full mx-auto min-h-0 max-w-custom"
-                    style={{ '--max-w-custom': '900px' }}
-                >
-                    {!isMobileLayout ? (
-                        <div className="all-chats-header-search-row mb-4 shrink-0">
-                            <AllChatsHeaderSearch
-                                searchQuery={searchQuery}
-                                onSearchQueryChange={handleSearchQueryChange}
-                            />
-                        </div>
-                    ) : null}
+            <div className="all-chats-page all-chats-view">
+                <div className="all-chats-page-main flex flex-column flex-1 min-h-0 px-4 md:px-10">
+                    <div className="all-chats-content-column flex flex-column flex-1 min-h-0">
+                        <AllChatsHeader
+                            conversationCount={filteredConversations.length}
+                            allSelected={allSelected}
+                            someSelected={someSelected}
+                            showSelectAll={!isEmpty && (!isMobileLayout || isSelectionMode)}
+                            onToggleSelectAll={toggleSelectAll}
+                            isMobileLayout={isMobileLayout}
+                            isSelectionMode={isSelectionMode}
+                            selectedCount={selectedCount}
+                            sortField={sortField}
+                            onSortFieldChange={setSortField}
+                            filter={filter}
+                            onFilterChange={handleFilterChange}
+                            onBulkDelete={requestBulkDelete}
+                            onBulkFavorite={handleBulkFavorite}
+                            onCancelSelection={isMobileLayout ? handleCancelSelection : clearSelection}
+                        />
 
-                    <AllChatsHeader
-                        conversationCount={filteredConversations.length}
-                        allSelected={allSelected}
-                        someSelected={someSelected}
-                        showSelectAll={!isEmpty && (!isMobileLayout || isSelectionMode)}
-                        onToggleSelectAll={toggleSelectAll}
-                        isMobileLayout={isMobileLayout}
-                        isSelectionMode={isSelectionMode}
-                        selectedCount={selectedCount}
-                        sortField={sortField}
-                        onSortFieldChange={setSortField}
-                        filter={filter}
-                        onFilterChange={handleFilterChange}
-                        onBulkDelete={requestBulkDelete}
-                        onBulkFavorite={handleBulkFavorite}
-                        onCancelSelection={isMobileLayout ? handleCancelSelection : clearSelection}
-                    />
+                        <div className="all-chats-panel flex flex-column flex-1 min-h-0 overflow-hidden">
+                            <div
+                                ref={parentRef}
+                                className={clsx(
+                                    'flex-1 overflow-auto min-h-0 pb-2',
+                                    isMobileLayout && isSelectionMode && 'all-chats-list-with-mobile-bulk-actions'
+                                )}
+                            >
+                                {isEmpty ? (
+                                    <AllChatsEmptyState variant={emptyVariant} />
+                                ) : (
+                                    <div style={{ height: `${virtualizer.getTotalSize()}px`, position: 'relative' }}>
+                                        {virtualItems.map((virtualItem) => {
+                                            const conversation = filteredConversations[virtualItem.index];
+                                            const rowData = rowDataMap[conversation.id] ?? EMPTY_ROW_DATA;
 
-                    <div className="all-chats-panel flex flex-column flex-1 min-h-0 overflow-hidden">
-                        <div
-                            ref={parentRef}
-                            className={clsx(
-                                'flex-1 overflow-auto min-h-0 pb-2',
-                                isMobileLayout && isSelectionMode && 'all-chats-list-with-mobile-bulk-actions'
-                            )}
-                        >
-                            {isEmpty ? (
-                                <AllChatsEmptyState variant={emptyVariant} />
-                            ) : (
-                                <div style={{ height: `${virtualizer.getTotalSize()}px`, position: 'relative' }}>
-                                    {virtualItems.map((virtualItem) => {
-                                        const conversation = filteredConversations[virtualItem.index];
-                                        const rowData = rowDataMap[conversation.id] ?? EMPTY_ROW_DATA;
-
-                                        return (
-                                            <div
-                                                key={conversation.id}
-                                                style={{
-                                                    position: 'absolute',
-                                                    top: 0,
-                                                    left: 0,
-                                                    right: 0,
-                                                    height: `${virtualItem.size}px`,
-                                                    transform: `translateY(${virtualItem.start}px)`,
-                                                }}
-                                            >
-                                                <ConversationRow
-                                                    conversation={conversation}
-                                                    rowData={rowData}
-                                                    isActive={conversation.id === conversationId}
-                                                    isBulkSelected={selectedIds.has(conversation.id)}
-                                                    showBulkSelectCheckbox={!isMobileLayout || isSelectionMode}
-                                                    onToggleBulkSelect={toggleSelectConversation}
-                                                    sortField={sortField}
-                                                />
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            )}
+                                            return (
+                                                <div
+                                                    key={conversation.id}
+                                                    style={{
+                                                        position: 'absolute',
+                                                        top: 0,
+                                                        left: 0,
+                                                        right: 0,
+                                                        height: `${virtualItem.size}px`,
+                                                        transform: `translateY(${virtualItem.start}px)`,
+                                                    }}
+                                                >
+                                                    <ConversationRow
+                                                        conversation={conversation}
+                                                        rowData={rowData}
+                                                        isActive={conversation.id === conversationId}
+                                                        isBulkSelected={selectedIds.has(conversation.id)}
+                                                        showBulkSelectCheckbox={!isMobileLayout || isSelectionMode}
+                                                        onToggleBulkSelect={toggleSelectConversation}
+                                                        sortField={sortField}
+                                                    />
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>

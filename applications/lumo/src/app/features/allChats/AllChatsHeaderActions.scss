@@ -9,6 +9,13 @@ im.$media-expressions: $media-expressions;
 	min-inline-size: 0;
 }
 
+.all-chats-content-column {
+	inline-size: 100%;
+	margin-inline: auto;
+	max-inline-size: 900px;
+	min-inline-size: 0;
+}
+
 .all-chats-header-bar-inner {
 	min-inline-size: 0;
 }
@@ -25,7 +32,6 @@ im.$media-expressions: $media-expressions;
 
 .all-chats-header-search-slot {
 	display: flex;
-	flex: 1 1 auto;
 	max-inline-size: 100%;
 	min-inline-size: 0;
 }
@@ -52,10 +58,6 @@ im.$media-expressions: $media-expressions;
 
 .all-chats-header-new-chat {
 	flex-shrink: 0;
-}
-
-.all-chats-header-search-row {
-	min-inline-size: 0;
 }
 
 .all-chats-header-new-chat-text {
