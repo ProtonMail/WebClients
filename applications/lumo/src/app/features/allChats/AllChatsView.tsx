@@ -449,7 +449,7 @@ const AllChatsHeader = ({
                 (showSelectionActions || showFilterSort) && 'justify-space-between'
             )}
         >
-            <div className="flex items-center gap-3 min-w-0 ml-3">
+            <div className="flex items-center gap-3 min-w-0 ml-2 md:ml-3">
                 {showSelectAll ? (
                     <Checkbox
                         checked={allSelected}
