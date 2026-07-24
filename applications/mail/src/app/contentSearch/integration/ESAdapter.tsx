@@ -14,6 +14,7 @@ import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSear
 import type { IndexService } from '../indexation/IndexService';
 import type { Search } from '../search/Search';
 import type { SearchService } from '../search/SearchService';
+import { IndexingJob, type JobMode } from './IndexingJob';
 import type { FunctionsV1, FunctionsV2 } from './useContentSearch';
 
 export type ESStatusConcrete = ESStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>;
@@ -92,6 +93,10 @@ export class ESAdapter implements FunctionsV2 {
     private lastSearch?: Search;
     private coalescedResults?: FrameCoalescer<Parameters<ESSetResultsList<ESBaseMessage, ESMessageContent>>>;
     private isV1ContentIndexingDone = false;
+    /** The current v1+v2 indexing job, if one is ongoing (a fresh index or a post-event refresh). */
+    private job?: IndexingJob;
+    /** Latest v1 status, kept so a job can be seeded with it (e.g. a refresh started from an event). */
+    private lastV1Status?: ESStatusConcrete;
     /** Pushes a new status to the hook, triggering a re-render. Called on V1 updates and, later, on self-driven ones. */
     private updateESStatus: (status: ESStatusConcrete) => void;
     /** Pushes a new progress snapshot to the hook (raw counter + derived state), triggering a re-render. */
@@ -172,25 +177,56 @@ export class ESAdapter implements FunctionsV2 {
         return this.isV1ContentIndexingDone;
     }
 
+    private startJob(mode: JobMode) {
+        this.job = new IndexingJob(
+            {
+                indexService: this.indexService,
+                initialV1Status: this.lastV1Status!,
+                updateESStatus: this.updateESStatus,
+                updateESProgress: this.updateESProgress,
+                // Read the current v1 instance at call time — its identity changes per render.
+                waitForV1Sync: () => this.esLibraryFunctionsV1.waitForSyncing?.() ?? Promise.resolve(),
+                onFinished: () => {
+                    this.job = undefined;
+                },
+            },
+            mode
+        );
+    }
+
     /**
-     * Forward a V1 status update. Kept as an entry point (rather than reading V1 directly) so the
-     * adapter can also drive status itself once it emits its own from indexService/searchService.
+     * Observe a V1 status update. While an indexing job is live the job owns status (it synthesizes a
+     * coherent one spanning v1 + the v2 import); otherwise we forward V1 verbatim and, at the start of
+     * a fresh index, spin up the job that takes over from here.
      */
     onV1StatusUpdate(v1Status: FunctionsV1['esStatus']) {
+        this.lastV1Status = v1Status;
         const wasContentIndexingDone = this.isV1ContentIndexingDone;
         this.isV1ContentIndexingDone = v1Status?.contentIndexingDone ?? false;
-        this.updateESStatus(v1Status);
 
-        // Trigger the one-time import only on the false→true transition, not on every status update
-        // once indexing is done.
-        if (!wasContentIndexingDone && this.isV1ContentIndexingDone) {
-            this.indexService.importFromEncryptedSearch().catch((error) => console.error(error));
+        if (this.job) {
+            this.job.onV1Status(v1Status);
+            return;
+        }
+
+        // Start the initial job when v1 begins content indexing, or — for an import-only session where
+        // v1 was already indexed in a previous run — on the content-done false→true transition. The job
+        // then drives the v1→import handoff itself.
+        if (v1Status?.isEnablingContentSearch || (!wasContentIndexingDone && this.isV1ContentIndexingDone)) {
+            this.startJob('index');
+            this.job!.onV1Status(v1Status);
+        } else {
+            this.updateESStatus(v1Status);
         }
     }
 
-    /** Forward a V1 progress update. Same rationale as {@link onV1StatusUpdate}. */
+    /** Observe a V1 progress update. Routed to the job while one is live, else forwarded verbatim. */
     onV1ProgressUpdate(timepoint: ESTimepoint, progressState: ESIndexingState) {
-        this.updateESProgress(timepoint, progressState);
+        if (this.job) {
+            this.job.onV1Progress(timepoint, progressState);
+        } else {
+            this.updateESProgress(timepoint, progressState);
+        }
     }
 
     // Highlighting is purely keyword-driven (no index access), so it is ported verbatim from
@@ -245,13 +281,12 @@ export class ESAdapter implements FunctionsV2 {
         if (event) {
             // Record which messages the event touched so the import knows what to refresh.
             await this.indexService.handleEvent(event);
-            // `handleEvent` only enqueues the ES-DB write, it doesn't await it. Wait for the syncing
-            // queue to drain so the ES database actually contains this event before we pull the
-            // affected messages into the v2 index — otherwise we'd import from a stale ES database.
-            await this.esLibraryFunctionsV1.waitForSyncing?.();
-            if (this.canTriggerImport) {
-                await this.indexService.importFromEncryptedSearch().catch((err) => console.error(err));
-            } else {
+            // Import the affected messages into the v2 index. Presented as v1's "refreshing" UI (no
+            // counted bar). The job waits for v1's syncing queue to drain before importing (see
+            // `waitForV1Sync`). Skip if content indexing hasn't finished yet, or if a job is already
+            // live (the initial index will pick these up when it imports).
+            if (this.canTriggerImport && !this.job) {
+                this.startJob('refresh');
             }
         }
     }
@@ -278,6 +313,8 @@ export class ESAdapter implements FunctionsV2 {
     }
 
     async esDelete() {
+        this.job?.dispose();
+        this.job = undefined;
         await this.esLibraryFunctionsV1.esDelete();
     }
 
