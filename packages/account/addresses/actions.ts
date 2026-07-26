@@ -281,6 +281,7 @@ export const createPremiumAddress = ({
 
 export const createMissingKeys = ({
     member,
+    // Plaintext password to set up the member
     password: memberPassword,
     addressesToGenerate,
     onUpdate,
