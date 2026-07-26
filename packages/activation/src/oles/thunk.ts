@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { type AddressKeysState, addressKeysThunk } from '@proton/account/addressKeys';
 import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { orderAddresses } from '@proton/account/addresses/actions';
+import { createMissingKeys, orderAddresses } from '@proton/account/addresses/actions';
 import type { KtState } from '@proton/account/kt';
 import { getKTActivation } from '@proton/account/kt/actions';
 import { UnavailableAddressesError, getMemberAddresses, membersThunk } from '@proton/account/members';
@@ -12,10 +12,8 @@ import { decryptTemporaryPassword, encryptTemporaryPassword } from '@proton/acco
 import { organizationThunk } from '@proton/account/organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';
 import type { ProtonDomainsState } from '@proton/account/protonDomains';
-import { userThunk } from '@proton/account/user';
 import type { UserInvitationsState } from '@proton/account/userInvitations';
-import { userKeysThunk } from '@proton/account/userKeys';
-import { type UserSettingsState, userSettingsThunk } from '@proton/account/userSettings';
+import type { UserSettingsState } from '@proton/account/userSettings';
 import { type CalendarsState, calendarsThunk } from '@proton/calendar/calendars';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -30,13 +28,7 @@ import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { DEFAULT_CALENDAR } from '@proton/shared/lib/calendar/constants';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
-import {
-    ADDRESS_FLAGS,
-    DEFAULT_KEYGEN_TYPE,
-    KEYGEN_CONFIGS,
-    MEMBER_PRIVATE,
-    MEMBER_ROLE,
-} from '@proton/shared/lib/constants';
+import { ADDRESS_FLAGS, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
@@ -52,7 +44,6 @@ import type { Calendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelper';
 import { getDecryptedAddressKeys } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
 import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKeys';
-import { missingKeysSelfProcess } from '@proton/shared/lib/keys/missingKeysSelfProcess';
 import getRandomString from '@proton/utils/getRandomString';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -252,13 +243,10 @@ export const createMigrationBatch = createAsyncThunk<
 
         const errors: CreateMigrationBatchResult['errors'] = [];
 
-        const [organization, members, orgKey, ktUser, ktUserKeys, userSettings] = await Promise.all([
+        const [organization, members, orgKey] = await Promise.all([
             dispatch(organizationThunk()),
             dispatch(membersThunk()),
             dispatch(organizationKeyThunk()),
-            dispatch(userThunk()),
-            dispatch(userKeysThunk()),
-            dispatch(userSettingsThunk()),
         ]);
 
         if (!orgKey.privateKey) {
@@ -327,24 +315,13 @@ export const createMigrationBatch = createAsyncThunk<
                         })
                     );
 
-                    const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
-                        config: extra.config,
-                        api,
-                        ktActivation: dispatch(getKTActivation()),
-                    });
-
-                    await missingKeysSelfProcess({
-                        api,
-                        userKeys: ktUserKeys,
-                        addresses: membersAddresses[selfMember.ID],
-                        addressesToGenerate: [address],
-                        password: extra.authentication.getPassword(),
-                        keyGenConfigForV4Keys: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
-                        supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
-                        keyTransparencyVerify,
-                    });
-
-                    await keyTransparencyCommit(ktUser, ktUserKeys);
+                    await dispatch(
+                        createMissingKeys({
+                            member: selfMember,
+                            addressesToGenerate: [address],
+                            onUpdate: noop,
+                        })
+                    );
 
                     await dispatch(
                         orderAddresses({ member: selfMember, addresses: [address, ...membersAddresses[selfMember.ID]] })
