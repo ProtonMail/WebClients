@@ -6862,7 +6862,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/canvas@npm:^0.1.100":
+"@napi-rs/canvas@npm:^0.1.84":
   version: 0.1.100
   resolution: "@napi-rs/canvas@npm:0.1.100"
   dependencies:
@@ -39752,6 +39752,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"pdfjs-dist@npm:5.4.530":
+  version: 5.4.530
+  resolution: "pdfjs-dist@npm:5.4.530"
+  dependencies:
+    "@napi-rs/canvas": "npm:^0.1.84"
+  dependenciesMeta:
+    "@napi-rs/canvas":
+      optional: true
+  checksum: 10/ce2f637ff45b596c359ab40b10e7efeb48dfe70bb2b7617087752c85a8aaf7eaf8b5a27b28c9e1c1712c74aafe512c29a95006a73006b2cf719eab0f7aec929d
+  languageName: node
+  linkType: hard
+
 "pdfjs-dist@npm:^3.11.174":
   version: 3.11.174
   resolution: "pdfjs-dist@npm:3.11.174"
@@ -39764,18 +39776,6 @@ __metadata:
     path2d-polyfill:
       optional: true
   checksum: 10/f739ffd451718d214e664c943a066dcb4020bc1ed92b5639ae38d6a25ef0bddcc05b35a68c3dfeb95fcfb852377bcb2aef935c780312a229f1f34e682627a8ae
-  languageName: node
-  linkType: hard
-
-"pdfjs-dist@npm:^5.7.284":
-  version: 5.7.284
-  resolution: "pdfjs-dist@npm:5.7.284"
-  dependencies:
-    "@napi-rs/canvas": "npm:^0.1.100"
-  dependenciesMeta:
-    "@napi-rs/canvas":
-      optional: true
-  checksum: 10/6176cc018ec135916492f61086a9164e831ba8b05ae3f921d14a52b1981590b3aae886e9e897d2f5ec74255cb851d09ee67084dcb9b9aaf58a5a1ad69503ca9d
   languageName: node
   linkType: hard
 
@@ -41558,7 +41558,7 @@ __metadata:
     lucide-react: "npm:^1.25.0"
     msw: "npm:2.12.14"
     p-limit: "npm:^6.2.0"
-    pdfjs-dist: "npm:^5.7.284"
+    pdfjs-dist: "npm:5.4.530"
     postcss: "npm:^8.5.19"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
