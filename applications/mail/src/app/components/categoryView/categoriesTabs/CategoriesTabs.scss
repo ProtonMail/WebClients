@@ -22,6 +22,7 @@ $tab-dot-ease: easing(ease-out-quint);
 
 .categories-tabs {
 	background-color: var(--toolbar-background-color);
+	border-block-start: 1px solid var(--border-weak);
 
 	.tab-container {
 		block-size: rem(44);
@@ -150,6 +151,12 @@ $tab-dot-ease: easing(ease-out-quint);
 		.tab-container .tab-label {
 			font-size: rem(13);
 		}
+	}
+}
+
+@include media('>=#{em(620, 16)}') {
+	.categories-tabs {
+		border-block-start: none;
 	}
 }
 
