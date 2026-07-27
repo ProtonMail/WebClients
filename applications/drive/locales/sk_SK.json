@@ -1464,6 +1464,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ LUMO_SHORT_APP_NAME }, aby vám pomohol písať, odpovedať a opravovať emaily."
       ]
     },
     "Attached ics file error": {
@@ -1518,6 +1521,9 @@
       ],
       "You have reached the trial limit.": [
         "Dosiahli ste limit skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } licencií na asistenta písania ${ LUMO_SHORT_APP_NAME } počas skúšobného obdobia."
       ]
     },
     "b2b_trials_Action": {
@@ -1641,6 +1647,15 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie."
       ]
     },
     "BF2025: Deal details": {
@@ -1854,6 +1869,9 @@
       ],
       "Take a tour": [
         "Absolvovať prehliadku"
+      ],
+      "Get 50% offer": [
+        "Využite 50 % zľavu"
       ]
     },
     "Cancellation reminder": {
@@ -7660,6 +7678,36 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Momentálne ste prihlásený ako ${ username } v (${ organizationName }."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje asistenta písania"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
+      ],
+      "Data integrity check failed": [
+        "Kontrola integrity údajov zlyhala"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Najvyššia rýchlosť VPN až 10 Gbps"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Aby sme mohli spustiť vyhľadávanie, musíme vaše súbory indexovať lokálne. Aplikáciu ${ DRIVE_APP_NAME } môžete naďalej používať bežným spôsobom a my vás informujeme, keď bude indexovanie dokončené. Ak túto stránku opustíte, indexovanie sa pozastaví a obnoví sa, keď sa vrátite."
       ]
     },
     "info": {
@@ -8567,6 +8615,15 @@
       ],
       "URL wildcard pattern": [
         "Vzor so zástupnými znakmi v URL"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Povoliť editorom zmeniť oprávnenia a zdieľať."
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Verzia klienta"
       ]
     },
     "Label for contact group color": {
@@ -8837,6 +8894,12 @@
       ],
       "for ${ price }": [
         "za ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Pridať asistenta písania ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -9735,6 +9798,9 @@
       ],
       "Unlock streaming": [
         "Odomknite streamovanie"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -12370,6 +12436,12 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Teraz môžete jednoducho vyhľadávať v Drive súboroch a zároveň udržiavať vaše dáta zabezpečené."
+      ],
+      "Editor permissions": [
+        "Oprávnenia redaktora"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Redaktori teraz môžu spravovať zdieľanie a pozývať ďalších používateľov. Túto funkciu môžete kedykoľvek vypnúť v nastaveniach zdieľania."
       ]
     },
     "sso": {
@@ -14407,6 +14479,12 @@
       ],
       "Users and addresses": [
         "Používatelia a adresy"
+      ],
+      "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importované cez ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Stay for 50% off your next month": [
+        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
       ]
     },
     "Today icon tooltip in mini calendar": {
