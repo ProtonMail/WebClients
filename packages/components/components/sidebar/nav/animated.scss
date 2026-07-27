@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/config' as *;
+
 [data-component='animated-children'] {
 	display: grid;
 	grid-template-rows: 0fr;
@@ -9,5 +11,13 @@
 
 	&[data-state='closed'] {
 		grid-template-rows: 0fr;
+		opacity: 0;
+	}
+
+	// Reserves room for the sidebar items' .interactive focus-ring box-shadow (styles.scss), which
+	// would otherwise get clipped by this element's overflow: hidden. Padding/margin cancel out.
+	> div {
+		padding: $focus-ring-size;
+		margin: -$focus-ring-size;
 	}
 }

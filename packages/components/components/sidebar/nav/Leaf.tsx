@@ -59,7 +59,9 @@ function Leaf({ to, onClick, children, className }: LeafProps) {
         <NavLink
             to={to}
             onClick={onClick}
-            className={(isActive) => clsx('flex gap-2 items-center rounded py-2 px-3', className, isActive && 'active')}
+            className={(isActive) =>
+                clsx('flex gap-2 items-center rounded py-2 px-3 interactive', className, isActive && 'active')
+            }
             data-sidebar-depth={depth}
             data-sidebar-leaf=""
         >
