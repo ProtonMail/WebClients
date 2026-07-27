@@ -10,7 +10,9 @@ import type { PromotionButtonProps } from '@proton/components/components/button/
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import type { IconSize } from '@proton/icons/types';
 import type { UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -50,7 +52,10 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
 
     const buttonProps = inline ? ({ as: 'a', shape: 'underline' } as const) : ({ pill: true, shape: 'solid' } as const);
 
-    const navigateToUpgrade = useNavigateToUpgrade({ upsellRef, path });
+    /** When PassNavbarUpgradeToAccount is enabled, upgrade button opens the
+     * account upgrade page instead of the signup page. */
+    const upgradeToAccount = useFeatureFlag(PassFeature.PassNavbarUpgradeToAccount);
+    const navigateToUpgrade = useNavigateToUpgrade({ upsellRef, path, upgradeToAccount });
 
     /** `onClick` may trigger async wrapped code - since `navigateToUpgrade`
      * will close the popup, ensure we execute `navigateToUpgrade` on next tick */
