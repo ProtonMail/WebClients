@@ -6,7 +6,7 @@ import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector'
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import { categoryIDFromUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
+import { categoryIDFromUrl, getInboxUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
@@ -47,6 +47,7 @@ describe('useCategoryFlagWatcher', () => {
         jest.mocked(useCategoriesView).mockReturnValue(noCategoryAccess);
         jest.mocked(categoryIDFromUrl).mockReturnValue(undefined);
         jest.mocked(setCategoryInUrl).mockReturnValue(CATEGORY_DEFAULT_URL);
+        jest.mocked(getInboxUrl).mockReturnValue(INBOX_URL);
     });
 
     afterEach(() => {
@@ -80,7 +81,7 @@ describe('useCategoryFlagWatcher', () => {
         it('redirects to the default category when category view is enabled', () => {
             jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
             renderHook(() => useCategoryFlagWatcher());
-            expect(setCategoryInUrl).toHaveBeenCalledWith(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+            expect(setCategoryInUrl).toHaveBeenCalledWith(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, '');
             expect(mockDispatch).toHaveBeenCalled();
             expect(mockReplace).toHaveBeenCalledWith(CATEGORY_DEFAULT_URL);
         });
@@ -88,6 +89,22 @@ describe('useCategoryFlagWatcher', () => {
         it('does not redirect when category view is disabled', () => {
             renderHook(() => useCategoryFlagWatcher());
             expect(mockReplace).not.toHaveBeenCalled();
+        });
+
+        it('preserve the mailto hash', () => {
+            const urlWithMailto = `${CATEGORY_DEFAULT_URL}&mailto=mailto:test.com`;
+            jest.mocked(useLocation).mockReturnValue({ pathname: '/inbox', hash: '#mailto=mailto:test.com' } as any);
+            jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
+            jest.mocked(setCategoryInUrl).mockReturnValue(urlWithMailto);
+
+            renderHook(() => useCategoryFlagWatcher());
+
+            expect(setCategoryInUrl).toHaveBeenCalledWith(
+                MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                '#mailto=mailto:test.com'
+            );
+            expect(mockDispatch).toHaveBeenCalled();
+            expect(mockReplace).toHaveBeenCalledWith(urlWithMailto);
         });
     });
 
@@ -105,7 +122,23 @@ describe('useCategoryFlagWatcher', () => {
         it('redirects to inbox when category view is disabled', () => {
             renderHook(() => useCategoryFlagWatcher());
             expect(mockDispatch).toHaveBeenCalled();
+            expect(getInboxUrl).toHaveBeenCalledWith('');
             expect(mockReplace).toHaveBeenCalledWith(INBOX_URL);
+        });
+
+        it('preserve the mailto hash when redirecting to inbox', () => {
+            const inboxUrlWithMailto = `${INBOX_URL}#mailto=mailto:test.com`;
+            jest.mocked(useLocation).mockReturnValue({
+                pathname: '/inbox',
+                hash: '#category=primary&mailto=mailto:test.com',
+            } as any);
+            jest.mocked(getInboxUrl).mockReturnValue(inboxUrlWithMailto);
+
+            renderHook(() => useCategoryFlagWatcher());
+
+            expect(mockDispatch).toHaveBeenCalled();
+            expect(getInboxUrl).toHaveBeenCalledWith('#category=primary&mailto=mailto:test.com');
+            expect(mockReplace).toHaveBeenCalledWith(inboxUrlWithMailto);
         });
     });
 
