@@ -1,19 +1,16 @@
 import isTruthy from '@proton/utils/isTruthy';
 
-import { type ADDON_NAMES, PLANS } from '../constants';
+import { type ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
 import type { FreeSubscription, PlanIDs } from '../interface';
-import {
-    getSupportedAddons,
-    hasLumoAddonFromPlanIDs,
-    hasMeetAddonFromPlanIDs,
-    isLumoAddon,
-    isMeetAddon,
-} from '../plan/addons';
+import { getSupportedAddons, hasAddonFromPlanIDs, isAddonType } from '../plan/addons';
 import { getHasPlusPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from '../plan/helpers';
 import type { PlansMap } from '../plan/interface';
 import { clearPlanIDs } from '../planIDs';
 import { isFreeSubscription } from '../type-guards';
-import { getPlan, getPlanIDs, hasVisionary, isManagedExternally } from './helpers';
+import { getPlan } from './helpers';
+import { isManagedExternally } from './helpers/external-management';
+import { getPlanIDs } from './helpers/plan-ids';
+import { hasVisionary } from './helpers/plan-matching';
 import type { Subscription } from './interface';
 import { SelectedPlan } from './selected-plan';
 
@@ -40,7 +37,7 @@ export function isForbiddenLumoPlus({
     const currentPlanKey = getPlanNameFromIDs(currentPlanIDs);
     const currentPlan = currentPlanKey ? plansMap[currentPlanKey] : undefined;
     const lumoAddonForCurrentPlan = (Object.keys(currentPlanSupportedAddons) as ADDON_NAMES[]).find((key) =>
-        isLumoAddon(key)
+        isAddonType(key, ADDON_PREFIXES.LUMO)
     );
     const lumoAddon = lumoAddonForCurrentPlan ? plansMap[lumoAddonForCurrentPlan as keyof typeof plansMap] : undefined;
     if (currentPlan && lumoAddon) {
@@ -90,7 +87,7 @@ function isForbiddenMeetPlus({
         const currentPlanKey = getPlanNameFromIDs(currentPlanIDs);
         const currentPlan = currentPlanKey ? plansMap[currentPlanKey] : undefined;
         const meetAddonForCurrentPlan = (Object.keys(currentPlanSupportedAddons) as ADDON_NAMES[]).find((key) =>
-            isMeetAddon(key)
+            isAddonType(key, ADDON_PREFIXES.MEET)
         );
         const meetAddon = meetAddonForCurrentPlan
             ? plansMap[meetAddonForCurrentPlan as keyof typeof plansMap]
@@ -116,13 +113,17 @@ function isForbiddenMeetPlus({
 
     // Case 2: current plan is Meet → switch to the new plus plan and add the meet addon.
     // Skip if mobile (multi-subs path) or if the meet addon is already present in newPlanIDs.
-    if (newPlanIDs && !isManagedExternally(subscription) && !hasMeetAddonFromPlanIDs(clearPlanIDs(newPlanIDs))) {
+    if (
+        newPlanIDs &&
+        !isManagedExternally(subscription) &&
+        !hasAddonFromPlanIDs(ADDON_PREFIXES.MEET, clearPlanIDs(newPlanIDs))
+    ) {
         const currentPlanIDs = getPlanIDs(subscription);
         const currentPlanName = getPlanNameFromIDs(currentPlanIDs);
         if (currentPlanName === PLANS.MEET && getHasPlusPlan(newPlanName)) {
             const newPlanSupportedAddons = getSupportedAddons(newPlanIDs);
             const meetAddonForNewPlan = (Object.keys(newPlanSupportedAddons) as ADDON_NAMES[]).find((key) =>
-                isMeetAddon(key)
+                isAddonType(key, ADDON_PREFIXES.MEET)
             );
             const meetAddon = meetAddonForNewPlan ? plansMap[meetAddonForNewPlan as keyof typeof plansMap] : undefined;
             if (meetAddon) {
@@ -204,7 +205,8 @@ function isForbiddenPlusToPlus({
     const isNewPlanAPlusPlan = getHasPlusPlan(newPlanName);
 
     const isSubscribedToLumoPlus = subscribedPlans.some((subscribedPlan) => subscribedPlan.Name === PLANS.LUMO);
-    const newPlanIDsHaveLumoAddon = hasLumoAddonFromPlanIDs(clearPlanIDs(newPlanIDs)) && isNewPlanAPlusPlan;
+    const newPlanIDsHaveLumoAddon =
+        hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, clearPlanIDs(newPlanIDs)) && isNewPlanAPlusPlan;
     const lumoPlusToAnotherPlusWithLumoAddon = isSubscribedToLumoPlus && newPlanIDsHaveLumoAddon;
 
     // case for multi-subs. If user has Lumo Plus on mobile then they are ALLOWED to buy other Plus plans on web. After
@@ -213,7 +215,8 @@ function isForbiddenPlusToPlus({
         isSubscribedToLumoPlus && isNewPlanAPlusPlan && isManagedExternally(subscription);
 
     const isSubscribedToMeetPlus = subscribedPlans.some((subscribedPlan) => subscribedPlan.Name === PLANS.MEET);
-    const newPlanIDsHaveMeetAddon = hasMeetAddonFromPlanIDs(clearPlanIDs(newPlanIDs)) && isNewPlanAPlusPlan;
+    const newPlanIDsHaveMeetAddon =
+        hasAddonFromPlanIDs(ADDON_PREFIXES.MEET, clearPlanIDs(newPlanIDs)) && isNewPlanAPlusPlan;
     const meetPlusToAnotherPlusWithMeetAddon = isSubscribedToMeetPlus && newPlanIDsHaveMeetAddon;
 
     // case for multi-subs. If user has Meet Plus on mobile then they are ALLOWED to buy other Plus plans on web.

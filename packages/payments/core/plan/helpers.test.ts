@@ -1,26 +1,24 @@
 import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
-import { ADDON_NAMES, PLANS } from '../constants';
-import { getLumoAddonNameByPlan, getScribeAddonNameByPlan, isMultiUserPersonalPlan } from './helpers';
+import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
+import { getAddonNameByPlan, isMultiUserPersonalPlan } from './helpers';
 import type { Plan } from './interface';
 
-describe('getScribeAddonNameByPlan', () => {
+describe('getAddonNameByPlan', () => {
     it.each<[plan: PLANS, expectedAddon: ADDON_NAMES]>([
         [PLANS.MAIL_PRO, ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO],
         [PLANS.BUNDLE_PRO, ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO],
         [PLANS.BUNDLE_PRO_2024, ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024],
         [PLANS.MAIL_BUSINESS, ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS],
-    ])('returns %s -> %s', (plan, expectedAddon) => {
-        expect(getScribeAddonNameByPlan(plan)).toBe(expectedAddon);
+    ])('returns scribe %s -> %s', (plan, expectedAddon) => {
+        expect(getAddonNameByPlan(ADDON_PREFIXES.SCRIBE, plan)).toBe(expectedAddon);
     });
 
     it('returns undefined for plans without scribe addon mapping', () => {
-        expect(getScribeAddonNameByPlan(PLANS.MAIL)).toBeUndefined();
-        expect(getScribeAddonNameByPlan(PLANS.VPN2024)).toBeUndefined();
+        expect(getAddonNameByPlan(ADDON_PREFIXES.SCRIBE, PLANS.MAIL)).toBeUndefined();
+        expect(getAddonNameByPlan(ADDON_PREFIXES.SCRIBE, PLANS.VPN2024)).toBeUndefined();
     });
-});
 
-describe('getLumoAddonNameByPlan', () => {
     it.each<[plan: PLANS, expectedAddon: ADDON_NAMES]>([
         // B2C
         [PLANS.MAIL, ADDON_NAMES.LUMO_MAIL],
@@ -45,8 +43,8 @@ describe('getLumoAddonNameByPlan', () => {
         [PLANS.PASS_PRO, ADDON_NAMES.LUMO_PASS_PRO],
         [PLANS.PASS_BUSINESS, ADDON_NAMES.LUMO_PASS_BUSINESS],
         [PLANS.VPN_PASS_BUNDLE_BUSINESS, ADDON_NAMES.LUMO_VPN_PASS_BUNDLE_BUSINESS],
-    ])('returns %s -> %s', (plan, expectedAddon) => {
-        expect(getLumoAddonNameByPlan(plan)).toBe(expectedAddon);
+    ])('returns lumo %s -> %s', (plan, expectedAddon) => {
+        expect(getAddonNameByPlan(ADDON_PREFIXES.LUMO, plan)).toBe(expectedAddon);
     });
 });
 

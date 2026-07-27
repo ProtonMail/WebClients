@@ -1,9 +1,5 @@
-import {
-    type ADDON_NAMES,
-    ADDON_PREFIXES,
-    AddonFeatureLimitKeyMapping,
-    AddonLimit,
-} from '@proton/payments/core/constants';
+import { AddonFeatureLimitKeyMapping, getAddonLimit } from '@proton/payments/core/addon/addons';
+import { type ADDON_NAMES, ADDON_PREFIXES } from '@proton/payments/core/constants';
 import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getSupportedAddons, isAddonType } from '@proton/payments/core/plan/addons';
 import { getAddonMultiplier, getPlanFeatureLimit } from '@proton/payments/core/plan/feature-limits';
@@ -43,7 +39,7 @@ export default function getAddonsPricing({
 
             const min: number = getPlanFeatureLimit(currentPlan, featureLimitKey);
 
-            const max = AddonLimit[addonName] * addonMultiplier;
+            const max = getAddonLimit(addonName) * addonMultiplier;
 
             // Member addon comes with MaxSpace + MaxAddresses
             const value = isSupported

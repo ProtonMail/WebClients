@@ -1,21 +1,17 @@
 import type { EitherOr, Organization } from '@proton/shared/lib/interfaces';
 
-import { ADDON_NAMES, CYCLE, type PLANS } from './constants';
+import { ALL_ADDON_PREFIXES, getAddonConfigByName, getTransferOrder } from './addon/addons';
+import type { AddonTransferStrategy } from './addon/interfaces';
+import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, type PLANS } from './constants';
 import { getDefaultMainCurrency } from './currencies';
-import type { FreeSubscription, PlanIDs } from './interface';
-import {
-    getSupportedAddons,
-    isDomainAddon,
-    isIpAddon,
-    isLumoAddon,
-    isMeetAddon,
-    isMemberAddon,
-    isScribeAddon,
-} from './plan/addons';
+import type { FeatureLimitKey, FreeSubscription, PlanIDs } from './interface';
+import { getSupportedAddons, isAddonType } from './plan/addons';
 import { getPlanFeatureLimit } from './plan/feature-limits';
 import { getPlanNameFromIDs, isMultiUserPersonalPlan } from './plan/helpers';
 import type { Plan } from './plan/interface';
-import { getPlanIDs, getSubscriptionsArray, hasLumo, isManagedExternally } from './subscription/helpers';
+import { getSubscriptionsArray, isManagedExternally } from './subscription/helpers/external-management';
+import { getPlanIDs } from './subscription/helpers/plan-ids';
+import { hasLumo } from './subscription/helpers/plan-matching';
 import type { Subscription } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from './type-guards';
@@ -34,7 +30,7 @@ const getMeetWithEnoughSeats = ({
     // Count existing meet addons across all meet addon name variants
     let meetAddons = 0;
     for (const addonName of Object.values(ADDON_NAMES)) {
-        if (isMeetAddon(addonName)) {
+        if (isAddonType(addonName, ADDON_PREFIXES.MEET)) {
             meetAddons += planIDs[addonName] ?? 0;
         }
     }
@@ -46,7 +42,7 @@ const getMeetWithEnoughSeats = ({
     // cycle and currency don't matter here, we only care about normalizing the planIDs.
     const currentSelectedPlan = SelectedPlan.createNormalized(planIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
     const newSelectedPlan = currentSelectedPlan.changePlan(toPlan.Name as PLANS);
-    const maxMeetsInNewPlan = newSelectedPlan.getMaxMeets();
+    const maxMeetsInNewPlan = newSelectedPlan.getTotalUsers();
 
     // For multi-user personal plans (Duo, Family, PassFamily), the meet addon seat count is locked
     // to the number of members. Always transfer the full seat count so the user doesn't end up
@@ -84,7 +80,7 @@ const getLumoWithEnoughSeats = ({
     // let count all available lumo addons in the new planIDs selection
     let lumoAddons = 0;
     for (const addonName of Object.values(ADDON_NAMES)) {
-        if (isLumoAddon(addonName)) {
+        if (isAddonType(addonName, ADDON_PREFIXES.LUMO)) {
             lumoAddons += planIDs[addonName] ?? 0;
         }
     }
@@ -95,7 +91,7 @@ const getLumoWithEnoughSeats = ({
     const currentPlan = SelectedPlan.createNormalized(planIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
     const newPlan = currentPlan.changePlan(toPlan.Name as PLANS);
 
-    const maxLumosInNewPlan = newPlan.getMaxLumos();
+    const maxLumosInNewPlan = newPlan.getTotalUsers();
 
     return Math.min(transferredLumoAddons, maxLumosInNewPlan);
 };
@@ -110,9 +106,6 @@ export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
     }, {});
 };
 
-const allAddons = ['lumo', 'meet', 'ip', 'scribe', 'member', 'domain'] as const;
-type Addons = (typeof allAddons)[number];
-
 type SwitchPlanOptions = EitherOr<
     EitherOr<
         {
@@ -123,12 +116,12 @@ type SwitchPlanOptions = EitherOr<
             organization: Organization | undefined;
             plans: Plan[];
             /**
-             * If you don't want to transfer some addons, you can pass a set of addons to this parameter.
-             * For example, if you want to transfer all addons except for `lumo`, you can pass `['lumo']`.
+             * If you don't want to transfer some addons, you can pass a set of addon types to this parameter.
+             * For example, to transfer all addons except lumo, pass `[ADDON_PREFIXES.LUMO]`.
              * If you don't want to transfer any addons, you can pass `true`.
              * If you want to transfer all addons, you can pass an empty set/array or ignore this parameter.
              */
-            dontTransferAddons?: Set<Addons> | Addons[] | Addons | boolean;
+            dontTransferAddons?: Set<ADDON_PREFIXES> | ADDON_PREFIXES[] | ADDON_PREFIXES | boolean;
         },
         'currentPlanIDs' | 'subscription'
     >,
@@ -155,15 +148,9 @@ function getNewPlanIDs({ newPlan, newPlanIDs: newPlanIDsParam }: SwitchPlanOptio
     return newPlanIDs;
 }
 
-function getAddonPriority(addonName: ADDON_NAMES): number {
-    // the lower the index of the addon type, the higher the priority.
-    const mapping = [isMemberAddon, isDomainAddon, isIpAddon, isLumoAddon, isMeetAddon, isScribeAddon] as const;
-    return mapping.findIndex((guard) => guard(addonName)) ?? mapping.length;
-}
-
 function getScribeSeatsCoveredByLumo(planIDs: PlanIDs, plans: Plan[]): number {
     const lumoAddonEntry = (Object.entries(planIDs) as [ADDON_NAMES, number][]).find(([addonName]) =>
-        isLumoAddon(addonName)
+        isAddonType(addonName, ADDON_PREFIXES.LUMO)
     );
     if (!lumoAddonEntry) {
         return 0;
@@ -178,6 +165,177 @@ function getScribeSeatsCoveredByLumo(planIDs: PlanIDs, plans: Plan[]): number {
 
     return getPlanFeatureLimit(lumoAddon, 'MaxAI') * lumoAddonQuantity;
 }
+
+export interface TransferAddonArgs {
+    addon: ADDON_NAMES;
+    currentPlanIDs: PlanIDs;
+    newPlanIDs: PlanIDs;
+    plan: Plan;
+    currentPlan: Plan | undefined;
+    organization: Organization;
+    plans: Plan[];
+    dontTransferAddons: Set<ADDON_PREFIXES>;
+    featureLimitKey: FeatureLimitKey;
+}
+
+/** A transfer strategy returns the new addon quantity, or `undefined` to keep the carried-over value. */
+export type TransferAddonFn = (args: TransferAddonArgs) => number | undefined;
+
+// Find out the smallest number of member addons that could accommodate the previously known usage of the
+// resources. For example, if the user had 5 addresses, and each member addon only provides 1 additional
+// address, then we would need to add 5 member addons to cover the previous usage. The maximum is chosen
+// across all types of resources (space, addresses, VPNs, members, calendars) so as to ensure that the new
+// plan covers the maximum usage of any single resource. In addition, we explicitly check how many members
+// were used previously.
+export const transferMember: TransferAddonFn = ({ addon, currentPlanIDs, plan, currentPlan, organization, plans }) => {
+    const memberAddon = plans.find(({ Name }) => Name === addon);
+    if (!memberAddon) {
+        return undefined;
+    }
+
+    const diffSpace =
+        ((organization.UsedMembers > 1 ? organization.AssignedSpace : organization.UsedSpace) || 0) - plan.MaxSpace;
+    const memberAddonsWithEnoughSpace =
+        diffSpace > 0 && memberAddon.MaxSpace ? Math.ceil(diffSpace / memberAddon.MaxSpace) : 0;
+
+    const diffAddresses = (organization.UsedAddresses || 0) - plan.MaxAddresses;
+    const memberAddonsWithEnoughAddresses =
+        diffAddresses > 0 && memberAddon.MaxAddresses ? Math.ceil(diffAddresses / memberAddon.MaxAddresses) : 0;
+
+    const diffVPN = (organization.UsedVPN || 0) - plan.MaxVPN;
+    const memberAddonsWithEnoughVPNConnections =
+        diffVPN > 0 && memberAddon.MaxVPN ? Math.ceil(diffVPN / memberAddon.MaxVPN) : 0;
+
+    const diffMembers = (organization.UsedMembers || 0) - plan.MaxMembers;
+    const memberAddonsWithEnoughMembers =
+        diffMembers > 0 && memberAddon.MaxMembers ? Math.ceil(diffMembers / memberAddon.MaxMembers) : 0;
+
+    const diffCalendars = (organization.UsedCalendars || 0) - plan.MaxCalendars;
+    const memberAddonsWithEnoughCalendars =
+        diffCalendars > 0 && memberAddon.MaxCalendars ? Math.ceil(diffCalendars / memberAddon.MaxCalendars) : 0;
+
+    // count all available member addons in the new planIDs selection
+    let memberAddons = 0;
+    for (const addonName of Object.values(ADDON_NAMES)) {
+        if (isAddonType(addonName, ADDON_PREFIXES.MEMBER)) {
+            memberAddons += currentPlanIDs[addonName] ?? 0;
+        }
+    }
+
+    if (currentPlan) {
+        const membersInTheCurrentPlan = getPlanFeatureLimit(currentPlan, 'MaxMembers');
+        const membersInTheNewPlan = getPlanFeatureLimit(plan, 'MaxMembers');
+        const membersDifference = Math.max(membersInTheCurrentPlan - membersInTheNewPlan, 0);
+        memberAddons += membersDifference;
+    }
+
+    return Math.max(
+        memberAddonsWithEnoughSpace,
+        memberAddonsWithEnoughAddresses,
+        memberAddonsWithEnoughVPNConnections,
+        memberAddonsWithEnoughMembers,
+        memberAddonsWithEnoughCalendars,
+        memberAddons
+    );
+};
+
+export const transferDomain: TransferAddonFn = ({ addon, currentPlanIDs, plan, organization, plans }) => {
+    const domainAddon = plans.find(({ Name }) => Name === addon);
+    const diffDomains = (organization.UsedDomains || 0) - plan.MaxDomains;
+
+    if (!domainAddon) {
+        return undefined;
+    }
+
+    return Math.max(
+        diffDomains > 0 && domainAddon.MaxDomains ? Math.ceil(diffDomains / domainAddon.MaxDomains) : 0,
+        currentPlanIDs[ADDON_NAMES.DOMAIN_BUNDLE_PRO] || 0
+    );
+};
+
+export const transferScribe: TransferAddonFn = ({
+    addon,
+    currentPlanIDs,
+    newPlanIDs,
+    plan,
+    organization,
+    plans,
+    dontTransferAddons,
+}) => {
+    // It's possible to calculate the number of scribe seats already transfered by lumo addons (implicitely)
+    // only because we maintain strict priority of addons processing. Lumo is always processed before Scribe.
+    // We need to do this calculation, because addons that grant Lumo seats also grant Scribe seats.
+    const additionalScribeSeatsCoveredByLumo = !dontTransferAddons.has(ADDON_PREFIXES.LUMO)
+        ? getScribeSeatsCoveredByLumo(newPlanIDs, plans) - getScribeSeatsCoveredByLumo(currentPlanIDs, plans)
+        : 0;
+
+    const scribeAddon = plans.find(({ Name }) => Name === addon);
+    const diffAIs = (organization.UsedAI || 0) - getPlanFeatureLimit(plan, 'MaxAI');
+
+    if (!scribeAddon) {
+        return undefined;
+    }
+
+    const scribeAddonsWithEnoughSeats =
+        diffAIs > 0 && getPlanFeatureLimit(scribeAddon, 'MaxAI')
+            ? Math.ceil(diffAIs / getPlanFeatureLimit(scribeAddon, 'MaxAI'))
+            : 0;
+
+    // let count all available Scribe addons in the new planIDs selection
+    let scribeAddons = 0;
+    for (const addonName of Object.values(ADDON_NAMES)) {
+        if (isAddonType(addonName, ADDON_PREFIXES.SCRIBE)) {
+            scribeAddons += currentPlanIDs[addonName] ?? 0;
+        }
+    }
+
+    // We would apply scribeSeatsRequired as the new value of scribe addon if it wouldn't be double
+    // controlled both by scribe and lumo addons. Similar to how other addons are transferred. But instead,
+    // we are transferring scribeSeatsRequired minus the number of scribe seats implicitly enabled by already
+    // present lumo addons.
+    const scribeSeatsRequired = Math.max(scribeAddonsWithEnoughSeats, scribeAddons);
+    return Math.max(scribeSeatsRequired - additionalScribeSeatsCoveredByLumo, 0);
+};
+
+export const transferLumo: TransferAddonFn = ({ addon, currentPlanIDs, newPlanIDs, plan, organization, plans }) => {
+    const lumoAddon = plans.find(({ Name }) => Name === addon);
+    if (!lumoAddon) {
+        return undefined;
+    }
+
+    const lumoSeatsRequiredByUser = newPlanIDs[addon] ?? 0;
+    // if user requested a Lumo seat, then we will check if their current org already has _Scribe_ seats.
+    // If yes, we will replaces Scribes with Lumo.
+    const lumoSeatsRequiredByOrg = lumoSeatsRequiredByUser >= 1 ? organization.UsedAI : 0;
+
+    return Math.max(
+        lumoSeatsRequiredByUser,
+        lumoSeatsRequiredByOrg,
+        getLumoWithEnoughSeats({ planIDs: currentPlanIDs, lumoAddon, organization, toPlan: plan, plans })
+    );
+};
+
+export const transferMeet: TransferAddonFn = ({ currentPlanIDs, plan, plans }) =>
+    getMeetWithEnoughSeats({ planIDs: currentPlanIDs, toPlan: plan, plans });
+
+// Computed strategy 'subtract-included': new quantity = current total of the feature minus what the
+// new plan already includes.
+export const transferSubtractIncluded: TransferAddonFn = ({ currentPlanIDs, newPlanIDs, plans, featureLimitKey }) => {
+    // cycle and currency don't matter in this case
+    const current = new SelectedPlan(currentPlanIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
+    const next = new SelectedPlan(newPlanIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
+
+    return current.getTotal(featureLimitKey) - next.getCountInPlan(featureLimitKey);
+};
+
+const transferHandlers: Record<AddonTransferStrategy, TransferAddonFn> = {
+    member: transferMember,
+    domain: transferDomain,
+    scribe: transferScribe,
+    lumo: transferLumo,
+    meet: transferMeet,
+    'subtract-included': transferSubtractIncluded,
+};
 
 /**
  * Transfer addons from one plan to another. In different plans, addons have different names
@@ -206,10 +364,10 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
     const currentPlanIDs = currentPlanIDsParam ?? getPlanIDs(subscription);
 
     // Simply normalizing the dontTransferAddons param to a Set.
-    const dontTransferAddons: Set<Addons> = (() => {
-        let initialSet: readonly Addons[];
+    const dontTransferAddons: Set<ADDON_PREFIXES> = (() => {
+        let initialSet: readonly ADDON_PREFIXES[];
         if (typeof dontTransferAddonsParam === 'boolean') {
-            initialSet = allAddons;
+            initialSet = ALL_ADDON_PREFIXES;
         } else if (typeof dontTransferAddonsParam === 'string') {
             initialSet = [dontTransferAddonsParam];
         } else {
@@ -227,7 +385,7 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
         const multisubs = subscription && !isFreeSubscription(subscription) ? getSubscriptionsArray(subscription) : [];
         const hasExternallyManagedLumo = multisubs.some((sub) => isManagedExternally(sub) && hasLumo(sub));
         if (hasExternallyManagedLumo) {
-            dontTransferAddons.add('lumo');
+            dontTransferAddons.add(ADDON_PREFIXES.LUMO);
         }
     }
 
@@ -235,174 +393,55 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
     const plan = plans.find(({ Name }) => Name === getPlanNameFromIDs(newPlanIDs));
     const currentPlan = plans.find(({ Name }) => Name === getPlanNameFromIDs(currentPlanIDs));
 
+    // Transfer order is registry-derived (see getTransferOrder): base render order with a seat-pool
+    // overlay so a pool's preferred type (lumo) is processed before its peers (scribe).
+    const transferOrder = getTransferOrder();
+    const transferIndex = (name: ADDON_NAMES): number => {
+        const addonType = getAddonConfigByName(name)?.addonType;
+        const index = addonType ? transferOrder.indexOf(addonType) : -1;
+        return index === -1 ? transferOrder.length : index;
+    };
     const supportedAddonNames = (Object.keys(supportedAddons) as ADDON_NAMES[]).sort(
-        (a, b) => getAddonPriority(a) - getAddonPriority(b)
+        (a, b) => transferIndex(a) - transferIndex(b)
     );
 
-    // Transfer addons
+    // Transfer addons. Each addon's transfer rule comes from its config: a generic strategy or a
+    // named billing function (member 5-resource calc, scribe↔lumo coupling, meet member-lock, …).
     supportedAddonNames.forEach((addon) => {
         const quantity = currentPlanIDs[addon as keyof PlanIDs];
-
         if (quantity) {
             newPlanIDs[addon] = quantity;
         }
 
-        // Transfer member addons
-        if (isMemberAddon(addon) && plan && organization && !dontTransferAddons.has('member')) {
-            const memberAddon = plans.find(({ Name }) => Name === addon);
-
-            if (memberAddon) {
-                // Find out the smallest number of member addons that could accommodate the previously known usage
-                // of the resources. For example, if the user had 5 addresses, and each member addon only
-                // provides 1 additional address, then we would need to add 5 member addons to cover the previous
-                // usage. The maximum is chosen across all types of resources (space, addresses, VPNs, members,
-                // calendars) so as to ensure that the new plan covers the maximum usage of any single resource.
-                // In addition, we explicitely check how many members were used previously.
-
-                const diffSpace =
-                    ((organization.UsedMembers > 1 ? organization.AssignedSpace : organization.UsedSpace) || 0) -
-                    plan.MaxSpace; // AssignedSpace is the space assigned to members in the organization which count for addon transfer
-                const memberAddonsWithEnoughSpace =
-                    diffSpace > 0 && memberAddon.MaxSpace ? Math.ceil(diffSpace / memberAddon.MaxSpace) : 0;
-
-                const diffAddresses = (organization.UsedAddresses || 0) - plan.MaxAddresses;
-                const memberAddonsWithEnoughAddresses =
-                    diffAddresses > 0 && memberAddon.MaxAddresses
-                        ? Math.ceil(diffAddresses / memberAddon.MaxAddresses)
-                        : 0;
-
-                const diffVPN = (organization.UsedVPN || 0) - plan.MaxVPN;
-                const memberAddonsWithEnoughVPNConnections =
-                    diffVPN > 0 && memberAddon.MaxVPN ? Math.ceil(diffVPN / memberAddon.MaxVPN) : 0;
-
-                const diffMembers = (organization.UsedMembers || 0) - plan.MaxMembers;
-                const memberAddonsWithEnoughMembers =
-                    diffMembers > 0 && memberAddon.MaxMembers ? Math.ceil(diffMembers / memberAddon.MaxMembers) : 0;
-
-                const diffCalendars = (organization.UsedCalendars || 0) - plan.MaxCalendars;
-                const memberAddonsWithEnoughCalendars =
-                    diffCalendars > 0 && memberAddon.MaxCalendars
-                        ? Math.ceil(diffCalendars / memberAddon.MaxCalendars)
-                        : 0;
-
-                // count all available member addons in the new planIDs selection
-                let memberAddons = 0;
-                for (const addonName of Object.values(ADDON_NAMES)) {
-                    if (isMemberAddon(addonName)) {
-                        memberAddons += currentPlanIDs[addonName] ?? 0;
-                    }
-                }
-
-                if (currentPlan) {
-                    const membersInTheCurrentPlan = getPlanFeatureLimit(currentPlan, 'MaxMembers');
-                    const membersInTheNewPlan = getPlanFeatureLimit(plan, 'MaxMembers');
-                    const membersDifference = Math.max(membersInTheCurrentPlan - membersInTheNewPlan, 0);
-                    memberAddons += membersDifference;
-                }
-
-                newPlanIDs[addon] = Math.max(
-                    memberAddonsWithEnoughSpace,
-                    memberAddonsWithEnoughAddresses,
-                    memberAddonsWithEnoughVPNConnections,
-                    memberAddonsWithEnoughMembers,
-                    memberAddonsWithEnoughCalendars,
-                    memberAddons
-                );
-            }
+        const config = getAddonConfigByName(addon);
+        if (!plan || !config || dontTransferAddons.has(config.addonType)) {
+            return;
         }
 
-        // Transfer domain addons
-        if (isDomainAddon(addon) && plan && organization && !dontTransferAddons.has('domain')) {
-            const domainAddon = plans.find(({ Name }) => Name === addon);
-            const diffDomains = (organization.UsedDomains || 0) - plan.MaxDomains;
-
-            if (domainAddon) {
-                newPlanIDs[addon] = Math.max(
-                    diffDomains > 0 && domainAddon.MaxDomains ? Math.ceil(diffDomains / domainAddon.MaxDomains) : 0,
-                    currentPlanIDs[ADDON_NAMES.DOMAIN_BUNDLE_PRO] || 0
-                );
-            }
+        const transferOnPlanSwitch = transferHandlers[config.transferStrategy];
+        // Meet is the only transfer that doesn't require organization data; every other strategy
+        // keeps the carried-over quantity when the organization is unknown (matching prior behaviour).
+        const isMeet = config.transferStrategy === 'meet';
+        if (!isMeet && !organization) {
+            return;
         }
 
-        if (isScribeAddon(addon) && plan && organization && !dontTransferAddons.has('scribe')) {
-            // It's possible to calculate the number of scribe seats already transfered by lumo addons (implicitely)
-            // only because we maintain strict priority of addons processing. Lumo is always processed before Scribe.
-            // We need to do this calculation, because addons that grant Lumo seats also grant Scribe seats.
-            const additionalScribeSeatsCoveredByLumo = !dontTransferAddons.has('lumo')
-                ? getScribeSeatsCoveredByLumo(newPlanIDs, plans) - getScribeSeatsCoveredByLumo(currentPlanIDs, plans)
-                : 0;
+        const args: TransferAddonArgs = {
+            addon,
+            currentPlanIDs,
+            newPlanIDs,
+            plan,
+            currentPlan,
+            organization: organization as Organization,
+            plans,
+            dontTransferAddons,
+            featureLimitKey: config.featureLimit.key,
+        };
 
-            const scribeAddon = plans.find(({ Name }) => Name === addon);
-            const diffAIs = (organization.UsedAI || 0) - getPlanFeatureLimit(plan, 'MaxAI');
+        const value = transferOnPlanSwitch(args);
 
-            if (scribeAddon) {
-                const scribeAddonsWithEnoughSeats =
-                    diffAIs > 0 && getPlanFeatureLimit(scribeAddon, 'MaxAI')
-                        ? Math.ceil(diffAIs / getPlanFeatureLimit(scribeAddon, 'MaxAI'))
-                        : 0;
-
-                // let count all available Scribe addons in the new planIDs selection
-                let scribeAddons = 0;
-                for (const addonName of Object.values(ADDON_NAMES)) {
-                    if (isScribeAddon(addonName)) {
-                        scribeAddons += currentPlanIDs[addonName] ?? 0;
-                    }
-                }
-
-                // We would apply scribeSeatsRequired as the new value of scribe addon if it wouldn't be double
-                // controlled both by scribe and lumo addons. Similar to how other addons are transferred.
-                const scribeSeatsRequired = Math.max(scribeAddonsWithEnoughSeats, scribeAddons);
-
-                // But instead, we are transferring scribeSeatsRequired minus the number of scribe seats implicitly
-                // enabled by already present lumo addons.
-                //
-                // Note: in the future we might need to take into account the fact that lumo + scribe seats can't exceed
-                // the total number of members in the selected planIDs. I *think* that the current code strcture
-                // enforces this behavior, but I never formally validated it at time of writing this comment.
-                newPlanIDs[addon] = Math.max(scribeSeatsRequired - additionalScribeSeatsCoveredByLumo, 0);
-            }
-        }
-
-        if (isLumoAddon(addon) && plan && organization && !dontTransferAddons.has('lumo')) {
-            const lumoAddon = plans.find(({ Name }) => Name === addon);
-
-            if (lumoAddon) {
-                const lumoSeatsRequiredByUser = newPlanIDs[addon] ?? 0;
-                // if user requested a Lumo seat, then we will check if their current org already has _Scribe_ seats.
-                // If yes, we will replaces Scribes with Lumo.
-                const lumoSeatsRequiredByOrg = lumoSeatsRequiredByUser >= 1 ? organization.UsedAI : 0;
-
-                newPlanIDs[addon] = Math.max(
-                    lumoSeatsRequiredByUser,
-                    lumoSeatsRequiredByOrg,
-                    getLumoWithEnoughSeats({
-                        planIDs: currentPlanIDs,
-                        lumoAddon,
-                        organization,
-                        toPlan: plan,
-                        plans,
-                    })
-                );
-            }
-        }
-
-        if (isMeetAddon(addon) && plan && !dontTransferAddons.has('meet')) {
-            newPlanIDs[addon] = getMeetWithEnoughSeats({
-                planIDs: currentPlanIDs,
-                toPlan: plan,
-                plans,
-            });
-        }
-
-        if (isIpAddon(addon) && plan && organization && !dontTransferAddons.has('ip')) {
-            // cycle and currency don't matter in this case
-            const currentPlan = new SelectedPlan(currentPlanIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
-            const newPlan = new SelectedPlan(newPlanIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
-
-            const totalIPs = currentPlan.getTotalIPs();
-            const ipAddonsRequired = totalIPs - newPlan.getIncludedIPs();
-
-            newPlanIDs[addon] = ipAddonsRequired;
+        if (value !== undefined) {
+            newPlanIDs[addon] = value;
         }
     });
 

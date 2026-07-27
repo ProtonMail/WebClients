@@ -2,7 +2,7 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { PLANS_MAP, getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 
-import { ADDON_NAMES, PLANS } from './constants';
+import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from './constants';
 import type { PlanIDs } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
 import {
@@ -245,6 +245,62 @@ describe('switchPlan', () => {
         });
     });
 
+    // The member transfer takes Math.max across five org-usage resource terms (space/addresses/VPN/
+    // members/calendars). Each case below pushes ONE term so it dominates, switching mailpro -> bundlepro
+    // (same plan MaxMembers, so the plan-baseline term is 0). Target member addon 1member-bundlepro2022
+    // grants: MaxSpace 1 TiB, MaxVPN 10, MaxCalendars 25, MaxMembers 1.
+    describe('member addon transfer — organization usage terms', () => {
+        const TIB = 1024 ** 4;
+        const transferToBundlePro = (organization: Organization) =>
+            switchPlan({
+                currentPlanIDs: { [PLANS.MAIL_PRO]: 1 },
+                newPlan: PLANS.BUNDLE_PRO,
+                plans: getLongTestPlans(),
+                organization,
+            });
+
+        it('sizes members by used space (UsedSpace, single member)', () => {
+            // diff = 4 TiB used − 1 TiB plan = 3 TiB; ceil(3 TiB / 1 TiB addon) = 3
+            expect(transferToBundlePro({ UsedMembers: 1, UsedSpace: 4 * TIB } as Organization)).toEqual({
+                [PLANS.BUNDLE_PRO]: 1,
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 3,
+            });
+        });
+
+        it('sizes members by assigned space when there are multiple members (AssignedSpace)', () => {
+            // UsedMembers > 1 ⇒ impl reads AssignedSpace. diff = 3 TiB − 1 TiB = 2 TiB ⇒ 2 (dominates the
+            // members term of 1 from UsedMembers=2).
+            expect(transferToBundlePro({ UsedMembers: 2, AssignedSpace: 3 * TIB } as Organization)).toEqual({
+                [PLANS.BUNDLE_PRO]: 1,
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 2,
+            });
+        });
+
+        it('sizes members by used VPN connections (UsedVPN)', () => {
+            // diff = 45 − 10 = 35; ceil(35 / 10) = 4
+            expect(transferToBundlePro({ UsedVPN: 45 } as Organization)).toEqual({
+                [PLANS.BUNDLE_PRO]: 1,
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 4,
+            });
+        });
+
+        it('sizes members by used calendars (UsedCalendars)', () => {
+            // diff = 130 − 25 = 105; ceil(105 / 25) = 5
+            expect(transferToBundlePro({ UsedCalendars: 130 } as Organization)).toEqual({
+                [PLANS.BUNDLE_PRO]: 1,
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 5,
+            });
+        });
+
+        it('sizes members by used members (UsedMembers)', () => {
+            // diff = 7 − 1 = 6; ceil(6 / 1) = 6
+            expect(transferToBundlePro({ UsedMembers: 7 } as Organization)).toEqual({
+                [PLANS.BUNDLE_PRO]: 1,
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 6,
+            });
+        });
+    });
+
     it('should transfer scribe addons', () => {
         const currentPlanIDs = {
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -400,7 +456,7 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: new Set(['member']),
+                dontTransferAddons: new Set([ADDON_PREFIXES.MEMBER]),
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -416,7 +472,7 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: 'member',
+                dontTransferAddons: ADDON_PREFIXES.MEMBER,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -433,7 +489,7 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: new Set(['ip']),
+                dontTransferAddons: new Set([ADDON_PREFIXES.IP]),
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -449,7 +505,7 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: 'ip',
+                dontTransferAddons: ADDON_PREFIXES.IP,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -466,7 +522,7 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: new Set(['domain']),
+                dontTransferAddons: new Set([ADDON_PREFIXES.DOMAIN]),
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -482,7 +538,7 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: 'domain',
+                dontTransferAddons: ADDON_PREFIXES.DOMAIN,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -499,7 +555,7 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: new Set(['lumo']),
+                dontTransferAddons: new Set([ADDON_PREFIXES.LUMO]),
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -515,7 +571,7 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: 'lumo',
+                dontTransferAddons: ADDON_PREFIXES.LUMO,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -532,7 +588,7 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: new Set(['scribe']),
+                dontTransferAddons: new Set([ADDON_PREFIXES.SCRIBE]),
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -548,7 +604,7 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: 'scribe',
+                dontTransferAddons: ADDON_PREFIXES.SCRIBE,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -566,7 +622,13 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: new Set(['member', 'ip', 'domain', 'lumo', 'scribe']),
+                dontTransferAddons: new Set([
+                    ADDON_PREFIXES.MEMBER,
+                    ADDON_PREFIXES.IP,
+                    ADDON_PREFIXES.DOMAIN,
+                    ADDON_PREFIXES.LUMO,
+                    ADDON_PREFIXES.SCRIBE,
+                ]),
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -592,7 +654,13 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                dontTransferAddons: ['member', 'ip', 'domain', 'lumo', 'scribe'],
+                dontTransferAddons: [
+                    ADDON_PREFIXES.MEMBER,
+                    ADDON_PREFIXES.IP,
+                    ADDON_PREFIXES.DOMAIN,
+                    ADDON_PREFIXES.LUMO,
+                    ADDON_PREFIXES.SCRIBE,
+                ],
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
