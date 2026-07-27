@@ -68,7 +68,7 @@ export const CategorySettingsItem = ({
             <Checkbox
                 id={`notification-${category.id}`}
                 className={categoriesEnabled ? 'visible' : 'hidden'}
-                checked={category.notify}
+                checked={category.display ? category.notify : false}
                 onChange={handleToggleNotification}
                 data-testid={`${category.id}-notify`}
                 // Notification cannot be changed if the category is disabled or primary
