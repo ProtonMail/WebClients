@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { Tab } from '@proton/components/components/tabs/Tabs';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
 
+import { useIsMacOSSupportEnabled } from '../../../../contexts/AlwaysOnPolicyServiceContext';
 import type { AlwaysOnPolicyArtifact } from '../../../../types/AlwaysOn';
 import { hiddenInertProps } from '../ConfigureProfileModal/hiddenInertProps';
 import { MacInstructions } from './MacInstructions';
@@ -21,7 +22,13 @@ const WINDOWS_TAB = 0;
 const MACOS_TAB = 1;
 
 export const InstructionsContent = ({ windows, rego }: Props) => {
+    const isMacOSSupportEnabled = useIsMacOSSupportEnabled();
     const [platformTab, setPlatformTab] = useState(WINDOWS_TAB);
+
+    // Remove in VPNB2B-182
+    if (!isMacOSSupportEnabled) {
+        return <WindowsInstructions windows={windows} rego={rego} />;
+    }
 
     const tabs: Tab[] = [
         { title: c('Title').t`Windows`, icon: 'brand-windows', iconPosition: 'leading' },
