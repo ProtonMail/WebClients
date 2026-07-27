@@ -255,7 +255,9 @@ enum MailKillSwitchFlag {
     MailInfitiniteLoopRateLimiterDisabled = 'MailInfitiniteLoopRateLimiterDisabled',
     EncryptedSearchMigrationSystemDisabled = 'EncryptedSearchMigrationSystemDisabled',
     // Refreshed toolbar UI flags
+    // @deprecated – use `NewToolbarKillSwitch` instead
     RefreshedToolbarUIDisabled = 'RefreshedToolbarUIDisabled',
+    NewToolbarKillSwitch = 'NewToolbarKillSwitch',
     RawLinkParsingDisabled = 'RawLinkParsingDisabled',
     CategoryViewConversationPrefetchDisabled = 'CategoryViewConversationPrefetchDisabled',
     ComposerInlineImageReuploadDisabled = 'ComposerInlineImageReuploadDisabled',
