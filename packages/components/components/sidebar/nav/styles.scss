@@ -1,35 +1,31 @@
-%focus-ring {
-	outline: 2px solid var(--navigation-current-item-background-color);
-	outline-offset: -2px;
+@use '~@proton/styles/scss/lib/config' as *;
+
+[data-sidebar-root] {
+	padding-block-start: $focus-ring-size;
 }
 
 [data-sidebar-header],
 [data-sidebar-leaf] {
 	text-align: start;
 	user-select: none;
+}
 
-	&:focus-visible {
-		@extend %focus-ring;
-	}
+[data-sidebar-header].interactive:focus-visible,
+[data-sidebar-leaf].interactive:focus-visible {
+	box-shadow:
+		inset 0 0 0 1px var(--focus-outline),
+		0 0 0 #{$focus-ring-size} var(--focus-ring);
 }
 
 [data-sidebar-leaf] {
 	text-decoration: none;
 	color: inherit;
 
-	&:hover,
-	&:focus,
-	&:focus-visible,
-	&:focus-within {
-		text-decoration: none;
+	&:hover .color-weak {
 		color: inherit;
 	}
 
-	&:hover {
-		background: var(--interaction-default-hover);
-	}
-
-	&.active {
+	&[aria-current='page'] {
 		color: var(--navigation-current-item-text-color);
 		font-weight: var(--font-weight-semibold);
 		background: var(--navigation-current-item-background-color);
@@ -44,6 +40,15 @@
 	color: var(--text-weak);
 }
 
+[data-sidebar-header]:hover .color-weak,
+[data-sidebar-header]:hover [data-sidebar-trigger] {
+	color: inherit;
+}
+
+[data-sidebar-header][aria-expanded='true']:not(:hover) {
+	background-color: inherit;
+}
+
 // =========================
 // Depth 1 — top-level sections
 // =========================
@@ -52,18 +57,14 @@
 
 	&[data-state='closed'] {
 		color: var(--text-weak);
-
-		> [data-sidebar-header]:hover {
-			background: var(--interaction-default-hover);
-		}
 	}
 
 	&[data-state='open'] {
 		> [data-sidebar-header] {
 			font-weight: var(--font-weight-semibold);
 
-			&:hover {
-				background: var(--interaction-default-hover);
+			[data-sidebar-trigger] {
+				color: inherit;
 			}
 		}
 	}
@@ -74,8 +75,4 @@
 // =========================
 [data-sidebar-depth='2'] {
 	line-height: var(--space-5);
-
-	> [data-sidebar-header]:hover {
-		background: var(--interaction-default-hover);
-	}
 }

@@ -79,9 +79,10 @@ const routes: SidebarTree = {
 };
 
 function renderTree(props: Partial<React.ComponentProps<typeof Tree>> = {}) {
+    const pathname = props.pathname ?? '/';
     return render(
-        <MemoryRouter>
-            <Tree routes={routes} pathname="/" {...props} />
+        <MemoryRouter initialEntries={[pathname]}>
+            <Tree routes={routes} pathname={pathname} {...props} />
         </MemoryRouter>
     );
 }
@@ -195,5 +196,27 @@ describe('Tree', () => {
 
         expect(getBranch('My account')).toHaveAttribute('data-state', 'open');
         expect(getBranch('Organization')).toHaveAttribute('data-state', 'closed');
+    });
+
+    it('renders leaf icons with the color-weak class, so hover can light them up to full color', () => {
+        renderTree({ pathname: '/' });
+        const icon = screen.getByText('Home').closest('a')!.querySelector('svg')!;
+        expect(icon).toHaveClass('color-weak');
+    });
+
+    it('renders branch icons with the color-weak class, so hover can light them up to full color', () => {
+        renderTree({ pathname: '/' });
+        const icon = branch('VPN').querySelector('svg')!;
+        expect(icon).toHaveClass('color-weak');
+    });
+
+    it('marks the leaf matching the current pathname with aria-current="page"', () => {
+        renderTree({ pathname: '/vpn/dashboard' });
+        expect(screen.getByText('Home').closest('a')).toHaveAttribute('aria-current', 'page');
+    });
+
+    it('does not mark leaves that do not match the current pathname', () => {
+        renderTree({ pathname: '/vpn/dashboard' });
+        expect(screen.getByText('Recovery').closest('a')).not.toHaveAttribute('aria-current');
     });
 });

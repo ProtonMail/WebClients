@@ -304,3 +304,45 @@ describe('Leaf', () => {
         expect(onClick).toHaveBeenCalledTimes(1);
     });
 });
+
+describe('interactive focus ring', () => {
+    it('Leaf carries the shared .interactive class', () => {
+        renderInRouter(
+            <Root>
+                <Leaf to="/x">
+                    <Leaf.Text>Item</Leaf.Text>
+                </Leaf>
+            </Root>
+        );
+        expect(screen.getByRole('link')).toHaveClass('interactive');
+    });
+
+    it('Branch.Header carries the shared .interactive class', () => {
+        renderInRouter(<UncontrolledBranch />);
+        expect(screen.getByRole('button')).toHaveClass('interactive');
+    });
+
+    it('does not set aria-current when the route does not match', () => {
+        renderInRouter(
+            <Root>
+                <Leaf to="/about">
+                    <Leaf.Text>About</Leaf.Text>
+                </Leaf>
+            </Root>,
+            { initialEntries: ['/home'] }
+        );
+        expect(screen.getByRole('link')).not.toHaveAttribute('aria-current');
+    });
+
+    it('sets aria-current="page" when the route matches, so styling can key off it instead of .active', () => {
+        renderInRouter(
+            <Root>
+                <Leaf to="/about">
+                    <Leaf.Text>About</Leaf.Text>
+                </Leaf>
+            </Root>,
+            { initialEntries: ['/about'] }
+        );
+        expect(screen.getByRole('link')).toHaveAttribute('aria-current', 'page');
+    });
+});
