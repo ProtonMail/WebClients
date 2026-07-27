@@ -1,6 +1,6 @@
-import { PLANS } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES, PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { hasLumoAddonFromPlanIDs, hasMeetAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import type { FeatureFlagVariant, FeatureFlagsWithVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 export interface PassAsFakeAddonEnablement {
@@ -43,8 +43,8 @@ export const getVpn2024AddonsExperimentEnablement = (
         };
     }
 
-    const hasExistingLumoAddon = hasLumoAddonFromPlanIDs(selectedPlanIDs);
-    const hasExistingMeetAddon = hasMeetAddonFromPlanIDs(selectedPlanIDs);
+    const hasExistingLumoAddon = hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, selectedPlanIDs);
+    const hasExistingMeetAddon = hasAddonFromPlanIDs(ADDON_PREFIXES.MEET, selectedPlanIDs);
 
     // Allow users having addons to remove them
     const noAddonVariant = vpn2024AddonsExperiment.name === 'no-addon';

@@ -8,7 +8,7 @@ import type {
     PlanIDs,
 } from '../core/interface';
 import { getPlanNameFromIDs } from '../core/plan/helpers';
-import { getPlanIDs } from '../core/subscription/helpers';
+import { getPlanIDs } from '../core/subscription/helpers/plan-ids';
 import type { Subscription } from '../core/subscription/interface';
 import { isFreeSubscription, isSavedPaymentMethod } from '../core/type-guards';
 

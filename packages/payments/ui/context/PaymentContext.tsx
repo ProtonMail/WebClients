@@ -43,7 +43,8 @@ import type {
 import { getPlanFromPlanIDs, hasFreePlanIDs } from '../../core/plan/helpers';
 import type { FreePlanDefault, Plan, PlansMap } from '../../core/plan/interface';
 import { FREE_PLAN } from '../../core/subscription/freePlans';
-import { getPlanIDs, isSubscriptionCheckForbiddenWithReason, shouldPassIsTrial } from '../../core/subscription/helpers';
+import { isSubscriptionCheckForbiddenWithReason, shouldPassIsTrial } from '../../core/subscription/helpers';
+import { getPlanIDs } from '../../core/subscription/helpers/plan-ids';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '../../core/subscription/interface';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import { isFreeSubscription } from '../../core/type-guards';
