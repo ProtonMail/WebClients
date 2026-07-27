@@ -7,6 +7,15 @@ import { type AlwaysOnPolicyService, getAlwaysOnPolicyService } from '../service
 
 const AlwaysOnPolicyServiceContext = createContext<AlwaysOnPolicyService | undefined>(undefined);
 
+/**
+ * Windows is always supported.
+ * MacOS is behind this switch.
+ * VPNB2B-182 to remove this toggle
+ **/
+const IS_MACOS_SUPPORT_ENABLED = false;
+
+const AlwaysOnMacOSSupportContext = createContext<boolean>(IS_MACOS_SUPPORT_ENABLED);
+
 interface AlwaysOnPolicyServiceProviderProps {
     children: ReactNode;
 }
@@ -19,7 +28,13 @@ export const AlwaysOnPolicyServiceProvider = ({ children }: AlwaysOnPolicyServic
     const api = useApi();
     const service = useMemo(() => getAlwaysOnPolicyService(api), [api]);
 
-    return <AlwaysOnPolicyServiceContext.Provider value={service}>{children}</AlwaysOnPolicyServiceContext.Provider>;
+    return (
+        <AlwaysOnPolicyServiceContext.Provider value={service}>
+            <AlwaysOnMacOSSupportContext.Provider value={IS_MACOS_SUPPORT_ENABLED}>
+                {children}
+            </AlwaysOnMacOSSupportContext.Provider>
+        </AlwaysOnPolicyServiceContext.Provider>
+    );
 };
 
 export const useAlwaysOnPolicyService = () => {
@@ -29,3 +44,5 @@ export const useAlwaysOnPolicyService = () => {
     }
     return service;
 };
+
+export const useIsMacOSSupportEnabled = () => useContext(AlwaysOnMacOSSupportContext);
