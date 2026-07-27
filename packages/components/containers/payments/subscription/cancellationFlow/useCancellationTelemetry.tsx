@@ -38,6 +38,7 @@ const useCancellationTelemetry = () => {
             event,
             dimensions: {
                 ...dimensions,
+                feedbackFirstCancellationEnabled: 'false',
             },
             delay: false,
         });
