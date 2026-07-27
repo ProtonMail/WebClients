@@ -65,8 +65,7 @@ export const useCategoryFlagWatcher = () => {
                 })
             );
 
-            // The existing hash is preserved when redirecting users to the default category
-            history.replace(setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, location.hash));
+            history.replace(setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT));
 
             // Temporary tracking
             captureInitiativeMessage(
@@ -87,9 +86,7 @@ export const useCategoryFlagWatcher = () => {
 
         if (!isCategoryViewEnabled && categoryID) {
             dispatch(reset({ params: { labelID: MAILBOX_LABEL_IDS.INBOX } }));
-
-            // The existing hash is preserved when redirecting users back to the inbox
-            history.replace(getInboxUrl(location.hash));
+            history.replace(getInboxUrl());
 
             // Temporary tracking
             captureInitiativeMessage(

@@ -188,32 +188,15 @@ export const resetSort = (location: Location) =>
 
 const INBOX_PATHNAME = `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`;
 
-/**
- * Preserve a mailto handoff (e.g. `#mailto=mailto:foo@bar.com`) across an inbox redirect.
- */
-const preserveMailtoHash = (url: string, hash?: string) => {
-    // We manually locate and slice the subsctring because mailto contains `:` / `&` / `=`
-    const mailtoIndex = hash ? hash.indexOf('mailto=mailto:') : -1;
-    if (!hash || mailtoIndex < 0) {
-        return url;
-    }
-
-    const mailto = hash.substring(mailtoIndex);
-    const separator = url.includes('#') ? '&' : '#';
-    return `${url}${separator}${mailto}`;
-};
-
 // Categories are only present in inbox, so always link to inbox regardless of current location
-export const setCategoryInUrl = (category: CategoryLabelID, hash?: string) => {
-    const url = changeSearchParams(INBOX_PATHNAME, '', {
+export const setCategoryInUrl = (category: CategoryLabelID) => {
+    return changeSearchParams(INBOX_PATHNAME, '', {
         category: LABEL_IDS_TO_HUMAN[category],
     });
-
-    return preserveMailtoHash(url, hash);
 };
 
-// Drops any category from the URL while keeping a mailto handoff, used when category access is lost
-export const getInboxUrl = (hash?: string) => preserveMailtoHash(INBOX_PATHNAME, hash);
+// Drops any category from the URL, used when category access is lost
+export const getInboxUrl = () => INBOX_PATHNAME;
 
 export const getInboxRedirectUrl = ({
     isCategoryViewEnabled,
