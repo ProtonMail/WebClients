@@ -1,5 +1,6 @@
 import CalendarDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/CalendarDrawerAppButton';
 import ContactDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/ContactDrawerAppButton';
+import LumoDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/LumoDrawerAppButton';
 import ReferralAppButton from '@proton/components/components/drawer/drawerAppButtons/ReferralAppButton';
 import SecurityCenterDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/SecurityCenterDrawerAppButton';
 import VPNDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/VPNDrawerAppButton';
@@ -29,6 +30,7 @@ const useMailDrawer = () => {
             />
         ),
         <SecurityCenterDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.SECURITY_CENTER, appInView)} />,
+        <LumoDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.LUMO, appInView)} />,
         <VPNDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.VPN, appInView)} />,
         <ReferralAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.REFERRAL, appInView)} />,
         canShowFeatureTourDrawerButton && <FeatureTourDrawerButton />,
