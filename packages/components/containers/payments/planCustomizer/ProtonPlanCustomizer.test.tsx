@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -16,6 +16,12 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: (...args: any[]) => mockUseFlag(...args),
 }));
 
+// Domain gating reads its feature flag through the standalone client (in showAddonCustomizer), not the hook.
+const mockIsEnabled = jest.fn().mockReturnValue(false);
+jest.mock('@proton/unleash/standaloneClient', () => ({
+    getStandaloneUnleashClient: () => ({ isEnabled: (...args: any[]) => mockIsEnabled(...args) }),
+}));
+
 jest.mock('@proton/components/hooks/useConfig', () => ({
     __esModule: true,
     default: jest.fn().mockReturnValue({
@@ -26,6 +32,7 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
 beforeEach(() => {
     jest.clearAllMocks();
     mockUseFlag.mockReturnValue(false);
+    mockIsEnabled.mockReturnValue(false);
 });
 
 const buildProps = ({
@@ -33,12 +40,14 @@ const buildProps = ({
     latestSubscription = FREE_SUBSCRIPTION,
     scribeAddonEnabled = true,
     lumoAddonEnabled = true,
+    meetAddonEnabled = false,
     loading = false,
 }: {
     selectedPlanIDs: PlanIDs;
     latestSubscription?: Subscription | FreeSubscription;
     scribeAddonEnabled?: boolean;
     lumoAddonEnabled?: boolean;
+    meetAddonEnabled?: boolean;
     loading?: boolean;
 }): Props => ({
     currency: 'EUR',
@@ -48,7 +57,12 @@ const buildProps = ({
     plansMap: PLANS_MAP,
     loading,
     latestSubscription,
-    addonFlags: { scribeAddonEnabled, lumoAddonEnabled, meetAddonEnabled: false },
+    // Explicit flags override the pipeline's visibility rules; meet defaults off to keep these expectations stable.
+    addonFlags: {
+        [ADDON_PREFIXES.SCRIBE]: scribeAddonEnabled,
+        [ADDON_PREFIXES.LUMO]: lumoAddonEnabled,
+        [ADDON_PREFIXES.MEET]: meetAddonEnabled,
+    },
     telemetryContext: 'other',
 });
 
@@ -335,7 +349,7 @@ describe('domain addon gating (VPN_BUSINESS)', () => {
     const domainCustomizerId = `${ADDON_NAMES.DOMAIN_VPN_BUSINESS}-customizer`;
 
     it('renders the domain customizer when DomainVpnBiz2023 flag is true', () => {
-        mockUseFlag.mockImplementation((flag: string) => flag === 'DomainVpnBiz2023');
+        mockIsEnabled.mockImplementation((flag: string) => flag === 'DomainVpnBiz2023');
         const planIDs: PlanIDs = { [PLANS.VPN_BUSINESS]: 1 };
 
         render(
@@ -424,6 +438,32 @@ describe('domain addon gating (VPN_BUSINESS)', () => {
         );
 
         expect(screen.getByTestId(`${ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024}-customizer`)).toBeInTheDocument();
+    });
+});
+
+describe('rule-gated addons resolve their visibility from config when no flag is passed', () => {
+    it('shows the lumo customizer via its visibility rules when addonFlags omits LUMO', () => {
+        render(
+            <ProtonPlanCustomizer
+                {...defaultProps}
+                selectedPlanIDs={{ [PLANS.MAIL]: 1 }}
+                addonFlags={{ [ADDON_PREFIXES.SCRIBE]: false }}
+            />
+        );
+
+        expect(screen.getByTestId(lumoAddonBannerTestId)).toBeInTheDocument();
+    });
+
+    it('lets an explicit addonFlags override hide a rule-gated addon', () => {
+        render(
+            <ProtonPlanCustomizer
+                {...defaultProps}
+                selectedPlanIDs={{ [PLANS.MAIL]: 1 }}
+                addonFlags={{ [ADDON_PREFIXES.SCRIBE]: false, [ADDON_PREFIXES.LUMO]: false }}
+            />
+        );
+
+        expect(screen.queryByTestId(lumoAddonBannerTestId)).not.toBeInTheDocument();
     });
 });
 

@@ -1,16 +1,9 @@
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
-import {
-    type ADDON_NAMES,
-    AddonLimit,
-    CURRENCIES,
-    MAX_DOMAIN_PRO_ADDON,
-    MAX_IPS_ADDON,
-    MAX_MEMBER_ADDON,
-    PLANS,
-} from '@proton/payments/core/constants';
+import { getAddonLimit } from '@proton/payments/core/addon/addons';
+import { type ADDON_NAMES, ADDON_PREFIXES, CURRENCIES, PLANS } from '@proton/payments/core/constants';
 import { fixPlanName } from '@proton/payments/core/helpers';
 import type { Currency } from '@proton/payments/core/interface';
-import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/payments/core/plan/addons';
+import { getSupportedAddons, isAddonType } from '@proton/payments/core/plan/addons';
 import { getPlanMaxIPs } from '@proton/payments/core/plan/feature-limits';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -123,11 +116,12 @@ export const getSignupSearchParams = (
     const minimumCycle = getValidCycle(maybeMinimumCycle);
 
     const maybeUsers = Number(searchParams.get('users'));
-    const users = maybeUsers >= 1 && maybeUsers <= MAX_MEMBER_ADDON ? maybeUsers : undefined;
+    const users = maybeUsers >= 1 && maybeUsers <= getAddonLimit(ADDON_PREFIXES.MEMBER) ? maybeUsers : undefined;
     const maybeDomains = Number(searchParams.get('domains'));
-    const domains = maybeDomains >= 1 && maybeDomains <= MAX_DOMAIN_PRO_ADDON ? maybeDomains : undefined;
+    const domains =
+        maybeDomains >= 1 && maybeDomains <= getAddonLimit(ADDON_PREFIXES.DOMAIN) ? maybeDomains : undefined;
     const maybeIps = Number(searchParams.get('ips'));
-    const ips = maybeIps >= 1 && maybeIps <= MAX_IPS_ADDON ? maybeIps : undefined;
+    const ips = maybeIps >= 1 && maybeIps <= getAddonLimit(ADDON_PREFIXES.IP) ? maybeIps : undefined;
 
     const { product } = getProductParams(pathname, searchParams);
 
@@ -242,13 +236,14 @@ export const getPlanIDsFromParams = (
 
     if (signupParameters.users !== undefined) {
         const usersAddon = plans.find(
-            ({ Name }) => isMemberAddon(Name) && supportedAddons[Name as keyof typeof supportedAddons]
+            ({ Name }) =>
+                isAddonType(Name, ADDON_PREFIXES.MEMBER) && supportedAddons[Name as keyof typeof supportedAddons]
         );
 
         const clampedUsers = clamp(
             signupParameters.users,
             0,
-            usersAddon ? AddonLimit[usersAddon.Name as ADDON_NAMES] : 0
+            usersAddon ? getAddonLimit(usersAddon.Name as ADDON_NAMES) : 0
         );
         const amount = clampedUsers - plan.MaxMembers;
         if (usersAddon && amount > 0) {
@@ -258,7 +253,8 @@ export const getPlanIDsFromParams = (
 
     if (signupParameters.domains !== undefined) {
         const domainsAddon = plans.find(
-            ({ Name }) => isDomainAddon(Name) && supportedAddons[Name as keyof typeof supportedAddons]
+            ({ Name }) =>
+                isAddonType(Name, ADDON_PREFIXES.DOMAIN) && supportedAddons[Name as keyof typeof supportedAddons]
         );
         const amount = signupParameters.domains - plan.MaxDomains;
         if (domainsAddon && amount > 0) {
@@ -268,7 +264,7 @@ export const getPlanIDsFromParams = (
 
     if (signupParameters.ips !== undefined) {
         const ipsAddon = plans.find(
-            ({ Name }) => isIpAddon(Name) && supportedAddons[Name as keyof typeof supportedAddons]
+            ({ Name }) => isAddonType(Name, ADDON_PREFIXES.IP) && supportedAddons[Name as keyof typeof supportedAddons]
         );
         const amount = signupParameters.ips - (getPlanMaxIPs(plan) + (ipsAddon?.Quantity || 0));
         if (ipsAddon && amount > 0) {

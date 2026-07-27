@@ -12,7 +12,7 @@ import { BilledUserInlineMessage } from '@proton/components/payments/client-exte
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
     AvailablePaymentMethod,
     ExtendedTokenPayment,
@@ -395,9 +395,9 @@ const AccountStepPayment = ({
                             addonFlags={{
                                 // To avoid convoluted signup UI, we don't show Scribe and Lumo customizers together.
                                 // Remember: Lumo already includes Scribe.
-                                scribeAddonEnabled: !showLumoCustomizer,
-                                lumoAddonEnabled: showLumoCustomizer,
-                                meetAddonEnabled: showMeetCustomizer,
+                                [ADDON_PREFIXES.SCRIBE]: !showLumoCustomizer,
+                                [ADDON_PREFIXES.LUMO]: showLumoCustomizer,
+                                [ADDON_PREFIXES.MEET]: showMeetCustomizer,
                             }}
                             telemetryContext={telemetryContext}
                         />

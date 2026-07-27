@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import { Info } from '@proton/components';
 import { getForcedFeatureLimitations } from '@proton/components/containers/payments/planCustomizer/forced-addon-limits';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { AddonFeatureLimitKeyMapping } from '@proton/payments/core/addon/addons';
 import {
     ADDON_NAMES,
     ADDON_PREFIXES,
-    AddonFeatureLimitKeyMapping,
     type PLANS,
     TRIAL_MAX_DEDICATED_IPS,
     TRIAL_MAX_USERS,

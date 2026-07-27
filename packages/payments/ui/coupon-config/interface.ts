@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import type { StrictRequired } from '@proton/shared/lib/interfaces';
 
+import type { CouponHideFlag } from '../../core/addon/interfaces';
 import type { CYCLE, PLANS } from '../../core/constants';
 import type { Currency, Cycle, PlanIDs } from '../../core/interface';
 import type { PlansMap } from '../../core/plan/interface';
@@ -109,6 +110,9 @@ export type CouponConfig = {
      */
     mockCouponDiscountBreakdown?: Record<Currency, null | Record<Cycle, null | CouponDiscountBreakdownBE>>;
 };
+
+/** Compile-time guard: every CouponHideFlag the addon configs reference must exist here. Errors if they drift. */
+export type CouponHideFlagsOnConfig = Pick<CouponConfig, CouponHideFlag>;
 
 export type CyclePriceCompareFirstParam = Parameters<NonNullable<CouponConfig['cyclePriceCompare']>>[0];
 export type CyclePriceCompareReturnType = ReturnType<NonNullable<CouponConfig['cyclePriceCompare']>>;

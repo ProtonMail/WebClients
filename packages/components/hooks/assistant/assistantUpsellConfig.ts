@@ -22,7 +22,8 @@ export const getAssistantUpsellConfigPlanAndCycle = (
         // in the upsell
         // if we don't, then we will use the number of members as starting number for addons
         const addonsValue =
-            (useLumo ? selectedPlan.getTotalLumos() : selectedPlan.getTotalScribes()) || selectedPlan.getTotalUsers();
+            (useLumo ? selectedPlan.getTotal('MaxLumo') : selectedPlan.getTotal('MaxAI')) ||
+            selectedPlan.getTotalUsers();
 
         // Update the selected plan with the new addon count
         const updatedSelectedPlan = useLumo

@@ -1,4 +1,5 @@
-import { ADDON_NAMES, ADDON_PREFIXES, PLANS, PLAN_TYPES } from '../constants';
+import type { ADDON_PREFIXES } from '../constants';
+import { ADDON_NAMES, PLANS, PLAN_TYPES } from '../constants';
 import type { Currency, PlanIDs } from '../interface';
 import { PlanState } from './constants';
 import type { Plan, PlansMap, StrictPlan } from './interface';
@@ -57,18 +58,6 @@ export function getAddonNameByPlan(addonPrefix: ADDON_PREFIXES, planName: PLANS)
         .find((addonName) => addonName.includes(planName));
 }
 
-export const getScribeAddonNameByPlan = (planName: PLANS) => {
-    return getAddonNameByPlan(ADDON_PREFIXES.SCRIBE, planName);
-};
-
-export const getLumoAddonNameByPlan = (planName: PLANS) => {
-    return getAddonNameByPlan(ADDON_PREFIXES.LUMO, planName);
-};
-
-export const getMeetAddonNameByPlan = (planName: PLANS) => {
-    return getAddonNameByPlan(ADDON_PREFIXES.MEET, planName);
-};
-
 const b2bPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.MAIL_PRO,
     PLANS.MAIL_BUSINESS,
@@ -92,6 +81,8 @@ export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES | undefin
 
     return b2bPlans.has(planName);
 };
+
+export const getIsB2BAudienceFromPlanIDs = (planIDs: PlanIDs) => getIsB2BAudienceFromPlan(getPlanNameFromIDs(planIDs));
 
 const vpnB2BPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.VPN_PRO,
