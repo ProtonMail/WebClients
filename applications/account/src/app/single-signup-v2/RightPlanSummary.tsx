@@ -6,9 +6,9 @@ import { getDealDurationText } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
-import type { CYCLE } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES, type CYCLE } from '@proton/payments/core/constants';
 import type { Currency, Cycle } from '@proton/payments/core/interface';
-import { hasLumoAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -47,7 +47,7 @@ const RightPlanSummary = ({
 }: Props) => {
     const { title: planTitle, logo, features = [], isLifetime } = summaryPlan ?? {};
 
-    const hasLumo = hasLumoAddonFromPlanIDs(checkout?.planIDs ?? {});
+    const hasLumo = hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, checkout?.planIDs ?? {});
 
     const displayTitle = hasLumo ? c('Payments').t`${planTitle} + ${LUMO_SHORT_APP_NAME}` : planTitle;
 

@@ -26,7 +26,7 @@ import { type CheckSubscriptionData, ProrationMode, getPaymentsVersion } from '@
 import type { BillingAddress, BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getIsCustomCycle } from '@proton/payments/core/checkout';
 import { getCheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
-import { PLANS } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES, PLANS } from '@proton/payments/core/constants';
 import { DisplayablePaymentError } from '@proton/payments/core/errors';
 import { captureWrongPlanIDs, captureWrongPlanName } from '@proton/payments/core/helpers';
 import type {
@@ -41,7 +41,6 @@ import type {
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
 import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
-import type { AddonGuard } from '@proton/payments/core/plan/addons';
 import {
     getIsB2BAudienceFromPlan,
     getPlanCurrencyFromPlanIDs,
@@ -119,8 +118,6 @@ import { useVpn2024AddonsExperiment } from './helpers/useVpn2024AddonsExperiment
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
-import { showLumoAddonCustomizer } from './modal-components/helpers/showLumoAddonCustomizer';
-import { showMeetAddonCustomizer } from './modal-components/helpers/showMeetAddonCustomizer';
 import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
 import { getCodes, useSubscriptionContainerInnerCheck } from './useSubscriptionContainerInnerCheck';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
@@ -245,7 +242,7 @@ export interface SubscriptionContainerProps {
     /**
      * If none specified, then shows all addons
      */
-    allowedAddonTypes?: AddonGuard[];
+    allowedAddonTypes?: ADDON_PREFIXES[];
     paymentStatus: PaymentStatus;
     showShortPlan?: boolean;
     // Skip plan transition check if they are handled externally
@@ -437,13 +434,6 @@ const SubscriptionContainerInner = ({
     );
 
     const couponConfig = useCouponConfig({ checkResult, planIDs: model.planIDs, plansMap: plansMapRef.current });
-
-    const lumoAddonEnabled = showLumoAddonCustomizer({
-        subscription,
-        couponConfig,
-        planIDs: model.planIDs,
-    });
-    const meetAddonEnabled = showMeetAddonCustomizer({ couponConfig, planIDs: model.planIDs });
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
             getDefaultSelectedProductPlans({
@@ -1213,14 +1203,15 @@ const SubscriptionContainerInner = ({
                                         {canDisplayAddonCustomizer && getHasPlanCustomizer(model.planIDs) && (
                                             <ProtonPlanCustomizer
                                                 addonFlags={{
-                                                    scribeAddonEnabled: scribeEnabled.paymentsEnabled,
-                                                    lumoAddonEnabled: overrideAddonsBehaviour
-                                                        ? displayLumo
-                                                        : lumoAddonEnabled,
-                                                    meetAddonEnabled: overrideAddonsBehaviour
-                                                        ? displayMeet
-                                                        : meetAddonEnabled,
+                                                    [ADDON_PREFIXES.SCRIBE]: scribeEnabled.paymentsEnabled,
+                                                    ...(overrideAddonsBehaviour
+                                                        ? {
+                                                              [ADDON_PREFIXES.LUMO]: displayLumo,
+                                                              [ADDON_PREFIXES.MEET]: displayMeet,
+                                                          }
+                                                        : {}),
                                                 }}
+                                                couponConfig={couponConfig}
                                                 loading={blockAccountSizeSelector}
                                                 currency={model.currency}
                                                 cycle={model.cycle}

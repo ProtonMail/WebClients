@@ -1,90 +1,46 @@
-import { type ADDON_NAMES, PLANS, PLAN_TYPES } from '../constants';
+import { getAddonConfigByName, getPlanInclusionLimit, isSyntheticFeatureLimitKey } from '../addon/addons';
+import { type ADDON_NAMES, ADDON_PREFIXES, type PLANS, PLAN_TYPES } from '../constants';
 import type { FeatureLimitKey, PlanIDs } from '../interface';
-import { isIpAddon, isLumoAddon, isMeetAddon, isMemberAddon, isScribeAddon } from './addons';
+import { isAddonType } from './addons';
 import { isMultiUserPersonalPlan } from './helpers';
 import type { Plan, PlansMap } from './interface';
 
-/**
- * This mapping is meant to fill the gap of the API not returning some feature limits for some plans. The primary usage
- * of it is ensure correct addon transfering when user changes the plan and the frontend calls switchPlan() to find how
- * many addons the new plan needs to have.
- */
-const maxKeysByPlanOverrides: Partial<
-    Record<
-        PLANS | ADDON_NAMES,
-        {
-            [key in FeatureLimitKey]?: number;
-        }
-    >
-> = {
-    [PLANS.FREE]: {
-        MaxMembers: 0,
-    },
-    [PLANS.VPN_BUSINESS]: {
-        MaxIPs: 1,
-    },
-    [PLANS.LUMO_BUSINESS]: {
-        MaxLumo: 1,
-        MaxAI: 1,
-    },
-    [PLANS.LUMO]: {
-        MaxLumo: 1,
-        MaxAI: 1,
-    },
+// Synthetic feature limits (MaxIPs/MaxAI/MaxLumo/MaxMeet) aren't returned by the API; an addon-plan
+// fabricates them via its config's `featureLimit.grants`. lumo grants both MaxLumo and MaxAI.
+const getAddonGrant = (plan: Plan, key: FeatureLimitKey): number => {
+    const featureLimit = getAddonConfigByName(plan.Name as ADDON_NAMES)?.featureLimit;
+    return featureLimit?.kind === 'synthetic' ? (featureLimit.grants[key] ?? 0) : 0;
 };
 
-const getOverrideForPlan = (plan: Plan, key: FeatureLimitKey): number | null => {
-    return maxKeysByPlanOverrides[plan.Name]?.[key] ?? null;
-};
-
-export const getPlanMaxIPs = (plan: Plan) => {
-    if (isIpAddon(plan.Name)) {
-        return 1;
-    }
-
-    return 0;
-};
-
-const getPlanMaxLumo = (plan: Plan) => {
-    return isLumoAddon(plan.Name) ? 1 : 0;
-};
-
-const getPlanMaxMeet = (plan: Plan) => {
-    return isMeetAddon(plan.Name) ? 1 : 0;
-};
-
-const getPlanMaxAIs = (plan: Plan) => {
-    return isScribeAddon(plan.Name) || isLumoAddon(plan.Name) ? 1 : 0;
-};
+export const getPlanMaxIPs = (plan: Plan) => getAddonGrant(plan, 'MaxIPs');
 
 const getPlanMaxMembers = (plan: Plan) => {
     if (plan.Type === PLAN_TYPES.PLAN) {
         return plan.MaxMembers || 1;
     }
 
-    return isMemberAddon(plan.Name) ? 1 : 0;
+    return isAddonType(plan.Name, ADDON_PREFIXES.MEMBER) ? 1 : 0;
 };
 
 export const getPlanFeatureLimit = (plan: Plan, key: FeatureLimitKey): number => {
-    const override = getOverrideForPlan(plan, key);
-    if (override !== null) {
-        return override;
+    // Capacity a base plan bundles in natively (declared per-addon via `includedByPlanOverride`), filling the
+    // API gap. Resolved first so it can override an otherwise-floored value (e.g. FREE => 0 members).
+    const included = getPlanInclusionLimit(plan.Name as PLANS, key);
+    if (included !== null) {
+        return included;
     }
 
     let result: number;
 
-    if (key === 'MaxIPs') {
-        result = getPlanMaxIPs(plan);
-    } else if (key === 'MaxAI') {
-        result = getPlanMaxAIs(plan);
-    } else if (key === 'MaxLumo') {
-        result = getPlanMaxLumo(plan);
-    } else if (key === 'MaxMeet') {
-        result = getPlanMaxMeet(plan);
+    if (isSyntheticFeatureLimitKey(key)) {
+        // Synthetic keys (MaxIPs/MaxAI/MaxLumo/MaxMeet, …) are fabricated by addon configs, not
+        // reported on the plan — resolve them generically from the registry's grants.
+        result = getAddonGrant(plan, key);
     } else if (key === 'MaxMembers') {
         result = getPlanMaxMembers(plan);
     } else {
-        result = plan[key];
+        // Native keys are reported directly on the plan.
+        result = plan[key as keyof Plan] as number;
     }
 
     return result ?? 0;
@@ -114,8 +70,10 @@ export function getAddonMultiplier(addonMaxKey: FeatureLimitKey, addon: Plan): n
     return Math.max(1, getPlanFeatureLimit(addon, addonMaxKey));
 }
 
-function getPlanMembers(plan: Plan, quantity: number, view = true): number {
-    const hasMembers = plan.Type === PLAN_TYPES.PLAN || (plan.Type === PLAN_TYPES.ADDON && isMemberAddon(plan.Name));
+export function getPlanMembers(plan: Plan, quantity: number, view = true): number {
+    const hasMembers =
+        plan.Type === PLAN_TYPES.PLAN ||
+        (plan.Type === PLAN_TYPES.ADDON && isAddonType(plan.Name, ADDON_PREFIXES.MEMBER));
 
     let membersNumberInPlan = 0;
     if (isMultiUserPersonalPlan(plan) && view) {

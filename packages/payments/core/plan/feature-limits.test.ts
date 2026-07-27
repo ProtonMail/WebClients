@@ -94,6 +94,44 @@ describe('getPlanFeatureLimit', () => {
         });
     });
 
+    describe('MaxMeet feature limit', () => {
+        it('should return 1 for Meet addons', () => {
+            const meetAddon: Plan = {
+                ID: 'meet-addon',
+                ParentMetaPlanID: 'meet-addon',
+                Type: PLAN_TYPES.ADDON,
+                Cycle: 12,
+                Name: ADDON_NAMES.MEET_MAIL_PRO,
+                Title: 'Meet addon',
+                Currency: 'USD',
+                Amount: 0,
+                MaxDomains: 0,
+                MaxAddresses: 0,
+                MaxSpace: 0,
+                MaxCalendars: 0,
+                MaxMembers: 0,
+                MaxVPN: 0,
+                MaxTier: 0,
+                Services: 0,
+                Features: 0,
+                Quantity: 1,
+                Pricing: {} as any,
+                PeriodEnd: {} as any,
+                State: 1,
+                Offers: [],
+            };
+
+            expect(getPlanFeatureLimit(meetAddon, 'MaxMeet')).toBe(1);
+        });
+
+        it('should return 0 for non-Meet plans', () => {
+            const mailPlan = testPlans.find((plan) => plan.Name === PLANS.MAIL);
+            expect(mailPlan).toBeDefined();
+
+            expect(getPlanFeatureLimit(mailPlan!, 'MaxMeet')).toBe(0);
+        });
+    });
+
     describe('MaxMembers feature limit', () => {
         it('should return 0 for FREE plan', () => {
             // Create a mock FREE plan since it may not exist in test data

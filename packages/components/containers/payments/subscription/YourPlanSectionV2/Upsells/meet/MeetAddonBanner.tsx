@@ -8,9 +8,9 @@ import NewBadge from '@proton/components/components/newBadge/NewBadge';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { hasMeetAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
-import { getMeetAddonNameByPlan } from '@proton/payments/core/plan/helpers';
+import { ADDON_PREFIXES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import { getAddonNameByPlan } from '@proton/payments/core/plan/helpers';
 import { getHasMeetIncludedInPlan, getPlanIDs, getPlanName } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
@@ -34,13 +34,13 @@ const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
     const plansMap = preferredCurrency ? getPlansMap(plans, preferredCurrency, true) : undefined;
 
     const currentPlanName = subscription ? getPlanName(subscription) : undefined;
-    const meetAddonName = currentPlanName ? getMeetAddonNameByPlan(currentPlanName) : undefined;
+    const meetAddonName = currentPlanName ? getAddonNameByPlan(ADDON_PREFIXES.MEET, currentPlanName) : undefined;
     const meetAddon = meetAddonName && plansMap ? plansMap[meetAddonName] : undefined;
     const cycle = subscription?.Cycle;
     const monthlyPrice = meetAddon && cycle ? (meetAddon.Pricing[cycle] ?? 0) / cycle : 0;
     const priceString = preferredCurrency ? getSimplePriceString(preferredCurrency, monthlyPrice) : '';
 
-    const hasMeetAddon = hasMeetAddonFromPlanIDs(getPlanIDs(subscription));
+    const hasMeetAddon = hasAddonFromPlanIDs(ADDON_PREFIXES.MEET, getPlanIDs(subscription));
 
     const handleGetPlan = () => {
         if (!subscription || !plansMap) {

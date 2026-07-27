@@ -1,30 +1,22 @@
 import isDeepEqual from 'lodash/isEqual';
 import { c, msgid } from 'ttag';
 
-import { LUMO_APP_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { pick } from '@proton/shared/lib/helpers/object';
 
+import { AddonFeatureLimitKeyMapping, getAddonConfigByName, getAddonConfigByType } from './addon/addons';
 import type { CheckSubscriptionData } from './api/api';
 import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_TYPES } from './constants';
 import { InvalidCouponError } from './errors';
-import type { Currency, FeatureLimitKey, PlanIDs, Pricing } from './interface';
-import {
-    getAddonType,
-    isDomainAddon,
-    isIpAddon,
-    isLumoAddon,
-    isMeetAddon,
-    isMemberAddon,
-    isScribeAddon,
-    supportsMemberAddon,
-} from './plan/addons';
+import type { Currency, PlanIDs, Pricing } from './interface';
+import { getAddonType, isAddonType, supportsMemberAddon } from './plan/addons';
 import { getAddonMultiplier, getMembersFromPlanIDs } from './plan/feature-limits';
 import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from './plan/helpers';
 import type { Plan, PlansMap } from './plan/interface';
 import { INCLUDED_IP_PRICING, getPrice, getPricingPerMember } from './price-helpers';
 import { SubscriptionMode } from './subscription/constants';
-import { customCycles, getHas2025OfferCoupon, getPlanIDs } from './subscription/helpers';
+import { customCycles, getHas2025OfferCoupon } from './subscription/helpers';
+import { getPlanIDs } from './subscription/helpers/plan-ids';
 import type { Subscription, SubscriptionEstimation } from './subscription/interface';
 
 interface AddonDescription {
@@ -35,87 +27,13 @@ interface AddonDescription {
 }
 
 const getAddonQuantity = (addon: Plan, quantity: number) => {
-    let maxKey: FeatureLimitKey | undefined;
-    if (isDomainAddon(addon.Name)) {
-        maxKey = 'MaxDomains';
-    } else if (isMemberAddon(addon.Name)) {
-        maxKey = 'MaxMembers';
-    } else if (isIpAddon(addon.Name)) {
-        maxKey = 'MaxIPs';
-    } else if (isScribeAddon(addon.Name)) {
-        maxKey = 'MaxAI';
-    } else if (isLumoAddon(addon.Name)) {
-        maxKey = 'MaxLumo';
-    } else if (isMeetAddon(addon.Name)) {
-        maxKey = 'MaxMeet';
-    }
-
-    const addonMultiplier = maxKey ? getAddonMultiplier(maxKey, addon) : 0;
-
+    const featureLimitKey = AddonFeatureLimitKeyMapping[addon.Name as ADDON_NAMES];
+    const addonMultiplier = featureLimitKey ? getAddonMultiplier(featureLimitKey, addon) : 0;
     return quantity * addonMultiplier;
 };
 
 export const getAddonTitleWithQuantity = (addonName: ADDON_NAMES, quantity: number, planIDs: PlanIDs) => {
-    if (isDomainAddon(addonName)) {
-        const domains = quantity;
-        return c('Addon').ngettext(
-            msgid`${domains} additional custom domain`,
-            `${domains} additional custom domains`,
-            domains
-        );
-    }
-    if (isMemberAddon(addonName)) {
-        const users = quantity;
-        return c('Addon').ngettext(msgid`${users} user`, `${users} users`, users);
-    }
-    if (isIpAddon(addonName)) {
-        const ips = quantity;
-        return c('Addon').ngettext(msgid`${ips} dedicated VPN server`, `${ips} dedicated VPN servers`, ips);
-    }
-
-    const plan = getPlanNameFromIDs(planIDs);
-    const isB2C = !getIsB2BAudienceFromPlan(plan);
-
-    if (isScribeAddon(addonName)) {
-        if (isB2C) {
-            return c('Info').t`Writing assistant`;
-        }
-        const seats = quantity;
-        // translator: sentence is "1 writing assistant seat" or "2 writing assistant seats"
-        return c('Addon').ngettext(msgid`${seats} writing assistant seat`, `${seats} writing assistant seats`, seats);
-    }
-
-    if (isLumoAddon(addonName)) {
-        const seats = quantity;
-        if (isB2C) {
-            return c('Addon').ngettext(
-                msgid`${seats} ${LUMO_APP_NAME} AI license`,
-                `${seats} ${LUMO_APP_NAME} AI licenses`,
-                seats
-            );
-        }
-
-        return c('Addon').ngettext(msgid`${seats} ${LUMO_APP_NAME} seat`, `${seats} ${LUMO_APP_NAME} seats`, seats);
-    }
-
-    if (isMeetAddon(addonName)) {
-        const seats = quantity;
-        if (isB2C) {
-            return c('Addon').ngettext(
-                msgid`${seats} ${MEET_APP_NAME} license`,
-                `${seats} ${MEET_APP_NAME} licenses`,
-                seats
-            );
-        }
-
-        return c('meet_2025: Addon').ngettext(
-            msgid`${seats} ${MEET_APP_NAME} seat`,
-            `${seats} ${MEET_APP_NAME} seats`,
-            seats
-        );
-    }
-
-    return '';
+    return getAddonConfigByName(addonName)?.addonCheckoutTitle(quantity, { planIDs }) ?? '';
 };
 
 export const getAddonTitleByType = (
@@ -123,23 +41,7 @@ export const getAddonTitleByType = (
     isB2C: boolean,
     { short }: { short?: boolean } = {}
 ): string => {
-    const scribeTitle = isB2C ? c('Addon').t`Writing assistant` : c('Addon').t`Writing assistant seats`;
-    const lumoTitle = isB2C ? c('Addon').t`${LUMO_APP_NAME} AI license` : c('Addon').t`${LUMO_APP_NAME} seats`;
-    const meetTitle = isB2C
-        ? c('meet_2025: Addon').t`${MEET_APP_NAME} license`
-        : c('meet_2025: Addon').t`${MEET_APP_NAME} seats`;
-    const ipTitle = short ? c('Addon').t`Servers` : c('Addon').t`Dedicated VPN servers`;
-
-    const mapping: Record<ADDON_PREFIXES, string> = {
-        [ADDON_PREFIXES.SCRIBE]: scribeTitle,
-        [ADDON_PREFIXES.LUMO]: lumoTitle,
-        [ADDON_PREFIXES.MEET]: meetTitle,
-        [ADDON_PREFIXES.MEMBER]: c('Addon').t`Users`,
-        [ADDON_PREFIXES.DOMAIN]: c('Addon').t`Domains`,
-        [ADDON_PREFIXES.IP]: ipTitle,
-    };
-
-    return mapping[addonType];
+    return getAddonConfigByType(addonType)?.title(isB2C, { short }) ?? '';
 };
 
 export const getAddonTitleWithoutQuantity = (
@@ -169,7 +71,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
         [addonName: string]: AddonDescription;
     }>((acc, [planName, quantity]) => {
         const planOrAddon = plansMap[planName as keyof typeof plansMap];
-        if (planOrAddon?.Type !== PLAN_TYPES.ADDON || isMemberAddon(planOrAddon.Name)) {
+        if (planOrAddon?.Type !== PLAN_TYPES.ADDON || isAddonType(planOrAddon.Name, ADDON_PREFIXES.MEMBER)) {
             return acc;
         }
 

@@ -249,11 +249,11 @@ export const getPlanTitleWithAddons = ({
     currency: Currency;
     shortPlan: ShortPlan | Plan;
 }) => {
-    const addonTypes = SelectedPlan.createNormalized(planIDs, plansMap, cycle, currency).getPresentAddonTypes();
+    const selectedPlan = SelectedPlan.createNormalized(planIDs, plansMap, cycle, currency);
 
     const planTitle = isPlan(shortPlan) ? shortPlan.Title : shortPlan.title;
 
-    if (addonTypes[ADDON_PREFIXES.LUMO]) {
+    if (selectedPlan.hasAddonType(ADDON_PREFIXES.LUMO)) {
         return `${planTitle} + ${LUMO_SHORT_APP_NAME}`;
     }
 
