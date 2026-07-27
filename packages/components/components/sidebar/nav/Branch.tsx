@@ -142,7 +142,7 @@ function BranchHeader({ children, className }: BranchHeaderProps) {
             onClick={toggle}
             aria-expanded={isOpen}
             data-sidebar-header=""
-            className={clsx('flex gap-2 py-2 px-3 rounded items-center', className)}
+            className={clsx('flex gap-2 py-2 px-3 rounded items-center interactive', className)}
         >
             {children}
         </button>
