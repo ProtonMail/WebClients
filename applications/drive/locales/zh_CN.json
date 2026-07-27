@@ -7351,6 +7351,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "为了启用搜索，我们需要在本地索引您的文件。您仍可正常使用 ${ DRIVE_APP_NAME }，索引完成后我们会通知您。如果您离开此页面，索引将暂停，并在您返回时恢复。"
       ]
     },
     "info": {
@@ -8246,6 +8249,9 @@
       ],
       "User opted in": [
         "用户选择加入"
+      ],
+      "Allow editors to change permissions and share.": [
+        "允许编辑者更改权限和共享"
       ]
     },
     "Label for contact group color": {
@@ -11752,6 +11758,12 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "现在，您可以保持数据安全，同时轻松搜索网盘文件。"
+      ],
+      "Editor permissions": [
+        "编辑者权限"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "编辑者现在可以管理共享并邀请他人，您随时可以在共享设置中关闭此功能。"
       ]
     },
     "sso": {

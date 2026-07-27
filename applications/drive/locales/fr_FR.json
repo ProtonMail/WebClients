@@ -7472,6 +7472,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Pour activer la recherche, nous devons indexer vos fichiers localement. Vous pouvez continuer à utiliser ${ DRIVE_APP_NAME } normalement, nous vous informerons lorsque l’indexation sera terminée. Si vous quittez cette page, l’indexation sera mise en pause et reprendra lorsque vous reviendrez."
       ]
     },
     "info": {
@@ -8376,6 +8379,9 @@
       ],
       "Client version": [
         "Version client"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Permettre aux éditeurs de modifier les autorisations et de partager."
       ]
     },
     "Label for contact group color": {
