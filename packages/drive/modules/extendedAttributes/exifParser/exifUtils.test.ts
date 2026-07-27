@@ -74,6 +74,7 @@ describe('exif', () => {
     describe('getCaptureDateTimeString', () => {
         it('should return `DateTimeOriginal` when all params present', () => {
             const value = getCaptureDateTimeString(mockExif);
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const date = new Date(value!);
             expect(date.getUTCFullYear()).toBe(2024);
             expect(date.getUTCMonth()).toBe(0);
@@ -85,6 +86,7 @@ describe('exif', () => {
         it('should return `DateTimeDigitized` if `DateTimeOriginal` is missing', () => {
             const mock = { ...mockExif, DateTimeOriginal: undefined };
             const value = getCaptureDateTimeString(mock);
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const date = new Date(value!);
             expect(date.getUTCFullYear()).toBe(2024);
             expect(date.getUTCMonth()).toBe(0);
@@ -96,6 +98,7 @@ describe('exif', () => {
         it('should return `DateTime` if `DateTimeDigitized` and `DateTimeOriginal` is missing', () => {
             const mock = { ...mockExif, DateTimeOriginal: undefined, DateTimeDigitized: undefined };
             const value = getCaptureDateTimeString(mock);
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const date = new Date(value!);
             expect(date.getUTCFullYear()).toBe(2024);
             expect(date.getUTCMonth()).toBe(0);
@@ -109,7 +112,7 @@ describe('exif', () => {
             const value = getCaptureDateTimeString(mock);
             expect(value).toBe(undefined);
         });
-        it('should return current date for pre-epoch dates (before 1970)', () => {
+        it('should return the parsed date for pre-epoch dates (before 1970)', () => {
             const mockPreEpoch = {
                 DateTimeOriginal: {
                     id: 36867,
@@ -118,9 +121,15 @@ describe('exif', () => {
                 },
             };
             const value = getCaptureDateTimeString(mockPreEpoch);
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const date = new Date(value!);
 
-            expect(date.getTime()).toBe(MOCK_NOW_TIMESTAMP);
+            expect(date.getUTCFullYear()).toBe(1892);
+            expect(date.getUTCMonth()).toBe(9);
+            expect(date.getUTCDate()).toBe(6);
+            expect(date.getUTCHours()).toBe(14);
+            expect(date.getUTCMinutes()).toBe(56);
+            expect(date.getUTCSeconds()).toBe(16);
         });
     });
     describe('getCaptureDateTime', () => {
@@ -129,7 +138,7 @@ describe('exif', () => {
             lastModified: new Date('2024-01-01').getTime(),
         });
 
-        it('should return current date for pre-epoch dates (before 1970)', () => {
+        it('should return the parsed date for pre-epoch dates (before 1970)', () => {
             const mockPreEpoch = {
                 DateTimeOriginal: {
                     id: 36867,
@@ -139,7 +148,9 @@ describe('exif', () => {
             };
             const date = getCaptureDateTime(mockFile, mockPreEpoch);
 
-            expect(date.getTime()).toBe(MOCK_NOW_TIMESTAMP);
+            expect(date.getFullYear()).toBe(1892);
+            expect(date.getMonth()).toBe(9);
+            expect(date.getDate()).toBe(6);
         });
 
         it('should return valid date for post-epoch dates', () => {

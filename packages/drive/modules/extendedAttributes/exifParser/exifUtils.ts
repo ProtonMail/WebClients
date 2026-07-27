@@ -31,8 +31,7 @@ export const getCaptureDateTime = (file: File, exif?: ExifTags) => {
     // context, the File object has only the last modified time.
     const captureDateTime = new Date(formattedDateTime || file.lastModified);
 
-    // Dates before the Unix epoch (1970) are not supported by the backend.
-    if (!isValidDate(captureDateTime) || captureDateTime.getTime() < 0) {
+    if (!isValidDate(captureDateTime)) {
         return new Date();
     }
 
@@ -56,7 +55,7 @@ export const getCaptureDateTimeString = (exif?: ExifTags) => {
         // Treat EXIF datetime as UTC by appending 'Z'
         const captureDateTime = new Date(`${formattedDateTime}Z`);
 
-        if (captureDateTime.getTime() < 0) {
+        if (!isValidDate(captureDateTime)) {
             return new Date().toISOString();
         }
 
