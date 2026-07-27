@@ -19,6 +19,7 @@ import { ProtonStoreContext } from '@proton/react-redux-store';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { MeetCoreClientContext } from '../../contexts/MeetCoreClientContext';
+import { addSpecialCharactersForMessageDisplay } from '../../utils/addSpecialCharactersForMessageDisplay';
 import type { ChatIncomingEventInfoData, MeetCoreClient } from '../../wasm/MeetCoreClient';
 import { useChat } from './useChat';
 
@@ -150,6 +151,37 @@ describe('useChat', () => {
                     type: 'message',
                 }),
             ]);
+        });
+
+        it('should store an incoming message inert and decode it back for display', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const receivedText = 'a < b & <test';
+
+            const event: ChatIncomingEventInfoData = {
+                kind: ChatEventKind.Message,
+                id: 'msg-1',
+                sender_participant_id: SENDER,
+                received_at_ms: 1_000n,
+                text: receivedText,
+            } as ChatIncomingEventInfoData;
+
+            const store = createStore();
+            const client = createMeetCoreClient({ decodeChat: vi.fn().mockResolvedValue(event) });
+
+            renderHook(() => useChat(), { wrapper: createWrapper(store, client) });
+
+            const handler = getDataReceivedHandler(room);
+
+            await act(async () => {
+                await handler(encode({ type: 'message' }), participant);
+            });
+
+            const storedMessage = getMessages(store)[0].message;
+            expect(storedMessage).toBe('a &lt; b &amp; &lt;test');
+            expect(storedMessage).not.toMatch(/[<>]/);
+            expect(addSpecialCharactersForMessageDisplay(storedMessage)).toBe(receivedText);
         });
 
         it('should mark the incoming message as seen when the chat sidebar is open', async () => {

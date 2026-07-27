@@ -7,6 +7,7 @@ import { getHostname } from '@proton/components/helpers/url';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 import { isSubDomain } from '@proton/shared/lib/helpers/url';
 
+import { addSpecialCharactersForMessageDisplay } from '../utils/addSpecialCharactersForMessageDisplay';
 import { OpenLinkModal } from './OpenLinkModal/OpenLinkModal';
 
 // Simple URL regex - matches http:// or https:// followed by non-whitespace characters
@@ -30,8 +31,9 @@ interface ChatMessageContentProps {
 }
 
 export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
-    const parts = message.split(URL_REGEX);
-    const matches = message.match(URL_REGEX) || [];
+    const decodedMessage = addSpecialCharactersForMessageDisplay(message);
+    const parts = decodedMessage.split(URL_REGEX);
+    const matches = decodedMessage.match(URL_REGEX) || [];
 
     const [currentLink, setCurrentLink] = useState<string | null>(null);
 
