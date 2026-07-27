@@ -8,7 +8,10 @@ import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import illustration from '@proton/styles/assets/img/illustrations/vpn/always-on/always-on-vpn.svg';
 
+import { useIsMacOSSupportEnabled } from '../../../contexts/AlwaysOnPolicyServiceContext';
+
 export const UnconfiguredProfileView = ({ onConfigure }: { onConfigure: () => void }) => {
+    const isMacOSSupportEnabled = useIsMacOSSupportEnabled();
     const callouts = [
         c('Info').t`Employees can't go online without a VPN connection`,
         c('Info').t`All internet traffic is always encrypted and secure`,
@@ -39,8 +42,12 @@ export const UnconfiguredProfileView = ({ onConfigure }: { onConfigure: () => vo
                             <span>{c('Info').t`Supported platforms`} </span>
                             <IcBrandWindows className="color-info" size={5} />
                             <span className="text-capitalize">{DESKTOP_PLATFORMS.WINDOWS}</span>
-                            <IcBrandApple size={5} />
-                            <span>{c('Info').t`macOS`}</span>
+                            {isMacOSSupportEnabled && (
+                                <>
+                                    <IcBrandApple size={5} />
+                                    <span>{c('Info').t`macOS`}</span>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
