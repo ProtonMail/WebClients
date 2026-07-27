@@ -42,6 +42,7 @@ export const useFeedbackFirstTelemetry = () => {
             dimensions: {
                 ...dimensions,
                 couponCode: subscription?.CouponCode || undefined,
+                feedbackFirstCancellationEnabled: 'true',
             },
             delay: false,
         });
