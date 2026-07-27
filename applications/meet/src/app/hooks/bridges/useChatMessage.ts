@@ -92,7 +92,7 @@ export const useChatMessage = () => {
                 addChatMessages([
                     {
                         id: localEcho.id,
-                        message: localEcho.text ?? '',
+                        message: escape(localEcho.text ?? ''),
                         timestamp: Number(localEcho.received_at_ms),
                         identity: room.localParticipant.identity,
                         seen: true,
@@ -166,7 +166,9 @@ export const useChatMessage = () => {
                 addChatMessages([
                     {
                         ...message,
-                        message: sanitizedContent,
+                        // Store inert (escaped) like the receive path so the display's single decode
+                        // restores the typed text (e.g. `&amp;`), instead of collapsing it to `&`.
+                        message: escape(sanitizedContent),
                         identity: room.localParticipant.identity,
                         seen: true,
                         type: 'message',

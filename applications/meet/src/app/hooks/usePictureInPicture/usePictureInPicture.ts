@@ -19,6 +19,7 @@ import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/l
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useSortedParticipants } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { addSpecialCharactersForMessageDisplay } from '../../utils/addSpecialCharactersForMessageDisplay';
 import { useLatest } from '../useLatest';
 import { useStableCallback } from '../useStableCallback';
 import { PiPSessionManager } from './PiPSessionManager';
@@ -210,7 +211,10 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
         if (chatMessages.length > 0) {
             const lastMessage = chatMessages[chatMessages.length - 1];
             if (!lastMessage.isMissingRoot) {
-                addChatMessage(participantDecryptedNameMapRef.current[lastMessage.identity], lastMessage.message);
+                addChatMessage(
+                    participantDecryptedNameMapRef.current[lastMessage.identity],
+                    addSpecialCharactersForMessageDisplay(lastMessage.message)
+                );
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
