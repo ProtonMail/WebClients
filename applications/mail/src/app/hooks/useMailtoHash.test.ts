@@ -30,7 +30,14 @@ describe('useMailtoHash', () => {
         mockHash(`#mailto=${mailto}`);
 
         renderHook(() => useMailtoHash({ isSearch: false }));
-        expect(mockReturn).toHaveBeenCalled();
+        expect(mockReturn).toHaveBeenCalledWith(mailto);
+    });
+
+    it('Should call the onMailTo function when the mailto is preceded by a category', () => {
+        const mailto = 'mailto:hello@test.com';
+        mockHash(`#category=primary&mailto=${mailto}`);
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
         expect(mockReturn).toHaveBeenCalledWith(mailto);
     });
 
@@ -90,7 +97,6 @@ describe('useMailtoHash', () => {
         mockHash(`#mailto=${mailto}`);
 
         renderHook(() => useMailtoHash({ isSearch: false }));
-        expect(mockReturn).toHaveBeenCalled();
         expect(mockReturn).toHaveBeenCalledWith(decodedMailTo);
     });
 });
