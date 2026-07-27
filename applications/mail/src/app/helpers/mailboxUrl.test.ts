@@ -5,6 +5,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import {
     type MailUrlParams,
     getInboxRedirectUrl,
+    getInboxUrl,
     getUrlPathname,
     setCategoryInUrl,
     setParamsInLocation,
@@ -112,6 +113,42 @@ describe('Mailbox URL tests', () => {
 
         it('should return Time ascending for Scheduled with default sort', () => {
             expect(sortFromUrl(loc(), MAILBOX_LABEL_IDS.SCHEDULED)).toEqual({ sort: 'Time', desc: false });
+        });
+    });
+
+    describe('setCategoryInUrl', () => {
+        it('should add the category in the URL', () => {
+            const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(result).toBe('/inbox#category=social');
+        });
+
+        it('should preserve the hash in the URL', () => {
+            const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, '#mailto=mailto:test');
+            expect(result).toBe('/inbox#category=social&mailto=mailto:test');
+        });
+
+        it('should not add empty hash', () => {
+            const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, '#');
+            expect(result).toBe('/inbox#category=social');
+        });
+
+        it('should only carry the mailto and drop a stale category from the hash', () => {
+            const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, '#category=primary&mailto=mailto:test');
+            expect(result).toBe('/inbox#category=social&mailto=mailto:test');
+        });
+    });
+
+    describe('getInboxUrl', () => {
+        it('should return the inbox URL without a hash', () => {
+            expect(getInboxUrl()).toBe('/inbox');
+        });
+
+        it('should preserve a mailto handoff while dropping the category', () => {
+            expect(getInboxUrl('#category=primary&mailto=mailto:test')).toBe('/inbox#mailto=mailto:test');
+        });
+
+        it('should not add a hash when there is no mailto', () => {
+            expect(getInboxUrl('#category=primary')).toBe('/inbox');
         });
     });
 
