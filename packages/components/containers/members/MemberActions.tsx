@@ -316,6 +316,10 @@ const MemberActions = ({
             } as const),
     ].filter(isTruthy);
 
+    if (!list.length) {
+        return null;
+    }
+
     return (
         <DropdownActionsIcon
             loading={loading}

@@ -7,9 +7,15 @@ import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shar
 
 import type { OrganizationRouterParams } from '../../content/router-params';
 
-export const getPassAppRoutes = ({ app, user, organization, subscription }: OrganizationRouterParams) => {
+export const getPassAppRoutes = ({
+    app,
+    user,
+    organization,
+    subscription,
+    permissions,
+    entitlements,
+}: OrganizationRouterParams) => {
     const isAdmin = user.isAdmin && user.isSelf;
-    const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
     // passbiz2024 or bundlepro2024 or bundlepro2022 or vpnpassbiz2025
@@ -36,7 +42,10 @@ export const getPassAppRoutes = ({ app, user, organization, subscription }: Orga
                 text: c('Link').t`Activity log`,
                 to: '/activity-log',
                 icon: 'text-title',
-                available: hasPassOrBundleB2B && canHaveOrganization && (hasOrganizationKey || hasOrganization),
+                available:
+                    (hasOrganizationKey || hasOrganization) &&
+                    entitlements.orgHasPassActivityMonitor &&
+                    permissions['account.activity_log.read'],
                 subsections: [
                     {
                         id: 'activity-log',
