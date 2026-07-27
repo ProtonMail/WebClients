@@ -6,13 +6,13 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
 import { useConversationPanelState } from '../../hooks/useConversationPanelState';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useRetryPanel } from '../../hooks/useRetryPanel';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
-import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
 import { ComposerMode, type Conversation } from '../../types';
 import UpsellCard from '../../upsells/components/UpsellCard';
@@ -24,6 +24,7 @@ import ErrorCard from '../Notifications/ErrorCard';
 import { ConversationSurvey } from '../Survey/ConversationSurvey';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
+import DesktopApprovalCards from './messageChain/message/DesktopToolApproval/DesktopApprovalCards';
 import { WebSearchSourcesView } from './messageChain/message/toolCall/WebSearchSourcesView';
 
 import './ConversationComponent.scss';
@@ -148,6 +149,7 @@ const ConversationComponent = ({
                                 onRetryPanelToggle={handleRetryPanelToggle}
                                 composerContainerRef={composerContainerRef}
                                 conversationId={conversationId}
+                                afterMessages={<DesktopApprovalCards />}
                             />
                             {/* TODO: update to show all conversations errors at some point */}
                             {conversationErrors.length > 0 && (
