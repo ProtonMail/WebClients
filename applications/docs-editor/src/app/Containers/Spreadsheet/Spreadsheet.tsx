@@ -270,7 +270,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       await docState.waitForImportSuccess()
       setImportType(undefined)
       await calculateNow({
-        disableEvaluation: requiresRecalc,
+        disableEvaluation: !requiresRecalc,
         shouldResetCellDependencyGraph: true,
       })
       void writeBasePatchIfNecessary().catch(console.error)
