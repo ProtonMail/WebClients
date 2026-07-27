@@ -151,7 +151,6 @@ const PagingControls = ({
                         onClick={toggle}
                         disabled={dropdownDisabled}
                         tabIndex={dropdownDisabled ? -1 : undefined}
-                        className="text-tabular-nums"
                     >
                         <>
                             {page}
