@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
-import { Chip, LumoThinking, PromptInput, ServerToolChip, renderReplyMarkdown } from '@proton/lumo-ui';
+import { Chip, LumoLogo, LumoThinking, PromptInput, ServerToolChip, renderReplyMarkdown } from '@proton/lumo-ui';
 
 import ResultTile from './ResultTile';
 import ConfirmCard, { defaultCardRenderer } from './cardRenderers';
@@ -113,7 +113,9 @@ const LumoAgentPanel = ({
         <div className="lumo-agent-panel">
             <div ref={scrollRef} className="lumo-agent-transcript">
                 {items.map(renderItem)}
-                {isBusy ? <LumoThinking label={thinkingLabel} /> : null}
+                {isBusy && <LumoThinking label={thinkingLabel} />}
+                {/* Idle Lumo mark beneath the latest turn, once a conversation exists (like lumo.proton.me). */}
+                {!isBusy && items.length > 0 && <LumoLogo className="lumo-agent-avatar" />}
             </div>
 
             {pending?.kind === 'confirm' ? (
@@ -126,14 +128,16 @@ const LumoAgentPanel = ({
                 />
             ) : null}
 
-            <PromptInput
-                value={draft}
-                onChange={setDraft}
-                onSubmit={submit}
-                onStop={onStop}
-                isBusy={isBusy}
-                placeholder={placeholder}
-            />
+            <div className="lumo-agent-composer shrink-0">
+                <PromptInput
+                    value={draft}
+                    onChange={setDraft}
+                    onSubmit={submit}
+                    onStop={onStop}
+                    isBusy={isBusy}
+                    placeholder={placeholder}
+                />
+            </div>
         </div>
     );
 };

@@ -23,10 +23,12 @@ interface Props {
 }
 
 /**
- * The chat composer: an auto-growing text field with a circular send button tucked bottom-right, and a
- * stop button in its place while busy — matching lumo.proton.me. Purely presentational; the host owns
- * the value and the submit/stop intent. Uses a native textarea so the design library stays below
- * `@proton/components` (no dependency on its form controls).
+ * The chat composer: an auto-growing text field with a circular send button pinned bottom-right, and a
+ * stop button in its place while busy — matching lumo.proton.me. The button is positioned out of flow,
+ * so it appearing/disappearing never reflows the text or changes the box height — only the typed content
+ * does (via auto-grow). Purely presentational; the host owns the value and the submit/stop intent. Uses
+ * a native textarea so the design library stays below `@proton/components` (no dependency on its form
+ * controls).
  */
 const PromptInput = ({ value, onChange, onSubmit, onStop, isBusy, disabled, placeholder, className }: Props) => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -55,19 +57,19 @@ const PromptInput = ({ value, onChange, onSubmit, onStop, isBusy, disabled, plac
     };
 
     return (
-        <div className={clsx('lumo-prompt-input flex flex-row flex-nowrap items-end gap-2', className)}>
+        <div className={clsx('lumo-prompt-input', className)}>
             <textarea
                 ref={textareaRef}
-                className="lumo-prompt-input__field flex-1 resize-none"
+                className="lumo-prompt-input__field resize-none"
                 rows={1}
                 value={value}
                 disabled={disabled}
                 onChange={(event) => onChange(event.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder={placeholder ?? c('Placeholder').t`Ask for help…`}
+                placeholder={placeholder ?? c('Placeholder').t`Ask anything…`}
             />
             {isBusy && onStop ? (
-                <Button icon pill color="norm" className="lumo-prompt-input__send shrink-0" onClick={onStop}>
+                <Button icon pill color="norm" className="lumo-prompt-input__send" onClick={onStop}>
                     <img src={lumoStop} alt={c('Action').t`Stop`} />
                 </Button>
             ) : (
@@ -76,7 +78,7 @@ const PromptInput = ({ value, onChange, onSubmit, onStop, isBusy, disabled, plac
                         icon
                         pill
                         color="norm"
-                        className="lumo-prompt-input__send shrink-0"
+                        className="lumo-prompt-input__send"
                         disabled={disabled}
                         onClick={submit}
                     >

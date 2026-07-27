@@ -1,10 +1,12 @@
 import type { ReactNode } from 'react';
-import { useEffect, useLayoutEffect } from 'react';
+import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetBreachesCounts } from '@proton/account';
 import DrawerContactView from '@proton/components/components/drawer/views/DrawerContactView';
 import DrawerSettingsView from '@proton/components/components/drawer/views/DrawerSettingsView';
+import Loader from '@proton/components/components/loader/Loader';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
@@ -18,13 +20,17 @@ import noop from '@proton/utils/noop';
 import useDrawer from '../../hooks/drawer/useDrawer';
 import DrawerContactModals from './DrawerContactModals';
 import DrawerSecurityCenterView from './views/DrawerSecurityCenterView';
-import { useGetBreachesCounts } from '@proton/account';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
+import useLumoInMail from './views/lumoAgent/useLumoInMail';
 import DrawerReferralView from './views/referral/DrawerReferralView';
 import DrawerVPNView from './views/vpn/DrawerVPNView';
 import useVPNDrawer from './views/vpn/useVPNDrawer';
 
 import './DrawerApp.scss';
+
+// Lazy so the Lumo panel + @proton/lumo-ui load only when the tab is opened — kept out of the eager
+// bundle of every app that mounts the drawer.
+const DrawerLumoView = lazy(() => import('./views/DrawerLumoView'));
 
 interface Props {
     /**
@@ -50,6 +56,7 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
     const { appInView, iframeSrcMap } = useDrawer();
     const isSecurityCenterEnabled = useSecurityCenter();
     const isVPNDrawerEnabled = useVPNDrawer();
+    const isLumoInMailEnabled = useLumoInMail();
     const getBreachesCount = useGetBreachesCounts();
     const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
     const { canShowDrawerApp } = useReferralDiscover();
@@ -126,6 +133,12 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
                         {isVPNDrawerEnabled && appInView === DRAWER_NATIVE_APPS.VPN && <DrawerVPNView />}
 
                         {canShowDrawerApp && appInView === DRAWER_NATIVE_APPS.REFERRAL && <DrawerReferralView />}
+
+                        {isLumoInMailEnabled && appInView === DRAWER_NATIVE_APPS.LUMO && (
+                            <Suspense fallback={<Loader size="large" />}>
+                                <DrawerLumoView />
+                            </Suspense>
+                        )}
                     </div>
                 </ErrorBoundary>
             </aside>
