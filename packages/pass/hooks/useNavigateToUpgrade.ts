@@ -25,6 +25,10 @@ type UpgradeOptions = {
     plan?: string;
     targetPage?: 'compare';
     type?: string;
+    /** When PassNavbarUpgradeToAccount is enabled, upgrade button opens
+     * account upgrade page (`u/<localID>/pass/upgrade`)
+     * instead of the signup page. */
+    upgradeToAccount?: boolean;
     upsellRef?: UpsellRef;
 };
 
@@ -53,6 +57,22 @@ const upgradeURLBuilder =
         })();
 
         const defaultUpgradePath = isFree ? PASS_UPGRADE_PATH_PROTON_FREE : PASS_UPGRADE_PATH;
+        const localID = authStore?.getLocalID();
+
+        /** When PassNavbarUpgradeToAccount is enabled, upsell opens the account upgrade page instead of signup.
+         * The local ID is embedded in the path (`u/<localID>`) rather than appended as a `u` query param.
+         * ie …/u/0/pass/upgrade?ref=… instead of …/pass/signup?ref=…&u=0
+         * Only applies to the default upgrade path: callers passing an explicit `path` (e.g. business
+         * signup) or a targeted `coupon`/`offer` keep their dedicated checkout flow. */
+        const useAccountUpgrade = Boolean(
+            options.upgradeToAccount &&
+            !options.path &&
+            !options.coupon &&
+            !options.offer &&
+            (EXTENSION_BUILD || DESKTOP_BUILD) &&
+            BUILD_TARGET !== 'safari' &&
+            localID !== undefined
+        );
 
         if (options.coupon) searchParams.append('coupon', options.coupon);
         if (options.cycle) searchParams.append('cycle', options.cycle);
@@ -64,14 +84,15 @@ const upgradeURLBuilder =
         if (options.upsellRef) searchParams.append('ref', `${refPrefix}_${options.upsellRef}`);
         if (options.type) searchParams.append('type', options.type);
 
-        if (!options.email) {
-            const localID = authStore?.getLocalID();
-            if (localID !== undefined) searchParams.append('u', localID.toString());
+        if (!options.email && !useAccountUpgrade && localID !== undefined) {
+            searchParams.append('u', localID.toString());
         }
+
+        const path = useAccountUpgrade ? `u/${localID}/pass/upgrade` : (options.path ?? defaultUpgradePath);
 
         return BUILD_TARGET === 'safari'
             ? `${SAFARI_URL_SCHEME}//upgrade?${searchParams.toString()}`
-            : `${config.SSO_URL}/${options.path ?? defaultUpgradePath}?${searchParams.toString()}`;
+            : `${config.SSO_URL}/${path}?${searchParams.toString()}`;
     };
 
 const useNavigateToUpgradeBase = (options: UpgradeOptions, userPlan?: MaybeNull<PassPlanResponse>) => {
