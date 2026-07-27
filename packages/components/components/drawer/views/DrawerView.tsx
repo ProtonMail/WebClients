@@ -21,6 +21,10 @@ interface Props extends Omit<HTMLAttributes<HTMLElement>, 'content'> {
     footerButtons?: JSX.Element[];
     onAnimationEnd?: () => void;
     isUsingTabs?: boolean;
+    /** View-specific buttons rendered in the header, just before the Close button. */
+    headerActions?: ReactNode;
+    /** Class for the content wrapper; defaults to `contacts-widget`. Pass this to opt out of it. */
+    contentClassName?: string;
 }
 
 const DrawerView = ({
@@ -32,17 +36,21 @@ const DrawerView = ({
     className,
     children,
     isUsingTabs = false,
+    headerActions,
+    contentClassName,
     ...rest
 }: Props) => {
-    const drawerHeaderTitle = options ? (
-        isUsingTabs ? (
-            <DrawerHeaderTitleTabs title={tab.text} options={options} onClickOption={onSelectDrawerOption} />
-        ) : (
-            <DrawerHeaderTitleDropdown title={tab.text} options={options} onClickOption={onSelectDrawerOption} />
-        )
-    ) : (
-        tab.text
-    );
+    const renderDrawerHeaderTitle = () => {
+        if (!options) {
+            return tab.text;
+        }
+        if (isUsingTabs) {
+            return <DrawerHeaderTitleTabs title={tab.text} options={options} onClickOption={onSelectDrawerOption} />;
+        }
+        return <DrawerHeaderTitleDropdown title={tab.text} options={options} onClickOption={onSelectDrawerOption} />;
+    };
+
+    const drawerHeaderTitle = renderDrawerHeaderTitle();
 
     // The opening animation is creating flickers when we want to autofocus an input
     // We need to perform the focus action once the animation has ended
@@ -61,9 +69,10 @@ const DrawerView = ({
             <DrawerAppHeader
                 headerClassName={tab.backgroundClass}
                 title={drawerHeaderTitle}
+                headerActions={headerActions}
                 isUsingTabs={isUsingTabs}
             />
-            <div className="flex-1 contacts-widget w-full">{children}</div>
+            <div className={clsx('flex-1 w-full', contentClassName ?? 'contacts-widget')}>{children}</div>
             {footerButtons && <DrawerAppFooter buttons={footerButtons} />}
         </div>
     );

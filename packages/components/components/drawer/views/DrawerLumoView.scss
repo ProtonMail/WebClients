@@ -1,0 +1,5 @@
+// The Lumo panel manages its own internal scroll, so the drawer content area must be allowed to shrink
+// below its content size (min-block-size: 0) for the transcript's overflow to take effect.
+.drawer-lumo {
+	min-block-size: 0;
+}
