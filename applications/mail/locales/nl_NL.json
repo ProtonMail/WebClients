@@ -1520,7 +1520,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1717,6 +1718,12 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Lookup document": [
+        "Opzoekdocument"
+      ],
+      "Reject": [
+        "Afwijzen"
       ]
     },
     "action": {
@@ -1843,6 +1850,25 @@
       ],
       "Writing assistant seats": [
         "Licenties voor schrijfassistent"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruikers)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruikers)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruikers)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } aangepast domein",
+        "${ quantity } aangepaste domeinen"
       ]
     },
     "Alert": {
@@ -5506,6 +5532,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Er is iets misgegaan. Sluit het venster en probeer opnieuw."
       ]
     },
     "error": {
@@ -9346,6 +9375,26 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } probleem tijdens importeren:",
+        "${ issues.length } problemen tijdens importeren:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minuten resterend…"
+      ],
+      "Details": [
+        "Details"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Er is een actieve gecodeerde zoekindex gevonden met ${ oldIndexSize } bericht.",
+        "Er is een actieve gecodeerde zoekindex gevonden met ${ oldIndexSize } berichten."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importeren wordt uitgevoerd. U kunt dit dialoogvenster sluiten terwijl het actief is en er later op terugkomen. Sluit het tabblad echter niet."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "U kunt het importeren als een nieuwe basis zoekindex voor ontwikkelingsdoeleinden."
       ]
     },
     "info": {
@@ -10535,6 +10584,18 @@
       ],
       "Client version": [
         "Klantenversie"
+      ],
+      "Content search version to use": [
+        "Te gebruiken versie voor zoeken naar inhoud"
+      ],
+      "Document ID": [
+        "Document-id"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11014,6 +11075,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licentie",
         "${ seats } ${ MEET_APP_NAME } licenties"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruiker)",
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruikers)"
       ]
     },
     "meet_2025: Feature": {

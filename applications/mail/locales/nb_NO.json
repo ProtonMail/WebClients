@@ -1520,7 +1520,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1717,6 +1718,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Reject": [
+        "Avvis"
       ]
     },
     "action": {
@@ -1843,6 +1847,21 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentseter"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } bruker)",
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } brukere)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } bruker)",
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } brukere)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } egendefinert domene",
+        "${ quantity } egendefinerte domener"
       ]
     },
     "Alert": {
@@ -9327,6 +9346,9 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Hold deg til planen din og få 50 % rabatt neste måned"
+      ],
+      "Details": [
+        "Detaljer"
       ]
     },
     "info": {
@@ -10983,6 +11005,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } sete",
         "${ seats } ${ MEET_APP_NAME } seter"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (for ${ quantity } bruker)",
+        "${ MEET_APP_NAME } (for ${ quantity } brukere)"
       ]
     },
     "meet_2025: Feature": {
