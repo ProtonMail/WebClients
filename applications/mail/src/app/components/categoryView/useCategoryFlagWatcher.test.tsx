@@ -6,7 +6,7 @@ import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector'
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import { categoryIDFromUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
+import { categoryIDFromUrl, getInboxUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
@@ -47,6 +47,7 @@ describe('useCategoryFlagWatcher', () => {
         jest.mocked(useCategoriesView).mockReturnValue(noCategoryAccess);
         jest.mocked(categoryIDFromUrl).mockReturnValue(undefined);
         jest.mocked(setCategoryInUrl).mockReturnValue(CATEGORY_DEFAULT_URL);
+        jest.mocked(getInboxUrl).mockReturnValue(INBOX_URL);
     });
 
     afterEach(() => {
@@ -105,6 +106,7 @@ describe('useCategoryFlagWatcher', () => {
         it('redirects to inbox when category view is disabled', () => {
             renderHook(() => useCategoryFlagWatcher());
             expect(mockDispatch).toHaveBeenCalled();
+            expect(getInboxUrl).toHaveBeenCalledWith();
             expect(mockReplace).toHaveBeenCalledWith(INBOX_URL);
         });
     });
