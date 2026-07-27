@@ -9,8 +9,9 @@ import { StripedList } from '@proton/components/components/stripedList/StripedLi
 import Time from '@proton/components/components/time/Time';
 import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
-import { hasLumoAddonFromPlanIDs, hasMeetAddonFromPlanIDs, hasScribeAddon } from '@proton/payments/core/plan/addons';
+import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import { getIsPassB2BPlan } from '@proton/payments/core/plan/helpers';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
@@ -279,7 +280,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
             icon: 'speech-bubble' as const,
             text: lumoText,
             actionElement,
-            isAddon: hasLumoAddonFromPlanIDs(getPlanIDs(subscription)),
+            isAddon: hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, getPlanIDs(subscription)),
         };
     })();
 
@@ -294,7 +295,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
             icon: 'meet-camera' as const,
             text: meetText,
             actionElement,
-            isAddon: hasMeetAddonFromPlanIDs(getPlanIDs(subscription)),
+            isAddon: hasAddonFromPlanIDs(ADDON_PREFIXES.MEET, getPlanIDs(subscription)),
         };
     })();
 
@@ -310,7 +311,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
             icon: 'pen-sparks' as const,
             text: writingAssistantText,
             actionElement,
-            isAddon: hasScribeAddon(subscription),
+            isAddon: hasAddonFromPlanIDs(ADDON_PREFIXES.SCRIBE, getPlanIDs(subscription)),
         };
     })();
 
