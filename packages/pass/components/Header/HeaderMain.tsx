@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 import CoreHeader from '@proton/components/components/header/Header';
+import { HeaderVaultSelector } from '@proton/pass/components/Header/HeaderVaultSelector';
 import type { HeaderProps } from '@proton/pass/components/Header/types';
 import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
@@ -15,6 +16,7 @@ export const HeaderMain = memo(({ onLock, onLogout, interactive, origin }: Heade
             <CoreHeader className="border-bottom border-weak h-auto p-2">
                 <div className="flex items-center gap-x-2 w-full">
                     <MenuDropdown onLock={onLock} onLogout={onLogout} interactive={interactive} />
+                    <HeaderVaultSelector />
                     <SearchBar disabled={!interactive} />
                     <UpsellButton />
                     <ItemQuickActions origin={origin} />
