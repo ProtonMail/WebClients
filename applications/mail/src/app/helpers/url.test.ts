@@ -177,4 +177,76 @@ describe('mailtoParser', () => {
         expect(data?.BCCList).toEqual([{ Name: address4, Address: address4 }]);
         expect(removeLineBreaks(decryption?.decryptedBody || '')).toEqual(removeLineBreaks(expectedBody));
     });
+
+    it('should return an empty object for the non-mailto input: input', () => {
+        expect(mailtoParser('input')).toEqual({});
+    });
+    it('should return an empty object for the non-mailto input: "\'\'"', () => {
+        expect(mailtoParser('')).toEqual({});
+    });
+    it('should return an empty object for the non-mailto input: "https://proton.me"', () => {
+        expect(mailtoParser('https://proton.me')).toEqual({});
+    });
+    it('should return an empty object for the non-mailto input: "test@proton.me"', () => {
+        expect(mailtoParser('test@proton.me')).toEqual({});
+    });
+    it('should return an empty object for the non-mailto input: "tel:+41000000000"', () => {
+        expect(mailtoParser('tel:+41000000000')).toEqual({});
+    });
+
+    it('should accept an uppercase MAILTO scheme', () => {
+        const { data } = mailtoParser(`MAILTO:${address1}`);
+
+        expect(data?.ToList).toEqual([{ Name: address1, Address: address1 }]);
+    });
+
+    it('should not set a ToList when the recipient is missing', () => {
+        const { data } = mailtoParser(`mailto:?subject=${subject}`);
+
+        expect(data?.ToList).toBeUndefined();
+        expect(data?.Subject).toEqual(subject);
+    });
+
+    it('should preserve a + in the recipient alias instead of turning it into a space', () => {
+        const alias = 'user+tag@proton.me';
+        const { data } = mailtoParser(`mailto:${alias}`);
+
+        expect(data?.ToList).toEqual([{ Name: alias, Address: alias }]);
+    });
+
+    it('should preserve a + in a cc/bcc alias instead of turning it into a space', () => {
+        const ccAlias = 'cc+tag@proton.me';
+        const bccAlias = 'bcc+tag@proton.me';
+        const { data } = mailtoParser(`mailto:${address1}?cc=${ccAlias}&bcc=${bccAlias}`);
+
+        expect(data?.CCList).toEqual([{ Name: ccAlias, Address: ccAlias }]);
+        expect(data?.BCCList).toEqual([{ Name: bccAlias, Address: bccAlias }]);
+    });
+
+    it('should parse mailto parameter keys case-insensitively', () => {
+        const { data } = mailtoParser(`mailto:${address1}?SUBJECT=${subject}`);
+
+        expect(data?.Subject).toEqual(subject);
+    });
+
+    it('should not set the subject when the parameter value is empty', () => {
+        const { data } = mailtoParser(`mailto:${address1}?subject=`);
+
+        expect(data?.Subject).toBeUndefined();
+    });
+
+    it('should ignore a parameter that has no value assignment', () => {
+        const { data } = mailtoParser(`mailto:${address1}?subject&cc=${address2}`);
+
+        expect(data?.Subject).toBeUndefined();
+        expect(data?.CCList).toEqual([{ Name: address2, Address: address2 }]);
+    });
+
+    it('should keep an encoded ampersand (%26) inside a single parameter', () => {
+        const { data } = mailtoParser(`mailto:${address1}?subject=A%26B&cc=${address2}`);
+
+        // The %26 must not split the subject into an extra param, and cc must still be parsed.
+        expect(data?.Subject).toContain('B');
+        expect(data?.CCList).toEqual([{ Name: address2, Address: address2 }]);
+    });
 });
