@@ -15,6 +15,7 @@ export enum DRAWER_NATIVE_APPS {
     SECURITY_CENTER = 'security-center',
     VPN = 'vpn',
     REFERRAL = 'referral',
+    LUMO = 'lumo',
 }
 
 export type DrawerApp = typeof APPS.PROTONCALENDAR | `${DRAWER_NATIVE_APPS}`;

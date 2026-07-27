@@ -158,11 +158,19 @@
 	}
 }
 
-// The composer: rounded, glowing input wrapping an auto-growing textarea + a circular send/stop button.
+// The composer: a rounded, glowing box holding an auto-growing textarea, with the circular send/stop
+// button pinned bottom-right OUT OF FLOW. Because the button is out of flow, it toggling never changes
+// the box height — the box hugs one line to start (and collapses back to one line after send), and only
+// typed content wrapping to further lines grows it, the button then holding the bottom-right corner.
 .lumo-prompt-input {
+	position: relative;
 	min-inline-size: 0;
-	padding-block: 0.375rem;
-	padding-inline: 0.625rem;
+
+	// Resting height equals the send button plus a 4px margin each side (rem(40) = rem(32) + 2 × rem(4)).
+	// The field's own line-height + padding fill exactly this on one line, so the text is centred by its
+	// padding and the bottom-pinned button lands on the same centre; extra lines just grow the box.
+	min-block-size: rem(40);
+	padding-inline: rem(12);
 	border-radius: var(--border-radius-xl);
 	border: 1px solid var(--lumo-border, var(--border-weak));
 	background-color: var(--lumo-surface, var(--background-norm));
@@ -175,29 +183,41 @@
 		box-shadow: 0 0 0 3px var(--focus-ring);
 	}
 
-	// The textarea owns no chrome — the wrapper is the affordance — so it reads as one seamless box.
+	// The textarea owns no chrome — the wrapper is the affordance. It spans the full width and reserves
+	// room on the right for the pinned button, so the button appearing never slides the text or the box.
+	// A fixed line-height + symmetric vertical padding make one line fill the box exactly, centring the
+	// text; each further line then grows the box by one line-height.
 	&__field {
+		display: block;
+		inline-size: 100%;
 		min-inline-size: 0;
 		max-block-size: 12rem;
+		padding-block: rem(10);
+		padding-inline-end: rem(28);
 		overflow-y: auto;
 		border: 0;
 		background: transparent;
 		color: var(--lumo-text, var(--text-norm));
 		font: inherit;
+		line-height: rem(20);
 
 		&:focus {
 			outline: 0;
 		}
 	}
 
-	// Circular send/stop button; the SVGs are self-contained button graphics, so let the image fill the
-	// whole button and be centred by the SVG's own geometry.
+	// Circular send/stop button pinned bottom-right, absolutely positioned so it never affects the box
+	// height; the box's min-block-size hugs it on a single line and it holds the corner as text wraps. The
+	// SVGs are self-contained button graphics, so let the image fill the button.
 	&__send {
+		position: absolute;
+		inset-block-end: rem(4);
+		inset-inline-end: rem(4);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		inline-size: 2rem;
-		block-size: 2rem;
+		inline-size: rem(32);
+		block-size: rem(32);
 		padding: 0;
 
 		> img {
