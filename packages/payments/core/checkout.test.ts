@@ -1,13 +1,28 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { PLANS_MAP, getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
+import { getAddonDisplayOrder, getAddonTrialLimit } from './addon/addons';
 import {
+    getAddonTitleByType,
+    getAddonTitleWithQuantity,
     getCheckoutUi,
     getCouponDiscountBreakdownInfo,
     getInformedOptimisticSubscriptionEstimation,
     getUsersAndAddons,
 } from './checkout';
-import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
+import {
+    ADDON_NAMES,
+    ADDON_PREFIXES,
+    CYCLE,
+    PLANS,
+    PLAN_TYPES,
+    TRIAL_MAX_DEDICATED_IPS,
+    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+    TRIAL_MAX_LUMO_SEATS,
+    TRIAL_MAX_MEET_SEATS,
+    TRIAL_MAX_SCRIBE_SEATS,
+    TRIAL_MAX_USERS,
+} from './constants';
 import { InvalidCouponError, WrongBillingAddressError } from './errors';
 import type { PlanIDs } from './interface';
 import type { Plan } from './plan/interface';
@@ -1521,5 +1536,147 @@ describe('getCouponDiscountBreakdownInfo', () => {
             perAddonPerCycleDiscount: { [PLANS.BUNDLE]: -4200, [ADDON_NAMES.LUMO_BUNDLE]: -2400 },
             perAddonPerMonthDiscount: { [PLANS.BUNDLE]: -350, [ADDON_NAMES.LUMO_BUNDLE]: -200 },
         });
+    });
+});
+
+describe('getAddonTitleWithQuantity()', () => {
+    const b2bPlanIDs = { [PLANS.BUNDLE_PRO]: 1 };
+    const b2cPlanIDs = { [PLANS.BUNDLE]: 1 };
+
+    describe('B2B titles', () => {
+        it('member', () => {
+            expect(getAddonTitleWithQuantity(ADDON_NAMES.MEMBER_BUNDLE_PRO, 3, b2bPlanIDs)).toBe('3 users');
+        });
+        it('domain', () => {
+            expect(getAddonTitleWithQuantity(ADDON_NAMES.DOMAIN_BUNDLE_PRO, 2, b2bPlanIDs)).toBe(
+                '2 additional custom domains'
+            );
+        });
+        it('IP', () => {
+            expect(getAddonTitleWithQuantity(ADDON_NAMES.IP_BUNDLE_PRO, 1, b2bPlanIDs)).toBe('1 dedicated VPN server');
+        });
+        it('scribe', () => {
+            expect(getAddonTitleWithQuantity(ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, 5, b2bPlanIDs)).toBe(
+                '5 writing assistant seats'
+            );
+        });
+    });
+
+    describe('B2C titles', () => {
+        it('member (singular)', () => {
+            expect(getAddonTitleWithQuantity(ADDON_NAMES.MEMBER_BUNDLE_PRO, 1, b2cPlanIDs)).toBe('1 user');
+        });
+        it('member (plural)', () => {
+            expect(getAddonTitleWithQuantity(ADDON_NAMES.MEMBER_BUNDLE_PRO, 3, b2cPlanIDs)).toBe('3 users');
+        });
+        it('domain', () => {
+            expect(getAddonTitleWithQuantity(ADDON_NAMES.DOMAIN_BUNDLE_PRO, 2, b2cPlanIDs)).toBe(
+                '2 additional custom domains'
+            );
+        });
+        it('IP', () => {
+            expect(getAddonTitleWithQuantity(ADDON_NAMES.IP_BUNDLE_PRO, 1, b2cPlanIDs)).toBe('1 dedicated VPN server');
+        });
+        it('scribe', () => {
+            // B2C scribe checkout title intentionally ignores quantity
+            expect(getAddonTitleWithQuantity(ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, 5, b2cPlanIDs)).toBe(
+                'Writing assistant'
+            );
+        });
+    });
+});
+
+describe('getAddonTitleByType()', () => {
+    it('member B2C', () => {
+        expect(getAddonTitleByType(ADDON_PREFIXES.MEMBER, true)).toBe('Users');
+    });
+    it('member B2B', () => {
+        expect(getAddonTitleByType(ADDON_PREFIXES.MEMBER, false)).toBe('Users');
+    });
+    it('domain B2C', () => {
+        expect(getAddonTitleByType(ADDON_PREFIXES.DOMAIN, true)).toBe('Domains');
+    });
+    it('IP long form (default)', () => {
+        expect(getAddonTitleByType(ADDON_PREFIXES.IP, true)).toBe('Dedicated VPN servers');
+    });
+    it('IP short form', () => {
+        expect(getAddonTitleByType(ADDON_PREFIXES.IP, true, { short: true })).toBe('Servers');
+    });
+    it('scribe B2C', () => {
+        expect(getAddonTitleByType(ADDON_PREFIXES.SCRIBE, true)).toBe('Writing assistant');
+    });
+    it('scribe B2B', () => {
+        expect(getAddonTitleByType(ADDON_PREFIXES.SCRIBE, false)).toBe('Writing assistant seats');
+    });
+});
+
+describe('getAddonDisplayOrder()', () => {
+    it('renders member before domain before IP before meet before scribe before lumo', () => {
+        const order = [
+            ADDON_PREFIXES.MEMBER,
+            ADDON_PREFIXES.DOMAIN,
+            ADDON_PREFIXES.IP,
+            ADDON_PREFIXES.MEET,
+            ADDON_PREFIXES.SCRIBE,
+            ADDON_PREFIXES.LUMO,
+        ];
+        for (let i = 0; i < order.length - 1; i++) {
+            expect(getAddonDisplayOrder(order[i])).toBeLessThan(getAddonDisplayOrder(order[i + 1]));
+        }
+    });
+
+    it('returns Infinity for null', () => {
+        expect(getAddonDisplayOrder(null)).toBe(Infinity);
+    });
+
+    it('returns Infinity for undefined', () => {
+        expect(getAddonDisplayOrder(undefined)).toBe(Infinity);
+    });
+});
+
+describe('getAddonTrialLimit()', () => {
+    it('returns TRIAL_MAX_USERS for member', () => {
+        expect(getAddonTrialLimit(ADDON_PREFIXES.MEMBER)).toBe(TRIAL_MAX_USERS);
+    });
+    it('returns TRIAL_MAX_EXTRA_CUSTOM_DOMAINS for domain', () => {
+        expect(getAddonTrialLimit(ADDON_PREFIXES.DOMAIN)).toBe(TRIAL_MAX_EXTRA_CUSTOM_DOMAINS);
+    });
+    it('returns TRIAL_MAX_DEDICATED_IPS for IP', () => {
+        expect(getAddonTrialLimit(ADDON_PREFIXES.IP)).toBe(TRIAL_MAX_DEDICATED_IPS);
+    });
+    it('returns TRIAL_MAX_SCRIBE_SEATS for scribe', () => {
+        expect(getAddonTrialLimit(ADDON_PREFIXES.SCRIBE)).toBe(TRIAL_MAX_SCRIBE_SEATS);
+    });
+    it('returns TRIAL_MAX_LUMO_SEATS for lumo', () => {
+        expect(getAddonTrialLimit(ADDON_PREFIXES.LUMO)).toBe(TRIAL_MAX_LUMO_SEATS);
+    });
+    it('returns TRIAL_MAX_MEET_SEATS for meet', () => {
+        expect(getAddonTrialLimit(ADDON_PREFIXES.MEET)).toBe(TRIAL_MAX_MEET_SEATS);
+    });
+    it('returns 0 for null', () => {
+        expect(getAddonTrialLimit(null)).toBe(0);
+    });
+    it('returns 0 for undefined', () => {
+        expect(getAddonTrialLimit(undefined)).toBe(0);
+    });
+});
+
+describe('addon config seat-pool preference', () => {
+    it('lumo is the preferred type in the ai pool', () => {
+        const { LUMO_ADDON_CONFIG } = require('./addon/configs/lumoAddonConfig');
+        expect(LUMO_ADDON_CONFIG.featureLimit.pool).toEqual({ group: 'ai', preferred: true });
+    });
+    it('scribe shares the ai pool but is not preferred', () => {
+        const { SCRIBE_ADDON_CONFIG } = require('./addon/configs/scribeAddonConfig');
+        expect(SCRIBE_ADDON_CONFIG.featureLimit.pool?.group).toBe('ai');
+        expect(SCRIBE_ADDON_CONFIG.featureLimit.pool?.preferred).toBeFalsy();
+    });
+    it('member config has no seat pool', () => {
+        const { MEMBER_ADDON_CONFIG } = require('./addon/configs/memberAddonConfig');
+        expect(MEMBER_ADDON_CONFIG.featureLimit.pool).toBeUndefined();
+    });
+    it('meet config has no seat pool', () => {
+        const { MEET_ADDON_CONFIG } = require('./addon/configs/meetAddonConfig');
+        expect(MEET_ADDON_CONFIG.featureLimit.pool).toBeUndefined();
     });
 });

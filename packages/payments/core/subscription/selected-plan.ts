@@ -1,49 +1,27 @@
 import isEqual from 'lodash/isEqual';
 
-import isFunction from '@proton/utils/isFunction';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ADDON_NAMES, type ADDON_PREFIXES, CYCLE, PLANS } from '../constants';
+import {
+    getAddonConfigByType,
+    getAddonSeatGroup,
+    getAddonTypeByFeatureLimitKey,
+    getPerMemberCappedAddonTypes,
+    getPreferredSeatPoolAddon,
+    getSeatPoolAddonTypes,
+    getSeatPoolGroups,
+} from '../addon/addons';
+import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, PLANS } from '../constants';
 import { getDefaultMainCurrency } from '../currencies';
 import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
-import {
-    type AddonGuard,
-    AddonGuardsMap,
-    type SupportedAddons,
-    getAddonType,
-    getSupportedAddons,
-    isAddonType,
-    isDomainAddon,
-    isIpAddon,
-    isLumoAddon,
-    isMeetAddon,
-    isMemberAddon,
-    isScribeAddon,
-} from '../plan/addons';
+import { type AddonGuard, type SupportedAddons, getAddonType, getSupportedAddons, isAddonType } from '../plan/addons';
 import { getPlanFeatureLimit } from '../plan/feature-limits';
-import {
-    getIsB2BAudienceFromPlan,
-    getLumoAddonNameByPlan,
-    getMeetAddonNameByPlan,
-    getPlanNameFromIDs,
-    getScribeAddonNameByPlan,
-} from '../plan/helpers';
+import { getAddonNameByPlan, getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '../plan/helpers';
 import type { Plan, PlansMap } from '../plan/interface';
 import { FREE_PLAN } from './freePlans';
-import { getPlanIDs } from './helpers';
+import { getPlanIDs } from './helpers/plan-ids';
 import type { Subscription } from './interface';
 import { getPlansMap } from './plans-map-wrapper';
-
-type PresentAddonTypes = {
-    [ADDON_PREFIXES.DOMAIN]: boolean;
-    [ADDON_PREFIXES.IP]: boolean;
-    [ADDON_PREFIXES.MEMBER]: boolean;
-    [ADDON_PREFIXES.SCRIBE]: boolean;
-    [ADDON_PREFIXES.LUMO]: boolean;
-    [ADDON_PREFIXES.MEET]: boolean;
-};
-
-export type AddonBalanceKey = 'prefer-scribes' | 'prefer-lumos';
 
 export class SelectedPlan {
     private _planIDs: PlanIDs;
@@ -67,7 +45,7 @@ export class SelectedPlan {
         plans: PlansMap | Plan[],
         cycle: CYCLE,
         currency: Currency,
-        preferred: AddonBalanceKey = 'prefer-lumos'
+        preferred?: ADDON_PREFIXES
     ): SelectedPlan {
         const plan = new SelectedPlan(planIDs, plans, cycle, currency);
         return plan.applyRules(preferred);
@@ -154,7 +132,7 @@ export class SelectedPlan {
     }
 
     private getTotalMembers(): number {
-        return this.getTotalAddons(isMemberAddon, 'MaxMembers');
+        return this.getTotalAddons('MaxMembers', ADDON_PREFIXES.MEMBER);
     }
 
     /**
@@ -172,7 +150,7 @@ export class SelectedPlan {
     }
 
     getTotalIPs(): number {
-        return this.getTotalAddons(isIpAddon, 'MaxIPs');
+        return this.getTotalAddons('MaxIPs', ADDON_PREFIXES.IP);
     }
 
     getIncludedIPs(): number {
@@ -180,27 +158,15 @@ export class SelectedPlan {
     }
 
     getAdditionalIPs(): number {
-        return this.getCountInAddons(isIpAddon, 'MaxIPs');
+        return this.getCountInAddons('MaxIPs', ADDON_PREFIXES.IP);
     }
 
     getTotalDomains(): number {
-        return this.getTotalAddons(isDomainAddon, 'MaxDomains');
+        return this.getTotalAddons('MaxDomains', ADDON_PREFIXES.DOMAIN);
     }
 
     getAdditionalDomains(): number {
-        return this.getCountInAddons(isDomainAddon, 'MaxDomains');
-    }
-
-    getTotalScribes(): number {
-        return this.getTotalAddons(isScribeAddon, 'MaxAI');
-    }
-
-    getTotalLumos(): number {
-        return this.getTotalAddons(isLumoAddon, 'MaxLumo');
-    }
-
-    getTotalMeets(): number {
-        return this.getTotalAddons(isMeetAddon, 'MaxMeet');
+        return this.getCountInAddons('MaxDomains', ADDON_PREFIXES.DOMAIN);
     }
 
     /**
@@ -209,6 +175,7 @@ export class SelectedPlan {
      * planIDs.
      */
     getTotal(featureLimitKey: FeatureLimitKey): number {
+        // Native plan limits keep their dedicated getters (they carry plan-specific nuance).
         switch (featureLimitKey) {
             case 'MaxMembers':
                 return this.getTotalMembers();
@@ -216,123 +183,70 @@ export class SelectedPlan {
                 return this.getTotalIPs();
             case 'MaxDomains':
                 return this.getTotalDomains();
-            case 'MaxAI':
-                return this.getTotalScribes();
-            case 'MaxLumo':
-                return this.getTotalLumos();
-            case 'MaxMeet':
-                return this.getTotalMeets();
-            default:
-                // Just count the respective featureLimitKey in all the addons and plans
-                return this.getTotalAddons(() => true, featureLimitKey);
+            default: {
+                // Synthetic/seat keys (MaxAI/MaxLumo/MaxMeet, …): resolve the owning addon type from
+                // the registry and count generically. Falls back to counting across all addons.
+                const addonType = getAddonTypeByFeatureLimitKey(featureLimitKey);
+                return this.getTotalAddons(featureLimitKey, addonType);
+            }
         }
     }
 
     setScribeCount(newCount: number, balance = true): SelectedPlan {
-        const applied = this.applyScribeCount(newCount);
-        if (applied === this) {
-            return this;
-        }
-
-        const capped = applied.capScribes();
-        if (balance) {
-            return capped.balanceScribesAndLumos('prefer-scribes');
-        }
-
-        return capped;
+        return this.setAddonCount(ADDON_PREFIXES.SCRIBE, newCount, balance);
     }
 
     setLumoCount(newCount: number, balance = true): SelectedPlan {
-        const applied = this.applyLumoCount(newCount);
-        if (applied === this) {
-            return this;
-        }
-
-        const capped = applied.capLumos();
-        if (balance) {
-            return capped.balanceScribesAndLumos('prefer-lumos');
-        }
-
-        return capped;
+        return this.setAddonCount(ADDON_PREFIXES.LUMO, newCount, balance);
     }
 
     setMeetCount(newCount: number): SelectedPlan {
-        const applied = this.applyMeetCount(newCount);
+        return this.setAddonCount(ADDON_PREFIXES.MEET, newCount, false);
+    }
+
+    private setAddonCount(addonType: ADDON_PREFIXES, newCount: number, balance: boolean): SelectedPlan {
+        const applied = this.applyAddonCount(addonType, newCount);
         if (applied === this) {
             return this;
         }
 
-        return applied.capMeets();
+        const capped = applied.capAddonType(addonType);
+        return balance ? capped.balanceSeatGroupFor(addonType) : capped;
     }
 
-    private applyScribeCount(newCount: number): SelectedPlan {
-        const scribeAddonName = getScribeAddonNameByPlan(this.getPlanName());
-        if (!scribeAddonName) {
+    // Adjusts the quantity of the addon backing `addonType` so the plan totals `newCount` of its feature.
+    private applyAddonCount(addonType: ADDON_PREFIXES, newCount: number): SelectedPlan {
+        const addonName = getAddonNameByPlan(addonType, this.getPlanName());
+        const featureLimitKey = getAddonConfigByType(addonType)?.featureLimit.key;
+        if (!addonName || !featureLimitKey) {
             return this;
         }
 
-        const scribesInPlan = this.getCountInPlan('MaxAI');
-        const scribesInAddons = this.getCountInAddons(isScribeAddon, 'MaxAI');
-        const scribesChange = newCount - scribesInPlan - scribesInAddons;
-        if (scribesChange === 0) {
+        const inPlan = this.getCountInPlan(featureLimitKey);
+        const inAddons = this.getCountInAddons(featureLimitKey, addonType);
+        const change = newCount - inPlan - inAddons;
+        if (change === 0) {
             return this;
         }
 
         const planIDs = { ...this._planIDs };
-        planIDs[scribeAddonName] = Math.max((planIDs[scribeAddonName] ?? 0) + scribesChange, 0);
-        if (planIDs[scribeAddonName] === 0) {
-            delete planIDs[scribeAddonName];
+        planIDs[addonName] = Math.max((planIDs[addonName] ?? 0) + change, 0);
+        if (planIDs[addonName] === 0) {
+            delete planIDs[addonName];
         }
 
         return this.selectedPlanWithNewIds(planIDs);
     }
 
-    private applyLumoCount(newCount: number): SelectedPlan {
-        const lumoAddonName = getLumoAddonNameByPlan(this.getPlanName());
-        if (!lumoAddonName) {
-            return this;
+    private applyRules(preferred?: ADDON_PREFIXES): SelectedPlan {
+        let result: SelectedPlan = this;
+        for (const addonType of getPerMemberCappedAddonTypes()) {
+            result = result.capAddonType(addonType);
         }
-
-        const lumosInPlan = this.getCountInPlan('MaxLumo');
-        const lumosInAddons = this.getCountInAddons(isLumoAddon, 'MaxLumo');
-        const lumosChange = newCount - lumosInPlan - lumosInAddons;
-        if (lumosChange === 0) {
-            return this;
+        for (const group of getSeatPoolGroups()) {
+            result = result.balanceSeatGroup(group, preferred);
         }
-
-        const planIDs = { ...this._planIDs };
-        planIDs[lumoAddonName] = Math.max((planIDs[lumoAddonName] ?? 0) + lumosChange, 0);
-        if (planIDs[lumoAddonName] === 0) {
-            delete planIDs[lumoAddonName];
-        }
-
-        return this.selectedPlanWithNewIds(planIDs);
-    }
-
-    private applyMeetCount(newCount: number): SelectedPlan {
-        const meetAddonName = getMeetAddonNameByPlan(this.getPlanName());
-        if (!meetAddonName) {
-            return this;
-        }
-
-        const meetsInPlan = this.getCountInPlan('MaxMeet');
-        const meetsInAddons = this.getCountInAddons(isMeetAddon, 'MaxMeet');
-        const meetsChange = newCount - meetsInPlan - meetsInAddons;
-        if (meetsChange === 0) {
-            return this;
-        }
-
-        const planIDs = { ...this._planIDs };
-        planIDs[meetAddonName] = Math.max((planIDs[meetAddonName] ?? 0) + meetsChange, 0);
-        if (planIDs[meetAddonName] === 0) {
-            delete planIDs[meetAddonName];
-        }
-
-        return this.selectedPlanWithNewIds(planIDs);
-    }
-
-    private applyRules(preferred: AddonBalanceKey): SelectedPlan {
-        return this.capScribes().capLumos().capMeets().balanceScribesAndLumos(preferred);
+        return result;
     }
 
     getPlanName(): PLANS {
@@ -353,77 +267,44 @@ export class SelectedPlan {
         return getIsB2BAudienceFromPlan(this.getPlanName());
     }
 
-    getMaxLumos(): number {
-        return this.getTotalUsers();
-    }
-
-    getMaxScribes(): number {
-        return this.getTotalUsers();
-    }
-
-    getMaxMeets(): number {
-        return this.getTotalUsers();
-    }
-
-    getPresentAddonTypes(): PresentAddonTypes {
+    hasAddonType(addonType: ADDON_PREFIXES): boolean {
         const addonPrefixes = this.getAddonNames().map(getAddonType).filter(isTruthy);
-        return addonPrefixes.reduce((acc, addonPrefix) => {
-            acc[addonPrefix] = true;
-            return acc;
-        }, {} as PresentAddonTypes);
+        return addonPrefixes.includes(addonType);
     }
 
     isEqualTo(other: SelectedPlan): boolean {
         return isEqual(this.planIDs, other.planIDs);
     }
 
-    private capScribes(): SelectedPlan {
-        const maxScribes = this.getMaxScribes();
-        if (this.getTotalScribes() <= maxScribes) {
+    // Member-capped addons (scribe, lumo, meet) can't exceed the user count. Drops stale addons from
+    // other plans first, then trims the matching one down to the cap if still over.
+    private capAddonType(addonType: ADDON_PREFIXES): SelectedPlan {
+        const featureLimitKey = getAddonConfigByType(addonType)?.featureLimit.key;
+        if (!featureLimitKey) {
             return this;
         }
 
-        const trimmed = this.dropForeignAddons(isScribeAddon, getScribeAddonNameByPlan(this.getPlanName()));
-        if (trimmed.getTotalScribes() <= maxScribes) {
-            return trimmed;
-        }
-
-        return trimmed.applyScribeCount(maxScribes);
-    }
-
-    private capLumos(): SelectedPlan {
-        const maxLumos = this.getMaxLumos();
-        if (this.getTotalLumos() <= maxLumos) {
+        const max = this.getTotalUsers();
+        if (this.getTotalAddons(featureLimitKey, addonType) <= max) {
             return this;
         }
 
-        const trimmed = this.dropForeignAddons(isLumoAddon, getLumoAddonNameByPlan(this.getPlanName()));
-        if (trimmed.getTotalLumos() <= maxLumos) {
+        const trimmed = this.dropForeignAddons(addonType, getAddonNameByPlan(addonType, this.getPlanName()));
+        if (trimmed.getTotalAddons(featureLimitKey, addonType) <= max) {
             return trimmed;
         }
 
-        return trimmed.applyLumoCount(maxLumos);
+        return trimmed.applyAddonCount(addonType, max);
     }
 
-    private capMeets(): SelectedPlan {
-        const maxMeets = this.getMaxMeets();
-        if (this.getTotalMeets() <= maxMeets) {
-            return this;
-        }
-
-        const trimmed = this.dropForeignAddons(isMeetAddon, getMeetAddonNameByPlan(this.getPlanName()));
-        if (trimmed.getTotalMeets() <= maxMeets) {
-            return trimmed;
-        }
-
-        return trimmed.applyMeetCount(maxMeets);
-    }
-
-    private dropForeignAddons(guard: AddonGuard, matchingAddon: ADDON_NAMES | undefined): SelectedPlan {
+    private dropForeignAddons(
+        expectedType: AddonGuard | ADDON_PREFIXES,
+        matchingAddon: ADDON_NAMES | undefined
+    ): SelectedPlan {
         const planIDs = { ...this._planIDs };
         let changed = false;
         for (const name of Object.keys(planIDs) as (ADDON_NAMES | PLANS)[]) {
-            if (guard(name) && name !== matchingAddon) {
+            if (getAddonType(name) === expectedType && name !== matchingAddon) {
                 delete planIDs[name];
                 changed = true;
             }
@@ -431,38 +312,66 @@ export class SelectedPlan {
         return changed ? this.selectedPlanWithNewIds(planIDs) : this;
     }
 
-    private balanceScribesAndLumos(preferred: AddonBalanceKey): SelectedPlan {
+    // Addons sharing a seat pool (e.g. scribe + lumo) can't total more than members. When over, trim
+    // the non-preferred types; the preferred type is kept. `preferred` overrides the group's default
+    // (the `pool.preferred` member) — e.g. interacting with the scribe customizer keeps scribes.
+    private balanceSeatGroup(group: string, preferred?: ADDON_PREFIXES): SelectedPlan {
         const members = this.getTotalMembers();
-        const lumos = this.getTotalLumos();
-        const scribes = this.getTotalScribes();
+        const addonPrefixes = getSeatPoolAddonTypes(group);
+        const preferredType =
+            preferred && addonPrefixes.includes(preferred) ? preferred : getPreferredSeatPoolAddon(group);
 
-        const difference = lumos + scribes - members;
+        const featureKeyOf = (addonType: ADDON_PREFIXES) => getAddonConfigByType(addonType)?.featureLimit.key;
+        const total = addonPrefixes.reduce((acc, type) => {
+            const key = featureKeyOf(type);
+            return acc + (key ? this.getTotalAddons(key, type) : 0);
+        }, 0);
 
-        if (difference > 0) {
-            if (preferred === 'prefer-scribes') {
-                // We prefer scribes, so we remove lumos
-                return this.setLumoCount(lumos - difference, false);
-            } else {
-                // We prefer lumos over scribes, so we remove scribes
-                return this.setScribeCount(scribes - difference, false);
-            }
+        let difference = total - members;
+        if (difference <= 0) {
+            return this;
         }
 
-        return this;
+        let result: SelectedPlan = this;
+        for (const addonPrefix of addonPrefixes) {
+            if (difference <= 0) {
+                break;
+            }
+            if (addonPrefix === preferredType) {
+                continue;
+            }
+            const key = featureKeyOf(addonPrefix);
+            if (!key) {
+                continue;
+            }
+            const current = result.getTotalAddons(key, addonPrefix);
+            const reduceBy = Math.min(difference, current);
+            result = result.applyAddonCount(addonPrefix, current - reduceBy).capAddonType(addonPrefix);
+            difference -= reduceBy;
+        }
+
+        return result;
     }
 
-    private getTotalAddons(guard: AddonGuard, featureLimitKey: FeatureLimitKey): number {
-        return this.getCountInPlan(featureLimitKey) + this.getCountInAddons(guard, featureLimitKey);
+    // Balances the seat group containing `addonType`, keeping that type.
+    private balanceSeatGroupFor(addonType: ADDON_PREFIXES): SelectedPlan {
+        const group = getAddonSeatGroup(addonType);
+        if (!group) {
+            return this;
+        }
+        return this.balanceSeatGroup(group, addonType);
+    }
+
+    private getTotalAddons(featureLimitKey: FeatureLimitKey, prefix?: ADDON_PREFIXES): number {
+        return this.getCountInPlan(featureLimitKey) + this.getCountInAddons(featureLimitKey, prefix);
     }
 
     getCountInPlan(featureLimitKey: FeatureLimitKey): number {
         return getPlanFeatureLimit(this.getPlan(), featureLimitKey);
     }
 
-    private getCountInAddons(guardOrPrexix: AddonGuard | ADDON_PREFIXES, featureLimitKey: FeatureLimitKey): number {
-        const guard = isFunction(guardOrPrexix) ? guardOrPrexix : AddonGuardsMap[guardOrPrexix];
-
-        return this.getAddons(guard)
+    private getCountInAddons(featureLimitKey: FeatureLimitKey, prefix?: ADDON_PREFIXES): number {
+        return this.getAddons(prefix)
             .filter(isTruthy)
             .reduce((acc, addon) => {
                 const addonCount = this.getPlanCount(addon.Name);
@@ -470,9 +379,14 @@ export class SelectedPlan {
             }, 0);
     }
 
-    private getAddons(guard: AddonGuard): (Plan | undefined)[] {
-        const addonNames = this.getAddonNames(guard);
-        return this.getPlansByNames(addonNames);
+    private getAddons(prefix?: ADDON_PREFIXES): (Plan | undefined)[] {
+        const allAddonNames = Object.keys(this._planIDs) as (ADDON_NAMES | PLANS)[];
+        if (prefix === undefined) {
+            return this.getPlansByNames(allAddonNames);
+        }
+
+        const filteredAddonNames = allAddonNames.filter((addonOrName) => getAddonType(addonOrName) === prefix);
+        return this.getPlansByNames(filteredAddonNames);
     }
 
     private getAddonNames(guard: AddonGuard = () => true) {

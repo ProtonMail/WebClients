@@ -12,7 +12,7 @@ import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
@@ -157,7 +157,12 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                             selectedPlanIDs={planIDs}
                             onChangePlanIDs={(planIDs) => payments.selectPlanIDs(planIDs)}
                             audience={isB2BPlan ? Audience.B2B : Audience.B2C}
-                            addonFlags={{ scribeAddonEnabled: true, lumoAddonEnabled: false, meetAddonEnabled: false }}
+                            addonFlags={{
+                                [ADDON_PREFIXES.SCRIBE]: true,
+                                // This flow offers scribe only
+                                [ADDON_PREFIXES.LUMO]: false,
+                                [ADDON_PREFIXES.MEET]: false,
+                            }}
                             showUsersTooltip
                             telemetryContext={payments.telemetryContext}
                         />

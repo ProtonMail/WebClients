@@ -9,16 +9,15 @@ import {
     canModify,
     getAutoCoupon,
     getAvailableSubscriptionActions,
-    getPlanIDs,
     getSubscriptionPlanTitle,
-    hasLumoMobileSubscription,
     isDangerouslyAllowedSubscriptionEstimation,
-    isManagedExternally,
     isSubscriptionCheckForbidden,
     isSubscriptionCheckForbiddenWithReason,
     isSubscriptionUnchanged,
     isUpcomingSubscriptionUnpaid,
 } from './helpers';
+import { isManagedExternally } from './helpers/external-management';
+import { getPlanIDs } from './helpers/plan-ids';
 import type { Subscription } from './interface';
 
 describe('getSubscriptionPlanTitle', () => {
@@ -1017,46 +1016,6 @@ describe('getAvailableActions', () => {
             canCancel: false,
             cantCancelReason: 'subscription_managed_externally',
         });
-    });
-});
-
-describe('hasLumoMobileSubscription', () => {
-    it('should return false for free subscription', () => {
-        expect(hasLumoMobileSubscription(FREE_SUBSCRIPTION)).toBe(false);
-    });
-
-    it('should return false if subscription is undefined or null', () => {
-        expect(hasLumoMobileSubscription(undefined)).toBe(false);
-        expect(hasLumoMobileSubscription(null as any)).toBe(false);
-    });
-
-    it('should return false if subscription is not externally managed', () => {
-        const subscription = buildSubscription(PLANS.LUMO, {
-            External: SubscriptionPlatform.Default,
-        });
-        expect(hasLumoMobileSubscription(subscription)).toBe(false);
-    });
-
-    it('should return true if subscription is externally managed and has Lumo', () => {
-        const subscription = buildSubscription(PLANS.LUMO, {
-            External: SubscriptionPlatform.Android,
-        });
-        expect(hasLumoMobileSubscription(subscription)).toBe(true);
-    });
-
-    it('should return false if user does not have secondary subscriptions', () => {
-        const subscription = buildSubscription(PLANS.BUNDLE, {});
-        expect(hasLumoMobileSubscription(subscription)).toBe(false);
-    });
-
-    it('should return true if user has secondary subscriptions and at least one of them is externally managed and has Lumo', () => {
-        const subscription = buildSubscription(PLANS.BUNDLE, {
-            SecondarySubscriptions: [
-                buildSubscription(PLANS.VPN2024, { External: SubscriptionPlatform.Default }),
-                buildSubscription(PLANS.LUMO, { External: SubscriptionPlatform.Android }),
-            ],
-        });
-        expect(hasLumoMobileSubscription(subscription)).toBe(true);
     });
 });
 

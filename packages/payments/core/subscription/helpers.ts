@@ -7,7 +7,8 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { Audience, type Organization, type UserModel } from '@proton/shared/lib/interfaces';
 
 import {
-    ADDON_NAMES,
+    type ADDON_NAMES,
+    ADDON_PREFIXES,
     COUPON_CODES,
     CYCLE,
     LIFETIME_PLAN_TITLE,
@@ -24,13 +25,7 @@ import {
 } from '../constants';
 import { isRegionalCurrency } from '../currencies';
 import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
-import {
-    getSupportedAddons,
-    hasLumoAddonFromPlanIDs,
-    hasMeetAddonFromPlanIDs,
-    isIpAddon,
-    isMemberAddon,
-} from '../plan/addons';
+import { getSupportedAddons, hasAddonFromPlanIDs, isAddonType } from '../plan/addons';
 import { getPlansLimit, getPlansQuantity } from '../plan/feature-limits';
 import {
     getIsB2BAudienceFromPlan,
@@ -41,9 +36,47 @@ import {
 } from '../plan/helpers';
 import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
 import { isFreeSubscription, isPaidSubscription } from '../type-guards';
-import { Renew, SubscriptionPlatform, TaxMode, TrialType } from './constants';
+import { Renew, TaxMode, TrialType } from './constants';
 import { FREE_PLAN } from './freePlans';
+import { getSubscriptionsArray, hasLumoMobileSubscription, isManagedExternally } from './helpers/external-management';
+import { getPlanIDs } from './helpers/plan-ids';
+import {
+    hasAnyB2bBundle,
+    hasBundle,
+    hasBundleBiz2025,
+    hasBundlePro,
+    hasBundlePro2024,
+    hasDeprecatedVPN,
+    hasDriveBusiness,
+    hasDrivePro,
+    hasDuo,
+    hasFamily,
+    hasFree,
+    hasLumo,
+    hasMailBusiness,
+    hasMailPro,
+    hasMeet,
+    hasMeetBusiness,
+    hasPassBusiness,
+    hasPassFamily,
+    hasPassPro,
+    hasVPN2024,
+    hasVPNPassBundle,
+    hasVPNPassProfessional,
+    hasVpnBusiness,
+    hasVpnPro,
+} from './helpers/plan-matching';
 import type { Subscription, SubscriptionCheckForbiddenReason, SubscriptionEstimation } from './interface';
+
+// TODO: Remove these compatibility re-exports after migrating consumers to the focused helper modules.
+export {
+    getSubscriptionsArray,
+    hasLumoMobileSubscription,
+    hasNoExternallyManagedLumoSubscription,
+    isManagedExternally,
+} from './helpers/external-management';
+export * from './helpers/plan-matching';
+export { getPlanIDs } from './helpers/plan-ids';
 
 export function getPlan(subscription: MaybeFreeSubscription, service?: PLAN_SERVICES) {
     const result = (subscription?.Plans || []).find(
@@ -153,49 +186,8 @@ export const getPlanTitle = (subscription: MaybeFreeSubscription) => {
     return hasLifetimeCoupon(subscription) ? LIFETIME_PLAN_TITLE : plan?.Title;
 };
 
-const hasSomePlan = (subscription: MaybeFreeSubscription, planName: PLANS) => {
-    if (isFreeSubscription(subscription)) {
-        return false;
-    }
-
-    return (subscription?.Plans || []).some(({ Name }) => Name === planName);
-};
-
-export const hasSomeAddonOrPlan = (
-    subscription: MaybeFreeSubscription,
-    addonName: ADDON_NAMES | PLANS | (ADDON_NAMES | PLANS)[]
-) => {
-    if (isFreeSubscription(subscription)) {
-        return false;
-    }
-
-    if (Array.isArray(addonName)) {
-        return (subscription?.Plans || []).some(({ Name }) => addonName.includes(Name as ADDON_NAMES));
-    }
-
-    return (subscription?.Plans || []).some(({ Name }) => Name === addonName);
-};
-
 export const hasMigrationDiscount = (subscription: MaybeFreeSubscription) => {
     return subscription?.CouponCode?.startsWith('MIGRATION');
-};
-
-export const isManagedExternally = (
-    subscription: MaybeFreeSubscription | Pick<Subscription, 'External'> | null
-): boolean => {
-    if (!subscription || isFreeSubscription(subscription)) {
-        return false;
-    }
-
-    return subscription.External === SubscriptionPlatform.Android || subscription.External === SubscriptionPlatform.iOS;
-};
-
-/**
- * If user has multisubs, then this function will transform the nested secondary subscriptions into a flat array.
- * This is useful for functions that need to iterate over all subscriptions.
- */
-export const getSubscriptionsArray = (subscription: Subscription): Subscription[] => {
-    return [subscription, ...(subscription.SecondarySubscriptions ?? [])];
 };
 
 /**
@@ -212,80 +204,6 @@ export function isAnyManagedExternally(subscriptions: Subscription[] | MaybeFree
 
     return getSubscriptionsArray(subscriptions).some(isManagedExternally);
 }
-
-export const hasVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.VISIONARY);
-export const hasDeprecatedVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.VPN);
-export const hasVPN2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.VPN2024);
-export const hasVPNPassBundle = (subscription: MaybeFreeSubscription) =>
-    hasSomePlan(subscription, PLANS.VPN_PASS_BUNDLE);
-export const hasMail = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MAIL);
-export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MAIL_PRO);
-export const hasMailBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MAIL_BUSINESS);
-export const hasDrive = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DRIVE);
-export const hasDrive1TB = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DRIVE_1TB);
-export const hasDriveLite = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DRIVE_LITE);
-export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DRIVE_PRO);
-export const hasDriveBusiness = (subscription: MaybeFreeSubscription) =>
-    hasSomePlan(subscription, PLANS.DRIVE_BUSINESS);
-export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS);
-export const hasLumo = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, PLANS.LUMO);
-export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.BUNDLE);
-export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.BUNDLE_PRO);
-export const hasBundlePro2024 = (subscription: MaybeFreeSubscription) =>
-    hasSomePlan(subscription, PLANS.BUNDLE_PRO_2024);
-export const hasBundleBiz2025 = (subscription: MaybeFreeSubscription) =>
-    hasSomePlan(subscription, PLANS.BUNDLE_BIZ_2025);
-export const hasFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.FAMILY);
-export const hasDuo = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DUO);
-export const hasVpnPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.VPN_PRO);
-export const hasVpnBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.VPN_BUSINESS);
-export const hasVPNPassProfessional = (subscription: MaybeFreeSubscription) =>
-    hasSomePlan(subscription, PLANS.VPN_PASS_BUNDLE_BUSINESS);
-export const hasPassPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_PRO);
-export const hasPassFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_FAMILY);
-export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_BUSINESS);
-export const hasLumoBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.LUMO_BUSINESS);
-export const hasMeetBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MEET_BUSINESS);
-export const hasMeet = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MEET);
-export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.Plans || []).length === 0;
-
-// including 2 versions of bundlepro + bundlebiz2025
-export const hasAnyB2bBundle = (subscription: MaybeFreeSubscription) =>
-    hasBundlePro(subscription) || hasBundlePro2024(subscription) || hasBundleBiz2025(subscription);
-
-export const hasMspEligiblePlan = (subscription: MaybeFreeSubscription) => hasPassBusiness(subscription);
-
-export const hasFreeOrPlus = (subscription: MaybeFreeSubscription) =>
-    hasFree(subscription) ||
-    hasMail(subscription) ||
-    hasDrive(subscription) ||
-    hasDrive1TB(subscription) ||
-    hasPass(subscription) ||
-    hasVPN2024(subscription) ||
-    hasLumo(subscription);
-
-export const hasAnyPlusWithoutVPN = (subscription: MaybeFreeSubscription) =>
-    hasMail(subscription) ||
-    hasDrive(subscription) ||
-    hasDrive1TB(subscription) ||
-    hasPass(subscription) ||
-    hasLumo(subscription);
-
-const hasAIAssistantCondition = [
-    ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS,
-    ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO,
-    ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO,
-    ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024,
-];
-export const hasAIAssistant = (subscription: MaybeFreeSubscription) =>
-    hasSomeAddonOrPlan(subscription, hasAIAssistantCondition);
-
-const PLANS_WITH_AI_INCLUDED = [PLANS.VISIONARY, PLANS.DUO, PLANS.FAMILY];
-export const hasPlanWithAIAssistantIncluded = (subscription: MaybeFreeSubscription) =>
-    hasSomeAddonOrPlan(subscription, PLANS_WITH_AI_INCLUDED);
-
-export const hasAllProductsB2CPlan = (subscription: MaybeFreeSubscription) =>
-    hasDuo(subscription) || hasFamily(subscription) || hasBundle(subscription) || hasVisionary(subscription);
 
 export const getUpgradedPlan = (subscription: MaybeFreeSubscription, app: ProductParam) => {
     if (hasFree(subscription)) {
@@ -305,24 +223,6 @@ export const getUpgradedPlan = (subscription: MaybeFreeSubscription, app: Produc
         return PLANS.BUNDLE_PRO_2024;
     }
     return PLANS.BUNDLE;
-};
-
-export const hasLumoMobileSubscription = (subscription: MaybeFreeSubscription) => {
-    if (!subscription || isFreeSubscription(subscription)) {
-        return false;
-    }
-
-    if (isManagedExternally(subscription) && hasLumo(subscription)) {
-        return true;
-    }
-
-    for (const secondarySubscription of subscription.SecondarySubscriptions ?? []) {
-        if (isManagedExternally(secondarySubscription) && hasLumo(secondarySubscription)) {
-            return true;
-        }
-    }
-
-    return false;
 };
 
 export const getCanAccessFamilyPlans = (subscription: MaybeFreeSubscription) => {
@@ -419,13 +319,6 @@ export const getHasMailB2BPlan = (subscription: MaybeFreeSubscription) => {
 export const getHasInboxB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasAnyB2bBundle(subscription) || getHasMailB2BPlan(subscription);
 };
-
-export function getPlanIDs(subscription: MaybeFreeSubscription | null): PlanIDs {
-    return (subscription?.Plans || []).reduce<PlanIDs>((acc, { Name, Quantity }) => {
-        acc[Name] = (acc[Name] || 0) + Quantity;
-        return acc;
-    }, {});
-}
 
 export const isTrial = (subscription: MaybeFreeSubscription, plan?: PLANS): boolean => {
     if (isFreeSubscription(subscription) || !subscription) {
@@ -576,7 +469,10 @@ export const getHasMemberCapablePlan = (
     subscription: MaybeFreeSubscription
 ) => {
     const supportedAddons = getSupportedAddons(getPlanIDs(subscription));
-    return (organization?.MaxMembers || 0) > 1 || (Object.keys(supportedAddons) as ADDON_NAMES[]).some(isMemberAddon);
+    return (
+        (organization?.MaxMembers || 0) > 1 ||
+        (Object.keys(supportedAddons) as ADDON_NAMES[]).some((name) => isAddonType(name, ADDON_PREFIXES.MEMBER))
+    );
 };
 
 export const allCycles = Object.freeze(
@@ -644,7 +540,7 @@ export function isCancellableOnlyViaSupport(subscription: MaybeFreeSubscription)
     const otherPlansWithIpAddons = [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024];
     if (otherPlansWithIpAddons.includes(getPlanName(subscription) as PLANS)) {
         const hasIpAddons = (Object.keys(getPlanIDs(subscription)) as (PLANS | ADDON_NAMES)[]).some((plan) =>
-            isIpAddon(plan)
+            isAddonType(plan, ADDON_PREFIXES.IP)
         );
         return hasIpAddons;
     }
@@ -753,13 +649,13 @@ export function isSubscriptionUnchanged(
 export const hasLumoAddon = (subscription: MaybeFreeSubscription) => {
     const currentPlanIDs = getPlanIDs(subscription);
 
-    return hasLumoAddonFromPlanIDs(currentPlanIDs);
+    return hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, currentPlanIDs);
 };
 
 export const hasMeetAddon = (subscription: MaybeFreeSubscription) => {
     const currentPlanIDs = getPlanIDs(subscription);
 
-    return hasMeetAddonFromPlanIDs(currentPlanIDs);
+    return hasAddonFromPlanIDs(ADDON_PREFIXES.MEET, currentPlanIDs);
 };
 
 /**
@@ -1200,15 +1096,4 @@ export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: Plan
     const availableCycles = Object.keys(plan.Pricing) as unknown as CYCLE[];
     const maxCycle = Math.max(...availableCycles) as CYCLE;
     return Math.min(cycle, maxCycle);
-}
-
-export function hasNoExternallyManagedLumoSubscription(subscription: Subscription | FreeSubscription): boolean {
-    if (isFreeSubscription(subscription)) {
-        return true;
-    }
-
-    // Check if the current subscription or any of the secondary subscriptions has a mobile lumo subscription.
-    return ![subscription, ...(subscription.SecondarySubscriptions ?? [])].some(
-        (sub) => hasLumo(sub) && isManagedExternally(sub)
-    );
 }

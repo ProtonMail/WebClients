@@ -1,4 +1,5 @@
-import { AddonFeatureLimitKeyMapping, CYCLE } from '@proton/payments/core/constants';
+import { AddonFeatureLimitKeyMapping } from '@proton/payments/core/addon/addons';
+import { CYCLE } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getPlansWithAddons } from '@proton/payments/core/plan/addons';
 import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';

@@ -1,7 +1,8 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { isMeetAddon } from '@proton/payments/core/plan/addons';
+import { ADDON_PREFIXES } from '@proton/payments/core/constants';
+import { isAddonType } from '@proton/payments/core/plan/addons';
 import { getAddons } from '@proton/payments/core/subscription/helpers';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 
@@ -25,7 +26,7 @@ export const useBookingUpsell = () => {
 
         const bookingPageNumber = bookings?.bookingPages?.length || 0;
         const meetAddon = getAddons(isFreeSubscription(subscription) ? undefined : subscription).find(({ Name }) =>
-            isMeetAddon(Name)
+            isAddonType(Name, ADDON_PREFIXES.MEET)
         );
         const hasUserReachedPlanLimit = user.isMember
             ? hasOrgMemberReachedBookingLimit(user, bookings?.bookingPages, organization)
