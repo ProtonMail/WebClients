@@ -34,6 +34,8 @@ export interface PrivateIframeHeaderProps {
     // So, If we want to display a dropdown "correctly" (not in a modal) we need to make a special case for now
     customDropdown?: ReactNode;
     headerClassName?: string;
+    // View-specific buttons rendered just before the Close button
+    headerActions?: ReactNode;
 }
 
 const DrawerAppHeader = ({
@@ -42,6 +44,7 @@ const DrawerAppHeader = ({
     customDropdown,
     isUsingTabs = false,
     headerClassName,
+    headerActions,
 }: PrivateIframeHeaderProps) => {
     const { call } = useEventManager();
     const theme = useTheme();
@@ -154,6 +157,7 @@ const DrawerAppHeader = ({
                     {isUsingTabs ? title : <h2 className="text-bold text-lg">{title}</h2>}
 
                     <div className="flex items-center flex-nowrap gap-2 shrink-0 self-start">
+                        {headerActions}
                         <Tooltip title={c('Action').t`Close`}>
                             <Button
                                 data-testid="drawer-app-header:close"

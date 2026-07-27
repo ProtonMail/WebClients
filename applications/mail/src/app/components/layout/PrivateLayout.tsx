@@ -3,6 +3,7 @@ import { Suspense, forwardRef, lazy, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
+import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/useLumoInMail';
 import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
 import SmartBanner from '@proton/components/components/smartBanner/SmartBanner';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
@@ -19,6 +20,7 @@ import { selectLayoutIsExpanded } from 'proton-mail/store/layout/layoutSliceSele
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
+import LumoMailProvider from '../../lumo/provider/LumoMailProvider';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import MailQuickSettings from '../drawer/MailQuickSettings';
 import MailSidebar from '../sidebar/MailSidebar';
@@ -36,6 +38,7 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
     const onMailTo = useOnMailTo();
     const isSidebarExpanded = useMailSelector(selectLayoutIsExpanded);
     const hasComposerInFocus = useMailSelector(selectHasFocusedComposer);
+    const isLumoInMailEnabled = useLumoInMail();
 
     const handleContactsCompose = async (emails: Recipient[], attachments: File[]) => {
         await onCompose({
@@ -65,7 +68,7 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
         </>
     );
 
-    return (
+    const content = (
         <PrivateAppContainer
             top={top}
             sidebar={<MailSidebar />}
@@ -86,6 +89,9 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
             {children}
         </PrivateAppContainer>
     );
+
+    // Mounted above the drawer so the Lumo conversation survives drawer tab switches and open/close.
+    return isLumoInMailEnabled ? <LumoMailProvider>{content}</LumoMailProvider> : content;
 };
 
 export default forwardRef(PrivateLayout);
