@@ -6,10 +6,10 @@
 
 $tab-dot-ease: easing(ease-out-quint);
 
-@mixin reveal-tab-labels {
+@mixin reveal-tab-labels($tab-max-width) {
 	.tab-wrapper {
-		flex: 1 1 0; // grow evenly, capped at the spec's 200px
-		max-inline-size: rem(200);
+		flex: 1 1 0; // grow evenly, capped at the spec's max width
+		max-inline-size: rem($tab-max-width);
 	}
 
 	.tab-container {
@@ -124,37 +124,42 @@ $tab-dot-ease: easing(ease-out-quint);
 		}
 	}
 
-	// Responsive behavior depends on the number of active categories tabs.
-	// When enough space is available for the number of active tabs, we reveal their labels.
-	&[data-category-count='2'],
-	&[data-category-count='3'] {
-		@include media('>=#{em(820, 16)}') {
-			@include reveal-tab-labels;
-		}
+	// Medium (820–1023px): reveal labels, tabs fill the bar capped at 136px each.
+	@include media('>=#{em(820, 16)}') {
+		@include reveal-tab-labels(136);
 	}
 
-	&[data-category-count='4'] {
-		@include media('>=#{em(950, 16)}') {
-			@include reveal-tab-labels;
-		}
-	}
-
-	&[data-category-count='5'],
-	&[data-category-count='6'] {
-		@include media('>=#{em(1100, 16)}') {
-			@include reveal-tab-labels;
-		}
-	}
-
-	// Large (≥ 1024px): larger label font
+	// Large (≥ 1024px): tabs fill the bar capped at 200px each, with a larger centered label.
 	@include media('>=#{em(1024, 16)}') {
-		.tab-container .tab-label {
-			font-size: rem(13);
+		@include reveal-tab-labels(200);
+
+		.tab-container {
+			position: relative;
+
+			// Center the label on the whole tab width. The icon and counter are
+			// pinned out of flow so their width does not offset the label.
+			justify-content: center;
+
+			.tab-icon {
+				position: absolute;
+				inset-inline-start: rem(16);
+			}
+
+			.tag-count {
+				position: absolute;
+				inset-inline-end: rem(14);
+			}
+
+			.tab-label {
+				font-size: rem(13);
+			}
 		}
 	}
 }
 
-@include media('>=#{em(620, 16)}') {
+// Below 680px the category bar sits under a truncated toolbar, so it keeps a
+// separating line; at and above 680px the line is dropped.
+@include media('>=#{em(680, 16)}') {
 	.categories-tabs {
 		border-block-start: none;
 	}
