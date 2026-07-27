@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { PLANS } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES, PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { hasLumoAddonFromPlanIDs, hasMeetAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     CALENDAR_SHORT_APP_NAME,
@@ -302,7 +302,7 @@ export const getWhatsIncluded = ({
     }
 
     const meetPlan = planIDs[PLANS.MEET] || planIDs[PLANS.MEET_BUSINESS];
-    const meetAddon = hasMeetAddonFromPlanIDs(planIDs);
+    const meetAddon = hasAddonFromPlanIDs(ADDON_PREFIXES.MEET, planIDs);
     const meetFeatures: Included[] = [
         {
             type: 'text',
@@ -333,7 +333,7 @@ export const getWhatsIncluded = ({
     }
 
     const lumoPlan = planIDs[PLANS.LUMO];
-    const lumoAddon = hasLumoAddonFromPlanIDs(planIDs);
+    const lumoAddon = hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, planIDs);
     const lumoFeatures: Included[] = [
         {
             type: 'text',
