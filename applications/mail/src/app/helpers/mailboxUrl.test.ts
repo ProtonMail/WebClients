@@ -2,7 +2,15 @@ import type { Location } from 'history';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { type MailUrlParams, getUrlPathname, setParamsInLocation, sortFromUrl } from './mailboxUrl';
+import {
+    type MailUrlParams,
+    getInboxRedirectUrl,
+    getInboxUrl,
+    getUrlPathname,
+    setCategoryInUrl,
+    setParamsInLocation,
+    sortFromUrl,
+} from './mailboxUrl';
 
 describe('Mailbox URL tests', () => {
     describe('getUrlPathname', () => {
@@ -105,6 +113,43 @@ describe('Mailbox URL tests', () => {
 
         it('should return Time ascending for Scheduled with default sort', () => {
             expect(sortFromUrl(loc(), MAILBOX_LABEL_IDS.SCHEDULED)).toEqual({ sort: 'Time', desc: false });
+        });
+    });
+
+    describe('setCategoryInUrl', () => {
+        it('should add the category in the URL', () => {
+            const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(result).toBe('/inbox#category=social');
+        });
+    });
+
+    describe('getInboxUrl', () => {
+        it('should return the inbox URL', () => {
+            expect(getInboxUrl()).toBe('/inbox');
+        });
+    });
+
+    describe('getInboxRedirectUrl', () => {
+        it('should return null while access is not settled, regardless of access', () => {
+            expect(
+                getInboxRedirectUrl({ isCategoryViewEnabled: true, isCategoryViewEnabledSettled: false })
+            ).toBeNull();
+
+            expect(
+                getInboxRedirectUrl({ isCategoryViewEnabled: false, isCategoryViewEnabledSettled: false })
+            ).toBeNull();
+        });
+
+        it('should return the default category URL when settled and access is enabled', () => {
+            expect(getInboxRedirectUrl({ isCategoryViewEnabled: true, isCategoryViewEnabledSettled: true })).toBe(
+                setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
+            );
+        });
+
+        it('should return the plain inbox URL when settled and access is disabled', () => {
+            expect(getInboxRedirectUrl({ isCategoryViewEnabled: false, isCategoryViewEnabledSettled: true })).toBe(
+                '/inbox'
+            );
         });
     });
 });

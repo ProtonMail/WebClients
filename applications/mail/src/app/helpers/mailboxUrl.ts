@@ -186,10 +186,28 @@ export const resetFilter = (location: Location) =>
 export const resetSort = (location: Location) =>
     changeSearchParams(location.pathname, location.hash, { sort: undefined });
 
+const INBOX_PATHNAME = `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`;
+
 // Categories are only present in inbox, so always link to inbox regardless of current location
 export const setCategoryInUrl = (category: CategoryLabelID) => {
-    const inboxPathname = `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`;
-    return changeSearchParams(inboxPathname, '', {
+    return changeSearchParams(INBOX_PATHNAME, '', {
         category: LABEL_IDS_TO_HUMAN[category],
     });
+};
+
+// Drops any category from the URL, used when category access is lost
+export const getInboxUrl = () => INBOX_PATHNAME;
+
+export const getInboxRedirectUrl = ({
+    isCategoryViewEnabled,
+    isCategoryViewEnabledSettled,
+}: {
+    isCategoryViewEnabled: boolean;
+    isCategoryViewEnabledSettled: boolean;
+}): string | null => {
+    if (!isCategoryViewEnabledSettled) {
+        return null;
+    }
+
+    return isCategoryViewEnabled ? setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) : getInboxUrl();
 };
