@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { type KeyboardEvent, type MouseEvent, memo } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,12 +7,15 @@ import type { DropdownProps } from '@proton/components/components/dropdown/Dropd
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { IconName } from '@proton/icons/types';
+import { FilterClearButton } from '@proton/pass/components/Item/Filters/FilterClearButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { intoDisplayedSortFilter } from '@proton/pass/lib/items/item.utils';
 import type { ItemSortFilter } from '@proton/pass/types';
+import clsx from '@proton/utils/clsx';
+
+import './FilterClearButton.scss';
 
 type Props = {
     value: ItemSortFilter;
@@ -69,23 +72,34 @@ export const SortFilter = memo(({ value, hasSearch, onChange }: Props) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     const displayValue = intoDisplayedSortFilter(value, hasSearch);
-    const { label, shortLabel, icon } = getSortOptionDetails(displayValue);
+    const isActive = displayValue !== 'recent';
+    const { label, shortLabel } = getSortOptionDetails(displayValue);
+
+    const handleClear = (event: MouseEvent | KeyboardEvent) => {
+        event.stopPropagation();
+        onChange('recent');
+    };
 
     return (
         <>
-            <DropdownButton
-                onClick={toggle}
-                ref={anchorRef}
-                color="weak"
-                shape="solid"
-                size="small"
-                title={c('Action').t`Sort vault items`}
-                className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
-            >
-                <span className="sr-only">{label}</span>
-                <Icon name={icon} className="shrink-0" />
-                <span className="text-ellipsis hidden sm:block">{shortLabel}</span>
-            </DropdownButton>
+            <div className={clsx('inline-flex flex-nowrap shrink-0', isActive && 'pass-type-filter--active')}>
+                <DropdownButton
+                    onClick={toggle}
+                    ref={anchorRef}
+                    color={isActive ? 'norm' : 'weak'}
+                    shape={isActive ? undefined : 'solid'}
+                    size="small"
+                    title={c('Action').t`Sort vault items`}
+                    className={clsx(
+                        'flex flex-nowrap gap-1.5 grow-0 text-sm text-semibold',
+                        isActive && 'pass-type-filter-trigger'
+                    )}
+                >
+                    <span className="sr-only">{label}</span>
+                    <span className="text-ellipsis hidden sm:block">{shortLabel}</span>
+                </DropdownButton>
+                {isActive && <FilterClearButton onClear={handleClear} title={c('Action').t`Clear sort filter`} />}
+            </div>
 
             <Dropdown
                 anchorRef={anchorRef}

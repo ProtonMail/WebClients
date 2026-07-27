@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react';
+import { type KeyboardEvent, type MouseEvent, memo, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,12 +6,15 @@ import type { DropdownProps } from '@proton/components/components/dropdown/Dropd
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { FilterClearButton } from '@proton/pass/components/Item/Filters/FilterClearButton';
 import { CountLabel } from '@proton/pass/components/Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useItemFilters } from '@proton/pass/hooks/items/useItemFilters';
 import type { ItemRevision, ItemTypeFilter } from '@proton/pass/types';
+import clsx from '@proton/utils/clsx';
+
+import './FilterClearButton.scss';
 
 type Props = {
     items: ItemRevision[];
@@ -25,6 +28,8 @@ export const TypeFilter = memo(({ items, value, onChange }: Props) => {
     const itemTypeOptions = useItemFilters();
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
+    const isActive = value !== '*';
+
     const options = useMemo(
         () =>
             Object.entries(itemTypeOptions).map(([type, { label, icon, itemFilters }]) => ({
@@ -37,27 +42,38 @@ export const TypeFilter = memo(({ items, value, onChange }: Props) => {
                         : items.filter((item) => itemFilters?.includes(item.data.type) ?? item.data.type === type)
                               .length,
             })),
-        [items]
+        [items, itemTypeOptions]
     );
 
     const selectedOption = options.find(({ type }) => type === value)!;
 
+    const handleClear = (event: MouseEvent | KeyboardEvent) => {
+        event.stopPropagation();
+        onChange('*');
+    };
+
     return (
         <>
-            <DropdownButton
-                className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
-                onClick={toggle}
-                ref={anchorRef}
-                color="weak"
-                shape="solid"
-                size="small"
-                title={c('Action').t`Filter vault items`}
-            >
-                <Icon name={selectedOption.icon} className="shrink-0" />
-                <span className="text-ellipsis hidden sm:block">
-                    {`${selectedOption.label}`} <span className="hidden md:inline">({selectedOption.count})</span>
-                </span>
-            </DropdownButton>
+            <div className={clsx('inline-flex flex-nowrap shrink-0', isActive && 'pass-type-filter--active')}>
+                <DropdownButton
+                    className={clsx(
+                        'flex flex-nowrap gap-1.5 grow-0 text-sm text-semibold',
+                        isActive && 'pass-type-filter-trigger'
+                    )}
+                    onClick={toggle}
+                    ref={anchorRef}
+                    color={isActive ? 'norm' : 'weak'}
+                    shape={isActive ? undefined : 'solid'}
+                    size="small"
+                    title={c('Action').t`Filter vault items`}
+                >
+                    <span className="text-ellipsis hidden sm:block">
+                        {selectedOption.label}
+                        {!isActive && <span className="hidden md:inline">{` (${selectedOption.count})`}</span>}
+                    </span>
+                </DropdownButton>
+                {isActive && <FilterClearButton onClear={handleClear} title={c('Action').t`Clear item type filter`} />}
+            </div>
 
             <Dropdown
                 anchorRef={anchorRef}

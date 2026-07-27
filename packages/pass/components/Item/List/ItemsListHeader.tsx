@@ -17,7 +17,7 @@ export const ItemsListHeader = memo(() => {
 
     return (
         !empty && (
-            <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 overflow-x-auto justify-space-between">
+            <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 w-full min-w-0 justify-space-between">
                 {(() => {
                     switch (scope) {
                         case 'secure-links':
