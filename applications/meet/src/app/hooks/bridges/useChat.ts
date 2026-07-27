@@ -14,7 +14,7 @@ import {
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
-import { sanitizeMessage } from '@proton/sanitize/purify';
+import { escape } from '@proton/sanitize/escape';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -116,7 +116,7 @@ export const useChat = () => {
                     return;
                 }
 
-                const sanitizedMessage = sanitizeMessage(event.text);
+                const sanitizedMessage = escape(event.text);
 
                 // A reply carries the thread `topic_id` (which points at the root message id) and is
                 // therefore not a root message of its own thread.
@@ -258,7 +258,7 @@ export const useChat = () => {
                     return;
                 }
 
-                const sanitizedMessage = sanitizeMessage(decryptedMessage.message);
+                const sanitizedMessage = escape(decryptedMessage.message);
 
                 const newMessage: MeetChatMessage = {
                     id: decodedMessage.id,
