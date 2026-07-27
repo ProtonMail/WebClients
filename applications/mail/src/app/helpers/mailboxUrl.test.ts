@@ -5,6 +5,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import {
     type MailUrlParams,
     getInboxRedirectUrl,
+    getInboxUrl,
     getUrlPathname,
     setCategoryInUrl,
     setParamsInLocation,
@@ -112,6 +113,19 @@ describe('Mailbox URL tests', () => {
 
         it('should return Time ascending for Scheduled with default sort', () => {
             expect(sortFromUrl(loc(), MAILBOX_LABEL_IDS.SCHEDULED)).toEqual({ sort: 'Time', desc: false });
+        });
+    });
+
+    describe('setCategoryInUrl', () => {
+        it('should add the category in the URL', () => {
+            const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(result).toBe('/inbox#category=social');
+        });
+    });
+
+    describe('getInboxUrl', () => {
+        it('should return the inbox URL', () => {
+            expect(getInboxUrl()).toBe('/inbox');
         });
     });
 
