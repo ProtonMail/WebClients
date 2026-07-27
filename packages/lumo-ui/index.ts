@@ -11,6 +11,7 @@ export { renderReplyMarkdown } from './markdown';
 export { default as MoveItemsCard } from './confirmCards/MoveItemsCard';
 export { default as DeleteItemsCard } from './confirmCards/DeleteItemsCard';
 export { default as DiffCard } from './confirmCards/DiffCard';
+export { default as ToolCallCard } from './confirmCards/ToolCallCard';
 
 export { default as Disclosure } from './primitives/Disclosure';
 export { default as ItemCheckList } from './primitives/ItemCheckList';
