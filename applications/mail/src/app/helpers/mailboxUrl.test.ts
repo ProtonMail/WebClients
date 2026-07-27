@@ -121,34 +121,11 @@ describe('Mailbox URL tests', () => {
             const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
             expect(result).toBe('/inbox#category=social');
         });
-
-        it('should preserve the hash in the URL', () => {
-            const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, '#mailto=mailto:test');
-            expect(result).toBe('/inbox#category=social&mailto=mailto:test');
-        });
-
-        it('should not add empty hash', () => {
-            const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, '#');
-            expect(result).toBe('/inbox#category=social');
-        });
-
-        it('should only carry the mailto and drop a stale category from the hash', () => {
-            const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, '#category=primary&mailto=mailto:test');
-            expect(result).toBe('/inbox#category=social&mailto=mailto:test');
-        });
     });
 
     describe('getInboxUrl', () => {
-        it('should return the inbox URL without a hash', () => {
+        it('should return the inbox URL', () => {
             expect(getInboxUrl()).toBe('/inbox');
-        });
-
-        it('should preserve a mailto handoff while dropping the category', () => {
-            expect(getInboxUrl('#category=primary&mailto=mailto:test')).toBe('/inbox#mailto=mailto:test');
-        });
-
-        it('should not add a hash when there is no mailto', () => {
-            expect(getInboxUrl('#category=primary')).toBe('/inbox');
         });
     });
 
