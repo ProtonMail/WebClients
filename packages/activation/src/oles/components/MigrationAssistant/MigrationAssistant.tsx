@@ -15,7 +15,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import { isMemberAddon } from '@proton/payments/core/plan/addons';
+import { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
@@ -82,7 +82,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
             disablePlanSelection: true,
             disableCycleSelector: true,
             disableThanksStep: true,
-            allowedAddonTypes: [isMemberAddon],
+            allowedAddonTypes: [ADDON_PREFIXES.MEMBER],
         });
 
     const handleMigrateUsers = async () => {

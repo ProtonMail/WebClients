@@ -121,7 +121,7 @@ describe('SelectedPlan', () => {
         },
     ])('should return the total number of scribes', ({ planIDs, expected }) => {
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-        expect(selectedPlan.getTotalScribes()).toBe(expected);
+        expect(selectedPlan.getTotal('MaxAI')).toBe(expected);
     });
 
     it.each([
@@ -142,7 +142,7 @@ describe('SelectedPlan', () => {
         },
     ])('should return the total number of lumos', ({ planIDs, expected }) => {
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-        expect(selectedPlan.getTotalLumos()).toBe(expected);
+        expect(selectedPlan.getTotal('MaxLumo')).toBe(expected);
     });
 
     it.each([
@@ -273,10 +273,10 @@ describe('SelectedPlan', () => {
 
         expect(selectedPlan.getTotalUsers()).toEqual(4);
         expect(selectedPlan.getTotalUsers()).toEqual(4);
-        expect(selectedPlan.getTotalScribes()).toEqual(40);
+        expect(selectedPlan.getTotal('MaxAI')).toEqual(40);
 
         const newSelectedPlan = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-        expect(newSelectedPlan.getTotalScribes()).toEqual(4);
+        expect(newSelectedPlan.getTotal('MaxAI')).toEqual(4);
 
         expect(newSelectedPlan.planIDs).toEqual({
             [PLANS.MAIL_BUSINESS]: 1,
@@ -380,10 +380,10 @@ describe('SelectedPlan', () => {
 
         expect(selectedPlan.getTotalUsers()).toEqual(4);
         expect(selectedPlan.getTotalUsers()).toEqual(4);
-        expect(selectedPlan.getTotalLumos()).toEqual(40);
+        expect(selectedPlan.getTotal('MaxLumo')).toEqual(40);
 
         const newSelectedPlan = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-        expect(newSelectedPlan.getTotalLumos()).toEqual(4);
+        expect(newSelectedPlan.getTotal('MaxLumo')).toEqual(4);
 
         expect(newSelectedPlan.planIDs).toEqual({
             [PLANS.MAIL_PRO]: 1,
@@ -425,11 +425,11 @@ describe('SelectedPlan', () => {
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
         expect(selectedPlan.getTotalUsers()).toBe(2);
-        expect(selectedPlan.getTotalLumos()).toBe(3);
+        expect(selectedPlan.getTotal('MaxLumo')).toBe(3);
 
         const normalized = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
-        expect(normalized.getTotalLumos()).toBeLessThanOrEqual(normalized.getTotalUsers());
+        expect(normalized.getTotal('MaxLumo')).toBeLessThanOrEqual(normalized.getTotalUsers());
         expect(normalized.planIDs).toEqual({ [PLANS.DUO]: 1 });
     });
 
@@ -441,11 +441,11 @@ describe('SelectedPlan', () => {
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
         expect(selectedPlan.getTotalUsers()).toBe(1);
-        expect(selectedPlan.getTotalScribes()).toBe(5);
+        expect(selectedPlan.getTotal('MaxAI')).toBe(5);
 
         const normalized = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
-        expect(normalized.getTotalScribes()).toBeLessThanOrEqual(normalized.getTotalUsers());
+        expect(normalized.getTotal('MaxAI')).toBeLessThanOrEqual(normalized.getTotalUsers());
         expect(normalized.planIDs).toEqual({ [PLANS.MAIL_PRO]: 1 });
     });
 
@@ -457,11 +457,11 @@ describe('SelectedPlan', () => {
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
         expect(selectedPlan.getTotalUsers()).toBe(1);
-        expect(selectedPlan.getTotalMeets()).toBe(5);
+        expect(selectedPlan.getTotal('MaxMeet')).toBe(5);
 
         const normalized = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
-        expect(normalized.getTotalMeets()).toBeLessThanOrEqual(normalized.getTotalUsers());
+        expect(normalized.getTotal('MaxMeet')).toBeLessThanOrEqual(normalized.getTotalUsers());
         expect(normalized.planIDs).toEqual({ [PLANS.MAIL_PRO]: 1 });
     });
 
@@ -506,7 +506,7 @@ describe('SelectedPlan', () => {
         it.each([FREE_SUBSCRIPTION, null, undefined])('should return 0 for total scribes', (subscription) => {
             const selectedPlan = SelectedPlan.createFromSubscription(subscription, PLANS_MAP);
 
-            expect(selectedPlan.getTotalScribes()).toBe(0);
+            expect(selectedPlan.getTotal('MaxAI')).toBe(0);
         });
 
         it.each([FREE_SUBSCRIPTION, null, undefined])('should return plan name as PLANS.FREE', (subscription) => {
@@ -605,12 +605,12 @@ describe('SelectedPlan', () => {
                 PLANS_MAP,
                 CYCLE.MONTHLY,
                 'EUR',
-                'prefer-scribes'
+                ADDON_PREFIXES.SCRIBE
             );
 
             expect(selectedPlan.getTotalUsers()).toBe(4);
-            expect(selectedPlan.getTotalScribes()).toBe(3);
-            expect(selectedPlan.getTotalLumos()).toBe(1); // Lumos reduced by 2 to balance
+            expect(selectedPlan.getTotal('MaxAI')).toBe(3);
+            expect(selectedPlan.getTotal('MaxLumo')).toBe(1); // Lumos reduced by 2 to balance
             expect(selectedPlan.planIDs).toEqual({
                 [PLANS.MAIL_BUSINESS]: 1,
                 [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3,
@@ -632,12 +632,12 @@ describe('SelectedPlan', () => {
                 PLANS_MAP,
                 CYCLE.MONTHLY,
                 'EUR',
-                'prefer-lumos'
+                ADDON_PREFIXES.LUMO
             );
 
             expect(selectedPlan.getTotalUsers()).toBe(4);
-            expect(selectedPlan.getTotalScribes()).toBe(1); // Scribes reduced by 2 to balance
-            expect(selectedPlan.getTotalLumos()).toBe(3);
+            expect(selectedPlan.getTotal('MaxAI')).toBe(1); // Scribes reduced by 2 to balance
+            expect(selectedPlan.getTotal('MaxLumo')).toBe(3);
             expect(selectedPlan.planIDs).toEqual({
                 [PLANS.MAIL_BUSINESS]: 1,
                 [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3,
@@ -657,8 +657,8 @@ describe('SelectedPlan', () => {
             const selectedPlan = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
             expect(selectedPlan.getTotalUsers()).toBe(4);
-            expect(selectedPlan.getTotalScribes()).toBe(1); // Scribes reduced by 2 to balance
-            expect(selectedPlan.getTotalLumos()).toBe(3);
+            expect(selectedPlan.getTotal('MaxAI')).toBe(1); // Scribes reduced by 2 to balance
+            expect(selectedPlan.getTotal('MaxLumo')).toBe(3);
             expect(selectedPlan.planIDs).toEqual({
                 [PLANS.MAIL_BUSINESS]: 1,
                 [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3,
@@ -680,12 +680,12 @@ describe('SelectedPlan', () => {
                 PLANS_MAP,
                 CYCLE.MONTHLY,
                 'EUR',
-                'prefer-scribes'
+                ADDON_PREFIXES.SCRIBE
             );
 
             expect(selectedPlan.getTotalUsers()).toBe(4);
-            expect(selectedPlan.getTotalScribes()).toBe(2); // Unchanged
-            expect(selectedPlan.getTotalLumos()).toBe(2); // Unchanged
+            expect(selectedPlan.getTotal('MaxAI')).toBe(2); // Unchanged
+            expect(selectedPlan.getTotal('MaxLumo')).toBe(2); // Unchanged
             expect(selectedPlan.planIDs).toEqual(planIDs);
         });
 
@@ -702,12 +702,12 @@ describe('SelectedPlan', () => {
                 PLANS_MAP,
                 CYCLE.MONTHLY,
                 'EUR',
-                'prefer-scribes'
+                ADDON_PREFIXES.SCRIBE
             );
 
             expect(selectedPlan.getTotalUsers()).toBe(4);
-            expect(selectedPlan.getTotalScribes()).toBe(1); // Unchanged
-            expect(selectedPlan.getTotalLumos()).toBe(1); // Unchanged
+            expect(selectedPlan.getTotal('MaxAI')).toBe(1); // Unchanged
+            expect(selectedPlan.getTotal('MaxLumo')).toBe(1); // Unchanged
             expect(selectedPlan.planIDs).toEqual(planIDs);
         });
 
@@ -722,8 +722,8 @@ describe('SelectedPlan', () => {
             const updatedPlan = selectedPlan.setScribeCount(3); // Adding 3 scribes when already have 3 lumos
 
             expect(updatedPlan.getTotalUsers()).toBe(4);
-            expect(updatedPlan.getTotalScribes()).toBe(3);
-            expect(updatedPlan.getTotalLumos()).toBe(1); // Lumos reduced to maintain balance
+            expect(updatedPlan.getTotal('MaxAI')).toBe(3);
+            expect(updatedPlan.getTotal('MaxLumo')).toBe(1); // Lumos reduced to maintain balance
         });
 
         it('should handle balancing when setting lumo count', () => {
@@ -737,94 +737,93 @@ describe('SelectedPlan', () => {
             const updatedPlan = selectedPlan.setLumoCount(3); // Adding 3 lumos when already have 3 scribes
 
             expect(updatedPlan.getTotalUsers()).toBe(4);
-            expect(updatedPlan.getTotalScribes()).toBe(1); // Scribes reduced to maintain balance
-            expect(updatedPlan.getTotalLumos()).toBe(3);
+            expect(updatedPlan.getTotal('MaxAI')).toBe(1); // Scribes reduced to maintain balance
+            expect(updatedPlan.getTotal('MaxLumo')).toBe(3);
         });
     });
 
-    describe('getPresentAddonTypes', () => {
-        it('should return empty object when no addons are present', () => {
+    describe('hasAddonType', () => {
+        const ALL_PREFIXES = [
+            ADDON_PREFIXES.MEMBER,
+            ADDON_PREFIXES.DOMAIN,
+            ADDON_PREFIXES.IP,
+            ADDON_PREFIXES.SCRIBE,
+            ADDON_PREFIXES.LUMO,
+            ADDON_PREFIXES.MEET,
+        ];
+
+        const expectPresentTypes = (selectedPlan: SelectedPlan, present: ADDON_PREFIXES[]) => {
+            for (const prefix of ALL_PREFIXES) {
+                expect(selectedPlan.hasAddonType(prefix)).toBe(present.includes(prefix));
+            }
+        };
+
+        it('should report no addon types when no addons are present', () => {
             const planIDs = {
                 [PLANS.MAIL_PRO]: 1,
             };
 
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({});
+            expectPresentTypes(selectedPlan, []);
         });
 
-        it('should return only member addon type when only member addons are present', () => {
+        it('should report only member addon type when only member addons are present', () => {
             const planIDs = {
                 [PLANS.MAIL_PRO]: 1,
                 [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
             };
 
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({
-                [ADDON_PREFIXES.MEMBER]: true,
-            });
+            expectPresentTypes(selectedPlan, [ADDON_PREFIXES.MEMBER]);
         });
 
-        it('should return only domain addon type when only domain addons are present', () => {
+        it('should report only domain addon type when only domain addons are present', () => {
             const planIDs = {
                 [PLANS.BUNDLE_PRO_2024]: 1,
                 [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 2,
             };
 
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({
-                [ADDON_PREFIXES.DOMAIN]: true,
-            });
+            expectPresentTypes(selectedPlan, [ADDON_PREFIXES.DOMAIN]);
         });
 
-        it('should return only IP addon type when only IP addons are present', () => {
+        it('should report only IP addon type when only IP addons are present', () => {
             const planIDs = {
                 [PLANS.VPN_BUSINESS]: 1,
                 [ADDON_NAMES.IP_VPN_BUSINESS]: 4,
             };
 
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({
-                [ADDON_PREFIXES.IP]: true,
-            });
+            expectPresentTypes(selectedPlan, [ADDON_PREFIXES.IP]);
         });
 
-        it('should return only scribe addon type when only scribe addons are present', () => {
+        it('should report only scribe addon type when only scribe addons are present', () => {
             const planIDs = {
                 [PLANS.MAIL_BUSINESS]: 1,
                 [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 3,
             };
 
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({
-                [ADDON_PREFIXES.SCRIBE]: true,
-            });
+            expectPresentTypes(selectedPlan, [ADDON_PREFIXES.SCRIBE]);
         });
 
-        it('should return only lumo addon type when only lumo addons are present', () => {
+        it('should report only lumo addon type when only lumo addons are present', () => {
             const planIDs = {
                 [PLANS.MAIL_PRO]: 1,
                 [ADDON_NAMES.LUMO_MAIL_PRO]: 2,
             };
 
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({
-                [ADDON_PREFIXES.LUMO]: true,
-            });
+            expectPresentTypes(selectedPlan, [ADDON_PREFIXES.LUMO]);
         });
 
-        it('should return multiple addon types when different addon types are present', () => {
+        it('should report multiple addon types when different addon types are present', () => {
             const planIDs = {
                 [PLANS.VPN_BUSINESS]: 1,
                 [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
@@ -832,15 +831,11 @@ describe('SelectedPlan', () => {
             };
 
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({
-                [ADDON_PREFIXES.MEMBER]: true,
-                [ADDON_PREFIXES.IP]: true,
-            });
+            expectPresentTypes(selectedPlan, [ADDON_PREFIXES.MEMBER, ADDON_PREFIXES.IP]);
         });
 
-        it('should return all addon types when all addon types are present', () => {
+        it('should report all addon types when all addon types are present', () => {
             const planIDs = {
                 [PLANS.BUNDLE_PRO_2024]: 1,
                 [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 2,
@@ -851,18 +846,17 @@ describe('SelectedPlan', () => {
             };
 
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({
-                [ADDON_PREFIXES.MEMBER]: true,
-                [ADDON_PREFIXES.DOMAIN]: true,
-                [ADDON_PREFIXES.IP]: true,
-                [ADDON_PREFIXES.SCRIBE]: true,
-                [ADDON_PREFIXES.LUMO]: true,
-            });
+            expectPresentTypes(selectedPlan, [
+                ADDON_PREFIXES.MEMBER,
+                ADDON_PREFIXES.DOMAIN,
+                ADDON_PREFIXES.IP,
+                ADDON_PREFIXES.SCRIBE,
+                ADDON_PREFIXES.LUMO,
+            ]);
         });
 
-        it('should return the same addon type when multiple addons of the same type are present', () => {
+        it('should report the addon type once when multiple addons of the same type are present', () => {
             const planIDs = {
                 [PLANS.MAIL_BUSINESS]: 1,
                 [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3,
@@ -871,20 +865,14 @@ describe('SelectedPlan', () => {
             };
 
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({
-                [ADDON_PREFIXES.MEMBER]: true,
-                [ADDON_PREFIXES.SCRIBE]: true,
-                [ADDON_PREFIXES.LUMO]: true,
-            });
+            expectPresentTypes(selectedPlan, [ADDON_PREFIXES.MEMBER, ADDON_PREFIXES.SCRIBE, ADDON_PREFIXES.LUMO]);
         });
 
         it('should work correctly with free plan (no addons)', () => {
             const selectedPlan = SelectedPlan.createFromSubscription(FREE_SUBSCRIPTION, PLANS_MAP);
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({});
+            expectPresentTypes(selectedPlan, []);
         });
 
         it('should work correctly with complex business plan setup', () => {
@@ -896,13 +884,38 @@ describe('SelectedPlan', () => {
             };
 
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-            const result = selectedPlan.getPresentAddonTypes();
 
-            expect(result).toEqual({
-                [ADDON_PREFIXES.MEMBER]: true,
-                [ADDON_PREFIXES.SCRIBE]: true,
-                [ADDON_PREFIXES.LUMO]: true,
-            });
+            expectPresentTypes(selectedPlan, [ADDON_PREFIXES.MEMBER, ADDON_PREFIXES.SCRIBE, ADDON_PREFIXES.LUMO]);
+        });
+    });
+
+    // Guards the registry-driven getTotal() rewrite: the generic synthetic-key path must equal the
+    // named getters it replaced, and the native keys must match their dedicated getters.
+    describe('getTotal equivalence with named getters', () => {
+        it.each([
+            { planIDs: { [PLANS.VPN_BUSINESS]: 1, [ADDON_NAMES.IP_VPN_BUSINESS]: 4 } },
+            {
+                planIDs: {
+                    [PLANS.BUNDLE_PRO_2024]: 1,
+                    [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 3,
+                    [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 2,
+                    [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 1,
+                },
+            },
+            {
+                planIDs: {
+                    [PLANS.MAIL_BUSINESS]: 1,
+                    [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 4,
+                    [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 3,
+                },
+            },
+            { planIDs: { [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 } },
+            { planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEET_MAIL]: 1 } },
+        ])('matches the named getter for every feature-limit key (%#)', ({ planIDs }) => {
+            const plan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+            expect(plan.getTotal('MaxIPs')).toBe(plan.getTotalIPs());
+            expect(plan.getTotal('MaxDomains')).toBe(plan.getTotalDomains());
         });
     });
 });

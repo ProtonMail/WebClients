@@ -5,8 +5,8 @@ import { getShortBillingText } from '@proton/components/containers/payments/subs
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { getCheckoutUi } from '../../core/checkout';
-import { CYCLE, PLANS } from '../../core/constants';
-import { hasLumoAddonFromPlanIDs } from '../../core/plan/addons';
+import { ADDON_PREFIXES, CYCLE, PLANS } from '../../core/constants';
+import { hasAddonFromPlanIDs } from '../../core/plan/addons';
 import { getPlanNameFromIDs } from '../../core/plan/helpers';
 import type { CouponConfig } from './interface';
 
@@ -42,7 +42,7 @@ export const vpn15mConfig: CouponConfig = {
                 return null;
             }
 
-            const withLumo = hasLumoAddonFromPlanIDs(planIDs);
+            const withLumo = hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, planIDs);
 
             return withLumo ? `${plan.Title} + ${LUMO_SHORT_APP_NAME}` : plan.Title;
         })();

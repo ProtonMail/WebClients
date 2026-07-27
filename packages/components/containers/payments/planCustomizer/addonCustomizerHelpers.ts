@@ -1,41 +1,32 @@
-import { c } from 'ttag';
-
 import {
-    type ADDON_NAMES,
-    ADDON_PREFIXES,
     AddonFeatureLimitKeyMapping,
-    AddonLimit,
-    TRIAL_MAX_DEDICATED_IPS,
-    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
-    TRIAL_MAX_LUMO_SEATS,
-    TRIAL_MAX_MEET_SEATS,
-    TRIAL_MAX_SCRIBE_SEATS,
-    TRIAL_MAX_USERS,
-} from '@proton/payments/core/constants';
+    getAddonConfigByName,
+    getAddonConfigByType,
+    getAddonConfigsByPlanName,
+    getAddonDisplayOrder,
+    getAddonLimit,
+    getAddonSeatGroup,
+    getAddonTrialLimit,
+    getAllAddonConfigs,
+} from '@proton/payments/core/addon/addons';
+import type { AddonFlags } from '@proton/payments/core/addon/interfaces';
+import { type ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
-import {
-    type AddonGuard,
-    getAddonType,
-    isDomainAddon,
-    isIpAddon,
-    isLumoAddon,
-    isMeetAddon,
-    isMemberAddon,
-    isScribeAddon,
-} from '@proton/payments/core/plan/addons';
+import { getAddonType } from '@proton/payments/core/plan/addons';
 import { getAddonMultiplier } from '@proton/payments/core/plan/feature-limits';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { setQuantity } from '@proton/payments/core/planIDs';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import { type AddonBalanceKey, SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
-import { LUMO_SHORT_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import type { CouponConfig } from '@proton/payments/ui/coupon-config/interface';
+import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 
+import { showAddonCustomizer } from '../subscription/modal-components/helpers/showAddonCustomizer';
 import type { NumberCustomiserProps } from './NumberCustomiser';
 import { getForcedFeatureLimitations } from './forced-addon-limits';
 import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';
-import { shouldShowDomainAddon } from './shouldShowDomainAddon';
 
 export interface AddonCustomizerProperties {
     sharedAddonCustomizerProps: SharedAddonCustomizerProps;
@@ -56,17 +47,17 @@ export type SharedAddonCustomizerProps = Pick<
     | 'increaseBlockedReasonText'
 >;
 
-export interface AddonFlags {
-    scribeAddonEnabled: boolean;
-    lumoAddonEnabled: boolean;
-    meetAddonEnabled: boolean;
-}
-
 export type CustomiserMode = 'signup' | undefined;
 
 export type AddonCustomizerItem = AddonCustomizerProperties & {
     addonName: ADDON_NAMES;
-    normalizationKey?: AddonBalanceKey;
+    preferredAddonType?: ADDON_PREFIXES;
+};
+
+/** The type to keep when normalizing this addon's seat pool — its own type, or undefined if unpooled. */
+const getPreferredAddonTypeForPool = (addonName: ADDON_NAMES): ADDON_PREFIXES | undefined => {
+    const addonType = getAddonType(addonName);
+    return addonType && getAddonSeatGroup(addonType) ? addonType : undefined;
 };
 
 type AddonCustomizerTrialProps =
@@ -82,36 +73,8 @@ const getTrialProps = (
     }
 
     const addonType: ADDON_PREFIXES | null = getAddonType(addonNameKey);
-
-    if (!addonType) {
-        return {};
-    }
-
-    const max = {
-        [ADDON_PREFIXES.MEMBER]: TRIAL_MAX_USERS,
-        [ADDON_PREFIXES.SCRIBE]: TRIAL_MAX_SCRIBE_SEATS,
-        [ADDON_PREFIXES.LUMO]: TRIAL_MAX_LUMO_SEATS,
-        [ADDON_PREFIXES.MEET]: TRIAL_MAX_MEET_SEATS,
-        [ADDON_PREFIXES.IP]: TRIAL_MAX_DEDICATED_IPS,
-        [ADDON_PREFIXES.DOMAIN]: TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
-    }[addonType];
-
-    const increaseBlockedReasonText = {
-        [ADDON_PREFIXES.MEMBER]: c('b2b_trials_2025_Info')
-            .t`You can have up to ${TRIAL_MAX_USERS} users during the trial period.`,
-        [ADDON_PREFIXES.SCRIBE]: scribeToLumo
-            ? c('b2b_trials_2025_Info')
-                  .t`You can have up to ${TRIAL_MAX_SCRIBE_SEATS} ${LUMO_SHORT_APP_NAME} writing assistant seats during the trial period.`
-            : c('b2b_trials_2025_Info')
-                  .t`You can have up to ${TRIAL_MAX_SCRIBE_SEATS} Scribe seats during the trial period.`,
-        [ADDON_PREFIXES.LUMO]: c('b2b_trials_2025_Info')
-            .t`You can have up to ${TRIAL_MAX_LUMO_SEATS} ${LUMO_SHORT_APP_NAME} seats during the trial period.`,
-        [ADDON_PREFIXES.MEET]: c('meet_2025: Info')
-            .t`You can have up to ${TRIAL_MAX_MEET_SEATS} ${MEET_SHORT_APP_NAME} seats during the trial period.`,
-        [ADDON_PREFIXES.IP]: c('b2b_trials_2025_Info')
-            .t`You can have up to ${TRIAL_MAX_DEDICATED_IPS} dedicated server during the trial period.`,
-        [ADDON_PREFIXES.DOMAIN]: c('b2b_trials_2025_Info').t`You cannot add custom domains during the trial period.`,
-    }[addonType];
+    const max = getAddonTrialLimit(addonType);
+    const increaseBlockedReasonText = getAddonConfigByType(addonType)?.trialIncreaseBlockedReasonText?.(scribeToLumo);
 
     return {
         max,
@@ -133,10 +96,67 @@ const getMaxAddonAmount = (
         return trialConstraints.max;
     }
 
-    return isScribeAddon(addonName) || isLumoAddon(addonName) || isMeetAddon(addonName)
+    return getAddonConfigByName(addonName)?.isPerMemberCapped
         ? constraints.selectedPlanTotalMembers
-        : Math.min(constraints.forcedMax ?? Infinity, AddonLimit[addonName] * constraints.addonMultiplier);
+        : Math.min(constraints.forcedMax ?? Infinity, getAddonLimit(addonName) * constraints.addonMultiplier);
 };
+
+function syncWhenEqualAddons(
+    supportedAddonNames: ADDON_NAMES[],
+    planIDs: PlanIDs,
+    currentMemberQuantity: number,
+    newMemberQuantity: number,
+    addonFlags: AddonFlags
+): PlanIDs {
+    for (const name of supportedAddonNames) {
+        const config = getAddonConfigByName(name);
+        if (config?.syncWithMembersAddon !== 'when-equal') {
+            continue;
+        }
+        const currentAddonQuantity = planIDs[name];
+        if (currentMemberQuantity === currentAddonQuantity && addonFlags[config.addonType]) {
+            return setQuantity(planIDs, name, newMemberQuantity);
+        }
+    }
+    return planIDs;
+}
+
+function syncAlwaysAddons(
+    supportedAddonNames: ADDON_NAMES[],
+    planIDs: PlanIDs,
+    newMemberQuantity: number,
+    addonFlags: AddonFlags
+): PlanIDs {
+    let result = planIDs;
+    for (const name of supportedAddonNames) {
+        const config = getAddonConfigByName(name);
+        if (config?.syncWithMembersAddon !== 'always') {
+            continue;
+        }
+        const currentAddonQuantity = result[name];
+        if (currentAddonQuantity && addonFlags[config.addonType]) {
+            result = setQuantity(result, name, newMemberQuantity);
+        }
+    }
+    return result;
+}
+
+function syncAddonsWithMembers(
+    supportedAddonNames: ADDON_NAMES[],
+    planIDs: PlanIDs,
+    currentMemberQuantity: number,
+    newMemberQuantity: number,
+    addonFlags: AddonFlags
+): PlanIDs {
+    const planIDsAfterSyncWhenEquals = syncWhenEqualAddons(
+        supportedAddonNames,
+        planIDs,
+        currentMemberQuantity,
+        newMemberQuantity,
+        addonFlags
+    );
+    return syncAlwaysAddons(supportedAddonNames, planIDsAfterSyncWhenEquals, newMemberQuantity, addonFlags);
+}
 
 export const getAddonCustomizerProperties = ({
     addonName,
@@ -244,59 +264,22 @@ export const getAddonCustomizerProperties = ({
             const newValue = (newQuantity - featureValueInSelectedPlan) / addonMultiplier;
             let newPlanIDs = setQuantity(selectedPlanIDs, addon.Name, newValue);
 
-            // Scribe, Lumo, and Meet track member count when fully in sync with it.
-            if (isMemberAddon(addonName)) {
+            const addonConfig = getAddonConfigByName(addonName);
+            if (addonConfig?.addonType === ADDON_PREFIXES.MEMBER) {
                 const supportedAddonNames = selectedPlan.getSupportedAddonNames();
-                const scribeAddonKey = supportedAddonNames.find(isScribeAddon);
-                const lumoAddonKey = supportedAddonNames.find(isLumoAddon);
-                const meetAddonKey = supportedAddonNames.find(isMeetAddon);
-                const newMembersQuantity = newQuantity;
-
-                const currentMembersValue = value;
-
-                const currentScribeValue = scribeAddonKey ? selectedPlanIDs[scribeAddonKey] : undefined;
-                const scribeConstrain = currentMembersValue === currentScribeValue && addonFlags.scribeAddonEnabled;
-
-                const currentLumoValue = lumoAddonKey ? selectedPlanIDs[lumoAddonKey] : undefined;
-                const lumoConstrain = currentMembersValue === currentLumoValue && addonFlags.lumoAddonEnabled;
-
-                const currentMeetValue = meetAddonKey ? selectedPlanIDs[meetAddonKey] : undefined;
-                // Meet always follows the member count when it's active, regardless of the current ratio.
-                const meetConstrain = !!currentMeetValue && addonFlags.meetAddonEnabled;
-
-                if (scribeConstrain && scribeAddonKey) {
-                    newPlanIDs = setQuantity(newPlanIDs, scribeAddonKey, newMembersQuantity);
-                } else if (lumoConstrain && lumoAddonKey) {
-                    newPlanIDs = setQuantity(newPlanIDs, lumoAddonKey, newMembersQuantity);
-                }
-
-                // Meet syncs independently so it always tracks member count even when scribe/lumo also sync.
-                if (meetConstrain && meetAddonKey) {
-                    newPlanIDs = setQuantity(newPlanIDs, meetAddonKey, newMembersQuantity);
-                }
-
-                onChangePlanIDs(newPlanIDs);
+                onChangePlanIDs(syncAddonsWithMembers(supportedAddonNames, newPlanIDs, value, newQuantity, addonFlags));
                 return;
             }
 
             // Scribes and lumos share the same seat pool — normalize so their total never exceeds members.
-            const balanceKey: AddonBalanceKey | undefined = (() => {
-                if (isLumoAddon(addonName)) {
-                    return 'prefer-lumos';
-                }
-                if (isScribeAddon(addonName)) {
-                    return 'prefer-scribes';
-                }
-
-                return undefined;
-            })();
-            if (balanceKey) {
+            const preferredAddonType = getPreferredAddonTypeForPool(addonName);
+            if (preferredAddonType) {
                 const newSelectedPlan = SelectedPlan.createNormalized(
                     newPlanIDs,
                     plansMap,
                     cycle,
                     currency,
-                    balanceKey
+                    preferredAddonType
                 );
                 newPlanIDs = newSelectedPlan.planIDs;
                 onChangePlanIDs(newPlanIDs);
@@ -317,23 +300,6 @@ export const getAddonCustomizerProperties = ({
     };
 };
 
-function getAddonDisplayOrder(addonName: ADDON_NAMES): number {
-    // the lower the index of the addon type, the higher the priority.
-    const mapping = [isMemberAddon, isDomainAddon, isIpAddon, isMeetAddon, isScribeAddon, isLumoAddon] as const;
-    const index = mapping.findIndex((guard) => guard(addonName));
-    return index === -1 ? mapping.length : index;
-}
-
-function getNormalizationKey(addonName: ADDON_NAMES): AddonBalanceKey | undefined {
-    if (isLumoAddon(addonName)) {
-        return 'prefer-lumos';
-    }
-    if (isScribeAddon(addonName)) {
-        return 'prefer-scribes';
-    }
-    return undefined;
-}
-
 export function computeAddonCustomizerItems({
     normalizedSelectedPlan,
     plansMap,
@@ -344,9 +310,9 @@ export function computeAddonCustomizerItems({
     onChangePlanIDs,
     addonFlags,
     allowedAddonTypes,
-    domainVpnBiz2023Enabled = false,
-    mode,
     scribeToLumo = false,
+    couponConfig,
+    isSignup,
 }: {
     normalizedSelectedPlan: SelectedPlan;
     plansMap: PlansMap;
@@ -356,36 +322,44 @@ export function computeAddonCustomizerItems({
     isTrialMode: boolean;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     addonFlags: AddonFlags;
-    allowedAddonTypes?: AddonGuard[];
-    domainVpnBiz2023Enabled?: boolean;
-    mode?: CustomiserMode;
     scribeToLumo?: boolean;
+    allowedAddonTypes?: ADDON_PREFIXES[];
+    couponConfig?: CouponConfigRendered | CouponConfig;
+    isSignup: boolean;
 }): AddonCustomizerItem[] {
-    const currentPlan = SelectedPlan.createFromSubscription(latestSubscription, plansMap);
+    const visibilityContext = {
+        subscription: latestSubscription ?? FREE_SUBSCRIPTION,
+        couponConfig,
+        planIDs: normalizedSelectedPlan.planIDs,
+        isSignup,
+    };
+
+    const resolvedAddonFlags: AddonFlags = { ...addonFlags };
+    for (const { addonType, visibility } of getAllAddonConfigs()) {
+        if (visibility?.rules?.length) {
+            resolvedAddonFlags[addonType] ??= showAddonCustomizer(addonType, visibilityContext);
+        }
+    }
+
+    const enabledAddonTypes = new Set(
+        getAddonConfigsByPlanName(normalizedSelectedPlan.getPlanName(), resolvedAddonFlags).map(
+            ({ addonType }) => addonType
+        )
+    );
 
     const isAllowedAddon = (addonName: ADDON_NAMES) => {
         if (!allowedAddonTypes?.length) {
             return true;
         }
-        return allowedAddonTypes.some((guard) => guard(addonName));
+        const addonType = getAddonType(addonName);
+        return addonType !== null && allowedAddonTypes.includes(addonType);
     };
 
     return normalizedSelectedPlan
         .getSupportedAddonNames()
         .filter((addonName) => {
-            if (addonFlags?.scribeAddonEnabled !== true && isScribeAddon(addonName)) {
-                return false;
-            }
-            if (addonFlags?.lumoAddonEnabled !== true && isLumoAddon(addonName)) {
-                return false;
-            }
-            if (addonFlags?.meetAddonEnabled !== true && isMeetAddon(addonName)) {
-                return false;
-            }
-            if (
-                isDomainAddon(addonName) &&
-                !shouldShowDomainAddon({ addonName, currentPlan, domainVpnBiz2023Enabled, mode })
-            ) {
+            const addonType = getAddonType(addonName);
+            if (addonType !== null && !enabledAddonTypes.has(addonType)) {
                 return false;
             }
             // Some cycles don't support some addons. For example, if user buys vpn2024 6m then 1lumo-vpn2024 doesn't
@@ -395,10 +369,10 @@ export function computeAddonCustomizerItems({
 
             return !!(addonSupportsSelectedCycle && canDisplayAddon);
         })
-        .sort((a, b) => getAddonDisplayOrder(a) - getAddonDisplayOrder(b))
+        .sort((a, b) => getAddonDisplayOrder(getAddonType(a)) - getAddonDisplayOrder(getAddonType(b)))
         .map((addonName) => ({
             addonName,
-            normalizationKey: getNormalizationKey(addonName),
+            preferredAddonType: getPreferredAddonTypeForPool(addonName),
             ...getAddonCustomizerProperties({
                 addonName,
                 plansMap,
@@ -407,8 +381,8 @@ export function computeAddonCustomizerItems({
                 isTrialMode,
                 selectedPlan: normalizedSelectedPlan,
                 onChangePlanIDs,
-                addonFlags,
                 scribeToLumo,
+                addonFlags: resolvedAddonFlags,
             }),
         }));
 }

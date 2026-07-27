@@ -1,5 +1,6 @@
 import {
     ADDON_NAMES,
+    ADDON_PREFIXES,
     CYCLE,
     FREE_SUBSCRIPTION,
     PLANS,
@@ -37,18 +38,43 @@ describe('computeAddonCustomizerItems', () => {
         isTrialMode: false,
         onChangePlanIDs: onChangeMock,
         addonFlags: {
-            scribeAddonEnabled: true,
-            lumoAddonEnabled: true,
-            meetAddonEnabled: false,
+            [ADDON_PREFIXES.SCRIBE]: true,
+            [ADDON_PREFIXES.LUMO]: true,
         },
-        domainVpnBiz2023Enabled: false,
-        mode: undefined as 'signup' | undefined,
     };
+
+    it('allowedAddonTypes filters to specified prefixes only', () => {
+        const items = computeAddonCustomizerItems({
+            ...baseArgs,
+            normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.MAIL_PRO]: 1 }),
+            addonFlags: { ...baseArgs.addonFlags, [ADDON_PREFIXES.SCRIBE]: true },
+            allowedAddonTypes: [ADDON_PREFIXES.MEMBER],
+            isSignup: false,
+        });
+
+        const addonNames = items.map((i) => i.addonName);
+        expect(addonNames).toContain(ADDON_NAMES.MEMBER_MAIL_PRO);
+        expect(addonNames).not.toContain(ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO);
+    });
+
+    it('allowedAddonTypes undefined shows all enabled addons', () => {
+        const items = computeAddonCustomizerItems({
+            ...baseArgs,
+            normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.MAIL_PRO]: 1 }),
+            addonFlags: { ...baseArgs.addonFlags, [ADDON_PREFIXES.SCRIBE]: true },
+            isSignup: false,
+        });
+
+        const addonNames = items.map((i) => i.addonName);
+        expect(addonNames).toContain(ADDON_NAMES.MEMBER_MAIL_PRO);
+        expect(addonNames).toContain(ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO);
+    });
 
     it('returns one item per included addon', () => {
         const items = computeAddonCustomizerItems({
             ...baseArgs,
             normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.MAIL_PRO]: 1 }),
+            isSignup: false,
         });
 
         const addonNames = items.map((i) => i.addonName);
@@ -60,7 +86,8 @@ describe('computeAddonCustomizerItems', () => {
         const items = computeAddonCustomizerItems({
             ...baseArgs,
             normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.MAIL_PRO]: 1 }),
-            addonFlags: { ...baseArgs.addonFlags, scribeAddonEnabled: false },
+            addonFlags: { ...baseArgs.addonFlags, [ADDON_PREFIXES.SCRIBE]: false },
+            isSignup: false,
         });
 
         expect(items.map((i) => i.addonName)).not.toContain(ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO);
@@ -70,7 +97,8 @@ describe('computeAddonCustomizerItems', () => {
         const items = computeAddonCustomizerItems({
             ...baseArgs,
             normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.MAIL_PRO]: 1 }),
-            addonFlags: { ...baseArgs.addonFlags, lumoAddonEnabled: false },
+            addonFlags: { ...baseArgs.addonFlags, [ADDON_PREFIXES.LUMO]: false },
+            isSignup: false,
         });
 
         expect(items.map((i) => i.addonName)).not.toContain(ADDON_NAMES.LUMO_MAIL_PRO);
@@ -80,7 +108,8 @@ describe('computeAddonCustomizerItems', () => {
         const items = computeAddonCustomizerItems({
             ...baseArgs,
             normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.MAIL_PRO]: 1 }),
-            addonFlags: { ...baseArgs.addonFlags, meetAddonEnabled: true },
+            addonFlags: { ...baseArgs.addonFlags, [ADDON_PREFIXES.MEET]: true },
+            isSignup: false,
         });
 
         expect(items.map((i) => i.addonName)).toContain(ADDON_NAMES.MEET_MAIL_PRO);
@@ -90,6 +119,7 @@ describe('computeAddonCustomizerItems', () => {
         const items = computeAddonCustomizerItems({
             ...baseArgs,
             normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.MAIL_PRO]: 1 }),
+            isSignup: false,
         });
 
         for (const item of items) {
@@ -101,51 +131,44 @@ describe('computeAddonCustomizerItems', () => {
         }
     });
 
-    it('excludes DOMAIN_VPN_BUSINESS when flag is false and subscription has no domain addons', () => {
+    it('excludes DOMAIN_VPN_BUSINESS when domainAddonEnabled is false', () => {
         const items = computeAddonCustomizerItems({
             ...baseArgs,
             normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.VPN_BUSINESS]: 1 }),
-            domainVpnBiz2023Enabled: false,
+            addonFlags: { ...baseArgs.addonFlags, [ADDON_PREFIXES.DOMAIN]: false },
+            isSignup: false,
         });
 
         expect(items.map((i) => i.addonName)).not.toContain(ADDON_NAMES.DOMAIN_VPN_BUSINESS);
     });
 
-    it('includes DOMAIN_VPN_BUSINESS when flag is true', () => {
+    it('includes DOMAIN_VPN_BUSINESS when domainAddonEnabled is true', () => {
         const items = computeAddonCustomizerItems({
             ...baseArgs,
             normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.VPN_BUSINESS]: 1 }),
-            domainVpnBiz2023Enabled: true,
+            addonFlags: { ...baseArgs.addonFlags, [ADDON_PREFIXES.DOMAIN]: true },
+            isSignup: false,
         });
 
         expect(items.map((i) => i.addonName)).toContain(ADDON_NAMES.DOMAIN_VPN_BUSINESS);
     });
 
-    it('includes DOMAIN_VPN_BUSINESS (grandfathered) when latestSubscription has domain addons but selectedPlanIDs does not', () => {
-        const latestPlanIDs: PlanIDs = {
-            [PLANS.VPN_BUSINESS]: 1,
-            [ADDON_NAMES.DOMAIN_VPN_BUSINESS]: 2,
-        };
-
+    it.each([
+        { isSignup: false, shouldIncludeDomainAddon: true },
+        { isSignup: true, shouldIncludeDomainAddon: false },
+    ])('respects signup visibility for DOMAIN_VPN_BUSINESS', ({ isSignup, shouldIncludeDomainAddon }) => {
         const items = computeAddonCustomizerItems({
             ...baseArgs,
             normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.VPN_BUSINESS]: 1 }),
-            latestSubscription: buildSubscription(latestPlanIDs),
-            domainVpnBiz2023Enabled: false,
+            latestSubscription: buildSubscription({
+                [PLANS.VPN_BUSINESS]: 1,
+                [ADDON_NAMES.DOMAIN_VPN_BUSINESS]: 1,
+            }),
+            isSignup,
         });
 
-        expect(items.map((i) => i.addonName)).toContain(ADDON_NAMES.DOMAIN_VPN_BUSINESS);
-    });
-
-    it('excludes DOMAIN_VPN_BUSINESS in signup mode even when flag is true', () => {
-        const items = computeAddonCustomizerItems({
-            ...baseArgs,
-            normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.VPN_BUSINESS]: 1 }),
-            domainVpnBiz2023Enabled: true,
-            mode: 'signup',
-        });
-
-        expect(items.map((i) => i.addonName)).not.toContain(ADDON_NAMES.DOMAIN_VPN_BUSINESS);
+        const addonNames = items.map((item) => item.addonName);
+        expect(addonNames.includes(ADDON_NAMES.DOMAIN_VPN_BUSINESS)).toBe(shouldIncludeDomainAddon);
     });
 });
 
@@ -172,7 +195,10 @@ describe('getAddonCustomizerProperties', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: { scribeAddonEnabled: true, lumoAddonEnabled: true, meetAddonEnabled: false },
+            addonFlags: {
+                [ADDON_PREFIXES.SCRIBE]: true,
+                [ADDON_PREFIXES.LUMO]: true,
+            },
         });
 
         // 1 base member + 3 addon members = 4 total
@@ -195,7 +221,10 @@ describe('getAddonCustomizerProperties', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: { scribeAddonEnabled: true, lumoAddonEnabled: true, meetAddonEnabled: false },
+            addonFlags: {
+                [ADDON_PREFIXES.SCRIBE]: true,
+                [ADDON_PREFIXES.LUMO]: true,
+            },
         });
 
         expect(sharedAddonCustomizerProps.max).toBe(2);
@@ -218,7 +247,10 @@ describe('getAddonCustomizerProperties', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: { scribeAddonEnabled: true, lumoAddonEnabled: true, meetAddonEnabled: false },
+            addonFlags: {
+                [ADDON_PREFIXES.SCRIBE]: true,
+                [ADDON_PREFIXES.LUMO]: true,
+            },
         });
 
         expect(sharedAddonCustomizerProps.decreaseBlockedReasons).toContain('forbidden-modification');
@@ -241,7 +273,7 @@ describe('getAddonCustomizerProperties', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: { scribeAddonEnabled: true, lumoAddonEnabled: false, meetAddonEnabled: false },
+            addonFlags: { [ADDON_PREFIXES.SCRIBE]: true },
         });
 
         // Increase members from 2 → 3
@@ -271,7 +303,7 @@ describe('getAddonCustomizerProperties', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: { scribeAddonEnabled: true, lumoAddonEnabled: false, meetAddonEnabled: false },
+            addonFlags: { [ADDON_PREFIXES.SCRIBE]: true },
         });
 
         sharedAddonCustomizerProps.onChange?.(4);
@@ -300,7 +332,7 @@ describe('getAddonCustomizerProperties', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: { scribeAddonEnabled: false, lumoAddonEnabled: true, meetAddonEnabled: false },
+            addonFlags: { [ADDON_PREFIXES.LUMO]: true },
         });
 
         // Increase members from 2 → 3
@@ -330,7 +362,7 @@ describe('getAddonCustomizerProperties', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: { scribeAddonEnabled: false, lumoAddonEnabled: true, meetAddonEnabled: false },
+            addonFlags: { [ADDON_PREFIXES.LUMO]: true },
         });
 
         sharedAddonCustomizerProps.onChange?.(4);
@@ -359,7 +391,7 @@ describe('getAddonCustomizerProperties', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: { scribeAddonEnabled: false, lumoAddonEnabled: false, meetAddonEnabled: true },
+            addonFlags: { [ADDON_PREFIXES.MEET]: true },
         });
 
         // Increase members from 2 → 3; meet must follow regardless of ratio
@@ -388,7 +420,7 @@ describe('getAddonCustomizerProperties', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: { scribeAddonEnabled: false, lumoAddonEnabled: false, meetAddonEnabled: true },
+            addonFlags: { [ADDON_PREFIXES.MEET]: true },
         });
 
         sharedAddonCustomizerProps.onChange?.(3);
@@ -419,11 +451,7 @@ describe('getAddonCustomizerProperties – non-trial mode', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: {
-                scribeAddonEnabled: false,
-                lumoAddonEnabled: false,
-                meetAddonEnabled: false,
-            },
+            addonFlags: {},
         });
 
         expect(sharedAddonCustomizerProps.increaseBlockedReasons).not.toContain('trial-limit');
@@ -448,11 +476,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: {
-                scribeAddonEnabled: false,
-                lumoAddonEnabled: false,
-                meetAddonEnabled: false,
-            },
+            addonFlags: {},
         });
 
         expect(sharedAddonCustomizerProps.max).toBe(TRIAL_MAX_USERS);
@@ -471,11 +495,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: {
-                scribeAddonEnabled: false,
-                lumoAddonEnabled: false,
-                meetAddonEnabled: false,
-            },
+            addonFlags: {},
         });
 
         expect(sharedAddonCustomizerProps.max).toBe(TRIAL_MAX_EXTRA_CUSTOM_DOMAINS);
@@ -494,11 +514,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: {
-                scribeAddonEnabled: false,
-                lumoAddonEnabled: false,
-                meetAddonEnabled: false,
-            },
+            addonFlags: {},
         });
 
         expect(sharedAddonCustomizerProps.max).toBe(TRIAL_MAX_DEDICATED_IPS);
@@ -521,11 +537,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: {
-                scribeAddonEnabled: false,
-                lumoAddonEnabled: false,
-                meetAddonEnabled: false,
-            },
+            addonFlags: {},
         });
 
         expect(sharedAddonCustomizerProps.max).toBe(TRIAL_MAX_SCRIBE_SEATS);
@@ -548,11 +560,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: {
-                scribeAddonEnabled: false,
-                lumoAddonEnabled: false,
-                meetAddonEnabled: false,
-            },
+            addonFlags: {},
         });
 
         const { sharedAddonCustomizerProps: withTrial } = getAddonCustomizerProperties({
@@ -564,14 +572,144 @@ describe('getAddonCustomizerProperties – trial mode', () => {
             selectedPlan,
             onChangePlanIDs: onChangeMock,
             scribeToLumo: false,
-            addonFlags: {
-                scribeAddonEnabled: false,
-                lumoAddonEnabled: false,
-                meetAddonEnabled: false,
-            },
+            addonFlags: {},
         });
 
         expect(nonTrial.max).toBeGreaterThan(TRIAL_MAX_USERS);
         expect(withTrial.max).toBe(TRIAL_MAX_USERS);
+    });
+});
+
+// ─── syncWhenEqualAddons (via getAddonCustomizerProperties) ───────────────────
+
+describe('syncWhenEqualAddons', () => {
+    const buildSelectedPlan = (planIDs: PlanIDs) => {
+        return SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+    };
+
+    it('syncs the first matching when-equal addon and breaks (scribe wins over lumo)', () => {
+        // Both scribes and lumos equal members — scribe config comes first in supported order
+        const planIDs: PlanIDs = {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 1, // 2 members
+            [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2, // equals members
+            [ADDON_NAMES.LUMO_MAIL_PRO]: 2, // equals members
+        };
+        const selectedPlan = buildSelectedPlan(planIDs);
+
+        const { sharedAddonCustomizerProps } = getAddonCustomizerProperties({
+            addonName: ADDON_NAMES.MEMBER_MAIL_PRO,
+            plansMap: PLANS_MAP,
+            loading: false,
+            latestSubscription: FREE_SUBSCRIPTION,
+            isTrialMode: false,
+            selectedPlan,
+            onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
+            addonFlags: { [ADDON_PREFIXES.SCRIBE]: true, [ADDON_PREFIXES.LUMO]: true },
+        });
+
+        sharedAddonCustomizerProps.onChange?.(3);
+
+        const result = onChangeMock.mock.calls[0][0];
+        // Only ONE of scribe or lumo should be synced, not both
+        const scribeSynced = result[ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO] === 3;
+        const lumoSynced = result[ADDON_NAMES.LUMO_MAIL_PRO] === 3;
+        expect(scribeSynced !== lumoSynced).toBe(true);
+    });
+
+    it('does not sync when-equal addon when its flag is disabled', () => {
+        const planIDs: PlanIDs = {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 1, // 2 members
+            [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2, // equals members
+        };
+        const selectedPlan = buildSelectedPlan(planIDs);
+
+        const { sharedAddonCustomizerProps } = getAddonCustomizerProperties({
+            addonName: ADDON_NAMES.MEMBER_MAIL_PRO,
+            plansMap: PLANS_MAP,
+            loading: false,
+            latestSubscription: FREE_SUBSCRIPTION,
+            isTrialMode: false,
+            selectedPlan,
+            onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
+            addonFlags: { [ADDON_PREFIXES.SCRIBE]: false },
+        });
+
+        sharedAddonCustomizerProps.onChange?.(3);
+
+        expect(onChangeMock).toHaveBeenCalledWith({
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+            [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2, // unchanged — flag disabled
+        });
+    });
+});
+
+// ─── syncAlwaysAddons (via getAddonCustomizerProperties) ─────────────────────
+
+describe('syncAlwaysAddons', () => {
+    const buildSelectedPlan = (planIDs: PlanIDs) => {
+        return SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+    };
+
+    it('does not sync meet when its quantity is 0', () => {
+        const planIDs: PlanIDs = {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 1, // 2 members
+            [ADDON_NAMES.MEET_MAIL_PRO]: 0, // meet present but inactive
+        };
+        const selectedPlan = buildSelectedPlan(planIDs);
+
+        const { sharedAddonCustomizerProps } = getAddonCustomizerProperties({
+            addonName: ADDON_NAMES.MEMBER_MAIL_PRO,
+            plansMap: PLANS_MAP,
+            loading: false,
+            latestSubscription: FREE_SUBSCRIPTION,
+            isTrialMode: false,
+            selectedPlan,
+            onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
+            addonFlags: { [ADDON_PREFIXES.MEET]: true },
+        });
+
+        sharedAddonCustomizerProps.onChange?.(3);
+
+        expect(onChangeMock).toHaveBeenCalledWith({
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+            [ADDON_NAMES.MEET_MAIL_PRO]: 0, // not synced — was inactive
+        });
+    });
+
+    it('does not sync meet when its flag is disabled', () => {
+        const planIDs: PlanIDs = {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 1, // 2 members
+            [ADDON_NAMES.MEET_MAIL_PRO]: 2, // meet active
+        };
+        const selectedPlan = buildSelectedPlan(planIDs);
+
+        const { sharedAddonCustomizerProps } = getAddonCustomizerProperties({
+            addonName: ADDON_NAMES.MEMBER_MAIL_PRO,
+            plansMap: PLANS_MAP,
+            loading: false,
+            latestSubscription: FREE_SUBSCRIPTION,
+            isTrialMode: false,
+            selectedPlan,
+            onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
+            addonFlags: { [ADDON_PREFIXES.MEET]: false },
+        });
+
+        sharedAddonCustomizerProps.onChange?.(3);
+
+        expect(onChangeMock).toHaveBeenCalledWith({
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+            [ADDON_NAMES.MEET_MAIL_PRO]: 2, // unchanged — flag disabled
+        });
     });
 });
