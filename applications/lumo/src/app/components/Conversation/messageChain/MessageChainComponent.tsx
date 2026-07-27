@@ -22,6 +22,8 @@ export type MessageChainComponentProps = {
     /** Extra classes for the scrollable message container (e.g. top spacing in minimal mode). */
     className?: string;
     conversationId?: ConversationId;
+    /** Host-provided content rendered right after the message list (e.g. desktop tool-approval cards). */
+    afterMessages?: React.ReactNode;
 };
 
 interface ScrollState {
@@ -305,6 +307,7 @@ export const MessageChainComponent = ({
     composerContainerRef,
     className,
     conversationId,
+    afterMessages,
 }: MessageChainComponentProps) => {
     const newMessageRef = useRef<HTMLDivElement | null>(null);
 
@@ -398,6 +401,8 @@ export const MessageChainComponent = ({
                 show={showScrollIndicator}
                 composerContainerRef={composerContainerRef}
             />
+
+            {afterMessages}
         </>
     );
 };

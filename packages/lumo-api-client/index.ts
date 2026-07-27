@@ -57,6 +57,13 @@ export {
     getDesktopOpenAITools,
     isDesktopNativeTool,
     createDesktopClientToolExecutor,
+    getDesktopConnectors,
+    respondDesktopToolApproval,
+    subscribeToolApprovals,
+    getPendingToolApprovals,
+    resolveToolApproval,
+    type DesktopConnector,
+    type DesktopToolApprovalRequest,
 } from './core/desktop-tools';
 
 export { StreamProcessor } from './core/streaming';
