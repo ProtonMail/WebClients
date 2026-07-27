@@ -1,14 +1,15 @@
 import { c } from 'ttag';
 
-import { FileIcon } from '@proton/components';
+import { FileIcon, MiddleEllipsis } from '@proton/components';
 import { NodeType } from '@proton/drive';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
+import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 
-import { FileName } from '../../legacy/components/FileName';
-import { SignatureIcon } from '../../legacy/components/SignatureIcon';
 import { nodeTypeComparator, stringComparator } from '../../modules/sorting/comparators';
 import { SortField } from '../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';
+import { SignatureIcon } from '../../statelessComponents/SignatureIcon';
 
 export interface NameCellProps {
     uid: string;
@@ -20,6 +21,8 @@ export interface NameCellProps {
     isInvitation?: boolean;
 }
 
+const CHARACTERS_BEFORE_EXTENSION = 1; // The dot before the extension
+
 export const NameCell = ({
     name,
     type,
@@ -28,6 +31,12 @@ export const NameCell = ({
     isInvitation = false,
     haveSignatureIssues = false,
 }: NameCellProps) => {
+    const sanitized = rtlSanitize(name);
+    const isFile = type === NodeType.File || type === NodeType.Photo;
+    const [, extension] = isFile ? splitExtension(sanitized) : ['', ''];
+
+    const hasExtension = extension.length > 0;
+    const charsToDisplayEnd = hasExtension ? extension.length + CHARACTERS_BEFORE_EXTENSION : 0;
     return (
         <span className="flex items-center flex-nowrap mr-4" aria-label={name}>
             {type === NodeType.Album && (
@@ -55,12 +64,15 @@ export const NameCell = ({
                         style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
                     />
                 ))}
-            <SignatureIcon
-                haveSignatureIssues={haveSignatureIssues}
-                isFile={type === NodeType.File || type === NodeType.Photo}
-                className="mr-2 shrink-0"
+            <SignatureIcon haveSignatureIssues={haveSignatureIssues} type={type} className="mr-2 shrink-0" />
+            <MiddleEllipsis
+                charsToDisplayEnd={charsToDisplayEnd}
+                text={sanitized}
+                displayTitle={false}
+                displayTooltip
+                data-testid={'name-cell'}
+                splitOnlyTooLong
             />
-            <FileName text={name} testId="name-cell" />
         </span>
     );
 };
