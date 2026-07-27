@@ -9,7 +9,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SentryMailInitiatives, captureInitiativeMessage } from '@proton/shared/lib/helpers/sentry';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import { categoryIDFromUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
+import { categoryIDFromUrl, getInboxUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import { getParametersFromPath } from 'proton-mail/hooks/mailbox/useElements';
 import { reset } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -64,7 +64,9 @@ export const useCategoryFlagWatcher = () => {
                     params: { labelID: MAILBOX_LABEL_IDS.INBOX },
                 })
             );
-            history.replace(setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT));
+
+            // The existing hash is preserved when redirecting users to the default category
+            history.replace(setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, location.hash));
 
             // Temporary tracking
             captureInitiativeMessage(
@@ -85,7 +87,9 @@ export const useCategoryFlagWatcher = () => {
 
         if (!isCategoryViewEnabled && categoryID) {
             dispatch(reset({ params: { labelID: MAILBOX_LABEL_IDS.INBOX } }));
-            history.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
+
+            // The existing hash is preserved when redirecting users back to the inbox
+            history.replace(getInboxUrl(location.hash));
 
             // Temporary tracking
             captureInitiativeMessage(
