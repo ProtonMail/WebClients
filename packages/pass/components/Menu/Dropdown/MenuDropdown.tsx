@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -13,25 +12,19 @@ import { verticalPopperPlacements } from '@proton/components/components/popper/u
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { AdminPanelLabel } from '@proton/pass/components/Menu/B2B/AdminPanelLabel';
+import { AppMenuButton } from '@proton/pass/components/Menu/Dropdown/MenuButtons';
 import { MenuUser } from '@proton/pass/components/Menu/Dropdown/MenuUser';
-import { SharedMenuContent } from '@proton/pass/components/Menu/Shared/SharedMenu';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
-import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { useUserInitiatedLock } from '@proton/pass/hooks/auth/useUserInitiatedLock';
-import { useVaultCreationPolicy } from '@proton/pass/hooks/organization/useVaultCreationPolicy';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { selectLockEnabled } from '@proton/pass/store/selectors/settings';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-
-import { AppMenuButton, VaultMenuButton } from './MenuButtons';
 
 import './MenuDropdown.scss';
 
@@ -49,7 +42,6 @@ type Props = {
 
 export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
     const { popup, openSettings } = usePassCore();
-    const vaultActions = useVaultActions();
     const navigate = useNavigate();
 
     const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
@@ -58,12 +50,8 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
     const org = useOrganization();
 
     const appMenu = usePopperAnchor<HTMLButtonElement>();
-    const vaultMenu = usePopperAnchor<HTMLButtonElement>();
 
     const withAppMenuClose = withTap(appMenu.close);
-    const withVaultMenuClose = withTap(vaultMenu.close);
-
-    const { vaultCreationDisabled } = useVaultCreationPolicy();
 
     const { advanced, download } = useMenuItems(useMemo(() => ({ onAction: appMenu.close }), [appMenu.close]));
 
@@ -92,10 +80,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
 
     return (
         <nav className="pass-menu-dropdown flex gap-2 lg:hidden">
-            <div className="flex gap-2">
-                <AppMenuButton ref={appMenu.anchorRef} toggle={appMenu.toggle} isOpen={appMenu.isOpen} />
-                <VaultMenuButton ref={vaultMenu.anchorRef} toggle={vaultMenu.toggle} isOpen={vaultMenu.isOpen} />
-            </div>
+            <AppMenuButton ref={appMenu.anchorRef} toggle={appMenu.toggle} isOpen={appMenu.isOpen} />
 
             <Dropdown
                 anchorRef={appMenu.anchorRef}
@@ -171,41 +156,6 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                     />
                     <Submenu icon="user" label={c('Action').t`Account`} items={accountMenuItems} />
                 </DropdownMenu>
-            </Dropdown>
-
-            <Dropdown
-                anchorRef={vaultMenu.anchorRef}
-                autoClose={false}
-                isOpen={vaultMenu.isOpen}
-                onClose={vaultMenu.close}
-                availablePlacements={verticalPopperPlacements}
-                size={DROPDOWN_SIZE}
-                style={{ '--custom-max-width': DROPDOWN_SIZE.width }}
-                contentProps={{ className: 'flex flex-column flex-nowrap' }}
-            >
-                <div className="overflow-auto p-2 pb-0">
-                    <div className="flex flex-column">
-                        <VaultMenu onAction={vaultMenu.close} />
-                        <SharedMenuContent onAction={vaultMenu.close} />
-                    </div>
-                </div>
-
-                <div className="p-2 w-full shrink-0">
-                    <OrganizationPolicyTooltip
-                        enforced={vaultCreationDisabled}
-                        text={c('Warning').t`Your organization does not allow creating a vault`}
-                    >
-                        <Button
-                            className="w-full"
-                            color="weak"
-                            shape="solid"
-                            onClick={withVaultMenuClose(vaultActions.create)}
-                            disabled={vaultCreationDisabled}
-                        >
-                            {c('Action').t`Create vault`}
-                        </Button>
-                    </OrganizationPolicyTooltip>
-                </div>
             </Dropdown>
         </nav>
     );

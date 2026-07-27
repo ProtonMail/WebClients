@@ -1,0 +1,27 @@
+.pass-reset-filters-button {
+	--button-default-background-color: var(--interaction-weak);
+	--button-hover-background-color: var(--interaction-weak-major-1);
+	--button-active-background-color: var(--interaction-weak-major-2);
+	--button-default-text-color: var(--interaction-norm);
+	--button-hover-text-color: var(--interaction-norm);
+	--button-active-text-color: var(--interaction-norm);
+
+	align-self: flex-start;
+	margin-block-start: 0.5rem;
+	border-radius: var(--border-radius-md);
+}
+
+.pass-reset-filters-button-icon {
+	display: inline-flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	inline-size: 1.125rem;
+	block-size: 1.125rem;
+	border-radius: 50%;
+	background-color: var(--interaction-norm);
+
+	svg {
+		color: var(--text-invert);
+	}
+}
