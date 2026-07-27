@@ -83,19 +83,19 @@ export const CancelSubscriptionModalForWorldCup = ({
                     </div>
                 ))}
                 <div
-                    className={`vpn-features-world-cup flex flex-row p-4 items-center rounded-xl w-full flex-nowrap justify-space-between`}
+                    className={`vpn-features-world-cup flex flex-row p-4 items-center rounded-xl w-full justify-space-between`}
                     style={{
                         backgroundColor: '#239ECE1F',
                     }}
                 >
-                    <div className="flex flex-row items-center gap-3">
+                    <div className="flex flex-row items-center gap-3 w-4/5 flex-nowrap">
                         <img src={stayVpnPlus} alt="" />
                         <div className="flex flex-column gap-1">
                             <span className="text-semibold">{getOffer.value()}</span>
                             <span className="color-weak">{getOffer.hint()}</span>
                         </div>
                     </div>
-                    <Button loading={loadingSubscriptionModal} onClick={getOffer.action} color="norm">
+                    <Button className="w-1/5" loading={loadingSubscriptionModal} onClick={getOffer.action} color="norm">
                         {c('Button').t`Get 50% offer`}
                     </Button>
                 </div>
