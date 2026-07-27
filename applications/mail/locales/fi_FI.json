@@ -1520,7 +1520,8 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen"
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -1717,6 +1718,18 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Clear conversation": [
+        "Tyhjennä keskustelu"
+      ],
+      "Reject": [
+        "Kieltäydy"
+      ],
+      "Stop": [
+        "Pysäytä"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Vaihda ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1843,6 +1856,21 @@
       ],
       "Writing assistant seats": [
         "Kirjoitusavustajan käyttöpaikat"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja (${ quantity } käyttäjälle)",
+        "${ BRAND_NAME } Scribe-kirjoitusavustaja (${ quantity } käyttäjälle)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } -tekoälyavustaja"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } tekoälyavustaja (${ quantity } käyttäjä)",
+        "${ LUMO_APP_NAME } AI-avustaja (${ quantity } käyttäjälle)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } oma verkkotunnus",
+        "${ quantity } omaa verkkotunnusta"
       ]
     },
     "Alert": {
@@ -9306,6 +9334,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "Details": [
+        "Lisätiedot"
+      ],
+      "Thinking about this": [
+        "Mietitään tätä"
       ]
     },
     "info": {
@@ -10968,6 +11002,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikkaa"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)",
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)"
       ]
     },
     "meet_2025: Feature": {
@@ -13287,6 +13325,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Ask anything…": [
+        "Kysy mitä tahansa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15223,6 +15264,9 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Siirretty kansioon ${ label }. Samankaltaiset viestit luokitellaan tänne jatkossa."
       ]
     },
     "Success notification": {

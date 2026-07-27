@@ -1520,7 +1520,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1717,6 +1718,18 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Clear conversation": [
+        "Effacer la conversation"
+      ],
+      "Lookup document": [
+        "Consulter le document"
+      ],
+      "Reject": [
+        "Refuser"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Afficher ou masquer ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1843,6 +1856,25 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateurs)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistant IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domaine personnalisé",
+        "${ quantity } domaines personnalisés"
       ]
     },
     "Alert": {
@@ -5506,6 +5538,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Une erreur s'est produite. Fermez la fenêtre contextuelle et réessayez."
       ]
     },
     "error": {
@@ -9346,6 +9381,29 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problème lors de l'importation :",
+        "${ issues.length } problèmes lors de l'importation :"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minutes restantes…"
+      ],
+      "Details": [
+        "Informations"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Un index de recherche chiffré actuel a été détecté avec ${ oldIndexSize } message.",
+        "Un index de recherche chiffré actuel a été détecté avec ${ oldIndexSize } messages."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "L'importation est en cours. Vous pouvez fermer cette boîte de dialogue pendant l'opération et y revenir plus tard. Ne fermez toutefois pas l'onglet."
+      ],
+      "Thinking about this": [
+        "Réflexion en cours"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Vous pouvez l'importer en tant que nouvel index de recherche de base à des fins de développement."
       ]
     },
     "info": {
@@ -10535,6 +10593,18 @@
       ],
       "Client version": [
         "Version client"
+      ],
+      "Content search version to use": [
+        "Version de recherche de contenu à utiliser"
+      ],
+      "Document ID": [
+        "ID du document"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11014,6 +11084,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } accès ${ MEET_APP_NAME }",
         "${ seats } accès ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateur)",
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ price } per seat": [
+        "${ price } par siège"
       ]
     },
     "meet_2025: Feature": {
@@ -13336,6 +13413,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Ask anything…": [
+        "Posez n'importe quelle question…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15272,6 +15352,9 @@
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Déplacé vers ${ label }. Les messages similaires seront automatiquement classés dans cette catégorie à l'avenir."
       ]
     },
     "Success notification": {
