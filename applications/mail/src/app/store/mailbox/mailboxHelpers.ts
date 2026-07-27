@@ -177,11 +177,7 @@ export const getNotificationTextLabelAdded = ({
     if (isCategoryLabel(destinationLabelID)) {
         const label = getLabelFromCategoryId(destinationLabelID);
 
-        return c('Success').ngettext(
-            msgid`Moved to ${label}. Similar message will be categorized here in the future.`,
-            `Moved to ${label}. Similar messages will be categorized here in the future.`,
-            elementsCount
-        );
+        return c('Success').t`Moved to ${label}. Similar messages will be categorized here in the future.`;
     }
 
     if (destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
