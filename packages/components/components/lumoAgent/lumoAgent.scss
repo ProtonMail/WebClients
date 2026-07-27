@@ -15,20 +15,53 @@
 }
 
 .lumo-agent-bubble {
-	padding-block: 0.5rem;
-	padding-inline: 0.75rem;
-	border-radius: 0.75rem;
+	padding-block: 0.625rem;
+	padding-inline: 0.875rem;
+	border-radius: var(--border-radius-lg, 0.75rem);
 	max-inline-size: 85%;
+	white-space: pre-wrap;
+	word-break: break-word;
 
+	// Right-aligned pale-lavender user bubble, matching lumo.proton.me.
 	&.is-user {
 		align-self: flex-end;
-		background: var(--interaction-weak, rgb(0 0 0 / 0.05));
+		border-end-end-radius: var(--border-radius-sm);
+		background: var(--interaction-norm-minor-2, rgb(109 74 255 / 0.1));
+		color: var(--text-norm);
 	}
 }
 
+// Assistant reply: a soft neutral bubble hugging the left, two-tone (colour + alignment) against the
+// lavender user bubble opposite it. Trim the markdown renderer's outer block margins.
 .lumo-agent-reply {
 	align-self: flex-start;
-	max-inline-size: 100%;
+	max-inline-size: 90%;
+	min-inline-size: 0;
+	padding-block: 0.625rem;
+	padding-inline: 0.875rem;
+	border-radius: var(--border-radius-lg, 0.75rem);
+	border-end-start-radius: var(--border-radius-sm);
+	background: var(--background-weak, rgb(0 0 0 / 0.04));
+	color: var(--text-norm);
+	overflow-wrap: break-word;
+
+	> :first-child {
+		margin-block-start: 0;
+	}
+
+	> :last-child {
+		margin-block-end: 0;
+	}
+}
+
+// Idle Lumo cat mark beneath the latest turn (left-aligned, in the reply column).
+.lumo-agent-avatar {
+	align-self: flex-start;
+}
+
+// Composer framing: padding so the rounded input never sits flush to the drawer edges.
+.lumo-agent-composer {
+	padding: 0.75rem;
 }
 
 .lumo-agent-error {
