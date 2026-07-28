@@ -648,6 +648,9 @@
       "Refresh the page": [
         "Obnovit stránku"
       ],
+      "Reject": [
+        "Odmítnout"
+      ],
       "Reload": [
         "Znovu načíst"
       ],
@@ -758,6 +761,9 @@
       ],
       "Select all": [
         "Vybrat vše"
+      ],
+      "Send": [
+        "Odeslat"
       ],
       "Set password or expiration date": [
         "Nastavit heslo nebo datum vypršení platnosti"
@@ -982,6 +988,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } další vlastní doména",
         "${ domains } další vlastní domény",
@@ -994,11 +1006,38 @@
         "${ ips } dedikovaných VPN serverů",
         "${ ips } dedikovaných VPN serverů"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licence"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licencí ${ LUMO_APP_NAME }"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } za dedikovaný server"
+      ],
+      "${ price } per domain": [
+        "${ price } za doménu"
+      ],
+      "${ price } per seat": [
+        "${ price } za licenci"
+      ],
+      "${ price } per user": [
+        "${ price } za uživatele"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastní doména",
+        "${ quantity } vlastní domény",
+        "${ quantity } vlastních domén",
+        "${ quantity } vlastních domén"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } licence",
@@ -1101,6 +1140,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Po konci zkušební doby ${ formattedDate1 } začne placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate2 }, nebudou vám účtovány žádné poplatky."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_LUMO_SEATS } licencí ${ LUMO_SHORT_APP_NAME } během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_SCRIBE_SEATS } licencí Scribe během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_USERS } uživatelů během zkušební doby."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Ve zkušební verzi nelze přidávat vlastní domény."
       ]
     },
     "b2b_trials_Action": {
@@ -1359,10 +1413,10 @@
         "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v administrátorské konzoli Google Workspace."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v sekci ${ usersAddressesLink }."
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v ${ usersAddressesLink }."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v sekci ${ usersAddressesLink }."
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v ${ usersAddressesLink }."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Chcete-li tohoto uživatele migrovat, musí nejprve přijmout pozvánku k připojení ke službě ${ BRAND_NAME }."
@@ -4693,6 +4747,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Při práci na dálku je nezbytné zabezpečené připojení. VPN chrání firemní data před kybernetickými hrozbami a udržuje vaši práci v soukromí."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Uživatelem je účet spojený s jedním uživatelským jménem, poštovní schránkou a osobou"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN šifruje vaše připojení a skrývá vaši IP adresu, takže je mnohem těžší sledovat nebo zaznamenávat vaše prohlížení."
       ],
@@ -4870,6 +4927,12 @@
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvořte bezpečný cloud pro ${ memberCount } člena",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členy",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členů",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členů"
+      ],
       "Create an end-to-end encrypted document.": [
         "Vytvořte koncově šifrovaný dokument."
       ],
@@ -4900,8 +4963,14 @@
       "Current version": [
         "Současná verze"
       ],
+      "Custom email domains": [
+        "Vlastní e-mailové domény"
+      ],
       "Decrypting your document": [
         "Dešifrování dokumentu"
+      ],
+      "Details": [
+        "Podrobnosti"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem ${ emailAddress }."
@@ -4959,6 +5028,9 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby ${ BRAND_NAME } k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
       ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
@@ -5325,6 +5397,9 @@
       ],
       "Opening...": [
         "Otevírání..."
+      ],
+      "Organization size": [
+        "Velikost organizace"
       ],
       "Other accounts": [
         "Další účty"
@@ -5733,6 +5808,9 @@
       ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Users": [
+        "Uživatelé"
       ],
       "Version number successfully copied to clipboard": [
         "Číslo verze úspěšně zkopírováno do schránky"
@@ -6829,6 +6907,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licence"
       ],
@@ -6908,6 +6992,11 @@
         "Videokonference, ${ n } účastníci",
         "Videokonference, ${ n } účastníků",
         "Videokonference, ${ n } účastníků"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_MEET_SEATS } licencí ${ MEET_SHORT_APP_NAME } během zkušební doby."
       ]
     },
     "Message": {
