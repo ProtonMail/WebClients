@@ -8,6 +8,7 @@ import { getUserPermissions } from '@proton/shared/lib/api/userPermissions';
 import { PERMISSIONS, type Permission, type User, type UserPermission } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
+import { isOwnerRole } from '../organizationRoles/helpers';
 import { type UserState, userFulfilled, userThunk } from '../user';
 
 const name = 'userPermissions';
@@ -23,11 +24,11 @@ export const selectUserPermissions = (state: UserPermissionsState) => state[name
 
 export const getOrgPermissions = (
     permissions: UserPermission['Permissions'],
-    isLegacyAdmin: boolean
+    grantAllPermissions: boolean
 ): Record<Permission, boolean> => {
     const permissionsSet = new Set(permissions);
     // @todo: remove the dependency of user state when legacy permission system is retired
-    const entries = PERMISSIONS.map((p) => [p, isLegacyAdmin || permissionsSet.has(p)] as const);
+    const entries = PERMISSIONS.map((p) => [p, grantAllPermissions || permissionsSet.has(p)] as const);
     return Object.fromEntries(entries) as Record<Permission, boolean>;
 };
 
@@ -42,7 +43,8 @@ const modelThunk = createAsyncModelThunk<Model, UserPermissionsState, ProtonThun
             return { Roles: [], Permissions: [], permissions, role: user.Role };
         }
         const Permission = await extraArgument.api<UserPermission>(getUserPermissions());
-        const permissions = getOrgPermissions(Permission.Permissions, isLegacyAdmin);
+        const isOwner = Permission.Roles.some(isOwnerRole);
+        const permissions = getOrgPermissions(Permission.Permissions, isOwner);
         return { ...Permission, permissions, role: user.Role };
     },
     previous: previousSelector(selectUserPermissions),
@@ -84,3 +86,4 @@ const slice = createSlice({
 
 export const userPermissionsReducer = { [name]: slice.reducer };
 export const userPermissionsThunk = modelThunk.thunk;
+export const userPermissionsFulfilled = modelThunk.fulfilled;
