@@ -438,6 +438,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuario)",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuarios)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dominio personalizado adicional",
         "${ domains } dominios personalizados adicionales"
@@ -446,11 +450,22 @@
         "${ ips } servidor VPN dedicado",
         "${ ips } servidores VPN dedicados"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistente de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuarios)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Licencia de IA ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -463,6 +478,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizado",
+        "${ quantity } dominios personalizados"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
@@ -549,6 +568,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ LUMO_SHORT_APP_NAME } le ayude a escribir, responder y revisar sus correos electrónicos."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -563,6 +585,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de ${ LUMO_SHORT_APP_NAME } durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias del asistente de escritura ${ LUMO_SHORT_APP_NAME } durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -2732,6 +2757,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } es una solución de videoconferencia cifrada de extremo a extremo. Agréguela a su plan para organizar reuniones seguras."
       ],
@@ -3636,8 +3667,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Agregar el asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Añadir asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Complemento con prueba gratuita"
@@ -3647,6 +3684,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuario)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuarios)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Licencia de ${ MEET_APP_NAME }"
       ],
@@ -3781,6 +3822,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } calendario",

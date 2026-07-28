@@ -438,6 +438,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuario)",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuarios)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dominio personalizado adicional",
         "${ domains } dominios personalizados adicionales"
@@ -445,6 +449,13 @@
       "${ ips } dedicated VPN server": [
         "${ ips } servidor VPN dedicado",
         "${ ips } servidores VPN dedicados"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } asistente de IA"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } asistente de IA (para ${ quantity } usuario)",
+        "${ LUMO_APP_NAME } Asistente de IA (para ${ quantity } usuarios)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Licencia de IA de ${ LUMO_APP_NAME }"
@@ -463,6 +474,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizado",
+        "${ quantity } dominios personalizados"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licencia de ${ LUMO_APP_NAME } AI",
@@ -3647,6 +3662,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuario)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuarios)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Licencia de ${ MEET_APP_NAME }"
       ],
