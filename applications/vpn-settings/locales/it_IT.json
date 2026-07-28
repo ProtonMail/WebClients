@@ -1679,9 +1679,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "Prova ${ selected } gratis per ${ freeForNDays }"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Prova gratuita di ${ TRIAL_DURATION_DAYS } giorni"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando annulli, la tua prova gratuita non verrà convertita in un abbonamento a pagamento, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di prova. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
       ],
@@ -13321,70 +13318,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Mantieni questo piano"
-      ],
       "Start using ${ appName }": [
         "Inizia a usare ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Migliora il mio piano"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Parliamo"
-      ],
-      "Recommended": [
-        "Consigliato"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } al mese"
-      ],
-      "/month /user": [
-        "/mese /utente"
-      ],
-      "/month /user, billed annually": [
-        "/mese /utente, fatturazione annuale"
-      ],
-      "/month /user, billed biennially": [
-        "/mese /utente, fatturazione biennale"
-      ],
-      "Current plan": [
-        "Piano attuale"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Per soli **${ relativePrice } al mese** in più, ottieni l'accesso al gestore di password premium di ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Per soli **${ relativePrice } al mese** in più, ottieni l'accesso al servizio VPN premium di ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Per soli **${ relativePrice } al mese** in più, puoi accedere a tutti i servizi premium di ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Gratis per sempre"
-      ],
-      "Get in touch with our sales team": [
-        "Contatta il nostro team di vendita"
-      ],
-      "Includes:": [
-        "Include:"
-      ],
-      "per month": [
-        "al mese"
-      ],
-      "per month, billed annually": [
-        "al mese con fatturazione annuale"
-      ],
-      "per month, billed every month": [
-        "al mese con fatturazione mensile"
-      ],
-      "per month, billed every two years": [
-        "al mese con fatturazione ogni due anni"
-      ],
       "Secure vault sharing": [
         "Condivisione sicura della cassaforte"
       ],

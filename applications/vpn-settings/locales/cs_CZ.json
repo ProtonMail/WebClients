@@ -1683,9 +1683,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "Vyzkoušejte ${ selected } ${ freeForNDays }"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Vyzkoušejte to zdarma na ${ TRIAL_DURATION_DAYS } dnů"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Když zrušíte bezplatnou zkušební verzi, nebude převedena na placené předplatné, ale výhody tarifu můžete využívat až do konce zkušební doby. Poté budete převedeni na tarif ${ BRAND_NAME } Free."
       ],
@@ -2151,10 +2148,10 @@
         "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v administrátorské konzoli Google Workspace."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v sekci ${ usersAddressesLink }."
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v ${ usersAddressesLink }."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v sekci ${ usersAddressesLink }."
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v ${ usersAddressesLink }."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Chcete-li tohoto uživatele migrovat, musí nejprve přijmout pozvánku k připojení ke službě ${ BRAND_NAME }."
@@ -13555,70 +13552,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Ponechat tento tarif"
-      ],
       "Start using ${ appName }": [
         "Začněte používat ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Přejít na vyšší tarif"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Promluvme si"
-      ],
-      "Recommended": [
-        "Doporučeno"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } za měsíc"
-      ],
-      "/month /user": [
-        "/měsíc /uživatel"
-      ],
-      "/month /user, billed annually": [
-        "/měsíc /uživatel, účtováno ročně"
-      ],
-      "/month /user, billed biennially": [
-        "/měsíc /uživatel, účtováno jednou za dva roky"
-      ],
-      "Current plan": [
-        "Aktuální tarif"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup k prémiovému správci hesel od ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke službě VPN Premium od ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke všem prémiovým službám ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Navždy zdarma"
-      ],
-      "Get in touch with our sales team": [
-        "Kontaktujte náš obchodní tým"
-      ],
-      "Includes:": [
-        "Zahrnuje:"
-      ],
-      "per month": [
-        "za měsíc"
-      ],
-      "per month, billed annually": [
-        "za měsíc, účtováno ročně"
-      ],
-      "per month, billed every month": [
-        "za měsíc, účtováno kažký měsíc"
-      ],
-      "per month, billed every two years": [
-        "za měsíc, účtováno kažké dva roky"
-      ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
       ],

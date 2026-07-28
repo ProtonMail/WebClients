@@ -1283,6 +1283,9 @@
       "Verify password": [
         "Wachtwoord verifiëren"
       ],
+      "Verify recovery phrase": [
+        "Herstelzin verifiëren"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Controleer het domein ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1685,9 +1688,6 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Probeer ${ selected } ${ freeForNDays }"
-      ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Probeer het gratis voor ${ TRIAL_DURATION_DAYS } dagen"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer u opzegt, wordt uw gratis proefabonnement niet omgezet in een betaald abonnement, maar kunt u nog steeds van de voordelen van het abonnement genieten tot het einde van de proefperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } gratis abonnement."
@@ -5254,6 +5254,9 @@
       "This label name is not available. Please choose a different name.": [
         "Deze labelnaam is niet beschikbaar. Kies een andere naam."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Deze zin kan uw account niet herstellen. U kunt een nieuw account genereren om ervoor te zorgen dat uw account in de toekomst kan worden hersteld."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Om niet-privé gebruikersaccounts en toegang tot hun accounts aan te maken, moet u uw beheerdersbevoegdheden herstellen."
       ],
@@ -7380,6 +7383,9 @@
       "Change your password": [
         "Wijzig uw wachtwoord"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Controleer of uw herstelzin kan worden gebruikt om uw account volledig te herstellen."
+      ],
       "Choose a plan that works best for you.": [
         "Kies een abonnement dat het beste bij u past."
       ],
@@ -8612,6 +8618,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Herstelzin is niet geassocieerd met een verouderde sleutel."
+      ],
+      "Recovery phrase verified": [
+        "Herstelzin geverifieerd"
       ],
       "Reddit": [
         "Reddit"
@@ -13353,70 +13362,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Dit abonnement behouden"
-      ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Mijn abonnement upgraden"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Laten we praten!"
-      ],
-      "Recommended": [
-        "Aanbevolen"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } per maand"
-      ],
-      "/month /user": [
-        "/maand /gebruiker"
-      ],
-      "/month /user, billed annually": [
-        "/maand /gebruiker, jaarlijks gefactureerd"
-      ],
-      "/month /user, billed biennially": [
-        "/maand /gebruiker, tweejaarlijks gefactureerd"
-      ],
-      "Current plan": [
-        "Huidig abonnement"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium wachtwoord manager!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium VPN service!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Voor slechts **${ relativePrice } per maand** extra, krijgt u toegang tot alle premium ${ BRAND_NAME }-diensten!"
-      ],
-      "Free forever": [
-        "Voor altijd gratis"
-      ],
-      "Get in touch with our sales team": [
-        "Neem contact op met ons verkoopteam"
-      ],
-      "Includes:": [
-        "Omvat:"
-      ],
-      "per month": [
-        "maandelijks"
-      ],
-      "per month, billed annually": [
-        "per maand, jaarlijks gefactureerd"
-      ],
-      "per month, billed every month": [
-        "per maand, maandelijks gefactureerd"
-      ],
-      "per month, billed every two years": [
-        "per maand, tweejaarlijks gefactureerd"
-      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ],
@@ -18483,6 +18433,9 @@
       ],
       "Verify your password": [
         "Controleer uw wachtwoord"
+      ],
+      "Verify your phrase": [
+        "Verifieer uw zin"
       ],
       "Verifying your card...": [
         "Uw kaart wordt geverifieerd..."

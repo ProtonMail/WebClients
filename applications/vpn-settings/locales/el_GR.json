@@ -1283,6 +1283,9 @@
       "Verify password": [
         "Επαλήθευση κωδικού πρόσβασης"
       ],
+      "Verify recovery phrase": [
+        "Επαληθεύστε τη φράση ανάκτησης"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Επαληθεύστε τον τομέα ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1685,9 +1688,6 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Δοκιμάστε ${ selected } ${ freeForNDays }"
-      ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Δοκιμάστε το δωρεάν για ${ TRIAL_DURATION_DAYS } ημέρες"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η δωρεάν δοκιμή σας δε θα μετατραπεί σε συνδρομή επί πληρωμή, αλλά θα εξακολουθείτε να απολαμβάνετε τα οφέλη του πλάνου μέχρι το τέλος της δοκιμαστικής περιόδου. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
@@ -5254,6 +5254,9 @@
       "This label name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Αυτή η φράση δεν μπορεί να ανακτήσει τον λογαριασμό σας. Μπορείτε να δημιουργήσετε έναν νέο για να διασφαλίσετε ότι ο λογαριασμός σας θα μπορεί να ανακτηθεί στο μέλλον."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Για να δημιουργήσετε μη ιδιωτικούς λογαριασμούς χρηστών και να αποκτήσετε πρόσβαση στους λογαριασμούς τους, θα πρέπει να επαναφέρετε τα δικαιώματα διαχειριστή."
       ],
@@ -7380,6 +7383,9 @@
       "Change your password": [
         "Αλλάξτε τον κωδικό πρόσβασής σας"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Ελέγξτε αν η φράση ανάκτησης μπορεί να χρησιμοποιηθεί για την πλήρη ανάκτηση του λογαριασμού σας."
+      ],
       "Choose a plan that works best for you.": [
         "Επιλέξτε το πλάνο που σας ταιριάζει καλύτερα."
       ],
@@ -8612,6 +8618,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Η φράση ανάκτησης δεν σχετίζεται με κάποιο παρωχημένο κλειδί."
+      ],
+      "Recovery phrase verified": [
+        "Η φράση ανάκτησης επαληθεύτηκε"
       ],
       "Reddit": [
         "Reddit"
@@ -11413,6 +11422,9 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } θέσεις"
       ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } θέση",
         "${ seats } ${ MEET_APP_NAME } θέσεις"
@@ -13353,70 +13365,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Διατηρήστε αυτό το πλάνο"
-      ],
       "Start using ${ appName }": [
         "Έναρξη χρήσης του ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Αναβαθμίστε το πλάνο μου"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Ας μιλήσουμε"
-      ],
-      "Recommended": [
-        "Προτεινόμενο"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } ανά μήνα"
-      ],
-      "/month /user": [
-        "/μήνα /χρήστη"
-      ],
-      "/month /user, billed annually": [
-        "/μήνας /χρήστης, χρεώνεται ετησίως"
-      ],
-      "/month /user, billed biennially": [
-        "/μήνας /χρήστης, χρεώνεται ανά διετία"
-      ],
-      "Current plan": [
-        "Τρέχον πλάνο"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Μόνο για **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στον premium διαχειριστή κωδικών πρόσβασης του ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Για μόλις **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στην premium υπηρεσία VPN του ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Με μόνο **${ relativePrice } ανά μήνα** παραπάνω, θα έχετε πρόσβαση σε όλες τις premium υπηρεσίες του ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Δωρεάν για πάντα"
-      ],
-      "Get in touch with our sales team": [
-        "Επικοινωνήστε με την ομάδα πωλήσεών μας"
-      ],
-      "Includes:": [
-        "Περιλαμβάνει:"
-      ],
-      "per month": [
-        "ανά μήνα"
-      ],
-      "per month, billed annually": [
-        "ανά μήνα, χρεώνεται ετησίως"
-      ],
-      "per month, billed every month": [
-        "ανά μήνα, χρεώνεται κάθε μήνα"
-      ],
-      "per month, billed every two years": [
-        "ανά μήνα, χρεώνεται κάθε δύο χρόνια"
-      ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
       ],
@@ -18483,6 +18436,9 @@
       ],
       "Verify your password": [
         "Επαληθεύστε τον κωδικό πρόσβασής σας"
+      ],
+      "Verify your phrase": [
+        "Επαληθεύστε τη φράση σας"
       ],
       "Verifying your card...": [
         "Γίνεται επαλήθευση της κάρτας σας..."

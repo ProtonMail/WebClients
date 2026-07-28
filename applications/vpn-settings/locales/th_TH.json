@@ -1650,9 +1650,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "ลองใช้ ${ selected } ${ freeForNDays }"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "ลองใช้ฟรี ${ TRIAL_DURATION_DAYS } วัน"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "เมื่อคุณยกเลิก การทดลองใช้ฟรีของคุณจะไม่เปลี่ยนเป็นการสมัครสมาชิกแบบชำระเงิน แต่คุณยังคงได้รับสิทธิประโยชน์ของแผนจนกว่าจะสิ้นสุดระยะเวลาการทดลองใช้ หลังจากนั้น คุณจะถูกดาวน์เกรดเป็นแผน ${ BRAND_NAME } Free"
       ],
@@ -12988,70 +12985,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "ใช้แผนนี้ต่อ"
-      ],
       "Start using ${ appName }": [
         "เริ่มใช้งาน ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "อัปเกรดแผนของฉัน"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "มาคุยกัน"
-      ],
-      "Recommended": [
-        "แนะนำ"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } ต่อเดือน"
-      ],
-      "/month /user": [
-        "/เดือน /ผู้ใช้"
-      ],
-      "/month /user, billed annually": [
-        "/เดือน /ผู้ใช้ เรียกเก็บเงินเป็นรายปี"
-      ],
-      "/month /user, billed biennially": [
-        "/เดือน /ผู้ใช้ เรียกเก็บเงินทุกสองปี"
-      ],
-      "Current plan": [
-        "แพกเก็จปัจจุบัน"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "เพียงเพิ่มอีก **${ relativePrice } ต่อเดือน** คุณจะสามารถเข้าถึงโปรแกรมจัดการรหัสผ่านระดับพรีเมียมของ ${ BRAND_NAME } ได้!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "เพียงเพิ่มอีก **${ relativePrice } ต่อเดือน** คุณจะสามารถเข้าถึงบริการ VPN ระดับพรีเมียมของ ${ BRAND_NAME } ได้!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "เพียงเพิ่มอีก **${ relativePrice } ต่อเดือน** คุณก็จะเข้าถึงบริการ ${ BRAND_NAME } พรีเมียมทั้งหมด!"
-      ],
-      "Free forever": [
-        "ฟรีตลอดไป"
-      ],
-      "Get in touch with our sales team": [
-        "ติดต่อทีมขายของเรา"
-      ],
-      "Includes:": [
-        "ประกอบด้วย:"
-      ],
-      "per month": [
-        "ต่อเดือน"
-      ],
-      "per month, billed annually": [
-        "ต่อเดือน เรียกเก็บเงินรายปี"
-      ],
-      "per month, billed every month": [
-        "ต่อเดือน เรียกเก็บเงินทุกเดือน"
-      ],
-      "per month, billed every two years": [
-        "ต่อเดือน เรียกเก็บเงินทุกสองปี"
-      ],
       "Secure vault sharing": [
         "การแชร์ห้องนิรภัยที่ปลอดภัย"
       ],

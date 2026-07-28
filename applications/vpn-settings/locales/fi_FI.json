@@ -1265,6 +1265,9 @@
       "Verify password": [
         "Vahvista salasana"
       ],
+      "Verify recovery phrase": [
+        "Vahvista palautuslauseke"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Vahvista verkkotunnus ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1660,9 +1663,6 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Kokeile valintaa ${ selected } ${ freeForNDays }"
-      ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Kokeile maksutta ${ TRIAL_DURATION_DAYS } päivän ajan"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kun peruutat, ilmainen kokeilujaksosi ei muutu maksulliseksi tilaukseksi, mutta voit silti nauttia tilauseduista kokeilujakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
@@ -5213,6 +5213,9 @@
       "This label name is not available. Please choose a different name.": [
         "Tunnisteen nimi ei ole käytettävissä. Valitse eri nimi."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Tällä lauseella et voi palauttaa tiliäsi. Voit luoda uuden lauseen, jotta tilisi voidaan palauttaa tulevaisuudessa."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Luodaksesi ei-yksityisiä käyttäjätilejä sinun on palautettava hallintaoikeutesi."
       ],
@@ -7321,6 +7324,9 @@
       "Change your password": [
         "Vaihda salasanasi"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Tarkista, voidaanko palautuslauseesi avulla palauttaa tilisi kokonaan."
+      ],
       "Choose a plan that works best for you.": [
         "Valitse tilaus, joka sopii sinulle parhaiten."
       ],
@@ -8487,6 +8493,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Palautuslauseketta ei ole liitetty vanhentuneisiin avaimiin."
+      ],
+      "Recovery phrase verified": [
+        "Palautuslauseke vahvistettu"
       ],
       "Reddit": [
         "Reddit"
@@ -11246,6 +11255,9 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } -käyttöpaikkaa"
       ],
+      "${ price } per seat": [
+        "${ price } per paikka"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikkaa"
@@ -13183,70 +13195,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Pidä tämä tilaus"
-      ],
       "Start using ${ appName }": [
         "Aloita ${ appName } -sovelluksen käyttö"
-      ],
-      "Upgrade my plan": [
-        "Päivitä tilaukseni"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Keskustellaan"
-      ],
-      "Recommended": [
-        "Suositus"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } kuukaudessa"
-      ],
-      "/month /user": [
-        "/kuukausi /käyttäjä"
-      ],
-      "/month /user, billed annually": [
-        "/kuukausi /käyttäjä, laskutetaan vuosittain"
-      ],
-      "/month /user, billed biennially": [
-        "/kuukausi /käyttäjä, laskutetaan joka toinen vuosi"
-      ],
-      "Current plan": [
-        "Nykyinen tilaus"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-salsanahallinnan!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-VPN:n!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Saat kaikki ${ BRAND_NAME } premium-palvelut käyttöösi vain **${ relativePrice } kuukausikorotuksella**!"
-      ],
-      "Free forever": [
-        "Pysyvästi ilmainen"
-      ],
-      "Get in touch with our sales team": [
-        "Ota yhteyttä myyntiimme"
-      ],
-      "Includes:": [
-        "Sisältää:"
-      ],
-      "per month": [
-        "kuukaudessa"
-      ],
-      "per month, billed annually": [
-        "kuukaudessa, laskutetaan vuosittain"
-      ],
-      "per month, billed every month": [
-        "kuukaudessa, laskutetaan kuukausittain"
-      ],
-      "per month, billed every two years": [
-        "kuukaudessa, laskutetaan kahden vuoden välein"
-      ],
       "Secure vault sharing": [
         "Suojattu holvien jako"
       ],
@@ -18255,6 +18208,9 @@
       ],
       "Verify your password": [
         "Vahvista salasananne"
+      ],
+      "Verify your phrase": [
+        "Vahvista lauseesi"
       ],
       "Verifying your card...": [
         "Vahvistetaan korttiasi..."
