@@ -648,6 +648,9 @@
       "Refresh the page": [
         "Оновити сторінку"
       ],
+      "Reject": [
+        "Відхилити"
+      ],
       "Reload": [
         "Перезавантажити"
       ],
@@ -758,6 +761,9 @@
       ],
       "Select all": [
         "Вибрати все"
+      ],
+      "Send": [
+        "Надіслати"
       ],
       "Set password or expiration date": [
         "Встановити пароль або термін дії"
@@ -982,6 +988,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувача)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } додатковий власний домен",
         "${ domains } додаткові власні домени",
@@ -994,11 +1006,38 @@
         "${ ips } виділених VPN-серверів",
         "${ ips } виділених VPN-серверів"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувача)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувачів)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувачів)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувача)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Ліцензія ШІ ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Місця ${ LUMO_APP_NAME }"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } за виділений сервер"
+      ],
+      "${ price } per domain": [
+        "${ price } за домен"
+      ],
+      "${ price } per seat": [
+        "${ price } за ліцензію"
+      ],
+      "${ price } per user": [
+        "${ price } за користувача"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } власний домен",
+        "${ quantity } власні домени",
+        "${ quantity } власних доменів",
+        "${ quantity } власного домену"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ліцензія AI для ${ LUMO_APP_NAME }",
@@ -1101,6 +1140,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Після закінчення пробного періоду ${ formattedDate1 } він перетвориться на платну передплату, яка автоматично поновлюється щомісяця. Плата не стягуватиметься, якщо ви скасуєте її до ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Протягом пробного періоду ви можете мати до ${ TRIAL_MAX_DEDICATED_IPS } виділеного сервера."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Протягом пробного періоду ви можете мати до ${ TRIAL_MAX_LUMO_SEATS } місць ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Протягом пробного періоду ви можете мати до ${ TRIAL_MAX_SCRIBE_SEATS } місць Scribe."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Протягом пробного періоду ви можете мати до ${ TRIAL_MAX_USERS } користувачів."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Ви не можете додавати власні домени протягом пробного періоду."
       ]
     },
     "b2b_trials_Action": {
@@ -4693,6 +4747,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Безпечне з'єднання є важливим під час віддаленої роботи. VPN захищає дані компанії від кіберзагроз і зберігає вашу роботу приватною."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Користувач — це обліковий запис, пов'язаний з певним іменем користувача, поштовою скринькою та людиною"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN шифрує ваше з’єднання та приховує вашу IP-адресу, що значно ускладнює відстеження або моніторинг вашої активності в Інтернеті."
       ],
@@ -4870,6 +4927,12 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Створіть захищену хмару для ${ memberCount } учасника",
+        "Створіть захищену хмару для ${ memberCount } учасників",
+        "Створіть захищену хмару для ${ memberCount } учасників",
+        "Створіть захищену хмару для ${ memberCount } учасників"
+      ],
       "Create an end-to-end encrypted document.": [
         "Створити документ із наскрізним зашифруванням."
       ],
@@ -4900,8 +4963,14 @@
       "Current version": [
         "Поточна версія"
       ],
+      "Custom email domains": [
+        "Власні домени електронної пошти"
+      ],
       "Decrypting your document": [
         "Розшифрування вашого документа"
+      ],
+      "Details": [
+        "Деталі"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Цифровий підпис перевірено. Цей файл безпечно вивантажено користувачем ${ emailAddress }."
@@ -4959,6 +5028,9 @@
       ],
       "email": [
         "е-пошта"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Розміщення доменів електронної пошти доступне лише для доменів, якими ви володієте. Реєстрація доменів наразі недоступна у ${ BRAND_NAME }. Ви можете розмістити електронну пошту для доменів, придбаних у будь-якого реєстратора."
       ],
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
@@ -5325,6 +5397,9 @@
       ],
       "Opening...": [
         "Відкриття..."
+      ],
+      "Organization size": [
+        "Розмір організації"
       ],
       "Other accounts": [
         "Інші облікові записи"
@@ -5733,6 +5808,9 @@
       ],
       "username": [
         "ім'я користувача"
+      ],
+      "Users": [
+        "Користувачі"
       ],
       "Version number successfully copied to clipboard": [
         "Номер версії успішно скопійовано до буфера обміну"
@@ -6829,6 +6907,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (для ${ quantity } користувача)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Ліцензія ${ MEET_APP_NAME }"
       ],
@@ -6908,6 +6992,11 @@
         "Відеозустрічі, ${ n } учасники",
         "Відеозустрічі, ${ n } учасників",
         "Відеозустрічі, ${ n } учасника"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Протягом пробного періоду ви можете мати до ${ TRIAL_MAX_MEET_SEATS } місць ${ MEET_SHORT_APP_NAME }."
       ]
     },
     "Message": {

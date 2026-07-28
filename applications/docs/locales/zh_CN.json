@@ -153,6 +153,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "认领您的免费 ${ BRAND_NAME } 地址"
       ],
+      "Clear conversation": [
+        "清除会话"
+      ],
       "Clear data": [
         "清除数据"
       ],
@@ -639,6 +642,9 @@
       "Refresh the page": [
         "刷新页面"
       ],
+      "Reject": [
+        "拒绝"
+      ],
       "Reload": [
         "刷新"
       ],
@@ -750,6 +756,9 @@
       "Select all": [
         "全选"
       ],
+      "Send": [
+        "发送​​"
+      ],
       "Set password or expiration date": [
         "设置密码或过期日期"
       ],
@@ -815,6 +824,9 @@
       ],
       "Stay": [
         "留在此页"
+      ],
+      "Stop": [
+        "停止"
       ],
       "Stop sharing": [
         "停止分享"
@@ -967,17 +979,44 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 写作助手（适用于 ${ quantity } 位用户）"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } 个额外的自有域名"
       ],
       "${ ips } dedicated VPN server": [
         "${ ips } 个专属 VPN 服务器"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助手"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助手（适用于 ${ quantity } 位用户）"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI 许可"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } 席位"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手（适用于 ${ quantity } 位用户）"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } 每个专用服务器"
+      ],
+      "${ price } per domain": [
+        "${ price } 每个域名"
+      ],
+      "${ price } per seat": [
+        "${ price } 每位用户"
+      ],
+      "${ price } per user": [
+        "${ price } 每位用户"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 个自定义域名"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } 个 ${ LUMO_APP_NAME } AI 许可"
@@ -1065,6 +1104,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "试用期于 ${ formattedDate1 } 结束后，将转为每月自动续费的付费订阅。若在 ${ formattedDate2 } 之前取消，则不会被收费。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "试用期间，最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 台专用服务器"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "试用期间，最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 写作助手席位。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 Scribe 席位"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "试用期间，您最多可以拥有 ${ TRIAL_MAX_USERS } 位用户。"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "试用期内无法添加自定义域名！"
       ]
     },
     "b2b_trials_Action": {
@@ -4531,6 +4588,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "远程办公时，安全连接是必不可少的第一道防线。VPN 不仅能帮助企业数据抵御网络威胁，更能为您的日常工作构筑隐私屏障，让敏感信息始终处于加密保护之中。"
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "一个用户即一个关联了单一用户名、邮箱和自然人的账户"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN 会加密您的网络连接并隐藏真实 IP 地址，使第三方极难追踪或监控您的在线活动。"
       ],
@@ -4699,6 +4759,9 @@
       "Create a new contact group": [
         "创建联系人群组"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "为 ${ memberCount } 位成员创建安全云端"
+      ],
       "Create an end-to-end encrypted document.": [
         "创建端到端加密文档"
       ],
@@ -4729,8 +4792,14 @@
       "Current version": [
         "当前版本"
       ],
+      "Custom email domains": [
+        "自有域名"
+      ],
       "Decrypting your document": [
         "正在解密您的文档"
+      ],
+      "Details": [
+        "详细信息"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "数字签名已验证，此文件是由 ${ emailAddress } 用户安全上传。"
@@ -4788,6 +4857,9 @@
       ],
       "email": [
         "邮箱"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
       ],
       "Emails are automatically signed": [
         "自动对邮件进行数字签名"
@@ -5161,6 +5233,9 @@
       "Opening...": [
         "打开中..."
       ],
+      "Organization size": [
+        "组织的规模"
+      ],
       "Other accounts": [
         "其他账户"
       ],
@@ -5419,6 +5494,9 @@
       "There are no documents in the trash.": [
         "回收站中没有文档。"
       ],
+      "Thinking about this": [
+        "正在思考这个"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "此操作将删除此链接并撤销所有用户的访问权限。"
       ],
@@ -5568,6 +5646,9 @@
       ],
       "username": [
         "用户名"
+      ],
+      "Users": [
+        "用户"
       ],
       "Version number successfully copied to clipboard": [
         "版本号已成功复制"
@@ -5942,6 +6023,9 @@
       ],
       "Allow editors to change permissions and share": [
         "允许编辑者更改权限及分享"
+      ],
+      "Allow editors to change permissions and share.": [
+        "允许编辑者更改权限和共享"
       ],
       "Anonymous": [
         "匿名用户"
@@ -6643,11 +6727,17 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (适用于 ${ quantity } 位用户)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } 许可"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 席位"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席位"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } 个 ${ MEET_APP_NAME } 席位"
@@ -6704,6 +6794,11 @@
       ],
       "Video meetings, ${ n } participant": [
         "视频会议，${ n } 位参与者"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "试用期间，最多可拥有 ${ TRIAL_MAX_MEET_SEATS } 个 ${ MEET_SHORT_APP_NAME } 席位"
       ]
     },
     "Message": {
@@ -8522,6 +8617,9 @@
       "Anything you'd like us to know": [
         "您有任何想要告诉我们的吗？"
       ],
+      "Ask anything…": [
+        "提问…"
+      ],
       "Choose password": [
         "输入密码"
       ],
@@ -9445,6 +9543,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "此项目的链接已保存在您的硬盘中。您可以稍后在 “与我共享 ”部分访问它。"
+      ],
+      "Editor permissions": [
+        "编辑者权限"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "编辑者现在可以管理共享并邀请他人，您随时可以在共享设置中关闭此功能。"
       ],
       "To edit this document, create a copy that you can modify.": [
         "要编辑此文档，请创建一份您可以修改的副本。"
