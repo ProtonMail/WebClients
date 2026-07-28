@@ -14,6 +14,7 @@ import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { useLumoTheme } from '../../../providers';
 import DropdownMenu from '../../DropdownMenu';
 import { useArtifactContext } from './ArtifactContext';
+import { ArtifactInlineEdit } from './ArtifactInlineEdit';
 import type { ArtifactRegistry } from './artifactRegistry';
 import type { ParsedArtifact, StreamingArtifact } from './parseArtifacts';
 import { getFileExtension } from './parseArtifacts';
@@ -362,7 +363,11 @@ function buildSwitcherEntries(
         }));
 }
 
-const ArtifactPanel = () => {
+interface ArtifactPanelProps {
+    isGenerating?: boolean;
+}
+
+const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
     const {
         registry,
         selectedArtifact,
@@ -376,6 +381,7 @@ const ArtifactPanel = () => {
     } = useArtifactContext();
     const [showLineNumbers, setShowLineNumbers] = useState(false);
     const [copySuccess, setCopySuccess] = useState(false);
+    const contentRef = useRef<HTMLDivElement>(null);
 
     // Nothing to show
     if (!selectedArtifact && !streamingArtifact) {
@@ -450,8 +456,17 @@ const ArtifactPanel = () => {
                 switcherEntries={switcherEntries}
                 onSelectArtifact={openArtifact}
             />
-            <div className="flex flex-column flex-1 overflow-hidden w-full">
+            <div
+                ref={contentRef}
+                className="artifact-content-area relative flex flex-column flex-1 overflow-hidden w-full"
+            >
                 <ArtifactContent artifact={artifact} showLineNumbers={showLineNumbers} />
+                <ArtifactInlineEdit
+                    containerRef={contentRef}
+                    artifactId={artifact.id}
+                    title={artifact.title}
+                    isGenerating={isGenerating}
+                />
             </div>
         </div>
     );
