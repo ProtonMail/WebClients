@@ -119,11 +119,8 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
     }
 
     const CTAText = offerConfig.topButton?.getCTAContent?.() || c('specialoffer: Action').t`Special offer`;
-    const IconContent = offerConfig.topButton?.iconContent;
-    const defaultIconName = IconContent ? undefined : 'bag-percent';
     const upgradeIcon =
-        CTAText.length > 20 && viewportWidth['>=large'] ? undefined : (offerConfig.topButton?.icon ?? defaultIconName);
-    const upgradeIconContent = IconContent ? <IconContent /> : undefined;
+        CTAText.length > 20 && viewportWidth['>=large'] ? undefined : offerConfig.topButton?.icon || 'bag-percent';
 
     const buttonSize =
         viewportWidth['<=small'] ||
@@ -145,7 +142,6 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
                     iconGradient={!!offerConfig.topButton?.iconGradient}
                     iconSize={offerConfig.topButton?.iconSize}
                     iconName={upgradeIcon}
-                    iconContent={upgradeIconContent}
                     onClick={() => {
                         setOfferModalOpen(true);
                         setFetchOffer(true);
