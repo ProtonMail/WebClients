@@ -115,9 +115,6 @@
       "Bulk restore items from trash": [
         "Hromadné obnovenie položiek z koša"
       ],
-      "Bulk select items": [
-        "Hromadný výber položiek"
-      ],
       "Cancel": [
         "Zrušiť"
       ],
@@ -486,9 +483,6 @@
       ],
       "Move to Trash": [
         "Presunúť do koša"
-      ],
-      "Multiple select": [
-        "Viacnásobný výber"
       ],
       "New token": [
         "Nový token"
@@ -1277,6 +1271,12 @@
       "PIN codes do not match": [
         "PIN kódy sa nezhodujú"
       ],
+      "Regex invalid": [
+        "Neplatný regulárny výraz"
+      ],
+      "Regex unsafe": [
+        "Nebezpečný regulárny výraz"
+      ],
       "Request timed out": [
         "Požiadavka časovo omeškaná"
       ],
@@ -1375,6 +1375,9 @@
       ],
       "Unsupported Bitwarden file format": [
         "Nepodporovaný formát súboru Bitwarden"
+      ],
+      "Unsupported file type": [
+        "Nepodporovaný typ súboru"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualizácia trezoru \"${ payload.content.name }\" zlyhala"
