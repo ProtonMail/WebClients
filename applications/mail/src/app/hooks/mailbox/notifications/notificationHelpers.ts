@@ -1,5 +1,5 @@
-import type { History } from 'history';
-import { c } from 'ttag';
+import type { History, Location } from 'history';
+import { c, msgid } from 'ttag';
 
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
@@ -15,6 +15,77 @@ import notificationIcon from '../../../assets/notification.png';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { setParamsInLocation } from '../../../helpers/mailboxUrl';
 
+interface NotificationParams {
+    message: Message;
+    history: History<unknown>;
+    mailSettings: MailSettings;
+    notifier: string[];
+    isCategoryViewEnabled: boolean;
+    disabledCategoriesIDs: CategoryLabelID[];
+}
+
+const getNotificationBodyAndTitle = (message: Message) => {
+    const sender = message.Sender.Name || message.Sender.Address;
+    return {
+        title: c('Desktop notification title').t`New email received`,
+        body: c('Desktop notification body').t`From: ${sender} - ${message.Subject}`,
+    };
+};
+
+const getElementIDAndMessageID = (
+    notificationLabel: string,
+    mailSettings: MailSettings,
+    locationWithNoHash: Location,
+    message: Message
+) => {
+    const conversationMode = isConversationMode(notificationLabel, mailSettings, locationWithNoHash);
+    return {
+        elementID: conversationMode ? message.ConversationID : message.ID,
+        messageID: conversationMode ? message.ID : undefined,
+    };
+};
+
+/**
+ * The notification label is the labelID present in both the notifier and LabelIDs of the message.
+ * When the labelID is inbox and category view is enabled, the category label is used instead.
+ */
+const getNotificationLabel = (message: Message, notifier: string[], isCategoryViewEnabled: boolean) => {
+    const labelID = message.LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
+
+    if (labelID === MAILBOX_LABEL_IDS.INBOX && isCategoryViewEnabled) {
+        const categoryLabel = message.LabelIDs.find(isCategoryLabel);
+        // Falling back to All mail prevents showing a notification that would redirect users to Inbox and break the UI
+        return categoryLabel && notifier.includes(categoryLabel) ? categoryLabel : MAILBOX_LABEL_IDS.ALL_MAIL;
+    }
+
+    // Reachable when the notifier still holds category labels from a time where category view was enabled.
+    // Categories are disabled now, so we redirect to Inbox instead.
+    if (isCategoryLabel(labelID) && !isCategoryViewEnabled) {
+        return MAILBOX_LABEL_IDS.INBOX;
+    }
+
+    return labelID;
+};
+
+/**
+ * Category labels are not routable on their own: we redirect to Inbox and select the
+ * category through the URL hash. Disabled categories fall back to the default one.
+ */
+const getRoute = (location: Location, notificationLabel: string, disabledCategoriesIDs: CategoryLabelID[]) => {
+    if (!isCategoryLabel(notificationLabel)) {
+        return { location, labelID: notificationLabel };
+    }
+
+    const categoryLabel = disabledCategoriesIDs.includes(notificationLabel)
+        ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
+        : notificationLabel;
+
+    return {
+        location: { ...location, hash: `#category=${LABEL_IDS_TO_HUMAN[categoryLabel]}` },
+        labelID: MAILBOX_LABEL_IDS.INBOX,
+    };
+};
+
 export const prepareNotificationData = ({
     message,
     history,
@@ -22,77 +93,30 @@ export const prepareNotificationData = ({
     notifier,
     isCategoryViewEnabled,
     disabledCategoriesIDs,
-}: {
-    message: Message;
-    history: History<unknown>;
-    mailSettings: MailSettings;
-    notifier: string[];
-    isCategoryViewEnabled: boolean;
-    disabledCategoriesIDs: CategoryLabelID[];
-}) => {
-    const { Subject, Sender, ID, ConversationID, LabelIDs } = message;
-    const sender = Sender.Name || Sender.Address;
-    const title = c('Desktop notification title').t`New email received`;
-    const body = c('Desktop notification body').t`From: ${sender} - ${Subject}`;
-
-    let labelID = LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
-    if (labelID === MAILBOX_LABEL_IDS.INBOX && isCategoryViewEnabled) {
-        const categoryLabel = LabelIDs.find(isCategoryLabel);
-        if (categoryLabel && notifier.includes(categoryLabel)) {
-            labelID = categoryLabel;
-        } else {
-            // This prevents from showing a notification that would redirect users to Inbox and break the UI
-            labelID = MAILBOX_LABEL_IDS.ALL_MAIL;
-        }
-        // Fallback case, when categories are disabled we redirect to Inbox
-    } else if (isCategoryLabel(labelID) && !isCategoryViewEnabled) {
-        labelID = MAILBOX_LABEL_IDS.INBOX;
-    }
-
+}: NotificationParams) => {
     // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
-    const cleanHistoryLocation = { ...history.location, hash: '' };
-    const conversationMode = isConversationMode(labelID, mailSettings, cleanHistoryLocation);
-    const elementID = conversationMode ? ConversationID : ID;
-    const messageID = conversationMode ? ID : undefined;
+    const locationWithNoHash: Location = { ...history.location, hash: '' };
+    const notificationLabel = getNotificationLabel(message, notifier, isCategoryViewEnabled);
 
-    // If the label is a category label, we redirect to Inbox and use the category hash in the URL
-    const label = isCategoryLabel(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
+    const { location: routeLocation, labelID } = getRoute(locationWithNoHash, notificationLabel, disabledCategoriesIDs);
 
-    let tmpLocation = cleanHistoryLocation;
-    if (isCategoryLabel(labelID)) {
-        const categoryLabel = disabledCategoriesIDs.includes(labelID) ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT : labelID;
-        tmpLocation = { ...cleanHistoryLocation, hash: `#category=${LABEL_IDS_TO_HUMAN[categoryLabel]}` };
-    }
+    const { elementID, messageID } = getElementIDAndMessageID(
+        notificationLabel,
+        mailSettings,
+        locationWithNoHash,
+        message
+    );
 
-    const location = setParamsInLocation(tmpLocation, { labelID: label, elementID, messageID });
-    return { title, body, location, ID, labelID: label, elementID, messageID };
+    const location = setParamsInLocation(routeLocation, { labelID, elementID, messageID });
+    const { title, body } = getNotificationBodyAndTitle(message);
+    return { title, body, location, ID: message.ID, labelID, elementID, messageID };
 };
 
 export const displayNotification = ({
-    message,
-    history,
-    mailSettings,
-    notifier,
     onOpenElement,
-    isCategoryViewEnabled,
-    disabledCategoriesIDs,
-}: {
-    message: Message;
-    history: History<unknown>;
-    mailSettings: MailSettings;
-    notifier: string[];
-    onOpenElement: () => void;
-    isCategoryViewEnabled: boolean;
-    disabledCategoriesIDs: CategoryLabelID[];
-}) => {
-    const notificationData = prepareNotificationData({
-        message,
-        history,
-        mailSettings,
-        notifier,
-        isCategoryViewEnabled,
-        disabledCategoriesIDs,
-    });
+    ...params
+}: NotificationParams & { onOpenElement: () => void }) => {
+    const notificationData = prepareNotificationData(params);
 
     if (isElectronMail) {
         return createElectronNotification({ app: 'mail', ...notificationData });
@@ -104,23 +128,28 @@ export const displayNotification = ({
         icon: notificationIcon,
         onClick() {
             window.focus();
-            history.push(notificationData.location);
+            params.history.push(notificationData.location);
             onOpenElement();
         },
     });
 };
 
 export const displayGroupedNotification = ({
-    body,
+    messageCount,
     history,
     onOpenElement,
 }: {
-    body: string;
+    messageCount: number;
     history: History<unknown>;
     onOpenElement: () => void;
 }) => {
     const ID = generateUID('grouped-notification');
     const title = c('Desktop notification title').t`New email received`;
+    const body = c('Desktop notification body').ngettext(
+        msgid`${messageCount} new message`,
+        `${messageCount} new messages`,
+        messageCount
+    );
 
     if (isElectronMail) {
         return createElectronNotification({ title, body, app: 'mail' });
