@@ -6,6 +6,9 @@
 
 $tab-dot-ease: easing(ease-out-quint);
 
+// Inline space the icon needs once it is out of flow: tab inset + icon + gap
+$tab-icon-inset: rem(38);
+
 @mixin reveal-tab-labels($tab-max-width) {
 	.tab-wrapper {
 		flex: 1 1 0; // grow evenly, capped at the spec's max width
@@ -25,7 +28,11 @@ $tab-dot-ease: easing(ease-out-quint);
 	border-block-start: 1px solid var(--border-weak);
 
 	.tab-container {
+		position: relative;
 		block-size: rem(44);
+
+		// Only the block borders are drawn, they reserve the space the active tab needs.
+		// States that need a border on the whole tab use an overlay, see `.dashed`.
 		border-width: rem(3) 0;
 		padding-block: 0;
 		padding-inline: rem(16) 0;
@@ -47,16 +54,24 @@ $tab-dot-ease: easing(ease-out-quint);
 			border-block-start: rem(3) solid transparent !important;
 		}
 
-		// Dashed border used when the user start dragging an element
-		&.dashed {
-			&::after {
-				content: '';
-				position: absolute;
-				inset-block: 0 rem(-4);
-				inset-inline: 0 rem(-1);
-				border: rem(1) dashed var(--border-weak);
-				border-radius: inherit;
-				pointer-events: none;
+		// Border drawn while the user drags an element: dashed on the tabs that can receive
+		// the drop, solid and colored on the tab currently dragged over.
+		&.dashed::after,
+		&.hovered::after {
+			content: '';
+			position: absolute;
+			inset-block: 0 rem(-3);
+			inset-inline: 0 rem(-1);
+			border: rem(1) dashed var(--border-weak);
+			border-radius: inherit;
+			pointer-events: none;
+		}
+
+		&.hovered::after {
+			border: rem(2) solid var(--cat-border);
+
+			[data-theme-mode='dark'] & {
+				border-color: var(--cat-border-dark);
 			}
 		}
 
@@ -76,10 +91,14 @@ $tab-dot-ease: easing(ease-out-quint);
 			}
 		}
 
-		.tab-label {
-			// Pin to the parent width so text-ellipsis clips the label instead of
-			// letting its min-content width overflow into the counter badge
+		// Pin to the parent width so text-ellipsis clips the text instead of letting its
+		// min-content width overflow into the counter badge and past the tab
+		.tab-label,
+		.tab-dragging-help {
 			inline-size: 100%;
+		}
+
+		.tab-label {
 			transition: color 0.2s ease;
 
 			// Reserves width to avoid layout shift when label gets semibold weight
@@ -127,6 +146,12 @@ $tab-dot-ease: easing(ease-out-quint);
 	// Medium (820–1023px): reveal labels, tabs fill the bar capped at 136px each.
 	@include media('>=#{em(820, 16)}') {
 		@include reveal-tab-labels(136);
+
+		.tab-container {
+			.tab-dragging-help {
+				display: block;
+			}
+		}
 	}
 
 	// Large (≥ 1024px): tabs fill the bar capped at 200px each, with a larger centered label.
@@ -134,11 +159,9 @@ $tab-dot-ease: easing(ease-out-quint);
 		@include reveal-tab-labels(200);
 
 		.tab-container {
-			position: relative;
-
-			// Center the label on the whole tab width. The icon and counter are
-			// pinned out of flow so their width does not offset the label.
 			justify-content: center;
+			padding-inline: $tab-icon-inset;
+			text-align: center;
 
 			.tab-icon {
 				position: absolute;

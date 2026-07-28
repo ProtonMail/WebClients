@@ -33,7 +33,7 @@ interface Props {
 
 const navClasses: Record<TabState, string> = {
     [TabState.ACTIVE]: 'active color-norm border-bottom border-top text-semibold mail-category-border',
-    [TabState.DRAGGING_OVER]: 'hovered border mail-category-border',
+    [TabState.DRAGGING_OVER]: 'hovered border border-transparent z-up',
     [TabState.INACTIVE]: 'border border-transparent',
 };
 
@@ -88,7 +88,7 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
             title={getTitleFromCategoryId(category.id)}
             aria-label={getLabelFromCategoryId(category.id)}
             data-testid={`category-tab-${category.id}`}
-            data-color={tabState === TabState.ACTIVE ? category.colorShade : undefined}
+            data-color={tabState === TabState.INACTIVE ? undefined : category.colorShade}
             onClick={handleClick}
             draggable={false}
         >
@@ -110,8 +110,8 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
                     {getLabelFromCategoryId(category.id)}
                 </span>
                 {shouldShowDragHelper ? (
-                    <span className="tab-dragging-help text-ellipsis min-w-0 text-xs">{c('Info')
-                        .t`Drag here to move message`}</span>
+                    // translator: As concise as possible, under 20 characters if possible
+                    <span className="tab-dragging-help text-xs text-ellipsis min-w-0">{c('Info').t`Move here`}</span>
                 ) : null}
             </span>
 
