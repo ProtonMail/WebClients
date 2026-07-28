@@ -23,14 +23,10 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
     const disabledCategoriesIDs = useMailSelector(selectDisabledCategoriesIDs);
     const count = useMailSelector((state) => selectLabelIDUnreadCount(state, category.id)).count;
 
-    const showBadge = useFlag('CategoriesUnseenBadge');
+    const isUnseenBadgeEnabled = useFlag('MailRecordLastUnseenIncomingMessageEventID');
 
-    if (!showBadge) {
-        return { shouldShowCounter: false, shouldShowNewBadge: false, count };
-    }
-
-    const countersEnabled = mailSettings?.MailCategoryViewCountersEnabled ?? false;
-    const isActive = tabState === TabState.ACTIVE;
+    const countersSettingsEnabled = mailSettings?.MailCategoryViewCountersEnabled ?? false;
+    const isTabActive = tabState === TabState.ACTIVE;
 
     const isPrimary = category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
     const categoryFolder = systemFolders?.find((folder) => folder.ID === category.id);
@@ -44,11 +40,14 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
         ? primaryFolders?.some((folder) => (folder.LastUnseenMessageEventID ?? null) !== null)
         : (categoryFolder?.LastUnseenMessageEventID ?? null) !== null;
 
+    // Counter shows when counters are enabled, and there are unread messages. Or if the unseen badge flag is disabled.
+    const shouldShowCounter = isUnseenBadgeEnabled ? countersSettingsEnabled && count > 0 : count > 0;
+    // Unseen badge shows only when counters are off, the tab is inactive, and there's an unseen event. Or if the unseen badge flag is disabled.
+    const shouldShowNewBadge = isUnseenBadgeEnabled ? !!(!countersSettingsEnabled && !isTabActive && hasUnseen) : false;
+
     return {
-        // Counter shows when counters are enabled, and there are unread messages
-        shouldShowCounter: countersEnabled && count > 0,
-        // Unseen badge shows only when counters are off, the tab is inactive, and there's an unseen event
-        shouldShowNewBadge: !!(!countersEnabled && !isActive && hasUnseen),
+        shouldShowCounter,
+        shouldShowNewBadge,
         count,
     };
 };
