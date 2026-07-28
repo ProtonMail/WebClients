@@ -1854,6 +1854,9 @@
       "Verify password": [
         "Bekræft adgangskode"
       ],
+      "Verify recovery phrase": [
+        "Bekræft gendannelsessætning"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Bekræft domænet ${ unverifiedSSODomain.DomainName }"
       ],
@@ -7763,6 +7766,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Denne sætning kan ikke gendanne din konto. Du kan generere en ny en for at sikre, at din konto kan gendannes i fremtiden."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Du skal aktivere dine organisationsnøgler. Uden aktivering vil du ikke kunne oprette eller få adgang til ikke-private brugere."
       ],
@@ -10531,9 +10537,6 @@
       "Available on macOS, Windows, and Linux.": [
         "Tilgængelig på macOS, Windows og Linux."
       ],
-      "Average": [
-        "Gennemsnitlig"
-      ],
       "Awaiting transaction": [
         "Afventer transaktion"
       ],
@@ -10638,6 +10641,9 @@
       ],
       "Change your password": [
         "Skift din adgangskode"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Tjek om din gendannelsessætning kan bruges til helt at gendanne din konto."
       ],
       "Check your network and try again.": [
         "Kontrollér din netværksforbindelse og prøv igen."
@@ -11237,7 +11243,7 @@
         "til ${ price }"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "Kontakt vores salgsteam for at få en versionhistorik for de sidste 10 år."
+        "Kontakt vores salgsteam for at få en versionshistorik for de sidste 10 år."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For at få adgang til e-mail når som helst og en optimeret mobiloplevelse kan du downloade vores ${ androidAppLink } eller ${ iosAppLink }."
@@ -12090,9 +12096,6 @@
       "per month, billed at ${ price }": [
         "per måned, faktureret til ${ price }"
       ],
-      "Per seat/month": [
-        "Per plads/måned"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Beder dig om at bekræfte din ${ BRAND_NAME }-adgangskode en gang imellem for at sikre, at du ikke glemmer den. Du vil blive spurgt mindre og mindre efterhånden."
       ],
@@ -12277,6 +12280,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Gendannelsessætning er ikke tilknyttet nogen forældede nøgler."
+      ],
+      "Recovery phrase verified": [
+        "Gendannelsessætning bekræftet"
       ],
       "Reddit": [
         "Reddit"
@@ -14660,6 +14666,9 @@
       "Beta": [
         "Beta"
       ],
+      "Billable licenses": [
+        "Fakturerbare licenser"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Faktureres med ${ priceYearly } hver 12. måned."
       ],
@@ -14669,10 +14678,10 @@
       "Billed monthly.": [
         "Faktureres månedligt."
       ],
-      "Billed seats": [
-        "Faktuerede pladser"
-      ],
       "Billing cycle": [
+        "Faktureringsperiode"
+      ],
+      "Billing period": [
         "Faktureringsperiode"
       ],
       "Block": [
@@ -14777,9 +14786,6 @@
       "Common passwords": [
         "Almindelige adgangskoder"
       ],
-      "Companies": [
-        "Virksomheder"
-      ],
       "Company": [
         "Selskab"
       ],
@@ -14849,8 +14855,8 @@
       "Copy IP address to clipboard": [
         "Kopiér IP-adresse til udklipsholder"
       ],
-      "Cost": [
-        "Pris"
+      "Cost per license": [
+        "Pris per licens"
       ],
       "Could you please let us know which provider?": [
         "Kan du venligst fortælle os, hvilken udbyder?"
@@ -15314,6 +15320,9 @@
       ],
       "Manage categories": [
         "Administrer kategorier"
+      ],
+      "Managed Companies": [
+        "Administrerede virksomheder"
       ],
       "Mark as": [
         "Markér som"
@@ -16803,6 +16812,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } pladser"
+      ],
+      "${ price } per seat": [
+        "${ price } pr. plads"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-plads",
@@ -22273,7 +22285,7 @@
         "Få opdateringer om kommentarer via e-mail"
       ],
       "Include document name in email notifications": [
-        "Inkludér dokumentnavn i e-mailnotifikationer"
+        "Inkluder dokumentnavn i e-mailnotifikationer"
       ]
     },
     "Settings description": {
@@ -25353,6 +25365,9 @@
       "Currency": [
         "Valuta"
       ],
+      "Current cost": [
+        "Nuværende pris"
+      ],
       "Custom": [
         "Brugerdefineret"
       ],
@@ -26697,6 +26712,9 @@
       ],
       "Verify your password": [
         "Bekræft din adgangskode"
+      ],
+      "Verify your phrase": [
+        "Bekræft din sætning"
       ],
       "Verifying your card...": [
         "Bekræfter dit kort..."
