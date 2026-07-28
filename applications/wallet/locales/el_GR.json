@@ -438,6 +438,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } πρόσθετος προσαρμοσμένος τομέας",
         "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
@@ -446,11 +450,22 @@
         "${ ips } αποκλειστικός διακομιστής VPN",
         "${ ips } αποκλειστικοί διακομιστές VPN"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστη)",
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστες)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } άδεια χρήσης AI"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστες)"
       ],
       "${ price } per dedicated server": [
         "${ price } ανά αποκλειστικό διακομιστή"
@@ -463,6 +478,10 @@
       ],
       "${ price } per user": [
         "${ price } ανά χρήστη"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } προσαρμοσμένος τομέας",
+        "${ quantity } προσαρμοσμένοι τομείς"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } άδεια χρήσης AI",
@@ -3671,11 +3690,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστη)",
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστες)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } άδεια χρήσης"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } θέση",
