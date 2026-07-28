@@ -1283,6 +1283,9 @@
       "Verify password": [
         "Verificar contraseña"
       ],
+      "Verify recovery phrase": [
+        "Verificar frase de recuperación"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verificar el dominio ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1382,6 +1385,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -1629,6 +1636,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ LUMO_SHORT_APP_NAME } le ayude a escribir, responder y revisar sus correos electrónicos."
       ]
     },
     "Attached ics file error": {
@@ -1679,9 +1689,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "Pruebe ${ selected } ${ freeForNDays }"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Pruébelo gratis durante ${ TRIAL_DURATION_DAYS } días"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando cancele, su prueba gratuita no se convertirá en una suscripción de pago, pero aún podrá disfrutar de los beneficios del plan hasta el final del período de prueba. Después de eso, será degradado al plan ${ BRAND_NAME } Free."
       ],
@@ -1690,6 +1697,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de ${ LUMO_SHORT_APP_NAME } durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias del asistente de escritura ${ LUMO_SHORT_APP_NAME } durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -1863,12 +1873,19 @@
         "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más.",
         "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses }dirección de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más.",
         "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
@@ -5237,6 +5254,9 @@
       "This label name is not available. Please choose a different name.": [
         "Este nombre de etiqueta no está disponible. Elija un nombre diferente."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Esta frase no puede recuperar su cuenta. Puede generar una nueva para asegurar que su cuenta pueda recuperarse en el futuro."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Necesita restaurar sus privilegios de administración para crear cuentas no privadas y acceder a las mismas."
       ],
@@ -6843,6 +6863,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
@@ -7359,6 +7385,9 @@
       ],
       "Change your password": [
         "Cambie la contraseña"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Compruebe si su frase de recuperación puede usarse para recuperar su cuenta por completo."
       ],
       "Choose a plan that works best for you.": [
         "Elija un plan que funcione mejor para usted."
@@ -8592,6 +8621,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase de recuperación no está asociada con ninguna clave desactualizada."
+      ],
+      "Recovery phrase verified": [
+        "Frase de recuperación verificada"
       ],
       "Reddit": [
         "Reddit"
@@ -11349,8 +11381,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Agregar el asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Añadir asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Complemento con prueba gratuita"
@@ -11761,6 +11799,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } calendario",
@@ -13318,70 +13359,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Mantener este plan"
-      ],
       "Start using ${ appName }": [
         "Comenzar a usar ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Mejorar mi plan"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Hablemos"
-      ],
-      "Recommended": [
-        "Recomendado"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } por mes"
-      ],
-      "/month /user": [
-        "/mes /usuario"
-      ],
-      "/month /user, billed annually": [
-        "/mes /usuario, facturación anual"
-      ],
-      "/month /user, billed biennially": [
-        "/mes /usuario, facturación bienal"
-      ],
-      "Current plan": [
-        "Plan actual"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "¡Por solo **${ relativePrice } más al mes**, podrá acceder al servicio premium de gestor de contraseñas de ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "¡Por solo **${ relativePrice } más al mes**, podrá acceder al servicio VPN premium de ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "¡Por solo **${ relativePrice } más al mes**, usted podrá acceder a todos los servicios ${ BRAND_NAME } premium!"
-      ],
-      "Free forever": [
-        "Gratis para siempre"
-      ],
-      "Get in touch with our sales team": [
-        "Póngase en contacto con nuestro equipo de ventas"
-      ],
-      "Includes:": [
-        "Incluye:"
-      ],
-      "per month": [
-        "al mes"
-      ],
-      "per month, billed annually": [
-        "al mes con facturación anual"
-      ],
-      "per month, billed every month": [
-        "al mes con facturación mensual"
-      ],
-      "per month, billed every two years": [
-        "al mes con facturación cada dos años"
-      ],
       "Secure vault sharing": [
         "Uso compartido seguro de bóvedas"
       ],
@@ -16172,6 +16154,10 @@
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } para ${ maxAi } usuario",
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } para ${ maxAi } usuarios"
+      ],
       "${ n } calendar per user": [
         "${ n } calendario por usuario",
         "${ n } calendarios por usuario"
@@ -18445,6 +18431,9 @@
       "Verify your password": [
         "Verificar contraseña"
       ],
+      "Verify your phrase": [
+        "Verifique su frase"
+      ],
       "Verifying your card...": [
         "Verificando la tarjeta..."
       ],
@@ -18943,6 +18932,9 @@
         "No se pudo activar el acceso de admin para ${ n } usuario",
         "No se pudo activar el acceso de admin para ${ n } usuarios"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "No se pudo activar el acceso de administrador: ${ unprivatizationResult.error }"
+      ],
       "Enable manually": [
         "Activar manualmente"
       ],
@@ -19170,6 +19162,9 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitación enviada, esperando la respuesta del miembro invitado"
+      ],
+      "Pending": [
+        "Pendiente"
       ],
       "SSO user provided by your identity provider": [
         "Usuario SSO proporcionado por el proveedor de identidad"

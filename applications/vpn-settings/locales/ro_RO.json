@@ -1283,6 +1283,9 @@
       "Verify password": [
         "Verificare parolă"
       ],
+      "Verify recovery phrase": [
+        "Verificare frază de recuperare"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verificare domeniu ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1697,9 +1700,6 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Încercați ${ selected } ${ freeForNDays }"
-      ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Încercați-l gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Dacă anulați, perioada de evaluare gratuită nu va fi convertită într-un abonament cu plată, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de evaluare. După aceea, planul va fi retrogradat la ${ BRAND_NAME } Free."
@@ -5298,6 +5298,9 @@
       "This label name is not available. Please choose a different name.": [
         "Acest nume de etichetă nu este disponibil. Alegeți un alt nume."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Această frază nu vă poate recupera contul. Puteți genera una nouă pentru a vă asigura că acesta poate fi recuperat în viitor."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Pentru a crea conturi de utilizator neprivate și pentru a le accesa, va trebui să vă restabiliți privilegiile de administrator."
       ],
@@ -7486,6 +7489,9 @@
       "Change your password": [
         "Modificare parolă"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Verificați dacă fraza de recuperare poate fi folosită pentru a vă recupera complet contul."
+      ],
       "Choose a plan that works best for you.": [
         "Alegeți un plan care vi se potrivește cel mai bine."
       ],
@@ -8730,6 +8736,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Fraza de recuperare nu este asociată cu nicio cheie învechită."
+      ],
+      "Recovery phrase verified": [
+        "Frază de recuperare verificată"
       ],
       "Reddit": [
         "Reddit"
@@ -13544,70 +13553,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Păstrez planul"
-      ],
       "Start using ${ appName }": [
         "Începeți să utilizați ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Modificare plan"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Să discutăm"
-      ],
-      "Recommended": [
-        "Recomandat"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } pe lună"
-      ],
-      "/month /user": [
-        "/lună /utilizator"
-      ],
-      "/month /user, billed annually": [
-        "/lună /utizator, facturat anual"
-      ],
-      "/month /user, billed biennially": [
-        "/lună /utizator, facturat la doi ani"
-      ],
-      "Current plan": [
-        "Plan actual"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la managerul de parole premium al lui ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la serviciul VPN premium al ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Pentru doar încă **${ relativePrice } pe lună**, veți avea acces la toate serviciile premium ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Gratuit întotdeauna"
-      ],
-      "Get in touch with our sales team": [
-        "Luați legătura cu echipa noastră de vânzări"
-      ],
-      "Includes:": [
-        "Include:"
-      ],
-      "per month": [
-        "pe lună"
-      ],
-      "per month, billed annually": [
-        "pe lună, facturat anual"
-      ],
-      "per month, billed every month": [
-        "pe lună, facturat în fiecare lună"
-      ],
-      "per month, billed every two years": [
-        "pe lună, facturat la fiecare doi ani"
-      ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
       ],
@@ -18760,6 +18710,9 @@
       ],
       "Verify your password": [
         "Verificați-vă parola"
+      ],
+      "Verify your phrase": [
+        "Verificați-vă fraza"
       ],
       "Verifying your card...": [
         "Verificare card..."
