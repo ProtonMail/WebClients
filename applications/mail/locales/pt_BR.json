@@ -1720,6 +1720,18 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Clear conversation": [
+        "Limpar conversa"
+      ],
+      "Lookup document": [
+        "Pesquisar documento"
+      ],
+      "Reject": [
+        "Rejeitar"
+      ],
+      "Stop": [
+        "Parar"
       ]
     },
     "action": {
@@ -1829,6 +1841,25 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe (para ${ quantity } usuário)",
+        "Assistente de escrita da ${ BRAND_NAME } Scribe (para ${ quantity } usuários)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistente de IA da ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuário)",
+        "Assistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuários)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuário)",
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuários)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domínio personalizado",
+        "${ quantity } domínios personalizados"
       ]
     },
     "Alert": {
@@ -9333,6 +9364,12 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Mantenha o seu plano e obtenha 50% de desconto no próximo mês"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minutos restantes…"
+      ],
+      "Details": [
+        "Detalhes"
       ]
     },
     "info": {
@@ -10522,6 +10559,18 @@
       ],
       "Client version": [
         "Versão do cliente"
+      ],
+      "Content search version to use": [
+        "Versão da pesquisa de conteúdo a ser usada"
+      ],
+      "Document ID": [
+        "ID do documento"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11001,6 +11050,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licença do ${ MEET_APP_NAME }",
         "${ seats } licenças do ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuário)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuários)"
+      ],
+      "${ price } per seat": [
+        "${ price } por licença"
       ]
     },
     "meet_2025: Feature": {
@@ -13329,6 +13385,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Ask anything…": [
+        "Pergunte qualquer coisa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15264,6 +15323,9 @@
       ],
       "Moved to ${ label }. Similar message will be categorized here in the future.": [
         "Movida para ${ label }. Mensagem semelhante será categorizada aqui no futuro.",
+        "Movidas para ${ label }. Mensagens semelhantes serão categorizadas aqui no futuro."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "Movidas para ${ label }. Mensagens semelhantes serão categorizadas aqui no futuro."
       ]
     },

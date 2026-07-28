@@ -1725,6 +1725,12 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Lookup document": [
+        "Căutare document"
+      ],
+      "Reject": [
+        "Respingere"
       ]
     },
     "action": {
@@ -1841,6 +1847,29 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistent de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domeniu personal",
+        "${ quantity } domenii personale",
+        "${ quantity } de domenii personale"
       ]
     },
     "Alert": {
@@ -5544,6 +5573,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Nu s-a putut trimite un cod de verificare folosind această metodă."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Ceva nu a funcționat bine. Închideți panoul modal și reîncercați."
       ]
     },
     "error": {
@@ -9496,6 +9528,28 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ issues.length } issue during import:": [
+        "Probleme pe durata importului: ${ issues.length }",
+        "Probleme pe durata importului: ${ issues.length }",
+        "Probleme pe durata importului: ${ issues.length }"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Minute rămase: ${ remainingMinutes }"
+      ],
+      "Details": [
+        "Detalii"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "S-a găsit un index de căutare criptat curent cu ${ oldIndexSize } mesaj.",
+        "S-a găsit un index de căutare criptat curent cu ${ oldIndexSize } mesaje.",
+        "S-a găsit un index de căutare criptat curent cu ${ oldIndexSize } de mesaje."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importarea este în desfășurare. Puteți închide această casetă de dialog în timp ce rulează și reveni la ea mai târziu. Nu închideți fila însă."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Îl puteți importa ca un nou index de căutare de bază în scopuri de dezvoltare."
       ]
     },
     "info": {
@@ -10693,6 +10747,18 @@
       ],
       "Client version": [
         "Versiune client"
+      ],
+      "Content search version to use": [
+        "Versiunea de căutare a conținutului de utilizat"
+      ],
+      "Document ID": [
+        "ID document"
+      ],
+      "v1": [
+        "V1"
+      ],
+      "v2": [
+        "V2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11178,6 +11244,11 @@
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
         "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizator)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } de utilizatori)"
       ]
     },
     "meet_2025: Feature": {
@@ -15553,6 +15624,9 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise aici în viitor."
       ]
     },
     "Success notification": {

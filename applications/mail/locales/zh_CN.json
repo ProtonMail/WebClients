@@ -1715,6 +1715,21 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Clear conversation": [
+        "清除会话"
+      ],
+      "Lookup document": [
+        "查找文档"
+      ],
+      "Reject": [
+        "拒绝"
+      ],
+      "Stop": [
+        "停止"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "切换 ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1817,6 +1832,21 @@
       ],
       "Writing assistant seats": [
         "写作助手席位"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 写作助手（适用于 ${ quantity } 位用户）"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助手"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助手（适用于 ${ quantity } 位用户）"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手（适用于 ${ quantity } 位用户）"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 个自定义域名"
       ]
     },
     "Alert": {
@@ -5452,6 +5482,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "我们无法通过此类方式发送验证码。"
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "出错了，请关闭模态框并重试。"
       ]
     },
     "error": {
@@ -9180,6 +9213,27 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
+      "${ issues.length } issue during import:": [
+        "导入过程中出现 ${ issues.length } 个问题："
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "剩余 ${ remainingMinutes } 分钟…"
+      ],
+      "Details": [
+        "详细信息"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "找到包含 ${ oldIndexSize } 封邮件的当前加密搜索索引。"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "导入正在进行，您可以在运行期间关闭此对话框，稍后再回来查看。但请不要关闭标签页。"
+      ],
+      "Thinking about this": [
+        "正在思考这个"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "您可以将其作为新的 foundation-search 索引导入以供开发使用。"
       ]
     },
     "info": {
@@ -10361,6 +10415,18 @@
       ],
       "Client version": [
         "客户端版本"
+      ],
+      "Content search version to use": [
+        "要使用的内容搜索版本"
+      ],
+      "Document ID": [
+        "文档 ID"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10834,6 +10900,12 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } 个 ${ MEET_APP_NAME } 席位"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (适用于 ${ quantity } 位用户)"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席位"
       ]
     },
     "meet_2025: Feature": {
@@ -13111,6 +13183,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Ask anything…": [
+        "提问…"
       ]
     },
     "Placeholder for contact group name": {
@@ -14975,6 +15050,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "已移至 ${ label }，未来类似邮件将自动归类。"
       ]
     },
     "Success notification": {

@@ -1720,6 +1720,18 @@
       ],
       "Upgrade for 200GB": [
         "Päivitä 200 Gt:n tilaukseen"
+      ],
+      "Clear conversation": [
+        "Tyhjennä keskustelu"
+      ],
+      "Reject": [
+        "Kieltäydy"
+      ],
+      "Stop": [
+        "Pysäytä"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Vaihda ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1829,6 +1841,21 @@
       ],
       "Writing assistant seats": [
         "Kirjoitusavustajan käyttöpaikat"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja (${ quantity } käyttäjälle)",
+        "${ BRAND_NAME } Scribe-kirjoitusavustaja (${ quantity } käyttäjälle)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } -tekoälyavustaja"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } tekoälyavustaja (${ quantity } käyttäjä)",
+        "${ LUMO_APP_NAME } AI-avustaja (${ quantity } käyttäjälle)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } oma verkkotunnus",
+        "${ quantity } omaa verkkotunnusta"
       ]
     },
     "Alert": {
@@ -9293,6 +9320,12 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Menetätte pääsyn tilaukseen ${ boldPlanTitle } ${ boldEndDate }."
+      ],
+      "Details": [
+        "Lisätiedot"
+      ],
+      "Thinking about this": [
+        "Mietitään tätä"
       ]
     },
     "info": {
@@ -10955,6 +10988,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikkaa"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)",
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)"
+      ],
+      "${ price } per seat": [
+        "${ price } per paikka"
       ]
     },
     "meet_2025: Feature": {
@@ -13274,6 +13314,9 @@
       ],
       "Search for users or addresses": [
         "Etsi käyttäjiä tai osoitteita"
+      ],
+      "Ask anything…": [
+        "Kysy mitä tahansa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15210,6 +15253,9 @@
       "Moved to ${ label }. Similar message will be categorized here in the future.": [
         "Siirretty luokkaan ${ label }. Vastaava viesti luokitellaan jatkossa tänne.",
         "Siirretty luokkaan ${ label }. Vastaavat viestit luokitellaan jatkossa tänne."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Siirretty kansioon ${ label }. Samankaltaiset viestit luokitellaan tänne jatkossa."
       ]
     },
     "Success notification": {

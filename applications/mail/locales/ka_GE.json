@@ -1720,6 +1720,9 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Reject": [
+        "უარყოფა"
       ]
     },
     "action": {
@@ -1829,6 +1832,21 @@
       ],
       "Writing assistant seats": [
         "წერაში დამხმარის ადგილები"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)",
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ხი დამხმარე ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } მომხმარებლის დომენი",
+        "${ quantity } მომხმარებლის დომენი"
       ]
     },
     "Alert": {
@@ -9296,6 +9314,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "თქვენ კვლავ შეძლებთ საკუთარი ანგარიშის მონაცემების ნახვას, მაგრამ მომხმარებლის ყველა ანგარიში ამოიშლება თქვენი ორგანიზაციიდან."
+      ],
+      "Details": [
+        "დეტალები"
       ]
     },
     "info": {
@@ -10952,6 +10973,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } ადგილი",
         "${ seats } ${ MEET_APP_NAME } ადგილი"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "${ MEET_APP_NAME } (${ quantity } მომხმარებლისთვის)"
       ]
     },
     "meet_2025: Feature": {

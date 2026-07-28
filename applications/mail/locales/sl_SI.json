@@ -1661,6 +1661,45 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Dodaj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Nadaljuj v ${ planOrAppName }"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Kopiraj \"${ code }\" v odložišče"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Kopiraj \"${ code }\" v odložišče in jo premakni v Smetnjak"
+      ],
+      "Hide ${ title }": [
+        "Skrij ${ title }"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Pridruži se z ${ MEET_APP_NAME }"
+      ],
+      "Lookup document": [
+        "Poišči dokument"
+      ],
+      "Move to category...": [
+        "Premakni v kategorijo ..."
+      ],
+      "Or remove forwarding address": [
+        "Ali odstranite naslov za posredovanje"
+      ],
+      "Reject": [
+        "Zavrni"
+      ],
+      "Show ${ title }": [
+        "Pokaži ${ title }"
+      ],
+      "Toggle referral": [
+        "Preklopi priporočila"
+      ],
+      "Verify now": [
+        "Preveri zdaj"
       ]
     },
     "action": {
@@ -1717,7 +1756,7 @@
         "${ ips } namenski VPN strežnik",
         "${ ips } namenska VPN strežnika",
         "${ ips } namenski VPN strežniki",
-        "${ ips } namenski VPN strežniki"
+        "${ ips } namenskih VPN strežnikov"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } licenca UI"
@@ -1740,7 +1779,7 @@
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } licenca UI",
         "${ seats } ${ LUMO_APP_NAME } licenci UI",
-        "${ seats } ${ LUMO_APP_NAME } licenc UI",
+        "${ seats } ${ LUMO_APP_NAME } licence UI",
         "${ seats } ${ LUMO_APP_NAME } licenc UI"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
@@ -1778,6 +1817,12 @@
       ],
       "Writing assistant seats": [
         "Licence za pomočnika pri pisanju"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnika)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnika)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnike)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnikov)"
       ]
     },
     "Alert": {
@@ -1925,6 +1970,15 @@
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
         "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } pomočnikov pri pisanju."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_USERS } uporabnikov."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Ne morete dodati domen po meri med preizkusnim obdobjem."
+      ],
+      "You have reached the trial limit.": [
+        "Dosegli ste mejo poskusne verzije."
       ]
     },
     "b2b_trials_Action": {
@@ -2171,6 +2225,9 @@
       ],
       "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
         "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
+      ],
+      "Contact your administrator to start a migration.": [
+        "Obrnite se na skrbnika za začetek prenosa."
       ]
     },
     "Browser": {
@@ -2299,7 +2356,7 @@
         "Oglejte si"
       ],
       "Get 50% offer": [
-        "Izkoristite ponudbo s 50% popustom"
+        "Izkoristite ponudbo s 50 % popustom"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2686,6 +2743,15 @@
       ],
       "Unlimited daily chats": [
         "Neomejeni dnevni klepeti"
+      ],
+      "Limited daily chats": [
+        "Omejeni dnevni pogovori"
+      ],
+      "Limited favorites": [
+        "Omejene priljubljene"
+      ],
+      "Web search access": [
+        "Dostop do spletnega iskanja"
       ]
     },
     "collider_2025: Info": {
@@ -2697,6 +2763,12 @@
       ],
       "Advanced account and network security in one plan": [
         "Napredna varnost računa in omrežja v enem paketu"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Hitri pogovori in napredne funkcije umetne inteligence."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Zasebni video klici za pomembne pogovore."
       ]
     },
     "color": {
@@ -3875,6 +3947,9 @@
       ],
       "Åland Islands": [
         "Alandski otoki"
+      ],
+      "Canary Islands": [
+        "Kanarski otoki"
       ]
     },
     "customer_support.feature.all": {
@@ -4239,6 +4314,15 @@
       ],
       "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Z desnim klikom na e-poštno sporočilo izberite »Premakni v« ali pa ga povlecite in spustite v drugo kategorijo. Podobna e-poštna sporočila se bodo v prihodnje samodejno razvrstila v to kategorijo."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Za neomejen dostop do pomočnika pri pisanju in drugega nadgradite na ${ BRAND_NAME } Duo."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Za nadaljevanje uporabe storitve ${ LUMO_SHORT_APP_NAME } v ${ MAIL_APP_NAME } jo dodajte v vašo naročnino."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Žal nam je, da odhajate. Če imate trenutek časa, bi bili zelo hvaležni, če bi nam povedali, zakaj želite prekiniti naročnino. Vaša povratna informacija nam pomaga izboljševati ${ BRAND_NAME } za vse."
       ]
     },
     "description": {
@@ -4374,6 +4458,9 @@
     "Duo offer: Title": {
       "Get 4x more storage with ${ BRAND_NAME } Duo": [
         "Pridobite 4x več shrambe s ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Delite prednosti vašega paketa z ${ BRAND_NAME } Duo"
       ]
     },
     "Email body for invitation": {
@@ -4409,6 +4496,9 @@
       ],
       "TITLE:": [
         "NASLOV:"
+      ],
+      "You are invited to": [
+        "Povabljeni ste na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5192,6 +5282,30 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "S to metodo nam ni uspelo poslati potrditvenega kode."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nalaganje podatkov o naročnini ni uspelo. Poizkusite znova kasneje."
+      ],
+      "No drive found to import": [
+        "Ni mogoče najti pogona za uvoz"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Preverite, če je vaš ABN registriran za čezmejni DDV."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Nekaj je šlo narobe, zaprite pogovorno okno in poskusite znova."
+      ],
+      "That action can't be performed on emails in this folder": [
+        "To dejanje ni mogoče na sporočilih v tej mapi."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Nepričakovana napaka, ne moremo uvoziti datotek"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Davčna številka se mora začeti z ${ prefixes }"
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Vašega sporočila ni mogoče dešifrirati. Če ste izbrisali katerega od svojih naslovnih ključev, jih poskusite ponovno uvoziti prek povezave ${ reimportKeyLink }. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -5970,6 +6084,9 @@
       ],
       "You've unlocked 1 GB": [
         "Odklenili ste 1 GB"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Pridobi ${ BRAND_NAME } naslov"
       ]
     },
     "Gmail forwarding": {
@@ -6065,6 +6182,9 @@
       ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Nastavi pomočnika pri pisanju ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Hint": {
@@ -6313,6 +6433,9 @@
       ],
       "Your password is correct.": [
         "je geslo pravilno."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dvojno preverjanje pristnosti je omogočeno v vašem zunanjem računu."
       ]
     },
     "Import ICS file from Mail": {
@@ -6412,6 +6535,9 @@
     "Import provider": {
       "Import from ${ providerName }": [
         "Uvoz iz ${ providerName }"
+      ],
+      "More import options": [
+        "Več možnosti uvoza"
       ]
     },
     "Import warning": {
@@ -8983,16 +9109,124 @@
         "Če naročnino prekinete zdaj, boste dne ${ expiryDate } izgubili dostop do ${ BRAND_NAME } ${ planTitle }, vključno z naslednjimi funkcijami:"
       ],
       "Premium privacy protection across all your devices": [
-        "Vrhunska zaščita zasebnosti na vseh vaših napravah"
+        "Premijska zaščita zasebnosti na vseh vaših napravah"
       ],
       "Stay on your plan and get 50% off your next month": [
-        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50% popust"
+        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50 % popust"
       ],
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } vsebuje pomočnika pri pisanju"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } težava med uvozom",
+        "${ issues.length } težavi med uvozom",
+        "${ issues.length } težave med uvozom",
+        "${ issues.length } težav med uvozom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } vam pomaga hitro in preprosto ustvarjati boljšo e-pošto."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } uporabniška mesta"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Preostalo je še ${ remainingMinutes } minut …"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Povabite vaše prijatelje** na ${ BRAND_NAME } z vašo povezavo za priporočilo."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Pridobijo ${ refereeRewardAmount }** v dobroimetju, če se naročijo."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Pridobite ${ referrerRewardAmount }** kot dobropis za vsakega prijatelja, ki se naroči na paket."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Dodaj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Dodaj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Samodejno razvrsti prejeta sporočila v kategorije"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorije delujejo tako kot filtri za neželeno pošto. ${ MAIL_APP_NAME } nikoli ne bere vaših sporočil ali deli vaših podatkov."
+      ],
+      "Details": [
+        "Podrobnosti"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Se spomnite vašega gesla? ${ verifyButton }"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Samo datoteke (brez fotografij, ${ DOCS_APP_NAME } ali ${ SHEETS_APP_NAME }) - do skupaj 100 GB, 100.000 datotek in 50 GB na datoteko"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Za samo ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Najden je bil aktualni šifrirani iskalni indeks, ki vsebuje ${ oldIndexSize } sporočilo.",
+        "Najden je bil aktualni šifrirani iskalni indeks, ki vsebuje ${ oldIndexSize } sporočili.",
+        "Najden je bil aktualni šifrirani iskalni indeks, ki vsebuje ${ oldIndexSize } sporočila.",
+        "Najden je bil aktualni šifrirani iskalni indeks, ki vsebuje ${ oldIndexSize } sporočil."
+      ],
+      "Google Pay mark": [
+        "Oznaka Google Pay"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Uvoz poteka. To pogovorno okno lahko med izvajanjem zaprete in se k njemu vrnete kasneje. Ne zapirajte zavihka!"
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Imejte svoje podatke o prijavi in ​​kreditni kartici na varnem, a vedno pri roki, tako da jih dodate v ${ PASS_APP_NAME }. Je brezplačen in vključen v vaš račun ${ BRAND_NAME }."
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Nastavite ${ MAIL_APP_NAME } kot privzeto aplikacijo za e-pošto."
+      ],
+      "Password verified": [
+        "Geslo preverjeno"
+      ],
+      "Please select the labels you would like to import:": [
+        "Izberite oznake, ki jih želite uvoziti:"
+      ],
+      "RECOMMENDED": [
+        "PRIPOROČENO"
+      ],
+      "Scheduling message": [
+        "Načrtovanje sporočila"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Trenutno ni dosegljivo zaradi visokega povpraševanja. Poskusite znova kasneje."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Da si boste lažje zapomnili geslo, vas bomo občasno prosili, da ga vnesete. Sčasoma vas bomo za to prosili vse redkeje."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Nadgradite za ohranitev vaših ${ planTitle } ugodnosti."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Kasneje vas bomo opomnili, da znova preverite vaše geslo."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Z novimi e-poštnimi kategorijami samo pomembna sporočila pridejo v vašo glavno mapo Prejeto. Vse ostalo je organizirano po kategorijah."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Lahko ga uvozite kot nov osnovni iskalni indeks za namene razvoja."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "V mapi Prejeto imate ${ totalLabel }."
+      ],
+      "You have no conversations in this category": [
+        "Nimate pogovorov v tej kategoriji."
+      ],
+      "You have no messages in this category": [
+        "Nimate sporočil v tej kategoriji."
       ]
     },
     "info": {
@@ -9062,6 +9296,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktivni podpisnik"
       ]
     },
     "Key pinning": {
@@ -9271,6 +9508,9 @@
       ],
       "Message shortcuts": [
         "Bližnjice za sporočila"
+      ],
+      "Desktop app navigation": [
+        "Krmarjenje namizne aplikacije"
       ]
     },
     "Label": {
@@ -10014,6 +10254,117 @@
       ],
       "Client version": [
         "Različica odjemalca"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
+      ],
+      "Always label sender's emails": [
+        "Vedno dodaj oznako pošiljateljevim sporočilom"
+      ],
+      "Automated confirmations and alerts": [
+        "Samodejne potrditve in opozorila"
+      ],
+      "Clear logs": [
+        "Počisti dnevnike"
+      ],
+      "Command line interface (CLI)": [
+        "Ukazna vrstica (CLI)"
+      ],
+      "Content search version to use": [
+        "Različica iskanja vsebine, ki naj se uporabi"
+      ],
+      "Continue cancelling": [
+        "Nadaljuj s preklicem"
+      ],
+      "Current context": [
+        "Trenutni kontekst"
+      ],
+      "Document ID": [
+        "ID dokumenta"
+      ],
+      "Drive": [
+        "Pogon"
+      ],
+      "Email categories": [
+        "E-poštne kategorije"
+      ],
+      "Filter": [
+        "Filter"
+      ],
+      "Go to Newsletters": [
+        "Pojdi v Glasila"
+      ],
+      "Go to Primary": [
+        "Pojdi na Glavno"
+      ],
+      "Go to Social": [
+        "Pojdi v Družbeno"
+      ],
+      "Go to Transactions": [
+        "Pojdi na Transakcije"
+      ],
+      "Go to Updates": [
+        "Pojdi na Posodobitve"
+      ],
+      "Information": [
+        "Informacija"
+      ],
+      "Mail debugging information": [
+        "Informacije o odpravljanju napak"
+      ],
+      "Main reason for cancelling": [
+        "Glavni razlog za preklic naročnine"
+      ],
+      "Newsletter entry deleted": [
+        "Glasilo je bilo izbrisano"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Glasila: novice in druga nereklamirana vsebina"
+      ],
+      "Non-promotional content and news": [
+        "Nereklamirana vsebina in novice"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Osebna in službena sporočila ter pomembne novosti in obvestila"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Glavno: osebna in službena sporočila in pomembne novosti"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Reklame: akcije, ponudbe in marketinška sporočila"
+      ],
+      "Refresh logs": [
+        "Osveži dnevniške datoteke"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Odstrani ${ MEET_APP_NAME } video konferenco"
+      ],
+      "Skip feedback": [
+        "Preskoči povratno informacijo"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Družbeno: novosti, dejavnosti in sporočila z družbenih omrežij"
+      ],
+      "Social media updates and activity": [
+        "Novosti in dejavnosti na družbenih omrežjih"
+      ],
+      "Sort": [
+        "Razvrsti"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transakcije: potrdila, rezervacije, računi in naročila"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Posodobitve: samodejne potrditve, obvestila in novosti računa"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10098,6 +10449,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Nimate nobenih glasil ali naročnin na poštne sezname."
+      ],
+      "Loading your newsletter subscriptions...": [
+        "Nalaganje vaših naročnin na glasila ..."
       ]
     },
     "Landmarks": {
@@ -10349,6 +10703,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Za ogled posodobljenega povabila morate ponovno aktivirati vaše ključe."
+      ],
+      "Learn more.": [
+        "Več o tem."
       ]
     },
     "Link to calendar event": {
@@ -10523,6 +10880,18 @@
         "Do ${ n } udeleženca",
         "Do ${ n } udeleženci",
         "Do ${ n } udeležencev"
+      ],
+      "Booking pages": [
+        "Strani za rezervacijo"
+      ],
+      "Built-in chat": [
+        "Vgrajen pogovor"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Gostitelji lahko snemajo srečanja lokalno na svojih računalnikih"
+      ],
+      "Meeting recording": [
+        "Snemanje seje"
       ]
     },
     "Message": {
@@ -11276,6 +11645,33 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "Access all countries": [
+        "Dostop do vseh držav"
+      ],
+      "Appointment scheduling": [
+        "Načrtovanje sestanka"
+      ],
+      "Data retention policies": [
+        "Pravilniki hrambe podatkov"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Namenski strežniki, optimizirani za hitrost"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Ugodnosti obstoječega ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
+      "No streaming support": [
+        "Brez podpore pretočnim storitvam"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Zasebni pogovor z AI (${ LUMO_APP_NAME })"
+      ],
+      "Unlock streaming": [
+        "Odkleni pretakanje"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN z blokiranjem oglasov in zaščito pred zlonamerno programsko opremo"
       ]
     },
     "new_plans: feature highlight": {
@@ -11635,6 +12031,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Lahko imate več kot enega skrbnika. Vsi skrbniki lahko dodajajo in upravljajo uporabnike, vendar ima samo glavni skrbnik nadzor nad plačili."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonska podpora je na voljo s strani ekipe za ${ BRAND_NAME } podporo strankam med evropskim delovnim časom za stranke z ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ali več uporabniki."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11880,6 +12279,9 @@
       ],
       "Some popular services": [
         "Nekatere priljubljene storitve"
+      ],
+      "Protect your accounts": [
+        "Zaščitite vaše račune"
       ]
     },
     "Onboarding modal": {
@@ -12095,6 +12497,12 @@
       ],
       "No parent folder": [
         "Ni nadrejene mape"
+      ],
+      "Remind me later": [
+        "Opomni me kasneje"
+      ],
+      "Yes, don't show again": [
+        "Da, ne prikaži več"
       ]
     },
     "Option group": {
@@ -12155,6 +12563,9 @@
       ],
       "Team policies": [
         "Pravilniki skupine"
+      ],
+      "File attachments (up to 10GB)": [
+        "Priloge datotek (do 10 GB)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -12336,6 +12747,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Za preverjanje plačila boste kmalu preusmerjeni na drugo spletno mesto."
       ]
     },
     "Payments.Error": {
@@ -12366,6 +12780,9 @@
     "Payments.info": {
       "Credits will be added to your balance": [
         "Dobroimetje bo dodano na vaš račun"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Dobropis za neporabljen del naročnine vašega prejšnjega paketa"
       ]
     },
     "Payments.ModificationWarning": {
@@ -12415,6 +12832,15 @@
       ],
       "VAT number": [
         "ID za DDV"
+      ],
+      "Add ABN": [
+        "Dodaj ABN"
+      ],
+      "Add Business Number": [
+        "Dodaj številko podjetja"
+      ],
+      "Add EIN": [
+        "Dodaj EIN"
       ]
     },
     "PGP key encryption warning": {
@@ -12440,6 +12866,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Priporočamo, da temu ključu prekličete zaupanje."
+      ],
+      "This contact currently signs messages with this key": [
+        "Ta stik trenutno podpisuje sporočila s tem ključem."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "S tem ključem se šifrirajo sporočila za ta stik na starejših aplikacijah."
       ]
     },
     "PGP key warning": {
@@ -12606,6 +13038,36 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Anything you'd like us to know": [
+        "Karkoli želite, da vemo"
+      ],
+      "Optional feedback": [
+        "Neobvezne povratne informacije"
+      ],
+      "Select a provider": [
+        "Izberite ponudnika"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Povejte ${ subject }, kaj naj napiše. Primer: \"Najavi prihajajoče dogodke v okrožnici.\""
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Povejte ${ subject }, kaj naj napiše. Primer: \"Odjavi mojo članarino za fitnes.\""
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Povejte ${ subject }, kaj naj napiše. Primer: \"Povabi Jano na mojo zabavo.\""
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Povejte ${ subject }, kaj naj napiše. Primer: \"Zahvali se sodelavcu za pomoč pri projektu.\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Povejte ${ subject }, kaj naj napiše. Primer: \"Napiši spremno pismo za pripravništvo.\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Povejte ${ subject }, kaj naj napiše. Primer: \"Napiši povratno sporočilo za stranko.\""
+      ],
+      "the writing assistant": [
+        "pomočnik pri pisanju"
       ]
     },
     "Placeholder for contact group name": {
@@ -12852,6 +13314,18 @@
       ],
       "your subscription": [
         "vaša naročnina"
+      ],
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } na priporočilo"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Ko se vaša polna naročnina začne, jo še vedno lahko prekličete v 30 dneh in dobite vrnjen sorazmerni delež."
+      ],
+      "Refer friends": [
+        "Priporočite prijateljem"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Lahko prejmete do **${ maxRewardAmount }** kot dobroimetje."
       ]
     },
     "Remaining days before the message expire": {
@@ -13358,6 +13832,9 @@
       ],
       "Smallest first": [
         "Najprej najmanjše"
+      ],
+      "Sort by": [
+        "Razvrsti po"
       ]
     },
     "specialoffer: Action": {
@@ -14089,6 +14566,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, in ${ LUMO_APP_NAME } s premijskimi funkcijami"
       ]
     },
     "subscription reminder": {
@@ -14526,6 +15006,12 @@
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "Kopirano \"${ code }\" v odložišče"
+      ],
+      "Writing assistant setting updated": [
+        "Nastavitev pomočnika pri pisanju je posodobljena."
       ]
     },
     "Success notification": {
@@ -15810,12 +16296,54 @@
         "VI imate nadzor"
       ],
       "Stay for 50% off your next month": [
-        "V naslednjem mesecu izkoristite 50% popust"
+        "V naslednjem mesecu izkoristite 50 % popust"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "Keep this banner hidden?": [
+        "Ali naj ostane ta pasica skrita?"
+      ],
+      "Loading...": [
+        "Nalaganje ..."
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Prestavite vašo organizacijo na ${ BRAND_NAME }"
+      ],
+      "No active newsletters": [
+        "Ni aktivnih glasil"
+      ],
+      "Referral": [
+        "Priporočilo"
+      ],
+      "Share your link": [
+        "Delite vašo povezavo"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Za predogled te preglednice jo odprite v ${ SHEETS_APP_NAME } ali pa jo prenesite."
+      ],
+      "Unsubscribe not available for this sender": [
+        "Odjava ni mogoča za tega pošiljatelja"
+      ],
+      "Verify your password": [
+        "Preverite geslo"
+      ],
+      "Your inbox, automatically organized": [
+        "Vaša mapa Prejeto, samodejno organizirana"
+      ],
+      "Your newsletters in one place": [
+        "Vaša glasila na enem mestu"
       ]
     },
     "Title header for keys table": {
       "Type": [
         "Vrsta"
+      ],
+      "Created": [
+        "Ustvarjeno"
+      ],
+      "Expires": [
+        "Poteče"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15910,11 +16438,17 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Za pošiljanje od konca do konca šifriranih sporočil na ta naslov naložite javni ključ"
+      ],
+      "Version 6 OpenPGP key": [
+        "Ključ OpenPGP verzija 6"
       ]
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Pomočnik UI, ki spoštuje vašo zasebnost"
       ]
     },
     "Tor out of date": {
@@ -16492,6 +17026,70 @@
       ],
       "Skip": [
         "Preskoči"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Za ${ MEET_APP_NAME }"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "Filter"
+      ],
+      "Filter and sort emails": [
+        "Filtriraj in razvrsti sporočila"
+      ],
+      "Has attachments": [
+        "S priponkami"
+      ],
+      "Read": [
+        "Prebrano"
+      ],
+      "Reset": [
+        "Ponastavi"
+      ],
+      "Unread": [
+        "Neprebrano"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Preklopi na ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Preklopi na ${ MAIL_APP_NAME }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnike)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnikov)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licenca"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } uporabniška mesta"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } mest."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Venomer se trudimo izboljšati ${ config.appName }. Kako ste zadovoljni s svojo izkušnjo?"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kartica, ki se konča z ${ paymentMethod.Details.Last4 }"
       ]
     }
   }

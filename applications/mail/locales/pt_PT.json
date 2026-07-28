@@ -1720,6 +1720,9 @@
       ],
       "Upgrade for 200GB": [
         "Upgrade para 200GB"
+      ],
+      "Reject": [
+        "Rejeitar"
       ]
     },
     "action": {
@@ -1829,6 +1832,21 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe (para ${ quantity } utilizador)",
+        "Assistente de escrita ${ BRAND_NAME } Scribe (para ${ quantity } utilizadores)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistente de IA do ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistente de IA do ${ LUMO_APP_NAME } (para ${ quantity } utilizador)",
+        "Assistente de IA do ${ LUMO_APP_NAME } (para ${ quantity } utilizadores)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domínio personalizado",
+        "${ quantity } domínios personalizados"
       ]
     },
     "Alert": {
@@ -9293,6 +9311,9 @@
       "You selected **${ checked } message** in ${ categoryLabel } category": [
         "Selecionou **${ checked } mensagem** na categoria ${ categoryLabel }",
         "Selecionou **${ checked } mensagens** na categoria ${ categoryLabel }"
+      ],
+      "Details": [
+        "Detalhes"
       ]
     },
     "info": {
@@ -10949,6 +10970,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licença do ${ MEET_APP_NAME }",
         "${ seats } licenças do ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } utilizador)",
+        "${ MEET_APP_NAME } (para ${ quantity } utilizadores)"
       ]
     },
     "meet_2025: Feature": {

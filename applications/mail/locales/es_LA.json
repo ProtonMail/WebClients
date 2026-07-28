@@ -1720,6 +1720,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Lookup document": [
+        "Buscar documento"
+      ],
+      "Reject": [
+        "Rechazar"
       ]
     },
     "action": {
@@ -1829,6 +1835,25 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuario)",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuarios)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistente de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizado",
+        "${ quantity } dominios personalizados"
       ]
     },
     "Alert": {
@@ -1929,6 +1954,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ LUMO_SHORT_APP_NAME } le ayude a escribir, responder y revisar sus correos electrónicos."
       ]
     },
     "Attached ics file error": {
@@ -1989,6 +2017,9 @@
       ],
       "You have reached the trial limit.": [
         "Usted ha alcanzado el límite de la prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias del asistente de escritura ${ LUMO_SHORT_APP_NAME } durante el periodo de prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -2103,6 +2134,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
       ]
     },
     "BF2025: Deal details": {
@@ -5485,6 +5523,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "No pudimos enviar un código de verificación usando este método."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Algo salió mal, cierre la ventana e intente de nuevo."
       ]
     },
     "error": {
@@ -9319,6 +9360,32 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Quédese en su plan y obtenga un 50% de descuento en su próximo mes"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problema durante la importación:",
+        "${ issues.length } problemas durante la importación:"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minutos restantes…"
+      ],
+      "Details": [
+        "Detalles"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Se encontró una búsqueda de indexación cifrada actual con ${ oldIndexSize } mensaje.",
+        "Se encontró una búsqueda de indexación cifrada actual con ${ oldIndexSize } mensajes."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importación en curso. Puede cerrar este ventana mientras se ejecuta y volver a ella más tarde. No cierre la pestaña."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Puede importarlo como un nuevo índice de búsqueda de la base de datos con fines de desarrollo."
       ]
     },
     "info": {
@@ -10502,6 +10569,18 @@
       ],
       "URL wildcard pattern": [
         "Patrón comodín de URL"
+      ],
+      "Content search version to use": [
+        "Versión de búsqueda de contenido para usar"
+      ],
+      "Document ID": [
+        "ID del documento"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10949,6 +11028,12 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Añadir asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Mailbox": {
@@ -10975,6 +11060,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
         "${ seats } licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuario)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuarios)"
       ]
     },
     "meet_2025: Feature": {
@@ -11797,6 +11886,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {

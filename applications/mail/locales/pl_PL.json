@@ -1730,6 +1730,9 @@
       ],
       "Trust key": [
         "Zaufaj kluczowi"
+      ],
+      "Reject": [
+        "Odrzuć"
       ]
     },
     "action": {
@@ -1853,6 +1856,27 @@
         "${ seats } licencje AI ${ LUMO_APP_NAME }",
         "${ seats } licencji AI ${ LUMO_APP_NAME }",
         "${ seats } licencji AI ${ LUMO_APP_NAME }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkownika)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asystent AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkownika)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } niestandardowa domena",
+        "${ quantity } niestandardowe domeny",
+        "${ quantity } niestandardowych domen",
+        "${ quantity } niestandardowych domen"
       ]
     },
     "Alert": {
@@ -9628,6 +9652,9 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Pozostań przy swoim planie i otrzymaj 50% zniżki na kolejny miesiąc"
+      ],
+      "Details": [
+        "Szczegóły"
       ]
     },
     "info": {
@@ -11312,6 +11339,12 @@
         "${ seats } licencje ${ MEET_APP_NAME }",
         "${ seats } licencji ${ MEET_APP_NAME }",
         "${ seats } licencji ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkownika)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)"
       ]
     },
     "meet_2025: Feature": {

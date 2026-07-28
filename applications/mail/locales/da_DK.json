@@ -1720,6 +1720,21 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Clear conversation": [
+        "Ryd samtale"
+      ],
+      "Lookup document": [
+        "Find dokument"
+      ],
+      "Reject": [
+        "Afvis"
+      ],
+      "Stop": [
+        "Stop"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Skift ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1829,6 +1844,25 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentpladser"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } bruger)",
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } brugere)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } bruger)",
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } brugere)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } bruger)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } brugere)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } brugerdefineret domæne",
+        "${ quantity } brugerdefinerede domæner"
       ]
     },
     "Alert": {
@@ -5498,6 +5532,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunne ikke sende en bekræftelseskode ved hjælp af denne metode."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Noget gik galt, luk modalen og prøv igen."
       ]
     },
     "error": {
@@ -9338,6 +9375,29 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problem under import:",
+        "${ issues.length } problemer under import:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minutter tilbage..."
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Fandt et aktuelt krypteret søgeindeks med ${ oldIndexSize } besked.",
+        "Fandt et aktuelt krypteret søgeindeks med ${ oldIndexSize } beskeder."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importen er i gang. Du kan lukke denne dialogboks mens den kører, og så vende tilbage til den senere. Luk dog ikke fanen."
+      ],
+      "Thinking about this": [
+        "Overvejer..."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Du kan importere det som et nyt fundament-søgeindeks til udviklingsformål."
       ]
     },
     "info": {
@@ -10527,6 +10587,18 @@
       ],
       "Client version": [
         "Klientversion"
+      ],
+      "Content search version to use": [
+        "Indholdssøgningsversion, der skal bruges"
+      ],
+      "Document ID": [
+        "Dokument-ID"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11006,6 +11078,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-plads",
         "${ seats } ${ MEET_APP_NAME }-pladser"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (til ${ quantity } bruger)",
+        "${ MEET_APP_NAME } (til ${ quantity } brugere)"
+      ],
+      "${ price } per seat": [
+        "${ price } pr. plads"
       ]
     },
     "meet_2025: Feature": {
@@ -13328,6 +13407,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Ask anything…": [
+        "Spørg om hvad som helst..."
       ]
     },
     "Placeholder for contact group name": {
@@ -15264,6 +15346,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Flyttet til ${ label }. Lignende beskeder vil fremover blive kategoriseret ligesådan."
       ]
     },
     "Success notification": {

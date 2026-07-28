@@ -1720,6 +1720,21 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Clear conversation": [
+        "Netejar la conversa"
+      ],
+      "Lookup document": [
+        "Document de cerca"
+      ],
+      "Reject": [
+        "Rebutja"
+      ],
+      "Stop": [
+        "Aturar-ho"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Tocar per alternar ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1829,6 +1844,25 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistent d'IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domini personalitzat",
+        "${ quantity } dominis personalitzats"
       ]
     },
     "Alert": {
@@ -5498,6 +5532,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Alguna cosa ha anat malament, tanqueu la finestra modal i torneu-ho a provar."
       ]
     },
     "error": {
@@ -9338,6 +9375,29 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } incidència durant la importació:",
+        "${ issues.length } incidències durant la importació:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Queden ${ remainingMinutes } minuts…"
+      ],
+      "Details": [
+        "Detalls"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "S'ha trobat un índex de cerca xifrat actual amb ${ oldIndexSize } missatge.",
+        "S'ha trobat un índex de cerca xifrat actual amb ${ oldIndexSize } missatges."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "La importació és en curs, podeu tancar aquest diàleg mentre s'executa i tornar-hi més tard, però no tanqueu la pestanya."
+      ],
+      "Thinking about this": [
+        "Hi estem pensant"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "El podeu importar com a nou índex de cerca base per a finalitats de desenvolupament."
       ]
     },
     "info": {
@@ -10527,6 +10587,18 @@
       ],
       "Client version": [
         "Versió del client"
+      ],
+      "Content search version to use": [
+        "Versió de cerca de contingut que s'ha d'utilitzar"
+      ],
+      "Document ID": [
+        "ID de document"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11006,6 +11078,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
         "${ seats } llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
       ]
     },
     "meet_2025: Feature": {
@@ -13328,6 +13407,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Ask anything…": [
+        "Pregunteu qualsevol cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15264,6 +15346,9 @@
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "S'han mogut a ${ label }. Els missatges similars es classificaran aquí en el futur."
       ]
     },
     "Success notification": {

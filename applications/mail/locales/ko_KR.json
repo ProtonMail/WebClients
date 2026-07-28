@@ -1715,6 +1715,15 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Lookup document": [
+        "참조 문서"
+      ],
+      "Reject": [
+        "거절"
+      ],
+      "Stop": [
+        "중지"
       ]
     },
     "action": {
@@ -1817,6 +1826,21 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 어시스턴트"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 어시스턴트 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ quantity } custom domain": [
+        "사용자 지정 도메인 ${ quantity }개"
       ]
     },
     "Alert": {
@@ -1917,6 +1941,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "이메일 생산성을 한 단계 더 높은 경지로. ${ LUMO_SHORT_APP_NAME }가 이메일의 작성과 답장, 교정에 도움을 드립니다."
       ]
     },
     "Attached ics file error": {
@@ -1976,6 +2003,9 @@
       ],
       "You have reached the trial limit.": [
         "무료 체험 한도에 도달했습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 시트를 포함할 수 있습니다."
       ]
     },
     "b2b_trials_Action": {
@@ -2088,6 +2118,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
       ]
     },
     "BF2025: Deal details": {
@@ -5440,6 +5476,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "해당 방법으로 인증 코드를 전송할 수 없습니다."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "문제가 발생했습니다. 이 모달을 닫고 다시 시도하세요."
       ]
     },
     "error": {
@@ -9162,6 +9201,30 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "현재 플랜을 유지허고 다음 달에는 50% 할인 받으세요"
+      ],
+      "${ issues.length } issue during import:": [
+        "불러오기 중 ${ issues.length } 문제 발생:"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME }에 글쓰기 도우미가 포함됩니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes }분 남음..."
+      ],
+      "Details": [
+        "세부 사항"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "${ oldIndexSize }개 메시지가 포함된 현재 암호화된 검색 인덱스를 찾았습니다."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "불러오기 진행 중입니다. 진행 중에는 이 대화창을 닫고 나중에 다시 돌아와도 됩니다. 불러오기 중에는 이 탭을 절대 닫지 마세요."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "개발 단계의 새로운 파운데이션 검색 색인으로 불러올 수 있습니다."
       ]
     },
     "info": {
@@ -10337,6 +10400,24 @@
       ],
       "URL wildcard pattern": [
         "URL 와일드카드 패턴"
+      ],
+      "Client": [
+        "클라이언트"
+      ],
+      "Client version": [
+        "클라이언트 버전"
+      ],
+      "Content search version to use": [
+        "사용할 콘텐츠 검색 버전"
+      ],
+      "Document ID": [
+        "문서 ID"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10779,6 +10860,12 @@
       ],
       "for ${ price }": [
         "${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 추가"
       ]
     },
     "Mailbox": {
@@ -10804,6 +10891,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ MEET_APP_NAME } 시트 ${ seats }개"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity }명 이용 가능)"
       ]
     },
     "meet_2025: Feature": {
@@ -11594,6 +11684,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ]
     },
     "new_plans: feature highlight": {

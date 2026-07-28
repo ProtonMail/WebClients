@@ -1694,6 +1694,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Vaš besplatni probni period za stolnu aplikaciju završava ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "Odbiti"
       ]
     },
     "action": {
@@ -1800,6 +1803,24 @@
       ],
       "Writing assistant seats": [
         "Licence pomoćnika za pisanje"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)",
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)",
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)",
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)",
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } prilagođena domena",
+        "${ quantity } prilagođene domene",
+        "${ quantity } prilagođenih domena"
       ]
     },
     "Alert": {
@@ -8994,6 +9015,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Samo Vas nekoliko klikova dijeli od pristigle pošte bez nereda"
+      ],
+      "Details": [
+        "Pojedinosti"
       ]
     },
     "info": {
@@ -17142,6 +17166,11 @@
         "${ seats } ${ MEET_APP_NAME } licenca",
         "${ seats } ${ MEET_APP_NAME } licence",
         "${ seats } ${ MEET_APP_NAME } licenci"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)"
       ]
     },
     "meet_2025: Feature": {

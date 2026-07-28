@@ -1715,6 +1715,9 @@
       ],
       "Subscribe now": [
         "立即訂閱"
+      ],
+      "Reject": [
+        "婉拒"
       ]
     },
     "action": {
@@ -1817,6 +1820,18 @@
       ],
       "Writing assistant seats": [
         "撰寫幫手就位"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 撰寫幫手（供 ${ quantity } 位使用者使用）"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助理"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助理（供 ${ quantity } 位使用者使用）"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個自訂網域"
       ]
     },
     "Alert": {
@@ -9154,6 +9169,9 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "維持您的方案並於下個月取得 50% 折扣的優惠"
+      ],
+      "Details": [
+        "詳細資訊"
       ]
     },
     "info": {
@@ -10796,6 +10814,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } 席位"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME }（適用於 ${ quantity } 名使用者）"
       ]
     },
     "meet_2025: Feature": {

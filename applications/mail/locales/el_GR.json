@@ -1720,6 +1720,21 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Clear conversation": [
+        "Εκκαθάριση συνομιλίας"
+      ],
+      "Lookup document": [
+        "Αναζήτηση εγγράφου"
+      ],
+      "Reject": [
+        "Απόρριψη"
+      ],
+      "Stop": [
+        "Σταμάτα"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Εναλλαγή ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1829,6 +1844,25 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστη)",
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστες)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } προσαρμοσμένος τομέας",
+        "${ quantity } προσαρμοσμένοι τομείς"
       ]
     },
     "Alert": {
@@ -5498,6 +5532,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Κάτι πήγε στραβά, κλείστε το παράθυρο και προσπαθήστε ξανά."
       ]
     },
     "error": {
@@ -9338,6 +9375,26 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } πρόβλημα κατά την εισαγωγή:",
+        "${ issues.length } προβλήματα κατά την εισαγωγή:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } λεπτά απομένουν…"
+      ],
+      "Details": [
+        "Λεπτομέρειες"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Βρέθηκε ένα τρέχον κρυπτογραφημένο ευρετήριο αναζήτησης με ${ oldIndexSize } μήνυμα.",
+        "Βρέθηκε ένα τρέχον κρυπτογραφημένο ευρετήριο αναζήτησης με ${ oldIndexSize } μηνύματα."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Η εισαγωγή βρίσκεται σε εξέλιξη, μπορείτε να κλείσετε αυτό το παράθυρο διαλόγου ενώ εκτελείται και να επιστρέψετε σε αυτό αργότερα. Ωστόσο, μην κλείσετε την καρτέλα."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Μπορείτε να το εισαγάγετε ως νέο ευρετήριο αναζήτησης ιδρύματος για σκοπούς ανάπτυξης."
       ]
     },
     "info": {
@@ -10527,6 +10584,18 @@
       ],
       "Client version": [
         "Έκδοση Πελάτη"
+      ],
+      "Content search version to use": [
+        "Έκδοση αναζήτησης περιεχομένου προς χρήση"
+      ],
+      "Document ID": [
+        "ID εγγράφου"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11006,6 +11075,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } θέση",
         "${ seats } ${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστη)",
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστες)"
+      ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
       ]
     },
     "meet_2025: Feature": {
@@ -13328,6 +13404,9 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Ask anything…": [
+        "Ρωτήστε οτιδήποτε…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15264,6 +15343,9 @@
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Μετακινήθηκε στο ${ label }. Παρόμοια μηνύματα θα κατηγοριοποιηθούν εδώ στο μέλλον."
       ]
     },
     "Success notification": {

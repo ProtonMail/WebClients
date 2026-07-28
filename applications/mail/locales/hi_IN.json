@@ -1718,6 +1718,9 @@
       ],
       "Your email writing assistant": [
         "आपका ईमेल लेखन सहायक"
+      ],
+      "Reject": [
+        "अस्वीकार करें"
       ]
     },
     "action": {
@@ -1822,6 +1825,21 @@
       ],
       "Writing assistant seats": [
         "लेखन सहायक सीटें"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe लेखन सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ BRAND_NAME } Scribe लेखन सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI सहायक"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ LUMO_APP_NAME } AI सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } कस्टम डोमेन",
+        "${ quantity } कस्टम डोमेन"
       ]
     },
     "Alert": {
@@ -8865,6 +8883,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "आप एक व्यवस्थित और साफ इंबॉक्स से बस कुछ ही क्लिक दूर हैं"
+      ],
+      "Details": [
+        "जानकारी"
       ]
     },
     "info": {
@@ -16821,6 +16842,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } सीट",
         "${ seats } ${ MEET_APP_NAME } सीटें"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } उपयोगकर्ता के लिए)",
+        "${ MEET_APP_NAME } (${ quantity } उपयोगकर्ताओं के लिए)"
       ]
     },
     "meet_2025: Feature": {

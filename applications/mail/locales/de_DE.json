@@ -1720,6 +1720,21 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Clear conversation": [
+        "Unterhaltung entfernen"
+      ],
+      "Lookup document": [
+        "Dokument nachschlagen"
+      ],
+      "Reject": [
+        "Ablehnen"
+      ],
+      "Stop": [
+        "Stoppen"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } umschalten"
       ]
     },
     "action": {
@@ -1829,6 +1844,25 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)",
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-Assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)",
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)",
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } benutzerdefinierte Domäne",
+        "${ quantity } benutzerdefinierte Domänen"
       ]
     },
     "Alert": {
@@ -5498,6 +5532,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Es ist ein Fehler aufgetreten. Schließe das Modalfenster und versuche es erneut."
       ]
     },
     "error": {
@@ -9338,6 +9375,29 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } Problem beim Import:",
+        "${ issues.length } Probleme beim Import:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Noch ${ remainingMinutes } Minuten…"
+      ],
+      "Details": [
+        "Details"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Es wurde ein aktueller verschlüsselter Suchindex mit ${ oldIndexSize } Nachricht gefunden.",
+        "Es wurde ein aktueller verschlüsselter Suchindex mit ${ oldIndexSize } Nachrichten gefunden."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Der Import läuft gerade. Du kannst diesen Dialog während des Vorgangs schließen und später darauf zurückkommen. Schließe jedoch nicht die Registerkarte."
+      ],
+      "Thinking about this": [
+        "Darüber nachdenken"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Du kannst ihn zu Entwicklungszwecken als neuen Foundation-Search-Index importieren."
       ]
     },
     "info": {
@@ -10527,6 +10587,18 @@
       ],
       "Client version": [
         "Client-Version"
+      ],
+      "Content search version to use": [
+        "Zu verwendende Version der Inhaltssuche"
+      ],
+      "Document ID": [
+        "Dokument-ID"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11006,6 +11078,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } Lizenz",
         "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)",
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)"
+      ],
+      "${ price } per seat": [
+        "${ price } pro Lizenz"
       ]
     },
     "meet_2025: Feature": {
@@ -13328,6 +13407,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Ask anything…": [
+        "Frag irgendetwas …"
       ]
     },
     "Placeholder for contact group name": {
@@ -15264,6 +15346,9 @@
       "Moved to ${ label }. Similar message will be categorized here in the future.": [
         "Verschoben nach ${ label }. Ähnliche Nachrichten werden in Zukunft hierher kategorisiert.",
         "Verschoben nach ${ label }. Ähnliche Nachrichten werden in Zukunft hierher kategorisiert."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Zu ${ label } verschoben. Ähnliche Nachrichten werden künftig hierunter kategorisiert."
       ]
     },
     "Success notification": {

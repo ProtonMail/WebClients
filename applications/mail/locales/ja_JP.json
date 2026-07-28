@@ -1715,6 +1715,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Reject": [
+        "拒否"
       ]
     },
     "action": {
@@ -1817,6 +1820,18 @@
       ],
       "Writing assistant seats": [
         "執筆アシスタントシート"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "(${ quantity }ユーザー向け) ${ BRAND_NAME } Scribe執筆アシスタント"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI アシスタント"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "(${ quantity }ユーザー向け) ${ LUMO_APP_NAME } AIアシスタント"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個のカスタムドメイン"
       ]
     },
     "Alert": {
@@ -9157,6 +9172,9 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "現在のプランを継続すると、翌月が50%オフ"
+      ],
+      "Details": [
+        "詳細"
       ]
     },
     "info": {
@@ -10799,6 +10817,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats }${ MEET_APP_NAME }シート"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } ユーザー用)"
       ]
     },
     "meet_2025: Feature": {
@@ -14937,6 +14958,9 @@
       ],
       "Moved to ${ label }. Similar message will be categorized here in the future.": [
         "${ label }に移動しました。今後似たようなメッセージがここにカテゴライズされます。"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "${ label } へ移動しました。今後は類似のメッセージが同じカテゴリーに振り分けられます。"
       ]
     },
     "Success notification": {

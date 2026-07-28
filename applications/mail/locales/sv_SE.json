@@ -1720,6 +1720,15 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Clear conversation": [
+        "Rensa konversation"
+      ],
+      "Reject": [
+        "Avvisa"
+      ],
+      "Stop": [
+        "Stoppa"
       ]
     },
     "action": {
@@ -1829,6 +1838,25 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe skrivassistent (för ${ quantity } användare)",
+        "${ BRAND_NAME } Scribe skrivassistent för ${ quantity } användare)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)",
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)",
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } anpassad domän",
+        "${ quantity } anpassade domäner"
       ]
     },
     "Alert": {
@@ -1929,6 +1957,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ LUMO_SHORT_APP_NAME } hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ]
     },
     "Attached ics file error": {
@@ -2103,6 +2134,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ LUMO_SHORT_APP_NAME } skrivassistent, obegränsade hide-my-email-alias och mer."
       ]
     },
     "BF2025: Deal details": {
@@ -5477,6 +5511,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunde inte skicka en verifieringskod med den här metoden."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Något gick fel, stäng modal och försök igen."
       ]
     },
     "error": {
@@ -9305,6 +9342,22 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problem under import:",
+        "${ issues.length } problem under import:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minuter kvar …"
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Ha lite mer tid att bestämma utan avbrott."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Import pågår. Du kan stänga denna dialog medan den körs och återkomma till den senare. Stäng dock inte fliken."
       ]
     },
     "info": {
@@ -10494,6 +10547,15 @@
       ],
       "Client version": [
         "Klientversion"
+      ],
+      "Document ID": [
+        "Dokument-ID"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10973,6 +11035,10 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (för ${ quantity } användare)",
+        "${ MEET_APP_NAME } (för ${ quantity } användare)"
       ]
     },
     "meet_2025: Feature": {
@@ -13301,6 +13367,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Ask anything…": [
+        "Fråga vad som helst …"
       ]
     },
     "Placeholder for contact group name": {

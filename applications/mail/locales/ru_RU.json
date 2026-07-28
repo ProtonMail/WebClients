@@ -1730,6 +1730,9 @@
       ],
       "Upgrade for 200GB": [
         "Перейдите на тариф с 200 ГБ"
+      ],
+      "Reject": [
+        "Отказать"
       ]
     },
     "action": {
@@ -1853,6 +1856,27 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "лицензии ${ LUMO_APP_NAME }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователя)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ИИ-ассистент ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователя)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } пользовательский домен",
+        "${ quantity } пользовательских домена",
+        "${ quantity } пользовательских доменов",
+        "${ quantity } пользовательских домена"
       ]
     },
     "Alert": {
@@ -9623,6 +9647,9 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Сохраните подписку и получите скидку 50% на следующий месяц"
+      ],
+      "Details": [
+        "Информация"
       ]
     },
     "info": {
@@ -11307,6 +11334,12 @@
         "${ seats } лицензии ${ MEET_APP_NAME }",
         "${ seats } лицензий ${ MEET_APP_NAME }",
         "${ seats } лицензии ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (для ${ quantity } пользователя)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)"
       ]
     },
     "meet_2025: Feature": {

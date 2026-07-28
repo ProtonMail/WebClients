@@ -1715,6 +1715,9 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Reject": [
+        "Tolak"
       ]
     },
     "action": {
@@ -1817,6 +1820,18 @@
       ],
       "Writing assistant seats": [
         "Kuota asisten penulisan"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe (untuk ${ quantity } pengguna)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asisten AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asisten AI ${ LUMO_APP_NAME } (untuk ${ quantity } pengguna)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domain khusus"
       ]
     },
     "Alert": {
@@ -9136,6 +9151,9 @@
       ],
       "You selected **${ checked } message** in ${ categoryLabel } category": [
         "Memilih **${ checked } pesan** dalam kategori ${ categoryLabel }"
+      ],
+      "Details": [
+        "Rincian"
       ]
     },
     "info": {
@@ -10778,6 +10796,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } kuota ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (untuk ${ quantity } pengguna)"
       ]
     },
     "meet_2025: Feature": {
