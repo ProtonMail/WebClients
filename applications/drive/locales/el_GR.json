@@ -189,6 +189,9 @@
       "Clear browser data": [
         "Εκκαθάριση δεδομένων περιηγητή"
       ],
+      "Clear conversation": [
+        "Εκκαθάριση συνομιλίας"
+      ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
       ],
@@ -809,6 +812,9 @@
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
+      "Reject": [
+        "Απόρριψη"
+      ],
       "Reload": [
         "Ανανέωση"
       ],
@@ -965,6 +971,9 @@
       "Select rating ${ n } out of ${ to }": [
         "Επιλέξτε βαθμολογία ${ n } από ${ to }"
       ],
+      "Send": [
+        "Αποστολή"
+      ],
       "Send Feedback": [
         "Αποστολή Σχολίων"
       ],
@@ -1066,6 +1075,9 @@
       ],
       "Stay": [
         "Παραμονή"
+      ],
+      "Stop": [
+        "Σταμάτα"
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"
@@ -1270,6 +1282,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } πρόσθετος προσαρμοσμένος τομέας",
         "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
@@ -1278,11 +1294,22 @@
         "${ ips } αποκλειστικός διακομιστής VPN",
         "${ ips } αποκλειστικοί διακομιστές VPN"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστη)",
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστες)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } άδεια χρήσης AI"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστες)"
       ],
       "${ price } per dedicated server": [
         "${ price } ανά αποκλειστικό διακομιστή"
@@ -1295,6 +1322,10 @@
       ],
       "${ price } per user": [
         "${ price } ανά χρήστη"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } προσαρμοσμένος τομέας",
+        "${ quantity } προσαρμοσμένοι τομείς"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } άδεια χρήσης AI",
@@ -6649,14 +6680,14 @@
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Για να κατεβάσετε αυτά τα αρχεία, ανοίξτε τα στο ${ DOCS_APP_NAME } ή στο ${ SHEETS_APP_NAME } και εξαγάγετέ τα."
       ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Για να ενεργοποιήσετε την αναζήτηση, πρέπει να δημιουργήσουμε τοπικά ευρετήριο των αρχείων σας. Μπορείτε να χρησιμοποιήσετε κανονικά το ${ DRIVE_APP_NAME } και θα σας ενημερώσουμε όταν ολοκληρωθεί η δημιουργία ευρετηρίου. Εάν φύγετε από αυτήν τη σελίδα, η δημιουργία ευρετηρίου θα διακοπεί προσωρινά και θα συνεχιστεί όταν επιστρέψετε."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, το ${ DRIVE_APP_NAME } χρειάζεται να δεικτοδοτήσει τα αρχεία σας τοπικά."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, χρειάζεται να ευρετηριοποιήσουμε τα αρχεία σας τοπικά. Μπορείτε να συνεχίσετε τη χρήση του ${ DRIVE_APP_NAME } κανονικά - θα σας ενημερώσουμε όταν η ευρετηριοποίηση ολοκληρωθεί."
-      ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "Για να ενεργοποιήσετε την πραγματική αναζήτηση, πρέπει να δημιουργήσουμε τοπικά ευρετήριο των αρχείων σας. Μπορείτε να χρησιμοποιήσετε κανονικά το ${ DRIVE_APP_NAME } - θα σας ενημερώσουμε όταν ολοκληρωθεί η δημιουργία ευρετηρίου. Εάν φύγετε από αυτήν τη σελίδα, η δημιουργία ευρετηρίου θα διακοπεί προσωρινά και θα συνεχιστεί όταν επιστρέψετε."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
@@ -7273,6 +7304,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Επιτρέψτε στους συντάκτες να αλλάζουν δικαιώματα και να κοινοποιούν"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Επιτρέψτε στους συντάκτες να αλλάζουν δικαιώματα και να κοινοποιούν."
       ],
       "Anderson": [
         "Anderson"
@@ -8257,11 +8291,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστη)",
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστες)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } άδεια χρήσης"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } θέση",
@@ -10648,6 +10689,9 @@
       "Anytown": [
         "Αθήνα"
       ],
+      "Ask anything…": [
+        "Ρωτήστε οτιδήποτε…"
+      ],
       "Choose password": [
         "Επιλογή κωδικού πρόσβασης"
       ],
@@ -11561,6 +11605,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Ένας σύνδεσμος προς αυτό το στοιχείο έχει αποθηκευτεί στη μονάδα δίσκου σας. Μπορείτε να αποκτήσετε πρόσβαση σε αυτό αργότερα στην ενότητα \"Κοινή χρήση με εμένα\"."
+      ],
+      "Editor permissions": [
+        "Δικαιώματα επεξεργαστή"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Οι συντάκτες μπορούν πλέον να διαχειρίζονται την κοινή χρήση και να προσκαλούν άλλους. Μπορείτε να την απενεργοποιήσετε ανά πάσα στιγμή στις ρυθμίσεις Κοινής χρήσης."
       ],
       "Encrypted search is here": [
         "Η κρυπτογραφημένη αναζήτηση είναι εδώ"
