@@ -6,11 +6,14 @@ import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders } from '@proton/mail/store/labels/hooks';
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { EVENT_ACTIONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isImported } from '@proton/shared/lib/mail/messages';
+
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isElementReminded } from '../../../helpers/snooze';
 import type { ConversationEvent, Event, MessageEvent } from '../../../models/event';
@@ -52,17 +55,22 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
     const [mailSettings] = useMailSettings();
     const [folders = []] = useFolders();
     const { isCategoryViewEnabled, activeCategoriesTabs } = useCategoriesData();
+    const disabledCategoriesIDs = useMailSelector(selectDisabledCategoriesIDs);
 
     const notifier = [MAILBOX_LABEL_IDS.STARRED, ...folders.filter(({ Notify }) => Notify).map(({ ID }) => ID)];
 
     if (!isCategoryViewEnabled) {
         notifier.push(MAILBOX_LABEL_IDS.INBOX);
     } else {
+        // Add all the active categories to the notifier
         activeCategoriesTabs
             .filter((category) => category.notify)
             .forEach((category) => {
                 notifier.push(category.id);
             });
+
+        // Add the disabled categories IDs as they are in primary which has notification enabled by default
+        notifier.push(...disabledCategoriesIDs);
     }
 
     // Regular messages notification
@@ -92,6 +100,7 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
                     notifier,
                     onOpenElement,
                     isCategoryViewEnabled,
+                    disabledCategoriesIDs,
                 });
             });
         }
@@ -131,6 +140,7 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
                     notifier,
                     onOpenElement,
                     isCategoryViewEnabled,
+                    disabledCategoriesIDs,
                 });
             });
         });

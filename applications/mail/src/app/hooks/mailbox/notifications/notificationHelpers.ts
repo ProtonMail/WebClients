@@ -2,6 +2,7 @@ import type { History } from 'history';
 import { c } from 'ttag';
 
 import { isCategoryLabel } from '@proton/mail/helpers/location';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { create, createElectronNotification } from '@proton/shared/lib/helpers/desktopNotification';
@@ -20,12 +21,14 @@ export const prepareNotificationData = ({
     mailSettings,
     notifier,
     isCategoryViewEnabled,
+    disabledCategoriesIDs,
 }: {
     message: Message;
     history: History<unknown>;
     mailSettings: MailSettings;
     notifier: string[];
     isCategoryViewEnabled: boolean;
+    disabledCategoriesIDs: CategoryLabelID[];
 }) => {
     const { Subject, Sender, ID, ConversationID, LabelIDs } = message;
     const sender = Sender.Name || Sender.Address;
@@ -54,9 +57,12 @@ export const prepareNotificationData = ({
 
     // If the label is a category label, we redirect to Inbox and use the category hash in the URL
     const label = isCategoryLabel(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
-    const tmpLocation = isCategoryLabel(labelID)
-        ? { ...cleanHistoryLocation, hash: `#category=${LABEL_IDS_TO_HUMAN[labelID]}` }
-        : cleanHistoryLocation;
+
+    let tmpLocation = cleanHistoryLocation;
+    if (isCategoryLabel(labelID)) {
+        const categoryLabel = disabledCategoriesIDs.includes(labelID) ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT : labelID;
+        tmpLocation = { ...cleanHistoryLocation, hash: `#category=${LABEL_IDS_TO_HUMAN[categoryLabel]}` };
+    }
 
     const location = setParamsInLocation(tmpLocation, { labelID: label, elementID, messageID });
     return { title, body, location, ID, labelID: label, elementID, messageID };
@@ -69,6 +75,7 @@ export const displayNotification = ({
     notifier,
     onOpenElement,
     isCategoryViewEnabled,
+    disabledCategoriesIDs,
 }: {
     message: Message;
     history: History<unknown>;
@@ -76,6 +83,7 @@ export const displayNotification = ({
     notifier: string[];
     onOpenElement: () => void;
     isCategoryViewEnabled: boolean;
+    disabledCategoriesIDs: CategoryLabelID[];
 }) => {
     const notificationData = prepareNotificationData({
         message,
@@ -83,6 +91,7 @@ export const displayNotification = ({
         mailSettings,
         notifier,
         isCategoryViewEnabled,
+        disabledCategoriesIDs,
     });
 
     if (isElectronMail) {
