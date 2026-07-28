@@ -1317,6 +1317,12 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "სცადეთ ${ BRAND_NAME } Workspace"
+      ],
+      "Reject": [
+        "უარყოფა"
+      ],
+      "Send": [
+        "გაგზავნა"
       ]
     },
     "Action: Docs": {
@@ -1415,6 +1421,21 @@
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } ლიცენზია",
         "${ seats } ${ MEET_APP_NAME } ლიცენზია"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)",
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ხი დამხმარე ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } მომხმარებლის დომენი",
+        "${ quantity } მომხმარებლის დომენი"
       ]
     },
     "Alert": {
@@ -14386,6 +14407,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } ადგილი",
         "${ seats } ${ MEET_APP_NAME } ადგილი"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "${ MEET_APP_NAME } (${ quantity } მომხმარებლისთვის)"
       ]
     },
     "meet_2025: Info": {

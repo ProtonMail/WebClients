@@ -1317,6 +1317,12 @@
       ],
       "List layout": [
         "Vista de lista"
+      ],
+      "Reject": [
+        "Rechazar"
+      ],
+      "Send": [
+        "Enviar"
       ]
     },
     "Action: Docs": {
@@ -1415,6 +1421,21 @@
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
         "${ seats } licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuario)",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuarios)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } asistente de IA"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } asistente de IA (para ${ quantity } usuario)",
+        "${ LUMO_APP_NAME } Asistente de IA (para ${ quantity } usuarios)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizado",
+        "${ quantity } dominios personalizados"
       ]
     },
     "Alert": {
@@ -14400,6 +14421,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
         "${ seats } licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuario)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuarios)"
       ]
     },
     "meet_2025: Info": {

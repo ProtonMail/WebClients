@@ -1292,6 +1292,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "आप ${ maxAttachments } से अधिक संपर्क की vCard फ़ाइलें नहीं भेज सकते",
         "आप ${ maxAttachments } से अधिक संपर्कों की vCard फ़ाइलें नहीं भेज सकते"
+      ],
+      "Reject": [
+        "अस्वीकार करें"
+      ],
+      "Send": [
+        "भेजें"
       ]
     },
     "Actions": {
@@ -1380,6 +1386,21 @@
       ],
       "Writing assistant seats": [
         "लेखन सहायक सीटें"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe लेखन सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ BRAND_NAME } Scribe लेखन सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI सहायक"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ LUMO_APP_NAME } AI सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } कस्टम डोमेन",
+        "${ quantity } कस्टम डोमेन"
       ]
     },
     "Alert": {
@@ -13961,6 +13982,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } सीट",
         "${ seats } ${ MEET_APP_NAME } सीटें"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } उपयोगकर्ता के लिए)",
+        "${ MEET_APP_NAME } (${ quantity } उपयोगकर्ताओं के लिए)"
       ]
     },
     "meet_2025: Feature": {
