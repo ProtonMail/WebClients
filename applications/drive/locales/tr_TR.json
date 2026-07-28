@@ -809,6 +809,9 @@
       "Refresh the page": [
         "Sayfayı yenile"
       ],
+      "Reject": [
+        "Reddet"
+      ],
       "Reload": [
         "Yenile"
       ],
@@ -964,6 +967,9 @@
       ],
       "Select rating ${ n } out of ${ to }": [
         "Değerlendirin ${ n } / ${ to }"
+      ],
+      "Send": [
+        "Gönder"
       ],
       "Send Feedback": [
         "Geri bildirim gönder"
@@ -1270,6 +1276,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)",
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ek özel etki alanı",
         "${ domains } ek özel etki alanı"
@@ -1278,11 +1288,22 @@
         "${ ips } size ayrılmış VPN sunucusu",
         "${ ips } size ayrılmış VPN sunucusu"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } yapay zeka yardımcısı"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)",
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } yapay zeka lisansı"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } koltuğu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)",
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)"
       ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
@@ -1295,6 +1316,10 @@
       ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } özel etki alanı",
+        "${ quantity } özel etki alanı"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
@@ -1353,7 +1378,7 @@
         "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ BRAND_NAME } Scribe tarafından yardım alın."
       ],
       "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
-        "E-posta üretkenliğinizi yeni seviyelere taşıyın. ${ LUMO_SHORT_APP_NAME } ile e-postalarınızı yazın, yanıtlayın ve düzeltin."
+        "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ LUMO_SHORT_APP_NAME } tarafından yardım alın."
       ]
     },
     "Attached ics file error": {
@@ -1396,7 +1421,7 @@
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } adet ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansına sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } tane ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansınız olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
@@ -1514,8 +1539,8 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir.",
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresleri, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
@@ -1525,7 +1550,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. 15 e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
@@ -5124,7 +5149,7 @@
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
       "${ LUMO_APP_NAME } includes the writing assistant": [
-        "${ LUMO_APP_NAME } yazma yardımcısını içerir"
+        "${ LUMO_APP_NAME } içinde yazma yardımcısı bulunur"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
@@ -6649,14 +6674,14 @@
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Bu dosyaları indirmek için ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } içinde açın ve dışa aktarın."
       ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Arama özelliği sağlayabilmek için dosyalarınızın yerel olarak dizine eklenmesi gerekir. Bu işlem yapılırken ${ DRIVE_APP_NAME } uygulamasını normal olarak kullanmayı sürdürebilirsiniz. Dizine ekleme işlemi tamamlandığında sizi bilgilendireceğiz. Bu sayfadan ayrılırsanız dizine ekleme işlemi duraklatılır ve geri döndüğünüzde yeniden başlatılır."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Gerçek gizliliği koruyan arama özelliğini açmak için yerel dizini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
-      ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "Gerçek bir arama özelliği sağlayabilmek için dosyalarınızın yerel olarak dizine eklenmesi gerekir. Bu işlem yapılırken ${ DRIVE_APP_NAME } uygulamasını normal olarak kullanmayı sürdürebilirsiniz. Dizine ekleme işlemi tamamlandığında sizi bilgilendireceğiz. Bu sayfadan ayrılırsanız dizine ekleme işlemi duraklatılır ve geri döndüğünüzde yeniden başlatılır."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -7273,6 +7298,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Düzenleyiciler izinleri değiştirebilsin ve paylaşabilsin"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Düzenleyiciler izinleri değiştirebilsin ve paylaşabilsin."
       ],
       "Anderson": [
         "Kaya"
@@ -8257,6 +8285,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)",
+        "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } lisansı"
       ],
@@ -9360,7 +9392,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Şirket kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -10652,7 +10684,7 @@
         "Parola seçin"
       ],
       "Company name": [
-        "Kuruluş adı"
+        "Birim adı"
       ],
       "Cortex Inc.": [
         "Cortex Inc."
@@ -11561,6 +11593,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Bu ögenin bağlantısı Drive depolama alanınıza kaydedildi. Daha sonra 'Benimle paylaşılan' bölümünden erişebilirsiniz."
+      ],
+      "Editor permissions": [
+        "Düzenleyici izinleri"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Düzenleyiciler artık paylaşımları yönetebilir ve başkalarını davet edebilir. Bu özelliği paylaşım ayarlarından istediğiniz zaman kapatabilirsiniz."
       ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
