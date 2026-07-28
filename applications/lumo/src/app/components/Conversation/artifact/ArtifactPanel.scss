@@ -3,6 +3,15 @@
 	block-size: 100%;
 }
 
+.artifact-inline-edit {
+	border: 1px solid var(--border-norm);
+	z-index: var(--z-up, 10);
+}
+
+.artifact-inline-edit-input::placeholder {
+	color: var(--text-hint);
+}
+
 .artifact-panel-header {
 	min-block-size: 44px;
 }
