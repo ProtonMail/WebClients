@@ -124,11 +124,11 @@
       "Bulk restore items from trash": [
         "Çöpteki ögeleri toplu olarak çıkar"
       ],
-      "Bulk select items": [
-        "Ögeleri toplu olarak seç"
-      ],
       "Cancel": [
         "İptal"
+      ],
+      "Cancel bulk selection": [
+        "Toplu seçimi iptal et"
       ],
       "Cancel email change": [
         "E-posta değişikliğini iptal et"
@@ -151,8 +151,14 @@
       "Clear": [
         "Temizle"
       ],
+      "Clear item type filter": [
+        "Öge türü süzgecini temizle"
+      ],
       "Clear search": [
         "Aramayı temizle"
+      ],
+      "Clear sort filter": [
+        "Sıralama süzgecini temizle"
       ],
       "Close": [
         "Kapat"
@@ -508,9 +514,6 @@
       "Move to Trash": [
         "Çöpe at"
       ],
-      "Multiple select": [
-        "Çoklu seçim"
-      ],
       "New token": [
         "Yeni kod"
       ],
@@ -616,6 +619,9 @@
       "Reset": [
         "Sıfırla"
       ],
+      "Reset filters": [
+        "Süzgeçleri sıfırla"
+      ],
       "Reset history": [
         "Geçmişi sil"
       ],
@@ -654,6 +660,9 @@
       ],
       "See members": [
         "Üyeleri görüntüle"
+      ],
+      "Select items": [
+        "Ögeleri seçin"
       ],
       "Send email": [
         "E-posta gönder"
@@ -700,9 +709,6 @@
       "Skip": [
         "Atla"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Birisi sizinle ${ PASS_APP_NAME } üzerinde bir öge paylaştı."
-      ],
       "Sort vault items": [
         "Kasa ögelerini sırala"
       ],
@@ -714,6 +720,9 @@
       ],
       "Submitting report...": [
         "Rapor gönderiliyor..."
+      ],
+      "Switch vault": [
+        "Kasayı değiştir"
       ],
       "Sync alias": [
         "Takma adı eşitle",
@@ -1392,9 +1401,6 @@
       "Trashing item failed": [
         "Öge çöpe atılamadı"
       ],
-      "Try reaching out to the link owner.": [
-        "Bağlantının sahibiyle görüşmeyi deneyin."
-      ],
       "Unable to generate an OTP code for this item": [
         "Bu öge için tek kullanımlık parola üretilemedi"
       ],
@@ -1426,7 +1432,7 @@
         "Desteklenmeyen Bitwarden dosya biçimi"
       ],
       "Unsupported file type": [
-        "Desteklenmeyen dosya türü"
+        "Dosya türü desteklenmiyor"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası güncellenemedi"
@@ -2201,8 +2207,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -4030,9 +4035,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Bu ögeye ${ date } tarihine kadar veya görüntüleme sayısı sınırına ulaşılana kadar erişilebilir."
       ],
       "Tier/Level": [
         "Sınıf/Düzey"

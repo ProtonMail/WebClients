@@ -1683,9 +1683,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "Спробуйте ${ selected } ${ freeForNDays }"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Спробуйте безплатно протягом ${ TRIAL_DURATION_DAYS } днів"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Якщо ви скасуєте безплатний пробний період, його не буде перетворено на платну передплату, але ви все одно зможете користуватися перевагами тарифного плану до кінця пробного періоду. Після цього ваш тарифний план буде змінено на нижчий — ${ BRAND_NAME } Free plan."
       ],
@@ -13555,70 +13552,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Залишити цей план"
-      ],
       "Start using ${ appName }": [
         "Почати використовувати ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Покращити тарифний план"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Поговорімо"
-      ],
-      "Recommended": [
-        "Рекомендовано"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } на місяць"
-      ],
-      "/month /user": [
-        "/місяць /користувач"
-      ],
-      "/month /user, billed annually": [
-        "/місяць /користувач, сплачується щороку"
-      ],
-      "/month /user, billed biennially": [
-        "/місяць /користувач, сплачується кожні два роки"
-      ],
-      "Current plan": [
-        "Поточний план"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до преміального менеджера паролів ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до преміального сервісу VPN від ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до всіх преміумсервісів ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Безплатно назавжди"
-      ],
-      "Get in touch with our sales team": [
-        "Зв'яжіться з нашим відділом продажів"
-      ],
-      "Includes:": [
-        "Включає:"
-      ],
-      "per month": [
-        "на місяць"
-      ],
-      "per month, billed annually": [
-        "на місяць, оплачується щороку"
-      ],
-      "per month, billed every month": [
-        "на місяць, рахунок виставляється щомісяця"
-      ],
-      "per month, billed every two years": [
-        "на місяць, рахунок виставляється кожні два роки"
-      ],
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
       ],

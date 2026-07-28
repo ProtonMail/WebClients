@@ -189,6 +189,9 @@
       "Clear browser data": [
         "Effacer les données du navigateur"
       ],
+      "Clear conversation": [
+        "Effacer la conversation"
+      ],
       "Clear data": [
         "Effacer les données"
       ],
@@ -809,6 +812,9 @@
       "Refresh the page": [
         "Actualiser la page"
       ],
+      "Reject": [
+        "Refuser"
+      ],
       "Reload": [
         "Recharger"
       ],
@@ -965,6 +971,9 @@
       "Select rating ${ n } out of ${ to }": [
         "Choisir une note entre ${ n } et ${ to }"
       ],
+      "Send": [
+        "Envoyer"
+      ],
       "Send Feedback": [
         "Envoyer un commentaire"
       ],
@@ -1066,6 +1075,9 @@
       ],
       "Stay": [
         "Rester"
+      ],
+      "Stop": [
+        "Arrêter"
       ],
       "Stop sharing": [
         "Arrêter le partage"
@@ -1270,6 +1282,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateurs)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domaine personnalisé supplémentaire",
         "${ domains } domaines personnalisés supplémentaires"
@@ -1278,11 +1294,22 @@
         "${ ips } serveur VPN dédié",
         "${ ips } serveurs VPN dédiés"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistant IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } licence IA"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } accès"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateurs)"
       ],
       "${ price } per dedicated server": [
         "${ price } par serveur dédié"
@@ -1295,6 +1322,10 @@
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domaine personnalisé",
+        "${ quantity } domaines personnalisés"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licence IA ${ LUMO_APP_NAME }",
@@ -6560,6 +6591,9 @@
       "There is nothing to see here": [
         "Il n'y a aucune donnée à afficher."
       ],
+      "Thinking about this": [
+        "Réflexion en cours..."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Cette action supprimera le lien et révoquera l'accès de tous les utilisateurs."
       ],
@@ -6649,14 +6683,14 @@
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Pour télécharger ces fichiers, ouvrez-les dans ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME } et exportez-les."
       ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Pour activer la recherche, nous devons indexer vos fichiers localement. Vous pouvez continuer à utiliser ${ DRIVE_APP_NAME } normalement, nous vous informerons lorsque l’indexation sera terminée. Si vous quittez cette page, l’indexation sera mise en pause et reprendra lorsque vous reviendrez."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Pour que la recherche soit réellement privée, ${ DRIVE_APP_NAME } doit indexer vos fichiers localement."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Pour permettre une recherche vraiment privée, nous devons indexer vos fichiers localement. Vous pouvez utiliser ${ DRIVE_APP_NAME } normalement. Nous vous informerons quand l'indexation sera terminée."
-      ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "Pour activer la recherche complète, nous devons indexer vos fichiers localement. Vous pouvez continuer à utiliser ${ DRIVE_APP_NAME } normalement, nous vous informerons lorsque l’indexation sera terminée. Si vous quittez cette page, l’indexation sera mise en pause et reprendra lorsque vous reviendrez."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
@@ -7276,6 +7310,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Permettre aux éditeurs de modifier les autorisations et de partager"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Permettre aux éditeurs de modifier les autorisations et de partager."
       ],
       "Anderson": [
         "Durant"
@@ -8260,11 +8297,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateur)",
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
       "${ MEET_APP_NAME } license": [
         "licence ${ MEET_APP_NAME }"
       ],
       "${ MEET_APP_NAME } seats": [
         "accès ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } par accès"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } accès ${ MEET_APP_NAME }",
@@ -10708,6 +10752,9 @@
       "Anytown": [
         "Boisclair"
       ],
+      "Ask anything…": [
+        "Demandez ce que vous voulez…"
+      ],
       "Choose password": [
         "Choisir un mot de passe"
       ],
@@ -11621,6 +11668,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Un lien vers cet élément a été enregistré dans votre drive. Vous pourrez y accéder ultérieurement dans la section « Partagé avec moi »."
+      ],
+      "Editor permissions": [
+        "Autorisations de l'éditeur"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Les éditeurs peuvent désormais gérer le partage et inviter d'autres personnes. Vous pouvez le désactiver à tout moment dans les paramètres de partage."
       ],
       "Encrypted search is here": [
         "La recherche chiffrée se trouve ici."

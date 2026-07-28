@@ -1283,6 +1283,9 @@
       "Verify password": [
         "验证密码"
       ],
+      "Verify recovery phrase": [
+        "验证恢复短语"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "验证域 ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1673,9 +1676,6 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "尝试 ${ selected } ${ freeForNDays }"
-      ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "免费试用 ${ TRIAL_DURATION_DAYS } 天"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "取消后，您的免费试用将不会转换为付费订阅，但您在试用期结束前仍可享受套餐权益。之后，您的服务将降级为 ${ BRAND_NAME } 免费套餐。"
@@ -5210,6 +5210,9 @@
       "This label name is not available. Please choose a different name.": [
         "标签名称不可用，请重新填写。"
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "此短语无法恢复您的账户！您可以生成一个新的恢复短语，以确保将来能够恢复账户。"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "如需创建非私密用户账户并访问其账户，您需要恢复管理员权限。"
       ],
@@ -7274,6 +7277,9 @@
       "Change your password": [
         "更改密码"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "检查您的恢复短语是否可用于完全恢复您的账户。"
+      ],
       "Choose a plan that works best for you.": [
         "选择最适合您的套餐！"
       ],
@@ -8494,6 +8500,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "恢复短语未关联任何过时的密钥！"
+      ],
+      "Recovery phrase verified": [
+        "恢复短语已验证"
       ],
       "Reddit": [
         "Reddit"
@@ -11262,6 +11271,9 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 席位"
       ],
+      "${ price } per seat": [
+        "${ price } 每席位"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } 个 ${ MEET_APP_NAME } 席位"
       ]
@@ -13162,70 +13174,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "保留此套餐"
-      ],
       "Start using ${ appName }": [
         "开始使用 ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "升级账户"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "让我们聊聊"
-      ],
-      "Recommended": [
-        "推荐"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ 每月 ${ relativePrice }"
-      ],
-      "/month /user": [
-        "/月/用户"
-      ],
-      "/month /user, billed annually": [
-        "/月/用户，每年计费"
-      ],
-      "/month /user, billed biennially": [
-        "/月/用户，每两年计费"
-      ],
-      "Current plan": [
-        "当前方案"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "仅需**每月 ${ relativePrice }**，您便可以访问所有 ${ BRAND_NAME } 的高级密码管理器！"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "仅需**每月 ${ relativePrice }**，您便可以访问所有 ${ BRAND_NAME } 的高级 VPN 服务！"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "仅需**每月 ${ relativePrice }**，您便可以访问所有高级 ${ BRAND_NAME } 服务！"
-      ],
-      "Free forever": [
-        "永久免费"
-      ],
-      "Get in touch with our sales team": [
-        "联系我们的销售团队"
-      ],
-      "Includes:": [
-        "包含:"
-      ],
-      "per month": [
-        "每月"
-      ],
-      "per month, billed annually": [
-        "每月，每年计费"
-      ],
-      "per month, billed every month": [
-        "每月，每 个月计费一次"
-      ],
-      "per month, billed every two years": [
-        "每月，每两年结算一次"
-      ],
       "Secure vault sharing": [
         "安全保险库共享"
       ],
@@ -18206,6 +18159,9 @@
       ],
       "Verify your password": [
         "请验证您的密码"
+      ],
+      "Verify your phrase": [
+        "验证您的短语"
       ],
       "Verifying your card...": [
         "正在验证您的银行卡..."

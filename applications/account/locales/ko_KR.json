@@ -360,6 +360,9 @@
       "Connected": [
         "연결됨"
       ],
+      "Contact sales": [
+        "영업팀 문의"
+      ],
       "Contact support": [
         "문의하기"
       ],
@@ -1851,6 +1854,9 @@
       "Verify password": [
         "비밀번호 확인"
       ],
+      "Verify recovery phrase": [
+        "복구 키 확인"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "${ unverifiedSSODomain.DomainName } 도메인 인증하기"
       ],
@@ -1967,6 +1973,9 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } 이용 권한"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 (${ quantity }명 사용자용)"
       ],
       "${ price } per dedicated server": [
         "전용 서버당 ${ price }"
@@ -2277,6 +2286,9 @@
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
       ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "이메일 생산성을 한 단계 더 높은 경지로. ${ LUMO_SHORT_APP_NAME }가 이메일의 작성과 답장, 교정에 도움을 드립니다."
+      ],
       "Trial expires on ${ formattedDate }": [
         "${ formattedDate }에 체험이 만료됩니다."
       ],
@@ -2357,6 +2369,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "체험 기간 동안 최대 ${ TRIAL_MAX_LUMO_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 계정을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 시트를 포함할 수 있습니다."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "체험 기간 동안 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 Scribe 사용 권한을 추가할 수 있습니다."
@@ -2554,11 +2569,17 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "이메일과 일정을 종단간 암호화로 보호하세요. 15개 이메일 주소, 사용자 지정 도메인 지원, 무제한 hide-my-email 별칭 등이 포함되어 있습니다."
@@ -7687,6 +7708,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "이 복구 키로 계정을 복구할 수 없습니다. 추후 계정 복구를 위해 복구 키를 새로 생성할 수 있습니다."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "개인이 아닌 사용자를 생성하거나 해당 계정에 접근하도록 하려면, 관리자 권한을 복원해야만 합니다."
       ],
@@ -9765,6 +9789,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% 할인"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME }가 더 이상 이전 버전의 파일을 보관하지 않습니다."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 이(가) 유효하지 않음"
       ],
@@ -9794,6 +9821,12 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME }에 글쓰기 도우미가 포함됩니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }"
@@ -10380,9 +10413,6 @@
       "Available on macOS, Windows, and Linux.": [
         "macOS, Windows 및 Linux에서 사용 가능"
       ],
-      "Average": [
-        "평균"
-      ],
       "Awaiting transaction": [
         "거래 대기 중"
       ],
@@ -10487,6 +10517,9 @@
       ],
       "Change your password": [
         "비밀번호를 변경하십시오"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "계정을 완전하게 복구하기 위해 복구 키 사용 가능 여부를 확인하세요."
       ],
       "Check your network and try again.": [
         "네트워크 상태 확인 후 다시 시도하세요."
@@ -10800,6 +10833,9 @@
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "프로파일 설치를 위해 ${ mobileConfigArtifact } 다운로드 후 각각의 Mac에서 해당 프로파일을 실행합니다. 그다음 시스템 설정에서 프로파일(macOS 설정상에선 프로필)을 승인합니다."
       ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "자동으로 기기에 프로파일이 설치될 수 있도록 ${ powershellArtifact } 다운로드 후 각 기기에 시스템 사용자로 실행하세요."
+      ],
       "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
         "프로파일을 자동 삭제하려면 ${ removeScriptLink } 다운로드 후 시스템 사용자로 로그인한 상태에서 해당 프로파일을 실행하십시오."
       ],
@@ -11075,6 +11111,9 @@
       ],
       "for ${ price }": [
         "${ price }으로"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "10년 버전 기록은 영업팀에 문의하세요."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ androidAppLink } 또는 ${ iosAppLink } 을(를)다운로드하세요."
@@ -11718,8 +11757,14 @@
       "No addresses exist": [
         "주소 없음"
       ],
+      "No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.": [
+        "발행된 결제 명세서가 없습니다. 결제 주기에 따른 명세서가 여기 나타납니다. 명세서는 CSV 파일로 다운로드할 수 있습니다."
+      ],
       "No card required": [
         "카드 정보 필요 없음"
+      ],
+      "No companies yet. Start by creating a new company.": [
+        "아직 소속 회사가 없습니다. 새 회사를 생성하세요."
       ],
       "No connected addresses.": [
         "연결된 주소가 없습니다."
@@ -11916,9 +11961,6 @@
       "per month, billed at ${ price }": [
         "월간, ${ price }(으)로 청구됨"
       ],
-      "Per seat/month": [
-        "시트당/월별"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "${ BRAND_NAME } 비밀번호를 앚어버리지 않도록 주기적으로 현재 비밀번호 확인을 요청합니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
       ],
@@ -12054,6 +12096,9 @@
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
       ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "사용 중인 MDM으로 모든 Mac에 ${ mobileConfigArtifact }을(를) 배포하세요."
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME }에 대한 도움이 필요하면 저희에게 연락하세요."
       ],
@@ -12098,6 +12143,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "복구 방법이 오래된 키와 연결되지 않았습니다."
+      ],
+      "Recovery phrase verified": [
+        "복구 키가 확인되었습니다"
       ],
       "Reddit": [
         "Reddit"
@@ -12627,6 +12675,9 @@
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "이 작업을 실행하면 ${ rententionLabel }보다 오래된 모든 이전 버전의 파일이 삭제됩니다."
       ],
+      "This will delete all previous versions of your files.": [
+        "기존 버전의 파일이 모두 삭제됩니다."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "이 작업은 **${ email }**의 접근을 거절합니다. 정말 계속하시겠어요?"
       ],
@@ -12716,6 +12767,9 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "암호 재설정 후 잠긴 데이터를 해독하고 보려면 복구 방법을 선택하세요."
+      ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "VPN 항상 켜기를 활성화하려면 모든 Mac에 구성 프로파일이 설치되어 있어야 합니다. ${ VPN_APP_NAME } 클라이언트가 기기에 제자리로 설치되면 자동으로 기기의 프로파일을 강제화합니다."
       ],
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
         "VPN 항상 켜기를 활성화하려면 모든 기기에서 ${ policiesPath }에 접근하도록 기기 프로파일이 필요합니다. ${ VPN_APP_NAME } 클라이언트가 감지 후 프로파일을 자동으로 설치합니다."
@@ -12859,7 +12913,7 @@
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
       "Upgrade to unlock": [
-        "잠금해제하려면 업그레이드"
+        "업그레이드하여 잠금 해제"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } 잠금 해제하려면 업그레이드"
@@ -14446,6 +14500,9 @@
       "Beta": [
         "베타"
       ],
+      "Billable licenses": [
+        "결제 가능한 라이선스"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "매 12개월마다 ${ priceYearly }으(로) 청구됩니다."
       ],
@@ -14455,10 +14512,10 @@
       "Billed monthly.": [
         "매달 청구."
       ],
-      "Billed seats": [
-        "청구된 시트"
-      ],
       "Billing cycle": [
+        "결제 주기"
+      ],
+      "Billing period": [
         "결제 주기"
       ],
       "Block": [
@@ -14539,6 +14596,12 @@
       "City": [
         "시/군/구"
       ],
+      "Client": [
+        "클라이언트"
+      ],
+      "Client version": [
+        "클라이언트 버전"
+      ],
       "Code is 6 digits without spaces": [
         "코드는 공백 없이 6자리에요."
       ],
@@ -14556,9 +14619,6 @@
       ],
       "Common passwords": [
         "흔한 비밀번호"
-      ],
-      "Companies": [
-        "회사"
       ],
       "Company": [
         "회사"
@@ -14629,8 +14689,8 @@
       "Copy IP address to clipboard": [
         "클립보드에 IP 주소 복사"
       ],
-      "Cost": [
-        "비용"
+      "Cost per license": [
+        "라이선스 당 가격"
       ],
       "Could you please let us know which provider?": [
         "어느 제공자인지 말해주실 수 있나요?"
@@ -14741,7 +14801,7 @@
         "다시 묻지 않기"
       ],
       "Don't keep versions": [
-        "버전 유지하지 않기"
+        "버전 유지 안 함"
       ],
       "Don't show this again": [
         "다시 보지 않기"
@@ -15093,6 +15153,9 @@
       ],
       "Manage categories": [
         "카테고리 관리"
+      ],
+      "Managed Companies": [
+        "관리 중인 회사"
       ],
       "Mark as": [
         "표시"
@@ -16479,8 +16542,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 추가"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 추가"
       ],
       "Add-on with free trial": [
         "무료 체험 애드온"
@@ -17219,6 +17288,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 와(과) ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ],
       "${ n } calendar": [
         "캘린더 ${ n }개"
@@ -20151,7 +20223,7 @@
         "정보 보호 기능이 포함된 비밀번호 관리자"
       ],
       "Secure email that protects your privacy": [
-        "프라이버시를 지켜주는 이메일로 보호하세요."
+        "나의 프라이버시를 지켜주는 안전한 이메일"
       ],
       "Your gateway to online freedom": [
         "온라인 자유를 위한 안전한 길"
@@ -21949,7 +22021,7 @@
         "이메일로 댓글에 대한 업데이트 받기"
       ],
       "Include document name in email notifications": [
-        "이메일 알림에 문서 이름 포함"
+        "이메일 알림 내에서 문서 이름 포함"
       ]
     },
     "Settings description": {
@@ -23370,6 +23442,9 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses }개 전용 서버"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ maxAi }명 사용자용 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ],
       "${ n } calendar per user": [
         "사용자 당 ${ n }개 캘린더"
@@ -24955,6 +25030,9 @@
       "Currency": [
         "통화"
       ],
+      "Current cost": [
+        "현재 비용"
+      ],
       "Custom": [
         "사용자화"
       ],
@@ -26296,6 +26374,9 @@
       "Verify your password": [
         "비밀번호 확인"
       ],
+      "Verify your phrase": [
+        "복구 키 확인"
+      ],
       "Verifying your card...": [
         "카드 인증 중..."
       ],
@@ -27037,6 +27118,9 @@
       "Could not enable admin access for ${ n } user": [
         "${ n }명 사용자에 대한 관리자 접근 권한 활성화를 할 수 없음"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "관리자 권한 활성화 불가 : ${ unprivatizationResult.error }"
+      ],
       "Enable admin access?": [
         "관리자 권한을 활성화합니까?"
       ],
@@ -27105,6 +27189,9 @@
       ],
       "View request": [
         "요청 보기"
+      ],
+      "Waiting for admin approval": [
+        "관리자의 승인을 기다리는 중"
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "원치 않는다면 이 요청을 ${ reject } 가능합니다."
@@ -27305,8 +27392,14 @@
       "Invitation sent, awaiting reply from the invited member": [
         "초대장을 보냈습니다. 초대받은 구성원의 응답을 기다리고 있습니다."
       ],
+      "Invited": [
+        "초대됨"
+      ],
       "Pending": [
         "보류 중"
+      ],
+      "Requested": [
+        "요청됨"
       ],
       "SSO user provided by your identity provider": [
         "SSO 사용자는 사용자의 정보 제공사로부터 제공되었습니다."

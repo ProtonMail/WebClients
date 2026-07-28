@@ -1283,6 +1283,9 @@
       "Verify password": [
         "Verifiera lösenord"
       ],
+      "Verify recovery phrase": [
+        "Verifiera återställningsfras"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifiera domänen ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1633,6 +1636,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ LUMO_SHORT_APP_NAME } hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ]
     },
     "Attached ics file error": {
@@ -1682,9 +1688,6 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Prova ${ selected } ${ freeForNDays }"
-      ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Prova det gratis i ${ TRIAL_DURATION_DAYS } dagar"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din gratis provperiod inte att omvandlas till en betald prenumeration, men du kan fortfarande dra nytta av paketförmåner fram till slutet av provperioden. Därefter kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
@@ -1873,6 +1876,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ LUMO_SHORT_APP_NAME } skrivassistent, obegränsade hide-my-email-alias och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
@@ -5238,6 +5244,9 @@
       "This label name is not available. Please choose a different name.": [
         "Detta etikettnamn är inte tillgängligt. Välj ett annat namn."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Denna fras kan inte återställa ditt konto. Du kan generera en ny för att säkerställa att ditt konto kan återställas i framtiden."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "För att skapa icke-privata användarkonton och komma åt deras konton måste du återställa dina administratörsrättigheter."
       ],
@@ -7367,6 +7376,9 @@
       "Change your password": [
         "Ändra ditt lösenord"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Kontrollera om din återställningsfras kan användas för att helt återställa ditt konto."
+      ],
       "Choose a plan that works best for you.": [
         "Välj ett paket som passar dig bäst."
       ],
@@ -7603,6 +7615,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
+      ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Ladda ner ${ mobileConfigArtifact } och öppna den på varje Mac för att installera profilen. Godkänn den sedan i systeminställningarna."
       ],
       "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
         "Ladda ner ${ powershellArtifact } och kör den på varje enhet som systemanvändare för att automatiskt placera enhetsprofilen."
@@ -7886,6 +7901,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Have some more time to decide without interruption.": [
+        "Ha lite mer tid att bestämma utan avbrott."
+      ],
       "here": [
         "här"
       ],
@@ -8127,6 +8145,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Håll din information mer säker och privat med dessa guider och tips."
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Håll dina lösenord säkra och logga in direkt med automatisk ifyllning på alla enheter."
       ],
       "Keys created": [
         "Nycklar skapade"
@@ -8563,6 +8584,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Återställningsfras är inte associerad med några föråldrade nycklar."
+      ],
+      "Recovery phrase verified": [
+        "Återställningsfras verifierad"
       ],
       "Reddit": [
         "Reddit"
@@ -13277,70 +13301,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Behåll detta paket"
-      ],
       "Start using ${ appName }": [
         "Börja använda ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Uppgradera mitt paket"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Låt oss prata"
-      ],
-      "Recommended": [
-        "Rekommenderad"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } per månad"
-      ],
-      "/month /user": [
-        "/månad/användare"
-      ],
-      "/month /user, billed annually": [
-        "/månad/användare, faktureras årligen"
-      ],
-      "/month /user, billed biennially": [
-        "/månad/användare, faktureras vartannat år"
-      ],
-      "Current plan": [
-        "Nuvarande paket"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium lösenordshanterare för ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium VPN-tjänster för ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "För endast **${ relativePrice } per månad** mer får du åtkomst till alla premiumtjänster för ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Gratis för alltid"
-      ],
-      "Get in touch with our sales team": [
-        "Ta kontakt med vårt säljteam"
-      ],
-      "Includes:": [
-        "Inkluderar:"
-      ],
-      "per month": [
-        "per månad"
-      ],
-      "per month, billed annually": [
-        "per månad, faktureras årligen"
-      ],
-      "per month, billed every month": [
-        "per månad, faktureras varje månad"
-      ],
-      "per month, billed every two years": [
-        "per månad, faktureras vartannat år"
-      ],
       "Secure vault sharing": [
         "Säker valvdelning"
       ],
@@ -18405,6 +18370,9 @@
       "Verify your password": [
         "Verifiera ditt lösenord"
       ],
+      "Verify your phrase": [
+        "Verifiera din fras"
+      ],
       "Verifying your card...": [
         "Verifierar ditt kort …"
       ],
@@ -18960,6 +18928,9 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "För att fortsätta måste du begära användarens tillåtelse att komma åt deras data eller återställa deras lösenord."
+      ],
+      "Waiting for admin approval": [
+        "Väntar på godkännande från administratör"
       ],
       "You can safely remove this user from your organization.": [
         "Du kan säkert ta bort denna användare från din organisation.",

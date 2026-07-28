@@ -1139,6 +1139,9 @@
       "Refresh the page": [
         "Osvježi stranicu"
       ],
+      "Reject": [
+        "Odbiti"
+      ],
       "Remove": [
         "Ukloni"
       ],
@@ -1773,6 +1776,11 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)",
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)",
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dodatna prilagođena domena",
         "${ domains } dodatne prilagođene domene",
@@ -1782,6 +1790,14 @@
         "${ ips } namjenski VPN poslužitelj",
         "${ ips } namjenska VPN poslužitelja",
         "${ ips } namjenskih VPN poslužitelja"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)",
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)",
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licenca"
@@ -1800,6 +1816,11 @@
       ],
       "${ price } per user": [
         "${ price } po korisniku"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } prilagođena domena",
+        "${ quantity } prilagođene domene",
+        "${ quantity } prilagođenih domena"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } AI licenca za ${ LUMO_APP_NAME }",
@@ -7542,6 +7563,9 @@
       "Default email application": [
         "Zadano apl. e-pošte"
       ],
+      "Details": [
+        "Pojedinosti"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Otkrivanje se odvija na vašem uređaju, tako da se nikakvi podaci iz vaše e-pošte ne šalju na naše poslužitelje."
       ],
@@ -11099,6 +11123,11 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)"
+      ],
       "${ MEET_APP_NAME } license": [
         "licenca za ${ MEET_APP_NAME }"
       ],
@@ -15404,11 +15433,6 @@
         "Premjesti ${ selectionCount } poruku",
         "Premjesti ${ selectionCount } poruke",
         "Premjesti ${ selectionCount } poruka"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Premješteno u ${ label }. Slična poruka bit će kategorizirana ovdje u budućnosti.",
-        "Premješteno u ${ label }. Slične poruke bit će kategorizirane ovdje u budućnosti.",
-        "Premješteno u ${ label }. Slične poruke bit će kategorizirane ovdje u budućnosti."
       ],
       "Password copied to clipboard": [
         "Lozinka je kopirana u međuspremnik"

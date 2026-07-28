@@ -527,6 +527,9 @@
       "Forgot password?": [
         "Passwort vergessen?"
       ],
+      "Generate device profile": [
+        "Geräteprofil erstellen"
+      ],
       "Generate new phrase": [
         "Neue Wiederherstellungsphrase erzeugen"
       ],
@@ -1280,6 +1283,9 @@
       "Verify password": [
         "Passwort bestätigen"
       ],
+      "Verify recovery phrase": [
+        "Wiederherstellungsphrase bestätigen"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Die Domain ${ unverifiedSSODomain.DomainName } verifizieren"
       ],
@@ -1682,9 +1688,6 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Teste ${ selected } ${ freeForNDays }"
-      ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Teste es ${ TRIAL_DURATION_DAYS } Tage kostenlos"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird deine kostenlose Testversion nicht in ein kostenpflichtiges Abonnement umgewandelt, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Testzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
@@ -5251,6 +5254,9 @@
       "This label name is not available. Please choose a different name.": [
         "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Diese Phrase kann dein Konto nicht wiederherstellen. Du kannst eine neue Phrase erstellen, um sicherzustellen, dass dein Konto in Zukunft wiederhergestellt werden kann."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Um nicht-private Benutzerkonten zu erstellen und auf ihre Konten zuzugreifen, musst du deine Administratorrechte wiederherstellen."
       ],
@@ -7377,11 +7383,17 @@
       "Change your password": [
         "Passwort ändern"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Überprüfe, ob sich deine Wiederherstellungsphrase zur vollständigen Wiederherstellung deines Kontos verwenden lässt."
+      ],
       "Choose a plan that works best for you.": [
         "Wähle ein Abonnement, das am besten für dich funktioniert."
       ],
       "Choose an Entity ID to continue.": [
         "Wähle eine Entitäts-ID, um fortzufahren."
+      ],
+      "Choose one:": [
+        "Eins wählen:"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
@@ -7541,6 +7553,9 @@
       "Deploy ${ regoArtifact } directly via your MDM file deployment": [
         "${ regoArtifact } direkt über die MDM-Datei-Verteilung bereitstellen"
       ],
+      "Deploy across all your managed devices": [
+        "Auf all deinen verwalteten Geräten bereitstellen"
+      ],
       "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
         "Stelle es über dein MDM (Jamf, Intune…) oder manuell auf jedem Gerät bereit."
       ],
@@ -7625,6 +7640,9 @@
       ],
       "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
         "${ powershellArtifact } herunterladen und es auf jedem Gerät als Systembenutzer ausführen, um das Geräteprofil automatisch zu installieren."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "${ removeScriptLink } herunterladen und auf jedem Gerät als Systembenutzer ausführen, um das Profil automatisch zu löschen."
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } herunterladen"
@@ -7853,6 +7871,9 @@
       ],
       "Gateways": [
         "Gateways"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Erstelle ein Geräteprofil und lade eine Konfigurationsdatei herunter."
       ],
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Durch das Erstellen einer neuen Wiederherstellungsphrase wird deine aktuelle Wiederherstellungsphrase deaktiviert."
@@ -8345,6 +8366,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Sobald der Zugriff auf dein Konto gewährt wurde, können sie auf deine **Wiederherstellungs**-Einstellungen zugreifen und dein ${ ACCOUNT_APP_NAME }-Passwort für dich **ändern**."
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Nach der erfolgreichen Bereitstellung kann es bis zu einigen Stunden dauern, bis die Geräte die Richtlinie erkannt und umgesetzt haben."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Hier können nur Groß- und Kleinschreibung sowie Zeichensetzung (Punkte, Bindestriche und Unterstriche) geändert werden. Um eine andere E-Mail-Adresse zu verwenden, füge eine neue hinzu."
       ],
@@ -8591,6 +8615,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Wiederherstellungsphrase ist nicht an einen veralteten Schlüssel gebunden."
+      ],
+      "Recovery phrase verified": [
+        "Wiederherstellungsphrase verifiziert"
       ],
       "Reddit": [
         "Reddit"
@@ -9048,6 +9075,9 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Um Always-on-VPN zu aktivieren, muss das Konfigurationsprofil auf jedem Mac installiert werden – der ${ VPN_APP_NAME }-Client wendet das Geräteprofil automatisch an, sobald es vorhanden ist."
       ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Um „Always-on-VPN“ zu aktivieren, muss das Geräteprofil auf jedem Gerät unter ${ policiesPath } abgelegt sein – der ${ VPN_APP_NAME }-Client erkennt es dort und übernimmt das Profil automatisch."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere die **Wiederherstellung per Wiederherstellungs-E-Mail-Adresse**."
       ],
@@ -9212,6 +9242,9 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Ein anderes MDM verwenden? Jedes MDM, das die Bereitstellung eines Konfigurationsprofils unterstützt, ist geeignet. Informationen zum Hochladen und Zuweisen des Profils zu deinem Gerätepark findest du in der Dokumentation deines MDM."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Wird eine andere MDM-Lösung (Mobilgeräteverwaltung) verwendet? Jede MDM-Lösung, die das Bereitstellen von Dateien oder das Ausführen von PowerShell-Skripten unterstützt, ist geeignet. Weitere Informationen werden in der Dokumentation deiner MDM-Lösung bereitgestellt."
       ],
       "Vault created": [
         "Tresor erstellt"
@@ -10000,6 +10033,9 @@
       ],
       "App password": [
         "App-Passwort"
+      ],
+      "Applies:": [
+        "Gilt für:"
       ],
       "Apply policy to": [
         "Richtlinie anwenden auf"
@@ -11379,6 +11415,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ price } per seat": [
+        "${ price } pro Lizenz"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } Lizenz",
@@ -13320,70 +13359,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Dieses Abonnement beibehalten"
-      ],
       "Start using ${ appName }": [
         "Beginne, ${ appName } zu verwenden"
-      ],
-      "Upgrade my plan": [
-        "Abonnement upgraden"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Lass uns reden"
-      ],
-      "Recommended": [
-        "Empfohlen"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } pro Monat"
-      ],
-      "/month /user": [
-        "/Monat/Benutzer"
-      ],
-      "/month /user, billed annually": [
-        "/Monat/Benutzer, jährlich abgerechnet"
-      ],
-      "/month /user, billed biennially": [
-        "/Monat/Benutzer, zweijährlich abgerechnet"
-      ],
-      "Current plan": [
-        "Aktuelles Abonnement"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium Passwortmanager!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium VPN-Diensten!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu allen ${ BRAND_NAME }-Premiumdiensten!"
-      ],
-      "Free forever": [
-        "Dauerhaft kostenlos"
-      ],
-      "Get in touch with our sales team": [
-        "Wende dich an unser Vertriebsteam"
-      ],
-      "Includes:": [
-        "Enthält:"
-      ],
-      "per month": [
-        "pro Monat"
-      ],
-      "per month, billed annually": [
-        "pro Monat, jährliche Abrechnung"
-      ],
-      "per month, billed every month": [
-        "pro Monat, monatliche Abrechnung"
-      ],
-      "per month, billed every two years": [
-        "pro Monat, Abrechnung alle zwei Jahre"
-      ],
       "Secure vault sharing": [
         "Sicheres Teilen von Tresoren"
       ],
@@ -16702,6 +16682,9 @@
       "Compare the key differences that matter for your business.": [
         "Vergleiche die wichtigsten Unterschiede, die für dein Unternehmen von Bedeutung sind."
       ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Setze die Nutzung des VPN in deinem Unternehmen durch, indem der Internetzugang gesperrt wird, solange keine VPN-Verbindung besteht."
+      ],
       "Save 50% for 6 months, and keep full access": [
         "Spare 6 Monate lang 50 % und behalte den vollen Zugriff"
       ],
@@ -17602,6 +17585,9 @@
       "Deny access to user?": [
         "Dem Benutzer den Zugriff verweigern?"
       ],
+      "Deploy device profile to your devices": [
+        "Geräteprofil auf deinen Geräten bereitstellen"
+      ],
       "Deploy via MDM": [
         "Über MDM bereitstellen"
       ],
@@ -18444,6 +18430,9 @@
       ],
       "Verify your password": [
         "Passwort bestätigen"
+      ],
+      "Verify your phrase": [
+        "Deine Phrase überprüfen"
       ],
       "Verifying your card...": [
         "Deine Karte wird verifiziert..."

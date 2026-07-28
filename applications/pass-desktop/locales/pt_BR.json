@@ -124,9 +124,6 @@
       "Bulk restore items from trash": [
         "Restaurar itens em massa da lixeira"
       ],
-      "Bulk select items": [
-        "Selecionar itens em massa"
-      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -508,9 +505,6 @@
       "Move to Trash": [
         "Mover para a Lixeira"
       ],
-      "Multiple select": [
-        "Seleção múltipla"
-      ],
       "New token": [
         "Novo token"
       ],
@@ -616,6 +610,9 @@
       "Reset": [
         "Redefinir"
       ],
+      "Reset filters": [
+        "Redefinir filtros"
+      ],
       "Reset history": [
         "Redefinir histórico"
       ],
@@ -654,6 +651,9 @@
       ],
       "See members": [
         "Ver membros"
+      ],
+      "Select items": [
+        "Selecionar itens"
       ],
       "Send email": [
         "Enviar e-mail"
@@ -700,9 +700,6 @@
       "Skip": [
         "Ignorar"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Alguém compartilhou um item com você no ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Ordenar itens do cofre"
       ],
@@ -714,6 +711,9 @@
       ],
       "Submitting report...": [
         "Enviando relatório..."
+      ],
+      "Switch vault": [
+        "Alternar cofre"
       ],
       "Sync alias": [
         "Sincronizar alias",
@@ -1391,9 +1391,6 @@
       ],
       "Trashing item failed": [
         "Erro ao mover item para a lixeira"
-      ],
-      "Try reaching out to the link owner.": [
-        "Tente entrar em contato com o proprietário do link."
       ],
       "Unable to generate an OTP code for this item": [
         "Não é possível gerar um código OTP para este item"
@@ -2198,8 +2195,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -4024,9 +4020,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Este item está disponível até ${ date } ou até que o limite de visualizações seja atingido."
       ],
       "Tier/Level": [
         "Camada/Nível"

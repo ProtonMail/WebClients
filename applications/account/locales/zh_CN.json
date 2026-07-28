@@ -1854,6 +1854,9 @@
       "Verify password": [
         "验证密码"
       ],
+      "Verify recovery phrase": [
+        "验证恢复短语"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "验证域 ${ unverifiedSSODomain.DomainName }"
       ],
@@ -7705,6 +7708,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此邮件含有浏览器不能打开的链接."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "此短语无法恢复您的账户！您可以生成一个新的恢复短语，以确保将来能够恢复账户。"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "如需创建非私密用户账户并访问其账户，您需要恢复管理员权限。"
       ],
@@ -10407,9 +10413,6 @@
       "Available on macOS, Windows, and Linux.": [
         "适用于 macOS 、Windows 和 Linux"
       ],
-      "Average": [
-        "均值"
-      ],
       "Awaiting transaction": [
         "等待交易"
       ],
@@ -10514,6 +10517,9 @@
       ],
       "Change your password": [
         "更改密码"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "检查您的恢复短语是否可用于完全恢复您的账户。"
       ],
       "Check your network and try again.": [
         "请检查网络后重试！"
@@ -11955,9 +11961,6 @@
       "per month, billed at ${ price }": [
         "每月支付为 ${ price }"
       ],
-      "Per seat/month": [
-        "每席位 / 每月"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "定期提示您验证 ${ BRAND_NAME } 密码，以确保您不会忘记。后续提示频率会逐渐降低。"
       ],
@@ -12140,6 +12143,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "恢复短语未关联任何过时的密钥！"
+      ],
+      "Recovery phrase verified": [
+        "恢复短语已验证"
       ],
       "Reddit": [
         "Reddit"
@@ -14497,6 +14503,9 @@
       "Beta": [
         "测试版"
       ],
+      "Billable licenses": [
+        "计费许可数"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "每 12 个月计费 ${ priceYearly }"
       ],
@@ -14506,10 +14515,10 @@
       "Billed monthly.": [
         "按月计费"
       ],
-      "Billed seats": [
-        "计费席位"
-      ],
       "Billing cycle": [
+        "计费周期"
+      ],
+      "Billing period": [
         "计费周期"
       ],
       "Block": [
@@ -14614,9 +14623,6 @@
       "Common passwords": [
         "常见密码"
       ],
-      "Companies": [
-        "公司"
-      ],
       "Company": [
         "公司"
       ],
@@ -14686,8 +14692,8 @@
       "Copy IP address to clipboard": [
         "复制 IP 地址到剪贴板"
       ],
-      "Cost": [
-        "费用"
+      "Cost per license": [
+        "每份许可费用"
       ],
       "Could you please let us know which provider?": [
         "您能告诉我们是哪一款邮箱吗？"
@@ -15150,6 +15156,9 @@
       ],
       "Manage categories": [
         "管理分类"
+      ],
+      "Managed Companies": [
+        "托管公司"
       ],
       "Mark as": [
         "标为"
@@ -16629,6 +16638,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 席位"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席位"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } 个 ${ MEET_APP_NAME } 席位"
@@ -25027,6 +25039,9 @@
       "Currency": [
         "货币"
       ],
+      "Current cost": [
+        "当前费用"
+      ],
       "Custom": [
         "自定义"
       ],
@@ -26367,6 +26382,9 @@
       ],
       "Verify your password": [
         "请验证您的密码"
+      ],
+      "Verify your phrase": [
+        "验证您的短语"
       ],
       "Verifying your card...": [
         "正在验证您的银行卡..."

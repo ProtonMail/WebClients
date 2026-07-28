@@ -156,6 +156,9 @@
       "Clear browser data": [
         "Browserdaten löschen"
       ],
+      "Clear conversation": [
+        "Unterhaltung entfernen"
+      ],
       "Clear data": [
         "Daten löschen"
       ],
@@ -719,6 +722,9 @@
       "Refresh the page": [
         "Seite aktualisieren"
       ],
+      "Reject": [
+        "Ablehnen"
+      ],
       "Remove": [
         "Entfernen"
       ],
@@ -889,6 +895,9 @@
       ],
       "Stay": [
         "Nicht schließen"
+      ],
+      "Stop": [
+        "Stoppen"
       ],
       "Submit": [
         "Senden"
@@ -1072,6 +1081,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)",
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } zusätzliche eigene Domain",
         "${ domains } zusätzliche eigene Domains"
@@ -1080,11 +1093,22 @@
         "${ ips } dedizierter VPN-Server",
         "${ ips } dedizierte VPN-Server"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-Assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)",
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } KI-Lizenz"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } Lizenzen"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)",
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)"
       ],
       "${ price } per dedicated server": [
         "${ price } pro dediziertem Server"
@@ -1097,6 +1121,10 @@
       ],
       "${ price } per user": [
         "${ price } pro Benutzer"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } benutzerdefinierte Domäne",
+        "${ quantity } benutzerdefinierte Domänen"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } KI-Lizenz",
@@ -5696,6 +5724,9 @@
         "Termin wird gelöscht...",
         "Termine werden gelöscht..."
       ],
+      "Details": [
+        "Details"
+      ],
       "Discard changes?": [
         "Änderungen verwerfen?"
       ],
@@ -6390,6 +6421,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
+      ],
+      "Thinking about this": [
+        "Darüber nachdenken"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
@@ -7919,11 +7953,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)",
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } Lizenz"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ price } per seat": [
+        "${ price } pro Lizenz"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } Lizenz",
@@ -10128,6 +10169,9 @@
       ],
       "Anytown": [
         "Berlin"
+      ],
+      "Ask anything…": [
+        "Frag irgendetwas …"
       ],
       "Company name": [
         "Unternehmensname"

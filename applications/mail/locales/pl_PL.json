@@ -1143,6 +1143,9 @@
       "Refresh the page": [
         "Odśwież stronę"
       ],
+      "Reject": [
+        "Odrzuć"
+      ],
       "Remove": [
         "Usuń"
       ],
@@ -1778,6 +1781,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkownika)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dodatkowa niestandardowa domena",
         "${ domains } dodatkowe niestandardowe domeny",
@@ -1789,6 +1798,15 @@
         "${ ips } dedykowane serwery VPN",
         "${ ips } dedykowanych serwerów VPN",
         "${ ips } dedykowanych serwerów VPN"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asystent AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkownika)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Licencja AI ${ LUMO_APP_NAME }"
@@ -1807,6 +1825,12 @@
       ],
       "${ price } per user": [
         "${ price } za użytkownika"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } niestandardowa domena",
+        "${ quantity } niestandardowe domeny",
+        "${ quantity } niestandardowych domen",
+        "${ quantity } niestandardowych domen"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licencja AI ${ LUMO_APP_NAME }",
@@ -7668,6 +7692,9 @@
       "Default email application": [
         "Domyślna aplikacja pocztowa"
       ],
+      "Details": [
+        "Szczegóły"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Wykrywanie odbywa się na urządzeniu, więc żadne dane z wiadomości nie są wysyłane na nasze serwery."
       ],
@@ -11290,6 +11317,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkownika)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Licencja ${ MEET_APP_NAME }"
       ],
@@ -15712,12 +15745,6 @@
         "Przenieś ${ selectionCount } wiadomości",
         "Przenieś ${ selectionCount } wiadomości",
         "Przenieś ${ selectionCount } wiadomości"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Przeniesiono do: ${ label }. Podobna wiadomość będzie w przyszłości trafiać do tej kategorii.",
-        "Przeniesiono do: ${ label }. Podobne wiadomości będą w przyszłości trafiać do tej kategorii.",
-        "Przeniesiono do: ${ label }. Podobne wiadomości będą w przyszłości trafiać do tej kategorii.",
-        "Przeniesiono do: ${ label }. Podobne wiadomości będą w przyszłości trafiać do tej kategorii."
       ],
       "Password copied to clipboard": [
         "Hasło zostało skopiowane do schowka"
