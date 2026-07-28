@@ -15,14 +15,15 @@ import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Api, Domain, User } from '@proton/shared/lib/interfaces';
+import type { Api, Domain, Permission, User } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
-import { type UserState, userFulfilled, userThunk } from '../user';
+import { userFulfilled, userThunk } from '../user';
+import { type UserPermissionsState, userPermissionsFulfilled, userPermissionsThunk } from '../userPermissions';
 
 const name = 'domains' as const;
 
@@ -31,8 +32,8 @@ enum ValueType {
     complete,
 }
 
-export interface DomainsState extends UserState {
-    [name]: ModelState<Domain[]> & { meta: { type: ValueType } };
+export interface DomainsState extends UserPermissionsState {
+    [name]: ModelState<Domain[]> & { meta: { type: ValueType; hasDomainReadPermission: boolean } };
 }
 
 type SliceState = DomainsState[typeof name];
@@ -40,8 +41,13 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectDomains = (state: DomainsState) => state.domains;
 
-const canFetch = (user: User) => {
-    return isAdmin(user);
+const domainReadPermissions = new Set<Permission>(['account.sso_config.read', 'account.domain.read']);
+
+const getHasDomainReadPermission = (permissions: Permission[]) =>
+    permissions.some((permission) => domainReadPermissions.has(permission));
+
+const canFetch = (user: User, hasDomainReadPermission: boolean) => {
+    return isAdmin(user) || hasDomainReadPermission;
 };
 const freeDomains: Domain[] = [];
 
@@ -52,6 +58,7 @@ const initialState: SliceState = {
         fetchedEphemeral: undefined,
         fetchedAt: 0,
         type: ValueType.dummy,
+        hasDomainReadPermission: false,
     },
 };
 const slice = createSlice({
@@ -98,8 +105,9 @@ const slice = createSlice({
             }
 
             const isFreeDomains = original(state)?.meta?.type === ValueType.dummy;
+            const hasFetchAccess = canFetch(user, state.meta.hasDomainReadPermission);
 
-            if (!isFreeDomains && user && !canFetch(user)) {
+            if (!isFreeDomains && user && !hasFetchAccess) {
                 // Do not get any domain update when user becomes unsubscribed.
                 state.value = freeDomains;
                 state.error = undefined;
@@ -108,7 +116,7 @@ const slice = createSlice({
                 state.meta.fetchedAt = 0;
             }
 
-            if (isFreeDomains && user && canFetch(user)) {
+            if (isFreeDomains && user && hasFetchAccess) {
                 state.error = undefined;
                 state.meta.type = ValueType.complete;
                 state.meta.fetchedEphemeral = undefined;
@@ -121,6 +129,9 @@ const slice = createSlice({
         });
         builder.addCase(userFulfilled, (state, action) => {
             handleUserUpdate(state, action.payload);
+        });
+        builder.addCase(userPermissionsFulfilled, (state, action) => {
+            state.meta.hasDomainReadPermission = getHasDomainReadPermission(action.payload.Permissions);
         });
 
         builder.addCase(serverEvent, (state, action) => {
@@ -156,11 +167,13 @@ const modelThunk = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
+            const userPermission = await dispatch(userPermissionsThunk());
+            const hasDomainReadPermission = getHasDomainReadPermission(userPermission.Permissions);
             const defaultValue = {
                 value: freeDomains,
                 type: ValueType.dummy,
             };
-            if (!canFetch(user)) {
+            if (!canFetch(user, hasDomainReadPermission)) {
                 return defaultValue;
             }
             try {
@@ -218,7 +231,9 @@ export const domainsEventLoopV6Thunk = ({
 }): ThunkAction<Promise<void>, DomainsState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const user = await dispatch(userThunk());
-        if (!canFetch(user)) {
+        const userPermission = await dispatch(userPermissionsThunk());
+        const hasDomainReadPermission = getHasDomainReadPermission(userPermission.Permissions);
+        if (!canFetch(user, hasDomainReadPermission)) {
             return;
         }
         await updateCollectionAsyncV6({
