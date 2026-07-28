@@ -1520,8 +1520,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1730,6 +1729,9 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Afficher ou masquer ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Stop": [
+        "Arrêter"
       ]
     },
     "action": {
@@ -9400,7 +9402,7 @@
         "L'importation est en cours. Vous pouvez fermer cette boîte de dialogue pendant l'opération et y revenir plus tard. Ne fermez toutefois pas l'onglet."
       ],
       "Thinking about this": [
-        "Réflexion en cours"
+        "Réflexion en cours..."
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "Vous pouvez l'importer en tant que nouvel index de recherche de base à des fins de développement."
@@ -11090,7 +11092,7 @@
         "${ MEET_APP_NAME } (pour ${ quantity } utilisateurs)"
       ],
       "${ price } per seat": [
-        "${ price } par siège"
+        "${ price } par accès"
       ]
     },
     "meet_2025: Feature": {
@@ -13415,7 +13417,7 @@
         "Code postal"
       ],
       "Ask anything…": [
-        "Posez n'importe quelle question…"
+        "Demandez ce que vous voulez…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15354,7 +15356,7 @@
         "La désinscription a été effectuée."
       ],
       "Moved to ${ label }. Similar messages will be categorized here in the future.": [
-        "Déplacé vers ${ label }. Les messages similaires seront automatiquement classés dans cette catégorie à l'avenir."
+        "Déplacé vers ${ label }. Les messages similaires seront triés ici à l’avenir."
       ]
     },
     "Success notification": {
