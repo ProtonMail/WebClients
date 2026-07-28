@@ -17,7 +17,7 @@ import { $rejectAllSuggestions } from '../Plugins/Suggestions/rejectAllSuggestio
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { setScrollableTablesActive } from '@lexical/table'
 import { isHTMLElement } from '../Utils/guard'
-import { TableOfContents } from '../Components/TableOfContents'
+import { TableOfContents } from '../Components/TableOfContents/TableOfContents'
 import DocsLayout from './DocsLayout'
 
 interface PreviewModeEditorProps {
@@ -90,7 +90,7 @@ export function PreviewModeEditor({
             <DocsLayout.RightPanel>
               <ProtonContentEditable
                 className={clsx(
-                  'DocumentEditor w-full max-w-full overflow-x-hidden px-[10%] lg:w-full lg:max-w-full lg:pl-4 lg:pr-[var(--right-panel-padding)] print:w-full print:max-w-full',
+                  'DocumentEditor w-full max-w-full overflow-x-hidden max-[815px]:px-[10%] min-[816px]:pl-4 min-[816px]:pr-[var(--right-panel-padding)] print:w-full print:max-w-full',
                 )}
                 style={{
                   fontFamily: DefaultFont.value,
