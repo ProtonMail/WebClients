@@ -124,11 +124,11 @@
       "Bulk restore items from trash": [
         "Palauta roskakorista useita kohteita"
       ],
-      "Bulk select items": [
-        "Valitse useita kohteita"
-      ],
       "Cancel": [
         "Peruuta"
+      ],
+      "Cancel bulk selection": [
+        "Peru joukkovalinta"
       ],
       "Cancel email change": [
         "Peruuta sähköpostiosoitteen vaihtaminen"
@@ -151,8 +151,14 @@
       "Clear": [
         "Tyhjennä"
       ],
+      "Clear item type filter": [
+        "Tyhjennä tuotetyypin suodatin"
+      ],
       "Clear search": [
         "Tyhjennä haku"
+      ],
+      "Clear sort filter": [
+        "Tyhjennä lajittelusuodatin"
       ],
       "Close": [
         "Sulje"
@@ -508,9 +514,6 @@
       "Move to Trash": [
         "Siirrä roskakoriin"
       ],
-      "Multiple select": [
-        "Monivalinta"
-      ],
       "New token": [
         "Uusi tunniste"
       ],
@@ -616,6 +619,9 @@
       "Reset": [
         "Palauta"
       ],
+      "Reset filters": [
+        "Tyhjennä suodattimet"
+      ],
       "Reset history": [
         "Nollaa historia"
       ],
@@ -654,6 +660,9 @@
       ],
       "See members": [
         "Näytä jäsenet"
+      ],
+      "Select items": [
+        "Valitse kohteita"
       ],
       "Send email": [
         "Lähetä sähköposti"
@@ -700,9 +709,6 @@
       "Skip": [
         "Ohita"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Joku jakoi sinulle kohteen ${ PASS_APP_NAME }ista."
-      ],
       "Sort vault items": [
         "Järjestä holvin kohteet"
       ],
@@ -714,6 +720,9 @@
       ],
       "Submitting report...": [
         "Lähetetään raporttia..."
+      ],
+      "Switch vault": [
+        "Vaihda holvia"
       ],
       "Sync alias": [
         "Synkronoi alias",
@@ -1391,9 +1400,6 @@
       ],
       "Trashing item failed": [
         "Kohteen siirto roskakoriin epäonnistui"
-      ],
-      "Try reaching out to the link owner.": [
-        "Yritä tavoittaa linkin omistaja."
       ],
       "Unable to generate an OTP code for this item": [
         "OTP-koodia ei voida luoda tälle kohteelle"
@@ -2201,8 +2207,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -4030,9 +4035,6 @@
       ],
       "Theme": [
         "Teema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Tämä kohde on käytettävissä ${ date } asti, tai kunnes katselurajoitus on saavutettu."
       ],
       "Tier/Level": [
         "Taso"

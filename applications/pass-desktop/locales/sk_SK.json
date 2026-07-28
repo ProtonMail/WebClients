@@ -124,9 +124,6 @@
       "Bulk restore items from trash": [
         "Hromadné obnovenie položiek z koša"
       ],
-      "Bulk select items": [
-        "Hromadný výber položiek"
-      ],
       "Cancel": [
         "Zrušiť"
       ],
@@ -508,9 +505,6 @@
       "Move to Trash": [
         "Presunúť do koša"
       ],
-      "Multiple select": [
-        "Viacnásobný výber"
-      ],
       "New token": [
         "Nový token"
       ],
@@ -699,9 +693,6 @@
       ],
       "Skip": [
         "Preskočiť"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Niekto s vami zdieľal položku v ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Triediť položky trezoru"
@@ -1330,6 +1321,12 @@
       "PIN codes do not match": [
         "PIN kódy sa nezhodujú"
       ],
+      "Regex invalid": [
+        "Neplatný regulárny výraz"
+      ],
+      "Regex unsafe": [
+        "Nebezpečný regulárny výraz"
+      ],
       "Request timed out": [
         "Požiadavka časovo omeškaná"
       ],
@@ -1396,9 +1393,6 @@
       "Trashing item failed": [
         "Presun do koša zlyhal"
       ],
-      "Try reaching out to the link owner.": [
-        "Skúste kontaktovať vlastníka odkazu."
-      ],
       "Unable to generate an OTP code for this item": [
         "Pre túto položku nie je možné vygenerovať OTP kód"
       ],
@@ -1428,6 +1422,9 @@
       ],
       "Unsupported Bitwarden file format": [
         "Nepodporovaný formát súboru Bitwarden"
+      ],
+      "Unsupported file type": [
+        "Nepodporovaný typ súboru"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualizácia trezoru \"${ payload.content.name }\" zlyhala"
@@ -2096,6 +2093,9 @@
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "Ak nemáte v pláne používať SSH agenta v inom platenom účte, nezabudnite toto nastavenie deaktivovať pred prechodom na tento účet."
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Ak svoje Gitové commity podpisujete pomocou svojho SSH kľúča, spustite tiež tento príkaz:"
+      ],
       "Import the CSV file below.": [
         "Importovať CSV súbor nižšie."
       ],
@@ -2241,10 +2241,7 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2725,6 +2722,9 @@
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Ak chcete, aby vaša osobná emailová adresa zostala skrytá, môžete si vytvoriť alias kontaktu, ktorý vašu adresu zamaskuje."
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Aby Git fungoval s agentom SSH pre ${ PASS_APP_NAME }, musí Git používať Windows OpenSSH. To je možné dosiahnuť spustením tohto príkazu:"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Ak chcete migrovať údaje z iného správcu hesiel, prejdite do správcu hesiel, exportujte svoje údaje a potom ich nahrajte do ${ PASS_APP_NAME }. Po importovaní údajov odstráňte exportovaný súbor."
@@ -4109,9 +4109,6 @@
       ],
       "Theme": [
         "Vzhľad"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Táto položka je prístupná do ${ date } alebo do dosiahnutia limitu zobrazení."
       ],
       "Tier/Level": [
         "Úroveň členstva"

@@ -124,9 +124,6 @@
       "Bulk restore items from trash": [
         "ერთზე მეტი ელემენტის აღდგენა ნაგვის ყუთიდან"
       ],
-      "Bulk select items": [
-        "ერთზე მეტი ელემენტის მონიშვნა"
-      ],
       "Cancel": [
         "გაუქმება"
       ],
@@ -508,9 +505,6 @@
       "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Multiple select": [
-        "ერთზე მეტის მონიშვნა"
-      ],
       "New token": [
         "ახალი ტოკენი"
       ],
@@ -699,9 +693,6 @@
       ],
       "Skip": [
         "გამოტოვება"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "ვიღაცამ გაგიზიარათ ელემენტი ${ PASS_APP_NAME }-ზე."
       ],
       "Sort vault items": [
         "საცავის ელემენტების დალაგება"
@@ -1385,9 +1376,6 @@
       ],
       "Trashing item failed": [
         "ელემენტის ნაგვის ყუთში გადატანის შეცდომა"
-      ],
-      "Try reaching out to the link owner.": [
-        "სცადეთ, ბმულის ავტორს დაუკავშირდეთ."
       ],
       "Unable to generate an OTP code for this item": [
         "ამ ელემენტისთვის OTP კოდის გენერაცია შეუძლებელია"
@@ -2189,8 +2177,7 @@
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+        "ელემენტის გადატანა სხვა სეიფში წაშლის მის უსაფრთხო ბმულებს."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -4015,9 +4002,6 @@
       ],
       "Theme": [
         "თემა"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "ეს ელემენტი ხელმისაწვდომია ${ date }-მდე, ან, სანამ, ნახვების ლიმიტი არ მიიღწევა."
       ],
       "Tier/Level": [
         "დონე"
