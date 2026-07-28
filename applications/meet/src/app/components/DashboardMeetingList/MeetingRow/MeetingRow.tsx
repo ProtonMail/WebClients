@@ -23,6 +23,7 @@ import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import type { JoinLocationState } from '../../../types';
 import { getNextOccurrence } from '../../../utils/getNextOccurrence';
 import { getRoomVariantFromId } from '../../RoomForm/getRoomVariantFromId';
 import { DeleteMeetingModal } from '../DeleteMeetingModal';
@@ -111,7 +112,14 @@ export const MeetingRow = ({
     const meetingLink = getMeetingLink(meeting.MeetingLinkName, meeting.Password?.split(PASSWORD_SEPARATOR)[0] ?? '');
 
     const handleJoin = () => {
-        history.push(meetingLink);
+        const joinState: JoinLocationState = {
+            meetingDetails: {
+                meetingName: meeting.MeetingName,
+                isPersonalRoom: meeting.Type === MeetingType.PERSONAL,
+            },
+        };
+
+        history.push(meetingLink, joinState);
     };
 
     const handleCopyLink = () => {

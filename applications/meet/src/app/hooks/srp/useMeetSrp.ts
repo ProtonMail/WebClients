@@ -3,27 +3,11 @@ import { useCallback } from 'react';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useMeetErrorReporting } from '@proton/meet';
-import {
-    queryInitMeetSRPHandshake,
-    queryMeetAccessToken,
-    queryMeetAuth,
-    queryMeetingInfo,
-} from '@proton/shared/lib/api/meet';
-import type { AuthVersion } from '@proton/shared/lib/authentication/interface';
-import { getUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import type { AccessTokenResponse, MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
-import { srpAuth } from '@proton/shared/lib/srp';
 
-import { INVALID_SRP_PARAMS_ERROR_CODE } from '../../constants';
+import type { SRPHandshakeInfo } from './meetSrpRequests';
+import { requestAccessToken, requestHandshakeInfo, requestMeetingInfo, requestSessionToken } from './meetSrpRequests';
 
-export interface SRPHandshakeInfo {
-    Code: number;
-    Modulus: string;
-    ServerEphemeral: string;
-    Salt: string;
-    SRPSession: string;
-    Version: AuthVersion;
-}
+export type { SRPHandshakeInfo } from './meetSrpRequests';
 
 export const useMeetSrp = () => {
     const api = useApi();
@@ -34,7 +18,7 @@ export const useMeetSrp = () => {
     const initHandshake = useCallback(
         async (token: string) => {
             try {
-                return await api<SRPHandshakeInfo>({ ...queryInitMeetSRPHandshake(token), silence: true });
+                return await requestHandshakeInfo(api, token);
             } catch (error) {
                 reportMeetError('Error initializing handshake', {
                     context: { error },
@@ -47,35 +31,13 @@ export const useMeetSrp = () => {
     );
 
     const getSessionToken = useCallback(
-        async (
-            token: string,
-            password: string,
-            initHandshake: SRPHandshakeInfo
-        ): Promise<{ ServerProof: string; UID: string; AccessToken: string; TokenType: string; Code: string }> => {
-            const { Modulus, ServerEphemeral, Salt, SRPSession, Version } = initHandshake;
-
-            const UID = auth.getUID();
-
-            const response = await srpAuth({
-                api,
-                credentials: { password },
-                info: {
-                    Modulus,
-                    ServerEphemeral,
-                    Version,
-                    Salt,
-                    SRPSession,
-                },
-                config: {
-                    ...(UID && { headers: getUIDHeaders(UID) }),
-                    ...queryMeetAuth(token),
-                    // Silence the wrong-password error so the generic API layer does not
-                    // auto-show "Invalid SRP parameter"; we render a friendlier message ourselves.
-                    silence: [INVALID_SRP_PARAMS_ERROR_CODE],
-                },
+        async (token: string, password: string, initHandshake: SRPHandshakeInfo) => {
+            return requestSessionToken(api, {
+                token,
+                password,
+                handshakeInfo: initHandshake,
+                uid: auth.getUID(),
             });
-
-            return response.json();
         },
         [api, auth]
     );
@@ -83,7 +45,7 @@ export const useMeetSrp = () => {
     const getMeetingInfo = useCallback(
         async (meetingLinkName: string) => {
             try {
-                return await api<MeetingInfoResponse>(queryMeetingInfo(meetingLinkName));
+                return await requestMeetingInfo(api, meetingLinkName);
             } catch (error) {
                 reportMeetError('Failed to get meeting info', {
                     context: { error },
@@ -103,12 +65,10 @@ export const useMeetSrp = () => {
             };
 
             try {
-                const { AccessToken, WebsocketUrl } = await api<AccessTokenResponse>({
-                    ...queryMeetAccessToken(meetingLinkName),
-                    data: {
-                        DisplayName: displayName,
-                        EncryptedDisplayName: encryptedDisplayName,
-                    },
+                const { AccessToken, WebsocketUrl } = await requestAccessToken(api, {
+                    meetingLinkName,
+                    displayName,
+                    encryptedDisplayName,
                 });
 
                 result.AccessToken = AccessToken;
