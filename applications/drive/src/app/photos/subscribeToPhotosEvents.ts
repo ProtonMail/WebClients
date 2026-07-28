@@ -74,11 +74,13 @@ const onCreatedOrRestoredNodes =
                                 .getState()
                                 .addRelatedPhotoNodeUid(photoAttributes.mainPhotoNodeUid, node.uid);
                         } else {
+                            const mapped = mapNodeToPhotoItem(node);
                             usePhotosStore.getState().setPhotoItem({
                                 nodeUid: node.uid,
                                 captureTime: photoAttributes.captureTime,
                                 tags: photoAttributes.tags,
                                 relatedPhotoNodeUids: photoAttributes.relatedPhotoNodeUids,
+                                additionalInfo: mapped?.additionalInfo,
                             });
                         }
                     }
