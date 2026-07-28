@@ -836,6 +836,9 @@
       "Loading${ ellipsis }": [
         "Se încarcă${ ellipsis }"
       ],
+      "Lookup document": [
+        "Căutare document"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail"
       ],
@@ -1138,6 +1141,9 @@
       ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "Reject": [
+        "Respingere"
       ],
       "Remove": [
         "Eliminare"
@@ -1773,6 +1779,11 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } de utilizatori)"
+      ],
       "${ domains } additional custom domain": [
         "Domenii personale adiționale: ${ domains }",
         "Domenii personale adiționale: ${ domains }",
@@ -1783,11 +1794,24 @@
         "Servere VPN dedicate: ${ ips }",
         "Servere VPN dedicate: ${ ips }"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistent de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Licențe IA ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licențe ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } de utilizatori)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
@@ -1800,6 +1824,11 @@
       ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domeniu personal",
+        "${ quantity } domenii personale",
+        "${ quantity } de domenii personale"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
@@ -5340,6 +5369,9 @@
       "Something went wrong while fetching available domains": [
         "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Ceva nu a funcționat bine. Închideți panoul modal și reîncercați."
+      ],
       "Something went wrong. Please try again.": [
         "Ceva nu a funcționat bine. Mai încercați."
       ],
@@ -6945,6 +6977,11 @@
         "Grupuri găsite: ${ groupCounts }",
         "Grupuri găsite: ${ groupCounts }"
       ],
+      "${ issues.length } issue during import:": [
+        "Probleme pe durata importului: ${ issues.length }",
+        "Probleme pe durata importului: ${ issues.length }",
+        "Probleme pe durata importului: ${ issues.length }"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
@@ -7042,6 +7079,9 @@
         "Mesaje în ultima lună: ${ receivedMessagesCount }",
         "Mesaje în ultima lună: ${ receivedMessagesCount }",
         "Mesaje în ultima lună: ${ receivedMessagesCount }"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Minute rămase: ${ remainingMinutes }"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
@@ -7568,6 +7608,9 @@
       "Default email application": [
         "Aplicația de e-mail implicită"
       ],
+      "Details": [
+        "Detalii"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Detectarea se execută pe dispozitiv, astfel că nu se trimit nici un fel de date spre servere."
       ],
@@ -7826,6 +7869,11 @@
       "Forgot password?": [
         "Ați uitat parola?"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "S-a găsit un index de căutare criptat curent cu ${ oldIndexSize } mesaj.",
+        "S-a găsit un index de căutare criptat curent cu ${ oldIndexSize } mesaje.",
+        "S-a găsit un index de căutare criptat curent cu ${ oldIndexSize } de mesaje."
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Evaluare gratuită pentru ${ ASSISTANT_TRIAL_TIME_DAYS } zi",
         "Evaluare gratuită pentru ${ ASSISTANT_TRIAL_TIME_DAYS } zile",
@@ -7933,6 +7981,9 @@
       ],
       "Import in progress": [
         "Importare în derulare"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importarea este în desfășurare. Puteți închide această casetă de dialog în timp ce rulează și reveni la ea mai târziu. Nu închideți fila însă."
       ],
       "Import mailbox": [
         "Importare mesaje"
@@ -9206,6 +9257,9 @@
       "You can either update your search query or clear it": [
         "Puteți actualiza interogarea de căutare sau să o goliți."
       ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Îl puteți importa ca un nou index de căutare de bază în scopuri de dezvoltare."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
@@ -10000,6 +10054,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Content search version to use": [
+        "Versiunea de căutare a conținutului de utilizat"
+      ],
       "Context page": [
         "Pagină contextuală"
       ],
@@ -10050,6 +10107,9 @@
       ],
       "Did not follow instructions": [
         "Nu a urmat instrucțiunile"
+      ],
+      "Document ID": [
+        "ID document"
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
@@ -10621,6 +10681,12 @@
       "Username": [
         "Nume utilizator"
       ],
+      "v1": [
+        "V1"
+      ],
+      "v2": [
+        "V2"
+      ],
       "Verification code": [
         "Cod de verificare"
       ],
@@ -11152,6 +11218,11 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizator)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licență"
       ],
@@ -15461,9 +15532,7 @@
         "Mesaje de mutat: ${ selectionCount }",
         "Mesaje de mutat: ${ selectionCount }"
       ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "S-a mutat în ${ label }. Mesajele asemănătoare vor fi trimise aici în viitor.",
-        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise aici în viitor.",
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise aici în viitor."
       ],
       "Password copied to clipboard": [
