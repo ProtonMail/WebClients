@@ -17,22 +17,22 @@ const lightMap = {
     idle: () =>
         import(
             /* webpackChunkName: "lumo-idle-animation" */
-            '../../../components/Animations/lumo-idle.json'
+            '../../../components/Animations/avatar/idle-light.json'
         ),
     generating: () =>
         import(
             /* webpackChunkName: "lumo-generating-animation" */
-            '../../../components/Animations/lumo-generating.json'
+            '../../../components/Animations/avatar/thinking-light.json'
         ),
     ghostThinking: () =>
         import(
             /* webpackChunkName: "lumo-ghost-animation" */
-            '../../../components/Animations/lumo-ghost-avatar.json'
+            '../../../components/Animations/avatar/ghost-thinking-light.json'
         ),
     webSearch: () =>
         import(
             /* webpackChunkName: "lumo-websearch-animation" */
-            '../../../components/Animations/lumo-websearch.json'
+            '../../../components/Animations/avatar/web-search-light.json'
         ),
 };
 
@@ -40,22 +40,22 @@ const darkMap = {
     idle: () =>
         import(
             /* webpackChunkName: "lumo-idle-dark-animation" */
-            '../../../components/Animations/lumo-idle-dark.json'
+            '../../../components/Animations/avatar/idle-dark.json'
         ),
     generating: () =>
         import(
-            /* webpackChunkName: "lumo-idle-dark-animation" */
-            '../../../components/Animations/lumo-thinking-dark.json'
+            /* webpackChunkName: "lumo-generating-dark-animation" */
+            '../../../components/Animations/avatar/thinking-dark.json'
         ),
     ghostThinking: () =>
         import(
             /* webpackChunkName: "lumo-ghost-dark-animation" */
-            '../../../components/Animations/lumo-ghost-thinking-dark.json'
+            '../../../components/Animations/avatar/ghost-thinking-dark.json'
         ),
     webSearch: () =>
         import(
             /* webpackChunkName: "lumo-websearch-dark-animation" */
-            '../../../components/Animations/lumo-websearch-dark.json'
+            '../../../components/Animations/avatar/web-search-dark.json'
         ),
 };
 
