@@ -1854,6 +1854,9 @@
       "Verify password": [
         "Verificare parolă"
       ],
+      "Verify recovery phrase": [
+        "Verificare frază de recuperare"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verificare domeniu ${ unverifiedSSODomain.DomainName }"
       ],
@@ -7821,6 +7824,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături web care nu pot fi deschise corect de către navigatorul actual."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Această frază nu vă poate recupera contul. Puteți genera una nouă pentru a vă asigura că acesta poate fi recuperat în viitor."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Pentru a crea conturi de utilizator neprivate și pentru a le accesa, va trebui să vă restabiliți privilegiile de administrator."
       ],
@@ -10649,9 +10655,6 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponibil pentru macOS, Windows și Linux."
       ],
-      "Average": [
-        "Media"
-      ],
       "Awaiting transaction": [
         "Se așteaptă tranzacția"
       ],
@@ -10756,6 +10759,9 @@
       ],
       "Change your password": [
         "Modificare parolă"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Verificați dacă fraza de recuperare poate fi folosită pentru a vă recupera complet contul."
       ],
       "Check your network and try again.": [
         "Verificați rețeaua și reîncercați."
@@ -12219,9 +12225,6 @@
       "per month, billed at ${ price }": [
         "pe lună, facturat cu ${ price }"
       ],
-      "Per seat/month": [
-        "Per licență/lună"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Vă solicită periodic să verificați parola din ${ BRAND_NAME } pentru a vă asigura că nu o uitați. Vi se va solicita mai rar în timp."
       ],
@@ -12408,6 +12411,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Fraza de recuperare nu este asociată cu nicio cheie învechită."
+      ],
+      "Recovery phrase verified": [
+        "Frază de recuperare verificată"
       ],
       "Reddit": [
         "Reddit"
@@ -14817,6 +14823,9 @@
       "Beta": [
         "Beta"
       ],
+      "Billable licenses": [
+        "Licențe facturabile"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Facturat cu ${ priceYearly } la fiecare 12 luni."
       ],
@@ -14826,11 +14835,11 @@
       "Billed monthly.": [
         "Facturat lunar."
       ],
-      "Billed seats": [
-        "Licențe facturate"
-      ],
       "Billing cycle": [
         "Ciclu de facturare"
+      ],
+      "Billing period": [
+        "Perioadă de facturare"
       ],
       "Block": [
         "Blocate"
@@ -14934,9 +14943,6 @@
       "Common passwords": [
         "Parole comune"
       ],
-      "Companies": [
-        "Companii"
-      ],
       "Company": [
         "Compania"
       ],
@@ -15006,8 +15012,8 @@
       "Copy IP address to clipboard": [
         "Copiere adresă IP în memorie"
       ],
-      "Cost": [
-        "Cost"
+      "Cost per license": [
+        "Cost per licență"
       ],
       "Could you please let us know which provider?": [
         "Ați putea să ne spuneți care furnizor?"
@@ -15472,6 +15478,9 @@
       ],
       "Manage categories": [
         "Gestionare categorii"
+      ],
+      "Managed Companies": [
+        "Companii gestionate"
       ],
       "Mark as": [
         "Marcare"
@@ -22525,7 +22534,7 @@
         "Obținere actualizări pe e-mail despre comentarii"
       ],
       "Include document name in email notifications": [
-        "Includere nume documente în notificările de pe e-mail"
+        "Includere nume document în notificările de pe e-mail"
       ]
     },
     "Settings description": {
@@ -25673,6 +25682,9 @@
       "Currency": [
         "Monedă"
       ],
+      "Current cost": [
+        "Cost actual"
+      ],
       "Custom": [
         "Personalizat"
       ],
@@ -27021,6 +27033,9 @@
       ],
       "Verify your password": [
         "Verificați-vă parola"
+      ],
+      "Verify your phrase": [
+        "Verificați-vă fraza"
       ],
       "Verifying your card...": [
         "Verificare card..."

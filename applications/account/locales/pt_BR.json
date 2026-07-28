@@ -1854,6 +1854,9 @@
       "Verify password": [
         "Verificar senha"
       ],
+      "Verify recovery phrase": [
+        "Verificar frase de recuperação"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verificar o domínio ${ unverifiedSSODomain.DomainName }"
       ],
@@ -7580,6 +7583,9 @@
       "Please set a recovery/notification email first": [
         "Defina um e-mail para recuperação/notificação primeiro"
       ],
+      "Please set up your organization before adding a company.": [
+        "Configure sua organização antes de adicionar uma empresa."
+      ],
       "Please try again in a few moments.": [
         "Tente novamente em alguns instantes."
       ],
@@ -7759,6 +7765,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
+      ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Essa frase não permite recuperar sua conta. Você pode gerar uma nova para garantir que sua conta possa ser recuperada no futuro."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Para criar e acessar contas de usuário não privadas, será necessário restaurar seus privilégios de administrador."
@@ -10528,9 +10537,6 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponível no macOS, Windows e Linux."
       ],
-      "Average": [
-        "Média"
-      ],
       "Awaiting transaction": [
         "Esperando transação"
       ],
@@ -10635,6 +10641,9 @@
       ],
       "Change your password": [
         "Alterar sua senha"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Verifique se sua frase de recuperação pode ser usada para recuperar totalmente sua conta."
       ],
       "Check your network and try again.": [
         "Verifique sua rede e tente novamente."
@@ -11884,6 +11893,9 @@
       "No card required": [
         "Nenhum cartão necessário"
       ],
+      "No companies yet. Start by creating a new company.": [
+        "Nenhuma empresas ainda. Inicie criando uma empresa."
+      ],
       "No connected addresses.": [
         "Sem endereços conectados."
       ],
@@ -12081,9 +12093,6 @@
       "per month, billed at ${ price }": [
         "por mês, faturado em ${ price }"
       ],
-      "Per seat/month": [
-        "Por licença/mês"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Solicita periodicamente que você verifique sua senha do ${ BRAND_NAME } para garantir que não a esqueça. Com o tempo, as solicitações serão menos frequentes."
       ],
@@ -12268,6 +12277,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "A frase de recuperação não está associada com nenhuma das chaves desatualizadas."
+      ],
+      "Recovery phrase verified": [
+        "Frase de recuperação verificada"
       ],
       "Reddit": [
         "Reddit"
@@ -14645,6 +14657,9 @@
       "Beta": [
         "Versão beta"
       ],
+      "Billable licenses": [
+        "Licenças faturáveis"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Com o preço de ${ priceYearly } a cada 12 meses."
       ],
@@ -14654,11 +14669,11 @@
       "Billed monthly.": [
         "Cobrado mensalmente."
       ],
-      "Billed seats": [
-        "Licenças faturáveis"
-      ],
       "Billing cycle": [
         "Ciclo de faturamento"
+      ],
+      "Billing period": [
+        "Período de faturamento"
       ],
       "Block": [
         "Endereços bloqueados"
@@ -14762,9 +14777,6 @@
       "Common passwords": [
         "Senhas comuns"
       ],
-      "Companies": [
-        "Empresas"
-      ],
       "Company": [
         "Empresa"
       ],
@@ -14834,8 +14846,8 @@
       "Copy IP address to clipboard": [
         "Copiar o endereço de IP para área de transferência"
       ],
-      "Cost": [
-        "Custo"
+      "Cost per license": [
+        "Custo por licença"
       ],
       "Could you please let us know which provider?": [
         "Você poderia nos informar qual provedor?"
@@ -15299,6 +15311,9 @@
       ],
       "Manage categories": [
         "Gerenciar categorias"
+      ],
+      "Managed Companies": [
+        "Empresas gerenciadas"
       ],
       "Mark as": [
         "Marcar como"
@@ -16788,6 +16803,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenças"
+      ],
+      "${ price } per seat": [
+        "${ price } por licença"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licença do ${ MEET_APP_NAME }",
@@ -25350,6 +25368,9 @@
       "Currency": [
         "Moeda"
       ],
+      "Current cost": [
+        "Custo atual"
+      ],
       "Custom": [
         "Personalizado"
       ],
@@ -26697,6 +26718,9 @@
       ],
       "Verify your password": [
         "Verificar sua senha"
+      ],
+      "Verify your phrase": [
+        "Verificar sua frase"
       ],
       "Verifying your card...": [
         "Verificando seu cartão..."
