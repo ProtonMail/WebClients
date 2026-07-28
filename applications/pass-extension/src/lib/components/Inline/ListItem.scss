@@ -3,4 +3,13 @@ button.pass-injected-dropdown--item {
 		cursor: default;
 		background-color: transparent;
 	}
+
+	// Keyboard navigation: highlight the focused suggestion like hover so the active item is
+	// obvious when navigating the list with the arrow keys. `:focus` (not only `:focus-visible`)
+	// because navigation focuses items programmatically, which some engines do not treat as
+	// focus-visible.
+	&:focus,
+	&:focus-visible {
+		background-color: var(--interaction-default-hover);
+	}
 }

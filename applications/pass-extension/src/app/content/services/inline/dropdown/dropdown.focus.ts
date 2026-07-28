@@ -28,6 +28,7 @@ export const DROPDOWN_FOCUS_TRAP_TIMEOUT = 500;
 export interface DropdownFocusController {
     focused: boolean;
     willFocus: boolean;
+    requestFocus: () => Promise<void>;
     disconnect: () => void;
 }
 
@@ -91,7 +92,12 @@ export const createDropdownFocusController = ({
     };
 
     const onWillFocus = () => {
-        if (anchor.current?.type === 'field') anchor.current.field.preventAction();
+        /** Only arm the field action-trap when the anchor field is the active element — i.e. the
+         * focus-recovery scenario. The shortcut flow opens the dropdown without focusing the field,
+         * so arming it there would needlessly suppress the field's normal autofocus dropdown. */
+        if (anchor.current?.type === 'field' && isActiveElement(anchor.current.field.element)) {
+            anchor.current.field.preventAction();
+        }
         clearTimeout(state.willFocusTimer);
         state.willFocus = true;
         state.willFocusTimer = setTimeout(disconnect, DROPDOWN_FOCUS_TRAP_TIMEOUT);
@@ -168,6 +174,7 @@ export const createDropdownFocusController = ({
         get willFocus() {
             return state.willFocus;
         },
+        requestFocus: onFocusRequest,
         disconnect,
     };
 };

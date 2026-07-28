@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect, useMemo } from 'react';
+import { type FC, useCallback, useEffect, useMemo, useRef } from 'react';
 
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
@@ -19,6 +19,9 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Marks from '@proton/components/components/text/Marks';
+import useDropdownArrowNavigation from '@proton/components/hooks/useDropdownArrowNavigation';
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
@@ -152,6 +155,26 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
         [state, filter]
     );
 
+    /** Keyboard navigation over the suggestions. When the dropdown is opened via the autofill
+     * shortcut, focus is moved into the iframe, so the listener is bound to the iframe `document`
+     * (focus lands on the body, outside `rootRef`). Arrow keys move focus across the rows inside
+     * `rootRef` (the header is excluded; the upgrade and empty-state rows stay reachable); Enter
+     * activates the focused item natively (each is a `<button>`); Escape dismisses the dropdown. */
+    const rootRef = useRef<HTMLDivElement>(null);
+    const documentRef = useRef<Document>(document);
+    const { shortcutHandlers } = useDropdownArrowNavigation({ rootRef });
+    const hotkeys: HotkeyTuple[] = [
+        ...shortcutHandlers,
+        [
+            'Escape',
+            (e) => {
+                e.preventDefault();
+                controller.close({ userAction: true });
+            },
+        ],
+    ];
+    useHotkeys(documentRef, hotkeys);
+
     if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
 
     return (
@@ -167,16 +190,18 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
                     />
                 }
             />
-            {dropdownItems.length > 0 ? (
-                <ScrollableItemsList>{dropdownItems}</ScrollableItemsList>
-            ) : (
-                <ListItem
-                    icon={{ type: 'status', icon: PassIconStatus.ACTIVE }}
-                    onClick={controller.close}
-                    title={PASS_APP_NAME}
-                    subTitle={c('Info').t`No login found`}
-                />
-            )}
+            <div ref={rootRef}>
+                {dropdownItems.length > 0 ? (
+                    <ScrollableItemsList>{dropdownItems}</ScrollableItemsList>
+                ) : (
+                    <ListItem
+                        icon={{ type: 'status', icon: PassIconStatus.ACTIVE }}
+                        onClick={controller.close}
+                        title={PASS_APP_NAME}
+                        subTitle={c('Info').t`No login found`}
+                    />
+                )}
+            </div>
         </>
     );
 };
