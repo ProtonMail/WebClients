@@ -156,6 +156,9 @@
       "Clear browser data": [
         "Ryd browserdata"
       ],
+      "Clear conversation": [
+        "Ryd samtale"
+      ],
       "Clear data": [
         "Ryd data"
       ],
@@ -719,6 +722,9 @@
       "Refresh the page": [
         "Opdater siden"
       ],
+      "Reject": [
+        "Afvis"
+      ],
       "Remove": [
         "Fjern"
       ],
@@ -889,6 +895,9 @@
       ],
       "Stay": [
         "Bliv her"
+      ],
+      "Stop": [
+        "Stop"
       ],
       "Submit": [
         "Indsend"
@@ -1072,6 +1081,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } bruger)",
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } brugere)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ekstra tilpasset domæne",
         "${ domains } yderligere tilpassede domæner"
@@ -1080,11 +1093,22 @@
         "${ ips } dedikeret VPN-server",
         "${ ips } dedikerede VPN-servere"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } bruger)",
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } brugere)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-licens"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } pladser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } bruger)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } brugere)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerede server"
@@ -1097,6 +1121,10 @@
       ],
       "${ price } per user": [
         "${ price } per bruger"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } brugerdefineret domæne",
+        "${ quantity } brugerdefinerede domæner"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI licens",
@@ -5696,6 +5724,9 @@
         "Sletter begivenhed...",
         "Sletter begivenheder..."
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Discard changes?": [
         "Kassér ændringer?"
       ],
@@ -6390,6 +6421,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Bekræftelsesprocessen åbner en ny browserfane. Deaktivér venligst alle aktive pop-up-blokkere."
+      ],
+      "Thinking about this": [
+        "Overvejer..."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
@@ -7919,11 +7953,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (til ${ quantity } bruger)",
+        "${ MEET_APP_NAME } (til ${ quantity } brugere)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licens"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } pladser"
+      ],
+      "${ price } per seat": [
+        "${ price } pr. plads"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-plads",
@@ -10128,6 +10169,9 @@
       ],
       "Anytown": [
         "Skovhavn"
+      ],
+      "Ask anything…": [
+        "Spørg om hvad som helst..."
       ],
       "Company name": [
         "Firmanavn"
