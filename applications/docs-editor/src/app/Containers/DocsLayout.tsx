@@ -2,11 +2,22 @@ import React from 'react'
 import clsx from '@proton/utils/clsx'
 import './DocsLayout.scss'
 
-// screen breakpoint used to determine the minimum allowed width of the left panel
+export const DOCS_EDITOR_MAX_WIDTH = 816
+
 const LEFT_PANEL_MIN_WIDTH_BREAKPOINT = 1300
 const MIN_LEFT_PANEL_WIDTH_GREATER_THAN_BREAKPOINT = 260
 const MIN_LEFT_PANEL_WIDTH_LESS_THAN_BREAKPOINT = 100
 const MAX_LEFT_PANEL_WIDTH = 800
+
+function getDesktopLeftPanelGutterWidth(viewportWidth: number) {
+  return Math.max(0, (viewportWidth - DOCS_EDITOR_MAX_WIDTH) / 2)
+}
+
+function getDefaultLeftPanelOpenWidth(viewportWidth: number) {
+  return viewportWidth >= LEFT_PANEL_MIN_WIDTH_BREAKPOINT
+    ? MIN_LEFT_PANEL_WIDTH_GREATER_THAN_BREAKPOINT
+    : MIN_LEFT_PANEL_WIDTH_LESS_THAN_BREAKPOINT
+}
 
 function LeftPanel({ children }: React.PropsWithChildren) {
   const { updateLeftPanelWidth, resetLeftPanelToDefault, leftPanelActive } = useDocsLayoutContext()
@@ -63,7 +74,7 @@ function LeftPanel({ children }: React.PropsWithChildren) {
 
   return (
     <div
-      className="docs-layout-left-panel relative overflow-hidden"
+      className={clsx('docs-layout-left-panel relative', leftPanelActive && 'panel-open')}
       onMouseEnter={leftPanelActive ? () => setCanResize(true) : undefined}
       onMouseLeave={leftPanelActive ? () => setCanResize(false) : undefined}
       onMouseOver={leftPanelActive ? () => setCanResize(true) : undefined}
@@ -75,7 +86,7 @@ function LeftPanel({ children }: React.PropsWithChildren) {
           aria-orientation="vertical"
           onPointerDown={handleResize}
           onDoubleClick={resetLeftPanelToDefault}
-          className="absolute bottom-0 right-0 top-0 h-full w-3 cursor-col-resize transition-all"
+          className="absolute bottom-0 right-0 top-0 h-full w-3 cursor-col-resize transition-all max-[815px]:hidden"
           style={{ opacity: canResize ? 1 : 0 }}
         >
           <div className="mx-auto h-full w-[1px] bg-[--border-weak]" />
@@ -134,19 +145,41 @@ function DocsLayoutProvider({ children, tableOfContentsVisible }: React.PropsWit
   const [leftPanelActive, setLeftPanelActive] = React.useState<boolean>(false)
 
   React.useEffect(() => {
+    function applyOpenPanelWidth() {
+      const gutterWidth = getDesktopLeftPanelGutterWidth(window.innerWidth)
+      const openWidth = Math.max(gutterWidth, getDefaultLeftPanelOpenWidth(window.innerWidth))
+
+      if (openWidth > gutterWidth) {
+        setLeftPanelWidth(openWidth)
+        setHasUserResized(true)
+      }
+    }
+
     function handleResize() {
       setHasUserResized(false)
+
+      if (window.innerWidth < DOCS_EDITOR_MAX_WIDTH) {
+        setLeftPanelActive(false)
+        return
+      }
+
+      if (leftPanelActive) {
+        applyOpenPanelWidth()
+      }
+    }
+
+    if (!leftPanelActive) {
+      setHasUserResized(false)
+    } else if (window.innerWidth >= DOCS_EDITOR_MAX_WIDTH) {
+      applyOpenPanelWidth()
     }
 
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  }, [leftPanelActive])
 
   const updateLeftPanelWidth = React.useCallback((width: number) => {
-    const minWidth =
-      window.innerWidth >= LEFT_PANEL_MIN_WIDTH_BREAKPOINT
-        ? MIN_LEFT_PANEL_WIDTH_GREATER_THAN_BREAKPOINT
-        : MIN_LEFT_PANEL_WIDTH_LESS_THAN_BREAKPOINT
+    const minWidth = getDefaultLeftPanelOpenWidth(window.innerWidth)
 
     setLeftPanelWidth(Math.min(Math.max(width, minWidth), MAX_LEFT_PANEL_WIDTH))
     setHasUserResized(true)
