@@ -501,6 +501,9 @@
       "Delete account": [
         "Eliminar la cuenta"
       ],
+      "Delete and confirm": [
+        "Eliminar y confirmar"
+      ],
       "Delete device profile": [
         "Eliminar perfil del dispositivo"
       ],
@@ -1848,6 +1851,9 @@
       "Verify password": [
         "Verificar contraseña"
       ],
+      "Verify recovery phrase": [
+        "Verificar frase de recuperación"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verificar el dominio ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1968,6 +1974,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -2284,6 +2294,9 @@
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
       ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ LUMO_SHORT_APP_NAME } le ayude a escribir, responder y revisar sus correos electrónicos."
+      ],
       "Trial expires on ${ formattedDate }": [
         "La prueba expira el ${ formattedDate }"
       ],
@@ -2365,6 +2378,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de ${ LUMO_SHORT_APP_NAME } durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias del asistente de escritura ${ LUMO_SHORT_APP_NAME } durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -2564,12 +2580,19 @@
         "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más.",
         "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses }dirección de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más.",
         "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
@@ -7557,6 +7580,9 @@
       "Please set a recovery/notification email first": [
         "Establezca primero un correo electrónico de recuperación/notificación"
       ],
+      "Please set up your organization before adding a company.": [
+        "Configure su organización antes de añadir una empresa."
+      ],
       "Please try again in a few moments.": [
         "Vuelva a intentarlo en un momento."
       ],
@@ -7736,6 +7762,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Este mensaje podría contener enlaces que no pueden abrirse correctamente en el navegador actual."
+      ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Esta frase no puede recuperar su cuenta. Puede generar una nueva para asegurar que su cuenta pueda recuperarse en el futuro."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Necesita restaurar sus privilegios de administración para crear cuentas no privadas y acceder a las mismas."
@@ -9848,6 +9877,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descuento"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } no conservará versiones anteriores de los archivos."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } no es válida"
       ],
@@ -9882,6 +9914,12 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
@@ -10496,9 +10534,6 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponible en macOS, Windows y Linux."
       ],
-      "Average": [
-        "Promedio"
-      ],
       "Awaiting transaction": [
         "Esperando la transacción"
       ],
@@ -10603,6 +10638,9 @@
       ],
       "Change your password": [
         "Cambie la contraseña"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Compruebe si su frase de recuperación puede usarse para recuperar su cuenta por completo."
       ],
       "Check your network and try again.": [
         "Revise su red e intente de nuevo."
@@ -11846,8 +11884,14 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
+      "No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.": [
+        "Aún no hay desgloses de facturación. Aquí aparecerán los desgloses por periodo de facturación. Una vez disponibles, podrá descargarlos en formato CSV."
+      ],
       "No card required": [
         "No se requiere tarjeta"
+      ],
+      "No companies yet. Start by creating a new company.": [
+        "No hay empresas. Comience creando una empresa."
       ],
       "No connected addresses.": [
         "Sin direcciones conectadas."
@@ -12046,9 +12090,6 @@
       "per month, billed at ${ price }": [
         "mensual, facturado a ${ price }"
       ],
-      "Per seat/month": [
-        "Por licencia/mes"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Periódicamente, le solicita verificar su contraseña de ${ BRAND_NAME } para asegurar que no la olvide. Se reducirá la frecuencia conforme pasa el tiempo."
       ],
@@ -12233,6 +12274,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase de recuperación no está asociada con ninguna clave desactualizada."
+      ],
+      "Recovery phrase verified": [
+        "Frase de recuperación verificada"
       ],
       "Reddit": [
         "Reddit"
@@ -12766,6 +12810,12 @@
       "This will allow the TV to access your ${ BRAND_NAME } account.": [
         "Esto permitirá al TV acceder a su cuenta de ${ BRAND_NAME }"
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Esto eliminará todas las versiones anteriores de los archivos previo a ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Esto eliminará todas las versiones anteriores de sus archivos."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Esto denegará el acceso a **${ email }**. ¿En verdad desea continuar?"
       ],
@@ -13003,6 +13053,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Mejore para mantener sus beneficios de ${ planTitle }."
       ],
+      "Upgrade to unlock": [
+        "Actualice para desbloquear"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Actualice a un mejor plan para desbloquear ${ monitorLink }."
       ],
@@ -13113,6 +13166,9 @@
       ],
       "Version ${ version }": [
         "Versión ${ version }"
+      ],
+      "Version history": [
+        "Historial de versiones"
       ],
       "Version number successfully copied to clipboard": [
         "El número de versión fue copiado en el portapapeles."
@@ -14604,6 +14660,9 @@
       "Beta": [
         "Beta"
       ],
+      "Billable licenses": [
+        "Licencias facturables"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Con un costo de ${ priceYearly } cada 12 meses."
       ],
@@ -14613,11 +14672,11 @@
       "Billed monthly.": [
         "Facturado mensualmente."
       ],
-      "Billed seats": [
-        "Licencias facturadas"
-      ],
       "Billing cycle": [
         "Ciclo de facturación"
+      ],
+      "Billing period": [
+        "Periodo de facturación"
       ],
       "Block": [
         "Bloqueada"
@@ -14715,9 +14774,6 @@
       "Common passwords": [
         "Contraseñas comunes"
       ],
-      "Companies": [
-        "Empresas"
-      ],
       "Company": [
         "Compañía"
       ],
@@ -14787,8 +14843,8 @@
       "Copy IP address to clipboard": [
         "Copiar dirección IP al portapapeles"
       ],
-      "Cost": [
-        "Costo"
+      "Cost per license": [
+        "Costo por licencia"
       ],
       "Could you please let us know which provider?": [
         "¿Podría indicarnos cuál proveedor?"
@@ -14898,6 +14954,9 @@
       ],
       "Don't ask again": [
         "No volver a preguntar"
+      ],
+      "Don't keep versions": [
+        "No conservar versiones"
       ],
       "Don't show this again": [
         "No mostrar esto de nuevo"
@@ -15249,6 +15308,9 @@
       ],
       "Manage categories": [
         "Gestionar categorías"
+      ],
+      "Managed Companies": [
+        "Empresas gestionadas"
       ],
       "Mark as": [
         "Marcar como"
@@ -16642,8 +16704,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Agregar el asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Añadir asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Complemento con prueba gratuita"
@@ -17395,6 +17463,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } calendario",
@@ -23656,6 +23727,10 @@
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } para ${ maxAi } usuario",
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } para ${ maxAi } usuarios"
+      ],
       "${ n } calendar per user": [
         "${ n } calendario por usuario",
         "${ n } calendarios por usuario"
@@ -25275,6 +25350,9 @@
       "Currency": [
         "Moneda"
       ],
+      "Current cost": [
+        "Costo actual"
+      ],
       "Custom": [
         "Personalizado"
       ],
@@ -25383,6 +25461,9 @@
       ],
       "Delete user?": [
         "¿Eliminar usuario?"
+      ],
+      "Delete version history?": [
+        "¿Eliminar historial de versiones?"
       ],
       "Deny access to user?": [
         "¿Denegar acceso al usuario?"
@@ -26617,6 +26698,9 @@
       "Verify your password": [
         "Verificar contraseña"
       ],
+      "Verify your phrase": [
+        "Verifique su frase"
+      ],
       "Verifying your card...": [
         "Verificando la tarjeta..."
       ],
@@ -27359,6 +27443,9 @@
         "No se pudo activar el acceso de admin para ${ n } usuario",
         "No se pudo activar el acceso de admin para ${ n } usuarios"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "No se pudo activar el acceso de administrador: ${ unprivatizationResult.error }"
+      ],
       "Enable admin access?": [
         "¿Activar el acceso de administrador?"
       ],
@@ -27629,6 +27716,9 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitación enviada, esperando la respuesta del miembro invitado"
+      ],
+      "Pending": [
+        "Pendiente"
       ],
       "SSO user provided by your identity provider": [
         "Usuario SSO proporcionado por el proveedor de identidad"

@@ -1854,6 +1854,9 @@
       "Verify password": [
         "Vérifier le mot de passe"
       ],
+      "Verify recovery phrase": [
+        "Vérifier la phrase de récupération"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Vérifier le domaine ${ unverifiedSSODomain.DomainName }"
       ],
@@ -7763,6 +7766,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Cette phrase ne permet pas de récupérer votre compte. Vous pouvez en générer une nouvelle afin de vous assurer de pouvoir récupérer votre compte à l'avenir."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Pour créer des comptes utilisateur non privés et accéder à leurs comptes, vous devez restaurer vos droits administrateur."
       ],
@@ -10531,9 +10537,6 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponible sur macOS, Windows et Linux."
       ],
-      "Average": [
-        "Moyenne"
-      ],
       "Awaiting transaction": [
         "Transaction en attente"
       ],
@@ -10638,6 +10641,9 @@
       ],
       "Change your password": [
         "Modifier votre mot de passe"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Vérifiez si votre phrase de récupération permet de récupérer entièrement votre compte."
       ],
       "Check your network and try again.": [
         "Vérifiez votre connexion réseau et réessayez."
@@ -12090,9 +12096,6 @@
       "per month, billed at ${ price }": [
         "par mois, facturé ${ price }"
       ],
-      "Per seat/month": [
-        "par accès et par mois"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Nous vous inviterons régulièrement à vérifier votre mot de passe ${ BRAND_NAME } afin de s'assurer que vous ne l'oubliez pas. Ces demandes deviendront moins fréquentes au fil du temps."
       ],
@@ -12277,6 +12280,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "La phrase de récupération n'est associée à aucune des clés obsolètes."
+      ],
+      "Recovery phrase verified": [
+        "La phrase de récupération a été vérifiée."
       ],
       "Reddit": [
         "Reddit"
@@ -14660,6 +14666,9 @@
       "Beta": [
         "Bêta"
       ],
+      "Billable licenses": [
+        "Licences facturables"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Facturé ${ priceYearly } tous les 12 mois."
       ],
@@ -14669,11 +14678,11 @@
       "Billed monthly.": [
         "Facturé mensuellement."
       ],
-      "Billed seats": [
-        "Accès facturés"
-      ],
       "Billing cycle": [
         "Cycle de facturation"
+      ],
+      "Billing period": [
+        "Période de facturation"
       ],
       "Block": [
         "Adresses bloquées"
@@ -14777,9 +14786,6 @@
       "Common passwords": [
         "Mots de passe communs"
       ],
-      "Companies": [
-        "Entreprises"
-      ],
       "Company": [
         "Entreprise"
       ],
@@ -14849,8 +14855,8 @@
       "Copy IP address to clipboard": [
         "Copier l'adresse IP dans le presse-papiers"
       ],
-      "Cost": [
-        "Coût"
+      "Cost per license": [
+        "Coût par licence"
       ],
       "Could you please let us know which provider?": [
         "Pouvez-vous nous préciser quel fournisseur ?"
@@ -15314,6 +15320,9 @@
       ],
       "Manage categories": [
         "Gérer les catégories"
+      ],
+      "Managed Companies": [
+        "Entreprises gérées"
       ],
       "Mark as": [
         "Marquer comme"
@@ -16803,6 +16812,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "accès ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } par accès"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } accès ${ MEET_APP_NAME }",
@@ -25356,6 +25368,9 @@
       "Currency": [
         "Devise"
       ],
+      "Current cost": [
+        "Coût actuel"
+      ],
       "Custom": [
         "Personnalisé"
       ],
@@ -26700,6 +26715,9 @@
       ],
       "Verify your password": [
         "Vérifiez votre mot de passe"
+      ],
+      "Verify your phrase": [
+        "Vérifiez votre phrase"
       ],
       "Verifying your card...": [
         "Vérification de votre carte en cours"
