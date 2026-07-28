@@ -15,13 +15,13 @@ import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import type { ContentBlock, Message, RetryStrategy, SiblingInfo } from '../../../../../types';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
+import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import LumoButton from '../../../../Buttons/LumoButton';
 import { ReferenceFilesButton } from '../../../../Files';
 import LumoAvatar from '../../../../LumoAvatar/LumoAvatar/LumoAvatar';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
-import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import SiblingSelector from '../../../../SiblingSelector';
 import { ArtifactChip, ArtifactChipLoading } from '../../../artifact/ArtifactChip';
 import { useArtifactContext } from '../../../artifact/ArtifactContext';
@@ -140,7 +140,7 @@ const AssistantActionToolbar = ({
                         />
                     </div>
                 </>
-                <div>{message.content}</div>
+                {/* <div>{message.content}</div> */}
             </div>
         </div>
     );
@@ -248,6 +248,7 @@ const AssistantMessage = ({
     }, [isFinishedGenerating, isGenerating, isLastMessage, message.content]);
 
     const hasArtifacts = completeArtifacts.length > 0 || streamingArtifact !== null;
+    console.log('💥 ASSISTANT MESSAGE: ', { hasArtifacts, completeArtifacts, streamingArtifact });
 
     // Strip artifact markup from text blocks.
     // While streaming: remove from <artifact to end-of-string (content still arriving).
