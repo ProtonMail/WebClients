@@ -300,9 +300,7 @@ const AddressActions = ({
                     {...disableAddressProps}
                 />
             )}
-            {renderDisconnectBYOEModal && (
-                <DisconnectBYOEModal address={address} member={member} {...disconnectBYOEProps} />
-            )}
+            {renderDisconnectBYOEModal && <DisconnectBYOEModal address={address} {...disconnectBYOEProps} />}
             {renderReachedLimitForwardingModal && <ReachedLimitForwardingModal {...reachedLimitForwardingModalProps} />}
             {renderUpsellForwardingModal && (
                 <UpsellForwardingModal hasAccessToBYOE={hasAccessToBYOE} modalProps={upsellForwardingModalProps} />
