@@ -141,7 +141,7 @@ const AssistantActionToolbar = ({
                         />
                     </div>
                 </>
-                <div>{message.content}</div>
+                {/* <div>{message.content}</div> */}
             </div>
         </div>
     );
@@ -260,6 +260,7 @@ const AssistantMessage = ({
     }, [isFinishedGenerating, isGenerating, isLastMessage, message.content]);
 
     const hasArtifacts = completeArtifacts.length > 0 || streamingArtifact !== null;
+    console.log('💥 ASSISTANT MESSAGE: ', { hasArtifacts, completeArtifacts, streamingArtifact });
 
     // Strip artifact markup from text blocks.
     // While streaming: remove from <artifact to end-of-string (content still arriving).
