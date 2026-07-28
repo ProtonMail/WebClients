@@ -1854,6 +1854,9 @@
       "Verify password": [
         "Verifiqueu la contrasenya"
       ],
+      "Verify recovery phrase": [
+        "Verifica la frase de recuperació"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifica el domini ${ unverifiedSSODomain.DomainName }"
       ],
@@ -7763,6 +7766,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Aquesta frase no pot recuperar el vostre compte. En podeu generar una de nova per assegurar-vos que el vostre compte es pugui recuperar en el futur."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Per a crear comptes d'usuari no privats i accedir als seus comptes, necessitareu restaurar els vostres privilegis d'administrador."
       ],
@@ -10528,9 +10534,6 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponible a macOS, Windows i Linux."
       ],
-      "Average": [
-        "Mitjana"
-      ],
       "Awaiting transaction": [
         "S'està esperant la transacció"
       ],
@@ -10632,6 +10635,9 @@
       ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Comproveu que la vostra frase de recuperació es pugui fer servir per recuperar completament el vostre compte."
       ],
       "Check your network and try again.": [
         "Comproveu la xarxa i torneu-ho a provar."
@@ -11231,7 +11237,7 @@
         "per ${ price }"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "Per un historial de versions de 10 anys, poseu-vos en contacte amb el nostre equip de vendes."
+        "Per obtenir un historial de versions de 10 anys, contacteu amb el nostre equip de vendes."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedir en qualsevol moment al correu electrònic i a una experiència mòbil optimitzada, descarregueu la nostra aplicació ${ androidAppLink } o ${ iosAppLink }."
@@ -12084,9 +12090,6 @@
       "per month, billed at ${ price }": [
         "al mes, facturat a ${ price }"
       ],
-      "Per seat/month": [
-        "Per llicència/mes"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Periòdicament us demana que verifiqueu la contrasenya de ${ BRAND_NAME } per assegurar-vos que no l'oblideu. Amb el temps, us la demanarà amb menys freqüència."
       ],
@@ -12271,6 +12274,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase de recuperació no està associada amb cap clau antiquada."
+      ],
+      "Recovery phrase verified": [
+        "S'ha verificat la frase de recuperació"
       ],
       "Reddit": [
         "Reddit"
@@ -14654,6 +14660,9 @@
       "Beta": [
         "Beta"
       ],
+      "Billable licenses": [
+        "Llicències facturables"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Es facturarà ${ priceYearly } cada dotze mesos."
       ],
@@ -14663,11 +14672,11 @@
       "Billed monthly.": [
         "Facturat mensualment."
       ],
-      "Billed seats": [
-        "Llicències facturades"
-      ],
       "Billing cycle": [
         "Cicle de facturació"
+      ],
+      "Billing period": [
+        "Període de facturació"
       ],
       "Block": [
         "Adreces bloquejades"
@@ -14771,9 +14780,6 @@
       "Common passwords": [
         "Contrasenyes comunes"
       ],
-      "Companies": [
-        "Empreses"
-      ],
       "Company": [
         "Empresa"
       ],
@@ -14843,8 +14849,8 @@
       "Copy IP address to clipboard": [
         "Copia l'adreça IP al porta-retalls"
       ],
-      "Cost": [
-        "Cost"
+      "Cost per license": [
+        "Cost per llicència"
       ],
       "Could you please let us know which provider?": [
         "Podeu fer-nos saber quin proveïdor?"
@@ -15308,6 +15314,9 @@
       ],
       "Manage categories": [
         "Gestiona les categories"
+      ],
+      "Managed Companies": [
+        "Empreses gestionades"
       ],
       "Mark as": [
         "Marca com a"
@@ -16797,6 +16806,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
@@ -22267,7 +22279,7 @@
     },
     "Setting": {
       "Get updates about comments via email": [
-        "Rebeu actualitzacions per correu electrònic sobre els comentaris"
+        "Obtingueu actualitzacions per correu electrònic sobre els comentaris"
       ],
       "Include document name in email notifications": [
         "Incloure el nom del document a les notificacions per correu electrònic"
@@ -25350,6 +25362,9 @@
       "Currency": [
         "Moneda"
       ],
+      "Current cost": [
+        "Cost actual"
+      ],
       "Custom": [
         "Personalitzar"
       ],
@@ -26694,6 +26709,9 @@
       ],
       "Verify your password": [
         "Verifiqueu la vostra contrasenya"
+      ],
+      "Verify your phrase": [
+        "Verifiqueu la frase"
       ],
       "Verifying your card...": [
         "S'està verificant la targeta…"

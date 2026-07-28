@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Rensa webbläsardata"
       ],
+      "Clear conversation": [
+        "Rensa konversation"
+      ],
       "Clear data": [
         "Rensa data"
       ],
@@ -1135,6 +1138,9 @@
       "Refresh the page": [
         "Uppdatera sidan"
       ],
+      "Reject": [
+        "Avvisa"
+      ],
       "Remove": [
         "Ta bort"
       ],
@@ -1440,6 +1446,9 @@
       ],
       "Stay": [
         "Stanna"
+      ],
+      "Stop": [
+        "Stoppa"
       ],
       "Stop downloading assistant": [
         "Stoppa nedladdning av assistent"
@@ -1768,6 +1777,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe skrivassistent (för ${ quantity } användare)",
+        "${ BRAND_NAME } Scribe skrivassistent för ${ quantity } användare)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ytterligare anpassad domän",
         "${ domains } ytterligare anpassade domäner"
@@ -1776,11 +1789,22 @@
         "${ ips } dedikerad VPN-server",
         "${ ips } dedikerade VPN-servrar"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)",
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-licens"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)",
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerad server"
@@ -1793,6 +1817,10 @@
       ],
       "${ price } per user": [
         "${ price } per användare"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } anpassad domän",
+        "${ quantity } anpassade domäner"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI-licens",
@@ -1931,6 +1959,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ LUMO_SHORT_APP_NAME } hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ]
     },
     "Attached ics file error": {
@@ -2096,6 +2127,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ LUMO_SHORT_APP_NAME } skrivassistent, obegränsade hide-my-email-alias och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
@@ -5281,6 +5315,9 @@
       "Something went wrong while fetching available domains": [
         "Något gick fel vid hämtning av tillgängliga domäner"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Något gick fel, stäng modal och försök igen."
+      ],
       "Something went wrong. Please try again.": [
         "Något gick fel. Försök igen."
       ],
@@ -6842,6 +6879,10 @@
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
       ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problem under import:",
+        "${ issues.length } problem under import:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
@@ -6929,6 +6970,9 @@
       "${ receivedMessagesCount } email last month": [
         "${ receivedMessagesCount } e-postmeddelande förra månaden",
         "${ receivedMessagesCount } e-postmeddelanden förra månaden"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minuter kvar …"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
@@ -7431,6 +7475,9 @@
       "Default email application": [
         "Standardapplikation för e-post"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Detektering sker på din enhet, så ingen data från din e-post skickas till våra servrar."
       ],
@@ -7715,6 +7762,9 @@
         "Har ${ numAttachments } bilaga (${ numAttachmentsSize })",
         "Har ${ numAttachments } bilagor (${ numAttachmentsSize })"
       ],
+      "Have some more time to decide without interruption.": [
+        "Ha lite mer tid att bestämma utan avbrott."
+      ],
       "here": [
         "här"
       ],
@@ -7781,6 +7831,9 @@
       ],
       "Import in progress": [
         "Import pågår"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Import pågår. Du kan stänga denna dialog medan den körs och återkomma till den senare. Stäng dock inte fliken."
       ],
       "Import mailbox": [
         "Importera brevlåda"
@@ -9857,6 +9910,9 @@
       "Did not follow instructions": [
         "Följde inte instruktionerna"
       ],
+      "Document ID": [
+        "Dokument-ID"
+      ],
       "Don't ask again": [
         "Fråga inte igen"
       ],
@@ -10427,6 +10483,12 @@
       "Username": [
         "Användarnamn"
       ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
+      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -10953,6 +11015,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (för ${ quantity } användare)",
+        "${ MEET_APP_NAME } (för ${ quantity } användare)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
       ],
@@ -13105,6 +13171,9 @@
       "Anytown": [
         "Alingsås"
       ],
+      "Ask anything…": [
+        "Fråga vad som helst …"
+      ],
       "Company name": [
         "Företagsnamn"
       ],
@@ -15150,10 +15219,6 @@
       "Move ${ selectionCount } message": [
         "Flytta ${ selectionCount } meddelande",
         "Flytta ${ selectionCount } meddelanden"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Flyttad till ${ label }. Liknande meddelande kommer att kategoriseras här i framtiden.",
-        "Flyttad till ${ label }. Liknande meddelanden kommer att kategoriseras här i framtiden."
       ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"

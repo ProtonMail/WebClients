@@ -642,6 +642,9 @@
       "Refresh the page": [
         "Sayfayı yenile"
       ],
+      "Reject": [
+        "Reddet"
+      ],
       "Reload": [
         "Yenile"
       ],
@@ -752,6 +755,9 @@
       ],
       "Select all": [
         "Tümünü seç"
+      ],
+      "Send": [
+        "Gönder"
       ],
       "Set password or expiration date": [
         "Parola veya geçerlilik süresi belirleyin"
@@ -972,6 +978,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)",
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ek özel etki alanı",
         "${ domains } ek özel etki alanı"
@@ -980,11 +990,38 @@
         "${ ips } size ayrılmış VPN sunucusu",
         "${ ips } size ayrılmış VPN sunucusu"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } yapay zeka yardımcısı"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)",
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } yapay zeka lisansı"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } koltuğu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)",
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } size ayrılmış her sunucu için"
+      ],
+      "${ price } per domain": [
+        "her etki alanı için ${ price }"
+      ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
+      ],
+      "${ price } per user": [
+        "her kullanıcı için ${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } özel etki alanı",
+        "${ quantity } özel etki alanı"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
@@ -1043,7 +1080,7 @@
         "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ BRAND_NAME } Scribe tarafından yardım alın."
       ],
       "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
-        "E-posta üretkenliğinizi yeni seviyelere taşıyın. ${ LUMO_SHORT_APP_NAME } ile e-postalarınızı yazın, yanıtlayın ve düzeltin."
+        "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ LUMO_SHORT_APP_NAME } tarafından yardım alın."
       ]
     },
     "Attached ics file error": {
@@ -1078,6 +1115,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } tane ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansınız olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcınız olabilir."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Deneme süresi boyunca özel etki alanları ekleyemezsiniz."
       ]
     },
     "b2b_trials_Action": {
@@ -1178,8 +1233,8 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir.",
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresleri, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
@@ -1189,7 +1244,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. 15 e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
@@ -4593,6 +4648,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Uzaktan çalışırken güvenli bir bağlantı kullanmak şarttır. VPN, şirket verilerini siber tehditlerden korur ve işinizin güvende kalmasını sağlar."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Bir VPN, bağlantınızı şifreleyerek ve IP adresinizi gizleyerek herhangi birinin gezinme etkinliğinizi izlemesini oldukça zorlaştırır."
       ],
@@ -4765,6 +4823,10 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount } üye için güvenli bir bulut oluşturun",
+        "${ memberCount } üye için güvenli bir bulut oluşturun"
+      ],
       "Create an end-to-end encrypted document.": [
         "Uçtan uca şifrelenmiş bir belge oluşturun."
       ],
@@ -4795,8 +4857,14 @@
       "Current version": [
         "Güncel sürüm"
       ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
       "Decrypting your document": [
         "Belgenizin şifresi çözülüyor"
+      ],
+      "Details": [
+        "Ayrıntılar"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Sayısal imza doğrulandı. Bu dosya ${ emailAddress } tarafından güvenli şekilde yüklendi."
@@ -4854,6 +4922,9 @@
       ],
       "email": [
         "e-posta"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
@@ -5228,6 +5299,9 @@
       ],
       "Opening...": [
         "Açılıyor..."
+      ],
+      "Organization size": [
+        "Kuruluş boyutu"
       ],
       "Other accounts": [
         "Diğer hesaplar"
@@ -5639,6 +5713,9 @@
       "username": [
         "kullanıcı adı"
       ],
+      "Users": [
+        "Kullanıcılar"
+      ],
       "Version number successfully copied to clipboard": [
         "Sürüm numarası kopyalandı"
       ],
@@ -6018,6 +6095,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Düzenleyiciler izinleri değiştirebilsin ve paylaşabilsin"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Düzenleyiciler izinleri değiştirebilsin ve paylaşabilsin."
       ],
       "Anonymous": [
         "İsimsiz"
@@ -6724,6 +6804,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)",
+        "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } lisansı"
       ],
@@ -6791,6 +6875,11 @@
       "Video meetings, ${ n } participant": [
         "Görüntülü görüşmeler, ${ n } katılımcı",
         "Görüntülü görüşmeler, ${ n } katılımcı"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_MEET_SEATS } tane ${ MEET_SHORT_APP_NAME } koltuğunuz olabilir."
       ]
     },
     "Message": {
@@ -7804,7 +7893,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Şirket kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -9606,6 +9695,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Bu ögenin bağlantısı Drive depolama alanınıza kaydedildi. Daha sonra 'Benimle paylaşılan' bölümünden erişebilirsiniz."
+      ],
+      "Editor permissions": [
+        "Düzenleyici izinleri"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Düzenleyiciler artık paylaşımları yönetebilir ve başkalarını davet edebilir. Bu özelliği paylaşım ayarlarından istediğiniz zaman kapatabilirsiniz."
       ],
       "To edit this document, create a copy that you can modify.": [
         "Bu belgeyi düzenlemek için, üzerinde değişiklik yapabileceğiniz bir kopya oluşturun."

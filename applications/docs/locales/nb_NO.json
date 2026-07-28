@@ -642,6 +642,9 @@
       "Refresh the page": [
         "Oppdater siden"
       ],
+      "Reject": [
+        "Avvis"
+      ],
       "Reload": [
         "Last inn på nytt"
       ],
@@ -752,6 +755,9 @@
       ],
       "Select all": [
         "Velg alle"
+      ],
+      "Send": [
+        "Send"
       ],
       "Set password or expiration date": [
         "Angi passord eller utløpsdato"
@@ -972,6 +978,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } bruker)",
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } brukere)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ekstra egendefinert domene",
         "${ domains } ekstra egendefinerte domener"
@@ -980,11 +990,34 @@
         "${ ips } dedikert VPN-tjener",
         "${ ips } dedikerte VPN-tjenere"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } bruker)",
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } brukere)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } KI-lisens"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } seter"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } per dedikerte tjener"
+      ],
+      "${ price } per domain": [
+        "${ price } per domene"
+      ],
+      "${ price } per seat": [
+        "${ price } per sete"
+      ],
+      "${ price } per user": [
+        "${ price } per bruker"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } egendefinert domene",
+        "${ quantity } egendefinerte domener"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } KI-lisens",
@@ -1075,6 +1108,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert server i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seter i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-seter i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke legge til egendefinerte domener i prøveperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -4580,6 +4628,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "En sikker tilkobling er avgjørende når du jobber eksternt. Et VPN beskytter bedriftsdata mot cybertrusler og holder arbeidet ditt privat."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Et VPN krypterer tilkoblingen din og skjuler IP-adressen, noe som gjør det mye vanskeligere for noen å spore eller overvåke surfingen din."
       ],
@@ -4752,6 +4803,10 @@
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opprett en sikker sky for ${ memberCount } medlem",
+        "Opprett en sikker sky for ${ memberCount } medlemmer"
+      ],
       "Create an end-to-end encrypted document.": [
         "Opprett et ende-til-ende-kryptert dokument."
       ],
@@ -4782,8 +4837,14 @@
       "Current version": [
         "Gjeldende versjon"
       ],
+      "Custom email domains": [
+        "Egendefinerte e-postdomener"
+      ],
       "Decrypting your document": [
         "Dekrypterer dokumentet ditt"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digital signatur bekreftet. Denne filen ble sikkert lastet opp av ${ emailAddress }."
@@ -4841,6 +4902,9 @@
       ],
       "email": [
         "e-post"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
       ],
       "Emails are automatically signed": [
         "E-post signeres automatisk"
@@ -5215,6 +5279,9 @@
       ],
       "Opening...": [
         "Åpner..."
+      ],
+      "Organization size": [
+        "Organisasjonsstørrelse"
       ],
       "Other accounts": [
         "Andre kontoer"
@@ -5625,6 +5692,9 @@
       ],
       "username": [
         "brukernavn"
+      ],
+      "Users": [
+        "Brukere"
       ],
       "Version number successfully copied to clipboard": [
         "Versjonsnummeret ble kopiert til utklippstavlen"
@@ -6702,6 +6772,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (for ${ quantity } bruker)",
+        "${ MEET_APP_NAME } (for ${ quantity } brukere)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-tilgang"
       ],
@@ -6769,6 +6843,11 @@
       "Video meetings, ${ n } participant": [
         "Videomøter, ${ n } deltaker",
         "Videomøter, ${ n } deltakere"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seter i prøveperioden."
       ]
     },
     "Message": {

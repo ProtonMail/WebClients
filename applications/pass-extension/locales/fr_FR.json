@@ -118,11 +118,11 @@
       "Bulk restore items from trash": [
         "Restaurer un groupe d'éléments depuis la corbeille"
       ],
-      "Bulk select items": [
-        "Sélectionner un groupe d'éléments"
-      ],
       "Cancel": [
         "Annuler"
+      ],
+      "Cancel bulk selection": [
+        "Annuler la sélection multiple"
       ],
       "Cancel email change": [
         "Annuler le changement d'e-mail"
@@ -145,8 +145,14 @@
       "Clear": [
         "Effacer"
       ],
+      "Clear item type filter": [
+        "Effacer le filtre sur le type d'élément"
+      ],
       "Clear search": [
         "Effacer la recherche"
+      ],
+      "Clear sort filter": [
+        "Effacer le tri/filtre"
       ],
       "Close": [
         "Fermer"
@@ -495,9 +501,6 @@
       ],
       "Move to Trash": [
         "Déplacer dans la corbeille"
-      ],
-      "Multiple select": [
-        "Sélection multiple"
       ],
       "New token": [
         "Nouveau jeton"

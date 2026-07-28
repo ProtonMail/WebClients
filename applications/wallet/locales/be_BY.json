@@ -438,6 +438,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } дадатковы карыстальніцкі дамен",
         "${ domains } дадатковыя карыстальніцкія дамены",
@@ -450,11 +456,26 @@
         "${ ips } вылучаных сервераў VPN",
         "${ ips } вылучаных сервераў VPN"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Памочнік ШІ ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальніка)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Ліцэнзія ШІ для ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Ліцэнзіі ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)"
       ],
       "${ price } per dedicated server": [
         "${ price } за вылучаны сервер"
@@ -467,6 +488,12 @@
       ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } карыстальніцкі дамен",
+        "${ quantity } карыстальніцкія дамены",
+        "${ quantity } карыстальніцкіх даменаў",
+        "${ quantity } карыстальніцкіх даменаў"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
@@ -3727,6 +3754,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальніка)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Ліцэнзія ${ MEET_APP_NAME }"
       ],

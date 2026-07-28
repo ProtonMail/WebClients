@@ -1135,6 +1135,9 @@
       "Refresh the page": [
         "გვერდის განახლება"
       ],
+      "Reject": [
+        "უარყოფა"
+      ],
       "Remove": [
         "წაშლა"
       ],
@@ -1768,6 +1771,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)",
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } დამატებითი მორგებული დომენი",
         "${ domains } დამატებითი მორგებული დომენი"
@@ -1775,6 +1782,13 @@
       "${ ips } dedicated VPN server": [
         "${ ips } გამოყოფილი VPN სერვერი",
         "${ ips } გამოყოფილი VPN სერვერი"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ხი დამხმარე ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-ის ლიცენზია"
@@ -1793,6 +1807,10 @@
       ],
       "${ price } per user": [
         "${ price }/მომხმარებელი"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } მომხმარებლის დომენი",
+        "${ quantity } მომხმარებლის დომენი"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია",
@@ -7425,6 +7443,9 @@
       "Default email application": [
         "ელ-ფოსტის ნაგულისხმევი აპლიკაცია"
       ],
+      "Details": [
+        "დეტალები"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "აღმოჩენა თქვენს მოწყობილობაზე ხდება, ასე რომ, თქვენი ელფოსტებიდან მონაცემები ჩვენს სერვერებზე არ იგზავნება."
       ],
@@ -10932,6 +10953,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "${ MEET_APP_NAME } (${ quantity } მომხმარებლისთვის)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-ის ლიცენზია"
       ],
@@ -15120,10 +15145,6 @@
       "Move ${ selectionCount } message": [
         "${ selectionCount } შეტყობინების გადატანა",
         "${ selectionCount } შეტყობინების გადატანა"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "გადავიდა საქაღალდეში: ${ label }. მსგავსი შეტყობინება მომავალში აქ განთავსდება.",
-        "გადავიდა საქაღალდეში: ${ label }. მსგავსი შეტყობინებები მომავალში აქ განთავსდება."
       ],
       "Password copied to clipboard": [
         "პაროლი დაკოპირდა გაცვლის ბუფერში"

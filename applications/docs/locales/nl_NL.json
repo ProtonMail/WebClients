@@ -642,6 +642,9 @@
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
+      "Reject": [
+        "Afwijzen"
+      ],
       "Reload": [
         "Opnieuw laden"
       ],
@@ -752,6 +755,9 @@
       ],
       "Select all": [
         "Alles selecteren"
+      ],
+      "Send": [
+        "Verstuur"
       ],
       "Set password or expiration date": [
         "Stel wachtwoord of vervaldatum in"
@@ -972,6 +978,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruikers)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } extra aangepast domein",
         "${ domains } extra aangepaste domeinen"
@@ -980,11 +990,38 @@
         "${ ips } toegewijde VPN-server",
         "${ ips } toegewijde VPN-servers"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruikers)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-licentie"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruikers)"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } per toegewijde server"
+      ],
+      "${ price } per domain": [
+        "${ price } per domein"
+      ],
+      "${ price } per seat": [
+        "${ price } per zitplaats"
+      ],
+      "${ price } per user": [
+        "${ price } per gebruiker"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } aangepast domein",
+        "${ quantity } aangepaste domeinen"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI-licentie",
@@ -1078,6 +1115,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Nadat de proefversie eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Tijdens de proefperiode kunt u maximaal ${ TRIAL_MAX_SCRIBE_SEATS } schrijfassistent-licenties ${ LUMO_SHORT_APP_NAME } hebben."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_USERS } gebruikers hebben tijdens de proefperiode."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "U kunt geen aangepaste domeinen toevoegen tijdens de proefperiode."
       ]
     },
     "b2b_trials_Action": {
@@ -4593,6 +4648,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Een veilige verbinding is essentieel bij het werken op afstand. Een VPN beschermt bedrijfsgegevens tegen cyberbedreigingen en houdt uw werk privé."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Een VPN versleutelt uw verbinding en verbergt uw IP-adres, waardoor het voor iedereen veel moeilijker is om browsen te volgen of te volgen."
       ],
@@ -4765,6 +4823,10 @@
       "Create a new contact group": [
         "Maak een nieuwe contactengroep"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Maak een beveiligde cloud voor ${ memberCount } lid",
+        "Maak een beveiligde cloud voor ${ memberCount } leden"
+      ],
       "Create an end-to-end encrypted document.": [
         "Maak een end-to-end versleuteld document."
       ],
@@ -4795,8 +4857,14 @@
       "Current version": [
         "Huidige versie"
       ],
+      "Custom email domains": [
+        "Aangepaste e-maildomeinen"
+      ],
       "Decrypting your document": [
         "Uw document ontsleutelen"
+      ],
+      "Details": [
+        "Details"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitale handtekening geverifieerd. Dit bestand werd veilig geüpload door ${ emailAddress }."
@@ -4854,6 +4922,9 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
       ],
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
@@ -5228,6 +5299,9 @@
       ],
       "Opening...": [
         "Openen..."
+      ],
+      "Organization size": [
+        "Grootte van de organisatie"
       ],
       "Other accounts": [
         "Andere accounts"
@@ -5639,6 +5713,9 @@
       "username": [
         "gebruikersnaam"
       ],
+      "Users": [
+        "Gebruikers"
+      ],
       "Version number successfully copied to clipboard": [
         "Versienummer succesvol gekopieerd naar klembord"
       ],
@@ -6018,6 +6095,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Sta bewerkers toe om toelatingen te wijzigen en te delen"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Sta bewerkers toe om toelatingen te wijzigen en te delen."
       ],
       "Anonymous": [
         "Anoniem"
@@ -6724,6 +6804,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruiker)",
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruikers)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licentie"
       ],
@@ -6791,6 +6875,11 @@
       "Video meetings, ${ n } participant": [
         "Videovergaderingen, ${ n } deelnemer",
         "Videovergaderingen, ${ n } deelnemers"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ]
     },
     "Message": {
@@ -9606,6 +9695,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Een link naar dit item werd opgeslaan op uw schijf. U kan het later bekijken in de sectie \"Gedeeld met mij\"."
+      ],
+      "Editor permissions": [
+        "Bewerk machtigingen"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Bewerkers kunnen nu het delen beheren en anderen uitnodigen. U kunt dit op elk gewenst moment uitschakelen via de instellingen voor delen."
       ],
       "To edit this document, create a copy that you can modify.": [
         "Om dit document te bewerken, maak een kopie die u kunt wijzigen."

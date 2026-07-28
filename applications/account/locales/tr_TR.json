@@ -121,7 +121,7 @@
         "Adresten takvim ekle"
       ],
       "Add company": [
-        "Kuruluş ekle"
+        "Birim ekle"
       ],
       "Add condition": [
         "Koşul ekle"
@@ -361,7 +361,7 @@
         "Bağlı"
       ],
       "Contact sales": [
-        "Satış departmanıyla iletişime geçin"
+        "Satış ekibiyle görüşün"
       ],
       "Contact support": [
         "Destek ekibimizle görüşün"
@@ -589,7 +589,7 @@
         "Kategoriyi kullanımdan kaldır"
       ],
       "Disable company": [
-        "Kuruluşu kullanımdan kaldır"
+        "Birimi kullanımdan kaldır"
       ],
       "Disable recovery phrase": [
         "Kurtarma ifadesini kapat"
@@ -748,7 +748,7 @@
         "Kategoriyi kullanıma al"
       ],
       "Enable company": [
-        "Kuruluşu kullanıma al"
+        "Birimi kullanıma al"
       ],
       "enable desktop notifications": [
         "bilgisayar bildirimlerini açmak"
@@ -1099,7 +1099,7 @@
         "İletişim ayarları yönetimi"
       ],
       "Manage company": [
-        "Kuruluş yönetimi"
+        "Birim yönetimi"
       ],
       "Manage folders": [
         "Klasör yönetimi"
@@ -1854,6 +1854,9 @@
       "Verify password": [
         "Parolayı doğrula"
       ],
+      "Verify recovery phrase": [
+        "Kurtarma ifadesini doğrula"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "${ unverifiedSSODomain.DomainName } etki alanını doğrula"
       ],
@@ -2295,7 +2298,7 @@
         "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ BRAND_NAME } Scribe tarafından yardım alın."
       ],
       "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
-        "E-posta üretkenliğinizi yeni seviyelere taşıyın. ${ LUMO_SHORT_APP_NAME } ile e-postalarınızı yazın, yanıtlayın ve düzeltin."
+        "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ LUMO_SHORT_APP_NAME } tarafından yardım alın."
       ],
       "Trial expires on ${ formattedDate }": [
         "Deneme süresi ${ formattedDate } tarihinde bitecek"
@@ -2380,7 +2383,7 @@
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } adet ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansına sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } tane ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansınız olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
@@ -2581,8 +2584,8 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir.",
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresleri, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
@@ -2592,7 +2595,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. 15 e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
@@ -4107,7 +4110,7 @@
         "Fatura dönemi"
       ],
       "Company": [
-        "Kuruluş"
+        "Birim"
       ],
       "Managed companies": [
         "Yönetilen kuruluşlar"
@@ -7581,7 +7584,7 @@
         "Lütfen önce bir kurtarma/bildirim e-postası adresi ayarlayın"
       ],
       "Please set up your organization before adding a company.": [
-        "Lütfen şirket eklemeden önce kuruluşunuzu oluşturun."
+        "Lütfen bir birim eklemeden önce kuruluşunuzu ayarlayın."
       ],
       "Please try again in a few moments.": [
         "Lütfen biraz sonra yeniden deneyin."
@@ -7762,6 +7765,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
+      ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Bu ifadeyle hesabınızı kurtaramazsınız. Gelecekte hesabınızı kurtarabilmek için yeni bir kurtarma ifadesi oluşturabilirsiniz."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Korunmayan kullanıcı hesapları oluşturmak ve bu hesaplara erişmek için yönetici yetkilerinizi geri yüklemelisiniz."
@@ -9377,7 +9383,7 @@
         "Bize ulaşın"
       ],
       "Downloads": [
-        "İndirilenler"
+        "İndirmeler"
       ],
       "Enjoying ${ planName }?": [
         "${ planName } hoşunuza gitti mi?"
@@ -9872,7 +9878,7 @@
         "%${ discountPercent } indirim"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini saklamayacak."
+        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
@@ -9910,7 +9916,7 @@
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
       "${ LUMO_APP_NAME } includes the writing assistant": [
-        "${ LUMO_APP_NAME } yazma yardımcısını içerir"
+        "${ LUMO_APP_NAME } içinde yazma yardımcısı bulunur"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
@@ -10528,9 +10534,6 @@
       "Available on macOS, Windows, and Linux.": [
         "macOS, Windows ve Linux üzerinde kullanılabilir."
       ],
-      "Average": [
-        "Ortalama"
-      ],
       "Awaiting transaction": [
         "Ödemenin tamamlanması bekleniyor"
       ],
@@ -10635,6 +10638,9 @@
       ],
       "Change your password": [
         "Parolanızı değiştirin"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Kurtarma ifadenizin hesabınızı tümüyle kurtarmaya uygun olup olmadığına bakın."
       ],
       "Check your network and try again.": [
         "Ağınızı denetleyip ve yeniden deneyin."
@@ -11234,7 +11240,7 @@
         "${ price } karşılığında"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "10 yıllık sürüm geçmişi hakkında bilgi almak için lütfen satış ekibimizle iletişime geçin."
+        "10 yıllık sürüm geçmişine erişebilmek için lütfen satış ekibimizle görüşün."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
@@ -11882,13 +11888,13 @@
         "Herhangi bir adres yok"
       ],
       "No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.": [
-        "Henüz fatura dökümleri mevcut değil. Fatura dönemlerine göre dökümleriniz burada görüntülenecek. Dökümler hazır olduğunda bunları CSV formatında indirebilirsiniz."
+        "Fatura kırılımları henüz hazırlanmamış. Fatura dönemine göre kırılımlarınız burada görüntülenecek. Hazır olduğunda CSV biçiminde indirebilirsiniz."
       ],
       "No card required": [
         "Kredi kartı gerekmez"
       ],
       "No companies yet. Start by creating a new company.": [
-        "Henüz hiçbir şirket yok. Yeni şirket oluşturarak başlayın."
+        "Henüz bir birim yok. Yeni bir birim ekleyerek başlayın."
       ],
       "No connected addresses.": [
         "Bağlı bir adres yok."
@@ -12087,9 +12093,6 @@
       "per month, billed at ${ price }": [
         "aylık, fatura toplam ${ price } olarak hesaplanır"
       ],
-      "Per seat/month": [
-        "Koltuk / ay"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Parolanızı unutmamanız için ${ BRAND_NAME } düzenli aralıklarla parolanızı doğrulamanızı ister. Zamanla bu isteklerin sıklığı azalır."
       ],
@@ -12274,6 +12277,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Kurtarma ifadesi süresi geçmiş herhangi bir anahtarla ilişkili değil."
+      ],
+      "Recovery phrase verified": [
+        "Kurtarma ifadesi doğrulandı"
       ],
       "Reddit": [
         "Reddit"
@@ -12645,7 +12651,7 @@
         "Takvim hesabınızdan kaldırılacak."
       ],
       "The company and all its members will lose access immediately.": [
-        "Kuruluş ve tüm üyeleri erişimi hemen kaybedecek."
+        "Birim ve tüm üyeleri erişimi hemen kaybedecek."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği gizli bir internet bölümüdür."
@@ -12808,10 +12814,10 @@
         "Bu işlem televizyonun ${ BRAND_NAME } hesabınıza erişmesini sağlayacak."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Bu işlem dosyalarınızın ${ rententionLabel } tarihinden daha eski olan tüm önceki sürümleri silecek."
+        "Bu işlem ${ rententionLabel } öncesindeki dosya sürümlerinizi silecek."
       ],
       "This will delete all previous versions of your files.": [
-        "Bu işlem dosyalarınızın önceki tüm sürümleri silecek."
+        "Bu işlem dosyalarınızın tüm önceki sürümlerini silecek."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Bu işlem, **${ email }** hesabına erişme izni vermeyecek. İlerlemek istediğinize emin misiniz?"
@@ -13051,7 +13057,7 @@
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
       "Upgrade to unlock": [
-        "Kilidi açmak için yükseltin"
+        "Kullanmak için tarifenizi yükseltin"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } özelliğine erişmek için tarifenizi yükseltin."
@@ -13339,7 +13345,7 @@
         "E-posta kategorileri ile önemli iletiler birincil gelen kutusuna gelir. Diğer her şey kategoriler halinde düzenlenir."
       ],
       "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
-        "Grupları kullanarak erişim denetimi için şirket güvenlik ilkelerini uygulayabilir ve verilere yetkisiz erişilmesi riskini azaltabilirsiniz."
+        "Grupları kullanarak erişim denetimi için birim güvenlik ilkelerini uygulayabilir ve verilere yetkisiz erişilmesi riskini azaltabilirsiniz."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Grupları kullanarak, belirli bir gruptaki kullanıcılara kolayca e-postalar gönderebilirsiniz."
@@ -13433,7 +13439,7 @@
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
       ],
       "You can enable this company again at any time.": [
-        "Bu kuruluşu istediğiniz zaman yeniden kullanıma alabilirsiniz."
+        "Bu birimi istediğiniz zaman yeniden kullanıma alabilirsiniz."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Kuruluşunuzun üyeleri, ${ BRAND_NAME } hesaplarının parolasını oluştururken veya sıfırlarken uygulanacak zorunlu parola kuralları belirleyebilirsiniz."
@@ -13453,7 +13459,7 @@
         "Şimdi hesaba bir yönetici olarak erişebilir ve yönetebilirsiniz."
       ],
       "You can now access and manage the company as an administrator.": [
-        "Artık kuruluşa yönetici olarak erişebilir ve yönetebilirsiniz."
+        "Artık birime yönetici olarak erişebilir ve yönetebilirsiniz."
       ],
       "You can now close this tab.": [
         "Artık bu sekmeyi kapatabilirsiniz."
@@ -14657,6 +14663,9 @@
       "Beta": [
         "Beta"
       ],
+      "Billable licenses": [
+        "Faturalanabilir lisanslar"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Her 12 ayda bir ${ priceYearly } olarak faturalanır."
       ],
@@ -14666,10 +14675,10 @@
       "Billed monthly.": [
         "Ayda bir faturalanır."
       ],
-      "Billed seats": [
-        "Faturalanmış koltuk sayısı"
-      ],
       "Billing cycle": [
+        "Fatura dönemi"
+      ],
+      "Billing period": [
         "Fatura dönemi"
       ],
       "Block": [
@@ -14774,9 +14783,6 @@
       "Common passwords": [
         "Yaygın parolalar"
       ],
-      "Companies": [
-        "Kuruluşlar"
-      ],
       "Company": [
         "Kuruluş"
       ],
@@ -14846,8 +14852,8 @@
       "Copy IP address to clipboard": [
         "IP adresini panoya kopyala"
       ],
-      "Cost": [
-        "Maliyet"
+      "Cost per license": [
+        "Lisans başına maliyet"
       ],
       "Could you please let us know which provider?": [
         "Hangi hizmet sağlayıcı olduğunu belirtebilir misiniz?"
@@ -14959,7 +14965,7 @@
         "Bir daha sorma"
       ],
       "Don't keep versions": [
-        "Sürümleri tutma"
+        "Sürüm geçmişi tutulmasın"
       ],
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
@@ -15311,6 +15317,9 @@
       ],
       "Manage categories": [
         "Kategori yönetimi"
+      ],
+      "Managed Companies": [
+        "Yönetilen kuruluşlar"
       ],
       "Mark as": [
         "Şöyle işaretlensin"
@@ -17010,7 +17019,7 @@
         "Diğer kişilere e-posta adresleri oluşturmak, bir kuruluş, okul veya grup için ${ MAIL_APP_NAME } uygulamasını yönetmek üzere özel etki alanınızı (örn. kurulus.com) bağlayın."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Özel e-posta adresleri (siz@sirketiniz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Süreç boyunca yardımcımız size yol gösterecek."
+        "Özel e-posta adresleri (siz@kurulusunuz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Süreç boyunca yardımcımız size yol gösterecek."
       ],
       "Exact (sub) domain matching rule": [
         "Tam (alt) etki alanı eşleştirme kuralı"
@@ -18281,7 +18290,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Şirket kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -20266,7 +20275,7 @@
         "Görüntülenecek adı yazın"
       ],
       "Company name": [
-        "Kuruluş adı"
+        "Birim adı"
       ],
       "Confirm": [
         "Onayla"
@@ -20362,7 +20371,7 @@
         "Arama"
       ],
       "Search for a company": [
-        "Kuruluş ara"
+        "Birim ara"
       ],
       "Search for a user or address": [
         "Bir kullanıcı ya da adres arayın"
@@ -24975,7 +24984,7 @@
         "Kategori ekle"
       ],
       "Add company": [
-        "Kuruluş ekle"
+        "Birim ekle"
       ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
@@ -25350,6 +25359,9 @@
       "Currency": [
         "Para birimi"
       ],
+      "Current cost": [
+        "Güncel maliyet"
+      ],
       "Custom": [
         "Özel"
       ],
@@ -25499,7 +25511,7 @@
         "Kategoriler kullanımdan kaldırılsın mı?"
       ],
       "Disable company": [
-        "Kuruluşu kullanımdan kaldır"
+        "Birimi kullanımdan kaldır"
       ],
       "Disable device data backup?": [
         "Aygıt veri yedeklemesi kapatılsın mı?"
@@ -25568,7 +25580,7 @@
         "Fatura adresini düzenle"
       ],
       "Edit company": [
-        "Kuruluşu düzenle"
+        "Birimi düzenle"
       ],
       "Edit countries": [
         "Ülkeleri düzenle"
@@ -25978,7 +25990,7 @@
         "Kuruluşunuzu öne çıkarın"
       ],
       "Manage company": [
-        "Kuruluş yönetimi"
+        "Birim yönetimi"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Dosyaları Windows, Mac, Android ve iOS aygıtları arasında yönetin."
@@ -26694,6 +26706,9 @@
       ],
       "Verify your password": [
         "Parolanızı doğrulayın"
+      ],
+      "Verify your phrase": [
+        "İfadenizi doğrulayın"
       ],
       "Verifying your card...": [
         "Kartınız doğrulanıyor..."
@@ -27438,7 +27453,7 @@
         "${ n } kullanıcıya yönetici izni verilemedi"
       ],
       "Could not enable administrator access: ${ unprivatizationResult.error }": [
-        "Yönetici erişimi etkinleştirilemedi: ${ unprivatizationResult.error }"
+        "Yönetici yetkisi verilemedi: ${ unprivatizationResult.error }"
       ],
       "Enable admin access?": [
         "Yönetici erişimine izin verilsin mi?"
@@ -27715,13 +27730,13 @@
         "Davet gönderildi. Davet edilen üyenin yanıt vermesi bekleniyor"
       ],
       "Invited": [
-        "Davetli"
+        "Davet edildi"
       ],
       "Pending": [
-        "Beklemede"
+        "Bekliyor"
       ],
       "Requested": [
-        "Talep edildi"
+        "İstendi"
       ],
       "SSO user provided by your identity provider": [
         "Kimlik hizmeti sağlayıcınızın sunduğu tek oturum açma"

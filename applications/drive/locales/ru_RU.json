@@ -819,6 +819,9 @@
       "Refresh the page": [
         "Обновить страницу"
       ],
+      "Reject": [
+        "Отказать"
+      ],
       "Reload": [
         "Перезагрузить"
       ],
@@ -974,6 +977,9 @@
       ],
       "Select rating ${ n } out of ${ to }": [
         "Выбрать рейтинг ${ n } из ${ to }"
+      ],
+      "Send": [
+        "Отправить"
       ],
       "Send Feedback": [
         "Отправить обратную связь"
@@ -1282,6 +1288,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователя)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } дополнительный пользовательский домен",
         "${ domains } дополнительных пользовательских домена",
@@ -1293,6 +1305,15 @@
         "${ ips } выделенных VPN-сервера",
         "${ ips } выделенных VPN-серверов",
         "${ ips } выделенных VPN-серверов"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ИИ-ассистент ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователя)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Лицензия ${ LUMO_APP_NAME } AI"
@@ -1311,6 +1332,12 @@
       ],
       "${ price } per user": [
         "${ price } за пользователя"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } пользовательский домен",
+        "${ quantity } пользовательских домена",
+        "${ quantity } пользовательских доменов",
+        "${ quantity } пользовательских домена"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } лицензия ${ LUMO_APP_NAME } AI",
@@ -8430,6 +8457,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (для ${ quantity } пользователя)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Лицензия ${ MEET_APP_NAME }"
       ],

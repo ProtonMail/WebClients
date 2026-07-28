@@ -154,6 +154,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Aconseguiu la vostra adreça gratuïta de ${ BRAND_NAME }"
       ],
+      "Clear conversation": [
+        "Netejar la conversa"
+      ],
       "Clear data": [
         "Neteja les dades"
       ],
@@ -645,6 +648,9 @@
       "Refresh the page": [
         "Refresca la pàgina"
       ],
+      "Reject": [
+        "Rebutja"
+      ],
       "Reload": [
         "Recarrega"
       ],
@@ -756,6 +762,9 @@
       "Select all": [
         "Seleccionar-ho tot"
       ],
+      "Send": [
+        "Enviar"
+      ],
       "Set password or expiration date": [
         "Establiu una contrasenya o una data de caducitat"
       ],
@@ -821,6 +830,9 @@
       ],
       "Stay": [
         "Mantenir"
+      ],
+      "Stop": [
+        "Aturar-ho"
       ],
       "Stop sharing": [
         "Deixa de compartir"
@@ -975,6 +987,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domini personalitzat addicional",
         "${ domains } dominis personalitzats addicionals"
@@ -983,11 +999,38 @@
         "${ ips } servidor VPN dedicat",
         "${ ips } servidors VPN dedicats"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistent d'IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Llicència d'IA de ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "llicències de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } per servidor dedicat"
+      ],
+      "${ price } per domain": [
+        "${ price } per domini"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
+      ],
+      "${ price } per user": [
+        "${ price } per usuari"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domini personalitzat",
+        "${ quantity } dominis personalitzats"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } llicència d'IA ${ LUMO_APP_NAME }",
@@ -1081,6 +1124,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Quan finalitzi la prova el ${ formattedDate1 }, es convertirà en una subscripció de pagament que es renovarà mensualment. No se us cobrarà res si cancel·leu abans del ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències d'Scribe durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No podeu afegir dominis personalitzats durant el període de prova."
       ]
     },
     "b2b_trials_Action": {
@@ -4596,6 +4657,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Una connexió segura és essencial quan es treballa a distància. Una VPN protegeix les dades de l'empresa de les amenaces cibernètiques i manté la vostra feina privada."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Una VPN xifra la vostra connexió i amaga la vostra adreça IP, cosa que fa molt més difícil per a qualsevol rastrejar o supervisar la vostra navegació."
       ],
@@ -4768,6 +4832,10 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un núvol segur per a ${ memberCount } membre",
+        "Crea un núvol segur per a ${ memberCount } membres"
+      ],
       "Create an end-to-end encrypted document.": [
         "Creeu un document xifrat d'extrem a extrem."
       ],
@@ -4798,8 +4866,14 @@
       "Current version": [
         "Versió actual"
       ],
+      "Custom email domains": [
+        "Dominis de correu personalitzats"
+      ],
       "Decrypting your document": [
         "S'està desxifrant el document"
+      ],
+      "Details": [
+        "Detalls"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "S'ha validat la signatura digital. El fitxer va ser carregat de manera segura per ${ emailAddress }."
@@ -4857,6 +4931,9 @@
       ],
       "email": [
         "corrreu electrònic"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
       ],
       "Emails are automatically signed": [
         "Els correus se signen automàticament"
@@ -5232,6 +5309,9 @@
       "Opening...": [
         "Obrint..."
       ],
+      "Organization size": [
+        "Mida de l'organització"
+      ],
       "Other accounts": [
         "Altres comptes"
       ],
@@ -5492,6 +5572,9 @@
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
       ],
+      "Thinking about this": [
+        "Hi estem pensant"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Aquesta acció eliminarà l'enllaç i revocarà l'accés per a tots els usuaris."
       ],
@@ -5641,6 +5724,9 @@
       ],
       "username": [
         "nom d'usuari"
+      ],
+      "Users": [
+        "Usuaris"
       ],
       "Version number successfully copied to clipboard": [
         "El número de versió s'ha copiat al porta-retalls."
@@ -6021,6 +6107,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Permet als editors canviar els permisos i compartir"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Permet als editors canviar els permisos i compartir."
       ],
       "Anonymous": [
         "Anònim"
@@ -6727,11 +6816,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Llicència de ${ MEET_APP_NAME }"
       ],
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
@@ -6794,6 +6890,11 @@
       "Video meetings, ${ n } participant": [
         "Videoconferències, ${ n } participant",
         "Videoconferències, ${ n } participants"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_MEET_SEATS } llicències de ${ MEET_SHORT_APP_NAME } durant el període de prova."
       ]
     },
     "Message": {
@@ -8721,6 +8822,9 @@
       "Anything you'd like us to know": [
         "Qualsevol cosa que vulgueu que sapiguem"
       ],
+      "Ask anything…": [
+        "Pregunteu qualsevol cosa…"
+      ],
       "Choose password": [
         "Tria una contrasenya"
       ],
@@ -9666,6 +9770,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "S'ha desat un enllaç a aquest element a la vostra unitat. Podeu accedir-hi més endavant a la secció «Compartit amb mi»."
+      ],
+      "Editor permissions": [
+        "Permisos de l'editor"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Ara els editors podran gestionar les comparticions i convidar altres persones. Podreu desactivar-ho quan vulgueu a les preferències de compartició."
       ],
       "To edit this document, create a copy that you can modify.": [
         "Per editar aquest document, creeu una còpia que pugueu editar."

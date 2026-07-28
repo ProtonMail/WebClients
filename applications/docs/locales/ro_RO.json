@@ -645,6 +645,9 @@
       "Refresh the page": [
         "Împrospătare pagină"
       ],
+      "Reject": [
+        "Respingere"
+      ],
       "Reload": [
         "Reîncărcare"
       ],
@@ -755,6 +758,9 @@
       ],
       "Select all": [
         "Selectare toate"
+      ],
+      "Send": [
+        "Trimitere"
       ],
       "Set password or expiration date": [
         "Setare parolă sau dată de expirare"
@@ -977,6 +983,11 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } de utilizatori)"
+      ],
       "${ domains } additional custom domain": [
         "Domenii personale adiționale: ${ domains }",
         "Domenii personale adiționale: ${ domains }",
@@ -987,11 +998,41 @@
         "Servere VPN dedicate: ${ ips }",
         "Servere VPN dedicate: ${ ips }"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistent de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Licențe IA ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licențe ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } per server dedicat"
+      ],
+      "${ price } per domain": [
+        "${ price } per domeniu"
+      ],
+      "${ price } per seat": [
+        "${ price } per licență"
+      ],
+      "${ price } per user": [
+        "${ price } per utilizator"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domeniu personal",
+        "${ quantity } domenii personale",
+        "${ quantity } de domenii personale"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
@@ -1091,6 +1132,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de evaluare."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de evaluare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "În perioada de evaluare puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe pentru asistentul de scriere ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de evaluare."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de evaluare."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nu puteți adăuga domenii personale în perioada de evaluare."
       ]
     },
     "b2b_trials_Action": {
@@ -4655,6 +4714,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "O conexiune securizată este esențială atunci când lucrați la distanță. Un VPN protejează datele companiei de amenințările cibernetice și vă menține activitatea privată."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Un utilizator este un cont asociat cu un singur nume de utilizator, căsuță poștală și persoană."
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Un VPN vă criptează conexiunea și vă ascunde adresa IP, ceea ce face mult mai dificil pentru oricine să vă urmărească sau să vă monitorizeze navigarea pe web."
       ],
@@ -4831,6 +4893,11 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Creați un cont în cloud securizat pentru ${ memberCount } membru",
+        "Creați un cont cloud securizat pentru ${ memberCount } membri",
+        "Creați un cont cloud securizat pentru ${ memberCount } de membri"
+      ],
       "Create an end-to-end encrypted document.": [
         "Creați un document cu criptare bilaterală."
       ],
@@ -4861,8 +4928,14 @@
       "Current version": [
         "Versiune curentă"
       ],
+      "Custom email domains": [
+        "Domenii personale de e-mail"
+      ],
       "Decrypting your document": [
         "Se decriptează documentul"
+      ],
+      "Details": [
+        "Detalii"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ emailAddress }."
@@ -4920,6 +4993,9 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
       ],
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
@@ -5296,6 +5372,9 @@
       ],
       "Opening...": [
         "Se deschide..."
+      ],
+      "Organization size": [
+        "Mărime organizație"
       ],
       "Other accounts": [
         "Alte conturi"
@@ -5709,6 +5788,9 @@
       "username": [
         "utilizator"
       ],
+      "Users": [
+        "Utilizatori"
+      ],
       "Version number successfully copied to clipboard": [
         "Numărul versiunii a fost copiat în memorie."
       ],
@@ -6094,6 +6176,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Permitere ca editorii să modifice permisiunile și să partajeze"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Permitere ca editorii să modifice permisiunile și să partajeze."
       ],
       "Anonymous": [
         "Anonim"
@@ -6805,6 +6890,11 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizator)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licență"
       ],
@@ -6878,6 +6968,11 @@
         "Conferințe video, ${ n } participant",
         "Conferințe video, ${ n } participanți",
         "Conferințe video, ${ n } de participanți"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de evaluare."
       ]
     },
     "Message": {
@@ -9767,6 +9862,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "O legătură web a acestui articol a fost salvată în Drive. O puteți accesa mai târziu în secțiunea „Partajate cu mine”."
+      ],
+      "Editor permissions": [
+        "Permisiuni de editor"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Editorii pot gestiona acum partajarea și pot invita alte persoane. Puteți dezactiva oricând această opțiune în setările de partajare."
       ],
       "To edit this document, create a copy that you can modify.": [
         "Pentru a edita acest document, creați o copie pe care o puteți modifica."

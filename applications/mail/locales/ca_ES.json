@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Neteja les dades del navegador"
       ],
+      "Clear conversation": [
+        "Netejar la conversa"
+      ],
       "Clear data": [
         "Neteja les dades"
       ],
@@ -832,6 +835,9 @@
       "Loading${ ellipsis }": [
         "S'està carregant ${ ellipsis }"
       ],
+      "Lookup document": [
+        "Document de cerca"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Feu de ${ MAIL_APP_NAME } l'aplicació de correu electrònic predeterminada"
       ],
@@ -1134,6 +1140,9 @@
       ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "Reject": [
+        "Rebutja"
       ],
       "Remove": [
         "Esborra"
@@ -1441,6 +1450,9 @@
       "Stay": [
         "Mantenir"
       ],
+      "Stop": [
+        "Aturar-ho"
+      ],
       "Stop downloading assistant": [
         "Atura la descàrrega de l'assistent"
       ],
@@ -1482,6 +1494,9 @@
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Per cercar els vostres correus electrònics de forma segura, cal descarregar una còpia dels vostres missatges al navegador. La descàrrega inicial pot trigar una estona."
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Tocar per alternar ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "Canvia a l'aplicació Calendari"
@@ -1768,6 +1783,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domini personalitzat addicional",
         "${ domains } dominis personalitzats addicionals"
@@ -1776,11 +1795,22 @@
         "${ ips } servidor VPN dedicat",
         "${ ips } servidors VPN dedicats"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistent d'IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Llicència d'IA de ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "llicències de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuaris)"
       ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
@@ -1793,6 +1823,10 @@
       ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domini personalitzat",
+        "${ quantity } dominis personalitzats"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } llicència d'IA ${ LUMO_APP_NAME }",
@@ -5297,6 +5331,9 @@
       "Something went wrong while fetching available domains": [
         "Alguna cosa ha anat malament mentre s'obtenien els dominis disponibles"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Alguna cosa ha anat malament, tanqueu la finestra modal i torneu-ho a provar."
+      ],
       "Something went wrong. Please try again.": [
         "Alguna cosa ha anat malament. Torneu a provar-ho."
       ],
@@ -6858,6 +6895,10 @@
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
       ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } incidència durant la importació:",
+        "${ issues.length } incidències durant la importació:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
       ],
@@ -6945,6 +6986,9 @@
       "${ receivedMessagesCount } email last month": [
         "${ receivedMessagesCount } correu el mes passat",
         "${ receivedMessagesCount } correus el mes passat"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Queden ${ remainingMinutes } minuts…"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
@@ -7447,6 +7491,9 @@
       "Default email application": [
         "Aplicació de correu electrònic per defecte"
       ],
+      "Details": [
+        "Detalls"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "La detecció es realitza al vostre dispositiu, de manera que no s'envien dades dels vostres correus electrònics als nostres servidors."
       ],
@@ -7699,6 +7746,10 @@
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "S'ha trobat un índex de cerca xifrat actual amb ${ oldIndexSize } missatge.",
+        "S'ha trobat un índex de cerca xifrat actual amb ${ oldIndexSize } missatges."
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Prova gratuïta durant ${ ASSISTANT_TRIAL_TIME_DAYS } dia",
         "Prova gratuïta durant ${ ASSISTANT_TRIAL_TIME_DAYS } dies"
@@ -7803,6 +7854,9 @@
       ],
       "Import in progress": [
         "Importació en curs"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "La importació és en curs, podeu tancar aquest diàleg mentre s'executa i tornar-hi més tard, però no tanqueu la pestanya."
       ],
       "Import mailbox": [
         "Importar bústia de correu"
@@ -8594,6 +8648,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "No us poden enviar correu brossa si no saben la vostra adreça de correu electrònic. Protegiu la safata d'entrada amb els àlies de hide-my-email."
       ],
+      "Thinking about this": [
+        "Hi estem pensant"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
@@ -9069,6 +9126,9 @@
       ],
       "You can either update your search query or clear it": [
         "Podeu actualitzar la vostra cerca o esborrar-la."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "El podeu importar com a nou índex de cerca base per a finalitats de desenvolupament."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
@@ -9834,6 +9894,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Content search version to use": [
+        "Versió de cerca de contingut que s'ha d'utilitzar"
+      ],
       "Context page": [
         "Pàgina de context"
       ],
@@ -9884,6 +9947,9 @@
       ],
       "Did not follow instructions": [
         "No s'han seguit les instruccions"
+      ],
+      "Document ID": [
+        "ID de document"
       ],
       "Don't ask again": [
         "No tornis a preguntar"
@@ -10455,6 +10521,12 @@
       "Username": [
         "Nom d'usuari"
       ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
+      ],
       "Verification code": [
         "Codi de verificació"
       ],
@@ -10981,11 +11053,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Llicència de ${ MEET_APP_NAME }"
       ],
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
@@ -13127,6 +13206,9 @@
       "Anytown": [
         "Castellvent"
       ],
+      "Ask anything…": [
+        "Pregunteu qualsevol cosa…"
+      ],
       "Company name": [
         "Nom de l'empresa"
       ],
@@ -15173,8 +15255,7 @@
         "Mou ${ selectionCount } missatge",
         "Mou ${ selectionCount } missatges"
       ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "S'ha mogut a ${ label }. Els missatges similars es classificaran aquí en el futur.",
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "S'han mogut a ${ label }. Els missatges similars es classificaran aquí en el futur."
       ],
       "Password copied to clipboard": [

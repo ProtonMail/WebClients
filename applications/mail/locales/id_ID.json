@@ -1131,6 +1131,9 @@
       "Refresh the page": [
         "Muat ulang halaman"
       ],
+      "Reject": [
+        "Tolak"
+      ],
       "Remove": [
         "Hapus"
       ],
@@ -1763,11 +1766,20 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe (untuk ${ quantity } pengguna)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domain khusus tambahan"
       ],
       "${ ips } dedicated VPN server": [
         "${ ips } server VPN khusus"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asisten AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asisten AI ${ LUMO_APP_NAME } (untuk ${ quantity } pengguna)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Lisensi AI ${ LUMO_APP_NAME }"
@@ -1786,6 +1798,9 @@
       ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domain khusus"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } lisensi AI ${ LUMO_APP_NAME }"
@@ -7302,6 +7317,9 @@
       "Default email application": [
         "Aplikasi email bawaan"
       ],
+      "Details": [
+        "Rincian"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Pendeteksian berlangsung pada perangkat Anda, sehingga tidak ada data dari email Anda yang dikirim ke server kami."
       ],
@@ -10759,6 +10777,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (untuk ${ quantity } pengguna)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Lisensi ${ MEET_APP_NAME }"
       ],
@@ -14830,9 +14851,6 @@
       ],
       "Move ${ selectionCount } message": [
         "Pindahkan ${ selectionCount } pesan"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Dipindahkan ke ${ label }. Pesan serupa akan dikategorikan di sini di masa mendatang."
       ],
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"

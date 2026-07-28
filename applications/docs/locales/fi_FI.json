@@ -154,6 +154,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Hanki oma ${ BRAND_NAME }-osoite"
       ],
+      "Clear conversation": [
+        "Tyhjennä keskustelu"
+      ],
       "Clear data": [
         "Tyhjennä tiedot"
       ],
@@ -642,6 +645,9 @@
       "Refresh the page": [
         "Päivitä sivu"
       ],
+      "Reject": [
+        "Kieltäydy"
+      ],
       "Reload": [
         "Päivitä"
       ],
@@ -753,6 +759,9 @@
       "Select all": [
         "Valitse kaikki"
       ],
+      "Send": [
+        "Lähetä"
+      ],
       "Set password or expiration date": [
         "Aseta salasana tai erääntymispäivä"
       ],
@@ -818,6 +827,9 @@
       ],
       "Stay": [
         "Pysy"
+      ],
+      "Stop": [
+        "Pysäytä"
       ],
       "Stop sharing": [
         "Lopeta jakaminen"
@@ -972,6 +984,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja (${ quantity } käyttäjälle)",
+        "${ BRAND_NAME } Scribe-kirjoitusavustaja (${ quantity } käyttäjälle)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } oma lisäverkkotunnus",
         "${ domains } omaa lisäverkkotunnusta"
@@ -980,11 +996,34 @@
         "${ ips } oma VPN-palvelin",
         "${ ips } omaa VPN-palvelinta"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } -tekoälyavustaja"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } tekoälyavustaja (${ quantity } käyttäjä)",
+        "${ LUMO_APP_NAME } AI-avustaja (${ quantity } käyttäjälle)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME }-tekoälylisenssi"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ price } per dedicated server": [
+        "${ price }/oma palvelin"
+      ],
+      "${ price } per domain": [
+        "${ price }/verkkotunnus"
+      ],
+      "${ price } per seat": [
+        "${ price }/lisenssi"
+      ],
+      "${ price } per user": [
+        "${ price }/käyttäjä"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } oma verkkotunnus",
+        "${ quantity } omaa verkkotunnusta"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME }-tekoälylisenssi",
@@ -1075,6 +1114,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Kun kokeilu päättyy ${ formattedDate1 }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Voit saada enintään ${ TRIAL_MAX_DEDICATED_IPS } omaa palvelinta kokeilujakson aikana."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Voitte saada enintään ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-käyttäjäpaikkaa kokeilujakson aikana."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Voitte saada enintään ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-käyttäjäpaikkaa kokeilujakson aikana."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Sinulla voi olla jopa ${ TRIAL_MAX_USERS } käyttäjää kokeiluajalla."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Et voi lisätä mukautettuja verkkotunnuksia kokeilujakson aikana."
       ]
     },
     "b2b_trials_Action": {
@@ -4574,6 +4628,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Suojattu yhteys on välttämätön etätyöskenneltäessä. VPN suojaa yrityksen tietoja kyberuhkilta ja pitää työsi yksityisenä."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN salaa yhteytesi ja piilottaa IP-osoitteesi, mikä vaikeuttaa huomattavasti selaamisesi seuraamista tai valvomista."
       ],
@@ -4743,6 +4800,10 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Luo suojattu pilvi ${ memberCount } jäsenelle",
+        "Luo suojattu pilvi ${ memberCount } jäsenelle"
+      ],
       "Create an end-to-end encrypted document.": [
         "Luo päästä päähän -salattu dokumentti."
       ],
@@ -4773,8 +4834,14 @@
       "Current version": [
         "Nykyinen versio"
       ],
+      "Custom email domains": [
+        "Omat sähköpostiverkkotunnukset"
+      ],
       "Decrypting your document": [
         "Asiakirjasi salausta puretaan"
+      ],
+      "Details": [
+        "Lisätiedot"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Tiedoston sähköinen allekirjoitus vahvistettiin ja sen tallensi turvallisesti ${ emailAddress }."
@@ -4832,6 +4899,9 @@
       ],
       "email": [
         "sähköpostiosoite"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Sähköpostin isännöinti on saatavilla vain jo entuudestaan omistamillesi verkkotunnuksille. ${ BRAND_NAME }in kautta ei tällä hetkellä ole mahdollista rekisteröidä verkkotunnuksia. Voit käyttää miltä tahansa verkkotunnustoimittajalta hankkimaasi verkkotunnusta."
       ],
       "Emails are automatically signed": [
         "Viestit allekirjoitetaan automaattisesti"
@@ -5198,6 +5268,9 @@
       "Opening...": [
         "Avataan..."
       ],
+      "Organization size": [
+        "Organisaation koko"
+      ],
       "Other accounts": [
         "Muut tilit"
       ],
@@ -5452,6 +5525,9 @@
       "There are no documents in the trash.": [
         "Roskakorissa ei ole dokumentteja."
       ],
+      "Thinking about this": [
+        "Mietitään tätä"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Tämä poistaa linkin ja mitätöi kaikki jaetut käyttöoikeudet."
       ],
@@ -5601,6 +5677,9 @@
       ],
       "username": [
         "käyttäjätunnus"
+      ],
+      "Users": [
+        "Käyttäjät"
       ],
       "Version number successfully copied to clipboard": [
         "Versionumero kopioitiin leikepöydälle"
@@ -5981,6 +6060,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Salli muokkaajien muuttaa käyttöoikeuksia ja jakaa sisältöä"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Salli muokkaajien muuttaa käyttöoikeuksia ja jakaa sisältöä."
       ],
       "Anonymous": [
         "Anonyymi"
@@ -6684,11 +6766,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)",
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-lisenssi"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ price } per seat": [
+        "${ price } per paikka"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
@@ -6751,6 +6840,11 @@
       "Video meetings, ${ n } participant": [
         "Videokokoukset, ${ n } osallistuja",
         "Videokokoukset, ${ n } osallistujaa"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Voitte saada kokeilujakson aikana enintään ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-käyttöpaikkaa."
       ]
     },
     "Message": {
@@ -8606,6 +8700,9 @@
       "Anything you'd like us to know": [
         "Haluatteko kertoa meille jotain muuta"
       ],
+      "Ask anything…": [
+        "Kysy mitä tahansa…"
+      ],
       "Choose password": [
         "Valitse salasana"
       ],
@@ -9551,6 +9648,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Linkki tähän kohteeseen on tallennettu Driveesi. Löydät sen jatkossa \"Jaettu minulle\" -osiosta."
+      ],
+      "Editor permissions": [
+        "Muokkaajan oikeudet"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Muokkaajat voivat nyt hallita jakamista ja kutsua muita. Voit poistaa tämän käytöstä milloin tahansa jakamisasetuksissa."
       ],
       "To edit this document, create a copy that you can modify.": [
         "Muokataksesi tätä tiedostoa, luo siitä kopio, jota voit muokata."

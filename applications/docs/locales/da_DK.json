@@ -154,6 +154,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Gør krav på din gratis ${ BRAND_NAME } address"
       ],
+      "Clear conversation": [
+        "Ryd samtale"
+      ],
       "Clear data": [
         "Ryd data"
       ],
@@ -645,6 +648,9 @@
       "Refresh the page": [
         "Opdater siden"
       ],
+      "Reject": [
+        "Afvis"
+      ],
       "Reload": [
         "Genindlæs"
       ],
@@ -756,6 +762,9 @@
       "Select all": [
         "Vælg alle"
       ],
+      "Send": [
+        "Send"
+      ],
       "Set password or expiration date": [
         "Indstil adgangskode eller udløbsdato"
       ],
@@ -821,6 +830,9 @@
       ],
       "Stay": [
         "Bliv her"
+      ],
+      "Stop": [
+        "Stop"
       ],
       "Stop sharing": [
         "Stop deling"
@@ -975,6 +987,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } bruger)",
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } brugere)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ekstra tilpasset domæne",
         "${ domains } yderligere tilpassede domæner"
@@ -983,11 +999,38 @@
         "${ ips } dedikeret VPN-server",
         "${ ips } dedikerede VPN-servere"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } bruger)",
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } brugere)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-licens"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } pladser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } bruger)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } brugere)"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } per dedikerede server"
+      ],
+      "${ price } per domain": [
+        "${ price } per domæne"
+      ],
+      "${ price } per seat": [
+        "${ price } per plads"
+      ],
+      "${ price } per user": [
+        "${ price } per bruger"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } brugerdefineret domæne",
+        "${ quantity } brugerdefinerede domæner"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI licens",
@@ -1081,6 +1124,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes månedligt. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_DEDICATED_IPS } dedikeret server i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-pladser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_SCRIBE_SEATS } pladser til ${ LUMO_SHORT_APP_NAME }-skriveassistenten i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-pladser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_USERS } brugere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke tilføje brugerdefinerede domæner i prøveperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -4596,6 +4657,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "En sikker forbindelse er afgørende, når der arbejdes eksternt. En VPN beskytter virksomhedsdata mod cybertrusler og holder dit arbejde privat."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "En VPN krypterer din forbindelse og skjuler din IP-adresse, hvilket gør det meget sværere for nogen at spore eller overvåge din browsing."
       ],
@@ -4768,6 +4832,10 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opret en sikker sky til ${ memberCount } medlem",
+        "Opret en sikker sky til ${ memberCount } medlemmer"
+      ],
       "Create an end-to-end encrypted document.": [
         "Opret et end-to-end-krypteret dokument."
       ],
@@ -4798,8 +4866,14 @@
       "Current version": [
         "Aktuel version"
       ],
+      "Custom email domains": [
+        "Brugerdefinerede e-maildomæner"
+      ],
       "Decrypting your document": [
         "Dekrypterer dit dokument"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verificeret. Denne fil blev uploaded sikkert af ${ emailAddress }."
@@ -4857,6 +4931,9 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-mailhosting er kun tilgængelig for domæner, du allerede ejer. Domæneregistrering er ikke tilgængelig i øjeblikket via ${ BRAND_NAME }. Du kan hoste e-mail for domæner, der er registreret hos en hvilken som helst domæneregistrator."
       ],
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
@@ -5232,6 +5309,9 @@
       "Opening...": [
         "Åbner..."
       ],
+      "Organization size": [
+        "Organisationsstørrelse"
+      ],
       "Other accounts": [
         "Andre konti"
       ],
@@ -5492,6 +5572,9 @@
       "There are no documents in the trash.": [
         "Der er ingen dokumenter i papirkurven."
       ],
+      "Thinking about this": [
+        "Overvejer..."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Denne handling vil slette linket og fjerne adgangen for alle brugere."
       ],
@@ -5641,6 +5724,9 @@
       ],
       "username": [
         "brugernavn"
+      ],
+      "Users": [
+        "Brugere"
       ],
       "Version number successfully copied to clipboard": [
         "Versionsnummer er kopieret til udklipsholder"
@@ -6021,6 +6107,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Tillad redaktører at ændre tilladelser og dele"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Tillad redaktører at ændre tilladelser og dele."
       ],
       "Anonymous": [
         "Anonym"
@@ -6727,11 +6816,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (til ${ quantity } bruger)",
+        "${ MEET_APP_NAME } (til ${ quantity } brugere)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licens"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } pladser"
+      ],
+      "${ price } per seat": [
+        "${ price } pr. plads"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-plads",
@@ -6794,6 +6890,11 @@
       "Video meetings, ${ n } participant": [
         "Videomøder, ${ n } deltager",
         "Videomøde, ${ n } deltagere"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-pladser i prøveperioden."
       ]
     },
     "Message": {
@@ -8664,6 +8765,9 @@
       "Anything you'd like us to know": [
         "Noget du gerne vil have vi ved"
       ],
+      "Ask anything…": [
+        "Spørg om hvad som helst..."
+      ],
       "Choose password": [
         "Vælg adgangskode"
       ],
@@ -9609,6 +9713,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Et link til dette element er blevet gemt på dit drev. Du kan få adgang til det senere i sektionen 'Delt med mig'."
+      ],
+      "Editor permissions": [
+        "Tilladelser for redaktører"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Redaktører kan nu administrere deling og invitere andre. Det kan til enhver tid slås fra i delingsindstillingerne."
       ],
       "To edit this document, create a copy that you can modify.": [
         "Hvis du vil redigere dette dokument, skal du oprette en kopi, som du kan ændre."

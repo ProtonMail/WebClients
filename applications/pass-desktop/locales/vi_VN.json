@@ -124,9 +124,6 @@
       "Bulk restore items from trash": [
         "Khôi phục nhiều mục từ thùng rác"
       ],
-      "Bulk select items": [
-        "Chọn nhiều mục"
-      ],
       "Cancel": [
         "Hủy"
       ],
@@ -508,9 +505,6 @@
       "Move to Trash": [
         "Di chuyển vào thùng rác"
       ],
-      "Multiple select": [
-        "Lựa chọn nhiều nội dung"
-      ],
       "New token": [
         "Mã thông báo mới"
       ],
@@ -699,9 +693,6 @@
       ],
       "Skip": [
         "Bỏ qua"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Có người đã chia sẻ một mục với bạn trên ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Phân loại mục kho"
@@ -1380,9 +1371,6 @@
       ],
       "Trashing item failed": [
         "Không đưa được mục vào thùng rác"
-      ],
-      "Try reaching out to the link owner.": [
-        "Hãy thử liên hệ với chủ sở hữu liên kết."
       ],
       "Unable to generate an OTP code for this item": [
         "Không thể tạo mã OTP cho mục này"
@@ -2163,7 +2151,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
+        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -3965,9 +3953,6 @@
       ],
       "Theme": [
         "Chủ đề"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Mục này có thể truy cập cho đến ${ date } hoặc cho đến khi đạt giới hạn lượt xem."
       ],
       "Tier/Level": [
         "Cấp/Bậc"

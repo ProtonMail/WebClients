@@ -642,6 +642,9 @@
       "Refresh the page": [
         "Atualizar página"
       ],
+      "Reject": [
+        "Rejeitar"
+      ],
       "Reload": [
         "Recarregar"
       ],
@@ -752,6 +755,9 @@
       ],
       "Select all": [
         "Seleccionar tudo"
+      ],
+      "Send": [
+        "Enviar"
       ],
       "Set password or expiration date": [
         "Definir palavra-passe ou data de expiração"
@@ -972,6 +978,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe (para ${ quantity } utilizador)",
+        "Assistente de escrita ${ BRAND_NAME } Scribe (para ${ quantity } utilizadores)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domínio personalizado adicional",
         "${ domains } domínios personalizados adicionais"
@@ -980,11 +990,34 @@
         "${ ips } servidor VPN dedicado",
         "${ ips } servidores VPN dedicados"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistente de IA do ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistente de IA do ${ LUMO_APP_NAME } (para ${ quantity } utilizador)",
+        "Assistente de IA do ${ LUMO_APP_NAME } (para ${ quantity } utilizadores)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } licença IA"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenças"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } por servidor dedicado"
+      ],
+      "${ price } per domain": [
+        "${ price } por domínio"
+      ],
+      "${ price } per seat": [
+        "${ price } por licença"
+      ],
+      "${ price } per user": [
+        "${ price } por utilizador"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domínio personalizado",
+        "${ quantity } domínios personalizados"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licença de IA do ${ LUMO_APP_NAME }",
@@ -1075,6 +1108,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Após o período de avaliação terminar em ${ formattedDate1 }, torna-se uma subscrição paga que será renovada automaticamente mensalmente. Não será cobrado se cancelar antes de ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do ${ LUMO_SHORT_APP_NAME } durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças Scribe durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_USERS } utilizadores durante o período de avaliação."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Você não pode adicionar domínios personalizados durante o período de avaliação."
       ]
     },
     "b2b_trials_Action": {
@@ -4571,6 +4619,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Uma ligação segura é essencial quando se trabalha remotamente. Uma VPN protege os dados da empresa contra ameaças cibernéticas e mantém o seu trabalho privado."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Um utilizador é uma conta associada com um único nome de utilizador, caixa de correio e pessoa."
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Uma VPN encripta a sua ligação e oculta o seu endereço IP, tornando muito mais difícil para alguém rastrear ou monitorizar a sua navegação."
       ],
@@ -4740,6 +4791,10 @@
       "Create a new contact group": [
         "Criar um grupo de contactos"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Criar uma nuvem segura para ${ memberCount } membro",
+        "Criar uma nuvem segura para ${ memberCount } membros"
+      ],
       "Create an end-to-end encrypted document.": [
         "Crie um documento encriptado de ponta a ponta."
       ],
@@ -4770,8 +4825,14 @@
       "Current version": [
         "Versão atual"
       ],
+      "Custom email domains": [
+        "Domínios de e-mail personalizados"
+      ],
       "Decrypting your document": [
         "A desencriptar o seu documento"
+      ],
+      "Details": [
+        "Detalhes"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "A assinatura digital foi verificada. Este ficheiro foi enviado de forma segura por ${ emailAddress }."
@@ -4829,6 +4890,9 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "O alojamento de e-mail está apenas disponível para domínios que já possui. O registo de domínio não está atualmente disponível através da ${ BRAND_NAME }. No entanto, pode alojar o e-mail para domínios registados em qualquer registador de domínios."
       ],
       "Emails are automatically signed": [
         "Os e-mails são assinados automaticamente"
@@ -5191,6 +5255,9 @@
       ],
       "Opening...": [
         "A abrir..."
+      ],
+      "Organization size": [
+        "Tamanho da organização"
       ],
       "Other accounts": [
         "Outras contas"
@@ -5595,6 +5662,9 @@
       ],
       "username": [
         "nome de utilizador"
+      ],
+      "Users": [
+        "Utilizadores"
       ],
       "Version number successfully copied to clipboard": [
         "O número da versão foi copiado para a área de transferência."
@@ -6669,6 +6739,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } utilizador)",
+        "${ MEET_APP_NAME } (para ${ quantity } utilizadores)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Licença do ${ MEET_APP_NAME }"
       ],
@@ -6736,6 +6810,11 @@
       "Video meetings, ${ n } participant": [
         "Reuniões por vídeo para ${ n } participante",
         "Reuniões por vídeo para ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
       ]
     },
     "Message": {

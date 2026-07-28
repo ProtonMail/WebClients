@@ -648,6 +648,9 @@
       "Refresh the page": [
         "Odśwież stronę"
       ],
+      "Reject": [
+        "Odrzuć"
+      ],
       "Reload": [
         "Odśwież"
       ],
@@ -758,6 +761,9 @@
       ],
       "Select all": [
         "Zaznacz wszystkie"
+      ],
+      "Send": [
+        "Wyślij"
       ],
       "Set password or expiration date": [
         "Ustaw hasło lub datę wygaśnięcia"
@@ -982,6 +988,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkownika)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dodatkowa niestandardowa domena",
         "${ domains } dodatkowe niestandardowe domeny",
@@ -994,11 +1006,38 @@
         "${ ips } dedykowanych serwerów VPN",
         "${ ips } dedykowanych serwerów VPN"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asystent AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkownika)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Licencja AI ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licencji"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } za dedykowany serwer"
+      ],
+      "${ price } per domain": [
+        "${ price } za domenę"
+      ],
+      "${ price } per seat": [
+        "${ price } za licencję"
+      ],
+      "${ price } per user": [
+        "${ price } za użytkownika"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } niestandardowa domena",
+        "${ quantity } niestandardowe domeny",
+        "${ quantity } niestandardowych domen",
+        "${ quantity } niestandardowych domen"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licencja AI ${ LUMO_APP_NAME }",
@@ -1101,6 +1140,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate1 } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "W okresie próbnym możesz mieć do ${ TRIAL_MAX_LUMO_SEATS } licencji ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_SCRIBE_SEATS } miejsc Scribe w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_USERS } użytkowników w okresie próbnym."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nie możesz dodać niestandardowych domen w okresie próbnym."
       ]
     },
     "b2b_trials_Action": {
@@ -4696,6 +4750,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Bezpieczne połączenie jest niezbędne podczas pracy zdalnej. VPN chroni firmowe dane przed cyfrowymi zagrożeniami i zapewnia prywatność pracy."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Usługa VPN szyfruje połączenie i ukrywa adres IP, co znacznie utrudnia śledzenie lub monitorowanie aktywności online."
       ],
@@ -4876,6 +4933,12 @@
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Utwórz bezpieczną chmurę dla ${ memberCount } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ memberCount } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ memberCount } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ memberCount } użytkowników"
+      ],
       "Create an end-to-end encrypted document.": [
         "Utwórz dokument szyfrowany end-to-end."
       ],
@@ -4906,8 +4969,14 @@
       "Current version": [
         "Obecna wersja"
       ],
+      "Custom email domains": [
+        "Niestandardowe domeny"
+      ],
       "Decrypting your document": [
         "Odszyfrowywanie dokumentu"
+      ],
+      "Details": [
+        "Szczegóły"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Podpis cyfrowy został zweryfikowany. Plik został bezpiecznie przesłany przez ${ emailAddress }."
@@ -4965,6 +5034,9 @@
       ],
       "email": [
         "adres e-mail"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Poczta e-mail jest dostępna tylko dla Twoich domen. Rejestracja domeny przez ${ BRAND_NAME } nie jest obecnie dostępna. Możesz uzyskać pocztę dla domeny zarejestrowanej u dowolnego dostawcy."
       ],
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
@@ -5340,6 +5412,9 @@
       ],
       "Opening...": [
         "Otwieranie..."
+      ],
+      "Organization size": [
+        "Rozmiar ogranizacji"
       ],
       "Other accounts": [
         "Inne konta"
@@ -5754,6 +5829,9 @@
       ],
       "username": [
         "nazwa użytkownika"
+      ],
+      "Users": [
+        "Użytkownicy"
       ],
       "Version number successfully copied to clipboard": [
         "Numer wersji został skopiowany do schowka"
@@ -6850,6 +6928,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkownika)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Licencja ${ MEET_APP_NAME }"
       ],
@@ -6929,6 +7013,11 @@
         "Spotkania wideo, ${ n } uczestnicy",
         "Spotkania wideo, ${ n } uczestników",
         "Spotkania wideo, ${ n } uczestników"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "W okresie próbnym możesz mieć do ${ TRIAL_MAX_MEET_SEATS } licencji ${ MEET_SHORT_APP_NAME }."
       ]
     },
     "Message": {

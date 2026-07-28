@@ -124,9 +124,6 @@
       "Bulk restore items from trash": [
         "Massåterställ objekt från papperskorg"
       ],
-      "Bulk select items": [
-        "Välj flera objekt"
-      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -153,6 +150,9 @@
       ],
       "Clear search": [
         "Rensa sök"
+      ],
+      "Clear sort filter": [
+        "Rensa sorteringsfilter"
       ],
       "Close": [
         "Stäng"
@@ -508,9 +508,6 @@
       "Move to Trash": [
         "Flytta till papperskorg"
       ],
-      "Multiple select": [
-        "Välj flera"
-      ],
       "New token": [
         "Ny token"
       ],
@@ -616,6 +613,9 @@
       "Reset": [
         "Återställ"
       ],
+      "Reset filters": [
+        "Återställ filter"
+      ],
       "Reset history": [
         "Återställ historik"
       ],
@@ -654,6 +654,9 @@
       ],
       "See members": [
         "Se medlemmar"
+      ],
+      "Select items": [
+        "Välj objekt"
       ],
       "Send email": [
         "Skicka e-post"
@@ -700,9 +703,6 @@
       "Skip": [
         "Hoppa över"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Någon delade ett objekt med dig på ${ PASS_APP_NAME }"
-      ],
       "Sort vault items": [
         "Sortera valvobjekt"
       ],
@@ -714,6 +714,9 @@
       ],
       "Submitting report...": [
         "Skickar rapport …"
+      ],
+      "Switch vault": [
+        "Byt valv"
       ],
       "Sync alias": [
         "Synkronisera alias",
@@ -1320,6 +1323,12 @@
       "PIN codes do not match": [
         "PIN-koder matchar inte"
       ],
+      "Regex invalid": [
+        "Regex ogiltigt"
+      ],
+      "Regex unsafe": [
+        "Regex osäkert"
+      ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
       ],
@@ -1385,9 +1394,6 @@
       ],
       "Trashing item failed": [
         "Borttagning av objekt misslyckades"
-      ],
-      "Try reaching out to the link owner.": [
-        "Prova att kontakta länkägaren."
       ],
       "Unable to generate an OTP code for this item": [
         "Kan inte generera en OTP-kod för detta objekt"
@@ -2192,8 +2198,7 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -4018,9 +4023,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Detta objekt är tillgängligt fram till ${ date } eller tills visningsgränsen nås."
       ],
       "Tier/Level": [
         "Nivå"
