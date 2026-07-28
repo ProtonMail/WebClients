@@ -76,7 +76,7 @@ const MoveDropdown = ({
     const [loading, withLoading] = useLoading();
     const [search, updateSearch] = useState('');
     const [selectedFolder, setSelectedFolder] = useState<Folder | undefined>();
-    const [always, setAlways] = useState(false);
+    const [createFilterRequested, setCreateFilterRequested] = useState(false);
     const [containFocus, setContainFocus] = useState(true);
     const getElementsFromIDs = useGetElementsFromIDs();
     const getMessagesOrElements = useGetMessagesOrElementsFromIDs();
@@ -129,7 +129,7 @@ const MoveDropdown = ({
      * Takes the destination ID because clicking a folder row moves to it directly, without going
      * through `selectedFolder`.
      */
-    const canCreateFilters = (folderID: string) => {
+    const canCreateFilterFor = (folderID: string) => {
         return (
             !selectAll &&
             folderID !== MAILBOX_LABEL_IDS.SPAM &&
@@ -138,7 +138,10 @@ const MoveDropdown = ({
         );
     };
 
-    const alwaysCheckboxDisabled = !selectedFolder || !canCreateFilters(selectedFolder.ID);
+    // The request is only honoured for a destination that accepts filters, so pair the two everywhere.
+    const willCreateFilterFor = (folderID: string) => createFilterRequested && canCreateFilterFor(folderID);
+
+    const canCreateFilterForSelection = !!selectedFolder && canCreateFilterFor(selectedFolder.ID);
 
     const list = treeview
         .concat([
@@ -179,7 +182,7 @@ const MoveDropdown = ({
                 type: APPLY_LOCATION_TYPES.MOVE,
                 elements,
                 destinationLabelID: selectedFolderID,
-                createFilters: always && canCreateFilters(selectedFolderID),
+                createFilters: willCreateFilterFor(selectedFolderID),
             });
 
             if (isCategoryLabel(selectedFolderID) && categoryIDs.length > 0) {
@@ -306,12 +309,12 @@ const MoveDropdown = ({
                 </ul>
             </div>
             <hr className="m-0 shrink-0" />
-            <div className={clsx(['mx-4 mt-4 shrink-0', alwaysCheckboxDisabled && 'color-disabled'])}>
+            <div className={clsx(['mx-4 mt-4 shrink-0', !canCreateFilterForSelection && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}
-                    checked={always && !alwaysCheckboxDisabled}
-                    disabled={alwaysCheckboxDisabled}
-                    onChange={({ target }) => setAlways(target.checked)}
+                    checked={!!selectedFolder && willCreateFilterFor(selectedFolder.ID)}
+                    disabled={!canCreateFilterForSelection}
+                    onChange={({ target }) => setCreateFilterRequested(target.checked)}
                     data-testid="move-dropdown:always-move"
                     data-prevent-arrow-navigation
                 >
