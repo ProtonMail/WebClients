@@ -479,6 +479,17 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
         return true
       }
 
+      /**
+       * Temporary fix to prevent false positives when batched calculations are happening.
+       */
+      if (
+        patches.some(
+          (patch) => 'sheetData' in patch[0] && 'isFullRecalc' in patch[0] && patch[0].disableRecalc === true,
+        )
+      ) {
+        return true
+      }
+
       const driftLogDetails = formatSpreadsheetYjsDriftLogDetails({
         differences: driftResult.differences,
         localChangedKeys: driftResult.localChangedKeys,
