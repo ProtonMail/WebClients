@@ -26,12 +26,6 @@
       "Apply": [
         "Použít"
       ],
-      "Are you sure you want to delete ${ count } conversation?": [
-        "Opravdu chcete smazat ${ count } konverzaci?",
-        "Opravdu chcete smazat ${ count } konverzace?",
-        "Opravdu chcete smazat ${ count } konverzací?",
-        "Opravdu chcete smazat ${ count } konverzací?"
-      ],
       "Are you sure you want to delete all conversations?": [
         "Jste si jisti, že chcete smazat všechny konverzace?"
       ],
@@ -287,6 +281,9 @@
       "Refresh the page": [
         "Obnovit stránku"
       ],
+      "Reject": [
+        "Odmítnout"
+      ],
       "Reload": [
         "Znovu načíst"
       ],
@@ -442,6 +439,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } další vlastní doména",
         "${ domains } další vlastní domény",
@@ -453,6 +456,15 @@
         "${ ips } dedikované VPN servery",
         "${ ips } dedikovaných VPN serverů",
         "${ ips } dedikovaných VPN serverů"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licence"
@@ -471,6 +483,12 @@
       ],
       "${ price } per user": [
         "${ price } za uživatele"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastní doména",
+        "${ quantity } vlastní domény",
+        "${ quantity } vlastních domén",
+        "${ quantity } vlastních domén"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } licence",
@@ -3279,9 +3297,6 @@
       "Toggle selection": [
         "Přepnout výběr"
       ],
-      "Try ${ LUMO_SHORT_APP_NAME } free": [
-        "Vyzkoušejte ${ LUMO_SHORT_APP_NAME } zdarma"
-      ],
       "Try again": [
         "Zkusit znovu"
       ],
@@ -3530,12 +3545,6 @@
       "${ project.fileCount } files": [
         "${ project.fileCount } souborů"
       ],
-      "A few habits go a long way to shrinking your paper trail.": [
-        "Pár návyků výrazně přispěje ke zmenšení vaší digitální stopy."
-      ],
-      "A profile like this powers ads and messaging engineered to push your buttons — products, opinions, even how you vote.": [
-        "Právě takový profil slouží jako základ pro reklamy a zprávy, které jsou navrženy tak, aby na vás zapůsobily – ať už jde o produkty, názory, nebo dokonce o to, jak volíte."
-      ],
       "ad value": [
         "reklamní hodnota"
       ],
@@ -3551,9 +3560,6 @@
       "All messages and chat history": [
         "Všechny zprávy a historie chatu"
       ],
-      "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what cover you're offered and what you pay.": [
-        "Vaše letmá zmínka o stresu, diagnóze nebo lécích může krmit rizikové modely, které tiše ovlivňují, jaké pojištění je vám nabízeno a kolik zaplatíte."
-      ],
       "Any images generated in these conversations will also be deleted.": [
         "Smazány budou také všechny obrázky vygenerované v těchto konverzacích."
       ],
@@ -3566,14 +3572,8 @@
       "Ask a question to get started. Your conversation is private.": [
         "Začněte položením otázky. Vaše konverzace je soukromá."
       ],
-      "Assembling your profile…": [
-        "Sestavování vašeho profilu…"
-      ],
       "Auto-retrieved": [
         "Automaticky načteno"
-      ],
-      "Automated systems increasingly weigh data profiles in decisions about loans, jobs, and housing — with little transparency or recourse.": [
-        "Automatizované systémy stále častěji zohledňují datové profily při rozhodování o půjčkách, zaměstnání a bydlení – s minimální transparentností či možností odvolání."
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Přejděte do složky ${ DRIVE_SHORT_APP_NAME }, kterou chcete propojit s tímto projektem, a poté klikněte na \"Propojit tuto složku\"."
@@ -3581,20 +3581,8 @@
       "Built-in ${ BRAND_NAME } agent": [
         "Vestavěný agent ${ BRAND_NAME }"
       ],
-      "Choose apps where the provider can't read your content in the first place.": [
-        "Vybírejte si aplikace, u kterých poskytovatel v první řadě vůbec nedokáže číst váš obsah."
-      ],
-      "Choose or drop .zip or conversations.json from Chat GPT or Claude.": [
-        "Vyberte nebo přetáhněte soubor .zip nebo conversations.json z Chat GPT nebo Claude."
-      ],
-      "Companies quietly adjust prices and offers based on what they think you can afford.": [
-        "Společnosti potají upravují ceny a nabídky podle toho, co si myslí, že si můžete dovolit."
-      ],
       "Conversation encrypted": [
         "Konverzace šifrována"
-      ],
-      "Conversational AI doesn't just answer — it asks follow-up questions. Each time you add detail (\"actually, I'm 34 and based in Berlin\"), you hand over another verified fact.": [
-        "Konverzační AI pouze neodpovídá – klade doplňující otázky. Pokaždé, když přidáte nějaký detail („vlastně je mi 34 let a žiji v Berlíně“), předáváte další ověřený fakt."
       ],
       "Cookies or website data are blocked in your browser settings": [
         "V nastavení vašeho prohlížeče jsou blokovány soubory cookie nebo data webů"
@@ -3608,23 +3596,14 @@
       "Current chat:": [
         "Aktuální konverzace:"
       ],
-      "Data collected today can be breached, subpoenaed, or repurposed years from now. Once it's out, it's out.": [
-        "Data shromážděná dnes mohou za několik let uniknout, být vyžádána soudem nebo použita k jinému účelu. Jakmile jsou jednou venku, už je nelze vzít zpět."
-      ],
       "data points": [
         "datové body"
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Zjistěte, co by o vás mohla poskládat AI velkých technologických firem z vaší historie chatu – a získejte skóre soukromí, které můžete sdílet."
       ],
-      "Download your data from ChatGPT (Settings → Data Controls → Export), or Claude (Settings → Privacy → Export data).": [
-        "Stáhněte si svá data z ChatGPT (Nastavení → Správa dat → Exportovat), nebo Claude (Nastavení → Soukromí → Exportovat data)."
-      ],
       "Drive files are not available for guest users": [
         "Soubory Drive nejsou k dispozici pro uživatele, kteří jsou hosté"
-      ],
-      "Every conversation with AI leaves a paper trail. Your job. Your health. Your relationships. Even where you live. Upload your AI data and see what Big Tech could piece together from your words alone. But unlike them, we can't see it.": [
-        "Každá konverzace s AI za sebou zanechává stopu. Vaše práce. Vaše zdraví. Vaše vztahy. Dokonce i to, kde žijete. Nahrajte svá data z AI a podívejte se, co by o vás technologičtí giganti dokázali poskládat pouze z vašich slov. Na rozdíl od nich je ale my vidět nemůžeme."
       ],
       "Example prompts shown when a conversation begins.": [
         "Dotazy na Lumo, které bude možné spustit na začátku konverzace."
@@ -3644,29 +3623,11 @@
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Získejte z webu rychlejší a přesnější odpovědi včetně citací, díky kterým si můžete ověřit zdroj."
       ],
-      "Heads up — some of what you pasted may cross common workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
-        "Upozornění – část z toho, co jste vložili, může překračovat běžné pracovní, právní předpisy nebo zásady ochrany osobních údajů. Tyto informace vám mají pomoci to odhalit, nikoli vás soudit."
-      ],
-      "If a profile suggests you can pay more — or that you're in a hurry — you may simply see a higher price than the next person.": [
-        "Pokud z profilu vyplývá, že můžete zaplatit více – nebo že spěcháte – může se vám jednoduše zobrazit vyšší cena než někomu jinému."
-      ],
-      "In ChatGPT and Claude, disable chat history and model training wherever the setting exists.": [
-        "V ChatGPT a Claude deaktivujte historii chatů a trénování modelů všude, kde toto nastavení existuje."
-      ],
-      "Inferred details are packaged and traded. A single profile can pass through dozens of companies you've never heard of.": [
-        "Odvozené údaje jsou baleny a prodávány. Jediný profil tak může projít desítkami společností, o kterých jste nikdy neslyšeli."
-      ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
         "Na základě odvozených politických preferencí jsou vytvářeny mikrocílené zprávy, jejichž cílem je změnit vaše pocity a to, jak volíte. Často aniž byste si to uvědomili."
       ],
-      "Inferred traits get bundled and sold to brokers, advertisers, and anyone willing to pay.": [
-        "Odvozené vlastnosti jsou sdružovány a prodávány zprostředkovatelům, inzerentům a komukoli, kdo je ochoten zaplatit."
-      ],
       "Initializing Drive...": [
         "Příprava Drive..."
-      ],
-      "Keep names, addresses, health details, and financial specifics out of your prompts.": [
-        "Nezahrnujte do svých zadání jména, adresy, zdravotní detaily ani finanční údaje."
       ],
       "Learn more about how project knowledge works": [
         "Další informace o tom, jak fungují znalosti projektu"
@@ -3680,23 +3641,11 @@
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Na této kartě nejsou žádné osobní údaje – pouze vaše míra ohrožení soukromí podle oblastí. Nižší hodnota znamená, že jste o sobě prozradili méně."
       ],
-      "Now protect the person behind it.": [
-        "Nyní chraňte člověka, který za tím stojí."
-      ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "Na iPhonu nebo iPadu otevřete Nastavení → Aplikace → Safari a ujistěte se, že je vypnutá možnost „Blokovat všechny soubory cookie“, a poté stránku znovu načtěte."
       ],
-      "Once collected, your data can be breached, handed over on request, or kept indefinitely.": [
-        "Jakmile jsou vaše data shromážděna, může dojít k jejich úniku, mohou být předána na vyžádání nebo uchovávána na neurčito."
-      ],
       "PASTED": [
         "VLOŽENO"
-      ],
-      "Periodically review, download, and delete the data AI services hold on you.": [
-        "Pravidelně kontrolujte, stahujte a mažte data, která o vás uchovávají služby AI."
-      ],
-      "Pick services that don't train on or sell your conversations — like ${ LUMO_SHORT_APP_NAME }, which can't read your chats.": [
-        "Vybírejte si služby, které netrénují modely na vašich konverzacích ani je neprodávají – jako například ${ LUMO_SHORT_APP_NAME }, která vaše chaty nedokáže číst."
       ],
       "Processing file...": [
         "Zpracovávám soubor..."
@@ -3704,56 +3653,20 @@
       "Processing...": [
         "Zpracování..."
       ],
-      "Profiled by Big Tech AI": [
-        "Profilováno pomocí AI od velkých technologických firem"
-      ],
-      "Profiles can feed into insurance, lending, and hiring outcomes — without you ever knowing.": [
-        "Profily mohou ovlivnit co vám nabízí pojišťovny, úvěrové firmy a zaměstnavatelé – aniž byste se o tom kdy dozvěděli."
-      ],
       "Projects help you organize conversations with custom instructions and files.": [
         "Projekty vám pomáhají organizovat konverzace pomocí vlastních pokynů a souborů."
       ],
       "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
         "Projekty vám pomohou organizovat konverzace podle vašich pokynů a souborů. Začněte přihlášením nebo vytvořením bezplatného účtu."
       ],
-      "Reading your prompts…": [
-        "Čtení vašich zadání…"
-      ],
       "red flags": [
         "varovné signály"
-      ],
-      "Scoring how much you revealed…": [
-        "Vyhodnocuji, kolik jste toho odhalili…"
-      ],
-      "See the profile an AI company can piece together from your conversations alone.": [
-        "Podívejte se na profil, který o vás AI společnost dokáže sestavit jen na základě vašich konverzací."
       ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Podívejte se, co o vás ví umělá inteligence velkých technologických firem. Vytvořeno pomocí ${ LUMO_SHORT_APP_NAME }."
       ],
       "Something went wrong analysing this export. Please try again.": [
         "Při analýze tohoto exportu došlo k chybě. Zkuste to prosím znovu."
-      ],
-      "Spotting the patterns in what you typed…": [
-        "Vyhledávání vzorců v tom, co jste napsali…"
-      ],
-      "The fuller the bar, the more of that area Big Tech could reconstruct from your chats. Lower is better. Hover a row to see what gave it away.": [
-        "Čím plnější je proužek, tím více informací mohou z dané oblasti velké technologické firmy rekonstruovat z vašich chatů. Nižší hodnota je lepší. Najetím na řádek zobrazíte, co vás prozradilo."
-      ],
-      "The more an attacker knows about you, the more believable the phishing message. Personalised scams are far harder to spot.": [
-        "Čm více toho o vás útočník ví, tím uvěřitelnější je phishingová zpráva. Personalizované podvody se odhalují mnohem hůře."
-      ],
-      "The more that's known about you, the more believable phishing and fraud attempts become.": [
-        "Čím více se toho o vás ví, tím uvěřitelnější jsou pokusy o phishing a podvody."
-      ],
-      "These are the most sensitive categories Big Tech AI could infer about you from your chats.": [
-        "Toto jsou nejcitlivější kategorie, které o vás může AI velkých technologických společností odvodit z vašich chatů."
-      ],
-      "This is exactly the kind of profiling ${ LUMO_SHORT_APP_NAME } is built to stop. With ${ LUMO_SHORT_APP_NAME }, your conversations are encrypted and never used to build a profile of you.": [
-        "Přesně tomuto druhu profilování ${ LUMO_SHORT_APP_NAME } předchází. S ${ LUMO_SHORT_APP_NAME } jsou vaše konverzace šifrované a nejsou nikdy použity k vašemu profilování."
-      ],
-      "This isn't just trivia. Here's what a profile like yours can actually be used for.": [
-        "To není jen nějaká zajímavost. Je to příklad využití profilu jako ten váš."
       ],
       "This message is empty. Sorry about that.": [
         "Tato zpráva je prázdná. Omlouváme se."
@@ -3779,9 +3692,6 @@
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
         "Navyšte na ${ LUMO_SHORT_APP_NAME } Plus pro tvorbu neomezeného počtu projektů a odemknutí pokročilých modelů AI a další."
       ],
-      "Use email aliases and hide-my-email so your real address isn't tied to every account.": [
-        "Používejte e-mailové aliasy hide-my-email, aby vaše skutečná adresa nebyla spojena s každým účtem."
-      ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Pro komplexní práci použijte model Max nebo model Lite pro každodenní úkoly. Pro rychlé odpovědi zvolte režim Rychlý nebo režim Přemýšlení pro náročnější otázky."
       ],
@@ -3791,17 +3701,8 @@
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Uložíme vaši kartu, abyste ji mohli připojit k příspěvku – sociální sítě za vás obrázek přidat nemohou."
       ],
-      "Working out what Big Tech AI could infer…": [
-        "Vyhodnocování, co by mohla vyvodit AI od velkých technologických firem…"
-      ],
       "You're using private browsing": [
         "Používáte soukromé procházení"
-      ],
-      "Your file is analysed on the spot to build your report. Nothing is uploaded to our servers or stored.": [
-        "Váš soubor je analyzován přímo na místě za účelem vytvoření vaší zprávy. Na naše servery se nic nenahrává ani neukládá."
-      ],
-      "Your file never leaves your device. It's read locally and is never stored.": [
-        "Váš soubor nikdy neopustí vaše zařízení. Je načten lokálně a nikdy se neukládá."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Vaše soubory jsou velké. ${ LUMO_SHORT_APP_NAME } nemusí zpracovat všechny informace."
@@ -3898,9 +3799,6 @@
       "Name": [
         "Název"
       ],
-      "Personalised pricing": [
-        "Personalizované ceny"
-      ],
       "Politics": [
         "Politika"
       ],
@@ -3919,14 +3817,8 @@
       "Thick": [
         "Silný"
       ],
-      "Tip": [
-        "Tip"
-      ],
       "Untitled chat": [
         "Nepojmenovaný chat"
-      ],
-      "While you wait — how your data gets used": [
-        "Zatímco čekáte – jak jsou využívána vaše data"
       ]
     },
     "collider_2025:Notification": {
@@ -4358,20 +4250,11 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "Aplikaci ${ LUMO_SHORT_APP_NAME } nelze spustit"
       ],
-      "AI knows more about you than you think": [
-        "AI o vás ví víc, než si myslíte"
-      ],
-      "AI Paper Trail": [
-        "Stopa aktivit v AI"
-      ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Asistent s AI by vám měl pomáhat, nikoli vás zneužívat pro vaše data."
       ],
       "Better web search": [
         "Lepší vyhledávání na webu"
-      ],
-      "Building your paper trail": [
-        "Sestavování vaší stopy aktivit"
       ],
       "Built by the team that knows privacy": [
         "Vytvořeno týmem, který rozumí soukromí"
@@ -4391,9 +4274,6 @@
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "Vlastní ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Decisions made about you": [
-        "Rozhodnutí o vás"
-      ],
       "Delete project?": [
         "Smazat projekt?"
       ],
@@ -4412,14 +4292,8 @@
       "Every clarification is a new data point": [
         "Každé upřesnění je novým datovým bodem"
       ],
-      "Export & delete regularly": [
-        "Pravidelně exportovat a mazat"
-      ],
       "Export your data": [
         "Exportujte svá data"
-      ],
-      "Exposure scorecard": [
-        "Karta míry ohrožení soukromí"
       ],
       "Favorites": [
         "Oblíbené"
@@ -4439,17 +4313,11 @@
       "Health hints can shape your premiums": [
         "Zdravotní nápověda může ovlivnit výši vašeho pojistného"
       ],
-      "History": [
-        "Historie"
-      ],
       "How can I help?": [
         "Jak vám mohu pomoci?"
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Jak ${ LUMO_SHORT_APP_NAME } udržuje naše konverzace v soukromí?"
-      ],
-      "How to stay private": [
-        "Jak si zachovat soukromí"
       ],
       "Image generation and editing": [
         "Generování a úpravy obrázků"
@@ -4469,14 +4337,8 @@
       "Linked Drive Folder": [
         "Připojená složka v Drive"
       ],
-      "Mask your identity": [
-        "Maskujte svou identitu"
-      ],
       "Memory": [
         "Paměť"
-      ],
-      "More convincing scams": [
-        "Přesvědčivější podvody"
       ],
       "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
         "Více vlastních ${ LUMO_SHORT_APP_NAME } s ${ LUMO_SHORT_APP_NAME } Plus"
@@ -4499,26 +4361,14 @@
       "No chat history yet. Let's start chatting!": [
         "Zatím žádná historie chatu. Začněme chatovat!"
       ],
-      "No result.": [
-        "Žádný výsledek."
-      ],
       "Nothing here yet": [
         "Zatím tady nic není"
       ],
       "Older": [
         "Starší"
       ],
-      "Out of your control": [
-        "Mimo vaši kontrolu"
-      ],
       "Oversharing blind spots": [
         "Slepá místa nadměrného sdílení"
-      ],
-      "Personalised pricing": [
-        "Personalizované ceny"
-      ],
-      "Prefer end-to-end encryption": [
-        "Dávejte přednost koncovému šifrování"
       ],
       "Profiles can decide your future": [
         "Profily mohou rozhodnout o vaší budoucnosti"
@@ -4532,14 +4382,8 @@
       "See your AI paper trail": [
         "Zobrazte svou stopu aktivit v AI"
       ],
-      "Share less with AI": [
-        "Sdílejte méně s AI"
-      ],
       "Sign in to create projects": [
         "Pro vytváření projektů se přihlaste"
-      ],
-      "Sold to data brokers": [
-        "Prodáno obchodníkům s daty"
       ],
       "Sort by": [
         "Seřadit podle"
@@ -4550,9 +4394,6 @@
       "Start a new conversation": [
         "Začít novou konverzaci"
       ],
-      "Targeted manipulation": [
-        "Cílená manipulace"
-      ],
       "That's why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Proto jsme vytvořili ${ LUMO_SHORT_APP_NAME }: abychom vám přinesli všechny výhody AI bez ohrožení vašeho soukromí a bezpečnosti dat."
       ],
@@ -4562,38 +4403,17 @@
       "This chat disappears when you close it and is never saved.": [
         "Tento chat zmizí, když jej zavřete a není nikdy ukládán."
       ],
-      "Turn off history & training": [
-        "Vypněte historii a trénování"
-      ],
       "Two models, two modes": [
         "Dva modely, dva režimy"
-      ],
-      "Upload it privately": [
-        "Nahrajte to soukromě"
-      ],
-      "Use privacy-first tools": [
-        "Používejte nástroje zaměřené na soukromí"
       ],
       "We couldn't read your paper trail": [
         "Nepodařilo se nám přečíst vaši stopu aktivit"
       ],
-      "What Big Tech inferred": [
-        "Co o vás vyvodily velké technologické firmy"
-      ],
       "What this profile exposes": [
         "Co tento profil odhaluje"
       ],
-      "Why this matters": [
-        "Proč na tom záleží"
-      ],
-      "You can't un-share it": [
-        "Sdílení nemůžete zrušit"
-      ],
       "You might be shown a higher price": [
         "Může vám být zobrazena vyšší cena"
-      ],
-      "You saw the profile?": [
-        "Viděli jste ten profil?"
       ],
       "Your shareable card": [
         "Vaše karta ke sdílení"
@@ -7347,6 +7167,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licence"
       ],
