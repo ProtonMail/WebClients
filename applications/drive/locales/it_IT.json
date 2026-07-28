@@ -1317,6 +1317,12 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "Prova ${ BRAND_NAME } Workspace"
+      ],
+      "Reject": [
+        "Rifiuta"
+      ],
+      "Send": [
+        "Invia"
       ]
     },
     "Action: Docs": {
@@ -1415,6 +1421,21 @@
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licenza AI ${ LUMO_APP_NAME }",
         "${ seats } licenze AI ${ LUMO_APP_NAME }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe (per ${ quantity } utente)",
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe (per ${ quantity } utenti)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } assistente IA"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } assistente AI (per ${ quantity } utente)",
+        "${ LUMO_APP_NAME } assistente AI (per ${ quantity } utenti)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizzato",
+        "${ quantity } domini personalizzati"
       ]
     },
     "Alert": {
@@ -14374,6 +14395,10 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Licenze ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } utente)",
+        "${ MEET_APP_NAME } (per ${ quantity } utenti)"
       ]
     },
     "BOSS": {

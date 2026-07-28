@@ -1334,6 +1334,12 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "Vyzkoušet ${ BRAND_NAME } Workspace"
+      ],
+      "Reject": [
+        "Odmítnout"
+      ],
+      "Send": [
+        "Odeslat"
       ]
     },
     "Action: Docs": {
@@ -1446,6 +1452,27 @@
         "${ seats } ${ MEET_APP_NAME } licence",
         "${ seats } ${ MEET_APP_NAME } licencí",
         "${ seats } ${ MEET_APP_NAME } licencí"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastní doména",
+        "${ quantity } vlastní domény",
+        "${ quantity } vlastních domén",
+        "${ quantity } vlastních domén"
       ]
     },
     "Alert": {
@@ -14852,6 +14879,12 @@
       ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licence"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)"
       ]
     },
     "meet_2025: Info": {

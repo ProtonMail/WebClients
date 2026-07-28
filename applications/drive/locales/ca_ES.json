@@ -1320,6 +1320,18 @@
       ],
       "Skip": [
         "Omet"
+      ],
+      "Clear conversation": [
+        "Netejar la conversa"
+      ],
+      "Reject": [
+        "Rebutja"
+      ],
+      "Send": [
+        "Enviar"
+      ],
+      "Stop": [
+        "Aturar-ho"
       ]
     },
     "Action: Docs": {
@@ -1418,6 +1430,25 @@
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
         "${ seats } llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistent d'IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domini personalitzat",
+        "${ quantity } dominis personalitzats"
       ]
     },
     "Alert": {
@@ -7483,6 +7514,9 @@
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "Per habilitar la cerca, hem d'indexar els vostres fitxers localment. Podreu seguir utilitzant ${ DRIVE_APP_NAME } amb normalitat, i us avisarem quan s'hagi completat l'indexat. Si sortiu de la pàgina, la indexació s'aturarà i es reprendrà quan hi torneu."
+      ],
+      "Thinking about this": [
+        "Hi estem pensant"
       ]
     },
     "info": {
@@ -11342,6 +11376,9 @@
       ],
       "Optional feedback": [
         "Comentaris opcionals"
+      ],
+      "Ask anything…": [
+        "Pregunteu qualsevol cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -14402,6 +14439,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
         "${ seats } llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
       ]
     },
     "meet_2025: Info": {
