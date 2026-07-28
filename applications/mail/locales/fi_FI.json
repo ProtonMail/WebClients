@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Tyhjennä selaimen välimuisti"
       ],
+      "Clear conversation": [
+        "Tyhjennä keskustelu"
+      ],
       "Clear data": [
         "Tyhjennä tiedot"
       ],
@@ -1135,6 +1138,9 @@
       "Refresh the page": [
         "Päivitä sivu"
       ],
+      "Reject": [
+        "Kieltäydy"
+      ],
       "Remove": [
         "Poista"
       ],
@@ -1441,6 +1447,9 @@
       "Stay": [
         "Pysy"
       ],
+      "Stop": [
+        "Pysäytä"
+      ],
       "Stop downloading assistant": [
         "Pysäytä avustajan lataus"
       ],
@@ -1482,6 +1491,9 @@
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Jotta viesteistäsi voidaan etsiä turvallisesti, on niistä ladattava paikalliset kopiot selaimesi välimuistiin. Ensimmäinen lataus voi kestää jonkin aikaa."
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Vaihda ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "Kalenteri-sovellus päälle/pois"
@@ -1768,6 +1780,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja (${ quantity } käyttäjälle)",
+        "${ BRAND_NAME } Scribe-kirjoitusavustaja (${ quantity } käyttäjälle)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } oma lisäverkkotunnus",
         "${ domains } omaa lisäverkkotunnusta"
@@ -1775,6 +1791,13 @@
       "${ ips } dedicated VPN server": [
         "${ ips } oma VPN-palvelin",
         "${ ips } omaa VPN-palvelinta"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } -tekoälyavustaja"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } tekoälyavustaja (${ quantity } käyttäjä)",
+        "${ LUMO_APP_NAME } AI-avustaja (${ quantity } käyttäjälle)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME }-tekoälylisenssi"
@@ -1793,6 +1816,10 @@
       ],
       "${ price } per user": [
         "${ price }/käyttäjä"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } oma verkkotunnus",
+        "${ quantity } omaa verkkotunnusta"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME }-tekoälylisenssi",
@@ -7422,6 +7449,9 @@
       "Default email application": [
         "Sähköpostin oletussovellus"
       ],
+      "Details": [
+        "Lisätiedot"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Tunnistus tapahtuu laitteellasi, joten sähköpostiesi tietoja ei lähetetä palvelimillemme."
       ],
@@ -8553,6 +8583,9 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "He eivät voi lähettää sinulle roskapostia, jos he eivät tiedä sähköpostiosoitettasi. Suojaa postilaatikkoasi Hide-my-email-aliaksilla."
+      ],
+      "Thinking about this": [
+        "Mietitään tätä"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
@@ -10935,11 +10968,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)",
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-lisenssi"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ price } per seat": [
+        "${ price } per paikka"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
@@ -13078,6 +13118,9 @@
       "Anytown": [
         "Jokukaupunki"
       ],
+      "Ask anything…": [
+        "Kysy mitä tahansa…"
+      ],
       "Company name": [
         "Yrityksen nimi"
       ],
@@ -15124,9 +15167,8 @@
         "Siirrä ${ selectionCount } viesti",
         "Siirrä ${ selectionCount } viestiä"
       ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Siirretty luokkaan ${ label }. Vastaava viesti luokitellaan jatkossa tänne.",
-        "Siirretty luokkaan ${ label }. Vastaavat viestit luokitellaan jatkossa tänne."
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Siirretty kansioon ${ label }. Samankaltaiset viestit luokitellaan tänne jatkossa."
       ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"

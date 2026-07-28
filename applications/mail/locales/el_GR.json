@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Εκκαθάριση δεδομένων περιηγητή"
       ],
+      "Clear conversation": [
+        "Εκκαθάριση συνομιλίας"
+      ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
       ],
@@ -832,6 +835,9 @@
       "Loading${ ellipsis }": [
         "Γίνεται φόρτωση${ ellipsis }"
       ],
+      "Lookup document": [
+        "Αναζήτηση εγγράφου"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Κάντε το ${ MAIL_APP_NAME } την προεπιλεγμένη εφαρμογή ηλεκτρονικού ταχυδρομείου σας"
       ],
@@ -1134,6 +1140,9 @@
       ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "Reject": [
+        "Απόρριψη"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -1441,6 +1450,9 @@
       "Stay": [
         "Παραμονή"
       ],
+      "Stop": [
+        "Σταμάτα"
+      ],
       "Stop downloading assistant": [
         "Διακοπή λήψης βοηθού"
       ],
@@ -1482,6 +1494,9 @@
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Για να αναζητήσουμε τα email σας με ασφάλεια, πρέπει να κατεβάσουμε ένα αντίγραφο των μηνυμάτων σας στο πρόγραμμα περιήγησής σας. Η αρχική λήψη μπορεί να διαρκέσει λίγο."
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Εναλλαγή ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "Εναλλαγή εφαρμογής Ημερολόγιο"
@@ -1768,6 +1783,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } πρόσθετος προσαρμοσμένος τομέας",
         "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
@@ -1776,11 +1795,22 @@
         "${ ips } αποκλειστικός διακομιστής VPN",
         "${ ips } αποκλειστικοί διακομιστές VPN"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστη)",
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστες)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } άδεια χρήσης AI"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστες)"
       ],
       "${ price } per dedicated server": [
         "${ price } ανά αποκλειστικό διακομιστή"
@@ -1793,6 +1823,10 @@
       ],
       "${ price } per user": [
         "${ price } ανά χρήστη"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } προσαρμοσμένος τομέας",
+        "${ quantity } προσαρμοσμένοι τομείς"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } άδεια χρήσης AI",
@@ -5297,6 +5331,9 @@
       "Something went wrong while fetching available domains": [
         "Κάτι πήγε στραβά κατά την ανάκτηση των διαθέσιμων τομέων"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Κάτι πήγε στραβά, κλείστε το παράθυρο και προσπαθήστε ξανά."
+      ],
       "Something went wrong. Please try again.": [
         "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά."
       ],
@@ -6858,6 +6895,10 @@
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
       ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } πρόβλημα κατά την εισαγωγή:",
+        "${ issues.length } προβλήματα κατά την εισαγωγή:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
       ],
@@ -6945,6 +6986,9 @@
       "${ receivedMessagesCount } email last month": [
         "${ receivedMessagesCount } ηλεκτρονικό μήνυμα τον περασμένο μήνα",
         "${ receivedMessagesCount } ηλεκτρονικά μηνύματα τον περασμένο μήνα"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } λεπτά απομένουν…"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
@@ -7447,6 +7491,9 @@
       "Default email application": [
         "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
+      "Details": [
+        "Λεπτομέρειες"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Η ανίχνευση πραγματοποιείται στη συσκευή σας, επομένως δεν αποστέλλονται δεδομένα από τα ηλεκτρονικά μηνύματά σας στους διακομιστές μας."
       ],
@@ -7699,6 +7746,10 @@
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Βρέθηκε ένα τρέχον κρυπτογραφημένο ευρετήριο αναζήτησης με ${ oldIndexSize } μήνυμα.",
+        "Βρέθηκε ένα τρέχον κρυπτογραφημένο ευρετήριο αναζήτησης με ${ oldIndexSize } μηνύματα."
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Δωρεάν δοκιμή για ${ ASSISTANT_TRIAL_TIME_DAYS } ημέρα",
         "Δωρεάν δοκιμή για ${ ASSISTANT_TRIAL_TIME_DAYS } ημέρες"
@@ -7803,6 +7854,9 @@
       ],
       "Import in progress": [
         "Εισαγωγή σε εξέλιξη"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Η εισαγωγή βρίσκεται σε εξέλιξη, μπορείτε να κλείσετε αυτό το παράθυρο διαλόγου ενώ εκτελείται και να επιστρέψετε σε αυτό αργότερα. Ωστόσο, μην κλείσετε την καρτέλα."
       ],
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
@@ -9070,6 +9124,9 @@
       "You can either update your search query or clear it": [
         "Μπορείτε είτε να ενημερώσετε τα κριτήρια αναζήτησης είτε να τα αφαιρέσετε"
       ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Μπορείτε να το εισαγάγετε ως νέο ευρετήριο αναζήτησης ιδρύματος για σκοπούς ανάπτυξης."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας."
@@ -9834,6 +9891,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Content search version to use": [
+        "Έκδοση αναζήτησης περιεχομένου προς χρήση"
+      ],
       "Context page": [
         "Σελίδα περιβάλλοντος"
       ],
@@ -9884,6 +9944,9 @@
       ],
       "Did not follow instructions": [
         "Δεν ακολούθησε τις οδηγίες"
+      ],
+      "Document ID": [
+        "ID εγγράφου"
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
@@ -10455,6 +10518,12 @@
       "Username": [
         "Όνομα Χρήστη"
       ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
+      ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
@@ -10981,11 +11050,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστη)",
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστες)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } άδεια χρήσης"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } θέση",
@@ -13127,6 +13203,9 @@
       "Anytown": [
         "Αθήνα"
       ],
+      "Ask anything…": [
+        "Ρωτήστε οτιδήποτε…"
+      ],
       "Company name": [
         "Όνομα εταιρείας"
       ],
@@ -15173,8 +15252,7 @@
         "Μετακίνηση μηνύματος ${ selectionCount }",
         "Μετακίνηση ${ selectionCount } μηνυμάτων"
       ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Μετακινήθηκε στο ${ label }. Παρόμοιο μήνυμα θα κατηγοριοποιηθεί εδώ στο μέλλον.",
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "Μετακινήθηκε στο ${ label }. Παρόμοια μηνύματα θα κατηγοριοποιηθούν εδώ στο μέλλον."
       ],
       "Password copied to clipboard": [

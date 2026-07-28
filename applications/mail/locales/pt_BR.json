@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Limpar dados do navegador"
       ],
+      "Clear conversation": [
+        "Limpar conversa"
+      ],
       "Clear data": [
         "Limpar dados"
       ],
@@ -832,6 +835,9 @@
       "Loading${ ellipsis }": [
         "Carregando${ ellipsis }"
       ],
+      "Lookup document": [
+        "Pesquisar documento"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Definir ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão"
       ],
@@ -1134,6 +1140,9 @@
       ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "Reject": [
+        "Rejeitar"
       ],
       "Remove": [
         "Remover"
@@ -1440,6 +1449,9 @@
       ],
       "Stay": [
         "Permanecer"
+      ],
+      "Stop": [
+        "Parar"
       ],
       "Stop downloading assistant": [
         "Parar de baixar o assistente"
@@ -1768,6 +1780,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe (para ${ quantity } usuário)",
+        "Assistente de escrita da ${ BRAND_NAME } Scribe (para ${ quantity } usuários)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domínio personalizado adicional",
         "${ domains } domínios personalizados adicionais"
@@ -1776,11 +1792,22 @@
         "${ ips } servidor VPN dedicado",
         "${ ips } servidores VPN dedicados"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistente de IA da ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuário)",
+        "Assistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuários)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } licença de IA"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenças"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuário)",
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuários)"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -1793,6 +1820,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuário"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domínio personalizado",
+        "${ quantity } domínios personalizados"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licença de IA do ${ LUMO_APP_NAME }",
@@ -6946,6 +6977,9 @@
         "${ receivedMessagesCount } e-mail no mês passado",
         "${ receivedMessagesCount } e-mails no mês passado"
       ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minutos restantes…"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
@@ -7446,6 +7480,9 @@
       ],
       "Default email application": [
         "Aplicativo de e-mail padrão"
+      ],
+      "Details": [
+        "Detalhes"
       ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "A detecção ocorre no seu dispositivo, portanto nenhum dado dos seus e-mails é enviado para nossos servidores."
@@ -9834,6 +9871,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Content search version to use": [
+        "Versão da pesquisa de conteúdo a ser usada"
+      ],
       "Context page": [
         "Página de contexto"
       ],
@@ -9884,6 +9924,9 @@
       ],
       "Did not follow instructions": [
         "Não seguiu as instruções"
+      ],
+      "Document ID": [
+        "ID do documento"
       ],
       "Don't ask again": [
         "Não perguntar novamente"
@@ -10455,6 +10498,12 @@
       "Username": [
         "Nome de usuário"
       ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
+      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -10981,11 +11030,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuário)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuários)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licença"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenças"
+      ],
+      "${ price } per seat": [
+        "${ price } por licença"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licença do ${ MEET_APP_NAME }",
@@ -13133,6 +13189,9 @@
       "Anytown": [
         "Nova Esperança"
       ],
+      "Ask anything…": [
+        "Pergunte qualquer coisa…"
+      ],
       "Company name": [
         "Nome da empresa"
       ],
@@ -15179,8 +15238,7 @@
         "Mover ${ selectionCount } mensagem",
         "Mover ${ selectionCount } mensagens"
       ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Movida para ${ label }. Mensagem semelhante será categorizada aqui no futuro.",
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "Movidas para ${ label }. Mensagens semelhantes serão categorizadas aqui no futuro."
       ],
       "Password copied to clipboard": [

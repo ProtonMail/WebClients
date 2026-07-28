@@ -1131,6 +1131,9 @@
       "Refresh the page": [
         "ページを更新"
       ],
+      "Reject": [
+        "拒否"
+      ],
       "Remove": [
         "削除"
       ],
@@ -1763,11 +1766,20 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "(${ quantity }ユーザー向け) ${ BRAND_NAME } Scribe執筆アシスタント"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } 追加カスタムドメイン"
       ],
       "${ ips } dedicated VPN server": [
         "${ ips } 台の専用VPNサーバー"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI アシスタント"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "(${ quantity }ユーザー向け) ${ LUMO_APP_NAME } AIアシスタント"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AIライセンス"
@@ -1786,6 +1798,9 @@
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個のカスタムドメイン"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AIライセンス"
@@ -7308,6 +7323,9 @@
       "Default email application": [
         "既定のメールアプリ"
       ],
+      "Details": [
+        "詳細"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "検出はお客様のデバイス上で行われるため、お客様のメールのデータは当社のサーバーに送信されません。"
       ],
@@ -10780,6 +10798,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } ユーザー用)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } ライセンス"
       ],
@@ -14852,8 +14873,8 @@
       "Move ${ selectionCount } message": [
         "${ selectionCount } 件のメッセージを移動"
       ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "${ label }に移動しました。今後似たようなメッセージがここにカテゴライズされます。"
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "${ label } へ移動しました。今後は類似のメッセージが同じカテゴリーに振り分けられます。"
       ],
       "Password copied to clipboard": [
         "クリップボードにコピーされたパスワード"
