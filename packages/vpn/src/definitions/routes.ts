@@ -47,6 +47,7 @@ type PropContext = {
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     appName: APP_NAMES;
+    isAdmin: boolean;
 };
 
 type VpnNavContext = {
@@ -69,6 +70,7 @@ const routesDefinition = {
         {
             id: 'organization',
             label: () => c('Title').t`Organization`,
+            isVisible: ({ context }) => context.isAdmin,
             children: [
                 {
                     id: 'organization.home',
@@ -228,11 +230,24 @@ const routesDefinition = {
                     label: () => c('Title').t`VPN`,
                     icon: 'brand-proton-vpn-filled',
                     children: [
-                        { id: 'organization.vpn.gateways', label: () => c('Title').t`Gateways`, to: '/gateways' },
+                        {
+                            id: 'organization.vpn.gateways',
+                            label: () => c('Title').t`Gateways`,
+                            to: '/gateways',
+                            isVisible: ({ context }) =>
+                                context.canHaveOrganization &&
+                                (getHasVpnB2BPlan(context.subscription) || hasAnyB2bBundle(context.subscription)),
+                            sections: [{ id: 'organization.vpn.gateways.servers', to: 'servers' }],
+                        },
                         {
                             id: 'organization.vpn.shared-servers',
                             label: () => c('Title').t`Shared servers`,
                             to: '/shared-servers',
+                            isVisible: ({ context }) =>
+                                context.canHaveOrganization &&
+                                !!context.flags.SharedServerFeature &&
+                                (getHasVpnB2BPlan(context.subscription) || hasAnyB2bBundle(context.subscription)),
+                            sections: [{ id: 'organization.vpn.shared-servers.servers', to: 'servers' }],
                         },
                         {
                             id: 'organization.vpn.always-on',
@@ -256,6 +271,12 @@ const routesDefinition = {
                                     context.hasOrganizationAccess
                                 );
                             },
+                            sections: [
+                                {
+                                    id: 'organization.vpn.gateway-monitor.vpn-connection-events',
+                                    to: 'vpn-connection-events',
+                                },
+                            ],
                         },
                     ],
                 },
