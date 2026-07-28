@@ -6,6 +6,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Input } from '@proton/atoms/Input/Input';
 import { Checkbox, useModalStateObject, useNotifications } from '@proton/components';
 
@@ -73,26 +74,6 @@ const filterValidSelections = (
 
     return next;
 };
-
-// interface AllChatsSearchToolbarProps {
-//     searchQuery: string;
-//     onSearchQueryChange: (value: string) => void;
-// }
-
-// const AllChatsSearchToolbar = ({ searchQuery, onSearchQueryChange }: AllChatsSearchToolbarProps) => {
-//     return (
-//         <div className="all-chats-search-toolbar all-chats-toolbar flex w-full px-2 md:px-4 py-3 shrink-0">
-//             <Input
-//                 className="all-chats-search flex-1 min-w-0"
-//                 value={searchQuery}
-//                 onValue={onSearchQueryChange}
-//                 placeholder={c('collider_2025:Placeholder').t`Search chats`}
-//                 aria-label={c('collider_2025:Button').t`Search chats`}
-//                 prefix={<LumoIcon name="Search" size={16} className="color-weak" />}
-//             />
-//         </div>
-//     );
-// };
 
 interface AllChatsEmptyStateProps {
     variant: AllChatsEmptyVariant;
@@ -185,8 +166,12 @@ const ConversationRow = memo(
             }
 
             return (
-                <LumoLink
+                <ButtonLike
+                    as={LumoLink}
                     to={`/projects/${conversation.spaceId}`}
+                    shape="ghost"
+                    color="weak"
+                    size="small"
                     className={clsx('all-chats-row-project-link all-chats-row-interactive min-w-0', placementClassName)}
                     aria-label={c('collider_2025:Action').t`Go to project`}
                     title={projectLabel}
@@ -196,7 +181,7 @@ const ConversationRow = memo(
                 >
                     <ProjectIcon iconId={projectIcon} size={12} className="shrink-0" />
                     <span className="all-chats-row-project-link-name">{projectLabel}</span>
-                </LumoLink>
+                </ButtonLike>
             );
         };
 
@@ -464,7 +449,7 @@ const AllChatsHeader = ({
                     />
                 ) : null}
                 <div className="flex items-baseline gap-2 min-w-0">
-                    <h1 className="main-text m-0 color-norm">{c('collider_2025:Title').t`Chats`}</h1>
+                    <h1 className="main-text m-0">{c('collider_2025:Title').t`Chats`}</h1>
                     {hasSelection && !isMobileLayout ? (
                         <span className="all-chats-selected-count tx-lg">{c('collider_2025:Label')
                             .t`${selectedCount} selected`}</span>
@@ -756,7 +741,7 @@ export const AllChatsView = () => {
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }} header={layoutHeader}>
             <div className="all-chats-page all-chats-view">
-                <div className="all-chats-page-main flex flex-column flex-1 min-h-0 px-4 md:px-10">
+                <div className="all-chats-page-main flex flex-column flex-1 min-h-0 px-4 md:pt-6 md:px-10">
                     <div className="all-chats-content-column flex flex-column flex-1 min-h-0">
                         <AllChatsHeader
                             conversationCount={filteredConversations.length}
