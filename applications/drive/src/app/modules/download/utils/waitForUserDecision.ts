@@ -1,9 +1,16 @@
-import { IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
+import { AbortError } from '@proton/drive/index';
+
+import { type DownloadItem, DownloadStatus, IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
 import { downloadLogDebug } from './downloadLogger';
 
 const USER_DECISION_CHECK_TIMEOUT = 500;
 
 export type UserDecision = IssueStatus.Approved | IssueStatus.Rejected;
+
+// The decision never comes when the download is cancelled or fails meanwhile, so polling has to
+// stop by itself or it keeps its caller pending forever.
+const isDownloadStopped = (item: DownloadItem) =>
+    item.status === DownloadStatus.Cancelled || item.status === DownloadStatus.Failed;
 
 export const waitForUnsupportedFileDecision = (downloadId: string, onSuccess: () => void): Promise<UserDecision> => {
     const { getQueueItem } = useDownloadManagerStore.getState();
@@ -13,6 +20,10 @@ export const waitForUnsupportedFileDecision = (downloadId: string, onSuccess: ()
             const item = getQueueItem(downloadId);
             if (!item) {
                 reject(new Error('Download item not found waiting for UnsupportedFileDecision'));
+                return;
+            }
+            if (isDownloadStopped(item)) {
+                reject(new AbortError(`Transfer ${downloadId} canceled`));
                 return;
             }
             if (item.unsupportedFileDetected === IssueStatus.Approved) {
@@ -41,6 +52,10 @@ export const waitForSignatureIssueDecision = (downloadId: string, issueName: str
             const issue = item?.signatureIssues?.[issueName];
             if (!item) {
                 reject(new Error('Download item not found waiting for SignatureIssueDecision'));
+                return;
+            }
+            if (isDownloadStopped(item)) {
+                reject(new AbortError(`Transfer ${downloadId} canceled`));
                 return;
             }
             if (!issue) {
