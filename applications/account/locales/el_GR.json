@@ -1854,6 +1854,9 @@
       "Verify password": [
         "Επαλήθευση κωδικού πρόσβασης"
       ],
+      "Verify recovery phrase": [
+        "Επαληθεύστε τη φράση ανάκτησης"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Επαληθεύστε τον τομέα ${ unverifiedSSODomain.DomainName }"
       ],
@@ -7763,6 +7766,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Αυτή η φράση δεν μπορεί να ανακτήσει τον λογαριασμό σας. Μπορείτε να δημιουργήσετε έναν νέο για να διασφαλίσετε ότι ο λογαριασμός σας θα μπορεί να ανακτηθεί στο μέλλον."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Για να δημιουργήσετε μη ιδιωτικούς λογαριασμούς χρηστών και να αποκτήσετε πρόσβαση στους λογαριασμούς τους, θα πρέπει να επαναφέρετε τα δικαιώματα διαχειριστή."
       ],
@@ -10528,9 +10534,6 @@
       "Available on macOS, Windows, and Linux.": [
         "Διαθέσιμο σε macOS, Windows και Linux."
       ],
-      "Average": [
-        "Μέσος όρος"
-      ],
       "Awaiting transaction": [
         "Εν αναμονή συναλλαγής"
       ],
@@ -10635,6 +10638,9 @@
       ],
       "Change your password": [
         "Αλλάξτε τον κωδικό πρόσβασής σας"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Ελέγξτε αν η φράση ανάκτησης μπορεί να χρησιμοποιηθεί για την πλήρη ανάκτηση του λογαριασμού σας."
       ],
       "Check your network and try again.": [
         "Ελέγξτε το δίκτυό σας και δοκιμάστε ξανά."
@@ -12087,9 +12093,6 @@
       "per month, billed at ${ price }": [
         "ανά μήνα, χρεώνεται ${ price }"
       ],
-      "Per seat/month": [
-        "Ανά θέση/μήνα"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Σας ζητά περιοδικά να επαληθεύσετε τον κωδικό πρόσβασής σας για το ${ BRAND_NAME } για να βεβαιωθείτε ότι δεν τον ξεχάσατε. Με την πάροδο του χρόνου, θα σας ζητείται λιγότερο συχνά."
       ],
@@ -12274,6 +12277,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Η φράση ανάκτησης δεν σχετίζεται με κάποιο παρωχημένο κλειδί."
+      ],
+      "Recovery phrase verified": [
+        "Η φράση ανάκτησης επαληθεύτηκε"
       ],
       "Reddit": [
         "Reddit"
@@ -14657,6 +14663,9 @@
       "Beta": [
         "Beta (Δοκιμαστική)"
       ],
+      "Billable licenses": [
+        "Χρεώσιμες άδειες"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Χρεώνεται σε ${ priceYearly } κάθε 12 μήνες."
       ],
@@ -14666,11 +14675,11 @@
       "Billed monthly.": [
         "Μηνιαία χρέωση."
       ],
-      "Billed seats": [
-        "Χρεωμένες θέσεις"
-      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
+      ],
+      "Billing period": [
+        "Περίοδος χρέωσης"
       ],
       "Block": [
         "Αποκλεισμένη"
@@ -14774,9 +14783,6 @@
       "Common passwords": [
         "Κοινοί κωδικοί πρόσβασης"
       ],
-      "Companies": [
-        "Εταιρείες"
-      ],
       "Company": [
         "Εταιρεια"
       ],
@@ -14846,8 +14852,8 @@
       "Copy IP address to clipboard": [
         "Αντιγραφή διεύθυνσης IP στο πρόχειρο"
       ],
-      "Cost": [
-        "Κόστος"
+      "Cost per license": [
+        "Κόστος ανά άδεια χρήσης"
       ],
       "Could you please let us know which provider?": [
         "Θα μπορούσατε να μας γνωστοποιήσετε τον πάροχο;"
@@ -15311,6 +15317,9 @@
       ],
       "Manage categories": [
         "Διαχείριση κατηγοριών"
+      ],
+      "Managed Companies": [
+        "Διαχειριζόμενες Εταιρείες"
       ],
       "Mark as": [
         "Σήμανση ως"
@@ -16800,6 +16809,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } θέση",
@@ -25350,6 +25362,9 @@
       "Currency": [
         "Νόμισμα"
       ],
+      "Current cost": [
+        "Τρέχον κόστος"
+      ],
       "Custom": [
         "Προσαρμογή"
       ],
@@ -26694,6 +26709,9 @@
       ],
       "Verify your password": [
         "Επαληθεύστε τον κωδικό πρόσβασής σας"
+      ],
+      "Verify your phrase": [
+        "Επαληθεύστε τη φράση σας"
       ],
       "Verifying your card...": [
         "Γίνεται επαλήθευση της κάρτας σας..."

@@ -26,12 +26,12 @@
       "Apply": [
         "Toepassen"
       ],
-      "Are you sure you want to delete ${ count } conversation?": [
-        "Weet u zeker dat u het ${ count } gesprek wilt verwijderen?",
-        "Weet u zeker dat u het ${ count } gesprekken wilt verwijderen?"
-      ],
       "Are you sure you want to delete all conversations?": [
         "Weet u zeker dat u alle gesprekken wilt verwijderen?"
+      ],
+      "Are you sure you want to delete this ${ count } conversation?": [
+        "Weet u zeker dat u dit ${ count } gesprek wilt verwijderen?",
+        "Weet u zeker dat u deze ${ count } gesprekken wilt verwijderen?"
       ],
       "Are you sure you want to delete this conversation?": [
         "Weet u zeker dat u dit gesprek wilt verwijderen?"
@@ -289,6 +289,9 @@
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
+      "Reject": [
+        "Afwijzen"
+      ],
       "Reload": [
         "Opnieuw laden"
       ],
@@ -447,6 +450,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruikers)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } extra aangepast domein",
         "${ domains } extra aangepaste domeinen"
@@ -455,11 +462,22 @@
         "${ ips } toegewijde VPN-server",
         "${ ips } toegewijde VPN-servers"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruikers)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-licentie"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruikers)"
       ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
@@ -472,6 +490,10 @@
       ],
       "${ price } per user": [
         "${ price } per gebruiker"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } aangepast domein",
+        "${ quantity } aangepaste domeinen"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI-licentie",
@@ -3168,6 +3190,9 @@
       "Add more information to improve the response": [
         "Voeg meer informatie toe om het antwoord te verbeteren."
       ],
+      "Add to favorites": [
+        "Toevoegen aan favorieten"
+      ],
       "Analyse another export": [
         "Analyseer een andere export"
       ],
@@ -3188,6 +3213,9 @@
       ],
       "Choose project icon": [
         "Kies project icoon"
+      ],
+      "Clear search": [
+        "Wis zoekopdracht"
       ],
       "Click to edit title": [
         "Klik om titel te bewerken"
@@ -3215,6 +3243,12 @@
       ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete analysis": [
+        "Analyse verwijderen"
+      ],
+      "Delete chat": [
+        "Chat verwijderen"
       ],
       "Delete conversation": [
         "Gesprek verwijderen"
@@ -3248,6 +3282,9 @@
       ],
       "Expand": [
         "Uitvouwen"
+      ],
+      "Favorite": [
+        "Favoriet"
       ],
       "Go to all projects": [
         "Naar alle projecten"
@@ -3309,6 +3346,12 @@
       "Remove file": [
         "Bestand verwijderen"
       ],
+      "Remove from favorites": [
+        "Verwijder uit favorieten"
+      ],
+      "Rename chat": [
+        "Chat hernoemen"
+      ],
       "Request a shorter, more focused response": [
         "Vraag om een korter, meer gericht antwoord"
       ],
@@ -3324,11 +3367,17 @@
       "Select all": [
         "Alles selecteren"
       ],
+      "Select chats": [
+        "Kies chats"
+      ],
       "Select conversation": [
         "Gesprek selecteren"
       ],
       "Share": [
         "Delen"
+      ],
+      "Share your score": [
+        "Deel uw score"
       ],
       "Show knowledge panel": [
         "Kennispaneel tonen"
@@ -3336,13 +3385,16 @@
       "Show sidebar": [
         "Toon de zijbalk"
       ],
+      "Start a chat": [
+        "Chat beginnen"
+      ],
       "Think longer": [
         "Langer nadenken"
       ],
       "Toggle selection": [
         "Selectie in-/uitschakelen"
       ],
-      "Try ${ LUMO_SHORT_APP_NAME } free": [
+      "Try ${ LUMO_SHORT_APP_NAME } for free": [
         "Probeer ${ LUMO_SHORT_APP_NAME } gratis"
       ],
       "Try again": [
@@ -3418,6 +3470,9 @@
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Instructies toevoegen om de antwoorden van ${ LUMO_SHORT_APP_NAME } aan te passen"
       ],
+      "All chats": [
+        "Alle chats"
+      ],
       "API": [
         "API"
       ],
@@ -3445,6 +3500,9 @@
       "Expand": [
         "Uitvouwen"
       ],
+      "Filter & Sort": [
+        "Filter & sorteer"
+      ],
       "Images": [
         "Afbeeldingen"
       ],
@@ -3456,6 +3514,9 @@
       ],
       "Load more": [
         "Meer ophalen"
+      ],
+      "More options": [
+        "Meer opties"
       ],
       "New chat": [
         "Nieuwe chat"
@@ -3471,6 +3532,9 @@
       ],
       "Search": [
         "Zoeken"
+      ],
+      "Search chats": [
+        "Doorzoek chats"
       ],
       "See all": [
         "Alles weergeven"
@@ -3588,6 +3652,12 @@
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "“${ file.name }” wordt nog geïndexeerd. De inhoud wordt geladen zodra u het verstuurt."
       ],
+      "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
+        "${ LUMO_SHORT_APP_NAME } is een privé-AI. Uw gesprekken zijn gecodeerd en worden nooit gebruikt om AI-modellen te trainen."
+      ],
+      "${ LUMO_SHORT_APP_NAME } is end-to-end encrypted and never used for training, profiling, or advertising.": [
+        "${ LUMO_SHORT_APP_NAME } is end-to-end gecodeerd en wordt nooit gebruikt voor training, profilering of advertenties."
+      ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } heeft lokale databaseopslag (IndexedDB) nodig om uw gesprekken op dit apparaat te bewaren, maar deze is hier niet beschikbaar."
       ],
@@ -3606,11 +3676,8 @@
       "${ project.fileCount } files": [
         "${ project.fileCount } bestanden"
       ],
-      "A few habits go a long way to shrinking your paper trail.": [
-        "Een paar gewoonten dragen al aanzienlijk bij aan het verkleinen van uw papierspoor."
-      ],
-      "A profile like this powers ads and messaging engineered to push your buttons — products, opinions, even how you vote.": [
-        "Een profiel als dit vormt de basis voor advertenties en berichten die zijn ontworpen om u te bespelen zoals producten, meningen, zelfs hoe u stemt."
+      "${ report.sensitiveCategories.length } sensitive categories": [
+        "${ report.sensitiveCategories.length } gevoelige categorieën"
       ],
       "ad value": [
         "advertentiewaarde"
@@ -3627,8 +3694,11 @@
       "All messages and chat history": [
         "Alle berichten en chatgeschiedenis"
       ],
-      "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what cover you're offered and what you pay.": [
-        "Een terloopse opmerking over stress, een diagnose of medicatie kan risicomodellen voeden die stilletjes invloed hebben op de dekking die u aangeboden krijgt en wat u betaalt."
+      "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
+        "Een terloopse opmerking over stress, een diagnose of een medicijn kan risicomodellen voeden die stilletjes invloed hebben op de dekking die u krijgt en wat u betaalt."
+      ],
+      "Anthropic will email you a download link when your export is ready.": [
+        "Anthropic stuurt u een downloadlink per e-mail wanneer uw export gereed is."
       ],
       "Any images generated in these conversations will also be deleted.": [
         "Alle afbeeldingen die in deze gesprekken worden gegenereerd, worden ook verwijderd."
@@ -3642,35 +3712,50 @@
       "Ask a question to get started. Your conversation is private.": [
         "Stel een vraag om aan de slag te gaan. Uw gesprek is privé."
       ],
-      "Assembling your profile…": [
-        "Uw profiel samenstellen…"
-      ],
       "Auto-retrieved": [
         "Automatisch opgehaald"
       ],
-      "Automated systems increasingly weigh data profiles in decisions about loans, jobs, and housing — with little transparency or recourse.": [
-        "Geautomatiseerde systemen wegen gegevensprofielen steeds vaker mee bij beslissingen over leningen, banen en huisvesting — met weinig transparantie of verhaalsmogelijkheden."
+      "Automated systems increasingly weigh data profiles in decisions about loans, jobs, and housing with little transparency or recourse.": [
+        "Geautomatiseerde systemen wegen steeds vaker gegevensprofielen mee bij beslissingen over leningen, banen en huisvesting, zonder dat er sprake is van transparantie of verhaal."
+      ],
+      "Avoid including names, addresses, financial details, or other identifying information when they are not essential.": [
+        "Vermijd het vermelden van namen, adressen, financiële gegevens of andere identificerende informatie wanneer deze niet essentieel zijn."
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Blader naar de map \"${ DRIVE_SHORT_APP_NAME }\" die u aan dit project wilt koppelen en klik vervolgens op \"Deze map koppelen\"."
       ],
+      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
+        "Gebouwd door ${ BRAND_NAME }, het privacymerk dat wordt vertrouwd door meer dan 100 miljoen mensen en het team achter ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }."
+      ],
+      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100M people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
+        "Gebouwd door ${ BRAND_NAME }, het privacymerk dat wordt vertrouwd door meer dan 100 miljoen mensen en het team achter ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }."
+      ],
       "Built-in ${ BRAND_NAME } agent": [
         "Ingebouwde ${ BRAND_NAME } agent"
       ],
-      "Choose apps where the provider can't read your content in the first place.": [
-        "Kies apps waarbij de aanbieder uw inhoud in de eerste plaats niet kan lezen."
+      "Chats from your projects will appear here.": [
+        "Chats van uw projecten verschijnen hier."
       ],
-      "Choose or drop .zip or conversations.json from Chat GPT or Claude.": [
-        "Kies of sleep .zip of conversations.json van Chat GPT of Claude."
+      "Check what your AIs store about you and delete what you no longer need.": [
+        "Controleer wat uw AI’s over u opslaan en verwijder wat u niet langer nodig heeft."
       ],
-      "Companies quietly adjust prices and offers based on what they think you can afford.": [
-        "Bedrijven passen stilletjes prijzen en aanbiedingen aan op basis van wat ze denken dat u kunt betalen."
+      "Choose or drop your ChatGPT or Claude export (.zip or conversations.json). We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
+        "Kies of verwijder uw ChatGPT- of Claude-export (.zip of conversations.json). We analyseren uw ${ PAPER_TRAIL_LIMITS.maxPrompts } meest recente prompts."
+      ],
+      "Click Settings → Data controls": [
+        "Klik op Instellingen → Gegevensbediening"
+      ],
+      "Click Settings → Privacy": [
+        "Klik op Instellingen → Privacy"
+      ],
+      "Click your profile icon in the bottom-left corner": [
+        "Klik op uw profielpictogram in de linkerbenedenhoek"
       ],
       "Conversation encrypted": [
         "Gesprek versleuteld"
       ],
-      "Conversational AI doesn't just answer — it asks follow-up questions. Each time you add detail (\"actually, I'm 34 and based in Berlin\"), you hand over another verified fact.": [
-        "Conversatie-AI geeft niet alleen antwoord, het stelt ook vervolgvragen. Telkens wanneer u gegevens toevoegt (\"eigenlijk ben ik 34 en woon ik in Berlijn\"), overhandigt u weer een geverifieerd feit."
+      "Conversational AI doesn’t just answer — it asks follow-up questions. Each time you add detail (“actually, I’m 34 and based in Berlin”), you hand over another verified fact.": [
+        "Conversationele AI geeft niet alleen antwoord, maar stelt ook vervolgvragen. Telkens wanneer u details toevoegt (“eigenlijk ben ik 34 en woonachtig in Berlijn”), overhandigt u een ander geverifieerd feit."
       ],
       "Cookies or website data are blocked in your browser settings": [
         "Cookies of websitegegevens worden geblokkeerd in uw browserinstellingen"
@@ -3687,8 +3772,8 @@
       "Current chat:": [
         "Huidig gesprek:"
       ],
-      "Data collected today can be breached, subpoenaed, or repurposed years from now. Once it's out, it's out.": [
-        "Gegevens die vandaag worden verzameld, kunnen over een aantal jaar worden gelekt, opgevraagd of voor andere doeleinden worden gebruikt. Eenmaal buiten, is het buiten."
+      "Data collected today can be breached, subpoenaed, or repurposed years from now. Once it’s out, it’s out.": [
+        "Gegevens die vandaag worden verzameld, kunnen over een paar jaar worden gehackt, gedagvaard of opnieuw worden gebruikt. Eenmaal buiten, is buiten."
       ],
       "data points": [
         "datapunten"
@@ -3696,17 +3781,20 @@
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Ontdek wat Big Tech AI over u zou kunnen afleiden uit uw chatgeschiedenis, en ontvang een privacyscore die u kunt delen."
       ],
-      "Download your data from ChatGPT (Settings → Data Controls → Export), or Claude (Settings → Privacy → Export data).": [
-        "Download uw gegevens van ChatGPT (Instellingen → Gegevensbeheer → Exporteren) of Claude (Instellingen → Privacy → Gegevens exporteren)."
-      ],
       "Drive files are not available for guest users": [
         "Drive-bestanden zijn niet beschikbaar voor gastgebruikers"
       ],
-      "Every conversation with AI leaves a paper trail. Your job. Your health. Your relationships. Even where you live. Upload your AI data and see what Big Tech could piece together from your words alone. But unlike them, we can't see it.": [
-        "Elk gesprek met AI laat een papierspoor achter. Uw baan. Uw gezondheid. Uw relaties. Zelfs waar u woont. Upload uw AI-gegevens en bekijk wat Big Tech alleen al uit uw woorden zou kunnen afleiden. Maar in tegenstelling tot hen, kunnen wij dit niet zien."
+      "Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${ LUMO_SHORT_APP_NAME } doesn't see your data.": [
+        "Elk gesprek laat kleine aanwijzingen achter. Op zichzelf zeggen ze niet veel. Samen kunnen ze een verrassend gedetailleerd beeld van uw leven onthullen. Dit rapport laat zien wat andere AI-providers uit uw chats kunnen afleiden. Maar in tegenstelling tot hen ziet ${ LUMO_SHORT_APP_NAME } uw gegevens niet."
+      ],
+      "Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live. To see what Big Tech can piece together from your chats upload your AI data below.": [
+        "Elk gesprek met de grote AI-aanbieders laat een digitaal papieren spoor achter. Uw baan. Uw gezondheid. Uw relaties. Zelfs waar u woont. Upload hieronder uw AI-gegevens om te zien wat Big Tech uit uw chats kan samenstellen."
       ],
       "Example prompts shown when a conversation begins.": [
         "Voorbeeldprompts die worden getoond wanneer een gesprek begint."
+      ],
+      "Exposure by life area only, no personal details.": [
+        "Alleen blootstelling per levensgebied, geen persoonlijke details."
       ],
       "File \"${ file.name }\" is already in this project": [
         "Bestand \"${ file.name }\" is al in dit project"
@@ -3714,8 +3802,17 @@
       "File \"${ file.name }\" is already mentioned": [
         "Bestand \"${ file.name }\" is al benoemd"
       ],
+      "File attached": [
+        "Bestand bijgevoegd"
+      ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Bestanden die naar dit project worden geüpload, worden opgeslagen in de gekoppelde Drive-map."
+      ],
+      "Follow the prompts and confirm the export": [
+        "Volg de aanwijzingen en bevestig de export"
+      ],
+      "Follow the prompts to confirm the export": [
+        "Volg de aanwijzingen om de export de bevestigen"
       ],
       "From ${ DRIVE_APP_NAME }": [
         "Van ${ DRIVE_APP_NAME }"
@@ -3723,29 +3820,23 @@
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Ontvang snellere, nauwkeurigere antwoorden van het web, met bronvermeldingen zodat u de bron kunt controleren."
       ],
-      "Heads up — some of what you pasted may cross common workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
-        "Let op! Een deel van wat u heeft geplakt, kan de grenzen van de werkplek, wetgeving of gegevensbescherming overschrijden. Dit is bedoeld om u te helpen dit te ontdekken, niet om te oordelen."
+      "If a profile suggests you can pay more or that you’re in a hurry, you may see a higher price than the next person.I": [
+        "Als uit een profiel blijkt dat u meer kunt betalen of dat u haast heeft, ziet u mogelijk een hogere prijs dan de volgende persoon.I"
       ],
-      "If a profile suggests you can pay more — or that you're in a hurry — you may simply see a higher price than the next person.": [
-        "Als een profiel suggereert dat u meer kunt betalen — of dat u haast heeft — ziet u wellicht een hogere prijs dan de volgende persoon."
+      "Image": [
+        "Afbeelding"
       ],
-      "In ChatGPT and Claude, disable chat history and model training wherever the setting exists.": [
-        "Schakel in ChatGPT en Claude de chatgeschiedenis en modeltraining uit, overal waar deze instelling aanwezig is."
+      "Inferences drawn only from your prompts — grouped by life area.": [
+        "Conclusies getrokken alleen op basis van uw prompts — gegroepeerd op levensgebied."
       ],
-      "Inferred details are packaged and traded. A single profile can pass through dozens of companies you've never heard of.": [
-        "Afgeleide gegevens worden gebundeld en verhandeld. Een enkel profiel kan door tientallen bedrijven gaan waar u nog nooit van heeft gehoord."
+      "Inferred details are packaged and traded. A single profile can pass through dozens of companies you’ve never heard of.": [
+        "Afgeleide details worden gebundeld en verhandeld. Eén enkel profiel kan door tientallen bedrijven gaan waar u nog nooit van hebt gehoord."
       ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
         "Afgeleide politieke voorkeuren vormen de basis voor micro-targeted berichten die zijn ontworpen om te veranderen hoe u zich voelt, en hoe u stemt, vaak zonder dat u het merkt."
       ],
-      "Inferred traits get bundled and sold to brokers, advertisers, and anyone willing to pay.": [
-        "Afgeleide eigenschappen worden gebundeld en verkocht aan databrokers, adverteerders en iedereen die bereid is te betalen."
-      ],
       "Initializing Drive...": [
         "Drive initialiseren..."
-      ],
-      "Keep names, addresses, health details, and financial specifics out of your prompts.": [
-        "Houd namen, adressen, gezondheidsgegevens en financiële details buiten uw prompts."
       ],
       "Learn more about how project knowledge works": [
         "Meer informatie over hoe projectkennis werkt"
@@ -3756,29 +3847,29 @@
       "Lockdown Mode is enabled on your device": [
         "De vergrendelingsmodus is ingeschakeld op uw apparaat"
       ],
+      "Log in to your AI platform and request an export of your chat history, then download it to your device.": [
+        "Log in op uw AI-platform en vraag een export van uw chatgeschiedenis aan, en download deze vervolgens naar uw apparaat."
+      ],
+      "Look for Export data": [
+        "Zoek naar gegevens Exporteren"
+      ],
+      "No favorites yet. Star a chat to find it here quickly.": [
+        "Nog geen favorieten. Geef een chat een ster om het hier snel te vinden."
+      ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Er staan geen persoonlijke gegevens op deze kaart, alleen uw blootstellingsscore per gebied. Lager betekent dat u minder hebt prijsgegeven."
       ],
       "No projects yet": [
         "Nog geen projecten"
       ],
-      "Now protect the person behind it.": [
-        "Bescherm nu de persoon erachter."
-      ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "Open op iPhone of iPad Instellingen → Apps → Safari en zorg ervoor dat \"Alle cookies blokkeren\" is uitgeschakeld. Laad vervolgens opnieuw."
       ],
-      "Once collected, your data can be breached, handed over on request, or kept indefinitely.": [
-        "Eenmaal verzameld kunnen uw gegevens worden gecompromitteerd, op verzoek worden overgedragen of voor onbepaalde tijd worden bewaard."
+      "OpenAI will email you a download link. It can take up to 24 hours.": [
+        "OpenAI stuurt u een downloadlink per e-mail. Het kan tot 24 uur duren."
       ],
       "PASTED": [
         "GEPLAKT"
-      ],
-      "Periodically review, download, and delete the data AI services hold on you.": [
-        "Controleer, download en verwijder periodiek de gegevens die AI-diensten over u bewaren."
-      ],
-      "Pick services that don't train on or sell your conversations — like ${ LUMO_SHORT_APP_NAME }, which can't read your chats.": [
-        "Kies diensten die niet trainen op uw gesprekken of deze verkopen, zoals ${ LUMO_SHORT_APP_NAME }, dat uw chats niet kan lezen."
       ],
       "Processing file...": [
         "Bestand wordt verwerkt..."
@@ -3786,56 +3877,50 @@
       "Processing...": [
         "Wordt verwerkt..."
       ],
-      "Profiled by Big Tech AI": [
-        "Geprofileerd door Big Tech AI"
-      ],
-      "Profiles can feed into insurance, lending, and hiring outcomes — without you ever knowing.": [
-        "Profielen kunnen van invloed zijn op beslissingen over verzekeringen, kredietverlening en aanwerving, zonder dat u het ooit weet."
-      ],
       "Projects help you organize conversations with custom instructions and files.": [
         "Projecten helpen u gesprekken te organiseren met aangepaste instructies en bestanden."
       ],
       "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
         "Projecten helpen u gesprekken te organiseren met aangepaste instructies en bestanden. Log in of maak een gratis account aan om te beginnen."
       ],
-      "Reading your prompts…": [
-        "Uw prompts lezen..."
-      ],
       "red flags": [
         "rode vlaggen"
       ],
-      "Scoring how much you revealed…": [
-        "Berekenen hoeveel u hebt onthuld..."
-      ],
-      "See the profile an AI company can piece together from your conversations alone.": [
-        "Bekijk het profiel dat een AI-bedrijf kan samenstellen op basis van alleen uw gesprekken."
+      "See the profile that an AI company can build from your conversations alone.": [
+        "Bekijk het profiel dat een AI-bedrijf alleen op basis van uw gesprekken kan opbouwen."
       ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Ontdek wat Big Tech AI over u weet. Gemaakt met ${ LUMO_SHORT_APP_NAME }."
       ],
+      "Sign in to your ChatGPT account at chatgpt.com": [
+        "Meld u aan bij uw ChatGPT-account op chatgpt.com"
+      ],
+      "Sign in to your Claude account at claude.ai": [
+        "Meld u aan bij uw Claude-account op claude.ai"
+      ],
+      "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
+        "Een deel van wat u hebt geplakt, kan de grenzen op het gebied van de werkplek, de wet of de gegevensbescherming overschrijden. Dit is hier om u te helpen het te herkennen, niet om te oordelen."
+      ],
       "Something went wrong analysing this export. Please try again.": [
         "Er is iets misgegaan bij het analyseren van deze export. Probeer het opnieuw."
       ],
-      "Spotting the patterns in what you typed…": [
-        "Patronen herkennen in wat u hebt getypt…"
+      "Star a chat to find it here quickly.": [
+        "Geef een chat een ster om het hier snel te vinden."
       ],
-      "The fuller the bar, the more of that area Big Tech could reconstruct from your chats. Lower is better. Hover a row to see what gave it away.": [
-        "Hoe voller de balk, hoe meer Big Tech van dat gebied kan reconstrueren uit uw chats. Lager is beter. Beweeg de muisaanwijzer over een rij om te zien wat de oorzaak was."
+      "Start a new chat to see it here.": [
+        "Start een nieuwe chat om deze hier te bekijken."
       ],
-      "The more an attacker knows about you, the more believable the phishing message. Personalised scams are far harder to spot.": [
-        "Hoe meer een aanvaller over u weet, hoe geloofwaardiger het phishingbericht is. Gepersonaliseerde oplichting is veel moeilijker te herkennen."
+      "The fuller the bar, the more of that area Big Tech could reconstruct. Lower is better.": [
+        "Hoe hoger de lat, hoe meer van dat gebied Big Tech kon reconstrueren. Lager is beter."
       ],
-      "The more that's known about you, the more believable phishing and fraud attempts become.": [
-        "Hoe meer er over u bekend is, hoe geloofwaardiger phishing- en fraudepogingen worden."
+      "The more an attacker knows about you, the more believable the phishing message. Personalized scams are far harder to spot.": [
+        "Hoe meer een aanvaller over u weet, hoe geloofwaardiger het phishingbericht. Gepersonaliseerde oplichting is veel moeilijker te herkennen."
       ],
-      "These are the most sensitive categories Big Tech AI could infer about you from your chats.": [
-        "Dit zijn de meest gevoelige categorieën die Big Tech AI uit uw chats zou kunnen afleiden."
+      "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
+        "Dit zijn de meest gevoelige categorieën die Big Tech AI over u kan afleiden uit uw chats, zelfs als u ze nooit expliciet heeft getypt."
       ],
-      "This is exactly the kind of profiling ${ LUMO_SHORT_APP_NAME } is built to stop. With ${ LUMO_SHORT_APP_NAME }, your conversations are encrypted and never used to build a profile of you.": [
-        "Dit is precies het soort profilering dat ${ LUMO_SHORT_APP_NAME } moet stoppen. Met ${ LUMO_SHORT_APP_NAME } worden uw gesprekken versleuteld en nooit gebruikt om een profiel van u op te bouwen."
-      ],
-      "This isn't just trivia. Here's what a profile like yours can actually be used for.": [
-        "Dit is niet zomaar trivia. Dit is waar een profiel als dat van u daadwerkelijk voor kan worden gebruikt."
+      "This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.": [
+        "Dit is waarom het belangrijk is: als deze details eenmaal zijn afgeleid, kunnen ze targeting, profilering en beslissingen over u aansturen – vaak zonder transparantie of toestemming."
       ],
       "This message is empty. Sorry about that.": [
         "Dit bericht is leeg. Onze excuses hiervoor."
@@ -3852,8 +3937,17 @@
       "Tips on how to write useful instructions": [
         "Tips voor het schrijven van nuttige instructies"
       ],
+      "Try a different search term.": [
+        "Probeer een andere zoekterm."
+      ],
+      "Turn off chat history and model training where possible.": [
+        "Schakel waar mogelijk de chatgeschiedenis en modeltraining uit."
+      ],
       "Type @filename to ask questions about a specific file": [
         "Typ @bestandsnaam om vragen te stellen over een specifiek bestand"
+      ],
+      "Under your data, click Export data": [
+        "Klik onder uw gegevens op gegevens Exporteren"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus om een onbeperkt aantal aangepaste ${ LUMO_SHORT_APP_NAME }s te maken, geavanceerde AI-modellen te ontgrendelen en meer."
@@ -3861,35 +3955,35 @@
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
         "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus om onbeperkte projecten aan te maken, geavanceerde AI-modellen te ontgrendelen en meer."
       ],
-      "Use email aliases and hide-my-email so your real address isn't tied to every account.": [
-        "Gebruik e-mailaliassen en hide-my-email zodat uw echte adres niet aan elk account is gekoppeld."
-      ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Gebruik het Max-model voor complex werk of het Lite-model voor dagelijkse taken. Kies de modus Snel voor snelle antwoorden of de modus Denken voor lastigere vragen."
       ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Door ${ LUMO_SHORT_APP_NAME } te gebruiken, kan ${ DRIVE_APP_NAME } grotere bestanden verwerken."
       ],
+      "We extract your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts to keep processing fast. Nothing is stored on our servers. You can optionally save your report on this device.": [
+        "We extraheren uw ${ PAPER_TRAIL_LIMITS.maxPrompts } meest recente prompts om de verwerking snel te houden. Er wordt niets op onze servers opgeslagen. Optioneel kunt u uw rapport op dit apparaat opslaan."
+      ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "We slaan uw kaart op zodat u deze aan het bericht kunt toevoegen — sociale sites kunnen de afbeelding niet voor u toevoegen."
-      ],
-      "Working out what Big Tech AI could infer…": [
-        "Analyseren wat Big Tech AI zou kunnen afleiden…"
       ],
       "You're using private browsing": [
         "U gebruikt privé browsen"
       ],
-      "Your file is analysed on the spot to build your report. Nothing is uploaded to our servers or stored.": [
-        "Uw bestand wordt ter plekke geanalyseerd om uw rapport op te stellen. Er wordt niets naar onze servers geüpload of opgeslagen."
-      ],
-      "Your file never leaves your device. It's read locally and is never stored.": [
-        "Uw bestand verlaat uw apparaat nooit. Het wordt lokaal gelezen en nooit opgeslagen."
+      "Your export is encrypted in transit and processed without being stored on ${ LUMO_SHORT_APP_NAME }'s servers.": [
+        "Uw export wordt onderweg gecodeerd en verwerkt zonder te worden opgeslagen op de servers van ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Uw bestanden zijn groot. ${ LUMO_SHORT_APP_NAME } kan mogelijk niet alle informatie verwerken."
       ],
       "Your information is zero-access encrypted": [
         "Uw informatie is versleuteld met zero-access encryptie"
+      ],
+      "Your report is being generated privately.": [
+        "Uw rapport wordt privé gegenereerd."
+      ],
+      "Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${ LUMO_SHORT_APP_NAME }'s servers.": [
+        "Uw rapport wordt alleen in deze browser onversleuteld opgeslagen. Het verlaat uw apparaat nooit en wordt niet naar de servers van ${ LUMO_SHORT_APP_NAME } verzonden."
       ]
     },
     "collider_2025:Inspiration suggestion prompt": {
@@ -3964,6 +4058,9 @@
       ]
     },
     "collider_2025:Label": {
+      "${ selectedCount } selected": [
+        "${ selectedCount } geselecteerd"
+      ],
       "16:9": [
         "16:9"
       ],
@@ -3999,6 +4096,9 @@
       ],
       "Data brokers": [
         "Datamakelaars"
+      ],
+      "Date": [
+        "Datum"
       ],
       "Describe what to change": [
         "Beschrijf wat u wilt wijzigen"
@@ -4051,17 +4151,23 @@
       "Minimal": [
         "Minimaal"
       ],
+      "My privacy type": [
+        "Mijn privacytype"
+      ],
       "Name": [
         "Naam"
       ],
-      "Personalised pricing": [
-        "Gepersonaliseerde prijzen"
+      "Personalized pricing": [
+        "Gepersonaliseerde prijs"
       ],
       "Politics": [
         "Politiek"
       ],
       "Project Instructions (optional)": [
         "Project Instructies (optioneel)"
+      ],
+      "Save analysis on this device to view it later": [
+        "Sla de analyse op dit apparaat op om deze later te bekijken"
       ],
       "Scams": [
         "Oplichting"
@@ -4075,14 +4181,14 @@
       "Thick": [
         "Dik"
       ],
-      "Tip": [
-        "Tip"
+      "Tips": [
+        "Tips"
       ],
       "Untitled chat": [
         "Naamloos gesprek"
       ],
-      "While you wait — how your data gets used": [
-        "Terwijl u wacht — hoe uw gegevens worden gebruikt"
+      "Untitled project": [
+        "Naamloze project"
       ]
     },
     "collider_2025:Notification": {
@@ -4094,8 +4200,17 @@
       ]
     },
     "collider_2025:Option": {
+      "All": [
+        "Alle"
+      ],
       "Date created": [
         "Aanmaakdatum"
+      ],
+      "Favorited": [
+        "Favoriet"
+      ],
+      "From projects": [
+        "Van projecten"
       ],
       "Last updated": [
         "Laatst bijgewerkt"
@@ -4140,6 +4255,9 @@
       ],
       "Holiday planner": [
         "Vakantieplanner"
+      ],
+      "Search chats": [
+        "Doorzoek chats"
       ],
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
         "Zoek op aangepaste ${ LUMO_SHORT_APP_NAME }"
@@ -4521,15 +4639,20 @@
         "Galerij"
       ]
     },
+    "collider_2025:Time": {
+      "${ ageHours }h ago": [
+        "${ ageHours }m geleden"
+      ],
+      "${ ageMinutes }m ago": [
+        "${ ageMinutes }m geleden"
+      ],
+      "Just now": [
+        "Zojuist"
+      ]
+    },
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } kan niet starten"
-      ],
-      "AI knows more about you than you think": [
-        "AI weet meer over u dan u denkt"
-      ],
-      "AI Paper Trail": [
-        "AI-papierspoor"
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Een AI-assistent zou u moeten versterken, niet uitbuiten voor uw gegevens."
@@ -4537,14 +4660,26 @@
       "Better web search": [
         "Beter zoeken op het web"
       ],
-      "Building your paper trail": [
-        "Uw paper trail opbouwen"
+      "Building your AI Paper Trail": [
+        "Bouw uw AI Paper Trail"
       ],
       "Built by the team that knows privacy": [
         "Gebouwd door het team dat privacy kent"
       ],
       "Chat knowledge": [
         "Chatkennis"
+      ],
+      "ChatGPT import": [
+        "ChatGPT-import"
+      ],
+      "Chats": [
+        "Chats"
+      ],
+      "Choose privacy-first AI": [
+        "Kies voor privacy eerst AI"
+      ],
+      "Claude import": [
+        "Claude import"
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Een aangepaste ${ LUMO_SHORT_APP_NAME } maken"
@@ -4558,11 +4693,11 @@
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "Aangepaste ${ LUMO_SHORT_APP_NAME }'s"
       ],
-      "Decisions made about you": [
-        "Beslissingen die over u zijn genomen"
-      ],
       "Delete project?": [
         "Project verwijderen?"
+      ],
+      "Delete your data regularly": [
+        "Verwijder regelmatig uw gegevens"
       ],
       "Detail makes fraud convincing": [
         "Details maken fraude overtuigend"
@@ -4582,20 +4717,20 @@
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "Ontdek afbeeldingen die zijn gemaakt met ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Export & delete regularly": [
-        "Regelmatig exporteren en verwijderen"
-      ],
       "Export your data": [
         "Exporteer uw gegevens"
-      ],
-      "Exposure scorecard": [
-        "Blootstellingsscorekaart"
       ],
       "Favorites": [
         "Favorieten"
       ],
       "File preview": [
         "Bestandsvoorbeeld"
+      ],
+      "Filters": [
+        "Filters"
+      ],
+      "Generate your AI Paper Trail": [
+        "Genereer uw AI Paper Trail"
       ],
       "Get started by creating a new project": [
         "Begin met het aanmaken van een nieuw project"
@@ -4609,17 +4744,14 @@
       "Health hints can shape your premiums": [
         "Gezondheidshints kunnen uw premies beïnvloeden"
       ],
-      "History": [
-        "Geschiedenis"
-      ],
       "How can I help?": [
         "Hoe kan ik helpen?"
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Hoe houdt ${ LUMO_SHORT_APP_NAME } onze gesprekken vertrouwelijk?"
       ],
-      "How to stay private": [
-        "Hoe u privé blijft"
+      "How to export your data": [
+        "Hoe uw gegevens exporteren"
       ],
       "Image generation and editing": [
         "Afbeeldingen genereren en bewerken"
@@ -4639,14 +4771,11 @@
       "Linked Drive Folder": [
         "Gekoppelde Drive-map"
       ],
-      "Mask your identity": [
-        "Maskeer uw identiteit"
+      "Meet your AI Paper Trail": [
+        "Maak kennis met uw AI Paper Trail"
       ],
       "Memory": [
         "Geheugen"
-      ],
-      "More convincing scams": [
-        "Overtuigendere oplichting"
       ],
       "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
         "Meer aangepaste ${ LUMO_SHORT_APP_NAME }s met ${ LUMO_SHORT_APP_NAME } Plus"
@@ -4669,8 +4798,17 @@
       "No chat history yet. Let's start chatting!": [
         "Nog geen gespreksgeschiedenis. Laten we beginnen met chatten!"
       ],
-      "No result.": [
-        "Geen resultaat."
+      "No chats yet": [
+        "Nog geen chats"
+      ],
+      "No favorites yet": [
+        "Nog geen favorieten"
+      ],
+      "No matching chats": [
+        "Geen overeenkomende chats"
+      ],
+      "No project chats yet": [
+        "Nog geen projectchats"
       ],
       "Nothing here yet": [
         "Nog niets aanwezig"
@@ -4678,17 +4816,8 @@
       "Older": [
         "Ouder"
       ],
-      "Out of your control": [
-        "Buiten uw controle"
-      ],
       "Oversharing blind spots": [
         "Blinde vlekken van overmatig delen"
-      ],
-      "Personalised pricing": [
-        "Gepersonaliseerde prijzen"
-      ],
-      "Prefer end-to-end encryption": [
-        "Geef de voorkeur aan end-to-end versleuteling"
       ],
       "Profiles can decide your future": [
         "Profielen kunnen uw toekomst bepalen"
@@ -4696,23 +4825,35 @@
       "Project knowledge": [
         "Projectkennis"
       ],
+      "Recent": [
+        "Recent"
+      ],
       "Remove all files?": [
         "Verwijder alle bestanden?"
+      ],
+      "Report at a glance": [
+        "Rapportage in één oogopslag"
+      ],
+      "Review privacy settings": [
+        "Herzie privacy instellingen"
+      ],
+      "See what Big Tech AI already knows about you": [
+        "Ontdek wat Big Tech AI al over u weet"
       ],
       "See your AI paper trail": [
         "Bekijk uw AI-papierspoor"
       ],
-      "Share less with AI": [
-        "Minder delen met AI"
+      "Share only what is needed": [
+        "Deel alleen wat nodig is"
+      ],
+      "Share your score": [
+        "Deel uw score"
       ],
       "Sign in to build your gallery": [
         "Meld u aan om uw galerij samen te stellen"
       ],
       "Sign in to create projects": [
         "Inloggen om projecten te maken"
-      ],
-      "Sold to data brokers": [
-        "Verkocht aan databrokers"
       ],
       "Sort by": [
         "Sorteren op"
@@ -4723,9 +4864,6 @@
       "Start a new conversation": [
         "Start een nieuw gesprek"
       ],
-      "Targeted manipulation": [
-        "Gerichte manipulatie"
-      ],
       "That's why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Daarom hebben we ${ LUMO_SHORT_APP_NAME } gebouwd: om u alle voordelen van AI te bieden, zonder uw privacy en gegevensbeveiliging in gevaar te brengen."
       ],
@@ -4735,23 +4873,17 @@
       "This chat disappears when you close it and is never saved.": [
         "Dit gesprek verdwijnt wanneer u deze sluit en wordt nooit opgeslagen."
       ],
-      "Turn off history & training": [
-        "Geschiedenis en training uitschakelen"
-      ],
       "Two models, two modes": [
         "Twee modellen, twee modi"
       ],
-      "Upload it privately": [
-        "Upload het privé"
+      "Upload it securely": [
+        "Upload het veilig"
       ],
-      "Use privacy-first tools": [
-        "Gebruik tools waarbij privacy vooropstaat"
+      "Use AI on your terms": [
+        "Gebruik AI op uw voorwaarden"
       ],
       "We couldn't read your paper trail": [
         "We konden uw paper trail niet lezen"
-      ],
-      "What Big Tech inferred": [
-        "Wat Big Tech heeft afgeleid"
       ],
       "What do you want to create today?": [
         "Wat wilt u vandaag creëren?"
@@ -4759,20 +4891,26 @@
       "What this profile exposes": [
         "Wat dit profiel blootlegt"
       ],
-      "Why this matters": [
-        "Waarom dit belangrijk is"
+      "What we identified": [
+        "Wat we hebben geïdentificeerd"
       ],
-      "You can't un-share it": [
+      "You can’t un-share it": [
         "U kunt het delen niet ongedaan maken"
       ],
       "You might be shown a higher price": [
         "Mogelijk krijgt u een hogere prijs te zien"
       ],
-      "You saw the profile?": [
-        "U heeft het profiel gezien?"
+      "You saw the profile? Now protect the person behind it.": [
+        "Hebt u het profiel gezien? Bescherm nu de persoon erachter."
+      ],
+      "Your conversations should belong to you. With ${ LUMO_SHORT_APP_NAME }, they do.": [
+        "U gesprekken moeten van u zijn. Met ${ LUMO_SHORT_APP_NAME } is dat wel het geval."
       ],
       "Your image gallery is empty": [
         "Uw afbeeldingengalerij is leeg"
+      ],
+      "Your recent files": [
+        "Uw recente bestanden"
       ],
       "Your shareable card": [
         "Uw deelbare kaart"
@@ -7297,6 +7435,9 @@
       "Close preview": [
         "Voorbeeld sluiten"
       ],
+      "Compaction": [
+        "Verdichting"
+      ],
       "Composer limit banner preview": [
         "Voorbeeld van bannerbeperking Composer"
       ],
@@ -7305,6 +7446,9 @@
       ],
       "Create Test Chats": [
         "Maak Test Chats"
+      ],
+      "Current conversation": [
+        "Huidige conversatie"
       ],
       "Debug View": [
         "Debug-weergave"
@@ -7369,6 +7513,9 @@
       "No": [
         "Nee"
       ],
+      "None open": [
+        "Geen geopend"
+      ],
       "Notifications": [
         "Meldingen"
       ],
@@ -7401,6 +7548,9 @@
       ],
       "Resource limit notifications": [
         "Meldingen over resourcebeperkingen"
+      ],
+      "Runs the compaction engine over the displayed branch and inserts a compaction boundary, without generating a reply. \"Force summarization\" always runs the LLM summary step even when cheaper strategies already free up enough space.": [
+        "Voert de verdichtingsengine uit over de weergegeven tak en voegt een verdichtingsgrens in, zonder een antwoord te genereren. \"Samenvatting forceren\" voert altijd de LLM-samenvattingsstap uit, zelfs als goedkopere strategieën al voldoende ruimte vrijmaken."
       ],
       "Search": [
         "Zoeken"
@@ -7458,6 +7608,12 @@
       ],
       "Trigger assets limit": [
         "Activeer activalimiet"
+      ],
+      "Trigger compaction": [
+        "Activeer verdichting"
+      ],
+      "Trigger compaction (force summarization)": [
+        "Verdichting activeren (forceert samenvatting)"
       ],
       "Trigger conversations limit": [
         "Activeer gesprekslimiet"
@@ -7543,6 +7699,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruiker)",
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruikers)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licentie"
       ],
@@ -8558,6 +8718,9 @@
       ],
       "Remove from favorites": [
         "Verwijder uit favorieten"
+      ],
+      "Rename": [
+        "Hernoemen"
       ]
     },
     "pass_signup_2023: Info": {
@@ -9599,6 +9762,9 @@
       ],
       "Conversation deleted": [
         "Gesprek verwijderd"
+      ],
+      "Conversations deleted": [
+        "Gesprekken verwijderd"
       ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"

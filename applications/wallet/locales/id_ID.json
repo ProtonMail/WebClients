@@ -438,11 +438,20 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe (untuk ${ quantity } pengguna)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domain khusus tambahan"
       ],
       "${ ips } dedicated VPN server": [
         "${ ips } server VPN khusus"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asisten AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asisten AI ${ LUMO_APP_NAME } (untuk ${ quantity } pengguna)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Lisensi AI ${ LUMO_APP_NAME }"
@@ -461,6 +470,9 @@
       ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domain khusus"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } lisensi AI ${ LUMO_APP_NAME }"
@@ -3598,6 +3610,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (untuk ${ quantity } pengguna)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Lisensi ${ MEET_APP_NAME }"
       ],

@@ -357,6 +357,9 @@
       "Connected": [
         "مُتصل"
       ],
+      "Contact sales": [
+        "اتصل بالمبيعات"
+      ],
       "Contact support": [
         "التواصل مع الدعم الفني"
       ],
@@ -497,6 +500,9 @@
       ],
       "Delete account": [
         "حذف الحساب"
+      ],
+      "Delete and confirm": [
+        "حذف وتأكيد"
       ],
       "Delete filter “${ Name }”": [
         "حذف المرشح “${ Name }”"
@@ -9582,9 +9588,6 @@
       "Contact us": [
         "اتصل بنا"
       ],
-      "Downloads": [
-        "التنزيلات"
-      ],
       "Enjoying ${ planName }?": [
         "هل تستمتع بـ ${ planName }؟"
       ],
@@ -10124,6 +10127,9 @@
       ],
       "${ discountPercent }% discount": [
         "خصم ${ discountPercent }%"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "لن يحتفظ ${ DRIVE_APP_NAME } بعد الآن بالإصدارات السابقة لملفاتك."
       ],
       "${ emailAddress } is invalid": [
         "عنوان البريد الإلكتروني ${ emailAddress } غير صالح"
@@ -10893,9 +10899,6 @@
       "Available on macOS, Windows, and Linux.": [
         "متاح على أنظمة macOS و Windows و Linux."
       ],
-      "Average": [
-        "متوسط"
-      ],
       "Awaiting transaction": [
         "في انتظار المعاملة"
       ],
@@ -11582,6 +11585,9 @@
       ],
       "for ${ price }": [
         "مقابل ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "للحصول على تاريخ إصدار لمدة 10 سنوات، يرجى الاتصال بفريق المبيعات لدينا."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "للوصول إلى البريد الإلكتروني في أي وقت ولتجربة محسّنة على الجوال، نزّل ${ androidAppLink } أو ${ iosAppLink }."
@@ -12427,9 +12433,6 @@
       "per month, billed at ${ price }": [
         "فاتورة شهرية بسعر ${ price }"
       ],
-      "Per seat/month": [
-        "لكل مقعد/شهر"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "تنبيه بشكل دوري للتحقق من كلمة مرور ${ BRAND_NAME } لضمان عدم نسيانها. سيُطلب ذلك بمعدل أقل بمرور الوقت."
       ],
@@ -13168,6 +13171,12 @@
       "This will allow the TV to access your ${ BRAND_NAME } account.": [
         "سيسمح هذا للتلفاز بالوصول إلى حساب ${ BRAND_NAME }."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "سيؤدي هذا إلى حذف جميع الإصدارات السابقة لملفاتك التي يزيد عمرها على ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "سيؤدي ذلك إلى حذف جميع الإصدارات السابقة من ملفاتك."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "سيؤدي هذا إلى رفض الوصول إلى **${ email }**. هل تريد بالتأكيد المتابعة؟"
       ],
@@ -13396,6 +13405,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "قم بالترقية للاحتفاظ بمزايا ${ planTitle } الخاصة بك."
       ],
+      "Upgrade to unlock": [
+        "قم بالترقية لفتح القفل"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "قم بالترقية لفتح ${ monitorLink }."
       ],
@@ -13497,6 +13509,9 @@
       ],
       "Version ${ version }": [
         "الإصدار ${ version }"
+      ],
+      "Version history": [
+        "تاريخ الإصدار"
       ],
       "Version number successfully copied to clipboard": [
         "تم نسخ رقم الإصدار إلى الحافظة بنجاح"
@@ -15067,9 +15082,6 @@
       "Billed monthly.": [
         "تُدفع الفاتورة شهريًا."
       ],
-      "Billed seats": [
-        "المقاعد المفوترة"
-      ],
       "Billing cycle": [
         "دورة الفوترة"
       ],
@@ -15169,9 +15181,6 @@
       "Common passwords": [
         "كلمات المرور الشائعة"
       ],
-      "Companies": [
-        "الشركات"
-      ],
       "Company": [
         "الشركة"
       ],
@@ -15240,9 +15249,6 @@
       ],
       "Copy IP address to clipboard": [
         "نسخ عنوان IP إلى الحافظة"
-      ],
-      "Cost": [
-        "التكلفة"
       ],
       "Could you please let us know which provider?": [
         "هل يمكنك إخبارنا بأي مزود خدمة؟"
@@ -15356,6 +15362,9 @@
       ],
       "Don't ask again": [
         "لا تسأل ثانيا"
+      ],
+      "Don't keep versions": [
+        "لا تحتفظ بالإصدارات"
       ],
       "Don't show this again": [
         "لا تظهر لي هذا مرة أخرى"
@@ -23022,14 +23031,6 @@
         "طلب إعادة تعيين كلمة المرور"
       ]
     },
-    "Setting": {
-      "Get updates about comments via email": [
-        "احصل على تحديثات حول التعليقات عبر البريد الإلكتروني"
-      ],
-      "Include document name in email notifications": [
-        "قم بتضمين اسم المستند في إشعارات البريد الإلكتروني"
-      ]
-    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "حافظ على تنظيم صندوق الوارد باستخدام المجلدات والتسميات. ${ learnMoreLink }"
@@ -26439,6 +26440,9 @@
       ],
       "Delete user?": [
         "حذف المستخدم؟"
+      ],
+      "Delete version history?": [
+        "هل تريد حذف سجل الإصدارات؟"
       ],
       "Deny access to user?": [
         "هل تريد رفض وصول المستخدم؟"

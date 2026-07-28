@@ -115,9 +115,6 @@
       "Bulk restore items from trash": [
         "휴지통에서 대량 복원"
       ],
-      "Bulk select items": [
-        "대량의 선택된 항목"
-      ],
       "Cancel": [
         "취소"
       ],
@@ -486,9 +483,6 @@
       ],
       "Move to Trash": [
         "휴지통으로 이동"
-      ],
-      "Multiple select": [
-        "다중 선택"
       ],
       "New token": [
         "새 토큰"
@@ -1262,6 +1256,12 @@
       "PIN codes do not match": [
         "PIN 코드가 일치하지 않습니다."
       ],
+      "Regex invalid": [
+        "유효하지 않은 정규 표현식"
+      ],
+      "Regex unsafe": [
+        "안전하지 않은 정규 표현식"
+      ],
       "Request timed out": [
         "요청 시간이 초과되었습니다."
       ],
@@ -1360,6 +1360,9 @@
       ],
       "Unsupported Bitwarden file format": [
         "지원되지 않는 Bitwarden 파일 포맷"
+      ],
+      "Unsupported file type": [
+        "지원되지 않는 파일 형식"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고를 업데이트하는데 실패했습니다."

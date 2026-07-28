@@ -124,9 +124,6 @@
       "Bulk restore items from trash": [
         "批次從垃圾桶還原項目"
       ],
-      "Bulk select items": [
-        "批次選取項目"
-      ],
       "Cancel": [
         "取消"
       ],
@@ -508,9 +505,6 @@
       "Move to Trash": [
         "移至垃圾桶"
       ],
-      "Multiple select": [
-        "多選"
-      ],
       "New token": [
         "新權杖"
       ],
@@ -699,9 +693,6 @@
       ],
       "Skip": [
         "略過"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "有人在 ${ PASS_APP_NAME } 上與您共享了一個項目。"
       ],
       "Sort vault items": [
         "排序保管庫項目"
@@ -1380,9 +1371,6 @@
       ],
       "Trashing item failed": [
         "移動項目至垃圾桶失敗"
-      ],
-      "Try reaching out to the link owner.": [
-        "請嘗試與該連結的擁有者聯絡。"
       ],
       "Unable to generate an OTP code for this item": [
         "無法替此項目生成一次性代碼"
@@ -2163,7 +2151,7 @@
         "移動全部於\"${ payload.content.name }\"的項目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "將項目移動到另一個保管庫會消除其安全連結。"
+        "將項目移至另一個保管庫將會清除其安全連結。"
       ],
       "Moving items": [
         "正在移動檔案"
@@ -3965,9 +3953,6 @@
       ],
       "Theme": [
         "布景主題"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "此項目的可存取期限至 ${ date } 為止，或直到達到檢視次數限制為止。"
       ],
       "Tier/Level": [
         "等級/級別"

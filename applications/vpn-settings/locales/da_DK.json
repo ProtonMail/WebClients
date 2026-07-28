@@ -1283,6 +1283,9 @@
       "Verify password": [
         "Bekræft adgangskode"
       ],
+      "Verify recovery phrase": [
+        "Bekræft gendannelsessætning"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Bekræft domænet ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1685,9 +1688,6 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Prøv ${ selected } ${ freeForNDays }"
-      ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Gratis afprøvning i ${ TRIAL_DURATION_DAYS } dage"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Afmelder du, vil din gratis prøveperiode ikke blive konverteret til et betalt abonnement, men du kan stadig nyde dine abonnementetsfordele indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til ${ BRAND_NAME } gratis abonnement."
@@ -5254,6 +5254,9 @@
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Denne sætning kan ikke gendanne din konto. Du kan generere en ny en for at sikre, at din konto kan gendannes i fremtiden."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Du skal aktivere dine organisationsnøgler. Uden aktivering vil du ikke kunne oprette eller få adgang til ikke-private brugere."
       ],
@@ -7383,6 +7386,9 @@
       "Change your password": [
         "Skift din adgangskode"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Tjek om din gendannelsessætning kan bruges til helt at gendanne din konto."
+      ],
       "Choose a plan that works best for you.": [
         "Vælg et abonnement, der passer bedst til dig."
       ],
@@ -8615,6 +8621,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Gendannelsessætning er ikke tilknyttet nogen forældede nøgler."
+      ],
+      "Recovery phrase verified": [
+        "Gendannelsessætning bekræftet"
       ],
       "Reddit": [
         "Reddit"
@@ -11416,6 +11425,9 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } pladser"
       ],
+      "${ price } per seat": [
+        "${ price } pr. plads"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-plads",
         "${ seats } ${ MEET_APP_NAME }-pladser"
@@ -13356,70 +13368,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Behold dette abonnement"
-      ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Opgradér mit abonnement"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Lad os snakke"
-      ],
-      "Recommended": [
-        "Anbefalet"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } pr. måned"
-      ],
-      "/month /user": [
-        "/måned /bruger"
-      ],
-      "/month /user, billed annually": [
-        "/måned /bruger, faktureres årligt"
-      ],
-      "/month /user, billed biennially": [
-        "/måned /bruger, faktureres hvert andet år"
-      ],
-      "Current plan": [
-        "Nuværende abonnent"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses adgangskodeadministrator!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses VPN-tjeneste!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "For kun **${ relativePrice } pr. måned** mere, får du adgang til alle premium ${ BRAND_NAME }-tjenester!"
-      ],
-      "Free forever": [
-        "Gratis for evigt"
-      ],
-      "Get in touch with our sales team": [
-        "Kontakt vores salgsteam"
-      ],
-      "Includes:": [
-        "Inkluderer:"
-      ],
-      "per month": [
-        "pr. måned"
-      ],
-      "per month, billed annually": [
-        "pr. måned, faktureres årligt"
-      ],
-      "per month, billed every month": [
-        "pr. måned, faktureres hver måned"
-      ],
-      "per month, billed every two years": [
-        "pr. måned, faktureres hvert andet år"
-      ],
       "Secure vault sharing": [
         "Sikker deling af boks"
       ],
@@ -18486,6 +18439,9 @@
       ],
       "Verify your password": [
         "Bekræft din adgangskode"
+      ],
+      "Verify your phrase": [
+        "Bekræft din sætning"
       ],
       "Verifying your card...": [
         "Bekræfter dit kort..."

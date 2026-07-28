@@ -156,6 +156,9 @@
       "Clear browser data": [
         "Neteja les dades del navegador"
       ],
+      "Clear conversation": [
+        "Netejar la conversa"
+      ],
       "Clear data": [
         "Neteja les dades"
       ],
@@ -719,6 +722,9 @@
       "Refresh the page": [
         "Refresca la pàgina"
       ],
+      "Reject": [
+        "Rebutja"
+      ],
       "Remove": [
         "Esborra"
       ],
@@ -889,6 +895,9 @@
       ],
       "Stay": [
         "Mantenir"
+      ],
+      "Stop": [
+        "Aturar-ho"
       ],
       "Submit": [
         "Envia"
@@ -1072,6 +1081,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domini personalitzat addicional",
         "${ domains } dominis personalitzats addicionals"
@@ -1080,11 +1093,22 @@
         "${ ips } servidor VPN dedicat",
         "${ ips } servidors VPN dedicats"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistent d'IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Llicència d'IA de ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "llicències de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuaris)"
       ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
@@ -1097,6 +1121,10 @@
       ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domini personalitzat",
+        "${ quantity } dominis personalitzats"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } llicència d'IA ${ LUMO_APP_NAME }",
@@ -5696,6 +5724,9 @@
         "S'està suprimint l'esdeveniment...",
         "S'estan suprimint els esdeveniments..."
       ],
+      "Details": [
+        "Detalls"
+      ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
@@ -6390,6 +6421,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
+      ],
+      "Thinking about this": [
+        "Hi estem pensant"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
@@ -7919,11 +7953,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Llicència de ${ MEET_APP_NAME }"
       ],
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
@@ -10128,6 +10169,9 @@
       ],
       "Anytown": [
         "Castellvent"
+      ],
+      "Ask anything…": [
+        "Pregunteu qualsevol cosa…"
       ],
       "Company name": [
         "Nom de l'empresa"

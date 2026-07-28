@@ -641,6 +641,9 @@
       "Increase": [
         "Zvýšiť"
       ],
+      "Instructions": [
+        "Pokyny"
+      ],
       "Invite": [
         "Pozvať"
       ],
@@ -1373,6 +1376,12 @@
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licencií"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľa)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)"
+      ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
       ],
@@ -1631,6 +1640,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ LUMO_SHORT_APP_NAME }, aby vám pomohol písať, odpovedať a opravovať emaily."
       ]
     },
     "Attached ics file error": {
@@ -1683,9 +1695,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "Vyskúšajte ${ selected } ${ freeForNDays }"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Vyskúšajte si to zadarmo na ${ TRIAL_DURATION_DAYS } dní"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaša bezplatná skúšobná verzia neprevedie na platené predplatné, ale výhody plánu môžete využívať až do konca skúšobného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } Free plán."
       ],
@@ -1694,6 +1703,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } licencií na asistenta písania ${ LUMO_SHORT_APP_NAME } počas skúšobného obdobia."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } Scribe miest počas skúšobného obdobia."
@@ -1871,6 +1883,12 @@
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
@@ -1879,6 +1897,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
@@ -2293,6 +2314,9 @@
       ],
       "Discover and set up features": [
         "Objaviť a nastaviť funkcie"
+      ],
+      "Get 50% offer": [
+        "Využite 50 % zľavu"
       ],
       "Maybe later": [
         "Možno neskôr"
@@ -6968,6 +6992,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje asistenta písania"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
@@ -7238,6 +7268,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Používateľ je účet spojený s jedným používateľským menom, poštovou schránkou a osobou"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
+      ],
       "Account monitor": [
         "Monitor účtu"
       ],
@@ -7339,6 +7372,9 @@
       ],
       "All inactive members deleted": [
         "Všetci neaktívni používatelia boli vymazaní"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "Všetka internetová prevádzka je vždy šifrovaná a zabezpečená"
       ],
       "All keys successfully reactivated": [
         "Všetky kľúče boli úspešne reaktivované"
@@ -7697,6 +7733,9 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "V závislosti od vašich nastavení môžu získať prístup okamžite alebo po uplynutí určenej **čakacej lehoty**."
       ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Zariadenia, na ktorých je nasadený profil vždy zapnutej VPN, nemajú prístup na internet, pokiaľ nie je aktívne pripojenie cez ${ VPN_APP_NAME }."
+      ],
       "Did you know?": [
         "Vedeli ste?"
       ],
@@ -7946,6 +7985,9 @@
       "Failed to fetch logs.": [
         "Načítanie záznamov zlyhalo."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Najvyššia rýchlosť VPN až 10 Gbps"
+      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
       ],
@@ -8033,6 +8075,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "Have some more time to decide without interruption.": [
+        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
+      ],
       "here": [
         "tu"
       ],
@@ -8068,6 +8113,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokiaľ si myslíte, že ide o chybu, kontaktujte nás ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
@@ -8642,6 +8690,9 @@
       "Preference saved": [
         "Nastavenie uložené"
       ],
+      "Premium privacy protection across all your devices": [
+        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
+      ],
       "Preview": [
         "Ukážka"
       ],
@@ -8719,6 +8770,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Fráza na obnovenie nie je spojená so žiadnymi zastaralými kľúčmi."
+      ],
+      "Recovery phrase verified": [
+        "Fráza pre obnovenie overená"
       ],
       "Reddit": [
         "Reddit"
@@ -8887,6 +8941,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložisko pridelené iným používateľom v tejto organizácii"
@@ -9325,6 +9382,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Pri pripájaní k serverom ${ VPN_APP_NAME } bez aplikácie použite nasledujúce poverenia. Príklady použitia zahŕňajú: Tunnelblick na macOS, OpenVPN na GNU/Linux."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Na odstránenie súboru použite svoj MDM alebo spustite príkaz ${ removeScriptLink } prostredníctvom funkcie na spúšťanie skriptov vo vašom MDM. Vhodný je akýkoľvek MDM, ktorý podporuje nasadzovanie súborov alebo spúšťanie skriptov."
       ],
       "User activated": [
         "Používateľ aktivovaný"
@@ -9772,6 +9832,9 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Váš účet bol úspešne aktualizovaný touto akciovou ponukou"
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Váš profil zariadenia s vždy zapnutou VPN je pripravený na nasadenie."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
@@ -10243,6 +10306,12 @@
       "City": [
         "Mesto"
       ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Verzia klienta"
+      ],
       "Code is 6 digits without spaces": [
         "Kód je 6 čísiel bez medzier"
       ],
@@ -10422,6 +10491,9 @@
       ],
       "End-to-end encryption": [
         "End-to-end šifrovanie"
+      ],
+      "Enforce Always-on VPN": [
+        "Vynútiť vždy zapnutú VPN"
       ],
       "Enter code": [
         "Zadajte kód"
@@ -11504,8 +11576,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent písania ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Pridať asistenta písania ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Pridať asistenta písania ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Doplnok s bezplatnou skúšobnou verziou"
@@ -11932,6 +12010,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } kalendár",
@@ -13555,70 +13636,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Ponechať tento plán"
-      ],
       "Start using ${ appName }": [
         "Začnite používať ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Upgradovať môj plán"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Porozprávajme sa"
-      ],
-      "Recommended": [
-        "Odporúčané"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } mesačne"
-      ],
-      "/month /user": [
-        "/mesiac /používateľ"
-      ],
-      "/month /user, billed annually": [
-        "/mesiac /používateľ, účtované ročne"
-      ],
-      "/month /user, billed biennially": [
-        "/mesiac /používateľ, účtované každé dva roky"
-      ],
-      "Current plan": [
-        "Súčasný plán"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Len za **${ relativePrice } mesačne** navyše, získate prístup k prémiovému správcovi hesiel ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Len za **${ relativePrice } mesačne** navyše, získate prístup k prémiovej službe ${ BRAND_NAME } VPN!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Len za ďalšie **${ relativePrice } mesačne**, získate prístup ku všetkým prémiovým službám ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Navždy zadarmo"
-      ],
-      "Get in touch with our sales team": [
-        "Spojte sa s naším obchodným tímom"
-      ],
-      "Includes:": [
-        "Obsahuje:"
-      ],
-      "per month": [
-        "mesačne"
-      ],
-      "per month, billed annually": [
-        "mesačne, účtované každý rok"
-      ],
-      "per month, billed every month": [
-        "mesačne, účtované každý mesiac"
-      ],
-      "per month, billed every two years": [
-        "mesačne, účtované každé dva roky"
-      ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
       ],
@@ -16504,6 +16526,12 @@
         "${ ipAddresses } dedikovaných serverov",
         "${ ipAddresses } dedikovaných serverov"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ LUMO_SHORT_APP_NAME }, asistent písania pre ${ maxAi } používateľa",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania pre ${ maxAi } používateľov",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania pre ${ maxAi } používateľov",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania pre ${ maxAi } používateľov"
+      ],
       "${ n } calendar per user": [
         "${ n } kalendár na používateľa",
         "${ n } kalendáre na používateľa",
@@ -18270,6 +18298,9 @@
       "Lower your cost without losing features": [
         "Znížte vaše náklady bez obmedzenia funkcionality"
       ],
+      "macOS": [
+        "macOS"
+      ],
       "Main password": [
         "Hlavné heslo"
       ],
@@ -18644,6 +18675,9 @@
       ],
       "Status": [
         "Stav"
+      ],
+      "Stay for 50% off your next month": [
+        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Stay secure and connected anywhere": [
         "Buďte v bezpečí a pripojení kdekoľvek"
@@ -19042,6 +19076,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ak ste zakúpili darčekový kód alebo ste ho obdržali od našej podpory, môžete ho sem vložiť."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Zahŕňa všetkých používateľov vo vašej organizácii. Uplatňuje sa iba na zariadeniach, na ktorých bol nasadený profil vždy zapnutej VPN."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Zahŕňa vlastné emailové domény a neobmedzený počet hide-my-email aliasov v aplikácii ${ MAIL_APP_NAME }, prístup k serverom vo viac ako 120 krajinách v aplikácii ${ VPN_SHORT_APP_NAME }, integrované 2FA a bezpečné zdieľanie v aplikácii ${ PASS_SHORT_APP_NAME } a ďalšie funkcie."
@@ -19523,6 +19560,9 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Pozvánka odoslaná, čaká sa na odpoveď od pozvaného člena"
+      ],
+      "Pending": [
+        "Čakajúce"
       ],
       "SSO user provided by your identity provider": [
         "SSO používateľ poskytnutý poskytovateľom identity"

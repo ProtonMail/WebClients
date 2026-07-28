@@ -1143,6 +1143,9 @@
       "Refresh the page": [
         "Обновить страницу"
       ],
+      "Reject": [
+        "Отказать"
+      ],
       "Remove": [
         "Удалить"
       ],
@@ -1778,6 +1781,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователя)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } дополнительный пользовательский домен",
         "${ domains } дополнительных пользовательских домена",
@@ -1789,6 +1798,15 @@
         "${ ips } выделенных VPN-сервера",
         "${ ips } выделенных VPN-серверов",
         "${ ips } выделенных VPN-серверов"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ИИ-ассистент ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователя)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Лицензия ${ LUMO_APP_NAME } AI"
@@ -1807,6 +1825,12 @@
       ],
       "${ price } per user": [
         "${ price } за пользователя"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } пользовательский домен",
+        "${ quantity } пользовательских домена",
+        "${ quantity } пользовательских доменов",
+        "${ quantity } пользовательских домена"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } лицензия ${ LUMO_APP_NAME } AI",
@@ -7653,6 +7677,9 @@
       "Default email application": [
         "Приложение электронной почты по умолчанию"
       ],
+      "Details": [
+        "Информация"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Обнаружение происходит на вашем устройстве, поэтому никакие данные из ваших писем не отправляются на наши серверы."
       ],
@@ -11272,6 +11299,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (для ${ quantity } пользователя)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Лицензия ${ MEET_APP_NAME }"
       ],
@@ -15685,12 +15718,6 @@
         "Переместить ${ selectionCount } сообщения",
         "Переместить ${ selectionCount } сообщений",
         "Переместить ${ selectionCount } сообщений"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Перенесено в ${ label }. Подобное сообщение будет классифицироваться здесь в будущем.",
-        "Перенесено в ${ label }. Подобные сообщения будут классифицироваться здесь в будущем.",
-        "Перенесено в ${ label }. Подобные сообщения будут классифицироваться здесь в будущем.",
-        "Перенесено в ${ label }. Подобные сообщения будут классифицироваться здесь в будущем."
       ],
       "Password copied to clipboard": [
         "Пароль скопирован в буфер обмена"

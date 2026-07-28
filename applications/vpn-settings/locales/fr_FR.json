@@ -1283,6 +1283,9 @@
       "Verify password": [
         "Vérifier le mot de passe"
       ],
+      "Verify recovery phrase": [
+        "Vérifier la phrase de récupération"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Vérifier le domaine ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1685,9 +1688,6 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Essayez ${ selected } ${ freeForNDays }"
-      ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Essayez-le gratuitement pendant ${ TRIAL_DURATION_DAYS } jours"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez, votre essai gratuit ne sera pas converti en abonnement payant, mais vous pourrez toujours profiter des avantages de l'abonnement jusqu'à la fin de la période d'essai. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
@@ -5254,6 +5254,9 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible, veuillez en choisir un autre."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Cette phrase ne permet pas de récupérer votre compte. Vous pouvez en générer une nouvelle afin de vous assurer de pouvoir récupérer votre compte à l'avenir."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Pour créer des comptes utilisateur non privés et accéder à leurs comptes, vous devez restaurer vos droits administrateur."
       ],
@@ -7383,6 +7386,9 @@
       "Change your password": [
         "Modifier votre mot de passe"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Vérifiez si votre phrase de récupération permet de récupérer entièrement votre compte."
+      ],
       "Choose a plan that works best for you.": [
         "Choisissez l'abonnement qui vous convient le mieux."
       ],
@@ -8615,6 +8621,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "La phrase de récupération n'est associée à aucune des clés obsolètes."
+      ],
+      "Recovery phrase verified": [
+        "La phrase de récupération a été vérifiée."
       ],
       "Reddit": [
         "Reddit"
@@ -11416,6 +11425,9 @@
       "${ MEET_APP_NAME } seats": [
         "accès ${ MEET_APP_NAME }"
       ],
+      "${ price } per seat": [
+        "${ price } par accès"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } accès ${ MEET_APP_NAME }",
         "${ seats } accès ${ MEET_APP_NAME }"
@@ -13356,70 +13368,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Conserver cet abonnement"
-      ],
       "Start using ${ appName }": [
         "Commencer à utiliser ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Changer d'abonnement"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Parlons-nous"
-      ],
-      "Recommended": [
-        "Recommandé"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } par mois"
-      ],
-      "/month /user": [
-        "/mois /utilisateur"
-      ],
-      "/month /user, billed annually": [
-        "par mois et par utilisateur, facturation annuelle"
-      ],
-      "/month /user, billed biennially": [
-        "par mois et par utilisateur, facturation tous les 2 ans"
-      ],
-      "Current plan": [
-        "Abonnement actuel"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Accédez au gestionnaire de mot de passe premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Accédez au VPN premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Pour seulement **${ relativePrice } par mois** de plus, vous bénéficiez de tous les services premium de ${ BRAND_NAME } !"
-      ],
-      "Free forever": [
-        "Gratuit pour toujours"
-      ],
-      "Get in touch with our sales team": [
-        "Contactez notre équipe commerciale"
-      ],
-      "Includes:": [
-        "Comprend :"
-      ],
-      "per month": [
-        "par mois"
-      ],
-      "per month, billed annually": [
-        "par mois (facturation annuelle)"
-      ],
-      "per month, billed every month": [
-        "par mois (facturation mensuelle)"
-      ],
-      "per month, billed every two years": [
-        "par mois (facturation tous les deux ans)"
-      ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
       ],
@@ -18489,6 +18442,9 @@
       ],
       "Verify your password": [
         "Vérifiez votre mot de passe"
+      ],
+      "Verify your phrase": [
+        "Vérifiez votre phrase"
       ],
       "Verifying your card...": [
         "Vérification de votre carte en cours"

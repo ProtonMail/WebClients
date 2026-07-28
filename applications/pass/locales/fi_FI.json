@@ -115,11 +115,11 @@
       "Bulk restore items from trash": [
         "Palauta roskakorista useita kohteita"
       ],
-      "Bulk select items": [
-        "Valitse useita kohteita"
-      ],
       "Cancel": [
         "Peruuta"
+      ],
+      "Cancel bulk selection": [
+        "Peru joukkovalinta"
       ],
       "Cancel email change": [
         "Peruuta sähköpostiosoitteen vaihtaminen"
@@ -142,8 +142,14 @@
       "Clear": [
         "Tyhjennä"
       ],
+      "Clear item type filter": [
+        "Tyhjennä tuotetyypin suodatin"
+      ],
       "Clear search": [
         "Tyhjennä haku"
+      ],
+      "Clear sort filter": [
+        "Tyhjennä lajittelusuodatin"
       ],
       "Close": [
         "Sulje"
@@ -487,9 +493,6 @@
       "Move to Trash": [
         "Siirrä roskakoriin"
       ],
-      "Multiple select": [
-        "Monivalinta"
-      ],
       "New token": [
         "Uusi tunniste"
       ],
@@ -586,6 +589,9 @@
       "Reset": [
         "Palauta"
       ],
+      "Reset filters": [
+        "Tyhjennä suodattimet"
+      ],
       "Reset history": [
         "Nollaa historia"
       ],
@@ -624,6 +630,9 @@
       ],
       "See members": [
         "Näytä jäsenet"
+      ],
+      "Select items": [
+        "Valitse kohteita"
       ],
       "Send email": [
         "Lähetä sähköposti"
@@ -684,6 +693,9 @@
       ],
       "Submitting report...": [
         "Lähetetään raporttia..."
+      ],
+      "Switch vault": [
+        "Vaihda holvia"
       ],
       "Sync alias": [
         "Synkronoi alias",

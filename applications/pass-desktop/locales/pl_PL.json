@@ -124,9 +124,6 @@
       "Bulk restore items from trash": [
         "Przywróć elementy z kosza"
       ],
-      "Bulk select items": [
-        "Zaznacz elementy"
-      ],
       "Cancel": [
         "Anuluj"
       ],
@@ -508,9 +505,6 @@
       "Move to Trash": [
         "Przenieś do kosza"
       ],
-      "Multiple select": [
-        "Zaznacz"
-      ],
       "New token": [
         "Nowy token"
       ],
@@ -699,9 +693,6 @@
       ],
       "Skip": [
         "Pomiń"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Udostępniono Ci element w ${ PASS_APP_NAME }"
       ],
       "Sort vault items": [
         "Sortuj elementy sejfu"
@@ -1395,9 +1386,6 @@
       ],
       "Trashing item failed": [
         "Usunięcie elementu nie powiodło się"
-      ],
-      "Try reaching out to the link owner.": [
-        "Skontaktuj się z właścicielem linku."
       ],
       "Unable to generate an OTP code for this item": [
         "Nie można wygenerować kodu uwierzytelniającego dla tego elementu"
@@ -2241,10 +2229,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -4109,9 +4094,6 @@
       ],
       "Theme": [
         "Motyw"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Element jest dostępny do ${ date } lub do osiągnięcia limitu wyświetleń."
       ],
       "Tier/Level": [
         "Poziom"

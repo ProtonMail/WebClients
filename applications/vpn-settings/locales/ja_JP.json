@@ -1650,9 +1650,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "${ selected } を${ freeForNDays }お試しください"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "${ TRIAL_DURATION_DAYS }日間無料でお試しください"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "キャンセルした場合、無料トライアルが有料サブスクリプションに変換されることはありませんが、トライアル期間の終了までは引き続きプランの恩恵を受けることができます。その後、${ BRAND_NAME } Freeプランにダウングレードされます。"
       ],
@@ -13009,70 +13006,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "このプランを続ける"
-      ],
       "Start using ${ appName }": [
         "${ appName } の使用を開始する"
-      ],
-      "Upgrade my plan": [
-        "プランをアップグレード"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "話しましょう"
-      ],
-      "Recommended": [
-        "おすすめ"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice }/月あたり"
-      ],
-      "/month /user": [
-        "/月 /ユーザー"
-      ],
-      "/month /user, billed annually": [
-        "/月 /ユーザー、毎年請求されます"
-      ],
-      "/month /user, billed biennially": [
-        "/月 /ユーザー、隔年請求"
-      ],
-      "Current plan": [
-        "現在のプラン"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "月額わずか **${ relativePrice }** を追加するだけで、${ BRAND_NAME } のプレミアム パスワード マネージャーにアクセスできるようになります。"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "月額わずか **${ relativePrice }** を追加するだけで、${ BRAND_NAME } のプレミアム VPN サービスにアクセスできます。"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "**月額わずか ${ relativePrice }** を追加するだけで、すべてのプレミアム ${ BRAND_NAME } サービスにアクセスできるようになります。"
-      ],
-      "Free forever": [
-        "永久無料"
-      ],
-      "Get in touch with our sales team": [
-        "当社の営業チームにお問い合わせください"
-      ],
-      "Includes:": [
-        "含まれるもの:"
-      ],
-      "per month": [
-        "月あたり"
-      ],
-      "per month, billed annually": [
-        "月払い、年払い"
-      ],
-      "per month, billed every month": [
-        "月額、毎月請求"
-      ],
-      "per month, billed every two years": [
-        "月額、2年ごとに請求"
-      ],
       "Secure vault sharing": [
         "安全な保管庫共有"
       ],

@@ -231,6 +231,9 @@
       "Clear browser data": [
         "清除浏览器数据"
       ],
+      "Clear conversation": [
+        "清除会话"
+      ],
       "Clear data": [
         "清除数据"
       ],
@@ -828,6 +831,9 @@
       "Loading${ ellipsis }": [
         "正在加载 ${ ellipsis }"
       ],
+      "Lookup document": [
+        "查找文档"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "将 ${ MAIL_APP_NAME } 设为默认邮箱应用"
       ],
@@ -1130,6 +1136,9 @@
       ],
       "Refresh the page": [
         "刷新页面"
+      ],
+      "Reject": [
+        "拒绝"
       ],
       "Remove": [
         "移除"
@@ -1437,6 +1446,9 @@
       "Stay": [
         "留在此页"
       ],
+      "Stop": [
+        "停止"
+      ],
       "Stop downloading assistant": [
         "停止下载助手"
       ],
@@ -1478,6 +1490,9 @@
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "为了安全搜索您的邮件，我们需要将邮件副本下载到您的浏览器中。首次下载可能需要一些时间。"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "切换 ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "切换至 Calendar 应用"
@@ -1763,17 +1778,29 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 写作助手（适用于 ${ quantity } 位用户）"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } 个额外的自有域名"
       ],
       "${ ips } dedicated VPN server": [
         "${ ips } 个专属 VPN 服务器"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助手"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助手（适用于 ${ quantity } 位用户）"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI 许可"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } 席位"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手（适用于 ${ quantity } 位用户）"
       ],
       "${ price } per dedicated server": [
         "${ price } 每个专用服务器"
@@ -1786,6 +1813,9 @@
       ],
       "${ price } per user": [
         "${ price } 每位用户"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 个自定义域名"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } 个 ${ LUMO_APP_NAME } AI 许可"
@@ -5254,6 +5284,9 @@
       "Something went wrong while fetching available domains": [
         "获取可用域名时出错"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "出错了，请关闭模态框并重试。"
+      ],
       "Something went wrong. Please try again.": [
         "出错了，请再试一次。"
       ],
@@ -6771,6 +6804,9 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
+      "${ issues.length } issue during import:": [
+        "导入过程中出现 ${ issues.length } 个问题："
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
       ],
@@ -6848,6 +6884,9 @@
       ],
       "${ receivedMessagesCount } email last month": [
         "上月收到 ${ receivedMessagesCount } 封邮件"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "剩余 ${ remainingMinutes } 分钟…"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
@@ -7326,6 +7365,9 @@
       "Default email application": [
         "默认邮箱应用"
       ],
+      "Details": [
+        "详细信息"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "检测在您的本地设备进行，因此不会有任何邮件数据发送至我们的服务器。"
       ],
@@ -7572,6 +7614,9 @@
       "Forgot password?": [
         "忘记密码？"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "找到包含 ${ oldIndexSize } 封邮件的当前加密搜索索引。"
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "免费试用 ${ ASSISTANT_TRIAL_TIME_DAYS } 天"
       ],
@@ -7673,6 +7718,9 @@
       ],
       "Import in progress": [
         "导入中"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "导入正在进行，您可以在运行期间关闭此对话框，稍后再回来查看。但请不要关闭标签页。"
       ],
       "Import mailbox": [
         "导入收件箱"
@@ -8460,6 +8508,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "如果他们不知道您的邮箱地址，就无法向您发送垃圾邮件。请使用“Hide-my-email”别名保护您的收件箱。"
       ],
+      "Thinking about this": [
+        "正在思考这个"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此地址已被停用，待其所有者予以启用后才能向该地址发送邮件。"
       ],
@@ -8933,6 +8984,9 @@
       ],
       "You can either update your search query or clear it": [
         "您可以修改或清除搜索内容"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "您可以将其作为新的 foundation-search 索引导入以供开发使用。"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。退订 ${ MAIL_SHORT_APP_NAME } 前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
@@ -9668,6 +9722,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Content search version to use": [
+        "要使用的内容搜索版本"
+      ],
       "Context page": [
         "上下文页面"
       ],
@@ -9718,6 +9775,9 @@
       ],
       "Did not follow instructions": [
         "未遵循指令"
+      ],
+      "Document ID": [
+        "文档 ID"
       ],
       "Don't ask again": [
         "不再询问"
@@ -10289,6 +10349,12 @@
       "Username": [
         "用户名"
       ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
+      ],
       "Verification code": [
         "验证码"
       ],
@@ -10810,11 +10876,17 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (适用于 ${ quantity } 位用户)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } 许可"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 席位"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席位"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } 个 ${ MEET_APP_NAME } 席位"
@@ -12910,6 +12982,9 @@
       "Anytown": [
         "任何城镇"
       ],
+      "Ask anything…": [
+        "提问…"
+      ],
       "Company name": [
         "公司名称"
       ],
@@ -14885,7 +14960,7 @@
       "Move ${ selectionCount } message": [
         "移动 ${ selectionCount } 封邮件"
       ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "已移至 ${ label }，未来类似邮件将自动归类。"
       ],
       "Password copied to clipboard": [

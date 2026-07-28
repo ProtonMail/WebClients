@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Browserdaten löschen"
       ],
+      "Clear conversation": [
+        "Unterhaltung entfernen"
+      ],
       "Clear data": [
         "Daten löschen"
       ],
@@ -832,6 +835,9 @@
       "Loading${ ellipsis }": [
         "Wird geladen ${ ellipsis }"
       ],
+      "Lookup document": [
+        "Dokument nachschlagen"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen"
       ],
@@ -1134,6 +1140,9 @@
       ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "Reject": [
+        "Ablehnen"
       ],
       "Remove": [
         "Entfernen"
@@ -1441,6 +1450,9 @@
       "Stay": [
         "Nicht schließen"
       ],
+      "Stop": [
+        "Stoppen"
+      ],
       "Stop downloading assistant": [
         "Herunterladen des Assistenten stoppen"
       ],
@@ -1482,6 +1494,9 @@
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Um deine E-Mails sicher durchsuchen zu können, müssen wir eine Kopie deiner Nachrichten in deinem Browser herunterladen. Der erste Download kann einen Moment dauern."
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } umschalten"
       ],
       "Toggle Calendar app": [
         "Kalender-App umschalten"
@@ -1768,6 +1783,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)",
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } zusätzliche eigene Domain",
         "${ domains } zusätzliche eigene Domains"
@@ -1776,11 +1795,22 @@
         "${ ips } dedizierter VPN-Server",
         "${ ips } dedizierte VPN-Server"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-Assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)",
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } KI-Lizenz"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } Lizenzen"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)",
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)"
       ],
       "${ price } per dedicated server": [
         "${ price } pro dediziertem Server"
@@ -1793,6 +1823,10 @@
       ],
       "${ price } per user": [
         "${ price } pro Benutzer"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } benutzerdefinierte Domäne",
+        "${ quantity } benutzerdefinierte Domänen"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } KI-Lizenz",
@@ -5297,6 +5331,9 @@
       "Something went wrong while fetching available domains": [
         "Etwas ist schiefgegangen beim Abrufen der verfügbaren Domains"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Es ist ein Fehler aufgetreten. Schließe das Modalfenster und versuche es erneut."
+      ],
       "Something went wrong. Please try again.": [
         "Etwas ist schief gelaufen. Bitte versuche es später erneut."
       ],
@@ -6858,6 +6895,10 @@
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
       ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } Problem beim Import:",
+        "${ issues.length } Probleme beim Import:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
       ],
@@ -6945,6 +6986,9 @@
       "${ receivedMessagesCount } email last month": [
         "${ receivedMessagesCount } E-Mail im letzten Monat",
         "${ receivedMessagesCount } E-Mails im letzten Monat"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Noch ${ remainingMinutes } Minuten…"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
@@ -7447,6 +7491,9 @@
       "Default email application": [
         "Standard E-Mail-Anwendung"
       ],
+      "Details": [
+        "Details"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Die Erkennung findet auf deinem Gerät statt, sodass keine Daten von deinen E-Mails an unsere Server gesendet werden."
       ],
@@ -7699,6 +7746,10 @@
       "Forgot password?": [
         "Passwort vergessen?"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Es wurde ein aktueller verschlüsselter Suchindex mit ${ oldIndexSize } Nachricht gefunden.",
+        "Es wurde ein aktueller verschlüsselter Suchindex mit ${ oldIndexSize } Nachrichten gefunden."
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Kostenlos für ${ ASSISTANT_TRIAL_TIME_DAYS } Tag ausprobieren",
         "Kostenlos für ${ ASSISTANT_TRIAL_TIME_DAYS } Tage ausprobieren"
@@ -7803,6 +7854,9 @@
       ],
       "Import in progress": [
         "Datenimport läuft gerade"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Der Import läuft gerade. Du kannst diesen Dialog während des Vorgangs schließen und später darauf zurückkommen. Schließe jedoch nicht die Registerkarte."
       ],
       "Import mailbox": [
         "Postfach importieren"
@@ -8594,6 +8648,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Du erhältst keinen Spam, wenn deine E-Mail-Adresse nicht bekannt ist. Schütze deinen Posteingang mit Hide-my-email-Aliassen."
       ],
+      "Thinking about this": [
+        "Darüber nachdenken"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
       ],
@@ -9069,6 +9126,9 @@
       ],
       "You can either update your search query or clear it": [
         "Du kannst deine Suchanfrage entweder aktualisieren oder löschen."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Du kannst ihn zu Entwicklungszwecken als neuen Foundation-Search-Index importieren."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Nutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst.",
@@ -9834,6 +9894,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Content search version to use": [
+        "Zu verwendende Version der Inhaltssuche"
+      ],
       "Context page": [
         "Kontextseite"
       ],
@@ -9884,6 +9947,9 @@
       ],
       "Did not follow instructions": [
         "Hat die Anweisungen nicht befolgt"
+      ],
+      "Document ID": [
+        "Dokument-ID"
       ],
       "Don't ask again": [
         "Nicht erneut fragen"
@@ -10455,6 +10521,12 @@
       "Username": [
         "Benutzername"
       ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
+      ],
       "Verification code": [
         "Verifizierungscode"
       ],
@@ -10981,11 +11053,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)",
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } Lizenz"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ price } per seat": [
+        "${ price } pro Lizenz"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } Lizenz",
@@ -13127,6 +13206,9 @@
       "Anytown": [
         "Berlin"
       ],
+      "Ask anything…": [
+        "Frag irgendetwas …"
+      ],
       "Company name": [
         "Unternehmensname"
       ],
@@ -15173,9 +15255,8 @@
         "${ selectionCount } Nachricht verschieben",
         "${ selectionCount } Nachrichten verschieben"
       ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Verschoben nach ${ label }. Ähnliche Nachrichten werden in Zukunft hierher kategorisiert.",
-        "Verschoben nach ${ label }. Ähnliche Nachrichten werden in Zukunft hierher kategorisiert."
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Zu ${ label } verschoben. Ähnliche Nachrichten werden künftig hierunter kategorisiert."
       ],
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert."
