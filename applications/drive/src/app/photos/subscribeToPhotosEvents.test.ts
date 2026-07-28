@@ -32,9 +32,15 @@ type CachedNode = {
     albumUids?: string[];
     isTrashed?: boolean;
     isShared?: boolean;
+    parentUid?: string;
 };
 
-const photo = (uid: string, albumUids?: string[]): CachedNode => ({ uid, type: NodeType.Photo, albumUids });
+const photo = (uid: string, albumUids?: string[], parentUid?: string): CachedNode => ({
+    uid,
+    type: NodeType.Photo,
+    albumUids,
+    parentUid,
+});
 const album = (uid: string): CachedNode => ({ uid, type: NodeType.Album });
 
 // Declare all nodes that tests will ever need — mirrors the SDK in-memory cache
@@ -70,7 +76,7 @@ const resetStores = () => {
 
 // --- Node cache (simulates SDK in-memory cache) ---
 
-const toMaybeNode = ({ uid, type, albumUids, isTrashed, isShared }: CachedNode) => {
+const toMaybeNode = ({ uid, type, albumUids, isTrashed, isShared, parentUid }: CachedNode) => {
     return {
         uid,
         type,
@@ -83,6 +89,7 @@ const toMaybeNode = ({ uid, type, albumUids, isTrashed, isShared }: CachedNode) 
         keyAuthor: { ok: true } as const,
         nameAuthor: { ok: true } as const,
         activeRevision: undefined,
+        parentUid,
         treeEventScopeId: type === NodeType.Album ? `${uid}-scope` : MY_PHOTOS_SCOPE_ID,
         photo:
             type === NodeType.Photo
@@ -98,7 +105,7 @@ const toMaybeNode = ({ uid, type, albumUids, isTrashed, isShared }: CachedNode) 
                 ? { photoCount: 0, lastActivityTime: new Date(0), coverPhotoNodeUid: undefined }
                 : undefined,
         isTrashed,
-        isShared,
+        isShared: isShared ?? false,
     } as unknown as Awaited<ReturnType<ProtonDrivePhotosClient['getMyPhotosRootFolder']>>;
 };
 
@@ -140,14 +147,30 @@ const emit = async (event: BusDriverEvent, drive = makeDrive(KNOWN_NODES)) => {
 
 describe('subscribeToPhotosEvents', () => {
     describe('CREATED_NODES (upload)', () => {
-        it('photo uploaded → added to timeline', async () => {
-            await emit({
-                type: BusDriverEventName.CREATED_NODES,
-                items: [{ uid: 'photo-1', parentUid: PHOTOS_ROOT_UID }],
-            });
+        it('photo uploaded → added to timeline with additionalInfo populated', async () => {
+            await emit(
+                {
+                    type: BusDriverEventName.CREATED_NODES,
+                    items: [{ uid: 'photo-1', parentUid: PHOTOS_ROOT_UID }],
+                },
+                makeDrive([photo('photo-1', undefined, PHOTOS_ROOT_UID)])
+            );
 
             expect(usePhotosStore.getState().photoTimelineUids.has('photo-1')).toBe(true);
-            expect(usePhotosStore.getState().photoItems.get('photo-1')).toEqual(makePhotoItem('photo-1'));
+            expect(usePhotosStore.getState().photoItems.get('photo-1')).toEqual(
+                makePhotoItem('photo-1', {
+                    additionalInfo: {
+                        name: 'node-photo-1',
+                        mediaType: undefined,
+                        isShared: false,
+                        duration: undefined,
+                        haveSignatureIssues: false,
+                        parentNodeUid: PHOTOS_ROOT_UID,
+                        activeRevisionUid: undefined,
+                        deprecatedShareId: undefined,
+                    },
+                })
+            );
         });
 
         it('album created → added to albums store', async () => {
@@ -205,14 +228,30 @@ describe('subscribeToPhotosEvents', () => {
     });
 
     describe('RESTORED_NODES', () => {
-        it('photo restored → added to timeline', async () => {
-            await emit({
-                type: BusDriverEventName.RESTORED_NODES,
-                items: [{ uid: 'photo-1', parentUid: PHOTOS_ROOT_UID }],
-            });
+        it('photo restored → added to timeline with additionalInfo populated', async () => {
+            await emit(
+                {
+                    type: BusDriverEventName.RESTORED_NODES,
+                    items: [{ uid: 'photo-1', parentUid: PHOTOS_ROOT_UID }],
+                },
+                makeDrive([photo('photo-1', undefined, PHOTOS_ROOT_UID)])
+            );
 
             expect(usePhotosStore.getState().photoTimelineUids.has('photo-1')).toBe(true);
-            expect(usePhotosStore.getState().photoItems.get('photo-1')).toEqual(makePhotoItem('photo-1'));
+            expect(usePhotosStore.getState().photoItems.get('photo-1')).toEqual(
+                makePhotoItem('photo-1', {
+                    additionalInfo: {
+                        name: 'node-photo-1',
+                        mediaType: undefined,
+                        isShared: false,
+                        duration: undefined,
+                        haveSignatureIssues: false,
+                        parentNodeUid: PHOTOS_ROOT_UID,
+                        activeRevisionUid: undefined,
+                        deprecatedShareId: undefined,
+                    },
+                })
+            );
         });
 
         it('album restored → added to albums store', async () => {
