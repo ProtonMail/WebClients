@@ -11,7 +11,7 @@ import { isMultiUserPersonalPlan } from '@proton/payments/core/plan/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
-import type { Address, Member } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { useEasySwitchDispatch } from '../../../logic/store';
@@ -19,10 +19,9 @@ import { loadSyncList } from '../../../logic/sync/sync.actions';
 
 interface Props extends ModalProps {
     address: Address;
-    member?: Member;
 }
 
-const DisconnectBYOEModal = ({ address, member, ...rest }: Props) => {
+const DisconnectBYOEModal = ({ address, ...rest }: Props) => {
     const { onClose } = rest;
     const [loading, withLoading] = useLoading(false);
     const dispatch = useDispatch();
@@ -39,7 +38,7 @@ const DisconnectBYOEModal = ({ address, member, ...rest }: Props) => {
     const skipDisable = isBYOEOnlyAccount || isFamilyMember;
 
     const handleSubmit = async () => {
-        await dispatch(updateBYOEAddressConnection({ address, member, type: 'disconnect', skipDisable }));
+        await dispatch(updateBYOEAddressConnection({ address, type: 'disconnect', skipDisable }));
         // also update the syncs list
         void easySwitchDispatch(loadSyncList());
 
