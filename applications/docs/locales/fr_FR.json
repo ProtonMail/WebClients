@@ -154,6 +154,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Revendiquez votre adresse ${ BRAND_NAME } gratuite"
       ],
+      "Clear conversation": [
+        "Effacer la conversation"
+      ],
       "Clear data": [
         "Effacer les données"
       ],
@@ -645,6 +648,9 @@
       "Refresh the page": [
         "Actualiser la page"
       ],
+      "Reject": [
+        "Refuser"
+      ],
       "Reload": [
         "Recharger"
       ],
@@ -756,6 +762,9 @@
       "Select all": [
         "Tout sélectionner"
       ],
+      "Send": [
+        "Envoyer"
+      ],
       "Set password or expiration date": [
         "Définir le mot de passe ou la date d'expiration"
       ],
@@ -821,6 +830,9 @@
       ],
       "Stay": [
         "Rester"
+      ],
+      "Stop": [
+        "Arrêter"
       ],
       "Stop sharing": [
         "Arrêter le partage"
@@ -975,6 +987,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateurs)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domaine personnalisé supplémentaire",
         "${ domains } domaines personnalisés supplémentaires"
@@ -983,11 +999,38 @@
         "${ ips } serveur VPN dédié",
         "${ ips } serveurs VPN dédiés"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistant IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } licence IA"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } accès"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } par serveur dédié"
+      ],
+      "${ price } per domain": [
+        "${ price } par domaine"
+      ],
+      "${ price } per seat": [
+        "${ price } par siège"
+      ],
+      "${ price } per user": [
+        "${ price } par utilisateur"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domaine personnalisé",
+        "${ quantity } domaines personnalisés"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licence IA ${ LUMO_APP_NAME }",
@@ -1081,6 +1124,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Une fois la période d'essai terminée le ${ formattedDate1 }, l'abonnement deviendra payant et se renouvellera automatiquement chaque mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_SCRIBE_SEATS } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME } pendant la période d'essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_USERS } utilisateurs pendant la période d’essai."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Vous ne pouvez pas ajouter de domaines personnalisés pendant la période d’essai."
       ]
     },
     "b2b_trials_Action": {
@@ -4596,6 +4657,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Une connexion sécurisée est essentielle en télétravail. Un VPN protège les données de l'entreprise des cybermenaces et préserve la confidentialité de votre travail."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boite aux lettres et une seule personne."
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Un VPN chiffre votre connexion et masque votre adresse IP, ce qui rend beaucoup plus difficile pour quiconque de suivre ou de surveiller votre navigation."
       ],
@@ -4768,6 +4832,10 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Créer un cloud sécurisé pour ${ memberCount } membre",
+        "Créer un cloud sécurisé pour ${ memberCount } membres"
+      ],
       "Create an end-to-end encrypted document.": [
         "Créez un document chiffré de bout en bout."
       ],
@@ -4798,8 +4866,14 @@
       "Current version": [
         "Version actuelle"
       ],
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
       "Decrypting your document": [
         "Déchiffrement de votre document en cours"
+      ],
+      "Details": [
+        "Informations"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "La signature numérique a été vérifiée. Ce fichier a été chargé de manière sécurisée par ${ emailAddress }."
@@ -4857,6 +4931,9 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
       ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
@@ -5232,6 +5309,9 @@
       "Opening...": [
         "Ouverture..."
       ],
+      "Organization size": [
+        "Taille de l’organisation"
+      ],
       "Other accounts": [
         "Autres comptes"
       ],
@@ -5492,6 +5572,9 @@
       "There are no documents in the trash.": [
         "Il n'y a aucun document dans la corbeille."
       ],
+      "Thinking about this": [
+        "Réflexion en cours..."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Cette action supprimera le lien et révoquera l'accès de tous les utilisateurs."
       ],
@@ -5641,6 +5724,9 @@
       ],
       "username": [
         "nom d'utilisateur"
+      ],
+      "Users": [
+        "Utilisateurs"
       ],
       "Version number successfully copied to clipboard": [
         "Le numéro de version a été copié dans le presse-papiers."
@@ -6021,6 +6107,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Permettre aux éditeurs de modifier les autorisations et de partager"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Permettre aux éditeurs de modifier les autorisations et de partager."
       ],
       "Anonymous": [
         "Anonyme"
@@ -6727,11 +6816,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateur)",
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
       "${ MEET_APP_NAME } license": [
         "licence ${ MEET_APP_NAME }"
       ],
       "${ MEET_APP_NAME } seats": [
         "accès ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } par accès"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } accès ${ MEET_APP_NAME }",
@@ -6794,6 +6890,11 @@
       "Video meetings, ${ n } participant": [
         "Vidéoconférences, ${ n } participant",
         "Vidéoconférences, ${ n } participants"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_MEET_SEATS } accès à ${ MEET_SHORT_APP_NAME } pendant la période d’essai."
       ]
     },
     "Message": {
@@ -8721,6 +8822,9 @@
       "Anything you'd like us to know": [
         "Y a-t-il autre chose que vous aimeriez nous faire savoir"
       ],
+      "Ask anything…": [
+        "Demandez ce que vous voulez…"
+      ],
       "Choose password": [
         "Choisir un mot de passe"
       ],
@@ -9666,6 +9770,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Un lien vers cet élément a été enregistré dans votre drive. Vous pourrez y accéder ultérieurement dans la section « Partagé avec moi »."
+      ],
+      "Editor permissions": [
+        "Autorisations de l'éditeur"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Les éditeurs peuvent désormais gérer le partage et inviter d'autres personnes. Vous pouvez le désactiver à tout moment dans les paramètres de partage."
       ],
       "To edit this document, create a copy that you can modify.": [
         "Pour modifier ce document, créez une copie à modifier."

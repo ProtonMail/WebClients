@@ -648,6 +648,9 @@
       "Refresh the page": [
         "Обновить страницу"
       ],
+      "Reject": [
+        "Отказать"
+      ],
       "Reload": [
         "Перезагрузить"
       ],
@@ -758,6 +761,9 @@
       ],
       "Select all": [
         "Выделить все"
+      ],
+      "Send": [
+        "Отправить"
       ],
       "Set password or expiration date": [
         "Установить пароль или срок действия"
@@ -982,6 +988,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователя)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } дополнительный пользовательский домен",
         "${ domains } дополнительных пользовательских домена",
@@ -994,11 +1006,38 @@
         "${ ips } выделенных VPN-серверов",
         "${ ips } выделенных VPN-серверов"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ИИ-ассистент ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователя)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Лицензия ${ LUMO_APP_NAME } AI"
       ],
       "${ LUMO_APP_NAME } seats": [
         "лицензии ${ LUMO_APP_NAME }"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } за выделенный сервер"
+      ],
+      "${ price } per domain": [
+        "${ price } за домен"
+      ],
+      "${ price } per seat": [
+        "${ price } за лицензию"
+      ],
+      "${ price } per user": [
+        "${ price } за пользователя"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } пользовательский домен",
+        "${ quantity } пользовательских домена",
+        "${ quantity } пользовательских доменов",
+        "${ quantity } пользовательских домена"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } лицензия ${ LUMO_APP_NAME } AI",
@@ -1101,6 +1140,18 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "После окончания пробной версии ${ formattedDate1 } она превратится в платную подписку с ежемесячным автоматическим продлением. Плата не будет взиматься, если вы отмените её до ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_DEDICATED_IPS } выделенных серверов в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_SCRIBE_SEATS } мест Scribe в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_USERS } пользователей в течение пробного периода."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Вы не можете добавлять пользовательские домены в течение пробного периода."
       ]
     },
     "b2b_trials_Action": {
@@ -4696,6 +4747,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Безопасное подключение необходимо при удаленной работе. VPN защищает данные компании от киберугроз и сохраняет приватность вашей работы."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN шифрует ваше подключение и скрывает ваш адрес IP, что значительно затрудняет отслеживание и контроль вашего просмотра веб-страниц."
       ],
@@ -4906,8 +4960,14 @@
       "Current version": [
         "Текущая версия"
       ],
+      "Custom email domains": [
+        "Пользовательские домены электронной почты"
+      ],
       "Decrypting your document": [
         "Расшифровка вашего документа"
+      ],
+      "Details": [
+        "Информация"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ЭЦП проверена. Этот файл был безопасно загружен ${ emailAddress }."
@@ -4965,6 +5025,9 @@
       ],
       "email": [
         "электронная почта"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
       ],
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
@@ -5340,6 +5403,9 @@
       ],
       "Opening...": [
         "Открывается..."
+      ],
+      "Organization size": [
+        "Размер организации"
       ],
       "Other accounts": [
         "Другие аккаунты"
@@ -5754,6 +5820,9 @@
       ],
       "username": [
         "имя пользователя"
+      ],
+      "Users": [
+        "Пользователи"
       ],
       "Version number successfully copied to clipboard": [
         "Номер версии скопирован в буфер обмена"
@@ -6847,6 +6916,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (для ${ quantity } пользователя)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Лицензия ${ MEET_APP_NAME }"
       ],

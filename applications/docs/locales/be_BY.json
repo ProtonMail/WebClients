@@ -651,6 +651,9 @@
       "Refresh the page": [
         "Абнавіць старонку"
       ],
+      "Reject": [
+        "Адхіліць"
+      ],
       "Reload": [
         "Перазагрузіць"
       ],
@@ -761,6 +764,9 @@
       ],
       "Select all": [
         "Выбраць усе"
+      ],
+      "Send": [
+        "Адправіць"
       ],
       "Set password or expiration date": [
         "Задаць пароль або тэрмін дзеяння"
@@ -985,6 +991,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } дадатковы карыстальніцкі дамен",
         "${ domains } дадатковыя карыстальніцкія дамены",
@@ -997,11 +1009,44 @@
         "${ ips } вылучаных сервераў VPN",
         "${ ips } вылучаных сервераў VPN"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Памочнік ШІ ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальніка)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Ліцэнзія ШІ для ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Ліцэнзіі ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } за вылучаны сервер"
+      ],
+      "${ price } per domain": [
+        "${ price } за дамен"
+      ],
+      "${ price } per seat": [
+        "${ price } за ліцэнзію"
+      ],
+      "${ price } per user": [
+        "${ price } за карыстальніка"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } карыстальніцкі дамен",
+        "${ quantity } карыстальніцкія дамены",
+        "${ quantity } карыстальніцкіх даменаў",
+        "${ quantity } карыстальніцкіх даменаў"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
@@ -1107,6 +1152,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_LUMO_SEATS } ліцэнзій ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій памочніка ў напісанні ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій Scribe на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_USERS } карыстальнікаў на працягу пробнага перыяду."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "У вас няма магчымасці дадаваць карыстальніцкія дамены падчас пробнага перыяду."
       ]
     },
     "b2b_trials_Action": {
@@ -4720,6 +4783,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Бяспечнае падключэнне неабходна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або назеранне прагляду вэб-старонак для любых зацікаўленых структур."
       ],
@@ -4900,6 +4966,12 @@
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельніка",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў"
+      ],
       "Create an end-to-end encrypted document.": [
         "Стварыць дакумент зашыфраваны скразным метадам."
       ],
@@ -4930,8 +5002,14 @@
       "Current version": [
         "Бягучая версія"
       ],
+      "Custom email domains": [
+        "Карыстальніцкія дамены электроннай пошты"
+      ],
       "Decrypting your document": [
         "Расшыфроўка ваша дакумента"
+      ],
+      "Details": [
+        "Падрабязнасці"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Лічбавы подпіс правераны. Гэты файл бяспечна запампаваны ${ emailAddress }."
@@ -4989,6 +5067,9 @@
       ],
       "email": [
         "электронная пошта"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Служба электроннай пошты даступна толькі для даменаў, якімі вы ўжо валодаеце. Рэгістрацыя даменаў праз ${ BRAND_NAME } зараз недаступна. Вы можаце размясціць электронную пошту для даменаў, якія зарэгістраваны іншымі рэгістратарамі даменаў."
       ],
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
@@ -5367,6 +5448,9 @@
       ],
       "Opening...": [
         "Адкрыццё..."
+      ],
+      "Organization size": [
+        "Памер арганізацыі"
       ],
       "Other accounts": [
         "Іншыя ўліковыя запісы"
@@ -5781,6 +5865,9 @@
       ],
       "username": [
         "імя карыстальніка"
+      ],
+      "Users": [
+        "Карыстальнікі"
       ],
       "Version number successfully copied to clipboard": [
         "Нумар версіі паспяхова скапіяваны ў буферу абмену"
@@ -6889,6 +6976,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальніка)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Ліцэнзія ${ MEET_APP_NAME }"
       ],
@@ -6968,6 +7061,11 @@
         "Відэасустрэчы, ${ n } удзельнікі",
         "Відэасустрэчы, ${ n } удзельнікаў",
         "Відэасустрэчы, ${ n } удзельнікаў"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_MEET_SEATS } ліцэнзій ${ MEET_SHORT_APP_NAME } на працягу пробнага перыяду."
       ]
     },
     "Message": {

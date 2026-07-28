@@ -639,6 +639,9 @@
       "Refresh the page": [
         "重新整理此頁面"
       ],
+      "Reject": [
+        "婉拒"
+      ],
       "Reload": [
         "重新載入"
       ],
@@ -749,6 +752,9 @@
       ],
       "Select all": [
         "全選"
+      ],
+      "Send": [
+        "送出"
       ],
       "Set password or expiration date": [
         "設定密碼或過期日期"
@@ -967,17 +973,41 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 撰寫幫手（供 ${ quantity } 位使用者使用）"
+      ],
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
       "${ ips } dedicated VPN server": [
         "${ ips } 專用伺服器"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助理"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助理（供 ${ quantity } 位使用者使用）"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI 授權"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } 個席次"
+      ],
+      "${ price } per dedicated server": [
+        "每專用伺服器${ price }"
+      ],
+      "${ price } per domain": [
+        "每網域${ price }"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席"
+      ],
+      "${ price } per user": [
+        "每使用者${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個自訂網域"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI 授權"
@@ -1062,6 +1092,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "在 ${ formattedDate1 } 試用結束後，它會變成付費訂閱，並將每月自動續訂。若您在 ${ formattedDate2 } 前取消，則不會被收費。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "您可在試用內享用多達 ${ TRIAL_MAX_DEDICATED_IPS } 臺獨立伺服器。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } 席位。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "您可在使用期內盡情享用多達 ${ TRIAL_MAX_USERS } 個使用者。"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "您無法於試用期新增自訂網域。"
       ]
     },
     "b2b_trials_Action": {
@@ -4513,6 +4558,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "遠端工作時，安全連線至關重要。VPN 可保護公司資料免受網路威脅，並保持您的工作私密。"
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
       ],
@@ -4681,6 +4729,9 @@
       "Create a new contact group": [
         "創建新聯絡人群組"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "替成員創建一個安全 ${ memberCount } 雲端"
+      ],
       "Create an end-to-end encrypted document.": [
         "建立端對端加密的文件。"
       ],
@@ -4711,8 +4762,14 @@
       "Current version": [
         "目前版本"
       ],
+      "Custom email domains": [
+        "自訂電郵網域"
+      ],
       "Decrypting your document": [
         "正在解密您的文件"
+      ],
+      "Details": [
+        "詳細資訊"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "數碼簽署已通過驗證。此檔案由 ${ emailAddress } 安全上載。"
@@ -4770,6 +4827,9 @@
       ],
       "email": [
         "電子信箱"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
       ],
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
@@ -5136,6 +5196,9 @@
       ],
       "Opening...": [
         "正在打開..."
+      ],
+      "Organization size": [
+        "組織規模"
       ],
       "Other accounts": [
         "其他帳號"
@@ -5544,6 +5607,9 @@
       ],
       "username": [
         "使用者名稱"
+      ],
+      "Users": [
+        "使用者"
       ],
       "Version number successfully copied to clipboard": [
         "成功地將版本號碼複製到剪貼簿"
@@ -6607,6 +6673,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME }（適用於 ${ quantity } 名使用者）"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } 授權"
       ],
@@ -6668,6 +6737,11 @@
       ],
       "Video meetings, ${ n } participant": [
         "視訊， ${ n } 參與者"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } 席位。"
       ]
     },
     "Message": {
