@@ -137,4 +137,33 @@ describe('waitForUserDecision', () => {
 
         await expect(decisionPromise).resolves.toBe(IssueStatus.Rejected);
     });
+
+    it('stops polling when the download is cancelled while a decision is pending', async () => {
+        const downloadId = 'cancelled-download';
+        const issueName = 'photo.jpg';
+
+        seedDownloadItem(
+            createDownloadItem({
+                downloadId,
+                unsupportedFileDetected: IssueStatus.Detected,
+                signatureIssues: {
+                    [issueName]: {
+                        name: issueName,
+                        nodeType: NodeType.File,
+                        message: 'Signature issue',
+                        issueStatus: IssueStatus.Detected,
+                    },
+                },
+            })
+        );
+
+        const unsupportedPromise = waitForUnsupportedFileDecision(downloadId, jest.fn());
+        const signaturePromise = waitForSignatureIssueDecision(downloadId, issueName);
+
+        updateDownloadItem(downloadId, (item) => ({ ...item, status: DownloadStatus.Cancelled }));
+        await advanceTimers();
+
+        await expect(unsupportedPromise).rejects.toMatchObject({ name: 'AbortError' });
+        await expect(signaturePromise).rejects.toMatchObject({ name: 'AbortError' });
+    });
 });
