@@ -8,7 +8,6 @@ import browser from '@proton/pass/lib/globals/browser';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import noop from '@proton/utils/noop';
 
-import { handleExtensionCommand } from '../../lib/extension/commands';
 import { backgroundMessage } from '../../lib/message/send-message';
 import '../../lib/polyfills/shim';
 import { checkChromeRuntimeError } from '../../lib/utils/chrome';
@@ -19,6 +18,7 @@ import WorkerMessageBroker from './channel';
 import { CRYPTO_CHUNK_FILES } from './chunks';
 import { createWorkerContext } from './context/factory';
 import './debugger';
+import { handleExtensionCommand } from './listeners/commands';
 
 if (typeof browser !== 'undefined') {
     if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {
