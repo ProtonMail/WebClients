@@ -4,23 +4,15 @@ import { TableOfContentsPlugin } from '@lexical/react/LexicalTableOfContentsPlug
 import type { TableOfContentsEntry } from '@lexical/react/LexicalTableOfContentsPlugin'
 import type { NodeKey } from 'lexical'
 import { c } from 'ttag'
-import { useDocsLayoutContext } from '../Containers/DocsLayout'
+import { useDocsLayoutContext, DOCS_EDITOR_MAX_WIDTH } from '../../Containers/DocsLayout'
 import clsx from '@proton/utils/clsx'
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
-import {
-  Dropdown,
-  DropdownButton,
-  DropdownMenu,
-  DropdownMenuButton,
-  usePopperAnchor,
-  LabelStack,
-  useLocalState,
-} from '@proton/components'
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components'
 import { useStore } from 'zustand'
-import { useEditorState } from '../Containers/EditorStateProvider'
-import { IcCross } from '@proton/icons/icons/IcCross'
-import { IcListBullets } from '@proton/icons/icons/IcListBullets'
+import { useEditorState } from '../../Containers/EditorStateProvider'
 import { IcLink } from '@proton/icons/icons/IcLink'
+import { TocHeader } from './TocHeader'
+import './TableOfContents.scss'
 
 // distance from top of scroll root to make heading active
 const ACTIVATION_OFFSET = 75
@@ -185,7 +177,6 @@ interface HeadingParamListenerProps {
 }
 
 function HeadingParamListener({ scrollToNode }: HeadingParamListenerProps) {
-  const [editor] = useLexicalComposerContext()
   const { documentUrl, replaceDocumentUrl, setDocumentUrl } = useTableOfContentsContext()
   const { editorHidden } = useStore(useEditorState())
 
@@ -202,15 +193,14 @@ function HeadingParamListener({ scrollToNode }: HeadingParamListenerProps) {
     void replaceDocumentUrl(url.href)
     setDocumentUrl(url.href)
     scrollToNode(headingKey)
-  }, [scrollToNode, documentUrl, editorHidden, editor, replaceDocumentUrl])
+  }, [scrollToNode, documentUrl, editorHidden, replaceDocumentUrl, setDocumentUrl])
 
   return null
 }
 
 function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererProps) {
   const [editor] = useLexicalComposerContext()
-  const { setLeftPanelActive, leftPanelActive, resetLeftPanelToDefault } = useDocsLayoutContext()
-  const [isNewTagDismissed, setIsNewTagDismissed] = useLocalState(false, 'docs-toc-new-tag')
+  const { setLeftPanelActive, leftPanelActive } = useDocsLayoutContext()
 
   const scrollToNode = React.useCallback(
     (key: NodeKey) => {
@@ -229,58 +219,31 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
     [editor],
   )
 
-  React.useEffect(() => {
-    if (!leftPanelActive) {
-      resetLeftPanelToDefault()
-    }
-  }, [leftPanelActive, resetLeftPanelToDefault])
+  const handleHeadingClick = React.useCallback(
+    (key: NodeKey) => {
+      scrollToNode(key)
+      if (window.innerWidth < DOCS_EDITOR_MAX_WIDTH) {
+        setLeftPanelActive(false)
+      }
+    },
+    [scrollToNode, setLeftPanelActive],
+  )
 
   return (
     <>
-      <HeadingParamListener scrollToNode={scrollToNode} />
+      <HeadingParamListener scrollToNode={handleHeadingClick} />
       <ActiveHeadingListener tableOfContents={tableOfContents} />
 
-      <div className="table-of-contents flex h-full min-w-0 flex-col" data-testid="table-of-contents">
-        <div className="relative flex items-center p-2.5 pl-0 pt-8">
-          <button
-            onClick={() => {
-              setLeftPanelActive((prev: boolean) => !prev)
-              setIsNewTagDismissed(true)
-            }}
-            className={clsx(
-              'relative z-20 flex min-h-8 min-w-8 items-center justify-center rounded-r-full p-2.5',
-              leftPanelActive ? 'bg-transparent' : 'shadow-norm bg-norm',
-            )}
-            data-testid="toc-toggle"
-          >
-            {!leftPanelActive && !isNewTagDismissed && (
-              <LabelStack
-                labels={[{ title: c('Info').t`NEW`, name: c('Info').t`NEW`, color: '#179FD9' }]}
-                className="absolute left-full top-0 -translate-x-1/4 -translate-y-2"
-              />
-            )}
-            {leftPanelActive ? <IcCross /> : <IcListBullets />}
-          </button>
-          <span
-            className="text-weak z-10 truncate text-sm font-medium transition-all"
-            style={{
-              transform: leftPanelActive ? 'translateX(0)' : 'translateX(calc(-100% - 64px))',
-              opacity: leftPanelActive ? 1 : 0,
-            }}
-          >
-            {c('Title').t`Outline`}
-          </span>
-        </div>
+      <div
+        className={clsx('table-of-contents flex min-w-0 flex-col', leftPanelActive && 'is-expanded')}
+        data-testid="table-of-contents"
+      >
+        <TocHeader isActive={leftPanelActive} onToggle={() => setLeftPanelActive((prev) => !prev)} />
 
-        <div className="flex flex-col gap-4 p-5 pt-0">
-          <ul
-            className="flex min-w-0 flex-1 flex-col overflow-y-auto transition-transform"
-            style={{
-              transform: leftPanelActive ? 'translateX(0)' : 'translateX(calc(-100% - 20px))',
-            }}
-          >
+        <div className="toc-list-container flex flex-col p-5 pt-0">
+          <ul className="toc-list flex min-w-0 flex-1 flex-col overflow-y-auto">
             {tableOfContents.map(([key, text, tag]) => (
-              <ContentItem key={key} nodeKey={key} text={text} tag={tag} scrollToNode={scrollToNode} />
+              <ContentItem key={key} nodeKey={key} text={text} tag={tag} scrollToNode={handleHeadingClick} />
             ))}
           </ul>
         </div>
