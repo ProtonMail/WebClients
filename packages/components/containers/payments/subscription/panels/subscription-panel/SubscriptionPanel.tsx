@@ -542,8 +542,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
     const isWalletEA = app === APPS.PROTONWALLET && hasVisionary(subscription);
     // For the VPN B2B plan, we don't want to show the action buttons
     // The user can still open the subscription or customization flow using the other buttons, e.g. "Get more" users
-    const showActionButtons =
-        !hasVpnOnlyB2BPlan && !isWalletEA && !(entitlements.orgIsBusiness && entitlements.orgHasLumo);
+    const showActionButtons = !hasVpnOnlyB2BPlan && !isWalletEA && !hasLumoBusiness(subscription);
 
     return (
         <>
