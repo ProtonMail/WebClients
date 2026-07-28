@@ -1520,8 +1520,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1724,6 +1723,12 @@
       ],
       "Reject": [
         "Rejeitar"
+      ],
+      "Clear conversation": [
+        "Limpar conversa"
+      ],
+      "Stop": [
+        "Parar"
       ]
     },
     "action": {
@@ -11062,6 +11067,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (para ${ quantity } usuário)",
         "${ MEET_APP_NAME } (para ${ quantity } usuários)"
+      ],
+      "${ price } per seat": [
+        "${ price } por licença"
       ]
     },
     "meet_2025: Feature": {
@@ -13390,6 +13398,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Ask anything…": [
+        "Pergunte qualquer coisa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15326,6 +15337,9 @@
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Movidas para ${ label }. Mensagens semelhantes serão categorizadas aqui no futuro."
       ]
     },
     "Success notification": {

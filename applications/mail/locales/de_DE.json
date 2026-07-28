@@ -1520,8 +1520,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1724,6 +1723,15 @@
       ],
       "Reject": [
         "Ablehnen"
+      ],
+      "Clear conversation": [
+        "Unterhaltung entfernen"
+      ],
+      "Stop": [
+        "Stoppen"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } umschalten"
       ]
     },
     "action": {
@@ -9395,6 +9403,9 @@
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "Du kannst ihn zu Entwicklungszwecken als neuen Foundation-Search-Index importieren."
+      ],
+      "Thinking about this": [
+        "Darüber nachdenken"
       ]
     },
     "info": {
@@ -11079,6 +11090,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (für ${ quantity } Benutzer)",
         "${ MEET_APP_NAME } (für ${ quantity } Benutzer)"
+      ],
+      "${ price } per seat": [
+        "${ price } pro Lizenz"
       ]
     },
     "meet_2025: Feature": {
@@ -13401,6 +13415,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Ask anything…": [
+        "Frag irgendetwas …"
       ]
     },
     "Placeholder for contact group name": {
@@ -15337,6 +15354,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Zu ${ label } verschoben. Ähnliche Nachrichten werden künftig hierunter kategorisiert."
       ]
     },
     "Success notification": {
