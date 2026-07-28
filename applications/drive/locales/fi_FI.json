@@ -189,6 +189,9 @@
       "Clear browser data": [
         "Tyhjennä selaimen välimuisti"
       ],
+      "Clear conversation": [
+        "Tyhjennä keskustelu"
+      ],
       "Clear data": [
         "Tyhjennä tiedot"
       ],
@@ -809,6 +812,9 @@
       "Refresh the page": [
         "Päivitä sivu"
       ],
+      "Reject": [
+        "Kieltäydy"
+      ],
       "Reload": [
         "Päivitä"
       ],
@@ -965,6 +971,9 @@
       "Select rating ${ n } out of ${ to }": [
         "Valitse arvosana ${ n } - ${ to }"
       ],
+      "Send": [
+        "Lähetä"
+      ],
       "Send Feedback": [
         "Lähetä palautetta"
       ],
@@ -1066,6 +1075,9 @@
       ],
       "Stay": [
         "Pysy"
+      ],
+      "Stop": [
+        "Pysäytä"
       ],
       "Stop sharing": [
         "Lopeta jakaminen"
@@ -1270,6 +1282,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja (${ quantity } käyttäjälle)",
+        "${ BRAND_NAME } Scribe-kirjoitusavustaja (${ quantity } käyttäjälle)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } oma lisäverkkotunnus",
         "${ domains } omaa lisäverkkotunnusta"
@@ -1277,6 +1293,13 @@
       "${ ips } dedicated VPN server": [
         "${ ips } oma VPN-palvelin",
         "${ ips } omaa VPN-palvelinta"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } -tekoälyavustaja"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } tekoälyavustaja (${ quantity } käyttäjä)",
+        "${ LUMO_APP_NAME } AI-avustaja (${ quantity } käyttäjälle)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME }-tekoälylisenssi"
@@ -1295,6 +1318,10 @@
       ],
       "${ price } per user": [
         "${ price }/käyttäjä"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } oma verkkotunnus",
+        "${ quantity } omaa verkkotunnusta"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME }-tekoälylisenssi",
@@ -6520,6 +6547,9 @@
       "There is nothing to see here": [
         "Täällä ei ole mitään nähtävää"
       ],
+      "Thinking about this": [
+        "Mietitään tätä"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Tämä poistaa linkin ja mitätöi kaikki jaetut käyttöoikeudet."
       ],
@@ -6614,9 +6644,6 @@
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Aidosti yksityistä hakua varten tiedostoistasi täytyy luoda paikallinen hakemisto. Voit edelleen käyttää ${ DRIVE_APP_NAME }a normaalisti – saat ilmoituksen kun indeksointi on valmis."
-      ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "Jotta haku toimii oikein, meidän on indeksoitava tiedostosi paikallisesti. Voit edelleen käyttää ${ DRIVE_APP_NAME } -sovellusta normaalisti – ilmoitamme sinulle, kun indeksointi on valmis. Jos poistut tältä sivulta, indeksointi keskeytyy ja jatkuu, kun palaat."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
@@ -7233,6 +7260,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Salli muokkaajien muuttaa käyttöoikeuksia ja jakaa sisältöä"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Salli muokkaajien muuttaa käyttöoikeuksia ja jakaa sisältöä."
       ],
       "Anderson": [
         "Andersson"
@@ -8211,11 +8241,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)",
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-lisenssi"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ price } per seat": [
+        "${ price } per paikka"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
@@ -10599,6 +10636,9 @@
       "Anytown": [
         "Jokukaupunki"
       ],
+      "Ask anything…": [
+        "Kysy mitä tahansa…"
+      ],
       "Choose password": [
         "Valitse salasana"
       ],
@@ -11512,6 +11552,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Linkki tähän kohteeseen on tallennettu Driveesi. Löydät sen jatkossa \"Jaettu minulle\" -osiosta."
+      ],
+      "Editor permissions": [
+        "Muokkaajan oikeudet"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Muokkaajat voivat nyt hallita jakamista ja kutsua muita. Voit poistaa tämän käytöstä milloin tahansa jakamisasetuksissa."
       ],
       "Encrypted search is here": [
         "Salattu haku löytyy tästä"

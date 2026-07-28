@@ -438,6 +438,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateurs)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domaine personnalisé supplémentaire",
         "${ domains } domaines personnalisés supplémentaires"
@@ -446,11 +450,22 @@
         "${ ips } serveur VPN dédié",
         "${ ips } serveurs VPN dédiés"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistant IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } licence IA"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } accès"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateurs)"
       ],
       "${ price } per dedicated server": [
         "${ price } par serveur dédié"
@@ -463,6 +478,10 @@
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domaine personnalisé",
+        "${ quantity } domaines personnalisés"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licence IA ${ LUMO_APP_NAME }",
@@ -3671,11 +3690,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateur)",
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
       "${ MEET_APP_NAME } license": [
         "licence ${ MEET_APP_NAME }"
       ],
       "${ MEET_APP_NAME } seats": [
         "accès ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } par accès"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } accès ${ MEET_APP_NAME }",

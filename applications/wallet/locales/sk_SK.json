@@ -438,6 +438,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľa)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dodatočná vlastná doména",
         "${ domains } dodatočné vlastné domény",
@@ -450,11 +456,26 @@
         "${ ips } dedikovaných VPN serverov",
         "${ ips } dedikovaných VPN serverov"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľa)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licencia"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licencií"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľa)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -467,6 +488,12 @@
       ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastná doména",
+        "${ quantity } vlastné domény",
+        "${ quantity } vlastných domén",
+        "${ quantity } vlastných domén"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats }${ LUMO_APP_NAME } AI licencia",
@@ -563,6 +590,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ LUMO_SHORT_APP_NAME }, aby vám pomohol písať, odpovedať a opravovať emaily."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -577,6 +607,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } licencií na asistenta písania ${ LUMO_SHORT_APP_NAME } počas skúšobného obdobia."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } Scribe miest počas skúšobného obdobia."
@@ -995,6 +1028,9 @@
       ],
       "Discover and set up features": [
         "Objaviť a nastaviť funkcie"
+      ],
+      "Get 50% offer": [
+        "Využite 50 % zľavu"
       ],
       "Remind me later": [
         "Pripomenúť neskôr"
@@ -2767,6 +2803,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje asistenta písania"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } je riešenie pre videokonferencie s end-to-end šifrovaním. Pridajte si ho do svojho plánu a organizujte zabezpečené schôdzky."
       ],
@@ -2817,6 +2859,9 @@
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Používateľ je účet spojený s jedným používateľským menom, poštovou schránkou a osobou"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
       ],
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
@@ -2962,6 +3007,9 @@
       "Expired": [
         "Platnosť vypršala"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Najvyššia rýchlosť VPN až 10 Gbps"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ],
@@ -2971,8 +3019,14 @@
       "Google Pay mark": [
         "Google Pay mark"
       ],
+      "Have some more time to decide without interruption.": [
+        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
@@ -3067,6 +3121,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
       ],
+      "Premium privacy protection across all your devices": [
+        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
       ],
@@ -3102,6 +3159,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Odošlite zálohu pomocou nasledujúcej adresy, alebo naskenujte QR kód. Váš vklad sa po potvrdení prejaví na vašom účte."
@@ -3377,6 +3437,12 @@
       ],
       "City": [
         "Mesto"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Verzia klienta"
       ],
       "Code is 6 digits without spaces": [
         "Kód je 6 čísiel bez medzier"
@@ -3671,8 +3737,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent písania ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Pridať asistenta písania ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Pridať asistenta písania ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Doplnok s bezplatnou skúšobnou verziou"
@@ -3682,6 +3754,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľa)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licencia"
       ],
@@ -3830,6 +3908,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } kalendár",
@@ -5909,6 +5990,9 @@
       ],
       "Simplify password management": [
         "Zjednodušte správu hesiel"
+      ],
+      "Stay for 50% off your next month": [
+        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Summary": [
         "Zhrnutie"

@@ -189,6 +189,9 @@
       "Clear browser data": [
         "Rensa webbläsardata"
       ],
+      "Clear conversation": [
+        "Rensa konversation"
+      ],
       "Clear data": [
         "Rensa data"
       ],
@@ -809,6 +812,9 @@
       "Refresh the page": [
         "Uppdatera sidan"
       ],
+      "Reject": [
+        "Avvisa"
+      ],
       "Reload": [
         "Ladda om"
       ],
@@ -965,6 +971,9 @@
       "Select rating ${ n } out of ${ to }": [
         "Välj betyg ${ n } av ${ to }"
       ],
+      "Send": [
+        "Skicka"
+      ],
       "Send Feedback": [
         "Skicka feedback"
       ],
@@ -1066,6 +1075,9 @@
       ],
       "Stay": [
         "Stanna"
+      ],
+      "Stop": [
+        "Stoppa"
       ],
       "Stop sharing": [
         "Sluta dela"
@@ -1270,6 +1282,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe skrivassistent (för ${ quantity } användare)",
+        "${ BRAND_NAME } Scribe skrivassistent för ${ quantity } användare)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ytterligare anpassad domän",
         "${ domains } ytterligare anpassade domäner"
@@ -1278,11 +1294,22 @@
         "${ ips } dedikerad VPN-server",
         "${ ips } dedikerade VPN-servrar"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)",
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-licens"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)",
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerad server"
@@ -1295,6 +1322,10 @@
       ],
       "${ price } per user": [
         "${ price } per användare"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } anpassad domän",
+        "${ quantity } anpassade domäner"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI-licens",
@@ -1351,6 +1382,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ LUMO_SHORT_APP_NAME } hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ]
     },
     "Attached ics file error": {
@@ -1513,6 +1547,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ LUMO_SHORT_APP_NAME } skrivassistent, obegränsade hide-my-email-alias och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
@@ -5762,6 +5799,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter och internetleverantörer kan övervaka din aktivitet på nätet. Genom att dölja din riktiga IP och kryptera din aktivitet blir din surfning privat."
       ],
+      "Have some more time to decide without interruption.": [
+        "Ha lite mer tid att bestämma utan avbrott."
+      ],
       "here": [
         "här"
       ],
@@ -8226,6 +8266,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (för ${ quantity } användare)",
+        "${ MEET_APP_NAME } (för ${ quantity } användare)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
       ],
@@ -10680,6 +10724,9 @@
       "Anytown": [
         "Alingsås"
       ],
+      "Ask anything…": [
+        "Fråga vad som helst …"
+      ],
       "Choose password": [
         "Välj lösenord"
       ],
@@ -11593,6 +11640,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "En länk till detta objekt har sparats på din Drive. Du kan komma åt det senare i sektionen ”Delas med mig”."
+      ],
+      "Editor permissions": [
+        "Redaktörsbehörigheter"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Redaktörer kan nu hantera delning och bjuda in andra. Du kan stänga av det när som helst i delningsinställningar."
       ],
       "Encrypted search is here": [
         "Krypterad sökning är här"

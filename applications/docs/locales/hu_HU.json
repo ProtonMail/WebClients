@@ -600,6 +600,9 @@
       "Refresh the page": [
         "Oldal frissítése"
       ],
+      "Reject": [
+        "Elutasítás"
+      ],
       "Reload": [
         "Újratöltés"
       ],
@@ -692,6 +695,9 @@
       ],
       "Select all": [
         "Összes kijelölése"
+      ],
+      "Send": [
+        "Küldés"
       ],
       "Set recovery methods": [
         "Helyreállítási módszerek beállítása"
@@ -889,6 +895,18 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
+      "${ price } per dedicated server": [
+        "${ price } / dedikált szerver"
+      ],
+      "${ price } per domain": [
+        "${ price } / domain"
+      ],
+      "${ price } per seat": [
+        "${ price } felhasználónként"
+      ],
+      "${ price } per user": [
+        "${ price } felhasználónként"
+      ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
@@ -958,6 +976,21 @@
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Akár ${ TRIAL_MAX_DEDICATED_IPS } dedikált szerverrel is rendelkezhet a próbaidőszakban."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Maximum ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licence lehet a próbaidőszakban."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Maximum ${ TRIAL_MAX_SCRIBE_SEATS } Scribe licence lehet a próbaidőszakban."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Maximum ${ TRIAL_MAX_USERS } felhasználó lehet a próbaidőszakban."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nem adhat hozzá saját domain neveket a próbaidőszak alatt."
       ]
     },
     "b2b_trials_Action": {
@@ -4111,6 +4144,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "A biztonságos kapcsolat elengedhetetlen a távmunkához. A VPN megvédi a vállalati adatokat a kiberfenyegetésektől, és privátban tartja a munkáját."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "A felhasználó egy fiókot jelent, amely egyetlen felhasználói nevet, e-mail fiókot és személyt takar"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "A VPN titkosítja a kapcsolatot és elrejti az IP-címét, így sokkal nehezebbé teszi, hogy bárki nyomon kövesse vagy figyelje a böngészését."
       ],
@@ -4253,6 +4289,10 @@
       "Create a new contact group": [
         "Új névjegy csoport"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak",
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak"
+      ],
       "Create an end-to-end encrypted document.": [
         "Hozzon létre egy végpontok közötti titkosítású dokumentumot."
       ],
@@ -4276,6 +4316,12 @@
       ],
       "Current version": [
         "Jelenlegi változat"
+      ],
+      "Custom email domains": [
+        "Saját domain nevek"
+      ],
+      "Details": [
+        "Részletek"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitális aláírás lellenőrizve. Ezt a fájlt biztonságosan feltöltötte ${ emailAddress }."
@@ -4321,6 +4367,9 @@
       ],
       "email": [
         "e-mail cím"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Az e-mail szolgáltatás olyan domain nevekre lehetséges, amelyek már a tulajdonában vannak. A ${ BRAND_NAME } jelenleg nem biztosít domain név regisztrációt. Bármilyen regisztrátornál regisztrált domain nevet használhat."
       ],
       "Emails are automatically signed": [
         "Az e-mailek automatikusan aláírásra kerülnek"
@@ -4626,6 +4675,9 @@
       ],
       "Opening...": [
         "Megnyitás..."
+      ],
+      "Organization size": [
+        "Szervezet mérete"
       ],
       "Other accounts": [
         "Egyéb fiókok"
@@ -4985,6 +5037,9 @@
       ],
       "username": [
         "felhasználónév"
+      ],
+      "Users": [
+        "Felhasználók"
       ],
       "Version number successfully copied to clipboard": [
         "A verziószám sikeresen másolva a vágólapra"

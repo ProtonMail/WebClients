@@ -722,6 +722,9 @@
       "Refresh the page": [
         "Împrospătare pagină"
       ],
+      "Reject": [
+        "Respingere"
+      ],
       "Remove": [
         "Eliminare"
       ],
@@ -1076,6 +1079,11 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } de utilizatori)"
+      ],
       "${ domains } additional custom domain": [
         "Domenii personale adiționale: ${ domains }",
         "Domenii personale adiționale: ${ domains }",
@@ -1086,11 +1094,24 @@
         "Servere VPN dedicate: ${ ips }",
         "Servere VPN dedicate: ${ ips }"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistent de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Licențe IA ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licențe ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } de utilizatori)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
@@ -1103,6 +1124,11 @@
       ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domeniu personal",
+        "${ quantity } domenii personale",
+        "${ quantity } de domenii personale"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
@@ -5780,6 +5806,9 @@
         "Se șterg evenimentele...",
         "Se șterg evenimentele..."
       ],
+      "Details": [
+        "Detalii"
+      ],
       "Discard changes?": [
         "Anulare modificări?"
       ],
@@ -8023,6 +8052,11 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizator)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licență"
       ],

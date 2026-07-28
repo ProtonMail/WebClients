@@ -642,6 +642,9 @@
       "Refresh the page": [
         "გვერდის განახლება"
       ],
+      "Reject": [
+        "უარყოფა"
+      ],
       "Reload": [
         "თავიდან ჩატვირთვა"
       ],
@@ -752,6 +755,9 @@
       ],
       "Select all": [
         "ყველაფრის მონიშვნა"
+      ],
+      "Send": [
+        "გაგზავნა"
       ],
       "Set password or expiration date": [
         "პაროლის, ან ვადის ამოწურვის თარიღის დაყენება"
@@ -972,6 +978,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)",
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } დამატებითი მორგებული დომენი",
         "${ domains } დამატებითი მორგებული დომენი"
@@ -980,11 +990,34 @@
         "${ ips } გამოყოფილი VPN სერვერი",
         "${ ips } გამოყოფილი VPN სერვერი"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ხი დამხმარე ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-ის ლიცენზია"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } გამოყოფილი სერვერი"
+      ],
+      "${ price } per domain": [
+        "${ price }/დომენი"
+      ],
+      "${ price } per seat": [
+        "${ price }/ლიცენზია"
+      ],
+      "${ price } per user": [
+        "${ price }/მომხმარებელი"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } მომხმარებლის დომენი",
+        "${ quantity } მომხმარებლის დომენი"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია",
@@ -1075,6 +1108,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "მას შემდეგ, რაც საცდელი პერიოდი დასრულდება ${ formattedDate1 }-ში, ის გადაიქცევა ფასიან გამოწერად, რომელიც ავტომატურად განახლდება ყოველთვიურად. თანხა არ ჩამოგეჭრებათ, თუ გააუქმებთ ${ formattedDate2 }-მდე."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_DEDICATED_IPS }-მდე გამოყოფილი სერვერი იქონიოთ."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ გქონდეთ მაქსიმუმ ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } მომხმარებლის ადგილი."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-ის მომხმარებლის შექმნა."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_USERS } მომხმარებლის შექმნა."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
       ]
     },
     "b2b_trials_Action": {
@@ -4574,6 +4622,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "უსაფრთხო კავშირი აუცილებელია დისტანციურად მუშაობისას. VPN იცავს კომპანიის მონაცემებს კიბერსაფრთხეებისგან და ინარჩუნებს თქვენს სამუშაოს პირადად."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "მომხმარებელი წარმოადგენს ანგარიშს, რომელსაც ერთადერთი მომხმარებლის სახელი, საფოსტო ყუთი და მფლობელი გააჩნია"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN შიფრავს თქვენს კავშირს და მალავს თქვენს IP მისამართს, რაც მნიშვნელოვნად ართულებს ნებისმიერისთვის თქვენი ვებ-სერფინგის თვალყურის დევნებას ან მონიტორინგს."
       ],
@@ -4743,6 +4794,10 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "დაცული ღრუბლის შექმნა ${ memberCount } წევრისთვის",
+        "შექმენით უსაფრთხო ღრუბელი ${ memberCount } წევრისთვის"
+      ],
       "Create an end-to-end encrypted document.": [
         "შექმენით თქვენი გამჭოლად დაშიფრული დოკუმენტი."
       ],
@@ -4773,8 +4828,14 @@
       "Current version": [
         "მიმდინარე ვერსია"
       ],
+      "Custom email domains": [
+        "ელფოსტის თქვენი დომენები"
+      ],
       "Decrypting your document": [
         "თქვენი დოკუმენტის გაშიფვრა"
+      ],
+      "Details": [
+        "დეტალები"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ციფრული ხელმოწერა შემოწმებულია. ეს ფაილი დაცულად ატვირთა ${ emailAddress }-მა."
@@ -4832,6 +4893,9 @@
       ],
       "email": [
         "ელფოსტა"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "ელფოსტის ჰოსტინგი ხელმისაწვდომია, მხოლოდ, იმ დომენებისთვის, რომლებსაც უკვე ფლობთ. დომენის რეგისტრაცია, ამჟამად, არ არის ხელმისაწვდომი ${ BRAND_NAME }-ის საშუალებით. დომენის შეძენა ნებისმიერ რეგისტრატორთან შეგიძლიათ."
       ],
       "Emails are automatically signed": [
         "ელფოსტების ხელმოწერა ავტომატურია"
@@ -5194,6 +5258,9 @@
       ],
       "Opening...": [
         "გახსნა..."
+      ],
+      "Organization size": [
+        "ორგანიზაციის ზომა"
       ],
       "Other accounts": [
         "სხვა ანგარიშები"
@@ -5598,6 +5665,9 @@
       ],
       "username": [
         "მომხმარებლის სახელი"
+      ],
+      "Users": [
+        "მომხმარებლები"
       ],
       "Version number successfully copied to clipboard": [
         "ვერსიის ნომერი წარმატებით დაკოპირდა ბუფერში"
@@ -6672,6 +6742,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "${ MEET_APP_NAME } (${ quantity } მომხმარებლისთვის)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-ის ლიცენზია"
       ],
@@ -6739,6 +6813,11 @@
       "Video meetings, ${ n } participant": [
         "ვიდეოშეხვედრები, ${ n } მონაწილე",
         "ვიდეოშეხვედრები, ${ n } მონაწილე"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ გქონდეთ მაქსიმუმ ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } ადგილი."
       ]
     },
     "Message": {

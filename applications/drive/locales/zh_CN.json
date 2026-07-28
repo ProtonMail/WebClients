@@ -186,6 +186,9 @@
       "Clear browser data": [
         "清除浏览器数据"
       ],
+      "Clear conversation": [
+        "清除会话"
+      ],
       "Clear data": [
         "清除数据"
       ],
@@ -804,6 +807,9 @@
       "Refresh the page": [
         "刷新页面"
       ],
+      "Reject": [
+        "拒绝"
+      ],
       "Reload": [
         "刷新"
       ],
@@ -960,6 +966,9 @@
       "Select rating ${ n } out of ${ to }": [
         "选择评分 ${ n } (共 ${ to } 分)"
       ],
+      "Send": [
+        "发送​​"
+      ],
       "Send Feedback": [
         "发送反馈"
       ],
@@ -1061,6 +1070,9 @@
       ],
       "Stay": [
         "留在此页"
+      ],
+      "Stop": [
+        "停止"
       ],
       "Stop sharing": [
         "停止分享"
@@ -1264,17 +1276,29 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 写作助手（适用于 ${ quantity } 位用户）"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } 个额外的自有域名"
       ],
       "${ ips } dedicated VPN server": [
         "${ ips } 个专属 VPN 服务器"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助手"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助手（适用于 ${ quantity } 位用户）"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI 许可"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } 席位"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手（适用于 ${ quantity } 位用户）"
       ],
       "${ price } per dedicated server": [
         "${ price } 每个专用服务器"
@@ -1287,6 +1311,9 @@
       ],
       "${ price } per user": [
         "${ price } 每位用户"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 个自定义域名"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } 个 ${ LUMO_APP_NAME } AI 许可"
@@ -6467,6 +6494,9 @@
       "There is nothing to see here": [
         "这里啥也没有"
       ],
+      "Thinking about this": [
+        "正在思考这个"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "此操作将删除此链接并撤销所有用户的访问权限。"
       ],
@@ -6554,14 +6584,14 @@
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "若要下载这些文件，请在 ${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME } 中打开并导出它们。"
       ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "为了启用搜索，我们需要在本地索引您的文件。您仍可正常使用 ${ DRIVE_APP_NAME }，索引完成后我们会通知您。如果您离开此页面，索引将暂停，并在您返回时恢复。"
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "为了在搜索过程中保护您的隐私，${ DRIVE_APP_NAME } 需要将文件下载至本设备后进行索引。"
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "为了保证搜索过程的安全性，文件索引需要在此设备上完成。您可以继续正常使用 ${ DRIVE_APP_NAME }，索引完成后我们将通知您。"
-      ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "为了启用真正的搜索，我们需要在本地为您的文件建立索引。在此期间您仍可正常使用 ${ DRIVE_APP_NAME } - 索引完成后我们会通知您。如果您离开此页面，索引将暂停，返回后继续。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
@@ -7164,6 +7194,9 @@
       ],
       "Allow editors to change permissions and share": [
         "允许编辑者更改权限及分享"
+      ],
+      "Allow editors to change permissions and share.": [
+        "允许编辑者更改权限和共享"
       ],
       "Anderson": [
         "Anderson"
@@ -7819,6 +7852,9 @@
       "URL wildcard pattern": [
         "URL 通配符模式"
       ],
+      "User opted in": [
+        "用户选择加入"
+      ],
       "Username": [
         "用户名"
       ],
@@ -8139,11 +8175,17 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (适用于 ${ quantity } 位用户)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } 许可"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 席位"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席位"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } 个 ${ MEET_APP_NAME } 席位"
@@ -10463,6 +10505,9 @@
       "Anytown": [
         "任何城镇"
       ],
+      "Ask anything…": [
+        "提问…"
+      ],
       "Choose password": [
         "输入密码"
       ],
@@ -11353,6 +11398,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "此项目的链接已保存在您的硬盘中。您可以稍后在 “与我共享 ”部分访问它。"
+      ],
+      "Editor permissions": [
+        "编辑者权限"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "编辑者现在可以管理共享并邀请他人，您随时可以在共享设置中关闭此功能。"
       ],
       "Encrypted search is here": [
         "已推出加密搜索功能"

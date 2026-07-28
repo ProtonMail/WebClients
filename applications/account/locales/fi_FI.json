@@ -1830,6 +1830,9 @@
       "Verify password": [
         "Vahvista salasana"
       ],
+      "Verify recovery phrase": [
+        "Vahvista palautuslauseke"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Vahvista verkkotunnus ${ unverifiedSSODomain.DomainName }"
       ],
@@ -7716,6 +7719,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Viesti saattaa sisältää joitakin URL-linkkejä, joita käyttämäsi selain ei voi avata oikein."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Tällä lauseella et voi palauttaa tiliäsi. Voit luoda uuden lauseen, jotta tilisi voidaan palauttaa tulevaisuudessa."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Luodaksesi ei-yksityisiä käyttäjätilejä sinun on palautettava hallintaoikeutesi."
       ],
@@ -10460,9 +10466,6 @@
       "Available on macOS, Windows, and Linux.": [
         "Saatavilla alustoille macOS, Windows ja Linux."
       ],
-      "Average": [
-        "Keskiarvo"
-      ],
       "Awaiting transaction": [
         "Odotetaan siirtoa"
       ],
@@ -10567,6 +10570,9 @@
       ],
       "Change your password": [
         "Vaihda salasanasi"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Tarkista, voidaanko palautuslauseesi avulla palauttaa tilisi kokonaan."
       ],
       "Check your network and try again.": [
         "Tarkista verkkoyhteytesi ja yritä uudelleen."
@@ -11956,9 +11962,6 @@
       "per month, billed at ${ price }": [
         "kuukaudessa, laskutetaan ${ price }"
       ],
-      "Per seat/month": [
-        "Per paikka/kuukausi"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Pyytää sinua säännöllisesti vahvistamaan ${ BRAND_NAME }-salasanasi varmistaakseen, ettet unohda sitä. Kyselyitä esitetään ajan mittaan harvemmin."
       ],
@@ -12137,6 +12140,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Palautuslauseketta ei ole liitetty vanhentuneisiin avaimiin."
+      ],
+      "Recovery phrase verified": [
+        "Palautuslauseke vahvistettu"
       ],
       "Reddit": [
         "Reddit"
@@ -14487,9 +14493,6 @@
       "Billed monthly.": [
         "Laskutetaan kuukausittain."
       ],
-      "Billed seats": [
-        "Laskutetut paikat"
-      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -14595,9 +14598,6 @@
       "Common passwords": [
         "Yleiset salasanat"
       ],
-      "Companies": [
-        "Yritykset"
-      ],
       "Company": [
         "Yritys"
       ],
@@ -14666,9 +14666,6 @@
       ],
       "Copy IP address to clipboard": [
         "Kopioi IP-osoite leikepöydälle"
-      ],
-      "Cost": [
-        "Hinta"
       ],
       "Could you please let us know which provider?": [
         "Kortoisitko meille, mikä palveluntarjoaja?"
@@ -16606,6 +16603,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ price } per seat": [
+        "${ price } per paikka"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
@@ -26436,6 +26436,9 @@
       ],
       "Verify your password": [
         "Vahvista salasananne"
+      ],
+      "Verify your phrase": [
+        "Vahvista lauseesi"
       ],
       "Verifying your card...": [
         "Vahvistetaan korttiasi..."

@@ -154,6 +154,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Δημιουργήστε τη δωρεάν ${ BRAND_NAME } διεύθυνσή σας"
       ],
+      "Clear conversation": [
+        "Εκκαθάριση συνομιλίας"
+      ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
       ],
@@ -642,6 +645,9 @@
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
+      "Reject": [
+        "Απόρριψη"
+      ],
       "Reload": [
         "Ανανέωση"
       ],
@@ -753,6 +759,9 @@
       "Select all": [
         "Επιλογή όλων"
       ],
+      "Send": [
+        "Αποστολή"
+      ],
       "Set password or expiration date": [
         "Ορισμός κωδικού πρόσβασης ή ημερομηνίας λήξης"
       ],
@@ -818,6 +827,9 @@
       ],
       "Stay": [
         "Παραμονή"
+      ],
+      "Stop": [
+        "Σταμάτα"
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"
@@ -972,6 +984,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } πρόσθετος προσαρμοσμένος τομέας",
         "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
@@ -980,11 +996,38 @@
         "${ ips } αποκλειστικός διακομιστής VPN",
         "${ ips } αποκλειστικοί διακομιστές VPN"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστη)",
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστες)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } άδεια χρήσης AI"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } ανά αποκλειστικό διακομιστή"
+      ],
+      "${ price } per domain": [
+        "${ price } ανά τομέα"
+      ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
+      ],
+      "${ price } per user": [
+        "${ price } ανά χρήστη"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } προσαρμοσμένος τομέας",
+        "${ quantity } προσαρμοσμένοι τομείς"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } άδεια χρήσης AI",
@@ -1078,6 +1121,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Μπορείτε να έχετε έως ${ TRIAL_MAX_DEDICATED_IPS } αφιερωμένο διακομιστή κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_LUMO_SEATS } θέσεις ${ LUMO_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } θέσεις Scribe κατά τη δοκιμαστική περίοδο."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_USERS } χρήστες κατά τη δοκιμαστική περίοδο."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Δεν μπορείτε να προσθέσετε προσαρμοσμένους τομείς κατά τη δοκιμαστική περίοδο."
       ]
     },
     "b2b_trials_Action": {
@@ -4593,6 +4654,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Μια ασφαλής σύνδεση είναι απαραίτητη όταν εργάζεστε εξ αποστάσεως. Ένα VPN προστατεύει εταιρικά δεδομένα από απειλές στον κυβερνοχώρο και διατηρεί την εργασία σας ιδιωτική."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Χρήστης νοείται ένας λογαριασμός συσχετισμένος με μοναδικό όνομα χρήστη, θυρίδα και πρόσωπο"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Ένα VPN κρυπτογραφεί τη σύνδεσή σας και κρύβει την ΙΡ διεύθυνσή σας, καθιστώντας πολύ πιο δύσκολο για οποιονδήποτε να παρακολουθεί ή να παρακολουθεί την περιήγησή σας."
       ],
@@ -4765,6 +4829,10 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλος",
+        "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλη"
+      ],
       "Create an end-to-end encrypted document.": [
         "Δημιουργήστε ένα διατερματικά κρυπτογραφημένο έγγραφό."
       ],
@@ -4795,8 +4863,14 @@
       "Current version": [
         "Τρέχουσα έκδοση"
       ],
+      "Custom email domains": [
+        "Προσαρμοσμένοι τομείς"
+      ],
       "Decrypting your document": [
         "Γίνεται αποκρυπτογράφηση του εγγράφου σας"
+      ],
+      "Details": [
+        "Λεπτομέρειες"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο μεταφορτώθηκε διασφαλισμένα από ${ emailAddress }."
@@ -4854,6 +4928,9 @@
       ],
       "email": [
         "ηλεκτρονικό ταχυδρομείο"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
       ],
       "Emails are automatically signed": [
         "Τα μηνύματα υπογράφονται αυτόματα"
@@ -5228,6 +5305,9 @@
       ],
       "Opening...": [
         "Άνοιγμα..."
+      ],
+      "Organization size": [
+        "Μέγεθος οργανισμού"
       ],
       "Other accounts": [
         "Άλλοι λογαριασμοί"
@@ -5639,6 +5719,9 @@
       "username": [
         "όνομα χρήστη"
       ],
+      "Users": [
+        "Χρήστες"
+      ],
       "Version number successfully copied to clipboard": [
         "Ο αριθμός έκδοσης αντιγράφηκε με επιτυχία στο πρόχειρο"
       ],
@@ -6018,6 +6101,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Επιτρέψτε στους συντάκτες να αλλάζουν δικαιώματα και να κοινοποιούν"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Επιτρέψτε στους συντάκτες να αλλάζουν δικαιώματα και να κοινοποιούν."
       ],
       "Anonymous": [
         "Ανώνυμα"
@@ -6724,11 +6810,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστη)",
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστες)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } άδεια χρήσης"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } θέση",
@@ -6791,6 +6884,11 @@
       "Video meetings, ${ n } participant": [
         "Βιντεοκλήσεις, ${ n } συμμετέχων",
         "Βιντεοκλήσεις, ${ n } συμμετέχοντες"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_MEET_SEATS } θέσεις ${ MEET_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
       ]
     },
     "Message": {
@@ -8661,6 +8759,9 @@
       "Anything you'd like us to know": [
         "Οτιδήποτε θα θέλατε να ξέρουμε"
       ],
+      "Ask anything…": [
+        "Ρωτήστε οτιδήποτε…"
+      ],
       "Choose password": [
         "Επιλογή κωδικού πρόσβασης"
       ],
@@ -9606,6 +9707,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Ένας σύνδεσμος προς αυτό το στοιχείο έχει αποθηκευτεί στη μονάδα δίσκου σας. Μπορείτε να αποκτήσετε πρόσβαση σε αυτό αργότερα στην ενότητα \"Κοινή χρήση με εμένα\"."
+      ],
+      "Editor permissions": [
+        "Δικαιώματα επεξεργαστή"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Οι συντάκτες μπορούν πλέον να διαχειρίζονται την κοινή χρήση και να προσκαλούν άλλους. Μπορείτε να την απενεργοποιήσετε ανά πάσα στιγμή στις ρυθμίσεις Κοινής χρήσης."
       ],
       "To edit this document, create a copy that you can modify.": [
         "Για να επεξεργαστείτε αυτό το έγγραφο, δημιουργήστε ένα αντίγραφο που μπορείτε να τροποποιήσετε."

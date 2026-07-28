@@ -154,6 +154,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Deine kostenlose ${ BRAND_NAME }-Adresse beanspruchen"
       ],
+      "Clear conversation": [
+        "Unterhaltung entfernen"
+      ],
       "Clear data": [
         "Daten löschen"
       ],
@@ -642,6 +645,9 @@
       "Refresh the page": [
         "Seite aktualisieren"
       ],
+      "Reject": [
+        "Ablehnen"
+      ],
       "Reload": [
         "Neu laden"
       ],
@@ -753,6 +759,9 @@
       "Select all": [
         "Alle auswählen"
       ],
+      "Send": [
+        "Senden"
+      ],
       "Set password or expiration date": [
         "Passwort oder Ablaufdatum festlegen"
       ],
@@ -818,6 +827,9 @@
       ],
       "Stay": [
         "Nicht schließen"
+      ],
+      "Stop": [
+        "Stoppen"
       ],
       "Stop sharing": [
         "Teilen beenden"
@@ -972,6 +984,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)",
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } zusätzliche eigene Domain",
         "${ domains } zusätzliche eigene Domains"
@@ -980,11 +996,38 @@
         "${ ips } dedizierter VPN-Server",
         "${ ips } dedizierte VPN-Server"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-Assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)",
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } KI-Lizenz"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } Lizenzen"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)",
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } pro dediziertem Server"
+      ],
+      "${ price } per domain": [
+        "${ price } pro Domain"
+      ],
+      "${ price } per seat": [
+        "${ price } pro Benutzer"
+      ],
+      "${ price } per user": [
+        "${ price } pro Benutzer"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } benutzerdefinierte Domäne",
+        "${ quantity } benutzerdefinierte Domänen"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } KI-Lizenz",
@@ -1078,6 +1121,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Nachdem deine Testversion am ${ formattedDate1 } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate2 } kündigst."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-Lizenzen haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } Schreibassistenten-Lizenzen haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_USERS } Benutzer haben."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kannst während des Testzeitraums keine eigenen Domains hinzufügen."
       ]
     },
     "b2b_trials_Action": {
@@ -4593,6 +4654,9 @@
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Eine sichere Verbindung ist unerlässlich, wenn du auswärts arbeitest. Ein VPN schützt Unternehmensdaten vor Cyber-Bedrohungen und hält deine Arbeit privat."
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Ein Benutzer ist ein Konto, das mit einem einzigen Benutzernamen, einem Postfach und einer Person verbunden ist."
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Ein VPN verschlüsselt deine Verbindung und verbirgt deine IP-Adresse, sodass es für andere viel schwieriger ist, dein Surfverhalten zu verfolgen oder zu überwachen."
       ],
@@ -4765,6 +4829,10 @@
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Erstelle eine sichere Cloud für ${ memberCount } Mitglied",
+        "Erstelle eine sichere Cloud für ${ memberCount } Mitglieder"
+      ],
       "Create an end-to-end encrypted document.": [
         "Erstelle ein Ende-zu-Ende-verschlüsseltes Dokument."
       ],
@@ -4795,8 +4863,14 @@
       "Current version": [
         "Aktuelle Version"
       ],
+      "Custom email domains": [
+        "Eigene E-Mail-Domains"
+      ],
       "Decrypting your document": [
         "Dein Dokument wird entschlüsselt"
+      ],
+      "Details": [
+        "Details"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitale Signatur verifiziert. Diese Datei wurde von ${ emailAddress } sicher hochgeladen."
@@ -4854,6 +4928,9 @@
       ],
       "email": [
         "E-Mail"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
       ],
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
@@ -5229,6 +5306,9 @@
       "Opening...": [
         "Wird geöffnet..."
       ],
+      "Organization size": [
+        "Organisationsgröße"
+      ],
       "Other accounts": [
         "Andere Konten"
       ],
@@ -5489,6 +5569,9 @@
       "There are no documents in the trash.": [
         "Es befinden sich keine Dokumente im Papierkorb."
       ],
+      "Thinking about this": [
+        "Darüber nachdenken"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Diese Aktion löscht den Link und der Zugang für alle Benutzer wird widerrufen."
       ],
@@ -5638,6 +5721,9 @@
       ],
       "username": [
         "Benutzername"
+      ],
+      "Users": [
+        "Benutzer"
       ],
       "Version number successfully copied to clipboard": [
         "Versionsnummer erfolgreich in die Zwischenablage kopiert"
@@ -6018,6 +6104,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Ermögliche es Bearbeitern, Berechtigungen zu ändern und zu teilen"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Bearbeitern ermöglichen, Berechtigungen zu ändern und zu teilen."
       ],
       "Anonymous": [
         "Anonym"
@@ -6724,11 +6813,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)",
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } Lizenz"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ price } per seat": [
+        "${ price } pro Lizenz"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } Lizenz",
@@ -6791,6 +6887,11 @@
       "Video meetings, ${ n } participant": [
         "Video-Meetings, ${ n } Teilnehmer",
         "Video-Meetings, ${ n } Teilnehmer"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-Lizenzen haben."
       ]
     },
     "Message": {
@@ -8718,6 +8819,9 @@
       "Anything you'd like us to know": [
         "Haben Sie etwas, das Sie uns mitteilen möchten?"
       ],
+      "Ask anything…": [
+        "Frag irgendetwas …"
+      ],
       "Choose password": [
         "Passwort wählen"
       ],
@@ -9663,6 +9767,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Ein Link zu diesem Element wurde in deinem Drive gespeichert. Du kannst ihn später im Bereich „Mit mir geteilt“ aufrufen."
+      ],
+      "Editor permissions": [
+        "Berechtigungen für Bearbeiter"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Bearbeiter können nun die Freigabe verwalten und andere einladen. Du kannst diese Funktion jederzeit in den Freigabeeinstellungen ausschalten."
       ],
       "To edit this document, create a copy that you can modify.": [
         "Um dieses Dokument zu bearbeiten, erstelle eine Kopie, die du ändern kannst."

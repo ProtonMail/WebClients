@@ -1854,6 +1854,9 @@
       "Verify password": [
         "Verifiera lösenord"
       ],
+      "Verify recovery phrase": [
+        "Verifiera återställningsfras"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifiera domänen ${ unverifiedSSODomain.DomainName }"
       ],
@@ -2294,6 +2297,9 @@
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ LUMO_SHORT_APP_NAME } hjälpa dig att skriva, svara på och korrekturläsa din e-post."
+      ],
       "Trial expires on ${ formattedDate }": [
         "Provperiod löper ut den ${ formattedDate }"
       ],
@@ -2580,6 +2586,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ LUMO_SHORT_APP_NAME } skrivassistent, obegränsade hide-my-email-alias och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
@@ -7747,6 +7756,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Denna fras kan inte återställa ditt konto. Du kan generera en ny för att säkerställa att ditt konto kan återställas i framtiden."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "För att skapa icke-privata användarkonton och komma åt deras konton måste du återställa dina administratörsrättigheter."
       ],
@@ -10515,9 +10527,6 @@
       "Available on macOS, Windows, and Linux.": [
         "Tillgänglig på macOS, Windows och Linux."
       ],
-      "Average": [
-        "Genomsnittlig"
-      ],
       "Awaiting transaction": [
         "Väntar på transaktion"
       ],
@@ -10622,6 +10631,9 @@
       ],
       "Change your password": [
         "Ändra ditt lösenord"
+      ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Kontrollera om din återställningsfras kan användas för att helt återställa ditt konto."
       ],
       "Check your network and try again.": [
         "Kontrollera ditt nätverk och försök igen."
@@ -10925,6 +10937,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
+      ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Ladda ner ${ mobileConfigArtifact } och öppna den på varje Mac för att installera profilen. Godkänn den sedan i systeminställningarna."
       ],
       "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
         "Ladda ner ${ powershellArtifact } och kör den på varje enhet som systemanvändare för att automatiskt placera enhetsprofilen."
@@ -11316,6 +11331,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Have some more time to decide without interruption.": [
+        "Ha lite mer tid att bestämma utan avbrott."
+      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Hjälp andra familjer att ge sina barn en trygg start online. Dela denna milstolpe och sprid budskapet."
       ],
@@ -11636,6 +11654,9 @@
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Håll din information mer säker och privat med dessa guider och tips."
+      ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Håll dina lösenord säkra och logga in direkt med automatisk ifyllning på alla enheter."
       ],
       "Key deletion is irreversible!": [
         "Borttagning av nyckel är oåterkalleligt!"
@@ -12038,9 +12059,6 @@
       "per month, billed at ${ price }": [
         "per månad, faktureras med ${ price }"
       ],
-      "Per seat/month": [
-        "Per användarplats/månad"
-      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Uppmanar dig regelbundet att verifiera ditt lösenord för ${ BRAND_NAME } för att säkerställa att du inte glömmer det. Du kommer att bli tillfrågad mer sällan med tiden."
       ],
@@ -12219,6 +12237,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Återställningsfras är inte associerad med några föråldrade nycklar."
+      ],
+      "Recovery phrase verified": [
+        "Återställningsfras verifierad"
       ],
       "Reddit": [
         "Reddit"
@@ -12748,12 +12769,6 @@
       ],
       "This will allow the TV to access your ${ BRAND_NAME } account.": [
         "Detta kommer tillåta TV:n kan komma åt ditt ${ BRAND_NAME }-konto."
-      ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Detta kommer ta bort alla tidigare versioner av dina filer äldre än ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Detta kommer ta bort alla tidigare versioner av dina filer."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Detta kommer neka åtkomst till **${ email }**. Är du säker på att du vill fortsätta?"
@@ -14587,10 +14602,10 @@
       "Billed monthly.": [
         "Faktureras månadsvis."
       ],
-      "Billed seats": [
-        "Fakturerade användarplatser"
-      ],
       "Billing cycle": [
+        "Faktureringsperiod"
+      ],
+      "Billing period": [
         "Faktureringsperiod"
       ],
       "Block": [
@@ -14695,9 +14710,6 @@
       "Common passwords": [
         "Vanliga lösenord"
       ],
-      "Companies": [
-        "Företag"
-      ],
       "Company": [
         "Företag"
       ],
@@ -14767,8 +14779,8 @@
       "Copy IP address to clipboard": [
         "Kopiera IP-adress till urklipp"
       ],
-      "Cost": [
-        "Kostar"
+      "Cost per license": [
+        "Kostnad per licens"
       ],
       "Could you please let us know which provider?": [
         "Kan du berätta vilken leverantör?"
@@ -15229,6 +15241,9 @@
       ],
       "Manage categories": [
         "Hantera kategorier"
+      ],
+      "Managed Companies": [
+        "Hanterade företag"
       ],
       "Mark as": [
         "Markera som"
@@ -25274,6 +25289,9 @@
       "Currency": [
         "Valuta"
       ],
+      "Current cost": [
+        "Nuvarande kostnad"
+      ],
       "Custom": [
         "Anpassad"
       ],
@@ -26619,6 +26637,9 @@
       "Verify your password": [
         "Verifiera ditt lösenord"
       ],
+      "Verify your phrase": [
+        "Verifiera din fras"
+      ],
       "Verifying your card...": [
         "Verifierar ditt kort …"
       ],
@@ -27433,6 +27454,9 @@
       ],
       "View request": [
         "Visa begäran"
+      ],
+      "Waiting for admin approval": [
+        "Väntar på godkännande från administratör"
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kan ${ reject } denna begäran om du inte vill fortsätta."

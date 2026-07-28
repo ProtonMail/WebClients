@@ -118,9 +118,6 @@
       "Bulk restore items from trash": [
         "Massåterställ objekt från papperskorg"
       ],
-      "Bulk select items": [
-        "Välj flera objekt"
-      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -147,6 +144,9 @@
       ],
       "Clear search": [
         "Rensa sök"
+      ],
+      "Clear sort filter": [
+        "Rensa sorteringsfilter"
       ],
       "Close": [
         "Stäng"
@@ -496,9 +496,6 @@
       "Move to Trash": [
         "Flytta till papperskorg"
       ],
-      "Multiple select": [
-        "Välj flera"
-      ],
       "New token": [
         "Ny token"
       ],
@@ -592,6 +589,9 @@
       "Reset": [
         "Återställ"
       ],
+      "Reset filters": [
+        "Återställ filter"
+      ],
       "Reset history": [
         "Återställ historik"
       ],
@@ -636,6 +636,9 @@
       ],
       "See members": [
         "Se medlemmar"
+      ],
+      "Select items": [
+        "Välj objekt"
       ],
       "Send email": [
         "Skicka e-post"
@@ -693,6 +696,9 @@
       ],
       "Submitting report...": [
         "Skickar rapport …"
+      ],
+      "Switch vault": [
+        "Byt valv"
       ],
       "Sync alias": [
         "Synkronisera alias",
@@ -1305,6 +1311,12 @@
       ],
       "PIN codes do not match": [
         "PIN-koder matchar inte"
+      ],
+      "Regex invalid": [
+        "Regex ogiltigt"
+      ],
+      "Regex unsafe": [
+        "Regex osäkert"
       ],
       "Registration failure: ${ message }": [
         "Registreringsfel: ${ message }"

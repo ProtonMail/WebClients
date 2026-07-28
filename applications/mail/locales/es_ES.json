@@ -1135,6 +1135,9 @@
       "Refresh the page": [
         "Actualizar la página"
       ],
+      "Reject": [
+        "Rechazar"
+      ],
       "Remove": [
         "Eliminar"
       ],
@@ -1768,6 +1771,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuario)",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuarios)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dominio personalizado adicional",
         "${ domains } dominios personalizados adicionales"
@@ -1775,6 +1782,13 @@
       "${ ips } dedicated VPN server": [
         "${ ips } servidor VPN dedicado",
         "${ ips } servidores VPN dedicados"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } asistente de IA"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } asistente de IA (para ${ quantity } usuario)",
+        "${ LUMO_APP_NAME } Asistente de IA (para ${ quantity } usuarios)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Licencia de IA de ${ LUMO_APP_NAME }"
@@ -1793,6 +1807,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizado",
+        "${ quantity } dominios personalizados"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licencia de ${ LUMO_APP_NAME } AI",
@@ -7428,6 +7446,9 @@
       "Default email application": [
         "Aplicación de correo electrónico por defecto"
       ],
+      "Details": [
+        "Detalles"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "La detección se realiza en tu dispositivo, por lo que no se envía ningún dato de tus correos electrónicos a nuestros servidores."
       ],
@@ -10950,6 +10971,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuario)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuarios)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Licencia de ${ MEET_APP_NAME }"
       ],
@@ -15138,10 +15163,6 @@
       "Move ${ selectionCount } message": [
         "Mover ${ selectionCount } mensaje",
         "Mover ${ selectionCount } mensajes"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Se ha movido a ${ label }. Los mensajes similares se clasificarán aquí en el futuro.",
-        "Se han movido a ${ label }. Los mensajes similares se clasificarán aquí en el futuro."
       ],
       "Password copied to clipboard": [
         "Se ha copiado la contraseña al portapapeles."

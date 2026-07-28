@@ -1653,9 +1653,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "試用 ${ selected } ${ freeForNDays }"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "免費試用 ${ TRIAL_DURATION_DAYS } 天"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "當您取消時，您的免費試用將不會轉換為付費訂閱，但在試用期結束之前，您仍然可以享受方案福利。之後，您將降級為 ${ BRAND_NAME } Free plan。"
       ],
@@ -13027,70 +13024,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "保持此方案"
-      ],
       "Start using ${ appName }": [
         "開始使用 ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "升級我的方案"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "來談談"
-      ],
-      "Recommended": [
-        "建議"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice }每月"
-      ],
-      "/month /user": [
-        "/月 /使用者"
-      ],
-      "/month /user, billed annually": [
-        "/月 /使用者 每年付款"
-      ],
-      "/month /user, billed biennially": [
-        "/月 /使用者 每兩年付款"
-      ],
-      "Current plan": [
-        "目前方案"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "**每月${ relativePrice }及更多**，讓您存取付費版密碼管理器${ BRAND_NAME }功能!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "**每月${ relativePrice }及更多**，讓您存取付費版VPN${ BRAND_NAME }功能!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "**每月${ relativePrice }及更多**，讓您存取付費版${ BRAND_NAME }功能!"
-      ],
-      "Free forever": [
-        "永久免費"
-      ],
-      "Get in touch with our sales team": [
-        "與銷售團隊聯繫"
-      ],
-      "Includes:": [
-        "包含:"
-      ],
-      "per month": [
-        "每月"
-      ],
-      "per month, billed annually": [
-        "每年，每年收費"
-      ],
-      "per month, billed every month": [
-        "每月，每月收費"
-      ],
-      "per month, billed every two years": [
-        "每月，每兩年收費"
-      ],
       "Secure vault sharing": [
         "安全分享保管庫"
       ],

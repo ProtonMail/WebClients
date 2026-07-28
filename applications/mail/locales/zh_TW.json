@@ -1131,6 +1131,9 @@
       "Refresh the page": [
         "重新整理此頁面"
       ],
+      "Reject": [
+        "婉拒"
+      ],
       "Remove": [
         "移除"
       ],
@@ -1763,11 +1766,20 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 撰寫幫手（供 ${ quantity } 位使用者使用）"
+      ],
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
       "${ ips } dedicated VPN server": [
         "${ ips } 專用伺服器"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助理"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助理（供 ${ quantity } 位使用者使用）"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI 授權"
@@ -1786,6 +1798,9 @@
       ],
       "${ price } per user": [
         "每使用者${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個自訂網域"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI 授權"
@@ -7308,6 +7323,9 @@
       "Default email application": [
         "預設郵件應用程式"
       ],
+      "Details": [
+        "詳細資訊"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "於您的裝置執行偵測，無電子郵件內容被傳送至我們的伺服器。"
       ],
@@ -10777,6 +10795,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME }（適用於 ${ quantity } 名使用者）"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } 授權"
       ],
@@ -14848,9 +14869,6 @@
       ],
       "Move ${ selectionCount } message": [
         "移動 ${ selectionCount } 封郵件"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "已移至 ${ label }。未來類似的訊息將會分類到此處。"
       ],
       "Password copied to clipboard": [
         "密碼已複製至剪貼簿"

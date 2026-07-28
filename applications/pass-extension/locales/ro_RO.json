@@ -118,9 +118,6 @@
       "Bulk restore items from trash": [
         "Restaurare grup de articole din gunoi"
       ],
-      "Bulk select items": [
-        "Selectare grup de articole"
-      ],
       "Cancel": [
         "Anulare"
       ],
@@ -495,9 +492,6 @@
       ],
       "Move to Trash": [
         "Mutare în «Gunoi»"
-      ],
-      "Multiple select": [
-        "Selectare multiplă"
       ],
       "New token": [
         "Cod de acces nou"
@@ -1638,7 +1632,7 @@
         "${ PASS_SHORT_APP_NAME } este momentan deconectat. Deschideți extensia pentru a-l debloca."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
-        "Modul deconectat ${ PASS_SHORT_APP_NAME } activat."
+        "Modul deconectat al ${ PASS_SHORT_APP_NAME } este activat."
       ],
       "${ payload.count } invite successfully sent": [
         "Invitații trimise: ${ payload.count }",
@@ -1999,7 +1993,7 @@
         "Activați autoblocarea pentru a securiza datele."
       ],
       "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
-        "Activați modul de deconectare pentru a vă accesa datele ${ PASS_SHORT_APP_NAME } dacă pierdeți conectivitatea la internet sau dacă serverele ${ BRAND_NAME } nu sunt accesibile."
+        "Activați modul deconectat pentru a vă accesa datele ${ PASS_SHORT_APP_NAME } dacă pierdeți conexiunea la internet sau dacă serverele ${ BRAND_NAME } nu sunt accesibile."
       ],
       "Enabling biometrics auto-lock": [
         "Se activează autoblocarea cu date biometrice."
@@ -2011,7 +2005,7 @@
         "Activare blocare automată a desktopului"
       ],
       "Enabling offline mode...": [
-        "Se activează modul fără conexiune..."
+        "Se activează modul deconectat..."
       ],
       "Enabling password auto-lock": [
         "Se activează autoblocarea cu parolă."
@@ -2453,7 +2447,7 @@
         "Confirmați parola secundară pentru autoblocare cu parola."
       ],
       "Please confirm your second password in order to enable offline mode": [
-        "Confirmați parola secundară pentru activare mod fără conexiune."
+        "Confirmați parola secundară pentru activare mod deconectat."
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmați parola secundară pentru a exporta datele ${ PASS_APP_NAME }."
@@ -5396,7 +5390,7 @@
         "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
-        "Modul deconectat ${ PASS_SHORT_APP_NAME } dezactivat."
+        "Modul deconectat al ${ PASS_SHORT_APP_NAME } este activat."
       ],
       "2 consecutive dots are not allowed": [
         "Nu se acceptă două puncte simultan."

@@ -719,6 +719,9 @@
       "Refresh the page": [
         "पन्ना रिफ्रेश करें"
       ],
+      "Reject": [
+        "अस्वीकार करें"
+      ],
       "Remove": [
         "हटाएं"
       ],
@@ -1072,6 +1075,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe लेखन सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ BRAND_NAME } Scribe लेखन सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } अतिरिक्त कस्टम डोमेन",
         "${ domains } अतिरिक्त कस्टम डोमेन"
@@ -1079,6 +1086,13 @@
       "${ ips } dedicated VPN server": [
         "${ ips } समर्पित VPN सर्वर",
         "${ ips } समर्पित VPN सर्वर"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI सहायक"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ LUMO_APP_NAME } AI सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI लाइसेंस"
@@ -1097,6 +1111,10 @@
       ],
       "${ price } per user": [
         "${ price } प्रति यूजर"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } कस्टम डोमेन",
+        "${ quantity } कस्टम डोमेन"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI लाइसेंस",
@@ -5671,6 +5689,9 @@
         "कार्यक्रम मिटा रहें है...",
         "कार्यक्रम मिटा रहें है..."
       ],
+      "Details": [
+        "जानकारी"
+      ],
       "Discard changes?": [
         "परिवर्तन ख़ारिज करें?"
       ],
@@ -7864,6 +7885,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } उपयोगकर्ता के लिए)",
+        "${ MEET_APP_NAME } (${ quantity } उपयोगकर्ताओं के लिए)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } लाइसेंस"
       ],

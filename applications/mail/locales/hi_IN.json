@@ -1135,6 +1135,9 @@
       "Refresh the page": [
         "पन्ना रिफ्रेश करें"
       ],
+      "Reject": [
+        "अस्वीकार करें"
+      ],
       "Remove": [
         "हटाएं"
       ],
@@ -1765,6 +1768,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe लेखन सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ BRAND_NAME } Scribe लेखन सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } अतिरिक्त कस्टम डोमेन",
         "${ domains } अतिरिक्त कस्टम डोमेन"
@@ -1772,6 +1779,13 @@
       "${ ips } dedicated VPN server": [
         "${ ips } समर्पित VPN सर्वर",
         "${ ips } समर्पित VPN सर्वर"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI सहायक"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ LUMO_APP_NAME } AI सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } एआई लाइसेंस"
@@ -1790,6 +1804,10 @@
       ],
       "${ price } per user": [
         "${ price } प्रति यूजर"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } कस्टम डोमेन",
+        "${ quantity } कस्टम डोमेन"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI लाइसेंस",
@@ -7419,6 +7437,9 @@
       "Default email application": [
         "डिफ़ॉल्ट ईमेल आवेदन"
       ],
+      "Details": [
+        "जानकारी"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "डिटेक्शन आपके डिवाइस पर होता है, इसलिए आपके ईमेल से कोई भी डेटा हमारे सर्वर पर नहीं भेजा जाता है।"
       ],
@@ -10926,6 +10947,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } उपयोगकर्ता के लिए)",
+        "${ MEET_APP_NAME } (${ quantity } उपयोगकर्ताओं के लिए)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } लाइसेंस"
       ],
@@ -15114,10 +15139,6 @@
       "Move ${ selectionCount } message": [
         "${ selectionCount } संदेश ले जाएँ",
         "${ selectionCount } संदेशों को स्थानांतरित करें"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "${ label } में स्थानांतरित किया गया। भविष्य में इसी तरह के संदेश को यहां वर्गीकृत किया जाएगा।",
-        "${ label } में स्थानांतरित किया गया। भविष्य में इसी तरह के संदेशों को यहां वर्गीकृत किया जाएगा।"
       ],
       "Password copied to clipboard": [
         "पासवर्ड क्लिपबोर्ड पे कॉपी किया"
