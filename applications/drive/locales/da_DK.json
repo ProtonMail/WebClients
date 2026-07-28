@@ -1320,6 +1320,18 @@
       ],
       "Skip": [
         "Spring over"
+      ],
+      "Clear conversation": [
+        "Ryd samtale"
+      ],
+      "Reject": [
+        "Afvis"
+      ],
+      "Send": [
+        "Send"
+      ],
+      "Stop": [
+        "Stop"
       ]
     },
     "Action: Docs": {
@@ -1418,6 +1430,25 @@
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } licens",
         "${ seats } ${ MEET_APP_NAME } licenser"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } bruger)",
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } brugere)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } bruger)",
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } brugere)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } bruger)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } brugere)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } brugerdefineret domæne",
+        "${ quantity } brugerdefinerede domæner"
       ]
     },
     "Alert": {
@@ -7470,6 +7501,9 @@
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "For at kunne søge skal vi indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } normalt, og vi giver dig besked når indekseringen er færdig. Hvis du forlader denne side bliver indekseringen sat på pause og genoptages så når du vender tilbage."
+      ],
+      "Thinking about this": [
+        "Overvejer..."
       ]
     },
     "info": {
@@ -11269,6 +11303,9 @@
       ],
       "Optional feedback": [
         "Valgfri feedback"
+      ],
+      "Ask anything…": [
+        "Spørg om hvad som helst..."
       ]
     },
     "Placeholder for contact group name": {
@@ -14435,6 +14472,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-plads",
         "${ seats } ${ MEET_APP_NAME }-pladser"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (til ${ quantity } bruger)",
+        "${ MEET_APP_NAME } (til ${ quantity } brugere)"
+      ],
+      "${ price } per seat": [
+        "${ price } pr. plads"
       ]
     },
     "meet_2025: Info": {

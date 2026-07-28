@@ -1261,6 +1261,12 @@
       ],
       "Your 3 GB bonus": [
         "Vaš bonus od 3 GB"
+      ],
+      "Reject": [
+        "Odbiti"
+      ],
+      "Send": [
+        "Pošalji"
       ]
     },
     "Actions": {
@@ -1356,6 +1362,24 @@
       ],
       "Writing assistant seats": [
         "Licence pomoćnika za pisanje"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)",
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)",
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)",
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)",
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } prilagođena domena",
+        "${ quantity } prilagođene domene",
+        "${ quantity } prilagođenih domena"
       ]
     },
     "Alert": {
@@ -13931,6 +13955,11 @@
         "${ seats } ${ MEET_APP_NAME } licenca",
         "${ seats } ${ MEET_APP_NAME } licence",
         "${ seats } ${ MEET_APP_NAME } licenci"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)"
       ]
     },
     "meet_2025: Feature": {

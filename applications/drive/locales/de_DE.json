@@ -1314,6 +1314,18 @@
       ],
       "Skip": [
         "Überspringen"
+      ],
+      "Clear conversation": [
+        "Unterhaltung entfernen"
+      ],
+      "Reject": [
+        "Ablehnen"
+      ],
+      "Send": [
+        "Senden"
+      ],
+      "Stop": [
+        "Stoppen"
       ]
     },
     "Action: Docs": {
@@ -1412,6 +1424,25 @@
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } Lizenz",
         "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)",
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-Assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)",
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)",
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } benutzerdefinierte Domäne",
+        "${ quantity } benutzerdefinierte Domänen"
       ]
     },
     "Alert": {
@@ -7474,6 +7505,9 @@
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "Um die Suche zu aktivieren, müssen deine Dateien lokal indiziert werden. Du kannst ${ DRIVE_APP_NAME } weiterhin wie gewohnt nutzen, und du wirst benachrichtigt, sobald die Indizierung abgeschlossen ist. Wenn du diese Seite verlässt, wird die Indizierung unterbrochen und fortgesetzt, sobald du zurückkehrst."
+      ],
+      "Thinking about this": [
+        "Darüber nachdenken"
       ]
     },
     "info": {
@@ -11330,6 +11364,9 @@
       ],
       "Optional feedback": [
         "Optionales Feedback"
+      ],
+      "Ask anything…": [
+        "Frag irgendetwas …"
       ]
     },
     "Placeholder for contact group name": {
@@ -14483,6 +14520,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } Lizenz",
         "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)",
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)"
+      ],
+      "${ price } per seat": [
+        "${ price } pro Lizenz"
       ]
     },
     "meet_2025: Info": {

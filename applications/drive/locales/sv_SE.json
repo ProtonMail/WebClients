@@ -1320,6 +1320,18 @@
       ],
       "Re-indexing in progress": [
         "Omindexering pågår"
+      ],
+      "Clear conversation": [
+        "Rensa konversation"
+      ],
+      "Reject": [
+        "Avvisa"
+      ],
+      "Send": [
+        "Skicka"
+      ],
+      "Stop": [
+        "Stoppa"
       ]
     },
     "Action: Docs": {
@@ -1418,6 +1430,25 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe skrivassistent (för ${ quantity } användare)",
+        "${ BRAND_NAME } Scribe skrivassistent för ${ quantity } användare)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)",
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)",
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } anpassad domän",
+        "${ quantity } anpassade domäner"
       ]
     },
     "Alert": {
@@ -11299,6 +11330,9 @@
       ],
       "Optional feedback": [
         "Valfri feedback"
+      ],
+      "Ask anything…": [
+        "Fråga vad som helst …"
       ]
     },
     "Placeholder for contact group name": {
@@ -14452,6 +14486,10 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (för ${ quantity } användare)",
+        "${ MEET_APP_NAME } (för ${ quantity } användare)"
       ]
     },
     "Notitication": {

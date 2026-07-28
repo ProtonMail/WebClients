@@ -1304,6 +1304,12 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "體驗 ${ BRAND_NAME } Workspace"
+      ],
+      "Reject": [
+        "婉拒"
+      ],
+      "Send": [
+        "送出"
       ]
     },
     "Action: Sheets": {
@@ -1390,6 +1396,18 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI 授權"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 撰寫幫手（供 ${ quantity } 位使用者使用）"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助理"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助理（供 ${ quantity } 位使用者使用）"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個自訂網域"
       ]
     },
     "Alert": {
@@ -13963,6 +13981,9 @@
       ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } 授權"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME }（適用於 ${ quantity } 名使用者）"
       ]
     },
     "meet_2025: Info": {
