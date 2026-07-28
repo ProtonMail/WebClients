@@ -1705,9 +1705,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "جرب ${ selected } ${ freeForNDays }"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "جربه مجانًا لمدة ${ TRIAL_DURATION_DAYS } يومًا"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "عند الإلغاء، لن تُحوَّل فترتك التجريبية المجانية إلى اشتراك مدفوع، وبإمكانك الاستفادة من مزايا الباقة حتى نهاية الفترة التجريبية. بعد ذلك، سيُخفَّض اشتراكك إلى باقة ${ BRAND_NAME } Free."
       ],
@@ -13933,70 +13930,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "الاحتفاظ بهذه الخطة"
-      ],
       "Start using ${ appName }": [
         "ابدأ باستخدام ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "ترقية خطتي"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "لنتحدث"
-      ],
-      "Recommended": [
-        "موصى به"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } شهريًا"
-      ],
-      "/month /user": [
-        "/شهريًا /للمستخدم"
-      ],
-      "/month /user, billed annually": [
-        "/شهريًا /للمستخدم، تُحتسب الفاتورة سنويًا"
-      ],
-      "/month /user, billed biennially": [
-        "/شهريًا /للمستخدم، تُحتسب الفاتورة كل سنتين"
-      ],
-      "Current plan": [
-        "الخطة الحالية"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "مقابل **${ relativePrice } شهريًا** فقط إضافية، يمكنك الوصول إلى مدير كلمات المرور المميز من ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "مقابل **${ relativePrice } شهريًا** فقط إضافية، يمكنك الوصول إلى خدمة VPN المميزة من ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "مقابل **${ relativePrice } إضافية شهريًا** فقط، ستحصل على وصول إلى جميع خدمات ${ BRAND_NAME } المميزة!"
-      ],
-      "Free forever": [
-        "مجاني للأبد"
-      ],
-      "Get in touch with our sales team": [
-        "تواصل مع فريق المبيعات لدينا"
-      ],
-      "Includes:": [
-        "تتضمن:"
-      ],
-      "per month": [
-        "شهريًا"
-      ],
-      "per month, billed annually": [
-        "شهريًا، تُدفع الفاتورة سنويًا"
-      ],
-      "per month, billed every month": [
-        "شهريًا، تُدفع الفاتورة كل شهر"
-      ],
-      "per month, billed every two years": [
-        "شهريًا، تُدفع الفاتورة كل عامين"
-      ],
       "Secure vault sharing": [
         "مشاركة آمنة للخزنة"
       ],

@@ -1283,6 +1283,9 @@
       "Verify password": [
         "비밀번호 확인"
       ],
+      "Verify recovery phrase": [
+        "복구 키 확인"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "${ unverifiedSSODomain.DomainName } 도메인 인증하기"
       ],
@@ -1378,6 +1381,9 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } 이용 권한"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 (${ quantity }명 사용자용)"
       ],
       "${ price } per dedicated server": [
         "전용 서버당 ${ price }"
@@ -1619,6 +1625,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "이메일 생산성을 한 단계 더 높은 경지로. ${ LUMO_SHORT_APP_NAME }가 이메일의 작성과 답장, 교정에 도움을 드립니다."
       ]
     },
     "Attached ics file error": {
@@ -1668,9 +1677,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "${ selected }을(를) ${ freeForNDays }로 사용해 보세요"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "${ TRIAL_DURATION_DAYS }일 무료 체험하세요"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "취소시 무료 체험이 유료 구독으로 전환되지 않지만, 체험 기간이 끝날 때까지 플랜의 혜택을 계속 누리실 수 있습니다. 기간 종료 후 ${ BRAND_NAME } 무료 플랜으로 자동 다운그레이드됩니다."
       ],
@@ -1679,6 +1685,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "체험 기간 동안 최대 ${ TRIAL_MAX_LUMO_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 계정을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 시트를 포함할 수 있습니다."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "체험 기간 동안 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 Scribe 사용 권한을 추가할 수 있습니다."
@@ -1850,11 +1859,17 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "이메일과 일정을 종단간 암호화로 보호하세요. 15개 이메일 주소, 사용자 지정 도메인 지원, 무제한 hide-my-email 별칭 등이 포함되어 있습니다."
@@ -5195,6 +5210,9 @@
       "This label name is not available. Please choose a different name.": [
         "이 라벨 이름은 사용할 수 없어요. 다른 이름을 선택하세요."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "이 복구 키로 계정을 복구할 수 없습니다. 추후 계정 복구를 위해 복구 키를 새로 생성할 수 있습니다."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "개인이 아닌 사용자를 생성하거나 해당 계정에 접근하도록 하려면, 관리자 권한을 복원해야만 합니다."
       ],
@@ -6764,6 +6782,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME }에 글쓰기 도우미가 포함됩니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }"
       ],
@@ -7253,6 +7277,9 @@
       "Change your password": [
         "비밀번호를 변경하십시오"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "계정을 완전하게 복구하기 위해 복구 키 사용 가능 여부를 확인하세요."
+      ],
       "Choose a plan that works best for you.": [
         "당신에게 가장 적합한 플랜을 선택하세요."
       ],
@@ -7498,6 +7525,9 @@
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "프로파일 설치를 위해 ${ mobileConfigArtifact } 다운로드 후 각각의 Mac에서 해당 프로파일을 실행합니다. 그다음 시스템 설정에서 프로파일(macOS 설정상에선 프로필)을 승인합니다."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "자동으로 기기에 프로파일이 설치될 수 있도록 ${ powershellArtifact } 다운로드 후 각 기기에 시스템 사용자로 실행하세요."
       ],
       "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
         "프로파일을 자동 삭제하려면 ${ removeScriptLink } 다운로드 후 시스템 사용자로 로그인한 상태에서 해당 프로파일을 실행하십시오."
@@ -8432,6 +8462,9 @@
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
       ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "사용 중인 MDM으로 모든 Mac에 ${ mobileConfigArtifact }을(를) 배포하세요."
+      ],
       "Recently used servers:": [
         "최근 사용된 서버:"
       ],
@@ -8467,6 +8500,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "복구 방법이 오래된 키와 연결되지 않았습니다."
+      ],
+      "Recovery phrase verified": [
+        "복구 키가 확인되었습니다"
       ],
       "Reddit": [
         "Reddit"
@@ -8914,6 +8950,9 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "암호 재설정 후 잠긴 데이터를 해독하고 보려면 복구 방법을 선택하세요."
+      ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "VPN 항상 켜기를 활성화하려면 모든 Mac에 구성 프로파일이 설치되어 있어야 합니다. ${ VPN_APP_NAME } 클라이언트가 기기에 제자리로 설치되면 자동으로 기기의 프로파일을 강제화합니다."
       ],
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
         "VPN 항상 켜기를 활성화하려면 모든 기기에서 ${ policiesPath }에 접근하도록 기기 프로파일이 필요합니다. ${ VPN_APP_NAME } 클라이언트가 감지 후 프로파일을 자동으로 설치합니다."
@@ -9942,6 +9981,12 @@
       ],
       "City": [
         "시/군/구"
+      ],
+      "Client": [
+        "클라이언트"
+      ],
+      "Client version": [
+        "클라이언트 버전"
       ],
       "Code is 6 digits without spaces": [
         "코드는 공백 없이 6자리에요."
@@ -11186,8 +11231,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 추가"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 추가"
       ],
       "Add-on with free trial": [
         "무료 체험 애드온"
@@ -11590,6 +11641,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 와(과) ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ],
       "${ n } calendar": [
         "캘린더 ${ n }개"
@@ -13114,70 +13168,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "이 플랜 유지"
-      ],
       "Start using ${ appName }": [
         "${ appName } 사용 시작"
-      ],
-      "Upgrade my plan": [
-        "내 플랜 업그레이드"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "상담 및 계약 필요"
-      ],
-      "Recommended": [
-        "권장"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice }/월간"
-      ],
-      "/month /user": [
-        "/월 /사용자"
-      ],
-      "/month /user, billed annually": [
-        "/월간 /사용자 당, 연간 결제됨"
-      ],
-      "/month /user, billed biennially": [
-        "/월 /사용자, 매년 결제됨"
-      ],
-      "Current plan": [
-        "현재 플랜"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 비밀번호 관리자를 사용하실 수 있습니다!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 VPN 서비스를 사용하실 수 있습니다!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
-      ],
-      "Free forever": [
-        "영원히 무료"
-      ],
-      "Get in touch with our sales team": [
-        "자사 세일즈 팀에 문의하세요."
-      ],
-      "Includes:": [
-        "포함:"
-      ],
-      "per month": [
-        "매월"
-      ],
-      "per month, billed annually": [
-        "월 기준, 매년마다 납부됨"
-      ],
-      "per month, billed every month": [
-        "월 기준, 개월마다 납부됨"
-      ],
-      "per month, billed every two years": [
-        "월 기준, 2년마다 납부됨"
-      ],
       "Secure vault sharing": [
         "안전한 금고 공유"
       ],
@@ -13842,7 +13837,7 @@
         "정보 보호 기능이 포함된 비밀번호 관리자"
       ],
       "Secure email that protects your privacy": [
-        "프라이버시를 지켜주는 이메일로 보호하세요."
+        "나의 프라이버시를 지켜주는 안전한 이메일"
       ],
       "Your gateway to online freedom": [
         "온라인 자유를 위한 안전한 길"
@@ -15915,6 +15910,9 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses }개 전용 서버"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ maxAi }명 사용자용 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ],
       "${ n } calendar per user": [
         "사용자 당 ${ n }개 캘린더"
@@ -18156,6 +18154,9 @@
       "Verify your password": [
         "비밀번호 확인"
       ],
+      "Verify your phrase": [
+        "복구 키 확인"
+      ],
       "Verifying your card...": [
         "카드 인증 중..."
       ],
@@ -18653,6 +18654,9 @@
       "Could not enable admin access for ${ n } user": [
         "${ n }명 사용자에 대한 관리자 접근 권한 활성화를 할 수 없음"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "관리자 권한 활성화 불가 : ${ unprivatizationResult.error }"
+      ],
       "Enable manually": [
         "수동 활성화"
       ],
@@ -18706,6 +18710,9 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "계속하려면 데이터 접근을 하거나 비밀번호 재설정을 위해 사용자 권한 요청이 필요합니다."
+      ],
+      "Waiting for admin approval": [
+        "관리자의 승인을 기다리는 중"
       ],
       "You can safely remove this user from your organization.": [
         "사용자의 조직에서 해당 사용자를 안전하게 제거할 수 있습니다."
@@ -18879,8 +18886,14 @@
       "Invitation sent, awaiting reply from the invited member": [
         "초대장을 보냈습니다. 초대받은 구성원의 응답을 기다리고 있습니다."
       ],
+      "Invited": [
+        "초대됨"
+      ],
       "Pending": [
         "보류 중"
+      ],
+      "Requested": [
+        "요청됨"
       ],
       "SSO user provided by your identity provider": [
         "SSO 사용자는 사용자의 정보 제공사로부터 제공되었습니다."
