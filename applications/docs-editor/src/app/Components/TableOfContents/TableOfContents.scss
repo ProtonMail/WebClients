@@ -1,0 +1,122 @@
+.table-of-contents {
+	--docs-mobile-toc-top: calc(var(--docs-editor-toolbar-height) + 2rem);
+	--docs-toc-header-padding-top: 2rem;
+
+	inline-size: 100%;
+	block-size: 100%;
+
+	.toc-header-title {
+		transition:
+			transform 0.2s ease-in-out,
+			opacity 0.2s ease-in-out,
+			max-inline-size 0.2s ease-in-out;
+	}
+
+	.toc-list {
+		transition:
+			transform 0.2s ease-in-out,
+			opacity 0.2s ease-in-out;
+	}
+
+	.toc-list-container {
+		transition: opacity 0.2s ease-in-out;
+	}
+
+	.toc-header {
+		padding-block-start: 0;
+		position: fixed;
+		inset-block-start: var(--docs-mobile-toc-top);
+		inset-inline-start: 0;
+		pointer-events: auto;
+	}
+
+	&.is-expanded {
+		inline-size: 100%;
+		block-size: 100%;
+		min-block-size: 0;
+		overflow: hidden;
+
+		.toc-list-container {
+			flex: 1 1 0;
+			min-block-size: 0;
+			padding-block-start: var(--docs-mobile-toc-top);
+		}
+	}
+
+	&:not(.is-expanded) {
+		inline-size: auto;
+		block-size: auto;
+
+		.toc-header-title {
+			transform: translateX(calc(-100% - 64px));
+			opacity: 0;
+			max-inline-size: 0;
+		}
+
+		.toc-list {
+			transform: translateX(calc(-100% - 20px));
+			opacity: 0;
+		}
+
+		.toc-list-container {
+			opacity: 0;
+			overflow: hidden;
+		}
+	}
+
+	@media (width >= 816px) {
+		.toc-header {
+			position: relative;
+			inset-block-start: auto;
+			inset-inline-start: auto;
+			padding-block-start: var(--docs-toc-header-padding-top);
+		}
+
+		.toc-list {
+			transition: transform 0.2s ease-in-out;
+		}
+
+		.toc-list-container {
+			transition: none;
+		}
+
+		&.is-expanded {
+			overflow: hidden;
+
+			.toc-list-container {
+				padding-block-start: 0;
+			}
+		}
+
+		&:not(.is-expanded) {
+			position: relative;
+			inline-size: 100%;
+			block-size: auto;
+
+			.toc-header-title {
+				max-inline-size: unset;
+			}
+
+			.toc-list {
+				opacity: 1;
+			}
+
+			.toc-list-container {
+				position: absolute;
+				inset-block-start: 0;
+				inset-inline-start: 0;
+				inline-size: 100%;
+				block-size: 0;
+				padding: 0;
+				opacity: 1;
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+@media print {
+	.table-of-contents {
+		display: none !important;
+	}
+}
