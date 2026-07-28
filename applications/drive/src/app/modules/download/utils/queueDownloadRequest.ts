@@ -63,7 +63,6 @@ export function queueDownloadRequest({
     const targetType = isPhoto ? NodeType.Photo : NodeType.File;
     const isSingleFileDownload = nodes.length === 1 && nodes[0].type === targetType;
     const unsupportedStatus = containsUnsupportedFile ? IssueStatus.Detected : undefined;
-    const signatureIssueAllDecision = skipSignatureCheck ? IssueStatus.Approved : undefined;
     const { addDownloadItem } = useDownloadManagerStore.getState();
 
     if (isSingleFileDownload) {
@@ -81,7 +80,6 @@ export function queueDownloadRequest({
             unsupportedFileDetected: unsupportedStatus,
             isPhoto,
             shouldScanForMalware,
-            signatureIssueAllDecision,
             skipSignatureCheck,
         });
         requestedDownloads.set(downloadId, nodes);
@@ -99,7 +97,6 @@ export function queueDownloadRequest({
         unsupportedFileDetected: unsupportedStatus,
         isPhoto,
         shouldScanForMalware,
-        signatureIssueAllDecision,
         skipSignatureCheck,
     });
     requestedDownloads.set(downloadId, nodes);
