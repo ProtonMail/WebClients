@@ -35,6 +35,7 @@ export const useMeetingAuthentication = () => {
                     maxParticipants: 0,
                     expirationTime: 0,
                     roomName: '',
+                    isPersonalRoom: false,
                 };
             }
 
@@ -75,6 +76,7 @@ export const useMeetingAuthentication = () => {
                     maxDuration: meetingInfo.MeetingInfo.MaxDuration,
                     maxParticipants: meetingInfo.MeetingInfo.MaxParticipants,
                     expirationTime: meetingInfo.MeetingInfo.ExpirationTime ?? 0,
+                    isPersonalRoom: !!meetingInfo.MeetingInfo.PersonalMeeting,
                 };
             } catch (error) {
                 const { code, message } = getApiError(error);
