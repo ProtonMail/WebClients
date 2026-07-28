@@ -212,20 +212,21 @@ const ConfigureSamlContent = ({
                             {renderRemoveSSODomain && (
                                 <RemoveSSODomain domain={domain} onSuccess={onRemoveDomain} {...removeSSODomainProps} />
                             )}
-                            <Tooltip title={c('Action').t`Remove domain`}>
-                                <Button
-                                    color="danger"
-                                    shape="ghost"
-                                    title={c('Action').t`Remove domain`}
-                                    icon
-                                    onClick={() => {
-                                        setRemoveSSODomainOpen(true);
-                                    }}
-                                    disabled={!permissions?.['account.sso_config.delete']}
-                                >
-                                    <IcCrossBig alt="" />
-                                </Button>
-                            </Tooltip>
+                            {permissions?.['account.domain.delete'] && (
+                                <Tooltip title={c('Action').t`Remove domain`}>
+                                    <Button
+                                        color="danger"
+                                        shape="ghost"
+                                        title={c('Action').t`Remove domain`}
+                                        icon
+                                        onClick={() => {
+                                            setRemoveSSODomainOpen(true);
+                                        }}
+                                    >
+                                        <IcCrossBig alt="" />
+                                    </Button>
+                                </Tooltip>
+                            )}
                         </>
                     )}
                 </SettingsLayoutRight>
@@ -360,7 +361,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const hasSsoConfig = samlSSO.configs.some((config) => config.Enabled);
     const domain: Domain | undefined = ssoDomains.find(({ ID }) => ID === preferredDomainID) || ssoDomains[0];
     // Domain addons are not currently supported on vpn or pass b2b plans, so ignoring any addon upsell here.
-    const canAddSsoDomain = customDomains.length !== organization.MaxDomains;
+    const canAddSsoDomain = customDomains.length !== organization.MaxDomains && permissions?.['account.domain.create'];
 
     return (
         <>
