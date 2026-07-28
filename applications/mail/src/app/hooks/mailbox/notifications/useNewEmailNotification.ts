@@ -1,7 +1,5 @@
 import { useHistory } from 'react-router-dom';
 
-import { c, msgid } from 'ttag';
-
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
@@ -12,6 +10,7 @@ import { EVENT_ACTIONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isImported } from '@proton/shared/lib/mail/messages';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -73,36 +72,32 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
         notifier.push(...disabledCategoriesIDs);
     }
 
+    const notify = (message: Message) => {
+        void displayNotification({
+            message,
+            history,
+            mailSettings,
+            notifier,
+            onOpenElement,
+            isCategoryViewEnabled,
+            disabledCategoriesIDs,
+        });
+    };
+
     // Regular messages notification
     useSubscribeEventManager(({ Messages = [] }: Event) => {
-        const notificationsToShow = Messages.filter((event) => messageFilter(event, notifier)).map(({ Message }) => {
-            if (Message) {
-                return Message;
-            }
-        }) as Message[];
+        const notificationsToShow = Messages.filter((event) => messageFilter(event, notifier))
+            .map(({ Message }) => Message)
+            .filter(isTruthy);
 
         if (isWindows() && notificationsToShow.length > MAX_WINDOWS_NOTIFICATIONS) {
             void displayGroupedNotification({
-                body: c('Desktop notification body').ngettext(
-                    msgid`${notificationsToShow.length} new message`,
-                    `${notificationsToShow.length} new messages`,
-                    notificationsToShow.length
-                ),
+                messageCount: notificationsToShow.length,
                 history,
                 onOpenElement,
             });
         } else {
-            notificationsToShow.forEach((value) => {
-                void displayNotification({
-                    message: value,
-                    history,
-                    mailSettings,
-                    notifier,
-                    onOpenElement,
-                    isCategoryViewEnabled,
-                    disabledCategoriesIDs,
-                });
-            });
+            notificationsToShow.forEach(notify);
         }
     });
 
@@ -132,17 +127,7 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
                 }
             });
 
-            notificationToDisplay.forEach((value) => {
-                void displayNotification({
-                    message: value,
-                    history,
-                    mailSettings,
-                    notifier,
-                    onOpenElement,
-                    isCategoryViewEnabled,
-                    disabledCategoriesIDs,
-                });
-            });
+            notificationToDisplay.forEach(notify);
         });
     });
 };
