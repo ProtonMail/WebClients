@@ -23,6 +23,10 @@ export const PERMISSIONS = [
     'account.sso_config.delete',
     'account.activity_log.read',
     'account.activity_log.export',
+    'account.domain.create',
+    'account.domain.read',
+    'account.domain.update',
+    'account.domain.delete',
 ] as const;
 
 export type Permission = (typeof PERMISSIONS)[number];
