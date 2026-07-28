@@ -47,6 +47,31 @@ export const getTabFrames = async (tabId: TabId, options?: { parseUrl: boolean }
         }, new Map());
     });
 
+/** Breadth-first frame ordering: the top-level document first, then each successive
+ * level of descendants. `webNavigation.getAllFrames` makes no ordering guarantee, so
+ * any traversal that must give the top-level document priority (eg: resolving which
+ * frame answers a keyboard-initiated autofill trigger) should order through here. */
+export const getFramesTopFirst = (frames: Frames): FrameId[] => {
+    const children = new Map<FrameId, FrameId[]>();
+    const ordered: FrameId[] = [];
+
+    frames.forEach(({ frameId, parent }) => {
+        if (parent === null) ordered.push(frameId);
+        else children.set(parent, (children.get(parent) ?? []).concat(frameId));
+    });
+
+    /** Frame `0` is always the top-level document: sorting roots numerically
+     * guarantees it is visited first. Orphaned roots trail behind it. */
+    ordered.sort((a, b) => a - b);
+
+    for (let idx = 0; idx < ordered.length; idx++) {
+        const descendants = children.get(ordered[idx]);
+        if (descendants) ordered.push(...descendants);
+    }
+
+    return ordered;
+};
+
 /** Returns the path from target frame to root frame (leaf to root order) */
 export const getFramePath = (frames: Frames, frameId: FrameId): FrameId[] => {
     if (frameId === 0) return [0];

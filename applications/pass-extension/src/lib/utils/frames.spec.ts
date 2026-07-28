@@ -1,7 +1,8 @@
 import browser from '@proton/pass/lib/globals/browser';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 
 import type { AutofillableFrames } from './frames';
-import { getAutofillableFrames, getFramePath, getTabFrames, validateFramePath } from './frames';
+import { getAutofillableFrames, getFramePath, getFramesTopFirst, getTabFrames, validateFramePath } from './frames';
 
 const getAllFrames = browser.webNavigation.getAllFrames as jest.Mock;
 const tabId = 42;
@@ -60,6 +61,37 @@ describe('inline service', () => {
 
             getAllFrames.mockResolvedValue([]);
             expect(await getTabFrames(tabId)).toEqual(new Map());
+        });
+    });
+
+    describe('getFramesTopFirst', () => {
+        /** `Frames` entries, in map insertion order */
+        const framesOf = (...entries: [frameId: number, parent: MaybeNull<number>][]) =>
+            new Map(entries.map(([frameId, parent]) => [frameId, { parent, frameId, origin: null, secure: null }]));
+
+        test('should handle an empty frame map', () => {
+            expect(getFramesTopFirst(new Map())).toEqual([]);
+        });
+
+        test('should handle main frame only', () => {
+            expect(getFramesTopFirst(framesOf([0, null]))).toEqual([0]);
+        });
+
+        test('should walk a nested chain', () => {
+            expect(getFramesTopFirst(framesOf([0, null], [1, 0], [2, 1]))).toEqual([0, 1, 2]);
+        });
+
+        test('should walk breadth-first across siblings', () => {
+            /** DFS would yield `[0, 1, 3, 2]` — siblings must come before grandchildren */
+            expect(getFramesTopFirst(framesOf([0, null], [1, 0], [2, 0], [3, 1]))).toEqual([0, 1, 2, 3]);
+        });
+
+        test('should visit the top-frame before other roots', () => {
+            expect(getFramesTopFirst(framesOf([5, null], [0, null], [1, 0]))).toEqual([0, 5, 1]);
+        });
+
+        test('should be stable regardless of insertion order', () => {
+            expect(getFramesTopFirst(framesOf([2, 1], [1, 0], [0, null]))).toEqual([0, 1, 2]);
         });
     });
 

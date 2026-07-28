@@ -12,6 +12,12 @@ export type WithAutofillOrigin<T> = T &
         origin: string;
     };
 
+/** Reply to a keyboard-initiated `AUTOFILL_TRIGGER` broadcast. `matched` means the frame
+ * owns an autofillable login field and has requested its inline dropdown — it does NOT
+ * mean the dropdown is rendered: the reply is sent synchronously so the worker's frame
+ * walk is not stalled by the dropdown's open & focus sequence. */
+export type AutofillTriggerResult = { matched: boolean };
+
 export type AutofillActionType = 'creditCard' | 'login' | 'identity' | 'email' | 'password';
 export type AutofillItem = WithAutofillOrigin<SelectedItem & { notification?: string }>;
 export type AutofillValue = WithAutofillOrigin<{ value: string }>;

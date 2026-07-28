@@ -10,7 +10,6 @@ import { first } from '@proton/pass/utils/array/first';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { serialize } from '@proton/pass/utils/object/serialize';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -78,10 +77,6 @@ const autofillCounter = (key: keyof AutofillCounters, state: AutofillCounters) =
  * focus management patches specifically for Safari (e.g., Adyen payment provider),
  * preventing race conditions where focus-to-next-field logic interferes with autofill. */
 const AUTOFILL_LOCK_TIME = BUILD_TARGET === 'safari' ? 250 : 50;
-
-/** Maximum time to wait for the dropdown to become visible before moving keyboard
- * focus into it when triggered via the autofill shortcut. */
-const DROPDOWN_AUTOFOCUS_TIMEOUT = 1_000;
 
 export const createAutofillService = ({ controller }: ContentScriptContextFactoryOptions) => {
     const state: AutofillState = { processing: false };
@@ -385,30 +380,35 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         }
     );
 
-    const onAutofillTrigger: FrameMessageHandler<WorkerMessageType.AUTOFILL_TRIGGER> = withContext(async (ctx) => {
-        const dropdown = ctx?.service.inline.dropdown;
-        const fields = ctx?.service.formManager.getFields();
-        const loginField = fields?.find((field) => field.action?.type === DropdownAction.AUTOFILL_LOGIN);
+    /** Keyboard-shortcut entry point. The worker broadcasts this frame by frame, top-frame
+     * first, and early-exits on the first frame reporting a match — so the reply must be
+     * synchronous. `matched` is answered before the dropdown has rendered : awaiting the
+     * open & focus sequence here would stall the worker's frame walk. Focus is handed over
+     * separately by the worker through `INLINE_DROPDOWN_FOCUS` to the top-frame — the
+     * dropdown always lives there, even when the matched field sits in a sub-frame. */
+    const onAutofillTrigger: FrameMessageHandler<WorkerMessageType.AUTOFILL_TRIGGER> = withContext(
+        (ctx, _, sendResponse) => {
+            const dropdown = ctx?.service.inline.dropdown;
+            const fields = ctx?.service.formManager.getFields();
+            const loginField = fields?.find((field) => field.action?.type === DropdownAction.AUTOFILL_LOGIN);
 
-        if (!dropdown || !loginField) return;
+            if (!(dropdown && loginField)) {
+                sendResponse({ matched: false });
+                return true;
+            }
 
-        dropdown.toggle({
-            type: 'field',
-            action: DropdownAction.AUTOFILL_LOGIN,
-            autofocused: false,
-            autofilled: loginField.autofilled !== null,
-            field: loginField,
-        });
+            dropdown.toggle({
+                type: 'field',
+                action: DropdownAction.AUTOFILL_LOGIN,
+                autofocused: false,
+                autofilled: loginField.autofilled !== null,
+                field: loginField,
+            });
 
-        /** Keyboard-only flow: once the dropdown is visible, move keyboard focus into it
-         * so the user can navigate the login suggestions with the arrow keys and select
-         * one with Enter — without touching the mouse. Unlike the focus-on-field flow,
-         * the shortcut opens the dropdown with `autofocused: false`, so nothing has moved
-         * focus into the iframe yet. */
-        await waitUntil(() => dropdown.getState().then(({ visible }) => visible), 25, DROPDOWN_AUTOFOCUS_TIMEOUT)
-            .then(() => dropdown.requestFocus())
-            .catch(noop);
-    });
+            sendResponse({ matched: true });
+            return true;
+        }
+    );
 
     controller.channel.register(WorkerMessageType.AUTOFILL_SEQUENCE, onAutofillRequest);
     controller.channel.register(WorkerMessageType.AUTOFILL_TRIGGER, onAutofillTrigger);

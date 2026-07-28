@@ -49,7 +49,7 @@ import type { User } from '@proton/shared/lib/interfaces';
 
 import type { NotificationRequest } from '../app/content/services/inline/notification/notification.app';
 import type { ClusterFrame } from '../app/worker/services/autofill.cc';
-import type { AutofillActionDTO, AutofillRequest, AutofillResult } from './autofill';
+import type { AutofillActionDTO, AutofillRequest, AutofillResult, AutofillTriggerResult } from './autofill';
 import type {
     FrameAttributes,
     FrameCheckResult,
@@ -137,6 +137,7 @@ export enum WorkerMessageType {
     INLINE_DROPDOWN_ATTACH = 'INLINE_DROPDOWN_ATTACH',
     INLINE_DROPDOWN_CLOSE = 'INLINE_DROPDOWN_CLOSE',
     INLINE_DROPDOWN_CLOSED = 'INLINE_DROPDOWN_CLOSED',
+    INLINE_DROPDOWN_FOCUS = 'INLINE_DROPDOWN_FOCUS',
     INLINE_DROPDOWN_OPENED = 'INLINE_DROPDOWN_OPENED',
     INLINE_DROPDOWN_STATE = 'INLINE_DROPDOWN_STATE',
     INLINE_DROPDOWN_TOGGLE = 'INLINE_DROPDOWN_TOGGLE',
@@ -254,6 +255,7 @@ export type FrameVisibilityMessage = WithPayload<WorkerMessageType.FRAME_VISIBIL
 export type InlineDropdownAttachMessage = { type: WorkerMessageType.INLINE_DROPDOWN_ATTACH };
 export type InlineDropdownClosedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSED, DropdownClosedDTO>;
 export type InlineDropdownCloseMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSE, DropdownCloseDTO>;
+export type InlineDropdownFocusMessage = { type: WorkerMessageType.INLINE_DROPDOWN_FOCUS };
 export type InlineDropdownOpenedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPENED, DropdownOpenedDTO>;
 export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDOWN_STATE };
 export type InlineDropdownToggleMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_TOGGLE, DropdownOpenDTO>;
@@ -352,6 +354,7 @@ export type WorkerMessage =
     | InlineDropdownAttachMessage
     | InlineDropdownClosedMessage
     | InlineDropdownCloseMessage
+    | InlineDropdownFocusMessage
     | InlineDropdownOpenedMessage
     | InlineDropdownStateMessage
     | InlineDropdownToggleMessage
@@ -414,6 +417,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOFILL_SEQUENCE]: AutofillResult;
+    [WorkerMessageType.AUTOFILL_TRIGGER]: AutofillTriggerResult;
     [WorkerMessageType.AUTOSUGGEST_ALIAS]: { aliasCreationDisabled: boolean };
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: ClientInitResult;
