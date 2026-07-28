@@ -725,6 +725,9 @@
       "Refresh the page": [
         "Obnovit stránku"
       ],
+      "Reject": [
+        "Odmítnout"
+      ],
       "Remove": [
         "Odstranit"
       ],
@@ -1080,6 +1083,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } další vlastní doména",
         "${ domains } další vlastní domény",
@@ -1091,6 +1100,15 @@
         "${ ips } dedikované VPN servery",
         "${ ips } dedikovaných VPN serverů",
         "${ ips } dedikovaných VPN serverů"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licence"
@@ -1109,6 +1127,12 @@
       ],
       "${ price } per user": [
         "${ price } za uživatele"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastní doména",
+        "${ quantity } vlastní domény",
+        "${ quantity } vlastních domén",
+        "${ quantity } vlastních domén"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } licence",
@@ -1582,10 +1606,10 @@
         "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v administrátorské konzoli Google Workspace."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v sekci ${ usersAddressesLink }."
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v ${ usersAddressesLink }."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v sekci ${ usersAddressesLink }."
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v ${ usersAddressesLink }."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Chcete-li tohoto uživatele migrovat, musí nejprve přijmout pozvánku k připojení ke službě ${ BRAND_NAME }."
@@ -5837,6 +5861,9 @@
         "Mazání událostí...",
         "Mazání událostí..."
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Discard changes?": [
         "Zahodit změny?"
       ],
@@ -8070,6 +8097,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licence"
       ],

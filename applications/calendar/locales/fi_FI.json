@@ -156,6 +156,9 @@
       "Clear browser data": [
         "Tyhjennä selaimen välimuisti"
       ],
+      "Clear conversation": [
+        "Tyhjennä keskustelu"
+      ],
       "Clear data": [
         "Tyhjennä tiedot"
       ],
@@ -719,6 +722,9 @@
       "Refresh the page": [
         "Päivitä sivu"
       ],
+      "Reject": [
+        "Kieltäydy"
+      ],
       "Remove": [
         "Poista"
       ],
@@ -889,6 +895,9 @@
       ],
       "Stay": [
         "Pysy"
+      ],
+      "Stop": [
+        "Pysäytä"
       ],
       "Submit": [
         "Lähetä"
@@ -1072,6 +1081,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja (${ quantity } käyttäjälle)",
+        "${ BRAND_NAME } Scribe-kirjoitusavustaja (${ quantity } käyttäjälle)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } oma lisäverkkotunnus",
         "${ domains } omaa lisäverkkotunnusta"
@@ -1079,6 +1092,13 @@
       "${ ips } dedicated VPN server": [
         "${ ips } oma VPN-palvelin",
         "${ ips } omaa VPN-palvelinta"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } -tekoälyavustaja"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } tekoälyavustaja (${ quantity } käyttäjä)",
+        "${ LUMO_APP_NAME } AI-avustaja (${ quantity } käyttäjälle)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME }-tekoälylisenssi"
@@ -1097,6 +1117,10 @@
       ],
       "${ price } per user": [
         "${ price }/käyttäjä"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } oma verkkotunnus",
+        "${ quantity } omaa verkkotunnusta"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME }-tekoälylisenssi",
@@ -5671,6 +5695,9 @@
         "Poistetaan tapahtumaa...",
         "Poistetaan tapahtumia..."
       ],
+      "Details": [
+        "Lisätiedot"
+      ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
@@ -6350,6 +6377,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Vahvistusprosessi avaa uuden selaimen välilehden. Poista käytöstä kaikki aktiiviset ponnahdusikkunoiden estotoiminnot."
+      ],
+      "Thinking about this": [
+        "Mietitään tätä"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
@@ -7873,11 +7903,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)",
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } -lisenssi"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } -käyttöpaikat"
+      ],
+      "${ price } per seat": [
+        "${ price } per paikka"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } -käyttöpaikka",
@@ -10079,6 +10116,9 @@
       ],
       "Anytown": [
         "Jokukaupunki"
+      ],
+      "Ask anything…": [
+        "Kysy mitä tahansa…"
       ],
       "Company name": [
         "Yrityksen nimi"

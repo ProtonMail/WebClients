@@ -156,6 +156,9 @@
       "Clear browser data": [
         "Effacer les données du navigateur"
       ],
+      "Clear conversation": [
+        "Effacer la conversation"
+      ],
       "Clear data": [
         "Effacer les données"
       ],
@@ -719,6 +722,9 @@
       "Refresh the page": [
         "Actualiser la page"
       ],
+      "Reject": [
+        "Refuser"
+      ],
       "Remove": [
         "Retirer"
       ],
@@ -889,6 +895,9 @@
       ],
       "Stay": [
         "Rester"
+      ],
+      "Stop": [
+        "Arrêter"
       ],
       "Submit": [
         "Envoyer"
@@ -1072,6 +1081,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateurs)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domaine personnalisé supplémentaire",
         "${ domains } domaines personnalisés supplémentaires"
@@ -1080,11 +1093,22 @@
         "${ ips } serveur VPN dédié",
         "${ ips } serveurs VPN dédiés"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistant IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } licence IA"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } accès"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateurs)"
       ],
       "${ price } per dedicated server": [
         "${ price } par serveur dédié"
@@ -1097,6 +1121,10 @@
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domaine personnalisé",
+        "${ quantity } domaines personnalisés"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } licence IA ${ LUMO_APP_NAME }",
@@ -5696,6 +5724,9 @@
         "Suppression de l'événement...",
         "Suppression des événements..."
       ],
+      "Details": [
+        "Informations"
+      ],
       "Discard changes?": [
         "Abandonner les modifications ?"
       ],
@@ -6390,6 +6421,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
+      ],
+      "Thinking about this": [
+        "Réflexion en cours..."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
@@ -7919,11 +7953,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateur)",
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
       "${ MEET_APP_NAME } license": [
         "licence ${ MEET_APP_NAME }"
       ],
       "${ MEET_APP_NAME } seats": [
         "accès ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } par accès"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } accès ${ MEET_APP_NAME }",
@@ -10128,6 +10169,9 @@
       ],
       "Anytown": [
         "Boisclair"
+      ],
+      "Ask anything…": [
+        "Demandez ce que vous voulez…"
       ],
       "Company name": [
         "Nom de l'entreprise"
