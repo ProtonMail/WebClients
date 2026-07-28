@@ -66,7 +66,13 @@ const ScimSetupBanner = ({ pendingUsersCount, pendingGroupsCount, onReviewChange
     }
 
     return (
-        <Banner className="p-2 mb-12" contentWrapperClassName="flex-1 flex" variant={BannerVariants.WARNING} noIcon>
+        <Banner
+            className="p-2 mb-12"
+            contentWrapperClassName="flex-1 flex"
+            variant={BannerVariants.WARNING}
+            largeRadius
+            noIcon
+        >
             <div className="flex-1">
                 <p className="m-0 text-bold">{c('scim').t`Approve changes from your identity provider`}</p>
                 <p className="m-0">{getSyncedText(pendingUsersCount, pendingGroupsCount)}</p>
