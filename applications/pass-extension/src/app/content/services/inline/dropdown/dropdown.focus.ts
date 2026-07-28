@@ -24,10 +24,15 @@ export const DROPDOWN_FOCUS_TIMEOUT = 50;
  * time to wait when polling for successful blur operations on trapped elements. */
 export const DROPDOWN_FOCUS_TRAP_TIMEOUT = 500;
 
+/** Maximum time to wait for a programmatically opened dropdown to become visible
+ * before giving up on moving keyboard focus into it (eg: the autofill shortcut,
+ * where the open request and the focus request arrive as two separate messages). */
+export const DROPDOWN_AUTOFOCUS_TIMEOUT = 1_000;
+
 export interface DropdownFocusController {
     focused: boolean;
     willFocus: boolean;
-    requestFocus: () => Promise<void>;
+    requestFocus: (trapField?: boolean) => Promise<void>;
     disconnect: () => void;
 }
 
@@ -90,13 +95,16 @@ export const createDropdownFocusController = ({
         state.willFocus = false;
     };
 
-    const onWillFocus = () => {
-        /** Only arm the field action-trap when the anchor field is the active element — i.e. the
-         * focus-recovery scenario. The shortcut flow opens the dropdown without focusing the field,
-         * so arming it there would needlessly suppress the field's normal autofocus dropdown. */
-        if (anchor.current?.type === 'field' && isActiveElement(anchor.current.field.element)) {
-            anchor.current.field.preventAction();
-        }
+    /** @param trapField - arms the anchor field's action-trap for the duration of the focus
+     * hand-off. Required whenever the field currently holds focus (dropdown-initiated
+     * recovery) : blurring it to escape a focus-lock would otherwise re-trigger the field's
+     * own autofocus dropdown. Pass `false` for programmatic requests where the field was
+     * never focused (autofill keyboard shortcut) — trapping there swallows the field's next
+     * genuine focus. NOTE: drilled rather than inferred from `document.activeElement` —
+     * bypassing focus-traps is time-sensitive and `activeElement` may already be stale by
+     * the time `onWillFocus` runs on a dropdown-initiated request. */
+    const onWillFocus = (trapField: boolean = true) => {
+        if (trapField && anchor.current?.type === 'field') anchor.current.field.preventAction();
         clearTimeout(state.willFocusTimer);
         state.willFocus = true;
         state.willFocusTimer = setTimeout(disconnect, DROPDOWN_FOCUS_TRAP_TIMEOUT);
@@ -143,9 +151,16 @@ export const createDropdownFocusController = ({
     /** Handles focus recovery when page focus-lock implementations interfere with dropdown focus.
      * Strategy: blur the anchor field and any active element to release the focus trap, then
      * request dropdown focus. The `willFocus` flag provides a grace period during which blur events
-     * on the dropdown are ignored, preventing premature closing during the focus transition. */
-    const onFocusRequest = asyncLock(async () => {
-        onWillFocus();
+     * on the dropdown are ignored, preventing premature closing during the focus transition.
+     *
+     * NOTE: the `asyncLock` is intentionally NOT keyed. Its purpose is to guarantee a single
+     * in-flight focus-acquisition sequence; keying on `trapField` would let a trapping and a
+     * non-trapping sequence race, each polling `releaseFocus` and each dispatching
+     * `DROPDOWN_FOCUS`. First caller wins the flag, which is correct in practice : the
+     * shortcut requests focus on a freshly opened dropdown (nothing in flight), while
+     * recovery requests only fire after focus was gained and stolen back. */
+    const onFocusRequest = asyncLock(async (trapField: boolean = true) => {
+        onWillFocus(trapField);
 
         if (!hasFocus()) {
             return waitUntil(() => releaseFocus(anchor.current), 25, DROPDOWN_FOCUS_TRAP_TIMEOUT)
@@ -162,8 +177,10 @@ export const createDropdownFocusController = ({
         }
     });
 
-    iframe.registerMessageHandler(InlinePortMessageType.DROPDOWN_FOCUS_REQUEST, onFocusRequest);
-    iframe.registerMessageHandler(InlinePortMessageType.DROPDOWN_FOCUSED, onWillFocus);
+    /** Registered handlers receive the port `InlineMessage` as their first argument : wrap
+     * so a (truthy) message object can never be read as the `trapField` flag. */
+    iframe.registerMessageHandler(InlinePortMessageType.DROPDOWN_FOCUS_REQUEST, () => onFocusRequest());
+    iframe.registerMessageHandler(InlinePortMessageType.DROPDOWN_FOCUSED, () => onWillFocus());
     iframe.registerMessageHandler(InlinePortMessageType.DROPDOWN_BLURRED, onWillBlur);
 
     return {

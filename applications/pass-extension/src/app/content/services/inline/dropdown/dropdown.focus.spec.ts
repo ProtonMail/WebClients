@@ -259,4 +259,67 @@ describe('DropdownFocusController', () => {
             await req;
         });
     });
+
+    describe('`trapField` flag', () => {
+        /** The port message forwarded by the dropdown iframe. Registered handlers receive
+         * it as their first argument, so it must never be coerced into `trapField`. */
+        const portMessage = { type: InlinePortMessageType.DROPDOWN_FOCUS_REQUEST } as any;
+
+        beforeEach(() => {
+            anchor.current = { type: 'field', field };
+        });
+
+        test('should arm the field action-trap on dropdown-initiated focus requests', async () => {
+            createController();
+
+            const onRequest = getHandler(InlinePortMessageType.DROPDOWN_FOCUS_REQUEST);
+            const req = onRequest?.(portMessage);
+            await jest.runAllTimersAsync();
+            await req;
+
+            expect(field.preventAction).toHaveBeenCalled();
+        });
+
+        test('should arm the field action-trap on `DROPDOWN_FOCUSED`', () => {
+            createController();
+
+            getHandler(InlinePortMessageType.DROPDOWN_FOCUSED)?.(portMessage);
+            expect(field.preventAction).toHaveBeenCalled();
+        });
+
+        test('should not arm the field action-trap when `requestFocus(false)`', async () => {
+            const ctrl = createController();
+
+            const req = ctrl.requestFocus(false);
+            expect(ctrl.willFocus).toBe(true);
+
+            await jest.runAllTimersAsync();
+            await req;
+
+            expect(field.preventAction).not.toHaveBeenCalled();
+            expect(iframe.sendPortMessage).toHaveBeenCalledWith({ type: InlinePortMessageType.DROPDOWN_FOCUS });
+        });
+
+        test('should arm the field action-trap when `requestFocus()` defaults', async () => {
+            const ctrl = createController();
+
+            const req = ctrl.requestFocus();
+            await jest.runAllTimersAsync();
+            await req;
+
+            expect(field.preventAction).toHaveBeenCalled();
+        });
+
+        test('should run a single focus sequence for concurrent requests', async () => {
+            const ctrl = createController();
+
+            const reqs = Promise.all([ctrl.requestFocus(false), ctrl.requestFocus(true)]);
+            await jest.runAllTimersAsync();
+            await reqs;
+
+            /** `asyncLock` is unkeyed : the second call joins the first sequence */
+            expect(iframe.sendPortMessage).toHaveBeenCalledTimes(1);
+            expect(field.preventAction).not.toHaveBeenCalled();
+        });
+    });
 });

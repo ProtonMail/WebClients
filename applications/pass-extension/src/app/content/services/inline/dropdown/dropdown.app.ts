@@ -51,7 +51,7 @@ export interface DropdownApp extends InlineAppHandler<DropdownRequest> {
      * UX decisions with regards to dropdown interaction */
     anchor: MaybeNull<DropdownAnchor>;
     focused: boolean;
-    requestFocus: () => Promise<void>;
+    requestFocus: (trapField?: boolean) => Promise<void>;
 }
 
 export const createDropdown = (popover: PopoverController): DropdownApp => {
