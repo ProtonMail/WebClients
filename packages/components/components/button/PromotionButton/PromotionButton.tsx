@@ -1,4 +1,4 @@
-import type { ElementType, ForwardedRef, ReactNode } from 'react';
+import type { ElementType, ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
@@ -18,7 +18,6 @@ type ButtonButtonLikeProps = ButtonLikeProps<'button'>;
 
 interface OwnProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {
     iconName?: IconName;
-    iconContent?: ReactNode;
     icon?: boolean;
     iconSize?: IconSize;
     iconGradient?: boolean;
@@ -41,7 +40,6 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
     {
         children,
         iconName,
-        iconContent,
         icon,
         iconGradient = true,
         iconSize,
@@ -121,7 +119,6 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
                         }
                     />
                 )}
-                {iconContent && <span className="shrink-0 flex">{iconContent}</span>}
                 <span className={clsx(icon ? 'sr-only' : 'block text-ellipsis')}>{children}</span>
                 {loading && <CircleLoader />}
             </span>
