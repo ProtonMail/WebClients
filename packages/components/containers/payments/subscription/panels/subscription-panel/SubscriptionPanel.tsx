@@ -17,7 +17,6 @@ import { Renew } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     getHasVpnB2BPlan,
-    getHasVpnOnlyB2BPlan,
     getPlanIDs,
     getSubscriptionPlanTitle,
     hasDeprecatedVPN,
@@ -30,7 +29,6 @@ import {
     hasVPN2024,
     hasVPNPassBundle,
     hasVPNPassProfessional,
-    hasVisionary,
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
@@ -43,7 +41,6 @@ import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
-import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
@@ -536,26 +533,10 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         return <p className="color-weak mt-1">{c('Info').jt`Trial ends on ${formattedPeriodEndDate}`}</p>;
     })();
 
-    const hasVpnOnlyB2BPlan = getHasVpnOnlyB2BPlan(subscription);
-
-    // In walletEA, we only show Visionary as the suggested plan, but if the user has that, there's no point in exploring other plans
-    const isWalletEA = app === APPS.PROTONWALLET && hasVisionary(subscription);
-    // For the VPN B2B plan, we don't want to show the action buttons
-    // The user can still open the subscription or customization flow using the other buttons, e.g. "Get more" users
-    const showActionButtons = !hasVpnOnlyB2BPlan && !isWalletEA && !hasLumoBusiness(subscription);
-
     return (
         <>
             {renderLearnMoreModal && <LearnMoreModal {...learnMoreModalProps} />}
-            <Panel
-                data-testid="current-plan"
-                titleDataTestId="plan-name"
-                titleElement={planTitleElement}
-                // If there are no action buttons, we want to reduce the bottom padding of the panel
-                // On the other hand, if there are action buttons, we want to keep the additional space
-                // after between the last button and the border
-                className={clsx(!showActionButtons && 'p-6 pb-1')}
-            >
+            <Panel data-testid="current-plan" titleDataTestId="plan-name" titleElement={planTitleElement}>
                 {trialInfo}
                 {b2bTrialLearnMore}
                 {(() => {
@@ -605,7 +586,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
                     return getDefault();
                 })()}
                 <SubscriptionPanelManageUserButton />
-                {showActionButtons ? <ActionButtons app={app} user={user} subscription={subscription} /> : null}
+                <ActionButtons app={app} user={user} subscription={subscription} />
             </Panel>
         </>
     );
