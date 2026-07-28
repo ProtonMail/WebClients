@@ -189,6 +189,9 @@
       "Clear browser data": [
         "Neteja les dades del navegador"
       ],
+      "Clear conversation": [
+        "Netejar la conversa"
+      ],
       "Clear data": [
         "Neteja les dades"
       ],
@@ -809,6 +812,9 @@
       "Refresh the page": [
         "Refresca la pàgina"
       ],
+      "Reject": [
+        "Rebutja"
+      ],
       "Reload": [
         "Recarrega"
       ],
@@ -965,6 +971,9 @@
       "Select rating ${ n } out of ${ to }": [
         "Seleccioneu la valoració ${ n } de ${ to }"
       ],
+      "Send": [
+        "Enviar"
+      ],
       "Send Feedback": [
         "Envieu-nos els vostres comentaris"
       ],
@@ -1066,6 +1075,9 @@
       ],
       "Stay": [
         "Mantenir"
+      ],
+      "Stop": [
+        "Aturar-ho"
       ],
       "Stop sharing": [
         "Deixa de compartir"
@@ -1270,6 +1282,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domini personalitzat addicional",
         "${ domains } dominis personalitzats addicionals"
@@ -1278,11 +1294,22 @@
         "${ ips } servidor VPN dedicat",
         "${ ips } servidors VPN dedicats"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistent d'IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "Llicència d'IA de ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } seats": [
         "llicències de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuaris)"
       ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
@@ -1295,6 +1322,10 @@
       ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domini personalitzat",
+        "${ quantity } dominis personalitzats"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } llicència d'IA ${ LUMO_APP_NAME }",
@@ -6560,6 +6591,9 @@
       "There is nothing to see here": [
         "Aquí no hi ha res a veure"
       ],
+      "Thinking about this": [
+        "Hi estem pensant"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Aquesta acció eliminarà l'enllaç i revocarà l'accés per a tots els usuaris."
       ],
@@ -6649,14 +6683,14 @@
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Per descarregar aquests fitxers, obriu-los a ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME } i exporteu-los."
       ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Per habilitar la cerca, hem d'indexar els vostres fitxers localment. Podreu seguir utilitzant ${ DRIVE_APP_NAME } amb normalitat, i us avisarem quan s'hagi completat l'indexat. Si sortiu de la pàgina, la indexació s'aturarà i es reprendrà quan hi torneu."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Per activar una cerca realment privada, ${ DRIVE_APP_NAME } necessita indexar els vostres fitxers de manera local."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Per activar una cerca realment privada, necessitem indexar els vostres fitxers de manera local. Encara podeu utilitzar ${ DRIVE_APP_NAME } normalment. Us ho farem saber quan s'hagi completat la indexació."
-      ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "Per permetre una cerca realment eficaç hem d'indexar els vostres fitxers localment. Podeu continuar utilitzant ${ DRIVE_APP_NAME } amb normalitat i us avisarem quan la indexació hagi acabat. Si sortiu d'aquesta pàgina, la indexació s'aturarà i es reprendrà quan hi torneu."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
@@ -7276,6 +7310,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Permet als editors canviar els permisos i compartir"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Permet als editors canviar els permisos i compartir."
       ],
       "Anderson": [
         "Pujol"
@@ -8260,11 +8297,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Llicència de ${ MEET_APP_NAME }"
       ],
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
@@ -10708,6 +10752,9 @@
       "Anytown": [
         "Castellvent"
       ],
+      "Ask anything…": [
+        "Pregunteu qualsevol cosa…"
+      ],
       "Choose password": [
         "Tria una contrasenya"
       ],
@@ -11621,6 +11668,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "S'ha desat un enllaç a aquest element a la vostra unitat. Podeu accedir-hi més endavant a la secció «Compartit amb mi»."
+      ],
+      "Editor permissions": [
+        "Permisos de l'editor"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Ara els editors podran gestionar les comparticions i convidar altres persones. Podreu desactivar-ho quan vulgueu a les preferències de compartició."
       ],
       "Encrypted search is here": [
         "Ha arribat la cerca xifrada"
