@@ -71,3 +71,14 @@ export type InitializeDevices = (params: {
 }) => Promise<void>;
 
 export type MeetButtonClass = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' | 'danger-secondary';
+
+/**
+ * Router state for the /join route.
+ */
+export type JoinLocationState = {
+    instantJoin?: boolean;
+    meetingDetails?: {
+        meetingName: string;
+        isPersonalRoom: boolean;
+    };
+};
