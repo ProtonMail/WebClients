@@ -1,5 +1,54 @@
+import { createMockNodeEntity } from '@proton/drive/modules/testing';
+
 import { DownloadStatus, useDownloadManagerStore } from '../downloadManager.store';
-import { queueAlbumDownloadRequest } from './queueDownloadRequest';
+import { queueAlbumDownloadRequest, queueDownloadRequest } from './queueDownloadRequest';
+
+describe('queueDownloadRequest', () => {
+    beforeEach(() => {
+        useDownloadManagerStore.getState().clearQueue();
+    });
+
+    const baseParams = {
+        requestedDownloads: new Map(),
+        scheduleSingleFile: jest.fn(),
+        scheduleArchive: jest.fn(),
+        getArchiveName: () => 'archive.zip',
+    };
+
+    it('does not mark the item as having an approved signature issue when skipSignatureCheck is set on a single-file download', () => {
+        const node = createMockNodeEntity({ uid: 'file-1' });
+
+        const downloadId = queueDownloadRequest({
+            ...baseParams,
+            nodes: [node],
+            isPhoto: false,
+            skipSignatureCheck: true,
+        });
+
+        if (!downloadId) {
+            throw new Error('Expected queueDownloadRequest to return a downloadId');
+        }
+        const item = useDownloadManagerStore.getState().getQueueItem(downloadId);
+        expect(item?.signatureIssueAllDecision).toBeUndefined();
+    });
+
+    it('does not mark the item as having an approved signature issue when skipSignatureCheck is set on an archive download', () => {
+        const nodes = [createMockNodeEntity({ uid: 'file-1' }), createMockNodeEntity({ uid: 'file-2' })];
+
+        const downloadId = queueDownloadRequest({
+            ...baseParams,
+            nodes,
+            isPhoto: false,
+            skipSignatureCheck: true,
+        });
+
+        if (!downloadId) {
+            throw new Error('Expected queueDownloadRequest to return a downloadId');
+        }
+        const item = useDownloadManagerStore.getState().getQueueItem(downloadId);
+        expect(item?.signatureIssueAllDecision).toBeUndefined();
+    });
+});
 
 describe('queueAlbumDownloadRequest', () => {
     beforeEach(() => {
