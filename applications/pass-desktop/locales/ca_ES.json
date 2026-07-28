@@ -124,11 +124,11 @@
       "Bulk restore items from trash": [
         "Restaura un grup d'elements des de la paperera"
       ],
-      "Bulk select items": [
-        "Selecciona elements en massa"
-      ],
       "Cancel": [
         "Cancel·la"
+      ],
+      "Cancel bulk selection": [
+        "Cancel·lar la selecció múltiple"
       ],
       "Cancel email change": [
         "Cancel·la el canvi de correu electrònic"
@@ -151,8 +151,14 @@
       "Clear": [
         "Neteja"
       ],
+      "Clear item type filter": [
+        "Netejar el filtre de tipus d'element"
+      ],
       "Clear search": [
         "Neteja la cerca"
+      ],
+      "Clear sort filter": [
+        "Netejar el filtre d'ordenació"
       ],
       "Close": [
         "Tanca"
@@ -508,9 +514,6 @@
       "Move to Trash": [
         "Mou a la paperera"
       ],
-      "Multiple select": [
-        "Selecció múltiple"
-      ],
       "New token": [
         "Nou testimoni"
       ],
@@ -616,6 +619,9 @@
       "Reset": [
         "Restableix"
       ],
+      "Reset filters": [
+        "Restablir els filtres"
+      ],
       "Reset history": [
         "Restableix l'historial"
       ],
@@ -654,6 +660,9 @@
       ],
       "See members": [
         "Mostra els membres"
+      ],
+      "Select items": [
+        "Seleccionar els elements"
       ],
       "Send email": [
         "Envia un correu electrònic"
@@ -700,9 +709,6 @@
       "Skip": [
         "Omet"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Algú ha posat un element compartit a la vostra disposició a ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Ordena els elements de la caixa forta"
       ],
@@ -714,6 +720,9 @@
       ],
       "Submitting report...": [
         "S'està enviant l'informe..."
+      ],
+      "Switch vault": [
+        "Canviar de caixa forta"
       ],
       "Sync alias": [
         "Sincronitza l'àlies",
@@ -1391,9 +1400,6 @@
       ],
       "Trashing item failed": [
         "No s'ha pogut moure l'element a la paperera"
-      ],
-      "Try reaching out to the link owner.": [
-        "Intenteu contactar el propietari de l'enllaç."
       ],
       "Unable to generate an OTP code for this item": [
         "No s'ha pogut generar un codi OTP per a aquest element"
@@ -2201,8 +2207,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -4030,9 +4035,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
       ],
       "Tier/Level": [
         "Nivell"
