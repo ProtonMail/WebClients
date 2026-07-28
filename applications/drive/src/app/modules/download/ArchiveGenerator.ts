@@ -24,6 +24,7 @@ export default class ArchiveGenerator {
     private includedFiles: { path: string; name: string }[];
     private includedFolderPaths: Set<string>;
     private originalToAdjustedPath: Map<string, string>;
+    private reservedFolderPaths: Map<string, string>;
 
     constructor() {
         const { readable, writable } = new TransformStream();
@@ -35,6 +36,7 @@ export default class ArchiveGenerator {
         this.includedFiles = [];
         this.includedFolderPaths = new Set();
         this.originalToAdjustedPath = new Map();
+        this.reservedFolderPaths = new Map();
     }
 
     async writeLinks(links: AsyncGenerator<ArchiveItem>) {
@@ -65,10 +67,37 @@ export default class ArchiveGenerator {
         }
     }
 
+    /**
+     * Resolves the adjusted path of the folder items live in. A folder can be overtaken by its
+     * own children, which are scheduled independently and don't wait for it (e.g. it is stuck on
+     * a signature-issue decision), so an ancestor is not guaranteed to be written yet. In that
+     * case its path is reserved now, and reused when the folder itself arrives. Without this the
+     * children would fall back to the root of the archive, next to an empty parent folder.
+     */
+    private adjustParentPath(path: string[]): string {
+        let parentPath = '';
+        path.forEach((name, index) => {
+            const originalPath = getPathString(path.slice(0, index + 1));
+            const adjustedPath = this.originalToAdjustedPath.get(originalPath);
+            if (adjustedPath !== undefined) {
+                parentPath = adjustedPath;
+                return;
+            }
+            parentPath = this.adjustFolderPath(path.slice(0, index), name);
+            this.reservedFolderPaths.set(originalPath, parentPath);
+        });
+        return parentPath;
+    }
+
     private adjustFolderPath(path: string[], name: string): string {
         const pathString = getPathString(path);
         const fullPath = `${pathString}/${name}`;
-        const parentPath = this.originalToAdjustedPath.get(pathString) || '';
+        const reservedPath = this.reservedFolderPaths.get(fullPath);
+        if (reservedPath !== undefined) {
+            this.reservedFolderPaths.delete(fullPath);
+            return reservedPath;
+        }
+        const parentPath = this.adjustParentPath(path);
         const fixedName = isWindows() ? adjustWindowsLinkName(sanitizeEntryName(name)) : sanitizeEntryName(name);
 
         const deduplicate = (index = 0): string => {
@@ -91,8 +120,7 @@ export default class ArchiveGenerator {
     }
 
     private adjustFilePath(path: string[], name: string) {
-        const pathString = getPathString(path);
-        const parentPath = this.originalToAdjustedPath.get(pathString) || '';
+        const parentPath = this.adjustParentPath(path);
         const fixedName = isWindows() ? adjustWindowsLinkName(sanitizeEntryName(name)) : sanitizeEntryName(name);
         const [namePart, extension] = splitLinkName(fixedName);
 
