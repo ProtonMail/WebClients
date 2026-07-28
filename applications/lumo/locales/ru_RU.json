@@ -26,12 +26,6 @@
       "Apply": [
         "Применить"
       ],
-      "Are you sure you want to delete ${ count } conversation?": [
-        "Вы уверены, что хотите удалить ${ count } цепочку писем?",
-        "Вы уверены, что хотите удалить ${ count } цепочки писем?",
-        "Вы уверены, что хотите удалить ${ count } цепочек писем?",
-        "Вы уверены, что хотите удалить ${ count } цепочек писем?"
-      ],
       "Are you sure you want to delete all conversations?": [
         "Вы уверены, что хотите удалить все беседы?"
       ],
@@ -287,6 +281,9 @@
       "Refresh the page": [
         "Обновить страницу"
       ],
+      "Reject": [
+        "Отказать"
+      ],
       "Reload": [
         "Перезагрузить"
       ],
@@ -442,6 +439,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователя)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } дополнительный пользовательский домен",
         "${ domains } дополнительных пользовательских домена",
@@ -453,6 +456,15 @@
         "${ ips } выделенных VPN-сервера",
         "${ ips } выделенных VPN-серверов",
         "${ ips } выделенных VPN-серверов"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ИИ-ассистент ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователя)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Лицензия ${ LUMO_APP_NAME } AI"
@@ -471,6 +483,12 @@
       ],
       "${ price } per user": [
         "${ price } за пользователя"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } пользовательский домен",
+        "${ quantity } пользовательских домена",
+        "${ quantity } пользовательских доменов",
+        "${ quantity } пользовательских домена"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } лицензия ${ LUMO_APP_NAME } AI",
@@ -3273,9 +3291,6 @@
       "Toggle selection": [
         "Переключить выбор"
       ],
-      "Try ${ LUMO_SHORT_APP_NAME } free": [
-        "Попробуйте ${ LUMO_SHORT_APP_NAME } бесплатно"
-      ],
       "Try again": [
         "Попробовать еще раз"
       ],
@@ -3524,12 +3539,6 @@
       "${ project.fileCount } files": [
         "Файлов: ${ project.fileCount }"
       ],
-      "A few habits go a long way to shrinking your paper trail.": [
-        "Всего несколько привычек помогут значительно сократить ваш цифровой след."
-      ],
-      "A profile like this powers ads and messaging engineered to push your buttons — products, opinions, even how you vote.": [
-        "Подобный профиль используется для показа рекламы и сообщений, призванных манипулировать вашими эмоциями — навязывать товары, мнения и даже влиять на то, как вы голосуете."
-      ],
       "ad value": [
         "рекламная ценность"
       ],
@@ -3545,9 +3554,6 @@
       "All messages and chat history": [
         "Все сообщения и история чата"
       ],
-      "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what cover you're offered and what you pay.": [
-        "Случайное упоминание о стрессе, диагнозе или лекарствах может быть использовано в моделях оценки рисков, которые незаметно повлияют на предлагаемые вам условия страхования и стоимость полиса."
-      ],
       "Any images generated in these conversations will also be deleted.": [
         "Все изображения, созданные в этих цепочках писем, также будут удалены."
       ],
@@ -3560,14 +3566,8 @@
       "Ask a question to get started. Your conversation is private.": [
         "Задайте вопрос, чтобы начать. Ваша цепочка писем конфиденциальна."
       ],
-      "Assembling your profile…": [
-        "Создание вашего профиля…"
-      ],
       "Auto-retrieved": [
         "Автоматически подобрано"
-      ],
-      "Automated systems increasingly weigh data profiles in decisions about loans, jobs, and housing — with little transparency or recourse.": [
-        "Автоматизированные системы все чаще учитывают профили данных при принятии решений о кредитах, работе и жилье — практически без прозрачности или возможности обжалования."
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Перейдите к папке ${ DRIVE_SHORT_APP_NAME }, которую хотите привязать к этому проекту, и нажмите \"Привязать эту папку\"."
@@ -3575,20 +3575,8 @@
       "Built-in ${ BRAND_NAME } agent": [
         "Встроенный агент ${ BRAND_NAME }"
       ],
-      "Choose apps where the provider can't read your content in the first place.": [
-        "Выбирайте приложения, в которых поставщик услуг изначально не может читать ваш контент."
-      ],
-      "Choose or drop .zip or conversations.json from Chat GPT or Claude.": [
-        "Выберите или перетащите .zip-архив или файл conversations.json из Chat GPT или Claude."
-      ],
-      "Companies quietly adjust prices and offers based on what they think you can afford.": [
-        "Компании незаметно корректируют цены и предложения на основе того, сколько, по их мнению, вы можете себе позволить."
-      ],
       "Conversation encrypted": [
         "Беседа зашифрована"
-      ],
-      "Conversational AI doesn't just answer — it asks follow-up questions. Each time you add detail (\"actually, I'm 34 and based in Berlin\"), you hand over another verified fact.": [
-        "Диалоговый ИИ не просто отвечает — он задает уточняющие вопросы. Каждый раз, когда вы добавляете информацию (например, «вообще-то мне 34 года, и я живу в Берлине»), вы передаете еще один подтвержденный факт."
       ],
       "Cookies or website data are blocked in your browser settings": [
         "Файлы cookie или данные веб-сайтов заблокированы в настройках вашего браузера"
@@ -3602,23 +3590,14 @@
       "Current chat:": [
         "Текущий чат:"
       ],
-      "Data collected today can be breached, subpoenaed, or repurposed years from now. Once it's out, it's out.": [
-        "Данные, собранные сегодня, могут быть украдены, затребованы повесткой или использованы в других целях спустя годы. Стоит им утечь один раз, и вернуть их уже не получится."
-      ],
       "data points": [
         "точки данных"
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Узнайте, что ИИ крупных технологических компаний может выяснить о вас на основе истории ваших чатов, и получите оценку конфиденциальности, которой можно поделиться."
       ],
-      "Download your data from ChatGPT (Settings → Data Controls → Export), or Claude (Settings → Privacy → Export data).": [
-        "Скачайте свои данные из ChatGPT (Настройки → Управление данными → Экспортировать) или Claude (Настройки → Конфиденциальность → Экспортировать данные)."
-      ],
       "Drive files are not available for guest users": [
         "Файлы хранилища недоступны для гостевых пользователей"
-      ],
-      "Every conversation with AI leaves a paper trail. Your job. Your health. Your relationships. Even where you live. Upload your AI data and see what Big Tech could piece together from your words alone. But unlike them, we can't see it.": [
-        "Каждая цепочка писем с ИИ оставляет документальный след. Ваша работа. Ваше здоровье. Ваши отношения. Даже то, где вы живете. Загрузите свои данные ИИ и посмотрите, какую картину ИТ-гиганты могут составить по одним только вашим словам. Но в отличие от них, мы не можем их видеть."
       ],
       "Example prompts shown when a conversation begins.": [
         "Примеры подсказок, которые показываются в начале цепочки писем."
@@ -3638,29 +3617,11 @@
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Получайте более быстрые и точные ответы из Сети с указанием источников, чтобы вы могли их проверить."
       ],
-      "Heads up — some of what you pasted may cross common workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
-        "Обратите внимание: часть вставленного вами текста может нарушать корпоративные правила, юридические нормы или требования к защите данных. Это предупреждение призвано помочь вам заметить нарушение, а не давать оценку вашим действиям."
-      ],
-      "If a profile suggests you can pay more — or that you're in a hurry — you may simply see a higher price than the next person.": [
-        "Если из профиля следует, что вы готовы заплатить больше или что вы спешите, вам могут просто показать более высокую цену, чем другому пользователю."
-      ],
-      "In ChatGPT and Claude, disable chat history and model training wherever the setting exists.": [
-        "В ChatGPT и Claude отключите историю чатов и обучение моделей везде, где есть такие настройки."
-      ],
-      "Inferred details are packaged and traded. A single profile can pass through dozens of companies you've never heard of.": [
-        "Собранная информация упаковывается и продается. Один профиль может пройти через десятки компаний, о которых вы никогда не слышали."
-      ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
         "Предполагаемые политические предпочтения служат основой для микротаргетинга сообщений, призванных изменить ваши чувства и повлиять на то, как вы голосуете, — зачастую совершенно незаметно для вас."
       ],
-      "Inferred traits get bundled and sold to brokers, advertisers, and anyone willing to pay.": [
-        "Сделанные выводы о ваших качествах объединяются в комплекты и продаются брокерам, рекламодателям и всем, кто готов платить."
-      ],
       "Initializing Drive...": [
         "Инициализация хранилища..."
-      ],
-      "Keep names, addresses, health details, and financial specifics out of your prompts.": [
-        "Не указывайте имена, адреса, информацию о здоровье и финансовые данные в своих запросах."
       ],
       "Learn more about how project knowledge works": [
         "Подробнее о том, как работает база знаний проекта"
@@ -3674,23 +3635,11 @@
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "На этой карточке нет личных данных — только ваш показатель уязвимости по областям. Чем он ниже, тем меньше информации вы раскрыли."
       ],
-      "Now protect the person behind it.": [
-        "Теперь защитите человека, который за этим стоит."
-      ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "На iPhone или iPad перейдите в Настройки → Приложения → Safari и убедитесь, что параметр \"Блокировка всех файлов cookie\" отключен, а затем обновите страницу."
       ],
-      "Once collected, your data can be breached, handed over on request, or kept indefinitely.": [
-        "После сбора ваши данные могут быть украдены в результате утечки, переданы по запросу или сохранены на неопределенный срок."
-      ],
       "PASTED": [
         "ВСТАВЛЕНО"
-      ],
-      "Periodically review, download, and delete the data AI services hold on you.": [
-        "Периодически проверяйте, скачивайте и удаляйте данные, которые хранят о вас сервисы ИИ."
-      ],
-      "Pick services that don't train on or sell your conversations — like ${ LUMO_SHORT_APP_NAME }, which can't read your chats.": [
-        "Выбирайте сервисы, которые не обучаются на ваших цепочках писем и не продают их, — такие как ${ LUMO_SHORT_APP_NAME }, который не может читать ваши чаты."
       ],
       "Processing file...": [
         "Обработка файла..."
@@ -3698,56 +3647,20 @@
       "Processing...": [
         "Обработка…"
       ],
-      "Profiled by Big Tech AI": [
-        "Профиль составлен ИИ ИТ-гигантов"
-      ],
-      "Profiles can feed into insurance, lending, and hiring outcomes — without you ever knowing.": [
-        "Профили могут влиять на решения по страхованию, кредитованию и найму — без вашего ведома."
-      ],
       "Projects help you organize conversations with custom instructions and files.": [
         "Проекты помогают упорядочивать беседы с помощью пользовательских инструкций и файлов."
       ],
       "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
         "Проекты помогают упорядочивать цепочки писем с помощью пользовательских инструкций и файлов. Войдите или создайте бесплатный аккаунт, чтобы начать."
       ],
-      "Reading your prompts…": [
-        "Чтение ваших запросов…"
-      ],
       "red flags": [
         "тревожные сигналы"
-      ],
-      "Scoring how much you revealed…": [
-        "Оценка объема раскрытых вами данных…"
-      ],
-      "See the profile an AI company can piece together from your conversations alone.": [
-        "Посмотрите, какой профиль компания по разработке ИИ может составить на основе одних только ваших цепочек писем."
       ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Узнайте, что ИИ технологических гигантов знает о вас. Создано с помощью ${ LUMO_SHORT_APP_NAME }."
       ],
       "Something went wrong analysing this export. Please try again.": [
         "При анализе этого экспорта произошла ошибка. Пожалуйста, попробуйте еще раз."
-      ],
-      "Spotting the patterns in what you typed…": [
-        "Поиск закономерностей в том, что вы ввели…"
-      ],
-      "The fuller the bar, the more of that area Big Tech could reconstruct from your chats. Lower is better. Hover a row to see what gave it away.": [
-        "Чем сильнее заполнена шкала, тем больше информации из этой области крупные технологические компании могут восстановить на основе ваших чатов. Чем меньше, тем лучше. Наведите курсор на строку, чтобы узнать, что именно выдало эту информацию."
-      ],
-      "The more an attacker knows about you, the more believable the phishing message. Personalised scams are far harder to spot.": [
-        "Чем больше злоумышленник знает о вас, тем более убедительным кажется фишинговое сообщение. Персонализированное мошенничество гораздо труднее распознать."
-      ],
-      "The more that's known about you, the more believable phishing and fraud attempts become.": [
-        "Чем больше о вас известно, тем более убедительными становятся попытки фишинга и мошенничества."
-      ],
-      "These are the most sensitive categories Big Tech AI could infer about you from your chats.": [
-        "Это наиболее конфиденциальные категории данных, которые ИИ технологических гигантов может определить на основе ваших чатов."
-      ],
-      "This is exactly the kind of profiling ${ LUMO_SHORT_APP_NAME } is built to stop. With ${ LUMO_SHORT_APP_NAME }, your conversations are encrypted and never used to build a profile of you.": [
-        "Именно для борьбы с подобным профилированием и создано приложение ${ LUMO_SHORT_APP_NAME }. При использовании ${ LUMO_SHORT_APP_NAME } ваши цепочки писем зашифрованы и никогда не применяются для составления вашего профиля."
-      ],
-      "This isn't just trivia. Here's what a profile like yours can actually be used for.": [
-        "Это не просто пустяки. Вот для чего на самом деле может использоваться такой профиль, как ваш."
       ],
       "This message is empty. Sorry about that.": [
         "Это сообщение пусто. Извините."
@@ -3773,9 +3686,6 @@
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
         "Перейдите на тариф ${ LUMO_SHORT_APP_NAME } Plus, чтобы создавать неограниченное количество проектов, открыть доступ к улучшенным моделям ИИ и многому другому."
       ],
-      "Use email aliases and hide-my-email so your real address isn't tied to every account.": [
-        "Используйте псевдонимы электронной почты и hide-my-email, чтобы ваш настоящий адрес не был привязан к каждому аккаунту."
-      ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Используйте модель Max для сложной работы или модель Lite для повседневных задач. Выберите режим Fast для быстрых ответов или режим Thinking для более сложных вопросов."
       ],
@@ -3785,17 +3695,8 @@
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Мы сохраним вашу карточку, чтобы вы могли прикрепить ее к посту, — соцсети не могут добавить изображение за вас."
       ],
-      "Working out what Big Tech AI could infer…": [
-        "Выясняю, какие выводы может сделать ИИ технологических гигантов…"
-      ],
       "You're using private browsing": [
         "Вы используете режим инкогнито"
-      ],
-      "Your file is analysed on the spot to build your report. Nothing is uploaded to our servers or stored.": [
-        "Ваш файл анализируется прямо на месте для создания отчета. Ничего не загружается на наши серверы и не сохраняется."
-      ],
-      "Your file never leaves your device. It's read locally and is never stored.": [
-        "Ваш файл никогда не покидает ваше устройство. Он считывается локально и никогда не сохраняется."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Ваши файлы слишком большие. ${ LUMO_SHORT_APP_NAME }, возможно, не сможет обработать всю информацию."
@@ -3892,9 +3793,6 @@
       "Name": [
         "Название"
       ],
-      "Personalised pricing": [
-        "Персонализированное ценообразование"
-      ],
       "Politics": [
         "Политика"
       ],
@@ -3913,14 +3811,8 @@
       "Thick": [
         "Толстый"
       ],
-      "Tip": [
-        "Совет"
-      ],
       "Untitled chat": [
         "Чат без названия"
-      ],
-      "While you wait — how your data gets used": [
-        "Пока вы ждете: как используются ваши данные"
       ]
     },
     "collider_2025:Notification": {
@@ -4352,20 +4244,11 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "Не удалось запустить ${ LUMO_SHORT_APP_NAME }"
       ],
-      "AI knows more about you than you think": [
-        "ИИ знает о вас больше, чем вы думаете"
-      ],
-      "AI Paper Trail": [
-        "Документальный след ИИ"
-      ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Помощник на базе ИИ должен расширять ваши возможности, а не использовать ваши данные в своих целях."
       ],
       "Better web search": [
         "Более качественный поиск в Сети"
-      ],
-      "Building your paper trail": [
-        "Создание вашего документального следа"
       ],
       "Built by the team that knows privacy": [
         "Создано командой, которая ценит конфиденциальность"
@@ -4385,9 +4268,6 @@
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "Пользовательские ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Decisions made about you": [
-        "Решения, принятые в отношении вас"
-      ],
       "Delete project?": [
         "Удалить проект?"
       ],
@@ -4406,14 +4286,8 @@
       "Every clarification is a new data point": [
         "Каждое уточнение — это новая точка данных"
       ],
-      "Export & delete regularly": [
-        "Регулярно экспортируйте и удаляйте"
-      ],
       "Export your data": [
         "Экспортируйте свои данные"
-      ],
-      "Exposure scorecard": [
-        "Оценка раскрытия данных"
       ],
       "Favorites": [
         "Избранное"
@@ -4433,17 +4307,11 @@
       "Health hints can shape your premiums": [
         "Подсказки о здоровье могут влиять на ваши платные тарифы"
       ],
-      "History": [
-        "История"
-      ],
       "How can I help?": [
         "Чем я могу помочь?"
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Как ${ LUMO_SHORT_APP_NAME } сохраняет конфиденциальность наших разговоров?"
-      ],
-      "How to stay private": [
-        "Как сохранить конфиденциальность"
       ],
       "Image generation and editing": [
         "Создание и редактирование изображений"
@@ -4463,14 +4331,8 @@
       "Linked Drive Folder": [
         "Связанная папка в хранилище"
       ],
-      "Mask your identity": [
-        "Маскируйте свои личные данные"
-      ],
       "Memory": [
         "Память"
-      ],
-      "More convincing scams": [
-        "Более убедительные мошеннические схемы"
       ],
       "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
         "Больше пользовательских ${ LUMO_SHORT_APP_NAME } с подпиской ${ LUMO_SHORT_APP_NAME } Plus"
@@ -4493,26 +4355,14 @@
       "No chat history yet. Let's start chatting!": [
         "Истории чата пока нет. Давайте начнем общаться!"
       ],
-      "No result.": [
-        "Нет результата."
-      ],
       "Nothing here yet": [
         "Здесь пока ничего нет"
       ],
       "Older": [
         "Ранее"
       ],
-      "Out of your control": [
-        "Вне вашего контроля"
-      ],
       "Oversharing blind spots": [
         "Слепые зоны избыточного раскрытия информации"
-      ],
-      "Personalised pricing": [
-        "Персонализированное ценообразование"
-      ],
-      "Prefer end-to-end encryption": [
-        "Отдавайте предпочтение сквозному шифрованию"
       ],
       "Profiles can decide your future": [
         "Профили могут определять ваше будущее"
@@ -4526,14 +4376,8 @@
       "See your AI paper trail": [
         "Посмотреть свой цифровой след в ИИ"
       ],
-      "Share less with AI": [
-        "Меньше делитесь с ИИ"
-      ],
       "Sign in to create projects": [
         "Войдите, чтобы создавать проекты"
-      ],
-      "Sold to data brokers": [
-        "Продано брокерам данных"
       ],
       "Sort by": [
         "Сортировать по"
@@ -4544,9 +4388,6 @@
       "Start a new conversation": [
         "Начать новую цепочку писем"
       ],
-      "Targeted manipulation": [
-        "Направленное манипулирование"
-      ],
       "That's why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Вот почему мы создали ${ LUMO_SHORT_APP_NAME }: чтобы предоставить вам все преимущества ИИ без раскрытия вашей конфиденциальности и угрозы для безопасности данных."
       ],
@@ -4556,38 +4397,17 @@
       "This chat disappears when you close it and is never saved.": [
         "Этот чат исчезнет после закрытия и не будет сохранен."
       ],
-      "Turn off history & training": [
-        "Отключить историю и обучение"
-      ],
       "Two models, two modes": [
         "Две модели, два режима"
-      ],
-      "Upload it privately": [
-        "Загрузить конфиденциально"
-      ],
-      "Use privacy-first tools": [
-        "Используйте инструменты с приоритетом конфиденциальности"
       ],
       "We couldn't read your paper trail": [
         "Нам не удалось прочитать ваш цифровой след"
       ],
-      "What Big Tech inferred": [
-        "Какие выводы сделали ИТ-гиганты"
-      ],
       "What this profile exposes": [
         "Что раскрывает этот профиль"
       ],
-      "Why this matters": [
-        "Почему это важно"
-      ],
-      "You can't un-share it": [
-        "Вы не сможете отменить доступ к ним"
-      ],
       "You might be shown a higher price": [
         "Вам могут показать более высокую цену"
-      ],
-      "You saw the profile?": [
-        "Вы видели профиль?"
       ],
       "Your shareable card": [
         "Карточка, которой можно поделиться"
@@ -7350,6 +7170,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (для ${ quantity } пользователя)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Лицензия ${ MEET_APP_NAME }"
       ],

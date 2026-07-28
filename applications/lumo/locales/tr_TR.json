@@ -26,12 +26,12 @@
       "Apply": [
         "Uygula"
       ],
-      "Are you sure you want to delete ${ count } conversation?": [
-        "${ count } yazışmayı silmek istediğinize emin misiniz?",
-        "${ count } yazışmayı silmek istediğinize emin misiniz?"
-      ],
       "Are you sure you want to delete all conversations?": [
         "Tüm yazışmaları silmek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to delete this ${ count } conversation?": [
+        "${ count } yazışmayı silmek istediğinize emin misiniz?",
+        "${ count } yazışmayı silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to delete this conversation?": [
         "Bu yazışmayı silmek istediğinize emin misiniz?"
@@ -289,6 +289,9 @@
       "Refresh the page": [
         "Sayfayı yenile"
       ],
+      "Reject": [
+        "Reddet"
+      ],
       "Reload": [
         "Yenile"
       ],
@@ -447,6 +450,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)",
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ek özel etki alanı",
         "${ domains } ek özel etki alanı"
@@ -455,11 +462,22 @@
         "${ ips } size ayrılmış VPN sunucusu",
         "${ ips } size ayrılmış VPN sunucusu"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } yapay zeka yardımcısı"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)",
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } yapay zeka lisansı"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } koltuğu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)",
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)"
       ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
@@ -472,6 +490,10 @@
       ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } özel etki alanı",
+        "${ quantity } özel etki alanı"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
@@ -522,7 +544,7 @@
         "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ BRAND_NAME } Scribe tarafından yardım alın."
       ],
       "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
-        "E-posta üretkenliğinizi yeni seviyelere taşıyın. ${ LUMO_SHORT_APP_NAME } ile e-postalarınızı yazın, yanıtlayın ve düzeltin."
+        "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ LUMO_SHORT_APP_NAME } tarafından yardım alın."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -539,7 +561,7 @@
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } adet ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansına sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } tane ${ LUMO_SHORT_APP_NAME } yazma yardımcısı lisansınız olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
@@ -647,8 +669,8 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir.",
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. ${ addresses } e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresleri, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
@@ -658,7 +680,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifrelemeyle e-postalarınızı ve takviminizi güvence altına alın. 15 e-posta adresi, özel e-posta etki alanı desteği, ${ LUMO_SHORT_APP_NAME } yazma yardımcısı, sınırsız “hide-my-email” takma adı ve daha fazlasını içerir."
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ LUMO_SHORT_APP_NAME } yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
@@ -1071,10 +1093,10 @@
         "${ DRIVE_APP_NAME } uygulamasını aç"
       ],
       "Optimize": [
-        "Optimize et"
+        "İyileştir"
       ],
       "Optimize memories": [
-        "Bellekleri optimize et"
+        "Bellekleri iyileştir"
       ],
       "Refresh folder contents": [
         "Klasör içeriklerini yenile"
@@ -1385,7 +1407,7 @@
         "${ LUMO_SHORT_APP_NAME } yanıtları, iletişim tarzı, uzmanlık, yinelenen araçlar ve uzun süreli projelere göre uyarlamak için kayıtlı belleklerinize başvurur."
       ],
       "${ LUMO_SHORT_APP_NAME } will review your saved memories, remove duplicates, and merge related entries into clearer ones. Your memory list will be replaced with the optimized result.": [
-        "${ LUMO_SHORT_APP_NAME } kaydettiğiniz bellekleri gözden geçirecek, yinelenenleri kaldıracak ve birbiriyle ilişkili girişleri daha net hale getirecek şekilde birleştirecektir. Bellek listeniz optimize edilmiş sonuçla değiştirilecektir."
+        "${ LUMO_SHORT_APP_NAME } kaydettiğiniz bellekleri gözden geçirecek, yinelenenleri kaldıracak ve birbiriyle ilişkili kayıtları özetleyerek birleştirecektir. Bellek listeniz iyileştirilmiş sonuçla değiştirilecektir."
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Kendi belleklerinizi ekleyin. Otomatik olarak oluşturulan herhangi bir kaydı düzenleyin veya istediğiniz zaman her şeyi temizleyin. Düzenlediğiniz oluşturulmuş bellekler size ait belleklere dönüştürülür."
@@ -1893,7 +1915,7 @@
         "Bir iş akışını sade bir dille tarif edin ve karşılığında bir çizelge ile çalıştırılabilir bir kod alın. Bu özelliği kullanmak için oturum açın."
       ],
       "Disabled": [
-        "Devre dışı"
+        "Kapalı"
       ],
       "Domain name": [
         "Etki alanı adı"
@@ -1908,7 +1930,7 @@
         "Yer açmak için önceki iletiler özetlendi. Artık burada yer kaplamıyorlar."
       ],
       "Enabled": [
-        "Etkinleştirildi"
+        "Açık"
       ],
       "Error processing attachment": [
         "Ek dosya işlenirken sorun çıktı"
@@ -2025,7 +2047,7 @@
         "Herhangi bir çağrı yok"
       ],
       "No connected connectors": [
-        "Bağlı bağlayıcı yok"
+        "Bağlı bir bağlayıcı yok"
       ],
       "No content available.": [
         "Kullanılabilecek bir içerik yok."
@@ -2235,7 +2257,7 @@
         "Bir dış siteyi ziyaret etmek üzeresiniz:"
       ],
       "You have many saved memories. Use Optimize in the menu to merge duplicates and keep the list focused.": [
-        "Kaydedilmiş birçok belleğiniz var. Menüdeki Optimize seçeneğini kullanarak yinelenenleri birleştirin ve listenin net kalmasını sağlayın."
+        "Kaydedilmiş birçok belleğiniz var. Menüdeki iyileştir seçeneği ile yinelenenleri birleştirerek listeyi sadeleştirin."
       ],
       "You've reached your image limit for this period.": [
         "Bu dönem için görsel sayısı sınırınıza ulaştınız."
@@ -2259,7 +2281,7 @@
         "Bellekleriniz zaten güncel."
       ],
       "Your memories are already well organized.": [
-        "Bellekleriniz zaten iyi organize edilmiş durumda."
+        "Bellekleriniz zaten iyi düzenlenmiş durumda."
       ]
     },
     "collider_2025: Job": {
@@ -2679,10 +2701,10 @@
         "Dosya Drive klasörüne yüklendi"
       ],
       "Memories optimized successfully.": [
-        "Bellekler başarıyla optimize edildi."
+        "Bellekler iyileştirildi."
       ],
       "Optimized memories: reduced from ${ beforeCount } to ${ optimized.length }.": [
-        "Optimize edilmiş bellekler: ${ beforeCount } adetten ${ optimized.length } adede düşürüldü."
+        "Bellekler iyileştirildi: ${ beforeCount } taneden ${ optimized.length } taneye düşürüldü."
       ],
       "Thanks for the feedback!": [
         "Geri bildiriminiz için teşekkürler!"
@@ -2811,7 +2833,7 @@
         "Dış bağlantı açılıyor"
       ],
       "Optimize memories?": [
-        "Bellekleri optimize etmek mi?"
+        "Bellekler iyileştirilsin mi?"
       ],
       "Parameters": [
         "Parametreler"
@@ -3037,7 +3059,7 @@
         "Kurumsal yapay zekâ deneyiminizi geliştirin"
       ],
       "From only": [
-        "Yalnızca"
+        "Yalnızca şuradan"
       ],
       "Get": [
         "Edinin"
@@ -3052,16 +3074,16 @@
         "${ LUMO_SHORT_APP_NAME } Plus edinin"
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Pro": [
-        "${ LUMO_SHORT_APP_NAME } Pro edin"
+        "${ LUMO_SHORT_APP_NAME } Pro edinin"
       ],
       "Upgrade": [
         "Yükselt"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "${ LUMO_SHORT_APP_NAME } Plus sürümüne yükselt"
+        "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükselt"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
-        "${ LUMO_SHORT_APP_NAME } Pro'ya yükselt"
+        "${ LUMO_SHORT_APP_NAME } Pro tarifesine yükselt"
       ]
     },
     "collider_2025: Warning": {
@@ -3168,6 +3190,9 @@
       "Add more information to improve the response": [
         "Yanıtı geliştirmek için daha fazla bilgi ekleyin"
       ],
+      "Add to favorites": [
+        "Sık kullanılanlara ekle"
+      ],
       "Analyse another export": [
         "Başka bir dışa aktarma dosyasını incele"
       ],
@@ -3188,6 +3213,9 @@
       ],
       "Choose project icon": [
         "Proje simgesini seçin"
+      ],
+      "Clear search": [
+        "Aramayı temizle"
       ],
       "Click to edit title": [
         "Başlığı düzenlemek için tıklayın"
@@ -3215,6 +3243,12 @@
       ],
       "Delete": [
         "Sil"
+      ],
+      "Delete analysis": [
+        "İncelemeyi sil"
+      ],
+      "Delete chat": [
+        "Sohbeti sil"
       ],
       "Delete conversation": [
         "Yazışmayı sil"
@@ -3248,6 +3282,9 @@
       ],
       "Expand": [
         "Genişlet"
+      ],
+      "Favorite": [
+        "Sık kullanılanlara ekle"
       ],
       "Go to all projects": [
         "Tüm projelere git"
@@ -3309,6 +3346,12 @@
       "Remove file": [
         "Dosyayı kaldır"
       ],
+      "Remove from favorites": [
+        "Sık kullanılanlardan kaldır"
+      ],
+      "Rename chat": [
+        "Sohbeti yeniden adlandır"
+      ],
       "Request a shorter, more focused response": [
         "Daha kısa, daha odaklanmış bir yanıt isteyin."
       ],
@@ -3324,11 +3367,17 @@
       "Select all": [
         "Tümünü seç"
       ],
+      "Select chats": [
+        "Sohbetleri seçin"
+      ],
       "Select conversation": [
         "Yazışmayı seçin"
       ],
       "Share": [
         "Paylaş"
+      ],
+      "Share your score": [
+        "Puanınızı paylaşın"
       ],
       "Show knowledge panel": [
         "Bilgi panosunu görüntüle"
@@ -3336,13 +3385,16 @@
       "Show sidebar": [
         "Kenar çubuğunu görüntüle"
       ],
+      "Start a chat": [
+        "Bir sohbet başlat"
+      ],
       "Think longer": [
         "Daha uzun düşünün"
       ],
       "Toggle selection": [
         "Seçimi değiştir"
       ],
-      "Try ${ LUMO_SHORT_APP_NAME } free": [
+      "Try ${ LUMO_SHORT_APP_NAME } for free": [
         "${ LUMO_SHORT_APP_NAME } uygulamasını ücretsiz deneyin"
       ],
       "Try again": [
@@ -3418,6 +3470,9 @@
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "${ LUMO_SHORT_APP_NAME } yanıtlarını özelleştirmek için yönergeler ekleyin"
       ],
+      "All chats": [
+        "Tüm sohbetler"
+      ],
       "API": [
         "API"
       ],
@@ -3445,6 +3500,9 @@
       "Expand": [
         "Genişlet"
       ],
+      "Filter & Sort": [
+        "Süz ve sırala"
+      ],
       "Images": [
         "Görseller"
       ],
@@ -3456,6 +3514,9 @@
       ],
       "Load more": [
         "Daha fazla yükle"
+      ],
+      "More options": [
+        "Diğer seçenekler"
       ],
       "New chat": [
         "Yeni sohbet"
@@ -3472,8 +3533,11 @@
       "Search": [
         "Ara"
       ],
+      "Search chats": [
+        "Sohbetleri ara"
+      ],
       "See all": [
-        "Tümünü gör"
+        "Tümünü görüntüle"
       ],
       "Send": [
         "Gönder"
@@ -3588,6 +3652,12 @@
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "\"${ file.name }\" dosyası dizine ekleniyor. Gönderdiğinizde içerik yüklenecek."
       ],
+      "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
+        "${ LUMO_SHORT_APP_NAME } gizliliği koruyan bir yapay zekadır. Yazışmalarınız şifrelenir ve hiçbir zaman yapay zeka modellerini eğitmek için kullanılmaz."
+      ],
+      "${ LUMO_SHORT_APP_NAME } is end-to-end encrypted and never used for training, profiling, or advertising.": [
+        "${ LUMO_SHORT_APP_NAME } uçtan uca şifrelenmiştir ve hiçbir zaman yapay zeka eğitimi, profil oluşturma veya reklam amacıyla kullanılmaz."
+      ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } uygulamasının sohbetlerinizi bu aygıtta tutmak için yerel veri tabanı depolama alanını (IndexedDB) kullanması gerekiyor. Ancak burada kullanılamıyor."
       ],
@@ -3606,11 +3676,8 @@
       "${ project.fileCount } files": [
         "${ project.fileCount } dosya"
       ],
-      "A few habits go a long way to shrinking your paper trail.": [
-        "Birkaç küçük alışkanlık, geride bıraktığınız izleri azaltmada büyük fayda sağlar."
-      ],
-      "A profile like this powers ads and messaging engineered to push your buttons — products, opinions, even how you vote.": [
-        "Bunun gibi bir profil; ürünler, görüşler, hatta nasıl oy verdiğiniz gibi önemli noktalarınıza dokunan özel hazırlanmış reklamları ve iletileri besler."
+      "${ report.sensitiveCategories.length } sensitive categories": [
+        "${ report.sensitiveCategories.length } önemli kategori"
       ],
       "ad value": [
         "reklam değeri"
@@ -3627,8 +3694,11 @@
       "All messages and chat history": [
         "Tüm iletiler ve sohbet geçmişi"
       ],
-      "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what cover you're offered and what you pay.": [
-        "Stres, teşhis veya ilaç tedavisinden üstünkörü bahsetmek; size hangi teminatların sunulacağını ve ne kadar ödeyeceğinizi sessizce etkileyen risk modellerini besleyebilir."
+      "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
+        "Stresten, bir teşhisten veya bir ilaçtan bahsetmek bile size sunulan sigortanın kapsamını ve ödeyeceğiniz tutarı sessizce etkileyen risk modellerini besleyebilir."
+      ],
+      "Anthropic will email you a download link when your export is ready.": [
+        "Anthropic, dışa aktarma dosyanız hazır olduğunda size e-posta ile bir indirme bağlantısı gönderecek."
       ],
       "Any images generated in these conversations will also be deleted.": [
         "Bu yazışmalar sırasında oluşturulan tüm görseller de silinecek."
@@ -3642,35 +3712,50 @@
       "Ask a question to get started. Your conversation is private.": [
         "Başlamak için bir soru sorun. Yazışmanız gizlidir."
       ],
-      "Assembling your profile…": [
-        "Profiliniz çıkarılıyor…"
-      ],
       "Auto-retrieved": [
         "Otomatik olarak alındı"
       ],
-      "Automated systems increasingly weigh data profiles in decisions about loans, jobs, and housing — with little transparency or recourse.": [
-        "Otomatikleştirilmiş sistemler kredi, iş ve konut kararlarında, veri profillerini giderek daha fazla değerlendirmeye katarken çok az şeffaflık veya itiraz olanağı sunar."
+      "Automated systems increasingly weigh data profiles in decisions about loans, jobs, and housing with little transparency or recourse.": [
+        "Otomatik sistemler, kredi, iş ve konut kararlarında veri profillerini giderek daha fazla dikkate alıyor. Ancak bu süreçte şeffaflık veya itiraz etme olanağı oldukça sınırlıdır."
+      ],
+      "Avoid including names, addresses, financial details, or other identifying information when they are not essential.": [
+        "Gerekli olmadığı durumlarda ad, adres, mali bilgiler veya diğer kimlik bilgilerini vermekten kaçının."
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Bu projeye bağlamak istediğiniz ${ DRIVE_SHORT_APP_NAME } klasörüne gidin ve ardından “Bu klasörü bağla” seçeneğine tıklayın."
       ],
+      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
+        "100 milyondan fazla kişinin güvendiği ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } ürünlerinin arkasındaki gizlilik markası ${ BRAND_NAME } ekibi tarafından geliştirilmiştir."
+      ],
+      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100M people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
+        "100 milyondan fazla kişinin güvendiği ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } ürünlerinin arkasındaki gizlilik markası ${ BRAND_NAME } ekibi tarafından geliştirilmiştir."
+      ],
       "Built-in ${ BRAND_NAME } agent": [
         "Hazır ${ BRAND_NAME } aracısı"
       ],
-      "Choose apps where the provider can't read your content in the first place.": [
-        "En başta hizmet sağlayıcının içeriğinizi okuyamayacağı uygulamaları seçin."
+      "Chats from your projects will appear here.": [
+        "Projelerinizdeki sohbetler burada görüntülenecek."
       ],
-      "Choose or drop .zip or conversations.json from Chat GPT or Claude.": [
-        "Chat GPT veya Claude üzerinden aldığınız bir .zip veya conversations.json dosyasını seçin ya da sürükleyip bırakın."
+      "Check what your AIs store about you and delete what you no longer need.": [
+        "Yapay zeka sistemlerinizin sizinle ilgili hangi bilgileri tuttuğunu kontrol edin ve gerek duymadıklarınızı silin."
       ],
-      "Companies quietly adjust prices and offers based on what they think you can afford.": [
-        "Şirketler, size hissettirmeden fiyatları ve teklifleri bütçenizin yetebileceğini düşündükleri miktara göre ayarlar."
+      "Choose or drop your ChatGPT or Claude export (.zip or conversations.json). We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
+        "ChatGPT veya Claude dışa aktarım dosyanızı (.zip veya conversations.json) seçin ya da sürükleyip bırakın. Son ${ PAPER_TRAIL_LIMITS.maxPrompts } bilgi isteminizi inceleriz."
+      ],
+      "Click Settings → Data controls": [
+        "Ayarlar → Veri denetimleri üzerine tıklayın"
+      ],
+      "Click Settings → Privacy": [
+        "Ayarlar → Gizlilik üzerine tıklayın"
+      ],
+      "Click your profile icon in the bottom-left corner": [
+        "Sol alt köşedeki profil simgenize tıklayın"
       ],
       "Conversation encrypted": [
         "Sohbet şifrelendi"
       ],
-      "Conversational AI doesn't just answer — it asks follow-up questions. Each time you add detail (\"actually, I'm 34 and based in Berlin\"), you hand over another verified fact.": [
-        "Yazışma temelli yapay zeka yalnızca yanıt vermekle kalmaz, izleyen sorular da sorar. Her ayrıntıyı eklediğinizde (\"aslında 34 yaşındayım ve İstanbul'da yaşıyorum\" gibi), doğrulanmış bir bilgi daha vermiş olursunuz."
+      "Conversational AI doesn’t just answer — it asks follow-up questions. Each time you add detail (“actually, I’m 34 and based in Berlin”), you hand over another verified fact.": [
+        "Yazışma temelli yapay zeka yalnızca yanıt vermekle kalmaz, izleyen sorular da sorar. Her ayrıntıyı eklediğinizde (“aslında 34 yaşındayım ve İstanbul'da yaşıyorum“ gibi), doğrulanmış bir bilgi daha vermiş olursunuz."
       ],
       "Cookies or website data are blocked in your browser settings": [
         "Tarayıcı ayarlarınızda tanımlama bilgileri veya site verileri engellenmiş"
@@ -3687,7 +3772,7 @@
       "Current chat:": [
         "Geçerli sohbet:"
       ],
-      "Data collected today can be breached, subpoenaed, or repurposed years from now. Once it's out, it's out.": [
+      "Data collected today can be breached, subpoenaed, or repurposed years from now. Once it’s out, it’s out.": [
         "Bugün toplanan veriler yıllar sonra ele geçirilebilir, mahkeme celbine konu olabilir veya başka amaçlarla kullanılabilir. Bir kez açığa çıktı mı, geri dönüşü yoktur."
       ],
       "data points": [
@@ -3696,17 +3781,20 @@
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Sohbet geçmişinizden yola çıkarak Big Tech yapay zekasının sizinle ilgili neler öğrenebileceğini görün ve paylaşabileceğiniz bir gizlilik notu alın."
       ],
-      "Download your data from ChatGPT (Settings → Data Controls → Export), or Claude (Settings → Privacy → Export data).": [
-        "Verilerinizi ChatGPT üzerinden (Ayarlar → Veri denetimleri → Dışa aktar) veya Claude üzerinden (Ayarlar → Gizlilik → Verileri dışa aktar) indirin."
-      ],
       "Drive files are not available for guest users": [
         "Konuk kullanıcılar Drive dosyalarını kullanamaz"
       ],
-      "Every conversation with AI leaves a paper trail. Your job. Your health. Your relationships. Even where you live. Upload your AI data and see what Big Tech could piece together from your words alone. But unlike them, we can't see it.": [
-        "Yapay zeka ile yapılan her yazışma arkasında bir veri izi bırakır. İşiniz. Sağlığınız. İlişkileriniz. Hatta yaşadığınız yer. Yapay zeka verilerinizi yükleyin ve Big Tech şirketlerinin yalnızca sözcüklerinizden neleri bir araya getirebileceğini görün. Ancak onların aksine, biz bunları göremeyiz."
+      "Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${ LUMO_SHORT_APP_NAME } doesn't see your data.": [
+        "Her sohbet ardında küçük ipuçları bırakır. Bunlar tek başlarına pek bir şey ifade etmezler. Ancak bir araya geldiklerinde hayatınızla ilgili şaşırtıcı derecede ayrıntılı bir tablo ortaya çıkarabilirler. Bu rapor diğer yapay zeka sağlayıcılarının sohbetlerinizden ne tür çıkarımlarda bulunabileceğini gösterir. Ancak onlardan farklı olarak ${ LUMO_SHORT_APP_NAME } verilerinizi görmez."
+      ],
+      "Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live. To see what Big Tech can piece together from your chats upload your AI data below.": [
+        "Büyük yapay zeka hizmeti sağlayıcılarıyla yaptığınız her konuşma dijital bir iz bırakır. İşiniz. Sağlığınız. İlişkileriniz. Hatta yaşadığınız yer bile. Big Tech şirketlerinin sohbetlerinizden neleri bir araya getirebildiğini görmek için aşağıya yapay zeka verilerinizi yükleyin."
       ],
       "Example prompts shown when a conversation begins.": [
         "Bir yazışma başladığında görüntülenecek örnek sorular."
+      ],
+      "Exposure by life area only, no personal details.": [
+        "Yalnızca yaşam alanlarına göre açığa çıkma, kişisel bilgiler yok."
       ],
       "File \"${ file.name }\" is already in this project": [
         "“${ file.name }” dosyası bu projede zaten var"
@@ -3714,8 +3802,17 @@
       "File \"${ file.name }\" is already mentioned": [
         "\"${ file.name }\" dosyası daha önce belirtilmiş"
       ],
+      "File attached": [
+        "Dosya eklendi"
+      ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Bu projeye yüklenen dosyalar bağlantılı Drive klasörüne kaydedilir."
+      ],
+      "Follow the prompts and confirm the export": [
+        "Ekrandaki yönergeyi izleyin ve dışa aktarmayı onaylayın"
+      ],
+      "Follow the prompts to confirm the export": [
+        "Dışa aktarmayı onaylamak için ekrandaki yönergeyi izleyin"
       ],
       "From ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasından"
@@ -3723,29 +3820,23 @@
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "İnternet üzerinden alıntılarla daha hızlı, daha doğru yanıt alarak kaynağı kontrol edebilirsiniz."
       ],
-      "Heads up — some of what you pasted may cross common workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
-        "Dikkat. Yapıştırdığınız içeriklerin bazıları genel iş yeri, yasal veya veri koruma sınırlarını aşıyor olabilir. Bu bilgi, sizi yargılamak için değil, bunu fark etmenize yardımcı olmak için verilmiştir."
+      "If a profile suggests you can pay more or that you’re in a hurry, you may see a higher price than the next person.I": [
+        "Profiliniz daha fazla ödeyebileceğinizi veya aceleniz olduğunu gösteriyorsa, sıradaki kişiden daha yüksek bir fiyat alabilirsiniz.I"
       ],
-      "If a profile suggests you can pay more — or that you're in a hurry — you may simply see a higher price than the next person.": [
-        "Profiliniz daha fazla ödeyebileceğinizi veya aceleniz olduğunu gösteriyorsa, bir sonraki kişiden daha yüksek bir fiyat alabilirsiniz."
+      "Image": [
+        "Görsel"
       ],
-      "In ChatGPT and Claude, disable chat history and model training wherever the setting exists.": [
-        "ChatGPT ve Claude üzerinden, ayarın bulunduğu her yerde sohbet geçmişini ve model eğitimini kapatın."
+      "Inferences drawn only from your prompts — grouped by life area.": [
+        "Yalnızca verdiğiniz ipuçlarından çıkarılan sonuçlar. Yaşam alanlarına göre gruplanmıştır."
       ],
-      "Inferred details are packaged and traded. A single profile can pass through dozens of companies you've never heard of.": [
-        "Çıkarım yapılan ayrıntılar paketlenir ve ticareti yapılır. Tek bir profil, adını hiç duymadığınız düzinelerce şirketin elinden geçebilir."
+      "Inferred details are packaged and traded. A single profile can pass through dozens of companies you’ve never heard of.": [
+        "Elde edilen bilgiler paketlenir ve alınıp satılır. Tek bir profil adını hiç duymadığınız düzinelerce şirketten geçebilir."
       ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
         "Çıkarım yapılan siyasi eğilimler; genellikle siz fark etmeden nasıl hissettiğinizi ve nasıl oy verdiğinizi değiştirmek için tasarlanmış mikro hedefleri olan iletileri besler."
       ],
-      "Inferred traits get bundled and sold to brokers, advertisers, and anyone willing to pay.": [
-        "Çıkarım yapılan özellikler paketlenerek veri tüccarlarına, reklam verenlere ve ödeme yapmaya istekli herkese satılır."
-      ],
       "Initializing Drive...": [
         "Drive başlatılıyor..."
-      ],
-      "Keep names, addresses, health details, and financial specifics out of your prompts.": [
-        "İstemlerinizde adları, adresleri, sağlık bilgilerini ve finansal bilgileri kullanmayın."
       ],
       "Learn more about how project knowledge works": [
         "Proje bilgisinin nasıl işlediğini öğrenin"
@@ -3756,29 +3847,29 @@
       "Lockdown Mode is enabled on your device": [
         "Aygıtınızda kilitleme kipi açıldı"
       ],
+      "Log in to your AI platform and request an export of your chat history, then download it to your device.": [
+        "Yapay zeka platformunuzda oturum açın ve sohbet geçmişinizi dışa aktarma isteğinde bulunun. Ardından bunu aygıtınıza indirin."
+      ],
+      "Look for Export data": [
+        "Verileri dışa aktar seçeneğini arayın"
+      ],
+      "No favorites yet. Star a chat to find it here quickly.": [
+        "Henüz bir sık kullanılan yok. Bir sohbeti sık kullanılanlara ekleyerek buradan hızlıca bulabilirsiniz."
+      ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Bu kartta hiçbir kişisel bilgi bulunmaz. Yalnızca alanlara göre açığa çıkma notunuz gösterilir. Daha düşük bir not, daha az bilgi paylaştığınız anlamına gelir."
       ],
       "No projects yet": [
-        "Henüz proje yok"
-      ],
-      "Now protect the person behind it.": [
-        "Arkasındaki kişiyi koruyun."
+        "Henüz bir proje yok"
       ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "iPhone veya iPad üzerinde Ayarlar → Uygulamalar → Safari → İleri Düzey yolunu izleyin ve \"Tüm Çerezleri Engelle\" seçeneğinin kapalı olduğundan emin olun. Ardından sayfayı yeniden yükleyin."
       ],
-      "Once collected, your data can be breached, handed over on request, or kept indefinitely.": [
-        "Verileriniz bir kez toplandıktan sonra açığa çıkarılabilir, yasal istek üzerine verilebilir veya süresiz olarak saklanabilir."
+      "OpenAI will email you a download link. It can take up to 24 hours.": [
+        "OpenAI size e-posta ile bir indirme bağlantısı gönderecek. Bu işlem 24 saate kadar sürebilir."
       ],
       "PASTED": [
         "YAPIŞTIRILDI"
-      ],
-      "Periodically review, download, and delete the data AI services hold on you.": [
-        "Yapay zeka hizmetlerinin sizinle ilgili tuttuğu verileri düzenli olarak gözden geçirin, indirin ve silin."
-      ],
-      "Pick services that don't train on or sell your conversations — like ${ LUMO_SHORT_APP_NAME }, which can't read your chats.": [
-        "Yazışmalarınızın içerikleri ile eğitilmeyen veya bunları satmayan hizmetleri seçin. Sohbetlerinizi okuyamayan ${ LUMO_SHORT_APP_NAME } gibi."
       ],
       "Processing file...": [
         "Dosya işleniyor..."
@@ -3786,56 +3877,50 @@
       "Processing...": [
         "İşleniyor..."
       ],
-      "Profiled by Big Tech AI": [
-        "Big Tech yapay zekası tarafından profili çıkarıldı"
-      ],
-      "Profiles can feed into insurance, lending, and hiring outcomes — without you ever knowing.": [
-        "Profiller, sizin haberiniz bile olmadan sigorta, kredi ve işe alım sonuçlarını etkileyebilir."
-      ],
       "Projects help you organize conversations with custom instructions and files.": [
         "Projeler özel yönergeler ve dosyalar ile yazışmaları düzenlemenize yardımcı olur."
       ],
       "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
         "Projeler özel yönergeler ve dosyalar ile yazışmalarınızı düzenlemenize yardımcı olur. Başlamak için oturum ya da ücretsiz bir hesap açın."
       ],
-      "Reading your prompts…": [
-        "İstemleriniz okunuyor…"
-      ],
       "red flags": [
         "kırmızı bayrak"
       ],
-      "Scoring how much you revealed…": [
-        "Ne kadar bilginizin açığa çıktığı puanlanıyor…"
-      ],
-      "See the profile an AI company can piece together from your conversations alone.": [
-        "Bir yapay zekâ şirketinin yalnızca yazışmalarınıza bakarak oluşturabileceği profili görün."
+      "See the profile that an AI company can build from your conversations alone.": [
+        "Bir yapay zeka şirketinin yalnızca yazışmalarınızdan oluşturabileceği profili inceleyin."
       ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Big Tech şirketlerinin yapay zekalarının sizinle ilgili neler bildiğini görün. ${ LUMO_SHORT_APP_NAME } ile hazırlanmıştır."
       ],
+      "Sign in to your ChatGPT account at chatgpt.com": [
+        "chatgpt.com adresinden ChatGPT hesabınızda oturum açın"
+      ],
+      "Sign in to your Claude account at claude.ai": [
+        "claude.ai adresinden Claude hesabınızda oturum açın"
+      ],
+      "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
+        "Yapıştırdığınız içeriklerin bazıları iş yeri, yasal veya veri koruma sınırlarını aşıyor olabilir. Bu bilgi, sizi yargılamak için değil, bunu fark etmenize yardımcı olmak için verilmiştir."
+      ],
       "Something went wrong analysing this export. Please try again.": [
         "Bu dışa aktarma dosyası incelenirken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
-      "Spotting the patterns in what you typed…": [
-        "Yazdıklarınızdaki örüntüler bulunuyor…"
+      "Star a chat to find it here quickly.": [
+        "Burada hızlıca bulmak istediğiniz sohbetlere yıldız koyun."
       ],
-      "The fuller the bar, the more of that area Big Tech could reconstruct from your chats. Lower is better. Hover a row to see what gave it away.": [
-        "Çubuk ne kadar doluysa, Big Tech şirketleri o alanı sohbetlerinizden çok daha iyi yeniden kurgulayabilir. Daha düşük olması daha iyidir. Neyin açık verdiğini görmek için imleci bir satırın üzerine getirin."
+      "Start a new chat to see it here.": [
+        "Burada görünmesi için yeni bir sohbet başlatın."
       ],
-      "The more an attacker knows about you, the more believable the phishing message. Personalised scams are far harder to spot.": [
+      "The fuller the bar, the more of that area Big Tech could reconstruct. Lower is better.": [
+        "Çubuk ne kadar doluysa Big Tech şirketlerinin yeniden oluşturabileceği alan o kadar büyür. Düşük değerler daha iyidir."
+      ],
+      "The more an attacker knows about you, the more believable the phishing message. Personalized scams are far harder to spot.": [
         "Bir saldırgan sizinle ilgili ne kadar çok şey bilirse, kimlik avı girişimi iletisi o kadar inandırıcı olur. Kişiselleştirilmiş dolandırıcılıkları farketmek çok daha zor olur."
       ],
-      "The more that's known about you, the more believable phishing and fraud attempts become.": [
-        "Sizinle ilgili ne kadar çok şey bilinirse, kimlik avı girişimleri ve dolandırıcılık girişimleri o kadar inandırıcı olur."
+      "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
+        "Bunlar, siz bunları açıkça yazmamış olsanız bile, Big Tech şirketlerinin yapay zeka hizmetlerinin sohbetlerinizden çıkarabileceği en önemli sınıflardır."
       ],
-      "These are the most sensitive categories Big Tech AI could infer about you from your chats.": [
-        "Bunlar, Big Tech yapay zekalarının sohbetlerinizden sizinle ilgili çıkarabileceği en hassas kategorilerdir."
-      ],
-      "This is exactly the kind of profiling ${ LUMO_SHORT_APP_NAME } is built to stop. With ${ LUMO_SHORT_APP_NAME }, your conversations are encrypted and never used to build a profile of you.": [
-        "Bu, tam olarak ${ LUMO_SHORT_APP_NAME } uygulamasının durdurmak için tasarlandığı türden bir profil oluşturma işlemidir. ${ LUMO_SHORT_APP_NAME } ile yazışmalarınız şifrelenir ve hiçbir zaman profilinizin oluşturulması için kullanılmaz."
-      ],
-      "This isn't just trivia. Here's what a profile like yours can actually be used for.": [
-        "Bu önemsiz bir bilgi değil. Sizinki gibi bir profilin aslında ne için kullanılabileceğine bakın."
+      "This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.": [
+        "İşte bu yüzden bu konu önemlidir: Bu bilgiler bir kez elde edildiğinde – genellikle şeffaflık veya rıza olmaksızın – sizinle ilgili hedef belirleme, profil oluşturma ve karar alma süreçlerini yönlendirebilir."
       ],
       "This message is empty. Sorry about that.": [
         "Bu ileti boş. Üzgünüz."
@@ -3852,8 +3937,17 @@
       "Tips on how to write useful instructions": [
         "Yararlı yönergeler yazmak için ipuçları"
       ],
+      "Try a different search term.": [
+        "Farklı bir arama ifadesi deneyin."
+      ],
+      "Turn off chat history and model training where possible.": [
+        "Yapılabildiğinde sohbet geçmişini ve model eğitimini kapatın."
+      ],
       "Type @filename to ask questions about a specific file": [
         "Belirli bir dosya ile ilgili soru sormak için @dosyaadı yazın"
+      ],
+      "Under your data, click Export data": [
+        "Verilerinizin altında verileri dışa aktar üzerine tıklayın"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Sınırsız özel ${ LUMO_SHORT_APP_NAME } oluşturmak, gelişmiş yapay zeka modellerine erişmek ve diğer şeyler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
@@ -3861,35 +3955,35 @@
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
         "Sınırsız proje oluşturmak, gelişmiş yapay zeka modellerine erişmek ve diğer şeyler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ],
-      "Use email aliases and hide-my-email so your real address isn't tied to every account.": [
-        "Her hesapta gerçek e-posta adresinizi kullanmamak için e-posta takma adlarını ve hide-my-email özelliğini kullanın."
-      ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Karmaşık işler için Max modelini, günlük görevler için Lite modelini kullanın. Hızlı yanıtlar için Hızlı kipi, daha zor sorular için Düşünme kipini seçin."
       ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "${ DRIVE_APP_NAME } kullanıldığında ${ LUMO_SHORT_APP_NAME } daha büyük dosyalarla çalışabilir."
       ],
+      "We extract your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts to keep processing fast. Nothing is stored on our servers. You can optionally save your report on this device.": [
+        "İşlemleri hızlı yapabilmek için son ${ PAPER_TRAIL_LIMITS.maxPrompts } bilgi istemini alıyoruz. Sunucularımızda hiçbir veri saklanmaz. İsterseniz raporunuzu bu aygıta kaydedebilirsiniz."
+      ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Kartınızı, gönderiye ekleyebilmeniz için kaydedeceğiz. Sosyal ağ siteleri görseli sizin için ekleyemez."
-      ],
-      "Working out what Big Tech AI could infer…": [
-        "Big Tech şirketlerinin yapay zekalarının neler çıkarabileceğine bakılıyor…"
       ],
       "You're using private browsing": [
         "Gizli gezinme kipini kullanıyorsunuz"
       ],
-      "Your file is analysed on the spot to build your report. Nothing is uploaded to our servers or stored.": [
-        "Raporunuzu oluşturmak için dosyanız anında incelenir. Sunucularımıza bir şey yüklenmez veya kaydedilmez."
-      ],
-      "Your file never leaves your device. It's read locally and is never stored.": [
-        "Dosyanız asla aygıtınızdan çıkmaz. Yerel olarak okunur ve asla depolanmaz."
+      "Your export is encrypted in transit and processed without being stored on ${ LUMO_SHORT_APP_NAME }'s servers.": [
+        "Dışa aktarma verileriniz aktarım sırasında şifrelenir ve ${ LUMO_SHORT_APP_NAME } sunucularına kaydedilmeden işlenir."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Dosyalarınız büyük. ${ LUMO_SHORT_APP_NAME } tüm bilgileri işleyemeyebilir."
       ],
       "Your information is zero-access encrypted": [
         "Bilgileriniz sıfır erişim şifrelemesi ile korunur"
+      ],
+      "Your report is being generated privately.": [
+        "Raporunuz gizliliği korunarak oluşturuluyor."
+      ],
+      "Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${ LUMO_SHORT_APP_NAME }'s servers.": [
+        "Raporunuz yalnızca bu tarayıcıda şifrelenmemiş olarak tutulur. Raporunuz aygıtınızdan asla dışarı çıkmaz ve ${ LUMO_SHORT_APP_NAME } sunucularına gönderilmez."
       ]
     },
     "collider_2025:Inspiration suggestion prompt": {
@@ -3964,6 +4058,9 @@
       ]
     },
     "collider_2025:Label": {
+      "${ selectedCount } selected": [
+        "${ selectedCount } seçilmiş"
+      ],
       "16:9": [
         "16:9"
       ],
@@ -3999,6 +4096,9 @@
       ],
       "Data brokers": [
         "Veri tüccarları"
+      ],
+      "Date": [
+        "Tarih"
       ],
       "Describe what to change": [
         "Neyin değiştirileceğini açıklayın"
@@ -4051,10 +4151,13 @@
       "Minimal": [
         "Minimal"
       ],
+      "My privacy type": [
+        "Gizlilik tercihim"
+      ],
       "Name": [
         "Ad"
       ],
-      "Personalised pricing": [
+      "Personalized pricing": [
         "Kişiye özel fiyatlar"
       ],
       "Politics": [
@@ -4062,6 +4165,9 @@
       ],
       "Project Instructions (optional)": [
         "Proje yönergeleri (isteğe bağlı)"
+      ],
+      "Save analysis on this device to view it later": [
+        "İncelmeyi bu aygıta kaydedin ve daha sonra görüntüleyin"
       ],
       "Scams": [
         "Dolandırıcılık"
@@ -4075,14 +4181,14 @@
       "Thick": [
         "Kalın"
       ],
-      "Tip": [
-        "İpucu"
+      "Tips": [
+        "İpuçları"
       ],
       "Untitled chat": [
         "Adlandırılmamış sohbet"
       ],
-      "While you wait — how your data gets used": [
-        "Beklerken, verilerinizi nasıl kullandığımızı öğrenin"
+      "Untitled project": [
+        "Adsız proje"
       ]
     },
     "collider_2025:Notification": {
@@ -4094,8 +4200,17 @@
       ]
     },
     "collider_2025:Option": {
+      "All": [
+        "Tümü"
+      ],
       "Date created": [
         "Oluşturulma tarihi"
+      ],
+      "Favorited": [
+        "Sık kullanılanlara eklendi"
+      ],
+      "From projects": [
+        "Projelerden"
       ],
       "Last updated": [
         "Son güncellenme"
@@ -4140,6 +4255,9 @@
       ],
       "Holiday planner": [
         "Tatil planlayıcı"
+      ],
+      "Search chats": [
+        "Sohbetleri ara"
       ],
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
         "Özel ${ LUMO_SHORT_APP_NAME } araması"
@@ -4521,15 +4639,20 @@
         "Galeri"
       ]
     },
+    "collider_2025:Time": {
+      "${ ageHours }h ago": [
+        "${ ageHours } saat önce"
+      ],
+      "${ ageMinutes }m ago": [
+        "${ ageMinutes } dakika önce"
+      ],
+      "Just now": [
+        "Az önce"
+      ]
+    },
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } başlatılamadı"
-      ],
-      "AI knows more about you than you think": [
-        "Yapay zeka hakkınızda sandığınızdan fazlasını biliyor"
-      ],
-      "AI Paper Trail": [
-        "Yapay zeka veri izi"
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Yapay zeka yardımcısı verileriniz için sizi sömürmemeli, aksine size güç katmalıdır."
@@ -4537,14 +4660,26 @@
       "Better web search": [
         "Daha iyi internet araması"
       ],
-      "Building your paper trail": [
-        "Veri iziniz oluşturuluyor"
+      "Building your AI Paper Trail": [
+        "Yapay zeka veri izi oluşturuluyor"
       ],
       "Built by the team that knows privacy": [
         "Gizliliği bilen bir ekip tarafından geliştirildi"
       ],
       "Chat knowledge": [
         "Sohbet bilgisi"
+      ],
+      "ChatGPT import": [
+        "ChatGPT içe aktarma"
+      ],
+      "Chats": [
+        "Sohbetler"
+      ],
+      "Choose privacy-first AI": [
+        "Gizlilik odaklı yapay zekayı seçin"
+      ],
+      "Claude import": [
+        "Claude içe aktarma"
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Özel bir ${ LUMO_SHORT_APP_NAME } oluşturun"
@@ -4558,11 +4693,11 @@
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "Özel ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Decisions made about you": [
-        "Sizinle ilgili alınan kararlar"
-      ],
       "Delete project?": [
         "Proje silinsin mi?"
+      ],
+      "Delete your data regularly": [
+        "Verilerinizi düzenli olarak silin"
       ],
       "Detail makes fraud convincing": [
         "Ayrıntılar dolandırıcılığın inanılırlığını artırır"
@@ -4582,20 +4717,20 @@
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } ile oluşturulan görselleri keşfedin"
       ],
-      "Export & delete regularly": [
-        "Düzenli olarak dışa aktarın ve silin"
-      ],
       "Export your data": [
         "Verilerinizi dışa aktarın"
-      ],
-      "Exposure scorecard": [
-        "Açığa çıkma puanı kartı"
       ],
       "Favorites": [
         "Beğenilenler"
       ],
       "File preview": [
         "Dosya ön izlemesi"
+      ],
+      "Filters": [
+        "Süzgeçler"
+      ],
+      "Generate your AI Paper Trail": [
+        "Yapay zeka veri izinizi oluşturun"
       ],
       "Get started by creating a new project": [
         "Yeni bir proje oluşturarak başlayın"
@@ -4609,17 +4744,14 @@
       "Health hints can shape your premiums": [
         "Sağlık ipuçları ücretlerinizi belirleyebilir"
       ],
-      "History": [
-        "Geçmiş"
-      ],
       "How can I help?": [
         "Nasıl yardımcı olabilirim?"
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "${ LUMO_SHORT_APP_NAME } sohbetlerinizi nasıl gizli tutar?"
       ],
-      "How to stay private": [
-        "Güvende kalma yolları"
+      "How to export your data": [
+        "Verilerinizi nasıl dışa aktarabilirsiniz"
       ],
       "Image generation and editing": [
         "Görsel oluşturma ve düzenleme"
@@ -4639,14 +4771,11 @@
       "Linked Drive Folder": [
         "Bağlı Drive klasörü"
       ],
-      "Mask your identity": [
-        "Kimliğinizi gizleyin"
+      "Meet your AI Paper Trail": [
+        "Yapay zeka veri iziniz ile tanışın"
       ],
       "Memory": [
         "Bellek"
-      ],
-      "More convincing scams": [
-        "Daha ikna edici dolandırıcılıklar"
       ],
       "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus ile daha fazla özel ${ LUMO_SHORT_APP_NAME } sürümü"
@@ -4669,8 +4798,17 @@
       "No chat history yet. Let's start chatting!": [
         "Henüz bir sohbet geçmişi yok. Sohbete başlayalım!"
       ],
-      "No result.": [
-        "Herhangi bir sonuç bulunamadı."
+      "No chats yet": [
+        "Henüz bir sohbet yok"
+      ],
+      "No favorites yet": [
+        "Henüz bir sık kullanılan yok"
+      ],
+      "No matching chats": [
+        "Eşleşen bir sohbet yok"
+      ],
+      "No project chats yet": [
+        "Henüz bir proje sohbeti yok"
       ],
       "Nothing here yet": [
         "Henüz burada bir şey yok"
@@ -4678,17 +4816,8 @@
       "Older": [
         "Daha eski"
       ],
-      "Out of your control": [
-        "Kontrolunuz dışında"
-      ],
       "Oversharing blind spots": [
         "Aşırı paylaşımın kör noktaları"
-      ],
-      "Personalised pricing": [
-        "Kişiye özel fiyatlar"
-      ],
-      "Prefer end-to-end encryption": [
-        "Uçtan uca şifreleme kullanın"
       ],
       "Profiles can decide your future": [
         "Profiller geleceğinize karar verebilir"
@@ -4696,23 +4825,35 @@
       "Project knowledge": [
         "Proje bilgileri"
       ],
+      "Recent": [
+        "Son kullanılan"
+      ],
       "Remove all files?": [
         "Tüm dosyalar kaldırılsın mı?"
+      ],
+      "Report at a glance": [
+        "Rapora genel bakış"
+      ],
+      "Review privacy settings": [
+        "Gizlilik ayarlarını gözden geçirin"
+      ],
+      "See what Big Tech AI already knows about you": [
+        "Big Tech şirketlerinin yapay zekasının sizinle ilgili neler bildiğini görün"
       ],
       "See your AI paper trail": [
         "Yapay zeka veri izinizi görün"
       ],
-      "Share less with AI": [
-        "Yapay zeka ile daha az paylaşın"
+      "Share only what is needed": [
+        "Yalnızca gerekli olan bilgileri paylaşın"
+      ],
+      "Share your score": [
+        "Puanınızı paylaşın"
       ],
       "Sign in to build your gallery": [
         "Galerinizi oluşturmak için oturum açın"
       ],
       "Sign in to create projects": [
         "Proje oluşturmak için oturum açın"
-      ],
-      "Sold to data brokers": [
-        "Veri tüccarlarına satıldı"
       ],
       "Sort by": [
         "Sıralama ölçütü"
@@ -4723,9 +4864,6 @@
       "Start a new conversation": [
         "Yeni bir yazışma başlat"
       ],
-      "Targeted manipulation": [
-        "Hedeflenmiş manipülasyon"
-      ],
       "That's why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Bu yüzden ${ LUMO_SHORT_APP_NAME } uygulamasını geliştirdik: Size, gizliliğinizden ve veri güvenliğinizden ödün vermeden yapay zekanın tüm yararlarını sunuyoruz."
       ],
@@ -4735,23 +4873,17 @@
       "This chat disappears when you close it and is never saved.": [
         "Bu sohbet, kapattığınızda kaybolur ve asla kaydedilmez."
       ],
-      "Turn off history & training": [
-        "Geçmişi ve eğitimi kapat"
-      ],
       "Two models, two modes": [
         "İki model, iki kip"
       ],
-      "Upload it privately": [
-        "Gizliliği koruyarak yükleyin"
+      "Upload it securely": [
+        "Güvenliği koruyarak yükleyin"
       ],
-      "Use privacy-first tools": [
-        "Gizlilik odaklı araçlar kullanın"
+      "Use AI on your terms": [
+        "Yapay zekayı kendi belirleyeceğiniz koşullar ile kullanın"
       ],
       "We couldn't read your paper trail": [
         "Veri izinizi okuyamadık"
-      ],
-      "What Big Tech inferred": [
-        "Big Tech şirketlerinin çıkardığı sonuçlar"
       ],
       "What do you want to create today?": [
         "Bugün ne oluşturmak istersiniz?"
@@ -4759,20 +4891,26 @@
       "What this profile exposes": [
         "Bu profilin açığa çıkardıkları"
       ],
-      "Why this matters": [
-        "Bu neden önemli"
+      "What we identified": [
+        "Bulduklarımız"
       ],
-      "You can't un-share it": [
-        "Paylaşımı geri alamazsınız"
+      "You can’t un-share it": [
+        "Onun paylaşımını kaldıramazsınız"
       ],
       "You might be shown a higher price": [
         "Size daha yüksek bir fiyat görüntülenebilir"
       ],
-      "You saw the profile?": [
-        "Profili gördünüz mü?"
+      "You saw the profile? Now protect the person behind it.": [
+        "Profili gördünüz mü? Şimdi de o profilin arkasındaki kişiyi koruyun."
+      ],
+      "Your conversations should belong to you. With ${ LUMO_SHORT_APP_NAME }, they do.": [
+        "Yazışmalarınız size ait olmalı. ${ LUMO_SHORT_APP_NAME } ile tam da öyle oluyor."
       ],
       "Your image gallery is empty": [
         "Görsel galeriniz boş"
+      ],
+      "Your recent files": [
+        "Son kullandığınız dosyalar"
       ],
       "Your shareable card": [
         "Paylaşılabilir kartınız"
@@ -6307,7 +6445,7 @@
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
       "${ LUMO_APP_NAME } includes the writing assistant": [
-        "${ LUMO_APP_NAME } yazma yardımcısını içerir"
+        "${ LUMO_APP_NAME } içinde yazma yardımcısı bulunur"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
@@ -7297,6 +7435,9 @@
       "Close preview": [
         "Ön izlemeyi kapat"
       ],
+      "Compaction": [
+        "Sıkıştırma"
+      ],
       "Composer limit banner preview": [
         "Oluşturucu sınırı bildirimi ön izlemesi"
       ],
@@ -7305,6 +7446,9 @@
       ],
       "Create Test Chats": [
         "Deneme sohbetleri oluştur"
+      ],
+      "Current conversation": [
+        "Geçerli yazışma"
       ],
       "Debug View": [
         "Hata ayıklama görünümü"
@@ -7369,6 +7513,9 @@
       "No": [
         "Hayır"
       ],
+      "None open": [
+        "Hiçbiri açık değil"
+      ],
       "Notifications": [
         "Bildirimler"
       ],
@@ -7401,6 +7548,9 @@
       ],
       "Resource limit notifications": [
         "Kaynak sınırı bildirimleri"
+      ],
+      "Runs the compaction engine over the displayed branch and inserts a compaction boundary, without generating a reply. \"Force summarization\" always runs the LLM summary step even when cheaper strategies already free up enough space.": [
+        "Görüntülenen dal üzerinde sıkıştırma işlemini yapar ve bir yanıt oluşturmadan bir sıkıştırma sınırı ekler. “Zorla özetleme” seçeneği, daha verimli stratejiler zaten yeterli alan açmış olsa bile her zaman LLM özetleme adımını uygular."
       ],
       "Search": [
         "Ara"
@@ -7458,6 +7608,12 @@
       ],
       "Trigger assets limit": [
         "Tetikleyici varlıklar sınırı"
+      ],
+      "Trigger compaction": [
+        "Sıkıştırmayı başlat"
+      ],
+      "Trigger compaction (force summarization)": [
+        "Sıkıştırmayı başlat (zorla özetleme)"
       ],
       "Trigger conversations limit": [
         "Konuşma sayısı sınırını tetikle"
@@ -7543,6 +7699,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)",
+        "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } lisansı"
       ],
@@ -8324,7 +8484,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Şirket kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -8558,6 +8718,9 @@
       ],
       "Remove from favorites": [
         "Beğenilenlerden kaldır"
+      ],
+      "Rename": [
+        "Yeniden adlandır"
       ]
     },
     "pass_signup_2023: Info": {
@@ -8945,7 +9108,7 @@
         "İl"
       ],
       "Company name": [
-        "Kuruluş adı"
+        "Birim adı"
       ],
       "Cortex Inc.": [
         "Cortex Inc."
@@ -9587,7 +9750,7 @@
         "aylık, yılda bir faturalanır"
       ],
       "per user/month, billed annually": [
-        "kullanıcı başına/ay, yıllık olarak faturalandırılır"
+        "kullanıcı/ay, yılda bir faturalanır"
       ]
     },
     "Success": {
@@ -9599,6 +9762,9 @@
       ],
       "Conversation deleted": [
         "Yazışma silindi"
+      ],
+      "Conversations deleted": [
+        "Yazışmalar silindi"
       ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
