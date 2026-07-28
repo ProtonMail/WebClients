@@ -719,6 +719,9 @@
       "Refresh the page": [
         "Oppdater siden"
       ],
+      "Reject": [
+        "Avvis"
+      ],
       "Remove": [
         "Fjern"
       ],
@@ -1072,6 +1075,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } bruker)",
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } brukere)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ekstra egendefinert domene",
         "${ domains } ekstra egendefinerte domener"
@@ -1079,6 +1086,13 @@
       "${ ips } dedicated VPN server": [
         "${ ips } dedikert VPN-tjener",
         "${ ips } dedikerte VPN-tjenere"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } bruker)",
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } brukere)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } KI-lisens"
@@ -1097,6 +1111,10 @@
       ],
       "${ price } per user": [
         "${ price } per bruker"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } egendefinert domene",
+        "${ quantity } egendefinerte domener"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } KI-lisens",
@@ -5677,6 +5695,9 @@
         "Sletter hendelse...",
         "Sletter hendelser..."
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Discard changes?": [
         "Forkaste endringer?"
       ],
@@ -7888,6 +7909,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (for ${ quantity } bruker)",
+        "${ MEET_APP_NAME } (for ${ quantity } brukere)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-tilgang"
       ],

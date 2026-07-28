@@ -719,6 +719,9 @@
       "Refresh the page": [
         "გვერდის განახლება"
       ],
+      "Reject": [
+        "უარყოფა"
+      ],
       "Remove": [
         "წაშლა"
       ],
@@ -1072,6 +1075,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)",
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } დამატებითი მორგებული დომენი",
         "${ domains } დამატებითი მორგებული დომენი"
@@ -1079,6 +1086,13 @@
       "${ ips } dedicated VPN server": [
         "${ ips } გამოყოფილი VPN სერვერი",
         "${ ips } გამოყოფილი VPN სერვერი"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ხი დამხმარე ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-ის ლიცენზია"
@@ -1097,6 +1111,10 @@
       ],
       "${ price } per user": [
         "${ price }/მომხმარებელი"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } მომხმარებლის დომენი",
+        "${ quantity } მომხმარებლის დომენი"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია",
@@ -5674,6 +5692,9 @@
         "მოვლენის წაშლა...",
         "მოვლენების წაშლა..."
       ],
+      "Details": [
+        "დეტალები"
+      ],
       "Discard changes?": [
         "გავაუქმო ცვლილებები?"
       ],
@@ -7867,6 +7888,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "${ MEET_APP_NAME } (${ quantity } მომხმარებლისთვის)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-ის ლიცენზია"
       ],
