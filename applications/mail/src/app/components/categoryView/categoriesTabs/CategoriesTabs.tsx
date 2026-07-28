@@ -9,7 +9,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
 import { selectActiveCategoryID, selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
-import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
+import { selectDraggingElements, selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
 
 import { useCategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoriesOnboarding/CategoriesOnboardingSpotlights';
@@ -30,6 +30,7 @@ export const CategoriesTabsList = () => {
     const categoryIDs = useMailSelector(selectCategoryIDs);
     const activeCategoryID = useMailSelector(selectActiveCategoryID);
     const selectAll = useMailSelector(selectSelectAll);
+    const isDraggingElements = useMailSelector(selectDraggingElements);
 
     const dispatch = useDispatch();
 
@@ -75,11 +76,9 @@ export const CategoriesTabsList = () => {
                 onDragLeave={handleDragLeave}
                 onDragEnd={handleDragEnd}
             >
-                {activeCategoriesTabs.map((category, index) => {
+                {activeCategoriesTabs.map((category) => {
                     const tabState = getTabState({
-                        index,
                         category,
-                        categoriesList: activeCategoriesTabs || [],
                         draggedOverCategoryId,
                         categoryIDs,
                         selectAll,
@@ -95,7 +94,11 @@ export const CategoriesTabsList = () => {
                                     onDrop={handleDrop(category.id)}
                                 >
                                     <ErrorBoundary component={<CategoryTabError />}>
-                                        <Tab category={category} tabState={tabState} />
+                                        <Tab
+                                            category={category}
+                                            tabState={tabState}
+                                            userIsDragging={isDraggingElements}
+                                        />
                                     </ErrorBoundary>
                                 </div>
                             </CategoriesOnboardingSpotlight>
@@ -110,7 +113,7 @@ export const CategoriesTabsList = () => {
                             onDrop={handleDrop(category.id)}
                         >
                             <ErrorBoundary component={<CategoryTabError />}>
-                                <Tab category={category} tabState={tabState} />
+                                <Tab category={category} tabState={tabState} userIsDragging={isDraggingElements} />
                             </ErrorBoundary>
                         </div>
                     );

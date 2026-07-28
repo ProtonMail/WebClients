@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import { clsx } from 'clsx';
+import { c } from 'ttag';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
@@ -27,16 +28,16 @@ import { useCategoriesBadge } from './useCategoriesBadge';
 interface Props {
     category: CategoryTab;
     tabState: TabState;
+    userIsDragging: boolean;
 }
 
 const navClasses: Record<TabState, string> = {
     [TabState.ACTIVE]: 'active color-norm border-bottom border-top text-semibold mail-category-border',
     [TabState.DRAGGING_OVER]: 'hovered border mail-category-border',
-    [TabState.DRAGGING_NEIGHBOR]: 'neighbor border border-transparent',
     [TabState.INACTIVE]: 'border border-transparent',
 };
 
-export const Tab = ({ category, tabState }: Props) => {
+export const Tab = ({ category, tabState, userIsDragging }: Props) => {
     const dispatch = useDispatch();
     const { call } = useEventManager();
 
@@ -72,13 +73,15 @@ export const Tab = ({ category, tabState }: Props) => {
     };
 
     const navigateTo = setCategoryInUrl(category.id);
+    const shouldShowDragHelper = userIsDragging && tabState !== TabState.ACTIVE;
 
     return (
         <NavLink
             to={navigateTo}
             className={clsx(
                 'tab-container gap-1.5 h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
-                navClasses[tabState]
+                navClasses[tabState],
+                shouldShowDragHelper && 'dashed'
             )}
             role="tab"
             aria-selected={tabState === TabState.ACTIVE}
@@ -106,6 +109,10 @@ export const Tab = ({ category, tabState }: Props) => {
                 >
                     {getLabelFromCategoryId(category.id)}
                 </span>
+                {shouldShowDragHelper ? (
+                    <span className="tab-dragging-help text-ellipsis min-w-0 text-xs">{c('Info')
+                        .t`Drag here to move message`}</span>
+                ) : null}
             </span>
 
             <TabBadge count={count} tabState={tabState} shouldShowCounter={shouldShowCounter} />

@@ -28,7 +28,7 @@ $tab-dot-ease: easing(ease-out-quint);
 		block-size: rem(44);
 		border-width: rem(3) 0;
 		padding-block: 0;
-		padding-inline: rem(16) rem(14);
+		padding-inline: rem(16) 0;
 		transition: color 0.2s ease;
 
 		&:focus-visible {
@@ -47,14 +47,13 @@ $tab-dot-ease: easing(ease-out-quint);
 			border-block-start: rem(3) solid transparent !important;
 		}
 
-		&.neighbor {
-			position: relative;
-			border-color: transparent;
-
+		// Dashed border used when the user start dragging an element
+		&.dashed {
 			&::after {
 				content: '';
 				position: absolute;
-				inset: rem(-3);
+				inset-block: 0 rem(-4);
+				inset-inline: 0 rem(-1);
 				border: rem(1) dashed var(--border-weak);
 				border-radius: inherit;
 				pointer-events: none;
@@ -64,7 +63,8 @@ $tab-dot-ease: easing(ease-out-quint);
 		// Default (< 820px): icon-only — label and count hidden. Shown again at ≥ 820px
 		// and, for the label, on the active tab or when dragging over it.
 		.tab-label,
-		.tag-count {
+		.tag-count,
+		.tab-dragging-help {
 			display: none;
 		}
 
@@ -152,6 +152,10 @@ $tab-dot-ease: easing(ease-out-quint);
 
 			.tab-label {
 				font-size: rem(13);
+			}
+
+			.tab-dragging-help {
+				display: block;
 			}
 		}
 	}
