@@ -135,6 +135,24 @@ describe('ArchiveGenerator', () => {
         ]);
     });
 
+    // A folder awaiting a signature-issue decision can be overtaken by its own children,
+    // which have no such wait and finish first (see DownloadScheduler concurrency).
+    it('should nest children arriving before their parent folder', async () => {
+        await checkWritingLinks([
+            { isFile: true, name: 'Child.txt', path: ['Folder'] },
+            { isFile: true, name: 'Child2.txt', path: ['Folder'] },
+            { isFile: false, name: 'Folder' },
+        ]);
+    });
+
+    it('should nest children arriving before their whole parent chain', async () => {
+        await checkWritingLinks([
+            { isFile: true, name: 'Child.txt', path: ['dir', 'subdir'] },
+            { isFile: false, name: 'subdir', path: ['dir'] },
+            { isFile: false, name: 'dir' },
+        ]);
+    });
+
     it('should generate many files with the same name but different case', async () => {
         await checkWritingLinks([
             { isFile: true, name: 'file.txt' },
