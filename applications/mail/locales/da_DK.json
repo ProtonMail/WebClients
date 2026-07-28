@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Ryd browserdata"
       ],
+      "Clear conversation": [
+        "Ryd samtale"
+      ],
       "Clear data": [
         "Ryd data"
       ],
@@ -832,6 +835,9 @@
       "Loading${ ellipsis }": [
         "Indlæser${ ellipsis }"
       ],
+      "Lookup document": [
+        "Find dokument"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Gør ${ MAIL_APP_NAME } til din standard-e-mailapplikation"
       ],
@@ -1134,6 +1140,9 @@
       ],
       "Refresh the page": [
         "Opdater siden"
+      ],
+      "Reject": [
+        "Afvis"
       ],
       "Remove": [
         "Fjern"
@@ -1441,6 +1450,9 @@
       "Stay": [
         "Bliv her"
       ],
+      "Stop": [
+        "Stop"
+      ],
       "Stop downloading assistant": [
         "Stop med at hente assistenten"
       ],
@@ -1482,6 +1494,9 @@
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "For at søge sikkert i dine e-mails, har vi brug for at downloade en kopi af dine beskeder til din browser. Den første download kan tage et stykke tid."
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Skift ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "Skift Kalender-app"
@@ -1768,6 +1783,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } bruger)",
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } brugere)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ekstra tilpasset domæne",
         "${ domains } yderligere tilpassede domæner"
@@ -1776,11 +1795,22 @@
         "${ ips } dedikeret VPN-server",
         "${ ips } dedikerede VPN-servere"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } bruger)",
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } brugere)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-licens"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } pladser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } bruger)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } brugere)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerede server"
@@ -1793,6 +1823,10 @@
       ],
       "${ price } per user": [
         "${ price } per bruger"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } brugerdefineret domæne",
+        "${ quantity } brugerdefinerede domæner"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI licens",
@@ -5297,6 +5331,9 @@
       "Something went wrong while fetching available domains": [
         "Noget gik galt under hentning af tilgængelige domæner"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Noget gik galt, luk modalen og prøv igen."
+      ],
       "Something went wrong. Please try again.": [
         "Et eller andet gik galt. Prøv igen."
       ],
@@ -6858,6 +6895,10 @@
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
       ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problem under import:",
+        "${ issues.length } problemer under import:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
       ],
@@ -6945,6 +6986,9 @@
       "${ receivedMessagesCount } email last month": [
         "${ receivedMessagesCount } e-mail i sidste måned",
         "${ receivedMessagesCount } e-mails i sidste måned"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minutter tilbage..."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
@@ -7447,6 +7491,9 @@
       "Default email application": [
         "Standardprogram til mails"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Registreringen sker på din enhed, så ingen data fra dine e-mails sendes til vores servere."
       ],
@@ -7699,6 +7746,10 @@
       "Forgot password?": [
         "Glemt din adgangskode?"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Fandt et aktuelt krypteret søgeindeks med ${ oldIndexSize } besked.",
+        "Fandt et aktuelt krypteret søgeindeks med ${ oldIndexSize } beskeder."
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Prøv gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
         "Prøv gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dage"
@@ -7803,6 +7854,9 @@
       ],
       "Import in progress": [
         "Import i gang"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importen er i gang. Du kan lukke denne dialogboks mens den kører, og så vende tilbage til den senere. Luk dog ikke fanen."
       ],
       "Import mailbox": [
         "Importér postkasse"
@@ -8594,6 +8648,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "De kan ikke spamme dig, hvis de ikke kender din e-mailadresse. Beskyt din indbakke med hide-my-email-aliasser."
       ],
+      "Thinking about this": [
+        "Overvejer..."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
       ],
@@ -9069,6 +9126,9 @@
       ],
       "You can either update your search query or clear it": [
         "Du kan enten opdatere din søgeforespørgsel eller slette den"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Du kan importere det som et nyt fundament-søgeindeks til udviklingsformål."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement.",
@@ -9834,6 +9894,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Content search version to use": [
+        "Indholdssøgningsversion, der skal bruges"
+      ],
       "Context page": [
         "Kontekstside"
       ],
@@ -9884,6 +9947,9 @@
       ],
       "Did not follow instructions": [
         "Fulgte ikke instruktionerne"
+      ],
+      "Document ID": [
+        "Dokument-ID"
       ],
       "Don't ask again": [
         "Spørg ikke igen"
@@ -10455,6 +10521,12 @@
       "Username": [
         "Brugernavn"
       ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
+      ],
       "Verification code": [
         "Verifikationskode"
       ],
@@ -10981,11 +11053,18 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (til ${ quantity } bruger)",
+        "${ MEET_APP_NAME } (til ${ quantity } brugere)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licens"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } pladser"
+      ],
+      "${ price } per seat": [
+        "${ price } pr. plads"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-plads",
@@ -13127,6 +13206,9 @@
       "Anytown": [
         "Skovhavn"
       ],
+      "Ask anything…": [
+        "Spørg om hvad som helst..."
+      ],
       "Company name": [
         "Firmanavn"
       ],
@@ -15173,9 +15255,8 @@
         "Flyt ${ selectionCount } besked",
         "Flyt ${ selectionCount } beskeder"
       ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Flyttet til ${ label }. En lignende besked vil blive kategoriseret her i fremtiden",
-        "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her i fremtiden"
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Flyttet til ${ label }. Lignende beskeder vil fremover blive kategoriseret ligesådan."
       ],
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"

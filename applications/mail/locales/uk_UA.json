@@ -1143,6 +1143,9 @@
       "Refresh the page": [
         "Оновити сторінку"
       ],
+      "Reject": [
+        "Відхилити"
+      ],
       "Remove": [
         "Вилучити"
       ],
@@ -1778,6 +1781,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувача)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } додатковий власний домен",
         "${ domains } додаткові власні домени",
@@ -1789,6 +1798,15 @@
         "${ ips } виділені VPN-сервери",
         "${ ips } виділених VPN-серверів",
         "${ ips } виділених VPN-серверів"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувача)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувачів)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувачів)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувача)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Ліцензія ШІ ${ LUMO_APP_NAME }"
@@ -1807,6 +1825,12 @@
       ],
       "${ price } per user": [
         "${ price } за користувача"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } власний домен",
+        "${ quantity } власні домени",
+        "${ quantity } власних доменів",
+        "${ quantity } власного домену"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ліцензія AI для ${ LUMO_APP_NAME }",
@@ -7662,6 +7686,9 @@
       "Default email application": [
         "Типова програма електронної пошти"
       ],
+      "Details": [
+        "Деталі"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Виявлення відбувається на вашому пристрої, тому жодні дані з ваших електронних листів не надсилаються на наші сервери."
       ],
@@ -11269,6 +11296,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (для ${ quantity } користувача)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)"
+      ],
       "${ MEET_APP_NAME } license": [
         "Ліцензія ${ MEET_APP_NAME }"
       ],
@@ -15691,12 +15724,6 @@
         "Перемістити ${ selectionCount } повідомлення",
         "Перемістити ${ selectionCount } повідомлень",
         "Перемістити ${ selectionCount } повідомлень"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Переміщено до ${ label }. Схоже повідомлення буде сортуватися сюди у майбутньому.",
-        "Переміщено до ${ label }. Схожі повідомлення будуть сортуватися сюди у майбутньому.",
-        "Переміщено до ${ label }. Схожі повідомлення будуть сортуватися сюди у майбутньому.",
-        "Переміщено до ${ label }. Схожі повідомлення будуть сортуватися сюди у майбутньому."
       ],
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
