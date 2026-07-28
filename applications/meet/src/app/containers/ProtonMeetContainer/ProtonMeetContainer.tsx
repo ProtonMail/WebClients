@@ -63,9 +63,11 @@ import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureI
 import { useSafariWebsocketVisibilityHandler } from '../../hooks/useSafariWebsocketVisibilityHandler';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { useWakeLock } from '../../hooks/useWakeLock';
+import type { JoinLocationState } from '../../types';
 import { LoadingState } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { hasPreloadedMeetingDetails } from '../../utils/meetingDetailsPreload';
 import { cleanupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
 import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
@@ -95,7 +97,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     useWakeLock();
 
-    const location = useLocation<{ instantJoin?: boolean }>();
+    const location = useLocation<JoinLocationState | undefined>();
 
     const [isInstantJoin, setIsInstantJoin] = useState(location.state?.instantJoin === true);
 
@@ -332,6 +334,12 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         }
 
         if (instantMeetingRef.current) {
+            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
+
+            return;
+        }
+
+        if (await hasPreloadedMeetingDetails(token)) {
             setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
 
             return;

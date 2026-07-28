@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
+import clsx from '@proton/utils/clsx';
+
 import { ConditionalTooltip } from '../ConditionalTooltip/ConditionalTooltip';
 
 import './TruncatedTextWithTooltip.scss';
 
-export const TruncatedTextWithTooltip = ({ label }: { label: string }) => {
+export const TruncatedTextWithTooltip = ({ label, className }: { label: string; className?: string }) => {
     const spanRef = useRef<HTMLSpanElement>(null);
     const [isTruncated, setIsTruncated] = useState(false);
 
@@ -50,7 +52,7 @@ export const TruncatedTextWithTooltip = ({ label }: { label: string }) => {
             tooltipClassName="meet-tooltip bg-strong color-norm"
             tooltipStyle={{ '--meet-tooltip-bg': 'var(--interaction-norm-minor-2)' }}
         >
-            <span ref={spanRef} className="truncated-text-with-tooltip text-ellipsis">
+            <span ref={spanRef} className={clsx('truncated-text-with-tooltip text-ellipsis', className)}>
                 {label}
             </span>
         </ConditionalTooltip>

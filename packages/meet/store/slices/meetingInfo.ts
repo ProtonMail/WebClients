@@ -26,6 +26,7 @@ export interface MeetingInfoState {
     timeLeftMs: number;
     isExpiringSoon: boolean;
     meetingDurationTimer: number | null;
+    isPersonalRoom: boolean;
 }
 
 export const initialState: MeetingInfoState = {
@@ -43,6 +44,7 @@ export const initialState: MeetingInfoState = {
     timeLeftMs: 0,
     isExpiringSoon: false,
     meetingDurationTimer: null,
+    isPersonalRoom: false,
 };
 
 /**
@@ -166,5 +168,6 @@ export const selectKeyRotationLogs = (state: MeetState) => state.meetingInfo.key
 export const selectMeetingDurationMs = (state: MeetState) => state.meetingInfo.meetingDurationMs;
 export const selectTimeLeftMs = (state: MeetState) => state.meetingInfo.timeLeftMs;
 export const selectIsExpiringSoon = (state: MeetState) => state.meetingInfo.isExpiringSoon;
+export const selectIsPersonalRoom = (state: MeetState) => state.meetingInfo.isPersonalRoom;
 
 export const meetingInfoReducer = { meetingInfo: slice.reducer };
