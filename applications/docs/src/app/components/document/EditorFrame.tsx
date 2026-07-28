@@ -19,6 +19,9 @@ function getEditorUrl(systemMode: EditorSystemMode, documentType: DocumentType) 
 
   url.searchParams.set('type', documentType)
   url.searchParams.set('mode', systemMode)
+  if (versionCookieAtLoad) {
+    url.searchParams.set('tag', versionCookieAtLoad)
+  }
 
   return url.toString()
 }
