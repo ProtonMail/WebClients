@@ -1283,6 +1283,9 @@
       "Verify password": [
         "Verifiqueu la contrasenya"
       ],
+      "Verify recovery phrase": [
+        "Verifica la frase de recuperació"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifica el domini ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1685,9 +1688,6 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Proveu ${ selected } ${ freeForNDays }"
-      ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Proveu-ho gratuïtament durant ${ TRIAL_DURATION_DAYS } dies"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "En cas que cancel·leu, la prova gratuïta no es convertirà en una subscripció de pagament, però podreu gaudir dels avantatges del pla fins al final del període de prova. Després, passareu al pla gratuït ${ BRAND_NAME }."
@@ -5254,6 +5254,9 @@
       "This label name is not available. Please choose a different name.": [
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Aquesta frase no pot recuperar el vostre compte. En podeu generar una de nova per assegurar-vos que el vostre compte es pugui recuperar en el futur."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Per a crear comptes d'usuari no privats i accedir als seus comptes, necessitareu restaurar els vostres privilegis d'administrador."
       ],
@@ -7377,6 +7380,9 @@
       "Change your password": [
         "Canvieu la vostra contrasenya"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Comproveu que la vostra frase de recuperació es pugui fer servir per recuperar completament el vostre compte."
+      ],
       "Choose a plan that works best for you.": [
         "Trieu el pla que se us adapti millor."
       ],
@@ -8609,6 +8615,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase de recuperació no està associada amb cap clau antiquada."
+      ],
+      "Recovery phrase verified": [
+        "S'ha verificat la frase de recuperació"
       ],
       "Reddit": [
         "Reddit"
@@ -11410,6 +11419,9 @@
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
       ],
+      "${ price } per seat": [
+        "${ price } per llicència"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
         "${ seats } llicències de ${ MEET_APP_NAME }"
@@ -13350,70 +13362,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Mantén aquest pla"
-      ],
       "Start using ${ appName }": [
         "Comenceu a utilitzar ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Millora el meu pla"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Parlem-ne"
-      ],
-      "Recommended": [
-        "Recomanat"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } al mes"
-      ],
-      "/month /user": [
-        "/mes /usuari"
-      ],
-      "/month /user, billed annually": [
-        "/mes /usuari, facturat anualment"
-      ],
-      "/month /user, billed biennially": [
-        "/mes /usuari, facturat biennalment"
-      ],
-      "Current plan": [
-        "Pla actual"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Per només **${ relativePrice } mensuals** més, tindreu accés al gestor de contrasenyes prèmium de ${ BRAND_NAME }."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Per només **${ relativePrice } al mes** més, tindreu accés al servei VPN prèmium de ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Per només **${ relativePrice } més al mes**, obteniu accés a tots els serveis prèmium de ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Gratuït per sempre"
-      ],
-      "Get in touch with our sales team": [
-        "Poseu-vos en contacte amb el nostre equip comercial"
-      ],
-      "Includes:": [
-        "Inclou:"
-      ],
-      "per month": [
-        "per mes"
-      ],
-      "per month, billed annually": [
-        "al mes amb facturació anual"
-      ],
-      "per month, billed every month": [
-        "al mes amb facturació mensual"
-      ],
-      "per month, billed every two years": [
-        "al mes amb facturació cada dos anys"
-      ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
       ],
@@ -18483,6 +18436,9 @@
       ],
       "Verify your password": [
         "Verifiqueu la vostra contrasenya"
+      ],
+      "Verify your phrase": [
+        "Verifiqueu la frase"
       ],
       "Verifying your card...": [
         "S'està verificant la targeta…"

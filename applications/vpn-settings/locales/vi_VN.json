@@ -1650,9 +1650,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "Dùng thử ${ selected } ${ freeForNDays }"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Dùng thử miễn phí trong ${ TRIAL_DURATION_DAYS } ngày"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Khi hủy, bản dùng thử miễn phí sẽ không chuyển thành gói đăng ký trả phí, nhưng vẫn có thể tận hưởng các quyền lợi của gói cho đến khi kết thúc thời gian dùng thử. Sau đó, sẽ bị hạ cấp xuống gói ${ BRAND_NAME } Miễn phí."
       ],
@@ -12988,70 +12985,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Giữ gói này"
-      ],
       "Start using ${ appName }": [
         "Bắt đầu sử dụng ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Nâng cấp gói của tôi"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Cùng nói chuyện nào"
-      ],
-      "Recommended": [
-        "Được đề xuất"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } mỗi tháng"
-      ],
-      "/month /user": [
-        "/tháng /người dùng"
-      ],
-      "/month /user, billed annually": [
-        "/tháng /người dùng, thanh toán hàng năm"
-      ],
-      "/month /user, billed biennially": [
-        "/tháng /người dùng, thanh toán hai năm một lần"
-      ],
-      "Current plan": [
-        "Gói hiện tại"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Chỉ cần thêm **${ relativePrice }/tháng**, bạn sẽ được truy cập trình quản lý mật khẩu cao cấp của ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Chỉ cần thêm **${ relativePrice }/tháng**, bạn sẽ được truy cập dịch vụ VPN cao cấp của ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Chỉ với thêm **${ relativePrice } mỗi tháng**, có thể truy cập tất cả các dịch vụ ${ BRAND_NAME } cao cấp!"
-      ],
-      "Free forever": [
-        "Miễn phí vĩnh viễn"
-      ],
-      "Get in touch with our sales team": [
-        "Liên hệ với đội ngũ bán hàng của chúng tôi"
-      ],
-      "Includes:": [
-        "Bao gồm:"
-      ],
-      "per month": [
-        "mỗi tháng"
-      ],
-      "per month, billed annually": [
-        "mỗi tháng, thanh toán hàng năm"
-      ],
-      "per month, billed every month": [
-        "mỗi tháng, thanh toán hàng tháng"
-      ],
-      "per month, billed every two years": [
-        "mỗi tháng, thanh toán 2 năm một lần"
-      ],
       "Secure vault sharing": [
         "Chia sẻ kho bảo mật"
       ],

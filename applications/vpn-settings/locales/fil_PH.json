@@ -1661,9 +1661,6 @@
       "Try ${ selected } ${ freeForNDays }": [
         "Subukan ang ${ selected } ${ freeForNDays }"
       ],
-      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
-        "Subukan ito nang libre sa loob ng ${ TRIAL_DURATION_DAYS } na araw"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kapag nagkansela ka, hindi magiging paid subscription ang iyong libreng pagsubok, pero ma-e-enjoy mo pa rin ang mga benepisyo ng plano hanggang sa matapos ang panahon ng pagsubok. Pagkatapos noon, i-da-downgrade ka sa ${ BRAND_NAME } Free plan."
       ],
@@ -13177,70 +13174,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Panatilihin ang planong ito"
-      ],
       "Start using ${ appName }": [
         "Simulan ang paggamit ng ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "I-upgrade ang plano"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Mag-usap tayo"
-      ],
-      "Recommended": [
-        "Inirerekomenda"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } kada buwan"
-      ],
-      "/month /user": [
-        "/buwan /user"
-      ],
-      "/month /user, billed annually": [
-        "/buwan /user, sinisingil taun-taon"
-      ],
-      "/month /user, billed biennially": [
-        "/buwan /user, sinisingil kada dalawang taon"
-      ],
-      "Current plan": [
-        "Kasalukuyang plano"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Sa halagang **${ relativePrice } kada buwan** na dagdag, magkakaroon ka ng access sa premium na tagapamahala ng password ng ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Sa halagang **${ relativePrice } kada buwan** na dagdag, magkakaroon ka ng access sa premium na serbisyo ng VPN ng ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Sa karagdagang **${ relativePrice } kada buwan** lamang, makakakuha ng access sa lahat ng premium na serbisyo ng ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Libre habambuhay"
-      ],
-      "Get in touch with our sales team": [
-        "Makipag-ugnayan sa aming sales team"
-      ],
-      "Includes:": [
-        "Kasama ang:"
-      ],
-      "per month": [
-        "kada buwan"
-      ],
-      "per month, billed annually": [
-        "kada buwan, sinisingil taun-taon"
-      ],
-      "per month, billed every month": [
-        "kada buwan, sinisingil kada buwan"
-      ],
-      "per month, billed every two years": [
-        "kada buwan, sinisingil kada dalawang taon"
-      ],
       "Secure vault sharing": [
         "Ligtas na pag-share ng vault"
       ],
