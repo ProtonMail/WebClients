@@ -832,6 +832,9 @@
       "Loading${ ellipsis }": [
         "Laden${ ellipsis }"
       ],
+      "Lookup document": [
+        "Opzoekdocument"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
       ],
@@ -1134,6 +1137,9 @@
       ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "Reject": [
+        "Afwijzen"
       ],
       "Remove": [
         "Verwijderen"
@@ -1768,6 +1774,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruikers)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } extra aangepast domein",
         "${ domains } extra aangepaste domeinen"
@@ -1776,11 +1786,22 @@
         "${ ips } toegewijde VPN-server",
         "${ ips } toegewijde VPN-servers"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruikers)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI-licentie"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruikers)"
       ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
@@ -1793,6 +1814,10 @@
       ],
       "${ price } per user": [
         "${ price } per gebruiker"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } aangepast domein",
+        "${ quantity } aangepaste domeinen"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI-licentie",
@@ -5297,6 +5322,9 @@
       "Something went wrong while fetching available domains": [
         "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Er is iets misgegaan. Sluit het venster en probeer opnieuw."
+      ],
       "Something went wrong. Please try again.": [
         "Er is iets fout gegaan. Probeer het later nog eens."
       ],
@@ -6858,6 +6886,10 @@
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
       ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } probleem tijdens importeren:",
+        "${ issues.length } problemen tijdens importeren:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
@@ -6945,6 +6977,9 @@
       "${ receivedMessagesCount } email last month": [
         "${ receivedMessagesCount } e-mail afgelopen maand",
         "${ receivedMessagesCount } e-mails afgelopen maand"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minuten resterend…"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
@@ -7447,6 +7482,9 @@
       "Default email application": [
         "Standaard e-mailapplicatie"
       ],
+      "Details": [
+        "Details"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Detectie gebeurt op uw apparaat, dus er worden geen gegevens van uw e-mails verzonden naar onze servers."
       ],
@@ -7699,6 +7737,10 @@
       "Forgot password?": [
         "Wachtwoord vergeten?"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Er is een actieve gecodeerde zoekindex gevonden met ${ oldIndexSize } bericht.",
+        "Er is een actieve gecodeerde zoekindex gevonden met ${ oldIndexSize } berichten."
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Gratis te proberen voor ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
         "Gratis te proberen voor ${ ASSISTANT_TRIAL_TIME_DAYS } dagen"
@@ -7803,6 +7845,9 @@
       ],
       "Import in progress": [
         "Bezig met importeren"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importeren wordt uitgevoerd. U kunt dit dialoogvenster sluiten terwijl het actief is en er later op terugkomen. Sluit het tabblad echter niet."
       ],
       "Import mailbox": [
         "Mailbox importeren"
@@ -9070,6 +9115,9 @@
       "You can either update your search query or clear it": [
         "U kunt uw zoekopdracht bewerken of wissen"
       ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "U kunt het importeren als een nieuwe basis zoekindex voor ontwikkelingsdoeleinden."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
         "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
@@ -9834,6 +9882,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Content search version to use": [
+        "Te gebruiken versie voor zoeken naar inhoud"
+      ],
       "Context page": [
         "Contextpagina"
       ],
@@ -9884,6 +9935,9 @@
       ],
       "Did not follow instructions": [
         "Heeft de instructies niet gevolgd"
+      ],
+      "Document ID": [
+        "Document-id"
       ],
       "Don't ask again": [
         "Niet opnieuw vragen"
@@ -10455,6 +10509,12 @@
       "Username": [
         "Gebruikersnaam"
       ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
+      ],
       "Verification code": [
         "Verificatiecode"
       ],
@@ -10981,6 +11041,10 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruiker)",
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruikers)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licentie"
       ],
@@ -15172,10 +15236,6 @@
       "Move ${ selectionCount } message": [
         "Verplaats ${ selectionCount } bericht",
         "Verplaats ${ selectionCount } berichten"
-      ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Verplaatst naar ${ label }. Vergelijkbaar bericht wordt in de toekomst hier ondergebracht.",
-        "Verplaatst naar ${ label }. Vergelijkbare berichten worden in de toekomst hier ondergebracht."
       ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"

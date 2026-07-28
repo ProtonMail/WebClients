@@ -840,6 +840,9 @@
       "Loading${ ellipsis }": [
         "Načítava sa ${ ellipsis }"
       ],
+      "Lookup document": [
+        "Hľadať dokument"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu"
       ],
@@ -1142,6 +1145,9 @@
       ],
       "Refresh the page": [
         "Obnoviť stránku"
+      ],
+      "Reject": [
+        "Odmietnuť"
       ],
       "Remove": [
         "Vymazať"
@@ -1778,6 +1784,12 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľa)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dodatočná vlastná doména",
         "${ domains } dodatočné vlastné domény",
@@ -1790,11 +1802,26 @@
         "${ ips } dedikovaných VPN serverov",
         "${ ips } dedikovaných VPN serverov"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľa)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licencia"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licencií"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľa)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -1807,6 +1834,12 @@
       ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastná doména",
+        "${ quantity } vlastné domény",
+        "${ quantity } vlastných domén",
+        "${ quantity } vlastných domén"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats }${ LUMO_APP_NAME } AI licencia",
@@ -1955,6 +1988,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ LUMO_SHORT_APP_NAME }, aby vám pomohol písať, odpovedať a opravovať emaily."
       ]
     },
     "Attached ics file error": {
@@ -2005,6 +2041,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } licencií na asistenta písania ${ LUMO_SHORT_APP_NAME } počas skúšobného obdobia."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } Scribe miest počas skúšobného obdobia."
@@ -2118,6 +2157,12 @@
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
@@ -2126,6 +2171,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
@@ -2458,6 +2506,9 @@
       ],
       "Discover and set up features": [
         "Objaviť a nastaviť funkcie"
+      ],
+      "Get 50% offer": [
+        "Využite 50 % zľavu"
       ],
       "Got it": [
         "Rozumiem"
@@ -5365,6 +5416,9 @@
       "Something went wrong while fetching available domains": [
         "Pri načítavaní dostupných domén sa vyskytla chyba"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Niečo sa nepodarilo, zatvorte modálne okno a skúste to znova."
+      ],
       "Something went wrong. Please try again.": [
         "Niečo sa pokazilo. Skúste to znova, prosím."
       ],
@@ -7014,14 +7068,26 @@
         "${ groupCounts } nájdených skupín",
         "${ groupCounts } nájdených skupín"
       ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problém pri importe:",
+        "${ issues.length } problémy pri importe:",
+        "${ issues.length } problémov pri importe:",
+        "${ issues.length } problémov pri importe:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje asistenta písania"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } vám pomáha rýchlo a jednoducho vytvárať lepšie emaily."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "Panel ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } môže chrániť aj vašu spoločnosť."
@@ -7115,6 +7181,9 @@
         "${ receivedMessagesCount } emaily za posledný mesiac",
         "${ receivedMessagesCount } emailov za posledný mesiac",
         "${ receivedMessagesCount } emailov za posledný mesiac"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "zostáva ${ remainingMinutes } minút…"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendára",
@@ -7277,6 +7346,9 @@
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Pristupujte k viac ako 6500 vysokorýchlostným serverom až na 10 zariadeniach, aby boli vaše údaje pri prehliadaní v bezpečí. K dispozícii na ${ ios }, ${ android }, ${ appleTV } a ${ desktop }."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
       ],
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
@@ -7662,6 +7734,9 @@
       "Default email application": [
         "Predvolená emailová aplikácia"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Detekcia prebieha vo vašom zariadení, takže žiadne údaje z vašich emailov sa neodosielajú na naše servery."
       ],
@@ -7884,6 +7959,9 @@
         "Vyprší o menej ako ${ hoursDiff } hodín",
         "Vyprší o menej ako ${ hoursDiff } hodín"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Najvyššia rýchlosť VPN až 10 Gbps"
+      ],
       "file attached": [
         "pripojený súbor",
         "pripojené súbory",
@@ -7923,6 +8001,12 @@
       "Forgot password?": [
         "Zabudli ste heslo?"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Našiel sa aktuálny šifrovaný vyhľadávací index s ${ oldIndexSize } správou.",
+        "Našiel sa aktuálny šifrovaný vyhľadávací index s ${ oldIndexSize } správami.",
+        "Našiel sa aktuálny šifrovaný vyhľadávací index s ${ oldIndexSize } správami.",
+        "Našiel sa aktuálny šifrovaný vyhľadávací index s ${ oldIndexSize } správami."
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "${ ASSISTANT_TRIAL_TIME_DAYS } deň na vyskúšanie zadarmo",
         "${ ASSISTANT_TRIAL_TIME_DAYS } dni na vyskúšanie zadarmo",
@@ -7959,6 +8043,9 @@
         "Obsahuje ${ numAttachments } príloh (${ numAttachmentsSize })",
         "Obsahuje ${ numAttachments } príloh (${ numAttachmentsSize })"
       ],
+      "Have some more time to decide without interruption.": [
+        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
+      ],
       "here": [
         "tu"
       ],
@@ -7979,6 +8066,9 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Ak sa domnievate, že sa stala chyba, kontaktujte nás, prosím, ${ contactLink }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
@@ -8027,6 +8117,9 @@
       ],
       "Import in progress": [
         "Import prebieha"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Import prebieha. Toto dialógové okno môžete počas jeho vykonávania zatvoriť a vrátiť sa k nemu neskôr. Kartu však nezatvárajte."
       ],
       "Import mailbox": [
         "Importovať poštovú schránku"
@@ -8460,6 +8553,9 @@
       "Preferences updated": [
         "Preferencie boli aktualizované"
       ],
+      "Premium privacy protection across all your devices": [
+        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
+      ],
       "Preview failed to be loaded": [
         "Náhľad sa nepodarilo načítať"
       ],
@@ -8690,6 +8786,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Zostaňte ľahko pripojení povolením nasledujúcich nastavení VPN:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Možnosti úložiska nie sú v tomto prehliadači podporované, potrebujeme túto podporu, aby sme mohli prehľadávať obsah správ."
@@ -9299,6 +9398,9 @@
       ],
       "You can either update your search query or clear it": [
         "Vyhľadávanú frázu môžete buď zmeniť alebo vymazať"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Môžete ho importovať ako nový index foundation-search na vývojové účely."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
@@ -10091,6 +10193,12 @@
       "Clear logs": [
         "Vyčistiť záznamy"
       ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Verzia klienta"
+      ],
       "Code is 6 digits without spaces": [
         "Kód je 6 čísiel bez medzier"
       ],
@@ -10117,6 +10225,9 @@
       ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Content search version to use": [
+        "Verzia vyhľadávania obsahu, ktorú treba použiť"
       ],
       "Context page": [
         "Strana kontextu"
@@ -10168,6 +10279,9 @@
       ],
       "Did not follow instructions": [
         "Nezodpovedalo inštrukciám"
+      ],
+      "Document ID": [
+        "ID dokumentu"
       ],
       "Don't ask again": [
         "Viac sa nepýtať"
@@ -10739,6 +10853,12 @@
       "Username": [
         "Používateľské meno"
       ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
+      ],
       "Verification code": [
         "Overovací kód"
       ],
@@ -11244,8 +11364,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent písania ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Pridať asistenta písania ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Pridať asistenta písania ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Doplnok s bezplatnou skúšobnou verziou"
@@ -11269,6 +11395,12 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľa)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)"
+      ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } licencia"
       ],
@@ -11653,6 +11785,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } kalendár",
@@ -15692,12 +15827,6 @@
         "Presunúť ${ selectionCount } správ",
         "Presunúť ${ selectionCount } správ"
       ],
-      "Moved to ${ label }. Similar message will be categorized here in the future.": [
-        "Presunuté do ${ label }. Podobná správa bude v budúcnosti zaradené do tejto kategórie.",
-        "Presunuté do ${ label }. Podobné správy budú v budúcnosti zaradené do tejto kategórie.",
-        "Presunuté do ${ label }. Podobné správy budú v budúcnosti zaradené do tejto kategórie.",
-        "Presunuté do ${ label }. Podobné správy budú v budúcnosti zaradené do tejto kategórie."
-      ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
       ],
@@ -16916,6 +17045,9 @@
       ],
       "Start import process": [
         "Zahájiť proces importu"
+      ],
+      "Stay for 50% off your next month": [
+        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Storage capacity warning": [
         "Upozornenie na kapacitu úložiska"
