@@ -1302,6 +1302,12 @@
       ],
       "Windows 11/10 (x64)": [
         "Windows 11/10 (x64)"
+      ],
+      "Reject": [
+        "Rejeitar"
+      ],
+      "Send": [
+        "Enviar"
       ]
     },
     "Actions": {
@@ -1390,6 +1396,21 @@
       ],
       "Writing assistant": [
         "Assistente de escrita"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe (para ${ quantity } utilizador)",
+        "Assistente de escrita ${ BRAND_NAME } Scribe (para ${ quantity } utilizadores)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistente de IA do ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistente de IA do ${ LUMO_APP_NAME } (para ${ quantity } utilizador)",
+        "Assistente de IA do ${ LUMO_APP_NAME } (para ${ quantity } utilizadores)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domínio personalizado",
+        "${ quantity } domínios personalizados"
       ]
     },
     "Alert": {
@@ -14031,6 +14052,10 @@
       ],
       "${ MEET_APP_NAME } license": [
         "Licença do ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } utilizador)",
+        "${ MEET_APP_NAME } (para ${ quantity } utilizadores)"
       ]
     },
     "meet_2025: Feature": {

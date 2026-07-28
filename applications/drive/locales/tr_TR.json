@@ -1320,6 +1320,12 @@
       ],
       "Skip": [
         "Atla"
+      ],
+      "Reject": [
+        "Reddet"
+      ],
+      "Send": [
+        "Gönder"
       ]
     },
     "Action: Docs": {
@@ -1418,6 +1424,25 @@
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } lisansı",
         "${ seats } ${ MEET_APP_NAME } lisansı"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)",
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } yapay zeka yardımcısı"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)",
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)",
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } özel etki alanı",
+        "${ quantity } özel etki alanı"
       ]
     },
     "Alert": {
@@ -14438,6 +14463,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } koltuğu",
         "${ seats } ${ MEET_APP_NAME } koltuğu"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)",
+        "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)"
       ]
     },
     "meet_2025: Info": {

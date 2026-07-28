@@ -1310,6 +1310,15 @@
       ],
       "Save photo to your gallery": [
         "내 갤러리에 사진 저장"
+      ],
+      "Reject": [
+        "거절"
+      ],
+      "Send": [
+        "보내기"
+      ],
+      "Stop": [
+        "중지"
       ]
     },
     "Action: Docs": {
@@ -1401,6 +1410,21 @@
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } 라이선스 ${ seats }개"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 어시스턴트"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 어시스턴트 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ quantity } custom domain": [
+        "사용자 지정 도메인 ${ quantity }개"
       ]
     },
     "Alert": {
@@ -14148,6 +14172,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ MEET_APP_NAME } 시트 ${ seats }개"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity }명 이용 가능)"
       ]
     },
     "meet_2025: Info": {

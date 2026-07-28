@@ -1313,6 +1313,18 @@
       ],
       "Skip": [
         "跳过"
+      ],
+      "Clear conversation": [
+        "清除会话"
+      ],
+      "Reject": [
+        "拒绝"
+      ],
+      "Send": [
+        "发送​​"
+      ],
+      "Stop": [
+        "停止"
       ]
     },
     "Action: Docs": {
@@ -1404,6 +1416,21 @@
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } 个 ${ MEET_APP_NAME } 许可证"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 写作助手（适用于 ${ quantity } 位用户）"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助手"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助手（适用于 ${ quantity } 位用户）"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手（适用于 ${ quantity } 位用户）"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 个自定义域名"
       ]
     },
     "Alert": {
@@ -7354,6 +7381,9 @@
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "为了启用搜索，我们需要在本地索引您的文件。您仍可正常使用 ${ DRIVE_APP_NAME }，索引完成后我们会通知您。如果您离开此页面，索引将暂停，并在您返回时恢复。"
+      ],
+      "Thinking about this": [
+        "正在思考这个"
       ]
     },
     "info": {
@@ -11068,6 +11098,9 @@
       ],
       "Optional feedback": [
         "可选反馈"
+      ],
+      "Ask anything…": [
+        "提问…"
       ]
     },
     "Placeholder for contact group name": {
@@ -14055,6 +14088,12 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } 个 ${ MEET_APP_NAME } 席位"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (适用于 ${ quantity } 位用户)"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席位"
       ]
     },
     "meet_2025: Info": {

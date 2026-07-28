@@ -1320,6 +1320,18 @@
       ],
       "Skip": [
         "Παράλειψη"
+      ],
+      "Clear conversation": [
+        "Εκκαθάριση συνομιλίας"
+      ],
+      "Reject": [
+        "Απόρριψη"
+      ],
+      "Send": [
+        "Αποστολή"
+      ],
+      "Stop": [
+        "Σταμάτα"
       ]
     },
     "Action: Docs": {
@@ -1418,6 +1430,25 @@
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } άδεια χρήσης",
         "${ seats } ${ MEET_APP_NAME } άδειες χρήσης"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστη)",
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστες)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } προσαρμοσμένος τομέας",
+        "${ quantity } προσαρμοσμένοι τομείς"
       ]
     },
     "Alert": {
@@ -11282,6 +11313,9 @@
       ],
       "Optional feedback": [
         "Προαιρετικά σχόλια"
+      ],
+      "Ask anything…": [
+        "Ρωτήστε οτιδήποτε…"
       ]
     },
     "Placeholder for contact group name": {
@@ -14342,6 +14376,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } θέση",
         "${ seats } ${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστη)",
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστες)"
+      ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
       ]
     },
     "meet_2025: Info": {

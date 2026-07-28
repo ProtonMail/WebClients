@@ -1298,6 +1298,12 @@
       ],
       "Windows 11/10 (x64)": [
         "Windows 11/10 (x64)"
+      ],
+      "Reject": [
+        "Відхилити"
+      ],
+      "Send": [
+        "Надіслати"
       ]
     },
     "Actions": {
@@ -1400,6 +1406,27 @@
       ],
       "Writing assistant seats": [
         "Місця для помічника з написання"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувача)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувача)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувачів)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувачів)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувача)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } власний домен",
+        "${ quantity } власні домени",
+        "${ quantity } власних доменів",
+        "${ quantity } власного домену"
       ]
     },
     "Alert": {
@@ -14467,6 +14494,12 @@
         "${ seats } місця ${ MEET_APP_NAME }",
         "${ seats } місць ${ MEET_APP_NAME }",
         "${ seats } місця ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (для ${ quantity } користувача)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)"
       ]
     },
     "meet_2025: Feature": {

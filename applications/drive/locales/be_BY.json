@@ -1334,6 +1334,12 @@
       ],
       "Skip": [
         "Прапусціць"
+      ],
+      "Reject": [
+        "Адхіліць"
+      ],
+      "Send": [
+        "Адправіць"
       ]
     },
     "Action: Docs": {
@@ -1446,6 +1452,33 @@
         "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
         "${ seats } ліцэнзій ${ MEET_APP_NAME }",
         "${ seats } ліцэнзій ${ MEET_APP_NAME }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Памочнік ШІ ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальніка)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } карыстальніцкі дамен",
+        "${ quantity } карыстальніцкія дамены",
+        "${ quantity } карыстальніцкіх даменаў",
+        "${ quantity } карыстальніцкіх даменаў"
       ]
     },
     "Alert": {
@@ -14922,6 +14955,12 @@
         "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
         "${ seats } ліцэнзій ${ MEET_APP_NAME }",
         "${ seats } ліцэнзій ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальніка)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)"
       ]
     },
     "meet_2025: Info": {

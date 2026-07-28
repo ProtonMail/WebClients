@@ -1334,6 +1334,12 @@
       ],
       "Skip": [
         "Preskočiť"
+      ],
+      "Reject": [
+        "Odmietnuť"
+      ],
+      "Send": [
+        "Odoslať"
       ]
     },
     "Action: Docs": {
@@ -1446,6 +1452,33 @@
         "${ seats }${ MEET_APP_NAME } licencie",
         "${ seats }${ MEET_APP_NAME } licencií",
         "${ seats }${ MEET_APP_NAME } licencií"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľa)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľa)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľa)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastná doména",
+        "${ quantity } vlastné domény",
+        "${ quantity } vlastných domén",
+        "${ quantity } vlastných domén"
       ]
     },
     "Alert": {
@@ -14880,6 +14913,12 @@
         "${ seats }${ MEET_APP_NAME } licencie",
         "${ seats }${ MEET_APP_NAME } licencií",
         "${ seats }${ MEET_APP_NAME } licencií"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľa)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)"
       ]
     },
     "meet_2025: Info": {
