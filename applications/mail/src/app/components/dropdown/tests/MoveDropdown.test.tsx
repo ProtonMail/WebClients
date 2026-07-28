@@ -10,6 +10,7 @@ import type { Label } from '@proton/shared/lib/interfaces';
 
 import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
 
+import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';
 import { mailTestRender } from '../../../helpers/test/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
@@ -229,6 +230,110 @@ describe('MoveDropdown', () => {
 
             const checkbox = screen.getByTestId('move-dropdown:always-move') as HTMLInputElement;
             expect(checkbox.disabled).toBe(true);
+        });
+
+        it('should disable the checkbox when Spam is selected as destination', async () => {
+            await setup();
+
+            const spamRadio = screen.getByTestId(`label-dropdown:folder-radio-Spam`) as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(spamRadio);
+            });
+
+            const checkbox = screen.getByTestId('move-dropdown:always-move') as HTMLInputElement;
+            expect(checkbox.disabled).toBe(true);
+        });
+
+        it('should untick the checkbox while the destination cannot create filters, and restore it afterwards', async () => {
+            mockedUseCategoriesView.mockReturnValue({
+                shouldShowTabs: true,
+                activeCategoriesTabs: mockActiveCategoriesData,
+            });
+
+            await setup();
+
+            const folderRadio = screen.getByTestId(`label-dropdown:folder-radio-${folder1Name}`) as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(folderRadio);
+            });
+
+            const checkbox = screen.getByTestId('move-dropdown:always-move') as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(checkbox);
+            });
+            expect(checkbox.checked).toBe(true);
+
+            // Selecting a category makes the option unavailable, so it must not appear ticked
+            const categoryName = getLabelFromCategoryId(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            const categoryRadio = screen.getByTestId(`label-dropdown:folder-radio-${categoryName}`) as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(categoryRadio);
+            });
+            expect(checkbox.disabled).toBe(true);
+            expect(checkbox.checked).toBe(false);
+
+            // Going back to a valid destination restores the user's choice
+            await act(async () => {
+                fireEvent.click(folderRadio);
+            });
+            expect(checkbox.disabled).toBe(false);
+            expect(checkbox.checked).toBe(true);
+        });
+
+        it('should create filters when applying a ticked checkbox to a regular folder', async () => {
+            const filterApiMock = jest.fn(() => ({ Filter: {} }));
+            addApiMock('mail/v4/filters', filterApiMock);
+
+            await setup();
+
+            const folderRadio = screen.getByTestId(`label-dropdown:folder-radio-${folder1Name}`) as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(folderRadio);
+            });
+
+            const checkbox = screen.getByTestId('move-dropdown:always-move') as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(checkbox);
+            });
+
+            await act(async () => {
+                fireEvent.click(screen.getByTestId('move-dropdown:apply'));
+            });
+
+            expect(filterApiMock).toHaveBeenCalled();
+        });
+
+        /*
+         * Spam is the destination that proves the guard: unlike a category, it is a known folder,
+         * so a filter would actually be built for it if `always` was not overridden on submit.
+         */
+        it('should not create filters when applying a ticked checkbox to Spam', async () => {
+            const filterApiMock = jest.fn(() => ({ Filter: {} }));
+            addApiMock('mail/v4/filters', filterApiMock);
+
+            await setup();
+
+            const folderRadio = screen.getByTestId(`label-dropdown:folder-radio-${folder1Name}`) as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(folderRadio);
+            });
+
+            const checkbox = screen.getByTestId('move-dropdown:always-move') as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(checkbox);
+            });
+            expect(checkbox.checked).toBe(true);
+
+            const spamRadio = screen.getByTestId(`label-dropdown:folder-radio-Spam`) as HTMLInputElement;
+            await act(async () => {
+                fireEvent.click(spamRadio);
+            });
+
+            await act(async () => {
+                fireEvent.click(screen.getByTestId('move-dropdown:apply'));
+            });
+
+            expect(filterApiMock).not.toHaveBeenCalled();
         });
     });
 
