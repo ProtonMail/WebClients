@@ -41,6 +41,7 @@ import locales from './locales';
 import { meetTelemetryConfig } from './telemetryConfig';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
+import { startMeetingDetailsPreload } from './utils/meetingDetailsPreload';
 import { DirectMeetCoreClient } from './wasm/DirectMeetCoreClient';
 import type { MeetCoreClient } from './wasm/MeetCoreClient';
 import { MeetCoreWorkerClient } from './wasm/MeetCoreWorkerClient';
@@ -218,6 +219,7 @@ export const initAppDependencies = async (
 };
 
 const completeAppBootstrap = async ({
+    api,
     store,
     authentication,
     unleashClient,
@@ -241,9 +243,13 @@ const completeAppBootstrap = async ({
         dispatch(initEvent({ User: sessionResult.session.User }));
     }
 
+    const cryptoPromise = bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient });
+
+    startMeetingDetailsPreload({ api, uid: authentication.UID, cryptoReady: cryptoPromise });
+
     const [userData] = await Promise.all([
         loadUserData(dispatch),
-        bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
+        cryptoPromise,
         bootstrap.unleashReady({ unleashClient }).catch(noop),
     ]);
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
@@ -415,6 +421,12 @@ export const bootstrapGuestApp = async (
     const history = createBrowserHistory({ basename: '/guest' });
 
     await unauthenticatedApi.startUnAuthFlow();
+
+    startMeetingDetailsPreload({
+        api: unauthenticatedApi.apiCallback,
+        uid: authentication.UID,
+        cryptoReady: Promise.resolve(),
+    });
 
     const store = setupStore({
         extraThunkArguments: {

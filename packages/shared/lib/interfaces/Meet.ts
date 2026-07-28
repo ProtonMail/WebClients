@@ -15,6 +15,11 @@ enum EnumLockedState {
     LOCKED = 1,
 }
 
+export enum PersonalMeetingState {
+    NOT_YOUR_PERSONAL = 0,
+    YOUR_PERSONAL = 1,
+}
+
 export interface MeetingInfoResponse {
     MeetingInfo: {
         Salt: string;
@@ -25,6 +30,8 @@ export interface MeetingInfoResponse {
         MaxDuration: number;
         MaxParticipants: number;
         ExpirationTime: number | null;
+        WaitingRoom?: number; // 1 = waiting room enabled
+        PersonalMeeting?: PersonalMeetingState; // 1 = is your personal meeting room
     };
     Code: 1000;
 }
