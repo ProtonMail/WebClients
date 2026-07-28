@@ -29,9 +29,9 @@ const getSilenced = ({ silence }: SilenceConfig = {}, code: number) => {
     return !!silence;
 };
 
-const applyServerTimeUpdate = (latestServerTime: Date) => ({
+const applyServerTimeUpdate = (latestServerTime: Date, requestTime: Date) => ({
     serverTime: updateServerTime(latestServerTime),
-    serverTimeUpdatedAt: new Date(),
+    serverTimeUpdatedAt: requestTime,
 });
 
 export type ServerTimeEvent = {
@@ -225,6 +225,9 @@ const createApi = ({
     const callback: Api = ({ output = 'json', ...rest }: any) => {
         // Only need to send locale headers in public app
         const config = sendLocaleHeaders ? withLocaleHeaders(localeCode, rest) : rest;
+        // Keep track of when the request was initiated, to then spot a stale serverTime update
+        // if the response is received before going to sleep but processed just after waking up.
+        const requestIssuedAt = new Date();
         return callWithApiHandlers(config)
             .then((response: any) => {
                 const serverTime = getDateHeader(response.headers);
@@ -238,7 +241,7 @@ const createApi = ({
                 notify({
                     type: 'server-time',
                     payload: {
-                        value: applyServerTimeUpdate(serverTime),
+                        value: applyServerTimeUpdate(serverTime, requestIssuedAt),
                         extra: getStandardAndCustomDateHeader(response.headers),
                     },
                 });
@@ -262,7 +265,7 @@ const createApi = ({
                     notify({
                         type: 'server-time',
                         payload: {
-                            value: applyServerTimeUpdate(serverTime),
+                            value: applyServerTimeUpdate(serverTime, requestIssuedAt),
                             extra: getStandardAndCustomDateHeader(e.response?.headers),
                         },
                     });
