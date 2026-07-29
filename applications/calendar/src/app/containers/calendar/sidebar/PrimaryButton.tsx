@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import SidebarPrimaryButton from '@proton/components/components/sidebar/SidebarPrimaryButton';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';
