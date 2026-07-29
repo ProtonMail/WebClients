@@ -1901,6 +1901,12 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Contact sales": [
+        "Contatta l'ufficio vendite"
+      ],
+      "Delete and confirm": [
+        "Elimina e conferma"
       ]
     },
     "action": {
@@ -13725,6 +13731,24 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } non conserverà più le versioni precedenti dei tuoi file."
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Per consultare la cronologia delle versioni degli ultimi 10 anni, si prega di contattare il nostro team commerciale."
+      ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Questa operazione eliminerà tutte le versioni precedenti dei tuoi file più vecchie di ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "In questo modo verranno eliminate tutte le versioni precedenti dei tuoi file."
+      ],
+      "Upgrade to unlock": [
+        "Esegui l'aggiornamento per sbloccare"
+      ],
+      "Version history": [
+        "Cronologia delle versioni"
       ]
     },
     "info": {
@@ -16003,6 +16027,21 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Billable licenses": [
+        "Licenze a pagamento"
+      ],
+      "Billing period": [
+        "Periodo di fatturazione"
+      ],
+      "Cost per license": [
+        "Costo per licenza"
+      ],
+      "Don't keep versions": [
+        "Non conservare le versioni"
+      ],
+      "Managed Companies": [
+        "Aziende Gestite"
       ]
     },
     "label": {
@@ -16730,6 +16769,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
         "${ seats } licenze ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per utente"
       ]
     },
     "meet_2025: Feature": {
@@ -26731,6 +26773,12 @@
       ],
       "Your subscriptions": [
         "I tuoi abbonamenti"
+      ],
+      "Current cost": [
+        "Costo attuale"
+      ],
+      "Delete version history?": [
+        "Eliminare la cronologia delle versioni?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27183,6 +27231,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "In attesa che l'utente accetti l'invito"
+      ],
+      "Pending user activation": [
+        "In attesa dell'attivazione dell'utente"
       ]
     },
     "Tooltip automatically attach public key": {
