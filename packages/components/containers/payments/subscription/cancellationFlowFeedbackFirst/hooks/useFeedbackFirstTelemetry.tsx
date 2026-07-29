@@ -2,12 +2,14 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     TelemetryAccountCancellationFlowFeedbackEvents,
     type TelemetryEvents,
     TelemetryMeasurementGroups,
+    sendTelemetryData,
 } from '@proton/shared/lib/api/telemetry';
-import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
+import { getBaseTelemetryDimensions } from '@proton/shared/lib/helpers/metrics';
 
 import { SUBSCRIPTION_CANCELLATION_REASONS } from '../../content/FeedbackDowngradeContent';
 import type { FeedbackDowngradeFormData } from '../../content/interface';
@@ -32,20 +34,20 @@ export const useFeedbackFirstTelemetry = () => {
     const [userSettings] = useUserSettings();
 
     const sendReport = (event: TelemetryEvents, dimensions?: Record<string, string>) => {
-        void sendTelemetryReportWithBaseDimensions({
-            api,
-            user,
-            subscription,
-            userSettings,
-            measurementGroup: TelemetryMeasurementGroups.accountCancellationFeedbackFirst,
-            event,
-            dimensions: {
-                ...dimensions,
-                couponCode: subscription?.CouponCode || undefined,
-                feedbackFirstCancellationEnabled: 'true',
-            },
-            delay: false,
-        });
+        const silentApi = getSilentApi(api);
+
+        void silentApi(
+            sendTelemetryData({
+                MeasurementGroup: TelemetryMeasurementGroups.accountCancellationFeedbackFirst,
+                Event: event,
+                Dimensions: {
+                    ...dimensions,
+                    couponCode: subscription?.CouponCode || undefined,
+                    feedbackFirstCancellationEnabled: 'true',
+                    ...getBaseTelemetryDimensions({ user, subscription, userSettings }),
+                },
+            })
+        );
     };
 
     const startCancellation = () => {
