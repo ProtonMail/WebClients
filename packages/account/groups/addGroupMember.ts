@@ -376,12 +376,13 @@ export const addGroupMemberKeysThunk = ({
             return api(addGroupMemberKeysApi(groupMember.ID, { Email: email, AddressSignaturePacket }));
         }
 
+        const forwardeePublicKey = await getForwardeePublicKey(forwardeeArmoredPrimaryPublicKey);
+        const Email = getEmailFromKey(forwardeePublicKey) ?? email;
+        const userIDsForForwardeeKey = [{ email: Email, name: Email }];
+
         // Case 2 — Internal we can't decrypt for (other org / private / no org key): build the key
         // from their public key and send an ActivationToken for them to activate it themselves.
         if (!member || isPrivate(member) || !organizationKey.privateKey) {
-            const forwardeePublicKey = await getForwardeePublicKey(forwardeeArmoredPrimaryPublicKey);
-            const Email = getEmailFromKey(forwardeePublicKey) ?? email;
-            const userIDsForForwardeeKey = [{ email: Email, name: Email }];
             const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
                 forwarderKey.privateKey,
                 userIDsForForwardeeKey,
@@ -416,7 +417,6 @@ export const addGroupMemberKeysThunk = ({
             organizationKey,
         });
 
-        const userIDsForForwardeeKey = [{ email: canonicalEmail, name: canonicalEmail }];
         const { forwardeeKey, proxyInstances } = await getInternalParameters(
             forwarderKey.privateKey,
             userIDsForForwardeeKey,
