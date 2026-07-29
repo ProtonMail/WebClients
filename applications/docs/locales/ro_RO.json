@@ -963,6 +963,12 @@
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
+      ],
+      "Clear conversation": [
+        "Golire conversație"
+      ],
+      "Stop": [
+        "Stop\n"
       ]
     },
     "Actions message": {
@@ -6053,6 +6059,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Thinking about this": [
+        "Mă gândesc la asta"
       ]
     },
     "info": {
@@ -6905,6 +6914,9 @@
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
         "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ],
+      "${ price } per seat": [
+        "${ price } per licență"
       ]
     },
     "meet_2025: Feature": {
@@ -8975,6 +8987,9 @@
       ],
       "Your organization name": [
         "Numele organizației"
+      ],
+      "Ask anything…": [
+        "Întreabă-mă orice…"
       ]
     },
     "Placeholder for contact group name": {
@@ -11336,6 +11351,28 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietar"
+      ],
+      "Security Admin": [
+        "Administrator securitate"
+      ],
+      "User Admin": [
+        "Administrare utilizatori"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
       ]
     }
   }
