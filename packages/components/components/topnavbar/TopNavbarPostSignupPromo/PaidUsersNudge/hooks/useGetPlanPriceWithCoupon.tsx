@@ -9,7 +9,7 @@ import { COUPON_CODES, CYCLE, type PLANS } from '@proton/payments/core/constants
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 
 import type { PriceData } from '../helpers/interface';
-import { roundToUpper } from '../helpers/paidUserNudgeHelper';
+import { roundToLower, roundToUpper } from '../helpers/paidUserNudgeHelper';
 
 interface Props {
     plan: PLANS;
@@ -52,11 +52,12 @@ export const useGetPlanPriceWithCoupon = ({ plan }: Props) => {
 
             const yearlyPrice = roundToUpper(checkout.withoutDiscountPerMonth * 12);
             const discountedPrice = roundToUpper(checkout.withDiscountPerCycle);
+            const savedAmount = roundToLower(checkout.discountPerCycle);
 
             setPrices({
                 yearlyPrice,
                 discountedPrice,
-                savedAmount: checkout.discountPerCycle,
+                savedAmount,
                 currency,
             });
         };
