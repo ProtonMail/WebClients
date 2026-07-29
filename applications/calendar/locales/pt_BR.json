@@ -1043,6 +1043,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "Limpar conversa"
+      ],
+      "Reject": [
+        "Rejeitar"
+      ],
+      "Stop": [
+        "Parar"
       ]
     },
     "action": {
@@ -1147,6 +1156,25 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe (para ${ quantity } usuário)",
+        "Assistente de escrita da ${ BRAND_NAME } Scribe (para ${ quantity } usuários)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistente de IA da ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuário)",
+        "Assistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuários)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuário)",
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuários)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domínio personalizado",
+        "${ quantity } domínios personalizados"
       ]
     },
     "Alarm notification": {
@@ -6859,6 +6887,9 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Mantenha o seu plano e obtenha 50% de desconto no próximo mês"
+      ],
+      "Details": [
+        "Detalhes"
       ]
     },
     "info": {
@@ -7955,6 +7986,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licença do ${ MEET_APP_NAME }",
         "${ seats } licenças do ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuário)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuários)"
+      ],
+      "${ price } per seat": [
+        "${ price } por licença"
       ]
     },
     "meet_2025: Feature": {
@@ -10290,6 +10328,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Ask anything…": [
+        "Pergunte qualquer coisa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -13460,6 +13501,28 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietário"
+      ],
+      "Security Admin": [
+        "Administrador de segurança"
+      ],
+      "User Admin": [
+        "Administração de usuário"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
       ]
     }
   }

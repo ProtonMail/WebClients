@@ -1039,6 +1039,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "清除会话"
+      ],
+      "Reject": [
+        "拒绝"
+      ],
+      "Stop": [
+        "停止"
       ]
     },
     "action": {
@@ -1136,6 +1145,21 @@
       ],
       "Writing assistant seats": [
         "写作助手席位"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 写作助手（适用于 ${ quantity } 位用户）"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助手"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助手（适用于 ${ quantity } 位用户）"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手（适用于 ${ quantity } 位用户）"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 个自定义域名"
       ]
     },
     "Alarm notification": {
@@ -6766,6 +6790,12 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "保留当前套餐，下月享受 5 折优惠"
+      ],
+      "Details": [
+        "详细信息"
+      ],
+      "Thinking about this": [
+        "正在思考这个"
       ]
     },
     "info": {
@@ -7850,6 +7880,12 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } 席位"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (适用于 ${ quantity } 位用户)"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席位"
       ]
     },
     "meet_2025: Feature": {
@@ -10109,6 +10145,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Ask anything…": [
+        "提问…"
       ]
     },
     "Placeholder for contact group name": {
@@ -13179,6 +13218,28 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "所有者"
+      ],
+      "Security Admin": [
+        "安全管理员"
+      ],
+      "User Admin": [
+        "用户管理员"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "配置安全策略、数据保留和 VPN 基础设施，并管理审计日志。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "管理所有用户、群组、安全、计费和系统配置。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成员的账户、群组和存储空间，分配角色和许可证。"
       ]
     }
   }

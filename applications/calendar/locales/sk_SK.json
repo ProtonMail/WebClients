@@ -1051,6 +1051,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "Odmietnuť"
       ]
     },
     "action": {
@@ -1169,6 +1172,33 @@
       ],
       "Writing assistant seats": [
         "Licencie pre asistenta písania"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľa)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľa)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľa)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastná doména",
+        "${ quantity } vlastné domény",
+        "${ quantity } vlastných domén",
+        "${ quantity } vlastných domén"
       ]
     },
     "Alarm notification": {
@@ -1231,6 +1261,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ LUMO_SHORT_APP_NAME }, aby vám pomohol písať, odpovedať a opravovať emaily."
       ]
     },
     "Attached ics file error": {
@@ -1290,6 +1323,9 @@
       ],
       "You have reached the trial limit.": [
         "Dosiahli ste limit skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } licencií na asistenta písania ${ LUMO_SHORT_APP_NAME } počas skúšobného obdobia."
       ]
     },
     "b2b_trials_Action": {
@@ -1413,6 +1449,15 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie."
       ]
     },
     "BF2025: Deal details": {
@@ -1745,6 +1790,9 @@
       ],
       "Take a tour": [
         "Absolvovať prehliadku"
+      ],
+      "Get 50% offer": [
+        "Využite 50 % zľavu"
       ]
     },
     "Calendar access select label": {
@@ -7000,6 +7048,36 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje asistenta písania"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
+      ],
+      "Details": [
+        "Podrobnosti"
+      ],
+      "Failed to update meeting waiting room status": [
+        "Nepodarilo sa aktualizovať stav čakárne schôdzky"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Najvyššia rýchlosť VPN až 10 Gbps"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
       ]
     },
     "info": {
@@ -7800,6 +7878,12 @@
       ],
       "Zoom meeting": [
         "Zoom schôdzka"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Verzia klienta"
       ]
     },
     "label": {
@@ -8094,6 +8178,12 @@
       ],
       "for ${ price }": [
         "za ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Pridať asistenta písania ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Addon": {
@@ -8108,6 +8198,12 @@
         "${ seats }${ MEET_APP_NAME } licencie",
         "${ seats }${ MEET_APP_NAME } licencií",
         "${ seats }${ MEET_APP_NAME } licencií"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľa)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)"
       ]
     },
     "meet_2025: Feature": {
@@ -9013,6 +9109,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -13237,6 +13336,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Stay for 50% off your next month": [
+        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13941,6 +14043,28 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Vlastník"
+      ],
+      "Security Admin": [
+        "Bezpečnostný správca"
+      ],
+      "User Admin": [
+        "Správca používateľov"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všetkých používateľov, skupiny, zabezpečenie, fakturáciu a systémové konfigurácie."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Správa používateľov, skupín a úložného priestoru pre všetkých členov, prideľovanie rolí a prideľovanie licencií."
       ]
     }
   }

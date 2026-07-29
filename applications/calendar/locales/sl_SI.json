@@ -961,6 +961,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Dodaj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Pridruži se z ${ MEET_APP_NAME }"
+      ],
+      "Reject": [
+        "Zavrni"
       ]
     },
     "action": {
@@ -1012,7 +1021,7 @@
         "${ ips } namenski VPN strežnik",
         "${ ips } namenska VPN strežnika",
         "${ ips } namenski VPN strežniki",
-        "${ ips } namenski VPN strežniki"
+        "${ ips } namenskih VPN strežnikov"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } licenca UI"
@@ -1035,7 +1044,7 @@
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } licenca UI",
         "${ seats } ${ LUMO_APP_NAME } licenci UI",
-        "${ seats } ${ LUMO_APP_NAME } licenc UI",
+        "${ seats } ${ LUMO_APP_NAME } licence UI",
         "${ seats } ${ LUMO_APP_NAME } licenc UI"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
@@ -1079,6 +1088,12 @@
       ],
       "Writing assistant seats": [
         "Licence za pomočnika pri pisanju"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnika)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnika)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnike)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnikov)"
       ]
     },
     "Alarm notification": {
@@ -1185,6 +1200,15 @@
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
         "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } pomočnikov pri pisanju."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_USERS } uporabnikov."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Ne morete dodati domen po meri med preizkusnim obdobjem."
+      ],
+      "You have reached the trial limit.": [
+        "Dosegli ste mejo poskusne verzije."
       ]
     },
     "b2b_trials_Action": {
@@ -1558,7 +1582,7 @@
         "Oglejte si"
       ],
       "Get 50% offer": [
-        "Izkoristite ponudbo s 50% popustom"
+        "Izkoristite ponudbo s 50 % popustom"
       ]
     },
     "Calendar access select label": {
@@ -1858,6 +1882,15 @@
       ],
       "Unlimited daily chats": [
         "Neomejeni dnevni klepeti"
+      ],
+      "Limited daily chats": [
+        "Omejeni dnevni pogovori"
+      ],
+      "Limited favorites": [
+        "Omejene priljubljene"
+      ],
+      "Web search access": [
+        "Dostop do spletnega iskanja"
       ]
     },
     "collider_2025: Info": {
@@ -1872,6 +1905,9 @@
       ],
       "Private video calls for the conversations that matter.": [
         "Zasebni video klici za pomembne pogovore."
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Hitri pogovori in napredne funkcije umetne inteligence."
       ]
     },
     "colon": {
@@ -3325,6 +3361,9 @@
     "Duo offer: Title": {
       "Get 4x more storage with ${ BRAND_NAME } Duo": [
         "Pridobite 4x več shrambe s ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Delite prednosti vašega paketa z ${ BRAND_NAME } Duo"
       ]
     },
     "Duplicate event button tooltip": {
@@ -3338,6 +3377,9 @@
       ],
       "60 minutes": [
         "60 minut"
+      ],
+      "15 minutes": [
+        "15 minut"
       ]
     },
     "Edit event button tooltip": {
@@ -3378,6 +3420,9 @@
       ],
       "TITLE:": [
         "NASLOV:"
+      ],
+      "You are invited to": [
+        "Povabljeni ste na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4038,6 +4083,15 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "No drive found to import": [
+        "Ni mogoče najti pogona za uvoz"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Preverite, če je vaš ABN registriran za čezmejni DDV."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Nepričakovana napaka, ne moremo uvoziti datotek"
       ]
     },
     "error": {
@@ -4912,6 +4966,9 @@
       ],
       "Your password is correct.": [
         "je geslo pravilno."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dvojno preverjanje pristnosti je omogočeno v vašem zunanjem računu."
       ]
     },
     "Import instructions": {
@@ -6483,16 +6540,49 @@
         "Če naročnino prekinete zdaj, boste dne ${ expiryDate } izgubili dostop do ${ BRAND_NAME } ${ planTitle }, vključno z naslednjimi funkcijami:"
       ],
       "Premium privacy protection across all your devices": [
-        "Vrhunska zaščita zasebnosti na vseh vaših napravah"
+        "Premijska zaščita zasebnosti na vseh vaših napravah"
       ],
       "Stay on your plan and get 50% off your next month": [
-        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50% popust"
+        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50 % popust"
       ],
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } vsebuje pomočnika pri pisanju"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Povabite vaše prijatelje** na ${ BRAND_NAME } z vašo povezavo za priporočilo."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Pridobite ${ referrerRewardAmount }** kot dobropis za vsakega prijatelja, ki se naroči na paket."
+      ],
+      "Details": [
+        "Podrobnosti"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Se spomnite vašega gesla? ${ verifyButton }"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Samo datoteke (brez fotografij, ${ DOCS_APP_NAME } ali ${ SHEETS_APP_NAME }) - do skupaj 100 GB, 100.000 datotek in 50 GB na datoteko"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Za samo ${ bundlePlanPriceInline }"
+      ],
+      "Google Pay mark": [
+        "Oznaka Google Pay"
+      ],
+      "Password verified": [
+        "Geslo preverjeno"
+      ],
+      "Please select the labels you would like to import:": [
+        "Izberite oznake, ki jih želite uvoziti:"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Nadgradite za ohranitev vaših ${ planTitle } ugodnosti."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Kasneje vas bomo opomnili, da znova preverite vaše geslo."
       ]
     },
     "info": {
@@ -6621,6 +6711,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktivni podpisnik"
       ]
     },
     "Keyboard shortcut name": {
@@ -7100,7 +7193,7 @@
         "Sekundarni časovni pas"
       ],
       "Securely share parts of your schedule through a booking page you can send to anyone.": [
-        "Delite dele svojega urnika prek strani za rezervacije, ki jo lahko pošljete komurkoli."
+        "Varno delite dele svojega urnika prek strani za rezervacije, ki jo lahko pošljete komurkoli."
       ],
       "Show others when I'm busy": [
         "Pokaži drugim, ko sem zaseden"
@@ -7221,6 +7314,21 @@
       ],
       "Starts with": [
         "Se začne z"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
+      ],
+      "Continue cancelling": [
+        "Nadaljuj s preklicem"
+      ],
+      "Main reason for cancelling": [
+        "Glavni razlog za preklic naročnine"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Odstrani ${ MEET_APP_NAME } video konferenco"
+      ],
+      "Skip feedback": [
+        "Preskoči povratno informacijo"
       ]
     },
     "label": {
@@ -7511,6 +7619,18 @@
         "${ seats } sedeža ${ MEET_APP_NAME }",
         "${ seats } sedeži ${ MEET_APP_NAME }",
         "${ seats } sedežev ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnike)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnikov)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licenca"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } uporabniška mesta"
       ]
     },
     "meet_2025: Feature": {
@@ -7564,6 +7684,15 @@
         "Video sestanki, ${ n } udeleženca",
         "Video sestanki, ${ n } udeleženci",
         "Video sestanki, ${ n } udeležencev"
+      ],
+      "Booking pages": [
+        "Strani za rezervacijo"
+      ],
+      "Built-in chat": [
+        "Vgrajen pogovor"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Gostitelji lahko snemajo srečanja lokalno na svojih računalnikih"
       ]
     },
     "meet_2025: Info": {
@@ -7572,6 +7701,9 @@
         "${ seats } sedeža vključena",
         "${ seats } sedeži vključeni",
         "${ seats } sedežev vključenih"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } mest."
       ]
     },
     "Message": {
@@ -8371,6 +8503,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Ugodnosti obstoječega ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
+      "No streaming support": [
+        "Brez podpore pretočnim storitvam"
       ]
     },
     "new_plans: feature highlight": {
@@ -8735,6 +8873,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Lahko imate več kot enega skrbnika. Vsi skrbniki lahko dodajajo in upravljajo uporabnike, vendar ima samo glavni skrbnik nadzor nad plačili."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonska podpora je na voljo s strani ekipe za ${ BRAND_NAME } podporo strankam med evropskim delovnim časom za stranke z ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ali več uporabniki."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9350,6 +9491,9 @@
       ],
       "Team policies": [
         "Pravilniki skupine"
+      ],
+      "File attachments (up to 10GB)": [
+        "Priloge datotek (do 10 GB)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -9549,6 +9693,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Za preverjanje plačila boste kmalu preusmerjeni na drugo spletno mesto."
       ]
     },
     "Payments.Error": {
@@ -9579,6 +9726,9 @@
     "Payments.info": {
       "Credits will be added to your balance": [
         "Dobroimetje bo dodano na vaš račun"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Dobropis za neporabljen del naročnine vašega prejšnjega paketa"
       ]
     },
     "Payments.ModificationWarning": {
@@ -9628,6 +9778,15 @@
       ],
       "VAT number": [
         "ID za DDV"
+      ],
+      "Add ABN": [
+        "Dodaj ABN"
+      ],
+      "Add Business Number": [
+        "Dodaj številko podjetja"
+      ],
+      "Add EIN": [
+        "Dodaj EIN"
       ]
     },
     "PGP key encryption warning": {
@@ -9656,6 +9815,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Priporočamo, da temu ključu prekličete zaupanje."
+      ],
+      "This contact currently signs messages with this key": [
+        "Ta stik trenutno podpisuje sporočila s tem ključem."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "S tem ključem se šifrirajo sporočila za ta stik na starejših aplikacijah."
       ]
     },
     "PGP key warning": {
@@ -9795,6 +9960,15 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Anything you'd like us to know": [
+        "Karkoli želite, da vemo"
+      ],
+      "Optional feedback": [
+        "Neobvezne povratne informacije"
+      ],
+      "Select a provider": [
+        "Izberite ponudnika"
       ]
     },
     "Placeholder for contact group name": {
@@ -10011,6 +10185,18 @@
       ],
       "your subscription": [
         "vaša naročnina"
+      ],
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } na priporočilo"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Ko se vaša polna naročnina začne, jo še vedno lahko prekličete v 30 dneh in dobite vrnjen sorazmerni delež."
+      ],
+      "Refer friends": [
+        "Priporočite prijateljem"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Lahko prejmete do **${ maxRewardAmount }** kot dobroimetje."
       ]
     },
     "Reload event button tooltip": {
@@ -12241,7 +12427,19 @@
         "Vaš krajši naslov je zdaj pripravljen"
       ],
       "Stay for 50% off your next month": [
-        "V naslednjem mesecu izkoristite 50% popust"
+        "V naslednjem mesecu izkoristite 50 % popust"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Prestavite vašo organizacijo na ${ BRAND_NAME }"
+      ],
+      "Referral": [
+        "Priporočilo"
+      ],
+      "Share your link": [
+        "Delite vašo povezavo"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12252,6 +12450,12 @@
     "Title header for keys table": {
       "Type": [
         "Vrsta"
+      ],
+      "Created": [
+        "Ustvarjeno"
+      ],
+      "Expires": [
+        "Poteče"
       ]
     },
     "Title; create calendar modal": {
@@ -12347,11 +12551,17 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Za pošiljanje od konca do konca šifriranih sporočil na ta naslov naložite javni ključ"
+      ],
+      "Version 6 OpenPGP key": [
+        "Ključ OpenPGP verzija 6"
       ]
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Pomočnik UI, ki spoštuje vašo zasebnost"
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -12900,6 +13110,16 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Za ${ MEET_APP_NAME }"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kartica, ki se konča z ${ paymentMethod.Details.Last4 }"
       ]
     }
   }

@@ -1051,6 +1051,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "Odmítnout"
       ]
     },
     "action": {
@@ -1169,6 +1172,27 @@
       ],
       "Writing assistant seats": [
         "Licence asistenta psaní"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastní doména",
+        "${ quantity } vlastní domény",
+        "${ quantity } vlastních domén",
+        "${ quantity } vlastních domén"
       ]
     },
     "Alarm notification": {
@@ -1594,10 +1618,10 @@
         "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v administrátorské konzoli Google Workspace."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v sekci ${ usersAddressesLink }."
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v ${ usersAddressesLink }."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v sekci ${ usersAddressesLink }."
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v ${ usersAddressesLink }."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Chcete-li tohoto uživatele migrovat, musí nejprve přijmout pozvánku k připojení ke službě ${ BRAND_NAME }."
@@ -7000,6 +7024,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosáhli jste limitu rezervačních termínů (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Details": [
+        "Podrobnosti"
       ]
     },
     "info": {
@@ -8108,6 +8135,12 @@
         "${ seats } ${ MEET_APP_NAME } licence",
         "${ seats } ${ MEET_APP_NAME } licencí",
         "${ seats } ${ MEET_APP_NAME } licencí"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)"
       ]
     },
     "meet_2025: Feature": {
@@ -13941,6 +13974,28 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Vlastník"
+      ],
+      "Security Admin": [
+        "Správce zabezpečení"
+      ],
+      "User Admin": [
+        "Správce uživatelů"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všechny uživatele, skupiny, zabezpečení, fakturaci a systémové konfigurace."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Spravujte uživatele, skupiny a úložiště pro všechny členy, přiřazujte role a přidělujte licence."
       ]
     }
   }

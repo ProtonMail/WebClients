@@ -1043,6 +1043,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "Netejar la conversa"
+      ],
+      "Reject": [
+        "Rebutja"
+      ],
+      "Stop": [
+        "Aturar-ho"
       ]
     },
     "action": {
@@ -1147,6 +1156,25 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistent d'IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domini personalitzat",
+        "${ quantity } dominis personalitzats"
       ]
     },
     "Alarm notification": {
@@ -6859,6 +6887,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Details": [
+        "Detalls"
+      ],
+      "Thinking about this": [
+        "Hi estem pensant"
       ]
     },
     "info": {
@@ -7955,6 +7989,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
         "${ seats } llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
       ]
     },
     "meet_2025: Feature": {
@@ -10284,6 +10325,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Ask anything…": [
+        "Pregunteu qualsevol cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -13454,6 +13498,28 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Propietari"
+      ],
+      "Security Admin": [
+        "Administrador/a de seguretat"
+      ],
+      "User Admin": [
+        "Administrador/a d'usuaris"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestioneu tots els usuaris, grups, seguretat, facturació i configuracions del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestioneu els usuaris, els grups i l'emmagatzematge de tots els membres, assigneu rols i adjudiqueu llicències."
       ]
     }
   }

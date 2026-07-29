@@ -1043,6 +1043,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "Rensa konversation"
+      ],
+      "Reject": [
+        "Avvisa"
+      ],
+      "Stop": [
+        "Stoppa"
       ]
     },
     "action": {
@@ -1147,6 +1156,25 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe skrivassistent (för ${ quantity } användare)",
+        "${ BRAND_NAME } Scribe skrivassistent för ${ quantity } användare)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)",
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)",
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } anpassad domän",
+        "${ quantity } anpassade domäner"
       ]
     },
     "Alarm notification": {
@@ -1209,6 +1237,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ LUMO_SHORT_APP_NAME } hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ]
     },
     "Attached ics file error": {
@@ -1385,6 +1416,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ LUMO_SHORT_APP_NAME } skrivassistent, obegränsade hide-my-email-alias och mer."
       ]
     },
     "BF2025: Deal details": {
@@ -6828,6 +6862,15 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Failed to update meeting waiting room status": [
+        "Misslyckades att uppdatera status för mötets väntrum"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Ha lite mer tid att bestämma utan avbrott."
       ]
     },
     "info": {
@@ -7924,6 +7967,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (för ${ quantity } användare)",
+        "${ MEET_APP_NAME } (för ${ quantity } användare)"
       ]
     },
     "meet_2025: Feature": {
@@ -10259,6 +10306,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Ask anything…": [
+        "Fråga vad som helst …"
       ]
     },
     "Placeholder for contact group name": {
@@ -13429,6 +13479,28 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ägare"
+      ],
+      "Security Admin": [
+        "Säkerhetsadministratör"
+      ],
+      "User Admin": [
+        "Användaradministratör"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
       ]
     }
   }

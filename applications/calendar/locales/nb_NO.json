@@ -1043,6 +1043,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "Avvis"
       ]
     },
     "action": {
@@ -1147,6 +1150,21 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentlisenser"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } bruker)",
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } brukere)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } bruker)",
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } brukere)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } egendefinert domene",
+        "${ quantity } egendefinerte domener"
       ]
     },
     "Alarm notification": {
@@ -6840,6 +6858,9 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Hold deg til planen din og få 50 % rabatt neste måned"
+      ],
+      "Details": [
+        "Detaljer"
       ]
     },
     "info": {
@@ -7924,6 +7945,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-tilgang",
         "${ seats } ${ MEET_APP_NAME }-tilganger"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (for ${ quantity } bruker)",
+        "${ MEET_APP_NAME } (for ${ quantity } brukere)"
       ]
     },
     "meet_2025: Feature": {
@@ -13420,6 +13445,28 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Eier"
+      ],
+      "Security Admin": [
+        "Sikkerhetsadministrator"
+      ],
+      "User Admin": [
+        "Brukeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhetsretningslinjer, dataoppbevaring, VPN-infrastruktur og administrer revisjonslogger."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brukere, grupper, sikkerhet, fakturering og systemkonfigurasjoner."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brukere, grupper og lagring for alle medlemmer, tildel roller og alloker lisenser."
       ]
     }
   }
