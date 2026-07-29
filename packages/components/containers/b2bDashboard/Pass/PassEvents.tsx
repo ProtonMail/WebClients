@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href/Href';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
 import PassEventsTable from '@proton/components/containers/b2bDashboard/Pass/PassEventsTable';
@@ -12,6 +13,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getPassEventTypes, getPassLogs, getPassLogsDownload } from '@proton/shared/lib/api/b2bevents';
 import { PASS_APP_NAME, SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
@@ -29,8 +31,6 @@ import {
     getSearchType,
 } from './helpers';
 import type { PassEvent } from './interface';
-import { getKnowledgeBaseUrl } from "@proton/shared/lib/helpers/url";
-import { Href } from "@proton/atoms/Href/Href";
 
 export interface FilterModel {
     eventType: string;
@@ -58,7 +58,9 @@ export const PassEvents = () => {
     const handleError = useErrorHandler();
     const { page, onNext, onPrevious, onSelect, reset } = usePaginationAsync(1);
     const { createNotification } = useNotifications();
-    const [loading, withLoading] = useLoading();
+    // Start loading: the first fetch happens in an effect, so the initial render must not
+    // report an empty log.
+    const [loading, withLoading] = useLoading(true);
     const [filter, setFilter] = useState<FilterModel>(initialFilter);
     const [events, setEvents] = useState<PassEvent[]>([]);
     const [connectionEvents, setConnectionEvents] = useState<EventObject[]>([]);
@@ -90,11 +92,11 @@ export const PassEvents = () => {
     };
 
     useEffect(() => {
-        fetchPassConnectionEvents();
+        void fetchPassConnectionEvents();
     }, []);
 
     useEffect(() => {
-        withLoading(
+        void withLoading(
             fetchPassLogs({
                 ...query,
                 Page: page - 1,
@@ -132,7 +134,7 @@ export const PassEvents = () => {
             });
         }
 
-        downloadPassEvents(response);
+        void downloadPassEvents(response);
     };
 
     const handleStartDateChange = (start: Date | undefined) => {
@@ -208,8 +210,7 @@ export const PassEvents = () => {
                     <div className="flex flex-column gap-2 p-4 rounded-lg border border-solid border-weak">
                         <span className="text-bold">{c('Info').t`Pass usage logs`}</span>
                         <span className="color-weak">
-                            {c('Message').t`View ${PASS_APP_NAME} activity across your organization.`}
-                            {' '}
+                            {c('Message').t`View ${PASS_APP_NAME} activity across your organization.`}{' '}
                             <Href href={getKnowledgeBaseUrl('/pass-business-usage-logs')}>
                                 {c('Link').t`Learn more`}
                             </Href>
