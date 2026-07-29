@@ -7,7 +7,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import type { Label, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
+import { getRecipients as getMessageRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -19,6 +19,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { getDate, isElementMessage, isUnread } from '../../helpers/elements';
+import { getDisplayRecipients } from '../../helpers/recipients';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { useCategoryViewConversationPrefetch } from '../../hooks/conversation/useCategoryViewConversationPrefetch';
 import type { Element } from '../../models/element';
@@ -94,16 +95,7 @@ const Item = ({
     const prefetchConversation = useCategoryViewConversationPrefetch();
     const conversationID = !conversationMode && isElementMessage(element) ? element.ConversationID : undefined;
 
-    const displayRecipients =
-        [
-            MAILBOX_LABEL_IDS.SENT,
-            MAILBOX_LABEL_IDS.ALL_SENT,
-            MAILBOX_LABEL_IDS.DRAFTS,
-            MAILBOX_LABEL_IDS.ALL_DRAFTS,
-            MAILBOX_LABEL_IDS.SCHEDULED,
-        ].includes(labelID as MAILBOX_LABEL_IDS) ||
-        isSent(element) ||
-        isDraft(element);
+    const displayRecipients = getDisplayRecipients(element, labelID);
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
     const showIcon = labelsWithIcons.includes(labelID) || isCustomLabel(labelID, labels);
     const senders = conversationMode

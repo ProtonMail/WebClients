@@ -1,19 +1,35 @@
-import type { LumoAgentConfig } from '@proton/components/components/lumoAgent/types';
+import type { CardRenderers, LumoAgentConfig } from '@proton/components/components/lumoAgent/types';
+import type { ToolDefinition, ToolHandlers } from '@proton/llm/lib/lumoAgent/contracts/types';
 
 import { MAIL_RULES } from './rules';
+import { moveEmailsModule } from './skills/organise/moveEmails';
+import { openFolderModule } from './skills/reads/openFolder';
+import type { MailToolDeps, MailToolModule } from './toolModule';
 
 /**
- * The Mail tool pack handed to {@link useLumoAgent}. It is deliberately empty for now — the assistant is
- * chat-only, proving the framework wires into Mail end to end. Each skill MR (MR7+) registers its
- * modules here: a definition per tool, a matching handler, and (for mutations) a card renderer.
- *
- * A module-level constant so the reference stays stable across renders (the hook rebuilds its executor
- * only when this changes). Once handlers touch the Redux store they will be assembled inside the
- * provider with `useMemo`; until then a constant is correct and simplest.
+ * The Mail tool pack. Each entry is a self-contained module (definition + handler factory + optional
+ * card renderer — see {@link MailToolModule}); adding a tool means adding it here and nowhere else.
+ * {@link buildLumoMailConfig} splits the modules back into the layered inputs the framework expects:
+ * pure definitions for the engine, store-bound handlers for dispatch, card renderers for the UI.
  */
-export const lumoMailConfig: LumoAgentConfig = {
-    definitions: [],
-    handlers: {},
-    cardRenderers: {},
-    productRules: MAIL_RULES,
+const MODULES: MailToolModule[] = [openFolderModule, moveEmailsModule];
+
+/**
+ * Assemble the {@link LumoAgentConfig} handed to `useLumoAgent`, binding every handler to the Mail
+ * store via `deps`. Called ONCE from the provider (deps read current values through getters/methods, so
+ * the built config stays referentially stable across renders — the hook rebuilds its executor only when
+ * the config identity changes).
+ */
+export const buildLumoMailConfig = (deps: MailToolDeps): LumoAgentConfig => {
+    const definitions: ToolDefinition[] = MODULES.map((module) => module.definition);
+
+    const handlers: ToolHandlers = Object.fromEntries(
+        MODULES.map((module) => [module.definition.name, module.createHandler(deps)])
+    );
+
+    const cardRenderers: CardRenderers = Object.fromEntries(
+        MODULES.filter((module) => module.cardRenderer).map((module) => [module.definition.name, module.cardRenderer])
+    );
+
+    return { definitions, handlers, cardRenderers, productRules: MAIL_RULES };
 };
