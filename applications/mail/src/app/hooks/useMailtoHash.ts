@@ -34,11 +34,13 @@ const useMailtoHash = ({ isSearch }: { isSearch: boolean }) => {
             if (mailtoIndex === -1) {
                 return;
             }
-            const rawMailTo = hash.substring(mailtoIndex + MAILTO_PREFIX.length, hash.length);
-            const [to, ...rest] = decodeURIComponent(rawMailTo).split(/[?&]/);
+            const decodedMailTo = decodedHash.substring(mailtoIndex + MAILTO_PREFIX.length, decodedHash.length);
+            const separatorIndex = decodedMailTo.search(/[?&]/);
+            const to = separatorIndex === -1 ? decodedMailTo : decodedMailTo.slice(0, separatorIndex);
+            const rest = separatorIndex === -1 ? '' : decodedMailTo.slice(separatorIndex + 1);
 
             // We run the `rest` through the `parseMailtoParams` to remove unwanted query params (for example: category)
-            const query = Object.entries(parseMailtoParams(rest.join('&')))
+            const query = Object.entries(parseMailtoParams(rest))
                 .filter(([, value]) => value !== null)
                 .map(([key, value]) => `${key}=${encodeURIComponent(value ?? '')}`)
                 .join('&');

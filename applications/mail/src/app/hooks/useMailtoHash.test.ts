@@ -69,6 +69,27 @@ describe('useMailtoHash', () => {
         expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?subject=Hi&body=Bye');
     });
 
+    it('Should keep a question mark inside the body', () => {
+        mockHash('#mailto=mailto%3Ahello%40test.com%3Fsubject%3DHi%26body%3DAre%20you%20ok%3F%20yes');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?subject=Hi&body=Are%20you%20ok%3F%20yes');
+    });
+
+    it('Should keep a question mark inside the subject', () => {
+        mockHash('#mailto=mailto%3Ahello%40test.com%3Fsubject%3DHi%3Fthere');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?subject=Hi%3Fthere');
+    });
+
+    it('Should not shift the mailto when a percent-escape precedes it in the hash', () => {
+        mockHash('#elementID=abc%20def&mailto=mailto:hello@test.com');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com');
+    });
+
     it('Should not treat a + in the address as a space', () => {
         mockHash('#mailto=mailto:hello+tag@test.com&category=primary');
 
