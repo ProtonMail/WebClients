@@ -7,7 +7,7 @@ import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { useEffect, useMemo, useState } from 'react'
 import { useRouteMatch } from 'react-router'
-import { HOMEPAGE_TRASH_PATH } from '../../../__components/AppContainer'
+import { HOMEPAGE_TRASH_PATH } from '../../../__utils/homepage-paths'
 import {
   filterDocuments,
   HomepageViewContext,
