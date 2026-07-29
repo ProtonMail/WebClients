@@ -1047,6 +1047,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "Golire conversație"
+      ],
+      "Reject": [
+        "Respingere"
+      ],
+      "Stop": [
+        "Stop\n"
       ]
     },
     "action": {
@@ -1158,6 +1167,29 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistent de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domeniu personal",
+        "${ quantity } domenii personale",
+        "${ quantity } de domenii personale"
       ]
     },
     "Alarm notification": {
@@ -6952,6 +6984,12 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Păstrați-vă abonamentul și primiți o reducere de 50% luna următoare"
+      ],
+      "Details": [
+        "Detalii"
+      ],
+      "Thinking about this": [
+        "Mă gândesc la asta"
       ]
     },
     "info": {
@@ -8060,6 +8098,14 @@
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
         "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizator)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ price } per seat": [
+        "${ price } per licență"
       ]
     },
     "meet_2025: Feature": {
@@ -10459,6 +10505,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Ask anything…": [
+        "Întreabă-mă orice…"
       ]
     },
     "Placeholder for contact group name": {
@@ -13729,6 +13778,28 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietar"
+      ],
+      "Security Admin": [
+        "Administrator securitate"
+      ],
+      "User Admin": [
+        "Administrare utilizatori"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
       ]
     }
   }

@@ -1039,6 +1039,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "거절"
+      ],
+      "Stop": [
+        "중지"
       ]
     },
     "action": {
@@ -1136,6 +1142,21 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 어시스턴트"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 어시스턴트 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ quantity } custom domain": [
+        "사용자 지정 도메인 ${ quantity }개"
       ]
     },
     "Alarm notification": {
@@ -1198,6 +1219,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "이메일 생산성을 한 단계 더 높은 경지로. ${ LUMO_SHORT_APP_NAME }가 이메일의 작성과 답장, 교정에 도움을 드립니다."
       ]
     },
     "Attached ics file error": {
@@ -1254,6 +1278,9 @@
       ],
       "You have reached the trial limit.": [
         "무료 체험 한도에 도달했습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 시트를 포함할 수 있습니다."
       ]
     },
     "b2b_trials_Action": {
@@ -1371,6 +1398,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
       ]
     },
     "BF2025: Deal details": {
@@ -6748,6 +6781,15 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "현재 플랜을 유지허고 다음 달에는 50% 할인 받으세요"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME }에 글쓰기 도우미가 포함됩니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Details": [
+        "세부 사항"
       ]
     },
     "info": {
@@ -7530,6 +7572,12 @@
       ],
       "Zoom meeting": [
         "Zoom 화상 회의"
+      ],
+      "Client": [
+        "클라이언트"
+      ],
+      "Client version": [
+        "클라이언트 버전"
       ]
     },
     "label": {
@@ -7809,6 +7857,12 @@
       ],
       "for ${ price }": [
         "${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 추가"
       ]
     },
     "meet_2025: Addon": {
@@ -7820,6 +7874,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ MEET_APP_NAME } 시트 ${ seats }개"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity }명 이용 가능)"
       ]
     },
     "meet_2025: Feature": {
@@ -8629,6 +8686,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ]
     },
     "new_plans: feature highlight": {
@@ -13146,6 +13206,28 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "소유자"
+      ],
+      "Security Admin": [
+        "보안 관리자"
+      ],
+      "User Admin": [
+        "사용자 관리자"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "보안 정책, 데이터 보존, VPN 인프라를 설정하고 감사 로그를 관리합니다."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "모든 사용자, 그룹, 보안, 결제 및 시스템 설정을 관리합니다."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "모든 구성원의 사용자, 그룹, 저장공간을 관리하고 역할을 부여하며 라이선스를 할당합니다."
       ]
     }
   }
