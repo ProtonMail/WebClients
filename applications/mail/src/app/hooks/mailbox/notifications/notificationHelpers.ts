@@ -76,13 +76,14 @@ const getRoute = (location: Location, notificationLabel: string, disabledCategor
         return { location, labelID: notificationLabel };
     }
 
-    const categoryLabel = disabledCategoriesIDs.includes(notificationLabel)
+    const categoryLabelID = disabledCategoriesIDs.includes(notificationLabel)
         ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
         : notificationLabel;
 
     return {
-        location: { ...location, hash: `#category=${LABEL_IDS_TO_HUMAN[categoryLabel]}` },
+        location: { ...location, hash: `#category=${LABEL_IDS_TO_HUMAN[categoryLabelID]}` },
         labelID: MAILBOX_LABEL_IDS.INBOX,
+        categoryLabelID,
     };
 };
 
@@ -98,7 +99,11 @@ export const prepareNotificationData = ({
     const locationWithNoHash: Location = { ...history.location, hash: '' };
     const notificationLabel = getNotificationLabel(message, notifier, isCategoryViewEnabled);
 
-    const { location: routeLocation, labelID } = getRoute(locationWithNoHash, notificationLabel, disabledCategoriesIDs);
+    const {
+        location: routeLocation,
+        labelID,
+        categoryLabelID,
+    } = getRoute(locationWithNoHash, notificationLabel, disabledCategoriesIDs);
 
     const { elementID, messageID } = getElementIDAndMessageID(
         notificationLabel,
@@ -109,7 +114,7 @@ export const prepareNotificationData = ({
 
     const location = setParamsInLocation(routeLocation, { labelID, elementID, messageID });
     const { title, body } = getNotificationBodyAndTitle(message);
-    return { title, body, location, ID: message.ID, labelID, elementID, messageID };
+    return { title, body, location, ID: message.ID, labelID, elementID, messageID, categoryLabelID };
 };
 
 export const displayNotification = ({
@@ -119,7 +124,18 @@ export const displayNotification = ({
     const notificationData = prepareNotificationData(params);
 
     if (isElectronMail) {
-        return createElectronNotification({ app: 'mail', ...notificationData });
+        const { title, body, elementID, messageID, labelID, categoryLabelID } = notificationData;
+
+        // The desktop app rebuilds the URL from the labelID and drops everything else, the category hash included.
+        // Sending the category label instead of Inbox is what allows the web app to restore the category on click.
+        return createElectronNotification({
+            app: 'mail',
+            title,
+            body,
+            elementID,
+            messageID,
+            labelID: categoryLabelID ?? labelID,
+        });
     }
 
     return create(notificationData.title, {

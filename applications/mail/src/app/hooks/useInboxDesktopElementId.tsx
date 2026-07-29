@@ -1,22 +1,27 @@
 import { useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
+
+import { isCategoryLabel } from '@proton/mail/helpers/location';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
 
 /**
- * URLs with a mailto protocol handler can be used to prefill the composer.
- * The mailto link is in the format `#mailto=mailto:...&subject=...&body=...`
+ * Deep links coming from the desktop app open an element in the mailbox.
+ * The link is in the format `#labelID=...&elementID=...&messageID=...`
  *
+ * The hash is read from react-router's location at render time, so the value is captured before the
+ * category redirect effect (which runs first, being deeper in the tree) can rewrite the hash.
  */
 const useInboxDesktopElementId = ({ isSearch }: { isSearch: boolean }) => {
     const history = useHistory();
+    const { hash } = useLocation();
 
     useEffect(() => {
-        if (isSearch || !location.hash) {
+        if (isSearch || !hash) {
             return;
         }
-
-        const { hash } = location;
 
         try {
             const decodedHash = decodeURIComponent(hash);
@@ -25,20 +30,30 @@ const useInboxDesktopElementId = ({ isSearch }: { isSearch: boolean }) => {
             const elementID = searchParams.get('elementID');
             const labelID = searchParams.get('labelID');
 
-            if (elementID && labelID) {
-                const cleanHistoryLocation = { ...history.location, hash: '' };
-                const location = setParamsInLocation(cleanHistoryLocation, {
-                    labelID,
-                    elementID,
-                });
-
-                history.push(location);
+            if (!elementID || !labelID) {
+                return;
             }
+
+            // Category labels are not routable on their own: we redirect to Inbox and select the
+            // category through the URL hash. Without it the category redirect drops the elementID.
+            const isCategory = isCategoryLabel(labelID);
+            const humanCategory = isCategory ? LABEL_IDS_TO_HUMAN[labelID] : undefined;
+
+            const cleanHistoryLocation = {
+                ...history.location,
+                hash: humanCategory ? `#category=${humanCategory}` : '',
+            };
+
+            const location = setParamsInLocation(cleanHistoryLocation, {
+                labelID: isCategory ? MAILBOX_LABEL_IDS.INBOX : labelID,
+                elementID,
+            });
+
+            history.push(location);
         } catch (e: any) {
             console.error(e);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-87993B
-    }, [location.hash, isSearch, history]);
+    }, [hash, isSearch, history]);
 };
 
 export default useInboxDesktopElementId;

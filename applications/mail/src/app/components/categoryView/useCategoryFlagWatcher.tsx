@@ -9,7 +9,11 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SentryMailInitiatives, captureInitiativeMessage } from '@proton/shared/lib/helpers/sentry';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import { categoryIDFromUrl, getInboxUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
+import {
+    categoryIDFromUrl,
+    removeCategoryFromCurrentUrl,
+    setCategoryInCurrentUrl,
+} from 'proton-mail/helpers/mailboxUrl';
 import { getParametersFromPath } from 'proton-mail/hooks/mailbox/useElements';
 import { reset } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -65,7 +69,7 @@ export const useCategoryFlagWatcher = () => {
                 })
             );
 
-            history.replace(setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT));
+            history.replace(setCategoryInCurrentUrl(location, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT));
 
             // Temporary tracking
             captureInitiativeMessage(
@@ -86,7 +90,7 @@ export const useCategoryFlagWatcher = () => {
 
         if (!isCategoryViewEnabled && categoryID) {
             dispatch(reset({ params: { labelID: MAILBOX_LABEL_IDS.INBOX } }));
-            history.replace(getInboxUrl());
+            history.replace(removeCategoryFromCurrentUrl(location));
 
             // Temporary tracking
             captureInitiativeMessage(
