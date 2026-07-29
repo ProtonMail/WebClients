@@ -5,13 +5,14 @@ import { isNativeAuthBridgeAvailable, triggerNativeAccountAction } from '../remo
 import { canUseNativeAuth, isNativeMobileApp } from '../util/userAgent';
 import { useLumoFlags } from './useLumoFlags';
 
-export type AuthAction = 'signin' | 'signup' | 'signout' | 'addaccount';
+export type AuthAction = 'signin' | 'signup' | 'signout' | 'addaccount' | 'webaccountsettings';
 
 const ACTION_TO_NATIVE: Record<AuthAction, NativeAccountAction> = {
     signin: 'LogIn',
     signup: 'SignUp',
     signout: 'SignOut',
     addaccount: 'AddAccount',
+    webaccountsettings: 'WebAccountSettings',
 };
 
 export const useLumoAuthAction = () => {
