@@ -1031,6 +1031,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "Unterhaltung entfernen"
+      ],
+      "Reject": [
+        "Ablehnen"
+      ],
+      "Stop": [
+        "Stoppen"
       ]
     },
     "action": {
@@ -1135,6 +1144,25 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)",
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-Assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)",
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)",
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } benutzerdefinierte Domäne",
+        "${ quantity } benutzerdefinierte Domänen"
       ]
     },
     "Alarm notification": {
@@ -6835,6 +6863,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Details": [
+        "Details"
+      ],
+      "Thinking about this": [
+        "Darüber nachdenken"
       ]
     },
     "info": {
@@ -7928,6 +7962,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } Lizenz",
         "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)",
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)"
+      ],
+      "${ price } per seat": [
+        "${ price } pro Lizenz"
       ]
     },
     "meet_2025: Feature": {
@@ -10251,6 +10292,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Ask anything…": [
+        "Frag irgendetwas …"
       ]
     },
     "Placeholder for contact group name": {
@@ -13415,6 +13459,28 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Besitzer"
+      ],
+      "Security Admin": [
+        "Sicherheitsadministrator"
+      ],
+      "User Admin": [
+        "Benutzeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Sicherheitsrichtlinien, Datenaufbewahrung und VPN-Infrastruktur konfigurieren sowie Prüfprotokolle verwalten."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
       ]
     }
   }

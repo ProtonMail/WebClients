@@ -1027,6 +1027,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Reject": [
+        "婉拒"
       ]
     },
     "action": {
@@ -1124,6 +1127,18 @@
       ],
       "Writing assistant seats": [
         "撰寫幫手就位"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 撰寫幫手（供 ${ quantity } 位使用者使用）"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助理"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助理（供 ${ quantity } 位使用者使用）"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個自訂網域"
       ]
     },
     "Alarm notification": {
@@ -6718,6 +6733,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已達到預約時段限制 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Details": [
+        "詳細資訊"
       ]
     },
     "info": {
@@ -7787,6 +7805,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } 席位"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME }（適用於 ${ quantity } 名使用者）"
       ]
     },
     "meet_2025: Feature": {
@@ -13098,6 +13119,28 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "擁有者"
+      ],
+      "Security Admin": [
+        "安全管理員"
+      ],
+      "User Admin": [
+        "使用者管理員"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "設定安全政策、資料保留及 VPN 基礎架構，並管理稽核日誌。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "管理所有使用者、群組、安全性、帳務及系統組態。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成員的使用者、群組和儲存空間，分配角色並分配授權。"
       ]
     }
   }

@@ -1039,6 +1039,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "Відхилити"
       ]
     },
     "action": {
@@ -1157,6 +1160,27 @@
       ],
       "Writing assistant seats": [
         "Місця для помічника з написання текстів"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувача)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)",
+        "Письмовий асистент ${ BRAND_NAME } Scribe (для ${ quantity } користувачів)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувача)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувачів)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувачів)",
+        "Помічник зі штучним інтелектом ${ LUMO_APP_NAME } (для ${ quantity } користувача)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } власний домен",
+        "${ quantity } власні домени",
+        "${ quantity } власних доменів",
+        "${ quantity } власного домену"
       ]
     },
     "Alarm notification": {
@@ -6976,6 +7000,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ви досягли ліміту слотів для бронювання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Details": [
+        "Деталі"
       ]
     },
     "info": {
@@ -8081,6 +8108,12 @@
         "${ seats } місця ${ MEET_APP_NAME }",
         "${ seats } місць ${ MEET_APP_NAME }",
         "${ seats } місця ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (для ${ quantity } користувача)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)",
+        "${ MEET_APP_NAME } (для ${ quantity } користувачів)"
       ]
     },
     "meet_2025: Feature": {
@@ -13902,6 +13935,28 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Власник"
+      ],
+      "Security Admin": [
+        "Адміністратор безпеки"
+      ],
+      "User Admin": [
+        "Адміністратор користувачів"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Налаштовувати політики безпеки, зберігання даних та інфраструктуру VPN, а також керувати журналами аудиту."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Керувати всіма користувачами, групами, безпекою, виставленням рахунків та системними конфігураціями."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Керувати користувачами, групами та сховищем для всіх членів, призначати ролі та розподіляти ліцензії."
       ]
     }
   }

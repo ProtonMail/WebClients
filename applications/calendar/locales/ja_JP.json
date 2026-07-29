@@ -1027,6 +1027,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Reject": [
+        "拒否"
       ]
     },
     "action": {
@@ -1124,6 +1127,18 @@
       ],
       "Writing assistant seats": [
         "執筆アシスタントシート"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "(${ quantity }ユーザー向け) ${ BRAND_NAME } Scribe執筆アシスタント"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI アシスタント"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "(${ quantity }ユーザー向け) ${ LUMO_APP_NAME } AIアシスタント"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個のカスタムドメイン"
       ]
     },
     "Alarm notification": {
@@ -6721,6 +6736,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "Details": [
+        "詳細"
       ]
     },
     "info": {
@@ -7790,6 +7808,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats }${ MEET_APP_NAME }シート"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } ユーザー用)"
       ]
     },
     "meet_2025: Feature": {
@@ -13104,6 +13125,28 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "所有者"
+      ],
+      "Security Admin": [
+        "セキュリティ管理者"
+      ],
+      "User Admin": [
+        "ユーザー管理者"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "セキュリティポリシー、データ保持、VPNインフラを構成し、監査ログを管理します。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "すべてのユーザー、グループ、セキュリティ、お支払い、システム構成を管理します。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "すべてのメンバーのユーザー、グループ、ストレージを管理し、役割を割り当て、ライセンスを配分します。"
       ]
     }
   }

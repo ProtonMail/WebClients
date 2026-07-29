@@ -1027,6 +1027,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "Tolak"
       ]
     },
     "action": {
@@ -1124,6 +1127,18 @@
       ],
       "Writing assistant seats": [
         "Kuota asisten menulis"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe (untuk ${ quantity } pengguna)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asisten AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asisten AI ${ LUMO_APP_NAME } (untuk ${ quantity } pengguna)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domain khusus"
       ]
     },
     "Alarm notification": {
@@ -6700,6 +6715,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Anda telah mencapai batas slot pemesanan (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Details": [
+        "Rincian"
       ]
     },
     "info": {
@@ -7769,6 +7787,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } kuota ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (untuk ${ quantity } pengguna)"
       ]
     },
     "meet_2025: Feature": {
@@ -13080,6 +13101,28 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Pemilik"
+      ],
+      "Security Admin": [
+        "Admin Keamanan"
+      ],
+      "User Admin": [
+        "Admin Pengguna"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurasikan kebijakan keamanan, retensi data, dan infrastruktur VPN, serta kelola log audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Kelola semua pengguna, grup, keamanan, penagihan, dan konfigurasi sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Kelola pengguna, grup, dan penyimpanan untuk semua anggota, tetapkan peran, dan alokasikan lisensi."
       ]
     }
   }

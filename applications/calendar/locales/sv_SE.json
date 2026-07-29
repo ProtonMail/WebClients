@@ -1031,6 +1031,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "Rensa konversation"
+      ],
+      "Reject": [
+        "Avvisa"
+      ],
+      "Stop": [
+        "Stoppa"
       ]
     },
     "action": {
@@ -1135,6 +1144,25 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe skrivassistent (för ${ quantity } användare)",
+        "${ BRAND_NAME } Scribe skrivassistent för ${ quantity } användare)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)",
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)",
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } anpassad domän",
+        "${ quantity } anpassade domäner"
       ]
     },
     "Alarm notification": {
@@ -6816,6 +6844,9 @@
       ],
       "Have some more time to decide without interruption.": [
         "Ha lite mer tid att bestämma utan avbrott."
+      ],
+      "Details": [
+        "Detaljer"
       ]
     },
     "info": {
@@ -7909,6 +7940,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (för ${ quantity } användare)",
+        "${ MEET_APP_NAME } (för ${ quantity } användare)"
       ]
     },
     "meet_2025: Feature": {
@@ -10238,6 +10273,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Ask anything…": [
+        "Fråga vad som helst …"
       ]
     },
     "Placeholder for contact group name": {
@@ -13402,6 +13440,28 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ägare"
+      ],
+      "Security Admin": [
+        "Säkerhetsadministratör"
+      ],
+      "User Admin": [
+        "Användaradministratör"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
       ]
     }
   }

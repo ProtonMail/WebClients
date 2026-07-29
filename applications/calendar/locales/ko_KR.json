@@ -1027,6 +1027,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "거절"
+      ],
+      "Stop": [
+        "중지"
       ]
     },
     "action": {
@@ -1124,6 +1130,21 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 어시스턴트"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 어시스턴트 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ quantity } custom domain": [
+        "사용자 지정 도메인 ${ quantity }개"
       ]
     },
     "Alarm notification": {
@@ -6742,6 +6763,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Details": [
+        "세부 사항"
       ]
     },
     "info": {
@@ -7823,6 +7847,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ MEET_APP_NAME } 시트 ${ seats }개"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity }명 이용 가능)"
       ]
     },
     "meet_2025: Feature": {
@@ -13140,6 +13167,28 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "소유자"
+      ],
+      "Security Admin": [
+        "보안 관리자"
+      ],
+      "User Admin": [
+        "사용자 관리자"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "보안 정책, 데이터 보존, VPN 인프라를 설정하고 감사 로그를 관리합니다."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "모든 사용자, 그룹, 보안, 결제 및 시스템 설정을 관리합니다."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "모든 구성원의 사용자, 그룹, 저장공간을 관리하고 역할을 부여하며 라이선스를 할당합니다."
       ]
     }
   }
