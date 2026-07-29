@@ -1,16 +1,18 @@
 import { useHistory } from 'react-router-dom';
 
-import { c, msgid } from 'ttag';
-
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders } from '@proton/mail/store/labels/hooks';
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { EVENT_ACTIONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isImported } from '@proton/shared/lib/mail/messages';
+import isTruthy from '@proton/utils/isTruthy';
+
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isElementReminded } from '../../../helpers/snooze';
 import type { ConversationEvent, Event, MessageEvent } from '../../../models/event';
@@ -52,48 +54,50 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
     const [mailSettings] = useMailSettings();
     const [folders = []] = useFolders();
     const { isCategoryViewEnabled, activeCategoriesTabs } = useCategoriesData();
+    const disabledCategoriesIDs = useMailSelector(selectDisabledCategoriesIDs);
 
     const notifier = [MAILBOX_LABEL_IDS.STARRED, ...folders.filter(({ Notify }) => Notify).map(({ ID }) => ID)];
 
     if (!isCategoryViewEnabled) {
         notifier.push(MAILBOX_LABEL_IDS.INBOX);
     } else {
+        // Add all the active categories to the notifier
         activeCategoriesTabs
             .filter((category) => category.notify)
             .forEach((category) => {
                 notifier.push(category.id);
             });
+
+        // Add the disabled categories IDs as they are in primary which has notification enabled by default
+        notifier.push(...disabledCategoriesIDs);
     }
+
+    const notify = (message: Message) => {
+        void displayNotification({
+            message,
+            history,
+            mailSettings,
+            notifier,
+            onOpenElement,
+            isCategoryViewEnabled,
+            disabledCategoriesIDs,
+        });
+    };
 
     // Regular messages notification
     useSubscribeEventManager(({ Messages = [] }: Event) => {
-        const notificationsToShow = Messages.filter((event) => messageFilter(event, notifier)).map(({ Message }) => {
-            if (Message) {
-                return Message;
-            }
-        }) as Message[];
+        const notificationsToShow = Messages.filter((event) => messageFilter(event, notifier))
+            .map(({ Message }) => Message)
+            .filter(isTruthy);
 
         if (isWindows() && notificationsToShow.length > MAX_WINDOWS_NOTIFICATIONS) {
             void displayGroupedNotification({
-                body: c('Desktop notification body').ngettext(
-                    msgid`${notificationsToShow.length} new message`,
-                    `${notificationsToShow.length} new messages`,
-                    notificationsToShow.length
-                ),
+                messageCount: notificationsToShow.length,
                 history,
                 onOpenElement,
             });
         } else {
-            notificationsToShow.forEach((value) => {
-                void displayNotification({
-                    message: value,
-                    history,
-                    mailSettings,
-                    notifier,
-                    onOpenElement,
-                    isCategoryViewEnabled,
-                });
-            });
+            notificationsToShow.forEach(notify);
         }
     });
 
@@ -123,16 +127,7 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
                 }
             });
 
-            notificationToDisplay.forEach((value) => {
-                void displayNotification({
-                    message: value,
-                    history,
-                    mailSettings,
-                    notifier,
-                    onOpenElement,
-                    isCategoryViewEnabled,
-                });
-            });
+            notificationToDisplay.forEach(notify);
         });
     });
 };
