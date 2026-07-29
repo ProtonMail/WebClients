@@ -16813,6 +16813,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } koltuğu",
         "${ seats } ${ MEET_APP_NAME } koltuğu"
+      ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
       ]
     },
     "meet_2025: Feature": {
@@ -27290,6 +27293,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"
+      ],
+      "Pending user activation": [
+        "Bekleyen kullanıcı etkinleştirmesi"
       ]
     },
     "Tooltip automatically attach public key": {

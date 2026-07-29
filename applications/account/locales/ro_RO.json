@@ -16985,6 +16985,9 @@
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
         "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ],
+      "${ price } per seat": [
+        "${ price } per licență"
       ]
     },
     "meet_2025: Feature": {
@@ -27617,6 +27620,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
+      ],
+      "Pending user activation": [
+        "Așteptare activare utilizator"
       ]
     },
     "Tooltip automatically attach public key": {
