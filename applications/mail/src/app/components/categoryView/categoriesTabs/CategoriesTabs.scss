@@ -62,7 +62,7 @@ $tab-icon-inset: rem(38);
 			position: absolute;
 			inset-block: 0 rem(-3);
 			inset-inline: 0 rem(-1);
-			border: rem(1) dashed var(--border-weak);
+			border: 1px dashed var(--border-weak);
 			border-radius: inherit;
 			pointer-events: none;
 		}
