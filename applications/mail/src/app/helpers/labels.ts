@@ -11,6 +11,8 @@ import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
+import isTruthy from '@proton/utils/isTruthy';
+import orderBy from '@proton/utils/orderBy';
 
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
@@ -159,6 +161,20 @@ export const getCurrentFolders = (
                 parentID: folder?.ParentID,
             };
         });
+};
+
+/**
+ * The element's custom labels, in the order the mailbox stacks them. Shared so anything describing a row
+ * — the label stack on screen, or a serialised row for the Lumo agent — lists the same labels in the
+ * same order.
+ */
+export const getElementLabels = (element: Element | undefined, labelID: string, labels: Label[]): Label[] => {
+    const labelsMap = toMap(labels);
+    const elementLabels = Object.keys(getLabelIDs(element, labelID))
+        .map((ID) => labelsMap[ID])
+        .filter(isTruthy);
+
+    return orderBy(elementLabels, 'Order');
 };
 
 export interface UnreadStatus {
