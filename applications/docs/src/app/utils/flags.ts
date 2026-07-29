@@ -42,6 +42,10 @@ export function useIsOpenTracerEnabled() {
   return useFlag('DocsOpenTracer') || isDevOrBlack()
 }
 
+export function useIsGatePrivateInviteAccessEnabled() {
+  return useFlag('DocsGatePrivateInviteAccess') || isDevOrBlack()
+}
+
 /**
  * Checks if the user is allowed to download logs.
  * It will only be active for alpha and dev/black environments for now.

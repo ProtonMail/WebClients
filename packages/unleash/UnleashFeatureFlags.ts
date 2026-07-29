@@ -185,6 +185,7 @@ enum DocsFeatureFlag {
     DriveWebTextFileEdit = 'DriveWebTextFileEdit',
     DocsTableOfContents = 'DocsTableOfContents',
     DocsOpenTracer = 'DocsOpenTracer',
+    DocsGatePrivateInviteAccess = 'DocsGatePrivateInviteAccess',
     // Comments
     DocsEnableNotificationsOnNewComment = 'DocsEnableNotificationsOnNewComment',
     // Homepage
