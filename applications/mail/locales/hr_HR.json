@@ -1712,6 +1712,9 @@
       ],
       "Zoom out": [
         "Smanji"
+      ],
+      "Reject": [
+        "Odbiti"
       ]
     },
     "action": {
@@ -1845,6 +1848,24 @@
       ],
       "Writing assistant seats": [
         "Licence pomoćnika za pisanje"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)",
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)",
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje (za ${ quantity } korisnika)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)",
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)",
+        "${ LUMO_APP_NAME } AI pomoćnik (za ${ quantity } korisnika)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } prilagođena domena",
+        "${ quantity } prilagođene domene",
+        "${ quantity } prilagođenih domena"
       ]
     },
     "Alert": {
@@ -9444,6 +9465,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Samo Vas nekoliko klikova dijeli od pristigle pošte bez nereda"
+      ],
+      "Details": [
+        "Pojedinosti"
       ]
     },
     "info": {
@@ -11111,6 +11135,11 @@
         "${ seats } ${ MEET_APP_NAME } licenca",
         "${ seats } ${ MEET_APP_NAME } licence",
         "${ seats } ${ MEET_APP_NAME } licenci"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } korisnika)"
       ]
     },
     "meet_2025: Feature": {
@@ -17452,6 +17481,28 @@
       ],
       "Passcode:": [
         "Pristupni kôd:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Vlasnik"
+      ],
+      "Security Admin": [
+        "Administrator sigurnosti"
+      ],
+      "User Admin": [
+        "Administrator korisnika"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurirajte sigurnosna pravila, zadržavanje podataka i VPN infrastrukturu te upravljajte revizijskim zapisnicima."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Upravljanje svim korisnicima, grupama, sigurnošću, naplatom i konfiguracijama sustava."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Upravljanje korisnicima, grupama i pohranom za sve članove, dodjeljivanje uloga i dodjela licenci."
       ]
     }
   }

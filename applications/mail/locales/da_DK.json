@@ -1709,6 +1709,18 @@
       ],
       "Lookup document": [
         "Find dokument"
+      ],
+      "Clear conversation": [
+        "Ryd samtale"
+      ],
+      "Reject": [
+        "Afvis"
+      ],
+      "Stop": [
+        "Stop"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Vis/skjul ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1835,6 +1847,25 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentpladser"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } bruger)",
+        "${ BRAND_NAME } Scribe-skriveassistent (til ${ quantity } brugere)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } bruger)",
+        "${ LUMO_APP_NAME } AI-assistent (til ${ quantity } brugere)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } bruger)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (til ${ quantity } brugere)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } brugerdefineret domæne",
+        "${ quantity } brugerdefinerede domæner"
       ]
     },
     "Alert": {
@@ -9349,6 +9380,12 @@
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "Du kan importere det som et nyt fundament-søgeindeks til udviklingsformål."
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Thinking about this": [
+        "Overvejer..."
       ]
     },
     "info": {
@@ -11026,6 +11063,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-plads",
         "${ seats } ${ MEET_APP_NAME }-pladser"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (til ${ quantity } bruger)",
+        "${ MEET_APP_NAME } (til ${ quantity } brugere)"
+      ],
+      "${ price } per seat": [
+        "${ price } pr. plads"
       ]
     },
     "meet_2025: Feature": {
@@ -13342,6 +13386,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Ask anything…": [
+        "Spørg om hvad som helst..."
       ]
     },
     "Placeholder for contact group name": {
@@ -15272,6 +15319,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her fremover."
       ]
     },
     "Success notification": {
@@ -17188,6 +17238,28 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ejer"
+      ],
+      "Security Admin": [
+        "Sikkerhedsadmin"
+      ],
+      "User Admin": [
+        "Brugeradmin"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brugere, grupper, og lagerplads for alle medlemmer, og tildel roller samt licenser."
       ]
     }
   }

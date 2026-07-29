@@ -1709,6 +1709,18 @@
       ],
       "Lookup document": [
         "Consulter le document"
+      ],
+      "Clear conversation": [
+        "Effacer la conversation"
+      ],
+      "Reject": [
+        "Refuser"
+      ],
+      "Stop": [
+        "Arrêter"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Afficher ou masquer ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1835,6 +1847,25 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateurs)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistant IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domaine personnalisé",
+        "${ quantity } domaines personnalisés"
       ]
     },
     "Alert": {
@@ -9349,6 +9380,12 @@
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "Vous pouvez l'importer en tant que nouvel index de recherche de base à des fins de développement."
+      ],
+      "Details": [
+        "Informations"
+      ],
+      "Thinking about this": [
+        "Réflexion en cours..."
       ]
     },
     "info": {
@@ -11026,6 +11063,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } accès ${ MEET_APP_NAME }",
         "${ seats } accès ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateur)",
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ price } per seat": [
+        "${ price } par accès"
       ]
     },
     "meet_2025: Feature": {
@@ -13342,6 +13386,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Ask anything…": [
+        "Demandez ce que vous voulez…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15272,6 +15319,9 @@
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Déplacé vers ${ label }. Les messages similaires seront triés ici à l’avenir."
       ]
     },
     "Success notification": {
@@ -17188,6 +17238,28 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Propriétaire"
+      ],
+      "Security Admin": [
+        "Administrateur de sécurité"
+      ],
+      "User Admin": [
+        "Administrateur des utilisateurs"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gérez tous les utilisateurs, groupes, sécurité, facturation, journaux d'audit et configurations système."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
       ]
     }
   }

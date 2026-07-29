@@ -1706,6 +1706,18 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Clear conversation": [
+        "Cancella conversazione"
+      ],
+      "Reject": [
+        "Rifiuta"
+      ],
+      "Stop": [
+        "Interrompi"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Attiva/disattiva ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1832,6 +1844,21 @@
       ],
       "Writing assistant seats": [
         "Posti dell'assistente alla scrittura"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe (per ${ quantity } utente)",
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe (per ${ quantity } utenti)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } assistente IA"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } assistente AI (per ${ quantity } utente)",
+        "${ LUMO_APP_NAME } assistente AI (per ${ quantity } utenti)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizzato",
+        "${ quantity } domini personalizzati"
       ]
     },
     "Alert": {
@@ -9307,6 +9334,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "Details": [
+        "Dettagli"
+      ],
+      "Thinking about this": [
+        "Sto riflettendo su questo"
       ]
     },
     "info": {
@@ -10966,6 +10999,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
         "${ seats } licenze ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } utente)",
+        "${ MEET_APP_NAME } (per ${ quantity } utenti)"
+      ],
+      "${ price } per seat": [
+        "${ price } per utente"
       ]
     },
     "meet_2025: Feature": {
@@ -13279,6 +13319,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Ask anything…": [
+        "Chiedi qualsiasi cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15209,6 +15252,9 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Spostato in ${ label }. I messaggi simili verranno categorizzati qui in futuro."
       ]
     },
     "Success notification": {
@@ -17125,6 +17171,28 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietario"
+      ],
+      "Security Admin": [
+        "Amministratore sicurezza"
+      ],
+      "User Admin": [
+        "Amministratore utenti"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
       ]
     }
   }
