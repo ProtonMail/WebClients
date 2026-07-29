@@ -10,7 +10,6 @@ import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDevicesActions from '../_devices/useDevicesActions';
 import useLinkActions from '../_links/useLinkActions';
 import useLinksActions from '../_links/useLinksActions';
-// import { usePhotosOrPhotosWithAlbums } from '../_photos/PhotosOrPhotosWithAlbumsProvider';
 import useShareActions from '../_shares/useShareActions';
 import useShareUrl from '../_shares/useShareUrl';
 import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
@@ -43,7 +42,6 @@ export default function useActions() {
     const shareUrl = useShareUrl();
     const shareActions = useShareActions();
     const devicesActions = useDevicesActions();
-    // const { removePhotosFromCache } = usePhotosOrPhotosWithAlbums();
 
     const createFolder = async (
         abortSignal: AbortSignal,
