@@ -60,7 +60,11 @@ const getElementIDAndMessageID = (
  * When the labelID is inbox and category view is enabled, the category label is used instead.
  */
 const getNotificationLabel = (message: Message, notifier: string[], isCategoryViewEnabled: boolean) => {
-    const labelID = message.LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
+    const isMessageInInbox = message.LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX);
+    const labelID =
+        message.LabelIDs.find((l) => {
+            return isCategoryLabel(l) ? isMessageInInbox && notifier.includes(l) : notifier.includes(l);
+        }) || MAILBOX_LABEL_IDS.ALL_MAIL;
 
     if (labelID === MAILBOX_LABEL_IDS.INBOX && isCategoryViewEnabled) {
         const categoryLabel = message.LabelIDs.find(isCategoryLabel);
