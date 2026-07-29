@@ -1,4 +1,4 @@
-export type NativeAccountAction = 'AddAccount' | 'LogIn' | 'SignUp' | 'SignOut' | 'SignOutAll';
+export type NativeAccountAction = 'AddAccount' | 'LogIn' | 'SignUp' | 'SignOut' | 'WebAccountSettings';
 
 /**
  * Wire format the bridge sends to native for session adoption. Mirrors the
