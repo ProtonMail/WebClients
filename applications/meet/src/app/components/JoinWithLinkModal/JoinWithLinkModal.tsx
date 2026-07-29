@@ -97,6 +97,15 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                             onBlur={() => setIsInputFocused(false)}
                             error={isError}
                             autoFocus
+                            suffix={
+                                <Button
+                                    className="action-button-new color-norm rounded-full flex-1 md:flex-none flex items-center justify-center"
+                                    style={{ 'margin-inline-end': '-0.75rem' }}
+                                    onClick={async () => setMeetingLink(await navigator.clipboard.readText())}
+                                >
+                                    {c('Action').t`Paste`}
+                                </Button>
+                            }
                         />
                     </div>
                     {isError && (
