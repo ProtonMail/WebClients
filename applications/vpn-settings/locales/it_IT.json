@@ -11384,6 +11384,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
         "${ seats } licenze ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per utente"
       ]
     },
     "meet_2025: Feature": {
@@ -18770,6 +18773,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "In attesa che l'utente accetti l'invito"
+      ],
+      "Pending user activation": [
+        "In attesa dell'attivazione dell'utente"
       ]
     },
     "Tor out of date": {
