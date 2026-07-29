@@ -15148,6 +15148,28 @@
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Jakmile uživatel přijme pozvánku, budete mu moci přiřadit role."
       ]
+    },
+    "Role": {
+      "Owner": [
+        "Vlastník"
+      ],
+      "Security Admin": [
+        "Správce zabezpečení"
+      ],
+      "User Admin": [
+        "Správce uživatelů"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všechny uživatele, skupiny, zabezpečení, fakturaci a systémové konfigurace."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Spravujte uživatele, skupiny a úložiště pro všechny členy, přiřazujte role a přidělujte licence."
+      ]
     }
   }
 }

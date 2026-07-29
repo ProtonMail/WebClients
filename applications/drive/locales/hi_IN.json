@@ -14298,6 +14298,28 @@
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "उपयोगकर्ता द्वारा आमंत्रण स्वीकार करने के बाद आप भूमिकाएं सौंप सकेंगे।"
       ]
+    },
+    "Role": {
+      "Owner": [
+        "मालिक"
+      ],
+      "Security Admin": [
+        "सुरक्षा एडमिन"
+      ],
+      "User Admin": [
+        "उपयोगकर्ता एडमिन"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "सुरक्षा नीतियां, डेटा रिटेंशन और VPN बुनियादी ढांचे को कॉन्फ़िगर करें, और ऑडिट लॉग संभाले।"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "सभी उपयोगकर्ताओं, ग्रुप, सुरक्षा, बिलिंग और सिस्टम संरचनाओं को संभाले।"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "सभी सदस्यों के लिए उपयोगकर्ताओं, ग्रुप और स्टोरेज को संभाले, भूमिकाएं सौंपें, और लाइसेंस आवंटित करें।"
+      ]
     }
   }
 }

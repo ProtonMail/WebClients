@@ -14249,6 +14249,28 @@
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Anda akan dapat menetapkan peran setelah pengguna menerima undangan."
       ]
+    },
+    "Role": {
+      "Owner": [
+        "Pemilik"
+      ],
+      "Security Admin": [
+        "Admin Keamanan"
+      ],
+      "User Admin": [
+        "Admin Pengguna"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurasikan kebijakan keamanan, retensi data, dan infrastruktur VPN, serta kelola log audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Kelola semua pengguna, grup, keamanan, penagihan, dan konfigurasi sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Kelola pengguna, grup, dan penyimpanan untuk semua anggota, tetapkan peran, dan alokasikan lisensi."
+      ]
     }
   }
 }

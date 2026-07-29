@@ -1326,6 +1326,12 @@
       ],
       "Send": [
         "Gönder"
+      ],
+      "Clear conversation": [
+        "Yazışmayı temizle"
+      ],
+      "Stop": [
+        "Durdur"
       ]
     },
     "Action: Docs": {
@@ -7508,6 +7514,9 @@
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "Arama özelliği sağlayabilmek için dosyalarınızın yerel olarak dizine eklenmesi gerekir. Bu işlem yapılırken ${ DRIVE_APP_NAME } uygulamasını normal olarak kullanmayı sürdürebilirsiniz. Dizine ekleme işlemi tamamlandığında sizi bilgilendireceğiz. Bu sayfadan ayrılırsanız dizine ekleme işlemi duraklatılır ve geri döndüğünüzde yeniden başlatılır."
+      ],
+      "Thinking about this": [
+        "Bunun hakkında düşünülüyor"
       ]
     },
     "info": {
@@ -11307,6 +11316,9 @@
       ],
       "Optional feedback": [
         "İsteğe bağlı geri bildirim"
+      ],
+      "Ask anything…": [
+        "Herhangi bir şey sorun…"
       ]
     },
     "Placeholder for contact group name": {
@@ -14467,6 +14479,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)",
         "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)"
+      ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
       ]
     },
     "meet_2025: Info": {
@@ -14702,6 +14717,28 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Sahibi"
+      ],
+      "Security Admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "User Admin": [
+        "Kullanıcı yöneticisi"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
       ]
     }
   }

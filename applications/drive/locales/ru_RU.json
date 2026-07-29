@@ -1661,7 +1661,7 @@
         "Пожизненный доступ"
       ],
       "${ n } year": [
-        "${ n } {n, plural, one {год} few {года} many {лет} other {года}}",
+        "${ n } год",
         "${ n } года",
         "${ n } лет",
         "${ n } лет"
@@ -15001,6 +15001,28 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы сможете назначать должности, как только пользователь примет приглашение."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Владелец"
+      ],
+      "Security Admin": [
+        "Администратор безопасности"
+      ],
+      "User Admin": [
+        "Администратор пользователей"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
       ]
     }
   }
