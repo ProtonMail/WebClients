@@ -3,178 +3,286 @@ import { protonizer } from '@proton/sanitize/purify';
 import { removeLineBreaks } from './test/message';
 import { mailtoParser, toAddresses } from './url';
 
-const address1 = 'address1@pm.me';
-const address2 = 'address2@pm.me';
-const address3 = 'address3@pm.me';
-const address4 = 'address4@pm.me';
-
-const addressName1 = 'Address1';
-const addressName2 = 'Address2';
-
-const htmlEntity = '%C2%AD'; // Test when mailto contains HTML entity "&shy;"
-
-const subject = 'Mail subject';
-const body = 'Mail body';
-const bodyWithImages = `<div>
-    Body of the email
-    <img src="imageUrl" style="width:auto;">
-</div>`;
-
 describe('toAddresses', () => {
     it('should split an addresses string to a list of recipients', function () {
-        const inputString1 = `${address1}, ${address2}`;
-        const inputString2 = `${addressName1} <${address1}>`;
+        expect(toAddresses('address1@pm.me, address2@pm.me')).toEqual([
+            { Name: 'address1@pm.me', Address: 'address1@pm.me' },
+            { Name: 'address2@pm.me', Address: 'address2@pm.me' },
+        ]);
 
-        const expectedResult1 = [
-            { Name: address1, Address: address1 },
-            { Name: address2, Address: address2 },
-        ];
-        const expectedResult2 = [{ Name: addressName1, Address: address1 }];
-
-        expect(toAddresses(inputString1)).toEqual(expectedResult1);
-        expect(toAddresses(inputString2)).toEqual(expectedResult2);
+        expect(toAddresses('Address1 <address1@pm.me>')).toEqual([{ Name: 'Address1', Address: 'address1@pm.me' }]);
     });
 });
 
 describe('mailtoParser', () => {
-    it.each`
-        toList                                                            | expectedToList
-        ${address1}                                                       | ${[{ Name: address1, Address: address1 }]}
-        ${`${address1},${address2}`}                                      | ${[{ Name: address1, Address: address1 }, { Name: address2, Address: address2 }]}
-        ${`${addressName1} <${address1}>`}                                | ${[{ Name: addressName1, Address: address1 }]}
-        ${`${addressName1} <${address1}>, ${addressName2} <${address2}>`} | ${[{ Name: addressName1, Address: address1 }, { Name: addressName2, Address: address2 }]}
-        ${`address${htmlEntity}1@pm.me`}                                  | ${[{ Name: address1, Address: address1 }]}
-    `('should detect the TO list in a mailto string with TO = $toList', ({ toList, expectedToList }) => {
-        const mailto = `mailto:${toList}?subject=${subject}`;
-        const { data } = mailtoParser(mailto);
+    describe('scheme validation', () => {
+        it('should return an empty object for an empty input', () => {
+            expect(mailtoParser('')).toEqual({});
+        });
 
-        expect(data?.ToList).toEqual(expectedToList);
+        it('should return an empty object for an https input', () => {
+            expect(mailtoParser('https://proton.me')).toEqual({});
+        });
+
+        it('should return an empty object for a bare email input', () => {
+            expect(mailtoParser('test@proton.me')).toEqual({});
+        });
+
+        it('should return an empty object for a tel input', () => {
+            expect(mailtoParser('tel:+41000000000')).toEqual({});
+        });
+
+        it('should accept an uppercase MAILTO scheme', () => {
+            const { data } = mailtoParser('MAILTO:address1@pm.me');
+
+            expect(data?.ToList).toEqual([{ Name: 'address1@pm.me', Address: 'address1@pm.me' }]);
+        });
     });
 
-    it.each`
-        ccList                                                            | expectedCCList
-        ${address1}                                                       | ${[{ Name: address1, Address: address1 }]}
-        ${`${address1},${address2}`}                                      | ${[{ Name: address1, Address: address1 }, { Name: address2, Address: address2 }]}
-        ${`${addressName1} <${address1}>`}                                | ${[{ Name: addressName1, Address: address1 }]}
-        ${`${addressName1} <${address1}>, ${addressName2} <${address2}>`} | ${[{ Name: addressName1, Address: address1 }, { Name: addressName2, Address: address2 }]}
-        ${`address${htmlEntity}1@pm.me`}                                  | ${[{ Name: address1, Address: address1 }]}
-    `('should detect the CC list in a mailto string with CC = $ccList', ({ ccList, expectedCCList }) => {
-        const mailto = `mailto:${address3}?subject=${subject}&cc=${ccList}`;
-        const { data } = mailtoParser(mailto);
+    describe('TO list', () => {
+        it('should detect a single address', () => {
+            const { data } = mailtoParser('mailto:address1@pm.me?subject=Mail subject');
+            expect(data?.ToList).toEqual([{ Name: 'address1@pm.me', Address: 'address1@pm.me' }]);
+        });
 
-        expect(data?.CCList).toEqual(expectedCCList);
+        it('should detect multiple comma-separated addresses', () => {
+            const { data } = mailtoParser('mailto:address1@pm.me,address2@pm.me?subject=Mail subject');
+            expect(data?.ToList).toEqual([
+                { Name: 'address1@pm.me', Address: 'address1@pm.me' },
+                { Name: 'address2@pm.me', Address: 'address2@pm.me' },
+            ]);
+        });
+
+        it('should detect a name and address', () => {
+            const { data } = mailtoParser('mailto:Address1 <address1@pm.me>?subject=Mail subject');
+            expect(data?.ToList).toEqual([{ Name: 'Address1', Address: 'address1@pm.me' }]);
+        });
+
+        it('should detect multiple name and address pairs', () => {
+            const { data } = mailtoParser(
+                'mailto:Address1 <address1@pm.me>, Address2 <address2@pm.me>?subject=Mail subject'
+            );
+            expect(data?.ToList).toEqual([
+                { Name: 'Address1', Address: 'address1@pm.me' },
+                { Name: 'Address2', Address: 'address2@pm.me' },
+            ]);
+        });
+
+        it('should strip HTML entities from an address', () => {
+            // %C2%AD is the soft hyphen "&shy;" HTML entity
+            const { data } = mailtoParser('mailto:address%C2%AD1@pm.me?subject=Mail subject');
+            expect(data?.ToList).toEqual([{ Name: 'address1@pm.me', Address: 'address1@pm.me' }]);
+        });
+
+        it('should not set a ToList when the recipient is missing', () => {
+            const { data } = mailtoParser('mailto:?subject=Mail subject');
+            expect(data?.ToList).toBeUndefined();
+            expect(data?.Subject).toEqual('Mail subject');
+        });
+
+        it('should preserve a + in the recipient alias instead of turning it into a space', () => {
+            const { data } = mailtoParser('mailto:user+tag@proton.me');
+            expect(data?.ToList).toEqual([{ Name: 'user+tag@proton.me', Address: 'user+tag@proton.me' }]);
+        });
     });
 
-    it.each`
-        bccList                                                           | expectedBCCList
-        ${address1}                                                       | ${[{ Name: address1, Address: address1 }]}
-        ${`${address1},${address2}`}                                      | ${[{ Name: address1, Address: address1 }, { Name: address2, Address: address2 }]}
-        ${`${addressName1} <${address1}>`}                                | ${[{ Name: addressName1, Address: address1 }]}
-        ${`${addressName1} <${address1}>, ${addressName2} <${address2}>`} | ${[{ Name: addressName1, Address: address1 }, { Name: addressName2, Address: address2 }]}
-        ${`address${htmlEntity}1@pm.me`}                                  | ${[{ Name: address1, Address: address1 }]}
-    `('should detect the BCC list in a mailto string with BCC = $bccList', ({ bccList, expectedBCCList }) => {
-        const mailto = `mailto:${address3}?subject=${subject}&bcc=${bccList}`;
-        const { data } = mailtoParser(mailto);
+    describe('CC list', () => {
+        it('should detect a single address', () => {
+            const { data } = mailtoParser('mailto:address3@pm.me?subject=Mail subject&cc=address1@pm.me');
+            expect(data?.CCList).toEqual([{ Name: 'address1@pm.me', Address: 'address1@pm.me' }]);
+        });
 
-        expect(data?.BCCList).toEqual(expectedBCCList);
+        it('should detect multiple comma-separated addresses', () => {
+            const { data } = mailtoParser(
+                'mailto:address3@pm.me?subject=Mail subject&cc=address1@pm.me,address2@pm.me'
+            );
+            expect(data?.CCList).toEqual([
+                { Name: 'address1@pm.me', Address: 'address1@pm.me' },
+                { Name: 'address2@pm.me', Address: 'address2@pm.me' },
+            ]);
+        });
+
+        it('should detect a name and address', () => {
+            const { data } = mailtoParser('mailto:address3@pm.me?subject=Mail subject&cc=Address1 <address1@pm.me>');
+            expect(data?.CCList).toEqual([{ Name: 'Address1', Address: 'address1@pm.me' }]);
+        });
+
+        it('should detect multiple name and address pairs', () => {
+            const { data } = mailtoParser(
+                'mailto:address3@pm.me?subject=Mail subject&cc=Address1 <address1@pm.me>, Address2 <address2@pm.me>'
+            );
+            expect(data?.CCList).toEqual([
+                { Name: 'Address1', Address: 'address1@pm.me' },
+                { Name: 'Address2', Address: 'address2@pm.me' },
+            ]);
+        });
+
+        it('should strip HTML entities from an address', () => {
+            const { data } = mailtoParser('mailto:address3@pm.me?subject=Mail subject&cc=address%C2%AD1@pm.me');
+            expect(data?.CCList).toEqual([{ Name: 'address1@pm.me', Address: 'address1@pm.me' }]);
+        });
+
+        it('should preserve a + in a cc alias instead of turning it into a space', () => {
+            const { data } = mailtoParser('mailto:address1@pm.me?cc=cc+tag@proton.me');
+            expect(data?.CCList).toEqual([{ Name: 'cc+tag@proton.me', Address: 'cc+tag@proton.me' }]);
+        });
     });
 
-    it('should detect the subject in a mailto string', () => {
-        const mailto = `mailto:${address1}?subject=${subject}`;
-        const { data } = mailtoParser(mailto);
+    describe('BCC list', () => {
+        it('should detect a single address', () => {
+            const { data } = mailtoParser('mailto:address3@pm.me?subject=Mail subject&bcc=address1@pm.me');
+            expect(data?.BCCList).toEqual([{ Name: 'address1@pm.me', Address: 'address1@pm.me' }]);
+        });
 
-        expect(data?.Subject).toEqual(subject);
+        it('should detect multiple comma-separated addresses', () => {
+            const { data } = mailtoParser(
+                'mailto:address3@pm.me?subject=Mail subject&bcc=address1@pm.me,address2@pm.me'
+            );
+            expect(data?.BCCList).toEqual([
+                { Name: 'address1@pm.me', Address: 'address1@pm.me' },
+                { Name: 'address2@pm.me', Address: 'address2@pm.me' },
+            ]);
+        });
+
+        it('should detect a name and address', () => {
+            const { data } = mailtoParser('mailto:address3@pm.me?subject=Mail subject&bcc=Address1 <address1@pm.me>');
+            expect(data?.BCCList).toEqual([{ Name: 'Address1', Address: 'address1@pm.me' }]);
+        });
+
+        it('should detect multiple name and address pairs', () => {
+            const { data } = mailtoParser(
+                'mailto:address3@pm.me?subject=Mail subject&bcc=Address1 <address1@pm.me>, Address2 <address2@pm.me>'
+            );
+            expect(data?.BCCList).toEqual([
+                { Name: 'Address1', Address: 'address1@pm.me' },
+                { Name: 'Address2', Address: 'address2@pm.me' },
+            ]);
+        });
+
+        it('should strip HTML entities from an address', () => {
+            const { data } = mailtoParser('mailto:address3@pm.me?subject=Mail subject&bcc=address%C2%AD1@pm.me');
+            expect(data?.BCCList).toEqual([{ Name: 'address1@pm.me', Address: 'address1@pm.me' }]);
+        });
+
+        it('should preserve a + in a bcc alias instead of turning it into a space', () => {
+            const { data } = mailtoParser('mailto:address1@pm.me?bcc=bcc+tag@proton.me');
+            expect(data?.BCCList).toEqual([{ Name: 'bcc+tag@proton.me', Address: 'bcc+tag@proton.me' }]);
+        });
     });
 
-    it.each`
-        messageBody
-        ${body}
-        ${bodyWithImages}
-    `('should detect the body in a mailto string with Subject = $messagebody', ({ messageBody }) => {
-        const mailto = `mailto:${address1}?subject=${subject}&body=${messageBody}`;
-        const { decryption } = mailtoParser(mailto);
+    describe('subject', () => {
+        it('should detect the subject', () => {
+            const { data } = mailtoParser('mailto:address1@pm.me?subject=Mail subject');
+            expect(data?.Subject).toEqual('Mail subject');
+        });
 
-        const expectedBody = protonizer(messageBody, true).innerHTML;
+        it('should preserve percent signs', () => {
+            const { data } = mailtoParser('mailto:test@example.com?subject=50%25%20off');
+            expect(data?.Subject).toEqual('50% off');
+        });
 
-        expect(removeLineBreaks(decryption?.decryptedBody || '')).toEqual(removeLineBreaks(expectedBody));
+        it('should preserve + signs', () => {
+            const { data } = mailtoParser('mailto:test@example.com?subject=1+1=2');
+            expect(data?.Subject).toEqual('1+1=2');
+        });
     });
 
-    it('should preserve %0A (LF) newlines in body as line breaks', () => {
-        const mailto = `mailto:${address1}?subject=${subject}&body=Line%201%0ALine%202`;
-        const { decryption } = mailtoParser(mailto);
+    describe('body', () => {
+        it('should detect a plain text body', () => {
+            const { decryption } = mailtoParser('mailto:address1@pm.me?subject=Mail subject&body=Mail body');
+            const expectedBody = protonizer('Mail body', true).innerHTML;
+            expect(removeLineBreaks(decryption?.decryptedBody || '')).toEqual(removeLineBreaks(expectedBody));
+        });
 
-        expect(decryption?.decryptedBody).toContain('Line 1');
-        expect(decryption?.decryptedBody).toContain('Line 2');
-        expect(decryption?.decryptedBody).toMatch(/Line 1.*<br\s*\/?>.*Line 2/s);
+        it('should detect an HTML body with images', () => {
+            const bodyWithImages = `<div>
+    Body of the email
+    <img src="imageUrl" style="width:auto;">
+</div>`;
+            const { decryption } = mailtoParser(`mailto:address1@pm.me?subject=Mail subject&body=${bodyWithImages}`);
+            const expectedBody = protonizer(bodyWithImages, true).innerHTML;
+            expect(removeLineBreaks(decryption?.decryptedBody || '')).toEqual(removeLineBreaks(expectedBody));
+        });
+
+        it('should preserve %0A (LF) newlines as line breaks', () => {
+            const { decryption } = mailtoParser('mailto:address1@pm.me?subject=Mail subject&body=Line%201%0ALine%202');
+            expect(decryption?.decryptedBody).toContain('Line 1');
+            expect(decryption?.decryptedBody).toContain('Line 2');
+            expect(decryption?.decryptedBody).toMatch(/Line 1.*<br\s*\/?>.*Line 2/s);
+        });
+
+        it('should preserve %0D%0A (CRLF) newlines as line breaks', () => {
+            const { decryption } = mailtoParser(
+                'mailto:address1@pm.me?subject=Mail subject&body=Line%201%0D%0ALine%202'
+            );
+            expect(decryption?.decryptedBody).toContain('Line 1');
+            expect(decryption?.decryptedBody).toContain('Line 2');
+            expect(decryption?.decryptedBody).toMatch(/Line 1.*<br\s*\/?>.*Line 2/s);
+        });
+
+        it('should not convert literal backslash-n to line breaks (non-compliant)', () => {
+            const { decryption } = mailtoParser(
+                'mailto:address1@pm.me?subject=Mail subject&body=Line%20one\\nLine%20two'
+            );
+            expect(decryption?.decryptedBody).toContain('Line one\\nLine two');
+        });
+
+        it('should preserve percent signs', () => {
+            const { decryption } = mailtoParser('mailto:test@example.com?body=100%25%20done');
+            expect(decryption?.decryptedBody).toContain('100% done');
+        });
+
+        it('should preserve + signs', () => {
+            const { decryption } = mailtoParser('mailto:test@example.com?body=1+1=2');
+            expect(decryption?.decryptedBody).toContain('1+1=2');
+        });
     });
 
-    it('should preserve %0D%0A (CRLF) newlines in body as line breaks', () => {
-        const mailto = `mailto:${address1}?subject=${subject}&body=Line%201%0D%0ALine%202`;
-        const { decryption } = mailtoParser(mailto);
+    describe('query parsing', () => {
+        it('should ignore unknown query parameters', () => {
+            const { data, decryption } = mailtoParser('mailto:address1@pm.me?foo=bar&unknown=value');
+            expect(data?.Subject).toBeUndefined();
+            expect(data?.CCList).toBeUndefined();
+            expect(data?.BCCList).toBeUndefined();
+            expect(decryption?.decryptedBody).toBeUndefined();
+        });
 
-        expect(decryption?.decryptedBody).toContain('Line 1');
-        expect(decryption?.decryptedBody).toContain('Line 2');
-        expect(decryption?.decryptedBody).toMatch(/Line 1.*<br\s*\/?>.*Line 2/s);
-    });
+        it('should parse parameter keys case-insensitively', () => {
+            const { data } = mailtoParser('mailto:address1@pm.me?SUBJECT=Mail subject');
+            expect(data?.Subject).toEqual('Mail subject');
+        });
 
-    it('should not convert literal backslash-n to line breaks (non-compliant)', () => {
-        const mailto = `mailto:${address1}?subject=${subject}&body=Line%20one\\nLine%20two`;
-        const { decryption } = mailtoParser(mailto);
+        it('should not set the subject when the parameter value is empty', () => {
+            const { data } = mailtoParser('mailto:address1@pm.me?subject=');
+            expect(data?.Subject).toBeUndefined();
+        });
 
-        expect(decryption?.decryptedBody).toContain('Line one\\nLine two');
-    });
+        it('should ignore a parameter that has no value assignment', () => {
+            const { data } = mailtoParser('mailto:address1@pm.me?subject&cc=address2@pm.me');
+            expect(data?.Subject).toBeUndefined();
+            expect(data?.CCList).toEqual([{ Name: 'address2@pm.me', Address: 'address2@pm.me' }]);
+        });
 
-    it('should preserve percent signs in subject', () => {
-        const mailto = `mailto:test@example.com?subject=50%25%20off`;
-        const { data } = mailtoParser(mailto);
-
-        expect(data?.Subject).toEqual('50% off');
-    });
-
-    it('should preserve percent signs in body', () => {
-        const mailto = `mailto:test@example.com?body=100%25%20done`;
-        const { decryption } = mailtoParser(mailto);
-
-        expect(decryption?.decryptedBody).toContain('100% done');
-    });
-
-    it('should preserve + signs in subject', () => {
-        const mailto = `mailto:test@example.com?subject=1+1=2`;
-        const { data } = mailtoParser(mailto);
-
-        expect(data?.Subject).toEqual('1+1=2');
-    });
-
-    it('should preserve + signs in body', () => {
-        const mailto = `mailto:test@example.com?body=1+1=2`;
-        const { decryption } = mailtoParser(mailto);
-
-        expect(decryption?.decryptedBody).toContain('1+1=2');
-    });
-
-    it('should ignore unknown mailto query parameters', () => {
-        const mailto = `mailto:${address1}?foo=bar&unknown=value`;
-        const { data, decryption } = mailtoParser(mailto);
-
-        expect(data?.Subject).toBeUndefined();
-        expect(data?.CCList).toBeUndefined();
-        expect(data?.BCCList).toBeUndefined();
-        expect(decryption?.decryptedBody).toBeUndefined();
+        it('should keep an encoded ampersand (%26) inside a single parameter', () => {
+            const { data } = mailtoParser('mailto:address1@pm.me?subject=A%26B&cc=address2@pm.me');
+            // The %26 must not split the subject into an extra param, and cc must still be parsed.
+            expect(data?.Subject).toContain('B');
+            expect(data?.CCList).toEqual([{ Name: 'address2@pm.me', Address: 'address2@pm.me' }]);
+        });
     });
 
     it('should detect all fields in a mailto string', () => {
-        const mailto = `mailto:${address1}?subject=${subject}&cc=${address2},${address3}&bcc=${address4}&body=${body}`;
-
-        const { data, decryption } = mailtoParser(mailto);
-        const expectedBody = protonizer(body, true).innerHTML;
-
-        expect(data?.ToList).toEqual([{ Name: address1, Address: address1 }]);
-        expect(data?.Subject).toEqual(subject);
+        const { data, decryption } = mailtoParser(
+            'mailto:address1@pm.me?subject=Mail subject&cc=address2@pm.me,address3@pm.me&bcc=address4@pm.me&body=Mail body'
+        );
+        const expectedBody = protonizer('Mail body', true).innerHTML;
+        expect(data?.ToList).toEqual([{ Name: 'address1@pm.me', Address: 'address1@pm.me' }]);
+        expect(data?.Subject).toEqual('Mail subject');
         expect(data?.CCList).toEqual([
-            { Name: address2, Address: address2 },
-            { Name: address3, Address: address3 },
+            { Name: 'address2@pm.me', Address: 'address2@pm.me' },
+            { Name: 'address3@pm.me', Address: 'address3@pm.me' },
         ]);
-        expect(data?.BCCList).toEqual([{ Name: address4, Address: address4 }]);
+        expect(data?.BCCList).toEqual([{ Name: 'address4@pm.me', Address: 'address4@pm.me' }]);
         expect(removeLineBreaks(decryption?.decryptedBody || '')).toEqual(removeLineBreaks(expectedBody));
     });
 });
