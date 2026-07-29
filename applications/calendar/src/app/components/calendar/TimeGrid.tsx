@@ -29,7 +29,7 @@ import { isBusySlotEvent } from '../../helpers/busySlots';
 import { getNavigationArrowsText } from '../../helpers/i18n';
 import { selectAttendeesBusySlots } from '../../store/busySlots/busySlotsSelectors';
 import { useCalendarSelector } from '../../store/hooks';
-import { PartDayEventView } from '../events/PartDayEvent';
+import { PartDayEventView } from '../events/PartDayEventView';
 import RowEvents from './DayGrid/RowEvents';
 import DayButtons from './TimeGrid/DayButtons';
 import DayEvents from './TimeGrid/DayEvents';
