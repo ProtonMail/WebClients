@@ -83,6 +83,27 @@ describe('useMailtoHash', () => {
         expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?subject=Hi%3Fthere');
     });
 
+    it('Should keep an encoded separator inside the body', () => {
+        mockHash('#mailto=mailto:hello@test.com?body=a%26b&category=primary');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?body=a%26b');
+    });
+
+    it('Should keep a literal percent inside the body', () => {
+        mockHash('#mailto=mailto:hello@test.com?body=50%25%20off&category=primary');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?body=50%25%20off');
+    });
+
+    it('Should keep an encoded separator inside the body encoded by the protocol handler', () => {
+        mockHash('#mailto=mailto%3Ahello%40test.com%3Fbody%3Da%2526b&category=primary');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?body=a%26b');
+    });
+
     it('Should not shift the mailto when a percent-escape precedes it in the hash', () => {
         mockHash('#elementID=abc%20def&mailto=mailto:hello@test.com');
 
