@@ -108,7 +108,7 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
         };
 
         if (vaultIds.length > 0) {
-            fetchShareIds();
+            void fetchShareIds();
         }
     }, [events, api]);
 
@@ -125,7 +125,8 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
         onToggleSort(sortConfig.direction);
     };
 
-    if (events.length === 0) {
+    // Empty only counts once loading finished, otherwise this hides the loading skeleton.
+    if (events.length === 0 && !loading) {
         return <NoEventsInfo />;
     }
 
@@ -160,6 +161,7 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                                     <Avatar className="mr-2" color="weak">
                                         {initials}
                                     </Avatar>
+                                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                     <div
                                         className="flex flex-column cursor-pointer w-2/3"
                                         onClick={() => onEmailOrIpClick(email)}
@@ -173,6 +175,7 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                                     </div>
                                 </div>,
                                 <div className="flex flex-column cursor-pointer">
+                                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                     <div
                                         className="flex flex-row mb-1 text-semibold"
                                         onClick={() => onEventClick(eventType)}
@@ -189,6 +192,7 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                                     event={eventType}
                                     hasInvalidShareId={hasInvalidShareId}
                                 />,
+                                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                                 <span onClick={() => onEmailOrIpClick(ip)} className="cursor-pointer">
                                     {ip}
                                 </span>,
