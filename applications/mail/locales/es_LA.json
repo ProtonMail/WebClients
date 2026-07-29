@@ -1520,7 +1520,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -17246,6 +17247,28 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Propietario"
+      ],
+      "Security Admin": [
+        "Administrador de seguridad"
+      ],
+      "User Admin": [
+        "Administrador de usuarios"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestione todos los usuarios, grupos, seguridad, facuración y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestione usuarios, grupos y almacenamiento para todos los miembros, asigne roles y licencias."
       ]
     }
   }

@@ -1528,7 +1528,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufany klucz",
+        "Zaufane klucze",
+        "Zaufanych kluczy",
+        "Zaufane klucze"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -17899,6 +17902,28 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Właściciel"
+      ],
+      "Security Admin": [
+        "Administrator bezpieczeństwa"
+      ],
+      "User Admin": [
+        "Administrator użytkowników"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfiguruj zasady bezpieczeństwa, przechowywanie danych oraz infrastrukturę VPN i zarządzaj logami audytowymi."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Zarządzaj wszystkimi użytkownikami, grupami, bezpieczeństwem, rozliczeniami i konfiguracjami systemu."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Zarządzaj użytkownikami, grupami i przestrzenią dyskową dla wszystkich członków, przypisuj stanowiska i przydzielaj licencje."
       ]
     }
   }

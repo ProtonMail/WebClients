@@ -1520,7 +1520,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -17270,6 +17271,28 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ιδιοκτήτης"
+      ],
+      "Security Admin": [
+        "Διαχειριστής Ασφαλείας"
+      ],
+      "User Admin": [
+        "Διαχειριστής Χρηστών"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
       ]
     }
   }
