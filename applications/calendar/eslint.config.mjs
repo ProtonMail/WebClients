@@ -19,8 +19,6 @@ export default defineConfig([
                 },
             ],
             '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
-            // TODO: Remove this rule once the cycle dependency is fixed
-            'import/no-cycle': 'off',
         },
     },
 ]);

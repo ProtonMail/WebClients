@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { type PartDayEventProps, PartDayEventView } from '../../../components/events/PartDayEvent';
+import { type PartDayEventProps, PartDayEventView } from '../../../components/events/PartDayEventView';
 import { getBookingSlotStyle } from '../../../helpers/color';
 import type { CalendarViewEvent } from '../../calendar/interface';
 

@@ -20,7 +20,7 @@ import { FlagProvider } from '@proton/unleash/proxy';
 
 import config from '../../../config';
 import { extraThunkArguments } from '../../../store/thunk';
-import { BookingThemeProvider } from '../BookingsEntry';
+import { BookingThemeProvider } from '../BookingThemeProvider';
 import { BookingsRouter } from '../BookingsRouter';
 import type { BookingGuestBootstrapResult } from '../interface';
 import { bookingGuestBootstrap } from './bookingGuestBootstrap';

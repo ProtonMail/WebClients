@@ -1,10 +1,9 @@
-import { createContext, useContext, useRef } from 'react';
+import { useRef } from 'react';
 
 import { GlobalBookingConfirmClose } from './GlobalBookingConfirmClose';
 import { GlobalBookingSuccess } from './GlobalBookingSuccess';
-import type { GlobalModal, ModalListener, ModalPayload } from './interface';
-
-export const GlobalModalContext = createContext<GlobalModal | undefined>(undefined);
+import { GlobalModalContext } from './GlobalModalContext';
+import type { ModalListener, ModalPayload } from './interface';
 
 function createSubscribable<T>() {
     const subscribers: Set<(message: T) => void> = new Set();
@@ -39,13 +38,4 @@ export const GlobalModalProvider = ({ children }: { children: React.ReactNode })
             <GlobalBookingConfirmClose />
         </GlobalModalContext.Provider>
     );
-};
-
-export const useCalendarGlobalModals = () => {
-    const context = useContext(GlobalModalContext);
-    if (!context) {
-        throw new Error('useCalendarGlobalModals must be used within a GlobalModalProvider');
-    }
-
-    return context;
 };
