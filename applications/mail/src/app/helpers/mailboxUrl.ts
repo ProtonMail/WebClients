@@ -198,6 +198,16 @@ export const setCategoryInUrl = (category: CategoryLabelID) => {
 // Drops any category from the URL, used when category access is lost
 export const getInboxUrl = () => INBOX_PATHNAME;
 
+/**
+ * Same as `setCategoryInUrl` but keeps the current route intact, the opened element included.
+ * Used by redirects, which must not close the element the user is looking at.
+ */
+export const setCategoryInCurrentUrl = (location: Location, category: CategoryLabelID) =>
+    changeSearchParams(location.pathname, location.hash, { category: LABEL_IDS_TO_HUMAN[category] });
+
+export const removeCategoryFromCurrentUrl = (location: Location) =>
+    changeSearchParams(location.pathname, location.hash, { category: undefined });
+
 export const getInboxRedirectUrl = ({
     isCategoryViewEnabled,
     isCategoryViewEnabledSettled,

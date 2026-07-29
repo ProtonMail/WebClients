@@ -43,6 +43,7 @@ describe('prepareNotificationData', () => {
             mailSettings: MOCK_MAIL_SETTINGS,
             notifier: [MAILBOX_LABEL_IDS.INBOX],
             isCategoryViewEnabled: false,
+            disabledCategoriesIDs: [],
         });
 
         expect(result).toEqual({
@@ -67,6 +68,7 @@ describe('prepareNotificationData', () => {
             mailSettings: MOCK_MAIL_SETTINGS,
             notifier: [MAILBOX_LABEL_IDS.SENT],
             isCategoryViewEnabled: false,
+            disabledCategoriesIDs: [],
         });
 
         expect(result.labelID).toBe(MAILBOX_LABEL_IDS.ALL_MAIL);
@@ -79,6 +81,7 @@ describe('prepareNotificationData', () => {
             mailSettings: { ...MOCK_MAIL_SETTINGS, ViewMode: VIEW_MODE.SINGLE },
             notifier: [MAILBOX_LABEL_IDS.INBOX],
             isCategoryViewEnabled: false,
+            disabledCategoriesIDs: [],
         });
 
         expect(result.elementID).toBe('123');
@@ -98,11 +101,29 @@ describe('prepareNotificationData', () => {
                 mailSettings: MOCK_MAIL_SETTINGS,
                 notifier: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
                 isCategoryViewEnabled: true,
+                disabledCategoriesIDs: [],
             });
 
             expect(result.location.pathname).toContain('/inbox');
             expect(result.location.hash).toContain('category=newsletters');
             expect(result.labelID).toBe(MAILBOX_LABEL_IDS.INBOX);
+            // Sent as labelID to the desktop app, which only forwards labelID, elementID and messageID
+            expect(result.categoryLabelID).toBe(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
+        });
+
+        it('should use the default category when the notification category is disabled', () => {
+            const result = prepareNotificationData({
+                message: MOCK_MESSAGE_WITH_CATEGORY,
+                history: MOCK_HISTORY,
+                mailSettings: MOCK_MAIL_SETTINGS,
+                notifier: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                isCategoryViewEnabled: true,
+                disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+            });
+
+            expect(result.location.hash).toContain('category=primary');
+            expect(result.labelID).toBe(MAILBOX_LABEL_IDS.INBOX);
+            expect(result.categoryLabelID).toBe(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
         });
 
         it('should use all-mails if the message has no categories', () => {
@@ -112,6 +133,7 @@ describe('prepareNotificationData', () => {
                 mailSettings: MOCK_MAIL_SETTINGS,
                 notifier: [MAILBOX_LABEL_IDS.INBOX],
                 isCategoryViewEnabled: true,
+                disabledCategoriesIDs: [],
             });
 
             expect(result.location.pathname).toContain('/all-mail');
@@ -125,6 +147,7 @@ describe('prepareNotificationData', () => {
                 mailSettings: MOCK_MAIL_SETTINGS,
                 notifier: [MAILBOX_LABEL_IDS.INBOX],
                 isCategoryViewEnabled: true,
+                disabledCategoriesIDs: [],
             });
 
             expect(result.location.pathname).toContain('/all-mail');
@@ -141,6 +164,7 @@ describe('prepareNotificationData', () => {
                 mailSettings: MOCK_MAIL_SETTINGS,
                 notifier: [MAILBOX_LABEL_IDS.INBOX, 'custom-folder'],
                 isCategoryViewEnabled: true,
+                disabledCategoriesIDs: [],
             });
 
             expect(result.location.pathname).toContain('/custom-folder');
@@ -157,9 +181,26 @@ describe('prepareNotificationData', () => {
                 mailSettings: MOCK_MAIL_SETTINGS,
                 notifier: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
                 isCategoryViewEnabled: false,
+                disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
             });
 
             expect(result.location.pathname).toContain('/inbox');
+            expect(result.location.hash).not.toContain('category=primary');
+            expect(result.labelID).toBe(MAILBOX_LABEL_IDS.INBOX);
+        });
+
+        it('should redirect to inbox if the message has a category but disabled the category view', () => {
+            const result = prepareNotificationData({
+                message: MOCK_MESSAGE_WITH_CATEGORY,
+                history: MOCK_HISTORY,
+                mailSettings: MOCK_MAIL_SETTINGS,
+                notifier: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                isCategoryViewEnabled: false,
+                disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+            });
+
+            expect(result.location.pathname).toContain('/inbox');
+            expect(result.location.hash).not.toContain('category=primary');
             expect(result.labelID).toBe(MAILBOX_LABEL_IDS.INBOX);
         });
     });
