@@ -1323,6 +1323,12 @@
       ],
       "Send": [
         "Invia"
+      ],
+      "Clear conversation": [
+        "Cancella conversazione"
+      ],
+      "Stop": [
+        "Interrompi"
       ]
     },
     "Action: Docs": {
@@ -7442,6 +7448,12 @@
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "Per consentire una ricerca efficace, dobbiamo indicizzare i tuoi file localmente. Puoi comunque continuare a utilizzare ${ DRIVE_APP_NAME } normalmente: ti avviseremo quando l'indicizzazione sarà completata. Se esci da questa pagina, l'indicizzazione verrà messa in pausa e riprenderà quando tornerai."
+      ],
+      "Thinking about this": [
+        "Sto riflettendo su questo"
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Per abilitare la ricerca, dobbiamo indicizzare i tuoi file localmente. Puoi continuare a utilizzare normalmente ${ DRIVE_APP_NAME } e ti faremo sapere quando l'indicizzazione sarà completata. Se lasci questa pagina, l'indicizzazione verrà sospesa e riprenderà quando tornerai."
       ]
     },
     "info": {
@@ -8343,6 +8355,9 @@
       ],
       "Client version": [
         "Versione Client"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Consenti agli editor di modificare le autorizzazioni e condividere."
       ]
     },
     "Label for contact group color": {
@@ -11277,6 +11292,9 @@
       ],
       "Search for users or addresses": [
         "Cerca utenti o indirizzi"
+      ],
+      "Ask anything…": [
+        "Chiedi qualsiasi cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -14399,6 +14417,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (per ${ quantity } utente)",
         "${ MEET_APP_NAME } (per ${ quantity } utenti)"
+      ],
+      "${ price } per seat": [
+        "${ price } per utente"
       ]
     },
     "BOSS": {
@@ -14664,6 +14685,28 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietario"
+      ],
+      "Security Admin": [
+        "Amministratore sicurezza"
+      ],
+      "User Admin": [
+        "Amministratore utenti"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
       ]
     }
   }

@@ -1333,6 +1333,12 @@
       ],
       "Send": [
         "Trimitere"
+      ],
+      "Clear conversation": [
+        "Golire conversație"
+      ],
+      "Stop": [
+        "Stop\n"
       ]
     },
     "Action: Docs": {
@@ -7629,6 +7635,9 @@
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "Pentru a permite căutarea, fișierele trebuie să fie indexate local. Puteți utiliza în continuare ${ DRIVE_APP_NAME } în mod normal și vă vom anunța când indexarea este finalizată. Dacă părăsiți această pagină, indexarea se va întrerupe și va fi reluată când reveniți."
+      ],
+      "Thinking about this": [
+        "Mă gândesc la asta"
       ]
     },
     "info": {
@@ -11513,6 +11522,9 @@
       ],
       "Optional feedback": [
         "Feedback opțional"
+      ],
+      "Ask anything…": [
+        "Întreabă-mă orice…"
       ]
     },
     "Placeholder for contact group name": {
@@ -14747,6 +14759,9 @@
         "${ MEET_APP_NAME } (pentru ${ quantity } utilizator)",
         "${ MEET_APP_NAME } (pentru ${ quantity } utilizatori)",
         "${ MEET_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ price } per seat": [
+        "${ price } per licență"
       ]
     },
     "meet_2025: Info": {
@@ -14983,6 +14998,28 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietar"
+      ],
+      "Security Admin": [
+        "Administrator securitate"
+      ],
+      "User Admin": [
+        "Administrare utilizatori"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
       ]
     }
   }
