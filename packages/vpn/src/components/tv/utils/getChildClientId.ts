@@ -4,5 +4,12 @@ export const getChildClientId = () => {
     if (VPN_TV_PATHS_MAP.apple.includes(location.pathname)) {
         return VPN_TV_CLIENT_IDS.APPLE;
     }
+
+    const clientId = new URLSearchParams(location.search).get('clientId');
+
+    if (clientId && Object.values(VPN_TV_CLIENT_IDS).includes(clientId)) {
+        return clientId;
+    }
+
     return VPN_TV_CLIENT_IDS.ANDROID;
 };

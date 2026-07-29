@@ -355,18 +355,20 @@ export enum PRODUCT_BIT {
 
 export type APP_KEYS = keyof typeof APPS;
 export type APP_NAMES = (typeof APPS)[APP_KEYS];
-export type APP_CLIENT_IDS =
-    | (typeof APPS_CONFIGURATION)[keyof typeof APPS_CONFIGURATION]['clientID']
-    | 'android_tv-vpn';
 
 export const VPN_TV_CLIENT_IDS = {
     APPLE: 'apple_tv-vpn',
     ANDROID: 'android_tv-vpn',
+    VEGA: 'vega_tv-vpn',
 };
+
+export type APP_CLIENT_IDS =
+    | (typeof APPS_CONFIGURATION)[keyof typeof APPS_CONFIGURATION]['clientID']
+    | typeof VPN_TV_CLIENT_IDS[keyof typeof VPN_TV_CLIENT_IDS];
 
 export const VPN_TV_PATHS_MAP = {
     apple: '/appletv',
-    android: '/tv',
+    default: '/tv',
 };
 
 export const VPN_TV_PATH_WITH_CODE = '/vpn/tv/code/:code';
