@@ -1,6 +1,6 @@
 import { RecentDocumentsItem } from '@proton/docs-core'
 import { useHistory, useRouteMatch } from 'react-router'
-import { HOMEPAGE_RECENTS_PATH, HOMEPAGE_TRASH_PATH } from '../../../__components/AppContainer'
+import { HOMEPAGE_RECENTS_PATH, HOMEPAGE_TRASH_PATH } from '../../../__utils/homepage-paths'
 import type { ReactNode } from 'react'
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom-v5-compat'
