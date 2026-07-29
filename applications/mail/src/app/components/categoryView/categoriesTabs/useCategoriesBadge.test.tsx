@@ -66,23 +66,9 @@ describe('useCategoriesBadge', () => {
         jest.clearAllMocks();
     });
 
-    describe('when the feature flag is off', () => {
-        beforeEach(() => {
-            jest.mocked(useFlag).mockReturnValue(false);
-        });
-
-        it('never shows the counter or the new badge', () => {
-            jest.mocked(useSystemFolders).mockReturnValue([[folderWithUnseen], false]);
-            jest.mocked(useMailSettings).mockReturnValue([
-                { ...DEFAULT_MAIL_SETTINGS, MailCategoryViewCountersEnabled: true },
-                false,
-            ]);
-
-            const { result } = renderHook(() => useCategoriesBadge({ category, tabState: TabState.INACTIVE }));
-
-            expect(result.current.shouldShowCounter).toBe(false);
-            expect(result.current.shouldShowNewBadge).toBe(false);
-        });
+    it('reads the unseen badge state from the MailRecordLastUnseenIncomingMessageEventID flag', () => {
+        renderHook(() => useCategoriesBadge({ category, tabState: TabState.INACTIVE }));
+        expect(useFlag).toHaveBeenCalledWith('MailRecordLastUnseenIncomingMessageEventID');
     });
 
     describe('shouldShowCounter', () => {
@@ -243,6 +229,37 @@ describe('useCategoriesBadge', () => {
             const { result } = renderHook(() =>
                 useCategoriesBadge({ category: primaryCategory, tabState: TabState.INACTIVE })
             );
+
+            expect(result.current.shouldShowNewBadge).toBe(false);
+        });
+    });
+
+    describe('when the unseen badge flag is off', () => {
+        beforeEach(() => {
+            jest.mocked(useFlag).mockReturnValue(false);
+        });
+
+        it('shows the counter as soon as there are unread messages, whatever the counters setting is', () => {
+            jest.mocked(useMailSelector).mockImplementation((selector) => mockSelector(selector, { unreadCount: 10 }));
+            jest.mocked(useMailSettings).mockReturnValue([
+                { ...DEFAULT_MAIL_SETTINGS, MailCategoryViewCountersEnabled: false },
+                false,
+            ]);
+
+            const { result } = renderHook(() => useCategoriesBadge({ category, tabState: TabState.INACTIVE }));
+
+            expect(result.current.shouldShowCounter).toBe(true);
+            expect(result.current.count).toBe(10);
+        });
+
+        it('never shows the new badge, even on an inactive tab with an unseen event and counters off', () => {
+            jest.mocked(useSystemFolders).mockReturnValue([[folderWithUnseen], false]);
+            jest.mocked(useMailSettings).mockReturnValue([
+                { ...DEFAULT_MAIL_SETTINGS, MailCategoryViewCountersEnabled: false },
+                false,
+            ]);
+
+            const { result } = renderHook(() => useCategoriesBadge({ category, tabState: TabState.INACTIVE }));
 
             expect(result.current.shouldShowNewBadge).toBe(false);
         });
