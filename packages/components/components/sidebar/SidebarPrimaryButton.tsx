@@ -14,7 +14,7 @@ const SidebarPrimaryButton = (
         <Button
             color="norm"
             size={size || isElectronOnWindows ? 'medium' : 'large'}
-            className={clsx(['w-full', className])}
+            className={clsx(['w-full min-w-0', className])}
             ref={ref}
             {...rest}
         >
