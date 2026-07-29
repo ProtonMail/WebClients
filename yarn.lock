@@ -10700,7 +10700,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/lumo-ui@workspace:packages/lumo-ui":
+"@proton/lumo-ui@workspace:^, @proton/lumo-ui@workspace:packages/lumo-ui":
   version: 0.0.0-use.local
   resolution: "@proton/lumo-ui@workspace:packages/lumo-ui"
   dependencies:
@@ -41639,6 +41639,7 @@ __metadata:
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
     "@proton/llm": "workspace:^"
+    "@proton/lumo-ui": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/mail-renderer": "workspace:^"
     "@proton/metrics": "workspace:^"
