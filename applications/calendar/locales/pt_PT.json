@@ -1031,6 +1031,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "Rejeitar"
       ]
     },
     "action": {
@@ -1135,6 +1138,21 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe (para ${ quantity } utilizador)",
+        "Assistente de escrita ${ BRAND_NAME } Scribe (para ${ quantity } utilizadores)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistente de IA do ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistente de IA do ${ LUMO_APP_NAME } (para ${ quantity } utilizador)",
+        "Assistente de IA do ${ LUMO_APP_NAME } (para ${ quantity } utilizadores)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domínio personalizado",
+        "${ quantity } domínios personalizados"
       ]
     },
     "Alarm notification": {
@@ -6792,6 +6810,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Atingiu o limite de vagas de agendamento (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Details": [
+        "Detalhes"
       ]
     },
     "info": {
@@ -7873,6 +7894,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licença do ${ MEET_APP_NAME }",
         "${ seats } licenças do ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } utilizador)",
+        "${ MEET_APP_NAME } (para ${ quantity } utilizadores)"
       ]
     },
     "meet_2025: Feature": {
@@ -13354,6 +13379,28 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietário"
+      ],
+      "Security Admin": [
+        "Administrador de segurança"
+      ],
+      "User Admin": [
+        "Administrador de utilizadores"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurar políticas de segurança, retenção de dados e infraestrutura de VPN, e gerir registos de auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerir todos os utilizadores, grupos, segurança, faturação e configurações de sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerir utilizadores, grupos e armazenamento para todos os membros, atribuir cargos e alocar licenças."
       ]
     }
   }

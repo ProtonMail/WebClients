@@ -1031,6 +1031,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "Εκκαθάριση συνομιλίας"
+      ],
+      "Reject": [
+        "Απόρριψη"
+      ],
+      "Stop": [
+        "Σταμάτα"
       ]
     },
     "action": {
@@ -1135,6 +1144,25 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστη)",
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστες)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } προσαρμοσμένος τομέας",
+        "${ quantity } προσαρμοσμένοι τομείς"
       ]
     },
     "Alarm notification": {
@@ -6835,6 +6863,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Details": [
+        "Λεπτομέρειες"
       ]
     },
     "info": {
@@ -7928,6 +7959,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } θέση",
         "${ seats } ${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστη)",
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστες)"
+      ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
       ]
     },
     "meet_2025: Feature": {
@@ -10251,6 +10289,9 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Ask anything…": [
+        "Ρωτήστε οτιδήποτε…"
       ]
     },
     "Placeholder for contact group name": {
@@ -13415,6 +13456,28 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ιδιοκτήτης"
+      ],
+      "Security Admin": [
+        "Διαχειριστής Ασφαλείας"
+      ],
+      "User Admin": [
+        "Διαχειριστής Χρηστών"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
       ]
     }
   }

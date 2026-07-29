@@ -1039,6 +1039,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Бесплатная пробная версия вашего приложения заканчивается на ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "Отказать"
       ]
     },
     "action": {
@@ -1157,6 +1160,27 @@
       ],
       "Writing assistant seats": [
         "Лицензии на помощника по письму"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователя)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)",
+        "Помощник по написанию текстов ${ BRAND_NAME } Scribe (для ${ quantity } пользователей)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ИИ-ассистент ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователя)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)",
+        "ИИ-ассистент ${ LUMO_APP_NAME } (для ${ quantity } пользователей)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } пользовательский домен",
+        "${ quantity } пользовательских домена",
+        "${ quantity } пользовательских доменов",
+        "${ quantity } пользовательских домена"
       ]
     },
     "Alarm notification": {
@@ -6994,6 +7018,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы достигли лимита слотов бронирования (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Details": [
+        "Информация"
       ]
     },
     "info": {
@@ -8099,6 +8126,12 @@
         "${ seats } лицензии ${ MEET_APP_NAME }",
         "${ seats } лицензий ${ MEET_APP_NAME }",
         "${ seats } лицензии ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (для ${ quantity } пользователя)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)",
+        "${ MEET_APP_NAME } (для ${ quantity } пользователей)"
       ]
     },
     "meet_2025: Feature": {
@@ -13923,6 +13956,28 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Владелец"
+      ],
+      "Security Admin": [
+        "Администратор безопасности"
+      ],
+      "User Admin": [
+        "Администратор пользователей"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
       ]
     }
   }

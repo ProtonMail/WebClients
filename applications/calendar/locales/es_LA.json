@@ -1031,6 +1031,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reject": [
+        "Rechazar"
       ]
     },
     "action": {
@@ -1135,6 +1138,25 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuario)",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuarios)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistente de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizado",
+        "${ quantity } dominios personalizados"
       ]
     },
     "Alarm notification": {
@@ -1197,6 +1219,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ LUMO_SHORT_APP_NAME } le ayude a escribir, responder y revisar sus correos electrónicos."
       ]
     },
     "Attached ics file error": {
@@ -1254,6 +1279,9 @@
       ],
       "You have reached the trial limit.": [
         "Usted ha alcanzado el límite de la prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias del asistente de escritura ${ LUMO_SHORT_APP_NAME } durante el periodo de prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -1373,6 +1401,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
       ]
     },
     "BF2025: Deal details": {
@@ -6816,6 +6851,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Details": [
+        "Detalles"
       ]
     },
     "info": {
@@ -7885,6 +7929,12 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Añadir asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Addon": {
@@ -7897,6 +7947,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
         "${ seats } licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuario)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuarios)"
       ]
     },
     "meet_2025: Feature": {
@@ -8738,6 +8792,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -13381,6 +13438,28 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Propietario"
+      ],
+      "Security Admin": [
+        "Administrador de seguridad"
+      ],
+      "User Admin": [
+        "Administrador de usuarios"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestione todos los usuarios, grupos, seguridad, facuración y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestione usuarios, grupos y almacenamiento para todos los miembros, asigne roles y licencias."
       ]
     }
   }
