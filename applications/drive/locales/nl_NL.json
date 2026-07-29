@@ -14685,6 +14685,28 @@
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
       ]
+    },
+    "Role": {
+      "Owner": [
+        "Eigenaar"
+      ],
+      "Security Admin": [
+        "Beveiligingsbeheerder"
+      ],
+      "User Admin": [
+        "Gebruiker Beheerder"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureer beveiligingsbeleid, gegevensbewaring en VPN-infrastructuur, en beheer auditlogboeken."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Beheer alle gebruikers, groepen, opslag, beveiliging, facturering, auditlogboeken en systeemconfiguraties."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Beheer gebruikers, groepen en opslagruimte voor alle leden, wijs rollen toe en deel licenties uit."
+      ]
     }
   }
 }
