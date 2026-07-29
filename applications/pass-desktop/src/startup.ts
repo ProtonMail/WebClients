@@ -2,6 +2,7 @@ import { setupIpcHandlers as autotype } from './lib/autotype';
 import biometrics from './lib/biometrics';
 import { setupIpcHandlers as client } from './lib/client';
 import { setupIpcHandlers as clipboard } from './lib/clipboard/clipboard.ipc';
+import { setupIpcHandlers as contentProtection } from './lib/content-protection';
 import contextMenu from './lib/context-menu';
 import { setupIpcHandlers as info } from './lib/install-info';
 import { nativeMessaging } from './lib/native-messaging/startup';
@@ -27,6 +28,7 @@ export const startup = async (app: Electron.App, ctx: PassElectronContext) => {
     sessionStorage(() => ctx.session);
     client();
     clipboard();
+    contentProtection(() => ctx.window);
     info();
     theming();
     autotype(() => ctx.window);

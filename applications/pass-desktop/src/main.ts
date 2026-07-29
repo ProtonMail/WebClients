@@ -20,6 +20,7 @@ import noop from '@proton/utils/noop';
 
 import config from './app/config';
 import { WINDOWS_APP_ID } from './constants';
+import { applyContentProtection } from './lib/content-protection';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { fixSSOUrl } from './lib/sso';
 import { getTheme } from './lib/theming';
@@ -156,6 +157,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
 
     setApplicationMenu(ctx.window);
     registerWindowManagementHandlers(ctx.window);
+    applyContentProtection(ctx.window);
 
     ctx.window.on('show', () => {
         if (isMac()) void app.dock?.show();

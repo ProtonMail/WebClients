@@ -43,6 +43,9 @@ export type ContextBridgeApi = {
     getTheme: () => Promise<Maybe<DesktopTheme>>;
     setTheme: (theme: DesktopTheme) => Promise<void>;
 
+    getContentProtection: () => Promise<boolean>;
+    setContentProtection: (enabled: boolean) => Promise<void>;
+
     autotype: ({ fields, enterAtTheEnd }: AutotypeProperties) => Promise<void>;
 
     openContextMenu: (items: ContextMenuItemSerializable[]) => Promise<number>;
