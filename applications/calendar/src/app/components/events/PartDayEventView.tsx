@@ -1,0 +1,81 @@
+import type { CSSProperties, ComponentPropsWithoutRef, ReactNode, Ref } from 'react';
+import { forwardRef } from 'react';
+
+import { MINUTE } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
+
+import type {
+    CalendarViewBusyEvent,
+    CalendarViewEvent,
+    CalendarViewEventTemporaryEvent,
+} from '../../containers/calendar/interface';
+
+export type EventSize = 'sm' | 'xs' | '2xs';
+
+interface PartDayEventViewProps extends ComponentPropsWithoutRef<'div'> {
+    size?: EventSize;
+    isSelected?: boolean;
+    isUnanswered?: boolean;
+    isCancelled?: boolean;
+    isPast?: boolean;
+    isLoaded?: boolean;
+    className?: string;
+    children?: ReactNode;
+    eventPartDuration?: number;
+    hideOverflow?: boolean;
+}
+
+export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps>(function PartDayEventViewComponent(
+    {
+        size,
+        isSelected,
+        isUnanswered,
+        isCancelled,
+        isPast,
+        isLoaded,
+        className,
+        children,
+        eventPartDuration,
+        hideOverflow = true,
+        ...rest
+    }: PartDayEventViewProps,
+    ref: Ref<HTMLDivElement>
+) {
+    const canDisplayOnlyOneLine = eventPartDuration ? eventPartDuration < 75 * MINUTE : false;
+
+    return (
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+        <div
+            role="button"
+            tabIndex={0}
+            className={clsx([
+                'calendar-eventcell',
+                isLoaded && 'isLoaded',
+                isPast && 'isPast',
+                isSelected && 'isSelected',
+                isUnanswered && 'isUnanswered',
+                isCancelled && 'isCancelled',
+                size && `calendar-eventcell--${size}`,
+                canDisplayOnlyOneLine && 'calendar-eventcell--title-small-fit',
+                hideOverflow && 'overflow-hidden',
+                className,
+            ])}
+            ref={ref}
+            {...rest}
+        >
+            {children}
+        </div>
+    );
+});
+
+export interface PartDayEventProps {
+    size?: EventSize;
+    style: CSSProperties;
+    formatTime: (date: Date) => string;
+    event: CalendarViewEvent | CalendarViewEventTemporaryEvent | CalendarViewBusyEvent;
+    eventPartDuration: number;
+    isSelected: boolean;
+    isBeforeNow: boolean;
+    eventRef?: Ref<HTMLDivElement>;
+    tzid: string;
+}

@@ -19,7 +19,7 @@ import { splitTimeGridEventsPerDay } from '../../../components/calendar/splitTim
 import { useCalendarDispatch } from '../../../store/hooks';
 import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
 import { createNewBookingPage, editBookingPage } from '../../../store/internalBooking/internalBookingActions';
-import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
+import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalContext';
 import { ModalType } from '../../GlobalModals/interface';
 import type { CalendarViewEvent } from '../../calendar/interface';
 import type { BookingFormData, BookingRange, BookingsContextValue, Intersection } from '../interface';
