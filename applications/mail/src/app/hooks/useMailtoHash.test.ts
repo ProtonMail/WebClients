@@ -41,6 +41,83 @@ describe('useMailtoHash', () => {
         expect(mockReturn).toHaveBeenCalledWith(mailto);
     });
 
+    it('Should drop the mailbox params following the mailto', () => {
+        mockHash('#mailto=mailto:hello@test.com&category=primary');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com');
+    });
+
+    it('Should keep the mailto params and drop the mailbox ones, whatever their order', () => {
+        mockHash('#mailto=mailto:hello@test.com?subject=Hi&category=primary&cc=cc@test.com&page=2&body=Bye');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?subject=Hi&cc=cc%40test.com&body=Bye');
+    });
+
+    it('Should open the query with a ? when the hash separates the mailto params with a &', () => {
+        mockHash('#mailto=mailto:hello@test.com&subject=test&body=xxx&category=primary');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?subject=test&body=xxx');
+    });
+
+    it('Should keep the mailto params encoded by the protocol handler and drop the mailbox ones', () => {
+        mockHash('#mailto=mailto%3Ahello%40test.com%3Fsubject%3DHi%26body%3DBye&category=primary');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?subject=Hi&body=Bye');
+    });
+
+    it('Should keep a question mark inside the body', () => {
+        mockHash('#mailto=mailto%3Ahello%40test.com%3Fsubject%3DHi%26body%3DAre%20you%20ok%3F%20yes');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?subject=Hi&body=Are%20you%20ok%3F%20yes');
+    });
+
+    it('Should keep a question mark inside the subject', () => {
+        mockHash('#mailto=mailto%3Ahello%40test.com%3Fsubject%3DHi%3Fthere');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?subject=Hi%3Fthere');
+    });
+
+    it('Should keep an encoded separator inside the body', () => {
+        mockHash('#mailto=mailto:hello@test.com?body=a%26b&category=primary');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?body=a%26b');
+    });
+
+    it('Should keep a literal percent inside the body', () => {
+        mockHash('#mailto=mailto:hello@test.com?body=50%25%20off&category=primary');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?body=50%25%20off');
+    });
+
+    it('Should keep an encoded separator inside the body encoded by the protocol handler', () => {
+        mockHash('#mailto=mailto%3Ahello%40test.com%3Fbody%3Da%2526b&category=primary');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com?body=a%26b');
+    });
+
+    it('Should not shift the mailto when a percent-escape precedes it in the hash', () => {
+        mockHash('#elementID=abc%20def&mailto=mailto:hello@test.com');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello@test.com');
+    });
+
+    it('Should not treat a + in the address as a space', () => {
+        mockHash('#mailto=mailto:hello+tag@test.com&category=primary');
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledWith('mailto:hello+tag@test.com');
+    });
+
     it('Should not call the onMailTo function when no mailto parameter', () => {
         const mailto = 'mailto:hello@test.com';
         mockHash(`#email=${mailto}`);

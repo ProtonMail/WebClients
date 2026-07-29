@@ -59,7 +59,7 @@ const isMailtoParam = (key: string): key is keyof MailtoParams => {
  *
  * @param search - mailto query string excluding the to section
  */
-const parseMailtoParams = (search: string): MailtoParams => {
+export const parseMailtoParams = (search: string): MailtoParams => {
     const params: MailtoParams = { subject: null, cc: null, bcc: null, body: null };
     if (!search || search === '?') {
         return params;
