@@ -7,6 +7,8 @@ import {
     getInboxRedirectUrl,
     getInboxUrl,
     getUrlPathname,
+    removeCategoryFromCurrentUrl,
+    setCategoryInCurrentUrl,
     setCategoryInUrl,
     setParamsInLocation,
     sortFromUrl,
@@ -120,6 +122,27 @@ describe('Mailbox URL tests', () => {
         it('should add the category in the URL', () => {
             const result = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
             expect(result).toBe('/inbox#category=social');
+        });
+    });
+
+    describe('setCategoryInCurrentUrl', () => {
+        it('should keep the opened element and the other hash params', () => {
+            const location = { pathname: '/inbox/conversationID', hash: '#filter=unread' } as Location;
+            const result = setCategoryInCurrentUrl(location, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(result).toBe('/inbox/conversationID#filter=unread&category=social');
+        });
+
+        it('should override a category already present in the URL', () => {
+            const location = { pathname: '/inbox/conversationID', hash: '#category=newsletters' } as Location;
+            const result = setCategoryInCurrentUrl(location, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+            expect(result).toBe('/inbox/conversationID#category=primary');
+        });
+    });
+
+    describe('removeCategoryFromCurrentUrl', () => {
+        it('should keep the opened element and drop only the category', () => {
+            const location = { pathname: '/inbox/conversationID', hash: '#category=social&filter=unread' } as Location;
+            expect(removeCategoryFromCurrentUrl(location)).toBe('/inbox/conversationID#filter=unread');
         });
     });
 

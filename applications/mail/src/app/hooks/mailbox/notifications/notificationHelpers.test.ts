@@ -107,6 +107,23 @@ describe('prepareNotificationData', () => {
             expect(result.location.pathname).toContain('/inbox');
             expect(result.location.hash).toContain('category=newsletters');
             expect(result.labelID).toBe(MAILBOX_LABEL_IDS.INBOX);
+            // Sent as labelID to the desktop app, which only forwards labelID, elementID and messageID
+            expect(result.categoryLabelID).toBe(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
+        });
+
+        it('should use the default category when the notification category is disabled', () => {
+            const result = prepareNotificationData({
+                message: MOCK_MESSAGE_WITH_CATEGORY,
+                history: MOCK_HISTORY,
+                mailSettings: MOCK_MAIL_SETTINGS,
+                notifier: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                isCategoryViewEnabled: true,
+                disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+            });
+
+            expect(result.location.hash).toContain('category=primary');
+            expect(result.labelID).toBe(MAILBOX_LABEL_IDS.INBOX);
+            expect(result.categoryLabelID).toBe(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
         });
 
         it('should use all-mails if the message has no categories', () => {
