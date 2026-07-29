@@ -98,7 +98,7 @@ export const CategoriesOnboardingSpotlight = ({ step, children }: OnboardingSpot
                 <SpotlightContent
                     title={c('Title').t`Refine your Categories`}
                     description={c('Description')
-                        .t`Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.`}
+                        .t`Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.`}
                     step={step - 1}
                     onSkip={handleSkip}
                     onNext={() => {
