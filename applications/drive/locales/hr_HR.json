@@ -14311,6 +14311,28 @@
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Moći ćete dodijeliti uloge nakon što korisnik prihvati pozivnicu."
       ]
+    },
+    "Role": {
+      "Owner": [
+        "Vlasnik"
+      ],
+      "Security Admin": [
+        "Administrator sigurnosti"
+      ],
+      "User Admin": [
+        "Administrator korisnika"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurirajte sigurnosna pravila, zadržavanje podataka i VPN infrastrukturu te upravljajte revizijskim zapisnicima."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Upravljanje svim korisnicima, grupama, sigurnošću, naplatom i konfiguracijama sustava."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Upravljanje korisnicima, grupama i pohranom za sve članove, dodjeljivanje uloga i dodjela licenci."
+      ]
     }
   }
 }
