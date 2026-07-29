@@ -15,6 +15,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { useLumoUserSettings } from '../../../hooks';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useLumoAnimatedBackground } from '../../../hooks/useLumoAnimatedBackground';
+import { useLumoAuthAction } from '../../../hooks/useLumoAuthAction';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useMessageSearch } from '../../../hooks/useMessageSearch';
@@ -303,8 +304,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                 <SettingsSectionItem
                     icon="ChartLine"
                     text={c('collider_2025: Title').t`Visualization mode`}
-                    subtext={c('collider_2025: Description')
-                        .t`Let ${LUMO_SHORT_APP_NAME} visualize data with charts`}
+                    subtext={c('collider_2025: Description').t`Let ${LUMO_SHORT_APP_NAME} visualize data with charts`}
                     button={
                         <Toggle
                             id="visualization-instructions-toggle"
@@ -367,12 +367,24 @@ const AccountSettingsPanel = () => {
     const [user] = useUser();
     const { hasLumoSeat, isVisionary, hasLumoB2B } = useLumoPlan();
     const planName = getPlanName(hasLumoSeat, isVisionary, hasLumoB2B);
+    const { isEnabled: isNativeAuthEnabled, trigger: triggerAuthAction } = useLumoAuthAction();
+
+    // On native mobile the account settings live outside the WebView, so hand the
+    // action to the client instead of letting the link navigate to account.
+    const handleClick = (event: React.MouseEvent) => {
+        if (!isNativeAuthEnabled) {
+            return;
+        }
+        event.preventDefault();
+        triggerAuthAction('webaccountsettings');
+    };
 
     return (
         <div className="flex flex-column flex-nowrap gap-4 w-full min-w-0">
             <ButtonLike
                 as={SettingsLink}
                 path={''}
+                onClick={handleClick}
                 className="user-settings-card flex flex-row flex-nowrap gap-4 items-start p-4 rounded-lg bg-norm cursor-pointer text-left w-full"
             >
                 <Avatar className="shrink-0">{getInitials(user.DisplayName ?? user.Name)}</Avatar>
