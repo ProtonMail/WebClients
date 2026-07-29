@@ -3,6 +3,7 @@ import { useLocation } from 'react-router';
 
 import { MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM } from '../constants';
 import { useOnMailTo } from '../containers/ComposeProvider';
+import { parseMailtoParams } from '../helpers/url';
 
 // e.g. `mailto=mailto:` — the search param followed by the mailto scheme
 const MAILTO_PREFIX = `${MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM}=`;
@@ -30,19 +31,28 @@ const useMailtoHash = ({ isSearch }: { isSearch: boolean }) => {
         try {
             const decodedHash = decodeURIComponent(hash);
             const mailtoIndex = decodedHash.indexOf(MAILTO_HANDOFF);
-            if (mailtoIndex >= 0) {
-                // We don't want to select the #mailto= but just the mailto: part
-                const mailto = hash.substring(mailtoIndex + MAILTO_PREFIX.length, hash.length);
-
-                // A category redirect can rewrite the hash while keeping the same mailto handoff.
-                // Guard against reopening the composer for a mailto we have already processed.
-                if (lastMailtoRef.current === mailto) {
-                    return;
-                }
-                lastMailtoRef.current = mailto;
-
-                onMailTo(decodeURIComponent(mailto));
+            if (mailtoIndex === -1) {
+                return;
             }
+            const rawMailTo = hash.substring(mailtoIndex + MAILTO_PREFIX.length, hash.length);
+            const [to, ...rest] = decodeURIComponent(rawMailTo).split(/[?&]/);
+
+            // We run the `rest` through the `parseMailtoParams` to remove unwanted query params (for example: category)
+            const query = Object.entries(parseMailtoParams(rest.join('&')))
+                .filter(([, value]) => value !== null)
+                .map(([key, value]) => `${key}=${encodeURIComponent(value ?? '')}`)
+                .join('&');
+
+            // We reconstruct the `mailto:` URL from the safe params to ensure it is valid
+            const mailtoQuery = query ? `${to}?${query}` : to;
+
+            // A category redirect can rewrite the hash while keeping the same mailto handoff.
+            // Guard against reopening the composer for a mailto we have already processed.
+            if (lastMailtoRef.current === mailtoQuery) {
+                return;
+            }
+            lastMailtoRef.current = mailtoQuery;
+            onMailTo(mailtoQuery);
         } catch (e: any) {
             console.error(e);
         }
