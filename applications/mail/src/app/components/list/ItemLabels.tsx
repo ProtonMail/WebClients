@@ -2,16 +2,13 @@ import { useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import LabelStack from '@proton/components/components/labelStack/LabelStack';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
-import isTruthy from '@proton/utils/isTruthy';
-import orderBy from '@proton/utils/orderBy';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 
-import { getLabelIDs } from '../../helpers/elements';
+import { getElementLabels } from '../../helpers/labels';
 import type { Element } from '../../models/element';
 
 interface Props {
@@ -36,12 +33,7 @@ const ItemLabels = ({
     const history = useHistory();
     const { applyLocation } = useApplyLocation();
 
-    const labelsSorted = useMemo<Label[]>(() => {
-        const labelIDs = Object.keys(getLabelIDs(element, labelID));
-        const labelsMap = toMap(labels);
-        const labelsObjects = labelIDs.map((ID) => labelsMap[ID]).filter(isTruthy);
-        return orderBy(labelsObjects, 'Order');
-    }, [element, labelID, labels]);
+    const labelsSorted = useMemo<Label[]>(() => getElementLabels(element, labelID, labels), [element, labelID, labels]);
 
     if (!labelsSorted.length) {
         return null;
