@@ -36,7 +36,9 @@ export const useLumoFlags = () => {
     const nativeComposerImages = useFlag('LumoNativeComposerImage');
     const nativeComposerModelSelection = useFlag('LumoNativeComposerModelSelection');
     const apiKeyManagement = useFlag('LumoAPIKeyManagement');
-    const lumoSurvey = useFlag('LumoSurveys');
+    const lumoSurveyFreeUsers = useFlag('LumoSurveyFreeUsers');
+    const lumoSurveyPaidUsers = useFlag('LumoSurveyPaidUsers');
+    const lumoSurveyGuestUsers = useFlag('LumoSurveyGuestUsers');
     const memory = useFlag('LumoMeowmory');
     const visualizationInstructions = useFlag('LumoVisualizationInstructions');
     const lumoNativeAuth = useFlag('LumoNativeAuth');
@@ -61,7 +63,9 @@ export const useLumoFlags = () => {
         nativeComposerImages,
         nativeComposerModelSelection,
         apiKeyManagement,
-        lumoSurvey,
+        lumoSurveyFreeUsers,
+        lumoSurveyPaidUsers,
+        lumoSurveyGuestUsers,
         lumoNativeAuth,
         maxAvailableFree,
         maxAvailableGuest,
