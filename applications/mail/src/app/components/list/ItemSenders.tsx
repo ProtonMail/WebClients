@@ -3,12 +3,9 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import ProtonBadgeType from '@proton/components/components/protonBadge/ProtonBadgeType';
-import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { Recipient } from '@proton/shared/lib/interfaces';
-import uniqueBy from '@proton/utils/uniqueBy';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { getElementSenders } from '../../helpers/recipients';
+import { getUniqueElementSenders } from '../../helpers/recipients';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import type { Element } from '../../models/element';
 
@@ -26,10 +23,10 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
     const highlightData = shouldHighlight();
     const { getRecipientsOrGroups, getRecipientOrGroupLabel } = useRecipientLabel();
 
-    const senders = useMemo(() => {
-        const senders = getElementSenders(element, conversationMode, displayRecipients);
-        return uniqueBy(senders, ({ Address }: Recipient) => canonicalizeInternalEmail(Address));
-    }, [element, conversationMode, displayRecipients]);
+    const senders = useMemo(
+        () => getUniqueElementSenders(element, conversationMode, displayRecipients),
+        [element, conversationMode, displayRecipients]
+    );
 
     const sendersAsRecipientOrGroup = useMemo(() => {
         return getRecipientsOrGroups(senders);
