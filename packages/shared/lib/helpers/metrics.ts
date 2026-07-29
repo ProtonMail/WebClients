@@ -115,6 +115,43 @@ interface SendTelemetryReportWithBaseDimensionArgs extends SendTelemetryReportAr
 }
 
 /**
+ * Compute the base dimensions used to help get basic knowledge about the user:
+ *   - account_age
+ *   - user_locale
+ *   - subscription
+ *   - cycle
+ *   - audience
+ *   - is_free
+ */
+export const getBaseTelemetryDimensions = ({
+    user,
+    subscription,
+    userSettings,
+}: {
+    user: UserModel;
+    subscription: MaybeFreeSubscription;
+    userSettings?: UserSettings;
+}) => {
+    const subscriptionName = isFreeSubscription(subscription) ? 'free' : getPlanName(subscription);
+
+    let audience = 'free';
+    if (getIsB2BAudienceFromSubscription(subscription)) {
+        audience = 'b2b';
+    } else if (!user.isFree) {
+        audience = 'b2c';
+    }
+
+    return {
+        accountAge: getAccountAgeForDimension(user),
+        userLocale: userSettings?.Locale ?? 'undefined',
+        subscription: String(subscriptionName),
+        audience,
+        isFree: subscriptionName === 'free' ? 'true' : 'false',
+        cycle: getCycleForDimension(subscription?.Cycle),
+    };
+};
+
+/**
  * Send a telemetry report with basic dimensions already setup uses /data/v1/stats endpoint
  *   - account_age
  *   - user_locale
@@ -135,15 +172,6 @@ export const sendTelemetryReportWithBaseDimensions = async ({
     delay,
     silence = true,
 }: SendTelemetryReportWithBaseDimensionArgs) => {
-    const subscriptionName = isFreeSubscription(subscription) ? 'free' : getPlanName(subscription);
-
-    let audience = 'free';
-    if (getIsB2BAudienceFromSubscription(subscription)) {
-        audience = 'b2b';
-    } else if (!user.isFree) {
-        audience = 'b2c';
-    }
-
     void sendTelemetryReport({
         api,
         measurementGroup,
@@ -152,13 +180,7 @@ export const sendTelemetryReportWithBaseDimensions = async ({
         silence,
         dimensions: {
             ...dimensions,
-            // Base dimensions used to help get basic knowledge about the user
-            accountAge: getAccountAgeForDimension(user),
-            userLocale: userSettings?.Locale ?? 'undefined',
-            subscription: String(subscriptionName),
-            audience,
-            isFree: subscriptionName === 'free' ? 'true' : 'false',
-            cycle: getCycleForDimension(subscription?.Cycle),
+            ...getBaseTelemetryDimensions({ user, subscription, userSettings }),
         },
         delay,
     });
