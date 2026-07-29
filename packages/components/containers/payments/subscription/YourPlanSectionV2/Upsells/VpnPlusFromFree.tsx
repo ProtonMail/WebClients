@@ -1,15 +1,10 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Info from '@proton/components/components/link/Info';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import useApi from '@proton/components/hooks/useApi';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getHasConsumerVpnPlan } from '@proton/payments/core/subscription/helpers';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -23,9 +18,6 @@ import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers';
 import { defaultUpsellCycleB2C, getUpsell } from '../../helpers';
-import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
-import { PlanIcon } from '../PlanIcon';
-import PlanIconName from '../PlanIconName';
 import type { UpsellSectionProps, UpsellsHook } from '../YourPlanUpsellsSectionV2';
 import { getDashboardUpsellTitle } from '../helpers';
 import countriesIcon from '../icons/countries.svg';
@@ -34,7 +26,6 @@ import lightningIcon from '../icons/lightning.svg';
 import serverIcon from '../icons/server.svg';
 import shieldIcon from '../icons/shield.svg';
 import streamingIcon from '../icons/streaming.svg';
-import UpsellMultiBox from './UpsellMultiBox';
 
 export const getVPNFeatures = (): PlanCardFeatureDefinition[] => {
     return [
@@ -201,54 +192,3 @@ export const useVpnPlusFromFreeUpsells = ({
 
     return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
 };
-
-interface Props extends UpsellsHook {
-    subscription: Subscription;
-}
-
-const VpnPlusFromFree = ({ subscription, upsells, handleExplorePlans }: Props) => {
-    const plan = PLANS.VPN2024;
-
-    return (
-        <DashboardGrid>
-            <DashboardGridSectionHeader
-                title={c('Headline').t`Upgrade your privacy`}
-                cta={
-                    <Button color="norm" shape="ghost" onClick={handleExplorePlans}>
-                        {c('Action').t`Compare all plans`}
-                        <IcChevronRight className="shrink-0 ml-1 rtl:mirror" />
-                    </Button>
-                }
-            />
-
-            <UpsellMultiBox
-                style="card"
-                header={<PlanIconName logo={<PlanIcon planName={plan} />} topLine={PLAN_NAMES[plan]} />}
-                upsellPanels={
-                    <>
-                        {subscription && upsells && (
-                            <div className="flex flex-column lg:flex-row gap-4 flex-nowrap mb-4">
-                                <UpsellPanelsV2 upsells={upsells} subscription={subscription} />
-                            </div>
-                        )}
-                        <ul className="unstyled grid lg:grid-cols-4 gap-4 m-0">
-                            {getVPNFeatures().map(({ text, tooltip, highResIcon }, index) => {
-                                const key = typeof text === 'string' ? text : index;
-                                return (
-                                    <li key={key} className="flex items-center">
-                                        {highResIcon && <img src={highResIcon} alt="" className="shrink-0 mr-2" />}
-                                        {text}
-                                        {tooltip && <Info buttonClass="ml-2 align-middle" title={tooltip} />}
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </>
-                }
-                upsellGradient="vpn"
-            ></UpsellMultiBox>
-        </DashboardGrid>
-    );
-};
-
-export default VpnPlusFromFree;

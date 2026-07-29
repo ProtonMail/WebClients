@@ -67,8 +67,7 @@ import UnlimitedBannerGradient, { useUnlimitedBannerGradientUpsells } from './Up
 import UnlimitedBannerPlain from './Upsells/UnlimitedBannerPlain';
 import VPNB2BBanner from './Upsells/VPNB2BBanner';
 import VisionaryExtendSubscription, { useVisionaryExtendSubscription } from './Upsells/VisionaryExtendSubscription';
-import VpnPlusExtendSubscription, { useVpnPlusExtendSubscription } from './Upsells/VpnPlusExtendSubscription';
-import VpnPlusFromFree, { useVpnPlusFromFreeUpsells } from './Upsells/VpnPlusFromFree';
+import { useVpnPlusFromFreeUpsells } from './Upsells/VpnPlusFromFree';
 import DrivePlusExtendSubscription, {
     useDrivePlusExtendSubscription,
 } from './Upsells/drive/DrivePlusExtendSubscription';
@@ -117,11 +116,6 @@ export type UpsellsHook = {
 const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUpsellSectionProps) => {
     const isFree = user.isFree;
 
-    const vpnVariant = useVariant('VPNDashboard');
-
-    const showVPNAVariant = vpnVariant.name === 'A';
-    const showVPNBVariant = vpnVariant.name === 'B';
-
     // TODO: Review if these checks are required as upsell config will do the app check
     const hasMailFree = isFree && (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR);
     const hasDriveFree = isFree && app === APPS.PROTONDRIVE;
@@ -152,7 +146,6 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
     const vpnPlusFromFreeUpsells = useVpnPlusFromFreeUpsells(upsellParams);
     const meetProfessionalFromFreeUpsells = useMeetProfessionalFromFreeUpsells(upsellParams);
     const unlimitedBannerGradientUpsells = useUnlimitedBannerGradientUpsells(upsellParams);
-    const vpnPlusExtendSubscriptionUpsells = useVpnPlusExtendSubscription(upsellParams);
     const mailPlusExtendSubscriptionUpsells = useMailPlusExtendSubscription(upsellParams);
     const drivePlusExtendSubscriptionUpsells = useDrivePlusExtendSubscription({
         ...upsellParams,
@@ -182,23 +175,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
 
     const upsellSections = [
         {
-            enabled: isFreeUser && app === APPS.PROTONVPN_SETTINGS && showVPNAVariant,
-            upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
-            element: (
-                <>
-                    <VpnPlusFromFree subscription={subscription as Subscription} {...vpnPlusFromFreeUpsells} />
-                    <UnlimitedBannerGradient
-                        app={app}
-                        showProductCards={false}
-                        showUpsellPanels={false}
-                        subscription={subscription as Subscription}
-                        {...unlimitedBannerGradientUpsells}
-                    />
-                </>
-            ),
-        },
-        {
-            enabled: isFreeUser && app === APPS.PROTONVPN_SETTINGS && showVPNBVariant,
+            enabled: isFreeUser && app === APPS.PROTONVPN_SETTINGS,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
                 <CurrentPlanInfoWithUpsellSection
@@ -217,29 +194,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
         },
         {
             enabled:
-                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
-                subscription?.Cycle === CYCLE.YEARLY &&
-                showVPNAVariant,
-            upsells: unlimitedBannerGradientUpsells.upsells,
-            element: (
-                <>
-                    <UnlimitedBannerGradient
-                        app={app}
-                        showProductCards={true}
-                        showUpsellPanels={true}
-                        gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-                        subscription={subscription as Subscription}
-                        {...unlimitedBannerGradientUpsells}
-                    />
-                    <MeetAddonBanner app={app} />
-                </>
-            ),
-        },
-        {
-            enabled:
-                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
-                subscription?.Cycle === CYCLE.YEARLY &&
-                showVPNBVariant,
+                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && subscription?.Cycle === CYCLE.YEARLY,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <>
@@ -258,30 +213,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
         },
         {
             enabled:
-                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
-                subscription?.Cycle === CYCLE.TWO_YEARS &&
-                showVPNAVariant,
-            upsells: unlimitedBannerGradientUpsells.upsells,
-            element: (
-                <>
-                    <UnlimitedBannerGradient
-                        app={app}
-                        showProductCards={true}
-                        showUpsellPanels={false}
-                        showDiscoverButton={false}
-                        showUpsellHeader={true}
-                        subscription={subscription as Subscription}
-                        {...unlimitedBannerGradientUpsells}
-                    />
-                    <MeetAddonBanner app={app} />
-                </>
-            ),
-        },
-        {
-            enabled:
-                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
-                subscription?.Cycle === CYCLE.TWO_YEARS &&
-                showVPNBVariant,
+                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && subscription?.Cycle === CYCLE.TWO_YEARS,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <>
@@ -300,22 +232,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
             ),
         },
         {
-            enabled: (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && showVPNAVariant,
-            upsells: vpnPlusExtendSubscriptionUpsells.upsells,
-            element: (
-                <>
-                    <VpnPlusExtendSubscription
-                        app={app}
-                        subscription={subscription as Subscription}
-                        {...vpnPlusExtendSubscriptionUpsells}
-                    />
-                    <MeetAddonBanner app={app} />
-                    <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
-                </>
-            ),
-        },
-        {
-            enabled: (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && showVPNBVariant,
+            enabled: hasDeprecatedVPN(subscription) || hasVPN2024(subscription),
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <>
@@ -644,10 +561,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
         },
         {
             enabled:
-                showVPNBVariant &&
-                hasFamily(subscription) &&
-                subscription?.Cycle !== CYCLE.MONTHLY &&
-                app === APPS.PROTONVPN_SETTINGS,
+                hasFamily(subscription) && subscription?.Cycle !== CYCLE.MONTHLY && app === APPS.PROTONVPN_SETTINGS,
             element: (
                 <>
                     <MeetAddonBanner app={app} />
