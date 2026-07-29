@@ -46,7 +46,7 @@ const buildExternalSessionPayloadForLocalID = async ({
 
     return {
         userId: pullForkResponse.UserID,
-        username: session.User.Name ?? null,
+        username: session.User.Name ?? session.User.Email ?? null,
         sessionId: pullForkResponse.UID,
         refreshToken: pullForkResponse.RefreshToken,
         keySecret: session.keyPassword || null,
