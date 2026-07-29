@@ -38,11 +38,21 @@ const getElementIDAndMessageID = (
     locationWithNoHash: Location,
     message: Message
 ) => {
-    const conversationMode = isConversationMode(notificationLabel, mailSettings, locationWithNoHash);
-    return {
-        elementID: conversationMode ? message.ConversationID : message.ID,
-        messageID: conversationMode ? message.ID : undefined,
+    const output: {
+        elementID: string;
+        messageID: string | undefined;
+    } = {
+        elementID: message.ID,
+        messageID: undefined,
     };
+
+    const conversationMode = isConversationMode(notificationLabel, mailSettings, locationWithNoHash);
+    if (conversationMode) {
+        output.elementID = message.ConversationID;
+        output.messageID = message.ID;
+    }
+
+    return output;
 };
 
 /**
