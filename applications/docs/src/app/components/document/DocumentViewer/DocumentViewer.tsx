@@ -44,6 +44,7 @@ import { useWelcomeSplashModal } from '../public/WelcomeSplashModal'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import type { InviteAutoAcceptResult } from './InviteAutoAccepter'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
+import { PrivateDocumentInviteGate } from './PrivateDocumentInviteGate'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { useAuthentication, useConfig, MimeIcon, useModalState, AuthenticatedBugModal } from '@proton/components'
@@ -59,10 +60,12 @@ import { useDocsContext } from '../context'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import {
   useDocsDocumentViewerEventsSDK,
+  useIsGatePrivateInviteAccessEnabled,
   useIsSheetsEditorEnabled,
   useSharingModalDriveSdkEnabled,
   useIsOpenTracerEnabled,
 } from '~/utils/flags'
+import { useFlagsStatus } from '@proton/unleash/proxy'
 import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
 import { Button } from '@proton/atoms/Button/Button'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -127,11 +130,30 @@ export function DocumentViewer({
   const [bridge, setBridge] = useState<ClientToEditorBridge | null>(null)
   const [initializing, setInitializing] = useState(false)
   const [ready, setReady] = useState(false)
+
   const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
   const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
   const isOpenTracerEnabled = useIsOpenTracerEnabled()
 
-  const nodeUid = isPrivateNodeMeta(nodeMeta) ? generateNodeUid(nodeMeta.volumeId, nodeMeta.linkId) : null
+  const isPrivateNode = isPrivateNodeMeta(nodeMeta)
+  const nodeUid = isPrivateNode ? generateNodeUid(nodeMeta.volumeId, nodeMeta.linkId) : null
+
+  const { flagsReady } = useFlagsStatus()
+  const isGatePrivateInviteAccessEnabled = useIsGatePrivateInviteAccessEnabled()
+
+  const shouldGatePrivateInviteAccess = isPrivateNode && providerType !== 'public-unauthenticated'
+  const doGatePrivateInviteAccess = shouldGatePrivateInviteAccess && flagsReady && isGatePrivateInviteAccessEnabled
+  const [accessReady, setAccessReady] = useState(!shouldGatePrivateInviteAccess)
+
+  const onPrivateInviteAccessReady = useCallback(() => {
+    setAccessReady(true)
+  }, [])
+
+  useEffect(() => {
+    if (flagsReady && !isGatePrivateInviteAccessEnabled) {
+      setAccessReady(true)
+    }
+  }, [flagsReady, isGatePrivateInviteAccessEnabled])
 
   const [currentDocumentNode, setCurrentDocumentNode] = useState<NodeEntity>()
   useEffect(() => {
@@ -582,6 +604,11 @@ export function DocumentViewer({
   useEffect(() => {
     void OpenTracer.trace('boot_doc_viewer_loader_effect')
 
+    if (!accessReady) {
+      void OpenTracer.trace('boot_doc_viewer_loader_effect_access_ready_false')
+      return
+    }
+
     if (docOrchestrator) {
       void OpenTracer.trace('boot_doc_viewer_loader_effect_has_doc_orchestrator')
       return
@@ -623,7 +650,7 @@ export function DocumentViewer({
       void OpenTracer.trace('boot_doc_viewer_dispose')
       disposer()
     }
-  }, [application, docOrchestrator, documentType, getLocalID, initializing, nodeMeta])
+  }, [application, docOrchestrator, documentType, getLocalID, initializing, nodeMeta, accessReady])
 
   useEffect(() => {
     if (docOrchestrator && editorFrame && editorController && !bridge) {
@@ -701,6 +728,18 @@ export function DocumentViewer({
       void OpenTracer.trace('boot_doc_viewer_error')
     }
   }, [error])
+
+  if (!accessReady && shouldGatePrivateInviteAccess) {
+    application.logger.info('Running private document invite gate')
+    return (
+      <>
+        {doGatePrivateInviteAccess && (
+          <PrivateDocumentInviteGate nodeMeta={nodeMeta} onAccessReady={onPrivateInviteAccessReady} />
+        )}
+        <Loader documentType={documentType} />
+      </>
+    )
+  }
 
   if (shouldAttemptAutoAcceptInvite) {
     application.logger.info('Attempting to auto-accept invite (if found)')
