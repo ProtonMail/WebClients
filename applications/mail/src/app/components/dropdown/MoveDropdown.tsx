@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -76,7 +76,7 @@ const MoveDropdown = ({
     const [loading, withLoading] = useLoading();
     const [search, updateSearch] = useState('');
     const [selectedFolder, setSelectedFolder] = useState<Folder | undefined>();
-    const [always, setAlways] = useState(false);
+    const [createFilterRequested, setCreateFilterRequested] = useState(false);
     const [containFocus, setContainFocus] = useState(true);
     const getElementsFromIDs = useGetElementsFromIDs();
     const getMessagesOrElements = useGetMessagesOrElementsFromIDs();
@@ -123,14 +123,25 @@ const MoveDropdown = ({
      */
     const createFolderButtonText = c('Title').t`Create folder "${search}"`;
 
-    const alwaysCheckboxDisabled = useMemo(() => {
-        // The checkbox is disabled if the selected folder is a category.
-        if (selectedFolder && isCategoryLabel(selectedFolder.ID)) {
-            return true;
-        }
+    /*
+     * Filters can only be created for a real destination folder with senders to filter on.
+     * SPAM and categories are non-valid destinations, and the select-all flow never creates filters.
+     * Takes the destination ID because clicking a folder row moves to it directly, without going
+     * through `selectedFolder`.
+     */
+    const canCreateFilterFor = (folderID: string) => {
+        return (
+            !selectAll &&
+            folderID !== MAILBOX_LABEL_IDS.SPAM &&
+            !isCategoryLabel(folderID) &&
+            getSendersToFilter(elements).length > 0
+        );
+    };
 
-        return !getSendersToFilter(elements).length || !selectedFolder || !!selectAll;
-    }, [selectedFolder, getSendersToFilter, elements, selectAll]);
+    // The request is only honoured for a destination that accepts filters, so pair the two everywhere.
+    const willCreateFilterFor = (folderID: string) => createFilterRequested && canCreateFilterFor(folderID);
+
+    const canCreateFilterForSelection = !!selectedFolder && canCreateFilterFor(selectedFolder.ID);
 
     const list = treeview
         .concat([
@@ -158,11 +169,6 @@ const MoveDropdown = ({
         });
 
     const actualMoveFolder = async (selectedFolderID: string) => {
-        // If the destination folder is SPAM, we don't want to create a filter even if always is checked
-        // Senders will be moved to spam anyway, but since we don't want to create filters in the "Spam case",
-        // We only need to ignore the value in that scenario
-        const canApplyAlways = selectedFolderID !== MAILBOX_LABEL_IDS.SPAM;
-
         if (selectAll) {
             await moveAllToFolder({
                 type: MoveAllType.selectAll,
@@ -176,7 +182,7 @@ const MoveDropdown = ({
                 type: APPLY_LOCATION_TYPES.MOVE,
                 elements,
                 destinationLabelID: selectedFolderID,
-                createFilters: canApplyAlways ? always : false,
+                createFilters: willCreateFilterFor(selectedFolderID),
             });
 
             if (isCategoryLabel(selectedFolderID) && categoryIDs.length > 0) {
@@ -303,12 +309,12 @@ const MoveDropdown = ({
                 </ul>
             </div>
             <hr className="m-0 shrink-0" />
-            <div className={clsx(['mx-4 mt-4 shrink-0', alwaysCheckboxDisabled && 'color-disabled'])}>
+            <div className={clsx(['mx-4 mt-4 shrink-0', !canCreateFilterForSelection && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}
-                    checked={always}
-                    disabled={alwaysCheckboxDisabled}
-                    onChange={({ target }) => setAlways(target.checked)}
+                    checked={!!selectedFolder && willCreateFilterFor(selectedFolder.ID)}
+                    disabled={!canCreateFilterForSelection}
+                    onChange={({ target }) => setCreateFilterRequested(target.checked)}
                     data-testid="move-dropdown:always-move"
                     data-prevent-arrow-navigation
                 >
