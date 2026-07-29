@@ -25,7 +25,7 @@ export const CategoriesViewSections = () => {
     const dispatch = useDispatch();
     const [modal, setModal, renderModal] = useModalState();
 
-    const showBadgeSettings = useFlag('CategoriesUnseenBadge');
+    const showBadgeSettings = useFlag('MailRecordLastUnseenIncomingMessageEventID');
 
     const [mailSettings] = useMailSettings();
     const { categoriesStore, activeCategoriesTabs } = useCategoriesData();
