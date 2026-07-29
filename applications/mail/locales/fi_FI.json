@@ -1706,6 +1706,18 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Clear conversation": [
+        "Tyhjennä keskustelu"
+      ],
+      "Reject": [
+        "Kieltäydy"
+      ],
+      "Stop": [
+        "Pysäytä"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Vaihda ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1832,6 +1844,21 @@
       ],
       "Writing assistant seats": [
         "Kirjoitusavustajan käyttöpaikat"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja (${ quantity } käyttäjälle)",
+        "${ BRAND_NAME } Scribe-kirjoitusavustaja (${ quantity } käyttäjälle)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } -tekoälyavustaja"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } tekoälyavustaja (${ quantity } käyttäjä)",
+        "${ LUMO_APP_NAME } AI-avustaja (${ quantity } käyttäjälle)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } oma verkkotunnus",
+        "${ quantity } omaa verkkotunnusta"
       ]
     },
     "Alert": {
@@ -9286,6 +9313,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "Details": [
+        "Lisätiedot"
+      ],
+      "Thinking about this": [
+        "Mietitään tätä"
       ]
     },
     "info": {
@@ -10945,6 +10978,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
         "${ seats } ${ MEET_APP_NAME }-käyttöpaikkaa"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)",
+        "${ MEET_APP_NAME } ${ quantity } käyttäjälle)"
+      ],
+      "${ price } per seat": [
+        "${ price } per paikka"
       ]
     },
     "meet_2025: Feature": {
@@ -13258,6 +13298,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Ask anything…": [
+        "Kysy mitä tahansa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15188,6 +15231,9 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Siirretty kansioon ${ label }. Samankaltaiset viestit luokitellaan tänne jatkossa."
       ]
     },
     "Success notification": {
@@ -17101,6 +17147,28 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Omistaja"
+      ],
+      "Security Admin": [
+        "Turvallisuusvastaava"
+      ],
+      "User Admin": [
+        "Käyttäjähallinta"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Määritä tietoturvakäytännöt, tietojen säilytysajat ja VPN-infrastruktuuri sekä hallinnoi tarkastuslokeja."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
       ]
     }
   }

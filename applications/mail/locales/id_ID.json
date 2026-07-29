@@ -1700,6 +1700,9 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Reject": [
+        "Tolak"
       ]
     },
     "action": {
@@ -1819,6 +1822,18 @@
       ],
       "Writing assistant seats": [
         "Kuota asisten penulisan"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe (untuk ${ quantity } pengguna)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asisten AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asisten AI ${ LUMO_APP_NAME } (untuk ${ quantity } pengguna)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domain khusus"
       ]
     },
     "Alert": {
@@ -9128,6 +9143,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "Details": [
+        "Rincian"
       ]
     },
     "info": {
@@ -10767,6 +10785,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } kuota ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (untuk ${ quantity } pengguna)"
       ]
     },
     "meet_2025: Feature": {
@@ -16738,6 +16759,28 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Pemilik"
+      ],
+      "Security Admin": [
+        "Admin Keamanan"
+      ],
+      "User Admin": [
+        "Admin Pengguna"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurasikan kebijakan keamanan, retensi data, dan infrastruktur VPN, serta kelola log audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Kelola semua pengguna, grup, keamanan, penagihan, dan konfigurasi sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Kelola pengguna, grup, dan penyimpanan untuk semua anggota, tetapkan peran, dan alokasikan lisensi."
       ]
     }
   }

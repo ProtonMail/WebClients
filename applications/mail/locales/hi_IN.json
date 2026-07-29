@@ -1706,6 +1706,9 @@
       "Trust key": [
         "ट्रस्ट की",
         "ट्रस्ट कीज़"
+      ],
+      "Reject": [
+        "अस्वीकार करें"
       ]
     },
     "action": {
@@ -1832,6 +1835,21 @@
       ],
       "Writing assistant seats": [
         "लेखन सहायक सीटें"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe लेखन सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ BRAND_NAME } Scribe लेखन सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI सहायक"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ LUMO_APP_NAME } AI सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } कस्टम डोमेन",
+        "${ quantity } कस्टम डोमेन"
       ]
     },
     "Alert": {
@@ -9286,6 +9304,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "आप एक व्यवस्थित और साफ इंबॉक्स से बस कुछ ही क्लिक दूर हैं"
+      ],
+      "Details": [
+        "जानकारी"
       ]
     },
     "info": {
@@ -10939,6 +10960,10 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } सीट",
         "${ seats } ${ MEET_APP_NAME } सीटें"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity } उपयोगकर्ता के लिए)",
+        "${ MEET_APP_NAME } (${ quantity } उपयोगकर्ताओं के लिए)"
       ]
     },
     "meet_2025: Feature": {
@@ -17095,6 +17120,28 @@
       ],
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "मालिक"
+      ],
+      "Security Admin": [
+        "सुरक्षा एडमिन"
+      ],
+      "User Admin": [
+        "उपयोगकर्ता एडमिन"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "सुरक्षा नीतियां, डेटा रिटेंशन और VPN बुनियादी ढांचे को कॉन्फ़िगर करें, और ऑडिट लॉग संभाले।"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "सभी उपयोगकर्ताओं, ग्रुप, सुरक्षा, बिलिंग और सिस्टम संरचनाओं को संभाले।"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "सभी सदस्यों के लिए उपयोगकर्ताओं, ग्रुप और स्टोरेज को संभाले, भूमिकाएं सौंपें, और लाइसेंस आवंटित करें।"
       ]
     }
   }

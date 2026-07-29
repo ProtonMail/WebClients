@@ -1706,6 +1706,21 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Clear conversation": [
+        "Unterhaltung entfernen"
+      ],
+      "Lookup document": [
+        "Dokument nachschlagen"
+      ],
+      "Reject": [
+        "Ablehnen"
+      ],
+      "Stop": [
+        "Stoppen"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } umschalten"
       ]
     },
     "action": {
@@ -1832,6 +1847,25 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)",
+        "${ BRAND_NAME } Scribe-Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-Assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)",
+        "${ LUMO_APP_NAME } KI-Assistent (für ${ quantity } Benutzer)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)",
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } benutzerdefinierte Domäne",
+        "${ quantity } benutzerdefinierte Domänen"
       ]
     },
     "Alert": {
@@ -5489,6 +5523,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Es ist ein Fehler aufgetreten. Schließe das Modalfenster und versuche es erneut."
       ]
     },
     "error": {
@@ -9326,6 +9363,29 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } Problem beim Import:",
+        "${ issues.length } Probleme beim Import:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Noch ${ remainingMinutes } Minuten…"
+      ],
+      "Details": [
+        "Details"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Es wurde ein aktueller verschlüsselter Suchindex mit ${ oldIndexSize } Nachricht gefunden.",
+        "Es wurde ein aktueller verschlüsselter Suchindex mit ${ oldIndexSize } Nachrichten gefunden."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Der Import läuft gerade. Du kannst diesen Dialog während des Vorgangs schließen und später darauf zurückkommen. Schließe jedoch nicht die Registerkarte."
+      ],
+      "Thinking about this": [
+        "Darüber nachdenken"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Du kannst ihn zu Entwicklungszwecken als neuen Foundation-Search-Index importieren."
       ]
     },
     "info": {
@@ -10512,6 +10572,18 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Content search version to use": [
+        "Zu verwendende Version der Inhaltssuche"
+      ],
+      "Document ID": [
+        "Dokument-ID"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10991,6 +11063,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } Lizenz",
         "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)",
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)"
+      ],
+      "${ price } per seat": [
+        "${ price } pro Lizenz"
       ]
     },
     "meet_2025: Feature": {
@@ -13307,6 +13386,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Ask anything…": [
+        "Frag irgendetwas …"
       ]
     },
     "Placeholder for contact group name": {
@@ -15237,6 +15319,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Zu ${ label } verschoben. Ähnliche Nachrichten werden künftig hierunter kategorisiert."
       ]
     },
     "Success notification": {
@@ -17153,6 +17238,28 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Besitzer"
+      ],
+      "Security Admin": [
+        "Sicherheitsadministrator"
+      ],
+      "User Admin": [
+        "Benutzeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Sicherheitsrichtlinien, Datenaufbewahrung und VPN-Infrastruktur konfigurieren sowie Prüfprotokolle verwalten."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
       ]
     }
   }

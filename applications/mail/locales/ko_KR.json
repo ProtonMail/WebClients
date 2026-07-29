@@ -1700,6 +1700,15 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Lookup document": [
+        "참조 문서"
+      ],
+      "Reject": [
+        "거절"
+      ],
+      "Stop": [
+        "중지"
       ]
     },
     "action": {
@@ -1819,6 +1828,21 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 어시스턴트"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 어시스턴트 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ quantity } custom domain": [
+        "사용자 지정 도메인 ${ quantity }개"
       ]
     },
     "Alert": {
@@ -5442,6 +5466,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "문제가 발생했습니다. 이 모달을 닫고 다시 시도하세요."
       ]
     },
     "error": {
@@ -9167,6 +9194,24 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "${ issues.length } issue during import:": [
+        "불러오기 중 ${ issues.length } 문제 발생:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes }분 남음..."
+      ],
+      "Details": [
+        "세부 사항"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "${ oldIndexSize }개 메시지가 포함된 현재 암호화된 검색 인덱스를 찾았습니다."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "불러오기 진행 중입니다. 진행 중에는 이 대화창을 닫고 나중에 다시 돌아와도 됩니다. 불러오기 중에는 이 탭을 절대 닫지 마세요."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "개발 단계의 새로운 파운데이션 검색 색인으로 불러올 수 있습니다."
       ]
     },
     "info": {
@@ -10345,6 +10390,18 @@
       ],
       "Client version": [
         "클라이언트 버전"
+      ],
+      "Content search version to use": [
+        "사용할 콘텐츠 검색 버전"
+      ],
+      "Document ID": [
+        "문서 ID"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10818,6 +10875,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ MEET_APP_NAME } 시트 ${ seats }개"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity }명 이용 가능)"
       ]
     },
     "meet_2025: Feature": {
@@ -16795,6 +16855,28 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "소유자"
+      ],
+      "Security Admin": [
+        "보안 관리자"
+      ],
+      "User Admin": [
+        "사용자 관리자"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "보안 정책, 데이터 보존, VPN 인프라를 설정하고 감사 로그를 관리합니다."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "모든 사용자, 그룹, 보안, 결제 및 시스템 설정을 관리합니다."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "모든 구성원의 사용자, 그룹, 저장공간을 관리하고 역할을 부여하며 라이선스를 할당합니다."
       ]
     }
   }
