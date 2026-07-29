@@ -1520,7 +1520,8 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "Affida chiave"
+        "chiave attendibile",
+        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -1720,6 +1721,15 @@
       ],
       "Reject": [
         "Rifiuta"
+      ],
+      "Clear conversation": [
+        "Cancella conversazione"
+      ],
+      "Stop": [
+        "Interrompi"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Attiva/disattiva ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -9348,6 +9358,9 @@
       ],
       "Details": [
         "Dettagli"
+      ],
+      "Thinking about this": [
+        "Sto riflettendo su questo"
       ]
     },
     "info": {
@@ -11014,6 +11027,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (per ${ quantity } utente)",
         "${ MEET_APP_NAME } (per ${ quantity } utenti)"
+      ],
+      "${ price } per seat": [
+        "${ price } per utente"
       ]
     },
     "meet_2025: Feature": {
@@ -13333,6 +13349,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Ask anything…": [
+        "Chiedi qualsiasi cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15269,6 +15288,9 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Spostato in ${ label }. I messaggi simili verranno categorizzati qui in futuro."
       ]
     },
     "Success notification": {
@@ -17185,6 +17207,28 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietario"
+      ],
+      "Security Admin": [
+        "Amministratore sicurezza"
+      ],
+      "User Admin": [
+        "Amministratore utenti"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
       ]
     }
   }

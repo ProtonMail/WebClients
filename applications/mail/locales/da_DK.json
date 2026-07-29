@@ -1520,7 +1520,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1731,7 +1732,7 @@
         "Stop"
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
-        "Skift ${ LUMO_SHORT_APP_NAME }"
+        "Vis/skjul ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -15356,7 +15357,7 @@
         "Du har afmeldt dig"
       ],
       "Moved to ${ label }. Similar messages will be categorized here in the future.": [
-        "Flyttet til ${ label }. Lignende beskeder vil fremover blive kategoriseret ligesådan."
+        "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her fremover."
       ]
     },
     "Success notification": {
@@ -17273,6 +17274,28 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ejer"
+      ],
+      "Security Admin": [
+        "Sikkerhedsadmin"
+      ],
+      "User Admin": [
+        "Brugeradmin"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brugere, grupper, og lagerplads for alle medlemmer, og tildel roller samt licenser."
       ]
     }
   }

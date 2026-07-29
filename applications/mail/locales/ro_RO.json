@@ -1524,7 +1524,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -1728,6 +1730,15 @@
       ],
       "Reject": [
         "Respingere"
+      ],
+      "Clear conversation": [
+        "Golire conversație"
+      ],
+      "Stop": [
+        "Stop\n"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Comutare ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -9558,6 +9569,9 @@
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "Îl puteți importa ca un nou index de căutare de bază în scopuri de dezvoltare."
+      ],
+      "Thinking about this": [
+        "Mă gândesc la asta"
       ]
     },
     "info": {
@@ -11257,6 +11271,9 @@
         "${ MEET_APP_NAME } (pentru ${ quantity } utilizator)",
         "${ MEET_APP_NAME } (pentru ${ quantity } utilizatori)",
         "${ MEET_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ price } per seat": [
+        "${ price } per licență"
       ]
     },
     "meet_2025: Feature": {
@@ -13624,6 +13641,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Ask anything…": [
+        "Întreabă-mă orice…"
       ]
     },
     "Placeholder for contact group name": {
@@ -17619,6 +17639,28 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietar"
+      ],
+      "Security Admin": [
+        "Administrator securitate"
+      ],
+      "User Admin": [
+        "Administrare utilizatori"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
       ]
     }
   }

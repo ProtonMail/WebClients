@@ -1528,7 +1528,10 @@
         "Довіряти"
       ],
       "Trust key": [
-        "Довіряти ключу"
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -17875,6 +17878,28 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Власник"
+      ],
+      "Security Admin": [
+        "Адміністратор безпеки"
+      ],
+      "User Admin": [
+        "Адміністратор користувачів"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Налаштовувати політики безпеки, зберігання даних та інфраструктуру VPN, а також керувати журналами аудиту."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Керувати всіма користувачами, групами, безпекою, виставленням рахунків та системними конфігураціями."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Керувати користувачами, групами та сховищем для всіх членів, призначати ролі та розподіляти ліцензії."
       ]
     }
   }
