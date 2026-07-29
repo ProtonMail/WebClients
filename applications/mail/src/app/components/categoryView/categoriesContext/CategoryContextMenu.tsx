@@ -8,7 +8,8 @@ import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/cat
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { selectCategoryIDs, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useCategoriesView } from '../useCategoriesView';
@@ -21,9 +22,11 @@ export const CategoryContextMenu = ({ onCategoryMove }: Props) => {
     const { shouldShowTabs, activeCategoriesTabs } = useCategoriesView();
 
     const currentCategories = useMailSelector(selectCategoryIDs);
+    const labelID = useMailSelector(selectLabelID);
+    const { selectAll } = useSelectAll({ labelID });
     const { sendReportRecategorizeEmail } = useCategoriesTelemetry();
 
-    if (!shouldShowTabs) {
+    if (!shouldShowTabs || selectAll) {
         return null;
     }
 
