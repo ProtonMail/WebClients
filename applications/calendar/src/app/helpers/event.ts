@@ -7,7 +7,6 @@ import { getParticipantsError } from '../components/eventModal/helpers';
 
 export const generateEventUniqueId = (calendarID: string, eventID: string) => `${calendarID}.${eventID}`;
 export const getCalendarIDFromUniqueId = (itemID: string) => itemID.split('.')[0];
-export const getEventIDFromUniqueId = (itemID: string) => itemID.split('.')[1];
 
 export const getEventStatusTraits = (model: EventModelReadView, backendAttendee?: { Status?: number }) => {
     const { status: eventStatus, selfAttendeeIndex } = model;
