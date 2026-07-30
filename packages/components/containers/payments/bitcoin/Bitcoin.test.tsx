@@ -1,6 +1,6 @@
 import { act, render, waitFor } from '@testing-library/react';
 
-import { createTokenV5, getTokenStatusV5 } from '@proton/payments/core/api/api';
+import { createToken, getTokenStatusV5 } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -32,7 +32,6 @@ const BitcoinTestComponent = (props: InnerProps) => {
         Currency: props.currency,
         onTokenValidated: props.onTokenValidated,
         enablePolling: true,
-        paymentsVersion: 'v5',
     });
 
     return <BitcoinContext {...props} {...bitcoinHook} />;
@@ -47,7 +46,7 @@ afterEach(() => {
     jest.useRealTimers();
 });
 
-const createTokenUrl = createTokenV5({} as any).url;
+const createTokenUrl = createToken({} as any).url;
 const defaultTokenResponse = {
     Token: 'token-123',
     Data: {

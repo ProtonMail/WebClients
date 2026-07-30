@@ -1,9 +1,4 @@
-import type {
-    AmountAndCurrency,
-    ChargeablePaymentParameters,
-    ChargeablePaymentToken,
-    NonChargeablePaymentToken,
-} from '../interface';
+import type { AmountAndCurrency, ChargeablePaymentParameters, ChargeablePaymentToken } from '../interface';
 import { PaymentProcessor } from './paymentProcessor';
 
 interface TestPaymentProcessorState {
@@ -11,7 +6,7 @@ interface TestPaymentProcessorState {
 }
 
 class PaymentProcessorTest extends PaymentProcessor<TestPaymentProcessorState> {
-    fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> {
+    fetchPaymentToken(): Promise<ChargeablePaymentToken> {
         throw new Error('Method not implemented.');
     }
 

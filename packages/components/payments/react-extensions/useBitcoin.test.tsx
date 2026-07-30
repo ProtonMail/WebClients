@@ -2,7 +2,7 @@ import { act } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { getMaxBitcoinAmount } from '@proton/payments/core/amount-limits';
-import { type PaymentsVersion, createTokenV4, getTokenStatusV4 } from '@proton/payments/core/api/api';
+import { createToken, getTokenStatusV5 } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { AmountAndCurrency } from '@proton/payments/core/interface';
 import { addApiMock, addApiResolver, apiMock } from '@proton/testing/lib/api';
@@ -23,8 +23,6 @@ beforeEach(() => {
     jest.clearAllMocks();
 });
 
-const paymentsVersion: PaymentsVersion = 'v4';
-
 it('should render', () => {
     const amountAndCurrency: AmountAndCurrency = {
         Amount: 1000,
@@ -36,7 +34,6 @@ it('should render', () => {
             api: apiMock,
             onTokenValidated,
             enablePolling: true,
-            paymentsVersion,
             ...amountAndCurrency,
         })
     );
@@ -55,7 +52,6 @@ it('should request the token', async () => {
             api: apiMock,
             onTokenValidated,
             enablePolling: true,
-            paymentsVersion,
             ...amountAndCurrency,
         })
     );
@@ -78,7 +74,6 @@ it('should not request the token automatically', () => {
                 api: apiMock,
                 onTokenValidated,
                 enablePolling: true,
-                paymentsVersion,
                 ...amountAndCurrency,
             }),
         {
@@ -111,7 +106,6 @@ it('should not request the token if the amount is too low', async () => {
             api: apiMock,
             onTokenValidated,
             enablePolling: true,
-            paymentsVersion,
             ...amountAndCurrency,
         })
     );
@@ -132,7 +126,6 @@ it('should not request the token if the amount is too high', async () => {
             api: apiMock,
             onTokenValidated,
             enablePolling: true,
-            paymentsVersion,
             ...amountAndCurrency,
         })
     );
@@ -158,7 +151,7 @@ describe('', () => {
             Currency: 'EUR',
         };
 
-        addApiMock(createTokenV4({} as any).url, () => ({
+        addApiMock(createToken({} as any).url, () => ({
             Code: 1000,
             Token: 'Token-12345',
             Status: 0,
@@ -175,7 +168,6 @@ describe('', () => {
                 api: apiMock,
                 onTokenValidated,
                 enablePolling: true,
-                paymentsVersion,
                 ...amountAndCurrency,
             })
         );
@@ -196,7 +188,7 @@ describe('', () => {
             Currency: 'EUR',
         };
 
-        addApiMock(createTokenV4({} as any).url, () => ({
+        addApiMock(createToken({} as any).url, () => ({
             Code: 1000,
             Token: 'Token-12345',
             Status: 0,
@@ -208,7 +200,7 @@ describe('', () => {
             },
         }));
 
-        addApiMock(getTokenStatusV4('Token-12345').url, () => ({
+        addApiMock(getTokenStatusV5('Token-12345').url, () => ({
             Code: 1000,
             Status: PAYMENT_TOKEN_STATUS.PENDING,
         }));
@@ -219,7 +211,6 @@ describe('', () => {
                     api: apiMock,
                     onTokenValidated,
                     enablePolling,
-                    paymentsVersion,
                     ...amountAndCurrency,
                 }),
             {
@@ -255,7 +246,7 @@ describe('', () => {
             Currency: 'EUR',
         };
 
-        addApiMock(createTokenV4({} as any).url, () => ({
+        addApiMock(createToken({} as any).url, () => ({
             Code: 1000,
             Token: 'Token-12345',
             Status: 0,
@@ -269,7 +260,7 @@ describe('', () => {
 
         let resolvers: ReturnType<typeof addApiResolver>;
         const updateResolvers = () => {
-            resolvers = addApiResolver(getTokenStatusV4('Token-12345').url);
+            resolvers = addApiResolver(getTokenStatusV5('Token-12345').url);
         };
         updateResolvers();
 
@@ -290,7 +281,6 @@ describe('', () => {
                     api: apiMock,
                     onTokenValidated,
                     enablePolling,
-                    paymentsVersion,
                     ...amountAndCurrency,
                 }),
             {
@@ -321,7 +311,7 @@ describe('', () => {
     });
 
     it('should have awaitingBitcoinPayment === true when the token is created', async () => {
-        addApiMock(createTokenV4({} as any).url, () => ({
+        addApiMock(createToken({} as any).url, () => ({
             Code: 1000,
             Token: 'Token-12345',
             Status: 0,
@@ -340,7 +330,6 @@ describe('', () => {
                 enablePolling: true,
                 Amount: 1000,
                 Currency: 'USD',
-                paymentsVersion,
             })
         );
 
@@ -353,7 +342,7 @@ describe('', () => {
     });
 
     it('should set awaitingBitcoinPayment to false when the token is validated', async () => {
-        addApiMock(createTokenV4({} as any).url, () => ({
+        addApiMock(createToken({} as any).url, () => ({
             Code: 1000,
             Token: 'Token-12345',
             Status: 0,
@@ -372,14 +361,13 @@ describe('', () => {
                 enablePolling: true,
                 Amount: 1000,
                 Currency: 'USD',
-                paymentsVersion,
             })
         );
 
         await act(() => result.current.request());
         expect(result.current.awaitingBitcoinPayment).toBe(true);
 
-        addApiMock(getTokenStatusV4('Token-12345').url, () => ({
+        addApiMock(getTokenStatusV5('Token-12345').url, () => ({
             Code: 1000,
             Status: PAYMENT_TOKEN_STATUS.CHARGEABLE,
         }));

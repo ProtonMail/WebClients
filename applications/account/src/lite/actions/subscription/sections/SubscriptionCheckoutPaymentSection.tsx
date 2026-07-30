@@ -12,7 +12,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import type { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcLock } from '@proton/icons/icons/IcLock';
-import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import { DisplayablePaymentError } from '@proton/payments/core/errors';
 import type { PaymentMethodType } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
@@ -146,7 +145,6 @@ const SubscriptionCheckoutPaymentSection = ({
                     processorType: paymentFacade.selectedProcessor?.meta.type,
                     paymentMethod: paymentFacade.selectedMethodType,
                     paymentMethodValue: paymentFacade.selectedMethodValue,
-                    paymentsVersion: getPaymentsVersion(),
                     tokenDidntHaveEmail,
                 },
             });
