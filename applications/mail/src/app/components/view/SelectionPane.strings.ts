@@ -84,13 +84,13 @@ export const getCategoryText = (
     if (checked) {
         return conversationMode
             ? c('Info').ngettext(
-                  msgid`You selected **${checked} conversation** in ${categoryLabel} category`,
-                  `You selected **${checked} conversations** in ${categoryLabel} category`,
+                  msgid`You selected **${checked} conversation** in your ${categoryLabel} category`,
+                  `You selected **${checked} conversations** in your ${categoryLabel} category`,
                   checked
               )
             : c('Info').ngettext(
-                  msgid`You selected **${checked} message** in ${categoryLabel} category`,
-                  `You selected **${checked} messages** in ${categoryLabel} category`,
+                  msgid`You selected **${checked} message** in your ${categoryLabel} category`,
+                  `You selected **${checked} messages** in your ${categoryLabel} category`,
                   checked
               );
     }
@@ -98,14 +98,14 @@ export const getCategoryText = (
     // translator: To have plural forms AND a part in bold, we surround the bold part with "**" so it can be replaced by a <strong> tag in the code. Here, "{count} conversation/s" will be bold. ${categoryLabel} is the localized category name (e.g. Social). You need to keep both in your translation.
     return conversationMode
         ? c('Info').ngettext(
-              msgid`You have **${count} conversation** in ${categoryLabel} category`,
-              `You have **${count} conversations** in ${categoryLabel} category`,
+              msgid`You have **${count} conversation** in your ${categoryLabel} category`,
+              `You have **${count} conversations** in your ${categoryLabel} category`,
               count
           )
         : // translator: same as above but for messages.
           c('Info').ngettext(
-              msgid`You have **${count} message** in ${categoryLabel} category`,
-              `You have **${count} messages** in ${categoryLabel} category`,
+              msgid`You have **${count} message** in your ${categoryLabel} category`,
+              `You have **${count} messages** in your ${categoryLabel} category`,
               count
           );
 };
