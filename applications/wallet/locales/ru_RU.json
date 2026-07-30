@@ -172,9 +172,6 @@
       "Get the apps": [
         "Получить приложения"
       ],
-      "Get the deal": [
-        "Воспользоваться"
-      ],
       "Get verification code": [
         "Получить проверочный код"
       ],
@@ -641,6 +638,12 @@
         "${ n } месяцев",
         "${ n } месяцев",
         "${ n } месяца"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } года",
+        "${ n } лет",
+        "${ n } лет"
       ],
       "1 month": [
         "1 месяц"
@@ -5310,6 +5313,28 @@
         "Внешний получатель"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Владелец"
+      ],
+      "Security Admin": [
+        "Администратор безопасности"
+      ],
+      "User Admin": [
+        "Администратор пользователей"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Проверьте безопасность аккаунта"
@@ -5936,9 +5961,6 @@
       ],
       "Summary": [
         "Сводка"
-      ],
-      "Summer Sale": [
-        "Летние скидки"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"

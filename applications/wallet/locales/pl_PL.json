@@ -172,9 +172,6 @@
       "Get the apps": [
         "Pobierz aplikacje"
       ],
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
@@ -5337,6 +5334,28 @@
         "Zewnętrzny odbiorca"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Właściciel"
+      ],
+      "Security Admin": [
+        "Administrator bezpieczeństwa"
+      ],
+      "User Admin": [
+        "Administrator użytkowników"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfiguruj zasady bezpieczeństwa, przechowywanie danych oraz infrastrukturę VPN i zarządzaj logami audytowymi."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Zarządzaj wszystkimi użytkownikami, grupami, bezpieczeństwem, rozliczeniami i konfiguracjami systemu."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Zarządzaj użytkownikami, grupami i przestrzenią dyskową dla wszystkich członków, przypisuj stanowiska i przydzielaj licencje."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Sprawdź bezpieczeństwo konta"
@@ -5963,9 +5982,6 @@
       ],
       "Summary": [
         "Podsumowanie"
-      ],
-      "Summer Sale": [
-        "Letnie promocje"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }"
