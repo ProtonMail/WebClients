@@ -1408,6 +1408,15 @@
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "${ PASS_APP_NAME } 데스크톱 앱에 로그인해야 합니다."
+      ],
+      "Regex invalid": [
+        "유효하지 않은 정규 표현식"
+      ],
+      "Regex unsafe": [
+        "안전하지 않은 정규 표현식"
+      ],
+      "Unsupported file type": [
+        "지원되지 않는 파일 형식"
       ]
     },
     "Error message": {
