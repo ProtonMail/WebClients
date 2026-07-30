@@ -22,7 +22,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAutomaticCurrency, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
-import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, PaymentStatus, PlainPaymentMethodType } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
@@ -203,7 +202,6 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
                         processorType: paymentFacade.selectedProcessor?.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
-                        paymentsVersion: getPaymentsVersion(),
                     },
                 });
             }

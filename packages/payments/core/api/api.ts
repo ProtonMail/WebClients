@@ -49,20 +49,9 @@ export async function getPaymentMethodStatus(api: Api) {
 }
 
 export type PaymentsVersion = 'v4' | 'v5';
-let paymentsVersion: PaymentsVersion = 'v5';
-
-const plansVersion: PaymentsVersion = 'v4';
-
-export function setPaymentsVersion(version: PaymentsVersion) {
-    paymentsVersion = version;
-}
-
-export function getPaymentsVersion(): PaymentsVersion {
-    return paymentsVersion;
-}
 
 export const queryFreePlan = (params?: QueryPlansParams) => ({
-    url: `payments/${plansVersion}/plans/default`,
+    url: `payments/v4/plans/default`,
     method: 'get',
     params,
 });
@@ -87,8 +76,8 @@ export interface FeedbackDowngradeData {
     Context: 'vpn' | 'mail';
 }
 
-export const deleteSubscription = (data: FeedbackDowngradeData, version: PaymentsVersion) => ({
-    url: `payments/${version}/subscription`,
+export const deleteSubscription = (data: FeedbackDowngradeData) => ({
+    url: `payments/v5/subscription`,
     method: 'delete',
     data,
 });
@@ -135,8 +124,8 @@ export interface QueryInvoicesParams {
 /**
  * Query list of invoices for the current user. The response is {@link InvoiceResponse}
  */
-export const queryInvoices = (params: QueryInvoicesParams, version?: PaymentsVersion) => ({
-    url: `payments/${version ?? paymentsVersion}/invoices`,
+export const queryInvoices = (params: QueryInvoicesParams) => ({
+    url: `payments/v5/invoices`,
     method: 'get',
     params,
 });
@@ -146,7 +135,7 @@ export interface QueryPlansParams {
 }
 
 export const queryPlans = (params?: QueryPlansParams) => ({
-    url: `payments/${plansVersion}/plans`,
+    url: `payments/v4/plans`,
     method: 'get',
     params,
 });
@@ -172,14 +161,14 @@ export const getTransactionPDF = (transactionID: string | number) => ({
     output: 'arrayBuffer',
 });
 
-export const checkInvoice = (invoiceID: string, version?: PaymentsVersion, GiftCode?: string) => ({
-    url: `payments/${version ?? paymentsVersion}/invoices/${invoiceID}/check`,
+export const checkInvoice = (invoiceID: string, version: PaymentsVersion, GiftCode?: string) => ({
+    url: `payments/${version}/invoices/${invoiceID}/check`,
     method: 'put',
     data: { GiftCode },
 });
 
-export const queryPaymentMethod = (methodID: string, forceVersion?: PaymentsVersion) => ({
-    url: `payments/${forceVersion ?? paymentsVersion}/methods/${methodID}`,
+export const queryPaymentMethod = (methodID: string) => ({
+    url: `payments/v5/methods/${methodID}`,
     method: 'get',
 });
 
@@ -202,14 +191,14 @@ export interface UpdatePaymentMethodsData {
     Autopay: Autopay;
 }
 
-export const updatePaymentMethod = (methodId: string, data: UpdatePaymentMethodsData, version: PaymentsVersion) => ({
-    url: `payments/${version}/methods/${methodId}`,
+export const updatePaymentMethod = (methodId: string, data: UpdatePaymentMethodsData) => ({
+    url: `payments/v5/methods/${methodId}`,
     method: 'put',
     data,
 });
 
-export const deletePaymentMethod = (methodID: string, version: PaymentsVersion) => ({
-    url: `payments/${version}/methods/${methodID}`,
+export const deletePaymentMethod = (methodID: string) => ({
+    url: `payments/v5/methods/${methodID}`,
     method: 'delete',
 });
 
@@ -228,8 +217,8 @@ export const payInvoice = (
     data,
 });
 
-export const orderPaymentMethods = (PaymentMethodIDs: string[], version: PaymentsVersion) => ({
-    url: `payments/${version}/methods/order`,
+export const orderPaymentMethods = (PaymentMethodIDs: string[]) => ({
+    url: `payments/v5/methods/order`,
     method: 'put',
     data: { PaymentMethodIDs },
 });
@@ -240,10 +229,9 @@ export interface GiftCodeData {
 }
 
 export const buyCredit = (
-    data: (TokenPaymentMethod & AmountAndCurrency) | GiftCodeData | ChargeablePaymentParameters,
-    forceVersion: PaymentsVersion
+    data: (TokenPaymentMethod & AmountAndCurrency) | GiftCodeData | ChargeablePaymentParameters
 ) => ({
-    url: `payments/${forceVersion ?? paymentsVersion}/credit`,
+    url: `payments/v5/credit`,
     method: 'post',
     data,
 });
@@ -252,8 +240,8 @@ export interface ValidateCreditData {
     GiftCode: string;
 }
 
-export const validateCredit = (data: ValidateCreditData, version: PaymentsVersion) => ({
-    url: `payments/${version ?? paymentsVersion}/credit/check`,
+export const validateCredit = (data: ValidateCreditData) => ({
+    url: `payments/v5/credit/check`,
     method: 'post',
     data,
 });
@@ -262,14 +250,11 @@ export type CreateBitcoinTokenData = AmountAndCurrency & WrappedCryptoPayment;
 
 export type CreateTokenData = ((AmountAndCurrency | {}) & ExistingPayment) | CreateBitcoinTokenData;
 
-export const createToken = (data: CreateTokenData, version: PaymentsVersion) => ({
-    url: `payments/${version}/tokens`,
+export const createToken = (data: CreateTokenData) => ({
+    url: `payments/v5/tokens`,
     method: 'post',
     data,
 });
-
-export const createTokenV4 = (data: CreateTokenData) => createToken(data, 'v4');
-export const createTokenV5 = (data: CreateTokenData) => createToken(data, 'v5');
 
 export const getTokenStatus = (paymentToken: string, version: PaymentsVersion) => ({
     url: `payments/${version}/tokens/${paymentToken}`,
@@ -490,7 +475,7 @@ export function markPaymentMethodAsDefault(api: Api, methodID: string, methods: 
     const index = methods.findIndex(({ ID }) => ID === methodID);
     IDs.splice(index, 1);
     IDs.unshift(methodID);
-    return api(orderPaymentMethods(IDs, 'v5'));
+    return api(orderPaymentMethods(IDs));
 }
 
 const addSubscriptionPlan = (subscription: Subscription): Subscription => {

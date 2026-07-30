@@ -22,7 +22,7 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { useLoading } from '@proton/hooks';
 import { IcGift } from '@proton/icons/icons/IcGift';
-import { type CheckSubscriptionData, ProrationMode, getPaymentsVersion } from '@proton/payments/core/api/api';
+import { type CheckSubscriptionData, ProrationMode } from '@proton/payments/core/api/api';
 import type { BillingAddress, BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getIsCustomCycle } from '@proton/payments/core/checkout';
 import { getCheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
@@ -928,7 +928,6 @@ const SubscriptionContainerInner = ({
                         processorType: paymentFacade.selectedProcessor?.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
-                        paymentsVersion: getPaymentsVersion(),
                         tokenDidntHaveEmail,
                     },
                 });
