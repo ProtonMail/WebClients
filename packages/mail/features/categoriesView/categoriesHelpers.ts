@@ -4,28 +4,28 @@ import type { Label } from '@proton/shared/lib/interfaces';
 import type { CategoryTab } from './categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from './categoriesConstants';
 
-const RAW_TO_CATEGORY: Record<string, CategoryTab> = {
-    '24': {
+const RAW_TO_CATEGORY: Record<CategoryLabelID, CategoryTab> = {
+    [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: {
         id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
         colorShade: CATEGORIES_COLOR_SHADES.IRIS,
     },
-    '20': {
+    [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]: {
         id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
         colorShade: CATEGORIES_COLOR_SHADES.CYAN,
     },
-    '21': {
+    [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]: {
         id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
         colorShade: CATEGORIES_COLOR_SHADES.TEAL,
     },
-    '25': {
+    [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: {
         id: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
         colorShade: CATEGORIES_COLOR_SHADES.ORANGE,
     },
-    '26': {
+    [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: {
         id: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
         colorShade: CATEGORIES_COLOR_SHADES.RED,
     },
-    '22': {
+    [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: {
         id: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
         colorShade: CATEGORIES_COLOR_SHADES.PINK,
     },
