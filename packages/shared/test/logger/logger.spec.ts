@@ -2,7 +2,10 @@ import { type AesGcmCryptoKey, generateAndImportKey } from '@protontech/crypto/s
 import log from 'loglevel';
 import type { Mock, MockInstance } from 'vitest';
 
+import { LOGGER_DB_PREFIX } from '../../lib/logger/constants';
 import { Logger, logger, loggerManager } from '../../lib/logger/logger';
+import { IndexedDBStorage } from '../../lib/logger/storage/IndexedDBStorage';
+import { LocalStorage } from '../../lib/logger/storage/LocalStorage';
 
 // Increase timeout for async operations
 vi.setConfig({ testTimeout: 15000 });
@@ -578,5 +581,155 @@ describe('Logger', () => {
         // Skipped - requires proper IndexedDB environment setup
         // The actual functionality works but requires proper IndexedDB setup
         it.skip('should discover and clean up multiple logger databases', async () => {});
+    });
+
+    // These exercise the real storage-selection path (no forceMemoryStorage). The shared
+    // package runs in Chromium via Playwright, so `indexedDB` and `localStorage` are genuine.
+    describe('Storage backend selection', () => {
+        const deleteDatabase = (name: string) =>
+            new Promise<void>((resolve, reject) => {
+                const request = indexedDB.deleteDatabase(name);
+                request.onsuccess = () => resolve();
+                request.onerror = () => reject();
+                request.onblocked = () => reject();
+            });
+
+        // Track anything the tests persist so we don't leak state between runs.
+        const createdDbNames = new Set<string>();
+
+        afterEach(async () => {
+            // Close the loggers' storage connections first, otherwise deleteDatabase() blocks
+            // on the still-open connection (the outer afterEach destroys them only afterwards).
+            await Promise.all(testLoggers.map((testLogger) => testLogger.destroy().catch(() => {})));
+
+            await Promise.all(Array.from(createdDbNames).map((name) => deleteDatabase(name).catch(() => {})));
+            createdDbNames.clear();
+
+            Object.keys(localStorage)
+                .filter((key) => key.startsWith(LOGGER_DB_PREFIX))
+                .forEach((key) => localStorage.removeItem(key));
+        });
+
+        // Poll getLogs a few times since persistence goes through the async plugin.
+        const waitForLog = async (testLogger: Logger, needle: string) => {
+            let logs = '';
+            for (let attempt = 0; attempt < 20; attempt++) {
+                await new Promise((resolve) => setTimeout(resolve, 50));
+                logs = await testLogger.getLogs();
+                if (logs.includes(needle)) {
+                    break;
+                }
+            }
+            return logs;
+        };
+
+        it('uses IndexedDB when storage is accessible and round-trips logs', async () => {
+            const loggerName = `idb-path-${Date.now()}`;
+            createdDbNames.add(`${LOGGER_DB_PREFIX}${loggerName}`);
+
+            const testLogger = new Logger(loggerName);
+            testLoggers.push(testLogger);
+
+            await testLogger.initialize({
+                encryptionKey: mockEncryptionKey,
+                appName: 'idb-test-app',
+                loggerID: '',
+            });
+
+            // Storage is selected asynchronously (initialize() does not await it).
+            await (testLogger as any).storageInitialized;
+
+            // Selected the IndexedDB backend, not a fallback.
+            expect((testLogger as any).storage).toBeInstanceOf(IndexedDBStorage);
+
+            testLogger.info('IndexedDB round-trip message');
+            const logs = await waitForLog(testLogger, 'IndexedDB round-trip message');
+            expect(logs).toContain('IndexedDB round-trip message');
+
+            // And the log really landed in an IndexedDB database with the expected name.
+            const dbNames = (await indexedDB.databases()).map((db) => db.name);
+            expect(dbNames).toContain(`${LOGGER_DB_PREFIX}${loggerName}`);
+        });
+
+        it('instantiates IndexedDBStorage exactly once per createLogger', async () => {
+            const loggerName = `single-idb-${Date.now()}`;
+            createdDbNames.add(`${LOGGER_DB_PREFIX}${loggerName}`);
+
+            // The constructor calls getDatabaseName() exactly once (and nothing else does),
+            // so its call count tracks how many IndexedDBStorage instances were created.
+            const ctorProbe = vi.spyOn(IndexedDBStorage.prototype as any, 'getDatabaseName');
+
+            const testLogger = await loggerManager.createLogger(loggerName, {
+                encryptionKey: mockEncryptionKey,
+                appName: 'idb-test-app',
+                loggerID: '',
+            });
+            testLoggers.push(testLogger);
+
+            // Let storage init settle, plus the startCleanup() pass scheduled on it, in case
+            // cleanup would spin up a second storage instance.
+            await (testLogger as any).storageInitialized;
+            await new Promise((resolve) => setTimeout(resolve, 200));
+
+            expect((testLogger as any).storage).toBeInstanceOf(IndexedDBStorage);
+            expect(ctorProbe).toHaveBeenCalledTimes(1);
+        });
+
+        it('creates only the requested database (no throwaway __test__ probe db)', async () => {
+            const loggerName = `only-own-db-${Date.now()}`;
+            const dbName = `${LOGGER_DB_PREFIX}${loggerName}`;
+            createdDbNames.add(dbName);
+
+            const namesBefore = new Set((await indexedDB.databases()).map((db) => db.name));
+
+            const testLogger = await loggerManager.createLogger(loggerName, {
+                encryptionKey: mockEncryptionKey,
+                appName: 'idb-test-app',
+                loggerID: '',
+            });
+            testLoggers.push(testLogger);
+
+            // Let storage init + the scheduled startCleanup() pass settle, so any stray
+            // throwaway database (e.g. the old `__test__`/`_test` probe) would have appeared.
+            await (testLogger as any).storageInitialized;
+            await new Promise((resolve) => setTimeout(resolve, 200));
+
+            // The only database that came into existence is the requested one - no probe dbs.
+            const newNames = (await indexedDB.databases())
+                .map((db) => db.name)
+                .filter((name) => name && !namesBefore.has(name));
+            expect(newNames).toEqual([dbName]);
+        });
+
+        it('falls back to LocalStorage when IndexedDB is not accessible', async () => {
+            // Make detectStorageCapabilities report the backend as inaccessible: it probes
+            // with indexedDB.databases(), so a rejection there flips isAccessible to false.
+            vi.spyOn(indexedDB, 'databases').mockRejectedValue(new Error('IndexedDB blocked'));
+
+            const loggerName = `fallback-path-${Date.now()}`;
+
+            const testLogger = new Logger(loggerName);
+            testLoggers.push(testLogger);
+
+            await testLogger.initialize({
+                encryptionKey: mockEncryptionKey,
+                appName: 'fallback-test-app',
+                loggerID: '',
+            });
+
+            // Storage is selected asynchronously (initialize() does not await it).
+            await (testLogger as any).storageInitialized;
+
+            // Fell back to LocalStorage rather than IndexedDB or memory.
+            expect((testLogger as any).storage).toBeInstanceOf(LocalStorage);
+
+            testLogger.info('LocalStorage fallback message');
+            const logs = await waitForLog(testLogger, 'LocalStorage fallback message');
+            expect(logs).toContain('LocalStorage fallback message');
+
+            // And the log was actually written to localStorage under the logger prefix.
+            const hasLoggerKey = Object.keys(localStorage).some((key) => key.startsWith(LOGGER_DB_PREFIX));
+            expect(hasLoggerKey).toBe(true);
+        });
     });
 });
