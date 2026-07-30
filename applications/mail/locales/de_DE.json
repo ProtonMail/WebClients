@@ -642,9 +642,6 @@
       "Get the browser extension": [
         "Hol dir die Browsererweiterung"
       ],
-      "Get the deal": [
-        "Jetzt zugreifen"
-      ],
       "Get the writing assistant": [
         "Hol dir den Schreibassistenten"
       ],
@@ -1526,7 +1523,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -4550,12 +4548,12 @@
       ]
     },
     "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } neue Nachricht",
-        "${ notificationsToShow.length } neue Nachrichten"
+      "${ messageCount } new message": [
+        "${ messageCount } neue Nachricht",
+        "${ messageCount } neue Nachrichten"
       ],
-      "From: ${ sender } - ${ Subject }": [
-        "Von: ${ sender } – ${ Subject }"
+      "From: ${ sender } - ${ message.Subject }": [
+        "Von: ${ sender } – ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6837,6 +6835,10 @@
         "${ contactsLength } Kontakt",
         "${ contactsLength } Kontakte"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } E-Mail → ${ dest }",
+        "${ count } E-Mails → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } von ${ totalProgress }",
         "${ currentProgress } von ${ totalProgress }"
@@ -8071,6 +8073,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Die meisten öffentlichen WLAN-Netzwerke sind sicher, aber einige sind nicht sicher genug, sodass du Cyber-Bedrohungen ausgesetzt bist. Ein VPN verschlüsselt deinen Datenverkehr, damit du geschützt bist."
       ],
+      "Move emails": [
+        "E-Mails verschieben"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
       ],
@@ -8163,6 +8168,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Öffne die Anleitung für empfohlene Aktionen und hilfreiche Links."
+      ],
+      "Opened ${ location }": [
+        "${ location } geöffnet"
       ],
       "Optional": [
         "Optional"
@@ -9786,6 +9794,9 @@
       "Apply to future messages": [
         "Auf zukünftige Nachrichten anwenden"
       ],
+      "Archive": [
+        "Archivieren"
+      ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
@@ -10419,6 +10430,9 @@
       "Sort": [
         "Sortieren"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Markiert"
       ],
@@ -10493,6 +10507,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transaktionen – Bestätigungen, Buchungen, Rechnungen und Bestellungen"
+      ],
+      "Trash": [
+        "Papierkorb"
       ],
       "Undisclosed Recipients": [
         "Verborgene Empfänger"
@@ -13707,6 +13724,28 @@
         "Das Neuverschlüsseln der Einladung ist fehlgeschlagen. Bitte versuche es erneut."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Besitzer"
+      ],
+      "Security Admin": [
+        "Sicherheitsadministrator"
+      ],
+      "User Admin": [
+        "Benutzeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Sicherheitsrichtlinien, Datenaufbewahrung und VPN-Infrastruktur konfigurieren sowie Prüfprotokolle verwalten."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Überprüfung der Kontosicherheit"
@@ -16120,6 +16159,9 @@
       "Move all messages to trash": [
         "Alle Nachrichten in den Papierkorb verschieben"
       ],
+      "Move emails": [
+        "E-Mails verschieben"
+      ],
       "Move to": [
         "Verschieben nach"
       ],
@@ -16449,9 +16491,6 @@
       ],
       "Summary": [
         "Zusammenfassung"
-      ],
-      "Summer Sale": [
-        "Sommer Sale"
       ],
       "This field cannot be empty": [
         "Dieses Feld darf nicht leer sein."

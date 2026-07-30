@@ -642,9 +642,6 @@
       "Get the browser extension": [
         "Hent browserudvidelsen"
       ],
-      "Get the deal": [
-        "Gør brug af tilbuddet"
-      ],
       "Get the writing assistant": [
         "Hent skriveassistenten"
       ],
@@ -1496,7 +1493,7 @@
         "For at søge sikkert i dine e-mails, har vi brug for at downloade en kopi af dine beskeder til din browser. Den første download kan tage et stykke tid."
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
-        "Skift ${ LUMO_SHORT_APP_NAME }"
+        "Vis/skjul ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "Skift Kalender-app"
@@ -1526,7 +1523,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -4550,12 +4548,12 @@
       ]
     },
     "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } ny besked",
-        "${ notificationsToShow.length } nye beskeder"
+      "${ messageCount } new message": [
+        "${ messageCount } ny besked",
+        "${ messageCount } nye beskeder"
       ],
-      "From: ${ sender } - ${ Subject }": [
-        "Fra: ${ sender } - ${ Subject }"
+      "From: ${ sender } - ${ message.Subject }": [
+        "Fra: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6837,6 +6835,10 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mails → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } ud af ${ totalProgress }",
         "${ currentProgress } ud af ${ totalProgress }"
@@ -8071,6 +8073,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-netværk er sikre, men nogle mangler sikkerhed, hvilket udsætter dig for cybertrusler. En VPN krypterer din trafik og holder dig beskyttet."
       ],
+      "Move emails": [
+        "Flyt e-mails"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
@@ -8163,6 +8168,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Åbn vejledningen for anbefalede handlinger og nyttige links."
+      ],
+      "Opened ${ location }": [
+        "Åbnede ${ location }"
       ],
       "Optional": [
         "Valgfri"
@@ -9786,6 +9794,9 @@
       "Apply to future messages": [
         "Anvendes for fremtidige meddelelser"
       ],
+      "Archive": [
+        "Arkivér"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -10419,6 +10430,9 @@
       "Sort": [
         "Sortér"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Stjernemarkeret"
       ],
@@ -10493,6 +10507,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transaktioner - Kvitteringer, reservationer, regninger og ordrer"
+      ],
+      "Trash": [
+        "Papirkurv"
       ],
       "Undisclosed Recipients": [
         "Oplyste modtagere"
@@ -13707,6 +13724,28 @@
         "Genkryptering af invitation mislykkedes. Prøv igen."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Ejer"
+      ],
+      "Security Admin": [
+        "Sikkerhedsadmin"
+      ],
+      "User Admin": [
+        "Brugeradmin"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brugere, grupper, og lagerplads for alle medlemmer, og tildel roller samt licenser."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Gennemgå kontoens sikkerhed"
@@ -15256,7 +15295,7 @@
         "Flyt ${ selectionCount } beskeder"
       ],
       "Moved to ${ label }. Similar messages will be categorized here in the future.": [
-        "Flyttet til ${ label }. Lignende beskeder vil fremover blive kategoriseret ligesådan."
+        "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her fremover."
       ],
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
@@ -16120,6 +16159,9 @@
       "Move all messages to trash": [
         "Flyt alle beskeder til papirkurven"
       ],
+      "Move emails": [
+        "Flyt e-mails"
+      ],
       "Move to": [
         "Flyt til"
       ],
@@ -16449,9 +16491,6 @@
       ],
       "Summary": [
         "Sammenfatning"
-      ],
-      "Summer Sale": [
-        "Sommerudsalg"
       ],
       "This field cannot be empty": [
         "Dette felt må ikke være tomt"

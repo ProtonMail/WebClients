@@ -645,9 +645,6 @@
       "Get the browser extension": [
         "Získať rozšírenie prehliadača"
       ],
-      "Get the deal": [
-        "Využiť ponuku"
-      ],
       "Get the writing assistant": [
         "Získajte asistenta písania"
       ],
@@ -1525,7 +1522,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4612,17 +4612,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Vo vami nahranom súbore CSV sme zistili nasledujúce pole. Zaškrtnite tie, ktoré chcete importovať."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nová správa",
-        "${ notificationsToShow.length } nové správy",
-        "${ notificationsToShow.length } nových správ",
-        "${ notificationsToShow.length } nových správ"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Od: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10751,6 +10740,9 @@
       "Sort": [
         "Zoradiť"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "S hviezdičkou"
       ],
@@ -10825,6 +10817,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transakcie – príjmy, rezervácie, faktúry a objednávky"
+      ],
+      "Trash": [
+        "Kôš"
       ],
       "Undisclosed Recipients": [
         "Skrytí príjemcovia"
@@ -14153,6 +14148,28 @@
         "Znovu-zašifrovanie pozvánky zlyhalo. Prosíme skúste to znova."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Vlastník"
+      ],
+      "Security Admin": [
+        "Bezpečnostný správca"
+      ],
+      "User Admin": [
+        "Správca používateľov"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všetkých používateľov, skupiny, zabezpečenie, fakturáciu a systémové konfigurácie."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Správa používateľov, skupín a úložného priestoru pre všetkých členov, prideľovanie rolí a prideľovanie licencií."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Skontrolovať bezpečnosť účtu"
@@ -17060,9 +17077,6 @@
       ],
       "Summary": [
         "Zhrnutie"
-      ],
-      "Summer Sale": [
-        "Letný výpredaj"
       ],
       "This field cannot be empty": [
         "Toto pole nemôže byť prázdne"

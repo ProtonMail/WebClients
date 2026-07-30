@@ -642,9 +642,6 @@
       "Get the browser extension": [
         "Obtenha a extensão do navegador"
       ],
-      "Get the deal": [
-        "Obtenha a oferta"
-      ],
       "Get the writing assistant": [
         "Obter assistente de escrita"
       ],
@@ -1495,6 +1492,9 @@
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Para pesquisar seus e-mails com segurança, precisamos baixar uma cópia de suas mensagens para o navegador. O download inicial pode demorar um pouco."
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Alternar o ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Alternar aplicativo de calendário"
       ],
@@ -1523,7 +1523,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4546,15 +4547,6 @@
         "Detectamos os seguintes campos no arquivo CSV que você carregou. Marque os que você deseja importar."
       ]
     },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nova mensagem",
-        "${ notificationsToShow.length } novas mensagens"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "De: ${ sender } - ${ Subject }"
-      ]
-    },
     "Desktop notification title": {
       "New email received": [
         "Novo e-mail recebido"
@@ -6831,6 +6823,10 @@
         "${ contactsLength } contato",
         "${ contactsLength } contatos"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mails → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
@@ -8054,6 +8050,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "A maioria das redes Wi-Fi públicas é segura, mas algumas são vulneráveis, expondo você a ameaças cibernéticas. Uma VPN criptografa seu tráfego, mantendo você protegido."
       ],
+      "Move emails": [
+        "Mover e-mails"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
       ],
@@ -8146,6 +8145,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Abra o guia para ver as ações recomendadas e os links úteis."
+      ],
+      "Opened ${ location }": [
+        "Aberto ${ location }"
       ],
       "Optional": [
         "Opcional"
@@ -8630,6 +8632,9 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Eles não podem enviar spam para você se não souberem seu endereço de e-mail. Proteja sua caixa de entrada com aliases do Hide-my-email."
+      ],
+      "Thinking about this": [
+        "Pensando nisso"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -9763,6 +9768,9 @@
       "Apply to future messages": [
         "Aplicar para as mensagens futuras"
       ],
+      "Archive": [
+        "Arquivar"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -10396,6 +10404,9 @@
       "Sort": [
         "Ordenar"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Favoritos"
       ],
@@ -10470,6 +10481,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transações — Recibos, reservas, faturas e pedidos"
+      ],
+      "Trash": [
+        "Lixeira"
       ],
       "Undisclosed Recipients": [
         "Destinatários ocultos"
@@ -13690,6 +13704,28 @@
         "Falha ao criptografar novamente o convite. Tente novamente."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Proprietário"
+      ],
+      "Security Admin": [
+        "Administrador de segurança"
+      ],
+      "User Admin": [
+        "Administração de usuário"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Revise a segurança da conta"
@@ -16103,6 +16139,9 @@
       "Move all messages to trash": [
         "Mover todas as mensagens para a lixeira"
       ],
+      "Move emails": [
+        "Mover e-mails"
+      ],
       "Move to": [
         "Mover para"
       ],
@@ -16432,9 +16471,6 @@
       ],
       "Summary": [
         "Resumo"
-      ],
-      "Summer Sale": [
-        "Oferta Especial"
       ],
       "This field cannot be empty": [
         "Este campo não pode ficar vazio"

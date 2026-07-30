@@ -639,9 +639,6 @@
       "Get the browser extension": [
         "Hent nettleserutvidelsen"
       ],
-      "Get the deal": [
-        "Skaff deg tilbudet"
-      ],
       "Get the writing assistant": [
         "Skaff deg skriveassistenten"
       ],
@@ -1514,7 +1511,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -4518,15 +4516,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Vi har oppdaget følgende felt i CSV-filen du lastet opp. Merk av for de du ønsker å importere."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } ny melding",
-        "${ notificationsToShow.length } nye meldinger"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Fra: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10349,6 +10338,9 @@
       "Sort": [
         "Sorter"
       ],
+      "Spam": [
+        "Søppelpost"
+      ],
       "Starred": [
         "Stjernemerket"
       ],
@@ -10423,6 +10415,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transaksjoner – Kvitteringer, bestillinger, regninger og bestillinger"
+      ],
+      "Trash": [
+        "Papirkurv"
       ],
       "Undisclosed Recipients": [
         "Ikke avslørte mottakere"
@@ -13616,6 +13611,28 @@
         "Kryptering av invitasjonen på nytt mislyktes. Forsøk igjen."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Eier"
+      ],
+      "Security Admin": [
+        "Sikkerhetsadministrator"
+      ],
+      "User Admin": [
+        "Brukeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhetsretningslinjer, dataoppbevaring, VPN-infrastruktur og administrer revisjonslogger."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brukere, grupper, sikkerhet, fakturering og systemkonfigurasjoner."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brukere, grupper og lagring for alle medlemmer, tildel roller og alloker lisenser."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Gjennomgå kontosikkerhet"
@@ -16355,9 +16372,6 @@
       ],
       "Summary": [
         "Sammendrag"
-      ],
-      "Summer Sale": [
-        "Sommersalg"
       ],
       "This field cannot be empty": [
         "Feltet kan ikke stå tomt"

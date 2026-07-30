@@ -621,9 +621,6 @@
       "Get the browser extension": [
         "Böngészőbővítmény beszerzése"
       ],
-      "Get the deal": [
-        "Érdekel az ajánlat"
-      ],
       "Get the writing assistant": [
         "Az írási segéd beszerzése"
       ],
@@ -1475,7 +1472,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -4122,15 +4120,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "A CSV fájl az alábbi mezőket tartalmazza. Válassza ki, hogy melyeket szeretné importálni."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } új üzenet",
-        "${ notificationsToShow.length } új üzenet"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Feladó: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9528,6 +9517,9 @@
       "Sort": [
         "Rendezés"
       ],
+      "Spam": [
+        "Levélszemét"
+      ],
       "Starred": [
         "Csillagozott"
       ],
@@ -9590,6 +9582,9 @@
       ],
       "Transactions": [
         "Tranzakciók"
+      ],
+      "Trash": [
+        "Lomtár"
       ],
       "Undisclosed Recipients": [
         "Címzettek nem láthatók"
@@ -15084,9 +15079,6 @@
       ],
       "Summary": [
         "Összegzés"
-      ],
-      "Summer Sale": [
-        "Nyári akció"
       ],
       "This field cannot be empty": [
         "Ez a mező nem lehet üres"

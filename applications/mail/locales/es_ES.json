@@ -639,9 +639,6 @@
       "Get the browser extension": [
         "Obtén la extensión del navegador"
       ],
-      "Get the deal": [
-        "Obtener la promoción"
-      ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
       ],
@@ -1514,7 +1511,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -4518,15 +4516,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Se han detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nuevo mensaje",
-        "${ notificationsToShow.length } nuevos mensajes"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "De: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10349,6 +10338,9 @@
       "Sort": [
         "Ordenar"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Destacados"
       ],
@@ -10423,6 +10415,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transacciones - Recibos, reservas, facturas y pedidos"
+      ],
+      "Trash": [
+        "Papelera"
       ],
       "Undisclosed Recipients": [
         "Destinatarios ocultos"
@@ -13616,6 +13611,28 @@
         "Error al cifrar de nuevo la invitación. Inténtalo de nuevo."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Propietario"
+      ],
+      "Security Admin": [
+        "Administrador de seguridad"
+      ],
+      "User Admin": [
+        "Administrador de usuarios"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurar políticas de seguridad, conservación de datos e infraestructura de VPN, y administrar registros de auditoría."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrar todos los usuarios, grupos, seguridad, facturación y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrar usuarios, grupos y almacenamiento de todos los miembros, asignar roles y asignar licencias."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Verificar la seguridad de la cuenta"
@@ -16355,9 +16372,6 @@
       ],
       "Summary": [
         "Resumen"
-      ],
-      "Summer Sale": [
-        "Descuento de verano"
       ],
       "This field cannot be empty": [
         "Este campo no puede estar vacío."
