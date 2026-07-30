@@ -1,7 +1,7 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { buyCredit, createTokenV4 } from '@proton/payments/core/api/api';
+import { buyCredit, createToken } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -41,7 +41,7 @@ const createTokenMock = jest.fn((request) => {
     };
 });
 
-const buyCreditUrl = buyCredit({} as any, 'v4').url;
+const buyCreditUrl = buyCredit({} as any).url;
 const buyCreditMock = jest.fn().mockResolvedValue({});
 
 beforeEach(() => {
@@ -50,7 +50,7 @@ beforeEach(() => {
     // That's an unresolved issue of jsdom https://github.com/jsdom/jsdom/issues/918
     (window as any).SVGElement.prototype.getBBox = jest.fn().mockReturnValue({ width: 0 });
 
-    addApiMock(createTokenV4({} as any).url, createTokenMock);
+    addApiMock(createToken({} as any).url, createTokenMock);
     addApiMock(buyCreditUrl, buyCreditMock);
 
     mockPaymentStatus();

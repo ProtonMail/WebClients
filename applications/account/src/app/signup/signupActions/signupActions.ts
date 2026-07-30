@@ -8,7 +8,6 @@ import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
-import type { PaymentsVersion } from '@proton/payments/core/api/api';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
@@ -343,13 +342,6 @@ export const handleSubscribeUser = async ({
     }
 
     try {
-        let paymentsVersion: PaymentsVersion;
-        if (subscriptionData.payment?.paymentsVersion) {
-            paymentsVersion = subscriptionData.payment.paymentsVersion;
-        } else {
-            paymentsVersion = 'v4';
-        }
-
         const isTrial = subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
         const { Subscription } = await createPaymentSubscription(
@@ -374,7 +366,6 @@ export const handleSubscribeUser = async ({
                 userCurrency: undefined,
                 subscription: undefined,
                 product: productParam,
-                version: paymentsVersion,
                 telemetryContext: telemetryContext ?? 'other',
                 paymentMethodType: subscriptionData.payment?.paymentMethodType,
                 paymentMethodValue: subscriptionData.payment?.paymentMethodValue,

@@ -1,6 +1,5 @@
 import { generateDeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
-import type { PaymentsVersion } from '@proton/payments/core/api/api';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { Currency, Cycle, ExtendedTokenPayment, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
@@ -62,13 +61,6 @@ export const handleSubscribeUser = async (
         return;
     }
 
-    let paymentsVersion: PaymentsVersion;
-    if (subscriptionData.paymentToken?.paymentsVersion) {
-        paymentsVersion = subscriptionData.paymentToken.paymentsVersion;
-    } else {
-        paymentsVersion = 'v4';
-    }
-
     try {
         const { Subscription } = await createPaymentSubscription(
             api,
@@ -89,7 +81,6 @@ export const handleSubscribeUser = async (
             },
             {
                 product: productParam,
-                version: paymentsVersion,
                 build,
                 telemetryContext,
                 userCurrency,

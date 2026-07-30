@@ -28,8 +28,8 @@ const GiftCodeSection = () => {
     };
 
     const submit = async () => {
-        await api(validateCredit({ GiftCode: value }, 'v5'));
-        await api(buyCredit({ GiftCode: value, Amount: 0 }, 'v5'));
+        await api(validateCredit({ GiftCode: value }));
+        await api(buyCredit({ GiftCode: value, Amount: 0 }));
         await call();
         setValue('');
         reset();
