@@ -424,6 +424,9 @@
       "Participants join the call directly": [
         "Katılımcılar görüşmeye doğrudan katılır"
       ],
+      "Paste": [
+        "Yapıştır"
+      ],
       "Pause": [
         "Duraklat"
       ],
@@ -2429,6 +2432,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
       ],
+      "Loading meeting details...": [
+        "Görüşme ayrıntıları yükleniyor..."
+      ],
       "Loading meetings...": [
         "Görüşmeler yükleniyor..."
       ],
@@ -3300,6 +3306,28 @@
       ],
       "Type an encrypted message...": [
         "Şifrelenmiş bir ileti yazın..."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Sahibi"
+      ],
+      "Security Admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "User Admin": [
+        "Kullanıcı yöneticisi"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
       ]
     },
     "Safety review": {
