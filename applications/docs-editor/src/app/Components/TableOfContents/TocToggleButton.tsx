@@ -20,7 +20,7 @@ export function TocOpenButton({ onClick, showNewTag = false }: TocButtonProps) {
       type="button"
       onClick={onClick}
       aria-label={c('Action').t`Open outline`}
-      className={clsx(toggleButtonClassName, 'shadow-norm')}
+      className={clsx(toggleButtonClassName, 'shadow-raised border-weak border border-l-0')}
       data-testid={TOC_TOGGLE_TEST_ID}
     >
       {showNewTag && (
