@@ -24,7 +24,7 @@ export const EmergencyContactSection = ({ app }: { app: APP_NAMES }) => {
             <SettingsSectionWide>
                 <IncomingDelegatedAccessProvider>
                     <IncomingDelegatedAccessActions app={app} />
-                    <IncomingEmergencyContactSettings />
+                    <IncomingEmergencyContactSettings hideEmptyIncomingHelpText={false} />
                 </IncomingDelegatedAccessProvider>
             </SettingsSectionWide>
         </div>

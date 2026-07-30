@@ -27,7 +27,7 @@ export const RecoveryContactSection = ({ app }: { app: APP_NAMES }) => {
             <SettingsSectionWide>
                 <IncomingDelegatedAccessProvider>
                     <IncomingDelegatedAccessActions app={app} />
-                    <IncomingRecoveryContactSettings />
+                    <IncomingRecoveryContactSettings hideEmptyIncomingHelpText={false} />
                     <IncomingRecoveryContactParams />
                 </IncomingDelegatedAccessProvider>
             </SettingsSectionWide>
