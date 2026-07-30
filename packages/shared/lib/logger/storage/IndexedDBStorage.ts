@@ -21,18 +21,6 @@ export class IndexedDBStorage implements Storage {
         private loggerID: string
     ) {
         this.dbName = this.getDatabaseName();
-
-        // Test IndexedDB basic availability - fail fast for common issues
-        if (typeof indexedDB === 'undefined') {
-            throw new Error('IndexedDB is not available');
-        }
-
-        // Test if we can create a request (fails in some restricted environments)
-        try {
-            indexedDB.open('__test__', 1);
-        } catch (error) {
-            throw new Error(`IndexedDB is not functional: ${error}`);
-        }
     }
 
     private getDatabaseName(): string {
