@@ -156,6 +156,9 @@
       "Clear browser data": [
         "Cancella i dati del browser"
       ],
+      "Clear conversation": [
+        "Cancella conversazione"
+      ],
       "Clear data": [
         "Cancella dati"
       ],
@@ -442,9 +445,6 @@
       ],
       "Get the apps": [
         "Ottieni le app"
-      ],
-      "Get the deal": [
-        "Approfitta dell'offerta"
       ],
       "Get the writing assistant": [
         "Ottieni l'assistente alla scrittura"
@@ -892,6 +892,9 @@
       ],
       "Stay": [
         "Resta"
+      ],
+      "Stop": [
+        "Interrompi"
       ],
       "Submit": [
         "Invia"
@@ -6393,6 +6396,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Il processo di verifica aprirà una nuova finestra del browser. Disabilita qualsiasi blocco pop-up."
       ],
+      "Thinking about this": [
+        "Sto riflettendo su questo"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
       ],
@@ -7924,6 +7930,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Licenze ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per utente"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
@@ -10126,6 +10135,9 @@
       "Anytown": [
         "Roma"
       ],
+      "Ask anything…": [
+        "Chiedi qualsiasi cosa…"
+      ],
       "Company name": [
         "Nome dell'azienda"
       ],
@@ -10511,6 +10523,28 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Ricarica evento"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietario"
+      ],
+      "Security Admin": [
+        "Amministratore sicurezza"
+      ],
+      "User Admin": [
+        "Amministratore utenti"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
       ]
     },
     "RSVP Note": {
@@ -12658,9 +12692,6 @@
       ],
       "Summary": [
         "Riepilogo"
-      ],
-      "Summer Sale": [
-        "Saldi estivi"
       ],
       "The booking feature is currently unavailable.": [
         "Questa funzionalità non è attualmente disponibile."

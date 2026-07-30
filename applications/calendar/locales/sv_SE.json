@@ -446,9 +446,6 @@
       "Get the apps": [
         "Skaffa apparna"
       ],
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
       "Get the writing assistant": [
         "Skaffa skrivassistenten"
       ],
@@ -10541,6 +10538,28 @@
         "Ladda om händelse"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Ägare"
+      ],
+      "Security Admin": [
+        "Säkerhetsadministratör"
+      ],
+      "User Admin": [
+        "Användaradministratör"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
+      ]
+    },
     "RSVP Note": {
       "Edit note": [
         "Redigera anteckning"
@@ -12686,9 +12705,6 @@
       ],
       "Summary": [
         "Sammanfattning"
-      ],
-      "Summer Sale": [
-        "Sommarrea"
       ],
       "The booking feature is currently unavailable.": [
         "Bokningsfunktionen är för närvarande inte tillgänglig."
