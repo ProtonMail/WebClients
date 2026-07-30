@@ -4,12 +4,12 @@ import log, { type Logger as LogLevelLogger } from 'loglevel';
 
 import { DAY } from '@proton/shared/lib/constants';
 
+import { detectStorageCapabilities } from '../helpers/browser';
 import {
     CLEANUP_INTERVAL_MS,
     DEFAULT_LOGGER_NAME,
     DEFAULT_MAX_ENTRIES,
     DEFAULT_RETENTION_DAYS,
-    LOGGER_DB_PREFIX,
     MAX_PENDING_LOGS,
     PENDING_LOGS_TRIM_SIZE,
 } from './constants';
@@ -290,12 +290,10 @@ export class Logger {
             return;
         }
 
-        try {
+        const { isAccessible } = await detectStorageCapabilities();
+        if (isAccessible) {
             this.storage = new IndexedDBStorage(this.loggerName, this.loggerID ?? '');
             return;
-        } catch (error) {
-            // eslint-disable-next-line no-console
-            console.warn('IndexedDB initialization failed:', error);
         }
 
         await this.tryFallbackStorage();
@@ -395,54 +393,6 @@ export class Logger {
         }
     }
 
-    private async discoverLoggerDatabases(): Promise<string[]> {
-        try {
-            // Try to use the modern indexedDB.databases() API
-            if ('databases' in indexedDB && typeof indexedDB.databases === 'function') {
-                const databases = await indexedDB.databases();
-                return databases
-                    .map((db) => db.name)
-                    .filter((name): name is string => name !== undefined && name.startsWith(LOGGER_DB_PREFIX));
-            }
-        } catch {
-            // Fall back to manual discovery if the API is not available
-        }
-
-        // Fallback: return just the current database name since we can't discover others
-        if (this.storage instanceof IndexedDBStorage) {
-            const currentDbName = (this.storage as any).dbName;
-            return currentDbName ? [currentDbName] : [];
-        }
-
-        return [];
-    }
-
-    private async removeOldLogsFromAllDatabases(): Promise<void> {
-        try {
-            const databases = await this.discoverLoggerDatabases();
-            const cutoffTime = Date.now() - this.retentionDays * DAY;
-
-            // Process databases in parallel but handle errors individually
-            await Promise.allSettled(
-                databases.map(async (dbName) => {
-                    try {
-                        // Extract logger name from database name
-                        const loggerName = dbName.replace(new RegExp(`^${LOGGER_DB_PREFIX}`), '');
-                        const tempStorage = new IndexedDBStorage(loggerName, '');
-                        await tempStorage.removeOlderThan(cutoffTime);
-                    } catch (error) {
-                        // Log but don't fail - database might be locked by another instance
-                        // eslint-disable-next-line no-console
-                        console.warn(`Failed to clean database ${dbName}:`, error);
-                    }
-                })
-            );
-        } catch (error) {
-            // eslint-disable-next-line no-console
-            console.warn('Error during global database cleanup:', error);
-        }
-    }
-
     private startCleanup(): void {
         void this.removeOldLogs();
         this.cleanupInterval = setInterval(() => {
@@ -476,9 +426,6 @@ export class Logger {
                     console.warn(`IndexedDB storage corrupted for logger '${this.loggerName}', reinitializing:`, error);
                 }
             }
-
-            // Also clean up old logs from all other logger databases
-            await this.removeOldLogsFromAllDatabases();
         } catch (error) {
             // Log the error for debugging purposes
             // eslint-disable-next-line no-console
