@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react'
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
-import { useDocInvites } from '@proton/drive-store'
+import type { DocInvitesHook, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
+import { useInvitationsSdkEnabled } from '~/utils/flags'
 
 export type InviteAutoAcceptResult =
   | {
@@ -17,7 +19,22 @@ export type InviteAutoAccepterProps = {
   onResult: (result: InviteAutoAcceptResult) => void
 }
 
-export function InviteAutoAccepter({ nodeMeta, onResult }: InviteAutoAccepterProps) {
+export function InviteAutoAccepter(props: InviteAutoAccepterProps) {
+  const invitationsWithSDK = useInvitationsSdkEnabled()
+  return (
+    <InviteAutoAccepterContent
+      key={invitationsWithSDK ? 'SDK' : 'legacy'}
+      useDocInvites={invitationsWithSDK ? useDocInvitesSDK : useDocInvitesLegacy}
+      {...props}
+    />
+  )
+}
+
+function InviteAutoAccepterContent({
+  useDocInvites,
+  nodeMeta,
+  onResult,
+}: InviteAutoAccepterProps & { useDocInvites: DocInvitesHook }) {
   const { acceptInvite, inviteForNodeMeta, isLoading } = useDocInvites()
   const acceptRequestInProgress = useRef(false)
   const invite = inviteForNodeMeta(nodeMeta)

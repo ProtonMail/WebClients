@@ -8,7 +8,6 @@ import { IcChevronDown } from '@proton/icons/icons/IcChevronDown'
 import { IcCross } from '@proton/icons/icons/IcCross'
 import { DateFormatter } from '@proton/docs-core'
 import { ServerTime } from '@proton/docs-shared'
-import { useDocInvites } from '@proton/drive-store'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
@@ -21,6 +20,10 @@ import { useHomepageView } from '../../__utils/homepage-view'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
 import type { ExtendedInvitationDetails } from '@proton/drive-store/store'
+import type { DocInvitesHook } from '@proton/drive-store'
+import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
+import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store'
+import { useInvitationsSdkEnabled } from '~/utils/flags'
 
 const MAX_INVITES_WHEN_COLLAPSED = 3
 const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
@@ -30,7 +33,21 @@ const dateFormatter = new DateFormatter()
 export type InvitesTableProps = ComponentPropsWithoutRef<'div'>
 
 export function InvitesTable(props: InvitesTableProps) {
-  const { confirmModal, invitations, recentlyAcceptedInvites, rejectInvite } = useDocInvites()
+  const invitationsWithSDK = useInvitationsSdkEnabled()
+  return (
+    <InvitesTableContent
+      key={invitationsWithSDK ? 'SDK' : 'legacy'}
+      useDocInvites={invitationsWithSDK ? useDocInvitesSDK : useDocInvitesLegacy}
+      {...props}
+    />
+  )
+}
+
+function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocInvitesHook }) {
+  const { useDocInvites, ...props } = allProps
+
+  const { confirmModal, invitations, recentlyAcceptedInvites, rejectInvite, openInvitedDocument, acceptInvite } =
+    useDocInvites()
   const [collapsed, setCollapsed] = useState(true)
 
   const allInvites = [...invitations, ...recentlyAcceptedInvites]
@@ -111,7 +128,12 @@ export function InvitesTable(props: InvitesTableProps) {
                     </span>
 
                     <span className="-me-3 shrink-0 medium:hidden">
-                      <InviteActions invite={invite} onRejectInvite={rejectInvite} />
+                      <InviteActions
+                        invite={invite}
+                        onRejectInvite={rejectInvite}
+                        acceptInvite={acceptInvite}
+                        openInvitedDocument={openInvitedDocument}
+                      />
                     </span>
                   </span>
                 </Table.DataCell>
@@ -147,7 +169,12 @@ export function InvitesTable(props: InvitesTableProps) {
                   </span>
                 </Table.DataCell>
                 <Table.DataCell target="medium" data-testid="invite-actions-cell">
-                  <InviteActions invite={invite} onRejectInvite={rejectInvite} />
+                  <InviteActions
+                    invite={invite}
+                    onRejectInvite={rejectInvite}
+                    acceptInvite={acceptInvite}
+                    openInvitedDocument={openInvitedDocument}
+                  />
                 </Table.DataCell>
               </Table.Row>
             )
@@ -177,14 +204,15 @@ export function InvitesTable(props: InvitesTableProps) {
 interface InviteActionsProps {
   invite: ExtendedInvitationDetails
   onRejectInvite: (invite: ExtendedInvitationDetails) => void
+  acceptInvite: ReturnType<DocInvitesHook>['acceptInvite']
+  openInvitedDocument: ReturnType<DocInvitesHook>['openInvitedDocument']
 }
 
-function InviteActions({ invite, onRejectInvite }: InviteActionsProps) {
+function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocument }: InviteActionsProps) {
   const [isAcceptingInvite, setIsAcceptingInvite] = useState(false)
 
   const application = useApplication()
   const { updateRecentDocuments } = useHomepageView()
-  const { acceptInvite, openInvitedDocument } = useDocInvites()
 
   async function handleAcceptInvite(invite: ExtendedInvitationDetails) {
     try {
