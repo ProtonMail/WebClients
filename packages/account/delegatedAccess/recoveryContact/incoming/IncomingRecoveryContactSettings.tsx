@@ -150,10 +150,13 @@ const IncomingTable = ({ controller }: { controller: IncomingDelegatedAccessProv
     );
 };
 
-export const IncomingRecoveryContactSettings = () => {
+interface Props {
+    hideEmptyIncomingHelpText: boolean;
+}
+export const IncomingRecoveryContactSettings = ({ hideEmptyIncomingHelpText }: Props) => {
     const controller = useIncomingController();
 
-    if (controller.loading || !controller.items.recoveryContacts.length) {
+    if (controller.loading || (hideEmptyIncomingHelpText && !controller.items.recoveryContacts.length)) {
         return null;
     }
 
@@ -163,7 +166,13 @@ export const IncomingRecoveryContactSettings = () => {
                 <h3 className="text-semibold text-rg mb-3">
                     {c('emergency_access').t`People who have you as a recovery contact`}
                 </h3>
-                <IncomingTable controller={controller} />
+                {controller.items.recoveryContacts.length ? (
+                    <IncomingTable controller={controller} />
+                ) : (
+                    <p className="m-0 color-weak">
+                        {c('emergency_access').t`You have not been designated as a recovery contact for anyone yet.`}
+                    </p>
+                )}
             </DashboardCardContent>
         </DashboardCard>
     );

@@ -53,7 +53,7 @@ export const EmergencyContactSubpage = ({ app }: { app: APP_NAMES }) => {
             </OutgoingDelegatedAccessProvider>
             <IncomingDelegatedAccessProvider>
                 <IncomingDelegatedAccessActions app={app} />
-                <IncomingEmergencyContactSettings />
+                <IncomingEmergencyContactSettings hideEmptyIncomingHelpText={true} />
             </IncomingDelegatedAccessProvider>
         </DashboardGrid>
     );
