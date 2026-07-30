@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { updateMeeting } from '@proton/meet/store/slices/meetings';
 import { selectWaitingRoomSetting, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import {
     addWaitingParticipant,
@@ -184,11 +185,12 @@ export const useHostWaitingRoom = ({
     const toggleWaitingRoomPrejoin = useCallback(
         async (newValue: boolean = !waitingRoomSetting) => {
             try {
-                await saveMeetingWaitingRoom({
+                const meeting = await saveMeetingWaitingRoom({
                     meetingLinkName,
                     waitingRoom: newValue ? WaitingRoomState.ENABLED : WaitingRoomState.DISABLED,
                 });
                 dispatch(setWaitingRoomSetting(newValue));
+                dispatch(updateMeeting(meeting));
             } catch (error) {
                 notifyError(c('Error').t`Failed to update waiting room setting. Please try again.`);
                 reportMeetError('Failed to update waiting room setting prejoin', {
