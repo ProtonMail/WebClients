@@ -32,7 +32,7 @@ export function createDocumentItem(
     // lastViewed and lastModified are the same - consistent with pre-SDK behavior
     lastViewed: new ServerTime(lastOpenTime),
     lastModified: new ServerTime(lastOpenTime),
-    createdBy: getAuthorName(node),
+    createdBy: getAuthorName(node.keyAuthor),
     location: getLocation(path, isSharedWithMe),
     ancestorsNodeUids,
     isSharedWithMe,
@@ -71,7 +71,7 @@ export function nodeToTrashedDocumentItem(node: NodeEntity): RecentDocumentsItem
     // In case trashTime is missing it will use Sept 2001, but that's HIGHLY unlikely
     lastViewed: new ServerTime(node.trashTime?.getTime() ?? 1000000000),
     lastModified: new ServerTime(node.trashTime?.getTime() ?? 1000000000),
-    createdBy: getAuthorName(node),
+    createdBy: getAuthorName(node.keyAuthor),
     // Properties below are irrelevant for trashed items
     isSharedWithMe: false,
     shareId: '',

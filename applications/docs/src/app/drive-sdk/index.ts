@@ -3,7 +3,7 @@ import { findUserAddress } from '@proton/shared/lib/helpers/address'
 import type { Address } from '@proton/shared/lib/interfaces'
 import { c } from 'ttag'
 
-export function getNodeName(node: NodeEntity) {
+export function getNodeName(node: Pick<NodeEntity, 'name'>) {
   if (typeof node.name === 'string') {
     return node.name
   }
@@ -35,9 +35,7 @@ export function getIsSharedWithMe(node: NodeEntity, addresses: Address[] | undef
   return isSharedDirectly || isSharedIndirectly
 }
 
-export function getAuthorName(node: NodeEntity) {
-  const author = node.keyAuthor
-
+export function getAuthorName(author: NodeEntity['keyAuthor']) {
   if (author.ok) {
     if (author.value === null) {
       return c('Label').t`Unknown user`
