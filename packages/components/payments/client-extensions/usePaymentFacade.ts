@@ -3,9 +3,7 @@ import { useEffect, useRef } from 'react';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
-import useModals from '@proton/components/hooks/useModals';
 import useLoading from '@proton/hooks/useLoading';
-import type { PaymentsVersion } from '@proton/payments/core/api/api';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, type PLANS } from '@proton/payments/core/constants';
 import type {
@@ -40,7 +38,6 @@ import { getThemeCode } from './helpers';
 import { wrapMethods } from './useMethods';
 import { type TelemetryPaymentFlow, usePaymentsTelemetry } from './usePaymentsTelemetry';
 import {
-    getDefaultVerifyPayment,
     useApplePayDependencies,
     useChargebeeCardVerifyPayment,
     useChargebeePaypalHandles,
@@ -63,7 +60,6 @@ export type OnChargeable = (
         source: PaymentMethodType;
         sourceType: PlainPaymentMethodType;
         context: OperationsData;
-        paymentsVersion: PaymentsVersion;
         paymentProcessorType: PaymentProcessorType;
     }
 ) => Promise<unknown>;
@@ -157,7 +153,6 @@ export const usePaymentFacade = ({
 
     const themeCode: ThemeCode = getThemeCode(theme);
 
-    const { createModal } = useModals();
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
 
@@ -281,7 +276,6 @@ export const usePaymentFacade = ({
         {
             api,
             isAuthenticated,
-            verifyPayment: getDefaultVerifyPayment(createModal, api),
             verifyPaymentChargebeeCard,
             chargebeeHandles,
             chargebeeEvents,

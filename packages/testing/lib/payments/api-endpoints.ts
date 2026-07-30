@@ -1,4 +1,4 @@
-import { createTokenV4 } from '@proton/payments/core/api/api';
+import { createToken } from '@proton/payments/core/api/api';
 import { Autopay, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type {
     PayPalDetails,
@@ -10,7 +10,7 @@ import lastItem from '@proton/utils/lastItem';
 
 import { addApiMock, addApiResolver } from '../api';
 
-const tokensUrl = createTokenV4({} as any).url;
+const tokensUrl = createToken({} as any).url;
 
 export const MOCK_TOKEN_RESPONSE = {
     Token: 'token123',

@@ -9,7 +9,6 @@ import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/c
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
@@ -108,7 +107,6 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                         cycle: payments.options.cycle,
                         plan: payments.selectedPlan,
                         planName: payments.selectedPlan.getPlanName(),
-                        paymentsVersion: getPaymentsVersion(),
                     },
                 });
             }

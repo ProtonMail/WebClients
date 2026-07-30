@@ -31,7 +31,6 @@ import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcServers } from '@proton/icons/icons/IcServers';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
-import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
@@ -348,15 +347,11 @@ const Step1 = ({
         billingAddress: options.billingAddress,
         selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
         paymentStatus: model.paymentStatus,
-        onChargeable: (
-            _,
-            { chargeablePaymentParameters, sourceType, paymentsVersion, source, paymentProcessorType }
-        ) => {
+        onChargeable: (_, { chargeablePaymentParameters, sourceType, source, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !checkTrial;
 
                 const extendedParams: ExtendedTokenPayment = {
-                    paymentsVersion,
                     paymentMethodType: sourceType,
                     paymentMethodValue: source,
                     paymentProcessorType,
@@ -935,7 +930,6 @@ const Step1 = ({
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         subscriptionDataType: model.subscriptionData.type,
-                        paymentsVersion: getPaymentsVersion(),
                     },
                 });
             }

@@ -183,7 +183,6 @@ const getPaymentDataFromChargeableCallback = (
     options: Parameters<SignupContextType['submitPaymentData']>[0],
     {
         chargeablePaymentParameters,
-        paymentsVersion,
         sourceType,
         source,
         paymentProcessorType,
@@ -195,7 +194,6 @@ const getPaymentDataFromChargeableCallback = (
 
     const extendedTokenPayment: ExtendedTokenPayment = {
         ...legacyTokenPayment,
-        paymentsVersion,
         paymentMethodType: sourceType,
         paymentMethodValue: source,
         paymentProcessorType,
