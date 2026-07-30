@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { useApi } from '@proton/components';
-import { disableWaitingRoom, enableWaitingRoom } from '@proton/shared/lib/api/meet';
-import { type CreateMeetingResponse, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
+import { toggleWaitingRoom } from '@proton/shared/lib/api/meet';
+import type { CreateMeetingResponse, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
 import { useMeetErrorReporting } from './useMeetErrorReporting';
 
@@ -20,9 +20,7 @@ export const useUpdateMeetingWaitingRoom = () => {
     }) => {
         try {
             const { Meeting } = await api<CreateMeetingResponse>({
-                ...(waitingRoom === WaitingRoomState.ENABLED
-                    ? enableWaitingRoom(meetingLinkName)
-                    : disableWaitingRoom(meetingLinkName)),
+                ...toggleWaitingRoom(meetingLinkName, { WaitingRoom: waitingRoom }),
             });
 
             return Meeting;
