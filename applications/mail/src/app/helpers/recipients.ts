@@ -9,20 +9,20 @@ import type { Element } from '../models/element';
 import { getRecipients as getConversationRecipients, getSenders } from './conversation';
 
 /** The locations whose rows are about who the mail went *to*, not who it came from. */
-const RECIPIENT_DISPLAY_LABEL_IDS: MAILBOX_LABEL_IDS[] = [
+const RECIPIENT_DISPLAY_LABEL_IDS = new Set<MAILBOX_LABEL_IDS>([
     MAILBOX_LABEL_IDS.SENT,
     MAILBOX_LABEL_IDS.ALL_SENT,
     MAILBOX_LABEL_IDS.DRAFTS,
     MAILBOX_LABEL_IDS.ALL_DRAFTS,
     MAILBOX_LABEL_IDS.SCHEDULED,
-];
+]);
 
 /**
  * Whether a row shows recipients instead of senders — true in the sent-style locations, and for anything
  * the user sent or drafted wherever it appears.
  */
 export const getDisplayRecipients = (element: Element, labelID: string): boolean =>
-    RECIPIENT_DISPLAY_LABEL_IDS.includes(labelID as MAILBOX_LABEL_IDS) || isSent(element) || isDraft(element);
+    RECIPIENT_DISPLAY_LABEL_IDS.has(labelID as MAILBOX_LABEL_IDS) || isSent(element) || isDraft(element);
 
 /**
  * Get an array of Recipients that we use to display the recipients in the message list

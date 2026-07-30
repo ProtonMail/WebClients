@@ -13,8 +13,8 @@ import {
     contextTotal as contextTotalSelector,
     elements as elementsSelector,
     selectConversationMode,
+    selectLabelID,
     selectPageSize,
-    selectParams,
 } from 'proton-mail/store/elements/elementsSelectors';
 
 import type { MailToolDeps } from '../../toolModule';
@@ -110,7 +110,7 @@ type RowDeps = Pick<MailToolDeps, 'store' | 'getFolders' | 'getLabels' | 'getMai
  */
 export const buildAgentEmailRows = (deps: RowDeps, references: ReferenceRegistry): AgentEmailPage => {
     const state = deps.store.getState();
-    const { labelID } = selectParams(state);
+    const labelID = selectLabelID(state);
     const conversationMode = selectConversationMode(state);
     const folders = deps.getFolders();
     const labels = deps.getLabels();
