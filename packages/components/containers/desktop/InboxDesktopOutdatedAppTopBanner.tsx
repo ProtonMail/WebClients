@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { semver } from '@proton/pass/utils/string/semver';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -110,6 +111,8 @@ export const InboxDesktopOutdatedAppTopBanner = ({ className }: { className?: st
     const displayWindows = (isWindows && windowsApp && doesEarlyVersionNeedsManualUpdate(windowsApp, version)) || false;
     const displayLinux = (isLinux && !isSnapPackage && linuxApp && isLinuxOutdated(linuxApp, version)) || false;
 
+    const settingsSlug = getSlugFromApp(APPS.PROTONMAIL);
+
     return (
         <>
             <DisplayTopBanner
@@ -127,7 +130,7 @@ export const InboxDesktopOutdatedAppTopBanner = ({ className }: { className?: st
             <DisplayTopBanner
                 className={className}
                 displayTopBanner={displayLinux}
-                link={getAppHref('/get-the-apps#proton-mail-desktop-apps', APPS.PROTONACCOUNT)}
+                link={getAppHref(`/${settingsSlug}/get-the-apps#proton-mail-desktop-apps`, APPS.PROTONACCOUNT)}
                 key="download-update-linux"
             />
         </>
