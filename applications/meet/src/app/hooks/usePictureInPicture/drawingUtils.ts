@@ -1,16 +1,6 @@
 import { drawChatMessage, drawErrorMessage, drawInfoMessage } from './messageDrawers';
 import type { PiPOverlayMessage } from './types';
 
-// Parameter interfaces for better readability
-interface DrawRoundedRectParams {
-    ctx: CanvasRenderingContext2D;
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    radius: number;
-}
-
 interface DrawVideoWithAspectRatioParams {
     ctx: CanvasRenderingContext2D;
     videoElement: HTMLVideoElement;
@@ -30,21 +20,6 @@ interface DrawMessageOverlayParams {
 
 // Constants for message drawing
 const messageHeight = 40;
-
-// Helper function to draw rounded rectangle
-export const drawRoundedRect = ({ ctx, x, y, width, height, radius }: DrawRoundedRectParams) => {
-    ctx.beginPath();
-    ctx.moveTo(x + radius, y);
-    ctx.lineTo(x + width - radius, y);
-    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-    ctx.lineTo(x + width, y + height - radius);
-    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-    ctx.lineTo(x + radius, y + height);
-    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-    ctx.lineTo(x, y + radius);
-    ctx.quadraticCurveTo(x, y, x + radius, y);
-    ctx.closePath();
-};
 
 // Draw video with aspect ratio preservation
 export const drawVideoWithAspectRatio = ({
