@@ -14,6 +14,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { ApiImporterOrganizationState } from '../../api/api.interface';
 import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '../../interface';
+import { getSubdomain } from '../domains';
 import { setupMigration } from '../thunk';
 import type { MigrationConfiguration, MigrationModel, MigrationSetupModel } from '../types';
 import { useConnectionState } from '../useConnectionState';
@@ -37,6 +38,7 @@ const SETUP_DEFAULTS: MigrationConfiguration = {
     importerOrganizationId: undefined,
     domain: undefined,
     domainName: undefined,
+    subdomain: '',
     state: undefined,
     joiningLink: undefined,
     domainRegistrarId: 0,
@@ -95,6 +97,7 @@ const MigrationFlow = () => {
     const model: MigrationSetupModel = {
         ...(migrationConfig || SETUP_DEFAULTS),
         domainName,
+        subdomain: getSubdomain(domainName),
         domain,
         tokens,
         connectionState,
