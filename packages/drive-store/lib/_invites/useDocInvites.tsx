@@ -9,7 +9,21 @@ import { useInvitationsView } from '../../store/_views/useInvitationsView';
 import type { NodeMeta, PublicNodeMeta } from '../NodeMeta';
 import { useDriveCompat } from '../useDriveCompat';
 
-export const useDocInvites = () => {
+export type DocInvitesHook = () => {
+    invitations: ExtendedInvitationDetails[];
+    acceptInvite: (
+        invitation: ExtendedInvitationDetails
+    ) => Promise<{ shareId: string; linkId: string; volumeId: string } | undefined>;
+    rejectInvite: (invitation: ExtendedInvitationDetails) => Promise<void>;
+    confirmModal: JSX.Element | null;
+    recentlyAcceptedInvites: ExtendedInvitationDetails[];
+    openInvitedDocument: (invitation: ExtendedInvitationDetails) => void;
+    showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
+    inviteForNodeMeta: (nodeMeta: NodeMeta | PublicNodeMeta) => ExtendedInvitationDetails | undefined;
+    isLoading: boolean;
+};
+
+export const useDocInvites: DocInvitesHook = () => {
     const { invitations, isLoading } = useInvitationsView();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const [recentlyAcceptedInvites, setRecentlyAcceptedInvites] = useState<ExtendedInvitationDetails[]>([]);

@@ -8,6 +8,7 @@ DocsDocumentViewerEventsSDK - no dependencies
 DocsTrashWithDriveSDK - no dependencies
 DocsRenameWithDriveSDK - needs DocsLoadRecentsWithDriveSDK and DocsDocumentViewerEventsSDK for the events
 DocsMoveModalDriveSDK - needs DocsRenameWithDriveSDK because SDK rename updates cache (+ events)
+DocsInvitationsDriveSDK - no dependencies
 */
 
 export function useSharingModalDriveSdkEnabled() {
@@ -32,6 +33,10 @@ export function useRenameWithSDK() {
 
 export function useMoveModalDriveSdkEnabled() {
   return useFlag('DocsMoveModalDriveSDK')
+}
+
+export function useInvitationsSdkEnabled() {
+  return useFlag('DocsInvitationsDriveSDK') || isDevOrBlack()
 }
 
 export function useIsTableOfContentsEnabled() {
