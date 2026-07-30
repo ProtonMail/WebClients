@@ -3451,9 +3451,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "O regime de reverse charge não é suportado para este plano"
       ],
-      "Search failed": [
-        "Erro de pesquisa"
-      ],
       "Signature not verified": [
         "Assinatura não verificada"
       ],
@@ -5571,6 +5568,9 @@
       ],
       "There are no documents in the trash.": [
         "Não há documentos na lixeira."
+      ],
+      "Thinking about this": [
+        "Pensando nisso"
       ],
       "This action will delete the link and revoke access for all users.": [
         "Essa ação excluirá o link e revogará o acesso para todos os usuários."
@@ -9167,6 +9167,28 @@
       ],
       "your subscription": [
         "sua assinatura"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietário"
+      ],
+      "Security Admin": [
+        "Administrador de segurança"
+      ],
+      "User Admin": [
+        "Administração de usuário"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
       ]
     },
     "Safety review": {

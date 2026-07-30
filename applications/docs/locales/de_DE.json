@@ -3448,9 +3448,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
       ],
-      "Search failed": [
-        "Suche fehlgeschlagen"
-      ],
       "Signature not verified": [
         "Signatur nicht bestätigt"
       ],
@@ -9173,6 +9170,28 @@
       ],
       "your subscription": [
         "Dein Abonnement"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Besitzer"
+      ],
+      "Security Admin": [
+        "Sicherheitsadministrator"
+      ],
+      "User Admin": [
+        "Benutzeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Sicherheitsrichtlinien, Datenaufbewahrung und VPN-Infrastruktur konfigurieren sowie Prüfprotokolle verwalten."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
       ]
     },
     "Safety review": {

@@ -154,6 +154,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Ottieni il tuo indirizzo ${ BRAND_NAME } gratuito"
       ],
+      "Clear conversation": [
+        "Cancella conversazione"
+      ],
       "Clear data": [
         "Cancella dati"
       ],
@@ -824,6 +827,9 @@
       ],
       "Stay": [
         "Resta"
+      ],
+      "Stop": [
+        "Interrompi"
       ],
       "Stop sharing": [
         "Interrompi condivisione"
@@ -3425,9 +3431,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "Il regime di inversione contabile non è previsto per questo piano"
       ],
-      "Search failed": [
-        "Ricerca non riuscita"
-      ],
       "Signature not verified": [
         "Firma non verificata"
       ],
@@ -5543,6 +5546,9 @@
       "There are no documents in the trash.": [
         "Non ci sono documenti nel cestino."
       ],
+      "Thinking about this": [
+        "Sto riflettendo su questo"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Questa azione eliminerà il link e revocherà l'accesso a tutti gli utenti."
       ],
@@ -6075,6 +6081,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Consenti agli editor di modificare i permessi e condividere"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Consenti agli editor di modificare le autorizzazioni e condividere."
       ],
       "Anonymous": [
         "Anonimo"
@@ -6787,6 +6796,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Licenze ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per utente"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
@@ -8769,6 +8781,9 @@
       "Anything you'd like us to know": [
         "Qualcosa che vorresti farci sapere"
       ],
+      "Ask anything…": [
+        "Chiedi qualsiasi cosa…"
+      ],
       "Choose password": [
         "Scegli una password"
       ],
@@ -9120,6 +9135,28 @@
       ],
       "your subscription": [
         "il tuo abbonamento"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietario"
+      ],
+      "Security Admin": [
+        "Amministratore sicurezza"
+      ],
+      "User Admin": [
+        "Amministratore utenti"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
       ]
     },
     "Safety review": {

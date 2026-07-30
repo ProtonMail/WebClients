@@ -154,6 +154,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Ücretsiz ${ BRAND_NAME } adresinizi alın"
       ],
+      "Clear conversation": [
+        "Yazışmayı temizle"
+      ],
       "Clear data": [
         "Veriyi temizle"
       ],
@@ -824,6 +827,9 @@
       ],
       "Stay": [
         "Kal"
+      ],
+      "Stop": [
+        "Durdur"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
@@ -3442,9 +3448,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "Bu tarifede tersine KDV uygulaması desteklenmiyor"
       ],
-      "Search failed": [
-        "Arama yapılamadı"
-      ],
       "Signature not verified": [
         "İmza doğrulanamadı"
       ],
@@ -5563,6 +5566,9 @@
       "There are no documents in the trash.": [
         "Çöpte herhangi bir belge yok."
       ],
+      "Thinking about this": [
+        "Bunun hakkında düşünülüyor"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Bu işlem bağlantıyı silecek ve tüm kullanıcılar için erişimi iptal edecek."
       ],
@@ -6813,6 +6819,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } koltuğu",
@@ -8750,6 +8759,9 @@
       "Anything you'd like us to know": [
         "Bizimle paylaşmak istediğiniz bir şey var mı?"
       ],
+      "Ask anything…": [
+        "Herhangi bir şey sorun…"
+      ],
       "Choose password": [
         "Parola seçin"
       ],
@@ -9101,6 +9113,28 @@
       ],
       "your subscription": [
         "aboneliğiniz"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Sahibi"
+      ],
+      "Security Admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "User Admin": [
+        "Kullanıcı yöneticisi"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
       ]
     },
     "Safety review": {

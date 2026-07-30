@@ -3438,9 +3438,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "System för omvänd skattskyldighet stöds inte för detta paket"
       ],
-      "Search failed": [
-        "Sökning misslyckades"
-      ],
       "Signature not verified": [
         "Signatur inte verifierad"
       ],
@@ -9145,6 +9142,28 @@
       ],
       "your subscription": [
         "din prenumeration"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ägare"
+      ],
+      "Security Admin": [
+        "Säkerhetsadministratör"
+      ],
+      "User Admin": [
+        "Användaradministratör"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
       ]
     },
     "Safety review": {
