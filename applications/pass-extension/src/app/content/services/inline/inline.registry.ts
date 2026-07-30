@@ -1,4 +1,4 @@
-import { PASS_ROOT_REMOVED_EVENT } from 'proton-pass-extension/app/content/constants.static';
+import { PASS_ROOT_REMOVED_EVENT, kFocusTrapSelector } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
@@ -51,7 +51,6 @@ const createIframeRoot = (rootTag: string, target?: HTMLElement) =>
         styles: ProtonPassRootStyles,
     });
 
-export const kFocusTrapSelector = `[data-focus-lock-disabled], [data-focus-lock], [data-focus-trap], [data-a11y-dialog]`;
 const getClosestFocusTrap = (target: MaybeNull<Element>) => target?.closest<HTMLElement>(kFocusTrapSelector) ?? null;
 
 export const createInlineRegistry = (elements: PassElementsConfig) => {

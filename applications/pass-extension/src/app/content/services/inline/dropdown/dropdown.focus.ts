@@ -1,8 +1,8 @@
+import { kFocusTrapSelector } from 'proton-pass-extension/app/content/constants.static';
 import type { InlineFrameTarget } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.abstract';
 import type { InlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
-import { kFocusTrapSelector } from 'proton-pass-extension/app/content/services/inline/inline.registry';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
