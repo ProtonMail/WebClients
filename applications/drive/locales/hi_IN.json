@@ -518,9 +518,6 @@
       "Get the apps": [
         "ऐप प्राप्त करें"
       ],
-      "Get the deal": [
-        "सौदा लें"
-      ],
       "Get the writing assistant": [
         "लेखन सहायक प्राप्त करें"
       ],
@@ -10989,6 +10986,28 @@
         "आपकी सदस्यता"
       ]
     },
+    "Role": {
+      "Owner": [
+        "मालिक"
+      ],
+      "Security Admin": [
+        "सुरक्षा एडमिन"
+      ],
+      "User Admin": [
+        "उपयोगकर्ता एडमिन"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "सुरक्षा नीतियां, डेटा रिटेंशन और VPN बुनियादी ढांचे को कॉन्फ़िगर करें, और ऑडिट लॉग संभाले।"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "सभी उपयोगकर्ताओं, ग्रुप, सुरक्षा, बिलिंग और सिस्टम संरचनाओं को संभाले।"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "सभी सदस्यों के लिए उपयोगकर्ताओं, ग्रुप और स्टोरेज को संभाले, भूमिकाएं सौंपें, और लाइसेंस आवंटित करें।"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "खाता सुरक्षा की समीक्षा करें"
@@ -13173,9 +13192,6 @@
       ],
       "Summary": [
         "सार"
-      ],
-      "Summer Sale": [
-        "समर सेल"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "इस फाइल का हस्ताक्षर गुम या अमान्य हैं। जाएं मेन्यू (⋮) → जानकारी ज़्यादा जानने के लिए।"

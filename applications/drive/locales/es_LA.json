@@ -518,9 +518,6 @@
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
-      "Get the deal": [
-        "Obtener la promoción"
-      ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
       ],
@@ -11111,6 +11108,28 @@
         "su suscripción"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Propietario"
+      ],
+      "Security Admin": [
+        "Administrador de seguridad"
+      ],
+      "User Admin": [
+        "Administrador de usuarios"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestione todos los usuarios, grupos, seguridad, facuración y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestione usuarios, grupos y almacenamiento para todos los miembros, asigne roles y licencias."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Compruebe la seguridad de la cuenta"
@@ -13301,9 +13320,6 @@
       ],
       "Summary": [
         "Resumen"
-      ],
-      "Summer Sale": [
-        "Ofertas de verano"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Falta la clave del achivo o la firma no es válida. Vaya a Menú (⋮) → Detalles para más información."

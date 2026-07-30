@@ -521,9 +521,6 @@
       "Get the apps": [
         "Obtenir les applications"
       ],
-      "Get the deal": [
-        "J'en profite"
-      ],
       "Get the writing assistant": [
         "Obtenir l'assistant d'écriture"
       ],
@@ -11132,6 +11129,28 @@
         "votre abonnement"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Propriétaire"
+      ],
+      "Security Admin": [
+        "Administrateur de sécurité"
+      ],
+      "User Admin": [
+        "Administrateur des utilisateurs"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gérez tous les utilisateurs, groupes, sécurité, facturation, journaux d'audit et configurations système."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Vérifier la sécurité du compte"
@@ -13328,9 +13347,6 @@
       ],
       "Summary": [
         "Résumé"
-      ],
-      "Summer Sale": [
-        "Offre estivale"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Il manque une signature pour ce fichier, ou bien elle n'est pas valide. Allez à Menu (⋮) → Détails pour plus d'informations."

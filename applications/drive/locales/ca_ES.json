@@ -521,9 +521,6 @@
       "Get the apps": [
         "Obtén les aplicacions"
       ],
-      "Get the deal": [
-        "Obteniu l’oferta"
-      ],
       "Get the writing assistant": [
         "Obteniu l'assistent d'escriptura"
       ],
@@ -11132,6 +11129,28 @@
         "la vostra subscripció"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Propietari"
+      ],
+      "Security Admin": [
+        "Administrador/a de seguretat"
+      ],
+      "User Admin": [
+        "Administrador/a d'usuaris"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestioneu tots els usuaris, grups, seguretat, facturació i configuracions del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestioneu els usuaris, els grups i l'emmagatzematge de tots els membres, assigneu rols i adjudiqueu llicències."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Reviseu la seguretat del compte"
@@ -13328,9 +13347,6 @@
       ],
       "Summary": [
         "Resum"
-      ],
-      "Summer Sale": [
-        "Rebaixes d'estiu"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A aquest fitxer li manca signatura o té una signatura no valida. Ves a (⋮) → Detalls per a més informació."
