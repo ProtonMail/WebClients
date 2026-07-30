@@ -1476,6 +1476,15 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Regex invalid": [
+        "Neplatný regulárny výraz"
+      ],
+      "Regex unsafe": [
+        "Nebezpečný regulárny výraz"
+      ],
+      "Unsupported file type": [
+        "Nepodporovaný typ súboru"
       ]
     },
     "Error message": {
@@ -2971,6 +2980,12 @@
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "Zoradené podľa poľa (najskôr názov, potom používateľské meno alebo email, webová stránka, poznámky) a presnosti zhody (presná zhoda, začína na, obsahuje)."
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Ak svoje Gitové commity podpisujete pomocou svojho SSH kľúča, spustite tiež tento príkaz:"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Aby Git fungoval s agentom SSH pre ${ PASS_APP_NAME }, musí Git používať Windows OpenSSH. To je možné dosiahnuť spustením tohto príkazu:"
       ]
     },
     "Keyboard key": {
