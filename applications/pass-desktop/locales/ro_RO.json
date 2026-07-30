@@ -127,6 +127,9 @@
       "Cancel": [
         "Anulare"
       ],
+      "Cancel bulk selection": [
+        "Anulare selectare în bloc"
+      ],
       "Cancel email change": [
         "Anulare modificare e-mail"
       ],
@@ -148,8 +151,14 @@
       "Clear": [
         "Eliminare"
       ],
+      "Clear item type filter": [
+        "Ștergere filtru tip articol"
+      ],
       "Clear search": [
         "Golire căutare"
+      ],
+      "Clear sort filter": [
+        "Golire filtru sortare"
       ],
       "Close": [
         "Închidere"
@@ -610,6 +619,9 @@
       "Reset": [
         "Resetare"
       ],
+      "Reset filters": [
+        "Resetare filtre"
+      ],
       "Reset history": [
         "Resetare istoric"
       ],
@@ -648,6 +660,9 @@
       ],
       "See members": [
         "Afișare membri"
+      ],
+      "Select items": [
+        "Selectare articole"
       ],
       "Send email": [
         "Trimitere mesaj"
@@ -694,6 +709,9 @@
       "Skip": [
         "Omitere"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Cineva v-a partajat un articol în ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Sortare articole seif"
       ],
@@ -705,6 +723,9 @@
       ],
       "Submitting report...": [
         "Se trimite raportul…"
+      ],
+      "Switch vault": [
+        "Comutare seif"
       ],
       "Sync alias": [
         "Sincronizare alias",
@@ -1387,6 +1408,9 @@
       ],
       "Trashing item failed": [
         "Punerea în gunoi a articolelor a eșuat."
+      ],
+      "Try reaching out to the link owner.": [
+        "Încercați să contactați proprietarul legăturii web."
       ],
       "Unable to generate an OTP code for this item": [
         "Nu se poate genera un cod OTP pentru acest articol."
@@ -4063,6 +4087,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Acest articol este disponibil până la ${ date } sau până când este atinsă limita de vizualizări."
       ],
       "Tier/Level": [
         "Rang/Nivel"
