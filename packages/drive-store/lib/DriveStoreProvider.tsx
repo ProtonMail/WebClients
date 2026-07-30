@@ -1,11 +1,9 @@
 import { PublicSessionProvider } from '../store/_api/usePublicSession';
 import { DevicesProvider } from '../store/_devices';
-import { DownloadsProvider } from '../store/_downloads';
 import { DriveEventManagerProvider } from '../store/_events/useDriveEventManager';
 import { InvitationsStateProvider } from '../store/_invitations/useInvitationsState';
 import { LinksProvider, PublicLinksProvider } from '../store/_links/index';
 import { SharesProvider } from '../store/_shares/index';
-import { UploadProvider } from '../store/_uploads';
 import { VolumesProvider } from '../store/_volumes';
 
 export const DriveStoreProvider = ({ children }: { children: React.ReactNode }) => {
@@ -15,11 +13,7 @@ export const DriveStoreProvider = ({ children }: { children: React.ReactNode }) 
                 <SharesProvider>
                     <LinksProvider>
                         <DevicesProvider>
-                            <DownloadsProvider>
-                                <UploadProvider>
-                                    <InvitationsStateProvider>{children}</InvitationsStateProvider>
-                                </UploadProvider>
-                            </DownloadsProvider>
+                            <InvitationsStateProvider>{children}</InvitationsStateProvider>
                         </DevicesProvider>
                     </LinksProvider>
                 </SharesProvider>
