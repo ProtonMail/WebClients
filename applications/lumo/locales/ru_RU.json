@@ -176,9 +176,6 @@
       "Get the apps": [
         "Получить приложения"
       ],
-      "Get the deal": [
-        "Воспользоваться"
-      ],
       "Get verification code": [
         "Получить проверочный код"
       ],
@@ -738,6 +735,12 @@
         "${ n } месяцев",
         "${ n } месяца"
       ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } года",
+        "${ n } лет",
+        "${ n } лет"
+      ],
       "1 month": [
         "1 месяц"
       ],
@@ -1093,9 +1096,6 @@
       "Refresh folder contents": [
         "Обновить содержимое папки"
       ],
-      "Register here": [
-        "Зарегистрироваться здесь"
-      ],
       "Report an issue": [
         "Сообщить о проблеме"
       ],
@@ -1396,9 +1396,6 @@
       ]
     },
     "collider_2025: Description": {
-      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
-        "Компания ${ BRAND_NAME } проводит платное исследование об ИИ-ассистентах. Интересно? Это займет 2 минуты. Если вас выберут, вы заработаете £80."
-      ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } обращается к вашим сохраненным воспоминаниям для персонализации ответов: стиля общения, уровня компетенции, регулярно используемых инструментов и долгосрочных проектов."
       ],
@@ -2849,9 +2846,6 @@
       ],
       "Visionary": [
         "Visionary"
-      ],
-      "We'd love your feedback!": [
-        "Будем рады вашей обратной связи!"
       ],
       "What you can build": [
         "Что вы можете создать"
@@ -8843,6 +8837,28 @@
         "ЛЕТНИЕ СКИДКИ"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Владелец"
+      ],
+      "Security Admin": [
+        "Администратор безопасности"
+      ],
+      "User Admin": [
+        "Администратор пользователей"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Проверьте безопасность аккаунта"
@@ -9608,9 +9624,6 @@
       ],
       "Summary": [
         "Сводка"
-      ],
-      "Summer Sale": [
-        "Летние скидки"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"

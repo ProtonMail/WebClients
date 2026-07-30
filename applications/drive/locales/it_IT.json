@@ -189,6 +189,9 @@
       "Clear browser data": [
         "Cancella i dati del browser"
       ],
+      "Clear conversation": [
+        "Cancella conversazione"
+      ],
       "Clear data": [
         "Cancella dati"
       ],
@@ -517,9 +520,6 @@
       ],
       "Get the apps": [
         "Ottieni le app"
-      ],
-      "Get the deal": [
-        "Approfitta dell'offerta"
       ],
       "Get the writing assistant": [
         "Ottieni l'assistente alla scrittura"
@@ -1072,6 +1072,9 @@
       ],
       "Stay": [
         "Resta"
+      ],
+      "Stop": [
+        "Interrompi"
       ],
       "Stop sharing": [
         "Interrompi condivisione"
@@ -6562,6 +6565,9 @@
       "There is nothing to see here": [
         "Non c'è niente da vedere qui"
       ],
+      "Thinking about this": [
+        "Sto riflettendo su questo"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Questa azione eliminerà il link e revocherà l'accesso a tutti gli utenti."
       ],
@@ -6650,6 +6656,9 @@
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Per scaricare questi file, aprilili in ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME } ed esportali."
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Per abilitare la ricerca, dobbiamo indicizzare i tuoi file localmente. Puoi continuare a utilizzare normalmente ${ DRIVE_APP_NAME } e ti faremo sapere quando l'indicizzazione sarà completata. Se lasci questa pagina, l'indicizzazione verrà sospesa e riprenderà quando tornerai."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Per abilitare la ricerca davvero privata, ${ DRIVE_APP_NAME } deve indicizzare i tuoi file localmente."
@@ -7272,6 +7281,9 @@
       ],
       "Allow editors to change permissions and share": [
         "Consenti agli editor di modificare i permessi e condividere"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Consenti agli editor di modificare le autorizzazioni e condividere."
       ],
       "Anderson": [
         "Rossi"
@@ -8259,6 +8271,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Licenze ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per utente"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
@@ -10690,6 +10705,9 @@
       "Anytown": [
         "Roma"
       ],
+      "Ask anything…": [
+        "Chiedi qualsiasi cosa…"
+      ],
       "Choose password": [
         "Scegli una password"
       ],
@@ -11065,6 +11083,28 @@
       ],
       "your subscription": [
         "il tuo abbonamento"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietario"
+      ],
+      "Security Admin": [
+        "Amministratore sicurezza"
+      ],
+      "User Admin": [
+        "Amministratore utenti"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
       ]
     },
     "Safety review": {
@@ -13257,9 +13297,6 @@
       ],
       "Summary": [
         "Riepilogo"
-      ],
-      "Summer Sale": [
-        "Saldi estivi"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Questo file ha una firma mancante o non valida. Vai a Menu (⋮) → Dettagli per info."

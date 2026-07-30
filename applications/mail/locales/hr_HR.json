@@ -642,9 +642,6 @@
       "Get the browser extension": [
         "Preuzmite proširenje za preglednik"
       ],
-      "Get the deal": [
-        "Ugrabite ponudu"
-      ],
       "Get the writing assistant": [
         "Nabavite pomoćnika za pisanje"
       ],
@@ -1518,7 +1515,9 @@
         "Vjeruj"
       ],
       "Trust key": [
-        "Ključ povjerenja"
+        "Vjeruj ključu",
+        "Vjeruj ključevima",
+        "Vjeruj ključevima"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -4550,16 +4549,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Pronađena su sljedeća polja u CSV datoteci koju ste prenijeli. Označite one koje želite uvesti."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nova poruka",
-        "${ notificationsToShow.length } nove poruke",
-        "${ notificationsToShow.length } novih poruka"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Od: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10496,6 +10485,9 @@
       "Sort": [
         "Sortiraj"
       ],
+      "Spam": [
+        "Neželjena pošta"
+      ],
       "Starred": [
         "Sa zvjezdicom"
       ],
@@ -10570,6 +10562,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transakcije - Računi, rezervacije i narudžbe"
+      ],
+      "Trash": [
+        "Otpad"
       ],
       "Undisclosed Recipients": [
         "Nedefinirani primatelji"
@@ -13823,6 +13818,28 @@
         "Ponovno šifriranje pozivnice nije uspjelo. Pokušajte ponovno."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Vlasnik"
+      ],
+      "Security Admin": [
+        "Administrator sigurnosti"
+      ],
+      "User Admin": [
+        "Administrator korisnika"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurirajte sigurnosna pravila, zadržavanje podataka i VPN infrastrukturu te upravljajte revizijskim zapisnicima."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Upravljanje svim korisnicima, grupama, sigurnošću, naplatom i konfiguracijama sustava."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Upravljanje korisnicima, grupama i pohranom za sve članove, dodjeljivanje uloga i dodjela licenci."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Pregledaj sigurnost korisničkog računa"
@@ -16644,9 +16661,6 @@
       "Summary": [
         "Sažetak"
       ],
-      "Summer Sale": [
-        "Ljetna rasprodaja"
-      ],
       "This field cannot be empty": [
         "Ovo polje ne može biti prazno"
       ],
@@ -17154,9 +17168,6 @@
       ],
       "The verification of the contact details' signature failed.": [
         "Provjera potpisa za detalje kontakta nije uspjela."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Ova radnja je nepovratna. Unesite riječ ${ boldDanger }} u polje da biste nastavili."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Ovaj uvoz može premašiti kapacitet prostora za pohranu koji je trenutno dostupan na vašem ${ BRAND_NAME } računu. Razmislite o prilagodbi uvoza."

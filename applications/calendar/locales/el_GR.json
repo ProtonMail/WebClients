@@ -446,9 +446,6 @@
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
       ],
-      "Get the deal": [
-        "Αποκτήστε την προσφορά"
-      ],
       "Get the writing assistant": [
         "Λάβετε τον βοηθό γραφής"
       ],
@@ -6422,6 +6419,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
       ],
+      "Thinking about this": [
+        "Το σκέφτομαι αυτό"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
       ],
@@ -10557,6 +10557,28 @@
         "Επαναφόρτωση εκδήλωσης"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Ιδιοκτήτης"
+      ],
+      "Security Admin": [
+        "Διαχειριστής Ασφαλείας"
+      ],
+      "User Admin": [
+        "Διαχειριστής Χρηστών"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
+      ]
+    },
     "RSVP Note": {
       "Edit note": [
         "Επεξεργασία σημείωσης"
@@ -12702,9 +12724,6 @@
       ],
       "Summary": [
         "Περίληψη"
-      ],
-      "Summer Sale": [
-        "Καλοκαιρινές εκπτώσεις"
       ],
       "The booking feature is currently unavailable.": [
         "Η λειτουργία κράτησης δεν είναι διαθέσιμη προς το παρόν."

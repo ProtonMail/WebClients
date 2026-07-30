@@ -172,9 +172,6 @@
       "Get the apps": [
         "取得應用程式"
       ],
-      "Get the deal": [
-        "取得優惠"
-      ],
       "Get verification code": [
         "取得驗證碼"
       ],
@@ -5106,6 +5103,28 @@
         "外部收件者"
       ]
     },
+    "Role": {
+      "Owner": [
+        "擁有者"
+      ],
+      "Security Admin": [
+        "安全管理員"
+      ],
+      "User Admin": [
+        "使用者管理員"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "設定安全政策、資料保留及 VPN 基礎架構，並管理稽核日誌。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "管理所有使用者、群組、安全性、帳務及系統組態。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成員的使用者、群組和儲存空間，分配角色並分配授權。"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "查看帳號安全"
@@ -5699,9 +5718,6 @@
       ],
       "Summary": [
         "總結"
-      ],
-      "Summer Sale": [
-        "夏季特賣"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"

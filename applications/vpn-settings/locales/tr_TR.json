@@ -11422,6 +11422,9 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } koltukları"
       ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } koltuğu",
         "${ seats } ${ MEET_APP_NAME } koltuğu"
@@ -18299,9 +18302,6 @@
       "Summary": [
         "Özet"
       ],
-      "Summer Sale": [
-        "Yaz İndirimi"
-      ],
       "Support your compliance objectives": [
         "Uyumluluk gereksinimlerinizi karşılayın"
       ],
@@ -18797,6 +18797,9 @@
       ],
       "Group membership paused": [
         "Grup üyeliği duraklatılmış"
+      ],
+      "Pending user activation": [
+        "Bekleyen kullanıcı etkinleştirmesi"
       ],
       "Resuming role assignment": [
         "Rol ataması sürdürülüyor"

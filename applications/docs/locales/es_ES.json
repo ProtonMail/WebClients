@@ -3425,9 +3425,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "El régimen de inversión del sujeto pasivo no es compatible con este plan"
       ],
-      "Search failed": [
-        "Error en la búsqueda"
-      ],
       "Signature not verified": [
         "Firma no verificada"
       ],
@@ -9102,6 +9099,28 @@
       ],
       "your subscription": [
         "tu suscripción"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Propietario"
+      ],
+      "Security Admin": [
+        "Administrador de seguridad"
+      ],
+      "User Admin": [
+        "Administrador de usuarios"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurar políticas de seguridad, conservación de datos e infraestructura de VPN, y administrar registros de auditoría."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrar todos los usuarios, grupos, seguridad, facturación y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrar usuarios, grupos y almacenamiento de todos los miembros, asignar roles y asignar licencias."
       ]
     },
     "Safety review": {

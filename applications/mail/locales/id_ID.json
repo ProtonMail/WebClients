@@ -636,9 +636,6 @@
       "Get the browser extension": [
         "Dapatkan ekstensi peramban"
       ],
-      "Get the deal": [
-        "Dapatkan penawaran ini"
-      ],
       "Get the writing assistant": [
         "Dapatkan asisten penulisan"
       ],
@@ -4480,14 +4477,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Kami menemukan kolom berikut ini di file CSV Anda. Pilih kolom yang ingin Anda impor."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } pesan baru"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Dari: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10160,6 +10149,9 @@
       "Sort": [
         "Urutkan"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Dibintangi"
       ],
@@ -10234,6 +10226,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transaksi - Resi, pemesanan, tagihan, dan pesanan"
+      ],
+      "Trash": [
+        "Sampah"
       ],
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
@@ -13367,6 +13362,28 @@
         "Undangan gagal dienkripsi ulang. Silakan coba lagi."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Pemilik"
+      ],
+      "Security Admin": [
+        "Admin Keamanan"
+      ],
+      "User Admin": [
+        "Admin Pengguna"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurasikan kebijakan keamanan, retensi data, dan infrastruktur VPN, serta kelola log audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Kelola semua pengguna, grup, keamanan, penagihan, dan konfigurasi sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Kelola pengguna, grup, dan penyimpanan untuk semua anggota, tetapkan peran, dan alokasikan lisensi."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Tinjau keamanan akun"
@@ -16019,9 +16036,6 @@
       ],
       "Summary": [
         "Ikhtisar"
-      ],
-      "Summer Sale": [
-        "Promo Musim Panas"
       ],
       "This field cannot be empty": [
         "Kolom ini tidak boleh kosong"

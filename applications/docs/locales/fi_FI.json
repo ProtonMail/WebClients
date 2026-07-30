@@ -3425,9 +3425,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "Tämä tilaus ei tue käännettyä verovelvollisuutta."
       ],
-      "Search failed": [
-        "Haku epäonnistui"
-      ],
       "Signature not verified": [
         "Allekirjoitusta ei vahvistettu"
       ],
@@ -9054,6 +9051,28 @@
       ],
       "your subscription": [
         "tilauksesi"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Omistaja"
+      ],
+      "Security Admin": [
+        "Turvallisuusvastaava"
+      ],
+      "User Admin": [
+        "Käyttäjähallinta"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Määritä tietoturvakäytännöt, tietojen säilytysajat ja VPN-infrastruktuuri sekä hallinnoi tarkastuslokeja."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
       ]
     },
     "Safety review": {

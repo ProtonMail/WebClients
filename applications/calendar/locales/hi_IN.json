@@ -443,9 +443,6 @@
       "Get the apps": [
         "ऐप प्राप्त करें"
       ],
-      "Get the deal": [
-        "सौदा लें"
-      ],
       "Get the writing assistant": [
         "लेखन सहायक प्राप्त करें"
       ],
@@ -10483,6 +10480,28 @@
         "इवेंट लोड करें"
       ]
     },
+    "Role": {
+      "Owner": [
+        "मालिक"
+      ],
+      "Security Admin": [
+        "सुरक्षा एडमिन"
+      ],
+      "User Admin": [
+        "उपयोगकर्ता एडमिन"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "सुरक्षा नीतियां, डेटा रिटेंशन और VPN बुनियादी ढांचे को कॉन्फ़िगर करें, और ऑडिट लॉग संभाले।"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "सभी उपयोगकर्ताओं, ग्रुप, सुरक्षा, बिलिंग और सिस्टम संरचनाओं को संभाले।"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "सभी सदस्यों के लिए उपयोगकर्ताओं, ग्रुप और स्टोरेज को संभाले, भूमिकाएं सौंपें, और लाइसेंस आवंटित करें।"
+      ]
+    },
     "RSVP Note": {
       "Edit note": [
         "नोट बदलें"
@@ -12626,9 +12645,6 @@
       "Summary": [
         "सार"
       ],
-      "Summer Sale": [
-        "समर सेल"
-      ],
       "The booking feature is currently unavailable.": [
         "बुकिंग की सुविधा वर्तमान में अनुपलब्ध है।"
       ],
@@ -13159,10 +13175,6 @@
       "Every ${ interval } week on Thursday": [
         "प्रत्येक ${ interval } सप्ताह गुरुवार को",
         "प्रत्येक ${ interval } सप्ताह गुरुवार को"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को",
-        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
         "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }",

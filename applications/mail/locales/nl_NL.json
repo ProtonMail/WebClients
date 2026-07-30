@@ -639,9 +639,6 @@
       "Get the browser extension": [
         "Download de browserextensie"
       ],
-      "Get the deal": [
-        "Pak deze deal"
-      ],
       "Get the writing assistant": [
         "Verkrijg de schrijfassistent"
       ],
@@ -1517,7 +1514,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -4538,15 +4536,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "We hebben de volgende velden gedetecteerd in het CSV-bestand dat u heeft geüpload. Controleer de velden die u wilt importeren."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nieuw bericht",
-        "${ notificationsToShow.length } nieuwe berichten"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Van: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10407,6 +10396,9 @@
       "Sort": [
         "Sorteren"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Favorieten"
       ],
@@ -10481,6 +10473,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transacties - Bonnen, boekingen, facturen en bestellingen"
+      ],
+      "Trash": [
+        "Prullenbak"
       ],
       "Undisclosed Recipients": [
         "Niet-openbaar gemaakte ontvangers"
@@ -13689,6 +13684,28 @@
         "Uitnodiging voor herversleuteling mislukt. Probeer het opnieuw."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Eigenaar"
+      ],
+      "Security Admin": [
+        "Beveiligingsbeheerder"
+      ],
+      "User Admin": [
+        "Gebruiker Beheerder"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureer beveiligingsbeleid, gegevensbewaring en VPN-infrastructuur, en beheer auditlogboeken."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Beheer alle gebruikers, groepen, opslag, beveiliging, facturering, auditlogboeken en systeemconfiguraties."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Beheer gebruikers, groepen en opslagruimte voor alle leden, wijs rollen toe en deel licenties uit."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Controleer de veiligheid van uw account"
@@ -16428,9 +16445,6 @@
       ],
       "Summary": [
         "Overzicht"
-      ],
-      "Summer Sale": [
-        "Zomer Sale"
       ],
       "This field cannot be empty": [
         "Dit veld mag niet leeg zijn"

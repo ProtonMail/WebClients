@@ -29,6 +29,10 @@
       "Are you sure you want to delete all conversations?": [
         "Confermi di voler eliminare tutte le conversazioni?"
       ],
+      "Are you sure you want to delete this ${ count } conversation?": [
+        "Sei sicuro di voler eliminare questa ${ count } conversazione?",
+        "Sei sicuro di voler eliminare queste ${ count } conversazioni?"
+      ],
       "Are you sure you want to delete this conversation?": [
         "Sei sicuro di voler eliminare questa conversazione?"
       ],
@@ -176,9 +180,6 @@
       ],
       "Get the apps": [
         "Ottieni le app"
-      ],
-      "Get the deal": [
-        "Approfitta dell'offerta"
       ],
       "Get verification code": [
         "Invia il codice di verifica"
@@ -1074,9 +1075,6 @@
       "Refresh folder contents": [
         "Aggiorna i contenuti della cartella"
       ],
-      "Register here": [
-        "Registrati qui"
-      ],
       "Report an issue": [
         "Segnala un problema"
       ],
@@ -1373,9 +1371,6 @@
       ]
     },
     "collider_2025: Description": {
-      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
-        "${ BRAND_NAME } sta conducendo uno studio di ricerca a pagamento sugli assistenti IA. Ti interessa? Richiede solo 2 minuti. Se verrai selezionato, guadagnerai £80."
-      ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } fa riferimento ai tuoi ricordi salvati per personalizzare le risposte: stile di comunicazione, competenze, strumenti ricorrenti e progetti a lungo termine."
       ],
@@ -2850,9 +2845,6 @@
       "Visualization mode": [
         "Modalità di visualizzazione"
       ],
-      "We'd love your feedback!": [
-        "Ci piacerebbe ricevere il tuo feedback!"
-      ],
       "What you can build": [
         "Cosa puoi realizzare"
       ],
@@ -3145,6 +3137,9 @@
       "Add more information to improve the response": [
         "Aggiungi più informazioni per migliorare la risposta"
       ],
+      "Add to favorites": [
+        "Aggiungi ai preferiti"
+      ],
       "Analyse another export": [
         "Analizza un'altra esportazione"
       ],
@@ -3165,6 +3160,9 @@
       ],
       "Choose project icon": [
         "Scegli un'icona per il progetto"
+      ],
+      "Clear search": [
+        "Cancella ricerca"
       ],
       "Click to edit title": [
         "Fai clic per modificare il titolo"
@@ -3192,6 +3190,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete chat": [
+        "Elimina la chat"
       ],
       "Delete conversation": [
         "Elimina conversazione"
@@ -3225,6 +3226,9 @@
       ],
       "Expand": [
         "Espandi"
+      ],
+      "Favorite": [
+        "Preferiti"
       ],
       "Go to all projects": [
         "Vai a tutti i progetti"
@@ -3286,6 +3290,12 @@
       "Remove file": [
         "Rimuovi file"
       ],
+      "Remove from favorites": [
+        "Rimuovi dai preferiti"
+      ],
+      "Rename chat": [
+        "Rinomina la chat"
+      ],
       "Request a shorter, more focused response": [
         "Richiedi una risposta più breve e concisa."
       ],
@@ -3300,6 +3310,9 @@
       ],
       "Select all": [
         "Seleziona tutto"
+      ],
+      "Select chats": [
+        "Seleziona chat"
       ],
       "Select conversation": [
         "Seleziona conversazione"
@@ -3392,6 +3405,9 @@
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Aggiungi istruzioni per personalizzare le risposte di ${ LUMO_SHORT_APP_NAME }"
       ],
+      "All chats": [
+        "Tutte le chat"
+      ],
       "API": [
         "API"
       ],
@@ -3419,6 +3435,9 @@
       "Expand": [
         "Espandi"
       ],
+      "Filter & Sort": [
+        "Filtra e ordina"
+      ],
       "Images": [
         "Immagini"
       ],
@@ -3430,6 +3449,9 @@
       ],
       "Load more": [
         "Carica altri"
+      ],
+      "More options": [
+        "Altre opzioni"
       ],
       "New chat": [
         "Nuova chat"
@@ -3445,6 +3467,9 @@
       ],
       "Search": [
         "Cerca"
+      ],
+      "Search chats": [
+        "Cerca nelle chat"
       ],
       "See all": [
         "Mostra tutto"
@@ -3616,6 +3641,9 @@
       "Built-in ${ BRAND_NAME } agent": [
         "Agente ${ BRAND_NAME } integrato"
       ],
+      "Chats from your projects will appear here.": [
+        "Le chat dei tuoi progetti verranno visualizzate qui."
+      ],
       "Conversation encrypted": [
         "Conversazione crittografata"
       ],
@@ -3652,6 +3680,9 @@
       "File \"${ file.name }\" is already mentioned": [
         "Il File \"${ file.name }\" è già stato menzionato"
       ],
+      "File attached": [
+        "File allegato"
+      ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "I file caricati in questo progetto verranno salvati nella cartella Drive collegata."
       ],
@@ -3660,6 +3691,9 @@
       ],
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Ottieni risposte più rapide e precise dal web, con citazioni per poter verificare la fonte."
+      ],
+      "Image": [
+        "Immagine"
       ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
         "L'orientamento politico dedotto alimenta messaggi mirati progettati per cambiare ciò che provi — e come voti — spesso senza che tu te ne accorga."
@@ -3675,6 +3709,9 @@
       ],
       "Lockdown Mode is enabled on your device": [
         "La modalità di isolamento è attivata sul tuo dispositivo"
+      ],
+      "No favorites yet. Star a chat to find it here quickly.": [
+        "Nessun preferito al momento. Contrassegna una chat come preferita per trovarla rapidamente qui."
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Su questa scheda non sono presenti dettagli personali, ma solo il tuo punteggio di esposizione per area. Più è basso, meno dati hai condiviso."
@@ -3709,6 +3746,12 @@
       "Something went wrong analysing this export. Please try again.": [
         "Si è verificato un errore durante l'analisi di questa esportazione. Riprova."
       ],
+      "Star a chat to find it here quickly.": [
+        "Aggiungi una chat ai preferiti per trovarla rapidamente qui."
+      ],
+      "Start a new chat to see it here.": [
+        "Avvia una nuova chat per visualizzarla qui."
+      ],
       "This message is empty. Sorry about that.": [
         "Questo messaggio è vuoto. Spiacenti."
       ],
@@ -3723,6 +3766,9 @@
       ],
       "Tips on how to write useful instructions": [
         "Suggerimenti su come scrivere istruzioni utili"
+      ],
+      "Try a different search term.": [
+        "Prova un termine di ricerca diverso."
       ],
       "Type @filename to ask questions about a specific file": [
         "Digita @filename per porre domande su un file specifico"
@@ -3824,6 +3870,9 @@
       ]
     },
     "collider_2025:Label": {
+      "${ selectedCount } selected": [
+        "${ selectedCount } selezionati"
+      ],
       "16:9": [
         "16:9"
       ],
@@ -3934,6 +3983,9 @@
       ],
       "Untitled chat": [
         "Chat senza titolo"
+      ],
+      "Untitled project": [
+        "Progetto senza titolo"
       ]
     },
     "collider_2025:Notification": {
@@ -3945,8 +3997,17 @@
       ]
     },
     "collider_2025:Option": {
+      "All": [
+        "Tutto"
+      ],
       "Date created": [
         "Data di creazione"
+      ],
+      "Favorited": [
+        "Preferiti"
+      ],
+      "From projects": [
+        "Dai progetti"
       ],
       "Last updated": [
         "Ultimo aggiornamento"
@@ -3991,6 +4052,9 @@
       ],
       "Holiday planner": [
         "Pianificatore festività"
+      ],
+      "Search chats": [
+        "Cerca nelle chat"
       ],
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
         "Ricerca personalizzata ${ LUMO_SHORT_APP_NAME }"
@@ -4372,6 +4436,17 @@
         "Galleria"
       ]
     },
+    "collider_2025:Time": {
+      "${ ageHours }h ago": [
+        "${ ageHours } h fa"
+      ],
+      "${ ageMinutes }m ago": [
+        "${ ageMinutes } min fa"
+      ],
+      "Just now": [
+        "Proprio ora"
+      ]
+    },
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "Impossibile avviare ${ LUMO_SHORT_APP_NAME }"
@@ -4387,6 +4462,9 @@
       ],
       "Chat knowledge": [
         "Conoscenza della chat"
+      ],
+      "Chats": [
+        "Chat"
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Crea un ${ LUMO_SHORT_APP_NAME } personalizzato"
@@ -4429,6 +4507,9 @@
       ],
       "File preview": [
         "Anteprima del file"
+      ],
+      "Filters": [
+        "Filtri"
       ],
       "Get started by creating a new project": [
         "Inizia creando un nuovo progetto"
@@ -4490,6 +4571,18 @@
       "No chat history yet. Let's start chatting!": [
         "Ancora nessuna cronologia chat. Iniziamo a chattare!"
       ],
+      "No chats yet": [
+        "Non ci sono ancora chat"
+      ],
+      "No favorites yet": [
+        "Ancora nessun preferito"
+      ],
+      "No matching chats": [
+        "Nessuna chat corrispondente"
+      ],
+      "No project chats yet": [
+        "Ancora nessun progetto in chat"
+      ],
       "Nothing here yet": [
         "Non c'e ancora niente qui"
       ],
@@ -4504,6 +4597,9 @@
       ],
       "Project knowledge": [
         "Conoscenza del progetto"
+      ],
+      "Recent": [
+        "Recente"
       ],
       "Remove all files?": [
         "Rimuovi tutti i file?"
@@ -7070,6 +7166,9 @@
       "Close preview": [
         "Chiudi anteprima"
       ],
+      "Compaction": [
+        "Compattazione"
+      ],
       "Composer limit banner preview": [
         "Anteprima del banner del limite del compositore"
       ],
@@ -7078,6 +7177,9 @@
       ],
       "Create Test Chats": [
         "Crea chat di test"
+      ],
+      "Current conversation": [
+        "Conversazione attuale"
       ],
       "Debug View": [
         "Vista di debug"
@@ -7142,6 +7244,9 @@
       "No": [
         "No"
       ],
+      "None open": [
+        "Nessuno aperto"
+      ],
       "Notifications": [
         "Notifiche"
       ],
@@ -7174,6 +7279,9 @@
       ],
       "Resource limit notifications": [
         "Notifiche di limite delle risorse"
+      ],
+      "Runs the compaction engine over the displayed branch and inserts a compaction boundary, without generating a reply. \"Force summarization\" always runs the LLM summary step even when cheaper strategies already free up enough space.": [
+        "Esegue il motore di compattazione sulla conversazione visualizzata e inserisce un punto di separazione della compattazione, senza generare una risposta. \"Forza riepilogo\" esegue sempre il riepilogo tramite LLM, anche quando strategie più economiche sono già sufficienti a liberare spazio."
       ],
       "Search": [
         "Cerca"
@@ -7231,6 +7339,12 @@
       ],
       "Trigger assets limit": [
         "Attiva limite degli asset"
+      ],
+      "Trigger compaction": [
+        "Avvia compattazione"
+      ],
+      "Trigger compaction (force summarization)": [
+        "Avvia compattazione (forza riepilogo)"
       ],
       "Trigger conversations limit": [
         "Attiva limite delle conversazioni"
@@ -7319,6 +7433,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Licenze ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per utente"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
@@ -8326,6 +8443,9 @@
       ],
       "Remove from favorites": [
         "Rimuovere dai preferiti"
+      ],
+      "Rename": [
+        "Rinomina"
       ]
     },
     "pass_signup_2023: Info": {
@@ -8902,6 +9022,28 @@
         "SALDI ESTIVI"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Proprietario"
+      ],
+      "Security Admin": [
+        "Amministratore sicurezza"
+      ],
+      "User Admin": [
+        "Amministratore utenti"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Controlla la sicurezza dell'account"
@@ -9368,6 +9510,9 @@
       "Conversation deleted": [
         "Conversazione eliminata"
       ],
+      "Conversations deleted": [
+        "Conversazioni eliminate"
+      ],
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
@@ -9643,9 +9788,6 @@
       ],
       "Summary": [
         "Riepilogo"
-      ],
-      "Summer Sale": [
-        "Saldi estivi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"

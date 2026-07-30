@@ -424,6 +424,9 @@
       "Participants join the call directly": [
         "I partecipanti si uniscono direttamente alla chiamata"
       ],
+      "Paste": [
+        "Incolla"
+      ],
       "Pause": [
         "Metti in pausa"
       ],
@@ -630,8 +633,14 @@
       "Upgrade your plan to use waiting room in your next meeting.": [
         "Effettua l'upgrade del tuo piano per utilizzare la sala d'attesa nella tua prossima riunione."
       ],
+      "Upload another image": [
+        "Carica un'altra immagine"
+      ],
       "Upload another video": [
         "Carica un altro video"
+      ],
+      "Upload image": [
+        "Carica immagine"
       ],
       "Upload video": [
         "Carica video"
@@ -641,6 +650,12 @@
       ],
       "Use camera": [
         "Usa la webcam"
+      ],
+      "Use color": [
+        "Usa il colore"
+      ],
+      "Use image": [
+        "Usa l'immagine"
       ],
       "Use microphone": [
         "Utilizza il microfono"
@@ -2294,6 +2309,9 @@
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
+      "Enable the camera to preview the custom background.": [
+        "Abilita la fotocamera per visualizzare in anteprima lo sfondo personalizzato."
+      ],
       "End Meeting for everyone?": [
         "Terminare la riunione per tutti?"
       ],
@@ -2332,6 +2350,9 @@
       ],
       "Failed to apply background blur": [
         "Impossibile applicare la sfocatura dello sfondo"
+      ],
+      "Failed to apply custom background": [
+        "Impossibile applicare lo sfondo personalizzato."
       ],
       "Failed to update meeting name": [
         "Impossibile aggiornare il nome del dominio"
@@ -2410,6 +2431,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Caricamento del calendario in corso. Verrai reindirizzato alla nostra piattaforma di pianificazione Calendly in una nuova scheda."
+      ],
+      "Loading meeting details...": [
+        "Caricamento dei dettagli della riunione..."
       ],
       "Loading meetings...": [
         "Caricamento riunioni..."
@@ -2621,6 +2645,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
+      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
+        "Elabora la tua fotocamera live con il processore personalizzato per gli sfondi. Scegli un colore uniforme o carica un'immagine da utilizzare come sfondo."
+      ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Programma il tuo prossimo meeting. Crea un account per pianificare riunioni con il tuo calendario."
       ],
@@ -2756,6 +2783,9 @@
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Effettua l’upgrade per rimuovere il limite di 1 ora e ignorare il conto alla rovescia. Goditi riunioni fino a 24 ore."
       ],
+      "Upload an image to preview it as the background.": [
+        "Carica un'immagine per visualizzarla in anteprima come sfondo."
+      ],
       "Video effects": [
         "Effetti video"
       ],
@@ -2876,6 +2906,9 @@
       "Authenticator app": [
         "App di autenticazione"
       ],
+      "Background color": [
+        "Colore dello sfondo"
+      ],
       "Blurred (next)": [
         "Sfocato (successivo)"
       ],
@@ -2975,6 +3008,9 @@
       "Identity": [
         "Identità"
       ],
+      "Image": [
+        "Immagine"
+      ],
       "Include application logs in bug report": [
         "Includi i log dell'applicazione nella segnalazione di bug"
       ],
@@ -3068,6 +3104,9 @@
       "Selected Speaker": [
         "Altoparlante selezionato"
       ],
+      "Solid color": [
+        "Tinta unita"
+      ],
       "Subscribed": [
         "Iscritto"
       ],
@@ -3076,6 +3115,9 @@
       ],
       "Track SID": [
         "Traccia SID"
+      ],
+      "Uploaded image": [
+        "Immagine caricata"
       ],
       "Use live camera feed": [
         "Usa feed della fotocamera live"
@@ -3266,6 +3308,28 @@
         "Digita un messaggio crittografato..."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Proprietario"
+      ],
+      "Security Admin": [
+        "Amministratore sicurezza"
+      ],
+      "User Admin": [
+        "Amministratore utenti"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Controlla la sicurezza dell'account"
@@ -3449,6 +3513,9 @@
       ],
       "Create new room": [
         "Crea una nuova stanza"
+      ],
+      "Custom background tester": [
+        "Tester dello sfondo personalizzato"
       ],
       "Date": [
         "Data"

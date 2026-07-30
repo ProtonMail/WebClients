@@ -528,9 +528,6 @@
       "Get the apps": [
         "Получить приложения"
       ],
-      "Get the deal": [
-        "Воспользоваться"
-      ],
       "Get the writing assistant": [
         "Получить помощник по написанию"
       ],
@@ -1632,6 +1629,12 @@
         "${ n } месяцев",
         "${ n } месяцев",
         "${ n } месяца"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } года",
+        "${ n } лет",
+        "${ n } лет"
       ],
       "1 month": [
         "1 месяц"
@@ -11367,6 +11370,28 @@
         "ваша подписка"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Владелец"
+      ],
+      "Security Admin": [
+        "Администратор безопасности"
+      ],
+      "User Admin": [
+        "Администратор пользователей"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Проверьте безопасность аккаунта"
@@ -13648,9 +13673,6 @@
       ],
       "Summary": [
         "Сводка"
-      ],
-      "Summer Sale": [
-        "Летние скидки"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "У этого файла отсутствует или недействительна подпись. Перейдите в Меню (⋮) → Подробности для получения дополнительной информации."

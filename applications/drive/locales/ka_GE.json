@@ -518,9 +518,6 @@
       "Get the apps": [
         "აპების გადმოწერა"
       ],
-      "Get the deal": [
-        "ფასდაკლების მიღება"
-      ],
       "Get the writing assistant": [
         "მიიღეთ წერის დამხმარე"
       ],
@@ -10992,6 +10989,28 @@
         "თქვენი გამოწერა"
       ]
     },
+    "Role": {
+      "Owner": [
+        "მფლობელი"
+      ],
+      "Security Admin": [
+        "უსაფრთხოების ადმინისტრატორი"
+      ],
+      "User Admin": [
+        "მომხმარებლის ადმინისტრატორი"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "მოარგეთ უსაფრთხოების პოლიტიკა, მონაცემთა შენახვა, VPN ინფრასტრუქტურა და მართეთ აუდიტის ჟურნალები."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "მართეთ ყველა მომხმარებელი, ჯგუფი, უსაფრთხოება, ანგარიშსწორება და სისტემის კონფიგურაციები."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "მართეთ მომხმარებლები, ჯგუფები და საცავი ყველა წევრისთვის, მიანიჭეთ როლები და გადაანაწილეთ ლიცენზიები."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "ანგარიშის უსაფრთხოების გადახედვა"
@@ -13176,9 +13195,6 @@
       ],
       "Summary": [
         "შეჯამება"
-      ],
-      "Summer Sale": [
-        "ზაფხულის ფასდაკლება"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "ფაილს აკლია ან აქვს არასწორი ხელმოწერა. მეტი ინფორმაციის მისაღებად გადადით მენიუ (:) -> დეტალები."

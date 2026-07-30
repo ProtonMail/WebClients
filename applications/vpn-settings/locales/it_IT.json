@@ -11381,6 +11381,9 @@
       "${ MEET_APP_NAME } seats": [
         "Licenze ${ MEET_APP_NAME }"
       ],
+      "${ price } per seat": [
+        "${ price } per utente"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
         "${ seats } licenze ${ MEET_APP_NAME }"
@@ -18251,9 +18254,6 @@
       "Summary": [
         "Riepilogo"
       ],
-      "Summer Sale": [
-        "Saldi estivi"
-      ],
       "Support your compliance objectives": [
         "Supporta i tuoi obiettivi di conformità"
       ],
@@ -18746,6 +18746,9 @@
       ],
       "Group membership paused": [
         "L'appartenenza al gruppo è stata sospesa"
+      ],
+      "Pending user activation": [
+        "In attesa dell'attivazione dell'utente"
       ],
       "Resuming role assignment": [
         "Ripresa dell'assegnazione dei ruoli"

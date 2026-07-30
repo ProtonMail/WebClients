@@ -645,9 +645,6 @@
       "Get the browser extension": [
         "Получить расширение для браузера"
       ],
-      "Get the deal": [
-        "Воспользоваться"
-      ],
       "Get the writing assistant": [
         "Получить помощник по написанию"
       ],
@@ -1522,7 +1519,10 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверять ключу"
+        "Доверенный ключ",
+        "Доверенных ключа",
+        "Доверенных ключей",
+        "Доверенных ключей"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -2210,6 +2210,12 @@
         "${ n } месяцев",
         "${ n } месяцев",
         "${ n } месяца"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } года",
+        "${ n } лет",
+        "${ n } лет"
       ],
       "1 month": [
         "1 месяц"
@@ -4579,17 +4585,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "В загруженном вами CSV-файле мы обнаружили следующие поля. Отметьте те, которые вы хотите импортировать."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } новое сообщение",
-        "${ notificationsToShow.length } новых сообщения",
-        "${ notificationsToShow.length } новых сообщений",
-        "${ notificationsToShow.length } новых сообщений"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "От: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10667,6 +10662,9 @@
       "Sort": [
         "Сортировать"
       ],
+      "Spam": [
+        "Спам"
+      ],
       "Starred": [
         "Отмеченные *"
       ],
@@ -10741,6 +10739,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Транзакции — чеки, бронирования, счета и заказы"
+      ],
+      "Trash": [
+        "Корзина"
       ],
       "Undisclosed Recipients": [
         "Скрытые получатели"
@@ -14045,6 +14046,28 @@
         "Повторное шифрование приглашения не удалось. Попробуйте еще раз."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Владелец"
+      ],
+      "Security Admin": [
+        "Администратор безопасности"
+      ],
+      "User Admin": [
+        "Администратор пользователей"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Проверьте безопасность аккаунта"
@@ -16952,9 +16975,6 @@
       ],
       "Summary": [
         "Сводка"
-      ],
-      "Summer Sale": [
-        "Летние скидки"
       ],
       "This field cannot be empty": [
         "Это поле не может быть пустым"

@@ -513,9 +513,6 @@
       "Get the apps": [
         "앱 다운로드"
       ],
-      "Get the deal": [
-        "혜택 얻기"
-      ],
       "Get the writing assistant": [
         "글쓰기 도우미 시작하기"
       ],
@@ -10866,6 +10863,28 @@
         "내 구독"
       ]
     },
+    "Role": {
+      "Owner": [
+        "소유자"
+      ],
+      "Security Admin": [
+        "보안 관리자"
+      ],
+      "User Admin": [
+        "사용자 관리자"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "보안 정책, 데이터 보존, VPN 인프라를 설정하고 감사 로그를 관리합니다."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "모든 사용자, 그룹, 보안, 결제 및 시스템 설정을 관리합니다."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "모든 구성원의 사용자, 그룹, 저장공간을 관리하고 역할을 부여하며 라이선스를 할당합니다."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "내 계정 보안 검토하기"
@@ -13015,9 +13034,6 @@
       ],
       "Summary": [
         "요약"
-      ],
-      "Summer Sale": [
-        "여름 세일"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "이 파일이 유효하지 않거나 서명이 존재하지 않습니다. 매뉴(⋮) → 상세 정보에서 자세한 정보를 확인하세요"
