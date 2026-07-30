@@ -8,11 +8,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import useConfig from '@proton/components/hooks/useConfig';
 import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type {
-    PaymentVerificator,
-    PaymentVerificatorV5,
-    PaymentVerificatorV5Params,
-} from '@proton/payments/core/createPaymentToken';
+import type { PaymentVerificatorV5, PaymentVerificatorV5Params } from '@proton/payments/core/createPaymentToken';
 import { ensureTokenChargeableV5 } from '@proton/payments/core/ensureTokenChargeable';
 import type { ChargebeeIframeHandles, FreeSubscription, V5PaymentToken } from '@proton/payments/core/interface';
 import type { ChargebeePaypalModalHandles } from '@proton/payments/core/payment-processors/chargebeePaypalPayment';
@@ -20,7 +16,6 @@ import type { ApplePayModalHandles } from '@proton/payments/core/payment-process
 import type { GooglePayModalHandles } from '@proton/payments/core/payment-processors/useGooglePay';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { toV5PaymentToken } from '@proton/payments/core/utils';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
@@ -34,53 +29,9 @@ import ModalTwo, { type ModalOwnProps } from '../../../components/modalTwo/Modal
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
-import { defaultTranslations, ensureTokenChargeable } from '../ensureTokenChargeable';
+import { defaultTranslations } from '../ensureTokenChargeable';
 import { abortSignalAny } from './AbortSignalAny';
 import PaymentVerificationModal from './PaymentVerificationModal';
-
-/**
- * Default implementation of the payment verificator for credit cards.
- * Once the function is called, it renders a modal that warns user about the upcoming 3DS verification.
- * When user confirms it, opens the verification page. Usually it's page of the bank, or PayPal's page,
- * or in case of Braintree it's a custom page that we render on our backend.
- * The implemntation depends on createModal function (useModal hook as of now) and on the API.
- *
- * @returns a function that returns a promise that resolves to a token payment method.
- * It can reject if user cancels the verification. Beyond that, verification can fail because of API error or because
- * user actually failed verification. This cases are handled inside {@link ensureTokenChargeable} and
- * {@link PaymentVerificationModal}. Such errors don't require Sentry error at the time being, as they are
- * communicated to the user might be gracefully handled by the view by offering user a retry.
- */
-export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => void, api: Api): PaymentVerificator =>
-    async function verify({
-        addCardMode,
-        Token,
-        ApprovalURL,
-        ReturnHost,
-    }: Parameters<PaymentVerificator>[0]): Promise<V5PaymentToken> {
-        return new Promise<V5PaymentToken>((resolve, reject) => {
-            createModal(
-                <PaymentVerificationModal
-                    isAddCard={addCardMode}
-                    onSubmit={() => resolve(toV5PaymentToken(Token))}
-                    onClose={reject}
-                    onProcess={() => {
-                        const abort = new AbortController();
-                        return {
-                            promise: ensureTokenChargeable({
-                                Token,
-                                api,
-                                ReturnHost,
-                                ApprovalURL,
-                                signal: abort.signal,
-                            }),
-                            abort,
-                        };
-                    }}
-                />
-            );
-        });
-    };
 
 type Dependencies = {
     user?: User;

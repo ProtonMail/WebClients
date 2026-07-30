@@ -35,7 +35,7 @@ const PaymentMethodActions = ({ method, methods, app }: Props) => {
     const { call } = useEventManager();
 
     const deleteMethod = async () => {
-        await api(deletePaymentMethod(method.ID, 'v5'));
+        await api(deletePaymentMethod(method.ID));
         await call();
         createNotification({ text: c('Success').t`Payment method deleted` });
     };

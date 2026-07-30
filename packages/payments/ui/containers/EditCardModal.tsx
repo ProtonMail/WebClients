@@ -20,7 +20,7 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import noop from '@proton/utils/noop';
 
-import { getPaymentsVersion, setPaymentMethodV5, updatePaymentMethod } from '../../core/api/api';
+import { setPaymentMethodV5, updatePaymentMethod } from '../../core/api/api';
 import { Autopay, PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PaymentMethodCardDetails } from '../../core/interface';
 import { isV5PaymentToken } from '../../core/type-guards';
@@ -116,7 +116,6 @@ const EditCardModal = ({
                     renewState,
                     paymentMethodId,
                     processorType: paymentFacade.selectedProcessor?.meta.type,
-                    paymentsVersion: getPaymentsVersion(),
                 },
             });
         }
@@ -162,13 +161,9 @@ const EditCardModal = ({
                         void withProcessing(async () => {
                             try {
                                 await api(
-                                    updatePaymentMethod(
-                                        paymentMethodId,
-                                        {
-                                            Autopay: result,
-                                        },
-                                        'v5'
-                                    )
+                                    updatePaymentMethod(paymentMethodId, {
+                                        Autopay: result,
+                                    })
                                 );
 
                                 // Refetch the payment methods to get the updated value.

@@ -53,7 +53,7 @@ describe('useDeleteSubscription', () => {
 
         await result.current.deleteUserSubscription(feedback);
 
-        expect(mockApi).toHaveBeenCalledWith(deleteSubscription(feedback, 'v5'));
+        expect(mockApi).toHaveBeenCalledWith(deleteSubscription(feedback));
     });
 
     it('should call eventManager.call after API call', async () => {

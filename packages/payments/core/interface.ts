@@ -20,7 +20,7 @@ import type {
     ThreeDsChallengePayload,
 } from '@proton/chargebee/lib';
 
-import type { CheckSubscriptionData, PaymentsVersion } from './api/api';
+import type { CheckSubscriptionData } from './api/api';
 import type { BillingAddress, FullBillingAddress } from './billing-address/billing-address';
 import type {
     ADDON_NAMES,
@@ -57,17 +57,13 @@ export interface TokenPayment {
     };
 }
 
-type WrappedPaymentsVersion = {
-    paymentsVersion: PaymentsVersion;
-};
-
-type WrappedProcessorType = {
+export type WrappedProcessorType = {
     paymentProcessorType: PaymentProcessorType;
     paymentMethodType: PlainPaymentMethodType;
     paymentMethodValue: PaymentMethodType;
 };
 
-export type ExtendedTokenPayment = Partial<TokenPayment> & WrappedProcessorType & WrappedPaymentsVersion;
+export type ExtendedTokenPayment = Partial<TokenPayment> & WrappedProcessorType;
 
 export interface ExistingPayment {
     PaymentMethodID: string;
@@ -115,13 +111,6 @@ export type ChargeablePaymentToken = V5PaymentToken &
             | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
         chargeable: true;
     };
-
-export type NonChargeablePaymentToken = Omit<ChargeablePaymentToken, 'chargeable'> & {
-    chargeable: false;
-    status: PAYMENT_TOKEN_STATUS;
-    returnHost: string;
-    approvalURL: string;
-};
 
 interface PaymentVendorStates {
     Card: boolean;

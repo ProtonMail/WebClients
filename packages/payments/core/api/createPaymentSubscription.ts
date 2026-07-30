@@ -27,7 +27,6 @@ import type {
 import { getPlanNameFromIDs, isLifetimePlanSelected } from '../plan/helpers';
 import type { Subscription } from '../subscription/interface';
 import { isTokenPaymentMethod, isV5PaymentToken } from '../type-guards';
-import type { PaymentsVersion } from './api';
 
 interface BuyProductConfigParams {
     PaymentToken: string;
@@ -148,7 +147,7 @@ export function isSubscribeData(data: any): data is SubscribeData {
     return isSubscribeDataV4(data) || isSubscribeDataV5(data) || isSubscribeDataNoPayment(data);
 }
 
-const createSubscriptionQuery = (rawData: SubscribeData, product: ProductParam, version: PaymentsVersion) => {
+const createSubscriptionQuery = (rawData: SubscribeData, product: ProductParam) => {
     const sanitizedData = prepareSubscribeDataPayload(rawData);
 
     // This covers both buyProduct + v4 and v5 createSubscription.
@@ -164,7 +163,7 @@ const createSubscriptionQuery = (rawData: SubscribeData, product: ProductParam, 
     }
 
     let data: SubscribeData = sanitizedData;
-    if (version === 'v5' && isSubscribeDataV4(sanitizedData)) {
+    if (isSubscribeDataV4(sanitizedData)) {
         const v5Data: SubscribeDataV5 = {
             ...sanitizedData,
             PaymentToken: sanitizedData.Payment.Details.Token,
@@ -181,11 +180,11 @@ const createSubscriptionQuery = (rawData: SubscribeData, product: ProductParam, 
     }
 
     const config = {
-        url: `payments/${version}/subscription`,
+        url: `payments/v5/subscription`,
         method: 'post',
         data,
         headers: getProductHeaders(product, {
-            endpoint: `payments/${version}/subscription`,
+            endpoint: `payments/v5/subscription`,
             product,
         }),
         timeout: 60000 * 2,
@@ -243,7 +242,6 @@ export const createPaymentSubscription = async (
         userCurrency,
         subscription,
         product,
-        version,
         paymentMethodType,
         paymentMethodValue,
     }: {
@@ -252,7 +250,6 @@ export const createPaymentSubscription = async (
         userCurrency: Currency | undefined;
         subscription: Subscription | FreeSubscription | undefined;
         product: ProductParam;
-        version: PaymentsVersion;
         paymentMethodType: PlainPaymentMethodType | undefined;
         paymentMethodValue: PaymentMethodType | undefined;
     }
@@ -273,7 +270,7 @@ export const createPaymentSubscription = async (
         isTrial: Boolean(data.StartTrial),
     };
 
-    const createSubscriptionQueryConfig = createSubscriptionQuery(data, product, version);
+    const createSubscriptionQueryConfig = createSubscriptionQuery(data, product);
 
     reportWrongBillingAddress(data);
 
