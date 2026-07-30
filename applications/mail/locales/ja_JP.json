@@ -636,9 +636,6 @@
       "Get the browser extension": [
         "ブラウザ拡張機能を入手"
       ],
-      "Get the deal": [
-        "割引をゲット"
-      ],
       "Get the writing assistant": [
         "執筆アシスタントを入手"
       ],
@@ -4483,14 +4480,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートしたいものを選択してください。"
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length }件の新着メッセージ"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "送信者: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10181,6 +10170,9 @@
       "Sort": [
         "並び替え"
       ],
+      "Spam": [
+        "迷惑メール"
+      ],
       "Starred": [
         "スター付き"
       ],
@@ -10255,6 +10247,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "取引 - 領収書、予約、請求書、注文"
+      ],
+      "Trash": [
+        "ごみ箱"
       ],
       "Undisclosed Recipients": [
         "非公開の宛先"
@@ -13388,6 +13383,28 @@
         "招待の再暗号化に失敗しました。再度お試しください。"
       ]
     },
+    "Role": {
+      "Owner": [
+        "所有者"
+      ],
+      "Security Admin": [
+        "セキュリティ管理者"
+      ],
+      "User Admin": [
+        "ユーザー管理者"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "セキュリティポリシー、データ保持、VPNインフラを構成し、監査ログを管理します。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "すべてのユーザー、グループ、セキュリティ、お支払い、システム構成を管理します。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "すべてのメンバーのユーザー、グループ、ストレージを管理し、役割を割り当て、ライセンスを配分します。"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "アカウントの安全性を確認してください"
@@ -16046,9 +16063,6 @@
       ],
       "Summary": [
         "概要"
-      ],
-      "Summer Sale": [
-        "サマーセール"
       ],
       "This field cannot be empty": [
         "このフィールドは空欄にできません"

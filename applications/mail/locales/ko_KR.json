@@ -636,9 +636,6 @@
       "Get the browser extension": [
         "브라우저 확장 기능 받기"
       ],
-      "Get the deal": [
-        "혜택 얻기"
-      ],
       "Get the writing assistant": [
         "글쓰기 도우미 시작하기"
       ],
@@ -4504,14 +4501,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "업로드한 CSV 파일에서 다음 필드를 감지했습니다. 가져오고자 하는 것을 확인하세요"
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length }개의 새로운 메세지"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "보낸 사람: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10238,6 +10227,9 @@
       "Sort": [
         "정렬"
       ],
+      "Spam": [
+        "스팸"
+      ],
       "Starred": [
         "별표 메일함"
       ],
@@ -10312,6 +10304,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "거래: 영수증, 예약, 청구서 및 주문서"
+      ],
+      "Trash": [
+        "휴지통"
       ],
       "Undisclosed Recipients": [
         "받는 사람 비공개"
@@ -13460,6 +13455,28 @@
         "초대 재암호화 실패. 다시 시도해주세요."
       ]
     },
+    "Role": {
+      "Owner": [
+        "소유자"
+      ],
+      "Security Admin": [
+        "보안 관리자"
+      ],
+      "User Admin": [
+        "사용자 관리자"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "보안 정책, 데이터 보존, VPN 인프라를 설정하고 감사 로그를 관리합니다."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "모든 사용자, 그룹, 보안, 결제 및 시스템 설정을 관리합니다."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "모든 구성원의 사용자, 그룹, 저장공간을 관리하고 역할을 부여하며 라이선스를 할당합니다."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "내 계정 보안 검토하기"
@@ -16115,9 +16132,6 @@
       ],
       "Summary": [
         "요약"
-      ],
-      "Summer Sale": [
-        "여름 세일"
       ],
       "This field cannot be empty": [
         "이 칸은 비워둘 수 없습니다"

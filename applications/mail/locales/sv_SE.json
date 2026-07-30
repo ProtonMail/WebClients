@@ -642,9 +642,6 @@
       "Get the browser extension": [
         "Skaffa webbläsartillägget"
       ],
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
       "Get the writing assistant": [
         "Skaffa skrivassistenten"
       ],
@@ -1520,7 +1517,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4531,15 +4529,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Vi har upptäckt följande fält i CSV-filen du laddade upp. Markera de du vill importera."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nytt meddelande",
-        "${ notificationsToShow.length } nya meddelanden"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Från: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10381,6 +10370,9 @@
       "Sort": [
         "Sortera"
       ],
+      "Spam": [
+        "Skräppost"
+      ],
       "Starred": [
         "Stjärnmärkt"
       ],
@@ -10455,6 +10447,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transaktioner - Kvitton, bokningar, fakturor och beställningar"
+      ],
+      "Trash": [
+        "Papperskorg"
       ],
       "Undisclosed Recipients": [
         "Hemliga mottagare"
@@ -13672,6 +13667,28 @@
         "Misslyckades att kryptera inbjudan igen. Försök igen."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Ägare"
+      ],
+      "Security Admin": [
+        "Säkerhetsadministratör"
+      ],
+      "User Admin": [
+        "Användaradministratör"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Granska kontosäkerhet"
@@ -16082,6 +16099,9 @@
       "Move all messages to trash": [
         "Flytta alla meddelanden till papperskorg"
       ],
+      "Move emails": [
+        "Flytta e-post"
+      ],
       "Move to": [
         "Flytta till"
       ],
@@ -16411,9 +16431,6 @@
       ],
       "Summary": [
         "Sammanfattning"
-      ],
-      "Summer Sale": [
-        "Sommarrea"
       ],
       "This field cannot be empty": [
         "Detta fält kan inte vara tomt"

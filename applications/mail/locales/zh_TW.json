@@ -636,9 +636,6 @@
       "Get the browser extension": [
         "取得瀏覽器擴充工具"
       ],
-      "Get the deal": [
-        "取得優惠"
-      ],
       "Get the writing assistant": [
         "取得寫作幫手"
       ],
@@ -4483,14 +4480,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "我們在您上載的 CSV 檔案中偵測到以下欄位。請勾選您想匯入的内容。"
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } 封新郵件"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "來自：${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10178,6 +10167,9 @@
       "Sort": [
         "排序"
       ],
+      "Spam": [
+        "垃圾郵件"
+      ],
       "Starred": [
         "已加星號"
       ],
@@ -10252,6 +10244,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "交易 - 回條、預訂、帳單和訂單"
+      ],
+      "Trash": [
+        "垃圾桶"
       ],
       "Undisclosed Recipients": [
         "隱名收件者"
@@ -13385,6 +13380,28 @@
         "重新加密邀請函失敗。請再試一次。"
       ]
     },
+    "Role": {
+      "Owner": [
+        "擁有者"
+      ],
+      "Security Admin": [
+        "安全管理員"
+      ],
+      "User Admin": [
+        "使用者管理員"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "設定安全政策、資料保留及 VPN 基礎架構，並管理稽核日誌。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "管理所有使用者、群組、安全性、帳務及系統組態。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成員的使用者、群組和儲存空間，分配角色並分配授權。"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "查看帳號安全"
@@ -16037,9 +16054,6 @@
       ],
       "Summary": [
         "總結"
-      ],
-      "Summer Sale": [
-        "夏季特賣"
       ],
       "This field cannot be empty": [
         "此欄無法空白"

@@ -645,9 +645,6 @@
       "Get the browser extension": [
         "Pobierz rozszerzenie przeglądarki"
       ],
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ],
       "Get the writing assistant": [
         "Uzyskaj asystenta pisania"
       ],
@@ -1522,7 +1519,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufany klucz",
+        "Zaufane klucze",
+        "Zaufanych kluczy",
+        "Zaufane klucze"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -4588,17 +4588,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Wykryliśmy następujące pola w pliku CSV. Zaznacz te, które chcesz zaimportować."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nowa wiadomość",
-        "${ notificationsToShow.length } nowe wiadomości",
-        "${ notificationsToShow.length } nowych wiadomości",
-        "${ notificationsToShow.length } nowych wiadomości"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Od: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10685,6 +10674,9 @@
       "Sort": [
         "Sortuj"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Wyróżnione"
       ],
@@ -10759,6 +10751,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transakcje – rachunki, rezerwacje, faktury i zamówienia"
+      ],
+      "Trash": [
+        "Kosz"
       ],
       "Undisclosed Recipients": [
         "Nieznani odbiorcy"
@@ -14072,6 +14067,28 @@
         "Ponowne szyfrowanie zaproszenia nie powiodło się. Spróbuj ponownie."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Właściciel"
+      ],
+      "Security Admin": [
+        "Administrator bezpieczeństwa"
+      ],
+      "User Admin": [
+        "Administrator użytkowników"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfiguruj zasady bezpieczeństwa, przechowywanie danych oraz infrastrukturę VPN i zarządzaj logami audytowymi."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Zarządzaj wszystkimi użytkownikami, grupami, bezpieczeństwem, rozliczeniami i konfiguracjami systemu."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Zarządzaj użytkownikami, grupami i przestrzenią dyskową dla wszystkich członków, przypisuj stanowiska i przydzielaj licencje."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Sprawdź bezpieczeństwo konta"
@@ -16979,9 +16996,6 @@
       ],
       "Summary": [
         "Podsumowanie"
-      ],
-      "Summer Sale": [
-        "Letnie promocje"
       ],
       "This field cannot be empty": [
         "Pole nie może być puste"
