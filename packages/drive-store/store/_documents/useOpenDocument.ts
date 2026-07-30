@@ -7,8 +7,6 @@ import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
  * When coming back from the account sign up or sign in, we are usually coming back after the user initiated the auth
  * by pressing Bookmark or Make Copy button. The `action` param in the URL will tell us where to pick back up once
  * we're back in Docs.
- *
- * DRIVE-DEVS: Do not remove export. Used by drive-store.
  */
 export enum RedirectAction {
     Bookmark = 'bookmark',
@@ -30,9 +28,6 @@ export function tmpConvertNewDocTypeToOld(type: DocumentType | ProtonDocumentTyp
     }
 }
 
-/**
- * DRIVE-DEVS: Do not remove export. Used by drive-store.
- */
 export type DocumentAction = {
     // TODO: see note in `tmpConvertNewTypeToOld`.
     type: DocumentType | ProtonDocumentType;
@@ -94,8 +89,6 @@ export const useOpenDocument = () => {
 
     /**
      * Opens a document in a new window.
-     *
-     * In the Drive application, this should not be used directly, prefer `useDocumentActions`.
      */
     const openDocumentWindow = (action: DocumentAction & { window: Window }) => {
         const { type: originalType, mode, window } = action;
