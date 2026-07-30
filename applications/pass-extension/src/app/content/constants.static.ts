@@ -21,3 +21,6 @@ export const MAX_MAX_DETECTION_TIME = 1_000;
 
 /** Delay for iframe → service worker → frame message hops (prevents focus race conditions) */
 export const MESSAGE_HOP_DELAY = 15;
+
+/** Matches containers managed by focus-trap libraries (focus-lock, focus-trap, a11y-dialog) */
+export const kFocusTrapSelector = `[data-focus-lock-disabled], [data-focus-lock], [data-focus-trap], [data-a11y-dialog]`;
