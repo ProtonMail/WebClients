@@ -41,7 +41,7 @@ import type {
     ESCalendarMetadata,
     ESOrganizerModel,
 } from '../../interfaces/encryptedSearch';
-import { generateEventUniqueId, getCalendarIDFromUniqueId, getEventIDFromUniqueId } from '../event';
+import { generateEventUniqueId, getCalendarIDFromUniqueId } from '../event';
 import { CALENDAR_CORE_LOOP } from './constants';
 
 export const getEventKey = (calendarID: string, uid: string) => `${calendarID}-${uid}`;
@@ -161,6 +161,7 @@ export const getESEvent = async (
 
     let hasError = false;
     const { veventComponent } = await getCalendarEventRaw(Event).catch((error) => {
+        // eslint-disable-next-line no-console
         console.error('cannot decrypt event: ', error);
         hasError = true;
         return {
@@ -262,9 +263,17 @@ const pushToRecurrenceIDsMap = (map: SimpleMap<number[]>, calendarID: string, UI
     map[key] = entry ? [...entry, recurrenceID] : [recurrenceID];
 };
 
-const getItemMetadataFromEventID = async (eventID: string, userID: string, itemIDs: string[], indexKey: CryptoKey) => {
-    const itemID = itemIDs.find((itemID) => getEventIDFromUniqueId(itemID) === eventID);
-    if (!itemID) {
+const getItemMetadataFromEventID = async (
+    calendarID: string,
+    eventID: string,
+    userID: string,
+    itemIDs: string[],
+    indexKey: CryptoKey
+) => {
+    // EventID is only unique within a calendar, so match the composite key directly instead of
+    // searching itemIDs for a bare EventID match, which can resolve to the wrong calendar's item.
+    const itemID = generateEventUniqueId(calendarID, eventID);
+    if (!itemIDs.includes(itemID)) {
         return;
     }
     return readMetadataItem<ESCalendarMetadata>(userID, itemID, indexKey);
@@ -280,12 +289,13 @@ const handleCreateRecurrenceIDInMap = (map: SimpleMap<number[]>, event: Calendar
 
 const handleDeleteRecurrenceIDInMap = async (
     map: SimpleMap<number[]>,
+    calendarID: string,
     eventID: string,
     userID: string,
     itemIDs: string[],
     indexKey: CryptoKey
 ) => {
-    const metadata = await getItemMetadataFromEventID(eventID, userID, itemIDs, indexKey);
+    const metadata = await getItemMetadataFromEventID(calendarID, eventID, userID, itemIDs, indexKey);
     if (!metadata?.RecurrenceID) {
         return;
     }
@@ -318,7 +328,8 @@ export const updateRecurrenceIDsMap = async (
     userID: string,
     indexKey: CryptoKey,
     events: CalendarEventsEventManager[],
-    updateMap: (setter: (map: SimpleMap<number[]>) => SimpleMap<number[]>) => void
+    updateMap: (setter: (map: SimpleMap<number[]>) => SimpleMap<number[]>) => void,
+    calendarID: string
 ) => {
     const additions: SimpleMap<number[]> = {};
     const deletions: SimpleMap<number[]> = {};
@@ -331,12 +342,12 @@ export const updateRecurrenceIDsMap = async (
     await Promise.all(
         events.map(async (event) => {
             if (event.Action === EVENT_ACTIONS.DELETE) {
-                void handleDeleteRecurrenceIDInMap(deletions, event.ID, userID, itemIDs, indexKey);
+                void handleDeleteRecurrenceIDInMap(deletions, calendarID, event.ID, userID, itemIDs, indexKey);
             } else if (event.Action === EVENT_ACTIONS.CREATE) {
                 handleCreateRecurrenceIDInMap(additions, event.Event);
             } else if (event.Action === EVENT_ACTIONS.UPDATE) {
                 handleCreateRecurrenceIDInMap(additions, event.Event);
-                void handleDeleteRecurrenceIDInMap(deletions, event.ID, userID, itemIDs, indexKey);
+                void handleDeleteRecurrenceIDInMap(deletions, calendarID, event.ID, userID, itemIDs, indexKey);
             }
         })
     );
@@ -481,7 +492,8 @@ export const processCalendarEvents = async (
     userID: string,
     CalendarModelEventID: string,
     api: Api,
-    getCalendarEventRaw: GetCalendarEventRaw
+    getCalendarEventRaw: GetCalendarEventRaw,
+    subscriptionCalendarID: string
 ): Promise<ESEvent<ESCalendarMetadata> | undefined> => {
     if (!CalendarEvents.length && !Refresh) {
         return;
@@ -502,11 +514,11 @@ export const processCalendarEvents = async (
         let calendarID: string | undefined;
 
         if (Action === EVENT_ACTIONS.DELETE) {
-            // If it's a delete event, we should have the item already in IDB, therefore
-            // we can deduce the calendar ID from it
-            const itemID = itemIDs.find((itemID) => getEventIDFromUniqueId(itemID) === ID);
-            if (itemID) {
-                calendarID = getCalendarIDFromUniqueId(itemID);
+            // CalendarEvents from a single poll all belong to subscriptionCalendarID, so use it directly
+            // instead of deducing it from the bare EventID, which is only unique within a calendar.
+            const itemID = generateEventUniqueId(subscriptionCalendarID, ID);
+            if (itemIDs.includes(itemID)) {
+                calendarID = subscriptionCalendarID;
                 Items.push({ ID: itemID, Action: ES_SYNC_ACTIONS.DELETE, ItemMetadata: undefined });
             }
         } else {
