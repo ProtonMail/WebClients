@@ -15,6 +15,7 @@ import TableHeaderCell from '@proton/components/components/table/TableHeaderCell
 import TableRow from '@proton/components/components/table/TableRow';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { SECOND } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ContactCell } from '../../shared/ContactCell';
@@ -220,10 +221,13 @@ const IncomingTable = ({ controller }: { controller: IncomingDelegatedAccessProv
     );
 };
 
-export const IncomingEmergencyContactSettings = () => {
+interface Props {
+    hideEmptyIncomingHelpText: boolean;
+}
+export const IncomingEmergencyContactSettings = ({ hideEmptyIncomingHelpText }: Props) => {
     const controller = useIncomingController();
 
-    if (controller.loading || !controller.items.emergencyContacts.length) {
+    if (controller.loading || (hideEmptyIncomingHelpText && !controller.items.emergencyContacts.length)) {
         return null;
     }
 
@@ -231,11 +235,13 @@ export const IncomingEmergencyContactSettings = () => {
         <DashboardCard>
             <DashboardCardContent>
                 <h3 className="text-semibold text-rg mb-3">{c('emergency_access').t`People who trust me`}</h3>
-                <p className="mt-0 mb-4 color-weak">
-                    {c('emergency_access')
-                        .t`They added you as trusted contact. You can access their account in case of an emergency.`}
+                <p className={clsx(controller.items.emergencyContacts.length ? 'mt-0 mb-4' : 'm-0', 'color-weak')}>
+                    {controller.items.emergencyContacts.length
+                        ? c('emergency_access')
+                              .t`They added you as trusted contact. You can access their account in case of an emergency.`
+                        : c('emergency_access').t`You have not been designated as an emergency contact for anyone yet.`}
                 </p>
-                <IncomingTable controller={controller} />
+                {!!controller.items.emergencyContacts.length && <IncomingTable controller={controller} />}
             </DashboardCardContent>
         </DashboardCard>
     );

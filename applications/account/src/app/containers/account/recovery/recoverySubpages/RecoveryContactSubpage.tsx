@@ -59,7 +59,7 @@ export const RecoveryContactSubpage = ({ app, emailSubpagePath }: { app: APP_NAM
             </OutgoingDelegatedAccessProvider>
             <IncomingDelegatedAccessProvider>
                 <IncomingDelegatedAccessActions app={app} />
-                <IncomingRecoveryContactSettings />
+                <IncomingRecoveryContactSettings hideEmptyIncomingHelpText={true} />
                 <IncomingRecoveryContactParams />
             </IncomingDelegatedAccessProvider>
         </DashboardGrid>
