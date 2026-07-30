@@ -499,6 +499,11 @@ export const updateMemberRoles = ({
         const previousRoleIds = getUserSourcedRoleIds(currentRoles);
         const add = [...desiredRoleIds].filter((id) => !previousRoleIds.has(id) && !groupSourcedRoleIds.has(id));
         const remove = [...previousRoleIds].filter((id) => !desiredRoleIds.has(id));
+
+        if (add.length === 0 && remove.length === 0) {
+            return currentRoles;
+        }
+
         const { RoleAssignments } = await api<{ RoleAssignments: RoleAssignment[] }>(
             updateMemberOrganizationRoles(member.ID, { add, remove })
         );
