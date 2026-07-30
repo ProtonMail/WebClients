@@ -177,9 +177,6 @@
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
-      "Get the deal": [
-        "Obtener la promoción"
-      ],
       "Get verification code": [
         "Obtener código de verificación"
       ],
@@ -1088,9 +1085,6 @@
       "Refresh folder contents": [
         "Actualizar los contenidos de la carpeta"
       ],
-      "Register here": [
-        "Registrarse aquí"
-      ],
       "Report an issue": [
         "Notificar un problema"
       ],
@@ -1387,9 +1381,6 @@
       ]
     },
     "collider_2025: Description": {
-      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
-        "${ BRAND_NAME } está realizando un estudio pagado sobre los asistenes de IA. ¿Le interesa participar? solo le tomará 2 minutos. Si le consideramos para participar, ganará £80."
-      ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } consulta su memoria guardada para personalizar las respuestas, estilo de comunicación, experiencia, herramientas concurrentes y proyectos de larga duración."
       ],
@@ -2845,9 +2836,6 @@
       ],
       "Visualization mode": [
         "Modo de visualización"
-      ],
-      "We'd love your feedback!": [
-        "¡Nos encantaría saber sus comentarios!"
       ],
       "What you can build": [
         "Lo que puede crear"
@@ -8881,6 +8869,28 @@
         "OFERTAS DE VERANO"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Propietario"
+      ],
+      "Security Admin": [
+        "Administrador de seguridad"
+      ],
+      "User Admin": [
+        "Administrador de usuarios"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestione todos los usuarios, grupos, seguridad, facuración y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestione usuarios, grupos y almacenamiento para todos los miembros, asigne roles y licencias."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Compruebe la seguridad de la cuenta"
@@ -9616,9 +9626,6 @@
       ],
       "Summary": [
         "Resumen"
-      ],
-      "Summer Sale": [
-        "Ofertas de verano"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Active ${ DARK_WEB_MONITORING_NAME }"
