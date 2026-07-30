@@ -3478,9 +3478,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "Mechanizm odwrotnego obciążenia nie jest obsługiwany w przypadku tego planu"
       ],
-      "Search failed": [
-        "Wyszukiwanie nie powiodło się"
-      ],
       "Signature not verified": [
         "Podpis nie został zweryfikowany"
       ],
@@ -9397,6 +9394,28 @@
       ],
       "your subscription": [
         "twoja subskrypcja"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Właściciel"
+      ],
+      "Security Admin": [
+        "Administrator bezpieczeństwa"
+      ],
+      "User Admin": [
+        "Administrator użytkowników"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfiguruj zasady bezpieczeństwa, przechowywanie danych oraz infrastrukturę VPN i zarządzaj logami audytowymi."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Zarządzaj wszystkimi użytkownikami, grupami, bezpieczeństwem, rozliczeniami i konfiguracjami systemu."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Zarządzaj użytkownikami, grupami i przestrzenią dyskową dla wszystkich członków, przypisuj stanowiska i przydzielaj licencje."
       ]
     },
     "Safety review": {

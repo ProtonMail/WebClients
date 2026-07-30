@@ -639,9 +639,6 @@
       "Get the browser extension": [
         "ब्राउज़र एक्सटेंशन प्राप्त करें"
       ],
-      "Get the deal": [
-        "सौदा लें"
-      ],
       "Get the writing assistant": [
         "लेखन सहायक प्राप्त करें"
       ],
@@ -1512,6 +1509,10 @@
       ],
       "Trust": [
         "भरोसा करें"
+      ],
+      "Trust key": [
+        "ट्रस्ट की",
+        "ट्रस्ट कीज़"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -2475,9 +2476,6 @@
       ]
     },
     "Calendar invite info": {
-      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName }} ने एक आमंत्रण स्वीकार किया और इस घटना के एक बार होने के लिए एक नया समय प्रस्तावित किया।"
-      ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
         "${ participantName } ने एक आमंत्रण स्वीकार किया और इस कार्यक्रम के लिए एक नया समय प्रस्तावित किया।"
       ],
@@ -4512,15 +4510,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "हमने आपके द्वारा अपलोड की गई CSV फ़ाइल में निम्न फ़ील्ड का पता लगाया है। उन लोगों की जाँच करें जिन्हें आप आयात करना चाहते हैं।"
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } नया संदेश",
-        "${ notificationsToShow.length } नए संदेश"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "प्रेषक: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10325,6 +10314,9 @@
       "Sort": [
         "छांटें"
       ],
+      "Spam": [
+        "स्पैम"
+      ],
       "Starred": [
         "तारा लगे"
       ],
@@ -10399,6 +10391,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "लेन-देन - रसीदें, बुकिंग, बिल और ऑर्डर"
+      ],
+      "Trash": [
+        "कचरा"
       ],
       "Undisclosed Recipients": [
         "अनजान प्राप्तकर्ता"
@@ -13592,6 +13587,28 @@
         "न्योता वापस एनक्रिप्ट करने में असफल। कृपया वापस कोशिश करें।"
       ]
     },
+    "Role": {
+      "Owner": [
+        "मालिक"
+      ],
+      "Security Admin": [
+        "सुरक्षा एडमिन"
+      ],
+      "User Admin": [
+        "उपयोगकर्ता एडमिन"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "सुरक्षा नीतियां, डेटा रिटेंशन और VPN बुनियादी ढांचे को कॉन्फ़िगर करें, और ऑडिट लॉग संभाले।"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "सभी उपयोगकर्ताओं, ग्रुप, सुरक्षा, बिलिंग और सिस्टम संरचनाओं को संभाले।"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "सभी सदस्यों के लिए उपयोगकर्ताओं, ग्रुप और स्टोरेज को संभाले, भूमिकाएं सौंपें, और लाइसेंस आवंटित करें।"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "खाता सुरक्षा की समीक्षा करें"
@@ -16329,9 +16346,6 @@
       "Summary": [
         "सार"
       ],
-      "Summer Sale": [
-        "समर सेल"
-      ],
       "This field cannot be empty": [
         "यह फील्ड खाली नहीं हो सकता"
       ],
@@ -16892,10 +16906,6 @@
       "Every ${ interval } week on Thursday": [
         "प्रत्येक ${ interval } सप्ताह गुरुवार को",
         "प्रत्येक ${ interval } सप्ताह गुरुवार को"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को",
-        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
         "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }",

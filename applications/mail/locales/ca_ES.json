@@ -642,9 +642,6 @@
       "Get the browser extension": [
         "Obtingueu l'extensió del navegador"
       ],
-      "Get the deal": [
-        "Obteniu l’oferta"
-      ],
       "Get the writing assistant": [
         "Obteniu l'assistent d'escriptura"
       ],
@@ -1526,7 +1523,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4550,12 +4548,12 @@
       ]
     },
     "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } missatge nou",
-        "${ notificationsToShow.length } missatges nous"
+      "${ messageCount } new message": [
+        "${ messageCount } missatge nou",
+        "${ messageCount } missatges nous"
       ],
-      "From: ${ sender } - ${ Subject }": [
-        "De: ${ sender } - ${ Subject }"
+      "From: ${ sender } - ${ message.Subject }": [
+        "De: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6837,6 +6835,10 @@
         "${ contactsLength } contacte",
         "${ contactsLength } contactes"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } correu electrònic → ${ dest }",
+        "${ count } correus electrònics → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
@@ -8071,6 +8073,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La majoria de les xarxes wifi públiques són segures, però algunes no tenen seguretat, la qual cosa us exposa a amenaces cibernètiques. Una VPN xifra el vostre trànsit, mantenint-vos protegit."
       ],
+      "Move emails": [
+        "Moure els correus electrònics"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
@@ -8163,6 +8168,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Obriu la guia per obtenir accions recomanades i enllaços útils."
+      ],
+      "Opened ${ location }": [
+        "S'ha obert ${ location }"
       ],
       "Optional": [
         "Opcional"
@@ -9786,6 +9794,9 @@
       "Apply to future messages": [
         "S'aplicarà als missatges futurs"
       ],
+      "Archive": [
+        "Arxivar"
+      ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
@@ -10419,6 +10430,9 @@
       "Sort": [
         "Ordenar"
       ],
+      "Spam": [
+        "Correu brossa"
+      ],
       "Starred": [
         "Destacats"
       ],
@@ -10493,6 +10507,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transaccions: rebuts, reserves, factures i comandes"
+      ],
+      "Trash": [
+        "Paperera"
       ],
       "Undisclosed Recipients": [
         "Destinataris ocults"
@@ -13707,6 +13724,28 @@
         "No s'ha pogut tornar a xifrar la invitació. Torneu-ho a provar."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Propietari"
+      ],
+      "Security Admin": [
+        "Administrador/a de seguretat"
+      ],
+      "User Admin": [
+        "Administrador/a d'usuaris"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestioneu tots els usuaris, grups, seguretat, facturació i configuracions del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestioneu els usuaris, els grups i l'emmagatzematge de tots els membres, assigneu rols i adjudiqueu llicències."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Reviseu la seguretat del compte"
@@ -16120,6 +16159,9 @@
       "Move all messages to trash": [
         "Mou tots els missatges a la paperera"
       ],
+      "Move emails": [
+        "Moure els correus electrònics"
+      ],
       "Move to": [
         "Moure a"
       ],
@@ -16449,9 +16491,6 @@
       ],
       "Summary": [
         "Resum"
-      ],
-      "Summer Sale": [
-        "Rebaixes d'estiu"
       ],
       "This field cannot be empty": [
         "Aquest camp no pot estar buit."

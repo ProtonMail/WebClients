@@ -639,9 +639,6 @@
       "Get the browser extension": [
         "获取浏览器扩展"
       ],
-      "Get the deal": [
-        "立即享受优惠"
-      ],
       "Get the writing assistant": [
         "获取写作助手"
       ],
@@ -4510,14 +4507,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "我们从您选择的 CSV 文件中检测到了以下信息，请选择要导入的内容。"
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } 封新邮件"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "发件人：${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10247,6 +10236,9 @@
       "Sort": [
         "排序"
       ],
+      "Spam": [
+        "垃圾邮件"
+      ],
       "Starred": [
         "星标邮件"
       ],
@@ -10321,6 +10313,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "交易 - 收据、预订、账单和订单"
+      ],
+      "Trash": [
+        "回收站"
       ],
       "Undisclosed Recipients": [
         "非公开收件人"
@@ -13475,6 +13470,28 @@
         "重新加密邀请失败，请重试。"
       ]
     },
+    "Role": {
+      "Owner": [
+        "所有者"
+      ],
+      "Security Admin": [
+        "安全管理员"
+      ],
+      "User Admin": [
+        "用户管理员"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "配置安全策略、数据保留和 VPN 基础设施，并管理审计日志。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "管理所有用户、群组、安全、计费和系统配置。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成员的账户、群组和存储空间，分配角色和许可证。"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "审查账户安全"
@@ -16133,9 +16150,6 @@
       ],
       "Summary": [
         "概览"
-      ],
-      "Summer Sale": [
-        "夏季特惠"
       ],
       "This field cannot be empty": [
         "字段不能为空"

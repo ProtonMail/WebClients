@@ -172,9 +172,6 @@
       "Get the apps": [
         "Dapatkan aplikasinya"
       ],
-      "Get the deal": [
-        "Dapatkan penawaran ini"
-      ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
@@ -5088,6 +5085,28 @@
         "Penerima eksternal"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Pemilik"
+      ],
+      "Security Admin": [
+        "Admin Keamanan"
+      ],
+      "User Admin": [
+        "Admin Pengguna"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurasikan kebijakan keamanan, retensi data, dan infrastruktur VPN, serta kelola log audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Kelola semua pengguna, grup, keamanan, penagihan, dan konfigurasi sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Kelola pengguna, grup, dan penyimpanan untuk semua anggota, tetapkan peran, dan alokasikan lisensi."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Tinjau keamanan akun"
@@ -5681,9 +5700,6 @@
       ],
       "Summary": [
         "Ikhtisar"
-      ],
-      "Summer Sale": [
-        "Promo Musim Panas"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"

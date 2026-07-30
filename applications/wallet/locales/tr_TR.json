@@ -172,9 +172,6 @@
       "Get the apps": [
         "Uygulamaları edinin"
       ],
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
@@ -3700,6 +3697,9 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } koltukları"
       ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } koltuğu",
         "${ seats } ${ MEET_APP_NAME } koltuğu"
@@ -5216,6 +5216,28 @@
         "Dış alıcı"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Sahibi"
+      ],
+      "Security Admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "User Admin": [
+        "Kullanıcı yöneticisi"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Hesap güvenliğini gözden geçirin"
@@ -5822,9 +5844,6 @@
       ],
       "Summary": [
         "Özet"
-      ],
-      "Summer Sale": [
-        "Yaz İndirimi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"

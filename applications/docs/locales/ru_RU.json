@@ -3475,9 +3475,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "Механизм обратного начисления налога не поддерживается для этого тарифа"
       ],
-      "Search failed": [
-        "Поиск не дал результатов"
-      ],
       "Signature not verified": [
         "Подпись подтверждена"
       ],
@@ -9317,6 +9314,28 @@
       ],
       "your subscription": [
         "ваша подписка"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Владелец"
+      ],
+      "Security Admin": [
+        "Администратор безопасности"
+      ],
+      "User Admin": [
+        "Администратор пользователей"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
       ]
     },
     "Safety review": {

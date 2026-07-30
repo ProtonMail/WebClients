@@ -424,6 +424,9 @@
       "Participants join the call directly": [
         "Οι συμμετέχοντες συμμετέχουν απευθείας στην κλήση"
       ],
+      "Paste": [
+        "Επικόλληση"
+      ],
       "Pause": [
         "Παύση"
       ],
@@ -2429,6 +2432,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
       ],
+      "Loading meeting details...": [
+        "Φόρτωση λεπτομερειών σύσκεψης..."
+      ],
       "Loading meetings...": [
         "Φόρτωση συσκέψεων..."
       ],
@@ -2638,6 +2644,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
+      ],
+      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
+        "Εκτελέστε τη ζωντανή κάμερά σας μέσω του προσαρμοσμένου επεξεργαστή φόντου. Επιλέξτε ένα απλό χρώμα ή ανεβάστε μια εικόνα για να τη χρησιμοποιήσετε ως φόντο."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Προγραμματίστε την επόμενη σύσκεψή σας. Δημιουργήστε έναν λογαριασμό για να προγραμματίσετε συσκέψεις με το ημερολόγιό σας."
@@ -3297,6 +3306,28 @@
       ],
       "Type an encrypted message...": [
         "Πληκτρολογήστε ένα κρυπτογραφημένο μήνυμα..."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ιδιοκτήτης"
+      ],
+      "Security Admin": [
+        "Διαχειριστής Ασφαλείας"
+      ],
+      "User Admin": [
+        "Διαχειριστής Χρηστών"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
       ]
     },
     "Safety review": {

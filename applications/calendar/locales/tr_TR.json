@@ -156,6 +156,9 @@
       "Clear browser data": [
         "Tarayıcı verilerini temizle"
       ],
+      "Clear conversation": [
+        "Yazışmayı temizle"
+      ],
       "Clear data": [
         "Veriyi temizle"
       ],
@@ -442,9 +445,6 @@
       ],
       "Get the apps": [
         "Uygulamaları edinin"
-      ],
-      "Get the deal": [
-        "Tekliften yararlanın"
       ],
       "Get the writing assistant": [
         "Yazma yardımcısını edinin"
@@ -892,6 +892,9 @@
       ],
       "Stay": [
         "Kal"
+      ],
+      "Stop": [
+        "Durdur"
       ],
       "Submit": [
         "Gönder"
@@ -6416,6 +6419,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
+      "Thinking about this": [
+        "Bunun hakkında düşünülüyor"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
@@ -7953,6 +7959,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } koltuğu",
@@ -10158,6 +10167,9 @@
       "Anytown": [
         "İl"
       ],
+      "Ask anything…": [
+        "Herhangi bir şey sorun…"
+      ],
       "Company name": [
         "Birim adı"
       ],
@@ -10543,6 +10555,28 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Etkinliği yeniden yükle"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Sahibi"
+      ],
+      "Security Admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "User Admin": [
+        "Kullanıcı yöneticisi"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
       ]
     },
     "RSVP Note": {
@@ -12690,9 +12724,6 @@
       ],
       "Summary": [
         "Özet"
-      ],
-      "Summer Sale": [
-        "Yaz İndirimi"
       ],
       "The booking feature is currently unavailable.": [
         "Rezervasyon özelliği şu anda kullanılamıyor."

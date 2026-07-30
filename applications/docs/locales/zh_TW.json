@@ -3394,9 +3394,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "此方案不支援逆向徵稅機制"
       ],
-      "Search failed": [
-        "搜索失敗"
-      ],
       "Signature not verified": [
         "簽章尚未驗證"
       ],
@@ -8890,6 +8887,28 @@
       ],
       "your subscription": [
         "您的訂閱"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "擁有者"
+      ],
+      "Security Admin": [
+        "安全管理員"
+      ],
+      "User Admin": [
+        "使用者管理員"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "設定安全政策、資料保留及 VPN 基礎架構，並管理稽核日誌。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "管理所有使用者、群組、安全性、帳務及系統組態。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成員的使用者、群組和儲存空間，分配角色並分配授權。"
       ]
     },
     "Safety review": {

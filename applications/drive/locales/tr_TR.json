@@ -189,6 +189,9 @@
       "Clear browser data": [
         "Tarayıcı verilerini temizle"
       ],
+      "Clear conversation": [
+        "Yazışmayı temizle"
+      ],
       "Clear data": [
         "Veriyi temizle"
       ],
@@ -517,9 +520,6 @@
       ],
       "Get the apps": [
         "Uygulamaları edinin"
-      ],
-      "Get the deal": [
-        "Tekliften yararlanın"
       ],
       "Get the writing assistant": [
         "Yazma yardımcısını edinin"
@@ -1072,6 +1072,9 @@
       ],
       "Stay": [
         "Kal"
+      ],
+      "Stop": [
+        "Durdur"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
@@ -6585,6 +6588,9 @@
       "There is nothing to see here": [
         "Burada görecek bir şey yok"
       ],
+      "Thinking about this": [
+        "Bunun hakkında düşünülüyor"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Bu işlem bağlantıyı silecek ve tüm kullanıcılar için erişimi iptal edecek."
       ],
@@ -8294,6 +8300,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } koltuğu",
@@ -10680,6 +10689,9 @@
       "Anytown": [
         "İl"
       ],
+      "Ask anything…": [
+        "Herhangi bir şey sorun…"
+      ],
       "Choose password": [
         "Parola seçin"
       ],
@@ -11055,6 +11067,28 @@
       ],
       "your subscription": [
         "aboneliğiniz"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Sahibi"
+      ],
+      "Security Admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "User Admin": [
+        "Kullanıcı yöneticisi"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
       ]
     },
     "Safety review": {
@@ -13253,9 +13287,6 @@
       ],
       "Summary": [
         "Özet"
-      ],
-      "Summer Sale": [
-        "Yaz İndirimi"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Bu dosyanın imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Bilgiler bölümüne gidin."

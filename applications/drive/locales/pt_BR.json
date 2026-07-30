@@ -521,9 +521,6 @@
       "Get the apps": [
         "Obtenha os aplicativos"
       ],
-      "Get the deal": [
-        "Obtenha a oferta"
-      ],
       "Get the writing assistant": [
         "Obter assistente de escrita"
       ],
@@ -6591,6 +6588,9 @@
       "There is nothing to see here": [
         "Não há nada para ver aqui"
       ],
+      "Thinking about this": [
+        "Pensando nisso"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Essa ação excluirá o link e revogará o acesso para todos os usuários."
       ],
@@ -11126,6 +11126,28 @@
         "sua assinatura"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Proprietário"
+      ],
+      "Security Admin": [
+        "Administrador de segurança"
+      ],
+      "User Admin": [
+        "Administração de usuário"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Revise a segurança da conta"
@@ -13319,9 +13341,6 @@
       ],
       "Summary": [
         "Resumo"
-      ],
-      "Summer Sale": [
-        "Oferta Especial"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "O arquivo tem uma assinatura ausente ou incorreta. Vá em Menu (⋮) → Detalhes para informações."
