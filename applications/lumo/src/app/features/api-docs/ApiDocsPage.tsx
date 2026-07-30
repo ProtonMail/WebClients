@@ -459,7 +459,7 @@ export const ApiDocsPage = () => {
                                                 .t`Models`}</h2>
                                             <p className="color-weak mb-6" style={{ lineHeight: 1.7 }}>
                                                 {c('collider_2025: Info')
-                                                    .t`Pass model: "auto" to let ${LUMO_SHORT_APP_NAME} route to the best available model for your task. Specify a model ID directly for predictable latency or capability targeting.`}
+                                                    .t`Specify a model ID directly for predictable latency or capability targeting.`}
                                             </p>
                                             {spec.models.map((m) => (
                                                 <div key={m.id} className="api-docs-page-model-card">
