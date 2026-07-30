@@ -106,7 +106,7 @@ export const GlobalCategoriesB2COnboarding = () => {
                                 fullWidth
                                 onClick={() => withLoading(handleClick(true))}
                             >
-                                {c('Action').t`Continue with categories`}
+                                {c('Action').t`Yes, organize it`}
                             </Button>
                             <Button disabled={loading} fullWidth onClick={() => withLoading(handleClick(false))}>{c(
                                 'Action'

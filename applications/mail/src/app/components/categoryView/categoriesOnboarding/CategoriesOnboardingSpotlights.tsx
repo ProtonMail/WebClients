@@ -12,6 +12,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
 
 import { useCategoriesOnboarding } from './CategoriesOnboardingContext';
+import { B2C_ONBOARDING_SEQUENCE } from './categoriesOnboarding.helpers';
 import { OnboardingStep } from './onboardingInterface';
 
 import './CategoriesOnboardingSpotlights.scss';
@@ -32,17 +33,22 @@ interface SpotlightContentProps {
     step: number;
     onSkip: () => void;
     onNext: () => void;
-    isLastStep?: boolean;
 }
 
 const Circle = () => <div className="categories-onboarding-circle rounded-full border inset-0"></div>;
 const Long = () => <div className="categories-onboarding-long rounded-full bg-primary"></div>;
 
-const SpotlightContent = ({ title, description, step, onSkip, onNext, isLastStep = false }: SpotlightContentProps) => {
+const onboardingLength = 3;
+
+const SpotlightContent = ({ title, description, step, onSkip, onNext }: SpotlightContentProps) => {
+    const isLastStep = step === onboardingLength - 1;
+
     return (
         <div>
             <span className="mb-4 flex gap-1">
-                {Array.from({ length: 3 }).map((_, i) => (i === step ? <Long key={i} /> : <Circle key={i} />))}
+                {Array.from({ length: onboardingLength }).map((_, i) =>
+                    i === step ? <Long key={i} /> : <Circle key={i} />
+                )}
             </span>
             <h2 className="mb-1 text-rg text-semibold">{title}</h2>
             <p className="m-0 mb-4 text-rg color-weak">{description}</p>
@@ -72,12 +78,13 @@ export const CategoriesOnboardingSpotlight = ({ step, children }: OnboardingSpot
 
     const getContent = () => {
         if (step === OnboardingStep.MESSAGE) {
+            const step = B2C_ONBOARDING_SEQUENCE.findIndex(({ step }) => step === OnboardingStep.MESSAGE);
             return (
                 <SpotlightContent
                     title={c('Title').t`New messages`}
                     description={c('Description')
                         .t`A blue dot appears when a category has unread messages since your last visit.`}
-                    step={0}
+                    step={step - 1}
                     onSkip={handleSkip}
                     onNext={() => {
                         completeCurrentStep();
@@ -86,12 +93,13 @@ export const CategoriesOnboardingSpotlight = ({ step, children }: OnboardingSpot
             );
         }
         if (step === OnboardingStep.CATEGORIZE) {
+            const step = B2C_ONBOARDING_SEQUENCE.findIndex(({ step }) => step === OnboardingStep.CATEGORIZE);
             return (
                 <SpotlightContent
-                    title={c('Title').t`Personalize your Categories`}
+                    title={c('Title').t`Refine your Categories`}
                     description={c('Description')
-                        .t`Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.`}
-                    step={1}
+                        .t`Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.`}
+                    step={step - 1}
                     onSkip={handleSkip}
                     onNext={() => {
                         completeCurrentStep();
@@ -101,17 +109,17 @@ export const CategoriesOnboardingSpotlight = ({ step, children }: OnboardingSpot
         }
 
         if (step === OnboardingStep.CUSTOMIZE) {
+            const step = B2C_ONBOARDING_SEQUENCE.findIndex(({ step }) => step === OnboardingStep.CUSTOMIZE);
             return (
                 <SpotlightContent
                     title={c('Title').t`You're in control`}
                     description={c('Description')
                         .t`Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.`}
-                    step={2}
+                    step={step - 1}
                     onSkip={handleSkip}
                     onNext={() => {
                         completeCurrentStep();
                     }}
-                    isLastStep
                 />
             );
         }
@@ -121,7 +129,7 @@ export const CategoriesOnboardingSpotlight = ({ step, children }: OnboardingSpot
 
             return (
                 <div>
-                    <h2 className="mb-1 text-rg text-semibold">{c('Title').t`Make Categories your own`}</h2>
+                    <h2 className="mb-1 text-rg text-semibold">{c('Title').t`Make your inbox your own`}</h2>
                     <p className="m-0 mb-4 text-rg color-weak">{c('Description')
                         .t`Add or remove categories, manage notifications, and adjust your setup anytime in settings.`}</p>
                     <div className="flex w-full gap-2">
@@ -133,7 +141,7 @@ export const CategoriesOnboardingSpotlight = ({ step, children }: OnboardingSpot
                             className="flex-1"
                             size="small"
                             color="norm"
-                        >{c('Actions').t`Customize categories`}</ButtonLike>
+                        >{c('Actions').t`Set up categories`}</ButtonLike>
                         {/* We use completeCurrentStep here to only override the SPOTLIGHT_FREE_USERS bit */}
                         <Button
                             onClick={completeCurrentStep}
