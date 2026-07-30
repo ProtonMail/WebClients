@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react'
 
-import { useDocInvites, type NodeMeta } from '@proton/drive-store'
+import type { NodeMeta } from '@proton/drive-store'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 import { useApplication } from '~/utils/application-context'
+import { useDocInvites } from '~/drive-sdk/useDocInvites'
 
 export type PrivateDocumentInviteGateProps = {
   nodeMeta: NodeMeta
