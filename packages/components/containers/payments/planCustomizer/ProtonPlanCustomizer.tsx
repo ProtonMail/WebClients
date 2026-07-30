@@ -172,6 +172,7 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     audience?: Audience;
     separator?: boolean;
     telemetryContext: PaymentTelemetryContext;
+    header?: ReactNode;
 }
 
 export const ProtonPlanCustomizer = ({
@@ -192,6 +193,7 @@ export const ProtonPlanCustomizer = ({
     audience,
     separator = false,
     telemetryContext,
+    header,
     ...rest
 }: Props) => {
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
@@ -213,35 +215,49 @@ export const ProtonPlanCustomizer = ({
         isSignup: mode === 'signup',
     });
 
+    if (addonCustomizerItems.length === 0) {
+        return null;
+    }
+
     return (
-        <div
-            className={clsx([
-                'plan-customiser flex flex-column gap-4',
-                separator && 'plan-customiser--separator',
-                className,
-            ])}
-            {...rest}
-        >
-            {addonCustomizerItems.map(({ addonName, sharedAddonCustomizerProps, memberCount, preferredAddonType }) => (
-                <AddonCustomizer
-                    key={addonName}
-                    addonName={addonName}
-                    selectedPlan={normalizedSelectedPlan}
-                    onChangePlanIDs={(planIDs) => {
-                        const normalizedPlanIDs = preferredAddonType
-                            ? SelectedPlan.createNormalized(planIDs, plansMap, cycle, currency, preferredAddonType)
-                                  .planIDs
-                            : planIDs;
-                        onChangePlanIDs(normalizedPlanIDs);
-                    }}
-                    showUsersTooltip={showUsersTooltip}
-                    audience={audience}
-                    mode={mode}
-                    telemetryContext={telemetryContext}
-                    sharedAddonCustomizerProps={sharedAddonCustomizerProps}
-                    memberCount={memberCount}
-                />
-            ))}
-        </div>
+        <>
+            {header}
+            <div
+                className={clsx([
+                    'plan-customiser flex flex-column gap-4',
+                    separator && 'plan-customiser--separator',
+                    className,
+                ])}
+                {...rest}
+            >
+                {addonCustomizerItems.map(
+                    ({ addonName, sharedAddonCustomizerProps, memberCount, preferredAddonType }) => (
+                        <AddonCustomizer
+                            key={addonName}
+                            addonName={addonName}
+                            selectedPlan={normalizedSelectedPlan}
+                            onChangePlanIDs={(planIDs) => {
+                                const normalizedPlanIDs = preferredAddonType
+                                    ? SelectedPlan.createNormalized(
+                                          planIDs,
+                                          plansMap,
+                                          cycle,
+                                          currency,
+                                          preferredAddonType
+                                      ).planIDs
+                                    : planIDs;
+                                onChangePlanIDs(normalizedPlanIDs);
+                            }}
+                            showUsersTooltip={showUsersTooltip}
+                            audience={audience}
+                            mode={mode}
+                            telemetryContext={telemetryContext}
+                            sharedAddonCustomizerProps={sharedAddonCustomizerProps}
+                            memberCount={memberCount}
+                        />
+                    )
+                )}
+            </div>
+        </>
     );
 };
