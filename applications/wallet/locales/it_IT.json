@@ -172,9 +172,6 @@
       "Get the apps": [
         "Ottieni le app"
       ],
-      "Get the deal": [
-        "Approfitta dell'offerta"
-      ],
       "Get verification code": [
         "Invia il codice di verifica"
       ],
@@ -3678,6 +3675,9 @@
       "${ MEET_APP_NAME } seats": [
         "Licenze ${ MEET_APP_NAME }"
       ],
+      "${ price } per seat": [
+        "${ price } per utente"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
         "${ seats } licenze ${ MEET_APP_NAME }"
@@ -5191,6 +5191,28 @@
         "Destinatario esterno"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Proprietario"
+      ],
+      "Security Admin": [
+        "Amministratore sicurezza"
+      ],
+      "User Admin": [
+        "Amministratore utenti"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Controlla la sicurezza dell'account"
@@ -5797,9 +5819,6 @@
       ],
       "Summary": [
         "Riepilogo"
-      ],
-      "Summer Sale": [
-        "Saldi estivi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
