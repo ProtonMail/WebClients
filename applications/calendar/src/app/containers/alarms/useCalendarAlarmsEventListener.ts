@@ -44,7 +44,7 @@ export const useCalendarsAlarmsEventListeners = (
 
     // subscribe to calendar event loop
     useEffect(() => {
-        return calendarSubscribe(calendarIDs, ({ CalendarAlarms = [] }) => {
+        return calendarSubscribe(calendarIDs, ({ CalendarAlarms = [] }, calendarID) => {
             if (!cacheRef.current) {
                 return;
             }
@@ -71,20 +71,13 @@ export const useCalendarsAlarmsEventListeners = (
             for (const CalendarAlarmChange of calendarAlarmChangesToTreat) {
                 if (CalendarAlarmChange.Action === EVENT_ACTIONS.DELETE) {
                     const { ID: AlarmID } = CalendarAlarmChange;
-                    let index = -1;
 
-                    const calendarID = Object.keys(calendarsCache).find((calendarID) => {
-                        const result = calendarsCache[calendarID]?.result;
-                        if (!result) {
-                            return false;
-                        }
-                        index = result.findIndex(({ ID: otherID }) => otherID === AlarmID);
-                        return index !== -1;
-                    });
-
-                    if (calendarID && index >= 0) {
-                        const result = calendarsCache[calendarID]?.result;
-                        if (result) {
+                    // AlarmID is only unique within a calendar (shard), so use the calendarID from the
+                    // subscription itself rather than scanning every cached calendar for a matching ID.
+                    const result = calendarsCache[calendarID]?.result;
+                    if (result) {
+                        const index = result.findIndex(({ ID: otherID }) => otherID === AlarmID);
+                        if (index >= 0) {
                             result.splice(index, 1);
                             actions++;
                         }
