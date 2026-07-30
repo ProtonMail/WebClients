@@ -636,9 +636,6 @@
       "Get the browser extension": [
         "Prenesite razširitev brskalnika"
       ],
-      "Get the deal": [
-        "Izkoristite posebno ponudbo"
-      ],
       "Get the writing assistant": [
         "Pridobite pomočnika pri pisanju"
       ],
@@ -1504,7 +1501,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -4355,17 +4355,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "V datoteki CSV, ki ste jo naložili, smo zaznali naslednja polja. Označite tista, ki jih želite uvoziti."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } novo sporočilo",
-        "${ notificationsToShow.length } novi sporočili",
-        "${ notificationsToShow.length } nova sporočila",
-        "${ notificationsToShow.length } novih sporočil"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Od: ${ sender } – ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10265,6 +10254,9 @@
       "Sort": [
         "Razvrsti"
       ],
+      "Spam": [
+        "Neželena pošta"
+      ],
       "Starred": [
         "Z zvezdico"
       ],
@@ -10333,6 +10325,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transakcije: potrdila, rezervacije, računi in naročila"
+      ],
+      "Trash": [
+        "Smeti"
       ],
       "Undisclosed Recipients": [
         "nerazkriti prejemniki"
@@ -16246,9 +16241,6 @@
       ],
       "Summary": [
         "Povzetek"
-      ],
-      "Summer Sale": [
-        "Poletna razprodaja"
       ],
       "This field cannot be empty": [
         "To polje ne more biti prazno"

@@ -642,9 +642,6 @@
       "Get the browser extension": [
         "Hanki selainlaajennus"
       ],
-      "Get the deal": [
-        "Hyödynnä tarjous"
-      ],
       "Get the writing assistant": [
         "Hanki kirjoitusavustaja"
       ],
@@ -1523,7 +1520,8 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen"
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -4527,12 +4525,12 @@
       ]
     },
     "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } uusi viesti",
-        "${ notificationsToShow.length } uutta viestiä"
+      "${ messageCount } new message": [
+        "${ messageCount } uusi viesti",
+        "${ messageCount } uutta viestiä"
       ],
-      "From: ${ sender } - ${ Subject }": [
-        "Lähettäjä: ${ sender } - ${ Subject }"
+      "From: ${ sender } - ${ message.Subject }": [
+        "Lähettäjä: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6811,6 +6809,10 @@
         "${ contactsLength } yhteystieto",
         "${ contactsLength } yhteystietoa"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } sähköposti → ${ dest }",
+        "${ count } sähköpostia → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } / ${ totalProgress }",
         "${ currentProgress } / ${ totalProgress }"
@@ -8013,6 +8015,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Useimmat julkiset Wi-Fi-verkot ovat turvallisia, mutta joskus puutteellisesti suojattuja, jolloin voit altistua kyberuhkille. VPN salaa tietoliikenteesi ja pitää sinut suojattuna."
       ],
+      "Move emails": [
+        "Siirrä sähköpostit"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
       ],
@@ -8105,6 +8110,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Avaa opas ja tutustu suositeltuihin toimenpiteisiin ja hyödyllisiin linkkeihin."
+      ],
+      "Opened ${ location }": [
+        "Avattu ${ location }"
       ],
       "Optional": [
         "Valinnainen"
@@ -9719,6 +9727,9 @@
       "Apply to future messages": [
         "Käytä tuleville viesteille"
       ],
+      "Archive": [
+        "Arkisto"
+      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -10346,6 +10357,9 @@
       "Sort": [
         "Järjestä"
       ],
+      "Spam": [
+        "Roskaposti"
+      ],
       "Starred": [
         "Tähdellä"
       ],
@@ -10420,6 +10434,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Tapahtumat - kuitit, varaukset, laskut ja tilaukset"
+      ],
+      "Trash": [
+        "Roskakori"
       ],
       "Undisclosed Recipients": [
         "Piilotetut vastaanottajat"
@@ -13619,6 +13636,28 @@
         "Kutsun uudelleensalaus epäonnistui. Yritä uudelleen."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Omistaja"
+      ],
+      "Security Admin": [
+        "Turvallisuusvastaava"
+      ],
+      "User Admin": [
+        "Käyttäjähallinta"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Määritä tietoturvakäytännöt, tietojen säilytysajat ja VPN-infrastruktuuri sekä hallinnoi tarkastuslokeja."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Tarkista tiliturvallisuus"
@@ -16032,6 +16071,9 @@
       "Move all messages to trash": [
         "Siirrä kaikki viestit roskakoriin"
       ],
+      "Move emails": [
+        "Siirrä sähköpostit"
+      ],
       "Move to": [
         "Siirrä kohteeseen"
       ],
@@ -16358,9 +16400,6 @@
       ],
       "Summary": [
         "Yhteenveto"
-      ],
-      "Summer Sale": [
-        "Kesäale"
       ],
       "This field cannot be empty": [
         "Kenttä ei voi olla tyhjä"

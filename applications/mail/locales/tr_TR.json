@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Tarayıcı verilerini temizle"
       ],
+      "Clear conversation": [
+        "Yazışmayı temizle"
+      ],
       "Clear data": [
         "Veriyi temizle"
       ],
@@ -638,9 +641,6 @@
       ],
       "Get the browser extension": [
         "Tarayıcı eklentisini edinin"
-      ],
-      "Get the deal": [
-        "Tekliften yararlanın"
       ],
       "Get the writing assistant": [
         "Yazma yardımcısını edinin"
@@ -1447,6 +1447,9 @@
       "Stay": [
         "Kal"
       ],
+      "Stop": [
+        "Durdur"
+      ],
       "Stop downloading assistant": [
         "Yardımcıyı indirmeyi durdur"
       ],
@@ -1489,6 +1492,9 @@
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "E-postalarınızı güvenli olarak aramak için, iletilerinizin bir kopyasının tarayıcınıza indirilmesi gerekir. İlk indirme işlemi biraz zaman alabilir."
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasına geç"
+      ],
       "Toggle Calendar app": [
         "Takvim uygulamasına geç"
       ],
@@ -1517,7 +1523,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4541,12 +4548,12 @@
       ]
     },
     "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } yeni ileti",
-        "${ notificationsToShow.length } yeni ileti"
+      "${ messageCount } new message": [
+        "${ messageCount } yeni ileti",
+        "${ messageCount } yeni ileti"
       ],
-      "From: ${ sender } - ${ Subject }": [
-        "Kimden: ${ sender } - ${ Subject }"
+      "From: ${ sender } - ${ message.Subject }": [
+        "Gönderici: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6828,6 +6835,10 @@
         "${ contactsLength } kişi",
         "${ contactsLength } kişi"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-posta → ${ dest }",
+        "${ count } e-posta → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } / ${ totalProgress }",
         "${ currentProgress } / ${ totalProgress }"
@@ -8062,6 +8073,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Çoğu herkese açık Wi-Fi ağı güvenlidir. Ancak bazılarında güvenlik açıkları vardır ve sizi siber tehditlerle karşı karşıya bırakır. Bir VPN, trafiğinizi şifreleyerek sizi korur."
       ],
+      "Move emails": [
+        "E-postaları taşı"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
@@ -8154,6 +8168,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Önerilen işlemler ve yararlı bağlantılar için rehberi açın."
+      ],
+      "Opened ${ location }": [
+        "Açıldı ${ location }"
       ],
       "Optional": [
         "İsteğe bağlı"
@@ -8638,6 +8655,9 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. hide-my-email takma adları ile e-posta kutunuzu koruyun."
+      ],
+      "Thinking about this": [
+        "Bunun hakkında düşünülüyor"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
@@ -9774,6 +9794,9 @@
       "Apply to future messages": [
         "Gelecekteki iletilere uygulansın"
       ],
+      "Archive": [
+        "Arşivle"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -10407,6 +10430,9 @@
       "Sort": [
         "Sırala"
       ],
+      "Spam": [
+        "İstenmeyen e-posta"
+      ],
       "Starred": [
         "Yıldızlı"
       ],
@@ -10481,6 +10507,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "İşlemler - Alındılar, kayıtlar, faturalar ve siparişler"
+      ],
+      "Trash": [
+        "Çöp kutusu"
       ],
       "Undisclosed Recipients": [
         "Gizli alıcılar"
@@ -11050,6 +11079,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } koltuğu",
@@ -13191,6 +13223,9 @@
       "Anytown": [
         "İl"
       ],
+      "Ask anything…": [
+        "Herhangi bir şey sorun…"
+      ],
       "Company name": [
         "Birim adı"
       ],
@@ -13687,6 +13722,28 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Yeniden şifreleme daveti yapılamadı. Lütfen yeniden deneyin."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Sahibi"
+      ],
+      "Security Admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "User Admin": [
+        "Kullanıcı yöneticisi"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
       ]
     },
     "Safety review": {
@@ -16102,6 +16159,9 @@
       "Move all messages to trash": [
         "Tüm iletileri çöpe at"
       ],
+      "Move emails": [
+        "E-postaları taşı"
+      ],
       "Move to": [
         "Taşı"
       ],
@@ -16431,9 +16491,6 @@
       ],
       "Summary": [
         "Özet"
-      ],
-      "Summer Sale": [
-        "Yaz İndirimi"
       ],
       "This field cannot be empty": [
         "Bu alan boş olamaz"

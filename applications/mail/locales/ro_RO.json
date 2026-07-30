@@ -233,6 +233,9 @@
       "Clear browser data": [
         "Ștergere date din navigator"
       ],
+      "Clear conversation": [
+        "Golire conversație"
+      ],
       "Clear data": [
         "Ștergere date"
       ],
@@ -641,9 +644,6 @@
       ],
       "Get the browser extension": [
         "Luați extensia pentru navigatorul web"
-      ],
-      "Get the deal": [
-        "Obțineți oferta"
       ],
       "Get the writing assistant": [
         "Luați asistentul de scriere"
@@ -1451,6 +1451,9 @@
       "Stay": [
         "Nu închide"
       ],
+      "Stop": [
+        "Stop\n"
+      ],
       "Stop downloading assistant": [
         "Oprire descărcare asistent"
       ],
@@ -1493,6 +1496,9 @@
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Pentru a căuta în siguranță în mesaje, trebuie să se descarce o copie a acestora în navigator. Descărcarea inițială poate dura un timp."
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Comutare ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Comutare la aplicație Calendar"
       ],
@@ -1521,7 +1527,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -4577,16 +4585,6 @@
         "S-au detectat următoarele câmpuri în fișierul CSV încărcat. Bifați-le pe cele pe care doriți să le importați."
       ]
     },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "Mesaje noi: ${ notificationsToShow.length }",
-        "Mesaje noi: ${ notificationsToShow.length }",
-        "Mesaje noi: ${ notificationsToShow.length }"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "De la: ${ sender } - ${ Subject }"
-      ]
-    },
     "Desktop notification title": {
       "New email received": [
         "E-mail nou primit"
@@ -6565,9 +6563,6 @@
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
-      ],
-      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Criptare și adăugare contacte: ${ totalImported }}/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare evenimente în calendar: ${ totalImported }/${ totalToImport }"
@@ -8779,6 +8774,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Ceilalți nu vă pot trimite mesaje nedorite dacă nu vă cunosc adresa de e-mail. Protejați-vă adresa folosind aliasuri hide-my-email."
       ],
+      "Thinking about this": [
+        "Mă gândesc la asta"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
       ],
@@ -10579,6 +10577,9 @@
       "Sort": [
         "Sortare"
       ],
+      "Spam": [
+        "Nedorite"
+      ],
       "Starred": [
         "Cu stea"
       ],
@@ -10653,6 +10654,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Tranzacții - Chitanțe, înregistrări, facturi și comenzi"
+      ],
+      "Trash": [
+        "Gunoi"
       ],
       "Undisclosed Recipients": [
         "Destinatari nedivulgați"
@@ -11228,6 +11232,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per licență"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
@@ -13415,6 +13422,9 @@
       "Anytown": [
         "București"
       ],
+      "Ask anything…": [
+        "Întreabă-mă orice…"
+      ],
       "Company name": [
         "Nume companie"
       ],
@@ -13919,6 +13929,28 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Recriptarea invitației a eșuat. Mai încercați."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietar"
+      ],
+      "Security Admin": [
+        "Administrator securitate"
+      ],
+      "User Admin": [
+        "Administrare utilizatori"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
       ]
     },
     "Safety review": {
@@ -16747,9 +16779,6 @@
       ],
       "Summary": [
         "Sumar"
-      ],
-      "Summer Sale": [
-        "Reduceri de vară"
       ],
       "This field cannot be empty": [
         "Acest câmp nu poate fi gol."
