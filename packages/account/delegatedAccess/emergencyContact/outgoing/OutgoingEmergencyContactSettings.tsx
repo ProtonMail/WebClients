@@ -258,7 +258,7 @@ export const OutgoingEmergencyContactSettings = () => {
             <OutgoingEmergencyContactBanners />
             {controller.outgoingDelegatedAccess.emergencyContacts.hasAccess &&
                 !controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit && (
-                    <div>
+                    <div className="mb-2">
                         <Button
                             color="norm"
                             className="inline-flex gap-2 items-center"
