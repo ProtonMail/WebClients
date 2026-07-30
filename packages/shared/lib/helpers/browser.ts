@@ -224,31 +224,24 @@ export const openNewTab = (url: string) => {
 export const doesNotSupportEarlyAccessVersion = () => isSafari() && Number(ua.browser.major) < 14;
 
 export async function detectStorageCapabilities(): Promise<{ isAccessible: boolean; hasIndexedDB: boolean }> {
-    // Check for IndexedDB API
-    const hasIndexedDB = 'indexedDB' in globalThis;
+    // Check for IndexedDB API. Every supported browser (see .browserslistrc) provides both `indexedDB` and `indexedDB.databases()`.
+    // If either is missing, treat storage as inaccessible.
+    const hasIndexedDB = 'indexedDB' in globalThis && globalThis.indexedDB != null;
+    if (!hasIndexedDB || typeof indexedDB.databases !== 'function') {
+        return { hasIndexedDB, isAccessible: false };
+    }
 
-    // Attempt to open a test database
-    const testDB = async () => {
-        try {
-            const request = indexedDB.open('_test');
-            await new Promise((resolve, reject) => {
-                request.onerror = () => reject(request.error);
-                request.onsuccess = () => {
-                    request.result.close();
-                    indexedDB.deleteDatabase('_test');
-                    resolve(true);
-                };
-            });
-            return true;
-        } catch (e) {
-            return false;
-        }
-    };
+    // Probe availability with databases() rather than opening a throwaway database: it exercises the
+    // IndexedDB backend without creating anything, and rejects when storage is blocked.
+    const isAccessible = await Promise.race([
+        indexedDB.databases().then(() => true, () => false),
+        // Older Firefox versions (at least 140) are a bit
+        // fussy with this call in case of blocked connections,
+        // so this is to ensure we never get an unresolved Promise
+        new Promise<boolean>((resolve) => setTimeout(() => resolve(false), 1_500)),
+    ]);
 
-    return {
-        hasIndexedDB,
-        isAccessible: await testDB(),
-    };
+    return { hasIndexedDB, isAccessible };
 }
 
 export const browserAPI = (globalThis as any)?.browser ?? (globalThis as any)?.chrome;
