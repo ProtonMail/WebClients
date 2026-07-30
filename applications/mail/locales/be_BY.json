@@ -645,9 +645,6 @@
       "Get the browser extension": [
         "Атрымаць пашырэнні для браўзера"
       ],
-      "Get the deal": [
-        "Скарыстацца прапановай"
-      ],
       "Get the writing assistant": [
         "Атрымаць памочніка ў напісанні"
       ],
@@ -1522,7 +1519,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -4609,17 +4609,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Выяўлены наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } новае паведамленне",
-        "${ notificationsToShow.length } новыя паведамленні",
-        "${ notificationsToShow.length } новых паведамленняў",
-        "${ notificationsToShow.length } новых паведамленняў"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Ад: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10718,6 +10707,9 @@
       "Sort": [
         "Сартаванне"
       ],
+      "Spam": [
+        "Спам"
+      ],
       "Starred": [
         "З зорачкай"
       ],
@@ -10792,6 +10784,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Трансакцыі: квітанцыі, браніраванні, рахункі і іншыя заказы"
+      ],
+      "Trash": [
+        "Сметніца"
       ],
       "Undisclosed Recipients": [
         "Схаваныя атрымальнікі"
@@ -14114,6 +14109,28 @@
         "Не ўдалося выканаць паўторную спробу шыфравання запрашэння. Паспрабуйце яшчэ раз."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Уладальнік"
+      ],
+      "Security Admin": [
+        "Адміністратар бяспекі"
+      ],
+      "User Admin": [
+        "Адміністратар карыстальніка"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Канфіграцыя палітык бяспекі, захоўванне даных, інфраструктура VPN і кіраванне журналамі аўдыту."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Кіраванне ўсімі карыстальнікамі, групы, бяспека, білінг і сістэмныя канфігурацыі."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Кіраванне карыстальнікамі, групы, сховішча для ўсіх удзельнікаў, прызначэнне роляў і размеркаванне ліцэнзій."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Агляд бяспекі ўліковага запісу"
@@ -17021,9 +17038,6 @@
       ],
       "Summary": [
         "Зводка"
-      ],
-      "Summer Sale": [
-        "Летні распродаж"
       ],
       "This field cannot be empty": [
         "Гэта поле не можа быць пустым"

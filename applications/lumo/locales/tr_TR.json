@@ -181,9 +181,6 @@
       "Get the apps": [
         "Uygulamaları edinin"
       ],
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
@@ -1101,9 +1098,6 @@
       "Refresh folder contents": [
         "Klasör içeriklerini yenile"
       ],
-      "Register here": [
-        "Buradan hesap açın"
-      ],
       "Report an issue": [
         "Sorun bildireceğim"
       ],
@@ -1121,6 +1115,9 @@
       ],
       "Send message": [
         "İletiyi gönder"
+      ],
+      "Share your thoughts": [
+        "Düşüncelerinizi paylaşın"
       ],
       "Show safety information": [
         "Güvenlik bilgilerini görüntüle"
@@ -1400,9 +1397,6 @@
       ]
     },
     "collider_2025: Description": {
-      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
-        "${ BRAND_NAME } yapay zeka yardımcıları ile ilgili ücretli bir araştırma yürütüyor. İlgilenir misiniz? Yalnızca 2 dakikanızı alır. Seçilirseniz £80 kazanacaksınız."
-      ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } yanıtları, iletişim tarzı, uzmanlık, yinelenen araçlar ve uzun süreli projelere göre uyarlamak için kayıtlı belleklerinize başvurur."
       ],
@@ -1486,6 +1480,9 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Belleği kapatmak kaydedilmiş olan tüm ${ memories.length } bellekleri kalıcı olarak siler. Belleği daha sonra yeniden açabilirsiniz ancak silinen bellekler geri getirilemez."
+      ],
+      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
+        "Deneyimleriniz ${ LUMO_SHORT_APP_NAME } uygulamasına yön veriyor. Düşüncelerinizi bizimle paylaşın."
       ]
     },
     "collider_2025: DisableMemory": {
@@ -2805,6 +2802,9 @@
       "Generated code": [
         "Oluşturulan kod"
       ],
+      "Got a minute?": [
+        "Bir dakikanız var mı?"
+      ],
       "Guest": [
         "Konuk"
       ],
@@ -2894,9 +2894,6 @@
       ],
       "Visualization mode": [
         "Görselleştirme kipi"
-      ],
-      "We'd love your feedback!": [
-        "Geri bildirimlerinizi bekliyoruz!"
       ],
       "What you can build": [
         "Neler oluşturabilirsiniz"
@@ -7709,6 +7706,9 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } koltukları"
       ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } koltuğu",
         "${ seats } ${ MEET_APP_NAME } koltuğu"
@@ -9297,6 +9297,28 @@
         "YAZ İNDİRİMİ"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Sahibi"
+      ],
+      "Security Admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "User Admin": [
+        "Kullanıcı yöneticisi"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Hesap güvenliğini gözden geçirin"
@@ -10041,9 +10063,6 @@
       ],
       "Summary": [
         "Özet"
-      ],
-      "Summer Sale": [
-        "Yaz İndirimi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"

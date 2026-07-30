@@ -181,9 +181,6 @@
       "Get the apps": [
         "Obtenha os aplicativos"
       ],
-      "Get the deal": [
-        "Obtenha a oferta"
-      ],
       "Get verification code": [
         "Obter código de verificação"
       ],
@@ -1101,9 +1098,6 @@
       "Refresh folder contents": [
         "Atualizar conteúdo da pasta"
       ],
-      "Register here": [
-        "Registre-se aqui"
-      ],
       "Report an issue": [
         "Reportar um problema"
       ],
@@ -1400,9 +1394,6 @@
       ]
     },
     "collider_2025: Description": {
-      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
-        "A ${ BRAND_NAME } está realizando uma pesquisa remunerada sobre assistentes de IA. Está interessado? Leva apenas 2 minutos. Se for selecionado, você receberá £80."
-      ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "O ${ LUMO_SHORT_APP_NAME } faz referência às suas memórias salvas para personalizar as respostas — estilo de comunicação, especialidade, ferramentas recorrentes e projetos de longa duração."
       ],
@@ -1723,7 +1714,7 @@
         "Crie uma conta gratuita para manter suas conversas, organizá-las em projetos e obter limites de uso maiores."
       ],
       "Save your chat history": [
-        "Salve seu histórico de chat"
+        "Salve seu histórico de bate-papo"
       ]
     },
     "collider_2025: Header": {
@@ -2874,9 +2865,6 @@
       "Visualization mode": [
         "Modo de visualização"
       ],
-      "We'd love your feedback!": [
-        "Adoraríamos seu feedback!"
-      ],
       "What you can build": [
         "O que você pode construir"
       ],
@@ -3027,7 +3015,7 @@
         "Seu histórico de bate-papo é limitado a 7 dias. Converse com seu administrador para histórico de bate-papo estendido e outros recursos premium."
       ],
       "Your chat history is limited to 7 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited history and other premium features.": [
-        "Seu histórico de chat é limitado a 7 dias. Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para ter histórico ilimitado e outros recursos premium."
+        "Seu histórico de bate-papo é limitado a 7 dias. Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para ter histórico ilimitado e outros recursos premium."
       ]
     },
     "collider_2025: Upsell Title": {
@@ -3753,6 +3741,9 @@
       ],
       "Lockdown Mode is enabled on your device": [
         "Modo de isolamento está ativado no seu dispositivo"
+      ],
+      "No favorites yet. Star a chat to find it here quickly.": [
+        "Ainda não há favoritos. Marque um bate-papo com uma estrela para encontrá-lo rapidamente aqui."
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Não há detalhes pessoais neste cartão — apenas sua pontuação de exposição por área. Quanto menor ela for, menos você revelou."
@@ -9019,6 +9010,28 @@
         "OFERTA ESPECIAL"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Proprietário"
+      ],
+      "Security Admin": [
+        "Administrador de segurança"
+      ],
+      "User Admin": [
+        "Administração de usuário"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Revise a segurança da conta"
@@ -9763,9 +9776,6 @@
       ],
       "Summary": [
         "Resumo"
-      ],
-      "Summer Sale": [
-        "Oferta Especial"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar ${ DARK_WEB_MONITORING_NAME }"

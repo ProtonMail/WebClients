@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Cancella i dati del browser"
       ],
+      "Clear conversation": [
+        "Cancella conversazione"
+      ],
       "Clear data": [
         "Cancella dati"
       ],
@@ -638,9 +641,6 @@
       ],
       "Get the browser extension": [
         "Ottieni l’estensione per il browser"
-      ],
-      "Get the deal": [
-        "Approfitta dell'offerta"
       ],
       "Get the writing assistant": [
         "Ottieni l'assistente alla scrittura"
@@ -1444,6 +1444,9 @@
       "Stay": [
         "Resta"
       ],
+      "Stop": [
+        "Interrompi"
+      ],
       "Stop downloading assistant": [
         "Ferma il download dell'assistente"
       ],
@@ -1486,6 +1489,9 @@
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Per cercare in modo sicuro le tue email, dobbiamo scaricare una copia dei tuoi messaggi nel tuo browser. Il download iniziale potrebbe richiedere un attimo."
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Attiva/disattiva ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Pulsante app Calendario"
       ],
@@ -1514,7 +1520,8 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "Affida chiave"
+        "chiave attendibile",
+        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -4518,15 +4525,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Abbiamo rilevato i seguenti campi nel file CSV che hai caricato. Seleziona quelli che vuoi importare."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nuovo messaggio",
-        "${ notificationsToShow.length } nuovi messaggi"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "Da: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -8596,6 +8594,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Non possono inviarti spam se non conoscono il tuo indirizzo email. Proteggi la tua posta in arrivo con gli alias Hide-my-email."
       ],
+      "Thinking about this": [
+        "Sto riflettendo su questo"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
       ],
@@ -10355,6 +10356,9 @@
       "Sort": [
         "Ordina"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Importante"
       ],
@@ -10429,6 +10433,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transazioni - Ricevute, prenotazioni, fatture e ordini"
+      ],
+      "Trash": [
+        "Cestino"
       ],
       "Undisclosed Recipients": [
         "Destinatari nascosti"
@@ -10986,6 +10993,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Licenze ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per utente"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
@@ -13124,6 +13134,9 @@
       "Anytown": [
         "Roma"
       ],
+      "Ask anything…": [
+        "Chiedi qualsiasi cosa…"
+      ],
       "Company name": [
         "Nome dell'azienda"
       ],
@@ -13620,6 +13633,28 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Crittografia dell'invito non riuscita. Per favore riprova."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Proprietario"
+      ],
+      "Security Admin": [
+        "Amministratore sicurezza"
+      ],
+      "User Admin": [
+        "Amministratore utenti"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
       ]
     },
     "Safety review": {
@@ -15170,6 +15205,9 @@
         "Sposta ${ selectionCount } messaggio",
         "Sposta ${ selectionCount } messaggi"
       ],
+      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+        "Spostato in ${ label }. I messaggi simili verranno categorizzati qui in futuro."
+      ],
       "Password copied to clipboard": [
         "Password copiata negli appunti"
       ],
@@ -16361,9 +16399,6 @@
       ],
       "Summary": [
         "Riepilogo"
-      ],
-      "Summer Sale": [
-        "Saldi estivi"
       ],
       "This field cannot be empty": [
         "Campo necessario"

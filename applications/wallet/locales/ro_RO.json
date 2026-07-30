@@ -172,9 +172,6 @@
       "Get the apps": [
         "Luați aplicațiile"
       ],
-      "Get the deal": [
-        "Obțineți oferta"
-      ],
       "Get verification code": [
         "Obținere cod de verificare"
       ],
@@ -3733,6 +3730,9 @@
       "${ MEET_APP_NAME } seats": [
         "Licențe ${ MEET_APP_NAME }"
       ],
+      "${ price } per seat": [
+        "${ price } per licență"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
         "Licențe ${ MEET_APP_NAME }: ${ seats }",
@@ -5293,6 +5293,28 @@
         "Destinatar extern"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Proprietar"
+      ],
+      "Security Admin": [
+        "Administrator securitate"
+      ],
+      "User Admin": [
+        "Administrare utilizatori"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Revizuire securitate cont"
@@ -5909,9 +5931,6 @@
       ],
       "Summary": [
         "Sumar"
-      ],
-      "Summer Sale": [
-        "Reduceri de vară"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activare ${ DARK_WEB_MONITORING_NAME }"

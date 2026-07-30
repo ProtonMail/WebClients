@@ -642,9 +642,6 @@
       "Get the browser extension": [
         "Λήψη της προέκτασης για το πρόγραμμα περιήγησης"
       ],
-      "Get the deal": [
-        "Αποκτήστε την προσφορά"
-      ],
       "Get the writing assistant": [
         "Λάβετε τον βοηθό γραφής"
       ],
@@ -1526,7 +1523,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4550,12 +4548,12 @@
       ]
     },
     "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } νέο μήνυμα",
-        "${ notificationsToShow.length } νέα μηνύματα"
+      "${ messageCount } new message": [
+        "${ messageCount } νέο μήνυμα",
+        "${ messageCount } νέα μηνύματα"
       ],
-      "From: ${ sender } - ${ Subject }": [
-        "Από: ${ sender } - ${ Subject }"
+      "From: ${ sender } - ${ message.Subject }": [
+        "Από: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6837,6 +6835,10 @@
         "${ contactsLength } επαφή",
         "${ contactsLength } επαφές"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } emails → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } από ${ totalProgress }",
         "${ currentProgress } από ${ totalProgress }"
@@ -8071,6 +8073,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
       ],
+      "Move emails": [
+        "Μετακίνηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
@@ -8163,6 +8168,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Ανοίξτε τον οδηγό για προτεινόμενες ενέργειες και χρήσιμους συνδέσμους."
+      ],
+      "Opened ${ location }": [
+        "Άνοιξε ${ location }"
       ],
       "Optional": [
         "Προαιρετικό"
@@ -8647,6 +8655,9 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Δεν μπορούν να σας στείλουν ανεπιθύμητα μηνύματα εάν δεν γνωρίζουν τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. Προστατέψτε τα εισερχόμενά σας με hide-my-email ψευδώνυμα."
+      ],
+      "Thinking about this": [
+        "Το σκέφτομαι αυτό"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
@@ -9783,6 +9794,9 @@
       "Apply to future messages": [
         "Εφαρμογή στα μελλοντικά μηνύματα"
       ],
+      "Archive": [
+        "Αρχειοθέτηση"
+      ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
@@ -10416,6 +10430,9 @@
       "Sort": [
         "Ταξινόμηση"
       ],
+      "Spam": [
+        "Ενοχλητικό"
+      ],
       "Starred": [
         "Με αστέρι"
       ],
@@ -10490,6 +10507,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Συναλλαγές - Αποδείξεις, κρατήσεις, λογαριασμοί και παραγγελίες"
+      ],
+      "Trash": [
+        "Διαγραμμένα"
       ],
       "Undisclosed Recipients": [
         "Άγνωστοι παραλήπτες"
@@ -13704,6 +13724,28 @@
         "Αποτυχία επανακρυπτογράφησης της πρόσκλησης. Παρακαλούμε δοκιμάστε ξανά."
       ]
     },
+    "Role": {
+      "Owner": [
+        "Ιδιοκτήτης"
+      ],
+      "Security Admin": [
+        "Διαχειριστής Ασφαλείας"
+      ],
+      "User Admin": [
+        "Διαχειριστής Χρηστών"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Έλεγχος ασφάλειας λογαριασμού"
@@ -16117,6 +16159,9 @@
       "Move all messages to trash": [
         "Μετακίνηση όλων των μηνυμάτων στα Διαγραμμένα"
       ],
+      "Move emails": [
+        "Μετακίνηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
       "Move to": [
         "Μετακίνηση σε"
       ],
@@ -16446,9 +16491,6 @@
       ],
       "Summary": [
         "Περίληψη"
-      ],
-      "Summer Sale": [
-        "Καλοκαιρινές εκπτώσεις"
       ],
       "This field cannot be empty": [
         "Αυτό το πεδίο δεν μπορεί να είναι κενό"

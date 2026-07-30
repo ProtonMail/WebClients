@@ -639,9 +639,6 @@
       "Get the browser extension": [
         "ბრაუზერის გაფართოების მიღება"
       ],
-      "Get the deal": [
-        "ფასდაკლების მიღება"
-      ],
       "Get the writing assistant": [
         "მიიღეთ წერის დამხმარე"
       ],
@@ -1514,7 +1511,8 @@
         "ნდობა"
       ],
       "Trust key": [
-        "გასაღების სანდოობა"
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -4518,15 +4516,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "თქვენს მიერ ატვირთულ CSV ფაილში ამოჩენილია შემდეგი ველები. მონიშნეთ ისინი, რომლების შემოტანაც გსურთ."
-      ]
-    },
-    "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } ახალიშეტყობინება",
-        "${ notificationsToShow.length } ახალიშეტყობინება"
-      ],
-      "From: ${ sender } - ${ Subject }": [
-        "გამომგზავნელი: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -10331,6 +10320,9 @@
       "Sort": [
         "დალაგება"
       ],
+      "Spam": [
+        "სპამი"
+      ],
       "Starred": [
         "ვარსკვლავიანები"
       ],
@@ -10405,6 +10397,9 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "ტრანზაქციები - ქვითრები, ჯავშნები, გადასახადები და შეკვეთები"
+      ],
+      "Trash": [
+        "სანაგვე ყუთი"
       ],
       "Undisclosed Recipients": [
         "გაუმჟღავნებელი მიმღებები"
@@ -13598,6 +13593,28 @@
         "მოწვევის ხელახლა დაშიფვრა ვერ მოხერხდა. კიდევ სცადეთ."
       ]
     },
+    "Role": {
+      "Owner": [
+        "მფლობელი"
+      ],
+      "Security Admin": [
+        "უსაფრთხოების ადმინისტრატორი"
+      ],
+      "User Admin": [
+        "მომხმარებლის ადმინისტრატორი"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "მოარგეთ უსაფრთხოების პოლიტიკა, მონაცემთა შენახვა, VPN ინფრასტრუქტურა და მართეთ აუდიტის ჟურნალები."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "მართეთ ყველა მომხმარებელი, ჯგუფი, უსაფრთხოება, ანგარიშსწორება და სისტემის კონფიგურაციები."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "მართეთ მომხმარებლები, ჯგუფები და საცავი ყველა წევრისთვის, მიანიჭეთ როლები და გადაანაწილეთ ლიცენზიები."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "ანგარიშის უსაფრთხოების გადახედვა"
@@ -16334,9 +16351,6 @@
       ],
       "Summary": [
         "შეჯამება"
-      ],
-      "Summer Sale": [
-        "ზაფხულის ფასდაკლება"
       ],
       "This field cannot be empty": [
         "ეს ველი ცარიელი ვერ იქნება"

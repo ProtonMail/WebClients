@@ -516,9 +516,6 @@
       "Get the apps": [
         "获取应用"
       ],
-      "Get the deal": [
-        "立即享受优惠"
-      ],
       "Get the writing assistant": [
         "获取写作助手"
       ],
@@ -10878,6 +10875,28 @@
         "您的订阅"
       ]
     },
+    "Role": {
+      "Owner": [
+        "所有者"
+      ],
+      "Security Admin": [
+        "安全管理员"
+      ],
+      "User Admin": [
+        "用户管理员"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "配置安全策略、数据保留和 VPN 基础设施，并管理审计日志。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "管理所有用户、群组、安全、计费和系统配置。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成员的账户、群组和存储空间，分配角色和许可证。"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "审查账户安全"
@@ -13027,9 +13046,6 @@
       ],
       "Summary": [
         "概览"
-      ],
-      "Summer Sale": [
-        "夏季特惠"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此文件的签名缺失或无效，请转至菜单 (⋮) → 详细信息以获取相关信息。"

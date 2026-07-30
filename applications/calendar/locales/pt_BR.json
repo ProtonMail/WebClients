@@ -446,9 +446,6 @@
       "Get the apps": [
         "Obtenha os aplicativos"
       ],
-      "Get the deal": [
-        "Obtenha a oferta"
-      ],
       "Get the writing assistant": [
         "Obter assistente de escrita"
       ],
@@ -6422,6 +6419,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
       ],
+      "Thinking about this": [
+        "Pensando nisso"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
       ],
@@ -10563,6 +10563,28 @@
         "Recarregar evento"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Proprietário"
+      ],
+      "Security Admin": [
+        "Administrador de segurança"
+      ],
+      "User Admin": [
+        "Administração de usuário"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
+      ]
+    },
     "RSVP Note": {
       "Edit note": [
         "Editar a nota"
@@ -12708,9 +12730,6 @@
       ],
       "Summary": [
         "Resumo"
-      ],
-      "Summer Sale": [
-        "Oferta Especial"
       ],
       "The booking feature is currently unavailable.": [
         "O recurso de reserva está indisponível no momento."

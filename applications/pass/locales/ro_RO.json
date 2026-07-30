@@ -118,6 +118,9 @@
       "Cancel": [
         "Anulare"
       ],
+      "Cancel bulk selection": [
+        "Anulare selectare în bloc"
+      ],
       "Cancel email change": [
         "Anulare modificare e-mail"
       ],
@@ -139,8 +142,14 @@
       "Clear": [
         "Eliminare"
       ],
+      "Clear item type filter": [
+        "Ștergere filtru tip articol"
+      ],
       "Clear search": [
         "Golire căutare"
+      ],
+      "Clear sort filter": [
+        "Golire filtru sortare"
       ],
       "Close": [
         "Închidere"
@@ -580,6 +589,9 @@
       "Reset": [
         "Resetare"
       ],
+      "Reset filters": [
+        "Resetare filtre"
+      ],
       "Reset history": [
         "Resetare istoric"
       ],
@@ -618,6 +630,9 @@
       ],
       "See members": [
         "Afișare membri"
+      ],
+      "Select items": [
+        "Selectare articole"
       ],
       "Send email": [
         "Trimitere mesaj"
@@ -678,6 +693,9 @@
       ],
       "Submitting report...": [
         "Se trimite raportul…"
+      ],
+      "Switch vault": [
+        "Comutare seif"
       ],
       "Sync alias": [
         "Sincronizare alias",
@@ -2128,9 +2146,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."
