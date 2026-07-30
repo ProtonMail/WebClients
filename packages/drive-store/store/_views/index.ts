@@ -7,7 +7,6 @@ export { default as useShareURLView } from './useShareURLView';
 export { default as useShareMemberView } from './useShareMemberView';
 export { default as useSharedLinksView } from './useSharedLinksView';
 export { useShareBackgroundActions } from './useShareBackgroundActions';
-export { default as useTransfersView } from './useTransfersView';
 export { default as useTrashView } from './useTrashView';
 export { default as useDevicesView } from './useDevicesView';
 export { useBookmarksPublicView } from './useBookmarksPublicView';
