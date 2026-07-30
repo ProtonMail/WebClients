@@ -521,9 +521,6 @@
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
       ],
-      "Get the deal": [
-        "Αποκτήστε την προσφορά"
-      ],
       "Get the writing assistant": [
         "Λάβετε τον βοηθό γραφής"
       ],
@@ -6591,6 +6588,9 @@
       "There is nothing to see here": [
         "Δεν υπάρχει τίποτα να δείτε εδώ"
       ],
+      "Thinking about this": [
+        "Το σκέφτομαι αυτό"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Αυτή η ενέργεια θα διαγράψει τον σύνδεσμο και θα ανακαλέσει την πρόσβαση για όλους τους χρήστες."
       ],
@@ -11069,6 +11069,28 @@
         "η συνδρομή σας"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Ιδιοκτήτης"
+      ],
+      "Security Admin": [
+        "Διαχειριστής Ασφαλείας"
+      ],
+      "User Admin": [
+        "Διαχειριστής Χρηστών"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Έλεγχος ασφάλειας λογαριασμού"
@@ -13265,9 +13287,6 @@
       ],
       "Summary": [
         "Περίληψη"
-      ],
-      "Summer Sale": [
-        "Καλοκαιρινές εκπτώσεις"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Αυτό το αρχείο έχει απούσα ή μη έγκυρη υπογραφή. Για πληροφορίες, μεταβείτε στο Μενού (⋮) → Λεπτομέρειες."
