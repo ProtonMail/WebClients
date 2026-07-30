@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 interface LayoutState {
     sidebarExpanded: boolean;
     selectAll: boolean;
+    draggingElements: boolean;
 }
 
 export const layoutInitialState: LayoutState = {
@@ -12,6 +13,11 @@ export const layoutInitialState: LayoutState = {
      */
     sidebarExpanded: false,
     selectAll: false,
+    /**
+     * True while the user drags elements out of the mailbox list. Drop targets
+     * outside of the list (category tabs, ...) use it to show their affordance.
+     */
+    draggingElements: false,
 };
 
 const name = 'layout';
@@ -27,6 +33,9 @@ const layoutSlice = createSlice({
         },
         setSelectAll: (state, action: PayloadAction<boolean>) => {
             state.selectAll = action.payload;
+        },
+        setDraggingElements: (state, action: PayloadAction<boolean>) => {
+            state.draggingElements = action.payload;
         },
     },
 });

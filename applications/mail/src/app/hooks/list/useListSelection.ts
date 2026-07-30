@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -10,7 +10,8 @@ import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { isElementMessage } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 import { selectPageSize } from '../../store/elements/elementsSelectors';
-import { useMailSelector } from '../../store/hooks';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
+import { layoutActions } from '../../store/layout/layoutSlice';
 
 /**
  * Hook to manage list selection, checked states, and drag-drop functionality
@@ -81,6 +82,18 @@ export const useListSelection = ({
         },
         selectAll
     );
+
+    const isDraggingElements = draggedIDs.length > 0;
+    const dispatch = useMailDispatch();
+
+    // Helps components outside the list to know when an element drag is in progress.
+    useEffect(() => {
+        dispatch(layoutActions.setDraggingElements(isDraggingElements));
+
+        return () => {
+            dispatch(layoutActions.setDraggingElements(false));
+        };
+    }, [isDraggingElements, dispatch]);
 
     const draggedIDsMap = useMemo<{ [ID: string]: boolean }>(() => {
         return draggedIDs.reduce(

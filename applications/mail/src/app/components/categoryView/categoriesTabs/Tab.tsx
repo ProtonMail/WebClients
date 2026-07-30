@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import { clsx } from 'clsx';
+import { c } from 'ttag';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
@@ -27,16 +28,16 @@ import { useCategoriesBadge } from './useCategoriesBadge';
 interface Props {
     category: CategoryTab;
     tabState: TabState;
+    userIsDragging: boolean;
 }
 
 const navClasses: Record<TabState, string> = {
     [TabState.ACTIVE]: 'active color-norm border-bottom border-top text-semibold mail-category-border',
-    [TabState.DRAGGING_OVER]: 'hovered border mail-category-border',
-    [TabState.DRAGGING_NEIGHBOR]: 'neighbor border border-transparent',
+    [TabState.DRAGGING_OVER]: 'hovered border border-transparent z-up',
     [TabState.INACTIVE]: 'border border-transparent',
 };
 
-export const Tab = ({ category, tabState }: Props) => {
+export const Tab = ({ category, tabState, userIsDragging }: Props) => {
     const dispatch = useDispatch();
     const { call } = useEventManager();
 
@@ -72,20 +73,22 @@ export const Tab = ({ category, tabState }: Props) => {
     };
 
     const navigateTo = setCategoryInUrl(category.id);
+    const shouldShowDragHelper = userIsDragging && tabState !== TabState.ACTIVE;
 
     return (
         <NavLink
             to={navigateTo}
             className={clsx(
                 'tab-container gap-1.5 h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
-                navClasses[tabState]
+                navClasses[tabState],
+                shouldShowDragHelper && 'dashed'
             )}
             role="tab"
             aria-selected={tabState === TabState.ACTIVE}
             title={getTitleFromCategoryId(category.id)}
             aria-label={getLabelFromCategoryId(category.id)}
             data-testid={`category-tab-${category.id}`}
-            data-color={tabState === TabState.ACTIVE ? category.colorShade : undefined}
+            data-color={tabState === TabState.INACTIVE ? undefined : category.colorShade}
             onClick={handleClick}
             draggable={false}
         >
@@ -106,6 +109,10 @@ export const Tab = ({ category, tabState }: Props) => {
                 >
                     {getLabelFromCategoryId(category.id)}
                 </span>
+                {shouldShowDragHelper ? (
+                    // translator: As concise as possible, under 20 characters if possible
+                    <span className="tab-dragging-help text-xs text-ellipsis min-w-0">{c('Info').t`Move here`}</span>
+                ) : null}
             </span>
 
             <TabBadge count={count} tabState={tabState} shouldShowCounter={shouldShowCounter} />
