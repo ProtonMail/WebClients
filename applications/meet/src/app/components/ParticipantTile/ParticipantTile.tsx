@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 
 import { VideoTrack, useLocalParticipant, useParticipantTracks } from '@livekit/components-react';
 import type { Participant, RemoteTrackPublication } from 'livekit-client';
@@ -99,11 +99,32 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
     const videoStateLabel = shouldShowVideo ? c('Accessibility').t`camera on` : c('Accessibility').t`camera off`;
     const tileAriaLabel = `${participantName}, ${audioStateLabel}, ${videoStateLabel}`;
 
-    const { width, height } = cameraVideoPublication?.dimensions ?? {
-        width: 0,
-        height: 0,
-    };
-    const isVideoVertical = width < height;
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isVideoVertical, setIsVideoVertical] = useState(false);
+
+    // Derive orientation from the rendered video element's intrinsic size rather than publication.dimensions
+    useEffect(() => {
+        const videoEl = videoRef.current;
+        if (!shouldShowVideo || !videoEl) {
+            return;
+        }
+
+        const updateOrientation = () => {
+            const { videoWidth, videoHeight } = videoEl;
+
+            if (videoWidth && videoHeight) {
+                setIsVideoVertical(videoWidth < videoHeight);
+            }
+        };
+
+        updateOrientation();
+        videoEl.addEventListener('loadedmetadata', updateOrientation);
+        videoEl.addEventListener('resize', updateOrientation);
+        return () => {
+            videoEl.removeEventListener('loadedmetadata', updateOrientation);
+            videoEl.removeEventListener('resize', updateOrientation);
+        };
+    }, [cameraVideoPublication?.trackSid, shouldShowVideo]);
 
     // Queue-based subscription: ParticipantTile enqueues work by registering the remote publication.
     // Provider is responsible for subscribing/enabling/quality selection & stuck resets.
@@ -285,6 +306,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     <div className="gradient-overlay absolute top-0 left-0 w-full h-full z-1" />
                     <VideoTrack
                         key={cameraVideoPublication?.trackSid}
+                        ref={videoRef}
                         className={clsx(
                             'participant-tile-body__video w-full h-full rounded-xl',
                             isVideoVertical && 'vertical-video'
