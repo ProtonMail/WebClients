@@ -10,7 +10,6 @@ import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/c
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
@@ -179,13 +178,9 @@ const AccountStepPayment = ({
         user,
         subscription: model.session?.subscription,
         planIDs: model.subscriptionData.planIDs,
-        onChargeable: (
-            _,
-            { chargeablePaymentParameters, paymentsVersion, source, sourceType, paymentProcessorType }
-        ) => {
+        onChargeable: (_, { chargeablePaymentParameters, source, sourceType, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const extendedTokenPayment: ExtendedTokenPayment = {
-                    paymentsVersion,
                     paymentMethodType: sourceType,
                     paymentMethodValue: source,
                     paymentProcessorType,
@@ -316,7 +311,6 @@ const AccountStepPayment = ({
                         cycle: model.subscriptionData.cycle,
                         plan: selectedPlan,
                         planName: selectedPlan.Name,
-                        paymentsVersion: getPaymentsVersion(),
                     },
                 });
             }

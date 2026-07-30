@@ -54,11 +54,7 @@ import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payme
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
-import {
-    type GetChargebeeConfigurationResponse,
-    getChargebeeConfiguration,
-    getPaymentsVersion,
-} from '../../core/api/api';
+import { type GetChargebeeConfigurationResponse, getChargebeeConfiguration } from '../../core/api/api';
 import type {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
@@ -769,9 +765,7 @@ export const useCbIframe = (): CbIframeHandles => {
 
     useEffect(() => {
         return events.onUnhandledError((error, rawError, messagePayload, checkpoints) => {
-            const context = {
-                paymentsVersion: getPaymentsVersion(),
-            };
+            const context = {};
 
             capturePaymentMessage(
                 'Payments: Unhandled Chargebee error',

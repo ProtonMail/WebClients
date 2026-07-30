@@ -12,8 +12,6 @@ import { capturePaymentMessage } from '../sentry/capture';
 import {
     type BackendPaymentIntent,
     type CreatePaymentIntentData,
-    type CreateTokenData,
-    createTokenV4,
     fetchPaymentIntentForExistingV5,
     fetchPaymentIntentV5,
 } from './api/api';
@@ -21,70 +19,18 @@ import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
 import type {
     AmountAndCurrency,
     AuthorizedV5PaymentToken,
-    ChargeablePaymentToken,
     ChargeableV5PaymentToken,
     ChargebeeFetchedPaymentToken,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
-    ExistingPayment,
     ExistingPaymentMethod,
     NonAuthorizedV5PaymentToken,
-    NonChargeablePaymentToken,
     NonChargeableV5PaymentToken,
     PaymentMethodType,
-    PaymentTokenResult,
     PlainPaymentMethodType,
     RemoveEventListener,
     V5PaymentToken,
 } from './interface';
-import { toV5PaymentToken } from './utils';
-
-/**
- * Prepares the parameters and makes the API call to create the payment token.
- *
- * @param params
- * @param api
- * @param amountAndCurrency
- */
-const fetchPaymentToken = async (
-    params: ExistingPayment,
-    api: Api,
-    amountAndCurrency?: AmountAndCurrency
-): Promise<PaymentTokenResult> => {
-    const data: CreateTokenData = { ...amountAndCurrency, ...params };
-
-    return api<PaymentTokenResult>({
-        ...createTokenV4(data),
-        notificationExpiration: 10000,
-    });
-};
-
-const formatToken = (
-    { Token, Status, ApprovalURL, ReturnHost }: PaymentTokenResult,
-    type: PlainPaymentMethodType,
-    amountAndCurrency?: AmountAndCurrency
-): ChargeablePaymentToken | NonChargeablePaymentToken => {
-    const chargeable = Status === PAYMENT_TOKEN_STATUS.CHARGEABLE;
-    const paymentToken = toV5PaymentToken(Token);
-
-    const base = {
-        type,
-        chargeable,
-        ...amountAndCurrency,
-        ...paymentToken,
-    };
-
-    if (chargeable) {
-        return base as ChargeablePaymentToken;
-    } else {
-        return {
-            ...base,
-            status: Status,
-            approvalURL: ApprovalURL,
-            returnHost: ReturnHost,
-        } as NonChargeablePaymentToken;
-    }
-};
 
 export function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent): PaymentIntent;
 export function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent | null): PaymentIntent | null;
@@ -114,28 +60,6 @@ export function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent
 
     return Data;
 }
-
-export const createPaymentTokenForExistingPayment = async (
-    PaymentMethodID: ExistingPaymentMethod,
-    type:
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.APPLE_PAY
-        | PAYMENT_METHOD_TYPES.GOOGLE_PAY,
-    api: Api,
-    amountAndCurrency: AmountAndCurrency
-): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> => {
-    const paymentTokenResult = await fetchPaymentToken(
-        {
-            PaymentMethodID,
-        },
-        api,
-        amountAndCurrency
-    );
-
-    return formatToken(paymentTokenResult, type, amountAndCurrency);
-};
 
 export type PaymentVerificator = (params: {
     addCardMode?: boolean;

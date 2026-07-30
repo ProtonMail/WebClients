@@ -21,7 +21,7 @@ export const useDeleteSubscription = () => {
     const deleteUserSubscription = async (feedback: FeedbackDowngradeData): Promise<CancelSubscriptionResult> => {
         try {
             cancellationLoading.show();
-            await api(deleteSubscription(feedback, 'v5'));
+            await api(deleteSubscription(feedback));
             await eventManager.call();
             createNotification({ text: c('Success').t`You have successfully unsubscribed` });
             return SUBSCRIPTION_DOWNGRADED;

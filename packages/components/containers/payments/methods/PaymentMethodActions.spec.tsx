@@ -223,7 +223,7 @@ describe('PaymentMethodActions', () => {
             await userEvent.click(await screen.findByText('Mark as default'));
 
             await waitFor(async () => {
-                expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'], 'v5')); // a request to change the order of the payment methods
+                expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'])); // a request to change the order of the payment methods
             });
             await waitFor(async () => {
                 expect(call).toHaveBeenCalled();
@@ -268,7 +268,7 @@ describe('PaymentMethodActions', () => {
             await userEvent.click(await screen.findByTestId('confirm-deletion'));
 
             await waitFor(async () => {
-                expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123', 'v5'));
+                expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123'));
             });
             await waitFor(async () => {
                 expect(call).toHaveBeenCalled();

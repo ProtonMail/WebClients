@@ -198,15 +198,12 @@ describe('downgrade subscription', () => {
         await userEvent.click(screen.getByTestId('submitFeedback'));
 
         expect(apiMock).toHaveBeenCalledWith(
-            deleteSubscription(
-                {
-                    Reason: 'DIFFERENT_ACCOUNT',
-                    Feedback: '',
-                    ReasonDetails: '',
-                    Context: 'mail',
-                },
-                'v5'
-            )
+            deleteSubscription({
+                Reason: 'DIFFERENT_ACCOUNT',
+                Feedback: '',
+                ReasonDetails: '',
+                Context: 'mail',
+            })
         );
         await expect(cancelSubscriptionPromise).resolves.toEqual({ status: 'downgraded' });
     });

@@ -5,7 +5,7 @@ import { type PaymentsVersion, buyCredit, payInvoice, setPaymentMethodV5 } from 
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, type PLANS } from '@proton/payments/core/constants';
-import type { PaymentVerificator, PaymentVerificatorV5 } from '@proton/payments/core/createPaymentToken';
+import type { PaymentVerificatorV5 } from '@proton/payments/core/createPaymentToken';
 import type {
     AmountAndCurrency,
     AvailablePaymentMethod,
@@ -41,7 +41,6 @@ import type { OnMethodChangedHandler } from './useMethods';
 import { useMethods } from './useMethods';
 import { usePaymentsApi } from './usePaymentsApi';
 import { useSavedChargebeeMethod } from './useSavedChargebeeMethod';
-import { useSavedMethod } from './useSavedMethod';
 import { useSepaDirectDebit } from './useSepaDirectDebit';
 
 export interface OperationsSubscriptionData {
@@ -69,7 +68,7 @@ export interface OperationsData {
  */
 export interface Operations {
     buyCredit: () => Promise<unknown>;
-    payInvoice: (invoiceId: string, paymentsVersion?: PaymentsVersion) => Promise<unknown>;
+    payInvoice: (invoiceId: string, paymentsVersion: PaymentsVersion) => Promise<unknown>;
     subscribe: (operationsDataParam?: OperationsSubscriptionData) => Promise<unknown>;
     savePaymentMethod: () => Promise<unknown>;
 }
@@ -79,7 +78,6 @@ function getOperations(
     params: ChargeablePaymentParameters,
     operationsData: OperationsData,
     {
-        paymentsVersion,
         afterOperation,
         paymentMethodValue,
         userCurrency,
@@ -87,7 +85,6 @@ function getOperations(
         build,
         telemetryContext,
     }: {
-        paymentsVersion: PaymentsVersion;
         afterOperation?: () => void;
         paymentMethodValue: PaymentMethodType;
         userCurrency: Currency | undefined;
@@ -103,10 +100,10 @@ function getOperations(
 
     return {
         buyCredit: async () => {
-            return api(buyCredit(params, paymentsVersion)).then(wrappedAfterOperation);
+            return api(buyCredit(params)).then(wrappedAfterOperation);
         },
-        payInvoice: async (invoiceId: string, versionOverride?: PaymentsVersion) => {
-            return api(payInvoice(invoiceId, params, versionOverride ?? paymentsVersion)).then(wrappedAfterOperation);
+        payInvoice: async (invoiceId: string, version: PaymentsVersion) => {
+            return api(payInvoice(invoiceId, params, version)).then(wrappedAfterOperation);
         },
         subscribe: async (operationsDataParam?: OperationsSubscriptionData) => {
             if (!operationsData?.subscription && !operationsDataParam) {
@@ -133,7 +130,6 @@ function getOperations(
                 },
                 {
                     product,
-                    version: paymentsVersion,
                     paymentMethodType: params.type,
                     paymentMethodValue,
                     userCurrency,
@@ -224,7 +220,6 @@ export const usePaymentFacade = (
                 source: PaymentMethodType;
                 sourceType: PlainPaymentMethodType;
                 context: OperationsData;
-                paymentsVersion: PaymentsVersion;
                 paymentProcessorType: PaymentProcessorType;
             }
         ) => Promise<unknown>;
@@ -266,7 +261,6 @@ export const usePaymentFacade = (
     {
         api,
         isAuthenticated,
-        verifyPayment,
         verifyPaymentChargebeeCard,
         chargebeeHandles,
         chargebeeEvents,
@@ -276,7 +270,6 @@ export const usePaymentFacade = (
     }: {
         api: Api;
         isAuthenticated: boolean;
-        verifyPayment: PaymentVerificator;
         verifyPaymentChargebeeCard: PaymentVerificatorV5;
         chargebeeHandles: ChargebeeIframeHandles;
         chargebeeEvents: ChargebeeIframeEvents;
@@ -335,33 +328,6 @@ export const usePaymentFacade = (
         telemetryContext,
     };
 
-    const savedMethod = useSavedMethod(
-        {
-            amountAndCurrency,
-            savedMethod: methods.savedSelectedMethod,
-            onChargeable: (params, paymentMethodId) =>
-                onChargeable(
-                    getOperations(api, params, paymentContext.getOperationsData(), {
-                        paymentsVersion: 'v4',
-                        paymentMethodValue: paymentMethodId,
-                        ...operationProps,
-                    }),
-                    {
-                        chargeablePaymentParameters: params,
-                        source: paymentMethodId,
-                        sourceType: params.type,
-                        context: paymentContext.getOperationsData(),
-                        paymentsVersion: 'v4',
-                        paymentProcessorType: savedMethod.meta.type,
-                    }
-                ),
-        },
-        {
-            api,
-            verifyPayment,
-        }
-    );
-
     const savedChargebeeMethod = useSavedChargebeeMethod(
         {
             amountAndCurrency,
@@ -370,7 +336,6 @@ export const usePaymentFacade = (
             onChargeable: (params, paymentMethodId) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), {
-                        paymentsVersion: 'v5',
                         paymentMethodValue: paymentMethodId,
                         ...operationProps,
                     }),
@@ -379,7 +344,7 @@ export const usePaymentFacade = (
                         source: paymentMethodId,
                         sourceType: params.type,
                         context: paymentContext.getOperationsData(),
-                        paymentsVersion: 'v5',
+
                         paymentProcessorType: savedChargebeeMethod.meta.type,
                     }
                 ),
@@ -399,7 +364,6 @@ export const usePaymentFacade = (
             onChargeable: (params) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), {
-                        paymentsVersion: 'v5',
                         paymentMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                         ...operationProps,
                     }),
@@ -408,7 +372,7 @@ export const usePaymentFacade = (
                         source: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                         sourceType: params.type,
                         context: paymentContext.getOperationsData(),
-                        paymentsVersion: 'v5',
+
                         paymentProcessorType: chargebeeCard.meta.type,
                     }
                 ),
@@ -431,7 +395,6 @@ export const usePaymentFacade = (
             onChargeable: (params) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), {
-                        paymentsVersion: 'v5',
                         paymentMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                         ...operationProps,
                     }),
@@ -440,7 +403,7 @@ export const usePaymentFacade = (
                         source: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                         sourceType: params.type,
                         context: paymentContext.getOperationsData(),
-                        paymentsVersion: 'v5',
+
                         paymentProcessorType: chargebeePaypal.meta.type,
                     }
                 ),
@@ -460,12 +423,10 @@ export const usePaymentFacade = (
         Amount: amount,
         Currency: currency,
         enablePolling: paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
-        paymentsVersion: 'v5',
         billingAddress,
         onTokenValidated: (params: ChargeablePaymentParameters) => {
             return onChargeable(
                 getOperations(api, params, paymentContext.getOperationsData(), {
-                    paymentsVersion: 'v5',
                     paymentMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
                     ...operationProps,
                 }),
@@ -474,7 +435,7 @@ export const usePaymentFacade = (
                     source: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
                     sourceType: params.type,
                     context: paymentContext.getOperationsData(),
-                    paymentsVersion: 'v5',
+
                     paymentProcessorType: bitcoinChargebee.meta.type,
                 }
             );
@@ -489,7 +450,6 @@ export const usePaymentFacade = (
             onChargeable: (params) => {
                 return onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), {
-                        paymentsVersion: 'v5',
                         paymentMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                         ...operationProps,
                     }),
@@ -498,7 +458,7 @@ export const usePaymentFacade = (
                         source: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                         sourceType: params.type,
                         context: paymentContext.getOperationsData(),
-                        paymentsVersion: 'v5',
+
                         paymentProcessorType: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                     }
                 );
@@ -519,7 +479,6 @@ export const usePaymentFacade = (
             onChargeable: (params) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), {
-                        paymentsVersion: 'v5',
                         paymentMethodValue: PAYMENT_METHOD_TYPES.APPLE_PAY,
                         ...operationProps,
                     }),
@@ -528,7 +487,7 @@ export const usePaymentFacade = (
                         source: PAYMENT_METHOD_TYPES.APPLE_PAY,
                         sourceType: params.type,
                         context: paymentContext.getOperationsData(),
-                        paymentsVersion: 'v5',
+
                         paymentProcessorType: applePay.meta.type,
                     }
                 ),
@@ -547,7 +506,6 @@ export const usePaymentFacade = (
             onChargeable: (params) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), {
-                        paymentsVersion: 'v5',
                         paymentMethodValue: PAYMENT_METHOD_TYPES.GOOGLE_PAY,
                         ...operationProps,
                     }),
@@ -556,7 +514,7 @@ export const usePaymentFacade = (
                         source: PAYMENT_METHOD_TYPES.GOOGLE_PAY,
                         sourceType: params.type,
                         context: paymentContext.getOperationsData(),
-                        paymentsVersion: 'v5',
+
                         paymentProcessorType: googlePay.meta.type,
                     }
                 ),
@@ -610,7 +568,6 @@ export const usePaymentFacade = (
     }, [
         paymentMethodValue,
         paymentMethodType,
-        savedMethod,
         savedChargebeeMethod,
         chargebeeCard,
         chargebeePaypal,
@@ -622,7 +579,6 @@ export const usePaymentFacade = (
 
     const reset = () => {
         [
-            savedMethod,
             savedChargebeeMethod,
             chargebeeCard,
             chargebeePaypal,
@@ -641,7 +597,6 @@ export const usePaymentFacade = (
 
     return {
         methods,
-        savedMethod,
         chargebeeCard,
         chargebeePaypal,
         applePay,

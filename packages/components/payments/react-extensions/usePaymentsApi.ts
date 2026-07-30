@@ -9,11 +9,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
-import {
-    type CheckSubscriptionData,
-    type PaymentsVersion,
-    getPaymentMethodStatus,
-} from '@proton/payments/core/api/api';
+import { type CheckSubscriptionData, getPaymentMethodStatus } from '@proton/payments/core/api/api';
 import {
     putFullBillingAddress,
     putInvoiceBillingAddress,
@@ -51,7 +47,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-const checkSubscriptionQuery = (data: CheckSubscriptionData, version: PaymentsVersion) => {
+const checkSubscriptionQuery = (data: CheckSubscriptionData) => {
     const normalizedData: CheckSubscriptionData = {
         ...data,
     };
@@ -68,7 +64,7 @@ const checkSubscriptionQuery = (data: CheckSubscriptionData, version: PaymentsVe
     }
 
     return {
-        url: `payments/${version}/subscription/check`,
+        url: `payments/v5/subscription/check`,
         method: 'post',
         data: normalizedData,
     };
@@ -312,7 +308,7 @@ export const usePaymentsApi = (
                 const silence = !!fallback || !!requestOptions.silence;
 
                 const result = await api({
-                    ...checkSubscriptionQuery(data, 'v5'),
+                    ...checkSubscriptionQuery(data),
                     ...requestOptions,
                     silence,
                 });
