@@ -798,6 +798,24 @@
       ],
       "Regex unsafe": [
         "正则表达式不安全"
+      ],
+      "Cancel bulk selection": [
+        "取消批量选择"
+      ],
+      "Clear item type filter": [
+        "清除项目类型筛选"
+      ],
+      "Clear sort filter": [
+        "清除排序筛选"
+      ],
+      "Reset filters": [
+        "重置筛选"
+      ],
+      "Select items": [
+        "选择项目"
+      ],
+      "Switch vault": [
+        "切换保险库"
       ]
     },
     "Activity": {
@@ -1465,6 +1483,9 @@
       ],
       "Regex unsafe": [
         "正则表达式不安全"
+      ],
+      "Unsupported file type": [
+        "不支持的文件类型"
       ]
     },
     "Error message": {
@@ -2199,7 +2220,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"

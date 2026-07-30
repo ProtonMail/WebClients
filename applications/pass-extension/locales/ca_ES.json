@@ -800,6 +800,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Cancel bulk selection": [
+        "Cancel·lar la selecció múltiple"
+      ],
+      "Clear item type filter": [
+        "Netejar el filtre de tipus d'element"
+      ],
+      "Clear sort filter": [
+        "Netejar el filtre d'ordenació"
+      ],
+      "Reset filters": [
+        "Restablir els filtres"
+      ],
+      "Select items": [
+        "Seleccionar els elements"
+      ],
+      "Switch vault": [
+        "Canviar de caixa forta"
       ]
     },
     "Activity": {
@@ -1470,6 +1488,9 @@
       ],
       "Regex unsafe": [
         "Expressió regular no segura"
+      ],
+      "Unsupported file type": [
+        "Tipus de fitxer no permès"
       ]
     },
     "Error message": {
@@ -2226,8 +2247,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"

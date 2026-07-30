@@ -800,6 +800,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Cancel bulk selection": [
+        "Annuler la sélection multiple"
+      ],
+      "Clear item type filter": [
+        "Effacer le filtre sur le type d'élément"
+      ],
+      "Clear sort filter": [
+        "Effacer le tri/filtre"
       ]
     },
     "Activity": {
@@ -1470,6 +1479,9 @@
       ],
       "Regex unsafe": [
         "Expression régulière non sécurisée"
+      ],
+      "Unsupported file type": [
+        "Type de fichier non pris en charge"
       ]
     },
     "Error message": {
@@ -2226,8 +2238,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"

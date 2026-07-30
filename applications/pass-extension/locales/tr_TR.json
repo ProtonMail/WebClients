@@ -800,6 +800,24 @@
       ],
       "Regex unsafe": [
         "Kurallı ifade güvenli değil"
+      ],
+      "Cancel bulk selection": [
+        "Toplu seçimi iptal et"
+      ],
+      "Clear item type filter": [
+        "Öge türü süzgecini temizle"
+      ],
+      "Clear sort filter": [
+        "Sıralama süzgecini temizle"
+      ],
+      "Reset filters": [
+        "Süzgeçleri sıfırla"
+      ],
+      "Select items": [
+        "Ögeleri seçin"
+      ],
+      "Switch vault": [
+        "Kasayı değiştir"
       ]
     },
     "Activity": {
@@ -1470,6 +1488,9 @@
       ],
       "Regex unsafe": [
         "Kurallı ifade güvenli değil"
+      ],
+      "Unsupported file type": [
+        "Dosya türü desteklenmiyor"
       ]
     },
     "Error message": {
@@ -2226,8 +2247,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
