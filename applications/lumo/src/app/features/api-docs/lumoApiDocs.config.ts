@@ -12,7 +12,7 @@ export type CodeLang = 'curl' | 'python' | 'typescript' | 'rust';
 
 export type ChatExampleVariant = 'basic' | 'tool_call';
 
-export type LumoModelId = 'auto' | 'lumo-basic-v1' | 'lumo-plus-v1';
+export type LumoModelId = 'lumo-lite' | 'lumo-max';
 
 export interface ApiDocParameter {
     name: string;
@@ -78,7 +78,15 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
                             name: 'model',
                             type: 'string',
                             required: true,
-                            description: 'Model ID. Use `auto` to let Lumo route to the best model for your task.',
+                            description: 'Model ID. `lumo-lite` or `lumo-max`',
+                        },
+                        {
+                            name: 'reasoning_effort',
+                            type: 'string',
+                            required: false,
+                            description:
+                                'Valid values: `none`, `medium`, `high`, `max`. Not all models support different reasoning levels, but `none` always turns it off.',
+                            default: 'medium',
                         },
                         {
                             name: 'messages',
@@ -103,7 +111,7 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
                         },
                         {
                             name: 'max_tokens',
-                            type: 'integer | null',
+                            type: 'integer',
                             required: false,
                             description: "Maximum tokens in the completion. Defaults to the model's output limit.",
                         },
@@ -112,7 +120,7 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
                             type: 'number',
                             required: false,
                             description: 'Sampling temperature (0–2). Lower values produce more deterministic output.',
-                            default: '1.0',
+                            default: '0.3',
                         },
                     ],
                 },
@@ -134,27 +142,19 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
     ],
     models: [
         {
-            id: 'auto',
-            label: 'Auto-route',
-            description:
-                'Lumo selects the optimal model based on your task type, prompt, and cost preference. Recommended for most use cases.',
-            contextWindow: '200k',
-            tasks: ['chat', 'analysis', 'vision', 'code'],
-        },
-        {
-            id: 'lumo-basic-v1',
-            label: 'Lumo Fast',
+            id: 'lumo-lite',
+            label: 'Lumo 2.0 Lite',
             description:
                 'Optimised for low-latency, high-throughput workloads. Best for classification, short-form generation, and real-time applications.',
-            contextWindow: '266k',
+            contextWindow: '128k',
             tasks: ['chat', 'classification', 'vision', 'extraction'],
         },
         {
-            id: 'lumo-plus-v1',
-            label: 'Lumo Thinking',
+            id: 'lumo-max',
+            label: 'Lumo 2.0 Max',
             description:
                 'Best-in-class reasoning for complex analytical tasks, multi-step code generation, and long-document synthesis.',
-            contextWindow: '200k',
+            contextWindow: '128k',
             tasks: ['analysis', 'code', 'vision', 'reasoning'],
         },
     ],
@@ -164,7 +164,7 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
   -H "Authorization: Bearer $LUMO_API_KEY" \\
   -H 'Content-Type: application/json' \\
   -d '{
-    "model": "auto",
+    "model": "lumo-lite",
     "messages": [{"role": "user", "content": "Explain quantum entanglement."}]
   }'`,
             python: `import os
@@ -176,7 +176,7 @@ headers = {
     "Content-Type": "application/json",
 }
 payload = {
-    "model": "auto",
+    "model": "lumo-lite",
     "messages": [{"role": "user", "content": "Explain quantum entanglement."}],
 }
 r = requests.post(url, headers=headers, json=payload, timeout=120)
@@ -190,7 +190,7 @@ const response = await fetch(url, {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    model: "auto",
+    model: "lumo-lite",
     messages: [{ role: "user", content: "Explain quantum entanglement." }],
   }),
 });
@@ -208,7 +208,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .header("Authorization", "Bearer " + std::env::var("LUMO_API_KEY")?)
         .header("Content-Type", "application/json")
         .json(&json!({
-            "model": "auto",
+            "model": "lumo-lite",
             "messages": [{"role": "user", "content": "Explain quantum entanglement."}]
         }))
         .send()
@@ -226,7 +226,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
   -H "Authorization: Bearer $LUMO_API_KEY" \\
   -H 'Content-Type: application/json' \\
   -d '{
-    "model": "auto",
+    "model": "lumo-lite",
     "messages": [{"role": "user", "content": "What is the weather in Geneva?"}],
     "tools": ["web_search"]
   }'`,
@@ -239,7 +239,7 @@ headers = {
     "Content-Type": "application/json",
 }
 payload = {
-    "model": "auto",
+    "model": "lumo-lite",
     "messages": [{"role": "user", "content": "What is the weather in Geneva?"}],
     "tools": ["web_search"],
 }
@@ -253,7 +253,7 @@ const response = await fetch(url, {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    model: "auto",
+    model: "lumo-lite",
     messages: [{ role: "user", content: "What is the weather in Geneva?" }],
     tools: ["web_search"],
   }),
@@ -271,7 +271,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .header("Authorization", std::env::var("LUMO_API_KEY")?)
         .header("Content-Type", "application/json")
         .json(&json!({
-            "model": "auto",
+            "model": "lumo-lite",
             "messages": [{"role": "user", "content": "What is the weather in Geneva?"}],
             "tools": ["web_search"]
         }))
@@ -287,7 +287,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         curl: `curl https://lumo.proton.me/api/ai/v1/chat/completions \\
   -H "Authorization: Bearer $LUMO_API_KEY" \\
   -H 'Content-Type: application/json' \\
-  -d '{"model": "auto", "messages": [{"role": "user", "content": "Hello"}]}'`,
+  -d '{"model": "lumo-lite", "messages": [{"role": "user", "content": "Hello"}]}'`,
         python: `import os
 import requests
 
@@ -299,7 +299,7 @@ r = requests.post(
         "Content-Type": "application/json",
     },
     json={
-        "model": "auto",
+        "model": "lumo-lite",
         "messages": [{"role": "user", "content": "Hello"}],
     },
     timeout=120,
@@ -313,7 +313,7 @@ print(r.json())`,
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    model: "auto",
+    model: "lumo-lite",
     messages: [{ role: "user", content: "Hello" }],
   }),
 });
@@ -329,7 +329,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .header("Authorization", "Bearer " + std::env::var("LUMO_API_KEY")?)
         .header("Content-Type", "application/json")
         .json(&json!({
-            "model": "auto",
+            "model": "lumo-lite",
             "messages": [{"role": "user", "content": "Hello"}]
         }))
         .send()
