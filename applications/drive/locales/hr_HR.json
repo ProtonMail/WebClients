@@ -523,9 +523,6 @@
       "Get the apps": [
         "Preuzmite aplikacije"
       ],
-      "Get the deal": [
-        "Ugrabite ponudu"
-      ],
       "Get the writing assistant": [
         "Nabavite pomoćnika za pisanje"
       ],
@@ -11181,6 +11178,28 @@
         "Vaša pretplata"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Vlasnik"
+      ],
+      "Security Admin": [
+        "Administrator sigurnosti"
+      ],
+      "User Admin": [
+        "Administrator korisnika"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurirajte sigurnosna pravila, zadržavanje podataka i VPN infrastrukturu te upravljajte revizijskim zapisnicima."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Upravljanje svim korisnicima, grupama, sigurnošću, naplatom i konfiguracijama sustava."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Upravljanje korisnicima, grupama i pohranom za sve članove, dodjeljivanje uloga i dodjela licenci."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Pregledaj sigurnost korisničkog računa"
@@ -13413,9 +13432,6 @@
       "Summary": [
         "Sažetak"
       ],
-      "Summer Sale": [
-        "Ljetna rasprodaja"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Ovoj datoteci nedostaje potpis ili je nevaljan. Idite na Izbornik (⋮) → Pojedinosti za informacije."
       ],
@@ -13960,9 +13976,6 @@
       ],
       "The verification of the contact details' signature failed.": [
         "Provjera potpisa za detalje kontakta nije uspjela."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Ova radnja je nepovratna. Unesite riječ ${ boldDanger }} u polje da biste nastavili."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Ovaj uvoz može premašiti kapacitet prostora za pohranu koji je trenutno dostupan na vašem ${ BRAND_NAME } računu. Razmislite o prilagodbi uvoza."
