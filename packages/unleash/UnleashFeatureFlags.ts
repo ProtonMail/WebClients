@@ -195,7 +195,7 @@ enum DocsFeatureFlag {
     DriveDocsPublicSharingDisabled = 'DriveDocsPublicSharingDisabled',
     // Suggestions
     DocsSuggestionsDisabled = 'DocsSuggestionsDisabled',
-    // Sheets,
+    // Sheets
     DocsSheetsEnabled = 'DocsSheetsEnabled',
     DocsSheetsDisabled = 'DocsSheetsDisabled',
     SheetsEditorEnabled = 'SheetsEditorEnabled',
@@ -223,6 +223,7 @@ enum DocsFeatureFlag {
     DocsRenameWithDriveSDK = 'DocsRenameWithDriveSDK',
     DocsTrashWithDriveSDK = 'DocsTrashWithDriveSDK',
     DocsMoveModalDriveSDK = 'DocsMoveModalDriveSDK',
+    DocsInvitationsDriveSDK = 'DocsInvitationsDriveSDK',
 }
 
 export enum MailFeatureFlag {
