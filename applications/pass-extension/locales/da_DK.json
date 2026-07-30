@@ -800,6 +800,24 @@
       ],
       "Regex unsafe": [
         "Regex usikker"
+      ],
+      "Cancel bulk selection": [
+        "Annuller valg af flere"
+      ],
+      "Clear item type filter": [
+        "Ryd filter for elementtype"
+      ],
+      "Clear sort filter": [
+        "Ryd sorteringsfilter"
+      ],
+      "Reset filters": [
+        "Nulstil filtre"
+      ],
+      "Select items": [
+        "Vælg elementer"
+      ],
+      "Switch vault": [
+        "Skift boks"
       ]
     },
     "Activity": {
@@ -1470,6 +1488,9 @@
       ],
       "Regex unsafe": [
         "Usikker regex"
+      ],
+      "Unsupported file type": [
+        "Ikke-understøttet filtype"
       ]
     },
     "Error message": {
@@ -2226,8 +2247,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
