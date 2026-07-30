@@ -15,24 +15,24 @@ const SubscriptionCheckoutAddonSection = () => {
     if (subscription && getHasPlanCustomizer(planIDs)) {
         const latestSubscription = subscription.UpcomingSubscription ?? subscription;
 
+        const header = <h2 className="text-2xl text-bold mt-8 mb-4">{c('Label').t`Add extra services`}</h2>;
+
         return (
-            <>
-                <h2 className="text-2xl text-bold mt-8 mb-4">{c('Label').t`Add extra services`}</h2>
-                <ProtonPlanCustomizer
-                    currency={currency}
-                    cycle={cycle}
-                    plansMap={plansMap}
-                    selectedPlanIDs={planIDs}
-                    onChangePlanIDs={selectPlanIDs}
-                    loading={loading}
-                    latestSubscription={latestSubscription}
-                    addonFlags={{
-                        [ADDON_PREFIXES.SCRIBE]: scribeEnabled.paymentsEnabled,
-                    }}
-                    couponConfig={couponConfig}
-                    telemetryContext={telemetryContext}
-                />
-            </>
+            <ProtonPlanCustomizer
+                currency={currency}
+                cycle={cycle}
+                plansMap={plansMap}
+                selectedPlanIDs={planIDs}
+                onChangePlanIDs={selectPlanIDs}
+                loading={loading}
+                latestSubscription={latestSubscription}
+                addonFlags={{
+                    [ADDON_PREFIXES.SCRIBE]: scribeEnabled.paymentsEnabled,
+                }}
+                couponConfig={couponConfig}
+                telemetryContext={telemetryContext}
+                header={header}
+            />
         );
     }
     return null;
