@@ -28,6 +28,7 @@ import { OpenDesktopAppBanner } from '../../components/OpenDesktopAppBanner/Open
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeetingRecorder/recordingStorage/purge';
 import { LoadingState } from '../../types';
 import { getDisplayNameStorageKey } from '../../utils/storage';
@@ -87,10 +88,16 @@ export const PrejoinContainer = ({
         dispatch(setLocalParticipantColorIndex(participantColorIndex.current));
     }, [dispatch]);
 
+    const isRecordingSupported = useIsRecordingSupported();
+
     useEffect(() => {
+        if (!isRecordingSupported) {
+            return;
+        }
+
         // Purgue old recordings older than RECORDING_MAX_AGE_MS
         void purgeOldRecordings(RECORDING_MAX_AGE_MS);
-    }, []);
+    }, [isRecordingSupported]);
 
     const currentSelectedCamera = activeCameraDeviceId || cameras[0]?.deviceId || '';
     const currentSelectedMicrophone = activeMicrophoneDeviceId || microphoneState.systemDefault?.deviceId || '';
