@@ -4,7 +4,7 @@ import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
 
 import type { CalendarEventLoop } from '../calendarServerEvent';
 
-type SubscribeCallback = (data: CalendarEventLoop) => void;
+type SubscribeCallback = (data: CalendarEventLoop, calendarID: string) => void;
 
 export interface CalendarModelEventManager {
     start: (calendarIDs: string[]) => void;
@@ -86,12 +86,15 @@ export const createCalendarModelEventManager = ({ api }: { api: Api }): Calendar
     };
 
     const subscribe = (calendarIDs: string[], cb: SubscribeCallback) => {
-        const notify = (data: any) => {
-            cb(data);
-        };
-
         const unsubscribes = calendarIDs.reduce<(() => void)[]>((acc, calendarID) => {
             const eventManager = getOrSetRecord(calendarID, eventManagers, api);
+            // Each EventManager instance is scoped to one calendarID
+            // Soon, users might have several events with the same id (on different calendars),
+            // since we're about to add a new shard for ProtonCalendar.
+            // Using the calendar ID allows us to apply actions on the proper event (delete, edit, etc...)
+            const notify = (data: any) => {
+                cb(data, calendarID);
+            };
             acc.push(eventManager.subscribe(notify));
             return acc;
         }, []);
