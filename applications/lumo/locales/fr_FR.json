@@ -181,9 +181,6 @@
       "Get the apps": [
         "Obtenir les applications"
       ],
-      "Get the deal": [
-        "J'en profite"
-      ],
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
@@ -1101,9 +1098,6 @@
       "Refresh folder contents": [
         "Actualiser le contenu du dossier"
       ],
-      "Register here": [
-        "Inscrivez-vous ici"
-      ],
       "Report an issue": [
         "Signaler un problème"
       ],
@@ -1121,6 +1115,9 @@
       ],
       "Send message": [
         "Envoyer le message"
+      ],
+      "Share your thoughts": [
+        "Partagez votre avis"
       ],
       "Show safety information": [
         "Afficher les informations de sécurité"
@@ -1400,9 +1397,6 @@
       ]
     },
     "collider_2025: Description": {
-      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
-        "${ BRAND_NAME } mène actuellement une étude rémunérée sur les assistants IA. Ça vous intéresse ? Ça ne prend que 2 minutes. Si votre profil est sélectionné, vous gagnerez 80 £."
-      ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } se base sur vos souvenirs enregistrés pour personnaliser ses réponses : style de communication, expertise, outils fréquemment utilisés et projets à long terme."
       ],
@@ -1486,6 +1480,9 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Désactiver la mémoire entraînera la suppression définitive des ${ memories.length } souvenirs enregistrés. Vous pourrez réactiver la mémoire plus tard, mais les souvenirs supprimés ne seront pas restaurés."
+      ],
+      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
+        "Votre expérience façonne ${ LUMO_SHORT_APP_NAME }. Dites-nous ce que vous pensez."
       ]
     },
     "collider_2025: DisableMemory": {
@@ -2796,6 +2793,9 @@
       "Generated code": [
         "Code généré"
       ],
+      "Got a minute?": [
+        "Vous avez une minute ?"
+      ],
       "Guest": [
         "Invité"
       ],
@@ -2885,9 +2885,6 @@
       ],
       "Visualization mode": [
         "Mode de visualisation"
-      ],
-      "We'd love your feedback!": [
-        "Nous aimerions connaître votre avis."
       ],
       "What you can build": [
         "Ce que vous pouvez construire"
@@ -9004,6 +9001,28 @@
         "OFFRE ESTIVALE"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Propriétaire"
+      ],
+      "Security Admin": [
+        "Administrateur de sécurité"
+      ],
+      "User Admin": [
+        "Administrateur des utilisateurs"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gérez tous les utilisateurs, groupes, sécurité, facturation, journaux d'audit et configurations système."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Vérifier la sécurité du compte"
@@ -9742,9 +9761,6 @@
       ],
       "Summary": [
         "Résumé"
-      ],
-      "Summer Sale": [
-        "Offre estivale"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activer ${ DARK_WEB_MONITORING_NAME }"
