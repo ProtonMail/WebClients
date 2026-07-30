@@ -165,7 +165,7 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
                 {c('BOSS')
                     .t`Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.`}
             </p>
-            <DNSGroupRecords group={group} />
+            <DNSGroupRecords group={group} subdomain={model.subdomain} />
             <BorderedContainer className="mb-4 mt-2">
                 <BorderedContainerItem
                     className="flex flex-row flex-nowrap items-center gap-2 justify-space-between"

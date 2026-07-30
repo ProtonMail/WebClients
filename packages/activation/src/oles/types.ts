@@ -23,6 +23,7 @@ export type MigrationConfiguration = {
     importOrganizationSettings: boolean;
     joiningLink: JoiningLink | undefined;
     domainName: string | undefined;
+    subdomain: string;
     domain: Domain | undefined;
     domainRegistrarId: number;
     state: ApiImporterOrganizationState | undefined;
