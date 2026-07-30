@@ -440,9 +440,6 @@
       "Get the apps": [
         "アプリを入手"
       ],
-      "Get the deal": [
-        "割引をゲット"
-      ],
       "Get the writing assistant": [
         "執筆アシスタントを入手"
       ],
@@ -10319,6 +10316,28 @@
         "予定を再読み込み"
       ]
     },
+    "Role": {
+      "Owner": [
+        "所有者"
+      ],
+      "Security Admin": [
+        "セキュリティ管理者"
+      ],
+      "User Admin": [
+        "ユーザー管理者"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "セキュリティポリシー、データ保持、VPNインフラを構成し、監査ログを管理します。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "すべてのユーザー、グループ、セキュリティ、お支払い、システム構成を管理します。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "すべてのメンバーのユーザー、グループ、ストレージを管理し、役割を割り当て、ライセンスを配分します。"
+      ]
+    },
     "RSVP Note": {
       "Edit note": [
         "メモを編集"
@@ -12415,9 +12434,6 @@
       ],
       "Summary": [
         "概要"
-      ],
-      "Summer Sale": [
-        "サマーセール"
       ],
       "The booking feature is currently unavailable.": [
         "この予約機能は現在ご利用いただけません。"
