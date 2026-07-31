@@ -368,6 +368,7 @@ export type APP_CLIENT_IDS =
 
 export const VPN_TV_PATHS_MAP = {
     apple: '/appletv',
+    vega: '/firetv',
     default: '/tv',
 };
 
