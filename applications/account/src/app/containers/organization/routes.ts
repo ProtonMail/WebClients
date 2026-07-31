@@ -9,6 +9,7 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
+    getPlanName,
     hasAnyB2bBundle,
     hasMeet,
     hasMeetBusiness,
@@ -91,12 +92,15 @@ export const getOrganizationAppRoutes = ({
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
     const isPassFamilyPlan = isOrganizationPassFamily(organization);
 
+    const isPassEssentials = getPlanName(subscription) === PLANS.PASS_PRO;
+
     const hasGroups = (groups?.length ?? 0) > 0;
     const canShowGroupsSection =
         isUserGroupsFeatureEnabled &&
         (permissions['account.group.read'] || !!isGroupOwner) &&
         !!organization &&
         (hasGroups ||
+            isPassEssentials ||
             (hasActiveOrganizationKey &&
                 canUseGroups(organization?.PlanName, {
                     isUserGroupsNoCustomDomainEnabled,
@@ -206,6 +210,7 @@ export const getOrganizationAppRoutes = ({
             icon: 'pass-group',
             noTitle: true,
             available: canShowGroupsSection,
+            upgradeRequired: isPassEssentials,
             subsections: [
                 {
                     id: 'groups-management',
@@ -307,6 +312,7 @@ export const getOrganizationAppRoutes = ({
             to: '/activity-monitor',
             icon: 'card-identity',
             available: canShowB2BActivityMonitorEvents,
+            upgradeRequired: isPassEssentials,
             subsections: [
                 {
                     id: 'activity-monitor-dashboard',
@@ -388,6 +394,8 @@ export const getOrganizationAppRoutes = ({
             to: '/single-sign-on',
             icon: 'key',
             available: canShowSSOSection,
+            upgradeRequired:
+                !planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) && !!upsellPlanSSO(organization?.PlanName),
         },
         accessControl: {
             id: 'accessControl',

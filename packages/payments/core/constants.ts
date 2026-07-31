@@ -266,8 +266,13 @@ export enum PLANS {
     VPN_PRO = 'vpnpro2023',
     VPN_BUSINESS = 'vpnbiz2023',
     VPN_PASS_BUNDLE = 'vpnpass2023',
+
+    /** Actually Pass Essentials despite its name */
     PASS_PRO = 'passpro2024',
+
+    /** Pass Professional */
     PASS_BUSINESS = 'passbiz2024',
+
     PASS_FAMILY = 'passfamily2024',
     PASS_LIFETIME = 'passlifetime2024',
     LUMO = 'lumo2024',

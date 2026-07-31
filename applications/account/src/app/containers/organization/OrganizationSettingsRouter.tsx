@@ -196,7 +196,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(groups) && (
                 <Route path={getSectionPath(path, groups)}>
                     <PrivateMainSettingsArea config={groups}>
-                        <OrganizationGroupsManagementSection />
+                        <OrganizationGroupsManagementSection app={app} upgradeRequired={groups.upgradeRequired} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

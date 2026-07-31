@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
@@ -22,10 +23,14 @@ import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyInput } f
 import { BitField, type Maybe, OrganizationVaultCreateMode } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
+import { PromotionBanner } from '../banner/PromotionBanner';
 import GenericError from '../error/GenericError';
 import SubSettingsSection from '../layout/SubSettingsSection';
 import { PasswordGeneratorPolicyForm } from '../pass/PasswordGeneratorPolicyForm';
+import { useSubscriptionModal } from '../payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
 
 import './PassPolicies.scss';
 
@@ -84,11 +89,12 @@ const getPolicies = (): PolicyItem[] => [
     } as const,
 ];
 
-const PassPolicies = () => {
+const PassPolicies = ({ upgradeRequired }: { upgradeRequired: boolean }) => {
     const { organization } = usePassBridge();
-    const [loading, withLoading] = useLoading(true);
+    const [loading, withLoading] = useLoading(!upgradeRequired);
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
@@ -98,6 +104,12 @@ const PassPolicies = () => {
     const didLoad = useRef(false);
 
     useEffect(() => {
+        // Plans without the policies feature (e.g. Pass Essentials) can't read the org
+        // policy settings, so don't even attempt the fetch — the page is an upsell preview.
+        if (upgradeRequired) {
+            return;
+        }
+
         const fetchOrganizationSettings = () =>
             organization.settings.get().then((settings) => {
                 setOrganizationSettings(settings);
@@ -165,11 +177,40 @@ const PassPolicies = () => {
     return (
         <>
             <SettingsSectionWide customWidth="90em">
+                {upgradeRequired && (
+                    <PromotionBanner
+                        rounded
+                        mode="banner"
+                        contentCentered={false}
+                        className="mb-6"
+                        description={
+                            <div>
+                                <b>{c('Info').t`Upgrade to define policies for your organization.`}</b>
+                            </div>
+                        }
+                        cta={
+                            <Button
+                                color="norm"
+                                loading={loadingSubscriptionModal}
+                                onClick={() => {
+                                    void openSubscriptionModal({
+                                        step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                                    });
+                                }}
+                            >
+                                {c('Action').t`Upgrade`}
+                            </Button>
+                        }
+                    />
+                )}
                 <SettingsParagraph>
                     {c('Info').t`You can define the policies of ${PASS_APP_NAME} for the organization members.`}
                 </SettingsParagraph>
                 {organizationSettings && (
-                    <>
+                    <fieldset
+                        disabled={upgradeRequired}
+                        className={clsx('m-0 p-0 border-none', upgradeRequired && 'opacity-70')}
+                    >
                         <div className="mb-10">
                             {policies.map(({ setting, label, description }) => (
                                 <SettingsLayout key={setting} className="pb-4">
@@ -270,14 +311,14 @@ const PassPolicies = () => {
                             <div className="color-weak mb-4 text-semibold">
                                 {c('Description').t`A checked box means the feature is disabled.`}
                             </div>
-                            <PauseList />
+                            <PauseList upgradeRequired={upgradeRequired} />
                         </SubSettingsSection>
-                    </>
+                    </fieldset>
                 )}
             </SettingsSectionWide>
 
             {!didLoad.current && loading && <CircleLoader />}
-            {!loading && !organizationSettings && <GenericError className="mt-16" />}
+            {!loading && !organizationSettings && !upgradeRequired && <GenericError className="mt-16" />}
         </>
     );
 };
