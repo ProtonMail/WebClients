@@ -1,18 +1,20 @@
 import { useFlag } from '@proton/unleash/useFlag'
+// Don't use: breaks mocking unleash in E2E tests
 import { isDevOrBlack } from '@proton/utils/env'
 
 /*
-DocsSharingModalDriveSDK - no dependencies
-DocsLoadRecentsWithDriveSDK - no dependencies
-DocsDocumentViewerEventsSDK - no dependencies
-DocsTrashWithDriveSDK - no dependencies
-DocsRenameWithDriveSDK - needs DocsLoadRecentsWithDriveSDK and DocsDocumentViewerEventsSDK for the events
-DocsMoveModalDriveSDK - needs DocsRenameWithDriveSDK because SDK rename updates cache (+ events)
-DocsInvitationsDriveSDK - no dependencies
+SDK switch flags:
+- DocsSharingModalDriveSDK - no dependencies
+- DocsLoadRecentsWithDriveSDK - no dependencies
+- DocsDocumentViewerEventsSDK - no dependencies
+- DocsTrashWithDriveSDK - no dependencies
+- DocsRenameWithDriveSDK - needs DocsLoadRecentsWithDriveSDK and DocsDocumentViewerEventsSDK for the events
+- DocsMoveModalDriveSDK - needs DocsRenameWithDriveSDK because SDK rename updates cache (+ events)
+- DocsInvitationsDriveSDK - no dependencies
 */
 
 export function useSharingModalDriveSdkEnabled() {
-  return useFlag('DocsSharingModalDriveSDK') || isDevOrBlack()
+  return useFlag('DocsSharingModalDriveSDK')
 }
 
 export function useLoadRecentsWithSdkEnabled() {
@@ -24,7 +26,7 @@ export function useDocsDocumentViewerEventsSDK() {
 }
 
 export function useTrashWithSDK() {
-  return useFlag('DocsTrashWithDriveSDK') || isDevOrBlack()
+  return useFlag('DocsTrashWithDriveSDK')
 }
 
 export function useRenameWithSDK() {
@@ -36,19 +38,21 @@ export function useMoveModalDriveSdkEnabled() {
 }
 
 export function useInvitationsSdkEnabled() {
-  return useFlag('DocsInvitationsDriveSDK') || isDevOrBlack()
+  return useFlag('DocsInvitationsDriveSDK')
 }
 
+// Other flags
+
 export function useIsTableOfContentsEnabled() {
-  return useFlag('DocsTableOfContents') || isDevOrBlack()
+  return useFlag('DocsTableOfContents')
 }
 
 export function useIsOpenTracerEnabled() {
-  return useFlag('DocsOpenTracer') || isDevOrBlack()
+  return useFlag('DocsOpenTracer')
 }
 
 export function useIsGatePrivateInviteAccessEnabled() {
-  return useFlag('DocsGatePrivateInviteAccess') || isDevOrBlack()
+  return useFlag('DocsGatePrivateInviteAccess')
 }
 
 /**
