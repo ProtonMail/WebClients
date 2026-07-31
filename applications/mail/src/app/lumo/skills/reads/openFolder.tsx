@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
-import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 
-import { filterHashFor, resolveMailboxLocation, sortHashFor, waitForListSettled } from '../../helpers/navigation';
+import { filterHashFor, navigateAndReadRows, resolveMailboxLocation, sortHashFor } from '../../helpers/navigation';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { resolveMailboxFilter, resolveMailboxSort } from './mailboxView';
 import type { AgentEmailRow } from './rows';
-import { buildAgentEmailRows, formatAgentEmailRows } from './rows';
+import { formatAgentEmailRows } from './rows';
 
 /** The seven standard left-panel locations open_folder understands. A custom folder/label is opened
  *  via `target` (its folder-… / label-… reference) instead. */
@@ -121,26 +120,13 @@ export const createOpenFolderHandler =
 
         const { labelID, name, pathname } = resolveMailboxLocation(resolved, references, mail.getMailSettings());
 
-        // Clear any existing search state and navigate to the location (a plain open, optionally
-        // filtered/sorted — no keyword).
-        const url = changeSearchParams(pathname, mail.history.location.hash, {
-            keyword: undefined,
-            from: undefined,
-            to: undefined,
-            begin: undefined,
-            end: undefined,
-            filter: filterHash,
-            address: undefined,
-            wildcard: undefined,
-            sort: sortHash,
-            page: undefined,
+        // A plain open, optionally filtered/sorted: naming only these two keys clears any existing search.
+        const { rows, total } = await navigateAndReadRows(mail, references, {
+            pathname,
+            labelID,
+            query: { filter: filterHash, sort: sortHash },
         });
-        mail.history.push(url);
 
-        // Block until the list settles so we read the folder's emails, not a mid-navigation page.
-        await waitForListSettled(mail.store, { labelID });
-
-        const { rows, total } = buildAgentEmailRows(mail, references);
         return { location: name, rows, total };
     };
 
