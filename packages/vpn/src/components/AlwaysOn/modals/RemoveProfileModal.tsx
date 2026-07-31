@@ -9,16 +9,39 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcUsersMerge } from '@proton/icons/icons/IcUsersMerge';
 import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
-const profileFile = <strong key="profile-file">{'protonvpn-deviceprofile.rego'}</strong>;
-const policiesPath = <strong key="policies-path">{'C:\\Program Files\\Proton\\VPN\\Policies'}</strong>;
-const removeScriptLink = (
-    <Href key="remove-script" href="#">
-        protonvpn-deviceprofile-remove.ps1
-    </Href>
-);
+import type { AlwaysOnPolicyArtifact } from '../../../types/AlwaysOn';
 
-export const RemoveProfileModal = (props: ModalProps) => {
+const PROFILE_FILENAME = 'protonvpn-deviceprofile.rego';
+const POLICIES_PATH = 'C:\\Program Files\\Proton\\VPN\\Policies';
+const REMOVE_SCRIPT_FILENAME = 'protonvpn-deviceprofile-remove.ps1';
+
+const profileFile = <strong key="profile-file">{PROFILE_FILENAME}</strong>;
+const policiesPath = <strong key="policies-path">{POLICIES_PATH}</strong>;
+
+interface Props extends ModalProps {
+    /** The Windows uninstall artifact generated for the policy — its filename and content are offered for download. */
+    windowsUninstall?: AlwaysOnPolicyArtifact;
+}
+
+export const RemoveProfileModal = ({ windowsUninstall, ...props }: Props) => {
+    const removeScriptLink = (
+        <Href
+            key="remove-script"
+            onClick={(event) => {
+                event.preventDefault();
+                if (windowsUninstall) {
+                    downloadFile(
+                        new Blob([windowsUninstall.Content], { type: 'text/plain' }),
+                        windowsUninstall.Filename
+                    );
+                }
+            }}
+        >
+            {windowsUninstall?.Filename ?? REMOVE_SCRIPT_FILENAME}
+        </Href>
+    );
     const methods = [
         {
             icon: <IcUsersMerge className="color-hint shrink-0 mt-0.5" />,
@@ -28,7 +51,7 @@ export const RemoveProfileModal = (props: ModalProps) => {
         },
         {
             icon: <IcWindowTerminal className="color-hint shrink-0 mt-0.5" />,
-            tagline: c('Title').t`Deploy via PowerShell`,
+            tagline: c('Title').t`Remove via PowerShell`,
             brief: c('Info')
                 .jt`Download ${removeScriptLink} and run it on each device as the system user to delete the profile automatically.`,
         },
