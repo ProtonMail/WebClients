@@ -15,7 +15,7 @@ import { CategoryIcon } from '@proton/mail/features/categoriesView/CategoryIcon'
 import { getCategoryData } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { isCategoryLabel } from '@proton/mail/helpers/location';
+import { LEGACY_FORUM_CATEGORY_ID, isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -118,8 +118,15 @@ const MessageDetailsModal = ({
 
     const categoryLabels = message.data?.LabelIDs.filter((label) => isCategoryLabel(label)) || [];
     const categoryID = categoryLabels.length > 1 ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT : categoryLabels[0];
-    const categoryLabel = getLabelFromCategoryId(categoryID);
-    const category = getCategoryData(categoryID);
+
+    // `23` refers to the forum category ID that we decided to remove
+    // This line needs to be removed once the API team has run the migration
+    // to erase the forum category from already categorised messages and conversations
+    const safeCategoryID =
+        (categoryID as string) === LEGACY_FORUM_CATEGORY_ID ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT : categoryID;
+
+    const categoryLabel = getLabelFromCategoryId(safeCategoryID);
+    const category = getCategoryData(safeCategoryID);
 
     return (
         <ModalTwo data-testid="message-details:modal" {...rest}>
