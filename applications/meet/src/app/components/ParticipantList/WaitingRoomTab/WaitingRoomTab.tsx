@@ -1,12 +1,17 @@
-import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcMeetUsers } from '@proton/icons/icons/IcMeetUsers';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectWaitingParticipants,
+    selectWaitingParticipantsWithNames,
+} from '@proton/meet/store/slices/waitingRoomSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { useWaitingRoomContext } from '../../../contexts/WaitingRoomContext';
 import { EmptyList } from '../shared/EmptyList';
 import { ParticipantListContainer } from '../shared/ParticipantListContainer';
 import { WaitingRoomItem } from './WaitingRoomItem';
@@ -14,9 +19,8 @@ import { WaitingRoomItem } from './WaitingRoomItem';
 import './WaitingRoomTab.scss';
 
 type Props = {
-    participants: Participant[];
     setIsScrolled: (isScrolled: boolean) => void;
-    hasSearchQuery: boolean;
+    searchExpression: string;
 };
 
 const EmptyWaitingRoomList = ({ hasSearchQuery }: { hasSearchQuery: boolean }) => {
@@ -39,9 +43,21 @@ const EmptyWaitingRoomList = ({ hasSearchQuery }: { hasSearchQuery: boolean }) =
     );
 };
 
-export const WaitingRoomTab = ({ participants, setIsScrolled, hasSearchQuery }: Props) => {
+export const WaitingRoomTab = ({ setIsScrolled, searchExpression }: Props) => {
     const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
-    const isEmpty = participants.length === 0;
+    const waitingParticipants = useMeetSelector(selectWaitingParticipants);
+    const waitingParticipantsWithNames = useMeetSelector(selectWaitingParticipantsWithNames);
+    const { admitAll } = useWaitingRoomContext();
+
+    const hasSearchQuery = searchExpression !== '';
+
+    const filteredRequests = hasSearchQuery
+        ? waitingParticipantsWithNames.filter((waitingParticipant) =>
+              waitingParticipant.name.toLowerCase().includes(searchExpression.toLowerCase())
+          )
+        : waitingParticipants;
+
+    const isEmpty = filteredRequests.length === 0;
 
     return (
         <div className={clsx('flex flex-column flex-nowrap h-full relative', !isMeetWaitingRoomEnabled && 'pt-4')}>
@@ -49,17 +65,23 @@ export const WaitingRoomTab = ({ participants, setIsScrolled, hasSearchQuery }: 
                 <EmptyWaitingRoomList hasSearchQuery={hasSearchQuery} />
             ) : (
                 <ParticipantListContainer title={c('Title').t`Waiting room`} setIsScrolled={setIsScrolled}>
-                    {participants.map((participant) => {
+                    {filteredRequests.map((request) => {
                         return (
-                            <li key={participant.identity}>
-                                <WaitingRoomItem participant={participant} />
+                            <li key={request.requestId}>
+                                <WaitingRoomItem request={request} />
                             </li>
                         );
                     })}
                 </ParticipantListContainer>
             )}
             <div className="waiting-room-tab-footer absolute bottom-0 left-0 w-full p-4">
-                <Button className="secondary w-full rounded-full px-8 py-3" disabled={isEmpty}>
+                <Button
+                    className="secondary w-full rounded-full px-8 py-3"
+                    disabled={waitingParticipants.length === 0}
+                    onClick={() => {
+                        void admitAll();
+                    }}
+                >
                     {c('Action').t`Admit all`}
                 </Button>
             </div>

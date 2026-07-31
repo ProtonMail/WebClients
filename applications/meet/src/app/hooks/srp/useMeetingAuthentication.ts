@@ -8,6 +8,7 @@ import { decryptMeetingName } from '@proton/meet/utils/cryptoUtils';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { INVALID_SRP_PARAMS_ERROR_CODE } from '../../constants';
+import type { PreloadedMeetingDetails } from '../../utils/meetingDetailsPreload';
 import type { SRPHandshakeInfo } from './useMeetSrp';
 import { useMeetSrp } from './useMeetSrp';
 
@@ -25,7 +26,7 @@ export const useMeetingAuthentication = () => {
             urlPassword: string;
             token: string;
             handshakeInfo?: SRPHandshakeInfo;
-        }) => {
+        }): Promise<PreloadedMeetingDetails> => {
             let meetingName = '';
 
             if (!handshakeInfo) {
@@ -36,6 +37,8 @@ export const useMeetingAuthentication = () => {
                     expirationTime: 0,
                     roomName: '',
                     isPersonalRoom: false,
+                    waitingRoom: false,
+                    canManageWaitingRoom: false,
                 };
             }
 
@@ -77,6 +80,8 @@ export const useMeetingAuthentication = () => {
                     maxParticipants: meetingInfo.MeetingInfo.MaxParticipants,
                     expirationTime: meetingInfo.MeetingInfo.ExpirationTime ?? 0,
                     isPersonalRoom: !!meetingInfo.MeetingInfo.PersonalMeeting,
+                    waitingRoom: !!meetingInfo.MeetingInfo.WaitingRoom,
+                    canManageWaitingRoom: !!meetingInfo.MeetingInfo.ManageWaitingRoom,
                 };
             } catch (error) {
                 const { code, message } = getApiError(error);

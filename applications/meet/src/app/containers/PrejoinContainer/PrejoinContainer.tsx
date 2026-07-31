@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
 import {
     selectCameras,
     selectInitialAudioState,
@@ -27,18 +28,16 @@ import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
 import { OpenDesktopAppBanner } from '../../components/OpenDesktopAppBanner/OpenDesktopAppBanner';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
+import { WaitingRoomRejectedModal } from '../../components/PreJoinDetails/WaitingRoomAdmission/WaitingRoomRejectedModal';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeetingRecorder/recordingStorage/purge';
-import { LoadingState } from '../../types';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 
 import './PrejoinContainer.scss';
 
 interface PrejoinContainerProps {
     handleJoin: (displayName: string) => void;
-    loadingState: LoadingState | null;
-    isLoading: boolean;
     roomId: string;
     instantMeeting: boolean;
     participantsCount: number | null;
@@ -51,8 +50,6 @@ interface PrejoinContainerProps {
 
 export const PrejoinContainer = ({
     handleJoin,
-    loadingState,
-    isLoading,
     roomId,
     instantMeeting = false,
     participantsCount,
@@ -79,6 +76,8 @@ export const PrejoinContainer = ({
 
     const initialCameraState = useMeetSelector(selectInitialCameraState);
     const initialAudioState = useMeetSelector(selectInitialAudioState);
+
+    const joiningInProgress = useMeetSelector(selectJoiningInProgress);
 
     const { switchActiveDevice } = useMediaManagementContext();
 
@@ -142,7 +141,7 @@ export const PrejoinContainer = ({
     return (
         <div className="h-full overflow-y-auto relative flex flex-column flex-nowrap">
             <OpenDesktopAppBanner />
-            {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
+            {joiningInProgress && <div className="w-full h-full absolute top-0 left-0 z-up" />}
             <div className="w-full meet-container-padding-x shrink-0">
                 <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />
             </div>
@@ -169,20 +168,16 @@ export const PrejoinContainer = ({
                             onAudioOutputDeviceChange={handleAudioOutputDeviceChange}
                             displayName={displayName}
                             colorIndex={participantColorIndex.current}
-                            isLoading={isLoading}
+                            isLoading={joiningInProgress}
                         />
                     )}
 
-                    {isLoading ? (
-                        <>
-                            {loadingState === LoadingState.JoiningInProgress && (
-                                <JoiningRoomLoader
-                                    participantCount={participantsCount}
-                                    header={joiningLoaderHeader}
-                                    subtitle={joiningLoaderSubtitle}
-                                />
-                            )}
-                        </>
+                    {joiningInProgress ? (
+                        <JoiningRoomLoader
+                            participantCount={participantsCount}
+                            header={joiningLoaderHeader}
+                            subtitle={joiningLoaderSubtitle}
+                        />
                     ) : (
                         <PreJoinDetails
                             roomId={roomId}
@@ -210,6 +205,8 @@ export const PrejoinContainer = ({
                     return c('Info').jt`By joining, you agree to our ${termsLink} and ${privacyLink}.`;
                 })()}
             </div>
+
+            <WaitingRoomRejectedModal />
         </div>
     );
 };

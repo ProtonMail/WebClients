@@ -245,6 +245,12 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         return this.request('prepareMlsSessionForWaitingRoom', args);
     }
 
+    public refreshWaitingRoomGuestSessionForJoinRequest(
+        ...args: Parameters<MeetCoreClient['refreshWaitingRoomGuestSessionForJoinRequest']>
+    ): Promise<void> {
+        return this.request('refreshWaitingRoomGuestSessionForJoinRequest', args);
+    }
+
     public createJoinRequest(meetLinkName: string, meetingSessionKey: string): Promise<CreateJoinRequestResult> {
         return this.request('createJoinRequest', [meetLinkName, meetingSessionKey]);
     }

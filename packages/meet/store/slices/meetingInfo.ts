@@ -27,6 +27,8 @@ export interface MeetingInfoState {
     isExpiringSoon: boolean;
     meetingDurationTimer: number | null;
     isPersonalRoom: boolean;
+    canManageWaitingRoom: boolean;
+    isMeetingLoading: boolean;
 }
 
 export const initialState: MeetingInfoState = {
@@ -45,6 +47,8 @@ export const initialState: MeetingInfoState = {
     isExpiringSoon: false,
     meetingDurationTimer: null,
     isPersonalRoom: false,
+    canManageWaitingRoom: false,
+    isMeetingLoading: true,
 };
 
 /**
@@ -169,5 +173,7 @@ export const selectMeetingDurationMs = (state: MeetState) => state.meetingInfo.m
 export const selectTimeLeftMs = (state: MeetState) => state.meetingInfo.timeLeftMs;
 export const selectIsExpiringSoon = (state: MeetState) => state.meetingInfo.isExpiringSoon;
 export const selectIsPersonalRoom = (state: MeetState) => state.meetingInfo.isPersonalRoom;
+export const selectCanManageWaitingRoom = (state: MeetState) => state.meetingInfo.canManageWaitingRoom;
+export const selectIsMeetingLoading = (state: MeetState) => state.meetingInfo.isMeetingLoading;
 
 export const meetingInfoReducer = { meetingInfo: slice.reducer };
