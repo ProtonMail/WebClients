@@ -7,6 +7,7 @@ import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import type { ThemeColor } from '@proton/colors';
 import type { IconName } from '@proton/icons/types';
 
+import { PromotionButton } from '../button/PromotionButton';
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
 import SidebarListItemContentIcon from './SidebarListItemContentIcon';
@@ -19,29 +20,52 @@ function OptionalItemLink({ to, children }: { to?: string; children: ReactNode }
     return <SidebarListItemLink to={to}>{children}</SidebarListItemLink>;
 }
 
+function SettingsListItemRight({
+    notification,
+    upgradeRequired,
+}: {
+    notification?: ThemeColor;
+    upgradeRequired?: boolean;
+}) {
+    if (upgradeRequired) {
+        return (
+            <PromotionButton as="span" icon iconName="upgrade" shape="ghost" title={c('Info').t`Upgrade required`}>
+                {c('Label').t`Upgrade`}
+            </PromotionButton>
+        );
+    }
+
+    if (notification) {
+        return <NotificationDot color={notification} alt={c('Info').t`Attention required`} />;
+    }
+
+    return null;
+}
+
 interface Props {
     to?: string;
     icon?: IconName;
     notification?: ThemeColor;
+    upgradeRequired?: boolean; // if true, will show an upgrade badge
     children: ReactNode;
 }
 
-const SettingsListItem = forwardRef<HTMLLIElement, Props>(({ to, icon, children, notification }, ref) => {
-    return (
-        <SidebarListItem ref={ref}>
-            <OptionalItemLink to={to}>
-                <SidebarListItemContent
-                    left={icon ? <SidebarListItemContentIcon name={icon} /> : null}
-                    right={
-                        notification && <NotificationDot color={notification} alt={c('Info').t`Attention required`} />
-                    }
-                >
-                    {children}
-                </SidebarListItemContent>
-            </OptionalItemLink>
-        </SidebarListItem>
-    );
-});
+const SettingsListItem = forwardRef<HTMLLIElement, Props>(
+    ({ to, icon, children, notification, upgradeRequired }, ref) => {
+        return (
+            <SidebarListItem ref={ref}>
+                <OptionalItemLink to={to}>
+                    <SidebarListItemContent
+                        left={icon ? <SidebarListItemContentIcon name={icon} /> : null}
+                        right={<SettingsListItemRight notification={notification} upgradeRequired={upgradeRequired} />}
+                    >
+                        {children}
+                    </SidebarListItemContent>
+                </OptionalItemLink>
+            </SidebarListItem>
+        );
+    }
+);
 
 SettingsListItem.displayName = 'SettingsListItem';
 
