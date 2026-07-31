@@ -1,49 +1,8 @@
 import { c } from 'ttag';
 
 import { DOCS_APP_NAME } from '@proton/shared/lib/constants';
-import { LinkURLType, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
-import isTruthy from '@proton/utils/isTruthy';
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
-import type {
-    AlbumProperties,
-    DecryptedLink,
-    EncryptedLink,
-    ExtendedInvitationDetails,
-    PhotoProperties,
-    SignatureIssues,
-} from '../../store';
-
-interface FileBrowserBaseItem {
-    id: string;
-    linkId: string;
-    isLocked?: boolean;
-    isInvitation?: boolean;
-    isBookmark?: boolean;
-    itemRowStyle?: React.CSSProperties;
-    isAnonymous?: boolean;
-    albumProperties?: AlbumProperties;
-    photoProperties?: PhotoProperties;
-}
-
-interface SharedWithMeItem extends FileBrowserBaseItem {
-    activeRevision?: EncryptedLink['activeRevision'];
-    cachedThumbnailUrl?: string;
-    hasThumbnail?: boolean;
-    isFile: boolean;
-    mimeType: string;
-    name: string;
-    signatureIssues?: SignatureIssues;
-    signatureEmail?: string;
-    size: number;
-    trashed: number | null;
-    rootShareId: string;
-    volumeId: string;
-    sharedOn?: number;
-    sharedBy?: string;
-    parentLinkId: string;
-    invitationDetails?: ExtendedInvitationDetails;
-    bookmarkDetails?: { token: string; createTime: number; urlPassword: string };
-}
 export const selectMessageForItemList = (
     isFiles: boolean[],
     messages: {
@@ -59,11 +18,7 @@ export const selectMessageForItemList = (
     return message;
 };
 
-export const toLinkURLType = (isFile: boolean) => {
-    return isFile ? LinkURLType.FILE : LinkURLType.FOLDER;
-};
-
-export const getLocalizedDescription = (mimeType: string): string | undefined => {
+const getLocalizedDescription = (mimeType: string): string | undefined => {
     switch (mimeType) {
         case 'application/vnd.proton.doc':
             return DOCS_APP_NAME;
@@ -271,31 +226,3 @@ export const getMimeTypeDescription = (mimeType: string) => {
     return c('Mimetype').t`Unknown file`;
 };
 
-export const getSelectedItems = (
-    items: DecryptedLink[],
-    selectedItemIds: string[],
-    key: 'linkId' | 'rootShareId' = 'linkId'
-): DecryptedLink[] => {
-    if (items) {
-        return selectedItemIds
-            .map((selectedItemId) => items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item[key]))
-            .filter(isTruthy) as DecryptedLink[];
-    }
-
-    return [];
-};
-
-export const getSelectedSharedWithMeItems = (
-    items: SharedWithMeItem[],
-    selectedItemIds: string[]
-): SharedWithMeItem[] => {
-    if (items) {
-        return selectedItemIds
-            .map((selectedItemId) =>
-                items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item.rootShareId)
-            )
-            .filter(isTruthy) as SharedWithMeItem[];
-    }
-
-    return [];
-};
