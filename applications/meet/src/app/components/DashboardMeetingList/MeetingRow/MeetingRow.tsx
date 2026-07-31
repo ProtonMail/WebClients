@@ -19,7 +19,7 @@ import { PASSWORD_SEPARATOR } from '@proton/meet/utils/cryptoUtils';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
-import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import { type Meeting, MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -116,6 +116,9 @@ export const MeetingRow = ({
             meetingDetails: {
                 meetingName: meeting.MeetingName,
                 isPersonalRoom: meeting.Type === MeetingType.PERSONAL,
+                waitingRoom: meeting.WaitingRoom === WaitingRoomState.ENABLED,
+                // We only display meetings owned by us in the dashboard
+                canManageWaitingRoom: true,
             },
         };
 

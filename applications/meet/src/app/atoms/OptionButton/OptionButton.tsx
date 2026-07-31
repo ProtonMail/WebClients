@@ -20,6 +20,7 @@ interface OptionButtonProps {
     ariaSelected?: boolean;
     iconOnTheRight?: boolean;
     className?: string;
+    disabled?: boolean;
 }
 
 export const OptionButton = ({
@@ -34,6 +35,7 @@ export const OptionButton = ({
     ariaSelected,
     iconOnTheRight = false,
     className,
+    disabled = false,
 }: OptionButtonProps) => {
     const CheckComponent = (
         <div
@@ -62,6 +64,7 @@ export const OptionButton = ({
             style={{ '--max-w-custom': '25rem' }}
             role={role}
             aria-selected={ariaSelected}
+            disabled={disabled}
         >
             {!iconOnTheRight && CheckComponent}
             {description ? (

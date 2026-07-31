@@ -4,6 +4,8 @@ import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components/tabs/Tabs';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectWaitingParticipantsCount } from '@proton/meet/store/slices/waitingRoomSlice';
 
 import { AllParticipantsTab } from './AllParticipantsTab/AllParticipantsTab';
 import { TabHeader } from './TabHeader';
@@ -31,8 +33,7 @@ export const ParticipantListHost = ({
 
     const hasSearchQuery = isSearchOn && searchExpression !== '';
 
-    // TODO: Implement waiting room participants count
-    const waitingRoomParticipantsCount = 0;
+    const waitingRoomParticipantsCount = useMeetSelector(selectWaitingParticipantsCount);
 
     return (
         <Tabs
@@ -47,9 +48,7 @@ export const ParticipantListHost = ({
                     content: (
                         <WaitingRoomTab
                             setIsScrolled={setIsScrolled}
-                            hasSearchQuery={hasSearchQuery}
-                            // TODO: wire up waiting room participants
-                            participants={participants}
+                            searchExpression={hasSearchQuery ? searchExpression : ''}
                         />
                     ),
                 },

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import { MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
 import type { CreateMeetingParams } from '../types/types';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
@@ -15,10 +15,12 @@ export const useCreateInstantMeeting = () => {
         params,
         isGuest = false,
         isPaidUser = false,
+        waitingRoom = false,
     }: {
         params: Partial<CreateMeetingParams>;
         isGuest?: boolean;
         isPaidUser?: boolean;
+        waitingRoom?: boolean;
     }) => {
         let addressId = null;
         let privateKey;
@@ -40,6 +42,7 @@ export const useCreateInstantMeeting = () => {
                 recurrence: null,
                 timeZone: null,
                 type: MeetingType.INSTANT,
+                waitingRoom: waitingRoom ? WaitingRoomState.ENABLED : WaitingRoomState.DISABLED,
             } as CreateMeetingParams,
             noPasswordSave: isGuest,
             addressId,

@@ -13,14 +13,16 @@ export interface MeetSettingsState {
     selfView: boolean;
     meetingLocked: boolean;
     pipEnabled: boolean;
+    waitingRoomSetting: boolean;
 }
 
-const initialState: MeetSettingsState = {
+export const initialState: MeetSettingsState = {
     disableVideos: false,
     participantsWithDisabledVideos: [],
     selfView: true,
     meetingLocked: false,
     pipEnabled: true,
+    waitingRoomSetting: false,
 };
 
 export const toggleMeetingLockThunk = createAsyncThunk<
@@ -81,6 +83,12 @@ const slice = createSlice({
         setPipEnabled: (state, action: PayloadAction<boolean>) => {
             state.pipEnabled = action.payload;
         },
+        setWaitingRoomSetting: (state, action: PayloadAction<boolean>) => {
+            state.waitingRoomSetting = action.payload;
+        },
+        resetWaitingRoomSetting: (state) => {
+            state.waitingRoomSetting = initialState.waitingRoomSetting;
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(toggleMeetingLockThunk.fulfilled, (state, action) => {
@@ -97,11 +105,14 @@ export const {
     setSelfView,
     setMeetingLocked,
     setPipEnabled,
+    setWaitingRoomSetting,
+    resetWaitingRoomSetting,
 } = slice.actions;
 
 export const selectMeetSettings = (state: MeetState) => state.meetSettings;
 export const selectParticipantsWithDisabledVideos = (state: MeetState) =>
     state.meetSettings.participantsWithDisabledVideos;
 export const selectSelfView = (state: MeetState) => state.meetSettings.selfView;
+export const selectWaitingRoomSetting = (state: MeetState) => state.meetSettings.waitingRoomSetting;
 
 export const settingsReducer = { meetSettings: slice.reducer };

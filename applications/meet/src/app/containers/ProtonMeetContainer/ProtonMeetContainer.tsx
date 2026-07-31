@@ -6,10 +6,10 @@ import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { Track } from 'livekit-client';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { resetMeetingState } from '@proton/meet/store/resetMeetingState';
 import {
     selectIsReconnecting,
     selectJoinedRoom,
-    selectJoiningInProgress,
     selectMlsRetrying,
     selectPrejoinParticipantCount,
     selectReconnectionFailed,
@@ -45,11 +45,13 @@ import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
+import { WaitingRoomProvider } from '../../contexts/WaitingRoomContext';
 import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
 import { useJoinFlow } from '../../hooks/protonMeetContainer/useJoinFlow';
 import { useMeetingCleanup } from '../../hooks/protonMeetContainer/useMeetingCleanup';
 import { useMeetingConnection } from '../../hooks/protonMeetContainer/useMeetingConnection';
 import { useMeetingErrorContext } from '../../hooks/protonMeetContainer/useMeetingErrorContext';
+import { useMeetingInfoHydration } from '../../hooks/protonMeetContainer/useMeetingInfoHydration';
 import { useMlsSession } from '../../hooks/protonMeetContainer/useMlsSession';
 import { useRoomEventHandlers } from '../../hooks/protonMeetContainer/useRoomEventHandlers';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
@@ -64,7 +66,6 @@ import { useSafariWebsocketVisibilityHandler } from '../../hooks/useSafariWebsoc
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { useWakeLock } from '../../hooks/useWakeLock';
 import type { JoinLocationState } from '../../types';
-import { LoadingState } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { hasPreloadedMeetingDetails } from '../../utils/meetingDetailsPreload';
@@ -130,10 +131,15 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const instantMeetingRef = useRef(!token);
 
+    useMeetingInfoHydration({
+        meetingLinkName: token,
+        meetingPassword: urlPassword,
+        instantMeeting: instantMeetingRef.current,
+    });
+
     const { displayName, setDisplayName } = useDisplayName({ isGuest, userId, isInstantJoin });
 
     const joinedRoom = useMeetSelector(selectJoinedRoom);
-    const joiningInProgress = useMeetSelector(selectJoiningInProgress);
     const isReconnecting = useMeetSelector(selectIsReconnecting);
     const reconnectionFailed = useMeetSelector(selectReconnectionFailed);
     const mlsRetrying = useMeetSelector(selectMlsRetrying);
@@ -299,7 +305,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         }
     };
 
-    const { joinMeeting, joinInstantMeeting } = useJoinFlow({
+    const { joinMeeting, joinInstantMeeting, waitingRoomProviderProps } = useJoinFlow({
         token,
         urlPassword,
         isInstantJoin,
@@ -317,12 +323,16 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         setIsMeetingLockedModalOpen,
         setIsConnectionFailedModalOpen,
         getMeetingDetails,
+        getAccessDetails,
         initHandshake,
         getMeetingInfo,
         isUsingTurnRelay,
         handleHandshakeInfoFetch,
         reportMeetError,
         withMeetingLinkNameTag,
+        displayName,
+        cleanupMlsState,
+        disallowHealthCheck,
     });
 
     const setup = async () => {
@@ -352,6 +362,12 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         void setup();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    useEffect(() => {
+        return () => {
+            dispatch(resetMeetingState());
+        };
+    }, [dispatch]);
 
     const prepareUpsell = () => {
         if (isExpiringRef.current) {
@@ -545,49 +561,49 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     return (
         <div className="h-full w-full">
             {isMeetingLockedModalOpen && <MeetingLockedModal onClose={() => setIsMeetingLockedModalOpen(false)} />}
-            {(joinedRoom || isReconnecting || reconnectionFailed) && room && displayName ? (
-                <MeetingRecorderProvider>
-                    <MeetContainer
-                        displayName={displayName}
-                        handleLeave={handleLeave}
-                        handleEndMeeting={handleEndMeeting}
-                        handleMeetingExpired={handleMeetingExpired}
-                        handleMeetingLockToggle={handleMeetingLockToggle}
-                        isDisconnected={isReconnecting || reconnectionFailed}
-                        startPiP={startPiP}
-                        stopPiP={stopPiP}
-                        pictureInPictureWarmup={pictureInPictureWarmup}
-                        pipCleanup={pipCleanup}
-                        preparePictureInPicture={preparePictureInPicture}
+            <WaitingRoomProvider {...waitingRoomProviderProps}>
+                {(joinedRoom || isReconnecting || reconnectionFailed) && room && displayName ? (
+                    <MeetingRecorderProvider>
+                        <MeetContainer
+                            displayName={displayName}
+                            handleLeave={handleLeave}
+                            handleEndMeeting={handleEndMeeting}
+                            handleMeetingExpired={handleMeetingExpired}
+                            handleMeetingLockToggle={handleMeetingLockToggle}
+                            isDisconnected={isReconnecting || reconnectionFailed}
+                            startPiP={startPiP}
+                            stopPiP={stopPiP}
+                            pictureInPictureWarmup={pictureInPictureWarmup}
+                            pipCleanup={pipCleanup}
+                            preparePictureInPicture={preparePictureInPicture}
+                            instantMeeting={instantMeetingRef.current}
+                            assignHost={assignHost}
+                            getKeychainIndexInformation={getKeychainIndexInformation}
+                            isUsingTurnRelay={isUsingTurnRelay}
+                            liveKitConnectionState={liveKitConnectionState}
+                            showReconnectedMessage={showReconnectedMessage}
+                            setShowReconnectedMessage={setShowReconnectedMessage}
+                            setLiveKitConnectionState={setLiveKitConnectionState}
+                            isReconnecting={isReconnecting}
+                            mlsRetrying={mlsRetrying}
+                            onSimulateReconnection={() => dispatch(setReconnectionFailed(true))}
+                            websocketUrl={websocketUrlRef.current}
+                        />
+                    </MeetingRecorderProvider>
+                ) : (
+                    <PrejoinContainer
+                        handleJoin={instantMeetingRef.current ? joinInstantMeeting : joinMeeting}
+                        roomId={token}
                         instantMeeting={instantMeetingRef.current}
-                        assignHost={assignHost}
-                        getKeychainIndexInformation={getKeychainIndexInformation}
-                        isUsingTurnRelay={isUsingTurnRelay}
-                        liveKitConnectionState={liveKitConnectionState}
-                        showReconnectedMessage={showReconnectedMessage}
-                        setShowReconnectedMessage={setShowReconnectedMessage}
-                        setLiveKitConnectionState={setLiveKitConnectionState}
-                        isReconnecting={isReconnecting}
-                        mlsRetrying={mlsRetrying}
-                        onSimulateReconnection={() => dispatch(setReconnectionFailed(true))}
-                        websocketUrl={websocketUrlRef.current}
+                        participantsCount={prejoinParticipantCount}
+                        displayName={displayName}
+                        setDisplayName={setDisplayName}
+                        isInstantJoin={isInstantJoin}
+                        joiningLoaderHeader={joiningLoaderHeader}
+                        joiningLoaderSubtitle={joiningLoaderSubtitle}
                     />
-                </MeetingRecorderProvider>
-            ) : (
-                <PrejoinContainer
-                    handleJoin={instantMeetingRef.current ? joinInstantMeeting : joinMeeting}
-                    loadingState={LoadingState.JoiningInProgress}
-                    isLoading={joiningInProgress}
-                    roomId={token}
-                    instantMeeting={instantMeetingRef.current}
-                    participantsCount={prejoinParticipantCount}
-                    displayName={displayName}
-                    setDisplayName={setDisplayName}
-                    isInstantJoin={isInstantJoin}
-                    joiningLoaderHeader={joiningLoaderHeader}
-                    joiningLoaderSubtitle={joiningLoaderSubtitle}
-                />
-            )}
+                )}
+            </WaitingRoomProvider>
 
             {isWebRtcUnsupportedModalOpen && (
                 <WebRtcUnsupportedModal onClose={() => setIsWebRtcUnsupportedModalOpen(false)} />

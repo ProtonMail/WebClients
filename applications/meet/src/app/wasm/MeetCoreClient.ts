@@ -116,6 +116,9 @@ export interface MeetCoreClient {
     // Waiting room — guest methods
     hasMlsGroupInfo(): Promise<boolean>;
     prepareMlsSessionForWaitingRoom(...args: Parameters<App['prepareMlsSessionForWaitingRoom']>): Promise<void>;
+    refreshWaitingRoomGuestSessionForJoinRequest(
+        ...args: Parameters<App['refreshWaitingRoomGuestSessionForJoinRequest']>
+    ): Promise<void>;
     createJoinRequest(meetLinkName: string, meetingSessionKey: string): Promise<CreateJoinRequestResult>;
     waitForWaitingRoomWelcome(meetLinkName: string): Promise<void>;
     cancelWaitingRoomJoinRequest(meetLinkName: string): Promise<void>;

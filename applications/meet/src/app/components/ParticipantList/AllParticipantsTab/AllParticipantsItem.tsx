@@ -74,7 +74,8 @@ export const AllParticipantsItem = memo(
 
         return (
             <ParticipantNameWithInitials
-                participant={participant}
+                identity={participant.identity}
+                isLocal={participant.isLocal}
                 participantName={participantName}
                 statusNode={<AllParticipantsItemStatus participantIdentity={participant.identity} />}
             >

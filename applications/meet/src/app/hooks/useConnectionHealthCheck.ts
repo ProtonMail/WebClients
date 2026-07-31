@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import type { MLSGroupState } from '@proton/meet/types/types';
@@ -23,13 +23,13 @@ export const useConnectionHealthCheck = ({ mlsGroupStateRef, onMlsFailed }: UseC
 
     const { reportMeetError } = useMeetErrorReporting();
 
-    const allowHealthCheck = () => {
+    const allowHealthCheck = useCallback(() => {
         healthCheckAllowedRef.current = true;
-    };
+    }, []);
 
-    const disallowHealthCheck = () => {
+    const disallowHealthCheck = useCallback(() => {
         healthCheckAllowedRef.current = false;
-    };
+    }, []);
 
     useEffect(() => {
         let timeout: NodeJS.Timeout | null = null;

@@ -6,6 +6,7 @@ import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
 import { selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
+import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice.ts';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -23,14 +24,17 @@ type Props = {
 
 export const AllParticipantsTab = ({ participants, setIsScrolled }: Props) => {
     const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+
     const activeSpeakers = useDebouncedActiveSpeakers();
     const { toggleVideo, isVideoEnabled } = useMediaManagementContext();
-    const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
-    const meetingLink = useMeetSelector(selectMeetingLink);
     const copyTextToClipboard = useCopyTextToClipboard();
 
+    const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
+    const meetingLink = useMeetSelector(selectMeetingLink);
+    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost) && isMeetWaitingRoomEnabled;
+
     return (
-        <div className={clsx('flex flex-column flex-nowrap h-full relative', !isMeetWaitingRoomEnabled && 'pt-4')}>
+        <div className={clsx('flex flex-column flex-nowrap h-full relative', !isWaitingRoomHost && 'pt-4')}>
             {participants.length === 0 ? (
                 <EmptyList
                     icon={<IcMagnifier size={7} />}
