@@ -18,7 +18,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { CURRENCIES, DEFAULT_CYCLE, type PLANS } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES, CURRENCIES, DEFAULT_CYCLE, type PLANS } from '@proton/payments/core/constants';
 import { fixPlanName } from '@proton/payments/core/helpers';
 import type { Currency, FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
@@ -32,6 +32,23 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { Eligibility, PlanCombination } from './subscriptionEligbility';
 import { getEligibility } from './subscriptionEligbility';
+
+export const getGenericNameFromPrefix = (addonPrefix: ADDON_PREFIXES) =>
+    addonPrefix.charAt(1).toUpperCase() + addonPrefix.slice(2);
+
+const getTotalParams = (
+    params: URLSearchParams
+): {
+    [key in ADDON_PREFIXES]?: number;
+} =>
+    Object.values(ADDON_PREFIXES).reduce((result, addonPrefix) => {
+        // we skip the 1, capitalize the first letter after
+        const addonName = getGenericNameFromPrefix(addonPrefix);
+
+        const total = Math.floor(Number(params.get(`total${addonName}`)));
+
+        return total > 0 ? { ...result, [addonPrefix]: total } : result;
+    }, {});
 
 export const getParameters = (
     search: string,
@@ -82,6 +99,7 @@ export const getParameters = (
     const plansMap = getPlansMap(plans, preferredCurrency, true);
 
     let plan = plansMap?.[planName as PLANS];
+    const totals = plan ? getTotalParams(params) : {};
 
     if (!plan && addon === 'lumo') {
         plan = plansMap?.[getPlanName(subscription) as PLANS];
@@ -107,7 +125,6 @@ export const getParameters = (
         cycle,
         minimumCycle: parsedMinimumCycle,
         maximumCycle: parsedMaximumCycle,
-        currency: parsedCurrency,
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: type === 'offer' || edit === 'disable' || addon === 'lumo' || addon === 'meet',
         disableCycleSelector:
@@ -115,6 +132,7 @@ export const getParameters = (
         plansMap,
         addon,
         preferredCurrency,
+        totals,
     };
 };
 
@@ -218,7 +236,6 @@ const AutomaticSubscriptionModal = () => {
 
         const {
             plan,
-            currency,
             cycle,
             minimumCycle,
             maximumCycle,
@@ -228,7 +245,8 @@ const AutomaticSubscriptionModal = () => {
             disableCycleSelector,
             plansMap,
             addon,
-            // preferredCurrency,
+            totals,
+            preferredCurrency,
         } = getParameters(location.search, plans, subscription, user, getPreferredCurrency, paymentStatus);
 
         if (!plan) {
@@ -277,7 +295,7 @@ const AutomaticSubscriptionModal = () => {
 
         const openProps: OpenCallbackProps = {
             plan: plan.Name as PLANS,
-            currency,
+            currency: preferredCurrency,
             cycle,
             minimumCycle,
             maximumCycle,
@@ -313,29 +331,65 @@ const AutomaticSubscriptionModal = () => {
         }
 
         if (eligibility.type === 'pass-through') {
-            if (addon === 'lumo') {
-                const selectedPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
+            // Support for totalX params
+            const hasTotalParams = Object.keys(totals).length > 0;
 
-                // Default number of lumo addons to the total number of members
-                openProps.planIDs = selectedPlan.setLumoCount(selectedPlan.getTotalUsers()).planIDs;
+            if (hasTotalParams) {
+                let selectedPlan = SelectedPlan.createNormalized(
+                    openProps.planIDs ?? {
+                        [plan.Name]: 1,
+                    },
+                    plansMap,
+                    cycle,
+                    preferredCurrency
+                );
 
-                openProps.plan = undefined; // We need to use maybePlanIDs when calculating planIDs in SubscriptionContainer
-                openProps.onSubscribed = () => {
-                    goToApp('/', APPS.PROTONLUMO, false);
+                for (const addon of Object.values(ADDON_PREFIXES)) {
+                    const totalFromParams = totals[addon];
+
+                    if (!totalFromParams) {
+                        continue;
+                    }
+
+                    selectedPlan = selectedPlan.setAddonCount(
+                        addon,
+                        totalFromParams,
+                        [ADDON_PREFIXES.LUMO, ADDON_PREFIXES.SCRIBE].includes(addon)
+                    );
+                }
+
+                openProps.planIDs = {
+                    ...openProps.planIDs,
+                    ...selectedPlan.planIDs,
                 };
-            } else if (addon === 'meet') {
-                const selectedPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
+                openProps.plan = undefined;
 
-                // Default number of meet addons to the total number of members
-                openProps.planIDs = selectedPlan.setMeetCount(selectedPlan.getTotalUsers()).planIDs;
+                void openSubscriptionModal(openProps);
+            } else {
+                if (addon === 'lumo') {
+                    const selectedPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
 
-                openProps.plan = undefined; // We need to use maybePlanIDs when calculating planIDs in SubscriptionContainer
-                openProps.onSubscribed = () => {
-                    goToApp('/', APPS.PROTONMEET, false);
-                };
+                    // Default number of lumo addons to the total number of members
+                    openProps.planIDs = selectedPlan.setLumoCount(selectedPlan.getTotalUsers()).planIDs;
+
+                    openProps.plan = undefined; // We need to use maybePlanIDs when calculating planIDs in SubscriptionContainer
+                    openProps.onSubscribed = () => {
+                        goToApp('/', APPS.PROTONLUMO, false);
+                    };
+                } else if (addon === 'meet') {
+                    const selectedPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
+
+                    // Default number of meet addons to the total number of members
+                    openProps.planIDs = selectedPlan.setMeetCount(selectedPlan.getTotalUsers()).planIDs;
+
+                    openProps.plan = undefined; // We need to use maybePlanIDs when calculating planIDs in SubscriptionContainer
+                    openProps.onSubscribed = () => {
+                        goToApp('/', APPS.PROTONMEET, false);
+                    };
+                }
+
+                void openSubscriptionModal(openProps);
             }
-
-            void openSubscriptionModal(openProps);
         }
     }, [loadingPlans, loadingSubscription, loadingPaymentStatus, paymentStatus, subscription, user, location.search]);
 
