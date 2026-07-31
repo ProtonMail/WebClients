@@ -5,13 +5,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { selectAttachments } from '../../../redux/selectors';
+import { selectAttachments, selectAttachmentsBySpaceId } from '../../../redux/selectors';
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
-import type { Attachment } from '../../../types';
+import { SearchService } from '../../../services/search/searchService';
+import type { Attachment, SpaceId } from '../../../types';
 import { Role } from '../../../types';
-import { storeAttachmentInRedux } from '../../../util/attachmentHelpers';
+import { isAttachmentRemovedFromProjectKnowledge, storeAttachmentInRedux } from '../../../util/attachmentHelpers';
 import { isFileTypeSupported, mimeToHuman } from '../../../util/filetypes';
 import { isPastedContentAttachment, updatePastedContentAttachment } from '../../../util/pastedContentHelper';
+import { fillAttachmentFromSearchIndex } from '../../../util/resolveProjectFiles';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../LumoMarkdown/LazyMarkdownComponents';
@@ -20,6 +22,7 @@ interface FilePreviewPanelProps {
     attachment: Attachment;
     onBack: () => void;
     onClose: () => void;
+    spaceId?: SpaceId;
 }
 
 const MAX_DISPLAY_CHARS = 20000;
@@ -63,12 +66,16 @@ const parseCSVContent = (content: string): string[][] => {
     return rows;
 };
 
-export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }: FilePreviewPanelProps) => {
+export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, spaceId }: FilePreviewPanelProps) => {
     useNativeComposerVisibilityApi({ isBlocking: true });
     const dispatch = useLumoDispatch();
+    const userId = useLumoSelector((state) => state.user?.value?.ID);
     // Always read the latest version from Redux so the panel reflects edits made via Save.
     const attachments = useLumoSelector(selectAttachments);
-    const attachment = attachments[attachmentProp.id] ?? attachmentProp;
+    const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
+    const attachmentFromStore = attachments[attachmentProp.id] ?? attachmentProp;
+    const [hydratedAttachment, setHydratedAttachment] = useState<Attachment | null>(null);
+    const attachment = hydratedAttachment ?? attachmentFromStore;
     const [imageUrl, setImageUrl] = useState<string | null>(null);
     const [isEditing, setIsEditing] = useState(false);
     const [draft, setDraft] = useState('');
@@ -80,6 +87,40 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }
         // Exit edit mode if the attachment switches.
         setIsEditing(false);
     }, [attachment.id]);
+
+    useEffect(() => {
+        setHydratedAttachment(null);
+    }, [attachmentProp.id]);
+
+    useEffect(() => {
+        if (attachmentFromStore.markdown?.trim() || attachmentFromStore.processing || attachmentFromStore.error) {
+            return;
+        }
+        if (!userId || !spaceId) {
+            return;
+        }
+
+        let cancelled = false;
+
+        void (async () => {
+            const searchService = SearchService.get(userId);
+            await searchService.ensureManifestReady();
+            const filled = fillAttachmentFromSearchIndex(
+                attachmentFromStore,
+                searchService,
+                spaceId
+            );
+            if (cancelled || !filled.markdown?.trim()) {
+                return;
+            }
+            setHydratedAttachment(filled);
+            storeAttachmentInRedux(dispatch, filled, false);
+        })();
+
+        return () => {
+            cancelled = true;
+        };
+    }, [attachmentFromStore, dispatch, spaceId, userId]);
 
     const handleStartEdit = () => {
         setDraft(attachment.markdown ?? '');
@@ -140,6 +181,10 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }
     const hasError = attachment.error;
     const isUnsupported = !isFileTypeSupported(attachment.filename, attachment.mimeType);
     const isProcessing = attachment.processing;
+    const wasRemovedFromProjectKnowledge = useMemo(
+        () => isAttachmentRemovedFromProjectKnowledge(attachment, spaceAttachments, spaceId),
+        [attachment, spaceAttachments, spaceId]
+    );
     const handleClose = () => {
         onClose();
     };
@@ -265,6 +310,16 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }
             );
         }
         if (!hasContent) {
+            if (wasRemovedFromProjectKnowledge) {
+                return (
+                    <div className="flex flex-column items-center justify-center h-full p-6 text-center">
+                        <LumoIcon name="FileX" size={32} className="color-weak mb-3" />
+                        <p className="text-sm color-weak m-0">
+                            {c('collider_2025: Info').t`This file was removed from project knowledge.`}
+                        </p>
+                    </div>
+                );
+            }
             return (
                 <div className="flex flex-column items-center justify-center h-full p-6 text-center">
                     <LumoIcon name="FileX" size={32} className="color-weak mb-3" />

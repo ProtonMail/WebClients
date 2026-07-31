@@ -6,7 +6,54 @@ import { getApproximateTokenCount } from '../llm/tokenizer';
 import { upsertAttachment } from '../redux/slices/core/attachments';
 import type { LumoDispatch } from '../redux/store';
 import { attachmentDataCache } from '../services/attachmentDataCache';
-import type { Attachment } from '../types';
+import type { Attachment, SpaceId } from '../types';
+
+export function attachmentMatchesProjectFile(
+    attachment: Pick<Attachment, 'filename' | 'driveNodeId'>,
+    projectFile: Pick<Attachment, 'filename' | 'driveNodeId'>
+): boolean {
+    if (attachment.driveNodeId && projectFile.driveNodeId) {
+        return attachment.driveNodeId === projectFile.driveNodeId;
+    }
+    return attachment.filename.toLowerCase() === projectFile.filename.toLowerCase();
+}
+
+/** Whether the attachment still exists in the project's knowledge base. */
+export function isFileInProjectKnowledge(
+    attachment: Pick<Attachment, 'filename' | 'driveNodeId'>,
+    spaceAttachments: Record<string, Attachment>
+): boolean {
+    return Object.values(spaceAttachments).some(
+        (projectFile) =>
+            !projectFile.error && !projectFile.autoRetrieved && attachmentMatchesProjectFile(attachment, projectFile)
+    );
+}
+
+/** Attachments sourced from project knowledge, RAG, or @mentions of project files. */
+export function isProjectKnowledgeAttachment(attachment: Attachment): boolean {
+    return Boolean(attachment.autoRetrieved || attachment.conversationContext || attachment.spaceId);
+}
+
+/**
+ * True when a project-linked attachment has no previewable content because the
+ * underlying file was removed from project knowledge.
+ */
+export function isAttachmentRemovedFromProjectKnowledge(
+    attachment: Attachment,
+    spaceAttachments: Record<string, Attachment>,
+    spaceId?: SpaceId
+): boolean {
+    if (!spaceId || !isProjectKnowledgeAttachment(attachment)) {
+        return false;
+    }
+    if (attachment.markdown?.trim() || attachment.processing || attachment.error) {
+        return false;
+    }
+    if (attachment.mimeType?.startsWith('image/')) {
+        return false;
+    }
+    return !isFileInProjectKnowledge(attachment, spaceAttachments);
+}
 
 /**
  * Format attachment content with standard markers for LLM context
