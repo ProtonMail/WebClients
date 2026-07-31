@@ -101,3 +101,22 @@ export function buildArtifactRegistry(linearChain: Message[]): ArtifactRegistry 
 
     return registry;
 }
+
+/** Returns the version index produced by `messageId`, or null if not registered yet. */
+export function getArtifactVersionIndexForMessage(
+    registry: ArtifactRegistry,
+    artifactId: string,
+    messageId: MessageId
+): number | null {
+    const entry = registry[artifactId];
+    if (!entry) {
+        return null;
+    }
+    const index = entry.versions.findIndex((version) => {
+        return version.messageId === messageId;
+    });
+    if (index === -1) {
+        return null;
+    }
+    return index;
+}
