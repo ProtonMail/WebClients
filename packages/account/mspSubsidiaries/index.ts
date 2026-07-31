@@ -8,11 +8,13 @@ import type { ModelState } from '@proton/redux-utilities/initialModelState/inter
 import { getAllMspSubsidiaries } from '@proton/shared/lib/api/msp';
 import type { MspSubsidiary, MspSubsidiaryStatusValue } from '@proton/shared/lib/interfaces/MspSubsidiary';
 
-import type { UserState } from '../user';
+import { isOwnerRole } from '../organizationRoles/helpers';
+import { userThunk } from '../user';
+import { type UserPermissionsState, userPermissionsThunk } from '../userPermissions';
 
 const name = 'mspSubsidiaries' as const;
 
-export interface MspSubsidiariesState extends UserState {
+export interface MspSubsidiariesState extends UserPermissionsState {
     [name]: ModelState<MspSubsidiary[]>;
 }
 
@@ -22,9 +24,17 @@ type Model = NonNullable<SliceState['value']>;
 export const selectMspSubsidiaries = (state: MspSubsidiariesState) => state[name];
 
 const modelThunk = createAsyncModelThunk<Model, MspSubsidiariesState, ProtonThunkArguments>(`${name}/fetch`, {
-    miss: async ({ extraArgument }) => {
+    miss: async ({ extraArgument, dispatch }) => {
         const flag = extraArgument.unleashClient?.isEnabled('MspEnabled') ?? false;
         if (!flag) {
+            return [];
+        }
+        // The subsidiaries routes are MSP-owner only, IT Managers (non-owner members of the MSP
+        // org) get an empty list here and are shown their managed organizations instead.
+        const isAdminRoleMVPEnabled = extraArgument.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
+        const [user, userPermissions] = await Promise.all([dispatch(userThunk()), dispatch(userPermissionsThunk())]);
+        const isOwner = isAdminRoleMVPEnabled ? userPermissions.Roles.some(isOwnerRole) : user.isAdmin;
+        if (!isOwner) {
             return [];
         }
         return getAllMspSubsidiaries(extraArgument.api);

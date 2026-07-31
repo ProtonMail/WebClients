@@ -38,14 +38,14 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import { useErrorWrapper } from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import {
     getHasDriveB2BPlan,
-    getHasExternalMemberCapableB2BPlan,
     getHasPassB2BPlan,
     hasDuo,
     hasMeet,
     hasMeetBusiness,
-    hasPassBusiness,
     hasVPNPassProfessional,
     hasVisionary,
 } from '@proton/payments/core/subscription/helpers';
@@ -93,6 +93,7 @@ export const useMemberActions = ({
     const getOrganizationKey = useGetOrganizationKey();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
+    const [entitlements] = useEntitlementChecks();
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [addresses] = useAddresses();
     const [user] = useUser();
@@ -114,7 +115,7 @@ export const useMemberActions = ({
 
     const hasDriveB2BPlan = getHasDriveB2BPlan(subscription);
     const hasMeetPlan = hasMeetBusiness(subscription) || hasMeet(subscription);
-    const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
+    const hasExternalMemberCapableB2BPlan = !!entitlements.quantityOrg(EntitlementName.ExternalManagedMembers);
 
     const verifiedMailDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
 
@@ -126,7 +127,7 @@ export const useMemberActions = ({
     const allowStorageConfiguration =
         !hasExternalMemberCapableB2BPlan ||
         hasDriveB2BPlan ||
-        hasPassBusiness(subscription) ||
+        !!entitlements.quantityOrg(EntitlementName.PassBusiness) ||
         hasVPNPassProfessional(subscription);
     // VPN + Pass B2B bundle needs to disable VPN to be able to downgrade to Pass Professional
     const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan || hasVPNPassProfessional(subscription);
@@ -162,7 +163,7 @@ export const useMemberActions = ({
     const showFeaturesColumn =
         !hasExternalMemberCapableB2BPlan ||
         hasDriveB2BPlan ||
-        hasPassBusiness(subscription) ||
+        !!entitlements.quantityOrg(EntitlementName.PassBusiness) ||
         hasVPNPassProfessional(subscription);
 
     const disableAddUserButton =
