@@ -123,6 +123,7 @@ const ConversationComponent = ({
                             {openPanel.type === 'file-preview' && openPanel.attachment && (
                                 <FilePreviewPanel
                                     attachment={openPanel.attachment}
+                                    spaceId={conversation?.spaceId}
                                     onBack={() => handleOpenFiles()}
                                     onClose={handleClosePanel}
                                 />
