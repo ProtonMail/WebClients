@@ -15,21 +15,23 @@ export class EventSubscriber {
   // Construct one scheduler with one callback to avoid race conditions
   private eventScheduler: EventScheduler | undefined
   private rootScope: string | undefined
-  private sharedDocumentScopes: Set<string>
+  // key: eventScope, value: nodeUid
+  private sharedDocumentScopes: Map<string, string>
   // key: tree event scope; value: last processed event
   private lastEventPerScope: Record<string, string | undefined>
   private listeners: SDKEventListener[] | undefined
+  private handleRemoveDocument: ((nodeUid: string) => void) | undefined
   private abort: AbortController | undefined
   private canInitialize: boolean
 
   constructor() {
     this.drive = getDrive()
-    this.sharedDocumentScopes = new Set()
+    this.sharedDocumentScopes = new Map()
     this.lastEventPerScope = {}
     this.canInitialize = true
   }
 
-  async initialize(rootScope: string, listeners: SDKEventListener[]) {
+  async initialize(rootScope: string, listeners: SDKEventListener[], handleRemoveDocument?: (nodeUid: string) => void) {
     if (!this.canInitialize) {
       // We can replace this with call to "reset", but for now let's see when/why it throws
       throw new Error('Already subscribed. Reset the subscription first!')
@@ -38,6 +40,7 @@ export class EventSubscriber {
 
     this.rootScope = rootScope
     this.listeners = listeners
+    this.handleRemoveDocument = handleRemoveDocument
     // Keep reference in case of fast init->reset->init calls (mid-flight cancellation)
     const abort = new AbortController()
     this.abort = abort
@@ -50,18 +53,6 @@ export class EventSubscriber {
       return
     }
     this.eventScheduler.addScope(rootScope)
-
-    // Subscribe to event of documents "shared with me"
-    const sharedNodeUids = await Array.fromAsync(this.drive.iterateSharedWithMeNodeUids(abort.signal))
-    for await (const sharedNode of this.drive.iterateNodes(sharedNodeUids, abort.signal)) {
-      if ('missingUid' in sharedNode) {
-        continue
-      }
-      if (abort.signal.aborted) {
-        return
-      }
-      this.subscribeToSharedDocument(sharedNode.treeEventScopeId)
-    }
   }
 
   reset() {
@@ -72,8 +63,8 @@ export class EventSubscriber {
         if (this.rootScope) {
           this.eventScheduler.removeScope(this.rootScope)
         }
-        for (const scopeId of this.sharedDocumentScopes) {
-          this.eventScheduler.removeScope(scopeId)
+        for (const eventScope of this.sharedDocumentScopes.values()) {
+          this.eventScheduler.removeScope(eventScope)
         }
       }
     } catch (error) {
@@ -83,15 +74,21 @@ export class EventSubscriber {
 
     this.rootScope = undefined
     this.listeners = undefined
-    this.sharedDocumentScopes = new Set()
+    this.handleRemoveDocument = undefined
+    this.sharedDocumentScopes = new Map()
     this.lastEventPerScope = {}
     this.canInitialize = true
   }
 
-  subscribeToSharedDocument(eventScope: string) {
+  subscribeToSharedDocument(nodeUid: string, eventScope: string) {
     if (this.eventScheduler) {
+      if (this.sharedDocumentScopes.has(eventScope)) {
+        // Already subscribed
+        return
+      }
+
       this.eventScheduler.addScope(eventScope)
-      this.sharedDocumentScopes.add(eventScope)
+      this.sharedDocumentScopes.set(eventScope, nodeUid)
     }
   }
 
@@ -129,9 +126,13 @@ export class EventSubscriber {
         }
       }
     } catch (error) {
-      if (eventScope !== this.rootScope) {
+      if (eventScope !== this.rootScope && error instanceof Error && error.name === 'ValidationError') {
         // Most probably user lost access to shared document - unsubscribe
         // This should be handled by special event, but SDK does not have it yet
+        const nodeUid = this.sharedDocumentScopes.get(eventScope)
+        if (this.handleRemoveDocument && nodeUid) {
+          this.handleRemoveDocument(nodeUid)
+        }
         this.removeSharedDocumentSubscription(eventScope)
         // Not tracing when shared doc error - don't spam Sentry when doc is unshared
         return
