@@ -113,7 +113,7 @@ export interface PublicDriveCompat {
     linkId: string | undefined;
 }
 
-export const usePublicDriveCompatValue = (session?: ResumedSessionResult): PublicDriveCompat => {
+const usePublicDriveCompatValue = (session?: ResumedSessionResult): PublicDriveCompat => {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
@@ -205,7 +205,7 @@ export const usePublicDriveCompatValue = (session?: ResumedSessionResult): Publi
     };
 };
 
-export const PublicCompatContext = createContext<PublicDriveCompat | null>(null);
+const PublicCompatContext = createContext<PublicDriveCompat | null>(null);
 
 export const usePublicDriveCompat = () => {
     const context = useContext(PublicCompatContext);

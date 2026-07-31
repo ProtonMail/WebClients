@@ -15,7 +15,7 @@ import type { LegacyNodeMeta } from '../NodeMeta';
 import type { DecryptedNode } from './interface';
 import { decryptedLinkToNode } from './utils';
 
-export const useNode = () => {
+const useNode = () => {
     const { getLink, loadFreshLink } = useLink();
     const { getPath } = useLinkPath();
     const { getSharePermissions } = useDirectSharingInfo();
