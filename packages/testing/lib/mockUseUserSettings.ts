@@ -1,5 +1,9 @@
 import * as useUserSettingsModule from '@proton/account';
-import { PASSWORD_REMINDERS_VALUE, type UserSettings } from '@proton/shared/lib/interfaces';
+import {
+    FIDO2_CREDENTIALS_PIN_VALUE,
+    PASSWORD_REMINDERS_VALUE,
+    type UserSettings,
+} from '@proton/shared/lib/interfaces';
 
 const defaultUserSettings: UserSettings = {
     '2FA': { Enabled: 0, Allowed: 0, ExpirationTime: null, RegisteredKeys: [] },
@@ -18,6 +22,7 @@ const defaultUserSettings: UserSettings = {
         EdmOptOut: 0,
         DisplayTrialEndModal: 0,
         PasswordReminderOptOut: PASSWORD_REMINDERS_VALUE.ENABLED,
+        Fido2CredentialsPinOptIn: FIDO2_CREDENTIALS_PIN_VALUE.ENABLED,
     },
     HideSidePanel: 0,
     InvoiceText: '',
