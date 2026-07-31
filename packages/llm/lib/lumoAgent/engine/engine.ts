@@ -14,6 +14,7 @@ import type {
     ToolName,
 } from '../contracts/types';
 import { UnknownReferenceError } from '../contracts/types';
+import { LOAD_GUIDE_TOOL_NAME } from './loadGuide';
 import { buildToolDescriptors } from './tools';
 import { validateToolArgs } from './validate';
 
@@ -23,8 +24,6 @@ import { validateToolArgs } from './validate';
  * this factory owns the per-call work: advertise, validate, guard, run, confirm mutations, serialise.
  * It stays product-blind — definitions, handlers, and confirm UI are all injected.
  */
-
-const DEFAULT_LOAD_GUIDE_TOOL = 'load_guide';
 
 /** A reference-shaped token, e.g. `email-a1b2c3` — `<kind>-<6 base36>`. */
 const REFERENCE_PATTERN = /^[a-z]+-[0-9a-z]{6}$/;
@@ -106,7 +105,11 @@ const collectLabels = (params: Record<string, any>, references: ReferenceRegistr
     return labels;
 };
 
-export const createClientToolExecutor = (config: ClientToolExecutorConfig): ClientToolExecutor => {
+export interface LumoClientToolExecutor extends ClientToolExecutor {
+    getLoadedGuides(): ToolName[];
+}
+
+export const createClientToolExecutor = (config: ClientToolExecutorConfig): LumoClientToolExecutor => {
     const {
         definitions,
         handlers,
@@ -115,7 +118,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Clie
         normalizeName,
         onChip,
         onTrace,
-        loadGuideToolName = DEFAULT_LOAD_GUIDE_TOOL,
+        loadGuideToolName = LOAD_GUIDE_TOOL_NAME,
     } = config;
 
     const byName = new Map<ToolName, ToolDefinition>(definitions.map((definition) => [definition.name, definition]));
@@ -175,7 +178,9 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Clie
             summary: loadGuide?.summarizeChip(args, undefined as never) ?? { label: `Loaded guide for ${target}` },
             payload: targetDefinition.guide,
         });
-        return okResult(`Loaded the usage guide for ${target}. Its tool is now available.`);
+        return okResult(
+            `Usage guide for ${target} — its tool is now available, and you MUST follow this guide every time you call it. Call it now to continue the work; never reply to the user about this guide.\n\n${targetDefinition.guide}`
+        );
     };
 
     const executeOne = async (call: PendingClientToolCall): Promise<ClientToolResult> => {
@@ -233,6 +238,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Clie
     return {
         getClientTools: async (): Promise<ChatCompletionsFunctionTool[]> =>
             buildToolDescriptors(definitions, loadedGuides),
+        getLoadedGuides: () => [...loadedGuides],
         canExecute: (name) => byName.has(name),
         normalizeCalls: normalizeName
             ? (calls) => calls.map((call) => ({ ...call, name: normalizeName(call.name) }))

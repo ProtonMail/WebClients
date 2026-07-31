@@ -116,6 +116,35 @@ describe('createClientToolExecutor', () => {
             expect(after).toContain('make_filter');
         });
 
+        it('returns the guide BODY as the load_guide result, since the prompt is fixed for the loop', async () => {
+            const { executor } = setup();
+
+            const [result] = await executor.execute([call('load_guide', { guide: 'make_filter' })]);
+
+            expect(result.is_error).toBeUndefined();
+            expect(result.content).toContain('THE GUIDE');
+        });
+
+        it('reports an unknown guide as an error without loading anything', async () => {
+            const { executor } = setup();
+
+            const [result] = await executor.execute([call('load_guide', { guide: 'view_items' })]);
+
+            expect(result.is_error).toBe(true);
+            expect(executor.getLoadedGuides()).toEqual([]);
+        });
+    });
+
+    describe('getLoadedGuides', () => {
+        it('exposes loaded guides so the next message can carry them in its prompt', async () => {
+            const { executor } = setup();
+            expect(executor.getLoadedGuides()).toEqual([]);
+
+            await executor.execute([call('load_guide', { guide: 'make_filter' })]);
+
+            expect(executor.getLoadedGuides()).toEqual(['make_filter']);
+        });
+
         it('returns a value assignable to the transport ChatCompletionsFunctionTool[]', async () => {
             const { executor } = setup();
             const tools: ChatCompletionsFunctionTool[] = await executor.getClientTools!();
