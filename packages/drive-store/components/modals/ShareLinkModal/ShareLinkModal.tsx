@@ -27,7 +27,7 @@ import ErrorState from './ErrorState';
 import { PublicSharing } from './PublicSharing';
 import { useLinkSharingSettingsModal } from './ShareLinkSettingsModal';
 
-export type SharingModalProps = {
+type SharingModalProps = {
     modalTitleID?: string;
     shareId: string;
     linkId: string;
@@ -40,7 +40,7 @@ export type SharingModalProps = {
     registerOverriddenNameListener?: (listener: (name: string) => void) => void;
 };
 
-export function SharingModal(props: SharingModalProps & ModalStateProps) {
+function SharingModal(props: SharingModalProps & ModalStateProps) {
     const shareMemberList = useShareMemberView(props.shareId, props.linkId);
     return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
 }

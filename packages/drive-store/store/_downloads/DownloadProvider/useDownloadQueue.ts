@@ -157,7 +157,7 @@ export default function useDownloadQueue(log: LogCallback) {
     };
 }
 
-export function convertFilterToFunction(filterOrId: UpdateFilter) {
+function convertFilterToFunction(filterOrId: UpdateFilter) {
     return typeof filterOrId === 'function' ? filterOrId : ({ id }: UpdateCallbackParams) => id === filterOrId;
 }
 

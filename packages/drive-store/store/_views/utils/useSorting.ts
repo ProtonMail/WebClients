@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { type SortConfig, useMultiSortedList } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -38,17 +38,6 @@ interface LinkSortFields {
     sharedOn?: number;
     sharedBy?: string;
     signatureEmail?: string;
-}
-
-/**
- * useSorting sorts provided list based on `sortParams`.
- */
-export function useSorting<T extends SortField, Item extends LinkSortFields>(list: Item[], sortParams: SortParams<T>) {
-    const { sortedList, setSorting } = useControlledSorting(list, sortParams, async () => undefined);
-    useEffect(() => {
-        void setSorting(sortParams);
-    }, [sortParams]);
-    return sortedList;
 }
 
 /**
