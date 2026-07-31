@@ -1,25 +1,29 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
+import useLoading from '@proton/hooks/useLoading';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
+import { useWaitingRoomContext } from '../../contexts/WaitingRoomContext';
 
 export const WaitingRoomToggle = () => {
     const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
 
-    const [isWaitingRoomEnabled, setIsWaitingRoomEnabled] = useState(false);
+    const { toggleWaitingRoom } = useWaitingRoomContext();
+
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
+    const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
+    const [loading, withLoading] = useLoading();
 
     const handleWaitingRoomToggle = () => {
         if (!isPaidUser) {
             return;
         }
 
-        setIsWaitingRoomEnabled(!isWaitingRoomEnabled);
+        void withLoading(toggleWaitingRoom(!waitingRoomSetting));
     };
 
     if (!isMeetWaitingRoomEnabled) {
@@ -31,7 +35,7 @@ export const WaitingRoomToggle = () => {
             return c('Action').t`Upgrade your plan to use waiting room in your next meeting.`;
         }
 
-        if (isWaitingRoomEnabled) {
+        if (waitingRoomSetting) {
             return c('Action').t`Approve participants before they can join`;
         }
 
@@ -39,7 +43,7 @@ export const WaitingRoomToggle = () => {
     };
 
     const getWaitingRoomToggleAriaLabel = () => {
-        if (isWaitingRoomEnabled) {
+        if (waitingRoomSetting) {
             return c('Action').t`Disable waiting room`;
         }
         return c('Action').t`Enable waiting room`;
@@ -51,9 +55,10 @@ export const WaitingRoomToggle = () => {
             label={c('Action').t`Waiting room`}
             description={getWaitingRoomDescription()}
             onChange={handleWaitingRoomToggle}
-            checked={isWaitingRoomEnabled}
+            checked={waitingRoomSetting}
             ariaLabel={getWaitingRoomToggleAriaLabel()}
             disabled={!isPaidUser}
+            loading={loading}
         />
     );
 };

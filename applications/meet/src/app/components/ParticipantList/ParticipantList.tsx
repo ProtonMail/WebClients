@@ -6,12 +6,10 @@ import { RoomEvent } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import {
-    selectIsLocalParticipantAdminOrHost,
-    selectParticipantDecryptedNameMap,
-} from '@proton/meet/store/slices/participants/participantsSlice';
+import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectSortedParticipantIdentities } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -53,7 +51,7 @@ export const ParticipantList = () => {
     const sortedParticipantIdentities = useMeetSelector(selectSortedParticipantIdentities);
     const sideBarState = useMeetSelector(selectSideBarState);
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
-    const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
+    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost) && isMeetWaitingRoomEnabled;
 
     const participants = useParticipants({
         updateOnlyOn,
@@ -88,7 +86,7 @@ export const ParticipantList = () => {
             aria-label={c('Aria').t`Participants`}
             absoluteHeader={true}
             isScrolled={isScrolled}
-            paddingHeaderClassName={clsx(!isMeetWaitingRoomEnabled && 'side-bar-header-wrapper-no-nav')}
+            paddingHeaderClassName={clsx(!isWaitingRoomHost && 'side-bar-header-wrapper-no-nav')}
             paddingClassName="pt-4"
             header={
                 <ParticipantListHeader
@@ -101,7 +99,7 @@ export const ParticipantList = () => {
             }
         >
             <div className="participants-list-container h-full">
-                {isMeetWaitingRoomEnabled && isLocalParticipantAdminOrHost ? (
+                {isWaitingRoomHost ? (
                     <ParticipantListHost
                         participants={filteredParticipants}
                         isSearchOn={isSearchOn}

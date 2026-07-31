@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
+import clsx from '@proton/utils/clsx';
+
 import { TruncatedTextWithTooltip } from '../../atoms/TruncatedTextWithTooltip/TruncatedTextWithTooltip';
+import { PrejoinDetailsHeaderShell } from './shared/PrejoinDetailsHeaderShell';
 
 type Props = {
     meetingName: string;
@@ -34,13 +37,10 @@ export const PreJoinDetailsHeader = ({ meetingName, instantMeeting, isPersonalRo
     };
 
     return (
-        <div className="pre-join-details-header flex flex-column gap-2 py-2 lg:py-4 w-full">
-            <h1
-                className={`title text-semibold hidden md:flex justify-center m-0 w-full ${isPersonalRoom ? 'color-primary' : ''}`}
-            >
-                <TruncatedTextWithTooltip label={getTitle()} className="min-w-0 text-left" />
-            </h1>
-            <div className="text-center color-weak hidden md:block">{getSubtitle()}</div>
-        </div>
+        <PrejoinDetailsHeaderShell
+            title={<TruncatedTextWithTooltip label={getTitle()} className="min-w-0 text-left" />}
+            subtitle={getSubtitle()}
+            titleClassName={clsx('justify-center w-full', isPersonalRoom && 'color-primary')}
+        />
     );
 };

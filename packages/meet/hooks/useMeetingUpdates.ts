@@ -82,7 +82,7 @@ export const useMeetingUpdates = () => {
         meetingLinkName: string;
         waitingRoom: WaitingRoomState;
     }) => {
-        return updateMeetingWaitingRoom({ meetingLinkName, waitingRoom: waitingRoom });
+        return updateMeetingWaitingRoom({ meetingLinkName, waitingRoom });
     };
 
     return { saveMeetingName, saveMeetingSchedule, saveMeetingWaitingRoom };

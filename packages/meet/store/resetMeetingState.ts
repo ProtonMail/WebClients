@@ -10,7 +10,9 @@ import { resetParticipants } from './slices/participants/participantsSlice';
 import { resetSortedParticipants } from './slices/participants/sortedParticipantsSlice';
 import { resetRecordingStatus } from './slices/recordingStatusSlice';
 import { resetScreenShareStatus } from './slices/screenShareStatusSlice';
+import { resetWaitingRoomSetting } from './slices/settings';
 import { resetUiState } from './slices/uiStateSlice';
+import { resetWaitingRoom } from './slices/waitingRoomSlice';
 
 // Single teardown for all per-meeting state.
 export const resetMeetingState =
@@ -24,4 +26,6 @@ export const resetMeetingState =
         dispatch(resetParticipants());
         dispatch(resetSortedParticipants());
         dispatch(resetScreenShareStatus());
+        dispatch(resetWaitingRoom());
+        dispatch(resetWaitingRoomSetting());
     };

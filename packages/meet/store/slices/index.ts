@@ -14,6 +14,7 @@ import { settingsReducer } from './settings';
 import { uiStateReducer } from './uiStateSlice';
 import { userSettingsReducer } from './userSettings';
 import { meetUserReducer } from './userSlice';
+import { waitingRoomReducer } from './waitingRoomSlice';
 
 export const meetReducers = {
     ...chatAndReactionsReducer,
@@ -32,4 +33,5 @@ export const meetReducers = {
     ...settingsReducer,
     ...uiStateReducer,
     ...meetUserReducer,
+    ...waitingRoomReducer,
 };

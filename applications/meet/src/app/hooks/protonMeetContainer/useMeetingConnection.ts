@@ -15,6 +15,7 @@ import { addKeyRotationLog } from '@proton/meet/store/slices/meetingInfo';
 import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
 import { encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { sanitizeMessage } from '@proton/sanitize/purify';
+import { SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -35,6 +36,7 @@ export interface ConnectWithMlsParams {
     desiredCameraState?: boolean;
     desiredMicrophoneState?: boolean;
     resetParticipantsBeforeFetch?: boolean;
+    isWaitingRoom?: boolean;
 }
 
 type ConnectionInfo = Awaited<ReturnType<UseLiveKitConnectionResult['connectWithStunFallbackToTurnRelay']>>;
@@ -130,6 +132,7 @@ export const useMeetingConnection = ({
             desiredCameraState,
             desiredMicrophoneState,
             resetParticipantsBeforeFetch = false,
+            isWaitingRoom = false,
         }: ConnectWithMlsParams): Promise<ConnectWithMlsResult> => {
             const sanitizedDisplayName = sanitizeMessage(displayNameArg);
             const encryptedDisplayName = decryptionKeyRef.current
@@ -157,7 +160,8 @@ export const useMeetingConnection = ({
             }
 
             const t1 = performance.now();
-            const { key: groupKey, epoch } = (await handleMlsSetup(meetingToken, accessToken, password)) || {};
+            const { key: groupKey, epoch } =
+                (await handleMlsSetup(meetingToken, accessToken, password, isWaitingRoom)) || {};
             const mlsSetupMs = Math.round(performance.now() - t1);
 
             reportMLSRelatedError(groupKey, epoch);
@@ -189,7 +193,11 @@ export const useMeetingConnection = ({
                 // Start device init concurrently with connect so the camera track is included in the initial SDP
                 // offer rather than a post-connect renegotiation (on Safari with H264 that can fail silently).
                 const t2 = performance.now();
-                const initDevices = initializeDevices({ timeoutMs: 5_000, desiredCameraState, desiredMicrophoneState });
+                const initDevices = initializeDevices({
+                    timeoutMs: 5 * SECOND,
+                    desiredCameraState,
+                    desiredMicrophoneState,
+                });
                 connectionInfo = await connectWithStunFallbackToTurnRelay(websocketUrl, accessToken, timeoutMs);
                 livekitConnectMs = Math.round(performance.now() - t2);
                 await initDevices;
@@ -272,7 +280,7 @@ export const useMeetingConnection = ({
                 meetingToken,
                 meetingPassword,
                 displayName,
-                timeoutMs: 20_000,
+                timeoutMs: 20 * SECOND,
                 desiredCameraState: wasCameraEnabled,
                 desiredMicrophoneState: wasMicrophoneEnabled,
                 resetParticipantsBeforeFetch: true,

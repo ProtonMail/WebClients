@@ -1,11 +1,6 @@
 export type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 export { MeetingSideBars, PopUpControls, PermissionPromptStatus } from '@proton/meet/store/slices/uiStateSlice';
 
-export enum LoadingState {
-    JoiningInProgress = 'JoiningInProgress',
-    WaitingRoom = 'WaitingRoom',
-}
-
 export enum QualityScenarios {
     ScreenShare = 'ScreenShare',
     PortraitView = 'PortraitView',
@@ -80,5 +75,7 @@ export type JoinLocationState = {
     meetingDetails?: {
         meetingName: string;
         isPersonalRoom: boolean;
+        waitingRoom: boolean;
+        canManageWaitingRoom: boolean;
     };
 };
