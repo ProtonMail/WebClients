@@ -21,7 +21,7 @@ import { useDocInvitationsStore } from './use-doc-invitations-store'
 export const useDocInvites: DocInvitesHook = () => {
   const { createNotification } = useNotifications()
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true) // Consistent with legacy
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
   const openInvitedDocument = useOpenInvitedDocument()
 
