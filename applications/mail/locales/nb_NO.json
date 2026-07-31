@@ -1706,6 +1706,15 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Lookup document": [
+        "Konsulter dokument"
+      ],
+      "Stop": [
+        "Stopp"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Åpne/lukk ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -2121,6 +2130,10 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ]
     },
     "BF2025: Deal details": {
@@ -9316,6 +9329,46 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-post → ${ dest }",
+        "${ count } e-poster → ${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problem under importen:",
+        "${ issues.length } problemer under importen:"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minutter gjenstår…"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Fant en gjeldende kryptert søkeindeks med ${ oldIndexSize } melding.",
+        "Fant en gjeldende kryptert søkeindeks med ${ oldIndexSize } meldinger."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importen pågår. Du kan lukke denne dialogboksen mens den kjører og komme tilbake til den senere. Ikke lukk fanen."
+      ],
+      "Move emails": [
+        "Flytt e-poster"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Du har **${ count } samtale** i kategorien ${ categoryLabel }.",
+        "Du har **${ count } samtaler** i kategorien ${ categoryLabel }."
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Du har **${ count } melding** i kategorien ${ categoryLabel }.",
+        "Du har **${ count } meldinger** i kategorien ${ categoryLabel }."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Du valgte **${ checked } samtale** i kategorien ${ categoryLabel }.",
+        "Du valgte **${ checked } samtaler** i kategorien ${ categoryLabel }."
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Du valgte **${ checked } melding** i kategorien ${ categoryLabel }.",
+        "Du valgte **${ checked } meldinger** i kategorien ${ categoryLabel }."
       ]
     },
     "info": {
@@ -10502,6 +10555,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
+      "Content search version to use": [
+        "Innholdssøkversjon som skal brukes"
+      ],
+      "v1": [
+        "v1"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10949,6 +11011,9 @@
       ],
       "for ${ price }": [
         "for ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "Mailbox": {
@@ -10979,6 +11044,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } sete",
         "${ seats } ${ MEET_APP_NAME } seter"
+      ],
+      "${ price } per seat": [
+        "${ price } per sete"
       ]
     },
     "meet_2025: Feature": {
@@ -11801,6 +11869,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "new_plans: feature highlight": {
@@ -15240,6 +15311,10 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avsluttet abonnementet"
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Flyttet til ${ label }. Lignende melding vil bli kategorisert der i fremtiden.",
+        "Flyttet til ${ label }. Lignende meldinger vil bli kategorisert der i fremtiden."
       ]
     },
     "Success notification": {
@@ -16533,6 +16608,12 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Move emails": [
+        "Flytt e-poster"
+      ],
+      "Refine your Categories": [
+        "Finjuster kategoriene"
       ]
     },
     "Title header for keys table": {
@@ -17153,6 +17234,12 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } ny melding",
+        "${ messageCount } nye meldinger"
       ]
     }
   }

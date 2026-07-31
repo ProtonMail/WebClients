@@ -1712,6 +1712,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Slå på/av ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Ja, organisera det"
       ]
     },
     "action": {
@@ -1739,6 +1745,9 @@
       ],
       "Skip": [
         "Hoppa över"
+      ],
+      "Set up categories": [
+        "Ställ in kategorier"
       ]
     },
     "Actions message": {
@@ -9339,6 +9348,34 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Move emails": [
+        "Flytta e-post"
+      ],
+      "Move here": [
+        "Flytta hit"
+      ],
+      "Opened ${ location }": [
+        "Öppnade ${ location }"
+      ],
+      "Thinking about this": [
+        "Tänker på detta"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Du har **${ count } konversation** i din kategori ${ categoryLabel }",
+        "Du har **${ count } konversationer** i din kategori ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Du har **${ count } meddelande** i din kategori ${ categoryLabel }",
+        "Du har **${ count } meddelanden** i din kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Du valde **${ checked } konversation** i din kategori ${ categoryLabel }",
+        "Du valde **${ checked } konversationer** i din kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Du valde **${ checked } meddelande** i din kategori ${ categoryLabel }",
+        "Du valde **${ checked } meddelanden** i din kategori ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10540,6 +10577,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Allt som behöver din uppmärksamhet, plus e-post från inaktiverade kategorier"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primär – Allt som behöver din uppmärksamhet, plus e-post från inaktiverade kategorier"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16592,6 +16638,12 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Make your inbox your own": [
+        "Gör din inkorg till din egen"
+      ],
+      "Refine your Categories": [
+        "Förfina dina kategorier"
       ]
     },
     "Title header for keys table": {
@@ -17212,6 +17264,15 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nytt meddelande",
+        "${ messageCount } nya meddelanden"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Från: ${ sender } – ${ message.Subject }"
       ]
     }
   }

@@ -1718,6 +1718,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Yes, organize it": [
+        "Evet, düzenle"
       ]
     },
     "action": {
@@ -1745,6 +1748,9 @@
       ],
       "Skip": [
         "Atla"
+      ],
+      "Set up categories": [
+        "Kategorileri ayarla"
       ]
     },
     "Actions message": {
@@ -4532,6 +4538,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Bir e-postaya sağ tıklayın ve “Şuraya taşı” seçeneğini seçin ya da e-postayı sürükleyip başka bir kategoriye bırakın. Bundan sonra benzer e-postalar otomatik olarak oraya taşınır."
       ]
     },
     "description": {
@@ -9393,6 +9402,25 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Move here": [
+        "Buraya taşı"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ count } yazışmanız** var",
+        "${ categoryLabel } kategorisinde **${ count } yazışmanız** var"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ count } iletiniz** var",
+        "${ categoryLabel } kategorisinde **${ count } iletiniz** var"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ checked } yazışma** seçtiniz",
+        "${ categoryLabel } kategorisinde **${ checked } yazışma** seçtiniz"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ checked } ileti** seçtiniz",
+        "${ categoryLabel } kategorisinde **${ checked } ileti** seçtiniz"
       ]
     },
     "info": {
@@ -10600,6 +10628,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Dikkatinizi gerektiren her şey ve kapatılmış kategorilerden gelen e-postalar"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Birincil - Dikkatinizi gerektiren her şey ve kapatılmış kategorilerden gelen e-postalar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15356,6 +15390,10 @@
       ],
       "You have successfully unsubscribed": [
         "Aboneliği sonlandırdınız"
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "${ label } içine taşındı. Benzer ileti bundan sonra bu kategoriye taşınacak.",
+        "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak."
       ]
     },
     "Success notification": {
@@ -16652,6 +16690,12 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Make your inbox your own": [
+        "Gelen kutunuzu kendinize göre düzenleyin"
+      ],
+      "Refine your Categories": [
+        "Kategorilerinizi düzenleyin"
       ]
     },
     "Title header for keys table": {
