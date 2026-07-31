@@ -25,6 +25,7 @@ import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import SiblingSelector from '../../../../SiblingSelector';
 import { ArtifactChip, ArtifactChipLoading } from '../../../artifact/ArtifactChip';
 import { useArtifactContext } from '../../../artifact/ArtifactContext';
+import { getArtifactVersionIndexForMessage } from '../../../artifact/artifactRegistry';
 import {
     CREATE_ARTIFACT_TOOL_NAME,
     parseCompleteArtifactToolCall,
@@ -295,7 +296,7 @@ const AssistantMessage = ({
         });
     }, [blocks, hasArtifacts]);
 
-    const { selectedId, openArtifact, setStreamingArtifact } = useArtifactContext();
+    const { selectedId, openArtifact, setStreamingArtifact, registry } = useArtifactContext();
 
     // Push the in-progress artifact into context so the panel can show a live preview.
     // Only the actively-generating last message drives this; clear it for all other messages.
@@ -313,12 +314,22 @@ const AssistantMessage = ({
     useEffect(() => {
         if (isLastMessage && isFinishedGenerating && completeArtifacts.length > 0 && completeArtifacts[0]) {
             const artifact = completeArtifacts[0];
+            const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, message.id);
             setStreamingArtifact(null);
-            if (selectedId === null || selectedId === artifact.id) {
-                openArtifact(artifact.id);
+            if (versionIndex !== null && (selectedId === null || selectedId === artifact.id)) {
+                openArtifact(artifact.id, versionIndex);
             }
         }
-    }, [isLastMessage, isFinishedGenerating, completeArtifacts, selectedId, openArtifact, setStreamingArtifact]);
+    }, [
+        isLastMessage,
+        isFinishedGenerating,
+        completeArtifacts,
+        selectedId,
+        openArtifact,
+        setStreamingArtifact,
+        registry,
+        message.id,
+    ]);
 
     // Extract search results for legacy sources button
     const searchResults = useMemo(() => extractSearchResults(blocks), [blocks]);
@@ -408,8 +419,12 @@ const AssistantMessage = ({
                                             />
                                             {hasArtifacts && (
                                                 <div className="flex flex-column gap-1 mt-1">
-                                                    {completeArtifacts.map((artifact, idx) => (
-                                                        <ArtifactChip key={idx} artifact={artifact} />
+                                                    {completeArtifacts.map((artifact) => (
+                                                        <ArtifactChip
+                                                            key={`${artifact.id}-${message.id}`}
+                                                            artifact={artifact}
+                                                            messageId={message.id}
+                                                        />
                                                     ))}
                                                     {streamingArtifact && (
                                                         <ArtifactChipLoading streaming={streamingArtifact} />
@@ -452,9 +467,9 @@ const AssistantMessage = ({
                         {c('collider_2025:Info').t`Conversation encrypted`}
                     </div>
                 )}
-                <p>{message?.content}</p>
+                {/* <p>{message?.content}</p>
                 <p>{message.toolCall}</p>
-                <p>{message.toolResult}</p>
+                <p>{message.toolResult}</p> */}
             </div>
 
             {linkWarningModal.render && (
