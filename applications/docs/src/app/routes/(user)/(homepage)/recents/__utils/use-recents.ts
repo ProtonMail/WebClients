@@ -10,7 +10,7 @@ import {
   generateNodeUid,
   getDrive,
 } from '@proton/drive'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { getFullPathFromAncestry, getIsSharedWithMe } from '~/drive-sdk'
@@ -23,7 +23,7 @@ import type { RecentDocumentAPIItem } from '@proton/docs-core/lib/Api/Types/GetR
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
 import { addSentryBreadcrumb } from '@proton/shared/lib/helpers/sentry'
 import { traceRecentsError } from './traceRecentsError'
-import type { SDKEventListener } from '~/drive-sdk/event-subscriber'
+import { getEventSubscriber, type SDKEventListener } from '~/drive-sdk/event-subscriber'
 
 export function useRecents(drive: ProtonDriveClient) {
   const [addresses] = useAddresses()
@@ -38,85 +38,98 @@ export function useRecents(drive: ProtonDriveClient) {
   const { docsApi, logger } = app
   const { createNotification } = useNotifications()
 
+  const eventSubscriber = getEventSubscriber()
+
   const recentDocuments = useRecentsStore((state) => state.recentDocuments)
   const recentDocumentsInitialized = useRecentsStore((state) => state.recentDocumentsInitialized)
 
   const [isRecentsUpdating, setIsRecentsUpdating] = useState(false)
 
-  const fetchRecents = useCallback(async () => {
-    const response = await docsApi.fetchRecentDocuments()
-    const { RecentDocuments: documents } = response.getValue()
+  const fetchRecents = useCallback(
+    async (abort: AbortSignal) => {
+      const response = await docsApi.fetchRecentDocuments()
+      const { RecentDocuments: documents } = response.getValue()
 
-    // Gather nodes to load
-    const uidsToLoad = new Set<string>()
-    for (const document of documents) {
-      uidsToLoad.add(generateNodeUid(document.VolumeID, document.LinkID))
-      for (const ancestorLinkID of document.AncestorIDs) {
-        uidsToLoad.add(generateNodeUid(document.VolumeID, ancestorLinkID))
-      }
-    }
-
-    // Load all the nodes
-    const nodesByUid = new Map<string, NodeEntity>()
-    try {
-      for await (const node of drive.iterateNodes([...uidsToLoad])) {
-        if ('missingUid' in node) {
-          addSentryBreadcrumb({
-            category: 'docs',
-            level: 'warning',
-            message: 'Missing node while iterating',
-            data: {
-              uidsToLoad,
-              missingNodeUid: node.missingUid,
-            },
-          })
-          logger.debug('[LoadRecentsWithDriveSDK] Node not found', { node })
-        } else {
-          nodesByUid.set(node.uid, node)
+      // Gather nodes to load
+      const uidsToLoad = new Set<string>()
+      for (const document of documents) {
+        uidsToLoad.add(generateNodeUid(document.VolumeID, document.LinkID))
+        for (const ancestorLinkID of document.AncestorIDs) {
+          uidsToLoad.add(generateNodeUid(document.VolumeID, ancestorLinkID))
         }
       }
-    } catch (error) {
-      logger.debug('[LoadRecentsWithDriveSDK] Error while iterating nodes', { error })
-      const data: any = { error }
-      if (error instanceof ProtonDriveError) {
-        data.errorCause = error.cause // Explicitly logging it - debugging SDK and Sentry interaction
+
+      // Load all the nodes
+      const nodesByUid = new Map<string, NodeEntity>()
+      try {
+        for await (const node of drive.iterateNodes([...uidsToLoad], abort)) {
+          if ('missingUid' in node) {
+            addSentryBreadcrumb({
+              category: 'docs',
+              level: 'warning',
+              message: 'Missing node while iterating',
+              data: {
+                uidsToLoad,
+                missingNodeUid: node.missingUid,
+              },
+            })
+            logger.debug('[LoadRecentsWithDriveSDK] Node not found', { node })
+          } else {
+            nodesByUid.set(node.uid, node)
+          }
+        }
+      } catch (error) {
+        if (error instanceof Error && error.name === 'AbortError') {
+          throw error
+        }
+
+        logger.debug('[LoadRecentsWithDriveSDK] Error while iterating nodes', { error })
+        const data: any = { error }
+        if (error instanceof ProtonDriveError) {
+          data.errorCause = error.cause // Explicitly logging it - debugging SDK and Sentry interaction
+        }
+        addSentryBreadcrumb({
+          category: 'docs',
+          level: 'warning',
+          message: 'Node iterator error',
+          data,
+        })
+
+        // Creating new error to capture current stack
+        const errorWithCurrentStack = new Error('fetchRecents failed at iterateNodes')
+        errorWithCurrentStack.cause = error
+        throw errorWithCurrentStack
       }
+      // Split in two, otherwise it won't fully log
       addSentryBreadcrumb({
         category: 'docs',
-        level: 'warning',
-        message: 'Node iterator error',
-        data,
+        level: 'info',
+        message: 'Finished loading nodes - debug info 1/2',
+        data: {
+          documents,
+        },
       })
-      // Creating new error to capture current stack
-      const sentryError = new Error('fetchRecents failed at iterateNodes')
-      sentryError.cause = error
-      traceRecentsError(sentryError)
-    }
-    // Split in two, otherwise it won't fully log
-    addSentryBreadcrumb({
-      category: 'docs',
-      level: 'info',
-      message: 'Finished loading nodes - debug info 1/2',
-      data: {
-        documents,
-      },
-    })
-    addSentryBreadcrumb({
-      category: 'docs',
-      level: 'info',
-      message: 'Finished loading nodes - debug info 2/2',
-      data: {
-        loadedNodes: [...nodesByUid.keys()],
-        missingNodes: [...uidsToLoad].filter((nodeUid) => !nodesByUid.has(nodeUid)),
-      },
-    })
+      addSentryBreadcrumb({
+        category: 'docs',
+        level: 'info',
+        message: 'Finished loading nodes - debug info 2/2',
+        data: {
+          loadedNodes: [...nodesByUid.keys()],
+          missingNodes: [...uidsToLoad].filter((nodeUid) => !nodesByUid.has(nodeUid)),
+        },
+      })
 
-    return { documents, nodesByUid }
-  }, [docsApi, drive, logger])
+      return { documents, nodesByUid }
+    },
+    [docsApi, drive, logger],
+  )
 
+  const abortFetchingDocuments = useRef(new AbortController())
   const updateRecentDocuments = useCallback(() => {
+    abortFetchingDocuments.current.abort()
+    abortFetchingDocuments.current = new AbortController()
     setIsRecentsUpdating(true)
-    return fetchRecents()
+    return fetchRecents(abortFetchingDocuments.current.signal)
       .then(({ documents, nodesByUid }) => {
         const { setRecentDocuments, setInitialized } = useRecentsStore.getState()
 
@@ -132,6 +145,10 @@ export function useRecents(drive: ProtonDriveClient) {
 
             const documentDetails = getDocumentDetails(document, node, nodesByUid, addresses)
             documentItems.push(createDocumentItem(node, documentDetails))
+
+            if (documentDetails.isSharedWithMe) {
+              eventSubscriber.subscribeToSharedDocument(node.uid, node.treeEventScopeId)
+            }
           } catch (error) {
             logger.debug('[LoadRecentsWithDriveSDK] Could not process document', { error, document })
             traceRecentsError(error)
@@ -147,18 +164,20 @@ export function useRecents(drive: ProtonDriveClient) {
 
         setRecentDocuments(documentItems)
         setInitialized()
+        setIsRecentsUpdating(false)
       })
       .catch((error) => {
+        if (error instanceof Error && error.name === 'AbortError') {
+          return
+        }
+
         traceRecentsError(error)
         createNotification({
           type: 'error',
           text: c('Error').t`Failed to load recent documents`,
         })
       })
-      .finally(() => {
-        setIsRecentsUpdating(false)
-      })
-  }, [fetchRecents, addresses, logger, createNotification])
+  }, [fetchRecents, addresses, logger, eventSubscriber, createNotification])
 
   const updateRenamedDocumentInCache = useCallback((uniqueId: string, name: string) => {
     const { recentDocuments, setDocument } = useRecentsStore.getState()
@@ -232,12 +251,18 @@ export function useRecents(drive: ProtonDriveClient) {
     }
   }, [])
 
+  const removeDocument = useCallback((nodeUid: string) => {
+    const { removeDocument } = useRecentsStore.getState()
+    removeDocument(nodeUid)
+  }, [])
+
   return {
     updateRecentDocuments,
     updateRenamedDocumentInCache,
     recentDocuments,
     recentDocumentsInitialized,
     isRecentsUpdating,
+    removeDocument,
     recentsListener,
   }
 }
