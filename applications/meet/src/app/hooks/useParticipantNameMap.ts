@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import useApi from '@proton/components/hooks/useApi';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import {
     mergeParticipantDecryptedNameMap,
     mergeParticipantsMap,
@@ -15,6 +16,7 @@ import {
     setIsFetchingParticipants,
     setParticipantAdmin,
 } from '@proton/meet/store/slices/participants/participantsSlice';
+import { selectMissingNamesFromWaitingRoomHash } from '@proton/meet/store/slices/waitingRoomSlice';
 import type { ParticipantEntity } from '@proton/meet/types/types';
 import { decryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { queryParticipants, queryParticipantsCount } from '@proton/shared/lib/api/meet';
@@ -37,6 +39,9 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const participantDecryptedNameMapRef = useRef(participantDecryptedNameMap);
     participantDecryptedNameMapRef.current = participantDecryptedNameMap;
+
+    const missingNamesFromWaitingRoomHash = useMeetSelector(selectMissingNamesFromWaitingRoomHash);
+    const joinedRoom = useMeetSelector(selectJoinedRoom);
 
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -188,6 +193,13 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
             room.off('participantConnected', handleParticipantConnected);
         };
     }, [room, getParticipants, meetingLinkName]);
+
+    // Fetch participants when new waiting room requests are received
+    useEffect(() => {
+        if (joinedRoom && missingNamesFromWaitingRoomHash !== '') {
+            void getParticipants(meetingLinkName);
+        }
+    }, [joinedRoom, missingNamesFromWaitingRoomHash, getParticipants, meetingLinkName]);
 
     useEffect(() => {
         const interval = setInterval(() => {
