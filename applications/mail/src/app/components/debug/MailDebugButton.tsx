@@ -1,19 +1,18 @@
 import { useEffect } from 'react';
 
-import { useLocalState, useModalState } from '@proton/components/index';
+import { c } from 'ttag';
+
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
+import useLocalState from '@proton/components/hooks/useLocalState';
+import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { DebugMailStoreContextTotal } from 'proton-mail/components/debug/DebugMailStoreModal';
-import { contextTotal } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { MailDebugModal } from 'proton-mail/components/debug/MailDebugModal';
 
-interface Props {
-    showContextTotal?: boolean;
-}
-
-export const DebugMailStoreButton = ({ showContextTotal = true }: Props) => {
+export const MailDebugButton = () => {
     const isDebugModeEnabled = useFlag('MailStoreDebugMode');
-    const count = useMailSelector(contextTotal);
+    const { currentEnvironment } = useEarlyAccess();
 
     const [debugModalProps, setDebugModalOpen, renderDebugModal] = useModalState();
     const [showDebugButton, setShowDebugButton] = useLocalState(false, 'proton-mail-debug');
@@ -27,12 +26,21 @@ export const DebugMailStoreButton = ({ showContextTotal = true }: Props) => {
             }
         };
 
-        window.addEventListener('keydown', handleKeyDown);
+        const forceDebugMode =
+            currentEnvironment === 'alpha' ||
+            location.host.includes(PROTON_LOCAL_DOMAIN) ||
+            location.host.startsWith('localhost:');
+
+        if (forceDebugMode) {
+            setShowDebugButton(true);
+        } else {
+            window.addEventListener('keydown', handleKeyDown);
+        }
 
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [setShowDebugButton]);
+    }, [setShowDebugButton, currentEnvironment]);
 
     if (!isDebugModeEnabled || !showDebugButton) {
         return null;
@@ -46,10 +54,10 @@ export const DebugMailStoreButton = ({ showContextTotal = true }: Props) => {
                     onClick={() => setDebugModalOpen(true)}
                     className="text-no-decoration color-weak text-sm m-0"
                 >
-                    {showContextTotal ? <>contextTotal: {count ?? '–'}</> : <>Show debug modal</>}
+                    {c('Action').t`Open debug menu`}
                 </button>
             </div>
-            {renderDebugModal && <DebugMailStoreContextTotal {...debugModalProps} />}
+            {renderDebugModal && <MailDebugModal {...debugModalProps} />}
         </>
     );
 };
