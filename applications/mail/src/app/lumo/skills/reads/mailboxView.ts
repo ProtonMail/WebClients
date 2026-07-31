@@ -1,10 +1,10 @@
 /**
- * Shared, store-free view controls for the navigation reads (`open_folder`, and `search` in a later
- * MR): a single-value `filter` (read / unread / has-attachment) and a `sort` (date or size). These map
- * onto the mailbox toolbar's Filter and Sort. Kept pure so a handler can validate a value before
- * touching the store — a bad token throws a self-correcting Error the engine feeds back to the model,
- * not a user-facing halt. Mapping these semantic tokens onto Mail's URL hash lives in the handler
- * (see `helpers/navigation`), not here.
+ * Shared, store-free view controls for the navigation reads (`open_folder`, `search`): a single-value
+ * `filter` (read / unread / has-attachment) and a `sort` (date or size). These map onto the mailbox
+ * toolbar's Filter and Sort. Kept pure so a handler can validate a value before touching the store — a
+ * bad token throws a self-correcting Error the engine feeds back to the model, not a user-facing halt.
+ * Mapping these semantic tokens onto Mail's URL hash lives in the handler (see `helpers/navigation`),
+ * not here.
  */
 
 /** The three single-value view filters. Exactly ONE may apply: the `filter` hash key holds one value. */
