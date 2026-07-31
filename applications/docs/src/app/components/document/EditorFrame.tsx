@@ -14,13 +14,17 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { getCookie } from '@proton/shared/lib/helpers/cookies'
 
+// normalize 'default' tag to undefined, only pass valid early access tags
+const earlyAccessTag =
+  versionCookieAtLoad === 'alpha' || versionCookieAtLoad === 'beta' ? versionCookieAtLoad : undefined
+
 function getEditorUrl(systemMode: EditorSystemMode, documentType: DocumentType) {
   const url = new URL(BridgeOriginProvider.GetEditorOrigin())
 
   url.searchParams.set('type', documentType)
   url.searchParams.set('mode', systemMode)
-  if (versionCookieAtLoad) {
-    url.searchParams.set('tag', versionCookieAtLoad)
+  if (earlyAccessTag) {
+    url.searchParams.set('tag', earlyAccessTag)
   }
 
   return url.toString()
@@ -83,7 +87,7 @@ export function EditorFrame({ onFrameReady, documentType = 'doc', systemMode, lo
     contentWindow.postMessage(
       {
         type: EDITOR_TAG_INFO_EVENT,
-        versionCookieAtLoad,
+        versionCookieAtLoad: earlyAccessTag,
       },
       BridgeOriginProvider.GetEditorOrigin(),
     )
