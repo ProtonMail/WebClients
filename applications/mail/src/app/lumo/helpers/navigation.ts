@@ -1,21 +1,37 @@
+import type { Location } from 'history';
+import { createLocation } from 'history';
+import isDeepEqual from 'lodash/isEqual';
+
 import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
+import { ALMOST_ALL_MAIL, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
+import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { getStandardFolders } from 'proton-mail/helpers/labels';
+import {
+    extractSearchParameters,
+    filterFromUrl,
+    filterToString,
+    sortFromUrl,
+    sortToString,
+} from 'proton-mail/helpers/mailboxUrl';
 import {
     contextTotal as contextTotalSelector,
     loading as loadingSelector,
     selectPage,
     selectParams,
 } from 'proton-mail/store/elements/elementsSelectors';
+import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 
 import type { MailboxFilter, MailboxSort } from '../skills/reads/mailboxView';
 import type { OpenFolderLocation } from '../skills/reads/openFolder';
-import type { ToolStore } from '../toolModule';
-import { resolveId } from './references';
+import type { AgentEmailPage } from '../skills/reads/rows';
+import { buildAgentEmailRows } from '../skills/reads/rows';
+import type { MailToolDeps, ToolStore } from '../toolModule';
+import { resolveTypedId } from './references';
 
 /** Give up waiting on a stuck load so a read never hangs; results just won't be ready yet. */
 const LIST_SETTLE_TIMEOUT = 20_000;
@@ -58,7 +74,8 @@ export const sortHashFor = (sort: MailboxSort | undefined): SortHash | undefined
     return SORT_HASHES[sort];
 };
 
-/** The fixed standard-location table; `drafts` is overridden by the Show-moved setting at resolve time. */
+/** The fixed standard-location table; two entries are overridden by a mail setting at resolve time — see
+ *  {@link labelIDForLocation}. */
 const LOCATION_LABEL_IDS: Record<OpenFolderLocation, MAILBOX_LABEL_IDS> = {
     inbox: MAILBOX_LABEL_IDS.INBOX,
     all_mail: MAILBOX_LABEL_IDS.ALL_MAIL,
@@ -70,9 +87,26 @@ const LOCATION_LABEL_IDS: Record<OpenFolderLocation, MAILBOX_LABEL_IDS> = {
 };
 
 /**
+ * Two standard locations are a PAIR of labels, and a mail setting picks which one the user actually has:
+ * Drafts follows Show-moved, and All mail follows "Exclude Spam/Trash from All mail" (`ALMOST_ALL_MAIL`
+ * drops Spam and Trash). Reading the setting is what keeps a read on the same label the sidebar links to —
+ * take `ALL_MAIL` unconditionally and the agent searches mail the user's own search would never show them,
+ * and lands them in a view their sidebar does not offer.
+ */
+const labelIDForLocation = (location: OpenFolderLocation, mailSettings: MailSettings): MAILBOX_LABEL_IDS => {
+    if (location === 'drafts' && hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS)) {
+        return MAILBOX_LABEL_IDS.ALL_DRAFTS;
+    }
+    if (location === 'all_mail' && mailSettings.AlmostAllMail === ALMOST_ALL_MAIL.ENABLED) {
+        return MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL;
+    }
+    return LOCATION_LABEL_IDS[location];
+};
+
+/**
  * Resolve an open_folder-style location/target to its mailbox label id (+ human name and nav path). A
- * standard location maps through the fixed table (Drafts follows the Show-moved setting, matching which
- * one the sidebar links to); a custom folder/label resolves its reference.
+ * standard location maps through the fixed table, honouring the settings-dependent pairs
+ * ({@link labelIDForLocation}); a custom folder/label resolves its reference.
  */
 export const resolveMailboxLocation = (
     resolved: { location: OpenFolderLocation } | { target: string },
@@ -80,33 +114,88 @@ export const resolveMailboxLocation = (
     mailSettings: MailSettings
 ): { labelID: string; name: string; pathname: string } => {
     if ('location' in resolved) {
-        const showsAllDrafts = hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS);
-        const labelID =
-            resolved.location === 'drafts' && showsAllDrafts
-                ? MAILBOX_LABEL_IDS.ALL_DRAFTS
-                : LOCATION_LABEL_IDS[resolved.location];
+        const labelID = labelIDForLocation(resolved.location, mailSettings);
         const standard = getStandardFolders()[labelID];
         return { labelID, name: standard?.name || resolved.location, pathname: standard?.to || `/${labelID}` };
     }
-    const labelID = resolveId(resolved.target, references);
+    const labelID = resolveTypedId(resolved.target, ['folder', 'label'], references);
     return { labelID, name: references.labelFor(resolved.target) || labelID, pathname: `/${labelID}` };
 };
 
 /**
- * Resolve once the mailbox list has settled on the expected location: the params match the plain
- * (search-free) view we navigated to, nothing is loading, and a total has been recorded — so a read
- * sees the folder's emails, not a mid-navigation page. Times out rather than hanging on a stuck load.
- *
- * Every input is Redux state, so the wait is driven by a store subscription rather than a poll.
+ * Every search-hash key a list navigation owns, cleared by default. Spread first so a caller only names
+ * the keys it sets and cannot leave a previous navigation's `keyword`/`wildcard`/`page` behind — the two
+ * navigation reads used to carry their own copy of this list, which is exactly how they would drift.
  */
-export const waitForListSettled = (store: ToolStore, expected: { labelID: string }): Promise<void> =>
+const CLEARED_LIST_QUERY = {
+    keyword: undefined,
+    from: undefined,
+    to: undefined,
+    begin: undefined,
+    end: undefined,
+    filter: undefined,
+    address: undefined,
+    wildcard: undefined,
+    sort: undefined,
+    page: undefined,
+};
+
+export type ListQuery = Partial<Record<keyof typeof CLEARED_LIST_QUERY, string | undefined>>;
+
+export interface ExpectedList {
+    labelID: string;
+    /** The location just pushed. */
+    location: Location;
+}
+
+/** Treat an empty query field as absent, so a cleared param and an unset one compare equal. */
+const searchView = ({ address, from, to, keyword, begin, end, wildcard }: SearchParameters) => ({
+    address: address || undefined,
+    from: from || undefined,
+    to: to || undefined,
+    keyword: keyword || undefined,
+    begin: begin || undefined,
+    end: end || undefined,
+    wildcard: wildcard || undefined,
+});
+
+/**
+ * The view a navigation asked for, in the URL vocabulary `useElements` derives the params from — so
+ * comparing the two is exactly "have the params caught up with the URL we pushed?", across the filter,
+ * sort and date bounds as well as the label and keyword.
+ */
+const requestedView = ({ labelID, location }: ExpectedList) => ({
+    labelID,
+    filter: filterToString(filterFromUrl(location)),
+    sort: sortToString(sortFromUrl(location, labelID)),
+    search: searchView(extractSearchParameters(location)),
+});
+
+const currentView = ({ labelID, filter, sort, search }: ElementsStateParams) => ({
+    labelID,
+    filter: filterToString(filter),
+    sort: sortToString(sort),
+    search: searchView(search),
+});
+
+/**
+ * Resolve once the list has settled on the expected view, so a read sees what the user sees rather than
+ * a mid-navigation or mid-batch page. Times out by resolving, so a stuck load degrades to "not ready".
+ * Every input is Redux state — that is what lets one subscription replace a poll.
+ */
+export const waitForListSettled = (store: ToolStore, expected: ExpectedList): Promise<void> =>
     new Promise((resolve) => {
+        const requested = requestedView(expected);
+
         const settled = () => {
             const state = store.getState();
-            const { labelID, search } = selectParams(state);
-            const paramsMatch = labelID === expected.labelID && !search.keyword && !search.from && !search.to;
-            const isLoading = loadingSelector(state, { page: selectPage(state) });
-            return paramsMatch && !isLoading && contextTotalSelector(state) !== undefined;
+            if (!isDeepEqual(currentView(selectParams(state)), requested)) {
+                return false;
+            }
+            if (loadingSelector(state, { page: selectPage(state) })) {
+                return false;
+            }
+            return contextTotalSelector(state) !== undefined;
         };
 
         if (settled()) {
@@ -128,3 +217,25 @@ export const waitForListSettled = (store: ToolStore, expected: { labelID: string
         });
         timeout = setTimeout(finish, LIST_SETTLE_TIMEOUT);
     });
+
+/** The slice of {@link MailToolDeps} a list navigation needs: the router to push, the store to read back. */
+type NavigationDeps = Pick<MailToolDeps, 'store' | 'history' | 'getFolders' | 'getLabels' | 'getMailSettings'>;
+
+/**
+ * The whole shape of a navigation read (`open_folder`): push the requested view, wait for the list to
+ * settle on it, then project what landed. Waiting is what stops the rows describing the *previous* view,
+ * so the returned page always matches what the user now sees — and it means the tool needs no follow-up
+ * `view_emails`.
+ */
+export const navigateAndReadRows = async (
+    deps: NavigationDeps,
+    references: ReferenceRegistry,
+    { pathname, labelID, query }: { pathname: string; labelID: string; query: ListQuery }
+): Promise<AgentEmailPage> => {
+    const url = changeSearchParams(pathname, deps.history.location.hash, { ...CLEARED_LIST_QUERY, ...query });
+    deps.history.push(url);
+
+    await waitForListSettled(deps.store, { labelID, location: createLocation(url) });
+
+    return buildAgentEmailRows(deps, references);
+};
