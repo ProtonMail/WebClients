@@ -4,6 +4,7 @@ import { MeetCoreErrorEnum, MlsSyncStateInfo, RejoinReasonInfo } from '@proton-m
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setMlsRetrying } from '@proton/meet/store/slices/connectionSlice';
 import { setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
@@ -43,6 +44,8 @@ export const useMlsSession = ({
     mlsGroupStateRef,
 }: UseMlsSessionParams): UseMlsSessionResult => {
     const meetCoreClient = useMeetCoreClient();
+
+    const { reportMeetError } = useMeetErrorReporting();
 
     const authentication = useAuthentication();
     const dispatch = useMeetDispatch();
@@ -94,8 +97,11 @@ export const useMlsSession = ({
             if (isWaitingRoom) {
                 try {
                     await meetCoreClient.setJoinRequestHandler();
-                } catch {
-                    // not yet supported in WASM — callbacks still wired via window globals
+                } catch (error) {
+                    reportMeetError('Failed to set waiting room join request handler', {
+                        context: { error },
+                        tags: { meetingLinkName },
+                    });
                 }
             }
 

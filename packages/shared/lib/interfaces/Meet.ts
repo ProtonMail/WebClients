@@ -22,6 +22,7 @@ export enum PersonalMeetingState {
 
 export interface MeetingInfoResponse {
     MeetingInfo: {
+        MeetingLinkName: string;
         Salt: string;
         SessionKey: string;
         MeetingName: string;
@@ -31,6 +32,7 @@ export interface MeetingInfoResponse {
         MaxParticipants: number;
         ExpirationTime: number | null;
         WaitingRoom?: number; // 1 = waiting room enabled
+        ManageWaitingRoom?: number; // 1 = you can manage the waiting room, i.e. you are the host
         PersonalMeeting?: PersonalMeetingState; // 1 = is your personal meeting room
     };
     Code: 1000;

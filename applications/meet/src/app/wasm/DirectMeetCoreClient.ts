@@ -186,6 +186,12 @@ export class DirectMeetCoreClient implements MeetCoreClient {
         return this.app.prepareMlsSessionForWaitingRoom(...args);
     }
 
+    public refreshWaitingRoomGuestSessionForJoinRequest(
+        ...args: Parameters<App['refreshWaitingRoomGuestSessionForJoinRequest']>
+    ): Promise<void> {
+        return this.app.refreshWaitingRoomGuestSessionForJoinRequest(...args);
+    }
+
     public createJoinRequest(meetLinkName: string, meetingSessionKey: string): Promise<CreateJoinRequestResult> {
         return this.app.createJoinRequest(meetLinkName, meetingSessionKey);
     }

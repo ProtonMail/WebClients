@@ -1,4 +1,3 @@
-import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -21,15 +20,22 @@ const getInitials = (participantName: string) => {
 
 type Props = {
     participantName: string;
-    participant: Participant;
+    identity: string;
+    isLocal?: boolean;
     statusNode: React.ReactNode;
     children?: React.ReactNode;
 };
 
-export const ParticipantNameWithInitials = ({ participantName, participant, statusNode, children }: Props) => {
+export const ParticipantNameWithInitials = ({
+    participantName,
+    identity,
+    isLocal = false,
+    statusNode,
+    children,
+}: Props) => {
     const {
         participantColors: { backgroundColor, profileTextColor },
-    } = useParticipantDisplayColors(participant.identity);
+    } = useParticipantDisplayColors(identity);
 
     const displayName = participantName ?? c('Info').t`Loading...`;
 
@@ -47,7 +53,7 @@ export const ParticipantNameWithInitials = ({ participantName, participant, stat
             </div>
             <div className="flex flex-column justify-center">
                 <div className="text-ellipsis w-full" title={displayName}>
-                    {displayName} {participant.isLocal ? c('Info').t`(You)` : null}
+                    {displayName} {isLocal ? c('Info').t`(You)` : null}
                 </div>
                 {statusNode}
             </div>
