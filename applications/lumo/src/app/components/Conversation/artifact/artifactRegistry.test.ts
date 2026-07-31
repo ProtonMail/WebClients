@@ -1,6 +1,6 @@
 import type { Message } from '../../../types';
 import { Role } from '../../../types-api';
-import { buildArtifactRegistry } from './artifactRegistry';
+import { buildArtifactRegistry, getArtifactVersionIndexForMessage } from './artifactRegistry';
 import { CREATE_ARTIFACT_TOOL_NAME } from './createArtifactTool';
 
 let counter = 0;
@@ -134,6 +134,22 @@ describe('buildArtifactRegistry', () => {
 
         expect(registry['letter-1']!.versions).toHaveLength(2);
         expect(registry['letter-1']!.versions[1]!.content).toBe('Dear landlord, revised.');
+    });
+
+    it('maps a message id to its artifact version index', () => {
+        const first = makeMessage({
+            content: '<artifact id="poem" type="document" title="Poem">Roses are red</artifact>',
+        });
+        const second = makeMessage({
+            content: '<artifact id="poem" type="document" title="Poem">Roses are red, violets are blue</artifact>',
+        });
+        const chain = [first, second];
+        const registry = buildArtifactRegistry(chain);
+
+        expect(getArtifactVersionIndexForMessage(registry, 'poem', first.id)).toBe(0);
+        expect(getArtifactVersionIndexForMessage(registry, 'poem', second.id)).toBe(1);
+        expect(getArtifactVersionIndexForMessage(registry, 'poem', 'missing-message')).toBeNull();
+        expect(getArtifactVersionIndexForMessage(registry, 'missing-artifact', first.id)).toBeNull();
     });
 
     it('does not register a create_artifact tool call still mid-stream (arguments still a raw string)', () => {
