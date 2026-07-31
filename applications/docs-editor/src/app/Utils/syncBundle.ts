@@ -1,4 +1,8 @@
-import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
+import {
+  updateVersionCookie,
+  deleteVersionCookies,
+  versionCookieAtLoad,
+} from '@proton/components/helpers/versionCookie'
 
 const ENABLED = true // feature killswitch
 const TAG_SYNC_RELOAD_ATTEMPTS = 2
@@ -21,13 +25,10 @@ export function syncBundle(): SyncBundleResult {
   }
 
   const searchParams = new URLSearchParams(window.location.search)
-  const intendedEnvironment = searchParams.get('tag')
-  const validEnvironment = intendedEnvironment === 'alpha' || intendedEnvironment === 'beta'
+  const passedTag = searchParams.get('tag')
 
-  if (!validEnvironment) {
-    sessionStorage.removeItem(TAG_SYNC_RELOAD_ATTEMPTS_KEY)
-    return SyncBundleResult.READY
-  }
+  const isEarlyAccessEnvironment = passedTag === 'alpha' || passedTag === 'beta'
+  const intendedEnvironment = isEarlyAccessEnvironment ? passedTag : undefined
 
   if (intendedEnvironment === versionCookieAtLoad) {
     sessionStorage.removeItem(TAG_SYNC_RELOAD_ATTEMPTS_KEY)
@@ -36,12 +37,17 @@ export function syncBundle(): SyncBundleResult {
 
   const syncAttempts = Number(sessionStorage.getItem(TAG_SYNC_RELOAD_ATTEMPTS_KEY) ?? 0)
   if (syncAttempts >= TAG_SYNC_RELOAD_ATTEMPTS) {
+    sessionStorage.removeItem(TAG_SYNC_RELOAD_ATTEMPTS_KEY)
     return SyncBundleResult.FAILED
   }
 
   sessionStorage.setItem(TAG_SYNC_RELOAD_ATTEMPTS_KEY, String(syncAttempts + 1))
-  updateVersionCookie(intendedEnvironment, undefined)
-  window.location.reload()
+  if (isEarlyAccessEnvironment) {
+    updateVersionCookie(intendedEnvironment, undefined)
+  } else {
+    deleteVersionCookies()
+  }
 
+  window.location.reload()
   return SyncBundleResult.RELOADING
 }
