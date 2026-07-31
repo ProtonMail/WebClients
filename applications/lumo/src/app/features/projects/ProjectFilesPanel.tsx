@@ -274,6 +274,7 @@ export const ProjectFilesPanel = ({
                     <div className="project-files-preview-panel">
                         <FilePreviewPanel
                             attachment={fileToView}
+                            spaceId={projectId}
                             onBack={() => setFileToView(null)}
                             onClose={() => setFileToView(null)}
                         />
