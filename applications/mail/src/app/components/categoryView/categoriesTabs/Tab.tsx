@@ -79,7 +79,7 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
         <NavLink
             to={navigateTo}
             className={clsx(
-                'tab-container gap-1.5 h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
+                'tab-container h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
                 navClasses[tabState],
                 shouldShowDragHelper && 'dashed'
             )}
