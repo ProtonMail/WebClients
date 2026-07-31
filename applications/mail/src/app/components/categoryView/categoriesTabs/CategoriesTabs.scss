@@ -6,15 +6,7 @@
 
 $tab-dot-ease: easing(ease-out-quint);
 
-// Inline space the icon needs once it is out of flow: tab inset + icon + gap
-$tab-icon-inset: rem(38);
-
-@mixin reveal-tab-labels($tab-max-width) {
-	.tab-wrapper {
-		flex: 1 1 0; // grow evenly, capped at the spec's max width
-		max-inline-size: rem($tab-max-width);
-	}
-
+@mixin reveal-tab-labels() {
 	.tab-container {
 		.tab-label,
 		.tag-count {
@@ -145,7 +137,7 @@ $tab-icon-inset: rem(38);
 
 	// Medium (820–1023px): reveal labels, tabs fill the bar capped at 136px each.
 	@include media('>=#{em(820, 16)}') {
-		@include reveal-tab-labels(136);
+		@include reveal-tab-labels;
 
 		.tab-container {
 			.tab-dragging-help {
@@ -156,29 +148,22 @@ $tab-icon-inset: rem(38);
 
 	// Large (≥ 1024px): tabs fill the bar capped at 200px each, with a larger centered label.
 	@include media('>=#{em(1024, 16)}') {
-		@include reveal-tab-labels(200);
+		@include reveal-tab-labels;
 
 		.tab-container {
-			justify-content: center;
-			padding-inline: $tab-icon-inset;
-			text-align: center;
-
-			.tab-icon {
-				position: absolute;
-				inset-inline-start: rem(16);
-			}
-
-			.tag-count {
-				position: absolute;
-				inset-inline-end: rem(14);
-			}
+			padding-inline-end: rem(14);
 
 			.tab-label {
 				font-size: rem(13);
+				padding-inline-start: rem(18);
+			}
+
+			.tag-count {
+				margin-inline-start: rem(18);
 			}
 
 			.tab-dragging-help {
-				display: block;
+				padding-inline-start: rem(18);
 			}
 		}
 	}
