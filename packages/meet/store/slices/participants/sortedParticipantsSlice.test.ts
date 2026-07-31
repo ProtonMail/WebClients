@@ -7,7 +7,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 import type { MeetState } from '../../rootReducer';
 import { chatAndReactionsReducer, raiseHand } from '../chatAndReactionsSlice';
-import { setSelfView, settingsReducer } from '../settings';
+import { setSelfView, initialState as settingsInitialState, settingsReducer } from '../settings';
 import {
     removeSortedParticipant,
     resetSortedParticipants,
@@ -50,11 +50,8 @@ const createStore = ({ selfView = true }: { selfView?: boolean } = {}) => {
         },
         preloadedState: {
             meetSettings: {
-                disableVideos: false,
-                participantsWithDisabledVideos: [],
+                ...settingsInitialState,
                 selfView,
-                meetingLocked: false,
-                pipEnabled: true,
             },
         },
     });

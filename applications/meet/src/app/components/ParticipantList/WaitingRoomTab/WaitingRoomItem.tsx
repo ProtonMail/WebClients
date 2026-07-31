@@ -1,63 +1,90 @@
-import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantName } from '@proton/meet/store/slices/participants/participantsSlice';
+import type { WaitingRoomJoinRequest } from '@proton/meet/store/slices/waitingRoomSlice';
 
+import { ConditionalTooltip } from '../../../atoms/ConditionalTooltip/ConditionalTooltip';
+import { useWaitingRoomContext } from '../../../contexts/WaitingRoomContext';
 import { ParticipantNameWithInitials } from '../shared/ParticipantNameWithInitials';
 
 import './WaitingRoomItem.scss';
 
 type Props = {
-    participant: Participant;
+    request: WaitingRoomJoinRequest;
 };
 
-export const WaitingRoomItem = ({ participant }: Props) => {
-    const participantName = useMeetSelector((state) => selectParticipantName(state, participant.identity));
+const formatReceivedTime = (receivedAt: number) => {
+    return new Date(receivedAt).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+};
+
+export const WaitingRoomItem = ({ request }: Props) => {
+    const { admitRequest, rejectRequest } = useWaitingRoomContext();
+
+    const [isAdmitting, withAdmitLoading] = useLoading();
+    const [isRejecting, withRejectLoading] = useLoading();
+
+    const { requestId, participantUid } = request;
+    const participantName = useMeetSelector((state) => selectParticipantName(state, participantUid));
+    const receivedTime = formatReceivedTime(request.receivedAt);
 
     return (
         <ParticipantNameWithInitials
-            participant={participant}
+            identity={participantUid}
             participantName={participantName}
-            statusNode={<div className="text-sm color-hint w-full">some@email.com</div>}
+            statusNode={<div className="text-sm color-hint w-full">{c('Info').t`Joined at ${receivedTime}`}</div>}
         >
-            <Tooltip
-                title={c('Action').t`Admit`}
+            <ConditionalTooltip
+                title={!isAdmitting ? c('Action').t`Admit` : undefined}
                 tooltipClassName="participants-button-tooltip color-norm"
-                originalPlacement="top-end"
+                placement="top-end"
             >
                 <Button
                     className="participant-list-button-background p-2 flex items-center justify-center rounded-full w-custom h-custom border-none"
-                    style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
                     aria-label={c('Action').t`Admit ${participantName}`}
+                    size="small"
+                    icon={true}
                     onClick={() => {
-                        // TODO: wire up waiting room admit action
+                        if (isAdmitting || isRejecting) {
+                            return;
+                        }
+
+                        void withAdmitLoading(admitRequest(requestId));
                     }}
+                    loading={isAdmitting}
+                    disabled={isRejecting}
                 >
                     <IcCheckmark className="color-success" />
                 </Button>
-            </Tooltip>
+            </ConditionalTooltip>
 
-            <Tooltip
-                title={c('Action').t`Deny`}
+            <ConditionalTooltip
+                title={!isRejecting ? c('Action').t`Deny` : undefined}
                 tooltipClassName="participants-button-tooltip color-norm"
-                originalPlacement="top-end"
+                placement="top-end"
             >
                 <Button
                     className="participant-list-button-background p-2 flex items-center justify-center rounded-full w-custom h-custom border-none"
-                    style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
                     aria-label={c('Action').t`Deny ${participantName}`}
+                    size="small"
+                    icon={true}
                     onClick={() => {
-                        // TODO: wire up waiting room deny action
+                        if (isRejecting || isAdmitting) {
+                            return;
+                        }
+
+                        void withRejectLoading(rejectRequest(requestId, participantUid));
                     }}
+                    loading={isRejecting}
+                    disabled={isAdmitting}
                 >
                     <IcCross className="reject-button" />
                 </Button>
-            </Tooltip>
+            </ConditionalTooltip>
         </ParticipantNameWithInitials>
     );
 };

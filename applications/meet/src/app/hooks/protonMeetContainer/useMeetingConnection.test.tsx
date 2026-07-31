@@ -93,7 +93,7 @@ describe('useMeetingConnection', () => {
             });
 
             expect(params.getAccessDetails).toHaveBeenCalledWith(expect.objectContaining({ token: 'meeting-abc' }));
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw');
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false);
             expect(params.keyProvider.setKeyWithEpoch).toHaveBeenCalledWith('group-key', 1n);
             expect(mockRoom.setE2EEEnabled).toHaveBeenCalledWith(true);
             expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalledWith('wss://x', 'tok', 20_000);
@@ -128,7 +128,7 @@ describe('useMeetingConnection', () => {
 
             expect(params.getQueryParticipantsCount).toHaveBeenCalledWith('meeting-abc');
             expect(mockDispatch).toHaveBeenCalledWith(setPrejoinParticipantCount(5));
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw');
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false);
         });
 
         it('does not query the participant count when not requested', async () => {
@@ -141,7 +141,18 @@ describe('useMeetingConnection', () => {
 
             expect(params.getQueryParticipantsCount).not.toHaveBeenCalled();
             expect(mockDispatch).not.toHaveBeenCalledWith(setPrejoinParticipantCount(5));
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw');
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false);
+        });
+
+        it('forwards the waiting room flag to MLS setup', async () => {
+            const params = createParams();
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            await act(async () => {
+                await result.current.connectWithMls({ ...baseConnectParams, isWaitingRoom: true });
+            });
+
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', true);
         });
 
         it('throws when MLS setup returns no key', async () => {

@@ -12,6 +12,7 @@ import { setIsReconnecting, setJoinedRoom } from '@proton/meet/store/slices/conn
 import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices/meetAppStateSlice';
 import { resetUiState } from '@proton/meet/store/slices/uiStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
+import { SECOND } from '@proton/shared/lib/constants';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { useStableCallback } from '../useStableCallback';
@@ -83,8 +84,8 @@ export const useRoomEventHandlers = ({
                 setTimeout(() => {
                     setLiveKitConnectionState(null);
                     liveKitConnectionStateRef.current = null;
-                }, 1000);
-            }, 3000);
+                }, SECOND);
+            }, 3 * SECOND);
         } else if (state === ConnectionState.Connected) {
             setShowReconnectedMessage(false);
         }

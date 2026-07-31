@@ -265,6 +265,8 @@ const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<Mee
             return activeApp.hasMlsGroupInfo();
         case 'prepareMlsSessionForWaitingRoom':
             return activeApp.prepareMlsSessionForWaitingRoom(...request.params);
+        case 'refreshWaitingRoomGuestSessionForJoinRequest':
+            return activeApp.refreshWaitingRoomGuestSessionForJoinRequest(...request.params);
         case 'createJoinRequest':
             return activeApp.createJoinRequest(...request.params);
         case 'waitForWaitingRoomWelcome':

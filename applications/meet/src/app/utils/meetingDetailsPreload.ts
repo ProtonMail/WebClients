@@ -1,5 +1,6 @@
 import { decryptMeetingName } from '@proton/meet/utils/cryptoUtils';
 import type { Api } from '@proton/shared/lib/interfaces';
+import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 
 import { requestHandshakeInfo, requestMeetingInfo, requestSessionToken } from '../hooks/srp/meetSrpRequests';
 import { getPublicToken, getUrlPassword } from '../hooks/srp/usePublicToken';
@@ -11,9 +12,16 @@ export interface PreloadedMeetingDetails {
     maxParticipants: number;
     expirationTime: number;
     isPersonalRoom: boolean;
+    waitingRoom: boolean;
+    canManageWaitingRoom: boolean;
 }
 
-const preloadCache = new Map<string, Promise<PreloadedMeetingDetails>>();
+interface PreloadedMeeting {
+    details: PreloadedMeetingDetails;
+    meetingInfo: MeetingInfoResponse;
+}
+
+const preloadCache = new Map<string, Promise<PreloadedMeeting>>();
 
 const fetchMeetingDetails = async ({
     api,
@@ -27,7 +35,7 @@ const fetchMeetingDetails = async ({
     password: string;
     uid?: string;
     cryptoReady: Promise<unknown>;
-}): Promise<PreloadedMeetingDetails> => {
+}): Promise<PreloadedMeeting> => {
     const [handshakeInfo] = await Promise.all([requestHandshakeInfo(api, token), cryptoReady]);
 
     await requestSessionToken(api, { token, password, handshakeInfo, uid });
@@ -41,12 +49,17 @@ const fetchMeetingDetails = async ({
     });
 
     return {
-        roomName,
-        locked: !!meetingInfo.MeetingInfo.Locked,
-        maxDuration: meetingInfo.MeetingInfo.MaxDuration,
-        maxParticipants: meetingInfo.MeetingInfo.MaxParticipants,
-        expirationTime: meetingInfo.MeetingInfo.ExpirationTime ?? 0,
-        isPersonalRoom: !!meetingInfo.MeetingInfo.PersonalMeeting,
+        details: {
+            roomName,
+            locked: !!meetingInfo.MeetingInfo.Locked,
+            maxDuration: meetingInfo.MeetingInfo.MaxDuration,
+            maxParticipants: meetingInfo.MeetingInfo.MaxParticipants,
+            expirationTime: meetingInfo.MeetingInfo.ExpirationTime ?? 0,
+            isPersonalRoom: !!meetingInfo.MeetingInfo.PersonalMeeting,
+            waitingRoom: !!meetingInfo.MeetingInfo.WaitingRoom,
+            canManageWaitingRoom: !!meetingInfo.MeetingInfo.ManageWaitingRoom,
+        },
+        meetingInfo,
     };
 };
 
@@ -91,7 +104,10 @@ export const startMeetingDetailsPreload = ({
     promise.catch(() => {});
 };
 
-export const getPreloadedMeetingDetails = (token: string) => preloadCache.get(token);
+export const getPreloadedMeetingDetails = (token: string) => preloadCache.get(token)?.then(({ details }) => details);
+
+export const getPreloadedMeetingInfo = (token: string) =>
+    preloadCache.get(token)?.then(({ meetingInfo }) => meetingInfo);
 
 export const hasPreloadedMeetingDetails = async (token: string) => {
     const preloaded = preloadCache.get(token);

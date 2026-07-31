@@ -10,7 +10,7 @@ import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateC
 import type { UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import type { Api } from '@proton/shared/lib/interfaces';
-import { type MeetEventResponse, type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import type { MeetEventResponse, Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 const name = 'meet_meetings' as const;
 
@@ -72,18 +72,6 @@ const slice = createSlice({
         handleAsyncModel(builder, modelThunk);
     },
 });
-
-export const selectIsPersonalRoom = (state: MeetingsState, meetingId: string) => {
-    return (
-        state[name].value?.some(
-            (meeting) => meeting.MeetingLinkName === meetingId && meeting.Type === MeetingType.PERSONAL
-        ) ?? false
-    );
-};
-
-export const selectIsMeetingHost = (state: MeetingsState, meetingId: string) => {
-    return state[name].value?.some((meeting) => meeting.MeetingLinkName === meetingId) ?? false;
-};
 
 const queryMeeting = async (api: Api, id: string) => {
     const { Meeting } = await api<{ Meeting: Meeting }>(getMeetingQuery(id));
