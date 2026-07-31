@@ -14,6 +14,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { removeSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 interface Key {
     id: string;
@@ -23,9 +24,10 @@ interface Key {
 interface Props extends ModalProps {
     type: 'single' | 'all';
     keys: Key[];
+    onSuccess: (userSettings: UserSettings) => void;
 }
 
-const RemoveSecurityKeyModal = ({ onClose, type, keys, ...rest }: Props) => {
+const RemoveSecurityKeyModal = ({ onClose, type, keys, onSuccess, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const silentApi = useSilentApi();
     const dispatch = useDispatch();
@@ -55,13 +57,15 @@ const RemoveSecurityKeyModal = ({ onClose, type, keys, ...rest }: Props) => {
                                     await silentApi(removeSecurityKey(key.id));
                                 }
                                 await silentApi(lockSensitiveSettings());
-                                await dispatch(userSettingsThunk({ cache: CacheType.None }));
+                                const userSettings = await dispatch(userSettingsThunk({ cache: CacheType.None }));
+
                                 if (type === 'single') {
                                     createNotification({ text: c('fido2: Info').t`Security key removed` });
                                 } else if (type === 'all') {
                                     createNotification({ text: c('fido2: Info').t`2FA via security key disabled` });
                                 }
                                 onClose?.();
+                                onSuccess(userSettings);
                             } catch (e) {
                                 handleError(e);
                             }
