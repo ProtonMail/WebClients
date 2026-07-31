@@ -171,7 +171,112 @@ describe('prepareNotificationData', () => {
             expect(result.labelID).toBe('custom-folder');
         });
 
-        it('should fallback to inbox if the message has a category but disabled the category view', () => {
+        /**
+         * A message can carry a category label while not being in Inbox: filters file incoming mail
+         * straight into a folder, and the category label survives the move. Since the notifier always
+         * holds category labels when category view is enabled, the category must not win the lookup
+         * for those messages, or the click routes to an Inbox tab the message isn't in.
+         */
+        describe('Message carrying a category label outside of Inbox', () => {
+            it('should route to the notifying custom folder when the category label comes first', () => {
+                const result = prepareNotificationData({
+                    message: {
+                        ...MOCK_MESSAGE,
+                        LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, MAILBOX_LABEL_IDS.ALL_MAIL, 'custom-folder'],
+                    },
+                    history: MOCK_HISTORY,
+                    mailSettings: MOCK_MAIL_SETTINGS,
+                    notifier: ['custom-folder', MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                    isCategoryViewEnabled: true,
+                    disabledCategoriesIDs: [],
+                });
+
+                expect(result.labelID).toBe('custom-folder');
+                expect(result.location.pathname).toContain('/custom-folder');
+                expect(result.location.hash).toBe('');
+                expect(result.categoryLabelID).toBeUndefined();
+            });
+
+            it('should route to the notifying custom folder when the category is disabled', () => {
+                const result = prepareNotificationData({
+                    message: {
+                        ...MOCK_MESSAGE,
+                        LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, MAILBOX_LABEL_IDS.ALL_MAIL, 'custom-folder'],
+                    },
+                    history: MOCK_HISTORY,
+                    mailSettings: MOCK_MAIL_SETTINGS,
+                    notifier: ['custom-folder', MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                    isCategoryViewEnabled: true,
+                    disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                });
+
+                expect(result.labelID).toBe('custom-folder');
+                expect(result.location.hash).not.toContain('category=primary');
+            });
+
+            it('should fallback to all-mail when the category is the only notifier match', () => {
+                const result = prepareNotificationData({
+                    message: {
+                        ...MOCK_MESSAGE,
+                        LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, MAILBOX_LABEL_IDS.ALL_MAIL, 'silent-folder'],
+                    },
+                    history: MOCK_HISTORY,
+                    mailSettings: MOCK_MAIL_SETTINGS,
+                    notifier: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                    isCategoryViewEnabled: true,
+                    disabledCategoriesIDs: [],
+                });
+
+                expect(result.labelID).toBe(MAILBOX_LABEL_IDS.ALL_MAIL);
+                expect(result.location.pathname).toContain('/all-mail');
+                expect(result.location.hash).toBe('');
+                expect(result.categoryLabelID).toBeUndefined();
+            });
+
+            it('should route to starred when the message is starred outside of Inbox', () => {
+                const result = prepareNotificationData({
+                    message: {
+                        ...MOCK_MESSAGE,
+                        LabelIDs: [
+                            MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                            MAILBOX_LABEL_IDS.STARRED,
+                            MAILBOX_LABEL_IDS.ALL_MAIL,
+                            'silent-folder',
+                        ],
+                    },
+                    history: MOCK_HISTORY,
+                    mailSettings: MOCK_MAIL_SETTINGS,
+                    notifier: [MAILBOX_LABEL_IDS.STARRED, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                    isCategoryViewEnabled: true,
+                    disabledCategoriesIDs: [],
+                });
+
+                expect(result.labelID).toBe(MAILBOX_LABEL_IDS.STARRED);
+                expect(result.location.pathname).toContain('/starred');
+            });
+
+            it('should still use the category when the category label comes before Inbox', () => {
+                const result = prepareNotificationData({
+                    message: {
+                        ...MOCK_MESSAGE,
+                        LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, MAILBOX_LABEL_IDS.INBOX],
+                    },
+                    history: MOCK_HISTORY,
+                    mailSettings: MOCK_MAIL_SETTINGS,
+                    notifier: ['custom-folder', MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                    isCategoryViewEnabled: true,
+                    disabledCategoriesIDs: [],
+                });
+
+                expect(result.labelID).toBe(MAILBOX_LABEL_IDS.INBOX);
+                expect(result.location.hash).toContain('category=newsletters');
+                expect(result.categoryLabelID).toBe(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
+            });
+        });
+
+        // The message is not in Inbox, so a stale category label in the notifier must not route there
+        // either: all-mail is the only location we know holds the message.
+        it('should fallback to all-mail if the message has a category, is not in inbox and the category view is disabled', () => {
             const result = prepareNotificationData({
                 message: {
                     ...MOCK_MESSAGE_WITH_CATEGORY,
@@ -184,9 +289,9 @@ describe('prepareNotificationData', () => {
                 disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
             });
 
-            expect(result.location.pathname).toContain('/inbox');
+            expect(result.location.pathname).toContain('/all-mail');
             expect(result.location.hash).not.toContain('category=primary');
-            expect(result.labelID).toBe(MAILBOX_LABEL_IDS.INBOX);
+            expect(result.labelID).toBe(MAILBOX_LABEL_IDS.ALL_MAIL);
         });
 
         it('should redirect to inbox if the message has a category but disabled the category view', () => {
