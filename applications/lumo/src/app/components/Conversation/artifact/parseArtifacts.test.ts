@@ -55,6 +55,14 @@ describe('parseArtifacts', () => {
 
         expect(artifacts).toHaveLength(0);
     });
+
+    it('does not truncate the attribute list when a title contains a literal >', () => {
+        const raw = '<artifact id="cmp" type="code" language="python" title="if x > y">print(1)</artifact>';
+        const { artifacts } = parseArtifacts(raw);
+
+        expect(artifacts).toHaveLength(1);
+        expect(artifacts[0]).toMatchObject({ title: 'if x > y', content: 'print(1)' });
+    });
 });
 
 describe('parseStreamingContent', () => {
@@ -75,4 +83,47 @@ describe('parseStreamingContent', () => {
         expect(streamingArtifact?.id).toBe('snippet-2');
         expect(streamingArtifact?.content).toBe('const x =');
     });
+
+    it('keeps the tag open when a title attribute contains a literal >', () => {
+        const raw = '<artifact id="snippet-3" type="code" language="js" title="if x > y">const x =';
+        const { streamingArtifact } = parseStreamingContent(raw);
+
+        expect(streamingArtifact).not.toBeNull();
+        expect(streamingArtifact?.title).toBe('if x > y');
+        expect(streamingArtifact?.content).toBe('const x =');
+    });
+
+    it('stays open mid-attribute when a title value contains a literal > and the closing quote has not arrived yet', () => {
+        // The exact byte-for-byte moment that used to be lost: `title="if x >` has an unquoted-looking
+        // `>` but the value's closing `"` hasn't streamed in yet, so the tag must still read as open.
+        const raw = '<artifact id="snippet-4" type="code" language="js" title="if x >';
+        const { completeArtifacts, streamingArtifact } = parseStreamingContent(raw);
+
+        expect(completeArtifacts).toHaveLength(0);
+        expect(streamingArtifact).not.toBeNull();
+        expect(streamingArtifact?.isComplete).toBe(false);
+        // title can't be salvaged yet (its quote never closed) but id/type/language already did
+        expect(streamingArtifact?.id).toBe('snippet-4');
+        expect(streamingArtifact?.type).toBe('code');
+        expect(streamingArtifact?.title).toBeUndefined();
+    });
+
+    it('stays open when in-progress content contains a partial </artifact-like substring with no closing >', () => {
+        const raw =
+            '<artifact id="doc-1" type="document" title="Explainer">' +
+            'Here is how to use it: write </artifact at the end.';
+        const { completeArtifacts, streamingArtifact } = parseStreamingContent(raw);
+
+        expect(completeArtifacts).toHaveLength(0);
+        expect(streamingArtifact).not.toBeNull();
+        expect(streamingArtifact?.id).toBe('doc-1');
+    });
+
+    // NOTE: if the streamed content contains the full literal string `</artifact>` (e.g. a
+    // document explaining the artifact syntax itself), COMPLETE_RE will still match on it and
+    // report the artifact as complete early — that structural ambiguity isn't fixable at the
+    // parser level without an escaping convention. It's mitigated one layer up: AssistantMessage's
+    // effect that forwards streamingArtifact into ArtifactContext won't clear an in-progress
+    // artifact to null just because the raw message still contains an unclosed `<artifact` marker,
+    // so the panel doesn't flicker shut even if this parser-level edge case fires.
 });

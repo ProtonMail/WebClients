@@ -1,4 +1,5 @@
-import type { ConversationContext } from '../components/Conversation/conversationContext';
+import { CREATE_ARTIFACT_TOOL_NAME } from '../components/Conversation/artifact/createArtifactTool';
+import { type ConversationContext, formatPersonalization } from '../components/Conversation/helper';
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import {
@@ -104,48 +105,16 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
     };
 }
 
-const ARTIFACT_INSTRUCTION = `When your response contains content that is more useful as a standalone artifact than as part of the conversation, output it inside an artifact tag. Never include the artifact tag in the conversation title.
-
-Use this format:
-
-<artifact id="ID" type="code" language="LANGUAGE" title="TITLE">
-...content...
-</artifact>
-
-<artifact id="ID" type="document" title="TITLE">
-...content...
-</artifact>
-
-Use an artifact when the content:
-- Is something the user will want to copy, save, or reuse
-- Would interrupt the conversational flow if placed inline
-- Stands alone and makes sense outside the chat context
-
-Do NOT use an artifact for:
-- Short code snippets (1-2 lines) used to illustrate a point
-- Brief structured answers (a small table, a short list)
-- Content that only makes sense as part of your explanation
-
-
-Tag attribute rules:
-- id: required; a short lowercase-kebab-case slug (2-4 words, e.g. "report-outline") that stably identifies this artifact
-- type: "code" or "document"
-- language: required for code; lowercase common name (python, javascript, typescript, bash, sql, etc.). Omit for document artifacts.
-- title: 2-5 words, title case, describing the content
-
-Revision rules:
-- If you are revising or continuing content you already produced as an artifact earlier in this conversation, reuse that artifact's exact id
-- Only use a new id when the content is genuinely new, unrelated artifact
-- When revising, always output the complete updated content inside the tag — never a diff or partial update
-- If the user's message references an artifact by its id, reuse that same id in your response
-
-Placement rules:
-- ALWAYS write your explanation or intro first, then the artifact. The artifacts should always be included last in the message. Disclaimers or notes should be included before the artifacts.
-- Never open a response with an artifact tag
-- Never split an artifact across multiple tags
-- Never nest artifacts
-- If a response has multiple artifacts, output them sequentially
-- When generating a conversation title, never include an artifact tag.`;
+// A short standing directive — NOT the tag-format spec that used to live here (the tool's own
+// JSON schema in createArtifactTool.ts already covers format, id/title conventions, and when to
+// use it). Models are conservative about *proactively* reaching for a tool unless the system
+// prompt actively pushes them to; in practice the tool's `description` field alone wasn't enough
+// for requests that don't explicitly ask for a separate panel or mention the tool by name.
+// Observed failure mode worth naming explicitly: the model's own visible reasoning on a plain
+// "write me an email to my landlord..." request concluded "I don't need any tools for this — it's
+// a writing task", treating "writing task" and "tool-worthy task" as mutually exclusive. The nudge
+// below exists specifically to break that false dichotomy.
+const ARTIFACT_TOOL_NUDGE = `You have a "${CREATE_ARTIFACT_TOOL_NAME}" tool for showing substantial, standalone content in a dedicated side panel instead of inline — see its description for exactly when it applies. This includes ordinary writing tasks (an email, letter, essay, report), not only code: do not reason that a request is "just writing" or "doesn't need tools" as a basis for skipping it — the only question is whether the CONTENT qualifies. Proactively call it whenever it does, even if the user never said "artifact," "panel," or the tool's name, and only asked you to write or draft something.`;
 
 /**
  * Determine which image attachments should be sent to the backend, keeping only the
@@ -263,12 +232,12 @@ export function prepareTurns(
     // via proper attachment turns created in Step 1 above (expandAttachmentsIntoTurns), which emit
     // user-role turns with the file content in the `content` field that the API does read.
 
-    // Step 4a: Always inject artifact format instructions as the first system turn
-    const artifactTurn: TurnInProgress = {
+    // Step 4a: Always inject the artifact-tool nudge as its own leading system turn
+    const artifactToolTurn: TurnInProgress = {
         role: Role.System,
-        content: ARTIFACT_INSTRUCTION,
+        content: ARTIFACT_TOOL_NUDGE,
     };
-    turns = [artifactTurn, ...turns];
+    turns = [artifactToolTurn, ...turns];
 
     // Step 4b: Add personalization, memories and project instructions to the last user message
     // These are per-request instructions that should apply to the current question
