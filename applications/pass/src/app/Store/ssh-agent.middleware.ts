@@ -1,7 +1,12 @@
 import { createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit';
 import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 
-import { getUserAccessSuccess, getUserFeaturesSuccess, stateDestroy } from '@proton/pass/store/actions';
+import {
+    getUserAccessSuccess,
+    getUserFeaturesSuccess,
+    sharesDedupeUpdate,
+    stateDestroy,
+} from '@proton/pass/store/actions';
 import { selectFeatureFlag, selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -14,6 +19,15 @@ sshAgentListener.startListening({
     actionCreator: stateDestroy,
     effect: () => {
         void sshAgent?.clear();
+    },
+});
+
+/** Sync SSH keys when vault visibility changes. Toggling a vault hidden/visible
+ * will update the SSH keys returned by `selectVisibleNonTrashedSshKeyItems` */
+sshAgentListener.startListening({
+    actionCreator: sharesDedupeUpdate,
+    effect: () => {
+        void sshAgent?.sync();
     },
 });
 
