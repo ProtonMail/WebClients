@@ -16,7 +16,10 @@ import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import { PromotionBanner } from '../../banner/PromotionBanner';
 import SubSettingsSection from '../../layout/SubSettingsSection';
+import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import { PassReportsMonitorTable } from './PassReportsMonitorTable';
 import { PassReportsUsageTable } from './PassReportsUsageTable';
 
@@ -53,10 +56,11 @@ const formatDate = (epoch?: MaybeNull<number>) => (epoch ? format(epoch * 1_000,
 type Page = number;
 type Reports = Map<Page, MemberMonitorReport[]>;
 
-export const PassReports = () => {
+export const PassReports = ({ upgradeRequired }: { upgradeRequired: boolean }) => {
     const { organization } = usePassBridge();
     const handleError = useErrorHandler();
-    const [loading, withLoading] = useLoading(true);
+    const [loading, withLoading] = useLoading(!upgradeRequired);
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const sectionLoading = useRef<'monitor' | 'usage'>();
     const didLoad = useRef(false);
     const [reports, setReports] = useState<Reports>(new Map());
@@ -125,35 +129,75 @@ export const PassReports = () => {
     }, [usagePage]);
 
     useEffect(() => {
+        // to not show the red banner "business plan is required"
+        if (upgradeRequired) {
+            didLoad.current = true;
+            return;
+        }
         withLoading(fetchReports())
             .then(() => (didLoad.current = true))
             .catch(handleError);
     }, []);
 
+    const sectionMutedClass = upgradeRequired ? 'opacity-70 pointer-events-none' : '';
+
     return (
         <SettingsSectionWide customWidth="90em">
+            {upgradeRequired && (
+                <PromotionBanner
+                    rounded
+                    mode="banner"
+                    contentCentered={false}
+                    className="mb-6"
+                    description={
+                        <div>
+                            <b>{c('Info').t`Upgrade now to monitor your team's account safety.`}</b>
+                        </div>
+                    }
+                    cta={
+                        <Button
+                            color="norm"
+                            loading={loadingSubscriptionModal}
+                            onClick={() => {
+                                void openSubscriptionModal({
+                                    step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                                });
+                            }}
+                        >
+                            {c('Action').t`Upgrade`}
+                        </Button>
+                    }
+                />
+            )}
             <SubSettingsSection
                 id="monitor-report"
                 title={c('Title').t`${PASS_SHORT_APP_NAME} Monitor Report`}
                 className="container-section-sticky-section"
             >
-                <PassReportsMonitorTable
-                    reports={monitorReports}
-                    loading={!didLoad.current || (loading && sectionLoading.current === 'monitor')}
-                />
-                <div className="flex justify-space-between mt-4">
-                    <Pagination
-                        page={monitorPage}
-                        total={totalMemberCount ?? 0}
-                        limit={REPORTS_PAGE_SIZE}
-                        onSelect={onMonitorSelect}
-                        onNext={onMonitorNext}
-                        onPrevious={onMonitorPrevious}
+                <div className={sectionMutedClass} aria-disabled={upgradeRequired || undefined}>
+                    <PassReportsMonitorTable
+                        reports={monitorReports}
+                        loading={!didLoad.current || (loading && sectionLoading.current === 'monitor')}
                     />
-                    <Button shape="outline" onClick={handleMonitorDownloadClick} title={c('Action').t`Export as CSV`}>
-                        <IcArrowDownLine className="mr-2" />
-                        {c('Action').t`Export as CSV`}
-                    </Button>
+                    <div className="flex justify-space-between mt-4">
+                        <Pagination
+                            page={monitorPage}
+                            total={totalMemberCount ?? 0}
+                            limit={REPORTS_PAGE_SIZE}
+                            onSelect={onMonitorSelect}
+                            onNext={onMonitorNext}
+                            onPrevious={onMonitorPrevious}
+                        />
+                        <Button
+                            shape="outline"
+                            onClick={handleMonitorDownloadClick}
+                            disabled={upgradeRequired}
+                            title={c('Action').t`Export as CSV`}
+                        >
+                            <IcArrowDownLine className="mr-2" />
+                            {c('Action').t`Export as CSV`}
+                        </Button>
+                    </div>
                 </div>
             </SubSettingsSection>
             <SubSettingsSection
@@ -161,23 +205,30 @@ export const PassReports = () => {
                 title={c('Title').t`Usage Report`}
                 className="container-section-sticky-section"
             >
-                <PassReportsUsageTable
-                    reports={usageReports}
-                    loading={!didLoad.current || (loading && sectionLoading.current === 'usage')}
-                />
-                <div className="flex justify-space-between mt-4">
-                    <Pagination
-                        page={usagePage}
-                        total={totalMemberCount ?? 0}
-                        limit={REPORTS_PAGE_SIZE}
-                        onSelect={onUsageSelect}
-                        onNext={onUsageNext}
-                        onPrevious={onUsagePrevious}
+                <div className={sectionMutedClass} aria-disabled={upgradeRequired || undefined}>
+                    <PassReportsUsageTable
+                        reports={usageReports}
+                        loading={!didLoad.current || (loading && sectionLoading.current === 'usage')}
                     />
-                    <Button shape="outline" onClick={handleUsageDownloadClick} title={c('Action').t`Export as CSV`}>
-                        <IcArrowDownLine className="mr-2" />
-                        {c('Action').t`Export as CSV`}
-                    </Button>
+                    <div className="flex justify-space-between mt-4">
+                        <Pagination
+                            page={usagePage}
+                            total={totalMemberCount ?? 0}
+                            limit={REPORTS_PAGE_SIZE}
+                            onSelect={onUsageSelect}
+                            onNext={onUsageNext}
+                            onPrevious={onUsagePrevious}
+                        />
+                        <Button
+                            shape="outline"
+                            onClick={handleUsageDownloadClick}
+                            disabled={upgradeRequired}
+                            title={c('Action').t`Export as CSV`}
+                        >
+                            <IcArrowDownLine className="mr-2" />
+                            {c('Action').t`Export as CSV`}
+                        </Button>
+                    </div>
                 </div>
             </SubSettingsSection>
         </SettingsSectionWide>
