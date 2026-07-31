@@ -27,6 +27,7 @@ import {
     type Turn,
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
+import { createArtifactToolExecutor } from './artifact/createArtifactTool';
 
 /** Options forwarded to sendMessageWithRedux, minus the per-attempt identifiers we manage here. */
 type ForwardedSendOptions = AssistantCallOptions & {
@@ -155,6 +156,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                 await dispatch(
                     sendMessageWithRedux(api, turns, {
                         ...sendOptions,
+                        clientToolExecutor: createArtifactToolExecutor,
                         messageId: currentAssistantId,
                         conversationId,
                         spaceId,
