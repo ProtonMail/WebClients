@@ -63,7 +63,7 @@ const ActivityMonitorDashboard = ({ organization, subscription }: Props) => {
                 },
                 tabPermissions.canDisplayB2BLogsPass && {
                     title: PASS_APP_NAME,
-                    content: <PassEvents />,
+                    content: <PassEvents upgradeRequired={false} />,
                 },
             ].filter(isTruthy),
         [tabPermissions]

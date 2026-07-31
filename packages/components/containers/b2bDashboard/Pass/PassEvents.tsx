@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
@@ -15,11 +16,15 @@ import { getPassEventTypes, getPassLogs, getPassLogsDownload } from '@proton/sha
 import { PASS_APP_NAME, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
 import GenericError from '../../../containers/error/GenericError';
+import { PromotionBanner } from '../../banner/PromotionBanner';
 import { toCamelCase } from '../../credentialLeak/helpers';
+import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
 import type { EventObject } from './helpers';
 import {
@@ -53,7 +58,7 @@ const getQueryParams = (filter: FilterModel, searchType: 'ip' | 'email' | 'searc
     return { Email, Ip, EventTypes, StartTime, EndTime };
 };
 
-export const PassEvents = () => {
+export const PassEvents = ({ upgradeRequired }: { upgradeRequired: boolean }) => {
     const api = useApi();
     const handleError = useErrorHandler();
     const { page, onNext, onPrevious, onSelect, reset } = usePaginationAsync(1);
@@ -61,6 +66,7 @@ export const PassEvents = () => {
     // Start loading: the first fetch happens in an effect, so the initial render must not
     // report an empty log.
     const [loading, withLoading] = useLoading(true);
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [filter, setFilter] = useState<FilterModel>(initialFilter);
     const [events, setEvents] = useState<PassEvent[]>([]);
     const [connectionEvents, setConnectionEvents] = useState<EventObject[]>([]);
@@ -92,10 +98,16 @@ export const PassEvents = () => {
     };
 
     useEffect(() => {
+        if (upgradeRequired) {
+            return;
+        }
         void fetchPassConnectionEvents();
     }, []);
 
     useEffect(() => {
+        if (upgradeRequired) {
+            return;
+        }
         void withLoading(
             fetchPassLogs({
                 ...query,
@@ -205,54 +217,92 @@ export const PassEvents = () => {
 
     return (
         <SettingsSectionWide customWidth="90em">
-            <div className="flex flex-row justify-space-between items-center my-4">
-                <div className="flex *:min-size-auto flex-column gap-2 w-full">
-                    <div className="flex flex-column gap-2 p-4 rounded-lg border border-solid border-weak">
-                        <span className="text-bold">{c('Info').t`Pass usage logs`}</span>
-                        <span className="color-weak">
-                            {c('Message').t`View ${PASS_APP_NAME} activity across your organization.`}{' '}
-                            <Href href={getKnowledgeBaseUrl('/pass-business-usage-logs')}>
-                                {c('Link').t`Learn more`}
-                            </Href>
-                        </span>
+            {upgradeRequired ? (
+                <PromotionBanner
+                    rounded
+                    mode="banner"
+                    contentCentered={false}
+                    className="my-4"
+                    description={
+                        <div>
+                            <b>
+                                {c('Info').t`Upgrade now to view ${PASS_APP_NAME} activity across your organization.`}
+                            </b>
+                        </div>
+                    }
+                    cta={
+                        <Button
+                            color="norm"
+                            loading={loadingSubscriptionModal}
+                            onClick={() => {
+                                void openSubscriptionModal({
+                                    step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                                });
+                            }}
+                        >
+                            {c('Action').t`Upgrade`}
+                        </Button>
+                    }
+                />
+            ) : (
+                <div className="flex flex-row justify-space-between items-center my-4">
+                    <div className="flex *:min-size-auto flex-column gap-2 w-full">
+                        <div className="flex flex-column gap-2 p-4 rounded-lg border border-solid border-weak">
+                            <span className="text-bold">{c('Info').t`Pass usage logs`}</span>
+                            <span className="color-weak">
+                                {c('Message').t`View ${PASS_APP_NAME} activity across your organization.`}{' '}
+                                <Href href={getKnowledgeBaseUrl('/pass-business-usage-logs')}>
+                                    {c('Link').t`Learn more`}
+                                </Href>
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <FilterAndSortEventsBlock
-                filter={filter}
-                keyword={keyword}
-                setKeyword={setKeyword}
-                handleSetEventType={handleSetEventType}
-                handleStartDateChange={handleStartDateChange}
-                handleEndDateChange={handleEndDateChange}
-                eventTypesList={getConnectionEvents(connectionEvents) || []}
-                handleSearchSubmit={handleSearchSubmit}
-                handleDownloadClick={handleDownloadClick}
-                resetFilter={handleResetFilter}
-                hasFilterEvents={true}
-            />
-            {error ? (
-                <GenericError className="text-center">{error}</GenericError>
-            ) : (
-                <div className="flex justify-center">
-                    <PassEventsTable
-                        events={events}
-                        loading={loading}
-                        onEventClick={handleClickableEvent}
-                        onTimeClick={handleClickableTime}
-                        onEmailOrIpClick={handleClickableEmailOrIP}
-                        onToggleSort={handleToggleSort}
-                    />
-                    <Pagination
-                        page={page}
-                        total={total}
-                        limit={PAGINATION_LIMIT}
-                        onSelect={onSelect}
-                        onNext={onNext}
-                        onPrevious={onPrevious}
-                    />
-                </div>
             )}
+            <fieldset
+                disabled={upgradeRequired}
+                className={clsx('m-0 p-0 border-none', upgradeRequired && 'opacity-70')}
+            >
+                <FilterAndSortEventsBlock
+                    filter={filter}
+                    keyword={keyword}
+                    setKeyword={setKeyword}
+                    handleSetEventType={handleSetEventType}
+                    handleStartDateChange={handleStartDateChange}
+                    handleEndDateChange={handleEndDateChange}
+                    eventTypesList={getConnectionEvents(connectionEvents) || []}
+                    handleSearchSubmit={handleSearchSubmit}
+                    handleDownloadClick={handleDownloadClick}
+                    resetFilter={handleResetFilter}
+                    hasFilterEvents={true}
+                />
+                {(() => {
+                    if (error) {
+                        return <GenericError className="text-center">{error}</GenericError>;
+                    }
+
+                    return (
+                        <div className="flex justify-center">
+                            <PassEventsTable
+                                events={events}
+                                loading={loading}
+                                onEventClick={handleClickableEvent}
+                                onTimeClick={handleClickableTime}
+                                onEmailOrIpClick={handleClickableEmailOrIP}
+                                onToggleSort={handleToggleSort}
+                            />
+                            <Pagination
+                                page={page}
+                                total={total}
+                                limit={PAGINATION_LIMIT}
+                                onSelect={onSelect}
+                                onNext={onNext}
+                                onPrevious={onPrevious}
+                            />
+                        </div>
+                    );
+                })()}
+            </fieldset>
         </SettingsSectionWide>
     );
 };

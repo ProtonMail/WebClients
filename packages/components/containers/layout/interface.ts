@@ -55,6 +55,7 @@ export interface SectionConfig extends SettingsAreaConfig {
     icon: IconName;
     available?: boolean;
     notification?: ThemeColor;
+    upgradeRequired?: boolean;
     subroutes?: { [key: string]: SubrouteConfig };
     subrouteGroups?: Record<string, SubrouteGroup>;
 }

@@ -4,15 +4,22 @@ import { c } from 'ttag';
 
 import { groupOwnerInvitesThunk } from '@proton/account/groupOwnerInvites';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
+import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import AdminRolesOnboardingModal from '@proton/components/containers/members/rolesAndPermissions/AdminRolesOnboardingModal';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
@@ -26,9 +33,15 @@ import { GROUPS_RESTRICTION_REASON } from './types';
 
 import './OrganizationGroupsManagementSection.scss';
 
-const OrganizationGroupsManagementSection = () => {
+interface Props {
+    app?: APP_NAMES;
+    upgradeRequired?: boolean;
+}
+
+const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) => {
     const [organization] = useOrganization();
     const { restrictedBy } = useGroupsManagement();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const isUserGroupsGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
     const dispatch = useDispatch();
     const hasAdminRoles = useFlag('AdminRoleMVP');
@@ -40,13 +53,58 @@ const OrganizationGroupsManagementSection = () => {
 
     const canShowAdminRolesModal = !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
 
+    const { hasUsableDomain, invalidGroupSuggestion } = useGroupAvailableAddressDomains();
+
     useEffect(() => {
-        if (isUserGroupsGroupOwnerEnabled) {
+        // On plans without the groups feature (e.g. Pass Essentials, shown as an upsell
+        // preview), the group owner invites endpoint returns NOT_ALLOWED. Don't fetch it.
+        if (isUserGroupsGroupOwnerEnabled && !upgradeRequired) {
             dispatch(groupOwnerInvitesThunk()).catch(noop);
         }
     }, []);
 
-    const { hasUsableDomain, invalidGroupSuggestion } = useGroupAvailableAddressDomains();
+    // In the Pass admin panel, link to the Pass-specific groups article.
+    const groupsKbUrl = getKnowledgeBaseUrl(app === APPS.PROTONPASS ? '/proton-pass-groups' : '/groups');
+
+    if (upgradeRequired) {
+        const kbUrl = groupsKbUrl;
+        return (
+            <SettingsSectionWide className="h-full groups-management">
+                <SettingsPageTitle className="my-14">{c('Title').t`Groups`}</SettingsPageTitle>
+                <PromotionBanner
+                    rounded
+                    mode="banner"
+                    contentCentered={false}
+                    icon={<img src={securityUpsellSvg} alt="" width={40} height={40} />}
+                    description={
+                        <div>
+                            <b>{c('Info').t`Enable groups to streamline access control`}</b>
+                            <div>
+                                {c('Info')
+                                    .t`With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.`}{' '}
+                                <Href href={kbUrl} title={c('Info').t`Learn more about groups`}>
+                                    {c('Link').t`Learn more`}
+                                </Href>
+                            </div>
+                        </div>
+                    }
+                    cta={
+                        <Button
+                            color="norm"
+                            loading={loadingSubscriptionModal}
+                            onClick={() => {
+                                void openSubscriptionModal({
+                                    step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                                });
+                            }}
+                        >
+                            {c('Action').t`Upgrade`}
+                        </Button>
+                    }
+                />
+            </SettingsSectionWide>
+        );
+    }
 
     const linkToDomainPage = (
         <SettingsLink key="link-to-domain-page" path="/domain-names">{c('Action').t`Domain name`}</SettingsLink>
@@ -62,10 +120,7 @@ const OrganizationGroupsManagementSection = () => {
         <SettingsSectionWide className="h-full groups-management">
             <SettingsPageTitle className="mt-14 mb-4">{c('Title').t`Groups`}</SettingsPageTitle>
             <div className="mb-12">
-                <SettingsParagraph
-                    className="flex flex-column flex-nowrap"
-                    learnMoreUrl={getKnowledgeBaseUrl('/groups')}
-                >
+                <SettingsParagraph className="flex flex-column flex-nowrap" learnMoreUrl={groupsKbUrl}>
                     {showMailFeatures ? mailDescription : genericDescription}
                 </SettingsParagraph>
                 {!hasUsableDomain && (

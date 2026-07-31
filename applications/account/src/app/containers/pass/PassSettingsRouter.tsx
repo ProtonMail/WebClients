@@ -32,7 +32,7 @@ const PassSettingsRouter = ({
             {getIsSectionAvailable(activityLogs) && (
                 <Route path={getSectionPath(path, activityLogs)}>
                     <PrivateMainSettingsArea config={activityLogs}>
-                        <PassEvents />
+                        <PassEvents upgradeRequired={activityLogs.upgradeRequired} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
@@ -40,7 +40,7 @@ const PassSettingsRouter = ({
                 <Route path={getSectionPath(path, policies)}>
                     <PrivateMainSettingsArea config={policies}>
                         <PassBridgeProvider>
-                            <PassPolicies />
+                            <PassPolicies upgradeRequired={policies.upgradeRequired} />
                         </PassBridgeProvider>
                     </PrivateMainSettingsArea>
                 </Route>
@@ -49,7 +49,7 @@ const PassSettingsRouter = ({
                 <Route path={getSectionPath(path, reports)}>
                     <PrivateMainSettingsArea config={reports}>
                         <PassBridgeProvider>
-                            <PassReports />
+                            <PassReports upgradeRequired={reports.upgradeRequired} />
                         </PassBridgeProvider>
                     </PrivateMainSettingsArea>
                 </Route>
