@@ -1,6 +1,7 @@
 import type { PLANS } from '@proton/payments/core/constants';
 import type { Product } from '@proton/shared/lib/ProductEnum';
 import type {
+    MEMBER_ROLE,
     ORGANIZATION_POLICY_ENFORCED,
     ORGANIZATION_STATE,
     ORGANIZATION_TWOFA_SETTING,
@@ -8,6 +9,7 @@ import type {
     SETTINGS_PROTON_SENTINEL_STATE,
 } from '@proton/shared/lib/constants';
 
+import type { MEMBER_STATE } from './Member';
 import type { PasswordPolicySettings } from './PasswordPolicy';
 
 export interface Organization {
@@ -103,4 +105,13 @@ export type OrganizationSettingsBooleanProperties = {
 
 export interface OrganizationExtended extends Organization {
     Settings: OrganizationSettings;
+}
+
+export interface UserOrganization {
+    MemberRole: MEMBER_ROLE;
+    MemberState: MEMBER_STATE;
+    OrganizationID: string;
+    OrganizationName: string;
+    IsPrimary: boolean;
+    AddressIDs: string[];
 }

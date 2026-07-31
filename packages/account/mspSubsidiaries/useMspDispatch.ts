@@ -9,9 +9,9 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { MspSubsidiariesState } from './index';
 
 // Custom dispatch because msp isn't in shared reducers. One day it might be though.
-type DelegatedAccessDispatch = ReturnType<
+type MspDispatch = ReturnType<
     typeof baseUseDispatch<
         ThunkDispatch<OrganizationKeyState & MemberState & KtState & MspSubsidiariesState, ProtonThunkArguments, Action>
     >
 >;
-export const useMspDispatch: () => DelegatedAccessDispatch = baseUseDispatch;
+export const useMspDispatch: () => MspDispatch = baseUseDispatch;
