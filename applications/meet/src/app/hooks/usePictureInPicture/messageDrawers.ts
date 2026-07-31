@@ -1,4 +1,4 @@
-import { drawRoundedRect } from './drawingUtils';
+import { drawRoundedRect } from './roundedRect';
 import type { PiPOverlayMessage } from './types';
 
 // Constants for message drawing
