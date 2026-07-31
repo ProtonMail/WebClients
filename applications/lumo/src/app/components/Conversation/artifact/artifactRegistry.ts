@@ -1,6 +1,8 @@
+import { getMessageBlocks } from '../../../messageHelpers';
 import type { Message, MessageId } from '../../../types';
 import { Role } from '../../../types-api';
-import { parseArtifacts } from './parseArtifacts';
+import { CREATE_ARTIFACT_TOOL_NAME, parseCompleteArtifactToolCall } from './createArtifactTool';
+import { type ParsedArtifact, parseArtifacts } from './parseArtifacts';
 
 export interface ArtifactVersion {
     messageId: MessageId;
@@ -20,15 +22,39 @@ export interface ArtifactRegistryEntry {
 export type ArtifactRegistry = Record<string, ArtifactRegistryEntry>;
 
 // Finalized (non-streaming) message content is immutable, so each message only ever needs
-// to be regex-parsed once regardless of how many times the registry is rebuilt.
-const parseCache = new Map<MessageId, ReturnType<typeof parseArtifacts>['artifacts']>();
+// to be parsed once regardless of how many times the registry is rebuilt.
+const parseCache = new Map<MessageId, ParsedArtifact[]>();
 
-function getParsedArtifacts(message: Message): ReturnType<typeof parseArtifacts>['artifacts'] {
+// Legacy path: artifacts embedded as `<artifact>` tags in message.content (text-based protocol).
+function getTagArtifacts(message: Message): ParsedArtifact[] {
+    return parseArtifacts(message.content ?? '').artifacts;
+}
+
+// Current path: artifacts created via the create_artifact tool call, carried in message.blocks.
+function getToolCallArtifacts(message: Message): ParsedArtifact[] {
+    const artifacts: ParsedArtifact[] = [];
+    for (const block of getMessageBlocks(message)) {
+        if (block.type !== 'tool_call') {
+            continue;
+        }
+        const parsed = block.toolCall as { name?: string; arguments?: unknown } | undefined;
+        if (parsed?.name !== CREATE_ARTIFACT_TOOL_NAME || typeof parsed.arguments !== 'object' || !parsed.arguments) {
+            continue;
+        }
+        const artifact = parseCompleteArtifactToolCall(parsed.arguments as Record<string, unknown>);
+        if (artifact) {
+            artifacts.push(artifact);
+        }
+    }
+    return artifacts;
+}
+
+function getParsedArtifacts(message: Message): ParsedArtifact[] {
     const cached = parseCache.get(message.id);
     if (cached) {
         return cached;
     }
-    const { artifacts } = parseArtifacts(message.content ?? '');
+    const artifacts = [...getTagArtifacts(message), ...getToolCallArtifacts(message)];
     parseCache.set(message.id, artifacts);
     return artifacts;
 }
@@ -41,7 +67,9 @@ export function buildArtifactRegistry(linearChain: Message[]): ArtifactRegistry 
     const registry: ArtifactRegistry = {};
 
     for (const message of linearChain) {
-        if (message.role !== Role.Assistant || message.status === undefined || !message.content) {
+        // Note: no `!message.content` shortcut here — a message can carry an artifact via a
+        // create_artifact tool-call block with no surrounding prose at all (empty `content`).
+        if (message.role !== Role.Assistant || message.status === undefined) {
             continue;
         }
 
