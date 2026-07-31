@@ -263,7 +263,7 @@ const PostQuantumOptInModal = ({ resumeKeyGenerationStep, withLoadingWhileInProg
                                     <p className="text-sm color-weak flex-1 pl-4 my-0">
                                         {getBoldFormattedText(
                                             c('Info')
-                                                .t`**Your recovery methods will be invalidated:** you can generate new recovery data later.`
+                                                .t`**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.`
                                         )}
                                     </p>
                                 </div>
