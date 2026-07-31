@@ -5,22 +5,30 @@ import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRecta
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 
+import type { MessageId } from '../../../types';
 import { useArtifactContext } from './ArtifactContext';
+import { getArtifactVersionIndexForMessage } from './artifactRegistry';
 import type { ParsedArtifact, StreamingArtifact } from './parseArtifacts';
 
 // Chip for a fully-generated artifact — clickable, opens the panel
 interface CompleteChipProps {
     artifact: ParsedArtifact;
+    messageId: MessageId;
 }
 
-export const ArtifactChip = ({ artifact }: CompleteChipProps) => {
-    const { openArtifact, selectedId } = useArtifactContext();
-    const isActive = selectedId === artifact.id;
+export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
+    const { openArtifact, selectedId, selectedVersionIndex, registry } = useArtifactContext();
+    const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, messageId);
+    const isActive = selectedId === artifact.id && selectedVersionIndex === versionIndex;
 
     return (
         <button
             type="button"
             onClick={() => {
+                if (versionIndex !== null) {
+                    openArtifact(artifact.id, versionIndex);
+                    return;
+                }
                 openArtifact(artifact.id);
             }}
             className={clsx([
@@ -89,6 +97,7 @@ export const ArtifactChipLoading = ({ streaming }: LoadingChipProps) => {
                     );
                 })()}
             </span>
+            <span>LOADING</span>
             {streaming.title ? (
                 <span className="flex-1 text-ellipsis overflow-hidden whitespace-nowrap">{streaming.title}</span>
             ) : (
