@@ -26,11 +26,11 @@ import SiblingSelector from '../../../../SiblingSelector';
 import { ArtifactChip, ArtifactChipLoading } from '../../../artifact/ArtifactChip';
 import { useArtifactContext } from '../../../artifact/ArtifactContext';
 import {
-    parseArtifacts,
-    parseStreamingContent,
-    stripArtifactContent,
-    stripArtifactTags,
-} from '../../../artifact/parseArtifacts';
+    CREATE_ARTIFACT_TOOL_NAME,
+    parseCompleteArtifactToolCall,
+    parsePartialArtifactToolCall,
+} from '../../../artifact/createArtifactTool';
+import type { ParsedArtifact, StreamingArtifact } from '../../../artifact/parseArtifacts';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
@@ -39,7 +39,7 @@ import { RenderBlocks } from './toolCallTimeline/RenderBlocks';
 
 import './AssistantMessage.scss';
 
-const ENABLE_DEBUG_INFO = false;
+const ENABLE_DEBUG_INFO = true;
 
 interface AssistantActionToolbarProps {
     message: Message;
@@ -237,48 +237,63 @@ const AssistantMessage = ({
     );
     const hasContent = blocks.length > 0;
 
-    // Parse artifact state from message content.
-    // During streaming: use streaming-aware parser to detect in-progress artifacts.
-    // After completion: use full parser for clean final state.
+    // Extract create_artifact tool calls directly from the structured blocks — no text parsing.
+    // `arguments` is a raw string while the call is still streaming and becomes a parsed object
+    // once complete (set by the redux tool-call reducers), so completeness here is unambiguous —
+    // unlike the old `<artifact>` tag scanner, there's no transient "is it still open" state to guess.
     const { completeArtifacts, streamingArtifact } = useMemo(() => {
-        if (!message.content) {
-            return { completeArtifacts: [], streamingArtifact: null };
+        const complete: ParsedArtifact[] = [];
+        let streaming: StreamingArtifact | null = null;
+
+        for (const block of blocks) {
+            if (block.type !== 'tool_call') {
+                continue;
+            }
+            const parsed = block.toolCall as { name?: string; arguments?: unknown } | undefined;
+            if (parsed?.name !== CREATE_ARTIFACT_TOOL_NAME) {
+                continue;
+            }
+
+            if (typeof parsed.arguments === 'string') {
+                // isLastMessage guard: only show a live preview for the actively-generating
+                // message. Older messages that happen to still be mid-stream (shouldn't normally
+                // happen) just render nothing for this block.
+                if (isGenerating && isLastMessage) {
+                    streaming = parsePartialArtifactToolCall(parsed.arguments);
+                }
+            } else if (parsed.arguments && typeof parsed.arguments === 'object') {
+                const artifact = parseCompleteArtifactToolCall(parsed.arguments as Record<string, unknown>);
+                if (artifact) {
+                    complete.push(artifact);
+                }
+            }
         }
-        if (isFinishedGenerating) {
-            const { artifacts } = parseArtifacts(message.content);
-            return { completeArtifacts: artifacts, streamingArtifact: null };
-        }
-        // isLastMessage guard: only parse streaming state for the actively-generating message.
-        // Older messages that happen to contain artifact tags can just render as-is.
-        if (isGenerating && isLastMessage) {
-            const { completeArtifacts: complete, streamingArtifact: streaming } = parseStreamingContent(
-                message.content
-            );
-            return { completeArtifacts: complete, streamingArtifact: streaming };
-        }
-        return { completeArtifacts: [], streamingArtifact: null };
-    }, [isFinishedGenerating, isGenerating, isLastMessage, message.content]);
+
+        return { completeArtifacts: complete, streamingArtifact: streaming };
+    }, [blocks, isGenerating, isLastMessage]);
 
     const hasArtifacts = completeArtifacts.length > 0 || streamingArtifact !== null;
-    console.log('💥 ASSISTANT MESSAGE: ', { hasArtifacts, completeArtifacts, streamingArtifact });
 
-    // Strip artifact markup from text blocks.
-    // While streaming: remove from <artifact to end-of-string (content still arriving).
-    // After completion: remove closed <artifact>...</artifact> blocks.
+    // Hide create_artifact tool_call/tool_result blocks from the generic tool-call timeline —
+    // ArtifactChip/ArtifactChipLoading render them instead, below.
     const cleanedBlocks = useMemo(() => {
         if (!hasArtifacts) {
             return blocks;
         }
-        return blocks.map((block) => {
-            if (block.type === 'text') {
-                const content = isFinishedGenerating
-                    ? stripArtifactTags(block.content)
-                    : stripArtifactContent(block.content);
-                return { ...block, content };
+        const artifactCallIndices = new Set<number>();
+        blocks.forEach((block, idx) => {
+            const parsed = block.type === 'tool_call' ? (block.toolCall as { name?: string } | undefined) : undefined;
+            if (parsed?.name === CREATE_ARTIFACT_TOOL_NAME) {
+                artifactCallIndices.add(idx);
             }
-            return block;
         });
-    }, [blocks, hasArtifacts, isFinishedGenerating]);
+        return blocks.filter((block, idx) => {
+            if (artifactCallIndices.has(idx)) {
+                return false;
+            }
+            return !(block.type === 'tool_result' && artifactCallIndices.has(idx - 1));
+        });
+    }, [blocks, hasArtifacts]);
 
     const { selectedId, openArtifact, setStreamingArtifact } = useArtifactContext();
 
@@ -347,7 +362,12 @@ const AssistantMessage = ({
     const shouldShowNextPromptSuggestions =
         showNextPromptSuggestionEnabled && isLastMessage && isFinishedGenerating && !generationFailed;
 
-    console.log('💥 ASSISTANT MESSAGE: ', { message, content: message?.content });
+    console.log('💥 ASSISTANT MESSAGE: ', {
+        message,
+        content: message?.content,
+        toolCall: message?.toolCall,
+        toolResult: message?.toolResult,
+    });
 
     return (
         <>
@@ -432,6 +452,9 @@ const AssistantMessage = ({
                         {c('collider_2025:Info').t`Conversation encrypted`}
                     </div>
                 )}
+                <p>{message?.content}</p>
+                <p>{message.toolCall}</p>
+                <p>{message.toolResult}</p>
             </div>
 
             {linkWarningModal.render && (

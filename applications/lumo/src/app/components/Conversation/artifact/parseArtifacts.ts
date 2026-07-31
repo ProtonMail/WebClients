@@ -40,9 +40,53 @@ function parseAttributes(attrString: string): Record<string, string> {
     return attrs;
 }
 
+// Matches only well-formed `key="value"` attribute pairs, so a literal `>` inside a quoted
+// value (e.g. title="if x > y") can't be mistaken for the tag's closing `>` and truncate the match.
+const ARTIFACT_ATTRS = '(?:[a-zA-Z_][a-zA-Z0-9_-]*="[^"]*"\\s*)*';
+
+type OpenTagScan = { start: number; attrsEnd: number; contentStart: number } | 'partial' | null;
+
+// Finds the last still-open `<artifact ...>` tag in `text` by scanning character-by-character
+// and tracking quote state, instead of relying on a regex to guess where the tag's closing `>`
+// is. A regex-only approach (matching either "attrs are fully closed" or "no `>` seen yet") has
+// a gap: while an attribute value is mid-stream and itself contains a literal `>` (e.g.
+// `title="if x >`, quote not yet closed), neither pattern matches and the tag is wrongly
+// reported as absent. Tracking quote state directly has no such gap — a `>` only ever closes
+// the tag when we're not inside a quoted value.
+function scanOpenArtifactTag(text: string): OpenTagScan {
+    const start = text.lastIndexOf('<artifact');
+    if (start === -1) {
+        return null;
+    }
+
+    const afterKeyword = start + '<artifact'.length;
+    const charAfterKeyword = text[afterKeyword];
+    if (charAfterKeyword !== undefined && !/\s/.test(charAfterKeyword)) {
+        // Not a real `<artifact ...>` tag start (e.g. `<artifactory>`).
+        return null;
+    }
+    if (charAfterKeyword === undefined) {
+        // Keyword just arrived, whitespace/attrs not typed yet — still opening.
+        return 'partial';
+    }
+
+    let inQuotes = false;
+    for (let i = afterKeyword; i < text.length; i++) {
+        const ch = text[i];
+        if (ch === '"') {
+            inQuotes = !inQuotes;
+        } else if (ch === '>' && !inQuotes) {
+            return { start, attrsEnd: i, contentStart: i + 1 };
+        }
+    }
+
+    // Reached end of text without an unquoted `>` — tag is still opening (attrs mid-stream).
+    return 'partial';
+}
+
 // Stable, deterministic fallback id for artifact tags emitted without an `id` attribute
 // (legacy conversations, or a model response that omitted it) — djb2 string hash.
-function hashArtifactIdentity(type: string, title: string, content: string): string {
+export function hashArtifactIdentity(type: string, title: string, content: string): string {
     const input = `${type}:${title}:${content}`;
     let hash = 5381;
     for (let i = 0; i < input.length; i++) {
@@ -55,7 +99,7 @@ export function parseArtifacts(raw: string): ParseResult {
     const artifacts: ParsedArtifact[] = [];
 
     try {
-        const ARTIFACT_RE = /<artifact\s+([^>]*?)>([\s\S]*?)<\/artifact>/g;
+        const ARTIFACT_RE = new RegExp(`<artifact\\s+(${ARTIFACT_ATTRS})>([\\s\\S]*?)<\\/artifact>`, 'g');
         let prose = raw;
         let match;
 
@@ -105,7 +149,7 @@ export function parseStreamingContent(raw: string): StreamingParseResult {
 
     try {
         // Extract all complete artifacts
-        const COMPLETE_RE = /<artifact\s+([^>]*?)>([\s\S]*?)<\/artifact>/g;
+        const COMPLETE_RE = new RegExp(`<artifact\\s+(${ARTIFACT_ATTRS})>([\\s\\S]*?)<\\/artifact>`, 'g');
         let match;
         while ((match = COMPLETE_RE.exec(raw)) !== null) {
             const [fullMatch, attrString, content] = match;
@@ -125,32 +169,52 @@ export function parseStreamingContent(raw: string): StreamingParseResult {
             prose = prose.replace(fullMatch!, '');
         }
 
-        // State 2: full opening tag present, content streaming, no closing tag yet
-        const INCOMPLETE_OPEN_RE = /<artifact\s+([^>]*?)>([\s\S]*)$/;
-        const incompleteMatch = INCOMPLETE_OPEN_RE.exec(prose);
-        if (incompleteMatch) {
-            const attrs = parseAttributes(incompleteMatch[1] ?? '');
-            const streamingArtifact: StreamingArtifact = {
+        // States 1 & 2: an `<artifact` tag is still open (attrs mid-stream, or attrs closed but
+        // content/closing-tag not yet arrived). scanOpenArtifactTag is quote-aware so it can't be
+        // thrown off by a literal `>` inside an in-progress attribute value.
+        const scan = scanOpenArtifactTag(prose);
+        if (scan === null) {
+            return { prose: prose.trim(), completeArtifacts, streamingArtifact: null };
+        }
+
+        if (scan === 'partial') {
+            // Attrs are still streaming and haven't reached a closing `>` yet. Salvage whatever
+            // fully-formed key="value" pairs have already arrived (e.g. `id`, `type`) so the
+            // panel header can show partial info even before `title`'s closing quote lands.
+            const tagStart = prose.lastIndexOf('<artifact');
+            const partialAttrsRaw = prose.slice(tagStart + '<artifact'.length);
+            const attrs = parseAttributes(partialAttrsRaw);
+            prose = prose.substring(0, tagStart).trim();
+            return {
+                prose,
+                completeArtifacts,
+                streamingArtifact: {
+                    id: attrs.id || undefined,
+                    title: attrs.title || undefined,
+                    type: attrs.type === 'code' || attrs.type === 'document' ? attrs.type : undefined,
+                    language: attrs.language || undefined,
+                    content: '',
+                    isComplete: false,
+                },
+            };
+        }
+
+        const attrsRaw = prose.slice(scan.start + '<artifact'.length, scan.attrsEnd);
+        const attrs = parseAttributes(attrsRaw);
+        const content = prose.slice(scan.contentStart);
+        prose = prose.substring(0, scan.start).trim();
+        return {
+            prose,
+            completeArtifacts,
+            streamingArtifact: {
                 id: attrs.id || undefined,
                 title: attrs.title || undefined,
                 type: attrs.type === 'code' || attrs.type === 'document' ? attrs.type : undefined,
                 language: attrs.language || undefined,
-                content: incompleteMatch[2] ?? '',
+                content,
                 isComplete: false,
-            };
-            prose = prose.substring(0, incompleteMatch.index).trim();
-            return { prose, completeArtifacts, streamingArtifact };
-        }
-
-        // State 1: partial opening tag, `>` not yet received
-        const PARTIAL_TAG_RE = /<artifact[^>]*$/;
-        const partialMatch = PARTIAL_TAG_RE.exec(prose);
-        if (partialMatch) {
-            prose = prose.substring(0, partialMatch.index).trim();
-            return { prose, completeArtifacts, streamingArtifact: { content: '', isComplete: false } };
-        }
-
-        return { prose: prose.trim(), completeArtifacts, streamingArtifact: null };
+            },
+        };
     } catch {
         return { prose: raw, completeArtifacts: [], streamingArtifact: null };
     }
@@ -160,7 +224,7 @@ export function parseStreamingContent(raw: string): StreamingParseResult {
  * Strips complete `<artifact>…</artifact>` blocks from a completed message's text block.
  */
 export function stripArtifactTags(content: string): string {
-    return content.replace(/<artifact\s+[^>]*?>[\s\S]*?<\/artifact>/g, '').trim();
+    return content.replace(new RegExp(`<artifact\\s+${ARTIFACT_ATTRS}>[\\s\\S]*?<\\/artifact>`, 'g'), '').trim();
 }
 
 /**
@@ -169,7 +233,7 @@ export function stripArtifactTags(content: string): string {
  */
 export function stripArtifactContent(content: string): string {
     // First remove any complete artifact blocks
-    let result = content.replace(/<artifact\s+[^>]*?>[\s\S]*?<\/artifact>/g, '');
+    let result = content.replace(new RegExp(`<artifact\\s+${ARTIFACT_ATTRS}>[\\s\\S]*?<\\/artifact>`, 'g'), '');
     // Then strip everything from any remaining `<artifact` to end (in-progress)
     result = result.replace(/<artifact[\s\S]*$/, '');
     return result.trim();

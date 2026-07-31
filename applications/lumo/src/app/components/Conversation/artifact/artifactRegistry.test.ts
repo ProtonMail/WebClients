@@ -1,6 +1,7 @@
 import type { Message } from '../../../types';
 import { Role } from '../../../types-api';
 import { buildArtifactRegistry } from './artifactRegistry';
+import { CREATE_ARTIFACT_TOOL_NAME } from './createArtifactTool';
 
 let counter = 0;
 function makeMessage(overrides: Partial<Message> & { content: string }): Message {
@@ -88,6 +89,64 @@ describe('buildArtifactRegistry', () => {
             makeMessage({
                 status: undefined,
                 content: '<artifact id="streaming-artifact" type="document" title="Should Be Ignored">x</artifact>',
+            }),
+        ];
+
+        const registry = buildArtifactRegistry(chain);
+
+        expect(Object.keys(registry)).toHaveLength(0);
+    });
+
+    it('registers an artifact created via the create_artifact tool call, with no prose content at all', () => {
+        const args = { id: 'letter-1', type: 'document', title: 'Landlord Letter', content: 'Dear landlord,' };
+        const chain: Message[] = [
+            makeMessage({
+                content: '',
+                blocks: [
+                    {
+                        type: 'tool_call',
+                        content: JSON.stringify({ id: 'call_1', name: CREATE_ARTIFACT_TOOL_NAME, arguments: args }),
+                        toolCall: { id: 'call_1', name: CREATE_ARTIFACT_TOOL_NAME, arguments: args },
+                    },
+                ],
+            }),
+        ];
+
+        const registry = buildArtifactRegistry(chain);
+
+        expect(Object.keys(registry)).toEqual(['letter-1']);
+        expect(registry['letter-1']!.versions[0]!.content).toBe('Dear landlord,');
+    });
+
+    it('accumulates a new version when a later message reuses the same tool-call artifact id', () => {
+        const makeArgs = (content: string) => ({ id: 'letter-1', type: 'document', title: 'Landlord Letter', content });
+        const toolCallBlock = (args: ReturnType<typeof makeArgs>) => ({
+            type: 'tool_call' as const,
+            content: JSON.stringify({ id: 'call_1', name: CREATE_ARTIFACT_TOOL_NAME, arguments: args }),
+            toolCall: { id: 'call_1', name: CREATE_ARTIFACT_TOOL_NAME, arguments: args },
+        });
+        const chain: Message[] = [
+            makeMessage({ content: '', blocks: [toolCallBlock(makeArgs('Dear landlord,'))] }),
+            makeMessage({ content: '', blocks: [toolCallBlock(makeArgs('Dear landlord, revised.'))] }),
+        ];
+
+        const registry = buildArtifactRegistry(chain);
+
+        expect(registry['letter-1']!.versions).toHaveLength(2);
+        expect(registry['letter-1']!.versions[1]!.content).toBe('Dear landlord, revised.');
+    });
+
+    it('does not register a create_artifact tool call still mid-stream (arguments still a raw string)', () => {
+        const chain: Message[] = [
+            makeMessage({
+                content: '',
+                blocks: [
+                    {
+                        type: 'tool_call',
+                        content: '{"id":"call_1","name":"create_artifact","arguments":"{\\"id\\":\\"x\\""}',
+                        toolCall: { id: 'call_1', name: CREATE_ARTIFACT_TOOL_NAME, arguments: '{"id":"x"' },
+                    },
+                ],
             }),
         ];
 
