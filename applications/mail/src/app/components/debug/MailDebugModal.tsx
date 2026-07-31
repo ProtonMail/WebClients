@@ -45,7 +45,7 @@ const InfoRow = ({ title, value }: { title: string; value: any }) => (
     </div>
 );
 
-export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
+export const MailDebugModal = ({ ...rest }: Props) => {
     const params = useMailSelector(selectParams);
     const total = useMailSelector(contextTotal);
     const length = useMailSelector(elementsLength);
