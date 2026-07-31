@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -32,6 +34,7 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import emptyCompaniesImg from '@proton/styles/assets/img/illustrations/empty-companies.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import useMspCompanies from '../hooks/useMspCompanies';
@@ -55,7 +58,9 @@ const ManageButton = ({ className, ...props }: { className?: string } & ButtonPr
 
 const MspCompaniesSection = ({ path }: { path: string }) => {
     const [user] = useUser();
-    const isAdmin = user.isAdmin;
+    const isAdminRoleMVPEnabled = useFlag('AdminRoleMVP');
+    const [userPermissions] = useUserPermissions();
+    const isAdmin = isAdminRoleMVPEnabled ? (userPermissions?.Roles?.some(isOwnerRole) ?? false) : user.isAdmin;
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
     const { companies, loading, addCompany, updateCompany, setCompanyStatus, manageCompany } = useMspCompanies();
@@ -140,8 +145,10 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
         <SettingsSectionExtraWide>
             <SettingsPageTitle className="mt-14">{c('Title').t`Companies`}</SettingsPageTitle>
             <SettingsParagraph className="mb-12">
-                {c('Info')
-                    .t`With managed companies, you can add, edit, and remove access for organizations you oversee.`}
+                {isAdmin
+                    ? c('Info')
+                          .t`With managed companies, you can add, edit, and remove access for organizations you oversee.`
+                    : c('Info').t`Companies you've been given access to manage.`}
             </SettingsParagraph>
             <div className="mb-4 flex items-center justify-space-between">
                 <div className="w-custom" style={{ '--w-custom': '20em' }}>
@@ -151,26 +158,29 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                         placeholder={c('Placeholder').t`Search for a company`}
                     />
                 </div>
-                <Button
-                    color="norm"
-                    disabled={!isAdmin}
-                    onClick={() => setModal({ mode: 'add' })}
-                    className="inline-flex flex-nowrap items-center gap-1"
-                    icon={viewportWidth['<=small']}
-                >
-                    {viewportWidth['<=small'] ? (
-                        <IcPlus className="icon-size-4 shrink-0" />
-                    ) : (
-                        <span>{c('Action').t`Add company`}</span>
-                    )}
-                </Button>
+                {isAdmin && (
+                    <Button
+                        color="norm"
+                        onClick={() => setModal({ mode: 'add' })}
+                        className="inline-flex flex-nowrap items-center gap-1"
+                        icon={viewportWidth['<=small']}
+                    >
+                        {viewportWidth['<=small'] ? (
+                            <IcPlus className="icon-size-4 shrink-0" />
+                        ) : (
+                            <span>{c('Action').t`Add company`}</span>
+                        )}
+                    </Button>
+                )}
             </div>
 
             {companies.length === 0 ? (
                 <div className="flex items-center justify-center">
                     <IllustrationPlaceholder url={emptyCompaniesImg}>
                         <p className="m-0 text-sm color-hint text-center">
-                            {c('Info').t`No companies yet. Start by creating a new company.`}
+                            {isAdmin
+                                ? c('Info').t`No companies yet. Start by creating a new company.`
+                                : c('Info').t`You don't manage any companies yet.`}
                         </p>
                     </IllustrationPlaceholder>
                 </div>
@@ -210,12 +220,18 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                 return (
                                     <TableRow key={company.id}>
                                         <TableCell label={c('Column header').t`Company`}>
-                                            <InlineLinkButton
-                                                className="color-norm text-underline text-left block w-full overflow-hidden text-ellipsis text-nowrap"
-                                                onClick={() => setModal({ mode: 'edit', company })}
-                                            >
-                                                {company.name}
-                                            </InlineLinkButton>
+                                            {isAdmin ? (
+                                                <InlineLinkButton
+                                                    className="block w-full overflow-hidden text-ellipsis text-nowrap color-norm text-underline text-left"
+                                                    onClick={() => setModal({ mode: 'edit', company })}
+                                                >
+                                                    {company.name}
+                                                </InlineLinkButton>
+                                            ) : (
+                                                <span className="block w-full overflow-hidden text-ellipsis text-nowrap">
+                                                    {company.name}
+                                                </span>
+                                            )}
                                         </TableCell>
                                         <TableCell label={c('Column header').t`Used / assigned seats`}>
                                             <span className={clsx(isDisabled && 'color-weak')}>
@@ -252,6 +268,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                                     size="small"
                                                     shape="ghost"
                                                     iconName="three-dots-vertical"
+                                                    disabled={!isAdmin}
                                                     list={menuActions}
                                                 />
                                             </div>

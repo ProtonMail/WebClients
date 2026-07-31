@@ -1,4 +1,4 @@
-import type { Address, Api, Member, SignedKeyList } from '../interfaces';
+import type { Address, Api, Member, SignedKeyList, UserOrganization } from '../interfaces';
 import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '../keys/organizationKeyDto';
 import type { UnprivatizeMemberPayload } from '../keys/unprivatization';
 import queryPages from './helpers/queryPages';
@@ -49,6 +49,13 @@ export const getSelfMember = () => ({
     method: 'get',
     url: 'core/v4/members/me',
 });
+
+export const getAllUserOrganizations = (api: Api) => {
+    return api<{ Organizations: UserOrganization[] }>({
+        method: 'get',
+        url: 'core/v4/members/organizations',
+    }).then(({ Organizations }) => Organizations);
+};
 
 export const queryAddresses = (memberID: string, params?: PaginationParams) => ({
     method: 'get',

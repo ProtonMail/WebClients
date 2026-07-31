@@ -10,8 +10,11 @@ import {
     createMspSubsidiary,
     disableMspSubsidiary,
     enableMspSubsidiary,
+    getMspSubsidiaryManagers,
+    unassignMspSubsidiaryManager,
     updateMspSubsidiary,
 } from '@proton/shared/lib/api/msp';
+import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
 import { MSP_SUBSIDIARY_STATUS } from '@proton/shared/lib/interfaces/MspSubsidiary';
@@ -82,5 +85,30 @@ export const setCompanyStatusThunk = ({
         } else {
             throw new Error('Unsupported status');
         }
+    };
+};
+
+export const getSubsidiaryManagersThunk = ({
+    id,
+}: {
+    id: string;
+}): ThunkAction<Promise<MspDelegatedManager[]>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+    return async (_dispatch, _, extra) => {
+        const { DelegatedManagers } = await extra.api<{ DelegatedManagers: MspDelegatedManager[] }>(
+            getMspSubsidiaryManagers(id)
+        );
+        return DelegatedManagers;
+    };
+};
+
+export const unassignMemberFromCompanyThunk = ({
+    id,
+    memberId,
+}: {
+    id: string;
+    memberId: string;
+}): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+    return async (_dispatch, _, extra) => {
+        await extra.api(unassignMspSubsidiaryManager(id, memberId));
     };
 };
