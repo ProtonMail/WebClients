@@ -342,13 +342,12 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                                 loading={loadingSubscriptionModal}
                                 onClick={() => {
                                     void openSubscriptionModal({
-                                        step: SUBSCRIPTION_STEPS.CHECKOUT,
-                                        plan: ssoAppInfo.upsellPlan,
+                                        step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
                                     });
                                 }}
                                 title={c('Title').t`Setup dedicated servers by upgrading to Business`}
                             >
-                                {c('Action').t`Upgrade to Business`}
+                                {c('Action').t`Upgrade`}
                             </Button>
                         ) : undefined
                     }

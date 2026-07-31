@@ -45,6 +45,7 @@ const SidebarListWrapper = ({ header, routes, prefix }: Props) => {
                             to={getSectionPath(prefix, section)}
                             icon={section.icon}
                             notification={section.notification}
+                            upgradeRequired={section.upgradeRequired}
                             key={section.to}
                         >
                             <span className="text-ellipsis" title={section.text}>
