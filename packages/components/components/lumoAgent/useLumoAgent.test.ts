@@ -1,6 +1,12 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import type { ClientToolExecutor, GenerationResponseMessage } from '@proton/lumo-api-client';
+import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
+import { createLoadGuideDefinition } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
+import type {
+    ClientToolExecutor,
+    GenerationResponseMessage,
+    ToolName as ServerToolName,
+} from '@proton/lumo-api-client';
 
 import type { LumoAgentConfig } from './types';
 import useLumoAgent from './useLumoAgent';
@@ -32,32 +38,45 @@ const message = (content: string): GenerationResponseMessage =>
 
 const handlerCalls: { name: string; params: Record<string, any> }[] = [];
 
+const definitions: ToolDefinition[] = [
+    {
+        name: 'view_items',
+        kind: 'read',
+        toolDescription: 'view items',
+        paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
+        serializeForLumo: () => '2 items',
+        summarizeChip: () => ({ label: 'Read 2 items' }),
+    },
+    {
+        name: 'search_items',
+        kind: 'read',
+        toolDescription: 'search items',
+        paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
+        needsGuide: true,
+        guide: 'THE SEARCH GUIDE',
+        serializeForLumo: () => '1 item',
+        summarizeChip: () => ({ label: 'Searched' }),
+    },
+    {
+        name: 'move_items',
+        kind: 'mutation',
+        toolDescription: 'move items',
+        paramsSchema: {
+            type: 'object',
+            additionalProperties: false,
+            required: ['target'],
+            properties: { target: { type: 'string' } },
+        },
+        serializeForLumo: () => '',
+        summarizeChip: () => ({ label: 'Move' }),
+    },
+];
+
 const config: LumoAgentConfig = {
-    definitions: [
-        {
-            name: 'view_items',
-            kind: 'read',
-            toolDescription: 'view items',
-            paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
-            serializeForLumo: () => '2 items',
-            summarizeChip: () => ({ label: 'Read 2 items' }),
-        },
-        {
-            name: 'move_items',
-            kind: 'mutation',
-            toolDescription: 'move items',
-            paramsSchema: {
-                type: 'object',
-                additionalProperties: false,
-                required: ['target'],
-                properties: { target: { type: 'string' } },
-            },
-            serializeForLumo: () => '',
-            summarizeChip: () => ({ label: 'Move' }),
-        },
-    ],
+    definitions: [...definitions, createLoadGuideDefinition(definitions)!],
     handlers: {
         view_items: async () => ({}),
+        search_items: async () => ({}),
         move_items: async (params) => {
             handlerCalls.push({ name: 'move_items', params });
             return {};
@@ -108,6 +127,51 @@ describe('useLumoAgent', () => {
             label: 'Read 2 items',
             payload: '2 items',
         });
+    });
+
+    it('hides a guide load, but still starts a fresh reply bubble after it', async () => {
+        script = async ({ executor, chunk }) => {
+            chunk(message('First thought.'));
+            await executor.execute([{ id: '1', name: 'load_guide', arguments: '{"guide":"search_items"}' }]);
+            chunk(message('Second thought.'));
+        };
+
+        const { result } = renderHook(() => useLumoAgent(config));
+        await act(async () => {
+            await result.current.send('find something');
+        });
+
+        expect(result.current.items.map((item) => item.kind)).toEqual(['user', 'reply', 'reply']);
+        expect(result.current.items.filter((item) => item.kind === 'reply').map((item) => item.text)).toEqual([
+            'First thought.',
+            'Second thought.',
+        ]);
+    });
+
+    it('ignores a tool call for a tool the product did not enable server-side', async () => {
+        script = async ({ chunk }) => {
+            chunk({ type: 'server_tool_call', call_id: 'c1', name: 'view_items' } as GenerationResponseMessage);
+        };
+
+        const { result } = renderHook(() => useLumoAgent(config));
+        await act(async () => {
+            await result.current.send('show me');
+        });
+
+        expect(result.current.items.some((item) => item.kind === 'servertool')).toBe(false);
+    });
+
+    it('renders a declared server tool as a server-tool item', async () => {
+        script = async ({ chunk }) => {
+            chunk({ type: 'server_tool_call', call_id: 'c1', name: 'web_search' } as GenerationResponseMessage);
+        };
+
+        const { result } = renderHook(() => useLumoAgent({ ...config, serverTools: ['web_search' as ServerToolName] }));
+        await act(async () => {
+            await result.current.send('what is the weather');
+        });
+
+        expect(result.current.items.find((item) => item.kind === 'servertool')).toMatchObject({ tool: 'web_search' });
     });
 
     it('surfaces a mutation as a pending confirm, then applies it with the edited params on confirm', async () => {
