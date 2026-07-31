@@ -38,14 +38,15 @@ export const useB2BAdminSidebarFeature = ({
     const [subscription, isSubscriptionLoading] = useSubscription();
     const [organization, isOrganizationLoading] = useOrganization();
 
-    const skip = isUserLoading || isSubscriptionLoading || isOrganizationLoading;
     const isEnabled = useFlag('B2BSidebarRefreshEnabled');
     const { APP_NAME } = useConfig();
     const isAdmin = isB2BAdmin({ user, organization, subscription });
     const recoveryNotification = useRecoveryNotification(false, false);
     const [{ isDataRecoveryAvailable }] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
-    const [permissions] = useOrgPermissions();
+    const [permissions, isPermissionsLoading] = useOrgPermissions();
+
+    const skip = isUserLoading || isSubscriptionLoading || isOrganizationLoading || isPermissionsLoading;
 
     const SsoForPbs = useFlag('SsoForPbs');
 
