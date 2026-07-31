@@ -1,12 +1,14 @@
 import { VPN_TV_CLIENT_IDS, VPN_TV_PATHS_MAP } from '@proton/shared/lib/constants';
 
 export const getChildClientId = () => {
-    if (VPN_TV_PATHS_MAP.vega.includes(location.pathname)) {
-        return VPN_TV_CLIENT_IDS.VEGA;
-    }
+    if (location.pathname.length > 1) {
+        if (VPN_TV_PATHS_MAP.vega.includes(location.pathname)) {
+            return VPN_TV_CLIENT_IDS.VEGA;
+        }
 
-    if (VPN_TV_PATHS_MAP.apple.includes(location.pathname)) {
-        return VPN_TV_CLIENT_IDS.APPLE;
+        if (VPN_TV_PATHS_MAP.apple.includes(location.pathname)) {
+            return VPN_TV_CLIENT_IDS.APPLE;
+        }
     }
 
     const clientId = new URLSearchParams(location.search).get('clientId');
