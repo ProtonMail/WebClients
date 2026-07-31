@@ -80,12 +80,18 @@ export enum PASSWORD_REMINDERS_VALUE {
     DISABLED = 1,
 }
 
+export enum FIDO2_CREDENTIALS_PIN_VALUE {
+    ENABLED = 1,
+    DISABLED = 0,
+}
+
 export interface Flags {
     Welcomed: number;
     SupportPgpV6Keys: 0 | 1;
     EdmOptOut: EDM_VALUE;
     DisplayTrialEndModal: 0 | 1;
     PasswordReminderOptOut: PASSWORD_REMINDERS_VALUE;
+    Fido2CredentialsPinOptIn: FIDO2_CREDENTIALS_PIN_VALUE;
 }
 
 export enum AI_ASSISTANT_ACCESS {
