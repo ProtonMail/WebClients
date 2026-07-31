@@ -1724,6 +1724,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Yes, organize it": [
+        "Da, vreau organizare"
       ]
     },
     "action": {
@@ -1751,6 +1754,9 @@
       ],
       "Skip": [
         "Omitere"
+      ],
+      "Set up categories": [
+        "Setare categorii"
       ]
     },
     "Actions message": {
@@ -4570,6 +4576,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Faceți clic dreapta pe un e-mail și selectați „Mutare în” sau glisați și plasați-l într-o altă categorie. Mesajele similare vor fi mutate automat acolo în viitor."
       ]
     },
     "description": {
@@ -6575,6 +6584,9 @@
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Nu închideţi fila înainte de terminarea procesului de importare."
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Criptare și adăugare contacte: ${ totalImported }/${ totalToImport }"
       ]
     },
     "Import calendar warning": {
@@ -9535,6 +9547,40 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mailuri → ${ dest }",
+        "${ count } de e-mailuri → ${ dest }"
+      ],
+      "Move emails": [
+        "Mutare mesaje"
+      ],
+      "Move here": [
+        "Mutare aici"
+      ],
+      "Opened ${ location }": [
+        "S-a deschis ${ location }"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Conversații existente în categoria ${ categoryLabel }: **${ count }**",
+        "Conversații existente în categoria ${ categoryLabel }: **${ count }**",
+        "Conversații existente în categoria ${ categoryLabel }: **${ count }**"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Mesaje existente în categoria ${ categoryLabel }: **${ count }**",
+        "Mesaje existente în categoria ${ categoryLabel }: **${ count }**",
+        "Mesaje existente în categoria ${ categoryLabel }: **${ count }**"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**"
       ]
     },
     "info": {
@@ -10747,6 +10793,15 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Orice vă solicită atenția, plus mesaje din categoriile dezactivate"
+      ],
+      "Archive": [
+        "Arhivă"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primare - Orice vă solicită atenția, plus mesaje din categoriile dezactivate"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15626,6 +15681,11 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "S-a mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor.",
+        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor.",
+        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor."
       ]
     },
     "Success notification": {
@@ -16942,6 +17002,15 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Make your inbox your own": [
+        "Personalizați-vă contul"
+      ],
+      "Move emails": [
+        "Mutare mesaje"
+      ],
+      "Refine your Categories": [
+        "Rafinare categorii"
       ]
     },
     "Title header for keys table": {
@@ -17607,6 +17676,16 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "Mesaje noi: ${ messageCount }",
+        "Mesaje noi: ${ messageCount }",
+        "Mesaje noi: ${ messageCount }"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "De la: ${ sender } - ${ message.Subject }"
       ]
     }
   }

@@ -1721,6 +1721,18 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Clear conversation": [
+        "Vyčistiť konverzáciu"
+      ],
+      "Stop": [
+        "Zastaviť"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Prepnúť ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Áno, organizovať"
       ]
     },
     "action": {
@@ -1748,6 +1760,9 @@
       ],
       "Skip": [
         "Preskočiť"
+      ],
+      "Set up categories": [
+        "Nastavte kategórie"
       ]
     },
     "Actions message": {
@@ -4599,6 +4614,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Kliknite pravým tlačidlom myši na email a vyberte možnosť „Presunúť do“ alebo ho pretiahnite do inej kategórie. Podobné emaily sa tam v budúcnosti zaradia automaticky."
       ]
     },
     "description": {
@@ -9690,6 +9708,48 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } emaily → ${ dest }",
+        "${ count } emailov → ${ dest }",
+        "${ count } emailov → ${ dest }"
+      ],
+      "Move emails": [
+        "Presunúť emaily"
+      ],
+      "Move here": [
+        "Presunúť sem"
+      ],
+      "Opened ${ location }": [
+        "Otvorené ${ location }"
+      ],
+      "Thinking about this": [
+        "Premýšľam o tom"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Máte **${ count } konverzáciu** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácie** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácií** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácií** vo vašej kategórii ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Máte **${ count } správu** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } správy** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } správ** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } správ** vo vašej kategórii ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Vybrali ste **${ checked } konverzáciu** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácie** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácií** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácií** vo vašej kategórii ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Vybrali ste **${ checked } správu** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správy** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správ** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správ** vo vašej kategórii ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10910,6 +10970,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Všetko, čo si vyžaduje vašu pozornosť, plus emaily z deaktivovaných kategórií"
+      ],
+      "Archive": [
+        "Archív"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primárna - Všetko, čo si vyžaduje vašu pozornosť, plus emaily z deaktivovaných kategórií"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11407,6 +11476,9 @@
         "${ seats }${ MEET_APP_NAME } licencie",
         "${ seats }${ MEET_APP_NAME } licencií",
         "${ seats }${ MEET_APP_NAME } licencií"
+      ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
       ]
     },
     "meet_2025: Feature": {
@@ -13813,6 +13885,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Ask anything…": [
+        "Opýtajte sa na čokoľvek..."
       ]
     },
     "Placeholder for contact group name": {
@@ -15903,6 +15978,12 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Presunuté do ${ label }. Podobná správa tam bude v zaradená aj v budúcnosti.",
+        "Presunuté do ${ label }. Podobné správy tam budú v zaradené aj v budúcnosti.",
+        "Presunuté do ${ label }. Podobné správy tam budú v zaradené aj v budúcnosti.",
+        "Presunuté do ${ label }. Podobné správy tam budú v zaradené aj v budúcnosti."
       ]
     },
     "Success notification": {
@@ -17242,6 +17323,15 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Make your inbox your own": [
+        "Prispôsobte si svoju doručenú poštu podľa seba"
+      ],
+      "Move emails": [
+        "Presunúť emaily"
+      ],
+      "Refine your Categories": [
+        "Upresnite svoje kategórie"
       ]
     },
     "Title header for keys table": {
@@ -17952,6 +18042,17 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nová správa",
+        "${ messageCount } nové správy",
+        "${ messageCount } nových správ",
+        "${ messageCount } nových správ"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Od: ${ sender } - ${ message.Subject }"
       ]
     }
   }

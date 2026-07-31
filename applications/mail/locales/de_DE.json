@@ -1718,6 +1718,9 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Yes, organize it": [
+        "Ja, ordne es"
       ]
     },
     "action": {
@@ -1745,6 +1748,9 @@
       ],
       "Skip": [
         "Überspringen"
+      ],
+      "Set up categories": [
+        "Kategorien einrichten"
       ]
     },
     "Actions message": {
@@ -4532,6 +4538,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klicke mit der rechten Maustaste auf eine E-Mail und wähle „Verschieben nach“ aus, oder ziehe sie per Drag-and-drop in eine andere Kategorie. Ähnliche E-Mails werden künftig automatisch dorthin sortiert."
       ]
     },
     "description": {
@@ -9393,6 +9402,25 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "Move here": [
+        "Hierhin verschieben"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Du hast **${ count } Unterhaltung** in deiner Kategorie ${ categoryLabel }",
+        "Du hast **${ count } Unterhaltungen** in deiner Kategorie ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Du hast **${ count } Nachricht** in deiner Kategorie ${ categoryLabel }",
+        "Du hast **${ count } Nachrichten** in deiner Kategorie ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Du hast **${ checked } Unterhaltung** in deiner Kategorie ${ categoryLabel } ausgewählt",
+        "Du hast **${ checked } Unterhaltungen** in deiner Kategorie ${ categoryLabel } ausgewählt"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Du hast **${ checked } Nachricht** in deiner Kategorie ${ categoryLabel } ausgewählt",
+        "Du hast **${ checked } Nachrichten** in deiner Kategorie ${ categoryLabel } ausgewählt"
       ]
     },
     "info": {
@@ -10600,6 +10628,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alles, was deine Aufmerksamkeit erfordert, sowie E-Mails aus deaktivierten Kategorien"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "„Wichtig“ – Alles, was deine Aufmerksamkeit erfordert, sowie E-Mails aus deaktivierten Kategorien"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15356,6 +15390,10 @@
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Zu ${ label } verschoben. Eine ähnliche Nachricht wird künftig hierunter kategorisiert.",
+        "Zu ${ label } verschoben. Ähnliche Nachrichten werden künftig hierunter kategorisiert."
       ]
     },
     "Success notification": {
@@ -16652,6 +16690,12 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Make your inbox your own": [
+        "Deinen Posteingang nach deinen Wünschen gestalten"
+      ],
+      "Refine your Categories": [
+        "Verfeinere deine Kategorien"
       ]
     },
     "Title header for keys table": {
