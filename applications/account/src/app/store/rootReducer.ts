@@ -12,6 +12,7 @@ import {
     retentionPoliciesReducer,
     safetyReviewTelemetryReducer,
     samlReducer,
+    userOrganizationsReducer,
 } from '@proton/account';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
 import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
@@ -42,6 +43,7 @@ export const rootReducer = combineReducers({
     ...oauthTokenReducer,
     ...retentionPoliciesReducer,
     ...mspSubsidiariesReducer,
+    ...userOrganizationsReducer,
     ...appNameReducer,
     ...safetyReviewTelemetryReducer,
 });
