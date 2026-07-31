@@ -462,6 +462,7 @@ export const KnowledgeBasePanel = ({
                     >
                         <FilePreviewPanel
                             attachment={previewFile}
+                            spaceId={spaceId}
                             onBack={() => setPreviewFile(null)}
                             onClose={onClose}
                         />
