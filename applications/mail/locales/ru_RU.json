@@ -10870,6 +10870,12 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } {maxLength, plural, one {символ} few {символа} many {символов} other {символа}}"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "Trash": [
+        "Корзина"
       ]
     },
     "Label (begin date/advanced search)": {

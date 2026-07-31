@@ -1729,10 +1729,13 @@
         "Rebutja"
       ],
       "Stop": [
-        "Aturar-ho"
+        "Atura"
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Tocar per alternar ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Sí, organitza-ho"
       ]
     },
     "action": {
@@ -1760,6 +1763,9 @@
       ],
       "Skip": [
         "Ometre"
+      ],
+      "Set up categories": [
+        "Configurar les categories"
       ]
     },
     "Actions message": {
@@ -4511,12 +4517,12 @@
         "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
-        "Esteu redirigint ${ numAddressesOrSync } adreça de Gmail a ${ MAIL_APP_NAME }.",
-        "Esteu redirigint ${ numAddressesOrSync } adreces de Gmail a ${ MAIL_APP_NAME }."
+        "Esteu reenviant ${ numAddressesOrSync } adreça de Gmail a ${ MAIL_APP_NAME }.",
+        "Esteu reenviant ${ numAddressesOrSync } adreces de Gmail a ${ MAIL_APP_NAME }."
       ],
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
-        "Esteu reenviant correus electrònics des d'${ forwardingCount } adreça de Gmail. En connectar-la, podreu rebre'n tant com respondre'n des de ${ MAIL_APP_NAME }",
-        "Esteu reenviant correus electrònics des de ${ forwardingCount } adreces de Gmail. En connectar-les, tant en podreu rebre com respondre des de ${ MAIL_APP_NAME }"
+        "Esteu reenviant correus electrònics d'${ forwardingCount } adreça de Gmail. En connectar-la, podreu tant rebre com respondre des de ${ MAIL_APP_NAME }",
+        "Esteu reenviant correus electrònics des de ${ forwardingCount } adreces de Gmail. En connectar-les, podreu tant rebre com respondre des de ${ MAIL_APP_NAME }"
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "Heu connectat ${ MAX_SYNC_PAID_USER } adreça de Gmail. Per afegir-ne una altra, primer desactiveu un dels vostres comptes connectats.",
@@ -4547,6 +4553,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Feu clic amb el botó dret en un correu i seleccioneu «Moure a», o arrossegueu-lo i deixeu-lo anar en una altra categoria. En el futur, els correus similars s'hi classificaran automàticament."
       ]
     },
     "description": {
@@ -4569,6 +4578,13 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "De: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } missatge nou",
+        "${ messageCount } missatges nous"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "De: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9407,6 +9423,35 @@
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "El podeu importar com a nou índex de cerca base per a finalitats de desenvolupament."
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } correu electrònic → ${ dest }",
+        "${ count } correus electrònics → ${ dest }"
+      ],
+      "Move emails": [
+        "Moure els correus electrònics"
+      ],
+      "Move here": [
+        "Moure aquí"
+      ],
+      "Opened ${ location }": [
+        "S'ha obert ${ location }"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Teniu **${ count } conversa** a la categoria ${ categoryLabel }",
+        "Teniu **${ count } converses** a la categoria ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Teniu **${ count } missatge** a la categoria ${ categoryLabel }",
+        "Teniu **${ count } missatges** a la categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Heu seleccionat **${ checked } conversa** de la categoria ${ categoryLabel }",
+        "Heu seleccionat **${ checked } converses** de la categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Heu seleccionat **${ checked } missatge** de la categoria ${ categoryLabel }",
+        "Heu seleccionat **${ checked } missatges** de la categoria ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10409,7 +10454,7 @@
         "Remitent"
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
-        "Compartiu la vostra disponibilitat amb les pàgines de reserva a ${ CALENDAR_APP_NAME }, i organitzeu reunions segures amb ${ MEET_APP_NAME }."
+        "Compartiu la vostra disponibilitat amb les pàgines de reserva a ${ CALENDAR_APP_NAME } i organitzeu reunions segures amb ${ MEET_APP_NAME }."
       ],
       "Sign emails": [
         "Signar correu electrònics"
@@ -10608,6 +10653,21 @@
       ],
       "v2": [
         "v2"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tot allò que necessiti la vostra atenció, a més dels correus electrònics de les categories desactivades"
+      ],
+      "Archive": [
+        "Arxivar"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primari: tot allò que necessiti la vostra atenció, a més dels correus electrònics de les categories desactivades"
+      ],
+      "Spam": [
+        "Correu brossa"
+      ],
+      "Trash": [
+        "Paperera"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11590,8 +11650,8 @@
         "Programació de cites"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "Programació de cites amb ${ n } pàgina de reserva",
-        "Programació de cites amb ${ n } pàgines de reserva"
+        "Programació de cites amb ${ n } pàgina de reserves",
+        "Programació de cites amb ${ n } pàgines de reserves"
       ],
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
@@ -11908,8 +11968,8 @@
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Ús compartit de la caixa forta amb fins a ${ n } persona",
-        "Ús compartit de la caixa forta amb fins a ${ n } persones"
+        "Compartició de la caixa forta amb fins a ${ n } persona",
+        "Compartició de la caixa forta amb fins a ${ n } persones"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
@@ -13204,7 +13264,7 @@
         "Aquest contacte actualment signa els missatges amb aquesta clau"
       ],
       "This key is used for message verification": [
-        "Aquesta clau s'utilitza per la verificació de missatges"
+        "Aquesta clau s'utilitza per a la verificació de missatges"
       ],
       "This key is used to encrypt messages to this contact": [
         "Aquesta clau s'utilitza per xifrar missatges per a aquest contacte"
@@ -13699,7 +13759,7 @@
         "Comenceu a guanyar crèdits"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
-        "Podeu obtenir fins a **${ maxRewardAmount }** en crèdits."
+        "Obtingueu fins a **${ maxRewardAmount }** en crèdit."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
@@ -15358,6 +15418,10 @@
       ],
       "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "S'han mogut a ${ label }. Els missatges similars es classificaran aquí en el futur."
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "S'ha mogut a ${ label }. Els missatges similars es classificaran aquí en el futur.",
+        "S'han mogut a ${ label }. Els missatges similars es classificaran aquí en el futur."
       ]
     },
     "Success notification": {
@@ -16654,6 +16718,15 @@
       ],
       "Stay for 50% off your next month": [
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
+      ],
+      "Make your inbox your own": [
+        "Personalitzeu la vostra bústia d'entrada"
+      ],
+      "Move emails": [
+        "Moure els correus electrònics"
+      ],
+      "Refine your Categories": [
+        "Poliu les vostres categories"
       ]
     },
     "Title header for keys table": {

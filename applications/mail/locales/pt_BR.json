@@ -1730,6 +1730,12 @@
       ],
       "Stop": [
         "Parar"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Alternar o ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Sim, organize isso"
       ]
     },
     "action": {
@@ -1757,6 +1763,9 @@
       ],
       "Skip": [
         "Pular"
+      ],
+      "Set up categories": [
+        "Configurar categorias"
       ]
     },
     "Actions message": {
@@ -4544,6 +4553,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Clique com o botão direito em um e-mail e selecione \"Mover para\" ou arraste e solte-o em outra categoria. E-mails semelhantes serão organizados lá automaticamente no futuro."
       ]
     },
     "description": {
@@ -4566,6 +4578,13 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "De: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } nova mensagem",
+        "${ messageCount } novas mensagens"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "De: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9384,6 +9403,38 @@
       ],
       "Details": [
         "Detalhes"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mails → ${ dest }"
+      ],
+      "Move emails": [
+        "Mover e-mails"
+      ],
+      "Move here": [
+        "Mover aqui"
+      ],
+      "Opened ${ location }": [
+        "Aberto ${ location }"
+      ],
+      "Thinking about this": [
+        "Pensando nisso"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Você tem **${ count } conversa** na sua categoria ${ categoryLabel }",
+        "Você tem **${ count } conversas** na sua categoria ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Você tem **${ count } mensagem** na sua categoria ${ categoryLabel }",
+        "Você tem **${ count } mensagens** na sua categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Você selecionou **${ checked } conversa** na sua categoria ${ categoryLabel }",
+        "Você selecionou **${ checked } conversas** na sua categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Você selecionou **${ checked } mensagem** na sua categoria ${ categoryLabel }",
+        "Você selecionou **${ checked } mensagens** na sua categoria ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10585,6 +10636,21 @@
       ],
       "v2": [
         "v2"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tudo o que requer sua atenção, além dos e-mails das categorias desativadas"
+      ],
+      "Archive": [
+        "Arquivar"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal — Tudo o que requer sua atenção, além dos e-mails das categorias desativadas"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Lixeira"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15341,6 +15407,10 @@
       ],
       "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "Movidas para ${ label }. Mensagens semelhantes serão categorizadas aqui no futuro."
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Movida para ${ label }. Mensagem semelhante será categorizada lá no futuro.",
+        "Movidas para ${ label }. Mensagens semelhantes serão categorizadas lá no futuro."
       ]
     },
     "Success notification": {
@@ -16637,6 +16707,15 @@
       ],
       "Stay for 50% off your next month": [
         "Fique por mais um mês com 50% de desconto"
+      ],
+      "Make your inbox your own": [
+        "Deixe sua caixa de entrada do jeito que você quiser"
+      ],
+      "Move emails": [
+        "Mover e-mails"
+      ],
+      "Refine your Categories": [
+        "Refine suas categorias"
       ]
     },
     "Title header for keys table": {

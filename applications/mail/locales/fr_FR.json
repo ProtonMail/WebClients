@@ -4569,6 +4569,13 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "De : ${ sender } – ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } nouveau message",
+        "${ messageCount } nouveaux messages"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "De : ${ sender } – ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9407,6 +9414,9 @@
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "Vous pouvez l'importer en tant que nouvel index de recherche de base à des fins de développement."
+      ],
+      "Move emails": [
+        "Déplacer les e-mails"
       ]
     },
     "info": {
@@ -10608,6 +10618,15 @@
       ],
       "v2": [
         "v2"
+      ],
+      "Archive": [
+        "Archives"
+      ],
+      "Spam": [
+        "Indésirables/spam"
+      ],
+      "Trash": [
+        "Corbeille"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16654,6 +16673,9 @@
       ],
       "Stay for 50% off your next month": [
         "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
+      ],
+      "Move emails": [
+        "Déplacer les e-mails"
       ]
     },
     "Title header for keys table": {

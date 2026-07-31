@@ -1733,6 +1733,9 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Εναλλαγή ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Ναι, οργανώστε το"
       ]
     },
     "action": {
@@ -1760,6 +1763,9 @@
       ],
       "Skip": [
         "Παράλειψη"
+      ],
+      "Set up categories": [
+        "Ρύθμιση κατηγοριών"
       ]
     },
     "Actions message": {
@@ -4547,6 +4553,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Κάντε δεξί κλικ σε ένα email και επιλέξτε \"Μετακίνηση σε\" ή σύρετέ το και αποθέστε το σε άλλη κατηγορία. Παρόμοια μηνύματα θα ταξινομούνται αυτόματα εκεί στο μέλλον."
       ]
     },
     "description": {
@@ -4569,6 +4578,13 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "Από: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } νέο μήνυμα",
+        "${ messageCount } νέα μηνύματα"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Από: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9404,6 +9420,38 @@
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "Μπορείτε να το εισαγάγετε ως νέο ευρετήριο αναζήτησης ιδρύματος για σκοπούς ανάπτυξης."
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } emails → ${ dest }"
+      ],
+      "Move emails": [
+        "Μετακίνηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Move here": [
+        "Μετακίνηση εδώ"
+      ],
+      "Opened ${ location }": [
+        "Άνοιξε ${ location }"
+      ],
+      "Thinking about this": [
+        "Το σκέφτομαι αυτό"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Έχετε **${ count } συνομιλία** στην ${ categoryLabel } κατηγορία σας",
+        "Έχετε **${ count } συνομιλίες** στην ${ categoryLabel } κατηγορία σας"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Έχετε **${ count } μήνυμα** στην ${ categoryLabel } κατηγορία σας",
+        "Έχετε **${ count } μηνύματα** στην ${ categoryLabel } κατηγορία σας"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Επιλέξατε **${ checked } συνομιλία** στην ${ categoryLabel } κατηγορία σας",
+        "Επιλέξατε **${ checked } συνομιλίες** στην ${ categoryLabel } κατηγορία σας"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Επιλέξατε **${ checked } μήνυμα** στην ${ categoryLabel } κατηγορία σας",
+        "Επιλέξατε **${ checked } μηνύματα** στην ${ categoryLabel } κατηγορία σας"
       ]
     },
     "info": {
@@ -10605,6 +10653,21 @@
       ],
       "v2": [
         "v2"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Οτιδήποτε χρειάζεται την προσοχή σας, καθώς και ηλεκτρονικά μηνύματα από απενεργοποιημένες κατηγορίες"
+      ],
+      "Archive": [
+        "Αρχειοθέτηση"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Κύρια - Οτιδήποτε χρειάζεται την προσοχή σας, καθώς και ηλεκτρονικά μηνύματα από απενεργοποιημένες κατηγορίες"
+      ],
+      "Spam": [
+        "Ενοχλητικό"
+      ],
+      "Trash": [
+        "Διαγραμμένα"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15355,6 +15418,10 @@
       ],
       "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "Μετακινήθηκε στο ${ label }. Παρόμοια μηνύματα θα κατηγοριοποιηθούν εδώ στο μέλλον."
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Μετακινήθηκε στο ${ label }. Παρόμοιο μήνυμα θα κατηγοριοποιηθεί εκεί στο μέλλον.",
+        "Μετακινήθηκε στο ${ label }. Παρόμοια μηνύματα θα κατηγοριοποιηθούν εκεί στο μέλλον."
       ]
     },
     "Success notification": {
@@ -16651,6 +16718,15 @@
       ],
       "Stay for 50% off your next month": [
         "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
+      ],
+      "Make your inbox your own": [
+        "Κάντε τα εισερχόμενά σας δικά σας"
+      ],
+      "Move emails": [
+        "Μετακίνηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Refine your Categories": [
+        "Βελτιώστε τις κατηγορίες σας"
       ]
     },
     "Title header for keys table": {

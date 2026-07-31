@@ -1733,6 +1733,9 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } uygulamasına geç"
+      ],
+      "Yes, organize it": [
+        "Evet, düzenle"
       ]
     },
     "action": {
@@ -1760,6 +1763,9 @@
       ],
       "Skip": [
         "Atla"
+      ],
+      "Set up categories": [
+        "Kategorileri ayarla"
       ]
     },
     "Actions message": {
@@ -4547,6 +4553,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Bir e-postaya sağ tıklayın ve “Şuraya taşı” seçeneğini seçin ya da e-postayı sürükleyip başka bir kategoriye bırakın. Bundan sonra benzer e-postalar otomatik olarak oraya taşınır."
       ]
     },
     "description": {
@@ -4569,6 +4578,13 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "Kimden: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } yeni ileti",
+        "${ messageCount } yeni ileti"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Gönderici: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9407,6 +9423,35 @@
       ],
       "Thinking about this": [
         "Bunun hakkında düşünülüyor"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-posta → ${ dest }",
+        "${ count } e-posta → ${ dest }"
+      ],
+      "Move emails": [
+        "E-postaları taşı"
+      ],
+      "Move here": [
+        "Buraya taşı"
+      ],
+      "Opened ${ location }": [
+        "Açıldı ${ location }"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ count } yazışmanız** var",
+        "${ categoryLabel } kategorisinde **${ count } yazışmanız** var"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ count } iletiniz** var",
+        "${ categoryLabel } kategorisinde **${ count } iletiniz** var"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ checked } yazışma** seçtiniz",
+        "${ categoryLabel } kategorisinde **${ checked } yazışma** seçtiniz"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ checked } ileti** seçtiniz",
+        "${ categoryLabel } kategorisinde **${ checked } ileti** seçtiniz"
       ]
     },
     "info": {
@@ -10608,6 +10653,21 @@
       ],
       "v2": [
         "v2"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Dikkatinizi gerektiren her şey ve kapatılmış kategorilerden gelen e-postalar"
+      ],
+      "Archive": [
+        "Arşivle"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Birincil - Dikkatinizi gerektiren her şey ve kapatılmış kategorilerden gelen e-postalar"
+      ],
+      "Spam": [
+        "İstenmeyen e-posta"
+      ],
+      "Trash": [
+        "Çöp kutusu"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15358,6 +15418,10 @@
       ],
       "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak."
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye eklenecek.",
+        "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak."
       ]
     },
     "Success notification": {
@@ -16654,6 +16718,15 @@
       ],
       "Stay for 50% off your next month": [
         "Sonraki ay %50 indirimden yararlanın"
+      ],
+      "Make your inbox your own": [
+        "Gelen kutunuzu kendinize göre düzenleyin"
+      ],
+      "Move emails": [
+        "E-postaları taşı"
+      ],
+      "Refine your Categories": [
+        "Kategorilerinizi düzenleyin"
       ]
     },
     "Title header for keys table": {

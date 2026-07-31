@@ -1727,6 +1727,12 @@
       ],
       "Stop": [
         "Stoppa"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Slå på/av ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Ja, organisera det"
       ]
     },
     "action": {
@@ -1754,6 +1760,9 @@
       ],
       "Skip": [
         "Hoppa över"
+      ],
+      "Set up categories": [
+        "Ställ in kategorier"
       ]
     },
     "Actions message": {
@@ -4553,6 +4562,13 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "Från: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } nytt meddelande",
+        "${ messageCount } nya meddelanden"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Från: ${ sender } – ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9372,6 +9388,34 @@
       ],
       "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
         "Import pågår. Du kan stänga denna dialog medan den körs och återkomma till den senare. Stäng dock inte fliken."
+      ],
+      "Move emails": [
+        "Flytta e-post"
+      ],
+      "Move here": [
+        "Flytta hit"
+      ],
+      "Opened ${ location }": [
+        "Öppnade ${ location }"
+      ],
+      "Thinking about this": [
+        "Tänker på detta"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Du har **${ count } konversation** i din kategori ${ categoryLabel }",
+        "Du har **${ count } konversationer** i din kategori ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Du har **${ count } meddelande** i din kategori ${ categoryLabel }",
+        "Du har **${ count } meddelanden** i din kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Du valde **${ checked } konversation** i din kategori ${ categoryLabel }",
+        "Du valde **${ checked } konversationer** i din kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Du valde **${ checked } meddelande** i din kategori ${ categoryLabel }",
+        "Du valde **${ checked } meddelanden** i din kategori ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10570,6 +10614,21 @@
       ],
       "v2": [
         "v2"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Allt som behöver din uppmärksamhet, plus e-post från inaktiverade kategorier"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primär – Allt som behöver din uppmärksamhet, plus e-post från inaktiverade kategorier"
+      ],
+      "Spam": [
+        "Skräppost"
+      ],
+      "Trash": [
+        "Papperskorg"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16616,6 +16675,15 @@
       ],
       "Stay for 50% off your next month": [
         "Stanna kvar för 50 % rabatt nästa månad"
+      ],
+      "Make your inbox your own": [
+        "Gör din inkorg till din egen"
+      ],
+      "Move emails": [
+        "Flytta e-post"
+      ],
+      "Refine your Categories": [
+        "Förfina dina kategorier"
       ]
     },
     "Title header for keys table": {
