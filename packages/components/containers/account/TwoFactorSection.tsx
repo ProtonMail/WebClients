@@ -13,20 +13,27 @@ import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import { setSecurityKeyRequirePinFlag } from '@proton/components/containers/account/fido/setSecurityKeyRequirePinFlag';
 import useConfig from '@proton/components/hooks/useConfig';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getHasFIDO2Support } from '@proton/shared/lib/authentication/twoFactor';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { FIDO2_CREDENTIALS_PIN_VALUE, type UserSettings } from '@proton/shared/lib/interfaces';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 import { Fido2CredentialFlags } from '@proton/shared/lib/webauthn/interface';
+import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
 import LostTwoFAModal from './LostTwoFAModal';
 import SettingsLayout from './SettingsLayout';
@@ -46,8 +53,13 @@ import { getSecurityKeySigningWarning } from './totp/getSecurityKeySigningWarnin
 const defaultTmpRemove = { keys: [], type: 'all' as const };
 
 const TwoFactorSection = () => {
+    const dispatch = useDispatch();
+    const isShowFido2CredentialsPinOptInToggleEnabled = useFlag('ShowFido2CredentialsPinOptInToggle');
     const { APP_NAME } = useConfig();
     const [userSettings] = useUserSettings();
+    const { createNotification } = useNotifications();
+    const handleError = useErrorHandler();
+    const [loading, withLoading] = useLoading();
     const [enableTOTPModal, setEnableTOTPModalOpen, renderEnableTOTPModal] = useModalState();
     const [disableTOTPModal, setDisableTOTPModalOpen, renderDisableTOTPModal] = useModalState();
     const [lostTwoFAPModal, setLostTwoFAModal, renderLostTwoFAModal] = useModalState();
@@ -82,6 +94,21 @@ const TwoFactorSection = () => {
             return;
         }
         setAddSecurityKeyModal(true);
+    };
+
+    const handleSecurityKeyRequirePinToggle = async (value: boolean) => {
+        try {
+            await dispatch(setSecurityKeyRequirePinFlag(value));
+
+            createNotification({
+                type: 'info',
+                text: value
+                    ? c('fido2: Info').t`PIN requirement for security keys enabled`
+                    : c('fido2: Info').t`PIN requirement for security keys disabled`,
+            });
+        } catch (e) {
+            handleError(e);
+        }
     };
 
     const twoFactorAuthLink =
@@ -144,6 +171,12 @@ const TwoFactorSection = () => {
                                 removeSecurityKeyModal.onExit();
                                 setTmpRemove(defaultTmpRemove);
                             }}
+                            onSuccess={(userSettings: UserSettings) => {
+                                const registeredKeys = userSettings['2FA']?.RegisteredKeys || [];
+                                if (registeredKeys.length === 0) {
+                                    dispatch(setSecurityKeyRequirePinFlag(false)).catch(noop);
+                                }
+                            }}
                         />
                     )}
                     {renderEditSecurityKeyModal && tmpEdit && (
@@ -172,6 +205,33 @@ const TwoFactorSection = () => {
                             <Toggle checked={hasFIDO2Enabled} id="twoFactorKeyToggle" onChange={handleChangeKey} />
                         </SettingsLayoutRight>
                     </SettingsLayout>
+                    {isShowFido2CredentialsPinOptInToggleEnabled && registeredKeys.length > 0 && (
+                        <SettingsLayout>
+                            <SettingsLayoutLeft>
+                                <label htmlFor="requireSecurityKey" className="text-semibold">
+                                    <span className="mr-2">{c('fido2: Info').t`Require PIN for security key`}</span>
+                                    <Info
+                                        url={twoFactorAuthLink}
+                                        title={c('fido2: Info')
+                                            .t`Enter your PIN each time you use your security key with ${BRAND_NAME}, when the key supports it. This only applies to keys that have a PIN set up.`}
+                                    />
+                                </label>
+                            </SettingsLayoutLeft>
+                            <SettingsLayoutRight isToggleContainer>
+                                <Toggle
+                                    loading={loading}
+                                    checked={
+                                        userSettings.Flags.Fido2CredentialsPinOptIn ===
+                                        FIDO2_CREDENTIALS_PIN_VALUE.ENABLED
+                                    }
+                                    id="requireSecurityKey"
+                                    onChange={({ target: { checked } }) =>
+                                        withLoading(handleSecurityKeyRequirePinToggle(checked))
+                                    }
+                                />
+                            </SettingsLayoutRight>
+                        </SettingsLayout>
+                    )}
                     {registeredKeys.length > 0 && (
                         <div className="mb-4">
                             <div>

@@ -7,6 +7,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import { setSecurityKeyRequirePinFlag } from '@proton/components/containers/account/fido/setSecurityKeyRequirePinFlag';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -46,6 +47,7 @@ const LostTwoFAModal = ({ availableRecoveryMethods, onClose, ...rest }: Props) =
                 availableRecoveryMethods={availableRecoveryMethods}
                 onSuccess={async () => {
                     await api(disable2FA());
+                    await dispatch(setSecurityKeyRequirePinFlag(false));
                     await dispatch(userSettingsThunk({ cache: CacheType.None }));
                     await api(lockSensitiveSettings()).catch(noop);
 

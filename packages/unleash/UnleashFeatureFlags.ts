@@ -117,6 +117,7 @@ enum AccountFlag {
     UserGroupsScimGroups = 'UserGroupsScimGroups',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
     WorldCupRetention = 'WorldCupRetention',
+    ShowFido2CredentialsPinOptInToggle = 'ShowFido2CredentialsPinOptInToggle',
 }
 
 enum PaymentsFlag {
