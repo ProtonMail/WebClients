@@ -65,5 +65,16 @@ export const assignMspSubsidiaryManager = (id: string, memberId: string, data: A
 
 export const unassignMspSubsidiaryManager = (id: string, memberId: string) => ({
     method: 'delete',
-    url: `organizations/subsidiaries/${id}/delegated-managers/${memberId}`,
+    url: `organizations/subsidiaries/${id}/members/${memberId}`,
+});
+
+export interface MspDelegatedManager {
+    ID: string;
+    Name: string;
+    PublicKey: string;
+}
+
+export const getMspSubsidiaryManagers = (id: string) => ({
+    method: 'get',
+    url: `organizations/subsidiaries/${id}/members`,
 });

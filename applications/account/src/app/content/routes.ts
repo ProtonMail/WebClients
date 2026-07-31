@@ -30,7 +30,7 @@ export const getRoutes = (params: AllRouterParams) => {
         docs: getDocsAppRoutes(organizationParams),
         pass: getPassAppRoutes(organizationParams),
         organization: getOrganizationAppRoutes(organizationParams),
-        msp: getMspAppRoutes(sharedSettings),
+        msp: getMspAppRoutes(organizationParams),
         vpn: getVpnAppRoutes(sharedSettings),
         wallet: getWalletAppRoutes(sharedSettings),
         authenticator: getAuthenticatorAppRoutes(sharedSettings),

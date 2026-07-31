@@ -65,6 +65,7 @@ export * from './retentionPolicies';
 export * from './previousSubscription';
 export * from './delegatedAccess';
 export * from './mspSubsidiaries';
+export * from './userOrganizations';
 export * from './referralInfo';
 export * from './referrals';
 export * from './entitlements';
