@@ -14,11 +14,11 @@ import type {
 } from '@proton/pass/lib/organization/types';
 import type { OrganizationUrlPauseEntryDto } from '@proton/pass/types';
 
-export const PauseList: FC = () => {
+export const PauseList: FC<{ upgradeRequired: boolean }> = ({ upgradeRequired }) => {
     const { organization } = usePassBridge();
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
-    const [loading, withLoading] = useLoading(true);
+    const [loading, withLoading] = useLoading(!upgradeRequired);
 
     const [entries, setEntries] = useState<OrganizationUrlPauseEntryDto[]>([]);
 
@@ -63,6 +63,12 @@ export const PauseList: FC = () => {
         });
 
     useEffect(() => {
+        // On Pass Essentials the org pause-list endpoint is unavailable and this page is
+        // shown as an upsell preview, so don't even attempt the fetch.
+        if (upgradeRequired) {
+            return;
+        }
+
         withLoading(fetchEntries()).catch(handleError);
     }, []);
 
