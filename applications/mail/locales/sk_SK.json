@@ -1736,6 +1736,18 @@
       ],
       "Reject": [
         "Odmietnuť"
+      ],
+      "Clear conversation": [
+        "Vyčistiť konverzáciu"
+      ],
+      "Stop": [
+        "Zastaviť"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Prepnúť ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Áno, organizovať"
       ]
     },
     "action": {
@@ -1763,6 +1775,9 @@
       ],
       "Skip": [
         "Preskočiť"
+      ],
+      "Set up categories": [
+        "Nastavte kategórie"
       ]
     },
     "Actions message": {
@@ -4614,6 +4629,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Kliknite pravým tlačidlom myši na email a vyberte možnosť „Presunúť do“ alebo ho pretiahnite do inej kategórie. Podobné emaily sa tam v budúcnosti zaradia automaticky."
       ]
     },
     "description": {
@@ -4638,6 +4656,15 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "Od: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } nová správa",
+        "${ messageCount } nové správy",
+        "${ messageCount } nových správ",
+        "${ messageCount } nových správ"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Od: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9725,6 +9752,48 @@
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "Môžete ho importovať ako nový index foundation-search na vývojové účely."
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } emaily → ${ dest }",
+        "${ count } emailov → ${ dest }",
+        "${ count } emailov → ${ dest }"
+      ],
+      "Move emails": [
+        "Presunúť emaily"
+      ],
+      "Move here": [
+        "Presunúť sem"
+      ],
+      "Opened ${ location }": [
+        "Otvorené ${ location }"
+      ],
+      "Thinking about this": [
+        "Premýšľam o tom"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Máte **${ count } konverzáciu** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácie** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácií** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácií** vo vašej kategórii ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Máte **${ count } správu** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } správy** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } správ** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } správ** vo vašej kategórii ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Vybrali ste **${ checked } konverzáciu** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácie** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácií** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácií** vo vašej kategórii ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Vybrali ste **${ checked } správu** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správy** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správ** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správ** vo vašej kategórii ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10942,6 +11011,21 @@
       ],
       "v2": [
         "v2"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Všetko, čo si vyžaduje vašu pozornosť, plus emaily z deaktivovaných kategórií"
+      ],
+      "Archive": [
+        "Archív"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primárna - Všetko, čo si vyžaduje vašu pozornosť, plus emaily z deaktivovaných kategórií"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Kôš"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11439,6 +11523,9 @@
         "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
         "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
         "${ MEET_APP_NAME } (pre ${ quantity } používateľov)"
+      ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
       ]
     },
     "meet_2025: Feature": {
@@ -13851,6 +13938,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Ask anything…": [
+        "Opýtajte sa na čokoľvek..."
       ]
     },
     "Placeholder for contact group name": {
@@ -15931,6 +16021,12 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Presunuté do ${ label }. Podobná správa tam bude v zaradená aj v budúcnosti.",
+        "Presunuté do ${ label }. Podobné správy tam budú v zaradené aj v budúcnosti.",
+        "Presunuté do ${ label }. Podobné správy tam budú v zaradené aj v budúcnosti.",
+        "Presunuté do ${ label }. Podobné správy tam budú v zaradené aj v budúcnosti."
       ]
     },
     "Success notification": {
@@ -17273,6 +17369,15 @@
       ],
       "Stay for 50% off your next month": [
         "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
+      ],
+      "Make your inbox your own": [
+        "Prispôsobte si svoju doručenú poštu podľa seba"
+      ],
+      "Move emails": [
+        "Presunúť emaily"
+      ],
+      "Refine your Categories": [
+        "Upresnite svoje kategórie"
       ]
     },
     "Title header for keys table": {
