@@ -20,6 +20,7 @@ export function useTrashed(drive: ProtonDriveClient) {
 
     const nodes: NodeEntity[] = []
     try {
+      // TODO replace with "iterateTrashedNodeUids" and use AbortController (not time critical)
       for await (const node of drive.iterateTrashedNodes()) {
         if (!mimeTypeToProtonDocumentType(node.mediaType)) {
           continue
