@@ -201,10 +201,10 @@ export class SelectedPlan {
     }
 
     setMeetCount(newCount: number): SelectedPlan {
-        return this.setAddonCount(ADDON_PREFIXES.MEET, newCount, false);
+        return this.setAddonCount(ADDON_PREFIXES.MEET, newCount);
     }
 
-    private setAddonCount(addonType: ADDON_PREFIXES, newCount: number, balance: boolean): SelectedPlan {
+    setAddonCount(addonType: ADDON_PREFIXES, newCount: number, balance: boolean = false): SelectedPlan {
         const applied = this.applyAddonCount(addonType, newCount);
         if (applied === this) {
             return this;
@@ -279,6 +279,11 @@ export class SelectedPlan {
     // Member-capped addons (scribe, lumo, meet) can't exceed the user count. Drops stale addons from
     // other plans first, then trims the matching one down to the cap if still over.
     private capAddonType(addonType: ADDON_PREFIXES): SelectedPlan {
+        //addons not related to user account can skip this capped logic
+        if (![ADDON_PREFIXES.LUMO, ADDON_PREFIXES.SCRIBE, ADDON_PREFIXES.MEET].includes(addonType)) {
+            return this;
+        }
+
         const featureLimitKey = getAddonConfigByType(addonType)?.featureLimit.key;
         if (!featureLimitKey) {
             return this;
