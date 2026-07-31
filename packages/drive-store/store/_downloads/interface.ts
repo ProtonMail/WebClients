@@ -89,7 +89,7 @@ export type OnSignatureIssueCallback = (
     link: LinkDownload,
     signatureIssues: SignatureIssues
 ) => Promise<void>;
-export type OnDecryptionIssueCallback = (link: LinkDownload, error: unknown) => void;
+type OnDecryptionIssueCallback = (link: LinkDownload, error: unknown) => void;
 type OnScanIssueCallback = (abortSignal: AbortSignal, err: any, response?: ScanResultItem) => Promise<void>;
 export type OnContainsDocumentCallback = (abortSignal: AbortSignal) => Promise<void>;
 type OnErrorCallback = (err: Error) => void;
@@ -129,14 +129,6 @@ export type DecryptFileKeys = {
     sessionKeys?: SessionKey;
     addressPublicKeys?: PublicKeyReference[];
 };
-
-export type InitDownloadCallback = (
-    name: string,
-    list: LinkDownload[],
-    eventCallbacks: DownloadEventCallbacks,
-    log: LogCallback,
-    options?: { virusScan?: boolean; token?: string }
-) => DownloadControls;
 
 export enum TransferSignatureIssueStrategy {
     Abort = 'abort',

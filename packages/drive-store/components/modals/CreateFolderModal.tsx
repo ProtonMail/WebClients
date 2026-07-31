@@ -12,7 +12,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     useFormErrors,
-    useModalTwoStatic,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
@@ -101,6 +100,3 @@ const CreateFolderModal = ({ createFolder, onClose, folder, onCreateDone, ...mod
 };
 
 export default CreateFolderModal;
-export const useCreateFolderModal = () => {
-    return useModalTwoStatic(CreateFolderModal);
-};

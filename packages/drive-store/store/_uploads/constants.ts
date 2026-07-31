@@ -38,12 +38,6 @@ export const MAX_BLOCKS_PER_UPLOAD = MAX_ENCRYPTED_BLOCKS + MAX_UPLOADING_BLOCKS
 export const MAX_UPLOAD_BLOCKS_LOAD = 4;
 
 /**
- * MAX_UPLOAD_FOLDER_LOAD limits the number of total folder being created
- * at one time.
- */
-export const MAX_UPLOAD_FOLDER_LOAD = 5;
-
-/**
  * How many ongoing uploads there can be. Without http2, we cannot do more
  * than six parallel requests to one host. With http2 (which we use), there
  * is theretically no limit, but still we should make a reasonable limit

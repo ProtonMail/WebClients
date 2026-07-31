@@ -9,7 +9,7 @@ import type { IconName } from '@proton/icons/types';
 import { SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
 import { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
-export const MenuItem = ({
+const MenuItem = ({
     iconName,
     label,
     isSelected,
@@ -29,8 +29,8 @@ export const MenuItem = ({
     </DropdownMenuButton>
 );
 
-export const permissionsOptions = [SHARE_MEMBER_PERMISSIONS.VIEWER, SHARE_MEMBER_PERMISSIONS.EDITOR];
-export const shareUrlPermissionsOptions = [SHARE_URL_PERMISSIONS.VIEWER, SHARE_URL_PERMISSIONS.EDITOR];
+const permissionsOptions = [SHARE_MEMBER_PERMISSIONS.VIEWER, SHARE_MEMBER_PERMISSIONS.EDITOR];
+const shareUrlPermissionsOptions = [SHARE_URL_PERMISSIONS.VIEWER, SHARE_URL_PERMISSIONS.EDITOR];
 
 interface Props {
     selectedPermissions: number;

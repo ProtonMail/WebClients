@@ -3,7 +3,7 @@ export interface TokenData {
     timestamp: number;
 }
 
-export type AnonymousUploadsToken = Map<string, TokenData>;
+type AnonymousUploadsToken = Map<string, TokenData>;
 
 export interface AnonymousUploadTokenState {
     _uploadTokens: AnonymousUploadsToken;

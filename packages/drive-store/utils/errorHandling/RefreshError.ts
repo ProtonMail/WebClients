@@ -1,9 +1,5 @@
 import { ERROR_REQUIRE_PAGE_REFRESH } from './errorStrings';
 
-export const isRefreshError = (err: any): err is RefreshError => {
-    return err.name === 'RefreshError';
-};
-
 /**
  * Builds a localized `RefreshError`. Useful to let the user know they should refresh the page.
  *
