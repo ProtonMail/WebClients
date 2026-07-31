@@ -392,6 +392,54 @@ describe('SelectedPlan', () => {
         });
     });
 
+    it('should not cap IP and domain addons as they are not member-related', () => {
+        const planIDs = {
+            [PLANS.VPN_BUSINESS]: 1,
+            [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
+            [ADDON_NAMES.IP_VPN_BUSINESS]: 50,
+        };
+
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(selectedPlan.getTotalUsers()).toEqual(4);
+        expect(selectedPlan.getTotal('MaxIPs')).toEqual(51);
+
+        const newSelectedPlan = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        // IP addons should NOT be capped to the number of members
+        expect(newSelectedPlan.getTotal('MaxIPs')).toEqual(51);
+
+        expect(newSelectedPlan.planIDs).toEqual({
+            [PLANS.VPN_BUSINESS]: 1,
+            [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
+            [ADDON_NAMES.IP_VPN_BUSINESS]: 50,
+        });
+    });
+
+    it('should not cap domain addons as they are not member-related', () => {
+        const planIDs = {
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 10,
+        };
+
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(selectedPlan.getTotalUsers()).toEqual(3);
+        expect(selectedPlan.getTotal('MaxDomains')).toEqual(25);
+
+        const newSelectedPlan = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        // Domain addons should NOT be capped to the number of members
+        expect(newSelectedPlan.getTotal('MaxDomains')).toEqual(25);
+
+        expect(newSelectedPlan.planIDs).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 10,
+        });
+    });
+
     it('should create copy', () => {
         const planIDs = {
             [PLANS.MAIL_BUSINESS]: 1,
