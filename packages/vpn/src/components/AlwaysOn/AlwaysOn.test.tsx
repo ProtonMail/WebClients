@@ -1,6 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { PLANS } from '@proton/payments/core/constants';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+
 import type { AlwaysOnPolicy } from '../../types/AlwaysOn';
 import { AlwaysOn } from './AlwaysOn';
 
@@ -23,6 +27,19 @@ vi.mock('@proton/components/hooks/useNotifications', () => ({
     default: () => ({ createNotification: vi.fn() }),
 }));
 
+const subscriptionMock = vi.fn<() => [MaybeFreeSubscription, boolean]>();
+vi.mock('@proton/account/subscription/hooks', () => ({
+    useSubscription: () => subscriptionMock(),
+}));
+
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: () => [{ isAdmin: true, isSelf: true }],
+}));
+
+vi.mock('@proton/components/containers/payments/subscription/SubscriptionModalProvider', () => ({
+    useSubscriptionModalRaw: () => vi.fn(),
+}));
+
 const buildPolicy = (overrides: Partial<AlwaysOnPolicy> = {}): AlwaysOnPolicy => ({
     ID: 'policy-1',
     EnforceAlwaysOn: true,
@@ -43,6 +60,20 @@ describe('AlwaysOn', () => {
         flagMock.mockReturnValue(true);
         fetchPolicy.mockResolvedValue(null);
         updatePolicy.mockResolvedValue(buildPolicy());
+        subscriptionMock.mockReturnValue([buildSubscription(PLANS.VPN_BUSINESS), false]);
+    });
+
+    it('shows a loader while the subscription is loading', () => {
+        subscriptionMock.mockReturnValue([undefined, true]);
+
+        const { container } = render(<AlwaysOn />);
+
+        // the subscription <Loader /> renders a small circle-loader; the policy loader is large
+        expect(container.querySelector('.circle-loader.is-small')).toBeInTheDocument();
+        expect(container.querySelector('.circle-loader.is-large')).not.toBeInTheDocument();
+        expect(screen.queryByText('Available on VPN Professional')).not.toBeInTheDocument();
+        expect(screen.queryByText('Ensure your organization is always protected')).not.toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: 'Configure Always-on VPN' })).not.toBeInTheDocument();
     });
 
     it('renders nothing when the feature flag is off', () => {
@@ -51,6 +82,15 @@ describe('AlwaysOn', () => {
         const { container } = render(<AlwaysOn />);
 
         expect(container).toBeEmptyDOMElement();
+    });
+
+    it('shows the upgrade view for VPN Essentials', () => {
+        subscriptionMock.mockReturnValue([buildSubscription(PLANS.VPN_PRO), false]);
+
+        render(<AlwaysOn />);
+
+        expect(screen.getByText('Available on VPN Professional')).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Upgrade to Professional' })).toBeInTheDocument();
     });
 
     it('shows the call-to-action when no policy is configured', async () => {

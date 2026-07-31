@@ -1,6 +1,9 @@
 import { useState } from 'react';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Loader } from '@proton/components/index';
+import { hasVpnPro } from '@proton/payments/core/subscription/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { AlwaysOnPolicyServiceProvider } from '../../contexts/AlwaysOnPolicyServiceContext';
@@ -11,6 +14,7 @@ import { InstructionsModal } from './modals/InstructionsModal/InstructionsModal'
 import { RemoveProfileModal } from './modals/RemoveProfileModal';
 import { ConfiguredProfileView } from './views/ConfiguredProfileView';
 import { UnconfiguredProfileView } from './views/UnconfiguredProfileView';
+import { UpgradeView } from './views/UpgradeView';
 
 const AlwaysOnOverview = () => {
     const { policy, isLoading, setPolicy } = useAlwaysOnPolicy();
@@ -19,6 +23,15 @@ const AlwaysOnOverview = () => {
     const [configureModalOpen, setConfigureModalOpen] = useState(false);
     const [instructionsModalOpen, setInstructionsModalOpen] = useState(false);
     const [removeModalOpen, setRemoveModalOpen] = useState(false);
+    const [subscription, isSubscriptionLoading] = useSubscription();
+    const isPlanVpnEssentials = hasVpnPro(subscription);
+
+    if (isSubscriptionLoading) {
+        return <Loader />;
+    }
+    if (isPlanVpnEssentials) {
+        return <UpgradeView />;
+    }
 
     const renderContent = () => {
         if (isLoading) {
@@ -80,6 +93,7 @@ const AlwaysOnOverview = () => {
             <RemoveProfileModal
                 open={removeModalOpen}
                 onClose={() => setRemoveModalOpen(false)}
+                windowsUninstall={policy?.Artifacts.windowsUninstall}
                 enableCloseWhenClickOutside
             />
         </div>
