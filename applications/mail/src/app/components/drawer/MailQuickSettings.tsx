@@ -62,7 +62,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { useCanReplayOnboarding } from 'proton-mail/hooks/useCanReplayOnboarding';
 
 import { CategoriesQuickSettings } from '../categoryView/CategoriesQuickSettings';
-import { DebugMailStoreButton } from '../debug/DebugMailStoreButton';
+import { MailDebugButton } from '../debug/MailDebugButton';
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
 import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
 
@@ -468,7 +468,7 @@ const MailQuickSettings = () => {
             <ClearBrowserDataModal {...clearBrowserDataProps} />
             <MailShortcutsModal {...mailShortcutsProps} />
             <KeyTransparencyDetailsModal {...keyTransparencyDetailsModalProps} />
-            <DebugMailStoreButton />
+            <MailDebugButton />
         </DrawerAppScrollContainer>
     );
 };
