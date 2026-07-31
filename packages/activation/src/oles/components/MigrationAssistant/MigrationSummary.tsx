@@ -162,6 +162,7 @@ const MigrationSummary: FC<{ model: MigrationModel }> = ({ model }) => {
             {reportUser && (
                 <ImportJournalModal
                     importerOrganizationId={model.importerOrganizationId}
+                    importedProducts={model.selectedProducts}
                     user={reportUser}
                     modalProps={{
                         open: true,
