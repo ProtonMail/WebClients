@@ -3,7 +3,6 @@
  * and are never used to render the UI. The list components remain the only thing that draws a row.
  */
 import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
-import type { Recipient } from '@proton/shared/lib/interfaces';
 
 import { getDate, hasAttachments, isStarred, isUnread } from 'proton-mail/helpers/elements';
 import { getCurrentFolders, getElementLabels } from 'proton-mail/helpers/labels';
@@ -14,9 +13,9 @@ import {
     elements as elementsSelector,
     selectConversationMode,
     selectLabelID,
-    selectPageSize,
 } from 'proton-mail/store/elements/elementsSelectors';
 
+import { formatLocalDate, formatSender } from '../../helpers/formatting';
 import type { MailToolDeps } from '../../toolModule';
 
 /** One on-screen email, metadata only — the shared row shape every list-style read returns. */
@@ -43,28 +42,8 @@ export interface AgentEmailPage {
     total: number;
 }
 
-const pad = (value: number) => String(value).padStart(2, '0');
-
-/**
- * The row's date as a local calendar day, read through the mailbox's own date source — `getDate`
- * resolves a conversation's label-contextual time, and building the day from local parts keeps the
- * agent's date equal to the day on screen (a UTC serialisation shifts either side of midnight).
- * Assembled by hand rather than via date-fns `format`: this is a fixed machine format for the model,
- * so unlike display copy it must not vary with `dateLocale`.
- */
-const toDate = (element: Element, labelID: string): string => {
-    const date = getDate(element, labelID);
-    if (date.getTime() === 0) {
-        return '';
-    }
-
-    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
-};
-
-const formatSender = (recipients: (Recipient | undefined)[]): string => {
-    const names = recipients.map((recipient) => recipient?.Name || recipient?.Address).filter(Boolean);
-    return names.length ? names.join(', ') : '(unknown sender)';
-};
+/** `getDate` resolves a conversation's label-contextual time, so this matches the day on screen. */
+const toDate = (element: Element, labelID: string): string => formatLocalDate(getDate(element, labelID));
 
 const formatRow = (row: AgentEmailRow): string => {
     const parts = [row.reference, row.from, row.subject, row.date, row.unread ? 'unread' : 'read', row.folder];
@@ -92,7 +71,7 @@ export const formatAgentEmailRows = (rows: AgentEmailRow[], total: number): stri
     const header =
         notShown > 0
             ? `${rows.length} of ${total} emails shown (${notShown} more not shown):`
-            : `${rows.length} emails shown:`;
+            : `${rows.length} email${rows.length === 1 ? '' : 's'} shown:`;
     return [header, ...rows.map(formatRow)].join('\n');
 };
 
@@ -101,9 +80,9 @@ type RowDeps = Pick<MailToolDeps, 'store' | 'getFolders' | 'getLabels' | 'getMai
 
 /**
  * Project the current on-screen page into {@link AgentEmailRow}s, minting a stable `email-…` reference
- * per element via the {@link ReferenceRegistry} (subject recorded as its display label). The page is
- * bounded by the mailbox's own page size (50/100/200) so the payload only ever describes what the user
- * can see, and `total` is the view's total so the model knows how much it is *not* seeing.
+ * per element via the {@link ReferenceRegistry} (subject recorded as its display label). The `elements`
+ * selector hands back exactly the on-screen page, so the payload only ever describes what the user can
+ * see, and `total` is the view's total so the model knows how much it is *not* seeing.
  *
  * Every field the mailbox also renders is derived through the helper the list components use, so the
  * agent can never describe a row differently from the row on screen.
@@ -116,9 +95,10 @@ export const buildAgentEmailRows = (deps: RowDeps, references: ReferenceRegistry
     const labels = deps.getLabels();
     const mailSettings = deps.getMailSettings();
 
-    const allElements = elementsSelector(state);
-    const total = contextTotalSelector(state) ?? allElements.length;
-    const rows: AgentEmailRow[] = allElements.slice(0, selectPageSize(state)).map((element) => {
+    // Already the current page: the selector ends on a pageSize-wide slice.
+    const pageElements = elementsSelector(state);
+    const total = contextTotalSelector(state) ?? pageElements.length;
+    const rows: AgentEmailRow[] = pageElements.map((element) => {
         const subject = element.Subject || '(no subject)';
         const senders = getUniqueElementSenders(element, conversationMode, getDisplayRecipients(element, labelID));
         return {
