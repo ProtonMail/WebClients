@@ -5,6 +5,7 @@ export interface AlwaysOnPolicyArtifact {
 
 export interface AlwaysOnPolicyArtifacts {
     windows?: AlwaysOnPolicyArtifact;
+    windowsUninstall?: AlwaysOnPolicyArtifact;
     rego?: AlwaysOnPolicyArtifact;
 }
 
