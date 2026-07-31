@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import useApi from '@proton/components/hooks/useApi';
 import type { ConfirmDecision, ToolChip } from '@proton/llm/lib/lumoAgent/engine/engine';
 import { createClientToolExecutor } from '@proton/llm/lib/lumoAgent/engine/engine';
+import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { buildSystemPrompt } from '@proton/llm/lib/lumoAgent/prompt/buildSystemPrompt';
 import type {
@@ -135,8 +136,9 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             },
             onChip: (chip: ToolChip) => {
                 finalizeReply();
-                // Mutations are shown by their confirm/result tile, not a chip.
-                if (byName.get(chip.tool)?.kind === 'mutation') {
+                // Mutations are shown by their confirm/result tile, not a chip; a guide load is internal
+                // setup the user gains nothing from seeing. Both still split the reply bubble.
+                if (byName.get(chip.tool)?.kind === 'mutation' || chip.tool === LOAD_GUIDE_TOOL_NAME) {
                     return;
                 }
                 pushItem({
@@ -164,11 +166,13 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             const controller = new AbortController();
             controllerRef.current = controller;
 
+            // Guides loaded in earlier messages must ride in the prompt: mid-loop, a guide only reaches
+            // the model as tool content, which is not replayed into history.
             const systemTurn: Turn = {
                 role: SYSTEM,
                 content: buildSystemPrompt({
                     definitions: config.definitions,
-                    loadedGuides: [],
+                    loadedGuides: executor.getLoadedGuides(),
                     productRules: config.productRules,
                 }),
             };
@@ -180,6 +184,10 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 if (chunk.type === 'token_data' && chunk.target === 'message') {
                     appendReplyDelta(chunk.content);
                 } else if (chunk.type === 'server_tool_call') {
+                    // Client tool calls ride this channel too; those are shown by the executor's chips.
+                    if (!config.serverTools?.includes(chunk.name as ServerToolName)) {
+                        return;
+                    }
                     if (!serverSources.has(chunk.call_id)) {
                         finalizeReply();
                         const id = nextId();
