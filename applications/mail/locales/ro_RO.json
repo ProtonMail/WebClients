@@ -1727,6 +1727,9 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Comutare ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Da, vreau organizare"
       ]
     },
     "action": {
@@ -1754,6 +1757,9 @@
       ],
       "Skip": [
         "Omitere"
+      ],
+      "Set up categories": [
+        "Setare categorii"
       ]
     },
     "Actions message": {
@@ -4573,6 +4579,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Faceți clic dreapta pe un e-mail și selectați „Mutare în” sau glisați și plasați-l într-o altă categorie. Mesajele similare vor fi mutate automat acolo în viitor."
       ]
     },
     "description": {
@@ -4596,6 +4605,14 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "De la: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "Mesaje noi: ${ messageCount }",
+        "Mesaje noi: ${ messageCount }",
+        "Mesaje noi: ${ messageCount }"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "De la: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6578,7 +6595,7 @@
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Criptare și adăugare contacte: ${ totalImported }}/${ totalToImport }"
+        "Criptare și adăugare contacte: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare evenimente în calendar: ${ totalImported }/${ totalToImport }"
@@ -9551,6 +9568,40 @@
       ],
       "Thinking about this": [
         "Mă gândesc la asta"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mailuri → ${ dest }",
+        "${ count } de e-mailuri → ${ dest }"
+      ],
+      "Move emails": [
+        "Mutare mesaje"
+      ],
+      "Move here": [
+        "Mutare aici"
+      ],
+      "Opened ${ location }": [
+        "S-a deschis ${ location }"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Conversații existente în categoria ${ categoryLabel }: **${ count }**",
+        "Conversații existente în categoria ${ categoryLabel }: **${ count }**",
+        "Conversații existente în categoria ${ categoryLabel }: **${ count }**"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Mesaje existente în categoria ${ categoryLabel }: **${ count }**",
+        "Mesaje existente în categoria ${ categoryLabel }: **${ count }**",
+        "Mesaje existente în categoria ${ categoryLabel }: **${ count }**"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**"
       ]
     },
     "info": {
@@ -10757,6 +10808,21 @@
       ],
       "v2": [
         "V2"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Orice vă solicită atenția, plus mesaje din categoriile dezactivate"
+      ],
+      "Archive": [
+        "Arhivă"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primare - Orice vă solicită atenția, plus mesaje din categoriile dezactivate"
+      ],
+      "Spam": [
+        "Nedorite"
+      ],
+      "Trash": [
+        "Gunoi"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15619,6 +15685,11 @@
       ],
       "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise aici în viitor."
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "S-a mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor.",
+        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor.",
+        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor."
       ]
     },
     "Success notification": {
@@ -16938,6 +17009,15 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Make your inbox your own": [
+        "Personalizați-vă contul"
+      ],
+      "Move emails": [
+        "Mutare mesaje"
+      ],
+      "Refine your Categories": [
+        "Rafinare categorii"
       ]
     },
     "Title header for keys table": {

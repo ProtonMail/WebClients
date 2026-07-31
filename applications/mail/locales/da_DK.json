@@ -1721,6 +1721,9 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Vis/skjul ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Ja, organiser det"
       ]
     },
     "action": {
@@ -1748,6 +1751,9 @@
       ],
       "Skip": [
         "Spring over"
+      ],
+      "Set up categories": [
+        "Konfigurer kategorier"
       ]
     },
     "Actions message": {
@@ -4535,6 +4541,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Højreklik på en e-mail og vælg “Flyt til” eller træk og slip den til en anden kategori. Fremover sorteres lignende e-mails automatisk dertil."
       ]
     },
     "description": {
@@ -4557,6 +4566,13 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "Fra: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } ny besked",
+        "${ messageCount } nye beskeder"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Fra: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9386,6 +9402,35 @@
       ],
       "Thinking about this": [
         "Overvejer..."
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mails → ${ dest }"
+      ],
+      "Move emails": [
+        "Flyt e-mails"
+      ],
+      "Move here": [
+        "Flyt hertil"
+      ],
+      "Opened ${ location }": [
+        "Åbnede ${ location }"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Du har **${ count } samtale** i din ${ categoryLabel } kategori",
+        "Du har **${ count } samtaler** i din ${ categoryLabel } kategori"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Du har **${ count } besked** i din ${ categoryLabel } kategori",
+        "Du har **${ count } beskeder** i din ${ categoryLabel } kategori"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Du valgte **${ checked } samtale** i din ${ categoryLabel } kategori",
+        "Du valgte **${ checked } samtaler** i din ${ categoryLabel } kategori"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Du valgte **${ checked } besked** i din ${ categoryLabel } kategori",
+        "Du valgte **${ checked } beskeder** i din ${ categoryLabel } kategori"
       ]
     },
     "info": {
@@ -10584,6 +10629,21 @@
       ],
       "v2": [
         "v2"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alt, der kræver din opmærksomhed, samt e-mails fra deaktiverede kategorier"
+      ],
+      "Archive": [
+        "Arkivér"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primære - alt, der kræver din opmærksomhed, samt e-mails fra deaktiverede kategorier"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Papirkurv"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15322,6 +15382,10 @@
       ],
       "Moved to ${ label }. Similar messages will be categorized here in the future.": [
         "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her fremover."
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Flyttet til ${ label }. En lignende besked vil blive kategoriseret her i fremtiden",
+        "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her fremover."
       ]
     },
     "Success notification": {
@@ -16618,6 +16682,15 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Make your inbox your own": [
+        "Gør indbakken til din egen"
+      ],
+      "Move emails": [
+        "Flyt e-mails"
+      ],
+      "Refine your Categories": [
+        "Forfin dine kategorier"
       ]
     },
     "Title header for keys table": {
