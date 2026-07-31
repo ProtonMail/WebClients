@@ -41,7 +41,7 @@ interface ConflictModalProps {
     closeProps?: any;
 }
 
-export default function ConflictModal({
+function ConflictModal({
     name,
     isFolder = false,
     originalIsDraft = false,

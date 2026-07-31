@@ -43,7 +43,7 @@ interface Props {
     viewOnly: boolean;
 }
 
-export const getContactNameAndEmail = (email: string, contactEmails?: ContactEmail[]) => {
+const getContactNameAndEmail = (email: string, contactEmails?: ContactEmail[]) => {
     const canonicalizedEmail = canonicalizeEmailByGuess(email);
     const { Name: contactName, Email: contactEmail } = contactEmails?.find(
         (contactEmail) => canonicalizeEmailByGuess(contactEmail.Email) === canonicalizedEmail

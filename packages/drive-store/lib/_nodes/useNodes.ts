@@ -9,7 +9,7 @@ import { useAbortSignal } from '../../store/_views/utils';
 import type { DecryptedNode } from './interface';
 import { decryptedLinkToNode } from './utils';
 
-export const useNodes = () => {
+const useNodes = () => {
     const { getLinks } = useLinks();
     const { traverseLinksToRoot } = useLinkPath();
     const { isSharedWithMe } = useDirectSharingInfo();

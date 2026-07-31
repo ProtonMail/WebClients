@@ -16,7 +16,7 @@ interface Props extends Media {
     thumbnails?: ThumbnailInfo[];
 }
 // Unfortunately Safari doesn't support Canvas.drawImage using videos anymore.
-export const canGenerateThumbnail = (): boolean => !isSafari();
+const canGenerateThumbnail = (): boolean => !isSafari();
 
 // Creating video thumbnails can be resource heavy operation. Especially if we load multiple, high-res videos.
 // Another risk factor is memory leakage. Video elements should be cleared carefully after using them.

@@ -19,7 +19,7 @@ import type { Currency } from '@proton/payments/core/interface';
 
 import './DriveUpsellModal.scss';
 
-export interface DriveUpsellModalProps {
+interface DriveUpsellModalProps {
     ['data-testid']?: string;
     titleModal: ReactNode;
     description: ReactNode;

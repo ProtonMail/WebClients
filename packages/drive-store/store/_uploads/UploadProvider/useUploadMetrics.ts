@@ -1,6 +1,3 @@
-import { useRef } from 'react';
-
-import metrics from '@proton/metrics';
 import {
     getApiError,
     getIsNetworkError,
@@ -11,123 +8,13 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import { isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
-import { getIsPublicContext } from '../../../utils/getIsPublicContext';
-import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
-import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
-import type { MetricUserPlan, UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
+import type { UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
 import { MetricShareType, UploadErrorCategory } from '../../../utils/type/MetricTypes';
-import { useSharesStore } from '../../../zustand/share/shares.store';
 import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
 import { isVerificationError } from '../worker/verifier';
-import type { FileUploadReady } from './interface';
-
-export interface FailedUploadMetadata {
-    shareId: string;
-    numberOfErrors: number;
-    encryptedTransferSize: number;
-    roundedUnencryptedFileSize: number;
-}
-
-const IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE = [
-    UploadErrorCategory.FreeSpaceExceeded,
-    UploadErrorCategory.TooManyChildren,
-    UploadErrorCategory.NetworkError,
-];
-
-const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes,
-
-const ROUND_BYTES = 10000; // For privacy we round file.size metrics to 10k bytes
-
-export const getFailedUploadMetadata = (nextFileUpload: FileUploadReady, progress: number): FailedUploadMetadata => ({
-    shareId: nextFileUpload.shareId,
-    numberOfErrors: nextFileUpload.numberOfErrors,
-    encryptedTransferSize: progress,
-    roundedUnencryptedFileSize: Math.max(Math.round(nextFileUpload.file.size / ROUND_BYTES) * ROUND_BYTES, ROUND_BYTES),
-});
-
-export default function useUploadMetrics(plan: MetricUserPlan, metricsModule = metrics) {
-    const lastErroringUserReport = useRef(0);
-
-    // Hack: ideally we should use useShare. But that adds complexity with
-    // promises and need to handle exceptions etc. that are not essential
-    // for metrics, and when file is uploading, we know the share must be
-    // already in cache. (to be continued...)
-    const getShare = useSharesStore((state) => state.getShare);
-
-    const getShareIdType = (shareId: string): MetricShareType => {
-        const share = getShare(shareId);
-        return getShareType(share);
-    };
-
-    const uploadSucceeded = (shareId: string, numberOfErrors = 0) => {
-        const shareType = getIsPublicContext() ? 'shared_public' : getShareIdType(shareId);
-        const retry = numberOfErrors > 0;
-
-        metricsModule.drive_upload_success_rate_total.increment({
-            status: 'success',
-            shareType,
-            retry: retry ? 'true' : 'false',
-            initiator: 'explicit',
-        });
-    };
-
-    const uploadFailed = (failedUploadMetadata: FailedUploadMetadata, error: any) => {
-        const shareType = getIsPublicContext() ? 'shared_public' : getShareIdType(failedUploadMetadata.shareId);
-        const errorCategory = getErrorCategory(error);
-        const retry = failedUploadMetadata.numberOfErrors > 1;
-
-        if (!IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE.includes(errorCategory) && !isIgnoredErrorForReporting(error)) {
-            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
-
-            metricsModule.drive_upload_success_rate_total.increment({
-                status: 'failure',
-                shareType,
-                retry: retry ? 'true' : 'false',
-                initiator: 'explicit',
-            });
-
-            if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
-                metricsModule.drive_upload_erroring_users_total.increment({
-                    plan,
-                    shareType,
-                    initiator: 'explicit',
-                });
-
-                lastErroringUserReport.current = Date.now();
-            }
-        }
-        // Type of error
-        metricsModule.drive_upload_errors_total.increment({
-            type: errorCategory,
-            shareType: shareType,
-            initiator: 'explicit',
-        });
-
-        // If the transfer size is empty that means the upload failed before attempted any transfer
-        // In that case we do not report the sizes
-        if (failedUploadMetadata.encryptedTransferSize) {
-            // How many encrypted bytes were sent before it failed
-            metricsModule.drive_upload_errors_transfer_size_histogram.observe({
-                Value: failedUploadMetadata.encryptedTransferSize,
-                Labels: {},
-            });
-
-            // Rounded unencrypted file size of the file that failed the upload
-            metricsModule.drive_upload_errors_file_size_histogram.observe({
-                Value: failedUploadMetadata.roundedUnencryptedFileSize,
-                Labels: {},
-            });
-        }
-    };
-
-    return {
-        uploadSucceeded,
-        uploadFailed,
-    };
-}
 
 export function getShareType(share?: Share): MetricShareType {
     // (see above...) But if the share is not there anyway, we need to
