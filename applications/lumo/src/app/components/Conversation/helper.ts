@@ -98,6 +98,22 @@ export type ConversationContext = {
     contextFilters: ContextFilter[];
 };
 
+/**
+ * Merge send-time resolved attachments into the conversation context for prepareTurns.
+ * Resolved entries win over stale copies with the same id (e.g. shallow @mention provisionals
+ * that were filled from the search index after the composer snapshot was taken).
+ */
+export function mergeConversationAttachmentsForTurns(
+    existing: Attachment[],
+    resolved: Attachment[]
+): Attachment[] {
+    const resolvedById = new Map(resolved.map((attachment) => [attachment.id, attachment]));
+    const updatedExisting = existing.map((attachment) => resolvedById.get(attachment.id) ?? attachment);
+    const existingIds = new Set(updatedExisting.map((attachment) => attachment.id));
+    const newOnly = resolved.filter((attachment) => !existingIds.has(attachment.id));
+    return [...updatedExisting, ...newOnly];
+}
+
 export type ProjectContext = {
     isProject: boolean;
     projectInstructions?: string;
@@ -435,9 +451,7 @@ export function sendMessage({
             // On the first message c.allConversationAttachments only contains provisional composer
             // files; the RAG results are not yet loaded from Redux, so without this they are dropped.
             const updatedC: ConversationContext = (() => {
-                const existingIds = new Set(c.allConversationAttachments.map((a) => a.id));
-                const newMessageAttachments = messageAttachments.filter((a) => !existingIds.has(a.id));
-                const merged = [...c.allConversationAttachments, ...newMessageAttachments];
+                const merged = mergeConversationAttachmentsForTurns(c.allConversationAttachments, messageAttachments);
                 if (ragResult?.attachments?.length) {
                     const ragIds = new Set(merged.map((a) => a.id));
                     const newRag = ragResult.attachments.filter((a) => !ragIds.has(a.id));
