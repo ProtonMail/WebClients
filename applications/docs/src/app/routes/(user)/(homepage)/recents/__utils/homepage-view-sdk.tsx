@@ -50,6 +50,7 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
     isRecentsUpdating,
     updateRecentDocuments,
     updateRenamedDocumentInCache,
+    removeDocument,
     recentsListener,
   } = useRecents(drive)
   const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(drive)
@@ -89,10 +90,10 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
     }
 
     void eventSubscriber
-      .initialize(myFilesNode.treeEventScopeId, [recentsListener, trashedListener])
+      .initialize(myFilesNode.treeEventScopeId, [recentsListener, trashedListener], removeDocument)
       .catch(traceRecentsError)
     return () => eventSubscriber.reset()
-  }, [recentsListener, trashedListener, myFilesNode, eventSubscriber])
+  }, [recentsListener, trashedListener, myFilesNode, eventSubscriber, removeDocument])
 
   const state = useMemo((): HomepageViewState => {
     try {
