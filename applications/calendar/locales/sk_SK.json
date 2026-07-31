@@ -1039,6 +1039,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "Vyčistiť konverzáciu"
+      ],
+      "Stop": [
+        "Zastaviť"
       ]
     },
     "action": {
@@ -7051,6 +7057,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Thinking about this": [
+        "Premýšľam o tom"
       ]
     },
     "info": {
@@ -8174,6 +8183,9 @@
         "${ seats }${ MEET_APP_NAME } licencie",
         "${ seats }${ MEET_APP_NAME } licencií",
         "${ seats }${ MEET_APP_NAME } licencií"
+      ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
       ]
     },
     "meet_2025: Feature": {
@@ -10637,6 +10649,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Ask anything…": [
+        "Opýtajte sa na čokoľvek..."
       ]
     },
     "Placeholder for contact group name": {
