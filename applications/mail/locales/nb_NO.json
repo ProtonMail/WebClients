@@ -1709,6 +1709,12 @@
       ],
       "Reject": [
         "Avvis"
+      ],
+      "Lookup document": [
+        "Konsulter dokument"
+      ],
+      "Stop": [
+        "Stopp"
       ]
     },
     "action": {
@@ -2124,6 +2130,10 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ]
     },
     "BF2025: Deal details": {
@@ -4528,6 +4538,10 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "Fra: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } ny melding",
+        "${ messageCount } nye meldinger"
       ]
     },
     "Desktop notification title": {
@@ -9328,6 +9342,34 @@
       ],
       "Details": [
         "Detaljer"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-post → ${ dest }",
+        "${ count } e-poster → ${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problem under importen:",
+        "${ issues.length } problemer under importen:"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Fant en gjeldende kryptert søkeindeks med ${ oldIndexSize } melding.",
+        "Fant en gjeldende kryptert søkeindeks med ${ oldIndexSize } meldinger."
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Du har **${ count } samtale** i kategorien ${ categoryLabel }.",
+        "Du har **${ count } samtaler** i kategorien ${ categoryLabel }."
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Du har **${ count } melding** i kategorien ${ categoryLabel }.",
+        "Du har **${ count } meldinger** i kategorien ${ categoryLabel }."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Du valgte **${ checked } samtale** i kategorien ${ categoryLabel }.",
+        "Du valgte **${ checked } samtaler** i kategorien ${ categoryLabel }."
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Du valgte **${ checked } melding** i kategorien ${ categoryLabel }.",
+        "Du valgte **${ checked } meldinger** i kategorien ${ categoryLabel }."
       ]
     },
     "info": {
@@ -10508,6 +10550,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Spam": [
+        "Søppelpost"
+      ],
+      "Trash": [
+        "Papirkurv"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15228,6 +15276,10 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avsluttet abonnementet"
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Flyttet til ${ label }. Lignende melding vil bli kategorisert der i fremtiden.",
+        "Flyttet til ${ label }. Lignende meldinger vil bli kategorisert der i fremtiden."
       ]
     },
     "Success notification": {

@@ -1859,6 +1859,10 @@
       "${ quantity } custom domain": [
         "${ quantity } dominio personalizzato",
         "${ quantity } domini personalizzati"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utente)",
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utenti)"
       ]
     },
     "Alert": {
@@ -2133,6 +2137,10 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora.",
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora."
       ]
     },
     "BF2025: Deal details": {
@@ -4537,6 +4545,10 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "Da: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } nuovo messaggio",
+        "${ messageCount } nuovi messaggi"
       ]
     },
     "Desktop notification title": {
@@ -9340,6 +9352,18 @@
       ],
       "Thinking about this": [
         "Sto riflettendo su questo"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } email → ${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problema durante l'importazione:",
+        "${ issues.length } problemi durante l'importazione:"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Trovato un indice di ricerca crittografato attuale con ${ oldIndexSize } messaggio.",
+        "Trovato un indice di ricerca crittografato attuale con ${ oldIndexSize } messaggi."
       ]
     },
     "info": {
@@ -10526,6 +10550,12 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Cestino"
       ]
     },
     "Label (begin date/advanced search)": {

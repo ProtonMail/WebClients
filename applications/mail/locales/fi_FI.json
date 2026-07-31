@@ -4534,6 +4534,13 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "Lähettäjä: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } uusi viesti",
+        "${ messageCount } uutta viestiä"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Lähettäjä: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9319,6 +9326,16 @@
       ],
       "Thinking about this": [
         "Mietitään tätä"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } sähköposti → ${ dest }",
+        "${ count } sähköpostia → ${ dest }"
+      ],
+      "Move emails": [
+        "Siirrä sähköpostit"
+      ],
+      "Opened ${ location }": [
+        "Avattu ${ location }"
       ]
     },
     "info": {
@@ -10505,6 +10522,15 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Archive": [
+        "Arkisto"
+      ],
+      "Spam": [
+        "Roskaposti"
+      ],
+      "Trash": [
+        "Roskakori"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16527,6 +16553,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Move emails": [
+        "Siirrä sähköpostit"
       ]
     },
     "Title header for keys table": {
