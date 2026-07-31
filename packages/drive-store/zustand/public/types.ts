@@ -1,6 +1,6 @@
 import type { DecryptedLink, SharedUrlInfo } from '../../store';
 
-export interface PublicShare {
+interface PublicShare {
     sharedUrlInfo: SharedUrlInfo;
     link: DecryptedLink;
 }

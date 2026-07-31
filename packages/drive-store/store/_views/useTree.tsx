@@ -57,19 +57,6 @@ export function useTreeForModals(shareId: string, options?: Omit<TreeOptions, 'r
 }
 
 /**
- * useFolderTree provides data for folder tree view of the provided share.
- *
- * @deprecated – if possible, reuse logic from useTreeForModals, if there's a need to
- * exlude root link from the output. The reason this function exists is that Sidebar
- * component has it's own implementation of formatting the tree. This function and
- * `useTreeForModals` is an object of possible refactor – the goal of it is to create
- * a unified mechanism to get tree data ready for presentation.
- */
-export function useFolderTree(shareId: string, options?: TreeOptions) {
-    return useTree(shareId, { ...options, foldersOnly: true });
-}
-
-/**
  * useTree provides data for complete tree view of the provided share.
  */
 export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly = false }: TreeOptions) {

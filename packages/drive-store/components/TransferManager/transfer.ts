@@ -1,5 +1,3 @@
-/* eslint-disable max-classes-per-file */
-
 export enum TransferState {
     Initializing = 'initializing',
     Pending = 'pending',
@@ -55,14 +53,7 @@ export class TransferSkipped extends Error {
     }
 }
 
-export class TransferConflict extends Error {
-    constructor(options: { id: string } | { message: string }) {
-        super('id' in options ? `Transfer ${options.id} is conflicting` : options.message);
-        this.name = 'TransferConflict';
-    }
-}
-
-export interface Upload {
+interface Upload {
     id: string;
     meta: TransferMeta;
     state: TransferState;
@@ -73,7 +64,7 @@ export interface Upload {
     folders?: Upload[];
 }
 
-export interface Download {
+interface Download {
     id: string;
     meta: TransferMeta;
     state: TransferState;
@@ -83,7 +74,7 @@ export interface Download {
 
 export type Transfer = Upload | Download;
 
-export interface TransferHistoryStats {
+interface TransferHistoryStats {
     active: boolean;
     progress: number;
     speed: number;
@@ -94,7 +85,7 @@ export interface TransfersHistoryStats {
     stats: { [id: string]: TransferHistoryStats };
 }
 
-export interface TransferStats {
+interface TransferStats {
     progress: number;
     averageSpeed: number;
 }
@@ -102,31 +93,3 @@ export interface TransferStats {
 export interface TransfersStats {
     [id: string]: TransferStats;
 }
-
-export enum TransferType {
-    Download = 'download',
-    Upload = 'upload',
-}
-
-export enum TransferGroup {
-    ACTIVE,
-    DONE,
-    QUEUED,
-    FAILURE,
-}
-
-export const STATE_TO_GROUP_MAP = {
-    [TransferState.Progress]: TransferGroup.ACTIVE,
-    [TransferState.Finalizing]: TransferGroup.ACTIVE,
-    [TransferState.Paused]: TransferGroup.ACTIVE,
-    [TransferState.SignatureIssue]: TransferGroup.ACTIVE,
-    [TransferState.ScanIssue]: TransferGroup.ACTIVE,
-    [TransferState.Skipped]: TransferGroup.FAILURE,
-    [TransferState.Canceled]: TransferGroup.FAILURE,
-    [TransferState.NetworkError]: TransferGroup.FAILURE,
-    [TransferState.Done]: TransferGroup.DONE,
-    [TransferState.Error]: TransferGroup.FAILURE,
-    [TransferState.Initializing]: TransferGroup.QUEUED,
-    [TransferState.Conflict]: TransferGroup.QUEUED,
-    [TransferState.Pending]: TransferGroup.QUEUED,
-};

@@ -256,8 +256,6 @@ const SharingSettingsModal = ({
     );
 };
 
-export default SharingSettingsModal;
-
 export const useLinkSharingSettingsModal = () => {
     return useModalTwoStatic(SharingSettingsModal);
 };
