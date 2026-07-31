@@ -4,6 +4,7 @@ import type { ToolDefinition, ToolHandlers } from '@proton/llm/lib/lumoAgent/con
 import { MAIL_RULES } from './rules';
 import { moveEmailsModule } from './skills/organise/moveEmails';
 import { openFolderModule } from './skills/reads/openFolder';
+import { viewEmailsModule } from './skills/reads/viewEmails';
 import type { MailToolDeps, MailToolModule } from './toolModule';
 
 /**
@@ -12,7 +13,13 @@ import type { MailToolDeps, MailToolModule } from './toolModule';
  * {@link buildLumoMailConfig} splits the modules back into the layered inputs the framework expects:
  * pure definitions for the engine, store-bound handlers for dispatch, card renderers for the UI.
  */
-const MODULES: MailToolModule[] = [openFolderModule, moveEmailsModule];
+const MODULES: MailToolModule[] = [
+    // Reads
+    viewEmailsModule,
+    openFolderModule,
+    // Mutations
+    moveEmailsModule,
+];
 
 /**
  * Assemble the {@link LumoAgentConfig} handed to `useLumoAgent`, binding every handler to the Mail
