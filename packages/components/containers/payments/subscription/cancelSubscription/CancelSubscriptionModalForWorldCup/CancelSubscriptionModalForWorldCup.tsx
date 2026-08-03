@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -9,11 +11,14 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Time from '@proton/components/components/time/Time';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import useApi from '@proton/components/hooks/useApi';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import { getPlanTitle, getRenewalTime } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { TelemetryAccountCancellationEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 import type { CancelSubscriptionResult } from '../types';
 import stayVpnPlus from './assets/stayVpnPlus.svg';
@@ -29,6 +34,7 @@ export const CancelSubscriptionModalForWorldCup = ({
     onResolve,
     ...rest
 }: CancelSubscriptionModalForWorldCupProps) => {
+    const api = useApi();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(APPS.PROTONVPN_SETTINGS);
     const planTitle = getPlanTitle(subscription) ?? '';
@@ -63,6 +69,21 @@ export const CancelSubscriptionModalForWorldCup = ({
             });
         },
     };
+
+    useEffect(() => {
+        void sendTelemetryReport({
+            api,
+            delay: false,
+            event: TelemetryAccountCancellationEvents.upsellModal,
+            measurementGroup: TelemetryMeasurementGroups.accountCancellation,
+            dimensions: {
+                upsell_modal_action: 'upsell',
+                feedbackFirstCancellationEnabled: 'false',
+                coupon_code: COUPON_CODES.VPNSAVEOFFER,
+                app: APPS.PROTONVPN_SETTINGS,
+            },
+        });
+    }, []);
 
     return (
         <ModalTwo {...rest} onClose={handleClose} size="xlarge">
