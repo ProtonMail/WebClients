@@ -4,7 +4,6 @@ import type { ExtendedInvitationDetails } from '@proton/drive-store/store'
 
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { useCallback, useEffect, useState } from 'react'
-import { traceRecentsError } from '../routes/(user)/(homepage)/recents/__utils/traceRecentsError'
 import type { DocInvitesHook } from '@proton/drive-store'
 import { useAuthentication, useNotifications } from '@proton/components'
 import { c } from 'ttag'
@@ -12,6 +11,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { getNewWindow } from '@proton/shared/lib/helpers/window'
 import { useDocInvitationsStore } from './use-doc-invitations-store'
+import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 /**
  * This hook can be used only ONCE because it will re-fetch all invitations every time it's initialized.
@@ -45,7 +45,12 @@ export const useDocInvites: DocInvitesHook = () => {
         if (abort.signal.aborted) {
           return
         }
-        traceRecentsError(error)
+        traceError(error, {
+          tags: {
+            initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+            feature: 'DocsInvitationsDriveSDK',
+          },
+        })
         createNotification({
           type: 'error',
           text: c('Notification').t`Failed to load invitations`,
@@ -74,6 +79,12 @@ export const useDocInvites: DocInvitesHook = () => {
       }
     } catch (error) {
       updateInvitation(invitation.invitation.invitationId, { isLocked: false })
+      traceError(error, {
+        tags: {
+          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+          feature: 'DocsInvitationsDriveSDK',
+        },
+      })
       throw error
     }
   }, [])
@@ -99,7 +110,12 @@ export const useDocInvites: DocInvitesHook = () => {
             await drive.rejectInvitation(toReject.invitation.invitationId)
             removeInvitation(toReject.invitation.invitationId)
           } catch (error) {
-            traceRecentsError(error)
+            traceError(error, {
+              tags: {
+                initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+                feature: 'DocsInvitationsDriveSDK',
+              },
+            })
             createNotification({
               type: 'error',
               text: c('Notification').t`Failed to reject invitation`,
