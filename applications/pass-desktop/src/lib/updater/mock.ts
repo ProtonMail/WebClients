@@ -2,7 +2,8 @@ import type { Session } from 'electron';
 
 import { UpdateErrorType, UpdateStatus } from '@proton/pass/types/desktop';
 
-import logger from '../../utils/logger';
+import logger from 'proton-pass-desktop/utils/logger';
+
 import { getUpdateStore, setUpdateStore } from './store';
 
 const PROGRESS_THROTTLE_MS = 100;
