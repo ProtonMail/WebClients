@@ -12,23 +12,6 @@ import {
     generatePlaintextPreviousMessageInfos,
 } from 'proton-mail/helpers/message/draftContent/plaintext';
 
-// Mock messageContent to avoid DOM dependencies in tests
-jest.mock('proton-mail/helpers/message/messageContent', () => ({
-    exportPlainText: jest.fn((html: string) => {
-        // Remove HTML tags and decode common entities
-        return html
-            .replace(/<[^>]*>/g, '') // Remove HTML tags
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&')
-            .trim();
-    }),
-    getDocumentContent: jest.fn((doc: any) => {
-        // Return the innerHTML if available, otherwise a default
-        return doc?.innerHTML || '<p>HTML content</p>';
-    }),
-}));
-
 const ID = 'ID';
 const now = new Date();
 const receiveDate = addDays(now, -5);
@@ -169,6 +152,9 @@ Subject: ${Subject}\nTo: ${recipient1.Address} <${recipient1.Address}>
         });
 
         it('should handle HTML message conversion to plaintext', () => {
+            const messageBody: Element = document.createElement('div');
+            messageBody.innerHTML = '<p>HTML content</p>';
+
             const referenceMessage = {
                 localID: ID,
                 data: {
@@ -179,9 +165,7 @@ Subject: ${Subject}\nTo: ${recipient1.Address} <${recipient1.Address}>
                     MIMEType: 'text/html',
                 },
                 messageDocument: {
-                    document: {
-                        innerHTML: '<p>HTML content</p>',
-                    } as any,
+                    document: messageBody,
                 },
                 messageImages: undefined,
             } as MessageState;

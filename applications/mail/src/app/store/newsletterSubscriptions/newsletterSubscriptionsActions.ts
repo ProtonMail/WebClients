@@ -23,7 +23,7 @@ import {
     type UnsubscribePayload,
     type UpdateSubscriptionPayload,
 } from './interface';
-import { newsletterSubscriptionName } from './newsletterSubscriptionsSlice';
+import { newsletterSubscriptionName } from './newsletterSubscriptionsModelTypes';
 
 export const sortSubscriptionList = createAsyncThunk<
     GetNewsletterSubscriptionsApiResponse,

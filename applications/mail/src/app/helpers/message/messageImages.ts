@@ -3,11 +3,9 @@ import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
 import { getAnchor } from '@proton/mail/helpers/message/messageImages/getAnchor';
 import type {
     LoadRemoteResults,
-    MessageEmbeddedImage,
     MessageImages,
     MessageRemoteImage,
     MessageState,
-    PartialMessageState,
 } from '@proton/mail/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -18,8 +16,10 @@ import {
     loadRemoteDirectFromURL,
     loadRemoteProxyFromURL,
 } from '../../store/messages/images/messagesImagesActions';
-import { getDocumentContent } from './messageContent';
-import { setEmbeddedAttr } from './messageEmbeddeds';
+import { getDocumentContent } from './messageContentQuery';
+import { setEmbeddedAttr } from './messageEmbeddedAttributes';
+
+export { getEmbeddedImages, getRemoteImages, updateImages } from './messageImagesUtils';
 
 const REGEXP_FIXER = (() => {
     const str = MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.map((key) => `proton-${key}`).join('|');
@@ -35,39 +35,6 @@ export const getRemoteSelector = (hasProtonAttribute = false) => {
 
         return `[${hasProtonAttribute ? 'proton-' : ''}${name}]`;
     }).join(',');
-};
-
-export const getRemoteImages = ({ messageImages }: PartialMessageState) =>
-    (messageImages?.images.filter(({ type }) => type === 'remote') || []) as MessageRemoteImage[];
-
-export const getEmbeddedImages = ({ messageImages }: PartialMessageState) =>
-    (messageImages?.images.filter(({ type }) => type === 'embedded') || []) as MessageEmbeddedImage[];
-
-export const updateImages = (
-    original: MessageImages | undefined,
-    flagChanges: Partial<Omit<MessageImages, 'images'>> | undefined,
-    remoteImages: MessageRemoteImage[] | undefined,
-    embeddedImages: MessageEmbeddedImage[] | undefined
-): MessageImages => {
-    const messageImages: MessageImages = {
-        ...{
-            hasRemoteImages: false,
-            hasEmbeddedImages: false,
-            showRemoteImages: false,
-            showEmbeddedImages: false,
-            trackersStatus: 'not-loaded',
-            images: [],
-        },
-        ...(original || {}),
-        ...(flagChanges || {}),
-    };
-    const remotes = getRemoteImages({ messageImages });
-    const embeddeds = getEmbeddedImages({ messageImages });
-    const images = [
-        ...(remoteImages !== undefined ? remoteImages : remotes),
-        ...(embeddedImages !== undefined ? embeddedImages : embeddeds),
-    ];
-    return { ...messageImages, images };
 };
 
 export const insertImageAnchor = (id: string, type: 'remote' | 'embedded', match: HTMLElement): string => {

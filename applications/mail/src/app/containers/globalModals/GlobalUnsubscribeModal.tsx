@@ -11,7 +11,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
-import { useMailGlobalModals } from './GlobalModalProvider';
+import { useMailGlobalModals } from './globalModalContext';
 import { ModalType, type UnsubscribeModalPayload } from './inteface';
 
 export const GlobalUnsubscribeModal = () => {

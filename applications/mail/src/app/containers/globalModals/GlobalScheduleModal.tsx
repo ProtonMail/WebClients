@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 
-import { useMailGlobalModals } from './GlobalModalProvider';
+import { useMailGlobalModals } from './globalModalContext';
 import { ModalType, type ScheduleModalPayload } from './inteface';
 
 export const GlobalScheduleModal = () => {
