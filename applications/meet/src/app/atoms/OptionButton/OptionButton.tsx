@@ -21,23 +21,23 @@ interface OptionButtonProps {
     iconOnTheRight?: boolean;
     className?: string;
     disabled?: boolean;
+    rightContent?: React.ReactNode;
 }
 
-export const OptionButton = ({
+const CheckComponent = ({
     showIcon,
-    label,
-    description,
-    onClick,
     Icon,
     iconSize,
+    iconOnTheRight,
     loading,
-    role,
-    ariaSelected,
-    iconOnTheRight = false,
-    className,
-    disabled = false,
-}: OptionButtonProps) => {
-    const CheckComponent = (
+}: {
+    showIcon: boolean;
+    Icon: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
+    iconSize?: IconProps['size'];
+    iconOnTheRight?: boolean;
+    loading?: boolean;
+}) => {
+    return (
         <div
             className={clsx(
                 'flex items-center justify-center w-custom min-w-custom w-4',
@@ -52,7 +52,23 @@ export const OptionButton = ({
             )}
         </div>
     );
+};
 
+export const OptionButton = ({
+    showIcon,
+    label,
+    description,
+    onClick,
+    Icon,
+    iconSize,
+    loading,
+    role,
+    ariaSelected,
+    iconOnTheRight = false,
+    className,
+    disabled = false,
+    rightContent,
+}: OptionButtonProps) => {
     return (
         <Button
             className={clsx(
@@ -66,7 +82,9 @@ export const OptionButton = ({
             aria-selected={ariaSelected}
             disabled={disabled}
         >
-            {!iconOnTheRight && CheckComponent}
+            {!iconOnTheRight && (
+                <CheckComponent showIcon={showIcon} Icon={Icon} iconSize={iconSize} loading={loading} />
+            )}
             {description ? (
                 <div className="flex flex-column flex-nowrap flex-1 min-w-0 text-left p-3">
                     <LabelAndDescription
@@ -79,7 +97,8 @@ export const OptionButton = ({
             ) : (
                 <TruncatedTextWithTooltip label={label} />
             )}
-            {iconOnTheRight && CheckComponent}
+            {iconOnTheRight && <CheckComponent showIcon={showIcon} Icon={Icon} iconSize={iconSize} loading={loading} />}
+            {rightContent}
         </Button>
     );
 };

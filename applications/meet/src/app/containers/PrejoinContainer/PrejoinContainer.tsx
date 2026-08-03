@@ -17,6 +17,7 @@ import {
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { setLocalParticipantColorIndex } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
+import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { APPS } from '@proton/shared/lib/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -78,6 +79,7 @@ export const PrejoinContainer = ({
     const initialAudioState = useMeetSelector(selectInitialAudioState);
 
     const joiningInProgress = useMeetSelector(selectJoiningInProgress);
+    const showWaitingRoomAdmission = useMeetSelector(selectIsWaitingRoomAdmissionActive);
 
     const { switchActiveDevice } = useMediaManagementContext();
 
@@ -168,7 +170,7 @@ export const PrejoinContainer = ({
                             onAudioOutputDeviceChange={handleAudioOutputDeviceChange}
                             displayName={displayName}
                             colorIndex={participantColorIndex.current}
-                            isLoading={joiningInProgress}
+                            isLoading={joiningInProgress || showWaitingRoomAdmission}
                         />
                     )}
 
