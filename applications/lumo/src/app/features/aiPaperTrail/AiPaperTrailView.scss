@@ -1,647 +1,617 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .ai-paper-trail {
-    --apt-bg: #fafafa;
-    --apt-text: #1c1340;
-    --apt-muted: #6b6a7b;
-    --apt-accent: #6d4aff;
-    --apt-card: #ffffff;
-    --apt-border: #eceaf3;
-    --apt-top: Syne, Inter, system-ui, sans-serif;
-    --apt-display: Arizona, 'Times New Roman', serif;
-
-    color-scheme: light;
-
-    position: relative;
-    inline-size: 100%;
-    min-block-size: 100%;
-    block-size: 100%;
-    overflow: auto;
-    color: var(--apt-text);
-    background:
-        radial-gradient(55% 45% at 10% 12%, rgba(124, 92, 255, 0.1), transparent 60%),
-        radial-gradient(50% 45% at 92% 16%, rgba(255, 150, 178, 0.1), transparent 60%),
-        radial-gradient(45% 45% at 90% 88%, rgba(255, 188, 140, 0.08), transparent 62%),
-        radial-gradient(50% 50% at 18% 92%, rgba(150, 196, 255, 0.08), transparent 60%),
-        var(--apt-bg);
-    background-attachment: fixed;
-
-    &__header {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-sizing: border-box;
-        inline-size: 100%;
-        padding: 1.25rem max(1.5rem, calc((100% - 72rem) / 2 + 1.5rem));
-        backdrop-filter: blur(10px);
-    }
-
-    &__header-logo {
-        display: inline-flex;
-        text-decoration: none;
-    }
-
-    &__hero-animation {
-        margin-block: rem(-20) rem(8);
-        margin-inline: auto;
-    }
-
-    &__inner {
-        inline-size: 100%;
-        max-inline-size: 38rem;
-        margin-inline: auto;
-        padding: 1.5rem 1.5rem 5rem;
-        text-align: center;
-    }
-
-    &__landing {
-        max-inline-size: 52rem;
-        padding-block-start: 1rem;
-    }
-
-    &__hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-block-end: 2rem;
-    }
-
-    &__loading {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        text-align: center;
-        max-inline-size: 44rem;
-        padding-block-start: 1rem;
-    }
-
-    &__loading-hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-block-end: 2.5rem;
-    }
-
-    &__loader {
-        display: inline-flex;
-        color: var(--apt-accent);
-    }
-
-    &__status {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        margin-block: 0.5rem 0.75rem;
-    }
-
-    &__status-title {
-        font-family: var(--apt-top);
-        font-size: 2rem;
-        font-weight: 600;
-        line-height: 1.15;
-        letter-spacing: -0.01em;
-        color: var(--apt-text);
-        margin: 0;
-    }
-
-    &__status-subtitle {
-        font-size: 1rem;
-        line-height: 1.5;
-        color: var(--apt-muted);
-        margin: 0;
-        max-inline-size: 24rem;
-    }
-
-    &__loading-footer {
-        margin-block-start: 3rem;
-        max-inline-size: 28rem;
-        font-size: 0.82rem;
-        line-height: 1.5;
-        color: var(--apt-muted);
-    }
-
-    &__lesson {
-        inline-size: 100%;
-        max-inline-size: 40rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    &__lesson-eyebrow {
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--apt-accent);
-        margin-block-end: 1.1rem;
-    }
-
-    &__lesson-card {
-        display: flex;
-        gap: 1.4rem;
-        text-align: start;
-        padding: 2rem 2.2rem;
-        border-radius: 1.4rem;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 24px 60px rgba(28, 19, 64, 0.12);
-        border: 1px solid rgba(109, 74, 255, 0.14);
-        min-block-size: 11.5rem;
-        inline-size: 100%;
-        opacity: 0;
-        transform: translateY(10px);
-        transition:
-            opacity 0.45s ease,
-            transform 0.45s ease;
-
-        &.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            transition: opacity 0.2s ease;
-            transform: none;
-        }
-    }
-
-    &__lesson-emoji {
-        font-size: 2.6rem;
-        line-height: 1;
-        flex: 0 0 auto;
-        inline-size: 4.25rem;
-        block-size: 4.25rem;
-        border-radius: 1rem;
-        background: rgba(109, 74, 255, 0.1);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    &__lesson-body {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    &__lesson-tag {
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: var(--apt-accent);
-    }
-
-    &__lesson-title {
-        font-family: var(--apt-display);
-        font-size: 1.65rem;
-        font-weight: 600;
-        line-height: 1.2;
-        letter-spacing: -0.01em;
-        margin: 0;
-        color: var(--apt-ink, #1c1340);
-    }
-
-    &__lesson-text {
-        font-size: 1.08rem;
-        line-height: 1.55;
-        color: var(--apt-muted);
-        margin: 0;
-    }
-
-    &__lesson-dots {
-        display: flex;
-        gap: 0.4rem;
-        margin-block-start: 1.5rem;
-    }
-
-    &__lesson-dot {
-        inline-size: 0.5rem;
-        block-size: 0.5rem;
-        border-radius: 999px;
-        background: rgba(109, 74, 255, 0.2);
-        transition: all 0.3s ease;
-
-        &.is-active {
-            inline-size: 1.4rem;
-            background: var(--apt-accent);
-        }
-    }
-
-    &__eyebrow {
-        display: inline-block;
-        margin-block-end: 1rem;
-        padding: 0.3rem 0.85rem;
-        border-radius: 999px;
-        background: rgba(109, 74, 255, 0.1);
-        color: var(--apt-accent);
-        font-family: var(--apt-top);
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-    }
-
-    &__title {
-        font-family: var(--apt-top);
-        font-size: 3rem;
-        font-weight: 600;
-        line-height: 1.08;
-        letter-spacing: -0.02em;
-        margin-block: 0 1.25rem;
-        color: var(--apt-text);
-    }
-
-    &__subtitle {
-        font-size: 1.05rem;
-        line-height: 1.6;
-        color: var(--apt-muted);
-        margin-block: 0;
-        max-inline-size: 36rem;
-        margin-inline: auto;
-    }
-
-    &__muted {
-        color: var(--apt-muted);
-    }
-
-    &__dropzone {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-block-size: 14rem;
-        padding: 2rem;
-        border: 2px dashed rgba(109, 74, 255, 0.3);
-        border-radius: 1.25rem;
-        background: var(--apt-card);
-        box-shadow: 0 4px 20px rgba(28, 19, 64, 0.06);
-        cursor: pointer;
-        transition:
-            border-color 0.15s ease,
-            box-shadow 0.15s ease,
-            transform 0.15s ease;
-
-        &:hover,
-        &.is-dragging {
-            border-color: var(--apt-accent);
-            box-shadow: 0 14px 36px rgba(109, 74, 255, 0.12);
-        }
-    }
-
-    &__upload-icon {
-        color: var(--apt-accent);
-    }
-
-    &__error {
-        background: #fdecec;
-        color: #b42318;
-        text-align: start;
-    }
-
-    &__privacy {
-        justify-content: center;
-        text-align: start;
-        color: var(--apt-muted);
-    }
-
-    &__save-option {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 0.75rem;
-        margin-block-start: 1.25rem;
-        padding: 1rem 1.125rem;
-        border: 1px solid var(--apt-border);
-        border-radius: 0.75rem;
-        background: var(--apt-card);
-        text-align: start;
-    }
-
-    &__save-copy {
-        display: flex;
-        flex-direction: column;
-        gap: 0.35rem;
-        cursor: pointer;
-    }
-
-    &__save-toggle {
-        margin-block-start: 0.125rem;
-    }
-
-    &__recent {
-        margin-block-start: 2.5rem;
-        text-align: start;
-    }
-
-    &__recent-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-block-end: 0.75rem;
-        padding-inline: 0.25rem;
-    }
-
-    &__recent-title {
-        font-size: 0.95rem;
-        font-weight: 600;
-        margin: 0;
-        color: var(--apt-text);
-    }
-
-    &__recent-label {
-        font-size: 0.85rem;
-        color: var(--apt-muted);
-    }
-
-    &__recent-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        border: 1px solid var(--apt-border);
-        border-radius: 0.75rem;
-        background: var(--apt-card);
-        overflow: hidden;
-    }
-
-    &__recent-item {
-        display: flex;
-        align-items: stretch;
-        border-block-end: 1px solid var(--apt-border);
-
-        &:last-child {
-            border-block-end: none;
-        }
-    }
-
-    &__recent-button {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        flex: 1;
-        min-inline-size: 0;
-        padding: 0.85rem 0.75rem 0.85rem 1rem;
-        border: 0;
-        background: transparent;
-        color: inherit;
-        text-align: start;
-        cursor: pointer;
-        transition: background-color 0.15s ease;
-
-        &:hover:not(:disabled),
-        &:focus-visible:not(:disabled) {
-            background: rgba(109, 74, 255, 0.04);
-        }
-    }
-
-    &__recent-delete {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        inline-size: 2.75rem;
-        padding: 0;
-        border: 0;
-        border-inline-start: 1px solid var(--apt-border);
-        background: transparent;
-        color: var(--apt-muted);
-        cursor: pointer;
-        transition:
-            background-color 0.15s ease,
-            color 0.15s ease;
-
-        &:hover,
-        &:focus-visible {
-            background: rgba(220, 53, 69, 0.06);
-            color: var(--signal-danger);
-        }
-    }
-
-    &__recent-logo {
-        inline-size: 1.25rem;
-        block-size: 1.25rem;
-        object-fit: contain;
-    }
-
-    &__recent-name {
-        flex: 1;
-        font-size: 0.9rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    &__recent-date {
-        font-size: 0.85rem;
-        color: var(--apt-muted);
-        flex-shrink: 0;
-    }
-
-    &__steps {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
-        margin-block-start: 2.5rem;
-        text-align: start;
-    }
-
-    &__step {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-        padding: 1.25rem;
-        background: var(--apt-card);
-        border: 1px solid var(--apt-border);
-        border-radius: 1rem;
-        box-shadow: 0 1px 3px rgba(28, 19, 64, 0.05);
-    }
-
-    &__step-title {
-        font-family: var(--apt-display);
-        font-weight: 600;
-        font-size: 1.1rem;
-        letter-spacing: -0.01em;
-    }
-
-    &__step-num {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        inline-size: 1.75rem;
-        block-size: 1.75rem;
-        border-radius: 50%;
-        background: rgba(109, 74, 255, 0.12);
-        color: var(--apt-accent);
-        font-weight: 800;
-        font-size: 0.9rem;
-    }
-
-    &__step-detail {
-        font-size: 0.85rem;
-        line-height: 1.5;
-        color: var(--apt-muted);
-    }
-
-    &__export-section {
-        margin-block-start: 4rem;
-        text-align: center;
-    }
-
-    &__export-heading {
-        font-family: var(--apt-display);
-        font-size: 2rem;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-        margin-block: 0 2rem;
-        color: var(--apt-text);
-    }
-
-    &__export-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.25rem;
-        text-align: start;
-    }
-
-    &__export-card {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1.5rem;
-        background: var(--apt-card);
-        border: 1px solid var(--apt-border);
-        border-radius: 1rem;
-        box-shadow: 0 1px 3px rgba(28, 19, 64, 0.05);
-    }
-
-    &__export-card-head {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-    }
-
-    &__export-logo {
-        inline-size: 2.5rem;
-        block-size: 2.5rem;
-        flex-shrink: 0;
-    }
-
-    &__export-title {
-        font-family: var(--apt-display);
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin: 0;
-    }
-
-    &__export-steps {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__export-step {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-        padding: 0.85rem 0;
-        border-block-end: 1px solid var(--apt-border);
-        font-size: 0.9rem;
-        line-height: 1.45;
-        color: var(--apt-text);
-
-        &:last-child {
-            border-block-end: none;
-        }
-    }
-
-    &__export-step-num {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        inline-size: 1.5rem;
-        block-size: 1.5rem;
-        border-radius: 50%;
-        background: rgba(109, 74, 255, 0.1);
-        color: var(--apt-accent);
-        font-size: 0.75rem;
-        font-weight: 700;
-        flex-shrink: 0;
-    }
-
-    &__export-note {
-        font-size: 0.82rem;
-        line-height: 1.45;
-        color: var(--apt-muted);
-        margin: 0;
-        padding-block-start: 0.25rem;
-    }
-
-    &__cta-banner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-        margin-block-start: 4rem;
-        padding: 3rem 2rem;
-        border-radius: 1.5rem;
-        background-color: #fafafa;
-        background-size: 100% 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        text-align: center;
-    }
-
-    &__cta-wordmark {
-        inline-size: auto;
-        block-size: rem(23);
-        margin-block-end: 0.5rem;
-    }
-
-    &__cta-title {
-        font-family: var(--apt-top);
-        font-size: 1.75rem;
-        font-weight: 600;
-        line-height: 1.25;
-        letter-spacing: -0.01em;
-        margin: 0 0 0.5rem;
-        max-inline-size: 28rem;
-        color: var(--apt-text);
-    }
-
-    &__footer {
-        margin-block-start: 2.5rem;
-        max-inline-size: 32rem;
-        margin-inline: auto;
-        font-size: 0.82rem;
-        line-height: 1.5;
-        text-align: center;
-        color: var(--apt-muted);
-    }
-
-    @media (max-width: 40em) {
-        &__steps,
-        &__export-grid {
-            grid-template-columns: 1fr;
-        }
-
-        &__title,
-        &__status-title {
-            font-size: 2.1rem;
-        }
-
-        &__export-heading {
-            font-size: 1.5rem;
-        }
-
-        &__cta-title {
-            font-size: 1.35rem;
-        }
-    }
+	--apt-bg: #fafafa;
+	--apt-text: var(--reinforce-norm);
+	--apt-muted: #6b6a7b;
+	--apt-accent: #6d4aff;
+	--apt-card: white;
+	--apt-border: #eceaf3;
+	--apt-top: syne, inter, system-ui, sans-serif;
+	--apt-display: arizona, 'Times New Roman', serif;
+
+	color-scheme: light;
+	position: relative;
+	inline-size: 100%;
+	min-block-size: 100%;
+	block-size: 100%;
+	overflow: auto;
+	color: var(--apt-text);
+	background:
+		radial-gradient(55% 45% at 10% 12%, rgb(124 92 255 / 0.1), transparent 60%),
+		radial-gradient(50% 45% at 92% 16%, rgb(255 150 178 / 0.1), transparent 60%),
+		radial-gradient(45% 45% at 90% 88%, rgb(255 188 140 / 0.08), transparent 62%),
+		radial-gradient(50% 50% at 18% 92%, rgb(150 196 255 / 0.08), transparent 60%), var(--apt-bg);
+	background-attachment: fixed;
+
+	&__header {
+		position: sticky;
+		inset-block-start: 0;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		box-sizing: border-box;
+		inline-size: 100%;
+		padding-block: 1.25rem;
+		padding-inline: max(1.5rem, calc((100% - 72rem) / 2 + 1.5rem));
+		backdrop-filter: blur(10px);
+	}
+
+	&__header-logo {
+		display: inline-flex;
+		text-decoration: none;
+	}
+
+	&__hero-animation {
+		margin-block: rem(-20) rem(8);
+		margin-inline: auto;
+	}
+
+	&__inner {
+		inline-size: 100%;
+		max-inline-size: 38rem;
+		margin-inline: auto;
+		padding-block: 1.5rem 5rem;
+		padding-inline: 1.5rem;
+		text-align: center;
+	}
+
+	&__landing-split {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		align-items: center;
+		gap: 2.5rem;
+		max-inline-size: 72rem;
+		padding-block: 2rem 5rem;
+		text-align: start;
+
+		@media (width >= 64em) {
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			gap: 3rem;
+			padding-block-start: 3rem;
+		}
+	}
+
+	&__landing-copy {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.25rem;
+	}
+
+	&__landing-title {
+		font-size: 2.5rem;
+		margin-block: 0.5rem 1rem;
+		text-align: start;
+	}
+
+	// &__landing-subtitle {
+	//     margin-block-end: 1.5rem;
+	//     margin-inline: 0;
+	//     text-align: start;
+	// }
+
+	&__landing-preview {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__landing-card {
+		// max-inline-size: min(100%, 20rem);
+		box-shadow: 0 24px 60px rgb(28 19 64 / 0.14);
+	}
+
+	&__wizard-page {
+		max-inline-size: 42rem;
+		padding-block: 2rem 5rem;
+	}
+
+	&__wizard {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		padding: 2rem;
+		border-radius: 1.25rem;
+		background: var(--apt-card);
+		border: 1px solid var(--apt-border);
+		box-shadow: 0 12px 40px rgb(28 19 64 / 0.08);
+		text-align: center;
+	}
+
+	&__wizard-title {
+		font-family: var(--apt-top);
+		font-size: 1.75rem;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+		margin: 0;
+		color: var(--apt-text);
+	}
+
+	&__wizard-lead {
+		font-size: 0.95rem;
+		line-height: 1.55;
+		color: var(--apt-muted);
+		margin: 0;
+	}
+
+	&__stepper {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 0;
+	}
+
+	&__stepper-item {
+		display: flex;
+		align-items: center;
+		gap: 0;
+	}
+
+	&__stepper-line {
+		inline-size: 3rem;
+		block-size: 2px;
+		margin-inline: 0.35rem;
+		background: var(--apt-border);
+		flex-shrink: 0;
+
+		&.is-active {
+			background: var(--apt-accent);
+		}
+	}
+
+	&__stepper-step {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.35rem;
+		min-inline-size: 4.5rem;
+	}
+
+	&__stepper-num {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		inline-size: 1.75rem;
+		block-size: 1.75rem;
+		border-radius: 50%;
+		background: var(--apt-border);
+		color: var(--apt-muted);
+		font-size: 0.8rem;
+		font-weight: bold;
+	}
+
+	&__stepper-label {
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: var(--apt-muted);
+	}
+
+	&__stepper-step.is-active &__stepper-num,
+	&__stepper-step.is-complete &__stepper-num {
+		background: var(--apt-accent);
+		color: white;
+	}
+
+	&__stepper-step.is-active &__stepper-label,
+	&__stepper-step.is-complete &__stepper-label {
+		color: var(--apt-accent);
+	}
+
+	&__platform-tabs {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.5rem;
+		padding: 0.5rem;
+		border-radius: 1rem;
+		background: rgb(109 74 255 / 0.08);
+	}
+
+	&__platform-tab {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 0.75rem;
+		padding-block: 1rem;
+		padding-inline: 1.125rem;
+		border: 1px solid transparent;
+		border-radius: 0.75rem;
+		background: transparent;
+		color: var(--apt-text);
+		text-align: start;
+		cursor: pointer;
+		transition:
+			border-color 0.15s ease,
+			box-shadow 0.15s ease,
+			background-color 0.15s ease;
+
+		&:hover:not(.is-active) {
+			background: rgb(255 255 255 / 0.45);
+		}
+
+		&.is-active {
+			border-color: rgb(109 74 255 / 0.12);
+			background: var(--apt-card);
+			box-shadow: 0 4px 20px rgb(28 19 64 / 0.1);
+		}
+	}
+
+	&__platform-tab-logo {
+		inline-size: 2.25rem;
+		block-size: 2.25rem;
+		object-fit: contain;
+	}
+
+	&__platform-tab-copy {
+		display: flex;
+		flex-direction: column;
+		gap: 0.125rem;
+		min-inline-size: 0;
+	}
+
+	&__platform-tab-name {
+		font-family: var(--apt-top);
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.2;
+		color: var(--apt-text);
+	}
+
+	&__platform-tab-provider {
+		font-size: 0.82rem;
+		line-height: 1.3;
+		color: var(--apt-muted);
+	}
+
+	&__selected-file {
+		color: var(--apt-accent);
+		font-weight: 600;
+		word-break: break-all;
+	}
+
+	&__loading {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		text-align: center;
+		max-inline-size: 44rem;
+		padding-block-start: 1rem;
+	}
+
+	&__loading-hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-block-end: 2.5rem;
+	}
+
+	&__loader {
+		display: inline-flex;
+		color: var(--apt-accent);
+	}
+
+	&__status {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+		margin-block: 0.5rem 0.75rem;
+	}
+
+	&__status-title {
+		font-family: var(--apt-top);
+		font-size: 2rem;
+		font-weight: 600;
+		line-height: 1.15;
+		letter-spacing: -0.01em;
+		color: var(--apt-text);
+		margin: 0;
+	}
+
+	&__status-subtitle {
+		font-size: 1rem;
+		line-height: 1.5;
+		color: var(--apt-muted);
+		margin: 0;
+		max-inline-size: 24rem;
+	}
+
+	&__loading-footer {
+		margin-block-start: 3rem;
+		max-inline-size: 28rem;
+		font-size: 0.82rem;
+		line-height: 1.5;
+		color: var(--apt-muted);
+	}
+
+	&__lesson {
+		inline-size: 100%;
+		max-inline-size: 40rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__lesson-eyebrow {
+		font-size: 0.8rem;
+		font-weight: bold;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--apt-accent);
+		margin-block-end: 1.1rem;
+	}
+
+	&__lesson-card {
+		display: flex;
+		gap: 1.4rem;
+		text-align: start;
+		padding-block: 2rem;
+		padding-inline: 2.2rem;
+		border-radius: 1.4rem;
+		background: rgb(255 255 255 / 0.85);
+		backdrop-filter: blur(10px);
+		box-shadow: 0 24px 60px rgb(28 19 64 / 0.12);
+		border: 1px solid rgb(109 74 255 / 0.14);
+		min-block-size: 11.5rem;
+		inline-size: 100%;
+		opacity: 0;
+		transform: translateY(10px);
+		transition:
+			opacity 0.45s ease,
+			transform 0.45s ease;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			transition: opacity 0.2s ease;
+			transform: none;
+		}
+	}
+
+	&__lesson-emoji {
+		font-size: 2.6rem;
+		line-height: 1;
+		flex: 0 0 auto;
+		inline-size: 4.25rem;
+		block-size: 4.25rem;
+		border-radius: 1rem;
+		background: rgb(109 74 255 / 0.1);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__lesson-body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	&__lesson-tag {
+		font-size: 0.78rem;
+		font-weight: bold;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--apt-accent);
+	}
+
+	&__lesson-title {
+		font-family: var(--apt-display);
+		font-size: 1.65rem;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+		margin: 0;
+		color: var(--apt-ink, #1c1340);
+	}
+
+	&__lesson-text {
+		font-size: 1.08rem;
+		line-height: 1.55;
+		color: var(--apt-muted);
+		margin: 0;
+	}
+
+	&__lesson-dots {
+		display: flex;
+		gap: 0.4rem;
+		margin-block-start: 1.5rem;
+	}
+
+	&__lesson-dot {
+		inline-size: 0.5rem;
+		block-size: 0.5rem;
+		border-radius: 999px;
+		background: rgb(109 74 255 / 0.2);
+		transition: all 0.3s ease;
+
+		&.is-active {
+			inline-size: 1.4rem;
+			background: var(--apt-accent);
+		}
+	}
+
+	&__eyebrow {
+		display: inline-block;
+		margin-block-end: 1rem;
+		padding-block: 0.3rem;
+		padding-inline: 0.85rem;
+		border-radius: 999px;
+		background: rgb(109 74 255 / 0.1);
+		color: var(--apt-accent);
+		font-family: var(--apt-top);
+		font-size: 0.75rem;
+		font-weight: bold;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	&__title {
+		font-family: var(--apt-top);
+		font-size: rem(38);
+		font-weight: 600;
+		line-height: 1.08;
+		letter-spacing: -0.02em;
+		margin-block: 0 1.25rem;
+		color: var(--apt-text);
+	}
+
+	// &__subtitle {
+	//     font-size: 1.05rem;
+	//     line-height: 1.6;
+	//     color: var(--apt-muted);
+	//     margin-block: 0;
+	//     max-inline-size: 36rem;
+	//     margin-inline: auto;
+	// }
+
+	&__muted {
+		color: var(--apt-muted);
+	}
+
+	&__dropzone {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-block-size: 14rem;
+		padding: 2rem;
+		border: 2px dashed rgb(109 74 255 / 0.3);
+		border-radius: 1.25rem;
+		background: rgb(109 74 255 / 0.04);
+		cursor: pointer;
+		transition:
+			border-color 0.15s ease,
+			box-shadow 0.15s ease,
+			transform 0.15s ease;
+
+		&:hover,
+		&.is-dragging,
+		&.has-file {
+			border-color: var(--apt-accent);
+			box-shadow: 0 14px 36px rgb(109 74 255 / 0.12);
+		}
+	}
+
+	&__upload-icon {
+		color: var(--apt-accent);
+	}
+
+	&__error {
+		background: #fdecec;
+		color: #b42318;
+		text-align: start;
+	}
+
+	&__privacy {
+		justify-content: center;
+		text-align: start;
+		color: var(--apt-muted);
+	}
+
+	&__save-option {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 0.75rem;
+
+		// margiock-start: 1.25rem;
+		padding-block: 1rem;
+		padding-inline: 1.125rem;
+		border: 1px solid var(--apt-border);
+		border-radius: 0.75rem;
+		background: var(--apt-card);
+		text-align: start;
+	}
+
+	&__save-copy {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		cursor: pointer;
+	}
+
+	&__save-toggle {
+		margin-block-start: 0.125rem;
+	}
+
+	&__export-steps {
+		text-align: start;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__export-step {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.75rem;
+		padding-block: 0.85rem;
+		padding-inline: 0;
+		border-block-end: 1px solid var(--apt-border);
+		font-size: 0.9rem;
+		line-height: 1.45;
+		color: var(--apt-text);
+
+		&:last-child {
+			border-block-end: none;
+		}
+	}
+
+	&__export-step-num {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		inline-size: 1.5rem;
+		block-size: 1.5rem;
+		border-radius: 50%;
+		background: rgb(109 74 255 / 0.1);
+		color: var(--apt-accent);
+		font-size: 0.75rem;
+		font-weight: bold;
+		flex-shrink: 0;
+	}
+
+	// &__export-note {
+	//     font-size: 0.82rem;
+	//     line-height: 1.45;
+	//     color: var(--apt-muted);
+	//     margin: 0;
+	//     padding-block-start: 0.25rem;
+	//     text-align: start;
+	// }
+
+	@media (width <= 40em) {
+		&__title,
+		&__status-title,
+		&__landing-title {
+			font-size: 2.1rem;
+		}
+
+		&__wizard {
+			padding: 1.25rem;
+		}
+
+		&__platform-tabs {
+			grid-template-columns: 1fr;
+			gap: 0.375rem;
+		}
+
+		&__platform-tab {
+			padding-block: 0.875rem;
+			padding-inline: 1rem;
+		}
+
+		&__stepper-line {
+			inline-size: 1.5rem;
+		}
+	}
 }
