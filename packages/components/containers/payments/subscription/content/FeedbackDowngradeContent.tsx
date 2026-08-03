@@ -17,7 +17,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useConfig from '@proton/components/hooks/useConfig';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { maxLengthValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -85,7 +85,7 @@ const InputLimit = ({ maxLength, value }: { maxLength: number; value: string }) 
 const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngradeContentProps) => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const { isB2BTrial } = getTrialInfoForSingleSubscription(subscription);
     const { APP_NAME } = useConfig();
     const { hasB2CAccess, hasB2BAccess } = useFeedbackFirstEligibility();
     const isEligibleForFeedbackFirst = hasB2CAccess || hasB2BAccess;

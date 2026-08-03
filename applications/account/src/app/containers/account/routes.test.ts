@@ -68,7 +68,6 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         showThemeSelection: false,
         assistantKillSwitch: false,
         memberships: undefined,
-        isB2BTrial: false,
         isB2BDrive: false,
         isGroupOwner: null,
         referralInfo: { refereeRewardAmount: '0', referrerRewardAmount: '0', maxRewardAmount: '0' },

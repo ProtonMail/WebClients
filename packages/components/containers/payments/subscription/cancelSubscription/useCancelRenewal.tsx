@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { changeRenewState } from '@proton/payments/core/api/api';
 import { Renew } from '@proton/payments/core/subscription/constants';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 
 import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';
 import type { FeedbackDowngradeFormData } from '../content/interface';
@@ -22,8 +21,7 @@ export const useCancelRenewal = () => {
     const eventManager = useEventManager();
     const { createNotification, hideNotification } = useNotifications();
     const [subscription] = useSubscription();
-    const [organization] = useOrganization();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const { isB2BTrial } = getTrialInfoForSingleSubscription(subscription);
 
     const cancelSubscriptionRenewal = async (feedback: FeedbackDowngradeFormData, refreshState = true) => {
         let cancelNotificationId;
