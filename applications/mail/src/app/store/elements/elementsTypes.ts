@@ -59,6 +59,13 @@ export interface ElementsState {
     pendingActions: number;
 
     /**
+     * Number of Encrypted Search runs in flight. Mirrored from ES's React state because every result
+     * batch clears `pendingRequest`, so the loading flag can't tell a finished search from a batched one.
+     * A count, not a boolean: a load-more run can overlap the search that started it.
+     */
+    pendingESSearches: number;
+
+    /**
      * Current parameters of the list (label, filter, sort, search)
      */
     params: ElementsStateParams;

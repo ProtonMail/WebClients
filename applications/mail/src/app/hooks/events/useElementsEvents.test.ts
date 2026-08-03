@@ -32,6 +32,7 @@ const mockElementsState = (elementIds: string[] = []): ElementsState => ({
     invalidated: false,
     beforeFirstLoad: false,
     pendingActions: 0,
+    pendingESSearches: 0,
     params: {
         labelID: 'inbox',
         categoryIDs: [],
