@@ -146,7 +146,6 @@ export const getRoutes = ({
                     text: c('Title').t`Invoices`,
                     id: 'invoices',
                     variant: SettingsLayoutVariant.Card,
-                    available: !organizationSettingsRouterParams.isB2BTrial,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,
@@ -223,7 +222,6 @@ export const getRoutes = ({
                 {
                     text: c('Title').t`Invoices`,
                     id: 'invoices',
-                    available: !organizationSettingsRouterParams.isB2BTrial,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,

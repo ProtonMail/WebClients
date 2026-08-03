@@ -3,7 +3,6 @@ import { type ReactNode, createContext, useContext, useEffect, useRef, useState 
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { selectOrganization } from '@proton/account/organization';
 import { paymentStatusThunk, selectPaymentStatus } from '@proton/account/paymentStatus';
 import { plansThunk, selectPlans } from '@proton/account/plans';
 import { selectSubscription, subscriptionThunk } from '@proton/account/subscription';
@@ -176,15 +175,14 @@ interface PaymentsContextProviderState {
 }
 
 const selectInitialPaymentData = createSelector(
-    [selectUser, selectSubscription, selectPlans, selectPaymentStatus, selectOrganization],
-    (user, subscription, plans, paymentStatus, organization) => {
+    [selectUser, selectSubscription, selectPlans, selectPaymentStatus],
+    (user, subscription, plans, paymentStatus) => {
         return {
             // NOTE: with optionals due to user, subscription not being initialized in account's public app
             user: user?.value,
             subscription: subscription?.value,
             plans: plans?.value,
             paymentStatus: paymentStatus?.value,
-            organization: organization?.value,
         };
     }
 );
@@ -199,13 +197,7 @@ export const PaymentsContextProvider = ({
 
     const defaultApi = useApi();
 
-    const {
-        user,
-        paymentStatus: paymentStatusInitial,
-        subscription: subscriptionInitial,
-        plans: plansInitial,
-        organization,
-    } =
+    const { user, paymentStatus: paymentStatusInitial, subscription: subscriptionInitial, plans: plansInitial } =
         // Avoid using model hooks to avoid fetching data
         useSelector(selectInitialPaymentData);
     const dispatch = useDispatch();
@@ -270,7 +262,6 @@ export const PaymentsContextProvider = ({
                 newCycle: cycle,
                 downgradeIsTrial: true,
                 subscription,
-                organization,
             });
             const planToCheck = {
                 cycle,
@@ -342,7 +333,6 @@ export const PaymentsContextProvider = ({
             newCycle: cycle,
             downgradeIsTrial: canDowngrade,
             subscription: stateRef.current.subscription,
-            organization,
         });
     };
 

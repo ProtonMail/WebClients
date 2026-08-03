@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import Loader from '@proton/components/components/loader/Loader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -10,7 +9,7 @@ import OnboardingSetupOrgStep from '@proton/components/components/onboarding/b2b
 import OnboardingTrialStep from '@proton/components/components/onboarding/b2b/steps/OnboardingTrialStep';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -38,13 +37,12 @@ const B2BOnboardingModal = (props: Props) => {
     const { APP_NAME } = useConfig();
     const api = useApi();
     const [organization, loadingOrganization] = useOrganization();
-    const [subscription] = useSubscription();
     const [step, setStep] = useState<B2B_ONBOARDING_STEPS>(B2B_ONBOARDING_STEPS.LOADING);
     const orgSetupRef = useRef(false);
     const telemetrySentRef = useRef(false);
     const [forceModalSize, setForceModalSize] = useState(false);
     const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const { hasAtLeastOneB2BTrial } = useTrialInfo();
     const b2bOnboardingEnabled = useFlag('B2BOnboarding');
 
     const handleClose = () => {
@@ -87,7 +85,7 @@ const B2BOnboardingModal = (props: Props) => {
 
             const initialStep = (() => {
                 // Show trial step first for B2B trial users
-                if (isB2BTrial && props.source === 'onboarding') {
+                if (hasAtLeastOneB2BTrial && props.source === 'onboarding') {
                     return B2B_ONBOARDING_STEPS.TRIAL;
                 }
                 // Then show org setup or features based on org state
@@ -97,7 +95,7 @@ const B2BOnboardingModal = (props: Props) => {
             setStep(initialStep);
             orgSetupRef.current = true;
         }
-    }, [organization, loadingOrganization, isB2BTrial, props.source]);
+    }, [organization, loadingOrganization, hasAtLeastOneB2BTrial, props.source]);
 
     useEffect(() => {
         if (!telemetrySentRef.current) {

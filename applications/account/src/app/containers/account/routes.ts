@@ -86,7 +86,6 @@ function getV1DashboardSections(
     canPay: boolean,
     assistantKillSwitch: boolean,
     isPaid: boolean,
-    isB2BTrial: boolean,
     isMember: boolean,
     cancellablePlan: boolean,
     subscription: MaybeFreeSubscription,
@@ -132,7 +131,7 @@ function getV1DashboardSections(
         {
             text: c('Title').t`Invoices`,
             id: 'invoices',
-            available: canPay && !isB2BTrial,
+            available: canPay,
         },
         {
             text: c('Title').t`Notifications`,
@@ -297,7 +296,6 @@ export const getAccountAppRoutes = ({
     showThemeSelection,
     assistantKillSwitch,
     memberships,
-    isB2BTrial,
     referralInfo,
     showDashboard,
     showDriveDashboard,
@@ -431,7 +429,6 @@ export const getAccountAppRoutes = ({
                           canPay,
                           assistantKillSwitch,
                           isPaid,
-                          isB2BTrial,
                           isMember,
                           cancellablePlan,
                           subscription,
@@ -484,7 +481,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
-                        available: canPay && !isB2BTrial,
+                        available: canPay,
                         variant: SettingsLayoutVariant.Card,
                     },
                     {

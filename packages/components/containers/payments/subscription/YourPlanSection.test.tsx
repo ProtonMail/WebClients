@@ -1,9 +1,8 @@
-import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useAllEntitlements } from '@proton/account/entitlements/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useGetSubscription, useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
@@ -15,31 +14,13 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { EntitlementType } from '@proton/payments/core/entitlements/interface';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
-import { applyHOCs } from '@proton/testing/lib/context/hocs';
-import {
-    withApi,
-    withAuthentication,
-    withCache,
-    withConfig,
-    withEventManager,
-    withMemoryRouter,
-    withNotifications,
-    withReduxStore,
-} from '@proton/testing/lib/context/providers';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildPreloadedState } from '@proton/testing/lib/buildPreloadedState';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { mockUseFlag } from '@proton/testing/lib/mockUseFlag';
 
 import YourPlanSection from './YourPlanSection';
-import {
-    addresses,
-    calendars,
-    organization,
-    pendingInvite,
-    subscriptionBundle,
-    subscriptionMailEssentials,
-    user,
-} from './__mocks__/data';
+import { addresses, calendars, organization, pendingInvite, subscriptionBundle, user } from './__mocks__/data';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 jest.mock('@proton/components/hooks/useConfig');
@@ -56,12 +37,6 @@ mockUseAddresses.mockReturnValue([addresses, false]);
 jest.mock('@proton/calendar/calendars/hooks');
 const mockUseCalendars = useCalendars as jest.MockedFunction<any>;
 mockUseCalendars.mockReturnValue([calendars, false]);
-
-jest.mock('@proton/account/subscription/hooks');
-const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
-mockUseSubscription.mockReturnValue([subscriptionBundle, false]);
-const mockUseGetSubscription = useGetSubscription as jest.MockedFunction<any>;
-mockUseGetSubscription.mockReturnValue(async () => subscriptionBundle);
 
 jest.mock('@proton/account/organization/hooks');
 const mockUseOrganization = useOrganization as jest.MockedFunction<any>;
@@ -105,26 +80,11 @@ mockUseFlag().mockImplementation(() => {
     return true;
 });
 
-const YourPlanSectionWrapped = applyHOCs(
-    withReduxStore({
-        plans: getLongTestPlans(),
-    }),
-    withConfig(),
-    withApi(),
-    withCache(),
-    withNotifications(),
-    withEventManager(),
-    withAuthentication(),
-    withMemoryRouter()
-)(YourPlanSection);
-
 describe('YourPlanSection', () => {
     beforeEach(() => {
         jest.clearAllMocks();
 
         mockUseUser.mockReturnValue([user, false]);
-        mockUseSubscription.mockReturnValue([subscriptionBundle, false]);
-        mockUseGetSubscription.mockReturnValue(async () => subscriptionBundle);
         mockUsePendingUserInvitations.mockReturnValue([[], false]);
         mockUseOrganization.mockReturnValue([{}, false]);
         mockUseAllEntitlements.mockReturnValue([undefined, false]);
@@ -134,14 +94,16 @@ describe('YourPlanSection', () => {
         mockUseUser.mockRestore();
         mockUsePendingUserInvitations.mockRestore();
         mockUseOrganization.mockRestore();
-        mockUseSubscription.mockRestore();
-        mockUseGetSubscription.mockRestore();
         mockUseAllEntitlements.mockRestore();
     });
 
     describe('when user has no pending invite', () => {
         it('should only render subscription panel and upsell panels', async () => {
-            const { getByTestId } = render(<YourPlanSectionWrapped app={APPS.PROTONMAIL} />);
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState({
+                    subscription: subscriptionBundle,
+                }),
+            });
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {
@@ -178,7 +140,11 @@ describe('YourPlanSection', () => {
         it('should render subscription panel and pending invites, without upsells', async () => {
             mockUsePendingUserInvitations.mockReturnValue([[pendingInvite], false]);
 
-            render(<YourPlanSectionWrapped app={APPS.PROTONMAIL} />);
+            renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState({
+                    subscription: subscriptionBundle,
+                }),
+            });
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {
@@ -207,11 +173,12 @@ describe('YourPlanSection', () => {
 
     describe('[duo]', () => {
         it('should render subscription and upsells, including sentinel and excluding users', async () => {
-            mockUseSubscription.mockReturnValue([{}, false]);
             mockUseUser.mockReturnValue([{ ...user, isFree: true }]);
             mockUseOrganization.mockReturnValue([{}]);
 
-            const { getByTestId } = renderWithProviders(<YourPlanSectionWrapped app={APPS.PROTONMAIL} />);
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState(),
+            });
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {
@@ -259,7 +226,11 @@ describe('YourPlanSection', () => {
                 false,
             ]);
 
-            const { getByTestId } = render(<YourPlanSectionWrapped app={APPS.PROTONMAIL} />);
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState({
+                    subscription: subscriptionBundle,
+                }),
+            });
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {
@@ -294,9 +265,10 @@ describe('YourPlanSection', () => {
     describe('[business] when there is more than one user in organization', () => {
         it.skip('should render subscription, usage and upsells', async () => {
             mockUseOrganization.mockReturnValue([organization]);
-            mockUseSubscription.mockReturnValue([subscriptionMailEssentials]);
 
-            const { getByTestId } = renderWithProviders(<YourPlanSectionWrapped app={APPS.PROTONMAIL} />);
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState(),
+            });
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {
@@ -321,9 +293,12 @@ describe('YourPlanSection', () => {
 
         it('should render subscription, upsells but not usage when organisation is locked', async () => {
             mockUseOrganization.mockReturnValue([{ ...organization, State: ORGANIZATION_STATE.DELINQUENT }]);
-            mockUseSubscription.mockReturnValue([subscriptionMailEssentials]);
 
-            const { getByTestId } = renderWithProviders(<YourPlanSectionWrapped app={APPS.PROTONMAIL} />);
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState({
+                    subscription: buildSubscription(PLANS.MAIL_PRO),
+                }),
+            });
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {

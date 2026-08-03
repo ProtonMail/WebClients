@@ -19,9 +19,9 @@ import {
     getHasVpnOnlyB2BPlan,
     hasLumo,
     isAutoRenewTrial,
-    isReferralTrial,
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -90,8 +90,10 @@ const YourPlanSectionInner = ({ app }: Props) => {
     // Subscription panel is displayed for user with a free or paid plan and not in a trial
     const shouldRenderSubscription = user.canPay || (subscription && !isTrial(subscription));
     const shouldRenderPendingInvitation = !!invites.length;
+
+    const trialInfo = getTrialInfoForSingleSubscription(subscription);
     const shouldRenderTrialInfo =
-        isReferralTrial(subscription) &&
+        trialInfo.isReferralTrial &&
         ((!hasTrialPaymentMethods && !isAutoRenewTrial(subscription)) || isAutoRenewTrial(subscription));
     // Upsell panel if the user has a subscription and is not vpn or wallet
     const shouldRenderUpsells =

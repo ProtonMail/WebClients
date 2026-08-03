@@ -65,7 +65,6 @@ import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments/core/subscription/helpers';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -261,7 +260,6 @@ const MainContainer = () => {
 
     const { isB2B: isB2BDrive } = useDrivePlan();
 
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
 
     const canDisplayNonPrivateEmailPhone = useFlag('B2BNonPrivateEmailPhone');
@@ -301,7 +299,6 @@ const MainContainer = () => {
         groups,
         organization,
         isB2BDrive,
-        isB2BTrial,
         isGroupOwner,
         permissions: permissions ?? ({} as Record<Permission, boolean>),
         memberships,

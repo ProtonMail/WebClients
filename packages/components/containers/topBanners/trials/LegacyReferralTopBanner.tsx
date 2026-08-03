@@ -16,7 +16,7 @@ import {
     isTrialExpired,
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -130,12 +130,7 @@ const TrialEndsActionButtonSwitcher = ({ fromApp }: { fromApp: APP_NAMES }) => {
     return null;
 };
 
-const LegacyReferralTopBanner = ({ fromApp }: { fromApp: APP_NAMES }) => {
-    const [subscription, loadingSubscription] = useSubscription();
-    if (loadingSubscription || isFreeSubscription(subscription)) {
-        return null;
-    }
-
+const LegacyReferralTopBanner = ({ fromApp, subscription }: { fromApp: APP_NAMES; subscription: Subscription }) => {
     const action = <TrialEndsActionButtonSwitcher key="trial-action-button" fromApp={fromApp} />;
     const { PeriodEnd = 0 } = subscription || {};
     const textDate = format(fromUnixTime(PeriodEnd), 'PPP', { locale: dateLocale });
