@@ -33,6 +33,7 @@ import { Chat } from '../Chat/Chat';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { MeetingName } from '../MeetingName/MeetingName';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
+import { MeetingTopBanner } from '../MeetingTopBanner/MeetingTopBanner';
 import { NoDeviceDetectedInfo } from '../NoDeviceDetectedInfo/NoDeviceDetectedInfo';
 import { NoDeviceDetectedModal } from '../NoDeviceDetectedModal/NoDeviceDetectedModal';
 import { NoPermissionInfo } from '../NoPermissionInfo/NoPermissionInfo';
@@ -42,7 +43,6 @@ import { ParticipantList } from '../ParticipantList/ParticipantList';
 import { ParticipantSidebar } from '../ParticipantSidebar/ParticipantSidebar';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
-import { RecordingTopBanner } from '../RecordingTopBanner';
 import { Settings } from '../Settings/Settings';
 
 import './MeetingBody.scss';
@@ -184,7 +184,7 @@ export const MeetingBody = ({
 
     return (
         <main ref={mainContainerRef} tabIndex={-1} className="w-full h-full flex flex-column flex-nowrap outline-none">
-            <RecordingTopBanner />
+            <MeetingTopBanner />
             <div
                 className={clsx(
                     'w-full h-full flex flex-column flex-nowrap overflow-hidden pl-4 pr-4 pb-0 pt-4',

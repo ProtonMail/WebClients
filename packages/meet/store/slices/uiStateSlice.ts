@@ -26,6 +26,11 @@ export enum PermissionPromptStatus {
     CLOSED = 'CLOSED',
 }
 
+export enum ParticipantListTabs {
+    WaitingRoom,
+    AllParticipants,
+}
+
 export interface UIState {
     meetingReadyPopupOpen: boolean;
     emojiReactionPopupOpen: boolean;
@@ -40,6 +45,7 @@ export interface UIState {
     popupState: Record<PopUpControls, boolean>;
     permissionPromptStatus: PermissionPromptStatus;
     noDeviceDetected: PermissionPromptStatus;
+    participantListTab: ParticipantListTabs;
 }
 
 const initialState: UIState = {
@@ -63,6 +69,7 @@ const initialState: UIState = {
     },
     permissionPromptStatus: PermissionPromptStatus.CLOSED,
     noDeviceDetected: PermissionPromptStatus.CLOSED,
+    participantListTab: ParticipantListTabs.AllParticipants,
 };
 
 const slice = createSlice({
@@ -121,6 +128,16 @@ const slice = createSlice({
         setNoDeviceDetected: (state, action: PayloadAction<PermissionPromptStatus>) => {
             state.noDeviceDetected = action.payload;
         },
+        setParticipantListTab: (state, action: PayloadAction<ParticipantListTabs>) => {
+            state.participantListTab = action.payload;
+        },
+        openWaitingRoomSideBar: (state) => {
+            Object.keys(state.popupState).forEach((key) => {
+                state.popupState[key as PopUpControls] = false;
+            });
+            state.sideBarState[MeetingSideBars.Participants] = true;
+            state.participantListTab = ParticipantListTabs.WaitingRoom;
+        },
         resetUiState: (state) => {
             state.meetingReadyPopupOpen = initialState.meetingReadyPopupOpen;
             state.emojiReactionPopupOpen = initialState.emojiReactionPopupOpen;
@@ -138,6 +155,8 @@ export const {
     setEmojiReactionPopupOpen,
     toggleShowDuration,
     toggleSideBarState,
+    setParticipantListTab,
+    openWaitingRoomSideBar,
     closeSideBar,
     closeAllSideBars,
     togglePopupState,
@@ -156,5 +175,6 @@ export const selectPopupState = (state: MeetState) => state.uiState.popupState;
 export const selectPermissionPromptStatus = (state: MeetState) => state.uiState.permissionPromptStatus;
 export const selectNoDeviceDetected = (state: MeetState) => state.uiState.noDeviceDetected;
 export const selectShowDuration = (state: MeetState) => state.uiState.showDuration;
+export const selectParticipantListTab = (state: MeetState) => state.uiState.participantListTab;
 
 export const uiStateReducer = { uiState: slice.reducer };
