@@ -1,10 +1,11 @@
+import { exportKey as exportAesGcmKey, importKey as importAesGcmKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { downloadDir, join } from '@tauri-apps/api/path';
 import { save } from '@tauri-apps/plugin-dialog';
 import { create } from '@tauri-apps/plugin-fs';
 import type { Transaction } from 'dexie';
 import { Dexie } from 'dexie';
-import { createBackupFilename } from 'proton-authenticator/lib/backup/writer';
-import { DATABASE_NAME } from 'proton-authenticator/lib/db/db';
+import { createBackupFilename } from 'proton-authenticator/lib/backup/filename';
+import { DATABASE_NAME } from 'proton-authenticator/lib/db/constants';
 import type { BackupEntity } from 'proton-authenticator/lib/db/entities/backup';
 import type { Item } from 'proton-authenticator/lib/db/entities/items';
 import type { LegacyRemoteKey, RemoteKey } from 'proton-authenticator/lib/db/entities/remote-keys';
@@ -15,7 +16,6 @@ import logger from 'proton-authenticator/lib/logger';
 import { service } from 'proton-authenticator/lib/wasm/service';
 import { c } from 'ttag';
 
-import { importKey as importAesGcmKey, exportKey as exportAesGcmKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import type { MaybeNull } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 

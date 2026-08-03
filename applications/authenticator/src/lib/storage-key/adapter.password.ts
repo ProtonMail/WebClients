@@ -1,11 +1,11 @@
-import { authService } from 'proton-authenticator/lib/auth/service';
+import { getAppPassword } from 'proton-authenticator/lib/auth/appPassword';
 
 import type { StorageKeyResult } from './types';
 import { type StorageKeyAdapter, StorageKeyError, StorageKeySource } from './types';
 
 export const createPasswordAdapter = (): StorageKeyAdapter => {
     const storageKeyResultFromPasswordHash = async (): Promise<StorageKeyResult> => {
-        const key = authService.getAppPassword();
+        const key = getAppPassword();
         if (!key) return { ok: false, error: StorageKeyError.NO_EXIST };
         return { ok: true, key: key };
     };

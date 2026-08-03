@@ -1,6 +1,7 @@
 import { homeDir, join, normalize, sep } from '@tauri-apps/api/path';
 import { open } from '@tauri-apps/plugin-dialog';
 import { create, readDir, remove } from '@tauri-apps/plugin-fs';
+import { getBackupFilenameRegex, parseDateFromFilename } from 'proton-authenticator/lib/backup/filename';
 import { db } from 'proton-authenticator/lib/db/db';
 import { toWasmEntry } from 'proton-authenticator/lib/entries/items';
 import { service } from 'proton-authenticator/lib/wasm/service';
@@ -10,39 +11,9 @@ import { c } from 'ttag';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 export const BACKUP_MAX_AMOUNT = 5;
-
-const createFilename = () => {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    return `${AUTHENTICATOR_APP_NAME}_export_${year}-${month}-${day}`;
-};
-
-const getBackupFilenameRegex = () => new RegExp(`^${AUTHENTICATOR_APP_NAME}_export_\\d{4}-\\d{2}-\\d{2}\\.json$`);
-
-const parseDateFromFilename = (filename: string) => {
-    const regex = new RegExp(`^${AUTHENTICATOR_APP_NAME}_export_(\\d{4})-(\\d{2})-(\\d{2})\\.json$`);
-    const match = filename.match(new RegExp(regex));
-    if (!match) return null;
-
-    const [, year, month, day] = match;
-    return new Date(Number(year), Number(month) - 1, Number(day));
-};
-
-const isPathInHome = async (path: string) => {
-    const home = await normalize(await homeDir());
-    const separator = sep();
-    const homeWithSlash = home.endsWith(separator) ? home : `${home}${separator}`;
-    const normalizedPath = await normalize(path);
-
-    return normalizedPath.startsWith(homeWithSlash);
-};
 
 /** Sorts backup files by ASCENDING dates by parsing
  * the timestamp from the filename. */
@@ -56,6 +27,15 @@ export const sortBackupsByDate = (filenames: string[]): string[] => {
         .filter(({ date }) => date > 0)
         .sort(sortOn('date', 'ASC'))
         .map(prop('filename'));
+};
+
+const isPathInHome = async (path: string) => {
+    const home = await normalize(await homeDir());
+    const separator = sep();
+    const homeWithSlash = home.endsWith(separator) ? home : `${home}${separator}`;
+    const normalizedPath = await normalize(path);
+
+    return normalizedPath.startsWith(homeWithSlash);
 };
 
 /** Reads the user's `backupDirectory` and filters out files
@@ -73,11 +53,6 @@ export const readCurrentBackups = async (backupDirectory: string): Promise<strin
         return [];
     }
 };
-
-export const createAutomaticBackupFilename = () => `${createFilename()}.json`;
-/** Non-automatic backups have a different format to avoid
- * matching them in the user's backup directory. */
-export const createBackupFilename = () => `${createAutomaticBackupFilename()}_${getEpoch()}.json`;
 
 /** Deletes backup files older than the last `BACKUP_MAX_AMOUNT` (=5) files.
  * Reads all backup files from the directory, sorts them by date (oldest first),
