@@ -9,7 +9,7 @@ import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/chec
 import { COUPON_CODES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import type { Plan } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode, TaxInclusive } from '@proton/payments/core/subscription/constants';
+import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import { InclusiveVatText } from '@proton/payments/ui/billing-address/components/VatText';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
@@ -132,7 +132,7 @@ const AccountStepPaymentSummary = ({
         couponDiscount !== 0 ||
         hideDiscount ||
         isTrial ||
-        tax?.inclusive === TaxInclusive.EXCLUSIVE;
+        tax?.inclusive === TaxMode.EXCLUSIVE;
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlan.Name);
 
@@ -163,12 +163,12 @@ const AccountStepPaymentSummary = ({
                 // we hide the full plan amount for trials only for tax inclusive case, because it's a simpler case.
                 // When there is tax exlusive trial, then we need to show more extended checkout version to avoid
                 // confusion.
-                !(isTrial && tax?.inclusive === TaxInclusive.INCLUSIVE) && {
+                !(isTrial && tax?.inclusive === TaxMode.INCLUSIVE) && {
                     id: 'amount',
                     left: (
                         <span>
                             {getTotalBillingText(options.cycle, currentCheckout.planIDs, {
-                                excludingTax: tax?.inclusive === TaxInclusive.EXCLUSIVE,
+                                excludingTax: tax?.inclusive === TaxMode.EXCLUSIVE,
                             })}
                         </span>
                     ),
@@ -239,7 +239,7 @@ const AccountStepPaymentSummary = ({
                 bold: false,
             },
             !showAmountDue &&
-                tax?.inclusive === TaxInclusive.INCLUSIVE && {
+                tax?.inclusive === TaxMode.INCLUSIVE && {
                     id: 'vat',
                     left: taxInclusiveText,
                 },
@@ -247,7 +247,7 @@ const AccountStepPaymentSummary = ({
                 id: 'vat-reverse-charge',
                 left: <span className="text-sm color-weak">{getVatReverseChargeText()}</span>,
             },
-            tax?.inclusive === TaxInclusive.EXCLUSIVE &&
+            tax?.inclusive === TaxMode.EXCLUSIVE &&
                 tax?.amount > 0 && {
                     id: 'vat-exclusive',
                     left: <span>{tax.taxRateElement}</span>,

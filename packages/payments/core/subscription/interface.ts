@@ -3,7 +3,7 @@ import type { ADDON_NAMES, PLANS } from '../constants';
 import type { InvalidCouponError, WrongBillingAddressError } from '../errors';
 import type { Currency, Cycle } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
-import type { Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
+import type { Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive, TaxMode, TrialType } from './constants';
 
 export type FullPlansMap = BasePlansMap<Plan>;
 
@@ -138,7 +138,11 @@ interface SubscriptionCheckResponse {
      */
     PeriodEnd: number;
     Taxes?: Tax[];
+    /**
+     * @deprecated Backend fallback during the TaxMode migration. Read via `getTaxMode`; prefer `TaxMode`.
+     */
     TaxInclusive?: TaxInclusive;
+    TaxMode?: TaxMode;
     /**
      * Subscription mode dictates when subscription starts and what exactly user pays for.
      */

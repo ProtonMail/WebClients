@@ -3,7 +3,7 @@ import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { CYCLE, PLANS } from '../../../core/constants';
 import type { Currency } from '../../../core/interface';
 import type { PlansMap } from '../../../core/plan/interface';
-import { SubscriptionMode, TaxInclusive } from '../../../core/subscription/constants';
+import { SubscriptionMode, TaxInclusive, TaxMode } from '../../../core/subscription/constants';
 import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import { getHeadlessCheckout } from '../get-headless-checkout';
@@ -18,49 +18,109 @@ const mailPlan = makePlan({
 });
 
 describe('isVatReverseChargeApplicable', () => {
-    it('should return true when TaxInclusive is EXCLUSIVE and Taxes is empty', () => {
+    it('should return true when TaxMode is REVERSE_CHARGE and Taxes is empty', () => {
         const checkResult = makeCheckResult({
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
+            TaxMode: TaxMode.REVERSE_CHARGE,
             Taxes: [],
         });
 
         expect(isVatReverseChargeApplicable(checkResult)).toBe(true);
     });
 
-    it('should return true when TaxInclusive is EXCLUSIVE and Taxes is undefined', () => {
+    it('should return true when TaxMode is REVERSE_CHARGE and Taxes is undefined', () => {
         const checkResult = makeCheckResult({
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
+            TaxMode: TaxMode.REVERSE_CHARGE,
             Taxes: undefined,
         });
 
         expect(isVatReverseChargeApplicable(checkResult)).toBe(true);
     });
 
-    it('should return false when TaxInclusive is EXCLUSIVE but Taxes has entries', () => {
+    it('should return false when TaxMode is EXCLUSIVE and Taxes is empty', () => {
         const checkResult = makeCheckResult({
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
-            Taxes: [{ Name: 'VAT', Rate: 20, Amount: 200 }],
-        });
-
-        expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
-    });
-
-    it('should return false when TaxInclusive is INCLUSIVE and Taxes is empty', () => {
-        const checkResult = makeCheckResult({
-            TaxInclusive: TaxInclusive.INCLUSIVE,
+            TaxMode: TaxMode.EXCLUSIVE,
             Taxes: [],
         });
 
         expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
     });
 
-    it('should return false when TaxInclusive is INCLUSIVE and Taxes has entries', () => {
+    it('should return false when TaxMode is EXCLUSIVE and Taxes is undefined', () => {
         const checkResult = makeCheckResult({
-            TaxInclusive: TaxInclusive.INCLUSIVE,
+            TaxMode: TaxMode.EXCLUSIVE,
+            Taxes: undefined,
+        });
+
+        expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
+    });
+
+    it('should return false when TaxMode is EXCLUSIVE but Taxes has entries', () => {
+        const checkResult = makeCheckResult({
+            TaxMode: TaxMode.EXCLUSIVE,
             Taxes: [{ Name: 'VAT', Rate: 20, Amount: 200 }],
         });
 
         expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
+    });
+
+    it('should return false when TaxMode is INCLUSIVE and Taxes is empty', () => {
+        const checkResult = makeCheckResult({
+            TaxMode: TaxMode.INCLUSIVE,
+            Taxes: [],
+        });
+
+        expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
+    });
+
+    it('should return false when TaxMode is INCLUSIVE and Taxes has entries', () => {
+        const checkResult = makeCheckResult({
+            TaxMode: TaxMode.INCLUSIVE,
+            Taxes: [{ Name: 'VAT', Rate: 20, Amount: 200 }],
+        });
+
+        expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
+    });
+
+    describe('TaxInclusive fallback (backend has not shipped TaxMode yet)', () => {
+        it('should apply the old heuristic when TaxInclusive is EXCLUSIVE and Taxes is empty', () => {
+            const checkResult = makeCheckResult({
+                TaxMode: undefined,
+                TaxInclusive: TaxInclusive.EXCLUSIVE,
+                Taxes: [],
+            });
+
+            expect(isVatReverseChargeApplicable(checkResult)).toBe(true);
+        });
+
+        it('should return false when TaxInclusive is EXCLUSIVE but Taxes has entries', () => {
+            const checkResult = makeCheckResult({
+                TaxMode: undefined,
+                TaxInclusive: TaxInclusive.EXCLUSIVE,
+                Taxes: [{ Name: 'VAT', Rate: 20, Amount: 200 }],
+            });
+
+            expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
+        });
+
+        it('should return false when TaxInclusive is INCLUSIVE', () => {
+            const checkResult = makeCheckResult({
+                TaxMode: undefined,
+                TaxInclusive: TaxInclusive.INCLUSIVE,
+                Taxes: [],
+            });
+
+            expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
+        });
+
+        it('should prefer TaxMode over TaxInclusive when both are present', () => {
+            const checkResult = makeCheckResult({
+                TaxMode: TaxMode.REVERSE_CHARGE,
+                TaxInclusive: TaxInclusive.INCLUSIVE,
+                Taxes: [],
+            });
+
+            expect(isVatReverseChargeApplicable(checkResult)).toBe(true);
+        });
     });
 });
 
@@ -70,7 +130,7 @@ describe('createVatReverseChargeItem', () => {
         AmountDue: 1000,
         Currency: 'USD',
         Cycle: CYCLE.YEARLY,
-        TaxInclusive: TaxInclusive.EXCLUSIVE,
+        TaxMode: TaxMode.EXCLUSIVE,
         Coupon: null,
         SubscriptionMode: SubscriptionMode.Regular,
         BaseRenewAmount: null,
@@ -89,13 +149,13 @@ describe('createVatReverseChargeItem', () => {
         ({
             checkResult,
             currency,
-            isTaxExclusive: checkResult.TaxInclusive === TaxInclusive.EXCLUSIVE,
-            isTaxInclusive: checkResult.TaxInclusive === TaxInclusive.INCLUSIVE,
+            isTaxExclusive: checkResult.TaxMode === TaxMode.EXCLUSIVE,
+            isTaxInclusive: checkResult.TaxMode === TaxMode.INCLUSIVE,
         }) as HeadlessCheckoutContextInner;
 
-    it('should be visible when tax is exclusive and no taxes are present', () => {
+    it('should be visible when TaxMode is REVERSE_CHARGE', () => {
         const checkResult = createMockCheckResult({
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
+            TaxMode: TaxMode.REVERSE_CHARGE,
             Taxes: [],
         });
 
@@ -105,20 +165,20 @@ describe('createVatReverseChargeItem', () => {
         expect(result.type).toBe('vatReverseCharge');
     });
 
-    it('should be visible when Taxes is undefined', () => {
+    it('should not be visible when tax is exclusive', () => {
         const checkResult = createMockCheckResult({
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
-            Taxes: undefined,
+            TaxMode: TaxMode.EXCLUSIVE,
+            Taxes: [],
         });
 
         const result = createVatReverseChargeItem(createMockContext(checkResult));
 
-        expect(result.visible).toBe(true);
+        expect(result.visible).toBe(false);
     });
 
     it('should not be visible when tax is exclusive but taxes exist', () => {
         const checkResult = createMockCheckResult({
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
+            TaxMode: TaxMode.EXCLUSIVE,
             Taxes: [{ Name: 'VAT', Rate: 20, Amount: 200 }],
         });
 
@@ -129,7 +189,7 @@ describe('createVatReverseChargeItem', () => {
 
     it('should not be visible when tax is inclusive', () => {
         const checkResult = createMockCheckResult({
-            TaxInclusive: TaxInclusive.INCLUSIVE,
+            TaxMode: TaxMode.INCLUSIVE,
             Taxes: [],
         });
 
@@ -140,7 +200,7 @@ describe('createVatReverseChargeItem', () => {
 
     it('should not be visible when tax is inclusive with taxes', () => {
         const checkResult = createMockCheckResult({
-            TaxInclusive: TaxInclusive.INCLUSIVE,
+            TaxMode: TaxMode.INCLUSIVE,
             Taxes: [{ Name: 'VAT', Rate: 20, Amount: 200 }],
         });
 
@@ -151,7 +211,7 @@ describe('createVatReverseChargeItem', () => {
 
     it('should return the correct text', () => {
         const checkResult = createMockCheckResult({
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
+            TaxMode: TaxMode.REVERSE_CHARGE,
             Taxes: [],
         });
 
@@ -172,12 +232,12 @@ describe('createVatReverseChargeItem', () => {
 });
 
 describe('vatReverseCharge via getHeadlessCheckout', () => {
-    it('should be visible when tax is exclusive and no taxes are present', () => {
+    it('should be visible when TaxMode is REVERSE_CHARGE', () => {
         const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
         const checkResult = makeCheckResult({
             Amount: 4788,
             AmountDue: 4788,
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
+            TaxMode: TaxMode.REVERSE_CHARGE,
             Taxes: [],
         });
 
@@ -198,7 +258,7 @@ describe('vatReverseCharge via getHeadlessCheckout', () => {
         const checkResult = makeCheckResult({
             Amount: 4788,
             AmountDue: 5746,
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
+            TaxMode: TaxMode.EXCLUSIVE,
             Taxes: [{ Name: 'VAT', Rate: 20, Amount: 958 }],
         });
 
@@ -217,7 +277,7 @@ describe('vatReverseCharge via getHeadlessCheckout', () => {
         const checkResult = makeCheckResult({
             Amount: 4788,
             AmountDue: 4788,
-            TaxInclusive: TaxInclusive.INCLUSIVE,
+            TaxMode: TaxMode.INCLUSIVE,
             Taxes: [{ Name: 'VAT', Rate: 20, Amount: 958 }],
         });
 
