@@ -138,6 +138,9 @@ export enum FeatureCode {
     AdminRolesGroupOnboardingModal = 'AdminRolesGroupOnboardingModal',
     AdminRolesGroupEditSpotlight = 'AdminRolesGroupEditSpotlight',
 
+    // SCIM
+    ScimGroupsOnboardingModal = 'ScimGroupsOnboardingModal',
+
     // NPS
     NPSFeedbackDesktopCalendar = 'NPSFeedbackDesktopCalendar',
     NPSFeedbackDesktopMail = 'NPSFeedbackDesktopMail',
