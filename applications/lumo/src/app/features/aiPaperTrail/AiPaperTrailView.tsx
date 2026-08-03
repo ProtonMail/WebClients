@@ -5,18 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import {
-    BRAND_NAME,
-    DRIVE_APP_NAME,
-    LUMO_SHORT_APP_NAME,
-    MAIL_APP_NAME,
-    PASS_APP_NAME,
-    VPN_APP_NAME,
-} from '@proton/shared/lib/constants';
-import ctaContainerBg from '@proton/styles/assets/img/lumo/trail/cta-container-bg.png';
-import claudeLogo from '@proton/styles/assets/img/lumo/trail/claude.svg';
-import chatgptLogo from '@proton/styles/assets/img/lumo/trail/chatgpt.svg';
-import Toggle from '@proton/components/components/toggle/Toggle';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
@@ -24,347 +13,21 @@ import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../red
 import { selectConversationById, selectMessagesByConversationId } from '../../redux/selectors';
 import { setGhostChatMode } from '../../redux/slices/ghostChat';
 import { ConversationStatus, type Message, Role } from '../../types';
-import { getRecentPaperTrailFiles, removeRecentPaperTrailFile, type RecentPaperTrailFile } from '../../util/paperTrailRecentStorage';
-import {
-    isPaperTrailLocalSaveEnabled,
-    setPaperTrailLocalSaveEnabled,
-} from '../../util/paperTrailLocalSavePreference';
-import {
-    getPaperTrailReport,
-    getPaperTrailReportIds,
-    savePaperTrailReport,
-} from '../../util/paperTrailReportStorage';
-import { PAPER_TRAIL_LIMITS } from './buildPaperTrailContext';
+import { isPaperTrailLocalSaveEnabled, setPaperTrailLocalSaveEnabled } from '../../util/paperTrailLocalSavePreference';
+import { savePaperTrailReport } from '../../util/paperTrailReportStorage';
 import { PaperTrailHeader } from './PaperTrailHeader';
 import { PaperTrailLightThemeScope } from './PaperTrailLightThemeScope';
-import { PaperTrailLogo } from './PaperTrailLogo';
 import { PaperTrailLumoLogoAnimation } from './PaperTrailLumoLogoAnimation';
 import { PaperTrailReportView } from './PaperTrailReportView';
+import { LandingStage } from './landing/LandingStage';
 import { parsePaperTrailReport } from './parsePaperTrailReport';
-import type { PaperTrailReport } from './reportTypes';
 import { useStartPaperTrail } from './useStartPaperTrail';
+import { InstructionsStage } from './wizard/InstructionsStage';
+import { UploadStage } from './wizard/UploadStage';
 
 import './AiPaperTrailView.scss';
 
-const ACCEPTED = '.json,.zip,application/json,application/zip';
-
-const formatRecentDate = (timestamp: number): string => {
-    return new Date(timestamp).toLocaleDateString(undefined, {
-        month: 'short',
-        day: 'numeric',
-        year: 'numeric',
-    });
-};
-
-const ExportGuideCard = ({
-    logo,
-    title,
-    steps,
-    note,
-}: {
-    logo: string;
-    title: string;
-    steps: string[];
-    note: string;
-}) => (
-    <div className="ai-paper-trail__export-card">
-        <div className="ai-paper-trail__export-card-head">
-            <img src={logo} alt="" className="ai-paper-trail__export-logo" />
-            <h3 className="ai-paper-trail__export-title">{title}</h3>
-        </div>
-        <ol className="ai-paper-trail__export-steps">
-            {steps.map((step, index) => (
-                <li key={index} className="ai-paper-trail__export-step">
-                    <span className="ai-paper-trail__export-step-num">{index + 1}</span>
-                    <span>{step}</span>
-                </li>
-            ))}
-        </ol>
-        <p className="ai-paper-trail__export-note">{note}</p>
-    </div>
-);
-
-const getRecentImportLabel = (source: RecentPaperTrailFile['source']): string =>
-    source === 'claude'
-        ? c('collider_2025:Title').t`Claude import`
-        : c('collider_2025:Title').t`ChatGPT import`;
-
-const getRecentImportLogo = (source: RecentPaperTrailFile['source']): string =>
-    source === 'claude' ? claudeLogo : chatgptLogo;
-
-const RecentFilesSection = ({
-    files,
-    openableFileIds,
-    onOpenReport,
-    onDeleteReport,
-}: {
-    files: RecentPaperTrailFile[];
-    openableFileIds: Set<string>;
-    onOpenReport: (id: string) => void;
-    onDeleteReport: (id: string) => void;
-}) => {
-    const openableFiles = files.filter((file) => openableFileIds.has(file.id));
-
-    if (openableFiles.length === 0) {
-        return null;
-    }
-
-    return (
-        <section className="ai-paper-trail__recent">
-            <div className="ai-paper-trail__recent-head">
-                <h2 className="ai-paper-trail__recent-title">{c('collider_2025:Title').t`Your recent files`}</h2>
-                <span className="ai-paper-trail__recent-label">{c('collider_2025:Label').t`Date`}</span>
-            </div>
-            <ul className="ai-paper-trail__recent-list">
-                {openableFiles.map((file) => (
-                    <li key={file.id} className="ai-paper-trail__recent-item">
-                        <button
-                            type="button"
-                            className="ai-paper-trail__recent-button"
-                            onClick={() => onOpenReport(file.id)}
-                        >
-                            <img
-                                src={getRecentImportLogo(file.source)}
-                                alt=""
-                                className="ai-paper-trail__recent-logo shrink-0"
-                            />
-                            <span className="ai-paper-trail__recent-name">{getRecentImportLabel(file.source)}</span>
-                            <span className="ai-paper-trail__recent-date">{formatRecentDate(file.uploadedAt)}</span>
-                        </button>
-                        <button
-                            type="button"
-                            className="ai-paper-trail__recent-delete"
-                            aria-label={c('collider_2025:Action').t`Delete analysis`}
-                            onClick={() => onDeleteReport(file.id)}
-                        >
-                            <LumoIcon name="Trash2" size={16} />
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </section>
-    );
-};
-
-const GuestLocalSaveOption = ({
-    enabled,
-    onChange,
-}: {
-    enabled: boolean;
-    onChange: (enabled: boolean) => void;
-}) => {
-    const toggleId = 'paper-trail-save-locally';
-
-    return (
-        <div className="ai-paper-trail__save-option">
-            <Toggle
-                id={toggleId}
-                checked={enabled}
-                onChange={(event) => onChange(event.target.checked)}
-                className="ai-paper-trail__save-toggle shrink-0"
-            />
-            <label htmlFor={toggleId} className="ai-paper-trail__save-copy text-start">
-                <span className="text-sm text-semibold">{c('collider_2025:Label').t`Save analysis on this device to view it later`}</span>
-                <span className="ai-paper-trail__muted text-sm">
-                    {c('collider_2025:Info')
-                        .t`Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${LUMO_SHORT_APP_NAME}'s servers.`}
-                </span>
-            </label>
-        </div>
-    );
-};
-
-const UploadStage = ({
-    onFile,
-    error,
-    onStartChat,
-    onOpenReport,
-    onDeleteReport,
-    recentFilesRefreshKey,
-    saveLocallyEnabled,
-    onSaveLocallyChange,
-}: {
-    onFile: (file: File | undefined) => void;
-    error?: string;
-    onStartChat: () => void;
-    onOpenReport: (id: string) => void;
-    onDeleteReport: (id: string) => void;
-    recentFilesRefreshKey: number;
-    saveLocallyEnabled: boolean;
-    onSaveLocallyChange: (enabled: boolean) => void;
-}) => {
-    const inputRef = useRef<HTMLInputElement>(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [recentFiles, setRecentFiles] = useState<RecentPaperTrailFile[]>([]);
-    const [openableFileIds, setOpenableFileIds] = useState<Set<string>>(() => new Set());
-
-    useEffect(() => {
-        setRecentFiles(getRecentPaperTrailFiles());
-        setOpenableFileIds(new Set(getPaperTrailReportIds()));
-    }, [recentFilesRefreshKey]);
-
-    const steps = [
-        {
-            title: c('collider_2025:Title').t`Export your data`,
-            detail: c('collider_2025:Info')
-                .t`Log in to your AI platform and request an export of your chat history, then download it to your device.`,
-        },
-        {
-            title: c('collider_2025:Title').t`Upload it securely`,
-            detail: c('collider_2025:Info')
-                .t`We extract your ${PAPER_TRAIL_LIMITS.maxPrompts} most recent prompts to keep processing fast. Nothing is stored on our servers. You can optionally save your report on this device.`,
-        },
-        {
-            title: c('collider_2025:Title').t`Get your AI Paper Trail`,
-            detail: c('collider_2025:Info')
-                .t`See the profile that an AI company can build from your conversations alone.`,
-        },
-    ];
-
-    const chatGptSteps = [
-        c('collider_2025:Info').t`Sign in to your ChatGPT account at chatgpt.com`,
-        c('collider_2025:Info').t`Click your profile icon in the bottom-left corner`,
-        c('collider_2025:Info').t`Click Settings → Data controls`,
-        c('collider_2025:Info').t`Look for Export data`,
-        c('collider_2025:Info').t`Follow the prompts and confirm the export`,
-    ];
-
-    const claudeSteps = [
-        c('collider_2025:Info').t`Sign in to your Claude account at claude.ai`,
-        c('collider_2025:Info').t`Click your profile icon in the bottom-left corner`,
-        c('collider_2025:Info').t`Click Settings → Privacy`,
-        c('collider_2025:Info').t`Under your data, click Export data`,
-        c('collider_2025:Info').t`Follow the prompts to confirm the export`,
-    ];
-
-    return (
-        <div className="ai-paper-trail__inner ai-paper-trail__landing">
-            <div className="ai-paper-trail__hero">
-                <PaperTrailLumoLogoAnimation />
-                <span className="ai-paper-trail__subtitle text-bold pb-2">{c('collider_2025:Title').t`Generate your AI Paper Trail`}</span>
-                <h1 className="ai-paper-trail__title">
-                    {c('collider_2025:Title').t`See what Big Tech AI already knows about you`}
-                </h1>
-                <p className="ai-paper-trail__subtitle">
-                    {c('collider_2025:Info')
-                        .t`Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live. To see what Big Tech can piece together from your chats upload your AI data below.`}
-                </p>
-            </div>
-
-            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
-            <div
-                className={clsx('ai-paper-trail__dropzone', isDragging && 'is-dragging')}
-                role="button"
-                tabIndex={0}
-                onClick={() => inputRef.current?.click()}
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        inputRef.current?.click();
-                    }
-                }}
-                onDragOver={(e) => {
-                    e.preventDefault();
-                    setIsDragging(true);
-                }}
-                onDragLeave={() => setIsDragging(false)}
-                onDrop={(e) => {
-                    e.preventDefault();
-                    setIsDragging(false);
-                    onFile(e.dataTransfer.files?.[0]);
-                }}
-            >
-                <input
-                    ref={inputRef}
-                    type="file"
-                    accept={ACCEPTED}
-                    className="sr-only"
-                    onChange={(e) => {
-                        onFile(e.target.files?.[0]);
-                        e.target.value = '';
-                    }}
-                />
-                <div className="flex flex-column items-center gap-3 text-center">
-                    <LumoIcon name="Upload" size={32} className="ai-paper-trail__upload-icon" />
-                    <span className="text-lg text-semibold">{c('collider_2025:Action').t`Upload your AI export`}</span>
-                    <span className="ai-paper-trail__muted text-sm">
-                        {c('collider_2025:Info')
-                            .t`Choose or drop your ChatGPT or Claude export (.zip or conversations.json). We analyze your ${PAPER_TRAIL_LIMITS.maxPrompts} most recent prompts.`}
-                    </span>
-                </div>
-            </div>
-
-            {error && (
-                <div className="ai-paper-trail__error flex flex-row flex-nowrap items-start gap-2 mt-4 p-3 rounded">
-                    <LumoIcon name="CircleAlert" size={16} className="color-danger shrink-0 mt-0.5" />
-                    <span>{error}</span>
-                </div>
-            )}
-
-            <div className="ai-paper-trail__privacy flex flex-row flex-nowrap items-center gap-2 mt-4">
-                <LumoIcon name="Lock" size={16} className="shrink-0" />
-                <span className="text-sm">
-                    {c('collider_2025:Info')
-                        .t`Your export is encrypted in transit and processed without being stored on ${LUMO_SHORT_APP_NAME}'s servers.`}
-                </span>
-            </div>
-
-            <GuestLocalSaveOption enabled={saveLocallyEnabled} onChange={onSaveLocallyChange} />
-
-            <RecentFilesSection
-                files={recentFiles}
-                openableFileIds={openableFileIds}
-                onOpenReport={onOpenReport}
-                onDeleteReport={onDeleteReport}
-            />
-
-            <div className="ai-paper-trail__steps">
-                {steps.map((step, i) => (
-                    <div key={i} className="ai-paper-trail__step">
-                        <span className="ai-paper-trail__step-num">{i + 1}</span>
-                        <span className="ai-paper-trail__step-title">{step.title}</span>
-                        <span className="ai-paper-trail__step-detail">{step.detail}</span>
-                    </div>
-                ))}
-            </div>
-
-            <section className="ai-paper-trail__export-section">
-                <h2 className="ai-paper-trail__export-heading">{c('collider_2025:Title').t`How to export your data`}</h2>
-                <div className="ai-paper-trail__export-grid">
-                    <ExportGuideCard
-                        logo={chatgptLogo}
-                        title="ChatGPT"
-                        steps={chatGptSteps}
-                        note={c('collider_2025:Info')
-                            .t`OpenAI will email you a download link. It can take up to 24 hours.`}
-                    />
-                    <ExportGuideCard
-                        logo={claudeLogo}
-                        title="Claude"
-                        steps={claudeSteps}
-                        note={c('collider_2025:Info')
-                            .t`Anthropic will email you a download link when your export is ready.`}
-                    />
-                </div>
-            </section>
-
-            <div className="ai-paper-trail__cta-banner" style={{ backgroundImage: `url(${ctaContainerBg})` }}>
-                <PaperTrailLogo className="ai-paper-trail__cta-wordmark" />
-                <p className="ai-paper-trail__cta-title">
-                    {c('collider_2025:Title')
-                        .t`Your conversations should belong to you. With ${LUMO_SHORT_APP_NAME}, they do.`}
-                </p>
-                <Button color="norm" size="large" pill onClick={onStartChat}>
-                    {c('collider_2025:Action').t`Try ${LUMO_SHORT_APP_NAME} for free`}
-                </Button>
-            </div>
-
-            <p className="ai-paper-trail__footer">
-                {c('collider_2025:Info')
-                    .t`Built by ${BRAND_NAME}, the privacy brand trusted by over 100 million people and the team behind ${MAIL_APP_NAME}, ${VPN_APP_NAME}, ${DRIVE_APP_NAME}, and ${PASS_APP_NAME}.`}
-            </p>
-        </div>
-    );
-};
+type WizardStep = 'landing' | 'instructions' | 'upload';
 
 const LoadingStage = () => {
     const lessons = [
@@ -432,10 +95,11 @@ const LoadingStage = () => {
 
     useEffect(() => {
         const id = setInterval(() => {
-            // Fade the current lesson out, swap it at the midpoint, then fade the next one in.
             setLessonVisible(false);
             swapTimeout.current = setTimeout(() => {
-                setLesson((i) => (i + 1) % lessons.length);
+                setLesson((index) => {
+                    return (index + 1) % lessons.length;
+                });
                 setLessonVisible(true);
             }, 450);
         }, 12000);
@@ -478,9 +142,14 @@ const LoadingStage = () => {
                     </div>
                 </div>
                 <div className="ai-paper-trail__lesson-dots" aria-hidden="true">
-                    {lessons.map((_, i) => (
-                        <span key={i} className={clsx('ai-paper-trail__lesson-dot', i === lesson && 'is-active')} />
-                    ))}
+                    {lessons.map((_, index) => {
+                        return (
+                            <span
+                                key={index}
+                                className={clsx('ai-paper-trail__lesson-dot', index === lesson && 'is-active')}
+                            />
+                        );
+                    })}
                 </div>
             </div>
 
@@ -496,26 +165,17 @@ export const AiPaperTrailView = () => {
     const { status, error, conversationId, importId, start, reset } = useStartPaperTrail();
     const navigate = useLumoNavigate();
     const dispatch = useLumoDispatch();
-    const [savedReport, setSavedReport] = useState<PaperTrailReport | undefined>();
-    const [savedReportId, setSavedReportId] = useState<string>();
-    const [recentFilesRefreshKey, setRecentFilesRefreshKey] = useState(0);
+    const [wizardStep, setWizardStep] = useState<WizardStep>('landing');
     const [saveLocallyEnabled, setSaveLocallyEnabled] = useState(isPaperTrailLocalSaveEnabled);
 
     const handleSaveLocallyChange = useCallback((enabled: boolean) => {
         setPaperTrailLocalSaveEnabled(enabled);
         setSaveLocallyEnabled(enabled);
-        setRecentFilesRefreshKey((value) => value + 1);
-        if (!enabled) {
-            setSavedReport(undefined);
-            setSavedReportId(undefined);
-        }
     }, []);
 
-    const handleFile = useCallback(
-        (file: File | undefined) => {
-            if (file) {
-                void start(file);
-            }
+    const handleGenerateReport = useCallback(
+        (file: File) => {
+            void start(file);
         },
         [start]
     );
@@ -528,72 +188,72 @@ export const AiPaperTrailView = () => {
     const messagesMap = useLumoMemoSelector(selectMessagesByConversationId, [conversationId]);
     const conversation = useLumoSelector(selectConversationById(conversationId ?? ''));
 
-    const assistantMessage = useMemo(
-        () => Object.values(messagesMap).find((m: Message) => m.role === Role.Assistant),
-        [messagesMap]
-    );
+    const assistantMessage = useMemo(() => {
+        return Object.values(messagesMap).find((message: Message) => {
+            return message.role === Role.Assistant;
+        });
+    }, [messagesMap]);
 
     const isFinished =
         !!conversationId &&
         ((!!conversation && conversation.status !== ConversationStatus.GENERATING) ||
             assistantMessage?.status !== undefined);
 
-    const report = useMemo(
-        () => (isFinished ? parsePaperTrailReport(assistantMessage?.content) : undefined),
-        [isFinished, assistantMessage?.content]
-    );
+    const report = useMemo(() => {
+        return isFinished ? parsePaperTrailReport(assistantMessage?.content) : undefined;
+    }, [isFinished, assistantMessage?.content]);
 
     useEffect(() => {
         if (isFinished && report && importId) {
             savePaperTrailReport(importId, report);
-            setRecentFilesRefreshKey((value) => value + 1);
         }
     }, [isFinished, report, importId]);
 
-    const handleOpenSavedReport = useCallback((id: string) => {
-        const storedReport = getPaperTrailReport(id);
-        if (storedReport) {
-            setSavedReportId(id);
-            setSavedReport(storedReport);
-        }
-    }, []);
-
-    const handleDeleteReport = useCallback(
-        (id: string) => {
-            removeRecentPaperTrailFile(id);
-            setRecentFilesRefreshKey((value) => value + 1);
-            if (savedReportId === id) {
-                setSavedReport(undefined);
-                setSavedReportId(undefined);
-            }
-        },
-        [savedReportId]
-    );
-
     const handleStartOver = useCallback(() => {
-        setSavedReport(undefined);
-        setSavedReportId(undefined);
+        setWizardStep('landing');
         reset();
     }, [reset]);
 
+    useEffect(() => {
+        if (status === 'error' && !conversationId) {
+            setWizardStep('upload');
+        }
+    }, [status, conversationId]);
+
     let content: JSX.Element;
-    if (savedReport) {
-        content = (
-            <PaperTrailReportView report={savedReport} onStartOver={handleStartOver} onTryLumo={handleStartChat} />
-        );
-    } else if (status === 'idle' || (status === 'error' && !conversationId)) {
-        content = (
-            <UploadStage
-                onFile={handleFile}
-                error={error}
-                onStartChat={handleStartChat}
-                onOpenReport={handleOpenSavedReport}
-                onDeleteReport={handleDeleteReport}
-                recentFilesRefreshKey={recentFilesRefreshKey}
-                saveLocallyEnabled={saveLocallyEnabled}
-                onSaveLocallyChange={handleSaveLocallyChange}
-            />
-        );
+    if (status === 'idle' || (status === 'error' && !conversationId)) {
+        if (wizardStep === 'landing') {
+            content = (
+                <LandingStage
+                    onGenerate={() => {
+                        setWizardStep('instructions');
+                    }}
+                />
+            );
+        } else if (wizardStep === 'instructions') {
+            content = (
+                <InstructionsStage
+                    onBack={() => {
+                        setWizardStep('landing');
+                    }}
+                    onContinue={() => {
+                        setWizardStep('upload');
+                    }}
+                />
+            );
+        } else {
+            content = (
+                <UploadStage
+                    error={error}
+                    saveLocallyEnabled={saveLocallyEnabled}
+                    onSaveLocallyChange={handleSaveLocallyChange}
+                    onBack={() => {
+                        setWizardStep('instructions');
+                    }}
+                    onGenerate={handleGenerateReport}
+                />
+            );
+        }
     } else if (!isFinished) {
         content = <LoadingStage />;
     } else if (report) {
@@ -602,12 +262,15 @@ export const AiPaperTrailView = () => {
         content = (
             <div className="ai-paper-trail__inner flex flex-column items-center gap-4 text-center">
                 <LumoIcon name="CircleAlert" size={32} className="color-danger" />
-                <h2 className="ai-paper-trail__title m-0">{c('collider_2025:Title')
-                    .t`We couldn't read your paper trail`}</h2>
+                <h2 className="ai-paper-trail__title m-0">
+                    {c('collider_2025:Title').t`We couldn't read your paper trail`}
+                </h2>
                 <p className="ai-paper-trail__subtitle m-0">
                     {c('collider_2025:Info').t`Something went wrong analysing this export. Please try again.`}
                 </p>
-                <Button color="norm" pill onClick={handleStartOver}>{c('collider_2025:Action').t`Try again`}</Button>
+                <Button color="norm" pill onClick={handleStartOver}>
+                    {c('collider_2025:Action').t`Try again`}
+                </Button>
             </div>
         );
     }
