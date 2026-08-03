@@ -20,8 +20,7 @@ import type {
     V5PaymentToken,
     V5Payments,
 } from './interface';
-import type { MaybeFreeSubscription } from './subscription/helpers';
-import type { Subscription } from './subscription/interface';
+import type { MaybeFreeSubscription, Subscription } from './subscription/interface';
 
 export function isTokenPayment(
     payment:

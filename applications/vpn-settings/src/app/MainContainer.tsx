@@ -87,7 +87,6 @@ import { useZendeskChat } from '@proton/components/containers/zendesk/useZendesk
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -135,7 +134,6 @@ const MainContainer: FunctionComponent = () => {
 
     const [groups, loadingGroups] = useGroups();
     const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [referralInfo] = useReferralInfo();
     const [{ isMnemonicAvailable, isRecoveryFileAvailable, isDataRecoveryAvailable }, loadingDataRecovery] =
         useIsDataRecoveryAvailable();
@@ -153,7 +151,6 @@ const MainContainer: FunctionComponent = () => {
         groups,
         organization,
         isB2BDrive: false,
-        isB2BTrial,
         isGroupOwner,
         permissions: permissions ?? ({} as Record<Permission, boolean>),
         memberships: [],

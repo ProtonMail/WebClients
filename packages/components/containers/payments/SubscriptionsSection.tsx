@@ -1,8 +1,5 @@
-import { useMemo } from 'react';
-
 import { c, msgid } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -26,22 +23,21 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { changeRenewState } from '@proton/payments/core/api/api';
+import { hasLifetimeCoupon } from '@proton/payments/core/coupons';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import {
     getRenewalTime,
     getSubscriptionPlanTitle,
-    hasLifetimeCoupon,
     isAddonDowngrade,
     isManagedExternally,
-    isReferralTrial,
     isSameCycle,
     isUpcomingSubscriptionUnpaid,
     shouldHaveUpcomingSubscription,
     subscriptionExpires,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -61,8 +57,6 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const eventManager = useEventManager();
     const { createNotification } = useNotifications();
     const upcoming = subscription?.UpcomingSubscription ?? undefined;
-    const [organization] = useOrganization();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [user] = useUser();
     const getPaymentMethods = useGetPaymentMethods();
 
@@ -70,7 +64,9 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
 
     const { renewDisabled, subscriptionExpiresSoon } = subscriptionExpires(subscription);
 
-    const status = useMemo(() => {
+    const trialInfo = getTrialInfoForSingleSubscription(subscription);
+
+    const status = (() => {
         if (subscriptionExpiresSoon) {
             return {
                 type: 'error' as BadgeType,
@@ -78,7 +74,7 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             };
         }
 
-        if (isB2BTrial) {
+        if (trialInfo.isTrial) {
             return {
                 type: 'success' as BadgeType,
                 label: c('Subscription status').t`Free Trial`,
@@ -89,7 +85,7 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             type: 'success' as BadgeType,
             label: c('Subscription status').t`Active`,
         };
-    }, [subscriptionExpiresSoon, isB2BTrial]);
+    })();
 
     const showReactivateButton = renewDisabled && !isManagedExternally(subscription);
     const reactivateAction: DropdownActionProps[] = [
@@ -98,9 +94,18 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             loading: reactivating,
             onClick: () => {
                 withReactivating(async () => {
-                    // For Referral Trials only: Check if user has payment methods before reactivating
                     const paymentMethods = await getPaymentMethods();
-                    if (isReferralTrial(subscription) && paymentMethods.length === 0) {
+                    // In principle, there is no need to check if user has payment methods before they reactivate. We
+                    // want to let them reactivate even without saved payment mehtods, because some users pay only with
+                    // Bitcoin, or cash, or possibly with other payment methods that can't be saved. However, the case
+                    // when user has a trial subscription from the referral program is special. If user has referral
+                    // trial of mail, pass, or drive then they have a free trial that was created without a payment
+                    // method upfront (unlike Unlimited or VPN referrals that require buying a full subscription in
+                    // exchange for 20 credits). So the cohort of referral trial users is potentially dangerous: if they
+                    // cancel and then reactivate without providing a payment method first, then they will enter
+                    // delinquency state on renewal attempt, which we don't want. Hence, we make this check here and ask
+                    // this cohort to provide a payment method before reactivating.
+                    if (trialInfo.isReferralTrial && paymentMethods.length === 0) {
                         createNotification({
                             type: 'error',
                             text: c('Error').t`Please add a payment method before reactivating your subscription`,

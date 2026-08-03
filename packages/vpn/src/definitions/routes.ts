@@ -17,7 +17,6 @@ import {
     hasCancellablePlan,
     hasVPNPassProfessional,
     hasVpnBusiness,
-    isB2BTrial,
     isCancellableOnlyViaSupport,
 } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -59,7 +58,6 @@ type VpnNavContext = {
     needsOrgSetup: boolean;
     hasOrganizationAccess: boolean;
     organizationHasSecurityFeatures: boolean;
-    isB2BTrial: boolean;
     flags: Partial<Record<FeatureFlag, boolean>>;
     permissions: Partial<Record<Permission, boolean>>;
 } & NavContext &
@@ -109,7 +107,6 @@ const routesDefinition = {
                         {
                             id: 'organization.home.invoices',
                             text: () => c('Title').t`Invoices`,
-                            isVisible: ({ context }) => !context.isB2BTrial,
                             to: 'invoices',
                         },
                         {
@@ -616,7 +613,6 @@ export const resolveNavigation = ({
             needsOrgSetup,
             hasOrganizationAccess,
             organizationHasSecurityFeatures,
-            isB2BTrial: isB2BTrial(subscription, organization),
             ...context,
             flags: flags ?? {},
             permissions: permissions ?? {},
