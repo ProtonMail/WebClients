@@ -1,5 +1,6 @@
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { SelectedItem, SelectedShare } from '@proton/pass/types/data';
+import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import type { LoginItemPreview } from '@proton/pass/types/worker/data';
 import type { FormCredentials } from '@proton/pass/types/worker/form';
@@ -28,7 +29,11 @@ export type AutosaveFormValues = AutosaveRequest & { step: 'select' | 'edit' };
 
 export type AutosaveCreatePayload = AutosaveCreate<AutosavePayloadData>;
 export type AutosaveUpdatePayload = AutosaveUpdate<AutosaveCandidates>;
-export type AutosavePayloadData = FormCredentials & { submittedAt: MaybeNull<number>; iframeUrl?: MaybeNull<string> };
+export type AutosavePayloadData = FormCredentials & {
+    submittedAt: MaybeNull<number>;
+    iframeUrl?: MaybeNull<string>;
+    telemetry: AutofillPageTelemetryDimensions;
+};
 export type AutosavePayload = (AutosaveCreatePayload | AutosaveUpdatePayload) & AutosavePayloadData;
 
 type AutosavePromptData = AutosaveCreate | AutosaveUpdate<AutosaveCandidates>;
