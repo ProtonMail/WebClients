@@ -1736,6 +1736,9 @@
       ],
       "Yes, organize it": [
         "Evet, düzenle"
+      ],
+      "Open debug menu": [
+        "Hata ayıklama menüsünü aç"
       ]
     },
     "action": {
@@ -9452,6 +9455,10 @@
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "${ categoryLabel } kategorisinde **${ checked } ileti** seçtiniz",
         "${ categoryLabel } kategorisinde **${ checked } ileti** seçtiniz"
+      ],
+      "Read ${ count } email on screen": [
+        "Ekrandaki ${ count } e-postayı oku",
+        "Ekrandaki ${ count } e-postayı oku"
       ]
     },
     "info": {
@@ -15420,7 +15427,7 @@
         "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak."
       ],
       "Moved to ${ label }. Similar message will be categorized there in the future.": [
-        "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye eklenecek.",
+        "${ label } içine taşındı. Benzer ileti bundan sonra bu kategoriye taşınacak.",
         "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak."
       ]
     },

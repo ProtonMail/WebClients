@@ -1727,6 +1727,18 @@
       ],
       "Stop": [
         "Stopp"
+      ],
+      "Clear conversation": [
+        "Rensk samtalen"
+      ],
+      "Open debug menu": [
+        "Åpne feilsøkingsmenyen"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Åpne/lukk ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Ja, organiser"
       ]
     },
     "action": {
@@ -1754,6 +1766,9 @@
       ],
       "Skip": [
         "Hopp over"
+      ],
+      "Set up categories": [
+        "Tilpass kategoriene"
       ]
     },
     "Actions message": {
@@ -1868,6 +1883,10 @@
       "${ quantity } custom domain": [
         "${ quantity } egendefinert domene",
         "${ quantity } egendefinerte domener"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } brukere)"
       ]
     },
     "Alert": {
@@ -1968,6 +1987,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ LUMO_SHORT_APP_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
       ]
     },
     "Attached ics file error": {
@@ -2028,6 +2050,9 @@
       ],
       "You have reached the trial limit.": [
         "Du har nådd prøveperiodegrensen."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } skriveassistentseter i prøveperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -2146,6 +2171,9 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ]
     },
     "BF2025: Deal details": {
@@ -4528,6 +4556,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Høyreklikk på en e-post og velg \"Flytt til\", eller dra og slipp den i en annen kategori. Lignende e-poster vil bli sortert der automatisk i fremtiden."
       ]
     },
     "description": {
@@ -4554,6 +4585,9 @@
       "${ messageCount } new message": [
         "${ messageCount } ny melding",
         "${ messageCount } nye meldinger"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Fra: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -5526,6 +5560,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Noe gikk galt, lukk modalen og prøv igjen."
       ]
     },
     "error": {
@@ -9391,6 +9428,37 @@
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "Du valgte **${ checked } melding** i kategorien ${ categoryLabel }.",
         "Du valgte **${ checked } meldinger** i kategorien ${ categoryLabel }."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer Scribe-skriveassistenten."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minutter gjenstår…"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importen pågår. Du kan lukke denne dialogboksen mens den kjører og komme tilbake til den senere. Ikke lukk fanen."
+      ],
+      "Move emails": [
+        "Flytt e-poster"
+      ],
+      "Move here": [
+        "Flytt hit"
+      ],
+      "Opened ${ location }": [
+        "Åpnet ${ location }"
+      ],
+      "Read ${ count } email on screen": [
+        "Les ${ count } e-post på skjermen",
+        "Les ${ count } e-poster på skjermen"
+      ],
+      "Thinking about this": [
+        "Tenker på dette"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Du kan importere den som en ny foundation-search-indeks for utviklingsformål."
       ]
     },
     "info": {
@@ -10580,6 +10648,33 @@
       ],
       "Trash": [
         "Papirkurv"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alt som trenger din oppmerksomhet, pluss e-poster fra deaktiverte kategorier"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversjon"
+      ],
+      "Content search version to use": [
+        "Innholdssøkversjon som skal brukes"
+      ],
+      "Document ID": [
+        "Dokument-ID"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primær - Alt som trenger oppmerksomhet, pluss e-poster fra deaktiverte kategorier"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11027,6 +11122,12 @@
       ],
       "for ${ price }": [
         "for ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Legg til ${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "Mailbox": {
@@ -11057,6 +11158,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (for ${ quantity } bruker)",
         "${ MEET_APP_NAME } (for ${ quantity } brukere)"
+      ],
+      "${ price } per seat": [
+        "${ price } per sete"
       ]
     },
     "meet_2025: Feature": {
@@ -11879,6 +11983,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "new_plans: feature highlight": {
@@ -13376,6 +13483,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Ask anything…": [
+        "Spør om hva som helst…"
       ]
     },
     "Placeholder for contact group name": {
@@ -16612,6 +16722,15 @@
       ],
       "Stay for 50% off your next month": [
         "Bli og få 50 % rabatt neste måned"
+      ],
+      "Make your inbox your own": [
+        "Tilpass innboksen slik du vil ha den"
+      ],
+      "Move emails": [
+        "Flytt e-poster"
+      ],
+      "Refine your Categories": [
+        "Finjuster kategoriene"
       ]
     },
     "Title header for keys table": {

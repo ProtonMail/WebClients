@@ -1715,6 +1715,12 @@
       ],
       "Reject": [
         "婉拒"
+      ],
+      "Lookup document": [
+        "搜尋字典"
+      ],
+      "Stop": [
+        "停止"
       ]
     },
     "action": {
@@ -2005,6 +2011,9 @@
       ],
       "You have reached the trial limit.": [
         "您已達到試用限制。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } 撰寫幫手的席位。"
       ]
     },
     "b2b_trials_Action": {
@@ -4503,6 +4512,12 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "來自：${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } 封新郵件"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "來自：${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -9185,6 +9200,30 @@
       ],
       "Details": [
         "詳細資訊"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } 則電子郵件 → ${ dest }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } 分鐘剩餘…"
+      ],
+      "Move emails": [
+        "將電郵移動到"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "您有 **${ count } 則對話 ** 於您的 ${ categoryLabel } 類別"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "您有 **${ count } 訊息** 於 ${ categoryLabel } 類別"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "您已選取 **${ checked } 對話** 於 ${ categoryLabel } 類別"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "您已選取 **${ checked } 訊息** 於 ${ categoryLabel } 類別"
       ]
     },
     "info": {
@@ -10366,6 +10405,12 @@
       ],
       "Trash": [
         "垃圾桶"
+      ],
+      "Archive": [
+        "封存"
+      ],
+      "v1": [
+        "v1"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10808,6 +10853,9 @@
       ],
       "for ${ price }": [
         "${ price } 版"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ]
     },
     "Mailbox": {
@@ -10836,6 +10884,9 @@
       ],
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME }（適用於 ${ quantity } 名使用者）"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席"
       ]
     },
     "meet_2025: Feature": {
@@ -11626,6 +11677,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ]
     },
     "new_plans: feature highlight": {
@@ -13110,6 +13164,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Ask anything…": [
+        "詢問任何事…"
       ]
     },
     "Placeholder for contact group name": {
@@ -16244,6 +16301,9 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Move emails": [
+        "將電子郵件移動到"
       ]
     },
     "Title header for keys table": {

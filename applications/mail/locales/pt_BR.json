@@ -1736,6 +1736,9 @@
       ],
       "Yes, organize it": [
         "Sim, organize isso"
+      ],
+      "Open debug menu": [
+        "Abrir o menu de depuração"
       ]
     },
     "action": {
@@ -9435,6 +9438,10 @@
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "Você selecionou **${ checked } mensagem** na sua categoria ${ categoryLabel }",
         "Você selecionou **${ checked } mensagens** na sua categoria ${ categoryLabel }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problema durante a importação:",
+        "${ issues.length } problemas durante a importação:"
       ]
     },
     "info": {
