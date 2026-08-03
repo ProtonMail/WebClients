@@ -1,19 +1,20 @@
 import type { BrowserWindow } from 'electron';
-import { isClientBooted } from 'proton-pass-desktop/lib/client';
-import type { SshKeyData } from 'proton-pass-desktop/native';
-import { ssh_agent_napi } from 'proton-pass-desktop/native';
-import { store } from 'proton-pass-desktop/store';
-import logger from 'proton-pass-desktop/utils/logger';
-import { isWindows } from 'proton-pass-desktop/utils/platform';
 
 import type { ItemRevision, MaybeNull, SSHKeyItem } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
+import type { SshKeyData } from 'proton-pass-desktop-native';
+import { ssh_agent_napi } from 'proton-pass-desktop-native';
+import { store } from 'proton-pass-desktop/store';
+import logger from 'proton-pass-desktop/utils/logger';
+import { isWindows } from 'proton-pass-desktop/utils/platform';
+
+import { isClientBooted } from './client';
 import { setupIpcHandler } from './ipc';
 
-declare module 'proton-pass-desktop/lib/ipc' {
+declare module './ipc' {
     interface IPCChannels {
         'sshAgent:start': IPCChannel<[], void>;
         'sshAgent:clear': IPCChannel<[], void>;

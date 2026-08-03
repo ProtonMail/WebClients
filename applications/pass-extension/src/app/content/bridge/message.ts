@@ -1,3 +1,4 @@
+import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import type { MessageFailure, WorkerResponse } from 'proton-pass-extension/types/messages';
 
 import { waitForPageReady } from '@proton/pass/utils/dom/state';
@@ -5,7 +6,6 @@ import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { error, throwError } from '@proton/pass/utils/fp/throw';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-import { CLIENT_SCRIPT_READY_EVENT } from '../constants.static';
 import { ALLOWED_MESSAGES, BRIDGE_ABORT, BRIDGE_DISCONNECT, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
 import type { AbstractBridgeMessage, BridgeMessage, BridgeMessageType, BridgeRequest, BridgeResponse } from './types';
 

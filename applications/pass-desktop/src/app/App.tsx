@@ -1,23 +1,6 @@
 import { Router } from 'react-router-dom';
 
 import { createHashHistory } from 'history';
-import { clipboard } from 'proton-pass-desktop/lib/clipboard';
-import { PASS_CONFIG, SENTRY_CONFIG } from 'proton-pass-desktop/lib/env';
-import { useDesktopContextMenu } from 'proton-pass-desktop/lib/hooks/useDesktopContextMenu';
-import { AppGuard } from 'proton-pass-web/app/AppGuard';
-import { AuthServiceProvider } from 'proton-pass-web/app/Auth/AuthServiceProvider';
-import { AuthSwitchProvider } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
-import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
-import { store } from 'proton-pass-web/app/Store/store';
-import { B2BEvents } from 'proton-pass-web/lib/b2b';
-import { core } from 'proton-pass-web/lib/core';
-import { i18n } from 'proton-pass-web/lib/i18n';
-import { logStore } from 'proton-pass-web/lib/logger';
-import { monitor } from 'proton-pass-web/lib/monitor';
-import { settings } from 'proton-pass-web/lib/settings';
-import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
-import { telemetry } from 'proton-pass-web/lib/telemetry';
-import { getTheme } from 'proton-pass-web/lib/theme';
 
 import { Portal } from '@proton/components/components/portal';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -54,7 +37,25 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
-import { installStorageFlush } from '../lib/storage/storage.view';
+import { clipboard } from 'proton-pass-desktop/lib/clipboard';
+import { PASS_CONFIG, SENTRY_CONFIG } from 'proton-pass-desktop/lib/env';
+import { useDesktopContextMenu } from 'proton-pass-desktop/lib/hooks/useDesktopContextMenu';
+import { installStorageFlush } from 'proton-pass-desktop/lib/storage/storage.view';
+import { AppGuard } from 'proton-pass-web/app/AppGuard';
+import { AuthServiceProvider } from 'proton-pass-web/app/Auth/AuthServiceProvider';
+import { AuthSwitchProvider } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
+import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
+import { store } from 'proton-pass-web/app/Store/store';
+import { B2BEvents } from 'proton-pass-web/lib/b2b';
+import { core } from 'proton-pass-web/lib/core';
+import { i18n } from 'proton-pass-web/lib/i18n';
+import { logStore } from 'proton-pass-web/lib/logger';
+import { monitor } from 'proton-pass-web/lib/monitor';
+import { settings } from 'proton-pass-web/lib/settings';
+import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
+import { telemetry } from 'proton-pass-web/lib/telemetry';
+import { getTheme } from 'proton-pass-web/lib/theme';
+
 import { ExtensionUnlock } from './ExtensionUnlock';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
 import { isFirstLaunch } from './firstLaunch';
