@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import groupBy from 'lodash/groupBy';
 
-import type { CountryOptions } from '@proton/payments/core/countries';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import clsx from '@proton/utils/clsx';
 import compare from '@proton/utils/compare';
@@ -10,10 +10,10 @@ import compare from '@proton/utils/compare';
 import Details from '../../../components/container/Details';
 import Summary from '../../../components/container/Summary';
 import CityNumber from './CityNumber';
-import ConfigsTable, { CATEGORY, P2PIcon, TorIcon } from './ConfigsTable';
+import ConfigsTable, { CATEGORY, P2PIcon, SmartRoutingIcon, TorIcon } from './ConfigsTable';
 import Country from './Country';
 import type { EnhancedLogical } from './interface';
-import { isP2PEnabled, isSecureCoreEnabled, isTorEnabled } from './utils';
+import { isP2PEnabled, isSecureCoreEnabled, isSmartRouting, isTorEnabled } from './utils';
 
 const getServerNum = (server: Logical) => Number(server.Name.replace('-TOR', '').split('#')[1]);
 const getServerRegion = (server: Logical) => server.Name.split('#')[0];
@@ -54,6 +54,20 @@ const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions,
         });
     }, [servers]);
 
+    const generateSmartRoutingCountries = (logicals: EnhancedLogical[]) => {
+        const filteredLogicals = logicals.filter(({ HostCountry, ExitCountry }) =>
+            isSmartRouting(HostCountry, ExitCountry)
+        );
+
+        if (!filteredLogicals.length) {
+            return [];
+        }
+
+        return Array.from(
+            new Set(filteredLogicals.map(({ HostCountry }) => getLocalizedCountryByAbbr(HostCountry, countryOptions)))
+        );
+    };
+
     return (
         <div className="mb-6">
             {sortedGroups.map((group) => {
@@ -77,13 +91,14 @@ const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions,
                                     <>
                                         <div className="w-1/2 flex justify-space-between">
                                             <CityNumber group={group} />
-                                            <div className={clsx(['flex'])}>
+                                            <div className="flex">
                                                 {group.some(({ Features }) => isP2PEnabled(Features)) ? (
                                                     <P2PIcon />
                                                 ) : null}
                                                 {group.some(({ Features }) => isTorEnabled(Features)) ? (
                                                     <TorIcon />
                                                 ) : null}
+                                                <SmartRoutingIcon countries={generateSmartRoutingCountries(group)} />
                                             </div>
                                         </div>
                                     </>
