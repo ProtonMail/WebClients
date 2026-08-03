@@ -812,6 +812,24 @@
       ],
       "Regex unsafe": [
         "Regex utrygg"
+      ],
+      "Cancel bulk selection": [
+        "Avslutt flervalg"
+      ],
+      "Clear item type filter": [
+        "Fjern filteret for elementtype"
+      ],
+      "Clear sort filter": [
+        "Nullstill sortering"
+      ],
+      "Reset filters": [
+        "Tilbakestill filtre"
+      ],
+      "Select items": [
+        "Velg elementer"
+      ],
+      "Switch vault": [
+        "Bytt hvelv"
       ]
     },
     "Activity": {
@@ -1472,6 +1490,9 @@
       ],
       "Regex unsafe": [
         "Regex utrygg"
+      ],
+      "Unsupported file type": [
+        "Filtypen støttes ikke"
       ]
     },
     "Error message": {
@@ -2876,8 +2897,7 @@
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
       ],
       "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
         "${ PASS_APP_NAME } vil bruke SSH-nøklene som er lagret i hvelvene dine."

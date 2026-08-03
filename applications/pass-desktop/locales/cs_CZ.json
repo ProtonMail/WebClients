@@ -2164,10 +2164,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2821,7 +2818,7 @@
         "${ PASS_APP_NAME } bude používat SSH klíče uložené ve vašich trezorech."
       ],
       "${ selectedShareIds.size } selected": [
-        "Vybráno: ${ selectedShareIds.size }"
+        "${ selectedShareIds.size } vybráno"
       ],
       "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
         "Přístupový token „${ action.token.Name }“ již vypršel. Pokud jej smažete, nebude se již zobrazovat."
@@ -2863,7 +2860,7 @@
         "Platnost vypršela dne ${ formattedDate }"
       ],
       "Expires on ${ formattedDate }": [
-        "Platnost vyprší dne ${ formattedDate }"
+        "Vyprší ${ formattedDate }"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Najděte „OpenSSH Authentication Agent“, klikněte pravým tlačítkem a zvolte Vlastnosti."
@@ -4250,7 +4247,7 @@
         "Shoda přesné URL"
       ],
       "Expired tokens (${ expired.length })": [
-        "Expirované tokeny (${ expired.length })"
+        "Neplatné tokeny (${ expired.length })"
       ],
       "Never fill on this exact URL": [
         "Nikdy nevyplňovat na této přesné URL"
