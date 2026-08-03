@@ -7,6 +7,7 @@ import { Notification } from 'proton-pass-extension/app/content/services/inline/
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { selectAllLoginItems } from '@proton/pass/store/selectors/items';
+import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS } from '@proton/pass/types/data/telemetry';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 import { AppStatus } from '@proton/pass/types/worker/state';
 
@@ -36,6 +37,7 @@ export const NotificationDebug: FC = () => {
                                 type: AutosaveMode.NEW,
                                 userIdentifier: 'nobody@proton.me',
                                 password: 'proton123',
+                                telemetry: NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS,
                             },
                         }}
                     />
@@ -58,6 +60,7 @@ export const NotificationDebug: FC = () => {
                                         userIdentifier: 'john@proton.me',
                                     },
                                 ],
+                                telemetry: NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS,
                             },
                         }}
                     />
@@ -88,6 +91,7 @@ export const NotificationDebug: FC = () => {
                                 ],
                                 userIdentifier: 'nobody@proton.me',
                                 password: 'password',
+                                telemetry: NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS,
                             },
                         }}
                     />
