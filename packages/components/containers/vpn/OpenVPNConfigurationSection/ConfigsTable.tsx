@@ -15,8 +15,9 @@ import useApi from '@proton/components/hooks/useApi';
 import { IcArrowRightArrowLeft } from '@proton/icons/icons/IcArrowRightArrowLeft';
 import { IcBrandTor } from '@proton/icons/icons/IcBrandTor';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { PLANS } from '@proton/payments/core/constants';
-import type { CountryOptions } from '@proton/payments/core/countries';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
@@ -27,7 +28,7 @@ import Country from './Country';
 import LoadIndicator from './LoadIndicator';
 import type { EnhancedLogical } from './interface';
 import { normalizeName } from './normalizeName';
-import { isP2PEnabled, isTorEnabled } from './utils';
+import { isP2PEnabled, isSmartRouting, isTorEnabled } from './utils';
 
 export enum CATEGORY {
     SECURE_CORE = 'SecureCore',
@@ -69,6 +70,26 @@ export const TorIcon = () => (
         </Tooltip>
     </span>
 );
+
+export const SmartRoutingIcon = ({ countries }: { countries: (string | undefined)[] }) => {
+    if (countries.length === 0) {
+        return null;
+    }
+
+    const joinedCountries = countries.filter((country) => country).join(', ');
+
+    const title = joinedCountries
+        ? c('Info').t`Smart Routed through: ${joinedCountries}.`
+        : c('Info').t`Smart Routed through a different country.`;
+
+    return (
+        <span className="mx-2">
+            <Tooltip title={title}>
+                <IcGlobe size={4.5} className="rounded bg-strong p-1" />
+            </Tooltip>
+        </span>
+    );
+};
 
 interface Props {
     servers: EnhancedLogical[];
@@ -157,6 +178,11 @@ const ConfigsTable = ({
                                 {server.Servers?.every(({ Status }) => !Status) && <ServerDown />}
                                 {isP2PEnabled(server.Features) && <P2PIcon />}
                                 {isTorEnabled(server.Features) && <TorIcon />}
+                                {isSmartRouting(server.HostCountry, server.ExitCountry) && (
+                                    <SmartRoutingIcon
+                                        countries={[getLocalizedCountryByAbbr(server.HostCountry, countryOptions)]}
+                                    />
+                                )}
                             </div>,
                             (() => {
                                 if (server.isUpgradeRequired) {
