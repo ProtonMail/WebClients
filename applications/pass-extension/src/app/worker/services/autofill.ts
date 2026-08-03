@@ -47,6 +47,8 @@ import {
 } from '@proton/pass/store/selectors/settings';
 import { selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { ItemContent, ItemRevision, SelectedItem } from '@proton/pass/types/data/items';
+import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
+import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS } from '@proton/pass/types/data/telemetry';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import type { CCItemData } from '@proton/pass/types/worker/data';
 import type { FormCredentials } from '@proton/pass/types/worker/form';
@@ -178,19 +180,30 @@ export const createAutoFillService = () => {
         return sendTabMessage(message, { tabId, frameId }).catch(noop);
     };
 
-    const queryTabLoginForms = async (tabId: TabId): Promise<boolean> => {
-        try {
+    const queryTabLoginForms = async (
+        tabId: TabId
+    ): Promise<{ loginFormDetected: boolean; telemetry: AutofillPageTelemetryDimensions }> => {
+        /* shared so the top frame is only queried once, whether it's visited
+         * by the login-form scan below or read for its `pageLanguage` */
+        const topFrameResult = queryFrameForms(tabId, 0);
+
+        const findLoginForm = async () => {
             const frames = (await browser.webNavigation.getAllFrames({ tabId })) ?? [];
 
             for (const frame of frames) {
-                const formTypes = (await queryFrameForms(tabId, frame.frameId))?.formTypes;
-                if (formTypes?.some((type) => type === FormType.LOGIN)) return true;
+                const result = frame.frameId === 0 ? await topFrameResult : await queryFrameForms(tabId, frame.frameId);
+                if (result?.formTypes.some((type) => type === FormType.LOGIN)) return true;
             }
 
             return false;
-        } catch {
-            return false;
-        }
+        };
+
+        const [loginFormDetected, telemetry] = await Promise.all([
+            findLoginForm().catch(() => false),
+            topFrameResult.then((result) => result?.telemetry ?? NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS),
+        ]);
+
+        return { loginFormDetected, telemetry };
     };
 
     const onAutofillSequenceUpdate = <T extends AutofillSequence['status']>(

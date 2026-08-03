@@ -137,7 +137,7 @@ export const Autosave: FC<Props> = ({ data }) => {
         },
     });
 
-    useTelemetryEvent(TelemetryEventName.AutosaveDisplay, {}, {})([visible]);
+    useTelemetryEvent(TelemetryEventName.AutosaveDisplay, {}, data.telemetry)([visible]);
 
     useEffect(() => {
         if (shouldUpdate) {
@@ -160,7 +160,7 @@ export const Autosave: FC<Props> = ({ data }) => {
                         onTelemetry(
                             TelemetryEventName.AutosaveDismissed,
                             {},
-                            { dismissReason: 'close', modelVersion: MODEL_VERSION }
+                            { dismissReason: 'close', modelVersion: MODEL_VERSION, ...data.telemetry }
                         )
                     }
                     title={(() => {
@@ -184,6 +184,7 @@ export const Autosave: FC<Props> = ({ data }) => {
                             criteria="Autosave"
                             hostname={domain}
                             label={c('Action').t`Disable autosave on this website`}
+                            telemetry={data.telemetry}
                         />
                     }
                 />

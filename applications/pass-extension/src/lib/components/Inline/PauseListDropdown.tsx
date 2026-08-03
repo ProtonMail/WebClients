@@ -8,7 +8,8 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { MODEL_VERSION } from '@proton/pass/constants';
 import type { CriteriaMasks } from '@proton/pass/lib/settings/pause-list';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
+import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 import { useIFrameAppController, useIFrameAppState } from './IFrameApp';
 
@@ -17,9 +18,17 @@ type Props = {
     dense?: boolean;
     hostname: string;
     label: string;
+    telemetry?: AutofillPageTelemetryDimensions;
 };
 
-export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label }) => {
+export const PauseListDropdown: FC<Props> = ({
+    criteria,
+    dense,
+    hostname,
+    label,
+    // only the 'Autosave' criteria uses this; other callers don't pass real page telemetry
+    telemetry = NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS,
+}) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
     const { onTelemetry } = usePassCore();
@@ -42,6 +51,7 @@ export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label 
                     {
                         dismissReason: 'disable',
                         modelVersion: MODEL_VERSION,
+                        ...telemetry,
                     }
                 );
                 break;

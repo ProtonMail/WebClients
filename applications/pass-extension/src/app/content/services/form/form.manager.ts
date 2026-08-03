@@ -12,6 +12,7 @@ import {
     DROPDOWN_FOCUS_TIMEOUT,
     isFocusableElement,
 } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.focus';
+import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
 import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -178,7 +179,7 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
 
     const onFrameFormsQuery: FrameMessageHandler<WorkerMessageType.FRAME_FORMS_QUERY> = (_, sendResponse) => {
         const formTypes = getForms().map(prop('formType'));
-        sendResponse({ formTypes });
+        sendResponse({ formTypes, telemetry: getAutofillPageTelemetryDimensions(document.documentElement) });
 
         return true;
     };
