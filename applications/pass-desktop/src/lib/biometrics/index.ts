@@ -2,7 +2,8 @@ import { platform } from 'os';
 
 import type { MaybeNull } from '@proton/pass/types';
 
-import { setupIpcHandler } from '../ipc';
+import { setupIpcHandler } from 'proton-pass-desktop/lib/ipc';
+
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
 
 declare module 'proton-pass-desktop/lib/ipc' {

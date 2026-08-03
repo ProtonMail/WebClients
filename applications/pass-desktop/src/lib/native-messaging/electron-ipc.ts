@@ -1,11 +1,11 @@
 import type { BrowserWindow } from 'electron';
-import { isMainWindowEntry } from 'proton-pass-desktop/utils/navigation';
 
 import type { MaybeNull, NativeMessagePayload, NativeMessageRequest, NativeMessageResponse } from '@proton/pass/types';
 import { NativeMessageErrorType } from '@proton/pass/types';
 
-import logger from '../../utils/logger';
-import { setupIpcHandler } from '../ipc';
+import { setupIpcHandler } from 'proton-pass-desktop/lib/ipc';
+import logger from 'proton-pass-desktop/utils/logger';
+import { isMainWindowEntry } from 'proton-pass-desktop/utils/navigation';
 
 const log = (...content: any[]) => logger.debug('[NativeMessaging]', ...content);
 const info = (...content: any[]) => logger.info('[NativeMessaging]', ...content);

@@ -37,7 +37,9 @@ module.exports = {
     moduleNameMapper: {
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
         '\\.raw.scss$': '@proton/components/__mocks__/styleMock.js',
-        'proton-pass-extension/(.*)$': ['<rootDir>/src/__mocks__/$1', '<rootDir>/src/$1'],
+        'proton-pass-desktop/(.*)$': ['<rootDir>/src/__mocks__/$1', '<rootDir>/src/$1'],
+        '^proton-pass-desktop-native$': ['<rootDir>/src/__mocks__/native/index', '<rootDir>/native/index'],
+        'proton-pass-desktop-native/(.*)$': ['<rootDir>/src/__mocks__/native/$1', '<rootDir>/native/$1'],
     },
     globals: {
         BUILD_TARGET: 'test',
