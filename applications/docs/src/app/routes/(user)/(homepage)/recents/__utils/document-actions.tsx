@@ -17,6 +17,7 @@ import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { c } from 'ttag'
 import { deleteDocument, reportTrashError, trashAndNotify, restoreAndNotify } from '~/drive-sdk/trash'
+import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 export type DocumentActionsContextValue = {
   open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
@@ -119,11 +120,21 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
     setRenameSaving(true)
     try {
       if (renameWithSDK) {
-        await drive.renameNode(generateNodeUid(document.volumeId, document.linkId), newName)
-        const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`
-        createNotification({
-          text: <span className="text-pre-wrap">{successNotificationText}</span>,
-        })
+        try {
+          await drive.renameNode(generateNodeUid(document.volumeId, document.linkId), newName)
+          const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`
+          createNotification({
+            text: <span className="text-pre-wrap">{successNotificationText}</span>,
+          })
+        } catch (error) {
+          traceError(error, {
+            tags: {
+              initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+              feature: 'DocsRenameWithDriveSDK',
+            },
+          })
+          throw error
+        }
       } else {
         await driveCompat.renameDocument(document, newName)
       }
