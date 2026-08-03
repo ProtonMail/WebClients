@@ -1,19 +1,18 @@
-import type { EntityTable } from 'dexie';
 import { default as Dexie } from 'dexie';
-import { config } from 'proton-authenticator/lib/app/env';
 import {
     clearBackupPassword,
     resolveBackupPassword,
     saveBackupPassword,
 } from 'proton-authenticator/lib/backup/password';
-import type { BackupEntity } from 'proton-authenticator/lib/db/entities/backup';
-import type { StorageKeyEntity } from 'proton-authenticator/lib/db/entities/storage-keys';
+import { DATABASE_NAME } from 'proton-authenticator/lib/db/constants';
 import setupDBVersions from 'proton-authenticator/lib/db/migrations';
+import type { AuthenticatorDB } from 'proton-authenticator/lib/db/types';
 import { AuthenticatorDBMigrationError, closeDB, getCurrentDBVersion, openDB } from 'proton-authenticator/lib/db/utils';
 import logger from 'proton-authenticator/lib/logger';
 import { createFallbackAdapter } from 'proton-authenticator/lib/storage-key/adapter.fallback';
 import { createKeyringAdapter } from 'proton-authenticator/lib/storage-key/adapter.keyring';
 import { createPasswordAdapter } from 'proton-authenticator/lib/storage-key/adapter.password';
+import { registerStorageKey } from 'proton-authenticator/lib/storage-key/instance';
 import { createStorageKeyService } from 'proton-authenticator/lib/storage-key/service';
 import { StorageKeySource } from 'proton-authenticator/lib/storage-key/types';
 import { c } from 'ttag';
@@ -21,23 +20,9 @@ import { c } from 'ttag';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import type { Item } from './entities/items';
 import { ItemEntity } from './entities/items';
-import type { RemoteKey } from './entities/remote-keys';
 import { RemoteKeyEntity } from './entities/remote-keys';
-import type { EncryptedEntityTable } from './middlewares/encryption';
 import { createEncryptionMiddleware } from './middlewares/encryption';
-
-const { API_URL } = config;
-
-export const DATABASE_NAME = API_URL.includes('proton.black') ? 'authenticatordb_black' : 'authenticatordb';
-
-export type AuthenticatorDB = Dexie & {
-    items: EncryptedEntityTable<Item, 'id'>;
-    keys: EncryptedEntityTable<RemoteKey, 'id'>;
-    storageKey: EntityTable<StorageKeyEntity, 'id'>;
-    backup: EntityTable<BackupEntity, 'id'>;
-};
 
 export const db = new Dexie(DATABASE_NAME, { autoOpen: false }) as AuthenticatorDB;
 
@@ -106,6 +91,8 @@ export const StorageKey = createStorageKeyService({
         }
     },
 });
+
+registerStorageKey(StorageKey);
 
 /** Initializes the database with encryption middleware.
  * Critical: Opens DB without encryption first to allow migrations to complete,
