@@ -62,7 +62,6 @@ export enum CommonFeatureFlag {
     AutoAddMeetingLink = 'AutoAddMeetingLink',
     AvatarColorWeb = 'AvatarColorWeb',
     AuthenticatorSettingsEnabled = 'AuthenticatorSettingsEnabled',
-    OlesM1 = 'OlesM1',
     OrganizationLevelEasySwitch = 'OrganizationLevelEasySwitch',
     WebNPSModal = 'WebNPSModal',
     WebApiRateLimiter = 'WebApiRateLimiter',
