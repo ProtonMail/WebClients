@@ -1,6 +1,5 @@
 import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 
-import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -24,12 +23,17 @@ import {
 import { SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { SentryMailInitiatives } from '@proton/shared/lib/helpers/sentry';
+import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
 
 import useVPNDrawerTelemetry from './useVPNDrawerTelemetry';
 
 import './drawer-vpn-view-spotlight.scss';
 
 const VPNAnimation = lazy(() => import(/* webpackChunkName: "VPNAnimation" */ './VPNAnimation'));
+
+// Only surface the spotlight once the onboarding checklist period is over, so the
+// two don't compete for the user's attention.
+const MIN_ACCOUNT_AGE_DAYS = 40;
 
 interface Props {
     children: React.ReactNode;
@@ -51,9 +55,7 @@ const VPNDrawerSpotlight = ({ children }: Props) => {
         welcomeFlags: { isDone },
     } = useWelcomeFlags();
 
-    const accountCreateTime = user.CreateTime ? fromUnixTime(user.CreateTime) : new Date();
-    const daysSinceAccountCreation = differenceInDays(new Date(), accountCreateTime);
-    const isAccountOldEnough = daysSinceAccountCreation >= 7;
+    const isAccountOldEnough = isUserAccountOlderThanOrEqualToDays(user, MIN_ACCOUNT_AGE_DAYS);
 
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
         FeatureCode.SpotlightVPNDrawer,
