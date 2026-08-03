@@ -93,7 +93,7 @@ export const ScheduleMeetingOptions = ({
 
     return (
         <>
-            <ExpandOptionsButton containerClassName="mt-2" onClick={() => setShowOptions(!showOptions)}>
+            <ExpandOptionsButton containerClassName="mt-2" onClick={() => setShowOptions(!showOptions)} newPill>
                 {showOptions ? c('Action').t`Hide options` : c('Action').t`Show options`}
             </ExpandOptionsButton>
             {showOptions && (
