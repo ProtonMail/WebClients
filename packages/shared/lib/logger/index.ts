@@ -1,3 +1,4 @@
-export { Logger, logger, loggerManager, type LoggerOptions } from './logger';
-export { logger as default } from './logger';
-export type { LogEntry } from './storage/types';
+export { Logger } from './logger';
+export { logger, loggerManager } from './manager';
+export { logger as default } from './manager';
+export type { LogEntry, LogLevel, LoggerOptions } from './types';
