@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import noop from '@proton/utils/noop';
 
 import { updateDelegatedAccess } from '../../../outgoingActions';
-import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 import { useOutgoingController } from '../../OutgoingDelegatedAccessProvider';
 import type { ReEnableActionPayload } from '../interface';
 
@@ -17,7 +17,7 @@ export const ReEnableAction = () => {
     const { subscribe } = useOutgoingController();
 
     const handleError = useErrorHandler();
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
     const api = useApi();
     const { createNotification } = useNotifications();
 

@@ -5,11 +5,11 @@ import Prompt, { type PromptProps } from '@proton/components/components/prompt/P
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
 import { deleteDelegatedAccessThunk } from '../../../incomingActions';
 import type { EnrichedIncomingDelegatedAccess } from '../../../shared/incoming/interface';
-import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 
 interface Props extends Omit<PromptProps, 'children' | 'buttons'> {
     value: EnrichedIncomingDelegatedAccess;
@@ -17,7 +17,7 @@ interface Props extends Omit<PromptProps, 'children' | 'buttons'> {
 
 export const DeleteIncomingRecoveryContactModal = ({ value, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
 
