@@ -3,11 +3,13 @@ import { c } from 'ttag';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { useSettingsLink } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectWaitingRoomSetting, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
+import { PLANS } from '@proton/payments/core/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
@@ -21,7 +23,8 @@ export const WaitingRoomDropdown = ({ instantMeeting }: { instantMeeting: boolea
     const dispatch = useMeetDispatch();
     const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
     const [loading, withLoading] = useLoading();
-    const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
+    const { isPaidUser, hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
+    const goToSettings = useSettingsLink();
 
     const { toggleWaitingRoomPrejoin } = useWaitingRoomContext();
 
@@ -37,6 +40,18 @@ export const WaitingRoomDropdown = ({ instantMeeting }: { instantMeeting: boolea
         }
     };
 
+    const handleEnableWaitingRoomClick = () => {
+        if (!isPaidUser) {
+            return goToSettings(
+                hasSubscriptionWithoutMeet ? '/dashboard?addon=meet' : `/dashboard?plan=${PLANS.MEET_BUSINESS}`,
+                undefined,
+                true
+            );
+        }
+
+        return handleWaitingRoomSettingToggle(true);
+    };
+
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     if (!isMeetWaitingRoomEnabled) {
@@ -45,7 +60,7 @@ export const WaitingRoomDropdown = ({ instantMeeting }: { instantMeeting: boolea
 
     return (
         <>
-            <ExpandOptionsButton ref={anchorRef} onClick={toggle}>
+            <ExpandOptionsButton ref={anchorRef} onClick={toggle} newPill>
                 {waitingRoomSetting ? c('Action').t`Waiting room enabled` : c('Action').t`Waiting room disabled`}
                 <DropdownCaret className="shrink-0 ml-1" isOpen={isOpen} />
             </ExpandOptionsButton>
@@ -62,10 +77,21 @@ export const WaitingRoomDropdown = ({ instantMeeting }: { instantMeeting: boolea
                     showIcon={waitingRoomSetting}
                     Icon={IcCheckmark}
                     label={c('Label').t`Enabled`}
-                    description={c('Label').t`Participants join after you approve them`}
-                    onClick={() => handleWaitingRoomSettingToggle(true)}
+                    description={
+                        isPaidUser
+                            ? c('Label').t`Participants join after you approve them`
+                            : c('Label').t`Use waiting room with a paid plan`
+                    }
+                    onClick={handleEnableWaitingRoomClick}
                     loading={loading}
-                    disabled={!isPaidUser}
+                    rightContent={
+                        !isPaidUser && (
+                            <span className="action-button shrink-0 border rounded-full px-4 py-1.5">
+                                <span className="upgrade-now">{c('Action').t`Upgrade`}</span>
+                                <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
+                            </span>
+                        )
+                    }
                 />
                 <OptionButton
                     iconOnTheRight
