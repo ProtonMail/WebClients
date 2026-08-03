@@ -236,6 +236,7 @@ export const ScheduleMeetingForm = ({
                     }),
                     isMeetWaitingRoomEnabled &&
                         values.waitingRoom !== undefined &&
+                        values.waitingRoom !== meeting.WaitingRoom &&
                         (await saveMeetingWaitingRoom({
                             meetingLinkName: meeting.MeetingLinkName,
                             waitingRoom: values.waitingRoom,
