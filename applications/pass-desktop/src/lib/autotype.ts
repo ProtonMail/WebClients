@@ -3,12 +3,13 @@ import type { BrowserWindow } from 'electron';
 import type { AutotypeProperties, MaybeNull } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { Autotype } from '../../native';
-import logger from '../utils/logger';
+import { Autotype } from 'proton-pass-desktop-native';
+import logger from 'proton-pass-desktop/utils/logger';
+
 import { setupIpcHandler } from './ipc';
 import { hideWindow } from './window-management';
 
-declare module 'proton-pass-desktop/lib/ipc' {
+declare module './ipc' {
     interface IPCChannels {
         'autotype:execute': IPCChannel<[props: AutotypeProperties], void>;
     }

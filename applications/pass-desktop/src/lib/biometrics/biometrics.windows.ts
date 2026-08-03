@@ -2,7 +2,8 @@ import { KEY_LENGTH_BYTES } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
-import { biometric as winBiometrics } from '../../../native';
+import { biometric as winBiometrics } from 'proton-pass-desktop-native';
+
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
 
 const factory: BiometricsFactory = (getWindow) => {
