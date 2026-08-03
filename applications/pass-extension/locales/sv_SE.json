@@ -812,6 +812,9 @@
       ],
       "Switch vault": [
         "Byt valv"
+      ],
+      "Cancel bulk selection": [
+        "Avbryt massval"
       ]
     },
     "Activity": {
@@ -2949,7 +2952,8 @@
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Åtkomsttoken, som används tillsammans med ${ passCliLink }, gör att du kan automatisera CI/CD eller ge din AI-agent begränsad åtkomst till vad den behöver för att köra sitt jobb."

@@ -800,6 +800,24 @@
       ],
       "Regex unsafe": [
         "Expresión regular insegura"
+      ],
+      "Cancel bulk selection": [
+        "Cancelar selección en lote"
+      ],
+      "Clear item type filter": [
+        "Borrar filtro de tipo de elemento"
+      ],
+      "Clear sort filter": [
+        "Borrar orden de filtro"
+      ],
+      "Reset filters": [
+        "Restablecer filtros"
+      ],
+      "Select items": [
+        "Seleccionar elementos"
+      ],
+      "Switch vault": [
+        "Cambiar bóveda"
       ]
     },
     "Activity": {
@@ -1470,6 +1488,9 @@
       ],
       "Regex unsafe": [
         "Expresión regular insegura"
+      ],
+      "Unsupported file type": [
+        "Tipo de archivo no soportado"
       ]
     },
     "Error message": {
@@ -2226,7 +2247,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
