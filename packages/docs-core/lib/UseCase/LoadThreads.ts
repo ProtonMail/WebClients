@@ -109,7 +109,7 @@ export class LoadThreads implements UseCaseInterface<void> {
       commentThreadDto.CommentThreadID,
     )
 
-    dto.commentsState.addThread(localThread)
+    dto.commentsState.addThread(localThread, false, false)
 
     return Result.ok()
   }
