@@ -1,6 +1,6 @@
+import { uint8ArrayToBinaryString } from '@protontech/crypto/utils';
 import mimemessage from '@protontech/mimemessage';
 
-import { uint8ArrayToBinaryString } from '@protontech/crypto/utils';
 import type {
     MessageEmbeddedImage,
     MessageImages,
@@ -17,7 +17,7 @@ import type { Download } from '../attachment/attachmentDownloader';
 import { formatDownload } from '../attachment/attachmentDownloader';
 import { getPlainText } from '../message/messageContent';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
-import { prepareExport } from '../message/messageExport';
+import { prepareExport } from '../message/messageExportPrepare';
 
 // Reference: Angular/src/app/composer/services/mimeMessageBuilder.js
 

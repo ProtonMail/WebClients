@@ -11,7 +11,7 @@ import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
 import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
-import { GlobalModalContext } from 'proton-mail/containers/globalModals/GlobalModalProvider';
+import { GlobalModalContext } from 'proton-mail/containers/globalModals/globalModalContext';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import { labelConversations, labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
 

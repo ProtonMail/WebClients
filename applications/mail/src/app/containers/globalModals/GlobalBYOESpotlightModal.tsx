@@ -13,7 +13,7 @@ import { IcLightLightbulb } from '@proton/icons/icons/IcLightLightbulb';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeSpolightImg from '@proton/styles/assets/img/illustrations/byoe-spotlight.svg';
 
-import { useMailGlobalModals } from './GlobalModalProvider';
+import { useMailGlobalModals } from './globalModalContext';
 import type { BYOESpotlightModalPayload } from './inteface';
 import { ModalType } from './inteface';
 

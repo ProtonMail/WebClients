@@ -8,8 +8,8 @@ import type { EOStoreState } from 'proton-mail/store/eo/eoStore';
 import { markEmbeddedImagesAsLoaded } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';
 import { loadBackgroundImages, loadImages } from '../../helpers/message/messageRemotes';
+import { eoInitialState } from './eoInitialState';
 import { eoMessageSelector, eoMessageStateSelector } from './eoSelectors';
-import { initialState } from './eoSlice';
 import type {
     EODocumentInitializeParams,
     EOInitParams,
@@ -38,7 +38,7 @@ const getStateImage = <T extends { image: MessageRemoteImage }>(data: T, message
 };
 
 export const reset = (state: Draft<EOState>) => {
-    Object.assign(state, initialState);
+    Object.assign(state, eoInitialState);
 };
 
 export const initFulfilled = (

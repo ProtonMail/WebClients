@@ -1,5 +1,6 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type {
     MessageKeys,
@@ -8,7 +9,6 @@ import type {
     PublicPrivateKey,
 } from '@proton/mail/store/messages/messagesTypes';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
-import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { CREATE_DRAFT_MESSAGE_ACTION } from '@proton/shared/lib/interfaces/message';
@@ -19,9 +19,10 @@ import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { combineHeaders, splitMail } from '../mail';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
-import { getPlainTextContent } from './messageContent';
-import { insertActualEmbeddedImages } from './messageEmbeddeds';
-import { replaceProxyWithOriginalURLAttributes } from './messageImages';
+import { getPlainTextContent } from './messageContentPlainText';
+import { prepareExport } from './messageExportPrepare';
+
+export { prepareExport } from './messageExportPrepare';
 
 const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     Password: undefined,
@@ -36,24 +37,6 @@ const restorePasswordFromResults = (
     Password: originalMessage.Password,
     PasswordHint: originalMessage.PasswordHint,
 });
-
-export const prepareExport = (message: MessageState) => {
-    if (!message.messageDocument?.document) {
-        return '';
-    }
-
-    const document = message.messageDocument.document.cloneNode(true) as Element;
-
-    // Using create element will create a DOM element that will not be added to the window's document, but images will be loaded
-    // Use a DOMParser instead so that images are not loaded.
-    const dom = parseStringToDOM(document.innerHTML);
-
-    // Embedded images
-    insertActualEmbeddedImages(dom.body);
-
-    // Clean remote images
-    return replaceProxyWithOriginalURLAttributes(message, dom.body);
-};
 
 const encryptBody = async (content: string, messageKeys: PublicPrivateKey) => {
     const { message: data } = await CryptoProxy.encryptMessage({
