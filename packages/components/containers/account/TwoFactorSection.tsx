@@ -27,13 +27,12 @@ import { getHasFIDO2Support } from '@proton/shared/lib/authentication/twoFactor'
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { FIDO2_CREDENTIALS_PIN_VALUE, type UserSettings } from '@proton/shared/lib/interfaces';
+import { FIDO2_CREDENTIALS_PIN_VALUE } from '@proton/shared/lib/interfaces';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 import { Fido2CredentialFlags } from '@proton/shared/lib/webauthn/interface';
 import { useFlag } from '@proton/unleash/useFlag';
-import noop from '@proton/utils/noop';
 
 import LostTwoFAModal from './LostTwoFAModal';
 import SettingsLayout from './SettingsLayout';
@@ -170,12 +169,6 @@ const TwoFactorSection = () => {
                             onExit={() => {
                                 removeSecurityKeyModal.onExit();
                                 setTmpRemove(defaultTmpRemove);
-                            }}
-                            onSuccess={(userSettings: UserSettings) => {
-                                const registeredKeys = userSettings['2FA']?.RegisteredKeys || [];
-                                if (registeredKeys.length === 0) {
-                                    dispatch(setSecurityKeyRequirePinFlag(false)).catch(noop);
-                                }
                             }}
                         />
                     )}
