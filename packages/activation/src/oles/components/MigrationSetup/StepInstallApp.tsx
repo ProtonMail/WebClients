@@ -1,4 +1,4 @@
-import { type FC, useEffect, useMemo, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,8 +11,7 @@ import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFi
 import { GSUITE_MARKETPLACE_URL } from '@proton/shared/lib/api/activation';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { CommonFeatureFlag } from '@proton/unleash/Flags';
-import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
+import { useVariant } from '@proton/unleash/useVariant';
 
 import { useConnectionState } from '../../useConnectionState';
 import { CircledLogoWithProton } from '../CircledLogoWithProton';
@@ -21,6 +20,7 @@ import type { StepComponentProps } from './MigrationSetup';
 const StepInstallApp: FC<StepComponentProps> = ({ model, onNext }) => {
     const [hasUserInteracted, setHasUserInteracted] = useState<'add' | 'verify'>();
     const [connection, loading, verify] = useConnectionState(model.tokens);
+    const featureFlag = useVariant('OrganizationLevelEasySwitch');
 
     useEffect(() => {
         setHasUserInteracted(undefined);
@@ -44,14 +44,11 @@ const StepInstallApp: FC<StepComponentProps> = ({ model, onNext }) => {
     }, []);
 
     /** Google Workplace Marketplace URL fetched from Unleash or const fallback */
-    const workspaceMarketplaceUrl = useMemo(() => {
+    const workspaceMarketplaceUrl = (() => {
         let url = GSUITE_MARKETPLACE_URL;
 
         try {
-            const client = getStandaloneUnleashClient();
-            const config = JSON.parse(client?.getVariant(CommonFeatureFlag.OlesM1)?.payload?.value ?? 'false') as
-                | { marketplaceUrl?: any }
-                | undefined;
+            const config = JSON.parse(featureFlag.payload?.value ?? 'false') as { marketplaceUrl?: any } | undefined;
             if (
                 config?.marketplaceUrl &&
                 typeof config.marketplaceUrl === 'string' &&
@@ -62,7 +59,7 @@ const StepInstallApp: FC<StepComponentProps> = ({ model, onNext }) => {
         } catch (err) {}
 
         return url;
-    }, []);
+    })();
 
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
