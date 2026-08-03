@@ -824,6 +824,9 @@
       ],
       "Switch vault": [
         "Byt valv"
+      ],
+      "Cancel bulk selection": [
+        "Avbryt massval"
       ]
     },
     "Activity": {
@@ -2861,8 +2864,7 @@
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
       ],
       "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
         "${ PASS_APP_NAME } kommer använda SSH-nycklarna sparade i dina valv."
@@ -2926,6 +2928,9 @@
       ],
       "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
         "Du har inte längre åtkomst till vissa valv eller objekt eftersom din grupp ${ groupName }s åtkomst togs bort."
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "För att Git ska fungera med SSH-agenten ${ PASS_APP_NAME } måste Git använda Windows OpenSSH. Detta kan göras genom att köra följande kommando:"
       ]
     },
     "Keyboard key": {
