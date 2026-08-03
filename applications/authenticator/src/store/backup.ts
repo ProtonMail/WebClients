@@ -3,13 +3,9 @@ import { downloadDir, join } from '@tauri-apps/api/path';
 import { open, save } from '@tauri-apps/plugin-dialog';
 import { exists } from '@tauri-apps/plugin-fs';
 import { authService } from 'proton-authenticator/lib/auth/service';
+import { createAutomaticBackupFilename, createBackupFilename } from 'proton-authenticator/lib/backup/filename';
 import { clearBackupPassword, resolveBackupPassword } from 'proton-authenticator/lib/backup/password';
-import {
-    createAutomaticBackupFilename,
-    createBackupFilename,
-    pruneExcessBackups,
-    writeBackupToPath,
-} from 'proton-authenticator/lib/backup/writer';
+import { pruneExcessBackups, writeBackupToPath } from 'proton-authenticator/lib/backup/writer';
 import { db } from 'proton-authenticator/lib/db/db';
 import { fromWasmEntry, fromWasmEntryOrdered } from 'proton-authenticator/lib/entries/items';
 import { getNextOrder } from 'proton-authenticator/lib/entries/ordering';
