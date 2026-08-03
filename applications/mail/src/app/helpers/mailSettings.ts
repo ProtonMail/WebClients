@@ -5,7 +5,7 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { isSearch } from './elements';
+import { isSearch } from './elementSearch';
 import { extractSearchParameters } from './mailboxUrl';
 
 export const isColumnMode = ({ ViewLayout = VIEW_LAYOUT.COLUMN }: Partial<MailSettings> = {}) =>

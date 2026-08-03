@@ -10,11 +10,7 @@ import range from '@proton/utils/range';
 
 import { appendCategoryIDsInInbox, convertCustomViewLabelsToAlmostAllMail } from '../../../helpers/labels';
 import type { Element } from '../../../models/element';
-import type { MailState } from '../../store';
-import { pollTaskRunning } from '../elementsActions';
 import type { ElementsStateParams, QueryParams, QueryResults, RetryData } from '../elementsTypes';
-
-export const TASK_RUNNING_POLLING_INTERVAL = 10000;
 
 export const PAGE_FETCH_COUNT = 2;
 
@@ -205,24 +201,4 @@ export const queryElement = async (api: Api, messageMode: boolean, elementID: st
     const query = messageMode ? getMessage : getConversation;
     const result: any = await api({ ...query(elementID), silence: true });
     return messageMode ? result.Message : result.Conversation;
-};
-
-export const refreshTaskRunningTimeout = (
-    newLabelIDs: string[],
-    { getState, dispatch }: { getState: () => unknown; dispatch: (action: any) => void }
-): NodeJS.Timeout | undefined => {
-    let timeoutID: NodeJS.Timeout | undefined = (getState() as MailState).elements.taskRunning.timeoutID;
-
-    if (timeoutID) {
-        clearTimeout(timeoutID);
-        timeoutID = undefined;
-    }
-
-    if (newLabelIDs.length > 0) {
-        timeoutID = setTimeout(() => {
-            void dispatch(pollTaskRunning());
-        }, TASK_RUNNING_POLLING_INTERVAL);
-    }
-
-    return timeoutID;
 };

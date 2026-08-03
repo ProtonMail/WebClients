@@ -15,7 +15,7 @@ import unique from '@proton/utils/unique';
 
 import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
-import { useMailGlobalModals } from 'proton-mail/containers/globalModals/GlobalModalProvider';
+import { useMailGlobalModals } from 'proton-mail/containers/globalModals/globalModalContext';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import { getFilteredUndoTokens } from 'proton-mail/helpers/chunk';
 import { isElementConversation, isElementMessage } from 'proton-mail/helpers/elements';

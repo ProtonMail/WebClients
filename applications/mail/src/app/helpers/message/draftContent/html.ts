@@ -7,12 +7,14 @@ import type { Address, MailSettings, Recipient, UserSettings } from '@proton/sha
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { CLASSNAME_BLOCKQUOTE, formatRecipientsString } from 'proton-mail/helpers/message/messageDraft';
+import { CLASSNAME_BLOCKQUOTE } from 'proton-mail/helpers/message/messageDraftConstants';
+import { formatRecipientsString } from 'proton-mail/helpers/message/messageDraftFormat';
 import { insertSignature } from 'proton-mail/helpers/message/messageSignature';
 
 import { formatFullDate } from '../../date';
-import { getDate } from '../../elements';
-import { getDocumentContent, plainTextToHTML } from '../messageContent';
+import { getDate } from '../../elementTypeGuards';
+import { plainTextToHTML } from '../messageContentConversion';
+import { getDocumentContent } from '../messageContentQuery';
 import { restoreImages } from '../messageImages';
 
 export const generatePreviousMessageInfos = (referenceMessage: PartialMessageState, action: MESSAGE_ACTIONS) => {

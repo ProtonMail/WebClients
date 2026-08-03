@@ -7,11 +7,12 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { formatRecipientsString } from 'proton-mail/helpers/message/messageDraft';
+import { formatRecipientsString } from 'proton-mail/helpers/message/messageDraftFormat';
 
 import { formatFullDate } from '../../date';
-import { getDate } from '../../elements';
-import { exportPlainText, getDocumentContent } from '../messageContent';
+import { getDate } from '../../elementTypeGuards';
+import { exportPlainText } from '../messageContentPlainText';
+import { getDocumentContent } from '../messageContentQuery';
 import { restoreImages } from '../messageImages';
 import { exportPlainTextSignature, templateBuilder } from '../messageSignature';
 

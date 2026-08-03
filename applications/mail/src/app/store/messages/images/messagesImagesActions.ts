@@ -14,7 +14,7 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { encodeImageUri } from '@proton/shared/lib/helpers/image';
 
 import { getAndVerifyAttachment } from '../../../helpers/attachment/attachmentLoader';
-import { createBlob } from '../../../helpers/message/messageEmbeddeds';
+import { createBlob } from '../../../helpers/message/messageEmbeddedBlob';
 
 export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedParams>(
     'messages/embeddeds/load',
