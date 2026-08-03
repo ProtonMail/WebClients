@@ -14,6 +14,8 @@ import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import capitalize from '@proton/utils/capitalize';
 
+import { getRecordHost } from '../../domains';
+
 export type DNSGroup = {
     name: 'verification' | 'SPF' | 'DMARC' | 'DKIM' | 'MX';
     hideState?: boolean;
@@ -26,7 +28,11 @@ export type DNSGroup = {
     }[];
 };
 
-const DNSGroupRecords: FC<{ group: DNSGroup; onRefresh?: () => Promise<void> }> = ({ group, onRefresh }) => {
+const DNSGroupRecords: FC<{ group: DNSGroup; subdomain?: string; onRefresh?: () => Promise<void> }> = ({
+    group,
+    subdomain,
+    onRefresh,
+}) => {
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`Value copied to clipboard` });
     const hostDefaultValue = c('Label for domain setup').t`Use default value (e.g. “@”)`;
@@ -36,66 +42,71 @@ const DNSGroupRecords: FC<{ group: DNSGroup; onRefresh?: () => Promise<void> }> 
 
     return (
         <>
-            {group.records.map((r, ix) => (
-                <BorderedContainer key={ix} className="mb-4 mt-2">
-                    {/* Host */}
-                    <BorderedContainerItem
-                        className="flex flex-row flex-nowrap items-center gap-2"
-                        paddingClassName="py-0.5 px-5"
-                    >
-                        <span className="text-semibold w-1/6 min-w-custom" style={{ '--min-w-custom': '6rem' }}>{c(
-                            'Label for domain setup'
-                        ).t`Host name`}</span>
-                        <span className="color-weak flex-1 text-ellipsis py-3" title={r.host || hostDefaultValue}>
-                            {r.host || hostDefaultValue}
-                        </span>
-                        {Boolean(r.host) && (
-                            <Copy
-                                onCopy={handleCopy}
-                                shape="ghost"
-                                size="small"
-                                color="norm"
-                                className="shrink-0"
-                                value={r.host!}
-                            />
-                        )}
-                    </BorderedContainerItem>
+            {group.records.map((r, ix) => {
+                const host = getRecordHost(r.host, subdomain);
 
-                    {/* Value */}
-                    <BorderedContainerItem
-                        className="flex flex-row flex-nowrap items-center gap-2"
-                        paddingClassName="py-0.5 px-5"
-                    >
-                        <span className="text-semibold w-1/6 min-w-custom" style={{ '--min-w-custom': '6rem' }}>
-                            {c('Label for domain setup').t`Type`} {r.dnsType}
-                        </span>
-                        <span className="color-weak flex-1 text-ellipsis py-3" title={r.value}>
-                            {r.value}
-                        </span>
-                        <Copy
-                            onCopy={handleCopy}
-                            shape="ghost"
-                            size="small"
-                            color="norm"
-                            className="shrink-0"
-                            value={r.value}
-                        />
-                    </BorderedContainerItem>
-
-                    {/* Priority */}
-                    {r.priority !== undefined && (
+                return (
+                    <BorderedContainer key={ix} className="mb-4 mt-2">
+                        {/* Host */}
                         <BorderedContainerItem
                             className="flex flex-row flex-nowrap items-center gap-2"
                             paddingClassName="py-0.5 px-5"
                         >
                             <span className="text-semibold w-1/6 min-w-custom" style={{ '--min-w-custom': '6rem' }}>{c(
                                 'Label for domain setup'
-                            ).t`Priority`}</span>
-                            <span className="color-weak flex-1 text-ellipsis py-3">{r.priority}</span>
+                            ).t`Host name`}</span>
+                            <span className="color-weak flex-1 text-ellipsis py-3" title={host || hostDefaultValue}>
+                                {host || hostDefaultValue}
+                            </span>
+                            {Boolean(host) && (
+                                <Copy
+                                    onCopy={handleCopy}
+                                    shape="ghost"
+                                    size="small"
+                                    color="norm"
+                                    className="shrink-0"
+                                    value={host}
+                                />
+                            )}
                         </BorderedContainerItem>
-                    )}
-                </BorderedContainer>
-            ))}
+
+                        {/* Value */}
+                        <BorderedContainerItem
+                            className="flex flex-row flex-nowrap items-center gap-2"
+                            paddingClassName="py-0.5 px-5"
+                        >
+                            <span className="text-semibold w-1/6 min-w-custom" style={{ '--min-w-custom': '6rem' }}>
+                                {c('Label for domain setup').t`Type`} {r.dnsType}
+                            </span>
+                            <span className="color-weak flex-1 text-ellipsis py-3" title={r.value}>
+                                {r.value}
+                            </span>
+                            <Copy
+                                onCopy={handleCopy}
+                                shape="ghost"
+                                size="small"
+                                color="norm"
+                                className="shrink-0"
+                                value={r.value}
+                            />
+                        </BorderedContainerItem>
+
+                        {/* Priority */}
+                        {r.priority !== undefined && (
+                            <BorderedContainerItem
+                                className="flex flex-row flex-nowrap items-center gap-2"
+                                paddingClassName="py-0.5 px-5"
+                            >
+                                <span
+                                    className="text-semibold w-1/6 min-w-custom"
+                                    style={{ '--min-w-custom': '6rem' }}
+                                >{c('Label for domain setup').t`Priority`}</span>
+                                <span className="color-weak flex-1 text-ellipsis py-3">{r.priority}</span>
+                            </BorderedContainerItem>
+                        )}
+                    </BorderedContainer>
+                );
+            })}
 
             {/* Validation */}
             {!group.hideState && (
