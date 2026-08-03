@@ -1,7 +1,7 @@
 import { randomBytes } from 'crypto';
 import type { CookiesSetDetails, Session } from 'electron';
 
-import config from '../../app/config';
+import config from 'proton-pass-desktop/app/config';
 
 export const calculateUpdateDistribution = () => randomBytes(4).readUint32LE() / Math.pow(2, 32);
 

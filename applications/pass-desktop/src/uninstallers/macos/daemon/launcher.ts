@@ -4,6 +4,7 @@ import { chmodSync, copyFileSync, existsSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import os from 'os';
 import path from 'path';
+
 import { isMac } from 'proton-pass-desktop/utils/platform';
 
 const homeDir = os.homedir();

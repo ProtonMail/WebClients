@@ -10,7 +10,7 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 import { configs, parser, plugin } from 'typescript-eslint';
 
 import { allExtensions, allGlobs, typeScriptExtensions, typescriptGlobs } from './globs.js';
-import { restrictedImports } from './restrictedImports.js';
+import { createRestrictedImportRule } from './restrictedImports.js';
 
 export default defineConfig(
     {
@@ -316,7 +316,7 @@ export default defineConfig(
              */
             'no-duplicate-imports': ['warn', { allowSeparateTypeImports: true }],
 
-            'no-restricted-imports': ['error', restrictedImports],
+            'no-restricted-imports': createRestrictedImportRule(),
         },
         settings: {
             'import/extensions': allExtensions,
@@ -347,22 +347,9 @@ export default defineConfig(
     },
     {
         name: 'tsx-restricted-imports',
-        files: ['**/*.tsx', '**/*/.jsx'],
+        files: ['**/*.tsx', '**/*.jsx'],
         rules: {
-            'no-restricted-imports': [
-                'error',
-                {
-                    paths: restrictedImports.paths,
-                    patterns: [
-                        ...restrictedImports.patterns,
-                        {
-                            group: ['@proton/shared/lib/api/helpers/customConfig'],
-                            importNames: ['getSilentApi'],
-                            message: 'Use the useSilentApi hook instead',
-                        },
-                    ],
-                },
-            ],
+            'no-restricted-imports': createRestrictedImportRule({ tsx: true }),
         },
     },
     {

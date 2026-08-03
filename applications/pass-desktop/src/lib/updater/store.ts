@@ -1,10 +1,11 @@
 import { UpdateStatus } from '@proton/pass/types/desktop';
 import type { UpdateStore } from '@proton/pass/types/desktop';
 
-import config from '../../app/config';
-import { ARCH } from '../../lib/env';
-import { store } from '../../store';
-import { isProdEnv } from '../../utils/platform';
+import config from 'proton-pass-desktop/app/config';
+import { ARCH } from 'proton-pass-desktop/lib/env';
+import { store } from 'proton-pass-desktop/store';
+import { isProdEnv } from 'proton-pass-desktop/utils/platform';
+
 import { calculateUpdateDistribution } from './helpers';
 
 const DOWNLOAD_ROOT = 'https://proton.me/download';

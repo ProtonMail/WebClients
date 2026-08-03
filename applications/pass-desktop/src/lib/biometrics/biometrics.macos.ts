@@ -3,7 +3,8 @@ import { systemPreferences } from 'electron';
 
 import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
-import { biometric as macBiometrics } from '../../../native';
+import { biometric as macBiometrics } from 'proton-pass-desktop-native';
+
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
 
 const factory: BiometricsFactory = () => {

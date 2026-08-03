@@ -21,7 +21,7 @@
         "lint": "eslint --quiet",
         "lint:native": "cd native && make lint",
         "make": "electron-forge make --skip-package",
-        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "prettier --write 'src/**/*.{js,ts,tsx}'",
         "start": "cross-env-shell NODE_ENV=development API_ENV=proton.black 'electron-forge start'",
         "start:prod": "cross-env-shell NODE_ENV=development 'electron-forge start'",
         "test": "jest",

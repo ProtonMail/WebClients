@@ -2,13 +2,13 @@ import type { LogLevel } from 'electron-log';
 import { unlink } from 'node:fs/promises';
 import type { Server } from 'node:net';
 import { type Socket, createServer } from 'node:net';
-import { isWindows } from 'proton-pass-desktop/utils/platform';
 
 import type { MaybeNull, NativeMessagePayload, NativeMessageRequest, NativeMessageResponse } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-import logger from '../../utils/logger';
+import logger from 'proton-pass-desktop/utils/logger';
+import { isWindows } from 'proton-pass-desktop/utils/platform';
 
 const RECONNECT_DELAY_MS = 2_000;
 
