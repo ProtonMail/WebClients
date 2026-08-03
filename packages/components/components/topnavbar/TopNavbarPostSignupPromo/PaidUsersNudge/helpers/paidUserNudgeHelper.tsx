@@ -51,6 +51,29 @@ export const roundToUpper = (number: number): number => {
     return nonRoundedPart + roundedPart;
 };
 
+/**
+ * Rounds a number down based on its magnitude.
+ *
+ * For numbers less than or equal to 999, it rounds to the nearest 10.
+ * For larger numbers, it rounds only the last three digits to the nearest 100,
+ * leaving the thousands and higher digits untouched.
+ *
+ * @param {number} number The number to round down.
+ * @returns {number} The rounded number.
+ */
+export const roundToLower = (number: number): number => {
+    const SMALL_NUMBER_THRESHOLD = 999;
+    const LARGE_NUMBER_ROUNDING_FACTOR = 100;
+
+    if (number <= SMALL_NUMBER_THRESHOLD) {
+        return Math.floor(number / 10) * 10;
+    }
+
+    const nonRoundedPart = Math.floor(number / 1000) * 1000;
+    const roundedPart = Math.floor((number % 1000) / LARGE_NUMBER_ROUNDING_FACTOR) * LARGE_NUMBER_ROUNDING_FACTOR;
+    return nonRoundedPart + roundedPart;
+};
+
 export const getWindowEndDate = (subscriptionAge: number) => {
     const currentWindow = Object.values(ReminderDates).find((value) => {
         return subscriptionAge >= value && subscriptionAge <= value + OfferDuration;
