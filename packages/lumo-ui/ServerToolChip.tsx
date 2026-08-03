@@ -1,8 +1,7 @@
-import type { ComponentType } from 'react';
-
 import { Href } from '@proton/atoms/Href/Href';
 
 import Disclosure from './primitives/Disclosure';
+import type { IconComponent } from './types';
 
 export interface ServerToolSource {
     url: string;
@@ -13,7 +12,7 @@ interface Props {
     /** What the tool did this turn, e.g. "Searched the web" — the product supplies the wording. */
     label: string;
     /** The glyph that identifies the tool (globe, lightbulb…), supplied by the product. */
-    icon: ComponentType<{ className?: string }>;
+    icon: IconComponent;
     /** Cited pages, if any. With none the chip is a static marker; with some it becomes a disclosure. */
     sources?: ServerToolSource[];
     className?: string;
@@ -37,7 +36,7 @@ const ServerToolChip = ({ label, icon: Icon, sources = [], className }: Props) =
     if (!sources.length) {
         return (
             <div className={`lumo-server-tool text-sm color-weak ${className ?? ''}`.trim()}>
-                <Icon className="shrink-0" />
+                <Icon className="shrink-0" size={3} />
                 <span className="text-ellipsis" title={label}>
                     {label}
                 </span>
