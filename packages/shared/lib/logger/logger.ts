@@ -101,8 +101,6 @@ export class Logger {
 
     private cleanupInterval: ReturnType<typeof setInterval> | null = null;
 
-    private globalErrors: AbortController | null = null;
-
     /** Serialises storage writes so ordering is deterministic and reads can await them. */
     private writes: Promise<void> = Promise.resolve();
 
@@ -137,7 +135,6 @@ export class Logger {
         this.storage = new IndexedDBStorage(this.name, options.loggerID);
         this.initialized = true;
 
-        this.captureGlobalErrors();
         this.drainPending();
         this.startCleanup();
     }
@@ -298,47 +295,6 @@ export class Logger {
         downloadLogFile(await this.getLogs(), filename ?? timestampedFilename(`${this.name}-logs`));
     }
 
-    /**
-     * Routes uncaught errors and unhandled rejections into this logger. Called by
-     * `initialize()`; call it earlier to capture errors during bootstrap, since lines
-     * emitted before initialization are buffered rather than dropped.
-     */
-    captureGlobalErrors(): void {
-        if (typeof window === 'undefined' || this.globalErrors) {
-            return;
-        }
-
-        this.globalErrors = new AbortController();
-        const { signal } = this.globalErrors;
-
-        window.addEventListener(
-            'error',
-            (event) => {
-                this.error(
-                    'Uncaught error',
-                    event.message,
-                    event.filename,
-                    event.lineno,
-                    event.colno,
-                    event.error?.stack
-                );
-            },
-            { signal }
-        );
-
-        window.addEventListener(
-            'unhandledrejection',
-            (event) => {
-                const { reason } = event;
-                this.error(
-                    'Unhandled promise rejection',
-                    reason instanceof Error ? `${reason.message}\n${reason.stack}` : String(reason)
-                );
-            },
-            { signal }
-        );
-    }
-
     private startCleanup(): void {
         this.enqueue(() => this.cleanup());
         this.cleanupInterval = setInterval(() => this.enqueue(() => this.cleanup()), CLEANUP_INTERVAL_MS);
@@ -369,9 +325,6 @@ export class Logger {
             clearInterval(this.cleanupInterval);
             this.cleanupInterval = null;
         }
-
-        this.globalErrors?.abort();
-        this.globalErrors = null;
 
         await this.writes;
 
