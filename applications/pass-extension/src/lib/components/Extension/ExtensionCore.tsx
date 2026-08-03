@@ -37,7 +37,7 @@ import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
 import { createI18nService } from '@proton/pass/lib/i18n/service';
 import { createSettingsService } from '@proton/pass/lib/settings/service';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import type { LocalStoreData } from '@proton/pass/types/worker/state';
@@ -168,7 +168,12 @@ const getPassCoreProviderProps = (
             const settingsUrl = browser.runtime.getURL('/settings.html');
             const url = `${settingsUrl}#/${page ?? ''}`;
 
-            onTelemetry(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
+            onTelemetry(
+                TelemetryEventName.ExtensionUsed,
+                {},
+                // no page DOM available here: this fires from the settings page, not a content script
+                { modelVersion: MODEL_VERSION, ...NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS }
+            );
 
             browser.tabs
                 .query({ url: settingsUrl })

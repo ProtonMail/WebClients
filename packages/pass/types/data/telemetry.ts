@@ -102,19 +102,25 @@ export type ExtensionCopiedFromLoginDimensions = {
     uniqueMatch: string;
     autofillPaused: string;
     modelVersion: string;
-};
+} & AutofillPageTelemetryDimensions;
 
 type ImportValues = { item_count: number; vaults: number };
 
 type ImportDimensions = { source: ImportProvider };
 type ItemDimensions = { type: TelemetryItemType };
-type ExtensionUsedDimensions = { modelVersion: string };
+type ExtensionUsedDimensions = { modelVersion: string } & AutofillPageTelemetryDimensions;
 type FileDimensions = { mimeType: string };
 type NotificationDimensions = { notificationKey: InAppNotification['NotificationKey'] };
 type NotificationChangeDimensions = NotificationDimensions & { notificationStatus: TelemetryInAppNotificationStatus };
 export type AutofillPageTelemetryDimensions = { pageLanguage: string };
+/** Distinct from `pageLanguage: ''` (a real page that doesn't declare a `lang`) — this is for
+ * events fired outside any page context (popup, settings) where there's no DOM to read at all. */
+export const NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS: AutofillPageTelemetryDimensions = { pageLanguage: 'n/a' };
 type AutofillDimensions = { location: 'source' | 'app' } & AutofillPageTelemetryDimensions;
-type AutosaveDismissedDimensions = { dismissReason: 'not_now' | 'close' | 'disable'; modelVersion: string };
+type AutosaveDismissedDimensions = {
+    dismissReason: 'not_now' | 'close' | 'disable';
+    modelVersion: string;
+} & AutofillPageTelemetryDimensions;
 type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: string };
 type TargetDimensions =
     | { type: TelemetryTargetType.item; itemType: TelemetryItemType }
@@ -126,7 +132,7 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutofillDisplay, {}, AutofillDimensions>
     | BaseTelemetryEvent<TelemetryEventName.AutofillTriggered, {}, AutofillDimensions>
     | BaseTelemetryEvent<TelemetryEventName.AutosaveDismissed, {}, AutosaveDismissedDimensions>
-    | BaseTelemetryEvent<TelemetryEventName.AutosaveDisplay>
+    | BaseTelemetryEvent<TelemetryEventName.AutosaveDisplay, {}, AutofillPageTelemetryDimensions>
     | BaseTelemetryEvent<TelemetryEventName.AutosaveDone>
     | BaseTelemetryEvent<TelemetryEventName.AutosuggestAliasCreated>
     | BaseTelemetryEvent<TelemetryEventName.ErrorResumingSession, {}, ErrorResumingSessionDimensions>
