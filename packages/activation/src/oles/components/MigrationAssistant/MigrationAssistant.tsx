@@ -23,7 +23,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { useErrorHandler } from '../../errors';
-import { isProviderUserSelectable, shouldCreateUserPredicate } from '../../helpers';
+import { isProviderUserSelectable, isRelevantAddress, shouldCreateUserPredicate } from '../../helpers';
 import { createMigrationBatch, setupJoiningLink } from '../../thunk';
 import { useProviderUsers } from '../../useProviderUsers';
 import type { StepComponentProps } from '../MigrationSetup/MigrationSetup';
@@ -69,6 +69,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
 
     const allAddresses = Object.values(memberAddressesMap)
         .flat()
+        .filter(isRelevantAddress)
         .map((a) => a?.Email);
 
     const shouldCreateUser = shouldCreateUserPredicate(model.tokens?.at(0)?.Account, allAddresses);
