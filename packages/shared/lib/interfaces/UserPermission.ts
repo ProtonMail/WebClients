@@ -34,4 +34,5 @@ export type Permission = (typeof PERMISSIONS)[number];
 export interface UserPermission {
     Roles: OrganizationRole[];
     Permissions: Permission[];
+    ShowAdminRolesUI: boolean;
 }

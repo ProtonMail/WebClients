@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { groupOwnerInvitesThunk } from '@proton/account/groupOwnerInvites';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { Card } from '@proton/atoms/Card/Card';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -44,12 +45,12 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const isUserGroupsGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
     const dispatch = useDispatch();
-    const hasAdminRoles = useFlag('AdminRoleMVP');
+    const [adminRolesUIState] = useAdminRolesUI();
     const {
         feature: adminRolesModalFeature,
         update: updateAdminRolesModal,
         loading: adminRolesModalLoading,
-    } = useFeature(FeatureCode.AdminRolesGroupOnboardingModal, hasAdminRoles);
+    } = useFeature(FeatureCode.AdminRolesGroupOnboardingModal, adminRolesUIState === AdminRolesUIState.Enabled);
 
     const canShowAdminRolesModal = !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
 
@@ -145,7 +146,7 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
             <ScimSetupBannerAndModal />
             {(hasUsableDomain || invalidGroupSuggestion) && (
                 <>
-                    {hasAdminRoles && <GroupRoleAssignmentPausedBanner />}
+                    {adminRolesUIState === AdminRolesUIState.Enabled && <GroupRoleAssignmentPausedBanner />}
                     <GroupsMemberManagementPanel />
                 </>
             )}
