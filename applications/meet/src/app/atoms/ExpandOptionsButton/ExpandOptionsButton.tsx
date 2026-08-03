@@ -3,7 +3,16 @@ import { forwardRef } from 'react';
 import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
+import { NewPill } from '../NewPill/NewPill';
+
 import './ExpandOptionsButton.scss';
+
+const ConditionalNewPill = ({ newPill, children }: { newPill: boolean; children: React.ReactNode }) => {
+    if (newPill) {
+        return <NewPill>{children}</NewPill>;
+    }
+    return children;
+};
 
 export const ExpandOptionsButton = forwardRef<
     HTMLButtonElement,
@@ -12,19 +21,25 @@ export const ExpandOptionsButton = forwardRef<
         className?: string;
         containerClassName?: string;
         children: React.ReactNode;
+        newPill?: boolean;
         onClick: () => void;
     }
->(({ className, containerClassName, children, onClick, ...rest }, ref) => (
+>(({ className, containerClassName, children, onClick, newPill = false, ...rest }, ref) => (
     <div className={clsx('w-full flex flex-nowrap items-center justify-end gap-2', containerClassName)}>
-        <Button
-            ref={ref}
-            className={clsx('options-expand-button flex items-center flex-nowrap text-nowrap rounded-full', className)}
-            shape="ghost"
-            onClick={onClick}
-            {...rest}
-        >
-            {children}
-        </Button>
+        <ConditionalNewPill newPill={newPill}>
+            <Button
+                ref={ref}
+                className={clsx(
+                    'options-expand-button flex items-center flex-nowrap text-nowrap rounded-full',
+                    className
+                )}
+                shape="ghost"
+                onClick={onClick}
+                {...rest}
+            >
+                {children}
+            </Button>
+        </ConditionalNewPill>
     </div>
 ));
 

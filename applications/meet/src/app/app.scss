@@ -518,3 +518,10 @@ button {
 		}
 	}
 }
+
+.upgrade-now {
+	background: var(--Linear, linear-gradient(72deg, #ffb477 6.88%, #ff8cfc 50.55%, #afafff 105.07%));
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-decoration: none;
+}
